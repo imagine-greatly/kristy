@@ -1,0 +1,166 @@
+-- Kristy — Supabase schema
+-- Auth is handled by Supabase Auth (magic link). No custom users table needed.
+
+-- ───────────────────────────── Tables ─────────────────────────────
+
+create table if not exists meal_logs (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade,
+  logged_at timestamptz default now(),
+  foods text[],
+  calories int,
+  protein int,
+  carbs int,
+  fat int,
+  raw_input text,
+  -- Macro provenance for typed meals: 'usda' when every food matched USDA
+  -- FoodData Central, 'estimate' when any item fell back to a Claude estimate.
+  source text,
+  -- Per-item breakdown ({food, grams, source, fdcId, calories, protein, ...}).
+  breakdown jsonb
+);
+
+-- Migration for existing projects: add the macro-provenance columns.
+alter table meal_logs add column if not exists source text;
+alter table meal_logs add column if not exists breakdown jsonb;
+
+create table if not exists user_goals (
+  user_id uuid primary key references auth.users on delete cascade,
+  calories int default 2500,
+  protein int default 180,
+  carbs int default 200,
+  fat int default 80,
+  -- Onboarding profile (drives TDEE + performance-aware coaching).
+  name text,
+  age int,
+  sex text,
+  height_value numeric,
+  height_unit text,
+  weight_value numeric,
+  weight_unit text,
+  goal text,
+  sport text,
+  training_frequency text,
+  eating_pattern text,
+  eating_window_start text,
+  eating_window_end text,
+  dietary_preferences text[] default '{}',
+  onboarded boolean default false,
+  updated_at timestamptz default now()
+);
+
+-- Migration for existing projects: add the onboarding profile columns.
+alter table user_goals add column if not exists name text;
+alter table user_goals add column if not exists age int;
+alter table user_goals add column if not exists sex text;
+alter table user_goals add column if not exists height_value numeric;
+alter table user_goals add column if not exists height_unit text;
+alter table user_goals add column if not exists weight_value numeric;
+alter table user_goals add column if not exists weight_unit text;
+alter table user_goals add column if not exists goal text;
+alter table user_goals add column if not exists sport text;
+alter table user_goals add column if not exists training_frequency text;
+alter table user_goals add column if not exists eating_pattern text;
+alter table user_goals add column if not exists eating_window_start text;
+alter table user_goals add column if not exists eating_window_end text;
+alter table user_goals add column if not exists dietary_preferences text[] default '{}';
+alter table user_goals add column if not exists onboarded boolean default false;
+
+-- Conversational weight logging — the first optimization feature. Kristy tracks
+-- the trend over time and uses it to recalculate calorie targets.
+create table if not exists weight_logs (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade,
+  weight_value numeric not null,
+  weight_unit text default 'lbs',
+  logged_at timestamptz default now(),
+  note text
+);
+
+create index if not exists weight_logs_user_date on weight_logs (user_id, logged_at desc);
+
+-- Weight + TDEE-optimization columns on the goals row.
+alter table user_goals add column if not exists starting_weight numeric;
+alter table user_goals add column if not exists starting_weight_unit text default 'lbs';
+alter table user_goals add column if not exists current_weight numeric;
+alter table user_goals add column if not exists current_weight_unit text default 'lbs';
+alter table user_goals add column if not exists tdee_last_recalculated timestamptz;
+alter table user_goals add column if not exists tdee_adjustment int default 0;
+
+create table if not exists chat_messages (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade,
+  role text check (role in ('user', 'ai')),
+  content text,
+  macros jsonb,
+  created_at timestamptz default now()
+);
+
+create table if not exists weekly_summaries (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade,
+  week_start date,
+  summary_text text,
+  avg_calories int,
+  avg_protein int,
+  avg_carbs int,
+  avg_fat int,
+  created_at timestamptz default now()
+);
+
+-- Helpful indexes for the per-user, time-ranged reads Kristy makes constantly.
+create index if not exists meal_logs_user_logged_idx on meal_logs (user_id, logged_at desc);
+create index if not exists chat_messages_user_created_idx on chat_messages (user_id, created_at);
+create index if not exists weekly_summaries_user_week_idx on weekly_summaries (user_id, week_start desc);
+
+-- ───────────────────────────── RLS ─────────────────────────────
+-- Every table is locked down: a user can only ever touch their own rows.
+
+alter table meal_logs        enable row level security;
+alter table user_goals       enable row level security;
+alter table chat_messages    enable row level security;
+alter table weekly_summaries enable row level security;
+alter table weight_logs      enable row level security;
+
+-- meal_logs
+drop policy if exists "own meals" on meal_logs;
+create policy "own meals" on meal_logs
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- user_goals
+drop policy if exists "own goals" on user_goals;
+create policy "own goals" on user_goals
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- chat_messages
+drop policy if exists "own messages" on chat_messages;
+create policy "own messages" on chat_messages
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- weekly_summaries
+drop policy if exists "own summaries" on weekly_summaries;
+create policy "own summaries" on weekly_summaries
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- weight_logs
+drop policy if exists "Users can only access their own weight logs" on weight_logs;
+create policy "Users can only access their own weight logs" on weight_logs
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- Auto-create a default goals row the first time a user signs up.
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  insert into public.user_goals (user_id) values (new.id)
+  on conflict (user_id) do nothing;
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute function public.handle_new_user();

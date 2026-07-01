@@ -1,0 +1,39 @@
+# ───────────────────────── Dependencies ─────────────────────────
+node_modules/
+**/node_modules/
+
+# ───────────────────────── Build output ─────────────────────────
+dist/
+build/
+client/dist/
+.vite/
+**/.vite/
+
+# ─────────────────── Environment / secrets — NEVER COMMIT ───────────────────
+# Real keys live only in these files locally. .env.example (placeholders) IS tracked.
+.env
+.env.local
+.env.*.local
+server/.env
+client/.env
+client/.env.local
+
+# ───────────────────────── Logs ─────────────────────────
+*.log
+dev.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ───────────────────────── OS / editor cruft ─────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ─────────── claude.ai/design sync — local tooling & generated machine state ───────────
+.design-sync/
+.ds-sync/
+ds-bundle/
