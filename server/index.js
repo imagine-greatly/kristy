@@ -22,6 +22,9 @@ const origins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173')
 app.use(cors({ origin: origins }));
 app.use(express.json({ limit: '1mb' }));
 
+// Root + health endpoints — both return 200 with no dependencies, so a browser
+// hit or a platform health check (Railway) confirms the process is live.
+app.get('/', (_req, res) => res.json({ ok: true, service: 'kristy' }));
 app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'kristy' }));
 
 app.use('/api', chatRoute);
