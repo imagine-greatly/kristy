@@ -18,27 +18,52 @@ export const supabase = createClient(
 
 /**
  * Resolve the authenticated user from a Bearer token.
- * Returns the user object or null.
+ * Returns the user object, or null on missing/invalid token OR on an auth
+ * service failure — the caller decides how to respond. Never throws, so a
+ * Supabase outage can't turn into an unhandled rejection / hung request.
+ * @returns {Promise<{user:object|null, failed?:boolean}>}
  */
 export async function getUserFromToken(token) {
-  if (!token) return null;
-  const { data, error } = await supabase.auth.getUser(token);
-  if (error || !data?.user) return null;
-  return data.user;
+  if (!token) return { user: null };
+  try {
+    const { data, error } = await supabase.auth.getUser(token);
+    if (error || !data?.user) return { user: null };
+    return { user: data.user };
+  } catch (err) {
+    // Network/timeout talking to Supabase Auth — surface as a service failure,
+    // not a silent 401, so we can return a clean 503 instead of hanging.
+    console.error('[kristy] supabase.auth.getUser failed:', err?.message || err);
+    return { user: null, failed: true };
+  }
 }
 
 /**
  * Express middleware — attaches req.user from the Authorization header.
- * Falls back to a userId in the body for local/dev convenience.
+ * Wrapped so any unexpected error becomes a clean JSON response, never a
+ * throw that Express 4 would leak as an unhandled rejection.
  */
 export async function requireAuth(req, res, next) {
-  const header = req.headers.authorization || '';
-  const token = header.startsWith('Bearer ') ? header.slice(7) : null;
-  const user = await getUserFromToken(token);
+  try {
+    const header = req.headers.authorization || '';
+    const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+    const { user, failed } = await getUserFromToken(token);
 
-  if (!user) {
-    return res.status(401).json({ error: 'Not authenticated' });
+    if (failed) {
+      return res.status(503).json({
+        error: true,
+        message: "I'm having trouble connecting right now — try that again in a moment.",
+      });
+    }
+    if (!user) {
+      return res.status(401).json({ error: 'Not authenticated' });
+    }
+    req.user = user;
+    next();
+  } catch (err) {
+    console.error('[kristy] requireAuth error:', err?.message || err);
+    return res.status(503).json({
+      error: true,
+      message: "I'm having trouble connecting right now — try that again in a moment.",
+    });
   }
-  req.user = user;
-  next();
 }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Kristy</title>
+  <meta name="description" content="How Kristy collects, uses, and protects your data." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Shared legal-page styling — mirrors the landing design tokens
+       (client/public/landing.html) so these read as part of Kristy. */
+    :root {
+      --void:  #040805;
+      --elev:  #0D2416;
+      --gold:  #C9A84C;
+      --gold-bright: #F0D27A;
+      --cream: #F0E6C8;
+      --mint:  #6B9E85;
+      --struct:#2D5A3D;
+      --dead:  #37463D;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--void);
+      color: var(--cream);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+    }
+    ::selection { background: var(--gold); color: var(--void); }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-bright); text-decoration: underline; }
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 100px; }
+
+    .mast {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding-bottom: 28px; margin-bottom: 40px;
+      border-bottom: 1px solid rgba(45,90,61,.35);
+    }
+    .mast__mark {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 22px; color: var(--gold);
+    }
+    .mast__back { font-size: 14px; color: var(--mint); }
+
+    h1 {
+      font-family: 'Playfair Display', serif; font-weight: 500;
+      font-size: clamp(34px, 6vw, 52px); line-height: 1.05; letter-spacing: -.01em;
+      color: var(--cream); margin-bottom: 12px;
+    }
+    .updated {
+      font-size: 13px; color: var(--struct); letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: 44px;
+    }
+    .lede {
+      font-family: 'Inter', sans-serif; font-weight: 300;
+      font-size: 18px; color: var(--mint); margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-weight: 500;
+      font-size: 24px; color: var(--gold); margin: 44px 0 14px;
+    }
+    p { color: var(--cream); margin-bottom: 16px; }
+    ul { margin: 0 0 16px 22px; }
+    li { color: var(--cream); margin-bottom: 8px; }
+    strong { color: var(--gold-bright); font-weight: 600; }
+
+    .callout {
+      border-left: 2px solid var(--gold); padding: 4px 0 4px 18px;
+      margin: 28px 0; color: var(--mint); font-size: 15px;
+    }
+
+    .foot {
+      margin-top: 64px; padding-top: 28px;
+      border-top: 1px solid rgba(45,90,61,.35);
+      font-size: 13px; color: var(--dead);
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .foot a { color: var(--mint); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a href="/" class="mast__mark">Kristy</a>
+      <a href="/" class="mast__back">← Back to home</a>
+    </header>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 4, 2026</p>
+
+    <p class="lede">
+      Kristy is a nutrition assistant you talk to in a chat. To do that well, Kristy
+      keeps track of what you tell it. This page explains, in plain language, what
+      we collect, why, and what we do — and don't do — with it.
+    </p>
+
+    <h2>What we collect</h2>
+    <p>We only collect what's needed to run the service:</p>
+    <ul>
+      <li><strong>Your email address</strong> — to create and sign in to your account.</li>
+      <li><strong>Weight entries</strong> — the weigh-ins you log, so Kristy can track your trend over time.</li>
+      <li><strong>Meal logs</strong> — the foods you record (typed, photographed, or scanned) and their macros.</li>
+      <li><strong>Chat messages</strong> — your conversation with Kristy, so it can respond in context and you can reload past days.</li>
+      <li><strong>Your goals and profile</strong> — details you provide during onboarding (such as your goal, training, and eating pattern) used to personalize guidance.</li>
+    </ul>
+
+    <h2>Why we collect it</h2>
+    <p>
+      This information exists for one purpose: to provide the personalized nutrition
+      service. Kristy uses your history, goals, and trends to give specific, relevant
+      guidance instead of generic advice. We do not use your data to build advertising
+      profiles.
+    </p>
+
+    <h2>Where it's stored</h2>
+    <p>
+      Your data is stored using <strong>Supabase</strong>, a third-party database and
+      authentication provider, on our behalf. Your meal logs, chat messages, and
+      other content are scoped to your account. To generate responses, the content
+      of your messages (and food photos you send) is processed by our AI provider
+      to produce Kristy's replies.
+    </p>
+
+    <h2>We don't sell your data</h2>
+    <p>
+      We do <strong>not</strong> sell your personal data to third parties, and we
+      don't share it with third parties except the service providers we rely on to
+      operate Kristy (such as our database, hosting, and AI providers described
+      above), or where required by law.
+    </p>
+
+    <h2>Deleting your data</h2>
+    <p>
+      You can request deletion of your account and associated data at any time. For
+      now, email us at <a href="mailto:hello@kristy.app">hello@kristy.app</a> and
+      we'll remove it. We'll build a one-tap deletion control into the app as it
+      matures.
+    </p>
+
+    <h2>Kristy is not a medical provider</h2>
+    <p class="callout">
+      Kristy provides general nutrition guidance and is <strong>not</strong> a
+      licensed dietitian, doctor, or medical provider. It does not diagnose, treat,
+      or provide medical advice. The information Kristy gives is for general
+      informational purposes only. Talk to a qualified healthcare professional before
+      making significant changes to your diet, especially if you have any health
+      condition or concern.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      Kristy is in early access and evolving. If we make meaningful changes to how we
+      handle your data, we'll update this page and revise the date above.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about privacy? Email
+      <a href="mailto:hello@kristy.app">hello@kristy.app</a>.
+    </p>
+
+    <div class="foot">
+      <a href="/">Home</a>
+      <a href="/terms.html">Terms of Service</a>
+      <span>© 2026 Kristy</span>
+    </div>
+  </div>
+
+  <!-- Vercel Web Analytics (static pages) — no-ops off Vercel. -->
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

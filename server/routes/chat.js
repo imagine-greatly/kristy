@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
+import { userRateLimit } from '../lib/rateLimit.js';
 import { buildProfileBlock, buildWeightBlock } from '../lib/prompts.js';
 import { computeInsight } from '../lib/insights.js';
 import { resolveMeal, generateReply } from '../lib/chatEngine.js';
@@ -62,7 +63,7 @@ function buildWeightEvent(detected, trend, recalc) {
   return lines.join('\n');
 }
 
-router.post('/chat', requireAuth, async (req, res) => {
+router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const { message, conversationHistory = [], tzOffset } = req.body || {};
   const offsetMin = Number.isFinite(Number(tzOffset))
@@ -199,8 +200,17 @@ router.post('/chat', requireAuth, async (req, res) => {
 
     return res.json({ ...result, recalculated, weightLogged: detected.isWeightLog });
   } catch (err) {
-    console.error('[kristy] /api/chat error:', err.message);
-    return res.status(500).json({ error: 'Kristy had trouble responding.' });
+    // Anthropic / USDA / Supabase failed. Log with context, and hand the client
+    // a line Kristy could plausibly say so it renders as a normal chat bubble
+    // instead of a broken UI. No stack trace or raw error leaves the server.
+    console.error(
+      `[kristy] /api/chat error (user ${userId}) @ ${new Date().toISOString()}:`,
+      err?.message || err
+    );
+    return res.status(503).json({
+      error: true,
+      message: "I'm having trouble connecting right now — try that again in a moment.",
+    });
   }
 });
 

@@ -64,6 +64,23 @@ export default function GuestApp() {
     try {
       const result = await sendGuestChat({ message: content, history });
 
+      // Upstream failure — server handed back a Kristy-voiced { error, message }.
+      // Render it as a normal bubble and don't count it toward the exchange cap.
+      if (result.error) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: rid(),
+            role: 'ai',
+            content:
+              result.message ||
+              "I had trouble responding just now — give it another try in a sec.",
+            macros: null,
+          },
+        ]);
+        return;
+      }
+
       // Server tripped a soft gate (memory action or IP rate limit) — show it
       // instead of a normal reply. The conversation stays visible behind it.
       if (result.gate) {

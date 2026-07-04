@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
+import { userRateLimit } from '../lib/rateLimit.js';
 import { saveMeal, saveChatMessage } from '../lib/store.js';
 
 const router = Router();
@@ -8,7 +9,7 @@ const NOT_FOUND_MSG = "Couldn't find that one — try typing it out instead.";
 
 // POST /api/barcode  { barcode } → looks up Open Food Facts, logs the meal.
 // Returns the same shape as /api/chat so the frontend handles it identically.
-router.post('/barcode', requireAuth, async (req, res) => {
+router.post('/barcode', requireAuth, userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const { barcode } = req.body || {};
 

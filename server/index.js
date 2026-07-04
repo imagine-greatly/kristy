@@ -36,6 +36,35 @@ app.use('/api', photoRoute);
 app.use('/api', onboardingRoute);
 app.use('/api', weightRoute);
 
+// ───────── Global error handler (final safety net) ─────────
+// Last in the chain: catches anything a route forwarded via next(err) or threw
+// synchronously (e.g. a multer upload error), logs it with context, and returns
+// a clean generic 500 — never a stack trace or raw error object to the client.
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  console.error(
+    `[kristy] unhandled error on ${req.method} ${req.originalUrl} @ ${new Date().toISOString()}:`,
+    err?.stack || err
+  );
+  if (res.headersSent) return next(err);
+  res.status(500).json({
+    error: true,
+    message: 'Something went wrong on our end. Please try again in a moment.',
+  });
+});
+
+// ───────── Process-level safety nets ─────────
+// A stray rejected promise or a throw outside the request cycle would otherwise
+// crash the process (Railway restarts it, but that's user-facing downtime).
+// Log loudly and stay up. These are backstops — routes still handle their own
+// errors above; this only catches what slips through.
+process.on('unhandledRejection', (reason) => {
+  console.error('[kristy] unhandledRejection:', reason);
+});
+process.on('uncaughtException', (err) => {
+  console.error('[kristy] uncaughtException:', err?.stack || err);
+});
+
 app.listen(PORT, () => {
   console.log(`[kristy] server listening on http://localhost:${PORT}`);
   startCron();

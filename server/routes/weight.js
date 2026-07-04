@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
+import { userRateLimit } from '../lib/rateLimit.js';
 import { getFullProfile, getWeightHistory } from '../lib/store.js';
 import {
   saveWeightLog,
@@ -14,7 +15,7 @@ const router = Router();
 // Saves the weigh-in, recomputes the trend, and retunes the calorie target
 // when enough data has accrued. Mirrors the work the chat pipeline does when
 // it detects a weight log inline.
-router.post('/weight', requireAuth, async (req, res) => {
+router.post('/weight', requireAuth, userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const { weight_value, weight_unit = 'lbs' } = req.body || {};
 

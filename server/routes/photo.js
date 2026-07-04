@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
 import { requireAuth } from '../lib/supabase.js';
+import { userRateLimit } from '../lib/rateLimit.js';
 import { anthropic, MODEL } from '../lib/anthropic.js';
 import { parseChatJSON } from '../lib/parse.js';
 import { saveMeal, saveChatMessage } from '../lib/store.js';
@@ -26,7 +27,8 @@ const ERROR_MSG = "Couldn't read that photo clearly — try again or type it out
 
 // POST /api/photo  (multipart: image, message?) → Claude vision estimate.
 // Returns the same shape as /api/chat (plus isEstimate / estimateNote).
-router.post('/photo', requireAuth, upload.single('image'), async (req, res) => {
+// userRateLimit runs before multer so a limited caller never uploads the file.
+router.post('/photo', requireAuth, userRateLimit, upload.single('image'), async (req, res) => {
   const userId = req.user.id;
   const message = (req.body?.message || '').trim();
 

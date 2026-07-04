@@ -15,8 +15,13 @@ router.post('/weekly-summary', async (req, res) => {
   const provided = req.headers['x-cron-secret'];
 
   if (cronSecret && provided === cronSecret) {
-    const made = await generateAllWeeklySummaries();
-    return res.json({ ok: true, generated: made });
+    try {
+      const made = await generateAllWeeklySummaries();
+      return res.json({ ok: true, generated: made });
+    } catch (err) {
+      console.error('[kristy] /api/weekly-summary (cron) error:', err.message);
+      return res.status(500).json({ error: 'Could not generate summaries.' });
+    }
   }
 
   // Otherwise require a logged-in user and only do theirs.

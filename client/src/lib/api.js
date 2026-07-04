@@ -57,8 +57,13 @@ export async function sendChat({ message, history = [], ctx }) {
     }),
   });
 
-  if (!res.ok) throw new Error('Kristy had trouble responding.');
-  return res.json();
+  if (res.ok) return res.json();
+  // Non-2xx (upstream failure or rate limit): surface the server's Kristy-voiced
+  // line so the caller renders it as a normal bubble; else throw and let the
+  // caller show its own retry message. Never leaks a raw error to the UI.
+  const body = await res.json().catch(() => null);
+  if (body && body.message) return { error: true, message: body.message };
+  throw new Error('Kristy had trouble responding.');
 }
 
 /**
@@ -75,8 +80,12 @@ export async function sendGuestChat({ message, history = [] }) {
     body: JSON.stringify({ message, conversationHistory: history }),
   });
 
-  if (!res.ok) throw new Error('Kristy had trouble responding.');
-  return res.json();
+  if (res.ok) return res.json();
+  // Non-2xx: surface the server's Kristy-voiced line as a { error, message }
+  // object so the guest sees a normal bubble; else throw for the caller's fallback.
+  const body = await res.json().catch(() => null);
+  if (body && body.message) return { error: true, message: body.message };
+  throw new Error('Kristy had trouble responding.');
 }
 
 /**

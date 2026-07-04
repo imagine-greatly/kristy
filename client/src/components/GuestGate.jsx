@@ -12,6 +12,11 @@ export default function GuestGate({ line, terminal, onDismiss }) {
         <div className="gate__avatar">K</div>
         <p className="gate__line">{line}</p>
         <SignInForm note="No password — one tap and I'll remember everything from here." />
+        <p className="gate__legal">
+          By continuing you agree to our{' '}
+          <a href="/terms.html" target="_blank" rel="noreferrer">Terms</a> and{' '}
+          <a href="/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>.
+        </p>
         {!terminal && (
           <button className="gate__dismiss" onClick={onDismiss}>
             Not yet — keep looking around

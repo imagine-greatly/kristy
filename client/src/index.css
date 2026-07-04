@@ -1269,6 +1269,20 @@ textarea {
 .gate__dismiss:hover {
   color: var(--text-primary);
 }
+.gate__legal {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 340px;
+}
+.gate__legal a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.gate__legal a:hover {
+  color: var(--text-primary);
+}
 
 @keyframes gate-fade {
   from { opacity: 0; }

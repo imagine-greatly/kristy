@@ -90,8 +90,16 @@ router.post('/chat', async (req, res) => {
 
     return res.json(result);
   } catch (err) {
-    console.error('[kristy] /api/guest/chat error:', err.message);
-    return res.status(500).json({ error: 'Kristy had trouble responding.' });
+    // Anthropic / USDA failed. Return a line Kristy could plausibly say so the
+    // guest sees a normal chat bubble, not a broken UI. Nothing raw leaks out.
+    console.error(
+      `[kristy] /api/guest/chat error @ ${new Date().toISOString()}:`,
+      err?.message || err
+    );
+    return res.status(503).json({
+      error: true,
+      message: "I'm having trouble connecting right now — try that again in a moment.",
+    });
   }
 });
 
