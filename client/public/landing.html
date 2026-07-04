@@ -264,8 +264,18 @@
     /* ═════════════════════════════════════════════════════════════════
        SECTION 2 — THE CONVERSATION
     ═════════════════════════════════════════════════════════════════ */
-    .thread { padding: 40px 24px 90px; }
-    .col      { max-width: 600px; margin-left: auto; margin-right: auto; }
+    /* The conversation lives in a centered column. A faint radial glow sits behind
+       it — barely lifted off --void, viewport-fixed so it follows the thread as you
+       scroll — so the margins read as intentional negative space around a focal
+       conversation rather than empty gutters. Kept low enough not to compete with
+       the chat bubbles. */
+    .thread {
+      padding: 40px 24px 90px;
+      background: radial-gradient(ellipse 82% 48% at 50% 42%,
+                    rgba(13,36,22,.42) 0%, rgba(13,36,22,.12) 46%, rgba(4,8,5,0) 74%);
+      background-attachment: fixed;
+    }
+    .col      { max-width: 700px; margin-left: auto; margin-right: auto; }
     .col-wide { max-width: 820px; margin-left: auto; margin-right: auto; }
 
     .thread .kchat { margin-bottom: 10px; }
@@ -290,7 +300,7 @@
       margin-top: 84px; margin-bottom: 30px;
     }
     .day::before, .day::after {
-      content: ''; height: 1px; width: 90px;
+      content: ''; height: 1px; width: 110px;   /* widened to match the ~700px column */
       background: linear-gradient(to right, transparent, rgba(201,168,76,.4));
     }
     .day::after { transform: scaleX(-1); }
@@ -831,50 +841,55 @@
         try { runChat(el, entry[1], { onDone: entry[2] || null, noAvatar: entry[3] || false }); } catch (e) {}
       }
 
-      /* ════════ Trigger system — scroll + low-frequency interval ════════ */
+      /* ════════ Trigger system — IntersectionObserver, one beat at a time ════════
+         The page is meant to unfold like a real conversation: each caption, chat
+         exchange and day-marker reveals only as you scroll to it, in order.
+
+         The previous version polled every element's getBoundingClientRect() on a
+         shared 400ms interval and fired anything whose top had crossed the viewport
+         band. That dumped the whole conversation at once, because the chat
+         containers start EMPTY (zero height) and sit barely a caption apart: the
+         ~82%-of-viewport-tall trigger band routinely held several of them at the
+         same time, so a single pass fired them together. A trailing 4s "reveal
+         everything" failsafe made it worse — it flipped every remaining caption to
+         visible with no scroll at all.
+
+         An IntersectionObserver fixes the root cause. It fires each element exactly
+         once, the moment IT (and only it) crosses the threshold line, so a cluster
+         of empty neighbours can no longer trip together, and it reads layout after
+         it has settled (no getBoundingClientRect-before-fonts race). Reveals trip
+         at 86% of the viewport and beats at 82% — the original feel — via
+         rootMargin. Progress bar + nav stay on a passive scroll listener since they
+         track continuous scroll, not discrete reveals. */
       var progressEl = document.getElementById('progress');
       var navEl = document.getElementById('nav');
       var ctaFinal = document.getElementById('cta-final');
       var revEls = Array.prototype.slice.call(document.querySelectorAll('[data-rev]'));
-      var ctaScheduled = false;
 
-      function checkReveals() {
-        var vh = window.innerHeight;
-        for (var k = 0; k < revEls.length; k++) {
-          var el = revEls[k];
-          if (el.__shown) continue;
-          var r = el.getBoundingClientRect();
-          if (r.top < vh * 0.86 && r.bottom > 0) { el.classList.add('in'); el.__shown = true; }
-        }
+      function revealEl(el) {
+        if (el.__shown) return;
+        el.__shown = true;
+        el.classList.add('in');
       }
-      function checkBeats() {
-        var vh = window.innerHeight;
-        for (var k = 0; k < BEATS.length; k++) {
-          var entry = BEATS[k];
-          if (entry.__played) continue;
-          var el = document.querySelector(entry[0]);
-          if (!el) { entry.__played = true; continue; }
-          var r = el.getBoundingClientRect();
-          if (r.top < vh * 0.82 && r.bottom > 0) { entry.__played = true; playBeat(entry); }
-        }
+      function firePlayBeat(entry) {
+        if (entry.__played) return;
+        entry.__played = true;
+        playBeat(entry);
       }
-      function checkCtaFinal() {
-        if (ctaScheduled || !ctaFinal) return;
-        var r = ctaFinal.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
-          ctaScheduled = true;
-          setTimeout(function () { ctaFinal.classList.add('in'); }, reduce ? 0 : 2000);
-        }
+      function revealCtaFinal() {
+        if (!ctaFinal || ctaFinal.__shown) return;
+        ctaFinal.__shown = true;
+        setTimeout(function () { ctaFinal.classList.add('in'); }, reduce ? 0 : 2000);
       }
-      function tick() {
+
+      // Scroll-linked chrome only — progress-bar fill + nav show/hide. Cheap, and
+      // it measures nothing per-element, so it can never trip a reveal.
+      function chrome() {
         try {
           var d = document.documentElement;
           var max = d.scrollHeight - d.clientHeight;
           if (progressEl) progressEl.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
           if (navEl) { if (window.scrollY > 80) navEl.classList.add('show'); else navEl.classList.remove('show'); }
-          checkReveals();
-          checkBeats();
-          checkCtaFinal();
         } catch (e) {}
       }
 
@@ -882,24 +897,64 @@
       try {
         setupHero();
         revealHero();
-        if (reduce) {
-          // Static: dump every beat, bloom every ring, reveal everything.
-          BEATS.forEach(function (entry) { entry.__played = true; playBeat(entry); });
+
+        var supportsIO = 'IntersectionObserver' in window;
+
+        if (reduce || !supportsIO) {
+          // Static path (reduced motion, or no observer support): reveal everything
+          // and play every beat once, up front — never mid-scroll.
+          revEls.forEach(revealEl);
+          BEATS.forEach(firePlayBeat);
           bloomHeroRings();
+          if (ctaFinal) { ctaFinal.__shown = true; ctaFinal.classList.add('in'); }
+        } else {
+          // Reveals — fire as each element's top crosses 86% of the viewport.
+          var revObserver = new IntersectionObserver(function (entries, obs) {
+            for (var i = 0; i < entries.length; i++) {
+              if (!entries[i].isIntersecting) continue;
+              revealEl(entries[i].target);
+              obs.unobserve(entries[i].target);   // once only — can't retrigger
+            }
+          }, { rootMargin: '0px 0px -14% 0px', threshold: 0 });
+          revEls.forEach(function (el) { revObserver.observe(el); });
+
+          // Beats — fire as THIS beat's (initially empty) container crosses 82%.
+          // Each fires on its own crossing, so a stack of empties can't dump together.
+          var beatObserver = new IntersectionObserver(function (entries, obs) {
+            for (var i = 0; i < entries.length; i++) {
+              if (!entries[i].isIntersecting) continue;
+              var entry = entries[i].target.__beat;
+              if (entry) firePlayBeat(entry);
+              obs.unobserve(entries[i].target);
+            }
+          }, { rootMargin: '0px 0px -18% 0px', threshold: 0 });
+          BEATS.forEach(function (entry) {
+            var el = document.querySelector(entry[0]);
+            if (!el) { entry.__played = true; return; }
+            el.__beat = entry;
+            beatObserver.observe(el);
+          });
+
+          // The closing line breathes in ~2s after it scrolls into view.
+          if (ctaFinal) {
+            var ctaObserver = new IntersectionObserver(function (entries, obs) {
+              for (var i = 0; i < entries.length; i++) {
+                if (!entries[i].isIntersecting) continue;
+                revealCtaFinal();
+                obs.unobserve(entries[i].target);
+              }
+            }, { threshold: 0 });
+            ctaObserver.observe(ctaFinal);
+          }
         }
-        tick();
-        window.addEventListener('scroll', tick, { passive: true });
-        window.addEventListener('resize', tick);
-        setInterval(tick, 400);
+
+        chrome();
+        window.addEventListener('scroll', chrome, { passive: true });
+        window.addEventListener('resize', chrome);
       } catch (e) {
         // Last-ditch: never leave the page blank if something throws.
-        revEls.forEach(function (el) { el.classList.add('in'); });
+        try { revEls.forEach(revealEl); BEATS.forEach(firePlayBeat); bloomHeroRings(); } catch (e2) {}
       }
-
-      // Failsafe — reveal any element the trigger loop never caught.
-      setTimeout(function () {
-        revEls.forEach(function (el) { if (!el.__shown) { el.classList.add('in'); el.__shown = true; } });
-      }, 4000);
     })();
   </script>
 </body>
