@@ -8,6 +8,8 @@ export const supabase = IS_DEMO
       auth: {
         persistSession: true,
         autoRefreshToken: true,
-        detectSessionInUrl: true, // restores session from magic-link redirect
+        // Phone/SMS OTP resolves the session directly via verifyOtp — no URL
+        // redirect. Left on (the Supabase default) but not relied upon here.
+        detectSessionInUrl: true,
       },
     });

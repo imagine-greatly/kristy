@@ -57,7 +57,9 @@ chips, edit goals in the sidebar, browse seeded history.
 2. In the SQL editor, run [`supabase/schema.sql`](supabase/schema.sql) — creates the
    four tables, enables RLS with per-user policies, and adds a trigger that seeds
    default goals on signup.
-3. Under **Authentication → Providers**, ensure **Email** (magic link) is enabled.
+3. Under **Authentication → Providers**, enable **Phone** and connect an SMS
+   provider (Twilio: Account SID, Auth Token, Messaging Service SID). Sign-in is
+   phone number + 6-digit SMS one-time code.
 
 ### 2. Server env (`server/.env`)
 

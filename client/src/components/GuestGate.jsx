@@ -11,7 +11,7 @@ export default function GuestGate({ line, terminal, onDismiss }) {
       <div className="gate__sheet" role="dialog" aria-modal="true">
         <div className="gate__avatar">K</div>
         <p className="gate__line">{line}</p>
-        <SignInForm note="No password — one tap and I'll remember everything from here." />
+        <SignInForm note="No password — I'll text you a code and remember everything from here." />
         <p className="gate__legal">
           By continuing you agree to our{' '}
           <a href="/terms.html" target="_blank" rel="noreferrer">Terms</a> and{' '}

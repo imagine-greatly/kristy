@@ -1,5 +1,6 @@
 -- Kristy — Supabase schema
--- Auth is handled by Supabase Auth (magic link). No custom users table needed.
+-- Auth is handled by Supabase Auth (phone + SMS one-time code). No custom users
+-- table needed — the trigger below seeds a goals row keyed by the auth UUID.
 
 -- ───────────────────────────── Tables ─────────────────────────────
 

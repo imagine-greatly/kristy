@@ -775,14 +775,39 @@ textarea {
   color: var(--text-muted);
   line-height: 1.5;
 }
-.auth__sent {
-  background: var(--surface);
-  border: 1px solid var(--gold-40);
-  border-radius: 14px;
-  padding: 22px;
-  font-size: 14px;
+.auth__note b {
   color: var(--text-primary);
-  line-height: 1.55;
+  font-weight: 600;
+}
+/* The 6-digit SMS code field — centered, spaced, tabular so it reads as a code. */
+.auth__input--code {
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.auth__error {
+  font-size: 13px;
+  color: #e88;
+  line-height: 1.5;
+}
+/* Text-style actions under the code field (resend / change number). */
+.auth__link {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px;
+  transition: opacity 0.15s ease;
+}
+.auth__link:hover {
+  opacity: 0.85;
+}
+.auth__link:disabled {
+  color: var(--text-muted);
+  cursor: default;
+  opacity: 1;
 }
 
 /* ───────────────────────── Desktop (> 768px) ─────────────────────────
