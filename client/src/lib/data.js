@@ -156,6 +156,32 @@ export async function saveGoals(userId, goals) {
   return data;
 }
 
+// Profile-preference fields editable from the settings screen. Only these
+// whitelisted keys are ever written; macro goals go through saveGoals above.
+const PROFILE_FIELD_KEYS = ['goal', 'weight_unit', 'sport', 'training_frequency'];
+
+// Patch one or more profile fields on the user_goals row. Demo-aware, mirroring
+// saveGoals. Returns the updated profile row (or the demo profile object).
+export async function saveProfileFields(userId, patch = {}) {
+  const clean = {};
+  for (const k of PROFILE_FIELD_KEYS) if (k in patch) clean[k] = patch[k];
+
+  if (IS_DEMO) {
+    const s = demoRead();
+    s.profile = { ...(s.profile || {}), ...clean };
+    demoWrite(s);
+    return s.profile;
+  }
+
+  const { data, error } = await supabase
+    .from('user_goals')
+    .upsert({ user_id: userId, ...clean, updated_at: new Date().toISOString() })
+    .select(PROFILE_COLS)
+    .single();
+  if (error) throw new Error(error.message);
+  return data;
+}
+
 // Meals over the last `days` days (oldest → newest).
 export async function loadRecentMeals(userId, days = 7) {
   if (IS_DEMO) {

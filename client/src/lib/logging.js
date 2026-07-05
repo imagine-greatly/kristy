@@ -48,8 +48,15 @@ export async function sendBarcode({ barcode }) {
     headers: { 'Content-Type': 'application/json', ...(await authHeader()) },
     body: JSON.stringify({ barcode }),
   });
-  if (!res.ok) throw new Error("Couldn't reach the barcode service — try again.");
-  return res.json();
+  if (res.ok) return res.json();
+  // On a non-2xx (notably the shared 429 rate limit), surface the server's
+  // Kristy-voiced line as a normal bubble — same as sendChat — so the rate-limit
+  // voice is identical across endpoints instead of a generic per-route message.
+  const body = await res.json().catch(() => null);
+  if (body && body.message) {
+    return { error: true, message: body.message, hasFood: false, macros: null, foods: [], insight: '' };
+  }
+  throw new Error("Couldn't reach the barcode service — try again.");
 }
 
 /* ───────── Photo ───────── */
@@ -78,6 +85,12 @@ export async function sendPhoto({ file, message }) {
     headers: { ...(await authHeader()) }, // let the browser set multipart boundary
     body: form,
   });
-  if (!res.ok) throw new Error("Couldn't read that photo clearly — try again or type it out");
-  return res.json();
+  if (res.ok) return res.json();
+  // Same as sendChat/sendBarcode: surface the server's line (e.g. the shared
+  // rate-limit message) as a bubble rather than a generic per-route fallback.
+  const body = await res.json().catch(() => null);
+  if (body && body.message) {
+    return { error: true, message: body.message, hasFood: false, macros: null, foods: [], insight: '' };
+  }
+  throw new Error("Couldn't read that photo clearly — try again or type it out");
 }

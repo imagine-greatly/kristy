@@ -1334,3 +1334,184 @@ textarea {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   }
 }
+
+/* ───────────────────────── Settings ─────────────────────────
+   Full-screen sheet over the app. Reuses the dark/gold tokens + the onboarding
+   chip look so it reads as part of Kristy without a redesign. */
+
+.sidebar__actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.settings {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}
+.settings__sheet {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+}
+.settings__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--gold-30);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 1;
+}
+.settings__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--accent-gold);
+}
+.settings__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.set-section__label {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.set-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 14px 0 8px;
+}
+.set-saving {
+  margin-left: 8px;
+  color: var(--accent-gold);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.set-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.set-chip {
+  background: transparent;
+  border: 1px solid var(--gold-40);
+  color: var(--text-primary);
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+.set-chip:hover {
+  border-color: var(--accent-gold);
+}
+.set-chip:active {
+  transform: scale(0.97);
+}
+.set-chip.selected {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--bg);
+  font-weight: 600;
+}
+.set-chip:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.set-error {
+  font-size: 13px;
+  color: #e88;
+}
+
+/* Danger zone — account deletion. */
+.set-danger {
+  border-top: 1px solid var(--border-60);
+  padding-top: 22px;
+  margin-top: 4px;
+}
+.set-danger__btn {
+  background: transparent;
+  border: 1px solid #7a3b3b;
+  color: #e88;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.set-danger__btn:hover {
+  background: rgba(180, 70, 70, 0.12);
+}
+.set-danger__confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.set-danger__warn {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+.set-danger__warn b {
+  color: #e88;
+  font-weight: 700;
+}
+.set-danger__input {
+  background: var(--surface-2);
+  border: 1px solid #7a3b3b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--text-primary);
+  outline: none;
+}
+.set-danger__input:focus {
+  border-color: #e88;
+}
+.set-danger__actions {
+  display: flex;
+  gap: 10px;
+}
+.set-danger__cancel {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--gold-40);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.set-danger__go {
+  flex: 1;
+  background: #b04646;
+  border: 1px solid #b04646;
+  color: #fff;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.set-danger__go:disabled {
+  opacity: 0.45;
+  cursor: default;
+}

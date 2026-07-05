@@ -5,13 +5,14 @@ import { dayKey, dateLabel } from './lib/format.js';
 import {
   loadGoals,
   saveGoals,
+  saveProfileFields,
   loadRecentMeals,
   loadDayMessages,
   loadLatestSummary,
   loadProfile,
   loadWeightHistory,
 } from './lib/data.js';
-import { sendChat } from './lib/api.js';
+import { sendChat, deleteAccount } from './lib/api.js';
 import { sendBarcode, sendPhoto } from './lib/logging.js';
 import {
   getLastActiveDate,
@@ -30,6 +31,7 @@ import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
+import Settings from './components/Settings.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -91,6 +93,8 @@ export default function App() {
   const [session, setSession] = useState(null);
   const [userId, setUserId] = useState(null);
   const [needsOnboarding, setNeedsOnboarding] = useState(false);
+  const [profile, setProfile] = useState(null);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
   const [meals, setMeals] = useState([]);
@@ -119,6 +123,7 @@ export default function App() {
       setSession(demo);
       setUserId('demo-user');
       loadProfile('demo-user').then((prof) => {
+        setProfile(prof);
         setGoalType(prof?.goal || null);
         if (!prof || !prof.onboarded) {
           setNeedsOnboarding(true);
@@ -143,6 +148,7 @@ export default function App() {
     if (s?.user) {
       setUserId(s.user.id);
       const prof = await loadProfile(s.user.id).catch(() => null);
+      setProfile(prof);
       setGoalType(prof?.goal || null);
       if (!prof || !prof.onboarded) {
         setNeedsOnboarding(true);
@@ -155,11 +161,33 @@ export default function App() {
   }
 
   // Called when onboarding finishes — pull fresh (now computed) goals + data.
-  async function handleOnboarded() {
+  // Onboarding hands back { goals, profile }; keep the profile so Settings and
+  // the weight-trend coloring reflect the just-entered answers immediately.
+  async function handleOnboarded(result) {
     setNeedsOnboarding(false);
+    if (result?.profile) {
+      setProfile(result.profile);
+      setGoalType(result.profile.goal || null);
+    }
     setReady(false);
     await bootstrap(userId);
     setReady(true);
+  }
+
+  // Settings → persist one or more profile fields. Throws on failure so the
+  // Settings screen can revert its optimistic selection.
+  async function handleSaveProfile(patch) {
+    const updated = await saveProfileFields(userId, patch);
+    setProfile((p) => ({ ...(p || {}), ...patch }));
+    if ('goal' in patch) setGoalType(patch.goal || null);
+    return updated;
+  }
+
+  // Settings → delete account. Real mode signs the user out (onAuthStateChange
+  // drops them to the guest view); demo mode has no auth event, so reload.
+  async function handleDeleteAccount() {
+    await deleteAccount();
+    if (IS_DEMO) window.location.reload();
   }
 
   async function bootstrap(uid) {
@@ -469,6 +497,10 @@ export default function App() {
       <Sidebar
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        onOpenSettings={() => {
+          setSidebarOpen(false);
+          setSettingsOpen(true);
+        }}
         today={todayTotals}
         todayKey={today}
         goals={goals}
@@ -519,6 +551,15 @@ export default function App() {
             onScan={handleScan}
           />
         </Suspense>
+      )}
+
+      {settingsOpen && (
+        <Settings
+          profile={profile}
+          onClose={() => setSettingsOpen(false)}
+          onSave={handleSaveProfile}
+          onDelete={handleDeleteAccount}
+        />
       )}
     </div>
   );

@@ -121,7 +121,24 @@ export async function sendWeightLog({ weight_value, weight_unit = 'lbs' }) {
     body: JSON.stringify({ weight_value, weight_unit }),
   });
 
-  if (!res.ok) throw new Error('Could not save your weight.');
+  if (!res.ok) {
+    // Surface the server's Kristy-voiced line (e.g. the shared rate-limit
+    // message) as a normal reply, the same way sendChat does, instead of a
+    // generic throw — keeps the rate-limit voice consistent across endpoints.
+    const body = await res.json().catch(() => null);
+    if (body && body.message) {
+      return {
+        error: true,
+        message: body.message,
+        hasFood: false,
+        macros: null,
+        foods: [],
+        insight: '',
+        recalculated: null,
+      };
+    }
+    throw new Error('Could not save your weight.');
+  }
   const data = await res.json();
 
   // Map the /api/weight response onto the chat reply shape.
@@ -145,4 +162,41 @@ export async function sendWeightLog({ weight_value, weight_unit = 'lbs' }) {
     insight: '',
     recalculated: r || null,
   };
+}
+
+/**
+ * Permanently delete the signed-in user's account and all their data, then
+ * sign them out. Real mode hits DELETE /api/account (which clears every
+ * user_id-scoped row and the auth user), then drops the local session so
+ * onAuthStateChange returns the app to the guest experience. Demo mode just
+ * clears the local store. Throws with a friendly message on failure.
+ */
+export async function deleteAccount() {
+  if (IS_DEMO) {
+    try {
+      localStorage.removeItem('kristy:v1');
+    } catch {
+      /* ignore */
+    }
+    return { ok: true };
+  }
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  const token = session?.access_token;
+
+  const res = await fetch(`${apiBase}/api/account`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error((body && body.message) || 'Could not delete your account.');
+  }
+
+  // Clear the local session → onAuthStateChange fires with null → guest view.
+  await supabase.auth.signOut();
+  return { ok: true };
 }

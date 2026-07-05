@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import MacroRing from './MacroRing.jsx';
-import { CloseIcon } from './Icons.jsx';
+import { CloseIcon, GearIcon } from './Icons.jsx';
 import { fmt, n, dateLabel, clampPct } from '../lib/format.js';
 import { trendPoints, buildChart } from '../lib/weightChart.js';
 
@@ -195,6 +195,7 @@ function WeightTrendChart({ history, unit, active }) {
 export default function Sidebar({
   open,
   onClose,
+  onOpenSettings,
   today,
   todayKey,
   goals,
@@ -214,9 +215,14 @@ export default function Sidebar({
       <aside className={`sidebar${open ? ' open' : ''}`} aria-hidden={!open}>
         <div className="sidebar__header">
           <span className="sidebar__logo">Kristy</span>
-          <button className="icon-btn" onClick={onClose} aria-label="Close menu">
-            <CloseIcon />
-          </button>
+          <div className="sidebar__actions">
+            <button className="icon-btn" onClick={onOpenSettings} aria-label="Settings">
+              <GearIcon />
+            </button>
+            <button className="icon-btn" onClick={onClose} aria-label="Close menu">
+              <CloseIcon />
+            </button>
+          </div>
         </div>
 
         {/* Today */}

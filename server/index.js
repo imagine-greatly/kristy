@@ -10,6 +10,7 @@ import barcodeRoute from './routes/barcode.js';
 import photoRoute from './routes/photo.js';
 import onboardingRoute from './routes/onboarding.js';
 import weightRoute from './routes/weight.js';
+import accountRoute from './routes/account.js';
 import { startCron } from './cron.js';
 
 const app = express();
@@ -35,6 +36,7 @@ app.use('/api', barcodeRoute);
 app.use('/api', photoRoute);
 app.use('/api', onboardingRoute);
 app.use('/api', weightRoute);
+app.use('/api', accountRoute);
 
 // ───────── Global error handler (final safety net) ─────────
 // Last in the chain: catches anything a route forwarded via next(err) or threw
