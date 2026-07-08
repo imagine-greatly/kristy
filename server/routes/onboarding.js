@@ -3,6 +3,7 @@ import { requireAuth } from '../lib/supabase.js';
 import { computeGoals } from '../lib/tdee.js';
 import { saveOnboardingProfile } from '../lib/store.js';
 import { saveWeightLog } from '../lib/weightLog.js';
+import { ensureTrial } from '../lib/subscription.js';
 
 const router = Router();
 
@@ -34,7 +35,12 @@ router.post('/onboarding/full', requireAuth, async (req, res) => {
       }
     }
 
-    return res.json({ ok: true, goals, profile: saved });
+    // Every new user who completes onboarding gets a 7-day full-access trial.
+    // Idempotent + non-fatal: a re-onboard won't reset an existing sub, and a
+    // failure here (e.g. pre-migration) never blocks onboarding.
+    const subscription = await ensureTrial(userId);
+
+    return res.json({ ok: true, goals, profile: saved, subscription });
   } catch (err) {
     console.error('[kristy] /api/onboarding/full error:', err.message);
     return res.status(500).json({ error: 'Could not save your profile.' });

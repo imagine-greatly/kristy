@@ -13,6 +13,7 @@ import {
 } from './store.js';
 import { getWeightTrend, normalizeToLbs } from './weightLog.js';
 import { buildWeeklyData, buildGoalsBlock, dayKey } from './context.js';
+import { isPremium } from './subscription.js';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -49,6 +50,10 @@ function buildWeeklyWeightBlock(weekWeights = [], trend = null) {
 
 /** Generate + store this past week's summary for one user. Returns the row or null. */
 export async function generateWeeklySummaryForUser(userId) {
+  // The Sunday summary is a premium (coaching) feature — skip non-premium users
+  // entirely. Gates both the per-user route and the all-users cron below.
+  if (!(await isPremium(userId))) return null;
+
   const [profile, meals, weekWeights, trend] = await Promise.all([
     getFullProfile(userId),
     getRecentMeals(userId, 7),

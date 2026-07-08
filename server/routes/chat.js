@@ -4,6 +4,8 @@ import { userRateLimit } from '../lib/rateLimit.js';
 import { buildProfileBlock, buildWeightBlock } from '../lib/prompts.js';
 import { computeInsight } from '../lib/insights.js';
 import { resolveMeal, generateReply } from '../lib/chatEngine.js';
+import { premiumForReq } from '../lib/subscription.js';
+import { detectHistoryRecall, WEIGHT_UPGRADE_LINE } from '../lib/historyRecall.js';
 import {
   getFullProfile,
   getRecentMeals,
@@ -78,6 +80,51 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
     // 0. Is this a weight log? Decided up front so we can route around the food
     //    path (no Nutritionix/meal save) when it is.
     let detected = detectWeightLog(message);
+
+    // 0a. Premium gate (one cached read per request). Free users keep meal
+    //     logging + today's conversation; the coaching layer (weight tracking,
+    //     history recall, insights) routes to an in-voice upgrade nudge instead.
+    const premium = await premiumForReq(req);
+
+    if (!premium) {
+      // Weigh-in → acknowledge the number, but the trend + adaptive retune are
+      // coaching. Don't save the weight; nudge to upgrade. (Client routes the
+      // `locked` flag to the upgrade view.)
+      if (detected.isWeightLog) {
+        const msg = `Got it — ${detected.value}${detected.unit}. ${WEIGHT_UPGRADE_LINE}`;
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: msg });
+        return res.json({
+          message: msg,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          locked: 'weight',
+          upgrade: true,
+          weightLogged: false,
+          recalculated: null,
+        });
+      }
+
+      // History beyond today ("what did I have yesterday", "this week's recap")
+      // → warm one-line nudge in Kristy's voice, not a paywall screen.
+      const recall = detectHistoryRecall(message);
+      if (recall.locked) {
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: recall.message });
+        return res.json({
+          message: recall.message,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          locked: recall.kind,
+          upgrade: true,
+          recalculated: null,
+        });
+      }
+    }
 
     // 1. Gather context: profile + last 7 days of meals + weight trend + latest
     //    weigh-in (all defensive — weight reads return safe defaults if the
@@ -181,13 +228,20 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
         breakdown: mealResolution ? mealResolution.breakdown : null,
       });
 
-      // Re-pull meals (now including this one) and run proactive insight logic.
-      const freshMeals = await getRecentMeals(userId, 7);
-      const proactive = computeInsight(freshMeals, goals, offsetMin, activeProfile, {
-        trend: weightTrend,
-        lastLoggedAt: latestWeight?.logged_at,
-      });
-      if (proactive) result.insight = proactive; // server insight wins
+      // Proactive insights are a premium (coaching) feature. Free users still
+      // get the meal logged with real macros — just no server-side nudge.
+      if (premium) {
+        // Re-pull meals (now including this one) and run proactive insight logic.
+        const freshMeals = await getRecentMeals(userId, 7);
+        const proactive = computeInsight(freshMeals, goals, offsetMin, activeProfile, {
+          trend: weightTrend,
+          lastLoggedAt: latestWeight?.logged_at,
+        });
+        if (proactive) result.insight = proactive; // server insight wins
+      } else {
+        // Never leak a model-echoed insight to a free user.
+        result.insight = '';
+      }
     }
 
     await saveChatMessage(userId, {

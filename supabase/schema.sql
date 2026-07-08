@@ -109,6 +109,28 @@ create table if not exists weekly_summaries (
   created_at timestamptz default now()
 );
 
+-- Subscriptions — PROVIDER-AGNOSTIC billing state. Stripe (web) is the first
+-- provider; Apple IAP (mobile) will later write to this same table. Features are
+-- NEVER gated on "has a Stripe record" — only on the internal status below. One
+-- row per user (upsert by user_id): whichever provider last wrote wins.
+create table if not exists subscriptions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users on delete cascade,
+  status text not null default 'trialing'
+    check (status in ('trialing', 'active', 'past_due', 'canceled', 'expired')),
+  provider text not null default 'promo'
+    check (provider in ('stripe', 'apple', 'promo')),
+  provider_subscription_id text,
+  provider_customer_id text,   -- Stripe customer id (needed to open the billing portal)
+  trial_ends_at timestamptz,
+  current_period_end timestamptz,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+-- One subscription row per user — the upsert target for every provider webhook.
+create unique index if not exists subscriptions_user_id_key on subscriptions (user_id);
+
 -- Helpful indexes for the per-user, time-ranged reads Kristy makes constantly.
 create index if not exists meal_logs_user_logged_idx on meal_logs (user_id, logged_at desc);
 create index if not exists chat_messages_user_created_idx on chat_messages (user_id, created_at);
@@ -122,6 +144,7 @@ alter table user_goals       enable row level security;
 alter table chat_messages    enable row level security;
 alter table weekly_summaries enable row level security;
 alter table weight_logs      enable row level security;
+alter table subscriptions    enable row level security;
 
 -- meal_logs
 drop policy if exists "own meals" on meal_logs;
@@ -148,6 +171,14 @@ drop policy if exists "Users can only access their own weight logs" on weight_lo
 create policy "Users can only access their own weight logs" on weight_logs
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
+-- subscriptions — a user may READ their own row (so the client can show trial
+-- days / status). All WRITES are service-role only (Stripe/Apple webhooks +
+-- onboarding trial): there is intentionally NO insert/update/delete policy, so
+-- RLS blocks every non-service write while the service role bypasses RLS.
+drop policy if exists "own subscription read" on subscriptions;
+create policy "own subscription read" on subscriptions
+  for select using (auth.uid() = user_id);
+
 -- Auto-create a default goals row the first time a user signs up.
 create or replace function public.handle_new_user()
 returns trigger
@@ -165,3 +196,47 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- ───────────────────────── Subscriptions: premium helper + backfill ─────────────────────────
+
+-- Plan-enforcement concept, expressed once in SQL so the rule is auditable:
+-- a user is "premium" when their subscription is trialing/active AND the
+-- relevant expiry (current_period_end for paid, trial_ends_at for the trial)
+-- is still in the future. The server's isPremium() helper mirrors this exactly
+-- and is the authoritative gate; this function is for ad-hoc checks / dashboards.
+create or replace function public.is_premium(uid uuid)
+returns boolean
+language sql
+stable
+as $$
+  select exists (
+    select 1 from public.subscriptions s
+    where s.user_id = uid
+      and s.status in ('trialing', 'active')
+      and coalesce(s.current_period_end, s.trial_ends_at) > now()
+  );
+$$;
+
+-- Keep updated_at fresh on every write.
+create or replace function public.touch_subscription_updated_at()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+drop trigger if exists subscriptions_touch_updated_at on subscriptions;
+create trigger subscriptions_touch_updated_at
+  before update on subscriptions
+  for each row execute function public.touch_subscription_updated_at();
+
+-- BACKFILL — give every EXISTING user (me + test accounts) a 7-day trial
+-- starting now, matching the automatic trial new users get at onboarding.
+-- Idempotent: users who already have a subscription row are left untouched.
+insert into public.subscriptions (user_id, status, provider, trial_ends_at)
+select u.id, 'trialing', 'promo', now() + interval '7 days'
+from auth.users u
+on conflict (user_id) do nothing;

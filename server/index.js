@@ -11,6 +11,9 @@ import photoRoute from './routes/photo.js';
 import onboardingRoute from './routes/onboarding.js';
 import weightRoute from './routes/weight.js';
 import accountRoute from './routes/account.js';
+import subscriptionRoute from './routes/subscription.js';
+import billingRoute from './routes/billing.js';
+import stripeWebhookRoute from './routes/stripe.js';
 import { startCron } from './cron.js';
 
 const app = express();
@@ -21,6 +24,12 @@ const origins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173')
   .map((s) => s.trim());
 
 app.use(cors({ origin: origins }));
+
+// Stripe webhook FIRST, with a raw body — signature verification needs the
+// exact bytes Stripe signed, so this must run BEFORE express.json() parses (and
+// discards) the raw payload. Everything below uses the JSON parser as normal.
+app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }), stripeWebhookRoute);
+
 app.use(express.json({ limit: '1mb' }));
 
 // Root + health endpoints — both return 200 with no dependencies, so a browser
@@ -37,6 +46,8 @@ app.use('/api', photoRoute);
 app.use('/api', onboardingRoute);
 app.use('/api', weightRoute);
 app.use('/api', accountRoute);
+app.use('/api', subscriptionRoute);
+app.use('/api/billing', billingRoute);
 
 // ───────── Global error handler (final safety net) ─────────
 // Last in the chain: catches anything a route forwarded via next(err) or threw

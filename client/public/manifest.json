@@ -1,7 +1,7 @@
 {
   "name": "Kristy",
   "short_name": "Kristy",
-  "description": "Your nutritionist. Finally.",
+  "description": "Your nutrition coach. Finally.",
   "start_url": "/app",
   "scope": "/app",
   "display": "standalone",

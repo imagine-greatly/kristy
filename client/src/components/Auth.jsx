@@ -226,8 +226,8 @@ export default function Auth() {
       <div>
         <div className="auth__title">Kristy</div>
         <p className="auth__tag">
-          A nutritionist in your pocket that actually knows you — delivered as a
-          conversation, not a dashboard.
+          A nutrition coach in your pocket that actually knows you — delivered as
+          a conversation, not a dashboard.
         </p>
       </div>
 

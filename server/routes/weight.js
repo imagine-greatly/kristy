@@ -8,6 +8,8 @@ import {
   shouldRecalculateTDEE,
   recalculateTDEEFromTrend,
 } from '../lib/weightLog.js';
+import { premiumForReq } from '../lib/subscription.js';
+import { WEIGHT_UPGRADE_LINE } from '../lib/historyRecall.js';
 
 const router = Router();
 
@@ -24,6 +26,20 @@ router.post('/weight', requireAuth, userRateLimit, async (req, res) => {
     return res.status(400).json({ error: 'weight_value is required' });
   }
   const unit = weight_unit === 'kg' ? 'kg' : 'lbs';
+
+  // Weight tracking + adaptive TDEE is a premium (coaching) feature. Free users
+  // get an in-voice nudge instead — the weigh-in is not persisted. (Defense in
+  // depth: the chat pipeline already gates inline weigh-ins the same way.)
+  if (!(await premiumForReq(req))) {
+    return res.json({
+      locked: 'weight',
+      upgrade: true,
+      message: `Got it — ${value} ${unit}. ${WEIGHT_UPGRADE_LINE}`,
+      saved: null,
+      trend: null,
+      recalculated: null,
+    });
+  }
 
   try {
     const saved = await saveWeightLog(userId, value, unit);

@@ -205,6 +205,8 @@ export default function Sidebar({
   historyDays,
   activeDay,
   onSelectDay,
+  premium = true,
+  onUpgrade,
 }) {
   const remaining = n(goals.calories) - n(today.calories);
   const wTrend = weight ? weightTrendStyle(weight.weekChange, weight.goalType) : null;
@@ -279,7 +281,15 @@ export default function Sidebar({
         {/* Weight */}
         <div className="sb-section">
           <div className="sb-section__title">Weight</div>
-          {weight ? (
+          {!premium ? (
+            <button className="weight-locked" onClick={onUpgrade}>
+              <span className="weight-locked__row">
+                <span className="weight-locked__lock">🔒</span>
+                <span className="weight-locked__title">Weight trends &amp; adaptive targets</span>
+              </span>
+              <span className="weight-locked__cta">Part of coaching — unlock →</span>
+            </button>
+          ) : weight ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               <span
                 style={{

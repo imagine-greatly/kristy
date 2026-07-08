@@ -141,6 +141,20 @@ export async function sendWeightLog({ weight_value, weight_unit = 'lbs' }) {
   }
   const data = await res.json();
 
+  // Free user → the server returns a locked upgrade nudge instead of saving.
+  if (data.locked) {
+    return {
+      message: data.message,
+      hasFood: false,
+      macros: null,
+      foods: [],
+      insight: '',
+      recalculated: null,
+      locked: data.locked,
+      upgrade: true,
+    };
+  }
+
   // Map the /api/weight response onto the chat reply shape.
   const r = data.recalculated;
   let message = `Logged — ${data.saved.value} ${data.saved.unit}.`;
@@ -199,4 +213,95 @@ export async function deleteAccount() {
   // Clear the local session → onAuthStateChange fires with null → guest view.
   await supabase.auth.signOut();
   return { ok: true };
+}
+
+/* ───────────────────────── Subscription / billing ───────────────────────── */
+
+// A non-premium snapshot — the safe default when we can't reach the server.
+const FREE_SNAPSHOT = {
+  premium: false,
+  status: 'none',
+  provider: null,
+  trialEndsAt: null,
+  currentPeriodEnd: null,
+  trialDaysLeft: 0,
+  trialExpired: false,
+};
+
+async function authToken() {
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  return session?.access_token;
+}
+
+/**
+ * The signed-in user's billing snapshot (premium flag, status, trial days).
+ * Demo mode has no server → return a live trial so the full UI is explorable.
+ * Never throws: on any failure it returns the safe non-premium snapshot.
+ */
+export async function getSubscription() {
+  if (IS_DEMO) {
+    return {
+      premium: true,
+      status: 'trialing',
+      provider: 'promo',
+      trialEndsAt: new Date(Date.now() + 7 * 86400000).toISOString(),
+      currentPeriodEnd: null,
+      trialDaysLeft: 7,
+      trialExpired: false,
+    };
+  }
+  try {
+    const res = await fetch(`${apiBase}/api/subscription`, {
+      headers: { Authorization: `Bearer ${await authToken()}` },
+    });
+    if (!res.ok) return FREE_SNAPSHOT;
+    return await res.json();
+  } catch {
+    return FREE_SNAPSHOT;
+  }
+}
+
+/**
+ * Start Stripe Checkout for a plan ('monthly' | 'annual'). Redirects the browser
+ * to the returned Checkout URL. Throws a friendly message on failure so the
+ * upgrade view can show it.
+ */
+export async function startCheckout(plan = 'monthly') {
+  if (IS_DEMO) {
+    throw new Error('Billing runs in the live app — this is a demo.');
+  }
+  const res = await fetch(`${apiBase}/api/billing/checkout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${await authToken()}`,
+    },
+    body: JSON.stringify({ plan }),
+  });
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body?.url) {
+    throw new Error((body && body.message) || 'Could not start checkout.');
+  }
+  window.location.href = body.url;
+}
+
+/**
+ * Open the Stripe customer portal (manage / cancel). Redirects to the portal URL.
+ * Throws a friendly message on failure (e.g. no subscription to manage yet).
+ */
+export async function openBillingPortal() {
+  if (IS_DEMO) {
+    throw new Error('Billing runs in the live app — this is a demo.');
+  }
+  const res = await fetch(`${apiBase}/api/billing/portal`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${await authToken()}` },
+  });
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body?.url) {
+    throw new Error((body && body.message) || 'Could not open the billing portal.');
+  }
+  window.location.href = body.url;
 }

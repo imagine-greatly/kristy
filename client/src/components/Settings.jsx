@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { STEPS } from '../lib/onboardingSteps.js';
 import { CloseIcon } from './Icons.jsx';
+import { openBillingPortal } from '../lib/api.js';
+
+// A quiet, non-nagging status line for the Membership section.
+function membershipLine(sub) {
+  if (!sub) return 'Free plan';
+  if (sub.status === 'trialing' && sub.premium) {
+    const d = sub.trialDaysLeft;
+    return `${d} day${d === 1 ? '' : 's'} left in your trial`;
+  }
+  if (sub.status === 'active') return 'Premium — active';
+  if (sub.status === 'past_due') return 'Payment issue — update your card';
+  if (sub.trialExpired) return 'Trial ended';
+  if (sub.status === 'canceled') return 'Canceled — renew anytime';
+  return 'Free plan';
+}
 
 // Reuse onboarding's option lists so settings and onboarding never drift.
 const opt = (id) => STEPS.find((s) => s.id === id)?.options || [];
@@ -37,7 +52,7 @@ function ChipGroup({ options, value, onPick, disabled }) {
  * @param onSave   (patch) => Promise — persists one or more profile fields
  * @param onDelete () => Promise — deletes the account (and signs out)
  */
-export default function Settings({ profile, onClose, onSave, onDelete }) {
+export default function Settings({ profile, subscription, onUpgrade, onClose, onSave, onDelete }) {
   const [vals, setVals] = useState({
     goal: profile?.goal || null,
     weight_unit: profile?.weight_unit || 'lbs',
@@ -46,6 +61,25 @@ export default function Settings({ profile, onClose, onSave, onDelete }) {
   });
   const [savingKey, setSavingKey] = useState('');
   const [error, setError] = useState('');
+
+  // Manage-subscription (Stripe portal) state.
+  const [managing, setManaging] = useState(false);
+  const [manageError, setManageError] = useState('');
+
+  const canManage =
+    subscription?.provider === 'stripe' &&
+    ['active', 'past_due', 'canceled'].includes(subscription?.status);
+
+  async function handleManage() {
+    setManaging(true);
+    setManageError('');
+    try {
+      await openBillingPortal(); // redirects on success
+    } catch (e) {
+      setManageError(e?.message || 'Could not open the billing portal.');
+      setManaging(false);
+    }
+  }
 
   // Delete-account confirmation state.
   const [confirming, setConfirming] = useState(false);
@@ -94,6 +128,29 @@ export default function Settings({ profile, onClose, onSave, onDelete }) {
         </header>
 
         <div className="settings__body">
+          <section className="set-section">
+            <div className="set-section__label">Membership</div>
+            <div className="set-membership">
+              <span className="set-membership__status">
+                {membershipLine(subscription)}
+              </span>
+              {canManage ? (
+                <button
+                  className="set-membership__btn"
+                  onClick={handleManage}
+                  disabled={managing}
+                >
+                  {managing ? 'Opening…' : 'Manage'}
+                </button>
+              ) : (
+                <button className="set-membership__btn" onClick={onUpgrade}>
+                  {subscription?.premium ? 'See plans' : 'Upgrade'}
+                </button>
+              )}
+            </div>
+            {manageError && <p className="set-error">{manageError}</p>}
+          </section>
+
           <section className="set-section">
             <div className="set-section__label">
               Goal {savingKey === 'goal' && <span className="set-saving">saving…</span>}

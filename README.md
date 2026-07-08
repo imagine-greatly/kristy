@@ -149,10 +149,26 @@ gate. The endpoint is IP rate-limited to protect Claude/USDA spend.
 | `POST /api/onboarding`     | Bearer      | Save profile + compute macro goals                  |
 | `POST /api/weekly-summary` | Bearer/cron | Generate weekly recap (user token or cron secret)   |
 | `GET  /api/history/:date`  | Bearer      | Chat messages for a given `YYYY-MM-DD`              |
+| `GET  /api/subscription`   | Bearer      | Billing snapshot (premium flag, status, trial days) |
+| `POST /api/billing/checkout` | Bearer    | Create a Stripe Checkout session for a plan          |
+| `POST /api/billing/portal` | Bearer      | Open the Stripe customer portal (manage/cancel)     |
+| `POST /api/stripe/webhook` | Stripe sig  | Provider webhook → subscriptions state (raw body)   |
 | `GET  /api/health`         | None        | Health check                                        |
 
 All AI calls go through the server — the Anthropic and Supabase service-role keys
 never reach the browser.
+
+### Subscriptions & feature gating
+Every new user gets an automatic **7-day full-access trial** at onboarding (no card).
+Feature access is decided in ONE place — `server/lib/subscription.js` `isPremium()` —
+against a **provider-agnostic** `subscriptions` table (Stripe today, Apple IAP later
+write the same state; never gate on "has a Stripe record"). A user is premium when
+`status ∈ {trialing, active}` and the relevant expiry is still in the future
+(evaluated at read time, so a lapsed trial needs no cron). Free tier: auth, onboarding,
+meal logging (chat/photo/barcode + USDA macros), daily totals, today's conversation.
+Premium: weight tracking + adaptive TDEE, weekly summaries, proactive insights,
+history recall beyond today, the sidebar trend chart. Free users hit an in-voice
+upgrade nudge, not a paywall.
 
 ---
 
@@ -163,7 +179,7 @@ Kristy deploys as two independent services:
 | Piece   | Target      | Notes                                                              |
 | ------- | ----------- | ----------------------------------------------------------------- |
 | Client  | **Vercel**  | Static Vite build. Set the `VITE_*` env vars in the Vercel project; `VITE_API_URL` points at the Railway server URL. Build: `npm run build --workspace client`, output `client/dist`. |
-| Server  | **Railway** | Node/Express. Set `ANTHROPIC_API_KEY`, `USDA_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `CLIENT_ORIGIN` (your Vercel domain), and optionally `CRON_SECRET`. Start: `npm run start`. |
+| Server  | **Railway** | Node/Express. Set `ANTHROPIC_API_KEY`, `USDA_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `CLIENT_ORIGIN` (your Vercel domain), the Stripe keys (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_MONTHLY`, `STRIPE_PRICE_ANNUAL`), and optionally `CRON_SECRET`. Start: `npm run start`. |
 
 Point the client's `VITE_API_URL` at the deployed server, and set the server's
 `CLIENT_ORIGIN` to the deployed client domain so CORS allows it. Database is Supabase

@@ -252,3 +252,59 @@ export async function saveWeeklySummary(userId, summary) {
     .single();
   return data;
 }
+
+/* ───────────────────────── Subscriptions ─────────────────────────
+   Provider-agnostic billing state — one row per user, upserted by every
+   provider (Stripe now, Apple later) and by the onboarding trial. All reads
+   are defensive: if the migration hasn't been applied yet the query errors, and
+   we return null (→ the user is treated as non-premium, a safe default) rather
+   than breaking the request. */
+
+const SUBSCRIPTION_COLUMNS =
+  'id, user_id, status, provider, provider_subscription_id, provider_customer_id, ' +
+  'trial_ends_at, current_period_end, created_at, updated_at';
+
+/** The user's subscription row, or null (no row / table not migrated yet). */
+export async function getSubscription(userId) {
+  const { data, error } = await supabase
+    .from('subscriptions')
+    .select(SUBSCRIPTION_COLUMNS)
+    .eq('user_id', userId)
+    .maybeSingle();
+  if (error) {
+    console.error('[kristy] getSubscription failed:', error.message);
+    return null;
+  }
+  return data || null;
+}
+
+/** Look a subscription up by the provider's customer id (Stripe webhook path). */
+export async function getSubscriptionByCustomer(customerId) {
+  if (!customerId) return null;
+  const { data, error } = await supabase
+    .from('subscriptions')
+    .select(SUBSCRIPTION_COLUMNS)
+    .eq('provider_customer_id', customerId)
+    .maybeSingle();
+  if (error) {
+    console.error('[kristy] getSubscriptionByCustomer failed:', error.message);
+    return null;
+  }
+  return data || null;
+}
+
+/**
+ * Upsert the user's single subscription row (keyed by user_id). Used by the
+ * onboarding trial and every provider webhook. Only the fields passed in are
+ * written (plus updated_at). Throws on error so callers can log with context.
+ */
+export async function upsertSubscription(userId, patch = {}) {
+  const row = { user_id: userId, ...patch, updated_at: new Date().toISOString() };
+  const { data, error } = await supabase
+    .from('subscriptions')
+    .upsert(row, { onConflict: 'user_id' })
+    .select(SUBSCRIPTION_COLUMNS)
+    .single();
+  if (error) throw new Error(error.message);
+  return data;
+}

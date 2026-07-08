@@ -1515,3 +1515,290 @@ textarea {
   opacity: 0.45;
   cursor: default;
 }
+
+/* ───────────────────────── Membership (Settings) ───────────────────────── */
+
+.set-membership {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--gold-30);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.set-membership__status {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+.set-membership__btn {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent-gold);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: filter 0.15s ease;
+}
+.set-membership__btn:hover {
+  filter: brightness(1.06);
+}
+.set-membership__btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ───────────────────────── Locked weight (Sidebar) ───────────────────────── */
+
+.weight-locked {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  border: 1px dashed var(--gold-40);
+  border-radius: 12px;
+  background: var(--surface-2);
+  transition: border-color 0.15s ease;
+}
+.weight-locked:hover {
+  border-color: var(--gold-50);
+}
+.weight-locked__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.weight-locked__lock {
+  font-size: 13px;
+}
+.weight-locked__title {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+.weight-locked__cta {
+  font-size: 11px;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
+}
+
+/* ───────────────────────── Locked chat reply → upgrade ───────────────────────── */
+
+.bubble-upgrade {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--accent-gold);
+  background: transparent;
+  border: 1px solid var(--gold-40);
+  border-radius: 999px;
+  padding: 5px 13px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.bubble-upgrade:hover {
+  background: var(--surface-2);
+  border-color: var(--gold-50);
+}
+
+/* ───────────────────────── Upgrade view ─────────────────────────
+   Bottom sheet on mobile, centered card on desktop — mirrors the guest gate so
+   it reads as the same product, not a bolted-on paywall. */
+
+.upgrade {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.upgrade__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 18, 11, 0.6);
+  backdrop-filter: blur(2px);
+  animation: gate-fade 0.28s ease;
+}
+.upgrade__sheet {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--gold-40);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding: 28px 22px calc(24px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 -18px 50px rgba(0, 0, 0, 0.45);
+  animation: gate-rise 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.upgrade__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.upgrade__avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--gold-40);
+  color: var(--accent-gold);
+  font-family: var(--font-serif);
+  font-size: 18px;
+}
+.upgrade__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent-gold);
+}
+.upgrade__tag {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 360px;
+}
+.upgrade__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  max-width: 360px;
+  margin: 6px 0;
+  text-align: left;
+}
+.upgrade__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+.upgrade__check {
+  color: var(--accent-mint);
+  font-weight: 700;
+}
+.upgrade__plans {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 6px;
+}
+.upgrade__plan {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  padding: 13px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-2);
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.upgrade__plan:hover {
+  border-color: var(--gold-40);
+}
+.upgrade__plan.selected {
+  border-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 9%, var(--surface-2));
+}
+.upgrade__badge {
+  position: absolute;
+  top: -9px;
+  right: 10px;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  background: var(--accent-gold);
+  color: var(--bg);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.upgrade__plan-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.upgrade__plan-price {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-primary);
+}
+.upgrade__plan-per {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+.upgrade__plan-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+.upgrade__error {
+  font-size: 13px;
+  color: #e88;
+}
+.upgrade__cta {
+  width: 100%;
+  max-width: 360px;
+  background: var(--accent-gold);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px;
+  border-radius: 12px;
+  margin-top: 4px;
+  transition: filter 0.15s ease;
+}
+.upgrade__cta:hover {
+  filter: brightness(1.06);
+}
+.upgrade__cta:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.upgrade__manage {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+}
+.upgrade__manage:hover {
+  color: var(--text-primary);
+}
+.upgrade__legal {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+@media (min-width: 769px) {
+  .upgrade {
+    justify-content: center;
+    padding: 24px;
+  }
+  .upgrade__sheet {
+    border: 1px solid var(--gold-40);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  }
+}

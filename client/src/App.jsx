@@ -12,7 +12,7 @@ import {
   loadProfile,
   loadWeightHistory,
 } from './lib/data.js';
-import { sendChat, deleteAccount } from './lib/api.js';
+import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
 import { sendBarcode, sendPhoto } from './lib/logging.js';
 import {
   getLastActiveDate,
@@ -32,6 +32,7 @@ import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
 import Settings from './components/Settings.jsx';
+import Upgrade from './components/Upgrade.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -95,6 +96,8 @@ export default function App() {
   const [needsOnboarding, setNeedsOnboarding] = useState(false);
   const [profile, setProfile] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [subscription, setSubscription] = useState(null);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
 
   const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
   const [meals, setMeals] = useState([]);
@@ -194,16 +197,18 @@ export default function App() {
     const now = new Date();
     const todayKey = dayKey(now);
 
-    const [g, m, dayMsgs, summary, weights] = await Promise.all([
+    const [g, m, dayMsgs, summary, weights, sub] = await Promise.all([
       loadGoals(uid),
       loadRecentMeals(uid, 7),
       loadDayMessages(uid, todayKey),
       loadLatestSummary(uid),
       loadWeightHistory(uid, 90),
+      getSubscription(),
     ]);
     setGoals(g);
     setMeals(m);
     setWeightHistory(weights);
+    setSubscription(sub);
     setViewingDate(todayKey);
     setLiveDay(todayKey);
 
@@ -235,6 +240,39 @@ export default function App() {
     setMessages(msgs);
     setLastActiveDate(todayKey); // always advance on load
   }
+
+  // Open the upgrade view (from a locked feature, the sidebar, or settings).
+  function openUpgrade() {
+    setSidebarOpen(false);
+    setUpgradeOpen(true);
+  }
+
+  // Returning from Stripe Checkout: strip the query param, and if it was a
+  // success poll the subscription a few times (the webhook lands just after the
+  // redirect) so the UI flips to active without a manual refresh.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const checkout = params.get('checkout');
+    if (!checkout) return;
+    window.history.replaceState({}, '', window.location.pathname);
+    if (checkout !== 'success' || IS_DEMO) return;
+
+    let tries = 0;
+    let cancelled = false;
+    const poll = async () => {
+      const sub = await getSubscription();
+      if (cancelled) return;
+      setSubscription(sub);
+      if (sub.status !== 'active' && tries < 4) {
+        tries += 1;
+        setTimeout(poll, 1500);
+      }
+    };
+    poll();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   /* ───────── Derived ───────── */
   const dayMap = useMemo(() => aggregate(meals), [meals]);
@@ -313,6 +351,9 @@ export default function App() {
         macros: result.hasFood
           ? { ...result.macros, foods: result.foods, insight: result.insight }
           : null,
+        // A locked-feature reply (free-user weigh-in / history recall) → show
+        // the quiet "Unlock coaching" affordance under the bubble.
+        upgrade: !!result.upgrade,
       };
       setMessages((prev) => [...prev, aiMsg]);
 
@@ -510,6 +551,8 @@ export default function App() {
         historyDays={historyDays}
         activeDay={viewingDate}
         onSelectDay={handleSelectDay}
+        premium={subscription?.premium ?? true}
+        onUpgrade={openUpgrade}
       />
 
       <div className="chat" ref={chatRef}>
@@ -523,7 +566,9 @@ export default function App() {
         {showEmpty ? (
           <EmptyState onPick={(ex) => handleSend(ex)} />
         ) : (
-          messages.map((m) => <MessageBubble key={m.id} message={m} />)
+          messages.map((m) => (
+            <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
+          ))
         )}
 
         {typing && <TypingIndicator />}
@@ -556,9 +601,18 @@ export default function App() {
       {settingsOpen && (
         <Settings
           profile={profile}
+          subscription={subscription}
+          onUpgrade={openUpgrade}
           onClose={() => setSettingsOpen(false)}
           onSave={handleSaveProfile}
           onDelete={handleDeleteAccount}
+        />
+      )}
+
+      {upgradeOpen && (
+        <Upgrade
+          subscription={subscription}
+          onClose={() => setUpgradeOpen(false)}
         />
       )}
     </div>
