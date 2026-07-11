@@ -3,6 +3,7 @@ import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { buildProfileBlock, buildWeightBlock } from '../lib/prompts.js';
 import { computeInsight } from '../lib/insights.js';
+import { pushToUser } from '../lib/push.js';
 import { resolveMeal, generateReply } from '../lib/chatEngine.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { detectHistoryRecall, WEIGHT_UPGRADE_LINE } from '../lib/historyRecall.js';
@@ -237,7 +238,12 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           trend: weightTrend,
           lastLoggedAt: latestWeight?.logged_at,
         });
-        if (proactive) result.insight = proactive; // server insight wins
+        if (proactive) {
+          result.insight = proactive; // server insight wins
+          // Mobile push: deliver the insight as a notification too. Fire-and-forget
+          // and a no-op for users with no registered device (i.e. web-only users).
+          pushToUser(userId, { title: 'Kristy', body: proactive }).catch(() => {});
+        }
       } else {
         // Never leak a model-echoed insight to a free user.
         result.insight = '';

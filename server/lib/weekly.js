@@ -14,6 +14,7 @@ import {
 import { getWeightTrend, normalizeToLbs } from './weightLog.js';
 import { buildWeeklyData, buildGoalsBlock, dayKey } from './context.js';
 import { isPremium } from './subscription.js';
+import { pushToUser } from './push.js';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -93,7 +94,7 @@ export async function generateWeeklySummaryForUser(userId) {
   const weekStartDate = new Date();
   weekStartDate.setDate(weekStartDate.getDate() - 6);
 
-  return saveWeeklySummary(userId, {
+  const row = await saveWeeklySummary(userId, {
     week_start: dayKey(weekStartDate),
     summary_text: summaryText,
     avg_calories: averages.calories,
@@ -101,6 +102,18 @@ export async function generateWeeklySummaryForUser(userId) {
     avg_carbs: averages.carbs,
     avg_fat: averages.fat,
   });
+
+  // Mobile push: let the user know their Sunday read is ready. Fire-and-forget;
+  // a no-op for users with no registered device.
+  if (row) {
+    pushToUser(userId, {
+      title: 'Your weekly read is ready',
+      body: 'Kristy summarized your week — what worked, and what to fix.',
+      data: { type: 'weekly_summary' },
+    }).catch(() => {});
+  }
+
+  return row;
 }
 
 /** Run for every user — used by the Sunday cron. */

@@ -14,6 +14,8 @@ import accountRoute from './routes/account.js';
 import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
+import revenueCatWebhookRoute from './routes/revenuecat.js';
+import pushRoute from './routes/push.js';
 import { startCron } from './cron.js';
 
 const app = express();
@@ -48,6 +50,10 @@ app.use('/api', weightRoute);
 app.use('/api', accountRoute);
 app.use('/api', subscriptionRoute);
 app.use('/api/billing', billingRoute);
+// Mobile additions: RevenueCat (Apple IAP) webhook + Expo push-token registration.
+// Both use the JSON parser above (RC, unlike Stripe, needs no raw-body signature).
+app.use('/api/revenuecat', revenueCatWebhookRoute);
+app.use('/api/push', pushRoute);
 
 // ───────── Global error handler (final safety net) ─────────
 // Last in the chain: catches anything a route forwarded via next(err) or threw
