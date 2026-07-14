@@ -11,6 +11,7 @@ import photoRoute from './routes/photo.js';
 import onboardingRoute from './routes/onboarding.js';
 import weightRoute from './routes/weight.js';
 import accountRoute from './routes/account.js';
+import verdictRoute, { guestVerdictRouter } from './routes/verdict.js';
 import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
@@ -41,6 +42,8 @@ app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'kristy' }))
 
 app.use('/api', chatRoute);
 app.use('/api/guest', guestRoute); // no auth — the try-first guest experience
+app.use('/api/guest', guestVerdictRouter); // no auth — guest verdict (shares the guest IP budget)
+app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', historyRoute);
 app.use('/api', weeklySummaryRoute);
 app.use('/api', barcodeRoute);

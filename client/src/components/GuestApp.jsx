@@ -4,7 +4,9 @@ import MessageBubble from './MessageBubble.jsx';
 import TypingIndicator from './TypingIndicator.jsx';
 import InputBar from './InputBar.jsx';
 import GuestGate from './GuestGate.jsx';
+import VerdictCard from './VerdictCard.jsx';
 import { sendGuestChat } from '../lib/api.js';
+import { sendGuestVerdict } from '../lib/logging.js';
 
 const rid = () =>
   (crypto.randomUUID && crypto.randomUUID()) || `id-${Date.now()}-${Math.random()}`;
@@ -38,6 +40,8 @@ export default function GuestApp() {
   // gate: null | { line, terminal, reason }. Terminal gates (cap / rate limit)
   // can't be dismissed; a memory gate or the manual "Sign in" can.
   const [gate, setGate] = useState(null);
+  // Kristy's Verdict overlay — the acquisition funnel, fully open to guests.
+  const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
 
   const chatRef = useRef(null);
 
@@ -124,6 +128,33 @@ export default function GuestApp() {
     }
   }
 
+  // Verdict is fully functional for guests — this is the funnel, not gated. On
+  // the shared IP cap the server returns { gate:true }, which we surface as the
+  // terminal limit gate (same as chat) instead of a card.
+  async function handleVerdictFile(file) {
+    if (!file || !!gate) return;
+    setVerdict({ loading: true, data: null, error: null });
+    try {
+      const result = await sendGuestVerdict({ file });
+      if (result?.gate) {
+        setVerdict(null);
+        setGate({ reason: 'limit', line: LIMIT_LINE, terminal: true });
+        return;
+      }
+      if (result?.error) {
+        setVerdict({ loading: false, data: null, error: result.message });
+        return;
+      }
+      setVerdict({ loading: false, data: result, error: null });
+    } catch {
+      setVerdict({
+        loading: false,
+        data: null,
+        error: "Couldn't read that one clearly — try another shot, better lit if you can.",
+      });
+    }
+  }
+
   const showEmpty = messages.length === 0 && !typing;
 
   return (
@@ -164,7 +195,20 @@ export default function GuestApp() {
         photoPreview={null}
         onClearPhoto={() => {}}
         onSendPhoto={() => {}}
+        // Verdict IS the funnel — fully live for guests, never gated behind sign-in.
+        onVerdictFile={handleVerdictFile}
       />
+
+      {verdict && (
+        <VerdictCard
+          loading={verdict.loading}
+          verdict={verdict.data}
+          error={verdict.error}
+          isGuest
+          onClose={() => setVerdict(null)}
+          onSignIn={() => setGate({ reason: 'invite', line: INVITE_LINE, terminal: false })}
+        />
+      )}
 
       {gate && (
         <GuestGate

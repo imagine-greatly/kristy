@@ -39,6 +39,19 @@ export function CameraIcon({ size = 20 }) {
   );
 }
 
+// Kristy's Verdict — a scan viewfinder with a sparkle: "scan your haul, get the read".
+export function VerdictIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 8V6a2 2 0 0 1 2-2h2" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M20 16v2a2 2 0 0 1-2 2h-2" />
+      <path d="M8 20H6a2 2 0 0 1-2-2v-2" />
+      <path d="M12 8.5l1.15 2.35L15.5 12l-2.35 1.15L12 15.5l-1.15-2.35L8.5 12l2.35-1.15z" />
+    </svg>
+  );
+}
+
 export function GearIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

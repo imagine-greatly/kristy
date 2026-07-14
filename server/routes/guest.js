@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { resolveMeal, generateReply } from '../lib/chatEngine.js';
 import { detectMemoryAction } from '../lib/guestGate.js';
+import { clientIp, rateLimited } from '../lib/guestRate.js';
 
 // POST /api/guest/chat — the "try-first" experience. No auth, no Supabase, no
 // persistence of any kind. A brand-new visitor talks to the real Kristy (same
@@ -29,33 +30,9 @@ const GUEST_CONTEXT = {
 };
 
 /* ───────────────────────── IP rate limiter ─────────────────────────
-   In-memory sliding window — caps Claude + USDA spend from anonymous/bot
-   traffic. Good enough for a single instance; swap for a shared store if this
-   ever runs multi-process. Only real inference requests consume a slot (cheap
-   regex-gated responses do not). */
-const WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_PER_WINDOW = 8;
-const hits = new Map(); // ip -> number[] (timestamps)
-
-function clientIp(req) {
-  const fwd = req.headers['x-forwarded-for'];
-  if (fwd) return String(fwd).split(',')[0].trim();
-  return req.ip || req.socket?.remoteAddress || 'unknown';
-}
-
-// Returns true when the caller is over the limit. Only records a hit when it
-// isn't — so a gated request never counts against a future real message.
-function rateLimited(ip) {
-  const now = Date.now();
-  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
-  if (recent.length >= MAX_PER_WINDOW) {
-    hits.set(ip, recent);
-    return true;
-  }
-  recent.push(now);
-  hits.set(ip, recent);
-  return false;
-}
+   The sliding-window limiter now lives in lib/guestRate.js so guest chat and
+   guest verdict (routes/verdict.js) draw from the SAME per-IP budget — a guest
+   can't get a fresh pool of free verdicts on top of their free chats. */
 
 router.post('/chat', async (req, res) => {
   const { message, conversationHistory = [] } = req.body || {};

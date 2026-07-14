@@ -9,6 +9,7 @@ const USER_TABLES = [
   'weight_logs',
   'chat_messages',
   'weekly_summaries',
+  'verdicts',
   'subscriptions',
   'user_goals',
 ];

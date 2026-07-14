@@ -1,16 +1,12 @@
 import { Router } from 'express';
-import multer from 'multer';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
+import { imageUpload } from '../lib/upload.js';
 import { anthropic, MODEL } from '../lib/anthropic.js';
 import { parseChatJSON } from '../lib/parse.js';
 import { saveMeal, saveChatMessage } from '../lib/store.js';
 
 const router = Router();
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 12 * 1024 * 1024 }, // 12MB
-});
 
 const PHOTO_SYSTEM = `You are Kristy, a nutrition assistant. The user has sent a photo of their food. Estimate the macros as accurately as possible based on what you can see. Be honest about uncertainty — if it's hard to tell portion size, say so and give a range. Respond ONLY with valid JSON:
 {
@@ -28,7 +24,7 @@ const ERROR_MSG = "Couldn't read that photo clearly — try again or type it out
 // POST /api/photo  (multipart: image, message?) → Claude vision estimate.
 // Returns the same shape as /api/chat (plus isEstimate / estimateNote).
 // userRateLimit runs before multer so a limited caller never uploads the file.
-router.post('/photo', requireAuth, userRateLimit, upload.single('image'), async (req, res) => {
+router.post('/photo', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
   const userId = req.user.id;
   const message = (req.body?.message || '').trim();
 

@@ -13,7 +13,7 @@ import {
   loadWeightHistory,
 } from './lib/data.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
-import { sendBarcode, sendPhoto } from './lib/logging.js';
+import { sendBarcode, sendPhoto, sendVerdict } from './lib/logging.js';
 import {
   getLastActiveDate,
   setLastActiveDate,
@@ -33,6 +33,7 @@ import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
 import Settings from './components/Settings.jsx';
 import Upgrade from './components/Upgrade.jsx';
+import VerdictCard from './components/VerdictCard.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -112,6 +113,8 @@ export default function App() {
   const [cameraOpen, setCameraOpen] = useState(false);
   const [photoFile, setPhotoFile] = useState(null);
   const [photoPreview, setPhotoPreview] = useState(null);
+  // Kristy's Verdict overlay (separate pipeline — never touches meals/thread).
+  const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -479,6 +482,28 @@ export default function App() {
     });
   }
 
+  /* ───────── Kristy's Verdict ─────────
+     A one-shot scan: photo → verdict card overlay. Deliberately separate from
+     meal logging — it never appends to the thread and never creates a meal. */
+  async function handleVerdictFile(file) {
+    if (!file) return;
+    setVerdict({ loading: true, data: null, error: null });
+    try {
+      const result = await sendVerdict({ file });
+      if (result?.error) {
+        setVerdict({ loading: false, data: null, error: result.message });
+      } else {
+        setVerdict({ loading: false, data: result, error: null });
+      }
+    } catch (err) {
+      setVerdict({
+        loading: false,
+        data: null,
+        error: "Couldn't read that one clearly — try another shot, better lit if you can.",
+      });
+    }
+  }
+
   /* ───────── Goals ───────── */
   async function handleSaveGoal(key, value) {
     const next = { ...goals, [key]: value };
@@ -585,6 +610,17 @@ export default function App() {
           photoPreview={photoPreview}
           onClearPhoto={clearPhoto}
           onSendPhoto={handleSendPhoto}
+          onVerdictFile={handleVerdictFile}
+        />
+      )}
+
+      {verdict && (
+        <VerdictCard
+          loading={verdict.loading}
+          verdict={verdict.data}
+          error={verdict.error}
+          isGuest={false}
+          onClose={() => setVerdict(null)}
         />
       )}
 

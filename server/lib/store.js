@@ -162,6 +162,26 @@ export async function saveMeal(userId, { foods, macros, rawInput, source = null,
   return data;
 }
 
+/**
+ * Persist one authed verdict (service-role write). Best-effort: a verdict is a
+ * share-card, not a meal — if the verdicts table hasn't been migrated yet the
+ * insert errors and we swallow it (logged) rather than failing the request.
+ * Mirrors the un-migrated-table tolerance used elsewhere. Guests never call this.
+ * IMPORTANT: this does NOT touch meal_logs — a scanned haul is not an eaten meal.
+ */
+export async function saveVerdict(userId, { kind, verdict_line, payload }) {
+  const { data, error } = await supabase
+    .from('verdicts')
+    .insert({ user_id: userId, kind, verdict_line, payload })
+    .select('id')
+    .single();
+  if (error) {
+    console.warn('[kristy] saveVerdict skipped:', error.message);
+    return null;
+  }
+  return data;
+}
+
 export async function saveChatMessage(userId, { role, content, macros = null }) {
   const { data } = await supabase
     .from('chat_messages')

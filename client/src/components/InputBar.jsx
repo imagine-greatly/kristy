@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { ArrowUpIcon, BarcodeIcon, CameraIcon } from './Icons.jsx';
+import { ArrowUpIcon, BarcodeIcon, CameraIcon, VerdictIcon } from './Icons.jsx';
 
 export default function InputBar({
   value,
@@ -11,9 +11,11 @@ export default function InputBar({
   photoPreview,
   onClearPhoto,
   onSendPhoto,
+  onVerdictFile,
 }) {
   const ref = useRef(null);
   const fileRef = useRef(null);
+  const verdictRef = useRef(null);
   const [focused, setFocused] = useState(false);
 
   // Auto-grow up to 120px.
@@ -44,6 +46,12 @@ export default function InputBar({
     const f = e.target.files?.[0];
     if (f) onPhotoFile(f);
     e.target.value = ''; // allow re-selecting the same file
+  };
+
+  const handleVerdictFile = (e) => {
+    const f = e.target.files?.[0];
+    if (f) onVerdictFile?.(f);
+    e.target.value = '';
   };
 
   return (
@@ -80,6 +88,26 @@ export default function InputBar({
           style={{ display: 'none' }}
           onChange={handleFile}
         />
+        {onVerdictFile && (
+          <>
+            <button
+              className="input-icon-btn input-icon-btn--verdict"
+              onClick={() => verdictRef.current?.click()}
+              aria-label="Kristy's Verdict — scan a meal or haul"
+              title="Kristy's Verdict"
+            >
+              <VerdictIcon />
+            </button>
+            <input
+              ref={verdictRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              style={{ display: 'none' }}
+              onChange={handleVerdictFile}
+            />
+          </>
+        )}
 
         <textarea
           ref={ref}
