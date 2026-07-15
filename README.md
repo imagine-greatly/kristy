@@ -1,9 +1,8 @@
 # Kristy Approved
 
-Kristy is an AI nutrition coach delivered as a conversation, not a dashboard. You
-tell it what you ate in plain language and it does the rest — working out the macros
-and coaching you like a nutritionist who remembers your history. No logging forms,
-no food-search screens; the chat is the interface.
+A conversational AI nutrition coach. No logging forms, no food-search screens — you
+just talk, and it handles the tracking underneath. Built around real food and real
+conversation.
 
 ## Philosophy
 
