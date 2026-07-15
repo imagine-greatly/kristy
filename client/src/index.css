@@ -1,6 +1,9 @@
 /* ───────────────────────── Kristy — Design System v2 ─────────────────────────
    Deep forest green + antique gold. Inter for UI, DM Mono for numbers/data,
-   Georgia for the sidebar wordmark.
+   Playfair Display italic for Kristy's voice, Georgia for the wordmark.
+
+   These :root custom properties are the CSS mirror of the canonical JS tokens in
+   src/lib/tokens.js — JS/canvas surfaces import from there; keep the two in sync.
 */
 
 :root {
@@ -23,6 +26,11 @@
   --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
   --font-serif: Georgia, 'Times New Roman', serif;
+  /* Kristy's spoken/coaching voice — Playfair Display italic (the locked-brand
+     serif, loaded in app.html exactly as the landing page). Georgia fallback so
+     it degrades to the shipped serif, never a generic sans. Use via
+     .kristy-voice below, or kristyVoice in lib/tokens.js. */
+  --font-voice: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   --sidebar-w: 260px;
   --bubble-max: 600px;
@@ -86,6 +94,45 @@ textarea {
 
 .mono {
   font-family: var(--font-mono);
+}
+
+/* ── Kristy's voice ──────────────────────────────────────────────────────────
+   Two type voices: everything factual/UI/ingredient stays Inter; Kristy's
+   spoken/coaching text renders in Playfair Display italic. The personal layer
+   must look as different as it is. (Mirrors kristyVoice in lib/tokens.js.) */
+.kristy-voice {
+  font-family: var(--font-voice);
+  font-style: italic;
+}
+
+/* ── Gold thread/dot motif ───────────────────────────────────────────────────
+   The locked brand's recurring hairline: a thin gold thread fading in from both
+   edges to a center dot. The reusable element is components/GoldThread.jsx;
+   these are the CSS twins for markup that would rather use a class. */
+.gold-thread {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.gold-thread::before,
+.gold-thread::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+}
+.gold-thread::before {
+  background: linear-gradient(90deg, transparent, var(--gold-40));
+}
+.gold-thread::after {
+  background: linear-gradient(90deg, var(--gold-40), transparent);
+}
+.gold-dot {
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-gold);
 }
 
 /* ───────────────────────── App shell ───────────────────────── */

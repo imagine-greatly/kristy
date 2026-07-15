@@ -4,22 +4,25 @@
    module (not inside the React component) so it's the single source of truth for
    both the on-screen card and the PNG export, and is testable in isolation. */
 
+import { colors, fonts } from './tokens.js';
+
 export const CARD = {
   portrait: { w: 1080, h: 1920 },
   square: { w: 1080, h: 1080 },
 };
 
-// Card palette — the void/deep-green ground + antique gold, matching app tokens.
+// Card palette — the void/deep-green ground + antique gold, drawn straight from
+// the design tokens (lib/tokens.js) so the card and the app never drift.
 const COL = {
-  bgTop: '#040805',
-  bgBot: '#0B1F0F',
-  gold: '#C9A84C',
-  goldDim: '#8b6f2e',
-  ink: '#f0e6c8',
-  mut: '#6b8f72',
+  bgTop: colors.bgDeep,
+  bgBot: colors.bg,
+  gold: colors.accentGold,
+  goldDim: colors.accentGoldMuted,
+  ink: colors.textPrimary,
+  mut: colors.textMuted,
 };
-const SERIF = 'Georgia, "Times New Roman", serif';
-const MONO = '"DM Mono", ui-monospace, monospace';
+const SERIF = fonts.serif;
+const MONO = fonts.mono;
 export { MONO };
 
 /* ── grain: a cached noise tile, composited low-alpha over the ground ── */
