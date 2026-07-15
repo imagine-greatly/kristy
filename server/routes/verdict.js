@@ -1,86 +1,100 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
-import { imageUpload } from '../lib/upload.js';
-import { getFullProfile, getGoals, saveVerdict } from '../lib/store.js';
-import { runVerdict } from '../lib/verdict.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
+import { evaluateIngredients } from '../lib/verdictEngine.js';
+import { composeNote } from '../lib/verdictNote.js';
 
-// Kristy's Verdict — scan a meal or grocery haul, get a goal-relative verdict
-// with teeth, rendered as a shareable card client-side. Two surfaces:
-//   POST /api/verdict         (authed → fit against the user's real targets, persisted)
-//   POST /api/guest/verdict   (no auth → general read + sign-in hook, nothing written)
-// Both reuse the shared image-upload middleware and the shared verdict pipeline.
-// Neither writes a meal_log — a scanned haul is not an eaten meal.
+// Kristy's Verdict — POST an ingredient list + the user's goal, get a claim-locked
+// verdict. The deterministic Step 1 engine scores the tier and builds the factual
+// "universal layer" straight from the KB; then ONE Haiku call (Step 2) composes
+// Kristy's goal-aware note + swap. The model may only rephrase KB-sourced concerns —
+// the structural claim lock lives in lib/verdictNote.js.
+//
+//   POST /api/verdict         (authed → personalized note, per-user rate limited)
+//   POST /api/guest/verdict   (no auth → universal layer only, no personal note)
+//
+// Neither writes a meal_log — a scanned product is not an eaten meal. The scan
+// entry points (barcode / photo-of-label) parse to an ingredient list and POST here;
+// that repointing is Step 4.
 
-// A Kristy-voiced line for when the vision call or JSON parsing fails outright,
-// matching the graceful error posture of /api/photo.
-const ERROR_MSG = "Couldn't read that one clearly — try another shot, better lit if you can.";
+// Graceful, Kristy-voiced error for when the note call can't return valid JSON twice.
+// (The engine's tier + universal layer are deterministic and never hit this path.)
+const ERROR_MSG = "I couldn't pull my read together on that one — give me a second and try again.";
+
+// Coerce the request body into { ingredients, goal, nonNegotiables }. `ingredients`
+// may arrive as a string or a string[]; the engine tokenizes either.
+function readBody(body = {}) {
+  return {
+    ingredients: body.ingredients,
+    goal: typeof body.goal === 'string' ? body.goal : '',
+    nonNegotiables: Array.isArray(body.nonNegotiables)
+      ? body.nonNegotiables.map((s) => String(s || '').trim()).filter(Boolean)
+      : [],
+  };
+}
+
+function hasIngredients(ingredients) {
+  if (Array.isArray(ingredients)) return ingredients.some((s) => String(s || '').trim());
+  return String(ingredients || '').trim().length > 0;
+}
+
+// The gold seal is earned only at `approved`; swap is meaningful only when there's
+// something to move away from. Both mirror the prompt's own rules, enforced here so
+// the response shape is guaranteed regardless of what the model returns.
+const swapForTier = (tier, swap) =>
+  tier === 'approved' || tier === 'approved_with_note' ? null : swap;
 
 /* ───────────────────────── Authed ───────────────────────── */
 export const verdictRouter = Router();
 
-// userRateLimit runs before multer so a limited caller never uploads the file.
-verdictRouter.post('/verdict', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
-  const userId = req.user.id;
-  if (!req.file) return res.status(400).json({ error: 'image is required' });
+// userRateLimit runs after requireAuth (it reads req.user.id) and caps the
+// combined per-user model spend across the authed cost-bearing endpoints.
+verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
+  const { ingredients, goal, nonNegotiables } = readBody(req.body);
+  if (!hasIngredients(ingredients)) {
+    return res.status(400).json({ error: 'ingredients is required' });
+  }
 
   try {
-    const base64 = req.file.buffer.toString('base64');
-    const mediaType = req.file.mimetype || 'image/jpeg';
+    // Step 1 engine — unchanged. Its matched entries feed the model directly; do
+    // NOT reshape them here (the claim lock consumes the entries as-is).
+    const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
 
-    // Read the user's real stored profile + macro targets so the fit is against
-    // their actual numbers, not invented ones.
-    const [profile, goals] = await Promise.all([
-      getFullProfile(userId).catch(() => null),
-      getGoals(userId).catch(() => null),
-    ]);
+    // Step 2 — the ONE Haiku call for the personal note + swap.
+    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched });
 
-    const verdict = await runVerdict({ base64, mediaType, isGuest: false, profile, goals });
-
-    // Persist (best-effort — never blocks the response, never creates a meal).
-    await saveVerdict(userId, {
-      kind: verdict.kind,
-      verdict_line: verdict.verdict_line,
-      payload: verdict,
-    });
-
-    return res.json(verdict);
+    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap) });
   } catch (err) {
     console.error(
-      `[kristy] /api/verdict error (user ${userId}) @ ${new Date().toISOString()}:`,
+      `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
       err?.message || err
     );
-    return res.status(500).json({ error: 'verdict failed', message: ERROR_MSG });
+    return res.status(502).json({ error: true, message: ERROR_MSG });
   }
 });
 
 /* ───────────────────────── Guest ─────────────────────────
-   Shares the SAME in-memory IP budget as guest chat (lib/guestRate). Nothing is
-   written anywhere. The pipeline appends the sign-in hook to fit.summary. */
+   Guests get the deterministic universal layer for FREE — no model call, no cost —
+   which is the generous acquisition hook. The goal-personalized note stays behind
+   the sign-in gate (wired in Step 5); here it's simply null. Shares the same
+   in-memory IP budget as guest chat (lib/guestRate). */
 export const guestVerdictRouter = Router();
 
-guestVerdictRouter.post('/verdict', imageUpload.single('image'), async (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'image is required' });
+guestVerdictRouter.post('/verdict', (req, res) => {
+  const { ingredients } = readBody(req.body);
+  if (!hasIngredients(ingredients)) {
+    return res.status(400).json({ error: 'ingredients is required' });
+  }
 
-  // Abuse / cost protection — over the shared guest cap → soft gate, same shape
-  // as guest chat so the client shows the sign-in overlay.
+  // Abuse protection, same soft-gate shape as guest chat so the client can show the
+  // sign-in overlay.
   if (rateLimited(clientIp(req))) {
     return res.json({ gate: true, reason: 'limit' });
   }
 
-  try {
-    const base64 = req.file.buffer.toString('base64');
-    const mediaType = req.file.mimetype || 'image/jpeg';
-    const verdict = await runVerdict({ base64, mediaType, isGuest: true });
-    return res.json(verdict);
-  } catch (err) {
-    console.error(
-      `[kristy] /api/guest/verdict error @ ${new Date().toISOString()}:`,
-      err?.message || err
-    );
-    return res.status(503).json({ error: true, message: ERROR_MSG });
-  }
+  const { tier, stamp, universalLayer } = evaluateIngredients(ingredients);
+  return res.json({ tier, stamp, universalLayer, note: null, swap: null });
 });
 
 export default verdictRouter;
