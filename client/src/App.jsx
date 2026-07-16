@@ -6,12 +6,14 @@ import {
   loadGoals,
   saveGoals,
   saveProfileFields,
+  saveCoachProfile,
   loadRecentMeals,
   loadDayMessages,
   loadLatestSummary,
   loadProfile,
   loadWeightHistory,
 } from './lib/data.js';
+import { goalNoteLabel, goalChipLabel } from './lib/coachGoals.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
 import { sendPhoto, runProductScan } from './lib/logging.js';
 import {
@@ -31,6 +33,7 @@ import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
+import GroceryOnboarding from './components/GroceryOnboarding.jsx';
 import Settings from './components/Settings.jsx';
 import Upgrade from './components/Upgrade.jsx';
 import VerdictCard from './components/VerdictCard.jsx';
@@ -188,6 +191,31 @@ export default function App() {
     setReady(false);
     await bootstrap(userId);
     setReady(true);
+  }
+
+  // Grocery-coach onboarding complete (Step 6): persist goal + non-negotiables,
+  // reflect the chip immediately, then land on Scan — optionally opening the
+  // camera for the first-scan payoff.
+  async function handleCoachOnboarded(patch, { startScan } = {}) {
+    setNeedsOnboarding(false);
+    try {
+      const updated = await saveCoachProfile(userId, patch);
+      setProfile((p) => ({ ...(p || {}), ...(updated || patch), onboarded: true }));
+    } catch {
+      // Persistence failed — keep the optimistic goal so the session still works.
+      setProfile((p) => ({ ...(p || {}), ...patch, onboarded: true }));
+    }
+    setReady(false);
+    await bootstrap(userId);
+    setReady(true);
+    setMoment('scan');
+    if (startScan) setCameraOpen(true);
+  }
+
+  // Skip → no goal yet (universal, goal-agnostic verdicts) but still onboarded so
+  // we don't re-prompt. Drops the user straight into scanning.
+  function handleCoachSkip() {
+    handleCoachOnboarded({ coach_goal: null, non_negotiables: [] }, { startScan: false });
   }
 
   // Settings → persist one or more profile fields. Throws on failure so the
@@ -468,8 +496,8 @@ export default function App() {
       const result = await runProductScan({
         mode: 'barcode',
         barcode,
-        goal: profile?.goal || '',
-        nonNegotiables: profile?.nonNegotiables || [],
+        goal: goalNoteLabel(profile?.coach_goal),
+        nonNegotiables: profile?.non_negotiables || [],
       });
       setScan({ ...result, mode: 'barcode' });
     } catch {
@@ -513,8 +541,8 @@ export default function App() {
       const result = await runProductScan({
         mode: 'label',
         file,
-        goal: profile?.goal || '',
-        nonNegotiables: profile?.nonNegotiables || [],
+        goal: goalNoteLabel(profile?.coach_goal),
+        nonNegotiables: profile?.non_negotiables || [],
       });
       setScan({ ...result, mode: 'label' });
     } catch {
@@ -565,7 +593,9 @@ export default function App() {
   }
 
   if (needsOnboarding) {
-    return <Onboarding userId={userId} onComplete={handleOnboarded} />;
+    // The repositioned front door: a 60-second goal + non-negotiables setup.
+    // (The full TDEE intake in Onboarding.jsx is preserved for macro setup.)
+    return <GroceryOnboarding onComplete={handleCoachOnboarded} onSkip={handleCoachSkip} />;
   }
 
   const viewingPast = viewingDate !== today;
@@ -576,6 +606,8 @@ export default function App() {
       <TopBar
         onMenu={() => setSidebarOpen(true)}
         todayCalories={todayTotals.calories}
+        goalLabel={goalChipLabel(profile?.coach_goal)}
+        onGoalClick={() => setSettingsOpen(true)}
       />
 
       <Sidebar
@@ -686,7 +718,7 @@ export default function App() {
       )}
 
       {scan && (
-        <ScanSheet scan={scan} goal={profile?.goal || ''} onClose={() => setScan(null)} />
+        <ScanSheet scan={scan} goal={goalNoteLabel(profile?.coach_goal)} onClose={() => setScan(null)} />
       )}
 
       {cameraOpen && (

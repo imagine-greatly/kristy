@@ -67,6 +67,13 @@ alter table user_goals add column if not exists eating_window_end text;
 alter table user_goals add column if not exists dietary_preferences text[] default '{}';
 alter table user_goals add column if not exists onboarded boolean default false;
 
+-- Grocery-coach overhaul (Step 6): the 60-second onboarding sets a primary
+-- coaching goal + non-negotiables, fed into every /verdict call. Additive and
+-- optional; entries without them simply get universal (goal-agnostic) verdicts.
+-- (The dietary "focuses" multi-select appends to the same row in a later step.)
+alter table user_goals add column if not exists coach_goal text;
+alter table user_goals add column if not exists non_negotiables text[] default '{}';
+
 -- Conversational weight logging — the first optimization feature. Kristy tracks
 -- the trend over time and uses it to recalculate calorie targets.
 create table if not exists weight_logs (

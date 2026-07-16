@@ -14,7 +14,8 @@ const LS_KEY = 'kristy:v1';
 const PROFILE_COLS =
   'calories, protein, carbs, fat, name, age, sex, height_value, height_unit, ' +
   'weight_value, weight_unit, goal, sport, training_frequency, eating_pattern, ' +
-  'eating_window_start, eating_window_end, dietary_preferences, onboarded';
+  'eating_window_start, eating_window_end, dietary_preferences, onboarded, ' +
+  'coach_goal, non_negotiables';
 
 /* ───────────────────────── Demo store (localStorage) ───────────────────────── */
 
@@ -158,7 +159,7 @@ export async function saveGoals(userId, goals) {
 
 // Profile-preference fields editable from the settings screen. Only these
 // whitelisted keys are ever written; macro goals go through saveGoals above.
-const PROFILE_FIELD_KEYS = ['goal', 'weight_unit', 'sport', 'training_frequency'];
+const PROFILE_FIELD_KEYS = ['goal', 'weight_unit', 'sport', 'training_frequency', 'coach_goal', 'non_negotiables'];
 
 // Patch one or more profile fields on the user_goals row. Demo-aware, mirroring
 // saveGoals. Returns the updated profile row (or the demo profile object).
@@ -180,6 +181,31 @@ export async function saveProfileFields(userId, patch = {}) {
     .single();
   if (error) throw new Error(error.message);
   return data;
+}
+
+// Persist the 60-second grocery-coach onboarding (Step 6): a primary goal +
+// non-negotiables. Marks the user onboarded and starts the trial (server side).
+// Demo-aware, mirroring saveOnboarding. Returns the updated profile row/object.
+export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [] } = {}) {
+  if (IS_DEMO) {
+    const s = demoRead();
+    s.profile = { ...(s.profile || {}), coach_goal: coach_goal || null, non_negotiables, onboarded: true };
+    demoWrite(s);
+    return s.profile;
+  }
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  const res = await fetch(`${apiBase}/api/onboarding/coach`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session?.access_token}` },
+    body: JSON.stringify({ coach_goal, non_negotiables }),
+  });
+  if (!res.ok) throw new Error('Could not save your goal.');
+  const json = await res.json();
+  return json.profile;
 }
 
 // Meals over the last `days` days (oldest → newest).

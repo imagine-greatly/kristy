@@ -1,11 +1,34 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { computeGoals } from '../lib/tdee.js';
-import { saveOnboardingProfile } from '../lib/store.js';
+import { saveOnboardingProfile, saveCoachProfile } from '../lib/store.js';
 import { saveWeightLog } from '../lib/weightLog.js';
 import { ensureTrial } from '../lib/subscription.js';
 
 const router = Router();
+
+// POST /api/onboarding/coach — the 60-second grocery-coach onboarding (Step 6).
+// Persists a primary goal + non-negotiables, marks the user onboarded, and starts
+// the 7-day trial (same as the full flow). No TDEE math — macro targets stay on
+// their defaults until/unless the user does the full profile setup separately.
+router.post('/onboarding/coach', requireAuth, async (req, res) => {
+  const userId = req.user.id;
+  const b = req.body || {};
+  const coach_goal = typeof b.coach_goal === 'string' && b.coach_goal.trim() ? b.coach_goal.trim() : null;
+  const non_negotiables = Array.isArray(b.non_negotiables)
+    ? b.non_negotiables.map((s) => String(s || '').trim()).filter(Boolean)
+    : [];
+
+  try {
+    const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables });
+    // 7-day full-access trial, idempotent + non-fatal (same posture as /full).
+    const subscription = await ensureTrial(userId);
+    return res.json({ ok: true, profile, subscription });
+  } catch (err) {
+    console.error('[kristy] /api/onboarding/coach error:', err.message);
+    return res.status(500).json({ error: 'Could not save your goal.' });
+  }
+});
 
 // POST /api/onboarding/full
 // Receives the collected onboarding profile, computes TDEE-based macro goals,

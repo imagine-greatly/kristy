@@ -13,6 +13,10 @@ const WEIGHT_PROFILE_COLUMNS =
   'starting_weight, starting_weight_unit, current_weight, current_weight_unit, ' +
   'tdee_last_recalculated, tdee_adjustment';
 const PROFILE_COLUMNS = `${BASE_PROFILE_COLUMNS}, ${WEIGHT_PROFILE_COLUMNS}`;
+// Grocery-coach columns (Step 6). Tried as the widest tier; getFullProfile falls
+// back if the migration hasn't been applied so an existing profile is never lost.
+const COACH_PROFILE_COLUMNS = 'coach_goal, non_negotiables';
+const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`;
 
 /** Fetch a user's goals, creating defaults on first use. */
 export async function getGoals(userId) {
@@ -39,15 +43,22 @@ export async function getGoals(userId) {
  * object is safe to read both as `goals` (calories/protein/…) and `profile`.
  */
 export async function getFullProfile(userId) {
-  // Try the full row (incl. weight columns). If the migration hasn't been
-  // applied yet, that select errors — fall back to the base columns so an
-  // existing user's profile is never lost (and never reset to defaults).
+  // Try the widest row (weight + coach columns). If a migration hasn't been
+  // applied yet, that select errors — fall back tier by tier so an existing
+  // user's profile is never lost (and never reset to defaults).
   let { data, error } = await supabase
     .from('user_goals')
-    .select(PROFILE_COLUMNS)
+    .select(FULL_PROFILE_COLUMNS)
     .eq('user_id', userId)
     .maybeSingle();
 
+  if (error) {
+    ({ data, error } = await supabase
+      .from('user_goals')
+      .select(PROFILE_COLUMNS)
+      .eq('user_id', userId)
+      .maybeSingle());
+  }
   if (error) {
     ({ data } = await supabase
       .from('user_goals')
@@ -100,6 +111,30 @@ export async function saveOnboardingProfile(userId, profile = {}, goals = {}) {
     .from('user_goals')
     .upsert(row)
     .select(PROFILE_COLUMNS)
+    .single();
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+/**
+ * Persist the grocery-coach onboarding (Step 6): a primary goal + non-negotiables.
+ * Marks the user onboarded. Upsert touches only these columns, so an existing
+ * profile's macros/weight fields are preserved. Returns the saved row.
+ */
+export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [] } = {}) {
+  const row = {
+    user_id: userId,
+    coach_goal: coach_goal || null,
+    non_negotiables: Array.isArray(non_negotiables) ? non_negotiables : [],
+    onboarded: true,
+    updated_at: new Date().toISOString(),
+  };
+
+  const { data, error } = await supabase
+    .from('user_goals')
+    .upsert(row)
+    .select(`${BASE_PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`)
     .single();
 
   if (error) throw new Error(error.message);

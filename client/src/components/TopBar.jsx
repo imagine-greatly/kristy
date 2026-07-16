@@ -1,7 +1,8 @@
 import { MenuIcon } from './Icons.jsx';
 import { fmt } from '../lib/format.js';
+import GoalChip from './GoalChip.jsx';
 
-export default function TopBar({ onMenu, todayCalories }) {
+export default function TopBar({ onMenu, todayCalories, goalLabel, onGoalClick }) {
   return (
     <header className="topbar">
       <button
@@ -11,7 +12,10 @@ export default function TopBar({ onMenu, todayCalories }) {
       >
         <MenuIcon />
       </button>
-      <div className="kcal-pill">{fmt(todayCalories)} kcal</div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <GoalChip label={goalLabel} onClick={onGoalClick} />
+        <div className="kcal-pill">{fmt(todayCalories)} kcal</div>
+      </div>
     </header>
   );
 }
