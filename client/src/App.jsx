@@ -12,6 +12,8 @@ import {
   loadLatestSummary,
   loadProfile,
   loadWeightHistory,
+  saveHaulScan,
+  loadHaul,
 } from './lib/data.js';
 import { goalNoteLabel, goalChipLabel } from './lib/coachGoals.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
@@ -41,7 +43,8 @@ import ScanSheet from './components/ScanSheet.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
 import MomentStub from './components/MomentStub.jsx';
-import { ListIcon, HaulIcon } from './components/Icons.jsx';
+import HaulMoment from './components/HaulMoment.jsx';
+import { ListIcon } from './components/Icons.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -128,6 +131,10 @@ export default function App() {
   // Three-moment nav (Step 5): List (before) · Scan (aisle) · Haul (after). Chat is
   // demoted from a primary tab, reachable from within the Scan moment.
   const [moment, setMoment] = useState('scan'); // 'scan' | 'list' | 'haul' | 'chat'
+  // The Haul (Step 7): aggregate of the trip + week's scans. Lazily loaded; nulled
+  // after each new scan so it refreshes on next open.
+  const [haul, setHaul] = useState(null);
+  const [haulLoading, setHaulLoading] = useState(false);
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -501,6 +508,7 @@ export default function App() {
         focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'barcode' });
+      recordScan(result);
     } catch {
       setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
     }
@@ -547,8 +555,69 @@ export default function App() {
         focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'label' });
+      recordScan(result);
     } catch {
       setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });
+    }
+  }
+
+  /* ───────── The Haul (Step 7) ───────── */
+
+  // Record a completed scan in the haul (authed app only — guests' Haul is gated).
+  // Fire-and-forget: a failed record never disturbs the verdict the user is reading.
+  async function recordScan(result) {
+    if (!result?.verdict || result.found === false) return;
+    try {
+      await saveHaulScan({
+        product_name: result.product?.name || null,
+        brand: result.product?.brand || null,
+        tier: result.verdict.tier,
+        barcode: result.product?.barcode || null,
+      });
+      setHaul(null); // invalidate cache → reload on next Haul open
+    } catch {
+      /* non-fatal */
+    }
+  }
+
+  async function loadHaulData() {
+    setHaulLoading(true);
+    try {
+      setHaul(await loadHaul());
+    } catch {
+      setHaul({ trip: [], week: [], distribution: { approved: 0, note: 0, swap: 0, total: 0 }, read: '' });
+    } finally {
+      setHaulLoading(false);
+    }
+  }
+
+  function openHaul() {
+    setMoment('haul');
+    if (!haul && !haulLoading) loadHaulData();
+  }
+
+  // "Add to next list" → feed the swap-tier items into the List builder (Step 8).
+  function handleAddToList() {
+    const swaps = (haul?.week || []).filter((s) => s.tier === 'swap_recommended' || s.tier === 'skip');
+    try {
+      const key = 'kristy:nextList';
+      const cur = JSON.parse(localStorage.getItem(key) || '[]');
+      const merged = [...cur, ...swaps.map((s) => ({ product_name: s.product_name, tier: s.tier }))];
+      localStorage.setItem(key, JSON.stringify(merged));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  // "Share haul" → the web share sheet. Step 10 replaces the text with a branded card.
+  async function handleShareHaul() {
+    const d = haul?.distribution || {};
+    const text = `My grocery haul — ${d.approved || 0} approved, ${d.note || 0} with a note, ${d.swap || 0} swaps.${haul?.read ? ' ' + haul.read : ''} — via Kristy`;
+    try {
+      if (navigator.share) await navigator.share({ title: 'My Haul', text });
+      else if (navigator.clipboard) await navigator.clipboard.writeText(text);
+    } catch {
+      /* user cancelled */
     }
   }
 
@@ -691,12 +760,12 @@ export default function App() {
             />
           )}
           {moment === 'haul' && (
-            <MomentStub
-              icon={<HaulIcon size={26} />}
-              title="Your haul"
-              line="Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it."
-              ctaLabel="Scan a product"
-              onCta={() => { setMoment('scan'); setCameraOpen(true); }}
+            <HaulMoment
+              haul={haul}
+              loading={haulLoading}
+              onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+              onAddToList={handleAddToList}
+              onShareHaul={handleShareHaul}
             />
           )}
         </div>
@@ -706,7 +775,7 @@ export default function App() {
         active={moment}
         onList={() => setMoment('list')}
         onScan={() => { setMoment('scan'); setCameraOpen(true); }}
-        onHaul={() => setMoment('haul')}
+        onHaul={openHaul}
       />
 
       {verdict && (

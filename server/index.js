@@ -13,6 +13,7 @@ import weightRoute from './routes/weight.js';
 import accountRoute from './routes/account.js';
 import verdictRoute, { guestVerdictRouter } from './routes/verdict.js';
 import scanRoute, { guestScanRouter } from './routes/scan.js';
+import haulRoute from './routes/haul.js';
 import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
@@ -47,6 +48,7 @@ app.use('/api/guest', guestVerdictRouter); // no auth — guest verdict (shares 
 app.use('/api/guest', guestScanRouter); // no auth — guest scan extraction (shares the guest IP budget)
 app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', scanRoute); // authed — scan extraction (barcode + label vision) → /verdict
+app.use('/api', haulRoute); // authed — the Haul (record scans + aggregate trip/week + read)
 app.use('/api', historyRoute);
 app.use('/api', weeklySummaryRoute);
 app.use('/api', barcodeRoute);

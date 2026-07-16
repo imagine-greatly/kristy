@@ -208,6 +208,79 @@ export async function saveCoachProfile(userId, { coach_goal = null, non_negotiab
   return json.profile;
 }
 
+/* ───────────────────────── The Haul (Step 7) ───────────────────────── */
+
+const rid = () =>
+  (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
+  `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+const haulBucket = (t) =>
+  t === 'approved' ? 'approved' : t === 'approved_with_note' || t === 'use_with_intention' ? 'note' : 'swap';
+
+function haulDistribution(scans) {
+  const d = { approved: 0, note: 0, swap: 0, total: 0 };
+  for (const s of scans) {
+    d[haulBucket(s.tier)] += 1;
+    d.total += 1;
+  }
+  return d;
+}
+
+// Record a scanned product in the haul. Non-fatal: a failed record never breaks
+// the scan itself. Guests don't reach this (their Haul is gated).
+export async function saveHaulScan({ product_name = null, brand = null, tier = null, barcode = null } = {}) {
+  if (!tier) return null;
+  if (IS_DEMO) {
+    const s = demoRead();
+    s.haul = s.haul || [];
+    const row = { id: rid(), product_name, brand, tier, barcode, scanned_at: new Date().toISOString() };
+    s.haul.unshift(row);
+    demoWrite(s);
+    return row;
+  }
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    const res = await fetch(`${apiBase}/api/haul/scan`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session?.access_token}` },
+      body: JSON.stringify({ product_name, brand, tier, barcode }),
+    });
+    if (!res.ok) return null;
+    return (await res.json()).scan;
+  } catch {
+    return null;
+  }
+}
+
+// The Haul aggregate: trip (today) + week + distribution + Kristy's weekly read.
+export async function loadHaul() {
+  if (IS_DEMO) {
+    const week = (demoRead().haul || []).slice(0, 200);
+    const distribution = haulDistribution(week);
+    const todayKey = dayKey();
+    const trip = week.filter((x) => dayKey(x.scanned_at) === todayKey);
+    const read = week.length
+      ? "Solid start — but this haul is leaning on swaps. Want a couple of clean protein anchors on next week's list?"
+      : '';
+    return { trip, week, distribution, read };
+  }
+  const empty = { trip: [], week: [], distribution: { approved: 0, note: 0, swap: 0, total: 0 }, read: '' };
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    const res = await fetch(`${apiBase}/api/haul?tzOffset=${new Date().getTimezoneOffset()}`, {
+      headers: { Authorization: `Bearer ${session?.access_token}` },
+    });
+    if (!res.ok) return empty;
+    return await res.json();
+  } catch {
+    return empty;
+  }
+}
+
 // Meals over the last `days` days (oldest → newest).
 export async function loadRecentMeals(userId, days = 7) {
   if (IS_DEMO) {

@@ -76,6 +76,20 @@ alter table user_goals add column if not exists non_negotiables text[] default '
 -- Dietary focuses (extension): self-selected preferences fed into every /verdict.
 alter table user_goals add column if not exists focuses text[] default '{}';
 
+-- The Haul (Step 7): every scanned product is recorded here so the Haul surface
+-- can aggregate the trip + week (distribution, item list, weekly read). A scan is
+-- NOT a meal — this is separate from meal_logs.
+create table if not exists haul_scans (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade,
+  product_name text,
+  brand text,
+  tier text,
+  barcode text,
+  scanned_at timestamptz default now()
+);
+create index if not exists haul_scans_user_time on haul_scans (user_id, scanned_at desc);
+
 -- Conversational weight logging — the first optimization feature. Kristy tracks
 -- the trend over time and uses it to recalculate calorie targets.
 create table if not exists weight_logs (
@@ -153,6 +167,7 @@ alter table user_goals       enable row level security;
 alter table chat_messages    enable row level security;
 alter table weekly_summaries enable row level security;
 alter table weight_logs      enable row level security;
+alter table haul_scans       enable row level security;
 alter table subscriptions    enable row level security;
 
 -- meal_logs
@@ -178,6 +193,11 @@ create policy "own summaries" on weekly_summaries
 -- weight_logs
 drop policy if exists "Users can only access their own weight logs" on weight_logs;
 create policy "Users can only access their own weight logs" on weight_logs
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- haul_scans
+drop policy if exists "own haul scans" on haul_scans;
+create policy "own haul scans" on haul_scans
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
 -- subscriptions — a user may READ their own row (so the client can show trial

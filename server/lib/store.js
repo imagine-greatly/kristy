@@ -142,6 +142,30 @@ export async function saveCoachProfile(userId, { coach_goal = null, non_negotiab
   return data;
 }
 
+/** Record a scanned product in the user's haul (Step 7). Returns the saved row. */
+export async function saveHaulScan(userId, { product_name = null, brand = null, tier = null, barcode = null } = {}) {
+  const { data, error } = await supabase
+    .from('haul_scans')
+    .insert({ user_id: userId, product_name, brand, tier, barcode })
+    .select('id, product_name, brand, tier, barcode, scanned_at')
+    .single();
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+/** Scans within the last `days` days, newest first. */
+export async function getHaulScans(userId, days = 7) {
+  const since = new Date();
+  since.setDate(since.getDate() - days);
+  const { data } = await supabase
+    .from('haul_scans')
+    .select('id, product_name, brand, tier, barcode, scanned_at')
+    .eq('user_id', userId)
+    .gte('scanned_at', since.toISOString())
+    .order('scanned_at', { ascending: false });
+  return data || [];
+}
+
 /** Meal logs within the last `days` days, oldest → newest. */
 export async function getRecentMeals(userId, days = 7) {
   const since = new Date();
