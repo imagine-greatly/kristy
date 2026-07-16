@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+  <!-- OG card in the shareable-haul-card aesthetic: forest-green + gold ground,
+       thread/dot motif, the Yuka contrast line, Kristy wordmark. Tokens only. -->
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040805"/>
+      <stop offset="1" stop-color="#0B1F0F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#C9A84C" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#C9A84C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C9A84C" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ground)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="26" y="26" width="1148" height="578" fill="none" stroke="#C9A84C" stroke-opacity="0.22" stroke-width="2"/>
+
+  <!-- thread + dot -->
+  <line x1="440" y1="120" x2="760" y2="120" stroke="url(#thread)" stroke-width="2"/>
+  <circle cx="600" cy="120" r="6" fill="#C9A84C"/>
+
+  <!-- eyebrow -->
+  <text x="600" y="176" text-anchor="middle" font-family="'DM Mono', monospace" font-size="22" letter-spacing="8" fill="#C9A84C">YOUR GROCERY COACH</text>
+
+  <!-- The positioning line: Yuka half (factual/cream) + Kristy half (Playfair italic gold) -->
+  <text x="600" y="272" text-anchor="middle" font-size="40" fill="#F0E6C8">Yuka tells you what&#8217;s in the food.</text>
+  <text x="600" y="356" text-anchor="middle" font-style="italic" font-size="58" fill="#C9A84C">Kristy tells you if it belongs</text>
+  <text x="600" y="424" text-anchor="middle" font-style="italic" font-size="58" fill="#C9A84C">in your cart.</text>
+
+  <!-- subline -->
+  <text x="600" y="486" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#6B8F72">Reads any label &#183; knows your goal &#183; tells you what to buy</text>
+
+  <!-- wordmark -->
+  <circle cx="536" cy="556" r="26" fill="none" stroke="#C9A84C" stroke-width="3"/>
+  <text x="536" y="566" text-anchor="middle" font-size="30" fill="#C9A84C">K</text>
+  <text x="576" y="566" font-size="34" fill="#F0E6C8">Kristy</text>
+</svg>
