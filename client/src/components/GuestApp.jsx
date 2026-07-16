@@ -11,6 +11,7 @@ import MomentStub from './MomentStub.jsx';
 import { ListIcon, HaulIcon } from './Icons.jsx';
 import { sendGuestChat } from '../lib/api.js';
 import { runProductScan } from '../lib/logging.js';
+import { trackEvent } from '../lib/analytics.js';
 
 // Lazy — only pulls the @zxing decoder when the scanner opens.
 const CameraModal = lazy(() => import('./CameraModal.jsx'));
@@ -115,6 +116,7 @@ export default function GuestApp() {
     if (gate) return;
     setCameraOpen(false);
     setScan({ loading: true, mode: args.mode });
+    trackEvent('scan', { mode: args.mode, guest: true });
     try {
       const result = await runProductScan(args); // guest detected (no session)
       if (result?.gate) {
@@ -123,6 +125,7 @@ export default function GuestApp() {
         return;
       }
       setScan({ ...result, mode: args.mode });
+      if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, guest: true });
     } catch {
       setScan({
         mode: args.mode,

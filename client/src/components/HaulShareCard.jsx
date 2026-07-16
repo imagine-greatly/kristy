@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { colors, fonts } from '../lib/tokens.js';
 import { CloseIcon } from './Icons.jsx';
 import { drawHaulCard, canvasToBlob, ensureCardFonts } from '../lib/haulCanvas.js';
+import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════════════ Share your haul (Step 10) ═══════════════════════
    The Haul scorecard drawn to a branded PNG (forest green + gold, thread/dot,
@@ -53,6 +54,7 @@ export default function HaulShareCard({ haul, onClose }) {
   async function share() {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    trackEvent('haul-share', { hidePersonal });
     try {
       const blob = await canvasToBlob(canvas);
       const file = new File([blob], 'my-haul.png', { type: 'image/png' });

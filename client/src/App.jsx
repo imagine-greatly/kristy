@@ -16,6 +16,7 @@ import {
   loadHaul,
 } from './lib/data.js';
 import { goalNoteLabel, goalChipLabel } from './lib/coachGoals.js';
+import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
 import { sendPhoto, runProductScan } from './lib/logging.js';
 import {
@@ -500,6 +501,7 @@ export default function App() {
   async function handleScan(barcode) {
     setCameraOpen(false);
     setScan({ loading: true, mode: 'barcode' });
+    trackEvent('scan', { mode: 'barcode' });
     try {
       const result = await runProductScan({
         mode: 'barcode',
@@ -509,6 +511,7 @@ export default function App() {
         focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'barcode' });
+      if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
       recordScan(result);
     } catch {
       setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
@@ -547,6 +550,7 @@ export default function App() {
   async function handleVerdictFile(file) {
     if (!file) return;
     setScan({ loading: true, mode: 'label' });
+    trackEvent('scan', { mode: 'label' });
     try {
       const result = await runProductScan({
         mode: 'label',
@@ -556,6 +560,7 @@ export default function App() {
         focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'label' });
+      if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
       recordScan(result);
     } catch {
       setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });

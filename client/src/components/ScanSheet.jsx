@@ -120,9 +120,9 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, 
     content = (
       <>
         <ScanVerdictCard verdict={scan.verdict} product={scan.product} goal={goal} />
-        {scan.verdict.gated && onUpgrade && (
-          <button type="button" style={styles.unlockBtn} onClick={onUpgrade}>
-            Unlock my read
+        {scan.verdict.gated && (onUpgrade || onSignIn) && (
+          <button type="button" style={styles.unlockBtn} onClick={onUpgrade || onSignIn}>
+            {onUpgrade ? 'Unlock my read' : 'Sign in for my read'}
           </button>
         )}
         {onAsk && (

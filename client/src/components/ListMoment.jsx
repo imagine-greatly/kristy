@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { ListIcon, CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
-import { loadList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
+import { loadList, loadStoredList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
+import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════════════ List — before the trip ═══════════════════════
    Kristy's goal-built shopping list: a grouped, editable checklist she generates
@@ -15,8 +16,14 @@ const rid = () =>
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
 export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk, premium = true, onUpgrade }) {
+  // True when no list existed yet → this mount just built one (analytics: list-build).
+  const firstBuild = useRef(loadStoredList() == null);
   const [list, setList] = useState(() => loadList({ goal, nonNegotiables }));
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    if (firstBuild.current && premium !== false) trackEvent('list-build', { goal, source: 'auto' });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const persist = (next) => {
     setList(next);
@@ -42,7 +49,10 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
     setInput('');
   };
 
-  const rebuild = () => persist(rebuildList({ goal, nonNegotiables }));
+  const rebuild = () => {
+    trackEvent('list-build', { goal, source: 'rebuild' });
+    persist(rebuildList({ goal, nonNegotiables }));
+  };
 
   // The goal-built List is a member benefit (Step 11). Free users get the pitch,
   // named in Kristy's voice, not a wall.

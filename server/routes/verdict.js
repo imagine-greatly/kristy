@@ -59,6 +59,11 @@ const swapForTier = (tier, swap) =>
 const UPSELL =
   "That's what's in it — that part's always free. My read on it — against your goal and the focuses you set — is the part you unlock. Start your free week and I'll read every scan like it's yours.";
 
+// Guests get the same "your read is one step away" nudge where the note would be —
+// framed as a sign-in (their first personalized reads are free once they're in).
+const GUEST_UPSELL =
+  "That's what's in it — free, always. My read on it — against your goal and what you're watching — is a sign-in away. Your first few are on me.";
+
 /* ───────────────────────── Authed ───────────────────────── */
 export const verdictRouter = Router();
 
@@ -129,7 +134,9 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   const education = selectCardIsm(
     ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses: [] })
   );
-  return res.json({ tier, stamp, universalLayer, note: null, swap: null, education });
+  // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
+  // where the personalized read would be (the guest scan funnel, M-2).
+  return res.json({ tier, stamp, universalLayer, note: null, swap: null, education, gated: true, upsell: GUEST_UPSELL });
 });
 
 export default verdictRouter;
