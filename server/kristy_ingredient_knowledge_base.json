@@ -41,7 +41,8 @@
         "DiNicolantonio & O'Keefe, Open Heart 2018",
         "Ramsden et al., BMJ 2013"
       ],
-      "swap": "Butter, ghee, beef tallow, cold-pressed extra virgin olive oil, or coconut oil"
+      "swap": "Butter, ghee, beef tallow, cold-pressed extra virgin olive oil, or coconut oil",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "soybean_oil",
@@ -63,7 +64,8 @@
         "Deol et al., Endocrinology 2020",
         "USDA agricultural data"
       ],
-      "swap": "Extra virgin olive oil for cold use, ghee or butter for cooking"
+      "swap": "Extra virgin olive oil for cold use, ghee or butter for cooking",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "corn_oil",
@@ -82,7 +84,8 @@
       "sources": [
         "Ramsden et al., BMJ 2016 (Minnesota Coronary Experiment recovered data)"
       ],
-      "swap": "Butter, tallow, ghee, coconut oil"
+      "swap": "Butter, tallow, ghee, coconut oil",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "sunflower_oil",
@@ -103,7 +106,8 @@
         "Grootveld et al., Scientific Reports 2017",
         "DiNicolantonio & O'Keefe, Open Heart 2018"
       ],
-      "swap": "Cold-pressed extra virgin olive oil, avocado oil (unrefined) for higher-heat cooking"
+      "swap": "Cold-pressed extra virgin olive oil, avocado oil (unrefined) for higher-heat cooking",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "safflower_oil",
@@ -123,7 +127,8 @@
         "USDA FoodData Central",
         "DiNicolantonio & O'Keefe, Open Heart 2018"
       ],
-      "swap": "Any whole-food fat source: butter, olive oil, avocado, nuts in their whole form"
+      "swap": "Any whole-food fat source: butter, olive oil, avocado, nuts in their whole form",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "cottonseed_oil",
@@ -143,7 +148,8 @@
         "FDA pesticide tolerance classifications",
         "Nutrition historical research on cottonseed in US food supply"
       ],
-      "swap": "Read every peanut butter label — get one with just peanuts and salt"
+      "swap": "Read every peanut butter label — get one with just peanuts and salt",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "grapeseed_oil",
@@ -162,7 +168,8 @@
       "sources": [
         "USDA FoodData Central fatty acid profiles"
       ],
-      "swap": "Extra virgin olive oil, avocado oil"
+      "swap": "Extra virgin olive oil, avocado oil",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "vegetable_oil",
@@ -182,7 +189,8 @@
       "sources": [
         "USDA Economic Research Service oilseed consumption data"
       ],
-      "swap": "Anything that names itself specifically and isn't a seed oil"
+      "swap": "Anything that names itself specifically and isn't a seed oil",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "partially_hydrogenated_oil",
@@ -205,7 +213,8 @@
         "FDA Final Determination on PHOs (2018)",
         "Mozaffarian et al., NEJM 2006"
       ],
-      "swap": "Butter, lard, or tallow for any application requiring solid fat"
+      "swap": "Butter, lard, or tallow for any application requiring solid fat",
+      "cardiovascular_relevance": "established"
     },
     {
       "id": "sodium_nitrite",
@@ -382,7 +391,8 @@
         "Stanhope et al., JCI 2009 (hepatic lipogenesis)",
         "Dufault et al., Environmental Health 2009 (mercury)"
       ],
-      "swap": "Products sweetened with whole fruit, small amounts of raw honey, or nothing"
+      "swap": "Products sweetened with whole fruit, small amounts of raw honey, or nothing",
+      "glycemic_impact": "high"
     },
     {
       "id": "maltodextrin",
@@ -403,7 +413,8 @@
         "Laudisi et al., Nutrients 2019 (gut microbiome, E. coli adhesion)",
         "Foster-Powell et al., AJCN 2002 (glycemic index data)"
       ],
-      "swap": "Products without starch fillers; whole food carbohydrate sources"
+      "swap": "Products without starch fillers; whole food carbohydrate sources",
+      "glycemic_impact": "high"
     },
     {
       "id": "agave_syrup",
@@ -425,7 +436,8 @@
         "USDA FoodData Central (agave fructose profile)",
         "Johnson et al., Circulation 2009 (dietary fructose and metabolic disease)"
       ],
-      "swap": "Small amounts of raw honey, 100% pure maple syrup, or Medjool dates as a whole-food sweetener"
+      "swap": "Small amounts of raw honey, 100% pure maple syrup, or Medjool dates as a whole-food sweetener",
+      "glycemic_impact": "low_but_flagged"
     },
     {
       "id": "fruit_juice_concentrate",
@@ -447,7 +459,8 @@
         "Lustig, Fat Chance (2012)",
         "Harvard School of Public Health: The Nutrition Source"
       ],
-      "swap": "Products sweetened with whole fruit or nothing; eat the actual fruit"
+      "swap": "Products sweetened with whole fruit or nothing; eat the actual fruit",
+      "glycemic_impact": "moderate"
     },
     {
       "id": "red_40",
@@ -1075,7 +1088,8 @@
       "sources": [
         "Foster-Powell et al., AJCN 2002 (glycemic index)"
       ],
-      "swap": "Products without added sugars in any alias form"
+      "swap": "Products without added sugars in any alias form",
+      "glycemic_impact": "high"
     },
     {
       "id": "enriched_bleached_flour",
@@ -1098,7 +1112,8 @@
         "Slavin et al., JACN 2000 (whole grain vs. refined)",
         "USDA whole grain guidance"
       ],
-      "swap": "Stone-ground whole wheat, einkorn, spelt, sourdough made from whole grain, or almond/cassava flour alternatives"
+      "swap": "Stone-ground whole wheat, einkorn, spelt, sourdough made from whole grain, or almond/cassava flour alternatives",
+      "glycemic_impact": "high"
     },
     {
       "id": "modified_food_starch",
@@ -1120,7 +1135,8 @@
         "FDA food starch definitions (21 CFR 172.892)",
         "Celiac Disease Foundation: hidden gluten sources"
       ],
-      "swap": "Whole-food thickeners: arrowroot, tapioca flour named specifically, real vegetable purees"
+      "swap": "Whole-food thickeners: arrowroot, tapioca flour named specifically, real vegetable purees",
+      "glycemic_impact": "moderate"
     },
     {
       "id": "carmine",
@@ -1210,7 +1226,8 @@
       "sources": [
         "USDA FoodData Central"
       ],
-      "swap": "Products without added sweeteners, or those sweetened with small amounts of whole-food sources"
+      "swap": "Products without added sweeteners, or those sweetened with small amounts of whole-food sources",
+      "glycemic_impact": "high"
     },
     {
       "id": "neotame",
@@ -1293,7 +1310,8 @@
       "sources": [
         "USDA FoodData Central"
       ],
-      "swap": "Same as all sugar aliases: small amounts of whole-food sweeteners or nothing"
+      "swap": "Same as all sugar aliases: small amounts of whole-food sweeteners or nothing",
+      "glycemic_impact": "high"
     },
     {
       "id": "refined_palm_oil",
@@ -1379,7 +1397,8 @@
       "sources": [
         "FDA Draft Guidance: Ingredients Declared as Evaporated Cane Juice (2016)"
       ],
-      "swap": "Reduce total added sugar rather than substitute one sugar name for another"
+      "swap": "Reduce total added sugar rather than substitute one sugar name for another",
+      "glycemic_impact": "moderate"
     },
     {
       "id": "rice_bran_oil",
@@ -1400,7 +1419,8 @@
         "USDA FoodData Central",
         "Berger et al., AJCN 2005 (rice bran and cholesterol)"
       ],
-      "swap": "Butter, ghee, coconut oil, cold-pressed extra virgin olive oil"
+      "swap": "Butter, ghee, coconut oil, cold-pressed extra virgin olive oil",
+      "cardiovascular_relevance": "kristys_standard"
     },
     {
       "id": "brown_rice_syrup",
@@ -1421,7 +1441,8 @@
         "Jackson et al., Environmental Health Perspectives 2012 (arsenic in rice syrup)",
         "Foster-Powell et al., AJCN 2002 (GI data)"
       ],
-      "swap": "Small amounts of raw honey, 100% pure maple syrup, or whole fruit"
+      "swap": "Small amounts of raw honey, 100% pure maple syrup, or whole fruit",
+      "glycemic_impact": "high"
     },
     {
       "id": "bleached_flour",
@@ -1443,7 +1464,8 @@
         "EU Directive 2008/84/EC (prohibiting flour bleaching)",
         "FDA flour bleaching agent regulations"
       ],
-      "swap": "Unbleached flour as minimum; stone-ground whole wheat or ancient grain flour as preferred"
+      "swap": "Unbleached flour as minimum; stone-ground whole wheat or ancient grain flour as preferred",
+      "glycemic_impact": "high"
     }
   ],
   "approved_alternatives": {

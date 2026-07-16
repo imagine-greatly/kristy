@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "note": "Kristy-isms — one-line, in-voice nutrition education. Each is tied to a trigger so it appears contextually, never randomly. Fixed editorial copy (not model-generated); the claim lock governs the model note, not these. None state a user diagnosis or a treatment claim.",
+  "rules": {
+    "max_per_screen": 1,
+    "selection": "highest_priority_matching_trigger",
+    "ambient_rotation": "random_non_repeating"
+  },
+  "isms": [
+    { "id": "banned_elsewhere", "priority": 9, "trigger": { "type": "any_of", "value": ["red_3", "potassium_bromate", "titanium_dioxide", "brominated_vegetable_oil", "azodicarbonamide"] }, "text": "Banned in the EU, legal here. That's a choice someone made — not a safety guarantee." },
+    { "id": "pronounce", "priority": 8, "trigger": { "type": "long_additive" }, "text": "If you can't pronounce it, your body probably can't either." },
+    { "id": "veg_oil_naming", "priority": 7, "trigger": { "type": "category", "value": "seed_oil" }, "text": "'Vegetable oil' doesn't come from vegetables. It comes from seeds — under heat and solvent." },
+    { "id": "sugar_names", "priority": 7, "trigger": { "type": "category", "value": "sugar_alias" }, "text": "Sugar wears about 60 different names on labels. Maltodextrin and dextrose are two of them." },
+    { "id": "dyes", "priority": 7, "trigger": { "type": "category", "value": "artificial_dye" }, "text": "That color isn't food. It's petroleum in a costume." },
+    { "id": "sodium_hidden", "priority": 7, "trigger": { "type": "focus_active", "value": "lower_sodium" }, "text": "Most sodium was never in your salt shaker. It's already in the box." },
+    { "id": "natural_flavor", "priority": 6, "trigger": { "type": "ingredient", "value": "natural_flavors" }, "text": "'Natural flavor' can legally mean almost anything. Real strawberry flavor comes from strawberries." },
+    { "id": "clean_label", "priority": 6, "trigger": { "type": "verdict", "value": "approved" }, "text": "A few ingredients, all real. This is what food used to look like." },
+    { "id": "emulsifiers", "priority": 6, "trigger": { "type": "category", "value": "emulsifier" }, "text": "Emulsifiers keep things smooth on the shelf — and rough on your gut lining." },
+    { "id": "enriched", "priority": 6, "trigger": { "type": "any_of", "value": ["enriched_bleached_flour", "bleached_flour"] }, "text": "'Enriched' means they stripped the nutrition out, then added a fraction back." },
+    { "id": "preservatives", "priority": 6, "trigger": { "type": "any_of", "value": ["bha", "bht", "tbhq"] }, "text": "If it never goes bad, it's worth asking what's keeping it alive." },
+    { "id": "long_list", "priority": 5, "trigger": { "type": "ingredient_count_over", "value": 15 }, "text": "The longer the ingredient list, the further it is from food." },
+    { "id": "read_the_back", "priority": 3, "trigger": { "type": "ambient" }, "text": "Read the back, not the front. The front is marketing; the back is the truth." },
+    { "id": "shop_the_edges", "priority": 3, "trigger": { "type": "ambient" }, "text": "Shop the edges of the store. The real food lives on the perimeter." },
+    { "id": "no_label", "priority": 3, "trigger": { "type": "ambient" }, "text": "The best foods don't have an ingredient list. They are the ingredient." }
+  ]
+}

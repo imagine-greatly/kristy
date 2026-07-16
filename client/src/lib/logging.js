@@ -233,11 +233,13 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
   return res.ok ? res.json() : (await res.json().catch(() => null)) || fail;
 }
 
-// POST the extracted ingredients to /verdict. Authed → personal note; guest →
-// universal layer only (or a { gate } soft-gate at the exchange threshold).
-async function fetchVerdict({ ingredients, goal, nonNegotiables, isGuest }) {
+// POST the extracted ingredients to /verdict. Authed → personal note + focus
+// escalation; guest → universal layer only (or a { gate } soft-gate).
+async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, isGuest }) {
   const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
-  const body = isGuest ? { ingredients } : { ingredients, goal, nonNegotiables };
+  const body = isGuest
+    ? { ingredients }
+    : { ingredients, goal, nonNegotiables, focuses, nutrition };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
@@ -249,7 +251,7 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, isGuest }) {
   throw new Error("Couldn't reach the verdict service — try again.");
 }
 
-export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [] }) {
+export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [] }) {
   if (IS_DEMO) {
     await delay(mode === 'label' ? 1100 : 600);
     return demoScanCard();
@@ -267,7 +269,14 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
     return { found: false, source: ex?.source || 'none', product: ex?.product || null, message: ex?.message };
   }
 
-  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, isGuest });
+  const verdict = await fetchVerdict({
+    ingredients,
+    goal,
+    nonNegotiables,
+    focuses,
+    nutrition: ex?.nutrition || null,
+    isGuest,
+  });
   if (verdict?.gate) return { gate: true, reason: verdict.reason };
   if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
 

@@ -179,18 +179,140 @@ export function rubricText(tier) {
   return kb.kristy_scoring_rubric?.[tier] || '';
 }
 
-/** evaluateIngredients — pure convenience composing the three functions. Returns
+// ── Dietary focus escalation (extension) ─────────────────────────────────────
+// Focuses are PREFERENCES the user turns on about themselves — never inferences,
+// never diagnoses. When one is active it escalates emphasis on the relevant, REAL
+// signal, bounded and honest:
+//   • the tier rises one step per triggered focus, capped at swap_recommended.
+//     Only a CRITICAL KB ingredient can ever produce skip.
+//   • nothing is fabricated: with no ingredient/nutrition match, the verdict is
+//     unchanged — a clean product keeps its stamp.
+// Sodium and added sugar are QUANTITY concerns read from the product's Open Food
+// Facts nutrition data (per 100g), never invented from the ingredient list.
+
+// Configurable thresholds (env-overridable).
+export const SODIUM_HIGH = Number(process.env.SODIUM_HIGH) || 0.6; // g sodium / 100g
+export const ADDED_SUGAR_HIGH = Number(process.env.ADDED_SUGAR_HIGH) || 15; // g / 100g
+// Read but deliberately NOT acted on: Kristy's philosophy does not demonize
+// natural saturated fat (butter, tallow). Only trans fats + industrial seed oils
+// drive the heart-conscious escalation.
+export const SAT_FAT_CONTEXT =
+  process.env.SAT_FAT_CONTEXT ||
+  'natural saturated fat is not penalized; only trans fats and industrial seed oils escalate for heart-conscious';
+
+// Canonical focus keys (mirror the onboarding labels).
+export const FOCUS = {
+  LOWER_SUGAR: 'lower_sugar',
+  BLOOD_SUGAR: 'blood_sugar',
+  LOWER_SODIUM: 'lower_sodium',
+  HEART: 'heart',
+};
+
+const SWAP_INDEX = TIERS.indexOf('swap_recommended');
+const numOrNull = (x) => (Number.isFinite(Number(x)) ? Number(x) : null);
+
+/** Normalize product nutrition to { sodium, addedSugar } in g/100g (or nulls). */
+export function normalizeNutrition(n) {
+  if (!n || typeof n !== 'object') return { sodium: null, addedSugar: null };
+  return { sodium: numOrNull(n.sodium), addedSugar: numOrNull(n.addedSugar) };
+}
+
+// Compute which active focuses are TRIGGERED by real matches, which matched
+// entries are focus-relevant (for surfacing first), and the note lead + signals.
+function computeFocus(matched, nutrition, focuses) {
+  const active = (Array.isArray(focuses) ? focuses : []).map((f) => String(f).trim()).filter(Boolean);
+  const nut = normalizeNutrition(nutrition);
+  const highSodium = nut.sodium != null && nut.sodium >= SODIUM_HIGH;
+  const highAddedSugar = nut.addedSugar != null && nut.addedSugar >= ADDED_SUGAR_HIGH;
+
+  const glycemicHigh = matched.filter((e) => e.glycemic_impact === 'high');
+  const sugarAliases = matched.filter((e) => e.category === 'sugar_alias');
+  const cardio = matched.filter((e) => e.cardiovascular_relevance); // trans fats + seed oils
+
+  const triggered = [];
+  const relevantIds = new Set();
+  const mark = (arr) => arr.forEach((e) => relevantIds.add(e.id));
+
+  if (active.includes(FOCUS.BLOOD_SUGAR) && (glycemicHigh.length || highAddedSugar)) {
+    triggered.push(FOCUS.BLOOD_SUGAR);
+    mark(glycemicHigh);
+  }
+  if (active.includes(FOCUS.LOWER_SUGAR) && (sugarAliases.length || highAddedSugar)) {
+    triggered.push(FOCUS.LOWER_SUGAR);
+    mark(sugarAliases);
+  }
+  if (active.includes(FOCUS.LOWER_SODIUM) && highSodium) {
+    triggered.push(FOCUS.LOWER_SODIUM);
+  }
+  if (active.includes(FOCUS.HEART) && cardio.length) {
+    triggered.push(FOCUS.HEART);
+    mark(cardio);
+  }
+
+  const leadsWith =
+    (triggered.includes(FOCUS.LOWER_SODIUM) && FOCUS.LOWER_SODIUM) ||
+    (triggered.includes(FOCUS.BLOOD_SUGAR) && FOCUS.BLOOD_SUGAR) ||
+    (triggered.includes(FOCUS.LOWER_SUGAR) && FOCUS.LOWER_SUGAR) ||
+    (triggered.includes(FOCUS.HEART) && FOCUS.HEART) ||
+    null;
+
+  return {
+    active,
+    triggered,
+    relevantIds,
+    leadsWith,
+    signals: {
+      highSodium,
+      highAddedSugar,
+      sodium_100g: nut.sodium,
+      added_sugar_100g: nut.addedSugar,
+      glycemicHigh: glycemicHigh.map((e) => e.name),
+      sugarAliases: sugarAliases.map((e) => e.name),
+      cardiovascular: cardio.map((e) => e.name),
+    },
+  };
+}
+
+// Raise the tier one step per triggered focus, capped at swap_recommended, and
+// never below the base (focuses only escalate, never soften).
+function escalateTier(baseTier, triggeredCount) {
+  const base = TIERS.indexOf(baseTier);
+  if (base < 0 || triggeredCount <= 0) return baseTier;
+  const raised = Math.min(SWAP_INDEX, base + triggeredCount);
+  return TIERS[Math.max(base, raised)];
+}
+
+// Surface focus-relevant entries first in the universal layer (stable order).
+function orderLayer(layer, relevantIds) {
+  if (!relevantIds || relevantIds.size === 0) return layer;
+  return [...layer.filter((i) => relevantIds.has(i.id)), ...layer.filter((i) => !relevantIds.has(i.id))];
+}
+
+/** evaluateIngredients — pure convenience composing the pipeline. Returns
  *  everything Step 2 needs to compose a note WITHOUT re-running the match: the
  *  tier, the factual universal layer, the full matched entries (which carry the
- *  per-entry `swap`), and the unmatched tokens. Still no model, no I/O. */
-export function evaluateIngredients(rawIngredientList) {
+ *  per-entry `swap`), and the unmatched tokens. Still no model, no I/O.
+ *
+ *  Optional `{ focuses, nutrition }` apply the bounded dietary-focus escalation
+ *  (extension). Omitting them yields the exact base behavior — additive only.
+ *  @param {string|string[]} rawIngredientList
+ *  @param {{ focuses?: string[], nutrition?: { sodium?, addedSugar? } }} [options]
+ */
+export function evaluateIngredients(rawIngredientList, options = {}) {
+  const { focuses = [], nutrition = null } = options;
   const { matched, unmatched } = matchIngredients(rawIngredientList);
-  const tier = scoreVerdict(matched);
+  const baseTier = scoreVerdict(matched);
+
+  const focus = computeFocus(matched, nutrition, focuses);
+  const tier = escalateTier(baseTier, focus.triggered.length);
+
   return {
     tier,
+    baseTier, // the pre-focus tier (for transparency / tests)
     stamp: tier === 'approved', // the gold seal is earned only at `approved`
-    universalLayer: buildUniversalLayer(matched),
+    universalLayer: orderLayer(buildUniversalLayer(matched), focus.relevantIds),
     matched, // full entries incl. `swap` — surfaced cleanly for Step 2
     unmatched,
+    focus: { active: focus.active, triggered: focus.triggered, leadsWith: focus.leadsWith, signals: focus.signals },
   };
 }

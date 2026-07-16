@@ -2,8 +2,9 @@ import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
-import { evaluateIngredients } from '../lib/verdictEngine.js';
+import { evaluateIngredients, tokenizeIngredients } from '../lib/verdictEngine.js';
 import { composeNote } from '../lib/verdictNote.js';
+import { selectCardIsm, ismContext } from '../lib/education.js';
 
 // Kristy's Verdict — POST an ingredient list + the user's goal, get a claim-locked
 // verdict. The deterministic Step 1 engine scores the tier and builds the factual
@@ -31,6 +32,12 @@ function readBody(body = {}) {
     nonNegotiables: Array.isArray(body.nonNegotiables)
       ? body.nonNegotiables.map((s) => String(s || '').trim()).filter(Boolean)
       : [],
+    // Dietary focuses (preferences the user set) + the product's nutrition data
+    // (per 100g), both feeding the bounded focus escalation in the engine.
+    focuses: Array.isArray(body.focuses)
+      ? body.focuses.map((s) => String(s || '').trim()).filter(Boolean)
+      : [],
+    nutrition: body.nutrition && typeof body.nutrition === 'object' ? body.nutrition : null,
   };
 }
 
@@ -51,20 +58,28 @@ export const verdictRouter = Router();
 // userRateLimit runs after requireAuth (it reads req.user.id) and caps the
 // combined per-user model spend across the authed cost-bearing endpoints.
 verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
-  const { ingredients, goal, nonNegotiables } = readBody(req.body);
+  const { ingredients, goal, nonNegotiables, focuses, nutrition } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
 
   try {
-    // Step 1 engine — unchanged. Its matched entries feed the model directly; do
-    // NOT reshape them here (the claim lock consumes the entries as-is).
-    const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
+    // Step 1 engine + bounded focus escalation. Its matched entries feed the model
+    // directly; do NOT reshape them here (the claim lock consumes them as-is).
+    const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, {
+      focuses,
+      nutrition,
+    });
 
-    // Step 2 — the ONE Haiku call for the personal note + swap.
-    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched });
+    // Step 2 — the ONE Haiku call for the personal note + swap, focus-aware.
+    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched, focus });
 
-    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap) });
+    // One contextual education ism for the card footer (highest-priority trigger).
+    const education = selectCardIsm(
+      ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses })
+    );
+
+    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, education });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -93,8 +108,11 @@ guestVerdictRouter.post('/verdict', (req, res) => {
     return res.json({ gate: true, reason: 'limit' });
   }
 
-  const { tier, stamp, universalLayer } = evaluateIngredients(ingredients);
-  return res.json({ tier, stamp, universalLayer, note: null, swap: null });
+  const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
+  const education = selectCardIsm(
+    ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses: [] })
+  );
+  return res.json({ tier, stamp, universalLayer, note: null, swap: null, education });
 });
 
 export default verdictRouter;

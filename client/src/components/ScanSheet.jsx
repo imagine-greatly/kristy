@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import ScanVerdictCard from './ScanVerdictCard.jsx';
+import AmbientIsm from './AmbientIsm.jsx';
 import { CloseIcon } from './Icons.jsx';
 
 /* ═══════════════════════ Scan sheet — the scan result surface ═══════════════════════
@@ -51,7 +52,9 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile }
       <Centered
         title="Reading it…"
         sub={scan.mode === 'label' ? 'Pulling the ingredients off that label.' : 'Looking that one up.'}
-      />
+      >
+        <AmbientIsm style={{ marginTop: 6 }} />
+      </Centered>
     );
   } else if (scan.gate) {
     content = (

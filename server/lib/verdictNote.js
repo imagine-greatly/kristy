@@ -46,6 +46,20 @@ HARD RULES — absolute:
   Never give a medical directive.
 - Keep it tight. No preamble, no sign-off.
 
+DIETARY FOCUS — when the user has turned one on about themselves (e.g. "lower sodium",
+"blood-sugar-conscious", "lower sugar", "heart-conscious"):
+- A focus is a PREFERENCE the user set. Reference it in preference terms only
+  ("you're watching sodium — this is heavy on it, here's a lighter pick").
+- LEAD with the focus-relevant point, then pair every flag with a better pick in the
+  same breath. Sodium and added-sugar amounts come from the product's nutrition data
+  (per 100g) — you may cite them as quantities.
+- HARD, absolute (in addition to the rules above):
+  * You MAY reference the active focus as a preference the user chose.
+  * You may NOT claim a food treats, manages, lowers, reverses, or cures any condition.
+  * You may NOT state or imply the user HAS a medical condition or a diagnosis.
+  * You may NOT give a medical directive or contradict a doctor.
+  * Every claim still traces to a matched KB ingredient or the product's nutrition data.
+
 Return ONLY this JSON: {"note": "...", "swap": "..." or null}`;
 
 /**
@@ -68,12 +82,25 @@ export function sanitizeFlagged(matched) {
  * Build the user-message payload for the note call: tier + goal + non-negotiables
  * + the sanitized flagged list. Nothing else. This is the ONLY data the model sees.
  */
-export function buildNoteInput({ tier, goal, nonNegotiables, matched }) {
+export function buildNoteInput({ tier, goal, nonNegotiables, matched, focus }) {
+  const sig = focus?.signals || {};
   return {
     goal: str(goal) || 'general',
     nonNegotiables: Array.isArray(nonNegotiables) ? nonNegotiables.map(str).filter(Boolean) : [],
     tier,
     flagged: sanitizeFlagged(matched),
+    // Active dietary focuses + the real, data-backed signals behind them. Numbers
+    // are the product's nutrition data; names are already in `flagged`. Nothing
+    // here is a new health claim — the model may only lead with what's provided.
+    focus: {
+      active: Array.isArray(focus?.active) ? focus.active : [],
+      leadsWith: focus?.leadsWith || null,
+      highSodium: !!sig.highSodium,
+      sodium_g_per_100g: sig.sodium_100g ?? null,
+      highAddedSugar: !!sig.highAddedSugar,
+      added_sugar_g_per_100g: sig.added_sugar_100g ?? null,
+      glycemicHigh: Array.isArray(sig.glycemicHigh) ? sig.glycemicHigh : [],
+    },
   };
 }
 
@@ -130,8 +157,8 @@ async function callNote({ input, corrective }) {
  * @returns {Promise<{ note:string, swap:string|null }>}
  * @throws  Error('verdict-note-unparseable') when both attempts fail to parse.
  */
-export async function composeNote({ tier, goal, nonNegotiables, matched }) {
-  const input = buildNoteInput({ tier, goal, nonNegotiables, matched });
+export async function composeNote({ tier, goal, nonNegotiables, matched, focus }) {
+  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, focus });
 
   let parsed = parseNoteJSON(await callNote({ input, corrective: false }));
   if (!parsed) parsed = parseNoteJSON(await callNote({ input, corrective: true }));

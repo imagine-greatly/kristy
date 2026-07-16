@@ -73,6 +73,8 @@ alter table user_goals add column if not exists onboarded boolean default false;
 -- (The dietary "focuses" multi-select appends to the same row in a later step.)
 alter table user_goals add column if not exists coach_goal text;
 alter table user_goals add column if not exists non_negotiables text[] default '{}';
+-- Dietary focuses (extension): self-selected preferences fed into every /verdict.
+alter table user_goals add column if not exists focuses text[] default '{}';
 
 -- Conversational weight logging — the first optimization feature. Kristy tracks
 -- the trend over time and uses it to recalculate calorie targets.

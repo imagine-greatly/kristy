@@ -1,5 +1,6 @@
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
+import AmbientIsm from './AmbientIsm.jsx';
 
 /* A placeholder for a moment surface not yet built (List → Step 8, Haul → Step 7)
    or gated for guests. An invitation, never a dead end — always a way forward.
@@ -17,6 +18,8 @@ export default function MomentStub({ icon, title, line, ctaLabel, onCta, locked 
           {ctaLabel}
         </button>
       )}
+
+      <AmbientIsm style={{ marginTop: 10 }} />
     </div>
   );
 }

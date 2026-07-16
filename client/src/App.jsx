@@ -498,6 +498,7 @@ export default function App() {
         barcode,
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
+        focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'barcode' });
     } catch {
@@ -543,6 +544,7 @@ export default function App() {
         file,
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
+        focuses: profile?.focuses || [],
       });
       setScan({ ...result, mode: 'label' });
     } catch {

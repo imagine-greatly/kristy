@@ -145,7 +145,7 @@ function SectionLabel({ children }) {
 
 export default function ScanVerdictCard({ verdict, product = {}, goal }) {
   if (!verdict) return null;
-  const { tier, stamp, universalLayer = [], note, swap } = verdict;
+  const { tier, stamp, universalLayer = [], note, swap, education } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
 
   return (
@@ -177,6 +177,15 @@ export default function ScanVerdictCard({ verdict, product = {}, goal }) {
 
       {/* Swap — only present when the engine returned one (never for approved tiers). */}
       {swap && <SwapBlock swap={swap} />}
+
+      {/* Education — at most ONE contextual Kristy-ism, chosen server-side by the
+          highest-priority trigger on this product. */}
+      {education?.text && (
+        <div style={styles.ism}>
+          <GoldThread />
+          <p style={{ ...kristyVoice, ...styles.ismText }}>{education.text}</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -352,4 +361,15 @@ const styles = {
   swapText: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.45 },
   swapPrimary: { color: colors.accentGold, fontWeight: 700 },
   swapRest: { color: colors.textPrimary },
+
+  // ── Education ism (footer) ──
+  ism: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, marginTop: 2 },
+  ismText: {
+    margin: 0,
+    fontSize: 14,
+    lineHeight: 1.5,
+    textAlign: 'center',
+    color: colors.textMuted,
+    maxWidth: 320,
+  },
 };

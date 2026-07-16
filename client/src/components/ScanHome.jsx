@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { BarcodeIcon, CameraIcon } from './Icons.jsx';
+import AmbientIsm from './AmbientIsm.jsx';
 
 /* ═══════════════════════ Scan moment — the front door ═══════════════════════
    The default surface. Kristy invites the in-aisle action: scan a barcode or
@@ -55,6 +56,8 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, guest
           Prefer to talk it through? Ask Kristy →
         </button>
       )}
+
+      <AmbientIsm style={{ marginTop: 22 }} />
     </div>
   );
 }

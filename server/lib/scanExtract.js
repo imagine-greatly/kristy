@@ -23,6 +23,7 @@ const OFF_FIELDS = [
   'categories_tags',
   'ingredients_text_en',
   'ingredients_text',
+  'nutriments',
   'image_front_url',
   'image_url',
   'image_ingredients_url',
@@ -79,6 +80,20 @@ function aisleFromCategories(tags) {
     .trim();
 }
 
+// Per-100g nutrition the focus escalation needs: sodium + added sugar (g/100g).
+// Sodium falls back from salt (salt = sodium × 2.5); added sugar falls back to
+// total sugars when OFF has no added-sugars figure (a documented over-estimate,
+// but it only ever raises emphasis for a user who asked to watch sugar).
+export function nutritionFromOFF(p = {}) {
+  const n = p.nutriments || {};
+  const num = (x) => (Number.isFinite(Number(x)) ? Number(x) : null);
+  let sodium = num(n['sodium_100g']);
+  if (sodium == null && num(n['salt_100g']) != null) sodium = num(n['salt_100g']) / 2.5;
+  const addedSugar =
+    num(n['added-sugars_100g']) ?? num(n['added_sugars_100g']) ?? num(n['sugars_100g']);
+  return { sodium, addedSugar };
+}
+
 /** Display meta for the scan verdict card header. Factual, straight from OFF. */
 export function productMeta(p = {}, barcode = null) {
   return {
@@ -125,11 +140,12 @@ export async function extractFromBarcode(barcode) {
 
   const p = data.product;
   const product = productMeta(p, code);
+  const nutrition = nutritionFromOFF(p); // sodium + added sugar per 100g (for focuses)
 
   // 1. Open Food Facts ENGLISH ingredient text (foreign text is rejected here so
   //    it can never reach the engine and produce a false "approved").
   const text = pickEnglishText(p);
-  if (text) return { found: true, source: 'off', product, ingredients: text };
+  if (text) return { found: true, source: 'off', product, ingredients: text, nutrition };
 
   // 2. Vision fallback on the label image OFF stores. The transcription must ALSO
   //    clear the English guard — a French panel reads as French just as easily.
@@ -140,7 +156,7 @@ export async function extractFromBarcode(barcode) {
         const { ingredients } = await readLabelIngredients(img);
         const joined = ingredients.join(', ');
         if (ingredients.length && !looksNonEnglish(joined)) {
-          return { found: true, source: 'vision', product, ingredients: joined };
+          return { found: true, source: 'vision', product, ingredients: joined, nutrition };
         }
       }
     } catch {
@@ -150,5 +166,5 @@ export async function extractFromBarcode(barcode) {
 
   // 3. Known product, but nothing readable in English → NO ingredients, NO stamp.
   //    The client auto-pivots to the photograph-the-label path.
-  return { found: false, source: 'none', product, ingredients: '' };
+  return { found: false, source: 'none', product, ingredients: '', nutrition };
 }

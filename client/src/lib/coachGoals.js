@@ -57,6 +57,37 @@ export const NON_NEGOTIABLES = [
   { value: 'dairy-free', label: 'Dairy-free' },
 ];
 
+// Dietary focuses (extension Part B). Self-selected preferences the user turns on
+// about themselves — never pre-checked, never inferred. Labels are EXACT and
+// preference-framed (no condition names). Values are the engine's focus keys.
+export const FOCUSES = [
+  { value: 'lower_sugar', label: 'Lower sugar' },
+  { value: 'blood_sugar', label: 'Blood-sugar-conscious' },
+  { value: 'lower_sodium', label: 'Lower sodium' },
+  { value: 'heart', label: 'Heart-conscious' },
+];
+
+// The one-time, in-voice disclaimer shown the first time ANY focus is turned on.
+export const FOCUS_DISCLAIMER =
+  "Quick honesty: I'm a coach, not your doctor. If you're managing something a doctor's already told you about, keep them and a dietitian in the loop — I'm here to help you shop smarter, not to treat anything.";
+
+// Acknowledgement is stored per-device so the disclaimer shows once, then never again.
+const ACK_KEY = 'kristy:focusDisclaimerAck';
+export function focusDisclaimerAcked() {
+  try {
+    return localStorage.getItem(ACK_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+export function ackFocusDisclaimer() {
+  try {
+    localStorage.setItem(ACK_KEY, '1');
+  } catch {
+    /* ignore */
+  }
+}
+
 const byValue = (value) => COACH_GOALS.find((g) => g.value === value) || null;
 
 /** The phrase fed to /verdict + shown as "for your <…>". Falls back to the raw value. */

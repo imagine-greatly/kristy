@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
-import { COACH_GOALS, NON_NEGOTIABLES, goalPayoff } from '../lib/coachGoals.js';
+import {
+  COACH_GOALS,
+  NON_NEGOTIABLES,
+  FOCUSES,
+  FOCUS_DISCLAIMER,
+  focusDisclaimerAcked,
+  ackFocusDisclaimer,
+  goalPayoff,
+} from '../lib/coachGoals.js';
 
 /* ═══════════════════════ 60-second onboarding (Step 6) ═══════════════════════
    The grocery-coach front door: pick a goal, set non-negotiables, feel the
@@ -15,14 +23,30 @@ import { COACH_GOALS, NON_NEGOTIABLES, goalPayoff } from '../lib/coachGoals.js';
    verdicts until they set a goal). Tokens only. */
 
 export default function GroceryOnboarding({ onComplete, onSkip }) {
-  const [step, setStep] = useState('goal'); // 'goal' | 'limits' | 'payoff'
+  const [step, setStep] = useState('goal'); // 'goal' | 'limits' | 'focuses' | 'payoff'
   const [goal, setGoal] = useState(null);
   const [limits, setLimits] = useState([]); // non-negotiables
+  const [focuses, setFocuses] = useState([]); // dietary focuses — never pre-checked
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   const toggleLimit = (v) =>
     setLimits((prev) => (prev.includes(v) ? prev.filter((x) => x !== v) : [...prev, v]));
 
-  const finish = (startScan) => onComplete?.({ coach_goal: goal, non_negotiables: limits }, { startScan });
+  const toggleFocus = (v) =>
+    setFocuses((prev) => {
+      const on = prev.includes(v);
+      // First time ANY focus is turned on → the one-time coach-not-doctor note.
+      if (!on && !focusDisclaimerAcked()) setShowDisclaimer(true);
+      return on ? prev.filter((x) => x !== v) : [...prev, v];
+    });
+
+  const dismissDisclaimer = () => {
+    ackFocusDisclaimer();
+    setShowDisclaimer(false);
+  };
+
+  const finish = (startScan) =>
+    onComplete?.({ coach_goal: goal, non_negotiables: limits, focuses }, { startScan });
 
   return (
     <div style={styles.screen}>
@@ -75,11 +99,38 @@ export default function GroceryOnboarding({ onComplete, onSkip }) {
                 </button>
               ))}
             </div>
+            <button type="button" style={styles.primary} onClick={() => setStep('focuses')}>
+              Done
+            </button>
+            <button type="button" style={styles.skip} onClick={() => setStep('focuses')}>
+              None of these
+            </button>
+          </>
+        )}
+
+        {step === 'focuses' && (
+          <>
+            <h1 style={styles.q}>Anything you want Kristy to keep an eye on?</h1>
+            <p style={styles.sub}>Optional. Turn on what matters to you — I'll flag it as we shop.</p>
+            <div style={styles.stack}>
+              {FOCUSES.map((f) => (
+                <button
+                  key={f.value}
+                  type="button"
+                  onClick={() => toggleFocus(f.value)}
+                  aria-pressed={focuses.includes(f.value)}
+                  style={{ ...styles.option, ...(focuses.includes(f.value) ? styles.optionOn : null) }}
+                >
+                  <span style={styles.optTitle}>{f.label}</span>
+                  <span style={styles.check}>{focuses.includes(f.value) ? '✓' : ''}</span>
+                </button>
+              ))}
+            </div>
             <button type="button" style={styles.primary} onClick={() => setStep('payoff')}>
               Done
             </button>
             <button type="button" style={styles.skip} onClick={() => setStep('payoff')}>
-              None of these
+              Skip
             </button>
           </>
         )}
@@ -99,6 +150,18 @@ export default function GroceryOnboarding({ onComplete, onSkip }) {
           </>
         )}
       </div>
+
+      {/* One-time, in-voice disclaimer the first time any focus is turned on. */}
+      {showDisclaimer && (
+        <div style={styles.discScrim} role="dialog" aria-modal="true" aria-label="A quick note from Kristy">
+          <div style={styles.discCard}>
+            <p style={{ ...kristyVoice, ...styles.discText }}>{FOCUS_DISCLAIMER}</p>
+            <button type="button" style={styles.primary} onClick={dismissDisclaimer}>
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -167,4 +230,27 @@ const styles = {
     fontSize: 13.5,
     cursor: 'pointer',
   },
+  discScrim: {
+    position: 'fixed',
+    inset: 0,
+    zIndex: 70,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 24,
+    background: colors.scrimVerdict,
+  },
+  discCard: {
+    width: '100%',
+    maxWidth: 380,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 16,
+    padding: 22,
+    borderRadius: 18,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.surface,
+    textAlign: 'center',
+  },
+  discText: { margin: 0, fontSize: 17, lineHeight: 1.55, color: colors.textPrimary },
 };

@@ -15,12 +15,12 @@ router.post('/onboarding/coach', requireAuth, async (req, res) => {
   const userId = req.user.id;
   const b = req.body || {};
   const coach_goal = typeof b.coach_goal === 'string' && b.coach_goal.trim() ? b.coach_goal.trim() : null;
-  const non_negotiables = Array.isArray(b.non_negotiables)
-    ? b.non_negotiables.map((s) => String(s || '').trim()).filter(Boolean)
-    : [];
+  const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);
+  const non_negotiables = list(b.non_negotiables);
+  const focuses = list(b.focuses);
 
   try {
-    const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables });
+    const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
     // 7-day full-access trial, idempotent + non-fatal (same posture as /full).
     const subscription = await ensureTrial(userId);
     return res.json({ ok: true, profile, subscription });
