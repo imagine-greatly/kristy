@@ -42,9 +42,8 @@ import VerdictCard from './components/VerdictCard.jsx';
 import ScanSheet from './components/ScanSheet.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
-import MomentStub from './components/MomentStub.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
-import { ListIcon } from './components/Icons.jsx';
+import ListMoment from './components/ListMoment.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -751,12 +750,10 @@ export default function App() {
             />
           )}
           {moment === 'list' && (
-            <MomentStub
-              icon={<ListIcon size={26} />}
-              title="Your list"
-              line="Before your next trip I'll build a shopping list around your goal. It's coming together — scan a few things and I'll learn what you actually buy."
-              ctaLabel="Scan something"
-              onCta={() => { setMoment('scan'); setCameraOpen(true); }}
+            <ListMoment
+              goal={profile?.coach_goal}
+              nonNegotiables={profile?.non_negotiables || []}
+              onSetGoal={() => setSettingsOpen(true)}
             />
           )}
           {moment === 'haul' && (
