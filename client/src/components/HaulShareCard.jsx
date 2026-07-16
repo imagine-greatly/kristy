@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { colors, fonts } from '../lib/tokens.js';
 import { CloseIcon } from './Icons.jsx';
-import { drawHaulCard, canvasToBlob, ensureCardFonts } from '../lib/haulCanvas.js';
+import { drawHaulCard, canvasToBlob, ensureCardFonts, ensureCardLogo } from '../lib/haulCanvas.js';
 import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════════════ Share your haul (Step 10) ═══════════════════════
@@ -12,22 +12,28 @@ import { trackEvent } from '../lib/analytics.js';
 
 export default function HaulShareCard({ haul, onClose }) {
   const canvasRef = useRef(null);
-  const [fontsReady, setFontsReady] = useState(false);
+  const logoRef = useRef(null);
+  const [ready, setReady] = useState(false);
   const [hidePersonal, setHidePersonal] = useState(false);
   const [status, setStatus] = useState('');
 
   useEffect(() => {
     let alive = true;
-    ensureCardFonts().then(() => alive && setFontsReady(true));
+    // Fonts + the marketing-mark watermark both load before the first draw.
+    Promise.all([ensureCardFonts(), ensureCardLogo()]).then(([, logo]) => {
+      if (!alive) return;
+      logoRef.current = logo;
+      setReady(true);
+    });
     return () => {
       alive = false;
     };
   }, []);
 
   useEffect(() => {
-    if (!fontsReady || !canvasRef.current) return;
-    drawHaulCard(canvasRef.current, { distribution: haul?.distribution, read: haul?.read, hidePersonal });
-  }, [fontsReady, hidePersonal, haul]);
+    if (!ready || !canvasRef.current) return;
+    drawHaulCard(canvasRef.current, { distribution: haul?.distribution, read: haul?.read, hidePersonal, logo: logoRef.current });
+  }, [ready, hidePersonal, haul]);
 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose?.();

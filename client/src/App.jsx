@@ -681,7 +681,13 @@ export default function App() {
     return (
       <div className="app">
         <div className="empty">
-          <div className="empty__leaf">🌿</div>
+          {/* App-open moment → the large-format marketing mark (dark ground only).
+              The flat "K"/leaf stays on the favicon + tight header. */}
+          <img
+            src="/kristy-logo.png"
+            alt="Kristy"
+            style={{ height: 190, width: 'auto', maxWidth: '58%', display: 'block' }}
+          />
         </div>
       </div>
     );

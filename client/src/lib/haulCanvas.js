@@ -8,6 +8,27 @@
 import { colors, fonts } from './tokens.js';
 export { canvasToBlob, ensureCardFonts } from './verdictCanvas.js';
 
+// Preload the lustrous marketing mark (the gradient silhouette) for the card
+// watermark. Cached so it loads once; resolves to null if it can't load so the
+// card still draws (the mark is decorative, never required). Large-format only —
+// this is NOT the flat "K", which stays on the favicon/header.
+let _logoPromise;
+export function ensureCardLogo() {
+  if (_logoPromise) return _logoPromise;
+  _logoPromise = new Promise((resolve) => {
+    try {
+      if (typeof Image === 'undefined') return resolve(null); // non-browser (tests)
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = '/kristy-logo.png';
+    } catch {
+      resolve(null);
+    }
+  });
+  return _logoPromise;
+}
+
 const CARD = { w: 1080, h: 1350 };
 const SERIF = fonts.serif;
 const MONO = fonts.mono;
@@ -46,7 +67,7 @@ function tracked(ctx, text, x, y, spacing) {
  * @param canvas
  * @param {{ distribution:{approved,note,swap,total}, read?:string, hidePersonal?:boolean }} data
  */
-export function drawHaulCard(canvas, { distribution, read = '', hidePersonal = false } = {}) {
+export function drawHaulCard(canvas, { distribution, read = '', hidePersonal = false, logo = null } = {}) {
   const { w: W, h: H } = CARD;
   canvas.width = W;
   canvas.height = H;
@@ -67,6 +88,17 @@ export function drawHaulCard(canvas, { distribution, read = '', hidePersonal = f
   glow.addColorStop(1, 'rgba(201,168,76,0)');
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
+
+  // ── the marketing mark, as a faint luminous watermark behind the content ──
+  // Centered, low-alpha; the opaque scorecard text/bars draw on top of it.
+  if (logo && logo.width) {
+    const wmH = Math.round(H * 0.5);
+    const wmW = Math.round((wmH * logo.width) / logo.height);
+    ctx.save();
+    ctx.globalAlpha = 0.08;
+    ctx.drawImage(logo, Math.round((W - wmW) / 2), Math.round(H * 0.3), wmW, wmH);
+    ctx.restore();
+  }
 
   // hairline gold frame
   const fm = Math.round(W * 0.046);
