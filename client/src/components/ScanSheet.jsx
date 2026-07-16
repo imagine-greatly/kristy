@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import ScanVerdictCard from './ScanVerdictCard.jsx';
@@ -40,7 +41,8 @@ function Centered({ title, sub, children }) {
   );
 }
 
-export default function ScanSheet({ scan, goal, onClose, onSignIn }) {
+export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile }) {
+  const fileRef = useRef(null);
   if (!scan) return null;
 
   let content;
@@ -73,13 +75,39 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn }) {
       </Centered>
     );
   } else if (scan.found === false) {
-    // Known-or-unknown product we couldn't read the ingredients for.
+    // No readable ingredients (barcode not in the database, or an unreadable /
+    // non-English label). Auto-pivot to the path that works: photograph the panel.
+    const barcodeMiss = scan.mode === 'barcode';
     content = (
       <Centered
-        title="I can't read that one"
-        sub={scan.message || "The label didn't come through. Type the product name and I'll take it from there."}
+        title={barcodeMiss ? "I don't have that one" : "I can't read that one"}
+        sub={
+          barcodeMiss
+            ? "That barcode isn't in the database — snap the ingredients panel and I'll read it straight off the label."
+            : scan.message ||
+              "That didn't come through. Try the ingredients panel again, better lit — or type the product name."
+        }
       >
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}
+        {onLabelFile && (
+          <>
+            <button style={styles.primaryBtn} onClick={() => fileRef.current?.click()}>
+              Photograph the label
+            </button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              style={{ display: 'none' }}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                e.target.value = '';
+                if (f) onLabelFile(f);
+              }}
+            />
+          </>
+        )}
         <button style={styles.ghostBtn} onClick={onClose}>
           Type it instead
         </button>

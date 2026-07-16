@@ -3,7 +3,7 @@ import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { imageUpload } from '../lib/upload.js';
-import { extractFromBarcode } from '../lib/scanExtract.js';
+import { extractFromBarcode, looksNonEnglish } from '../lib/scanExtract.js';
 import { readLabelIngredients } from '../lib/labelVision.js';
 
 // Scan extraction — the front door of the grocery coach. Both entry points parse
@@ -31,12 +31,20 @@ function readLabel(reqFile) {
   return readLabelIngredients({ base64, mediaType });
 }
 
-const labelPayload = (ingredients) => ({
-  found: ingredients.length > 0,
-  source: 'vision',
-  product: { barcode: null, name: null, brand: null, image: null, aisle: '' },
-  ingredients: ingredients.join(', '),
-});
+// Build the label result. A non-English transcription is treated as UNREADABLE
+// (no card, no stamp) — the same liability guard as the barcode path.
+function buildLabelResult(ingredients) {
+  const joined = ingredients.join(', ');
+  if (!ingredients.length || looksNonEnglish(joined)) {
+    return { found: false, source: 'vision', product: null, ingredients: '', message: NO_INGREDIENTS };
+  }
+  return {
+    found: true,
+    source: 'vision',
+    product: { barcode: null, name: null, brand: null, image: null, aisle: '' },
+    ingredients: joined,
+  };
+}
 
 /* ───────────────────────── Authed ───────────────────────── */
 export const scanRouter = Router();
@@ -58,8 +66,7 @@ scanRouter.post('/scan/label', requireAuth, userRateLimit, imageUpload.single('i
   if (!req.file) return res.status(400).json({ error: 'image is required' });
   try {
     const { ingredients } = await readLabel(req.file);
-    if (!ingredients.length) return res.json({ found: false, source: 'vision', product: null, ingredients: '', message: NO_INGREDIENTS });
-    return res.json(labelPayload(ingredients));
+    return res.json(buildLabelResult(ingredients));
   } catch (err) {
     console.error('[kristy] /api/scan/label error:', err?.message || err);
     return res.status(502).json({ error: true, message: ERROR_MSG });
@@ -91,8 +98,7 @@ guestScanRouter.post('/scan/label', imageUpload.single('image'), async (req, res
   if (rateLimited(clientIp(req))) return res.json({ gate: true, reason: 'limit' });
   try {
     const { ingredients } = await readLabel(req.file);
-    if (!ingredients.length) return res.json({ found: false, source: 'vision', product: null, ingredients: '', message: NO_INGREDIENTS });
-    return res.json(labelPayload(ingredients));
+    return res.json(buildLabelResult(ingredients));
   } catch (err) {
     console.error('[kristy] /api/guest/scan/label error:', err?.message || err);
     return res.status(502).json({ error: true, message: ERROR_MSG });

@@ -718,7 +718,12 @@ export default function App() {
       )}
 
       {scan && (
-        <ScanSheet scan={scan} goal={goalNoteLabel(profile?.coach_goal)} onClose={() => setScan(null)} />
+        <ScanSheet
+          scan={scan}
+          goal={goalNoteLabel(profile?.coach_goal)}
+          onClose={() => setScan(null)}
+          onLabelFile={handleVerdictFile}
+        />
       )}
 
       {cameraOpen && (

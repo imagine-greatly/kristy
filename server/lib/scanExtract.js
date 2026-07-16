@@ -18,6 +18,8 @@ const OFF_FIELDS = [
   'product_name_en',
   'generic_name',
   'brands',
+  'lang',
+  'lc',
   'categories_tags',
   'ingredients_text_en',
   'ingredients_text',
@@ -27,6 +29,45 @@ const OFF_FIELDS = [
 ].join(',');
 
 const UA = { 'User-Agent': 'Kristy/1.0 (grocery coach; nutrition app)' };
+
+// ── Language guard (hardening) ───────────────────────────────────────────────
+// The knowledge base is English. Feeding a non-English ingredient string to the
+// engine matches nothing and returns a silent "approved" — a false stamp on a
+// product Kristy can't actually read. That's a liability, so every ingredient
+// string (from Open Food Facts text OR vision) must clear an English check before
+// it can produce a verdict. Unreadable ⇒ no ingredients ⇒ no card ⇒ no stamp.
+
+// Unambiguously non-English food words (curated to avoid English-ambiguous ones).
+const NON_EN_HINTS =
+  /\b(sucre|huile|farine|lait|amidon|ar[oô]me|bl[eé]|beurre|oeufs?|az[uú]car|aceite|harina|leche|agua|zucker|weizen|milch|zutaten|salz|wasser|acqua|zucchero|olio|conservateur|colorant|edulcorante|s[oó]dio|arachide)\b/i;
+
+/** True when a string is clearly NOT English (foreign food words or heavy accents). */
+export function looksNonEnglish(text) {
+  const t = String(text || '');
+  if (!t.trim()) return false;
+  if (NON_EN_HINTS.test(t)) return true;
+  const letters = (t.match(/[A-Za-zÀ-ÿ]/g) || []).length;
+  const accented = (t.match(/[À-ÿ]/g) || []).length;
+  return letters > 0 && accented / letters > 0.06;
+}
+
+/**
+ * Choose an ENGLISH ingredient string from an Open Food Facts product, or '' if
+ * none can be trusted. Prefers the explicit English field; otherwise accepts the
+ * default-language text only when OFF says the product is English (or the language
+ * is unknown and the text doesn't look foreign). Never returns a foreign string.
+ */
+export function pickEnglishText(p = {}) {
+  const en = String(p.ingredients_text_en || '').trim();
+  if (en) return en;
+
+  const raw = String(p.ingredients_text || '').trim();
+  if (!raw) return '';
+  const lang = String(p.lang || p.lc || '').toLowerCase();
+  if (lang && lang !== 'en') return ''; // OFF says it's another language → don't trust it
+  if (looksNonEnglish(raw)) return ''; // unknown language but clearly foreign
+  return raw;
+}
 
 // OFF categories_tags → a short human aisle/type ("en:breakfast-cereals" → "breakfast cereals").
 function aisleFromCategories(tags) {
@@ -85,18 +126,21 @@ export async function extractFromBarcode(barcode) {
   const p = data.product;
   const product = productMeta(p, code);
 
-  // 1. Open Food Facts ingredient text (English preferred).
-  const text = String(p.ingredients_text_en || p.ingredients_text || '').trim();
+  // 1. Open Food Facts ENGLISH ingredient text (foreign text is rejected here so
+  //    it can never reach the engine and produce a false "approved").
+  const text = pickEnglishText(p);
   if (text) return { found: true, source: 'off', product, ingredients: text };
 
-  // 2. Vision fallback on the label image OFF stores.
+  // 2. Vision fallback on the label image OFF stores. The transcription must ALSO
+  //    clear the English guard — a French panel reads as French just as easily.
   if (p.image_ingredients_url) {
     try {
       const img = await fetchImageBase64(p.image_ingredients_url);
       if (img) {
         const { ingredients } = await readLabelIngredients(img);
-        if (ingredients.length) {
-          return { found: true, source: 'vision', product, ingredients: ingredients.join(', ') };
+        const joined = ingredients.join(', ');
+        if (ingredients.length && !looksNonEnglish(joined)) {
+          return { found: true, source: 'vision', product, ingredients: joined };
         }
       }
     } catch {
@@ -104,6 +148,7 @@ export async function extractFromBarcode(barcode) {
     }
   }
 
-  // 3. Known product, but we couldn't read ingredients anywhere.
-  return { found: true, source: 'none', product, ingredients: '' };
+  // 3. Known product, but nothing readable in English → NO ingredients, NO stamp.
+  //    The client auto-pivots to the photograph-the-label path.
+  return { found: false, source: 'none', product, ingredients: '' };
 }

@@ -216,7 +216,9 @@ export default function GuestApp() {
         onHaul={() => setMoment('haul')}
       />
 
-      {scan && <ScanSheet scan={scan} goal="" onClose={() => setScan(null)} onSignIn={invite} />}
+      {scan && (
+        <ScanSheet scan={scan} goal="" onClose={() => setScan(null)} onSignIn={invite} onLabelFile={handleGuestLabel} />
+      )}
 
       {cameraOpen && (
         <Suspense fallback={null}>
