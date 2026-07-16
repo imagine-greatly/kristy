@@ -13,7 +13,7 @@ import {
   loadWeightHistory,
 } from './lib/data.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
-import { sendBarcode, sendPhoto, sendVerdict } from './lib/logging.js';
+import { sendPhoto, runProductScan } from './lib/logging.js';
 import {
   getLastActiveDate,
   setLastActiveDate,
@@ -34,6 +34,7 @@ import Onboarding from './components/Onboarding.jsx';
 import Settings from './components/Settings.jsx';
 import Upgrade from './components/Upgrade.jsx';
 import VerdictCard from './components/VerdictCard.jsx';
+import ScanSheet from './components/ScanSheet.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -115,6 +116,8 @@ export default function App() {
   const [photoPreview, setPhotoPreview] = useState(null);
   // Kristy's Verdict overlay (separate pipeline — never touches meals/thread).
   const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
+  // Scan → verdict card (Step 4). A scan is now a verdict, not a silent meal log.
+  const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error, message }
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -449,11 +452,22 @@ export default function App() {
     }
   }
 
-  function handleScan(barcode) {
+  // A scanned barcode is now a VERDICT, not a silent meal log: extract → /verdict →
+  // Step-3 card. Macro logging stays reachable via the meal-photo path (handleSendPhoto).
+  async function handleScan(barcode) {
     setCameraOpen(false);
-    runLogging(() => sendBarcode({ barcode }), {
-      fallback: "Couldn't find that one — try typing it out instead.",
-    });
+    setScan({ loading: true, mode: 'barcode' });
+    try {
+      const result = await runProductScan({
+        mode: 'barcode',
+        barcode,
+        goal: profile?.goal || '',
+        nonNegotiables: profile?.nonNegotiables || [],
+      });
+      setScan({ ...result, mode: 'barcode' });
+    } catch {
+      setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
+    }
   }
 
   function handlePhotoFile(file) {
@@ -482,25 +496,22 @@ export default function App() {
     });
   }
 
-  /* ───────── Kristy's Verdict ─────────
-     A one-shot scan: photo → verdict card overlay. Deliberately separate from
-     meal logging — it never appends to the thread and never creates a meal. */
+  /* ───────── Photo-of-label scan (Step 4) ─────────
+     Vision reads the label → ingredients → /verdict → the Step-3 card. Deliberately
+     separate from meal logging — it never appends to the thread and never creates a meal. */
   async function handleVerdictFile(file) {
     if (!file) return;
-    setVerdict({ loading: true, data: null, error: null });
+    setScan({ loading: true, mode: 'label' });
     try {
-      const result = await sendVerdict({ file });
-      if (result?.error) {
-        setVerdict({ loading: false, data: null, error: result.message });
-      } else {
-        setVerdict({ loading: false, data: result, error: null });
-      }
-    } catch (err) {
-      setVerdict({
-        loading: false,
-        data: null,
-        error: "Couldn't read that one clearly — try another shot, better lit if you can.",
+      const result = await runProductScan({
+        mode: 'label',
+        file,
+        goal: profile?.goal || '',
+        nonNegotiables: profile?.nonNegotiables || [],
       });
+      setScan({ ...result, mode: 'label' });
+    } catch {
+      setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });
     }
   }
 
@@ -622,6 +633,10 @@ export default function App() {
           isGuest={false}
           onClose={() => setVerdict(null)}
         />
+      )}
+
+      {scan && (
+        <ScanSheet scan={scan} goal={profile?.goal || ''} onClose={() => setScan(null)} />
       )}
 
       {cameraOpen && (

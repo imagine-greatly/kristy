@@ -39,4 +39,5 @@ Keep this current as steps land.
 - ✅ Step 1 — KB-driven verdict engine (`caedf1f`)
 - ✅ Step 2 — `/verdict` + claim-locked Haiku note (`97c8ea0`)
 - ✅ Step 3 — scan verdict card (`client/src/components/ScanVerdictCard.jsx`)
-- ⬜ Step 4 → 12 + focuses/education extension — pending
+- ✅ Step 4 — scan paths repointed to `/verdict` (barcode + label-vision extraction → card; OFF→vision fallback; `server/routes/scan.js`, `server/lib/{scanExtract,labelVision}.js`, client `runProductScan` + `ScanSheet`)
+- ⬜ Step 5 → 12 + focuses/education extension — pending

@@ -159,3 +159,117 @@ export async function sendGuestVerdict({ file }) {
   if (body && body.message) return { error: true, message: body.message };
   throw new Error("Couldn't read that one clearly — try another shot.");
 }
+
+/* ───────── Scan → verdict (the repointed scan front door — Step 4) ─────────
+   The grocery-coach front door. Both scan entry points parse to an ingredient
+   list, then POST it to /verdict. Extraction (Open Food Facts barcode / label
+   vision) runs server-side; runProductScan orchestrates extract → verdict and
+   hands the caller a ready-to-render Step-3 card:
+
+     { found:true, source, product, verdict }   → render ScanVerdictCard
+     { found:false, source, product, message }  → "type the product" fallback
+     { gate:true, reason }                       → soft sign-in gate (guest)
+     { error:true, message }                     → Kristy-voiced error
+
+   Authed hits /api/verdict (personal note); guests hit /api/guest/verdict (the
+   universal layer only). Macro logging (sendBarcode / sendPhoto) stays reachable
+   but is no longer what a scan produces by default. */
+
+// A believable demo card so the whole scan flow is explorable with no backend.
+function demoScanCard() {
+  return {
+    found: true,
+    source: 'off',
+    product: {
+      barcode: 'demo',
+      name: 'Hazelnut Coffee Creamer',
+      brand: 'Demo Co.',
+      image: null,
+      aisle: 'coffee & tea',
+    },
+    verdict: {
+      tier: 'swap_recommended',
+      stamp: false,
+      universalLayer: [
+        { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Industrially processed seed oil with a poor omega-6 to omega-3 ratio.', severity: 'high', evidence_tier: 'kristys_standard' },
+        { id: 'cane_sugar', name: 'Cane Sugar', one_liner: 'Added sugar — empty calories that displace protein on a cut.', severity: 'moderate', evidence_tier: 'established' },
+        { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A thickener some research links to gut irritation.', severity: 'moderate', evidence_tier: 'credible_concern' },
+      ],
+      note: 'For your cut, this creamer is 250 calories of oil and sugar doing nothing for protein — move it where it works.',
+      swap: 'Butter, ghee, or a splash of whole milk in your coffee',
+    },
+  };
+}
+
+async function isGuestSession() {
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  return !session?.access_token;
+}
+
+// Server-side extraction: barcode (Open Food Facts, with a vision fallback) or a
+// label photo (vision). Returns { found, source, product, ingredients } | { gate }.
+async function scanExtract({ mode, barcode, file, isGuest }) {
+  const base = isGuest ? '/api/guest' : '/api';
+  const fail = { found: false, source: 'none', ingredients: '' };
+
+  if (mode === 'barcode') {
+    const res = await fetch(`${apiBase}${base}/scan/barcode`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
+      body: JSON.stringify({ barcode }),
+    });
+    return res.ok ? res.json() : (await res.json().catch(() => null)) || fail;
+  }
+
+  const form = new FormData();
+  form.append('image', file);
+  const res = await fetch(`${apiBase}${base}/scan/label`, {
+    method: 'POST',
+    headers: { ...(isGuest ? {} : await authHeader()) }, // browser sets the multipart boundary
+    body: form,
+  });
+  return res.ok ? res.json() : (await res.json().catch(() => null)) || fail;
+}
+
+// POST the extracted ingredients to /verdict. Authed → personal note; guest →
+// universal layer only (or a { gate } soft-gate at the exchange threshold).
+async function fetchVerdict({ ingredients, goal, nonNegotiables, isGuest }) {
+  const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
+  const body = isGuest ? { ingredients } : { ingredients, goal, nonNegotiables };
+  const res = await fetch(`${apiBase}${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
+    body: JSON.stringify(body),
+  });
+  if (res.ok) return res.json();
+  const b = await res.json().catch(() => null);
+  if (b && b.message) return { error: true, message: b.message };
+  throw new Error("Couldn't reach the verdict service — try again.");
+}
+
+export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [] }) {
+  if (IS_DEMO) {
+    await delay(mode === 'label' ? 1100 : 600);
+    return demoScanCard();
+  }
+
+  const isGuest = await isGuestSession();
+
+  const ex = await scanExtract({ mode, barcode, file, isGuest });
+  if (ex?.gate) return { gate: true, reason: ex.reason };
+  if (ex?.error) return { error: true, message: ex.message };
+
+  const ingredients = String(ex?.ingredients || '').trim();
+  if (!ingredients) {
+    // Product not found, or found but no readable ingredients → the type-it path.
+    return { found: false, source: ex?.source || 'none', product: ex?.product || null, message: ex?.message };
+  }
+
+  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, isGuest });
+  if (verdict?.gate) return { gate: true, reason: verdict.reason };
+  if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
+
+  return { found: true, source: ex.source, product: ex.product, verdict };
+}
