@@ -44,6 +44,7 @@ import ScanHome from './components/ScanHome.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import ListMoment from './components/ListMoment.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
+import HaulShareCard from './components/HaulShareCard.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -134,6 +135,7 @@ export default function App() {
   // after each new scan so it refreshes on next open.
   const [haul, setHaul] = useState(null);
   const [haulLoading, setHaulLoading] = useState(false);
+  const [shareHaul, setShareHaul] = useState(false); // the shareable haul card overlay (Step 10)
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -608,16 +610,9 @@ export default function App() {
     }
   }
 
-  // "Share haul" → the web share sheet. Step 10 replaces the text with a branded card.
-  async function handleShareHaul() {
-    const d = haul?.distribution || {};
-    const text = `My grocery haul — ${d.approved || 0} approved, ${d.note || 0} with a note, ${d.swap || 0} swaps.${haul?.read ? ' ' + haul.read : ''} — via Kristy`;
-    try {
-      if (navigator.share) await navigator.share({ title: 'My Haul', text });
-      else if (navigator.clipboard) await navigator.clipboard.writeText(text);
-    } catch {
-      /* user cancelled */
-    }
+  // "Share haul" → the branded shareable card (canvas → web share sheet).
+  function handleShareHaul() {
+    setShareHaul(true);
   }
 
   /* ───────── Chat as connective tissue (Step 9) ─────────
@@ -834,6 +829,8 @@ export default function App() {
           onAsk={() => { askAboutScan(); setScan(null); }}
         />
       )}
+
+      {shareHaul && <HaulShareCard haul={haul} onClose={() => setShareHaul(false)} />}
 
       {cameraOpen && (
         <Suspense fallback={null}>
