@@ -75,6 +75,8 @@ alter table user_goals add column if not exists coach_goal text;
 alter table user_goals add column if not exists non_negotiables text[] default '{}';
 -- Dietary focuses (extension): self-selected preferences fed into every /verdict.
 alter table user_goals add column if not exists focuses text[] default '{}';
+-- Free personalized-note allowance (Step 11): the first N tastes are free.
+alter table user_goals add column if not exists free_notes_used int default 0;
 
 -- The Haul (Step 7): every scanned product is recorded here so the Haul surface
 -- can aggregate the trip + week (distribution, item list, weekly read). A scan is

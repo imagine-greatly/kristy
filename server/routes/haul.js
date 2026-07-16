@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { saveHaulScan, getHaulScans, getFullProfile } from '../lib/store.js';
 import { distribution, generateHaulRead } from '../lib/haul.js';
+import { premiumForReq } from '../lib/subscription.js';
 
 // The Haul — every scan is recorded here, and the surface aggregates the trip +
 // week into a distribution, an item list, and Kristy's weekly read.
@@ -44,16 +45,15 @@ router.get('/haul', requireAuth, async (req, res) => {
     const trip = week.filter((s) => localDay(s.scanned_at, tzOffset) === todayKey);
     const dist = distribution(week);
 
-    // Kristy's weekly read — one claim-locked Haiku call over the week's scans.
+    // Distribution + item list are free (your record of what you scanned). Kristy's
+    // weekly READ is a member insight (Step 11) — provider-agnostic isPremium gate.
+    const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const read = await generateHaulRead({
-      scans: week,
-      distribution: dist,
-      goal: profile.coach_goal || '',
-      focuses: profile.focuses || [],
-    });
+    const read = premium
+      ? await generateHaulRead({ scans: week, distribution: dist, goal: profile.coach_goal || '', focuses: profile.focuses || [] })
+      : '';
 
-    return res.json({ trip, week, distribution: dist, read });
+    return res.json({ trip, week, distribution: dist, read, insightsGated: !premium && week.length > 0 });
   } catch (err) {
     console.error('[kristy] GET /api/haul error:', err.message);
     return res.status(500).json({ error: 'Could not load your haul.' });

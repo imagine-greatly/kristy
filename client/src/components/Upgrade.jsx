@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { CloseIcon } from './Icons.jsx';
 import { startCheckout, openBillingPortal } from '../lib/api.js';
 
-// What premium unlocks, framed as "the coach" vs "the tracker" — the
-// optimization loop, not a longer feature list.
+// What membership unlocks — the repositioned grocery-coach value, named
+// specifically (not "go premium"). The universal layer (what's in the food) is
+// always free; this is the part that's actually about you.
 const INCLUDES = [
-  'Adaptive targets that retune as your weight moves',
-  'A weekly read every Sunday — what worked, what to fix',
-  'Memory of every day and pattern, always on hand',
-  'Weight trends and the full optimization loop',
+  'My read on every scan — against your goal, not a generic label',
+  'The focuses you set, watched on every product — sodium, sugar, seed oils',
+  'Your weekly Haul read — what the cart says and what to fix',
+  'A shopping List built around your goal before every trip',
 ];
 
 const PLANS = [
@@ -81,9 +82,9 @@ export default function Upgrade({ subscription, onClose }) {
         </button>
 
         <div className="upgrade__avatar">K</div>
-        <h2 className="upgrade__title">Kristy, the coach</h2>
+        <h2 className="upgrade__title">Kristy, your coach</h2>
         <p className="upgrade__tag">
-          The tracker logs your food. The coach optimizes what happens next.
+          Anyone can see what&rsquo;s in it. Membership makes every scan about your goal.
         </p>
 
         <ul className="upgrade__list">

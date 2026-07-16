@@ -788,6 +788,8 @@ export default function App() {
               nonNegotiables={profile?.non_negotiables || []}
               onSetGoal={() => setSettingsOpen(true)}
               onAsk={askAboutList}
+              premium={subscription?.premium ?? true}
+              onUpgrade={openUpgrade}
             />
           )}
           {moment === 'haul' && (
@@ -798,6 +800,7 @@ export default function App() {
               onAddToList={handleAddToList}
               onShareHaul={handleShareHaul}
               onAsk={askAboutHaul}
+              onUpgrade={openUpgrade}
             />
           )}
         </div>
@@ -827,6 +830,7 @@ export default function App() {
           onClose={() => setScan(null)}
           onLabelFile={handleVerdictFile}
           onAsk={() => { askAboutScan(); setScan(null); }}
+          onUpgrade={() => { setScan(null); openUpgrade(); }}
         />
       )}
 

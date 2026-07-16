@@ -71,7 +71,7 @@ function ActionButton({ label, doneLabel, primary, onClick }) {
   );
 }
 
-export default function HaulMoment({ haul, loading, onScan, onAddToList, onShareHaul, onAsk }) {
+export default function HaulMoment({ haul, loading, onScan, onAddToList, onShareHaul, onAsk, onUpgrade }) {
   if (loading && !haul) {
     return (
       <div style={styles.center}>
@@ -114,12 +114,23 @@ export default function HaulMoment({ haul, loading, onScan, onAddToList, onShare
 
       <DistributionBar d={d} />
 
-      {haul?.read && (
+      {haul?.read ? (
         <div style={styles.read}>
           <GoldThread />
           <p style={{ ...kristyVoice, ...styles.readText }}>{haul.read}</p>
         </div>
-      )}
+      ) : haul?.insightsGated ? (
+        // Distribution + list are free; the weekly READ is a member insight (Step 11).
+        <div style={styles.read}>
+          <GoldThread />
+          <p style={{ ...kristyVoice, ...styles.readText }}>My read on your week — what this cart says and what to fix — is a member insight.</p>
+          {onUpgrade && (
+            <button type="button" style={styles.unlock} onClick={onUpgrade}>
+              Unlock my weekly read
+            </button>
+          )}
+        </div>
+      ) : null}
 
       <div style={styles.list}>
         {week.map((s) => (
@@ -155,8 +166,9 @@ const styles = {
   legendLabel: { fontFamily: fonts.ui, fontSize: 12.5, color: colors.textMuted },
   legendCount: { fontFamily: fonts.mono, fontSize: 12.5, color: colors.textPrimary, fontWeight: 600 },
 
-  read: { display: 'flex', flexDirection: 'column', gap: 10 },
+  read: { display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start' },
   readText: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
+  unlock: { marginTop: 2, padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
 
   list: { display: 'flex', flexDirection: 'column', gap: 8 },
   row: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, padding: '11px 13px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface },

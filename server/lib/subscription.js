@@ -16,6 +16,23 @@ import { getSubscription, upsertSubscription } from './store.js';
 const TRIAL_DAYS = 7;
 const DAY_MS = 86400000;
 
+// The "it knows me" hook: a non-premium user's first N personalized verdict notes
+// are free REGARDLESS of trial state, so the personalization lands before the gate.
+// After that, personalization (the goal note + focus escalation) sits behind the
+// trial / paid gate. The universal layer is ALWAYS free.
+export const FREE_NOTE_LIMIT = 3;
+
+/**
+ * Decide whether this verdict gets personalized (goal note + focus escalation).
+ * Pure — the route supplies premium + the user's free-note count.
+ * @returns {{ personalized:boolean, consumesFree:boolean }}
+ */
+export function decidePersonalization({ premium, freeNotesUsed = 0, limit = FREE_NOTE_LIMIT }) {
+  if (premium) return { personalized: true, consumesFree: false }; // members never spend tastes
+  if (freeNotesUsed < limit) return { personalized: true, consumesFree: true }; // a free taste
+  return { personalized: false, consumesFree: false }; // gated → universal layer only
+}
+
 /**
  * Pure premium check over a subscription row. No I/O — unit-testable.
  * @param {object|null} row  a subscriptions row (or null when there is none)

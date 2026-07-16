@@ -166,6 +166,31 @@ export async function getHaulScans(userId, days = 7) {
   return data || [];
 }
 
+/** How many free personalized-note "tastes" a user has consumed (Step 11). */
+export async function getFreeNotesUsed(userId) {
+  try {
+    const { data } = await supabase
+      .from('user_goals')
+      .select('free_notes_used')
+      .eq('user_id', userId)
+      .maybeSingle();
+    return Number(data?.free_notes_used) || 0;
+  } catch {
+    return 0; // column not migrated yet → treat as unused (fail open on the hook)
+  }
+}
+
+/** Consume one free taste. Returns the new count. */
+export async function incrementFreeNotesUsed(userId) {
+  const used = await getFreeNotesUsed(userId);
+  const { data } = await supabase
+    .from('user_goals')
+    .upsert({ user_id: userId, free_notes_used: used + 1, updated_at: new Date().toISOString() })
+    .select('free_notes_used')
+    .single();
+  return Number(data?.free_notes_used) || used + 1;
+}
+
 /** Meal logs within the last `days` days, oldest → newest. */
 export async function getRecentMeals(userId, days = 7) {
   const since = new Date();

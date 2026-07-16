@@ -42,7 +42,7 @@ function Centered({ title, sub, children }) {
   );
 }
 
-export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, onAsk }) {
+export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, onAsk, onUpgrade }) {
   const fileRef = useRef(null);
   if (!scan) return null;
 
@@ -120,6 +120,11 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, 
     content = (
       <>
         <ScanVerdictCard verdict={scan.verdict} product={scan.product} goal={goal} />
+        {scan.verdict.gated && onUpgrade && (
+          <button type="button" style={styles.unlockBtn} onClick={onUpgrade}>
+            Unlock my read
+          </button>
+        )}
         {onAsk && (
           <button type="button" style={styles.askBtn} onClick={onAsk}>
             Ask Kristy about this
@@ -246,6 +251,21 @@ const styles = {
     color: colors.textSecondary,
     fontFamily: fonts.ui,
     fontWeight: 600,
+    fontSize: 15,
+    cursor: 'pointer',
+  },
+  unlockBtn: {
+    display: 'block',
+    width: '100%',
+    maxWidth: 420,
+    margin: '12px auto 0',
+    padding: '13px 16px',
+    borderRadius: 12,
+    border: 'none',
+    background: colors.accentGold,
+    color: colors.bgDeep,
+    fontFamily: fonts.ui,
+    fontWeight: 700,
     fontSize: 15,
     cursor: 'pointer',
   },

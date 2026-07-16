@@ -145,8 +145,14 @@ function SectionLabel({ children }) {
 
 export default function ScanVerdictCard({ verdict, product = {}, goal }) {
   if (!verdict) return null;
-  const { tier, stamp, universalLayer = [], note, swap, education } = verdict;
+  const { tier, stamp, universalLayer = [], note, swap, education, gated, upsell, freeTastesLeft } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
+  const tasteNudge =
+    freeTastesLeft != null && freeTastesLeft <= 1
+      ? freeTastesLeft <= 0
+        ? "That's your last free read — membership unlocks the rest."
+        : '1 free read left, then it becomes a membership perk.'
+      : null;
 
   return (
     <div style={styles.card}>
@@ -172,6 +178,16 @@ export default function ScanVerdictCard({ verdict, product = {}, goal }) {
         <section style={styles.section}>
           <div style={styles.noteLabel}>for your {goal || 'goal'}</div>
           <p style={{ ...kristyVoice, ...styles.note }}>{note}</p>
+          {tasteNudge && <div style={styles.tasteNudge}>{tasteNudge}</div>}
+        </section>
+      )}
+
+      {/* Personalization gated (Step 11) — universal layer stays; the read is a
+          member benefit. Kristy names the value; ScanSheet renders the unlock CTA. */}
+      {gated && upsell && (
+        <section style={styles.upsell}>
+          <div style={styles.upsellLabel}>Your read</div>
+          <p style={{ ...kristyVoice, ...styles.upsellText }}>{upsell}</p>
         </section>
       )}
 
@@ -341,6 +357,27 @@ const styles = {
     lineHeight: 1.5,
     color: colors.textPrimary,
   },
+  tasteNudge: { marginTop: 8, fontFamily: fonts.ui, fontSize: 12, color: colors.textMuted },
+
+  // ── Gated upsell (member read) ──
+  upsell: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 6,
+    padding: '14px 15px',
+    borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9,
+  },
+  upsellLabel: {
+    fontFamily: fonts.ui,
+    fontSize: 11,
+    fontWeight: 600,
+    letterSpacing: '0.14em',
+    textTransform: 'uppercase',
+    color: colors.textSecondary,
+  },
+  upsellText: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
 
   // ── Swap block ──
   swap: {

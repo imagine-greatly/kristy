@@ -5,6 +5,8 @@ import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { evaluateIngredients, tokenizeIngredients } from '../lib/verdictEngine.js';
 import { composeNote } from '../lib/verdictNote.js';
 import { selectCardIsm, ismContext } from '../lib/education.js';
+import { premiumForReq, decidePersonalization, FREE_NOTE_LIMIT } from '../lib/subscription.js';
+import { getFreeNotesUsed, incrementFreeNotesUsed } from '../lib/store.js';
 
 // Kristy's Verdict — POST an ingredient list + the user's goal, get a claim-locked
 // verdict. The deterministic Step 1 engine scores the tier and builds the factual
@@ -52,6 +54,11 @@ function hasIngredients(ingredients) {
 const swapForTier = (tier, swap) =>
   tier === 'approved' || tier === 'approved_with_note' ? null : swap;
 
+// The upsell shown when personalization is gated — Kristy's voice, naming the
+// SPECIFIC value the user unlocks (not "go premium").
+const UPSELL =
+  "That's what's in it — that part's always free. My read on it — against your goal and the focuses you set — is the part you unlock. Start your free week and I'll read every scan like it's yours.";
+
 /* ───────────────────────── Authed ───────────────────────── */
 export const verdictRouter = Router();
 
@@ -64,22 +71,32 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
   }
 
   try {
-    // Step 1 engine + bounded focus escalation. Its matched entries feed the model
-    // directly; do NOT reshape them here (the claim lock consumes them as-is).
-    const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, {
-      focuses,
-      nutrition,
-    });
+    // The repositioned value line (Step 11): the universal layer is ALWAYS free;
+    // personalization (goal note + focus escalation) is a member benefit, with the
+    // first FREE_NOTE_LIMIT tastes free regardless of trial state. isPremium is
+    // provider-agnostic (RevenueCat + Stripe both write the same subscriptions row).
+    const premium = await premiumForReq(req);
+    const freeNotesUsed = premium ? 0 : await getFreeNotesUsed(req.user.id);
+    const { personalized, consumesFree } = decidePersonalization({ premium, freeNotesUsed });
+    const count = tokenizeIngredients(ingredients).length;
 
-    // Step 2 — the ONE Haiku call for the personal note + swap, focus-aware.
+    if (!personalized) {
+      // GATED — base engine only (no focus escalation, no note). Universal layer +
+      // the education ism stay free; the client shows the upsell in Kristy's voice.
+      const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
+      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
+      return res.json({ tier, stamp, universalLayer, note: null, swap: null, education, gated: true, upsell: UPSELL });
+    }
+
+    // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
+    // the claim-locked Haiku note.
+    const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, { focuses, nutrition });
     const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched, focus });
+    const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses }));
+    if (consumesFree) await incrementFreeNotesUsed(req.user.id);
+    const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));
 
-    // One contextual education ism for the card footer (highest-priority trigger).
-    const education = selectCardIsm(
-      ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses })
-    );
-
-    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, education });
+    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, education, gated: false, freeTastesLeft });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,

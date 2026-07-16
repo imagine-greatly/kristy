@@ -14,7 +14,7 @@ const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk }) {
+export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk, premium = true, onUpgrade }) {
   const [list, setList] = useState(() => loadList({ goal, nonNegotiables }));
   const [input, setInput] = useState('');
 
@@ -43,6 +43,26 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
   };
 
   const rebuild = () => persist(rebuildList({ goal, nonNegotiables }));
+
+  // The goal-built List is a member benefit (Step 11). Free users get the pitch,
+  // named in Kristy's voice, not a wall.
+  if (premium === false) {
+    return (
+      <div style={styles.gated}>
+        <span style={styles.icon}><ListIcon size={26} /></span>
+        <h1 style={styles.title}>Your list</h1>
+        <p style={{ ...kristyVoice, ...styles.gatedLine }}>
+          Give me your goal and I&rsquo;ll build the week&rsquo;s list around it — the right proteins, your swaps, minus your hard lines. That part&rsquo;s a membership perk.
+        </p>
+        {onUpgrade && (
+          <button type="button" style={styles.gatedCta} onClick={onUpgrade}>
+            Unlock my list
+          </button>
+        )}
+        <AmbientIsm style={{ marginTop: 12 }} />
+      </div>
+    );
+  }
 
   // Group by category, preserving first-seen order (swaps + haul items lead).
   const groups = [];
@@ -151,4 +171,8 @@ const styles = {
   footRow: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 4, flexWrap: 'wrap' },
   rebuild: { padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
   ask: { padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
+
+  gated: { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 14, maxWidth: 380, margin: '0 auto', padding: '52px 24px 24px' },
+  gatedLine: { margin: 0, fontSize: 18, lineHeight: 1.5, color: colors.textPrimary, maxWidth: 330 },
+  gatedCta: { marginTop: 4, padding: '12px 24px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
 };
