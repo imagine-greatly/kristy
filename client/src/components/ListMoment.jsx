@@ -14,7 +14,7 @@ const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export default function ListMoment({ goal, nonNegotiables = [], onSetGoal }) {
+export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk }) {
   const [list, setList] = useState(() => loadList({ goal, nonNegotiables }));
   const [input, setInput] = useState('');
 
@@ -112,9 +112,16 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal }) {
         </button>
       </div>
 
-      <button type="button" style={styles.rebuild} onClick={rebuild}>
-        Rebuild for my goal
-      </button>
+      <div style={styles.footRow}>
+        <button type="button" style={styles.rebuild} onClick={rebuild}>
+          Rebuild for my goal
+        </button>
+        {onAsk && (
+          <button type="button" style={styles.ask} onClick={onAsk}>
+            Ask Kristy about this list
+          </button>
+        )}
+      </div>
 
       <AmbientIsm style={{ marginTop: 14 }} />
     </div>
@@ -141,5 +148,7 @@ const styles = {
   addRow: { display: 'flex', gap: 8, marginTop: 4 },
   addInput: { flex: 1, padding: '11px 14px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface, color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none' },
   addBtn: { flex: '0 0 auto', padding: '11px 18px', borderRadius: 11, border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontWeight: 600, fontSize: 15, cursor: 'pointer' },
-  rebuild: { alignSelf: 'flex-start', marginTop: 4, padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+  footRow: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 4, flexWrap: 'wrap' },
+  rebuild: { padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+  ask: { padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
 };

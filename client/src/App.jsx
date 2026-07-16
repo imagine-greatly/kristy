@@ -29,7 +29,6 @@ import TopBar from './components/TopBar.jsx';
 // Lazy-loaded: pulls in the heavy @zxing barcode decoder only when the scanner opens.
 const CameraModal = lazy(() => import('./components/CameraModal.jsx'));
 import Sidebar from './components/Sidebar.jsx';
-import EmptyState from './components/EmptyState.jsx';
 import MessageBubble from './components/MessageBubble.jsx';
 import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
@@ -44,6 +43,7 @@ import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import ListMoment from './components/ListMoment.jsx';
+import ChatLauncher from './components/ChatLauncher.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -620,6 +620,37 @@ export default function App() {
     }
   }
 
+  /* ───────── Chat as connective tissue (Step 9) ─────────
+     No blank box: every thread opens SEEDED from a concrete artifact. The opener
+     is an AI message that grounds the thread (and rides in conversationHistory, so
+     her reply stays on-topic). Memory / rate limiting / errors are unchanged — this
+     still goes through /api/chat and sendChat. */
+  const TIER_ASK = {
+    approved: 'a clean approve',
+    approved_with_note: 'approved, with a note',
+    use_with_intention: 'a use-with-intention',
+    swap_recommended: "one I'd swap",
+    skip: "one I'd skip",
+  };
+
+  function openChat({ opener }) {
+    setMoment('chat');
+    if (opener) setMessages((prev) => [...prev, { id: rid(), role: 'ai', content: opener, macros: null }]);
+  }
+  function askAboutScan() {
+    const name = scan?.product?.name || 'that product';
+    const t = TIER_ASK[scan?.verdict?.tier] || 'my read';
+    openChat({ opener: `That ${name} came back as ${t}. Want to dig into it, log it, or find a better pick?` });
+  }
+  function askAboutHaul() {
+    const d = haul?.distribution || {};
+    openChat({ opener: `Your haul this week: ${d.approved || 0} approved, ${d.note || 0} with a note, ${d.swap || 0} to swap. What do you want to work on?` });
+  }
+  function askAboutList() {
+    const g = goalNoteLabel(profile?.coach_goal) || 'your goal';
+    openChat({ opener: `Your list is built for ${g}. Want to tweak it, add something, or talk through a swap?` });
+  }
+
   /* ───────── Goals ───────── */
   async function handleSaveGoal(key, value) {
     const next = { ...goals, [key]: value };
@@ -713,7 +744,14 @@ export default function App() {
             )}
 
             {showEmpty ? (
-              <EmptyState onPick={(ex) => handleSend(ex)} />
+              <ChatLauncher
+                entries={[
+                  ...(scan?.verdict ? [{ id: 'scan', label: `Ask about ${scan.product?.name || 'your last scan'}`, sub: 'your last scan', onClick: askAboutScan }] : []),
+                  ...(haul?.week?.length ? [{ id: 'haul', label: 'Ask about your haul', sub: `${haul.week.length} scanned this week`, onClick: askAboutHaul }] : []),
+                  ...(profile?.coach_goal ? [{ id: 'list', label: 'Ask about your list', sub: 'your shopping list', onClick: askAboutList }] : []),
+                ]}
+                onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+              />
             ) : (
               messages.map((m) => (
                 <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
@@ -754,6 +792,7 @@ export default function App() {
               goal={profile?.coach_goal}
               nonNegotiables={profile?.non_negotiables || []}
               onSetGoal={() => setSettingsOpen(true)}
+              onAsk={askAboutList}
             />
           )}
           {moment === 'haul' && (
@@ -763,6 +802,7 @@ export default function App() {
               onScan={() => { setMoment('scan'); setCameraOpen(true); }}
               onAddToList={handleAddToList}
               onShareHaul={handleShareHaul}
+              onAsk={askAboutHaul}
             />
           )}
         </div>
@@ -791,6 +831,7 @@ export default function App() {
           goal={goalNoteLabel(profile?.coach_goal)}
           onClose={() => setScan(null)}
           onLabelFile={handleVerdictFile}
+          onAsk={() => { askAboutScan(); setScan(null); }}
         />
       )}
 

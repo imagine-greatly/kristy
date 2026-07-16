@@ -71,7 +71,7 @@ function ActionButton({ label, doneLabel, primary, onClick }) {
   );
 }
 
-export default function HaulMoment({ haul, loading, onScan, onAddToList, onShareHaul }) {
+export default function HaulMoment({ haul, loading, onScan, onAddToList, onShareHaul, onAsk }) {
   if (loading && !haul) {
     return (
       <div style={styles.center}>
@@ -131,6 +131,12 @@ export default function HaulMoment({ haul, loading, onScan, onAddToList, onShare
         <ActionButton label="Add to next list" doneLabel="Added ✓" primary onClick={onAddToList} />
         <ActionButton label="Share haul" onClick={onShareHaul} />
       </div>
+
+      {onAsk && (
+        <button type="button" style={styles.ask} onClick={onAsk}>
+          Ask Kristy about this haul
+        </button>
+      )}
     </div>
   );
 }
@@ -162,6 +168,7 @@ const styles = {
   actionPrimary: { border: 'none', background: colors.accentGold, color: colors.bgDeep },
   actionGhost: { border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontWeight: 600 },
 
+  ask: { alignSelf: 'center', marginTop: 4, padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
   center: { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 14, maxWidth: 380, margin: '0 auto', padding: '52px 24px 24px' },
   icon: { color: colors.accentGold, display: 'flex' },
   emptyLine: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.55, color: colors.textMuted, maxWidth: 320 },

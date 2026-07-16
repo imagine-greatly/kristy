@@ -42,7 +42,7 @@ function Centered({ title, sub, children }) {
   );
 }
 
-export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile }) {
+export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, onAsk }) {
   const fileRef = useRef(null);
   if (!scan) return null;
 
@@ -117,7 +117,16 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile }
       </Centered>
     );
   } else if (scan.verdict) {
-    content = <ScanVerdictCard verdict={scan.verdict} product={scan.product} goal={goal} />;
+    content = (
+      <>
+        <ScanVerdictCard verdict={scan.verdict} product={scan.product} goal={goal} />
+        {onAsk && (
+          <button type="button" style={styles.askBtn} onClick={onAsk}>
+            Ask Kristy about this
+          </button>
+        )}
+      </>
+    );
   } else {
     content = <Centered title="Nothing to show" sub="Try scanning again." />;
   }
@@ -219,6 +228,21 @@ const styles = {
     borderRadius: 999,
     border: `1px solid ${colors.borderGold}`,
     background: 'transparent',
+    color: colors.textSecondary,
+    fontFamily: fonts.ui,
+    fontWeight: 600,
+    fontSize: 15,
+    cursor: 'pointer',
+  },
+  askBtn: {
+    display: 'block',
+    width: '100%',
+    maxWidth: 420,
+    margin: '12px auto 0',
+    padding: '12px 16px',
+    borderRadius: 12,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface,
     color: colors.textSecondary,
     fontFamily: fonts.ui,
     fontWeight: 600,
