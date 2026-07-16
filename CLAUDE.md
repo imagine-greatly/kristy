@@ -40,4 +40,6 @@ Keep this current as steps land.
 - ✅ Step 2 — `/verdict` + claim-locked Haiku note (`97c8ea0`)
 - ✅ Step 3 — scan verdict card (`client/src/components/ScanVerdictCard.jsx`)
 - ✅ Step 4 — scan paths repointed to `/verdict` (barcode + label-vision extraction → card; OFF→vision fallback; `server/routes/scan.js`, `server/lib/{scanExtract,labelVision}.js`, client `runProductScan` + `ScanSheet`)
-- ⬜ Step 5 → 12 + focuses/education extension — pending
+- ✅ Step 5 — three-moment nav List·Scan·Haul (`BottomNav`, Scan centered/primary opens camera; chat demoted; guest scanning live w/ universal layer; `ScanHome`, `MomentStub`)
+- ⬜ Step 6 → 12 + focuses/education extension — pending
+- ℹ️ Scan stress-test done (`scan.stresstest.js`): ~40% barcode hit (OFF-US coverage gap = #1 failure) vs robust vision path; localized-text false-approve = #2. Fixes NOT built — awaiting go-ahead.

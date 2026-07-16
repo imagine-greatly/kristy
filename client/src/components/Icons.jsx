@@ -61,6 +61,28 @@ export function GearIcon({ size = 20 }) {
   );
 }
 
+// List (before the trip) — a checklist.
+export function ListIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6.5l1.4 1.4L8 5.5" />
+      <path d="M4 16.5l1.4 1.4L8 14.5" />
+      <line x1="11" y1="7" x2="20" y2="7" />
+      <line x1="11" y1="17" x2="20" y2="17" />
+    </svg>
+  );
+}
+
+// Haul (after the trip) — a grocery bag.
+export function HaulIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 8h12l-1 11a1.5 1.5 0 0 1-1.5 1.4h-9A1.5 1.5 0 0 1 5 19z" />
+      <path d="M9 8V6.5a3 3 0 0 1 6 0V8" />
+    </svg>
+  );
+}
+
 export function ArrowUpIcon({ size = 18 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">

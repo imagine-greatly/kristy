@@ -35,6 +35,10 @@ import Settings from './components/Settings.jsx';
 import Upgrade from './components/Upgrade.jsx';
 import VerdictCard from './components/VerdictCard.jsx';
 import ScanSheet from './components/ScanSheet.jsx';
+import BottomNav from './components/BottomNav.jsx';
+import ScanHome from './components/ScanHome.jsx';
+import MomentStub from './components/MomentStub.jsx';
+import { ListIcon, HaulIcon } from './components/Icons.jsx';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -118,6 +122,9 @@ export default function App() {
   const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
   // Scan → verdict card (Step 4). A scan is now a verdict, not a silent meal log.
   const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error, message }
+  // Three-moment nav (Step 5): List (before) · Scan (aisle) · Haul (after). Chat is
+  // demoted from a primary tab, reachable from within the Scan moment.
+  const [moment, setMoment] = useState('scan'); // 'scan' | 'list' | 'haul' | 'chat'
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -591,39 +598,82 @@ export default function App() {
         onUpgrade={openUpgrade}
       />
 
-      <div className="chat" ref={chatRef}>
-        {viewingPast && (
-          <div className="readonly-bar">
-            <span>🔒 Viewing {dateLabel(viewingDate)} — read-only</span>
-            <button onClick={backToToday}>Back to today</button>
+      {/* Chat — demoted from a primary tab to connective tissue, reached from the
+          Scan moment. Keeps meal logging + coaching exactly as before. */}
+      {moment === 'chat' && (
+        <>
+          <div className="chat" ref={chatRef}>
+            {viewingPast && (
+              <div className="readonly-bar">
+                <span>🔒 Viewing {dateLabel(viewingDate)} — read-only</span>
+                <button onClick={backToToday}>Back to today</button>
+              </div>
+            )}
+
+            {showEmpty ? (
+              <EmptyState onPick={(ex) => handleSend(ex)} />
+            ) : (
+              messages.map((m) => (
+                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
+              ))
+            )}
+
+            {typing && <TypingIndicator />}
           </div>
-        )}
 
-        {showEmpty ? (
-          <EmptyState onPick={(ex) => handleSend(ex)} />
-        ) : (
-          messages.map((m) => (
-            <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
-          ))
-        )}
-
-        {typing && <TypingIndicator />}
-      </div>
-
-      {!viewingPast && (
-        <InputBar
-          value={input}
-          onChange={setInput}
-          onSend={() => handleSend()}
-          disabled={typing}
-          onBarcode={() => setCameraOpen(true)}
-          onPhotoFile={handlePhotoFile}
-          photoPreview={photoPreview}
-          onClearPhoto={clearPhoto}
-          onSendPhoto={handleSendPhoto}
-          onVerdictFile={handleVerdictFile}
-        />
+          {!viewingPast && (
+            <InputBar
+              value={input}
+              onChange={setInput}
+              onSend={() => handleSend()}
+              disabled={typing}
+              onBarcode={() => setCameraOpen(true)}
+              onPhotoFile={handlePhotoFile}
+              photoPreview={photoPreview}
+              onClearPhoto={clearPhoto}
+              onSendPhoto={handleSendPhoto}
+              onVerdictFile={handleVerdictFile}
+            />
+          )}
+        </>
       )}
+
+      {moment !== 'chat' && (
+        <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+          {moment === 'scan' && (
+            <ScanHome
+              onScanBarcode={() => setCameraOpen(true)}
+              onLabelFile={handleVerdictFile}
+              onOpenChat={() => setMoment('chat')}
+            />
+          )}
+          {moment === 'list' && (
+            <MomentStub
+              icon={<ListIcon size={26} />}
+              title="Your list"
+              line="Before your next trip I'll build a shopping list around your goal. It's coming together — scan a few things and I'll learn what you actually buy."
+              ctaLabel="Scan something"
+              onCta={() => { setMoment('scan'); setCameraOpen(true); }}
+            />
+          )}
+          {moment === 'haul' && (
+            <MomentStub
+              icon={<HaulIcon size={26} />}
+              title="Your haul"
+              line="Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it."
+              ctaLabel="Scan a product"
+              onCta={() => { setMoment('scan'); setCameraOpen(true); }}
+            />
+          )}
+        </div>
+      )}
+
+      <BottomNav
+        active={moment}
+        onList={() => setMoment('list')}
+        onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+        onHaul={() => setMoment('haul')}
+      />
 
       {verdict && (
         <VerdictCard
