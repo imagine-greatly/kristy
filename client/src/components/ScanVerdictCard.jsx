@@ -1,5 +1,6 @@
 import { colors, fonts, kristyVoice, motif } from '../lib/tokens.js';
 import { GoldThread, GoldDot } from './GoldThread.jsx';
+import { goalPickerOptions } from '../lib/coachGoals.js';
 
 /* ═══════════════════════ Scan Verdict Card — the in-aisle result ═══════════════════════
    Renders a /verdict response (Step 2 contract) top-to-bottom, as live DOM (this is
@@ -28,6 +29,23 @@ const TIER_META = {
   swap_recommended: { label: 'Swap recommended', tone: 'goldStrong' },
   skip: { label: 'Skip', tone: 'danger' },
 };
+
+// The verdict as Kristy's CALL, not a score — her words for the same tier logic.
+// Rendered in her voice (Playfair italic). Free on every card.
+const TIER_CALL = {
+  approved: 'Approved.',
+  approved_with_note: 'Approved — with a note.',
+  use_with_intention: 'Use it with intention.',
+  swap_recommended: "Swap it — there's a better pick.",
+  skip: 'Skip. Put it back.',
+};
+
+// The in-voice ask shown to a user with no stored goal (the contextual goal ask).
+const GOAL_ASK = "Want my read on whether this belongs in your cart? Tell me what you're shopping for.";
+
+// The persistent evidence-honesty footer under the universal layer — hers, free.
+const EVIDENCE_FOOTER =
+  "I grade my evidence — settled science, credible concern, or my standard. I'll always tell you which.";
 
 // evidence_tier → the small tag rendered on each "What's inside" chip.
 const EVIDENCE_LABEL = {
@@ -91,13 +109,14 @@ function ApprovedSeal() {
   );
 }
 
-// The plain verdict bar — every tier below `approved`. Labelled with the tier name.
-function VerdictBar({ meta }) {
+// The verdict bar — every tier below `approved`. Kristy's CALL in her voice
+// (Playfair italic), not a clinical score. Tone color stays inside the palette.
+function VerdictBar({ meta, call }) {
   const p = barPalette(meta.tone);
   return (
     <div style={{ ...styles.bar, background: p.bg, borderColor: p.border }}>
       <GoldDot color={p.fg} size={7} />
-      <span style={{ ...styles.barLabel, color: p.fg }}>{meta.label}</span>
+      <span style={{ ...kristyVoice, ...styles.barCall, color: p.fg }}>{call}</span>
     </div>
   );
 }
@@ -141,12 +160,65 @@ function SectionLabel({ children }) {
   return <div style={styles.sectionLabel}>{children}</div>;
 }
 
+// The withheld-read slot — the tease as ABSENCE, never a modal, never blocking.
+// Only rendered when there's no personalized note in hand. Three quiet states:
+//   • pickingGoal → Kristy is composing the read the user just unlocked with a tap
+//   • needsGoal   → the contextual goal ask + one-tap picker
+//   • upsell      → the held-back last sentence + the unlock / sign-in affordance
+function ReadSlot({ needsGoal, pickingGoal, upsell, onPickGoal, onUnlock, unlockLabel }) {
+  if (pickingGoal) {
+    return (
+      <section style={styles.readSlot}>
+        <p style={{ ...kristyVoice, ...styles.askLine }}>Reading it for you&hellip;</p>
+      </section>
+    );
+  }
+  if (needsGoal) {
+    return (
+      <section style={styles.readSlot}>
+        <p style={{ ...kristyVoice, ...styles.askLine }}>{GOAL_ASK}</p>
+        {onPickGoal && (
+          <div style={styles.goalChips}>
+            {goalPickerOptions().map((g) => (
+              <button key={g.value} type="button" style={styles.goalChip} onClick={() => onPickGoal(g.value)}>
+                {g.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+    );
+  }
+  if (upsell) {
+    return (
+      <section style={styles.readSlot}>
+        <p style={{ ...kristyVoice, ...styles.withheldLine }}>{upsell}</p>
+        {onUnlock && (
+          <button type="button" style={styles.unlockBtn} onClick={onUnlock}>
+            {unlockLabel}
+          </button>
+        )}
+      </section>
+    );
+  }
+  return null;
+}
+
 /* ───────────────────────── The card ───────────────────────── */
 
-export default function ScanVerdictCard({ verdict, product = {}, goal }) {
+export default function ScanVerdictCard({
+  verdict,
+  product = {},
+  goal,
+  onPickGoal,
+  pickingGoal = false,
+  onUnlock,
+  unlockLabel = 'Unlock my read',
+}) {
   if (!verdict) return null;
-  const { tier, stamp, universalLayer = [], note, swap, education, gated, upsell, freeTastesLeft } = verdict;
+  const { tier, stamp, universalLayer = [], note, swap, education, upsell, freeTastesLeft, needsGoal } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
+  const call = TIER_CALL[tier] || TIER_CALL.approved_with_note;
   const tasteNudge =
     freeTastesLeft != null && freeTastesLeft <= 1
       ? freeTastesLeft <= 0
@@ -158,10 +230,11 @@ export default function ScanVerdictCard({ verdict, product = {}, goal }) {
     <div style={styles.card}>
       <ProductHeader product={product} />
 
-      {/* Verdict — the earned seal, or a plain bar. Never the seal unless stamp is true. */}
-      {stamp ? <ApprovedSeal /> : <VerdictBar meta={meta} />}
+      {/* Verdict — the earned seal, or Kristy's call. Never the seal unless stamp is true. */}
+      {stamp ? <ApprovedSeal /> : <VerdictBar meta={meta} call={call} />}
 
-      {/* What's inside — the factual universal layer, one chip per flagged ingredient. */}
+      {/* What's inside — the factual universal layer, one chip per flagged ingredient,
+          closed with Kristy's evidence-honesty line (free on every card). */}
       {universalLayer.length > 0 && (
         <section style={styles.section}>
           <SectionLabel>What&rsquo;s inside</SectionLabel>
@@ -170,10 +243,12 @@ export default function ScanVerdictCard({ verdict, product = {}, goal }) {
               <InsideChip key={item.id || item.name} item={item} />
             ))}
           </div>
+          <p style={{ ...kristyVoice, ...styles.evidenceFooter }}>{EVIDENCE_FOOTER}</p>
         </section>
       )}
 
-      {/* Kristy's note — her voice (Playfair italic), spoken through the user's goal. */}
+      {/* Kristy's note — her voice (Playfair italic), spoken through the user's goal.
+          Present for members and free users with a taste remaining. */}
       {note && (
         <section style={styles.section}>
           <div style={styles.noteLabel}>for your {goal || 'goal'}</div>
@@ -182,20 +257,24 @@ export default function ScanVerdictCard({ verdict, product = {}, goal }) {
         </section>
       )}
 
-      {/* Personalization gated (Step 11) — universal layer stays; the read is a
-          member benefit. Kristy names the value; ScanSheet renders the unlock CTA. */}
-      {gated && upsell && (
-        <section style={styles.upsell}>
-          <div style={styles.upsellLabel}>Your read</div>
-          <p style={{ ...kristyVoice, ...styles.upsellText }}>{upsell}</p>
-        </section>
-      )}
-
-      {/* Swap — only present when the engine returned one (never for approved tiers). */}
+      {/* Swap — the KB's generic better-pick is FREE (a field read); the goal-aware
+          swap rides this same slot for members. Never present for approved tiers. */}
       {swap && <SwapBlock swap={swap} />}
 
+      {/* The withheld read — only when there's no note in hand (goal ask / tease). */}
+      {!note && (
+        <ReadSlot
+          needsGoal={needsGoal}
+          pickingGoal={pickingGoal}
+          upsell={upsell}
+          onPickGoal={onPickGoal}
+          onUnlock={onUnlock}
+          unlockLabel={unlockLabel}
+        />
+      )}
+
       {/* Education — at most ONE contextual Kristy-ism, chosen server-side by the
-          highest-priority trigger on this product. */}
+          highest-priority trigger on this product. Free for guests + free users. */}
       {education?.text && (
         <div style={styles.ism}>
           <GoldThread />
@@ -299,6 +378,8 @@ const styles = {
     border: '1px solid transparent',
   },
   barLabel: { fontFamily: fonts.ui, fontSize: 16, fontWeight: 600, letterSpacing: '0.01em' },
+  // Kristy's call, in her voice (Playfair italic via kristyVoice spread).
+  barCall: { fontSize: 18, lineHeight: 1.2 },
 
   // ── Sections ──
   section: { display: 'flex', flexDirection: 'column', gap: 10 },
@@ -340,6 +421,43 @@ const styles = {
     fontSize: 13,
     lineHeight: 1.45,
     color: colors.textMuted,
+  },
+  // Kristy's evidence-honesty line under the universal layer (hers, free).
+  evidenceFooter: {
+    margin: '2px 2px 0',
+    fontSize: 13.5,
+    lineHeight: 1.5,
+    color: colors.textMuted,
+  },
+
+  // ── The withheld-read slot (goal ask / tease) ──
+  readSlot: { display: 'flex', flexDirection: 'column', gap: 12 },
+  askLine: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
+  goalChips: { display: 'flex', flexWrap: 'wrap', gap: 8 },
+  goalChip: {
+    padding: '9px 14px',
+    borderRadius: 999,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.surface2,
+    color: colors.textPrimary,
+    fontFamily: fonts.ui,
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+  },
+  withheldLine: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
+  unlockBtn: {
+    alignSelf: 'stretch',
+    padding: '13px 16px',
+    borderRadius: 12,
+    border: 'none',
+    background: colors.accentGold,
+    color: colors.bgDeep,
+    fontFamily: fonts.ui,
+    fontWeight: 700,
+    fontSize: 15,
+    cursor: 'pointer',
   },
 
   // ── Kristy's note ──

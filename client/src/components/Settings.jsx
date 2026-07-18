@@ -52,7 +52,7 @@ function ChipGroup({ options, value, onPick, disabled }) {
  * @param onSave   (patch) => Promise — persists one or more profile fields
  * @param onDelete () => Promise — deletes the account (and signs out)
  */
-export default function Settings({ profile, subscription, onUpgrade, onClose, onSave, onDelete }) {
+export default function Settings({ profile, subscription, onUpgrade, onClose, onSave, onDelete, onOpenMacroSetup }) {
   const [vals, setVals] = useState({
     goal: profile?.goal || null,
     weight_unit: profile?.weight_unit || 'lbs',
@@ -151,9 +151,24 @@ export default function Settings({ profile, subscription, onUpgrade, onClose, on
             {manageError && <p className="set-error">{manageError}</p>}
           </section>
 
+          {/* Macro tracking — the OPT-IN calorie/macro feature (adaptive TDEE + USDA
+              logging). It's here in Settings, never a default path. The goal/training
+              fields below only matter once macro tracking is set up. */}
+          <section className="set-section">
+            <div className="set-section__label">Macro tracking (optional)</div>
+            <p className="set-sub" style={{ margin: '0 0 8px' }}>
+              Want calories &amp; macros too? Set up adaptive targets that retune as your weight moves.
+            </p>
+            {onOpenMacroSetup && (
+              <button className="set-membership__btn" onClick={onOpenMacroSetup}>
+                {profile?.onboarded ? 'Redo macro setup' : 'Set up macro tracking'}
+              </button>
+            )}
+          </section>
+
           <section className="set-section">
             <div className="set-section__label">
-              Goal {savingKey === 'goal' && <span className="set-saving">saving…</span>}
+              Macro goal {savingKey === 'goal' && <span className="set-saving">saving…</span>}
             </div>
             <ChipGroup
               options={GOAL_OPTIONS}

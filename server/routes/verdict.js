@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
-import { evaluateIngredients, tokenizeIngredients } from '../lib/verdictEngine.js';
+import { evaluateIngredients, tokenizeIngredients, genericSwap } from '../lib/verdictEngine.js';
 import { composeNote } from '../lib/verdictNote.js';
 import { selectCardIsm, ismContext } from '../lib/education.js';
 import { premiumForReq, decidePersonalization, FREE_NOTE_LIMIT } from '../lib/subscription.js';
@@ -40,6 +40,11 @@ function readBody(body = {}) {
       ? body.focuses.map((s) => String(s || '').trim()).filter(Boolean)
       : [],
     nutrition: body.nutrition && typeof body.nutrition === 'object' ? body.nutrition : null,
+    // The grocery-coach entry restructure: a user without a stored goal scans and
+    // gets the universal layer only, with the in-card goal ask where the note would
+    // be. The client signals that with personalize:false — no note is composed and
+    // NO free "taste" is consumed (the ask is not a personalized read yet).
+    personalize: body.personalize !== false,
   };
 }
 
@@ -54,15 +59,12 @@ function hasIngredients(ingredients) {
 const swapForTier = (tier, swap) =>
   tier === 'approved' || tier === 'approved_with_note' ? null : swap;
 
-// The upsell shown when personalization is gated — Kristy's voice, naming the
-// SPECIFIC value the user unlocks (not "go premium").
+// The withheld read (Task B #3): Kristy holding back her last sentence, not an ad.
+// ONE line where the personalized note would be, paired in-card with the upgrade /
+// sign-in affordance. Same line for authed-gated and guests — only the CTA differs.
 const UPSELL =
-  "That's what's in it — that part's always free. My read on it — against your goal and the focuses you set — is the part you unlock. Start your free week and I'll read every scan like it's yours.";
-
-// Guests get the same "your read is one step away" nudge where the note would be —
-// framed as a sign-in (their first personalized reads are free once they're in).
-const GUEST_UPSELL =
-  "That's what's in it — free, always. My read on it — against your goal and what you're watching — is a sign-in away. Your first few are on me.";
+  "That's what's in it. Whether it belongs in your cart — that's my read.";
+const GUEST_UPSELL = UPSELL;
 
 /* ───────────────────────── Authed ───────────────────────── */
 export const verdictRouter = Router();
@@ -70,12 +72,31 @@ export const verdictRouter = Router();
 // userRateLimit runs after requireAuth (it reads req.user.id) and caps the
 // combined per-user model spend across the authed cost-bearing endpoints.
 verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
-  const { ingredients, goal, nonNegotiables, focuses, nutrition } = readBody(req.body);
+  const { ingredients, goal, nonNegotiables, focuses, nutrition, personalize } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
 
   try {
+    const count = tokenizeIngredients(ingredients).length;
+
+    // NO GOAL YET — the grocery-coach entry restructure. The user hasn't told us
+    // what they're shopping for, so there's nothing to read a product AGAINST.
+    // Return the universal layer + the deterministic nutrition signals (which drive
+    // the client's contextual focus offers) and flag needsGoal so the card renders
+    // the in-voice goal ask where the note would be. No model call, no note, and —
+    // critically — no free "taste" consumed: setting a goal is not itself a read.
+    if (!personalize) {
+      const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, { nutrition });
+      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
+      // The generic KB swap (a field read, no model call) is FREE — everyone gets
+      // "here's a better shelf." The goal-aware swap stays a member benefit.
+      return res.json({
+        tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education,
+        needsGoal: true, signals: focus.signals,
+      });
+    }
+
     // The repositioned value line (Step 11): the universal layer is ALWAYS free;
     // personalization (goal note + focus escalation) is a member benefit, with the
     // first FREE_NOTE_LIMIT tastes free regardless of trial state. isPremium is
@@ -83,14 +104,15 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     const premium = await premiumForReq(req);
     const freeNotesUsed = premium ? 0 : await getFreeNotesUsed(req.user.id);
     const { personalized, consumesFree } = decidePersonalization({ premium, freeNotesUsed });
-    const count = tokenizeIngredients(ingredients).length;
 
     if (!personalized) {
       // GATED — base engine only (no focus escalation, no note). Universal layer +
       // the education ism stay free; the client shows the upsell in Kristy's voice.
-      const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
+      // Nutrition signals ride along (deterministic, no cost) so the contextual
+      // focus offer still works for a goal-set user who's out of free tastes.
+      const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, { nutrition });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
-      return res.json({ tier, stamp, universalLayer, note: null, swap: null, education, gated: true, upsell: UPSELL });
+      return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
@@ -101,7 +123,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     if (consumesFree) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));
 
-    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, education, gated: false, freeTastesLeft });
+    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -135,8 +157,9 @@ guestVerdictRouter.post('/verdict', (req, res) => {
     ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses: [] })
   );
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
-  // where the personalized read would be (the guest scan funnel, M-2).
-  return res.json({ tier, stamp, universalLayer, note: null, swap: null, education, gated: true, upsell: GUEST_UPSELL });
+  // where the personalized read would be (the guest scan funnel, M-2). The generic
+  // KB swap is free for guests too (field read, no model call).
+  return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL });
 });
 
 export default verdictRouter;

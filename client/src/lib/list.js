@@ -29,66 +29,67 @@ const write = (k, v) => {
   }
 };
 
-// Per-goal starter templates. Whole-food, goal-appropriate; preference-framed.
-// Items carry tags only for the non-negotiable filter (e.g. 'dairy').
+// Per-goal starter templates, keyed to the shopping goals. Whole-food and
+// preference-framed — what to buy, not macros to hit. Items carry tags only for
+// the non-negotiable filter (e.g. 'dairy').
 const GOAL_TEMPLATES = {
-  cut: {
-    intro: "Built for your cut — protein's the anchor, and I kept the calorie-dense filler out.",
+  eating_cleaner: {
+    intro: "Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.",
+    items: [
+      { name: 'Chicken or fish', category: 'Protein' },
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Seasonal vegetables', category: 'Produce' },
+      { name: 'Berries', category: 'Produce' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Oats or rice', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+      { name: 'Unsalted nuts', category: 'Snacks' },
+    ],
+  },
+  high_protein: {
+    intro: 'Set up high-protein — the anchors up front so every meal has something real behind it.',
     items: [
       { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Lean ground beef or turkey', category: 'Protein' },
       { name: 'Eggs', category: 'Protein' },
+      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
       { name: 'Cottage cheese', category: 'Protein', tags: ['dairy'] },
       { name: 'Canned tuna or salmon', category: 'Protein' },
-      { name: 'Spinach', category: 'Produce' },
-      { name: 'Broccoli', category: 'Produce' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Rice or potatoes', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
+  low_sugar: {
+    intro: 'Built to keep added sugar down — whole foods that satisfy without the spike.',
+    items: [
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Chicken or fish', category: 'Protein' },
+      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Non-starchy vegetables', category: 'Produce' },
       { name: 'Berries', category: 'Produce' },
+      { name: 'Unsalted nuts', category: 'Snacks' },
+      { name: 'Avocado', category: 'Produce' },
       { name: 'Steel-cut oats', category: 'Staples' },
       { name: 'Olive oil', category: 'Staples' },
     ],
   },
-  recomp: {
-    intro: "Set up for a recomp — plenty of protein, real carbs to train on, nothing wasted.",
+  family: {
+    intro: 'Built for the whole house — staples everyone eats, and cleaner versions of the usual snacks.',
     items: [
-      { name: 'Lean ground beef', category: 'Protein' },
-      { name: 'Chicken thighs', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Chicken or fish', category: 'Protein' },
       { name: 'Eggs', category: 'Protein' },
-      { name: 'Sweet potatoes', category: 'Carbs' },
-      { name: 'Rice', category: 'Carbs' },
-      { name: 'Oats', category: 'Carbs' },
-      { name: 'Mixed vegetables', category: 'Produce' },
-      { name: 'Fruit', category: 'Produce' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
-  },
-  performance: {
-    intro: 'Fuel for the work — carbs to train on and protein to recover. Real food, real output.',
-    items: [
-      { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Salmon', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Rice', category: 'Carbs' },
-      { name: 'Potatoes', category: 'Carbs' },
-      { name: 'Oats', category: 'Carbs' },
-      { name: 'Bananas', category: 'Produce' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Honey', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
-  },
-  energy: {
-    intro: 'Set up for steady energy — even fuel, no crashes. Whole foods over spikes.',
-    items: [
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Chicken', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Lentils or beans', category: 'Carbs' },
-      { name: 'Steel-cut oats', category: 'Carbs' },
-      { name: 'Nuts', category: 'Snacks' },
-      { name: 'Apples', category: 'Produce' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Avocado', category: 'Produce' },
+      { name: 'Milk', category: 'Protein', tags: ['dairy'] },
+      { name: 'Plain yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Fruit the kids will eat', category: 'Produce' },
+      { name: 'Easy vegetables', category: 'Produce' },
+      { name: 'Rice, pasta, or potatoes', category: 'Staples' },
+      { name: 'Oats', category: 'Staples' },
+      { name: 'Nut butter (just nuts)', category: 'Snacks' },
       { name: 'Olive oil', category: 'Staples' },
     ],
   },
@@ -107,8 +108,23 @@ const GOAL_TEMPLATES = {
       { name: 'Olive oil', category: 'Staples' },
     ],
   },
+  avoiding_junk: {
+    intro: 'Built to sidestep the junk — whole-food swaps for the stuff that usually sneaks into the cart.',
+    items: [
+      { name: 'Chicken or fish', category: 'Protein' },
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Whole fruit', category: 'Produce' },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Vegetables for snacking', category: 'Produce' },
+      { name: 'Unsalted nuts', category: 'Snacks' },
+      { name: 'Popcorn kernels', category: 'Snacks' },
+      { name: 'Oats or rice', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
   _default: {
-    intro: "Here's a clean starting list. Set a goal and I'll tailor it to you.",
+    intro: "Here's a clean starting list. Tell me what you're shopping for and I'll tailor it to you.",
     items: [
       { name: 'Chicken or fish', category: 'Protein' },
       { name: 'Eggs', category: 'Protein' },
@@ -120,6 +136,15 @@ const GOAL_TEMPLATES = {
   },
 };
 
+// Legacy coach_goal values → the nearest new template (mirrors coachGoals.js), so an
+// existing row never falls through to the generic default.
+const LEGACY_TEMPLATE_ALIASES = {
+  cut: 'eating_cleaner',
+  recomp: 'high_protein',
+  performance: 'high_protein',
+  energy: 'low_sugar',
+};
+
 // Non-negotiable → the item tags it excludes.
 const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
 
@@ -129,7 +154,7 @@ const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
  * Haul's flagged items prepended as swap reminders.
  */
 export function generateList({ goal, nonNegotiables = [], nextList = [], signals = {} }) {
-  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES._default;
+  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
 
   const excluded = new Set();
   for (const nn of nonNegotiables) (EXCLUDE_TAGS[nn] || []).forEach((t) => excluded.add(t));

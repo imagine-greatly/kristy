@@ -179,6 +179,21 @@ export function rubricText(tier) {
   return kb.kristy_scoring_rubric?.[tier] || '';
 }
 
+/** genericSwap — the KB's own category-level swap for a swap/skip verdict, taken
+ *  from the highest-severity matched entry that carries one. This is a pure FIELD
+ *  READ (zero inference, no model call), so it's safe to surface on the FREE path:
+ *  the goal-AWARE swap the note composer writes stays a member benefit; this is the
+ *  generic "here's a better shelf" pick everyone gets. Returns null for approved
+ *  tiers (nothing to move away from) or when no matched entry names a swap. */
+export function genericSwap(matchedEntries, tier) {
+  if (tier !== 'swap_recommended' && tier !== 'skip') return null;
+  const ranked = [...(matchedEntries || [])].sort(
+    (a, b) => (SEVERITY_RANK[b.severity] || 0) - (SEVERITY_RANK[a.severity] || 0)
+  );
+  const hit = ranked.find((e) => e.swap && String(e.swap).trim());
+  return hit ? String(hit.swap).trim() : null;
+}
+
 // ── Dietary focus escalation (extension) ─────────────────────────────────────
 // Focuses are PREFERENCES the user turns on about themselves — never inferences,
 // never diagnoses. When one is active it escalates emphasis on the relevant, REAL

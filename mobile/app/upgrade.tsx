@@ -29,9 +29,14 @@ const INCLUDES = [
 
 // Static fallback copy (shown until RevenueCat offerings load, or if IAP is
 // unavailable — e.g. Expo Go). Real prices come from the store when available.
+// Launch targets: $7.99/mo and $59.99/yr. In App Store Connect / RevenueCat the
+// offering is set to the CLOSEST Apple price tiers to those numbers — Apple prices
+// are tier-based and already tax-inclusive by region, so there's no "+tax" logic
+// here (unlike Stripe, where Stripe Tax adds tax at checkout). The store's
+// priceString is the source of truth once offerings load.
 const STATIC = {
-  annual: { label: 'Annual', price: '$49.99', per: '/year', note: 'Just $4.17/mo — best value', badge: 'Save 54%' },
-  monthly: { label: 'Monthly', price: '$8.99', per: '/month', note: 'Billed monthly, cancel anytime', badge: null as string | null },
+  annual: { label: 'Annual', price: '$59.99', per: '/year', note: 'Just ~$5/mo — best value', badge: 'Save 37%' },
+  monthly: { label: 'Monthly', price: '$7.99', per: '/month', note: 'Billed monthly, cancel anytime', badge: null as string | null },
 };
 
 type PlanId = 'annual' | 'monthly';

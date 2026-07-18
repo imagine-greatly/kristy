@@ -12,19 +12,22 @@ const INCLUDES = [
   'A shopping List built around your goal before every trip',
 ];
 
+// Launch pricing: $7.99/mo, $59.99/yr. Annual works out to ~$5/mo (59.99 ÷ 12 ≈
+// 5.00) and saves ~37% vs paying monthly (7.99 × 12 = 95.88). Stripe Tax adds any
+// tax on top at checkout — we don't hand-roll it here.
 const PLANS = [
   {
     id: 'annual',
     label: 'Annual',
-    price: '$49.99',
+    price: '$59.99',
     per: '/year',
-    note: 'Just $4.17/mo — best value',
-    badge: 'Save 54%',
+    note: 'Just ~$5/mo — best value',
+    badge: 'Save 37%',
   },
   {
     id: 'monthly',
     label: 'Monthly',
-    price: '$8.99',
+    price: '$7.99',
     per: '/month',
     note: 'Billed monthly, cancel anytime',
     badge: null,

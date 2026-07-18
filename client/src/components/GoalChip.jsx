@@ -2,14 +2,15 @@ import { colors, fonts } from '../lib/tokens.js';
 import { GoldDot } from './GoldThread.jsx';
 
 /* The active-goal chip for the app header: a gold dot + the goal label, on brand.
-   Renders nothing until a goal is set. Tokens only. */
+   It's a MODE switch, so it renders even with no goal set — tapping opens the
+   switcher to pick one. Tokens only. */
 export default function GoalChip({ label, onClick }) {
-  if (!label) return null;
+  const text = label || 'Set your goal';
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label={`Goal: ${label}`}
+      aria-label={label ? `Shopping goal: ${label}` : 'Set your shopping goal'}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -27,7 +28,7 @@ export default function GoalChip({ label, onClick }) {
       }}
     >
       <GoldDot size={6} />
-      {label}
+      {text}
     </button>
   );
 }

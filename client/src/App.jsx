@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'react';
 import { IS_DEMO } from './lib/config.js';
+import { colors, fonts } from './lib/tokens.js';
 import { supabase } from './lib/supabase.js';
 import { dayKey, dateLabel } from './lib/format.js';
 import {
   loadGoals,
   saveGoals,
   saveProfileFields,
-  saveCoachProfile,
   loadRecentMeals,
   loadDayMessages,
   loadLatestSummary,
@@ -15,10 +15,16 @@ import {
   saveHaulScan,
   loadHaul,
 } from './lib/data.js';
-import { goalNoteLabel, goalChipLabel } from './lib/coachGoals.js';
+import {
+  goalNoteLabel,
+  goalReadLabel,
+  goalChipLabel,
+  focusDisclaimerAcked,
+  ackFocusDisclaimer,
+} from './lib/coachGoals.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
-import { sendPhoto, runProductScan } from './lib/logging.js';
+import { sendPhoto, runProductScan, requestGoalNote } from './lib/logging.js';
 import {
   getLastActiveDate,
   setLastActiveDate,
@@ -35,7 +41,8 @@ import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
-import GroceryOnboarding from './components/GroceryOnboarding.jsx';
+import GoalSwitcher from './components/GoalSwitcher.jsx';
+import FocusDisclaimer from './components/FocusDisclaimer.jsx';
 import Settings from './components/Settings.jsx';
 import Upgrade from './components/Upgrade.jsx';
 import VerdictCard from './components/VerdictCard.jsx';
@@ -106,11 +113,15 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [session, setSession] = useState(null);
   const [userId, setUserId] = useState(null);
-  const [needsOnboarding, setNeedsOnboarding] = useState(false);
   const [profile, setProfile] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [subscription, setSubscription] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
+  const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
+  const [macroSetupOpen, setMacroSetupOpen] = useState(false); // TDEE intake, settings-only
+  const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
+  const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
 
   const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
   const [meals, setMeals] = useState([]);
@@ -142,6 +153,10 @@ export default function App() {
   const [liveDay, setLiveDay] = useState(dayKey());
 
   const chatRef = useRef(null);
+  // Per-session tally behind the contextual focus offer. Not persisted — resets on
+  // reload. `offered` caps it at one offer per session; `counts` tracks same-category
+  // flags across scans (a focus already active is never counted / offered).
+  const focusSessionRef = useRef({ counts: {}, offered: false });
   const today = dayKey();
 
   /* ───────── Auth + initial load ───────── */
@@ -153,12 +168,9 @@ export default function App() {
       loadProfile('demo-user').then((prof) => {
         setProfile(prof);
         setGoalType(prof?.goal || null);
-        if (!prof || !prof.onboarded) {
-          setNeedsOnboarding(true);
-          setReady(true);
-        } else {
-          bootstrap('demo-user').then(() => setReady(true));
-        }
+        // Scan-first: no goal gate. Everyone lands straight on the Scan moment; the
+        // goal is asked for contextually (in the verdict card) if it isn't set.
+        bootstrap('demo-user').then(() => setReady(true));
       });
       return;
     }
@@ -178,53 +190,24 @@ export default function App() {
       const prof = await loadProfile(s.user.id).catch(() => null);
       setProfile(prof);
       setGoalType(prof?.goal || null);
-      if (!prof || !prof.onboarded) {
-        setNeedsOnboarding(true);
-        setReady(true);
-        return;
-      }
+      // Scan-first: no goal gate — every authed user bootstraps straight to Scan.
       await bootstrap(s.user.id);
     }
     setReady(true);
   }
 
-  // Called when onboarding finishes — pull fresh (now computed) goals + data.
-  // Onboarding hands back { goals, profile }; keep the profile so Settings and
-  // the weight-trend coloring reflect the just-entered answers immediately.
+  // Macro-tracking (TDEE) setup finished — the opt-in, settings-only flow. Onboarding
+  // hands back { goals, profile }; keep the profile so Settings + the weight trend
+  // reflect the just-entered answers immediately, then close the overlay.
   async function handleOnboarded(result) {
-    setNeedsOnboarding(false);
     if (result?.profile) {
-      setProfile(result.profile);
+      setProfile((p) => ({ ...(p || {}), ...result.profile }));
       setGoalType(result.profile.goal || null);
     }
+    setMacroSetupOpen(false);
     setReady(false);
     await bootstrap(userId);
     setReady(true);
-  }
-
-  // Grocery-coach onboarding complete (Step 6): persist goal + non-negotiables,
-  // reflect the chip immediately, then land on Scan — optionally opening the
-  // camera for the first-scan payoff.
-  async function handleCoachOnboarded(patch, { startScan } = {}) {
-    setNeedsOnboarding(false);
-    try {
-      const updated = await saveCoachProfile(userId, patch);
-      setProfile((p) => ({ ...(p || {}), ...(updated || patch), onboarded: true }));
-    } catch {
-      // Persistence failed — keep the optimistic goal so the session still works.
-      setProfile((p) => ({ ...(p || {}), ...patch, onboarded: true }));
-    }
-    setReady(false);
-    await bootstrap(userId);
-    setReady(true);
-    setMoment('scan');
-    if (startScan) setCameraOpen(true);
-  }
-
-  // Skip → no goal yet (universal, goal-agnostic verdicts) but still onboarded so
-  // we don't re-prompt. Drops the user straight into scanning.
-  function handleCoachSkip() {
-    handleCoachOnboarded({ coach_goal: null, non_negotiables: [] }, { startScan: false });
   }
 
   // Settings → persist one or more profile fields. Throws on failure so the
@@ -234,6 +217,139 @@ export default function App() {
     setProfile((p) => ({ ...(p || {}), ...patch }));
     if ('goal' in patch) setGoalType(patch.goal || null);
     return updated;
+  }
+
+  /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
+
+  // Persist a coach_goal. Deliberately NOT via the trial-starting onboarding path —
+  // setting a goal doesn't grant premium, so the first personalized note it unlocks
+  // is metered by the existing 3-free-tastes counter (the gate is unchanged). The
+  // trial stays with the Upgrade flow. Optimistic so the chip + next scan reflect it.
+  async function persistGoal(value) {
+    setProfile((p) => ({ ...(p || {}), coach_goal: value }));
+    try {
+      await saveProfileFields(userId, { coach_goal: value });
+    } catch {
+      /* keep optimistic value */
+    }
+  }
+
+  // The in-card goal ask: tap a goal → persist it → recompose the personalized note
+  // for the SAME product in place (reusing the extracted ingredients — no re-scan).
+  // That first note consumes free-taste 1 of 3, exactly per the existing counter.
+  async function handlePickGoal(value) {
+    persistGoal(value);
+    if (!scan?.ingredients) return; // nothing cached to recompose against
+    setScan((s) => (s ? { ...s, pickingGoal: true } : s));
+    try {
+      const verdict = await requestGoalNote({
+        ingredients: scan.ingredients,
+        nutrition: scan.nutrition,
+        goal: goalNoteLabel(value),
+        nonNegotiables: profile?.non_negotiables || [],
+        focuses: profile?.focuses || [],
+      });
+      setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
+      if (verdict?.tier) trackEvent('verdict', { tier: verdict.tier, gated: !!verdict.gated, goalSet: true });
+    } catch {
+      setScan((s) => (s ? { ...s, pickingGoal: false } : s));
+    }
+  }
+
+  // The chip switcher: pick a goal (mode switch) → persist + close. Forward-looking —
+  // the next verdict reflects it; the card in view isn't recomposed.
+  function handleSwitcherPickGoal(value) {
+    persistGoal(value);
+    setSwitcherOpen(false);
+  }
+
+  // Toggle a dietary focus (from the switcher or a contextual offer). The first focus
+  // ever turned on fires the one-time coach-not-doctor disclaimer, verbatim.
+  async function handleToggleFocus(value) {
+    const cur = profile?.focuses || [];
+    const adding = !cur.includes(value);
+    const next = adding ? [...cur, value] : cur.filter((x) => x !== value);
+    setProfile((p) => ({ ...(p || {}), focuses: next }));
+    if (adding && !focusDisclaimerAcked()) setDisclaimerOpen(true);
+    try {
+      await saveProfileFields(userId, { focuses: next });
+    } catch {
+      /* keep optimistic value */
+    }
+  }
+
+  async function handleToggleNonNegotiable(value) {
+    const cur = profile?.non_negotiables || [];
+    const next = cur.includes(value) ? cur.filter((x) => x !== value) : [...cur, value];
+    setProfile((p) => ({ ...(p || {}), non_negotiables: next }));
+    try {
+      await saveProfileFields(userId, { non_negotiables: next });
+    } catch {
+      /* keep optimistic value */
+    }
+  }
+
+  function dismissDisclaimer() {
+    ackFocusDisclaimer();
+    setDisclaimerOpen(false);
+  }
+
+  /* ───────── Contextual focus offer ─────────
+     After 2+ scans flag the SAME category in a session, Kristy offers ONCE to watch
+     it — never for a focus already on, at most one offer per session, never a modal.
+     Categories come from the deterministic nutrition/KB signals on the verdict. */
+  const CATEGORY_FOCUS = { sodium: 'lower_sodium', sugar: 'lower_sugar', blood_sugar: 'blood_sugar', heart: 'heart' };
+  const OFFER_LINE = {
+    sodium: "You've passed on two high-sodium picks — want me to watch sodium for you?",
+    sugar: "That's twice now on the high-sugar stuff — want me to keep an eye on added sugar?",
+    blood_sugar: 'Couple of blood-sugar spikers back to back — want me to flag those as we shop?',
+    heart: "Two with the oils I hold a line on — want me to watch that for you?",
+  };
+
+  function categoriesFromSignals(sig) {
+    if (!sig) return [];
+    const cats = [];
+    if (sig.highSodium) cats.push('sodium');
+    if (sig.highAddedSugar) cats.push('sugar');
+    if (Array.isArray(sig.glycemicHigh) && sig.glycemicHigh.length) cats.push('blood_sugar');
+    if (Array.isArray(sig.cardiovascular) && sig.cardiovascular.length) cats.push('heart');
+    return cats;
+  }
+
+  // Update the per-session tally from a verdict's signals; if a category crossed the
+  // 2-flag line, raise the one allowed offer.
+  function maybeOfferFocus(signals) {
+    const s = focusSessionRef.current;
+    if (s.offered) return;
+    const active = profile?.focuses || [];
+    for (const cat of categoriesFromSignals(signals)) {
+      if (active.includes(CATEGORY_FOCUS[cat])) continue; // already watching → ignore
+      s.counts[cat] = (s.counts[cat] || 0) + 1;
+      if (s.counts[cat] >= 2) {
+        s.offered = true;
+        setFocusOffer({ category: cat, focus: CATEGORY_FOCUS[cat], line: OFFER_LINE[cat] });
+        return;
+      }
+    }
+  }
+
+  function acceptFocusOffer(off) {
+    setFocusOffer(null);
+    if (off?.focus) handleToggleFocus(off.focus); // turns it on + fires disclaimer if first
+  }
+  function dismissFocusOffer() {
+    setFocusOffer(null);
+  }
+
+  // Shared tail for both scan entry points: reflect the result, fire analytics,
+  // record it in the Haul, and evaluate the contextual focus offer.
+  function applyScanResult(result, mode) {
+    setScan({ ...result, mode });
+    if (result?.verdict) {
+      trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
+      maybeOfferFocus(result.verdict.signals);
+    }
+    recordScan(result);
   }
 
   // Settings → delete account. Real mode signs the user out (onAuthStateChange
@@ -500,6 +616,7 @@ export default function App() {
   // Step-3 card. Macro logging stays reachable via the meal-photo path (handleSendPhoto).
   async function handleScan(barcode) {
     setCameraOpen(false);
+    setFocusOffer(null);
     setScan({ loading: true, mode: 'barcode' });
     trackEvent('scan', { mode: 'barcode' });
     try {
@@ -509,10 +626,10 @@ export default function App() {
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        // No stored goal → universal layer + the in-card goal ask (no note, no taste).
+        personalize: !!profile?.coach_goal,
       });
-      setScan({ ...result, mode: 'barcode' });
-      if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
-      recordScan(result);
+      applyScanResult(result, 'barcode');
     } catch {
       setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
     }
@@ -549,6 +666,7 @@ export default function App() {
      separate from meal logging — it never appends to the thread and never creates a meal. */
   async function handleVerdictFile(file) {
     if (!file) return;
+    setFocusOffer(null);
     setScan({ loading: true, mode: 'label' });
     trackEvent('scan', { mode: 'label' });
     try {
@@ -558,10 +676,9 @@ export default function App() {
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        personalize: !!profile?.coach_goal,
       });
-      setScan({ ...result, mode: 'label' });
-      if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
-      recordScan(result);
+      applyScanResult(result, 'label');
     } catch {
       setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });
     }
@@ -699,10 +816,36 @@ export default function App() {
     return <GuestApp />;
   }
 
-  if (needsOnboarding) {
-    // The repositioned front door: a 60-second goal + non-negotiables setup.
-    // (The full TDEE intake in Onboarding.jsx is preserved for macro setup.)
-    return <GroceryOnboarding onComplete={handleCoachOnboarded} onSkip={handleCoachSkip} />;
+  // Macro tracking (TDEE) — the opt-in height/weight/targets intake, reachable ONLY
+  // from Settings, never a default path. Full-screen with an escape so it's never a
+  // trap. (This is the preserved macro-logging feature, not the grocery front door.)
+  if (macroSetupOpen) {
+    return (
+      <div className="app">
+        <Onboarding userId={userId} onComplete={handleOnboarded} />
+        <button
+          type="button"
+          onClick={() => setMacroSetupOpen(false)}
+          aria-label="Close macro setup"
+          style={{
+            position: 'fixed',
+            top: 14,
+            right: 14,
+            zIndex: 100,
+            padding: '8px 14px',
+            borderRadius: 999,
+            border: `1px solid ${colors.border}`,
+            background: colors.surface,
+            color: colors.textMuted,
+            fontFamily: fonts.ui,
+            fontSize: 13,
+            cursor: 'pointer',
+          }}
+        >
+          Close
+        </button>
+      </div>
+    );
   }
 
   const viewingPast = viewingDate !== today;
@@ -714,7 +857,7 @@ export default function App() {
         onMenu={() => setSidebarOpen(true)}
         todayCalories={todayTotals.calories}
         goalLabel={goalChipLabel(profile?.coach_goal)}
-        onGoalClick={() => setSettingsOpen(true)}
+        onGoalClick={() => setSwitcherOpen(true)}
       />
 
       <Sidebar
@@ -797,7 +940,7 @@ export default function App() {
             <ListMoment
               goal={profile?.coach_goal}
               nonNegotiables={profile?.non_negotiables || []}
-              onSetGoal={() => setSettingsOpen(true)}
+              onSetGoal={() => setSwitcherOpen(true)}
               onAsk={askAboutList}
               premium={subscription?.premium ?? true}
               onUpgrade={openUpgrade}
@@ -837,11 +980,15 @@ export default function App() {
       {scan && (
         <ScanSheet
           scan={scan}
-          goal={goalNoteLabel(profile?.coach_goal)}
+          goal={goalReadLabel(profile?.coach_goal)}
           onClose={() => setScan(null)}
           onLabelFile={handleVerdictFile}
+          onPickGoal={handlePickGoal}
           onAsk={() => { askAboutScan(); setScan(null); }}
           onUpgrade={() => { setScan(null); openUpgrade(); }}
+          focusOffer={focusOffer}
+          onAcceptFocus={acceptFocusOffer}
+          onDismissFocus={dismissFocusOffer}
         />
       )}
 
@@ -865,8 +1012,24 @@ export default function App() {
           onClose={() => setSettingsOpen(false)}
           onSave={handleSaveProfile}
           onDelete={handleDeleteAccount}
+          onOpenMacroSetup={() => { setSettingsOpen(false); setMacroSetupOpen(true); }}
         />
       )}
+
+      {switcherOpen && (
+        <GoalSwitcher
+          goal={profile?.coach_goal || null}
+          focuses={profile?.focuses || []}
+          nonNegotiables={profile?.non_negotiables || []}
+          onPickGoal={handleSwitcherPickGoal}
+          onToggleFocus={handleToggleFocus}
+          onToggleNonNegotiable={handleToggleNonNegotiable}
+          onClose={() => setSwitcherOpen(false)}
+        />
+      )}
+
+      {/* The one-time coach-not-doctor note, fired the first time any focus turns on. */}
+      {disclaimerOpen && <FocusDisclaimer onDismiss={dismissDisclaimer} />}
 
       {upgradeOpen && (
         <Upgrade

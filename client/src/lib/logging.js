@@ -176,28 +176,26 @@ export async function sendGuestVerdict({ file }) {
    but is no longer what a scan produces by default. */
 
 // A believable demo card so the whole scan flow is explorable with no backend.
-function demoScanCard() {
+// `personalize:false` mirrors the goal-less path: the universal layer + generic KB
+// swap, no note, needsGoal:true so the in-card goal ask renders.
+function demoScanCard({ personalize = true } = {}) {
+  const universalLayer = [
+    { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Industrially processed seed oil with a poor omega-6 to omega-3 ratio.', severity: 'high', evidence_tier: 'kristys_standard' },
+    { id: 'cane_sugar', name: 'Cane Sugar', one_liner: 'Added sugar — empty calories with nothing behind them.', severity: 'moderate', evidence_tier: 'established' },
+    { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A thickener some research links to gut irritation.', severity: 'moderate', evidence_tier: 'credible_concern' },
+  ];
+  const swap = 'Butter, ghee, or a splash of whole milk in your coffee';
+  const signals = { highSodium: false, highAddedSugar: true, sodium_100g: null, added_sugar_100g: 22, glycemicHigh: [], cardiovascular: ['Canola Oil'] };
+  const verdict = personalize
+    ? { tier: 'swap_recommended', stamp: false, universalLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals }
+    : { tier: 'swap_recommended', stamp: false, universalLayer, note: null, swap, needsGoal: true, signals };
   return {
     found: true,
     source: 'off',
-    product: {
-      barcode: 'demo',
-      name: 'Hazelnut Coffee Creamer',
-      brand: 'Demo Co.',
-      image: null,
-      aisle: 'coffee & tea',
-    },
-    verdict: {
-      tier: 'swap_recommended',
-      stamp: false,
-      universalLayer: [
-        { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Industrially processed seed oil with a poor omega-6 to omega-3 ratio.', severity: 'high', evidence_tier: 'kristys_standard' },
-        { id: 'cane_sugar', name: 'Cane Sugar', one_liner: 'Added sugar — empty calories that displace protein on a cut.', severity: 'moderate', evidence_tier: 'established' },
-        { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A thickener some research links to gut irritation.', severity: 'moderate', evidence_tier: 'credible_concern' },
-      ],
-      note: 'For your cut, this creamer is 250 calories of oil and sugar doing nothing for protein — move it where it works.',
-      swap: 'Butter, ghee, or a splash of whole milk in your coffee',
-    },
+    product: { barcode: 'demo', name: 'Hazelnut Coffee Creamer', brand: 'Demo Co.', image: null, aisle: 'coffee & tea' },
+    verdict,
+    ingredients: 'canola oil, cane sugar, carrageenan',
+    nutrition: null,
   };
 }
 
@@ -235,11 +233,13 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
 
 // POST the extracted ingredients to /verdict. Authed → personal note + focus
 // escalation; guest → universal layer only (or a { gate } soft-gate).
-async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, isGuest }) {
+// `personalize:false` (authed, no stored goal) → universal layer + the in-card
+// goal ask, no note composed and no free taste consumed.
+async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize = true, isGuest }) {
   const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
   const body = isGuest
     ? { ingredients }
-    : { ingredients, goal, nonNegotiables, focuses, nutrition };
+    : { ingredients, goal, nonNegotiables, focuses, nutrition, personalize };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
@@ -251,10 +251,10 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrit
   throw new Error("Couldn't reach the verdict service — try again.");
 }
 
-export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [] }) {
+export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [], personalize = true }) {
   if (IS_DEMO) {
     await delay(mode === 'label' ? 1100 : 600);
-    return demoScanCard();
+    return demoScanCard({ personalize });
   }
 
   const isGuest = await isGuestSession();
@@ -269,16 +269,23 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
     return { found: false, source: ex?.source || 'none', product: ex?.product || null, message: ex?.message };
   }
 
-  const verdict = await fetchVerdict({
-    ingredients,
-    goal,
-    nonNegotiables,
-    focuses,
-    nutrition: ex?.nutrition || null,
-    isGuest,
-  });
+  const nutrition = ex?.nutrition || null;
+  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize, isGuest });
   if (verdict?.gate) return { gate: true, reason: verdict.reason };
   if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
 
-  return { found: true, source: ex.source, product: ex.product, verdict };
+  // Keep ingredients + nutrition on the result so the caller can recompose the
+  // personalized note in place after a goal tap — no second extraction, no re-scan.
+  return { found: true, source: ex.source, product: ex.product, verdict, ingredients, nutrition };
+}
+
+// Recompose the personalized (goal-aware) verdict for a product already scanned —
+// the in-card "tap a goal → reveal my read in place" path. Reuses the extracted
+// ingredients + nutrition, so there's no second extraction. Authed only.
+export async function requestGoalNote({ ingredients, nutrition = null, goal = '', nonNegotiables = [], focuses = [] }) {
+  if (IS_DEMO) {
+    await delay(700);
+    return demoScanCard({ personalize: true }).verdict;
+  }
+  return fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize: true, isGuest: false });
 }

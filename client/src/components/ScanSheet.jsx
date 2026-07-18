@@ -42,9 +42,26 @@ function Centered({ title, sub, children }) {
   );
 }
 
-export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, onAsk, onUpgrade }) {
+export default function ScanSheet({
+  scan,
+  goal,
+  onClose,
+  onSignIn,
+  onLabelFile,
+  onAsk,
+  onUpgrade,
+  onPickGoal,
+  focusOffer,
+  onAcceptFocus,
+  onDismissFocus,
+}) {
   const fileRef = useRef(null);
   if (!scan) return null;
+
+  // The withheld-read CTA lives IN the card now (not a separate button below it):
+  // members/free → "Unlock my read", guests → "Sign in for my read".
+  const onUnlock = onUpgrade || onSignIn || null;
+  const unlockLabel = onUpgrade ? 'Unlock my read' : 'Sign in for my read';
 
   let content;
   if (scan.loading) {
@@ -119,11 +136,29 @@ export default function ScanSheet({ scan, goal, onClose, onSignIn, onLabelFile, 
   } else if (scan.verdict) {
     content = (
       <>
-        <ScanVerdictCard verdict={scan.verdict} product={scan.product} goal={goal} />
-        {scan.verdict.gated && (onUpgrade || onSignIn) && (
-          <button type="button" style={styles.unlockBtn} onClick={onUpgrade || onSignIn}>
-            {onUpgrade ? 'Unlock my read' : 'Sign in for my read'}
-          </button>
+        <ScanVerdictCard
+          verdict={scan.verdict}
+          product={scan.product}
+          goal={goal}
+          onPickGoal={onPickGoal}
+          pickingGoal={!!scan.pickingGoal}
+          onUnlock={onUnlock}
+          unlockLabel={unlockLabel}
+        />
+        {/* Contextual focus offer — a quiet, in-voice nudge after a pattern of the
+            same flag. Never a modal; part of the sheet, dismissible, one per session. */}
+        {focusOffer && (
+          <div style={styles.focusOffer}>
+            <p style={{ ...kristyVoice, ...styles.focusOfferLine }}>{focusOffer.line}</p>
+            <div style={styles.focusOfferActions}>
+              <button type="button" style={styles.focusYes} onClick={() => onAcceptFocus?.(focusOffer)}>
+                Yes, watch it
+              </button>
+              <button type="button" style={styles.focusNo} onClick={() => onDismissFocus?.(focusOffer)}>
+                Not now
+              </button>
+            </div>
+          </div>
         )}
         {onAsk && (
           <button type="button" style={styles.askBtn} onClick={onAsk}>
@@ -252,6 +287,43 @@ const styles = {
     fontFamily: fonts.ui,
     fontWeight: 600,
     fontSize: 15,
+    cursor: 'pointer',
+  },
+  // ── Contextual focus offer (in-voice, dismissible, part of the sheet) ──
+  focusOffer: {
+    width: '100%',
+    maxWidth: 420,
+    margin: '14px auto 0',
+    boxSizing: 'border-box',
+    padding: '14px 16px',
+    borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9,
+  },
+  focusOfferLine: { margin: 0, fontSize: 16, lineHeight: 1.5, color: colors.textPrimary },
+  focusOfferActions: { display: 'flex', gap: 10, marginTop: 12 },
+  focusYes: {
+    flex: 1,
+    padding: '10px 14px',
+    borderRadius: 999,
+    border: 'none',
+    background: colors.accentGold,
+    color: colors.bgDeep,
+    fontFamily: fonts.ui,
+    fontWeight: 700,
+    fontSize: 14,
+    cursor: 'pointer',
+  },
+  focusNo: {
+    flex: '0 0 auto',
+    padding: '10px 16px',
+    borderRadius: 999,
+    border: `1px solid ${colors.border}`,
+    background: 'transparent',
+    color: colors.textMuted,
+    fontFamily: fonts.ui,
+    fontWeight: 600,
+    fontSize: 14,
     cursor: 'pointer',
   },
   unlockBtn: {
