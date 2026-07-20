@@ -91,6 +91,21 @@ export async function loadProfile(userId) {
   }
 }
 
+// True once the user has explicitly opted into macro/calorie tracking. The TDEE
+// macro setup is the ONLY path that writes these body-metric fields onto the
+// profile row, so their presence is a clean signal that the calorie/macro/weight
+// dashboard should be shown. Grocery-only users never have them — so that whole
+// panel stays out of the default grocery-coach chrome until it's turned on.
+export function hasMacroTracking(profile) {
+  if (!profile) return false;
+  return (
+    profile.height_value != null ||
+    profile.weight_value != null ||
+    profile.age != null ||
+    profile.sex != null
+  );
+}
+
 // Saves the onboarding profile and returns { goals, profile }.
 export async function saveOnboarding(userId, payload) {
   if (IS_DEMO) {

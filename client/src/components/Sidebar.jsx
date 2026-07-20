@@ -3,6 +3,7 @@ import MacroRing from './MacroRing.jsx';
 import { CloseIcon, GearIcon } from './Icons.jsx';
 import { fmt, n, dateLabel, clampPct } from '../lib/format.js';
 import { trendPoints, buildChart } from '../lib/weightChart.js';
+import { colors, fonts } from '../lib/tokens.js';
 
 const GOAL_FIELDS = [
   { key: 'calories', label: 'Calories' },
@@ -207,6 +208,9 @@ export default function Sidebar({
   onSelectDay,
   premium = true,
   onUpgrade,
+  // Calorie/macro/weight/goals is an OPT-IN feature now, not the identity. When
+  // it's off (every grocery-only user), the menu shows none of it.
+  macroTracking = false,
 }) {
   const remaining = n(goals.calories) - n(today.calories);
   const wTrend = weight ? weightTrendStyle(weight.weekChange, weight.goalType) : null;
@@ -227,6 +231,8 @@ export default function Sidebar({
           </div>
         </div>
 
+        {macroTracking ? (
+          <>
         {/* Today */}
         <div className="sb-section">
           <div className="sb-section__title">Today</div>
@@ -371,7 +377,74 @@ export default function Sidebar({
             )}
           </div>
         </div>
+          </>
+        ) : (
+          /* Default grocery-coach chrome: no kcal/macro/weight/goals here. Just a
+             slim menu — Settings, membership, and where the macro stuff lives now. */
+          <div style={offStyles.menu}>
+            <button style={offStyles.item} onClick={onOpenSettings}>
+              <span>Settings</span>
+              <span style={offStyles.chev}>›</span>
+            </button>
+            {!premium && (
+              <button
+                style={{ ...offStyles.item, ...offStyles.itemGold }}
+                onClick={onUpgrade}
+              >
+                <span>Kristy Premium</span>
+                <span style={offStyles.chev}>›</span>
+              </button>
+            )}
+            <p style={offStyles.note}>
+              Counting calories &amp; macros too? Turn on{' '}
+              <button style={offStyles.link} onClick={onOpenSettings}>
+                Macro&nbsp;tracking
+              </button>{' '}
+              in Settings.
+            </p>
+          </div>
+        )}
       </aside>
     </>
   );
 }
+
+const offStyles = {
+  menu: { display: 'flex', flexDirection: 'column', gap: 4, padding: '10px 4px' },
+  item: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '14px 16px',
+    borderRadius: 12,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface,
+    color: colors.textPrimary,
+    fontFamily: fonts.ui,
+    fontSize: 15,
+    cursor: 'pointer',
+  },
+  itemGold: {
+    border: `1px solid ${colors.borderGold}`,
+    color: colors.accentGold,
+    background: colors.goldTint9,
+  },
+  chev: { color: colors.textMuted, fontSize: 18, lineHeight: 1 },
+  note: {
+    margin: '14px 6px 0',
+    color: colors.textMuted,
+    fontFamily: fonts.ui,
+    fontSize: 12.5,
+    lineHeight: 1.6,
+  },
+  link: {
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    color: colors.accentGold,
+    fontFamily: fonts.ui,
+    fontSize: 12.5,
+    textDecoration: 'underline',
+    cursor: 'pointer',
+  },
+};

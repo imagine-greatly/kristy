@@ -992,32 +992,60 @@ textarea {
   display: block;
   background: #000;
 }
-.scan-line {
+/* Static aiming frame — four gold corner brackets, no motion. */
+.scan-frame {
   position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 6%;
-  height: 2px;
-  background: var(--accent-gold);
-  box-shadow: 0 0 10px var(--accent-gold);
-  animation: scanmove 2.4s ease-in-out infinite;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: min(74%, 320px);
+  aspect-ratio: 1.4 / 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px var(--gold-30));
 }
-@keyframes scanmove {
-  0% {
-    top: 8%;
-  }
-  50% {
-    top: 92%;
-  }
-  100% {
-    top: 8%;
-  }
+.scan-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent-gold);
 }
-.scanner-label {
-  text-align: center;
-  padding: 18px;
-  color: var(--text-muted);
-  font-size: 14px;
+.scan-corner--tl {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+}
+.scan-corner--tr {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+}
+.scan-corner--bl {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+}
+.scan-corner--br {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 8px;
+}
+.scan-frame__hint {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: var(--text-primary);
+  font-size: 15px;
+  text-shadow: 0 1px 6px rgba(4, 8, 5, 0.9);
 }
 .scanner-close {
   position: absolute;

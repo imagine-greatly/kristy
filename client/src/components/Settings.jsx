@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { STEPS } from '../lib/onboardingSteps.js';
 import { CloseIcon } from './Icons.jsx';
 import { openBillingPortal } from '../lib/api.js';
+import { hasMacroTracking } from '../lib/data.js';
 
 // A quiet, non-nagging status line for the Membership section.
 function membershipLine(sub) {
@@ -161,7 +162,7 @@ export default function Settings({ profile, subscription, onUpgrade, onClose, on
             </p>
             {onOpenMacroSetup && (
               <button className="set-membership__btn" onClick={onOpenMacroSetup}>
-                {profile?.onboarded ? 'Redo macro setup' : 'Set up macro tracking'}
+                {hasMacroTracking(profile) ? 'Redo macro setup' : 'Set up macro tracking'}
               </button>
             )}
           </section>

@@ -14,6 +14,7 @@ import {
   loadWeightHistory,
   saveHaulScan,
   loadHaul,
+  hasMacroTracking,
 } from './lib/data.js';
 import {
   goalNoteLabel,
@@ -449,6 +450,8 @@ export default function App() {
     () => weightSummary(weightHistory, goalType),
     [weightHistory, goalType]
   );
+  // Calorie/macro/weight surfaces only exist once the user opts into macro tracking.
+  const macroTracking = useMemo(() => hasMacroTracking(profile), [profile]);
   const historyDays = useMemo(
     () =>
       [...dayMap.values()]
@@ -856,6 +859,7 @@ export default function App() {
       <TopBar
         onMenu={() => setSidebarOpen(true)}
         todayCalories={todayTotals.calories}
+        macroTracking={macroTracking}
         goalLabel={goalChipLabel(profile?.coach_goal)}
         onGoalClick={() => setSwitcherOpen(true)}
       />
@@ -878,6 +882,7 @@ export default function App() {
         onSelectDay={handleSelectDay}
         premium={subscription?.premium ?? true}
         onUpgrade={openUpgrade}
+        macroTracking={macroTracking}
       />
 
       {/* Chat — demoted from a primary tab to connective tissue, reached from the
