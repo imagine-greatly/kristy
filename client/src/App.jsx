@@ -54,6 +54,8 @@ import HaulMoment from './components/HaulMoment.jsx';
 import ListMoment from './components/ListMoment.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
+import IngredientPage from './components/IngredientPage.jsx';
+import { ingredientIdFromPath, ingredientPath } from './lib/ingredients.js';
 
 const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
@@ -149,6 +151,9 @@ export default function App() {
   const [haul, setHaul] = useState(null);
   const [haulLoading, setHaulLoading] = useState(false);
   const [shareHaul, setShareHaul] = useState(false); // the shareable haul card overlay (Step 10)
+  // Ingredient detail page (/app/ingredient/:id) — a full-screen KB read that takes
+  // over the app. Seeded from the URL so deep links + guests work.
+  const [ingredientId, setIngredientId] = useState(() => ingredientIdFromPath());
   const [viewingDate, setViewingDate] = useState(dayKey());
   // The local day the live thread belongs to — used to detect a midnight rollover.
   const [liveDay, setLiveDay] = useState(dayKey());
@@ -796,13 +801,49 @@ export default function App() {
     setMessages(dayMsgs.map(toUiMsg));
   }
 
+  /* ───────── Ingredient detail routing (/app/ingredient/:id) ───────── */
+  function openIngredient(id) {
+    if (!id) return;
+    setIngredientId(id);
+    try {
+      window.history.pushState({ kristyIng: id }, '', ingredientPath(id));
+    } catch {
+      /* ignore */
+    }
+  }
+  function closeIngredient() {
+    // Pop our own pushed entry when we have one (keeps the Back button in sync);
+    // otherwise (a cold deep-link) clear it and normalize the URL back to /app.
+    if (window.history.state && window.history.state.kristyIng) {
+      window.history.back();
+    } else {
+      try {
+        window.history.replaceState({}, '', '/app');
+      } catch {
+        /* ignore */
+      }
+      setIngredientId(null);
+    }
+  }
+  useEffect(() => {
+    const onPop = () => setIngredientId(ingredientIdFromPath());
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   /* ───────── Render ───────── */
+  // A full-screen ingredient page takes over the app (deep-linkable + guest-readable),
+  // above the splash / guest gate so a shared /app/ingredient/:id link always resolves.
+  if (ingredientId) {
+    return <IngredientPage id={ingredientId} onClose={closeIngredient} />;
+  }
+
   if (!ready) {
     return (
       <div className="app">
         <div className="empty">
           {/* App-open moment → the large-format marketing mark (dark ground only).
-              The flat "K"/leaf stays on the favicon + tight header. */}
+              The favicon runs the same silhouette, simplified for tab sizes. */}
           <img
             src="/kristy-logo.png"
             alt="Kristy"
@@ -816,7 +857,9 @@ export default function App() {
   // Not signed in → drop straight into the stateless guest chat (no auth wall).
   // Signing in from there swaps this out for the real, persisted app below.
   if (!IS_DEMO && !session) {
-    return <GuestApp />;
+    // Ingredient pages are a free KB read (no model call), so guests get the same
+    // tap-through off their scan card that signed-in users get.
+    return <GuestApp onOpenIngredient={openIngredient} />;
   }
 
   // Macro tracking (TDEE) — the opt-in height/weight/targets intake, reachable ONLY
@@ -994,6 +1037,7 @@ export default function App() {
           focusOffer={focusOffer}
           onAcceptFocus={acceptFocusOffer}
           onDismissFocus={dismissFocusOffer}
+          onOpenIngredient={openIngredient}
         />
       )}
 

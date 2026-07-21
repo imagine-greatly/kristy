@@ -36,7 +36,7 @@ const INVITE_LINE =
 // The stateless, gated app. Guests can SCAN and see the universal layer (what's in
 // the food) for free — the acquisition hook. The goal-personalized note and the
 // Haul/List surfaces stay behind the soft sign-in gate.
-export default function GuestApp() {
+export default function GuestApp({ onOpenIngredient }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
@@ -220,7 +220,14 @@ export default function GuestApp() {
       />
 
       {scan && (
-        <ScanSheet scan={scan} goal="" onClose={() => setScan(null)} onSignIn={invite} onLabelFile={handleGuestLabel} />
+        <ScanSheet
+          scan={scan}
+          goal=""
+          onClose={() => setScan(null)}
+          onSignIn={invite}
+          onLabelFile={handleGuestLabel}
+          onOpenIngredient={onOpenIngredient}
+        />
       )}
 
       {cameraOpen && (

@@ -10,8 +10,8 @@ export { canvasToBlob, ensureCardFonts } from './verdictCanvas.js';
 
 // Preload the lustrous marketing mark (the gradient silhouette) for the card
 // watermark. Cached so it loads once; resolves to null if it can't load so the
-// card still draws (the mark is decorative, never required). Large-format only —
-// this is NOT the flat "K", which stays on the favicon/header.
+// card still draws (the mark is decorative, never required). Full-detail version —
+// the favicon runs the same silhouette with the fine strands merged for tab sizes.
 let _logoPromise;
 export function ensureCardLogo() {
   if (_logoPromise) return _logoPromise;

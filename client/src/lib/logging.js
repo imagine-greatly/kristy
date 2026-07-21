@@ -180,21 +180,21 @@ export async function sendGuestVerdict({ file }) {
 // swap, no note, needsGoal:true so the in-card goal ask renders.
 function demoScanCard({ personalize = true } = {}) {
   const universalLayer = [
-    { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Industrially processed seed oil with a poor omega-6 to omega-3 ratio.', severity: 'high', evidence_tier: 'kristys_standard' },
-    { id: 'cane_sugar', name: 'Cane Sugar', one_liner: 'Added sugar — empty calories with nothing behind them.', severity: 'moderate', evidence_tier: 'established' },
-    { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A thickener some research links to gut irritation.', severity: 'moderate', evidence_tier: 'credible_concern' },
+    { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Solvent-extracted and heat-damaged — it oxidizes easily, and oxidized fats are the real problem.', severity: 'high', evidence_tier: 'kristys_standard' },
+    { id: 'agave_syrup', name: 'Agave Syrup', one_liner: "Marketed as 'natural,' but it's 70–90% fructose — even more than corn syrup. The liver pays for that.", severity: 'high', evidence_tier: 'credible_concern' },
+    { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A seaweed thickener that inflamed the gut in animal studies — which is why it stays debated.', severity: 'high', evidence_tier: 'credible_concern' },
   ];
   const swap = 'Butter, ghee, or a splash of whole milk in your coffee';
-  const signals = { highSodium: false, highAddedSugar: true, sodium_100g: null, added_sugar_100g: 22, glycemicHigh: [], cardiovascular: ['Canola Oil'] };
+  const signals = { highSodium: false, highAddedSugar: true, sodium_100g: null, added_sugar_100g: 22, glycemicHigh: [], sugarAliases: ['Agave Syrup'], cardiovascular: ['Canola Oil'] };
   const verdict = personalize
-    ? { tier: 'swap_recommended', stamp: false, universalLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals }
-    : { tier: 'swap_recommended', stamp: false, universalLayer, note: null, swap, needsGoal: true, signals };
+    ? { tier: 'swap_recommended', stamp: false, universalLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals, ingredientsRead: 14 }
+    : { tier: 'swap_recommended', stamp: false, universalLayer, note: null, swap, needsGoal: true, signals, ingredientsRead: 14 };
   return {
     found: true,
     source: 'off',
     product: { barcode: 'demo', name: 'Hazelnut Coffee Creamer', brand: 'Demo Co.', image: null, aisle: 'coffee & tea' },
     verdict,
-    ingredients: 'canola oil, cane sugar, carrageenan',
+    ingredients: 'canola oil, agave syrup, carrageenan',
     nutrition: null,
   };
 }

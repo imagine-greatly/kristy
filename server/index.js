@@ -12,6 +12,7 @@ import onboardingRoute from './routes/onboarding.js';
 import weightRoute from './routes/weight.js';
 import accountRoute from './routes/account.js';
 import verdictRoute, { guestVerdictRouter } from './routes/verdict.js';
+import ingredientRoute from './routes/ingredient.js';
 import scanRoute, { guestScanRouter } from './routes/scan.js';
 import haulRoute from './routes/haul.js';
 import subscriptionRoute from './routes/subscription.js';
@@ -46,6 +47,7 @@ app.use('/api', chatRoute);
 app.use('/api/guest', guestRoute); // no auth — the try-first guest experience
 app.use('/api/guest', guestVerdictRouter); // no auth — guest verdict (shares the guest IP budget)
 app.use('/api/guest', guestScanRouter); // no auth — guest scan extraction (shares the guest IP budget)
+app.use('/api', ingredientRoute); // public — ingredient detail pages (KB read, no auth, no cost)
 app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', scanRoute); // authed — scan extraction (barcode + label vision) → /verdict
 app.use('/api', haulRoute); // authed — the Haul (record scans + aggregate trip/week + read)

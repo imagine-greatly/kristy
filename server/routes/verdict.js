@@ -93,7 +93,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // "here's a better shelf." The goal-aware swap stays a member benefit.
       return res.json({
         tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education,
-        needsGoal: true, signals: focus.signals,
+        needsGoal: true, signals: focus.signals, ingredientsRead: count,
       });
     }
 
@@ -112,7 +112,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // focus offer still works for a goal-set user who's out of free tastes.
       const { tier, stamp, universalLayer, matched, focus } = evaluateIngredients(ingredients, { nutrition });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
-      return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals });
+      return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
@@ -123,7 +123,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     if (consumesFree) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));
 
-    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft });
+    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -152,14 +152,15 @@ guestVerdictRouter.post('/verdict', (req, res) => {
     return res.json({ gate: true, reason: 'limit' });
   }
 
+  const count = tokenizeIngredients(ingredients).length;
   const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
   const education = selectCardIsm(
-    ismContext({ matched, tier, ingredientCount: tokenizeIngredients(ingredients).length, focuses: [] })
+    ismContext({ matched, tier, ingredientCount: count, focuses: [] })
   );
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL });
+  return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count });
 });
 
 export default verdictRouter;

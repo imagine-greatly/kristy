@@ -1,6 +1,7 @@
 import { colors, fonts, kristyVoice, motif } from '../lib/tokens.js';
 import { GoldThread, GoldDot } from './GoldThread.jsx';
 import { goalPickerOptions } from '../lib/coachGoals.js';
+import { severityColor, EVIDENCE_LABEL, sortFlags } from '../lib/verdictRamp.js';
 
 /* ═══════════════════════ Scan Verdict Card — the in-aisle result ═══════════════════════
    Renders a /verdict response (Step 2 contract) top-to-bottom, as live DOM (this is
@@ -46,13 +47,6 @@ const GOAL_ASK = "Want my read on whether this belongs in your cart? Tell me wha
 // The persistent evidence-honesty footer under the universal layer — hers, free.
 const EVIDENCE_FOOTER =
   "I grade my evidence — settled science, credible concern, or my standard. I'll always tell you which.";
-
-// evidence_tier → the small tag rendered on each "What's inside" chip.
-const EVIDENCE_LABEL = {
-  established: 'Established',
-  credible_concern: 'Credible concern',
-  kristys_standard: "Kristy's standard",
-};
 
 // Bar palette per tone — all pulled from tokens, never hand-mixed.
 function barPalette(tone) {
@@ -121,18 +115,31 @@ function VerdictBar({ meta, call }) {
   );
 }
 
-// One "What's inside" chip: ingredient name, its one-liner, and the evidence-tier tag.
-// All Inter (factual layer).
-function InsideChip({ item }) {
+// One flag row: a severity dot (verdict-ramp color), the ingredient name, its
+// evidence-tier tag, and ONE why-first line. Compact — the list should scan like a
+// receipt of concerns. Tappable → the full ingredient page (a free KB read).
+function FlagRow({ item, onOpen }) {
   const evidence = EVIDENCE_LABEL[item.evidence_tier] || item.evidence_tier;
+  const clickable = !!onOpen && !!item.id;
   return (
-    <div style={styles.chip}>
-      <div style={styles.chipTop}>
-        <span style={styles.chipName}>{item.name}</span>
-        {evidence && <span style={styles.evidenceTag}>{evidence}</span>}
-      </div>
-      {item.one_liner && <p style={styles.chipLine}>{item.one_liner}</p>}
-    </div>
+    <button
+      type="button"
+      style={styles.row}
+      onClick={clickable ? () => onOpen(item.id) : undefined}
+      aria-label={clickable ? `${item.name} — read the full story` : item.name}
+    >
+      <span style={{ ...styles.rowDot, background: severityColor(item.severity) }} aria-hidden="true" />
+      <span style={styles.rowMain}>
+        <span style={styles.rowTop}>
+          <span style={styles.rowName}>{item.name}</span>
+          {evidence && <span style={styles.evidenceTag}>{evidence}</span>}
+        </span>
+        {item.one_liner && <span style={styles.rowLine}>{item.one_liner}</span>}
+      </span>
+      {clickable && (
+        <span style={styles.rowChev} aria-hidden="true">›</span>
+      )}
+    </button>
   );
 }
 
@@ -214,11 +221,21 @@ export default function ScanVerdictCard({
   pickingGoal = false,
   onUnlock,
   unlockLabel = 'Unlock my read',
+  onOpenIngredient,
 }) {
   if (!verdict) return null;
-  const { tier, stamp, universalLayer = [], note, swap, education, upsell, freeTastesLeft, needsGoal } = verdict;
+  const {
+    tier, stamp, universalLayer = [], note, swap, education, upsell,
+    freeTastesLeft, needsGoal, signals, ingredientsRead,
+  } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
   const call = TIER_CALL[tier] || TIER_CALL.approved_with_note;
+  // Worst-severity first, focus-relevant first (as the engine floated them).
+  const flags = sortFlags(universalLayer, signals);
+  const readCount =
+    ingredientsRead != null
+      ? `${ingredientsRead} ingredient${ingredientsRead === 1 ? '' : 's'} read · ${universalLayer.length} flagged`
+      : `${universalLayer.length} flagged`;
   const tasteNudge =
     freeTastesLeft != null && freeTastesLeft <= 1
       ? freeTastesLeft <= 0
@@ -238,9 +255,10 @@ export default function ScanVerdictCard({
       {universalLayer.length > 0 && (
         <section style={styles.section}>
           <SectionLabel>What&rsquo;s inside</SectionLabel>
-          <div style={styles.chips}>
-            {universalLayer.map((item) => (
-              <InsideChip key={item.id || item.name} item={item} />
+          <p style={styles.readCount}>{readCount}</p>
+          <div style={styles.rows}>
+            {flags.map((item) => (
+              <FlagRow key={item.id || item.name} item={item} onOpen={onOpenIngredient} />
             ))}
           </div>
           <p style={{ ...kristyVoice, ...styles.evidenceFooter }}>{EVIDENCE_FOOTER}</p>
@@ -392,16 +410,33 @@ const styles = {
     color: colors.textMuted,
   },
 
-  // ── What's inside chips ──
-  chips: { display: 'flex', flexDirection: 'column', gap: 8 },
-  chip: {
-    padding: '11px 13px',
+  // ── What's inside — flag rows (a receipt of concerns) ──
+  readCount: {
+    margin: '-2px 0 2px',
+    fontFamily: fonts.ui,
+    fontSize: 12,
+    color: colors.textMuted,
+    letterSpacing: '0.01em',
+  },
+  rows: { display: 'flex', flexDirection: 'column', gap: 6 },
+  row: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 10,
+    width: '100%',
+    textAlign: 'left',
+    padding: '11px 12px',
     borderRadius: 12,
     border: `1px solid ${colors.border}`,
     background: colors.surface,
+    color: colors.textPrimary,
+    fontFamily: fonts.ui,
+    cursor: 'pointer',
   },
-  chipTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  chipName: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 600, color: colors.textPrimary },
+  rowDot: { width: 9, height: 9, borderRadius: 999, flex: '0 0 auto', marginTop: 5 },
+  rowMain: { minWidth: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 3 },
+  rowTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  rowName: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 600, color: colors.textPrimary },
   evidenceTag: {
     flex: '0 0 auto',
     fontFamily: fonts.ui,
@@ -415,13 +450,13 @@ const styles = {
     background: colors.goldTint9,
     whiteSpace: 'nowrap',
   },
-  chipLine: {
-    margin: '5px 0 0',
+  rowLine: {
     fontFamily: fonts.ui,
-    fontSize: 13,
-    lineHeight: 1.45,
+    fontSize: 12.5,
+    lineHeight: 1.4,
     color: colors.textMuted,
   },
+  rowChev: { flex: '0 0 auto', alignSelf: 'center', color: colors.textMuted, fontSize: 18, lineHeight: 1 },
   // Kristy's evidence-honesty line under the universal layer (hers, free).
   evidenceFooter: {
     margin: '2px 2px 0',

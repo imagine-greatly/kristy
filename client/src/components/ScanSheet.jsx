@@ -54,6 +54,7 @@ export default function ScanSheet({
   focusOffer,
   onAcceptFocus,
   onDismissFocus,
+  onOpenIngredient,
 }) {
   const fileRef = useRef(null);
   if (!scan) return null;
@@ -144,6 +145,7 @@ export default function ScanSheet({
           pickingGoal={!!scan.pickingGoal}
           onUnlock={onUnlock}
           unlockLabel={unlockLabel}
+          onOpenIngredient={onOpenIngredient}
         />
         {/* Contextual focus offer — a quiet, in-voice nudge after a pattern of the
             same flag. Never a modal; part of the sheet, dismissible, one per session. */}
