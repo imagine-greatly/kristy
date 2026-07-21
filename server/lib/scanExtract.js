@@ -91,7 +91,12 @@ export function nutritionFromOFF(p = {}) {
   if (sodium == null && num(n['salt_100g']) != null) sodium = num(n['salt_100g']) / 2.5;
   const addedSugar =
     num(n['added-sugars_100g']) ?? num(n['added_sugars_100g']) ?? num(n['sugars_100g']);
-  return { sodium, addedSugar };
+  // Fiber + caffeine feed the higher-fiber and caffeine focuses. Both are sparse
+  // in OFF; null simply means that focus can't fire on this product, the same way
+  // a missing sodium figure leaves the sodium focus quiet.
+  const fiber = num(n['fiber_100g']) ?? num(n['fibre_100g']);
+  const caffeine = num(n['caffeine_100g']);
+  return { sodium, addedSugar, fiber, caffeine };
 }
 
 /** Display meta for the scan verdict card header. Factual, straight from OFF. */

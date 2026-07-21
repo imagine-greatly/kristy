@@ -67,6 +67,61 @@ export const COACH_GOALS = [
     blurb: 'Skip the ultra-processed stuff.',
     payoff: "Avoiding the junk — I'll flag the ultra-processed stuff on sight and point you to a better pick.",
   },
+  {
+    value: 'weight_loss',
+    chipLabel: 'Weight loss',
+    title: 'Weight loss',
+    noteLabel: 'losing weight',
+    readLabel: 'weight loss',
+    blurb: 'Food that fills you up, not out.',
+    payoff: "Losing weight starts in the cart. I'll steer you toward the stuff that actually keeps you full.",
+  },
+  {
+    value: 'muscle_strength',
+    chipLabel: 'Muscle',
+    title: 'Muscle & strength',
+    noteLabel: 'building muscle',
+    readLabel: 'muscle & strength',
+    blurb: 'Protein first, quality close behind.',
+    payoff: "Building strength — I'll check the protein's real and the rest of the label isn't undoing it.",
+  },
+  {
+    value: 'pregnancy_postpartum',
+    chipLabel: 'This season',
+    title: 'Pregnancy & postpartum',
+    noteLabel: 'being extra careful this season',
+    readLabel: 'this season',
+    blurb: "Extra careful, for a season.",
+    // Preference framing ONLY. Never implies a medical state, never advises.
+    payoff: "You want to be extra careful right now — I'll hold a tighter line on additives. For anything medical, your doctor and a dietitian, not me.",
+  },
+  {
+    value: 'athlete_performance',
+    chipLabel: 'Performance',
+    title: 'Athlete / performance',
+    noteLabel: 'eating for performance',
+    readLabel: 'performance',
+    blurb: 'Fuel that earns its place.',
+    payoff: "Eating for performance — I'll tell you fast whether something's real fuel or just marketed that way.",
+  },
+  {
+    value: 'budget_clean',
+    chipLabel: 'Budget',
+    title: 'Budget-conscious clean eating',
+    noteLabel: 'eating clean on a budget',
+    readLabel: 'clean eating on a budget',
+    blurb: 'Clean food that respects the receipt.',
+    payoff: "Clean on a budget is my favorite problem. I'll tell you where the cheap pick is fine and where it isn't.",
+  },
+  {
+    value: 'kids_snacks',
+    chipLabel: 'Kids',
+    title: "Kids' snacks & lunches",
+    noteLabel: "shopping for kids' snacks and lunches",
+    readLabel: "kids' snacks",
+    blurb: 'Lunchbox staples, read properly.',
+    payoff: "Kids' snacks are where the dyes and the sugar hide. I'll flag them and name something they'll still eat.",
+  },
 ];
 
 // Legacy coach_goal values from before the reposition. Existing rows may still hold
@@ -80,21 +135,43 @@ const LEGACY_ALIASES = {
   'steady energy': 'low_sugar',
 };
 
-// The existing non-negotiables (kept). Preference framing only.
+// Hard lines — the user's declared absolutes. `value` is the string the server's
+// hardLines.js matches on, so these ids must stay in sync with HARD_LINE_RULES
+// there (that module owns the KB selectors; this one owns the labels).
+//
+// `advisory: true` means the KB carries no data to check it — gluten and dairy are
+// not in an additive database. Those still reach the note as context, but nothing
+// claims to enforce them, because pretending to check something we can't check is
+// the same failure as inventing a concern.
 export const NON_NEGOTIABLES = [
   { value: 'no seed oils', label: 'No seed oils' },
   { value: 'no artificial sweeteners', label: 'No artificial sweeteners' },
-  { value: 'dairy-free', label: 'Dairy-free' },
+  { value: 'no artificial dyes', label: 'No artificial dyes' },
+  { value: 'no hfcs', label: 'No HFCS' },
+  { value: 'no carrageenan', label: 'No carrageenan' },
+  { value: 'no added nitrites', label: 'No added nitrites' },
+  { value: 'no palm oil', label: 'No palm oil' },
+  { value: 'vegetarian', label: 'Vegetarian' },
+  { value: 'vegan', label: 'Vegan' },
+  { value: 'dairy-free', label: 'Dairy-free', advisory: true },
+  { value: 'gluten-free', label: 'Gluten-free', advisory: true },
 ];
 
 // Dietary focuses (extension Part B). Self-selected preferences the user turns on
 // about themselves — never pre-checked, never inferred. Labels are EXACT and
-// preference-framed (no condition names). Values are the engine's focus keys.
+// preference-framed (no condition names). Values are the engine's focus keys, and
+// every one of them is backed by a real KB category or a real nutrition field —
+// see FOCUS in server/lib/verdictEngine.js. A chip that escalated nothing would
+// be a preference the app pretends to hold.
 export const FOCUSES = [
-  { value: 'lower_sugar', label: 'Lower sugar' },
+  { value: 'lower_sugar', label: 'Watching added sugar' },
   { value: 'blood_sugar', label: 'Blood-sugar-conscious' },
-  { value: 'lower_sodium', label: 'Lower sodium' },
+  { value: 'lower_sodium', label: 'Watching sodium' },
   { value: 'heart', label: 'Heart-conscious' },
+  { value: 'caffeine', label: 'Watching caffeine' },
+  { value: 'higher_fiber', label: 'Higher fiber' },
+  { value: 'processed_fats', label: 'Watching processed fats' },
+  { value: 'additive_sensitive', label: 'Additive-sensitive' },
 ];
 
 // The one-time, in-voice disclaimer shown the first time ANY focus is turned on.

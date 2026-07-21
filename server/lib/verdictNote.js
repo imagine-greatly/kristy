@@ -69,6 +69,18 @@ FEEDING A FAMILY — when the user's goal is feeding a family or a household:
   matched KB ingredient or the product's nutrition data, and you never treat, manage,
   diagnose, or imply anyone has a condition.
 
+HARD LINES — when hardLinesViolated is non-empty, the user drew an absolute and this
+product crosses it:
+- LEAD with it, before any other point. Name the line they set and the exact ingredient
+  that crossed it, e.g. "You told me no carrageenan — it's in here."
+- It is their rule, not a health claim. State that it crossed the line; do NOT invent a
+  reason the line exists or attach a new concern to it. If you say anything about WHY
+  the ingredient is a problem, that reasoning must still come from its entry in
+  flagged — exactly like every other claim.
+- Then give the better pick, as always. Never scold them for the product.
+- The names in hardLinesViolated are already in flagged. You may not name any other
+  ingredient as crossing a line.
+
 Return ONLY this JSON: {"note": "...", "swap": "..." or null}`;
 
 /**
@@ -91,13 +103,20 @@ export function sanitizeFlagged(matched) {
  * Build the user-message payload for the note call: tier + goal + non-negotiables
  * + the sanitized flagged list. Nothing else. This is the ONLY data the model sees.
  */
-export function buildNoteInput({ tier, goal, nonNegotiables, matched, focus }) {
+export function buildNoteInput({ tier, goal, nonNegotiables, matched, focus, hardLines }) {
   const sig = focus?.signals || {};
   return {
     goal: str(goal) || 'general',
     nonNegotiables: Array.isArray(nonNegotiables) ? nonNegotiables.map(str).filter(Boolean) : [],
     tier,
     flagged: sanitizeFlagged(matched),
+    // Which declared hard lines this label actually crossed, resolved
+    // deterministically by the engine. Both halves are already-known values — the
+    // user's own rule and a KB ingredient name that is also present in `flagged` —
+    // so naming them introduces no claim the model wasn't already given.
+    hardLinesViolated: Array.isArray(hardLines?.violated)
+      ? hardLines.violated.map((h) => ({ line: str(h.label), ingredients: (h.names || []).map(str) }))
+      : [],
     // Active dietary focuses + the real, data-backed signals behind them. Numbers
     // are the product's nutrition data; names are already in `flagged`. Nothing
     // here is a new health claim — the model may only lead with what's provided.
@@ -166,8 +185,8 @@ async function callNote({ input, corrective }) {
  * @returns {Promise<{ note:string, swap:string|null }>}
  * @throws  Error('verdict-note-unparseable') when both attempts fail to parse.
  */
-export async function composeNote({ tier, goal, nonNegotiables, matched, focus }) {
-  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, focus });
+export async function composeNote({ tier, goal, nonNegotiables, matched, focus, hardLines }) {
+  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, focus, hardLines });
 
   let parsed = parseNoteJSON(await callNote({ input, corrective: false }));
   if (!parsed) parsed = parseNoteJSON(await callNote({ input, corrective: true }));

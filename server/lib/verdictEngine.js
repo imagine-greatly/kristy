@@ -13,6 +13,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { matchHardLines, hardLineIds } from './hardLines.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // The KB lives at the SERVER root (deployed with the service, Root Directory =
@@ -221,15 +222,37 @@ export const FOCUS = {
   BLOOD_SUGAR: 'blood_sugar',
   LOWER_SODIUM: 'lower_sodium',
   HEART: 'heart',
+  // Added with the deeper preference set. Every one of these is backed by a real
+  // KB category or a real nutrition field — a focus the engine can't actually act
+  // on would be a chip that quietly does nothing, which is its own kind of lie.
+  ADDITIVE_SENSITIVE: 'additive_sensitive', // dyes + preservatives, from the KB
+  PROCESSED_FATS: 'processed_fats', // trans fats + industrial seed oils, from the KB
+  HIGHER_FIBER: 'higher_fiber', // stripped/refined grain, from the KB
+  CAFFEINE: 'caffeine', // measured caffeine, from OFF nutrition
 };
+
+// Categories behind the KB-backed focuses above.
+const ADDITIVE_CATEGORIES = new Set(['artificial_dye', 'preservative', 'preservative_curing']);
+// Kristy's philosophy does NOT demonize natural saturated fat — this is the
+// processed-fat line only (hydrogenated + industrial seed oils), never butter.
+const PROCESSED_FAT_CATEGORIES = new Set(['trans_fat', 'seed_oil']);
+// Refined grain: the fiber-bearing bran and germ stripped out.
+const REFINED_GRAIN_IDS = new Set(['enriched_bleached_flour', 'bleached_flour', 'modified_food_starch']);
+
+export const CAFFEINE_HIGH = Number(process.env.CAFFEINE_HIGH) || 0.02; // g / 100g
 
 const SWAP_INDEX = TIERS.indexOf('swap_recommended');
 const numOrNull = (x) => (Number.isFinite(Number(x)) ? Number(x) : null);
 
 /** Normalize product nutrition to { sodium, addedSugar } in g/100g (or nulls). */
 export function normalizeNutrition(n) {
-  if (!n || typeof n !== 'object') return { sodium: null, addedSugar: null };
-  return { sodium: numOrNull(n.sodium), addedSugar: numOrNull(n.addedSugar) };
+  if (!n || typeof n !== 'object') return { sodium: null, addedSugar: null, fiber: null, caffeine: null };
+  return {
+    sodium: numOrNull(n.sodium),
+    addedSugar: numOrNull(n.addedSugar),
+    fiber: numOrNull(n.fiber),
+    caffeine: numOrNull(n.caffeine),
+  };
 }
 
 // Compute which active focuses are TRIGGERED by real matches, which matched
@@ -240,9 +263,14 @@ function computeFocus(matched, nutrition, focuses) {
   const highSodium = nut.sodium != null && nut.sodium >= SODIUM_HIGH;
   const highAddedSugar = nut.addedSugar != null && nut.addedSugar >= ADDED_SUGAR_HIGH;
 
+  const highCaffeine = nut.caffeine != null && nut.caffeine >= CAFFEINE_HIGH;
+
   const glycemicHigh = matched.filter((e) => e.glycemic_impact === 'high');
   const sugarAliases = matched.filter((e) => e.category === 'sugar_alias');
   const cardio = matched.filter((e) => e.cardiovascular_relevance); // trans fats + seed oils
+  const additives = matched.filter((e) => ADDITIVE_CATEGORIES.has(e.category));
+  const processedFats = matched.filter((e) => PROCESSED_FAT_CATEGORIES.has(e.category));
+  const refinedGrain = matched.filter((e) => REFINED_GRAIN_IDS.has(e.id));
 
   const triggered = [];
   const relevantIds = new Set();
@@ -263,11 +291,32 @@ function computeFocus(matched, nutrition, focuses) {
     triggered.push(FOCUS.HEART);
     mark(cardio);
   }
+  if (active.includes(FOCUS.ADDITIVE_SENSITIVE) && additives.length) {
+    triggered.push(FOCUS.ADDITIVE_SENSITIVE);
+    mark(additives);
+  }
+  if (active.includes(FOCUS.PROCESSED_FATS) && processedFats.length) {
+    triggered.push(FOCUS.PROCESSED_FATS);
+    mark(processedFats);
+  }
+  // "Higher fiber" reads as: this is the refined version, with the fiber stripped.
+  // Measured fiber only counts when OFF actually has the figure.
+  if (active.includes(FOCUS.HIGHER_FIBER) && refinedGrain.length) {
+    triggered.push(FOCUS.HIGHER_FIBER);
+    mark(refinedGrain);
+  }
+  if (active.includes(FOCUS.CAFFEINE) && highCaffeine) {
+    triggered.push(FOCUS.CAFFEINE);
+  }
 
   const leadsWith =
     (triggered.includes(FOCUS.LOWER_SODIUM) && FOCUS.LOWER_SODIUM) ||
     (triggered.includes(FOCUS.BLOOD_SUGAR) && FOCUS.BLOOD_SUGAR) ||
     (triggered.includes(FOCUS.LOWER_SUGAR) && FOCUS.LOWER_SUGAR) ||
+    (triggered.includes(FOCUS.CAFFEINE) && FOCUS.CAFFEINE) ||
+    (triggered.includes(FOCUS.PROCESSED_FATS) && FOCUS.PROCESSED_FATS) ||
+    (triggered.includes(FOCUS.ADDITIVE_SENSITIVE) && FOCUS.ADDITIVE_SENSITIVE) ||
+    (triggered.includes(FOCUS.HIGHER_FIBER) && FOCUS.HIGHER_FIBER) ||
     (triggered.includes(FOCUS.HEART) && FOCUS.HEART) ||
     null;
 
@@ -281,9 +330,15 @@ function computeFocus(matched, nutrition, focuses) {
       highAddedSugar,
       sodium_100g: nut.sodium,
       added_sugar_100g: nut.addedSugar,
+      highCaffeine,
+      caffeine_100g: nut.caffeine,
+      fiber_100g: nut.fiber,
       glycemicHigh: glycemicHigh.map((e) => e.name),
       sugarAliases: sugarAliases.map((e) => e.name),
       cardiovascular: cardio.map((e) => e.name),
+      additives: additives.map((e) => e.name),
+      processedFats: processedFats.map((e) => e.name),
+      refinedGrain: refinedGrain.map((e) => e.name),
     },
   };
 }
@@ -314,20 +369,36 @@ function orderLayer(layer, relevantIds) {
  *  @param {{ focuses?: string[], nutrition?: { sodium?, addedSugar? } }} [options]
  */
 export function evaluateIngredients(rawIngredientList, options = {}) {
-  const { focuses = [], nutrition = null } = options;
+  const { focuses = [], nutrition = null, hardLines = [] } = options;
   const { matched, unmatched } = matchIngredients(rawIngredientList);
   const baseTier = scoreVerdict(matched);
 
   const focus = computeFocus(matched, nutrition, focuses);
-  const tier = escalateTier(baseTier, focus.triggered.length);
+  // A violated hard line escalates like a triggered focus — same bounded ladder,
+  // so a user preference can never manufacture a `skip` that the KB didn't earn.
+  const violated = matchHardLines(matched, hardLines);
+  const tier = escalateTier(baseTier, focus.triggered.length + violated.length);
+
+  // The user drew this line themselves, so a product that crosses it is not
+  // "approved" for them no matter how clean the rest of the label is. The seal
+  // stays earned — this only ever takes it away, never grants it.
+  const stamp = tier === 'approved' && violated.length === 0;
+
+  // Hard lines are the loudest thing on the card: surface what crossed them
+  // first, then focus-relevant, then the rest.
+  const layer = orderLayer(
+    orderLayer(buildUniversalLayer(matched), focus.relevantIds),
+    hardLineIds(hardLines),
+  );
 
   return {
     tier,
     baseTier, // the pre-focus tier (for transparency / tests)
-    stamp: tier === 'approved', // the gold seal is earned only at `approved`
-    universalLayer: orderLayer(buildUniversalLayer(matched), focus.relevantIds),
+    stamp, // the gold seal is earned only at `approved`, and never over a hard line
+    universalLayer: layer,
     matched, // full entries incl. `swap` — surfaced cleanly for Step 2
     unmatched,
     focus: { active: focus.active, triggered: focus.triggered, leadsWith: focus.leadsWith, signals: focus.signals },
+    hardLines: { violated }, // [{ value, label, names[] }] — additive, never reshapes the above
   };
 }
