@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#040805" />
 
-  <!-- ── Positioning-forward meta: shared links carry the Yuka contrast line ── -->
+  <!-- ── Positioning-forward meta: shared links carry the hero contrast line ── -->
   <title>Kristy — She tells you if it belongs in your cart</title>
   <meta name="description" content="Yuka tells you what's in the food. Kristy tells you if it belongs in your cart — a grocery coach who reads any label, knows your goal, and tells you what to actually buy." />
 
@@ -23,11 +23,13 @@
   <meta name="twitter:description" content="Yuka tells you what's in the food. Kristy tells you if it belongs in your cart." />
   <meta name="twitter:image" content="https://kristyapproved.vercel.app/og-image.svg" />
 
-  <!-- Favicon = the mark (flat gold "K" on forest); full silhouette on the apple-touch/PWA icons. -->
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <!-- Favicon = the mark: the gold hair silhouette on the forest ground, baked in
+       because a favicon is an opaque square. 16/32 merge the finest strands. -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- JS-present flag. Set BEFORE styles paint so reveal-hiding only applies with JS.
        With JS off, .js is never added → every [data-rev] stays fully visible. -->
@@ -81,7 +83,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--bg-deep);
+      /* The landing sits on the app's ground, not on black — the marketing page
+         and the product should look like the same world. bg-deep is the void the
+         page opens and closes on; the forest green is the working ground under
+         everything between. */
+      /* The forest green IS the ground — the same one the product stands on.
+         The deep void is reserved for the two places the page needs air: behind
+         the hero and under the close/footer. Kept as a flat color rather than a
+         page-length gradient because body's background propagates to the canvas
+         and gets sized from the root box, not the document — a gradient here
+         stretches unpredictably with page length. */
+      background: var(--bg);
       color: var(--text);
       font-family: var(--font-ui);
       -webkit-font-smoothing: antialiased;
@@ -164,7 +176,10 @@
     }
 
     /* ═════════════════════════════ HERO ═════════════════════════════ */
-    .hero { min-height: 100vh; display: flex; align-items: center; padding: 132px 0 84px; }
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; padding: 132px 0 84px;
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-deep) 34%, var(--bg) 100%);
+    }
     .hero__grid {
       display: grid; grid-template-columns: 1.08fr .92fr; gap: 60px; align-items: center;
     }
@@ -175,14 +190,14 @@
       font-family: var(--font-voice); font-style: italic; font-size: 15px;
       color: var(--text-muted); letter-spacing: .02em; margin-bottom: 26px;
     }
-    /* The headline IS the two-voice split: the Yuka half factual (Inter), Kristy's
+    /* The headline IS the two-voice split: the category half factual (Inter), Kristy's
        half in Playfair italic (kristyVoice). */
     .hero__title { line-height: 1.04; letter-spacing: -.01em; }
-    .hero__yuka {
+    .hero__lede {
       display: block; font-family: var(--font-ui); font-weight: 300;
       font-size: clamp(28px, 4.2vw, 46px); color: var(--text);
     }
-    .hero__yuka b { font-weight: 600; }
+    .hero__lede b { font-weight: 600; }
     .hero__kristy {
       display: block; margin-top: 14px;
       font-family: var(--font-voice); font-style: italic; font-weight: 500;
@@ -198,6 +213,13 @@
     .hero__cta { margin-top: 38px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
     .hero__cta-note { font-family: var(--font-ui); font-size: 13px; color: var(--text-muted); }
     .hero__demo { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    /* The scanner's corner-frame motif, echoed around the hero device. */
+    .hero__device { position: relative; display: flex; justify-content: center; padding: 18px; }
+    .hero__bracket { position: absolute; width: 30px; height: 30px; border: 2px solid var(--gold-40); }
+    .hero__bracket--tl { top: 0; left: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 8px; }
+    .hero__bracket--br { bottom: 0; right: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 8px; }
+    .phone--hero { max-width: 330px; }
+    .phone--hero .vc { border-radius: 30px; box-shadow: none; }
     .hero__demo-cap { font-family: var(--font-ui); font-style: italic; font-size: 12px; color: var(--text-muted); }
 
     /* ═════════════════════════════ VERDICT CARD ═════════════════════════════
@@ -296,20 +318,37 @@
     }
     .beat__proof { display: flex; justify-content: center; }
 
-    /* App-screen frame — presents a real app surface (List / Haul) as a screen */
-    .screen {
-      width: 100%; max-width: 420px; border-radius: 22px; overflow: hidden;
+    /* ── Device silhouette ──────────────────────────────────────────────────
+       The beat visuals are faithful DOM ports of the real components, so they
+       need to read as "the app" rather than as floating cards. A minimal phone
+       does that with almost nothing: a dark bezel, a deep corner radius, and a
+       speaker pill. Deliberately no chrome, no home indicator, no brand — the
+       frame should disappear and leave the screen. */
+    .phone {
+      width: 100%; max-width: 360px;
+      padding: 11px;
+      border-radius: 44px;
+      background: linear-gradient(160deg, #0A120C 0%, #050A06 60%, #0A120C 100%);
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 140%);
-      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+      box-shadow:
+        0 0 0 1px rgba(201,168,76,.07),
+        0 40px 90px rgba(0,0,0,.62);
+    }
+    .phone__notch {
+      width: 62px; height: 5px; margin: 3px auto 9px;
+      border-radius: 999px; background: #16241A;
+    }
+    .screen {
+      width: 100%; border-radius: 34px; overflow: hidden;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 150%);
     }
     .screen__bar {
-      display: flex; align-items: center; gap: 7px; padding: 13px 16px;
-      border-bottom: 1px solid var(--border); background: rgba(4,8,5,.4);
+      display: flex; align-items: center; gap: 7px; padding: 12px 18px 10px;
+      border-bottom: 1px solid var(--border);
     }
-    .screen__bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--border-gold); opacity: .55; }
-    .screen__bar span { margin-left: auto; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--text-muted); text-transform: uppercase; }
-    .screen__body { padding: 20px 18px 24px; }
+    .screen__bar i { display: none; } /* the device frame replaces the window dots */
+    .screen__bar span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--text-muted); text-transform: uppercase; }
+    .screen__body { padding: 18px 16px 22px; }
 
     /* ── List (Beat 1) — DOM port of ListMoment.jsx ── */
     .lst__head { display: flex; align-items: center; gap: 10px; }
@@ -350,7 +389,12 @@
     .haul__act--ghost { border: 1px solid var(--border-gold); color: var(--text-2); font-weight: 600; }
 
     /* ── Scan capture (Beat 2) — the ten-second moment above the card ── */
-    .scan { display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 420px; }
+    .scan { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+    /* The scan beat is the one that a static port undersells, so it keeps its
+       frame → card reveal. It plays once on scroll-in rather than looping; a
+       loop competes with the copy beside it. Reduced-motion kills the sweep and
+       shows the card outright (see the reduced-motion block). */
+    .phone--scan .scan { padding: 4px 2px; }
     .capture {
       position: relative; overflow: hidden;
       display: flex; align-items: center; gap: 14px; padding: 16px 18px;
@@ -380,7 +424,7 @@
       100% { top: 100%; opacity: 0; }
     }
 
-    /* ═════════════════════════════ CONTRAST (Yuka vs Kristy) ═════════════════════════════ */
+    /* ═════════════════════════════ CONTRAST (a score vs. a coach) ═════════════════════════════ */
     .contrast { padding: 100px 0 40px; }
     .contrast__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
     .cc {
@@ -392,7 +436,7 @@
     .cc--kristy .cc__name { color: var(--gold); }
     .cc__role { font-family: var(--font-ui); font-weight: 300; font-size: clamp(20px, 2.6vw, 26px); color: var(--text); }
     .cc--kristy .cc__role { font-family: var(--font-voice); font-style: italic; font-weight: 500; color: var(--gold); }
-    /* Yuka's generic score readout — deliberately neutral/grey, "same for everyone" */
+    /* The generic score readout — deliberately neutral/grey, "same for everyone" */
     .cc__score { display: flex; align-items: baseline; gap: 8px; padding: 10px 0 4px; }
     .cc__score b { font-family: var(--font-mono); font-size: 40px; color: var(--text-muted); font-weight: 500; }
     .cc__score span { font-family: var(--font-mono); font-size: 15px; color: var(--text-muted); }
@@ -416,7 +460,13 @@
 
     /* ═════════════════════════════ HONEST STANDARD (evidence grades) ═════════════════════════════ */
     .standard { padding: 100px 0 40px; }
-    .standard__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 46px; }
+    .standard__framing {
+      margin-top: 34px; text-align: center; font-family: var(--font-ui);
+      font-size: 15.5px; line-height: 1.6; color: var(--text-muted);
+      max-width: 620px; margin-left: auto; margin-right: auto;
+    }
+    .standard__framing b { color: var(--text); font-weight: 600; }
+    .standard__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 22px; }
     .grade {
       border-radius: 20px; padding: 26px 24px; border: 1px solid var(--border);
       background: var(--surface); display: flex; flex-direction: column; gap: 14px;
@@ -435,6 +485,22 @@
       border: 1px solid var(--border); background: var(--bg-deep);
     }
     .grade__eg-name { font-size: 14px; font-weight: 600; color: var(--text); }
+    /* The verdict, always visible beside the tier: the tag grades the EVIDENCE,
+       this says what to DO — so a tier can never be mistaken for approval. */
+    .grade__eg-verdict {
+      display: inline-block;
+      margin-left: 8px;
+      font-family: var(--font-ui);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      border-radius: 999px;
+      padding: 1px 8px;
+      vertical-align: middle;
+    }
     .grade__eg-line { margin-top: 6px; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
     .grade__eg-src { display: block; margin-top: 9px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--text-2); }
     .standard__foot {
@@ -454,7 +520,11 @@
     .sec-head__sub { margin-top: 18px; font-family: var(--font-ui); font-weight: 300; font-size: clamp(15px, 1.8vw, 18px); line-height: 1.6; color: var(--text-muted); }
 
     /* ═════════════════════════════ CLOSE / CTA ═════════════════════════════ */
-    .close { padding: 130px 0 90px; text-align: center; }
+    /* Close + footer sink back to the void, so the page ends where it began. */
+    .close {
+      padding: 130px 0 90px; text-align: center;
+      background: linear-gradient(180deg, transparent 0%, var(--bg-deep) 78%);
+    }
     .close__promise { font-family: var(--font-ui); font-weight: 300; line-height: 1.08; }
     .close__l1 { display: block; font-size: clamp(34px, 6vw, 68px); color: var(--text); }
     .close__l1 b { font-weight: 600; }
@@ -465,7 +535,7 @@
     .close__trust { margin-top: 34px; font-family: var(--font-ui); font-size: 13px; color: var(--text-muted); }
 
     /* ═════════════════════════════ FOOTER ═════════════════════════════ */
-    .footer { padding: 40px 0 70px; text-align: center; }
+    .footer { padding: 40px 0 70px; text-align: center; background: var(--bg-deep); }
     .footer__ism {
       font-family: var(--font-voice); font-style: italic; font-size: clamp(16px, 2vw, 20px);
       color: var(--text-muted); max-width: 520px; margin: 0 auto 40px;
@@ -494,6 +564,39 @@
     @media (max-width: 520px) {
       .hero__cta { gap: 14px; }
       .beat__say { font-size: 19px; }
+    }
+
+    /* Phone-first: grocery traffic lives here, so 390px is the design target,
+       not a fallback. The clamp() minimums above were still tuned for a larger
+       viewport — at 390px every one of them bottoms out and reads oversized. */
+    @media (max-width: 430px) {
+      .wrap { padding: 0 18px; }
+      .hero { padding: 96px 0 48px; }
+      .hero__lede { font-size: 22px; }
+      .hero__kristy { font-size: 31px; margin-top: 10px; }
+      .hero__sub { font-size: 15px; }
+      .hero__device { padding: 14px; }
+      .hero__bracket { width: 22px; height: 22px; }
+
+      .beat { padding: 46px 0; }
+      .beat__cap { font-size: 26px; }
+      .beat__say { font-size: 17px; margin-top: 18px; }
+      .beat__step { margin-bottom: 14px; }
+
+      .sec-head__h { font-size: 27px; }
+      .standard { padding: 70px 0 30px; }
+      .contrast { padding: 70px 0 30px; }
+      .standard__framing { font-size: 14.5px; margin-top: 26px; }
+      .grade { padding: 22px 20px; }
+
+      /* Full-width CTA: single-hand reach at the bottom of a tall page. */
+      .close { padding: 90px 0 70px; }
+      .close__cta .btn { display: block; width: 100%; padding: 17px 20px; font-size: 18px; }
+
+      /* The phone silhouette shrinks its bezel so the ported screen keeps its room. */
+      .phone { padding: 8px; border-radius: 36px; }
+      .screen { border-radius: 29px; }
+      .screen__body { padding: 15px 13px 18px; }
     }
 
     /* ═════════════════════════════ REDUCED MOTION (mirrors the app's global rule) ═════════════════════════════ */
@@ -526,7 +629,7 @@
         <img class="hero__logo" src="/kristy-logo.png" width="71" height="104" alt="Kristy" data-rev />
         <p class="hero__eyebrow" data-rev>your grocery coach</p>
         <h1 class="hero__title">
-          <span class="hero__yuka" data-rev><b>Yuka</b> tells you what&rsquo;s in the food.</span>
+          <span class="hero__lede" data-rev><b>Yuka</b> tells you what&rsquo;s in the food.</span>
           <span class="hero__kristy" data-rev>Kristy tells you if it belongs in your cart.</span>
         </h1>
         <p class="hero__sub" data-rev>
@@ -540,7 +643,14 @@
 
       <div class="hero__demo" data-rev>
         <p class="hero__demo-cap">in the aisle, just now</p>
-        <!-- Verdict card — the earned Approved seal (tier === 'approved'). -->
+        <!-- Verdict card — the earned Approved seal (tier === 'approved'). In the
+             device frame so the hero shows the product, not a floating card. The
+             corner brackets echo the scanner's framing motif. -->
+        <div class="hero__device">
+          <span class="hero__bracket hero__bracket--tl" aria-hidden="true"></span>
+          <span class="hero__bracket hero__bracket--br" aria-hidden="true"></span>
+        <div class="phone phone--hero">
+          <div class="phone__notch" aria-hidden="true"></div>
         <div class="vc">
           <div class="vc__header">
             <div class="vc__thumb" aria-hidden="true">F</div>
@@ -560,9 +670,11 @@
           </div>
 
           <div class="vc__section">
-            <div class="vc__note-label">for your cut</div>
-            <p class="vc__note">This is exactly what I want anchoring your cut &mdash; 18g of protein, live cultures, nothing on the label to flag. Easy yes.</p>
+            <div class="vc__note-label">for high-protein shopping</div>
+            <p class="vc__note">This is exactly what I want anchoring a high-protein cart &mdash; 18g of protein, live cultures, nothing on the label to flag. Easy yes.</p>
           </div>
+        </div>
+        </div>
         </div>
       </div>
     </div>
@@ -586,8 +698,10 @@
           <p class="beat__say">&ldquo;Give me your goal and I&rsquo;ll hand you the week&rsquo;s list &mdash; the right proteins, your swaps, minus your hard lines.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
-          <div class="screen">
-            <div class="screen__bar"><i></i><i></i><i></i><span>List</span></div>
+          <div class="phone">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="screen">
+              <div class="screen__bar"><span>List</span></div>
             <div class="screen__body">
               <div class="lst__head">
                 <span class="lst__icon" aria-hidden="true">
@@ -595,7 +709,7 @@
                 </span>
                 <span class="lst__title">Your list</span>
               </div>
-              <p class="lst__intro">Built for your cut &mdash; protein&rsquo;s the anchor, and I kept the calorie-dense filler out.</p>
+              <p class="lst__intro">Built for eating cleaner &mdash; real food first, and I kept the ultra-processed filler out.</p>
 
               <div class="lst__group">
                 <div class="lst__group-label">From your haul</div>
@@ -651,6 +765,7 @@
             </div>
           </div>
         </div>
+          </div>
       </div>
     </div>
 
@@ -663,6 +778,8 @@
           <p class="beat__say">&ldquo;Point me at the barcode. I&rsquo;ll tell you if it belongs in your cart &mdash; and exactly what to grab instead if it doesn&rsquo;t.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
+          <div class="phone phone--scan">
+            <div class="phone__notch" aria-hidden="true"></div>
           <div class="scan">
             <!-- The capture: barcode + a gold scanline sweep -->
             <div class="capture">
@@ -716,8 +833,8 @@
               </div>
 
               <div class="vc__section">
-                <div class="vc__note-label">for your cut</div>
-                <p class="vc__note">On your cut this is an easy pass &mdash; it&rsquo;s a snack built on soybean oil dressed up as health food. There&rsquo;s a cleaner way to get the same crunch.</p>
+                <div class="vc__note-label">for eating cleaner</div>
+                <p class="vc__note">Eating cleaner, this is an easy pass &mdash; it&rsquo;s a snack built on soybean oil dressed up as health food. There&rsquo;s a cleaner way to get the same crunch.</p>
               </div>
 
               <div class="vc__swap">
@@ -730,6 +847,7 @@
                 <p>If it needed a hexane bath to exist, it isn&rsquo;t really food.</p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -744,8 +862,10 @@
           <p class="beat__say">&ldquo;Here&rsquo;s how the trip really went, and the one thing worth fixing next week.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
-          <div class="screen">
-            <div class="screen__bar"><i></i><i></i><i></i><span>Haul</span></div>
+          <div class="phone">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="screen">
+              <div class="screen__bar"><span>Haul</span></div>
             <div class="screen__body">
               <div class="haul__head">
                 <span class="haul__title">Your haul</span>
@@ -794,11 +914,14 @@
             </div>
           </div>
         </div>
+          </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════ CONTRAST — Yuka vs Kristy ═════════ -->
+  <!-- ═════════ CONTRAST — a score vs. a coach ═════════
+       The category is named ONCE, in the hero, as an anchor. From here on we own
+       the category rather than borrow it: the comparison is generic. -->
   <section class="contrast">
     <div class="wrap">
       <div class="sec-head" data-rev>
@@ -809,8 +932,8 @@
 
       <div class="contrast__cols">
         <div class="cc" data-rev>
-          <div class="cc__name">Yuka</div>
-          <div class="cc__role">The lookup</div>
+          <div class="cc__name">A score</div>
+          <div class="cc__role">The score apps</div>
           <div class="cc__score">
             <b>76</b><span>/ 100</span><em>same for everyone</em>
           </div>
@@ -822,10 +945,10 @@
         </div>
 
         <div class="cc cc--kristy" data-rev>
-          <div class="cc__name">Kristy</div>
-          <div class="cc__role">The coach who knows you</div>
+          <div class="cc__name">A coach</div>
+          <div class="cc__role">Kristy</div>
           <div class="cc__mini">
-            <i aria-hidden="true"></i><span>Swap recommended</span><em>for your cut</em>
+            <i aria-hidden="true"></i><span>Swap recommended</span><em>for eating cleaner</em>
           </div>
           <ul class="cc__list">
             <li>Filtered through your goal, every time.</li>
@@ -835,8 +958,8 @@
         </div>
       </div>
 
-      <p class="contrast__line" data-rev>A lookup, <span class="v">or a coach who knows you.</span></p>
-      <p class="contrast__fair" data-rev>Yuka&rsquo;s good at what it does. Kristy does the next part &mdash; the deciding.</p>
+      <p class="contrast__line" data-rev>A score, <span class="v">or a coach who knows you.</span></p>
+      <p class="contrast__fair" data-rev>The score apps are good at what they do. Kristy does the next part &mdash; the deciding.</p>
     </div>
   </section>
 
@@ -849,12 +972,16 @@
         <p class="sec-head__sub">Confidence without the sleight of hand. Every flag carries the reason it&rsquo;s flagged &mdash; settled science, a real-but-unsettled signal, or Kristy&rsquo;s own standard, named as such.</p>
       </div>
 
+      <p class="standard__framing" data-rev>
+        These are how I grade the <b>evidence</b> &mdash; the verdict is what I tell you to do about it.
+      </p>
+
       <div class="standard__grid">
         <div class="grade grade--established" data-rev>
           <span class="grade__tag">Established</span>
           <p class="grade__def">Strong scientific consensus, a major health-organization classification, or regulatory action. Settled enough to act on without debate.</p>
           <div class="grade__eg">
-            <div class="grade__eg-name">Sodium nitrite</div>
+            <div class="grade__eg-name">Sodium nitrite <span class="grade__eg-verdict">Skip</span></div>
             <p class="grade__eg-line">The curing agent in deli meats, hot dogs, and bacon. IARC classifies nitrite-cured processed meat as a Group 1 carcinogen.</p>
             <span class="grade__eg-src">Settled science</span>
           </div>
@@ -864,7 +991,7 @@
           <span class="grade__tag">Credible concern</span>
           <p class="grade__def">Meaningful peer-reviewed evidence of harm. The debate&rsquo;s ongoing, but the signal is real &mdash; worth flagging, especially when a clean swap exists.</p>
           <div class="grade__eg">
-            <div class="grade__eg-name">Soybean oil</div>
+            <div class="grade__eg-name">Soybean oil <span class="grade__eg-verdict">Skip</span></div>
             <p class="grade__eg-line">~54% linoleic acid, among the highest of any common oil. UC Riverside research tied it to metabolic and neurological effects in animals.</p>
             <span class="grade__eg-src">Real, but unsettled</span>
           </div>
@@ -874,9 +1001,9 @@
           <span class="grade__tag">Kristy&rsquo;s standard</span>
           <p class="grade__def">Her whole-food philosophy, even where regulators haven&rsquo;t acted. She&rsquo;ll always say when it&rsquo;s her standard, not settled science &mdash; and she stands behind it.</p>
           <div class="grade__eg">
-            <div class="grade__eg-name">Canola oil</div>
-            <p class="grade__eg-line">An industrially processed seed oil with a poor omega-6 to omega-3 ratio &mdash; hexane-extracted and high-heat deodorized.</p>
-            <span class="grade__eg-src">Her call, named as such</span>
+            <div class="grade__eg-name">Canola oil <span class="grade__eg-verdict">Skip</span></div>
+            <p class="grade__eg-line">Solvent-extracted and stripped by high heat &mdash; that processing oxidizes the oil, and oxidized fats are the real problem.</p>
+            <span class="grade__eg-src">Flagged on my standard</span>
           </div>
         </div>
       </div>
