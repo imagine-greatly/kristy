@@ -1,7 +1,7 @@
 // Entry gate. Shows a config screen if env is missing; otherwise a quiet loader
 // while AppProvider resolves the session and redirects to /auth, /onboarding,
 // or /chat.
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, Image } from 'react-native';
 import { isConfigured, SUPABASE_URL, SUPABASE_ANON_KEY, apiBase } from '../src/lib/config';
 import { colors, fonts } from '../src/theme';
 
@@ -33,7 +33,7 @@ export default function Index() {
   if (!isConfigured) return <ConfigError />;
   return (
     <View style={styles.center}>
-      <Text style={styles.leaf}>🌿</Text>
+      <Image source={require('../assets/kristy-logo.png')} style={styles.mark} resizeMode="contain" />
     </View>
   );
 }
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     padding: 28,
     gap: 10,
   },
-  leaf: { fontSize: 40 },
+  mark: { height: 96, width: 66 },
   title: { fontFamily: fonts.serif, fontSize: 22, color: colors.accentGold, marginBottom: 4 },
   body: { color: colors.textMuted, fontSize: 14, lineHeight: 20, textAlign: 'center', fontFamily: fonts.ui },
   code: { fontFamily: fonts.mono, fontSize: 13, color: colors.textPrimary },

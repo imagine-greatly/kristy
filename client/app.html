@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#040805" />
     <title>Kristy</title>
-    <!-- Favicon = the mark. The tab icon is the flat gold "K" (Georgia, the wordmark
-         face) on forest — the detailed silhouette muds below ~40px, so the monogram
-         carries the small sizes; the full mark lives on the PWA icons (manifest). -->
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <!-- Favicon = the mark: the gold hair silhouette on the forest ground. The
+         ground is baked in because a favicon is an opaque square, unlike the app
+         logo which stays transparent. The 16/32 variants merge the finest hair
+         strands so the negative-space face still reads at tab size. -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
 
     <!-- PWA: installable "Add to Home Screen" support. Icons + colors live in
          /manifest.json; iOS reads the apple-* tags for home-screen behavior. -->
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
