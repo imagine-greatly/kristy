@@ -184,17 +184,24 @@ function demoScanCard({ personalize = true } = {}) {
     { id: 'agave_syrup', name: 'Agave Syrup', one_liner: "Marketed as 'natural,' but it's 70–90% fructose — even more than corn syrup. The liver pays for that.", severity: 'high', evidence_tier: 'credible_concern' },
     { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A seaweed thickener that inflamed the gut in animal studies — which is why it stays debated.', severity: 'high', evidence_tier: 'credible_concern' },
   ];
+  // Raw honey leads the list, so the engine affirms it (dominant ingredient) while
+  // the three concerns still score — the demo mirrors a real /verdict response and
+  // shows the "What's good in here" section alongside the flags. An affirmation
+  // never lifts the tier or restores the seal: still swap_recommended, stamp false.
+  const affirmationLayer = [
+    { id: 'raw_honey', name: 'Raw Honey', one_liner: 'A whole food humans have gathered and eaten for as long as recorded history. Minimally processed, unlike the refined sugars that replaced it.', evidence_tier: 'time_tested' },
+  ];
   const swap = 'Butter, ghee, or a splash of whole milk in your coffee';
   const signals = { highSodium: false, highAddedSugar: true, sodium_100g: null, added_sugar_100g: 22, glycemicHigh: [], sugarAliases: ['Agave Syrup'], cardiovascular: ['Canola Oil'] };
   const verdict = personalize
-    ? { tier: 'swap_recommended', stamp: false, universalLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals, ingredientsRead: 14 }
-    : { tier: 'swap_recommended', stamp: false, universalLayer, note: null, swap, needsGoal: true, signals, ingredientsRead: 14 };
+    ? { tier: 'swap_recommended', stamp: false, universalLayer, affirmationLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals, ingredientsRead: 14 }
+    : { tier: 'swap_recommended', stamp: false, universalLayer, affirmationLayer, note: null, swap, needsGoal: true, signals, ingredientsRead: 14 };
   return {
     found: true,
     source: 'off',
-    product: { barcode: 'demo', name: 'Hazelnut Coffee Creamer', brand: 'Demo Co.', image: null, aisle: 'coffee & tea' },
+    product: { barcode: 'demo', name: 'Honey Hazelnut Coffee Creamer', brand: 'Demo Co.', image: null, aisle: 'coffee & tea' },
     verdict,
-    ingredients: 'canola oil, agave syrup, carrageenan',
+    ingredients: 'raw honey, canola oil, agave syrup, carrageenan',
     nutrition: null,
   };
 }
