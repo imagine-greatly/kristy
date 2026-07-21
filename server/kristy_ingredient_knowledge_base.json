@@ -196,6 +196,30 @@
       "cardiovascular_relevance": "kristys_standard"
     },
     {
+      "id": "margarine",
+      "name": "Margarine",
+      "aliases": [
+        "vegetable oil spread",
+        "buttery spread",
+        "plant butter",
+        "margarine spread"
+      ],
+      "category": "seed_oil",
+      "severity": "high",
+      "evidence_tier": "kristys_standard",
+      "verdict": "skip",
+      "one_liner": "A butter impersonator built from industrial seed oils, then colored and flavored to look like the real thing. The whole product exists to replace a whole food with a processed one.",
+      "why": "Modern margarine is primarily refined seed and vegetable oils — soybean, canola, palm — emulsified with water and additives, usually with artificial color to imitate butter's yellow and added flavor compounds to imitate its taste. The partially-hydrogenated era that made margarine a trans-fat vehicle is over; US products were reformulated after the FDA's PHO determination. The objection that remains is Kristy's standard, not a trans-fat claim: it is an industrial replacement for a whole food that already works.",
+      "history": "Margarine was invented in 1869 as a cheap butter substitute for armies and the poor, patented from beef tallow, then reformulated onto hydrogenated seed oils — the source of the trans-fat crisis that got them banned. Today it's back on refined seed oils. The formula has changed repeatedly; what never changed is that it exists to imitate butter.",
+      "kristy_note": "I flag margarine on my standard: it's an industrial stand-in for a whole food. To be straight with you, the trans fat is gone — that was the old objection and the reformulation was real. Mine is simpler. It's built from refined seed oils and dressed up to look like the thing it's replacing, and the thing it's replacing is right there.",
+      "sources": [
+        "FDA Final Determination on PHOs (2018)",
+        "USDA FoodData Central — margarine and vegetable oil spread composition"
+      ],
+      "swap": "Real butter — ideally grass-fed. For cooking, butter, ghee, or beef tallow. The thing margarine is imitating is the better choice.",
+      "cardiovascular_relevance": "kristys_standard"
+    },
+    {
       "id": "partially_hydrogenated_oil",
       "name": "Partially Hydrogenated Oil",
       "aliases": [
@@ -1481,7 +1505,9 @@
       "lard (from pasture-raised pigs)",
       "cold-pressed extra virgin olive oil",
       "unrefined coconut oil",
-      "duck fat"
+      "duck fat",
+      "cold-pressed avocado oil (unrefined)",
+      "cacao butter"
     ],
     "sweeteners": [
       "raw honey (small amounts)",

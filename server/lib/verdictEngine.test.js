@@ -141,3 +141,74 @@ test('every ingredient uses a known severity and evidence tier', () => {
     assert.ok(ev.has(e.evidence_tier), `${e.id}: evidence_tier ${e.evidence_tier} is defined`);
   }
 });
+
+// ── Fat philosophy: the real source beats the industrial imitation ───────────
+// Two halves of one rule. Margarine is flagged for what it actually is today
+// (refined seed oils, colored and flavored to imitate butter) — NOT aliased onto
+// partially_hydrogenated_oil, because US margarine was reformulated PHO-free and
+// a trans-fat claim would be false. Whole-food cooking fats are the swap targets
+// and must never be matched as flags.
+test('margarine → skip on Kristys standard, with the butter swap', () => {
+  const { matched } = matchIngredients('margarine');
+
+  assert.equal(matched.length, 1, 'margarine matches exactly one entry');
+  const m = matched[0];
+  assert.equal(m.id, 'margarine');
+  assert.notEqual(m.id, 'partially_hydrogenated_oil', 'never resolves to the trans-fat entry');
+  assert.equal(m.verdict, 'skip');
+  assert.equal(m.severity, 'high');
+  assert.equal(m.evidence_tier, 'kristys_standard', 'her standard, not settled science');
+  assert.match(m.swap, /butter/i, 'swaps toward the real thing');
+
+  // Severity high (not critical) → swap_recommended, and the seal is withheld.
+  assert.equal(scoreVerdict(matched), 'swap_recommended');
+  assert.equal(evaluateIngredients('margarine').stamp, false);
+
+  // No trans-fat claim anywhere in the copy the user can see.
+  assert.doesNotMatch(m.one_liner, /trans[- ]fat/i, 'one_liner makes no trans-fat claim');
+
+  // category seed_oil → caught by the "no seed oils" hard line and the
+  // processed-fats / heart focuses, exactly like its siblings.
+  assert.equal(m.category, 'seed_oil');
+});
+
+test('every margarine alias resolves to margarine, never to a trans-fat entry', () => {
+  for (const alias of ['margarine', 'vegetable oil spread', 'buttery spread', 'plant butter', 'margarine spread']) {
+    const { matched } = matchIngredients(alias);
+    assert.equal(matched.length, 1, `${alias}: one match`);
+    assert.equal(matched[0].id, 'margarine', `${alias} → margarine`);
+  }
+});
+
+// The whole-food fats ARE the swap targets. They are clean because the KB holds
+// no entry for them — this test is the tripwire that keeps it that way. If a
+// future entry (positive OR negative) ever matches one of these, a product
+// cooked in real butter starts losing its seal. That is the bug this prevents.
+test('whole-food cooking fats are never flagged', () => {
+  const wholeFoodFats = [
+    'butter', 'grass-fed butter', 'unsalted butter', 'ghee', 'clarified butter',
+    'beef tallow', 'tallow', 'lard', 'pasture-raised lard', 'duck fat',
+    'extra virgin olive oil', 'cold-pressed olive oil', 'olive oil',
+    'coconut oil', 'unrefined coconut oil', 'avocado oil', 'cacao butter',
+    'cocoa butter',
+  ];
+
+  for (const fat of wholeFoodFats) {
+    const { matched } = matchIngredients(fat);
+    assert.deepEqual(
+      matched.map((e) => e.id),
+      [],
+      `${fat} must not match any KB entry (it is a swap target, not a flag)`,
+    );
+  }
+
+  // And in situ: a product whose only fat is butter reads clean and keeps the seal.
+  const shortbread = evaluateIngredients('wheat flour, butter, cane sugar');
+  assert.ok(
+    !shortbread.matched.some((e) => e.id === 'butter' || e.category === 'seed_oil'),
+    'butter never appears as a flag',
+  );
+  const allButter = evaluateIngredients('cultured cream, salt');
+  assert.equal(allButter.tier, 'approved');
+  assert.equal(allButter.stamp, true, 'real butter keeps the stamp');
+});
