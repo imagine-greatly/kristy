@@ -48,6 +48,11 @@ export const colors = {
   gold50: 'rgba(139,111,46,0.50)', //           (--gold-50)
   border60: 'rgba(30,61,38,0.60)', //           (--border-60)
   goldTint9: 'rgba(201,168,76,0.09)', // selected plan card bg
+  // Mint counterparts, derived from accentSeafoam/accentMint at the same weights —
+  // the approved register needs a tint of its own so an affirmation never has to
+  // borrow gold. Gold marks a concern; mint marks a food Kristy stands behind.
+  mint30: 'rgba(74,155,111,0.30)',
+  mintTint9: 'rgba(107,191,142,0.09)',
 
   // ── Scrims / overlays ──
   scrim: 'rgba(7,18,11,0.62)',

@@ -87,12 +87,12 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     // the in-voice goal ask where the note would be. No model call, no note, and —
     // critically — no free "taste" consumed: setting a goal is not itself a read.
     if (!personalize) {
-      const { tier, stamp, universalLayer, matched, focus, hardLines } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
+      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
       // The generic KB swap (a field read, no model call) is FREE — everyone gets
       // "here's a better shelf." The goal-aware swap stays a member benefit.
       return res.json({
-        tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education,
+        tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education,
         needsGoal: true, signals: focus.signals, ingredientsRead: count, hardLines,
       });
     }
@@ -112,20 +112,20 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // focus offer still works for a goal-set user who's out of free tastes.
       // Hard lines still apply: they're a deterministic KB match with no model
       // call, and a line the user drew is a promise, not a member benefit.
-      const { tier, stamp, universalLayer, matched, focus, hardLines } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
+      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
-      return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines });
+      return res.json({ tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
     // the claim-locked Haiku note.
-    const { tier, stamp, universalLayer, matched, focus, hardLines } = evaluateIngredients(ingredients, { focuses, nutrition, hardLines: nonNegotiables });
-    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched, focus, hardLines });
+    const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines } = evaluateIngredients(ingredients, { focuses, nutrition, hardLines: nonNegotiables });
+    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines });
     const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses }));
     if (consumesFree) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));
 
-    return res.json({ tier, stamp, universalLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines });
+    return res.json({ tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -155,14 +155,14 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   }
 
   const count = tokenizeIngredients(ingredients).length;
-  const { tier, stamp, universalLayer, matched } = evaluateIngredients(ingredients);
+  const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched } = evaluateIngredients(ingredients);
   const education = selectCardIsm(
     ismContext({ matched, tier, ingredientCount: count, focuses: [] })
   );
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return res.json({ tier, stamp, universalLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count });
+  return res.json({ tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count });
 });
 
 export default verdictRouter;

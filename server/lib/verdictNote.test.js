@@ -9,6 +9,7 @@ import assert from 'node:assert/strict';
 
 import {
   sanitizeFlagged,
+  sanitizeAffirmed,
   buildNoteInput,
   parseNoteJSON,
   VERDICT_NOTE_SYSTEM,
@@ -117,4 +118,59 @@ test('the note system prompt carries the hard rules verbatim', () => {
   assert.ok(VERDICT_NOTE_SYSTEM.includes('If it is not in the provided data, it does not'));
   assert.ok(VERDICT_NOTE_SYSTEM.includes('You are a coach, not a doctor.'));
   assert.ok(VERDICT_NOTE_SYSTEM.trim().endsWith('Return ONLY this JSON: {"note": "...", "swap": "..." or null}'));
+});
+
+// ── The claim lock on the POSITIVE side ──────────────────────────────────────
+// Affirmations get the same structural treatment as flags. A traditional food is
+// exactly where an outcome claim is most tempting ("used as a remedy for…"), so
+// the affirming entry's `why`, `kristy_note`, and `history` are all stripped
+// before the model sees anything.
+const POISONED_AFFIRMATION = {
+  id: 'raw_honey',
+  name: 'Raw Honey',
+  one_liner: 'A whole food humans have eaten for as long as recorded history.',
+  evidence_tier: 'time_tested',
+  polarity: 'affirming',
+  history: 'kept as a traditional remedy across ancient cultures',
+  why: 'long detail that should not reach the model',
+  kristy_note: 'internal honey note',
+  INJECTED_OFF_KB_CLAIM: 'CURES_SEASONAL_ALLERGIES_9000', // planted attack string
+};
+
+test('sanitizeAffirmed keeps ONLY the three allowed fields', () => {
+  const [out] = sanitizeAffirmed([POISONED_AFFIRMATION]);
+  assert.deepEqual(Object.keys(out).sort(), ['evidence_tier', 'name', 'one_liner']);
+  // No severity and no swap leak in — an affirmation has neither, and a severity
+  // would be the thing that lets it into concern scoring.
+  assert.equal(out.severity, undefined);
+  assert.equal(out.swap, undefined);
+});
+
+test('claim lock: an injected cure claim never reaches the payload', () => {
+  const input = buildNoteInput({
+    tier: 'approved',
+    goal: 'eat cleaner',
+    nonNegotiables: [],
+    matched: [],
+    affirmed: [POISONED_AFFIRMATION],
+  });
+  const serialized = JSON.stringify(input);
+  assert.ok(!serialized.includes('CURES_SEASONAL_ALLERGIES_9000'), 'off-KB cure claim stripped');
+  assert.ok(!serialized.includes('should not reach the model'), '`why` stripped');
+  assert.ok(!serialized.includes('internal honey note'), '`kristy_note` stripped');
+  assert.ok(!serialized.includes('traditional remedy'), '`history` withheld — the outcome-claim tripwire');
+  // …while the legitimate affirmation survives.
+  assert.ok(serialized.includes('Raw Honey'));
+  assert.ok(serialized.includes('time_tested'));
+});
+
+test('the note prompt carries the tradition rule and the no-outcome-either-direction rule', () => {
+  // Tradition justifies food-worth only.
+  assert.match(VERDICT_NOTE_SYSTEM, /TRADITION MAY NEVER JUSTIFY/);
+  assert.match(VERDICT_NOTE_SYSTEM, /NO HEALTH-OUTCOME CLAIM IN EITHER DIRECTION/);
+  // No conspiracy framing, ever.
+  assert.match(VERDICT_NOTE_SYSTEM, /NEVER invoke conspiracy/);
+  // The saturated-fat line is present AND tier-marked as her read, not a finding.
+  assert.match(VERDICT_NOTE_SYSTEM, /saturated-fat panic hasn't held up the way it was sold/);
+  assert.match(VERDICT_NOTE_SYSTEM, /contested literature, not settled fact/);
 });

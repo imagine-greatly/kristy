@@ -137,8 +137,17 @@ test('every ingredient uses a known severity and evidence tier', () => {
   const sev = new Set(Object.keys(kb.severity_levels));
   const ev = new Set(Object.keys(kb.evidence_tiers));
   for (const e of kb.ingredients) {
-    assert.ok(sev.has(e.severity), `${e.id}: severity ${e.severity} is defined`);
     assert.ok(ev.has(e.evidence_tier), `${e.id}: evidence_tier ${e.evidence_tier} is defined`);
+    if (e.polarity === 'affirming') {
+      // An affirmation has no severity and no verdict BY DESIGN. Every severity
+      // level in the KB is a concern level, so giving one to a whole food would
+      // score it as a concern and cost a clean product its stamp.
+      assert.equal(e.severity, undefined, `${e.id}: affirming entry must not carry a severity`);
+      assert.equal(e.verdict, undefined, `${e.id}: affirming entry must not carry a verdict`);
+      assert.equal(e.swap, undefined, `${e.id}: nothing to swap away from a whole food`);
+      continue;
+    }
+    assert.ok(sev.has(e.severity), `${e.id}: severity ${e.severity} is defined`);
   }
 });
 
@@ -211,4 +220,94 @@ test('whole-food cooking fats are never flagged', () => {
   const allButter = evaluateIngredients('cultured cream, salt');
   assert.equal(allButter.tier, 'approved');
   assert.equal(allButter.stamp, true, 'real butter keeps the stamp');
+});
+
+// ── Polarity: the Time-tested tier ───────────────────────────────────────────
+// Affirmations are held strictly out of scoring. The whole point of the
+// partition is that `matched` still means "concerns" and nothing downstream of
+// it had to change.
+test('an affirmed whole food never enters scoring and never costs the stamp', () => {
+  const honey = evaluateIngredients('raw honey');
+
+  assert.deepEqual(honey.matched, [], 'affirmations never enter `matched`');
+  assert.equal(honey.tier, 'approved');
+  assert.equal(honey.stamp, true, 'a whole food keeps the seal');
+  assert.deepEqual(honey.universalLayer, [], 'never rendered as a concern');
+
+  assert.equal(honey.affirmed.length, 1);
+  assert.equal(honey.affirmed[0].id, 'raw_honey');
+  assert.equal(honey.affirmationLayer[0].evidence_tier, 'time_tested');
+  // No severity/verdict escapes into the layer — it has neither.
+  assert.equal(honey.affirmationLayer[0].severity, undefined);
+});
+
+test('all seven time_tested foods affirm, and carry history not a health claim', () => {
+  const seeded = ['raw_honey', 'bone_broth', 'fermented_foods', 'organ_meats', 'garlic', 'ginger', 'extra_virgin_olive_oil'];
+  const byId = Object.fromEntries(kb.ingredients.map((e) => [e.id, e]));
+
+  for (const id of seeded) {
+    const e = byId[id];
+    assert.ok(e, `${id} exists`);
+    assert.equal(e.evidence_tier, 'time_tested');
+    assert.equal(e.polarity, 'affirming');
+    assert.ok(e.history && e.history.trim(), `${id}: history is the evidence, so it must be present`);
+    assert.ok(e.history.split(/\s+/).length <= 60, `${id}: history under ~60 words`);
+
+    // Tradition justifies FOOD-WORTH, never a medical result. No condition
+    // names, no cure/treat/prevent verbs, in any user-visible field.
+    const copy = [e.one_liner, e.why, e.history, e.kristy_note].filter(Boolean).join(' ');
+    assert.doesNotMatch(
+      copy,
+      /\b(cures?|treats?|heals?|prevents?|reverses?|boosts? immunity|lowers? (your )?risk|inflammation|diabetes|cancer|allergies)\b/i,
+      `${id}: tradition may not justify a health-outcome claim`,
+    );
+    // Never conspiracy framing.
+    assert.doesNotMatch(copy, /\b(big pharma|they don't want|the lie|cover.?up|hoax)\b/i, `${id}: no anti-science framing`);
+  }
+});
+
+test('affirmation is scoped to when the whole food IS the product', () => {
+  // Dominant ingredient → affirmed.
+  assert.equal(evaluateIngredients('raw honey, cinnamon').affirmed.length, 1);
+
+  // Buried in a processed product → recognized, but no badge. Honey on a candy
+  // bar does not get to look like a whole food.
+  const bar = evaluateIngredients('oats, cane sugar, raw honey, canola oil, natural flavor, soy lecithin');
+  assert.deepEqual(bar.affirmed, [], 'not dominant → no affirmation');
+  assert.ok(bar.matched.length >= 3, 'and the concerns still score normally');
+  assert.equal(bar.stamp, false);
+
+  // A flavoring that merely names the food is not the food.
+  assert.deepEqual(evaluateIngredients('natural ginger flavor').affirmed, []);
+  assert.deepEqual(evaluateIngredients('garlic extract').affirmed, []);
+});
+
+test('only unambiguous whole-food fat forms are affirmed', () => {
+  // Explicit → affirmed.
+  for (const t of ['extra virgin olive oil', 'cold-pressed olive oil', 'organic extra virgin olive oil']) {
+    const r = evaluateIngredients(t);
+    assert.equal(r.affirmed.length, 1, `${t} → affirmed`);
+    assert.equal(r.affirmed[0].id, 'extra_virgin_olive_oil');
+  }
+
+  // Bare, unverifiable → NEITHER flagged NOR affirmed. This is the reverse-match
+  // guard: without it, "olive oil" resolves up to the longer EVOO alias and gets
+  // a badge the label never earned.
+  for (const t of ['olive oil', 'coconut oil', 'avocado oil']) {
+    const r = evaluateIngredients(t);
+    assert.deepEqual(r.matched, [], `${t} is not a flag`);
+    assert.deepEqual(r.affirmed, [], `${t} is not affirmed either — the label didn't say`);
+    assert.equal(r.tier, 'approved');
+  }
+});
+
+test('affirmations cannot satisfy or violate a hard line, or lift a tier', () => {
+  // A product with a real concern AND an affirmation still scores on the concern.
+  const r = evaluateIngredients('raw honey, canola oil', { hardLines: ['no seed oils'] });
+  assert.equal(r.affirmed.length, 1, 'honey is affirmed');
+  assert.equal(r.tier, 'swap_recommended', 'the seed oil still scores');
+  assert.equal(r.stamp, false, 'an affirmation never restores a withheld seal');
+  assert.equal(r.hardLines.violated.length, 1, 'the hard line still fires');
+  // The affirmation is not among the names surfaced for the violation.
+  assert.ok(!r.hardLines.violated[0].names.includes('Raw Honey'));
 });

@@ -43,6 +43,33 @@ for (const tier of TIERS) {
 // specified for this step; the tier NAMES and their prose come from the file.
 const SEVERITY_RANK = { flag: 1, moderate: 2, high: 3, critical: 4 };
 
+// ── Polarity ─────────────────────────────────────────────────────────────────
+// The KB was flag-only: every entry was a concern, so `matched` WAS the flag
+// list. `polarity: "affirming"` adds the other side — whole foods Kristy stands
+// behind (the `time_tested` tier). Absent means "concern", so every pre-existing
+// entry is untouched.
+//
+// Affirmations are held STRICTLY out of scoring. They never enter `matched`,
+// never reach scoreVerdict/buildUniversalLayer/sanitizeFlagged, never satisfy or
+// violate a hard line, and never lift a tier or restore a withheld seal. They
+// are a separate, additive read. This is deliberate: an affirming entry has no
+// severity, and every severity level in the KB is a CONCERN level — so letting
+// one into `matched` would score it as a concern and cost a clean product its
+// stamp. (Empirically: the mildest possible severity still yields
+// approved_with_note, i.e. stamp: false.)
+const isAffirming = (entry) => entry?.polarity === 'affirming';
+
+// Affirmation is scoped to when the whole food IS the product, not when a
+// processed product merely contains it. Ingredient lists run in descending order
+// by weight, so "dominant" = first token, or a list short enough that the product
+// essentially is that food. A granola bar listing honey fourth gets no badge.
+const AFFIRM_MAX_LIST = 3;
+
+// Don't affirm a flavoring that merely NAMES the whole food. "natural garlic
+// flavor" is not garlic; "ginger extract" is not ginger. These would otherwise
+// forward-match the bare alias and earn a badge for an industrial ingredient.
+const AFFIRM_TOKEN_BLOCK = /\b(flavor|flavour|flavoring|flavouring|flavored|flavoured|extract|artificial|imitation)\b/;
+
 // ── Normalization ────────────────────────────────────────────────────────────
 
 const norm = (s) =>
@@ -119,6 +146,15 @@ function bestMatch(token) {
   if (token.includes(' ')) {
     let best = null; // 3
     for (const { key, entry } of INDEX) {
+      // Affirming entries never REVERSE-match. Reverse resolves a token UP to a
+      // longer, more specific alias — which for an affirmation means badging a
+      // token that never named the whole-food form: bare "olive oil" would
+      // resolve to "extra virgin olive oil" and get affirmed, and bare "coconut
+      // oil" to "unrefined coconut oil". Refined and unrefined share a name on a
+      // label and the matcher cannot tell them apart, so an affirmation requires
+      // an EXACT or FORWARD hit — the label has to actually say it.
+      // Don't affirm what you can't verify.
+      if (isAffirming(entry)) continue;
       if (containsPhrase(key, token) && (!best || key.length < best.key.length)) best = { key, entry };
     }
     if (best) return best.entry;
@@ -127,24 +163,41 @@ function bestMatch(token) {
 }
 
 /** matchIngredients — normalize + match a raw ingredient list against the KB.
- *  Returns the matched KB entries (deduped, first-seen order) and the tokens
- *  that matched nothing. Every KB entry is a flagged concern, so "matched" IS
- *  the flag list downstream. */
+ *  Returns the matched CONCERN entries (deduped, first-seen order), the affirmed
+ *  whole-food entries, and the tokens that matched nothing.
+ *
+ *  `matched` remains concerns-only, exactly as before polarity existed — it IS
+ *  the flag list downstream, and nothing that consumes it had to change.
+ *  `affirmed` is additive and separate; see the polarity block above. */
 export function matchIngredients(rawIngredientList) {
   const tokens = tokenizeIngredients(rawIngredientList);
   const matchedById = new Map();
+  const affirmedById = new Map();
   const unmatched = [];
 
-  for (const token of tokens) {
+  tokens.forEach((token, index) => {
     const hit = bestMatch(token);
-    if (hit) {
-      if (!matchedById.has(hit.id)) matchedById.set(hit.id, hit);
-    } else {
+    if (!hit) {
       unmatched.push(token);
+      return;
     }
-  }
+    if (isAffirming(hit)) {
+      // Dominant ingredient, or a list short enough that the product IS this
+      // food. Anything else recognizes the token but withholds the badge.
+      const dominant = index === 0 || tokens.length <= AFFIRM_MAX_LIST;
+      if (dominant && !AFFIRM_TOKEN_BLOCK.test(token) && !affirmedById.has(hit.id)) {
+        affirmedById.set(hit.id, hit);
+      }
+      return;
+    }
+    if (!matchedById.has(hit.id)) matchedById.set(hit.id, hit);
+  });
 
-  return { matched: [...matchedById.values()], unmatched };
+  return {
+    matched: [...matchedById.values()],
+    affirmed: [...affirmedById.values()],
+    unmatched,
+  };
 }
 
 /** scoreVerdict — map matched (flagged) entries to one of the five KB tiers.
@@ -170,6 +223,19 @@ export function buildUniversalLayer(matchedEntries) {
     name: e.name,
     one_liner: e.one_liner,
     severity: e.severity,
+    evidence_tier: e.evidence_tier,
+  }));
+}
+
+/** buildAffirmationLayer — the positive counterpart to buildUniversalLayer,
+ *  verbatim from the KB. No `severity` and no `verdict`: an affirmation has
+ *  neither, and giving it one would let it into concern scoring. A card renders
+ *  this in the approved register, never as a warning. Free (a pure KB read). */
+export function buildAffirmationLayer(affirmedEntries) {
+  return (affirmedEntries || []).map((e) => ({
+    id: e.id,
+    name: e.name,
+    one_liner: e.one_liner,
     evidence_tier: e.evidence_tier,
   }));
 }
@@ -370,7 +436,9 @@ function orderLayer(layer, relevantIds) {
  */
 export function evaluateIngredients(rawIngredientList, options = {}) {
   const { focuses = [], nutrition = null, hardLines = [] } = options;
-  const { matched, unmatched } = matchIngredients(rawIngredientList);
+  const { matched, affirmed, unmatched } = matchIngredients(rawIngredientList);
+  // `affirmed` is deliberately absent from every line below this one: it does not
+  // reach scoreVerdict, computeFocus, matchHardLines, the stamp, or the layer.
   const baseTier = scoreVerdict(matched);
 
   const focus = computeFocus(matched, nutrition, focuses);
@@ -397,6 +465,8 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
     stamp, // the gold seal is earned only at `approved`, and never over a hard line
     universalLayer: layer,
     matched, // full entries incl. `swap` — surfaced cleanly for Step 2
+    affirmed, // whole foods Kristy stands behind — additive, never scored
+    affirmationLayer: buildAffirmationLayer(affirmed),
     unmatched,
     focus: { active: focus.active, triggered: focus.triggered, leadsWith: focus.leadsWith, signals: focus.signals },
     hardLines: { violated }, // [{ value, label, names[] }] — additive, never reshapes the above

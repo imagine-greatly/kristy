@@ -118,6 +118,11 @@ export function searchIngredients(query, limit = 8) {
   if (q.length < 2) return [];
   const scored = [];
   for (const e of kb.ingredients) {
+    // Affirming entries are not selectable as a hard line. Hard lines are matched
+    // against the engine's CONCERN list, which an affirmation never enters — so
+    // "no raw honey" would sit in the user's settings and silently never fire.
+    // Better to not offer it than to offer a line that can't hold.
+    if (e.polarity === 'affirming') continue;
     const hay = [e.name, ...(e.aliases || [])];
     let best = -1;
     for (const h of hay) {

@@ -24,6 +24,9 @@ function publicEntry(e) {
     name: e.name,
     aliases: Array.isArray(e.aliases) ? e.aliases : [],
     category: e.category || null,
+    // "affirming" = a whole food Kristy stands behind, not a concern. The page
+    // branches on this: no severity chip, no "why it's bad" section, history first.
+    polarity: e.polarity === 'affirming' ? 'affirming' : 'concern',
     severity: e.severity,
     evidence_tier: e.evidence_tier,
     verdict: e.verdict || null,

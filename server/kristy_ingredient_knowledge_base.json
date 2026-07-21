@@ -6,7 +6,8 @@
   "evidence_tiers": {
     "established": "Strong scientific consensus, major health organization classification, or regulatory action in multiple countries. The science is settled enough to act on without debate.",
     "credible_concern": "Meaningful peer-reviewed evidence of harm exists. Debate is ongoing but the signal is real and we think it's worth flagging — especially when a clean swap is available.",
-    "kristys_standard": "Kristy's whole-food philosophy leads here even where regulators haven't acted yet. We'll always tell you when it's our standard rather than settled science — and we stand behind it."
+    "kristys_standard": "Kristy's whole-food philosophy leads here even where regulators haven't acted yet. We'll always tell you when it's our standard rather than settled science — and we stand behind it.",
+    "time_tested": "Foods with deep roots in human diets — eaten and trusted across generations, often long before modern studies existed. History is the evidence here, and I'll always tell you that's what it is. Absence of a clinical trial isn't the same as absence of value — but I won't dress tradition up as settled science."
   },
   "severity_levels": {
     "critical": "Skip always. Established harm or zero reason to consume given available alternatives.",
@@ -1495,6 +1496,136 @@
       ],
       "swap": "Unbleached flour as minimum; stone-ground whole wheat or ancient grain flour as preferred",
       "glycemic_impact": "high"
+    },
+    {
+      "id": "raw_honey",
+      "name": "Raw Honey",
+      "aliases": [
+        "raw honey",
+        "raw unfiltered honey",
+        "unpasteurized honey",
+        "raw wildflower honey"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "A whole food humans have gathered and eaten for as long as recorded history. Minimally processed, unlike the refined sugars that replaced it.",
+      "why": "Raw honey is unheated and unfiltered, leaving it closer to the state it left the hive in than the pasteurized, blended product that dominates the shelf. It is affirmed here as a traditional whole food and a minimally processed sweetener — not as a remedy, and not as a reason to eat more sugar.",
+      "history": "Kept as food and as a traditional remedy across nearly every ancient culture — Egypt, Greece, China, Mesoamerica. Sealed jars recovered from Egyptian tombs were found still edible thousands of years later, a consequence of its chemistry.",
+      "kristy_note": "I'll be straight with you: it's still sugar, and if you're watching that, honey counts like anything else. What I won't do is pretend a food people have eaten for all of recorded history is the same thing as a refined syrup engineered in the last century. Use it like the real thing it is — sparingly, and on purpose."
+    },
+    {
+      "id": "bone_broth",
+      "name": "Bone Broth",
+      "aliases": [
+        "bone broth",
+        "beef bone broth",
+        "chicken bone broth",
+        "bone stock"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "Simmered bones — one of the oldest, most traditional foods there is, and a whole-food source of collagen and minerals.",
+      "why": "Bone broth is made by simmering animal bones and connective tissue in water, drawing out collagen, gelatin, and minerals. It is affirmed here as a traditional whole food made from ingredients you can name — not as a treatment for anything.",
+      "history": "A nose-to-tail staple across virtually every traditional cuisine, born of wasting nothing from an animal. Bones went into the pot because throwing them out was unthinkable, long before anyone analyzed what came out.",
+      "kristy_note": "Real broth gels in the fridge — that's the collagen, and it's the quickest way to tell it apart from salty brown water sold under the same name. Read the ingredients: bones, water, vegetables, salt. If it lists yeast extract and 'natural flavor,' it's a soup base wearing broth's name."
+    },
+    {
+      "id": "fermented_foods",
+      "name": "Fermented Foods",
+      "aliases": [
+        "sauerkraut",
+        "kimchi",
+        "kefir",
+        "miso",
+        "natto",
+        "tempeh",
+        "live active cultures",
+        "live and active cultures"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "Living, fermented whole foods central to traditional diets worldwide, long before anyone mapped a microbiome.",
+      "why": "Fermentation uses live bacteria or yeast to transform and preserve a food. These are affirmed here as traditional whole foods with a long human record — a statement about how they have been eaten, not a claim about what they do in a body.",
+      "history": "Fermentation is humanity's oldest method of preserving food, developed independently on every continent — cabbage in Central Europe and Korea, milk across the steppe, soybeans throughout East Asia. It predates refrigeration by millennia.",
+      "kristy_note": "Look for these in the refrigerated section with live cultures on the label. Shelf-stable sauerkraut has usually been pasteurized, which kills what made it interesting — it's still cabbage, just no longer a living food."
+    },
+    {
+      "id": "organ_meats",
+      "name": "Organ Meats",
+      "aliases": [
+        "beef liver",
+        "chicken liver",
+        "calf liver",
+        "desiccated liver",
+        "beef heart",
+        "organ meat",
+        "organ meats"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "The most traditionally prized part of the animal across cultures — a nutrient-dense whole food that modern diets abandoned, not disproved.",
+      "why": "Organ meats are among the most nutrient-dense foods available by weight, carrying concentrations of vitamin A, B12, iron, and copper well above muscle meat. They are affirmed here as a traditional whole food that fell out of Western diets by fashion and squeamishness rather than by evidence.",
+      "history": "In many traditions the organs went to elders, warriors, or expecting mothers before anyone else got a share. Nose-to-tail eating was the historical norm across cultures; the muscle-meat-only diet is the recent departure.",
+      "kristy_note": "This is the one people flinch at, and I get it. Start with chicken liver or a small amount of beef liver mixed into ground meat — you'll barely notice it. If you never come around to it, that's fine. I'm not going to pretend it's a staple everyone will adopt."
+    },
+    {
+      "id": "garlic",
+      "name": "Garlic",
+      "aliases": [
+        "garlic",
+        "fresh garlic",
+        "garlic clove",
+        "garlic cloves",
+        "minced garlic",
+        "garlic powder"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "A kitchen staple and traditional food across millennia of human cooking.",
+      "why": "Garlic is a whole food used as both an aromatic and a seasoning in nearly every cuisine on earth. It is affirmed here on its history and its status as a real ingredient — a recognizable food on a label rather than a manufactured flavor compound.",
+      "history": "Cultivated and eaten for thousands of years across Egypt, Rome, India, and China, where it appears in the earliest written records of cooking and trade. It is one of the oldest continuously cultivated food plants.",
+      "kristy_note": "When you see actual garlic on an ingredient list, that's a small sign someone cooked the food rather than assembled it. 'Natural garlic flavor' is a different thing entirely, and I read it differently."
+    },
+    {
+      "id": "ginger",
+      "name": "Ginger",
+      "aliases": [
+        "ginger",
+        "fresh ginger",
+        "ginger root",
+        "ground ginger"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "A root used in traditional cooking and kitchens for thousands of years.",
+      "why": "Ginger is a whole rhizome used fresh or dried across South Asian, East Asian, and Middle Eastern cooking. It is affirmed here as a traditional culinary ingredient with a long human record — not as a remedy for any condition.",
+      "history": "One of the oldest traded and cultivated culinary roots, carried out of Southeast Asia along early spice routes into India, China, and the Mediterranean world well over two thousand years ago.",
+      "kristy_note": "Real ginger in an ingredient list usually means the food was actually made from something. Ginger flavoring in a soda is a different animal, and it doesn't get the same read from me."
+    },
+    {
+      "id": "extra_virgin_olive_oil",
+      "name": "Extra Virgin Olive Oil",
+      "aliases": [
+        "extra virgin olive oil",
+        "cold-pressed olive oil",
+        "cold pressed olive oil",
+        "cold-pressed extra virgin olive oil",
+        "first cold pressed olive oil",
+        "evoo"
+      ],
+      "category": "whole_food",
+      "polarity": "affirming",
+      "evidence_tier": "time_tested",
+      "one_liner": "The traditional Mediterranean cooking fat — pressed from whole olives rather than chemically extracted. Minimally processed in a category defined by heavy processing.",
+      "why": "Extra virgin olive oil is produced by mechanical pressing without solvents or high-heat refining, which is what separates it from the industrial seed oils. It is affirmed here on that processing distinction and on its long traditional use — not on any health outcome. Note that only the explicit whole-food form is affirmed: a bare 'olive oil' on a label may be refined, and Kristy will not affirm what the label doesn't state.",
+      "history": "Olives have been pressed for oil around the Mediterranean for thousands of years, by mechanical press long before industrial solvent extraction existed. The method predates the chemistry by millennia.",
+      "kristy_note": "This is the one cooking oil I'll affirm by name, and only when the label says extra virgin or cold-pressed. 'Olive oil' on its own can be refined or cut with something cheaper — it's not a flag, but it's not an affirmation either. Make the label tell you."
     }
   ],
   "approved_alternatives": {

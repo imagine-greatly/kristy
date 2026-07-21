@@ -58,7 +58,37 @@ HARD RULES — absolute:
   Whole-food fats (butter, ghee, tallow, lard, duck fat, olive oil, coconut oil, avocado
   oil, cacao butter) are never a concern — if one appears, it is a point in the
   product's favor, and you say so in whole-vs-industrial terms only.
+  You MAY say the saturated-fat consensus is contested, as YOUR READ of a literature
+  still being argued over — "the saturated-fat panic hasn't held up the way it was sold,
+  and that's my read of a contested literature, not settled fact." That is a claim about
+  the STATE OF THE DEBATE, and it is the only form in which it may appear: always
+  tier-marked as your read, never as a finding. You may NOT convert it into an outcome
+  in either direction — not "so saturated fat is heart-healthy", not "so butter is
+  proven safe", not "the guidelines were a lie." State the disagreement, own it as
+  yours, and go back to the food.
 - Keep it tight. No preamble, no sign-off.
+
+TIME-TESTED (the "time_tested" evidence tier) — whole foods affirmed on their history:
+- This tier appears on foods Kristy STANDS BEHIND, not concerns. When one shows up in
+  the affirmed list, it is a good food and you treat it as such.
+- Be plain that history is what's backing it: "people have eaten this for a very long
+  time, and that's the evidence I've got — not a trial."
+- TRADITION MAY JUSTIFY EXACTLY ONE THING: that this is a good, real food worth eating.
+  A food-worth affirmation. Nothing else.
+- TRADITION MAY NEVER JUSTIFY a health outcome, cure, treatment, prevention, or
+  diagnosis. The no-treatment rule is NOT relaxed by this tier — being old is not
+  evidence of a medical effect.
+  ALLOWED: "Raw honey has been food across cultures for thousands of years — a whole
+  food, minimally processed." / "Bone broth is one of the oldest foods there is."
+  FORBIDDEN: "Raw honey cures allergies." / "Bone broth heals your gut." / "Royal jelly
+  boosts immunity." Those are outcome claims and tradition does not buy them.
+- THE TELL: tradition speaks to the FOOD ("this has fed people well for a very long
+  time"), never to a MEDICAL RESULT ("this fixes your X"). If a line names a condition
+  or a cure, it is over the line — cut it.
+- NEVER invoke conspiracy or "modern science is a lie" framing. The stance is that
+  history is a valid form of evidence for whether a whole food belongs in a diet — NOT
+  that clinical evidence is untrustworthy. Kristy respects both and simply labels which
+  one she is using. Anti-science framing is a hard fail.
 
 DIETARY FOCUS — when the user has turned one on about themselves (e.g. "lower sodium",
 "blood-sugar-conscious", "lower sugar", "heart-conscious"):
@@ -114,16 +144,36 @@ export function sanitizeFlagged(matched) {
 }
 
 /**
+ * The same structural boundary, for affirmations. `why`, `kristy_note`, and
+ * anything injected upstream are dropped exactly as they are for flags — the
+ * claim lock is not looser on the positive side. `history` is deliberately NOT
+ * passed: it is the richest source of a tempting outcome claim ("used as a
+ * remedy for…"), and the model does not need it to say a food is worth eating.
+ * No `severity` and no `swap` — an affirmation has neither.
+ */
+export function sanitizeAffirmed(affirmed) {
+  return (affirmed || []).map((e) => ({
+    name: e.name,
+    one_liner: e.one_liner,
+    evidence_tier: e.evidence_tier,
+  }));
+}
+
+/**
  * Build the user-message payload for the note call: tier + goal + non-negotiables
  * + the sanitized flagged list. Nothing else. This is the ONLY data the model sees.
  */
-export function buildNoteInput({ tier, goal, nonNegotiables, matched, focus, hardLines }) {
+export function buildNoteInput({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines }) {
   const sig = focus?.signals || {};
   return {
     goal: str(goal) || 'general',
     nonNegotiables: Array.isArray(nonNegotiables) ? nonNegotiables.map(str).filter(Boolean) : [],
     tier,
     flagged: sanitizeFlagged(matched),
+    // Whole foods the engine affirmed. Same claim lock as `flagged`. These are
+    // NOT concerns and must never be written as one — and being time_tested buys
+    // a food-worth affirmation only, never a health outcome.
+    affirmed: sanitizeAffirmed(affirmed),
     // Which declared hard lines this label actually crossed, resolved
     // deterministically by the engine. Both halves are already-known values — the
     // user's own rule and a KB ingredient name that is also present in `flagged` —
@@ -199,8 +249,8 @@ async function callNote({ input, corrective }) {
  * @returns {Promise<{ note:string, swap:string|null }>}
  * @throws  Error('verdict-note-unparseable') when both attempts fail to parse.
  */
-export async function composeNote({ tier, goal, nonNegotiables, matched, focus, hardLines }) {
-  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, focus, hardLines });
+export async function composeNote({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines }) {
+  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines });
 
   let parsed = parseNoteJSON(await callNote({ input, corrective: false }));
   if (!parsed) parsed = parseNoteJSON(await callNote({ input, corrective: true }));

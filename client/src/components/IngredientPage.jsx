@@ -2,7 +2,14 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { fetchIngredient } from '../lib/ingredients.js';
-import { severityColor, SEVERITY_LABEL, EVIDENCE_LABEL, SEVERITY_CALL } from '../lib/verdictRamp.js';
+import {
+  severityColor,
+  SEVERITY_LABEL,
+  EVIDENCE_LABEL,
+  SEVERITY_CALL,
+  AFFIRMING_TIER,
+  AFFIRMATION_CALL,
+} from '../lib/verdictRamp.js';
 
 /* ═══════════════════════ Ingredient detail page — /app/ingredient/:id ═══════════════════════
    The full story on one flagged ingredient, rendered ENTIRELY from its KB entry (a pure
@@ -49,6 +56,10 @@ export default function IngredientPage({ id, onClose }) {
   }, [id]);
 
   const { loading, data, error } = state;
+  // A time-tested whole food renders in the positive register: no severity
+  // chip, no "why it's bad" section, and history leads because history IS
+  // the evidence for this tier.
+  const affirming = data?.polarity === 'affirming' || data?.evidence_tier === AFFIRMING_TIER;
 
   return (
     <div style={styles.page} role="dialog" aria-modal="true" aria-label="Ingredient detail">
@@ -86,42 +97,71 @@ export default function IngredientPage({ id, onClose }) {
                 </p>
               )}
 
-              {/* Severity + evidence chips */}
+              {/* Chips. An affirmed whole food has NO severity — it isn't graded on
+                  the concern ramp — so it gets a single mint tier chip instead. */}
               <div style={styles.chipRow}>
-                <span style={styles.sevChip}>
-                  <span style={{ ...styles.dot, background: severityColor(data.severity) }} />
-                  {SEVERITY_LABEL[data.severity] || data.severity}
+                {!affirming && (
+                  <span style={styles.sevChip}>
+                    <span style={{ ...styles.dot, background: severityColor(data.severity) }} />
+                    {SEVERITY_LABEL[data.severity] || data.severity}
+                  </span>
+                )}
+                <span style={affirming ? { ...styles.evChip, ...styles.evChipAffirm } : styles.evChip}>
+                  {EVIDENCE_LABEL[data.evidence_tier] || data.evidence_tier}
                 </span>
-                <span style={styles.evChip}>{EVIDENCE_LABEL[data.evidence_tier] || data.evidence_tier}</span>
               </div>
 
-              {/* Her verdict register line */}
-              <div style={styles.callWrap}>
+              {/* Her register line. For a good food this affirms it; it never
+                  borrows a severity call, which would read as a warning. */}
+              <div style={affirming ? { ...styles.callWrap, ...styles.callWrapAffirm } : styles.callWrap}>
                 <p style={{ ...kristyVoice, ...styles.callLine }}>
-                  {data.framing?.verdict || SEVERITY_CALL[data.severity] || ''}
+                  {data.framing?.verdict || (affirming ? AFFIRMATION_CALL : SEVERITY_CALL[data.severity]) || ''}
                 </p>
               </div>
 
-              {/* WHY IT MATTERS — the lead */}
-              <section style={styles.section}>
-                <div style={styles.label}>Why it matters</div>
-                <p style={styles.lead}>{data.one_liner}</p>
-                {data.why && <p style={styles.body}>{data.why}</p>}
-              </section>
+              {/* For a time-tested food the HISTORY LEADS — it is the evidence, and
+                  there is no "why it's bad" section, because it isn't bad. */}
+              {affirming ? (
+                <>
+                  {data.history && (
+                    <section style={styles.historyBox}>
+                      <div style={styles.label}>The history</div>
+                      <p style={styles.historyText}>{data.history}</p>
+                    </section>
+                  )}
+                  <section style={styles.section}>
+                    <div style={styles.label}>Why Kristy stands behind it</div>
+                    <p style={styles.lead}>{data.one_liner}</p>
+                    {data.why && <p style={styles.body}>{data.why}</p>}
+                  </section>
+                </>
+              ) : (
+                <>
+                  {/* WHY IT MATTERS — the lead */}
+                  <section style={styles.section}>
+                    <div style={styles.label}>Why it matters</div>
+                    <p style={styles.lead}>{data.one_liner}</p>
+                    {data.why && <p style={styles.body}>{data.why}</p>}
+                  </section>
 
-              {/* THE HISTORY — the persuasion layer, only when seeded */}
-              {data.history && (
-                <section style={styles.historyBox}>
-                  <div style={styles.label}>The history</div>
-                  <p style={styles.historyText}>{data.history}</p>
-                </section>
+                  {/* THE HISTORY — the persuasion layer, only when seeded */}
+                  {data.history && (
+                    <section style={styles.historyBox}>
+                      <div style={styles.label}>The history</div>
+                      <p style={styles.historyText}>{data.history}</p>
+                    </section>
+                  )}
+                </>
               )}
 
-              {/* THE EVIDENCE — honestly tiered */}
+              {/* THE EVIDENCE — honestly tiered. For time_tested this is the whole
+                  point: say plainly that history is what's backing it. */}
               <section style={styles.section}>
                 <div style={styles.label}>The evidence</div>
                 <div style={styles.evLine}>
-                  <span style={styles.evChip}>{EVIDENCE_LABEL[data.evidence_tier] || data.evidence_tier}</span>
+                  <span style={affirming ? { ...styles.evChip, ...styles.evChipAffirm } : styles.evChip}>
+                    {EVIDENCE_LABEL[data.evidence_tier] || data.evidence_tier}
+                  </span>
                 </div>
                 {data.framing?.evidence && <p style={styles.body}>{data.framing.evidence}</p>}
                 {data.sources?.length > 0 && (
@@ -242,12 +282,24 @@ const styles = {
     fontSize: 12,
     fontWeight: 600,
   },
+  // The positive register. Gold marks a concern across this whole app, so an
+  // affirmed whole food must NOT wear it — mint, or the page reads as a warning
+  // about garlic.
+  evChipAffirm: {
+    border: `1px solid ${colors.mint30}`,
+    background: colors.mintTint9,
+    color: colors.accentSeafoam,
+  },
 
   callWrap: {
     padding: '14px 16px',
     borderRadius: 14,
     border: `1px solid ${colors.borderGold}`,
     background: colors.goldTint9,
+  },
+  callWrapAffirm: {
+    border: `1px solid ${colors.accentMint}`,
+    background: colors.mintTint9,
   },
   callLine: { margin: 0, fontSize: 20, lineHeight: 1.35, color: colors.textPrimary },
 

@@ -1,7 +1,13 @@
 import { colors, fonts, kristyVoice, motif } from '../lib/tokens.js';
 import { GoldThread, GoldDot } from './GoldThread.jsx';
 import { goalPickerOptions } from '../lib/coachGoals.js';
-import { severityColor, EVIDENCE_LABEL, sortFlags } from '../lib/verdictRamp.js';
+import {
+  severityColor,
+  EVIDENCE_LABEL,
+  sortFlags,
+  affirmationColor,
+  AFFIRMATION_MEANING,
+} from '../lib/verdictRamp.js';
 
 /* ═══════════════════════ Scan Verdict Card — the in-aisle result ═══════════════════════
    Renders a /verdict response (Step 2 contract) top-to-bottom, as live DOM (this is
@@ -143,6 +149,35 @@ function FlagRow({ item, onOpen }) {
   );
 }
 
+// One affirmation row — the positive counterpart to FlagRow. Same anatomy so the
+// card reads as one system, but deliberately in the APPROVED register: a mint dot,
+// never gold or red. This is Kristy affirming a whole food, not grading a concern,
+// so there is no severity here — an affirmation doesn't carry one.
+function AffirmRow({ item, onOpen }) {
+  const evidence = EVIDENCE_LABEL[item.evidence_tier] || item.evidence_tier;
+  const clickable = !!onOpen && !!item.id;
+  return (
+    <button
+      type="button"
+      style={styles.row}
+      onClick={clickable ? () => onOpen(item.id) : undefined}
+      aria-label={clickable ? `${item.name} — read the full story` : item.name}
+    >
+      <span style={{ ...styles.rowDot, background: affirmationColor() }} aria-hidden="true" />
+      <span style={styles.rowMain}>
+        <span style={styles.rowTop}>
+          <span style={styles.rowName}>{item.name}</span>
+          {evidence && <span style={{ ...styles.evidenceTag, ...styles.evidenceTagAffirm }}>{evidence}</span>}
+        </span>
+        {item.one_liner && <span style={styles.rowLine}>{item.one_liner}</span>}
+      </span>
+      {clickable && (
+        <span style={styles.rowChev} aria-hidden="true">›</span>
+      )}
+    </button>
+  );
+}
+
 // The swap block — the better pick on a forest-green fill, with the primary pick
 // highlighted in gold. `swap` is a plain string from the engine; the first segment
 // (up to the first comma) is the headline pick.
@@ -225,7 +260,7 @@ export default function ScanVerdictCard({
 }) {
   if (!verdict) return null;
   const {
-    tier, stamp, universalLayer = [], note, swap, education, upsell,
+    tier, stamp, universalLayer = [], affirmationLayer = [], note, swap, education, upsell,
     freeTastesLeft, needsGoal, signals, ingredientsRead,
   } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
@@ -262,6 +297,22 @@ export default function ScanVerdictCard({
             ))}
           </div>
           <p style={{ ...kristyVoice, ...styles.evidenceFooter }}>{EVIDENCE_FOOTER}</p>
+        </section>
+      )}
+
+      {/* What's good in here — the affirmation layer. Same anatomy as the flag list
+          so the card reads as one system, but in the approved register: this is
+          Kristy standing behind a whole food, not grading a concern. Free on every
+          card (a pure KB read), and it never moves the tier or the seal. */}
+      {affirmationLayer.length > 0 && (
+        <section style={styles.section}>
+          <SectionLabel>What&rsquo;s good in here</SectionLabel>
+          <div style={styles.rows}>
+            {affirmationLayer.map((item) => (
+              <AffirmRow key={item.id || item.name} item={item} onOpen={onOpenIngredient} />
+            ))}
+          </div>
+          <p style={{ ...kristyVoice, ...styles.evidenceFooter }}>{AFFIRMATION_MEANING}</p>
         </section>
       )}
 
@@ -458,6 +509,13 @@ const styles = {
     border: `1px solid ${colors.gold30}`,
     background: colors.goldTint9,
     whiteSpace: 'nowrap',
+  },
+  // The Time-tested tag, in the approved register — mint, never gold. A viewer
+  // should be able to tell an affirmation from a concern without reading a word.
+  evidenceTagAffirm: {
+    color: colors.accentSeafoam,
+    border: `1px solid ${colors.mint30}`,
+    background: colors.mintTint9,
   },
   rowLine: {
     fontFamily: fonts.ui,

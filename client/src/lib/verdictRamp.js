@@ -36,7 +36,22 @@ export const EVIDENCE_LABEL = {
   established: 'Established',
   credible_concern: 'Credible concern',
   kristys_standard: "Kristy's standard",
+  time_tested: 'Time-tested',
 };
+
+// The Time-tested tier is the one POSITIVE register: it affirms a whole food on
+// its history rather than grading a concern. It never renders in a warning color
+// — a mint dot on the approved side of the palette, never gold or red.
+export const AFFIRMING_TIER = 'time_tested';
+export const affirmationColor = () => colors.accentSeafoam;
+
+// What the tier means, in plain words, wherever it's shown. The honesty IS the
+// feature: history is the evidence, and we say so rather than implying a study.
+export const AFFIRMATION_MEANING = 'Backed by history, not a lab — and I’ll say so.';
+
+// Her register line for an affirmed whole food. A food-worth affirmation only —
+// never a health outcome, no matter how old the food is.
+export const AFFIRMATION_CALL = 'People have eaten this for a very long time.';
 
 // Her verdict register line keyed to severity — editorial, in her voice, NOT a
 // health claim (used as a fallback when the KB entry carries no verdict framing).
