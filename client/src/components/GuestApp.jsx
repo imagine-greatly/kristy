@@ -217,6 +217,7 @@ export default function GuestApp({ onOpenIngredient }) {
         onList={() => setMoment('list')}
         onScan={() => { setMoment('scan'); setCameraOpen(true); }}
         onHaul={() => setMoment('haul')}
+        onChat={() => setMoment('chat')}
       />
 
       {scan && (

@@ -905,6 +905,8 @@ export default function App() {
         macroTracking={macroTracking}
         goalLabel={goalChipLabel(profile?.coach_goal)}
         onGoalClick={() => setSwitcherOpen(true)}
+        showPremium={subscription?.premium === false}
+        onPremium={openUpgrade}
       />
 
       <Sidebar
@@ -1013,6 +1015,7 @@ export default function App() {
         onList={() => setMoment('list')}
         onScan={() => { setMoment('scan'); setCameraOpen(true); }}
         onHaul={openHaul}
+        onChat={() => setMoment('chat')}
       />
 
       {verdict && (

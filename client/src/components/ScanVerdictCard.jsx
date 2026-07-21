@@ -436,7 +436,16 @@ const styles = {
   rowDot: { width: 9, height: 9, borderRadius: 999, flex: '0 0 auto', marginTop: 5 },
   rowMain: { minWidth: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 3 },
   rowTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  rowName: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 600, color: colors.textPrimary },
+  // A long unbroken ingredient name (carboxymethylcellulose) would otherwise
+  // shove the evidence tag off the row at 390px.
+  rowName: {
+    fontFamily: fonts.ui,
+    fontSize: 14.5,
+    fontWeight: 600,
+    color: colors.textPrimary,
+    minWidth: 0,
+    overflowWrap: 'anywhere',
+  },
   evidenceTag: {
     flex: '0 0 auto',
     fontFamily: fonts.ui,

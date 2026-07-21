@@ -6,10 +6,10 @@ import { startCheckout, openBillingPortal } from '../lib/api.js';
 // specifically (not "go premium"). The universal layer (what's in the food) is
 // always free; this is the part that's actually about you.
 const INCLUDES = [
-  'My read on every scan — against your goal, not a generic label',
-  'The focuses you set, watched on every product — sodium, sugar, seed oils',
-  'Your weekly Haul read — what the cart says and what to fix',
-  'A shopping List built around your goal before every trip',
+  'Your read on every scan — against your goal, not a generic label',
+  'Your focuses, held on every product — sodium, sugar, processed fats',
+  'Your week, read — what the cart says and what to fix',
+  'Your list, built — around your goal, minus your hard lines',
 ];
 
 // Launch pricing: $7.99/mo, $59.99/yr. Annual works out to ~$5/mo (59.99 ÷ 12 ≈

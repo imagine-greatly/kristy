@@ -103,7 +103,10 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
           <div key={g.category} style={styles.group}>
             <div style={styles.groupLabel}>{g.category}</div>
             {g.items.map((it) => (
-              <div key={it.id} style={styles.item}>
+              // A swap carried over from the haul isn't a shopping row — it's
+              // Kristy telling you what to replace. Styled as her callout (gold
+              // rule, her voice) so it reads as a note, not another checkbox item.
+              <div key={it.id} style={{ ...styles.item, ...(it.source === 'swap' ? styles.itemSwap : null) }}>
                 <button
                   type="button"
                   onClick={() => toggle(it.id)}
@@ -118,7 +121,20 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
                 >
                   {it.checked ? '✓' : ''}
                 </button>
-                <span style={{ ...styles.itemName, ...(it.checked ? styles.itemChecked : null) }}>{it.name}</span>
+                <span style={styles.itemBody}>
+                  <span
+                    style={{
+                      ...styles.itemName,
+                      ...(it.source === 'swap' ? styles.itemNameSwap : null),
+                      ...(it.checked ? styles.itemChecked : null),
+                    }}
+                  >
+                    {it.name}
+                  </span>
+                  {it.source !== 'user' && (
+                    <span style={styles.tag}>{it.source === 'swap' ? 'From your haul' : 'Kristy added'}</span>
+                  )}
+                </span>
                 <button type="button" style={styles.remove} onClick={() => remove(it.id)} aria-label={`Remove ${it.name}`}>
                   <CloseIcon size={16} />
                 </button>
@@ -170,8 +186,13 @@ const styles = {
   group: { display: 'flex', flexDirection: 'column', gap: 8 },
   groupLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
   item: { display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface },
+  // Her callout: gold rule down the side, gold-tinted ground.
+  itemSwap: { borderColor: colors.borderGold, borderLeft: `3px solid ${colors.accentGold}`, background: colors.goldTint9 },
+  itemBody: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 },
+  itemNameSwap: { ...kristyVoice, fontSize: 15.5, color: colors.textPrimary },
+  tag: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.accentGoldMuted },
   checkbox: { flex: '0 0 auto', width: 24, height: 24, borderRadius: 7, border: '1.5px solid', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, cursor: 'pointer' },
-  itemName: { flex: 1, fontFamily: fonts.ui, fontSize: 15, color: colors.textPrimary },
+  itemName: { fontFamily: fonts.ui, fontSize: 15, color: colors.textPrimary, overflowWrap: 'anywhere' },
   itemChecked: { color: colors.textMuted, textDecoration: 'line-through' },
   remove: { flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 8, border: 'none', background: 'transparent', color: colors.textMuted, cursor: 'pointer' },
 

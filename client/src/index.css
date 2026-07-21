@@ -2106,3 +2106,36 @@ textarea {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Small phones (≤400px). The app is mobile-first, so 769px+ is the only other
+   breakpoint — but "mobile-first" was written against a ~430px viewport and a
+   few places assume more room than a 390px iPhone actually has. These are the
+   ones that measurably break, not a blanket rescale.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 400px) {
+  /* Two price cards side by side is the tightest row in the app: at 390px each
+     gets ~155px and the monthly note wraps to three lines against a 20px mono
+     price. Stack them — vertical costs nothing here and stays tappable. */
+  .upgrade__plans {
+    flex-direction: column;
+  }
+  /* Stacked, the badge no longer needs to dodge the card's right edge. */
+  .upgrade__badge {
+    right: 12px;
+  }
+
+  /* The topbar carries the goal chip, the optional kcal pill and Premium.
+     Tighten the gutter before anything is forced to truncate. */
+  .topbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Product names, ingredient names and pasted label text arrive from Open Food
+   Facts and from OCR — none of it is guaranteed to contain a break opportunity.
+   Nothing in the app should be able to widen the viewport. */
+body {
+  overflow-x: hidden;
+}

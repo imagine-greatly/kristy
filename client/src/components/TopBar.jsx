@@ -1,8 +1,36 @@
 import { MenuIcon } from './Icons.jsx';
 import { fmt } from '../lib/format.js';
+import { colors, fonts } from '../lib/tokens.js';
 import GoalChip from './GoalChip.jsx';
 
-export default function TopBar({ onMenu, todayCalories, macroTracking, goalLabel, onGoalClick }) {
+// One word, gold, next to the goal chip — the membership should be findable from
+// anywhere without ever becoming a banner. Visible, not interruptive.
+function PremiumMark({ onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Kristy Premium"
+      style={{
+        appearance: 'none',
+        background: 'none',
+        border: 'none',
+        padding: '6px 4px',
+        minHeight: 44,
+        cursor: 'pointer',
+        color: colors.accentGold,
+        fontFamily: fonts.ui,
+        fontSize: 12,
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+      }}
+    >
+      Premium
+    </button>
+  );
+}
+
+export default function TopBar({ onMenu, todayCalories, macroTracking, goalLabel, onGoalClick, showPremium, onPremium }) {
   return (
     <header className="topbar">
       <button
@@ -20,6 +48,7 @@ export default function TopBar({ onMenu, todayCalories, macroTracking, goalLabel
         {macroTracking && todayCalories > 0 && (
           <div className="kcal-pill">{fmt(todayCalories)} kcal</div>
         )}
+        {showPremium && onPremium && <PremiumMark onClick={onPremium} />}
       </div>
     </header>
   );

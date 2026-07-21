@@ -24,7 +24,12 @@ export default function GoalChip({ label, onClick }) {
         fontSize: 13,
         fontWeight: 600,
         cursor: onClick ? 'pointer' : 'default',
-        whiteSpace: 'nowrap',
+        // Truncate rather than push the header row apart — goal labels grew with the
+    // deeper taxonomy and the topbar has the kcal pill and Premium beside it.
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: 'min(46vw, 190px)',
       }}
     >
       <GoldDot size={6} />

@@ -25,9 +25,23 @@ function SideTab({ label, active, icon, onClick }) {
   );
 }
 
-export default function BottomNav({ active, onList, onScan, onHaul }) {
+export default function BottomNav({ active, onList, onScan, onHaul, onChat }) {
   return (
     <nav style={styles.nav} aria-label="Primary">
+      {/* Chat sits ABOVE the three moments rather than becoming a fourth one.
+          List · Scan · Haul are a sequence — before, in the aisle, after — and
+          slotting chat into that row would break the story and squeeze four
+          labels into a 390px bar. As her own affordance it stays obvious without
+          pretending to be a moment. Hidden while chat is already open. */}
+      {onChat && active !== 'chat' && (
+        <div style={styles.askRow}>
+          <button type="button" onClick={onChat} style={styles.ask} aria-label="Ask Kristy">
+            <span style={styles.askDot} aria-hidden="true" />
+            Ask Kristy
+          </button>
+        </div>
+      )}
+
       <div style={styles.row}>
         <SideTab label="List" active={active === 'list'} icon={<ListIcon />} onClick={onList} />
 
@@ -46,6 +60,41 @@ export default function BottomNav({ active, onList, onScan, onHaul }) {
 }
 
 const styles = {
+  // Her affordance rides above the moment row, right-aligned for thumb reach.
+  // Outlined gold, never filled — filled gold belongs to Scan, the primary action.
+  askRow: {
+    maxWidth: 520,
+    margin: '0 auto',
+    padding: '0 12px',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    transform: 'translateY(-10px)',
+    pointerEvents: 'none',
+  },
+  ask: {
+    pointerEvents: 'auto',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 7,
+    minHeight: 44,
+    padding: '9px 15px',
+    borderRadius: 999,
+    background: colors.surface,
+    border: `1px solid ${colors.accentGold}`,
+    color: colors.accentGold,
+    fontFamily: fonts.ui,
+    fontSize: 13,
+    fontWeight: 600,
+    cursor: 'pointer',
+    boxShadow: '0 4px 14px rgba(0,0,0,0.32)',
+  },
+  askDot: {
+    width: 6,
+    height: 6,
+    borderRadius: 999,
+    background: colors.accentGold,
+    flex: '0 0 auto',
+  },
   nav: {
     // Normal-flow bottom bar: the last flex child of .app, so content shrinks
     // above it and the raised Scan button never covers the chat input.
