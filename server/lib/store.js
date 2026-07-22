@@ -166,6 +166,62 @@ export async function getHaulScans(userId, days = 7) {
   return data || [];
 }
 
+/* ───────────────────────── Shopping list (Step 8, server-persisted) ─────────────────────────
+   One row per user: the current list doc, the learning signals, and the pending
+   Haul-swap queue. All reads are defensive — if the table hasn't been migrated the
+   query errors and we return null, so the route degrades to a non-persisted list
+   rather than 500ing (same posture as subscriptions / free_notes_used). */
+
+/** The user's shopping-list row, or null (no row / table not migrated yet). */
+export async function getShoppingList(userId) {
+  const { data, error } = await supabase
+    .from('shopping_lists')
+    .select('list, signals, next_list, updated_at')
+    .eq('user_id', userId)
+    .maybeSingle();
+  if (error) {
+    console.error('[kristy] getShoppingList failed:', error.message);
+    return null;
+  }
+  return data || null;
+}
+
+/** Upsert the list doc and/or signals for a user. Only the fields passed are written. */
+export async function saveShoppingList(userId, { list, signals } = {}) {
+  const patch = { user_id: userId, updated_at: new Date().toISOString() };
+  if (list !== undefined) patch.list = list;
+  if (signals !== undefined) patch.signals = signals;
+  const { data, error } = await supabase
+    .from('shopping_lists')
+    .upsert(patch, { onConflict: 'user_id' })
+    .select('list, signals, next_list, updated_at')
+    .single();
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+/** Append swaps to the pending next_list queue (Haul → List). Returns the new queue. */
+export async function appendPendingSwaps(userId, swaps = []) {
+  const row = await getShoppingList(userId);
+  const current = Array.isArray(row?.next_list) ? row.next_list : [];
+  const next = [...current, ...swaps].slice(-50);
+  const { data, error } = await supabase
+    .from('shopping_lists')
+    .upsert({ user_id: userId, next_list: next, updated_at: new Date().toISOString() }, { onConflict: 'user_id' })
+    .select('next_list')
+    .single();
+  if (error) throw new Error(error.message);
+  return Array.isArray(data?.next_list) ? data.next_list : next;
+}
+
+/** Clear the pending next_list queue (after it's been merged into the list). */
+export async function clearPendingSwaps(userId) {
+  const { error } = await supabase
+    .from('shopping_lists')
+    .upsert({ user_id: userId, next_list: [], updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
+  if (error) throw new Error(error.message);
+}
+
 /** How many free personalized-note "tastes" a user has consumed (Step 11). */
 export async function getFreeNotesUsed(userId) {
   try {

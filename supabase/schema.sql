@@ -92,6 +92,19 @@ create table if not exists haul_scans (
 );
 create index if not exists haul_scans_user_time on haul_scans (user_id, scanned_at desc);
 
+-- The List (Step 8 → durable). Server-persisted so the list survives a device
+-- change, and its premium capabilities (focus-aware items, haul-swap integration)
+-- are enforced SERVER-SIDE rather than by a client prop. One row per user: the
+-- current list doc, the learning signals, and the pending "add to next list" swap
+-- queue fed by the Haul (merged into the list on the next load).
+create table if not exists shopping_lists (
+  user_id uuid primary key references auth.users on delete cascade,
+  list jsonb not null default '{}'::jsonb,
+  signals jsonb not null default '{"removed":[],"kept":[],"acceptedSwaps":[]}'::jsonb,
+  next_list jsonb not null default '[]'::jsonb,
+  updated_at timestamptz default now()
+);
+
 -- Conversational weight logging — the first optimization feature. Kristy tracks
 -- the trend over time and uses it to recalculate calorie targets.
 create table if not exists weight_logs (
@@ -170,6 +183,7 @@ alter table chat_messages    enable row level security;
 alter table weekly_summaries enable row level security;
 alter table weight_logs      enable row level security;
 alter table haul_scans       enable row level security;
+alter table shopping_lists   enable row level security;
 alter table subscriptions    enable row level security;
 
 -- meal_logs
@@ -200,6 +214,11 @@ create policy "Users can only access their own weight logs" on weight_logs
 -- haul_scans
 drop policy if exists "own haul scans" on haul_scans;
 create policy "own haul scans" on haul_scans
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- shopping_lists
+drop policy if exists "own list" on shopping_lists;
+create policy "own list" on shopping_lists
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
 -- subscriptions — a user may READ their own row (so the client can show trial

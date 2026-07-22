@@ -2,27 +2,41 @@ import { useEffect, useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { ListIcon, CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
-import { loadList, loadStoredList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
+import { loadCachedList, fetchList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
 import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════════════ List — before the trip ═══════════════════════
-   Kristy's goal-built shopping list: a grouped, editable checklist she generates
-   from your goal (minus your non-negotiables) plus the items you pushed from a
-   haul. Editing feeds the learning signals — remove an item and it stops coming
-   back; check a swap and that's a positive signal for later scoring. Tokens only. */
+   Kristy's goal-built shopping list. The SERVER is the source of truth now: it
+   persists the list (survives a device change) and decides the premium capabilities
+   (focus-aware items + haul swaps). Free users get a real, useful basic list plus a
+   nudge naming what a membership adds — not a wall. The localStorage cache renders
+   instantly while the authoritative list loads. Tokens only. */
 
 const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk, premium = true, onUpgrade }) {
-  // True when no list existed yet → this mount just built one (analytics: list-build).
-  const firstBuild = useRef(loadStoredList() == null);
-  const [list, setList] = useState(() => loadList({ goal, nonNegotiables }));
+export default function ListMoment({ goal, nonNegotiables = [], focuses = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
+  const [list, setList] = useState(() => loadCachedList());
+  const [premium, setPremium] = useState(premiumProp);
+  const [loading, setLoading] = useState(() => loadCachedList() == null);
   const [input, setInput] = useState('');
+  const firstBuild = useRef(loadCachedList() == null);
 
+  // Load the authoritative list from the server; the cache renders instantly meanwhile.
   useEffect(() => {
-    if (firstBuild.current && premium !== false) trackEvent('list-build', { goal, source: 'auto' });
+    let alive = true;
+    (async () => {
+      const { list: fresh, premium: prem } = await fetchList({ goal, nonNegotiables, focuses });
+      if (!alive) return;
+      if (fresh) setList(fresh);
+      setPremium(prem);
+      setLoading(false);
+      if (firstBuild.current && fresh) trackEvent('list-build', { goal, source: 'auto' });
+    })();
+    return () => {
+      alive = false;
+    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const persist = (next) => {
@@ -49,27 +63,33 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
     setInput('');
   };
 
-  const rebuild = () => {
+  const rebuild = async () => {
     trackEvent('list-build', { goal, source: 'rebuild' });
-    persist(rebuildList({ goal, nonNegotiables }));
+    const { list: fresh, premium: prem } = await rebuildList({ goal, nonNegotiables, focuses });
+    if (fresh) setList(fresh);
+    setPremium(prem);
   };
 
-  // The goal-built List is a member benefit (Step 11). Free users get the pitch,
-  // named in Kristy's voice, not a wall.
-  if (premium === false) {
+  // No list yet (fresh device, still loading, or nothing generated) → a light
+  // placeholder with a way to build one. Never a paywall — free gets a basic list.
+  if (!list || !Array.isArray(list.items)) {
     return (
-      <div style={styles.gated}>
-        <span style={styles.icon}><ListIcon size={26} /></span>
-        <h1 style={styles.title}>Your list</h1>
-        <p style={{ ...kristyVoice, ...styles.gatedLine }}>
-          Give me your goal and I&rsquo;ll build the week&rsquo;s list around it — the right proteins, your swaps, minus your hard lines. That part&rsquo;s a membership perk.
-        </p>
-        {onUpgrade && (
-          <button type="button" style={styles.gatedCta} onClick={onUpgrade}>
-            Unlock my list
+      <div style={styles.wrap}>
+        <div style={styles.head}>
+          <span style={styles.icon}><ListIcon size={24} /></span>
+          <h1 style={styles.title}>Your list</h1>
+        </div>
+        <p style={{ ...kristyVoice, ...styles.intro }}>{loading ? 'Pulling your list together…' : "Let's build your list."}</p>
+        {!goal && onSetGoal && (
+          <button type="button" style={styles.setGoal} onClick={onSetGoal}>
+            Set a goal and I&rsquo;ll tailor this →
           </button>
         )}
-        <AmbientIsm style={{ marginTop: 12 }} />
+        {!loading && (
+          <button type="button" style={styles.rebuild} onClick={rebuild}>
+            Build my list
+          </button>
+        )}
       </div>
     );
   }
@@ -96,6 +116,21 @@ export default function ListMoment({ goal, nonNegotiables = [], onSetGoal, onAsk
         <button type="button" style={styles.setGoal} onClick={onSetGoal}>
           Set a goal and I&rsquo;ll tailor this →
         </button>
+      )}
+
+      {/* Free tier still gets a real list — the nudge names what a membership ADDS
+          (focus-aware items + haul swaps), it doesn't wall the list off. */}
+      {premium === false && (
+        <div style={styles.nudge}>
+          <span style={{ ...kristyVoice, ...styles.nudgeLine }}>
+            This is your basic list. With a membership I shape it around your focuses and fold in the swaps from your haul.
+          </span>
+          {onUpgrade && (
+            <button type="button" style={styles.nudgeCta} onClick={onUpgrade}>
+              Unlock the full list
+            </button>
+          )}
+        </div>
       )}
 
       <div style={styles.groups}>
@@ -182,6 +217,11 @@ const styles = {
   intro: { margin: 0, fontSize: 16, lineHeight: 1.5, color: colors.textPrimary },
   setGoal: { alignSelf: 'flex-start', padding: 0, background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
 
+  // Free-tier capability nudge (not a wall) — her voice + one gold CTA.
+  nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },
+  nudgeLine: { fontSize: 15, lineHeight: 1.5, color: colors.textPrimary },
+  nudgeCta: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 13.5, cursor: 'pointer' },
+
   groups: { display: 'flex', flexDirection: 'column', gap: 16, marginTop: 4 },
   group: { display: 'flex', flexDirection: 'column', gap: 8 },
   groupLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
@@ -200,10 +240,6 @@ const styles = {
   addInput: { flex: 1, padding: '11px 14px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface, color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none' },
   addBtn: { flex: '0 0 auto', padding: '11px 18px', borderRadius: 11, border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontWeight: 600, fontSize: 15, cursor: 'pointer' },
   footRow: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 4, flexWrap: 'wrap' },
-  rebuild: { padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+  rebuild: { alignSelf: 'flex-start', padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
   ask: { padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
-
-  gated: { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 14, maxWidth: 380, margin: '0 auto', padding: '52px 24px 24px' },
-  gatedLine: { margin: 0, fontSize: 18, lineHeight: 1.5, color: colors.textPrimary, maxWidth: 330 },
-  gatedCta: { marginTop: 4, padding: '12px 24px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
 };

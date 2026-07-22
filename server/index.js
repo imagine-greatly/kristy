@@ -16,6 +16,7 @@ import ingredientRoute from './routes/ingredient.js';
 import preferencesRoute from './routes/preferences.js';
 import scanRoute, { guestScanRouter } from './routes/scan.js';
 import haulRoute from './routes/haul.js';
+import listRoute from './routes/list.js';
 import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
@@ -53,6 +54,7 @@ app.use('/api', preferencesRoute); // public — taxonomy + KB search; free-text
 app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', scanRoute); // authed — scan extraction (barcode + label vision) → /verdict
 app.use('/api', haulRoute); // authed — the Haul (record scans + aggregate trip/week + read)
+app.use('/api', listRoute); // authed — the List (server-persisted + server-gated capabilities)
 app.use('/api', historyRoute);
 app.use('/api', weeklySummaryRoute);
 app.use('/api', barcodeRoute);

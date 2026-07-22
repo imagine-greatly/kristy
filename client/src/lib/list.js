@@ -1,13 +1,17 @@
-// The List builder (Step 8 — hybrid line). MINIMAL surface: a goal-based template,
-// filtered by non-negotiables, plus the swap-tier items pushed from the Haul.
-// HYBRID hook: keep/remove/accepted-swap signals are persisted from day one, so a
-// later scoring pass over hauls + memory + training can upgrade generation without
-// a rebuild. Client-only for now (localStorage); a Supabase-backed list can slot
-// in behind these same helpers later.
+// The List client (Step 8 → durable). The SERVER is now the source of truth: it
+// persists the list (survives a device change) and enforces the premium capabilities
+// (focus-aware items, haul-swap integration) so they can't be tampered on. This
+// module is a thin client over /api/list with localStorage as a read-through CACHE
+// for instant render, plus a demo (no-backend) fallback that generates locally.
+//
+// The demo GOAL_TEMPLATES/FOCUS_ITEMS mirror server/lib/list.js — keep them in sync.
 
-const LIST_KEY = 'kristy:list';
+import { IS_DEMO, apiBase } from './config.js';
+import { supabase } from './supabase.js';
+
+const LIST_KEY = 'kristy:list'; // cache of the server list (demo: the list itself)
 const SIGNALS_KEY = 'kristy:listSignals';
-const NEXT_KEY = 'kristy:nextList'; // fed by the Haul's "Add to next list"
+const NEXT_KEY = 'kristy:nextList'; // demo-only pending haul-swap queue
 
 const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
@@ -29,9 +33,113 @@ const write = (k, v) => {
   }
 };
 
-// Per-goal starter templates, keyed to the shopping goals. Whole-food and
-// preference-framed — what to buy, not macros to hit. Items carry tags only for
-// the non-negotiable filter (e.g. 'dairy').
+/* ───────── Cache + learning signals ───────── */
+
+export const loadCachedList = () => read(LIST_KEY, null);
+const saveCache = (list) => write(LIST_KEY, list);
+
+export const loadSignals = () => read(SIGNALS_KEY, { removed: [], kept: [], acceptedSwaps: [] });
+const saveSignals = (s) => write(SIGNALS_KEY, s);
+
+// Record that an item was removed — future generations stop suggesting it. Persisted
+// locally and sent to the server with the next saveList (so it survives a device change).
+export function recordRemoved(name) {
+  if (!name) return;
+  const s = loadSignals();
+  const key = String(name).toLowerCase();
+  if (!s.removed.some((r) => String(r).toLowerCase() === key)) s.removed.push(name);
+  saveSignals(s);
+}
+
+// Record that a swap reminder was accepted (kept/checked) — a positive signal.
+export function recordAcceptedSwap(productName) {
+  if (!productName) return;
+  const s = loadSignals();
+  if (!s.acceptedSwaps.includes(productName)) s.acceptedSwaps.push(productName);
+  saveSignals(s);
+}
+
+/* ───────── Server transport (real mode) ───────── */
+
+async function authFetch(path, opts = {}) {
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  const res = await fetch(`${apiBase}${path}`, {
+    ...opts,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${session?.access_token}`,
+      ...(opts.headers || {}),
+    },
+  });
+  if (!res.ok) throw new Error(`list ${path} ${res.status}`);
+  return res.json();
+}
+
+/* ───────── Public API — server-backed, cache-first ───────── */
+
+// The persisted list + the server's premium verdict (drives the capability nudge).
+export async function fetchList({ goal, nonNegotiables = [], focuses = [] } = {}) {
+  if (IS_DEMO) return { list: loadOrGenerateDemo({ goal, nonNegotiables, focuses }), premium: true };
+  try {
+    const { list, premium } = await authFetch('/api/list', { method: 'GET' });
+    const ok = list && Array.isArray(list.items);
+    if (ok) saveCache(list);
+    return { list: ok ? list : loadCachedList(), premium: !!premium };
+  } catch {
+    // Offline / pre-migration → render the cache so the surface still works.
+    return { list: loadCachedList(), premium: false };
+  }
+}
+
+// Persist the user's edits (checks/adds/removes) + learning signals. Cache-first, and
+// best-effort to the server (fire-and-forget from the UI). Signals default to the
+// latest local set, so recordRemoved()/recordAcceptedSwap() ride along automatically.
+export function saveList(list, signals) {
+  saveCache(list);
+  const sig = signals || loadSignals();
+  if (signals) saveSignals(signals);
+  if (IS_DEMO) return Promise.resolve();
+  return authFetch('/api/list', { method: 'POST', body: JSON.stringify({ list, signals: sig }) }).catch(() => {});
+}
+
+// Regenerate from the profile (server re-reads goal/focuses/hard lines + premium).
+export async function rebuildList({ goal, nonNegotiables = [], focuses = [] } = {}) {
+  if (IS_DEMO) {
+    const list = generateLocal({ goal, nonNegotiables, focuses, nextList: takeDemoNext(), signals: loadSignals(), premium: true });
+    saveCache(list);
+    return { list, premium: true };
+  }
+  try {
+    const { list, premium } = await authFetch('/api/list/rebuild', { method: 'POST', body: JSON.stringify({}) });
+    if (list && Array.isArray(list.items)) saveCache(list);
+    return { list, premium: !!premium };
+  } catch {
+    return { list: loadCachedList(), premium: false };
+  }
+}
+
+// Queue Haul swaps so they appear on the next list load (Haul → List). Server-side
+// in real mode (cross-device); demo keeps a local queue.
+export async function pushSwaps(swaps) {
+  const clean = (swaps || [])
+    .filter((s) => s && s.product_name)
+    .map((s) => ({ product_name: s.product_name, tier: s.tier || null }));
+  if (!clean.length) return;
+  if (IS_DEMO) {
+    write(NEXT_KEY, [...read(NEXT_KEY, []), ...clean].slice(-50));
+    return;
+  }
+  try {
+    await authFetch('/api/list/swaps', { method: 'POST', body: JSON.stringify({ swaps: clean }) });
+  } catch {
+    /* best-effort */
+  }
+}
+
+/* ═══════════ Demo generation (no backend) — mirrors server/lib/list.js ═══════════ */
+
 const GOAL_TEMPLATES = {
   eating_cleaner: {
     intro: "Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.",
@@ -136,85 +244,97 @@ const GOAL_TEMPLATES = {
   },
 };
 
-// Legacy coach_goal values → the nearest new template (mirrors coachGoals.js), so an
-// existing row never falls through to the generic default.
-const LEGACY_TEMPLATE_ALIASES = {
-  cut: 'eating_cleaner',
-  recomp: 'high_protein',
-  performance: 'high_protein',
-  energy: 'low_sugar',
+const LEGACY_TEMPLATE_ALIASES = { cut: 'eating_cleaner', recomp: 'high_protein', performance: 'high_protein', energy: 'low_sugar' };
+const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
+const FOCUS_ITEMS = {
+  higher_fiber: [
+    { name: 'Beans or lentils', category: 'Fiber' },
+    { name: 'Oats', category: 'Fiber' },
+    { name: 'Chia or ground flax', category: 'Fiber' },
+  ],
+  lower_sodium: [
+    { name: 'Unsalted nuts', category: 'Snacks' },
+    { name: 'Fresh or frozen vegetables (not canned)', category: 'Produce' },
+  ],
+  lower_sugar: [
+    { name: 'Berries', category: 'Produce' },
+    { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+  ],
+  blood_sugar: [
+    { name: 'Non-starchy vegetables', category: 'Produce' },
+    { name: 'Eggs', category: 'Protein' },
+  ],
+  heart: [
+    { name: 'Fatty fish (salmon or sardines)', category: 'Protein' },
+    { name: 'Olive oil', category: 'Staples' },
+  ],
+  processed_fats: [
+    { name: 'Olive oil', category: 'Staples' },
+    { name: 'Butter or ghee', category: 'Staples', tags: ['dairy'] },
+  ],
+  additive_sensitive: [{ name: 'Single-ingredient staples', category: 'Staples' }],
+  caffeine: [],
 };
 
-// Non-negotiable → the item tags it excludes.
-const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
-
-/**
- * Generate the list from the goal template, filtered by non-negotiables and the
- * learning signals (never re-suggest an item the user keeps deleting), with the
- * Haul's flagged items prepended as swap reminders.
- */
-export function generateList({ goal, nonNegotiables = [], nextList = [], signals = {} }) {
-  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
-
-  const excluded = new Set();
-  for (const nn of nonNegotiables) (EXCLUDE_TAGS[nn] || []).forEach((t) => excluded.add(t));
-  const removed = new Set((signals.removed || []).map((s) => String(s).toLowerCase()));
-
-  const items = tpl.items
-    .filter((it) => !(it.tags || []).some((t) => excluded.has(t)))
-    .filter((it) => !removed.has(it.name.toLowerCase()))
-    .map((it) => ({ id: rid(), name: it.name, category: it.category, checked: false, source: 'template' }));
-
-  const swaps = (nextList || [])
+function swapItemsLocal(nextList) {
+  return (nextList || [])
     .filter((s) => s && s.product_name)
     .map((s) => ({ id: rid(), name: `Swap out: ${s.product_name}`, category: 'From your haul', checked: false, source: 'swap', productName: s.product_name }));
+}
 
+function generateLocal({ goal, nonNegotiables = [], focuses = [], nextList = [], signals = {}, premium = true }) {
+  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
+  const excluded = new Set();
+  for (const nn of nonNegotiables || []) (EXCLUDE_TAGS[nn] || []).forEach((t) => excluded.add(t));
+  const removed = new Set((signals.removed || []).map((s) => String(s).toLowerCase()));
+  const blocked = (it) => (it.tags || []).some((t) => excluded.has(t)) || removed.has(it.name.toLowerCase());
+
+  const base = tpl.items.filter((it) => !blocked(it));
+  const present = new Set(base.map((it) => it.name.toLowerCase()));
+  const focusItems = [];
+  if (premium) {
+    for (const f of focuses || []) {
+      for (const it of FOCUS_ITEMS[f] || []) {
+        const key = it.name.toLowerCase();
+        if (blocked(it) || present.has(key)) continue;
+        present.add(key);
+        focusItems.push(it);
+      }
+    }
+  }
+  const items = [...base, ...focusItems].map((it) => ({ id: rid(), name: it.name, category: it.category, checked: false, source: 'template' }));
+  const swaps = premium ? swapItemsLocal(nextList) : [];
   return { goal: goal || null, intro: tpl.intro, items: [...swaps, ...items] };
 }
 
-/* ───────── Persistence + learning signals ───────── */
+function mergeSwapsLocal(list, nextList) {
+  if (!nextList?.length || !list?.items) return list;
+  const have = new Set(list.items.filter((i) => i.source === 'swap' && i.productName).map((i) => i.productName.toLowerCase()));
+  const fresh = swapItemsLocal(nextList).filter((s) => !have.has(s.productName.toLowerCase()));
+  if (!fresh.length) return list;
+  return { ...list, items: [...fresh, ...list.items] };
+}
 
-export const loadSignals = () => read(SIGNALS_KEY, { removed: [], kept: [], acceptedSwaps: [] });
-export const saveSignals = (s) => write(SIGNALS_KEY, s);
-export const loadStoredList = () => read(LIST_KEY, null);
-export const saveList = (list) => write(LIST_KEY, list);
-
-// Drain the Haul's pending "add to next list" queue (and clear it).
-export function takeNextList() {
-  const next = read(NEXT_KEY, []);
+function takeDemoNext() {
+  const n = read(NEXT_KEY, []);
   write(NEXT_KEY, []);
-  return next;
+  return n;
 }
 
-// Record that an item was removed — so future generations stop suggesting it.
-export function recordRemoved(name) {
-  if (!name) return;
-  const s = loadSignals();
-  const key = String(name).toLowerCase();
-  if (!s.removed.some((r) => String(r).toLowerCase() === key)) s.removed.push(name);
-  saveSignals(s);
-}
-
-// Record that a swap reminder was accepted (kept/checked) — a positive signal.
-export function recordAcceptedSwap(productName) {
-  if (!productName) return;
-  const s = loadSignals();
-  if (!s.acceptedSwaps.includes(productName)) s.acceptedSwaps.push(productName);
-  saveSignals(s);
-}
-
-// Get (or first-time generate) the persisted list.
-export function loadList({ goal, nonNegotiables }) {
-  const stored = loadStoredList();
-  if (stored && Array.isArray(stored.items)) return stored;
-  const fresh = generateList({ goal, nonNegotiables, nextList: takeNextList(), signals: loadSignals() });
-  saveList(fresh);
-  return fresh;
-}
-
-// Rebuild from the goal (honoring learning signals), merging any pending Haul items.
-export function rebuildList({ goal, nonNegotiables }) {
-  const fresh = generateList({ goal, nonNegotiables, nextList: takeNextList(), signals: loadSignals() });
-  saveList(fresh);
-  return fresh;
+function loadOrGenerateDemo({ goal, nonNegotiables, focuses }) {
+  const stored = loadCachedList();
+  const pending = read(NEXT_KEY, []);
+  if (stored && Array.isArray(stored.items)) {
+    if (pending.length) {
+      const merged = mergeSwapsLocal(stored, pending);
+      write(NEXT_KEY, []);
+      saveCache(merged);
+      return merged;
+    }
+    return stored;
+  }
+  const list = generateLocal({ goal, nonNegotiables, focuses, nextList: pending, signals: loadSignals(), premium: true });
+  write(NEXT_KEY, []);
+  saveCache(list);
+  return list;
 }

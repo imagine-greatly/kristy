@@ -27,6 +27,7 @@ import {
   skipCoachOnboarding,
 } from './lib/coachGoals.js';
 import { loadGuestState, clearGuestState } from './lib/guestState.js';
+import { pushSwaps } from './lib/list.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
 import { sendPhoto, runProductScan, requestGoalNote } from './lib/logging.js';
@@ -807,17 +808,14 @@ export default function App() {
     if (!haul && !haulLoading) loadHaulData();
   }
 
-  // "Add to next list" → feed the swap-tier items into the List builder (Step 8).
+  // "Add to next list" → queue the swap-tier items for the List builder (Step 8).
+  // Server-side in real mode (cross-device), and they surface on an already-saved
+  // list on its next open — no rebuild needed. Fire-and-forget.
   function handleAddToList() {
-    const swaps = (haul?.week || []).filter((s) => s.tier === 'swap_recommended' || s.tier === 'skip');
-    try {
-      const key = 'kristy:nextList';
-      const cur = JSON.parse(localStorage.getItem(key) || '[]');
-      const merged = [...cur, ...swaps.map((s) => ({ product_name: s.product_name, tier: s.tier }))];
-      localStorage.setItem(key, JSON.stringify(merged));
-    } catch {
-      /* ignore */
-    }
+    const swaps = (haul?.week || [])
+      .filter((s) => s.tier === 'swap_recommended' || s.tier === 'skip')
+      .map((s) => ({ product_name: s.product_name, tier: s.tier }));
+    pushSwaps(swaps);
   }
 
   // "Share haul" → the branded shareable card (canvas → web share sheet).
@@ -1085,6 +1083,7 @@ export default function App() {
             <ListMoment
               goal={profile?.coach_goal}
               nonNegotiables={profile?.non_negotiables || []}
+              focuses={profile?.focuses || []}
               onSetGoal={() => setSwitcherOpen(true)}
               onAsk={askAboutList}
               premium={subscription?.premium ?? true}
