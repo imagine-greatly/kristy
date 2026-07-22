@@ -7,6 +7,7 @@ import {
   loadGoals,
   saveGoals,
   saveProfileFields,
+  saveCoachProfile,
   loadRecentMeals,
   loadDayMessages,
   loadLatestSummary,
@@ -22,6 +23,8 @@ import {
   goalChipLabel,
   focusDisclaimerAcked,
   ackFocusDisclaimer,
+  coachOnboardingSkipped,
+  skipCoachOnboarding,
 } from './lib/coachGoals.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
@@ -42,6 +45,7 @@ import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
 import Onboarding from './components/Onboarding.jsx';
+import CoachOnboarding from './components/CoachOnboarding.jsx';
 import GoalSwitcher from './components/GoalSwitcher.jsx';
 import FocusDisclaimer from './components/FocusDisclaimer.jsx';
 import Settings from './components/Settings.jsx';
@@ -125,6 +129,7 @@ export default function App() {
   const [macroSetupOpen, setMacroSetupOpen] = useState(false); // TDEE intake, settings-only
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
+  const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
 
   const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
   const [meals, setMeals] = useState([]);
@@ -174,8 +179,9 @@ export default function App() {
       loadProfile('demo-user').then((prof) => {
         setProfile(prof);
         setGoalType(prof?.goal || null);
-        // Scan-first: no goal gate. Everyone lands straight on the Scan moment; the
-        // goal is asked for contextually (in the verdict card) if it isn't set.
+        setCoachOnbSkipped(coachOnboardingSkipped('demo-user'));
+        // First run (no coach_goal, not skipped) → the coach onboarding branch below
+        // asks who we're shopping for; otherwise everyone lands straight on Scan.
         bootstrap('demo-user').then(() => setReady(true));
       });
       return;
@@ -196,7 +202,9 @@ export default function App() {
       const prof = await loadProfile(s.user.id).catch(() => null);
       setProfile(prof);
       setGoalType(prof?.goal || null);
-      // Scan-first: no goal gate — every authed user bootstraps straight to Scan.
+      setCoachOnbSkipped(coachOnboardingSkipped(s.user.id));
+      // First run (no coach_goal, not skipped) → the coach onboarding branch below
+      // asks who we're shopping for and starts the trial; otherwise straight to Scan.
       await bootstrap(s.user.id);
     }
     setReady(true);
@@ -227,17 +235,51 @@ export default function App() {
 
   /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
 
-  // Persist a coach_goal. Deliberately NOT via the trial-starting onboarding path —
-  // setting a goal doesn't grant premium, so the first personalized note it unlocks
-  // is metered by the existing 3-free-tastes counter (the gate is unchanged). The
-  // trial stays with the Upgrade flow. Optimistic so the chip + next scan reflect it.
+  // Persist a coach_goal through the trial-granting onboarding path. Setting a goal —
+  // in the coach onboarding, the chip switcher, or the in-card ask — is where the
+  // coaching relationship begins, so it starts the 7-day trial server-side (ensureTrial
+  // is idempotent: switching goals later never resets it). Optimistic so the chip +
+  // next scan reflect it immediately; the subscription is refreshed on the FIRST goal
+  // so premium flips on without a reload.
   async function persistGoal(value) {
+    const firstGoal = !profile?.coach_goal;
     setProfile((p) => ({ ...(p || {}), coach_goal: value }));
     try {
-      await saveProfileFields(userId, { coach_goal: value });
+      await saveCoachProfile(userId, {
+        coach_goal: value,
+        non_negotiables: profile?.non_negotiables || [],
+        focuses: profile?.focuses || [],
+      });
+      if (firstGoal) setSubscription(await getSubscription());
     } catch {
       /* keep optimistic value */
     }
+  }
+
+  // First-run coach onboarding: a goal was chosen → persist goal + prefs through the
+  // trial-granting path and land on Scan (the profile update unmounts the onboarding).
+  // If focuses were chosen, the in-context note stood in for the one-time coach-not-
+  // doctor disclaimer, so mark it acknowledged rather than firing the modal later.
+  async function handleCoachOnboardingComplete({ coach_goal, non_negotiables, focuses }) {
+    setProfile((p) => ({ ...(p || {}), coach_goal, non_negotiables, focuses, onboarded: true }));
+    if (focuses?.length && !focusDisclaimerAcked()) ackFocusDisclaimer();
+    trackEvent('coach_onboarded', {
+      goal: coach_goal,
+      focuses: (focuses || []).length,
+      hardLines: (non_negotiables || []).length,
+    });
+    try {
+      await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
+      setSubscription(await getSubscription()); // trial just granted → reflect premium
+    } catch {
+      /* keep optimistic values */
+    }
+  }
+
+  function handleCoachOnboardingSkip() {
+    skipCoachOnboarding(userId);
+    setCoachOnbSkipped(true);
+    trackEvent('coach_onboarding_skipped');
   }
 
   // The in-card goal ask: tap a goal → persist it → recompose the personalized note
@@ -891,6 +933,20 @@ export default function App() {
           Close
         </button>
       </div>
+    );
+  }
+
+  // First run: a signed-in, goal-less user who hasn't skipped is asked who Kristy is
+  // shopping for. Completing it starts the 7-day trial (saveCoachProfile → ensureTrial);
+  // skipping leaves them goal-less on universal verdicts, no trial, until they set a
+  // goal (here or via the header chip). This is the grocery front door — reachable
+  // without ever touching Settings or the TDEE macro setup.
+  if (session?.user && !profile?.coach_goal && !coachOnbSkipped) {
+    return (
+      <CoachOnboarding
+        onComplete={handleCoachOnboardingComplete}
+        onSkip={handleCoachOnboardingSkip}
+      />
     );
   }
 

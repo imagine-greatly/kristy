@@ -195,6 +195,27 @@ export function ackFocusDisclaimer() {
   }
 }
 
+// First-run coach onboarding is shown to any signed-in user with no coach_goal.
+// "Skip for now" is remembered per-user (per-device) so we don't re-prompt on every
+// reload — the header goal chip remains the way to set a goal (and start the trial)
+// later. Keyed by user id: a fresh device re-offers onboarding to a still-goal-less
+// user, which is the behavior we want.
+const COACH_ONB_SKIP_KEY = 'kristy:coachOnbSkipped';
+export function coachOnboardingSkipped(userId) {
+  try {
+    return localStorage.getItem(`${COACH_ONB_SKIP_KEY}:${userId}`) === '1';
+  } catch {
+    return false;
+  }
+}
+export function skipCoachOnboarding(userId) {
+  try {
+    localStorage.setItem(`${COACH_ONB_SKIP_KEY}:${userId}`, '1');
+  } catch {
+    /* ignore */
+  }
+}
+
 const byValue = (value) =>
   COACH_GOALS.find((g) => g.value === value) ||
   COACH_GOALS.find((g) => g.value === LEGACY_ALIASES[value]) ||
