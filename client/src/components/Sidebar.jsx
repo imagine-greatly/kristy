@@ -206,7 +206,9 @@ export default function Sidebar({
   historyDays,
   activeDay,
   onSelectDay,
-  premium = true,
+  // Default NOT premium: render the free variant until the subscription resolves,
+  // so entitlement never leaks during the load window.
+  premium = false,
   onUpgrade,
   // Calorie/macro/weight/goals is an OPT-IN feature now, not the identity. When
   // it's off (every grocery-only user), the menu shows none of it.

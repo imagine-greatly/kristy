@@ -1018,7 +1018,7 @@ export default function App() {
         historyDays={historyDays}
         activeDay={viewingDate}
         onSelectDay={handleSelectDay}
-        premium={subscription?.premium ?? true}
+        premium={subscription?.premium ?? false}
         onUpgrade={openUpgrade}
         macroTracking={macroTracking}
       />
@@ -1086,7 +1086,7 @@ export default function App() {
               focuses={profile?.focuses || []}
               onSetGoal={() => setSwitcherOpen(true)}
               onAsk={askAboutList}
-              premium={subscription?.premium ?? true}
+              premium={subscription?.premium ?? false}
               onUpgrade={openUpgrade}
             />
           )}
