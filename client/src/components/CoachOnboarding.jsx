@@ -14,9 +14,11 @@ import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, FOCUS_DISCLAIMER } from '../lib/
    the user goal-less on universal verdicts, with no trial, exactly as before. The
    header goal chip remains the anytime editor; this is simply no longer the only
    path in. Tokens only; her spoken lines are kristyVoice (Playfair italic). */
-export default function CoachOnboarding({ onComplete, onSkip }) {
-  const [step, setStep] = useState(0); // 0 goal · 1 focuses · 2 hard lines
-  const [goal, setGoal] = useState(null);
+export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null }) {
+  // A guest who expressed a goal before signing in arrives with it pre-filled — start
+  // past the goal step (Back returns to it to change). Otherwise start at the goal.
+  const [step, setStep] = useState(initialGoal ? 1 : 0); // 0 goal · 1 focuses · 2 hard lines
+  const [goal, setGoal] = useState(initialGoal);
   const [focuses, setFocuses] = useState([]);
   const [nonNegotiables, setNonNegotiables] = useState([]);
   const [busy, setBusy] = useState(false);

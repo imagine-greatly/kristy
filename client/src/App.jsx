@@ -26,6 +26,7 @@ import {
   coachOnboardingSkipped,
   skipCoachOnboarding,
 } from './lib/coachGoals.js';
+import { loadGuestState, clearGuestState } from './lib/guestState.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
 import { sendPhoto, runProductScan, requestGoalNote } from './lib/logging.js';
@@ -130,6 +131,7 @@ export default function App() {
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
   const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
+  const [onbInitialGoal, setOnbInitialGoal] = useState(null); // guest-expressed goal, pre-fills onboarding
 
   const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
   const [meals, setMeals] = useState([]);
@@ -168,6 +170,8 @@ export default function App() {
   // reload. `offered` caps it at one offer per session; `counts` tracks same-category
   // flags across scans (a focus already active is never counted / offered).
   const focusSessionRef = useRef({ counts: {}, offered: false });
+  // Guards the one-time guest→account replay so multiple auth events don't double it.
+  const guestReplayRef = useRef(false);
   const today = dayKey();
 
   /* ───────── Auth + initial load ───────── */
@@ -206,8 +210,42 @@ export default function App() {
       // First run (no coach_goal, not skipped) → the coach onboarding branch below
       // asks who we're shopping for and starts the trial; otherwise straight to Scan.
       await bootstrap(s.user.id);
+
+      // Carry a converted guest's work into the account, once per session (guards
+      // against repeat auth events). A guest-expressed goal pre-fills onboarding
+      // synchronously — before we flip `ready` — so the onboarding renders with it.
+      // The scan replay is fire-and-forget so sign-in never waits on N network writes.
+      if (!guestReplayRef.current) {
+        guestReplayRef.current = true;
+        const guest = loadGuestState();
+        if (guest.scans.length || guest.goal) {
+          if (guest.goal && !prof?.coach_goal) setOnbInitialGoal(guest.goal);
+          replayGuestScans(guest);
+        }
+      }
     }
     setReady(true);
+  }
+
+  // Replay a converted guest's saved scans into the new account's Haul. Fire-and-
+  // forget from handleSession; per-scan failures are non-fatal, and the guest key is
+  // cleared afterward so a reload can't double-post the same scans.
+  async function replayGuestScans(guest) {
+    try {
+      for (const sc of guest.scans || []) {
+        try {
+          await saveHaulScan(sc);
+        } catch {
+          /* non-fatal per scan */
+        }
+      }
+    } finally {
+      clearGuestState();
+    }
+    if (guest.scans?.length) {
+      setHaul(null); // invalidate cache → the Haul reloads with the carried-over scans
+      trackEvent('guest_scans_claimed', { count: guest.scans.length });
+    }
   }
 
   // Macro-tracking (TDEE) setup finished — the opt-in, settings-only flow. Onboarding
@@ -944,6 +982,7 @@ export default function App() {
   if (session?.user && !profile?.coach_goal && !coachOnbSkipped) {
     return (
       <CoachOnboarding
+        initialGoal={onbInitialGoal}
         onComplete={handleCoachOnboardingComplete}
         onSkip={handleCoachOnboardingSkip}
       />

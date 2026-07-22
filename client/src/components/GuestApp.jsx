@@ -11,6 +11,7 @@ import MomentStub from './MomentStub.jsx';
 import { ListIcon, HaulIcon } from './Icons.jsx';
 import { sendGuestChat } from '../lib/api.js';
 import { runProductScan } from '../lib/logging.js';
+import { recordGuestScan } from '../lib/guestState.js';
 import { trackEvent } from '../lib/analytics.js';
 
 // Lazy — only pulls the @zxing decoder when the scanner opens.
@@ -125,6 +126,16 @@ export default function GuestApp({ onOpenIngredient }) {
         return;
       }
       setScan({ ...result, mode: args.mode });
+      // Keep real scans (a resolved product with a verdict) so they survive sign-in —
+      // replayed into the account's Haul instead of vanishing when GuestApp unmounts.
+      if (result?.verdict && result.found !== false) {
+        recordGuestScan({
+          product_name: result.product?.name || null,
+          brand: result.product?.brand || null,
+          tier: result.verdict.tier,
+          barcode: result.product?.barcode || null,
+        });
+      }
       if (result?.verdict) trackEvent('verdict', { tier: result.verdict.tier, guest: true });
     } catch {
       setScan({
