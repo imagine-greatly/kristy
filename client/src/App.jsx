@@ -15,7 +15,6 @@ import {
   loadWeightHistory,
   saveHaulScan,
   loadHaul,
-  hasMacroTracking,
 } from './lib/data.js';
 import {
   goalNoteLabel,
@@ -583,8 +582,10 @@ export default function App() {
     () => weightSummary(weightHistory, goalType),
     [weightHistory, goalType]
   );
-  // Calorie/macro/weight surfaces only exist once the user opts into macro tracking.
-  const macroTracking = useMemo(() => hasMacroTracking(profile), [profile]);
+  // Calorie/macro/weight surfaces only exist once the user opts into macro tracking
+  // (the explicit Settings switch — OFF by default). This is the single flag that
+  // gates every macro/calorie surface across the app + the chat pipeline server-side.
+  const macroTracking = useMemo(() => !!profile?.macro_tracking, [profile]);
   const historyDays = useMemo(
     () =>
       [...dayMap.values()]
@@ -1103,7 +1104,7 @@ export default function App() {
               />
             ) : (
               messages.map((m) => (
-                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
+                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} macroTracking={macroTracking} />
               ))
             )}
 
@@ -1215,9 +1216,12 @@ export default function App() {
         <Settings
           profile={profile}
           subscription={subscription}
+          macroTracking={macroTracking}
           onUpgrade={openUpgrade}
           onClose={() => setSettingsOpen(false)}
           onSave={handleSaveProfile}
+          onToggleMacroTracking={(v) => handleSaveProfile({ macro_tracking: v })}
+          onEditPreferences={() => { setSettingsOpen(false); setSwitcherOpen(true); }}
           onDelete={handleDeleteAccount}
           onOpenMacroSetup={() => { setSettingsOpen(false); setMacroSetupOpen(true); }}
         />

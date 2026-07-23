@@ -7,6 +7,10 @@
 */
 
 :root {
+  /* The forest surface ramp (mirrors lib/tokens.js exactly; mobile/src/theme/colors.ts
+     uses the identical values). Deepest → lightest: bg-deep is the void / negative
+     space, bg is the #0B1F0F ground, surface + surface-2 are the lifted card tones. */
+  --bg-deep: #040805;
   --bg: #0b1f0f;
   --surface: #122718;
   --surface-2: #1a3320;
@@ -21,7 +25,19 @@
   --text-primary: #f0e6c8;
   --text-secondary: #c9a84c;
   --text-muted: #6b8f72;
+  --trend-muted: #6b9e85;
   --ring-track: #1a3320;
+
+  /* Status + scrims — mirror lib/tokens.js so nothing hardcodes a literal here. */
+  --error: #ee8888;
+  --danger: #b04646;
+  --danger-border: var(--danger-border);
+  --danger-tint: rgba(180, 70, 70, 0.12);
+  --black: #000000;
+  --white: #ffffff;
+  --scrim: rgba(7, 18, 11, 0.62);
+  --scrim-soft: rgba(7, 18, 11, 0.55);
+  --scrim-verdict: rgba(4, 8, 5, 0.72);
 
   --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
@@ -57,7 +73,10 @@ body,
 }
 
 body {
-  background: var(--bg);
+  /* The deepest tone is the negative space / void behind everything (matches the
+     <meta theme-color>). The app content ground stays #0B1F0F (.app), cards lift to
+     --surface — a real 3-step ramp instead of one flat green. */
+  background: var(--bg-deep);
   color: var(--text-primary);
   font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
@@ -507,7 +526,7 @@ textarea {
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(7, 18, 11, 0.62);
+  background: var(--scrim);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease;
@@ -835,7 +854,7 @@ textarea {
 }
 .auth__error {
   font-size: 13px;
-  color: #e88;
+  color: var(--error);
   line-height: 1.5;
 }
 /* Text-style actions under the code field (resend / change number). */
@@ -978,7 +997,7 @@ textarea {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #000;
+  background: var(--black);
 }
 .scanner-video-wrap {
   position: relative;
@@ -990,7 +1009,7 @@ textarea {
   height: 100%;
   object-fit: cover;
   display: block;
-  background: #000;
+  background: var(--black);
 }
 /* Static aiming frame — four gold corner brackets, no motion. */
 .scan-frame {
@@ -1112,7 +1131,7 @@ textarea {
 .verdict__scrim {
   position: absolute;
   inset: 0;
-  background: rgba(4, 8, 5, 0.72);
+  background: var(--scrim-verdict);
   backdrop-filter: blur(3px);
   animation: gate-fade 0.28s ease;
 }
@@ -1460,7 +1479,7 @@ textarea {
 }
 .onb__error {
   font-size: 13px;
-  color: #e88;
+  color: var(--error);
 }
 .onb__actions {
   display: flex;
@@ -1544,7 +1563,7 @@ textarea {
 .gate__scrim {
   position: absolute;
   inset: 0;
-  background: rgba(7, 18, 11, 0.55);
+  background: var(--scrim-soft);
   backdrop-filter: blur(2px);
   animation: gate-fade 0.28s ease;
 }
@@ -1741,7 +1760,7 @@ textarea {
 
 .set-error {
   font-size: 13px;
-  color: #e88;
+  color: var(--error);
 }
 
 /* Danger zone — account deletion. */
@@ -1752,8 +1771,8 @@ textarea {
 }
 .set-danger__btn {
   background: transparent;
-  border: 1px solid #7a3b3b;
-  color: #e88;
+  border: 1px solid var(--danger-border);
+  color: var(--error);
   border-radius: 10px;
   padding: 11px 16px;
   font-size: 14px;
@@ -1761,7 +1780,7 @@ textarea {
   transition: background 0.15s ease;
 }
 .set-danger__btn:hover {
-  background: rgba(180, 70, 70, 0.12);
+  background: var(--danger-tint);
 }
 .set-danger__confirm {
   display: flex;
@@ -1774,12 +1793,12 @@ textarea {
   color: var(--text-primary);
 }
 .set-danger__warn b {
-  color: #e88;
+  color: var(--error);
   font-weight: 700;
 }
 .set-danger__input {
   background: var(--surface-2);
-  border: 1px solid #7a3b3b;
+  border: 1px solid var(--danger-border);
   border-radius: 10px;
   padding: 12px 14px;
   font-size: 15px;
@@ -1787,7 +1806,7 @@ textarea {
   outline: none;
 }
 .set-danger__input:focus {
-  border-color: #e88;
+  border-color: var(--error);
 }
 .set-danger__actions {
   display: flex;
@@ -1805,9 +1824,9 @@ textarea {
 }
 .set-danger__go {
   flex: 1;
-  background: #b04646;
-  border: 1px solid #b04646;
-  color: #fff;
+  background: var(--danger);
+  border: 1px solid var(--danger);
+  color: var(--white);
   border-radius: 10px;
   padding: 11px 16px;
   font-size: 14px;
@@ -1923,7 +1942,7 @@ textarea {
 .upgrade__scrim {
   position: absolute;
   inset: 0;
-  background: rgba(7, 18, 11, 0.6);
+  background: var(--scrim);
   backdrop-filter: blur(2px);
   animation: gate-fade 0.28s ease;
 }
@@ -2060,7 +2079,7 @@ textarea {
 }
 .upgrade__error {
   font-size: 13px;
-  color: #e88;
+  color: var(--error);
 }
 .upgrade__cta {
   width: 100%;

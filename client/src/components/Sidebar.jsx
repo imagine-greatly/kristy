@@ -66,7 +66,7 @@ const MACROS = [
 
 // Colors for the weight trend line.
 const MINT = '#4A9B6F'; // on-track (loss, or gain when building muscle)
-const MUTED = '#6B9E85'; // maintaining / off-goal gain
+const MUTED = colors.trendMuted; // maintaining / off-goal gain
 
 // Arrow + label + color for the 7-day weight change, given the user's goal.
 function weightTrendStyle(weekChange, goalType) {
@@ -397,13 +397,9 @@ export default function Sidebar({
                 <span style={offStyles.chev}>›</span>
               </button>
             )}
-            <p style={offStyles.note}>
-              Counting calories &amp; macros too? Turn on{' '}
-              <button style={offStyles.link} onClick={onOpenSettings}>
-                Macro&nbsp;tracking
-              </button>{' '}
-              in Settings.
-            </p>
+            {/* The macro-tracking pitch used to live here in the persistent chrome —
+                the fitness ghost on every screen. It now lives ONLY inside Settings
+                (one optional toggle), nowhere in the default grocery experience. */}
           </div>
         )}
       </aside>

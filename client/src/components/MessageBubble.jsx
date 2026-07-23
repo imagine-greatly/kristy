@@ -1,6 +1,9 @@
 import MacroCard from './MacroCard.jsx';
 
-export default function MessageBubble({ message, onUpgrade }) {
+// macroTracking defaults OFF — the coach default. A macro card only ever renders
+// for a user who has explicitly opted into macro tracking, so a stale message (or
+// the demo/guest path) can never surface calories to a grocery-only user.
+export default function MessageBubble({ message, onUpgrade, macroTracking = false }) {
   const { role, content, macros, isSummary } = message;
 
   if (role === 'user') {
@@ -12,7 +15,7 @@ export default function MessageBubble({ message, onUpgrade }) {
   }
 
   // AI
-  const hasMacros = macros && typeof macros.calories === 'number';
+  const hasMacros = macroTracking && macros && typeof macros.calories === 'number';
   return (
     <div className="msg-row ai">
       <div className="avatar">K</div>

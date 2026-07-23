@@ -74,16 +74,26 @@ function computeGoalsDemo(p = {}) {
   return { calories, protein, carbs, fat };
 }
 
-// Returns the user's full profile row, or null if not onboarded yet.
+// Returns the user's full profile row, or null if not onboarded yet. Reads
+// macro_tracking (opt-in, default OFF) as the widest tier and falls back if that
+// column hasn't been migrated yet — so a pre-migration DB still loads the profile
+// (and simply reads macro tracking as OFF), mirroring the server's getFullProfile.
 export async function loadProfile(userId) {
   if (IS_DEMO) return demoRead().profile || null;
 
   try {
-    const { data } = await supabase
+    let { data, error } = await supabase
       .from('user_goals')
-      .select(PROFILE_COLS)
+      .select(`${PROFILE_COLS}, macro_tracking`)
       .eq('user_id', userId)
       .maybeSingle();
+    if (error) {
+      ({ data } = await supabase
+        .from('user_goals')
+        .select(PROFILE_COLS)
+        .eq('user_id', userId)
+        .maybeSingle());
+    }
     return data || null;
   } catch {
     // Columns may not exist yet (migration not applied) → treat as unonboarded.
@@ -174,7 +184,8 @@ export async function saveGoals(userId, goals) {
 
 // Profile-preference fields editable from the settings screen. Only these
 // whitelisted keys are ever written; macro goals go through saveGoals above.
-const PROFILE_FIELD_KEYS = ['goal', 'weight_unit', 'sport', 'training_frequency', 'coach_goal', 'non_negotiables', 'focuses', 'constraints'];
+// macro_tracking is the opt-in switch that turns the calorie/macro/weight UI on.
+const PROFILE_FIELD_KEYS = ['goal', 'weight_unit', 'sport', 'training_frequency', 'coach_goal', 'non_negotiables', 'focuses', 'constraints', 'macro_tracking'];
 
 // Patch one or more profile fields on the user_goals row. Demo-aware, mirroring
 // saveGoals. Returns the updated profile row (or the demo profile object).
