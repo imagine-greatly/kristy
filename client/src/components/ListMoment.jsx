@@ -4,6 +4,7 @@ import { ListIcon, CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 import { loadCachedList, fetchList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
 import { trackEvent } from '../lib/analytics.js';
+import PerimeterAsk from './PerimeterAsk.jsx';
 
 /* ═══════════════════════ List — before the trip ═══════════════════════
    Kristy's goal-built shopping list. The SERVER is the source of truth now: it
@@ -21,6 +22,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
   const [premium, setPremium] = useState(premiumProp);
   const [loading, setLoading] = useState(() => loadCachedList() == null);
   const [input, setInput] = useState('');
+  const [asking, setAsking] = useState(null); // a list item being asked about (the Perimeter loop)
   const firstBuild = useRef(loadCachedList() == null);
 
   // Load the authoritative list from the server; the cache renders instantly meanwhile.
@@ -61,6 +63,15 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
     if (!name) return;
     persist({ ...list, items: [...list.items, { id: rid(), name, category: 'Added', checked: false, source: 'user' }] });
     setInput('');
+  };
+
+  // The Perimeter loop: a refinement from "Ask Kristy" rewrites the item in place
+  // (e.g. "Olive oil" → "Fresh, dark-bottle extra-virgin olive oil"), then persists.
+  const refineItem = (id, newName) => {
+    if (!newName) return;
+    persist({ ...list, items: list.items.map((i) => (i.id === id ? { ...i, name: newName, refined: true } : i)) });
+    trackEvent('perimeter-refine', { item: newName });
+    setAsking(null);
   };
 
   const rebuild = async () => {
@@ -170,6 +181,13 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
                     <span style={styles.tag}>{it.source === 'swap' ? 'From your haul' : 'Kristy added'}</span>
                   )}
                 </span>
+                {/* Every shopping row gets "Ask Kristy" — the Perimeter loop. Swaps are
+                    callouts, not rows, so they don't. */}
+                {it.source !== 'swap' && (
+                  <button type="button" style={styles.askItem} onClick={() => setAsking(it)} aria-label={`Ask Kristy about ${it.name}`}>
+                    Ask
+                  </button>
+                )}
                 <button type="button" style={styles.remove} onClick={() => remove(it.id)} aria-label={`Remove ${it.name}`}>
                   <CloseIcon size={16} />
                 </button>
@@ -205,6 +223,18 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
       </div>
 
       <AmbientIsm style={{ marginTop: 14 }} />
+
+      {asking && (
+        <PerimeterAsk
+          initialQuestion={asking.name}
+          autoAsk
+          allowRefine
+          prefs={{ goal, focuses, hardLines: nonNegotiables, constraints }}
+          onRefine={(newName) => refineItem(asking.id, newName)}
+          onUpgrade={onUpgrade}
+          onClose={() => setAsking(null)}
+        />
+      )}
     </div>
   );
 }
@@ -234,6 +264,7 @@ const styles = {
   checkbox: { flex: '0 0 auto', width: 24, height: 24, borderRadius: 7, border: '1.5px solid', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, cursor: 'pointer' },
   itemName: { fontFamily: fonts.ui, fontSize: 15, color: colors.textPrimary, overflowWrap: 'anywhere' },
   itemChecked: { color: colors.textMuted, textDecoration: 'line-through' },
+  askItem: { flex: '0 0 auto', padding: '5px 10px', borderRadius: 999, border: `1px solid ${colors.border}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 12, fontWeight: 600, cursor: 'pointer' },
   remove: { flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 8, border: 'none', background: 'transparent', color: colors.textMuted, cursor: 'pointer' },
 
   addRow: { display: 'flex', gap: 8, marginTop: 4 },

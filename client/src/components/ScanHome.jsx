@@ -11,7 +11,7 @@ import AmbientIsm from './AmbientIsm.jsx';
 
    Tokens only. `guest` softens the copy since a guest gets the universal read. */
 
-export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, guest = false }) {
+export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAskAisle, guest = false }) {
   const fileRef = useRef(null);
 
   return (
@@ -50,6 +50,13 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, guest
           }}
         />
       </div>
+
+      {/* No barcode at the fish counter or the produce wall — ask the aisle instead. */}
+      {onAskAisle && (
+        <button type="button" style={styles.aisle} onClick={onAskAisle}>
+          At the counter with nothing to scan? Ask about the aisle →
+        </button>
+      )}
 
       {onOpenChat && (
         <button type="button" style={styles.chatLink} onClick={onOpenChat}>
@@ -107,6 +114,18 @@ const styles = {
     fontSize: 15,
     cursor: 'pointer',
   },
+  aisle: {
+    marginTop: 6,
+    padding: '10px 14px',
+    background: 'transparent',
+    border: `1px solid ${colors.border}`,
+    borderRadius: 999,
+    color: colors.textSecondary,
+    fontFamily: fonts.ui,
+    fontSize: 13.5,
+    fontWeight: 600,
+    cursor: 'pointer',
+  },
   chatLink: {
     marginTop: 8,
     padding: '8px 10px',
@@ -118,3 +137,4 @@ const styles = {
     cursor: 'pointer',
   },
 };
+

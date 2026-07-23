@@ -59,6 +59,7 @@ import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import ListMoment from './components/ListMoment.jsx';
+import PerimeterAsk from './components/PerimeterAsk.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
 import IngredientPage from './components/IngredientPage.jsx';
@@ -127,6 +128,7 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [subscription, setSubscription] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [aisleOpen, setAisleOpen] = useState(false); // the Perimeter "ask about the aisle" sheet
   // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
   const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
   const [macroSetupOpen, setMacroSetupOpen] = useState(false); // TDEE intake, settings-only
@@ -1132,6 +1134,7 @@ export default function App() {
               onScanBarcode={() => setCameraOpen(true)}
               onLabelFile={handleVerdictFile}
               onOpenChat={() => setMoment('chat')}
+              onAskAisle={() => setAisleOpen(true)}
             />
           )}
           {moment === 'list' && (
@@ -1236,6 +1239,19 @@ export default function App() {
 
       {/* The one-time coach-not-doctor note, fired the first time any focus turns on. */}
       {disclaimerOpen && <FocusDisclaimer onDismiss={dismissDisclaimer} />}
+
+      {aisleOpen && (
+        <PerimeterAsk
+          prefs={{
+            goal: goalNoteLabel(profile?.coach_goal),
+            focuses: profile?.focuses || [],
+            hardLines: profile?.non_negotiables || [],
+            constraints: resolveConstraints(profile),
+          }}
+          onUpgrade={() => { setAisleOpen(false); openUpgrade(); }}
+          onClose={() => setAisleOpen(false)}
+        />
+      )}
 
       {upgradeOpen && (
         <Upgrade
