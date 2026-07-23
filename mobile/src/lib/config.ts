@@ -21,6 +21,23 @@ export const apiBase = API_URL ? API_URL.replace(/\/$/, '') : '';
 // otherwise instead of crashing deep in a fetch.
 export const isConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY && apiBase);
 
-// The RevenueCat entitlement that maps to "premium coaching". Configure this
-// exact identifier on the entitlement in the RevenueCat dashboard.
-export const PREMIUM_ENTITLEMENT = 'premium';
+// ─── RevenueCat identifiers — configuration, not hardcoded literals ───
+// These MUST match exactly what's set up in the RevenueCat dashboard. Defaults
+// are RevenueCat's conventional identifiers so a standard setup works with no
+// extra env, but any of them can be overridden per build.
+
+// The entitlement that maps to "premium coaching" (Project → Entitlements).
+export const PREMIUM_ENTITLEMENT =
+  process.env.EXPO_PUBLIC_REVENUECAT_ENTITLEMENT || extra.revenueCatEntitlement || 'premium';
+
+// The offering to present. Empty ⇒ use whichever offering is marked "current"
+// in the dashboard; set it to select a specific offering by identifier.
+export const REVENUECAT_OFFERING =
+  process.env.EXPO_PUBLIC_REVENUECAT_OFFERING || extra.revenueCatOffering || '';
+
+// Package identifiers within that offering. RevenueCat's built-in package types
+// are "$rc_annual" / "$rc_monthly"; override if you named custom packages.
+export const REVENUECAT_ANNUAL_PACKAGE =
+  process.env.EXPO_PUBLIC_REVENUECAT_ANNUAL_PACKAGE || extra.revenueCatAnnualPackage || '$rc_annual';
+export const REVENUECAT_MONTHLY_PACKAGE =
+  process.env.EXPO_PUBLIC_REVENUECAT_MONTHLY_PACKAGE || extra.revenueCatMonthlyPackage || '$rc_monthly';

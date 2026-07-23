@@ -20,6 +20,27 @@ export function stripeReady() {
   return !!stripe && !!PRICE_MONTHLY && !!PRICE_ANNUAL;
 }
 
+/**
+ * Resolve the configured Stripe price id for a plan. Returns '' when that plan's
+ * price id is unset in env — the caller MUST treat '' as "not configured" and
+ * fail loudly rather than call Stripe with an empty price (which would 400).
+ */
+export function priceIdForPlan(plan) {
+  return plan === 'annual' ? PRICE_ANNUAL : PRICE_MONTHLY;
+}
+
+/**
+ * Which required Stripe env vars are missing, by name — for a loud, specific log
+ * when checkout can't run. Empty array ⇒ fully configured.
+ */
+export function missingStripeConfig() {
+  const missing = [];
+  if (!stripe) missing.push('STRIPE_SECRET_KEY');
+  if (!PRICE_MONTHLY) missing.push('STRIPE_PRICE_MONTHLY');
+  if (!PRICE_ANNUAL) missing.push('STRIPE_PRICE_ANNUAL');
+  return missing;
+}
+
 /** First allowed client origin — where Checkout/portal redirect back to. */
 export function clientOrigin() {
   return (process.env.CLIENT_ORIGIN || 'http://localhost:5173')

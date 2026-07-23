@@ -1,13 +1,19 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
-import { stripe, stripeReady, PRICE_MONTHLY, PRICE_ANNUAL, clientOrigin } from '../lib/stripe.js';
+import {
+  stripe,
+  priceIdForPlan,
+  missingStripeConfig,
+  clientOrigin,
+} from '../lib/stripe.js';
 import { getSubscription } from '../lib/store.js';
 
 const router = Router();
 
 const NOT_CONFIGURED = {
   error: true,
-  message: 'Billing is not set up yet — check back soon.',
+  // Kristy's voice — never a raw "misconfigured" string to the user.
+  message: "I can't open checkout right now — my membership isn't finished setting up on my end. Try again in a little while.",
 };
 
 // POST /api/billing/checkout  { plan: 'monthly' | 'annual' }
@@ -16,10 +22,22 @@ const NOT_CONFIGURED = {
 // session (client_reference_id + metadata) and the subscription (subscription_
 // data.metadata) so the webhook can map the resulting sub back to our user.
 router.post('/checkout', requireAuth, async (req, res) => {
-  if (!stripeReady()) return res.status(503).json(NOT_CONFIGURED);
-
   const plan = req.body?.plan === 'annual' ? 'annual' : 'monthly';
-  const price = plan === 'annual' ? PRICE_ANNUAL : PRICE_MONTHLY;
+  const price = priceIdForPlan(plan);
+
+  // Fail LOUDLY, never silently: if the secret key or this plan's price id is
+  // missing from env, log exactly which var is unset and return a clean,
+  // Kristy-voiced 503 so the client shows a real message, not a dead button.
+  if (!stripe || !price) {
+    const missing = missingStripeConfig();
+    console.error(
+      `[kristy] /api/billing/checkout unavailable — plan=${plan}; missing env: ${
+        missing.join(', ') || `price id for ${plan}`
+      }`
+    );
+    return res.status(503).json(NOT_CONFIGURED);
+  }
+
   const origin = clientOrigin();
 
   try {

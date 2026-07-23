@@ -18,6 +18,7 @@ import {
   restore,
   purchasesSupported,
 } from '../src/lib/purchases';
+import { PRICING as STATIC, PLAN_ORDER, type PlanId } from '../src/lib/pricing';
 import { selectTick } from '../src/lib/haptics';
 
 const INCLUDES = [
@@ -27,19 +28,11 @@ const INCLUDES = [
   'Weight trends and the full optimization loop',
 ];
 
-// Static fallback copy (shown until RevenueCat offerings load, or if IAP is
-// unavailable — e.g. Expo Go). Real prices come from the store when available.
-// Launch targets: $7.99/mo and $59.99/yr. In App Store Connect / RevenueCat the
-// offering is set to the CLOSEST Apple price tiers to those numbers — Apple prices
-// are tier-based and already tax-inclusive by region, so there's no "+tax" logic
-// here (unlike Stripe, where Stripe Tax adds tax at checkout). The store's
-// priceString is the source of truth once offerings load.
-const STATIC = {
-  annual: { label: 'Annual', price: '$59.99', per: '/year', note: 'Just ~$5/mo — best value', badge: 'Save 37%' },
-  monthly: { label: 'Monthly', price: '$7.99', per: '/month', note: 'Billed monthly, cancel anytime', badge: null as string | null },
-};
-
-type PlanId = 'annual' | 'monthly';
+// Static fallback copy (STATIC = the single pricing source in src/lib/pricing.ts)
+// is shown until RevenueCat offerings load, or if IAP is unavailable (e.g. Expo
+// Go). Apple prices are tier-based and already tax-inclusive by region, so
+// there's no "+tax" logic here (unlike Stripe). The store's priceString from the
+// loaded offering is the source of truth once offerings load.
 
 export default function UpgradeScreen() {
   const insets = useSafeAreaInsets();
@@ -50,12 +43,29 @@ export default function UpgradeScreen() {
   const [loading, setLoading] = useState<'' | 'checkout' | 'restore'>('');
   const [error, setError] = useState('');
 
+  const [offerLoaded, setOfferLoaded] = useState(false);
+
   useEffect(() => {
-    getCurrentOffering().then(setOffering);
+    getCurrentOffering().then((o) => {
+      setOffering(o);
+      setOfferLoaded(true);
+    });
   }, []);
 
   const { annual, monthly } = splitPackages(offering);
   const pkgFor = (id: PlanId): PurchasesPackage | null => (id === 'annual' ? annual : monthly);
+
+  // Fail LOUDLY, never silently: if IAP is supported but the offering loaded with
+  // no purchasable plans, the RevenueCat offering/products aren't wired. Log the
+  // fact and surface a Kristy-voiced line instead of a dead "Start coaching" button.
+  const plansUnavailable = purchasesSupported() && offerLoaded && !annual && !monthly;
+  useEffect(() => {
+    if (plansUnavailable) {
+      console.error(
+        '[kristy] RevenueCat offering loaded with no annual/monthly package — check the offering + product identifiers in the dashboard.'
+      );
+    }
+  }, [plansUnavailable]);
 
   const priceFor = (id: PlanId) => {
     const pkg = pkgFor(id);
@@ -77,9 +87,11 @@ export default function UpgradeScreen() {
     const pkg = pkgFor(plan);
     if (!pkg) {
       setError(
-        purchasesSupported()
-          ? 'Plans are still loading — try again in a moment.'
-          : 'Purchases are only available in the App Store build.'
+        !purchasesSupported()
+          ? 'Purchases are only available in the App Store build.'
+          : plansUnavailable
+            ? "I can't open checkout right now — my membership isn't finished setting up on my end. Try again in a little while."
+            : 'Plans are still loading — give it a moment and try again.'
       );
       return;
     }
@@ -114,8 +126,6 @@ export default function UpgradeScreen() {
       setLoading('');
     }
   }
-
-  const PLAN_ORDER: PlanId[] = ['annual', 'monthly'];
 
   return (
     <View style={styles.root}>

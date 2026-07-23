@@ -12,7 +12,13 @@ import Purchases, {
   type PurchasesPackage,
   type CustomerInfo,
 } from 'react-native-purchases';
-import { REVENUECAT_IOS_KEY, PREMIUM_ENTITLEMENT } from './config';
+import {
+  REVENUECAT_IOS_KEY,
+  PREMIUM_ENTITLEMENT,
+  REVENUECAT_OFFERING,
+  REVENUECAT_ANNUAL_PACKAGE,
+  REVENUECAT_MONTHLY_PACKAGE,
+} from './config';
 
 let configured = false;
 
@@ -52,11 +58,29 @@ export async function logoutPurchases(): Promise<void> {
   }
 }
 
-/** The current offering (its availablePackages drive the plan cards). */
+/**
+ * The offering whose packages drive the plan cards. Resolves from config: when
+ * REVENUECAT_OFFERING is set we select that offering by identifier; otherwise we
+ * use whichever offering is marked "current" in the dashboard. Fails LOUDLY — a
+ * configured-but-missing offering is logged by name so a dead plan list is never
+ * silent.
+ */
 export async function getCurrentOffering(): Promise<PurchasesOffering | null> {
   if (!purchasesSupported()) return null;
   try {
     const offerings = await Purchases.getOfferings();
+    if (REVENUECAT_OFFERING) {
+      const named = offerings.all?.[REVENUECAT_OFFERING] ?? null;
+      if (!named) {
+        console.error(
+          `[kristy] RevenueCat offering "${REVENUECAT_OFFERING}" (EXPO_PUBLIC_REVENUECAT_OFFERING) not found — check the dashboard offering identifier.`
+        );
+      }
+      return named ?? offerings.current ?? null;
+    }
+    if (!offerings.current) {
+      console.error('[kristy] RevenueCat has no current offering configured — set one in the dashboard.');
+    }
     return offerings.current ?? null;
   } catch (e) {
     console.warn('[kristy] getOfferings failed:', (e as Error)?.message);
@@ -64,13 +88,23 @@ export async function getCurrentOffering(): Promise<PurchasesOffering | null> {
   }
 }
 
-/** Pick the monthly / annual packages out of an offering by RC package type. */
+/**
+ * Pick the monthly / annual packages out of an offering. Prefers the configured
+ * package identifiers, then RevenueCat's typed accessors, then a name heuristic.
+ */
 export function splitPackages(offering: PurchasesOffering | null) {
   const pkgs = offering?.availablePackages ?? [];
+  const byId = (id: string) => pkgs.find((p) => p.identifier === id) ?? null;
   const annual =
-    offering?.annual ?? pkgs.find((p) => /annual|year/i.test(p.identifier)) ?? null;
+    byId(REVENUECAT_ANNUAL_PACKAGE) ??
+    offering?.annual ??
+    pkgs.find((p) => /annual|year/i.test(p.identifier)) ??
+    null;
   const monthly =
-    offering?.monthly ?? pkgs.find((p) => /month/i.test(p.identifier)) ?? null;
+    byId(REVENUECAT_MONTHLY_PACKAGE) ??
+    offering?.monthly ??
+    pkgs.find((p) => /month/i.test(p.identifier)) ??
+    null;
   return { annual, monthly };
 }
 

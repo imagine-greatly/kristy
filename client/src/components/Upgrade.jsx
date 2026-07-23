@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CloseIcon } from './Icons.jsx';
 import { startCheckout, openBillingPortal } from '../lib/api.js';
+import { PRICING, PLAN_ORDER, planAmount } from '../lib/pricing.js';
 
 // What membership unlocks — the repositioned grocery-coach value, named
 // specifically (not "go premium"). The universal layer (what's in the food) is
@@ -12,27 +13,10 @@ const INCLUDES = [
   'Your list, built — around your goal, minus your hard lines',
 ];
 
-// Launch pricing: $7.99/mo, $59.99/yr. Annual works out to ~$5/mo (59.99 ÷ 12 ≈
-// 5.00) and saves ~37% vs paying monthly (7.99 × 12 = 95.88). Stripe Tax adds any
-// tax on top at checkout — we don't hand-roll it here.
-const PLANS = [
-  {
-    id: 'annual',
-    label: 'Annual',
-    price: '$59.99',
-    per: '/year',
-    note: 'Just ~$5/mo — best value',
-    badge: 'Save 37%',
-  },
-  {
-    id: 'monthly',
-    label: 'Monthly',
-    price: '$7.99',
-    per: '/month',
-    note: 'Billed monthly, cancel anytime',
-    badge: null,
-  },
-];
+// Prices come from the single source (lib/pricing.js). Stripe Tax adds any tax on
+// top at checkout — we don't hand-roll it here. The client never sees a price id;
+// it sends the plan name and the server resolves it from env.
+const PLANS = PLAN_ORDER.map((id) => PRICING[id]);
 
 /**
  * The upgrade view. Brand-consistent bottom sheet — the two prices, what the
@@ -145,6 +129,8 @@ export default function Upgrade({ subscription, trialEligible = false, onStartTr
         {error && <p className="upgrade__error">{error}</p>}
 
         {offerTrial ? (
+          // Never had a subscription row → the free week is the primary offer;
+          // subscribing (either plan, chosen above) is the secondary path.
           <>
             <button className="upgrade__cta" onClick={beginTrial} disabled={!!loading}>
               {loading === 'trial' ? 'Starting your week…' : 'Start my free week'}
@@ -153,13 +139,16 @@ export default function Upgrade({ subscription, trialEligible = false, onStartTr
             <button className="upgrade__manage" onClick={subscribe} disabled={!!loading}>
               {loading === 'checkout'
                 ? 'Opening checkout…'
-                : `or subscribe now — ${plan === 'annual' ? '$59.99/yr' : '$7.99/mo'}`}
+                : `or subscribe now — ${planAmount(plan)}`}
             </button>
           </>
         ) : (
+          // Trial consumed or already active → the plans are the primary action.
           <>
             <button className="upgrade__cta" onClick={subscribe} disabled={!!loading}>
-              {loading === 'checkout' ? 'Opening checkout…' : 'Start coaching'}
+              {loading === 'checkout'
+                ? 'Opening checkout…'
+                : `Start coaching — ${planAmount(plan)}`}
             </button>
 
             {hasStripeRecord ? (
