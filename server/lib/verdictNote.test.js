@@ -68,6 +68,17 @@ test('buildNoteInput carries goal, filtered non-negotiables, tier, flagged', () 
   assert.equal(input.flagged.length, 1);
 });
 
+test('buildNoteInput carries filtered constraints (circumstances, not health)', () => {
+  const input = buildNoteInput({
+    tier: 'swap_recommended',
+    goal: 'high-protein shopping',
+    nonNegotiables: [],
+    constraints: ['budget', '', '  ', 'short_on_time'],
+    matched: [POISONED_ENTRY],
+  });
+  assert.deepEqual(input.constraints, ['budget', 'short_on_time']); // blanks dropped
+});
+
 test('buildNoteInput on an approved product has an empty flagged list', () => {
   const input = buildNoteInput({ tier: 'approved', goal: 'recomp', nonNegotiables: [], matched: [] });
   assert.deepEqual(input.flagged, []);
@@ -118,6 +129,13 @@ test('the note system prompt carries the hard rules verbatim', () => {
   assert.ok(VERDICT_NOTE_SYSTEM.includes('If it is not in the provided data, it does not'));
   assert.ok(VERDICT_NOTE_SYSTEM.includes('You are a coach, not a doctor.'));
   assert.ok(VERDICT_NOTE_SYSTEM.trim().endsWith('Return ONLY this JSON: {"note": "...", "swap": "..." or null}'));
+});
+
+test('the note prompt carries the constraints rule: shapes emphasis, never the tier, no price', () => {
+  assert.ok(VERDICT_NOTE_SYSTEM.includes('CONSTRAINTS'));
+  assert.ok(VERDICT_NOTE_SYSTEM.includes('shapes EMPHASIS and which swap you name — NEVER the verdict'));
+  assert.ok(VERDICT_NOTE_SYSTEM.includes('BUDGET IS FOOD SELECTION, NOT PRICE'));
+  assert.ok(VERDICT_NOTE_SYSTEM.includes('never claim to check what you'));
 });
 
 // ── The claim lock on the POSITIVE side ──────────────────────────────────────

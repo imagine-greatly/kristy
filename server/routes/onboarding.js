@@ -22,9 +22,10 @@ router.post('/onboarding/coach', requireAuth, async (req, res) => {
   const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);
   const non_negotiables = list(b.non_negotiables);
   const focuses = list(b.focuses);
+  const constraints = list(b.constraints);
 
   try {
-    const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
+    const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses, constraints });
     return res.json({ ok: true, profile });
   } catch (err) {
     console.error('[kristy] /api/onboarding/coach error:', err.message);

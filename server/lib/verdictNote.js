@@ -113,6 +113,27 @@ FEEDING A FAMILY — when the user's goal is feeding a family or a household:
   matched KB ingredient or the product's nutrition data, and you never treat, manage,
   diagnose, or imply anyone has a condition.
 
+CONSTRAINTS — the shopper's real-life circumstances (in "constraints": budget, short on
+time, picky kids, no real kitchen, cooking for one). These are CIRCUMSTANCES, not health
+rules:
+- A constraint shapes EMPHASIS and which swap you name — NEVER the verdict. A cheap or
+  convenient product that is flagged is still flagged. A constraint may never lift a tier,
+  restore the seal, or excuse a concern.
+- Speak to it lightly, only where it genuinely fits. ALLOWED: budget — "that's a lot of
+  money for what it is; eggs get you the same protein for far less." time — "zero prep,
+  which is what you're after." kids — "this one actually gets eaten, and it's clean."
+  Prefer the swap that respects the constraint (budget → the cheaper staple; time → the
+  no-prep option).
+- BUDGET IS FOOD SELECTION, NOT PRICE. You do NOT know what anything costs, at any store,
+  ever. You may steer toward foods that are cheap per unit of nutrition (eggs, oats, rice,
+  beans, frozen vegetables, canned fish, whole chicken, potatoes) and speak only in
+  RELATIVE terms ("does more per dollar", "a lot of money for what it is"). You may NEVER
+  state a specific price, quote a dollar figure, or claim one product costs a set amount
+  more or less than another. Same discipline as the rest: never claim to check what you
+  can't check.
+- Constraints introduce NO health claim. Every health point still traces to a matched KB
+  ingredient or the product's nutrition data.
+
 HARD LINES — when hardLinesViolated is non-empty, the user drew an absolute and this
 product crosses it:
 - LEAD with it, before any other point. Name the line they set and the exact ingredient
@@ -163,11 +184,15 @@ export function sanitizeAffirmed(affirmed) {
  * Build the user-message payload for the note call: tier + goal + non-negotiables
  * + the sanitized flagged list. Nothing else. This is the ONLY data the model sees.
  */
-export function buildNoteInput({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines }) {
+export function buildNoteInput({ tier, goal, nonNegotiables, constraints, matched, affirmed, focus, hardLines }) {
   const sig = focus?.signals || {};
   return {
     goal: str(goal) || 'general',
     nonNegotiables: Array.isArray(nonNegotiables) ? nonNegotiables.map(str).filter(Boolean) : [],
+    // The shopper's circumstances (budget / short on time / picky kids / no kitchen /
+    // cooking for one). They shape emphasis + swap choice only — the tier is already
+    // decided by the engine and nothing here can move it. No health claim, no price.
+    constraints: Array.isArray(constraints) ? constraints.map(str).filter(Boolean) : [],
     tier,
     flagged: sanitizeFlagged(matched),
     // Whole foods the engine affirmed. Same claim lock as `flagged`. These are
@@ -249,8 +274,8 @@ async function callNote({ input, corrective }) {
  * @returns {Promise<{ note:string, swap:string|null }>}
  * @throws  Error('verdict-note-unparseable') when both attempts fail to parse.
  */
-export async function composeNote({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines }) {
-  const input = buildNoteInput({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines });
+export async function composeNote({ tier, goal, nonNegotiables, constraints, matched, affirmed, focus, hardLines }) {
+  const input = buildNoteInput({ tier, goal, nonNegotiables, constraints, matched, affirmed, focus, hardLines });
 
   let parsed = parseNoteJSON(await callNote({ input, corrective: false }));
   if (!parsed) parsed = parseNoteJSON(await callNote({ input, corrective: true }));

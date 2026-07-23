@@ -15,7 +15,7 @@ const WEIGHT_PROFILE_COLUMNS =
 const PROFILE_COLUMNS = `${BASE_PROFILE_COLUMNS}, ${WEIGHT_PROFILE_COLUMNS}`;
 // Grocery-coach columns (Step 6). Tried as the widest tier; getFullProfile falls
 // back if the migration hasn't been applied so an existing profile is never lost.
-const COACH_PROFILE_COLUMNS = 'coach_goal, non_negotiables, focuses';
+const COACH_PROFILE_COLUMNS = 'coach_goal, non_negotiables, focuses, constraints';
 const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`;
 
 /** Fetch a user's goals, creating defaults on first use. */
@@ -122,12 +122,13 @@ export async function saveOnboardingProfile(userId, profile = {}, goals = {}) {
  * Marks the user onboarded. Upsert touches only these columns, so an existing
  * profile's macros/weight fields are preserved. Returns the saved row.
  */
-export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [], focuses = [] } = {}) {
+export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [], focuses = [], constraints = [] } = {}) {
   const row = {
     user_id: userId,
     coach_goal: coach_goal || null,
     non_negotiables: Array.isArray(non_negotiables) ? non_negotiables : [],
     focuses: Array.isArray(focuses) ? focuses : [],
+    constraints: Array.isArray(constraints) ? constraints : [],
     onboarded: true,
     updated_at: new Date().toISOString(),
   };

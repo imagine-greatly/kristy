@@ -104,35 +104,22 @@ export const COACH_GOALS = [
     blurb: 'Fuel that earns its place.',
     payoff: "Eating for performance — I'll tell you fast whether something's real fuel or just marketed that way.",
   },
-  {
-    value: 'budget_clean',
-    chipLabel: 'Budget',
-    title: 'Budget-conscious clean eating',
-    noteLabel: 'eating clean on a budget',
-    readLabel: 'clean eating on a budget',
-    blurb: 'Clean food that respects the receipt.',
-    payoff: "Clean on a budget is my favorite problem. I'll tell you where the cheap pick is fine and where it isn't.",
-  },
-  {
-    value: 'kids_snacks',
-    chipLabel: 'Kids',
-    title: "Kids' snacks & lunches",
-    noteLabel: "shopping for kids' snacks and lunches",
-    readLabel: "kids' snacks",
-    blurb: 'Lunchbox staples, read properly.',
-    payoff: "Kids' snacks are where the dyes and the sugar hide. I'll flag them and name something they'll still eat.",
-  },
 ];
 
-// Legacy coach_goal values from before the reposition. Existing rows may still hold
-// these; map them onto the closest new goal so no fitness word ever leaks into the
-// UI (the resolvers below go through this). New picks always write a new value.
+// Legacy coach_goal values. Existing rows may still hold these; map them onto the
+// closest current goal so no retired/fitness word ever leaks into the UI (the
+// resolvers below go through this). New picks always write a current value.
+//   budget_clean / kids_snacks were RETIRED as goals — they're circumstances, not
+//   directions — and are now goal=eating_cleaner + a constraint (see resolveConstraints
+//   + CONSTRAINTS below). The goal half maps here; the constraint half is injected there.
 const LEGACY_ALIASES = {
   cut: 'eating_cleaner',
   recomp: 'high_protein',
   performance: 'high_protein',
   energy: 'low_sugar',
   'steady energy': 'low_sugar',
+  budget_clean: 'eating_cleaner',
+  kids_snacks: 'eating_cleaner',
 };
 
 // Hard lines — the user's declared absolutes. `value` is the string the server's
@@ -173,6 +160,41 @@ export const FOCUSES = [
   { value: 'processed_fats', label: 'Watching processed fats' },
   { value: 'additive_sensitive', label: 'Additive-sensitive' },
 ];
+
+// Constraints (fourth preference dimension) — the real-life circumstances of the
+// person shopping: budget, time, kids, kitchen, portions. Orthogonal to goals and
+// focuses; they compose freely with both (high-protein AND on a budget AND short on
+// time at once). Multi-select, optional, never pre-checked. They shape the List and
+// the note's emphasis, and NEVER move a verdict — so they carry no health claim.
+// Values mirror server/lib/taxonomy.js CONSTRAINTS; keep them in sync.
+export const CONSTRAINTS = [
+  { value: 'budget', label: 'Shopping on a budget', blurb: 'Stretch the cart without eating garbage.' },
+  { value: 'short_on_time', label: 'Short on time', blurb: 'Little or no cooking. Fast wins.' },
+  { value: 'picky_kids', label: 'Picky kids', blurb: 'It has to actually get eaten.' },
+  { value: 'no_kitchen', label: 'No real kitchen', blurb: 'Minimal equipment — dorm, office, small space.' },
+  { value: 'cooking_for_one', label: 'Cooking for one', blurb: "Small portions, nothing that spoils before you finish it." },
+];
+
+// Section copy for the constraints picker (onboarding + switcher).
+export const CONSTRAINTS_SECTION = {
+  title: 'What are you working with?',
+  sub: "Tell me your situation and I'll shop around it. Optional.",
+};
+
+// The two retired goals map to a constraint. When a stored profile still holds one of
+// them, surface the matching constraint at read time so the List/note act on it without
+// a data migration. Combines with any constraints the user set explicitly.
+const RETIRED_GOAL_CONSTRAINT = { budget_clean: 'budget', kids_snacks: 'picky_kids' };
+
+/** The user's active constraints, with the retired-goal constraint folded in. */
+export function resolveConstraints(profile) {
+  const cur = Array.isArray(profile?.constraints) ? profile.constraints : [];
+  const inject = RETIRED_GOAL_CONSTRAINT[profile?.coach_goal];
+  return inject && !cur.includes(inject) ? [...cur, inject] : cur;
+}
+
+/** A constraint's display label. '' for an unknown value. */
+export const constraintLabel = (v) => CONSTRAINTS.find((c) => c.value === v)?.label || '';
 
 // The one-time, in-voice disclaimer shown the first time ANY focus is turned on.
 export const FOCUS_DISCLAIMER =

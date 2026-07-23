@@ -16,7 +16,7 @@ const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export default function ListMoment({ goal, nonNegotiables = [], focuses = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
+export default function ListMoment({ goal, nonNegotiables = [], focuses = [], constraints = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
   const [list, setList] = useState(() => loadCachedList());
   const [premium, setPremium] = useState(premiumProp);
   const [loading, setLoading] = useState(() => loadCachedList() == null);
@@ -27,7 +27,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], on
   useEffect(() => {
     let alive = true;
     (async () => {
-      const { list: fresh, premium: prem } = await fetchList({ goal, nonNegotiables, focuses });
+      const { list: fresh, premium: prem } = await fetchList({ goal, nonNegotiables, focuses, constraints });
       if (!alive) return;
       if (fresh) setList(fresh);
       setPremium(prem);
@@ -65,7 +65,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], on
 
   const rebuild = async () => {
     trackEvent('list-build', { goal, source: 'rebuild' });
-    const { list: fresh, premium: prem } = await rebuildList({ goal, nonNegotiables, focuses });
+    const { list: fresh, premium: prem } = await rebuildList({ goal, nonNegotiables, focuses, constraints });
     if (fresh) setList(fresh);
     setPremium(prem);
   };

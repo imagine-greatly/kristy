@@ -7,14 +7,14 @@
 
 import express from 'express';
 import { searchIngredients } from '../lib/hardLines.js';
-import { GOALS, FOCUSES, HARD_LINES } from '../lib/taxonomy.js';
+import { GOALS, FOCUSES, HARD_LINES, CONSTRAINTS } from '../lib/taxonomy.js';
 import { interpretPreferences } from '../lib/preferenceMap.js';
 
 const router = express.Router();
 
 /** GET /api/preferences/taxonomy — the enumerable preference set. */
 router.get('/preferences/taxonomy', (_req, res) => {
-  res.json({ goals: GOALS, focuses: FOCUSES, hardLines: HARD_LINES });
+  res.json({ goals: GOALS, focuses: FOCUSES, hardLines: HARD_LINES, constraints: CONSTRAINTS });
 });
 
 /** GET /api/ingredients/search?q= — names + aliases, for the custom hard-line picker. */

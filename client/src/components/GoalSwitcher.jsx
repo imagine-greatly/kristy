@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { CloseIcon } from './Icons.jsx';
-import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES } from '../lib/coachGoals.js';
+import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS, CONSTRAINTS_SECTION } from '../lib/coachGoals.js';
 import { searchIngredients, interpretPreferences, customLineLabel, isCustomLine } from '../lib/preferences.js';
 
 /* ═══════════════════════ Goal switcher — the chip's quick mode switch ═══════════════════════
@@ -18,9 +18,11 @@ export default function GoalSwitcher({
   goal,
   focuses = [],
   nonNegotiables = [],
+  constraints = [],
   onPickGoal,
   onToggleFocus,
   onToggleNonNegotiable,
+  onToggleConstraint,
   onClose,
 }) {
   return (
@@ -78,6 +80,26 @@ export default function GoalSwitcher({
             })}
           </div>
 
+          <h3 style={styles.section}>{CONSTRAINTS_SECTION.title}</h3>
+          <p style={styles.sub}>{CONSTRAINTS_SECTION.sub}</p>
+          <div style={styles.chips}>
+            {CONSTRAINTS.map((c) => {
+              const on = constraints.includes(c.value);
+              return (
+                <button
+                  key={c.value}
+                  type="button"
+                  onClick={() => onToggleConstraint(c.value)}
+                  aria-pressed={on}
+                  style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
+                >
+                  {c.label}
+                  {on ? '  ✓' : ''}
+                </button>
+              );
+            })}
+          </div>
+
           <h3 style={styles.section}>Hard lines</h3>
           <p style={styles.sub}>I&rsquo;ll hold these on every product.</p>
           <div style={styles.chips}>
@@ -124,9 +146,11 @@ export default function GoalSwitcher({
             goal={goal}
             focuses={focuses}
             nonNegotiables={nonNegotiables}
+            constraints={constraints}
             onPickGoal={onPickGoal}
             onToggleFocus={onToggleFocus}
             onToggleNonNegotiable={onToggleNonNegotiable}
+            onToggleConstraint={onToggleConstraint}
           />
         </div>
       </div>
@@ -208,7 +232,7 @@ function CustomLineSearch({ selected, onAdd }) {
    fixed taxonomy and filters the result against it, so nothing free-form can
    reach the engine. We show what it parsed as chips for the user to confirm —
    never applied silently — and Kristy says plainly what she couldn't map. */
-function FreeTextIntake({ goal, focuses, nonNegotiables, onPickGoal, onToggleFocus, onToggleNonNegotiable }) {
+function FreeTextIntake({ goal, focuses, nonNegotiables, constraints = [], onPickGoal, onToggleFocus, onToggleNonNegotiable, onToggleConstraint }) {
   const [text, setText] = useState('');
   const [state, setState] = useState('idle'); // idle | loading | parsed | error
   const [parsed, setParsed] = useState(null);
@@ -230,6 +254,7 @@ function FreeTextIntake({ goal, focuses, nonNegotiables, onPickGoal, onToggleFoc
     if (parsed.goal && parsed.goal !== goal) onPickGoal(parsed.goal);
     parsed.focuses.forEach((f) => { if (!focuses.includes(f)) onToggleFocus(f); });
     parsed.hardLines.forEach((h) => { if (!nonNegotiables.includes(h)) onToggleNonNegotiable(h); });
+    (parsed.constraints || []).forEach((c) => { if (!constraints.includes(c)) onToggleConstraint?.(c); });
     setParsed(null);
     setText('');
     setState('idle');
@@ -239,9 +264,12 @@ function FreeTextIntake({ goal, focuses, nonNegotiables, onPickGoal, onToggleFoc
     COACH_GOALS.find((g) => g.value === v)?.title ||
     FOCUSES.find((f) => f.value === v)?.label ||
     NON_NEGOTIABLES.find((n) => n.value === v)?.label ||
+    CONSTRAINTS.find((c) => c.value === v)?.label ||
     (isCustomLine(v) ? customLineLabel(v) : v);
 
-  const picked = parsed ? [parsed.goal, ...parsed.focuses, ...parsed.hardLines].filter(Boolean) : [];
+  const picked = parsed
+    ? [parsed.goal, ...parsed.focuses, ...parsed.hardLines, ...(parsed.constraints || [])].filter(Boolean)
+    : [];
 
   return (
     <div style={styles.freeWrap}>

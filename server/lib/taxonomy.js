@@ -23,9 +23,40 @@ export const GOALS = [
   { value: 'muscle_strength', label: 'Muscle & strength' },
   { value: 'pregnancy_postpartum', label: 'Pregnancy & postpartum' },
   { value: 'athlete_performance', label: 'Athlete / performance' },
-  { value: 'budget_clean', label: 'Budget-conscious clean eating' },
-  { value: 'kids_snacks', label: "Kids' snacks & lunches" },
 ];
+
+// CONSTRAINTS — the fourth preference dimension: the real-life realities of the
+// person shopping. Orthogonal to goals (what you're shopping TOWARD) and focuses
+// (health things to WATCH); they compose freely with both. A shopper can be
+// high-protein AND on a budget AND short on time AND feeding picky kids at once —
+// nothing here forces a choice between those. Constraints introduce NO health claim,
+// so the claim lock is unaffected; they shape the LIST heavily and the note lightly,
+// and NEVER move a verdict tier. Multi-select, optional, never pre-checked.
+export const CONSTRAINTS = [
+  { value: 'budget', label: 'Shopping on a budget' },
+  { value: 'short_on_time', label: 'Short on time' },
+  { value: 'picky_kids', label: 'Picky kids' },
+  { value: 'no_kitchen', label: 'No real kitchen' },
+  { value: 'cooking_for_one', label: 'Cooking for one' },
+];
+
+// Two entries used to live as GOALS but were really constraints — a circumstance,
+// not a shopping direction. They're resolved at READ TIME so existing rows need no
+// data migration and no retired goal ever reaches the engine or UI: the goal maps to
+// "Eating cleaner" and the matching constraint is switched on. ("Feeding a family"
+// stays a goal — whose cart this is — while "picky kids" is a constraint on it.)
+export const RETIRED_GOAL_CONSTRAINT = {
+  budget_clean: 'budget',
+  kids_snacks: 'picky_kids',
+};
+
+/** Resolve a stored (goal, constraints) pair, migrating the two retired goals. */
+export function migratePreferences({ goal = null, constraints = [] } = {}) {
+  const list = Array.isArray(constraints) ? [...constraints] : [];
+  const inject = RETIRED_GOAL_CONSTRAINT[goal];
+  if (inject && !list.includes(inject)) list.push(inject);
+  return { goal: inject ? 'eating_cleaner' : goal || null, constraints: list };
+}
 
 export const FOCUSES = [
   { value: 'lower_sugar', label: 'Watching added sugar' },
@@ -49,7 +80,9 @@ export const HARD_LINES = Object.entries(HARD_LINE_RULES).map(([value, rule]) =>
 export const GOAL_VALUES = GOALS.map((g) => g.value);
 export const FOCUS_VALUES = FOCUSES.map((f) => f.value);
 export const HARD_LINE_VALUES = HARD_LINES.map((h) => h.value);
+export const CONSTRAINT_VALUES = CONSTRAINTS.map((c) => c.value);
 
 export const labelForGoal = (v) => GOALS.find((g) => g.value === v)?.label || '';
 export const labelForFocus = (v) => FOCUSES.find((f) => f.value === v)?.label || '';
 export const labelForHardLine = (v) => HARD_LINES.find((h) => h.value === v)?.label || '';
+export const labelForConstraint = (v) => CONSTRAINTS.find((c) => c.value === v)?.label || '';

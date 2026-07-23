@@ -242,11 +242,11 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
 // escalation; guest → universal layer only (or a { gate } soft-gate).
 // `personalize:false` (authed, no stored goal) → universal layer + the in-card
 // goal ask, no note composed and no free taste consumed.
-async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize = true, isGuest }) {
+async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize = true, isGuest }) {
   const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
   const body = isGuest
     ? { ingredients }
-    : { ingredients, goal, nonNegotiables, focuses, nutrition, personalize };
+    : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
@@ -258,7 +258,7 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrit
   throw new Error("Couldn't reach the verdict service — try again.");
 }
 
-export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [], personalize = true }) {
+export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [], constraints = [], personalize = true }) {
   if (IS_DEMO) {
     await delay(mode === 'label' ? 1100 : 600);
     return demoScanCard({ personalize });
@@ -277,7 +277,7 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
   }
 
   const nutrition = ex?.nutrition || null;
-  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize, isGuest });
+  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, isGuest });
   if (verdict?.gate) return { gate: true, reason: verdict.reason };
   if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
 
@@ -289,10 +289,10 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
 // Recompose the personalized (goal-aware) verdict for a product already scanned —
 // the in-card "tap a goal → reveal my read in place" path. Reuses the extracted
 // ingredients + nutrition, so there's no second extraction. Authed only.
-export async function requestGoalNote({ ingredients, nutrition = null, goal = '', nonNegotiables = [], focuses = [] }) {
+export async function requestGoalNote({ ingredients, nutrition = null, goal = '', nonNegotiables = [], focuses = [], constraints = [] }) {
   if (IS_DEMO) {
     await delay(700);
     return demoScanCard({ personalize: true }).verdict;
   }
-  return fetchVerdict({ ingredients, goal, nonNegotiables, focuses, nutrition, personalize: true, isGuest: false });
+  return fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize: true, isGuest: false });
 }

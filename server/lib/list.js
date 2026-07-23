@@ -128,10 +128,77 @@ const LEGACY_TEMPLATE_ALIASES = {
   recomp: 'high_protein',
   performance: 'high_protein',
   energy: 'low_sugar',
+  // The two retired goals resolve to the clean-eating template (they're now goal +
+  // constraint — see migratePreferences); kept here so a pre-migration goal id still
+  // renders a sensible list.
+  budget_clean: 'eating_cleaner',
+  kids_snacks: 'eating_cleaner',
 };
 
 // Non-negotiable → the item tags it excludes.
 const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
+
+// PREMIUM: a CONSTRAINT pulls constraint-appropriate whole-food anchors onto the
+// list — cheap-per-nutrition for budget, no-/low-prep for time & no-kitchen, familiar
+// staples for picky kids, portionable for cooking-for-one. Every item is a plain
+// grocery item (the list is a list, not a note) and carries NO price — budget means
+// cost-conscious SELECTION, never a price lookup, which Kristy doesn't have. Deduped
+// against the base + focus items by name.
+const CONSTRAINT_ITEMS = {
+  budget: [
+    { name: 'Eggs', category: 'Protein' },
+    { name: 'Dried or canned beans', category: 'Staples' },
+    { name: 'Oats', category: 'Staples' },
+    { name: 'Brown rice', category: 'Staples' },
+    { name: 'Frozen vegetables', category: 'Produce' },
+    { name: 'Canned sardines or salmon', category: 'Protein' },
+    { name: 'Whole chicken', category: 'Protein' },
+    { name: 'Potatoes', category: 'Produce' },
+  ],
+  short_on_time: [
+    { name: 'Pre-washed salad greens', category: 'Produce' },
+    { name: 'Rotisserie chicken', category: 'Protein' },
+    { name: 'Canned tuna or salmon', category: 'Protein' },
+    { name: 'Frozen vegetables', category: 'Produce' },
+    { name: 'Eggs', category: 'Protein' },
+  ],
+  picky_kids: [
+    { name: 'Whole-milk yogurt (plain)', category: 'Protein', tags: ['dairy'] },
+    { name: 'Real cheese sticks', category: 'Protein', tags: ['dairy'] },
+    { name: 'Bananas and apples', category: 'Produce' },
+    { name: 'Oats', category: 'Staples' },
+  ],
+  no_kitchen: [
+    { name: 'Canned fish', category: 'Protein' },
+    { name: 'Nut butter (just nuts)', category: 'Snacks' },
+    { name: 'Microwave brown rice', category: 'Staples' },
+    { name: 'Whole fruit', category: 'Produce' },
+  ],
+  cooking_for_one: [
+    { name: 'Eggs', category: 'Protein' },
+    { name: 'Frozen vegetables', category: 'Produce' },
+    { name: 'Canned fish', category: 'Protein' },
+    { name: 'Oats', category: 'Staples' },
+  ],
+};
+
+// The clause Kristy adds to the list intro when a constraint is active, in her voice
+// (reads after "Kept it "). Names the constraint plainly — never a price.
+const CONSTRAINT_INTRO = {
+  budget: 'easy on the receipt',
+  short_on_time: 'fast — little to no cooking',
+  picky_kids: 'kid-friendly',
+  no_kitchen: 'no-cook where I could',
+  cooking_for_one: 'portioned for one',
+};
+
+function constraintClause(constraints) {
+  const frags = (constraints || []).map((c) => CONSTRAINT_INTRO[c]).filter(Boolean);
+  if (!frags.length) return '';
+  const joined =
+    frags.length > 1 ? `${frags.slice(0, -1).join(', ')} and ${frags[frags.length - 1]}` : frags[0];
+  return ` Kept it ${joined}.`;
+}
 
 // PREMIUM: a dietary focus pulls its own whole-food anchors onto the list. Every
 // item is a plain grocery item — no health claim (the list is a list, not a note).
@@ -187,7 +254,7 @@ function swapItems(nextList) {
  * DB — the gated branches never run for a non-premium caller, so the capability can't
  * be tampered into existence.
  */
-export function generateList({ goal, nonNegotiables = [], focuses = [], nextList = [], signals = {}, premium = false }) {
+export function generateList({ goal, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = false }) {
   const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
 
   const excluded = new Set();
@@ -197,22 +264,27 @@ export function generateList({ goal, nonNegotiables = [], focuses = [], nextList
 
   const base = tpl.items.filter((it) => !blocked(it));
 
-  // PREMIUM — focuses shape the list. Append focus items that clear the same filters
-  // and aren't already present (dedup by name). Free lists ignore focuses entirely.
+  // PREMIUM — focuses AND constraints shape the list. Append their anchor items where
+  // they clear the same filters and aren't already present (dedup by name). Free lists
+  // ignore both entirely. Constraints come after focuses so a health watch leads.
   const present = new Set(base.map((it) => it.name.toLowerCase()));
-  const focusItems = [];
+  const extra = [];
   if (premium) {
-    for (const f of focuses || []) {
-      for (const it of FOCUS_ITEMS[f] || []) {
-        const key = it.name.toLowerCase();
-        if (blocked(it) || present.has(key)) continue;
-        present.add(key);
-        focusItems.push(it);
+    const pull = (table, keys) => {
+      for (const k of keys || []) {
+        for (const it of table[k] || []) {
+          const key = it.name.toLowerCase();
+          if (blocked(it) || present.has(key)) continue;
+          present.add(key);
+          extra.push(it);
+        }
       }
-    }
+    };
+    pull(FOCUS_ITEMS, focuses);
+    pull(CONSTRAINT_ITEMS, constraints);
   }
 
-  const items = [...base, ...focusItems].map((it) => ({
+  const items = [...base, ...extra].map((it) => ({
     id: rid(),
     name: it.name,
     category: it.category,
@@ -223,7 +295,11 @@ export function generateList({ goal, nonNegotiables = [], focuses = [], nextList
   // PREMIUM — the Haul's flagged items ride in front as swap reminders.
   const swaps = premium ? swapItems(nextList) : [];
 
-  return { goal: goal || null, intro: tpl.intro, items: [...swaps, ...items] };
+  // The intro names active constraints in Kristy's voice (premium only — free lists
+  // don't act on constraints, so they don't claim to).
+  const intro = tpl.intro + (premium ? constraintClause(constraints) : '');
+
+  return { goal: goal || null, intro, items: [...swaps, ...items] };
 }
 
 /**

@@ -75,6 +75,10 @@ alter table user_goals add column if not exists coach_goal text;
 alter table user_goals add column if not exists non_negotiables text[] default '{}';
 -- Dietary focuses (extension): self-selected preferences fed into every /verdict.
 alter table user_goals add column if not exists focuses text[] default '{}';
+-- Constraints (fourth preference dimension): the shopper's real-life circumstances
+-- (budget / short on time / picky kids / no kitchen / cooking for one). Shape the List
+-- and the note's emphasis; never a health claim, never a verdict tier.
+alter table user_goals add column if not exists constraints text[] default '{}';
 -- Free personalized-note allowance (Step 11): the first N tastes are free.
 alter table user_goals add column if not exists free_notes_used int default 0;
 

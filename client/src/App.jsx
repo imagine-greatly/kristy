@@ -25,6 +25,7 @@ import {
   ackFocusDisclaimer,
   coachOnboardingSkipped,
   skipCoachOnboarding,
+  resolveConstraints,
 } from './lib/coachGoals.js';
 import { loadGuestState, clearGuestState } from './lib/guestState.js';
 import { pushSwaps } from './lib/list.js';
@@ -286,6 +287,7 @@ export default function App() {
         coach_goal: value,
         non_negotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        constraints: profile?.constraints || [],
       });
     } catch {
       /* keep optimistic value */
@@ -297,16 +299,17 @@ export default function App() {
   // user gets their free tastes first and starts the trial explicitly at the gate.
   // If focuses were chosen, the in-context note stood in for the one-time coach-not-
   // doctor disclaimer, so mark it acknowledged rather than firing the modal later.
-  async function handleCoachOnboardingComplete({ coach_goal, non_negotiables, focuses }) {
-    setProfile((p) => ({ ...(p || {}), coach_goal, non_negotiables, focuses, onboarded: true }));
+  async function handleCoachOnboardingComplete({ coach_goal, non_negotiables, focuses, constraints }) {
+    setProfile((p) => ({ ...(p || {}), coach_goal, non_negotiables, focuses, constraints, onboarded: true }));
     if (focuses?.length && !focusDisclaimerAcked()) ackFocusDisclaimer();
     trackEvent('coach_onboarded', {
       goal: coach_goal,
       focuses: (focuses || []).length,
       hardLines: (non_negotiables || []).length,
+      constraints: (constraints || []).length,
     });
     try {
-      await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
+      await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses, constraints });
     } catch {
       /* keep optimistic values */
     }
@@ -332,6 +335,7 @@ export default function App() {
         goal: goalNoteLabel(value),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        constraints: resolveConstraints(profile),
       });
       setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
       if (verdict?.tier) trackEvent('verdict', { tier: verdict.tier, gated: !!verdict.gated, goalSet: true });
@@ -368,6 +372,19 @@ export default function App() {
     setProfile((p) => ({ ...(p || {}), non_negotiables: next }));
     try {
       await saveProfileFields(userId, { non_negotiables: next });
+    } catch {
+      /* keep optimistic value */
+    }
+  }
+
+  // Toggle a Constraint (circumstance) — from the switcher's "what are you working
+  // with?" section. No disclaimer: constraints aren't health, they're your situation.
+  async function handleToggleConstraint(value) {
+    const cur = profile?.constraints || [];
+    const next = cur.includes(value) ? cur.filter((x) => x !== value) : [...cur, value];
+    setProfile((p) => ({ ...(p || {}), constraints: next }));
+    try {
+      await saveProfileFields(userId, { constraints: next });
     } catch {
       /* keep optimistic value */
     }
@@ -518,6 +535,7 @@ export default function App() {
           goal: goalNoteLabel(profile?.coach_goal),
           nonNegotiables: profile?.non_negotiables || [],
           focuses: profile?.focuses || [],
+          constraints: resolveConstraints(profile),
         });
         setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
       } catch {
@@ -742,6 +760,7 @@ export default function App() {
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        constraints: resolveConstraints(profile),
         // No stored goal → universal layer + the in-card goal ask (no note, no taste).
         personalize: !!profile?.coach_goal,
       });
@@ -792,6 +811,7 @@ export default function App() {
         goal: goalNoteLabel(profile?.coach_goal),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
+        constraints: resolveConstraints(profile),
         personalize: !!profile?.coach_goal,
       });
       applyScanResult(result, 'label');
@@ -1119,6 +1139,7 @@ export default function App() {
               goal={profile?.coach_goal}
               nonNegotiables={profile?.non_negotiables || []}
               focuses={profile?.focuses || []}
+              constraints={resolveConstraints(profile)}
               onSetGoal={() => setSwitcherOpen(true)}
               onAsk={askAboutList}
               premium={subscription?.premium ?? false}
@@ -1204,9 +1225,11 @@ export default function App() {
           goal={profile?.coach_goal || null}
           focuses={profile?.focuses || []}
           nonNegotiables={profile?.non_negotiables || []}
+          constraints={profile?.constraints || []}
           onPickGoal={handleSwitcherPickGoal}
           onToggleFocus={handleToggleFocus}
           onToggleNonNegotiable={handleToggleNonNegotiable}
+          onToggleConstraint={handleToggleConstraint}
           onClose={() => setSwitcherOpen(false)}
         />
       )}

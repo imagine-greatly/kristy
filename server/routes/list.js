@@ -10,6 +10,7 @@ import {
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { generateList, mergePendingSwaps, EMPTY_SIGNALS } from '../lib/list.js';
+import { migratePreferences } from '../lib/taxonomy.js';
 
 // The List — server-persisted and server-gated (Step 8 → durable).
 //
@@ -27,8 +28,15 @@ import { generateList, mergePendingSwaps, EMPTY_SIGNALS } from '../lib/list.js';
 const router = Router();
 
 function profileInputs(profile) {
-  return {
+  // Migrate the two retired goals (budget_clean / kids_snacks) → goal + constraint at
+  // read time, so a pre-migration DB row shops correctly with no data backfill.
+  const { goal, constraints } = migratePreferences({
     goal: profile?.coach_goal || null,
+    constraints: Array.isArray(profile?.constraints) ? profile.constraints : [],
+  });
+  return {
+    goal,
+    constraints,
     nonNegotiables: Array.isArray(profile?.non_negotiables) ? profile.non_negotiables : [],
     focuses: Array.isArray(profile?.focuses) ? profile.focuses : [],
   };
@@ -72,7 +80,7 @@ router.get('/list', requireAuth, async (req, res) => {
   try {
     const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goal, nonNegotiables, focuses } = profileInputs(profile);
+    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
@@ -82,7 +90,7 @@ router.get('/list', requireAuth, async (req, res) => {
     let consumedPending = false;
     if (!stored) {
       // First use → generate from the profile. Premium consumes pending swaps.
-      list = generateList({ goal, nonNegotiables, focuses, nextList: pending, signals, premium });
+      list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
       consumedPending = premium && pending.length > 0;
       await persist(userId, { list, signals });
     } else if (premium && pending.length) {
@@ -128,12 +136,12 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
   try {
     const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goal, nonNegotiables, focuses } = profileInputs(profile);
+    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
 
-    const list = generateList({ goal, nonNegotiables, focuses, nextList: pending, signals, premium });
+    const list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
     await persist(userId, { list, signals });
     if (premium && pending.length) {
       try { await clearPendingSwaps(userId); } catch { /* best-effort */ }

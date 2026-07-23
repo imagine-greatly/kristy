@@ -39,6 +39,12 @@ function readBody(body = {}) {
     focuses: Array.isArray(body.focuses)
       ? body.focuses.map((s) => String(s || '').trim()).filter(Boolean)
       : [],
+    // The shopper's circumstances (Constraints). They inform the note's emphasis + swap
+    // only; they are deliberately NOT passed to the engine, so a constraint can never
+    // move a tier or restore the seal.
+    constraints: Array.isArray(body.constraints)
+      ? body.constraints.map((s) => String(s || '').trim()).filter(Boolean)
+      : [],
     nutrition: body.nutrition && typeof body.nutrition === 'object' ? body.nutrition : null,
     // The grocery-coach entry restructure: a user without a stored goal scans and
     // gets the universal layer only, with the in-card goal ask where the note would
@@ -72,7 +78,7 @@ export const verdictRouter = Router();
 // userRateLimit runs after requireAuth (it reads req.user.id) and caps the
 // combined per-user model spend across the authed cost-bearing endpoints.
 verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
-  const { ingredients, goal, nonNegotiables, focuses, nutrition, personalize } = readBody(req.body);
+  const { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
@@ -120,7 +126,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
     // the claim-locked Haiku note.
     const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines } = evaluateIngredients(ingredients, { focuses, nutrition, hardLines: nonNegotiables });
-    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, matched, affirmed, focus, hardLines });
+    const { note, swap } = await composeNote({ tier, goal, nonNegotiables, constraints, matched, affirmed, focus, hardLines });
     const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses }));
     if (consumesFree) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));

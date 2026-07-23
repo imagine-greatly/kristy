@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
-import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, FOCUS_DISCLAIMER } from '../lib/coachGoals.js';
+import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS, CONSTRAINTS_SECTION, FOCUS_DISCLAIMER } from '../lib/coachGoals.js';
 
 /* ═══════════════════════ Coach onboarding — the front door ═══════════════════════
    The first thing a signed-in, goal-less user sees. This is where the coaching
@@ -18,11 +18,13 @@ import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, FOCUS_DISCLAIMER } from '../lib/
 export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null }) {
   // A guest who expressed a goal before signing in arrives with it pre-filled — start
   // past the goal step (Back returns to it to change). Otherwise start at the goal.
-  const [step, setStep] = useState(initialGoal ? 1 : 0); // 0 goal · 1 focuses · 2 hard lines
+  const [step, setStep] = useState(initialGoal ? 1 : 0); // 0 goal · 1 focuses · 2 constraints · 3 hard lines
   const [goal, setGoal] = useState(initialGoal);
   const [focuses, setFocuses] = useState([]);
+  const [constraints, setConstraints] = useState([]);
   const [nonNegotiables, setNonNegotiables] = useState([]);
   const [busy, setBusy] = useState(false);
+  const LAST_STEP = 3;
 
   const toggle = (list, setList, value) =>
     setList(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
@@ -36,7 +38,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
     if (busy || !goal) return;
     setBusy(true);
     // The parent persists (optimistically) and unmounts us by setting coach_goal.
-    onComplete({ coach_goal: goal, non_negotiables: nonNegotiables, focuses });
+    onComplete({ coach_goal: goal, non_negotiables: nonNegotiables, focuses, constraints });
   }
 
   return (
@@ -45,7 +47,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
         <div style={styles.top}>
           <span style={styles.logo}>Kristy</span>
           <div style={styles.dots} aria-hidden="true">
-            {[0, 1, 2].map((i) => (
+            {[0, 1, 2, 3].map((i) => (
               <span key={i} style={{ ...styles.dot, ...(i === step ? styles.dotOn : null) }} />
             ))}
           </div>
@@ -109,6 +111,30 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
 
           {step === 2 && (
             <>
+              <h2 style={styles.prompt}>{CONSTRAINTS_SECTION.title}</h2>
+              <p style={styles.sub}>{CONSTRAINTS_SECTION.sub}</p>
+              <div style={styles.chips}>
+                {CONSTRAINTS.map((c) => {
+                  const on = constraints.includes(c.value);
+                  return (
+                    <button
+                      key={c.value}
+                      type="button"
+                      onClick={() => toggle(constraints, setConstraints, c.value)}
+                      aria-pressed={on}
+                      style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
+                    >
+                      {c.label}
+                      {on ? '  ✓' : ''}
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
+
+          {step === 3 && (
+            <>
               <h2 style={styles.prompt}>Any hard lines?</h2>
               <p style={styles.sub}>
                 Optional. Things you never want in the cart &mdash; I&rsquo;ll hold them on every product.
@@ -144,12 +170,12 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
               Back
             </button>
           )}
-          {step === 1 && (
-            <button type="button" style={styles.primary} onClick={() => setStep(2)} disabled={busy}>
+          {(step === 1 || step === 2) && (
+            <button type="button" style={styles.primary} onClick={() => setStep((s) => s + 1)} disabled={busy}>
               Continue
             </button>
           )}
-          {step === 2 && (
+          {step === LAST_STEP && (
             <button type="button" style={styles.primary} onClick={finish} disabled={busy}>
               {busy ? 'Setting up…' : "That's everything — let's shop"}
             </button>

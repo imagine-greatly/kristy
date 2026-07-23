@@ -29,7 +29,7 @@ export async function searchIngredients(query) {
 
 /**
  * Map free text onto the preference taxonomy.
- * @returns {{ goal, focuses, hardLines, unmapped, reply }}
+ * @returns {{ goal, focuses, hardLines, constraints, unmapped, reply }}
  * @throws on network/model failure so the caller can show Kristy's fallback.
  */
 export async function interpretPreferences(text) {

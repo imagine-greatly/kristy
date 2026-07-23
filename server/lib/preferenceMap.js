@@ -13,8 +13,8 @@
 
 import { anthropic, MODEL } from './anthropic.js';
 import {
-  GOALS, FOCUSES, HARD_LINES,
-  GOAL_VALUES, FOCUS_VALUES, HARD_LINE_VALUES,
+  GOALS, FOCUSES, HARD_LINES, CONSTRAINTS,
+  GOAL_VALUES, FOCUS_VALUES, HARD_LINE_VALUES, CONSTRAINT_VALUES,
 } from './taxonomy.js';
 import { searchIngredients } from './hardLines.js';
 
@@ -25,12 +25,21 @@ export const PREFERENCE_MAP_SYSTEM = `You are the intake mapper for Kristy, a gr
 The user describes how they want to shop, in their own words. You map that onto a
 FIXED taxonomy. You are a classifier, not an author.
 
+The four dimensions, kept distinct:
+- goal: what they're shopping TOWARD (a direction). At most one.
+- focuses: health things to WATCH (a preference about themselves).
+- hard_lines: what they REFUSE — ingredients/patterns they never want in the cart.
+- constraints: their real-life CIRCUMSTANCES — budget, short on time, picky kids, no
+  kitchen, cooking for one. These combine freely with any goal/focus. "cheap" or "on a
+  budget" → the budget constraint; "no time to cook" → short on time; "kids won't eat it"
+  → picky kids. A constraint is a situation, never a health claim.
+
 ABSOLUTE RULES:
 - You may ONLY return values from the lists provided in the DATA payload. Never invent
-  a goal, focus, or hard line. Never return a value that is not in those lists.
+  a goal, focus, hard line, or constraint. Never return a value that is not in those lists.
 - Pick AT MOST ONE goal — the closest match. If nothing is close, return null.
-- Focuses and hard lines are subsets; return only what the user actually asked for.
-  Do not pad the list with things they didn't say.
+- Focuses, hard lines, and constraints are subsets; return only what the user actually
+  asked for. Do not pad any list with things they didn't say.
 - Anything you could NOT map goes in "unmapped" as a short phrase in the user's own
   words. Be honest here — this is what Kristy tells them she couldn't do.
 - You are not a medical system. Never infer a diagnosis or a condition from what they
@@ -40,7 +49,7 @@ ABSOLUTE RULES:
 - Write nothing persuasive. No prose, no greeting.
 
 Return ONLY this JSON:
-{"goal": "<value>" or null, "focuses": ["<value>", ...], "hard_lines": ["<value>", ...], "unmapped": ["<phrase>", ...]}`;
+{"goal": "<value>" or null, "focuses": ["<value>", ...], "hard_lines": ["<value>", ...], "constraints": ["<value>", ...], "unmapped": ["<phrase>", ...]}`;
 
 /** Strip anything the model returned that isn't in the enum. The load-bearing guard. */
 export function filterToTaxonomy(parsed, allowedHardLines = HARD_LINE_VALUES) {
@@ -52,8 +61,11 @@ export function filterToTaxonomy(parsed, allowedHardLines = HARD_LINE_VALUES) {
   const hardLines = uniq((Array.isArray(parsed?.hard_lines) ? parsed.hard_lines : []).map(str)).filter((h) =>
     allowedHardLines.includes(h),
   );
+  const constraints = uniq((Array.isArray(parsed?.constraints) ? parsed.constraints : []).map(str)).filter((c) =>
+    CONSTRAINT_VALUES.includes(c),
+  );
   const unmapped = uniq((Array.isArray(parsed?.unmapped) ? parsed.unmapped : []).map(str).filter(Boolean));
-  return { goal, focuses, hardLines, unmapped };
+  return { goal, focuses, hardLines, constraints, unmapped };
 }
 
 export function parseMapJSON(text) {
@@ -79,11 +91,12 @@ export function parseMapJSON(text) {
  * her voice, so it's authored here rather than generated, and it can only ever
  * name values that already passed the taxonomy filter.
  */
-export function composeReply({ goal, focuses, hardLines, unmapped }, labels) {
+export function composeReply({ goal, focuses, hardLines, constraints = [], unmapped }, labels) {
   const set = [];
   if (goal) set.push(labels.goal(goal).toLowerCase());
   focuses.forEach((f) => set.push(labels.focus(f).toLowerCase()));
   hardLines.forEach((h) => set.push(labels.hardLine(h).toLowerCase()));
+  constraints.forEach((c) => set.push(labels.constraint(c).toLowerCase()));
 
   if (!set.length && !unmapped.length) return "I didn't catch a preference in that — tell me what you're shopping for and I'll set it up.";
 
@@ -98,7 +111,7 @@ export function composeReply({ goal, focuses, hardLines, unmapped }, labels) {
 /** Map free text onto the taxonomy. Returns { goal, focuses, hardLines, unmapped, reply }. */
 export async function interpretPreferences(text) {
   const input = str(text);
-  if (!input) return { goal: null, focuses: [], hardLines: [], unmapped: [], reply: '' };
+  if (!input) return { goal: null, focuses: [], hardLines: [], constraints: [], unmapped: [], reply: '' };
 
   // A custom hard line may name any KB ingredient, so the allowed set for THIS
   // call is the presets plus whatever the user's words actually surface in the KB.
@@ -112,6 +125,7 @@ export async function interpretPreferences(text) {
     user_text: input,
     goals: GOALS,
     focuses: FOCUSES,
+    constraints: CONSTRAINTS,
     hard_lines: [
       ...HARD_LINES.map((h) => ({ value: h.value, label: h.label })),
       ...custom.map((c) => ({ value: c.value, label: `no ${c.name.toLowerCase()}` })),
@@ -137,6 +151,7 @@ export async function interpretPreferences(text) {
     goal: (v) => GOALS.find((g) => g.value === v)?.label || v,
     focus: (v) => FOCUSES.find((f) => f.value === v)?.label || v,
     hardLine: (v) => HARD_LINES.find((h) => h.value === v)?.label || customLabel(v),
+    constraint: (v) => CONSTRAINTS.find((c) => c.value === v)?.label || v,
   };
 
   return { ...result, reply: composeReply(result, labels) };

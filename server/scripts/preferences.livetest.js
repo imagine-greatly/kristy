@@ -7,7 +7,7 @@ import 'dotenv/config';
 import { evaluateIngredients } from '../lib/verdictEngine.js';
 import { matchHardLines, searchIngredients, resolveHardLines } from '../lib/hardLines.js';
 import { filterToTaxonomy, interpretPreferences } from '../lib/preferenceMap.js';
-import { HARD_LINE_VALUES, FOCUS_VALUES, GOAL_VALUES } from '../lib/taxonomy.js';
+import { HARD_LINE_VALUES, FOCUS_VALUES, GOAL_VALUES, CONSTRAINT_VALUES } from '../lib/taxonomy.js';
 
 let fails = 0;
 const ck = (n, c) => { console.log(`  ${c ? '✓' : '✗ FAIL'} ${n}`); if (!c) fails++; };
@@ -59,6 +59,7 @@ const evil = filterToTaxonomy({
   goal: 'cure_diabetes',
   focuses: ['lower_sugar', 'reverse_insulin_resistance'],
   hard_lines: ['no seed oils', 'no_everything_i_dislike'],
+  constraints: ['budget', 'win_the_lottery'],
   unmapped: ['keto'],
 });
 ck('an invented goal is dropped', evil.goal === null);
@@ -66,8 +67,10 @@ ck('an invented focus is dropped, the real one kept',
   evil.focuses.length === 1 && evil.focuses[0] === 'lower_sugar');
 ck('an invented hard line is dropped, the real one kept',
   evil.hardLines.length === 1 && evil.hardLines[0] === 'no seed oils');
+ck('an invented constraint is dropped, the real one kept',
+  evil.constraints.length === 1 && evil.constraints[0] === 'budget');
 ck('every taxonomy value the mapper may emit is enumerable',
-  GOAL_VALUES.length > 0 && FOCUS_VALUES.length > 0 && HARD_LINE_VALUES.length > 0);
+  GOAL_VALUES.length > 0 && FOCUS_VALUES.length > 0 && HARD_LINE_VALUES.length > 0 && CONSTRAINT_VALUES.length > 0);
 
 if (!process.env.ANTHROPIC_API_KEY) {
   console.log('\n(ANTHROPIC_API_KEY unset — skipping the 2 live mapping checks)');
@@ -78,9 +81,13 @@ if (!process.env.ANTHROPIC_API_KEY) {
   ck('maps the mappable', a.goal === 'high_protein' && a.hardLines.includes('no seed oils'));
   ck('names what it could not map', a.unmapped.length > 0 && /keto/i.test(a.reply));
 
-  const b = await interpretPreferences("shopping for my kids' lunches, nothing with carrageenan");
+  // "kids' snacks" is no longer a goal — it's the picky_kids CONSTRAINT now. The
+  // circumstances ("cheap", "no time") map onto constraints, not goals/focuses.
+  const b = await interpretPreferences("cheap, no time to cook, kids won't eat fish, nothing with carrageenan");
   console.log(`    → ${b.reply}`);
-  ck('maps a goal + a custom-ish line', b.goal === 'kids_snacks' && b.hardLines.includes('no carrageenan'));
+  ck('maps circumstances onto constraints (budget + short_on_time + picky_kids)',
+    b.constraints.includes('budget') && b.constraints.includes('short_on_time') && b.constraints.includes('picky_kids'));
+  ck('still catches the hard line alongside the constraints', b.hardLines.includes('no carrageenan'));
 }
 
 console.log(fails ? `\n✗ ${fails} FAILED\n` : '\n✓ all checks passed\n');
