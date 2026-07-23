@@ -81,6 +81,10 @@ alter table user_goals add column if not exists focuses text[] default '{}';
 alter table user_goals add column if not exists constraints text[] default '{}';
 -- Free personalized-note allowance (Step 11): the first N tastes are free.
 alter table user_goals add column if not exists free_notes_used int default 0;
+-- Macro tracking (repositioning): calories/macros/meal-logging are now OPT-IN and
+-- OFF by default. Kristy is a grocery coach unless the user turns this on in
+-- Settings, at which point the meal-logging + weight-optimization pipeline returns.
+alter table user_goals add column if not exists macro_tracking boolean not null default false;
 
 -- The Haul (Step 7): every scanned product is recorded here so the Haul surface
 -- can aggregate the trip + week (distribution, item list, weekly read). A scan is

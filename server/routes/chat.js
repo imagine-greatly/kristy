@@ -1,12 +1,20 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
-import { buildProfileBlock, buildWeightBlock } from '../lib/prompts.js';
+import { buildProfileBlock, buildWeightBlock, buildPreferencesBlock } from '../lib/prompts.js';
 import { computeInsight } from '../lib/insights.js';
 import { pushToUser } from '../lib/push.js';
 import { resolveMeal, generateReply } from '../lib/chatEngine.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { detectHistoryRecall, WEIGHT_UPGRADE_LINE } from '../lib/historyRecall.js';
+import { migratePreferences } from '../lib/taxonomy.js';
+import { looksLikePerimeterQuestion } from '../lib/chatRouting.js';
+import {
+  matchEntries,
+  composeAnswer,
+  publicEntry,
+  NO_ANSWER,
+} from '../lib/perimeter.js';
 import {
   getFullProfile,
   getRecentMeals,
@@ -66,6 +74,42 @@ function buildWeightEvent(detected, trend, recalc) {
   return lines.join('\n');
 }
 
+/* ───────────────────────── Perimeter routing ─────────────────────────
+   A no-barcode QUESTION ("is wild or farmed salmon better?", "which cut for
+   stew?") is answered from the perimeter KB under its own claim lock — never
+   from the model's own knowledge, and never mistaken for a meal to log. We only
+   route questions (not statements or list commands), and only when the KB
+   actually matches, so "I had chicken and rice" and "add chicken to my list"
+   never get hijacked. Gating mirrors /api/perimeter/ask: free gets the KB
+   entry's own words; premium gets the personalized, claim-locked read. */
+
+const PERIMETER_UPSELL =
+  "That's the honest rundown. Want my read for YOUR cart — against your goal and your week — and a swap I'll drop on your list? That part's for members.";
+
+async function perimeterChatReply({ message, matched, premium, prefs }) {
+  if (premium) {
+    try {
+      const { answer } = await composeAnswer({
+        question: message,
+        goal: prefs.goal,
+        focuses: prefs.focuses,
+        hardLines: prefs.hardLines,
+        constraints: prefs.constraints,
+        entries: matched,
+      });
+      if (answer) return answer;
+    } catch (err) {
+      console.error('[kristy] chat perimeter compose error:', err?.message || err);
+      // fall through to the free KB read
+    }
+  }
+  // Free (or a premium compose that failed): the entry's OWN words — claim-safe,
+  // no model call.
+  const top = publicEntry(matched[0]);
+  const base = top.short_answer || top.detail || NO_ANSWER;
+  return premium ? base : `${base} ${PERIMETER_UPSELL}`;
+}
+
 router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const { message, conversationHistory = [], tzOffset } = req.body || {};
@@ -78,19 +122,77 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
   }
 
   try {
-    // 0. Is this a weight log? Decided up front so we can route around the food
-    //    path (no Nutritionix/meal save) when it is.
-    let detected = detectWeightLog(message);
+    // Fetch the profile up front — it decides the whole mode (macro tracking is
+    // opt-in, OFF by default) and carries the shopping preferences Kristy speaks
+    // through on every turn.
+    const profile = await getFullProfile(userId);
+    const macroTracking = !!profile.macro_tracking;
 
-    // 0a. Premium gate (one cached read per request). Free users keep meal
-    //     logging + today's conversation; the coaching layer (weight tracking,
-    //     history recall, insights) routes to an in-voice upgrade nudge instead.
+    const migrated = migratePreferences({
+      goal: profile.coach_goal,
+      constraints: profile.constraints,
+    });
+    const prefs = {
+      goal: migrated.goal,
+      focuses: Array.isArray(profile.focuses) ? profile.focuses : [],
+      hardLines: Array.isArray(profile.non_negotiables) ? profile.non_negotiables : [],
+      constraints: migrated.constraints,
+    };
+    const preferencesBlock = buildPreferencesBlock(prefs);
+
+    // Premium gate (one cached read per request).
     const premium = await premiumForReq(req);
+
+    // 0. Perimeter question? Answer it from the KB (claim-locked) before any
+    //    weight/meal handling, so a no-barcode question never logs or gets a
+    //    macro card. Applies in both modes.
+    if (looksLikePerimeterQuestion(message)) {
+      const matched = matchEntries(message);
+      if (matched.length) {
+        const answer = await perimeterChatReply({ message, matched, premium, prefs });
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: answer });
+        return res.json({
+          message: answer,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          perimeter: true,
+          recalculated: null,
+        });
+      }
+    }
+
+    /* ─────────────── Coach mode (macro tracking OFF — the default) ───────────────
+       No calories, no macros, no meal/weight pipeline. Kristy coaches about the
+       food and the shopping; chatEngine strips any macro the model slips in. */
+    if (!macroTracking) {
+      const profileLine = profile.name ? `Shopper: ${profile.name}.` : '';
+      const result = await generateReply({
+        message,
+        conversationHistory,
+        contextBlocks: { preferencesBlock, profileBlock: profileLine },
+        macroTracking: false,
+      });
+
+      await saveChatMessage(userId, { role: 'user', content: message });
+      await saveChatMessage(userId, {
+        role: 'ai',
+        content: result.message,
+        macros: null,
+      });
+      return res.json({ ...result, recalculated: null, weightLogged: false });
+    }
+
+    /* ─────────────── Macro mode (opt-in) — the full tracker pipeline ─────────────── */
+
+    // Is this a weight log? Decided up front so we can route around the food path.
+    let detected = detectWeightLog(message);
 
     if (!premium) {
       // Weigh-in → acknowledge the number, but the trend + adaptive retune are
-      // coaching. Don't save the weight; nudge to upgrade. (Client routes the
-      // `locked` flag to the upgrade view.)
+      // coaching. Don't save the weight; nudge to upgrade.
       if (detected.isWeightLog) {
         const msg = `Got it — ${detected.value}${detected.unit}. ${WEIGHT_UPGRADE_LINE}`;
         await saveChatMessage(userId, { role: 'user', content: message });
@@ -108,8 +210,7 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
         });
       }
 
-      // History beyond today ("what did I have yesterday", "this week's recap")
-      // → warm one-line nudge in Kristy's voice, not a paywall screen.
+      // History beyond today → warm one-line nudge in Kristy's voice.
       const recall = detectHistoryRecall(message);
       if (recall.locked) {
         await saveChatMessage(userId, { role: 'user', content: message });
@@ -127,11 +228,8 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       }
     }
 
-    // 1. Gather context: profile + last 7 days of meals + weight trend + latest
-    //    weigh-in (all defensive — weight reads return safe defaults if the
-    //    migration hasn't been applied yet).
-    const [profile, recentMeals, trend, latestWeight] = await Promise.all([
-      getFullProfile(userId),
+    // Gather macro context: last 7 days of meals + weight trend + latest weigh-in.
+    const [recentMeals, trend, latestWeight] = await Promise.all([
       getRecentMeals(userId, 7),
       getWeightTrend(userId, 30),
       getLatestWeight(userId),
@@ -144,7 +242,6 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       fat: profile.fat,
     };
 
-    // 2. If it's a weight log: save it, retune the target, and build the event.
     let weightEvent = '';
     let recalculated = null;
     let weightTrend = trend;
@@ -159,7 +256,6 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           recalculated = await recalculateTDEEFromTrend(userId, weightTrend, goals);
         }
 
-        // Re-pull the goals row — calories/current_weight may have just changed.
         activeProfile = await getFullProfile(userId);
         goals = {
           calories: activeProfile.calories,
@@ -169,7 +265,6 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
         };
         weightEvent = buildWeightEvent(detected, weightTrend, recalculated);
       } catch (err) {
-        // Weight tables not ready / write failed → fall back to normal chat.
         console.error('[kristy] weight pipeline error:', err.message);
         detected = { isWeightLog: false };
         weightEvent = '';
@@ -191,18 +286,14 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       };
     }
 
-    // Typed-meal resolution — parse foods + grams, look each up in USDA for real
-    // macros, scale and sum. Skipped for weigh-ins (handled above). Any failure
-    // degrades gracefully to the old single-call behavior where Haiku estimates
-    // the macros itself. Shared with /api/guest/chat via chatEngine.
+    // Typed-meal resolution — parse foods + grams, look each up in USDA, sum.
     const mealResolution = detected.isWeightLog ? null : await resolveMeal(message);
 
-    // 3–4. Build the system prompt around the real macros, run inference, parse,
-    //       and override the macro card with authoritative USDA totals.
     const result = await generateReply({
       message,
       conversationHistory,
       contextBlocks: {
+        preferencesBlock,
         profileBlock: buildProfileBlock(activeProfile),
         historyBlock: buildHistoryBlock(recentMeals, offsetMin, weightTrend),
         goalsBlock: buildGoalsBlock(goals),
@@ -211,41 +302,32 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       },
       mealResolution,
       weightEvent,
+      macroTracking: true,
     });
 
-    // 5. Persist. Always store the conversation so reloads restore it.
+    // Persist. Always store the conversation so reloads restore it.
     await saveChatMessage(userId, { role: 'user', content: message });
 
-    // A weight log never logs a meal, even if Haiku slips and returns hasFood.
     if (result.hasFood && !detected.isWeightLog) {
       await saveMeal(userId, {
         foods: result.foods,
         macros: result.macros,
         rawInput: message,
-        // 'usda' when every item matched the database; 'estimate' if any item
-        // (or the whole message, when the parser didn't classify it as a meal)
-        // fell back to a Claude estimate.
         source: mealResolution ? mealResolution.source : 'estimate',
         breakdown: mealResolution ? mealResolution.breakdown : null,
       });
 
-      // Proactive insights are a premium (coaching) feature. Free users still
-      // get the meal logged with real macros — just no server-side nudge.
       if (premium) {
-        // Re-pull meals (now including this one) and run proactive insight logic.
         const freshMeals = await getRecentMeals(userId, 7);
         const proactive = computeInsight(freshMeals, goals, offsetMin, activeProfile, {
           trend: weightTrend,
           lastLoggedAt: latestWeight?.logged_at,
         });
         if (proactive) {
-          result.insight = proactive; // server insight wins
-          // Mobile push: deliver the insight as a notification too. Fire-and-forget
-          // and a no-op for users with no registered device (i.e. web-only users).
+          result.insight = proactive;
           pushToUser(userId, { title: 'Kristy', body: proactive }).catch(() => {});
         }
       } else {
-        // Never leak a model-echoed insight to a free user.
         result.insight = '';
       }
     }
@@ -260,9 +342,6 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
 
     return res.json({ ...result, recalculated, weightLogged: detected.isWeightLog });
   } catch (err) {
-    // Anthropic / USDA / Supabase failed. Log with context, and hand the client
-    // a line Kristy could plausibly say so it renders as a normal chat bubble
-    // instead of a broken UI. No stack trace or raw error leaves the server.
     console.error(
       `[kristy] /api/chat error (user ${userId}) @ ${new Date().toISOString()}:`,
       err?.message || err

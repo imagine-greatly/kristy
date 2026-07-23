@@ -16,7 +16,12 @@ const PROFILE_COLUMNS = `${BASE_PROFILE_COLUMNS}, ${WEIGHT_PROFILE_COLUMNS}`;
 // Grocery-coach columns (Step 6). Tried as the widest tier; getFullProfile falls
 // back if the migration hasn't been applied so an existing profile is never lost.
 const COACH_PROFILE_COLUMNS = 'coach_goal, non_negotiables, focuses, constraints';
-const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`;
+// macro_tracking (opt-in, default false) is its OWN tier above the coach columns,
+// so a DB that has the coach columns but not this one still returns the coach prefs
+// (chat speaks through them) — it just reads macro_tracking as absent → OFF.
+const MACRO_TRACKING_COLUMN = 'macro_tracking';
+const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}, ${MACRO_TRACKING_COLUMN}`;
+const COACH_PROFILE_TIER = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`;
 
 /** Fetch a user's goals, creating defaults on first use. */
 export async function getGoals(userId) {
@@ -52,6 +57,14 @@ export async function getFullProfile(userId) {
     .eq('user_id', userId)
     .maybeSingle();
 
+  // Coach columns present but macro_tracking not yet migrated → keep the prefs.
+  if (error) {
+    ({ data, error } = await supabase
+      .from('user_goals')
+      .select(COACH_PROFILE_TIER)
+      .eq('user_id', userId)
+      .maybeSingle());
+  }
   if (error) {
     ({ data, error } = await supabase
       .from('user_goals')
@@ -141,6 +154,31 @@ export async function saveCoachProfile(userId, { coach_goal = null, non_negotiab
 
   if (error) throw new Error(error.message);
   return data;
+}
+
+/**
+ * Toggle macro tracking (opt-in; default OFF). This is the one switch that turns
+ * the calorie/macro/weight machinery back on for a user. Best-effort like the
+ * other coach writes: if the column isn't migrated yet the upsert errors and we
+ * report it, leaving the user in the default OFF state.
+ * @returns {Promise<boolean>} the persisted value (false on failure).
+ */
+export async function setMacroTracking(userId, enabled) {
+  try {
+    const { data, error } = await supabase
+      .from('user_goals')
+      .upsert(
+        { user_id: userId, macro_tracking: !!enabled, updated_at: new Date().toISOString() },
+        { onConflict: 'user_id' }
+      )
+      .select('macro_tracking')
+      .single();
+    if (error) throw new Error(error.message);
+    return !!data?.macro_tracking;
+  } catch (err) {
+    console.error('[kristy] setMacroTracking failed:', err.message);
+    return false;
+  }
 }
 
 /** Record a scanned product in the user's haul (Step 7). Returns the saved row. */

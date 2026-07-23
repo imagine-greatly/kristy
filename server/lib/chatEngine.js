@@ -54,9 +54,10 @@ export async function resolveMeal(message) {
  * @param {object}   args
  * @param {string}   args.message              the current user message
  * @param {Array}    args.conversationHistory   prior turns [{role, content}]
- * @param {object}   args.contextBlocks         { profileBlock, historyBlock, goalsBlock, todayBlock, weightBlock }
+ * @param {object}   args.contextBlocks         { preferencesBlock, profileBlock, historyBlock, goalsBlock, todayBlock, weightBlock }
  * @param {object|null} args.mealResolution     result of resolveMeal(), or null
  * @param {string}   args.weightEvent           optional weight-log event block (authed only)
+ * @param {boolean}  args.macroTracking         whether the shopper has opted into macro tracking
  * @returns {Promise<{message, hasFood, macros, foods, insight}>}
  */
 export async function generateReply({
@@ -65,11 +66,13 @@ export async function generateReply({
   contextBlocks,
   mealResolution = null,
   weightEvent = '',
+  macroTracking = false,
 }) {
   const system = CHAT_SYSTEM_PROMPT({
     ...contextBlocks,
+    macroTracking,
     weightEvent,
-    mealEvent: mealResolution ? buildMealEvent(mealResolution) : '',
+    mealEvent: macroTracking && mealResolution ? buildMealEvent(mealResolution) : '',
   });
 
   // Build the message thread for Haiku.
@@ -91,9 +94,20 @@ export async function generateReply({
   const text = completion.content?.[0]?.text || '';
   const result = parseChatJSON(text);
 
-  // When USDA resolved the meal, its totals are authoritative — override
-  // whatever Haiku echoed so the macro card always shows real database numbers
-  // (and the message, built around the same numbers, matches).
+  // Macro tracking OFF (the default): strip any macro/log the model may have
+  // slipped in, structurally — the grocery coach never volunteers calories,
+  // macros, or a "logged it" card. This is the guarantee, not the prompt.
+  if (!macroTracking) {
+    result.hasFood = false;
+    result.macros = null;
+    result.foods = [];
+    result.insight = '';
+    return result;
+  }
+
+  // Macro tracking ON: when USDA resolved the meal, its totals are authoritative —
+  // override whatever Haiku echoed so the macro card always shows real database
+  // numbers (and the message, built around the same numbers, matches).
   if (mealResolution) {
     result.hasFood = true;
     result.macros = mealResolution.macros;

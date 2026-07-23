@@ -1,32 +1,30 @@
 import { Router } from 'express';
-import { resolveMeal, generateReply } from '../lib/chatEngine.js';
+import { generateReply } from '../lib/chatEngine.js';
 import { detectMemoryAction } from '../lib/guestGate.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
 
 // POST /api/guest/chat — the "try-first" experience. No auth, no Supabase, no
 // persistence of any kind. A brand-new visitor talks to the real Kristy (same
-// USDA meal pipeline, same voice via the shared chatEngine) for a few messages,
-// then hits a soft sign-in gate. Nothing here can touch the database or another
-// user's data.
+// grocery-coach voice via the shared chatEngine) for a few messages, then hits a
+// soft sign-in gate. Nothing here can touch the database or another user's data.
+//
+// Guests can't opt into macro tracking (that's a Settings toggle on an account),
+// so guest chat is always coach mode: no calories, no macros, no logging.
 
 const router = Router();
 
 /* ───────────────────────── Neutral guest context ─────────────────────────
    Kristy still sounds like herself, but references no stored data — because
-   there is none. This replaces the profile/history/goals/today/weight blocks
-   the authed route builds from the database. */
+   there is none, and no preferences are set yet. This replaces the profile/
+   preferences blocks the authed route builds from the database. */
 const GUEST_CONTEXT = {
   profileBlock: [
-    'User profile:',
     'This is a brand-new guest trying Kristy for the first time — not signed in.',
-    'There is NO saved profile, NO logged history, NO goals, and NO weight on file.',
-    'Do not reference any past meals, previous days, targets, remaining macros, or weight trends — you have none of that for this person.',
-    'Break down exactly what they tell you right now, in your normal voice. If they mention food, give the macros. If they ask a general nutrition question, answer it specifically.',
+    'There is NO saved profile, NO history, and NO goal or preferences on file.',
+    'Do not reference any past scans, meals, previous days, or preferences — you have none for this person.',
+    'Coach them on exactly what they bring up right now: judge a product, suggest a swap, answer a shopping question, or help them think about what to buy. If it comes up, you can invite them to sign in to set a goal so you can shop with them — but do not force it.',
   ].join('\n'),
-  historyBlock: 'No meals logged — this is a fresh guest session with no history.',
-  goalsBlock: 'No personal targets set yet (guest is not signed in).',
-  todayBlock: 'Nothing logged yet.',
-  weightBlock: '',
+  preferencesBlock: 'This guest has not set a goal or preferences yet.',
 };
 
 /* ───────────────────────── IP rate limiter ─────────────────────────
@@ -55,14 +53,13 @@ router.post('/chat', async (req, res) => {
       return res.json({ gate: true, reason: 'limit' });
     }
 
-    // 3. Real, STATELESS reply — same USDA pipeline + Kristy voice as /api/chat,
-    //    but with neutral context and nothing written anywhere.
-    const mealResolution = await resolveMeal(message);
+    // 3. Real, STATELESS reply — same grocery-coach voice as /api/chat, but with
+    //    neutral context, macro tracking OFF, and nothing written anywhere.
     const result = await generateReply({
       message,
       conversationHistory,
       contextBlocks: GUEST_CONTEXT,
-      mealResolution,
+      macroTracking: false,
     });
 
     return res.json(result);
