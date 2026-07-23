@@ -264,6 +264,27 @@ export async function getSubscription() {
 }
 
 /**
+ * Start the 7-day promo trial — the explicit, at-the-gate action (from the withheld
+ * read or the Upgrade screen). Grants the trial server-side (idempotently: a user
+ * who already has any subscription row keeps it) and returns the fresh billing
+ * snapshot so the caller can flip to the premium UI. Never throws: on any failure it
+ * returns the safe non-premium snapshot, so the caller can fall back to the paid path.
+ */
+export async function startTrial() {
+  if (IS_DEMO) return getSubscription(); // demo is already a live trial
+  try {
+    const res = await fetch(`${apiBase}/api/subscription/trial`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${await authToken()}` },
+    });
+    if (!res.ok) return FREE_SNAPSHOT;
+    return await res.json();
+  } catch {
+    return FREE_SNAPSHOT;
+  }
+}
+
+/**
  * Start Stripe Checkout for a plan ('monthly' | 'annual'). Redirects the browser
  * to the returned Checkout URL. Throws a friendly message on failure so the
  * upgrade view can show it.

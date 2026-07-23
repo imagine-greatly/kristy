@@ -9,11 +9,12 @@ import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, FOCUS_DISCLAIMER } from '../lib/
    optional "keep an eye on" (focuses) and "never in the cart" (hard lines). It is
    NOT a fitness intake and NOT the TDEE macro setup; those live behind Settings.
 
-   Completing it (a goal is chosen) is what calls saveCoachProfile → /onboarding/coach,
-   which starts the 7-day trial server-side. It is fully skippable — skipping leaves
-   the user goal-less on universal verdicts, with no trial, exactly as before. The
-   header goal chip remains the anytime editor; this is simply no longer the only
-   path in. Tokens only; her spoken lines are kristyVoice (Playfair italic). */
+   Completing it (a goal is chosen) calls saveCoachProfile → /onboarding/coach. It does
+   NOT start the trial — that's a separate, explicit choice at the gate, after the user
+   has spent their free tastes. It is fully skippable — skipping leaves the user
+   goal-less on universal verdicts. The header goal chip remains the anytime editor;
+   this is simply no longer the only path in. Tokens only; her spoken lines are
+   kristyVoice (Playfair italic). */
 export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null }) {
   // A guest who expressed a goal before signing in arrives with it pre-filled — start
   // past the goal step (Back returns to it to change). Otherwise start at the goal.

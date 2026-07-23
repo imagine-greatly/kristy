@@ -3,14 +3,18 @@ import { requireAuth } from '../lib/supabase.js';
 import { computeGoals } from '../lib/tdee.js';
 import { saveOnboardingProfile, saveCoachProfile } from '../lib/store.js';
 import { saveWeightLog } from '../lib/weightLog.js';
-import { ensureTrial } from '../lib/subscription.js';
 
 const router = Router();
 
 // POST /api/onboarding/coach — the 60-second grocery-coach onboarding (Step 6).
-// Persists a primary goal + non-negotiables, marks the user onboarded, and starts
-// the 7-day trial (same as the full flow). No TDEE math — macro targets stay on
-// their defaults until/unless the user does the full profile setup separately.
+// Persists a primary goal + non-negotiables and marks the user onboarded. It does
+// NOT grant the trial: setting a goal is where the coaching relationship begins,
+// not where the user commits to membership. The 7-day trial is a separate, explicit
+// choice made at peak intent (POST /api/subscription/trial), after the user has set
+// a goal, spent their 3 free personalized "tastes", and hit the gate. Coupling the
+// trial to goal-set would (a) skip the free-taste mechanic — a trialing user is
+// premium, so free_notes_used never increments — and (b) burn a weekly-cadence trial
+// on a casual tap. No TDEE math — macro targets stay on their defaults.
 router.post('/onboarding/coach', requireAuth, async (req, res) => {
   const userId = req.user.id;
   const b = req.body || {};
@@ -21,9 +25,7 @@ router.post('/onboarding/coach', requireAuth, async (req, res) => {
 
   try {
     const profile = await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
-    // 7-day full-access trial, idempotent + non-fatal (same posture as /full).
-    const subscription = await ensureTrial(userId);
-    return res.json({ ok: true, profile, subscription });
+    return res.json({ ok: true, profile });
   } catch (err) {
     console.error('[kristy] /api/onboarding/coach error:', err.message);
     return res.status(500).json({ error: 'Could not save your goal.' });
@@ -58,12 +60,11 @@ router.post('/onboarding/full', requireAuth, async (req, res) => {
       }
     }
 
-    // Every new user who completes onboarding gets a 7-day full-access trial.
-    // Idempotent + non-fatal: a re-onboard won't reset an existing sub, and a
-    // failure here (e.g. pre-migration) never blocks onboarding.
-    const subscription = await ensureTrial(userId);
-
-    return res.json({ ok: true, goals, profile: saved, subscription });
+    // Completing the macro (TDEE) setup does NOT grant the trial either — same
+    // rule as the coach path. The trial is one explicit choice at the gate
+    // (POST /api/subscription/trial), so a user who opts into calorie tracking
+    // still gets their 3 free personalized tastes before membership is decided.
+    return res.json({ ok: true, goals, profile: saved });
   } catch (err) {
     console.error('[kristy] /api/onboarding/full error:', err.message);
     return res.status(500).json({ error: 'Could not save your profile.' });

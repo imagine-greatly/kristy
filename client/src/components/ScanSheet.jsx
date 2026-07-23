@@ -50,6 +50,8 @@ export default function ScanSheet({
   onLabelFile,
   onAsk,
   onUpgrade,
+  onStartTrial,
+  trialEligible = false,
   onPickGoal,
   focusOffer,
   onAcceptFocus,
@@ -59,10 +61,18 @@ export default function ScanSheet({
   const fileRef = useRef(null);
   if (!scan) return null;
 
-  // The withheld-read CTA lives IN the card now (not a separate button below it):
-  // members/free → "Unlock my read", guests → "Sign in for my read".
-  const onUnlock = onUpgrade || onSignIn || null;
-  const unlockLabel = onUpgrade ? 'Unlock my read' : 'Sign in for my read';
+  // The withheld-read CTA lives IN the card (not a separate button below it). For an
+  // authed user who has never trialed, the peak-intent move is to START THE FREE WEEK
+  // right here — the read they were blocked on then fills in place. A user who's
+  // already used the trial routes to the paid Upgrade ("Unlock my read"); guests are
+  // asked to sign in. (onUpgrade is present only for authed users; guests get onSignIn.)
+  const canStartTrial = !!onStartTrial && trialEligible && !!onUpgrade;
+  const onUnlock = canStartTrial ? onStartTrial : onUpgrade || onSignIn || null;
+  const unlockLabel = canStartTrial
+    ? 'Start my free week'
+    : onUpgrade
+      ? 'Unlock my read'
+      : 'Sign in for my read';
 
   let content;
   if (scan.loading) {

@@ -41,18 +41,42 @@ const PLANS = [
  *
  * @param subscription  the current billing snapshot (to offer "manage" when they
  *                       already have a Stripe record)
+ * @param trialEligible  true when the user has never had a subscription row — the
+ *                       7-day trial is honestly on offer (the primary CTA here).
+ * @param onStartTrial   () => Promise<snapshot>  grants the trial, returns the fresh
+ *                       billing snapshot; resolves premium:true on success.
  * @param onClose       () => void
  */
-export default function Upgrade({ subscription, onClose }) {
+export default function Upgrade({ subscription, trialEligible = false, onStartTrial, onClose }) {
   const [plan, setPlan] = useState('annual');
   const [loading, setLoading] = useState('');
   const [error, setError] = useState('');
+
+  const offerTrial = trialEligible && !!onStartTrial;
 
   // Someone who has been through Stripe (active/past_due/canceled) can manage
   // their existing subscription rather than start a new checkout.
   const hasStripeRecord =
     subscription?.provider === 'stripe' &&
     ['active', 'past_due', 'canceled'].includes(subscription?.status);
+
+  // Start the 7-day trial (the explicit, at-the-gate grant). On success the app
+  // flips to premium and we close; otherwise surface a retry line.
+  async function beginTrial() {
+    setLoading('trial');
+    setError('');
+    try {
+      const sub = await onStartTrial?.();
+      if (sub?.premium) {
+        onClose();
+        return;
+      }
+      setError('Could not start your trial just now — give it a moment and try again.');
+    } catch (e) {
+      setError(e?.message || 'Could not start your trial.');
+    }
+    setLoading('');
+  }
 
   async function subscribe() {
     setLoading('checkout');
@@ -120,16 +144,32 @@ export default function Upgrade({ subscription, onClose }) {
 
         {error && <p className="upgrade__error">{error}</p>}
 
-        <button className="upgrade__cta" onClick={subscribe} disabled={!!loading}>
-          {loading === 'checkout' ? 'Opening checkout…' : 'Start coaching'}
-        </button>
-
-        {hasStripeRecord ? (
-          <button className="upgrade__manage" onClick={manage} disabled={!!loading}>
-            {loading === 'portal' ? 'Opening…' : 'Manage subscription'}
-          </button>
+        {offerTrial ? (
+          <>
+            <button className="upgrade__cta" onClick={beginTrial} disabled={!!loading}>
+              {loading === 'trial' ? 'Starting your week…' : 'Start my free week'}
+            </button>
+            <p className="upgrade__trial-note">7 days, full access &mdash; no card required.</p>
+            <button className="upgrade__manage" onClick={subscribe} disabled={!!loading}>
+              {loading === 'checkout'
+                ? 'Opening checkout…'
+                : `or subscribe now — ${plan === 'annual' ? '$59.99/yr' : '$7.99/mo'}`}
+            </button>
+          </>
         ) : (
-          <p className="upgrade__legal">Cancel anytime. Secure checkout by Stripe.</p>
+          <>
+            <button className="upgrade__cta" onClick={subscribe} disabled={!!loading}>
+              {loading === 'checkout' ? 'Opening checkout…' : 'Start coaching'}
+            </button>
+
+            {hasStripeRecord ? (
+              <button className="upgrade__manage" onClick={manage} disabled={!!loading}>
+                {loading === 'portal' ? 'Opening…' : 'Manage subscription'}
+              </button>
+            ) : (
+              <p className="upgrade__legal">Cancel anytime. Secure checkout by Stripe.</p>
+            )}
+          </>
         )}
       </div>
     </div>

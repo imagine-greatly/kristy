@@ -29,7 +29,7 @@ import {
 import { loadGuestState, clearGuestState } from './lib/guestState.js';
 import { pushSwaps } from './lib/list.js';
 import { trackEvent } from './lib/analytics.js';
-import { sendChat, deleteAccount, getSubscription } from './lib/api.js';
+import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
 import { sendPhoto, runProductScan, requestGoalNote } from './lib/logging.js';
 import {
   getLastActiveDate,
@@ -274,14 +274,12 @@ export default function App() {
 
   /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
 
-  // Persist a coach_goal through the trial-granting onboarding path. Setting a goal —
-  // in the coach onboarding, the chip switcher, or the in-card ask — is where the
-  // coaching relationship begins, so it starts the 7-day trial server-side (ensureTrial
-  // is idempotent: switching goals later never resets it). Optimistic so the chip +
-  // next scan reflect it immediately; the subscription is refreshed on the FIRST goal
-  // so premium flips on without a reload.
+  // Persist a coach_goal. Setting a goal — in the coach onboarding, the chip switcher,
+  // or the in-card ask — is where the coaching relationship begins, but it deliberately
+  // does NOT grant the trial: the trial is one explicit choice at the gate (handleStartTrial),
+  // so goal-set users keep their 3 free personalized tastes and a weekly-cadence trial isn't
+  // spent on a casual tap. Optimistic so the chip + next scan reflect the goal immediately.
   async function persistGoal(value) {
-    const firstGoal = !profile?.coach_goal;
     setProfile((p) => ({ ...(p || {}), coach_goal: value }));
     try {
       await saveCoachProfile(userId, {
@@ -289,14 +287,14 @@ export default function App() {
         non_negotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
       });
-      if (firstGoal) setSubscription(await getSubscription());
     } catch {
       /* keep optimistic value */
     }
   }
 
-  // First-run coach onboarding: a goal was chosen → persist goal + prefs through the
-  // trial-granting path and land on Scan (the profile update unmounts the onboarding).
+  // First-run coach onboarding: a goal was chosen → persist goal + prefs and land on
+  // Scan (the profile update unmounts the onboarding). No trial is granted here — the
+  // user gets their free tastes first and starts the trial explicitly at the gate.
   // If focuses were chosen, the in-context note stood in for the one-time coach-not-
   // doctor disclaimer, so mark it acknowledged rather than firing the modal later.
   async function handleCoachOnboardingComplete({ coach_goal, non_negotiables, focuses }) {
@@ -309,7 +307,6 @@ export default function App() {
     });
     try {
       await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses });
-      setSubscription(await getSubscription()); // trial just granted → reflect premium
     } catch {
       /* keep optimistic values */
     }
@@ -498,6 +495,36 @@ export default function App() {
   function openUpgrade() {
     setSidebarOpen(false);
     setUpgradeOpen(true);
+  }
+
+  // The ONE path that grants the 7-day trial — taken explicitly at peak intent (the
+  // withheld read or the Upgrade screen), never on a goal tap. The server grant is
+  // idempotent, so this can't reset an existing trial/sub. On success the premium UI
+  // flips on and, if the user was blocked on a gated scan, the read they just unlocked
+  // is recomposed in place (reusing the cached ingredients — no re-scan, no free taste
+  // spent since they're now a member). Returns the fresh snapshot for callers to check.
+  async function handleStartTrial() {
+    const sub = await startTrial();
+    setSubscription(sub);
+    setUpgradeOpen(false);
+    if (!sub?.premium) return sub; // grant didn't land (pre-migration / already used)
+    trackEvent('trial_started');
+    if (scan?.verdict?.gated && scan?.ingredients) {
+      setScan((s) => (s ? { ...s, pickingGoal: true } : s));
+      try {
+        const verdict = await requestGoalNote({
+          ingredients: scan.ingredients,
+          nutrition: scan.nutrition,
+          goal: goalNoteLabel(profile?.coach_goal),
+          nonNegotiables: profile?.non_negotiables || [],
+          focuses: profile?.focuses || [],
+        });
+        setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
+      } catch {
+        setScan((s) => (s ? { ...s, pickingGoal: false } : s));
+      }
+    }
+    return sub;
   }
 
   // Returning from Stripe Checkout: strip the query param, and if it was a
@@ -973,8 +1000,9 @@ export default function App() {
   }
 
   // First run: a signed-in, goal-less user who hasn't skipped is asked who Kristy is
-  // shopping for. Completing it starts the 7-day trial (saveCoachProfile → ensureTrial);
-  // skipping leaves them goal-less on universal verdicts, no trial, until they set a
+  // shopping for. Completing it sets the goal (saveCoachProfile) but does NOT grant a
+  // trial — the user gets their free tastes first and starts the trial explicitly at
+  // the gate. Skipping leaves them goal-less on universal verdicts until they set a
   // goal (here or via the header chip). This is the grocery front door — reachable
   // without ever touching Settings or the TDEE macro setup.
   if (session?.user && !profile?.coach_goal && !coachOnbSkipped) {
@@ -989,6 +1017,13 @@ export default function App() {
 
   const viewingPast = viewingDate !== today;
   const showEmpty = messages.length === 0 && !typing && !viewingPast;
+
+  // Trial-eligible ⇔ the user has never had any subscription row. status 'none' means
+  // no trial and no paid history, so the trial offer is honest; a lapsed/consumed
+  // trial (status 'trialing' but not premium) or any paid record is NOT eligible, and
+  // the server grant is idempotent anyway. null during the load window → not eligible
+  // (the safe default: never dangle a trial CTA before we know the user's state).
+  const trialEligible = subscription?.status === 'none';
 
   return (
     <div className="app">
@@ -1131,6 +1166,8 @@ export default function App() {
           onPickGoal={handlePickGoal}
           onAsk={() => { askAboutScan(); setScan(null); }}
           onUpgrade={() => { setScan(null); openUpgrade(); }}
+          onStartTrial={handleStartTrial}
+          trialEligible={trialEligible}
           focusOffer={focusOffer}
           onAcceptFocus={acceptFocusOffer}
           onDismissFocus={dismissFocusOffer}
@@ -1180,6 +1217,8 @@ export default function App() {
       {upgradeOpen && (
         <Upgrade
           subscription={subscription}
+          trialEligible={trialEligible}
+          onStartTrial={handleStartTrial}
           onClose={() => setUpgradeOpen(false)}
         />
       )}
