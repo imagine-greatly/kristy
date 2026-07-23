@@ -71,17 +71,15 @@ export default function CameraModal({ open, onClose, onScan }) {
           <>
             <div className="scanner-video-wrap">
               <video ref={videoRef} className="scanner-video" muted playsInline />
-              {/* Static aiming frame: four gold corner brackets (the motif's thin
-                  gold line weight) marking where to place the barcode/label. No
-                  animation — nothing to respect under reduced-motion. */}
+              {/* The viewfinder carries NO text — just the live feed and four gold
+                  corner brackets (the motif's thin gold line weight) marking where
+                  to place the barcode/label. All copy lives on ScanHome, before the
+                  camera opens. No animation — nothing to respect under reduced-motion. */}
               <div className="scan-frame" aria-hidden="true">
                 <span className="scan-corner scan-corner--tl" />
                 <span className="scan-corner scan-corner--tr" />
                 <span className="scan-corner scan-corner--bl" />
                 <span className="scan-corner scan-corner--br" />
-                <span className="scan-frame__hint kristy-voice">
-                  Line up the barcode — I&rsquo;ve got the rest.
-                </span>
               </div>
             </div>
           </>
