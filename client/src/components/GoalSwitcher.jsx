@@ -35,8 +35,27 @@ export default function GoalSwitcher({
 
         <div style={styles.body}>
           <h2 style={styles.title}>What are you shopping for?</h2>
-          <p style={styles.sub}>I&rsquo;ll read every scan against this. Switch it anytime.</p>
+          <p style={styles.sub}>Tell me in your own words &mdash; that becomes your preferences. Or tap a few below. Switch anytime.</p>
 
+          {/* Natural language LEADS: the free-text field is the primary input. The
+              chips below are suggestions, not the only way in. */}
+          <FreeTextIntake
+            lead
+            goal={goal}
+            focuses={focuses}
+            nonNegotiables={nonNegotiables}
+            constraints={constraints}
+            onPickGoal={onPickGoal}
+            onToggleFocus={onToggleFocus}
+            onToggleNonNegotiable={onToggleNonNegotiable}
+            onToggleConstraint={onToggleConstraint}
+          />
+
+          <div style={styles.threadWrap}>
+            <GoldThread />
+          </div>
+
+          <h3 style={styles.section}>Or pick a starting point</h3>
           <div style={styles.goals}>
             {COACH_GOALS.map((g) => {
               const on = goal === g.value;
@@ -137,21 +156,6 @@ export default function GoalSwitcher({
             selected={nonNegotiables}
             onAdd={onToggleNonNegotiable}
           />
-
-          <div style={styles.threadWrap}>
-            <GoldThread />
-          </div>
-
-          <FreeTextIntake
-            goal={goal}
-            focuses={focuses}
-            nonNegotiables={nonNegotiables}
-            constraints={constraints}
-            onPickGoal={onPickGoal}
-            onToggleFocus={onToggleFocus}
-            onToggleNonNegotiable={onToggleNonNegotiable}
-            onToggleConstraint={onToggleConstraint}
-          />
         </div>
       </div>
     </div>
@@ -232,7 +236,7 @@ function CustomLineSearch({ selected, onAdd }) {
    fixed taxonomy and filters the result against it, so nothing free-form can
    reach the engine. We show what it parsed as chips for the user to confirm —
    never applied silently — and Kristy says plainly what she couldn't map. */
-function FreeTextIntake({ goal, focuses, nonNegotiables, constraints = [], onPickGoal, onToggleFocus, onToggleNonNegotiable, onToggleConstraint }) {
+function FreeTextIntake({ lead = false, goal, focuses, nonNegotiables, constraints = [], onPickGoal, onToggleFocus, onToggleNonNegotiable, onToggleConstraint }) {
   const [text, setText] = useState('');
   const [state, setState] = useState('idle'); // idle | loading | parsed | error
   const [parsed, setParsed] = useState(null);
@@ -273,8 +277,8 @@ function FreeTextIntake({ goal, focuses, nonNegotiables, constraints = [], onPic
 
   return (
     <div style={styles.freeWrap}>
-      <h3 style={styles.section}>Or just tell me</h3>
-      <p style={styles.sub}>I&rsquo;ll set it up.</p>
+      {!lead && <h3 style={styles.section}>Or just tell me</h3>}
+      {!lead && <p style={styles.sub}>I&rsquo;ll set it up.</p>}
 
       <form onSubmit={submit} style={styles.freeForm}>
         <input

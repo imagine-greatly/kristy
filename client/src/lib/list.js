@@ -120,6 +120,72 @@ export async function rebuildList({ goal, nonNegotiables = [], focuses = [], con
   }
 }
 
+// The conversational editor: natural language → a list edit. PREMIUM (the server
+// gates it; a free real-mode call returns { gated, upsell }). Returns the updated
+// list + Kristy's one-line summary. Demo runs a light local heuristic so the loop
+// is explorable with no backend.
+export async function composeList({ instruction, mode = 'edit', prefs = {} } = {}) {
+  const text = String(instruction || '').trim();
+  if (!text) return { list: null, summary: '' };
+
+  if (IS_DEMO) {
+    const cur = loadCachedList() || generateLocal({ ...prefs, premium: true });
+    const { add, remove, summary } = demoCompose(text, mode);
+    let list;
+    if (mode === 'build') {
+      const items = add.map((a) => ({ id: rid(), name: a.name, category: a.section, checked: false, source: 'template' }));
+      list = { goal: cur.goal || null, intro: summary, items };
+    } else {
+      const rm = remove.map((r) => r.toLowerCase());
+      const kept = cur.items.filter((i) => i.source === 'swap' || !rm.some((r) => i.name.toLowerCase().includes(r)));
+      const present = new Set(kept.map((i) => i.name.toLowerCase()));
+      const added = add
+        .filter((a) => !present.has(a.name.toLowerCase()))
+        .map((a) => ({ id: rid(), name: a.name, category: a.section, checked: false, source: 'template' }));
+      list = { ...cur, items: [...kept, ...added] };
+    }
+    saveCache(list);
+    return { list, summary, premium: true };
+  }
+
+  try {
+    const res = await authFetch('/api/list/compose', { method: 'POST', body: JSON.stringify({ instruction: text, mode }) });
+    if (res?.gated) return { gated: true, upsell: res.upsell, premium: false };
+    if (res?.list && Array.isArray(res.list.items)) saveCache(res.list);
+    return { list: res?.list || null, summary: res?.summary || '', premium: !!res?.premium };
+  } catch {
+    return { error: true };
+  }
+}
+
+// A tiny local NL heuristic for demo mode only (real mode uses the claim-locked model).
+function demoCompose(text, mode) {
+  const t = text.toLowerCase();
+  const SECTION = (n) =>
+    /egg|yogurt|milk|cheese|kefir|butter/.test(n) ? 'Dairy & Eggs'
+    : /chicken|beef|turkey|fish|salmon|tuna|pork|sardine|tofu/.test(n) ? 'Meat & Seafood'
+    : /frozen/.test(n) ? 'Frozen'
+    : /tortilla|bread|bun|bagel/.test(n) ? 'Bakery'
+    : /pepper|onion|greens|lettuce|tomato|potato|fruit|banana|apple|avocado|veg/.test(n) ? 'Produce'
+    : /chip|cracker|popcorn|nuts|snack/.test(n) ? 'Snacks'
+    : 'Pantry';
+  const items = (names) => names.map((name) => ({ name, section: SECTION(name.toLowerCase()) }));
+
+  // swap X for Y / replace X with Y
+  const swap = t.match(/(?:swap|replace)\s+(?:the\s+)?(.+?)\s+(?:for|with)\s+(.+)/);
+  if (swap) {
+    const [, from, to] = swap;
+    return { add: items([to.trim()]), remove: [from.trim()], summary: `Swapped the ${from.trim()} for ${to.trim()}.` };
+  }
+  if (/taco/.test(t)) return { add: items(['Ground beef', 'Tortillas', 'Bell peppers', 'Onion', 'Shredded cheese', 'Salsa']), remove: [], summary: 'Added taco night — beef, tortillas, peppers, onion, cheese, and salsa.' };
+  // "add A, B and C" / "get ..." / "need ..."
+  const m = t.match(/(?:add|get|need|grab|put)\s+(.+)/);
+  const phrase = (m ? m[1] : text).replace(/\bfor\b.*$/, '').trim();
+  const names = phrase.split(/,|\band\b/).map((s) => s.trim()).filter(Boolean).map((s) => s.replace(/\b\w/, (c) => c.toUpperCase()));
+  if (!names.length) return { add: [], remove: [], summary: "I wasn't sure what to put on the list — try naming the items or the meal." };
+  return { add: items(names), remove: [], summary: `Added ${names.join(', ')}.` };
+}
+
 // Queue Haul swaps so they appear on the next list load (Haul → List). Server-side
 // in real mode (cross-device); demo keeps a local queue.
 export async function pushSwaps(swaps) {

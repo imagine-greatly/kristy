@@ -100,11 +100,16 @@ export default function PerimeterAsk({
                   </div>
                   <p style={styles.short}>{e.short_answer}</p>
                   {(e.buying_tips || []).length > 0 && (
-                    <ul style={styles.tips}>
-                      {e.buying_tips.map((t, i) => (
-                        <li key={i} style={styles.tip}>{t}</li>
-                      ))}
-                    </ul>
+                    <>
+                      <span style={{ fontFamily: fonts.ui, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: colors.textMuted }}>
+                        What to look for
+                      </span>
+                      <ul style={styles.tips}>
+                        {e.buying_tips.map((t, i) => (
+                          <li key={i} style={styles.tip}>{t}</li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                   {(e.labels_decoded || []).length > 0 && (
                     <div style={styles.labels}>

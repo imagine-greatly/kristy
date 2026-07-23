@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { ListIcon, CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
-import { loadCachedList, fetchList, saveList, rebuildList, recordRemoved, recordAcceptedSwap } from '../lib/list.js';
+import { loadCachedList, fetchList, saveList, rebuildList, recordRemoved, recordAcceptedSwap, composeList } from '../lib/list.js';
 import { trackEvent } from '../lib/analytics.js';
 import PerimeterAsk from './PerimeterAsk.jsx';
 
@@ -17,11 +17,52 @@ const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
+// Walking order through the store: haul callouts, then the perimeter (produce →
+// meat → dairy → bakery), then the center aisles (pantry, snacks), frozen last.
+const SECTION_ORDER = ['From your haul', 'Produce', 'Meat & Seafood', 'Dairy & Eggs', 'Bakery', 'Pantry', 'Snacks', 'Frozen', 'Added'];
+const CATEGORY_SECTION = {
+  Produce: 'Produce', Fiber: 'Produce',
+  Protein: 'Meat & Seafood', 'Meat & Seafood': 'Meat & Seafood',
+  Fermented: 'Dairy & Eggs', 'Dairy & Eggs': 'Dairy & Eggs',
+  Bakery: 'Bakery',
+  Staples: 'Pantry', Pantry: 'Pantry',
+  Snacks: 'Snacks',
+  Frozen: 'Frozen',
+  'From your haul': 'From your haul',
+  Added: 'Added',
+};
+function sectionOf(it) {
+  if (it.source === 'swap' || it.category === 'From your haul') return 'From your haul';
+  const n = (it.name || '').toLowerCase();
+  if (/\b(egg|eggs|yogurt|milk|cheese|kefir|butter|ghee|cottage)\b/.test(n)) return 'Dairy & Eggs';
+  if (/\bfrozen\b/.test(n)) return 'Frozen';
+  return CATEGORY_SECTION[it.category] || it.category || 'Added';
+}
+function groupBySection(items) {
+  const map = new Map();
+  for (const it of items) {
+    const sec = sectionOf(it);
+    if (!map.has(sec)) map.set(sec, []);
+    map.get(sec).push(it);
+  }
+  const rank = (s) => {
+    const i = SECTION_ORDER.indexOf(s);
+    return i < 0 ? SECTION_ORDER.length : i;
+  };
+  return [...map.entries()]
+    .map(([category, list]) => ({ category, items: list }))
+    .sort((a, b) => rank(a.category) - rank(b.category));
+}
+
 export default function ListMoment({ goal, nonNegotiables = [], focuses = [], constraints = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
   const [list, setList] = useState(() => loadCachedList());
   const [premium, setPremium] = useState(premiumProp);
   const [loading, setLoading] = useState(() => loadCachedList() == null);
   const [input, setInput] = useState('');
+  const [buildText, setBuildText] = useState('');
+  const [busy, setBusy] = useState(''); // 'edit' | 'build' while composing
+  const [note, setNote] = useState(''); // Kristy's one-line summary after a compose
+  const [composeGated, setComposeGated] = useState(false); // free hit the NL editor
   const [asking, setAsking] = useState(null); // a list item being asked about (the Perimeter loop)
   const firstBuild = useRef(loadCachedList() == null);
 
@@ -65,6 +106,41 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
     setInput('');
   };
 
+  // The conversational editor: natural language → a list edit ("add taco night",
+  // "swap the rice for something faster", "build me three dinners for four"). PREMIUM;
+  // a free user gets an in-card nudge (never a modal). composeList persists the cache;
+  // we set it locally and show Kristy's one-line summary.
+  async function runCompose(instruction, mode) {
+    const text = String(instruction || '').trim();
+    if (!text || busy) return;
+    if (!premium) {
+      setComposeGated(true);
+      return;
+    }
+    setBusy(mode);
+    setNote('');
+    setComposeGated(false);
+    const res = await composeList({ instruction: text, mode, prefs: { goal, nonNegotiables, focuses, constraints } });
+    setBusy('');
+    if (res?.gated) {
+      setComposeGated(true);
+      return;
+    }
+    if (res?.list) {
+      setList(res.list);
+      if (res.summary) setNote(res.summary);
+      trackEvent('list-compose', { mode });
+      if (mode === 'edit') setInput('');
+      else setBuildText('');
+    }
+  }
+
+  // The bottom input: premium composes from natural language; free does a plain add.
+  const submitBottom = () => {
+    if (premium) runCompose(input, 'edit');
+    else add();
+  };
+
   // The Perimeter loop: a refinement from "Ask Kristy" rewrites the item in place
   // (e.g. "Olive oil" → "Fresh, dark-bottle extra-virgin olive oil"), then persists.
   const refineItem = (id, newName) => {
@@ -90,10 +166,10 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
           <span style={styles.icon}><ListIcon size={24} /></span>
           <h1 style={styles.title}>Your list</h1>
         </div>
-        <p style={{ ...kristyVoice, ...styles.intro }}>{loading ? 'Pulling your list together…' : "Let's build your list."}</p>
-        {!goal && onSetGoal && (
+        <p style={{ ...kristyVoice, ...styles.intro }}>{loading ? 'Pulling your list together…' : "Tell me what you're shopping for and I'll build around it."}</p>
+        {onSetGoal && (
           <button type="button" style={styles.setGoal} onClick={onSetGoal}>
-            Set a goal and I&rsquo;ll tailor this →
+            Tell me what you&rsquo;re shopping for →
           </button>
         )}
         {!loading && (
@@ -105,16 +181,11 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
     );
   }
 
-  // Group by category, preserving first-seen order (swaps + haul items lead).
-  const groups = [];
-  const idx = new Map();
-  for (const it of list.items) {
-    if (!idx.has(it.category)) {
-      idx.set(it.category, groups.length);
-      groups.push({ category: it.category, items: [] });
-    }
-    groups[idx.get(it.category)].items.push(it);
-  }
+  // Group by STORE SECTION in walking order — perimeter first, frozen last — so the
+  // list reads like an authored route through the store. Categories (Protein/Staples/…)
+  // and compose sections both map onto the same section set; dairy/eggs/frozen are
+  // pulled out by item name so they sit where you'd actually walk to them.
+  const groups = groupBySection(list.items);
 
   return (
     <div style={styles.wrap}>
@@ -125,8 +196,42 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
       <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>
       {!goal && onSetGoal && (
         <button type="button" style={styles.setGoal} onClick={onSetGoal}>
-          Set a goal and I&rsquo;ll tailor this →
+          Tell me what you&rsquo;re shopping for and I&rsquo;ll build around it →
         </button>
+      )}
+
+      {/* Kristy's one-line summary of the change she just made (conversational edit). */}
+      {note && <p style={{ ...kristyVoice, ...styles.note }}>{note}</p>}
+
+      {/* Build me a cart — one sentence → a complete tailored list (premium). */}
+      <form
+        onSubmit={(e) => { e.preventDefault(); premium ? runCompose(buildText, 'build') : setComposeGated(true); }}
+        style={styles.buildRow}
+      >
+        <input
+          style={styles.buildInput}
+          value={buildText}
+          onChange={(e) => setBuildText(e.target.value)}
+          placeholder="Build me a cart for… three high-protein dinners for four"
+          aria-label="Build me a cart"
+        />
+        <button type="submit" style={styles.buildBtn} disabled={busy === 'build'}>
+          {busy === 'build' ? '…' : 'Build'}
+        </button>
+      </form>
+
+      {/* The conversational editor is premium — free hits a Kristy-voiced, in-card nudge. */}
+      {composeGated && (
+        <div style={styles.nudge}>
+          <span style={{ ...kristyVoice, ...styles.nudgeLine }}>
+            Building your cart from a sentence &mdash; &ldquo;add taco night,&rdquo; &ldquo;three dinners for four&rdquo; &mdash; is part of a membership. You can still add items by hand.
+          </span>
+          {onUpgrade && (
+            <button type="button" style={styles.nudgeCta} onClick={onUpgrade}>
+              See what membership adds
+            </button>
+          )}
+        </div>
       )}
 
       {/* Free tier still gets a real list — the nudge names what a membership ADDS
@@ -177,8 +282,10 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
                   >
                     {it.name}
                   </span>
-                  {it.source !== 'user' && (
+                  {it.source !== 'user' ? (
                     <span style={styles.tag}>{it.source === 'swap' ? 'From your haul' : 'Kristy added'}</span>
+                  ) : (
+                    <span style={styles.tagUser}>You added</span>
                   )}
                 </span>
                 {/* Every shopping row gets "Ask Kristy" — the Perimeter loop. Swaps are
@@ -197,17 +304,20 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
         ))}
       </div>
 
+      {/* The persistent conversational input — premium speaks to Kristy in natural
+          language ("add taco night", "swap the rice for something faster"); free does
+          a plain add. Chat that lives inside the artifact, not a separate room. */}
       <div style={styles.addRow}>
         <input
           style={styles.addInput}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && add()}
-          placeholder="Add an item"
-          aria-label="Add an item"
+          onKeyDown={(e) => e.key === 'Enter' && submitBottom()}
+          placeholder={premium ? "Tell me what else you need — 'add taco night', 'swap the rice'…" : 'Add an item'}
+          aria-label={premium ? 'Tell Kristy what else you need' : 'Add an item'}
         />
-        <button type="button" style={styles.addBtn} onClick={add}>
-          Add
+        <button type="button" style={styles.addBtn} onClick={submitBottom} disabled={busy === 'edit'}>
+          {busy === 'edit' ? '…' : premium ? 'Send' : 'Add'}
         </button>
       </div>
 
@@ -245,7 +355,14 @@ const styles = {
   icon: { color: colors.accentGold, display: 'flex' },
   title: { ...kristyVoice, margin: 0, fontSize: 24, color: colors.textPrimary },
   intro: { margin: 0, fontSize: 16, lineHeight: 1.5, color: colors.textPrimary },
+  note: { margin: '2px 0 0', fontSize: 15, lineHeight: 1.5, color: colors.textSecondary },
   setGoal: { alignSelf: 'flex-start', padding: 0, background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
+
+  // Build-me-a-cart — a prominent gold-outlined prompt, one sentence → a full list.
+  buildRow: { display: 'flex', gap: 8, marginTop: 2 },
+  buildInput: { flex: 1, minWidth: 0, padding: '12px 14px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9, color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 14.5, outline: 'none' },
+  buildBtn: { flex: '0 0 auto', padding: '12px 18px', borderRadius: 12, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+  tagUser: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.textMuted },
 
   // Free-tier capability nudge (not a wall) — her voice + one gold CTA.
   nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },

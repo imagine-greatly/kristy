@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { randomUUID } from 'node:crypto';
 import { requireAuth } from '../lib/supabase.js';
+import { userRateLimit } from '../lib/rateLimit.js';
 import {
   getFullProfile,
   getShoppingList,
@@ -10,7 +11,15 @@ import {
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { generateList, mergePendingSwaps, EMPTY_SIGNALS } from '../lib/list.js';
+import { composeListEdit } from '../lib/listCompose.js';
 import { migratePreferences } from '../lib/taxonomy.js';
+
+const rid = () => randomUUID();
+
+// The withheld conversational-building capability, in Kristy's voice (named value,
+// not "go premium"). Free users still get a real basic list + manual add/remove.
+const LIST_COMPOSE_UPSELL =
+  "Building your cart from a sentence — 'add taco night', 'three high-protein dinners for four' — is part of a membership. Want me to run with it?";
 
 // The List — server-persisted and server-gated (Step 8 → durable).
 //
@@ -150,6 +159,92 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
   } catch (err) {
     console.error('[kristy] POST /api/list/rebuild error:', err.message);
     return res.status(500).json({ error: 'Could not rebuild your list.' });
+  }
+});
+
+// Apply a claim-safe compose result (add/remove by name) to the current list,
+// deterministically — the model only proposed names + sections; we do the edit.
+function applyCompose(current, { add = [], remove = [] }) {
+  const items = Array.isArray(current?.items) ? [...current.items] : [];
+  const rm = remove.map((r) => String(r).toLowerCase()).filter(Boolean);
+  const dropped = (name) => {
+    const n = String(name).toLowerCase();
+    return rm.some((r) => n === r || n.includes(r) || r.includes(n));
+  };
+  // Never remove a haul-swap callout via a text instruction; those are Kristy's notes.
+  const kept = items.filter((it) => it.source === 'swap' || !dropped(it.name));
+  const present = new Set(kept.map((it) => it.name.toLowerCase()));
+  const added = [];
+  for (const a of add) {
+    const key = String(a.name).toLowerCase();
+    if (!key || present.has(key)) continue;
+    present.add(key);
+    added.push({ id: rid(), name: a.name, category: a.section || 'Pantry', checked: false, source: 'template' });
+  }
+  return { ...current, items: [...kept, ...added] };
+}
+
+// POST /api/list/compose  { instruction, mode?: 'edit' | 'build' }
+// The conversational editor: natural language → a list edit. PREMIUM only (reads
+// premium from the DB, never the body) — free users get a Kristy-voiced, in-card
+// nudge (no wall). The one model call is claim-safe: it emits grocery item names +
+// sections + a one-line summary, and we apply add/remove deterministically.
+router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
+  const userId = req.user.id;
+  const instruction = String(req.body?.instruction || '').trim();
+  const mode = req.body?.mode === 'build' ? 'build' : 'edit';
+  if (!instruction) return res.status(400).json({ error: 'instruction is required' });
+
+  try {
+    const premium = await premiumForReq(req);
+    if (!premium) {
+      return res.json({ gated: true, premium: false, upsell: LIST_COMPOSE_UPSELL });
+    }
+
+    const profile = await getFullProfile(userId).catch(() => ({}));
+    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
+    const row = await getShoppingList(userId);
+    const current =
+      row?.list && Array.isArray(row.list.items)
+        ? row.list
+        : generateList({ goal, nonNegotiables, focuses, constraints, premium });
+
+    const { add, remove, summary } = await composeListEdit({
+      instruction,
+      mode,
+      currentItems: current.items.map((i) => i.name),
+      goal,
+      focuses,
+      hardLines: nonNegotiables,
+      constraints,
+    });
+
+    let list;
+    if (mode === 'build') {
+      // A fresh cart. Keep any haul-swap callouts leading; replace the rest.
+      const swaps = current.items.filter((i) => i.source === 'swap');
+      const seen = new Set();
+      const items = [];
+      for (const a of add) {
+        const key = String(a.name).toLowerCase();
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        items.push({ id: rid(), name: a.name, category: a.section || 'Pantry', checked: false, source: 'template' });
+      }
+      list = { goal: goal || null, intro: summary || current.intro || '', items: [...swaps, ...items] };
+    } else {
+      list = applyCompose(current, { add, remove });
+    }
+
+    const clean = sanitizeList(list) || list;
+    await persist(userId, { list: clean });
+    return res.json({ list: clean, summary, premium: true });
+  } catch (err) {
+    console.error('[kristy] POST /api/list/compose error:', err.message);
+    return res.status(503).json({
+      error: true,
+      message: "I couldn't put that together just now — give me a second and try again.",
+    });
   }
 });
 
