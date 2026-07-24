@@ -1,118 +1,83 @@
-// Shared chat engine — the meal-resolution + reply-generation core that BOTH
-// the authed chat (/api/chat) and the guest chat (/api/guest/chat) run through.
+// Shared chat engine — the reply-generation core that BOTH the authed chat
+// (/api/chat) and the guest chat (/api/guest/chat) run through.
 //
-// Everything stateless lives here: resolve a typed meal against USDA, inject the
-// real totals into Kristy's system prompt, run inference, and override the macro
-// card with the authoritative database numbers. The authed route wraps this with
-// context-gathering + persistence; the guest route wraps it with neutral context
-// and no persistence. Neither duplicates the pipeline.
+// Kristy is a grocery coach: she never counts or volunteers calories/macros.
+// This module runs one inference and then enforces that no-macro rule
+// STRUCTURALLY (macroGuard) — the guarantee lives in the code, not the prompt,
+// so it holds even if the model slips. There is no macro/meal/weight pipeline
+// here anymore; the coach never produces a macro card.
 
 import { anthropic, MODEL } from './anthropic.js';
 import { CHAT_SYSTEM_PROMPT } from './prompts.js';
 import { parseChatJSON } from './parse.js';
-import { resolveTypedMeal } from './mealResolver.js';
+import {
+  userAskedAboutMacros,
+  volunteeredMacroAccounting,
+  stripMacroSentences,
+} from './macroGuard.js';
 
-/**
- * The resolved-meal block injected into the system prompt: real USDA totals +
- * per-item breakdown, so Kristy's reply is built around true numbers.
- */
-export function buildMealEvent(resolution) {
-  const m = resolution.macros;
-  const lines = [
-    `Total: ${m.calories} cal, ${m.protein}g protein, ${m.carbs}g carbs, ${m.fat}g fat.`,
-    'Items:',
-    ...resolution.breakdown.map((b) => {
-      const tag = b.source === 'estimate' ? ' (estimated — USDA had no match)' : '';
-      return `- ${b.grams}g ${b.food}: ${b.calories} cal, ${b.protein}g protein${tag}`;
-    }),
-  ];
-  if (resolution.source === 'estimate') {
-    lines.push('Some items were estimated — it is fine to say "roughly" about the total.');
-  }
-  lines.push(
-    'Respond with hasFood: true and put these EXACT totals in your macros field. Protein first, in your voice.'
-  );
-  return lines.join('\n');
-}
+// Coaching JSON is always this shape now — no logging, ever.
+const NO_MACROS = { hasFood: false, macros: null, foods: [], insight: '' };
 
-/**
- * Run the typed-meal resolver, degrading gracefully to null (the old
- * single-call behavior where Haiku estimates macros itself) on any failure.
- */
-export async function resolveMeal(message) {
-  try {
-    return await resolveTypedMeal(message);
-  } catch (err) {
-    console.error('[kristy] meal resolution error:', err.message);
-    return null;
-  }
-}
+// Sent back to the model when its reply volunteered macro accounting.
+const MACRO_CORRECTION =
+  "Your previous reply volunteered calorie or macro accounting — Kristy never does that. Rewrite the SAME answer about the food and the shopping (what it is, whether it's worth buying, what to grab instead) with zero calorie, macro, or nutrient math. Keep it specific and in her voice. Same JSON shape.";
 
-/**
- * Generate Kristy's reply around real (or, on fallback, estimated) macros.
- *
- * @param {object}   args
- * @param {string}   args.message              the current user message
- * @param {Array}    args.conversationHistory   prior turns [{role, content}]
- * @param {object}   args.contextBlocks         { preferencesBlock, profileBlock, historyBlock, goalsBlock, todayBlock, weightBlock }
- * @param {object|null} args.mealResolution     result of resolveMeal(), or null
- * @param {string}   args.weightEvent           optional weight-log event block (authed only)
- * @param {boolean}  args.macroTracking         whether the shopper has opted into macro tracking
- * @returns {Promise<{message, hasFood, macros, foods, insight}>}
- */
-export async function generateReply({
-  message,
-  conversationHistory = [],
-  contextBlocks,
-  mealResolution = null,
-  weightEvent = '',
-  macroTracking = false,
-}) {
-  const system = CHAT_SYSTEM_PROMPT({
-    ...contextBlocks,
-    macroTracking,
-    weightEvent,
-    mealEvent: macroTracking && mealResolution ? buildMealEvent(mealResolution) : '',
-  });
+// Last-resort line if even a corrected + stripped reply has nothing left.
+const SAFE_FALLBACK =
+  "Let's keep it on the food — tell me what you're deciding between and I'll give you my straight read.";
 
-  // Build the message thread for Haiku.
-  const messages = conversationHistory
-    .filter((m) => m && m.content)
-    .map((m) => ({
-      role: m.role === 'ai' ? 'assistant' : 'user',
-      content: String(m.content),
-    }));
-  messages.push({ role: 'user', content: message });
-
+async function runOnce(system, messages) {
   const completion = await anthropic.messages.create({
     model: MODEL,
     max_tokens: 700,
     system,
     messages,
   });
+  return parseChatJSON(completion.content?.[0]?.text || '');
+}
 
-  const text = completion.content?.[0]?.text || '';
-  const result = parseChatJSON(text);
+/**
+ * Generate Kristy's coaching reply. The macro guarantee is enforced here, not
+ * trusted to the prompt.
+ *
+ * @param {object} args
+ * @param {string} args.message             the current user message
+ * @param {Array}  args.conversationHistory prior turns [{role, content}]
+ * @param {object} args.contextBlocks       { preferencesBlock, profileBlock }
+ * @returns {Promise<{message, hasFood, macros, foods, insight}>}
+ */
+export async function generateReply({ message, conversationHistory = [], contextBlocks = {} }) {
+  const system = CHAT_SYSTEM_PROMPT({ ...contextBlocks });
 
-  // Macro tracking OFF (the default): strip any macro/log the model may have
-  // slipped in, structurally — the grocery coach never volunteers calories,
-  // macros, or a "logged it" card. This is the guarantee, not the prompt.
-  if (!macroTracking) {
-    result.hasFood = false;
-    result.macros = null;
-    result.foods = [];
-    result.insight = '';
-    return result;
+  const messages = conversationHistory
+    .filter((m) => m && m.content)
+    .map((m) => ({ role: m.role === 'ai' ? 'assistant' : 'user', content: String(m.content) }));
+  messages.push({ role: 'user', content: message });
+
+  let result = await runOnce(system, messages);
+
+  // Structural no-macro backstop. Kristy never VOLUNTEERS calorie/macro
+  // accounting; if the user explicitly asked, a plain answer is allowed and we
+  // leave it. Otherwise: regenerate once with a corrective, then — if it still
+  // slips — strip the offending sentences deterministically. The guarantee does
+  // not depend on the model complying (same doctrine as the claim lock).
+  if (!userAskedAboutMacros(message) && volunteeredMacroAccounting(result.message)) {
+    let cleaned = result.message;
+    try {
+      const corrected = await runOnce(system, [
+        ...messages,
+        { role: 'assistant', content: result.message },
+        { role: 'user', content: MACRO_CORRECTION },
+      ]);
+      cleaned = corrected.message;
+    } catch (err) {
+      console.error('[kristy] macro-guard retry failed:', err?.message || err);
+    }
+    if (volunteeredMacroAccounting(cleaned)) cleaned = stripMacroSentences(cleaned);
+    result = { ...result, message: cleaned.trim() || SAFE_FALLBACK };
   }
 
-  // Macro tracking ON: when USDA resolved the meal, its totals are authoritative —
-  // override whatever Haiku echoed so the macro card always shows real database
-  // numbers (and the message, built around the same numbers, matches).
-  if (mealResolution) {
-    result.hasFood = true;
-    result.macros = mealResolution.macros;
-    result.foods = mealResolution.foods;
-  }
-
-  return result;
+  // The grocery coach never produces a macro card. Unconditional.
+  return { message: result.message, ...NO_MACROS };
 }

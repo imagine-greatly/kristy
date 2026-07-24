@@ -1,20 +1,18 @@
 import { useRef, useState, useEffect } from 'react';
-import { ArrowUpIcon, BarcodeIcon, CameraIcon, VerdictIcon } from './Icons.jsx';
+import { ArrowUpIcon, BarcodeIcon, VerdictIcon } from './Icons.jsx';
 
+// The chat composer. Three affordances only: type a message, scan a barcode, or
+// photograph a label for a verdict. No meal-photo / macro-logging control —
+// Kristy is a grocery coach, not a food log.
 export default function InputBar({
   value,
   onChange,
   onSend,
   disabled,
   onBarcode,
-  onPhotoFile,
-  photoPreview,
-  onClearPhoto,
-  onSendPhoto,
   onVerdictFile,
 }) {
   const ref = useRef(null);
-  const fileRef = useRef(null);
   const verdictRef = useRef(null);
   const [focused, setFocused] = useState(false);
 
@@ -26,13 +24,10 @@ export default function InputBar({
     el.style.height = Math.min(el.scrollHeight, 120) + 'px';
   }, [value]);
 
-  const hasText = value.trim().length > 0;
-  const canSend = (hasText || !!photoPreview) && !disabled;
+  const canSend = value.trim().length > 0 && !disabled;
 
   const doSend = () => {
-    if (!canSend) return;
-    if (photoPreview) onSendPhoto(value);
-    else onSend();
+    if (canSend) onSend();
   };
 
   const handleKey = (e) => {
@@ -40,12 +35,6 @@ export default function InputBar({
       e.preventDefault();
       doSend();
     }
-  };
-
-  const handleFile = (e) => {
-    const f = e.target.files?.[0];
-    if (f) onPhotoFile(f);
-    e.target.value = ''; // allow re-selecting the same file
   };
 
   const handleVerdictFile = (e) => {
@@ -56,44 +45,16 @@ export default function InputBar({
 
   return (
     <div className="inputbar">
-      {photoPreview && (
-        <div className="photo-preview">
-          <img src={photoPreview} alt="Selected meal" />
-          <button
-            className="photo-preview__remove"
-            onClick={onClearPhoto}
-            aria-label="Remove photo"
-          >
-            ×
-          </button>
-        </div>
-      )}
-
       <div className={`inputbar__inner${focused ? ' focused' : ''}`}>
         <button className="input-icon-btn" onClick={onBarcode} aria-label="Scan barcode">
           <BarcodeIcon />
         </button>
-        <button
-          className="input-icon-btn"
-          onClick={() => fileRef.current?.click()}
-          aria-label="Add a photo"
-        >
-          <CameraIcon />
-        </button>
-        <input
-          ref={fileRef}
-          type="file"
-          accept="image/*"
-          capture="environment"
-          style={{ display: 'none' }}
-          onChange={handleFile}
-        />
         {onVerdictFile && (
           <>
             <button
               className="input-icon-btn input-icon-btn--verdict"
               onClick={() => verdictRef.current?.click()}
-              aria-label="Kristy's Verdict — scan a meal or haul"
+              aria-label="Kristy's Verdict — scan a label"
               title="Kristy's Verdict"
             >
               <VerdictIcon />
@@ -113,7 +74,7 @@ export default function InputBar({
           ref={ref}
           rows={1}
           value={value}
-          placeholder="What did you eat?"
+          placeholder="Ask me anything, or scan it."
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKey}
           onFocus={() => setFocused(true)}

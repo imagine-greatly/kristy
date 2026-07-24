@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import { STEPS } from '../lib/onboardingSteps.js';
+import { useState } from 'react';
 import { CloseIcon } from './Icons.jsx';
 import { openBillingPortal } from '../lib/api.js';
-import { hasMacroTracking } from '../lib/data.js';
 import { colors } from '../lib/tokens.js';
 import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS } from '../lib/coachGoals.js';
 import { customLineLabel, isCustomLine } from '../lib/preferences.js';
@@ -15,45 +13,6 @@ const prefLabel = (v) =>
   NON_NEGOTIABLES.find((n) => n.value === v)?.label ||
   CONSTRAINTS.find((c) => c.value === v)?.label ||
   (isCustomLine(v) ? customLineLabel(v) : v);
-
-// An accessible on/off switch, tokens only.
-function Switch({ on, onChange, disabled, label }) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={on}
-      aria-label={label}
-      onClick={() => !disabled && onChange(!on)}
-      disabled={disabled}
-      style={{
-        position: 'relative',
-        width: 46,
-        height: 28,
-        flex: '0 0 auto',
-        padding: 0,
-        borderRadius: 999,
-        border: `1px solid ${on ? colors.borderGold : colors.border}`,
-        background: on ? colors.goldTint9 : 'transparent',
-        cursor: disabled ? 'default' : 'pointer',
-        transition: 'background .18s ease, border-color .18s ease',
-      }}
-    >
-      <span
-        style={{
-          position: 'absolute',
-          top: 3,
-          left: on ? 21 : 3,
-          width: 20,
-          height: 20,
-          borderRadius: 999,
-          background: on ? colors.accentGold : colors.textMuted,
-          transition: 'left .18s ease, background .18s ease',
-        }}
-      />
-    </button>
-  );
-}
 
 // The read-only summary of what the shopper's shopping for — the primary content
 // for a grocery user. Chips render current goal + focuses + hard lines + constraints.
@@ -109,83 +68,23 @@ function membershipLine(sub) {
   return 'Free plan';
 }
 
-// Reuse onboarding's option lists so settings and onboarding never drift.
-const opt = (id) => STEPS.find((s) => s.id === id)?.options || [];
-const GOAL_OPTIONS = opt('goal');
-const SPORT_OPTIONS = opt('sport');
-const FREQ_OPTIONS = opt('training_frequency');
-const UNIT_OPTIONS = STEPS.find((s) => s.id === 'weight')?.units || [
-  { label: 'lbs', value: 'lbs' },
-  { label: 'kg', value: 'kg' },
-];
-
-function ChipGroup({ options, value, onPick, disabled }) {
-  return (
-    <div className="set-chips">
-      {options.map((o) => (
-        <button
-          key={o.value}
-          className={`set-chip${value === o.value ? ' selected' : ''}`}
-          onClick={() => onPick(o.value)}
-          disabled={disabled}
-        >
-          {o.label}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 /**
- * Minimal settings screen — edit goal, weight-unit preference, and training,
- * plus a guarded account-deletion. Opens as a full-screen sheet over the app.
+ * Minimal settings screen — Membership, Shopping preferences, and a guarded
+ * account deletion. Kristy is a grocery coach; there are no macro, calorie,
+ * weight, or training surfaces here. Opens as a full-screen sheet over the app.
  *
- * @param profile  the user's current profile row (goal/weight_unit/sport/…)
- * @param onSave   (patch) => Promise — persists one or more profile fields
- * @param onDelete () => Promise — deletes the account (and signs out)
+ * @param profile           the user's current profile row (coach_goal/focuses/…)
+ * @param onEditPreferences () => void — opens the goal switcher (the pref editor)
+ * @param onDelete          () => Promise — deletes the account (and signs out)
  */
 export default function Settings({
   profile,
   subscription,
-  macroTracking = false,
   onUpgrade,
   onClose,
-  onSave,
-  onToggleMacroTracking,
   onEditPreferences,
   onDelete,
-  onOpenMacroSetup,
 }) {
-  const [vals, setVals] = useState({
-    goal: profile?.goal || null,
-    weight_unit: profile?.weight_unit || 'lbs',
-    sport: profile?.sport || null,
-    training_frequency: profile?.training_frequency || null,
-  });
-  const [savingKey, setSavingKey] = useState('');
-  const [error, setError] = useState('');
-
-  // Macro-tracking switch — optimistic local mirror of the prop, so the macro
-  // sections reveal/hide instantly. Reverts on a failed save.
-  const [tracking, setTracking] = useState(macroTracking);
-  const [togglingMacro, setTogglingMacro] = useState(false);
-  useEffect(() => setTracking(macroTracking), [macroTracking]);
-
-  async function toggleMacro(next) {
-    if (togglingMacro || !onToggleMacroTracking) return;
-    setTracking(next); // optimistic
-    setTogglingMacro(true);
-    setError('');
-    try {
-      await onToggleMacroTracking(next);
-    } catch {
-      setTracking(!next); // revert
-      setError('Could not update macro tracking — try again.');
-    } finally {
-      setTogglingMacro(false);
-    }
-  }
-
   // Manage-subscription (Stripe portal) state.
   const [managing, setManaging] = useState(false);
   const [manageError, setManageError] = useState('');
@@ -209,24 +108,9 @@ export default function Settings({
   const [confirming, setConfirming] = useState(false);
   const [confirmText, setConfirmText] = useState('');
   const [deleting, setDeleting] = useState(false);
+  const [error, setError] = useState('');
 
   const canDelete = confirmText.trim().toLowerCase() === 'delete';
-
-  async function change(key, value) {
-    if (vals[key] === value) return;
-    const prev = vals;
-    setVals({ ...vals, [key]: value });
-    setSavingKey(key);
-    setError('');
-    try {
-      await onSave({ [key]: value });
-    } catch {
-      setVals(prev); // revert the optimistic pick
-      setError('Could not save that — try again.');
-    } finally {
-      setSavingKey('');
-    }
-  }
 
   async function handleDelete() {
     if (!canDelete || deleting) return;
@@ -288,81 +172,6 @@ export default function Settings({
             )}
           </section>
 
-          {/* Macro tracking — the ONE optional switch. OFF by default: Kristy coaches
-              your shopping without calories. This is the only place the macro feature
-              appears; everything fitness-shaped below is gated on it. */}
-          <section className="set-section">
-            <div className="set-section__label">Macro tracking (optional)</div>
-            <div className="set-membership">
-              <span className="set-membership__status">
-                {tracking ? 'On — calories, macros & weight' : 'Off — shopping, not counting'}
-              </span>
-              <Switch on={tracking} onChange={toggleMacro} disabled={togglingMacro} label="Macro tracking" />
-            </div>
-            <p className="set-sub" style={{ margin: '6px 0 0' }}>
-              Turn this on for calorie/macro logging and adaptive weight targets. Off by default — Kristy shops with you without it.
-            </p>
-            {tracking && onOpenMacroSetup && (
-              <button className="set-membership__btn" style={{ marginTop: 10 }} onClick={onOpenMacroSetup}>
-                {hasMacroTracking(profile) ? 'Redo macro setup' : 'Set up macro targets'}
-              </button>
-            )}
-          </section>
-
-          {/* Macro goal / Weight units / Training — the fitness surfaces. They exist
-              ONLY when macro tracking is on; a grocery user never sees them. */}
-          {tracking && (
-            <>
-              <section className="set-section">
-                <div className="set-section__label">
-                  Macro goal {savingKey === 'goal' && <span className="set-saving">saving…</span>}
-                </div>
-                <ChipGroup
-                  options={GOAL_OPTIONS}
-                  value={vals.goal}
-                  onPick={(v) => change('goal', v)}
-                  disabled={!!savingKey}
-                />
-              </section>
-
-              <section className="set-section">
-                <div className="set-section__label">
-                  Weight units{' '}
-                  {savingKey === 'weight_unit' && <span className="set-saving">saving…</span>}
-                </div>
-                <ChipGroup
-                  options={UNIT_OPTIONS}
-                  value={vals.weight_unit}
-                  onPick={(v) => change('weight_unit', v)}
-                  disabled={!!savingKey}
-                />
-              </section>
-
-              <section className="set-section">
-                <div className="set-section__label">
-                  Training{' '}
-                  {(savingKey === 'sport' || savingKey === 'training_frequency') && (
-                    <span className="set-saving">saving…</span>
-                  )}
-                </div>
-                <div className="set-sub">Sport</div>
-                <ChipGroup
-                  options={SPORT_OPTIONS}
-                  value={vals.sport}
-                  onPick={(v) => change('sport', v)}
-                  disabled={!!savingKey}
-                />
-                <div className="set-sub">How often</div>
-                <ChipGroup
-                  options={FREQ_OPTIONS}
-                  value={vals.training_frequency}
-                  onPick={(v) => change('training_frequency', v)}
-                  disabled={!!savingKey}
-                />
-              </section>
-            </>
-          )}
-
           {error && <p className="set-error">{error}</p>}
 
           <section className="set-section set-danger">
@@ -374,9 +183,9 @@ export default function Settings({
             ) : (
               <div className="set-danger__confirm">
                 <p className="set-danger__warn">
-                  This permanently deletes your account and all your data — meals,
-                  weigh-ins, chats, and goals. This can’t be undone. Type{' '}
-                  <b>delete</b> to confirm.
+                  This permanently deletes your account and all your data — your
+                  lists, hauls, scans, chats, and preferences. This can’t be undone.
+                  Type <b>delete</b> to confirm.
                 </p>
                 <input
                   className="set-danger__input"

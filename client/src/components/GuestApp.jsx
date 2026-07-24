@@ -25,14 +25,14 @@ const GATE_AFTER = 4;
 
 const INTRO = {
   greeting: "I'm Kristy.",
-  subtitle: "Tell me what you ate and I'll break it down — no account needed to start.",
+  subtitle: "Ask me anything, or scan a label — no account needed to start.",
 };
 const CAP_LINE =
-  "I've been paying attention. Sign in and I'll remember all of it — your meals, your patterns, your targets.";
+  "I've been paying attention. Sign in and I'll remember all of it — your scans, your list, and what you're shopping for.";
 const LIMIT_LINE =
-  "That's plenty for a taste. Sign in to keep going, and I'll start remembering everything you log.";
+  "That's plenty for a taste. Sign in to keep going, and I'll start remembering your scans and your list.";
 const INVITE_LINE =
-  "Sign in whenever you're ready and I'll start remembering everything — your meals, your patterns, your targets.";
+  "Sign in whenever you're ready and I'll start remembering everything — your scans, your haul, and what you're shopping for.";
 
 // The stateless, gated app. Guests can SCAN and see the universal layer (what's in
 // the food) for free — the acquisition hook. The goal-personalized note and the
@@ -93,7 +93,7 @@ export default function GuestApp({ onOpenIngredient }) {
         id: rid(),
         role: 'ai',
         content: result.message,
-        macros: result.hasFood ? { ...result.macros, foods: result.foods, insight: result.insight } : null,
+        macros: null,
       };
       setMessages((prev) => [...prev, aiMsg]);
 
@@ -181,11 +181,6 @@ export default function GuestApp({ onOpenIngredient }) {
             // Guests CAN scan now — barcode/label run the real (universal) scan.
             onBarcode={() => setCameraOpen(true)}
             onVerdictFile={handleGuestLabel}
-            // Meal-photo logging needs persistence → nudge toward sign-in.
-            onPhotoFile={invite}
-            photoPreview={null}
-            onClearPhoto={() => {}}
-            onSendPhoto={() => {}}
           />
         </>
       )}

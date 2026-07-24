@@ -1,5 +1,4 @@
 import { MenuIcon } from './Icons.jsx';
-import { fmt } from '../lib/format.js';
 import { colors, fonts } from '../lib/tokens.js';
 import GoalChip from './GoalChip.jsx';
 
@@ -30,7 +29,7 @@ function PremiumMark({ onClick }) {
   );
 }
 
-export default function TopBar({ onMenu, todayCalories, macroTracking, goalLabel, onGoalClick, showPremium, onPremium }) {
+export default function TopBar({ onMenu, goalLabel, onGoalClick, showPremium, onPremium }) {
   return (
     <header className="topbar">
       <button
@@ -42,12 +41,6 @@ export default function TopBar({ onMenu, todayCalories, macroTracking, goalLabel
       </button>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <GoalChip label={goalLabel} onClick={onGoalClick} />
-        {/* Macro tracking is an opt-in feature now, not the identity — the kcal pill
-            only exists for users who turned macro tracking on. A pure grocery user's
-            header never reads like a fitness app. */}
-        {macroTracking && todayCalories > 0 && (
-          <div className="kcal-pill">{fmt(todayCalories)} kcal</div>
-        )}
         {showPremium && onPremium && <PremiumMark onClick={onPremium} />}
       </div>
     </header>

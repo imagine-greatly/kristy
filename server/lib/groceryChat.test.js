@@ -12,7 +12,7 @@ import { looksLikePerimeterQuestion } from './chatRouting.js';
 const HARD_RULES = ['CLAIM LOCK', 'NO TREATMENT', 'NO PRICE', 'FAT PHILOSOPHY', 'NO MORALIZING'];
 
 test('identity is the grocery coach, not the calorie tracker', () => {
-  const p = CHAT_SYSTEM_PROMPT({ macroTracking: false });
+  const p = CHAT_SYSTEM_PROMPT({});
   assert.match(p, /grocery and food coach/i);
   assert.match(p, /no barcode/i);
   // The old tracker framing is gone.
@@ -20,29 +20,25 @@ test('identity is the grocery coach, not the calorie tracker', () => {
   assert.doesNotMatch(p, /separates Kristy from every calorie tracker/);
 });
 
-test('the hard rules are restated in BOTH modes', () => {
-  for (const macroTracking of [false, true]) {
-    const p = CHAT_SYSTEM_PROMPT({ macroTracking });
-    for (const rule of HARD_RULES) assert.ok(p.includes(rule), `${rule} missing (macroTracking=${macroTracking})`);
-  }
+test('the hard rules are restated', () => {
+  const p = CHAT_SYSTEM_PROMPT({});
+  for (const rule of HARD_RULES) assert.ok(p.includes(rule), `${rule} missing`);
 });
 
-test('macro tracking OFF: coach mode, macros forbidden in the contract', () => {
-  const p = CHAT_SYSTEM_PROMPT({ macroTracking: false });
-  assert.match(p, /MACRO TRACKING IS OFF/);
+test('single coach mode: macros forbidden, no tracker mode remains', () => {
+  const p = CHAT_SYSTEM_PROMPT({});
+  assert.match(p, /NO CALORIE OR MACRO ACCOUNTING/);
   assert.match(p, /hasFood is ALWAYS false/);
-  assert.match(p, /Macro tracking in Settings/); // the once-only pointer
-  // No meal-logging JSON branch, no weight machinery.
+  // No tracker mode: no ON branch, no meal-logging JSON, no weight machinery, no Settings pitch.
+  assert.doesNotMatch(p, /MACRO TRACKING IS ON/);
   assert.doesNotMatch(p, /"hasFood": true/);
   assert.doesNotMatch(p, /WEIGHT LOGGING AND OPTIMIZATION/);
+  assert.doesNotMatch(p, /turn on Macro tracking|Macro tracking in Settings/);
 });
 
-test('macro tracking ON: logging + weight machinery restored', () => {
-  const p = CHAT_SYSTEM_PROMPT({ macroTracking: true, goalsBlock: 'g', todayBlock: 't', historyBlock: 'h' });
-  assert.match(p, /MACRO TRACKING IS ON/);
-  assert.match(p, /"hasFood": true/);
-  assert.match(p, /WEIGHT LOGGING AND OPTIMIZATION/);
-  assert.match(p, /USDA/);
+test('substance floor: a bare acknowledgment is a failure, not a style', () => {
+  const p = CHAT_SYSTEM_PROMPT({});
+  assert.match(p, /SUBSTANCE/);
 });
 
 test('preferences block renders the taxonomy labels Kristy speaks through', () => {

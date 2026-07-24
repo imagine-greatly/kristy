@@ -1,18 +1,13 @@
-import { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'react';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { IS_DEMO } from './lib/config.js';
-import { colors, fonts } from './lib/tokens.js';
 import { supabase } from './lib/supabase.js';
 import { dayKey, dateLabel } from './lib/format.js';
 import {
-  loadGoals,
-  saveGoals,
   saveProfileFields,
   saveCoachProfile,
-  loadRecentMeals,
   loadDayMessages,
   loadLatestSummary,
   loadProfile,
-  loadWeightHistory,
   saveHaulScan,
   loadHaul,
 } from './lib/data.js';
@@ -30,13 +25,7 @@ import { loadGuestState, clearGuestState } from './lib/guestState.js';
 import { pushSwaps } from './lib/list.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
-import { sendPhoto, runProductScan, requestGoalNote } from './lib/logging.js';
-import {
-  getLastActiveDate,
-  setLastActiveDate,
-  recapMessage,
-  yesterdayKey,
-} from './lib/dayBoundary.js';
+import { runProductScan, requestGoalNote } from './lib/logging.js';
 
 import TopBar from './components/TopBar.jsx';
 // Lazy-loaded: pulls in the heavy @zxing barcode decoder only when the scanner opens.
@@ -46,7 +35,6 @@ import MessageBubble from './components/MessageBubble.jsx';
 import TypingIndicator from './components/TypingIndicator.jsx';
 import InputBar from './components/InputBar.jsx';
 import GuestApp from './components/GuestApp.jsx';
-import Onboarding from './components/Onboarding.jsx';
 import CoachOnboarding from './components/CoachOnboarding.jsx';
 import GoalSwitcher from './components/GoalSwitcher.jsx';
 import FocusDisclaimer from './components/FocusDisclaimer.jsx';
@@ -64,7 +52,6 @@ import HaulShareCard from './components/HaulShareCard.jsx';
 import IngredientPage from './components/IngredientPage.jsx';
 import { ingredientIdFromPath, ingredientPath } from './lib/ingredients.js';
 
-const ZERO = { calories: 0, protein: 0, carbs: 0, fat: 0 };
 const rid = () =>
   (crypto.randomUUID && crypto.randomUUID()) || `id-${Date.now()}-${Math.random()}`;
 
@@ -75,49 +62,6 @@ const toUiMsg = (m) => ({
   macros: m.macros || null,
   isSummary: !!m.isSummary,
 });
-
-// Convert a weight to a target unit ('lbs' | 'kg').
-function toUnit(value, fromUnit, unit) {
-  const v = Number(value) || 0;
-  if ((fromUnit || 'lbs') === unit) return v;
-  return unit === 'lbs' ? v * 2.20462 : v * 0.453592;
-}
-
-// Latest weigh-in + 7-day change, expressed in the latest entry's unit.
-// Returns null when there's nothing logged yet.
-function weightSummary(history, goalType) {
-  if (!history || history.length === 0) return null;
-  const sorted = [...history].sort(
-    (a, b) => new Date(a.logged_at) - new Date(b.logged_at)
-  );
-  const latest = sorted[sorted.length - 1];
-  const unit = latest.weight_unit || 'lbs';
-  const current = Number(latest.weight_value);
-
-  // Earliest entry within the last 7 days is the baseline for the weekly change.
-  const weekAgo = Date.now() - 7 * 86400000;
-  const within = sorted.filter((e) => new Date(e.logged_at).getTime() >= weekAgo);
-  const base = within.length ? within[0] : sorted[0];
-  const weekChange =
-    Math.round((current - toUnit(base.weight_value, base.weight_unit, unit)) * 10) / 10;
-
-  return { current, unit, weekChange, goalType };
-}
-
-// Roll meal_logs up into per-day totals.
-function aggregate(meals) {
-  const map = new Map();
-  for (const m of meals) {
-    const k = dayKey(m.logged_at);
-    const cur = map.get(k) || { date: k, ...ZERO };
-    cur.calories += m.calories || 0;
-    cur.protein += m.protein || 0;
-    cur.carbs += m.carbs || 0;
-    cur.fat += m.fat || 0;
-    map.set(k, cur);
-  }
-  return map;
-}
 
 export default function App() {
   const [ready, setReady] = useState(false);
@@ -130,25 +74,17 @@ export default function App() {
   const [aisleOpen, setAisleOpen] = useState(false); // the Perimeter "ask about the aisle" sheet
   // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
   const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
-  const [macroSetupOpen, setMacroSetupOpen] = useState(false); // TDEE intake, settings-only
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
   const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
   const [onbInitialGoal, setOnbInitialGoal] = useState(null); // guest-expressed goal, pre-fills onboarding
 
-  const [goals, setGoals] = useState({ ...ZERO, calories: 2500, protein: 180, carbs: 200, fat: 80 });
-  const [meals, setMeals] = useState([]);
   const [messages, setMessages] = useState([]);
-  const [weightHistory, setWeightHistory] = useState([]);
-  const [goalType, setGoalType] = useState(null);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [typing, setTyping] = useState(false);
   const [input, setInput] = useState('');
-  // Barcode + photo logging UI state.
   const [cameraOpen, setCameraOpen] = useState(false);
-  const [photoFile, setPhotoFile] = useState(null);
-  const [photoPreview, setPhotoPreview] = useState(null);
   // Kristy's Verdict overlay (separate pipeline — never touches meals/thread).
   const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
   // Scan → verdict card (Step 4). A scan is now a verdict, not a silent meal log.
@@ -185,7 +121,6 @@ export default function App() {
       setUserId('demo-user');
       loadProfile('demo-user').then((prof) => {
         setProfile(prof);
-        setGoalType(prof?.goal || null);
         setCoachOnbSkipped(coachOnboardingSkipped('demo-user'));
         // First run (no coach_goal, not skipped) → the coach onboarding branch below
         // asks who we're shopping for; otherwise everyone lands straight on Scan.
@@ -208,7 +143,6 @@ export default function App() {
       setUserId(s.user.id);
       const prof = await loadProfile(s.user.id).catch(() => null);
       setProfile(prof);
-      setGoalType(prof?.goal || null);
       setCoachOnbSkipped(coachOnboardingSkipped(s.user.id));
       // First run (no coach_goal, not skipped) → the coach onboarding branch below
       // asks who we're shopping for and starts the trial; otherwise straight to Scan.
@@ -249,29 +183,6 @@ export default function App() {
       setHaul(null); // invalidate cache → the Haul reloads with the carried-over scans
       trackEvent('guest_scans_claimed', { count: guest.scans.length });
     }
-  }
-
-  // Macro-tracking (TDEE) setup finished — the opt-in, settings-only flow. Onboarding
-  // hands back { goals, profile }; keep the profile so Settings + the weight trend
-  // reflect the just-entered answers immediately, then close the overlay.
-  async function handleOnboarded(result) {
-    if (result?.profile) {
-      setProfile((p) => ({ ...(p || {}), ...result.profile }));
-      setGoalType(result.profile.goal || null);
-    }
-    setMacroSetupOpen(false);
-    setReady(false);
-    await bootstrap(userId);
-    setReady(true);
-  }
-
-  // Settings → persist one or more profile fields. Throws on failure so the
-  // Settings screen can revert its optimistic selection.
-  async function handleSaveProfile(patch) {
-    const updated = await saveProfileFields(userId, patch);
-    setProfile((p) => ({ ...(p || {}), ...patch }));
-    if ('goal' in patch) setGoalType(patch.goal || null);
-    return updated;
   }
 
   /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
@@ -462,39 +373,20 @@ export default function App() {
   }
 
   async function bootstrap(uid) {
-    const now = new Date();
-    const todayKey = dayKey(now);
+    const todayKey = dayKey(new Date());
 
-    const [g, m, dayMsgs, summary, weights, sub] = await Promise.all([
-      loadGoals(uid),
-      loadRecentMeals(uid, 7),
+    const [dayMsgs, summary, sub] = await Promise.all([
       loadDayMessages(uid, todayKey),
       loadLatestSummary(uid),
-      loadWeightHistory(uid, 90),
       getSubscription(),
     ]);
-    setGoals(g);
-    setMeals(m);
-    setWeightHistory(weights);
     setSubscription(sub);
     setViewingDate(todayKey);
     setLiveDay(todayKey);
 
-    // Day-boundary detection.
-    const stored = getLastActiveDate();
-    const isNewDay = stored && stored !== todayKey;
-    const dayTotals = aggregate(m);
-    const hasHistory = [...dayTotals.keys()].some((k) => k < todayKey);
-
     const msgs = dayMsgs.map(toUiMsg);
 
-    // New day with prior history → inject the "clean slate" recap at the top.
-    if (isNewDay && hasHistory) {
-      const prev = dayTotals.get(yesterdayKey(now)) || { calories: 0, protein: 0 };
-      msgs.unshift(recapMessage(prev, now));
-    }
-
-    // Weekly summary sits above the recap on app open.
+    // Weekly summary sits at the top of the thread on app open.
     if (summary?.summary_text) {
       msgs.unshift({
         id: `summary-${summary.id}`,
@@ -506,7 +398,6 @@ export default function App() {
     }
 
     setMessages(msgs);
-    setLastActiveDate(todayKey); // always advance on load
   }
 
   // Open the upgrade view (from a locked feature, the sidebar, or settings).
@@ -573,27 +464,6 @@ export default function App() {
     };
   }, []);
 
-  /* ───────── Derived ───────── */
-  const dayMap = useMemo(() => aggregate(meals), [meals]);
-  const todayTotals = dayMap.get(today) || { ...ZERO };
-
-  // Latest weight + 7-day change for the sidebar, in the latest entry's unit.
-  const weight = useMemo(
-    () => weightSummary(weightHistory, goalType),
-    [weightHistory, goalType]
-  );
-  // Calorie/macro/weight surfaces only exist once the user opts into macro tracking
-  // (the explicit Settings switch — OFF by default). This is the single flag that
-  // gates every macro/calorie surface across the app + the chat pipeline server-side.
-  const macroTracking = useMemo(() => !!profile?.macro_tracking, [profile]);
-  const historyDays = useMemo(
-    () =>
-      [...dayMap.values()]
-        .filter((d) => d.date !== today)
-        .sort((a, b) => b.date.localeCompare(a.date)),
-    [dayMap, today]
-  );
-
   /* ───────── Scroll to bottom on new messages ───────── */
   useEffect(() => {
     const el = chatRef.current;
@@ -606,21 +476,15 @@ export default function App() {
     if (!content || typing) return;
 
     setInput('');
-    const now = new Date();
-    const cur = dayKey(now);
+    const cur = dayKey(new Date());
     let baseMessages;
 
     if (cur !== liveDay) {
-      // Midnight crossed while the app stayed open → inline day-boundary flow:
-      // reset the thread, inject the recap, continue in the new day.
-      const dayTotals = aggregate(meals);
-      const hasHistory = [...dayTotals.keys()].some((k) => k < cur);
-      const prev = dayTotals.get(yesterdayKey(now)) || { calories: 0, protein: 0 };
-      baseMessages = hasHistory ? [recapMessage(prev, now)] : [];
+      // Midnight crossed while the app stayed open → fresh thread for the new day.
+      baseMessages = [];
       setMessages(baseMessages);
       setViewingDate(cur);
       setLiveDay(cur);
-      setLastActiveDate(cur);
     } else if (viewingDate !== cur) {
       // Returning from a read-only past-day view to today's live thread.
       const dayMsgs = await loadDayMessages(userId, cur);
@@ -641,39 +505,17 @@ export default function App() {
     setTyping(true);
 
     try {
-      const result = await sendChat({
-        message: content,
-        history,
-        ctx: { today: todayTotals, goals },
-      });
+      const result = await sendChat({ message: content, history });
 
       const aiMsg = {
         id: rid(),
         role: 'ai',
         content: result.message,
-        macros: result.hasFood
-          ? { ...result.macros, foods: result.foods, insight: result.insight }
-          : null,
-        // A locked-feature reply (free-user weigh-in / history recall) → show
-        // the quiet "Unlock coaching" affordance under the bubble.
+        macros: null,
+        // A locked-feature reply for a free user → the quiet "Unlock coaching" link.
         upgrade: !!result.upgrade,
       };
       setMessages((prev) => [...prev, aiMsg]);
-
-      if (result.hasFood) {
-        const fresh = await loadRecentMeals(userId, 7);
-        setMeals(fresh);
-      }
-
-      // A weigh-in updates the sidebar trend and may have retuned the target.
-      if (result.weightLogged) {
-        const [w, g] = await Promise.all([
-          loadWeightHistory(userId, 90),
-          loadGoals(userId),
-        ]);
-        setWeightHistory(w);
-        if (g) setGoals(g);
-      }
     } catch (err) {
       setMessages((prev) => [
         ...prev,
@@ -690,67 +532,9 @@ export default function App() {
     }
   }
 
-  /* ───────── Barcode + photo logging ───────── */
+  /* ───────── Barcode + label scanning ───────── */
 
-  // Append an AI result (barcode/photo) the same way a chat reply lands,
-  // and optimistically update today's rings. Mirrors handleSend's tail without touching it.
-  function pushAiResult(result, { image } = {}) {
-    const aiMsg = {
-      id: rid(),
-      role: 'ai',
-      content: result.message,
-      macros: result.hasFood
-        ? {
-            ...result.macros,
-            foods: result.foods,
-            insight: result.insight || '',
-            isEstimate: !!result.isEstimate,
-            estimateNote: result.estimateNote || '',
-          }
-        : null,
-      image: image || null,
-    };
-    setMessages((prev) => [...prev, aiMsg]);
-
-    if (result.hasFood && result.macros) {
-      const m = result.macros;
-      const meal = {
-        id: rid(),
-        logged_at: new Date().toISOString(),
-        foods: result.foods || [],
-        calories: m.calories,
-        protein: m.protein,
-        carbs: m.carbs,
-        fat: m.fat,
-      };
-      setMeals((prev) => [...prev, meal]); // optimistic → rings update immediately
-      if (!IS_DEMO) loadRecentMeals(userId, 7).then(setMeals).catch(() => {});
-    }
-  }
-
-  async function runLogging(fn, { userText, image, fallback } = {}) {
-    if (userText) {
-      setMessages((prev) => [
-        ...prev,
-        { id: rid(), role: 'user', content: userText, macros: null },
-      ]);
-    }
-    setTyping(true);
-    try {
-      const result = await fn();
-      pushAiResult(result, { image });
-    } catch (err) {
-      setMessages((prev) => [
-        ...prev,
-        { id: rid(), role: 'ai', content: fallback || err.message, macros: null },
-      ]);
-    } finally {
-      setTyping(false);
-    }
-  }
-
-  // A scanned barcode is now a VERDICT, not a silent meal log: extract → /verdict →
-  // Step-3 card. Macro logging stays reachable via the meal-photo path (handleSendPhoto).
+  // A scanned barcode is a VERDICT, not a meal log: extract → /verdict → the card.
   async function handleScan(barcode) {
     setCameraOpen(false);
     setFocusOffer(null);
@@ -771,32 +555,6 @@ export default function App() {
     } catch {
       setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
     }
-  }
-
-  function handlePhotoFile(file) {
-    setPhotoFile(file);
-    const reader = new FileReader();
-    reader.onload = () => setPhotoPreview(reader.result);
-    reader.readAsDataURL(file);
-  }
-
-  function clearPhoto() {
-    setPhotoFile(null);
-    setPhotoPreview(null);
-  }
-
-  async function handleSendPhoto(text) {
-    if (!photoFile) return;
-    const file = photoFile;
-    const image = photoPreview;
-    const userText = (text || '').trim();
-    setInput('');
-    clearPhoto();
-    await runLogging(() => sendPhoto({ file, message: userText }), {
-      userText: userText || undefined,
-      image,
-      fallback: "Couldn't read that photo clearly — try again or type it out",
-    });
   }
 
   /* ───────── Photo-of-label scan (Step 4) ─────────
@@ -904,25 +662,7 @@ export default function App() {
     openChat({ opener: `Your list is built for ${g}. Want to tweak it, add something, or talk through a swap?` });
   }
 
-  /* ───────── Goals ───────── */
-  async function handleSaveGoal(key, value) {
-    const next = { ...goals, [key]: value };
-    setGoals(next);
-    try {
-      await saveGoals(userId, next);
-    } catch {
-      /* keep optimistic value */
-    }
-  }
-
-  /* ───────── History navigation ───────── */
-  async function handleSelectDay(date) {
-    setSidebarOpen(false);
-    setViewingDate(date);
-    const dayMsgs = await loadDayMessages(userId, date);
-    setMessages(dayMsgs.map(toUiMsg));
-  }
-
+  /* ───────── Day navigation ───────── */
   async function backToToday() {
     setViewingDate(today);
     const dayMsgs = await loadDayMessages(userId, today);
@@ -990,38 +730,6 @@ export default function App() {
     return <GuestApp onOpenIngredient={openIngredient} />;
   }
 
-  // Macro tracking (TDEE) — the opt-in height/weight/targets intake, reachable ONLY
-  // from Settings, never a default path. Full-screen with an escape so it's never a
-  // trap. (This is the preserved macro-logging feature, not the grocery front door.)
-  if (macroSetupOpen) {
-    return (
-      <div className="app">
-        <Onboarding userId={userId} onComplete={handleOnboarded} />
-        <button
-          type="button"
-          onClick={() => setMacroSetupOpen(false)}
-          aria-label="Close macro setup"
-          style={{
-            position: 'fixed',
-            top: 14,
-            right: 14,
-            zIndex: 100,
-            padding: '8px 14px',
-            borderRadius: 999,
-            border: `1px solid ${colors.border}`,
-            background: colors.surface,
-            color: colors.textMuted,
-            fontFamily: fonts.ui,
-            fontSize: 13,
-            cursor: 'pointer',
-          }}
-        >
-          Close
-        </button>
-      </div>
-    );
-  }
-
   // First run: a signed-in, goal-less user who hasn't skipped is asked who Kristy is
   // shopping for. Completing it sets the goal (saveCoachProfile) but does NOT grant a
   // trial — the user gets their free tastes first and starts the trial explicitly at
@@ -1052,8 +760,6 @@ export default function App() {
     <div className="app">
       <TopBar
         onMenu={() => setSidebarOpen(true)}
-        todayCalories={todayTotals.calories}
-        macroTracking={macroTracking}
         goalLabel={goalChipLabel(profile?.coach_goal)}
         onGoalClick={() => setSwitcherOpen(true)}
         showPremium={subscription?.premium === false}
@@ -1067,22 +773,12 @@ export default function App() {
           setSidebarOpen(false);
           setSettingsOpen(true);
         }}
-        today={todayTotals}
-        todayKey={today}
-        goals={goals}
-        weight={weight}
-        weightHistory={weightHistory}
-        onSaveGoal={handleSaveGoal}
-        historyDays={historyDays}
-        activeDay={viewingDate}
-        onSelectDay={handleSelectDay}
         premium={subscription?.premium ?? false}
         onUpgrade={openUpgrade}
-        macroTracking={macroTracking}
       />
 
       {/* Chat — demoted from a primary tab to connective tissue, reached from the
-          Scan moment. Keeps meal logging + coaching exactly as before. */}
+          Scan moment. Coaching only, grounded in a scan / haul / list. */}
       {moment === 'chat' && (
         <>
           <div className="chat" ref={chatRef}>
@@ -1104,7 +800,7 @@ export default function App() {
               />
             ) : (
               messages.map((m) => (
-                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} macroTracking={macroTracking} />
+                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
               ))
             )}
 
@@ -1118,10 +814,6 @@ export default function App() {
               onSend={() => handleSend()}
               disabled={typing}
               onBarcode={() => setCameraOpen(true)}
-              onPhotoFile={handlePhotoFile}
-              photoPreview={photoPreview}
-              onClearPhoto={clearPhoto}
-              onSendPhoto={handleSendPhoto}
               onVerdictFile={handleVerdictFile}
             />
           )}
@@ -1216,14 +908,10 @@ export default function App() {
         <Settings
           profile={profile}
           subscription={subscription}
-          macroTracking={macroTracking}
           onUpgrade={openUpgrade}
           onClose={() => setSettingsOpen(false)}
-          onSave={handleSaveProfile}
-          onToggleMacroTracking={(v) => handleSaveProfile({ macro_tracking: v })}
           onEditPreferences={() => { setSettingsOpen(false); setSwitcherOpen(true); }}
           onDelete={handleDeleteAccount}
-          onOpenMacroSetup={() => { setSettingsOpen(false); setMacroSetupOpen(true); }}
         />
       )}
 

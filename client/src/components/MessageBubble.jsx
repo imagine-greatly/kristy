@@ -1,10 +1,7 @@
-import MacroCard from './MacroCard.jsx';
-
-// macroTracking defaults OFF — the coach default. A macro card only ever renders
-// for a user who has explicitly opted into macro tracking, so a stale message (or
-// the demo/guest path) can never surface calories to a grocery-only user.
-export default function MessageBubble({ message, onUpgrade, macroTracking = false }) {
-  const { role, content, macros, isSummary } = message;
+// Kristy is a grocery coach — no macro cards, ever. An AI bubble renders her text,
+// the weekly-recap tag, and (for a locked free-user reply) a quiet upgrade link.
+export default function MessageBubble({ message, onUpgrade }) {
+  const { role, content, isSummary } = message;
 
   if (role === 'user') {
     return (
@@ -15,26 +12,14 @@ export default function MessageBubble({ message, onUpgrade, macroTracking = fals
   }
 
   // AI
-  const hasMacros = macroTracking && macros && typeof macros.calories === 'number';
   return (
     <div className="msg-row ai">
       <div className="avatar">K</div>
       <div className="ai-col">
         {isSummary && <span className="summary-tag">Weekly recap</span>}
-        {message.image && (
-          <img className="ai-photo" src={message.image} alt="Logged meal" />
-        )}
         <div className="bubble ai">{content}</div>
-        {hasMacros && (
-          <MacroCard
-            macros={macros}
-            insight={macros.insight}
-            isEstimate={macros.isEstimate}
-            estimateNote={macros.estimateNote}
-          />
-        )}
-        {/* A locked-feature reply (weigh-in / history recall for a free user):
-            Kristy's line lands as a normal bubble, with a quiet upgrade link. */}
+        {/* A locked-feature reply for a free user: Kristy's line lands as a normal
+            bubble, with a quiet upgrade link. */}
         {message.upgrade && onUpgrade && (
           <button className="bubble-upgrade" onClick={onUpgrade}>
             Unlock coaching →

@@ -8,8 +8,7 @@ import { clientIp, rateLimited } from '../lib/guestRate.js';
 // grocery-coach voice via the shared chatEngine) for a few messages, then hits a
 // soft sign-in gate. Nothing here can touch the database or another user's data.
 //
-// Guests can't opt into macro tracking (that's a Settings toggle on an account),
-// so guest chat is always coach mode: no calories, no macros, no logging.
+// Kristy is a grocery coach — no calories, no macros, no logging, ever.
 
 const router = Router();
 
@@ -54,12 +53,11 @@ router.post('/chat', async (req, res) => {
     }
 
     // 3. Real, STATELESS reply — same grocery-coach voice as /api/chat, but with
-    //    neutral context, macro tracking OFF, and nothing written anywhere.
+    //    neutral context and nothing written anywhere.
     const result = await generateReply({
       message,
       conversationHistory,
       contextBlocks: GUEST_CONTEXT,
-      macroTracking: false,
     });
 
     return res.json(result);

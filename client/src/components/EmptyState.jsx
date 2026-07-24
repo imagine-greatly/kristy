@@ -1,24 +1,24 @@
 import { useMemo } from 'react';
 
 const EXAMPLES = [
-  '100g chicken breast, 150g rice',
-  '3 scrambled eggs and half an avocado',
-  'Protein shake with 300ml whole milk',
-  'Big mac and medium fries',
+  'Is this cereal worth buying?',
+  'Build me a cart for taco night',
+  'Wild or farmed salmon?',
+  'A better grab than margarine?',
 ];
 
 const GREETINGS = {
-  morning: ['Good morning.', "Morning. What's on the menu today?", 'New day, clean slate.'],
-  afternoon: ['Hey. What have you eaten so far?', "How's the day going?", 'Afternoon. What did you have?'],
-  evening: ["Evening. How'd you do today?", 'Good evening. What did you eat?', "Almost done for the day — what'd you have?"],
-  night: ['Eating late?', 'Still going?', 'Late night. What are we logging?'],
+  morning: ['Good morning.', 'Morning. What are we shopping for?', 'New day, fresh cart.'],
+  afternoon: ['Hey. What are we shopping for?', "How's the day going?", 'Afternoon. What do you need?'],
+  evening: ['Evening. Planning a trip?', 'Good evening. What are we grabbing?', "What's on the list tonight?"],
+  night: ['Late-night list?', 'Still going?', "Planning tomorrow's trip?"],
 };
 
 const SUBTITLES = [
-  "Tell me what you ate. I'll handle the rest.",
-  "Just type it out — '100g rice, 100g beef' — I'll track it.",
+  'Ask me anything, or scan a label.',
+  "Tell me what you're shopping for and I'll build around it.",
   'No forms. Just talk.',
-  "Type it like a text. I'll do the math.",
+  'Scan it, ask about it, or build a list.',
 ];
 
 function timeBucket(hour) {
