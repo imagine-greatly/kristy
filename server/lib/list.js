@@ -110,6 +110,67 @@ const GOAL_TEMPLATES = {
       { name: 'Olive oil', category: 'Staples' },
     ],
   },
+  weight_loss: {
+    intro: 'Built for weight loss — protein and fiber up front so you stay full on less, and the sugary stuff left off.',
+    items: [
+      { name: 'Chicken breast', category: 'Protein' },
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Canned tuna or salmon', category: 'Protein' },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Non-starchy vegetables', category: 'Produce' },
+      { name: 'Berries', category: 'Produce' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Oats', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
+  muscle_strength: {
+    intro: 'Set up for muscle and strength — protein at every meal and real carbs to train on.',
+    items: [
+      { name: 'Chicken breast', category: 'Protein' },
+      { name: 'Lean ground beef or turkey', category: 'Protein' },
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Cottage cheese', category: 'Protein', tags: ['dairy'] },
+      { name: 'Canned tuna or salmon', category: 'Protein' },
+      { name: 'Rice or potatoes', category: 'Staples' },
+      { name: 'Oats', category: 'Staples' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
+  pregnancy_postpartum: {
+    intro: 'Built for this season — nutrient-dense whole foods that are easy to keep on hand.',
+    items: [
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Chicken or fish', category: 'Protein' },
+      { name: 'Fatty fish (salmon or sardines)', category: 'Protein' },
+      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Berries', category: 'Produce' },
+      { name: 'Sweet potatoes', category: 'Produce' },
+      { name: 'Oats', category: 'Staples' },
+      { name: 'Nuts and seeds', category: 'Snacks' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
+  athlete_performance: {
+    intro: 'Built for performance — enough real carbs to fuel the work, protein to recover.',
+    items: [
+      { name: 'Chicken breast', category: 'Protein' },
+      { name: 'Eggs', category: 'Protein' },
+      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
+      { name: 'Canned tuna or salmon', category: 'Protein' },
+      { name: 'Rice or potatoes', category: 'Staples' },
+      { name: 'Oats', category: 'Staples' },
+      { name: 'Bananas', category: 'Produce' },
+      { name: 'Leafy greens', category: 'Produce' },
+      { name: 'Beans or lentils', category: 'Staples' },
+      { name: 'Olive oil', category: 'Staples' },
+    ],
+  },
   _default: {
     intro: "Here's a clean starting list. Tell me what you're shopping for and I'll tailor it to you.",
     items: [
@@ -135,8 +196,48 @@ const LEGACY_TEMPLATE_ALIASES = {
   kids_snacks: 'eating_cleaner',
 };
 
-// Non-negotiable → the item tags it excludes.
-const EXCLUDE_TAGS = { 'dairy-free': ['dairy'] };
+// Infer dietary tags from an item's plain name, so a hard line can exclude it
+// without every template item being hand-tagged. Merged with any explicit tags.
+export function foodTags(name) {
+  const n = String(name).toLowerCase();
+  const tags = [];
+  if (/\b(chicken|beef|turkey|pork|bacon|sausage|steak|lamb|meat)\b/.test(n)) tags.push('meat');
+  if (/\b(fish|salmon|tuna|sardine|cod|tilapia|shrimp|seafood|anchov)\b/.test(n)) tags.push('fish');
+  if (/\begg/.test(n)) tags.push('egg');
+  if (/\b(milk|yogurt|cheese|kefir|butter|ghee|cottage|dairy|cream)\b/.test(n)) tags.push('dairy');
+  if (/\b(pasta|bread|wheat|barley|couscous|cracker|bun|bagel|tortilla)\b/.test(n)) tags.push('gluten');
+  return tags;
+}
+
+// Hard line -> the item tags it excludes. Applied on FREE and premium alike — a
+// refusal is not a personalization luxury. dairy-free / gluten-free shape the LIST
+// (we control its item tags) even though the ingredient KB can't verify them on a
+// scanned product (that stays advisory in the verdict engine).
+const EXCLUDE_TAGS = {
+  'dairy-free': ['dairy'],
+  vegetarian: ['meat', 'fish'],
+  vegan: ['meat', 'fish', 'egg', 'dairy'],
+  'gluten-free': ['gluten'],
+};
+
+// A hard line that CLARIFIES an item in place rather than removing it — expresses
+// the label to look for in the item name. No health claim, just what to buy.
+const CONDITIONAL_RENAMES = [
+  { line: 'no seed oils', match: /^olive oil$/i, to: 'Olive oil — cold-pressed, not a blend' },
+  { line: 'no seed oils', match: /\b(vegetable|canola|cooking) oil\b/i, to: 'Olive oil (not a seed-oil blend)' },
+  { line: 'gluten-free', match: /pasta/i, to: 'Rice or potatoes' },
+];
+
+// Apply every conditional rename whose hard line is active, in place.
+function applyConditionalRenames(items, nonNegotiables) {
+  const active = new Set((nonNegotiables || []).map((v) => String(v).toLowerCase()));
+  const rules = CONDITIONAL_RENAMES.filter((r) => active.has(r.line));
+  if (!rules.length) return items;
+  return items.map((it) => {
+    const hit = rules.find((r) => r.match.test(it.name));
+    return hit ? { ...it, name: hit.to } : it;
+  });
+}
 
 // PREMIUM: a CONSTRAINT pulls constraint-appropriate whole-food anchors onto the
 // list — cheap-per-nutrition for budget, no-/low-prep for time & no-kitchen, familiar
@@ -258,9 +359,11 @@ export function generateList({ goal, nonNegotiables = [], focuses = [], constrai
   const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
 
   const excluded = new Set();
-  for (const nn of nonNegotiables || []) (EXCLUDE_TAGS[nn] || []).forEach((t) => excluded.add(t));
+  for (const nn of nonNegotiables || [])
+    (EXCLUDE_TAGS[String(nn).toLowerCase()] || []).forEach((t) => excluded.add(t));
   const removed = new Set((signals.removed || []).map((s) => String(s).toLowerCase()));
-  const blocked = (it) => (it.tags || []).some((t) => excluded.has(t)) || removed.has(it.name.toLowerCase());
+  const itemTags = (it) => [...(it.tags || []), ...foodTags(it.name)];
+  const blocked = (it) => itemTags(it).some((t) => excluded.has(t)) || removed.has(it.name.toLowerCase());
 
   const base = tpl.items.filter((it) => !blocked(it));
 
@@ -284,7 +387,7 @@ export function generateList({ goal, nonNegotiables = [], focuses = [], constrai
     pull(CONSTRAINT_ITEMS, constraints);
   }
 
-  const items = [...base, ...extra].map((it) => ({
+  const items = applyConditionalRenames([...base, ...extra], nonNegotiables).map((it) => ({
     id: rid(),
     name: it.name,
     category: it.category,
@@ -317,4 +420,19 @@ export function mergePendingSwaps(list, nextList, premium) {
   const fresh = swapItems(nextList).filter((s) => !have.has(s.productName.toLowerCase()));
   if (!fresh.length) return list;
   return { ...list, items: [...fresh, ...list.items] };
+}
+
+/**
+ * A stable signature of the generation inputs. The route regenerates a stored list
+ * when this changes (goal / hard lines / focuses / constraints edited), so a goal
+ * switch refreshes the list without a manual "Rebuild".
+ */
+export function listSignature({ goal = null, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
+  const norm = (a) => [...(a || [])].map((x) => String(x).toLowerCase()).sort();
+  return JSON.stringify({
+    goal: goal || null,
+    hl: norm(nonNegotiables),
+    f: norm(focuses),
+    c: norm(constraints),
+  });
 }

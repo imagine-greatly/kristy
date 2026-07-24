@@ -10,7 +10,7 @@ import {
   clearPendingSwaps,
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { generateList, mergePendingSwaps, EMPTY_SIGNALS } from '../lib/list.js';
+import { generateList, mergePendingSwaps, listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { migratePreferences } from '../lib/taxonomy.js';
 
@@ -53,7 +53,19 @@ function profileInputs(profile) {
 
 function normalizeSignals(s) {
   const arr = (v) => (Array.isArray(v) ? v.map((x) => String(x)).slice(0, 200) : []);
-  return { removed: arr(s?.removed), kept: arr(s?.kept), acceptedSwaps: arr(s?.acceptedSwaps) };
+  const out = { removed: arr(s?.removed), kept: arr(s?.kept), acceptedSwaps: arr(s?.acceptedSwaps) };
+  if (s?.sig) out.sig = String(s.sig).slice(0, 400);
+  return out;
+}
+
+// When the profile changed since a list was built, regenerate but carry over the
+// user's OWN additions and any haul-swap callouts, so a goal switch refreshes the
+// template without discarding what the shopper explicitly put on the list.
+function preserveUserItems(fresh, stored) {
+  const keepers = (stored?.items || []).filter((i) => i.source === 'user' || i.source === 'swap');
+  const names = new Set((fresh.items || []).map((i) => i.name.toLowerCase()));
+  const carried = keepers.filter((i) => !names.has(i.name.toLowerCase()));
+  return { ...fresh, items: [...fresh.items, ...carried] };
 }
 
 function sanitizeList(list) {
@@ -95,13 +107,25 @@ router.get('/list', requireAuth, async (req, res) => {
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
     const stored = row?.list && Array.isArray(row.list.items) ? row.list : null;
 
+    const sig = listSignature({ goal, nonNegotiables, focuses, constraints });
+    const storedSig = row?.signals?.sig || null;
+    const stale = stored && storedSig && storedSig !== sig;
+
     let list;
     let consumedPending = false;
     if (!stored) {
       // First use → generate from the profile. Premium consumes pending swaps.
       list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
       consumedPending = premium && pending.length > 0;
-      await persist(userId, { list, signals });
+      await persist(userId, { list, signals: { ...signals, sig } });
+    } else if (stale) {
+      // Goal / hard lines / focuses / constraints changed since this list was built
+      // → regenerate, carrying over the user's own adds + haul swaps. No manual
+      // "Rebuild" needed.
+      const fresh = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
+      list = preserveUserItems(fresh, stored);
+      consumedPending = premium && pending.length > 0;
+      await persist(userId, { list, signals: { ...signals, sig } });
     } else if (premium && pending.length) {
       // Existing list → fold in newly-added Haul swaps so they appear without a rebuild.
       list = mergePendingSwaps(stored, pending, premium);
@@ -132,6 +156,12 @@ router.post('/list', requireAuth, async (req, res) => {
   if (!list) return res.status(400).json({ error: 'list is required' });
   const signals = req.body?.signals !== undefined ? normalizeSignals(req.body.signals) : undefined;
   try {
+    // Preserve the generation signature across a user edit, so staleness tracking
+    // isn't reset by the shopper checking off or adding items.
+    if (signals && !signals.sig) {
+      const existing = await getShoppingList(userId).catch(() => null);
+      if (existing?.signals?.sig) signals.sig = existing.signals.sig;
+    }
     await persist(userId, { list, signals });
     return res.json({ ok: true });
   } catch (err) {
@@ -150,8 +180,9 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
 
+    const sig = listSignature({ goal, nonNegotiables, focuses, constraints });
     const list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
-    await persist(userId, { list, signals });
+    await persist(userId, { list, signals: { ...signals, sig } });
     if (premium && pending.length) {
       try { await clearPendingSwaps(userId); } catch { /* best-effort */ }
     }

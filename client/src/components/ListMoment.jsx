@@ -282,11 +282,14 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
                   >
                     {it.name}
                   </span>
-                  {it.source !== 'user' ? (
-                    <span style={styles.tag}>{it.source === 'swap' ? 'From your haul' : 'Kristy added'}</span>
-                  ) : (
+                  {/* Template rows carry no tag — "Kristy added" on every row read as
+                      personalization when it meant the opposite. Only a genuine
+                      distinction is labeled: what YOU added, and what came from a haul. */}
+                  {it.source === 'user' ? (
                     <span style={styles.tagUser}>You added</span>
-                  )}
+                  ) : it.source === 'swap' ? (
+                    <span style={styles.tag}>From your haul</span>
+                  ) : null}
                 </span>
                 {/* Every shopping row gets "Ask Kristy" — the Perimeter loop. Swaps are
                     callouts, not rows, so they don't. */}
