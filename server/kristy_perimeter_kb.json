@@ -437,18 +437,18 @@
       "aliases": ["raw milk", "unpasteurized milk", "raw dairy", "unpasteurized"],
       "category": "dairy",
       "question": "Is raw milk better?",
-      "short_answer": "I'll give you the honest picture and let you decide — no advocacy, no scolding. People choose raw milk for tradition, taste, and wanting food closer to its source, and those are fair reasons. But the nutritional difference from pasteurized is smaller than it's often sold as, and raw milk carries a real, documented risk of foodborne illness that falls hardest on young kids, pregnant women, and anyone immune-compromised. Sale is also restricted or banned in many places.",
-      "detail": "Pasteurization leaves protein, fat, calcium and most vitamins largely intact, so claims that raw milk is dramatically more nutrient-dense, that it fixes lactose intolerance, or that its bacteria colonize your gut aren't supported. The risk side is well-documented: raw milk has caused outbreaks of Listeria, Salmonella, E. coli O157:H7, and Campylobacter, and severe cases hit vulnerable groups hardest — that part is established. Legally, sale is restricted or prohibited in many states and interstate sale is federally prohibited, with rules varying by location. I'm not telling you to drink it or not to; I'm giving you the real trade-offs.",
+      "short_answer": "Raw milk from grass-fed cows is a real, barely-processed whole food, and I respect why people reach for it — tradition, taste, wanting it close to the source. The one honest catch worth knowing: it carries a documented risk of foodborne illness that falls hardest on pregnant women, young kids, and the immune-compromised. Whether you drink it is your call — I'll give it to you straight, never push you either way.",
+      "detail": "The risk is established — raw milk has been behind outbreaks of Listeria, Salmonella, E. coli, and Campylobacter. Its sale is also restricted or banned in a lot of places, which may settle it for you. Past that, it's a personal call, and a fair one to make.",
       "evidence_tier": "established",
       "sources": ["CDC raw-milk outbreak data", "FDA raw-milk regulations", "USDA/FDA pasteurization nutrient references"],
-      "kristy_take": "Whole milk from grass-fed cows is a good whole food — that's my standard, and it's true of pasteurized too. Whether to go raw is your call to make with the real risks in front of you, not mine to push.",
+      "kristy_take": "Grass-fed whole milk is a good whole food by my standard — raw or pasteurized. Which you buy is yours to weigh; I'll lay out the trade-offs, never lean on you.",
       "buying_tips": [
-        "Know your state's law — sale is restricted or banned in many places.",
-        "The risk is highest for young children, pregnancy, and weakened immunity.",
-        "If you want minimally-processed dairy legally, whole pasteurized (ideally grass-fed) is the everyday option."
+        "Know your state's law — sale is restricted or banned in a lot of places.",
+        "If you choose it, buy from a source you trust and keep it cold — how it's handled is everything.",
+        "Want minimally-processed dairy without the risk question? Whole pasteurized, ideally grass-fed."
       ],
       "labels_decoded": [
-        { "term": "Raw / unpasteurized", "meaning": "Not heat-treated — retains a small nutritional edge some value, at a documented pathogen risk." },
+        { "term": "Raw / unpasteurized", "meaning": "Not heat-treated — keeps a small nutritional edge some people value, at a documented pathogen risk." },
         { "term": "Pasteurized", "meaning": "Briefly heated to kill pathogens; leaves most nutrition intact." }
       ]
     },
