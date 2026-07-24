@@ -5,14 +5,15 @@ import { buildPreferencesBlock } from '../lib/prompts.js';
 import { generateReply } from '../lib/chatEngine.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { migratePreferences } from '../lib/taxonomy.js';
-import { looksLikePerimeterQuestion } from '../lib/chatRouting.js';
+import { looksLikePerimeterQuestion, looksLikePreferenceDeclaration } from '../lib/chatRouting.js';
+import { interpretPreferences } from '../lib/preferenceMap.js';
 import {
   matchEntries,
   composeAnswer,
   publicEntry,
   NO_ANSWER,
 } from '../lib/perimeter.js';
-import { getFullProfile, saveChatMessage } from '../lib/store.js';
+import { getFullProfile, saveChatMessage, saveCoachProfile } from '../lib/store.js';
 
 const router = Router();
 
@@ -50,6 +51,33 @@ async function perimeterChatReply({ message, matched, premium, prefs }) {
   const top = publicEntry(matched[0]);
   const base = top.short_answer || top.detail || NO_ANSWER;
   return premium ? base : `${base} ${PERIMETER_UPSELL}`;
+}
+
+/* ───────────────────────── Preference declarations ─────────────────────────
+   The shopper telling Kristy how they want to eat ("I eat holistically, no seed
+   oils, take that into account"). Mapped onto the fixed taxonomy (the SAME claim-
+   safe mapper the goal sheet uses — it can only ever select enum values, never
+   author a claim), then — for members — persisted so it steers every future
+   verdict, list, and perimeter answer. The confirmation names exactly what mapped
+   and is honest about what didn't; the unmapped items are the user's own words,
+   never a health claim. */
+
+const uniq = (a) => [...new Set(a)];
+const joinList = (arr) =>
+  arr.length > 1 ? `${arr.slice(0, -1).join(', ')} and ${arr[arr.length - 1]}` : arr[0] || '';
+
+function composePrefConfirmation(mapped) {
+  const names = mapped.labeled.map((x) => x.label.toLowerCase());
+  let msg = `Locked in — ${joinList(names)}. That's my lens on every scan and every list from here.`;
+  if (mapped.unmapped?.length) {
+    msg += ` The ${joinList(mapped.unmapped)} part isn't something I hold a formal line on — I'll be straight with you about it when it comes up, not push it either way.`;
+  }
+  return msg;
+}
+
+function composePrefUpsell(mapped) {
+  const names = mapped.labeled.map((x) => x.label.toLowerCase());
+  return `I hear you — ${joinList(names)}. Holding that on every scan and building your list around it is the coaching part. Want me to lock it in so it steers every rec from here?`;
 }
 
 router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
@@ -99,7 +127,72 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       }
     }
 
-    // 2. Coach reply. The engine enforces the no-macro guarantee structurally.
+    // 2. A standing PREFERENCE the shopper is declaring? Map it onto the taxonomy
+    //    and — for members — persist it, so it steers every future verdict, list,
+    //    and perimeter answer. Runs after perimeter so a question is never mistaken
+    //    for a declaration; if nothing maps, falls through to the coach reply.
+    if (looksLikePreferenceDeclaration(message)) {
+      let mapped = null;
+      try {
+        mapped = await interpretPreferences(message);
+      } catch (err) {
+        console.error('[kristy] chat preference map error:', err?.message || err);
+      }
+      const hasAny =
+        mapped &&
+        (mapped.goal || mapped.focuses.length || mapped.hardLines.length || mapped.constraints.length);
+
+      if (hasAny && premium) {
+        const merged = {
+          goal: mapped.goal || prefs.goal || null,
+          focuses: uniq([...prefs.focuses, ...mapped.focuses]),
+          hardLines: uniq([...prefs.hardLines, ...mapped.hardLines]),
+          constraints: uniq([...prefs.constraints, ...mapped.constraints]),
+        };
+        try {
+          await saveCoachProfile(userId, {
+            coach_goal: merged.goal,
+            non_negotiables: merged.hardLines,
+            focuses: merged.focuses,
+            constraints: merged.constraints,
+          });
+        } catch (err) {
+          console.error('[kristy] chat preference save error:', err?.message || err);
+          // Persist failed (e.g. unmigrated) — still confirm what mapped so the
+          // turn isn't lost; the chips let the user re-apply from the switcher.
+        }
+        const answer = composePrefConfirmation(mapped);
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: answer });
+        return res.json({
+          message: answer,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          preferenceUpdate: { labeled: mapped.labeled, unmapped: mapped.unmapped, merged },
+        });
+      }
+
+      if (hasAny) {
+        // Free: name what she heard + an upsell. Capture is a member feature.
+        const answer = composePrefUpsell(mapped);
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: answer });
+        return res.json({
+          message: answer,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          upgrade: true,
+          preferenceLocked: true,
+        });
+      }
+      // Nothing mapped → fall through to the normal coach reply.
+    }
+
+    // 3. Coach reply. The engine enforces the no-macro guarantee structurally.
     const profileLine = profile.name ? `Shopper: ${profile.name}.` : '';
     const result = await generateReply({
       message,

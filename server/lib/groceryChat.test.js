@@ -7,7 +7,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { CHAT_SYSTEM_PROMPT, buildPreferencesBlock } from './prompts.js';
-import { looksLikePerimeterQuestion } from './chatRouting.js';
+import { looksLikePerimeterQuestion, looksLikePreferenceDeclaration } from './chatRouting.js';
 
 const HARD_RULES = ['CLAIM LOCK', 'NO TREATMENT', 'NO PRICE', 'FAT PHILOSOPHY', 'NO MORALIZING'];
 
@@ -71,4 +71,21 @@ test('perimeter routing fires on questions, never on meals or list commands', ()
   assert.equal(looksLikePerimeterQuestion('I had chicken and rice for lunch'), false);
   assert.equal(looksLikePerimeterQuestion('add chicken to my list'), false);
   assert.equal(looksLikePerimeterQuestion('swap the rice for something faster'), false);
+});
+
+test('preference declarations are detected — never meals, commands, or questions', () => {
+  // Standing preferences → detected (these get mapped + persisted).
+  assert.equal(
+    looksLikePreferenceDeclaration(
+      'I want to eat very holistically, raw milk, raw butter, grass fed beef, etc. take that into account for all of ur recs'
+    ),
+    true
+  );
+  assert.equal(looksLikePreferenceDeclaration('no seed oils ever'), true);
+  assert.equal(looksLikePreferenceDeclaration("I'm shopping for a family of four on a budget"), true);
+  assert.equal(looksLikePreferenceDeclaration('I want to eat cleaner'), true);
+  // NOT preferences — a meal report, a list command, and a question must fall through.
+  assert.equal(looksLikePreferenceDeclaration('I had chicken and rice for lunch'), false);
+  assert.equal(looksLikePreferenceDeclaration('add chicken to my list'), false);
+  assert.equal(looksLikePreferenceDeclaration('is wild or farmed salmon better?'), false);
 });

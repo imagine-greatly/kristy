@@ -154,5 +154,14 @@ export async function interpretPreferences(text) {
     constraint: (v) => CONSTRAINTS.find((c) => c.value === v)?.label || v,
   };
 
-  return { ...result, reply: composeReply(result, labels) };
+  // A flat, labeled view of what mapped — {kind, value, label} per set item —
+  // so callers (chat chips, the confirmation line) render exact taxonomy labels,
+  // including custom hard lines, without re-deriving them.
+  const labeled = [];
+  if (result.goal) labeled.push({ kind: 'goal', value: result.goal, label: labels.goal(result.goal) });
+  result.focuses.forEach((v) => labeled.push({ kind: 'focus', value: v, label: labels.focus(v) }));
+  result.hardLines.forEach((v) => labeled.push({ kind: 'hardLine', value: v, label: labels.hardLine(v) }));
+  result.constraints.forEach((v) => labeled.push({ kind: 'constraint', value: v, label: labels.constraint(v) }));
+
+  return { ...result, reply: composeReply(result, labels), labeled };
 }

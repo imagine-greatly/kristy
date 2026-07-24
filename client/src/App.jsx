@@ -307,6 +307,42 @@ export default function App() {
     setDisclaimerOpen(false);
   }
 
+  // Remove a preference Kristy captured from chat (the editable chips under her
+  // reply). Recomputes the full pref set minus this item, persists it, and drops
+  // the chip from that message — a wrong parse is one tap to fix.
+  async function handleRemoveChatPref(msgId, kind, value) {
+    const next = {
+      coach_goal: profile?.coach_goal || null,
+      focuses: profile?.focuses || [],
+      non_negotiables: profile?.non_negotiables || [],
+      constraints: profile?.constraints || [],
+    };
+    if (kind === 'goal') next.coach_goal = null;
+    else if (kind === 'focus') next.focuses = next.focuses.filter((x) => x !== value);
+    else if (kind === 'hardLine') next.non_negotiables = next.non_negotiables.filter((x) => x !== value);
+    else if (kind === 'constraint') next.constraints = next.constraints.filter((x) => x !== value);
+
+    setProfile((p) => ({ ...(p || {}), ...next }));
+    setMessages((prev) =>
+      prev.map((m) =>
+        m.id === msgId && m.preferenceUpdate
+          ? {
+              ...m,
+              preferenceUpdate: {
+                ...m.preferenceUpdate,
+                labeled: m.preferenceUpdate.labeled.filter((x) => !(x.kind === kind && x.value === value)),
+              },
+            }
+          : m
+      )
+    );
+    try {
+      await saveCoachProfile(userId, next);
+    } catch {
+      /* keep optimistic value */
+    }
+  }
+
   /* ───────── Contextual focus offer ─────────
      After 2+ scans flag the SAME category in a session, Kristy offers ONCE to watch
      it — never for a focus already on, at most one offer per session, never a modal.
@@ -507,11 +543,26 @@ export default function App() {
     try {
       const result = await sendChat({ message: content, history });
 
+      // A preference Kristy just captured from chat → reflect it in the profile
+      // (so the goal chip + every future scan/list use it) and carry the editable
+      // chips into the bubble so a wrong parse is one tap to fix.
+      const pu = result.preferenceUpdate || null;
+      if (pu?.merged) {
+        setProfile((p) => ({
+          ...(p || {}),
+          coach_goal: pu.merged.goal ?? p?.coach_goal ?? null,
+          focuses: pu.merged.focuses || [],
+          non_negotiables: pu.merged.hardLines || [],
+          constraints: pu.merged.constraints || [],
+        }));
+      }
+
       const aiMsg = {
         id: rid(),
         role: 'ai',
         content: result.message,
         macros: null,
+        preferenceUpdate: pu,
         // A locked-feature reply for a free user → the quiet "Unlock coaching" link.
         upgrade: !!result.upgrade,
       };
@@ -800,7 +851,13 @@ export default function App() {
               />
             ) : (
               messages.map((m) => (
-                <MessageBubble key={m.id} message={m} onUpgrade={openUpgrade} />
+                <MessageBubble
+                  key={m.id}
+                  message={m}
+                  onUpgrade={openUpgrade}
+                  onRemovePref={handleRemoveChatPref}
+                  onEditPrefs={() => setSwitcherOpen(true)}
+                />
               ))
             )}
 
