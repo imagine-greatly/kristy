@@ -8,6 +8,7 @@
 
 import { IS_DEMO, apiBase } from './config.js';
 import { supabase } from './supabase.js';
+import { COACH_GOALS } from './coachGoals.js';
 
 const LIST_KEY = 'kristy:list'; // cache of the server list (demo: the list itself)
 const SIGNALS_KEY = 'kristy:listSignals';
@@ -495,26 +496,80 @@ function swapItemsLocal(nextList) {
 function resolveTemplateLocal(goal) {
   return GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || null;
 }
-// Blend several goal templates into one list (mirror of server blendTemplates).
+// Overlap-ranked blend (mirror of server blendTemplates): rank by how many goals
+// want each item, collapse near-identical items, round-robin the rest, cap at 18.
+const ITEM_QUALIFIERS_L =
+  /\b(plain|lean|whole|whole-milk|fresh|frozen|canned|dried|raw|steel-cut|non-starchy|unsalted|real|pre-washed|rotisserie|low-fat|nonfat|organic|skinless|boneless)\b/g;
+function canonicalItemLocal(name) {
+  return String(name)
+    .toLowerCase()
+    .split('—')[0]
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(ITEM_QUALIFIERS_L, ' ')
+    .replace(/[^a-z ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function blendIntroLocal(goals) {
+  const labels = goals
+    .map((g) => COACH_GOALS.find((c) => c.value === g)?.chipLabel || g)
+    .filter(Boolean)
+    .map((s) => s.toLowerCase());
+  const joined = labels.length > 1 ? `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}` : labels[0];
+  const lean = labels.length === 2 ? 'what does both' : 'what does the most at once';
+  return `Built for ${joined} — leaning on ${lean}.`;
+}
 function blendTemplatesLocal(goals) {
   const resolved = (goals || []).map(resolveTemplateLocal).filter(Boolean);
   if (resolved.length === 0) return { items: GOAL_TEMPLATES._default.items, intro: GOAL_TEMPLATES._default.intro };
   if (resolved.length === 1) return { items: resolved[0].items, intro: resolved[0].intro };
-  const seen = new Set();
-  const items = [];
-  const maxLen = Math.max(...resolved.map((t) => t.items.length));
-  for (let i = 0; i < maxLen && items.length < 12; i++) {
-    for (const t of resolved) {
-      const it = t.items[i];
-      if (!it) continue;
-      const key = it.name.toLowerCase();
-      if (seen.has(key)) continue;
-      seen.add(key);
-      items.push(it);
-      if (items.length >= 12) break;
+
+  const CAP = 18;
+  const byKey = new Map();
+  const perGoalKeys = resolved.map((t) => {
+    const keys = [];
+    const local = new Set();
+    for (const it of t.items) {
+      const key = canonicalItemLocal(it.name);
+      if (!key || local.has(key)) continue;
+      local.add(key);
+      keys.push(key);
+      const g = byKey.get(key);
+      if (g) {
+        g.count += 1;
+        if (it.name.length < g.item.name.length) g.item = it;
+      } else {
+        byKey.set(key, { item: it, count: 1 });
+      }
     }
+    return keys;
+  });
+
+  const placed = new Set();
+  const items = [];
+  const push = (it) => {
+    const key = canonicalItemLocal(it.name);
+    if (placed.has(key) || items.length >= CAP) return;
+    placed.add(key);
+    items.push(it);
+  };
+
+  [...byKey.values()].filter((g) => g.count >= 2).sort((a, b) => b.count - a.count).forEach((g) => push(g.item));
+
+  const perGoalUnique = perGoalKeys.map((keys) => keys.filter((k) => byKey.get(k).count === 1).map((k) => byKey.get(k).item));
+  for (let i = 0; items.length < CAP; i++) {
+    let any = false;
+    for (const list of perGoalUnique) {
+      if (list[i]) {
+        any = true;
+        push(list[i]);
+      }
+      if (items.length >= CAP) break;
+    }
+    if (!any) break;
   }
-  return { items, intro: 'Built around your goals — the overlap up front, tailored to all of it.' };
+
+  return { items, intro: blendIntroLocal(goals) };
 }
 
 function generateLocal({ goal, goals, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = true }) {

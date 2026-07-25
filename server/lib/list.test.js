@@ -64,16 +64,38 @@ test('focuses stay PREMIUM — a free list ignores them, a premium list folds th
   assert.ok(prem.items.some((i) => /chia|flax/.test(i.name.toLowerCase())));
 });
 
-test('multiple goals blend into ONE list — each goal represented, deduped, capped', () => {
+test('multiple goals blend into ONE list — overlap-ranked, deduped, capped, named', () => {
   const blended = generateList({ goals: ['high_protein', 'eating_cleaner', 'family'] });
-  assert.match(blended.intro, /built around/i);
+  assert.match(blended.intro, /^built for /i); // named in her voice…
+  assert.match(blended.intro, /leaning on/i); // …and calls out the overlap
   const names = blended.items.map((i) => i.name.toLowerCase());
   assert.equal(new Set(names).size, names.length, 'no duplicate items');
-  assert.ok(names.length >= 8 && names.length <= 12, `blended length ${names.length} out of range`);
-  // a high-protein-only anchor AND a family-only anchor both present → a real blend,
-  // not one template picked.
+  assert.ok(names.length >= 12 && names.length <= 18, `blended length ${names.length} out of range`);
   assert.ok(names.some((n) => n.includes('cottage cheese')), 'high-protein contributed');
   assert.ok(names.some((n) => n === 'milk'), 'family contributed');
+});
+
+test('the blend ranks OVERLAP first — a shared item leads a goal-unique one', () => {
+  const names = generateList({ goals: ['high_protein', 'eating_cleaner', 'family'] }).items.map((i) => i.name.toLowerCase());
+  const eggs = names.indexOf('eggs'); // in all three templates
+  const berries = names.findIndex((n) => n.includes('berries')); // eating-cleaner only
+  assert.ok(eggs >= 0 && berries >= 0);
+  assert.ok(eggs < berries, 'an all-goals overlap item should rank above a single-goal one');
+});
+
+test('near-identical items collapse — not "Greek yogurt" AND "Plain Greek yogurt"', () => {
+  const items = generateList({ goals: ['high_protein', 'eating_cleaner'] }).items;
+  assert.equal(items.filter((i) => /greek yogurt/i.test(i.name)).length, 1);
+});
+
+test('near-identical goals share a cart — high_protein + muscle_strength stays tight', () => {
+  const items = generateList({ goals: ['high_protein', 'muscle_strength'] }).items;
+  assert.ok(items.length <= 14, `two overlapping protein templates should not double the list, got ${items.length}`);
+});
+
+test('five goals cap at ~18 items, not a 40-item wall', () => {
+  const items = generateList({ goals: ['high_protein', 'eating_cleaner', 'family', 'gut_health', 'weight_loss'] }).items;
+  assert.ok(items.length <= 18, `expected <=18, got ${items.length}`);
 });
 
 test('a single-goal set behaves exactly like the legacy single-goal template', () => {

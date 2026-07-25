@@ -353,33 +353,93 @@ function resolveTemplate(goal) {
   return GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || null;
 }
 
-// Blend several goal templates into ONE list. Goals are a set now (a shopper is
-// often high-protein AND eating-cleaner AND feeding-a-family at once), so we
-// round-robin across their templates — each goal represented up front, not just
-// the first — dedupe by name, and cap the length. The intro names all the goals.
-// One goal returns its own template; none returns the neutral _default.
+// Normalize an item name so NEAR-identical items collapse to one — qualifier-only
+// differences ("Plain Greek yogurt" ≈ "Greek yogurt") and clarifying clauses.
+const ITEM_QUALIFIERS =
+  /\b(plain|lean|whole|whole-milk|fresh|frozen|canned|dried|raw|steel-cut|non-starchy|unsalted|real|pre-washed|rotisserie|low-fat|nonfat|organic|skinless|boneless)\b/g;
+function canonicalItem(name) {
+  return String(name)
+    .toLowerCase()
+    .split('—')[0]
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(ITEM_QUALIFIERS, ' ')
+    .replace(/[^a-z ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Kristy's blended-list intro — names the goals in her voice and calls out that the
+// list leans on the overlap, so the merge reads as coaching, not a silent union.
+function blendIntro(goals) {
+  const labels = goals.map((g) => labelForGoal(g) || g).filter(Boolean).map((s) => s.toLowerCase());
+  const joined = labels.length > 1 ? `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}` : labels[0];
+  const lean = labels.length === 2 ? 'what does both' : 'what does the most at once';
+  return `Built for ${joined} — leaning on ${lean}.`;
+}
+
+// Blend goal templates into ONE list. Goals are a set with NO primary — items are
+// ranked by OVERLAP (how many active goals want them) so shared anchors lead, then
+// each goal's unique items round-robin in (no goal dominates the tail). Near-
+// identical items collapse to one. Capped so five goals don't wall off 40 items.
 function blendTemplates(goals) {
   const resolved = (goals || []).map(resolveTemplate).filter(Boolean);
-  if (resolved.length === 0) return { items: GOAL_TEMPLATES._default.items, intro: GOAL_TEMPLATES._default.intro };
-  if (resolved.length === 1) return { items: resolved[0].items, intro: resolved[0].intro };
+  if (resolved.length === 0) return { items: [...GOAL_TEMPLATES._default.items], intro: GOAL_TEMPLATES._default.intro };
+  if (resolved.length === 1) return { items: [...resolved[0].items], intro: resolved[0].intro };
 
-  const seen = new Set();
-  const items = [];
-  const maxLen = Math.max(...resolved.map((t) => t.items.length));
-  for (let i = 0; i < maxLen && items.length < 12; i++) {
-    for (const t of resolved) {
-      const it = t.items[i];
-      if (!it) continue;
-      const key = it.name.toLowerCase();
-      if (seen.has(key)) continue;
-      seen.add(key);
-      items.push(it);
-      if (items.length >= 12) break;
+  const CAP = 18;
+  // Count overlap by canonical key; keep the cleanest representative item per key.
+  const byKey = new Map();
+  const perGoalKeys = resolved.map((t) => {
+    const keys = [];
+    const local = new Set();
+    for (const it of t.items) {
+      const key = canonicalItem(it.name);
+      if (!key || local.has(key)) continue;
+      local.add(key);
+      keys.push(key);
+      const g = byKey.get(key);
+      if (g) {
+        g.count += 1;
+        if (it.name.length < g.item.name.length) g.item = it;
+      } else {
+        byKey.set(key, { item: it, count: 1 });
+      }
     }
+    return keys;
+  });
+
+  const placed = new Set();
+  const items = [];
+  const push = (it) => {
+    const key = canonicalItem(it.name);
+    if (placed.has(key) || items.length >= CAP) return;
+    placed.add(key);
+    items.push(it);
+  };
+
+  // 1) Overlap first — items wanted by >=2 goals, most-shared leading. No primary.
+  [...byKey.values()]
+    .filter((g) => g.count >= 2)
+    .sort((a, b) => b.count - a.count)
+    .forEach((g) => push(g.item));
+
+  // 2) Then each goal's unique items, round-robin so none dominates the tail.
+  const perGoalUnique = perGoalKeys.map((keys) =>
+    keys.filter((k) => byKey.get(k).count === 1).map((k) => byKey.get(k).item)
+  );
+  for (let i = 0; items.length < CAP; i++) {
+    let any = false;
+    for (const list of perGoalUnique) {
+      if (list[i]) {
+        any = true;
+        push(list[i]);
+      }
+      if (items.length >= CAP) break;
+    }
+    if (!any) break;
   }
-  const labels = goals.map((g) => labelForGoal(g) || g).filter(Boolean);
-  const joined = labels.length > 1 ? `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}` : labels[0];
-  return { items, intro: `Built around ${joined} — the overlap up front, tailored to all of it.` };
+
+  return { items, intro: blendIntro(goals) };
 }
 
 /**
