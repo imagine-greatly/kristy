@@ -186,11 +186,24 @@ export const CONSTRAINTS_SECTION = {
 // a data migration. Combines with any constraints the user set explicitly.
 const RETIRED_GOAL_CONSTRAINT = { budget_clean: 'budget', kids_snacks: 'picky_kids' };
 
-/** The user's active constraints, with the retired-goal constraint folded in. */
+/** The user's active goal SET (multi-select). coach_goals is the source of truth;
+ *  fall back to [coach_goal] for a pre-migration row. */
+export function goalsOf(profile) {
+  if (Array.isArray(profile?.coach_goals) && profile.coach_goals.length) {
+    return profile.coach_goals.filter(Boolean);
+  }
+  return profile?.coach_goal ? [profile.coach_goal] : [];
+}
+
+/** The user's active constraints, with any retired-goal constraint folded in. */
 export function resolveConstraints(profile) {
   const cur = Array.isArray(profile?.constraints) ? profile.constraints : [];
-  const inject = RETIRED_GOAL_CONSTRAINT[profile?.coach_goal];
-  return inject && !cur.includes(inject) ? [...cur, inject] : cur;
+  const out = [...cur];
+  for (const g of goalsOf(profile)) {
+    const inject = RETIRED_GOAL_CONSTRAINT[g];
+    if (inject && !out.includes(inject)) out.push(inject);
+  }
+  return out;
 }
 
 /** A constraint's display label. '' for an unknown value. */
@@ -243,20 +256,34 @@ const byValue = (value) =>
   COACH_GOALS.find((g) => g.value === LEGACY_ALIASES[value]) ||
   null;
 
-/** The natural phrase fed to /verdict (the note's goal). Falls back to the raw value. */
-export function goalNoteLabel(value) {
-  return byValue(value)?.noteLabel || (value ? String(value) : '');
+// Join a goal SET (or a single value — back-compat) into a natural phrase.
+function joinGoalLabels(goals, field, fallbackField) {
+  const arr = Array.isArray(goals) ? goals : goals ? [goals] : [];
+  const labels = arr
+    .map((v) => byValue(v)?.[field] || (fallbackField ? byValue(v)?.[fallbackField] : '') || '')
+    .filter(Boolean);
+  if (!labels.length) return arr.length ? String(arr[0]) : '';
+  return labels.length > 1 ? `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}` : labels[0];
 }
 
-/** The phrase shown on the card as "for your <…>". Falls back to the note label. */
-export function goalReadLabel(value) {
-  const g = byValue(value);
-  return g?.readLabel || g?.noteLabel || (value ? String(value) : '');
+/** The natural phrase fed to /verdict — all active goals, joined. Accepts an array
+ *  (the goal set) or a single value (back-compat). */
+export function goalNoteLabel(goals) {
+  return joinGoalLabels(goals, 'noteLabel');
 }
 
-/** The compact header-chip label. '' when no goal is set. */
-export function goalChipLabel(value) {
-  return byValue(value)?.chipLabel || '';
+/** The phrase shown on the card as "for your <…>" — all active goals, joined. */
+export function goalReadLabel(goals) {
+  return joinGoalLabels(goals, 'readLabel', 'noteLabel');
+}
+
+/** The compact header-chip label — the primary goal, with a "+N" when several are
+ *  set. Takes the profile (reads the whole goal set). '' when no goal is set. */
+export function goalChipLabel(profile) {
+  const arr = goalsOf(profile);
+  if (!arr.length) return '';
+  const first = byValue(arr[0])?.chipLabel || '';
+  return arr.length > 1 ? `${first} +${arr.length - 1}` : first;
 }
 
 /** Kristy's goal-voiced first-scan payoff line. */

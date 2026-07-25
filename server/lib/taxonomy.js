@@ -58,6 +58,24 @@ export function migratePreferences({ goal = null, constraints = [] } = {}) {
   return { goal: inject ? 'eating_cleaner' : goal || null, constraints: list };
 }
 
+/**
+ * Resolve a stored GOAL SET (multi-select), migrating the two retired goals per
+ * entry: each retired goal becomes eating_cleaner + its constraint. Deduped. Falls
+ * back to [goal] when only the single coach_goal is present (pre-migration row).
+ */
+export function migrateGoalSet({ goals = [], goal = null, constraints = [] } = {}) {
+  const src = Array.isArray(goals) && goals.length ? goals : goal ? [goal] : [];
+  const outGoals = [];
+  const cons = Array.isArray(constraints) ? [...constraints] : [];
+  for (const g of src) {
+    const inject = RETIRED_GOAL_CONSTRAINT[g];
+    const mapped = inject ? 'eating_cleaner' : g;
+    if (mapped && !outGoals.includes(mapped)) outGoals.push(mapped);
+    if (inject && !cons.includes(inject)) cons.push(inject);
+  }
+  return { goals: outGoals, constraints: cons };
+}
+
 export const FOCUSES = [
   { value: 'lower_sugar', label: 'Watching added sugar' },
   { value: 'blood_sugar', label: 'Blood-sugar-conscious' },

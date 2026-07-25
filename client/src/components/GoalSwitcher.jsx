@@ -15,7 +15,7 @@ import { searchIngredients, interpretPreferences, customLineLabel, isCustomLine 
    open so several can be set. The one-time coach-not-doctor disclaimer is owned by
    the parent (fires on the first focus turned on). */
 export default function GoalSwitcher({
-  goal,
+  goals = [],
   focuses = [],
   nonNegotiables = [],
   constraints = [],
@@ -41,7 +41,7 @@ export default function GoalSwitcher({
               chips below are suggestions, not the only way in. */}
           <FreeTextIntake
             lead
-            goal={goal}
+            goals={goals}
             focuses={focuses}
             nonNegotiables={nonNegotiables}
             constraints={constraints}
@@ -55,10 +55,10 @@ export default function GoalSwitcher({
             <GoldThread />
           </div>
 
-          <h3 style={styles.section}>Or pick a starting point</h3>
+          <h3 style={styles.section}>Or pick a few</h3>
           <div style={styles.goals}>
             {COACH_GOALS.map((g) => {
-              const on = goal === g.value;
+              const on = goals.includes(g.value);
               return (
                 <button
                   key={g.value}
@@ -236,7 +236,7 @@ function CustomLineSearch({ selected, onAdd }) {
    fixed taxonomy and filters the result against it, so nothing free-form can
    reach the engine. We show what it parsed as chips for the user to confirm —
    never applied silently — and Kristy says plainly what she couldn't map. */
-function FreeTextIntake({ lead = false, goal, focuses, nonNegotiables, constraints = [], onPickGoal, onToggleFocus, onToggleNonNegotiable, onToggleConstraint }) {
+function FreeTextIntake({ lead = false, goals = [], focuses, nonNegotiables, constraints = [], onPickGoal, onToggleFocus, onToggleNonNegotiable, onToggleConstraint }) {
   const [text, setText] = useState('');
   const [state, setState] = useState('idle'); // idle | loading | parsed | error
   const [parsed, setParsed] = useState(null);
@@ -255,7 +255,7 @@ function FreeTextIntake({ lead = false, goal, focuses, nonNegotiables, constrain
 
   function apply() {
     if (!parsed) return;
-    if (parsed.goal && parsed.goal !== goal) onPickGoal(parsed.goal);
+    if (parsed.goal && !goals.includes(parsed.goal)) onPickGoal(parsed.goal);
     parsed.focuses.forEach((f) => { if (!focuses.includes(f)) onToggleFocus(f); });
     parsed.hardLines.forEach((h) => { if (!nonNegotiables.includes(h)) onToggleNonNegotiable(h); });
     (parsed.constraints || []).forEach((c) => { if (!constraints.includes(c)) onToggleConstraint?.(c); });

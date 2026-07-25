@@ -16,11 +16,13 @@ const PROFILE_COLUMNS = `${BASE_PROFILE_COLUMNS}, ${WEIGHT_PROFILE_COLUMNS}`;
 // Grocery-coach columns (Step 6). Tried as the widest tier; getFullProfile falls
 // back if the migration hasn't been applied so an existing profile is never lost.
 const COACH_PROFILE_COLUMNS = 'coach_goal, non_negotiables, focuses, constraints';
-// macro_tracking (opt-in, default false) is its OWN tier above the coach columns,
-// so a DB that has the coach columns but not this one still returns the coach prefs
-// (chat speaks through them) — it just reads macro_tracking as absent → OFF.
+// macro_tracking (opt-in, default false) and coach_goals (the multi-goal SET) are the
+// WIDEST tier — a DB that has the coach columns but not these still returns the coach
+// prefs (chat speaks through them); coach_goals reads absent → the app falls back to
+// [coach_goal], and macro_tracking reads OFF.
 const MACRO_TRACKING_COLUMN = 'macro_tracking';
-const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}, ${MACRO_TRACKING_COLUMN}`;
+const COACH_GOALS_COLUMN = 'coach_goals';
+const FULL_PROFILE_COLUMNS = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}, ${MACRO_TRACKING_COLUMN}, ${COACH_GOALS_COLUMN}`;
 const COACH_PROFILE_TIER = `${PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`;
 
 /** Fetch a user's goals, creating defaults on first use. */
@@ -135,10 +137,22 @@ export async function saveOnboardingProfile(userId, profile = {}, goals = {}) {
  * Marks the user onboarded. Upsert touches only these columns, so an existing
  * profile's macros/weight fields are preserved. Returns the saved row.
  */
-export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [], focuses = [], constraints = [] } = {}) {
-  const row = {
+export async function saveCoachProfile(userId, { coach_goal = null, coach_goals = null, non_negotiables = [], focuses = [], constraints = [] } = {}) {
+  // Goals are a SET now. Accept coach_goals (the array); fall back to [coach_goal]
+  // for an older client. coach_goal is kept in sync as the primary (first) goal, so
+  // every reader that still expects a single value keeps working (compat shim).
+  const goalsArr = (Array.isArray(coach_goals) && coach_goals.length
+    ? coach_goals
+    : coach_goal
+      ? [coach_goal]
+      : []
+  ).map((s) => String(s || '').trim()).filter(Boolean);
+
+  // The base row (without coach_goals) is always writable; coach_goal is kept in
+  // sync as the primary (first) goal so single-goal readers keep working.
+  const base = {
     user_id: userId,
-    coach_goal: coach_goal || null,
+    coach_goal: goalsArr[0] || null,
     non_negotiables: Array.isArray(non_negotiables) ? non_negotiables : [],
     focuses: Array.isArray(focuses) ? focuses : [],
     constraints: Array.isArray(constraints) ? constraints : [],
@@ -146,11 +160,22 @@ export async function saveCoachProfile(userId, { coach_goal = null, non_negotiab
     updated_at: new Date().toISOString(),
   };
 
-  const { data, error } = await supabase
+  // Try WITH the multi-goal set; if that column isn't migrated yet the upsert errors,
+  // so fall back to the single-goal shim — onboarding still persists (deploy-order-
+  // independent, same posture as getFullProfile's tiered reads).
+  let { data, error } = await supabase
     .from('user_goals')
-    .upsert(row)
-    .select(`${BASE_PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`)
+    .upsert({ ...base, coach_goals: goalsArr })
+    .select(`${BASE_PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}, ${COACH_GOALS_COLUMN}`)
     .single();
+
+  if (error) {
+    ({ data, error } = await supabase
+      .from('user_goals')
+      .upsert(base)
+      .select(`${BASE_PROFILE_COLUMNS}, ${COACH_PROFILE_COLUMNS}`)
+      .single());
+  }
 
   if (error) throw new Error(error.message);
   return data;

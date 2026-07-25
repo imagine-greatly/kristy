@@ -15,6 +15,7 @@ import {
   goalNoteLabel,
   goalReadLabel,
   goalChipLabel,
+  goalsOf,
   focusDisclaimerAcked,
   ackFocusDisclaimer,
   coachOnboardingSkipped,
@@ -187,16 +188,17 @@ export default function App() {
 
   /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
 
-  // Persist a coach_goal. Setting a goal — in the coach onboarding, the chip switcher,
-  // or the in-card ask — is where the coaching relationship begins, but it deliberately
-  // does NOT grant the trial: the trial is one explicit choice at the gate (handleStartTrial),
-  // so goal-set users keep their 3 free personalized tastes and a weekly-cadence trial isn't
-  // spent on a casual tap. Optimistic so the chip + next scan reflect the goal immediately.
-  async function persistGoal(value) {
-    setProfile((p) => ({ ...(p || {}), coach_goal: value }));
+  // Toggle a goal in the SET — the chip switcher and the in-card ask both add/remove.
+  // Goals are multi-select now; coach_goal stays synced as the primary (for the chip).
+  // Setting a goal does NOT grant the trial (that's one explicit choice at the gate),
+  // so goal-set users keep their 3 free tastes. Optimistic; returns the new set.
+  async function toggleGoal(value) {
+    const cur = goalsOf(profile);
+    const next = cur.includes(value) ? cur.filter((x) => x !== value) : [...cur, value];
+    setProfile((p) => ({ ...(p || {}), coach_goals: next, coach_goal: next[0] || null }));
     try {
       await saveCoachProfile(userId, {
-        coach_goal: value,
+        coach_goals: next,
         non_negotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
         constraints: profile?.constraints || [],
@@ -204,6 +206,7 @@ export default function App() {
     } catch {
       /* keep optimistic value */
     }
+    return next;
   }
 
   // First-run coach onboarding: a goal was chosen → persist goal + prefs and land on
@@ -211,17 +214,18 @@ export default function App() {
   // user gets their free tastes first and starts the trial explicitly at the gate.
   // If focuses were chosen, the in-context note stood in for the one-time coach-not-
   // doctor disclaimer, so mark it acknowledged rather than firing the modal later.
-  async function handleCoachOnboardingComplete({ coach_goal, non_negotiables, focuses, constraints }) {
-    setProfile((p) => ({ ...(p || {}), coach_goal, non_negotiables, focuses, constraints, onboarded: true }));
+  async function handleCoachOnboardingComplete({ coach_goals, non_negotiables, focuses, constraints }) {
+    const goals = Array.isArray(coach_goals) ? coach_goals.filter(Boolean) : [];
+    setProfile((p) => ({ ...(p || {}), coach_goals: goals, coach_goal: goals[0] || null, non_negotiables, focuses, constraints, onboarded: true }));
     if (focuses?.length && !focusDisclaimerAcked()) ackFocusDisclaimer();
     trackEvent('coach_onboarded', {
-      goal: coach_goal,
+      goals: goals.length,
       focuses: (focuses || []).length,
       hardLines: (non_negotiables || []).length,
       constraints: (constraints || []).length,
     });
     try {
-      await saveCoachProfile(userId, { coach_goal, non_negotiables, focuses, constraints });
+      await saveCoachProfile(userId, { coach_goals: goals, non_negotiables, focuses, constraints });
     } catch {
       /* keep optimistic values */
     }
@@ -237,14 +241,14 @@ export default function App() {
   // for the SAME product in place (reusing the extracted ingredients — no re-scan).
   // That first note consumes free-taste 1 of 3, exactly per the existing counter.
   async function handlePickGoal(value) {
-    persistGoal(value);
+    const next = await toggleGoal(value);
     if (!scan?.ingredients) return; // nothing cached to recompose against
     setScan((s) => (s ? { ...s, pickingGoal: true } : s));
     try {
       const verdict = await requestGoalNote({
         ingredients: scan.ingredients,
         nutrition: scan.nutrition,
-        goal: goalNoteLabel(value),
+        goal: goalNoteLabel(next),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
         constraints: resolveConstraints(profile),
@@ -256,11 +260,10 @@ export default function App() {
     }
   }
 
-  // The chip switcher: pick a goal (mode switch) → persist + close. Forward-looking —
-  // the next verdict reflects it; the card in view isn't recomposed.
-  function handleSwitcherPickGoal(value) {
-    persistGoal(value);
-    setSwitcherOpen(false);
+  // The chip switcher: goals are multi-select, so tapping one TOGGLES it and keeps the
+  // sheet open (set several at once). Forward-looking — the next verdict/list reflect it.
+  function handleSwitcherToggleGoal(value) {
+    toggleGoal(value);
   }
 
   // Toggle a dietary focus (from the switcher or a contextual offer). The first focus
@@ -312,17 +315,17 @@ export default function App() {
   // the chip from that message — a wrong parse is one tap to fix.
   async function handleRemoveChatPref(msgId, kind, value) {
     const next = {
-      coach_goal: profile?.coach_goal || null,
+      coach_goals: goalsOf(profile),
       focuses: profile?.focuses || [],
       non_negotiables: profile?.non_negotiables || [],
       constraints: profile?.constraints || [],
     };
-    if (kind === 'goal') next.coach_goal = null;
+    if (kind === 'goal') next.coach_goals = next.coach_goals.filter((x) => x !== value);
     else if (kind === 'focus') next.focuses = next.focuses.filter((x) => x !== value);
     else if (kind === 'hardLine') next.non_negotiables = next.non_negotiables.filter((x) => x !== value);
     else if (kind === 'constraint') next.constraints = next.constraints.filter((x) => x !== value);
 
-    setProfile((p) => ({ ...(p || {}), ...next }));
+    setProfile((p) => ({ ...(p || {}), ...next, coach_goal: next.coach_goals[0] || null }));
     setMessages((prev) =>
       prev.map((m) =>
         m.id === msgId && m.preferenceUpdate
@@ -460,7 +463,7 @@ export default function App() {
         const verdict = await requestGoalNote({
           ingredients: scan.ingredients,
           nutrition: scan.nutrition,
-          goal: goalNoteLabel(profile?.coach_goal),
+          goal: goalNoteLabel(goalsOf(profile)),
           nonNegotiables: profile?.non_negotiables || [],
           focuses: profile?.focuses || [],
           constraints: resolveConstraints(profile),
@@ -548,9 +551,11 @@ export default function App() {
       // chips into the bubble so a wrong parse is one tap to fix.
       const pu = result.preferenceUpdate || null;
       if (pu?.merged) {
+        const g = Array.isArray(pu.merged.goals) ? pu.merged.goals : [];
         setProfile((p) => ({
           ...(p || {}),
-          coach_goal: pu.merged.goal ?? p?.coach_goal ?? null,
+          coach_goals: g,
+          coach_goal: g[0] ?? p?.coach_goal ?? null,
           focuses: pu.merged.focuses || [],
           non_negotiables: pu.merged.hardLines || [],
           constraints: pu.merged.constraints || [],
@@ -595,12 +600,12 @@ export default function App() {
       const result = await runProductScan({
         mode: 'barcode',
         barcode,
-        goal: goalNoteLabel(profile?.coach_goal),
+        goal: goalNoteLabel(goalsOf(profile)),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
         constraints: resolveConstraints(profile),
         // No stored goal → universal layer + the in-card goal ask (no note, no taste).
-        personalize: !!profile?.coach_goal,
+        personalize: goalsOf(profile).length > 0,
       });
       applyScanResult(result, 'barcode');
     } catch {
@@ -620,11 +625,11 @@ export default function App() {
       const result = await runProductScan({
         mode: 'label',
         file,
-        goal: goalNoteLabel(profile?.coach_goal),
+        goal: goalNoteLabel(goalsOf(profile)),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
         constraints: resolveConstraints(profile),
-        personalize: !!profile?.coach_goal,
+        personalize: goalsOf(profile).length > 0,
       });
       applyScanResult(result, 'label');
     } catch {
@@ -709,7 +714,7 @@ export default function App() {
     openChat({ opener: `Your haul this week: ${d.approved || 0} approved, ${d.note || 0} with a note, ${d.swap || 0} to swap. What do you want to work on?` });
   }
   function askAboutList() {
-    const g = goalNoteLabel(profile?.coach_goal) || 'your goal';
+    const g = goalNoteLabel(goalsOf(profile)) || 'your goal';
     openChat({ opener: `Your list is built for ${g}. Want to tweak it, add something, or talk through a swap?` });
   }
 
@@ -787,7 +792,7 @@ export default function App() {
   // the gate. Skipping leaves them goal-less on universal verdicts until they set a
   // goal (here or via the header chip). This is the grocery front door — reachable
   // without ever touching Settings or the TDEE macro setup.
-  if (session?.user && !profile?.coach_goal && !coachOnbSkipped) {
+  if (session?.user && goalsOf(profile).length === 0 && !coachOnbSkipped) {
     return (
       <CoachOnboarding
         initialGoal={onbInitialGoal}
@@ -811,7 +816,7 @@ export default function App() {
     <div className="app">
       <TopBar
         onMenu={() => setSidebarOpen(true)}
-        goalLabel={goalChipLabel(profile?.coach_goal)}
+        goalLabel={goalChipLabel(profile)}
         onGoalClick={() => setSwitcherOpen(true)}
         showPremium={subscription?.premium === false}
         onPremium={openUpgrade}
@@ -845,7 +850,7 @@ export default function App() {
                 entries={[
                   ...(scan?.verdict ? [{ id: 'scan', label: `Ask about ${scan.product?.name || 'your last scan'}`, sub: 'your last scan', onClick: askAboutScan }] : []),
                   ...(haul?.week?.length ? [{ id: 'haul', label: 'Ask about your haul', sub: `${haul.week.length} scanned this week`, onClick: askAboutHaul }] : []),
-                  ...(profile?.coach_goal ? [{ id: 'list', label: 'Ask about your list', sub: 'your shopping list', onClick: askAboutList }] : []),
+                  ...(goalsOf(profile).length ? [{ id: 'list', label: 'Ask about your list', sub: 'your shopping list', onClick: askAboutList }] : []),
                 ]}
                 onScan={() => { setMoment('scan'); setCameraOpen(true); }}
               />
@@ -889,7 +894,8 @@ export default function App() {
           )}
           {moment === 'list' && (
             <ListMoment
-              goal={profile?.coach_goal}
+              goals={goalsOf(profile)}
+              goal={goalsOf(profile)[0] || null}
               nonNegotiables={profile?.non_negotiables || []}
               focuses={profile?.focuses || []}
               constraints={resolveConstraints(profile)}
@@ -934,7 +940,7 @@ export default function App() {
       {scan && (
         <ScanSheet
           scan={scan}
-          goal={goalReadLabel(profile?.coach_goal)}
+          goal={goalReadLabel(goalsOf(profile))}
           onClose={() => setScan(null)}
           onLabelFile={handleVerdictFile}
           onPickGoal={handlePickGoal}
@@ -974,11 +980,11 @@ export default function App() {
 
       {switcherOpen && (
         <GoalSwitcher
-          goal={profile?.coach_goal || null}
+          goals={goalsOf(profile)}
           focuses={profile?.focuses || []}
           nonNegotiables={profile?.non_negotiables || []}
           constraints={profile?.constraints || []}
-          onPickGoal={handleSwitcherPickGoal}
+          onPickGoal={handleSwitcherToggleGoal}
           onToggleFocus={handleToggleFocus}
           onToggleNonNegotiable={handleToggleNonNegotiable}
           onToggleConstraint={handleToggleConstraint}
@@ -992,7 +998,7 @@ export default function App() {
       {aisleOpen && (
         <PerimeterAsk
           prefs={{
-            goal: goalNoteLabel(profile?.coach_goal),
+            goal: goalNoteLabel(goalsOf(profile)),
             focuses: profile?.focuses || [],
             hardLines: profile?.non_negotiables || [],
             constraints: resolveConstraints(profile),

@@ -54,7 +54,7 @@ function groupBySection(items) {
     .sort((a, b) => rank(a.category) - rank(b.category));
 }
 
-export default function ListMoment({ goal, nonNegotiables = [], focuses = [], constraints = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
+export default function ListMoment({ goal, goals = [], nonNegotiables = [], focuses = [], constraints = [], onSetGoal, onAsk, premium: premiumProp = false, onUpgrade }) {
   const [list, setList] = useState(() => loadCachedList());
   const [premium, setPremium] = useState(premiumProp);
   const [loading, setLoading] = useState(() => loadCachedList() == null);
@@ -70,7 +70,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
   useEffect(() => {
     let alive = true;
     (async () => {
-      const { list: fresh, premium: prem } = await fetchList({ goal, nonNegotiables, focuses, constraints });
+      const { list: fresh, premium: prem } = await fetchList({ goal, goals, nonNegotiables, focuses, constraints });
       if (!alive) return;
       if (fresh) setList(fresh);
       setPremium(prem);
@@ -120,7 +120,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
     setBusy(mode);
     setNote('');
     setComposeGated(false);
-    const res = await composeList({ instruction: text, mode, prefs: { goal, nonNegotiables, focuses, constraints } });
+    const res = await composeList({ instruction: text, mode, prefs: { goal, goals, nonNegotiables, focuses, constraints } });
     setBusy('');
     if (res?.gated) {
       setComposeGated(true);
@@ -152,7 +152,7 @@ export default function ListMoment({ goal, nonNegotiables = [], focuses = [], co
 
   const rebuild = async () => {
     trackEvent('list-build', { goal, source: 'rebuild' });
-    const { list: fresh, premium: prem } = await rebuildList({ goal, nonNegotiables, focuses, constraints });
+    const { list: fresh, premium: prem } = await rebuildList({ goal, goals, nonNegotiables, focuses, constraints });
     if (fresh) setList(fresh);
     setPremium(prem);
   };

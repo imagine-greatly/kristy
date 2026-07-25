@@ -72,6 +72,9 @@ alter table user_goals add column if not exists onboarded boolean default false;
 -- optional; entries without them simply get universal (goal-agnostic) verdicts.
 -- (The dietary "focuses" multi-select appends to the same row in a later step.)
 alter table user_goals add column if not exists coach_goal text;
+-- coach_goals: the multi-select goal SET. coach_goal is kept in sync as the primary
+-- (first) goal so single-goal readers keep working. Absent column → app reads [coach_goal].
+alter table user_goals add column if not exists coach_goals text[] default '{}';
 alter table user_goals add column if not exists non_negotiables text[] default '{}';
 -- Dietary focuses (extension): self-selected preferences fed into every /verdict.
 alter table user_goals add column if not exists focuses text[] default '{}';

@@ -14,6 +14,7 @@
 // in sync (same pattern as tdee.js ↔ computeGoalsDemo).
 
 import { randomUUID } from 'node:crypto';
+import { labelForGoal } from './taxonomy.js';
 
 const rid = () => randomUUID();
 
@@ -348,6 +349,39 @@ function swapItems(nextList) {
     }));
 }
 
+function resolveTemplate(goal) {
+  return GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || null;
+}
+
+// Blend several goal templates into ONE list. Goals are a set now (a shopper is
+// often high-protein AND eating-cleaner AND feeding-a-family at once), so we
+// round-robin across their templates — each goal represented up front, not just
+// the first — dedupe by name, and cap the length. The intro names all the goals.
+// One goal returns its own template; none returns the neutral _default.
+function blendTemplates(goals) {
+  const resolved = (goals || []).map(resolveTemplate).filter(Boolean);
+  if (resolved.length === 0) return { items: GOAL_TEMPLATES._default.items, intro: GOAL_TEMPLATES._default.intro };
+  if (resolved.length === 1) return { items: resolved[0].items, intro: resolved[0].intro };
+
+  const seen = new Set();
+  const items = [];
+  const maxLen = Math.max(...resolved.map((t) => t.items.length));
+  for (let i = 0; i < maxLen && items.length < 12; i++) {
+    for (const t of resolved) {
+      const it = t.items[i];
+      if (!it) continue;
+      const key = it.name.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      items.push(it);
+      if (items.length >= 12) break;
+    }
+  }
+  const labels = goals.map((g) => labelForGoal(g) || g).filter(Boolean);
+  const joined = labels.length > 1 ? `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}` : labels[0];
+  return { items, intro: `Built around ${joined} — the overlap up front, tailored to all of it.` };
+}
+
 /**
  * Generate the list. FREE (premium=false): the goal template minus hard-line tags,
  * with removed items suppressed. PREMIUM: additionally folds in focus-relevant items
@@ -355,8 +389,9 @@ function swapItems(nextList) {
  * DB — the gated branches never run for a non-premium caller, so the capability can't
  * be tampered into existence.
  */
-export function generateList({ goal, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = false }) {
-  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
+export function generateList({ goal, goals, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = false }) {
+  const goalList = (Array.isArray(goals) && goals.length ? goals : goal ? [goal] : []).filter(Boolean);
+  const tpl = blendTemplates(goalList);
 
   const excluded = new Set();
   for (const nn of nonNegotiables || [])
@@ -402,7 +437,7 @@ export function generateList({ goal, nonNegotiables = [], focuses = [], constrai
   // don't act on constraints, so they don't claim to).
   const intro = tpl.intro + (premium ? constraintClause(constraints) : '');
 
-  return { goal: goal || null, intro, items: [...swaps, ...items] };
+  return { goal: goalList[0] || null, goals: goalList, intro, items: [...swaps, ...items] };
 }
 
 /**
@@ -427,10 +462,11 @@ export function mergePendingSwaps(list, nextList, premium) {
  * when this changes (goal / hard lines / focuses / constraints edited), so a goal
  * switch refreshes the list without a manual "Rebuild".
  */
-export function listSignature({ goal = null, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
+export function listSignature({ goal = null, goals = null, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
+  const goalList = (Array.isArray(goals) && goals.length ? goals : goal ? [goal] : []).filter(Boolean);
   const norm = (a) => [...(a || [])].map((x) => String(x).toLowerCase()).sort();
   return JSON.stringify({
-    goal: goal || null,
+    goals: norm(goalList),
     hl: norm(nonNegotiables),
     f: norm(focuses),
     c: norm(constraints),

@@ -12,7 +12,7 @@ import {
 import { premiumForReq } from '../lib/subscription.js';
 import { generateList, mergePendingSwaps, listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
-import { migratePreferences } from '../lib/taxonomy.js';
+import { migrateGoalSet } from '../lib/taxonomy.js';
 
 const rid = () => randomUUID();
 
@@ -38,13 +38,16 @@ const router = Router();
 
 function profileInputs(profile) {
   // Migrate the two retired goals (budget_clean / kids_snacks) → goal + constraint at
-  // read time, so a pre-migration DB row shops correctly with no data backfill.
-  const { goal, constraints } = migratePreferences({
+  // read time, so a pre-migration DB row shops correctly with no data backfill. Goals
+  // are a SET now — read coach_goals, falling back to [coach_goal] on an older row.
+  const { goals, constraints } = migrateGoalSet({
+    goals: Array.isArray(profile?.coach_goals) ? profile.coach_goals : [],
     goal: profile?.coach_goal || null,
     constraints: Array.isArray(profile?.constraints) ? profile.constraints : [],
   });
   return {
-    goal,
+    goals,
+    goal: goals[0] || null,
     constraints,
     nonNegotiables: Array.isArray(profile?.non_negotiables) ? profile.non_negotiables : [],
     focuses: Array.isArray(profile?.focuses) ? profile.focuses : [],
@@ -101,13 +104,13 @@ router.get('/list', requireAuth, async (req, res) => {
   try {
     const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
+    const { goals, goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
     const stored = row?.list && Array.isArray(row.list.items) ? row.list : null;
 
-    const sig = listSignature({ goal, nonNegotiables, focuses, constraints });
+    const sig = listSignature({ goals, nonNegotiables, focuses, constraints });
     const storedSig = row?.signals?.sig || null;
     const stale = stored && storedSig && storedSig !== sig;
 
@@ -115,14 +118,14 @@ router.get('/list', requireAuth, async (req, res) => {
     let consumedPending = false;
     if (!stored) {
       // First use → generate from the profile. Premium consumes pending swaps.
-      list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
+      list = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
       consumedPending = premium && pending.length > 0;
       await persist(userId, { list, signals: { ...signals, sig } });
     } else if (stale) {
       // Goal / hard lines / focuses / constraints changed since this list was built
       // → regenerate, carrying over the user's own adds + haul swaps. No manual
       // "Rebuild" needed.
-      const fresh = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
+      const fresh = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
       list = preserveUserItems(fresh, stored);
       consumedPending = premium && pending.length > 0;
       await persist(userId, { list, signals: { ...signals, sig } });
@@ -175,13 +178,13 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
   try {
     const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
+    const { goals, goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
 
-    const sig = listSignature({ goal, nonNegotiables, focuses, constraints });
-    const list = generateList({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
+    const sig = listSignature({ goals, nonNegotiables, focuses, constraints });
+    const list = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
     await persist(userId, { list, signals: { ...signals, sig } });
     if (premium && pending.length) {
       try { await clearPendingSwaps(userId); } catch { /* best-effort */ }
@@ -233,12 +236,12 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
     }
 
     const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
+    const { goals, goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
     const current =
       row?.list && Array.isArray(row.list.items)
         ? row.list
-        : generateList({ goal, nonNegotiables, focuses, constraints, premium });
+        : generateList({ goals, nonNegotiables, focuses, constraints, premium });
 
     const { add, remove, summary } = await composeListEdit({
       instruction,

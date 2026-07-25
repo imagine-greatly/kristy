@@ -80,8 +80,8 @@ async function authFetch(path, opts = {}) {
 /* ───────── Public API — server-backed, cache-first ───────── */
 
 // The persisted list + the server's premium verdict (drives the capability nudge).
-export async function fetchList({ goal, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
-  if (IS_DEMO) return { list: loadOrGenerateDemo({ goal, nonNegotiables, focuses, constraints }), premium: true };
+export async function fetchList({ goal, goals, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
+  if (IS_DEMO) return { list: loadOrGenerateDemo({ goal, goals, nonNegotiables, focuses, constraints }), premium: true };
   try {
     const { list, premium } = await authFetch('/api/list', { method: 'GET' });
     const ok = list && Array.isArray(list.items);
@@ -105,9 +105,9 @@ export function saveList(list, signals) {
 }
 
 // Regenerate from the profile (server re-reads goal/focuses/hard lines + premium).
-export async function rebuildList({ goal, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
+export async function rebuildList({ goal, goals, nonNegotiables = [], focuses = [], constraints = [] } = {}) {
   if (IS_DEMO) {
-    const list = generateLocal({ goal, nonNegotiables, focuses, constraints, nextList: takeDemoNext(), signals: loadSignals(), premium: true });
+    const list = generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: takeDemoNext(), signals: loadSignals(), premium: true });
     saveCache(list);
     return { list, premium: true };
   }
@@ -492,8 +492,34 @@ function swapItemsLocal(nextList) {
     .map((s) => ({ id: rid(), name: `Swap out: ${s.product_name}`, category: 'From your haul', checked: false, source: 'swap', productName: s.product_name }));
 }
 
-function generateLocal({ goal, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = true }) {
-  const tpl = GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || GOAL_TEMPLATES._default;
+function resolveTemplateLocal(goal) {
+  return GOAL_TEMPLATES[goal] || GOAL_TEMPLATES[LEGACY_TEMPLATE_ALIASES[goal]] || null;
+}
+// Blend several goal templates into one list (mirror of server blendTemplates).
+function blendTemplatesLocal(goals) {
+  const resolved = (goals || []).map(resolveTemplateLocal).filter(Boolean);
+  if (resolved.length === 0) return { items: GOAL_TEMPLATES._default.items, intro: GOAL_TEMPLATES._default.intro };
+  if (resolved.length === 1) return { items: resolved[0].items, intro: resolved[0].intro };
+  const seen = new Set();
+  const items = [];
+  const maxLen = Math.max(...resolved.map((t) => t.items.length));
+  for (let i = 0; i < maxLen && items.length < 12; i++) {
+    for (const t of resolved) {
+      const it = t.items[i];
+      if (!it) continue;
+      const key = it.name.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      items.push(it);
+      if (items.length >= 12) break;
+    }
+  }
+  return { items, intro: 'Built around your goals — the overlap up front, tailored to all of it.' };
+}
+
+function generateLocal({ goal, goals, nonNegotiables = [], focuses = [], constraints = [], nextList = [], signals = {}, premium = true }) {
+  const goalList = (Array.isArray(goals) && goals.length ? goals : goal ? [goal] : []).filter(Boolean);
+  const tpl = blendTemplatesLocal(goalList);
   const excluded = new Set();
   for (const nn of nonNegotiables || [])
     (EXCLUDE_TAGS[String(nn).toLowerCase()] || []).forEach((t) => excluded.add(t));
@@ -521,7 +547,7 @@ function generateLocal({ goal, nonNegotiables = [], focuses = [], constraints = 
   const items = applyConditionalRenamesLocal([...base, ...extra], nonNegotiables).map((it) => ({ id: rid(), name: it.name, category: it.category, checked: false, source: 'template' }));
   const swaps = premium ? swapItemsLocal(nextList) : [];
   const intro = tpl.intro + (premium ? constraintClauseLocal(constraints) : '');
-  return { goal: goal || null, intro, items: [...swaps, ...items] };
+  return { goal: goalList[0] || null, goals: goalList, intro, items: [...swaps, ...items] };
 }
 
 function mergeSwapsLocal(list, nextList) {
@@ -538,7 +564,7 @@ function takeDemoNext() {
   return n;
 }
 
-function loadOrGenerateDemo({ goal, nonNegotiables, focuses, constraints }) {
+function loadOrGenerateDemo({ goal, goals, nonNegotiables, focuses, constraints }) {
   const stored = loadCachedList();
   const pending = read(NEXT_KEY, []);
   if (stored && Array.isArray(stored.items)) {
@@ -550,7 +576,7 @@ function loadOrGenerateDemo({ goal, nonNegotiables, focuses, constraints }) {
     }
     return stored;
   }
-  const list = generateLocal({ goal, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true });
+  const list = generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true });
   write(NEXT_KEY, []);
   saveCache(list);
   return list;

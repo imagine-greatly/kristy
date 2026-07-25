@@ -4,7 +4,7 @@ import { userRateLimit } from '../lib/rateLimit.js';
 import { buildPreferencesBlock } from '../lib/prompts.js';
 import { generateReply } from '../lib/chatEngine.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { migratePreferences } from '../lib/taxonomy.js';
+import { migrateGoalSet } from '../lib/taxonomy.js';
 import { looksLikePerimeterQuestion, looksLikePreferenceDeclaration } from '../lib/chatRouting.js';
 import { interpretPreferences } from '../lib/preferenceMap.js';
 import {
@@ -93,12 +93,14 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
     // turn. There is no macro/meal/weight mode anymore — she is a grocery coach.
     const profile = await getFullProfile(userId);
 
-    const migrated = migratePreferences({
+    const migrated = migrateGoalSet({
+      goals: Array.isArray(profile.coach_goals) ? profile.coach_goals : [],
       goal: profile.coach_goal,
       constraints: profile.constraints,
     });
     const prefs = {
-      goal: migrated.goal,
+      goals: migrated.goals,
+      goal: migrated.goals[0] || null,
       focuses: Array.isArray(profile.focuses) ? profile.focuses : [],
       hardLines: Array.isArray(profile.non_negotiables) ? profile.non_negotiables : [],
       constraints: migrated.constraints,
@@ -143,15 +145,17 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
         (mapped.goal || mapped.focuses.length || mapped.hardLines.length || mapped.constraints.length);
 
       if (hasAny && premium) {
+        // Goals are a SET — a goal named in chat ADDS to the shopper's goals, never
+        // replaces them. focuses/lines/constraints union the same way.
         const merged = {
-          goal: mapped.goal || prefs.goal || null,
+          goals: uniq([...prefs.goals, ...(mapped.goal ? [mapped.goal] : [])]),
           focuses: uniq([...prefs.focuses, ...mapped.focuses]),
           hardLines: uniq([...prefs.hardLines, ...mapped.hardLines]),
           constraints: uniq([...prefs.constraints, ...mapped.constraints]),
         };
         try {
           await saveCoachProfile(userId, {
-            coach_goal: merged.goal,
+            coach_goals: merged.goals,
             non_negotiables: merged.hardLines,
             focuses: merged.focuses,
             constraints: merged.constraints,

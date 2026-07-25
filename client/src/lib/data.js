@@ -84,7 +84,7 @@ export async function loadProfile(userId) {
   try {
     let { data, error } = await supabase
       .from('user_goals')
-      .select(`${PROFILE_COLS}, macro_tracking`)
+      .select(`${PROFILE_COLS}, macro_tracking, coach_goals`)
       .eq('user_id', userId)
       .maybeSingle();
     if (error) {
@@ -212,10 +212,24 @@ export async function saveProfileFields(userId, patch = {}) {
 // Persist the 60-second grocery-coach onboarding (Step 6): a primary goal +
 // non-negotiables + focuses + constraints. Marks the user onboarded (no trial —
 // that's an explicit choice at the gate). Demo-aware. Returns the updated profile.
-export async function saveCoachProfile(userId, { coach_goal = null, non_negotiables = [], focuses = [], constraints = [] } = {}) {
+export async function saveCoachProfile(userId, { coach_goal = null, coach_goals = null, non_negotiables = [], focuses = [], constraints = [] } = {}) {
+  // Goals are a SET. Accept coach_goals (the array), fall back to [coach_goal].
+  const goalsArr = (Array.isArray(coach_goals) && coach_goals.length
+    ? coach_goals
+    : coach_goal ? [coach_goal] : []
+  ).filter(Boolean);
+
   if (IS_DEMO) {
     const s = demoRead();
-    s.profile = { ...(s.profile || {}), coach_goal: coach_goal || null, non_negotiables, focuses, constraints, onboarded: true };
+    s.profile = {
+      ...(s.profile || {}),
+      coach_goals: goalsArr,
+      coach_goal: goalsArr[0] || null,
+      non_negotiables,
+      focuses,
+      constraints,
+      onboarded: true,
+    };
     demoWrite(s);
     return s.profile;
   }
@@ -227,7 +241,7 @@ export async function saveCoachProfile(userId, { coach_goal = null, non_negotiab
   const res = await fetch(`${apiBase}/api/onboarding/coach`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session?.access_token}` },
-    body: JSON.stringify({ coach_goal, non_negotiables, focuses, constraints }),
+    body: JSON.stringify({ coach_goal: goalsArr[0] || null, coach_goals: goalsArr, non_negotiables, focuses, constraints }),
   });
   if (!res.ok) throw new Error('Could not save your goal.');
   const json = await res.json();

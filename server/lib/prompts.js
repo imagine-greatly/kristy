@@ -89,21 +89,22 @@ export function buildProfileBlock(p = {}) {
    Kristy speaks through these on every surface. Preferences are the shopper's own
    choices, never diagnoses (the no-treatment rule). Retired goals are already
    resolved by the caller (migratePreferences) before this is built. */
-export function buildPreferencesBlock({ goal, focuses = [], hardLines = [], constraints = [] } = {}) {
+export function buildPreferencesBlock({ goal, goals, focuses = [], hardLines = [], constraints = [] } = {}) {
   const clean = (arr, fn) => (Array.isArray(arr) ? arr.map(fn).filter(Boolean) : []);
-  const goalLabel = goal ? labelForGoal(goal) : '';
+  const goalList = (Array.isArray(goals) && goals.length ? goals : goal ? [goal] : []).filter(Boolean);
+  const goalLabels = goalList.map(labelForGoal).filter(Boolean);
   const focusLabels = clean(focuses, labelForFocus);
   const lineLabels = clean(hardLines, labelForHardLine);
   const consLabels = clean(constraints, labelForConstraint);
 
-  if (!goalLabel && !focusLabels.length && !lineLabels.length && !consLabels.length) {
+  if (!goalLabels.length && !focusLabels.length && !lineLabels.length && !consLabels.length) {
     return "This shopper hasn't set a goal or preferences yet. If it comes up naturally you can help them name what they're shopping for — but don't force it.";
   }
 
   const lines = [
     "This shopper's preferences — speak THROUGH them. They are the shopper's OWN choices, never diagnoses:",
   ];
-  if (goalLabel) lines.push(`- Shopping toward: ${goalLabel}`);
+  if (goalLabels.length) lines.push(`- Shopping toward: ${goalLabels.join(', ')} (read every product against all of these)`);
   if (focusLabels.length) lines.push(`- Watching (their own preference, not a condition): ${focusLabels.join(', ')}`);
   if (lineLabels.length)
     lines.push(`- Hard lines they refuse: ${lineLabels.join(', ')} — never recommend anything that crosses these`);

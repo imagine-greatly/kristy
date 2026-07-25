@@ -64,6 +64,25 @@ test('focuses stay PREMIUM — a free list ignores them, a premium list folds th
   assert.ok(prem.items.some((i) => /chia|flax/.test(i.name.toLowerCase())));
 });
 
+test('multiple goals blend into ONE list — each goal represented, deduped, capped', () => {
+  const blended = generateList({ goals: ['high_protein', 'eating_cleaner', 'family'] });
+  assert.match(blended.intro, /built around/i);
+  const names = blended.items.map((i) => i.name.toLowerCase());
+  assert.equal(new Set(names).size, names.length, 'no duplicate items');
+  assert.ok(names.length >= 8 && names.length <= 12, `blended length ${names.length} out of range`);
+  // a high-protein-only anchor AND a family-only anchor both present → a real blend,
+  // not one template picked.
+  assert.ok(names.some((n) => n.includes('cottage cheese')), 'high-protein contributed');
+  assert.ok(names.some((n) => n === 'milk'), 'family contributed');
+});
+
+test('a single-goal set behaves exactly like the legacy single-goal template', () => {
+  assert.equal(
+    generateList({ goals: ['high_protein'] }).intro,
+    generateList({ goal: 'high_protein' }).intro
+  );
+});
+
 test('the generation signature changes with goal / hard lines and is order-independent', () => {
   const a = listSignature({ goal: 'high_protein', nonNegotiables: [] });
   const b = listSignature({ goal: 'weight_loss', nonNegotiables: [] });

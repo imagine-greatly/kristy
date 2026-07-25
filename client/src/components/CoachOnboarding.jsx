@@ -2,44 +2,78 @@ import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS, CONSTRAINTS_SECTION, FOCUS_DISCLAIMER } from '../lib/coachGoals.js';
+import { interpretPreferences, customLineLabel, isCustomLine } from '../lib/preferences.js';
 
 /* ═══════════════════════ Coach onboarding — the front door ═══════════════════════
-   The first thing a signed-in, goal-less user sees. This is where the coaching
-   relationship begins: Kristy asking who she's shopping for — a goal, then the
-   optional "keep an eye on" (focuses) and "never in the cart" (hard lines). It is
-   NOT a fitness intake and NOT the TDEE macro setup; those live behind Settings.
+   The first thing a signed-in, goal-less user sees, before List/Scan/Haul. This is
+   where the coaching relationship begins: Kristy asking who she's shopping for. It is
+   NOT a fitness intake and NOT the TDEE macro setup.
 
-   Completing it (a goal is chosen) calls saveCoachProfile → /onboarding/coach. It does
-   NOT start the trial — that's a separate, explicit choice at the gate, after the user
-   has spent their free tastes. It is fully skippable — skipping leaves the user
-   goal-less on universal verdicts. The header goal chip remains the anytime editor;
-   this is simply no longer the only path in. Tokens only; her spoken lines are
-   kristyVoice (Playfair italic). */
+   GOALS are a SET now — a real shopper is often several at once (high-protein AND
+   eating cleaner AND feeding a family), so the goal step is MULTI-SELECT. Focuses,
+   hard lines, and constraints are all multi-select and optional. A free-text field
+   ("or just tell me") routes through the same claim-safe mapper and fills the
+   selections. It ends on a confirmation naming what she'll hold, then drops the user
+   into the app with a list already tailored.
+
+   Completing it calls onComplete({ coach_goals, ... }) → saveCoachProfile. It does NOT
+   start the trial — that's a separate, explicit choice at the gate. Fully skippable;
+   skipping leaves the user goal-less on universal verdicts. Tokens only. */
+const STEP_KEYS = ['goals', 'focuses', 'lines', 'constraints', 'confirm'];
+
 export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null }) {
-  // A guest who expressed a goal before signing in arrives with it pre-filled — start
-  // past the goal step (Back returns to it to change). Otherwise start at the goal.
-  const [step, setStep] = useState(initialGoal ? 1 : 0); // 0 goal · 1 focuses · 2 constraints · 3 hard lines
-  const [goal, setGoal] = useState(initialGoal);
+  const [step, setStep] = useState(0);
+  const [goals, setGoals] = useState(initialGoal ? [initialGoal] : []);
   const [focuses, setFocuses] = useState([]);
   const [constraints, setConstraints] = useState([]);
   const [nonNegotiables, setNonNegotiables] = useState([]);
   const [busy, setBusy] = useState(false);
-  const LAST_STEP = 3;
 
+  // Free-text mapper ("or just tell me").
+  const [text, setText] = useState('');
+  const [mapping, setMapping] = useState(false);
+  const [mapErr, setMapErr] = useState(false);
+
+  const LAST = STEP_KEYS.length - 1;
   const toggle = (list, setList, value) =>
     setList(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
 
-  function pickGoal(value) {
-    setGoal(value);
-    setStep(1); // a goal auto-advances — the anchor is chosen, the rest is optional
+  const uniq = (arr) => [...new Set(arr)];
+
+  async function runFreeText(e) {
+    e.preventDefault();
+    if (!text.trim() || mapping) return;
+    setMapping(true);
+    setMapErr(false);
+    try {
+      const p = await interpretPreferences(text);
+      if (p.goal) setGoals((g) => (g.includes(p.goal) ? g : [...g, p.goal]));
+      if (p.focuses?.length) setFocuses((f) => uniq([...f, ...p.focuses]));
+      if (p.hardLines?.length) setNonNegotiables((n) => uniq([...n, ...p.hardLines]));
+      if (p.constraints?.length) setConstraints((c) => uniq([...c, ...p.constraints]));
+      setText('');
+    } catch {
+      setMapErr(true);
+    } finally {
+      setMapping(false);
+    }
   }
 
   function finish() {
-    if (busy || !goal) return;
+    if (busy || goals.length === 0) return;
     setBusy(true);
-    // The parent persists (optimistically) and unmounts us by setting coach_goal.
-    onComplete({ coach_goal: goal, non_negotiables: nonNegotiables, focuses, constraints });
+    onComplete({ coach_goals: goals, non_negotiables: nonNegotiables, focuses, constraints });
   }
+
+  const labelOf = (v) =>
+    COACH_GOALS.find((g) => g.value === v)?.title ||
+    FOCUSES.find((f) => f.value === v)?.label ||
+    NON_NEGOTIABLES.find((n) => n.value === v)?.label ||
+    CONSTRAINTS.find((c) => c.value === v)?.label ||
+    (isCustomLine(v) ? customLineLabel(v) : v);
+
+  const naturalList = (arr) =>
+    arr.length > 1 ? `${arr.slice(0, -1).join(', ')} and ${arr[arr.length - 1]}` : arr[0] || '';
 
   return (
     <div style={styles.screen} role="dialog" aria-modal="true" aria-label="Let's set up your cart">
@@ -47,8 +81,8 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
         <div style={styles.top}>
           <span style={styles.logo}>Kristy</span>
           <div style={styles.dots} aria-hidden="true">
-            {[0, 1, 2, 3].map((i) => (
-              <span key={i} style={{ ...styles.dot, ...(i === step ? styles.dotOn : null) }} />
+            {STEP_KEYS.map((k, i) => (
+              <span key={k} style={{ ...styles.dot, ...(i === step ? styles.dotOn : null) }} />
             ))}
           </div>
         </div>
@@ -56,24 +90,42 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
         <div style={styles.body}>
           {step === 0 && (
             <>
-              <h2 style={styles.prompt}>Before we shop &mdash; who am I shopping for?</h2>
+              <h2 style={styles.prompt}>What are you shopping for?</h2>
               <p style={styles.sub}>
-                Pick what this cart is really about. I&rsquo;ll read every scan against it, and
-                you can change it any time.
+                Pick all that fit &mdash; most people are a few at once. Or just tell me and I&rsquo;ll set it up.
               </p>
+
+              {/* Natural language LEADS — type your whole philosophy instead of tapping. */}
+              <form onSubmit={runFreeText} style={styles.freeForm}>
+                <input
+                  type="text"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  placeholder="High protein, clean eating, no seed oils, feeding kids…"
+                  style={styles.freeInput}
+                  maxLength={600}
+                  aria-label="Tell Kristy what you're shopping for"
+                />
+                <button type="submit" style={styles.freeBtn} disabled={!text.trim() || mapping}>
+                  {mapping ? '…' : 'Set it up'}
+                </button>
+              </form>
+              {mapErr && <p style={styles.note}>That didn&rsquo;t go through &mdash; try again, or just tap below.</p>}
+
               <div style={styles.goals}>
                 {COACH_GOALS.map((g) => {
-                  const on = goal === g.value;
+                  const on = goals.includes(g.value);
                   return (
                     <button
                       key={g.value}
                       type="button"
-                      onClick={() => pickGoal(g.value)}
+                      onClick={() => toggle(goals, setGoals, g.value)}
                       aria-pressed={on}
                       style={{ ...styles.goal, ...(on ? styles.goalOn : null) }}
                     >
                       <span style={styles.goalTitle}>{g.title}</span>
                       <span style={styles.goalBlurb}>{g.blurb}</span>
+                      {on && <span style={styles.goalCheck}>✓</span>}
                     </button>
                   );
                 })}
@@ -85,77 +137,42 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             <>
               <h2 style={styles.prompt}>Anything you want me to keep an eye on?</h2>
               <p style={styles.sub}>Optional. Turn on what matters to you &mdash; I&rsquo;ll flag it as we shop.</p>
-              <div style={styles.chips}>
-                {FOCUSES.map((f) => {
-                  const on = focuses.includes(f.value);
-                  return (
-                    <button
-                      key={f.value}
-                      type="button"
-                      onClick={() => toggle(focuses, setFocuses, f.value)}
-                      aria-pressed={on}
-                      style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
-                    >
-                      {f.label}
-                      {on ? '  ✓' : ''}
-                    </button>
-                  );
-                })}
-              </div>
-              {/* The one-time coach-not-doctor note, in context: shown wherever focuses
-                  are first offered. The parent marks it acknowledged on completion so
-                  the standalone modal never double-fires later. */}
+              <ChipRow options={FOCUSES} selected={focuses} onToggle={(v) => toggle(focuses, setFocuses, v)} />
               {focuses.length > 0 && <p style={styles.note}>{FOCUS_DISCLAIMER}</p>}
             </>
           )}
 
           {step === 2 && (
             <>
-              <h2 style={styles.prompt}>{CONSTRAINTS_SECTION.title}</h2>
-              <p style={styles.sub}>{CONSTRAINTS_SECTION.sub}</p>
-              <div style={styles.chips}>
-                {CONSTRAINTS.map((c) => {
-                  const on = constraints.includes(c.value);
-                  return (
-                    <button
-                      key={c.value}
-                      type="button"
-                      onClick={() => toggle(constraints, setConstraints, c.value)}
-                      aria-pressed={on}
-                      style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
-                    >
-                      {c.label}
-                      {on ? '  ✓' : ''}
-                    </button>
-                  );
-                })}
-              </div>
+              <h2 style={styles.prompt}>Any hard lines?</h2>
+              <p style={styles.sub}>
+                Optional. Things you never want in the cart &mdash; I&rsquo;ll hold them on every product.
+              </p>
+              <ChipRow options={NON_NEGOTIABLES} selected={nonNegotiables} onToggle={(v) => toggle(nonNegotiables, setNonNegotiables, v)} />
             </>
           )}
 
           {step === 3 && (
             <>
-              <h2 style={styles.prompt}>Any hard lines?</h2>
+              <h2 style={styles.prompt}>{CONSTRAINTS_SECTION.title}</h2>
+              <p style={styles.sub}>{CONSTRAINTS_SECTION.sub}</p>
+              <ChipRow options={CONSTRAINTS} selected={constraints} onToggle={(v) => toggle(constraints, setConstraints, v)} />
+            </>
+          )}
+
+          {step === 4 && (
+            <>
+              <h2 style={styles.prompt}>Here&rsquo;s your setup.</h2>
               <p style={styles.sub}>
-                Optional. Things you never want in the cart &mdash; I&rsquo;ll hold them on every product.
+                {goals.length
+                  ? `I'll shop toward ${naturalList(goals.map(labelOf).map((s) => s.toLowerCase()))}.`
+                  : 'Pick at least one goal so I know what to shop toward.'}
+                {' '}You can change any of it any time from the header.
               </p>
-              <div style={styles.chips}>
-                {NON_NEGOTIABLES.map((n) => {
-                  const on = nonNegotiables.includes(n.value);
-                  return (
-                    <button
-                      key={n.value}
-                      type="button"
-                      onClick={() => toggle(nonNegotiables, setNonNegotiables, n.value)}
-                      aria-pressed={on}
-                      style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
-                    >
-                      {n.label}
-                      {on ? '  ✓' : ''}
-                    </button>
-                  );
-                })}
-              </div>
+              <ConfirmGroup title="Shopping toward" values={goals} labelOf={labelOf} />
+              <ConfirmGroup title="Watching" values={focuses} labelOf={labelOf} />
+              <ConfirmGroup title="Hard lines" values={nonNegotiables} labelOf={labelOf} />
+              <ConfirmGroup title="Working with" values={constraints} labelOf={labelOf} />
             </>
           )}
         </div>
@@ -170,26 +187,68 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
               Back
             </button>
           )}
-          {(step === 1 || step === 2) && (
-            <button type="button" style={styles.primary} onClick={() => setStep((s) => s + 1)} disabled={busy}>
+          {step < LAST && (
+            <button
+              type="button"
+              style={{ ...styles.primary, ...(step === 0 && goals.length === 0 ? styles.primaryOff : null) }}
+              onClick={() => setStep((s) => s + 1)}
+              disabled={busy || (step === 0 && goals.length === 0)}
+            >
               Continue
             </button>
           )}
-          {step === LAST_STEP && (
-            <button type="button" style={styles.primary} onClick={finish} disabled={busy}>
+          {step === LAST && (
+            <button type="button" style={styles.primary} onClick={finish} disabled={busy || goals.length === 0}>
               {busy ? 'Setting up…' : "That's everything — let's shop"}
             </button>
           )}
         </div>
 
-        {/* Skippable, and never a trap: the escape hatch lives on the goal step, where
-            "skip" unambiguously means "don't set me up." Later steps mean a goal is
-            already chosen — Back returns here to bail. */}
+        {/* Skippable, never a trap: the escape hatch lives on the first step, where
+            "skip" unambiguously means "don't set me up." */}
         {step === 0 && (
           <button type="button" style={styles.skip} onClick={onSkip} disabled={busy}>
             Skip for now
           </button>
         )}
+      </div>
+    </div>
+  );
+}
+
+function ChipRow({ options, selected, onToggle }) {
+  return (
+    <div style={styles.chips}>
+      {options.map((o) => {
+        const on = selected.includes(o.value);
+        return (
+          <button
+            key={o.value}
+            type="button"
+            onClick={() => onToggle(o.value)}
+            aria-pressed={on}
+            style={{ ...styles.chip, ...(on ? styles.chipOn : null) }}
+          >
+            {o.label}
+            {on ? '  ✓' : ''}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function ConfirmGroup({ title, values, labelOf }) {
+  if (!values.length) return null;
+  return (
+    <div style={styles.confirmGroup}>
+      <div style={styles.confirmLabel}>{title}</div>
+      <div style={styles.chips}>
+        {values.map((v) => (
+          <span key={v} style={{ ...styles.chip, ...styles.chipOn, cursor: 'default' }}>
+            {labelOf(v)}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -207,28 +266,56 @@ const styles = {
     background: colors.bg,
     overflowY: 'auto',
   },
+  // A contained, centered panel on desktop; fills the width on mobile. The body
+  // scrolls within if the step is tall, so actions stay reachable.
   card: {
     width: '100%',
-    maxWidth: 460,
+    maxWidth: 520,
     display: 'flex',
     flexDirection: 'column',
-    gap: 12,
+    gap: 14,
     margin: 'auto',
+    boxSizing: 'border-box',
+    padding: '22px 20px calc(22px + env(safe-area-inset-bottom))',
+    borderRadius: 20,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface,
   },
   top: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
   logo: { ...kristyVoice, fontSize: 22, color: colors.accentGold },
   dots: { display: 'flex', gap: 6 },
   dot: { width: 7, height: 7, borderRadius: 999, background: colors.border },
   dotOn: { background: colors.accentGold },
-  body: { display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 4 },
+  body: { display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 2 },
   prompt: { ...kristyVoice, margin: 0, fontSize: 25, lineHeight: 1.25, color: colors.textPrimary },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
-  note: {
-    ...kristyVoice,
-    margin: '4px 0 0',
-    fontSize: 13.5,
-    lineHeight: 1.5,
-    color: colors.textMuted,
+  note: { ...kristyVoice, margin: '4px 0 0', fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
+  freeForm: { display: 'flex', gap: 8, alignItems: 'stretch', flexWrap: 'wrap', margin: '4px 0 2px' },
+  freeInput: {
+    flex: '1 1 200px',
+    minWidth: 0,
+    boxSizing: 'border-box',
+    minHeight: 46,
+    padding: '11px 14px',
+    borderRadius: 12,
+    border: `1px solid ${colors.border}`,
+    background: colors.bg,
+    color: colors.textPrimary,
+    fontFamily: fonts.ui,
+    fontSize: 15,
+  },
+  freeBtn: {
+    flex: '0 0 auto',
+    minHeight: 46,
+    padding: '11px 16px',
+    borderRadius: 12,
+    border: 'none',
+    background: colors.accentGold,
+    color: colors.bgDeep,
+    fontFamily: fonts.ui,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: 'pointer',
   },
   goals: { display: 'flex', flexDirection: 'column', gap: 10, margin: '6px 0 2px' },
   goal: {
@@ -238,10 +325,10 @@ const styles = {
     alignItems: 'flex-start',
     gap: 3,
     width: '100%',
-    padding: '13px 16px',
+    padding: '13px 40px 13px 16px',
     borderRadius: 14,
     border: `1px solid ${colors.border}`,
-    background: colors.surface,
+    background: colors.bg,
     color: colors.textPrimary,
     cursor: 'pointer',
     textAlign: 'left',
@@ -249,6 +336,7 @@ const styles = {
   goalOn: { borderColor: colors.borderGold, background: colors.goldTint9 },
   goalTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 600, color: colors.textPrimary },
   goalBlurb: { fontFamily: fonts.ui, fontSize: 13, color: colors.textMuted },
+  goalCheck: { position: 'absolute', right: 16, top: 14, color: colors.accentGold, fontSize: 16, fontWeight: 700 },
   chips: { display: 'flex', flexWrap: 'wrap', gap: 8, margin: '6px 0 4px' },
   chip: {
     maxWidth: '100%',
@@ -257,7 +345,7 @@ const styles = {
     boxSizing: 'border-box',
     borderRadius: 999,
     border: `1px solid ${colors.border}`,
-    background: colors.surface,
+    background: colors.bg,
     color: colors.textPrimary,
     fontFamily: fonts.ui,
     fontSize: 14,
@@ -267,7 +355,16 @@ const styles = {
     overflowWrap: 'anywhere',
   },
   chipOn: { borderColor: colors.borderGold, background: colors.goldTint9, color: colors.accentGold },
-  threadWrap: { margin: '4px 0 0' },
+  confirmGroup: { display: 'flex', flexDirection: 'column', gap: 2, margin: '2px 0' },
+  confirmLabel: {
+    fontFamily: fonts.ui,
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: '0.04em',
+    textTransform: 'uppercase',
+    color: colors.textMuted,
+  },
+  threadWrap: { margin: '2px 0 0' },
   actions: { display: 'flex', gap: 10, alignItems: 'center' },
   back: {
     flex: '0 0 auto',
@@ -295,6 +392,7 @@ const styles = {
     fontWeight: 700,
     cursor: 'pointer',
   },
+  primaryOff: { opacity: 0.5, cursor: 'default' },
   skip: {
     alignSelf: 'center',
     marginTop: 2,
