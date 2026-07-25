@@ -3,7 +3,7 @@ import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { BarcodeIcon, CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter } from '../lib/perimeter.js';
+import { askPerimeter, fetchPerimeterEntry } from '../lib/perimeter.js';
 
 /* ═══════════════════════ The cart — the home surface ═══════════════════════
    The trip, as a structured object you act on by touch. This is the dashboard: what
@@ -91,59 +91,74 @@ function ProgressBar({ progress }) {
   );
 }
 
-/* ───────── One row of the cart ─────────
-   Collapsed: checkbox · name · state. Tapping the body opens the action drawer —
-   guidance, swap, remove — plus her inline reference card once loaded. */
-function CartRow({ item, open, guidance, onToggle, onOpen, onGuidance, onRemove, onRefine, onUpgrade }) {
+/* ───────── One row of the cart — a DECISION, not a checkbox on a name ─────────
+   Collapsed the row still says everything that matters: the specific pick, and ONE
+   line of why she chose it. The reason is not behind the tap — a reason you have to
+   ask for is a checklist with extra steps, and the reason IS the product.
+
+   Tapping expands, in place, to the sourced detail: her "what to look for" checklist
+   read straight from the perimeter KB (free, no model call), the named alternative,
+   and the swap/remove actions. */
+function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onRefine, onUpgrade }) {
   const isSwapCallout = item.source === 'swap';
   const flag = item.tier ? TIER_FLAG[item.tier] : null;
   const needsBetterPick = flagged(item);
+  const checked = !!item.checked;
 
   return (
-    <div style={{ ...styles.item, ...(isSwapCallout ? styles.itemSwap : null), ...(open ? styles.itemOpen : null) }}>
+    <div
+      style={{
+        ...styles.item,
+        ...(isSwapCallout ? styles.itemSwap : null),
+        ...(checked ? styles.itemChecked : null),
+        ...(open ? styles.itemOpen : null),
+      }}
+    >
       <div style={styles.itemHead}>
         <button
           type="button"
           onClick={() => onToggle(item.id)}
-          aria-pressed={!!item.checked}
-          aria-label={item.checked ? `Uncheck ${item.name}` : `Check off ${item.name}`}
+          aria-pressed={checked}
+          aria-label={checked ? `Uncheck ${item.name}` : `Check off ${item.name}`}
           style={{
             ...styles.checkbox,
-            borderColor: item.checked ? colors.accentGold : colors.border,
-            background: item.checked ? colors.accentGold : 'transparent',
+            borderColor: checked ? colors.accentGold : colors.checkboxRest,
+            background: checked ? colors.accentGold : 'transparent',
             color: colors.bgDeep,
           }}
         >
-          {item.checked ? '✓' : ''}
+          {checked ? '✓' : ''}
         </button>
 
-        {/* The row body is the tap target for the actions — no sentence, no sheet. */}
+        {/* The row body is the tap target — name, her reason, and the state tags. */}
         <button
           type="button"
           style={styles.itemBody}
           onClick={() => onOpen(open ? null : item.id)}
           aria-expanded={open}
-          aria-label={`Actions for ${item.name}`}
+          aria-label={`More about ${item.name}`}
         >
           <span
             style={{
               ...styles.itemName,
               ...(isSwapCallout ? styles.itemNameSwap : null),
-              ...(item.checked && !isSwapCallout ? styles.itemChecked : null),
+              ...(checked && !isSwapCallout ? styles.itemNameChecked : null),
             }}
           >
             {item.name}
           </span>
-          <span style={styles.itemMeta}>
-            {item.source === 'user' && <span style={styles.tagUser}>You added</span>}
-            {isSwapCallout && <span style={styles.tagGold}>From your haul</span>}
-            {item.refined && <span style={styles.tagGold}>Kristy&rsquo;s pick</span>}
-            {flag && (
-              <span style={{ ...styles.flag, color: flag.fg, borderColor: flag.bd, background: flag.bg }}>
-                {flag.label}
-              </span>
-            )}
-          </span>
+
+          {/* THE COACHING. Always visible on any row she chose. */}
+          {item.why && <span style={styles.itemWhy}>{item.why}</span>}
+
+          {(item.source === 'user' || isSwapCallout || item.refined || flag) && (
+            <span style={styles.itemMeta}>
+              {item.source === 'user' && <span style={styles.tagQuiet}>You added</span>}
+              {isSwapCallout && <span style={styles.tagGold}>From your haul</span>}
+              {item.refined && <span style={styles.tagGold}>Kristy&rsquo;s pick</span>}
+              {flag && <span style={{ ...styles.flag, color: flag.fg, background: flag.bg }}>{flag.label}</span>}
+            </span>
+          )}
         </button>
 
         <span style={{ ...styles.chev, transform: open ? 'rotate(90deg)' : 'none' }} aria-hidden="true">›</span>
@@ -151,21 +166,26 @@ function CartRow({ item, open, guidance, onToggle, onOpen, onGuidance, onRemove,
 
       {open && (
         <div style={styles.drawer}>
+          {/* The named alternative — the "or grass-fed if they have it" line. */}
+          {item.alt && <p style={{ ...kristyVoice, ...styles.altLine }}>{item.alt}</p>}
+
           <div style={styles.drawerActions}>
             <button
               type="button"
               style={{ ...styles.drawerBtn, ...(needsBetterPick ? styles.drawerBtnGold : null) }}
-              onClick={() => onGuidance(item)}
-              disabled={guidance?.state === 'loading'}
+              onClick={() => onDetail(item)}
+              disabled={detail?.state === 'loading'}
             >
-              {guidance?.state === 'loading'
+              {detail?.state === 'loading'
                 ? 'Reading…'
                 : needsBetterPick
                   ? 'Find a better pick'
-                  : 'What to look for'}
+                  : detail?.state === 'done'
+                    ? 'What to look for'
+                    : 'What to look for'}
             </button>
             <button type="button" style={styles.drawerBtn} onClick={() => onToggle(item.id)}>
-              {item.checked ? 'Uncheck' : 'Check off'}
+              {checked ? 'Uncheck' : 'Check off'}
             </button>
             <button type="button" style={styles.drawerBtnQuiet} onClick={() => onRemove(item.id)}>
               <CloseIcon size={14} />
@@ -173,16 +193,39 @@ function CartRow({ item, open, guidance, onToggle, onOpen, onGuidance, onRemove,
             </button>
           </div>
 
-          {/* Her answer renders INSIDE the item — the coaching stays in the object. */}
-          {guidance?.state === 'error' && (
+          {detail?.state === 'error' && (
             <p style={{ ...kristyVoice, ...styles.drawerErr }}>
               That didn&rsquo;t go through — try again in a moment.
             </p>
           )}
-          {guidance?.state === 'done' && (
+
+          {/* A perimeter ENTRY (free KB read — she already knows this one). */}
+          {detail?.state === 'done' && detail.entry && (
+            <div style={styles.entry}>
+              <p style={{ ...kristyVoice, ...styles.entryAnswer }}>
+                {detail.entry.kristy_take || detail.entry.short_answer}
+              </p>
+              {!!detail.entry.buying_tips?.length && (
+                <>
+                  <div style={styles.entryHead}>What to look for</div>
+                  <ul style={styles.tipList}>
+                    {detail.entry.buying_tips.map((t, i) => (
+                      <li key={i} style={styles.tip}>
+                        <span style={styles.tipMark} aria-hidden="true">✓</span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          )}
+
+          {/* A personalized ASK (model call) — for rows with no KB entry of their own. */}
+          {detail?.state === 'done' && detail.resp && (
             <div style={styles.drawerAnswer}>
               <PerimeterAnswer
-                resp={guidance.resp}
+                resp={detail.resp}
                 compact
                 allowRefine
                 onRefine={(name) => onRefine(item.id, name)}
@@ -216,11 +259,21 @@ export default function CartMoment({
 
   const { list, premium, loading, note, gated, progress } = cart;
 
-  // Kristy's read on one item, fetched from the perimeter KB and rendered inline.
-  // Same claim-locked path as "Ask about the aisle" — just presented in the cart.
-  async function loadGuidance(item) {
+  // Kristy's fuller read on one item, rendered inline.
+  //
+  // When the pick already carries a perimeterId, this is a FREE KB read — her sourced
+  // buying tips, no model call, works on every tier and returns instantly. Only a row
+  // with no entry of its own falls back to the personalized (premium) ask.
+  async function loadDetail(item) {
     setGuidance((g) => ({ ...g, [item.id]: { state: 'loading' } }));
     try {
+      if (item.perimeterId) {
+        const entry = await fetchPerimeterEntry(item.perimeterId);
+        if (entry) {
+          setGuidance((g) => ({ ...g, [item.id]: { state: 'done', entry } }));
+          return;
+        }
+      }
       const resp = await askPerimeter({
         question: item.productName || item.name,
         goal,
@@ -287,20 +340,18 @@ export default function CartMoment({
         </button>
       )}
 
-      {/* Two peer entry points for the parts of the store with no barcode and for a
-          whole cart from one sentence. Both are taps; neither is a buried link. */}
-      <div style={styles.peerRow}>
-        {onBuildCart && (
-          <button type="button" style={styles.peerGold} onClick={onBuildCart}>
-            Build me a cart for&hellip;
-          </button>
-        )}
-        {onAskAisle && (
+      {/* ONE entry point here, not two. "Build me a cart for…" used to sit in this row
+          AND in the empty state AND as the docked composer's placeholder — three of the
+          same affordance on one screen. The composer already accepts that sentence, so
+          the standalone button is gone; the unlabeled aisle keeps its tap because
+          nothing else on this surface offers it. */}
+      {onAskAisle && (
+        <div style={styles.peerRow}>
           <button type="button" style={styles.peer} onClick={onAskAisle}>
             Ask about the aisle
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       {gated && (
         <Nudge
@@ -326,10 +377,10 @@ export default function CartMoment({
                 key={it.id}
                 item={it}
                 open={openId === it.id}
-                guidance={guidance[it.id]}
+                detail={guidance[it.id]}
                 onToggle={cart.toggle}
                 onOpen={setOpenId}
-                onGuidance={loadGuidance}
+                onDetail={loadDetail}
                 onRemove={(id) => {
                   cart.remove(id);
                   if (openId === id) setOpenId(null);
@@ -427,11 +478,6 @@ const styles = {
 
   // The two peer entry points — a whole cart from a sentence, and the unlabeled aisle.
   peerRow: { display: 'flex', gap: 8, flexWrap: 'wrap' },
-  peerGold: {
-    flex: '1 1 auto', minHeight: 44, padding: '11px 14px', borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
-    color: colors.accentGold, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 700, cursor: 'pointer',
-  },
   peer: {
     flex: '1 1 auto', minHeight: 44, padding: '11px 14px', borderRadius: 12,
     border: `1px solid ${colors.border}`, background: colors.surface,
@@ -442,42 +488,76 @@ const styles = {
   nudgeLine: { fontSize: 15, lineHeight: 1.5, color: colors.textPrimary },
   nudgeCta: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 13.5, cursor: 'pointer' },
 
-  groups: { display: 'flex', flexDirection: 'column', gap: 16, marginTop: 2 },
-  group: { display: 'flex', flexDirection: 'column', gap: 8 },
-  groupLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
+  // Sections breathe — a bigger gap BETWEEN groups than between rows, so the eye reads
+  // "produce, then meat" rather than one undifferentiated column.
+  groups: { display: 'flex', flexDirection: 'column', gap: 26, marginTop: 6 },
+  group: { display: 'flex', flexDirection: 'column', gap: 10 },
+  groupLabel: {
+    fontFamily: fonts.ui, fontSize: 10, fontWeight: 600, letterSpacing: '0.14em',
+    textTransform: 'uppercase', color: colors.textMuted, opacity: 0.75, paddingLeft: 2, marginBottom: 2,
+  },
 
-  item: { borderRadius: 12, border: `1px solid ${colors.border}`, background: colors.surface, overflow: 'hidden' },
-  // Her callout: gold rule down the side, gold-tinted ground.
-  itemSwap: { borderColor: colors.borderGold, borderLeft: `3px solid ${colors.accentGold}`, background: colors.goldTint9 },
-  itemOpen: { borderColor: colors.gold30 },
-  itemHead: { display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px' },
-  checkbox: { flex: '0 0 auto', width: 26, height: 26, borderRadius: 7, border: '1.5px solid', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, cursor: 'pointer' },
-  itemBody: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 4, padding: '4px 0', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' },
-  itemName: { fontFamily: fonts.ui, fontSize: 15, color: colors.textPrimary, overflowWrap: 'anywhere' },
-  itemNameSwap: { ...kristyVoice, fontSize: 15.5, color: colors.textPrimary },
-  itemChecked: { color: colors.textMuted, textDecoration: 'line-through' },
-  itemMeta: { display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
-  tagUser: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.textMuted },
-  tagGold: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.accentGoldMuted },
-  flag: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, padding: '2px 8px', borderRadius: 999, border: '1px solid', whiteSpace: 'nowrap' },
-  chev: { flex: '0 0 auto', color: colors.textMuted, fontSize: 18, lineHeight: 1, transition: 'transform 0.18s ease' },
+  /* A row is a CARD: it's defined by sitting a step lighter than the ground plus a
+     soft shadow — not by an outline. Borders on every row read as noise and flattened
+     the hierarchy; the only outline left in the cart is gold, and gold means emphasis. */
+  item: {
+    borderRadius: 14, border: 'none', background: colors.surface, overflow: 'hidden',
+    boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
+    transition: 'background 0.16s ease, box-shadow 0.16s ease',
+  },
+  // Her callout is the ONE row that gets gold, because it's the one she's flagging.
+  itemSwap: { borderLeft: `3px solid ${colors.accentGold}`, background: colors.goldTint9 },
+  // Checked recedes: it drops back toward the ground instead of holding its lift.
+  itemChecked: { background: colors.bg, boxShadow: 'none' },
+  itemOpen: { background: colors.surface2, boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowRaised}` },
 
-  drawer: { display: 'flex', flexDirection: 'column', gap: 10, padding: '2px 12px 12px', borderTop: `1px solid ${colors.border}` },
-  drawerActions: { display: 'flex', gap: 8, flexWrap: 'wrap', paddingTop: 10 },
+  itemHead: { display: 'flex', alignItems: 'flex-start', gap: 13, padding: '14px 15px' },
+  checkbox: {
+    flex: '0 0 auto', width: 24, height: 24, marginTop: 1, borderRadius: 7, border: '1.5px solid',
+    display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, cursor: 'pointer',
+  },
+  itemBody: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 3, padding: 0, background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' },
+  itemName: { fontFamily: fonts.ui, fontSize: 15, fontWeight: 600, lineHeight: 1.3, color: colors.textPrimary, overflowWrap: 'anywhere' },
+  itemNameSwap: { ...kristyVoice, fontSize: 15.5, fontWeight: 400, color: colors.textPrimary },
+  itemNameChecked: { color: colors.textMuted, textDecoration: 'line-through' },
+
+  // Her reasoning. Playfair italic so it reads as HER, not as a product subtitle.
+  itemWhy: { ...kristyVoice, fontSize: 13.5, lineHeight: 1.45, color: colors.textMuted, overflowWrap: 'anywhere' },
+
+  itemMeta: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginTop: 3 },
+  tagQuiet: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: colors.textMuted, opacity: 0.8 },
+  tagGold: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: colors.accentGoldMuted },
+  // Tinted fill, no outline — the colour already carries the meaning.
+  flag: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, padding: '3px 9px', borderRadius: 999, whiteSpace: 'nowrap' },
+  chev: { flex: '0 0 auto', marginTop: 2, color: colors.textMuted, opacity: 0.6, fontSize: 18, lineHeight: 1, transition: 'transform 0.18s ease' },
+
+  // The drawer is the elevated layer — no divider rule needed, the lift does that work.
+  drawer: { display: 'flex', flexDirection: 'column', gap: 12, padding: '0 15px 15px', marginLeft: 37 },
+  altLine: { margin: 0, fontSize: 14, lineHeight: 1.45, color: colors.textMuted },
+  drawerActions: { display: 'flex', gap: 8, flexWrap: 'wrap' },
   drawerBtn: {
     flex: '1 1 auto', minHeight: 40, padding: '9px 12px', borderRadius: 10,
-    border: `1px solid ${colors.border}`, background: colors.surface2, color: colors.textPrimary,
+    border: 'none', background: colors.bg, color: colors.textPrimary,
     fontFamily: fonts.ui, fontSize: 13, fontWeight: 600, cursor: 'pointer',
   },
-  drawerBtnGold: { borderColor: colors.borderGold, background: colors.goldTint9, color: colors.accentGold },
+  drawerBtnGold: { background: colors.goldTint9, color: colors.accentGold },
   drawerBtnQuiet: {
     flex: '0 0 auto', minHeight: 40, padding: '9px 12px', borderRadius: 10,
     display: 'inline-flex', alignItems: 'center', gap: 6,
-    border: `1px solid ${colors.border}`, background: 'transparent', color: colors.textMuted,
+    border: 'none', background: 'transparent', color: colors.textMuted,
     fontFamily: fonts.ui, fontSize: 13, fontWeight: 600, cursor: 'pointer',
   },
   drawerErr: { margin: 0, fontSize: 14.5, color: colors.textPrimary },
   drawerAnswer: { paddingTop: 2 },
+
+  /* Her sourced detail, read straight from the perimeter KB — a reference card, not
+     chat prose. Sits on the ground colour so it reads as inset within the raised row. */
+  entry: { display: 'flex', flexDirection: 'column', gap: 9, padding: '13px 14px', borderRadius: 11, background: colors.bg },
+  entryAnswer: { margin: 0, fontSize: 14.5, lineHeight: 1.5, color: colors.textPrimary },
+  entryHead: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
+  tipList: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 7 },
+  tip: { display: 'flex', gap: 9, alignItems: 'flex-start', fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.45, color: colors.textPrimary },
+  tipMark: { flex: '0 0 auto', color: colors.accentGoldMuted, fontSize: 12, lineHeight: 1.5 },
 
   addOpen: {
     alignSelf: 'stretch', minHeight: 46, padding: '12px 14px', borderRadius: 12,

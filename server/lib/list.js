@@ -18,172 +18,279 @@ import { labelForGoal } from './taxonomy.js';
 
 const rid = () => randomUUID();
 
-// Per-goal starter templates — whole-food, preference-framed (what to buy, not
-// macros). Items carry tags only for the non-negotiable filter (e.g. 'dairy').
-const GOAL_TEMPLATES = {
+/* ═══════════════════════ PICKS — every row is a DECISION ═══════════════════════
+   A category ("chicken or fish", "leafy greens") hands the decision back to the
+   shopper, which is the one thing this app exists not to do. So the unit of the list
+   is a PICK: a specific thing you can physically lift off a shelf, plus the one line
+   of Kristy's reasoning that makes it a decision rather than a chore.
+
+   Each pick carries:
+     name        the specific item — never a category
+     why         ONE line, her voice, always visible in the row (this IS the coaching)
+     perimeterId (optional) the perimeter KB entry this pick's judgment comes from —
+                 the row's "what to look for" detail is read from it, free, no model
+     alt         (optional) the genuinely-equivalent alternative, named
+     variants    (optional) constraint → a DIFFERENT specific pick + reason. Budget
+                 buys the whole chicken; short-on-time buys the rotisserie. The
+                 specifics change, not just the framing.
+
+   CLAIM LOCK: a `why` is Kristy's FOOD judgment — what a thing is, how it's made,
+   how it cooks, what to look for. It may never assert a health outcome in either
+   direction, name a condition, or quote a price (budget is SELECTION, not a price
+   lookup — Block H). Every line here traces to its perimeter entry's short_answer,
+   kristy_take, or buying_tips; `assertClaimSafeReasons` in list.test.js is the
+   tripwire and fails the build if one drifts. */
+const PICKS = {
+  // ── Meat, fish, eggs ──
+  chicken: {
+    name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'air_chilled_chicken',
+    why: 'More forgiving than breasts and cheaper per pound — hard to dry out.',
+    alt: 'Or breasts if that’s what the house eats.',
+    variants: {
+      short_on_time: { name: 'Rotisserie chicken', why: 'Already cooked — dinner becomes assembly, not cooking.' },
+      budget: { name: 'Whole chicken', why: 'The cheapest way to buy chicken, and the carcass makes stock.' },
+      no_kitchen: { name: 'Rotisserie chicken', why: 'Cooked already — you need a fork, not a stove.' },
+    },
+  },
+  chicken_breast: {
+    name: 'Chicken breast', category: 'Protein', perimeterId: 'air_chilled_chicken',
+    why: 'The lean anchor — portions clean and cooks fast.',
+    variants: {
+      short_on_time: { name: 'Rotisserie chicken', why: 'Already cooked — pull it apart and it feeds three meals.' },
+      budget: { name: 'Whole chicken', why: 'Same bird, less per pound — break it down yourself.' },
+    },
+  },
+  sardines: {
+    name: 'Canned wild sardines', category: 'Protein', perimeterId: 'canned_fish_mercury',
+    why: 'Small fish, low on the chain, and you eat the whole thing — real omega-3s.',
+    alt: 'Or canned salmon with the bones in.',
+  },
+  canned_fish: {
+    name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'canned_fish_mercury',
+    why: 'Skipjack (the “light” tin) sits lower in mercury than albacore.',
+    alt: 'Or canned salmon — bones in, more calcium.',
+  },
+  salmon: {
+    name: 'Wild-caught salmon', category: 'Protein', perimeterId: 'salmon_wild_vs_farmed',
+    why: 'I lean wild when the budget allows — that’s my preference, not a verdict on farmed.',
+    variants: {
+      budget: { name: 'Canned wild salmon', why: 'Same fish, shelf-stable, and the bones come with calcium.' },
+      short_on_time: { name: 'Frozen wild salmon fillets', why: 'Frozen at sea, portioned — thaw only what you need.' },
+    },
+  },
+  ground_beef: {
+    name: 'Ground beef, 80/20', category: 'Protein', perimeterId: 'ground_beef_lean_ratio',
+    why: '80/20 for burgers; drain it for sauces. Leaner costs more and cooks drier.',
+    variants: {
+      budget: { name: 'Ground beef, 80/20', why: 'Buy the 80/20 and drain it — it beats paying up for lean.' },
+    },
+  },
+  grassfed_beef: {
+    name: 'Grass-fed ground beef', category: 'Protein', perimeterId: 'beef_grassfed_vs_grainfed',
+    why: 'Chuck and ground get you the sourcing without reaching for the ribeye.',
+    alt: 'Or regular ground beef — a cheaper real cut still beats processed protein.',
+  },
+  eggs: {
+    name: 'Pasture-raised eggs', category: 'Protein', perimeterId: 'egg_labels',
+    why: 'Pasture-raised is the one egg label with real meaning behind it.',
+    alt: 'Or plain eggs — an egg is a complete protein either way.',
+    variants: {
+      budget: { name: 'Eggs', why: 'One of the cheapest complete proteins in the building — grade doesn’t change that.' },
+    },
+  },
+  greek_yogurt: {
+    name: 'Plain whole-milk Greek yogurt', category: 'Protein', tags: ['dairy'], perimeterId: 'yogurt_plain_vs_flavored',
+    why: 'Plain, so you’re not buying dessert — add your own fruit.',
+  },
+  cottage_cheese: {
+    name: 'Cottage cheese', category: 'Protein', tags: ['dairy'],
+    why: 'Protein you don’t have to cook — eat it with fruit or on toast.',
+  },
+  kefir: {
+    name: 'Plain kefir', category: 'Fermented', tags: ['dairy'],
+    why: 'Live cultures, and plain means no dessert-level sugar riding along.',
+  },
+  milk: {
+    name: 'Whole milk', category: 'Protein', tags: ['dairy'], perimeterId: 'whole_vs_reduced_fat_milk',
+    why: 'Whole milk is the least-messed-with version — the fat is the point.',
+  },
+  cheese_sticks: {
+    name: 'Real cheese sticks', category: 'Protein', tags: ['dairy'], perimeterId: 'cheese_real_vs_processed',
+    why: 'Real cheese, not the processed slices — check it says cheese, not “product”.',
+  },
+
+  // ── Produce ──
+  spinach: {
+    name: 'Baby spinach', category: 'Produce',
+    why: 'Goes into eggs, soup, or a salad with no prep at all.',
+    alt: 'Or arugula — whichever looks freshest.',
+    variants: {
+      short_on_time: { name: 'Pre-washed baby spinach', why: 'If pre-washed is what gets a salad on the table, buy it.' },
+      no_kitchen: { name: 'Pre-washed baby spinach', why: 'Open the bag, eat the greens. No board, no knife.' },
+    },
+  },
+  frozen_veg: {
+    name: 'Frozen broccoli or green beans', category: 'Produce', perimeterId: 'frozen_vs_fresh_produce',
+    why: 'Picked ripe and frozen fast — cheaper than fresh and it never spoils.',
+  },
+  berries: {
+    name: 'Blueberries or strawberries', category: 'Produce',
+    why: 'The sweet thing that isn’t candy — whichever is in season.',
+    variants: {
+      budget: { name: 'Frozen berries', why: 'Frozen at peak, no waste, and always in season.' },
+    },
+  },
+  seasonal_veg: {
+    name: 'Carrots and bell peppers', category: 'Produce', perimeterId: 'produce_seasonality',
+    why: 'Both keep for weeks and get eaten raw when you’re hungry.',
+  },
+  avocado: { name: 'Avocado', category: 'Produce', why: 'A whole-food fat that needs no cooking.' },
+  sweet_potatoes: { name: 'Sweet potatoes', category: 'Produce', why: 'Bake a tray, eat off it all week.' },
+  potatoes: { name: 'Potatoes', category: 'Produce', why: 'One of the cheapest real foods in the store, and filling.' },
+  bananas_apples: { name: 'Bananas and apples', category: 'Produce', why: 'The two the kids will actually eat, and no packaging.' },
+  garlic_onions: { name: 'Garlic and onions', category: 'Produce', why: 'The base of nearly everything you’ll cook this week.' },
+  whole_fruit: { name: 'Whole fruit — apples or oranges', category: 'Produce', why: 'Whole fruit over juice: the fiber comes with it.' },
+
+  // ── Pantry ──
+  steel_cut_oats: {
+    name: 'Steel-cut oats', category: 'Staples', perimeterId: 'oats_steelcut_rolled_instant',
+    why: 'The least-processed oat — chewy, slow, and no sugar snuck in.',
+    alt: 'Or plain rolled oats if you want it faster.',
+    variants: {
+      short_on_time: { name: 'Plain rolled oats', why: 'Cooks in minutes. Plain — the flavored packets are candy with an oat garnish.' },
+      picky_kids: { name: 'Plain rolled oats', why: 'Sweeten it yourself with fruit and you control what goes in.' },
+    },
+  },
+  rice: {
+    name: 'Basmati rice', category: 'Staples', perimeterId: 'rice_arsenic',
+    why: 'Basmati tends to test lower in arsenic — rinse it, cook it in extra water, drain.',
+    variants: {
+      short_on_time: { name: 'Microwave basmati rice pouch', why: 'Ninety seconds, and basmati is the lower-arsenic grain anyway.' },
+      no_kitchen: { name: 'Microwave basmati rice pouch', why: 'A pouch and a microwave — that’s the whole recipe.' },
+    },
+  },
+  beans: {
+    name: 'Canned black beans', category: 'Staples', perimeterId: 'beans_dried_vs_canned',
+    why: 'The cheapest real protein in the building — rinse them to cut the sodium.',
+    alt: 'Or dried, if you’re planning ahead.',
+    variants: {
+      budget: { name: 'Dried beans', why: 'Cheapest protein there is; a slow cooker makes them effortless.' },
+    },
+  },
+  lentils: {
+    name: 'Dried lentils', category: 'Fiber', perimeterId: 'beans_dried_vs_canned',
+    why: 'No soaking, done in twenty minutes, and they stretch a meal.',
+  },
+  evoo: {
+    name: 'Extra-virgin olive oil — dark bottle', category: 'Staples', perimeterId: 'olive_oil_buying',
+    why: 'Look for a HARVEST date, not just “best by” — dark glass keeps it from going rancid.',
+  },
+  almonds: {
+    name: 'Raw or dry-roasted almonds', category: 'Snacks', perimeterId: 'nuts_raw_vs_roasted',
+    why: 'Dry-roasted means no seed oil in your nuts — read the ingredient line.',
+  },
+  nut_butter: {
+    name: 'Peanut butter — just peanuts and salt', category: 'Snacks',
+    why: 'Two ingredients on the label. Anything more is candy in a jar.',
+  },
+  popcorn: { name: 'Popcorn kernels', category: 'Snacks', why: 'A whole grain you pop yourself — no bag coating, no seed oil.' },
+  sauerkraut: { name: 'Refrigerated sauerkraut', category: 'Fermented', why: 'Buy it from the cold section — shelf-stable jars are pasteurized, so the cultures are gone.' },
+  kimchi: { name: 'Kimchi', category: 'Fermented', why: 'Live and fermented, and it makes plain rice or eggs interesting.' },
+  chia_flax: { name: 'Ground flax or chia', category: 'Fiber', why: 'A spoon into yogurt or oats — buy flax ground or it passes straight through.' },
+  bananas: { name: 'Bananas', category: 'Produce', why: 'Portable fuel with its own wrapper.' },
+};
+
+// Per-goal templates. Each references PICKS by key — so a pick's specific name and
+// reason are authored ONCE and stay consistent everywhere it appears.
+const TEMPLATE_PICKS = {
   eating_cleaner: {
-    intro: "Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.",
-    items: [
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Seasonal vegetables', category: 'Produce' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Oats or rice', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-      { name: 'Unsalted nuts', category: 'Snacks' },
-    ],
+    intro: 'Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.',
+    picks: ['chicken', 'eggs', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo', 'almonds'],
   },
   high_protein: {
     intro: 'Set up high-protein — the anchors up front so every meal has something real behind it.',
-    items: [
-      { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Lean ground beef or turkey', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Cottage cheese', category: 'Protein', tags: ['dairy'] },
-      { name: 'Canned tuna or salmon', category: 'Protein' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Rice or potatoes', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken_breast', 'ground_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'beans', 'spinach', 'rice', 'evoo'],
   },
   low_sugar: {
     intro: 'Built to keep added sugar down — whole foods that satisfy without the spike.',
-    items: [
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Non-starchy vegetables', category: 'Produce' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Unsalted nuts', category: 'Snacks' },
-      { name: 'Avocado', category: 'Produce' },
-      { name: 'Steel-cut oats', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['eggs', 'chicken', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'almonds', 'avocado', 'steel_cut_oats', 'evoo'],
   },
   family: {
     intro: 'Built for the whole house — staples everyone eats, and cleaner versions of the usual snacks.',
-    items: [
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Milk', category: 'Protein', tags: ['dairy'] },
-      { name: 'Plain yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Fruit the kids will eat', category: 'Produce' },
-      { name: 'Easy vegetables', category: 'Produce' },
-      { name: 'Rice, pasta, or potatoes', category: 'Staples' },
-      { name: 'Oats', category: 'Staples' },
-      { name: 'Nut butter (just nuts)', category: 'Snacks' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken', 'eggs', 'milk', 'greek_yogurt', 'bananas_apples', 'seasonal_veg', 'rice', 'steel_cut_oats', 'nut_butter', 'evoo'],
   },
   gut_health: {
     intro: 'Built to feed your gut — fermented foods, fiber, and fewer additives.',
-    items: [
-      { name: 'Plain kefir', category: 'Fermented', tags: ['dairy'] },
-      { name: 'Sauerkraut', category: 'Fermented' },
-      { name: 'Kimchi', category: 'Fermented' },
-      { name: 'Lentils or beans', category: 'Fiber' },
-      { name: 'Oats', category: 'Fiber' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Garlic and onions', category: 'Produce' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['kefir', 'sauerkraut', 'kimchi', 'lentils', 'steel_cut_oats', 'berries', 'spinach', 'garlic_onions', 'eggs', 'evoo'],
   },
   avoiding_junk: {
     intro: 'Built to sidestep the junk — whole-food swaps for the stuff that usually sneaks into the cart.',
-    items: [
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Whole fruit', category: 'Produce' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Vegetables for snacking', category: 'Produce' },
-      { name: 'Unsalted nuts', category: 'Snacks' },
-      { name: 'Popcorn kernels', category: 'Snacks' },
-      { name: 'Oats or rice', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken', 'eggs', 'greek_yogurt', 'whole_fruit', 'spinach', 'seasonal_veg', 'almonds', 'popcorn', 'steel_cut_oats', 'evoo'],
   },
   weight_loss: {
     intro: 'Built for weight loss — protein and fiber up front so you stay full on less, and the sugary stuff left off.',
-    items: [
-      { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Canned tuna or salmon', category: 'Protein' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Non-starchy vegetables', category: 'Produce' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Oats', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo'],
   },
   muscle_strength: {
     intro: 'Set up for muscle and strength — protein at every meal and real carbs to train on.',
-    items: [
-      { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Lean ground beef or turkey', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Cottage cheese', category: 'Protein', tags: ['dairy'] },
-      { name: 'Canned tuna or salmon', category: 'Protein' },
-      { name: 'Rice or potatoes', category: 'Staples' },
-      { name: 'Oats', category: 'Staples' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken_breast', 'ground_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'rice', 'steel_cut_oats', 'beans', 'evoo'],
   },
   pregnancy_postpartum: {
     intro: 'Built for this season — nutrient-dense whole foods that are easy to keep on hand.',
-    items: [
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Fatty fish (salmon or sardines)', category: 'Protein' },
-      { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Sweet potatoes', category: 'Produce' },
-      { name: 'Oats', category: 'Staples' },
-      { name: 'Nuts and seeds', category: 'Snacks' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['eggs', 'chicken', 'sardines', 'greek_yogurt', 'spinach', 'beans', 'berries', 'sweet_potatoes', 'steel_cut_oats', 'almonds', 'evoo'],
   },
   athlete_performance: {
     intro: 'Built for performance — enough real carbs to fuel the work, protein to recover.',
-    items: [
-      { name: 'Chicken breast', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Greek yogurt', category: 'Protein', tags: ['dairy'] },
-      { name: 'Canned tuna or salmon', category: 'Protein' },
-      { name: 'Rice or potatoes', category: 'Staples' },
-      { name: 'Oats', category: 'Staples' },
-      { name: 'Bananas', category: 'Produce' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Beans or lentils', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'rice', 'steel_cut_oats', 'bananas', 'spinach', 'beans', 'evoo'],
   },
   _default: {
     intro: "Here's a clean starting list. Tell me what you're shopping for and I'll tailor it to you.",
-    items: [
-      { name: 'Chicken or fish', category: 'Protein' },
-      { name: 'Eggs', category: 'Protein' },
-      { name: 'Leafy greens', category: 'Produce' },
-      { name: 'Berries', category: 'Produce' },
-      { name: 'Oats or rice', category: 'Staples' },
-      { name: 'Olive oil', category: 'Staples' },
-    ],
+    picks: ['chicken', 'eggs', 'spinach', 'berries', 'steel_cut_oats', 'evoo'],
   },
 };
+
+/** Resolve a pick key → the full item object. Throws on an unknown key so a typo
+ *  fails the test suite rather than silently dropping a row from someone's cart. */
+function pick(key) {
+  const p = PICKS[key];
+  if (!p) throw new Error(`list.js: unknown pick "${key}"`);
+  return { key, ...p };
+}
+
+// Templates, resolved to concrete items at module load. Shape is unchanged from the
+// pre-Block-V structure ({ intro, items:[{name, category, tags}] }) plus the new
+// why / perimeterId / alt / variants fields, so blendTemplates and every existing
+// consumer keep working untouched.
+const GOAL_TEMPLATES = Object.fromEntries(
+  Object.entries(TEMPLATE_PICKS).map(([goal, t]) => [goal, { intro: t.intro, items: t.picks.map(pick) }])
+);
+
+export { PICKS, GOAL_TEMPLATES };
+
+// Constraints that swap in a DIFFERENT specific pick, in priority order — the first
+// active one wins, so "budget + short on time" resolves deterministically rather than
+// flickering between two variants.
+const VARIANT_PRIORITY = ['no_kitchen', 'short_on_time', 'budget', 'picky_kids', 'cooking_for_one'];
+
+/** PREMIUM: let an active constraint choose the specific pick. Free lists keep the
+ *  base pick — still specific, still reasoned, just not circumstance-tuned. */
+function applyVariants(items, constraints, premium) {
+  if (!premium || !constraints?.length) return items;
+  const active = new Set(constraints.map((c) => String(c).toLowerCase()));
+  const order = VARIANT_PRIORITY.filter((c) => active.has(c));
+  if (!order.length) return items;
+  return items.map((it) => {
+    if (!it.variants) return it;
+    const hit = order.find((c) => it.variants[c]);
+    if (!hit) return it;
+    // Drop the base `alt` unless the variant brings its own — the base alternative was
+    // written against the base pick and contradicts the substitute ("Dried beans …
+    // Or dried, if you're planning ahead"). A stale alt reads as Kristy arguing with
+    // her own decision.
+    const { alt: _baseAlt, ...rest } = it;
+    return { ...rest, ...it.variants[hit], constraintTuned: hit };
+  });
+}
 
 const LEGACY_TEMPLATE_ALIASES = {
   cut: 'eating_cleaner',
@@ -224,19 +331,37 @@ const EXCLUDE_TAGS = {
 // A hard line that CLARIFIES an item in place rather than removing it — expresses
 // the label to look for in the item name. No health claim, just what to buy.
 const CONDITIONAL_RENAMES = [
-  { line: 'no seed oils', match: /^olive oil$/i, to: 'Olive oil — cold-pressed, not a blend' },
-  { line: 'no seed oils', match: /\b(vegetable|canola|cooking) oil\b/i, to: 'Olive oil (not a seed-oil blend)' },
-  { line: 'gluten-free', match: /pasta/i, to: 'Rice or potatoes' },
+  {
+    line: 'no seed oils',
+    match: /olive oil/i,
+    to: 'Extra-virgin olive oil — cold-pressed, single origin',
+    why: 'Single origin and a harvest date — that’s how you avoid a cheap-oil blend.',
+  },
+  {
+    line: 'no seed oils',
+    match: /\b(vegetable|canola|cooking) oil\b/i,
+    to: 'Extra-virgin olive oil (not a seed-oil blend)',
+    why: 'Swapped in for the blend — read the back, blends hide behind “vegetable oil”.',
+  },
+  {
+    line: 'no seed oils',
+    match: /roasted (almonds|nuts|peanuts)/i,
+    to: 'Raw or dry-roasted almonds',
+    why: 'Dry-roasted or raw — many roasted nuts are cooked in cottonseed or soybean oil.',
+  },
+  { line: 'gluten-free', match: /pasta/i, to: 'Basmati rice', why: 'Rice instead of the pasta — same job on the plate.' },
 ];
 
-// Apply every conditional rename whose hard line is active, in place.
+// Apply every conditional rename whose hard line is active, in place. A rename that
+// changes WHAT to buy also replaces the reason — a stale why under a new name would
+// read as Kristy explaining a decision she didn't make.
 function applyConditionalRenames(items, nonNegotiables) {
   const active = new Set((nonNegotiables || []).map((v) => String(v).toLowerCase()));
   const rules = CONDITIONAL_RENAMES.filter((r) => active.has(r.line));
   if (!rules.length) return items;
   return items.map((it) => {
     const hit = rules.find((r) => r.match.test(it.name));
-    return hit ? { ...it, name: hit.to } : it;
+    return hit ? { ...it, name: hit.to, ...(hit.why ? { why: hit.why } : {}) } : it;
   });
 }
 
@@ -248,39 +373,20 @@ function applyConditionalRenames(items, nonNegotiables) {
 // against the base + focus items by name.
 const CONSTRAINT_ITEMS = {
   budget: [
-    { name: 'Eggs', category: 'Protein' },
-    { name: 'Dried or canned beans', category: 'Staples' },
-    { name: 'Oats', category: 'Staples' },
-    { name: 'Brown rice', category: 'Staples' },
-    { name: 'Frozen vegetables', category: 'Produce' },
-    { name: 'Canned sardines or salmon', category: 'Protein' },
-    { name: 'Whole chicken', category: 'Protein' },
-    { name: 'Potatoes', category: 'Produce' },
+    pick('eggs'), pick('beans'), pick('steel_cut_oats'), pick('rice'),
+    pick('frozen_veg'), pick('sardines'), pick('chicken'), pick('potatoes'),
   ],
   short_on_time: [
-    { name: 'Pre-washed salad greens', category: 'Produce' },
-    { name: 'Rotisserie chicken', category: 'Protein' },
-    { name: 'Canned tuna or salmon', category: 'Protein' },
-    { name: 'Frozen vegetables', category: 'Produce' },
-    { name: 'Eggs', category: 'Protein' },
+    pick('spinach'), pick('chicken'), pick('canned_fish'), pick('frozen_veg'), pick('eggs'),
   ],
   picky_kids: [
-    { name: 'Whole-milk yogurt (plain)', category: 'Protein', tags: ['dairy'] },
-    { name: 'Real cheese sticks', category: 'Protein', tags: ['dairy'] },
-    { name: 'Bananas and apples', category: 'Produce' },
-    { name: 'Oats', category: 'Staples' },
+    pick('greek_yogurt'), pick('cheese_sticks'), pick('bananas_apples'), pick('steel_cut_oats'),
   ],
   no_kitchen: [
-    { name: 'Canned fish', category: 'Protein' },
-    { name: 'Nut butter (just nuts)', category: 'Snacks' },
-    { name: 'Microwave brown rice', category: 'Staples' },
-    { name: 'Whole fruit', category: 'Produce' },
+    pick('canned_fish'), pick('nut_butter'), pick('rice'), pick('whole_fruit'),
   ],
   cooking_for_one: [
-    { name: 'Eggs', category: 'Protein' },
-    { name: 'Frozen vegetables', category: 'Produce' },
-    { name: 'Canned fish', category: 'Protein' },
-    { name: 'Oats', category: 'Staples' },
+    pick('eggs'), pick('frozen_veg'), pick('canned_fish'), pick('steel_cut_oats'),
   ],
 };
 
@@ -305,32 +411,21 @@ function constraintClause(constraints) {
 // PREMIUM: a dietary focus pulls its own whole-food anchors onto the list. Every
 // item is a plain grocery item — no health claim (the list is a list, not a note).
 const FOCUS_ITEMS = {
-  higher_fiber: [
-    { name: 'Beans or lentils', category: 'Fiber' },
-    { name: 'Oats', category: 'Fiber' },
-    { name: 'Chia or ground flax', category: 'Fiber' },
-  ],
+  higher_fiber: [pick('lentils'), pick('steel_cut_oats'), pick('chia_flax')],
   lower_sodium: [
-    { name: 'Unsalted nuts', category: 'Snacks' },
-    { name: 'Fresh or frozen vegetables (not canned)', category: 'Produce' },
+    pick('almonds'),
+    { name: 'Frozen vegetables (no sauce)', category: 'Produce', perimeterId: 'frozen_vs_fresh_produce', why: 'Frozen plain — the sauced bags are where the salt hides.' },
   ],
-  lower_sugar: [
-    { name: 'Berries', category: 'Produce' },
-    { name: 'Plain Greek yogurt', category: 'Protein', tags: ['dairy'] },
-  ],
-  blood_sugar: [
-    { name: 'Non-starchy vegetables', category: 'Produce' },
-    { name: 'Eggs', category: 'Protein' },
-  ],
-  heart: [
-    { name: 'Fatty fish (salmon or sardines)', category: 'Protein' },
-    { name: 'Olive oil', category: 'Staples' },
-  ],
+  lower_sugar: [pick('berries'), pick('greek_yogurt')],
+  blood_sugar: [pick('seasonal_veg'), pick('eggs')],
+  heart: [pick('sardines'), pick('evoo')],
   processed_fats: [
-    { name: 'Olive oil', category: 'Staples' },
-    { name: 'Butter or ghee', category: 'Staples', tags: ['dairy'] },
+    pick('evoo'),
+    { name: 'Butter or ghee', category: 'Staples', tags: ['dairy'], perimeterId: 'grassfed_butter', why: 'A real whole-food fat — the thing margarine was built to imitate.' },
   ],
-  additive_sensitive: [{ name: 'Single-ingredient staples', category: 'Staples' }],
+  additive_sensitive: [
+    { name: 'Single-ingredient staples', category: 'Staples', why: 'Anything whose label is one line — that’s the whole trick.' },
+  ],
   caffeine: [],
 };
 
@@ -345,6 +440,7 @@ function swapItems(nextList) {
       category: 'From your haul',
       checked: false,
       source: 'swap',
+      why: 'You scanned this last trip and I’d pick differently — open it for a better option.',
       productName: s.product_name,
     }));
 }
@@ -482,12 +578,23 @@ export function generateList({ goal, goals, nonNegotiables = [], focuses = [], c
     pull(CONSTRAINT_ITEMS, constraints);
   }
 
-  const items = applyConditionalRenames([...base, ...extra], nonNegotiables).map((it) => ({
+  // PREMIUM: a constraint chooses the SPECIFIC pick (budget buys the whole chicken,
+  // short-on-time buys the rotisserie). Runs before the renames so a hard line still
+  // gets the last word on what lands in the cart.
+  const tuned = applyVariants([...base, ...extra], constraints, premium);
+
+  const items = applyConditionalRenames(tuned, nonNegotiables).map((it) => ({
     id: rid(),
     name: it.name,
     category: it.category,
     checked: false,
     source: 'template',
+    // The coaching, carried on the row itself — always visible, never behind a tap.
+    ...(it.why ? { why: it.why } : {}),
+    // Where her judgment on this pick comes from. The client reads the entry from the
+    // FREE perimeter endpoint on expand — KB text, no model call, works untiered.
+    ...(it.perimeterId ? { perimeterId: it.perimeterId } : {}),
+    ...(it.alt ? { alt: it.alt } : {}),
   }));
 
   // PREMIUM — the Haul's flagged items ride in front as swap reminders.

@@ -23,6 +23,15 @@ export const colors = {
   surface2: '#1A3320', //                       (--surface-2)
   border: '#1E3D26', //                         (--border)
   borderGold: '#8B6F2E', //                     (--border-gold)
+  // A card is defined by its LIFT off the ground, not by an outline. These are the two
+  // pieces that replaces a border with: a hairline top highlight for the lifted edge,
+  // and the drop shadow that separates a surface from the ground beneath it.
+  // (Block W — the all-green field read flat because every layer shared one value and
+  // every element was outlined.)
+  edgeHighlight: 'rgba(240,230,200,0.05)', // 1px inner top edge on a raised surface
+  shadowCard: '0 1px 2px rgba(0,0,0,0.28)', // a row resting on the ground
+  shadowRaised: '0 4px 14px rgba(0,0,0,0.34)', // the composer / an expanded drawer
+  checkboxRest: 'rgba(240,230,200,0.22)', // unchecked box — visible, not gold
   userBubble: '#1A3320',
   aiBubble: '#122718',
 

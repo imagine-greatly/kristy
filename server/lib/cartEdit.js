@@ -46,6 +46,13 @@ export function sanitizeList(list) {
       ...(CART_TIERS.includes(it.tier) ? { tier: it.tier } : {}),
       // Set by the Perimeter refinement ("Olive oil" → "Fresh, dark-bottle EVOO").
       ...(it.refined ? { refined: true } : {}),
+      // Kristy's one-line reasoning for this pick — rendered inline on the row, so it
+      // has to survive the round-trip when the shopper checks something off.
+      ...(it.why ? { why: String(it.why).slice(0, 200) } : {}),
+      // The perimeter KB entry this pick's judgment came from. Enum-free but id-shaped,
+      // and only ever used to READ a KB entry — never to write one.
+      ...(it.perimeterId ? { perimeterId: String(it.perimeterId).slice(0, 64) } : {}),
+      ...(it.alt ? { alt: String(it.alt).slice(0, 160) } : {}),
     }))
     .filter((it) => it.name);
   return {
