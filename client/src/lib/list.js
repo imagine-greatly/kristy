@@ -135,7 +135,8 @@ export async function composeList({ instruction, mode = 'edit', prefs = {} } = {
     let list;
     if (mode === 'build') {
       const items = add.map((a) => ({ id: rid(), name: a.name, category: a.section, checked: false, source: 'template' }));
-      list = { goal: cur.goal || null, intro: summary, items };
+      // Keep the generation signature so a rebuilt cart isn't seen as stale next load.
+      list = { goal: cur.goal || null, sig: cur.sig, intro: summary, items };
     } else {
       const rm = remove.map((r) => r.toLowerCase());
       const kept = cur.items.filter((i) => i.source === 'swap' || !rm.some((r) => i.name.toLowerCase().includes(r)));
@@ -619,10 +620,40 @@ function takeDemoNext() {
   return n;
 }
 
+// The demo mirror of the server's listSignature staleness check. Without it the
+// sandbox hands back whatever it generated first — so a shopper who finishes
+// onboarding keeps the goal-less `_default` cart, which is precisely the generic-cart
+// bug the real path already guards against. Mirrors server/lib/list.js.
+const demoSignature = ({ goals = [], nonNegotiables = [], focuses = [], constraints = [] }) =>
+  JSON.stringify([[...goals].sort(), [...nonNegotiables].sort(), [...focuses].sort(), [...constraints].sort()]);
+
+// Carry the shopper's own rows across a regeneration — what they added by hand, what
+// they scanned into the trip, and Kristy's haul callouts. Mirrors preserveUserItems.
+function preserveOwnLocal(fresh, stored) {
+  const keepers = (stored?.items || []).filter(
+    (i) => i.source === 'user' || i.source === 'swap' || i.source === 'scan'
+  );
+  const names = new Set((fresh.items || []).map((i) => i.name.toLowerCase()));
+  return { ...fresh, items: [...fresh.items, ...keepers.filter((i) => !names.has(i.name.toLowerCase()))] };
+}
+
 function loadOrGenerateDemo({ goal, goals, nonNegotiables, focuses, constraints }) {
   const stored = loadCachedList();
   const pending = read(NEXT_KEY, []);
+  const sig = demoSignature({ goals: goals?.length ? goals : goal ? [goal] : [], nonNegotiables, focuses, constraints });
+
   if (stored && Array.isArray(stored.items)) {
+    if (stored.sig !== sig) {
+      // Preferences changed since this cart was built → rebuild around them, keeping
+      // everything the shopper put in it themselves. An absent sig counts as stale so
+      // a cart cached before signatures existed heals itself once instead of pinning
+      // the shopper to the goal-less `_default` template forever.
+      const fresh = generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true });
+      const merged = { ...preserveOwnLocal(fresh, stored), sig };
+      write(NEXT_KEY, []);
+      saveCache(merged);
+      return merged;
+    }
     if (pending.length) {
       const merged = mergeSwapsLocal(stored, pending);
       write(NEXT_KEY, []);
@@ -631,7 +662,8 @@ function loadOrGenerateDemo({ goal, goals, nonNegotiables, focuses, constraints 
     }
     return stored;
   }
-  const list = generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true });
+
+  const list = { ...generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true }), sig };
   write(NEXT_KEY, []);
   saveCache(list);
   return list;

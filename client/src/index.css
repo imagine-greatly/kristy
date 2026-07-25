@@ -48,10 +48,15 @@
      .kristy-voice below, or kristyVoice in lib/tokens.js. */
   --font-voice: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
+  /* The menu drawer's width — a drawer at every width now, never a permanent rail. */
   --sidebar-w: 260px;
-  --bubble-max: 600px;
+  /* ONE content column at every width. The cart is the home surface and sits in a
+     520px column; the docked composer and the chat thread share it so the app reads
+     as one cart-centered layout on a 390px phone and on a desktop alike — not a
+     stretched phone, and not a second desktop-only structure. */
+  --bubble-max: 520px;
   --content-max: 760px;
-  --input-max: 680px;
+  --input-max: 520px;
 
   /* common gold/border tints */
   --gold-30: color-mix(in srgb, var(--border-gold) 30%, transparent);
@@ -176,6 +181,12 @@ textarea {
   padding: 16px;
   background: transparent;
   border: none;
+  /* Share the one content column, so the chrome sits over the cart rather than
+     spreading to the window edges on a wide screen. At 390px this is a no-op. */
+  width: 100%;
+  max-width: var(--input-max);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .icon-btn {
@@ -877,26 +888,18 @@ textarea {
 }
 
 /* ───────────────────────── Desktop (> 768px) ─────────────────────────
-   Permanent sidebar on the left, chat takes the remaining width.
+   The permanent 260px sidebar rail is GONE. It was chrome that existed only at this
+   width, and once macro tracking was removed it held two links (Settings, Premium) —
+   a whole desktop-only navigation structure for what is a drawer everywhere else. The
+   menu button now shows at every width and opens that same drawer, so there is ONE
+   layout with the cart centered in it, not two code paths.
+
+   What remains width-specific is genuinely so: the thread gets more gutter, and the
+   overlays that dock as sheets on a phone float as cards with room to breathe.
 */
 @media (min-width: 769px) {
-  .sidebar {
-    transform: none;
-    width: var(--sidebar-w);
-    max-width: var(--sidebar-w);
-  }
-  .backdrop {
-    display: none;
-  }
-  .app {
-    margin-left: var(--sidebar-w);
-  }
   .topbar {
     padding: 20px;
-    justify-content: flex-end;
-  }
-  .topbar__menu {
-    display: none;
   }
   .chat {
     padding: 28px 32px;
@@ -1632,10 +1635,6 @@ textarea {
 }
 
 @media (min-width: 769px) {
-  /* No sidebar in guest mode → reclaim the left margin the authed shell adds. */
-  .app--guest {
-    margin-left: 0;
-  }
   /* Center the gate as a floating card rather than a docked sheet. */
   .gate {
     justify-content: center;

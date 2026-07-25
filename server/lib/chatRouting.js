@@ -44,6 +44,37 @@ const PREF_SIGNALS = [
 ];
 
 /**
+ * Is this an instruction to CHANGE THE CART? The docked composer is the same editor
+ * the cart's own input was, reached by talking — so "add taco night", "swap the rice
+ * for something faster" and "build me three dinners for four" have to reach the
+ * compose engine rather than get a conversational reply about groceries.
+ *
+ * Purpose-built rather than reusing LIST_COMMAND: that one exists to EXCLUDE commands
+ * from the question/preference routes and is deliberately broad (it matches a leading
+ * "take", which belongs to "take that into account"). This one has to be right about
+ * what it claims, so it takes only verbs that act on a cart.
+ *
+ * The compose engine is claim-safe by construction (grocery names only, applied
+ * deterministically), so a false positive costs a list edit, never a health claim.
+ */
+const CART_COMMAND = /^\s*(add|put|remove|delete|drop|swap|replace|build|make|cross)\b/i;
+const CART_NOUN = /\b(cart|list|basket|trip|shop|groceries|grocery|dinners?|meals?|lunch|breakfast|week)\b/i;
+
+export function looksLikeCartCommand(msg) {
+  const m = String(msg || '').trim();
+  if (!m || !CART_COMMAND.test(m)) return false;
+  // "make"/"build" alone are too loose ("make sense of this label") — they need a
+  // cart-shaped object. The unambiguous verbs (add/remove/swap/…) stand on their own.
+  if (/^\s*(build|make)\b/i.test(m)) return CART_NOUN.test(m);
+  return true;
+}
+
+/** Which compose mode a cart command implies: a whole new cart, or an edit to this one. */
+export function cartCommandMode(msg) {
+  return /^\s*(build|make)\b/i.test(String(msg || '').trim()) ? 'build' : 'edit';
+}
+
+/**
  * Is this a standing PREFERENCE declaration? Conservative on exclusions (a list
  * command is never a preference), liberal on signals — the caller still runs the
  * taxonomy mapper and only acts when something actually maps, so a false positive

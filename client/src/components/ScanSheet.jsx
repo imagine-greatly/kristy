@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import ScanVerdictCard from './ScanVerdictCard.jsx';
@@ -30,6 +30,45 @@ function Frame({ children, onClose }) {
   );
 }
 
+/* The scan and the cart are ONE object, acted on two ways. A verdict is one tap from
+   the trip, so scanning visibly builds the same cart you planned — the "keep it" of a
+   real aisle. Her read rides along with the item (the cart shows the tier), so nothing
+   about the coaching is lost when the sheet closes. */
+function CartAction({ tier, onAddToCart, onOpenCart }) {
+  const [added, setAdded] = useState(false);
+  if (!onAddToCart) return null;
+
+  const wouldSwap = tier === 'swap_recommended' || tier === 'skip';
+
+  if (added) {
+    return (
+      <div style={styles.cartRow}>
+        <span style={styles.cartDone}>In your cart ✓</span>
+        {onOpenCart && (
+          <button type="button" style={styles.cartGhost} onClick={onOpenCart}>
+            View cart
+          </button>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div style={styles.cartRow}>
+      <button
+        type="button"
+        style={wouldSwap ? styles.cartGhostWide : styles.cartPrimary}
+        onClick={() => {
+          onAddToCart();
+          setAdded(true);
+        }}
+      >
+        {wouldSwap ? 'Add it anyway' : 'Keep it — add to cart'}
+      </button>
+    </div>
+  );
+}
+
 function Centered({ title, sub, children }) {
   return (
     <div style={styles.centered}>
@@ -53,6 +92,8 @@ export default function ScanSheet({
   onStartTrial,
   trialEligible = false,
   onPickGoal,
+  onAddToCart,
+  onOpenCart,
   focusOffer,
   onAcceptFocus,
   onDismissFocus,
@@ -157,6 +198,7 @@ export default function ScanSheet({
           unlockLabel={unlockLabel}
           onOpenIngredient={onOpenIngredient}
         />
+        <CartAction tier={scan.verdict.tier} onAddToCart={onAddToCart} onOpenCart={onOpenCart} />
         {/* Contextual focus offer — a quiet, in-voice nudge after a pattern of the
             same flag. Never a modal; part of the sheet, dismissible, one per session. */}
         {focusOffer && (
@@ -285,6 +327,61 @@ const styles = {
     fontWeight: 600,
     fontSize: 15,
     cursor: 'pointer',
+  },
+  // ── The scan → cart action (one tap, "keep it") ──
+  cartRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    width: '100%',
+    maxWidth: 420,
+    margin: '14px auto 0',
+  },
+  cartPrimary: {
+    flex: 1,
+    minHeight: 48,
+    padding: '13px 16px',
+    borderRadius: 12,
+    border: 'none',
+    background: colors.accentGold,
+    color: colors.bgDeep,
+    fontFamily: fonts.ui,
+    fontWeight: 700,
+    fontSize: 15,
+    cursor: 'pointer',
+  },
+  cartGhostWide: {
+    flex: 1,
+    minHeight: 48,
+    padding: '13px 16px',
+    borderRadius: 12,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface,
+    color: colors.textSecondary,
+    fontFamily: fonts.ui,
+    fontWeight: 600,
+    fontSize: 15,
+    cursor: 'pointer',
+  },
+  cartGhost: {
+    flex: '0 0 auto',
+    minHeight: 44,
+    padding: '11px 16px',
+    borderRadius: 12,
+    border: `1px solid ${colors.borderGold}`,
+    background: 'transparent',
+    color: colors.accentGold,
+    fontFamily: fonts.ui,
+    fontWeight: 700,
+    fontSize: 14,
+    cursor: 'pointer',
+  },
+  cartDone: {
+    flex: 1,
+    fontFamily: fonts.ui,
+    fontSize: 14.5,
+    fontWeight: 700,
+    color: colors.accentSeafoam,
   },
   askBtn: {
     display: 'block',

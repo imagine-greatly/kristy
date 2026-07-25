@@ -83,6 +83,18 @@ export function HaulIcon({ size = 20 }) {
   );
 }
 
+// The aisle / perimeter — a store plan: the outer ring (produce, the counter, dairy,
+// bulk) drawn around the two center aisles. The unlabeled half of the store.
+export function AisleIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="16" rx="2.5" />
+      <line x1="9.5" y1="9" x2="9.5" y2="15" />
+      <line x1="14.5" y1="9" x2="14.5" y2="15" />
+    </svg>
+  );
+}
+
 export function ArrowUpIcon({ size = 18 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">

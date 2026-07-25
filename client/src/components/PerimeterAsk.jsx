@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
-import { GoldThread } from './GoldThread.jsx';
 import { CloseIcon } from './Icons.jsx';
 import { askPerimeter } from '../lib/perimeter.js';
+import PerimeterAnswer from './PerimeterAnswer.jsx';
 
 /* ═══════════════════════ Ask the aisle — the Perimeter surface ═══════════════════════
    Kristy's answers for the parts of the store with no barcode. The matched KB entry is
@@ -86,88 +86,17 @@ export default function PerimeterAsk({
 
           {state === 'done' && resp && (
             <div style={styles.result}>
-              {/* The honest no-answer — never an improvisation. */}
-              {!resp.matched && (
-                <p style={{ ...kristyVoice, ...styles.answer }}>{resp.answer}</p>
-              )}
-
-              {/* Free universal layer — the matched entry, verbatim from the KB. */}
-              {(resp.entries || []).map((e) => (
-                <div key={e.id} style={styles.entry}>
-                  <div style={styles.entryTop}>
-                    <span style={styles.entryTitle}>{e.title}</span>
-                    {e.evidence_tier && <span style={styles.tier}>{tierLabel(e.evidence_tier)}</span>}
-                  </div>
-                  <p style={styles.short}>{e.short_answer}</p>
-                  {(e.buying_tips || []).length > 0 && (
-                    <>
-                      <span style={{ fontFamily: fonts.ui, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: colors.textMuted }}>
-                        What to look for
-                      </span>
-                      <ul style={styles.tips}>
-                        {e.buying_tips.map((t, i) => (
-                          <li key={i} style={styles.tip}>{t}</li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                  {(e.labels_decoded || []).length > 0 && (
-                    <div style={styles.labels}>
-                      {e.labels_decoded.map((l, i) => (
-                        <div key={i} style={styles.labelRow}>
-                          <span style={styles.labelTerm}>{l.term}</span>
-                          <span style={styles.labelMeaning}>{l.meaning}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {(e.sources || []).length > 0 && (
-                    <p style={styles.sources}>Sources: {e.sources.join(' · ')}</p>
-                  )}
-                </div>
-              ))}
-
-              {/* Kristy's personalized read (premium). */}
-              {resp.answer && resp.matched && (
-                <>
-                  <GoldThread />
-                  <p style={{ ...kristyVoice, ...styles.answer }}>{resp.answer}</p>
-                  {allowRefine && resp.refinement && onRefine && (
-                    <button type="button" style={styles.refine} onClick={() => onRefine(resp.refinement)}>
-                      Use this on my list — {resp.refinement}
-                    </button>
-                  )}
-                </>
-              )}
-
-              {/* The withheld personalized read (free user). */}
-              {resp.gated && (
-                <div style={styles.gate}>
-                  <GoldThread />
-                  <p style={{ ...kristyVoice, ...styles.gateLine }}>{resp.upsell}</p>
-                  {onUpgrade && (
-                    <button type="button" style={styles.gateCta} onClick={onUpgrade}>
-                      Unlock my read
-                    </button>
-                  )}
-                </div>
-              )}
+              <PerimeterAnswer
+                resp={resp}
+                allowRefine={allowRefine}
+                onRefine={onRefine}
+                onUpgrade={onUpgrade}
+              />
             </div>
           )}
         </div>
       </div>
     </div>
-  );
-}
-
-function tierLabel(t) {
-  return (
-    {
-      established: 'Settled',
-      credible_concern: 'Credible concern',
-      kristys_standard: "Kristy's standard",
-      time_tested: 'Time-tested',
-    }[t] || t
   );
 }
 
@@ -209,34 +138,4 @@ const styles = {
   },
   err: { ...kristyVoice, margin: 0, fontSize: 15, color: colors.textPrimary },
   result: { display: 'flex', flexDirection: 'column', gap: 12, marginTop: 4 },
-  entry: {
-    display: 'flex', flexDirection: 'column', gap: 8, padding: '14px 15px',
-    borderRadius: 14, border: `1px solid ${colors.border}`, background: colors.surface,
-  },
-  entryTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  entryTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
-  tier: {
-    flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.03em',
-    color: colors.textSecondary, padding: '2px 8px', borderRadius: 999,
-    border: `1px solid ${colors.gold30}`, background: colors.goldTint9, whiteSpace: 'nowrap',
-  },
-  short: { margin: 0, fontFamily: fonts.ui, fontSize: 14.5, lineHeight: 1.5, color: colors.textPrimary },
-  tips: { margin: '2px 0 0', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 },
-  tip: { fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textMuted },
-  labels: { display: 'flex', flexDirection: 'column', gap: 6, marginTop: 2 },
-  labelRow: { display: 'flex', flexDirection: 'column', gap: 1 },
-  labelTerm: { fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700, color: colors.textSecondary },
-  labelMeaning: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.4, color: colors.textMuted },
-  sources: { margin: '2px 0 0', fontFamily: fonts.ui, fontSize: 11, color: colors.textMuted },
-  answer: { margin: 0, fontSize: 17, lineHeight: 1.55, color: colors.textPrimary },
-  refine: {
-    alignSelf: 'stretch', marginTop: 4, padding: '12px 16px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14.5, cursor: 'pointer',
-  },
-  gate: { display: 'flex', flexDirection: 'column', gap: 10 },
-  gateLine: { margin: 0, fontSize: 16, lineHeight: 1.55, color: colors.textPrimary },
-  gateCta: {
-    alignSelf: 'stretch', padding: '12px 16px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
-  },
 };

@@ -1,13 +1,15 @@
 import { useRef } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
-import { BarcodeIcon, CameraIcon } from './Icons.jsx';
+import { BarcodeIcon, CameraIcon, AisleIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 
-/* ═══════════════════════ Scan moment — the front door ═══════════════════════
-   The default surface. Kristy invites the in-aisle action: scan a barcode or
-   photograph a label, and she reads it against your goal. Chat is reachable from
-   here (demoted from a primary tab), not the other way around.
+/* ═══════════════════════ Scan moment — in the aisle ═══════════════════════
+   One of three peer moments, not the app's identity and no longer where it boots.
+   Three equal physical actions live here, because the store has two halves: scan a
+   barcode, photograph a label, or — for produce, the counter, the bulk bins, where
+   there's nothing to scan — ask about the aisle. The unlabeled half is a PEER of the
+   scanned half, so its entry point is a button beside the others, not a link below them.
 
    Tokens only. `guest` softens the copy since a guest gets the universal read. */
 
@@ -49,18 +51,25 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
             if (file) onLabelFile(file);
           }}
         />
+
+        {/* The other half of the store. No barcode at the fish counter, the butcher
+            or the produce wall — so this is a peer action, sized like the others. */}
+        {onAskAisle && (
+          <button type="button" style={styles.secondary} onClick={onAskAisle}>
+            <AisleIcon size={20} />
+            <span>Ask about the aisle</span>
+          </button>
+        )}
       </div>
 
-      {/* No barcode at the fish counter or the produce wall — ask the aisle instead. */}
-      {onAskAisle && (
-        <button type="button" style={styles.aisle} onClick={onAskAisle}>
-          At the counter with nothing to scan? Ask about the aisle →
-        </button>
-      )}
+      <p style={styles.aisleNote}>
+        Produce, the counter, the bulk bins — she has sourced answers for the parts with
+        no label, too.
+      </p>
 
       {onOpenChat && (
         <button type="button" style={styles.chatLink} onClick={onOpenChat}>
-          Prefer to talk it through? Ask Kristy →
+          Something messier to work through? Ask Kristy →
         </button>
       )}
 
@@ -114,17 +123,13 @@ const styles = {
     fontSize: 15,
     cursor: 'pointer',
   },
-  aisle: {
-    marginTop: 6,
-    padding: '10px 14px',
-    background: 'transparent',
-    border: `1px solid ${colors.border}`,
-    borderRadius: 999,
-    color: colors.textSecondary,
+  aisleNote: {
+    margin: '2px 0 0',
     fontFamily: fonts.ui,
-    fontSize: 13.5,
-    fontWeight: 600,
-    cursor: 'pointer',
+    fontSize: 13,
+    lineHeight: 1.5,
+    color: colors.textMuted,
+    maxWidth: 320,
   },
   chatLink: {
     marginTop: 8,

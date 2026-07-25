@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 import { ArrowUpIcon, BarcodeIcon, VerdictIcon } from './Icons.jsx';
 
-// The chat composer. Three affordances only: type a message, scan a barcode, or
-// photograph a label for a verdict. No meal-photo / macro-logging control —
-// Kristy is a grocery coach, not a food log.
+// The composer — DOCKED on every surface, and deliberately a tool rather than the
+// centerpiece: one slim bar beneath the cart for the deep, messy input taps can't
+// express (a week of dinners, a standing preference, a question about one product).
+// Three affordances only: type, scan a barcode, or photograph a label for a verdict.
+// No meal-photo / macro-logging control — Kristy is a grocery coach, not a food log.
 export default function InputBar({
   value,
   onChange,
@@ -11,6 +13,9 @@ export default function InputBar({
   disabled,
   onBarcode,
   onVerdictFile,
+  placeholder = 'Ask me anything, or scan it.',
+  // Bumped by a tap affordance that hands off to the composer ("Build me a cart for…").
+  focusSignal = 0,
 }) {
   const ref = useRef(null);
   const verdictRef = useRef(null);
@@ -23,6 +28,15 @@ export default function InputBar({
     el.style.height = 'auto';
     el.style.height = Math.min(el.scrollHeight, 120) + 'px';
   }, [value]);
+
+  // Pull focus (and put the caret at the end) when a tap hands off to the composer.
+  useEffect(() => {
+    if (!focusSignal) return;
+    const el = ref.current;
+    if (!el) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+  }, [focusSignal]);
 
   const canSend = value.trim().length > 0 && !disabled;
 
@@ -74,7 +88,7 @@ export default function InputBar({
           ref={ref}
           rows={1}
           value={value}
-          placeholder="Ask me anything, or scan it."
+          placeholder={placeholder}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKey}
           onFocus={() => setFocused(true)}

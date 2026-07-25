@@ -4,11 +4,15 @@ import { GoldThread } from './GoldThread.jsx';
 import { HaulIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 
-/* ═══════════════════════ Haul — after the trip ═══════════════════════
-   Aggregates the trip + week of scans into: a distribution bar (approved / with
-   a note / swaps), a scrollable list of scanned items with their tiers, and
-   Kristy's weekly read (kristyVoice, claim-locked server-side). Two actions:
-   Add to next list (→ List builder) and Share haul (→ shareable card).
+/* ═══════════════════════ Haul — the trip, filling in ═══════════════════════
+   Not only a post-mortem: THIS TRIP builds here live. Every scan lands in it as it
+   happens, and the cart's check-offs are counted beside them, so the Haul and the cart
+   are two views of one trip in progress rather than two separate screens.
+
+   Aggregates into: a distribution bar (approved / with a note / swaps), the trip's
+   items then the week's, and Kristy's weekly read (kristyVoice, claim-locked
+   server-side). The loop closes here — any item she'd swap goes to the next cart in
+   ONE tap, per row or all at once, and lands there tagged "From your haul".
    Tokens only. */
 
 const BUCKET = {
@@ -42,12 +46,33 @@ function DistributionBar({ d }) {
   );
 }
 
-function ItemRow({ scan }) {
+// One scanned item. When it's something she'd swap, the row carries its OWN one-tap
+// route into the next cart — the insight and the action in the same place.
+function ItemRow({ scan, onAddOne }) {
   const b = bucketOf(scan.tier);
+  const swappable = scan.tier === 'swap_recommended' || scan.tier === 'skip';
+  const [added, setAdded] = useState(false);
+
   return (
     <div style={styles.row}>
       <span style={styles.rowName}>{scan.product_name || 'Scanned item'}</span>
-      <span style={{ ...styles.rowChip, color: BUCKET[b].chipFg, borderColor: BUCKET[b].color }}>{BUCKET[b].label}</span>
+      <span style={styles.rowRight}>
+        {swappable && onAddOne && (
+          <button
+            type="button"
+            style={{ ...styles.rowAdd, ...(added ? styles.rowAdded : null) }}
+            onClick={() => {
+              if (added) return;
+              onAddOne(scan);
+              setAdded(true);
+            }}
+            aria-label={`Add ${scan.product_name || 'this item'} to the next cart`}
+          >
+            {added ? 'In next cart ✓' : '+ Next cart'}
+          </button>
+        )}
+        <span style={{ ...styles.rowChip, color: BUCKET[b].chipFg, borderColor: BUCKET[b].color }}>{BUCKET[b].label}</span>
+      </span>
     </div>
   );
 }
@@ -71,7 +96,17 @@ function ActionButton({ label, doneLabel, primary, onClick }) {
   );
 }
 
-export default function HaulMoment({ haul, loading, onScan, onAddToList, onShareHaul, onAsk, onUpgrade }) {
+export default function HaulMoment({
+  haul,
+  loading,
+  cartProgress,
+  onScan,
+  onOpenCart,
+  onAddToList,
+  onShareHaul,
+  onAsk,
+  onUpgrade,
+}) {
   if (loading && !haul) {
     return (
       <div style={styles.center}>
@@ -86,29 +121,48 @@ export default function HaulMoment({ haul, loading, onScan, onAddToList, onShare
   const week = haul?.week || [];
   const trip = haul?.trip || [];
   const d = haul?.distribution || { approved: 0, note: 0, swap: 0, total: 0 };
+  const checkedOff = cartProgress?.checked || 0;
 
-  // Empty — before the first trip. An invitation, not a dead end.
+  // Empty — before the first trip. An invitation, not a dead end, and it names both
+  // halves of the trip: what you scan AND what you check off in the cart.
   if (week.length === 0) {
     return (
       <div style={styles.center}>
         <div style={styles.icon}><HaulIcon size={26} /></div>
         <GoldThread />
         <h1 style={styles.title}>Your haul</h1>
-        <p style={styles.emptyLine}>Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it.</p>
+        <p style={styles.emptyLine}>
+          {checkedOff > 0
+            ? `You've checked ${checkedOff} off your cart — scan something and I'll start reading the trip back to you.`
+            : 'Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it.'}
+        </p>
         <button type="button" style={{ ...styles.action, ...styles.actionPrimary, maxWidth: 260 }} onClick={onScan}>
           Scan a product
         </button>
+        {onOpenCart && (
+          <button type="button" style={styles.ask} onClick={onOpenCart}>
+            Back to my cart
+          </button>
+        )}
         <AmbientIsm style={{ marginTop: 12 }} />
       </div>
     );
   }
 
+  // The week minus this trip, so a scan appears once — under "This trip" while it's
+  // live, and only afterwards as part of the week.
+  const tripIds = new Set(trip.map((s) => s.id));
+  const earlier = week.filter((s) => !tripIds.has(s.id));
+
   return (
     <div style={styles.wrap}>
       <div style={styles.head}>
         <h1 style={styles.title}>Your haul</h1>
+        {/* The trip, counted honestly: scans are verdicts, check-offs are cart rows.
+            Neither is dressed up as the other. */}
         <p style={styles.sub}>
-          {trip.length} this trip · {week.length} this week
+          {trip.length} scanned this trip
+          {checkedOff > 0 ? ` · ${checkedOff} checked off` : ''} · {week.length} this week
         </p>
       </div>
 
@@ -132,22 +186,45 @@ export default function HaulMoment({ haul, loading, onScan, onAddToList, onShare
         </div>
       ) : null}
 
-      <div style={styles.list}>
-        {week.map((s) => (
-          <ItemRow key={s.id} scan={s} />
-        ))}
-      </div>
+      {trip.length > 0 && (
+        <div style={styles.section}>
+          <div style={styles.sectionLabel}>This trip</div>
+          <div style={styles.list}>
+            {trip.map((s) => (
+              <ItemRow key={s.id} scan={s} onAddOne={(one) => onAddToList?.([one])} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {earlier.length > 0 && (
+        <div style={styles.section}>
+          <div style={styles.sectionLabel}>{trip.length > 0 ? 'Earlier this week' : 'This week'}</div>
+          <div style={styles.list}>
+            {earlier.map((s) => (
+              <ItemRow key={s.id} scan={s} onAddOne={(one) => onAddToList?.([one])} />
+            ))}
+          </div>
+        </div>
+      )}
 
       <div style={styles.actions}>
-        <ActionButton label="Add to next list" doneLabel="Added ✓" primary onClick={onAddToList} />
+        <ActionButton label="Add all swaps to my cart" doneLabel="Added ✓" primary onClick={() => onAddToList?.()} />
         <ActionButton label="Share haul" onClick={onShareHaul} />
       </div>
 
-      {onAsk && (
-        <button type="button" style={styles.ask} onClick={onAsk}>
-          Ask Kristy about this haul
-        </button>
-      )}
+      <div style={styles.footRow}>
+        {onOpenCart && (
+          <button type="button" style={styles.ask} onClick={onOpenCart}>
+            Back to my cart
+          </button>
+        )}
+        {onAsk && (
+          <button type="button" style={styles.ask} onClick={onAsk}>
+            Ask Kristy about this haul
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -170,10 +247,19 @@ const styles = {
   readText: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
   unlock: { marginTop: 2, padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
 
+  section: { display: 'flex', flexDirection: 'column', gap: 8 },
+  sectionLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
   list: { display: 'flex', flexDirection: 'column', gap: 8 },
   row: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, padding: '11px 13px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface },
-  rowName: { fontFamily: fonts.ui, fontSize: 14.5, color: colors.textPrimary, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
-  rowChip: { flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, padding: '3px 9px', borderRadius: 999, border: '1px solid', whiteSpace: 'nowrap' },
+  rowName: { flex: 1, minWidth: 0, fontFamily: fonts.ui, fontSize: 14.5, color: colors.textPrimary, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  rowRight: { flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 8 },
+  rowAdd: {
+    flex: '0 0 auto', minHeight: 32, padding: '6px 11px', borderRadius: 999,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9, color: colors.accentGold,
+    fontFamily: fonts.ui, fontSize: 11.5, fontWeight: 700, whiteSpace: 'nowrap', cursor: 'pointer',
+  },
+  rowAdded: { borderColor: colors.accentMint, background: colors.mintTint9, color: colors.accentSeafoam, cursor: 'default' },
+  footRow: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, flexWrap: 'wrap' },
 
   actions: { display: 'flex', gap: 10, marginTop: 4 },
   action: { flex: 1, padding: '13px 16px', borderRadius: 12, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },

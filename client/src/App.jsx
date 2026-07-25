@@ -24,6 +24,7 @@ import {
 } from './lib/coachGoals.js';
 import { loadGuestState, clearGuestState } from './lib/guestState.js';
 import { pushSwaps } from './lib/list.js';
+import { useCart, initialMoment } from './lib/cart.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
 import { runProductScan, requestGoalNote } from './lib/logging.js';
@@ -46,7 +47,7 @@ import ScanSheet from './components/ScanSheet.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
-import ListMoment from './components/ListMoment.jsx';
+import CartMoment from './components/CartMoment.jsx';
 import PerimeterAsk from './components/PerimeterAsk.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
@@ -90,9 +91,16 @@ export default function App() {
   const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
   // Scan → verdict card (Step 4). A scan is now a verdict, not a silent meal log.
   const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error, message }
-  // Three-moment nav (Step 5): List (before) · Scan (aisle) · Haul (after). Chat is
-  // demoted from a primary tab, reachable from within the Scan moment.
-  const [moment, setMoment] = useState('scan'); // 'scan' | 'list' | 'haul' | 'chat'
+  // Three-moment nav: List (before) · Scan (aisle) · Haul (after). The app opens on
+  // the CART — the trip taking shape — not the scanner and not a blank chat box.
+  // `initialMoment` reads only the local cache (no network, no boot delay) and falls
+  // back to the cart on any doubt: a just-finished trip is the one case worth landing
+  // somewhere else, because the Haul read is what's useful then. Every surface stays
+  // one tap away regardless.
+  const [moment, setMoment] = useState(initialMoment); // 'scan' | 'list' | 'haul' | 'chat'
+  // The composer is docked on every surface; this bumps to pull focus into it when a
+  // tap affordance ("Build me a cart for…") hands off to the deep-input path.
+  const [composerFocus, setComposerFocus] = useState(0);
   // The Haul (Step 7): aggregate of the trip + week's scans. Lazily loaded; nulled
   // after each new scan so it refreshes on next open.
   const [haul, setHaul] = useState(null);
@@ -113,6 +121,18 @@ export default function App() {
   // Guards the one-time guest→account replay so multiple auth events don't double it.
   const guestReplayRef = useRef(false);
   const today = dayKey();
+
+  /* ───────── The cart — one object, several views ─────────
+     Lifted out of the cart screen so a scan can land in the trip before that screen
+     has ever been opened, the nav can show progress, and the Haul can read back from
+     the same list. The server stays the source of truth; this is the shared client. */
+  const cart = useCart({
+    goal: goalsOf(profile)[0] || null,
+    goals: goalsOf(profile),
+    nonNegotiables: profile?.non_negotiables || [],
+    focuses: profile?.focuses || [],
+    constraints: resolveConstraints(profile),
+  });
 
   /* ───────── Auth + initial load ───────── */
   useEffect(() => {
@@ -515,6 +535,9 @@ export default function App() {
     if (!content || typing) return;
 
     setInput('');
+    // The composer is docked everywhere; sending from the cart or the Haul opens the
+    // thread so her answer is actually visible. The moment row gets them back in one tap.
+    if (moment !== 'chat') setMoment('chat');
     const cur = dayKey(new Date());
     let baseMessages;
 
@@ -560,6 +583,14 @@ export default function App() {
           non_negotiables: pu.merged.hardLines || [],
           constraints: pu.merged.constraints || [],
         }));
+      }
+
+      // She edited the cart from chat ("add taco night", "build me three dinners").
+      // The cart is one object, so the change lands in it immediately — switching back
+      // to the cart just shows it already done.
+      if (result.listUpdate?.list) {
+        cart.applyList(result.listUpdate.list, result.listUpdate.summary);
+        trackEvent('list-compose', { mode: result.listUpdate.mode || 'edit', via: 'chat' });
       }
 
       const aiMsg = {
@@ -672,14 +703,28 @@ export default function App() {
     if (!haul && !haulLoading) loadHaulData();
   }
 
-  // "Add to next list" → queue the swap-tier items for the List builder (Step 8).
-  // Server-side in real mode (cross-device), and they surface on an already-saved
-  // list on its next open — no rebuild needed. Fire-and-forget.
-  function handleAddToList() {
-    const swaps = (haul?.week || [])
+  // "Add to next list" → queue the swap-tier items for the cart. Server-side in real
+  // mode (cross-device) AND folded into the live cart immediately, so the finished
+  // trip visibly shapes the next one instead of waiting for a round-trip.
+  function handleAddToList(subset) {
+    const swaps = (subset || haul?.week || [])
       .filter((s) => s.tier === 'swap_recommended' || s.tier === 'skip')
       .map((s) => ({ product_name: s.product_name, tier: s.tier }));
+    if (!swaps.length) return;
     pushSwaps(swaps);
+    cart.addSwaps(swaps);
+    trackEvent('haul-to-cart', { count: swaps.length });
+  }
+
+  // A scanned product joins the trip in one tap. The verdict tier rides along, so the
+  // cart keeps showing what she made of it — the coaching stays attached to the item.
+  function handleAddScanToCart() {
+    if (!scan?.verdict) return;
+    cart.addScan({
+      name: scan.product?.name || 'Scanned item',
+      tier: scan.verdict.tier,
+      barcode: scan.product?.barcode || null,
+    });
   }
 
   // "Share haul" → the branded shareable card (canvas → web share sheet).
@@ -715,7 +760,14 @@ export default function App() {
   }
   function askAboutList() {
     const g = goalNoteLabel(goalsOf(profile)) || 'your goal';
-    openChat({ opener: `Your list is built for ${g}. Want to tweak it, add something, or talk through a swap?` });
+    openChat({ opener: `Your cart is built for ${g}. Want to tweak it, add something, or talk through a swap?` });
+  }
+
+  // "Build me a cart for…" is a TAP that hands off to the docked composer — the one
+  // job that genuinely needs a sentence, seeded so the shopper only finishes it.
+  function handleBuildCart() {
+    setInput((cur) => (cur.trim() ? cur : 'Build me a cart for '));
+    setComposerFocus((n) => n + 1);
   }
 
   /* ───────── Day navigation ───────── */
@@ -820,6 +872,7 @@ export default function App() {
         onGoalClick={() => setSwitcherOpen(true)}
         showPremium={subscription?.premium === false}
         onPremium={openUpgrade}
+        onAsk={moment === 'chat' ? null : () => setMoment('chat')}
       />
 
       <Sidebar
@@ -833,57 +886,60 @@ export default function App() {
         onUpgrade={openUpgrade}
       />
 
-      {/* Chat — demoted from a primary tab to connective tissue, reached from the
-          Scan moment. Coaching only, grounded in a scan / haul / list. */}
+      {/* Chat — the deep-input surface, not the home. Reached from the composer or
+          her own affordance, always grounded in a scan / haul / cart. */}
       {moment === 'chat' && (
-        <>
-          <div className="chat" ref={chatRef}>
-            {viewingPast && (
-              <div className="readonly-bar">
-                <span>🔒 Viewing {dateLabel(viewingDate)} — read-only</span>
-                <button onClick={backToToday}>Back to today</button>
-              </div>
-            )}
-
-            {showEmpty ? (
-              <ChatLauncher
-                entries={[
-                  ...(scan?.verdict ? [{ id: 'scan', label: `Ask about ${scan.product?.name || 'your last scan'}`, sub: 'your last scan', onClick: askAboutScan }] : []),
-                  ...(haul?.week?.length ? [{ id: 'haul', label: 'Ask about your haul', sub: `${haul.week.length} scanned this week`, onClick: askAboutHaul }] : []),
-                  ...(goalsOf(profile).length ? [{ id: 'list', label: 'Ask about your list', sub: 'your shopping list', onClick: askAboutList }] : []),
-                ]}
-                onScan={() => { setMoment('scan'); setCameraOpen(true); }}
-              />
-            ) : (
-              messages.map((m) => (
-                <MessageBubble
-                  key={m.id}
-                  message={m}
-                  onUpgrade={openUpgrade}
-                  onRemovePref={handleRemoveChatPref}
-                  onEditPrefs={() => setSwitcherOpen(true)}
-                />
-              ))
-            )}
-
-            {typing && <TypingIndicator />}
-          </div>
-
-          {!viewingPast && (
-            <InputBar
-              value={input}
-              onChange={setInput}
-              onSend={() => handleSend()}
-              disabled={typing}
-              onBarcode={() => setCameraOpen(true)}
-              onVerdictFile={handleVerdictFile}
-            />
+        <div className="chat" ref={chatRef}>
+          {viewingPast && (
+            <div className="readonly-bar">
+              <span>🔒 Viewing {dateLabel(viewingDate)} — read-only</span>
+              <button onClick={backToToday}>Back to today</button>
+            </div>
           )}
-        </>
+
+          {showEmpty ? (
+            <ChatLauncher
+              entries={[
+                ...(scan?.verdict ? [{ id: 'scan', label: `Ask about ${scan.product?.name || 'your last scan'}`, sub: 'your last scan', onClick: askAboutScan }] : []),
+                ...(haul?.week?.length ? [{ id: 'haul', label: 'Ask about your haul', sub: `${haul.week.length} scanned this week`, onClick: askAboutHaul }] : []),
+                ...(goalsOf(profile).length ? [{ id: 'list', label: 'Ask about your cart', sub: 'your shopping cart', onClick: askAboutList }] : []),
+              ]}
+              onScan={() => setCameraOpen(true)}
+            />
+          ) : (
+            messages.map((m) => (
+              <MessageBubble
+                key={m.id}
+                message={m}
+                onUpgrade={openUpgrade}
+                onRemovePref={handleRemoveChatPref}
+                onEditPrefs={() => setSwitcherOpen(true)}
+              />
+            ))
+          )}
+
+          {typing && <TypingIndicator />}
+        </div>
       )}
 
       {moment !== 'chat' && (
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+          {/* The cart is the home surface: the trip taking shape, acted on by touch. */}
+          {moment === 'list' && (
+            <CartMoment
+              cart={cart}
+              goals={goalsOf(profile)}
+              goal={goalNoteLabel(goalsOf(profile))}
+              nonNegotiables={profile?.non_negotiables || []}
+              focuses={profile?.focuses || []}
+              constraints={resolveConstraints(profile)}
+              onSetGoal={() => setSwitcherOpen(true)}
+              onUpgrade={openUpgrade}
+              onScan={() => setCameraOpen(true)}
+              onAskAisle={() => setAisleOpen(true)}
+              onBuildCart={handleBuildCart}
+            />
+          )}
           {moment === 'scan' && (
             <ScanHome
               onScanBarcode={() => setCameraOpen(true)}
@@ -892,24 +948,13 @@ export default function App() {
               onAskAisle={() => setAisleOpen(true)}
             />
           )}
-          {moment === 'list' && (
-            <ListMoment
-              goals={goalsOf(profile)}
-              goal={goalsOf(profile)[0] || null}
-              nonNegotiables={profile?.non_negotiables || []}
-              focuses={profile?.focuses || []}
-              constraints={resolveConstraints(profile)}
-              onSetGoal={() => setSwitcherOpen(true)}
-              onAsk={askAboutList}
-              premium={subscription?.premium ?? false}
-              onUpgrade={openUpgrade}
-            />
-          )}
           {moment === 'haul' && (
             <HaulMoment
               haul={haul}
               loading={haulLoading}
-              onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+              cartProgress={cart.progress}
+              onScan={() => setCameraOpen(true)}
+              onOpenCart={() => setMoment('list')}
               onAddToList={handleAddToList}
               onShareHaul={handleShareHaul}
               onAsk={askAboutHaul}
@@ -919,9 +964,32 @@ export default function App() {
         </div>
       )}
 
+      {/* The composer is DOCKED on every surface and is a tool, not the centerpiece:
+          one slim bar beneath the cart for the messy input taps can't express — a whole
+          week of dinners, a standing preference, a question about one specific fish.
+          Every normal cart action above is reachable without it. */}
+      {!viewingPast && (
+        <InputBar
+          value={input}
+          onChange={setInput}
+          onSend={() => handleSend()}
+          disabled={typing}
+          onBarcode={() => setCameraOpen(true)}
+          onVerdictFile={handleVerdictFile}
+          // Kept SHORT on purpose: a placeholder that wraps makes the composer three
+          // lines tall, and a composer that tall stops reading as a docked tool and
+          // starts competing with the cart for the screen.
+          placeholder={moment === 'list' ? 'Ask, or build a whole cart…' : 'Ask me anything, or scan it.'}
+          focusSignal={composerFocus}
+        />
+      )}
+
       <BottomNav
         active={moment}
+        cartProgress={cart.progress}
         onList={() => setMoment('list')}
+        // Scan stays a full, fast action: the camera opens immediately, and closing it
+        // lands on the scan surface (label photo, ask-the-aisle) rather than nowhere.
         onScan={() => { setMoment('scan'); setCameraOpen(true); }}
         onHaul={openHaul}
         onChat={() => setMoment('chat')}
@@ -944,6 +1012,8 @@ export default function App() {
           onClose={() => setScan(null)}
           onLabelFile={handleVerdictFile}
           onPickGoal={handlePickGoal}
+          onAddToCart={handleAddScanToCart}
+          onOpenCart={() => { setScan(null); setMoment('list'); }}
           onAsk={() => { askAboutScan(); setScan(null); }}
           onUpgrade={() => { setScan(null); openUpgrade(); }}
           onStartTrial={handleStartTrial}
