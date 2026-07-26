@@ -52,3 +52,18 @@ test('the compose system prompt forbids price + health claims and lists the sect
   assert.match(LIST_COMPOSE_SYSTEM, /HARD LINES/);
   for (const s of SECTIONS) assert.ok(LIST_COMPOSE_SYSTEM.includes(s), `${s} missing from prompt`);
 });
+
+/* ───────── "Best brands" is answered honestly, never invented ─────────
+   A shopper can ask for "only the best brands." We have no brand data, so naming a
+   company would be fabrication the shopper carries into a store. The prompt must
+   redirect to the verifiable form on the package instead. */
+
+test('the compose prompt forbids inventing brands and redirects to the label', () => {
+  assert.match(LIST_COMPOSE_SYSTEM, /NEVER INVENT A BRAND/);
+  assert.match(LIST_COMPOSE_SYSTEM, /do NOT name companies/i);
+  // It must offer the honest substitute: what to look for on the package.
+  assert.match(LIST_COMPOSE_SYSTEM, /VERIFIABLE FORM/);
+  assert.match(LIST_COMPOSE_SYSTEM, /pasture-raised eggs/i);
+  // A brand is allowed only when the shopper supplied it.
+  assert.match(LIST_COMPOSE_SYSTEM, /ONLY if the shopper named it first/i);
+});

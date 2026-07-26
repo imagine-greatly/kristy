@@ -96,6 +96,89 @@ function ActionButton({ label, doneLabel, primary, onClick }) {
   );
 }
 
+/* ═══════════ The loop: this trip seeds the next one ═══════════
+   A haul that only grades you is a report card. The point of reading a finished trip
+   is that it makes the NEXT one easier — so what she learned here carries forward in
+   one tap, and the shopper can see exactly what's coming with them.
+
+   What they KEPT and what they SKIPPED are pre-selected: both are their own record.
+   What she'd SWAP is offered but never pre-selected — carrying a product she flagged
+   into next week on the shopper's behalf would be putting words in their mouth. */
+function NextTrip({ carryForward, onStartNextCart }) {
+  const keep = carryForward?.keep || [];
+  const missed = carryForward?.missed || [];
+  const replace = carryForward?.replace || [];
+
+  const [chosen, setChosen] = useState(() => new Set([...keep, ...missed].map((x) => x.name)));
+  const [state, setState] = useState('idle'); // idle | working | done
+
+  if (!keep.length && !missed.length && !replace.length) return null;
+
+  const toggle = (name) =>
+    setChosen((cur) => {
+      const next = new Set(cur);
+      if (next.has(name)) next.delete(name);
+      else next.add(name);
+      return next;
+    });
+
+  const Group = ({ label, items, hint }) =>
+    items.length ? (
+      <div style={styles.cfGroup}>
+        <div style={styles.cfLabel}>
+          {label}
+          {hint && <span style={styles.cfHint}> · {hint}</span>}
+        </div>
+        <div style={styles.cfChips}>
+          {items.map((x) => {
+            const on = chosen.has(x.name);
+            return (
+              <button
+                key={x.name}
+                type="button"
+                onClick={() => toggle(x.name)}
+                aria-pressed={on}
+                style={{ ...styles.cfChip, ...(on ? styles.cfChipOn : null) }}
+              >
+                {on ? '✓ ' : '+ '}
+                {x.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    ) : null;
+
+  return (
+    <div style={styles.cf}>
+      <GoldThread />
+      <p style={{ ...kristyVoice, ...styles.cfTitle }}>Start next week from this one.</p>
+
+      <Group label="Worth repeating" items={keep} />
+      <Group label="Never made it in" items={missed} hint="still worth having" />
+      <Group label="I'd pick differently" items={replace} hint="tap to bring it anyway" />
+
+      <button
+        type="button"
+        style={{ ...styles.action, ...styles.actionPrimary }}
+        disabled={!chosen.size || state === 'working'}
+        onClick={async () => {
+          if (!chosen.size || state === 'working') return;
+          setState('working');
+          const ok = await onStartNextCart?.([...chosen]);
+          setState(ok ? 'done' : 'idle');
+        }}
+      >
+        {state === 'working'
+          ? 'Starting…'
+          : state === 'done'
+            ? 'Next cart started ✓'
+            : `Start next week's cart (${chosen.size})`}
+      </button>
+    </div>
+  );
+}
+
 export default function HaulMoment({
   haul,
   loading,
@@ -106,6 +189,7 @@ export default function HaulMoment({
   onShareHaul,
   onAsk,
   onUpgrade,
+  onStartNextCart,
 }) {
   if (loading && !haul) {
     return (
@@ -133,7 +217,7 @@ export default function HaulMoment({
         <h1 style={styles.title}>Your haul</h1>
         <p style={styles.emptyLine}>
           {checkedOff > 0
-            ? `You've checked ${checkedOff} off your cart — scan something and I'll start reading the trip back to you.`
+            ? `You've checked ${checkedOff} off your cart — scan something and the read on this trip starts filling in.`
             : 'Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it.'}
         </p>
         <button type="button" style={{ ...styles.action, ...styles.actionPrimary, maxWidth: 260 }} onClick={onScan}>
@@ -185,6 +269,9 @@ export default function HaulMoment({
           )}
         </div>
       ) : null}
+
+      {/* The read ends in a nudge; this is where the nudge becomes the next cart. */}
+      <NextTrip carryForward={haul?.carryForward} onStartNextCart={onStartNextCart} />
 
       {trip.length > 0 && (
         <div style={styles.section}>
@@ -246,6 +333,24 @@ const styles = {
   read: { display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start' },
   readText: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
   unlock: { marginTop: 2, padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+
+  /* ── Carry-forward into next week's cart ── */
+  cf: {
+    display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'stretch',
+    padding: '16px 16px 18px', borderRadius: 16,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+  },
+  cfTitle: { margin: 0, fontSize: 19, lineHeight: 1.35, color: colors.textPrimary },
+  cfGroup: { display: 'flex', flexDirection: 'column', gap: 7 },
+  cfLabel: { fontFamily: fonts.ui, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.textMuted },
+  cfHint: { fontWeight: 500, letterSpacing: 0, textTransform: 'none', color: colors.textMuted },
+  cfChips: { display: 'flex', flexWrap: 'wrap', gap: 7 },
+  cfChip: {
+    padding: '8px 12px', borderRadius: 999, cursor: 'pointer',
+    border: `1px solid ${colors.border}`, background: 'transparent',
+    color: colors.textMuted, fontFamily: fonts.ui, fontSize: 13, fontWeight: 600,
+  },
+  cfChipOn: { borderColor: colors.accentGold, background: colors.surface, color: colors.textPrimary },
 
   section: { display: 'flex', flexDirection: 'column', gap: 8 },
   sectionLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },

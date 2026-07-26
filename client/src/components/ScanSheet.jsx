@@ -127,7 +127,7 @@ export default function ScanSheet({
     );
   } else if (scan.gate) {
     content = (
-      <Centered title="Want the rest?" sub="You've had your look. Sign in and I'll read every scan against your goal.">
+      <Centered title="Want the rest?" sub="You've had your look. Sign in and every scan gets read against your goal.">
         {onSignIn && (
           <button style={styles.primaryBtn} onClick={onSignIn}>
             Sign in
@@ -147,19 +147,24 @@ export default function ScanSheet({
       </Centered>
     );
   } else if (scan.found === false) {
-    // No readable ingredients (barcode not in the database, or an unreadable /
-    // non-English label). Auto-pivot to the path that works: photograph the panel.
+    // No readable ingredients: the barcode didn't decode cleanly, isn't in the
+    // database, or the label is unreadable/non-English. In EVERY one of those cases
+    // she says so and hands off to the path that always works — photographing the
+    // panel. She never shows a different product in place of the one being held.
     const barcodeMiss = scan.mode === 'barcode';
+    const title = scan.unreadable
+      ? "I didn't get a clean read"
+      : barcodeMiss
+        ? "I don't have this one yet"
+        : "I can't read that one";
+    const sub = scan.unreadable
+      ? "That barcode didn't come through clearly, and I won't guess at a product. Snap the ingredients panel instead — that reads straight off the label."
+      : barcodeMiss
+        ? "I don't have this one yet — snap the label and it reads straight off the panel."
+        : scan.message ||
+          "That didn't come through. Try the ingredients panel again, better lit — or type the product name.";
     content = (
-      <Centered
-        title={barcodeMiss ? "I don't have that one" : "I can't read that one"}
-        sub={
-          barcodeMiss
-            ? "That barcode isn't in the database — snap the ingredients panel and I'll read it straight off the label."
-            : scan.message ||
-              "That didn't come through. Try the ingredients panel again, better lit — or type the product name."
-        }
-      >
+      <Centered title={title} sub={sub}>
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}
         {onLabelFile && (
           <>
@@ -188,6 +193,14 @@ export default function ScanSheet({
   } else if (scan.verdict) {
     content = (
       <>
+        {/* Sample data can never sit on the screen unlabeled. The demo fixture is the
+            same product for every barcode, so without this it reads as a real lookup
+            of whatever was just scanned. */}
+        {scan.demo && (
+          <div style={styles.demoBanner}>
+            Sample product — demo mode isn't looking up real barcodes.
+          </div>
+        )}
         <ScanVerdictCard
           verdict={scan.verdict}
           product={scan.product}
@@ -294,6 +307,23 @@ const styles = {
   },
   title: { ...kristyVoice, fontSize: 22, color: colors.textPrimary },
   sub: { fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.5, color: colors.textMuted, maxWidth: 320 },
+  demoBanner: {
+    width: '100%',
+    maxWidth: 420,
+    // Clears the absolutely-positioned close button (top:12, 36px tall), which is
+    // opaque and would otherwise sit on top of this text.
+    margin: '30px auto 12px',
+    boxSizing: 'border-box',
+    padding: '9px 14px',
+    borderRadius: 10,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9,
+    color: colors.accentGold,
+    fontFamily: fonts.ui,
+    fontSize: 13,
+    fontWeight: 600,
+    textAlign: 'center',
+  },
   productHint: {
     fontFamily: fonts.ui,
     fontSize: 14,

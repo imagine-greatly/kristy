@@ -1,102 +1,62 @@
-// Lightweight in-browser stand-in for the Haiku backend, used in demo mode so
-// the full UI is explorable with no keys. Rough USDA-ish estimates only.
+// Lightweight in-browser stand-in for the backend, used in demo mode so the full
+// UI is explorable with no keys. Grocery-coach replies only — no macro estimation.
 
 import { dayKey } from './format.js';
 
-// per-100g unless `unit` says otherwise
-const FOODS = [
-  { re: /chicken breast|chicken/, per: 100, cal: 165, p: 31, c: 0, f: 3.6, name: 'chicken breast' },
-  { re: /\brice\b/, per: 100, cal: 130, p: 2.7, c: 28, f: 0.3, name: 'rice' },
-  { re: /egg/, unit: 'egg', cal: 78, p: 6, c: 0.6, f: 5, name: 'egg' },
-  { re: /avocado/, unit: 'avocado', cal: 240, p: 3, c: 12, f: 22, name: 'avocado' },
-  { re: /whole milk|milk/, per: 100, ml: true, cal: 61, p: 3.2, c: 4.8, f: 3.3, name: 'milk' },
-  { re: /protein (shake|powder)|whey/, unit: 'scoop', cal: 120, p: 24, c: 3, f: 1.5, name: 'protein shake' },
-  { re: /big mac/, unit: 'item', cal: 563, p: 26, c: 45, f: 33, name: 'Big Mac' },
-  { re: /(medium )?fries|fries/, unit: 'item', cal: 340, p: 4, c: 44, f: 16, name: 'medium fries' },
-  { re: /banana/, unit: 'banana', cal: 105, p: 1.3, c: 27, f: 0.4, name: 'banana' },
-  { re: /oats|oatmeal/, per: 100, cal: 389, p: 17, c: 66, f: 7, name: 'oats' },
-  { re: /salmon/, per: 100, cal: 208, p: 20, c: 0, f: 13, name: 'salmon' },
-  { re: /greek yogurt|yogurt/, per: 100, cal: 59, p: 10, c: 3.6, f: 0.4, name: 'greek yogurt' },
-];
-
-const round = (x) => Math.round(x);
-
-// Look at the words immediately *before* a food mention for its quantity, so
-// "3 eggs and half an avocado" assigns 3 to eggs and 0.5 to the avocado.
-function qtyBefore(text, idx, food) {
-  const pre = text.slice(Math.max(0, idx - 24), idx);
-  const g = pre.match(/(\d+)\s?(g|grams|ml)\s*$/);
-  if (g && (food.per || food.ml)) return Number(g[1]) / food.per;
-  if (/\b(half|1\/2)\s+(an?\s+)?$/.test(pre)) return 0.5;
-  const cnt = pre.match(/(\d+)\s+(?:\w+\s+){0,2}$/);
-  if (cnt && food.unit) return Number(cnt[1]);
-  return 1;
-}
-
-export function mockEstimate(text) {
-  const lower = text.toLowerCase();
-  const found = [];
-  const macros = { calories: 0, protein: 0, carbs: 0, fat: 0 };
-
-  for (const food of FOODS) {
-    const m = food.re.exec(lower);
-    if (m) {
-      const q = qtyBefore(lower, m.index, food);
-      macros.calories += food.cal * q;
-      macros.protein += food.p * q;
-      macros.carbs += food.c * q;
-      macros.fat += food.f * q;
-      found.push(food.name);
-    }
-  }
-
-  return found.length
-    ? {
-        hasFood: true,
-        foods: found,
-        macros: {
-          calories: round(macros.calories),
-          protein: round(macros.protein),
-          carbs: round(macros.carbs),
-          fat: round(macros.fat),
-        },
-      }
-    : null;
-}
-
-const FOOD_REPLIES = [
-  'Logged it. Solid protein hit there.',
-  "Got it — that's going to land you in a good spot for the day.",
-  'Nice. That keeps your carbs reasonable too.',
-  "Logged. You've got room left for a good dinner.",
-];
+// NOTE: the macro estimator that used to live here is GONE, not just unrouted.
+// It matched food words in ANY message, so a cart request naming "raw milk" and
+// "pasture raised eggs" was read as a logged meal and answered with a canned
+// "Got it — that's going to land you in a good spot for the day." Kristy is a
+// grocery coach; the demo does not get to be a calorie tracker underneath (Block O).
 
 const ADVICE = {
   default:
-    "Based on what you've logged, you're tracking well. Aim for a protein-forward next meal and you'll be right on target.",
-  protein:
-    "You're a bit short on protein for where you'd want to be — a chicken breast, some greek yogurt, or a shake would close most of that gap.",
+    'Tell me what the trip is for — a few weeknight dinners, a clean week, restocking the pantry.',
+  seedOil:
+    "Refined seed oils are the ones I'd rather you skipped — solvent-extracted and heat-damaged. Butter, ghee, or a real cold-pressed olive oil do the same job without that.",
+  fish:
+    "Wild-caught is the one I'd reach for, and frozen counts — it's often frozen at sea, so it can be fresher than the counter and cheaper besides.",
+  holistic:
+    "That's a lens I can hold. Say the word and the cart follows it — pasture-raised eggs, grass-fed meat, the least-processed version of each thing.",
   dinner:
-    "With the calories you have left, something like salmon with rice and veg would round out the day nicely without going over.",
+    "One sentence about the week — how many dinners, who's eating — and the groceries follow.",
 };
 
-export function mockReply(text, ctx) {
-  const food = mockEstimate(text);
-  if (food) {
-    const msg = FOOD_REPLIES[Math.floor(Math.random() * FOOD_REPLIES.length)];
-    let insight = '';
-    const after = (ctx?.today?.protein || 0) + food.macros.protein;
-    if (ctx?.goals && after >= ctx.goals.protein)
-      insight = 'Protein target hit. Everything else today is a bonus.';
-    return { message: msg, ...food, insight };
-  }
+/* Demo-only mirror of the server's cart-command routing (server/lib/chatRouting.js).
+   Kept deliberately small: demo is a sandbox, but it must not LIE about what the
+   product does. Before this, the demo chat ran a macro estimator — so "build a
+   holistic cart, raw milk, grass fed meat" matched the words "milk" and "egg",
+   returned a canned "Got it — that's going to land you in a good spot," and built
+   nothing. An acknowledgment with no artifact is the one reply she never gives. */
+const DEMO_EDIT_LEAD = /^\s*(add|put(?! together)|remove|delete|drop|swap|replace|cross|toss)\b/i;
+const DEMO_BUILD_VERB =
+  /\b(build|make|create|put together|plan|generate|assemble|come up with|set me up with|give me|i want|i need)\b/i;
+const DEMO_CART_OBJECT =
+  /\b(cart|list|basket|trip|haul|groceries|grocery|shopping|dinners?|meals?|lunch(es)?|breakfasts?|snacks?)\b/i;
+const DEMO_EXPLICIT_CART = /\b(cart|list|basket|groceries|grocery|shopping|haul)\b/i;
+const DEMO_INTERROGATIVE = /^\s*(what|which|why|how|when|where|who|is|are|do|does|should)\b/i;
 
-  const lower = text.toLowerCase();
+/** @returns {{ isCart:boolean, mode:'build'|'edit' }} */
+export function demoCartIntent(text) {
+  const m = String(text || '').trim();
+  if (!m) return { isCart: false, mode: 'edit' };
+  if (DEMO_EDIT_LEAD.test(m)) return { isCart: true, mode: 'edit' };
+  if (!DEMO_BUILD_VERB.test(m) || !DEMO_CART_OBJECT.test(m)) return { isCart: false, mode: 'edit' };
+  if (DEMO_INTERROGATIVE.test(m) && !DEMO_EXPLICIT_CART.test(m)) return { isCart: false, mode: 'edit' };
+  return { isCart: true, mode: 'build' };
+}
+
+// Grocery-coach replies. No calories, no macros, no "logged it" — the demo speaks
+// as the same coach the real backend does (Block O: no macro accounting anywhere).
+export function mockReply(text) {
+  const lower = String(text || '').toLowerCase();
   let message = ADVICE.default;
-  if (/protein/.test(lower)) message = ADVICE.protein;
-  else if (/dinner|eat|should i|what.*eat/.test(lower)) message = ADVICE.dinner;
-  else if (/^(hi|hey|hello|yo|sup)/.test(lower))
-    message = "Hey! What did you eat? Tell me and I'll keep your day on track.";
+  if (/seed oil|canola|vegetable oil|margarine/.test(lower)) message = ADVICE.seedOil;
+  else if (/salmon|fish|wild|farmed/.test(lower)) message = ADVICE.fish;
+  else if (/raw milk|grass.?fed|pasture|holistic/.test(lower)) message = ADVICE.holistic;
+  else if (/dinner|what should i (eat|cook|buy)/.test(lower)) message = ADVICE.dinner;
+  else if (/^(hi|hey|hello|yo|sup)\b/.test(lower))
+    message = 'Hey. Tell me what this trip is for.';
 
   return { message, hasFood: false, macros: null, foods: [], insight: '' };
 }

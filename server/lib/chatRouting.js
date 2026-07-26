@@ -41,6 +41,12 @@ const PREF_SIGNALS = [
   /\beat(ing)? (cleaner|healthier|whole ?foods?|holistic(ally)?|clean)\b/i,
   /\bmy (diet|preference|thing|rule|lines?) (is|are)\b/i,
   /\bwatch (my|the) \w+ for me\b/i,
+  // A named food philosophy, stated as a description rather than "I eat…". The
+  // shopper who types "build a holistically focused cart, raw milk, pasture raised
+  // eggs, grass fed meat" is declaring a standing lens, not naming three groceries.
+  /\bholistic(ally)?\b/i,
+  /\b(grass[- ]?fed|pasture[- ]?raised|pastured|raw milk|raw dairy|raw butter)\b/i,
+  /\b(low[- ]?carb|high[- ]?fat|keto|paleo|carnivore|whole[- ]?foods?)\b/i,
 ];
 
 /**
@@ -57,21 +63,59 @@ const PREF_SIGNALS = [
  * The compose engine is claim-safe by construction (grocery names only, applied
  * deterministically), so a false positive costs a list edit, never a health claim.
  */
-const CART_COMMAND = /^\s*(add|put|remove|delete|drop|swap|replace|build|make|cross)\b/i;
-const CART_NOUN = /\b(cart|list|basket|trip|shop|groceries|grocery|dinners?|meals?|lunch|breakfast|week)\b/i;
+// An EDIT acts on the cart you already have. These verbs are unambiguous, but only
+// in the lead position — "add taco night" is a command, "I add salt to everything"
+// is not.
+// "put together" is a BUILD phrase, so the bare edit verb "put" must not claim it.
+const EDIT_LEAD = /^\s*(add|put(?! together)|remove|delete|drop|swap|replace|cross|toss|take off)\b/i;
 
+// A BUILD asks for a cart to exist. Deliberately NOT anchored to the start of the
+// message: real people ask sideways — "can you build me a cart", "I need groceries
+// for the week", "give me a holistic cart". The old anchored pattern caught only
+// the imperative opener and silently dropped every one of those on the floor.
+const BUILD_VERB =
+  /\b(build|make|create|put together|plan|generate|assemble|throw together|come up with|set me up with|whip up|give me|i want|i need|i'?m after|help me with)\b/i;
+
+// The object that makes a build verb a CART build. Without one, "make sense of this
+// label" would qualify.
+const CART_OBJECT =
+  /\b(cart|list|basket|trip|haul|groceries|grocery|shopping|dinners?|meals?|lunch(es)?|breakfasts?|suppers?|snacks?|food for)\b/i;
+
+// The subset that names a cart OUTRIGHT. A question is only a cart command when it
+// names one of these — see below.
+const EXPLICIT_CART = /\b(cart|list|basket|groceries|grocery|shopping|haul)\b/i;
+
+// A genuine question opener. "What should I make for dinner?" is a conversation, not
+// an instruction to rewrite the cart — unless it explicitly names the cart.
+// ("can/could/would you build me…" is a polite imperative, so it's absent here.)
+const INTERROGATIVE_LEAD = /^\s*(what|which|why|how|when|where|who|is|are|do|does|should)\b/i;
+
+/**
+ * Is this an instruction to CHANGE THE CART — either editing the one they have or
+ * asking for one to be built?
+ *
+ * The compose engine is claim-safe by construction (grocery names only, applied
+ * deterministically), so a false positive costs a list edit, never a health claim.
+ * A false NEGATIVE, though, costs the whole interaction: the shopper asks for a cart
+ * and gets a sentence of agreement instead of groceries. Biased accordingly.
+ */
 export function looksLikeCartCommand(msg) {
   const m = String(msg || '').trim();
-  if (!m || !CART_COMMAND.test(m)) return false;
-  // "make"/"build" alone are too loose ("make sense of this label") — they need a
-  // cart-shaped object. The unambiguous verbs (add/remove/swap/…) stand on their own.
-  if (/^\s*(build|make)\b/i.test(m)) return CART_NOUN.test(m);
+  if (!m) return false;
+  if (EDIT_LEAD.test(m)) return true;
+  if (!BUILD_VERB.test(m) || !CART_OBJECT.test(m)) return false;
+  // A question about food is a question; a question about the CART is a command.
+  if (INTERROGATIVE_LEAD.test(m) && !EXPLICIT_CART.test(m)) return false;
   return true;
 }
 
 /** Which compose mode a cart command implies: a whole new cart, or an edit to this one. */
 export function cartCommandMode(msg) {
-  return /^\s*(build|make)\b/i.test(String(msg || '').trim()) ? 'build' : 'edit';
+  const m = String(msg || '').trim();
+  // A leading edit verb is always an edit, even alongside a build word
+  // ("add a cheaper cut and build out the week" → edit the cart in place).
+  if (EDIT_LEAD.test(m)) return 'edit';
+  return 'build';
 }
 
 /**
@@ -83,6 +127,11 @@ export function cartCommandMode(msg) {
  */
 export function looksLikePreferenceDeclaration(msg) {
   const m = String(msg || '').trim();
-  if (!m || LIST_COMMAND.test(m)) return false;
+  if (!m) return false;
+  // A single-item EDIT is never a standing preference — "add grass-fed beef" puts one
+  // thing in the cart, it doesn't declare a rule. A whole-cart BUILD is different:
+  // "build me a holistic cart, raw milk, grass fed meat" describes how they eat, and
+  // that lens should outlive the one cart. So builds are allowed through to be both.
+  if (EDIT_LEAD.test(m)) return false;
   return PREF_SIGNALS.some((re) => re.test(m));
 }

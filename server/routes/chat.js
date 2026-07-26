@@ -19,7 +19,7 @@ import {
   NO_ANSWER,
 } from '../lib/perimeter.js';
 import { composeListEdit } from '../lib/listCompose.js';
-import { generateList } from '../lib/list.js';
+import { listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
 import {
   getFullProfile,
@@ -41,7 +41,7 @@ const router = Router();
    entry's own words; premium gets the personalized, claim-locked read. */
 
 const PERIMETER_UPSELL =
-  "That's the honest rundown. Want my read for YOUR cart — against your goal and your week — and a swap I'll drop on your list? That part's for members.";
+  "That's the honest rundown. Want my read for YOUR cart — against your goal and your week — with the swap landing straight on your list? That part's for members.";
 
 async function perimeterChatReply({ message, matched, premium, prefs }) {
   if (premium) {
@@ -81,16 +81,11 @@ async function perimeterChatReply({ message, matched, premium, prefs }) {
 
 async function cartEditReply({ userId, message, mode, prefs, premium }) {
   const row = await getShoppingList(userId).catch(() => null);
+  // No cart yet → build from EMPTY. The shopper's sentence is the whole input; a
+  // pre-generated template here would mix items they never asked for into the cart
+  // they did, with no way to tell which was which.
   const current =
-    row?.list && Array.isArray(row.list.items)
-      ? row.list
-      : generateList({
-          goals: prefs.goals,
-          nonNegotiables: prefs.hardLines,
-          focuses: prefs.focuses,
-          constraints: prefs.constraints,
-          premium,
-        });
+    row?.list && Array.isArray(row.list.items) ? row.list : { goal: prefs.goal, intro: '', items: [] };
 
   const { add, remove, summary } = await composeListEdit({
     instruction: message,
@@ -109,13 +104,42 @@ async function cartEditReply({ userId, message, mode, prefs, premium }) {
 
   const list = sanitizeList(next) || next;
   try {
-    await saveShoppingList(userId, { list });
+    // Stamp the current preference signature, so a cart built from chat isn't read as
+    // stale on the next load and regenerated out from under the shopper.
+    const signals = { ...(row?.signals || EMPTY_SIGNALS) };
+    signals.sig = listSignature({
+      goals: prefs.goals,
+      nonNegotiables: prefs.hardLines,
+      focuses: prefs.focuses,
+      constraints: prefs.constraints,
+    });
+    await saveShoppingList(userId, { list, signals });
   } catch (err) {
     // Same degrade-don't-break posture as the list route: an unmigrated table means
     // the edit isn't persisted, but the shopper still gets it on this session.
     console.warn('[kristy] chat cart persist skipped:', err.message);
   }
   return { list, summary };
+}
+
+/* A cart edit ALWAYS reports what it did. The old fallback was "Updated your cart." —
+   a bare acknowledgment, which is the failure mode this whole path exists to kill:
+   the shopper asks for a cart, gets a pleasant sentence, and has no idea whether
+   anything happened. This names the actual groceries. It reads the FINAL list, so it
+   can only describe rows that really exist — it never claims an item it didn't add. */
+function describeCartResult(list, mode) {
+  const items = (list?.items || []).filter((i) => !i.checked);
+  if (!items.length) {
+    return "Your cart's empty now — tell me what the trip is for.";
+  }
+  const names = items.slice(0, 4).map((i) => String(i.name).toLowerCase());
+  const rest = items.length - names.length;
+  const lead = joinList(names) + (rest > 0 ? `, and ${rest} more` : '');
+  // Present the result; never narrate the service (same voice rule as the composer
+  // prompt — no "I built you a cart").
+  return mode === 'build'
+    ? `Here's the trip — ${items.length} items: ${lead}.`
+    : `Cart's at ${items.length} now — ${lead}.`;
 }
 
 /* ───────────────────────── Preference declarations ─────────────────────────
@@ -135,7 +159,7 @@ function composePrefConfirmation(mapped) {
   const names = mapped.labeled.map((x) => x.label.toLowerCase());
   let msg = `Locked in — ${joinList(names)}. That's my lens on every scan and every list from here.`;
   if (mapped.unmapped?.length) {
-    msg += ` The ${joinList(mapped.unmapped)} part isn't something I hold a formal line on — I'll be straight with you about it when it comes up, not push it either way.`;
+    msg += ` The ${joinList(mapped.unmapped)} part isn't something I hold a formal line on — straight answer when it comes up, no push either way.`;
   }
   return msg;
 }
@@ -191,10 +215,48 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           upgrade: true,
         });
       }
+      // A whole-cart build can carry a standing lens with it ("build a holistically
+      // focused cart, raw milk, pasture raised eggs, grass fed meat"). Capture that
+      // FIRST — so the cart is built THROUGH it — then build. Capturing without
+      // building is the exact failure this closes: she filed the preference, said
+      // something agreeable, and produced nothing.
+      let activePrefs = prefs;
+      let preferenceUpdate = null;
+      if (looksLikePreferenceDeclaration(message)) {
+        try {
+          const mapped = await interpretPreferences(message);
+          const hasAny =
+            mapped &&
+            (mapped.goal || mapped.focuses.length || mapped.hardLines.length || mapped.constraints.length);
+          if (hasAny) {
+            const merged = {
+              goals: uniq([...prefs.goals, ...(mapped.goal ? [mapped.goal] : [])]),
+              focuses: uniq([...prefs.focuses, ...mapped.focuses]),
+              hardLines: uniq([...prefs.hardLines, ...mapped.hardLines]),
+              constraints: uniq([...prefs.constraints, ...mapped.constraints]),
+            };
+            activePrefs = { ...prefs, ...merged, goal: merged.goals[0] || null };
+            preferenceUpdate = { labeled: mapped.labeled, unmapped: mapped.unmapped, merged };
+            await saveCoachProfile(userId, {
+              coach_goals: merged.goals,
+              non_negotiables: merged.hardLines,
+              focuses: merged.focuses,
+              constraints: merged.constraints,
+            });
+          }
+        } catch (err) {
+          // A failed capture must never cost the shopper their cart — the build is
+          // the thing they actually asked for, so it proceeds on the stored prefs.
+          console.error('[kristy] chat build-time preference capture error:', err?.message || err);
+        }
+      }
+
       try {
         const mode = cartCommandMode(message);
-        const { list, summary } = await cartEditReply({ userId, message, mode, prefs, premium });
-        const answer = summary || 'Updated your cart.';
+        const { list, summary } = await cartEditReply({ userId, message, mode, prefs: activePrefs, premium });
+        // Never a bare acknowledgment. If the composer gave no summary, say what
+        // actually landed in the cart rather than "Updated your cart."
+        const answer = summary || describeCartResult(list, mode);
         await saveChatMessage(userId, { role: 'user', content: message });
         await saveChatMessage(userId, { role: 'ai', content: answer });
         return res.json({
@@ -204,6 +266,7 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           foods: [],
           insight: '',
           listUpdate: { list, summary: answer, mode },
+          ...(preferenceUpdate ? { preferenceUpdate } : {}),
         });
       } catch (err) {
         console.error('[kristy] chat cart edit error:', err?.message || err);

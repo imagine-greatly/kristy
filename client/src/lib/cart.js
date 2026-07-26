@@ -117,8 +117,13 @@ export function useCart(prefs) {
   }, [list]);
 
   const mutate = useCallback((fn) => {
-    const cur = listRef.current;
-    if (!cur || !Array.isArray(cur.items)) return;
+    // A trip can begin with an ACTION, not only an answer — scanning something in the
+    // aisle before ever telling Kristy what the trip is for has to work. So a missing
+    // cart is materialized here rather than dropping the mutation on the floor.
+    const cur =
+      listRef.current && Array.isArray(listRef.current.items)
+        ? listRef.current
+        : { goal: null, intro: '', items: [] };
     const next = fn(cur);
     if (!next || next === cur) return;
     listRef.current = next;
@@ -251,6 +256,19 @@ export function useCart(prefs) {
     if (summary) setNote(summary);
   }, []);
 
+  // Start a new trip: empty the cart so the surface returns to Kristy's question.
+  // An EMPTY saved cart is a real state, distinct from "never had one" — the server
+  // holds it empty rather than refilling it from the goal template.
+  const startNewTrip = useCallback(() => {
+    const next = { goal: listRef.current?.goal || null, intro: '', items: [] };
+    listRef.current = next;
+    setList(next);
+    setNote('');
+    setGated(false);
+    saveList(next);
+    trackEvent('cart-new-trip', {});
+  }, []);
+
   const rebuild = useCallback(async () => {
     trackEvent('list-build', { source: 'rebuild' });
     const { list: fresh, premium: prem } = await rebuildList(prefsRef.current);
@@ -291,6 +309,11 @@ export function useCart(prefs) {
     busy,
     note,
     gated,
+    // Is a trip actually underway? A null cart (never started) and an emptied one
+    // (new trip) both read as "no cart" — that's the state where Kristy asks what
+    // the trip is for instead of handing over a template.
+    hasCart: Array.isArray(list?.items) && list.items.length > 0,
+    startNewTrip,
     progress: cartProgress(list),
     setNote,
     setGated,

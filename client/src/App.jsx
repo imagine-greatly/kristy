@@ -10,6 +10,7 @@ import {
   loadProfile,
   saveHaulScan,
   loadHaul,
+  startNextCart,
 } from './lib/data.js';
 import {
   goalNoteLabel,
@@ -372,10 +373,10 @@ export default function App() {
      Categories come from the deterministic nutrition/KB signals on the verdict. */
   const CATEGORY_FOCUS = { sodium: 'lower_sodium', sugar: 'lower_sugar', blood_sugar: 'blood_sugar', heart: 'heart' };
   const OFFER_LINE = {
-    sodium: "You've passed on two high-sodium picks — want me to watch sodium for you?",
-    sugar: "That's twice now on the high-sugar stuff — want me to keep an eye on added sugar?",
-    blood_sugar: 'Couple of blood-sugar spikers back to back — want me to flag those as we shop?',
-    heart: "Two with the oils I hold a line on — want me to watch that for you?",
+    sodium: "That's two high-sodium picks you've put back. Want sodium flagged from here on?",
+    sugar: "Twice now on the high-sugar stuff. Want added sugar flagged from here on?",
+    blood_sugar: 'Couple of blood-sugar spikers back to back. Want those flagged as we shop?',
+    heart: "Two with the oils I hold a line on. Want that flagged from here on?",
   };
 
   function categoriesFromSignals(sig) {
@@ -687,6 +688,19 @@ export default function App() {
     }
   }
 
+  // Haul → next cart, in one tap. The finished trip becomes the starting point for
+  // the next one: the shopper's accepted carry-forwards are written as the new cart
+  // (server-validated against what was actually offered), and we drop them straight
+  // into it — the loop closes on the surface where the next trip happens.
+  async function handleStartNextCart(accepted) {
+    const { list } = await startNextCart(accepted);
+    if (!list) return false;
+    cart.applyList(list, list.intro || '');
+    trackEvent('list-build', { source: 'haul-carryforward', items: list.items?.length || 0 });
+    setMoment('list');
+    return true;
+  }
+
   async function loadHaulData() {
     setHaulLoading(true);
     try {
@@ -765,11 +779,6 @@ export default function App() {
 
   // "Build me a cart for…" is a TAP that hands off to the docked composer — the one
   // job that genuinely needs a sentence, seeded so the shopper only finishes it.
-  function handleBuildCart() {
-    setInput((cur) => (cur.trim() ? cur : 'Build me a cart for '));
-    setComposerFocus((n) => n + 1);
-  }
-
   /* ───────── Day navigation ───────── */
   async function backToToday() {
     setViewingDate(today);
@@ -937,7 +946,6 @@ export default function App() {
               onUpgrade={openUpgrade}
               onScan={() => setCameraOpen(true)}
               onAskAisle={() => setAisleOpen(true)}
-              onBuildCart={handleBuildCart}
             />
           )}
           {moment === 'scan' && (
@@ -959,6 +967,7 @@ export default function App() {
               onShareHaul={handleShareHaul}
               onAsk={askAboutHaul}
               onUpgrade={openUpgrade}
+              onStartNextCart={handleStartNextCart}
             />
           )}
         </div>
@@ -979,7 +988,7 @@ export default function App() {
           // Kept SHORT on purpose: a placeholder that wraps makes the composer three
           // lines tall, and a composer that tall stops reading as a docked tool and
           // starts competing with the cart for the screen.
-          placeholder={moment === 'list' ? 'Ask, or build a whole cart…' : 'Ask me anything, or scan it.'}
+          placeholder={moment === 'list' ? 'Ask, or build a whole cart…' : 'Ask anything, or scan it.'}
           focusSignal={composerFocus}
         />
       )}

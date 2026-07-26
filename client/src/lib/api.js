@@ -1,6 +1,7 @@
 import { IS_DEMO, apiBase } from './config.js';
 import { supabase } from './supabase.js';
-import { mockReply } from './mock.js';
+import { mockReply, demoCartIntent } from './mock.js';
+import { composeList } from './list.js';
 import { demoPersistTurn } from './data.js';
 
 const rid = () =>
@@ -16,24 +17,32 @@ const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function sendChat({ message, history = [], ctx }) {
   if (IS_DEMO) {
     await delay(550 + Math.random() * 500); // feel the typing indicator
-    const result = mockReply(message, ctx);
+
+    // A cart request BUILDS THE CART here too. The demo used to run every message
+    // through a macro estimator and answer with a canned acknowledgment, so asking
+    // for a cart produced a friendly sentence and no groceries. Demo is a sandbox,
+    // but it still has to do the thing it says it did.
+    const intent = demoCartIntent(message);
+    let result;
+    if (intent.isCart) {
+      const { list, summary } = await composeList({ instruction: message, mode: intent.mode });
+      result = {
+        message: summary || 'Updated your cart.',
+        hasFood: false,
+        macros: null,
+        foods: [],
+        insight: '',
+        ...(list ? { listUpdate: { list, summary: summary || '', mode: intent.mode } } : {}),
+      };
+    } else {
+      result = mockReply(message, ctx);
+    }
+
     const now = new Date().toISOString();
-
     const userMsg = { id: rid(), role: 'user', content: message, macros: null, created_at: now };
-    const aiMsg = {
-      id: rid(),
-      role: 'ai',
-      content: result.message,
-      macros: result.hasFood
-        ? { ...result.macros, foods: result.foods, insight: result.insight }
-        : null,
-      created_at: now,
-    };
-    const meal = result.hasFood
-      ? { id: rid(), logged_at: now, foods: result.foods, ...result.macros }
-      : null;
+    const aiMsg = { id: rid(), role: 'ai', content: result.message, macros: null, created_at: now };
 
-    demoPersistTurn({ userMsg, aiMsg, meal });
+    demoPersistTurn({ userMsg, aiMsg, meal: null });
     return result;
   }
 

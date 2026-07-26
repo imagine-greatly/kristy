@@ -87,15 +87,23 @@ router.get('/list', requireAuth, async (req, res) => {
 
     const sig = listSignature({ goals, nonNegotiables, focuses, constraints });
     const storedSig = row?.signals?.sig || null;
-    const stale = stored && storedSig && storedSig !== sig;
+    // A saved-but-empty cart is a deliberate state ("start a new trip"), not an
+    // absent one — it must not be treated as stale and refilled from the template.
+    const emptied = stored && stored.items.length === 0;
+    const stale = stored && !emptied && storedSig && storedSig !== sig;
 
     let list;
     let consumedPending = false;
     if (!stored) {
-      // First use → generate from the profile. Premium consumes pending swaps.
-      list = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
-      consumedPending = premium && pending.length > 0;
-      await persist(userId, { list, signals: { ...signals, sig } });
+      // NO CART YET → we do NOT invent one. A pre-generated "nutrient-dense whole
+      // foods" template is a guess dressed up as coaching: we don't know what this
+      // trip is FOR until she asks. The client renders Kristy's question instead,
+      // and the answer builds the cart. `null` is the honest empty.
+      return res.json({ list: null, premium, pendingSwaps: pending.length });
+    } else if (emptied) {
+      // An intentionally-emptied cart (the shopper started a new trip). Stay empty —
+      // regenerating here would put the default template back and re-break the flow.
+      list = stored;
     } else if (stale) {
       // Goal / hard lines / focuses / constraints changed since this list was built
       // → regenerate, carrying over the user's own adds + haul swaps. No manual
@@ -191,10 +199,13 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
     const profile = await getFullProfile(userId).catch(() => ({}));
     const { goals, goal, nonNegotiables, focuses, constraints } = profileInputs(profile);
     const row = await getShoppingList(userId);
+    // No cart yet → an EMPTY one, not a generated template. The shopper's sentence is
+    // what the cart is built from; seeding a default first would put items in it that
+    // they never asked for and can't tell apart from the ones they did.
     const current =
       row?.list && Array.isArray(row.list.items)
         ? row.list
-        : generateList({ goals, nonNegotiables, focuses, constraints, premium });
+        : { goal, intro: '', items: [] };
 
     const { add, remove, summary } = await composeListEdit({
       instruction,
@@ -212,7 +223,15 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
         : applyCompose(current, { add, remove });
 
     const clean = sanitizeList(list) || list;
-    await persist(userId, { list: clean });
+    // Stamp the CURRENT preference signature onto a conversationally-built cart.
+    // Without this a cart built after a goal change reads as stale on the next load
+    // and gets regenerated from the template — silently throwing away the cart the
+    // shopper just asked for.
+    const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
+    await persist(userId, {
+      list: clean,
+      signals: { ...signals, sig: listSignature({ goals, nonNegotiables, focuses, constraints }) },
+    });
     return res.json({ list: clean, summary, premium: true });
   } catch (err) {
     console.error('[kristy] POST /api/list/compose error:', err.message);

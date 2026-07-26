@@ -134,3 +134,51 @@ test('the three composer jobs stay in their own lanes', () => {
   assert.ok(looksLikePerimeterQuestion(question) && !looksLikeCartCommand(question));
   assert.ok(looksLikePreferenceDeclaration(preference) && !looksLikeCartCommand(preference));
 });
+
+/* ───────── A cart request must BUILD, never just get acknowledged ─────────
+   Regression guard for the reported failure: the shopper asked for a holistic cart
+   and Kristy replied "Got it — that's going to land you in a good spot" and built
+   nothing. The routing half of that bug is here (the reply half is the substance
+   floor in groceryChat.test.js). */
+
+const HOLISTIC_ASK =
+  'build a holistically focused cart, raw milk, pasture raised eggs, grass fed meat, low carb high fat high protein, recommend only the best brands';
+
+test('the holistic-cart ask builds a cart AND is captured as a standing preference', () => {
+  assert.ok(looksLikeCartCommand(HOLISTIC_ASK), 'must reach the cart-build path');
+  assert.equal(cartCommandMode(HOLISTIC_ASK), 'build');
+  // Both lanes fire: the lens is persisted AND the cart is produced. Capturing the
+  // preference must never be the whole response.
+  assert.ok(looksLikePreferenceDeclaration(HOLISTIC_ASK), 'the lens must also be captured');
+});
+
+test('cart requests phrased sideways still build — not only bare imperatives', () => {
+  for (const m of [
+    'can you build me a cart for the week',
+    'I want a holistic cart - raw milk, pasture raised eggs, grass fed meat',
+    'I need groceries for a low carb week',
+    'give me a cart with grass fed meat and raw dairy',
+    'put together a holistic grocery haul for me',
+    'set me up with a week of dinners',
+  ]) {
+    assert.ok(looksLikeCartCommand(m), `should build: "${m}"`);
+    assert.equal(cartCommandMode(m), 'build', `should be a BUILD: "${m}"`);
+  }
+});
+
+test('"put together" is a build; the bare verb "put" still edits', () => {
+  assert.equal(cartCommandMode('put together a grocery haul'), 'build');
+  assert.equal(cartCommandMode('put oat milk on the list'), 'edit');
+});
+
+test('a single-item edit is never mistaken for a standing preference', () => {
+  // "add grass fed beef" puts one thing in the cart; it does not declare a rule.
+  assert.ok(looksLikeCartCommand('add grass fed beef to my list'));
+  assert.equal(looksLikePreferenceDeclaration('add grass fed beef to my list'), false);
+});
+
+test('a food question is still a question, not a cart rewrite', () => {
+  for (const m of ['what should I make for dinner', 'is wild or farmed salmon better?']) {
+    assert.equal(looksLikeCartCommand(m), false, `should NOT touch the cart: "${m}"`);
+  }
+});

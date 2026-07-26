@@ -4,6 +4,7 @@
 
 import { IS_DEMO, apiBase } from './config.js';
 import { supabase } from './supabase.js';
+import { normalizeBarcode } from './barcode.js';
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -113,7 +114,7 @@ function demoVerdict(isGuest) {
     ],
     fit: {
       summary: isGuest
-        ? "Protein-forward up front, but the back half is calorie-dense filler. That's my read cold. Sign in and I'll read it against your actual targets."
+        ? "Protein-forward up front, but the back half is calorie-dense filler. That's my read cold. Sign in and it gets read against your actual targets."
         : "Covers about 3 of your 7 protein days. The calories are there for the week — the protein isn't.",
       stats: isGuest
         ? ['~148g protein', 'protein-forward', 'high calorie-density']
@@ -199,7 +200,11 @@ function demoScanCard({ personalize = true } = {}) {
   return {
     found: true,
     source: 'off',
-    product: { barcode: 'demo', name: 'Honey Hazelnut Coffee Creamer', brand: 'Demo Co.', image: null, aisle: 'coffee & tea' },
+    // `demo:true` is load-bearing, not decoration. This fixture is the SAME product
+    // for every barcode, so any surface that renders it must say so — otherwise it
+    // reads as a real lookup of whatever the shopper just scanned.
+    demo: true,
+    product: { barcode: 'demo', name: 'Honey Hazelnut Coffee Creamer', brand: 'Sample product', image: null, aisle: 'coffee & tea' },
     verdict,
     ingredients: 'raw honey, canola oil, agave syrup, carrageenan',
     nutrition: null,
@@ -264,9 +269,21 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
     return demoScanCard({ personalize });
   }
 
+  // A barcode we can't validate is never looked up. An invalid/partial decode sent
+  // to a product database is a lottery ticket on someone else's product; the honest
+  // answer is "I couldn't read that," which routes to the label photo.
+  let code = barcode;
+  if (mode === 'barcode') {
+    const norm = normalizeBarcode(barcode);
+    if (!norm.ok) {
+      return { found: false, source: 'none', product: { barcode: null, name: null }, unreadable: true };
+    }
+    code = norm.code;
+  }
+
   const isGuest = await isGuestSession();
 
-  const ex = await scanExtract({ mode, barcode, file, isGuest });
+  const ex = await scanExtract({ mode, barcode: code, file, isGuest });
   if (ex?.gate) return { gate: true, reason: ex.reason };
   if (ex?.error) return { error: true, message: ex.message };
 

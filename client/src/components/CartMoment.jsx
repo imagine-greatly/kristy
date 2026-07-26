@@ -151,9 +151,14 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
           {/* THE COACHING. Always visible on any row she chose. */}
           {item.why && <span style={styles.itemWhy}>{item.why}</span>}
 
-          {(item.source === 'user' || item.refined || flag) && (
+          {((item.source === 'user' && item.category !== 'From your haul') || item.refined || flag) && (
             <span style={styles.itemMeta}>
-              {item.source === 'user' && <span style={styles.tagQuiet}>You added</span>}
+              {/* A haul carry-forward is stored as `user` so it survives a regeneration,
+                  but the shopper didn't type it — its section header already says where
+                  it came from, so it carries no "You added" tag. */}
+              {item.source === 'user' && item.category !== 'From your haul' && (
+                <span style={styles.tagQuiet}>You added</span>
+              )}
               {/* No "From your haul" tag here — these rows already sit under a
                   "From your haul" section header, and the gold rule marks them. */}
               {item.refined && <span style={styles.tagGold}>Kristy&rsquo;s pick</span>}
@@ -251,7 +256,6 @@ export default function CartMoment({
   onUpgrade,
   onScan,
   onAskAisle,
-  onBuildCart,
 }) {
   const [openId, setOpenId] = useState(null);
   const [guidance, setGuidance] = useState({}); // itemId → { state, resp }
@@ -296,30 +300,27 @@ export default function CartMoment({
     setDraft('');
   }
 
-  /* ── Nothing to render yet (fresh device / still loading) ── */
-  if (!list || !Array.isArray(list.items)) {
+  /* ── No trip underway → Kristy ASKS. ──
+     This is the entry state, and it is deliberately not a list. A pre-generated
+     "nutrient-dense whole foods" template was a guess: we had no idea what this
+     particular trip was for. So the cart begins as a question, and the answer is
+     what builds it — conversation in, list out. */
+  const hasItems = list && Array.isArray(list.items) && list.items.length > 0;
+  if (!hasItems) {
     return (
       <div style={styles.wrap}>
         <Header progress={progress} onScan={onScan} />
-        <p style={{ ...kristyVoice, ...styles.intro }}>
-          {loading ? 'Pulling your cart together…' : "Tell me what you're shopping for and I'll build it."}
-        </p>
-        {!loading && (
-          <div style={styles.emptyActions}>
-            {onBuildCart && (
-              <button type="button" style={styles.buildBtn} onClick={onBuildCart}>
-                Build me a cart for&hellip;
-              </button>
-            )}
-            <button type="button" style={styles.ghostBtn} onClick={cart.rebuild}>
-              Build from my preferences
-            </button>
-            {onSetGoal && (
-              <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
-                Tell me what you&rsquo;re shopping for →
-              </button>
-            )}
-          </div>
+        {loading ? (
+          <p style={{ ...kristyVoice, ...styles.intro }}>Pulling your cart together&hellip;</p>
+        ) : (
+          <TripQuestion
+            cart={cart}
+            premium={premium}
+            gated={gated}
+            onUpgrade={onUpgrade}
+            onSetGoal={onSetGoal}
+            goals={goals}
+          />
         )}
       </div>
     );
@@ -333,11 +334,14 @@ export default function CartMoment({
 
       {/* Her one-line read on the whole cart — the blend, named in her voice. */}
       {list.intro && <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>}
-      {note && <p style={{ ...kristyVoice, ...styles.note }}>{note}</p>}
+      {/* On a BUILD the compose summary becomes the cart's intro, so showing the note
+          as well printed her sentence twice, one under the other. The note is for an
+          EDIT ("rice out, couscous in") — a line the intro doesn't already carry. */}
+      {note && note !== list.intro && <p style={{ ...kristyVoice, ...styles.note }}>{note}</p>}
 
       {!goals.length && onSetGoal && (
         <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
-          Tell me what you&rsquo;re shopping for and I&rsquo;ll build around it →
+          Tell me what you&rsquo;re shopping for →
         </button>
       )}
 
@@ -363,7 +367,7 @@ export default function CartMoment({
       )}
       {premium === false && !gated && (
         <Nudge
-          line="This is your basic cart. With a membership I shape it around your focuses and fold in the swaps from your haul."
+          line="This is the basic cart. Membership shapes it around your focuses and folds in the swaps from your haul."
           cta="Unlock the full cart"
           onUpgrade={onUpgrade}
         />
@@ -414,11 +418,122 @@ export default function CartMoment({
         </button>
       )}
 
-      <button type="button" style={styles.rebuild} onClick={cart.rebuild}>
-        Rebuild for my preferences
-      </button>
+      {/* The way back to the question. A returning shopper with a live cart is never
+          re-asked — this is how they say "that trip's done, start me over." */}
+      <div style={styles.footRow}>
+        <button
+          type="button"
+          style={styles.rebuild}
+          onClick={() => {
+            if (progress.total > 0 && !window.confirm('Start a new trip? This clears the cart you have.')) return;
+            cart.startNewTrip();
+            setOpenId(null);
+          }}
+        >
+          Start a new trip
+        </button>
+        <button type="button" style={styles.rebuildGhost} onClick={cart.rebuild}>
+          Rebuild for my preferences
+        </button>
+      </div>
 
       <AmbientIsm style={{ marginTop: 14 }} />
+    </div>
+  );
+}
+
+/* ═══════════════════ The entry state: a question, not a list ═══════════════════
+   "We have no idea what the user is shopping for" was literally true — the cart
+   generated a nutrient-dense default before Kristy had asked a single thing. So the
+   trip now starts the way it would with a person: she asks, you answer, and the
+   answer is what builds the cart.
+
+   The quick-taps SEED the field rather than firing immediately. That keeps the
+   answer editable — "Quick weeknight dinners" becomes "Quick weeknight dinners, no
+   fish, my kid eats none of it" with one more sentence — and it teaches the shape of
+   a good answer without making the input feel like a form. */
+const TRIP_SEEDS = [
+  'Quick weeknight dinners',
+  'A clean week',
+  'Stock the pantry',
+  'Just a few things',
+];
+
+function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
+  const [text, setText] = useState('');
+  const [err, setErr] = useState('');
+  const busy = cart.busy === 'build';
+
+  async function submit(e) {
+    e?.preventDefault();
+    const answer = text.trim();
+    if (!answer || busy) return;
+    setErr('');
+    const res = await cart.compose(answer, 'build');
+    if (res?.ok) setText('');
+    else if (!res?.gated) setErr("I couldn't put that together just now — try that once more.");
+  }
+
+  return (
+    <div style={styles.ask}>
+      <p style={{ ...kristyVoice, ...styles.askQ }}>What are we shopping for today?</p>
+
+      <form style={styles.askForm} onSubmit={submit}>
+        <input
+          style={styles.askInput}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Three dinners, something my kid will eat…"
+          aria-label="What this trip is for"
+          disabled={busy}
+        />
+        <button type="submit" style={styles.askGo} disabled={!text.trim() || busy}>
+          {busy ? 'Building…' : 'Build it'}
+        </button>
+      </form>
+
+      {/* Starting points — a tap fills the field, it doesn't submit for you. */}
+      <div style={styles.seeds}>
+        {TRIP_SEEDS.map((s) => (
+          <button
+            key={s}
+            type="button"
+            style={styles.seed}
+            onClick={() => setText(s)}
+            disabled={busy}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
+
+      {busy && <AmbientIsm style={{ marginTop: 16 }} />}
+      {err && <p style={styles.askErr}>{err}</p>}
+
+      {/* Free tier: building from a sentence is a membership capability, so she never
+          dead-ends them — the goal-templated cart is still one tap away. */}
+      {(gated || premium === false) && (
+        <div style={styles.askFree}>
+          <p style={{ ...kristyVoice, ...styles.askFreeLine }}>
+            Building a cart from a sentence is part of a membership — but I can still
+            put together a starting cart from what you&rsquo;ve told me.
+          </p>
+          <button type="button" style={styles.ghostBtn} onClick={cart.rebuild}>
+            Build from my preferences
+          </button>
+          {onUpgrade && (
+            <button type="button" style={styles.linkBtn} onClick={onUpgrade}>
+              See what membership adds →
+            </button>
+          )}
+        </div>
+      )}
+
+      {!goals.length && onSetGoal && (
+        <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
+          Set how you like to eat →
+        </button>
+      )}
     </div>
   );
 }
@@ -575,6 +690,37 @@ const styles = {
   rebuild: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: 999, border: `1px solid ${colors.border}`, background: 'transparent', color: colors.textMuted, fontFamily: fonts.ui, fontWeight: 600, fontSize: 13, cursor: 'pointer' },
 
   emptyActions: { display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch' },
+
+  /* ── The entry question ── */
+  ask: { display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 8 },
+  askQ: { margin: 0, fontSize: 23, lineHeight: 1.35, color: colors.textPrimary },
+  askForm: { display: 'flex', gap: 8, alignItems: 'stretch' },
+  askInput: {
+    flex: 1, minWidth: 0, padding: '13px 15px', borderRadius: 12,
+    border: `1px solid ${colors.borderGold}`, background: colors.surface,
+    color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none',
+  },
+  askGo: {
+    flex: '0 0 auto', padding: '13px 18px', borderRadius: 12, border: 'none',
+    background: colors.accentGold, color: colors.bgDeep,
+    fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
+  },
+  seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
+  seed: {
+    padding: '9px 14px', borderRadius: 999, border: `1px solid ${colors.border}`,
+    background: colors.surface, color: colors.textSecondary,
+    fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
+  },
+  askErr: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.error },
+  askFree: {
+    display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start',
+    marginTop: 6, padding: '14px 16px', borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+  },
+  askFreeLine: { margin: 0, fontSize: 15.5, lineHeight: 1.5, color: colors.textPrimary },
+
+  footRow: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' },
+  rebuildGhost: { padding: '9px 16px', borderRadius: 999, border: 'none', background: 'transparent', color: colors.textMuted, fontFamily: fonts.ui, fontWeight: 600, fontSize: 13, cursor: 'pointer' },
   buildBtn: { padding: '13px 18px', borderRadius: 12, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
   ghostBtn: { padding: '12px 18px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontWeight: 600, fontSize: 14.5, cursor: 'pointer' },
 };

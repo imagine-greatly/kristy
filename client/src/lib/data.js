@@ -304,7 +304,7 @@ export async function loadHaul() {
     const read = week.length
       ? "Solid start — but this haul is leaning on swaps. Want a couple of clean protein anchors on next week's list?"
       : '';
-    return { trip, week, distribution, read };
+    return { trip, week, distribution, read, carryForward: demoCarryForward(week) };
   }
   const empty = { trip: [], week: [], distribution: { approved: 0, note: 0, swap: 0, total: 0 }, read: '' };
   try {
@@ -318,6 +318,86 @@ export async function loadHaul() {
     return await res.json();
   } catch {
     return empty;
+  }
+}
+
+/* ───────── Haul → the next cart ─────────
+   The trip that just ended is the best information available about the next one.
+   The server computes the carry-forwards (deterministically, from the shopper's own
+   scans + the rows they never checked off) and validates whatever comes back against
+   that set, so this transport only ever passes along names it was offered. */
+
+const KEEP_TIERS = new Set(['approved', 'approved_with_note', 'use_with_intention']);
+
+// Demo mirror of server/lib/haul.js buildCarryForward. Reads the cached cart for the
+// "never made it in" half, so the demo shows the same loop the server computes.
+function demoCarryForward(week = []) {
+  const seen = new Set();
+  const once = (name) => {
+    const k = String(name || '').trim().toLowerCase();
+    if (!k || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  };
+
+  const keep = [];
+  const replace = [];
+  for (const s of week) {
+    const name = String(s.product_name || '').trim();
+    if (!name || !once(name)) continue;
+    (KEEP_TIERS.has(s.tier) ? keep : replace).push({ name, tier: s.tier });
+  }
+
+  let missed = [];
+  try {
+    const cart = JSON.parse(localStorage.getItem('kristy:list') || 'null');
+    missed = (cart?.items || [])
+      .filter((i) => !i.checked && i.source !== 'swap' && i.source !== 'scan')
+      .map((i) => String(i.name || '').trim())
+      .filter((n) => n && once(n))
+      .map((name) => ({ name }));
+  } catch {
+    /* ignore */
+  }
+  return { keep, replace, missed };
+}
+
+/** Start next week's cart from this haul. `accept` = the chosen carry-forward names. */
+export async function startNextCart(accept) {
+  if (IS_DEMO) {
+    const names = Array.isArray(accept) ? accept : [];
+    if (!names.length) return { list: null };
+    const list = {
+      goal: null,
+      intro: 'Starting from last week — what you kept, and what never made it in.',
+      items: names.map((name) => ({
+        id: rid(),
+        name,
+        category: 'From your haul',
+        checked: false,
+        source: 'user',
+      })),
+    };
+    try {
+      localStorage.setItem('kristy:list', JSON.stringify(list));
+    } catch {
+      /* ignore */
+    }
+    return { list };
+  }
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    const res = await fetch(`${apiBase}/api/haul/next`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session?.access_token}` },
+      body: JSON.stringify({ accept: Array.isArray(accept) ? accept : undefined }),
+    });
+    if (!res.ok) return { list: null };
+    return await res.json();
+  } catch {
+    return { list: null };
   }
 }
 

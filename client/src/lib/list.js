@@ -86,10 +86,18 @@ export async function fetchList({ goal, goals, nonNegotiables = [], focuses = []
   try {
     const { list, premium } = await authFetch('/api/list', { method: 'GET' });
     const ok = list && Array.isArray(list.items);
-    if (ok) saveCache(list);
-    return { list: ok ? list : loadCachedList(), premium: !!premium };
+    if (ok) {
+      saveCache(list);
+      return { list, premium: !!premium };
+    }
+    // The server is authoritative and says there is NO cart — the shopper hasn't told
+    // Kristy what this trip is for yet. That must not fall back to a stale cache, or
+    // the question never gets asked. Clear it and report the honest empty.
+    saveCache(null);
+    return { list: null, premium: !!premium };
   } catch {
-    // Offline / pre-migration → render the cache so the surface still works.
+    // Offline / pre-migration → render the cache so the surface still works. This is
+    // the only path that falls back, because here we genuinely don't know.
     return { list: loadCachedList(), premium: false };
   }
 }
@@ -130,7 +138,9 @@ export async function composeList({ instruction, mode = 'edit', prefs = {} } = {
   if (!text) return { list: null, summary: '' };
 
   if (IS_DEMO) {
-    const cur = loadCachedList() || generateLocal({ ...prefs, premium: true });
+    // No cached cart → build from EMPTY, not from a generated template (mirrors the
+    // server): the shopper's sentence is the whole input.
+    const cur = loadCachedList() || { goal: null, intro: '', items: [] };
     const { add, remove, summary } = demoCompose(text, mode);
     let list;
     if (mode === 'build') {
@@ -179,7 +189,23 @@ function demoCompose(text, mode) {
     const [, from, to] = swap;
     return { add: items([to.trim()]), remove: [from.trim()], summary: `Swapped the ${from.trim()} for ${to.trim()}.` };
   }
-  if (/taco/.test(t)) return { add: items(['Ground beef', 'Tortillas', 'Bell peppers', 'Onion', 'Shredded cheese', 'Salsa']), remove: [], summary: 'Added taco night — beef, tortillas, peppers, onion, cheese, and salsa.' };
+  if (/taco/.test(t)) return { add: items(['Ground beef', 'Tortillas', 'Bell peppers', 'Onion', 'Shredded cheese', 'Salsa']), remove: [], summary: 'Taco night — beef, tortillas, peppers, onion, cheese, salsa.' };
+
+  // Trip archetypes — the answers to "what are we shopping for today?". The demo has
+  // no model, so these stand in for a real build; without them a whole-trip answer
+  // ("a clean week") produced one nonsense row named after the sentence itself.
+  // Names only, and named the way a label reads — no brands, no claims (Block N/O).
+  const TRIPS = [
+    { re: /holistic|grass.?fed|pasture|raw milk|raw dairy/, names: ['Pasture-raised eggs', 'Grass-fed ground beef', 'Whole-milk plain yogurt', 'Butter from grass-fed cream', 'Wild-caught salmon', 'Bone-in chicken thighs', 'Extra-virgin olive oil, dark bottle', 'Leafy greens', 'Winter squash', 'Raw honey'], summary: "Built to the whole-food end of every shelf — pasture eggs, grass-fed beef, real butter. Brands vary by store, so those are the words to look for on the package." },
+    { re: /weeknight|quick|fast|no time|30 min/, names: ['Rotisserie chicken', 'Pre-washed salad greens', 'Cherry tomatoes', 'Microwave brown rice pouches', 'Eggs', 'Frozen stir-fry vegetables', 'Canned chickpeas', 'Extra-virgin olive oil'], summary: 'Five dinners that come together fast — rotisserie chicken, rice pouches, frozen veg to fall back on.' },
+    { re: /clean week|eat clean|cleaner|whole ?food/, names: ['Eggs', 'Plain Greek yogurt', 'Chicken thighs', 'Wild-caught salmon', 'Leafy greens', 'Sweet potatoes', 'Avocados', 'Extra-virgin olive oil', 'Rolled oats', 'Almonds'], summary: 'A clean week — whole ingredients, nothing with a label you need me to read.' },
+    { re: /pantry|stock up|staples|restock/, names: ['Extra-virgin olive oil', 'Canned tomatoes', 'Dried lentils', 'Brown rice', 'Rolled oats', 'Canned tuna', 'Peanut butter, just peanuts', 'Onions', 'Garlic', 'Sea salt'], summary: 'Pantry stocked — the things that make a dinner possible on a night you have nothing.' },
+    { re: /few things|just a few|quick trip|couple of things/, names: ['Eggs', 'Milk', 'Bananas', 'Leafy greens', 'Bread'], summary: 'Just the few — in and out.' },
+    { re: /protein|muscle|lift/, names: ['Chicken breast', 'Plain Greek yogurt', 'Eggs', 'Ground beef', 'Canned tuna', 'Cottage cheese', 'Lentils'], summary: 'Protein in every meal without thinking about it.' },
+  ];
+  for (const trip of TRIPS) {
+    if (trip.re.test(t)) return { add: items(trip.names), remove: [], summary: trip.summary };
+  }
   // "add A, B and C" / "get ..." / "need ..."
   const m = t.match(/(?:add|get|need|grab|put)\s+(.+)/);
   const phrase = (m ? m[1] : text).replace(/\bfor\b.*$/, '').trim();
@@ -390,7 +416,7 @@ const PICKS = {
 
 const TEMPLATE_PICKS = {
   eating_cleaner: {
-    intro: 'Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.',
+    intro: 'Built for eating cleaner — whole foods first, and the ultra-processed stuff left off.',
     picks: ['chicken', 'eggs', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo', 'almonds'],
   },
   high_protein: {
@@ -430,7 +456,7 @@ const TEMPLATE_PICKS = {
     picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'rice', 'steel_cut_oats', 'bananas', 'spinach', 'beans', 'evoo'],
   },
   _default: {
-    intro: "Here's a clean starting list. Tell me what you're shopping for and I'll tailor it to you.",
+    intro: "Here's a clean starting list. Tell me what you're shopping for and it sharpens fast.",
     picks: ['chicken', 'eggs', 'spinach', 'berries', 'steel_cut_oats', 'evoo'],
   },
 };
@@ -556,7 +582,7 @@ const CONSTRAINT_INTRO = {
   budget: 'easy on the receipt',
   short_on_time: 'fast — little to no cooking',
   picky_kids: 'kid-friendly',
-  no_kitchen: 'no-cook where I could',
+  no_kitchen: 'no-cook wherever possible',
   cooking_for_one: 'portioned for one',
 };
 function constraintClauseLocal(constraints) {
@@ -751,8 +777,7 @@ function loadOrGenerateDemo({ goal, goals, nonNegotiables, focuses, constraints 
     return stored;
   }
 
-  const list = { ...generateLocal({ goal, goals, nonNegotiables, focuses, constraints, nextList: pending, signals: loadSignals(), premium: true }), sig };
-  write(NEXT_KEY, []);
-  saveCache(list);
-  return list;
+  // No cached cart → NO CART. The demo mirrors the server: we don't invent a trip
+  // before the shopper says what it's for. The cart surface asks instead.
+  return null;
 }
