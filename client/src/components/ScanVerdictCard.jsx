@@ -211,7 +211,7 @@ function ReadSlot({ needsGoal, pickingGoal, upsell, onPickGoal, onUnlock, unlock
   if (pickingGoal) {
     return (
       <section style={styles.readSlot}>
-        <p style={{ ...kristyVoice, ...styles.askLine }}>Reading it for you&hellip;</p>
+        <p style={{ ...kristyVoice, ...styles.askLine }}>Reading it&hellip;</p>
       </section>
     );
   }

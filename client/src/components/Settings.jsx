@@ -26,7 +26,7 @@ function PrefSummary({ profile }) {
   if (!items.length) {
     return (
       <p className="set-sub" style={{ margin: '0 0 10px' }}>
-        Not set yet — tell Kristy what you&rsquo;re shopping for and she&rsquo;ll build around it.
+        Not set yet — tell Kristy what you&rsquo;re shopping for.
       </p>
     );
   }

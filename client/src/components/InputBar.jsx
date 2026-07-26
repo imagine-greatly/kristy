@@ -13,7 +13,7 @@ export default function InputBar({
   disabled,
   onBarcode,
   onVerdictFile,
-  placeholder = 'Ask me anything, or scan it.',
+  placeholder = 'Ask anything, or scan it.',
   // Bumped by a tap affordance that hands off to the composer ("Build me a cart for…").
   focusSignal = 0,
 }) {

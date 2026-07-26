@@ -204,7 +204,7 @@ const PICKS = {
 // reason are authored ONCE and stay consistent everywhere it appears.
 const TEMPLATE_PICKS = {
   eating_cleaner: {
-    intro: 'Built for eating cleaner — whole foods first, and I kept the ultra-processed stuff off the list.',
+    intro: 'Built for eating cleaner — whole foods first, and the ultra-processed stuff left off.',
     picks: ['chicken', 'eggs', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo', 'almonds'],
   },
   high_protein: {
@@ -244,7 +244,7 @@ const TEMPLATE_PICKS = {
     picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'rice', 'steel_cut_oats', 'bananas', 'spinach', 'beans', 'evoo'],
   },
   _default: {
-    intro: "Here's a clean starting list. Tell me what you're shopping for and I'll tailor it to you.",
+    intro: "Here's a clean starting list. Tell me what you're shopping for and it sharpens fast.",
     picks: ['chicken', 'eggs', 'spinach', 'berries', 'steel_cut_oats', 'evoo'],
   },
 };
@@ -396,7 +396,7 @@ const CONSTRAINT_INTRO = {
   budget: 'easy on the receipt',
   short_on_time: 'fast — little to no cooking',
   picky_kids: 'kid-friendly',
-  no_kitchen: 'no-cook where I could',
+  no_kitchen: 'no-cook wherever possible',
   cooking_for_one: 'portioned for one',
 };
 

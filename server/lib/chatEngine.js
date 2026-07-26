@@ -25,7 +25,7 @@ const MACRO_CORRECTION =
 
 // Last-resort line if even a corrected + stripped reply has nothing left.
 const SAFE_FALLBACK =
-  "Let's keep it on the food — tell me what you're deciding between and I'll give you my straight read.";
+  "Let's keep it on the food. What are you deciding between?";
 
 async function runOnce(system, messages) {
   const completion = await anthropic.messages.create({

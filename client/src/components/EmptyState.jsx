@@ -15,8 +15,8 @@ const GREETINGS = {
 };
 
 const SUBTITLES = [
-  'Ask me anything, or scan a label.',
-  "Tell me what you're shopping for and I'll build around it.",
+  'Ask anything, or scan a label.',
+  "Tell me what you're shopping for.",
   'No forms. Just talk.',
   'Scan it, ask about it, or build a list.',
 ];

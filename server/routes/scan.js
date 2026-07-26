@@ -22,7 +22,7 @@ import { readLabelIngredients } from '../lib/labelVision.js';
 // Kristy-voiced line when a barcode/label yields no readable ingredients — points
 // the user at the manual fallback instead of dead-ending.
 const NO_INGREDIENTS =
-  "I can't read the ingredients on that one. Type the product name and I'll take it from there.";
+  "I can't read the ingredients on that one. Type the product name instead.";
 const ERROR_MSG = "That scan didn't go through — give it another try in a sec.";
 
 function readLabel(reqFile) {

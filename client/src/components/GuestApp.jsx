@@ -25,14 +25,14 @@ const GATE_AFTER = 4;
 
 const INTRO = {
   greeting: "I'm Kristy.",
-  subtitle: "Ask me anything, or scan a label — no account needed to start.",
+  subtitle: "Ask anything, or scan a label — no account needed to start.",
 };
 const CAP_LINE =
-  "I've been paying attention. Sign in and I'll remember all of it — your scans, your list, and what you're shopping for.";
+  "I've been paying attention. Sign in and none of it gets thrown away — your scans, your list, and what you're shopping for.";
 const LIMIT_LINE =
-  "That's plenty for a taste. Sign in to keep going, and I'll start remembering your scans and your list.";
+  "That's plenty for a taste. Sign in to keep going — your scans and your list stick from there.";
 const INVITE_LINE =
-  "Sign in whenever you're ready and I'll start remembering everything — your scans, your haul, and what you're shopping for.";
+  "Sign in whenever you're ready — your scans, your haul, and what you're shopping for all stick from there.";
 
 // The stateless, gated app. Guests can SCAN and see the universal layer (what's in
 // the food) for free — the acquisition hook. The goal-personalized note and the
@@ -200,7 +200,7 @@ export default function GuestApp({ onOpenIngredient }) {
               locked
               icon={<ListIcon size={26} />}
               title="Your list"
-              lockLine="Lists are a member thing — sign in and I'll build one around your goal."
+              lockLine="Lists are a member thing. Sign in, name a goal, and the cart comes built around it."
               ctaLabel="Sign in"
               onCta={invite}
             />

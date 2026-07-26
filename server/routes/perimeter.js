@@ -26,7 +26,7 @@ const ERROR_MSG =
 
 // The withheld personalized read, in Kristy's voice (named value, not "go premium").
 const PERIMETER_UPSELL =
-  "That's the honest rundown. Want my read for YOUR cart — wild vs farmed against your goal, your budget, your week — and a swap I'll drop on your list? That part's for members.";
+  "That's the honest rundown. Want my read for YOUR cart — wild vs farmed against your goal, your budget, your week — with the swap landing straight on your list? That part's for members.";
 
 function readPrefs(body = {}) {
   const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);

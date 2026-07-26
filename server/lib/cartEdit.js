@@ -107,4 +107,4 @@ export function buildCart(current, add = [], { goal, summary } = {}) {
 // The withheld conversational-building capability, in Kristy's voice (a named value,
 // not "go premium"). Free users still get a real basic cart + manual add/remove.
 export const LIST_COMPOSE_UPSELL =
-  "Building your cart from a sentence — 'add taco night', 'three high-protein dinners for four' — is part of a membership. Want me to run with it?";
+  "Building your cart from a sentence — 'add taco night', 'three high-protein dinners for four' — is part of a membership. Say the word and it's on.";

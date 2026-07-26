@@ -16,11 +16,11 @@ import { detectWeightLog } from './weightLog.js';
 // client — the line is what changes.
 const LINES = {
   weight:
-    "That's a weigh-in — and a single number only means something once I can track it over time. Sign in and I'll start your trend, beginning with this one.",
+    "That's a weigh-in — and a single number only means something once there's a trend behind it. Sign in and the trend starts here, with this one.",
   weekly:
-    "A weekly read only works if I've been keeping the week. Sign in and I'll start remembering your days — then I can actually pull it together for you.",
+    "A weekly read only works if the week was kept. Sign in and it starts building from today.",
   recall:
-    "That's where I need to remember you. Sign in and I'll start keeping track — starting with this.",
+    "That's where I need to remember you. Sign in and it all sticks from here — starting with this.",
 };
 
 // Explicit recall of a past day / prior logging.

@@ -92,7 +92,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             <>
               <h2 style={styles.prompt}>What are you shopping for?</h2>
               <p style={styles.sub}>
-                Pick all that fit &mdash; most people are a few at once. Or just tell me and I&rsquo;ll set it up.
+                Pick all that fit &mdash; most people are a few at once. Or just say it in your own words.
               </p>
 
               {/* Natural language LEADS — type your whole philosophy instead of tapping. */}
@@ -135,8 +135,8 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
 
           {step === 1 && (
             <>
-              <h2 style={styles.prompt}>Anything you want me to keep an eye on?</h2>
-              <p style={styles.sub}>Optional. Turn on what matters to you &mdash; I&rsquo;ll flag it as we shop.</p>
+              <h2 style={styles.prompt}>Anything to keep an eye on?</h2>
+              <p style={styles.sub}>Optional. Turn on what matters to you &mdash; it gets flagged on every product.</p>
               <ChipRow options={FOCUSES} selected={focuses} onToggle={(v) => toggle(focuses, setFocuses, v)} />
               {focuses.length > 0 && <p style={styles.note}>{FOCUS_DISCLAIMER}</p>}
             </>
@@ -146,7 +146,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             <>
               <h2 style={styles.prompt}>Any hard lines?</h2>
               <p style={styles.sub}>
-                Optional. Things you never want in the cart &mdash; I&rsquo;ll hold them on every product.
+                Optional. Things you never want in the cart &mdash; held on every product, no exceptions.
               </p>
               <ChipRow options={NON_NEGOTIABLES} selected={nonNegotiables} onToggle={(v) => toggle(nonNegotiables, setNonNegotiables, v)} />
             </>
@@ -165,8 +165,8 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
               <h2 style={styles.prompt}>Here&rsquo;s your setup.</h2>
               <p style={styles.sub}>
                 {goals.length
-                  ? `I'll shop toward ${naturalList(goals.map(labelOf).map((s) => s.toLowerCase()))}.`
-                  : 'Pick at least one goal so I know what to shop toward.'}
+                  ? `Shopping toward ${naturalList(goals.map(labelOf).map((s) => s.toLowerCase()))}.`
+                  : 'Pick at least one goal to shop toward.'}
                 {' '}You can change any of it any time from the header.
               </p>
               <ConfirmGroup title="Shopping toward" values={goals} labelOf={labelOf} />

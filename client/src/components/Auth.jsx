@@ -63,7 +63,7 @@ const RESEND_LOCK = 30;
  * just needs to get the user through verification. Reused by the full-screen
  * Auth wall AND the guest sign-in gate — one source of truth for sign-in.
  */
-export function SignInForm({ note = "No password — I'll text you a 6-digit code." }) {
+export function SignInForm({ note = 'No password — just a 6-digit code by text.' }) {
   const [step, setStep] = useState('phone'); // 'phone' | 'code'
   const [phone, setPhone] = useState('');
   const [sentTo, setSentTo] = useState(''); // E.164 the code was sent to

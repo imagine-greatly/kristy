@@ -79,7 +79,7 @@ export default function GoalSwitcher({
             <GoldThread />
           </div>
 
-          <h3 style={styles.section}>Anything you want me to keep an eye on?</h3>
+          <h3 style={styles.section}>Anything to keep an eye on?</h3>
           <p style={styles.sub}>Optional. Turn on what matters to you — I&rsquo;ll flag it as we shop.</p>
           <div style={styles.chips}>
             {FOCUSES.map((f) => {

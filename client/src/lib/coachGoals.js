@@ -20,7 +20,7 @@ export const COACH_GOALS = [
     noteLabel: 'eating cleaner',
     readLabel: 'clean eating',
     blurb: 'Fewer additives, more real food.',
-    payoff: "Eating cleaner means fewer mystery ingredients. Hand me a label and I'll tell you what's real and what's filler.",
+    payoff: "Eating cleaner comes down to fewer mystery ingredients. Scan a label — what's real and what's filler, line by line.",
   },
   {
     value: 'high_protein',
@@ -29,7 +29,7 @@ export const COACH_GOALS = [
     noteLabel: 'high-protein shopping',
     readLabel: 'high-protein shopping',
     blurb: "Protein that pulls its weight, every trip.",
-    payoff: "Shopping high-protein? I'll tell you fast whether a product's pulling its weight or just taking up cart space.",
+    payoff: "Shopping high-protein: a product either pulls its weight or it's taking up cart space. Every scan settles it.",
   },
   {
     value: 'low_sugar',
@@ -38,7 +38,7 @@ export const COACH_GOALS = [
     noteLabel: 'keeping added sugar down',
     readLabel: 'low-sugar shopping',
     blurb: 'Keep the added sugar out of the cart.',
-    payoff: "Keeping sugar down — I'll catch the added sugar hiding under ten different names so you don't have to.",
+    payoff: "Keeping sugar down. Added sugar hides under about sixty names on a label — every one of them gets caught.",
   },
   {
     value: 'family',
@@ -47,7 +47,7 @@ export const COACH_GOALS = [
     noteLabel: 'feeding your family',
     readLabel: 'family',
     blurb: "What ends up in everyone's pantry.",
-    payoff: "Feeding a family means what ends up in everyone's pantry. I'll help you fill the cart with stuff the whole house is better off with.",
+    payoff: "Feeding a family is about what ends up in everyone's pantry — staples the whole house actually eats, in cleaner versions.",
   },
   {
     value: 'gut_health',
@@ -56,7 +56,7 @@ export const COACH_GOALS = [
     noteLabel: 'gut health',
     readLabel: 'gut health',
     blurb: 'Feed the gut — fewer additives, more whole food.',
-    payoff: "For your gut I get picky about additives and emulsifiers. I'll point you at the cleaner shelf.",
+    payoff: "For the gut, additives and emulsifiers are where I get picky. The cleaner shelf is usually one over.",
   },
   {
     value: 'avoiding_junk',
@@ -65,7 +65,7 @@ export const COACH_GOALS = [
     noteLabel: 'avoiding the junk',
     readLabel: 'junk-free cart',
     blurb: 'Skip the ultra-processed stuff.',
-    payoff: "Avoiding the junk — I'll flag the ultra-processed stuff on sight and point you to a better pick.",
+    payoff: "Avoiding the junk. The ultra-processed stuff gets flagged on sight, with a better pick named in the same breath.",
   },
   {
     value: 'weight_loss',
@@ -74,7 +74,7 @@ export const COACH_GOALS = [
     noteLabel: 'losing weight',
     readLabel: 'weight loss',
     blurb: 'Food that fills you up, not out.',
-    payoff: "Losing weight starts in the cart. I'll steer you toward the stuff that actually keeps you full.",
+    payoff: "Losing weight starts in the cart. The stuff that actually keeps you full is the whole game.",
   },
   {
     value: 'muscle_strength',
@@ -83,7 +83,7 @@ export const COACH_GOALS = [
     noteLabel: 'building muscle',
     readLabel: 'muscle & strength',
     blurb: 'Protein first, quality close behind.',
-    payoff: "Building strength — I'll check the protein's real and the rest of the label isn't undoing it.",
+    payoff: "Building strength. The protein has to be real, and the rest of the label can't be undoing it.",
   },
   {
     value: 'pregnancy_postpartum',
@@ -93,7 +93,7 @@ export const COACH_GOALS = [
     readLabel: 'this season',
     blurb: "Extra careful, for a season.",
     // Preference framing ONLY. Never implies a medical state, never advises.
-    payoff: "You want to be extra careful right now — I'll hold a tighter line on additives. For anything medical, your doctor and a dietitian, not me.",
+    payoff: "Extra careful this season — a tighter line on additives. For anything medical, your doctor and a dietitian, not me.",
   },
   {
     value: 'athlete_performance',
@@ -102,7 +102,7 @@ export const COACH_GOALS = [
     noteLabel: 'eating for performance',
     readLabel: 'performance',
     blurb: 'Fuel that earns its place.',
-    payoff: "Eating for performance — I'll tell you fast whether something's real fuel or just marketed that way.",
+    payoff: "Eating for performance. Either it's real fuel or it's marketed that way — the label settles which.",
   },
 ];
 
@@ -178,7 +178,7 @@ export const CONSTRAINTS = [
 // Section copy for the constraints picker (onboarding + switcher).
 export const CONSTRAINTS_SECTION = {
   title: 'What are you working with?',
-  sub: "Tell me your situation and I'll shop around it. Optional.",
+  sub: "Optional. Whatever you're working with, the cart works around it.",
 };
 
 // The two retired goals map to a constraint. When a stored profile still holds one of
@@ -211,7 +211,7 @@ export const constraintLabel = (v) => CONSTRAINTS.find((c) => c.value === v)?.la
 
 // The one-time, in-voice disclaimer shown the first time ANY focus is turned on.
 export const FOCUS_DISCLAIMER =
-  "Quick honesty: I'm a coach, not your doctor. If you're managing something a doctor's already told you about, keep them and a dietitian in the loop — I'm here to help you shop smarter, not to treat anything.";
+  "Quick honesty: I'm a coach, not your doctor. If you're managing something a doctor's already told you about, keep them and a dietitian in the loop. This is shopping, not treatment.";
 
 // Acknowledgement is stored per-device so the disclaimer shows once, then never again.
 const ACK_KEY = 'kristy:focusDisclaimerAck';

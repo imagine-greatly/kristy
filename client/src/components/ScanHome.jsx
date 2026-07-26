@@ -25,8 +25,8 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
       </h1>
       <p style={styles.sub}>
         {guest
-          ? "Scan a product and I'll tell you what's really in it — no account needed to look."
-          : "Scan a product and I'll read it against your goal, right here in the aisle."}
+          ? "Scan a product — what's really in it, ingredient by ingredient. No account needed to look."
+          : 'Scan it — the verdict against your goal, right here in the aisle.'}
       </p>
 
       {/* ONE reflex action, then two quiet fallbacks.
@@ -69,8 +69,8 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
       </div>
 
       <p style={styles.aisleNote}>
-        Produce, the counter, the bulk bins — she has sourced answers for the parts with
-        no label, too.
+        Produce, the counter, the bulk bins — the half of the store with no label has
+        sourced answers too.
       </p>
 
       {onOpenChat && (
