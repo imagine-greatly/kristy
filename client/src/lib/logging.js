@@ -235,6 +235,10 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
 
   const form = new FormData();
   form.append('image', file);
+  // When this photo FOLLOWS A BARCODE MISS, the code rides along so the read is
+  // retained under it — that barcode then resolves from Kristy's own store next
+  // time, for everyone. This is the self-healing half of the data strategy.
+  if (barcode) form.append('barcode', String(barcode));
   const res = await fetch(`${apiBase}${base}/scan/label`, {
     method: 'POST',
     headers: { ...(isGuest ? {} : await authHeader()) }, // browser sets the multipart boundary
@@ -247,13 +251,15 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
 // escalation; guest → universal layer only (or a { gate } soft-gate).
 // `personalize:false` (authed, no stored goal) → universal layer + the in-card
 // goal ask, no note composed and no free taste consumed.
-async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize = true, readComplete = true, isGuest }) {
+async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize = true, readComplete = true, barcode = null, isGuest }) {
   const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
   // `readComplete:false` (a cut-off label photo) rides on the guest path too — a
   // partial read must not earn a clean approval for anyone.
+  // `barcode` is RETENTION ONLY — the server stamps the resulting tier onto its own
+  // product row with it. Nothing about the verdict is derived from it.
   const body = isGuest
-    ? { ingredients, readComplete }
-    : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete };
+    ? { ingredients, readComplete, ...(barcode ? { barcode } : {}) }
+    : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete, ...(barcode ? { barcode } : {}) };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
@@ -281,6 +287,13 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
       return { found: false, source: 'none', product: { barcode: null, name: null }, unreadable: true };
     }
     code = norm.code;
+  } else if (barcode) {
+    // A label photo answering a barcode miss. The code only decides which row the
+    // read is FILED UNDER, but it still has to be a real GTIN — filing a good read
+    // under a garbage key pollutes the catalog for everyone. Unvalidated → the photo
+    // is still read, just retained by product hash instead.
+    const norm = normalizeBarcode(barcode);
+    code = norm.ok ? norm.code : null;
   }
 
   const isGuest = await isGuestSession();
@@ -306,7 +319,7 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
   // A cut-off panel is read AGAINST the engine anyway — the flags it found are real —
   // but it can't earn a clean approval. The server enforces that; this just tells it.
   const partialRead = !!ex?.partialRead;
-  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete: !partialRead, isGuest });
+  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete: !partialRead, barcode: ex?.product?.barcode || null, isGuest });
   if (verdict?.gate) return { gate: true, reason: verdict.reason };
   if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
 

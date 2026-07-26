@@ -677,6 +677,13 @@ export default function App() {
     // Takes a ticket for the same reason: this path is most often reached FROM a
     // barcode miss, so the barcode's own request may still be in flight behind it.
     const ticket = ++scanSeqRef.current;
+    // THE SELF-HEALING HANDOFF. If this photo is answering a barcode that missed,
+    // carry that code along: the read gets retained under it, so the same barcode
+    // resolves from Kristy's own store next time — for every shopper, not just this
+    // one. Read before setScan, since that clears the miss we're reading from.
+    const missedBarcode = scan?.found === false && scan.mode === 'barcode'
+      ? scan.product?.barcode || null
+      : null;
     setFocusOffer(null);
     setScan({ loading: true, mode: 'label' });
     trackEvent('scan', { mode: 'label' });
@@ -684,6 +691,7 @@ export default function App() {
       const result = await runProductScan({
         mode: 'label',
         file,
+        barcode: missedBarcode,
         goal: goalNoteLabel(goalsOf(profile)),
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],

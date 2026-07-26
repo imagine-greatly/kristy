@@ -7,6 +7,7 @@ import { composeNote } from '../lib/verdictNote.js';
 import { selectCardIsm, ismContext } from '../lib/education.js';
 import { premiumForReq, decidePersonalization, FREE_NOTE_LIMIT } from '../lib/subscription.js';
 import { getFreeNotesUsed, incrementFreeNotesUsed } from '../lib/store.js';
+import { stampTier } from '../lib/productStore.js';
 
 // Kristy's Verdict — POST an ingredient list + the user's goal, get a claim-locked
 // verdict. The deterministic Step 1 engine scores the tier and builds the factual
@@ -55,6 +56,11 @@ function readBody(body = {}) {
     // vision reported a cut-off / partly-obscured panel. Defaults true so every
     // existing caller (and the barcode path) is unaffected.
     readComplete: body.readComplete !== false,
+    // RETENTION ONLY. The barcode is echoed back so the tier this scan produced can
+    // be stamped onto Kristy's own product row for later curation. It is deliberately
+    // NOT read by anything that judges: the verdict comes from `ingredients` alone,
+    // so a wrong or forged barcode here cannot change a single word of the read.
+    barcode: typeof body.barcode === 'string' ? body.barcode.trim() : '',
   };
 }
 
@@ -73,6 +79,17 @@ function readBody(body = {}) {
 export function guardIncompleteRead(payload, readComplete) {
   if (readComplete || payload.tier !== 'approved') return payload;
   return { ...payload, stamp: false, incompleteRead: true };
+}
+
+/* Send the verdict — and, fire-and-forget, stamp the tier onto Kristy's own product
+   row so the catalog carries the provenance of what each product scored. Never
+   awaited: retention is a background asset and must not delay the read the shopper
+   is waiting on. The tier written is the one the ENGINE just computed, not anything
+   the client sent. */
+function send(res, payload, { readComplete, barcode }) {
+  const out = guardIncompleteRead(payload, readComplete);
+  if (barcode) stampTier(barcode, out.tier);
+  return res.json(out);
 }
 
 function hasIngredients(ingredients) {
@@ -99,7 +116,7 @@ export const verdictRouter = Router();
 // userRateLimit runs after requireAuth (it reads req.user.id) and caps the
 // combined per-user model spend across the authed cost-bearing endpoints.
 verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
-  const { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete } = readBody(req.body);
+  const { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete, barcode } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
@@ -118,10 +135,10 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
       // The generic KB swap (a field read, no model call) is FREE — everyone gets
       // "here's a better shelf." The goal-aware swap stays a member benefit.
-      return res.json(guardIncompleteRead({
+      return send(res, {
         tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education,
         needsGoal: true, signals: focus.signals, ingredientsRead: count, hardLines,
-      }, readComplete));
+      }, { readComplete, barcode });
     }
 
     // The repositioned value line (Step 11): the universal layer is ALWAYS free;
@@ -141,7 +158,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // call, and a line the user drew is a promise, not a member benefit.
       const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
-      return res.json(guardIncompleteRead({ tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines }, readComplete));
+      return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines }, { readComplete, barcode });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
@@ -152,7 +169,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     if (consumesFree) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium ? null : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree ? 1 : 0)));
 
-    return res.json(guardIncompleteRead({ tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines }, readComplete));
+    return send(res, { tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines }, { readComplete, barcode });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -170,7 +187,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
 export const guestVerdictRouter = Router();
 
 guestVerdictRouter.post('/verdict', (req, res) => {
-  const { ingredients, readComplete } = readBody(req.body);
+  const { ingredients, readComplete, barcode } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
@@ -189,7 +206,7 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return res.json(guardIncompleteRead({ tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count }, readComplete));
+  return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count }, { readComplete, barcode });
 });
 
 export default verdictRouter;

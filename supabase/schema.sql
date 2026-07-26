@@ -180,6 +180,48 @@ create table if not exists subscriptions (
 -- One subscription row per user — the upsert target for every provider webhook.
 create unique index if not exists subscriptions_user_id_key on subscriptions (user_id);
 
+-- ─────────────────── Kristy's own product dataset ───────────────────
+-- Every RESOLVED scan accrues here — barcode-matched or read off a photographed
+-- label. The point is compounding coverage: a product Open Food Facts doesn't have
+-- gets photographed once by one shopper, and from then on that barcode resolves
+-- from Kristy's own store instead of missing again for everyone else. Lookup order
+-- is own-store → OFF → vision, so the database self-heals from real usage.
+--
+-- DELIBERATELY NOT USER DATA. There is no user_id column and there never should
+-- be: this is a catalog of PRODUCTS, and tying "who scanned what" into it would
+-- turn a shared asset into a surveillance log. The per-user record of a scan
+-- already lives in haul_scans, where it belongs.
+--
+-- Identity: `barcode` when the scan had one, else `product_hash` (name +
+-- ingredients) so a label-only read still de-dupes against itself. Partial unique
+-- indexes below, because Postgres allows many NULLs in a unique column.
+create table if not exists scanned_products (
+  id uuid primary key default gen_random_uuid(),
+  barcode text,
+  product_hash text,
+  name text,
+  brand text,
+  ingredients text not null,
+  source text not null,                          -- 'off' | 'vision'
+  -- 'high' = an OFF record or a fully-legible panel. 'low' = a partial vision read,
+  -- which may be missing the tail of the list. A low-confidence read may never
+  -- overwrite a high-confidence one (enforced in lib/productStore.js), so one bad
+  -- photo can't poison a known-good product.
+  confidence text not null default 'high',
+  -- The verdict tier this product produced, for later curation. Display/analytics
+  -- only: the tier is always RECOMPUTED from the ingredients on every scan, so a
+  -- stale or wrong value here can never become a wrong verdict.
+  tier text,
+  scan_count integer not null default 1,
+  first_seen timestamptz default now(),
+  last_seen timestamptz default now()
+);
+
+create unique index if not exists scanned_products_barcode_key
+  on scanned_products (barcode) where barcode is not null;
+create unique index if not exists scanned_products_hash_key
+  on scanned_products (product_hash) where barcode is null and product_hash is not null;
+
 -- Helpful indexes for the per-user, time-ranged reads Kristy makes constantly.
 create index if not exists meal_logs_user_logged_idx on meal_logs (user_id, logged_at desc);
 create index if not exists chat_messages_user_created_idx on chat_messages (user_id, created_at);
@@ -196,6 +238,11 @@ alter table weight_logs      enable row level security;
 alter table haul_scans       enable row level security;
 alter table shopping_lists   enable row level security;
 alter table subscriptions    enable row level security;
+-- scanned_products holds no user data, but it is still locked: RLS on with NO
+-- policy means only the service role (the server) can read or write it. Clients
+-- reach it exclusively through the scan endpoints, so nobody can enumerate or
+-- tamper with the catalog directly.
+alter table scanned_products enable row level security;
 
 -- meal_logs
 drop policy if exists "own meals" on meal_logs;

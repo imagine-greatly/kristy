@@ -5,12 +5,21 @@
 // note. This module only ANSWERS "what's in it and what is it?".
 //
 // Order of resolution for a barcode:
+//   0. KRISTY'S OWN STORE — a product some shopper already resolved, most valuably
+//      one photographed off a label because OFF didn't have it. This layer is what
+//      makes the coverage gap close itself: every miss that gets photographed fills
+//      its own hole for the next person.
 //   1. Open Food Facts ingredients text (English preferred) — the fast, free path.
 //   2. If OFF knows the product but has no ingredient text, fall back to a vision
 //      read of the label image OFF stores (a real photographed panel).
-//   3. Otherwise: found but no ingredients (the client offers "type the product").
+//   3. Otherwise: found but no ingredients (the client offers the label photo).
+//
+// Every layer returns INGREDIENTS ONLY. A cached hit is not a cached verdict — it
+// goes through the same engine + KB + claim lock as a fresh lookup, so the judgment
+// is always recomputed against the current KB and the shopper's current preferences.
 
 import { readLabelIngredients } from './labelVision.js';
+import { lookupProduct, retainProduct } from './productStore.js';
 
 const OFF_BASE = 'https://world.openfoodfacts.org/api/v2/product';
 const OFF_FIELDS = [
@@ -160,6 +169,22 @@ export async function extractFromBarcode(barcode) {
   const code = String(barcode || '').trim();
   if (!code) return { found: false, source: 'none', product: null, ingredients: '' };
 
+  // 0. Kristy's own store first. Free, instant, and it holds exactly the products
+  //    the public databases don't. Degrades silently to OFF if unavailable.
+  const own = await lookupProduct(code);
+  if (own && isReadableIngredientList(own.ingredients) && !looksNonEnglish(own.ingredients)) {
+    return {
+      found: true,
+      source: 'store',
+      product: own.product,
+      ingredients: own.ingredients,
+      nutrition: null,
+      // A row built from a partial panel stays honest about it, so the verdict route
+      // still withholds a clean approval it can't support.
+      ...(own.confidence === 'low' ? { partialRead: true } : {}),
+    };
+  }
+
   let data;
   try {
     const r = await fetch(`${OFF_BASE}/${encodeURIComponent(code)}.json?fields=${OFF_FIELDS}`, {
@@ -193,6 +218,17 @@ export async function extractFromBarcode(barcode) {
   //    it can never reach the engine and produce a false "approved").
   const text = pickEnglishText(p);
   if (text && isReadableIngredientList(text)) {
+    // Retain the OFF hit too, not just the vision reads. It costs nothing, and it
+    // means the catalog keeps working when OFF is throttling or down — the failure
+    // mode that used to read as "not found".
+    retainProduct({
+      barcode: code,
+      name: product.name,
+      brand: product.brand,
+      ingredients: text,
+      source: 'off',
+      panel: 'full',
+    });
     return { found: true, source: 'off', product, ingredients: text, nutrition };
   }
 
@@ -205,6 +241,16 @@ export async function extractFromBarcode(barcode) {
         const { ingredients, panel } = await readLabelIngredients(img);
         const joined = ingredients.join(', ');
         if (ingredients.length && !looksNonEnglish(joined) && isReadableIngredientList(joined)) {
+          // A vision read WITH a barcode is the most valuable row in the catalog:
+          // it's a product OFF couldn't answer for, now permanently answerable.
+          retainProduct({
+            barcode: code,
+            name: product.name,
+            brand: product.brand,
+            ingredients: joined,
+            source: 'vision',
+            panel,
+          });
           // A partial read rides along as such — OFF's stored panel photo can be
           // cropped just like a shopper's, and the unread tail is where a concern
           // hides. The verdict route withholds approval on an incomplete read.
