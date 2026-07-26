@@ -151,10 +151,11 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
           {/* THE COACHING. Always visible on any row she chose. */}
           {item.why && <span style={styles.itemWhy}>{item.why}</span>}
 
-          {(item.source === 'user' || isSwapCallout || item.refined || flag) && (
+          {(item.source === 'user' || item.refined || flag) && (
             <span style={styles.itemMeta}>
               {item.source === 'user' && <span style={styles.tagQuiet}>You added</span>}
-              {isSwapCallout && <span style={styles.tagGold}>From your haul</span>}
+              {/* No "From your haul" tag here — these rows already sit under a
+                  "From your haul" section header, and the gold rule marks them. */}
               {item.refined && <span style={styles.tagGold}>Kristy&rsquo;s pick</span>}
               {flag && <span style={{ ...styles.flag, color: flag.fg, background: flag.bg }}>{flag.label}</span>}
             </span>
@@ -478,10 +479,13 @@ const styles = {
 
   // The two peer entry points — a whole cart from a sentence, and the unlabeled aisle.
   peerRow: { display: 'flex', gap: 8, flexWrap: 'wrap' },
+  // A quiet card, deliberately NOT gold. `textSecondary` is the gold token, so this
+  // button was rendering as emphasis and competing with Scan for the same attention.
   peer: {
-    flex: '1 1 auto', minHeight: 44, padding: '11px 14px', borderRadius: 12,
-    border: `1px solid ${colors.border}`, background: colors.surface,
-    color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
+    flex: '1 1 auto', minHeight: 44, padding: '12px 14px', borderRadius: 12,
+    border: 'none', background: colors.surface,
+    boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
+    color: colors.textMuted, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
   },
 
   nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },

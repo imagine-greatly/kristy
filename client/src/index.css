@@ -31,8 +31,25 @@
   /* Status + scrims — mirror lib/tokens.js so nothing hardcodes a literal here. */
   --error: #ee8888;
   --danger: #b04646;
-  --danger-border: var(--danger-border);
+  /* Was `var(--danger-border)` — self-referential, so it resolved to nothing and every
+     `1px solid var(--danger-border)` fell back to currentColor. Mirrors tokens.js. */
+  --danger-border: #7a3b3b;
   --danger-tint: rgba(180, 70, 70, 0.12);
+
+  /* ── Elevation (Block W) ────────────────────────────────────────────────────
+     The all-green field read flat because every layer shared one value and nearly
+     everything was outlined — 74 border declarations against 7 shadows, 27 of those
+     borders gold. A surface is now defined by its LIFT off the ground (a lighter
+     fill + a hairline top edge + a shadow), not by an outline, and gold is reserved
+     for emphasis: the primary action, the active goal, the checked state.
+     Mirrors colors.edgeHighlight / shadowCard / shadowRaised in lib/tokens.js. */
+  --edge-highlight: rgba(240, 230, 200, 0.05);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.28);
+  --shadow-raised: 0 4px 14px rgba(0, 0, 0, 0.34);
+  /* The two composable lifts. `--lift-card` for a row/card resting on the ground,
+     `--lift-raised` for something floating above it (the composer, an open drawer). */
+  --lift-card: inset 0 1px 0 var(--edge-highlight), var(--shadow-card);
+  --lift-raised: inset 0 1px 0 var(--edge-highlight), var(--shadow-raised);
   --black: #000000;
   --white: #ffffff;
   --scrim: rgba(7, 18, 11, 0.62);
@@ -259,8 +276,9 @@ textarea {
   max-width: 440px;
 }
 .chip {
-  background: transparent;
-  border: 1px solid var(--gold-40);
+  background: var(--surface);
+  border: 1px solid transparent;
+  box-shadow: var(--lift-card);
   color: var(--text-muted);
   border-radius: 999px;
   padding: 9px 14px;
@@ -313,7 +331,8 @@ textarea {
   font-size: 12px;
   color: var(--accent-gold);
   background: var(--surface-2);
-  border: 1px solid var(--gold-40);
+  border: none;
+  box-shadow: var(--lift-card);
   margin-top: 2px;
 }
 
@@ -455,7 +474,8 @@ textarea {
   justify-content: space-between;
   gap: 10px;
   background: var(--surface-2);
-  border: 1px solid var(--gold-40);
+  border: none;
+  box-shadow: var(--lift-card);
   border-radius: 12px;
   padding: 9px 12px;
   font-size: 13px;
@@ -487,11 +507,19 @@ textarea {
   gap: 8px;
   max-width: var(--input-max);
   margin: 0 auto;
+  /* The docked composer is the RAISED layer — it floats above the cart. It earns that
+     by lifting off the ground, not by a gold outline: gold on permanent chrome spends
+     the one colour that should mean "act on this". */
   background: var(--surface-2);
-  border: 1px solid var(--gold-40);
+  border: 1px solid transparent;
+  box-shadow: var(--lift-raised);
   border-radius: 16px;
   padding: 12px 12px 12px 18px;
-  transition: border-color 0.18s ease;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+/* Focus is the one moment the composer takes gold — it's active, so it's emphasis. */
+.inputbar__inner:focus-within {
+  border-color: var(--gold-40);
 }
 .inputbar__inner.focused {
   border-color: color-mix(in srgb, var(--accent-gold) 80%, transparent);

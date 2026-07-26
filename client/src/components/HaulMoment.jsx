@@ -235,7 +235,7 @@ const styles = {
   title: { ...kristyVoice, margin: 0, fontSize: 24, color: colors.textPrimary },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
 
-  bar: { display: 'flex', width: '100%', height: 14, borderRadius: 999, overflow: 'hidden', background: colors.surface2, border: `1px solid ${colors.border}` },
+  bar: { display: 'flex', width: '100%', height: 14, borderRadius: 999, overflow: 'hidden', background: colors.surface2, border: 'none' },
   seg: { height: '100%' },
   legend: { display: 'flex', gap: 16, marginTop: 10, flexWrap: 'wrap' },
   legendItem: { display: 'flex', alignItems: 'center', gap: 6 },
@@ -250,7 +250,7 @@ const styles = {
   section: { display: 'flex', flexDirection: 'column', gap: 8 },
   sectionLabel: { fontFamily: fonts.ui, fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
   list: { display: 'flex', flexDirection: 'column', gap: 8 },
-  row: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, padding: '11px 13px', borderRadius: 11, border: `1px solid ${colors.border}`, background: colors.surface },
+  row: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, padding: '13px 15px', borderRadius: 12, border: 'none', background: colors.surface, boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}` },
   rowName: { flex: 1, minWidth: 0, fontFamily: fonts.ui, fontSize: 14.5, color: colors.textPrimary, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
   rowRight: { flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 8 },
   rowAdd: {
@@ -264,7 +264,7 @@ const styles = {
   actions: { display: 'flex', gap: 10, marginTop: 4 },
   action: { flex: 1, padding: '13px 16px', borderRadius: 12, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
   actionPrimary: { border: 'none', background: colors.accentGold, color: colors.bgDeep },
-  actionGhost: { border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontWeight: 600 },
+  actionGhost: { border: 'none', background: colors.surface2, color: colors.textSecondary, fontWeight: 600 },
 
   ask: { alignSelf: 'center', marginTop: 4, padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
   center: { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 14, maxWidth: 380, margin: '0 auto', padding: '52px 24px 24px' },

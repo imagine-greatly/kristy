@@ -29,16 +29,31 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
           : "Scan a product and I'll read it against your goal, right here in the aisle."}
       </p>
 
+      {/* ONE reflex action, then two quiet fallbacks.
+          These were three equal full-width buttons, which repeated the docked
+          composer's job — it already does photo and ask on every surface. The barcode
+          button stays big and physical because it's the thing you hit one-handed with a
+          box in the other; the other two step down to a quiet pair, present without
+          competing. */}
       <div style={styles.actions}>
         <button type="button" style={styles.primary} onClick={onScanBarcode}>
-          <BarcodeIcon size={22} />
+          <BarcodeIcon size={24} />
           <span>Scan a barcode</span>
         </button>
 
-        <button type="button" style={styles.secondary} onClick={() => fileRef.current?.click()}>
-          <CameraIcon size={20} />
-          <span>Photograph the label</span>
-        </button>
+        <div style={styles.minorRow}>
+          <button type="button" style={styles.minor} onClick={() => fileRef.current?.click()}>
+            <CameraIcon size={17} />
+            <span>Photograph it</span>
+          </button>
+          {onAskAisle && (
+            <button type="button" style={styles.minor} onClick={onAskAisle}>
+              <AisleIcon size={17} />
+              <span>Ask the aisle</span>
+            </button>
+          )}
+        </div>
+
         <input
           ref={fileRef}
           type="file"
@@ -51,15 +66,6 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
             if (file) onLabelFile(file);
           }}
         />
-
-        {/* The other half of the store. No barcode at the fish counter, the butcher
-            or the produce wall — so this is a peer action, sized like the others. */}
-        {onAskAisle && (
-          <button type="button" style={styles.secondary} onClick={onAskAisle}>
-            <AisleIcon size={20} />
-            <span>Ask about the aisle</span>
-          </button>
-        )}
       </div>
 
       <p style={styles.aisleNote}>
@@ -92,35 +98,43 @@ const styles = {
   mark: { fontFamily: fonts.voice, fontStyle: 'italic', fontSize: 30, color: colors.accentGold },
   headline: { ...kristyVoice, margin: '4px 0 0', fontSize: 26, lineHeight: 1.25, color: colors.textPrimary },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.5, color: colors.textMuted, maxWidth: 320 },
-  actions: { width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 10 },
+  actions: { width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 14 },
+  // The reflex. Gold, tall, unmissable — one of the few places gold is spent.
   primary: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
-    padding: '15px 20px',
-    borderRadius: 14,
+    gap: 11,
+    padding: '19px 20px',
+    borderRadius: 16,
     border: 'none',
     background: colors.accentGold,
     color: colors.bgDeep,
+    boxShadow: colors.shadowRaised,
     fontFamily: fonts.ui,
     fontWeight: 700,
-    fontSize: 16,
+    fontSize: 16.5,
     cursor: 'pointer',
   },
-  secondary: {
+  minorRow: { display: 'flex', gap: 10 },
+  // Subordinate: a card lift, no gold, smaller type. Present, not competing.
+  minor: {
+    flex: '1 1 0',
+    minWidth: 0,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
-    padding: '14px 20px',
-    borderRadius: 14,
-    border: `1px solid ${colors.borderGold}`,
-    background: 'transparent',
-    color: colors.textSecondary,
+    gap: 7,
+    padding: '11px 12px',
+    borderRadius: 12,
+    border: 'none',
+    background: colors.surface,
+    boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
+    color: colors.textMuted,
     fontFamily: fonts.ui,
     fontWeight: 600,
-    fontSize: 15,
+    fontSize: 13.5,
+    whiteSpace: 'nowrap',
     cursor: 'pointer',
   },
   aisleNote: {

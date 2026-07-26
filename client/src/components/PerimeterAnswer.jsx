@@ -149,7 +149,7 @@ const styles = {
 const fullStyles = {
   entry: {
     display: 'flex', flexDirection: 'column', gap: 8, padding: '14px 15px',
-    borderRadius: 14, border: `1px solid ${colors.border}`, background: colors.surface,
+    borderRadius: 14, border: 'none', background: colors.surface, boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
   },
   entryTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
   short: { margin: 0, fontFamily: fonts.ui, fontSize: 14.5, lineHeight: 1.5, color: colors.textPrimary },
