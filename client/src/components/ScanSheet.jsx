@@ -153,16 +153,16 @@ export default function ScanSheet({
     // panel. She never shows a different product in place of the one being held.
     const barcodeMiss = scan.mode === 'barcode';
     const title = scan.unreadable
-      ? "I didn't get a clean read"
+      ? 'That barcode came through unclear'
       : barcodeMiss
-        ? "I don't have this one yet"
-        : "I can't read that one";
+        ? 'Not in the data yet'
+        : "Can't read that panel";
     const sub = scan.unreadable
-      ? "That barcode didn't come through clearly, and I won't guess at a product. Snap the ingredients panel instead — that reads straight off the label."
+      ? "Guessing at a product from a partial read would be worse than not knowing. Snap the ingredient label — it gets read directly."
       : barcodeMiss
-        ? "I don't have this one yet — snap the label and it reads straight off the panel."
+        ? 'Not in the data yet — snap the ingredient label and it gets read directly. That works on anything, barcode or not.'
         : scan.message ||
-          "That didn't come through. Try the ingredients panel again, better lit — or type the product name.";
+          'Try the ingredients panel again, better lit — or type the product name.';
     content = (
       <Centered title={title} sub={sub}>
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}

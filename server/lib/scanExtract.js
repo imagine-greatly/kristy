@@ -70,6 +70,39 @@ export function pickEnglishText(p = {}) {
   return raw;
 }
 
+// ── Identity guard ───────────────────────────────────────────────────────────
+// A lookup must only ever answer about the barcode that was actually scanned.
+// Returning someone else's product is the single worst failure this path has —
+// a confident verdict on a product the shopper isn't holding.
+//
+// Zero-padding is tolerated deliberately: a 12-digit UPC-A off a US shelf is
+// commonly stored as the same GTIN zero-padded to 13 digits (EAN-13), so a strict
+// string compare would reject a correct match and turn every US scan into a miss.
+
+/** GTIN equality, ignoring leading-zero padding (UPC-A 12 ⇄ EAN-13). */
+export function sameGtin(a, b) {
+  const strip = (x) => String(x || '').trim().replace(/^0+/, '');
+  const A = strip(a);
+  const B = strip(b);
+  return !!A && A === B;
+}
+
+// An "ingredient list" that carries no actual ingredients. OFF is crowd-sourced and
+// these placeholders do appear — and they are worse than an empty field, because a
+// string that matches nothing in the KB scores as zero concerns, i.e. a SILENT
+// APPROVED STAMP on a product Kristy never read. Same liability as the language
+// guard, so it gets the same treatment: unreadable ⇒ no ingredients ⇒ no stamp.
+const USELESS_TEXT = /^(n\/?a|none|nil|null|undefined|unknown|tbd|[-–—.,;:?*_\s]+)$/i;
+
+/** Is this string substantive enough to be a real ingredient statement? */
+export function isReadableIngredientList(text) {
+  const t = String(text || '').trim();
+  // A single-ingredient product ("Peanuts.") is legitimate and must still pass —
+  // the floor is only high enough to reject placeholders, not short honest lists.
+  if (t.length < 3) return false;
+  return !USELESS_TEXT.test(t);
+}
+
 // OFF categories_tags → a short human aisle/type ("en:breakfast-cereals" → "breakfast cereals").
 function aisleFromCategories(tags) {
   if (!Array.isArray(tags) || tags.length === 0) return '';
@@ -143,6 +176,15 @@ export async function extractFromBarcode(barcode) {
     return { found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' };
   }
 
+  // IDENTITY GUARD — the response must be about the code we asked for. OFF echoes
+  // the barcode it resolved; a mismatch means we are holding a record for a
+  // DIFFERENT product, and rendering it is precisely the chips→creamer failure.
+  // An honest miss costs a photo; a confident wrong verdict costs the relationship.
+  if (data.code && !sameGtin(data.code, code)) {
+    console.warn(`[kristy] OFF answered ${data.code} for ${code} — treating as a miss`);
+    return { found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' };
+  }
+
   const p = data.product;
   const product = productMeta(p, code);
   const nutrition = nutritionFromOFF(p); // sodium + added sugar per 100g (for focuses)
@@ -150,7 +192,9 @@ export async function extractFromBarcode(barcode) {
   // 1. Open Food Facts ENGLISH ingredient text (foreign text is rejected here so
   //    it can never reach the engine and produce a false "approved").
   const text = pickEnglishText(p);
-  if (text) return { found: true, source: 'off', product, ingredients: text, nutrition };
+  if (text && isReadableIngredientList(text)) {
+    return { found: true, source: 'off', product, ingredients: text, nutrition };
+  }
 
   // 2. Vision fallback on the label image OFF stores. The transcription must ALSO
   //    clear the English guard — a French panel reads as French just as easily.
@@ -160,7 +204,7 @@ export async function extractFromBarcode(barcode) {
       if (img) {
         const { ingredients } = await readLabelIngredients(img);
         const joined = ingredients.join(', ');
-        if (ingredients.length && !looksNonEnglish(joined)) {
+        if (ingredients.length && !looksNonEnglish(joined) && isReadableIngredientList(joined)) {
           return { found: true, source: 'vision', product, ingredients: joined, nutrition };
         }
       }

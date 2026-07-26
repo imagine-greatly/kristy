@@ -92,6 +92,12 @@ export default function App() {
   const [verdict, setVerdict] = useState(null); // null | { loading, data, error }
   // Scan → verdict card (Step 4). A scan is now a verdict, not a silent meal log.
   const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error, message }
+  // Monotonic scan ticket. Extraction + /verdict are two network hops, so two scans
+  // can be in flight at once (a re-scan, or a barcode miss the shopper immediately
+  // follows with a label photo). Without this the LAST response to arrive rendered —
+  // which may be the OLDER one, showing a verdict for a product the shopper has
+  // already moved on from. Every scan takes a ticket; only the current one may render.
+  const scanSeqRef = useRef(0);
   // Three-moment nav: List (before) · Scan (aisle) · Haul (after). The app opens on
   // the CART — the trip taking shape — not the scanner and not a blank chat box.
   // `initialMoment` reads only the local cache (no network, no boot delay) and falls
@@ -416,7 +422,13 @@ export default function App() {
 
   // Shared tail for both scan entry points: reflect the result, fire analytics,
   // record it in the Haul, and evaluate the contextual focus offer.
-  function applyScanResult(result, mode) {
+  //
+  // `ticket` is the sequence number the scan was started with. A result that isn't
+  // the newest is DROPPED — not rendered, not recorded in the Haul, not counted in
+  // analytics. Dropping it silently is correct: the shopper is already watching a
+  // newer scan, and the stale one was never about the product in their hand.
+  function applyScanResult(result, mode, ticket) {
+    if (ticket !== undefined && ticket !== scanSeqRef.current) return;
     setScan({ ...result, mode });
     if (result?.verdict) {
       trackEvent('verdict', { tier: result.verdict.tier, gated: !!result.verdict.gated });
@@ -622,8 +634,17 @@ export default function App() {
 
   /* ───────── Barcode + label scanning ───────── */
 
+  // Dismissing the sheet invalidates whatever is still in flight. Otherwise a slow
+  // lookup lands after the shopper walked away and pops a verdict card back open
+  // for a product they're no longer holding.
+  function closeScan() {
+    scanSeqRef.current += 1;
+    setScan(null);
+  }
+
   // A scanned barcode is a VERDICT, not a meal log: extract → /verdict → the card.
   async function handleScan(barcode) {
+    const ticket = ++scanSeqRef.current;
     setCameraOpen(false);
     setFocusOffer(null);
     setScan({ loading: true, mode: 'barcode' });
@@ -639,8 +660,9 @@ export default function App() {
         // No stored goal → universal layer + the in-card goal ask (no note, no taste).
         personalize: goalsOf(profile).length > 0,
       });
-      applyScanResult(result, 'barcode');
+      applyScanResult(result, 'barcode', ticket);
     } catch {
+      if (ticket !== scanSeqRef.current) return;
       setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
     }
   }
@@ -650,6 +672,9 @@ export default function App() {
      separate from meal logging — it never appends to the thread and never creates a meal. */
   async function handleVerdictFile(file) {
     if (!file) return;
+    // Takes a ticket for the same reason: this path is most often reached FROM a
+    // barcode miss, so the barcode's own request may still be in flight behind it.
+    const ticket = ++scanSeqRef.current;
     setFocusOffer(null);
     setScan({ loading: true, mode: 'label' });
     trackEvent('scan', { mode: 'label' });
@@ -663,8 +688,9 @@ export default function App() {
         constraints: resolveConstraints(profile),
         personalize: goalsOf(profile).length > 0,
       });
-      applyScanResult(result, 'label');
+      applyScanResult(result, 'label', ticket);
     } catch {
+      if (ticket !== scanSeqRef.current) return;
       setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });
     }
   }
@@ -1018,13 +1044,13 @@ export default function App() {
         <ScanSheet
           scan={scan}
           goal={goalReadLabel(goalsOf(profile))}
-          onClose={() => setScan(null)}
+          onClose={closeScan}
           onLabelFile={handleVerdictFile}
           onPickGoal={handlePickGoal}
           onAddToCart={handleAddScanToCart}
-          onOpenCart={() => { setScan(null); setMoment('list'); }}
-          onAsk={() => { askAboutScan(); setScan(null); }}
-          onUpgrade={() => { setScan(null); openUpgrade(); }}
+          onOpenCart={() => { closeScan(); setMoment('list'); }}
+          onAsk={() => { askAboutScan(); closeScan(); }}
+          onUpgrade={() => { closeScan(); openUpgrade(); }}
           onStartTrial={handleStartTrial}
           trialEligible={trialEligible}
           focusOffer={focusOffer}
