@@ -3,7 +3,7 @@ import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { imageUpload } from '../lib/upload.js';
-import { extractFromBarcode, looksNonEnglish } from '../lib/scanExtract.js';
+import { extractFromBarcode, looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
 import { readLabelIngredients } from '../lib/labelVision.js';
 
 // Scan extraction — the front door of the grocery coach. Both entry points parse
@@ -19,10 +19,13 @@ import { readLabelIngredients } from '../lib/labelVision.js';
 // by /verdict; the label vision call only transcribes printed text. Nothing here
 // writes a meal_log — a scanned product is not an eaten meal.
 
-// Kristy-voiced line when a barcode/label yields no readable ingredients — points
-// the user at the manual fallback instead of dead-ending.
+// Kristy-voiced lines for the two ways a label read can come up short. Neither
+// dead-ends, and neither narrates service (VOICE_SPEC): the first asks for the shot
+// that would work, the second points at the path that always does.
+const PANEL_UNREADABLE =
+  "That panel didn't come through. One more shot of the ingredients list — straight on, close enough to fill the frame.";
 const NO_INGREDIENTS =
-  "I can't read the ingredients on that one. Type the product name instead.";
+  "No ingredient list readable on that one. Type the product name instead.";
 const ERROR_MSG = "That scan didn't go through — give it another try in a sec.";
 
 function readLabel(reqFile) {
@@ -31,18 +34,46 @@ function readLabel(reqFile) {
   return readLabelIngredients({ base64, mediaType });
 }
 
-// Build the label result. A non-English transcription is treated as UNREADABLE
-// (no card, no stamp) — the same liability guard as the barcode path.
-function buildLabelResult(ingredients) {
+/* Build the label result — the FIRST-CLASS fallback, not a consolation prize. A
+   photographed panel works on any product in the store, including the long tail no
+   barcode database reaches, so this path carries the same weight as an OFF hit:
+   product identity for the card header, and an ingredient string that goes through
+   the SAME engine + KB + claim lock. Vision transcribes; the engine judges.
+
+   Two guards, both about never producing a stamp Kristy didn't earn:
+     - a non-English transcription is UNREADABLE (the KB is English, so a foreign
+       string matches nothing and scores as zero concerns — a silent approval);
+     - `panel: 'none'` means no list was legible, which is a re-shot, not a verdict. */
+function buildLabelResult({ ingredients, productName, brand, panel }) {
   const joined = ingredients.join(', ');
-  if (!ingredients.length || looksNonEnglish(joined)) {
+
+  if (panel === 'none' || !ingredients.length) {
+    return {
+      found: false,
+      source: 'vision',
+      product: null,
+      ingredients: '',
+      panel: 'none',
+      // A re-shot is the useful next move, so it gets its own state rather than
+      // being lumped in with "type it instead".
+      retryPhoto: true,
+      message: PANEL_UNREADABLE,
+    };
+  }
+
+  if (looksNonEnglish(joined) || !isReadableIngredientList(joined)) {
     return { found: false, source: 'vision', product: null, ingredients: '', message: NO_INGREDIENTS };
   }
+
   return {
     found: true,
     source: 'vision',
-    product: { barcode: null, name: null, brand: null, image: null, aisle: '' },
+    // Identity comes straight off the package when it was legible, else stays null.
+    // Never inferred — a wrong name on a right verdict is still a wrong product.
+    product: { barcode: null, name: productName || null, brand: brand || null, image: null, aisle: '' },
     ingredients: joined,
+    // Carried so /verdict can withhold approval on a half-read list.
+    ...(panel === 'partial' ? { partialRead: true } : {}),
   };
 }
 
@@ -65,8 +96,7 @@ scanRouter.post('/scan/barcode', requireAuth, userRateLimit, async (req, res) =>
 scanRouter.post('/scan/label', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'image is required' });
   try {
-    const { ingredients } = await readLabel(req.file);
-    return res.json(buildLabelResult(ingredients));
+    return res.json(buildLabelResult(await readLabel(req.file)));
   } catch (err) {
     console.error('[kristy] /api/scan/label error:', err?.message || err);
     return res.status(502).json({ error: true, message: ERROR_MSG });
@@ -97,8 +127,7 @@ guestScanRouter.post('/scan/label', imageUpload.single('image'), async (req, res
   if (!req.file) return res.status(400).json({ error: 'image is required' });
   if (rateLimited(clientIp(req))) return res.json({ gate: true, reason: 'limit' });
   try {
-    const { ingredients } = await readLabel(req.file);
-    return res.json(buildLabelResult(ingredients));
+    return res.json(buildLabelResult(await readLabel(req.file)));
   } catch (err) {
     console.error('[kristy] /api/guest/scan/label error:', err?.message || err);
     return res.status(502).json({ error: true, message: ERROR_MSG });

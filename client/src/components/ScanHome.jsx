@@ -44,7 +44,7 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
         <div style={styles.minorRow}>
           <button type="button" style={styles.minor} onClick={() => fileRef.current?.click()}>
             <CameraIcon size={17} />
-            <span>Photograph it</span>
+            <span>Photograph the label</span>
           </button>
           {onAskAisle && (
             <button type="button" style={styles.minor} onClick={onAskAisle}>
@@ -67,6 +67,14 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
           }}
         />
       </div>
+
+      {/* The label path's real standing, stated once. It isn't error recovery — no
+          barcode database covers the whole store, and a photographed ingredient panel
+          works on anything, including the products none of them have. */}
+      <p style={styles.aisleNote}>
+        No barcode, or nothing in the database? A photo of the ingredient panel reads
+        on anything.
+      </p>
 
       <p style={styles.aisleNote}>
         Produce, the counter, the bulk bins — the half of the store with no label has

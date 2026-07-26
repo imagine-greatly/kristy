@@ -247,11 +247,13 @@ async function scanExtract({ mode, barcode, file, isGuest }) {
 // escalation; guest → universal layer only (or a { gate } soft-gate).
 // `personalize:false` (authed, no stored goal) → universal layer + the in-card
 // goal ask, no note composed and no free taste consumed.
-async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize = true, isGuest }) {
+async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize = true, readComplete = true, isGuest }) {
   const path = isGuest ? '/api/guest/verdict' : '/api/verdict';
+  // `readComplete:false` (a cut-off label photo) rides on the guest path too — a
+  // partial read must not earn a clean approval for anyone.
   const body = isGuest
-    ? { ingredients }
-    : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize };
+    ? { ingredients, readComplete }
+    : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(isGuest ? {} : await authHeader()) },
@@ -289,27 +291,39 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
 
   const ingredients = String(ex?.ingredients || '').trim();
   if (!ingredients) {
-    // Product not found, or found but no readable ingredients → the type-it path.
-    return { found: false, source: ex?.source || 'none', product: ex?.product || null, message: ex?.message };
+    // Product not found, or nothing readable. `retryPhoto` distinguishes "that photo
+    // didn't come through" (a better shot fixes it) from "no list here at all".
+    return {
+      found: false,
+      source: ex?.source || 'none',
+      product: ex?.product || null,
+      message: ex?.message,
+      ...(ex?.retryPhoto ? { retryPhoto: true } : {}),
+    };
   }
 
   const nutrition = ex?.nutrition || null;
-  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, isGuest });
+  // A cut-off panel is read AGAINST the engine anyway — the flags it found are real —
+  // but it can't earn a clean approval. The server enforces that; this just tells it.
+  const partialRead = !!ex?.partialRead;
+  const verdict = await fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete: !partialRead, isGuest });
   if (verdict?.gate) return { gate: true, reason: verdict.reason };
   if (verdict?.error) return { error: true, message: verdict.message, product: ex.product, source: ex.source };
 
   // Keep ingredients + nutrition on the result so the caller can recompose the
   // personalized note in place after a goal tap — no second extraction, no re-scan.
-  return { found: true, source: ex.source, product: ex.product, verdict, ingredients, nutrition };
+  return { found: true, source: ex.source, product: ex.product, verdict, ingredients, nutrition, partialRead };
 }
 
 // Recompose the personalized (goal-aware) verdict for a product already scanned —
 // the in-card "tap a goal → reveal my read in place" path. Reuses the extracted
 // ingredients + nutrition, so there's no second extraction. Authed only.
-export async function requestGoalNote({ ingredients, nutrition = null, goal = '', nonNegotiables = [], focuses = [], constraints = [] }) {
+export async function requestGoalNote({ ingredients, nutrition = null, goal = '', nonNegotiables = [], focuses = [], constraints = [], partialRead = false }) {
   if (IS_DEMO) {
     await delay(700);
     return demoScanCard({ personalize: true }).verdict;
   }
-  return fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize: true, isGuest: false });
+  // Recomposing carries the original read's completeness forward — otherwise a goal
+  // tap on a partial read would quietly hand back the approval it was denied.
+  return fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize: true, readComplete: !partialRead, isGuest: false });
 }

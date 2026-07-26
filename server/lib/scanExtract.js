@@ -202,10 +202,20 @@ export async function extractFromBarcode(barcode) {
     try {
       const img = await fetchImageBase64(p.image_ingredients_url);
       if (img) {
-        const { ingredients } = await readLabelIngredients(img);
+        const { ingredients, panel } = await readLabelIngredients(img);
         const joined = ingredients.join(', ');
         if (ingredients.length && !looksNonEnglish(joined) && isReadableIngredientList(joined)) {
-          return { found: true, source: 'vision', product, ingredients: joined, nutrition };
+          // A partial read rides along as such — OFF's stored panel photo can be
+          // cropped just like a shopper's, and the unread tail is where a concern
+          // hides. The verdict route withholds approval on an incomplete read.
+          return {
+            found: true,
+            source: 'vision',
+            product,
+            ingredients: joined,
+            nutrition,
+            ...(panel === 'partial' ? { partialRead: true } : {}),
+          };
         }
       }
     } catch {

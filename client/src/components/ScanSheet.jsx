@@ -152,38 +152,33 @@ export default function ScanSheet({
     // she says so and hands off to the path that always works — photographing the
     // panel. She never shows a different product in place of the one being held.
     const barcodeMiss = scan.mode === 'barcode';
+    // `retryPhoto`: vision found no legible list at all. A better shot genuinely
+    // fixes that, so it gets its own state — asking for one more photo, rather than
+    // sending the shopper off to type a name they didn't need to type.
+    const retryPhoto = !!scan.retryPhoto;
     const title = scan.unreadable
       ? 'That barcode came through unclear'
-      : barcodeMiss
-        ? 'Not in the data yet'
-        : "Can't read that panel";
+      : retryPhoto
+        ? 'One more shot'
+        : barcodeMiss
+          ? 'Not in the data yet'
+          : "Can't read that panel";
     const sub = scan.unreadable
       ? "Guessing at a product from a partial read would be worse than not knowing. Snap the ingredient label — it gets read directly."
-      : barcodeMiss
-        ? 'Not in the data yet — snap the ingredient label and it gets read directly. That works on anything, barcode or not.'
-        : scan.message ||
-          'Try the ingredients panel again, better lit — or type the product name.';
+      : retryPhoto
+        ? scan.message ||
+          "That panel didn't come through. One more shot of the ingredients list — straight on, close enough to fill the frame."
+        : barcodeMiss
+          ? 'Not in the data yet — snap the ingredient label and it gets read directly. That works on anything, barcode or not.'
+          : scan.message ||
+            'Try the ingredients panel again, better lit — or type the product name.';
     content = (
       <Centered title={title} sub={sub}>
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}
         {onLabelFile && (
-          <>
-            <button style={styles.primaryBtn} onClick={() => fileRef.current?.click()}>
-              Photograph the label
-            </button>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              capture="environment"
-              style={{ display: 'none' }}
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                e.target.value = '';
-                if (f) onLabelFile(f);
-              }}
-            />
-          </>
+          <button style={styles.primaryBtn} onClick={() => fileRef.current?.click()}>
+            {retryPhoto ? 'Take another shot' : 'Photograph the label'}
+          </button>
         )}
         <button style={styles.ghostBtn} onClick={onClose}>
           Type it instead
@@ -199,6 +194,29 @@ export default function ScanSheet({
         {scan.demo && (
           <div style={styles.demoBanner}>
             Sample product — demo mode isn't looking up real barcodes.
+          </div>
+        )}
+
+        {/* A HALF-READ PANEL. What she found is real — a flag can only come from an
+            ingredient actually printed there — but the part she couldn't read is
+            exactly where another one would hide, so `approved` is withheld upstream
+            and the card says why. Naming the limit beats a clean-looking verdict
+            built on a partial list. */}
+        {scan.verdict.incompleteRead && (
+          <div style={styles.partialBanner}>
+            <p style={{ ...kristyVoice, ...styles.partialLine }}>
+              Only part of that list came through — what&rsquo;s below is real, but the rest
+              of the panel is where the next thing would be.
+            </p>
+            {onLabelFile && (
+              <button
+                type="button"
+                style={styles.partialBtn}
+                onClick={() => fileRef.current?.click()}
+              >
+                Shoot the whole panel
+              </button>
+            )}
           </div>
         )}
         <ScanVerdictCard
@@ -238,7 +256,29 @@ export default function ScanSheet({
     content = <Centered title="Nothing to show" sub="Try scanning again." />;
   }
 
-  return <Frame onClose={onClose}>{content}</Frame>;
+  return (
+    <Frame onClose={onClose}>
+      {content}
+      {/* ONE label-photo input for the whole sheet, so the camera is reachable from
+          any state that offers it — the honest miss, the re-shot ask, and the
+          partial-read banner sitting above a real verdict. It used to live inside the
+          miss branch only, which meant fileRef pointed at nothing everywhere else. */}
+      {onLabelFile && (
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          capture="environment"
+          style={{ display: 'none' }}
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            e.target.value = ''; // allow re-selecting the same file
+            if (f) onLabelFile(f);
+          }}
+        />
+      )}
+    </Frame>
+  );
 }
 
 const styles = {
@@ -323,6 +363,36 @@ const styles = {
     fontSize: 13,
     fontWeight: 600,
     textAlign: 'center',
+  },
+  // The half-read panel. Deliberately NOT gold — gold is reserved for emphasis and
+  // the earned seal (Block W), and this is a limitation being named honestly, not a
+  // highlight. Card elevation + a plain edge, sitting above the real verdict.
+  partialBanner: {
+    width: '100%',
+    maxWidth: 420,
+    // Same clearance as demoBanner: the close button is opaque and overlaps the top.
+    margin: '30px auto 12px',
+    boxSizing: 'border-box',
+    padding: '12px 14px',
+    borderRadius: 12,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 9,
+  },
+  partialLine: { margin: 0, fontSize: 14.5, lineHeight: 1.5, color: colors.textPrimary },
+  partialBtn: {
+    padding: '7px 12px',
+    borderRadius: 999,
+    border: `1px solid ${colors.border}`,
+    background: colors.surface2,
+    color: colors.textPrimary,
+    fontFamily: fonts.ui,
+    fontSize: 13,
+    fontWeight: 600,
+    cursor: 'pointer',
   },
   productHint: {
     fontFamily: fonts.ui,

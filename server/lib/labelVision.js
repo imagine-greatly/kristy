@@ -15,9 +15,34 @@ const str = (x) => String(x ?? '').trim();
 
 // Transcribe-only. Explicitly forbids translation/interpretation so the model
 // returns the label verbatim for the engine to tokenize.
-export const LABEL_VISION_SYSTEM = `You are an OCR transcriber for food packaging. You are shown a photo of a packaged food's INGREDIENTS panel — it may be curved, low-light, or partially cropped. Transcribe the ingredient list EXACTLY as printed: every ingredient in order, including sub-ingredients in parentheses and any percentages. Do not translate, interpret, add, remove, correct, rank, or comment on anything. Ignore nutrition-facts numbers, marketing text, and allergen "contains" lines. If no ingredient list is legible, return an empty array.
+//
+// It now also reads the product's IDENTITY (name/brand as printed) and self-reports
+// how much of the ingredient panel it could actually read. Both are still pure
+// transcription — no judgment, no inference. The identity exists so a vision-read
+// product isn't nameless on the card and can be retained by barcode later; the
+// legibility report exists because a HALF-READ PANEL IS THE ONE WAY THIS PATH CAN
+// LIE — the unread tail is exactly where the seed oil hides, and a missing
+// ingredient reads to the engine as an absent concern.
+export const LABEL_VISION_SYSTEM = `You are an OCR transcriber for food packaging. You are shown a photo of a packaged food's label — it may be curved, low-light, or partially cropped. Transcribe only what is PRINTED. You do not interpret, judge, rank, or comment on anything, and you never assess whether a food is healthy.
 
-Return ONLY this JSON: {"ingredients": ["first ingredient", "second ingredient"]}`;
+Return three things:
+
+1. "ingredients" — the ingredient list EXACTLY as printed: every ingredient in order, including sub-ingredients in parentheses and any percentages. Do not translate, add, remove, correct, or reorder. Ignore nutrition-facts numbers, marketing text, and allergen "contains" lines. If no ingredient list is legible, return an empty array.
+
+2. "product_name" and "brand" — ONLY if printed and legible in the photo. Transcribe them as printed. If either is not visible or you are unsure, return null for it. Never guess a product or brand from packaging colors, style, or the ingredients themselves.
+
+3. "panel" — how completely you could read the INGREDIENT LIST specifically:
+   - "full": the list is legible start to finish, and you can see where it ends (a period, the allergen line, or the next panel).
+   - "partial": the list is legible but cut off, obscured, blurred mid-list, or wraps out of frame — you cannot see the end of it.
+   - "none": no ingredient list is legible at all.
+   Judge this honestly and conservatively. If you are unsure whether you saw the whole list, say "partial". An honest "partial" is always better than a confident guess.
+
+Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none"}`;
+
+// Only these three are meaningful; anything else the model invents collapses to the
+// safe end. 'partial' is the fallback for an unrecognized value ON PURPOSE — an
+// unparseable completeness claim must never be read as "I saw the whole list."
+const PANELS = new Set(['full', 'partial', 'none']);
 
 /** Defensive parse of the vision reply — same posture as parseVerdictJSON. */
 export function parseIngredientsJSON(text) {
@@ -36,13 +61,23 @@ export function parseIngredientsJSON(text) {
     return null;
   }
   const ingredients = Array.isArray(obj.ingredients) ? obj.ingredients.map(str).filter(Boolean) : [];
-  return { ingredients };
+  const panelRaw = str(obj.panel).toLowerCase();
+  const panel = ingredients.length === 0 ? 'none' : PANELS.has(panelRaw) ? panelRaw : 'partial';
+  return {
+    ingredients,
+    // Identity is transcription, not identification: an empty/absent value stays
+    // null rather than becoming a guess.
+    productName: str(obj.product_name) || null,
+    brand: str(obj.brand) || null,
+    panel,
+  };
 }
 
 /**
- * Read a label photo → an ingredient list.
+ * Read a label photo → the printed ingredient list + product identity.
  * @param {{ base64:string, mediaType?:string }} args
- * @returns {Promise<{ ingredients: string[] }>}  Empty array when nothing legible.
+ * @returns {Promise<{ ingredients:string[], productName:string|null, brand:string|null,
+ *                     panel:'full'|'partial'|'none' }>}
  */
 export async function readLabelIngredients({ base64, mediaType = 'image/jpeg' }) {
   const completion = await anthropic.messages.create({
@@ -54,11 +89,16 @@ export async function readLabelIngredients({ base64, mediaType = 'image/jpeg' })
         role: 'user',
         content: [
           { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } },
-          { type: 'text', text: 'Transcribe the ingredient list printed on this label.' },
+          {
+            type: 'text',
+            text: 'Transcribe the ingredient list printed on this label, plus the product name and brand if they are legible, and report how completely you could read the ingredient list.',
+          },
         ],
       },
     ],
   });
   const text = completion.content?.[0]?.text || '';
-  return parseIngredientsJSON(text) || { ingredients: [] };
+  return (
+    parseIngredientsJSON(text) || { ingredients: [], productName: null, brand: null, panel: 'none' }
+  );
 }

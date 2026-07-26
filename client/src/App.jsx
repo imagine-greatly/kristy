@@ -279,6 +279,7 @@ export default function App() {
         nonNegotiables: profile?.non_negotiables || [],
         focuses: profile?.focuses || [],
         constraints: resolveConstraints(profile),
+        partialRead: !!scan.partialRead,
       });
       setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
       if (verdict?.tier) trackEvent('verdict', { tier: verdict.tier, gated: !!verdict.gated, goalSet: true });
@@ -500,6 +501,7 @@ export default function App() {
           nonNegotiables: profile?.non_negotiables || [],
           focuses: profile?.focuses || [],
           constraints: resolveConstraints(profile),
+          partialRead: !!scan.partialRead,
         });
         setScan((s) => (s ? { ...s, verdict, pickingGoal: false } : s));
       } catch {

@@ -89,14 +89,51 @@ const stripCodes = (s) =>
     .replace(/\s+/g, ' ')
     .trim();
 
+// ── Oil-blend parentheticals ─────────────────────────────────────────────────
+// A US label almost never writes "soybean oil" inside a blend. It writes a HEAD
+// plus a parenthetical of bare sources:
+//
+//   "Vegetable oil (canola, soybean)"      "Shortening (palm, cottonseed)"
+//
+// Splitting on parentheses throws the head away, so "soybean" arrives as a bare
+// token — and the KB keys that entry on "soybean oil". The result was that the most
+// common way an American label declares a seed-oil blend matched NOTHING, which for
+// a coach whose single loudest position is seed oils is the worst possible miss.
+//
+// Fixed by putting the head's noun back onto its own sub-items before tokenizing.
+// This authors no claim and adds no KB entry: it makes an EXISTING entry reachable
+// from the form the label actually prints.
+//
+// Scoped deliberately to a parenthetical whose HEAD is an oil/shortening/fat, so a
+// bare "soybeans" in a tofu product is never read as soybean oil. That scoping is
+// the whole reason this lives in the tokenizer instead of becoming a bare "soybean"
+// alias — an alias has no way to know it was inside an oil blend.
+const OIL_SOURCE =
+  'canola|rapeseed|soybean|cottonseed|sunflower|safflower|corn|palm kernel|palm|peanut|grapeseed|rice bran|sesame|coconut|olive|avocado';
+const OIL_BLEND = /\b(oils?|shortening|fats?)\s*\(([^)]*)\)/gi;
+
+/** "vegetable oil (canola, soybean)" → "vegetable oil (canola oil, soybean oil)" */
+export function expandOilBlends(text) {
+  const source = new RegExp(`\\b(${OIL_SOURCE})\\b(?!\\s*(?:oil|kernel))`, 'gi');
+  return String(text || '').replace(OIL_BLEND, (_whole, head, inner) => {
+    return `${head} (${inner.replace(source, '$1 oil')})`;
+  });
+}
+
 /** Split a raw ingredient string (or array) into normalized tokens. Per spec:
  *  lowercase, strip E-number formatting, split on commas and parentheses (plus
  *  the harmless siblings ; [ ]). Compound names like "canola oil" stay intact —
- *  we deliberately do NOT split on "and". */
+ *  we deliberately do NOT split on "and".
+ *
+ *  "and/or" IS a delimiter, though: it is a label-specific construction that only
+ *  ever separates alternatives ("soybean and/or canola oil"), so splitting it can't
+ *  break a compound name the way splitting bare "and" would ("salt and vinegar
+ *  seasoning"). Without it the alternatives arrive fused into one token and only the
+ *  first of the two oils could ever match. */
 export function tokenizeIngredients(raw) {
   const text = Array.isArray(raw) ? raw.join(', ') : String(raw || '');
-  return text
-    .split(/[,;()[\]]+/)
+  return expandOilBlends(text)
+    .split(/[,;()[\]]+|\band\s*\/\s*or\b/gi)
     .map((t) => stripCodes(norm(t)))
     .filter(Boolean);
 }
