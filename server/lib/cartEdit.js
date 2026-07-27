@@ -28,7 +28,7 @@ export const CART_TIERS = [
 // Sources a cart row may claim. 'scan' is a product the shopper scanned and kept;
 // 'swap' is one of Kristy's haul callouts; 'user' is a manual add; 'template' is
 // hers from the goal blend.
-const SOURCES = ['template', 'swap', 'user', 'scan'];
+const SOURCES = ['template', 'swap', 'user', 'scan', 'imported'];
 
 export function sanitizeList(list) {
   if (!list || !Array.isArray(list.items)) return null;
@@ -53,6 +53,14 @@ export function sanitizeList(list) {
       // and only ever used to READ a KB entry — never to write one.
       ...(it.perimeterId ? { perimeterId: String(it.perimeterId).slice(0, 64) } : {}),
       ...(it.alt ? { alt: String(it.alt).slice(0, 160) } : {}),
+      // ── Imported-list fields (Block 8). These carry the AUTONOMY guarantees, so
+      // they have to survive the save or the promise breaks on reload: what the
+      // shopper originally wrote, a swap we only OFFERED, and a row we couldn't read
+      // and refuse to guess at.
+      ...(it.specifiedFrom ? { specifiedFrom: String(it.specifiedFrom).slice(0, 140) } : {}),
+      ...(it.swapOffer ? { swapOffer: String(it.swapOffer).slice(0, 200) } : {}),
+      ...(it.needsFix ? { needsFix: true } : {}),
+      ...(it.note ? { note: String(it.note).slice(0, 200) } : {}),
     }))
     .filter((it) => it.name);
   return {

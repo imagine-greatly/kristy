@@ -56,6 +56,7 @@ import ScanHome from './components/ScanHome.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import CartMoment from './components/CartMoment.jsx';
 import PerimeterAsk from './components/PerimeterAsk.jsx';
+import ImportList from './components/ImportList.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
 import IngredientPage from './components/IngredientPage.jsx';
@@ -80,7 +81,8 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [subscription, setSubscription] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
-  const [aisleOpen, setAisleOpen] = useState(false); // the Perimeter "ask about the aisle" sheet
+  const [aisleOpen, setAisleOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false); // bring-your-own-list sheet // the Perimeter "ask about the aisle" sheet
   // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
   const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
@@ -1090,6 +1092,7 @@ export default function App() {
               onUpgrade={openUpgrade}
               onScan={() => setCameraOpen(true)}
               onAskAisle={() => setAisleOpen(true)}
+              onImport={() => setImportOpen(true)}
             />
           )}
           {moment === 'scan' && (
@@ -1217,6 +1220,13 @@ export default function App() {
 
       {/* The one-time coach-not-doctor note, fired the first time any focus turns on. */}
       {disclaimerOpen && <FocusDisclaimer onDismiss={dismissDisclaimer} />}
+
+      {importOpen && (
+        <ImportList
+          onClose={() => setImportOpen(false)}
+          onImported={(list, summary) => { cart.applyList(list, summary); setMoment("list"); }}
+        />
+      )}
 
       {aisleOpen && (
         <PerimeterAsk

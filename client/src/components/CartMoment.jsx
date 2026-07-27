@@ -256,6 +256,7 @@ export default function CartMoment({
   onUpgrade,
   onScan,
   onAskAisle,
+  onImport,
 }) {
   const [openId, setOpenId] = useState(null);
   const [guidance, setGuidance] = useState({}); // itemId → { state, resp }
@@ -350,11 +351,21 @@ export default function CartMoment({
           same affordance on one screen. The composer already accepts that sentence, so
           the standalone button is gone; the unlabeled aisle keeps its tap because
           nothing else on this surface offers it. */}
-      {onAskAisle && (
+      {(onAskAisle || onImport) && (
         <div style={styles.peerRow}>
-          <button type="button" style={styles.peer} onClick={onAskAisle}>
-            Ask about the aisle
-          </button>
+          {onAskAisle && (
+            <button type="button" style={styles.peer} onClick={onAskAisle}>
+              Ask about the aisle
+            </button>
+          )}
+          {/* Someone who already wrote a list shouldn't have to retype it into a
+              cart. Peer of the aisle tap, not a primary — most trips don't start
+              from a piece of paper. */}
+          {onImport && (
+            <button type="button" style={styles.peer} onClick={onImport}>
+              Import a list
+            </button>
+          )}
         </div>
       )}
 

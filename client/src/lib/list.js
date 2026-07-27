@@ -104,6 +104,56 @@ export async function buildGuestList({ coach_goals = [], non_negotiables = [], f
   return { list, taste: !!taste };
 }
 
+/* ───────── Import the shopper's OWN list ─────────
+   Two ways in, one endpoint. Text goes as JSON; a photo goes as multipart, the same
+   shape the label scanner uses. The server transcribes (vision), specifies
+   (deterministic), and returns a normal cart — so from here the result is
+   indistinguishable from a built one and every cart affordance just works. */
+const SPLIT_LINES = /\r?\n|,/;
+
+export async function importList({ text, file } = {}) {
+  if (IS_DEMO) {
+    // The sandbox has no vision and no server — parse text locally so the loop is
+    // still explorable, and say plainly that a photo needs the real thing.
+    if (file) return { list: null, summary: 'Photo import runs in the live app — this is a demo.' };
+    const names = String(text || '')
+      .split(SPLIT_LINES)
+      .map((t) => t.replace(/^[\s]*(?:[-*•]|\d+[.)])\s*/, '').trim())
+      .filter(Boolean);
+    if (!names.length) return { list: null, summary: "I couldn't read a list in that." };
+    const cur = loadCachedList() || { goal: null, intro: '', items: [] };
+    const list = {
+      ...cur,
+      intro: `Kept all ${names.length} of your items.`,
+      items: [...cur.items, ...names.map((n) => ({ id: rid(), name: n, category: 'Added', checked: false, source: 'imported' }))],
+    };
+    saveCache(list);
+    return { list, summary: list.intro, imported: names.length };
+  }
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  const headers = { Authorization: `Bearer ${session?.access_token}` };
+
+  let res;
+  if (file) {
+    const form = new FormData();
+    form.append('image', file);
+    res = await fetch(`${apiBase}/api/list/import`, { method: 'POST', headers, body: form });
+  } else {
+    res = await fetch(`${apiBase}/api/list/import`, {
+      method: 'POST',
+      headers: { ...headers, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: String(text || '') }),
+    });
+  }
+  if (!res.ok) throw new Error("I couldn't read that list just now — try again, or type it in.");
+  const json = await res.json();
+  if (json.list) saveCache(json.list);
+  return json;
+}
+
 /* ───────── Public API — server-backed, cache-first ───────── */
 
 // The persisted list + the server's premium verdict (drives the capability nudge).

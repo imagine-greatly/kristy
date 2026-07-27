@@ -11,6 +11,9 @@ import {
 import { premiumForReq } from '../lib/subscription.js';
 import { generateList, mergePendingSwaps, listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
+import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
+import { readListPhoto } from '../lib/listVision.js';
+import { imageUpload } from '../lib/upload.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
 import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
 
@@ -260,6 +263,80 @@ router.post('/list/swaps', requireAuth, async (req, res) => {
   } catch (err) {
     console.warn('[kristy] POST /api/list/swaps skipped:', err.message);
     return res.json({ ok: true, pending: 0 });
+  }
+});
+
+/* ═══════════════ POST /api/list/import — the shopper's OWN list, specified ═══════════════
+   Two ways in, one pipeline out: a typed/pasted list (`text`) or a photo of one
+   (multipart `image`, transcribed by listVision). Either way the raw strings run
+   through the SAME deterministic specification, so a photographed list and a pasted
+   one produce the same quality of cart.
+
+   Not premium-gated. Reading a label with vision is free for everyone including
+   guests (it's the acquisition hook); reading a shopping list is the same act, and
+   gating it would make importing feel like a toll on work the shopper already did.
+   `premium` is still passed through, so the constraint-tuned specifics stay a paid
+   capability exactly as they are in generateList.
+
+   Preferences come from the DB, never the request body — same rule as every other
+   route here, so a tampering client can't obtain the tuned picks. */
+async function rawItemsFromRequest(req) {
+  if (req.file) {
+    const base64 = req.file.buffer.toString('base64');
+    const mediaType = req.file.mimetype || 'image/jpeg';
+    const { items } = await readListPhoto({ base64, mediaType });
+    // Vision hands back {text, unreadable}; the unreadable ones ride through so the
+    // shopper gets a row to fix instead of a silent omission or an invented item.
+    return items;
+  }
+  return parseListText(req.body?.text);
+}
+
+router.post('/list/import', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
+  const userId = req.userId;
+  try {
+    const rawItems = await rawItemsFromRequest(req);
+    if (!rawItems.length) {
+      return res.json({
+        list: null,
+        summary: "I couldn't make out a list in that — type it in and I'll take it from there.",
+        imported: 0,
+      });
+    }
+
+    const premium = await premiumForReq(req);
+    const profile = await getFullProfile(userId).catch(() => ({}));
+    const { goal, nonNegotiables, constraints } = profileInputs(profile);
+
+    const { items, specified, offers } = specifyImportedItems(rawItems, {
+      nonNegotiables,
+      constraints,
+      premium,
+    });
+
+    const row = await getShoppingList(userId);
+    const current =
+      row?.list && Array.isArray(row.list.items) ? row.list : { goal, intro: '', items: [] };
+
+    const summary = importSummary({ items, specified, offers });
+    // Imported items are APPENDED, never a replacement — an import must not silently
+    // wipe a cart the shopper was already building.
+    const merged = {
+      ...current,
+      goal: current.goal ?? goal,
+      intro: summary,
+      items: [...current.items, ...items],
+    };
+
+    const clean = sanitizeList(merged) || merged;
+    await saveShoppingList(userId, { list: clean });
+    return res.json({ list: clean, summary, imported: items.length, specified });
+  } catch (err) {
+    console.error(`[kristy] /api/list/import error @ ${new Date().toISOString()}:`, err?.message || err);
+    return res.status(503).json({
+      error: true,
+      message: "I couldn't read that list just now — try again, or type it in.",
+    });
   }
 });
 
