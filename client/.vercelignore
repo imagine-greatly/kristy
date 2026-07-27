@@ -1,0 +1,12 @@
+# Deploying from client/ means the repo-root .gitignore doesn't apply to the upload.
+# Vercel builds from source, so shipping local build output or tooling is pure waste —
+# and a stale dist/ riding along is the kind of thing that makes a bad deploy look like
+# a good one.
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+
+# Favicon generation tooling (Python) — reproducible, not needed at build time.
+tools
