@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
-import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS, CONSTRAINTS_SECTION, FOCUS_DISCLAIMER } from '../lib/coachGoals.js';
+import {
+  COACH_GOALS,
+  FOCUSES,
+  NON_NEGOTIABLES,
+  CONSTRAINTS,
+  CONSTRAINTS_SECTION,
+  FOCUS_DISCLAIMER,
+  SYNTHETIC_LINES,
+} from '../lib/coachGoals.js';
 import { interpretPreferences, customLineLabel, isCustomLine } from '../lib/preferences.js';
 
 /* ═══════════════════════ Coach onboarding — the front door ═══════════════════════
@@ -43,6 +51,15 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
     setList(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
 
   const uniq = (arr) => [...new Set(arr)];
+
+  // Every synthetic line already on? Then the sweep reads as "on" and tapping clears.
+  const allSynthetic = SYNTHETIC_LINES.every((v) => nonNegotiables.includes(v));
+  const toggleAllSynthetic = () =>
+    setNonNegotiables((cur) =>
+      allSynthetic
+        ? cur.filter((v) => !SYNTHETIC_LINES.includes(v)) // keep any dietary line they set
+        : uniq([...cur, ...SYNTHETIC_LINES])
+    );
 
   async function runFreeText(e) {
     e.preventDefault();
@@ -143,6 +160,21 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
               <p style={styles.sub}>
                 Optional. Things you never want in the cart &mdash; held on every product, no exceptions.
               </p>
+              {/* One tap for the shopper who wants the whole synthetic column gone.
+                  Deliberately does NOT include vegetarian/vegan/dairy-free/gluten-free —
+                  those are an identity or an allergy, and they strip real food from the
+                  cart. "Everything artificial out" shouldn't quietly also mean "no meat". */}
+              <button
+                type="button"
+                onClick={toggleAllSynthetic}
+                aria-pressed={allSynthetic}
+                style={{ ...styles.sweep, ...(allSynthetic ? styles.sweepOn : null) }}
+              >
+                {allSynthetic ? 'No artificial anything  ✓' : 'No artificial anything'}
+                <span style={styles.sweepSub}>
+                  {allSynthetic ? 'Tap to clear them' : 'Turns on every additive line below'}
+                </span>
+              </button>
               <ChipRow options={NON_NEGOTIABLES} selected={nonNegotiables} onToggle={(v) => toggle(nonNegotiables, setNonNegotiables, v)} />
             </>
           )}
@@ -345,10 +377,31 @@ const styles = {
     cursor: 'pointer',
     textAlign: 'left',
   },
-  goalOn: { borderColor: colors.borderGold, background: colors.goldTint9 },
+  goalOn: { border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },
   goalTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 600, color: colors.textPrimary },
   goalBlurb: { fontFamily: fonts.ui, fontSize: 13, color: colors.textMuted },
   goalCheck: { position: 'absolute', right: 16, top: 14, color: colors.accentGold, fontSize: 16, fontWeight: 700 },
+  sweep: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 2,
+    width: '100%',
+    minHeight: 48,
+    padding: '11px 16px',
+    margin: '8px 0 2px',
+    borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`,
+    background: 'transparent',
+    color: colors.accentGold,
+    fontFamily: fonts.ui,
+    fontSize: 15,
+    fontWeight: 700,
+    cursor: 'pointer',
+    textAlign: 'left',
+  },
+  sweepOn: { background: colors.goldTint9 },
+  sweepSub: { fontSize: 12.5, fontWeight: 500, color: colors.textMuted },
   chips: { display: 'flex', flexWrap: 'wrap', gap: 8, margin: '6px 0 4px' },
   chip: {
     maxWidth: '100%',
@@ -366,7 +419,7 @@ const styles = {
     textAlign: 'left',
     overflowWrap: 'anywhere',
   },
-  chipOn: { borderColor: colors.borderGold, background: colors.goldTint9, color: colors.accentGold },
+  chipOn: { border: `1px solid ${colors.borderGold}`, background: colors.goldTint9, color: colors.accentGold },
   group: { display: 'flex', flexDirection: 'column', gap: 2, margin: '8px 0 0' },
   groupLabel: {
     fontFamily: fonts.ui,

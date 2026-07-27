@@ -133,16 +133,29 @@ const LEGACY_ALIASES = {
 export const NON_NEGOTIABLES = [
   { value: 'no seed oils', label: 'No seed oils' },
   { value: 'no artificial sweeteners', label: 'No artificial sweeteners' },
-  { value: 'no artificial dyes', label: 'No artificial dyes' },
+  { value: 'no artificial dyes', label: 'No artificial colors or dyes' },
   { value: 'no hfcs', label: 'No HFCS' },
+  { value: 'no msg', label: 'No MSG' },
+  { value: 'no natural flavors', label: 'No natural flavors' },
+  { value: 'no gums', label: 'No gums' },
+  { value: 'no refined sugar', label: 'No refined sugar' },
   { value: 'no carrageenan', label: 'No carrageenan' },
   { value: 'no added nitrites', label: 'No added nitrites' },
   { value: 'no palm oil', label: 'No palm oil' },
-  { value: 'vegetarian', label: 'Vegetarian' },
-  { value: 'vegan', label: 'Vegan' },
-  { value: 'dairy-free', label: 'Dairy-free', advisory: true },
-  { value: 'gluten-free', label: 'Gluten-free', advisory: true },
+  // `dietary` marks the lines that are an identity or an allergy rather than "keep the
+  // synthetic out". They're excluded from the "No artificial anything" sweep on
+  // purpose: these four drive EXCLUDE_TAGS, so sweeping them in would quietly strip
+  // meat, dairy and gluten from the cart of someone who only wanted additives gone.
+  { value: 'vegetarian', label: 'Vegetarian', dietary: true },
+  { value: 'vegan', label: 'Vegan', dietary: true },
+  { value: 'dairy-free', label: 'Dairy-free', advisory: true, dietary: true },
+  { value: 'gluten-free', label: 'Gluten-free', advisory: true, dietary: true },
 ];
+
+// The set behind the one-tap "No artificial anything" — every hard line that is about
+// keeping industrial/synthetic ingredients out. Derived, so a line added to the
+// taxonomy joins the sweep automatically unless it's marked dietary.
+export const SYNTHETIC_LINES = NON_NEGOTIABLES.filter((n) => !n.dietary).map((n) => n.value);
 
 // Dietary focuses (extension Part B). Self-selected preferences the user turns on
 // about themselves — never pre-checked, never inferred. Labels are EXACT and

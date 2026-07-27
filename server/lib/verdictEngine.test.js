@@ -13,6 +13,7 @@ import {
   kb,
   TIERS,
 } from './verdictEngine.js';
+import { hardLineIds } from './hardLines.js';
 
 const sorted = (a) => [...a].sort();
 
@@ -310,4 +311,55 @@ test('affirmations cannot satisfy or violate a hard line, or lift a tier', () =>
   assert.equal(r.hardLines.violated.length, 1, 'the hard line still fires');
   // The affirmation is not among the names surfaced for the violation.
   assert.ok(!r.hardLines.violated[0].names.includes('Raw Honey'));
+});
+
+/* ── The holistic hard lines (Block 6) ──────────────────────────────────────────
+   Every one of these must resolve to REAL KB entries. A chip that escalated nothing
+   would be a promise the engine doesn't keep — the same failure mode as the
+   advisory-only gluten-free line, except silent. */
+test('each holistic hard line resolves to real KB ids', () => {
+  const expected = {
+    'no msg': ['msg', 'autolyzed_yeast_extract', 'hydrolyzed_vegetable_protein'],
+    'no natural flavors': ['natural_flavors'],
+    'no gums': ['xanthan_gum', 'guar_gum', 'carboxymethylcellulose'],
+  };
+  for (const [line, ids] of Object.entries(expected)) {
+    const got = hardLineIds([line]);
+    for (const id of ids) assert.ok(got.has(id), `"${line}" must cover ${id}`);
+  }
+  // Sugar under its other names — the whole category, so it grows with the KB.
+  const sugar = hardLineIds(['no refined sugar']);
+  for (const id of ['high_fructose_corn_syrup', 'corn_syrup', 'evaporated_cane_juice', 'brown_rice_syrup'])
+    assert.ok(sugar.has(id), `"no refined sugar" must cover ${id}`);
+});
+
+test('a declared holistic line escalates the tier and names the ingredient', () => {
+  const cases = [
+    ['no gums', 'Water, cream, guar gum, sea salt', 'Guar Gum'],
+    ['no msg', 'Chicken broth, salt, autolyzed yeast extract', 'Autolyzed Yeast Extract'],
+    ['no natural flavors', 'Sparkling water, natural flavors', 'Natural Flavors'],
+    ['no refined sugar', 'Oats, brown rice syrup, almonds', 'Brown Rice Syrup'],
+  ];
+  for (const [line, ingredients, named] of cases) {
+    const base = evaluateIngredients(ingredients, { hardLines: [] });
+    const held = evaluateIngredients(ingredients, { hardLines: [line] });
+    assert.notEqual(held.tier, 'approved', `${line}: the seal must be withheld`);
+    assert.ok(
+      TIERS.indexOf(held.tier) > TIERS.indexOf(base.tier),
+      `${line}: declaring it must escalate (${base.tier} → ${held.tier})`
+    );
+    const hit = (held.hardLines?.violated || []).find((v) => v.value === line);
+    assert.ok(hit, `${line}: must be reported as violated`);
+    assert.ok(hit.names.includes(named), `${line}: must name "${named}", got ${hit.names.join(', ')}`);
+  }
+});
+
+test('no MSG covers the hidden forms because the KB itself says they are MSG', () => {
+  // Not an inference we added: the KB entry for autolyzed yeast extract states it
+  // releases free glutamic acid, "the same component as MSG". Matching it under this
+  // line names what the KB already holds rather than authoring a new claim.
+  const ids = hardLineIds(['no msg']);
+  assert.ok(ids.has('autolyzed_yeast_extract') && ids.has('hydrolyzed_vegetable_protein'));
+  const kbText = JSON.stringify(kb.ingredients.find((e) => e.id === 'autolyzed_yeast_extract'));
+  assert.match(kbText, /glutamic acid/i, 'the KB must be the source of the MSG equivalence');
 });

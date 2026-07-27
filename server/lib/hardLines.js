@@ -26,9 +26,32 @@ const CUSTOM_PREFIX = 'kb:'; // a user-picked KB ingredient, e.g. "kb:carrageena
 export const HARD_LINE_RULES = {
   'no seed oils': { label: 'no seed oils', categories: ['seed_oil'] },
   'no artificial sweeteners': { label: 'no artificial sweeteners', categories: ['artificial_sweetener'] },
-  'no artificial dyes': { label: 'no artificial dyes', categories: ['artificial_dye'] },
+  // The artificial_dye category IS the artificial colors — red 40, the yellows, blue 1,
+  // caramel color IV, carmine. Named both ways because a shopper looking to keep
+  // synthetic color out scans the label for "colors", not "dyes"; a second chip
+  // resolving to the identical ids would be a duplicate, not a new capability.
+  'no artificial dyes': { label: 'no artificial colors or dyes', categories: ['artificial_dye'] },
   'no hfcs': { label: 'no HFCS', ids: ['high_fructose_corn_syrup'] },
   'no carrageenan': { label: 'no carrageenan', ids: ['carrageenan'] },
+  // MSG, including the forms that legally avoid the name. This is not an inference:
+  // the KB's own entry for autolyzed yeast extract states it releases free glutamic
+  // acid, "the same component as MSG", functions identically, and exists as a
+  // labeling loophole; hydrolyzed vegetable protein likewise releases free glutamic
+  // acid at high concentrations. Matching them under this line names what the KB
+  // already holds — the shopper declaring "no MSG" means these too.
+  'no msg': { label: 'no MSG', ids: ['msg', 'autolyzed_yeast_extract', 'hydrolyzed_vegetable_protein'] },
+  'no natural flavors': { label: 'no natural flavors', ids: ['natural_flavors'] },
+  // Xanthan and guar are the `gum` category; cellulose gum is filed under emulsifier,
+  // so it's named explicitly. Carrageenan is deliberately NOT swept in here — it has
+  // its own line, and a shopper who set only "no gums" didn't ask for it.
+  'no gums': { label: 'no gums', categories: ['gum'], ids: ['carboxymethylcellulose'] },
+  // Sugar under its other names — the `sugar_alias` category (HFCS, corn syrup,
+  // dextrose, maltodextrin, agave, cane juice, brown rice syrup, invert sugar, fruit
+  // juice concentrate). Honest limit: the KB carries no entry for the bare word
+  // "sugar", so this catches the aliases, not plain sugar on a panel. Authoring a
+  // "sugar" entry to close that gap would flag most of the store and restripe every
+  // tier — a far bigger change than a hard line, and not one to make silently.
+  'no refined sugar': { label: 'no refined sugar', categories: ['sugar_alias'] },
   'no added nitrites': {
     label: 'no added nitrites',
     ids: ['sodium_nitrite', 'sodium_nitrate', 'potassium_nitrite'],
