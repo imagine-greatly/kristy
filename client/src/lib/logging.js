@@ -258,7 +258,11 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constr
   // `barcode` is RETENTION ONLY — the server stamps the resulting tier onto its own
   // product row with it. Nothing about the verdict is derived from it.
   const body = isGuest
-    ? { ingredients, readComplete, ...(barcode ? { barcode } : {}) }
+    // Hard lines ride on the GUEST body too. A stranger declares them in onboarding
+    // now, and a refusal is not a personalization luxury — resolving one is a KB read
+    // with no model call, so it is free on every tier. Goal/focuses/constraints stay
+    // OFF this path: those drive the personalized note, which is still gated.
+    ? { ingredients, nonNegotiables, readComplete, ...(barcode ? { barcode } : {}) }
     : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete, ...(barcode ? { barcode } : {}) };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',

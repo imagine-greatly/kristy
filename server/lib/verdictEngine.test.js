@@ -363,3 +363,20 @@ test('no MSG covers the hidden forms because the KB itself says they are MSG', (
   const kbText = JSON.stringify(kb.ingredients.find((e) => e.id === 'autolyzed_yeast_extract'));
   assert.match(kbText, /glutamic acid/i, 'the KB must be the source of the MSG equivalence');
 });
+
+test('a hard line a GUEST declared is honored — a refusal is not a paid feature', () => {
+  // Strangers set hard lines during onboarding now, before any account exists. The
+  // guest verdict path used to evaluate with no options at all, so a product the
+  // shopper had explicitly refused could come back approved. Hard lines resolve from
+  // the KB with no model call, so honoring them costs nothing and gates nothing.
+  const ingredients = 'Water, cream, guar gum, sea salt';
+  const ignored = evaluateIngredients(ingredients);
+  const honored = evaluateIngredients(ingredients, { hardLines: ['no gums'] });
+  assert.ok(
+    TIERS.indexOf(honored.tier) > TIERS.indexOf(ignored.tier),
+    `declaring the line must escalate (${ignored.tier} → ${honored.tier})`
+  );
+  assert.notEqual(honored.tier, 'approved', 'the seal is withheld');
+  const hit = (honored.hardLines?.violated || []).find((x) => x.value === 'no gums');
+  assert.ok(hit && hit.names.includes('Guar Gum'), 'the violated line names the ingredient');
+});

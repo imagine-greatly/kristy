@@ -187,7 +187,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
 export const guestVerdictRouter = Router();
 
 guestVerdictRouter.post('/verdict', (req, res) => {
-  const { ingredients, readComplete, barcode } = readBody(req.body);
+  const { ingredients, readComplete, barcode, nonNegotiables } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
   }
@@ -199,14 +199,21 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   }
 
   const count = tokenizeIngredients(ingredients).length;
-  const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched } = evaluateIngredients(ingredients);
+  // A stranger HAS declared lines now (onboarding runs before any account exists), so
+  // ignoring them here would let a product they refuse come back with the seal on.
+  // A hard line is a refusal, not a personalization luxury — it applies on every tier,
+  // and it costs nothing: resolving one is a KB read, no model call. The values are
+  // filtered against the taxonomy inside resolveHardLines, and an unknown string is
+  // dropped, so a guest body can only ever name a line that already exists.
+  const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, hardLines } =
+    evaluateIngredients(ingredients, { hardLines: nonNegotiables });
   const education = selectCardIsm(
     ismContext({ matched, tier, ingredientCount: count, focuses: [] })
   );
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count }, { readComplete, barcode });
+  return send(res, { tier, stamp, universalLayer, affirmationLayer, hardLines, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count }, { readComplete, barcode });
 });
 
 export default verdictRouter;

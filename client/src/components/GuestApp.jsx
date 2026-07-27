@@ -136,7 +136,9 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
     setScan({ loading: true, mode: args.mode });
     trackEvent('scan', { mode: args.mode, guest: true });
     try {
-      const result = await runProductScan(args); // guest detected (no session)
+      // The stranger already told us what to keep out — honor it on the scan, or a
+      // product they refuse comes back wearing the seal.
+      const result = await runProductScan({ ...args, nonNegotiables: prefs.non_negotiables || [] });
       if (result?.gate) {
         setScan(null);
         setGate({ reason: 'limit', line: LIMIT_LINE, terminal: true });
