@@ -41,6 +41,69 @@ const rid = () => randomUUID();
    kristy_take, or buying_tips; `assertClaimSafeReasons` in list.test.js is the
    tripwire and fails the build if one drifts. */
 const PICKS = {
+
+  /* ── The champions ────────────────────────────────────────────────────────────
+     Kristy has two voices, and the advocate is supposed to be as strong as the
+     critic. Flagging seed oils on a scan is only half a philosophy; the other half
+     is what she actively puts IN the cart. These are the traditional, nutrient-dense
+     foods she argues for, expressed as real list items rather than a badge on
+     something the shopper already picked up.
+
+     Every `why` here is food-worth or tradition — what the food IS, how it was made,
+     what to look for. Never an outcome in a body. "Live cultures, and more of them
+     than yogurt" is a fact about the food; "heals your gut" would be a treatment
+     claim, and nothing in this table is allowed to make one.
+
+     `tags` matter as much as the copy: a champion that ignores a hard line is worse
+     than no champion at all. Anything animal, dairy, or gluten-bearing is tagged so
+     EXCLUDE_TAGS removes it before the shopper ever sees it. */
+  live_yogurt: {
+    name: 'Live-culture yogurt, plain', category: 'Dairy & Eggs', tags: ['dairy'],
+    perimeterId: 'yogurt_plain_vs_flavored',
+    why: 'Check the label actually lists live active cultures — plain, because the flavored tubs are dessert.',
+  },
+  miso: {
+    name: 'Unpasteurized miso', category: 'Pantry',
+    why: 'Refrigerated, not the shelf-stable kind. Stir it in off the heat so it stays alive.',
+  },
+  kombucha: {
+    name: 'Kombucha, low-sugar', category: 'Pantry',
+    why: 'Fermented tea — check the panel, some brands carry as much sugar as soda.',
+  },
+  brined_pickles: {
+    name: 'Brined pickles, refrigerated', category: 'Pantry',
+    why: 'Salt and water on the label, not vinegar — vinegar pickles never fermented.',
+  },
+  natto: {
+    name: 'Natto', category: 'Pantry',
+    why: 'The most acquired taste on this list, and a breakfast staple in Japan for centuries.',
+  },
+  liver: {
+    name: 'Beef or chicken liver', category: 'Protein', tags: ['meat'],
+    why: 'The most nutrient-dense thing in the case, and usually the cheapest per pound. Start with chicken liver if beef is too strong.',
+    alt: 'Or a pâté, if cooking it yourself is a bridge too far.',
+  },
+  bone_broth: {
+    name: 'Bone broth', category: 'Pantry', tags: ['meat'],
+    why: 'Whole-animal cooking — the part most kitchens throw out. Look for one that gels in the fridge.',
+    alt: 'Or save your own carcasses and make it for free.',
+  },
+  grass_fed_butter: {
+    name: 'Grass-fed butter', category: 'Dairy & Eggs', tags: ['dairy'],
+    why: 'The animal ate grass, and the fat shows it — deeper yellow than the commodity block.',
+  },
+  ghee: {
+    name: 'Ghee', category: 'Pantry', tags: ['dairy'],
+    why: 'Butter with the milk solids cooked off — keeps on the counter and takes real heat.',
+  },
+  sprouted_grain: {
+    name: 'Sprouted whole-grain bread', category: 'Bakery', tags: ['gluten'],
+    why: 'Sprouted before milling, the way grain was prepared for most of history. Buy it from the freezer.',
+  },
+  grass_fed_beef: {
+    name: 'Grass-fed ground beef', category: 'Protein', tags: ['meat'],
+    why: 'Grass-finished, not just grass-started — the label has to say finished to mean it.',
+  },
   // ── Meat, fish, eggs ──
   chicken: {
     name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'air_chilled_chicken',
@@ -195,7 +258,11 @@ const PICKS = {
   },
   popcorn: { name: 'Popcorn kernels', category: 'Snacks', why: 'A whole grain you pop yourself — no bag coating, no seed oil.' },
   sauerkraut: { name: 'Refrigerated sauerkraut', category: 'Fermented', why: 'Buy it from the cold section — shelf-stable jars are pasteurized, so the cultures are gone.' },
-  kimchi: { name: 'Kimchi', category: 'Fermented', why: 'Live and fermented, and it makes plain rice or eggs interesting.' },
+  // Tagged fish because traditional kimchi is fermented with jeotgal — fish sauce or
+  // shrimp paste. Vegan kimchi exists, but most jars on the shelf are not, and putting
+  // seafood in a vegan's cart is a worse error than leaving one ferment out; sauerkraut,
+  // miso and brined pickles keep a plant-only gut-health cart well supplied.
+  kimchi: { name: 'Kimchi', category: 'Fermented', tags: ['fish'], why: 'Live and fermented, and it makes plain rice or eggs interesting.' },
   chia_flax: { name: 'Ground flax or chia', category: 'Fiber', why: 'A spoon into yogurt or oats — buy flax ground or it passes straight through.' },
   bananas: { name: 'Bananas', category: 'Produce', why: 'Portable fuel with its own wrapper.' },
 };
@@ -204,8 +271,8 @@ const PICKS = {
 // reason are authored ONCE and stay consistent everywhere it appears.
 const TEMPLATE_PICKS = {
   eating_cleaner: {
-    intro: 'Built for eating cleaner — whole foods first, and the ultra-processed stuff left off.',
-    picks: ['chicken', 'eggs', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo', 'almonds'],
+    intro: 'Built for eating cleaner — whole foods first, the traditional ones that earn their place, and the ultra-processed stuff left off.',
+    picks: ['eggs', 'grass_fed_butter', 'liver', 'bone_broth', 'sauerkraut', 'chicken', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'evoo'],
   },
   high_protein: {
     intro: 'Set up high-protein — the anchors up front so every meal has something real behind it.',
@@ -220,20 +287,20 @@ const TEMPLATE_PICKS = {
     picks: ['chicken', 'eggs', 'milk', 'greek_yogurt', 'bananas_apples', 'seasonal_veg', 'rice', 'steel_cut_oats', 'nut_butter', 'evoo'],
   },
   gut_health: {
-    intro: 'Built to feed your gut — fermented foods, fiber, and fewer additives.',
-    picks: ['kefir', 'sauerkraut', 'kimchi', 'lentils', 'steel_cut_oats', 'berries', 'spinach', 'garlic_onions', 'eggs', 'evoo'],
+    intro: 'Built around the ferments first — live cultures, then fiber to feed them, and the additives left out.',
+    picks: ['kefir', 'live_yogurt', 'sauerkraut', 'kimchi', 'miso', 'brined_pickles', 'lentils', 'steel_cut_oats', 'berries', 'spinach', 'garlic_onions', 'evoo'],
   },
   avoiding_junk: {
-    intro: 'Built to sidestep the junk — whole-food swaps for the stuff that usually sneaks into the cart.',
-    picks: ['chicken', 'eggs', 'greek_yogurt', 'whole_fruit', 'spinach', 'seasonal_veg', 'almonds', 'popcorn', 'steel_cut_oats', 'evoo'],
+    intro: 'Built to sidestep the junk — and stocked with the real versions of what it replaces.',
+    picks: ['chicken', 'eggs', 'grass_fed_butter', 'greek_yogurt', 'brined_pickles', 'whole_fruit', 'spinach', 'seasonal_veg', 'almonds', 'popcorn', 'steel_cut_oats', 'evoo'],
   },
   weight_loss: {
     intro: 'Built for weight loss — protein and fiber up front so you stay full on less, and the sugary stuff left off.',
     picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo'],
   },
   muscle_strength: {
-    intro: 'Set up for muscle and strength — protein at every meal and real carbs to train on.',
-    picks: ['chicken_breast', 'ground_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'rice', 'steel_cut_oats', 'beans', 'evoo'],
+    intro: 'Set up for muscle and strength — protein at every meal, real carbs to train on, and the nutrient-dense cuts most people skip.',
+    picks: ['chicken_breast', 'grass_fed_beef', 'eggs', 'liver', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'rice', 'steel_cut_oats', 'beans', 'evoo'],
   },
   pregnancy_postpartum: {
     intro: 'Built for this season — nutrient-dense whole foods that are easy to keep on hand.',

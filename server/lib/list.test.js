@@ -7,7 +7,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { generateList, listSignature } from './list.js';
+import { generateList, listSignature, GOAL_TEMPLATES } from './list.js';
 import { GOAL_VALUES } from './taxonomy.js';
 import { perimeterKb } from './perimeter.js';
 
@@ -81,11 +81,23 @@ test('multiple goals blend into ONE list — overlap-ranked, deduped, capped, na
 });
 
 test('the blend ranks OVERLAP first — a shared item leads a goal-unique one', () => {
-  const names = generateList({ goals: ['high_protein', 'eating_cleaner', 'family'] }).items.map((i) => i.name.toLowerCase());
-  const eggs = names.findIndex((n) => n.includes('egg')); // in all three templates
-  const berries = names.findIndex((n) => n.includes('berries') || n.includes('blueberries')); // eating-cleaner only
-  assert.ok(eggs >= 0 && berries >= 0);
-  assert.ok(eggs < berries, 'an all-goals overlap item should rank above a single-goal one');
+  // Derived from the templates rather than naming two fixture items: the old version
+  // pinned "berries" as the single-goal comparator, and broke the moment a template
+  // grew enough to push berries past the cap — a fixture change reported as a ranking
+  // regression. What matters is the RULE, so compute it.
+  const goals = ['high_protein', 'eating_cleaner', 'family'];
+  const names = generateList({ goals }).items.map((i) => i.name.toLowerCase());
+  const perGoal = goals.map((g) => new Set(GOAL_TEMPLATES[g].items.map((i) => i.name.toLowerCase())));
+  const inHowManyGoals = (n) => perGoal.filter((set) => set.has(n)).length;
+
+  const shared = names.findIndex((n) => inHowManyGoals(n) === goals.length);
+  const unique = names.findIndex((n) => inHowManyGoals(n) === 1);
+  assert.ok(shared >= 0, 'the blend must contain an item every goal wants');
+  assert.ok(unique >= 0, 'the blend must contain a goal-unique item');
+  assert.ok(
+    shared < unique,
+    `an all-goals overlap item should rank above a single-goal one (got "${names[shared]}" at ${shared}, "${names[unique]}" at ${unique})`
+  );
 });
 
 test('near-identical items collapse — not "Greek yogurt" AND "Plain Greek yogurt"', () => {
@@ -274,4 +286,65 @@ test('constraint substitution never leaves the same product in the cart twice', 
   const names = list.items.map((i) => i.name.toLowerCase());
   const dupes = names.filter((n, i) => names.indexOf(n) !== i);
   assert.deepEqual(dupes, [], `no duplicate rows, got: ${dupes.join(', ')}`);
+});
+
+/* ── The champions (Block 7) ────────────────────────────────────────────────────
+   Kristy's advocate voice has to reach the CART, not just the badge on a product
+   already in it. A gut-health list without ferments is a wrong list, not a cheaper
+   one — so these are template items and they apply on the free tier too. */
+test('a gut-health cart is ANCHORED by fermented foods, on the free tier', () => {
+  const items = generateList({ goals: ['gut_health'], premium: false }).items;
+  const names = items.map((i) => i.name.toLowerCase());
+  for (const ferment of ['kefir', 'sauerkraut', 'kimchi', 'miso']) {
+    assert.ok(names.some((n) => n.includes(ferment)), `gut health must stock ${ferment}, got: ${names.join(', ')}`);
+  }
+  // Anchored means they LEAD, not that they're buried under the fiber.
+  const firstNonFerment = names.findIndex((n) => !/kefir|yogurt|sauerkraut|kimchi|miso|pickle|kombucha/.test(n));
+  assert.ok(firstNonFerment >= 4, `ferments should lead the cart, first non-ferment at ${firstNonFerment}`);
+});
+
+test('the holistic cart stocks the traditional nutrient-dense foods', () => {
+  const names = generateList({ goals: ['eating_cleaner'], premium: false }).items.map((i) => i.name.toLowerCase());
+  for (const champion of ['liver', 'bone broth', 'butter']) {
+    assert.ok(names.some((n) => n.includes(champion)), `eating_cleaner must stock ${champion}, got: ${names.join(', ')}`);
+  }
+});
+
+test('a champion still obeys a hard line — the refusal outranks the advocacy', () => {
+  // The whole point of a hard line is that nothing overrides it, least of all
+  // Kristy's enthusiasm for a food.
+  const gf = generateList({ goals: ['eating_cleaner'], nonNegotiables: ['gluten-free'], premium: false })
+    .items.map((i) => i.name.toLowerCase());
+  assert.ok(!gf.some((n) => /sprouted|bread/.test(n)), `gluten-free must drop sprouted grain, got: ${gf.join(', ')}`);
+
+  const vegan = generateList({ goals: ['gut_health'], nonNegotiables: ['vegan'], premium: false })
+    .items.map((i) => i.name.toLowerCase());
+  for (const animal of ['kefir', 'yogurt', 'kimchi', 'liver', 'broth', 'butter', 'ghee', 'egg']) {
+    assert.ok(!vegan.some((n) => n.includes(animal)), `vegan must drop ${animal}, got: ${vegan.join(', ')}`);
+  }
+  // …and is still a real gut-health cart afterwards, not a stripped one.
+  assert.ok(
+    vegan.filter((n) => /sauerkraut|miso|pickle|kombucha/.test(n)).length >= 2,
+    `a vegan gut-health cart still needs its plant ferments, got: ${vegan.join(', ')}`
+  );
+
+  const df = generateList({ goals: ['gut_health'], nonNegotiables: ['dairy-free'], premium: false })
+    .items.map((i) => i.name.toLowerCase());
+  assert.ok(!df.some((n) => /kefir|yogurt|butter|ghee/.test(n)), `dairy-free must drop the dairy ferments, got: ${df.join(', ')}`);
+});
+
+test('no champion reason makes a health-outcome or treatment claim', () => {
+  // The advocate is bound by exactly the same claim lock as the critic. Tradition and
+  // nutrient density justify FOOD-WORTH; they never justify an outcome in a body.
+  const FORBIDDEN =
+    /\b(cure|cures|heal|heals|healing|treat|treats|prevent|prevents|reverse|reverses|boost|boosts|detox|immunity|inflammation|disease|diagnos|remedy|probiotic benefits?)\b/i;
+  const goals = ['gut_health', 'eating_cleaner', 'avoiding_junk', 'muscle_strength'];
+  for (const goal of goals) {
+    const list = generateList({ goals: [goal], premium: true });
+    for (const item of list.items) {
+      const text = `${item.name} ${item.why || ''} ${item.alt || ''}`;
+      assert.doesNotMatch(text, FORBIDDEN, `${goal} / "${item.name}" must not claim an outcome: ${item.why}`);
+    }
+    assert.doesNotMatch(list.intro || '', FORBIDDEN, `${goal} intro must not claim an outcome`);
+  }
 });
