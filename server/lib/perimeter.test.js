@@ -130,3 +130,72 @@ test('parseAnswerJSON reads { answer, refinement } and normalizes an empty refin
 test('the no-answer line is a real, honest sentence', () => {
   assert.ok(typeof NO_ANSWER === 'string' && NO_ANSWER.length > 20);
 });
+
+/* ── Label truth (LABEL_TRUTH.md) ───────────────────────────────────────────────
+   Kristy teaches the gap between what a label IMPLIES and what it GUARANTEES, so a
+   shopper can evaluate any product themselves. The rule that makes this safe is that
+   it is always about the label CATEGORY, never about a company. */
+test('the label-truth entries exist and teach the feed gap', () => {
+  const feed = perimeterKb.entries.find((e) => e.id === 'label_pasture_raised_feed');
+  assert.ok(feed, 'the pasture-raised feed entry must exist');
+  const text = JSON.stringify(feed).toLowerCase();
+  // The teaching itself: space, not feed — and the word to look for.
+  assert.match(text, /space/, 'must name what the term DOES cover');
+  assert.match(text, /soy-free/, 'must name the word to look for');
+  assert.match(feed.short_answer.toLowerCase(), /soy and corn/, 'must be honest about the usual ration');
+  assert.equal(feed.evidence_tier, 'established', 'regulatory scope is an established fact');
+  assert.ok(feed.sources.length >= 2, 'a regulatory claim carries its sources');
+
+  // Surfaced where a shopper meets it — the eggs PICK already points at egg_labels.
+  const eggs = perimeterKb.entries.find((e) => e.id === 'egg_labels');
+  assert.match(JSON.stringify(eggs).toLowerCase(), /soy-free/, 'the egg entry cross-references the feed gap');
+});
+
+test('NO entry makes a negative factual claim about a named brand', () => {
+  // The hard rule from LABEL_TRUTH.md. A claim about a company is checkable, goes
+  // stale when they reformulate, and is the one kind of statement here with real
+  // legal exposure. Teach the category, never "Brand X is bad".
+  const BRANDS =
+    /\b(vital farms|eggland'?s?|chobani|fage|oikos|kirkland|great value|tyson|perdue|smithfield|kraft|nestl[eé]|general mills|kellogg'?s?|quaker oats|pepsico|coca[- ]cola|danone|unilever|conagra|hormel|applegate|trader joe'?s|walmart|kroger|safeway)\b/i;
+  for (const e of perimeterKb.entries) {
+    assert.doesNotMatch(JSON.stringify(e), BRANDS, `${e.id} must not name a brand`);
+  }
+});
+
+test('produce guidance teaches picking SKILL, never an origin ranking', () => {
+  const p = perimeterKb.entries.find((e) => e.id === 'produce_picking_ripeness');
+  assert.ok(p, 'the produce-picking entry must exist');
+  // Only the fields Kristy SPEAKS. Aliases are the user's phrasings — "is mexican
+  // produce better" is there so the matcher catches that exact misconception.
+  const spoken = JSON.stringify({
+    short_answer: p.short_answer,
+    detail: p.detail,
+    kristy_take: p.kristy_take,
+    buying_tips: p.buying_tips,
+    labels_decoded: p.labels_decoded,
+  }).toLowerCase();
+  const text = spoken;
+  // Hass is a VARIETY grown in several countries — ranking origins is the exact
+  // error LABEL_TRUTH.md calls out as a caution rather than a feature.
+  assert.match(text, /variety/, 'must distinguish variety from origin');
+  assert.match(text, /season/, 'must explain origin as a season signal');
+  assert.doesNotMatch(
+    text,
+    /\b(mexican|californian|peruvian)\s+\w*\s*(are|is)?\s*(better|worse|superior|inferior)\b/,
+    'must never rank one origin above another'
+  );
+  assert.ok(p.buying_tips.some((t) => /stem/i.test(t)), 'teaches an actual physical check');
+});
+
+test('no label-truth entry claims a health outcome', () => {
+  const FORBIDDEN = /\b(cure|heal|treat|prevent|reverse|detox|immunity|disease|diagnos|remedy)\b/i;
+  const ids = [
+    'label_pasture_raised_feed', 'label_organic_scope', 'produce_picking_ripeness',
+    'label_multigrain_vs_whole_grain', 'label_lightly_sweetened', 'label_no_artificial_flavors',
+  ];
+  for (const id of ids) {
+    const e = perimeterKb.entries.find((x) => x.id === id);
+    assert.ok(e, `${id} exists`);
+    assert.doesNotMatch(JSON.stringify(e), FORBIDDEN, `${id} teaches label literacy, not health outcomes`);
+  }
+});
