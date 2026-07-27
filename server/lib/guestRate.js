@@ -27,3 +27,26 @@ export function rateLimited(ip) {
   hits.set(ip, recent);
   return false;
 }
+
+/* ── Onboarding cart builds — a SEPARATE bucket, deliberately ──────────────────
+   Building a cart is a deterministic template operation: no model call, no DB
+   write. Per this file's own rule ("only real inference requests should consume a
+   slot") it must not spend a stranger's free chats — someone who sets up their
+   cart would otherwise arrive at Kristy with a smaller budget than someone who
+   skipped. It still needs a ceiling, because the endpoint is public and hands out
+   the full-tailoring generation, so it gets its own generous window. */
+const CART_WINDOW_MS = 60 * 60 * 1000;
+const CART_MAX_PER_WINDOW = 20;
+const cartHits = new Map();
+
+export function cartBuildLimited(ip) {
+  const now = Date.now();
+  const recent = (cartHits.get(ip) || []).filter((t) => now - t < CART_WINDOW_MS);
+  if (recent.length >= CART_MAX_PER_WINDOW) {
+    cartHits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  cartHits.set(ip, recent);
+  return false;
+}

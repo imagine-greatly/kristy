@@ -19,6 +19,7 @@ import {
   composeList,
 } from './list.js';
 import { trackEvent } from './analytics.js';
+import { guestList, recordGuestList } from './guestState.js';
 
 const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
@@ -326,5 +327,163 @@ export function useCart(prefs) {
     applyList,
     compose,
     rebuild,
+  };
+}
+
+/* ═══════════════════ The stranger's cart — the same object, no account ═══════════════════
+   A stranger finishes onboarding and gets a real cart before being asked for anything.
+   That cart has to behave like a cart — check a row, remove one, add one, take a scan —
+   or the payoff is a screenshot rather than the product.
+
+   So this returns the SAME shape useCart does, which is what lets CartMoment render it
+   without knowing whether there's an account behind it. Only the two ends differ:
+   persistence goes to guest state instead of the server, and the actions that genuinely
+   require an account (the conversational composer, a rebuild) call onNeedsAccount, which
+   surfaces the save-your-work sign-in offer rather than failing silently.
+
+   `premium` is reported TRUE on purpose. This cart was generated at full tailoring — the
+   one-time taste — so its rows already are the paid capability. Showing "upgrade for
+   focus-aware picks" on a cart that visibly has them would be incoherent. The taste is
+   named honestly by the banner on the surface instead. */
+export function useGuestCart({ onNeedsAccount } = {}) {
+  const [list, setList] = useState(() => guestList());
+  const [note, setNote] = useState('');
+  const [gated, setGated] = useState(false);
+
+  const listRef = useRef(list);
+  useEffect(() => {
+    listRef.current = list;
+  }, [list]);
+
+  // Same discipline as useCart: compute the next list eagerly and persist as a plain
+  // side effect, never inside a setState updater React may run twice.
+  const mutate = useCallback((fn) => {
+    const cur =
+      listRef.current && Array.isArray(listRef.current.items)
+        ? listRef.current
+        : { goal: null, intro: '', items: [] };
+    const next = fn(cur);
+    if (!next || next === cur) return;
+    listRef.current = next;
+    setList(next);
+    recordGuestList(next);
+  }, []);
+
+  const toggle = useCallback(
+    (id) =>
+      mutate((cur) => ({
+        ...cur,
+        items: cur.items.map((i) => (i.id === id ? { ...i, checked: !i.checked } : i)),
+      })),
+    [mutate]
+  );
+
+  const remove = useCallback(
+    (id) => mutate((cur) => ({ ...cur, items: cur.items.filter((i) => i.id !== id) })),
+    [mutate]
+  );
+
+  const add = useCallback(
+    (name, category = 'Added') => {
+      const clean = String(name || '').trim();
+      if (!clean) return;
+      mutate((cur) => ({
+        ...cur,
+        items: [...cur.items, { id: rid(), name: clean, category, checked: false, source: 'user' }],
+      }));
+      trackEvent('cart-add', { source: 'tap', guest: true });
+    },
+    [mutate]
+  );
+
+  const refine = useCallback(
+    (id, newName) => {
+      if (!newName) return;
+      mutate((cur) => ({
+        ...cur,
+        items: cur.items.map((i) => (i.id === id ? { ...i, name: newName, refined: true } : i)),
+      }));
+    },
+    [mutate]
+  );
+
+  const addScan = useCallback(
+    ({ name, tier, barcode, category }) => {
+      const clean = String(name || '').trim();
+      if (!clean) return;
+      mutate((cur) => {
+        const dupe = cur.items.find(
+          (i) => i.source === 'scan' && i.name.toLowerCase() === clean.toLowerCase()
+        );
+        if (dupe) {
+          return { ...cur, items: cur.items.map((i) => (i.id === dupe.id ? { ...i, tier: tier || i.tier } : i)) };
+        }
+        return {
+          ...cur,
+          items: [
+            ...cur.items,
+            {
+              id: rid(),
+              name: clean,
+              category: category || 'Scanned',
+              checked: true,
+              source: 'scan',
+              tier: tier || null,
+              ...(barcode ? { productName: clean } : {}),
+            },
+          ],
+        };
+      });
+      trackEvent('cart-add', { source: 'scan', tier: tier || null, guest: true });
+    },
+    [mutate]
+  );
+
+  // The cart Kristy just built during onboarding.
+  const applyList = useCallback((next, summary) => {
+    if (!next || !Array.isArray(next.items)) return;
+    listRef.current = next;
+    setList(next);
+    recordGuestList(next);
+    if (summary) setNote(summary);
+  }, []);
+
+  const startNewTrip = useCallback(() => {
+    const empty = { goal: null, intro: '', items: [], emptied: true };
+    listRef.current = empty;
+    setList(empty);
+    recordGuestList(empty);
+    setNote('');
+  }, []);
+
+  // Editing the cart by conversation and rebuilding both run server-side against a
+  // stored profile. There isn't one yet — so instead of a dead button, this is exactly
+  // the "memory-requiring action" that earns the sign-in offer.
+  const needsAccount = useCallback(async () => {
+    onNeedsAccount?.();
+    return { ok: false, needsAccount: true };
+  }, [onNeedsAccount]);
+
+  return {
+    list,
+    premium: true,
+    loading: false,
+    busy: '',
+    note,
+    gated,
+    hasCart: Array.isArray(list?.items) && list.items.length > 0,
+    startNewTrip,
+    progress: cartProgress(list),
+    setNote,
+    setGated,
+    toggle,
+    remove,
+    add,
+    refine,
+    addScan,
+    addSwaps: () => {},
+    applyList,
+    compose: needsAccount,
+    rebuild: needsAccount,
   };
 }

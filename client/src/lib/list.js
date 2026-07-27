@@ -78,6 +78,32 @@ async function authFetch(path, opts = {}) {
   return res.json();
 }
 
+/* ───────── The stranger's cart — no account, no auth header ─────────
+   The onboarding payoff. Generated server-side by the same generateList the account
+   path uses, so a stranger's first cart is the real thing rather than a client-side
+   imitation that could drift from it. Nothing is persisted server-side — the cart
+   comes back in the response and lives in guest state until there's an account.
+
+   This one generation runs at full tailoring (the TASTE): focuses and constraints
+   shape it, which is what makes the onboarding questions worth answering. */
+export async function buildGuestList({ coach_goals = [], non_negotiables = [], focuses = [], constraints = [] } = {}) {
+  if (IS_DEMO) {
+    return {
+      list: loadOrGenerateDemo({ goals: coach_goals, nonNegotiables: non_negotiables, focuses, constraints }),
+      taste: true,
+    };
+  }
+  const res = await fetch(`${apiBase}/api/guest/list`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ coach_goals, non_negotiables, focuses, constraints }),
+  });
+  if (!res.ok) throw new Error(`guest list ${res.status}`);
+  const { list, taste } = await res.json();
+  if (!list || !Array.isArray(list.items)) throw new Error('guest list empty');
+  return { list, taste: !!taste };
+}
+
 /* ───────── Public API — server-backed, cache-first ───────── */
 
 // The persisted list + the server's premium verdict (drives the capability nudge).

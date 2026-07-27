@@ -1,7 +1,15 @@
 import { Router } from 'express';
 import { generateReply } from '../lib/chatEngine.js';
 import { detectMemoryAction } from '../lib/guestGate.js';
-import { clientIp, rateLimited } from '../lib/guestRate.js';
+import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
+import { generateList } from '../lib/list.js';
+import {
+  GOAL_VALUES,
+  FOCUS_VALUES,
+  HARD_LINE_VALUES,
+  CONSTRAINT_VALUES,
+  migrateGoalSet,
+} from '../lib/taxonomy.js';
 
 // POST /api/guest/chat — the "try-first" experience. No auth, no Supabase, no
 // persistence of any kind. A brand-new visitor talks to the real Kristy (same
@@ -71,6 +79,73 @@ router.post('/chat', async (req, res) => {
     return res.status(503).json({
       error: true,
       message: "I'm having trouble connecting right now — try that again in a moment.",
+    });
+  }
+});
+
+/* ═══════════════ POST /api/guest/list — the onboarding payoff cart ═══════════════
+   A stranger finishes onboarding and gets a real, tailored, reasoned cart before
+   being asked for anything. No auth, no account, nothing written anywhere — the
+   cart goes back in the response and the client keeps it in local state.
+
+   This generates at `premium: true` ON PURPOSE — it is the one-time TASTE. Without
+   it the focuses/constraints steps of onboarding would shape nothing and the payoff
+   would be a bare goal template. What a stranger tastes here is the paid capability:
+   focus-aware picks, constraint-tuned specifics (budget buys the whole chicken,
+   short-on-time buys the rotisserie). Everything after this first cart runs on the
+   normal free line until they start the trial or subscribe.
+
+   ⚠️ Known and accepted: this endpoint hands full-tailoring generation to any
+   unauthenticated caller, so a signed-in FREE user could in principle call it
+   directly instead of using their own gated /api/list. It is bounded by a per-IP
+   ceiling, costs no model call, and writes nothing. Closing it properly would need
+   a device/session identity we deliberately don't collect from strangers.
+
+   The request body is the ONLY input here — there is no account to read prefs from
+   — so every value is filtered against the taxonomy before it reaches the
+   generator. A client cannot invent a goal, a focus, or a constraint. */
+const CUSTOM_LINE = /^kb:[a-z0-9_]{1,64}$/;
+
+function sanitizeGuestPrefs(body) {
+  const arr = (v) => (Array.isArray(v) ? v.map((x) => String(x || '').trim()).filter(Boolean) : []);
+  const uniq = (a) => [...new Set(a)];
+
+  // Goals are a SET (Block S). Retired goals resolve to goal + constraint at read
+  // time, exactly as they do for an account.
+  const rawGoals = uniq(arr(body?.coach_goals ?? body?.goals));
+  const rawConstraints = uniq(arr(body?.constraints));
+  const { goals, constraints } = migrateGoalSet({ goals: rawGoals, constraints: rawConstraints });
+
+  return {
+    goals: goals.filter((g) => GOAL_VALUES.includes(g)),
+    focuses: uniq(arr(body?.focuses)).filter((f) => FOCUS_VALUES.includes(f)),
+    // Presets, plus a custom "kb:<ingredient_id>" line from the KB picker.
+    nonNegotiables: uniq(arr(body?.non_negotiables ?? body?.nonNegotiables)).filter(
+      (h) => HARD_LINE_VALUES.includes(h) || CUSTOM_LINE.test(h)
+    ),
+    constraints: constraints.filter((c) => CONSTRAINT_VALUES.includes(c)),
+  };
+}
+
+router.post('/list', (req, res) => {
+  try {
+    if (cartBuildLimited(clientIp(req))) {
+      return res.status(429).json({
+        error: 'rate_limited',
+        message: "That's a lot of carts in one hour — give it a minute and try again.",
+      });
+    }
+
+    const prefs = sanitizeGuestPrefs(req.body || {});
+    if (!prefs.goals.length) return res.status(400).json({ error: 'goals_required' });
+
+    const list = generateList({ ...prefs, premium: true });
+    return res.json({ list, taste: true, prefs });
+  } catch (err) {
+    console.error(`[kristy] /api/guest/list error @ ${new Date().toISOString()}:`, err?.message || err);
+    return res.status(503).json({
+      error: true,
+      message: "I couldn't put that cart together just now — try again in a moment.",
     });
   }
 });

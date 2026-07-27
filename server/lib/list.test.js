@@ -260,3 +260,18 @@ test('a constraint variant never keeps an alt that contradicts its own pick', ()
   assert.ok(beans && !/or dried/i.test(beans.alt || ''), '"Dried beans" must not offer "or dried"');
   assert.ok(eggs && !/plain eggs/i.test(eggs.alt || ''), '"Eggs" must not offer "or plain eggs"');
 });
+
+test('constraint substitution never leaves the same product in the cart twice', () => {
+  // Substitution is many-to-one: under short_on_time BOTH "Chicken breast" and
+  // "Chicken thighs, bone-in" resolve to "Rotisserie chicken". The blend dedupes the
+  // BASE items, but that runs before the variants exist — so without a pass after
+  // applyVariants the shopper's very first cart shows rotisserie chicken twice.
+  const list = generateList({
+    goals: ['high_protein', 'eating_cleaner'],
+    constraints: ['budget', 'short_on_time'],
+    premium: true,
+  });
+  const names = list.items.map((i) => i.name.toLowerCase());
+  const dupes = names.filter((n, i) => names.indexOf(n) !== i);
+  assert.deepEqual(dupes, [], `no duplicate rows, got: ${dupes.join(', ')}`);
+});

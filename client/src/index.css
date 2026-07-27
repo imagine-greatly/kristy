@@ -2180,3 +2180,64 @@ textarea {
 body {
   overflow-x: hidden;
 }
+
+/* ── The stranger's onboarding payoff: the one-time full-tailored cart ──────────
+   Named honestly rather than dressed up. It sits above the cart, states what made
+   this one different, and carries the save offer — which is about keeping what they
+   already made, never a toll on the way in. */
+.taste-banner {
+  margin: 12px auto 4px;
+  padding: 14px 16px;
+  max-width: var(--bubble-max);
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--gold-30);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.taste-banner__line {
+  margin: 0;
+  font-family: var(--font-voice);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.taste-banner__sub {
+  margin: 6px 0 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.taste-banner__save {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.taste-banner__saveline {
+  flex: 1 1 200px;
+  min-width: 0;
+  font-family: var(--font-voice);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.taste-banner__savebtn {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent-gold);
+  color: var(--bg-deep);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}

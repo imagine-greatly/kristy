@@ -10,6 +10,20 @@
 const KEY = 'kristy:guest';
 const MAX_SCANS = 10;
 
+const EMPTY_PREFS = { coach_goals: [], non_negotiables: [], focuses: [], constraints: [] };
+
+function readPrefs(p) {
+  const arr = (v) => (Array.isArray(v) ? v.filter((x) => typeof x === 'string' && x) : []);
+  return {
+    coach_goals: arr(p?.coach_goals),
+    non_negotiables: arr(p?.non_negotiables),
+    focuses: arr(p?.focuses),
+    constraints: arr(p?.constraints),
+  };
+}
+
+// Tolerant of the older {scans, goal} shape — a stranger mid-session when this
+// shipped keeps their scans instead of having them silently dropped.
 function read() {
   try {
     const raw = localStorage.getItem(KEY);
@@ -18,12 +32,15 @@ function read() {
       return {
         scans: Array.isArray(parsed?.scans) ? parsed.scans : [],
         goal: parsed?.goal || null,
+        prefs: readPrefs(parsed?.prefs),
+        list: parsed?.list && Array.isArray(parsed.list.items) ? parsed.list : null,
+        onboarded: !!parsed?.onboarded,
       };
     }
   } catch {
     /* ignore */
   }
-  return { scans: [], goal: null };
+  return { scans: [], goal: null, prefs: { ...EMPTY_PREFS }, list: null, onboarded: false };
 }
 
 function write(state) {
@@ -55,9 +72,50 @@ export function loadGuestState() {
   return read();
 }
 
+/* ── Onboarding without an account ────────────────────────────────────────────
+   A stranger completes the whole setup and gets a cart before being asked for
+   anything, so their answers and that cart are the work we owe them — losing it at
+   sign-in would make signing in a punishment. Both live here until an account
+   exists to migrate them into. */
+
+// The stranger's onboarding answers. Same field names the account uses, so
+// migration is a straight hand-off to saveCoachProfile.
+export function recordGuestPrefs(prefs) {
+  const s = read();
+  s.prefs = readPrefs(prefs);
+  s.onboarded = true;
+  // Keep the legacy single `goal` in sync — it still pre-fills onboarding.
+  s.goal = s.prefs.coach_goals[0] || s.goal || null;
+  write(s);
+  return s.prefs;
+}
+
+// The cart Kristy built from those answers. Persisted whole (items carry their own
+// `why`), so a reload or a bounce out to the landing page doesn't cost them the payoff.
+export function recordGuestList(list) {
+  const s = read();
+  s.list = list && Array.isArray(list.items) ? list : null;
+  write(s);
+}
+
+export function guestPrefs() {
+  return read().prefs;
+}
+
+export function guestList() {
+  return read().list;
+}
+
+// Has this stranger been through onboarding? Drives the entry gate — a returning
+// stranger lands on their cart, not back at "what are we shopping for?".
+export function guestOnboarded() {
+  const s = read();
+  return s.onboarded || s.prefs.coach_goals.length > 0;
+}
+
 export function hasGuestState() {
   const s = read();
-  return s.scans.length > 0 || !!s.goal;
+  return s.scans.length > 0 || !!s.goal || s.prefs.coach_goals.length > 0 || !!s.list;
 }
 
 export function clearGuestState() {

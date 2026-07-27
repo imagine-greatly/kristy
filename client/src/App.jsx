@@ -23,8 +23,14 @@ import {
   skipCoachOnboarding,
   resolveConstraints,
 } from './lib/coachGoals.js';
-import { loadGuestState, clearGuestState } from './lib/guestState.js';
-import { pushSwaps } from './lib/list.js';
+import {
+  loadGuestState,
+  clearGuestState,
+  recordGuestPrefs,
+  recordGuestList,
+  guestOnboarded,
+} from './lib/guestState.js';
+import { pushSwaps, buildGuestList, saveList } from './lib/list.js';
 import { useCart, initialMoment } from './lib/cart.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
@@ -81,6 +87,11 @@ export default function App() {
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
   const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
   const [onbInitialGoal, setOnbInitialGoal] = useState(null); // guest-expressed goal, pre-fills onboarding
+  // A stranger's setup, before any account exists. `guestSetup` flips once they
+  // finish (or skip) so the entry gate stops re-asking; `guestBuilding` covers the
+  // one network hop where Kristy is assembling the payoff cart.
+  const [guestSetup, setGuestSetup] = useState(() => guestOnboarded());
+  const [guestBuilding, setGuestBuilding] = useState(false);
 
   const [messages, setMessages] = useState([]);
 
@@ -183,20 +194,65 @@ export default function App() {
       if (!guestReplayRef.current) {
         guestReplayRef.current = true;
         const guest = loadGuestState();
-        if (guest.scans.length || guest.goal) {
+        const guestGoals = guest.prefs?.coach_goals || [];
+        if (guest.scans.length || guest.goal || guestGoals.length || guest.list) {
           if (guest.goal && !prof?.coach_goal) setOnbInitialGoal(guest.goal);
-          replayGuestScans(guest);
+          claimGuestWork(guest, prof);
         }
       }
     }
     setReady(true);
   }
 
-  // Replay a converted guest's saved scans into the new account's Haul. Fire-and-
-  // forget from handleSession; per-scan failures are non-fatal, and the guest key is
-  // cleared afterward so a reload can't double-post the same scans.
-  async function replayGuestScans(guest) {
+  /* Carry everything a stranger made into the account they just created.
+     Signing in has to feel like locking in work, so nothing they did may be lost:
+     the onboarding answers become their profile, the cart becomes their cart, and
+     the scans become their Haul. Fire-and-forget from handleSession so sign-in never
+     waits on N network writes; the guest key is cleared once, at the end, so a reload
+     can't double-post. Individual failures are non-fatal — a dropped scan must not
+     cost them their preferences. */
+  async function claimGuestWork(guest, prof) {
+    const prefs = guest.prefs || {};
+    const goals = prefs.coach_goals || [];
+
     try {
+      // 1. Preferences first — they're the cheapest to lose and the most valuable to
+      //    keep, and every downstream surface reads from them. An account that already
+      //    has goals is left alone: a returning user's real profile outranks a
+      //    stranger's session.
+      if (goals.length && !(prof?.coach_goals?.length || prof?.coach_goal)) {
+        try {
+          await saveCoachProfile(userId || null, {
+            coach_goals: goals,
+            non_negotiables: prefs.non_negotiables || [],
+            focuses: prefs.focuses || [],
+            constraints: prefs.constraints || [],
+          });
+          setProfile((p) => ({
+            ...(p || {}),
+            coach_goals: goals,
+            coach_goal: goals[0] || null,
+            non_negotiables: prefs.non_negotiables || [],
+            focuses: prefs.focuses || [],
+            constraints: prefs.constraints || [],
+          }));
+        } catch {
+          /* non-fatal — they can re-set from the header chip */
+        }
+      }
+
+      // 2. The cart they watched Kristy build. saveList stamps the local cache and
+      //    persists to /api/list, so it's on the cart surface the moment they land.
+      if (guest.list && Array.isArray(guest.list.items) && guest.list.items.length) {
+        try {
+          await saveList(guest.list);
+          cart.applyList(guest.list, guest.list.intro || '');
+        } catch {
+          /* non-fatal */
+        }
+      }
+
+      // 3. The scans, into the Haul.
       for (const sc of guest.scans || []) {
         try {
           await saveHaulScan(sc);
@@ -207,10 +263,45 @@ export default function App() {
     } finally {
       clearGuestState();
     }
+
     if (guest.scans?.length) {
       setHaul(null); // invalidate cache → the Haul reloads with the carried-over scans
       trackEvent('guest_scans_claimed', { count: guest.scans.length });
     }
+    if (goals.length || guest.list) {
+      trackEvent('guest_work_claimed', { goals: goals.length, cart: guest.list?.items?.length || 0 });
+    }
+  }
+
+  /* ───────── The stranger's setup — onboarding with no account ─────────
+     The payoff IS the product: answers in, a real tailored cart out, before anyone is
+     asked to sign up. The cart is generated server-side by the same generateList the
+     account path uses (POST /api/guest/list), so this is the real thing rather than a
+     client-side imitation that could drift from it. Both the answers and the cart go
+     to guest state, which is what sign-in later migrates. */
+  async function handleGuestOnboardingComplete({ coach_goals, non_negotiables, focuses, constraints }) {
+    const prefs = { coach_goals, non_negotiables, focuses, constraints };
+    recordGuestPrefs(prefs);
+    setGuestBuilding(true);
+    try {
+      const { list } = await buildGuestList(prefs);
+      recordGuestList(list);
+      trackEvent('list-build', { source: 'guest-onboarding', items: list.items?.length || 0, guest: true });
+    } catch {
+      // The cart didn't build. Their answers are already saved, so let them into the
+      // app rather than trapping them in onboarding — the cart surface offers a retry.
+      recordGuestList(null);
+    } finally {
+      setGuestBuilding(false);
+      setGuestSetup(true);
+    }
+  }
+
+  // Skipping is a real choice: no goals, no cart, straight into scanning. The cart
+  // surface keeps a way back in, so skipping is never a one-way door.
+  function handleGuestOnboardingSkip() {
+    setGuestSetup(true);
+    trackEvent('onboarding-skip', { guest: true });
   }
 
   /* ───────── Grocery-coach goal + focuses (contextual, no door gate) ───────── */
@@ -875,12 +966,29 @@ export default function App() {
     );
   }
 
-  // Not signed in → drop straight into the stateless guest chat (no auth wall).
-  // Signing in from there swaps this out for the real, persisted app below.
+  // Not signed in. The front door is ONBOARDING, not a sign-in wall and not a blank
+  // app — a stranger off the landing page meets Kristy by answering what they're
+  // shopping for, and the cart she builds from it is the first thing they see. No
+  // account is required to reach any of it.
   if (!IS_DEMO && !session) {
+    if (!guestSetup) {
+      return (
+        <CoachOnboarding
+          initialGoal={onbInitialGoal}
+          ctaLabel={guestBuilding ? 'Building your cart…' : 'Build my cart'}
+          onComplete={handleGuestOnboardingComplete}
+          onSkip={handleGuestOnboardingSkip}
+        />
+      );
+    }
     // Ingredient pages are a free KB read (no model call), so guests get the same
     // tap-through off their scan card that signed-in users get.
-    return <GuestApp onOpenIngredient={openIngredient} />;
+    return (
+      <GuestApp
+        onOpenIngredient={openIngredient}
+        onEditPrefs={() => setGuestSetup(false)}
+      />
+    );
   }
 
   // First run: a signed-in, goal-less user who hasn't skipped is asked who Kristy is

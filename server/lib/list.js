@@ -279,7 +279,7 @@ function applyVariants(items, constraints, premium) {
   const active = new Set(constraints.map((c) => String(c).toLowerCase()));
   const order = VARIANT_PRIORITY.filter((c) => active.has(c));
   if (!order.length) return items;
-  return items.map((it) => {
+  const tuned = items.map((it) => {
     if (!it.variants) return it;
     const hit = order.find((c) => it.variants[c]);
     if (!hit) return it;
@@ -289,6 +289,19 @@ function applyVariants(items, constraints, premium) {
     // her own decision.
     const { alt: _baseAlt, ...rest } = it;
     return { ...rest, ...it.variants[hit], constraintTuned: hit };
+  });
+
+  // Substitution is many-to-one, so it can COLLAPSE two distinct picks onto the same
+  // product — chicken breast and bone-in thighs both become "Rotisserie chicken" under
+  // short_on_time, and the cart shows it twice. The blend deduped the base items, but
+  // that ran before these substitutions existed, so the only place to catch it is here.
+  const seen = new Set();
+  return tuned.filter((it) => {
+    const key = canonicalItem(it.name);
+    if (!key) return true;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
   });
 }
 

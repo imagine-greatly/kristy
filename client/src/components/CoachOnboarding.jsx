@@ -19,9 +19,13 @@ import { interpretPreferences, customLineLabel, isCustomLine } from '../lib/pref
    Completing it calls onComplete({ coach_goals, ... }) → saveCoachProfile. It does NOT
    start the trial — that's a separate, explicit choice at the gate. Fully skippable;
    skipping leaves the user goal-less on universal verdicts. Tokens only. */
-const STEP_KEYS = ['goals', 'focuses', 'lines', 'constraints', 'confirm'];
+/* Four steps, not five. What you're shopping for, what to keep OUT, then the
+   circumstances — watching sodium and shopping on a budget are the same kind of
+   answer (things that shape the picks) and asking them on one screen keeps the whole
+   thing near a minute. Only the first step is required; the rest carry a quiet skip. */
+const STEP_KEYS = ['goals', 'lines', 'context', 'confirm'];
 
-export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null }) {
+export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null, ctaLabel }) {
   const [step, setStep] = useState(0);
   const [goals, setGoals] = useState(initialGoal ? [initialGoal] : []);
   const [focuses, setFocuses] = useState([]);
@@ -135,16 +139,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
 
           {step === 1 && (
             <>
-              <h2 style={styles.prompt}>Anything to keep an eye on?</h2>
-              <p style={styles.sub}>Optional. Turn on what matters to you &mdash; it gets flagged on every product.</p>
-              <ChipRow options={FOCUSES} selected={focuses} onToggle={(v) => toggle(focuses, setFocuses, v)} />
-              {focuses.length > 0 && <p style={styles.note}>{FOCUS_DISCLAIMER}</p>}
-            </>
-          )}
-
-          {step === 2 && (
-            <>
-              <h2 style={styles.prompt}>Any hard lines?</h2>
+              <h2 style={styles.prompt}>Anything to keep out?</h2>
               <p style={styles.sub}>
                 Optional. Things you never want in the cart &mdash; held on every product, no exceptions.
               </p>
@@ -152,15 +147,26 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             </>
           )}
 
-          {step === 3 && (
+          {step === 2 && (
             <>
-              <h2 style={styles.prompt}>{CONSTRAINTS_SECTION.title}</h2>
-              <p style={styles.sub}>{CONSTRAINTS_SECTION.sub}</p>
-              <ChipRow options={CONSTRAINTS} selected={constraints} onToggle={(v) => toggle(constraints, setConstraints, v)} />
+              <h2 style={styles.prompt}>What should I work around?</h2>
+              <p style={styles.sub}>
+                Optional. What you&rsquo;re watching, and what you&rsquo;re working with &mdash; both change
+                what I put in the cart.
+              </p>
+              <div style={styles.group}>
+                <div style={styles.groupLabel}>Watching</div>
+                <ChipRow options={FOCUSES} selected={focuses} onToggle={(v) => toggle(focuses, setFocuses, v)} />
+                {focuses.length > 0 && <p style={styles.note}>{FOCUS_DISCLAIMER}</p>}
+              </div>
+              <div style={styles.group}>
+                <div style={styles.groupLabel}>{CONSTRAINTS_SECTION.title}</div>
+                <ChipRow options={CONSTRAINTS} selected={constraints} onToggle={(v) => toggle(constraints, setConstraints, v)} />
+              </div>
             </>
           )}
 
-          {step === 4 && (
+          {step === 3 && (
             <>
               <h2 style={styles.prompt}>Here&rsquo;s your setup.</h2>
               <p style={styles.sub}>
@@ -199,16 +205,22 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
           )}
           {step === LAST && (
             <button type="button" style={styles.primary} onClick={finish} disabled={busy || goals.length === 0}>
-              {busy ? 'Setting up…' : "That's everything — let's shop"}
+              {busy ? 'Building your cart…' : ctaLabel || "That's everything — let's shop"}
             </button>
           )}
         </div>
 
-        {/* Skippable, never a trap: the escape hatch lives on the first step, where
-            "skip" unambiguously means "don't set me up." */}
+        {/* Never a trap. On the first step "skip" means "don't set me up at all"; on an
+            optional step it just moves past a question they don't have an answer for,
+            which is the difference between a conversation and a form. */}
         {step === 0 && (
           <button type="button" style={styles.skip} onClick={onSkip} disabled={busy}>
             Skip for now
+          </button>
+        )}
+        {step > 0 && step < LAST && (
+          <button type="button" style={styles.skip} onClick={() => setStep((s) => s + 1)} disabled={busy}>
+            Skip this
           </button>
         )}
       </div>
@@ -355,6 +367,15 @@ const styles = {
     overflowWrap: 'anywhere',
   },
   chipOn: { borderColor: colors.borderGold, background: colors.goldTint9, color: colors.accentGold },
+  group: { display: 'flex', flexDirection: 'column', gap: 2, margin: '8px 0 0' },
+  groupLabel: {
+    fontFamily: fonts.ui,
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: '0.04em',
+    textTransform: 'uppercase',
+    color: colors.textMuted,
+  },
   confirmGroup: { display: 'flex', flexDirection: 'column', gap: 2, margin: '2px 0' },
   confirmLabel: {
     fontFamily: fonts.ui,
