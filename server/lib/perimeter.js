@@ -88,6 +88,11 @@ export function publicEntry(e) {
     buying_tips: Array.isArray(e.buying_tips) ? e.buying_tips : [],
     labels_decoded: Array.isArray(e.labels_decoded) ? e.labels_decoded : [],
     sources: Array.isArray(e.sources) ? e.sources : [],
+    // The concrete grocery this entry's guidance resolves to, so the counter FILLS
+    // the cart rather than only informing it. A NAME and nothing else, authored in
+    // the KB, and absent where there is no single honest answer. Deliberately not one
+    // of the seven fields sanitizeForModel passes: the model can never mint one.
+    cart_pick: e.cart_pick || null,
   };
 }
 
@@ -103,15 +108,26 @@ export function publicEntry(e) {
 
    `thinNote` is the honesty rule. A section that doesn't cover something a shopper would
    reasonably expect says so, in plain words, rather than padding itself with filler
-   topics. Naming the gap is what makes the covered part trustworthy. */
+   topics. Naming the gap is what makes the covered part trustworthy.
+
+   Order and naming follow the shopper's walk, not the KB's filing: Produce first,
+   because that is where a trip starts and where the perimeter begins. */
 export const PERIMETER_SECTIONS = [
+  {
+    id: 'produce',
+    title: 'Produce',
+    blurb: 'Where organic earns it, how to pick ripe, and what is in season now.',
+    categories: ['produce'],
+    labels: ['label_organic_scope', 'label_nonGMO_vs_organic', 'label_front_vs_back'],
+    thinNote: null,
+  },
   {
     id: 'meat',
     title: 'Meat',
     blurb: 'Cuts, grades, ratios, and which labels on the case mean anything.',
     // The meat case is one destination even though the KB files it by animal. The
     // chicken entries used to sit under `poultry_eggs` and therefore surfaced under
-    // Eggs & Dairy, which is not where anyone goes looking for a thigh.
+    // Dairy & Eggs, which is not where anyone goes looking for a thigh.
     categories: ['beef', 'poultry', 'pork', 'deli', 'meat_counter'],
     labels: ['label_grass_fed_term', 'label_no_added_hormones', 'label_natural', 'label_third_party_seals'],
     thinNote: 'Beef, chicken, pork and the deli case. Lamb, goat and game are not covered yet.',
@@ -125,16 +141,8 @@ export const PERIMETER_SECTIONS = [
     thinNote: 'Salmon, tuna, shrimp, sardines, the frozen case and the seals. Crab, lobster and the shellfish bar are not covered yet.',
   },
   {
-    id: 'produce',
-    title: 'Produce',
-    blurb: 'Where organic earns it, how to pick ripe, and what is in season now.',
-    categories: ['produce'],
-    labels: ['label_organic_scope', 'label_nonGMO_vs_organic', 'label_front_vs_back'],
-    thinNote: null,
-  },
-  {
     id: 'eggs_dairy',
-    title: 'Eggs & Dairy',
+    title: 'Dairy & Eggs',
     blurb: 'Which carton claims hold up, and real cheese from cheese product.',
     categories: ['poultry_eggs', 'dairy'],
     labels: ['label_pasture_raised_feed', 'label_cage_free', 'label_free_range', 'label_no_added_hormones'],
@@ -142,7 +150,7 @@ export const PERIMETER_SECTIONS = [
   },
   {
     id: 'bulk_pantry',
-    title: 'Bulk & Pantry',
+    title: 'Pantry & Bulk',
     blurb: 'Rice, oats, flour, nuts, honey, and olive oil that is actually olive oil.',
     categories: ['bulk_pantry'],
     labels: [
@@ -174,6 +182,7 @@ function topicCard(e) {
     category: e.category || null,
     evidence_tier: e.evidence_tier || null,
     short_answer: e.short_answer || '',
+    cart_pick: e.cart_pick || null,
   };
 }
 

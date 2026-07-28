@@ -104,11 +104,11 @@ export async function fetchPerimeterEntry(id) {
    and needs no account, so demo reads the real index too and keeps a minimal
    offline fallback for its actual purpose: no backend at all. ── */
 const OFFLINE_SECTIONS = [
-  { id: 'meat', title: 'Meat', blurb: 'Cuts, grades, ratios, and which labels on the case mean anything.', count: 0, topics: [], labelTopics: [], thinNote: 'Offline. The counter needs a connection.' },
+  { id: 'produce', title: 'Produce', blurb: 'Where organic earns it, how to pick ripe, and what is in season now.', count: 0, topics: [], labelTopics: [], thinNote: 'Offline. The counter needs a connection.' },
+  { id: 'meat', title: 'Meat', blurb: 'Cuts, grades, ratios, and which labels on the case mean anything.', count: 0, topics: [], labelTopics: [], thinNote: null },
   { id: 'seafood', title: 'Seafood', blurb: 'Wild or farmed, mercury by fish, and how to tell fresh at the counter.', count: 0, topics: [], labelTopics: [], thinNote: null },
-  { id: 'produce', title: 'Produce', blurb: 'Where organic earns it, how to pick ripe, and what is in season now.', count: 0, topics: [], labelTopics: [], thinNote: null },
-  { id: 'eggs_dairy', title: 'Eggs & Dairy', blurb: 'Which carton claims hold up, and real cheese from cheese product.', count: 0, topics: [], labelTopics: [], thinNote: null },
-  { id: 'bulk_pantry', title: 'Bulk & Pantry', blurb: 'Rice, oats, flour, nuts, honey, and olive oil that is actually olive oil.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'eggs_dairy', title: 'Dairy & Eggs', blurb: 'Which carton claims hold up, and real cheese from cheese product.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'bulk_pantry', title: 'Pantry & Bulk', blurb: 'Rice, oats, flour, nuts, honey, and olive oil that is actually olive oil.', count: 0, topics: [], labelTopics: [], thinNote: null },
   { id: 'label_terms', title: 'Label terms', blurb: 'What the word on the front is allowed to mean.', count: 0, topics: [], labelTopics: [], thinNote: null },
 ];
 

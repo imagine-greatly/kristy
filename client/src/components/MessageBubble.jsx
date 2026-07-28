@@ -1,9 +1,11 @@
 import { colors, fonts } from '../lib/tokens.js';
+import PerimeterAnswer from './PerimeterAnswer.jsx';
 
 // Kristy is a grocery coach — no macro cards, ever. An AI bubble renders her text,
 // the weekly-recap tag, editable preference chips (when she just captured a
-// preference from chat), and — for a locked free-user reply — a quiet upgrade link.
-export default function MessageBubble({ message, onUpgrade, onRemovePref, onEditPrefs }) {
+// preference from chat), the counter reference card when the reply came from the
+// perimeter KB, and — for a locked free-user reply — a quiet upgrade link.
+export default function MessageBubble({ message, onUpgrade, onRemovePref, onEditPrefs, onAddToCart }) {
   const { role, content, isSummary } = message;
 
   if (role === 'user') {
@@ -18,12 +20,33 @@ export default function MessageBubble({ message, onUpgrade, onRemovePref, onEdit
   // each is one tap to remove, so a wrong parse is one tap to fix.
   const chips = message.preferenceUpdate?.labeled || [];
 
+  // Does the bubble just repeat what the counter card is about to say?
+  const norm = (s) => String(s || '').replace(/\s+/g, ' ').trim();
+  const short = norm(message.perimeterEntry?.short_answer);
+  const echoesCard = !!short && norm(content).startsWith(short);
+
   return (
     <div className="msg-row ai">
       <div className="avatar">K</div>
       <div className="ai-col">
         {isSummary && <span className="summary-tag">Weekly recap</span>}
-        <div className="bubble ai">{content}</div>
+        {/* On the FREE tier the reply text IS the entry's short answer, and the card
+            below prints it again. Say it once. A PREMIUM reply is a personalized read
+            that the card does not contain, so that one keeps its bubble. */}
+        {!echoesCard && <div className="bubble ai">{content}</div>}
+
+        {/* A counter question asked from the docked composer gets the SAME reference
+            card as the Counter tab: the checklist, the decoded labels, the sources,
+            and the one-tap add. Browse or ask, the answer is one object either way. */}
+        {message.perimeterEntry && (
+          <div style={{ marginTop: 8 }}>
+            <PerimeterAnswer
+              compact
+              resp={{ matched: true, entries: [message.perimeterEntry], answer: null, gated: false }}
+              onAddToCart={onAddToCart}
+            />
+          </div>
+        )}
 
         {chips.length > 0 && (
           <div style={pc.wrap}>

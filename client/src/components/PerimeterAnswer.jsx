@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 
@@ -22,10 +23,15 @@ export default function PerimeterAnswer({
   allowRefine = false,
   onRefine,
   onUpgrade,
+  onAddToCart,
   compact = false,
 }) {
   if (!resp) return null;
   const s = compact ? compactStyles : fullStyles;
+  // The counter FILLS the cart, it does not only inform it. `cart_pick` is authored
+  // in the KB as a grocery name, so this tap is free, deterministic, and available on
+  // every tier — no model call, nothing to claim-lock.
+  const [added, setAdded] = useState(null);
 
   return (
     <div style={styles.wrap}>
@@ -72,6 +78,22 @@ export default function PerimeterAnswer({
 
           {(e.sources || []).length > 0 && (
             <p style={styles.sources}>Sources: {e.sources.join(' · ')}</p>
+          )}
+
+          {/* ONE TAP INTO THE CART. Scanning puts a product in the trip; the counter
+              has to do the same or it stays a reference book. */}
+          {e.cart_pick && onAddToCart && (
+            <button
+              type="button"
+              style={{ ...styles.pick, ...(added === e.id ? styles.pickDone : null) }}
+              disabled={added === e.id}
+              onClick={() => {
+                onAddToCart(e.cart_pick);
+                setAdded(e.id);
+              }}
+            >
+              {added === e.id ? `In the cart — ${e.cart_pick}` : `Add to cart — ${e.cart_pick}`}
+            </button>
           )}
         </div>
       ))}
@@ -136,6 +158,15 @@ const styles = {
     background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui,
     fontWeight: 700, fontSize: 14.5, cursor: 'pointer', textAlign: 'left',
   },
+  // The counter's cart tap. Gold-outlined rather than gold-filled: it is the entry's
+  // action, not the loudest thing on a screen that is mostly guidance.
+  pick: {
+    alignSelf: 'stretch', marginTop: 4, minHeight: 44, padding: '11px 14px', borderRadius: 12,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+    color: colors.textPrimary, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14,
+    cursor: 'pointer', textAlign: 'left',
+  },
+  pickDone: { color: colors.textMuted, cursor: 'default' },
   gate: { display: 'flex', flexDirection: 'column', gap: 10 },
   gateCta: {
     alignSelf: 'stretch', padding: '12px 16px', borderRadius: 12, border: 'none',

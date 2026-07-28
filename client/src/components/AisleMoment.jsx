@@ -33,7 +33,7 @@ const ASK_SEEDS = [
   'Is organic worth it for berries',
 ];
 
-export default function AisleMoment({ prefs, onUpgrade, onScan }) {
+export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
   const [sections, setSections] = useState(null);
   const [loadErr, setLoadErr] = useState(false);
   const [openSection, setOpenSection] = useState(null);
@@ -95,7 +95,10 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
           <>
             {/* The entry renders through the SAME card as an asked question, so a
                 browsed topic and an asked one are the same object to the reader. */}
-            <PerimeterAnswer resp={{ matched: true, entries: [entry.data], answer: null, gated: false }} />
+            <PerimeterAnswer
+              resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
+              onAddToCart={onAddToCart}
+            />
             {entry.data.detail && <p style={styles.detail}>{entry.data.detail}</p>}
           </>
         )}
@@ -145,7 +148,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
       <h1 style={styles.h1}>The counter</h1>
       <GoldThread />
       <p style={{ ...kristyVoice, ...styles.thesis }}>
-        The best food has no ingredient list. It is the ingredient.
+        The half of the store with no label. The half that matters most.
       </p>
       <p style={styles.thesisSub}>
         Meat, seafood, produce, eggs, dairy, bulk. No barcode to read, and still a right
@@ -178,7 +181,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
       {ask?.state === 'error' && <p style={styles.muted}>That did not go through. Try again.</p>}
       {ask?.state === 'done' && (
         <div style={styles.answer}>
-          <PerimeterAnswer resp={ask.resp} onUpgrade={onUpgrade} />
+          <PerimeterAnswer resp={ask.resp} onUpgrade={onUpgrade} onAddToCart={onAddToCart} />
         </div>
       )}
 

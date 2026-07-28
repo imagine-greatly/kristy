@@ -131,6 +131,55 @@ test('the no-answer line is a real, honest sentence', () => {
   assert.ok(typeof NO_ANSWER === 'string' && NO_ANSWER.length > 20);
 });
 
+/* ── The counter FILLS the cart (INTERFACE_IDENTITY.md Block 2) ──────────────────
+   Scanning puts a product in the trip. The counter has to do the same or it is a
+   reference book. `cart_pick` is the concrete grocery an entry's guidance resolves
+   to, and it is claim-safe the same way a composed list row is: it is a NAME. */
+
+test('cart_pick is a grocery name, never a claim, a price or a sentence', () => {
+  const picks = perimeterKb.entries.filter((e) => e.cart_pick);
+  assert.ok(picks.length >= 30, `only ${picks.length} entries resolve to a cart pick`);
+  for (const e of picks) {
+    const p = e.cart_pick;
+    assert.equal(typeof p, 'string');
+    assert.ok(p.trim().length > 2 && p.length <= 44, `${e.id}: "${p}" is not a cart row`);
+    assert.doesNotMatch(p, /[$£€%]/, `${e.id} carries a price or percent`);
+    assert.doesNotMatch(p, /[.!?]$/, `${e.id} is a sentence, not a name`);
+    assert.doesNotMatch(
+      p,
+      /\b(cure|heal|treat|prevent|reverse|detox|boost|healthy|healthier|superfood|toxic)\b/i,
+      `${e.id} carries a claim`
+    );
+  }
+});
+
+test('a cart_pick can never be minted by the model', () => {
+  // It is authored in the KB and is NOT one of the seven fields the prompt may see,
+  // so there is no path by which a generated answer invents a grocery to add.
+  const withPick = perimeterKb.entries.find((e) => e.cart_pick);
+  assert.ok(withPick, 'at least one entry carries a pick');
+  assert.ok(!('cart_pick' in sanitizeForModel(withPick)));
+  const blob = JSON.stringify(
+    buildAnswerInput({ question: 'q', focuses: [], hardLines: [], constraints: [], entries: [withPick] })
+  );
+  assert.ok(!blob.includes(withPick.cart_pick), 'the pick reached the model payload');
+  // …but the free public read DOES expose it, which is what the tap uses.
+  assert.equal(publicEntry(withPick).cart_pick, withPick.cart_pick);
+});
+
+test('an entry with no single honest answer carries no pick', () => {
+  // A blank beats a forced one: "is organic worth it" has no one grocery, and a
+  // label term is not a food at all.
+  for (const id of ['organic_worth_it_by_type', 'produce_ripeness_by_item', 'beef_grades_usda']) {
+    const e = perimeterKb.entries.find((x) => x.id === id);
+    assert.ok(e, `${id} exists`);
+    assert.ok(!e.cart_pick, `${id} should not force a pick`);
+  }
+  for (const e of perimeterKb.entries.filter((x) => x.category === 'label_terms')) {
+    assert.ok(!e.cart_pick, `${e.id} is a label term, not a grocery`);
+  }
+});
+
 /* ── Label truth (LABEL_TRUTH.md) ───────────────────────────────────────────────
    Kristy teaches the gap between what a label IMPLIES and what it GUARANTEES, so a
    shopper can evaluate any product themselves. The rule that makes this safe is that

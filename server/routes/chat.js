@@ -40,8 +40,9 @@ const router = Router();
    never get hijacked. Gating mirrors /api/perimeter/ask: free gets the KB
    entry's own words; premium gets the personalized, claim-locked read. */
 
+// No first person: the value is named, nobody performs it (VOICE_SPEC).
 const PERIMETER_UPSELL =
-  "That's the honest rundown. Want my read for YOUR cart — against your goal and your week — with the swap landing straight on your list? That part's for members.";
+  "That's the honest rundown, free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week.";
 
 async function perimeterChatReply({ message, matched, premium, prefs }) {
   if (premium) {
@@ -289,6 +290,12 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           foods: [],
           insight: '',
           perimeter: true,
+          // The matched entry rides along so a counter question asked from the docked
+          // composer renders the SAME reference card as the Counter surface: the
+          // "what to look for" checklist, the decoded labels, the sources, and the
+          // one-tap add of its cart_pick. A counter answer should fill the cart from
+          // wherever it was asked, not only from the Counter tab.
+          perimeterEntry: publicEntry(matched[0]),
         });
       }
     }

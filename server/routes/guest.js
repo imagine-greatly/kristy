@@ -5,6 +5,8 @@ import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
 import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
+import { looksLikePerimeterQuestion } from '../lib/chatRouting.js';
+import { matchEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
 import {
   GOAL_VALUES,
   FOCUS_VALUES,
@@ -62,7 +64,30 @@ router.post('/chat', async (req, res) => {
       return res.json({ gate: true, reason: 'limit' });
     }
 
-    // 3. Real, STATELESS reply — same grocery-coach voice as /api/chat, but with
+    // 3. A COUNTER question is answered from the perimeter KB, not improvised.
+    //    /api/chat has done this since Block K; guest chat never did, so a stranger
+    //    typing "wild or farmed salmon?" into the composer got the model's own words
+    //    where a signed-in user got the sourced entry. The free layer is a
+    //    deterministic KB read with no account and no model call, so there is nothing
+    //    to gate and nothing to pay for. The entry rides back so the bubble renders
+    //    the same reference card as the Counter tab.
+    if (looksLikePerimeterQuestion(message)) {
+      const matched = matchEntries(message);
+      if (matched.length) {
+        const top = publicEntry(matched[0]);
+        return res.json({
+          message: top.short_answer || top.detail || NO_ANSWER,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          perimeter: true,
+          perimeterEntry: top,
+        });
+      }
+    }
+
+    // 4. Real, STATELESS reply — same grocery-coach voice as /api/chat, but with
     //    neutral context and nothing written anywhere.
     const result = await generateReply({
       message,
@@ -80,7 +105,7 @@ router.post('/chat', async (req, res) => {
     );
     return res.status(503).json({
       error: true,
-      message: "I'm having trouble connecting right now — try that again in a moment.",
+      message: 'That did not connect. Try it again in a moment.',
     });
   }
 });

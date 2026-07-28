@@ -117,6 +117,9 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
         role: 'ai',
         content: result.message,
         macros: null,
+        // A counter question answered from the KB carries its entry, so a stranger
+        // gets the same reference card and the same one-tap add.
+        perimeterEntry: result.perimeterEntry || null,
       };
       setMessages((prev) => [...prev, aiMsg]);
 
@@ -193,7 +196,9 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
             {showEmpty ? (
               <EmptyState onPick={(ex) => handleSend(ex)} greeting={INTRO.greeting} subtitle={INTRO.subtitle} />
             ) : (
-              messages.map((m) => <MessageBubble key={m.id} message={m} />)
+              messages.map((m) => (
+                <MessageBubble key={m.id} message={m} onAddToCart={cart.add} />
+              ))
             )}
             {typing && <TypingIndicator />}
           </div>
@@ -224,6 +229,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
           {/* Free to browse, free to ask. No account anywhere in it. */}
           {moment === 'aisle' && (
             <AisleMoment
+              onAddToCart={cart.add}
               prefs={{
                 focuses: prefs?.focuses || [],
                 hardLines: prefs?.non_negotiables || [],

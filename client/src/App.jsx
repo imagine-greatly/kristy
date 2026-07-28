@@ -700,6 +700,9 @@ export default function App() {
         content: result.message,
         macros: null,
         preferenceUpdate: pu,
+        // A counter question answered from the composer carries its entry, so the
+        // bubble can render the reference card and its one-tap add.
+        perimeterEntry: result.perimeterEntry || null,
         // A locked-feature reply for a free user → the quiet "Unlock coaching" link.
         upgrade: !!result.upgrade,
       };
@@ -1061,6 +1064,7 @@ export default function App() {
                 onUpgrade={openUpgrade}
                 onRemovePref={handleRemoveChatPref}
                 onEditPrefs={() => setSwitcherOpen(true)}
+                onAddToCart={cart.add}
               />
             ))
           )}
@@ -1099,6 +1103,7 @@ export default function App() {
           {/* The unlabeled half, as a destination. Free to browse, no account. */}
           {moment === 'aisle' && (
             <AisleMoment
+              onAddToCart={cart.add}
               prefs={{
                 goal: goalNoteLabel(goalsOf(profile)),
                 focuses: profile?.focuses || [],

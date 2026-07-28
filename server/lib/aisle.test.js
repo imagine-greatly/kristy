@@ -22,6 +22,14 @@ test('every store section resolves to real topics', () => {
   }
 });
 
+test('the counter browses in the shopper walking order, named as the spec names them', () => {
+  // INTERFACE_IDENTITY Block 2 fixes both the order and the titles: Produce leads,
+  // because that is where a trip starts and where the perimeter begins.
+  const shown = sectionIndex().map((s) => s.title);
+  assert.deepEqual(shown.slice(0, 5), ['Produce', 'Meat', 'Seafood', 'Dairy & Eggs', 'Pantry & Bulk']);
+  assert.equal(shown[5], 'Label terms', 'label truth stays browsable as its own section');
+});
+
 test('the five shopper-facing sections exist and cover the KB', () => {
   const ids = sectionIndex().map((s) => s.id);
   for (const want of ['meat', 'seafood', 'produce', 'eggs_dairy', 'bulk_pantry']) {
@@ -44,7 +52,23 @@ test('every shopper-facing counter carries real depth, not a token entry', () =>
   assert.ok(sectionById('label_terms').count >= 15, 'label truth is the thread through all of it');
 });
 
-test('chicken lives at the meat case, not under Eggs & Dairy', () => {
+test('a browsed topic carries its cart pick, so the counter fills the cart', () => {
+  // The section index is the browse list; the pick has to reach it or "one tap"
+  // means "two screens and a tap".
+  const seafood = sectionById('seafood').topics;
+  const salmon = seafood.find((t) => t.id === 'salmon_wild_vs_farmed');
+  assert.ok(salmon, 'salmon is browsable under Seafood');
+  assert.equal(salmon.cart_pick, 'Wild-caught salmon');
+  // Every counter (not the label section) offers at least one thing to add.
+  for (const id of ['produce', 'meat', 'seafood', 'eggs_dairy', 'bulk_pantry']) {
+    assert.ok(
+      sectionById(id).topics.some((t) => t.cart_pick),
+      `${id} offers nothing to add to the cart`
+    );
+  }
+});
+
+test('chicken lives at the meat case, not under Dairy & Eggs', () => {
   // It was filed under `poultry_eggs`, so a thigh question surfaced beside yogurt.
   const meat = sectionById('meat').topics.map((t) => t.id);
   assert.ok(meat.includes('chicken_cuts_basics'));

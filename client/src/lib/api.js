@@ -10,6 +10,35 @@ const rid = () =>
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/* A counter question, answered from the perimeter KB in demo mode. Only a question
+   worth asking a counter gets the round trip, and only a real MATCH becomes the
+   reply — anything else falls back to the normal demo path. Mirrors the shape
+   /api/chat returns, so MessageBubble renders the identical reference card. */
+const COUNTER_ISH =
+  /\b(wild|farmed|organic|grass[- ]?fed|grass[- ]?finished|pasture|cage[- ]?free|free[- ]?range|mercury|which cut|what cut|ripe|in season|raw milk|pasteuri[sz]ed|marbling|uncured|rancid|bulk bin|extra[- ]virgin|whole grain|cold[- ]pressed|sugar[- ]free|unsweetened)\b/i;
+
+async function demoPerimeterReply(message) {
+  const m = String(message || '');
+  if (!/\?/.test(m) && !COUNTER_ISH.test(m)) return null;
+  try {
+    const { askPerimeter } = await import('./perimeter.js');
+    const resp = await askPerimeter({ question: m });
+    const entry = resp?.matched ? resp.entries?.[0] : null;
+    if (!entry) return null;
+    return {
+      message: resp.answer || entry.short_answer || entry.detail || '',
+      hasFood: false,
+      macros: null,
+      foods: [],
+      insight: '',
+      perimeter: true,
+      perimeterEntry: entry,
+    };
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Send a chat turn to Kristy.
  * @returns {{message, hasFood, macros, foods, insight}}
@@ -35,7 +64,12 @@ export async function sendChat({ message, history = [], ctx }) {
         ...(list ? { listUpdate: { list, summary: summary || '', mode: intent.mode } } : {}),
       };
     } else {
-      result = mockReply(message, ctx);
+      // A COUNTER question is answered from the perimeter KB here too. /api/chat has
+      // routed these since Block K; demo went straight to a canned mock reply, so
+      // "which canned fish is lowest in mercury?" came back as small talk. The free
+      // perimeter read is public and deterministic, so there is nothing to fake.
+      const counter = await demoPerimeterReply(message);
+      result = counter || mockReply(message, ctx);
     }
 
     const now = new Date().toISOString();

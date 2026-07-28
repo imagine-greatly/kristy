@@ -32,6 +32,7 @@
         "USDA FoodData Central (fatty-acid composition)"
       ],
       "kristy_take": "Wild Alaskan if it is in reach. If it is farmed or nothing, buy the farmed. Eating the fish beats skipping it.",
+      "cart_pick": "Wild-caught salmon",
       "buying_tips": [
         "Frozen wild Alaskan is often cheaper and fresher than 'fresh' farmed that's been in transit.",
         "Sockeye and coho are almost always wild; color is deep because of diet, not dye.",
@@ -71,6 +72,7 @@
         "FDA mercury-in-commercial-fish testing"
       ],
       "kristy_take": "Sardines are one of the best-value whole foods in the store — small fish, real omega-3s, and you eat the whole thing.",
+      "cart_pick": "Canned wild sardines",
       "buying_tips": [
         "Skipjack (labeled 'light') is lower-mercury than albacore ('white').",
         "Sardines and canned salmon (with bones) are cheap, shelf-stable, and low on the chain.",
@@ -107,6 +109,7 @@
         "Monterey Bay Seafood Watch"
       ],
       "kristy_take": "Wild US Gulf when it is there, otherwise a reputable certified farm. Either way, shrimp is a lean, quick protein.",
+      "cart_pick": "Wild American shrimp",
       "buying_tips": [
         "Country-of-origin is required on the label — read it.",
         "Look for 'wild American/Gulf' or a credible farm certification (e.g., BAP, ASC).",
@@ -143,6 +146,7 @@
         "USDA/FDA seafood storage guidance"
       ],
       "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
+      "cart_pick": "Frozen wild fish fillets",
       "buying_tips": [
         "Ask the counter 'was this previously frozen?' — the answer is often yes.",
         "Buy frozen and thaw at home for the best price and control.",
@@ -179,6 +183,7 @@
         "peer-reviewed reviews of grass- vs grain-fed fatty acids"
       ],
       "kristy_take": "Grass-fed when the price is reasonable, regular beef when it is not. A cheaper cut of real beef beats an expensive processed 'protein' every time.",
+      "cart_pick": "Grass-fed ground beef",
       "buying_tips": [
         "Watch for 'grass-fed' vs 'grass-finished' — they are not the same (see that entry).",
         "Cheaper grass-fed cuts (chuck, ground) get you the sourcing without the ribeye price.",
@@ -214,6 +219,7 @@
         "American Grassfed Association standards"
       ],
       "kristy_take": "If you're paying grass-fed prices, get grass-FINISHED. Otherwise you're buying the same feedlot finish with a nicer sticker.",
+      "cart_pick": "Grass-finished beef",
       "buying_tips": [
         "Look for '100% grass-fed' or 'grass-finished', not just 'grass-fed'.",
         "Third-party certification (e.g., American Grassfed) is the strongest signal.",
@@ -263,6 +269,7 @@
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)"
       ],
       "kristy_take": "Chuck roast and a slow cooker will out-eat a mediocre steak any day, for half the price.",
+      "cart_pick": "Chuck roast",
       "buying_tips": [
         "Braise/stew: chuck, brisket, short rib, shank, round.",
         "Quick sear/grill: ribeye, strip, sirloin, tenderloin.",
@@ -290,6 +297,7 @@
         "USDA FSIS ground-beef labeling rules"
       ],
       "kristy_take": "80/20 for burgers, 90/10 when it is getting drained into a sauce. On a budget, buy 80/20 and drain it. Cheaper than lean.",
+      "cart_pick": "Ground beef, 80/20",
       "buying_tips": [
         "80/20: burgers, meatballs, anything where fat = flavor.",
         "90/10: tacos, chili, sauces where you'd drain it.",
@@ -323,6 +331,7 @@
         "Certified Humane standards"
       ],
       "kristy_take": "Pasture-raised if the budget stretches; plain eggs if it doesn't. An egg is one of the cheapest complete proteins there is either way.",
+      "cart_pick": "Pasture-raised eggs",
       "buying_tips": [
         "'Pasture-raised' + a certification seal is the strongest claim.",
         "'Cage-free' and 'free-range' are loosely defined — don't overpay for the words alone.",
@@ -392,6 +401,7 @@
         "USDA FSIS poultry-chilling references"
       ],
       "kristy_take": "If the price is close, air-chilled — better skin, no water weight. If not, regular chicken is still a clean, cheap protein.",
+      "cart_pick": "Air-chilled whole chicken",
       "buying_tips": [
         "Look for 'air-chilled' on the package if crispy skin matters to you.",
         "Water-chilled birds can carry 'retained water up to X%' on the label — check it.",
@@ -498,6 +508,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Half a freezer of frozen vegetables and berries is a fine way to live. Zero waste, half the price, always in season.",
+      "cart_pick": "Frozen vegetables, no sauce",
       "buying_tips": [
         "Check the bag lists just the vegetable/fruit — no sauces or added sugar.",
         "Frozen berries and spinach are staples that never spoil.",
@@ -523,6 +534,7 @@
         "USDA seasonal produce guides"
       ],
       "kristy_take": "Buy the vegetables that are cheap and piled high this week — that's what's in season, and it's where your money goes furthest.",
+      "cart_pick": "Whatever fruit is in season",
       "buying_tips": [
         "The cheapest, most abundant produce this week is usually what's in season.",
         "Off-season, reach for frozen instead of sad 'fresh'.",
@@ -608,6 +620,7 @@
         "dairy fatty-acid composition literature"
       ],
       "kristy_take": "Real butter over margarine or seed-oil spreads, every time. That is the whole-food standard. Grass-fed if the budget allows, regular butter if not.",
+      "cart_pick": "Grass-fed butter",
       "buying_tips": [
         "European-style/grass-fed butters are richer and higher in fat — great for baking and finishing.",
         "Regular butter is still real, whole food — don't let 'grass-fed' shame the basic block.",
@@ -640,6 +653,7 @@
         "reviews of dairy-fat and cardiometabolic outcomes (contested literature)"
       ],
       "kristy_take": "Whole milk. It keeps you full and it is the least messed-with. Still a preference, and not one worth arguing against a doctor's advice.",
+      "cart_pick": "Whole milk",
       "buying_tips": [
         "Whole milk is minimally processed; skim has the fat removed.",
         "Grass-fed/pasture milk is a further preference layer if you want it.",
@@ -673,6 +687,7 @@
         "FDA process-cheese labeling rules"
       ],
       "kristy_take": "Buy a block of real cheese and slice it yourself — cheaper per pound than the individually-wrapped 'product', and it's actually cheese.",
+      "cart_pick": "A block of real cheese",
       "buying_tips": [
         "Look for a short list: milk, salt, cultures, enzymes/rennet.",
         "Blocks are cheaper per pound than pre-sliced or shredded.",
@@ -710,6 +725,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Big tub of plain Greek, add your own berries. Cheaper than the little flavored cups and none of the dessert-level sugar.",
+      "cart_pick": "Plain whole-milk Greek yogurt",
       "buying_tips": [
         "Plain over flavored — sweeten it yourself with fruit.",
         "Look for 'live and active cultures'.",
@@ -780,6 +796,7 @@
         "peer-reviewed rice-cooking arsenic-reduction studies"
       ],
       "kristy_take": "Rinse rice, cook it in extra water, drain it, and do not build every meal on rice. Simple habits, no fear.",
+      "cart_pick": "Basmati rice",
       "buying_tips": [
         "Rinse rice before cooking; cook in extra water (about 6:1) and drain.",
         "Basmati and California-grown tend to test lower in arsenic.",
@@ -808,6 +825,7 @@
         "glycemic-response literature on oat processing"
       ],
       "kristy_take": "Big canister of plain rolled oats. Sweeten with fruit. The flavored packets are candy with an oat garnish.",
+      "cart_pick": "Steel-cut oats",
       "buying_tips": [
         "Plain oats in any form; steel-cut if you like chew and have time.",
         "Skip flavored instant packets — check the sugar on the label.",
@@ -841,6 +859,7 @@
         "product ingredient labeling"
       ],
       "kristy_take": "Raw or dry-roasted, unsalted or lightly salted. Check the label — if there's a seed oil in your almonds, that's an easy swap.",
+      "cart_pick": "Raw or dry-roasted almonds",
       "buying_tips": [
         "Look for 'dry roasted' or 'raw' — no added oil.",
         "Read the ingredient line: many roasted nuts list cottonseed/soybean oil.",
@@ -878,6 +897,7 @@
         "IOC grade standards"
       ],
       "kristy_take": "Recent harvest date, dark bottle, single origin, stored away from heat. A little peppery burn at the back of the throat is the good stuff.",
+      "cart_pick": "Extra-virgin olive oil in a dark bottle",
       "buying_tips": [
         "Look for a HARVEST date, not just 'best by' — and buy recent.",
         "Dark glass or tin protects it from light; store away from the stove.",
@@ -914,6 +934,7 @@
         "True Source Honey / origin-traceability programs"
       ],
       "kristy_take": "Local raw honey from someone you can trace. Use it because you like it — it's still sugar, just a real, old one.",
+      "cart_pick": "Raw local honey",
       "buying_tips": [
         "Ingredient list should read 'honey' and nothing else.",
         "Local, single-source, or 'raw' honey is the most trustworthy.",
@@ -951,6 +972,7 @@
         "studies on rinsing canned beans and sodium"
       ],
       "kristy_take": "Dried when there is time to plan, canned and rinsed when there is not. Either way, beans are the cheapest real protein in the building.",
+      "cart_pick": "Dried beans",
       "buying_tips": [
         "Rinse canned beans to cut sodium significantly.",
         "Dried beans are cheapest; a slow cooker makes them effortless.",
@@ -1612,6 +1634,7 @@
         "Poultry-science literature on omega-3 enrichment of eggs"
       ],
       "kristy_take": "Feed claims are the only ones on the carton about what she ate. 'Vegetarian-fed' is the odd one out: a hen on real pasture is eating bugs.",
+      "cart_pick": "Soy-free pasture-raised eggs",
       "buying_tips": [
         "Space claims and feed claims are separate words. One never implies the other.",
         "'Soy-free' and 'corn-free' have to be printed. Nothing else on the carton implies them.",
@@ -1784,6 +1807,7 @@
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)"
       ],
       "kristy_take": "The counter is free expertise. Ask what came in today and what is cheap this week, then build dinner from the answer.",
+      "cart_pick": "Soup bones for stock",
       "buying_tips": [
         "Ask what came in today, and what is coming down in price.",
         "Ask for a custom grind. A chuck roast ground fresh beats the pre-packed tray.",
@@ -1817,6 +1841,7 @@
         "USDA FSIS poultry labeling terms"
       ],
       "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
+      "cart_pick": "Bone-in chicken thighs",
       "buying_tips": [
         "Whole bird: cheapest per pound, and the carcass makes stock.",
         "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
@@ -1859,6 +1884,7 @@
         "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)"
       ],
       "kristy_take": "Pork shoulder is the best value in the meat case. And read the fine print: 'up to 12% solution' is water sold by the pound.",
+      "cart_pick": "Pork shoulder",
       "buying_tips": [
         "Braise or pull: shoulder, Boston butt, picnic, country-style ribs.",
         "Fast and lean: loin chops, tenderloin. Pull them early.",
@@ -1943,6 +1969,7 @@
         "FDA mercury concentrations in commercial fish and shellfish"
       ],
       "kristy_take": "Small and short-lived is the entire rule. Sardines, salmon and skipjack sit at the bottom of the chain, and they are the cheap ones.",
+      "cart_pick": "Canned light skipjack tuna",
       "buying_tips": [
         "Lowest: sardines, anchovies, salmon, shrimp, scallops, tilapia, cod, pollock, catfish, canned light tuna.",
         "Middle: albacore and yellowfin tuna, halibut, grouper, snapper, mahi mahi.",
@@ -2024,6 +2051,7 @@
         "Product ingredient labeling"
       ],
       "kristy_take": "Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist.",
+      "cart_pick": "Sardines packed in olive oil",
       "buying_tips": [
         "Read the pack medium: olive oil or water, not 'vegetable oil'.",
         "Bone-in and skin-on sardines and salmon. The bones soften completely.",
@@ -2071,6 +2099,7 @@
         "Monterey Bay Aquarium Seafood Watch species ratings"
       ],
       "kristy_take": "Farmed shellfish feed themselves by filtering water. That is about as clean as farming protein gets.",
+      "cart_pick": "Farmed mussels",
       "buying_tips": [
         "Mussels, oysters and clams are farmed almost everywhere and need no feed.",
         "Farmed trout, arctic char and barramundi are generally well regarded.",
@@ -2207,6 +2236,7 @@
         "USDA Agricultural Marketing Service shipping-point season data"
       ],
       "kristy_take": "Whatever is piled high and cheap this week is what is in season. The price tag says it before any chart does.",
+      "cart_pick": "Whatever vegetable is piled highest",
       "buying_tips": [
         "Spring: asparagus, peas, radishes, artichokes, strawberries, tender greens.",
         "Summer: tomatoes, corn, zucchini, peppers, cucumbers, stone fruit, melon, berries.",
@@ -2273,6 +2303,7 @@
         "FDA milk labeling and processing definitions"
       ],
       "kristy_take": "Fewer steps is the standard. Plain pasteurized over ultra, cream-top if the store has it. A processing preference, not a health verdict.",
+      "cart_pick": "Non-homogenized whole milk",
       "buying_tips": [
         "'Ultra-pasteurized' or 'UHT' on the carton explains a date months out.",
         "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
@@ -2324,6 +2355,7 @@
         "EU protected designation of origin for Parmigiano-Reggiano"
       ],
       "kristy_take": "Buy the block. Cheaper per pound, melts properly, and grating it takes a minute.",
+      "cart_pick": "Block cheddar",
       "buying_tips": [
         "Read the bag: potato starch, powdered cellulose and natamycin are the additions.",
         "Block is cheaper per pound and melts smoothly. Bagged shreds resist.",
@@ -2374,6 +2406,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Plain, live cultures, and your own fruit. The flavored cups are dessert wearing a yogurt label.",
+      "cart_pick": "Plain kefir",
       "buying_tips": [
         "Find 'Live and Active Cultures'. Heat-treated shelf-stable tubs do not carry it.",
         "Plain, always. Sweeten it yourself with fruit or a little honey.",
@@ -2424,6 +2457,7 @@
         "Product ingredient labeling"
       ],
       "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
+      "cart_pick": "Half-and-half",
       "buying_tips": [
         "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
         "'Non-dairy creamer' is oil, sweetener and emulsifiers. It is not cream.",
@@ -2471,6 +2505,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
+      "cart_pick": "Unbleached all-purpose flour",
       "buying_tips": [
         "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
         "'Enriched' means vitamins and iron added back after refining. Standard on white flour.",
@@ -2520,6 +2555,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Bulk is unbeatable on grains, beans and spices. On nuts and whole-grain flour it depends entirely on how fast that bin moves.",
+      "cart_pick": "Bulk lentils",
       "buying_tips": [
         "Best value: rice, oats, beans, lentils, dried fruit and especially spices.",
         "Riskiest: nuts, seeds and whole-grain flours. Oil goes rancid in a slow bin.",
@@ -2640,6 +2676,7 @@
         "USDA FoodData Central"
       ],
       "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
+      "cart_pick": "Natural peanut butter",
       "buying_tips": [
         "The list should read peanuts, and salt if you want it. Nothing else is needed.",
         "No-stir means palm oil or hydrogenated oil was added. Check for sugar too.",
@@ -2688,6 +2725,7 @@
         "Whole Grains Council grain reference"
       ],
       "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
+      "cart_pick": "Quinoa",
       "buying_tips": [
         "Quick: bulgur (10 min), quinoa (15 min), buckwheat (15 min), millet (20 min).",
         "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
