@@ -187,6 +187,84 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
   assert.ok(p.buying_tips.some((t) => /stem/i.test(t)), 'teaches an actual physical check');
 });
 
+/* ── The depth bar (COMPLETE_FOOD_COACH.md Block B) ─────────────────────────────
+   "As sharp as a barcode scan" is only true if every counter entry answers a real
+   at-the-counter question, carries a what-to-look-for checklist, and names its tier
+   honestly. These pin the shape so a future entry can't be added half-finished. */
+
+test('every entry is a complete, sourced, tiered answer with a real checklist', () => {
+  const tiers = new Set(Object.keys(perimeterKb.evidence_tiers));
+  for (const e of perimeterKb.entries) {
+    for (const f of ['id', 'title', 'category', 'question', 'short_answer', 'detail', 'kristy_take']) {
+      assert.ok(typeof e[f] === 'string' && e[f].trim(), `${e.id} is missing ${f}`);
+    }
+    assert.ok(tiers.has(e.evidence_tier), `${e.id} has an undeclared tier: ${e.evidence_tier}`);
+    assert.ok(e.sources?.length >= 1, `${e.id} makes claims with no source`);
+    assert.ok(e.aliases?.length >= 3, `${e.id} is unfindable: needs real aliases`);
+    // The buying tips ARE the "what to look for" checklist the surface renders.
+    assert.ok(e.buying_tips?.length >= 3, `${e.id} has no usable checklist`);
+    assert.ok(Array.isArray(e.labels_decoded), `${e.id} labels_decoded must be an array`);
+  }
+});
+
+test('every counter answers the questions a shopper actually has standing at it', () => {
+  // One real question per counter, routed through the live matcher. If a counter
+  // stops covering its own basics, this fails rather than quietly thinning out.
+  const wants = [
+    ['which cut of beef for stew', 'beef_cuts_basics'],
+    ['what does usda prime mean', 'beef_grades_usda'],
+    ['which chicken cut should i buy', 'chicken_cuts_basics'],
+    ['which fish are low in mercury', 'mercury_by_fish'],
+    ['how do i tell if fish is fresh', 'fish_freshness_at_counter'],
+    ['are brown eggs better than white', 'egg_shell_color'],
+    ['what does vegetarian fed mean', 'egg_feed_claims'],
+    ['how do i pick a ripe melon', 'produce_ripeness_by_item'],
+    ['is organic produce worth it', 'organic_worth_it_by_type'],
+    ['what is ultra pasteurized milk', 'milk_processing'],
+    ['is pre shredded cheese ok', 'pre_shredded_cheese'],
+    ['should i worry about arsenic in rice', 'rice_arsenic'],
+    ['how do i buy real extra virgin olive oil', 'olive_oil_buying'],
+    ['how do i know if nuts are rancid', 'rancidity_check'],
+  ];
+  for (const [q, id] of wants) {
+    const ids = matchEntries(q).map((e) => e.id);
+    assert.ok(ids.includes(id), `"${q}" should reach ${id}, got ${ids.join(', ') || '(nothing)'}`);
+  }
+});
+
+test('label truth is threaded through every counter, not parked in one section', () => {
+  // A shopper learns to read ANY package by meeting decoded terms where they stand,
+  // so each counter must carry decoded label terms of its own.
+  const counters = ['seafood', 'beef', 'poultry', 'poultry_eggs', 'dairy', 'bulk_pantry'];
+  for (const c of counters) {
+    const inCat = perimeterKb.entries.filter((e) => e.category === c);
+    assert.ok(inCat.length > 0, `${c} has no entries`);
+    assert.ok(
+      inCat.some((e) => (e.labels_decoded || []).length > 0),
+      `${c} decodes no label terms of its own`
+    );
+  }
+});
+
+test('NO entry anywhere in the KB claims a health outcome, in either direction', () => {
+  // Wider than the label-truth check below: the no-treatment rule is absolute across
+  // the whole perimeter, and it is symmetric (nothing cures and nothing causes).
+  const OUTCOME = /\b(cures?|heals?|prevents?|reverses?|detox|remed(y|ies)|immunity|diagnos\w*)\b/i;
+  for (const e of perimeterKb.entries) {
+    assert.doesNotMatch(JSON.stringify(e), OUTCOME, `${e.id} makes a health-outcome claim`);
+  }
+});
+
+test('mercury guidance names species and defers anything medical', () => {
+  const m = perimeterKb.entries.find((e) => e.id === 'mercury_by_fish');
+  assert.ok(m, 'the mercury-by-fish entry must exist');
+  const text = JSON.stringify(m).toLowerCase();
+  for (const fish of ['sardines', 'skipjack', 'albacore', 'swordfish', 'king mackerel'])
+    assert.match(text, new RegExp(fish), `must name ${fish}`);
+  assert.match(text, /doctor/, 'anything medical is deferred, never a directive');
+  assert.equal(m.evidence_tier, 'established');
+});
+
 test('no label-truth entry claims a health outcome', () => {
   const FORBIDDEN = /\b(cure|heal|treat|prevent|reverse|detox|immunity|disease|diagnos|remedy)\b/i;
   const ids = [

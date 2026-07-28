@@ -34,6 +34,26 @@ test('the five shopper-facing sections exist and cover the KB', () => {
   assert.deepEqual(orphans, [], `unreachable perimeter entries: ${orphans.join(', ')}`);
 });
 
+test('every shopper-facing counter carries real depth, not a token entry', () => {
+  // Block B's bar: each counter with no barcode should answer as much as a scan does.
+  // A section that drops below this is thin enough that a shopper would notice.
+  for (const id of ['meat', 'seafood', 'produce', 'eggs_dairy', 'bulk_pantry']) {
+    const s = sectionById(id);
+    assert.ok(s.count >= 9, `${id} has only ${s.count} topics`);
+  }
+  assert.ok(sectionById('label_terms').count >= 15, 'label truth is the thread through all of it');
+});
+
+test('chicken lives at the meat case, not under Eggs & Dairy', () => {
+  // It was filed under `poultry_eggs`, so a thigh question surfaced beside yogurt.
+  const meat = sectionById('meat').topics.map((t) => t.id);
+  assert.ok(meat.includes('chicken_cuts_basics'));
+  assert.ok(meat.includes('air_chilled_chicken'));
+  const eggs = sectionById('eggs_dairy').topics.map((t) => t.id);
+  assert.ok(!eggs.includes('air_chilled_chicken'), 'chicken must not surface under Eggs & Dairy');
+  assert.ok(eggs.includes('egg_labels'), 'eggs still do');
+});
+
 test('a thin section says so rather than padding itself', () => {
   const seafood = sectionById('seafood');
   assert.ok(seafood.thinNote, 'seafood must name what it does not cover');

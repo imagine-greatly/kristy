@@ -235,11 +235,23 @@
       "title": "Beef cuts — what's for what",
       "aliases": [
         "beef cuts",
+        "beef cut",
+        "which cut",
+        "cut for stew",
+        "stew",
+        "stew meat",
+        "braise",
+        "braising",
+        "pot roast",
         "chuck",
+        "chuck roast",
         "sirloin",
         "ribeye",
         "brisket",
+        "short rib",
+        "shank",
         "round",
+        "steak",
         "steak cuts"
       ],
       "category": "beef",
@@ -371,7 +383,7 @@
         "chicken",
         "water chilled"
       ],
-      "category": "poultry_eggs",
+      "category": "poultry",
       "question": "Is air-chilled chicken better?",
       "short_answer": "Air-chilled chicken is cooled with cold air instead of a communal water bath, so it doesn't soak up water weight and tends to have better texture and crispier skin. It's a quality-and-value point — you're not paying for absorbed water — more than a health one.",
       "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method.",
@@ -401,7 +413,7 @@
         "antibiotic free chicken",
         "abf"
       ],
-      "category": "poultry_eggs",
+      "category": "poultry",
       "question": "Does 'no antibiotics' on chicken mean anything?",
       "short_answer": "'Raised without antibiotics' is a real, meaningful claim — those birds weren't given antibiotics. But note that no chicken can legally be sold with antibiotic residues anyway, so 'no antibiotics' isn't as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
       "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What 'raised without antibiotics' adds is information about flock management and antibiotic-resistance concerns — a legitimate reason to choose it, framed honestly. Look for USDA Process Verified or a third-party check to back the claim.",
@@ -1444,6 +1456,1578 @@
         {
           "term": "No artificial flavors",
           "meaning": "A true but narrow claim — natural flavoring is unaffected."
+        }
+      ]
+    },
+    {
+      "id": "egg_shell_color",
+      "title": "Brown vs. white eggs",
+      "aliases": [
+        "brown eggs",
+        "white eggs",
+        "egg shell color",
+        "eggshell color",
+        "are brown eggs better",
+        "brown vs white eggs"
+      ],
+      "category": "poultry_eggs",
+      "question": "Are brown eggs better than white?",
+      "short_answer": "No. Shell color is the breed of hen and nothing else. White-feathered breeds lay white eggs, red-feathered breeds lay brown, and inside the shell they are the same egg. Brown often costs more because those breeds are larger and eat more, not because the egg is better.",
+      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. What actually changes an egg is the hen's diet, her age, and how fresh it is, and none of that is visible from outside the shell. The price gap on brown eggs is a feed-cost and marketing gap. It is one of the most reliable places in the store to pay more for nothing.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA Egg Grading Manual (shell color and breed)",
+        "Poultry-science references on eggshell pigmentation"
+      ],
+      "kristy_take": "Shell color is the hen's breed. Buy the cheaper carton and put the difference into how she was raised, if that is what matters.",
+      "buying_tips": [
+        "Ignore shell color. It says nothing about the egg inside.",
+        "Speckles and small rough patches are normal shell variation.",
+        "What changes an egg is diet, age and freshness. None of it shows on the shell."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Brown egg",
+          "meaning": "Laid by a brown-egg breed. No quality or nutrition difference."
+        },
+        {
+          "term": "White egg",
+          "meaning": "Laid by a white-egg breed. The same egg inside."
+        }
+      ]
+    },
+    {
+      "id": "egg_freshness",
+      "title": "How fresh is that carton",
+      "aliases": [
+        "egg freshness",
+        "how old are my eggs",
+        "julian date",
+        "egg float test",
+        "expired eggs",
+        "sell by eggs",
+        "are my eggs still good",
+        "egg pack date"
+      ],
+      "category": "poultry_eggs",
+      "question": "How do I tell how fresh eggs are?",
+      "short_answer": "Read the three-digit pack date, not the sell-by. US cartons carry a Julian date (001 to 365) stamped beside the plant code, and that is the day they were packed. Eggs are usually good well past a sell-by if they stayed cold. In the pan, a fresh egg has a yolk that stands up and a white that holds together.",
+      "detail": "The Julian pack date is the honest number: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction, not a safety cliff. The float test works because the air cell inside grows as an egg ages, so a fresh one lies flat in a bowl of water, an older one tilts up, and one that floats has gone far enough to skip. Eggs age much faster on the counter than in the fridge.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS shell-egg dating and Julian pack codes",
+        "USDA Egg Grading Manual (air cell and interior quality)"
+      ],
+      "kristy_take": "The three-digit number is the truth. The sell-by is the store’s schedule.",
+      "buying_tips": [
+        "Find the three-digit Julian pack date beside the plant code. Closer to today is fresher.",
+        "Open the carton and check for cracks and leaks before it goes in the cart.",
+        "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
+        "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Julian date (001 to 365)",
+          "meaning": "The day of the year it was packed. The most useful number on the carton."
+        },
+        {
+          "term": "Sell-by / best-by",
+          "meaning": "Up to 45 days past packing. A rotation date, not a safety limit."
+        },
+        {
+          "term": "Plant code (P-####)",
+          "meaning": "The packing facility. Sits beside the pack date."
+        }
+      ]
+    },
+    {
+      "id": "egg_grades_sizes",
+      "title": "Egg grades and sizes",
+      "aliases": [
+        "egg grade",
+        "grade aa",
+        "grade a eggs",
+        "egg size",
+        "large eggs",
+        "jumbo eggs",
+        "medium eggs",
+        "what does grade aa mean"
+      ],
+      "category": "poultry_eggs",
+      "question": "What do egg grades and sizes actually mean?",
+      "short_answer": "Grade is an appearance and interior-quality score, not a nutrition or welfare one. AA has the firmest white and tallest yolk, A is a step down, B is fine to eat and mostly goes to processing. Size is pure weight per dozen: Large is 24 ounces, Extra Large 27, Jumbo 30. Recipes assume Large.",
+      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen, so a Jumbo carton is not a better egg, it is more egg. Comparing price per ounce rather than per dozen is usually where the value turns up.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA Egg Grading Manual (AA, A and B standards)",
+        "USDA AMS shell egg size and weight classes"
+      ],
+      "kristy_take": "Grade is a looks score and size is a weight class. Neither one says anything about the hen.",
+      "buying_tips": [
+        "AA vs A is firmness of the white. Freshness matters more than either.",
+        "Sizes are weight per dozen: Large 24 oz, XL 27 oz, Jumbo 30 oz.",
+        "Baking assumes Large. Swapping sizes changes a batter more than it changes a scramble.",
+        "Compare price per ounce, not per dozen. The bigger carton is not automatically the better buy."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Grade AA",
+          "meaning": "Firmest white, tallest yolk. An appearance standard."
+        },
+        {
+          "term": "Grade A",
+          "meaning": "Slightly less firm. The usual retail grade."
+        },
+        {
+          "term": "Grade B",
+          "meaning": "Fine to eat, mostly sold to processors rather than shelved."
+        },
+        {
+          "term": "Large / XL / Jumbo",
+          "meaning": "Weight per dozen: 24, 27 and 30 ounces."
+        }
+      ]
+    },
+    {
+      "id": "egg_feed_claims",
+      "title": "Vegetarian-fed, omega-3, soy-free",
+      "aliases": [
+        "vegetarian fed",
+        "vegetarian fed eggs",
+        "omega 3 eggs",
+        "omega-3 enriched",
+        "soy free eggs",
+        "corn free eggs",
+        "what were the hens fed",
+        "hen feed claims"
+      ],
+      "category": "poultry_eggs",
+      "question": "What do the feed claims on an egg carton mean?",
+      "short_answer": "These are the only words on the carton that address what the hen ate. 'Soy-free' and 'corn-free' mean what they say and have to be printed. 'Omega-3 enriched' means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized. 'Vegetarian-fed' is the strange one: hens are natural omnivores, so it means she was kept off animal protein, which also means she was not out foraging bugs.",
+      "detail": "The space claims (cage-free, free-range, pasture-raised) never touch feed, so the feed words carry that job alone. 'Vegetarian-fed' reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access eats insects and worms. Omega-3 enrichment is real chemistry rather than marketing, but with no set quantity two enriched cartons can differ a lot. Certified organic reaches feed and requires it be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown, not what the feed is.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS labeling policy on feed claims",
+        "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
+        "Poultry-science literature on omega-3 enrichment of eggs"
+      ],
+      "kristy_take": "Feed claims are the only ones on the carton about what she ate. 'Vegetarian-fed' is the odd one out: a hen on real pasture is eating bugs.",
+      "buying_tips": [
+        "Space claims and feed claims are separate words. One never implies the other.",
+        "'Soy-free' and 'corn-free' have to be printed. Nothing else on the carton implies them.",
+        "'Omega-3 enriched' means flax or algae in the ration. The amount is not standardized.",
+        "'Vegetarian-fed' means no animal protein in the feed, which sits oddly beside a real pasture claim.",
+        "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Vegetarian-fed",
+          "meaning": "No animal protein in the ration. Hens are omnivores, so it also implies no foraging."
+        },
+        {
+          "term": "Omega-3 enriched",
+          "meaning": "Flax or algae in the feed. Real, but the amount varies by producer."
+        },
+        {
+          "term": "Soy-free / corn-free",
+          "meaning": "A direct claim about the ration. Must be printed explicitly."
+        }
+      ]
+    },
+    {
+      "id": "egg_storage",
+      "title": "Why US eggs live in the fridge",
+      "aliases": [
+        "egg storage",
+        "refrigerate eggs",
+        "why are eggs refrigerated",
+        "unwashed eggs",
+        "egg cuticle",
+        "farm eggs on the counter",
+        "how long do eggs last"
+      ],
+      "category": "poultry_eggs",
+      "question": "Do eggs have to be refrigerated?",
+      "short_answer": "In the US, yes. Eggs sold here are washed at the plant, and washing strips the cuticle, the natural coating that seals a porous shell. Once it is gone the egg needs constant refrigeration. Unwashed farm eggs keep their cuticle and can sit out, which is why cartons sit on an open shelf across much of Europe. What you should not do is move an egg between the two.",
+      "detail": "US rules require washing and sanitizing, then holding at 45F or below from the plant onward. Neither system is wrong; they solve the same problem from opposite ends. In the carton on a middle shelf is the right spot, not the door, where the temperature swings every time it opens. A cold egg brought to room temperature sweats, and moisture on a porous shell is exactly what the cuticle was preventing. Farm eggs bought unwashed can live on the counter, but the moment you wash them they join the fridge rules.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS shell egg refrigeration requirements (45F)",
+        "FDA Egg Safety Final Rule",
+        "EU marketing standards for eggs (unwashed, ambient storage)"
+      ],
+      "kristy_take": "Washed eggs lost their seal, so they live cold. Unwashed farm eggs kept theirs, so they do not. Just do not switch an egg between the two.",
+      "buying_tips": [
+        "Store the carton on a middle shelf, not the door. The door swings warm every time it opens.",
+        "Keep them in the carton. It slows moisture loss and keeps odors out.",
+        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good.",
+        "Leftover raw whites and yolks keep a few days covered. Yolks want a little water over them."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Washed / graded",
+          "meaning": "The US standard. The cuticle is gone, so refrigeration is required."
+        },
+        {
+          "term": "Unwashed / farm fresh",
+          "meaning": "Cuticle intact. Can be held at room temperature until washed."
+        }
+      ]
+    },
+    {
+      "id": "beef_grades_usda",
+      "title": "USDA beef grades: Prime, Choice, Select",
+      "aliases": [
+        "usda prime",
+        "prime beef",
+        "choice beef",
+        "select beef",
+        "beef grade",
+        "usda grade",
+        "what does prime mean",
+        "marbling"
+      ],
+      "category": "beef",
+      "question": "What do Prime, Choice and Select mean?",
+      "short_answer": "They grade marbling, the fat threaded inside the muscle, along with the age of the animal. Prime has the most, Choice is the middle and the usual retail grade, Select is leanest and driest. It is a cooking and eating-quality scale. It says nothing about how the animal was raised, what it was fed, or whether it ever got outside.",
+      "detail": "Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all, including much grass-finished beef, whose marbling pattern the scale was not built around. Marbling melts during cooking, which is why a Prime steak forgives high heat and a Select one dries out. On a braising cut the grade matters far less, because time and moisture do the work the fat would have done. Grade and sourcing are two separate axes, and neither implies the other.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA AMS Official United States Standards for Grades of Carcass Beef",
+        "USDA AMS voluntary beef grading program"
+      ],
+      "kristy_take": "Grade measures fat inside the muscle and nothing else. A Select chuck roast cooked low and slow beats a Prime steak cooked badly.",
+      "buying_tips": [
+        "Prime, Choice, Select is a marbling scale, top to bottom.",
+        "Grading is voluntary. Ungraded is not a downgrade, and a lot of grass-finished beef skips it.",
+        "Pay up for grade on a quick-cooked steak. Skip it on anything braised.",
+        "Grade and sourcing are separate questions. Neither answers the other."
+      ],
+      "labels_decoded": [
+        {
+          "term": "USDA Prime",
+          "meaning": "The most marbling, and the smallest share of graded beef."
+        },
+        {
+          "term": "USDA Choice",
+          "meaning": "Moderate marbling. The common retail grade."
+        },
+        {
+          "term": "USDA Select",
+          "meaning": "Leanest of the three. Wants a marinade or a slower method."
+        },
+        {
+          "term": "Ungraded",
+          "meaning": "Never submitted for grading. Says nothing about quality either way."
+        }
+      ]
+    },
+    {
+      "id": "judging_meat_at_the_case",
+      "title": "Judging meat at the case",
+      "aliases": [
+        "how to pick meat",
+        "judging meat",
+        "meat color",
+        "purple meat",
+        "brown meat",
+        "is brown meat bad",
+        "meat purge",
+        "how to tell if meat is fresh",
+        "fresh meat"
+      ],
+      "category": "meat_counter",
+      "question": "How do I tell good meat from the case?",
+      "short_answer": "Color is the least useful signal and the one everybody uses. Bright red is beef that has met oxygen, purple-red is vacuum-packed beef that has not, and both are fine. Dull brown at the edges means it has been cut a while. What actually tells you: firm springy flesh, fine marbling through the muscle rather than a rim of fat, a dry tray, and no sour smell.",
+      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid pooled in a tray, called purge, is the useful tell: a lot of it means the meat has sat, or was frozen and thawed, and it carries flavor away with it. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS \"The Color of Meat and Poultry\"",
+        "USDA FSIS meat labeling and product dating guidance"
+      ],
+      "kristy_take": "Color is oxygen, not quality. Press it, look at the tray, smell it. Those three beat the sticker.",
+      "buying_tips": [
+        "Firm and springy, not soft or tacky. It should push back.",
+        "Fine marbling through the muscle beats a thick fat cap on the outside.",
+        "A dry tray is a good sign. Pooled liquid means it has sat, or was frozen and thawed.",
+        "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
+        "Take it from the back of the case where it is coldest, and get it home cold."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sell-by date",
+          "meaning": "A store rotation instruction set by the retailer. Not a safety limit."
+        },
+        {
+          "term": "Purge",
+          "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
+        }
+      ]
+    },
+    {
+      "id": "butcher_counter_asking",
+      "title": "What to ask the butcher",
+      "aliases": [
+        "butcher",
+        "ask the butcher",
+        "meat counter",
+        "custom grind",
+        "service counter",
+        "butcher questions"
+      ],
+      "category": "meat_counter",
+      "question": "What should I ask at the butcher counter?",
+      "short_answer": "The service counter is free expertise most shoppers walk straight past. Ask what came in today, ask the sourcing question directly, and ask for a custom grind or a cut portioned the way you want it. Ask for bones and trim, which are often cheap or free and make stock. Ask what is coming down in price this week, then build the week around the answer.",
+      "detail": "A staffed counter answers things a package never will: whether the beef is grass-finished, whether the chicken was air-chilled, when it was actually cut. They will grind a chuck roast fresh, which beats the pre-packed tray and lets you choose the cut. They will french a rack, tie a roast, portion a whole fish. At most counters none of that costs extra. The cheap cuts sit in the same case, and the person behind the glass usually knows exactly how to cook them.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "USDA Institutional Meat Purchase Specifications (cut nomenclature)"
+      ],
+      "kristy_take": "The counter is free expertise. Ask what came in today and what is cheap this week, then build dinner from the answer.",
+      "buying_tips": [
+        "Ask what came in today, and what is coming down in price.",
+        "Ask for a custom grind. A chuck roast ground fresh beats the pre-packed tray.",
+        "Ask for bones and trim. Often cheap or free, and they make stock.",
+        "Ask the sourcing question outright: grass-finished, air-chilled, where from.",
+        "Ask them to portion it. Cutting, tying and boning are usually included."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "chicken_cuts_basics",
+      "title": "Chicken cuts: breast, thigh, whole bird",
+      "aliases": [
+        "chicken cuts",
+        "chicken breast",
+        "chicken thigh",
+        "chicken thighs",
+        "whole chicken",
+        "dark meat",
+        "white meat",
+        "drumstick",
+        "which chicken cut"
+      ],
+      "category": "poultry",
+      "question": "Which cut of chicken should I buy?",
+      "short_answer": "Whole bird is the cheapest per pound and leaves a carcass for stock. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
+      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "USDA FoodData Central (poultry composition)",
+        "USDA FSIS poultry labeling terms"
+      ],
+      "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
+      "buying_tips": [
+        "Whole bird: cheapest per pound, and the carcass makes stock.",
+        "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
+        "Breast: fast and lean. Pull it the moment it is done.",
+        "Boneless skinless is the priciest form of the same bird.",
+        "Check the label for 'retained water', and for 'air-chilled' if skin matters to you."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Dark meat (thigh, drumstick)",
+          "meaning": "Working muscle. More fat, more flavor, a wide margin for error."
+        },
+        {
+          "term": "White meat (breast, tenderloin)",
+          "meaning": "Low-use muscle. Lean and fast, dries out quickly."
+        }
+      ]
+    },
+    {
+      "id": "pork_cuts_and_enhanced",
+      "title": "Pork cuts and 'solution added' pork",
+      "aliases": [
+        "pork",
+        "pork chops",
+        "pork shoulder",
+        "pork loin",
+        "boston butt",
+        "enhanced pork",
+        "solution added",
+        "brined pork",
+        "which pork cut"
+      ],
+      "category": "pork",
+      "question": "Which pork cut should I buy, and what does 'solution added' mean?",
+      "short_answer": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. Shoulder (Boston butt, picnic) is the braising and pulled-pork cut and it is cheap. Loin and tenderloin are lean and quick. The label to find is 'enhanced' or 'contains up to X% solution', which means injected saltwater and phosphates. You buy that liquid by the pound, and it is already salted.",
+      "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture, because modern pork is bred lean and dries out. The percentage has to be declared. It is not unsafe, and it does make a lean chop more forgiving, but it changes what you paid for and it pre-seasons the meat, so a second brine oversalts it. Unenhanced pork browns better and tastes more like pork. Shoulder is the value cut of the whole animal: fatty, forgiving, and it feeds a crowd for very little.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS labeling requirements for enhanced and solution-added meat",
+        "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)"
+      ],
+      "kristy_take": "Pork shoulder is the best value in the meat case. And read the fine print: 'up to 12% solution' is water sold by the pound.",
+      "buying_tips": [
+        "Braise or pull: shoulder, Boston butt, picnic, country-style ribs.",
+        "Fast and lean: loin chops, tenderloin. Pull them early.",
+        "Read for 'enhanced' or 'contains up to X% solution'. That is injected brine.",
+        "Enhanced pork is already salted. Skip your own brine, and expect less browning.",
+        "Hormones are banned in pork production, so 'no added hormones' on pork is a freebie."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Enhanced / contains up to X% solution",
+          "meaning": "Injected with saltwater and phosphates. Declared by law, and sold by weight."
+        },
+        {
+          "term": "Natural",
+          "meaning": "On meat, minimally processed with no artificial ingredients. Says nothing about raising."
+        }
+      ]
+    },
+    {
+      "id": "deli_meat_uncured",
+      "title": "'Uncured' deli meat",
+      "aliases": [
+        "uncured",
+        "uncured bacon",
+        "uncured hot dogs",
+        "deli meat",
+        "celery powder",
+        "no nitrates added",
+        "nitrite free",
+        "lunch meat",
+        "deli counter"
+      ],
+      "category": "deli",
+      "question": "Is 'uncured' deli meat actually nitrite-free?",
+      "short_answer": "No, and the package says so if you find the asterisk. 'Uncured, no nitrates or nitrites added' is required to be followed by a qualifier along the lines of 'except those naturally occurring in celery powder'. Celery juice powder is a concentrated natural nitrate source, so the meat is cured, just with a vegetable-derived agent rather than a synthetic one.",
+      "detail": "USDA labeling rules force that qualifier, which is why every 'uncured' package carries a footnote most shoppers never read. The chemistry that fixes the color and preserves the meat is the same either way; only the source of the nitrate differs, and measured residual levels are broadly comparable. That does not make it a scam, it makes it a sourcing preference, and it is worth knowing that 'uncured' is a different statement from 'no nitrites'. The bigger question at the deli case is how much processed meat a week holds, not which curing agent was used.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FSIS labeling policy on 'uncured' and 'no nitrate or nitrite added' claims",
+        "Peer-reviewed comparisons of residual nitrite in conventionally and naturally cured meats"
+      ],
+      "kristy_take": "'Uncured' means cured with celery powder. The asterisk on the package says so. Same chemistry, different source.",
+      "buying_tips": [
+        "Find the asterisk. 'Uncured' is always qualified on the label.",
+        "Celery powder is a natural nitrate source. It is a curing agent, not the absence of one.",
+        "Sliced at the counter is usually a shorter ingredient list than the pre-packed tub.",
+        "Whole roasted meat sliced thin does the same sandwich job with nothing added."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Uncured",
+          "meaning": "Cured with a vegetable-derived nitrate source instead of a synthetic one."
+        },
+        {
+          "term": "No nitrates or nitrites added*",
+          "meaning": "The asterisk reads 'except those naturally occurring in celery powder'."
+        }
+      ]
+    },
+    {
+      "id": "mercury_by_fish",
+      "title": "Mercury by fish",
+      "aliases": [
+        "mercury",
+        "mercury in fish",
+        "which fish are low in mercury",
+        "swordfish",
+        "king mackerel",
+        "tilefish",
+        "bigeye",
+        "high mercury fish",
+        "low mercury fish",
+        "methylmercury"
+      ],
+      "category": "seafood",
+      "question": "Which fish are low in mercury and which are high?",
+      "short_answer": "It tracks size and lifespan almost perfectly. Small, short-lived fish carry the least and the big long-lived predators carry the most. Sardines, salmon and canned light (skipjack) tuna sit at the bottom; swordfish, shark, king mackerel and bigeye tuna sit at the top. FDA and EPA publish it as a three-tier list and aim the advice at pregnant and nursing women and young children.",
+      "detail": "Methylmercury accumulates up the food chain, so a fish that ate thousands of smaller fish across twenty years carries far more than one that lived two years on plankton. That is why the pattern is so predictable by species. FDA and EPA publish it as a three-tier list (Best Choices, Good Choices, Choices to Avoid) and direct the advice at pregnant and nursing women and young children. This is information about the fish. Anything about a personal medical situation belongs with a doctor.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA/EPA 'Advice About Eating Fish' (2021 update)",
+        "FDA mercury concentrations in commercial fish and shellfish"
+      ],
+      "kristy_take": "Small and short-lived is the entire rule. Sardines, salmon and skipjack sit at the bottom of the chain, and they are the cheap ones.",
+      "buying_tips": [
+        "Lowest: sardines, anchovies, salmon, shrimp, scallops, tilapia, cod, pollock, catfish, canned light tuna.",
+        "Middle: albacore and yellowfin tuna, halibut, grouper, snapper, mahi mahi.",
+        "Highest: swordfish, shark, king mackerel, marlin, orange roughy, bigeye tuna, Gulf tilefish.",
+        "'Light' tuna is usually skipjack and sits well below 'white' albacore.",
+        "FDA and EPA aim the advice at pregnant and nursing women and young children. Anything medical is a doctor’s call."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Light tuna",
+          "meaning": "Usually skipjack. A small tuna, low on the chain."
+        },
+        {
+          "term": "White / albacore tuna",
+          "meaning": "A larger tuna. Higher than light."
+        },
+        {
+          "term": "Ahi / bigeye",
+          "meaning": "A large, long-lived tuna. Near the top of the range."
+        }
+      ]
+    },
+    {
+      "id": "fish_freshness_at_counter",
+      "title": "Telling fresh at the fish counter",
+      "aliases": [
+        "fresh fish",
+        "how to tell fish is fresh",
+        "fish smell",
+        "fish eyes",
+        "fish gills",
+        "is this fish fresh",
+        "gaping fillet"
+      ],
+      "category": "seafood",
+      "question": "How do I tell if fish at the counter is fresh?",
+      "short_answer": "Smell first. Fresh fish smells like clean seawater or like almost nothing. A sharp fishy or ammonia note means it has gone. Then look: on a whole fish, clear domed eyes, bright red gills, tight scales, flesh that springs back. On fillets, a translucent sheen, flakes still holding together, no browning at the edges, and no liquid pooled underneath.",
+      "detail": "The 'fishy' smell people associate with fish is the smell of it breaking down, which makes it the single best gauge in the case. Whole fish tell you more than fillets, because eyes, gills and skin all age visibly. On a fillet the tell is gaping: muscle segments separate as it ages and the flesh loses its sheen. Ice matters as much as the fish, so it should be sitting on plenty of it and not in a puddle. Asking them to hand you a piece to smell is completely normal, and any good counter will.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
+        "NOAA Fisheries seafood handling guidance"
+      ],
+      "kristy_take": "Ask to smell it. Clean seawater or nothing means yes. Sharp and fishy means put it back.",
+      "buying_tips": [
+        "Smell it. Clean and briny is right. Sharp, fishy or ammonia is not.",
+        "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
+        "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
+        "It should sit on plenty of ice, not in a pool of its own liquid.",
+        "Ask when it came in and whether it was previously frozen. Both are fair questions."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Gaping",
+          "meaning": "Flakes separating on a fillet. A sign it has aged."
+        }
+      ]
+    },
+    {
+      "id": "canned_fish_choosing",
+      "title": "Buying canned fish",
+      "aliases": [
+        "canned fish",
+        "tinned fish",
+        "tuna in oil",
+        "tuna in water",
+        "sardines in olive oil",
+        "canned tuna buying",
+        "bones in sardines",
+        "tinned sardines"
+      ],
+      "category": "seafood",
+      "question": "What should I look for in canned fish?",
+      "short_answer": "Read what it is packed in. Olive oil or water are the clean options; plenty of tins use soybean, cottonseed or unnamed 'vegetable oil', which matters if seed oils are a line you hold. Buy sardines and salmon with the bones and skin left in. And the ingredient list should read fish, oil or water, and salt. Anything longer is a sauce.",
+      "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. 'Vegetable oil' on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "USDA FoodData Central (canned fish composition)",
+        "Product ingredient labeling"
+      ],
+      "kristy_take": "Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist.",
+      "buying_tips": [
+        "Read the pack medium: olive oil or water, not 'vegetable oil'.",
+        "Bone-in and skin-on sardines and salmon. The bones soften completely.",
+        "The list should read fish, oil or water, salt. Anything longer is a sauce.",
+        "Good oil-packed tins are worth using in the dish rather than draining.",
+        "Skipjack ('light') sits lower on the mercury range than albacore ('white')."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Packed in vegetable oil",
+          "meaning": "Nearly always a seed oil blend. The tin will not name which."
+        },
+        {
+          "term": "Packed in olive oil",
+          "meaning": "Check it says olive oil, not 'olive oil blend'."
+        },
+        {
+          "term": "Skinless, boneless",
+          "meaning": "Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating."
+        }
+      ]
+    },
+    {
+      "id": "farmed_fish_by_species",
+      "title": "Which farmed fish are worth buying",
+      "aliases": [
+        "farmed fish",
+        "aquaculture",
+        "is farmed fish bad",
+        "farmed tilapia",
+        "farmed trout",
+        "mussels",
+        "oysters",
+        "clams",
+        "barramundi",
+        "arctic char"
+      ],
+      "category": "seafood",
+      "question": "Is farmed fish worth buying?",
+      "short_answer": "It depends entirely on the species and the operation, never on the word 'farmed'. Farmed shellfish (mussels, oysters, clams) are the standout: they feed themselves by filtering water and need no feed at all. Farmed trout, arctic char and barramundi are generally well regarded. Salmon and shrimp vary enormously by producer and country, which is where certification and origin do real work.",
+      "detail": "Aquaculture is not one thing. A rope of mussels hanging in a bay takes nothing and adds nothing. A closed recirculating tank system for trout or char is tightly controlled. An open net pen or a coastal shrimp pond depends on the standards of the country and the company running it. So the useful question at the counter is which species and where from, rather than farmed or wild. Wild is the whole-food-standard preference where it is affordable, and that is a preference, not a health verdict on farmed fish. Eating the fish beats skipping it.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "NOAA Fisheries aquaculture overviews",
+        "Monterey Bay Aquarium Seafood Watch species ratings"
+      ],
+      "kristy_take": "Farmed shellfish feed themselves by filtering water. That is about as clean as farming protein gets.",
+      "buying_tips": [
+        "Mussels, oysters and clams are farmed almost everywhere and need no feed.",
+        "Farmed trout, arctic char and barramundi are generally well regarded.",
+        "For salmon and shrimp, ask the country and look for a credible certification.",
+        "Country-of-origin is required on unprocessed seafood. Read it.",
+        "'Farmed' alone is not a verdict. The species and the operation are the question."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Farm-raised",
+          "meaning": "Says nothing on its own. The species and the operation decide it."
+        },
+        {
+          "term": "Product of [country]",
+          "meaning": "Country-of-origin labeling. Required, and the most useful line on the package."
+        }
+      ]
+    },
+    {
+      "id": "seafood_certifications",
+      "title": "Seafood seals: MSC, ASC, BAP",
+      "aliases": [
+        "msc",
+        "asc",
+        "bap",
+        "seafood watch",
+        "sustainable seafood",
+        "seafood certification",
+        "best aquaculture practices",
+        "marine stewardship council",
+        "sustainability"
+      ],
+      "category": "seafood",
+      "question": "Do the sustainability seals on seafood mean anything?",
+      "short_answer": "They mean something specific and narrow, and knowing which is which is the whole trick. The blue MSC label covers WILD fisheries and how the stock is managed. ASC covers FARMED fish and the conditions of the farm. BAP also covers farmed, with a one-to-four star scale for how far up the chain the audit reached. Seafood Watch is not a label at all, it is a ratings guide you look up.",
+      "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds and the gear does not wreck the habitat. ASC and BAP audit farms. BAP's stars count the audited links: one is the processing plant, four adds the farm, hatchery and feed mill. All three publish their standards and send auditors, which is more than an unbacked word on a package offers. What none of them tell you is anything about the fish in front of you: how fresh it is, how it tastes, or how it was handled since.",
+      "evidence_tier": "established",
+      "sources": [
+        "Marine Stewardship Council fisheries standard",
+        "Aquaculture Stewardship Council farm standards",
+        "Global Seafood Alliance Best Aquaculture Practices star system",
+        "Monterey Bay Aquarium Seafood Watch methodology"
+      ],
+      "kristy_take": "A seal answers one question and no others. MSC is wild fisheries, ASC and BAP are farms. None of them says the fish is fresh.",
+      "buying_tips": [
+        "Blue MSC label: a wild fishery, audited for stock and habitat impact.",
+        "ASC: a farm, audited on environmental and social standards.",
+        "BAP one to four stars: how many links were audited, from plant up to feed mill.",
+        "Seafood Watch is a guide to look up, not a seal to spot.",
+        "No seal speaks to freshness. That is still your nose and your eyes."
+      ],
+      "labels_decoded": [
+        {
+          "term": "MSC (blue fish)",
+          "meaning": "Wild-capture fishery certification. Stock management and habitat impact."
+        },
+        {
+          "term": "ASC",
+          "meaning": "Farmed seafood certification. Environmental and social farm standards."
+        },
+        {
+          "term": "BAP 1 to 4 stars",
+          "meaning": "Farmed. Stars count the audited links: plant, farm, hatchery, feed mill."
+        },
+        {
+          "term": "Seafood Watch",
+          "meaning": "A ratings program, not a package seal."
+        }
+      ]
+    },
+    {
+      "id": "produce_ripeness_by_item",
+      "title": "How to pick it, item by item",
+      "aliases": [
+        "how to pick a melon",
+        "ripe melon",
+        "cantaloupe",
+        "watermelon",
+        "pineapple",
+        "how to pick tomatoes",
+        "picking berries",
+        "ripe peach",
+        "how to pick asparagus",
+        "how to pick broccoli",
+        "ripe mango",
+        "picking citrus",
+        "how to pick fruit"
+      ],
+      "category": "produce",
+      "question": "How do I tell if this particular fruit or vegetable is any good?",
+      "short_answer": "Every item has one or two checks that actually work, and they are almost never color. Heavy for its size is the near-universal one, because weight means water content rather than pith. Smell at the stem end for anything that ripens off the plant. And turn the berry container over, because that is where the mold starts.",
+      "detail": "Fruit that keeps ripening after picking (melon, peach, avocado, banana, mango, pear) gives you smell and give as signals. Fruit that does not ripen further once picked (berries, citrus, grapes, pineapple, cherries) has to be bought ready, so those checks are about weight and damage instead. Vegetables are mostly a firmness question: a limp stalk or a rubbery skin means it has been out of the ground a while and lost water. The single best habit is picking up two of the same thing and comparing them by weight. The heavier one is almost always better.",
+      "evidence_tier": "established",
+      "sources": [
+        "University extension produce selection and ripening guidance",
+        "USDA produce grading and handling standards"
+      ],
+      "kristy_take": "Pick up two and take the heavier one. That one habit beats every color rule going.",
+      "buying_tips": [
+        "Cantaloupe: creamy gold under the netting, a sweet smell at the stem end, slight give.",
+        "Watermelon: a deep yellow field spot, heavy for its size, a hollow thunk.",
+        "Pineapple: sweet at the base, deep green leaves, a slight give in the shell. Color is not the tell.",
+        "Berries: turn the container over. Juice stains or one furry berry means the whole punnet is going.",
+        "Tomatoes: fragrant at the stem, heavy for their size, and never from the cold case.",
+        "Stone fruit: fragrant, with a slight give at the shoulder rather than the tip.",
+        "Citrus: heavy for its size, with thin smooth skin. Weight beats color.",
+        "Asparagus: tight closed tips and a cut end that is not dried and split.",
+        "Broccoli and cauliflower: tight dense heads, no yellowing between the florets.",
+        "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "produce_in_season",
+      "title": "What's actually in season",
+      "aliases": [
+        "in season now",
+        "what is in season",
+        "seasonal fruit",
+        "seasonal vegetables",
+        "spring produce",
+        "summer produce",
+        "fall produce",
+        "winter produce",
+        "season by month"
+      ],
+      "category": "produce",
+      "question": "What produce is in season right now?",
+      "short_answer": "The cheapest, most abundant thing in the department this week is almost always the seasonal one, so the price tag answers this before any chart does. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. The season-by-season list is below.",
+      "detail": "Season shows up in the price and the size of the pile before it shows up anywhere else, so the cheapest, most abundant item in the department this week is usually the seasonal one. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why 'available' and 'in season' are different words. Citrus peaking in the dead of winter surprises people, and it is why a January orange tastes better than a July one.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "USDA seasonal produce guides",
+        "USDA Agricultural Marketing Service shipping-point season data"
+      ],
+      "kristy_take": "Whatever is piled high and cheap this week is what is in season. The price tag says it before any chart does.",
+      "buying_tips": [
+        "Spring: asparagus, peas, radishes, artichokes, strawberries, tender greens.",
+        "Summer: tomatoes, corn, zucchini, peppers, cucumbers, stone fruit, melon, berries.",
+        "Autumn: winter squash, sweet potatoes, apples, pears, brussels sprouts, grapes.",
+        "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
+        "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season.",
+        "Out of season, frozen beats a pale expensive fresh version."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "produce_storage",
+      "title": "Making produce last the week",
+      "aliases": [
+        "produce storage",
+        "how to store vegetables",
+        "how to store fruit",
+        "ethylene",
+        "keep produce fresh",
+        "wilted greens",
+        "should i refrigerate tomatoes",
+        "food waste produce"
+      ],
+      "category": "produce",
+      "question": "How do I keep produce from going off before I use it?",
+      "short_answer": "Three rules cover most of it. Keep the ethylene producers away from the ethylene sensitive: apples, bananas, avocados, tomatoes and stone fruit give off the ripening gas, and greens, broccoli, cucumbers and berries wilt fast beside it. Do not wash anything until you use it. And learn the short list that should never go in the fridge: tomatoes, potatoes, onions, garlic, whole melon and unripe stone fruit.",
+      "detail": "Ethylene is a plant hormone that triggers ripening and it works on neighbors, which is why a bowl of apples ages the lettuce next to it. Moisture is the other half: water sitting on a leaf or a berry is where mold starts, so the rinse belongs at the moment of eating rather than at unpacking. Cold wrecks texture and flavor in a few specific things. Tomatoes go mealy below about 55F, potatoes convert starch to sugar and brown oddly when cooked, and onions and garlic soften and sprout. Herbs and asparagus keep best standing in a little water like cut flowers, and greens keep best dry with a towel in the bag.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA and university extension postharvest storage guidance",
+        "FDA produce storage and safety guidance"
+      ],
+      "kristy_take": "Wash it when you eat it, not when you unpack it. Half of what rots in a fridge was rinsed on the way in.",
+      "buying_tips": [
+        "Separate the gas producers (apples, bananas, avocados, tomatoes, stone fruit) from greens and berries.",
+        "Do not wash anything until you are about to use it.",
+        "Never refrigerate: tomatoes, potatoes, onions, garlic, whole melon, unripe stone fruit.",
+        "Herbs and asparagus: stand them in a little water, loosely covered.",
+        "Greens: dry, with a paper towel in the bag to take up moisture.",
+        "Buy at staggered ripeness so the whole week does not turn on Tuesday."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "milk_processing",
+      "title": "Pasteurized, ultra-pasteurized, homogenized",
+      "aliases": [
+        "ultra pasteurized",
+        "uht milk",
+        "pasteurized milk",
+        "homogenized",
+        "non homogenized",
+        "cream top milk",
+        "why does organic milk last so long",
+        "milk processing"
+      ],
+      "category": "dairy",
+      "question": "What is the difference between pasteurized, ultra-pasteurized and homogenized milk?",
+      "short_answer": "Three separate processes. Pasteurization is a short heat step that kills pathogens, around 161F for 15 seconds. Ultra-pasteurization goes much hotter, roughly 280F for a couple of seconds, which is why some cartons carry dates months out. Homogenization is not heat at all: it forces the fat into droplets small enough that cream never rises. Non-homogenized cream-top milk is still pasteurized.",
+      "detail": "These three get muddled constantly. Heat is about shelf life and safety; homogenization is about texture and whether the cream separates. Ultra-pasteurization changes flavor noticeably and makes milk reluctant to culture into yogurt or cheese, which is the practical reason people avoid it rather than a nutritional one. On the whole-food standard the read is simple: fewer processing steps, so plain pasteurized and non-homogenized where the store carries them. That is a preference about processing, not a claim that ultra-pasteurized milk is bad for anyone.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "FDA Pasteurized Milk Ordinance (time and temperature standards)",
+        "FDA milk labeling and processing definitions"
+      ],
+      "kristy_take": "Fewer steps is the standard. Plain pasteurized over ultra, cream-top if the store has it. A processing preference, not a health verdict.",
+      "buying_tips": [
+        "'Ultra-pasteurized' or 'UHT' on the carton explains a date months out.",
+        "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
+        "'Cream-top' or 'non-homogenized' means the fat separates. Shake it.",
+        "Non-homogenized is still pasteurized. Two different processes.",
+        "The shortest date on the shelf usually means the least processing, not worse milk."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Pasteurized",
+          "meaning": "Briefly heated to kill pathogens. The standard process."
+        },
+        {
+          "term": "Ultra-pasteurized / UHT",
+          "meaning": "Much hotter for a shorter time. Long shelf life, changed flavor, resists culturing."
+        },
+        {
+          "term": "Homogenized",
+          "meaning": "Fat broken into droplets so cream never rises. Not a heat process."
+        },
+        {
+          "term": "Cream-top / non-homogenized",
+          "meaning": "Cream separates and rises. Still pasteurized."
+        }
+      ]
+    },
+    {
+      "id": "pre_shredded_cheese",
+      "title": "Block vs. pre-shredded cheese",
+      "aliases": [
+        "pre shredded cheese",
+        "shredded cheese",
+        "cellulose in cheese",
+        "anti caking",
+        "block cheese",
+        "parmesan",
+        "parmigiano reggiano",
+        "grated cheese",
+        "natamycin"
+      ],
+      "category": "dairy",
+      "question": "Is pre-shredded cheese worth it?",
+      "short_answer": "It is real cheese with additions. Shredded bags carry an anti-caking coating, usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. That coating is why bagged shreds never melt as smoothly as cheese grated at home. Block is cheaper per pound and melts properly. On naming: 'Parmesan' is generic in the US, while 'Parmigiano-Reggiano' is a protected name with rules behind it.",
+      "detail": "Powdered cellulose is plant fiber and natamycin is a naturally derived antifungal, and neither one is alarming. The honest objection is that you pay more per pound for cheese cut with something that is not cheese and that works worse in a sauce. Grating a block takes a minute. On hard cheeses the naming question matters more than the shredding one: the US does not protect 'Parmesan', so anything from a wedge of aged cow's milk cheese to a shaker of mostly powder can carry the word, while 'Parmigiano-Reggiano' is a controlled designation with a stamped rind.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA standards of identity for cheese",
+        "FDA regulations on anti-caking agents and natamycin in shredded cheese",
+        "EU protected designation of origin for Parmigiano-Reggiano"
+      ],
+      "kristy_take": "Buy the block. Cheaper per pound, melts properly, and grating it takes a minute.",
+      "buying_tips": [
+        "Read the bag: potato starch, powdered cellulose and natamycin are the additions.",
+        "Block is cheaper per pound and melts smoothly. Bagged shreds resist.",
+        "'Parmesan' is a generic word in the US. 'Parmigiano-Reggiano' is a protected one with a stamped rind.",
+        "A short list (milk, salt, cultures, enzymes) is the tell for real cheese.",
+        "Keep hard-cheese rinds. They belong in a pot of beans or soup."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Powdered cellulose",
+          "meaning": "Plant fiber used as an anti-caking coating on shreds."
+        },
+        {
+          "term": "Natamycin",
+          "meaning": "A mold inhibitor applied to the surface of shredded cheese."
+        },
+        {
+          "term": "Parmesan",
+          "meaning": "A generic term in the US. Not a controlled name."
+        },
+        {
+          "term": "Parmigiano-Reggiano",
+          "meaning": "A protected designation with production rules and a stamped rind."
+        }
+      ]
+    },
+    {
+      "id": "yogurt_live_cultures",
+      "title": "Live cultures, kefir and skyr",
+      "aliases": [
+        "live and active cultures",
+        "probiotic yogurt",
+        "kefir",
+        "skyr",
+        "strained yogurt",
+        "yogurt cultures",
+        "icelandic yogurt",
+        "cultured dairy"
+      ],
+      "category": "dairy",
+      "question": "Which cultured dairy should I buy?",
+      "short_answer": "Look for 'Live and Active Cultures' on the tub, which means the fermenting bacteria are still there and viable. Greek and skyr are strained, so they are thicker and carry more protein per spoon. Kefir is a drinkable ferment with a wider mix of cultures than yogurt. Buy all of them plain: the flavored versions are where the added sugar lives, and that line is on the back.",
+      "detail": "Yogurt is milk plus two required cultures, and everything past that (extra strains, straining, thickeners) is what separates one tub from another. 'Live and Active Cultures' is a seal with a defined threshold behind it, and heat-treated shelf-stable yogurts do not carry it. Strained styles pour off whey, which concentrates the protein and is why a cup of Greek reads so differently from a cup of regular. Kefir ferments with a broader mix of bacteria and yeasts. None of that survives a fruit-on-the-bottom cup, so read the added-sugar line and add your own fruit instead.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA standards of identity for yogurt",
+        "National Yogurt Association 'Live & Active Cultures' seal criteria",
+        "USDA FoodData Central"
+      ],
+      "kristy_take": "Plain, live cultures, and your own fruit. The flavored cups are dessert wearing a yogurt label.",
+      "buying_tips": [
+        "Find 'Live and Active Cultures'. Heat-treated shelf-stable tubs do not carry it.",
+        "Plain, always. Sweeten it yourself with fruit or a little honey.",
+        "Greek and skyr are strained: thicker, more protein per spoon.",
+        "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
+        "Read the added-sugar line on any flavored version before deciding.",
+        "Whole-milk versions are more filling and less tinkered with than fat-free."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Live and Active Cultures",
+          "meaning": "A defined seal. The fermenting bacteria are present and viable."
+        },
+        {
+          "term": "Heat-treated after culturing",
+          "meaning": "Shelf-stable, and the cultures are no longer live."
+        },
+        {
+          "term": "Greek / skyr",
+          "meaning": "Strained. Thicker, higher protein per serving."
+        },
+        {
+          "term": "Kefir",
+          "meaning": "A drinkable ferment with a wider mix of cultures."
+        }
+      ]
+    },
+    {
+      "id": "cream_vs_creamer",
+      "title": "Cream, half-and-half, and 'creamer'",
+      "aliases": [
+        "coffee creamer",
+        "non dairy creamer",
+        "heavy cream",
+        "half and half",
+        "whipping cream",
+        "what is in coffee creamer",
+        "creamer ingredients"
+      ],
+      "category": "dairy",
+      "question": "What is the difference between cream and coffee creamer?",
+      "short_answer": "Cream is a dairy product with a legal fat minimum: heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18. 'Non-dairy creamer' is not dairy at all. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Read the two ingredient lists side by side and it takes three seconds.",
+      "detail": "Standards of identity fix what cream can mean, which is why those fat percentages are consistent across every carton. Creamer has no such standard because it is a formulated product. The oil in it is usually a refined seed oil, and the sweetness usually comes from corn syrup solids or sugar, with the flavored versions adding more of both. Some cartons of real cream carry stabilizers like carrageenan or gellan gum, so a short list is worth checking on the dairy side too. Whole milk, half-and-half or real cream all do the job with a list you can read out loud.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA standards of identity for cream products, 21 CFR 131",
+        "FDA food labeling regulations",
+        "Product ingredient labeling"
+      ],
+      "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
+      "buying_tips": [
+        "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
+        "'Non-dairy creamer' is oil, sweetener and emulsifiers. It is not cream.",
+        "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
+        "Flavored creamers are where the added sugar sits. Read the panel.",
+        "Whole milk or half-and-half does the same job with a two-word ingredient list."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Heavy / heavy whipping cream",
+          "meaning": "At least 36% milkfat. A defined standard."
+        },
+        {
+          "term": "Half-and-half",
+          "meaning": "10.5 to 18% milkfat. Milk and cream."
+        },
+        {
+          "term": "Non-dairy creamer",
+          "meaning": "No dairy. Water or corn syrup solids, oil, emulsifiers and flavors."
+        }
+      ]
+    },
+    {
+      "id": "flour_basics",
+      "title": "Flour: bleached, enriched, whole",
+      "aliases": [
+        "flour",
+        "all purpose flour",
+        "bread flour",
+        "whole wheat flour",
+        "bleached flour",
+        "unbleached flour",
+        "enriched flour",
+        "pastry flour",
+        "which flour"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which flour should I buy, and what does 'enriched' mean?",
+      "short_answer": "Protein content picks the flour: bread flour is highest and builds chew, all-purpose is the middle, cake and pastry flour are lowest and stay tender. 'Enriched' means B vitamins and iron were added back after refining removed them. 'Bleached' means treated with a chemical whitening agent, while 'unbleached' was simply aged with air. Whole wheat keeps the bran and germ, so it behaves differently and turns rancid far sooner.",
+      "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Enrichment is a regulated add-back of thiamin, riboflavin, niacin, folic acid and iron, and it is standard on most white flour sold in the US. Bleaching speeds up the same softening that months of air exposure would have done. Whole wheat still carries the oil in the germ, so it keeps for months rather than years and belongs in the freezer if it is not going quickly. Its bran also cuts gluten strands, which is why an all-whole-wheat loaf comes out denser.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA standards of identity for enriched flour, 21 CFR 137",
+        "FDA regulations on flour bleaching and maturing agents",
+        "USDA FoodData Central"
+      ],
+      "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
+      "buying_tips": [
+        "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
+        "'Enriched' means vitamins and iron added back after refining. Standard on white flour.",
+        "'Unbleached' was aged with air. 'Bleached' was chemically whitened.",
+        "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer.",
+        "Whole-grain flour makes a denser loaf. Start with a quarter of the total."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Enriched",
+          "meaning": "B vitamins and iron added back after refining. A defined standard."
+        },
+        {
+          "term": "Bleached",
+          "meaning": "Treated with a whitening and maturing agent."
+        },
+        {
+          "term": "Unbleached",
+          "meaning": "Aged with air rather than chemically treated."
+        },
+        {
+          "term": "Whole wheat",
+          "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."
+        }
+      ]
+    },
+    {
+      "id": "bulk_bins_buying",
+      "title": "Buying from the bulk bins",
+      "aliases": [
+        "bulk bins",
+        "bulk aisle",
+        "buying in bulk",
+        "bulk food",
+        "scoop bins",
+        "bulk nuts",
+        "bulk grains",
+        "bulk spices"
+      ],
+      "category": "bulk_pantry",
+      "question": "Is the bulk bin section actually a good deal?",
+      "short_answer": "For anything with fast turnover, yes. Grains, beans, lentils, oats, rice and especially spices are dramatically cheaper by weight, and you buy exactly what you need. The catch is turnover: nuts, seeds and whole-grain flours carry oil that goes rancid, so a slow bin is a bad buy at any price. Look at whether the bin is full and busy, and smell what you scoop.",
+      "detail": "Bulk pricing strips out the packaging and the brand, which is most of what a shelf-stable staple costs. Spices are the extreme case, where a scoop from a bin costs a fraction of the same weight in a jar and is usually fresher because the bin moves. The risk sits entirely with the fatty items. Rancidity is the real quality question in this aisle, and it announces itself: rancid nuts and seeds smell like old paint or crayons and taste sharp and bitter. Bring your own jars where the store allows it, and note the tare weight.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "FDA retail bulk food handling guidance",
+        "USDA FoodData Central"
+      ],
+      "kristy_take": "Bulk is unbeatable on grains, beans and spices. On nuts and whole-grain flour it depends entirely on how fast that bin moves.",
+      "buying_tips": [
+        "Best value: rice, oats, beans, lentils, dried fruit and especially spices.",
+        "Riskiest: nuts, seeds and whole-grain flours. Oil goes rancid in a slow bin.",
+        "Full busy bins turn over. A dusty half-empty one does not.",
+        "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
+        "Buy what you will use in a month, and store it airtight and dark."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "rancidity_check",
+      "title": "Telling when fats have turned",
+      "aliases": [
+        "rancid",
+        "rancid nuts",
+        "rancid oil",
+        "does olive oil go bad",
+        "stale nuts",
+        "rancid flour",
+        "bitter oil",
+        "how to tell if oil is rancid"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do I tell if nuts, oil or flour have gone rancid?",
+      "short_answer": "Smell and taste, and trust them. Rancid fat smells like old paint, crayons, putty or nail polish, and it tastes sharp and bitter with a scratch at the back of the throat that does not fade. It happens to nuts, seeds, whole-grain flour, wheat germ, nut butters and every oil. It is a quality problem rather than a safety emergency: the food is spent, and it will make whatever you put it in taste bad.",
+      "detail": "Oxidation is fat reacting with air, and light, heat and time all speed it up. That is the whole reason good olive oil comes in dark glass and gets stored away from the stove, and why whole-grain flour keeps months while white flour keeps almost indefinitely. The peppery catch at the back of the throat in fresh olive oil is a different sensation from the flat bitter scratch of a rancid one, and the difference is learnable in a single side-by-side taste. Once you can smell it, the bulk bin, the back of the pantry and the half-used oil bottle all become easy calls.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "Peer-reviewed literature on lipid oxidation in foods",
+        "UC Davis Olive Center sensory standards for olive oil defects"
+      ],
+      "kristy_take": "Old paint and crayons is the smell. Once you know it, half the back of the pantry starts making sense.",
+      "buying_tips": [
+        "Smell nuts and seeds before they go in the cart, especially from a bulk bin.",
+        "Rancid reads as paint, crayon, putty or nail polish. Sharp and bitter on the tongue.",
+        "Dark glass or tin for oil, stored away from the stove rather than beside it.",
+        "Nuts, seeds, whole-grain flour and nut butters keep far longer in the fridge or freezer.",
+        "Buy oil in a size you will finish in a couple of months rather than the big bottle."
+      ],
+      "labels_decoded": []
+    },
+    {
+      "id": "olive_oil_grades",
+      "title": "Olive oil grades and 'packed in'",
+      "aliases": [
+        "olive oil grades",
+        "virgin olive oil",
+        "light olive oil",
+        "pure olive oil",
+        "pomace oil",
+        "refined olive oil",
+        "packed in italy",
+        "olive oil label",
+        "first cold pressed"
+      ],
+      "category": "bulk_pantry",
+      "question": "What do the olive oil grades on the label mean?",
+      "short_answer": "Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. 'Pure', 'classic' and 'light' all mean refined oil blended with a little virgin for flavor, and 'light' refers to color and taste rather than calories. Pomace oil is solvent-extracted from the leftover paste. 'Packed in Italy' is a shipping fact, not an origin.",
+      "detail": "The grades are real standards, but US enforcement of them is limited, which is why freshness cues matter as much as the word on the front. The refined grades are not poison, they are simply a different product made the way a seed oil is made, and priced accordingly. The origin line is what catches people: bottling location and country of origin are separate claims, so a bottle can be pressed from oil grown across several countries and packed in one. A single country of origin plus a recent harvest date is the pairing that tells you the most.",
+      "evidence_tier": "established",
+      "sources": [
+        "International Olive Council trade standard for olive oils",
+        "USDA AMS United States Standards for Grades of Olive Oil (voluntary)",
+        "FDA labeling rules on country of origin"
+      ],
+      "kristy_take": "'Light' is about color, not calories. 'Pure' means refined. Extra virgin, a harvest date and one country is the whole label.",
+      "buying_tips": [
+        "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
+        "'Pure', 'classic' and 'light' all mean refined oil. 'Light' refers to flavor and color.",
+        "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
+        "'Packed in [country]' is where it was bottled. Look for 'product of' instead.",
+        "A harvest date beats a best-by date every time.",
+        "'First cold pressed' is mostly a legacy phrase. Modern mills press once."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Extra virgin",
+          "meaning": "Mechanically extracted, within a strict acidity limit, and taste-panel tested."
+        },
+        {
+          "term": "Virgin",
+          "meaning": "The same extraction with a looser limit."
+        },
+        {
+          "term": "Pure / classic / light",
+          "meaning": "Refined oil with a little virgin blended back. 'Light' means color and flavor."
+        },
+        {
+          "term": "Pomace",
+          "meaning": "Solvent-extracted from the paste left after pressing."
+        },
+        {
+          "term": "Packed in [country]",
+          "meaning": "Where it was bottled. Not where the olives grew."
+        }
+      ]
+    },
+    {
+      "id": "nut_butter_ingredients",
+      "title": "Reading a nut butter jar",
+      "aliases": [
+        "peanut butter",
+        "almond butter",
+        "nut butter",
+        "natural peanut butter",
+        "palm oil peanut butter",
+        "oil separation",
+        "no stir peanut butter"
+      ],
+      "category": "bulk_pantry",
+      "question": "What should be in a jar of peanut butter?",
+      "short_answer": "Peanuts. Salt if you want it. That is the whole list on the good jars. The no-stir versions get their texture from added palm oil or hydrogenated oil, and most also add sugar. Oil sitting on top is not a fault, it is the sign that nothing was added to stop it. Stir it in once, then keep the jar upside down in the fridge.",
+      "detail": "The separation people complain about is what natural peanut butter does, because ground peanuts are peanuts and oil. Stabilizers fix the texture and turn it into a product with a longer ingredient list. Sugar shows up in most conventional jars, and reduced-fat versions typically replace the removed fat with sugar and starch, which is the opposite of the trade most people think they are making. The same reading applies to almond, cashew and sunflower butters. One or two ingredients on the back is the standard, and it is easy to find.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "FDA standards of identity for peanut butter, 21 CFR 164.150",
+        "Product ingredient labeling",
+        "USDA FoodData Central"
+      ],
+      "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
+      "buying_tips": [
+        "The list should read peanuts, and salt if you want it. Nothing else is needed.",
+        "No-stir means palm oil or hydrogenated oil was added. Check for sugar too.",
+        "Reduced-fat versions usually replace the fat with sugar and starch.",
+        "Store natural jars upside down in the fridge. The oil redistributes on its own.",
+        "Same reading for almond, cashew and sunflower butters."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Natural",
+          "meaning": "On a nut butter, generally the short-list version. Still read the back."
+        },
+        {
+          "term": "No-stir",
+          "meaning": "Palm oil or hydrogenated oil added to hold the fat in suspension."
+        },
+        {
+          "term": "Reduced fat",
+          "meaning": "Fat removed and usually replaced with sugar and starch."
+        }
+      ]
+    },
+    {
+      "id": "grains_beyond_rice",
+      "title": "Grains beyond rice",
+      "aliases": [
+        "quinoa",
+        "farro",
+        "barley",
+        "buckwheat",
+        "millet",
+        "bulgur",
+        "whole grains",
+        "which grain",
+        "sorghum",
+        "wheat berries"
+      ],
+      "category": "bulk_pantry",
+      "question": "What else should I be buying besides rice?",
+      "short_answer": "Rotating grains is the cheapest upgrade in the pantry. Quinoa cooks in fifteen minutes and holds together cold. Farro and barley are chewy and made for soups and grain bowls. Buckwheat is not wheat at all and cooks fast. Millet and sorghum are cheap and carry no gluten. Bulgur is the fastest of the lot: ten minutes with boiling water and a lid.",
+      "detail": "Variety is worth it on its own terms, since different grains bring different textures and cooking times, and rotating them means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Most of these cook like pasta, in plenty of salted water and drained when tender, which is far more forgiving than the exact ratios rice wants. Buy them from the bulk bins where you can.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA FoodData Central",
+        "FDA guidance on inorganic arsenic in rice",
+        "Whole Grains Council grain reference"
+      ],
+      "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
+      "buying_tips": [
+        "Quick: bulgur (10 min), quinoa (15 min), buckwheat (15 min), millet (20 min).",
+        "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
+        "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
+        "Cook most of them like pasta, in salted water, and drain.",
+        "Cook a big batch. They keep several days and reheat straight from cold."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Pearled (barley, farro)",
+          "meaning": "Some bran removed. Cooks faster, less of the whole kernel."
+        },
+        {
+          "term": "Whole / hulled",
+          "meaning": "Bran intact. A longer cook, and it holds its chew."
+        }
+      ]
+    },
+    {
+      "id": "label_front_vs_back",
+      "title": "The front sells, the back tells",
+      "aliases": [
+        "front of package",
+        "back of package",
+        "read the label",
+        "how to read a food label",
+        "food label",
+        "marketing claims",
+        "front of pack"
+      ],
+      "category": "label_terms",
+      "question": "Where on a package should I actually be looking?",
+      "short_answer": "The front of a package is advertising and the back is regulated. Every phrase on the front (natural, wholesome, farm fresh, made with real, lightly sweetened) is chosen by a marketing team, and only some of them have any legal definition at all. The ingredient list and the Nutrition Facts panel have to be true and have to follow a format. Turn it over first, and the front becomes noise.",
+      "detail": "This is the one habit that makes every other label question easy. Nearly all of the confusion in a grocery store comes from front-of-pack language, which is written to imply more than it commits to, and almost none of it comes from the panel on the back, which is defined down to the font. Three things on the back do most of the work: the ingredient list in descending order by weight, the added-sugars line, and the serving size the numbers are based on. When the front and the back disagree, the back is the one that had to be checked.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA food labeling regulations, 21 CFR Part 101",
+        "FTC guidance on food advertising claims"
+      ],
+      "kristy_take": "The front is written by marketing. The back is written by law. Turn it over.",
+      "buying_tips": [
+        "Turn it over first. Decide from the back, then look at the front if at all.",
+        "Ingredient list, added-sugars line, serving size. Those three answer most questions.",
+        "Front-of-pack words like natural, wholesome and farm fresh carry little or no definition.",
+        "When the front and the back disagree, the back is the one that was checked.",
+        "A short list of recognizable foods beats any claim printed on the front."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Front of pack",
+          "meaning": "Marketing. Only some phrases there have any legal definition."
+        },
+        {
+          "term": "Ingredient list and Nutrition Facts",
+          "meaning": "Regulated in content and format. The part that had to be true."
+        }
+      ]
+    },
+    {
+      "id": "label_ingredient_order",
+      "title": "Ingredients are in weight order",
+      "aliases": [
+        "ingredient list",
+        "ingredient order",
+        "first ingredient",
+        "2% or less",
+        "how to read ingredients",
+        "sugar splitting",
+        "descending by weight"
+      ],
+      "category": "label_terms",
+      "question": "How do I read an ingredient list properly?",
+      "short_answer": "Ingredients are listed in descending order by weight, so the first three tell you most of what is in the package. Everything after 'contains 2% or less of' can appear in any order and is a trace amount. The trick worth knowing is sugar splitting: a product can list cane syrup, dextrose, juice concentrate and honey separately so no single one climbs the list, when together they would sit near the top.",
+      "detail": "The weight-order rule is the most useful thing on any package, because it turns a list into a ranking. A bread whose first ingredient is 'whole wheat flour' is a different food from one whose first ingredient is 'enriched wheat flour', whatever the bag says. The 2%-or-less clause exists because ordering trace additives serves nobody, and it also means everything below that line is a rounding error. Sugar splitting is legal and common, and the added-sugars line on the Nutrition Facts panel is the counter to it, because it totals them all whatever they were called.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA ingredient labeling requirements, 21 CFR 101.4",
+        "FDA Nutrition Facts label final rule (added sugars declaration)"
+      ],
+      "kristy_take": "First three ingredients, then the added-sugar line. That is a whole label read in ten seconds.",
+      "buying_tips": [
+        "Read the first three. They are most of the package by weight.",
+        "Everything after 'contains 2% or less of' is a trace amount, in any order.",
+        "Watch for split sugars: syrups, concentrates, dextrose and honey listed separately.",
+        "The added-sugars line totals them all, whatever each one was named.",
+        "A first ingredient of 'enriched wheat flour' is not 'whole wheat flour'."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Descending by weight",
+          "meaning": "The required order of the main ingredient list."
+        },
+        {
+          "term": "Contains 2% or less of",
+          "meaning": "Everything after this point is a trace amount, and not in weight order."
+        }
+      ]
+    },
+    {
+      "id": "label_third_party_seals",
+      "title": "Judging any seal on any package",
+      "aliases": [
+        "seals",
+        "certification",
+        "certified",
+        "third party certification",
+        "certified humane",
+        "animal welfare approved",
+        "global animal partnership",
+        "what does the seal mean",
+        "is the seal real"
+      ],
+      "category": "label_terms",
+      "question": "How do I know if a seal on a package means anything?",
+      "short_answer": "Ask three questions of any seal. Who set the standard, is it published, and does an independent body audit against it. A badge a company created for its own products answers none of the three. USDA Organic, Certified Humane, Animal Welfare Approved, Global Animal Partnership, American Grassfed and the Non-GMO Project all publish standards and use outside auditors. What no seal tells you is anything it never set out to measure.",
+      "detail": "The gap between a certification and a marketing badge is entirely in the audit. Real programs publish their standard, so anyone can read exactly what was checked, and they send inspectors. The second half of reading a seal is scope: an organic seal covers inputs and practices and says nothing about welfare beyond a baseline, a welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only. Stacking seals on a package does not make it a better food, it makes it a food that paid for several audits. The ingredient panel still decides what the thing actually is.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA National Organic Program certification requirements",
+        "Certified Humane, Animal Welfare Approved and Global Animal Partnership published standards",
+        "Non-GMO Project verification standard",
+        "American Grassfed Association standards"
+      ],
+      "kristy_take": "Who wrote the standard, is it published, and who inspects against it. A badge a company gave itself fails all three.",
+      "buying_tips": [
+        "Look for a named program, not a decorative badge. If the standard cannot be looked up, it is marketing.",
+        "Each seal covers one scope. Organic is not welfare, welfare is not pesticides, non-GMO is neither.",
+        "Third-party audited beats self-declared, every time.",
+        "More seals is not a better food. It is a food that bought more audits.",
+        "The ingredient panel still decides what the thing actually is."
+      ],
+      "labels_decoded": [
+        {
+          "term": "USDA Organic",
+          "meaning": "Inputs and practices, certified by an accredited agent."
+        },
+        {
+          "term": "Certified Humane / Animal Welfare Approved / G.A.P.",
+          "meaning": "Animal welfare standards, third-party audited. Scope differs by program."
+        },
+        {
+          "term": "Non-GMO Project Verified",
+          "meaning": "Genetic engineering only. Nothing about pesticides or practices."
+        },
+        {
+          "term": "An unnamed badge",
+          "meaning": "Often a company's own mark. No published standard, no outside auditor."
+        }
+      ]
+    },
+    {
+      "id": "label_cold_pressed_expeller",
+      "title": "'Cold-pressed', 'expeller-pressed', 'refined'",
+      "aliases": [
+        "cold pressed",
+        "expeller pressed",
+        "refined oil",
+        "unrefined oil",
+        "how are oils made",
+        "hexane",
+        "solvent extracted",
+        "virgin coconut oil"
+      ],
+      "category": "label_terms",
+      "question": "What do 'cold-pressed' and 'expeller-pressed' mean on an oil?",
+      "short_answer": "They describe how the oil got out of the seed or fruit. Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed means mechanical pressing with the temperature held down, and for olive oil in the EU that is a defined limit. Most supermarket cooking oil is neither: it is solvent-extracted, then refined, bleached and deodorized. 'Refined' is the word that tells you which.",
+      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US 'cold-pressed' has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. Processing is the honest basis for preferring the pressed version, and that is a whole-food-standard call rather than a settled finding.",
+      "evidence_tier": "established",
+      "sources": [
+        "International Olive Council definitions of cold extraction",
+        "FDA labeling regulations (no federal definition of 'cold-pressed' for most oils)",
+        "Food-science references on solvent extraction and oil refining"
+      ],
+      "kristy_take": "Pressed or solvent-extracted is the real question, and 'refined' is the word that answers it.",
+      "buying_tips": [
+        "'Expeller-pressed' means mechanical, no solvent. Friction heat still happens.",
+        "'Cold-pressed' means pressed with the temperature held down. Tightly defined only for olive oil.",
+        "'Refined', 'pure', or no process word at all usually means solvent-extracted and refined.",
+        "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
+        "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Expeller-pressed",
+          "meaning": "Mechanical screw press, no solvent. Heat comes from friction."
+        },
+        {
+          "term": "Cold-pressed",
+          "meaning": "Mechanical with temperature controlled. Tightly defined only for olive oil."
+        },
+        {
+          "term": "Refined / pure",
+          "meaning": "Processed after extraction to strip color, flavor and aroma."
+        },
+        {
+          "term": "No process word at all",
+          "meaning": "Usually solvent-extracted and refined. The commodity default."
+        }
+      ]
+    },
+    {
+      "id": "label_sugar_free_substitutes",
+      "title": "'Sugar-free' and what replaced the sugar",
+      "aliases": [
+        "sugar free",
+        "zero sugar",
+        "sugar alcohols",
+        "erythritol",
+        "maltitol",
+        "xylitol",
+        "stevia",
+        "monk fruit",
+        "sucralose",
+        "aspartame",
+        "artificial sweetener",
+        "sweetener"
+      ],
+      "category": "label_terms",
+      "question": "If it says sugar-free, what is doing the sweetening?",
+      "short_answer": "Something else, and the ingredient list names it. 'Sugar-free' is a defined claim, under half a gram of sugar per serving, so the sweetness comes from a sugar alcohol (erythritol, maltitol, xylitol) or a high-intensity sweetener (stevia, monk fruit, sucralose, aspartame). 'Unsweetened' is the plainer word and generally means nothing sweet was added at all. The two are not interchangeable.",
+      "detail": "'Sugar-free' answers a Nutrition Facts question and says nothing about what took sugar's place, which is why the ingredient list matters more here than on almost any other claim. Sugar alcohols appear by name and are also totalled on the panel; high-intensity sweeteners appear in the list and are used in tiny amounts. 'Unsweetened' has no formal FDA definition and in practice means no sweetener of any kind, including the non-caloric ones, which makes it the cleaner word to look for on yogurt, plant milk and apple sauce. 'Naturally sweetened' has no definition at all and covers honey, maple syrup and juice concentrate.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA nutrient content claims for sugars, 21 CFR 101.60",
+        "FDA guidance on high-intensity sweeteners",
+        "FDA Nutrition Facts label final rule (sugar alcohol declaration)"
+      ],
+      "kristy_take": "'Sugar-free' tells you what came out. The ingredient list tells you what went in instead. Read that one.",
+      "buying_tips": [
+        "'Sugar-free' is defined at under half a gram per serving. It does not mean unsweetened.",
+        "Read the list for which substitute: erythritol, maltitol, xylitol, stevia, monk fruit, sucralose, aspartame.",
+        "'Unsweetened' is the plainer word. It generally means nothing sweet was added at all.",
+        "'Naturally sweetened' has no definition. Honey, syrup and juice concentrate all qualify.",
+        "Sugar alcohols are totalled on the panel under their own line."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sugar-free",
+          "meaning": "Defined. Under 0.5 g sugar per serving. Something else is sweetening it."
+        },
+        {
+          "term": "Unsweetened",
+          "meaning": "Not formally defined. Generally no sweetener of any kind added."
+        },
+        {
+          "term": "Naturally sweetened",
+          "meaning": "No definition. Honey, maple syrup and concentrates all qualify."
+        },
+        {
+          "term": "Sugar alcohols",
+          "meaning": "Erythritol, maltitol, xylitol and others. Declared on the panel."
+        }
+      ]
+    },
+    {
+      "id": "label_wild_vs_farm_raised",
+      "title": "Seafood labels: wild, farm-raised, origin",
+      "aliases": [
+        "wild caught",
+        "farm raised label",
+        "country of origin",
+        "cool labeling",
+        "seafood labels",
+        "fish labeling",
+        "species substitution"
+      ],
+      "category": "label_terms",
+      "question": "What has to be on a seafood label?",
+      "short_answer": "For most unprocessed fish and shellfish at retail, three things: the species name, whether it was wild-caught or farm-raised, and the country of origin. That is federal country-of-origin labeling, one of the few places a store must tell you where food came from. The catch is that origin can mean where it was processed rather than where it was caught.",
+      "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns 'farm-raised, product of ___' into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses.",
+      "evidence_tier": "established",
+      "sources": [
+        "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
+        "FDA Seafood List (acceptable market names)",
+        "Peer-reviewed and government studies of seafood species substitution"
+      ],
+      "kristy_take": "Species, wild or farmed, and country. All three are required on the case. Read them together, not one at a time.",
+      "buying_tips": [
+        "Look for all three: species, wild or farm-raised, and country of origin.",
+        "Origin can mean where it was processed, not where it was caught. Ask if it matters.",
+        "Cooked and breaded seafood falls outside the labeling rule.",
+        "Skin-on and whole fish are far harder to substitute than a bare fillet.",
+        "A staffed counter can usually answer the origin question directly."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Wild-caught",
+          "meaning": "Caught in the wild. Required on unprocessed retail seafood."
+        },
+        {
+          "term": "Farm-raised",
+          "meaning": "Aquaculture. Also required, and not a verdict on its own."
+        },
+        {
+          "term": "Product of [country]",
+          "meaning": "Country of origin. Can reflect processing rather than catch location."
+        }
+      ]
+    },
+    {
+      "id": "label_serving_size",
+      "title": "Serving size and the numbers under it",
+      "aliases": [
+        "serving size",
+        "servings per container",
+        "nutrition facts",
+        "per serving",
+        "calories per serving",
+        "nutrition panel",
+        "how to read nutrition facts"
+      ],
+      "category": "label_terms",
+      "question": "Why do the numbers on the panel look so low?",
+      "short_answer": "Because every number on the Nutrition Facts panel is per serving, and the servings-per-container line above it says how many of those the package holds. 'About 2.5 servings' means multiplying everything by two and a half. Serving sizes are set by regulation to reflect what people typically eat, not what is good for anyone, and larger single-serve packages now have to show a per-package column too.",
+      "detail": "This is the easiest number on a package to misread, and it is not an accident that it sits at the top in small type. The reference amounts are fixed by the FDA per food category, so competing products in the same category are genuinely comparable, which is the useful thing about them. What they are not is a recommendation. The 2016 label rules made serving sizes more realistic, put added sugars on their own line, and required dual-column labelling on packages that could plausibly be finished in one sitting. Read from the top down: servings per container first, serving size second, then the numbers.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA Nutrition Facts label final rule (2016)",
+        "FDA Reference Amounts Customarily Consumed, 21 CFR 101.12"
+      ],
+      "kristy_take": "Read the top two lines before any of the numbers. Half of what looks reasonable on a panel is a third of the package.",
+      "buying_tips": [
+        "Start with servings per container, then serving size. Then read the numbers.",
+        "Serving sizes reflect what people typically eat. They are not a recommendation.",
+        "Comparing two products only works if their serving sizes match. Check both.",
+        "Larger packages carry a per-package column. Use it.",
+        "Added sugars has its own line now. It is the number that cannot be spun."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Servings per container",
+          "meaning": "How many of the listed serving the package holds. Multiply."
+        },
+        {
+          "term": "Serving size",
+          "meaning": "A regulated reference amount by food category. Not a recommendation."
+        },
+        {
+          "term": "Per serving / per package",
+          "meaning": "Dual columns on packages that might be eaten in one sitting."
         }
       ]
     }

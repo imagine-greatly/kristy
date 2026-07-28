@@ -50,7 +50,23 @@ async function authHeader() {
  * @throws on transport failure so the caller can show a fallback.
  */
 export async function askPerimeter({ question, goal = '', focuses = [], hardLines = [], constraints = [] }) {
-  if (IS_DEMO) return demoAnswer(question);
+  // Demo used to short-circuit straight to a one-fixture stub, so every counter
+  // question came back as salmon. The free branch of /ask is a public deterministic
+  // KB read with no auth and no model call, so try the real thing first and keep the
+  // fixture for the case demo actually exists to cover: no backend at all.
+  if (IS_DEMO) {
+    try {
+      const res = await fetch(`${apiBase}/api/perimeter/ask`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question, goal, focuses, hardLines, constraints }),
+      });
+      if (res.ok) return await res.json();
+    } catch {
+      /* no backend — fall through to the fixture */
+    }
+    return demoAnswer(question);
+  }
 
   const res = await fetch(`${apiBase}/api/perimeter/ask`, {
     method: 'POST',
@@ -60,40 +76,56 @@ export async function askPerimeter({ question, goal = '', focuses = [], hardLine
   if (!res.ok) {
     const b = await res.json().catch(() => null);
     if (b && b.message) return { matched: false, entries: [], answer: b.message, refinement: null, gated: false, error: true };
-    throw new Error('The aisle did not load. Try again.');
+    throw new Error('The counter did not load. Try again.');
   }
   return res.json();
 }
 
 /** A public perimeter entry (free universal read, no auth) — for a topic page. */
 export async function fetchPerimeterEntry(id) {
-  if (IS_DEMO) return demoAnswer(id).entries[0] || null;
   try {
     const res = await fetch(`${apiBase}/api/perimeter/${encodeURIComponent(id)}`);
-    return res.ok ? res.json() : null;
+    if (res.ok) return await res.json();
   } catch {
-    return null;
+    /* fall through */
   }
+  // Only reached with no backend. In demo that is the fixture; otherwise nothing.
+  return IS_DEMO ? demoAnswer(id).entries[0] || null : null;
 }
 
 /* ── Browse by store section. Public, cached for the session: the KB is a static
-      file server-side, so re-fetching it on every visit to the surface is waste. ── */
-const DEMO_SECTIONS = [
-  { id: 'meat', title: 'Meat', blurb: 'Cuts, ratios, and which labels on the case mean anything.', count: 4, topics: [], labelTopics: [], thinNote: 'Beef only so far. Pork and lamb are not covered yet.' },
-  { id: 'seafood', title: 'Seafood', blurb: 'Wild or farmed, mercury, and what the freezer case is really for.', count: 4, topics: [], labelTopics: [], thinNote: null },
-  { id: 'produce', title: 'Produce', blurb: 'Where organic earns it, how to pick ripe, and what the season is doing.', count: 6, topics: [], labelTopics: [], thinNote: null },
-  { id: 'eggs_dairy', title: 'Eggs & Dairy', blurb: 'Which egg carton claims hold up, and real cheese from cheese product.', count: 9, topics: [], labelTopics: [], thinNote: null },
-  { id: 'bulk_pantry', title: 'Bulk & Pantry', blurb: 'Rice, oats, nuts, honey, and olive oil that is actually olive oil.', count: 6, topics: [], labelTopics: [], thinNote: null },
+      file server-side, so re-fetching it on every visit to the surface is waste.
+
+   The demo path does NOT get its own hand-maintained copy of the store. It had one,
+   and it went stale exactly the way a mirror does: five sections instead of six,
+   counts frozen at a fraction of the real ones, and a thinNote naming gaps that had
+   since been filled. A demo build that quietly under-reports the product is the same
+   failure as a demo build that invents a product (Block X). This endpoint is public
+   and needs no account, so demo reads the real index too and keeps a minimal
+   offline fallback for its actual purpose: no backend at all. ── */
+const OFFLINE_SECTIONS = [
+  { id: 'meat', title: 'Meat', blurb: 'Cuts, grades, ratios, and which labels on the case mean anything.', count: 0, topics: [], labelTopics: [], thinNote: 'Offline. The counter needs a connection.' },
+  { id: 'seafood', title: 'Seafood', blurb: 'Wild or farmed, mercury by fish, and how to tell fresh at the counter.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'produce', title: 'Produce', blurb: 'Where organic earns it, how to pick ripe, and what is in season now.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'eggs_dairy', title: 'Eggs & Dairy', blurb: 'Which carton claims hold up, and real cheese from cheese product.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'bulk_pantry', title: 'Bulk & Pantry', blurb: 'Rice, oats, flour, nuts, honey, and olive oil that is actually olive oil.', count: 0, topics: [], labelTopics: [], thinNote: null },
+  { id: 'label_terms', title: 'Label terms', blurb: 'What the word on the front is allowed to mean.', count: 0, topics: [], labelTopics: [], thinNote: null },
 ];
 
 let sectionCache = null;
 
 export async function fetchPerimeterSections() {
-  if (IS_DEMO) return DEMO_SECTIONS;
   if (sectionCache) return sectionCache;
-  const res = await fetch(`${apiBase}/api/perimeter/sections`);
-  if (!res.ok) throw new Error('The aisle did not load. Try again.');
-  const { sections } = await res.json();
-  sectionCache = sections || [];
-  return sectionCache;
+  try {
+    const res = await fetch(`${apiBase}/api/perimeter/sections`);
+    if (res.ok) {
+      const { sections } = await res.json();
+      sectionCache = sections || [];
+      return sectionCache;
+    }
+  } catch {
+    /* fall through */
+  }
+  if (IS_DEMO) return OFFLINE_SECTIONS;
+  throw new Error('The counter did not load. Try again.');
 }
