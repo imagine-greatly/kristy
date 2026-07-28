@@ -1085,6 +1085,7 @@ export default function App() {
               onScan={() => setCameraOpen(true)}
               onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
+              onHaul={() => setMoment('haul')}
             />
           )}
           {moment === 'scan' && (

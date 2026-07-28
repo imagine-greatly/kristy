@@ -49,14 +49,11 @@ export function cartProgress(list) {
 
 /** The surface to open on. Synchronous (cache only) — never delays or blocks boot. */
 export function initialMoment() {
-  try {
-    const p = cartProgress(loadCachedList());
-    // Just finished a trip → the Haul read is the useful thing. Everything else —
-    // nothing started, or a trip underway — opens on the cart. Any doubt: the cart.
-    return p.complete ? 'haul' : 'list';
-  } catch {
-    return 'list';
-  }
+  // THE CART IS HOME, unconditionally. This used to open a just-finished trip on the
+  // Haul, which was a real convenience and a small lie about what the app is: the
+  // answer to "where does this open" has to be one place. The finished trip is not
+  // lost, it is announced ON the cart, which is where the shopper already is.
+  return 'list';
 }
 
 /** Scanned products the shopper kept, as cart rows (used by the Haul's trip view). */

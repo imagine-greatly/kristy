@@ -1,38 +1,41 @@
 import { colors, fonts } from '../lib/tokens.js';
 import { ListIcon, HaulIcon, BarcodeIcon, AisleIcon } from './Icons.jsx';
 
-/* ═══════════════ Nav — Cart · [Scan | Counter] · Haul ═══════════════
-   The trip in order: Cart (before), the store itself (in it), Haul (after).
+/* ═══════════════ Nav — Cart · Scan · Counter · Haul ═══════════════
+   FOUR EQUAL TABS. No throne.
 
-   THE STORE HAS TWO HALVES, and the nav says so. Scan reads the labeled half. Counter
-   reads the half with no label at all: the fish counter, the butcher, produce, dairy,
-   bulk. Other scanners stop at the barcode; the unlabeled half is the part no scanner
-   can do, so it is not a fallback link tucked under the scan buttons. It sits in the
-   center pair at the same size, the same raise, the same reach.
+   The scanner used to sit here as an oversized raised gold circle, and Block 6 fixed
+   the wrong half of that by giving the Counter a matching raised circle beside it: two
+   thrones instead of one. A raised pair still says "these two are the app and the cart
+   is a tab", which is exactly backwards. The cart is the sun. Scanning vets packaged
+   things FOR the cart, the counter answers the unpackaged half going IN the cart, and
+   the haul reads how it came out.
 
-   Gold fill goes to Scan because it is the one-handed physical reflex with a box in the
-   other hand. Counter takes a gold outline: equal billing, different act. Two center
-   buttons, one product.
+   So every tab is the same size, the same weight, the same treatment, and the active
+   one is simply gold. Scan and Counter sit adjacent in the middle because they are the
+   two ways to fill the cart, and their EQUALITY is the positioning: the labeled half
+   and the unlabeled half matter the same, and the unlabeled half is the one no scanner
+   can do.
 
    Chat isn't here — it's the deep-input surface, docked as the composer and reachable
    from the top bar, not a moment competing with the sequence.
 
    Tokens only. Fixed to the bottom for single-hand thumb reach. */
 
-function SideTab({ label, active, icon, badge, onClick }) {
+function Tab({ label, active, icon, badge, ariaLabel, onClick }) {
   const color = active ? colors.accentGold : colors.textMuted;
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label={badge ? `${label}, ${badge}` : label}
+      aria-label={ariaLabel || (badge ? `${label}, ${badge}` : label)}
       aria-current={active ? 'page' : undefined}
       style={{ ...styles.tab, color }}
     >
       <span style={styles.tabIcon}>{icon}</span>
       <span style={styles.tabLabel}>{label}</span>
       {/* The trip, visible from anywhere: a scan or a check-off moves this. */}
-      {badge && <span style={styles.badge}>{badge}</span>}
+      {badge ? <span style={styles.badge}>{badge}</span> : <span style={styles.badgeSpacer} />}
     </button>
   );
 }
@@ -44,51 +47,29 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onAisl
   return (
     <nav style={styles.nav} aria-label="Primary">
       <div style={styles.row}>
-        <SideTab
+        <Tab
           label="Cart"
           active={active === 'list'}
-          icon={<ListIcon />}
+          icon={<ListIcon size={22} />}
           badge={cartBadge}
           onClick={onList}
         />
-
-        {/* The store: both halves, side by side, same size and same raise. */}
-        <div style={styles.center}>
-          <div style={styles.pair}>
-            <div style={styles.pairCol}>
-              <button
-                type="button"
-                onClick={onScan}
-                aria-label="Scan a product"
-                aria-current={active === 'scan' ? 'page' : undefined}
-                style={styles.scanBtn}
-              >
-                <BarcodeIcon size={24} />
-              </button>
-              <span style={styles.scanLabel}>Scan</span>
-            </div>
-
-            {onAisle && (
-              <div style={styles.pairCol}>
-                <button
-                  type="button"
-                  onClick={onAisle}
-                  aria-label="The counter, food with no barcode"
-                  aria-current={active === 'aisle' ? 'page' : undefined}
-                  style={{
-                    ...styles.aisleBtn,
-                    ...(active === 'aisle' ? styles.aisleBtnActive : null),
-                  }}
-                >
-                  <AisleIcon size={24} />
-                </button>
-                <span style={styles.scanLabel}>Counter</span>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <SideTab label="Haul" active={active === 'haul'} icon={<HaulIcon />} onClick={onHaul} />
+        {/* The two ways to fill it. Identical treatment, on purpose. */}
+        <Tab
+          label="Scan"
+          active={active === 'scan'}
+          icon={<BarcodeIcon size={22} />}
+          ariaLabel="Scan, the packaged half"
+          onClick={onScan}
+        />
+        <Tab
+          label="Counter"
+          active={active === 'aisle'}
+          icon={<AisleIcon size={22} />}
+          ariaLabel="The counter, food with no barcode"
+          onClick={onAisle}
+        />
+        <Tab label="Haul" active={active === 'haul'} icon={<HaulIcon size={22} />} onClick={onHaul} />
       </div>
     </nav>
   );
@@ -97,7 +78,7 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onAisl
 const styles = {
   nav: {
     // Normal-flow bottom bar: the last flex child of .app, so content shrinks
-    // above it and the raised Scan button never covers the docked composer.
+    // above it and nothing overlaps the docked composer.
     flex: '0 0 auto',
     zIndex: 40,
     background: colors.surface,
@@ -105,20 +86,19 @@ const styles = {
     paddingBottom: 'env(safe-area-inset-bottom)',
   },
   row: {
-    position: 'relative',
     maxWidth: 520,
     margin: '0 auto',
     display: 'grid',
-    // Two center buttons now, not one — the store's two halves get equal footprint.
-    gridTemplateColumns: '1fr 150px 1fr',
-    alignItems: 'end',
-    padding: '8px 10px 10px',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    alignItems: 'start',
+    padding: '8px 6px 10px',
   },
   tab: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: 4,
+    minHeight: 56,
     padding: '8px 4px',
     background: 'transparent',
     border: 'none',
@@ -137,54 +117,7 @@ const styles = {
     border: `1px solid ${colors.gold30}`,
     background: colors.goldTint9,
   },
-
-  center: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: 4,
-  },
-  pair: { display: 'flex', alignItems: 'flex-end', gap: 10 },
-  pairCol: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 },
-  scanBtn: {
-    // Raised above the bar so it reads as a primary action.
-    marginTop: -24,
-    width: 58,
-    height: 58,
-    borderRadius: 999,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: colors.accentGold,
-    color: colors.bgDeep,
-    border: `3px solid ${colors.bg}`,
-    boxShadow: `0 6px 18px ${colors.gold40}`,
-    cursor: 'pointer',
-  },
-  // Same size, same raise, same reach. Outline instead of fill: equal billing for a
-  // different kind of act, without spending gold twice in one row.
-  aisleBtn: {
-    marginTop: -24,
-    width: 58,
-    height: 58,
-    borderRadius: 999,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: colors.surface2,
-    color: colors.accentGold,
-    border: `2px solid ${colors.gold40}`,
-    boxShadow: colors.shadowRaised,
-    cursor: 'pointer',
-  },
-  // Full `border` shorthand, not `borderColor`: React warns when a rerender changes
-  // one half of a shorthand it also sets, and the active state does exactly that.
-  aisleBtnActive: { background: colors.goldTint9, border: `2px solid ${colors.accentGold}` },
-  scanLabel: {
-    fontFamily: fonts.ui,
-    fontSize: 11,
-    fontWeight: 700,
-    letterSpacing: '0.04em',
-    color: colors.accentGold,
-  },
+  // Reserves the badge's height on every tab so the four labels sit on one baseline
+  // whether or not a trip is underway.
+  badgeSpacer: { height: 16 },
 };

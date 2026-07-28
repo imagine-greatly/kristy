@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { colors, fonts, kristyVoice } from '../lib/tokens.js';
-import { BarcodeIcon, CloseIcon } from './Icons.jsx';
+import { BarcodeIcon, CloseIcon, AisleIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
 import { askPerimeter, fetchPerimeterEntry } from '../lib/perimeter.js';
@@ -257,6 +257,7 @@ export default function CartMoment({
   onScan,
   onAskAisle,
   onImport,
+  onHaul,
 }) {
   const [openId, setOpenId] = useState(null);
   const [guidance, setGuidance] = useState({}); // itemId → { state, resp }
@@ -310,7 +311,7 @@ export default function CartMoment({
   if (!hasItems) {
     return (
       <div style={styles.wrap}>
-        <Header progress={progress} onScan={onScan} />
+        <Header progress={progress} onHaul={onHaul} />
         {loading ? (
           <p style={{ ...kristyVoice, ...styles.intro }}>Pulling your cart together&hellip;</p>
         ) : (
@@ -320,6 +321,7 @@ export default function CartMoment({
             gated={gated}
             onUpgrade={onUpgrade}
             onSetGoal={onSetGoal}
+            onScan={onScan}
             onAskAisle={onAskAisle}
             goals={goals}
           />
@@ -332,7 +334,7 @@ export default function CartMoment({
 
   return (
     <div style={styles.wrap}>
-      <Header progress={progress} onScan={onScan} />
+      <Header progress={progress} onHaul={onHaul} />
 
       {/* Her one-line read on the whole cart — the blend, named in her voice. */}
       {list.intro && <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>}
@@ -347,27 +349,16 @@ export default function CartMoment({
         </button>
       )}
 
-      {/* ONE entry point here, not two. "Build me a cart for…" used to sit in this row
-          AND in the empty state AND as the docked composer's placeholder — three of the
-          same affordance on one screen. The composer already accepts that sentence, so
-          the standalone button is gone; the unlabeled aisle keeps its tap because
-          nothing else on this surface offers it. */}
-      {(onAskAisle || onImport) && (
-        <div style={styles.peerRow}>
-          {onAskAisle && (
-            <button type="button" style={styles.peer} onClick={onAskAisle}>
-              Ask about the counter
-            </button>
-          )}
-          {/* Someone who already wrote a list shouldn't have to retype it into a
-              cart. Peer of the aisle tap, not a primary — most trips don't start
-              from a piece of paper. */}
-          {onImport && (
-            <button type="button" style={styles.peer} onClick={onImport}>
-              Import a list
-            </button>
-          )}
-        </div>
+      {/* The two ways to fill it, side by side and identical. */}
+      <FillRow onScan={onScan} onAskAisle={onAskAisle} />
+
+      {/* Someone who already wrote a list shouldn't have to retype it into a cart.
+          Deliberately quieter than the two fill actions: most trips don't start from
+          a piece of paper. */}
+      {onImport && (
+        <button type="button" style={styles.linkBtn} onClick={onImport}>
+          Import a list →
+        </button>
       )}
 
       {gated && (
@@ -474,7 +465,7 @@ const TRIP_SEEDS = [
   'Just a few things',
 ];
 
-function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onAskAisle, goals }) {
+function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onScan, onAskAisle, goals }) {
   const [text, setText] = useState('');
   const [err, setErr] = useState('');
   const busy = !!cart.busy;
@@ -526,20 +517,11 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onAskAisle, 
       {busy && <AmbientIsm style={{ marginTop: 16 }} />}
       {err && <p style={styles.askErr}>{err}</p>}
 
-      {/* THE IDENTITY, on the emptiest screen in the app. A shopper who opens to a
-          blank cart should learn here what this covers, and the half worth saying out
-          loud is the one no scanner reaches. */}
-      {onAskAisle && (
-        <button type="button" style={styles.counterCard} onClick={onAskAisle}>
-          <span style={styles.counterText}>
-            <span style={styles.counterTitle}>Nothing on this list has a barcode?</span>
-            <span style={styles.counterSub}>
-              Meat, seafood, produce, eggs, dairy, bulk. Every counter, answered.
-            </span>
-          </span>
-          <span style={styles.counterChev} aria-hidden="true">›</span>
-        </button>
-      )}
+      {/* THE IDENTITY, on the emptiest screen in the app: the two halves of the store,
+          at the same weight. The counter had this slot to itself and Scan had none,
+          which said the opposite of what it should. Both are gold-edged now, so the
+          counter keeps the prominence it earned and Scan simply matches it. */}
+      <FillRow onScan={onScan} onAskAisle={onAskAisle} />
 
       {/* THE OPT-IN. Some shoppers do want a cart handed to them. That's a choice
           they make, on every tier, not the default state of the screen. */}
@@ -571,21 +553,52 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onAskAisle, 
   );
 }
 
-function Header({ progress, onScan }) {
+function Header({ progress, onHaul }) {
   return (
     <div style={styles.head}>
       <div style={styles.headTop}>
         <h1 style={styles.title}>Your cart</h1>
-        {/* Scanning is reachable from the cart itself, not only the nav — in the
-            aisle with a box in hand it's the fast reflex. */}
-        {onScan && (
-          <button type="button" style={styles.scanBtn} onClick={onScan} aria-label="Scan a product">
-            <BarcodeIcon size={18} />
-            <span>Scan</span>
-          </button>
-        )}
       </div>
       <ProgressBar progress={progress} />
+      {/* The app opens here now, always. A finished trip used to hijack the opening
+          surface and land on the Haul; it is announced on the cart instead, where the
+          shopper already is, and reading it stays one tap away. */}
+      {progress.total > 0 && progress.complete && onHaul && (
+        <button type="button" style={styles.doneRow} onClick={onHaul}>
+          <span style={{ ...kristyVoice, ...styles.doneLine }}>Trip done. Everything checked off.</span>
+          <span style={styles.doneCta}>Read the haul →</span>
+        </button>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════ The two ways to fill the cart, at identical weight ═══════════
+   This row is the whole positioning in one component. Scanning vets the packaged
+   half; the counter answers the unlabeled half (meat, fish, eggs, produce, bulk).
+   Neither is the primary. They are the same size, the same border, the same gold,
+   and they sit side by side so the equality is impossible to miss.
+
+   The cart header used to carry a solid-gold "Scan" pill and the counter got a plain
+   grey ghost button further down the page. That was a throne in miniature. */
+function FillRow({ onScan, onAskAisle }) {
+  if (!onScan && !onAskAisle) return null;
+  return (
+    <div style={styles.fillRow}>
+      {onScan && (
+        <button type="button" style={styles.fill} onClick={onScan}>
+          <span style={styles.fillIcon}><BarcodeIcon size={20} /></span>
+          <span style={styles.fillLabel}>Scan</span>
+          <span style={styles.fillSub}>A barcode or a label</span>
+        </button>
+      )}
+      {onAskAisle && (
+        <button type="button" style={styles.fill} onClick={onAskAisle}>
+          <span style={styles.fillIcon}><AisleIcon size={20} /></span>
+          <span style={styles.fillLabel}>Counter</span>
+          <span style={styles.fillSub}>Meat, fish, produce</span>
+        </button>
+      )}
     </div>
   );
 }
@@ -609,11 +622,19 @@ const styles = {
   head: { display: 'flex', flexDirection: 'column', gap: 10 },
   headTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
   title: { ...kristyVoice, margin: 0, fontSize: 26, color: colors.textPrimary },
-  scanBtn: {
-    flex: '0 0 auto', display: 'inline-flex', alignItems: 'center', gap: 7, minHeight: 40,
-    padding: '9px 15px', borderRadius: 999, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep,
-    fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 700, cursor: 'pointer',
+
+  // The finished trip, announced on the cart instead of hijacking the opening surface.
+  doneRow: {
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10,
+    width: '100%', boxSizing: 'border-box', marginTop: 4,
+    padding: '11px 14px', borderRadius: 12,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+    textAlign: 'left', cursor: 'pointer',
+  },
+  doneLine: { fontSize: 14.5, lineHeight: 1.4, color: colors.textPrimary },
+  doneCta: {
+    flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700,
+    color: colors.accentGold, whiteSpace: 'nowrap',
   },
 
   progressWrap: { display: 'flex', flexDirection: 'column', gap: 6 },
@@ -625,16 +646,28 @@ const styles = {
   note: { margin: '2px 0 0', fontSize: 15, lineHeight: 1.5, color: colors.textSecondary },
   linkBtn: { alignSelf: 'flex-start', padding: 0, background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },
 
-  // The two peer entry points — a whole cart from a sentence, and the unlabeled aisle.
-  peerRow: { display: 'flex', gap: 8, flexWrap: 'wrap' },
-  // A quiet card, deliberately NOT gold. `textSecondary` is the gold token, so this
-  // button was rendering as emphasis and competing with Scan for the same attention.
-  peer: {
-    flex: '1 1 auto', minHeight: 44, padding: '12px 14px', borderRadius: 12,
-    border: 'none', background: colors.surface,
-    boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
-    color: colors.textMuted, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
+  /* THE TWO WAYS TO FILL THE CART. Byte-identical styling on purpose: same width,
+     same border, same gold, same type. Whatever is true of one is true of the other,
+     which is the entire point of the row. */
+  fillRow: { display: 'flex', gap: 10 },
+  fill: {
+    flex: '1 1 0',
+    minWidth: 0,
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 3,
+    padding: '13px 14px',
+    borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9,
+    textAlign: 'left',
+    cursor: 'pointer',
   },
+  fillIcon: { display: 'flex', color: colors.accentGold, marginBottom: 2 },
+  fillLabel: { fontFamily: fonts.ui, fontSize: 15, fontWeight: 700, color: colors.textPrimary },
+  fillSub: { fontFamily: fonts.ui, fontSize: 12, lineHeight: 1.35, color: colors.textMuted },
 
   nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },
   nudgeLine: { fontSize: 15, lineHeight: 1.5, color: colors.textPrimary },
@@ -746,20 +779,6 @@ const styles = {
     fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
   },
   askErr: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.error },
-
-  // The counter, on the empty cart. Gold-edged: a destination of its own standing,
-  // never a consolation link under the thing that "really" matters.
-  counterCard: {
-    width: '100%', boxSizing: 'border-box', marginTop: 6,
-    display: 'flex', alignItems: 'center', gap: 12,
-    padding: '14px 15px', borderRadius: 14,
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
-    textAlign: 'left', cursor: 'pointer',
-  },
-  counterText: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 },
-  counterTitle: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 700, color: colors.textPrimary },
-  counterSub: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.4, color: colors.textMuted },
-  counterChev: { flex: '0 0 auto', color: colors.accentGoldMuted, fontSize: 18, lineHeight: 1 },
 
   askFree: {
     display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start',

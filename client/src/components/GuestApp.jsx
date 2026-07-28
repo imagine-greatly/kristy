@@ -257,6 +257,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                 onUpgrade={save}
                 onScan={() => setMoment('scan')}
                 onAskAisle={() => setMoment('aisle')}
+                onHaul={() => setMoment('haul')}
               />
             </>
           )}
