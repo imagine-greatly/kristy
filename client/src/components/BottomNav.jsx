@@ -1,17 +1,17 @@
 import { colors, fonts } from '../lib/tokens.js';
 import { ListIcon, HaulIcon, BarcodeIcon, AisleIcon } from './Icons.jsx';
 
-/* ═══════════════ Nav — Cart · [Scan | Aisle] · Haul ═══════════════
+/* ═══════════════ Nav — Cart · [Scan | Counter] · Haul ═══════════════
    The trip in order: Cart (before), the store itself (in it), Haul (after).
 
-   THE STORE HAS TWO HALVES, and the nav says so. Scan reads the labeled half. Aisle
+   THE STORE HAS TWO HALVES, and the nav says so. Scan reads the labeled half. Counter
    reads the half with no label at all: the fish counter, the butcher, produce, dairy,
    bulk. Other scanners stop at the barcode; the unlabeled half is the part no scanner
    can do, so it is not a fallback link tucked under the scan buttons. It sits in the
    center pair at the same size, the same raise, the same reach.
 
    Gold fill goes to Scan because it is the one-handed physical reflex with a box in the
-   other hand. Aisle takes a gold outline: equal billing, different act. Two center
+   other hand. Counter takes a gold outline: equal billing, different act. Two center
    buttons, one product.
 
    Chat isn't here — it's the deep-input surface, docked as the composer and reachable
@@ -73,7 +73,7 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onAisl
                 <button
                   type="button"
                   onClick={onAisle}
-                  aria-label="The aisle — food with no label"
+                  aria-label="The counter, food with no barcode"
                   aria-current={active === 'aisle' ? 'page' : undefined}
                   style={{
                     ...styles.aisleBtn,
@@ -82,7 +82,7 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onAisl
                 >
                   <AisleIcon size={24} />
                 </button>
-                <span style={styles.scanLabel}>Aisle</span>
+                <span style={styles.scanLabel}>Counter</span>
               </div>
             )}
           </div>
@@ -177,7 +177,9 @@ const styles = {
     boxShadow: colors.shadowRaised,
     cursor: 'pointer',
   },
-  aisleBtnActive: { background: colors.goldTint9, borderColor: colors.accentGold },
+  // Full `border` shorthand, not `borderColor`: React warns when a rerender changes
+  // one half of a shorthand it also sets, and the active state does exactly that.
+  aisleBtnActive: { background: colors.goldTint9, border: `2px solid ${colors.accentGold}` },
   scanLabel: {
     fontFamily: fonts.ui,
     fontSize: 11,

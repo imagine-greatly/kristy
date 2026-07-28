@@ -111,6 +111,13 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
         <div style={styles.body}>
           {step === 0 && (
             <>
+              {/* The identity, said before anything is asked. A stranger who came from
+                  the landing page arrives here first, and what they need to know in one
+                  line is that this covers the counter, not just the barcode. */}
+              <p style={styles.identity}>
+                Coach for the whole store. The boxes with a barcode, and the meat, fish,
+                eggs, produce and bulk that never had one.
+              </p>
               <h2 style={styles.prompt}>What are you shopping for?</h2>
               <p style={styles.sub}>
                 Pick all that fit. Or just say it in your own words.
@@ -330,6 +337,15 @@ const styles = {
   dot: { width: 7, height: 7, borderRadius: 999, background: colors.border },
   dotOn: { background: colors.accentGold },
   body: { display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 2 },
+  identity: {
+    margin: '0 0 2px',
+    fontFamily: fonts.ui,
+    fontSize: 13.5,
+    lineHeight: 1.5,
+    color: colors.textMuted,
+    paddingLeft: 11,
+    borderLeft: `2px solid ${colors.gold30}`,
+  },
   prompt: { ...kristyVoice, margin: 0, fontSize: 25, lineHeight: 1.25, color: colors.textPrimary },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   note: { ...kristyVoice, margin: '4px 0 0', fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },

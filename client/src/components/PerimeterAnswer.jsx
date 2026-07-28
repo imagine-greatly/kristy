@@ -12,7 +12,7 @@ import { GoldThread } from './GoldThread.jsx';
 const TIER_LABEL = {
   established: 'Settled',
   credible_concern: 'Credible concern',
-  kristys_standard: "Kristy's standard",
+  kristys_standard: 'Whole-food standard',
   time_tested: 'Time-tested',
 };
 export const tierLabel = (t) => TIER_LABEL[t] || t;
@@ -96,7 +96,7 @@ export default function PerimeterAnswer({
           <p style={{ ...kristyVoice, ...s.gateLine }}>{resp.upsell}</p>
           {onUpgrade && (
             <button type="button" style={styles.gateCta} onClick={onUpgrade}>
-              Unlock my read
+              Unlock the personalized read
             </button>
           )}
         </div>

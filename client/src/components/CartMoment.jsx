@@ -320,6 +320,7 @@ export default function CartMoment({
             gated={gated}
             onUpgrade={onUpgrade}
             onSetGoal={onSetGoal}
+            onAskAisle={onAskAisle}
             goals={goals}
           />
         )}
@@ -355,7 +356,7 @@ export default function CartMoment({
         <div style={styles.peerRow}>
           {onAskAisle && (
             <button type="button" style={styles.peer} onClick={onAskAisle}>
-              Ask about the aisle
+              Ask about the counter
             </button>
           )}
           {/* Someone who already wrote a list shouldn't have to retype it into a
@@ -473,7 +474,7 @@ const TRIP_SEEDS = [
   'Just a few things',
 ];
 
-function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
+function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onAskAisle, goals }) {
   const [text, setText] = useState('');
   const [err, setErr] = useState('');
   const busy = !!cart.busy;
@@ -524,6 +525,21 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
 
       {busy && <AmbientIsm style={{ marginTop: 16 }} />}
       {err && <p style={styles.askErr}>{err}</p>}
+
+      {/* THE IDENTITY, on the emptiest screen in the app. A shopper who opens to a
+          blank cart should learn here what this covers, and the half worth saying out
+          loud is the one no scanner reaches. */}
+      {onAskAisle && (
+        <button type="button" style={styles.counterCard} onClick={onAskAisle}>
+          <span style={styles.counterText}>
+            <span style={styles.counterTitle}>Nothing on this list has a barcode?</span>
+            <span style={styles.counterSub}>
+              Meat, seafood, produce, eggs, dairy, bulk. Every counter, answered.
+            </span>
+          </span>
+          <span style={styles.counterChev} aria-hidden="true">›</span>
+        </button>
+      )}
 
       {/* THE OPT-IN. Some shoppers do want a cart handed to them. That's a choice
           they make, on every tier, not the default state of the screen. */}
@@ -730,6 +746,21 @@ const styles = {
     fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
   },
   askErr: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.error },
+
+  // The counter, on the empty cart. Gold-edged: a destination of its own standing,
+  // never a consolation link under the thing that "really" matters.
+  counterCard: {
+    width: '100%', boxSizing: 'border-box', marginTop: 6,
+    display: 'flex', alignItems: 'center', gap: 12,
+    padding: '14px 15px', borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+    textAlign: 'left', cursor: 'pointer',
+  },
+  counterText: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 },
+  counterTitle: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 700, color: colors.textPrimary },
+  counterSub: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.4, color: colors.textMuted },
+  counterChev: { flex: '0 0 auto', color: colors.accentGoldMuted, fontSize: 18, lineHeight: 1 },
+
   askFree: {
     display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start',
     marginTop: 6, padding: '14px 16px', borderRadius: 14,

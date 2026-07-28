@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 
+// Half the examples are the counter on purpose: the barcode half is the half people
+// already expect, so the openers should show the half they don't.
 const EXAMPLES = [
-  'Is this cereal worth buying?',
-  'Build a cart for taco night',
+  'Which cut for stew?',
   'Wild or farmed salmon?',
-  'A better grab than margarine?',
+  'Build a cart for taco night',
+  'What does pasture-raised leave out?',
 ];
 
 const GREETINGS = {
@@ -15,10 +17,10 @@ const GREETINGS = {
 };
 
 const SUBTITLES = [
-  'Ask anything, or scan a label.',
-  "Say what the trip is for.",
-  'No forms. Just talk.',
-  'Scan it, ask about it, or build a list.',
+  'The box, and the counter it never came in.',
+  'Say what the trip is for.',
+  'Scan the label, or ask about the counter.',
+  'Meat, fish, eggs, produce, bulk. No barcode needed.',
 ];
 
 function timeBucket(hour) {

@@ -21,8 +21,8 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
       <h1 style={styles.headline}>What&rsquo;s in the box?</h1>
       <p style={styles.sub}>
         {guest
-          ? 'Ingredient by ingredient. No account needed.'
-          : 'Read against how you eat, right here in the aisle.'}
+          ? 'Ingredient by ingredient. No account needed. Half the store, though.'
+          : 'Ingredient by ingredient, against how you eat. Half the store, though.'}
       </p>
 
       {/* ONE reflex action. The barcode button stays big and physical because it's
@@ -54,20 +54,21 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
 
       {/* The label path's real standing, stated once. Not error recovery: no barcode
           database covers a whole store, and a photographed panel reads anything. */}
-      <p style={styles.aisleNote}>No barcode? A photo of the ingredient panel reads anything.</p>
+      <p style={styles.aisleNote}>A photo of the ingredient panel reads anything a barcode misses.</p>
 
-      {/* THE OTHER HALF. A full card, not a footnote — the unlabeled aisle is a peer
-          of this surface, and a shopper standing at the fish case with nothing to scan
-          gets there in one tap. */}
+      {/* THE OTHER HALF, and it does not read as a fallback. "Nothing to scan?" framed
+          the counter as what you do when the real feature fails. It is the differentiator:
+          a barcode is table stakes, the counter is why anyone is here. Gold-edged card,
+          stated as its own destination. */}
       {onAskAisle && (
         <button type="button" style={styles.otherHalf} onClick={onAskAisle}>
           <span style={styles.otherHalfIcon}>
             <AisleIcon size={20} />
           </span>
           <span style={styles.otherHalfText}>
-            <span style={styles.otherHalfTitle}>Nothing to scan?</span>
+            <span style={styles.otherHalfTitle}>The half with no barcode</span>
             <span style={styles.otherHalfSub}>
-              Meat, seafood, produce, dairy, bulk. The half with no label.
+              Meat, seafood, produce, dairy, bulk. No scanner reads this half.
             </span>
           </span>
           <span style={styles.otherHalfChev} aria-hidden="true">›</span>

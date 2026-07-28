@@ -5,11 +5,15 @@ import PerimeterAnswer from './PerimeterAnswer.jsx';
 import { askPerimeter, fetchPerimeterSections, fetchPerimeterEntry } from '../lib/perimeter.js';
 import { trackEvent } from '../lib/analytics.js';
 
-/* ═══════════════ The aisle — the half of the store with no label ═══════════════
+/* ═══════════════ The counter — the half of the store with no label ═══════════════
    A scanner stops at the barcode. Everything worth eating on the perimeter of a store
    never had one: the fish counter, the butcher, produce, the dairy case, the bulk bins.
    That is the half no scanner can read, so it gets a destination of its own rather than
    a link tucked under the scan buttons.
+
+   Called "the counter" on every surface, not "the aisle". The aisles are exactly where
+   the barcodes live; the counter is the half that has none. The internal ids, routes and
+   analytics keep the older `aisle` name.
 
    Two first-class ways in, both here:
      • BROWSE by store section, the way a shopper actually walks it
@@ -21,7 +25,13 @@ import { trackEvent } from '../lib/analytics.js';
 
    Tokens only. Spoken lines are kristyVoice, everything factual is Inter. */
 
-const ASK_SEEDS = ['Wild or farmed salmon', 'Is organic worth it for berries', 'Which cut for stew'];
+// Seeds span the counters on purpose: one glance should say meat, fish, eggs, produce.
+const ASK_SEEDS = [
+  'Wild or farmed salmon',
+  'Which cut for stew',
+  'What pasture-raised leaves out',
+  'Is organic worth it for berries',
+];
 
 export default function AisleMoment({ prefs, onUpgrade, onScan }) {
   const [sections, setSections] = useState(null);
@@ -132,10 +142,14 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
   /* ── The index ── */
   return (
     <div style={styles.wrap}>
-      <h1 style={styles.h1}>The aisle</h1>
+      <h1 style={styles.h1}>The counter</h1>
       <GoldThread />
       <p style={{ ...kristyVoice, ...styles.thesis }}>
-        The half of the store with no label. And the half that matters most.
+        The best food has no ingredient list. It is the ingredient.
+      </p>
+      <p style={styles.thesisSub}>
+        Meat, seafood, produce, eggs, dairy, bulk. No barcode to read, and still a right
+        answer at every one.
       </p>
 
       {/* ASK — plain words, same sourced answers as browsing. */}
@@ -145,7 +159,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Wild or farmed salmon?"
-          aria-label="Ask about the aisle"
+          aria-label="Ask about the counter"
           disabled={ask?.state === 'loading'}
         />
         <button type="submit" style={styles.askGo} disabled={!question.trim() || ask?.state === 'loading'}>
@@ -184,7 +198,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan }) {
 
       {onScan && (
         <button type="button" style={styles.otherHalf} onClick={onScan}>
-          Got a barcode? Scan the other half →
+          Got a barcode? That half is a scan →
         </button>
       )}
     </div>
@@ -207,6 +221,7 @@ const styles = {
   },
   h1: { ...kristyVoice, margin: 0, fontSize: 26, color: colors.textPrimary },
   thesis: { margin: 0, fontSize: 16.5, lineHeight: 1.5, color: colors.textPrimary },
+  thesisSub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
   blurb: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   muted: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
   detail: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.6, color: colors.textMuted },

@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#040805" />
 
-  <!-- ── Positioning-forward meta: shared links carry the hero contrast line ── -->
-  <title>Kristy — She tells you if it belongs in your cart</title>
-  <meta name="description" content="Yuka tells you what's in the food. Kristy tells you if it belongs in your cart — a grocery coach who reads any label, knows your goal, and tells you what to actually buy." />
+  <!-- ── Positioning-forward meta: the shared link carries the identity, not the
+       competitor. The category is named exactly ONCE on this page, in the hero. ── -->
+  <title>Kristy — the coach for the whole store</title>
+  <meta name="description" content="Scanners read the box. Kristy reads the whole store: meat, fish, eggs, produce, bulk. The half with no barcode is the half worth eating, and the counter still has a right answer." />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kristy" />
-  <meta property="og:title" content="Yuka tells you what's in the food. Kristy tells you if it belongs in your cart." />
-  <meta property="og:description" content="A grocery coach who reads any label, knows your goal, and tells you what to actually buy. Scan the aisle. Fill your house right." />
+  <meta property="og:title" content="Scanners read the box. Kristy reads the whole store." />
+  <meta property="og:description" content="Meat, fish, eggs, produce, bulk. The half of the store with no barcode, and the half no scanner reads. Every counter, answered." />
   <meta property="og:url" content="https://kristyapproved.vercel.app/" />
   <meta property="og:image" content="https://kristyapproved.vercel.app/og-image.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kristy — She tells you if it belongs in your cart" />
-  <meta name="twitter:description" content="Yuka tells you what's in the food. Kristy tells you if it belongs in your cart." />
+  <meta name="twitter:title" content="Kristy — the coach for the whole store" />
+  <meta name="twitter:description" content="Scanners read the box. Kristy reads the whole store: meat, fish, eggs, produce, bulk." />
   <meta name="twitter:image" content="https://kristyapproved.vercel.app/og-image.svg" />
 
   <!-- Favicon = the mark: the gold hair silhouette on the forest ground, baked in
@@ -285,7 +286,91 @@
     .vc__ism { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 2px; }
     .vc__ism p { font-family: var(--font-voice); font-style: italic; font-size: 14px; line-height: 1.5; text-align: center; color: var(--text-muted); max-width: 320px; }
 
-    /* ═════════════════════════════ THE LOOP (3 beats) ═════════════════════════════ */
+    /* ═════════════════════════════ COUNTER CARD ═════════════════════════════
+       A faithful DOM port of client/src/components/PerimeterAnswer.jsx — the answer
+       for the half of the store with no barcode. It gets the HERO slot, because the
+       unlabeled half is the differentiator and the scan verdict is table stakes. */
+    .pc {
+      width: 100%; max-width: 420px; margin: 0 auto; box-sizing: border-box;
+      display: flex; flex-direction: column; gap: 12px; padding: 18px;
+      border-radius: 20px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 42%);
+      color: var(--text);
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+    .pc__counter { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+    .pc__entry {
+      display: flex; flex-direction: column; gap: 8px; padding: 14px 15px;
+      border-radius: 14px; background: var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 1px 2px rgba(0,0,0,.3);
+    }
+    .pc__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .pc__title { font-size: 15.5px; font-weight: 700; color: var(--text); }
+    .pc__tier {
+      flex: 0 0 auto; font-size: 10.5px; font-weight: 600; letter-spacing: .03em;
+      color: var(--text-2); padding: 2px 8px; border-radius: 999px;
+      border: 1px solid var(--gold-30); background: var(--gold-tint-9); white-space: nowrap;
+    }
+    .pc__short { font-size: 14.5px; line-height: 1.5; color: var(--text); }
+    .pc__tips-head { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+    .pc__tips { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+    .pc__tip { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.45; color: var(--text-muted); }
+    .pc__tip i {
+      flex: 0 0 auto; width: 15px; height: 15px; margin-top: 1px; border-radius: 4px;
+      display: grid; place-items: center; font-style: normal;
+      border: 1px solid var(--gold-30); background: var(--gold-tint-9);
+      color: var(--gold); font-size: 9.5px; font-weight: 700; line-height: 1;
+    }
+    .pc__read { font-family: var(--font-voice); font-style: italic; font-size: 17px; line-height: 1.55; color: var(--text); }
+    .pc__use {
+      padding: 12px 16px; border-radius: 12px; background: var(--gold);
+      color: var(--bg-deep); font-weight: 700; font-size: 14.5px;
+    }
+
+    /* ═════════════════════════════ THE TWO HALVES ═════════════════════════════
+       The positioning section. Both columns are real; the right one is louder,
+       because the right one is the reason to be here. */
+    .halves { padding: 90px 0 20px; }
+    .halves__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; align-items: stretch; }
+    .hf {
+      border-radius: 20px; padding: 28px 26px; border: 1px solid var(--border);
+      background: var(--surface); display: flex; flex-direction: column; gap: 12px;
+    }
+    .hf--loud {
+      border-color: var(--border-gold);
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 130%);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .hf__tag {
+      align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
+      color: var(--text-muted); border: 1px solid var(--border);
+    }
+    .hf--loud .hf__tag { color: var(--bg-deep); background: var(--gold); border-color: var(--gold); }
+    .hf__h { font-family: var(--font-ui); font-weight: 300; font-size: clamp(22px, 2.8vw, 28px); color: var(--text); }
+    .hf--loud .hf__h { font-family: var(--font-voice); font-style: italic; font-weight: 500; color: var(--gold); }
+    .hf__where { font-size: 14px; color: var(--text-muted); }
+    .hf__list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .hf__list li { position: relative; padding-left: 20px; font-size: 14.5px; line-height: 1.5; color: var(--text-muted); }
+    .hf--loud .hf__list li { color: var(--text); }
+    .hf__list li::before { content: ''; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); }
+    .hf--loud .hf__list li::before { background: var(--gold); }
+    .halves__line {
+      text-align: center; margin-top: 48px;
+      font-family: var(--font-ui); font-weight: 300; font-size: clamp(22px, 3.2vw, 34px); color: var(--text);
+    }
+    .halves__line .v { font-family: var(--font-voice); font-style: italic; font-weight: 500; color: var(--gold); }
+
+    /* ── Counter browse (Beat 3) — DOM port of AisleMoment's section index ── */
+    .ctr__thesis { margin-top: 12px; font-family: var(--font-voice); font-style: italic; font-size: 16.5px; line-height: 1.5; color: var(--text); }
+    .ctr__label { margin-top: 18px; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); opacity: .75; }
+    .ctr__sections { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .ctr__sec { display: flex; flex-direction: column; gap: 3px; padding: 14px 15px; border-radius: 14px; background: var(--surface); box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 1px 2px rgba(0,0,0,.3); }
+    .ctr__sec-t { font-size: 15.5px; font-weight: 700; color: var(--text); }
+    .ctr__sec-b { font-size: 13px; line-height: 1.45; color: var(--text-muted); }
+    .ctr__sec-c { margin-top: 3px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--border-gold); }
+
+    /* ═════════════════════════════ THE LOOP (4 beats) ═════════════════════════════ */
     .loop { padding: 40px 0 60px; }
     .loop__intro { text-align: center; margin-bottom: 20px; }
     .loop__intro-eyebrow { margin-bottom: 18px; }
@@ -558,6 +643,7 @@
       .beat__caption { order: 1 !important; }
       .beat__proof { order: 2 !important; }
       .contrast__cols { grid-template-columns: 1fr; }
+      .halves__cols { grid-template-columns: 1fr; }
       .standard__grid { grid-template-columns: 1fr; }
       .nav { padding: 13px 20px; }
     }
@@ -586,6 +672,10 @@
       .sec-head__h { font-size: 27px; }
       .standard { padding: 70px 0 30px; }
       .contrast { padding: 70px 0 30px; }
+      .halves { padding: 64px 0 10px; }
+      .halves__cols { gap: 16px; margin-top: 32px; }
+      .hf { padding: 22px 20px; }
+      .halves__line { margin-top: 34px; }
       .standard__framing { font-size: 14.5px; margin-top: 26px; }
       .grade { padding: 22px 20px; }
 
@@ -627,52 +717,54 @@
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <img class="hero__logo" src="/kristy-logo.png" width="71" height="104" alt="Kristy" data-rev />
-        <p class="hero__eyebrow" data-rev>your grocery coach</p>
+        <p class="hero__eyebrow" data-rev>coach for the whole store</p>
         <h1 class="hero__title">
-          <span class="hero__lede" data-rev><b>Yuka</b> tells you what&rsquo;s in the food.</span>
-          <span class="hero__kristy" data-rev>Kristy tells you if it belongs in your cart.</span>
+          <span class="hero__lede" data-rev>Scanners read <b>the box.</b></span>
+          <span class="hero__kristy" data-rev>Kristy reads the whole store.</span>
         </h1>
+        <!-- The category is named here, ONCE on this page. Everything after it owns
+             the position instead of borrowing it. -->
         <p class="hero__sub" data-rev>
-          A grocery coach who <b>reads any label</b>, <b>knows your goal</b>, and tells you what to actually buy &mdash; before you leave, in the aisle, and after the trip.
+          <b>Meat, fish, eggs, produce, bulk.</b> Yuka stops where the barcode stops. The counter still has a right answer.
         </p>
         <div class="hero__cta" data-rev>
           <a href="/app" class="btn">Meet Kristy</a>
-          <span class="hero__cta-note">Free to start &middot; scan your first label today</span>
+          <span class="hero__cta-note">Free to start &middot; ask about any counter today</span>
         </div>
       </div>
 
       <div class="hero__demo" data-rev>
-        <p class="hero__demo-cap">in the aisle, just now</p>
-        <!-- Verdict card — the earned Approved seal (tier === 'approved'). In the
-             device frame so the hero shows the product, not a floating card. The
-             corner brackets echo the scanner's framing motif. -->
+        <p class="hero__demo-cap">at the fish counter, just now</p>
+        <!-- The hero visual is the COUNTER, not the scan. The scan verdict is table
+             stakes and every scanner has one; this card is the half that has no
+             barcode to read, so it gets the first thing a visitor sees. -->
         <div class="hero__device">
           <span class="hero__bracket hero__bracket--tl" aria-hidden="true"></span>
           <span class="hero__bracket hero__bracket--br" aria-hidden="true"></span>
         <div class="phone phone--hero">
           <div class="phone__notch" aria-hidden="true"></div>
-        <div class="vc">
-          <div class="vc__header">
-            <div class="vc__thumb" aria-hidden="true">F</div>
+        <div class="pc">
+          <div class="pc__counter">No barcode &middot; seafood</div>
+
+          <div class="pc__entry">
+            <div class="pc__top">
+              <span class="pc__title">Wild vs. farmed salmon</span>
+              <span class="pc__tier">Whole-food standard</span>
+            </div>
+            <p class="pc__short">Genuinely different fish. Wild eats a varied ocean diet and runs leaner; farmed is raised on formulated feed and is usually fattier. Both are real food.</p>
             <div>
-              <div class="vc__name">Fage Total 5% Greek Yogurt</div>
-              <div class="vc__aisle">dairy</div>
+              <span class="pc__tips-head">What to look for</span>
+              <ul class="pc__tips">
+                <li class="pc__tip"><i aria-hidden="true">&#10003;</i><span>Sockeye and coho are almost always wild.</span></li>
+                <li class="pc__tip"><i aria-hidden="true">&#10003;</i><span>Frozen wild is often fresher than &lsquo;fresh&rsquo; farmed.</span></li>
+                <li class="pc__tip"><i aria-hidden="true">&#10003;</i><span>&lsquo;Atlantic&rsquo; on the sign means farmed.</span></li>
+              </ul>
             </div>
           </div>
 
-          <div class="vc__seal" role="img" aria-label="Kristy Approved">
-            <div class="thread-rule"><i></i></div>
-            <div class="vc__seal-mark">
-              <span class="vc__seal-script">Kristy</span>
-              <span class="vc__seal-word">APPROVED</span>
-            </div>
-            <div class="thread-rule"><i></i></div>
-          </div>
-
-          <div class="vc__section">
-            <div class="vc__note-label">for high-protein shopping</div>
-            <p class="vc__note">This is exactly what I want anchoring a high-protein cart &mdash; 18g of protein, live cultures, nothing on the label to flag. Easy yes.</p>
-          </div>
+          <div class="thread-rule"><i></i></div>
+          <p class="pc__read">On a budget, frozen wild sockeye does the same job for less than the fresh case.</p>
+          <div class="pc__use">Use this instead &mdash; Frozen wild sockeye</div>
         </div>
         </div>
         </div>
@@ -680,12 +772,51 @@
     </div>
   </header>
 
-  <!-- ═════════ THE LOOP — three moments ═════════ -->
+  <!-- ═════════ THE TWO HALVES — the positioning, stated immediately ═════════
+       Both columns are real coverage. Only one of them is the reason to be here,
+       so only one of them is gold. -->
+  <section class="halves">
+    <div class="wrap">
+      <div class="sec-head" data-rev>
+        <p class="eyebrow sec-head__eyebrow">The whole store</p>
+        <h2 class="sec-head__h">The best food has no ingredient list. <span class="v">It IS the ingredient.</span></h2>
+        <p class="sec-head__sub">Two halves, one trip. A barcode covers one of them.</p>
+      </div>
+
+      <div class="halves__cols">
+        <div class="hf" data-rev>
+          <span class="hf__tag">Table stakes</span>
+          <div class="hf__h">Has a barcode</div>
+          <p class="hf__where">Boxes, bags, cans, bars.</p>
+          <ul class="hf__list">
+            <li>Every ingredient read and graded.</li>
+            <li>Each flag carries its evidence tier.</li>
+            <li>A named swap when it doesn&rsquo;t hold up.</li>
+          </ul>
+        </div>
+
+        <div class="hf hf--loud" data-rev>
+          <span class="hf__tag">Why you&rsquo;re here</span>
+          <div class="hf__h">Has no barcode</div>
+          <p class="hf__where">Meat, fish, eggs, produce, dairy, bulk.</p>
+          <ul class="hf__list">
+            <li>Which cut, which fish, which carton.</li>
+            <li>What the word on the label actually guarantees.</li>
+            <li>What to look for, at the counter, in hand.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="halves__line" data-rev>Every scanner does the left column. <span class="v">The right one is the whole point.</span></p>
+    </div>
+  </section>
+
+  <!-- ═════════ THE LOOP — four moments ═════════ -->
   <section class="loop">
     <div class="wrap">
       <div class="loop__intro col" data-rev>
-        <p class="eyebrow loop__intro-eyebrow">List &middot; Scan &middot; Haul</p>
-        <p class="loop__intro-h">One loop, every week: she sets you up <b>before</b> you leave, calls it <b>in the aisle</b>, and reads the trip <span class="v">after</span>.</p>
+        <p class="eyebrow loop__intro-eyebrow">Cart &middot; Scan &middot; Counter &middot; Haul</p>
+        <p class="loop__intro-h">One loop, every week: the cart <b>before</b> you leave, the box and the counter <b>in the store</b>, the read <span class="v">after</span>.</p>
       </div>
     </div>
 
@@ -694,8 +825,8 @@
       <div class="wrap beat__grid">
         <div class="beat__caption" data-rev>
           <p class="beat__step"><span class="n">01 /</span> Before &middot; at home</p>
-          <h2 class="beat__cap">She builds your cart <b>before you leave.</b></h2>
-          <p class="beat__say">&ldquo;Name the goal, and there&rsquo;s the week&rsquo;s list &mdash; the right proteins, your swaps, minus your hard lines.&rdquo;</p>
+          <h2 class="beat__cap">The cart, built <b>before you leave.</b></h2>
+          <p class="beat__say">&ldquo;Name the trip. The right proteins, your swaps, minus your hard lines.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
           <div class="phone">
@@ -709,7 +840,7 @@
                 </span>
                 <span class="lst__title">Your list</span>
               </div>
-              <p class="lst__intro">Built for eating cleaner &mdash; real food first, and the ultra-processed filler left off.</p>
+              <p class="lst__intro">Built for eating cleaner. Real food first, ultra-processed filler left off.</p>
 
               <div class="lst__group">
                 <div class="lst__group-label">From your haul</div>
@@ -769,13 +900,13 @@
       </div>
     </div>
 
-    <!-- ── BEAT 2 — IN THE AISLE (Scan) · the centerpiece ── -->
-    <div class="beat beat--hero beat--scan beat--flip" id="beat-scan">
+    <!-- ── BEAT 2 — THE BOX (Scan) · table stakes, and said so ── -->
+    <div class="beat beat--scan beat--flip" id="beat-scan">
       <div class="wrap beat__grid">
         <div class="beat__caption" data-rev>
-          <p class="beat__step"><span class="n">02 /</span> In the aisle &middot; the scan</p>
+          <p class="beat__step"><span class="n">02 /</span> In the store &middot; the box</p>
           <h2 class="beat__cap">The ten-second verdict on <b>any label.</b></h2>
-          <p class="beat__say">&ldquo;Point it at the barcode. Whether it belongs in your cart &mdash; and exactly what to grab instead if it doesn&rsquo;t.&rdquo;</p>
+          <p class="beat__say">&ldquo;Point it at the barcode. Whether it belongs in the cart, and what to grab instead if it doesn&rsquo;t.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
           <div class="phone phone--scan">
@@ -828,13 +959,13 @@
                     <span class="vc__chip-name">Soybean oil</span>
                     <span class="vc__tag">Credible concern</span>
                   </div>
-                  <p class="vc__chip-line">Roughly 54% linoleic acid &mdash; among the highest of any common oil. Industrial and hexane-extracted at scale.</p>
+                  <p class="vc__chip-line">Roughly 54% linoleic acid, among the highest of any common oil. Industrial and hexane-extracted at scale.</p>
                 </div>
               </div>
 
               <div class="vc__section">
                 <div class="vc__note-label">for eating cleaner</div>
-                <p class="vc__note">Eating cleaner, this is an easy pass &mdash; it&rsquo;s a snack built on soybean oil dressed up as health food. There&rsquo;s a cleaner way to get the same crunch.</p>
+                <p class="vc__note">Eating cleaner, this is an easy pass. A snack built on soybean oil, dressed up as health food. There&rsquo;s a cleaner way to get the same crunch.</p>
               </div>
 
               <div class="vc__swap">
@@ -853,13 +984,60 @@
       </div>
     </div>
 
-    <!-- ── BEAT 3 — AFTER (Haul) ── -->
-    <div class="beat beat--after">
+    <!-- ── BEAT 3 — THE COUNTER · the centerpiece ──
+         Louder than the scan beat on purpose: this is the half a scanner can't do,
+         and the beat that has to land for the position to make sense. -->
+    <div class="beat beat--hero beat--counter">
       <div class="wrap beat__grid">
         <div class="beat__caption" data-rev>
-          <p class="beat__step"><span class="n">03 /</span> After &middot; the haul</p>
-          <h2 class="beat__cap">Your week, <b>scored</b> &mdash; and shareable.</h2>
-          <p class="beat__say">&ldquo;Here&rsquo;s how the trip really went, and the one thing worth fixing next week.&rdquo;</p>
+          <p class="beat__step"><span class="n">03 /</span> In the store &middot; the counter</p>
+          <h2 class="beat__cap">No barcode. <b>Still a right answer.</b></h2>
+          <p class="beat__say">&ldquo;Which cut for stew. Which tuna is the low-mercury one. What &lsquo;pasture-raised&rsquo; leaves out. Every counter, browsable or just asked.&rdquo;</p>
+        </div>
+        <div class="beat__proof" data-rev>
+          <div class="phone">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="screen">
+              <div class="screen__bar"><span>Counter</span></div>
+              <div class="screen__body">
+                <div class="lst__head">
+                  <span class="lst__title">The counter</span>
+                </div>
+                <p class="ctr__thesis">The half of the store with no label. And the half that matters most.</p>
+
+                <div class="ctr__label">Browse the counter</div>
+                <div class="ctr__sections">
+                  <div class="ctr__sec">
+                    <span class="ctr__sec-t">Meat</span>
+                    <span class="ctr__sec-b">Cuts, ratios, and which labels on the case mean anything.</span>
+                  </div>
+                  <div class="ctr__sec">
+                    <span class="ctr__sec-t">Seafood</span>
+                    <span class="ctr__sec-b">Wild or farmed, mercury, and what the freezer case is really for.</span>
+                  </div>
+                  <div class="ctr__sec">
+                    <span class="ctr__sec-t">Eggs &amp; Dairy</span>
+                    <span class="ctr__sec-b">Which carton claims hold up, and real cheese from cheese product.</span>
+                  </div>
+                  <div class="ctr__sec">
+                    <span class="ctr__sec-t">Produce</span>
+                    <span class="ctr__sec-b">Where organic earns it, how to pick ripe, and what the season is doing.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BEAT 4 — AFTER (Haul) ── -->
+    <div class="beat beat--after beat--flip">
+      <div class="wrap beat__grid">
+        <div class="beat__caption" data-rev>
+          <p class="beat__step"><span class="n">04 /</span> After &middot; the haul</p>
+          <h2 class="beat__cap">The week, <b>read back</b> and shareable.</h2>
+          <p class="beat__say">&ldquo;How the trip actually went, and the one thing worth fixing next week.&rdquo;</p>
         </div>
         <div class="beat__proof" data-rev>
           <div class="phone">
@@ -885,7 +1063,7 @@
 
               <div class="haul__read">
                 <div class="thread-rule" style="max-width:180px;margin:0"><i></i></div>
-                <p>Strong week &mdash; most of your cart held up, and the two I flagged were both seed-oil snacks. Swap those next week and you&rsquo;re basically clean.</p>
+                <p>Strong week. Most of the cart held up, and both flags were seed-oil snacks. Swap those next week and it&rsquo;s basically clean.</p>
               </div>
 
               <div class="haul__list">
@@ -926,21 +1104,21 @@
     <div class="wrap">
       <div class="sec-head" data-rev>
         <p class="eyebrow sec-head__eyebrow">The difference</p>
-        <h2 class="sec-head__h">A score reads the product. <span class="v">A coach reads you.</span></h2>
-        <p class="sec-head__sub">Same label, two different jobs. One grades what&rsquo;s in the package. The other filters it through your goal and the focuses you set.</p>
+        <h2 class="sec-head__h">A score reads the package. <span class="v">A coach reads the store.</span></h2>
+        <p class="sec-head__sub">Same label, two different jobs. One grades what&rsquo;s in the box. The other covers the box, the counter, and how you actually eat.</p>
       </div>
 
       <div class="contrast__cols">
         <div class="cc" data-rev>
           <div class="cc__name">A score</div>
-          <div class="cc__role">The score apps</div>
+          <div class="cc__role">The scanner apps</div>
           <div class="cc__score">
             <b>76</b><span>/ 100</span><em>same for everyone</em>
           </div>
           <ul class="cc__list">
-            <li>Scores what&rsquo;s in the product.</li>
+            <li>Reads what has a barcode.</li>
             <li>The same number for every shopper.</li>
-            <li>Reads the label, then stops.</li>
+            <li>Nothing at the meat case.</li>
           </ul>
         </div>
 
@@ -951,15 +1129,15 @@
             <i aria-hidden="true"></i><span>Swap recommended</span><em>for eating cleaner</em>
           </div>
           <ul class="cc__list">
+            <li>Reads the box and the counter.</li>
+            <li>Meat, fish, eggs, produce, bulk.</li>
             <li>Filtered through your goal, every time.</li>
-            <li>Knows your non-negotiables and focuses.</li>
-            <li>Tells you what to buy instead.</li>
           </ul>
         </div>
       </div>
 
-      <p class="contrast__line" data-rev>A score, <span class="v">or a coach who knows you.</span></p>
-      <p class="contrast__fair" data-rev>The score apps are good at what they do. Kristy does the next part &mdash; the deciding.</p>
+      <p class="contrast__line" data-rev>A score, <span class="v">or a coach for the whole store.</span></p>
+      <p class="contrast__fair" data-rev>Scanning is table stakes. Every scanner does it well. The counter is where the trip is won.</p>
     </div>
   </section>
 
@@ -968,12 +1146,12 @@
     <div class="wrap">
       <div class="sec-head" data-rev>
         <p class="eyebrow sec-head__eyebrow">The honest standard</p>
-        <h2 class="sec-head__h">She grades her own evidence &mdash; <span class="v">and tells you which is which.</span></h2>
-        <p class="sec-head__sub">Confidence without the sleight of hand. Every flag carries the reason it&rsquo;s flagged &mdash; settled science, a real-but-unsettled signal, or Kristy&rsquo;s own standard, named as such.</p>
+        <h2 class="sec-head__h">Every flag is graded, <span class="v">and the grade is always shown.</span></h2>
+        <p class="sec-head__sub">Confidence without the sleight of hand. Settled science, a real but unsettled signal, or the whole-food standard. Named as such, every time.</p>
       </div>
 
       <p class="standard__framing" data-rev>
-        These are how I grade the <b>evidence</b> &mdash; the verdict is what I tell you to do about it.
+        The tag grades the <b>evidence</b>. The verdict says what to do about it.
       </p>
 
       <div class="standard__grid">
@@ -989,7 +1167,7 @@
 
         <div class="grade grade--concern" data-rev>
           <span class="grade__tag">Credible concern</span>
-          <p class="grade__def">Meaningful peer-reviewed evidence of harm. The debate&rsquo;s ongoing, but the signal is real &mdash; worth flagging, especially when a clean swap exists.</p>
+          <p class="grade__def">Meaningful peer-reviewed evidence of harm. The debate is ongoing, but the signal is real, and worth flagging where a clean swap exists.</p>
           <div class="grade__eg">
             <div class="grade__eg-name">Soybean oil <span class="grade__eg-verdict">Skip</span></div>
             <p class="grade__eg-line">~54% linoleic acid, among the highest of any common oil. UC Riverside research tied it to metabolic and neurological effects in animals.</p>
@@ -998,12 +1176,12 @@
         </div>
 
         <div class="grade grade--standard" data-rev>
-          <span class="grade__tag">Kristy&rsquo;s standard</span>
-          <p class="grade__def">Her whole-food philosophy, even where regulators haven&rsquo;t acted. She&rsquo;ll always say when it&rsquo;s her standard, not settled science &mdash; and she stands behind it.</p>
+          <span class="grade__tag">Whole-food standard</span>
+          <p class="grade__def">The whole-food standard leads here even where regulators haven&rsquo;t acted. Flagged as a standard, not as settled science. The difference is always stated.</p>
           <div class="grade__eg">
             <div class="grade__eg-name">Canola oil <span class="grade__eg-verdict">Skip</span></div>
-            <p class="grade__eg-line">Solvent-extracted and stripped by high heat &mdash; that processing oxidizes the oil, and oxidized fats are the real problem.</p>
-            <span class="grade__eg-src">Flagged on my standard</span>
+            <p class="grade__eg-line">Solvent-extracted and stripped by high heat. That processing oxidizes the oil, and oxidized fats are the real problem.</p>
+            <span class="grade__eg-src">Flagged on the whole-food standard</span>
           </div>
         </div>
       </div>
@@ -1019,7 +1197,7 @@
         <span class="close__l1" data-rev>Fill your house <b>right,</b></span>
         <span class="close__l2" data-rev>and the eating takes care of itself.</span>
       </h2>
-      <p class="close__sub" data-rev>Set your goal once. Scan the aisle. Let the cart do the work.</p>
+      <p class="close__sub" data-rev>Name the trip. Scan the box. Ask the counter.</p>
       <div class="close__cta" data-rev><a href="/app" class="btn btn--lg">Meet Kristy</a></div>
       <p class="close__trust" data-rev>Free to start &middot; every claim traces to the evidence &middot; your data stays yours</p>
     </div>

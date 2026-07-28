@@ -32,12 +32,12 @@ import {
 // premium branch (premiumForReq is only consulted when req.user exists) and are capped on
 // the shared per-IP guest budget instead of the per-user one.
 
-const ERROR_MSG =
-  "I couldn't pull that read together just now — give me a second and ask again.";
+const ERROR_MSG = "That read didn't come together just now. Give it a second and ask again.";
 
 // The withheld personalized read, in Kristy's voice (named value, not "go premium").
+// No first person: the value is named, nobody is performing it.
 const PERIMETER_UPSELL =
-  "That's the honest rundown. Want my read for YOUR cart — wild vs farmed against your goal, your budget, your week — with the swap landing straight on your list? That part's for members.";
+  "That's the honest rundown, and it's free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week, with the better pick landing straight on the list.";
 
 function readPrefs(body = {}) {
   const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);

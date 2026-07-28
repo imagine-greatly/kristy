@@ -28,7 +28,7 @@ const GATE_AFTER = 4;
 
 const INTRO = {
   greeting: 'Kristy.',
-  subtitle: 'Ask anything, or scan a label. No account needed.',
+  subtitle: 'The box, and the counter it never came in. Ask anything. No account needed.',
 };
 const CAP_LINE =
   'Sign in and none of it gets thrown away. Your scans, your cart, your preferences.';
