@@ -22,9 +22,9 @@ test('every store section resolves to real topics', () => {
   }
 });
 
-test('the counter browses in the shopper walking order, named as the spec names them', () => {
-  // INTERFACE_IDENTITY Block 2 fixes both the order and the titles: Produce leads,
-  // because that is where a trip starts and where the perimeter begins.
+test('the counter browses in the shopper walking order, with the shopper-facing names', () => {
+  // Order and titles follow the shopper's walk: Produce leads, because that is where
+  // a trip starts and where the perimeter begins.
   const shown = sectionIndex().map((s) => s.title);
   assert.deepEqual(shown.slice(0, 5), ['Produce', 'Meat', 'Seafood', 'Dairy & Eggs', 'Pantry & Bulk']);
   assert.equal(shown[5], 'Label terms', 'label truth stays browsable as its own section');
@@ -43,7 +43,7 @@ test('the five shopper-facing sections exist and cover the KB', () => {
 });
 
 test('every shopper-facing counter carries real depth, not a token entry', () => {
-  // Block B's bar: each counter with no barcode should answer as much as a scan does.
+  // The depth bar: each counter with no barcode should answer as much as a scan does.
   // A section that drops below this is thin enough that a shopper would notice.
   for (const id of ['meat', 'seafood', 'produce', 'eggs_dairy', 'bulk_pantry']) {
     const s = sectionById(id);
@@ -74,7 +74,7 @@ test('chicken lives at the meat case, not under Dairy & Eggs', () => {
   assert.ok(meat.includes('chicken_cuts_basics'));
   assert.ok(meat.includes('air_chilled_chicken'));
   const eggs = sectionById('eggs_dairy').topics.map((t) => t.id);
-  assert.ok(!eggs.includes('air_chilled_chicken'), 'chicken must not surface under Eggs & Dairy');
+  assert.ok(!eggs.includes('air_chilled_chicken'), 'chicken must not surface under Dairy & Eggs');
   assert.ok(eggs.includes('egg_labels'), 'eggs still do');
 });
 

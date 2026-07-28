@@ -198,8 +198,7 @@ Three disciplines hold it together:
   can never introduce a product.
 
 Coverage options that were assessed but **not** integrated (USDA FoodData Central, Nutritionix,
-Syndigo) are written up in [`BARCODE_COVERAGE.md`](BARCODE_COVERAGE.md). Full strategy in
-[`FOOD_DATA_STACK.md`](FOOD_DATA_STACK.md).
+Syndigo) are written up in [`BARCODE_COVERAGE.md`](BARCODE_COVERAGE.md).
 
 ---
 
@@ -449,8 +448,7 @@ area:
 
 | File | What it is |
 | --- | --- |
-| [`CLAUDE.md`](CLAUDE.md) | The working status log — every block, what shipped, and the reasoning. Authoritative on current state. |
-| [`VOICE_SPEC.md`](VOICE_SPEC.md) | The voice: egoless authority, not service narration. An "I" doing a *job* gets cut; an "I" taking a *position* stays. |
+| [`CLAUDE.md`](CLAUDE.md) | Current state of the product plus the rules that bind every change. Authoritative. |
+| [`VOICE_SPEC.md`](VOICE_SPEC.md) | The voice: zero first person. The tier ownership is rephrased, never dropped. |
 | [`VISION.md`](VISION.md) | Character direction — deliberately post-mechanics, largely unbuilt. |
-| [`FOOD_DATA_STACK.md`](FOOD_DATA_STACK.md) | The three-layer food data strategy. |
 | [`BARCODE_COVERAGE.md`](BARCODE_COVERAGE.md) | Assessed barcode-coverage providers. Reported, not integrated. |

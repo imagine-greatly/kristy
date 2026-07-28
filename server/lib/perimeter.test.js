@@ -131,7 +131,7 @@ test('the no-answer line is a real, honest sentence', () => {
   assert.ok(typeof NO_ANSWER === 'string' && NO_ANSWER.length > 20);
 });
 
-/* ── The counter FILLS the cart (INTERFACE_IDENTITY.md Block 2) ──────────────────
+/* ── The counter FILLS the cart ──────────────────────────────────────────────────
    Scanning puts a product in the trip. The counter has to do the same or it is a
    reference book. `cart_pick` is the concrete grocery an entry's guidance resolves
    to, and it is claim-safe the same way a composed list row is: it is a NAME. */
@@ -180,7 +180,7 @@ test('an entry with no single honest answer carries no pick', () => {
   }
 });
 
-/* ── Label truth (LABEL_TRUTH.md) ───────────────────────────────────────────────
+/* ── Label truth ─────────────────────────────────────────────────────────────────
    Kristy teaches the gap between what a label IMPLIES and what it GUARANTEES, so a
    shopper can evaluate any product themselves. The rule that makes this safe is that
    it is always about the label CATEGORY, never about a company. */
@@ -201,7 +201,7 @@ test('the label-truth entries exist and teach the feed gap', () => {
 });
 
 test('NO entry makes a negative factual claim about a named brand', () => {
-  // The hard rule from LABEL_TRUTH.md. A claim about a company is checkable, goes
+  // The hard rule: a claim about a company is checkable, goes
   // stale when they reformulate, and is the one kind of statement here with real
   // legal exposure. Teach the category, never "Brand X is bad".
   const BRANDS =
@@ -224,8 +224,8 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
     labels_decoded: p.labels_decoded,
   }).toLowerCase();
   const text = spoken;
-  // Hass is a VARIETY grown in several countries — ranking origins is the exact
-  // error LABEL_TRUTH.md calls out as a caution rather than a feature.
+  // Hass is a VARIETY grown in several countries, so ranking origins mixes up variety
+  // with origin and is probably just wrong. Teach the picking skill instead.
   assert.match(text, /variety/, 'must distinguish variety from origin');
   assert.match(text, /season/, 'must explain origin as a season signal');
   assert.doesNotMatch(
@@ -236,7 +236,7 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
   assert.ok(p.buying_tips.some((t) => /stem/i.test(t)), 'teaches an actual physical check');
 });
 
-/* ── The depth bar (COMPLETE_FOOD_COACH.md Block B) ─────────────────────────────
+/* ── The depth bar ───────────────────────────────────────────────────────────────
    "As sharp as a barcode scan" is only true if every counter entry answers a real
    at-the-counter question, carries a what-to-look-for checklist, and names its tier
    honestly. These pin the shape so a future entry can't be added half-finished. */
