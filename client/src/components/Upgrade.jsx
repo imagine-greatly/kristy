@@ -55,7 +55,7 @@ export default function Upgrade({ subscription, trialEligible = false, onStartTr
         onClose();
         return;
       }
-      setError('Could not start your trial just now — give it a moment and try again.');
+      setError("The trial didn't start. Give it a moment and try again.");
     } catch (e) {
       setError(e?.message || 'Could not start your trial.');
     }
@@ -133,9 +133,9 @@ export default function Upgrade({ subscription, trialEligible = false, onStartTr
           // subscribing (either plan, chosen above) is the secondary path.
           <>
             <button className="upgrade__cta" onClick={beginTrial} disabled={!!loading}>
-              {loading === 'trial' ? 'Starting your week…' : 'Start my free week'}
+              {loading === 'trial' ? 'Starting your week…' : 'Start the free week'}
             </button>
-            <p className="upgrade__trial-note">7 days, full access &mdash; no card required.</p>
+            <p className="upgrade__trial-note">7 days, full access. No card required.</p>
             <button className="upgrade__manage" onClick={subscribe} disabled={!!loading}>
               {loading === 'checkout'
                 ? 'Opening checkout…'

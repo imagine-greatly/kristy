@@ -20,7 +20,7 @@ export const COACH_GOALS = [
     noteLabel: 'eating cleaner',
     readLabel: 'clean eating',
     blurb: 'Fewer additives, more real food.',
-    payoff: "Eating cleaner comes down to fewer mystery ingredients. Scan a label — what's real and what's filler, line by line.",
+    payoff: "Eating cleaner comes down to fewer mystery ingredients. Scan a label: what's real and what's filler, line by line.",
   },
   {
     value: 'high_protein',
@@ -38,7 +38,7 @@ export const COACH_GOALS = [
     noteLabel: 'keeping added sugar down',
     readLabel: 'low-sugar shopping',
     blurb: 'Keep the added sugar out of the cart.',
-    payoff: "Keeping sugar down. Added sugar hides under about sixty names on a label — every one of them gets caught.",
+    payoff: "Keeping sugar down. Added sugar hides under about sixty names on a label. Every one gets caught.",
   },
   {
     value: 'family',
@@ -47,7 +47,7 @@ export const COACH_GOALS = [
     noteLabel: 'feeding your family',
     readLabel: 'family',
     blurb: "What ends up in everyone's pantry.",
-    payoff: "Feeding a family is about what ends up in everyone's pantry — staples the whole house actually eats, in cleaner versions.",
+    payoff: "Feeding a family is about what ends up in everyone's pantry. Staples the whole house actually eats, in cleaner versions.",
   },
   {
     value: 'gut_health',
@@ -56,7 +56,7 @@ export const COACH_GOALS = [
     noteLabel: 'gut health',
     readLabel: 'gut health',
     blurb: 'Feed the gut — fewer additives, more whole food.',
-    payoff: "For the gut, additives and emulsifiers are where I get picky. The cleaner shelf is usually one over.",
+    payoff: "For the gut, additives and emulsifiers are the sticking point. The cleaner shelf is usually one over.",
   },
   {
     value: 'avoiding_junk',
@@ -93,7 +93,7 @@ export const COACH_GOALS = [
     readLabel: 'this season',
     blurb: "Extra careful, for a season.",
     // Preference framing ONLY. Never implies a medical state, never advises.
-    payoff: "Extra careful this season — a tighter line on additives. For anything medical, your doctor and a dietitian, not me.",
+    payoff: "Extra careful this season, with a tighter line on additives. Anything medical goes to a doctor and a dietitian.",
   },
   {
     value: 'athlete_performance',
@@ -224,7 +224,7 @@ export const constraintLabel = (v) => CONSTRAINTS.find((c) => c.value === v)?.la
 
 // The one-time, in-voice disclaimer shown the first time ANY focus is turned on.
 export const FOCUS_DISCLAIMER =
-  "Quick honesty: I'm a coach, not your doctor. If you're managing something a doctor's already told you about, keep them and a dietitian in the loop. This is shopping, not treatment.";
+  'Straight up: this is a grocery coach, not a doctor. Anything a doctor has already told you about stays with them and a dietitian. This is shopping, not treatment.';
 
 // Acknowledgement is stored per-device so the disclaimer shows once, then never again.
 const ACK_KEY = 'kristy:focusDisclaimerAck';

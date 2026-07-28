@@ -45,8 +45,8 @@ export default function CameraModal({ open, onClose, onScan }) {
           e?.name === 'NotAllowedError' || /permission|denied/i.test(e?.message || '');
         setError(
           denied
-            ? 'Camera access needed — please allow camera in your browser settings'
-            : 'Could not start the camera — try again.'
+            ? 'Camera access needed. Allow it in your browser settings.'
+            : "Camera didn't start. Try again."
         );
       });
 

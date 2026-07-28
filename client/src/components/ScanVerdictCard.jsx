@@ -41,18 +41,21 @@ const TIER_META = {
 // Rendered in her voice (Playfair italic). Free on every card.
 const TIER_CALL = {
   approved: 'Approved.',
-  approved_with_note: 'Approved — with a note.',
+  approved_with_note: 'Approved, with a note.',
   use_with_intention: 'Use it with intention.',
-  swap_recommended: "Swap it — there's a better pick.",
+  swap_recommended: "Swap it. There's a better pick.",
   skip: 'Skip. Put it back.',
 };
 
 // The in-voice ask shown to a user with no stored goal (the contextual goal ask).
-const GOAL_ASK = "Want my read on whether this belongs in your cart? Tell me what you're shopping for.";
+const GOAL_ASK = 'Set how you eat and this gets read against it.';
 
 // The persistent evidence-honesty footer under the universal layer — hers, free.
+// THE TRUST MECHANISM. The reader has to know WHICH kind of claim a flag is, or the
+// confident ones and the contested ones read the same. The ownership survives; it just
+// names a STANDARD instead of a person.
 const EVIDENCE_FOOTER =
-  "I grade my evidence — settled science, credible concern, or my standard. I'll always tell you which.";
+  'Every flag is graded: settled science, credible concern, or whole-food standard. The tier is always shown.';
 
 // Bar palette per tone — all pulled from tokens, never hand-mixed.
 function barPalette(tone) {
@@ -255,7 +258,7 @@ export default function ScanVerdictCard({
   onPickGoal,
   pickingGoal = false,
   onUnlock,
-  unlockLabel = 'Unlock my read',
+  unlockLabel = 'Unlock the full read',
   onOpenIngredient,
 }) {
   if (!verdict) return null;
@@ -274,7 +277,7 @@ export default function ScanVerdictCard({
   const tasteNudge =
     freeTastesLeft != null && freeTastesLeft <= 1
       ? freeTastesLeft <= 0
-        ? "That's your last free read — membership unlocks the rest."
+        ? "Last free read. Membership unlocks the rest."
         : '1 free read left, then it becomes a membership perk.'
       : null;
 

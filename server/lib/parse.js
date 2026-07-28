@@ -23,7 +23,7 @@ export function parseChatJSON(text) {
   } catch {
     // Last resort: treat the whole thing as a plain message.
     return {
-      message: (text || '').trim() || "I didn't quite catch that — try again?",
+      message: (text || '').trim() || 'That did not come through. Try again?',
       hasFood: false,
       macros: null,
       foods: [],

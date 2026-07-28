@@ -47,7 +47,7 @@ export const affirmationColor = () => colors.accentSeafoam;
 
 // What the tier means, in plain words, wherever it's shown. The honesty IS the
 // feature: history is the evidence, and we say so rather than implying a study.
-export const AFFIRMATION_MEANING = 'Backed by history, not a lab — and I’ll say so.';
+export const AFFIRMATION_MEANING = 'Backed by history, not a lab. Labeled that way on purpose.';
 
 // Her register line for an affirmed whole food. A food-worth affirmation only —
 // never a health outcome, no matter how old the food is.
@@ -56,10 +56,10 @@ export const AFFIRMATION_CALL = 'People have eaten this for a very long time.';
 // Her verdict register line keyed to severity — editorial, in her voice, NOT a
 // health claim (used as a fallback when the KB entry carries no verdict framing).
 export const SEVERITY_CALL = {
-  critical: 'I skip this one, every time.',
-  high: "I'd put this back.",
-  moderate: "Know it's here — it comes down to how often.",
-  flag: 'Not an alarm — just worth seeing.',
+  critical: 'Put it back. Every time.',
+  high: 'Put it back.',
+  moderate: "It's here. Comes down to how often.",
+  flag: 'Not an alarm. Worth seeing.',
 };
 
 // Sort a universal layer for display: focus-relevant first (when a focus fired,

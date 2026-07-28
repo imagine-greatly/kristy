@@ -156,7 +156,7 @@ function NextTrip({ carryForward, onStartNextCart }) {
 
       <Group label="Worth repeating" items={keep} />
       <Group label="Never made it in" items={missed} hint="still worth having" />
-      <Group label="I'd pick differently" items={replace} hint="tap to bring it anyway" />
+      <Group label="there's a better pick" items={replace} hint="tap to bring it anyway" />
 
       <button
         type="button"
@@ -217,8 +217,8 @@ export default function HaulMoment({
         <h1 style={styles.title}>Your haul</h1>
         <p style={styles.emptyLine}>
           {checkedOff > 0
-            ? `You've checked ${checkedOff} off your cart — scan something and the read on this trip starts filling in.`
-            : 'Everything you scan lands here — your trip and your week at a glance. Scan your first product to start it.'}
+            ? `${checkedOff} checked off. Scan something and the read on this trip fills in.`
+            : 'Everything scanned lands here. Scan a product to start it.'}
         </p>
         <button type="button" style={{ ...styles.action, ...styles.actionPrimary, maxWidth: 260 }} onClick={onScan}>
           Scan a product
@@ -261,7 +261,7 @@ export default function HaulMoment({
         // Distribution + list are free; the weekly READ is a member insight (Step 11).
         <div style={styles.read}>
           <GoldThread />
-          <p style={{ ...kristyVoice, ...styles.readText }}>My read on your week — what this cart says and what to fix — is a member insight.</p>
+          <p style={{ ...kristyVoice, ...styles.readText }}>The read on your week is a member insight.</p>
           {onUpgrade && (
             <button type="button" style={styles.unlock} onClick={onUpgrade}>
               Unlock my weekly read
@@ -296,7 +296,7 @@ export default function HaulMoment({
       )}
 
       <div style={styles.actions}>
-        <ActionButton label="Add all swaps to my cart" doneLabel="Added ✓" primary onClick={() => onAddToList?.()} />
+        <ActionButton label="Add all swaps to the cart" doneLabel="Added ✓" primary onClick={() => onAddToList?.()} />
         <ActionButton label="Share haul" onClick={onShareHaul} />
       </div>
 

@@ -113,7 +113,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             <>
               <h2 style={styles.prompt}>What are you shopping for?</h2>
               <p style={styles.sub}>
-                Pick all that fit &mdash; most people are a few at once. Or just say it in your own words.
+                Pick all that fit. Or just say it in your own words.
               </p>
 
               {/* Natural language LEADS — type your whole philosophy instead of tapping. */}
@@ -131,7 +131,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
                   {mapping ? '…' : 'Set it up'}
                 </button>
               </form>
-              {mapErr && <p style={styles.note}>That didn&rsquo;t go through &mdash; try again, or just tap below.</p>}
+              {mapErr && <p style={styles.note}>That didn&rsquo;t go through. Try again, or tap below.</p>}
 
               <div style={styles.goals}>
                 {COACH_GOALS.map((g) => {
@@ -158,7 +158,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
             <>
               <h2 style={styles.prompt}>Anything to keep out?</h2>
               <p style={styles.sub}>
-                Optional. Things you never want in the cart &mdash; held on every product, no exceptions.
+                Optional. Held on every product, no exceptions.
               </p>
               {/* One tap for the shopper who wants the whole synthetic column gone.
                   Deliberately does NOT include vegetarian/vegan/dairy-free/gluten-free —
@@ -181,10 +181,9 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
 
           {step === 2 && (
             <>
-              <h2 style={styles.prompt}>What should I work around?</h2>
+              <h2 style={styles.prompt}>Anything to work around?</h2>
               <p style={styles.sub}>
-                Optional. What you&rsquo;re watching, and what you&rsquo;re working with &mdash; both change
-                what I put in the cart.
+                Optional. What you&rsquo;re watching, and what you&rsquo;re working with.
               </p>
               <div style={styles.group}>
                 <div style={styles.groupLabel}>Watching</div>
@@ -237,7 +236,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
           )}
           {step === LAST && (
             <button type="button" style={styles.primary} onClick={finish} disabled={busy || goals.length === 0}>
-              {busy ? 'Building your cart…' : ctaLabel || "That's everything — let's shop"}
+              {busy ? 'One moment…' : ctaLabel || 'Start shopping'}
             </button>
           )}
         </div>

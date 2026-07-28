@@ -68,7 +68,7 @@ export default function InputBar({
             <button
               className="input-icon-btn input-icon-btn--verdict"
               onClick={() => verdictRef.current?.click()}
-              aria-label="Kristy's Verdict — scan a label"
+              aria-label="Scan a label"
               title="Kristy's Verdict"
             >
               <VerdictIcon />

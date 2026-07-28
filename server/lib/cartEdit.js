@@ -11,6 +11,7 @@
 // by talking). One implementation, so the two paths can't drift apart.
 
 import { randomUUID } from 'node:crypto';
+import { annotateFromPicks } from './list.js';
 
 const rid = () => randomUUID();
 
@@ -90,7 +91,9 @@ export function applyCompose(current, { add = [], remove = [] }) {
     present.add(key);
     added.push({ id: rid(), name: a.name, category: a.section || 'Pantry', checked: false, source: 'template' });
   }
-  return { ...current, items: [...kept, ...added] };
+  // A row with no reason is a checkbox. The reasons are LOOKED UP from the authored
+  // picks, never generated — see annotateFromPicks.
+  return { ...current, items: [...kept, ...annotateFromPicks(added)] };
 }
 
 // A fresh cart from one sentence ("three high-protein dinners for four"). Her haul
@@ -108,11 +111,11 @@ export function buildCart(current, add = [], { goal, summary } = {}) {
   return {
     goal: goal || null,
     intro: summary || current?.intro || '',
-    items: [...carried, ...items],
+    items: [...carried, ...annotateFromPicks(items)],
   };
 }
 
 // The withheld conversational-building capability, in Kristy's voice (a named value,
 // not "go premium"). Free users still get a real basic cart + manual add/remove.
 export const LIST_COMPOSE_UPSELL =
-  "Building your cart from a sentence — 'add taco night', 'three high-protein dinners for four' — is part of a membership. Say the word and it's on.";
+  'Building a cart from one sentence is part of a membership. Adding by hand always works.';

@@ -27,10 +27,9 @@ import {
   loadGuestState,
   clearGuestState,
   recordGuestPrefs,
-  recordGuestList,
   guestOnboarded,
 } from './lib/guestState.js';
-import { pushSwaps, buildGuestList, saveList } from './lib/list.js';
+import { pushSwaps, saveList } from './lib/list.js';
 import { useCart, initialMoment } from './lib/cart.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
@@ -53,9 +52,9 @@ import VerdictCard from './components/VerdictCard.jsx';
 import ScanSheet from './components/ScanSheet.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
+import AisleMoment from './components/AisleMoment.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import CartMoment from './components/CartMoment.jsx';
-import PerimeterAsk from './components/PerimeterAsk.jsx';
 import ImportList from './components/ImportList.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
@@ -81,19 +80,16 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [subscription, setSubscription] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
-  const [aisleOpen, setAisleOpen] = useState(false);
-  const [importOpen, setImportOpen] = useState(false); // bring-your-own-list sheet // the Perimeter "ask about the aisle" sheet
+  const [importOpen, setImportOpen] = useState(false); // bring-your-own-list sheet
   // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
   const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
   const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
   const [onbInitialGoal, setOnbInitialGoal] = useState(null); // guest-expressed goal, pre-fills onboarding
-  // A stranger's setup, before any account exists. `guestSetup` flips once they
-  // finish (or skip) so the entry gate stops re-asking; `guestBuilding` covers the
-  // one network hop where Kristy is assembling the payoff cart.
+  // A stranger's setup, before any account exists. Flips once they finish (or skip)
+  // so the entry gate stops re-asking.
   const [guestSetup, setGuestSetup] = useState(() => guestOnboarded());
-  const [guestBuilding, setGuestBuilding] = useState(false);
 
   const [messages, setMessages] = useState([]);
 
@@ -276,27 +272,24 @@ export default function App() {
   }
 
   /* ───────── The stranger's setup — onboarding with no account ─────────
-     The payoff IS the product: answers in, a real tailored cart out, before anyone is
-     asked to sign up. The cart is generated server-side by the same generateList the
-     account path uses (POST /api/guest/list), so this is the real thing rather than a
-     client-side imitation that could drift from it. Both the answers and the cart go
-     to guest state, which is what sign-in later migrates. */
-  async function handleGuestOnboardingComplete({ coach_goals, non_negotiables, focuses, constraints }) {
-    const prefs = { coach_goals, non_negotiables, focuses, constraints };
-    recordGuestPrefs(prefs);
-    setGuestBuilding(true);
-    try {
-      const { list } = await buildGuestList(prefs);
-      recordGuestList(list);
-      trackEvent('list-build', { source: 'guest-onboarding', items: list.items?.length || 0, guest: true });
-    } catch {
-      // The cart didn't build. Their answers are already saved, so let them into the
-      // app rather than trapping them in onboarding — the cart surface offers a retry.
-      recordGuestList(null);
-    } finally {
-      setGuestBuilding(false);
-      setGuestSetup(true);
-    }
+     Onboarding captures HOW they eat. It does NOT build a cart.
+
+     It used to: a stranger answered four screens and was handed a generated 18-item
+     cart. However good each row was, nobody asked for it, so the whole thing read as
+     imposed and generic. The preferences are the lens; the cart is what the shopper
+     puts in it. So this lands them on the cart with Kristy's question, and the answer
+     to THAT builds the list. "Build a full cart" is still there for anyone who
+     actually wants one — it's a choice now, not the default. */
+  function handleGuestOnboardingComplete({ coach_goals, non_negotiables, focuses, constraints }) {
+    recordGuestPrefs({ coach_goals, non_negotiables, focuses, constraints });
+    trackEvent('coach_onboarded', {
+      goals: (coach_goals || []).length,
+      focuses: (focuses || []).length,
+      hardLines: (non_negotiables || []).length,
+      constraints: (constraints || []).length,
+      guest: true,
+    });
+    setGuestSetup(true);
   }
 
   // Skipping is a real choice: no goals, no cart, straight into scanning. The cart
@@ -476,7 +469,7 @@ export default function App() {
     sodium: "That's two high-sodium picks you've put back. Want sodium flagged from here on?",
     sugar: "Twice now on the high-sugar stuff. Want added sugar flagged from here on?",
     blood_sugar: 'Couple of blood-sugar spikers back to back. Want those flagged as we shop?',
-    heart: "Two with the oils I hold a line on. Want that flagged from here on?",
+    heart: 'Two now with the oils on the whole-food standard. Flag that from here on?',
   };
 
   function categoriesFromSignals(sig) {
@@ -718,7 +711,7 @@ export default function App() {
           id: rid(),
           role: 'ai',
           content:
-            "I had trouble responding just now — give it another try in a sec.",
+            "That didn't go through. Try again in a sec.",
           macros: null,
         },
       ]);
@@ -758,7 +751,7 @@ export default function App() {
       applyScanResult(result, 'barcode', ticket);
     } catch {
       if (ticket !== scanSeqRef.current) return;
-      setScan({ mode: 'barcode', error: true, message: "That scan didn't go through — give it another try in a sec." });
+      setScan({ mode: 'barcode', error: true, message: "That scan didn't go through. Try again in a sec." });
     }
   }
 
@@ -794,7 +787,7 @@ export default function App() {
       applyScanResult(result, 'label', ticket);
     } catch {
       if (ticket !== scanSeqRef.current) return;
-      setScan({ mode: 'label', error: true, message: "Couldn't read that one clearly — try another shot, better lit if you can." });
+      setScan({ mode: 'label', error: true, message: "Couldn't read that one. Try another shot, better lit." });
     }
   }
 
@@ -884,8 +877,8 @@ export default function App() {
     approved: 'a clean approve',
     approved_with_note: 'approved, with a note',
     use_with_intention: 'a use-with-intention',
-    swap_recommended: "one I'd swap",
-    skip: "one I'd skip",
+    swap_recommended: 'a swap',
+    skip: 'a skip',
   };
 
   function openChat({ opener }) {
@@ -968,16 +961,15 @@ export default function App() {
     );
   }
 
-  // Not signed in. The front door is ONBOARDING, not a sign-in wall and not a blank
-  // app — a stranger off the landing page meets Kristy by answering what they're
-  // shopping for, and the cart she builds from it is the first thing they see. No
-  // account is required to reach any of it.
+  // Not signed in. The front door is onboarding, not a sign-in wall and not a blank
+  // app: a stranger sets the lens, then lands on the cart and says what the trip is
+  // for. No account is required to reach any of it.
   if (!IS_DEMO && !session) {
     if (!guestSetup) {
       return (
         <CoachOnboarding
           initialGoal={onbInitialGoal}
-          ctaLabel={guestBuilding ? 'Building your cart…' : 'Build my cart'}
+          ctaLabel="Start shopping"
           onComplete={handleGuestOnboardingComplete}
           onSkip={handleGuestOnboardingSkip}
         />
@@ -1091,7 +1083,7 @@ export default function App() {
               onSetGoal={() => setSwitcherOpen(true)}
               onUpgrade={openUpgrade}
               onScan={() => setCameraOpen(true)}
-              onAskAisle={() => setAisleOpen(true)}
+              onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
             />
           )}
@@ -1100,7 +1092,20 @@ export default function App() {
               onScanBarcode={() => setCameraOpen(true)}
               onLabelFile={handleVerdictFile}
               onOpenChat={() => setMoment('chat')}
-              onAskAisle={() => setAisleOpen(true)}
+              onAskAisle={() => setMoment('aisle')}
+            />
+          )}
+          {/* The unlabeled half, as a destination. Free to browse, no account. */}
+          {moment === 'aisle' && (
+            <AisleMoment
+              prefs={{
+                goal: goalNoteLabel(goalsOf(profile)),
+                focuses: profile?.focuses || [],
+                hardLines: profile?.non_negotiables || [],
+                constraints: resolveConstraints(profile),
+              }}
+              onUpgrade={openUpgrade}
+              onScan={() => setMoment('scan')}
             />
           )}
           {moment === 'haul' && (
@@ -1144,9 +1149,11 @@ export default function App() {
         active={moment}
         cartProgress={cart.progress}
         onList={() => setMoment('list')}
-        // Scan stays a full, fast action: the camera opens immediately, and closing it
-        // lands on the scan surface (label photo, ask-the-aisle) rather than nowhere.
-        onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+        // Scan lands on the scan surface, NOT the raw camera. The choices there —
+        // barcode, label photo, walk up to a counter — are the product; opening the
+        // viewfinder first hid two of the three behind an X-out-of-a-modal.
+        onScan={() => setMoment('scan')}
+        onAisle={() => setMoment('aisle')}
         onHaul={openHaul}
         onChat={() => setMoment('chat')}
       />
@@ -1225,19 +1232,6 @@ export default function App() {
         <ImportList
           onClose={() => setImportOpen(false)}
           onImported={(list, summary) => { cart.applyList(list, summary); setMoment("list"); }}
-        />
-      )}
-
-      {aisleOpen && (
-        <PerimeterAsk
-          prefs={{
-            goal: goalNoteLabel(goalsOf(profile)),
-            focuses: profile?.focuses || [],
-            hardLines: profile?.non_negotiables || [],
-            constraints: resolveConstraints(profile),
-          }}
-          onUpgrade={() => { setAisleOpen(false); openUpgrade(); }}
-          onClose={() => setAisleOpen(false)}
         />
       )}
 

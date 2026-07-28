@@ -3,12 +3,12 @@
   "brand": "Kristy",
   "purpose": "The Perimeter — Kristy's sourced answers for the parts of the store that have no barcode: produce, the butcher and fish counters, dairy, bulk bins, and the label terms used there. Entries are TOPICS, not flags: the perimeter answers questions, it does not score products. It is loaded separately from the ingredient KB and is NEVER fed into the verdict engine.",
   "evidence_tiers": {
-    "established": "Strong scientific consensus, major health organization classification, or regulatory action in multiple countries. The science is settled enough to act on without debate.",
-    "credible_concern": "Meaningful peer-reviewed evidence of harm exists. Debate is ongoing but the signal is real and we think it's worth flagging — especially when a clean swap is available.",
-    "kristys_standard": "Kristy's whole-food philosophy leads here even where regulators haven't acted yet. We'll always tell you when it's our standard rather than settled science — and we stand behind it.",
-    "time_tested": "Foods with deep roots in human diets — eaten and trusted across generations, often long before modern studies existed. History is the evidence here, and I'll always tell you that's what it is. Absence of a clinical trial isn't the same as absence of value — but I won't dress tradition up as settled science."
+    "established": "Strong scientific consensus, major health organization classification, or regulatory action in multiple countries. Settled enough to act on without debate.",
+    "credible_concern": "Meaningful peer-reviewed evidence of harm exists. Debate is ongoing, but the signal is real and worth flagging, especially where a clean swap exists.",
+    "kristys_standard": "The whole-food standard leads here even where regulators have not acted. Flagged as a standard, not as settled science. The difference is always stated.",
+    "time_tested": "Foods with deep roots in human diets, eaten and trusted across generations, often long before modern studies existed. History is the evidence, and it is labeled that way. Absence of a clinical trial is not absence of value, and tradition is never dressed up as settled science."
   },
-  "no_answer": "I don't have a solid answer on that one yet — and I'd rather say so than guess. Ask me about the fish counter, the butcher, produce, dairy, the bulk aisle, or what a label term actually means, and I'll give you my honest read.",
+  "no_answer": "No solid answer on that one yet. Better said than guessed. The fish counter, the butcher, produce, dairy, the bulk aisle, and what a label term actually means are all covered.",
   "entries": [
     {
       "id": "salmon_wild_vs_farmed",
@@ -24,14 +24,14 @@
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
-      "short_answer": "They're genuinely different fish. Wild salmon eats a varied ocean diet and tends to be leaner with a different fat makeup; farmed salmon is raised on formulated feed, is usually fattier, and is colored to look like wild. Both are real food — I lean wild when the budget allows, and I say that as my preference, not a health verdict.",
-      "detail": "The fatty-acid difference between wild and farmed is real and measurable — that part is established. Farming concerns (crowding, feed, sea-lice treatments, and contaminant load in some operations) are a credible, still-debated concern, and quality varies a lot by producer and country. Farmed salmon is not 'bad food'; it's an affordable way to eat fish. My preference for wild is a whole-food call, not a claim that farmed will harm you.",
+      "short_answer": "Genuinely different fish. Wild salmon eats a varied ocean diet and tends to be leaner with a different fat makeup; farmed is raised on formulated feed, is usually fattier, and is colored to look like wild. Both are real food. Wild is the whole-food-standard pick when the budget allows, and that is a preference, not a health verdict.",
+      "detail": "The fatty-acid difference between wild and farmed is real and measurable, and that part is established. Farming concerns (crowding, feed, sea-lice treatments, and contaminant load in some operations) are a credible, still-debated concern, and quality varies a lot by producer and country. Farmed salmon is not 'bad food'; it is an affordable way to eat fish. Preferring wild is a whole-food call, not a claim that farmed will harm anyone.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries / Seafood Watch",
         "USDA FoodData Central (fatty-acid composition)"
       ],
-      "kristy_take": "If wild Alaskan is in reach, that's my pick. If it's farmed or nothing, buy the farmed and don't feel bad — eating the fish beats skipping it.",
+      "kristy_take": "Wild Alaskan if it is in reach. If it is farmed or nothing, buy the farmed. Eating the fish beats skipping it.",
       "buying_tips": [
         "Frozen wild Alaskan is often cheaper and fresher than 'fresh' farmed that's been in transit.",
         "Sockeye and coho are almost always wild; color is deep because of diet, not dye.",
@@ -63,8 +63,8 @@
       ],
       "category": "seafood",
       "question": "Which canned fish are lower in mercury?",
-      "short_answer": "Sardines, canned salmon, and canned light tuna (skipjack) are among the lower-mercury choices; albacore ('white') tuna and larger predator fish run higher. This is well-documented — I'll tell you which are lower, but where mercury matters for you medically, that's a conversation for your doctor, not me.",
-      "detail": "Mercury accumulates up the food chain, so smaller, shorter-lived fish carry less. The FDA/EPA publish a 'best/good/avoid' list that's worth knowing. Sardines and canned salmon are small-fish standouts and also happen to be cheap protein. This is information about the fish — it is not medical advice, and I don't turn it into a directive.",
+      "short_answer": "Sardines, canned salmon, and canned light tuna (skipjack) are among the lower-mercury choices; albacore ('white') tuna and larger predator fish run higher. That part is well documented. Where mercury matters medically, that is a conversation for a doctor.",
+      "detail": "Mercury accumulates up the food chain, so smaller, shorter-lived fish carry less. The FDA/EPA publish a 'best/good/avoid' list worth knowing. Sardines and canned salmon are small-fish standouts and happen to be cheap protein. This is information about the fish. It is not medical advice, and it is not a directive.",
       "evidence_tier": "established",
       "sources": [
         "FDA/EPA 'Advice About Eating Fish'",
@@ -99,14 +99,14 @@
       ],
       "category": "seafood",
       "question": "Is imported or domestic shrimp better?",
-      "short_answer": "Most shrimp in US stores is imported and farmed. Domestic wild shrimp (US Gulf/Atlantic) and better-certified farmed shrimp are the picks I'd reach for when they're available; the concern with some imported farmed shrimp is inconsistent farming standards, not that shrimp is bad.",
+      "short_answer": "Most shrimp in US stores is imported and farmed. Domestic wild shrimp (US Gulf/Atlantic) and better-certified farmed shrimp are the picks when they are available. The concern with some imported farmed shrimp is inconsistent farming standards, not that shrimp is bad.",
       "detail": "Roughly 90% of US shrimp is imported, much of it pond-farmed. Standards vary widely by country and producer, and only a small share of imports is inspected. Certifications and country-of-origin labeling help you choose. This is a sourcing-quality call, tiered as a credible concern, not a health verdict on shrimp.",
       "evidence_tier": "credible_concern",
       "sources": [
         "NOAA Fisheries country-of-origin data",
         "Monterey Bay Seafood Watch"
       ],
-      "kristy_take": "Wild US Gulf shrimp when I can get it; otherwise a reputable certified farm. Either way, shrimp's a lean, quick protein.",
+      "kristy_take": "Wild US Gulf when it is there, otherwise a reputable certified farm. Either way, shrimp is a lean, quick protein.",
       "buying_tips": [
         "Country-of-origin is required on the label — read it.",
         "Look for 'wild American/Gulf' or a credible farm certification (e.g., BAP, ASC).",
@@ -142,7 +142,7 @@
         "NOAA Fisheries handling guidance",
         "USDA/FDA seafood storage guidance"
       ],
-      "kristy_take": "I buy frozen wild without hesitation. Thaw it in the fridge overnight and you'd never know.",
+      "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
       "buying_tips": [
         "Ask the counter 'was this previously frozen?' — the answer is often yes.",
         "Buy frozen and thaw at home for the best price and control.",
@@ -171,14 +171,14 @@
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "short_answer": "Grass-fed beef has a modestly different fat profile — leaner, with a bit more omega-3 and some other fatty acids — and that difference is real, if small in absolute terms. Whether it's 'worth the money' is my preference, not settled science. Both are good, real protein.",
-      "detail": "The compositional difference between grass-fed and grain-finished is established but modest — you're not getting a different food, you're getting a slightly different fat makeup. I like grass-fed for how the animal was raised and how it eats; that's a whole-food and values call, and I say so plainly rather than pretending it's a proven health upgrade.",
+      "short_answer": "Grass-fed beef has a modestly different fat profile, leaner with a bit more omega-3 and some other fatty acids. That difference is real, if small in absolute terms. Whether it is worth the money is a whole-food-standard call, not settled science. Both are good, real protein.",
+      "detail": "The compositional difference between grass-fed and grain-finished is established but modest. It is not a different food, it is a slightly different fat makeup. The preference for grass-fed is about how the animal was raised and what it ate. That is a whole-food and values call, said plainly rather than dressed up as a proven health upgrade.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
         "peer-reviewed reviews of grass- vs grain-fed fatty acids"
       ],
-      "kristy_take": "I buy grass-fed when the price is reasonable and don't lose sleep when it isn't. A cheaper cut of regular beef beats an expensive processed 'protein' every time.",
+      "kristy_take": "Grass-fed when the price is reasonable, regular beef when it is not. A cheaper cut of real beef beats an expensive processed 'protein' every time.",
       "buying_tips": [
         "Watch for 'grass-fed' vs 'grass-finished' — they are not the same (see that entry).",
         "Cheaper grass-fed cuts (chuck, ground) get you the sourcing without the ribeye price.",
@@ -277,7 +277,7 @@
       "sources": [
         "USDA FSIS ground-beef labeling rules"
       ],
-      "kristy_take": "80/20 for burgers, 90/10 when I'm draining it into a sauce. On a budget, buy 80/20 and drain — it's cheaper than lean.",
+      "kristy_take": "80/20 for burgers, 90/10 when it is getting drained into a sauce. On a budget, buy 80/20 and drain it. Cheaper than lean.",
       "buying_tips": [
         "80/20: burgers, meatballs, anything where fat = flavor.",
         "90/10: tacos, chili, sauces where you'd drain it.",
@@ -304,7 +304,7 @@
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
       "short_answer": "They're a ladder of how much outdoor access the hens got. Cage-free means out of cages but often still indoors and crowded; free-range means some outdoor access (loosely defined); pasture-raised (especially Certified Humane) means real time on pasture. Organic layers on top of that. Higher up the ladder generally means a better-raised hen — not a dramatically different egg on your plate.",
-      "detail": "Only some of these terms are tightly enforced. 'Pasture-raised' paired with a third-party certification (Certified Humane, AGA) is the most meaningful claim; 'cage-free' and 'free-range' are weaker. Nutrition differences exist but are modest. This is mostly an animal-welfare and preference call, and I frame it that way.",
+      "detail": "Only some of these terms are tightly enforced. 'Pasture-raised' paired with a third-party certification (Certified Humane, AGA) is the most meaningful claim; 'cage-free' and 'free-range' are weaker. Nutrition differences exist but are modest. This is mostly an animal-welfare and preference call, and it is framed that way here.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
@@ -442,7 +442,7 @@
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
       "short_answer": "It depends on the item. The reasonable rule of thumb: thin-skinned produce you eat whole (berries, leafy greens, apples) carries more surface residue, so that's where organic buys you the most; thick-skinned or peeled produce (avocado, banana, citrus, onion) you can comfortably buy conventional. Just know the popular 'Dirty Dozen' list itself is contested — treat it as a rough guide, not settled science.",
-      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The thin-skin/high-residue reasoning is sound as a prioritization tool. The specific 'Dirty Dozen' ranking and its risk framing are debated by scientists — I'd call that a credible-concern-at-most, never a settled fact. Eating more produce, organic or not, is the win.",
+      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The thin-skin/high-residue reasoning is sound as a prioritization tool. The specific 'Dirty Dozen' ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win.",
       "evidence_tier": "credible_concern",
       "sources": [
         "USDA Pesticide Data Program",
@@ -485,7 +485,7 @@
         "peer-reviewed fresh-vs-frozen nutrient studies",
         "USDA FoodData Central"
       ],
-      "kristy_take": "My freezer is half frozen vegetables and berries. Zero waste, half the price, always in season.",
+      "kristy_take": "Half a freezer of frozen vegetables and berries is a fine way to live. Zero waste, half the price, always in season.",
       "buying_tips": [
         "Check the bag lists just the vegetable/fruit — no sauces or added sugar.",
         "Frozen berries and spinach are staples that never spoil.",
@@ -588,14 +588,14 @@
       ],
       "category": "dairy",
       "question": "Is grass-fed butter worth it?",
-      "short_answer": "Grass-fed butter has a slightly different fat profile and a richer color and flavor from the cows' diet. Butter is a whole food I cook with happily either way — grass-fed is a preference for taste and how the cows were fed, not a health claim over regular butter.",
-      "detail": "The compositional difference (a bit more of certain fatty acids, more beta-carotene giving the golden color) is real but modest. Butter is a traditional whole-food fat; I choose it over industrial seed oils as my standard. Grass-fed vs regular butter is a smaller, flavor-and-values decision on top of that.",
+      "short_answer": "Grass-fed butter has a slightly different fat profile and a richer color and flavor from the cows' diet. Butter is a whole food either way. Grass-fed is a preference for taste and how the cows were fed, not a health claim over regular butter.",
+      "detail": "The compositional difference (a bit more of certain fatty acids, more beta-carotene giving the golden color) is real but modest. Butter is a traditional whole-food fat, and choosing it over industrial seed oils is the whole-food standard. Grass-fed versus regular butter is a smaller flavor-and-values decision on top of that.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
         "dairy fatty-acid composition literature"
       ],
-      "kristy_take": "Real butter over margarine or seed-oil spreads, every time — that's my standard. Grass-fed if it's in the budget, regular butter if not.",
+      "kristy_take": "Real butter over margarine or seed-oil spreads, every time. That is the whole-food standard. Grass-fed if the budget allows, regular butter if not.",
       "buying_tips": [
         "European-style/grass-fed butters are richer and higher in fat — great for baking and finishing.",
         "Regular butter is still real, whole food — don't let 'grass-fed' shame the basic block.",
@@ -621,13 +621,13 @@
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",
-      "short_answer": "My standard is whole, minimally processed milk — it's more satisfying and less tinkered with than skim. That's a preference, not a mandate: the old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed. Buy the one your household actually drinks.",
-      "detail": "For years the guidance was 'always low-fat dairy'; the evidence behind that for otherwise-healthy people has weakened, and dairy fat's effects are an area of honest debate. I lean whole for satiety and minimal processing and I mark that as my read, not settled science. If a doctor has told you otherwise for your situation, follow them.",
+      "short_answer": "The whole-food standard is whole, minimally processed milk. More satisfying, less tinkered with than skim. That is a preference, not a mandate: the old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed. Buy the one the household actually drinks.",
+      "detail": "For years the guidance was 'always low-fat dairy'. The evidence behind that for otherwise-healthy people has weakened, and dairy fat's effects are an area of honest debate. Whole gets the nod here for satiety and minimal processing, marked as a whole-food-standard read rather than settled science. A doctor's advice for a specific situation outranks it.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "reviews of dairy-fat and cardiometabolic outcomes (contested literature)"
       ],
-      "kristy_take": "Whole milk in my house — it keeps you full and it's the least messed-with. But this is my preference, not a rule I'd push on your doctor's advice.",
+      "kristy_take": "Whole milk. It keeps you full and it is the least messed-with. Still a preference, and not one worth arguing against a doctor's advice.",
       "buying_tips": [
         "Whole milk is minimally processed; skim has the fat removed.",
         "Grass-fed/pasture milk is a further preference layer if you want it.",
@@ -653,7 +653,7 @@
       ],
       "category": "dairy",
       "question": "How do I tell real cheese from processed?",
-      "short_answer": "Read the name and the list. Real cheese is basically milk, cultures, salt, and enzymes. 'Pasteurized process cheese', 'cheese product', or 'cheese food' means emulsifiers and added ingredients blended in. Both are edible — real cheese is the whole-food version and it's what I reach for.",
+      "short_answer": "Read the name and the list. Real cheese is basically milk, cultures, salt, and enzymes. 'Pasteurized process cheese', 'cheese product', or 'cheese food' means emulsifiers and added ingredients blended in. Both are edible. Real cheese is the whole-food version.",
       "detail": "The legal name tells you a lot: 'cheese' vs 'pasteurized process cheese' vs 'cheese product' is a descending ladder of how much is actually cheese. A short ingredient list (milk, salt, cultures, rennet/enzymes) is the tell for the real thing. This is label literacy, not a health scare.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -721,7 +721,7 @@
       ],
       "category": "dairy",
       "question": "Is raw milk better?",
-      "short_answer": "Raw milk from grass-fed cows is a real, barely-processed whole food, and I respect why people reach for it — tradition, taste, wanting it close to the source. The one honest catch worth knowing: it carries a documented risk of foodborne illness that falls hardest on pregnant women, young kids, and the immune-compromised. Whether you drink it is your call — I'll give it to you straight, never push you either way.",
+      "short_answer": "Raw milk from grass-fed cows is a real, barely-processed whole food, and the reasons people reach for it are good ones: tradition, taste, wanting it close to the source. The one honest catch worth knowing is that it carries a documented risk of foodborne illness, and that risk falls hardest on pregnant women, young kids, and the immune-compromised. Whether to drink it is a personal call. The facts go here straight, with no push either way.",
       "detail": "The risk is established — raw milk has been behind outbreaks of Listeria, Salmonella, E. coli, and Campylobacter. Its sale is also restricted or banned in a lot of places, which may settle it for you. Past that, it's a personal call, and a fair one to make.",
       "evidence_tier": "established",
       "sources": [
@@ -729,7 +729,7 @@
         "FDA raw-milk regulations",
         "USDA/FDA pasteurization nutrient references"
       ],
-      "kristy_take": "Grass-fed whole milk is a good whole food by my standard — raw or pasteurized. Which you buy is yours to weigh; I'll lay out the trade-offs, never lean on you.",
+      "kristy_take": "Grass-fed whole milk is a good whole food on the whole-food standard, raw or pasteurized. Which one lands in the cart is a personal weigh-up. The trade-offs are laid out; there is no lean either way.",
       "buying_tips": [
         "Know your state's law — sale is restricted or banned in a lot of places.",
         "If you choose it, buy from a source you trust and keep it cold — how it's handled is everything.",
@@ -767,7 +767,7 @@
         "Consumer Reports arsenic-in-rice testing",
         "peer-reviewed rice-cooking arsenic-reduction studies"
       ],
-      "kristy_take": "I rinse rice, cook it in extra water and drain it, and don't build every meal on rice. Simple habits, no fear.",
+      "kristy_take": "Rinse rice, cook it in extra water, drain it, and do not build every meal on rice. Simple habits, no fear.",
       "buying_tips": [
         "Rinse rice before cooking; cook in extra water (about 6:1) and drain.",
         "Basmati and California-grown tend to test lower in arsenic.",
@@ -821,8 +821,8 @@
       ],
       "category": "bulk_pantry",
       "question": "Are raw or roasted nuts better?",
-      "short_answer": "Nuts themselves are a great whole food either way. The thing worth checking is what they're roasted in: many roasted nuts are cooked in cottonseed, soybean, or other seed oils and salted heavily. Raw or dry-roasted (no added oil) keeps it to just the nut — that's the version I reach for.",
-      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating you don't need. If you avoid seed oils (my standard), read the tiny ingredient line on the nut tub — 'peanuts, cottonseed oil, salt' is common. Roasting itself is fine; the added oil is the part to notice.",
+      "short_answer": "Nuts are a great whole food either way. The thing worth checking is what they are roasted in: many roasted nuts are cooked in cottonseed, soybean, or other seed oils and salted heavily. Raw or dry-roasted (no added oil) keeps it to just the nut. That is the version to reach for.",
+      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. 'Peanuts, cottonseed oil, salt' is common. Roasting itself is fine; the added oil is the part to notice.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
@@ -938,7 +938,7 @@
         "USDA FoodData Central",
         "studies on rinsing canned beans and sodium"
       ],
-      "kristy_take": "Dried when I'm planning ahead, canned-and-rinsed when I'm not. Either way, beans are the cheapest real protein in the building.",
+      "kristy_take": "Dried when there is time to plan, canned and rinsed when there is not. Either way, beans are the cheapest real protein in the building.",
       "buying_tips": [
         "Rinse canned beans to cut sodium significantly.",
         "Dried beans are cheapest; a slow cooker makes them effortless.",
@@ -1092,7 +1092,7 @@
       "category": "label_terms",
       "question": "What's the difference between Non-GMO and Organic?",
       "short_answer": "Organic is the broader standard: certified-organic food is also non-GMO, plus it restricts synthetic pesticides and fertilizers and requires certain practices. A 'Non-GMO' seal only addresses genetic engineering — it says nothing about pesticides or how the food was grown. Organic includes non-GMO; non-GMO doesn't include organic.",
-      "detail": "The 'Non-GMO Project Verified' butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: 'non-GMO' on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Whether GMOs concern you at all is a separate, debated question — I'd keep that honest and not oversell it.",
+      "detail": "The 'Non-GMO Project Verified' butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: 'non-GMO' on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Whether GMOs are a concern at all is a separate, debated question, and it stays honest here rather than oversold.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program",
@@ -1419,7 +1419,7 @@
       "category": "label_terms",
       "question": "If it says no artificial flavors, what is the flavoring?",
       "short_answer": "Natural flavors — which are still permitted, and are still made in a lab. The legal difference is the SOURCE MATERIAL, not the processing: a natural flavor has to start from something plant or animal derived, an artificial one does not. Both arrive as engineered compounds, and either can be a proprietary blend of dozens of substances declared as two words on the panel.",
-      "detail": "The definition sits in 21 CFR 101.22: a natural flavor is derived from a spice, fruit, vegetable, edible yeast, herb, bark, bud, root, leaf, meat, seafood, egg or dairy product, whose significant function is flavoring. That is a rule about origin. It permits substantial processing, and it permits incidental additives — solvents, preservatives and carriers — to ride along inside the blend without separate declaration. So \"no artificial flavors\" is a true statement that answers a narrower question than most people think they are asking. My objection is the opacity rather than the word \"artificial\": either way, two words on a panel stand in for a formulation you cannot see.",
+      "detail": "The definition sits in 21 CFR 101.22: a natural flavor is derived from a spice, fruit, vegetable, edible yeast, herb, bark, bud, root, leaf, meat, seafood, egg or dairy product, whose significant function is flavoring. That is a rule about origin. It permits substantial processing, and it permits incidental additives (solvents, preservatives and carriers) to ride along inside the blend without separate declaration. So \"no artificial flavors\" is a true statement that answers a narrower question than most people think they are asking. The objection is the opacity rather than the word \"artificial\": either way, two words on a panel stand in for a formulation nobody can see.",
       "evidence_tier": "established",
       "sources": [
         "FDA 21 CFR 101.22 (definitions of natural and artificial flavor)",

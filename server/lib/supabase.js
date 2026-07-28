@@ -38,6 +38,33 @@ export async function getUserFromToken(token) {
 }
 
 /**
+ * Express middleware — attaches req.user when a valid Bearer token is present,
+ * and otherwise lets the request through ANONYMOUSLY.
+ *
+ * This exists because auth must never gate a free action. The perimeter entries
+ * are a straight KB read (no model call, no cost, no stored data) — exactly the
+ * value a stranger is here to sample — so requiring a token to reach them turned
+ * "ask about the aisle" into a sign-in wall. Downstream code decides what an
+ * anonymous caller gets: the free layer always, never a premium capability
+ * (premiumForReq is only ever consulted when req.user exists).
+ */
+export async function optionalAuth(req, _res, next) {
+  try {
+    const header = req.headers.authorization || '';
+    const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+    if (token) {
+      const { user } = await getUserFromToken(token);
+      if (user) req.user = user;
+    }
+  } catch (err) {
+    // A token we couldn't verify is treated as no token. Never a 5xx: this
+    // middleware's whole job is to not stand between a stranger and free content.
+    console.warn('[kristy] optionalAuth ignored a bad token:', err?.message || err);
+  }
+  next();
+}
+
+/**
  * Express middleware — attaches req.user from the Authorization header.
  * Wrapped so any unexpected error becomes a clean JSON response, never a
  * throw that Express 4 would leak as an unhandled rejection.
@@ -51,7 +78,7 @@ export async function requireAuth(req, res, next) {
     if (failed) {
       return res.status(503).json({
         error: true,
-        message: "I'm having trouble connecting right now — try that again in a moment.",
+        message: 'Connection trouble right now. Try that again in a moment.',
       });
     }
     if (!user) {

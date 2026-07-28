@@ -4,10 +4,10 @@
   "brand": "Kristy Approved",
   "philosophy": "Whole food, ancestral, ingredient-transparent nutrition. We hold tighter standards than the regulatory minimum — because the minimum was set by lobbyists, not nutritionists. We flag what we believe is worth avoiding and we always tell you why and what tier the evidence is in. No fear-mongering. Just honesty.",
   "evidence_tiers": {
-    "established": "Strong scientific consensus, major health organization classification, or regulatory action in multiple countries. The science is settled enough to act on without debate.",
-    "credible_concern": "Meaningful peer-reviewed evidence of harm exists. Debate is ongoing but the signal is real and we think it's worth flagging — especially when a clean swap is available.",
-    "kristys_standard": "Kristy's whole-food philosophy leads here even where regulators haven't acted yet. We'll always tell you when it's our standard rather than settled science — and we stand behind it.",
-    "time_tested": "Foods with deep roots in human diets — eaten and trusted across generations, often long before modern studies existed. History is the evidence here, and I'll always tell you that's what it is. Absence of a clinical trial isn't the same as absence of value — but I won't dress tradition up as settled science."
+    "established": "Strong scientific consensus, major health organization classification, or regulatory action in multiple countries. Settled enough to act on without debate.",
+    "credible_concern": "Meaningful peer-reviewed evidence of harm exists. Debate is ongoing, but the signal is real and worth flagging, especially where a clean swap exists.",
+    "kristys_standard": "The whole-food standard leads here even where regulators have not acted. Flagged as a standard, not as settled science. The difference is always stated.",
+    "time_tested": "Foods with deep roots in human diets, eaten and trusted across generations, often long before modern studies existed. History is the evidence, and it is labeled that way. Absence of a clinical trial is not absence of value, and tradition is never dressed up as settled science."
   },
   "severity_levels": {
     "critical": "Skip always. Established harm or zero reason to consume given available alternatives.",
@@ -212,7 +212,7 @@
       "one_liner": "A butter impersonator built from industrial seed oils, then colored and flavored to look like the real thing. The whole product exists to replace a whole food with a processed one.",
       "why": "Modern margarine is primarily refined seed and vegetable oils — soybean, canola, palm — emulsified with water and additives, usually with artificial color to imitate butter's yellow and added flavor compounds to imitate its taste. The partially-hydrogenated era that made margarine a trans-fat vehicle is over; US products were reformulated after the FDA's PHO determination. The objection that remains is Kristy's standard, not a trans-fat claim: it is an industrial replacement for a whole food that already works.",
       "history": "Margarine was invented in 1869 as a cheap butter substitute for armies and the poor, patented from beef tallow, then reformulated onto hydrogenated seed oils — the source of the trans-fat crisis that got them banned. Today it's back on refined seed oils. The formula has changed repeatedly; what never changed is that it exists to imitate butter.",
-      "kristy_note": "I flag margarine on my standard: it's an industrial stand-in for a whole food. To be straight with you, the trans fat is gone — that was the old objection and the reformulation was real. Mine is simpler. It's built from refined seed oils and dressed up to look like the thing it's replacing, and the thing it's replacing is right there.",
+      "kristy_note": "Flagged on the whole-food standard, not on trans fat. The trans fat is gone; US products were reformulated, and that reformulation was real. The objection left is simpler. It's built from refined seed oils and dressed up to look like the thing it replaces, and the thing it replaces is right there.",
       "sources": [
         "FDA Final Determination on PHOs (2018)",
         "USDA FoodData Central — margarine and vegetable oil spread composition"
@@ -1512,7 +1512,7 @@
       "one_liner": "A whole food humans have gathered and eaten for as long as recorded history. Minimally processed, unlike the refined sugars that replaced it.",
       "why": "Raw honey is unheated and unfiltered, leaving it closer to the state it left the hive in than the pasteurized, blended product that dominates the shelf. It is affirmed here as a traditional whole food and a minimally processed sweetener — not as a remedy, and not as a reason to eat more sugar.",
       "history": "Kept as food and as a traditional remedy across nearly every ancient culture — Egypt, Greece, China, Mesoamerica. Sealed jars recovered from Egyptian tombs were found still edible thousands of years later, a consequence of its chemistry.",
-      "kristy_note": "I'll be straight with you: it's still sugar, and if you're watching that, honey counts like anything else. What I won't do is pretend a food people have eaten for all of recorded history is the same thing as a refined syrup engineered in the last century. Use it like the real thing it is — sparingly, and on purpose."
+      "kristy_note": "Straight up: it's still sugar, and anyone watching that should count honey like anything else. But a food people have eaten for all of recorded history is not the same thing as a syrup engineered in the last century. Use it like the real thing it is. Sparingly, on purpose."
     },
     {
       "id": "bone_broth",
@@ -1570,7 +1570,7 @@
       "one_liner": "The most traditionally prized part of the animal across cultures — a nutrient-dense whole food that modern diets abandoned, not disproved.",
       "why": "Organ meats are among the most nutrient-dense foods available by weight, carrying concentrations of vitamin A, B12, iron, and copper well above muscle meat. They are affirmed here as a traditional whole food that fell out of Western diets by fashion and squeamishness rather than by evidence.",
       "history": "In many traditions the organs went to elders, warriors, or expecting mothers before anyone else got a share. Nose-to-tail eating was the historical norm across cultures; the muscle-meat-only diet is the recent departure.",
-      "kristy_note": "This is the one people flinch at, and I get it. Start with chicken liver or a small amount of beef liver mixed into ground meat — you'll barely notice it. If you never come around to it, that's fine. I'm not going to pretend it's a staple everyone will adopt."
+      "kristy_note": "This is the one people flinch at, fairly. Start with chicken liver, or a little beef liver mixed into ground meat, and it barely registers. Never coming around to it is fine too. It was never going to be a staple everyone adopts."
     },
     {
       "id": "garlic",
@@ -1589,7 +1589,7 @@
       "one_liner": "A kitchen staple and traditional food across millennia of human cooking.",
       "why": "Garlic is a whole food used as both an aromatic and a seasoning in nearly every cuisine on earth. It is affirmed here on its history and its status as a real ingredient — a recognizable food on a label rather than a manufactured flavor compound.",
       "history": "Cultivated and eaten for thousands of years across Egypt, Rome, India, and China, where it appears in the earliest written records of cooking and trade. It is one of the oldest continuously cultivated food plants.",
-      "kristy_note": "When you see actual garlic on an ingredient list, that's a small sign someone cooked the food rather than assembled it. 'Natural garlic flavor' is a different thing entirely, and I read it differently."
+      "kristy_note": "Actual garlic on an ingredient list is a small sign someone cooked the food rather than assembled it. 'Natural garlic flavor' is a different thing entirely, and it reads differently."
     },
     {
       "id": "ginger",
@@ -1606,7 +1606,7 @@
       "one_liner": "A root used in traditional cooking and kitchens for thousands of years.",
       "why": "Ginger is a whole rhizome used fresh or dried across South Asian, East Asian, and Middle Eastern cooking. It is affirmed here as a traditional culinary ingredient with a long human record — not as a remedy for any condition.",
       "history": "One of the oldest traded and cultivated culinary roots, carried out of Southeast Asia along early spice routes into India, China, and the Mediterranean world well over two thousand years ago.",
-      "kristy_note": "Real ginger in an ingredient list usually means the food was actually made from something. Ginger flavoring in a soda is a different animal, and it doesn't get the same read from me."
+      "kristy_note": "Real ginger in an ingredient list usually means the food was made from something. Ginger flavoring in a soda is a different animal and gets a different read."
     },
     {
       "id": "extra_virgin_olive_oil",
@@ -1625,7 +1625,7 @@
       "one_liner": "The traditional Mediterranean cooking fat — pressed from whole olives rather than chemically extracted. Minimally processed in a category defined by heavy processing.",
       "why": "Extra virgin olive oil is produced by mechanical pressing without solvents or high-heat refining, which is what separates it from the industrial seed oils. It is affirmed here on that processing distinction and on its long traditional use — not on any health outcome. Note that only the explicit whole-food form is affirmed: a bare 'olive oil' on a label may be refined, and Kristy will not affirm what the label doesn't state.",
       "history": "Olives have been pressed for oil around the Mediterranean for thousands of years, by mechanical press long before industrial solvent extraction existed. The method predates the chemistry by millennia.",
-      "kristy_note": "This is the one cooking oil I'll affirm by name, and only when the label says extra virgin or cold-pressed. 'Olive oil' on its own can be refined or cut with something cheaper — it's not a flag, but it's not an affirmation either. Make the label tell you."
+      "kristy_note": "The one cooking oil affirmed by name, and only when the label says extra virgin or cold-pressed. 'Olive oil' on its own can be refined or cut with something cheaper. Not a flag, but not an affirmation either. Make the label say it."
     }
   ],
   "approved_alternatives": {

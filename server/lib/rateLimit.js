@@ -15,7 +15,7 @@ export const AUTH_RATE_WINDOW_MS =
 
 // Kristy-voiced line shown when a user trips the limit — never a bare 429.
 export const RATE_LIMIT_MESSAGE =
-  "You're moving fast — give me a minute and try again.";
+  "You're moving fast. Give it a minute and try again.";
 
 /**
  * Create a sliding-window limiter. The returned `limited(key)` returns true when

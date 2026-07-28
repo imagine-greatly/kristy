@@ -22,13 +22,13 @@ export default function ImportList({ onClose, onImported }) {
     try {
       const res = await importList(args);
       if (!res?.list) {
-        setError(res?.summary || "I couldn't read a list in that — try typing it out.");
+        setError(res?.summary || "No list found in that. Try typing it out.");
         return;
       }
       onImported(res.list, res.summary);
       onClose();
     } catch (err) {
-      setError(err?.message || "That didn't go through — give it another try.");
+      setError(err?.message || "That didn't go through. Try again.");
     } finally {
       setBusy('');
     }

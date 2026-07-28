@@ -20,7 +20,7 @@ const LINES = {
   weekly:
     "A weekly read only works if the week was kept. Sign in and it starts building from today.",
   recall:
-    "That's where I need to remember you. Sign in and it all sticks from here — starting with this.",
+    'That one needs a memory. Sign in and it all sticks from here.',
 };
 
 // Explicit recall of a past day / prior logging.

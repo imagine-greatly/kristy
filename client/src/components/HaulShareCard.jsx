@@ -71,7 +71,7 @@ export default function HaulShareCard({ haul, onClose }) {
       download(blob);
       flash('Saved image');
     } catch (e) {
-      if (e?.name !== 'AbortError') flash("Couldn't share — try Save");
+      if (e?.name !== 'AbortError') flash("Share failed. Try Save.");
     }
   }
 
@@ -82,7 +82,7 @@ export default function HaulShareCard({ haul, onClose }) {
       download(await canvasToBlob(canvas));
       flash('Saved image');
     } catch {
-      flash("Couldn't save — try again");
+      flash("Save failed. Try again.");
     }
   }
 

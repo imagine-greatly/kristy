@@ -4,12 +4,10 @@ import { GoldThread } from './GoldThread.jsx';
 import { BarcodeIcon, CameraIcon, AisleIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 
-/* ═══════════════════════ Scan moment — in the aisle ═══════════════════════
-   One of three peer moments, not the app's identity and no longer where it boots.
-   Three equal physical actions live here, because the store has two halves: scan a
-   barcode, photograph a label, or — for produce, the counter, the bulk bins, where
-   there's nothing to scan — ask about the aisle. The unlabeled half is a PEER of the
-   scanned half, so its entry point is a button beside the others, not a link below them.
+/* ═══════════════════════ Scan — the labeled half of the store ═══════════════════════
+   This surface reads what HAS a barcode. It is one half of the product, not the whole
+   of it: the other half is the aisle with no label, which now has its own destination
+   in the nav at the same weight. The link out of here is a peer, not a fallback.
 
    Tokens only. `guest` softens the copy since a guest gets the universal read. */
 
@@ -20,39 +18,25 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
     <div style={styles.wrap}>
       <div style={styles.mark}>Kristy</div>
       <GoldThread />
-      <h1 style={styles.headline}>
-        {guest ? "Show me what's in your cart." : "What are we putting in the cart?"}
-      </h1>
+      <h1 style={styles.headline}>What&rsquo;s in the box?</h1>
       <p style={styles.sub}>
         {guest
-          ? "Scan a product — what's really in it, ingredient by ingredient. No account needed to look."
-          : 'Scan it — the verdict against your goal, right here in the aisle.'}
+          ? 'Ingredient by ingredient. No account needed.'
+          : 'Read against how you eat, right here in the aisle.'}
       </p>
 
-      {/* ONE reflex action, then two quiet fallbacks.
-          These were three equal full-width buttons, which repeated the docked
-          composer's job — it already does photo and ask on every surface. The barcode
-          button stays big and physical because it's the thing you hit one-handed with a
-          box in the other; the other two step down to a quiet pair, present without
-          competing. */}
+      {/* ONE reflex action. The barcode button stays big and physical because it's
+          the thing you hit one-handed with a box in the other. */}
       <div style={styles.actions}>
         <button type="button" style={styles.primary} onClick={onScanBarcode}>
           <BarcodeIcon size={24} />
           <span>Scan a barcode</span>
         </button>
 
-        <div style={styles.minorRow}>
-          <button type="button" style={styles.minor} onClick={() => fileRef.current?.click()}>
-            <CameraIcon size={17} />
-            <span>Photograph the label</span>
-          </button>
-          {onAskAisle && (
-            <button type="button" style={styles.minor} onClick={onAskAisle}>
-              <AisleIcon size={17} />
-              <span>Ask the aisle</span>
-            </button>
-          )}
-        </div>
+        <button type="button" style={styles.minor} onClick={() => fileRef.current?.click()}>
+          <CameraIcon size={17} />
+          <span>Photograph the label</span>
+        </button>
 
         <input
           ref={fileRef}
@@ -68,22 +52,31 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
         />
       </div>
 
-      {/* The label path's real standing, stated once. It isn't error recovery — no
-          barcode database covers the whole store, and a photographed ingredient panel
-          works on anything, including the products none of them have. */}
-      <p style={styles.aisleNote}>
-        No barcode, or nothing in the database? A photo of the ingredient panel reads
-        on anything.
-      </p>
+      {/* The label path's real standing, stated once. Not error recovery: no barcode
+          database covers a whole store, and a photographed panel reads anything. */}
+      <p style={styles.aisleNote}>No barcode? A photo of the ingredient panel reads anything.</p>
 
-      <p style={styles.aisleNote}>
-        Produce, the counter, the bulk bins — the half of the store with no label has
-        sourced answers too.
-      </p>
+      {/* THE OTHER HALF. A full card, not a footnote — the unlabeled aisle is a peer
+          of this surface, and a shopper standing at the fish case with nothing to scan
+          gets there in one tap. */}
+      {onAskAisle && (
+        <button type="button" style={styles.otherHalf} onClick={onAskAisle}>
+          <span style={styles.otherHalfIcon}>
+            <AisleIcon size={20} />
+          </span>
+          <span style={styles.otherHalfText}>
+            <span style={styles.otherHalfTitle}>Nothing to scan?</span>
+            <span style={styles.otherHalfSub}>
+              Meat, seafood, produce, dairy, bulk. The half with no label.
+            </span>
+          </span>
+          <span style={styles.otherHalfChev} aria-hidden="true">›</span>
+        </button>
+      )}
 
       {onOpenChat && (
         <button type="button" style={styles.chatLink} onClick={onOpenChat}>
-          Something messier to work through? Ask Kristy →
+          Something messier to work through? →
         </button>
       )}
 
@@ -124,10 +117,9 @@ const styles = {
     fontSize: 16.5,
     cursor: 'pointer',
   },
-  minorRow: { display: 'flex', gap: 10 },
   // Subordinate: a card lift, no gold, smaller type. Present, not competing.
   minor: {
-    flex: '1 1 0',
+    width: '100%',
     minWidth: 0,
     display: 'flex',
     alignItems: 'center',
@@ -153,6 +145,27 @@ const styles = {
     color: colors.textMuted,
     maxWidth: 320,
   },
+  /* The other half of the store, as a real card. Gold-edged so it reads as a
+     destination of equal standing, not a consolation link. */
+  otherHalf: {
+    width: '100%',
+    boxSizing: 'border-box',
+    marginTop: 10,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    padding: '14px 15px',
+    borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9,
+    textAlign: 'left',
+    cursor: 'pointer',
+  },
+  otherHalfIcon: { flex: '0 0 auto', display: 'flex', color: colors.accentGold },
+  otherHalfText: { flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 },
+  otherHalfTitle: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 700, color: colors.textPrimary },
+  otherHalfSub: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.4, color: colors.textMuted },
+  otherHalfChev: { flex: '0 0 auto', color: colors.accentGoldMuted, fontSize: 18, lineHeight: 1 },
   chatLink: {
     marginTop: 8,
     padding: '8px 10px',

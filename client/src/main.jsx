@@ -14,7 +14,7 @@ function Misconfigured() {
   return (
     <div style={S.wrap}>
       <div style={S.inner}>
-        <p style={S.voice}>I can't reach my kitchen right now.</p>
+        <p style={S.voice}>Kristy can't start.</p>
         <p style={S.body}>
           This build is missing its configuration, so nothing it showed you would be
           real. Set {MISSING_ENV.length > 1 ? 'these' : 'this'} in the deployment

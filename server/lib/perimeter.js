@@ -34,7 +34,7 @@ const STOPWORDS = new Set(
 
 export const NO_ANSWER =
   perimeterKb.no_answer ||
-  "I don't have a solid answer on that one yet — and I'd rather say so than guess.";
+  'No solid answer on that one yet. Better said than guessed.';
 
 /* ───────────────────────── Retrieval (deterministic, no model) ─────────────────────────
    Score each entry by how many of its alias phrases (and title words) appear in the
@@ -91,6 +91,110 @@ export function publicEntry(e) {
   };
 }
 
+/* ═══════════════════ Browsing the perimeter, by store section ═══════════════════
+   Scanning answers "what is in THIS box". The perimeter answers "what should come off
+   THIS counter" — and the second half only works if a shopper can walk up to it. So the
+   KB is also a DESTINATION, grouped the way a store is, not just a search box.
+
+   A section is a LENS, not a partition: label terms cross-list into the sections where
+   they're actually read (a "no hormones" sticker is a meat-case question), so the same
+   entry can appear under both Meat and Label terms. That's correct — it's where a
+   shopper would look for it.
+
+   `thinNote` is the honesty rule. A section that doesn't cover something a shopper would
+   reasonably expect says so, in plain words, rather than padding itself with filler
+   topics. Naming the gap is what makes the covered part trustworthy. */
+export const PERIMETER_SECTIONS = [
+  {
+    id: 'meat',
+    title: 'Meat',
+    blurb: 'Cuts, ratios, and which labels on the case mean anything.',
+    categories: ['beef'],
+    labels: ['label_grass_fed_term', 'label_no_added_hormones', 'label_natural'],
+    thinNote: 'Beef only so far. Pork and lamb are not covered yet.',
+  },
+  {
+    id: 'seafood',
+    title: 'Seafood',
+    blurb: 'Wild or farmed, mercury, and what the freezer case is really for.',
+    categories: ['seafood'],
+    labels: [],
+    thinNote: 'Salmon, shrimp, canned fish and frozen. Sustainability ratings are not covered yet.',
+  },
+  {
+    id: 'produce',
+    title: 'Produce',
+    blurb: 'Where organic earns it, how to pick ripe, and what the season is doing.',
+    categories: ['produce'],
+    labels: ['label_organic_scope', 'label_nonGMO_vs_organic'],
+    thinNote: null,
+  },
+  {
+    id: 'eggs_dairy',
+    title: 'Eggs & Dairy',
+    blurb: 'Which egg carton claims hold up, and real cheese from cheese product.',
+    categories: ['poultry_eggs', 'dairy'],
+    labels: ['label_pasture_raised_feed', 'label_cage_free', 'label_free_range'],
+    thinNote: null,
+  },
+  {
+    id: 'bulk_pantry',
+    title: 'Bulk & Pantry',
+    blurb: 'Rice, oats, nuts, honey, and olive oil that is actually olive oil.',
+    categories: ['bulk_pantry'],
+    labels: ['label_multigrain_vs_whole_grain', 'label_lightly_sweetened'],
+    thinNote: null,
+  },
+  {
+    id: 'label_terms',
+    title: 'Label terms',
+    blurb: 'What the word on the front is allowed to mean.',
+    categories: ['label_terms'],
+    labels: [],
+    thinNote: null,
+  },
+];
+
+// A topic card: enough to browse and choose, never the whole entry. The full read
+// comes from GET /api/perimeter/:id, so a section index stays small.
+function topicCard(e) {
+  return {
+    id: e.id,
+    title: e.title,
+    question: e.question || null,
+    category: e.category || null,
+    evidence_tier: e.evidence_tier || null,
+    short_answer: e.short_answer || '',
+  };
+}
+
+const byId = (id) => (perimeterKb.entries || []).find((e) => e.id === id);
+
+/** Every section with its topic cards. Free — a KB read, no model, no account. */
+export function sectionIndex() {
+  return PERIMETER_SECTIONS.map((s) => {
+    const topics = (perimeterKb.entries || [])
+      .filter((e) => s.categories.includes(e.category))
+      .map(topicCard);
+    const labelTopics = s.labels.map(byId).filter(Boolean).map(topicCard);
+    return {
+      id: s.id,
+      title: s.title,
+      blurb: s.blurb,
+      topics,
+      labelTopics,
+      count: topics.length,
+      // Stated only when there IS a gap worth naming — an empty note renders nothing.
+      thinNote: s.thinNote || null,
+    };
+  });
+}
+
+/** One section, or null. */
+export function sectionById(id) {
+  return sectionIndex().find((s) => s.id === String(id || '').trim()) || null;
+}
+
 /* ───────────────────────── The claim lock (what the MODEL may see) ─────────────────────────
    The structural boundary: exactly the seven allowed fields. Everything else on the
    entry — sources, aliases, question, id, category, and ANYTHING injected upstream —
@@ -135,9 +239,9 @@ HARD RULES — absolute:
   to you. If it is not in the provided entries, it does not exist for this answer.
 - Respect the evidence tier of each claim. For "established" speak plainly. For
   "credible_concern" say the concern is real but not fully settled. For
-  "kristys_standard" frame it explicitly as YOUR standard/preference, not settled science
-  ("that's my preference, not a proven upgrade"). For "time_tested" be clear that history
-  is the evidence — a food-worth affirmation, never a health outcome.
+  "kristys_standard" frame it explicitly as THE WHOLE-FOOD STANDARD, not settled science
+  ("that's the whole-food standard, not a proven upgrade"). For "time_tested" be clear that
+  history is the evidence: a food-worth affirmation, never a health outcome.
 - You are a coach, not a doctor. NEVER claim any food treats, manages, cures, prevents,
   or lowers the risk of a disease or condition — in either direction. Never state or imply
   the shopper has a medical condition. Never give a medical directive. If an entry notes
@@ -149,13 +253,13 @@ HARD RULES — absolute:
 - If the entries don't actually answer their question, say so honestly and briefly rather
   than improvising from general knowledge.
 - Keep it tight. No preamble, no sign-off.
-- VOICE — EGOLESS AUTHORITY, NOT SERVICE. Answer the question; never narrate helping. NEVER
-  write "let me look that up", "I'll tell you what to get", "I've got you", "happy to help",
-  or any line announcing that you are performing a service. Default to the answer stated as
-  fact — "Sockeye and coho are almost always wild." / "Buy it frozen; it's often frozen at
-  sea." KEEP first person where you are STAKING A POSITION — "that's my preference, not a
-  proven upgrade", "wild is what I'd reach for" — which is how the evidence tiers stay
-  honest. The test: an "I" doing a job for them gets cut; an "I" taking a position stays.
+- VOICE — NO FIRST PERSON. Kristy is a standard, not a person narrating.
+  - NEVER use "I", "me", "my", "mine", "I'll", "I'd", "let me". Not once. There is no assistant here performing helpfulness.
+  - State the judgment as fact: "The cheapest real protein in the building. Rinse them to cut the sodium." / "Read the back, not the front." / "Put it back."
+  - OWNERSHIP OF A CONTESTED CALL STILL SURVIVES — it names a STANDARD instead of a person. Write "flagged on the whole-food standard, not settled science", never "that's my standard". Write "the whole-food-standard pick", never "what I'd reach for". Dropping that distinction would be worse than keeping the pronoun: the reader must always know whether a claim is settled science, a credible concern, or a standard.
+  - Present the result, never narrate making it: "Here's the cart:" then the substance. Never "I built you a cart", "let me put that together", "happy to help".
+  - NO EM-DASH ASIDES. No "— like this —" construction anywhere. Short plain sentences with periods.
+  - HALF THE WORDS. Confidence reads as brevity. Two tight sentences beat a paragraph.
 
 Return ONLY this JSON: {"answer": "...", "refinement": "..." or null}`;
 

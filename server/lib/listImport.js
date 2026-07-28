@@ -222,7 +222,7 @@ export function specifyImportedItems(rawItems, prefs = {}) {
         specified += 1;
       } else {
         const item = { name: name.trim(), category: 'Pantry', source: 'imported' };
-        item.swapOffer = `You told me ${declared[0]} — this one's yours to call.`;
+        item.swapOffer = `Your line is ${declared[0]}. This one is yours to call.`;
         offers.push(name.trim());
         items.push(item);
       }
@@ -272,7 +272,7 @@ function attachOfferIfClashes(item, name, lineIds, resolved, offers) {
   const hit = (matched || []).find((e) => lineIds.has(e.id));
   if (!hit) return;
   const rule = resolved.find((r) => r.ids.has(hit.id));
-  item.swapOffer = `That's ${hit.name.toLowerCase()} — you told me ${rule?.label || 'to keep that out'}.`;
+  item.swapOffer = `That's ${hit.name.toLowerCase()}. Your line: ${rule?.label || 'keep that out'}.`;
   offers.push(item.name);
 }
 
@@ -280,7 +280,7 @@ function attachOfferIfClashes(item, name, lineIds, resolved, offers) {
    "Kept your list, made it sharper" — never "fixed your choices". Egoless: it states
    what happened to the list, it doesn't narrate a service being performed. */
 export function importSummary({ items, specified, offers }) {
-  if (!items.length) return "I couldn't read anything on that one — try typing it out.";
+  if (!items.length) return 'Nothing readable on that one. Try typing it out.';
   const parts = [`Kept all ${items.length} of your items`];
   if (specified) parts.push(`sharpened ${specified} of them into what to actually reach for`);
   const line = `${parts.join(', ')}.`;

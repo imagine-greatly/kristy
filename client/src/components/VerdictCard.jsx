@@ -59,7 +59,7 @@ export default function VerdictCard({ loading, verdict, error, isGuest, onClose,
       downloadBlob(blob);
       flash('Saved image');
     } catch (err) {
-      if (err?.name !== 'AbortError') flash("Couldn't share — try Save");
+      if (err?.name !== 'AbortError') flash("Share failed. Try Save.");
     }
   }
 
@@ -71,7 +71,7 @@ export default function VerdictCard({ loading, verdict, error, isGuest, onClose,
       downloadBlob(blob);
       flash('Saved image');
     } catch {
-      flash("Couldn't save — try again");
+      flash("Save failed. Try again.");
     }
   }
 
@@ -146,7 +146,7 @@ export default function VerdictCard({ loading, verdict, error, isGuest, onClose,
 
             {isGuest && (
               <div className="verdict__hook">
-                <p>That&rsquo;s my read cold. Sign in and I&rsquo;ll read it against your actual targets.</p>
+                <p>That&rsquo;s the read cold. Sign in and it gets read against your own standard.</p>
                 <button className="verdict__signin" onClick={onSignIn}>
                   Sign in
                 </button>

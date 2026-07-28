@@ -34,14 +34,35 @@ function normalizePhone(raw) {
   return null; // ambiguous — needs a country code
 }
 
-// Turn Supabase's raw auth errors into short, human messages.
+/* Turn Supabase's raw auth errors into short, human messages.
+ *
+ * A CONFIGURATION failure must never wear the same coat as a typo. Every send error
+ * used to collapse into "Check the number and try again", so a project with its phone
+ * provider switched off, or Twilio credentials that never landed, looked exactly like
+ * a mistyped digit — the user retypes a number that was always correct, and nobody
+ * ever learns the send call is failing upstream. These cases are now named, and the
+ * raw error is logged so the cause is one console line away rather than a guess. */
 function friendlySendError(err) {
   const m = (err?.message || '').toLowerCase();
+  const code = (err?.code || err?.error_code || '').toLowerCase();
+
+  // Phone auth is switched off for the project. Nothing the shopper types can fix it.
+  if (code.includes('phone_provider_disabled') || m.includes('unsupported phone provider'))
+    return 'Text sign-in is switched off for this app right now. Nothing wrong with your number.';
+
+  // The SMS provider (Twilio) rejected the send: bad credentials, no verified sender,
+  // or a trial account that can only text verified numbers.
+  if (m.includes('error sending') || m.includes('sms provider') || m.includes('twilio'))
+    return "The text couldn't be sent from our end. Nothing wrong with your number.";
+
+  if (code.includes('signup_disabled') || m.includes('signups not allowed'))
+    return 'New sign-ups by text are switched off right now.';
+
   if (err?.status === 429 || m.includes('rate') || m.includes('too many'))
     return 'Too many attempts. Wait a minute and try again.';
   if (m.includes('invalid') && m.includes('phone'))
     return "That number doesn't look right. Include your country code (e.g. +1).";
-  return "Couldn't send the code. Check the number and try again.";
+  return "The code didn't send. Check the number and try again.";
 }
 
 function friendlyVerifyError(err) {
@@ -49,7 +70,7 @@ function friendlyVerifyError(err) {
   if (err?.status === 429 || m.includes('rate') || m.includes('too many'))
     return 'Too many attempts. Wait a minute and try again.';
   // Supabase returns "Token has expired or is invalid" for both cases.
-  return "That code didn't work — it may be wrong or expired. Try again, or tap Resend.";
+  return "That code didn't work. It may be wrong or expired. Tap Resend.";
 }
 
 // Seconds to lock the "Resend" link after a code is sent (the code itself
@@ -63,7 +84,7 @@ const RESEND_LOCK = 30;
  * just needs to get the user through verification. Reused by the full-screen
  * Auth wall AND the guest sign-in gate — one source of truth for sign-in.
  */
-export function SignInForm({ note = 'No password — just a 6-digit code by text.' }) {
+export function SignInForm({ note = 'No password. A 6-digit code by text.' }) {
   const [step, setStep] = useState('phone'); // 'phone' | 'code'
   const [phone, setPhone] = useState('');
   const [sentTo, setSentTo] = useState(''); // E.164 the code was sent to
@@ -95,6 +116,13 @@ export function SignInForm({ note = 'No password — just a 6-digit code by text
     setError('');
     const { error } = await supabase.auth.signInWithOtp({ phone: target });
     if (error) {
+      // The exact upstream reason, kept out of the UI but never thrown away. A silent
+      // "couldn't send" with no trace is what makes this class of bug take a week.
+      console.error('[kristy] signInWithOtp failed', {
+        status: error.status,
+        code: error.code || error.error_code,
+        message: error.message,
+      });
       setError(friendlySendError(error));
       setStatus('error');
       return false;
@@ -107,7 +135,7 @@ export function SignInForm({ note = 'No password — just a 6-digit code by text
 
   const handleSend = async () => {
     if (!normalized) {
-      setError("Enter a valid phone number — include your country code (e.g. +1) if you're outside the US.");
+      setError('Enter a valid phone number. Outside the US, include your country code (e.g. +1).');
       setStatus('error');
       return;
     }
@@ -153,7 +181,7 @@ export function SignInForm({ note = 'No password — just a 6-digit code by text
     return (
       <div className="auth__form">
         <p className="auth__note">
-          Enter the 6-digit code I texted to <b>{sentTo}</b>.
+          Enter the 6-digit code sent to <b>{sentTo}</b>.
         </p>
         <input
           ref={codeRef}

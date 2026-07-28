@@ -78,8 +78,8 @@ export default function IngredientPage({ id, onClose }) {
             <div style={styles.centered}>
               <p style={{ ...kristyVoice, ...styles.callLine }}>
                 {error.notFound
-                  ? "I don't have a page on that one yet."
-                  : "I couldn't pull that up just now."}
+                  ? "No page on that one yet."
+                  : "That didn't load just now."}
               </p>
               <button style={styles.ghost} onClick={onClose}>
                 Back to your scan

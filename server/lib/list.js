@@ -135,7 +135,7 @@ const PICKS = {
   },
   salmon: {
     name: 'Wild-caught salmon', category: 'Protein', perimeterId: 'salmon_wild_vs_farmed',
-    why: 'I lean wild when the budget allows — that’s my preference, not a verdict on farmed.',
+    why: 'Wild when the budget allows. A whole-food-standard call, not a verdict on farmed.',
     variants: {
       budget: { name: 'Canned wild salmon', why: 'Same fish, shelf-stable, and the bones come with calcium.' },
       short_on_time: { name: 'Frozen wild salmon fillets', why: 'Frozen at sea, portioned — thaw only what you need.' },
@@ -208,11 +208,58 @@ const PICKS = {
     why: 'Both keep for weeks and get eaten raw when you’re hungry.',
   },
   avocado: { name: 'Avocado', category: 'Produce', why: 'A whole-food fat that needs no cooking.' },
-  sweet_potatoes: { name: 'Sweet potatoes', category: 'Produce', why: 'Bake a tray, eat off it all week.' },
-  potatoes: { name: 'Potatoes', category: 'Produce', why: 'One of the cheapest real foods in the store, and filling.' },
-  bananas_apples: { name: 'Bananas and apples', category: 'Produce', why: 'The two the kids will actually eat, and no packaging.' },
-  garlic_onions: { name: 'Garlic and onions', category: 'Produce', why: 'The base of nearly everything you’ll cook this week.' },
-  whole_fruit: { name: 'Whole fruit — apples or oranges', category: 'Produce', why: 'Whole fruit over juice: the fiber comes with it.' },
+  bananas_apples: { name: 'Bananas and apples', category: 'Produce', why: 'The two most kids will actually eat, and no packaging.' },
+  garlic_onions: { name: 'Garlic and onions', category: 'Produce', why: 'The base of nearly everything cooked this week.' },
+
+  /* ── Fruit: RANGE, not two hardcoded berries ──────────────────────────────────
+     "Blueberries or strawberries" on every list is a smaller store than the one the
+     shopper is standing in. The default pick names the season and hands back a real
+     choice; the berry-specific pick stays for the lower-sugar focus, where the
+     distinction actually does work. */
+  seasonal_fruit: {
+    name: 'Whatever fruit is in season', category: 'Produce', perimeterId: 'produce_seasonality',
+    why: 'Apples, citrus, stone fruit, melon, grapes, pears. In season is cheaper and tastes like something.',
+    alt: 'Frozen works year-round and was picked ripe.',
+  },
+  whole_fruit: {
+    name: 'Whole fruit, any two kinds', category: 'Produce',
+    why: 'Whole over juice: the fiber comes with it.',
+  },
+
+  /* ── The whole-food carbs ─────────────────────────────────────────────────────
+     Carbs are not the enemy here; REFINED and industrial is the objection. Real meals
+     are built on a starch, and a coach who quietly leaves it off the list is coaching
+     a diet, not a week of eating. These are championed the same way the ferments and
+     the nutrient-dense cuts are: named specifically, with the reason on the row.
+
+     Every `why` is food-worth — what it is, how it is made, how it cooks. Nutrient
+     density is a fact about the food and is allowed; an outcome in a body is not. */
+  sweet_potatoes: {
+    name: 'Sweet potatoes', category: 'Produce',
+    why: 'More nutrient-dense than a white potato, and sweet enough to need nothing on it. Bake a tray, eat off it all week.',
+    alt: 'Or regular potatoes — still a real food, and cheaper.',
+  },
+  potatoes: {
+    name: 'Potatoes', category: 'Produce',
+    why: 'One of the cheapest real foods in the store, and one of the most filling.',
+  },
+  winter_squash: {
+    name: 'Butternut or acorn squash', category: 'Produce',
+    why: 'Keeps on the counter for weeks. Halve it, roast it, done.',
+  },
+  sourdough: {
+    name: 'Real sourdough', category: 'Bakery', tags: ['gluten'],
+    why: 'Flour, water, salt, starter. Nothing else on the label, and it was fermented, not just flavored.',
+    alt: 'Or sprouted whole-grain, from the freezer case.',
+  },
+  brown_rice: {
+    name: 'Brown or jasmine rice', category: 'Staples', perimeterId: 'rice_arsenic',
+    why: 'Brown keeps the bran, jasmine cooks softer. Rinse either one and cook it in extra water.',
+  },
+  quinoa: {
+    name: 'Quinoa', category: 'Staples',
+    why: 'Cooks in fifteen minutes and holds up cold in a bowl the next day. Rinse it first.',
+  },
 
   // ── Pantry ──
   steel_cut_oats: {
@@ -271,48 +318,50 @@ const PICKS = {
 // reason are authored ONCE and stay consistent everywhere it appears.
 const TEMPLATE_PICKS = {
   eating_cleaner: {
-    intro: 'Built for eating cleaner — whole foods first, the traditional ones that earn their place, and the ultra-processed stuff left off.',
-    picks: ['eggs', 'grass_fed_butter', 'liver', 'bone_broth', 'sauerkraut', 'chicken', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'beans', 'evoo'],
+    intro: 'Built for eating cleaner. Whole foods first, ultra-processed left off.',
+    picks: ['eggs', 'grass_fed_butter', 'chicken', 'greek_yogurt', 'sauerkraut', 'spinach', 'seasonal_veg', 'seasonal_fruit', 'sweet_potatoes', 'beans', 'evoo'],
   },
   high_protein: {
-    intro: 'Set up high-protein — the anchors up front so every meal has something real behind it.',
-    picks: ['chicken_breast', 'ground_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'beans', 'spinach', 'rice', 'evoo'],
+    intro: 'Set up high-protein. An anchor behind every meal.',
+    picks: ['chicken_breast', 'ground_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'beans', 'spinach', 'rice', 'sweet_potatoes', 'evoo'],
   },
   low_sugar: {
-    intro: 'Built to keep added sugar down — whole foods that satisfy without the spike.',
-    picks: ['eggs', 'chicken', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'almonds', 'avocado', 'steel_cut_oats', 'evoo'],
+    intro: 'Built to keep added sugar down. Whole foods that satisfy without the spike.',
+    picks: ['eggs', 'chicken', 'greek_yogurt', 'spinach', 'seasonal_veg', 'berries', 'almonds', 'avocado', 'steel_cut_oats', 'sweet_potatoes', 'evoo'],
   },
   family: {
-    intro: 'Built for the whole house — staples everyone eats, and cleaner versions of the usual snacks.',
-    picks: ['chicken', 'eggs', 'milk', 'greek_yogurt', 'bananas_apples', 'seasonal_veg', 'rice', 'steel_cut_oats', 'nut_butter', 'evoo'],
+    intro: 'Built for the whole house. Staples everyone eats, cleaner versions of the usual.',
+    picks: ['chicken', 'eggs', 'milk', 'greek_yogurt', 'bananas_apples', 'seasonal_veg', 'rice', 'potatoes', 'steel_cut_oats', 'nut_butter', 'evoo'],
   },
   gut_health: {
-    intro: 'Built around the ferments first — live cultures, then fiber to feed them, and the additives left out.',
-    picks: ['kefir', 'live_yogurt', 'sauerkraut', 'kimchi', 'miso', 'brined_pickles', 'lentils', 'steel_cut_oats', 'berries', 'spinach', 'garlic_onions', 'evoo'],
+    intro: 'Ferments first, then the fiber that feeds them.',
+    picks: ['kefir', 'live_yogurt', 'sauerkraut', 'kimchi', 'miso', 'brined_pickles', 'lentils', 'steel_cut_oats', 'seasonal_fruit', 'spinach', 'garlic_onions', 'evoo'],
   },
   avoiding_junk: {
-    intro: 'Built to sidestep the junk — and stocked with the real versions of what it replaces.',
-    picks: ['chicken', 'eggs', 'grass_fed_butter', 'greek_yogurt', 'brined_pickles', 'whole_fruit', 'spinach', 'seasonal_veg', 'almonds', 'popcorn', 'steel_cut_oats', 'evoo'],
+    intro: 'Built to sidestep the junk, stocked with the real version of what it replaces.',
+    picks: ['chicken', 'eggs', 'grass_fed_butter', 'greek_yogurt', 'whole_fruit', 'spinach', 'seasonal_veg', 'potatoes', 'almonds', 'popcorn', 'steel_cut_oats', 'evoo'],
   },
   weight_loss: {
-    intro: 'Built for weight loss — protein and fiber up front so you stay full on less, and the sugary stuff left off.',
-    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'spinach', 'seasonal_veg', 'berries', 'beans', 'steel_cut_oats', 'evoo'],
+    // Carbs are not the enemy on a weight-loss list either — this is the template most
+    // likely to quietly drop the starch, so it names one on purpose.
+    intro: 'Protein and fiber up front. Real starches stay.',
+    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'spinach', 'seasonal_veg', 'seasonal_fruit', 'beans', 'sweet_potatoes', 'steel_cut_oats', 'evoo'],
   },
   muscle_strength: {
-    intro: 'Set up for muscle and strength — protein at every meal, real carbs to train on, and the nutrient-dense cuts most people skip.',
-    picks: ['chicken_breast', 'grass_fed_beef', 'eggs', 'liver', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'rice', 'steel_cut_oats', 'beans', 'evoo'],
+    intro: 'Protein at every meal, real carbs to train on.',
+    picks: ['chicken_breast', 'grass_fed_beef', 'eggs', 'greek_yogurt', 'cottage_cheese', 'canned_fish', 'rice', 'potatoes', 'steel_cut_oats', 'beans', 'evoo'],
   },
   pregnancy_postpartum: {
-    intro: 'Built for this season — nutrient-dense whole foods that are easy to keep on hand.',
-    picks: ['eggs', 'chicken', 'sardines', 'greek_yogurt', 'spinach', 'beans', 'berries', 'sweet_potatoes', 'steel_cut_oats', 'almonds', 'evoo'],
+    intro: 'Nutrient-dense whole foods that keep well on hand.',
+    picks: ['eggs', 'chicken', 'sardines', 'greek_yogurt', 'spinach', 'beans', 'seasonal_fruit', 'sweet_potatoes', 'steel_cut_oats', 'almonds', 'evoo'],
   },
   athlete_performance: {
-    intro: 'Built for performance — enough real carbs to fuel the work, protein to recover.',
-    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'rice', 'steel_cut_oats', 'bananas', 'spinach', 'beans', 'evoo'],
+    intro: 'Enough real carbs to fuel the work, protein to recover.',
+    picks: ['chicken_breast', 'eggs', 'greek_yogurt', 'canned_fish', 'rice', 'potatoes', 'steel_cut_oats', 'bananas', 'spinach', 'beans', 'evoo'],
   },
   _default: {
-    intro: "Here's a clean starting list. Tell me what you're shopping for and it sharpens fast.",
-    picks: ['chicken', 'eggs', 'spinach', 'berries', 'steel_cut_oats', 'evoo'],
+    intro: 'A clean starting list. Say what the trip is for and it sharpens.',
+    picks: ['chicken', 'eggs', 'spinach', 'seasonal_fruit', 'sweet_potatoes', 'steel_cut_oats', 'evoo'],
   },
 };
 
@@ -520,7 +569,7 @@ function swapItems(nextList) {
       category: 'From your haul',
       checked: false,
       source: 'swap',
-      why: 'You scanned this last trip and I’d pick differently — open it for a better option.',
+      why: 'Scanned last trip, and there’s a better pick. Open it for one.',
       productName: s.product_name,
     }));
 }
@@ -702,6 +751,66 @@ export function mergePendingSwaps(list, nextList, premium) {
   const fresh = swapItems(nextList).filter((s) => !have.has(s.productName.toLowerCase()));
   if (!fresh.length) return list;
   return { ...list, items: [...fresh, ...list.items] };
+}
+
+/* ═══════════ Authored reasoning for a conversationally-built cart ═══════════
+   The cart is chat-first now: the shopper names what they're getting and the model
+   proposes the grocery names. That model is allowed to emit NAMES ONLY — a free-form
+   reason from it would be exactly the unbounded claim the whole engine exists to
+   prevent.
+
+   But a row without a reason is a checkbox, and the reason IS the coaching. So the
+   reasons are looked up, not generated: a composed item that resolves to a known pick
+   inherits that pick's AUTHORED `why` (and its perimeter entry), which is copy that
+   already passed the claim-safety tripwire in list.test.js. Anything with no matching
+   pick simply carries no reason — an honest blank beats an invented line. */
+const PICK_BY_CANONICAL = (() => {
+  const map = new Map();
+  for (const [key, p] of Object.entries(PICKS)) {
+    const c = canonicalItem(p.name);
+    // First pick wins, so the earliest-declared (most general) entry is the one a
+    // loosely-matching name resolves to.
+    if (c && !map.has(c)) map.set(c, { key, ...p });
+  }
+  return map;
+})();
+
+/** The authored pick a composed item name resolves to, or null. */
+export function pickForName(name) {
+  const c = canonicalItem(name);
+  if (!c) return null;
+  if (PICK_BY_CANONICAL.has(c)) return PICK_BY_CANONICAL.get(c);
+
+  // One direction only: the composed name may be MORE specific than the pick, never
+  // less. "Bone-in chicken thighs" resolves to "Chicken thighs, bone-in"; a bare "beef"
+  // must NOT inherit the grass-fed row's reasoning, because the shopper's own words
+  // never made that claim. A missing reason is honest; a borrowed one is not.
+  //
+  // Matched on the TOKEN SET rather than substring, because the same item is written in
+  // either order ("bone-in chicken thighs" / "chicken thighs, bone-in") and a substring
+  // test silently misses one of them. Two-token minimum, so no single common word can
+  // pull in a pick on its own.
+  const tokens = new Set(c.split(' ').filter(Boolean));
+  for (const [key, p] of PICK_BY_CANONICAL) {
+    const kt = key.split(' ').filter(Boolean);
+    if (kt.length >= 2 && kt.every((w) => tokens.has(w))) return p;
+  }
+  return null;
+}
+
+/** Attach authored why / perimeterId / alt to composed rows that resolve to a pick. */
+export function annotateFromPicks(items) {
+  return (Array.isArray(items) ? items : []).map((it) => {
+    if (it.why) return it; // already reasoned (a template row) — leave it alone
+    const p = pickForName(it.name);
+    if (!p) return it;
+    return {
+      ...it,
+      ...(p.why ? { why: p.why } : {}),
+      ...(p.perimeterId ? { perimeterId: p.perimeterId } : {}),
+      ...(p.alt ? { alt: p.alt } : {}),
+    };
+  });
 }
 
 /**

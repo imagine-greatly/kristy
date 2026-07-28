@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 const EXAMPLES = [
   'Is this cereal worth buying?',
-  'Build me a cart for taco night',
+  'Build a cart for taco night',
   'Wild or farmed salmon?',
   'A better grab than margarine?',
 ];
@@ -16,7 +16,7 @@ const GREETINGS = {
 
 const SUBTITLES = [
   'Ask anything, or scan a label.',
-  "Tell me what you're shopping for.",
+  "Say what the trip is for.",
   'No forms. Just talk.',
   'Scan it, ask about it, or build a list.',
 ];

@@ -303,11 +303,54 @@ test('a gut-health cart is ANCHORED by fermented foods, on the free tier', () =>
   assert.ok(firstNonFerment >= 4, `ferments should lead the cart, first non-ferment at ${firstNonFerment}`);
 });
 
-test('the holistic cart stocks the traditional nutrient-dense foods', () => {
-  const names = generateList({ goals: ['eating_cleaner'], premium: false }).items.map((i) => i.name.toLowerCase());
-  for (const champion of ['liver', 'bone broth', 'butter']) {
-    assert.ok(names.some((n) => n.includes(champion)), `eating_cleaner must stock ${champion}, got: ${names.join(', ')}`);
+test('champions are CONTEXTUAL, never default cart items', () => {
+  // A suggestion in the void hurts the product. Liver is the most nutrient-dense thing
+  // in the case AND the fastest way to make a cart feel imposed, so it may only appear
+  // where the shopper's own goal asked for it. "Eat cleaner" is not that ask.
+  const clean = generateList({ goals: ['eating_cleaner'], premium: false }).items.map((i) => i.name.toLowerCase());
+  for (const unrequested of ['liver', 'bone broth', 'natto', 'kombucha']) {
+    assert.ok(
+      !clean.some((n) => n.includes(unrequested)),
+      `eating_cleaner must NOT default-stock ${unrequested}, got: ${clean.join(', ')}`
+    );
   }
+
+  // …but a goal that IS the ask still gets them. gut_health chose the ferments.
+  const gut = generateList({ goals: ['gut_health'], premium: false }).items.map((i) => i.name.toLowerCase());
+  assert.ok(
+    gut.filter((n) => /kefir|sauerkraut|kimchi|miso|pickle|yogurt/.test(n)).length >= 4,
+    `gut_health asked for ferments and must get them, got: ${gut.join(', ')}`
+  );
+});
+
+test('every goal template carries a whole-food carb — carbs are not the enemy', () => {
+  // The failure this pins: a "clean"/"weight loss" cart that quietly drops the starch.
+  // Real meals are built on one, and leaving it off is a diet, not a week of eating.
+  const CARB = /sweet potato|potato|rice|oat|quinoa|bean|lentil|sourdough|bread|squash|banana/;
+  for (const goal of Object.keys(GOAL_TEMPLATES)) {
+    const names = generateList({ goals: [goal], premium: false }).items.map((i) => i.name.toLowerCase());
+    assert.ok(
+      names.some((n) => CARB.test(n)),
+      `${goal} must carry a whole-food carb, got: ${names.join(', ')}`
+    );
+  }
+});
+
+test('fruit is offered as range, not the same two berries every time', () => {
+  const clean = generateList({ goals: ['eating_cleaner'], premium: false }).items;
+  const fruit = clean.find((i) => /fruit/i.test(i.name));
+  assert.ok(fruit, `a clean-eating cart needs fruit, got: ${clean.map((i) => i.name).join(', ')}`);
+  // The row names a range rather than hardcoding two berries.
+  assert.match(fruit.why || '', /apple|citrus|melon|pear|stone fruit|grape/i);
+});
+
+test('sweet potato is reasoned by nutrient density, not just "bake a tray"', () => {
+  const names = generateList({ goals: ['weight_loss'], premium: false }).items;
+  const sp = names.find((i) => /sweet potato/i.test(i.name));
+  assert.ok(sp, 'weight_loss must carry sweet potatoes');
+  assert.match(sp.why, /nutrient-dense/i);
+  // Specific and comparative: it says what it beats and why.
+  assert.match(sp.why, /white potato/i);
 });
 
 test('a champion still obeys a hard line — the refusal outranks the advocacy', () => {

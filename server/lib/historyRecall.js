@@ -31,9 +31,9 @@ const WEEKLY_RE =
 // Kristy's upgrade nudges — direct, warm, one sentence, never salesy.
 const LINES = {
   history:
-    "Reaching back through your history is my coaching side — want me to keep track of everything for you?",
+    'Reaching back through your history needs an account. Sign in and it starts keeping.',
   weekly:
-    "Pulling your week together is part of the coaching — want me to start keeping your days so I can do that?",
+    'A week only comes together if the days were kept. Sign in and it starts today.',
 };
 
 /**
@@ -60,4 +60,4 @@ export function detectHistoryRecall(message) {
 // The free-user weigh-in nudge (used by the chat pipeline when a non-premium
 // user logs weight). We still acknowledge the number — we just don't track it.
 export const WEIGHT_UPGRADE_LINE =
-  "Tracking your weight trend and retuning your targets is where I do my best work — want me to keep track of everything for you?";
+  'Tracking a trend over time is a member feature. Sign in and it starts keeping.';

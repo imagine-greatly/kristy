@@ -1,17 +1,21 @@
 import { colors, fonts } from '../lib/tokens.js';
-import { ListIcon, HaulIcon, BarcodeIcon } from './Icons.jsx';
+import { ListIcon, HaulIcon, BarcodeIcon, AisleIcon } from './Icons.jsx';
 
-/* ═══════════════════════ Three-moment nav — Cart · Scan · Haul ═══════════════════════
-   The primary navigation of the grocery coach. Three PEER moments, in the order a trip
-   happens: Cart (before) · Scan (in the aisle) · Haul (after).
+/* ═══════════════ Nav — Cart · [Scan | Aisle] · Haul ═══════════════
+   The trip in order: Cart (before), the store itself (in it), Haul (after).
 
-   Scan keeps its raised gold treatment — in the aisle holding a box, scanning is the
-   fast reflex and must be instant and satisfying. What changed is the CLAIM: the app no
-   longer opens on the scanner as if scanning were the whole point. It's one strong
-   action among three, and the Cart is home.
+   THE STORE HAS TWO HALVES, and the nav says so. Scan reads the labeled half. Aisle
+   reads the half with no label at all: the fish counter, the butcher, produce, dairy,
+   bulk. Other scanners stop at the barcode; the unlabeled half is the part no scanner
+   can do, so it is not a fallback link tucked under the scan buttons. It sits in the
+   center pair at the same size, the same raise, the same reach.
 
-   Chat isn't here at all — it's the deep-input surface, docked as the composer and
-   reachable from the top bar, not a fourth moment competing with the sequence.
+   Gold fill goes to Scan because it is the one-handed physical reflex with a box in the
+   other hand. Aisle takes a gold outline: equal billing, different act. Two center
+   buttons, one product.
+
+   Chat isn't here — it's the deep-input surface, docked as the composer and reachable
+   from the top bar, not a moment competing with the sequence.
 
    Tokens only. Fixed to the bottom for single-hand thumb reach. */
 
@@ -33,7 +37,7 @@ function SideTab({ label, active, icon, badge, onClick }) {
   );
 }
 
-export default function BottomNav({ active, cartProgress, onList, onScan, onHaul }) {
+export default function BottomNav({ active, cartProgress, onList, onScan, onAisle, onHaul }) {
   const p = cartProgress || null;
   const cartBadge = p && p.total > 0 ? `${p.checked}/${p.total}` : null;
 
@@ -48,12 +52,40 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onHaul
           onClick={onList}
         />
 
-        {/* Scan — center, raised, gold. A strong physical action, always in reach. */}
+        {/* The store: both halves, side by side, same size and same raise. */}
         <div style={styles.center}>
-          <button type="button" onClick={onScan} aria-label="Scan a product" style={styles.scanBtn}>
-            <BarcodeIcon size={26} />
-          </button>
-          <span style={styles.scanLabel}>Scan</span>
+          <div style={styles.pair}>
+            <div style={styles.pairCol}>
+              <button
+                type="button"
+                onClick={onScan}
+                aria-label="Scan a product"
+                aria-current={active === 'scan' ? 'page' : undefined}
+                style={styles.scanBtn}
+              >
+                <BarcodeIcon size={24} />
+              </button>
+              <span style={styles.scanLabel}>Scan</span>
+            </div>
+
+            {onAisle && (
+              <div style={styles.pairCol}>
+                <button
+                  type="button"
+                  onClick={onAisle}
+                  aria-label="The aisle — food with no label"
+                  aria-current={active === 'aisle' ? 'page' : undefined}
+                  style={{
+                    ...styles.aisleBtn,
+                    ...(active === 'aisle' ? styles.aisleBtnActive : null),
+                  }}
+                >
+                  <AisleIcon size={24} />
+                </button>
+                <span style={styles.scanLabel}>Aisle</span>
+              </div>
+            )}
+          </div>
         </div>
 
         <SideTab label="Haul" active={active === 'haul'} icon={<HaulIcon />} onClick={onHaul} />
@@ -77,9 +109,10 @@ const styles = {
     maxWidth: 520,
     margin: '0 auto',
     display: 'grid',
-    gridTemplateColumns: '1fr 84px 1fr',
+    // Two center buttons now, not one — the store's two halves get equal footprint.
+    gridTemplateColumns: '1fr 150px 1fr',
     alignItems: 'end',
-    padding: '8px 12px 10px',
+    padding: '8px 10px 10px',
   },
   tab: {
     display: 'flex',
@@ -111,11 +144,13 @@ const styles = {
     alignItems: 'center',
     gap: 4,
   },
+  pair: { display: 'flex', alignItems: 'flex-end', gap: 10 },
+  pairCol: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 },
   scanBtn: {
-    // Raised above the bar so it reads as the primary action.
-    marginTop: -26,
-    width: 64,
-    height: 64,
+    // Raised above the bar so it reads as a primary action.
+    marginTop: -24,
+    width: 58,
+    height: 58,
     borderRadius: 999,
     display: 'flex',
     alignItems: 'center',
@@ -126,6 +161,23 @@ const styles = {
     boxShadow: `0 6px 18px ${colors.gold40}`,
     cursor: 'pointer',
   },
+  // Same size, same raise, same reach. Outline instead of fill: equal billing for a
+  // different kind of act, without spending gold twice in one row.
+  aisleBtn: {
+    marginTop: -24,
+    width: 58,
+    height: 58,
+    borderRadius: 999,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: colors.surface2,
+    color: colors.accentGold,
+    border: `2px solid ${colors.gold40}`,
+    boxShadow: colors.shadowRaised,
+    cursor: 'pointer',
+  },
+  aisleBtnActive: { background: colors.goldTint9, borderColor: colors.accentGold },
   scanLabel: {
     fontFamily: fonts.ui,
     fontSize: 11,

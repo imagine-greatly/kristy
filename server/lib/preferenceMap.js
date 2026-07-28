@@ -98,14 +98,14 @@ export function composeReply({ goal, focuses, hardLines, constraints = [], unmap
   hardLines.forEach((h) => set.push(labels.hardLine(h).toLowerCase()));
   constraints.forEach((c) => set.push(labels.constraint(c).toLowerCase()));
 
-  if (!set.length && !unmapped.length) return "I didn't catch a preference in that — tell me what you're shopping for.";
+  if (!set.length && !unmapped.length) return 'No preference caught in that. Say what the trip is for.';
 
   const list = set.length > 1 ? `${set.slice(0, -1).join(', ')} and ${set[set.length - 1]}` : set[0];
-  const head = set.length ? `Locked in — ${list}.` : "I couldn't map that to anything I hold a line on yet.";
+  const head = set.length ? `Locked in: ${list}.` : 'Nothing in that maps to a line held here yet.';
   if (!unmapped.length) return head;
 
   const missed = unmapped.length > 1 ? `${unmapped.slice(0, -1).join(', ')} and ${unmapped[unmapped.length - 1]}` : unmapped[0];
-  return `${head} The ${missed} part — that's not something I track yet. Pick the closest goal above; what I can see, I hold.`;
+  return `${head} The ${missed} part isn't tracked here yet. Pick the closest goal above.`;
 }
 
 /** Map free text onto the taxonomy. Returns { goal, focuses, hardLines, unmapped, reply }. */

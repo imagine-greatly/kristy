@@ -35,7 +35,7 @@ export default function GoalSwitcher({
 
         <div style={styles.body}>
           <h2 style={styles.title}>What are you shopping for?</h2>
-          <p style={styles.sub}>Tell me in your own words &mdash; that becomes your preferences. Or tap a few below. Switch anytime.</p>
+          <p style={styles.sub}>Say it in your own words, or tap a few below. Switch anytime.</p>
 
           {/* Natural language LEADS: the free-text field is the primary input. The
               chips below are suggestions, not the only way in. */}
@@ -80,7 +80,7 @@ export default function GoalSwitcher({
           </div>
 
           <h3 style={styles.section}>Anything to keep an eye on?</h3>
-          <p style={styles.sub}>Optional. Turn on what matters to you — I&rsquo;ll flag it as we shop.</p>
+          <p style={styles.sub}>Optional. Whatever is on here gets flagged as you shop.</p>
           <div style={styles.chips}>
             {FOCUSES.map((f) => {
               const on = focuses.includes(f.value);
@@ -120,7 +120,7 @@ export default function GoalSwitcher({
           </div>
 
           <h3 style={styles.section}>Hard lines</h3>
-          <p style={styles.sub}>I&rsquo;ll hold these on every product.</p>
+          <p style={styles.sub}>Held on every product, no exceptions.</p>
           <div style={styles.chips}>
             {NON_NEGOTIABLES.map((n) => {
               const on = nonNegotiables.includes(n.value);
@@ -196,7 +196,7 @@ function CustomLineSearch({ selected, onAdd }) {
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search an ingredient — carrageenan, red 40…"
+        placeholder="Search an ingredient: carrageenan, red 40…"
         style={styles.input}
         autoComplete="off"
       />
@@ -277,8 +277,8 @@ function FreeTextIntake({ lead = false, goals = [], focuses, nonNegotiables, con
 
   return (
     <div style={styles.freeWrap}>
-      {!lead && <h3 style={styles.section}>Or just tell me</h3>}
-      {!lead && <p style={styles.sub}>I&rsquo;ll set it up.</p>}
+      {!lead && <h3 style={styles.section}>Or just say it</h3>}
+      {!lead && <p style={styles.sub}>Plain words work.</p>}
 
       <form onSubmit={submit} style={styles.freeForm}>
         <input

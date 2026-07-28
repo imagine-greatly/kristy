@@ -342,7 +342,7 @@ export default function CartMoment({
 
       {!goals.length && onSetGoal && (
         <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
-          Tell me what you&rsquo;re shopping for →
+          Set how you eat →
         </button>
       )}
 
@@ -371,14 +371,14 @@ export default function CartMoment({
 
       {gated && (
         <Nudge
-          line="Building your cart from a sentence — “add taco night,” “three dinners for four” — is part of a membership. You can still add items by hand."
+          line="Building the cart from a sentence is part of a membership. Adding by hand always works."
           cta="See what membership adds"
           onUpgrade={onUpgrade}
         />
       )}
       {premium === false && !gated && (
         <Nudge
-          line="This is the basic cart. Membership shapes it around your focuses and folds in the swaps from your haul."
+          line="Basic cart. Membership shapes it around your focuses and folds in your haul swaps."
           cta="Unlock the full cart"
           onUpgrade={onUpgrade}
         />
@@ -454,26 +454,29 @@ export default function CartMoment({
 }
 
 /* ═══════════════════ The entry state: a question, not a list ═══════════════════
-   "We have no idea what the user is shopping for" was literally true — the cart
-   generated a nutrient-dense default before Kristy had asked a single thing. So the
-   trip now starts the way it would with a person: she asks, you answer, and the
-   answer is what builds the cart.
+   A trip starts LEAN. The cart used to generate an 18-item template before a single
+   question had been asked, and however good each row was, nobody requested it — so the
+   whole thing read as generic and imposed. Suggestions in the void hurt the product.
 
-   The quick-taps SEED the field rather than firing immediately. That keeps the
-   answer editable — "Quick weeknight dinners" becomes "Quick weeknight dinners, no
-   fish, my kid eats none of it" with one more sentence — and it teaches the shape of
-   a good answer without making the input feel like a form. */
+   So the shopper drives: they name what they're getting, and the cart is the OUTPUT of
+   that. Preferences shape which VERSION of each item lands, not what gets added.
+
+   The quick-taps SEED the field rather than firing immediately, which keeps the answer
+   editable and teaches the shape of a good one without making it a form.
+
+   A full cart is still available for anyone who wants one handed over. It's a button
+   now, not the landing state. */
 const TRIP_SEEDS = [
-  'Quick weeknight dinners',
-  'A clean week',
-  'Stock the pantry',
+  'Chicken, rice, something for breakfast',
+  'Three dinners this week',
+  'Snacks the kids will eat',
   'Just a few things',
 ];
 
 function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
   const [text, setText] = useState('');
   const [err, setErr] = useState('');
-  const busy = cart.busy === 'build';
+  const busy = !!cart.busy;
 
   async function submit(e) {
     e?.preventDefault();
@@ -482,24 +485,25 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
     setErr('');
     const res = await cart.compose(answer, 'build');
     if (res?.ok) setText('');
-    else if (!res?.gated) setErr("I couldn't put that together just now — try that once more.");
+    else if (!res?.gated && !res?.needsAccount) setErr('That did not go through. Try it once more.');
   }
 
   return (
     <div style={styles.ask}>
-      <p style={{ ...kristyVoice, ...styles.askQ }}>What are we shopping for today?</p>
+      <p style={{ ...kristyVoice, ...styles.askQ }}>What are you getting this week?</p>
+      <p style={styles.askSub}>Name it in your own words. Rough is fine.</p>
 
       <form style={styles.askForm} onSubmit={submit}>
         <input
           style={styles.askInput}
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Three dinners, something my kid will eat…"
-          aria-label="What this trip is for"
+          placeholder="Chicken, rice, snacks for the kids…"
+          aria-label="What you are getting this week"
           disabled={busy}
         />
         <button type="submit" style={styles.askGo} disabled={!text.trim() || busy}>
-          {busy ? 'Building…' : 'Build it'}
+          {busy ? '…' : 'Go'}
         </button>
       </form>
 
@@ -521,20 +525,22 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, goals }) {
       {busy && <AmbientIsm style={{ marginTop: 16 }} />}
       {err && <p style={styles.askErr}>{err}</p>}
 
-      {/* Free tier: building from a sentence is a membership capability, so she never
-          dead-ends them — the goal-templated cart is still one tap away. */}
-      {(gated || premium === false) && (
+      {/* THE OPT-IN. Some shoppers do want a cart handed to them. That's a choice
+          they make, on every tier, not the default state of the screen. */}
+      <button type="button" style={styles.ghostBtn} onClick={cart.rebuild} disabled={busy}>
+        Or build a full cart
+      </button>
+
+      {/* Free tier: building from a sentence is a membership capability. The full-cart
+          button above still works, so this never dead-ends. */}
+      {gated && (
         <div style={styles.askFree}>
           <p style={{ ...kristyVoice, ...styles.askFreeLine }}>
-            Building a cart from a sentence is part of a membership — but I can still
-            put together a starting cart from what you&rsquo;ve told me.
+            Building a cart from a sentence is part of a membership.
           </p>
-          <button type="button" style={styles.ghostBtn} onClick={cart.rebuild}>
-            Build from my preferences
-          </button>
           {onUpgrade && (
             <button type="button" style={styles.linkBtn} onClick={onUpgrade}>
-              See what membership adds →
+              What membership adds →
             </button>
           )}
         </div>
@@ -705,6 +711,7 @@ const styles = {
   /* ── The entry question ── */
   ask: { display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 8 },
   askQ: { margin: 0, fontSize: 23, lineHeight: 1.35, color: colors.textPrimary },
+  askSub: { margin: '-6px 0 0', fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
   askForm: { display: 'flex', gap: 8, alignItems: 'stretch' },
   askInput: {
     flex: 1, minWidth: 0, padding: '13px 15px', borderRadius: 12,

@@ -63,7 +63,7 @@ function CartAction({ tier, onAddToCart, onOpenCart }) {
           setAdded(true);
         }}
       >
-        {wouldSwap ? 'Add it anyway' : 'Keep it — add to cart'}
+        {wouldSwap ? 'Add it anyway' : 'Keep it. Add to cart.'}
       </button>
     </div>
   );
@@ -105,15 +105,15 @@ export default function ScanSheet({
   // The withheld-read CTA lives IN the card (not a separate button below it). For an
   // authed user who has never trialed, the peak-intent move is to START THE FREE WEEK
   // right here — the read they were blocked on then fills in place. A user who's
-  // already used the trial routes to the paid Upgrade ("Unlock my read"); guests are
+  // already used the trial routes to the paid Upgrade ("Unlock the full read"); guests are
   // asked to sign in. (onUpgrade is present only for authed users; guests get onSignIn.)
   const canStartTrial = !!onStartTrial && trialEligible && !!onUpgrade;
   const onUnlock = canStartTrial ? onStartTrial : onUpgrade || onSignIn || null;
   const unlockLabel = canStartTrial
-    ? 'Start my free week'
+    ? 'Start the free week'
     : onUpgrade
-      ? 'Unlock my read'
-      : 'Sign in for my read';
+      ? 'Unlock the full read'
+      : 'Sign in for the full read';
 
   let content;
   if (scan.loading) {
@@ -139,7 +139,7 @@ export default function ScanSheet({
     content = (
       <Centered
         title="Hm."
-        sub={scan.message || "That scan didn't go through — give it another try in a sec."}
+        sub={scan.message || "That scan didn't go through. Try again in a sec."}
       >
         <button style={styles.ghostBtn} onClick={onClose}>
           Close
@@ -164,14 +164,14 @@ export default function ScanSheet({
           ? 'Not in the data yet'
           : "Can't read that panel";
     const sub = scan.unreadable
-      ? "Guessing at a product from a partial read would be worse than not knowing. Snap the ingredient label — it gets read directly."
+      ? "Guessing from a partial read is worse than not knowing. Snap the ingredient label instead."
       : retryPhoto
         ? scan.message ||
-          "That panel didn't come through. One more shot of the ingredients list — straight on, close enough to fill the frame."
+          "That panel didn't come through. One more shot of the ingredients list, straight on and filling the frame."
         : barcodeMiss
-          ? 'Not in the data yet — snap the ingredient label and it gets read directly. That works on anything, barcode or not.'
+          ? 'Not in the data yet. Snap the ingredient label instead. That works on anything.'
           : scan.message ||
-            'Try the ingredients panel again, better lit — or type the product name.';
+            'Try the ingredients panel again, better lit. Or type the product name.';
     content = (
       <Centered title={title} sub={sub}>
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}

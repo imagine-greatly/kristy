@@ -114,7 +114,7 @@ function demoVerdict(isGuest) {
     ],
     fit: {
       summary: isGuest
-        ? "Protein-forward up front, but the back half is calorie-dense filler. That's my read cold. Sign in and it gets read against your actual targets."
+        ? "Protein-forward up front, but the back half is calorie-dense filler. That's the read cold. Sign in and it gets read against your actual targets."
         : "Covers about 3 of your 7 protein days. The calories are there for the week — the protein isn't.",
       stats: isGuest
         ? ['~148g protein', 'protein-forward', 'high calorie-density']

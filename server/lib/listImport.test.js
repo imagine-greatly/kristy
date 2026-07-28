@@ -62,7 +62,10 @@ test('a line-clashing item they wrote is named from THEIR line, never from an op
   });
   assert.deepEqual(names(r), ['margarine', 'vegetable oil'], 'kept verbatim');
   assert.ok(r.items.every((i) => i.swapOffer), 'both offered a swap');
-  assert.match(r.items[0].swapOffer, /you told me/i, 'grounded in what they declared');
+  // Grounded in THEIR declared line, and stated without a first-person pronoun —
+  // "Your line: no seed oils", never "I'd swap that" and never "you told me".
+  assert.match(r.items[0].swapOffer, /your line/i, 'grounded in what they declared');
+  assert.doesNotMatch(r.items[0].swapOffer, /\b(I|I'd|I'll|me|my)\b/, 'no first person');
 
   // With NO line declared, the same items get no commentary at all — the offer comes
   // from their rule, not from Kristy having a view about their food.

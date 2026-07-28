@@ -3,6 +3,8 @@ import { generateReply } from '../lib/chatEngine.js';
 import { detectMemoryAction } from '../lib/guestGate.js';
 import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
 import { generateList } from '../lib/list.js';
+import { composeListEdit } from '../lib/listCompose.js';
+import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
 import {
   GOAL_VALUES,
   FOCUS_VALUES,
@@ -145,7 +147,66 @@ router.post('/list', (req, res) => {
     console.error(`[kristy] /api/guest/list error @ ${new Date().toISOString()}:`, err?.message || err);
     return res.status(503).json({
       error: true,
-      message: "I couldn't put that cart together just now — try again in a moment.",
+      message: 'That cart did not come together. Try again in a moment.',
+    });
+  }
+});
+
+/* ═══════════ POST /api/guest/list/compose — a stranger builds a cart by talking ═══════════
+   The cart starts empty and a sentence fills it. That is the whole flow now, which means
+   it cannot require an account: gating it would put a sign-in wall in front of the first
+   real thing the product does, and a stranger who cannot answer the opening question has
+   no product at all.
+
+   Same claim lock as the authed editor, because it is literally the same code: the model
+   may only propose grocery NAMES + sections + a one-line summary, and the add/remove is
+   applied deterministically here. Nothing is written anywhere; the cart rides back in the
+   response and the client keeps it in guest state until they sign in.
+
+   This one DOES make a model call, so it draws on the shared per-IP inference budget
+   (the same pool as guest chat) rather than the free deterministic cart-build bucket. */
+router.post('/list/compose', async (req, res) => {
+  const instruction = String(req.body?.instruction || '').trim();
+  const mode = req.body?.mode === 'edit' ? 'edit' : 'build';
+  if (!instruction) return res.status(400).json({ error: 'instruction is required' });
+
+  if (rateLimited(clientIp(req))) {
+    return res.status(429).json({
+      error: true,
+      message: 'That is a lot at once. Give it a minute, or sign in to keep going.',
+      gate: true,
+      reason: 'limit',
+    });
+  }
+
+  try {
+    // No account to read from, so the prefs ride in the body — and are filtered against
+    // the taxonomy before they reach the composer, exactly as /api/guest/list does.
+    const prefs = sanitizeGuestPrefs(req.body?.prefs || req.body || {});
+    const current = sanitizeList(req.body?.list) || { goal: null, intro: '', items: [] };
+
+    const { add, remove, summary } = await composeListEdit({
+      instruction,
+      mode,
+      currentItems: current.items.map((i) => i.name),
+      goal: prefs.goals[0] || null,
+      goals: prefs.goals,
+      focuses: prefs.focuses,
+      hardLines: prefs.nonNegotiables,
+      constraints: prefs.constraints,
+    });
+
+    const next =
+      mode === 'build'
+        ? buildCart(current, add, { goal: prefs.goals[0] || null, summary })
+        : applyCompose(current, { add, remove });
+
+    return res.json({ list: sanitizeList(next) || next, summary, premium: false, guest: true });
+  } catch (err) {
+    console.error(`[kristy] /api/guest/list/compose error @ ${new Date().toISOString()}:`, err?.message || err);
+    return res.status(503).json({
+      error: true,
+      message: 'That cart did not come together. Try again in a moment.',
     });
   }
 });

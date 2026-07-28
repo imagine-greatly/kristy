@@ -6,10 +6,11 @@ import InputBar from './InputBar.jsx';
 import GuestGate from './GuestGate.jsx';
 import BottomNav from './BottomNav.jsx';
 import ScanHome from './ScanHome.jsx';
+import AisleMoment from './AisleMoment.jsx';
 import ScanSheet from './ScanSheet.jsx';
 import MomentStub from './MomentStub.jsx';
 import CartMoment from './CartMoment.jsx';
-import { ListIcon, HaulIcon } from './Icons.jsx';
+import { HaulIcon } from './Icons.jsx';
 import { sendGuestChat } from '../lib/api.js';
 import { runProductScan } from '../lib/logging.js';
 import { recordGuestScan, guestPrefs } from '../lib/guestState.js';
@@ -26,19 +27,16 @@ const rid = () =>
 const GATE_AFTER = 4;
 
 const INTRO = {
-  greeting: "I'm Kristy.",
-  subtitle: "Ask anything, or scan a label — no account needed to start.",
+  greeting: 'Kristy.',
+  subtitle: 'Ask anything, or scan a label. No account needed.',
 };
 const CAP_LINE =
-  "I've been paying attention. Sign in and none of it gets thrown away — your scans, your cart, and what you're shopping for.";
-const LIMIT_LINE =
-  "That's plenty for a taste. Sign in to keep going — your scans and your cart stick from there.";
-const INVITE_LINE =
-  "Sign in whenever you're ready — your scans, your haul, and what you're shopping for all stick from there.";
+  'Sign in and none of it gets thrown away. Your scans, your cart, your preferences.';
+const LIMIT_LINE = 'That\'s the free run. Sign in to keep going.';
+const INVITE_LINE = 'Sign in whenever. Your scans, haul and preferences stick from there.';
 // The offer that matters: it arrives AFTER the cart exists, and it's about keeping
 // what they already made — never "sign up to continue."
-const SAVE_LINE =
-  "Want this kept? Sign in and this cart — with everything you told me — is waiting next trip.";
+const SAVE_LINE = 'Save your cart. Sign in, no password, just a text.';
 
 // The stateless, gated app. Guests can SCAN and see the universal layer (what's in
 // the food) for free — the acquisition hook. The goal-personalized note and the
@@ -55,14 +53,22 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
   // being asked for. Always dismissible — declining leaves the session fully usable.
   const save = () => setGate({ reason: 'save', line: SAVE_LINE, terminal: false });
 
-  // The cart onboarding built, read back from guest state. Anything that genuinely
-  // needs an account (composing, rebuilding) raises the save offer instead of dying.
-  const cart = useGuestCart({ onNeedsAccount: save });
   const prefs = guestPrefs();
+  // The stranger's cart. Building it by talking works with NO account (the public
+  // composer); only a rebuild, which needs a stored profile, raises the save offer.
+  const cart = useGuestCart({
+    onNeedsAccount: save,
+    prefs: {
+      coach_goals: prefs?.coach_goals || [],
+      non_negotiables: prefs?.non_negotiables || [],
+      focuses: prefs?.focuses || [],
+      constraints: prefs?.constraints || [],
+    },
+  });
 
-  // Home is the CART, not the scanner — a stranger arrives here straight off
-  // onboarding and the cart is what they came for. Same rule as the signed-in app.
-  const [moment, setMoment] = useState(cart.hasCart ? 'list' : 'scan');
+  // Home is the CART either way. Empty, it asks what the trip is for — which is the
+  // first thing a stranger should be answering, not a template they never requested.
+  const [moment, setMoment] = useState('list');
   const [cameraOpen, setCameraOpen] = useState(false);
   const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error }
 
@@ -92,7 +98,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       if (result.error) {
         setMessages((prev) => [
           ...prev,
-          { id: rid(), role: 'ai', content: result.message || "I had trouble responding just now — give it another try in a sec.", macros: null },
+          { id: rid(), role: 'ai', content: result.message || 'That didn\'t go through. Try again in a sec.', macros: null },
         ]);
         return;
       }
@@ -120,7 +126,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { id: rid(), role: 'ai', content: "I had trouble responding just now — give it another try in a sec.", macros: null },
+        { id: rid(), role: 'ai', content: "That didn't go through. Try again in a sec.", macros: null },
       ]);
     } finally {
       setTyping(false);
@@ -162,8 +168,8 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
         error: true,
         message:
           args.mode === 'label'
-            ? "Couldn't read that one clearly — try another shot, better lit if you can."
-            : "That scan didn't go through — give it another try in a sec.",
+            ? "Couldn't read that one. Try another shot, better lit."
+            : "That scan didn't go through. Try again in a sec.",
       });
     }
   }
@@ -177,7 +183,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       <header className="topbar topbar--guest">
         <div className="guest-mark">Kristy</div>
         <button className="guest-signin" onClick={cart.hasCart ? save : invite}>
-          {cart.hasCart ? 'Save my cart' : 'Sign in'}
+          {cart.hasCart ? 'Save this cart' : 'Sign in'}
         </button>
       </header>
 
@@ -212,25 +218,27 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
               onScanBarcode={() => setCameraOpen(true)}
               onLabelFile={handleGuestLabel}
               onOpenChat={() => setMoment('chat')}
+              onAskAisle={() => setMoment('aisle')}
             />
           )}
-          {moment === 'list' &&
-            (cart.hasCart ? (
-              <>
-                {/* The taste, named honestly. This cart was generated at full
-                    tailoring; the ones after it aren't, and saying so plainly is the
-                    difference between a demo and a bait-and-switch. */}
+          {/* Free to browse, free to ask. No account anywhere in it. */}
+          {moment === 'aisle' && (
+            <AisleMoment
+              prefs={{
+                focuses: prefs?.focuses || [],
+                hardLines: prefs?.non_negotiables || [],
+                constraints: prefs?.constraints || [],
+              }}
+              onUpgrade={save}
+              onScan={() => setMoment('scan')}
+            />
+          )}
+          {moment === 'list' && (
+            <>
+              {/* The offer arrives once a cart EXISTS, so it reads as keeping
+                  something rather than a toll on the way in. */}
+              {cart.hasCart && (
                 <div className="taste-banner">
-                  <p className="taste-banner__line">
-                    Built on everything you told me &mdash; what you&rsquo;re watching, what
-                    you&rsquo;re working around, what to keep out. That&rsquo;s the full read.
-                  </p>
-                  <p className="taste-banner__sub">
-                    Carts after this one run leaner until you start your free week.
-                  </p>
-                  {/* The offer, in place and non-blocking. It arrives once the cart
-                      already exists, so it reads as keeping something rather than a
-                      toll on the way in. */}
                   <div className="taste-banner__save">
                     <span className="taste-banner__saveline">{SAVE_LINE}</span>
                     <button type="button" className="taste-banner__savebtn" onClick={save}>
@@ -238,34 +246,26 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                     </button>
                   </div>
                 </div>
-                <CartMoment
-                  cart={cart}
-                  goals={prefs?.coach_goals || []}
-                  nonNegotiables={prefs?.non_negotiables || []}
-                  focuses={prefs?.focuses || []}
-                  constraints={prefs?.constraints || []}
-                  onSetGoal={onEditPrefs}
-                  onUpgrade={save}
-                  onScan={() => { setMoment('scan'); setCameraOpen(true); }}
-                  onAskAisle={save}
-                />
-              </>
-            ) : (
-              <MomentStub
-                locked
-                icon={<ListIcon size={26} />}
-                title="Your cart"
-                lockLine="Tell Kristy what you're shopping for and the cart comes built around it."
-                ctaLabel="Set it up"
-                onCta={onEditPrefs}
+              )}
+              <CartMoment
+                cart={cart}
+                goals={prefs?.coach_goals || []}
+                nonNegotiables={prefs?.non_negotiables || []}
+                focuses={prefs?.focuses || []}
+                constraints={prefs?.constraints || []}
+                onSetGoal={onEditPrefs}
+                onUpgrade={save}
+                onScan={() => setMoment('scan')}
+                onAskAisle={() => setMoment('aisle')}
               />
-            ))}
+            </>
+          )}
           {moment === 'haul' && (
             <MomentStub
               locked
               icon={<HaulIcon size={26} />}
               title="Your haul"
-              lockLine="Scan all you like — your haul starts saving once you sign in."
+              lockLine="Scan all you like. Your haul starts saving once you sign in."
               ctaLabel="Sign in"
               onCta={invite}
             />
@@ -275,8 +275,10 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
 
       <BottomNav
         active={moment}
+        cartProgress={cart.progress}
         onList={() => setMoment('list')}
-        onScan={() => { setMoment('scan'); setCameraOpen(true); }}
+        onScan={() => setMoment('scan')}
+        onAisle={() => setMoment('aisle')}
         onHaul={() => setMoment('haul')}
         onChat={() => setMoment('chat')}
       />

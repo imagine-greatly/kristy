@@ -107,7 +107,7 @@ export async function sendWeightLog({ weight_value, weight_unit = 'lbs' }) {
   if (IS_DEMO) {
     await delay(450 + Math.random() * 400);
     return {
-      message: `Logged — ${weight_value} ${weight_unit}. I'll track the trend from here and keep your targets accurate.`,
+      message: `Logged: ${weight_value} ${weight_unit}. The trend keeps the targets accurate.`,
       hasFood: false,
       macros: null,
       foods: [],
@@ -174,7 +174,7 @@ export async function sendWeightLog({ weight_value, weight_unit = 'lbs' }) {
         : ` Trend: ${data.trend.trend} so far.`;
   }
   if (r?.adjusted) {
-    message += ` Based on your trend I've adjusted your daily target to ${r.newCalories} calories.`;
+    message += ` The trend moved your daily target to ${r.newCalories} calories.`;
   }
 
   return {

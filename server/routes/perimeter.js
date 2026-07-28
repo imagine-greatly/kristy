@@ -1,25 +1,36 @@
 import { Router } from 'express';
-import { requireAuth } from '../lib/supabase.js';
+import { optionalAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
+import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { premiumForReq } from '../lib/subscription.js';
 import {
   perimeterKb,
   matchEntries,
   publicEntry,
   composeAnswer,
+  sectionIndex,
+  sectionById,
   NO_ANSWER,
 } from '../lib/perimeter.js';
 
-// The Perimeter — Kristy's answers for the parts of the store with no barcode.
+// The Perimeter — the half of the store with no label.
 //
-//   GET  /api/perimeter            public index (id/title/category/question) — SEO/acquisition
-//   GET  /api/perimeter/:id        public entry (a full KB read, no model, no cost)
-//   POST /api/perimeter/ask        authed — free entry content + PREMIUM personalized answer
+//   GET  /api/perimeter             public index (id/title/category/question) — SEO/acquisition
+//   GET  /api/perimeter/sections    public browse-by-store-section index
+//   GET  /api/perimeter/sections/:id one section
+//   GET  /api/perimeter/:id         public entry (a full KB read, no model, no cost)
+//   POST /api/perimeter/ask         PUBLIC — free entry content + PREMIUM personalized answer
 //
 // Gating mirrors the rest of the app: the perimeter ENTRIES are FREE (a KB read, same as
 // the ingredient pages — the acquisition layer). The PERSONALIZED answer (filtered
 // through the shopper's goal/focuses/constraints) and the list-refinement it can return
 // are PREMIUM. The one model call is claim-locked in lib/perimeter.js.
+//
+// /ask takes optionalAuth, NOT requireAuth. The free branch is a deterministic KB read
+// with no model call and no stored data, so requiring an account bought nothing and cost
+// a stranger the exact thing they came to try. Anonymous callers can never reach the
+// premium branch (premiumForReq is only consulted when req.user exists) and are capped on
+// the shared per-IP guest budget instead of the per-user one.
 
 const ERROR_MSG =
   "I couldn't pull that read together just now — give me a second and ask again.";
@@ -51,6 +62,18 @@ perimeterRouter.get('/perimeter', (_req, res) => {
   return res.json({ topics });
 });
 
+/* ── Public browse-by-section — the perimeter as a DESTINATION, not a search box ──
+   Registered BEFORE /perimeter/:id, which would otherwise swallow "sections". */
+perimeterRouter.get('/perimeter/sections', (_req, res) => {
+  return res.json({ sections: sectionIndex() });
+});
+
+perimeterRouter.get('/perimeter/sections/:id', (req, res) => {
+  const section = sectionById(req.params.id);
+  if (!section) return res.status(404).json({ error: 'not_found' });
+  return res.json(section);
+});
+
 // ── Public entry — a full KB read (free universal layer, verbatim, no model) ──
 perimeterRouter.get('/perimeter/:id', (req, res) => {
   const id = String(req.params.id || '').trim();
@@ -60,9 +83,16 @@ perimeterRouter.get('/perimeter/:id', (req, res) => {
 });
 
 // ── Ask — the interactive path. Free gets the entry content; premium gets the read. ──
-perimeterRouter.post('/perimeter/ask', requireAuth, userRateLimit, async (req, res) => {
+perimeterRouter.post('/perimeter/ask', optionalAuth, userRateLimit, async (req, res) => {
   const question = String(req.body?.question || '').trim();
   if (!question) return res.status(400).json({ error: 'question is required' });
+
+  // Anonymous callers are capped on the shared per-IP guest budget. Matching is
+  // deterministic and costs nothing, so the ceiling exists for the model call the
+  // premium branch would make — which an anonymous caller never reaches.
+  if (!req.user && rateLimited(clientIp(req))) {
+    return res.status(429).json({ error: true, message: 'Too many questions at once. Try again shortly.' });
+  }
 
   const matched = matchEntries(question);
 
@@ -74,7 +104,9 @@ perimeterRouter.post('/perimeter/ask', requireAuth, userRateLimit, async (req, r
   // The matched entries are the FREE universal layer — returned verbatim to everyone.
   const entries = matched.map(publicEntry);
 
-  const premium = await premiumForReq(req);
+  // No account → the free layer, full stop. premiumForReq reads req.user.id, so it is
+  // only ever consulted once we know there IS a user.
+  const premium = req.user ? await premiumForReq(req) : false;
   if (!premium) {
     // Free: the entry content stands on its own; the personalized read is withheld.
     return res.json({ matched: true, entries, answer: null, refinement: null, gated: true, upsell: PERIMETER_UPSELL });
@@ -86,7 +118,7 @@ perimeterRouter.post('/perimeter/ask', requireAuth, userRateLimit, async (req, r
     const { answer, refinement } = await composeAnswer({ question, goal, focuses, hardLines, constraints, entries: matched });
     return res.json({ matched: true, entries, answer, refinement, gated: false });
   } catch (err) {
-    console.error(`[kristy] /api/perimeter/ask error (user ${req.user.id}):`, err?.message || err);
+    console.error(`[kristy] /api/perimeter/ask error (user ${req.user?.id || 'anonymous'}):`, err?.message || err);
     // Degrade to the free entry content rather than failing — the KB read still helps.
     return res.json({ matched: true, entries, answer: null, refinement: null, gated: false, error: true, message: ERROR_MSG });
   }

@@ -11,22 +11,22 @@ import { dayKey } from './format.js';
 
 const ADVICE = {
   default:
-    'Tell me what the trip is for — a few weeknight dinners, a clean week, restocking the pantry.',
+    'Say what the trip is for. A few weeknight dinners, a clean week, restocking the pantry.',
   seedOil:
-    "Refined seed oils are the ones I'd rather you skipped — solvent-extracted and heat-damaged. Butter, ghee, or a real cold-pressed olive oil do the same job without that.",
+    "Refined seed oils are the ones to skip. Solvent-extracted and heat-damaged. Butter, ghee, or a real cold-pressed olive oil do the same job without that.",
   fish:
-    "Wild-caught is the one I'd reach for, and frozen counts — it's often frozen at sea, so it can be fresher than the counter and cheaper besides.",
+    "Wild-caught is the whole-food-standard pick, and frozen counts. Often frozen at sea, so it beats the counter and costs less.",
   holistic:
-    "That's a lens I can hold. Say the word and the cart follows it — pasture-raised eggs, grass-fed meat, the least-processed version of each thing.",
+    "That lens holds. Say the word and the cart follows it: pasture-raised eggs, grass-fed meat, the least-processed version of each thing.",
   dinner:
-    "One sentence about the week — how many dinners, who's eating — and the groceries follow.",
+    "One sentence about the week and the groceries follow. How many dinners, who's eating.",
 };
 
 /* Demo-only mirror of the server's cart-command routing (server/lib/chatRouting.js).
    Kept deliberately small: demo is a sandbox, but it must not LIE about what the
    product does. Before this, the demo chat ran a macro estimator — so "build a
    holistic cart, raw milk, grass fed meat" matched the words "milk" and "egg",
-   returned a canned "Got it — that's going to land you in a good spot," and built
+   returned a canned "Noted. That lands you in a good spot," and built
    nothing. An acknowledgment with no artifact is the one reply she never gives. */
 const DEMO_EDIT_LEAD = /^\s*(add|put(?! together)|remove|delete|drop|swap|replace|cross|toss)\b/i;
 const DEMO_BUILD_VERB =
@@ -56,7 +56,7 @@ export function mockReply(text) {
   else if (/raw milk|grass.?fed|pasture|holistic/.test(lower)) message = ADVICE.holistic;
   else if (/dinner|what should i (eat|cook|buy)/.test(lower)) message = ADVICE.dinner;
   else if (/^(hi|hey|hello|yo|sup)\b/.test(lower))
-    message = 'Hey. Tell me what this trip is for.';
+    message = 'Say what this trip is for.';
 
   return { message, hasFood: false, macros: null, foods: [], insight: '' };
 }

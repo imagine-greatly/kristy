@@ -133,13 +133,13 @@ export function computeInsight(meals, goals, offsetMin = 0, profile = {}, weight
       return 'Three weeks without movement on weight. Calories look right — worth double-checking portions. Are you weighing your food?';
     }
     if (goal === 'build_muscle' && wTrend.trend !== 'gaining') {
-      return "Three weeks and weight hasn't moved. You might need more calories — I've been conservative. Want to bump the target?";
+      return "Three weeks and weight hasn't moved. The target has been conservative. Bump it?";
     }
   }
 
   // 10. Weight-logging nudge — no weigh-in for 7+ days. Monday only (≈once/week).
   if (weekday === 1 && daysSinceWeigh >= 7) {
-    return 'Weigh in when you get a chance — I track the trend to keep your targets accurate.';
+    return 'Weigh in when you get a chance. The trend keeps the targets accurate.';
   }
 
   return '';

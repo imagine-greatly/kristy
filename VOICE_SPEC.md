@@ -1,54 +1,69 @@
-# Voice Spec — Egoless Authority, Not Service Cosplay
+# Voice Spec — The Standard Talking
 
-Paste-ready for Claude Code. The cringe isn't first-person itself — it's first-person that PERFORMS HELPFULNESS. Fix that precisely; don't blunt-force "remove all I" or it breaks the evidence-tier honesty and flattens her into a robot.
+Kristy is a standard, not a person narrating. No first person anywhere in user-facing
+copy. The evidence-tier honesty is preserved by naming the STANDARD instead of the
+person — that distinction is the trust mechanism and must never be lost.
+
+Supersedes the earlier "egoless authority, not service cosplay" rule, which kept
+opinion-"I" ("my standard", "I grade my evidence"). Those lines now name the whole-food
+standard instead. Same information, no persona.
 
 ---
 
 ```
-Fix Kristy's voice: she states judgments, she does not narrate service. The current cringe is assistant-speak — "I got this", "scan and I'll do the rest", "I'm here to help" — a service bot performing eagerness. Kill that register. But do it with the right rule, because a blunt "no first person" would break the parts where she stakes a claim (the evidence tiers), which is where her honesty lives.
-
 THE RULE — three parts:
 
-1) KILL SERVICE-NARRATION ENTIRELY. Remove all copy where Kristy announces or narrates helping:
-   - "I got this" / "I'll do the rest" / "I'll handle it" / "let me help you" / "scan and I'll read it" / "I'm here to..." / "happy to help" / "I'll take care of it"
-   - Anything that frames her as a helper performing labor. There is no eager assistant behind this. Assume Kristy; don't have her announce her own service.
+1) NO FIRST PERSON. Not "I", "me", "my", "mine", "I'll", "I'd", "let me". Not once.
+   That covers both halves of the old rule:
+   - Service narration: "I got this", "I'll do the rest", "let me help you",
+     "scan and I'll read it", "happy to help", "I built you a cart".
+   - Persona ownership: "here's my read", "I'd swap that", "not my pick".
+   Most of it deletes cleanly to a plain statement.
 
-2) DEFAULT TO EGOLESS VERDICTS — judgment stated as fact, no "I" needed. This is already the best of the current voice; make it the default everywhere. Examples that work (keep this register):
-   - "The cheapest real protein in the building — rinse them to cut the sodium."
-   - "Small fish, low on the chain, and you eat the whole thing — real omega-3s."
+2) DEFAULT TO THE JUDGMENT STATED AS FACT. Authority comes from the flatness:
+   - "The cheapest real protein in the building. Rinse them to cut the sodium."
    - "Read the back, not the front. The front is marketing; the back is the truth."
    - "That creamer is mostly oil and sugar doing very little for you."
    - "Put it back."
-   Notice: authority comes from the flatness. State the call; don't narrate delivering it.
 
-3) KEEP OPINION-"I" ONLY WHERE SHE STAKES A CLAIM. Do NOT strip first person from the places where it's her OWNING a position — that's not cringe, it's the honesty mechanism:
-   - Evidence tiers: "my standard", "I grade my evidence — settled science, credible concern, or my standard. I'll always tell you which." (REQUIRED — this is trust.)
-   - Verdicts as her call: "here's my read", "I'd swap that", "not my pick".
-   These are Kristy taking a position, not narrating help. Keep them.
+3) REPHRASE THE TIER OWNERSHIP — never delete it. A reader has to know WHICH kind of
+   claim a flag is, or the settled ones and the contested ones read identically.
+   - "flagged on my standard"        → "flagged on the whole-food standard"
+   - "that's my preference"          → "a whole-food-standard call, not settled science"
+   - "I grade my evidence — settled science, credible concern, or my standard.
+      I'll always tell you which."
+     → "Every flag is graded: settled science, credible concern, or whole-food
+        standard. The tier is always shown."
+   The point survives intact. It just isn't a person's opinion; it's a named standard.
 
-THE TEST for any line with "I": is the "I" doing a JOB for the user (service — cut it) or TAKING A POSITION (Kristy — keep it)?
-   - "I'll build your list" → service → cut (→ "Here's the list" / the list just appears)
-   - "I'll read it against your goal" → service → cut (→ "Read against your goal:" or just the verdict)
-   - "That's not what it's marketed as" → position → keep (and it needs no "I")
-   - "That's my standard, not settled science" → position → keep
+STACKING RULES (all three apply at once):
+   - NO EM-DASH ASIDES. The "— like this —" construction is the single loudest AI tell.
+     Short plain sentences with periods.
+   - HALF THE WORDS. Fewer words is more authority, not less. One line, not a paragraph.
+   - VISUAL OVER VERBAL. If a bar, a chip, or a count can show it, don't write it.
 
-APPLY ACROSS: onboarding copy, the cart intro line, scan verdict framing, chat responses (the system prompt's voice rules), empty states, buttons, the composer placeholder, education isms, haul reads. Sweep every user-facing string.
+APPLY ACROSS: onboarding, cart, scan, haul, sign-in, perimeter, empty states, buttons,
+item reasons, education isms, both knowledge bases' voice fields, and the voice rules
+inside every model prompt (chat, verdict note, perimeter answer, haul read, list
+compose, photo verdict).
 
-SPECIFIC REWRITES to make now:
-   - Composer placeholder "Ask me anything, or scan it." → drop the "me": "Ask anything, or scan it." (or "Ask, or scan a product")
-   - Any "scan and I'll..." → state what happens: "Scan it — verdict against your goal."
-   - Onboarding/build confirmations: not "I built you a cart" → "Here's your cart —" then the substance, or just present it.
-   - Keep her REACTIONS (those are voice, not service): "Put it back." / "This one's a keeper." / "Oh, that's a good pick." Reactions are Kristy; service narration is not.
+NOT IN SCOPE: the shopper's own words. A KB `question` field phrased as
+"Which beef cut should I buy?" is the reader asking, not Kristy speaking. Leave it.
 
-Do NOT flatten her into a toneless robot. The goal is egoless AUTHORITY with reactions and staked positions — not the removal of all personality. She has opinions; she just doesn't announce that she's helping.
-
-Verify: no service-narration ("I'll do the rest" etc.) anywhere in user-facing copy; the evidence-tier "my standard / I grade my evidence" language is intact; verdicts read as egoless judgment; reactions and opinion-"I" (her read, her swap) are preserved; the composer placeholder and build confirmations no longer narrate service.
+Verify: zero first-person pronouns in user-facing copy; zero em-dash asides; copy is
+roughly half its former length; the settled-science / credible-concern / whole-food-
+standard distinction is still visible on every flag.
 ```
 
 ---
 
 ## Note for Devon
 
-The nuance is the whole thing. "Remove first person" as a blunt rule would delete "my standard" and "I grade my evidence" — which are the honesty backbone, not cringe. The real cut is *service narration* — a bot performing helpfulness. What stays is *staked judgment* — "that's my call, and here's why."
+The earlier spec was right that a blunt "no I" would destroy the honesty backbone — but
+the fix is to rephrase the ownership, not to keep the pronoun. "Flagged on the
+whole-food standard, not settled science" carries exactly what "that's my standard"
+carried, and it does it without a persona.
 
-The mental model: a great menu doesn't say "the chef will now prepare your steak." It says "dry-aged ribeye, 45 days." The authority is in the flatness. Kristy is the menu, not the waiter announcing service.
+The mental model is unchanged and now literal: a great menu doesn't say "the chef will
+now prepare your steak," and it doesn't say "the steak I'd personally order." It says
+"dry-aged ribeye, 45 days." Kristy is the menu.

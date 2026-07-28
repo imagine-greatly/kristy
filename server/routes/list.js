@@ -215,6 +215,7 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
       mode,
       currentItems: current.items.map((i) => i.name),
       goal,
+      goals,
       focuses,
       hardLines: nonNegotiables,
       constraints,
