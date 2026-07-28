@@ -337,6 +337,11 @@ Copy the examples and fill them in — `server/.env.example`, `client/.env.examp
 | `STRIPE_PRICE_MONTHLY` | | A `price_xxx` id. |
 | `STRIPE_PRICE_ANNUAL` | | A `price_xxx` id. |
 | `CRON_SECRET` | | Guards the all-users cron trigger. Blank disables it. |
+| `BIRD_API_KEY` | ✅ for phone sign-in | Bird SMS access key (`bk_<region>_…`). The region is read off the prefix. |
+| `SEND_SMS_HOOK_SECRETS` | ✅ for phone sign-in | `v1,whsec_<base64>` from the Supabase hook. Separate rotated secrets with `\|`, never a comma. |
+| `BIRD_TEMPLATE_NAME` | | Defaults to `bird_otp_verification`. |
+| `BIRD_TEMPLATE_LANGUAGE` | | BCP-47 tag for a localized template body. Blank ⇒ English. |
+| `BIRD_REGION` | | Only to override the region the key prefix already implies. |
 | `SODIUM_HIGH` / `ADDED_SUGAR_HIGH` / `CAFFEINE_HIGH` | | Engine thresholds. Sensible defaults in `verdictEngine.js`. |
 
 **`client/.env`** — only `VITE_*` vars reach the browser.
@@ -411,6 +416,11 @@ taxonomy has a cart template.
 - **Stripe webhook** → `POST https://<server>/api/stripe/webhook`. It is mounted *before*
   `express.json()` with a raw body parser, because signature verification needs the exact
   bytes Stripe signed.
+- **Supabase Send SMS hook** → `POST https://<server>/api/auth/hooks/send-sms`. Same
+  raw-body rule, same reason (Standard Webhooks signs the exact bytes). Register it under
+  Authentication → Hooks → Send SMS. Supabase mints and verifies the OTP; this endpoint only
+  delivers it, through Bird's template API. Supabase's built-in MessageBird provider is
+  **not** usable — it calls Bird's retired originator+body API and 422s.
 
 ---
 

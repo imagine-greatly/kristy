@@ -159,6 +159,23 @@ equality *is* the positioning.
   error boundary, an inline boot guard in `app.html` — the only one that can catch a
   module-evaluation crash). `VITE_API_URL` is required in a production build.
 
+**Phone sign-in**
+- **Supabase's built-in MessageBird provider is dead — never re-enable it.** It calls
+  Bird's retired originator+body API and gets a 422, which reaches the shopper as "the
+  code didn't send" for a number that was always correct. Delivery is ours, via the
+  **Send SMS Hook** (`POST /api/auth/hooks/send-sms`). Supabase still mints and verifies
+  the OTP; we only carry the digits.
+- **Bird's current API is a TEMPLATE model, not a text model.** `bird.sms.send({ to,
+  template: { name, parameters: { code } } })`. `from` and `category` are derived from the
+  template and are *rejected* if passed. Carriers vet the template, which is the point.
+- **`toE164` is not tidying — without it every send fails.** Supabase stores
+  `auth.users.phone` with no leading `+`, and Bird 422s on bare digits.
+- **The hook's signature is the only gate.** The URL is public and the body is a phone
+  number plus a live code, so an unsigned call is a stranger, not a degraded call: 401,
+  nothing else. Raw body before `express.json()`, exactly like the Stripe webhook.
+- Bird's SDK timeout is cut to 3.5s with **no** SDK-level retry, because a Supabase auth
+  hook has a 5s budget for the whole round trip. Supabase owns the retry.
+
 **Money**
 - Price *ids* are configuration, never hardcoded, and the client never sees them.
   Displayed prices have exactly one source per client (`lib/pricing`).
@@ -191,9 +208,11 @@ equality *is* the positioning.
   `shopping_lists`, and the `user_goals` columns `coach_goals` / `constraints` /
   `macro_tracking`. Code degrades gracefully without them, so this is untested against a
   real database, not broken.
-- ⚠️ **Phone OTP** needs the Supabase dashboard corrected (provider + Twilio creds). The
-  client call is correct and now names the distinct failure modes instead of blaming the
-  typed number.
+- ⚠️ **Phone OTP** is built end to end but not switched on. Remaining, all outside the
+  code: register the Send SMS hook in the Supabase dashboard, put `BIRD_API_KEY` +
+  `SEND_SMS_HOOK_SECRETS` in the server env, and clear **10DLC brand + campaign
+  registration** at Bird — US carriers block unregistered A2P traffic, so nothing sends
+  until that lands, and it is a multi-day queue, not a toggle.
 - **Known-dead, left in place**: `/api/photo`, `/api/weight`, the weekly-summary
   pipeline, `mealResolver`, `store.js setMacroTracking`; client `lib/logging.js
   sendPhoto`, `api.js sendWeightLog`, several `data.js` readers, `lib/dayBoundary.js`.

@@ -22,6 +22,7 @@ import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
 import revenueCatWebhookRoute from './routes/revenuecat.js';
+import authHooksRoute from './routes/authHooks.js';
 import pushRoute from './routes/push.js';
 import { startCron } from './cron.js';
 
@@ -38,6 +39,11 @@ app.use(cors({ origin: origins }));
 // exact bytes Stripe signed, so this must run BEFORE express.json() parses (and
 // discards) the raw payload. Everything below uses the JSON parser as normal.
 app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }), stripeWebhookRoute);
+
+// Supabase Auth hooks, same rule and for the same reason: the Standard Webhooks
+// signature covers the exact bytes Supabase sent, so this must see the raw body
+// too. Public URL, but every call is signature-gated — see routes/authHooks.js.
+app.use('/api/auth/hooks', express.raw({ type: 'application/json' }), authHooksRoute);
 
 app.use(express.json({ limit: '1mb' }));
 
