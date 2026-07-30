@@ -7,6 +7,7 @@ import { premiumForReq } from '../lib/subscription.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
 import {
   looksLikePerimeterQuestion,
+  looksLikeCounterQuestion,
   looksLikePreferenceDeclaration,
   looksLikeCartCommand,
   cartCommandMode,
@@ -296,6 +297,26 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
           // one-tap add of its cart_pick. A counter answer should fill the cart from
           // wherever it was asked, not only from the Counter tab.
           perimeterEntry: publicEntry(matched[0]),
+        });
+      }
+
+      // Nothing matched. If the question was unmistakably about the counter, the
+      // honest miss IS the answer — the coach reply would be a sourceless
+      // improvisation about the one half of the store the claim lock exists to
+      // protect. A named gap (lamb, crab, game) is what makes the covered part
+      // trustworthy, and it is the same line the browse path already gives.
+      if (looksLikeCounterQuestion(message)) {
+        await saveChatMessage(userId, { role: 'user', content: message });
+        await saveChatMessage(userId, { role: 'ai', content: NO_ANSWER });
+        return res.json({
+          message: NO_ANSWER,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          perimeter: true,
+          perimeterMiss: true,
+          perimeterEntry: null,
         });
       }
     }

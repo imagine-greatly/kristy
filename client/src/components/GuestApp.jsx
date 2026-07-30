@@ -123,6 +123,13 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       };
       setMessages((prev) => [...prev, aiMsg]);
 
+      // A COUNTER answer does not spend the free run. It is a deterministic KB read
+      // with no model call and nothing stored, and the counter is the free layer by
+      // design — so charging it against a four-message budget puts a sign-in wall in
+      // front of the exact thing a stranger came to try. The budget exists for the
+      // model, and the model was never called.
+      if (result.perimeter) return;
+
       const next = exchanges + 1;
       setExchanges(next);
       if (next >= GATE_AFTER) setGate({ reason: 'cap', line: CAP_LINE, terminal: true });

@@ -5,7 +5,7 @@ import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
 import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
-import { looksLikePerimeterQuestion } from '../lib/chatRouting.js';
+import { looksLikePerimeterQuestion, looksLikeCounterQuestion } from '../lib/chatRouting.js';
 import { matchEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
 import {
   GOAL_VALUES,
@@ -83,6 +83,22 @@ router.post('/chat', async (req, res) => {
           insight: '',
           perimeter: true,
           perimeterEntry: top,
+        });
+      }
+
+      // Nothing matched, and the question was unmistakably about the counter →
+      // the honest miss, not an improvisation. A stranger is exactly who cannot
+      // afford a made-up counter answer: it is the first thing they ever see.
+      if (looksLikeCounterQuestion(message)) {
+        return res.json({
+          message: NO_ANSWER,
+          hasFood: false,
+          macros: null,
+          foods: [],
+          insight: '',
+          perimeter: true,
+          perimeterMiss: true,
+          perimeterEntry: null,
         });
       }
     }

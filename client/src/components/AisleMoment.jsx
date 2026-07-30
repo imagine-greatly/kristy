@@ -15,9 +15,12 @@ import { trackEvent } from '../lib/analytics.js';
    the barcodes live; the counter is the half that has none. The internal ids, routes and
    analytics keep the older `aisle` name.
 
-   Two first-class ways in, both here:
+   Two ways in, and ASKING LEADS. A coach for the unlabeled store is one you can talk
+   to; browsing is how you explore it. So the ask sits at the top in a raised card of
+   its own, above the section list, and the same question typed into the docked
+   composer on any other surface reaches the same sourced entries.
+     • ASK in plain words — the fast path, one step to an answer
      • BROWSE by store section, the way a shopper actually walks it
-     • ASK a question in plain words, routed to the same sourced entries
 
    Everything on this surface is a free KB read: no account, no model call, no cost.
    Only the personalized read (filtered through goal / focuses / constraints) is
@@ -62,12 +65,11 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     }
   }
 
-  async function submitAsk(e) {
-    e?.preventDefault();
-    const q = question.trim();
+  async function runAsk(raw, via) {
+    const q = String(raw || '').trim();
     if (!q || ask?.state === 'loading') return;
     setAsk({ state: 'loading' });
-    trackEvent('perimeter-ask', { via: 'aisle' });
+    trackEvent('perimeter-ask', { via });
     try {
       const resp = await askPerimeter({
         question: q,
@@ -80,6 +82,18 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     } catch {
       setAsk({ state: 'error' });
     }
+  }
+
+  function submitAsk(e) {
+    e?.preventDefault();
+    runAsk(question, 'aisle');
+  }
+
+  // A seed ASKS. It used to only fill the box, which made the shortcut two taps —
+  // the tap, then the same Ask button they could have reached by typing.
+  function askSeed(seed) {
+    setQuestion(seed);
+    runAsk(seed, 'seed');
   }
 
   /* ── A single topic, read in full ── */
@@ -155,27 +169,34 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         answer at every one.
       </p>
 
-      {/* ASK — plain words, same sourced answers as browsing. */}
-      <form style={styles.askForm} onSubmit={submitAsk}>
-        <input
-          style={styles.askInput}
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Wild or farmed salmon?"
-          aria-label="Ask about the counter"
-          disabled={ask?.state === 'loading'}
-        />
-        <button type="submit" style={styles.askGo} disabled={!question.trim() || ask?.state === 'loading'}>
-          {ask?.state === 'loading' ? '…' : 'Ask'}
-        </button>
-      </form>
+      {/* ASK — the lead affordance, raised into a card of its own so it carries at
+          least the weight of the six section cards below it. Plain words in, the
+          same sourced entries out. No account anywhere in it. */}
+      <div style={styles.askCard}>
+        <span style={styles.askHead}>Ask about any counter</span>
+        <span style={styles.askSub}>Which cut, wild or farmed, what to look for.</span>
 
-      <div style={styles.seeds}>
-        {ASK_SEEDS.map((s) => (
-          <button key={s} type="button" style={styles.seed} onClick={() => setQuestion(s)}>
-            {s}
+        <form style={styles.askForm} onSubmit={submitAsk}>
+          <input
+            style={styles.askInput}
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Wild or farmed salmon?"
+            aria-label="Ask about the counter"
+            disabled={ask?.state === 'loading'}
+          />
+          <button type="submit" style={styles.askGo} disabled={!question.trim() || ask?.state === 'loading'}>
+            {ask?.state === 'loading' ? '…' : 'Ask'}
           </button>
-        ))}
+        </form>
+
+        <div style={styles.seeds}>
+          {ASK_SEEDS.map((s) => (
+            <button key={s} type="button" style={styles.seed} onClick={() => askSeed(s)}>
+              {s}
+            </button>
+          ))}
+        </div>
       </div>
 
       {ask?.state === 'error' && <p style={styles.muted}>That did not go through. Try again.</p>}
@@ -233,6 +254,15 @@ const styles = {
     color: colors.textMuted, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
   },
 
+  // The ask is a CARD, not a bare input. A section row is a raised surface, so an
+  // input floating above them read as secondary to the thing it is meant to lead.
+  askCard: {
+    display: 'flex', flexDirection: 'column', gap: 6, marginTop: 6,
+    padding: '14px 15px 15px', borderRadius: 14,
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+  },
+  askHead: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
+  askSub: { fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textMuted },
   askForm: { display: 'flex', gap: 8, marginTop: 4 },
   askInput: {
     flex: 1, minWidth: 0, padding: '13px 15px', borderRadius: 12,
