@@ -4,13 +4,30 @@ import { requireAuth, supabase } from '../lib/supabase.js';
 const router = Router();
 
 // Every table that stores per-user rows, keyed by user_id.
-const USER_TABLES = [
+//
+// This list is COMPLETE and a test enforces that it stays complete: it parses the
+// migrations for every table that references auth.users and fails if one is missing
+// here. It drifted once already — shopping_lists, haul_scans and push_tokens were all
+// added to the schema after this list was written and none of them was added to it.
+//
+// The cascade would still have collected them, so nothing survived a deletion. But the
+// whole reason this list exists is to not depend on the cascade: it runs first so the
+// data is gone even if the auth deletion has to be retried, and a table missing from
+// here is silently outside that guarantee. shopping_lists is the sharpest case — it
+// holds the shopper's pattern memory (staples, what they removed, what swaps they
+// declined), which is the most personal thing Kristy stores.
+export const USER_TABLES = [
   'meal_logs',
   'weight_logs',
   'chat_messages',
   'weekly_summaries',
   'verdicts',
   'subscriptions',
+  'haul_scans',
+  'shopping_lists',
+  'push_tokens',
+  // user_goals last: the signup trigger recreates a row on this table, so clearing it
+  // before the others buys nothing. It is also the row the profile hangs off.
   'user_goals',
 ];
 

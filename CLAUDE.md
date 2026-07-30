@@ -217,6 +217,17 @@ equality *is* the positioning.
   a choice, never a side effect of tapping a goal.
 - The baseline holds grocery **names** only — what they keep buying, what they removed,
   what they declined. `kept` is deliberately not deduped: occurrences are the frequency.
+- **The pattern memory is private, and it leaves with the shopper.** `shopping_lists`
+  holds the most personal thing Kristy stores and was **missing from the account-deletion
+  sweep**, along with `haul_scans` and `push_tokens` — all three added to the schema after
+  `USER_TABLES` was written. The cascade collected them, so nothing survived a deletion,
+  but the explicit sweep exists so the guarantee does not *depend* on the cascade.
+  `privacyLine.test.js` now parses the migrations and fails if any table referencing
+  `auth.users` is absent from `USER_TABLES`, so it cannot drift again.
+- **Individual behaviour never joins the aggregate pool, by construction.** The two
+  shared-pool writers (`productStore`, `counterGaps`) may not import the per-user readers
+  at all — a test forbids the import, because that import is what a join would have to
+  look like and it is far easier to forbid than to detect afterwards.
 
 **Demo and failure**
 - **Demo must never fabricate, and never under-report.** It once silently engaged on a
