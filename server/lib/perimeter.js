@@ -119,6 +119,13 @@ export function publicEntry(e) {
    reasonably expect says so, in plain words, rather than padding itself with filler
    topics. Naming the gap is what makes the covered part trustworthy.
 
+   `shortcuts` are the handful of things people actually ask standing at each counter,
+   in their own words, pointed straight at the entry that answers them. They exist to
+   collapse the path: the frequent answers should be ONE tap from opening the Counter,
+   not a section, then a scroll, then a topic. They carry no content of their own — the
+   `q` is the shopper's phrasing and the `id` is an entry that must already be browsable
+   in that section, which a test enforces.
+
    Order and naming follow the shopper's walk, not the KB's filing: Produce first,
    because that is where a trip starts and where the perimeter begins. */
 export const PERIMETER_SECTIONS = [
@@ -128,6 +135,11 @@ export const PERIMETER_SECTIONS = [
     blurb: 'Where organic earns it, how to pick ripe, and what is in season now.',
     categories: ['produce'],
     labels: ['label_organic_scope', 'label_nonGMO_vs_organic', 'label_front_vs_back'],
+    shortcuts: [
+      { q: 'Is organic worth it?', id: 'organic_worth_it_by_type' },
+      { q: 'How do I pick a ripe one?', id: 'produce_ripeness_by_item' },
+      { q: "What's in season?", id: 'produce_in_season' },
+    ],
     thinNote: null,
   },
   {
@@ -139,6 +151,12 @@ export const PERIMETER_SECTIONS = [
     // Dairy & Eggs, which is not where anyone goes looking for a thigh.
     categories: ['beef', 'poultry', 'pork', 'deli', 'meat_counter'],
     labels: ['label_grass_fed_term', 'label_no_added_hormones', 'label_natural', 'label_third_party_seals'],
+    shortcuts: [
+      { q: 'Which cut for stew?', id: 'beef_cuts_basics' },
+      { q: 'Grass-fed or grass-finished?', id: 'grassfed_vs_grassfinished' },
+      { q: 'Which chicken cut?', id: 'chicken_cuts_basics' },
+      { q: 'Is this one any good?', id: 'judging_meat_at_the_case' },
+    ],
     thinNote: 'Beef, chicken, pork and the deli case. Lamb, goat and game are not covered yet.',
   },
   {
@@ -147,6 +165,11 @@ export const PERIMETER_SECTIONS = [
     blurb: 'Wild or farmed, mercury by fish, and how to tell fresh at the counter.',
     categories: ['seafood'],
     labels: ['label_wild_vs_farm_raised', 'label_third_party_seals'],
+    shortcuts: [
+      { q: 'Wild or farmed?', id: 'salmon_wild_vs_farmed' },
+      { q: 'Which are low in mercury?', id: 'mercury_by_fish' },
+      { q: 'Is it fresh?', id: 'fish_freshness_at_counter' },
+    ],
     thinNote: 'Salmon, tuna, shrimp, sardines, the frozen case and the seals. Crab, lobster and the shellfish bar are not covered yet.',
   },
   {
@@ -155,6 +178,11 @@ export const PERIMETER_SECTIONS = [
     blurb: 'Which carton claims hold up, and real cheese from cheese product.',
     categories: ['poultry_eggs', 'dairy'],
     labels: ['label_pasture_raised_feed', 'label_cage_free', 'label_free_range', 'label_no_added_hormones'],
+    shortcuts: [
+      { q: 'Which egg carton?', id: 'egg_labels' },
+      { q: 'Brown or white eggs?', id: 'egg_shell_color' },
+      { q: 'Whole or reduced-fat milk?', id: 'whole_vs_reduced_fat_milk' },
+    ],
     thinNote: null,
   },
   {
@@ -169,6 +197,11 @@ export const PERIMETER_SECTIONS = [
       'label_cold_pressed_expeller',
       'label_ingredient_order',
     ],
+    shortcuts: [
+      { q: 'How do I buy real olive oil?', id: 'olive_oil_buying' },
+      { q: 'Which oats?', id: 'oats_steelcut_rolled_instant' },
+      { q: 'Is bulk worth it?', id: 'bulk_bins_buying' },
+    ],
     thinNote: null,
   },
   {
@@ -177,6 +210,11 @@ export const PERIMETER_SECTIONS = [
     blurb: 'What the word on the front is allowed to mean.',
     categories: ['label_terms'],
     labels: [],
+    shortcuts: [
+      { q: 'What does "natural" mean?', id: 'label_natural' },
+      { q: 'What does "pasture-raised" mean?', id: 'label_pasture_raised_feed' },
+      { q: 'Multigrain or whole grain?', id: 'label_multigrain_vs_whole_grain' },
+    ],
     thinNote: null,
   },
 ];
@@ -210,12 +248,23 @@ export function sectionIndex() {
       .filter((e) => s.categories.includes(e.category))
       .map(topicCard);
     const labelTopics = s.labels.map(byId).filter(Boolean).map(topicCard);
+    // The shortcut carries the entry's DECISION with it, so the surface can show the
+    // call beside the question without a second fetch. It is the same authored line
+    // the topic itself opens with.
+    const shortcuts = (s.shortcuts || [])
+      .map(({ q, id }) => {
+        const e = byId(id);
+        return e ? { q, id, decision: e.decision || '', evidence_tier: e.evidence_tier || null } : null;
+      })
+      .filter(Boolean);
+
     return {
       id: s.id,
       title: s.title,
       blurb: s.blurb,
       topics,
       labelTopics,
+      shortcuts,
       count: topics.length,
       // Stated only when there IS a gap worth naming — an empty note renders nothing.
       thinNote: s.thinNote || null,

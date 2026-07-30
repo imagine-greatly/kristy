@@ -43,6 +43,16 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
   const [entry, setEntry] = useState(null); // { state, data }
   const [question, setQuestion] = useState('');
   const [ask, setAsk] = useState(null); // { state, resp }
+  const [personal, setPersonal] = useState(null); // { state, resp } — this topic, read against the profile
+
+  // Is there anything to personalize against? No profile → no offer, rather than a
+  // button that promises a tailored read and returns the universal one.
+  const hasProfile = !!(
+    prefs?.goal ||
+    prefs?.focuses?.length ||
+    prefs?.hardLines?.length ||
+    prefs?.constraints?.length
+  );
 
   useEffect(() => {
     let alive = true;
@@ -54,14 +64,39 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     };
   }, []);
 
-  async function openEntry(id) {
+  async function openEntry(id, via = 'topic') {
     setEntry({ state: 'loading' });
-    trackEvent('perimeter-entry', { id });
+    setPersonal(null);
+    trackEvent('perimeter-entry', { id, via });
     try {
       const data = await fetchPerimeterEntry(id);
       setEntry(data ? { state: 'done', data } : { state: 'error' });
     } catch {
       setEntry({ state: 'error' });
+    }
+  }
+
+  /* The universal read is the topic itself and it is free, instant, and the same for
+     everyone. Reading it against THIS shopper's goal and constraints is the member
+     layer, so it stays an explicit tap rather than a model call fired on every topic
+     open. Offered only when there is actually a profile to read against; the server
+     decides whether the personalized answer comes back or the gate does. */
+  async function readAgainstProfile(data) {
+    if (personal?.state === 'loading') return;
+    setPersonal({ state: 'loading' });
+    trackEvent('perimeter-ask', { via: 'topic-personalize' });
+    try {
+      const resp = await askPerimeter({
+        question: data.question || data.title,
+        goal: prefs?.goal || '',
+        focuses: prefs?.focuses || [],
+        hardLines: prefs?.hardLines || [],
+        constraints: prefs?.constraints || [],
+      });
+      // The entry is already on screen above this, so only her read renders here.
+      setPersonal({ state: 'done', resp: { ...resp, entries: [] } });
+    } catch {
+      setPersonal({ state: 'error' });
     }
   }
 
@@ -106,14 +141,27 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         {entry.state === 'loading' && <p style={styles.muted}>Loading…</p>}
         {entry.state === 'error' && <p style={styles.muted}>That one did not load. Try again.</p>}
         {entry.state === 'done' && (
-          /* The entry renders through the SAME card as an asked question, so a
-             browsed topic and an asked one are the same object to the reader —
-             decision first, depth on tap. `detail` used to be printed underneath
-             the card as a loose paragraph; it lives inside the full read now. */
-          <PerimeterAnswer
-            resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
-            onAddToCart={onAddToCart}
-          />
+          <>
+            {/* The entry renders through the SAME card as an asked question, so a
+                browsed topic and an asked one are the same object to the reader —
+                decision first, depth on tap. `detail` used to be printed underneath
+                the card as a loose paragraph; it lives inside the full read now. */}
+            <PerimeterAnswer
+              resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
+              onAddToCart={onAddToCart}
+            />
+
+            {hasProfile && !personal && (
+              <button type="button" style={styles.personalize} onClick={() => readAgainstProfile(entry.data)}>
+                Read this against your cart
+              </button>
+            )}
+            {personal?.state === 'loading' && <p style={styles.muted}>Reading…</p>}
+            {personal?.state === 'error' && <p style={styles.muted}>That read did not come together. Try again.</p>}
+            {personal?.state === 'done' && (
+              <PerimeterAnswer resp={personal.resp} onUpgrade={onUpgrade} />
+            )}
+          </>
         )}
       </div>
     );
@@ -128,6 +176,17 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         </button>
         <h1 style={styles.h1}>{openSection.title}</h1>
         <p style={styles.blurb}>{openSection.blurb}</p>
+
+        {/* Pinned above the list, not buried in it: what people actually ask here. */}
+        {!!openSection.shortcuts?.length && (
+          <div style={styles.shortcuts}>
+            {openSection.shortcuts.map((sc) => (
+              <button key={sc.id} type="button" style={styles.shortcut} onClick={() => openEntry(sc.id, 'shortcut')}>
+                {sc.q}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div style={styles.topics}>
           {openSection.topics.map((t) => (
@@ -205,17 +264,31 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         </div>
       )}
 
-      {/* BROWSE — the store, by section, in walking order. */}
+      {/* BROWSE — the store, by section, in walking order. Each section carries the
+          handful of questions people actually ask standing at it, so the frequent
+          answers are ONE tap from here rather than section, scroll, topic. The
+          section card itself still opens the full list. */}
       <div style={styles.groupLabel}>Browse the counter</div>
       {loadErr && <p style={styles.muted}>The sections did not load. Try again.</p>}
       {!sections && !loadErr && <p style={styles.muted}>Loading…</p>}
       <div style={styles.sections}>
         {(sections || []).map((s) => (
-          <button key={s.id} type="button" style={styles.section} onClick={() => setOpenSection(s)}>
-            <span style={styles.sectionTitle}>{s.title}</span>
-            <span style={styles.sectionBlurb}>{s.blurb}</span>
-            <span style={styles.sectionCount}>{s.count} topics</span>
-          </button>
+          <div key={s.id} style={styles.section}>
+            <button type="button" style={styles.sectionHead} onClick={() => setOpenSection(s)}>
+              <span style={styles.sectionTitle}>{s.title}</span>
+              <span style={styles.sectionBlurb}>{s.blurb}</span>
+              <span style={styles.sectionCount}>{s.count} topics</span>
+            </button>
+            {!!s.shortcuts?.length && (
+              <div style={styles.shortcuts}>
+                {s.shortcuts.map((sc) => (
+                  <button key={sc.id} type="button" style={styles.shortcut} onClick={() => openEntry(sc.id, 'shortcut')}>
+                    {sc.q}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
@@ -228,11 +301,18 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
   );
 }
 
+// A browse row shows the DECISION, not the background. It used to print the short
+// answer, which meant three lines of essay per row and a tap on every one to find the
+// call. Often the row is now the whole answer and the tap is for the depth.
 function TopicRow({ topic, onOpen }) {
   return (
     <button type="button" style={styles.topic} onClick={() => onOpen(topic.id)}>
       <span style={styles.topicTitle}>{topic.title}</span>
-      {topic.short_answer && <span style={styles.topicShort}>{topic.short_answer}</span>}
+      {(topic.decision || topic.short_answer) && (
+        <span style={topic.decision ? styles.topicDecision : styles.topicShort}>
+          {topic.decision || topic.short_answer}
+        </span>
+      )}
     </button>
   );
 }
@@ -247,7 +327,6 @@ const styles = {
   thesisSub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
   blurb: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   muted: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
-  detail: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.6, color: colors.textMuted },
   back: {
     alignSelf: 'flex-start', padding: '6px 2px', background: 'transparent', border: 'none',
     color: colors.textMuted, fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
@@ -280,6 +359,11 @@ const styles = {
     fontFamily: fonts.ui, fontSize: 13, fontWeight: 600, cursor: 'pointer',
   },
   answer: { marginTop: 4 },
+  personalize: {
+    alignSelf: 'flex-start', padding: '10px 14px', borderRadius: 12,
+    border: `1px solid ${colors.border}`, background: 'transparent', color: colors.textSecondary,
+    fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 700, cursor: 'pointer',
+  },
 
   groupLabel: {
     marginTop: 10, fontFamily: fonts.ui, fontSize: 10, fontWeight: 600, letterSpacing: '0.14em',
@@ -287,10 +371,24 @@ const styles = {
   },
   sections: { display: 'flex', flexDirection: 'column', gap: 10 },
   section: {
-    display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 3,
-    padding: '14px 15px', borderRadius: 14, border: 'none', background: colors.surface,
+    display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: 9,
+    padding: '14px 15px', borderRadius: 14, background: colors.surface,
     boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
+  },
+  sectionHead: {
+    display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 3,
+    padding: 0, border: 'none', background: 'transparent',
     textAlign: 'left', cursor: 'pointer',
+  },
+  // The fast path made visible: the questions asked at this counter, each one tap
+  // from its answer. Quieter than the section name — a shortcut into the section,
+  // not a competitor to it.
+  shortcuts: { display: 'flex', flexWrap: 'wrap', gap: 6 },
+  shortcut: {
+    padding: '7px 11px', borderRadius: 999, border: `1px solid ${colors.gold30}`,
+    background: colors.goldTint9, color: colors.textSecondary,
+    fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 600, cursor: 'pointer',
+    textAlign: 'left',
   },
   sectionTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
   sectionBlurb: { fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textMuted },
@@ -306,7 +404,13 @@ const styles = {
     boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
     textAlign: 'left', cursor: 'pointer',
   },
-  topicTitle: { fontFamily: fonts.ui, fontSize: 14.5, fontWeight: 600, color: colors.textPrimary },
+  // The title is the label; the decision under it is the answer, so it gets her voice
+  // and the stronger colour.
+  topicTitle: {
+    fontFamily: fonts.ui, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
+    textTransform: 'uppercase', color: colors.textMuted,
+  },
+  topicDecision: { ...kristyVoice, fontSize: 15, lineHeight: 1.4, color: colors.textPrimary },
   topicShort: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.45, color: colors.textMuted },
 
   thin: {
