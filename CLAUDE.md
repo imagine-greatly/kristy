@@ -89,9 +89,14 @@ equality *is* the positioning.
 - **Cart** is home, unconditionally. Empty, it asks what the trip is for rather than
   dumping a template; the answer builds it. Chat-editable from the docked composer.
 - **Scan** = the packaged half: barcode, or a label photo that reads anything.
-- **Counter** = the unlabeled half. Browsable by section (Produce · Meat · Seafood ·
-  Dairy & Eggs · Pantry & Bulk · Label terms) *or* asked in plain words from the
-  composer on any surface. Its picks add to the cart in one tap.
+- **Counter** = the unlabeled half, and **asking leads**. A question in plain words —
+  from the ask card at the top of the surface or the docked composer anywhere — returns
+  the same sourced answer browsing does. Browsing is still there, by section (Produce ·
+  Meat · Seafood · Dairy & Eggs · Pantry & Bulk · Label terms), each carrying the
+  handful of questions people actually ask at it as one-tap shortcuts.
+- **Every counter answer is decision-first**: the call in one line, the why in one
+  line, the checklist, then the full sourced read on tap. Its picks add to the cart in
+  one tap.
 - **Haul** reads the trip back and carries items forward.
 
 ---
@@ -143,11 +148,51 @@ equality *is* the positioning.
 **The counter**
 - The free layer is **public** (`optionalAuth`): a deterministic KB read with no model
   call and no stored data. Requiring an account bought nothing and cost a stranger the
-  exact thing they came to try. Only the *personalized* read is premium.
+  exact thing they came to try. Only the *personalized* read is premium. A guest's
+  counter answer also does **not** spend their free chat run — the model was never called.
 - `cart_pick` is a grocery **NAME** and is deliberately not one of the seven fields
-  `sanitizeForModel` passes, so the model can never mint one.
+  `sanitizeForModel` passes, so the model can never mint one. **`decision` and `why`
+  are excluded for the same reason**: the call a shopper acts on can never be generated.
+  The whitelist stayed at seven when they were added — they are compressions of fields
+  the model already has, so widening it would buy nothing.
+- **A counter question with no KB match gets the honest miss, never the coach.**
+  `looksLikeCounterQuestion` (a counter SUBJECT *and* a buying intent, cooking verbs
+  vetoed) is consulted only after the matcher returns empty. Both signals are required:
+  either alone is somebody else's question, and answering "how much protein is in
+  chicken" with "no solid read" is a worse regression than the improvisation it closes.
+- **A bare either/or is a question.** "wild or farmed", "brown or white eggs" carry no
+  question word and no punctuation, and used to route past the KB entirely.
+- **Decision-first is content, not styling.** `decision`/`why` are authored per entry in
+  the KB, re-ranked from its own short_answer/kristy_take/tips — never new research.
+  The depth is demoted, never deleted. The **tier chip stays above the tap** even though
+  the rest of the tier framing moved behind it: the decision is a claim, and settled
+  science must never render identically to a whole-food standard.
+- Section `shortcuts` carry no content — a `q` in the shopper's words and an `id` that
+  must already be browsable in that section. A second, drifting index of the counter is
+  the thing they must not become.
 - A section that doesn't cover something says so (`thinNote`). Naming the gap is what
   makes the covered part trustworthy.
+
+**The list is the shopper's**
+- **The item always stays.** A row the shopper added is never removed, renamed or
+  struck. Kristy attaches a note *beside* it. `applyCompose` protects `user` and
+  `imported` rows from a model-proposed removal unless the shopper's own words name the
+  item — so "take the soda off" works and "make this healthier" cannot empty the cart.
+- **Flag once.** `attachOffers` stamps `offered` on every row it inspects, including the
+  ones that earned no comment, and the flag survives `sanitizeList`. It is idempotent by
+  construction. The same gentle note repeated on every load is nagging however kindly
+  it is worded, and it is the thing that gets an app deleted.
+- **A no is permanent**, and it suppresses the *item*, not just the note. A declined
+  swap that reappears as a "nudge" is the same suggestion by a side door.
+- **The offer table matches generic food words only.** `cola` matched Coca-Cola,
+  `wonder bread` matched Wonder, `frosted \w+` matched Frosted Flakes — each would have
+  had Kristy judging a named product from its name alone. A typed brand stays unremarked;
+  a barcode is how she reads a box.
+- **Goals weight the margins.** A profile change *leans* the stored cart (≤3 additions),
+  it does not regenerate it; focus/constraint anchors are capped at 4. Rebuild is still
+  a choice, never a side effect of tapping a goal.
+- The baseline holds grocery **names** only — what they keep buying, what they removed,
+  what they declined. `kept` is deliberately not deduped: occurrences are the frequency.
 
 **Demo and failure**
 - **Demo must never fabricate, and never under-report.** It once silently engaged on a
@@ -194,7 +239,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (197 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (281 tests). Client: `cd client && npx vite build`.
 - If a git write fails with "permission denied", it's OneDrive locking `.git` — retry.
   Never hand-edit the KB or committed files to recover.
 
