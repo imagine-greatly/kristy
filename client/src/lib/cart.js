@@ -16,6 +16,7 @@ import {
   rebuildList,
   recordRemoved,
   recordAcceptedSwap,
+  recordDeclinedSwap,
   composeList,
   composeGuestList,
   buildGuestList,
@@ -116,20 +117,53 @@ export function useCart(prefs) {
     listRef.current = list;
   }, [list]);
 
-  const mutate = useCallback((fn) => {
-    // A trip can begin with an ACTION, not only an answer — scanning something in the
-    // aisle before ever telling Kristy what the trip is for has to work. So a missing
-    // cart is materialized here rather than dropping the mutation on the floor.
-    const cur =
-      listRef.current && Array.isArray(listRef.current.items)
-        ? listRef.current
-        : { goal: null, intro: '', items: [] };
-    const next = fn(cur);
-    if (!next || next === cur) return;
+  // Merge ONLY the offer fields from the server's copy, row by row. Rows that have
+  // since been removed, renamed or checked are left exactly as the shopper left them.
+  const mergeOffers = useCallback((serverList) => {
+    if (!serverList || !Array.isArray(serverList.items)) return;
+    const offers = new Map(
+      serverList.items.filter((i) => i.offered).map((i) => [i.id, i])
+    );
+    if (!offers.size) return;
+    const cur = listRef.current;
+    if (!cur || !Array.isArray(cur.items)) return;
+    let changed = false;
+    const items = cur.items.map((i) => {
+      const o = offers.get(i.id);
+      if (!o || i.offered) return i;
+      changed = true;
+      return {
+        ...i,
+        offered: true,
+        ...(o.swapOffer ? { swapOffer: o.swapOffer, offerId: o.offerId, swapTo: o.swapTo } : {}),
+      };
+    });
+    if (!changed) return;
+    const next = { ...cur, items };
     listRef.current = next;
     setList(next);
-    saveList(next);
   }, []);
+
+  const mutate = useCallback(
+    (fn) => {
+      // A trip can begin with an ACTION, not only an answer — scanning something in
+      // the aisle before ever telling Kristy what the trip is for has to work. So a
+      // missing cart is materialized here rather than dropping the mutation.
+      const cur =
+        listRef.current && Array.isArray(listRef.current.items)
+          ? listRef.current
+          : { goal: null, intro: '', items: [] };
+      const next = fn(cur);
+      if (!next || next === cur) return;
+      listRef.current = next;
+      setList(next);
+      // The save round-trip is where Kristy's one comment on a newly-added row comes
+      // back. Only the offer fields are merged, matched by row id — replacing the
+      // whole list would silently undo whatever the shopper did while it was in flight.
+      Promise.resolve(saveList(next)).then((res) => mergeOffers(res?.list));
+    },
+    [mergeOffers]
+  );
 
   /* ── Tap actions. Every one of these is reachable by a button; none needs typing. ── */
 
@@ -163,6 +197,48 @@ export function useCart(prefs) {
         items: [...cur.items, { id: rid(), name: clean, category, checked: false, source: 'user' }],
       }));
       trackEvent('cart-add', { source: 'tap' });
+    },
+    [mutate]
+  );
+
+  /* ── Kristy's one offer, and the two honest answers to it ──────────────────────
+     Both answers END the conversation about that row. Neither removes anything, and
+     neither is ever raised again: the item was the shopper's call from the start. */
+
+  // "Keep it." The offer disappears and the swap is recorded as declined, so it is
+  // never proposed again on any future trip. Respect over repetition — this is the
+  // single most important behaviour in the whole feature, because a suggestion that
+  // comes back after a no is a suggestion that was never really optional.
+  const keepItem = useCallback(
+    (id) => {
+      const item = listRef.current?.items?.find((i) => i.id === id);
+      if (item?.offerId) recordDeclinedSwap(item.offerId);
+      mutate((cur) => ({
+        ...cur,
+        items: cur.items.map((i) =>
+          i.id === id ? { ...i, swapOffer: undefined, swapTo: undefined, offered: true } : i
+        ),
+      }));
+      trackEvent('list-offer', { action: 'kept', offer: item?.offerId || null });
+    },
+    [mutate]
+  );
+
+  // "Take the swap." The row becomes the better item, by the shopper's own tap. The
+  // offer is cleared either way, so the row is never annotated twice.
+  const takeOffer = useCallback(
+    (id) => {
+      const item = listRef.current?.items?.find((i) => i.id === id);
+      if (!item?.swapTo) return;
+      mutate((cur) => ({
+        ...cur,
+        items: cur.items.map((i) =>
+          i.id === id
+            ? { ...i, name: item.swapTo, refined: true, swapOffer: undefined, swapTo: undefined, offered: true }
+            : i
+        ),
+      }));
+      trackEvent('list-offer', { action: 'taken', offer: item.offerId || null });
     },
     [mutate]
   );
@@ -321,6 +397,8 @@ export function useCart(prefs) {
     remove,
     add,
     refine,
+    keepItem,
+    takeOffer,
     addScan,
     addSwaps,
     applyList,

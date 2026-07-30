@@ -60,6 +60,12 @@ export function sanitizeList(list) {
       // and refuse to guess at.
       ...(it.specifiedFrom ? { specifiedFrom: String(it.specifiedFrom).slice(0, 140) } : {}),
       ...(it.swapOffer ? { swapOffer: String(it.swapOffer).slice(0, 200) } : {}),
+      // FLAG ONCE. `offered` is the record that this row has already had Kristy's one
+      // comment, so a reload, a save or a rebuild can never produce a second. It has
+      // to survive the round-trip or the whole no-nagging promise breaks on refresh.
+      ...(it.offered ? { offered: true } : {}),
+      ...(it.offerId ? { offerId: String(it.offerId).slice(0, 40) } : {}),
+      ...(it.swapTo ? { swapTo: String(it.swapTo).slice(0, 140) } : {}),
       ...(it.needsFix ? { needsFix: true } : {}),
       ...(it.note ? { note: String(it.note).slice(0, 200) } : {}),
     }))

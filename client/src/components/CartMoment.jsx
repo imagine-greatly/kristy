@@ -99,7 +99,7 @@ function ProgressBar({ progress }) {
    Tapping expands, in place, to the sourced detail: her "what to look for" checklist
    read straight from the perimeter KB (free, no model call), the named alternative,
    and the swap/remove actions. */
-function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onRefine, onUpgrade }) {
+function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onRefine, onUpgrade, onKeep, onTakeOffer }) {
   const isSwapCallout = item.source === 'swap';
   const flag = item.tier ? TIER_FLAG[item.tier] : null;
   const needsBetterPick = flagged(item);
@@ -169,6 +169,28 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
 
         <span style={{ ...styles.chev, transform: open ? 'rotate(90deg)' : 'none' }} aria-hidden="true">›</span>
       </div>
+
+      {/* KRISTY'S ONE COMMENT. It sits BESIDE the item, never on it — the name above
+          is untouched, nothing is struck through, and the row is not going anywhere.
+          One line, two answers, and both of them end it: take the swap, or keep what
+          you picked. Whichever you choose, this never appears on that item again. */}
+      {item.swapOffer && !checked && (
+        <div style={styles.offer}>
+          <p style={{ ...kristyVoice, ...styles.offerLine }}>{item.swapOffer}</p>
+          <div style={styles.offerActions}>
+            {item.swapTo && onTakeOffer && (
+              <button type="button" style={styles.offerTake} onClick={() => onTakeOffer(item.id)}>
+                Swap it
+              </button>
+            )}
+            {onKeep && (
+              <button type="button" style={styles.offerKeep} onClick={() => onKeep(item.id)}>
+                Keep mine
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {open && (
         <div style={styles.drawer}>
@@ -388,6 +410,8 @@ export default function CartMoment({
                 }}
                 onRefine={cart.refine}
                 onUpgrade={onUpgrade}
+                onKeep={cart.keepItem}
+                onTakeOffer={cart.takeOffer}
               />
             ))}
           </div>
@@ -707,6 +731,27 @@ const styles = {
   tagGold: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: colors.accentGoldMuted },
   // Tinted fill, no outline — the colour already carries the meaning.
   flag: { fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, padding: '3px 9px', borderRadius: 999, whiteSpace: 'nowrap' },
+
+  /* Her one comment. Deliberately quiet: no red, no warning colour, no icon. A flag
+     that looks like an alarm is a scolding however it is worded, and this is a door
+     held open, not a correction. */
+  offer: {
+    display: 'flex', flexDirection: 'column', gap: 8,
+    margin: '2px 0 0 34px', padding: '10px 12px 11px', borderRadius: 11,
+    background: colors.bg, borderLeft: `2px solid ${colors.gold30}`,
+  },
+  offerLine: { margin: 0, fontSize: 14, lineHeight: 1.45, color: colors.textSecondary },
+  offerActions: { display: 'flex', flexWrap: 'wrap', gap: 8 },
+  offerTake: {
+    padding: '7px 13px', borderRadius: 999, border: `1px solid ${colors.borderGold}`,
+    background: colors.goldTint9, color: colors.textPrimary,
+    fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700, cursor: 'pointer',
+  },
+  offerKeep: {
+    padding: '7px 13px', borderRadius: 999, border: `1px solid ${colors.border}`,
+    background: 'transparent', color: colors.textMuted,
+    fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 600, cursor: 'pointer',
+  },
   chev: { flex: '0 0 auto', marginTop: 2, color: colors.textMuted, opacity: 0.6, fontSize: 18, lineHeight: 1, transition: 'transform 0.18s ease' },
 
   // The drawer is the elevated layer — no divider rule needed, the lift does that work.

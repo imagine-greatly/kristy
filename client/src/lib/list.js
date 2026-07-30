@@ -39,7 +39,16 @@ const write = (k, v) => {
 export const loadCachedList = () => read(LIST_KEY, null);
 const saveCache = (list) => write(LIST_KEY, list);
 
-export const loadSignals = () => read(SIGNALS_KEY, { removed: [], kept: [], acceptedSwaps: [] });
+export const loadSignals = () => {
+  const s = read(SIGNALS_KEY, null) || {};
+  return {
+    removed: s.removed || [],
+    kept: s.kept || [],
+    acceptedSwaps: s.acceptedSwaps || [],
+    declinedSwaps: s.declinedSwaps || [],
+    ...(s.sig ? { sig: s.sig } : {}),
+  };
+};
 const saveSignals = (s) => write(SIGNALS_KEY, s);
 
 // Record that an item was removed — future generations stop suggesting it. Persisted
@@ -57,6 +66,17 @@ export function recordAcceptedSwap(productName) {
   if (!productName) return;
   const s = loadSignals();
   if (!s.acceptedSwaps.includes(productName)) s.acceptedSwaps.push(productName);
+  saveSignals(s);
+}
+
+// Record that a swap offer was turned DOWN. Kristy never offers that one again —
+// a declined suggestion is a preference learned, not a thing to keep pushing. Keyed
+// on the offer's stable id rather than the item name, so the same call is silenced
+// however the shopper writes the item next time.
+export function recordDeclinedSwap(offerId) {
+  if (!offerId) return;
+  const s = loadSignals();
+  if (!s.declinedSwaps.includes(offerId)) s.declinedSwaps.push(offerId);
   saveSignals(s);
 }
 
@@ -185,8 +205,11 @@ export function saveList(list, signals) {
   saveCache(list);
   const sig = signals || loadSignals();
   if (signals) saveSignals(signals);
-  if (IS_DEMO) return Promise.resolve();
-  return authFetch('/api/list', { method: 'POST', body: JSON.stringify({ list, signals: sig }) }).catch(() => {});
+  if (IS_DEMO) return Promise.resolve(null);
+  // Resolves with the server's copy of the list, which may carry Kristy's one
+  // comment on a row the shopper just added. The caller merges only those fields
+  // back — never the whole list, which would clobber a faster second edit.
+  return authFetch('/api/list', { method: 'POST', body: JSON.stringify({ list, signals: sig }) }).catch(() => null);
 }
 
 // Regenerate from the profile (server re-reads goal/focuses/hard lines + premium).

@@ -16,6 +16,7 @@ import { readListPhoto } from '../lib/listVision.js';
 import { imageUpload } from '../lib/upload.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
 import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
+import { attachOffers } from '../lib/listVoice.js';
 
 // The List — server-persisted and server-gated (Step 8 → durable).
 //
@@ -52,7 +53,14 @@ function profileInputs(profile) {
 
 function normalizeSignals(s) {
   const arr = (v) => (Array.isArray(v) ? v.map((x) => String(x)).slice(0, 200) : []);
-  const out = { removed: arr(s?.removed), kept: arr(s?.kept), acceptedSwaps: arr(s?.acceptedSwaps) };
+  const out = {
+    removed: arr(s?.removed),
+    kept: arr(s?.kept),
+    acceptedSwaps: arr(s?.acceptedSwaps),
+    // A swap the shopper turned down. Kristy stops offering it — a declined
+    // suggestion is a preference learned, not a thing to keep pushing.
+    declinedSwaps: arr(s?.declinedSwaps),
+  };
   if (s?.sig) out.sig = String(s.sig).slice(0, 400);
   return out;
 }
@@ -141,18 +149,29 @@ router.get('/list', requireAuth, async (req, res) => {
 
 router.post('/list', requireAuth, async (req, res) => {
   const userId = req.user.id;
-  const list = sanitizeList(req.body?.list);
-  if (!list) return res.status(400).json({ error: 'list is required' });
+  const clean = sanitizeList(req.body?.list);
+  if (!clean) return res.status(400).json({ error: 'list is required' });
   const signals = req.body?.signals !== undefined ? normalizeSignals(req.body.signals) : undefined;
   try {
     // Preserve the generation signature across a user edit, so staleness tracking
     // isn't reset by the shopper checking off or adding items.
+    let stored = null;
     if (signals && !signals.sig) {
-      const existing = await getShoppingList(userId).catch(() => null);
-      if (existing?.signals?.sig) signals.sig = existing.signals.sig;
+      stored = await getShoppingList(userId).catch(() => null);
+      if (stored?.signals?.sig) signals.sig = stored.signals.sig;
     }
+
+    // KRISTY'S ONE COMMENT. A row the shopper just added gets looked at exactly once;
+    // `offered` is stamped on every row it inspects, so this same call on the next
+    // save is a no-op. Nothing is removed or renamed here — the most that happens is
+    // a note appearing beside an item the shopper is still buying.
+    const declined = signals?.declinedSwaps || stored?.signals?.declinedSwaps || [];
+    const list = attachOffers(clean, { declined });
+
     await persist(userId, { list, signals });
-    return res.json({ ok: true });
+    // The list rides back so the offer lands on the row the shopper is looking at,
+    // rather than waiting for a reload to appear.
+    return res.json({ ok: true, list });
   } catch (err) {
     console.error('[kristy] POST /api/list error:', err.message);
     return res.status(500).json({ error: 'Could not save your list.' });
