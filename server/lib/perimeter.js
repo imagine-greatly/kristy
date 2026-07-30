@@ -80,6 +80,15 @@ export function publicEntry(e) {
     title: e.title,
     category: e.category || null,
     question: e.question || null,
+    // THE DECISION LEADS. A shopper at a counter has ten seconds and one hand, and
+    // every topic used to open with the essay: paragraphs of sourced background
+    // before the actual call. Nobody reads that standing in an aisle. `decision` is
+    // the call in one line and `why` is the teaching in one line, both authored in
+    // the KB from the entry's own short_answer / kristy_take / buying_tips — a
+    // re-ranking of what was already here, never a new claim. The depth is not gone,
+    // it is one tap down.
+    decision: e.decision || '',
+    why: e.why || '',
     short_answer: e.short_answer || '',
     detail: e.detail || '',
     evidence_tier: e.evidence_tier || null,
@@ -174,6 +183,10 @@ export const PERIMETER_SECTIONS = [
 
 // A topic card: enough to browse and choose, never the whole entry. The full read
 // comes from GET /api/perimeter/:id, so a section index stays small.
+//
+// It carries the DECISION now, not the short answer. A browse row that shows three
+// lines of background makes the shopper open every topic to find the one they want;
+// a row that shows the call is often the whole answer, read without a tap.
 function topicCard(e) {
   return {
     id: e.id,
@@ -181,6 +194,8 @@ function topicCard(e) {
     question: e.question || null,
     category: e.category || null,
     evidence_tier: e.evidence_tier || null,
+    decision: e.decision || '',
+    why: e.why || '',
     short_answer: e.short_answer || '',
     cart_pick: e.cart_pick || null,
   };
@@ -216,7 +231,12 @@ export function sectionById(id) {
 /* ───────────────────────── The claim lock (what the MODEL may see) ─────────────────────────
    The structural boundary: exactly the seven allowed fields. Everything else on the
    entry — sources, aliases, question, id, category, and ANYTHING injected upstream —
-   is dropped before the model is called, so it cannot surface a fact it never received. */
+   is dropped before the model is called, so it cannot surface a fact it never received.
+
+   `decision` and `why` are NOT among the seven, deliberately. They are compressions of
+   short_answer and kristy_take, which the model already has, so passing them adds no
+   information and would only widen the whitelist. The lock stays exactly as narrow as
+   it was before the hierarchy was inverted. */
 export function sanitizeForModel(e) {
   return {
     title: e.title,

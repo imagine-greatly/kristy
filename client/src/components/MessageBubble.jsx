@@ -20,10 +20,12 @@ export default function MessageBubble({ message, onUpgrade, onRemovePref, onEdit
   // each is one tap to remove, so a wrong parse is one tap to fix.
   const chips = message.preferenceUpdate?.labeled || [];
 
-  // Does the bubble just repeat what the counter card is about to say?
+  // Does the bubble just repeat what the counter card is about to say? The free
+  // reply IS the entry's decision line now, so that is what to compare against.
   const norm = (s) => String(s || '').replace(/\s+/g, ' ').trim();
-  const short = norm(message.perimeterEntry?.short_answer);
-  const echoesCard = !!short && norm(content).startsWith(short);
+  const entry = message.perimeterEntry;
+  const lead = norm(entry?.decision) || norm(entry?.short_answer);
+  const echoesCard = !!lead && norm(content).startsWith(lead);
 
   return (
     <div className="msg-row ai">
@@ -38,11 +40,11 @@ export default function MessageBubble({ message, onUpgrade, onRemovePref, onEdit
         {/* A counter question asked from the docked composer gets the SAME reference
             card as the Counter tab: the checklist, the decoded labels, the sources,
             and the one-tap add. Browse or ask, the answer is one object either way. */}
-        {message.perimeterEntry && (
+        {entry && (
           <div style={{ marginTop: 8 }}>
             <PerimeterAnswer
               compact
-              resp={{ matched: true, entries: [message.perimeterEntry], answer: null, gated: false }}
+              resp={{ matched: true, entries: [entry], answer: null, gated: false }}
               onAddToCart={onAddToCart}
             />
           </div>

@@ -63,9 +63,13 @@ async function perimeterChatReply({ message, matched, premium, prefs }) {
     }
   }
   // Free (or a premium compose that failed): the entry's OWN words — claim-safe,
-  // no model call.
+  // no model call. The DECISION leads, with the one-line why behind it. Leading with
+  // short_answer put a paragraph of background in front of the call, which is the
+  // hierarchy this whole surface just inverted; the background is still one tap away
+  // on the card that rides along with this reply.
   const top = publicEntry(matched[0]);
-  const base = top.short_answer || top.detail || NO_ANSWER;
+  const lead = [top.decision, top.why].filter(Boolean).join(' ');
+  const base = lead || top.short_answer || top.detail || NO_ANSWER;
   return premium ? base : `${base} ${PERIMETER_UPSELL}`;
 }
 

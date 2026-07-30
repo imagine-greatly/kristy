@@ -205,25 +205,18 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
             </p>
           )}
 
-          {/* A perimeter ENTRY (free KB read — she already knows this one). */}
+          {/* A perimeter ENTRY (free KB read — she already knows this one). It renders
+              through the SAME decision-first card as the Counter surface and the chat
+              bubble, rather than a second hand-rolled copy of it: the call, the reason,
+              the checklist, and the full read on tap. A divergent renderer here meant
+              this drawer opened with the essay long after the rest of the counter
+              stopped doing that. */}
           {detail?.state === 'done' && detail.entry && (
             <div style={styles.entry}>
-              <p style={{ ...kristyVoice, ...styles.entryAnswer }}>
-                {detail.entry.kristy_take || detail.entry.short_answer}
-              </p>
-              {!!detail.entry.buying_tips?.length && (
-                <>
-                  <div style={styles.entryHead}>What to look for</div>
-                  <ul style={styles.tipList}>
-                    {detail.entry.buying_tips.map((t, i) => (
-                      <li key={i} style={styles.tip}>
-                        <span style={styles.tipMark} aria-hidden="true">✓</span>
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
+              <PerimeterAnswer
+                compact
+                resp={{ matched: true, entries: [detail.entry], answer: null, gated: false }}
+              />
             </div>
           )}
 
@@ -738,11 +731,6 @@ const styles = {
   /* Her sourced detail, read straight from the perimeter KB — a reference card, not
      chat prose. Sits on the ground colour so it reads as inset within the raised row. */
   entry: { display: 'flex', flexDirection: 'column', gap: 9, padding: '13px 14px', borderRadius: 11, background: colors.bg },
-  entryAnswer: { margin: 0, fontSize: 14.5, lineHeight: 1.5, color: colors.textPrimary },
-  entryHead: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: colors.textMuted },
-  tipList: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 7 },
-  tip: { display: 'flex', gap: 9, alignItems: 'flex-start', fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.45, color: colors.textPrimary },
-  tipMark: { flex: '0 0 auto', color: colors.accentGoldMuted, fontSize: 12, lineHeight: 1.5 },
 
   addOpen: {
     alignSelf: 'stretch', minHeight: 46, padding: '12px 14px', borderRadius: 12,

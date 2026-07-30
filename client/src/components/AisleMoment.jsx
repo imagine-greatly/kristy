@@ -106,15 +106,14 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         {entry.state === 'loading' && <p style={styles.muted}>Loading…</p>}
         {entry.state === 'error' && <p style={styles.muted}>That one did not load. Try again.</p>}
         {entry.state === 'done' && (
-          <>
-            {/* The entry renders through the SAME card as an asked question, so a
-                browsed topic and an asked one are the same object to the reader. */}
-            <PerimeterAnswer
-              resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
-              onAddToCart={onAddToCart}
-            />
-            {entry.data.detail && <p style={styles.detail}>{entry.data.detail}</p>}
-          </>
+          /* The entry renders through the SAME card as an asked question, so a
+             browsed topic and an asked one are the same object to the reader —
+             decision first, depth on tap. `detail` used to be printed underneath
+             the card as a loose paragraph; it lives inside the full read now. */
+          <PerimeterAnswer
+            resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
+            onAddToCart={onAddToCart}
+          />
         )}
       </div>
     );

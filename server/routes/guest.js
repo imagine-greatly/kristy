@@ -75,8 +75,11 @@ router.post('/chat', async (req, res) => {
       const matched = matchEntries(message);
       if (matched.length) {
         const top = publicEntry(matched[0]);
+        // The decision leads here too — same content, same order, whether the
+        // question came from an account or a stranger.
+        const lead = [top.decision, top.why].filter(Boolean).join(' ');
         return res.json({
-          message: top.short_answer || top.detail || NO_ANSWER,
+          message: lead || top.short_answer || top.detail || NO_ANSWER,
           hasFood: false,
           macros: null,
           foods: [],
