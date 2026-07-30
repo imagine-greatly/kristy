@@ -106,7 +106,7 @@ async function cartEditReply({ userId, message, mode, prefs, premium }) {
   const next =
     mode === 'build'
       ? buildCart(current, add, { goal: prefs.goal, summary })
-      : applyCompose(current, { add, remove });
+      : applyCompose(current, { add, remove }, { instruction: message });
 
   const list = sanitizeList(next) || next;
   try {

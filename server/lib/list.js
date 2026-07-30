@@ -580,9 +580,14 @@ function resolveTemplate(goal) {
 
 // Normalize an item name so NEAR-identical items collapse to one — qualifier-only
 // differences ("Plain Greek yogurt" ≈ "Greek yogurt") and clarifying clauses.
+// LONGEST FIRST. Alternation is first-match-wins, so a bare `whole` listed ahead of
+// `whole-milk` consumed the first half and left "-milk" behind — "Plain whole-milk
+// Greek yogurt" canonicalized to "milk greek yogurt" and stopped matching "Greek
+// yogurt". Dedup silently let the near-duplicate through. Same ordering rule the
+// ingredient KB's alias collisions already follow.
 const ITEM_QUALIFIERS =
-  /\b(plain|lean|whole|whole-milk|fresh|frozen|canned|dried|raw|steel-cut|non-starchy|unsalted|real|pre-washed|rotisserie|low-fat|nonfat|organic|skinless|boneless)\b/g;
-function canonicalItem(name) {
+  /\b(plain|lean|whole-milk|whole|fresh|frozen|canned|dried|raw|steel-cut|non-starchy|unsalted|real|pre-washed|rotisserie|low-fat|nonfat|organic|skinless|boneless)\b/g;
+export function canonicalItem(name) {
   return String(name)
     .toLowerCase()
     .split('—')[0]
@@ -690,12 +695,20 @@ export function generateList({ goal, goals, nonNegotiables = [], focuses = [], c
   // PREMIUM — focuses AND constraints shape the list. Append their anchor items where
   // they clear the same filters and aren't already present (dedup by name). Free lists
   // ignore both entirely. Constraints come after focuses so a health watch leads.
+  //
+  // CAPPED, because a nudge that arrives twelve items at a time is an overhaul. Four
+  // focuses used to pull in everything each one anchors on, and the cart that came
+  // back was Kristy's ideal rather than a list leaning her way. Nobody hits their
+  // goals in one haul; a list that quietly gets a little better each week is the
+  // point, and a list that reads as imposed is the thing that gets deleted.
+  const MARGINAL_CAP = 4;
   const present = new Set(base.map((it) => it.name.toLowerCase()));
   const extra = [];
   if (premium) {
     const pull = (table, keys) => {
       for (const k of keys || []) {
         for (const it of table[k] || []) {
+          if (extra.length >= MARGINAL_CAP) return;
           const key = it.name.toLowerCase();
           if (blocked(it) || present.has(key)) continue;
           present.add(key);

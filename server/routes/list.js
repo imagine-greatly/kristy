@@ -9,7 +9,7 @@ import {
   clearPendingSwaps,
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { generateList, mergePendingSwaps, listSignature, EMPTY_SIGNALS } from '../lib/list.js';
+import { generateList, mergePendingSwaps, listSignature, canonicalItem, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
 import { readListPhoto } from '../lib/listVision.js';
@@ -65,16 +65,36 @@ function normalizeSignals(s) {
   return out;
 }
 
-// When the profile changed since a list was built, regenerate but carry over the
-// user's OWN additions, anything they scanned into the trip, and any haul-swap
-// callouts — so a goal switch refreshes the template without discarding what the
-// shopper explicitly put in the cart.
-const CARRIED_SOURCES = new Set(['user', 'swap', 'scan']);
-function preserveUserItems(fresh, stored) {
-  const keepers = (stored?.items || []).filter((i) => CARRIED_SOURCES.has(i.source));
-  const names = new Set((fresh.items || []).map((i) => i.name.toLowerCase()));
-  const carried = keepers.filter((i) => !names.has(i.name.toLowerCase()));
-  return { ...fresh, items: [...fresh.items, ...carried] };
+/* When the profile changes, the cart LEANS. It does not get rebuilt.
+
+   It used to: a goal toggle regenerated from the fresh template and carried over only
+   the shopper's own adds, so every row Kristy had suggested was silently swapped for a
+   different set — mid-trip, without being asked. That is an overhaul dressed as
+   coaching, and it is the fastest way to make a list stop feeling like the shopper's.
+
+   The stored cart is the spine. A profile change folds in a few things the new goal
+   genuinely brings that are not already there, and changes nothing else. Nobody hits
+   their goals in one haul; a list that quietly gets a little better is the whole idea. */
+const NUDGE_CAP = 3;
+
+function nudgeTowardProfile(fresh, stored) {
+  const items = stored?.items || [];
+  // Compared on the canonical name so "Plain Greek yogurt" does not arrive beside the
+  // "Greek yogurt" already in the cart.
+  const present = new Set(items.map((i) => canonicalItem(i.name)));
+  const additions = [];
+  for (const it of fresh.items || []) {
+    if (additions.length >= NUDGE_CAP) break;
+    // Haul callouts arrive through mergePendingSwaps; they are the shopper's own
+    // accepted swaps and must not compete with the nudge for room.
+    if (it.source === 'swap') continue;
+    const key = canonicalItem(it.name);
+    if (!key || present.has(key)) continue;
+    present.add(key);
+    additions.push(it);
+  }
+  if (!additions.length) return stored;
+  return { ...stored, items: [...items, ...additions] };
 }
 
 async function persist(userId, patch) {
@@ -116,11 +136,13 @@ router.get('/list', requireAuth, async (req, res) => {
       // regenerating here would put the default template back and re-break the flow.
       list = stored;
     } else if (stale) {
-      // Goal / hard lines / focuses / constraints changed since this list was built
-      // → regenerate, carrying over the user's own adds + haul swaps. No manual
-      // "Rebuild" needed.
+      // Goal / hard lines / focuses / constraints changed since this list was built.
+      // The cart LEANS toward the new profile — a few additions at most — rather than
+      // being regenerated out from under the shopper. "Rebuild" is still there for
+      // anyone who actually wants the fresh template; it is a choice, not a side
+      // effect of tapping a goal.
       const fresh = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
-      list = preserveUserItems(fresh, stored);
+      list = nudgeTowardProfile(fresh, mergePendingSwaps(stored, pending, premium));
       consumedPending = premium && pending.length > 0;
       await persist(userId, { list, signals: { ...signals, sig } });
     } else if (premium && pending.length) {
@@ -243,7 +265,7 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
     const list =
       mode === 'build'
         ? buildCart(current, add, { goal, summary })
-        : applyCompose(current, { add, remove });
+        : applyCompose(current, { add, remove }, { instruction });
 
     const clean = sanitizeList(list) || list;
     // Stamp the CURRENT preference signature onto a conversationally-built cart.

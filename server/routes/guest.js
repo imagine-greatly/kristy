@@ -243,7 +243,7 @@ router.post('/list/compose', async (req, res) => {
     const next =
       mode === 'build'
         ? buildCart(current, add, { goal: prefs.goals[0] || null, summary })
-        : applyCompose(current, { add, remove });
+        : applyCompose(current, { add, remove }, { instruction });
 
     return res.json({ list: sanitizeList(next) || next, summary, premium: false, guest: true });
   } catch (err) {

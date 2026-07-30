@@ -77,9 +77,31 @@ export function sanitizeList(list) {
   };
 }
 
+/* THE SPINE. A row the SHOPPER put on the list is theirs, and the model does not get
+   to take it off because the instruction was vague. "Make this healthier" must never
+   quietly delete the thing they are actually buying — that is the failure that turns
+   a coach into a parent.
+
+   But "remove the soda" has to work, so the protection is not absolute: their own row
+   comes off when their own words name it. Kristy's rows (template) stay removable by
+   a loose instruction, because those were her suggestion in the first place. */
+const REMOVE_STOPWORDS = new Set(
+  'and or the a an of my our some more less any all with for from that this those these plain fresh frozen whole real organic'.split(' ')
+);
+
+function namedInInstruction(instruction, name) {
+  const text = ` ${String(instruction || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ')} `;
+  if (text.trim().length < 2) return false;
+  return String(name)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .some((w) => w.length >= 3 && !REMOVE_STOPWORDS.has(w) && text.includes(` ${w}`));
+}
+
 // Apply a claim-safe compose result (add/remove by name) to the current cart,
 // deterministically — the model only proposed names + sections; we do the edit.
-export function applyCompose(current, { add = [], remove = [] }) {
+export function applyCompose(current, { add = [], remove = [] }, { instruction = '' } = {}) {
   const items = Array.isArray(current?.items) ? [...current.items] : [];
   const rm = remove.map((r) => String(r).toLowerCase()).filter(Boolean);
   const dropped = (name) => {
@@ -88,7 +110,14 @@ export function applyCompose(current, { add = [], remove = [] }) {
   };
   // Never remove a haul-swap callout via a text instruction; those are Kristy's notes,
   // not shopping rows. A scanned row is the shopper's own decision — also protected.
-  const kept = items.filter((it) => it.source === 'swap' || it.source === 'scan' || !dropped(it.name));
+  // The shopper's own adds and their imported list are protected the same way, unless
+  // the instruction names them.
+  const OWNED = new Set(['user', 'imported']);
+  const kept = items.filter((it) => {
+    if (it.source === 'swap' || it.source === 'scan') return true;
+    if (!dropped(it.name)) return true;
+    return OWNED.has(it.source) && !namedInInstruction(instruction, it.name);
+  });
   const present = new Set(kept.map((it) => it.name.toLowerCase()));
   const added = [];
   for (const a of add) {
