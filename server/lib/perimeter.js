@@ -40,7 +40,7 @@ export const NO_ANSWER =
    Score each entry by how many of its alias phrases (and title words) appear in the
    question. Longer alias phrases weigh more. Returns the best matches above a floor, so
    an off-topic question yields nothing and Kristy says so honestly instead of improvising. */
-export function matchEntries(question, limit = 3) {
+export function scoreEntries(question, limit = 3) {
   const q = ` ${norm(question)} `;
   if (q.trim().length < 2) return [];
 
@@ -56,17 +56,26 @@ export function matchEntries(question, limit = 3) {
     for (const w of new Set(norm(e.title).split(' '))) {
       if (w.length >= 4 && !STOPWORDS.has(w) && q.includes(` ${w} `)) score += 1;
     }
-    if (score > 0) scored.push({ e, score });
+    if (score > 0) scored.push({ entry: e, score });
   }
 
   scored.sort((a, b) => b.score - a.score);
   // Only keep entries within reach of the top score, so a single strong match doesn't
   // drag in weakly-related ones.
   const top = scored[0]?.score || 0;
-  return scored
-    .filter((s) => s.score >= Math.max(2, top - 2))
-    .slice(0, limit)
-    .map((s) => s.e);
+  return scored.filter((s) => s.score >= Math.max(2, top - 2)).slice(0, limit);
+}
+
+/**
+ * The matched entries, exactly as every caller has always received them.
+ *
+ * Kept as the primary surface deliberately: the retrieval SCORE is an internal
+ * detail of the matcher, and only the gap log has any business reading it. Callers
+ * that need it reach for scoreEntries and take `.entry`; nothing about the shape
+ * this returns has changed.
+ */
+export function matchEntries(question, limit = 3) {
+  return scoreEntries(question, limit).map((s) => s.entry);
 }
 
 /* ───────────────────────── Free universal layer (verbatim KB read) ─────────────────────────

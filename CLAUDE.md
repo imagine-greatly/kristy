@@ -172,6 +172,19 @@ equality *is* the positioning.
   the thing they must not become.
 - A section that doesn't cover something says so (`thinNote`). Naming the gap is what
   makes the covered part trustworthy.
+- **The misses are logged, and they are the authoring backlog.** Every counter question
+  the KB answers badly (`miss` = nothing matched, `weak` = an entry exists and answers
+  it poorly) lands in `counter_gaps`, frequency-ranked by `gapFeed`. You cannot
+  retroactively collect week-one questions, so this captures from day one. `/perimeter/ask`
+  logs unconditionally — the endpoint *is* the counter. **Chat and guest chat log only
+  behind `looksLikeCounterQuestion`**, the strict test: the loose `looksLikePerimeterQuestion`
+  exists to make a cheap KB check worthwhile, and logging on it would sweep ordinary
+  conversation into a shared dataset.
+- **The free counter layer stores no PERSONAL data — that is the precise claim.** It used
+  to be "no stored data". `counter_gaps` carries a normalized topic, an outcome and a
+  timestamp; no user key, no IP, no session. The question text is scrubbed of emails and
+  long digit runs and capped at 160 chars *before* the insert, because free text typed by
+  a stranger is the one place identity arrives by accident.
 
 **The list is the shopper's**
 - **The item always stays.** A row the shopper added is never removed, renamed or

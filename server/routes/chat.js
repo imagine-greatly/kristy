@@ -14,11 +14,12 @@ import {
 } from '../lib/chatRouting.js';
 import { interpretPreferences } from '../lib/preferenceMap.js';
 import {
-  matchEntries,
+  scoreEntries,
   composeAnswer,
   publicEntry,
   NO_ANSWER,
 } from '../lib/perimeter.js';
+import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { buildBaseline } from '../lib/listBaseline.js';
@@ -287,8 +288,26 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
     // 2. Perimeter question? Answer it from the KB (claim-locked) before the coach
     //    reply, so a no-barcode question is grounded in the KB, not improvised.
     if (looksLikePerimeterQuestion(message)) {
-      const matched = matchEntries(message);
+      const scored = scoreEntries(message);
+      const matched = scored.map((s) => s.entry);
+
+      // Gap logging is gated on the STRICT counter test, not the loose one above.
+      // looksLikePerimeterQuestion is deliberately permissive — it costs nothing to
+      // check the KB for any question — so logging on it would sweep ordinary chat
+      // text into an aggregate store, which is both backlog noise and exactly the
+      // line this loop must not cross. The composer is a general conversation; only
+      // an unmistakable counter question is a counter signal.
+      const isCounter = looksLikeCounterQuestion(message);
+
       if (matched.length) {
+        if (isCounter && scored[0].score <= WEAK_MATCH_CEILING) {
+          logCounterGap({
+            question: message,
+            outcome: 'weak',
+            topEntryId: scored[0].entry.id,
+            topScore: scored[0].score,
+          });
+        }
         const answer = await perimeterChatReply({ message, matched, premium, prefs });
         await saveChatMessage(userId, { role: 'user', content: message });
         await saveChatMessage(userId, { role: 'ai', content: answer });
@@ -313,7 +332,8 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       // improvisation about the one half of the store the claim lock exists to
       // protect. A named gap (lamb, crab, game) is what makes the covered part
       // trustworthy, and it is the same line the browse path already gives.
-      if (looksLikeCounterQuestion(message)) {
+      if (isCounter) {
+        logCounterGap({ question: message, outcome: 'miss' });
         await saveChatMessage(userId, { role: 'user', content: message });
         await saveChatMessage(userId, { role: 'ai', content: NO_ANSWER });
         return res.json({

@@ -6,7 +6,8 @@ import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
 import { looksLikePerimeterQuestion, looksLikeCounterQuestion } from '../lib/chatRouting.js';
-import { matchEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
+import { scoreEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
+import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import {
   GOAL_VALUES,
   FOCUS_VALUES,
@@ -72,8 +73,23 @@ router.post('/chat', async (req, res) => {
     //    to gate and nothing to pay for. The entry rides back so the bubble renders
     //    the same reference card as the Counter tab.
     if (looksLikePerimeterQuestion(message)) {
-      const matched = matchEntries(message);
+      const scored = scoreEntries(message);
+      const matched = scored.map((s) => s.entry);
+
+      // Gated on the STRICT counter test, same as /api/chat: the loose perimeter test
+      // exists to make a cheap KB check worthwhile, not to decide what belongs in a
+      // shared dataset. A stranger's general chat is never pooled.
+      const isCounter = looksLikeCounterQuestion(message);
+
       if (matched.length) {
+        if (isCounter && scored[0].score <= WEAK_MATCH_CEILING) {
+          logCounterGap({
+            question: message,
+            outcome: 'weak',
+            topEntryId: scored[0].entry.id,
+            topScore: scored[0].score,
+          });
+        }
         const top = publicEntry(matched[0]);
         // The decision leads here too — same content, same order, whether the
         // question came from an account or a stranger.
@@ -92,7 +108,8 @@ router.post('/chat', async (req, res) => {
       // Nothing matched, and the question was unmistakably about the counter →
       // the honest miss, not an improvisation. A stranger is exactly who cannot
       // afford a made-up counter answer: it is the first thing they ever see.
-      if (looksLikeCounterQuestion(message)) {
+      if (isCounter) {
+        logCounterGap({ question: message, outcome: 'miss' });
         return res.json({
           message: NO_ANSWER,
           hasFood: false,
