@@ -77,6 +77,14 @@ only by prompt.
   thing the verdict engine sees. `kristy_perimeter_kb.json` (77 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
+- **`main` is production. Pushing publishes, in about a minute.** The web client is live
+  at `kristyapproved.vercel.app` on a **GitHub-connected Vercel project**, so a push to
+  `main` auto-deploys with no staging gate and no manual step. There is no `.vercel/`
+  locally and the project is not visible to the MCP integration's account — neither
+  absence means what it looks like, and this file previously drew exactly that wrong
+  conclusion ("nothing is deployed, pushing publishes nothing"). Verified 2026-07-30 by
+  pushing and watching `/privacy` go from 404 to 200. **Check what a change does to a
+  live surface before pushing it**, especially anything a shopper or a reviewer reads.
 
 ---
 
@@ -314,8 +322,6 @@ equality *is* the positioning.
 
 ## Open items
 
-- ⚠️ **Nothing is deployed.** No Vercel project has ever existed for this repo (no
-  `.vercel/`, `list_projects` returns empty). Pushing to GitHub publishes nothing.
 - ⚠️ **Two migrations outstanding.** Verified against the live Supabase in `server/.env`
   on 2026-07-30: `scanned_products`, `shopping_lists`, `haul_scans`, `verdicts`,
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and

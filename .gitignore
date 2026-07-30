@@ -29,6 +29,9 @@ pnpm-debug.log*
 # ───────────────────────── OS / editor cruft ─────────────────────────
 .DS_Store
 Thumbs.db
+# OneDrive drops these into synced folders. Same OneDrive that intermittently locks
+# .git and makes a write fail with "permission denied" — retry, don't hand-edit.
+desktop.ini
 .idea/
 .vscode/
 *.swp
