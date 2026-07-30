@@ -268,9 +268,13 @@ export default function Auth() {
       <div className="auth__leaf">K</div>
       <div>
         <div className="auth__title">Kristy</div>
+        {/* The positioning, lifted verbatim from the landing hero rather than
+            re-written here — two surfaces describing the product differently is how
+            the old macro-tracker line survived this long. It also drops an em-dash
+            aside and a first-person-adjacent promise the voice spec forbids. */}
         <p className="auth__tag">
-          A nutrition coach in your pocket that actually knows you — delivered as
-          a conversation, not a dashboard.
+          Scanners read the box. Kristy reads the whole store: meat, fish, eggs,
+          produce, bulk.
         </p>
       </div>
 
