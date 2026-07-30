@@ -49,14 +49,18 @@ export function confidenceFor({ source, panel }) {
  * Never throws: an unmigrated table or a database blip must degrade to "not in
  * our store" and let OFF answer, exactly like a network failure would.
  *
+ * The client is injectable so the self-heal loop can be proven by BEHAVIOUR rather
+ * than by reading the source and trusting it. It defaults to the real one, so every
+ * caller in the app is untouched.
+ *
  * @returns {Promise<null | { found:true, source:'store', product:object,
  *   ingredients:string, confidence:string, originalSource:string }>}
  */
-export async function lookupProduct(barcode) {
+export async function lookupProduct(barcode, { client = supabase } = {}) {
   const code = str(barcode);
   if (!code) return null;
   try {
-    const { data, error } = await supabase
+    const { data, error } = await client
       .from(TABLE)
       .select('barcode, name, brand, ingredients, source, confidence, tier')
       .eq('barcode', code)
@@ -119,6 +123,7 @@ export async function retainProduct({
   source,
   panel = 'full',
   tier = null,
+  client = supabase,
 }) {
   const text = str(ingredients);
   if (!text || !source) return { retained: false, reason: 'nothing to retain' };
@@ -131,14 +136,14 @@ export async function retainProduct({
 
   try {
     const key = code ? { barcode: code } : { product_hash: hash };
-    const { data: existing } = await supabase
+    const { data: existing } = await client
       .from(TABLE)
       .select('id, ingredients, source, confidence, scan_count')
       .match(key)
       .maybeSingle();
 
     if (!existing) {
-      const { error } = await supabase.from(TABLE).insert({
+      const { error } = await client.from(TABLE).insert({
         barcode: code,
         product_hash: hash,
         name,
@@ -171,13 +176,65 @@ export async function retainProduct({
     // keep the good data. One cropped photo — or one photo filed under the wrong
     // barcode — can't degrade a product every other shopper resolves correctly.
 
-    const { error } = await supabase.from(TABLE).update(patch).eq('id', existing.id);
+    const { error } = await client.from(TABLE).update(patch).eq('id', existing.id);
     if (error) throw new Error(error.message);
     return { retained: true, created: false, replaced: incomingBeats, confidence };
   } catch (err) {
     // Unmigrated table / transient failure. Logged, never surfaced.
     console.warn('[kristy] product retain skipped:', err?.message || err);
     return { retained: false, reason: err?.message || 'error' };
+  }
+}
+
+/**
+ * How big the moat actually is — the compounding asset, counted.
+ *
+ * The number that matters is `fromVision`: products a barcode database could not
+ * answer for, which one shopper photographed once and every shopper after them
+ * resolves instantly. `fromOff` is coverage we borrow; `fromVision` is coverage we
+ * own, and watching the second grow is the only way to know the loop is running in
+ * production rather than merely being wired up correctly.
+ *
+ * AGGREGATE ONLY — counts of products, never a row about a person. There is nothing
+ * here that could be narrowed to one shopper because the table it reads holds no
+ * identity to narrow by.
+ *
+ * Never throws: an unmigrated table reports `available: false` rather than breaking
+ * the dashboard that displays it.
+ */
+export async function coverageStats({ client = supabase, recentDays = 30 } = {}) {
+  const since = new Date(Date.now() - recentDays * 24 * 60 * 60 * 1000).toISOString();
+
+  const tally = async (apply) => {
+    let q = client.from(TABLE).select('id', { count: 'exact', head: true });
+    if (apply) q = apply(q);
+    const { count, error } = await q;
+    if (error) throw new Error(error.message);
+    return count || 0;
+  };
+
+  try {
+    const [total, fromOff, fromVision, lowConfidence, learnedRecently] = await Promise.all([
+      tally(null),
+      tally((q) => q.eq('source', 'off')),
+      tally((q) => q.eq('source', 'vision')),
+      // Rows built from a partial panel. Worth surfacing: they are the curation
+      // queue, the entries most likely to be missing the tail of a list.
+      tally((q) => q.eq('confidence', 'low')),
+      tally((q) => q.gte('first_seen', since)),
+    ]);
+    return { available: true, total, fromOff, fromVision, lowConfidence, learnedRecently, recentDays };
+  } catch (err) {
+    console.warn('[kristy] coverage stats unavailable:', err?.message || err);
+    return {
+      available: false,
+      total: 0,
+      fromOff: 0,
+      fromVision: 0,
+      lowConfidence: 0,
+      learnedRecently: 0,
+      recentDays,
+    };
   }
 }
 

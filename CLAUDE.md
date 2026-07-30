@@ -144,6 +144,17 @@ equality *is* the positioning.
   greps for it). Precedence `off/full > vision/full > vision/partial` so a legible photo
   can't overwrite an OFF record, which also closes the tampering path. The store holds
   ingredients, **never judgments**: a cached hit re-runs the full engine.
+- **The self-heal loop is proven by behaviour, not by reading the source.** The Supabase
+  client is injectable on `lookupProduct` / `retainProduct` / `coverageStats` for exactly
+  that reason, and `productStoreLoop.test.js` runs the real sequence: a vision read of a
+  product OFF can't answer for, then a second scan of the same barcode resolving from our
+  own store. The claim is a sequence, so only a sequence demonstrates it.
+- **`coverageStats.fromVision` is the moat, counted.** `fromOff` is coverage we borrow;
+  `fromVision` is coverage we own. That number climbing over time is the only evidence the
+  loop is running in production rather than merely wired correctly.
+- **Wiring is not running.** `scripts/growthLoops.livetest.js` is the only thing that can
+  confirm production capture — it writes a probe row to the live DB, resolves it back,
+  checks the row carries no identity, and cleans up. Unit tests cannot do this.
 
 **The counter**
 - The free layer is **public** (`optionalAuth`): a deterministic KB read with no model
