@@ -11,11 +11,20 @@ import { fileURLToPath } from 'url';
 //
 // This same rewrite runs on the dev server and `vite preview`, so routing is
 // identical in dev, preview, and production.
+// Clean URLs for the legal pages. They are registered with mobile carriers as part of
+// A2P 10DLC campaign review, so they must resolve at a stable, extensionless path — and
+// they must resolve here too, or dev and production disagree about a URL that is printed
+// on an external form. The .html paths keep working, so older links do not break.
+const CLEAN_PAGES = { '/privacy': '/privacy.html', '/terms': '/terms.html' };
+
 function rewrite(req) {
   const path = (req.url || '/').split('?')[0];
+  const clean = CLEAN_PAGES[path.replace(/\/$/, '')];
   if (path === '/' || path === '/index.html') {
     // Root → static landing page served from publicDir.
     req.url = '/landing.html';
+  } else if (clean) {
+    req.url = clean;
   } else if (path === '/app' || path === '/app/' || path.startsWith('/app/')) {
     // /app (and any deep link under it) → the React app entry.
     req.url = '/app.html';

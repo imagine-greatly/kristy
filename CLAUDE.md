@@ -272,6 +272,22 @@ equality *is* the positioning.
 - Bird's SDK timeout is cut to 3.5s with **no** SDK-level retry, because a Supabase auth
   hook has a 5s budget for the whole round trip. Supabase owns the retry.
 
+**Legal pages and 10DLC**
+- `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean
+  URLs in both `vercel.json` and the vite middleware so dev, preview and production agree
+  about a URL that is printed on an external carrier form. The `.html` paths still resolve,
+  so older links do not break.
+- **The carrier sentence sits on ONE unbroken source line with no tags inside it.** A2P
+  10DLC review is often automated against raw HTML, and a line wrap a human would never
+  notice fails the match — rejection code **805**. Do not re-wrap it to fit the column.
+  Verified in source, in `dist/`, and over HTTP.
+- The pages must also carry: OTP purpose, that entering a number *constitutes consent*,
+  one message per sign-in request, STOP/HELP, "message and data rates may apply", and the
+  processor list. These are checked, not decorative.
+- **The SMS consent line lives in `SignInForm`, not on the surrounding screen.** Both
+  sign-in surfaces render that form and only `GuestGate` used to carry any legal text —
+  the full-page `Auth` had none. Carriers look for the opt-in wording beside the phone field.
+
 **Money**
 - Price *ids* are configuration, never hardcoded, and the client never sees them.
   Displayed prices have exactly one source per client (`lib/pricing`).

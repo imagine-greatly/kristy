@@ -11,12 +11,10 @@ export default function GuestGate({ line, terminal, onDismiss }) {
       <div className="gate__sheet" role="dialog" aria-modal="true">
         <div className="gate__avatar">K</div>
         <p className="gate__line">{line}</p>
+        {/* The Terms/Privacy line used to live here. It moved INTO SignInForm so the
+            full-page sign-in carries it too — it had none — and so the SMS consent
+            wording sits beside the phone field on both surfaces. */}
         <SignInForm note="No password. A code by text, and everything sticks." />
-        <p className="gate__legal">
-          By continuing you agree to our{' '}
-          <a href="/terms.html" target="_blank" rel="noreferrer">Terms</a> and{' '}
-          <a href="/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>.
-        </p>
         {!terminal && (
           <button className="gate__dismiss" onClick={onDismiss}>
             Not yet — keep looking around

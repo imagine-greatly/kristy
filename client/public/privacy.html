@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Kristy</title>
-  <meta name="description" content="How Kristy collects, uses, and protects your data." />
+  <title>Privacy Policy — Kristy Approved</title>
+  <meta name="description" content="How Kristy Approved collects, uses, and protects your data — including phone numbers used for SMS sign-in codes." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://kristyapproved.vercel.app/privacy" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -60,7 +62,7 @@
     }
     .updated {
       font-size: 13px; color: var(--struct); letter-spacing: .04em;
-      text-transform: uppercase; margin-bottom: 44px;
+      text-transform: uppercase; margin-bottom: 28px;
     }
     .lede {
       font-family: 'Inter', sans-serif; font-weight: 300;
@@ -71,6 +73,10 @@
       font-family: 'Playfair Display', serif; font-weight: 500;
       font-size: 24px; color: var(--gold); margin: 44px 0 14px;
     }
+    h3 {
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px;
+      color: var(--cream); margin: 24px 0 8px; letter-spacing: .01em;
+    }
     p { color: var(--cream); margin-bottom: 16px; }
     ul { margin: 0 0 16px 22px; }
     li { color: var(--cream); margin-bottom: 8px; }
@@ -80,6 +86,35 @@
       border-left: 2px solid var(--gold); padding: 4px 0 4px 18px;
       margin: 28px 0; color: var(--mint); font-size: 15px;
     }
+
+    /* The statement carriers look for. Given its own frame so it cannot be
+       missed by a reviewer skimming the page, and stated in one plain sentence. */
+    .pledge {
+      border: 1px solid rgba(201,168,76,.45);
+      background: rgba(201,168,76,.06);
+      border-radius: 4px;
+      padding: 20px 22px;
+      margin: 28px 0;
+    }
+    .pledge p { margin: 0; color: var(--cream); }
+    .pledge p + p { margin-top: 12px; }
+
+    .draft {
+      border: 1px solid rgba(45,90,61,.5);
+      border-radius: 4px; padding: 14px 18px; margin-bottom: 36px;
+      font-size: 14px; color: var(--mint);
+    }
+    .draft strong { color: var(--gold); }
+
+    table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 15px; }
+    th, td {
+      text-align: left; padding: 9px 12px 9px 0; vertical-align: top;
+      border-bottom: 1px solid rgba(45,90,61,.28);
+    }
+    th { color: var(--gold); font-weight: 600; font-size: 13px;
+         text-transform: uppercase; letter-spacing: .05em; }
+    td { color: var(--cream); }
+    .tablewrap { overflow-x: auto; }
 
     .foot {
       margin-top: 64px; padding-top: 28px;
@@ -99,84 +134,235 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 4, 2026</p>
+    <p class="updated">Last updated: July 30, 2026</p>
+
+    <p class="draft">
+      <strong>Working version.</strong> This policy accurately describes how Kristy
+      Approved handles your information today, and it applies now. It is pending a full
+      legal review, and we will update this page when that review is complete.
+    </p>
 
     <p class="lede">
-      Kristy is a nutrition assistant you talk to in a chat. To do that well, Kristy
-      keeps track of what you tell it. This page explains, in plain language, what
-      we collect, why, and what we do — and don't do — with it.
+      Kristy Approved (“Kristy”, “we”, “us”) is a grocery-coaching app. It reads
+      packaged food labels, answers questions about the counters that have no barcode,
+      and helps you build a shopping list. This page explains what we collect, why, who
+      we share it with, and what you can do about it.
     </p>
 
-    <h2>What we collect</h2>
-    <p>We only collect what's needed to run the service:</p>
+    <h2>Phone numbers and SMS messages</h2>
+
+    <h3>What we collect and why</h3>
+    <p>
+      <strong>We collect your mobile phone number so we can send you a one-time
+      verification code (OTP) by SMS to sign you in to your account.</strong> Kristy has
+      no passwords: the code is how you prove the account is yours.
+    </p>
+
+    <h3>How you opt in</h3>
+    <p>
+      <strong>Entering your phone number on the sign-in screen and requesting a code
+      constitutes your consent to receive a one-time verification code by SMS at that
+      number.</strong> No other consent is bundled into it, and you are not enrolled in
+      any marketing or promotional messaging by signing in.
+    </p>
+
+    <h3>Message frequency</h3>
+    <p>
+      <strong>One message per sign-in request.</strong> You receive a verification code
+      only when you ask for one. We do not send recurring, promotional, or marketing
+      messages.
+    </p>
+
+    <h3>How you opt out, and how to get help</h3>
+    <p>
+      <strong>Reply STOP to any message to opt out</strong> and you will receive no
+      further SMS messages from us. <strong>Reply HELP for help</strong>, or email us at
+      <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
+      <strong>Message and data rates may apply.</strong> Carriers are not liable for
+      delayed or undelivered messages. If you opt out you can still use the app, but you
+      will not be able to sign in by SMS code until you opt back in.
+    </p>
+
+    <h3>Who delivers the messages</h3>
+    <p>
+      SMS delivery is handled on our behalf by <strong>Bird</strong> (formerly
+      MessageBird). We pass Bird your phone number and the verification code so the
+      message can be sent. Bird acts as our service provider and does not use your
+      number for its own purposes.
+    </p>
+
+    <h2>We do not sell or share your phone number</h2>
+
+    <div class="pledge">
+      <!-- Deliberately on ONE unbroken source line, with no tags inside the sentence.
+           Carrier / A2P 10DLC review is often automated, and a scanner matching against
+           raw HTML fails on a line wrap that a human reader would never notice. Do not
+           re-wrap this line to fit the column width. -->
+      <p><strong>We do not sell or share your phone number, mobile information, or SMS opt-in consent with third parties or affiliates for marketing purposes.</strong></p>
+      <p>
+        Your phone number is used solely to authenticate you and to deliver the sign-in
+        codes you request. Mobile opt-in data and consent are never shared with any
+        third party or affiliate for marketing, promotional, or lead-generation
+        purposes. The only party that receives your number is our SMS delivery provider,
+        acting under contract, for the sole purpose of sending the code you asked for.
+      </p>
+    </div>
+
+    <h2>What else we collect</h2>
+
+    <h3>Information you choose to give us</h3>
     <ul>
-      <li><strong>Your phone number</strong> — to create and sign in to your account via a one-time SMS code.</li>
-      <li><strong>Weight entries</strong> — the weigh-ins you log, so Kristy can track your trend over time.</li>
-      <li><strong>Meal logs</strong> — the foods you record (typed, photographed, or scanned) and their macros.</li>
-      <li><strong>Chat messages</strong> — your conversation with Kristy, so it can respond in context and you can reload past days.</li>
-      <li><strong>Your goals and profile</strong> — details you provide during onboarding (such as your goal, training, and eating pattern) used to personalize guidance.</li>
+      <li>
+        <strong>Dietary preferences and goals</strong> — coaching goals, dietary focuses
+        (for example watching sodium or added sugar), hard-line restrictions (for
+        example no seed oils), and practical constraints (for example budget-conscious
+        or short on time). These are optional. The app works without them.
+      </li>
+      <li>
+        <strong>Optional profile details</strong> — such as name, age, height, weight,
+        and eating pattern, if you enter them.
+      </li>
+      <li>
+        <strong>Messages you send Kristy</strong> — so the conversation persists across
+        your devices.
+      </li>
     </ul>
 
-    <h2>Why we collect it</h2>
+    <h3>Information created as you use the app</h3>
+    <ul>
+      <li>
+        <strong>Scan activity</strong> — the barcodes you scan and the products they
+        resolve to. If a barcode is not found, you can photograph the ingredients panel;
+        that image is sent to our AI provider to transcribe the printed text, and we do
+        not retain the photograph.
+      </li>
+      <li>
+        <strong>Cart and list activity</strong> — what you put on your list, what you
+        take off, and which suggestions you decline, so the app can stop offering you
+        something you already said no to.
+      </li>
+      <li>
+        <strong>Your haul</strong> — a record of your scans so the app can show your trip
+        back to you.
+      </li>
+      <li>
+        <strong>Technical data</strong> — your IP address, used to rate-limit anonymous
+        use and prevent abuse, and basic web analytics (pageviews and product events such
+        as “a scan happened”).
+      </li>
+    </ul>
+
+    <h3>Payment information</h3>
     <p>
-      This information exists for one purpose: to provide the personalized nutrition
-      service. Kristy uses your history, goals, and trends to give specific, relevant
-      guidance instead of generic advice. We do not use your data to build advertising
-      profiles.
+      Paid memberships are processed by <strong>Stripe</strong> on the web and by
+      <strong>Apple</strong> for in-app purchases on iOS. <strong>We never see or store
+      your card number.</strong> We store only your subscription status and the
+      identifiers we need to manage it.
     </p>
 
-    <h2>Where it's stored</h2>
+    <h2>Your individual behavior stays yours</h2>
     <p>
-      Your data is stored using <strong>Supabase</strong>, a third-party database and
-      authentication provider, on our behalf. Your meal logs, chat messages, and
-      other content are scoped to your account. To generate responses, the content
-      of your messages (and food photos you send) is processed by our AI provider
-      to produce Kristy's replies.
+      What you personally buy, scan, and put on your list is used to personalize
+      <em>your</em> experience and nothing else. It is never pooled into a shared
+      dataset.
+    </p>
+    <p>
+      We do keep two anonymous, product-level records to improve the app for everyone:
+      the details of <strong>products</strong> that have been scanned, and the
+      <strong>text of counter questions</strong> our knowledge base could not answer well,
+      so we know what to write next. <strong>Neither carries any user identifier</strong>
+      — no account, no phone number, no IP address — and neither can be traced back to
+      you. This separation is enforced in our code, not just by policy.
     </p>
 
-    <h2>We don't sell your data</h2>
+    <h2>Who we share information with</h2>
+    <p>We do not sell your personal information. We use these service providers:</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Provider</th><th>What it handles</th></tr>
+        <tr><td><strong>Bird</strong></td><td>SMS delivery of your sign-in codes</td></tr>
+        <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, phone number, preferences, list, and history</td></tr>
+        <tr><td><strong>Vercel</strong></td><td>Web hosting and web analytics</td></tr>
+        <tr><td><strong>Railway</strong></td><td>Application server</td></tr>
+        <tr><td><strong>Anthropic</strong></td><td>AI processing of your questions, coaching text, and label photos</td></tr>
+        <tr><td><strong>Stripe</strong></td><td>Payment processing on the web</td></tr>
+        <tr><td><strong>Apple</strong></td><td>In-app purchases and subscription status on iOS</td></tr>
+        <tr><td><strong>Open Food Facts</strong></td><td>Public product database. Receives the barcode you scanned, with no user identifier attached</td></tr>
+      </table>
+    </div>
     <p>
-      We do <strong>not</strong> sell your personal data to third parties, and we
-      don't share it with third parties except the service providers we rely on to
-      operate Kristy (such as our database, hosting, and AI providers described
-      above), or where required by law.
+      We may also disclose information where required by law, or in connection with a
+      merger or acquisition.
+    </p>
+
+    <h2>Sensitive information</h2>
+    <p>
+      Some of what you may tell us — dietary restrictions and health-adjacent goals —
+      could be considered sensitive under some privacy laws. We collect it only if you
+      choose to provide it, use it only to personalize what the app shows you,
+      <strong>never sell it</strong>, never use it for advertising, and never pool it
+      into the anonymous datasets described above. It is deleted when you delete your
+      account.
+    </p>
+
+    <h2>How long we keep it</h2>
+    <p>
+      We keep your account information for as long as your account exists. When you
+      delete your account, it is removed. Anonymous product and question records contain
+      no personal information and are retained indefinitely. Payment records are retained
+      as long as tax and accounting law requires.
     </p>
 
     <h2>Deleting your data</h2>
     <p>
-      You can delete your account and all associated data at any time from within
-      the app — open the menu, tap the settings gear, and choose
-      <strong>Delete my account</strong>. This permanently removes your meals,
-      weigh-ins, chats, goals, and sign-in record. You can also email us at
-      <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a> and we'll remove it.
+      You can delete your account and everything held against it at any time from inside
+      the app — open Settings and choose <strong>Delete my account</strong>. This
+      permanently removes your profile, goals, list and list patterns, haul, chat
+      history, and sign-in record. It is immediate and cannot be undone. You can also
+      email <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a> and we
+      will remove it for you.
+    </p>
+
+    <h2>Security</h2>
+    <p>
+      Your data is stored with row-level security, so one account cannot read another's.
+      Card details never reach our servers. No system is perfectly secure, and we do not
+      claim otherwise.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Kristy Approved is not intended for children under 13, and we do not knowingly
+      collect information from them. If you believe a child has given us information,
+      email us and we will delete it.
     </p>
 
     <h2>Kristy is not a medical provider</h2>
     <p class="callout">
-      Kristy provides general nutrition guidance and is <strong>not</strong> a
-      licensed dietitian, doctor, or medical provider. It does not diagnose, treat,
-      or provide medical advice. The information Kristy gives is for general
-      informational purposes only. Talk to a qualified healthcare professional before
-      making significant changes to your diet, especially if you have any health
-      condition or concern.
+      Kristy provides general grocery and nutrition guidance and is <strong>not</strong>
+      a licensed dietitian, doctor, or medical provider. It does not diagnose, treat,
+      cure, or prevent any condition. Talk to a qualified healthcare professional before
+      making significant changes to your diet, especially if you have a health condition.
+      <strong>If you have a food allergy, always read the physical label</strong> — do not
+      rely on this app for allergen safety.
     </p>
 
     <h2>Changes to this policy</h2>
     <p>
-      Kristy is in early access and evolving. If we make meaningful changes to how we
-      handle your data, we'll update this page and revise the date above.
+      If we make meaningful changes to how we handle your data, we will update this page
+      and revise the date above.
     </p>
 
     <h2>Contact</h2>
     <p>
-      Questions about privacy? Email
+      Questions about privacy, or about SMS messages? Email
       <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
     </p>
 
     <div class="foot">
       <a href="/">Home</a>
-      <a href="/terms.html">Terms of Service</a>
-      <span>© 2026 Kristy</span>
+      <a href="/terms">Terms of Service</a>
+      <span>© 2026 Kristy Approved</span>
     </div>
   </div>
 

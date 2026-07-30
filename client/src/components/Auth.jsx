@@ -243,6 +243,21 @@ export function SignInForm({ note = 'No password. A 6-digit code by text.' }) {
       </button>
       {status === 'error' && <p className="auth__error">{error}</p>}
       <p className="auth__note">{note}</p>
+      {/* The SMS consent disclosure, at the point the number is entered.
+          It lives HERE rather than on the surrounding screen because both sign-in
+          surfaces (the full-page Auth and the GuestGate sheet) render this form, and
+          only one of them used to carry any legal text at all. Carriers reviewing an
+          A2P 10DLC campaign look for the opt-in language beside the phone field, and
+          the wording below is the same commitment the Privacy Policy makes: what
+          tapping the button consents to, how often a message arrives, that rates may
+          apply, and how to stop. */}
+      <p className="auth__legal">
+        By continuing you agree to our{' '}
+        <a href="/terms" target="_blank" rel="noreferrer">Terms</a> and{' '}
+        <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>. Requesting
+        a code consents to a one-time sign-in code by SMS — one per request, no marketing.
+        Message and data rates may apply. Reply STOP to opt out, HELP for help.
+      </p>
     </div>
   );
 }
