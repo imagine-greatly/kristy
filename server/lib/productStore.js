@@ -205,12 +205,19 @@ export async function retainProduct({
 export async function coverageStats({ client = supabase, recentDays = 30 } = {}) {
   const since = new Date(Date.now() - recentDays * 24 * 60 * 60 * 1000).toISOString();
 
+  // A head+count query against a table that DOES NOT EXIST comes back 204 with no
+  // error and a null count — indistinguishable, on the error channel, from success.
+  // Reporting that as `available: true, total: 0` would read as "the loop is wired,
+  // nobody has scanned yet" when the truth is "this can never capture anything",
+  // which is the single most expensive thing this metric could get wrong. A table
+  // that exists always answers with a number, so a null count IS the missing table.
   const tally = async (apply) => {
     let q = client.from(TABLE).select('id', { count: 'exact', head: true });
     if (apply) q = apply(q);
     const { count, error } = await q;
     if (error) throw new Error(error.message);
-    return count || 0;
+    if (count == null) throw new Error(`${TABLE} returned no count — table not migrated?`);
+    return count;
   };
 
   try {
@@ -235,6 +242,31 @@ export async function coverageStats({ client = supabase, recentDays = 30 } = {})
       learnedRecently: 0,
       recentDays,
     };
+  }
+}
+
+/**
+ * The most-scanned products in the catalog — what shoppers actually pick up.
+ *
+ * AGGREGATE: a product and how many times it has been sighted, across everyone.
+ * `scan_count` is a property of the PRODUCT, not of a person; there is no way to
+ * narrow it to a shopper because the table holds no identity to narrow by.
+ *
+ * Internal curation only. Never rendered to a shopper — "popular" is not a health
+ * signal and Kristy does not rank food by what sells.
+ */
+export async function topScannedProducts({ client = supabase, limit = 20 } = {}) {
+  try {
+    const { data, error } = await client
+      .from(TABLE)
+      .select('name, brand, source, confidence, tier, scan_count, last_seen')
+      .order('scan_count', { ascending: false })
+      .limit(limit);
+    if (error) throw new Error(error.message);
+    return data || [];
+  } catch (err) {
+    console.warn('[kristy] top products unavailable:', err?.message || err);
+    return [];
   }
 }
 

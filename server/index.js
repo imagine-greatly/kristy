@@ -24,6 +24,7 @@ import stripeWebhookRoute from './routes/stripe.js';
 import revenueCatWebhookRoute from './routes/revenuecat.js';
 import authHooksRoute from './routes/authHooks.js';
 import pushRoute from './routes/push.js';
+import internalRoute from './routes/internal.js';
 import { startCron } from './cron.js';
 
 const app = express();
@@ -76,6 +77,9 @@ app.use('/api/billing', billingRoute);
 // Both use the JSON parser above (RC, unlike Stripe, needs no raw-body signature).
 app.use('/api/revenuecat', revenueCatWebhookRoute);
 app.use('/api/push', pushRoute);
+// Internal growth view — the counter's backlog + the scanner's coverage. Aggregate
+// only, and 404s entirely unless INTERNAL_DASHBOARD_TOKEN is set. Not a shopper surface.
+app.use('/api/internal', internalRoute);
 
 // ───────── Global error handler (final safety net) ─────────
 // Last in the chain: catches anything a route forwarded via next(err) or threw

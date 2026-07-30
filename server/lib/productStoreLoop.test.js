@@ -199,6 +199,29 @@ test('coverage counts the split that matters — borrowed vs owned', async () =>
   assert.equal(stats.learnedRecently, 3, 'three landed inside the recent window');
 });
 
+test('a MISSING table reports unavailable, not a healthy empty catalog', async () => {
+  // The trap this closes: PostgREST answers a head+count against a non-existent table
+  // with 204, no error and a null count. Read naively that is "available, zero
+  // products" — indistinguishable from a migrated table nobody has scanned into yet,
+  // and the difference is "waiting for shoppers" versus "capturing nothing, forever".
+  const missingTable = {
+    from: () => ({
+      select: () => {
+        const q = {
+          eq: () => q,
+          gte: () => q,
+          then: (resolve) => resolve({ count: null, error: null }),
+        };
+        return q;
+      },
+    }),
+  };
+
+  const stats = await coverageStats({ client: missingTable });
+  assert.equal(stats.available, false, 'a null count must never read as a healthy empty table');
+  assert.equal(stats.total, 0);
+});
+
 test('an unmigrated table reports unavailable rather than breaking the dashboard', async () => {
   const broken = {
     from: () => ({

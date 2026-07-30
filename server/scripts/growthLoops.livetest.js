@@ -44,8 +44,12 @@ console.log(`  → ${process.env.SUPABASE_URL}`);
 /* ═══════════════ 1. The tables exist ═══════════════ */
 console.log('\n═══ Migrations ═══');
 
+// A REAL select, not a head+count. PostgREST answers a head request against a table
+// that does not exist with 204, no error and a null count — so the head form reports a
+// missing table as a healthy empty one, which is the exact false reassurance this
+// script exists to rule out.
 async function tableReachable(name) {
-  const { error } = await supabase.from(name).select('*', { count: 'exact', head: true });
+  const { error } = await supabase.from(name).select('*').limit(1);
   if (error) console.log(`    ${name}: ${error.message}`);
   return !error;
 }

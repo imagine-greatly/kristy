@@ -229,6 +229,22 @@ equality *is* the positioning.
   at all — a test forbids the import, because that import is what a join would have to
   look like and it is far easier to forbid than to detect afterwards.
 
+**Seeing the loops run**
+- **The internal growth view is OFF unless deliberately turned on.** `/api/internal/growth`
+  (+ `.html`) 404s entirely unless `INTERNAL_DASHBOARD_TOKEN` is set to **24+ chars**; a
+  shorter one degrades to unset rather than to a weak gate. Unauthorized gets **404, never
+  401** — a 401 confirms the endpoint exists and invites another try.
+- It reads **only** `coverageStats` / `gapFeed` / `topScannedProducts`. Aggregate is a
+  property of what it reads, not a filter it applies: both tables hold no identity, so
+  there is no individual data to redact. A test forbids it importing any per-user reader.
+- It is **not a Kristy surface** and deliberately uses none of her brand — inventing a
+  treatment for an ops page is the drift the brand lock exists to prevent.
+- **A `head:true` count cannot tell a missing table from an empty one.** PostgREST answers
+  204 / null count / no error for a table that does not exist, which reads as "available,
+  zero products" — i.e. "waiting for shoppers" when the truth is "capturing nothing,
+  forever". `coverageStats` treats a null count as unavailable, and reachability checks use
+  a real `select`, never a head.
+
 **Demo and failure**
 - **Demo must never fabricate, and never under-report.** It once silently engaged on a
   misconfigured production build and served a fixture for every scan; separately, hand-
@@ -284,10 +300,13 @@ equality *is* the positioning.
 
 - ⚠️ **Nothing is deployed.** No Vercel project has ever existed for this repo (no
   `.vercel/`, `list_projects` returns empty). Pushing to GitHub publishes nothing.
-- ⚠️ **Migrations not applied to a live DB** (`supabase/schema.sql`): `scanned_products`,
-  `shopping_lists`, and the `user_goals` columns `coach_goals` / `constraints` /
-  `macro_tracking`. Code degrades gracefully without them, so this is untested against a
-  real database, not broken.
+- ⚠️ **Two migrations outstanding.** Verified against the live Supabase in `server/.env`
+  on 2026-07-30: `scanned_products`, `shopping_lists`, `haul_scans`, `verdicts`,
+  `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
+  every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
+  `free_notes_used`, `non_negotiables`) are all **applied**. Still missing: **`counter_gaps`**
+  (`supabase/schema.sql`, new — the counter gap log captures nothing until it lands) and
+  **`push_tokens`** (`supabase/push_tokens.sql`). Code degrades gracefully without both.
 - ⚠️ **Phone OTP** is built end to end but not switched on. Remaining, all outside the
   code: register the Send SMS hook in the Supabase dashboard, put `BIRD_API_KEY` +
   `SEND_SMS_HOOK_SECRETS` in the server env, and clear **10DLC brand + campaign
