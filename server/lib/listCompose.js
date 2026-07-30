@@ -51,6 +51,10 @@ PRODUCE AND FRUIT — RANGE, NOT THE SAME TWO ITEMS:
 - Never default to "blueberries or strawberries" every time. Offer real variety: apples, citrus, bananas, pears, stone fruit, melon, grapes, whatever the season is doing.
 - "Whatever fruit is in season" is a good list item. So is naming two or three different kinds.
 
+THEIR REAL BASKET, WHEN IT IS KNOWN:
+- "staples" is what this shopper actually buys, trip after trip. It is evidence, not a request. Where a choice is open, lean toward what is already in their basket over an equivalent they have never bought — a familiar item they will actually eat beats a better one they will not.
+- It is NEVER a reason to add an item. Do not put a staple on the list because it is a staple; they did not ask for it this trip.
+
 CHAMPIONS ARE CONTEXTUAL, NEVER DEFAULT:
 - Liver, bone broth, natto, kefir, sauerkraut, kimchi, miso, sardines are worth arguing for — WHEN the instruction opens the door. Cheap protein asked for → liver belongs in the answer. Gut health asked for → the ferments belong.
 - Never drop one into a cart nobody asked about. An unrequested organ meat is the single fastest way to make a good list feel imposed.
@@ -72,7 +76,7 @@ SUMMARY VOICE — this is a text message, not a paragraph:
 
 /** The DATA payload: instruction + current item names + the shopper's pref labels.
  *  Goals are a SET (Block S) — `goals` wins, `goal` is accepted for older callers. */
-export function buildComposeInput({ instruction, mode = 'edit', currentItems = [], goal, goals, focuses, hardLines, constraints }) {
+export function buildComposeInput({ instruction, mode = 'edit', currentItems = [], staples = [], goal, goals, focuses, hardLines, constraints }) {
   const goalSet = (Array.isArray(goals) && goals.length ? goals : goal ? [goal] : [])
     .filter(Boolean)
     .map((g) => labelForGoal(g) || str(g));
@@ -80,6 +84,10 @@ export function buildComposeInput({ instruction, mode = 'edit', currentItems = [
     mode, // 'edit' (change the current list) or 'build' (compose a fresh cart)
     instruction: str(instruction),
     currentList: (currentItems || []).map((n) => str(n)).filter(Boolean).slice(0, 120),
+    // What they actually buy, trip after trip. Grocery NAMES the shopper themselves
+    // checked off — no inference, nothing derived, nothing that could carry a claim.
+    // The prompt may lean on it between equivalents; it may never add from it.
+    staples: list(staples).slice(0, 20),
     shopper: {
       goals: goalSet,
       // Kept for prompt-stability: the system prompt has always spoken of "goal".

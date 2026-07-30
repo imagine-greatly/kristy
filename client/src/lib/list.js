@@ -61,6 +61,19 @@ export function recordRemoved(name) {
   saveSignals(s);
 }
 
+// Record that an item was CHECKED OFF — the strongest evidence there is that the
+// shopper actually bought it. Deliberately NOT deduped: the number of occurrences is
+// the frequency, and repetition is the only signal of what somebody really buys.
+// Capped so a long history stays a bounded payload, newest kept.
+const KEPT_CAP = 200;
+export function recordKept(name) {
+  if (!name) return;
+  const s = loadSignals();
+  s.kept.push(String(name));
+  if (s.kept.length > KEPT_CAP) s.kept = s.kept.slice(-KEPT_CAP);
+  saveSignals(s);
+}
+
 // Record that a swap reminder was accepted (kept/checked) — a positive signal.
 export function recordAcceptedSwap(productName) {
   if (!productName) return;

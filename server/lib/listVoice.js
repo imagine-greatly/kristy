@@ -66,6 +66,19 @@ const declinedSet = (declined) =>
   new Set((Array.isArray(declined) ? declined : []).map((d) => String(d)));
 
 /**
+ * The grocery NAMES a set of declined offer ids resolves to.
+ *
+ * Lives here, beside the table, so list generation can suppress the item as well as
+ * the note. Silencing only the offer while still generating "Brown or jasmine rice"
+ * for somebody who said keep my white rice is the same suggestion arriving by a side
+ * door, and it reads as an app that did not listen.
+ */
+export function declinedItemNames(declined = []) {
+  const ids = declinedSet(declined);
+  return SWAP_OFFERS.filter((r) => ids.has(r.id)).map((r) => r.better);
+}
+
+/**
  * The offer for one item, or null. Null is the common and correct answer: most
  * groceries are simply groceries, and silence is the default.
  *

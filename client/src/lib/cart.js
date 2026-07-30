@@ -15,6 +15,7 @@ import {
   saveList,
   rebuildList,
   recordRemoved,
+  recordKept,
   recordAcceptedSwap,
   recordDeclinedSwap,
   composeList,
@@ -172,6 +173,10 @@ export function useCart(prefs) {
       mutate((cur) => {
         const item = cur.items.find((i) => i.id === id);
         if (item && !item.checked && item.source === 'swap') recordAcceptedSwap(item.productName);
+        // Checking a row off is the shopper saying they actually bought it. That is
+        // the baseline every future nudge leans from — where they really are, rather
+        // than a blank ideal restated every trip.
+        if (item && !item.checked && item.source !== 'swap') recordKept(item.name);
         return { ...cur, items: cur.items.map((i) => (i.id === id ? { ...i, checked: !i.checked } : i)) };
       }),
     [mutate]

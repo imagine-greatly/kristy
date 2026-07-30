@@ -17,6 +17,7 @@ import { imageUpload } from '../lib/upload.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
 import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
 import { attachOffers } from '../lib/listVoice.js';
+import { buildBaseline, suppressedByBaseline } from '../lib/listBaseline.js';
 
 // The List — server-persisted and server-gated (Step 8 → durable).
 //
@@ -77,7 +78,7 @@ function normalizeSignals(s) {
    their goals in one haul; a list that quietly gets a little better is the whole idea. */
 const NUDGE_CAP = 3;
 
-function nudgeTowardProfile(fresh, stored) {
+function nudgeTowardProfile(fresh, stored, baseline) {
   const items = stored?.items || [];
   // Compared on the canonical name so "Plain Greek yogurt" does not arrive beside the
   // "Greek yogurt" already in the cart.
@@ -88,6 +89,10 @@ function nudgeTowardProfile(fresh, stored) {
     // Haul callouts arrive through mergePendingSwaps; they are the shopper's own
     // accepted swaps and must not compete with the nudge for room.
     if (it.source === 'swap') continue;
+    // Anything they have already removed or already turned down. A declined swap that
+    // reappears as a "nudge" is the same suggestion wearing a different hat, and it
+    // is exactly what makes an app feel like it is not listening.
+    if (suppressedByBaseline(it.name, baseline)) continue;
     const key = canonicalItem(it.name);
     if (!key || present.has(key)) continue;
     present.add(key);
@@ -142,7 +147,7 @@ router.get('/list', requireAuth, async (req, res) => {
       // anyone who actually wants the fresh template; it is a choice, not a side
       // effect of tapping a goal.
       const fresh = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
-      list = nudgeTowardProfile(fresh, mergePendingSwaps(stored, pending, premium));
+      list = nudgeTowardProfile(fresh, mergePendingSwaps(stored, pending, premium), buildBaseline(signals));
       consumedPending = premium && pending.length > 0;
       await persist(userId, { list, signals: { ...signals, sig } });
     } else if (premium && pending.length) {
@@ -255,6 +260,9 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
       instruction,
       mode,
       currentItems: current.items.map((i) => i.name),
+      // Their real basket, so a build leans from where they actually are rather than
+      // from a blank ideal. Evidence, never a request — the prompt may not add from it.
+      staples: buildBaseline(normalizeSignals(row?.signals || EMPTY_SIGNALS)).staples,
       goal,
       goals,
       focuses,

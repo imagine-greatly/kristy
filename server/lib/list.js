@@ -15,6 +15,8 @@
 
 import { randomUUID } from 'node:crypto';
 import { labelForGoal } from './taxonomy.js';
+// listVoice holds the offer table and imports nothing, so this stays a one-way edge.
+import { declinedItemNames } from './listVoice.js';
 
 const rid = () => randomUUID();
 
@@ -383,6 +385,7 @@ const GOAL_TEMPLATES = Object.fromEntries(
 
 export { PICKS, GOAL_TEMPLATES };
 
+
 // Constraints that swap in a DIFFERENT specific pick, in priority order — the first
 // active one wins, so "budget + short on time" resolves deterministically rather than
 // flickering between two variants.
@@ -687,8 +690,15 @@ export function generateList({ goal, goals, nonNegotiables = [], focuses = [], c
   for (const nn of nonNegotiables || [])
     (EXCLUDE_TAGS[String(nn).toLowerCase()] || []).forEach((t) => excluded.add(t));
   const removed = new Set((signals.removed || []).map((s) => String(s).toLowerCase()));
+  // A swap they turned down is a preference learned. Suppressing the OFFER but still
+  // generating the item is the same suggestion arriving by a side door, and it reads
+  // as an app that did not listen.
+  const declined = new Set(declinedItemNames(signals.declinedSwaps).map((n) => canonicalItem(n)));
   const itemTags = (it) => [...(it.tags || []), ...foodTags(it.name)];
-  const blocked = (it) => itemTags(it).some((t) => excluded.has(t)) || removed.has(it.name.toLowerCase());
+  const blocked = (it) =>
+    itemTags(it).some((t) => excluded.has(t)) ||
+    removed.has(it.name.toLowerCase()) ||
+    declined.has(canonicalItem(it.name));
 
   const base = tpl.items.filter((it) => !blocked(it));
 

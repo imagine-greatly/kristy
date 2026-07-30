@@ -21,6 +21,7 @@ import {
 } from '../lib/perimeter.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { listSignature, EMPTY_SIGNALS } from '../lib/list.js';
+import { buildBaseline } from '../lib/listBaseline.js';
 import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
 import {
   getFullProfile,
@@ -97,6 +98,9 @@ async function cartEditReply({ userId, message, mode, prefs, premium }) {
     instruction: message,
     mode,
     currentItems: current.items.map((i) => i.name),
+    // What they actually buy, so the composer leans from their basket rather than a
+    // blank ideal. Same input the cart's own editor gets — one behaviour, both paths.
+    staples: buildBaseline(row?.signals || EMPTY_SIGNALS).staples,
     goal: prefs.goal,
     focuses: prefs.focuses,
     hardLines: prefs.hardLines,
