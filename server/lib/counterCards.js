@@ -227,6 +227,12 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     watch_out,
     tier_note: tierNote(entry),
 
+    // The KB's own alias table, carried onto the row. Curated cards are matched from the
+    // in-memory KB rather than from here, so this is not load-bearing today — but a row
+    // that describes how to find itself is the shape a generated card already has, and
+    // leaving curated rows blank would make the corpus two different things.
+    aliases: Array.isArray(entry.aliases) ? entry.aliases : [],
+
     // ── the depth, so nothing is dropped ──
     detail: [...spill, entry.detail].filter(Boolean).join(' '),
     kristy_take: entry.kristy_take || '',
@@ -390,7 +396,7 @@ export function projectAll() {
 
 const CARD_COLUMNS =
   'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, why, ' +
-  'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, source, use_count';
+  'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count';
 
 // A real select, never a head:true count — PostgREST answers 204 / null / no error for a
 // table that does not exist, which reads as "present, empty" and would render the counter
@@ -466,7 +472,7 @@ export async function getGeneratedCards(client) {
   try {
     const { data, error } = await client
       .from(TABLE)
-      .select(CARD_COLUMNS + ', aliases')
+      .select(CARD_COLUMNS)
       .eq('source', 'generated')
       .order('use_count', { ascending: false })
       .limit(GENERATED_FETCH_CAP);

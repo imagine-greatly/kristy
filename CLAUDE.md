@@ -327,7 +327,13 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (354 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (406 tests). Client: `cd client && npx vite build`.
+- **What the code writes must exist in the migrations, and a test checks it.**
+  `schemaContract.test.js` compares every key `cardToRow` emits against the columns
+  declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
+  live audit in `docs/SCHEMA-AUDIT.md` compares live against the file and is therefore
+  blind to a column missing from BOTH — which is exactly how `counter_cards.aliases`
+  shipped, silently stopping the generated corpus from growing.
 - **The counter card's shape bar is executable, and it runs against generated cards too.**
   `server/lib/counterCardLint.js` holds the rules (the observable may not sit in both the
   headline and the `do` line; the em-dash-then-justification share has a ceiling; within-

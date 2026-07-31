@@ -61,6 +61,10 @@ export function echoesRubric(note) {
 }
 
 export const MAX_DO_WORDS = 12 + 2;
+
+// An alias is matched as a phrase inside a question, so it has to be a subject phrase
+// rather than a sentence. Past four words it stops appearing verbatim in real questions.
+export const MAX_ALIAS_WORDS = 4;
 export const MAX_HEADLINE_WORDS = 12;
 
 /* ═══════════════════════════ Imperative ═══════════════════════════ */
@@ -219,6 +223,25 @@ export function lintCard(card) {
       fail(
         'ALIASES_MISSING',
         `a generated card needs at least 2 aliases to be findable again; got ${aliases.length}`
+      );
+    }
+
+    // AN ALIAS HAS TO BE SHORT, and this is not a style rule. The matcher looks for each
+    // alias as a run of words INSIDE the question, so a full sentence never matches
+    // anything: "how to tell if a cantaloupe is ripe" is not contained in "how do I pick a
+    // good cantaloupe". The first generated card shipped six aliases, every one of them a
+    // sentence, and it regenerated on every ask because none could ever hit.
+    const longOnes = aliases.filter((a) => words(a) > MAX_ALIAS_WORDS);
+    if (longOnes.length) {
+      fail(
+        'ALIASES_TOO_LONG',
+        `an alias is matched as a phrase inside a question, so it must be short. Over ${MAX_ALIAS_WORDS} words: ${longOnes.map((a) => `"${a}"`).join(', ')}`
+      );
+    }
+    if (!aliases.some((a) => words(a) <= 2)) {
+      fail(
+        'ALIASES_NO_SHORT_FORM',
+        'at least one alias must be one or two words — usually the bare subject noun, which is the most likely hit'
       );
     }
   }

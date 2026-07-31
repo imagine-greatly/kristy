@@ -31,7 +31,7 @@ const base = {
   tier: 'time_tested',
   tier_note: 'Melons have been judged by nose and weight for as long as they have been sold.',
   cta_item: null,
-  aliases: ['how to pick a melon', 'ripe melon', 'melon ripeness'],
+  aliases: ['melon', 'ripe melon', 'melon ripeness'],
 };
 const card = (over = {}) => toCard({ ...base, ...over }, { slug: 'gen_test', querySeed: 'test' });
 const codes = (v) => v.map((x) => x.code);
@@ -239,4 +239,33 @@ test('an unreadable generated corpus stops generation instead of spending on it'
   });
   assert.equal(out.reason, 'corpus_unavailable');
   assert.equal(out.matched, false, 'no generated card should be produced');
+});
+
+/* ═══════════════ Aliases have to be findable, not just present ═══════════════ */
+
+test('a sentence-shaped alias FAILS lint', () => {
+  // The matcher looks for each alias as a run of words INSIDE the question, so a full
+  // sentence never hits: "how to tell if a cantaloupe is ripe" is not contained in "how do
+  // I pick a good cantaloupe". The first generated card shipped six of these and
+  // regenerated on every ask.
+  const bad = card({
+    aliases: ['how to tell if a cantaloupe is ripe', 'best cantaloupe smell test', 'ripe cantaloupe signs'],
+  });
+  assert.ok(codes(lintCard(bad)).includes('ALIASES_TOO_LONG'));
+});
+
+test('a generated card must carry at least one one-or-two-word alias', () => {
+  assert.ok(codes(lintCard(card({ aliases: ['ripe cantaloupe check', 'cantaloupe ripeness test'] })))
+    .includes('ALIASES_NO_SHORT_FORM'));
+  assert.ok(!codes(lintCard(card({ aliases: ['cantaloupe', 'ripe cantaloupe', 'melon'] })))
+    .includes('ALIASES_NO_SHORT_FORM'));
+});
+
+test('short aliases actually retrieve the card they are on', async () => {
+  // The end-to-end property the two rules above exist to guarantee.
+  const { scoreGenerated } = await import('./counterCards.js');
+  const good = [{ slug: 'gen_cantaloupe', aliases: ['cantaloupe', 'ripe cantaloupe', 'melon'] }];
+  assert.ok(scoreGenerated('how do I pick a good cantaloupe', good).length > 0, 'short aliases must hit');
+  const bad = [{ slug: 'gen_cantaloupe', aliases: ['how to tell if a cantaloupe is ripe'] }];
+  assert.equal(scoreGenerated('how do I pick a good cantaloupe', bad).length, 0, 'sentence aliases cannot hit');
 });

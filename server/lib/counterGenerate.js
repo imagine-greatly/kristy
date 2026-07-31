@@ -72,8 +72,16 @@ THE CARD SHAPE — every field is required unless marked optional:
                 on." (that is the tier's definition, and it fits every card equally)
   cta_item    OPTIONAL. A grocery NAME and nothing else, if the answer resolves to one
               honest product ("Bone-in chicken thighs"). null otherwise. NEVER on a home card.
-  aliases     4-8 short phrases a shopper might type to reach this card. Lowercase. These
-              are how the card is found again — without them it is written once and lost.
+  aliases     4-8 SHORT SUBJECT PHRASES, lowercase, ONE TO THREE WORDS each.
+              These are how the card is found again, and the matcher looks for each one as
+              a run of words INSIDE a shopper's question. So they must be the words a
+              question would CONTAIN — never the question itself.
+              Good for a cantaloupe card: ["cantaloupe", "ripe cantaloupe", "cantaloupe
+                ripeness", "melon", "pick a melon", "cantaloupe smell"]
+              Bad:  ["how to tell if a cantaloupe is ripe", "best cantaloupe smell test"]
+                — nobody types that exact sentence, so the card is never found again and
+                the same question regenerates at full price forever.
+              Include the bare subject noun on its own. It is the single most likely hit.
 
 THE DO LINE MUST SERVE THE HEADLINE'S VERDICT. This is the single most common failure, so
 check it explicitly before returning.

@@ -37,6 +37,20 @@ const reviewed = (() => {
 // exists and answers badly. One number, one meaning.
 const CONFIDENT = WEAK_MATCH_CEILING;
 
+// GENERATED CARDS GET A LOWER BAR, and the asymmetry is deliberate.
+//
+// The curated ceiling assumes a KB entry carrying a dozen aliases, several of which hit a
+// real question, so the scores accumulate past 3. A generated card carries six or seven
+// aliases authored for ONE subject: on "how do I pick a good cantaloupe" exactly one of
+// them lands — the bare noun — for a score of 2. Held to the curated ceiling, the card
+// that was just written for this exact question never answers it, and the question
+// regenerates at full price forever. That is precisely what it did.
+//
+// One alias hit is the floor: scoreGenerated awards 2 for a single-word alias, so this is
+// "at least one authored alias matched". The costs are not symmetric — a slightly loose
+// retrieval shows a closely-related card, a strict one bills for a duplicate answer.
+const GENERATED_HIT = 2;
+
 // What Kristy says when the corpus has nothing and generation could not run. Never an
 // error, never an explanation of a budget.
 const NO_READ =
@@ -85,7 +99,7 @@ export async function answerCounterQuestion({
   const gen = await getGeneratedCards(client);
   const genScored = scoreGenerated(q, gen.cards);
   const genTop = genScored[0];
-  if (genTop && genTop.score > CONFIDENT) {
+  if (genTop && genTop.score >= GENERATED_HIT) {
     // A hit on a previously generated card is the loop paying off: someone else's question
     // answering this one, for free. It does not spend a generation slot.
     bumpUseCount(genTop.card.slug, client, genTop.card.use_count);
