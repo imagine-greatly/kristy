@@ -24,7 +24,7 @@ import { stampTier } from '../lib/productStore.js';
 
 // Graceful, Kristy-voiced error for when the note call can't return valid JSON twice.
 // (The engine's tier + universal layer are deterministic and never hit this path.)
-const ERROR_MSG = "I couldn't pull my read together on that one — give me a second and try again.";
+const ERROR_MSG = "I couldn’t pull my read together on that one — give me a second and try again.";
 
 // Coerce the request body into { ingredients, goal, nonNegotiables }. `ingredients`
 // may arrive as a string or a string[]; the engine tokenizes either.

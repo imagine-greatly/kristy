@@ -285,7 +285,7 @@ export function importSummary({ items, specified, offers }) {
   if (specified) parts.push(`sharpened ${specified} of them into what to actually reach for`);
   const line = `${parts.join(', ')}.`;
   if (offers.length) {
-    return `${line} A couple cross lines you set — they're still on there, swap only if you want to.`;
+    return `${line} A couple cross lines you set — they’re still on there, swap only if you want to.`;
   }
   return line;
 }

@@ -133,7 +133,7 @@ export function drawHaulCard(canvas, { distribution, read = '', hidePersonal = f
   ctx.fillStyle = colors.accentGold;
   const labelSize = Math.round(W * 0.026);
   ctx.font = `500 ${labelSize}px ${MONO}`;
-  const label = "THIS WEEK'S HAUL";
+  const label = "THIS WEEK’S HAUL";
   const lw = [...label].reduce((s, ch) => s + ctx.measureText(ch).width + labelSize * 0.22, -labelSize * 0.22);
   ctx.textAlign = 'left';
   tracked(ctx, label, W / 2 - lw / 2, Math.round(H * 0.175), labelSize * 0.22);

@@ -27,7 +27,7 @@ const PANEL_UNREADABLE =
   "That panel didn't come through. One more shot of the ingredients list — straight on, close enough to fill the frame.";
 const NO_INGREDIENTS =
   "No ingredient list readable on that one. Type the product name instead.";
-const ERROR_MSG = "That scan didn't go through — give it another try in a sec.";
+const ERROR_MSG = "That scan didn’t go through — give it another try in a sec.";
 
 function readLabel(reqFile) {
   const base64 = reqFile.buffer.toString('base64');

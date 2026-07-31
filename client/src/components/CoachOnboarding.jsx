@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import {
   COACH_GOALS,
@@ -97,7 +97,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
     arr.length > 1 ? `${arr.slice(0, -1).join(', ')} and ${arr[arr.length - 1]}` : arr[0] || '';
 
   return (
-    <div style={styles.screen} role="dialog" aria-modal="true" aria-label="Let's set up your cart">
+    <div style={styles.screen} role="dialog" aria-modal="true" aria-label="Let’s set up your cart">
       <div style={styles.card}>
         <div style={styles.top}>
           <span style={styles.logo}>Kristy</span>
@@ -132,7 +132,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
                   placeholder="High protein, clean eating, no seed oils, feeding kids…"
                   style={styles.freeInput}
                   maxLength={600}
-                  aria-label="Tell Kristy what you're shopping for"
+                  aria-label="Tell Kristy what you’re shopping for"
                 />
                 <button type="submit" style={styles.freeBtn} disabled={!text.trim() || mapping}>
                   {mapping ? '…' : 'Set it up'}
@@ -170,7 +170,7 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
               {/* One tap for the shopper who wants the whole synthetic column gone.
                   Deliberately does NOT include vegetarian/vegan/dairy-free/gluten-free —
                   those are an identity or an allergy, and they strip real food from the
-                  cart. "Everything artificial out" shouldn't quietly also mean "no meat". */}
+                  cart. "Everything artificial out" shouldn’t quietly also mean "no meat". */}
               <button
                 type="button"
                 onClick={toggleAllSynthetic}
@@ -248,8 +248,8 @@ export default function CoachOnboarding({ onComplete, onSkip, initialGoal = null
           )}
         </div>
 
-        {/* Never a trap. On the first step "skip" means "don't set me up at all"; on an
-            optional step it just moves past a question they don't have an answer for,
+        {/* Never a trap. On the first step "skip" means "don’t set me up at all"; on an
+            optional step it just moves past a question they don’t have an answer for,
             which is the difference between a conversation and a form. */}
         {step === 0 && (
           <button type="button" style={styles.skip} onClick={onSkip} disabled={busy}>
@@ -332,7 +332,7 @@ const styles = {
     background: colors.surface,
   },
   top: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
-  logo: { ...kristyVoice, fontSize: 22, color: colors.accentGold },
+  logo: { ...kristyDisplay, fontSize: 26, color: colors.brass },
   dots: { display: 'flex', gap: 6 },
   dot: { width: 7, height: 7, borderRadius: 999, background: colors.border },
   dotOn: { background: colors.accentGold },
@@ -346,7 +346,7 @@ const styles = {
     paddingLeft: 11,
     borderLeft: `2px solid ${colors.gold30}`,
   },
-  prompt: { ...kristyVoice, margin: 0, fontSize: 25, lineHeight: 1.25, color: colors.textPrimary },
+  prompt: { ...kristyDisplay, margin: 0, fontSize: 26, lineHeight: 1.25, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   note: { ...kristyVoice, margin: '4px 0 0', fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
   freeForm: { display: 'flex', gap: 8, alignItems: 'stretch', flexWrap: 'wrap', margin: '4px 0 2px' },
@@ -367,10 +367,10 @@ const styles = {
     flex: '0 0 auto',
     minHeight: 46,
     padding: '11px 16px',
-    borderRadius: 12,
-    border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontSize: 14,
     fontWeight: 700,
@@ -405,10 +405,10 @@ const styles = {
     minHeight: 48,
     padding: '11px 16px',
     margin: '8px 0 2px',
-    borderRadius: 14,
-    border: `1px solid ${colors.borderGold}`,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
     background: 'transparent',
-    color: colors.accentGold,
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontSize: 15,
     fontWeight: 700,
@@ -468,14 +468,15 @@ const styles = {
     fontWeight: 600,
     cursor: 'pointer',
   },
+  // The step's ONE filled action.
   primary: {
     flex: 1,
     minHeight: 48,
     padding: '13px 18px',
-    borderRadius: 14,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     fontFamily: fonts.ui,
     fontSize: 15,
     fontWeight: 700,

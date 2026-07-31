@@ -35,7 +35,7 @@ export const SEVERITY_LABEL = {
 export const EVIDENCE_LABEL = {
   established: 'Established',
   credible_concern: 'Credible concern',
-  kristys_standard: "Kristy's standard",
+  kristys_standard: "Kristy’s standard",
   time_tested: 'Time-tested',
 };
 
@@ -58,7 +58,7 @@ export const AFFIRMATION_CALL = 'People have eaten this for a very long time.';
 export const SEVERITY_CALL = {
   critical: 'Put it back. Every time.',
   high: 'Put it back.',
-  moderate: "It's here. Comes down to how often.",
+  moderate: "It’s here. Comes down to how often.",
   flag: 'Not an alarm. Worth seeing.',
 };
 

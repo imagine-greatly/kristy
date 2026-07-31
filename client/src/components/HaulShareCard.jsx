@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { colors, fonts } from '../lib/tokens.js';
+import { colors, fonts, radii } from '../lib/tokens.js';
 import { CloseIcon } from './Icons.jsx';
 import { drawHaulCard, canvasToBlob, ensureCardFonts, ensureCardLogo } from '../lib/haulCanvas.js';
 import { trackEvent } from '../lib/analytics.js';
@@ -126,7 +126,7 @@ const styles = {
   canvas: { width: '100%', height: 'auto', display: 'block' },
   toggle: { display: 'flex', alignItems: 'center', gap: 10, fontFamily: fonts.ui, fontSize: 14.5, color: colors.textSecondary, cursor: 'pointer' },
   actions: { display: 'flex', gap: 10 },
-  primary: { flex: 1, padding: '13px 16px', borderRadius: 12, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
+  primary: { flex: 1, padding: '13px 16px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
   ghost: { flex: 1, padding: '13px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontWeight: 600, fontSize: 15, cursor: 'pointer' },
   status: { textAlign: 'center', fontFamily: fonts.ui, fontSize: 13, color: colors.textMuted },
 };

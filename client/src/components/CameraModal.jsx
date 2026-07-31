@@ -46,7 +46,7 @@ export default function CameraModal({ open, onClose, onScan }) {
         setError(
           denied
             ? 'Camera access needed. Allow it in your browser settings.'
-            : "Camera didn't start. Try again."
+            : "Camera didn’t start. Try again."
         );
       });
 
@@ -81,7 +81,7 @@ export default function CameraModal({ open, onClose, onScan }) {
             <div className="scanner-video-wrap">
               <video ref={videoRef} className="scanner-video" muted playsInline />
               {/* The viewfinder carries NO text — just the live feed and four gold
-                  corner brackets (the motif's thin gold line weight) marking where
+                  corner brackets (the motif’s thin gold line weight) marking where
                   to place the barcode/label. All copy lives on ScanHome, before the
                   camera opens. No animation — nothing to respect under reduced-motion. */}
               <div className="scan-frame" aria-hidden="true">

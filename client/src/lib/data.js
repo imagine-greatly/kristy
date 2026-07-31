@@ -302,7 +302,7 @@ export async function loadHaul() {
     const todayKey = dayKey();
     const trip = week.filter((x) => dayKey(x.scanned_at) === todayKey);
     const read = week.length
-      ? "Solid start — but this haul is leaning on swaps. Want a couple of clean protein anchors on next week's list?"
+      ? "Solid start — but this haul is leaning on swaps. Want a couple of clean protein anchors on next week’s list?"
       : '';
     return { trip, week, distribution, read, carryForward: demoCarryForward(week) };
   }

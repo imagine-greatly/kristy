@@ -11,9 +11,9 @@ const EXAMPLES = [
 
 const GREETINGS = {
   morning: ['Good morning.', 'Morning. What are we shopping for?', 'New day, fresh cart.'],
-  afternoon: ['Hey. What are we shopping for?', "How's the day going?", 'Afternoon. What do you need?'],
-  evening: ['Evening. Planning a trip?', 'Good evening. What are we grabbing?', "What's on the list tonight?"],
-  night: ['Late-night list?', 'Still going?', "Planning tomorrow's trip?"],
+  afternoon: ['Hey. What are we shopping for?', "How’s the day going?", 'Afternoon. What do you need?'],
+  evening: ['Evening. Planning a trip?', 'Good evening. What are we grabbing?', "What’s on the list tonight?"],
+  night: ['Late-night list?', 'Still going?', "Planning tomorrow’s trip?"],
 };
 
 const SUBTITLES = [

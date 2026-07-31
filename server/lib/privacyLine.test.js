@@ -26,7 +26,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const MIGRATIONS = join(__dirname, '..', '..', 'supabase');
 
 // Every .sql migration, concatenated — the schema is spread across several files
-// (schema.sql, verdicts.sql, push_tokens.sql) and a table added in any of them counts.
+// (schema.sql, verdicts.sql, push_tokens.sql, counter_cards.sql) and a table added in
+// any of them counts.
 const sql = readdirSync(MIGRATIONS)
   .filter((f) => f.endsWith('.sql'))
   .map((f) => readFileSync(join(MIGRATIONS, f), 'utf8'))
@@ -44,7 +45,7 @@ function tableBlocks(text) {
 const TABLES = tableBlocks(sql);
 
 // The tables that deliberately hold no person: the aggregate pool.
-const AGGREGATE_TABLES = ['scanned_products', 'counter_gaps'];
+const AGGREGATE_TABLES = ['scanned_products', 'counter_gaps', 'counter_cards'];
 
 test('the migrations actually parsed — this suite is not vacuously passing', () => {
   assert.ok(TABLES.length >= 10, `expected the schema to parse; got ${TABLES.length} tables`);
@@ -157,10 +158,10 @@ test('the baseline carries no health claim, tier or inference — only names', (
 /* ═══════════════ Nothing routes individual behaviour into the pool ═══════════════ */
 
 test('the aggregate writers are never handed a shopper', () => {
-  // counterGaps and productStore are the only two modules that write to the shared
-  // pool. Neither may import the per-user readers — that import is what a join would
-  // have to look like, and it is far easier to forbid than to detect afterwards.
-  for (const mod of ['counterGaps.js', 'productStore.js']) {
+  // counterGaps, productStore and counterCards are the only modules that write to the
+  // shared pool. None may import the per-user readers — that import is what a join
+  // would have to look like, and it is far easier to forbid than to detect afterwards.
+  for (const mod of ['counterGaps.js', 'productStore.js', 'counterCards.js']) {
     const src = readFileSync(join(__dirname, mod), 'utf8');
     assert.equal(
       /from '\.\/listBaseline\.js'|from '\.\/list\.js'|getShoppingList|getFullProfile/.test(src),

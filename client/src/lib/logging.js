@@ -57,7 +57,7 @@ export async function sendBarcode({ barcode }) {
   if (body && body.message) {
     return { error: true, message: body.message, hasFood: false, macros: null, foods: [], insight: '' };
   }
-  throw new Error("Couldn't reach the barcode service — try again.");
+  throw new Error("Couldn’t reach the barcode service — try again.");
 }
 
 /* ───────── Photo ───────── */
@@ -93,7 +93,7 @@ export async function sendPhoto({ file, message }) {
   if (body && body.message) {
     return { error: true, message: body.message, hasFood: false, macros: null, foods: [], insight: '' };
   }
-  throw new Error("Couldn't read that photo clearly — try again or type it out");
+  throw new Error("Couldn’t read that photo clearly — try again or type it out");
 }
 
 /* ───────── Kristy's Verdict ─────────
@@ -114,8 +114,8 @@ function demoVerdict(isGuest) {
     ],
     fit: {
       summary: isGuest
-        ? "Protein-forward up front, but the back half is calorie-dense filler. That's the read cold. Sign in and it gets read against your actual targets."
-        : "Covers about 3 of your 7 protein days. The calories are there for the week — the protein isn't.",
+        ? "Protein-forward up front, but the back half is calorie-dense filler. That’s the read cold. Sign in and it gets read against your actual targets."
+        : "Covers about 3 of your 7 protein days. The calories are there for the week — the protein isn’t.",
       stats: isGuest
         ? ['~148g protein', 'protein-forward', 'high calorie-density']
         : ['148g total protein', '~3 of your 7 protein days', 'covers ~1.5 days of calories'],
@@ -144,7 +144,7 @@ export async function sendVerdict({ file }) {
   if (res.ok) return res.json();
   const body = await res.json().catch(() => null);
   if (body && body.message) return { error: true, message: body.message };
-  throw new Error("Couldn't read that one clearly — try another shot.");
+  throw new Error("Couldn’t read that one clearly — try another shot.");
 }
 
 export async function sendGuestVerdict({ file }) {
@@ -158,7 +158,7 @@ export async function sendGuestVerdict({ file }) {
   if (res.ok) return res.json(); // verdict JSON, or { gate:true, reason:'limit' }
   const body = await res.json().catch(() => null);
   if (body && body.message) return { error: true, message: body.message };
-  throw new Error("Couldn't read that one clearly — try another shot.");
+  throw new Error("Couldn’t read that one clearly — try another shot.");
 }
 
 /* ───────── Scan → verdict (the repointed scan front door — Step 4) ─────────
@@ -182,7 +182,7 @@ export async function sendGuestVerdict({ file }) {
 function demoScanCard({ personalize = true } = {}) {
   const universalLayer = [
     { id: 'canola_oil', name: 'Canola Oil', one_liner: 'Solvent-extracted and heat-damaged — it oxidizes easily, and oxidized fats are the real problem.', severity: 'high', evidence_tier: 'kristys_standard' },
-    { id: 'agave_syrup', name: 'Agave Syrup', one_liner: "Marketed as 'natural,' but it's 70–90% fructose — even more than corn syrup. The liver pays for that.", severity: 'high', evidence_tier: 'credible_concern' },
+    { id: 'agave_syrup', name: 'Agave Syrup', one_liner: "Marketed as 'natural,' but it’s 70–90% fructose — even more than corn syrup. The liver pays for that.", severity: 'high', evidence_tier: 'credible_concern' },
     { id: 'carrageenan', name: 'Carrageenan', one_liner: 'A seaweed thickener that inflamed the gut in animal studies — which is why it stays debated.', severity: 'high', evidence_tier: 'credible_concern' },
   ];
   // Raw honey leads the list, so the engine affirms it (dominant ingredient) while
@@ -195,7 +195,7 @@ function demoScanCard({ personalize = true } = {}) {
   const swap = 'Butter, ghee, or a splash of whole milk in your coffee';
   const signals = { highSodium: false, highAddedSugar: true, sodium_100g: null, added_sugar_100g: 22, glycemicHigh: [], sugarAliases: ['Agave Syrup'], cardiovascular: ['Canola Oil'] };
   const verdict = personalize
-    ? { tier: 'swap_recommended', stamp: false, universalLayer, affirmationLayer, note: "That creamer is mostly oil and sugar doing very little for you — here's where it works better.", swap, gated: false, signals, ingredientsRead: 14 }
+    ? { tier: 'swap_recommended', stamp: false, universalLayer, affirmationLayer, note: "That creamer is mostly oil and sugar doing very little for you — here’s where it works better.", swap, gated: false, signals, ingredientsRead: 14 }
     : { tier: 'swap_recommended', stamp: false, universalLayer, affirmationLayer, note: null, swap, needsGoal: true, signals, ingredientsRead: 14 };
   return {
     found: true,
@@ -272,7 +272,7 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constr
   if (res.ok) return res.json();
   const b = await res.json().catch(() => null);
   if (b && b.message) return { error: true, message: b.message };
-  throw new Error("Couldn't reach the verdict service — try again.");
+  throw new Error("Couldn’t reach the verdict service — try again.");
 }
 
 export async function runProductScan({ mode, barcode, file, goal = '', nonNegotiables = [], focuses = [], constraints = [], personalize = true }) {

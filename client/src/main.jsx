@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import App from './App.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 import { IS_MISCONFIGURED, MISSING_ENV } from './lib/config.js';
-import { colors, fonts, kristyVoice } from './lib/tokens.js';
+import { colors, fonts, kristyDisplay } from './lib/tokens.js';
 import './index.css';
 
 // A production build with no backend configured used to fall through to demo mode
@@ -14,7 +14,7 @@ function Misconfigured() {
   return (
     <div style={S.wrap}>
       <div style={S.inner}>
-        <p style={S.voice}>Kristy can't start.</p>
+        <p style={S.voice}>Kristy can’t start.</p>
         <p style={S.body}>
           This build is missing its configuration, so nothing it showed you would be
           real. Set {MISSING_ENV.length > 1 ? 'these' : 'this'} in the deployment
@@ -48,14 +48,13 @@ const S = {
   },
   inner: { maxWidth: 380 },
   voice: {
-    fontFamily: kristyVoice.fontFamily,
-    fontStyle: kristyVoice.fontStyle,
-    fontSize: 22,
+    ...kristyDisplay,
+    fontSize: 26,
     margin: '0 0 10px',
   },
   body: { fontSize: 15, lineHeight: 1.55, color: colors.textMuted, margin: 0 },
   list: { listStyle: 'none', padding: 0, margin: '14px 0 0' },
-  item: { fontFamily: fonts.mono, fontSize: 13, color: colors.accentGold, lineHeight: 1.9 },
+  item: { fontFamily: fonts.mono, fontSize: 13, color: colors.inkBody, lineHeight: 1.9 },
 };
 
 // The boundary wraps BOTH branches: a mount failure has to be legible whether the

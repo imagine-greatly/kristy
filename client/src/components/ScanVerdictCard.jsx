@@ -1,4 +1,4 @@
-import { colors, fonts, kristyVoice, motif } from '../lib/tokens.js';
+import { colors, fonts, kristyVoice, motif, radii } from '../lib/tokens.js';
 import { GoldThread, GoldDot } from './GoldThread.jsx';
 import { goalPickerOptions } from '../lib/coachGoals.js';
 import {
@@ -43,7 +43,7 @@ const TIER_CALL = {
   approved: 'Approved.',
   approved_with_note: 'Approved, with a note.',
   use_with_intention: 'Use it with intention.',
-  swap_recommended: "Swap it. There's a better pick.",
+  swap_recommended: "Swap it. There’s a better pick.",
   skip: 'Skip. Put it back.',
 };
 
@@ -285,11 +285,11 @@ export default function ScanVerdictCard({
     <div style={styles.card}>
       <ProductHeader product={product} />
 
-      {/* Verdict — the earned seal, or Kristy's call. Never the seal unless stamp is true. */}
+      {/* Verdict — the earned seal, or Kristy’s call. Never the seal unless stamp is true. */}
       {stamp ? <ApprovedSeal /> : <VerdictBar meta={meta} call={call} />}
 
-      {/* What's inside — the factual universal layer, one chip per flagged ingredient,
-          closed with Kristy's evidence-honesty line (free on every card). */}
+      {/* What’s inside — the factual universal layer, one chip per flagged ingredient,
+          closed with Kristy’s evidence-honesty line (free on every card). */}
       {universalLayer.length > 0 && (
         <section style={styles.section}>
           <SectionLabel>What&rsquo;s inside</SectionLabel>
@@ -303,7 +303,7 @@ export default function ScanVerdictCard({
         </section>
       )}
 
-      {/* What's good in here — the affirmation layer. Same anatomy as the flag list
+      {/* What’s good in here — the affirmation layer. Same anatomy as the flag list
           so the card reads as one system, but in the approved register: this is
           Kristy standing behind a whole food, not grading a concern. Free on every
           card (a pure KB read), and it never moves the tier or the seal. */}
@@ -319,7 +319,7 @@ export default function ScanVerdictCard({
         </section>
       )}
 
-      {/* Kristy's note — her voice (Playfair italic), spoken through the user's goal.
+      {/* Kristy’s note — her voice (Playfair italic), spoken through the user’s goal.
           Present for members and free users with a taste remaining. */}
       {note && (
         <section style={styles.section}>
@@ -329,11 +329,11 @@ export default function ScanVerdictCard({
         </section>
       )}
 
-      {/* Swap — the KB's generic better-pick is FREE (a field read); the goal-aware
+      {/* Swap — the KB’s generic better-pick is FREE (a field read); the goal-aware
           swap rides this same slot for members. Never present for approved tiers. */}
       {swap && <SwapBlock swap={swap} />}
 
-      {/* The withheld read — only when there's no note in hand (goal ask / tease). */}
+      {/* The withheld read — only when there’s no note in hand (goal ask / tease). */}
       {!note && (
         <ReadSlot
           needsGoal={needsGoal}
@@ -393,9 +393,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     background: colors.surface2,
-    color: colors.accentGold,
-    fontFamily: fonts.voice,
-    fontSize: 24,
+    color: colors.brass,
+    fontFamily: fonts.display,
+    fontStyle: 'italic',
+    fontSize: 26,
     fontWeight: 600,
   },
   headerText: { minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3 },
@@ -426,10 +427,11 @@ const styles = {
   },
   sealMark: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 },
   sealScript: {
-    fontFamily: fonts.voice,
+    fontFamily: fonts.display,
+    fontStyle: 'italic',
     fontSize: 30,
     lineHeight: 1,
-    color: colors.accentGold,
+    color: colors.brass,
   },
   sealApproved: {
     fontFamily: fonts.ui,
@@ -555,10 +557,10 @@ const styles = {
   unlockBtn: {
     alignSelf: 'stretch',
     padding: '13px 16px',
-    borderRadius: 12,
-    border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 15,
@@ -619,7 +621,7 @@ const styles = {
     marginBottom: 5,
   },
   swapText: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.45 },
-  swapPrimary: { color: colors.accentGold, fontWeight: 700 },
+  swapPrimary: { color: colors.ink, fontWeight: 700 },
   swapRest: { color: colors.textPrimary },
 
   // ── Education ism (footer) ──

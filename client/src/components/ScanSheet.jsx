@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import ScanVerdictCard from './ScanVerdictCard.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
@@ -127,7 +127,7 @@ export default function ScanSheet({
     );
   } else if (scan.gate) {
     content = (
-      <Centered title="Want the rest?" sub="You've had your look. Sign in and every scan gets read against your goal.">
+      <Centered title="Want the rest?" sub="You’ve had your look. Sign in and every scan gets read against your goal.">
         {onSignIn && (
           <button style={styles.primaryBtn} onClick={onSignIn}>
             Sign in
@@ -139,7 +139,7 @@ export default function ScanSheet({
     content = (
       <Centered
         title="Hm."
-        sub={scan.message || "That scan didn't go through. Try again in a sec."}
+        sub={scan.message || "That scan didn’t go through. Try again in a sec."}
       >
         <button style={styles.ghostBtn} onClick={onClose}>
           Close
@@ -162,12 +162,12 @@ export default function ScanSheet({
         ? 'One more shot'
         : barcodeMiss
           ? 'Not in the data yet'
-          : "Can't read that panel";
+          : "Can’t read that panel";
     const sub = scan.unreadable
       ? "Guessing from a partial read is worse than not knowing. Snap the ingredient label instead."
       : retryPhoto
         ? scan.message ||
-          "That panel didn't come through. One more shot of the ingredients list, straight on and filling the frame."
+          "That panel didn’t come through. One more shot of the ingredients list, straight on and filling the frame."
         : barcodeMiss
           ? 'Not in the data yet. Snap the ingredient label instead. That works on anything.'
           : scan.message ||
@@ -193,12 +193,12 @@ export default function ScanSheet({
             of whatever was just scanned. */}
         {scan.demo && (
           <div style={styles.demoBanner}>
-            Sample product — demo mode isn't looking up real barcodes.
+            Sample product — demo mode isn’t looking up real barcodes.
           </div>
         )}
 
         {/* A HALF-READ PANEL. What she found is real — a flag can only come from an
-            ingredient actually printed there — but the part she couldn't read is
+            ingredient actually printed there — but the part she couldn’t read is
             exactly where another one would hide, so `approved` is withheld upstream
             and the card says why. Naming the limit beats a clean-looking verdict
             built on a partial list. */}
@@ -340,12 +340,12 @@ const styles = {
     justifyContent: 'center',
     border: `1px solid ${colors.borderGold}`,
     background: colors.surface,
-    color: colors.accentGold,
-    fontFamily: fonts.voice,
+    color: colors.brass,
+    fontFamily: fonts.display,
     fontStyle: 'italic',
-    fontSize: 24,
+    fontSize: 26,
   },
-  title: { ...kristyVoice, fontSize: 22, color: colors.textPrimary },
+  title: { ...kristyDisplay, fontSize: 26, color: colors.ink },
   sub: { fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.5, color: colors.textMuted, maxWidth: 320 },
   demoBanner: {
     width: '100%',
@@ -355,10 +355,10 @@ const styles = {
     margin: '30px auto 12px',
     boxSizing: 'border-box',
     padding: '9px 14px',
-    borderRadius: 10,
-    border: `1px solid ${colors.borderGold}`,
-    background: colors.goldTint9,
-    color: colors.accentGold,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: colors.surface,
+    color: colors.inkMuted,
     fontFamily: fonts.ui,
     fontSize: 13,
     fontWeight: 600,
@@ -407,10 +407,10 @@ const styles = {
   primaryBtn: {
     marginTop: 4,
     padding: '11px 22px',
-    borderRadius: 999,
-    border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 15,
@@ -437,14 +437,15 @@ const styles = {
     maxWidth: 420,
     margin: '14px auto 0',
   },
+  // The sheet's ONE filled action — "Add to cart".
   cartPrimary: {
     flex: 1,
     minHeight: 48,
     padding: '13px 16px',
-    borderRadius: 12,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 15,
@@ -467,10 +468,10 @@ const styles = {
     flex: '0 0 auto',
     minHeight: 44,
     padding: '11px 16px',
-    borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
     background: 'transparent',
-    color: colors.accentGold,
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 14,
@@ -514,10 +515,10 @@ const styles = {
   focusYes: {
     flex: 1,
     padding: '10px 14px',
-    borderRadius: 999,
-    border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 14,
@@ -541,10 +542,10 @@ const styles = {
     maxWidth: 420,
     margin: '12px auto 0',
     padding: '13px 16px',
-    borderRadius: 12,
-    border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
+    color: colors.inkBody,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 15,

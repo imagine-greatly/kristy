@@ -16,9 +16,9 @@
     "flag": "On our radar. Generally low harm in isolation but worth transparency — especially as it accumulates."
   },
   "verdict_options": {
-    "skip": "Don't buy it. Put it back.",
-    "limit": "Occasional is probably fine. Don't make it a staple.",
-    "flag": "Know it's there. Factor it into the full picture.",
+    "skip": "Don’t buy it. Put it back.",
+    "limit": "Occasional is probably fine. Don’t make it a staple.",
+    "flag": "Know it’s there. Factor it into the full picture.",
     "context": "Depends on your goals, sensitivity, or the rest of the label."
   },
   "ingredients": [
@@ -35,10 +35,10 @@
       "severity": "high",
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
-      "one_liner": "Solvent-extracted and stripped by high heat — that processing oxidizes the oil, and oxidized fats are the real problem. Its erucic acid was bred out; the industrial processing wasn't.",
+      "one_liner": "Solvent-extracted and stripped by high heat — that processing oxidizes the oil, and oxidized fats are the real problem. Its erucic acid was bred out; the industrial processing wasn’t.",
       "why": "Canola oil is roughly 19–21% linoleic acid (omega-6) and undergoes refining, bleaching, and deodorization at high temperatures — a process that generates trans fats and oxidized lipids even in the final product. High omega-6 intake relative to omega-3 is consistently associated with systemic inflammation in mechanistic research. The original erucic acid toxicity was bred out, but the processing concern remains.",
       "history": "Rapeseed oil spent its first decades as an industrial lubricant — machinery and marine engines, notably through WWII. The food version, canola, was bred in the 1970s to strip enough erucic acid to be sellable as food. The processing — hexane extraction, high-heat deodorizing — never changed.",
-      "kristy_note": "This one is everywhere — it's the default 'neutral oil' in processed food. We avoid it not because one study said so, but because it's industrial, it oxidizes under heat, and it's not food your great-grandmother would recognize. Cook with butter, ghee, tallow, or cold-pressed olive oil.",
+      "kristy_note": "This one is everywhere — it’s the default ‘neutral oil’ in processed food. We avoid it not because one study said so, but because it’s industrial, it oxidizes under heat, and it’s not food your great-grandmother would recognize. Cook with butter, ghee, tallow, or cold-pressed olive oil.",
       "sources": [
         "DiNicolantonio & O'Keefe, Open Heart 2018",
         "Ramsden et al., BMJ 2013"
@@ -59,9 +59,9 @@
       "evidence_tier": "credible_concern",
       "verdict": "skip",
       "one_liner": "The most-used oil in America and one of the highest in the fragile omega-6 fat that oxidizes when heated. In animal studies it drove obesity and metabolic problems even without extra calories.",
-      "why": "Soybean oil is approximately 54% linoleic acid, among the highest of any common oil. UC Riverside research found soybean oil induced obesity, diabetes, and neurological effects in mice — and a follow-up study found it altered hypothalamic gene expression related to oxytocin signaling. It's also predominantly GMO and hexane-extracted at scale.",
+      "why": "Soybean oil is approximately 54% linoleic acid, among the highest of any common oil. UC Riverside research found soybean oil induced obesity, diabetes, and neurological effects in mice — and a follow-up study found it altered hypothalamic gene expression related to oxytocin signaling. It’s also predominantly GMO and hexane-extracted at scale.",
       "history": "Soybean oil scaled on the back of WWII-era industrial agriculture and postwar surplus — production went from marginal to the single most consumed oil in America in a few decades, not because anyone chose it, but because it was cheapest to grow, extract, and hide in processed food.",
-      "kristy_note": "You'll find this oil in almost every restaurant fryer, packaged snack, and salad dressing. If the label says 'vegetable oil,' it's almost certainly this. We skip it hard.",
+      "kristy_note": "You’ll find this oil in almost every restaurant fryer, packaged snack, and salad dressing. If the label says ‘vegetable oil,‘ it’s almost certainly this. We skip it hard.",
       "sources": [
         "Deol et al., PLOS ONE 2015",
         "Deol et al., Endocrinology 2020",
@@ -102,9 +102,9 @@
       "severity": "high",
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
-      "one_liner": "One of the heaviest omega-6 loads of any oil — and when heated it oxidizes into compounds that damage cells. 'High-oleic' versions are a marketing pivot, not a health food.",
+      "one_liner": "One of the heaviest omega-6 loads of any oil — and when heated it oxidizes into compounds that damage cells. ‘High-oleic’ versions are a marketing pivot, not a health food.",
       "why": "Standard sunflower oil contains 65–68% linoleic acid. When heated, linoleic acid oxidizes into toxic aldehydes including 4-hydroxynonenal (4-HNE) and malondialdehyde, which are directly cytotoxic and linked to neurodegenerative and cardiovascular disease. High-oleic variants reduce this but are still industrially processed.",
-      "kristy_note": "Often marketed as 'light' or 'heart healthy.' Neither framing holds under scrutiny. Skip the seed oil category entirely and it's a non-issue.",
+      "kristy_note": "Often marketed as ‘light’ or ‘heart healthy.‘ Neither framing holds under scrutiny. Skip the seed oil category entirely and it’s a non-issue.",
       "sources": [
         "Grootveld et al., Scientific Reports 2017",
         "DiNicolantonio & O'Keefe, Open Heart 2018"
@@ -123,7 +123,7 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "The most omega-6-dense oil there is — up to 78%. A major women's health trial found no heart benefit from swapping in oils like this, and some harm.",
+      "one_liner": "The most omega-6-dense oil there is — up to 78%. A major women’s health trial found no heart benefit from swapping in oils like this, and some harm.",
       "why": "Safflower oil is the most linoleic-acid-dense oil in common use at 73–78%. At these concentrations, omega-6 to omega-3 ratios become wildly skewed from any ancestral or evolutionary baseline. Chronic elevation of linoleic acid metabolites drives arachidonic acid cascade inflammation.",
       "kristy_note": "No reason to ever eat this. None.",
       "sources": [
@@ -147,7 +147,7 @@
       "one_liner": "Not a food crop — the leftover oil from cotton, one of the most pesticide-treated crops there is. A natural toxin in the seed has to be processed out before you can eat it.",
       "why": "Cottonseed oil contains gossypol, a toxic polyphenol that must be removed through heavy processing. Cotton is not classified as a food crop by the EPA, so pesticide residue limits are less strict than for food crops. The oil is roughly 52% linoleic acid and has been used in processed food as cheap filler since Crisco debuted in 1911.",
       "history": "Cottonseed oil was a waste product of the cotton industry until Procter & Gamble turned it into Crisco in 1911 — the first hydrogenated shortening, marketed as a modern replacement for butter and lard. It entered the food supply as a disposal solution, not a food.",
-      "kristy_note": "This is literally an industrial byproduct repurposed as food. It's in a lot of peanut butter, potato chips, and fast food. Hard skip.",
+      "kristy_note": "This is literally an industrial byproduct repurposed as food. It’s in a lot of peanut butter, potato chips, and fast food. Hard skip.",
       "sources": [
         "FDA pesticide tolerance classifications",
         "Nutrition historical research on cottonseed in US food supply"
@@ -166,9 +166,9 @@
       "severity": "high",
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
-      "one_liner": "Sold as a 'gourmet' or wellness oil, but it's 70–76% omega-6 and usually solvent-extracted. The polyphenols in the marketing are processed out.",
+      "one_liner": "Sold as a ‘gourmet’ or wellness oil, but it’s 70–76% omega-6 and usually solvent-extracted. The polyphenols in the marketing are processed out.",
       "why": "Grapeseed oil is a winery byproduct that found a second market in health food stores. Despite its polyphenol marketing angle, the polyphenols are removed during processing. What remains is among the highest-omega-6 oils available with no compensating nutrition.",
-      "kristy_note": "One of the sneakiest seed oils because it shows up in 'clean' and 'natural' product lines. Check every bottle of 'healthy' mayo and salad dressing.",
+      "kristy_note": "One of the sneakiest seed oils because it shows up in ‘clean’ and ‘natural’ product lines. Check every bottle of ‘healthy’ mayo and salad dressing.",
       "sources": [
         "USDA FoodData Central fatty acid profiles"
       ],
@@ -187,9 +187,9 @@
       "severity": "high",
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
-      "one_liner": "A deliberately vague label that almost always means soybean or canola — whatever's cheapest that week. If they won't name the oil, that's the tell.",
-      "why": "'Vegetable oil' on a US label is nearly always soybean oil or a soybean-canola blend, chosen for cost. The lack of specificity makes it impossible to evaluate, which is itself a transparency red flag for Kristy.",
-      "kristy_note": "We don't accept vague ingredient lists. If the manufacturer won't name the oil, that tells you something. Skip it.",
+      "one_liner": "A deliberately vague label that almost always means soybean or canola — whatever’s cheapest that week. If they won’t name the oil, that’s the tell.",
+      "why": "‘Vegetable oil’ on a US label is nearly always soybean oil or a soybean-canola blend, chosen for cost. The lack of specificity makes it impossible to evaluate, which is itself a transparency red flag for Kristy.",
+      "kristy_note": "We don’t accept vague ingredient lists. If the manufacturer won’t name the oil, that tells you something. Skip it.",
       "sources": [
         "USDA Economic Research Service oilseed consumption data"
       ],
@@ -210,9 +210,9 @@
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
       "one_liner": "A butter impersonator built from industrial seed oils, then colored and flavored to look like the real thing. The whole product exists to replace a whole food with a processed one.",
-      "why": "Modern margarine is primarily refined seed and vegetable oils — soybean, canola, palm — emulsified with water and additives, usually with artificial color to imitate butter's yellow and added flavor compounds to imitate its taste. The partially-hydrogenated era that made margarine a trans-fat vehicle is over; US products were reformulated after the FDA's PHO determination. The objection that remains is Kristy's standard, not a trans-fat claim: it is an industrial replacement for a whole food that already works.",
-      "history": "Margarine was invented in 1869 as a cheap butter substitute for armies and the poor, patented from beef tallow, then reformulated onto hydrogenated seed oils — the source of the trans-fat crisis that got them banned. Today it's back on refined seed oils. The formula has changed repeatedly; what never changed is that it exists to imitate butter.",
-      "kristy_note": "Flagged on the whole-food standard, not on trans fat. The trans fat is gone; US products were reformulated, and that reformulation was real. The objection left is simpler. It's built from refined seed oils and dressed up to look like the thing it replaces, and the thing it replaces is right there.",
+      "why": "Modern margarine is primarily refined seed and vegetable oils — soybean, canola, palm — emulsified with water and additives, usually with artificial color to imitate butter’s yellow and added flavor compounds to imitate its taste. The partially-hydrogenated era that made margarine a trans-fat vehicle is over; US products were reformulated after the FDA’s PHO determination. The objection that remains is Kristy’s standard, not a trans-fat claim: it is an industrial replacement for a whole food that already works.",
+      "history": "Margarine was invented in 1869 as a cheap butter substitute for armies and the poor, patented from beef tallow, then reformulated onto hydrogenated seed oils — the source of the trans-fat crisis that got them banned. Today it’s back on refined seed oils. The formula has changed repeatedly; what never changed is that it exists to imitate butter.",
+      "kristy_note": "Flagged on the whole-food standard, not on trans fat. The trans fat is gone; US products were reformulated, and that reformulation was real. The objection left is simpler. It’s built from refined seed oils and dressed up to look like the thing it replaces, and the thing it replaces is right there.",
       "sources": [
         "FDA Final Determination on PHOs (2018)",
         "USDA FoodData Central — margarine and vegetable oil spread composition"
@@ -234,10 +234,10 @@
       "severity": "critical",
       "evidence_tier": "established",
       "verdict": "skip",
-      "one_liner": "Artificial trans fat — the FDA pulled its 'safe' status because it directly drives heart disease. There's no safe amount, and it can still hide in anything labeled '0g trans fat.'",
+      "one_liner": "Artificial trans fat — the FDA pulled its ‘safe’ status because it directly drives heart disease. There’s no safe amount, and it can still hide in anything labeled ‘0g trans fat.‘",
       "why": "Partially hydrogenated oils are the primary source of artificial trans fatty acids, which raise LDL cholesterol, lower HDL, promote systemic inflammation, and are causally linked to coronary artery disease. The FDA determined in 2015 that PHOs are no longer Generally Recognized As Safe and mandated their removal. They can still appear in trace amounts legally labeled as 0g trans fat.",
       "history": "Hydrogenation was celebrated as modern food science for most of a century — until the trans fats it created were tied to heart disease and banned. It took ~90 years to walk back.",
-      "kristy_note": "This one isn't a philosophical call — it's established as harmful, the FDA banned it, and it has no place in food. If you see 'partially hydrogenated' anywhere on the label, put it back.",
+      "kristy_note": "This one isn’t a philosophical call — it’s established as harmful, the FDA banned it, and it has no place in food. If you see ‘partially hydrogenated’ anywhere on the label, put it back.",
       "sources": [
         "FDA Final Determination on PHOs (2018)",
         "Mozaffarian et al., NEJM 2006"
@@ -258,9 +258,9 @@
       "severity": "critical",
       "evidence_tier": "established",
       "verdict": "skip",
-      "one_liner": "Cures the meat pink — and forms compounds classified as carcinogenic to humans. This one isn't debated.",
+      "one_liner": "Cures the meat pink — and forms compounds classified as carcinogenic to humans. This one isn’t debated.",
       "why": "Sodium nitrite reacts with amines in meat under digestive conditions to form N-nitroso compounds (nitrosamines), which are potent carcinogens with the strongest associations with colorectal and stomach cancer. The IARC reviewed over 800 studies before issuing their 2015 classification of processed meat as a Group 1 carcinogen. There is no established safe threshold.",
-      "kristy_note": "This is not a 'limit it' ingredient for us. Look for uncured meats with no added nitrites or nitrates — or better, slice your own from a roasted whole cut. Counter deli meat from whole-roasted turkey or beef is a clean swap.",
+      "kristy_note": "This is not a ‘limit it’ ingredient for us. Look for uncured meats with no added nitrites or nitrates — or better, slice your own from a roasted whole cut. Counter deli meat from whole-roasted turkey or beef is a clean swap.",
       "sources": [
         "IARC Monographs Volume 114 (2015)",
         "WHO Q&A on processed meat and cancer (2015)",
@@ -281,7 +281,7 @@
       "verdict": "skip",
       "one_liner": "The dry-cure version of nitrite — your body turns it into nitrite in digestion, onto the exact same cancer-linked pathway. Just one step upstream.",
       "why": "Sodium nitrate is converted to nitrite by oral bacteria and intestinal reduction, entering the same N-nitroso compound formation pathway as sodium nitrite directly. Used in cured sausages, hard salamis, and some cheeses. The carcinogenic risk is functionally equivalent to sodium nitrite once metabolized.",
-      "kristy_note": "Same call as nitrite. Some products marketed as 'uncured' use celery powder or celery juice (naturally high in nitrate) as a technicality — the nitrate is still there.",
+      "kristy_note": "Same call as nitrite. Some products marketed as ‘uncured’ use celery powder or celery juice (naturally high in nitrate) as a technicality — the nitrate is still there.",
       "sources": [
         "IARC Monographs Volume 114 (2015)",
         "Micha et al., Circulation 2010"
@@ -322,7 +322,7 @@
       "verdict": "skip",
       "one_liner": "The most-studied artificial sweetener, and increasingly the most questioned — a WHO agency now calls it a possible carcinogen. It also breaks down into methanol and formaldehyde.",
       "why": "Aspartame breaks down into phenylalanine, aspartic acid, and methanol, which is subsequently metabolized to formaldehyde. A 2023 IARC review classified aspartame as Group 2B (possibly carcinogenic) based on limited evidence of hepatocellular carcinoma in humans. Separately, research links artificial sweeteners including aspartame to disrupted gut microbiome, impaired insulin signaling, and paradoxical appetite stimulation.",
-      "kristy_note": "Diet sodas, sugar-free gum, 'light' yogurt, and hundreds of protein products use this. Zero-calorie doesn't mean zero consequence. We prefer nothing, or fruit-forward natural sweetness.",
+      "kristy_note": "Diet sodas, sugar-free gum, ‘light’ yogurt, and hundreds of protein products use this. Zero-calorie doesn’t mean zero consequence. We prefer nothing, or fruit-forward natural sweetness.",
       "sources": [
         "IARC Group 2B classification (2023)",
         "Suez et al., Nature 2014 (gut microbiome)",
@@ -344,7 +344,7 @@
       "verdict": "skip",
       "one_liner": "A sugar molecule rebuilt with chlorine. Research has tied it to killing off good gut bacteria and to a breakdown product that can damage DNA.",
       "why": "A 2023 study in the Journal of Toxicology and Environmental Health found sucralose-6-acetate, a metabolite that accumulates in the gut wall, is genotoxic — meaning it can damage DNA. Earlier research from Duke University showed sucralose reduced beneficial gut bacteria by up to 50% in rats. Human studies have shown it can spike insulin response in some people despite having no calories, undermining its main proposed benefit.",
-      "kristy_note": "This one is in almost every protein powder, pre-workout, and 'keto' product on the market right now. Read every supplement label. We use nothing, stevia if we must, monk fruit if the product is otherwise clean.",
+      "kristy_note": "This one is in almost every protein powder, pre-workout, and ‘keto’ product on the market right now. Read every supplement label. We use nothing, stevia if we must, monk fruit if the product is otherwise clean.",
       "sources": [
         "Schiffman & Rother, J Toxicol Environ Health 2013",
         "Brusick et al., J Toxicol 2023 (sucralose-6-acetate genotoxicity)",
@@ -366,9 +366,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "Almost always blended with aspartame or sucralose to hide their aftertaste — so seeing it means you're getting more than one. It crosses into the brain and disrupted cognition in animal studies.",
-      "why": "Acesulfame K contains methylene chloride, a known carcinogen, as a precursor in its synthesis. Animal studies have shown it can cross the blood-brain barrier and disrupt cognitive function. It's rarely used alone — it's a blending agent that masks bitterness of other sweeteners, meaning its presence signals you're consuming multiple artificial sweeteners simultaneously.",
-      "kristy_note": "If you see Ace-K on a label, check for aspartame right next to it. They're almost always together. Double reason to put it back.",
+      "one_liner": "Almost always blended with aspartame or sucralose to hide their aftertaste — so seeing it means you’re getting more than one. It crosses into the brain and disrupted cognition in animal studies.",
+      "why": "Acesulfame K contains methylene chloride, a known carcinogen, as a precursor in its synthesis. Animal studies have shown it can cross the blood-brain barrier and disrupt cognitive function. It’s rarely used alone — it’s a blending agent that masks bitterness of other sweeteners, meaning its presence signals you’re consuming multiple artificial sweeteners simultaneously.",
+      "kristy_note": "If you see Ace-K on a label, check for aspartame right next to it. They’re almost always together. Double reason to put it back.",
       "sources": [
         "Cong et al., Frontiers in Nutrition 2019 (neurocognitive effects in mice)",
         "FDA food additive petition history"
@@ -390,7 +390,7 @@
       "verdict": "skip",
       "one_liner": "The oldest artificial sweetener — nearly banned over bladder-cancer findings in rats. Newer research pins it as the worst of the sweeteners for throwing off blood-sugar control through your gut bacteria.",
       "why": "Saccharin was placed on the US carcinogen list in 1981 and removed in 2000 after human relevance of the rat bladder tumors was debated. A landmark 2014 Nature study found saccharin was the most potent disruptor of glucose metabolism among artificial sweeteners tested, inducing glucose intolerance through gut microbiome disruption — effects transferable to germ-free mice via fecal transplant, proving causality.",
-      "kristy_note": "It's largely out of food but still common in some tabletop sweeteners, medications, and pediatric supplements. Always check.",
+      "kristy_note": "It’s largely out of food but still common in some tabletop sweeteners, medications, and pediatric supplements. Always check.",
       "sources": [
         "Suez et al., Nature 2014",
         "FDA delisting history (2000)",
@@ -412,10 +412,10 @@
       "severity": "critical",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "Sugar engineered to carry more fructose than any real food — and fructose in that dose goes straight to the liver and turns into fat. Cheaper than sugar, so it's in everything.",
+      "one_liner": "Sugar engineered to carry more fructose than any real food — and fructose in that dose goes straight to the liver and turns into fat. Cheaper than sugar, so it’s in everything.",
       "why": "Unlike glucose, fructose is metabolized almost exclusively in the liver. At the concentrations delivered by HFCS in the modern diet, this overwhelms hepatic capacity, leading to de novo lipogenesis (liver fat production), elevated triglycerides, insulin resistance, and uric acid elevation. Princeton research showed HFCS-fed rats gained significantly more weight than sucrose-fed rats at equivalent caloric intake. Mercury contamination from the chlor-alkali process has also been detected in HFCS products.",
       "history": "HFCS exists because of corn subsidies and 1970s sugar tariffs — it was cheaper than sugar, so it replaced sugar in nearly everything. Its dominance is a policy artifact, not a food choice anyone made.",
-      "kristy_note": "This is in bread, condiments, sodas, cereals, sauces — almost every product in the center aisles. The industry tried to rebrand it as 'corn sugar' — don't be fooled. No amount of HFCS belongs in food.",
+      "kristy_note": "This is in bread, condiments, sodas, cereals, sauces — almost every product in the center aisles. The industry tried to rebrand it as ‘corn sugar’ — don’t be fooled. No amount of HFCS belongs in food.",
       "sources": [
         "Bocarsly et al., Pharmacology Biochemistry & Behavior 2010 (Princeton)",
         "Stanhope et al., JCI 2009 (hepatic lipogenesis)",
@@ -436,9 +436,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "limit",
-      "one_liner": "A starch that hits your blood sugar faster than table sugar. It's in 'sugar-free' products because technically it isn't sugar.",
-      "why": "Maltodextrin is absorbed almost immediately, causing sharp blood glucose and insulin spikes. Research has shown it promotes the growth of E. coli and Salmonella while impairing gut immunity — specifically suppressing anti-microbial responses. It's used as a filler, texturizer, and food starch and hides in 'sugar-free' products because it's technically a starch, not a sugar.",
-      "kristy_note": "One of the sneakiest ingredients because it doesn't read as a sugar on first pass. If you're managing blood sugar or gut health, this one matters.",
+      "one_liner": "A starch that hits your blood sugar faster than table sugar. It’s in ‘sugar-free’ products because technically it isn’t sugar.",
+      "why": "Maltodextrin is absorbed almost immediately, causing sharp blood glucose and insulin spikes. Research has shown it promotes the growth of E. coli and Salmonella while impairing gut immunity — specifically suppressing anti-microbial responses. It’s used as a filler, texturizer, and food starch and hides in ‘sugar-free’ products because it’s technically a starch, not a sugar.",
+      "kristy_note": "One of the sneakiest ingredients because it doesn’t read as a sugar on first pass. If you’re managing blood sugar or gut health, this one matters.",
       "sources": [
         "Laudisi et al., Nutrients 2019 (gut microbiome, E. coli adhesion)",
         "Foster-Powell et al., AJCN 2002 (glycemic index data)"
@@ -459,9 +459,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "Marketed as a 'natural,' low-glycemic sweetener — but processed agave is 70–90% fructose, even more than high-fructose corn syrup. The liver pays for that.",
+      "one_liner": "Marketed as a ‘natural,‘ low-glycemic sweetener — but processed agave is 70–90% fructose, even more than high-fructose corn syrup. The liver pays for that.",
       "why": "Traditional agave sap contains inulin (a prebiotic fiber). Commercially processed agave nectar destroys the inulin and concentrates fructose to 70–90% — a concentration not found in any whole food and higher than HFCS. The low glycemic index is a direct function of fructose not raising blood glucose immediately, but the hepatic fructose burden is worse than regular sugar.",
-      "kristy_note": "This one has genuinely fooled the wellness market. It's in 'healthy' granola bars, raw snacks, and organic products everywhere. The 'natural' label is doing a lot of heavy lifting here.",
+      "kristy_note": "This one has genuinely fooled the wellness market. It’s in ‘healthy’ granola bars, raw snacks, and organic products everywhere. The ‘natural’ label is doing a lot of heavy lifting here.",
       "sources": [
         "USDA FoodData Central (agave fructose profile)",
         "Johnson et al., Circulation 2009 (dietary fructose and metabolic disease)"
@@ -482,9 +482,9 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
-      "one_liner": "Fruit with the fiber stripped out and the sugar concentrated — used so a label can claim 'no added sugar.' Without the fiber, it hits you like any other sugar.",
-      "why": "Fruit juice concentrate retains the sugar of fruit but removes the fiber that governs its absorption. Without fiber, fructose from concentrate hits the liver with similar velocity to added sugar. It's a legal and marketing workaround, not a health improvement.",
-      "kristy_note": "We prefer whole fruit every time. If a product uses concentrate as a primary sweetener, it's a processed food dressed as a whole food.",
+      "one_liner": "Fruit with the fiber stripped out and the sugar concentrated — used so a label can claim ‘no added sugar.‘ Without the fiber, it hits you like any other sugar.",
+      "why": "Fruit juice concentrate retains the sugar of fruit but removes the fiber that governs its absorption. Without fiber, fructose from concentrate hits the liver with similar velocity to added sugar. It’s a legal and marketing workaround, not a health improvement.",
+      "kristy_note": "We prefer whole fruit every time. If a product uses concentrate as a primary sweetener, it’s a processed food dressed as a whole food.",
       "sources": [
         "Lustig, Fat Chance (2012)",
         "Harvard School of Public Health: The Nutrition Source"
@@ -505,9 +505,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A petroleum-based dye tied to hyperactivity in kids, carrying trace amounts of a known carcinogen from how it's made. Reformulated out in Europe; still standard here.",
-      "why": "Red 40 was linked to hyperactivity in children in a landmark 2007 Southampton study, prompting the EU to require warning labels (which manufacturers chose to avoid by reformulating with natural colorants). The dye contains trace levels of benzidine, a Group 1 IARC human carcinogen, as a manufacturing contaminant. The FDA considers the contaminant level 'safe' — we disagree with the premise. California restricted it in school foods in 2023.",
-      "kristy_note": "Used in everything from red candy to strawberry milk to barbecue sauce. Always replaceable with beet, paprika, or pomegranate extract. If a company is still using this in 2026, that's a brand values signal.",
+      "one_liner": "A petroleum-based dye tied to hyperactivity in kids, carrying trace amounts of a known carcinogen from how it’s made. Reformulated out in Europe; still standard here.",
+      "why": "Red 40 was linked to hyperactivity in children in a landmark 2007 Southampton study, prompting the EU to require warning labels (which manufacturers chose to avoid by reformulating with natural colorants). The dye contains trace levels of benzidine, a Group 1 IARC human carcinogen, as a manufacturing contaminant. The FDA considers the contaminant level ‘safe’ — we disagree with the premise. California restricted it in school foods in 2023.",
+      "kristy_note": "Used in everything from red candy to strawberry milk to barbecue sauce. Always replaceable with beet, paprika, or pomegranate extract. If a company is still using this in 2026, that’s a brand values signal.",
       "sources": [
         "McCann et al., Lancet 2007 (Southampton study)",
         "CSPI dye petition to FDA (2008)",
@@ -529,7 +529,7 @@
       "evidence_tier": "credible_concern",
       "verdict": "skip",
       "one_liner": "A petroleum-based dye from the same studies linking these colors to hyperactivity in children. Europe puts a warning label on it; US products just use it.",
-      "why": "Yellow 5 was one of the six dyes in the 2007 Southampton study showing statistically significant hyperactivity increases in children. It also causes allergic reactions in aspirin-sensitive individuals due to cross-reactivity. The EU requires a warning label reading 'may have an adverse effect on activity and attention in children' — so companies reformulated for Europe and kept the dye for the US.",
+      "why": "Yellow 5 was one of the six dyes in the 2007 Southampton study showing statistically significant hyperactivity increases in children. It also causes allergic reactions in aspirin-sensitive individuals due to cross-reactivity. The EU requires a warning label reading ‘may have an adverse effect on activity and attention in children’ — so companies reformulated for Europe and kept the dye for the US.",
       "kristy_note": "The dual-standard should tell you everything: different product for Europe (clean), same product for the US (dyes). We hold the higher standard regardless of geography.",
       "sources": [
         "McCann et al., Lancet 2007",
@@ -550,7 +550,7 @@
       "evidence_tier": "credible_concern",
       "verdict": "skip",
       "one_liner": "Same dye family, same hyperactivity studies — and it carries trace carcinogens from manufacturing. Warning-labeled in Europe, unrestricted here.",
-      "why": "Yellow 6 contains trace contaminants including benzidine and 4-aminobiphenyl, both classified as Group 1 human carcinogens by IARC. Like the other dyes, it's banned or warning-labeled in the EU and commonly used in the US without restriction in snacks, cereals, and beverages.",
+      "why": "Yellow 6 contains trace contaminants including benzidine and 4-aminobiphenyl, both classified as Group 1 human carcinogens by IARC. Like the other dyes, it’s banned or warning-labeled in the EU and commonly used in the US without restriction in snacks, cereals, and beverages.",
       "kristy_note": "There is no nutritional or functional reason that requires these petroleum dyes in food. Every use is cosmetic. We see no reason to consume them.",
       "sources": [
         "CSPI: Food Dyes: A Rainbow of Risks (2010)",
@@ -571,8 +571,8 @@
       "evidence_tier": "established",
       "verdict": "skip",
       "one_liner": "The FDA banned it from lipstick in 1990 for causing thyroid cancer in rats — then took until 2025 to ban it from food. Same dye, 35-year gap.",
-      "why": "Red 3 was banned from cosmetics and externally applied drugs in 1990 after the FDA's own research showed it caused thyroid cancer in male rats. However, under the Delaney Clause (which prohibits carcinogenic additives in food), the FDA took until January 2025 to finalize the ban from food and ingested drugs. Manufacturers have until 2027–2028 to reformulate.",
-      "kristy_note": "This was a 35-year regulatory failure that should have never happened. It's still in some products during the phase-out. Check maraschino cherries, canned fruits, and certain candies.",
+      "why": "Red 3 was banned from cosmetics and externally applied drugs in 1990 after the FDA’s own research showed it caused thyroid cancer in male rats. However, under the Delaney Clause (which prohibits carcinogenic additives in food), the FDA took until January 2025 to finalize the ban from food and ingested drugs. Manufacturers have until 2027–2028 to reformulate.",
+      "kristy_note": "This was a 35-year regulatory failure that should have never happened. It’s still in some products during the phase-out. Check maraschino cherries, canned fruits, and certain candies.",
       "sources": [
         "FDA Final Rule: Revocation of Provisionally Listed Colors (January 2025)",
         "FDA 1990 cosmetic ban history"
@@ -591,8 +591,8 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A petroleum-based blue that animal studies suggest can slip past the blood-brain barrier and interfere with nerve cells — reason enough to flag it in kids' food.",
-      "why": "Animal studies have suggested Blue 1 can cross the blood-brain barrier, particularly in inflammatory states. In vitro studies have shown it inhibits nerve cell development. It's not IARC-classified as carcinogenic, but the mechanism of action on neural tissue is concerning enough for us to flag it, especially in food products targeting children.",
+      "one_liner": "A petroleum-based blue that animal studies suggest can slip past the blood-brain barrier and interfere with nerve cells — reason enough to flag it in kids’ food.",
+      "why": "Animal studies have suggested Blue 1 can cross the blood-brain barrier, particularly in inflammatory states. In vitro studies have shown it inhibits nerve cell development. It’s not IARC-classified as carcinogenic, but the mechanism of action on neural tissue is concerning enough for us to flag it, especially in food products targeting children.",
       "kristy_note": "Present in sports drinks, candies, and cereals. Again — cosmetic only. No functional reason for it.",
       "sources": [
         "Gao et al., Brain Research 2006 (BBB permeability study)",
@@ -613,9 +613,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "The brown in dark sodas — made with ammonia in a way that creates a probable carcinogen. California makes them warn about it; elsewhere they don't.",
+      "one_liner": "The brown in dark sodas — made with ammonia in a way that creates a probable carcinogen. California makes them warn about it; elsewhere they don’t.",
       "why": "Caramel color Class IV is produced through the reaction of sugar with ammonia and sulfites under high pressure and heat, generating 4-methylimidazole (4-MEI) as a byproduct. The National Toxicology Program found 4-MEI causes lung tumors in mice, leading California to list it under Prop 65. A CSPI study found significant 4-MEI levels in Coca-Cola and Pepsi. The companies reformulated for California — and kept the original for everywhere else.",
-      "kristy_note": "It's a brown dye. In a bottle. That the manufacturer changes for California but not for you. We think that's a choice worth knowing about.",
+      "kristy_note": "It’s a brown dye. In a bottle. That the manufacturer changes for California but not for you. We think that’s a choice worth knowing about.",
       "sources": [
         "National Toxicology Program 4-MEI study (2007)",
         "CSPI report: Caramel Color: The Risks of a Common Food Coloring (2012)",
@@ -635,9 +635,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A petroleum-based preservative the US government's own program lists as 'reasonably anticipated' to cause cancer. Banned in some countries; unrestricted here.",
+      "one_liner": "A petroleum-based preservative the US government’s own program lists as ‘reasonably anticipated’ to cause cancer. Banned in some countries; unrestricted here.",
       "why": "BHA is used to prevent rancidity in fats and oils. The National Toxicology Program has listed it as reasonably anticipated to be a human carcinogen since 1981 based on animal evidence. It has been shown to promote tumor growth in forestomach tissue of rodents. Japan has banned it in food packaging in contact with edible fats. The EU restricts it significantly.",
-      "kristy_note": "You'll find it in chips, cereals, chewing gum, and vegetable oils. A preservative in a product usually means the product was made from fats that go rancid quickly — which is itself a signal about the fat quality.",
+      "kristy_note": "You’ll find it in chips, cereals, chewing gum, and vegetable oils. A preservative in a product usually means the product was made from fats that go rancid quickly — which is itself a signal about the fat quality.",
       "sources": [
         "National Toxicology Program 14th Report on Carcinogens (2016)",
         "IARC Group 2B classification for BHA"
@@ -655,9 +655,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "BHA's chemical cousin, used to keep fats from going rancid. Animal cancer studies point both ways — and that unresolved question, with clean alternatives on the shelf, is enough to skip it.",
+      "one_liner": "BHA’s chemical cousin, used to keep fats from going rancid. Animal cancer studies point both ways — and that unresolved question, with clean alternatives on the shelf, is enough to skip it.",
       "why": "BHT shows mixed results in animal carcinogenicity studies — sometimes inhibiting tumor growth, sometimes promoting it, depending on the cancer type, timing, and dose. This inconsistency makes it impossible to characterize as safe or unsafe definitively, but the lack of a clear safety signal plus available clean alternatives makes it a flag for Kristy. Some countries restrict it in foods for infants and young children.",
-      "kristy_note": "Same preservative context as BHA — found in the same products, the same reason it's there, and a clean swap is always available.",
+      "kristy_note": "Same preservative context as BHA — found in the same products, the same reason it’s there, and a clean swap is always available.",
       "sources": [
         "EFSA Scientific Opinion on BHT (2012)",
         "NTP Toxicology and Carcinogenesis Studies of BHT"
@@ -697,7 +697,7 @@
       "evidence_tier": "credible_concern",
       "verdict": "skip",
       "one_liner": "Common in acidic drinks — and when it meets vitamin C, the two can form benzene, a known human carcinogen. That combination is everywhere.",
-      "why": "Sodium benzoate is a common preservative in acidic foods and beverages. The reaction between benzoate and ascorbic acid in aqueous solution generates benzene, which IARC classifies as a Group 1 carcinogen directly causative of leukemia. The FDA has acknowledged benzene formation in beverages but called the levels 'low.' Separately, sodium benzoate was part of the Southampton study combination linked to childhood hyperactivity.",
+      "why": "Sodium benzoate is a common preservative in acidic foods and beverages. The reaction between benzoate and ascorbic acid in aqueous solution generates benzene, which IARC classifies as a Group 1 carcinogen directly causative of leukemia. The FDA has acknowledged benzene formation in beverages but called the levels ‘low.‘ Separately, sodium benzoate was part of the Southampton study combination linked to childhood hyperactivity.",
       "kristy_note": "Check juice drinks, sodas, salad dressings, and sauces. Any product with both sodium benzoate and vitamin C (ascorbic acid) on the label has a chemistry problem.",
       "sources": [
         "FDA Benzene in Beverages testing (2006)",
@@ -718,8 +718,8 @@
       "evidence_tier": "established",
       "verdict": "skip",
       "one_liner": "A dough conditioner banned across the EU, UK, Canada, and much of the world for causing kidney and thyroid tumors in animals. Still legal in US bread.",
-      "why": "Potassium bromate is used to strengthen bread dough and improve rise. It is classified by IARC as Group 2B (possibly carcinogenic) based on renal and thyroid tumors in animals. It has been banned in bread in most of the world since the 1990s. US manufacturers are 'encouraged' but not required to avoid it — and some still use it.",
-      "kristy_note": "Another case of US standards lagging most of the world. Look for 'unbromated flour' on bread labels if you're not already buying from a whole-food bakery.",
+      "why": "Potassium bromate is used to strengthen bread dough and improve rise. It is classified by IARC as Group 2B (possibly carcinogenic) based on renal and thyroid tumors in animals. It has been banned in bread in most of the world since the 1990s. US manufacturers are ‘encouraged’ but not required to avoid it — and some still use it.",
+      "kristy_note": "Another case of US standards lagging most of the world. Look for ‘unbromated flour’ on bread labels if you’re not already buying from a whole-food bakery.",
       "sources": [
         "IARC Monographs Volume 73 (1999)",
         "CSPI petition to FDA to ban bromate (1999-ongoing)",
@@ -740,7 +740,7 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "The 'yoga-mat chemical' — literally a foam-rubber blowing agent. Banned as a food additive in Europe and Australia; still used in some US bread.",
+      "one_liner": "The ‘yoga-mat chemical’ — literally a foam-rubber blowing agent. Banned as a food additive in Europe and Australia; still used in some US bread.",
       "why": "Azodicarbonamide is used as a flour bleaching and dough strengthening agent. When heated, it decomposes into semicarbazide and urethane, both suspected carcinogens. It is classified as a potential allergen that may cause asthma. It has been banned as a food additive in the EU and Australia. Subway reformulated globally after a consumer campaign — again, the dual standard.",
       "kristy_note": "Most famously in fast food buns and commercial sandwich bread. Completely avoidable by choosing real bread from a baker or whole-grain loaves without additives.",
       "sources": [
@@ -764,9 +764,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A seaweed-derived thickener in dairy alternatives and deli meats. In animal studies it inflamed the gut and, in some, promoted tumor growth — which is why it's still debated.",
-      "why": "Carrageenan has been shown in numerous cell and animal studies to induce intestinal inflammation, promote colitis, and in some studies enhance tumor growth. Joanne Tobacman, MD, has published extensively on carrageenan's inflammatory mechanisms since the 1990s, and has petitioned the FDA and USDA to ban it repeatedly. The degraded form (poligeenan) is recognized as carcinogenic; the debate is whether food-grade carrageenan degrades to poligeenan in the acidic human stomach — evidence suggests it does to some degree.",
-      "kristy_note": "Very common in organic and 'clean' dairy alternatives — oat milk, almond milk, dairy-free creamers. Read every plant milk label. It's avoidable.",
+      "one_liner": "A seaweed-derived thickener in dairy alternatives and deli meats. In animal studies it inflamed the gut and, in some, promoted tumor growth — which is why it’s still debated.",
+      "why": "Carrageenan has been shown in numerous cell and animal studies to induce intestinal inflammation, promote colitis, and in some studies enhance tumor growth. Joanne Tobacman, MD, has published extensively on carrageenan’s inflammatory mechanisms since the 1990s, and has petitioned the FDA and USDA to ban it repeatedly. The degraded form (poligeenan) is recognized as carcinogenic; the debate is whether food-grade carrageenan degrades to poligeenan in the acidic human stomach — evidence suggests it does to some degree.",
+      "kristy_note": "Very common in organic and ‘clean’ dairy alternatives — oat milk, almond milk, dairy-free creamers. Read every plant milk label. It’s avoidable.",
       "sources": [
         "Tobacman, Environmental Health Perspectives 2001",
         "Bhattacharyya et al., Journal of Biological Chemistry 2008",
@@ -788,7 +788,7 @@
       "verdict": "skip",
       "one_liner": "A synthetic emulsifier that acts like a detergent on your gut — landmark research found it strips the protective mucus lining and stirs up body-wide inflammation.",
       "why": "Two landmark 2015 studies from the Gewirtz lab at Georgia State found that polysorbate 80 and carboxymethylcellulose (at doses comparable to human consumption) dramatically disrupted gut microbiota, eroded the protective mucus layer of the intestine, promoted bacterial translocation into intestinal tissue, and induced low-grade systemic inflammation and metabolic syndrome in mice — even in germ-free animals receiving human microbiota transplants.",
-      "kristy_note": "This is in ice cream, salad dressings, bakery products, and many processed foods. The gut lining is your body's first line of defense and this compound measurably damages it at dietary concentrations.",
+      "kristy_note": "This is in ice cream, salad dressings, bakery products, and many processed foods. The gut lining is your body’s first line of defense and this compound measurably damages it at dietary concentrations.",
       "sources": [
         "Chassaing et al., Nature 2015 (polysorbate 80 and CMC gut study)",
         "Viennois et al., Cancer Research 2017"
@@ -808,9 +808,9 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A synthetic emulsifier studied right alongside polysorbate 80 — same result: it disrupts gut bacteria and erodes the intestine's protective mucus at amounts found in food.",
+      "one_liner": "A synthetic emulsifier studied right alongside polysorbate 80 — same result: it disrupts gut bacteria and erodes the intestine’s protective mucus at amounts found in food.",
       "why": "The Gewirtz lab tested CMC and polysorbate 80 in tandem because both are among the most common food emulsifiers globally. Both independently caused gut dysbiosis, mucus erosion, metabolic syndrome, and in follow-up research, colorectal cancer promotion in susceptible mice. CMC is in breads, ice cream, plant milks, low-fat dairy products, and sauces.",
-      "kristy_note": "Paired flag with polysorbate 80 — they're often used together, which compounds the concern. Whole food versions of almost every product using CMC exist.",
+      "kristy_note": "Paired flag with polysorbate 80 — they’re often used together, which compounds the concern. Whole food versions of almost every product using CMC exist.",
       "sources": [
         "Chassaing et al., Nature 2015",
         "Viennois et al., Cancer Research 2017"
@@ -830,9 +830,9 @@
       "severity": "moderate",
       "evidence_tier": "credible_concern",
       "verdict": "limit",
-      "one_liner": "Fat-based emulsifiers often made from partially hydrogenated oils — so they can carry trans fat even when the label reads '0g.' A legal loophole in plain sight.",
-      "why": "Mono and diglycerides are not classified as fats under FDA labeling rules, meaning a product containing trans fat in the form of mono/diglycerides from hydrogenated oil can legally claim '0g trans fat.' A 2015 Harvard analysis estimated mono and diglycerides contribute significantly to actual dietary trans fat intake despite the label claim. They're also produced from soy, palm, or cottonseed oil at scale.",
-      "kristy_note": "The 0g trans fat loophole. Check 'mono and diglycerides' on any product you believe is trans-fat-free.",
+      "one_liner": "Fat-based emulsifiers often made from partially hydrogenated oils — so they can carry trans fat even when the label reads ‘0g.‘ A legal loophole in plain sight.",
+      "why": "Mono and diglycerides are not classified as fats under FDA labeling rules, meaning a product containing trans fat in the form of mono/diglycerides from hydrogenated oil can legally claim ‘0g trans fat.‘ A 2015 Harvard analysis estimated mono and diglycerides contribute significantly to actual dietary trans fat intake despite the label claim. They’re also produced from soy, palm, or cottonseed oil at scale.",
+      "kristy_note": "The 0g trans fat loophole. Check ‘mono and diglycerides’ on any product you believe is trans-fat-free.",
       "sources": [
         "Sacks et al., Harvard T.H. Chan School of Public Health (2015)",
         "FDA trans fat labeling regulations"
@@ -853,8 +853,8 @@
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
       "one_liner": "The most common emulsifier there is — low-risk on its own, but almost always from GMO soy and a marker of ultra-processing. Sunflower lecithin is the cleaner version.",
-      "why": "Soy lecithin is extracted from soybean oil and contains very little soy protein — making it unlikely to trigger soy protein allergies, though some sensitive individuals react. The concern isn't acute toxicity but the GMO sourcing, the ultra-processed signal, and the cumulative emulsifier load across a diet full of packaged foods. Sunflower lecithin is a cleaner alternative when lecithin is necessary.",
-      "kristy_note": "Not our hardest flag, but it's a signal that the product needed emulsification — meaning it wouldn't hold together with real ingredients. That's worth knowing. If it's the only iffy thing on a label that's otherwise clean, it's probably fine.",
+      "why": "Soy lecithin is extracted from soybean oil and contains very little soy protein — making it unlikely to trigger soy protein allergies, though some sensitive individuals react. The concern isn’t acute toxicity but the GMO sourcing, the ultra-processed signal, and the cumulative emulsifier load across a diet full of packaged foods. Sunflower lecithin is a cleaner alternative when lecithin is necessary.",
+      "kristy_note": "Not our hardest flag, but it’s a signal that the product needed emulsification — meaning it wouldn’t hold together with real ingredients. That’s worth knowing. If it’s the only iffy thing on a label that’s otherwise clean, it’s probably fine.",
       "sources": [
         "Frøkiær et al., Clinical & Experimental Allergy 2007 (lecithin allergenicity)"
       ],
@@ -873,9 +873,9 @@
       "severity": "moderate",
       "evidence_tier": "credible_concern",
       "verdict": "flag",
-      "one_liner": "The 'Chinese restaurant' scare was debunked — but MSG's real job is to make hyper-processed food hard to stop eating, which is the actual problem.",
-      "why": "MSG's acute sensitivity syndrome has been largely disproven in blinded studies. However, glutamate as an excitatory neurotransmitter, delivered at high concentrations through processed food, has prompted legitimate research into excitotoxicity at excessive doses. More practically, MSG is a palatability amplifier — it makes hyper-processed food hard to stop eating, which is its intended function and itself a health concern.",
-      "kristy_note": "The science isn't settled enough to call this critical. Our concern is less the molecule and more what its presence signals: that the food needed a chemical enhancement to taste good. Whole food doesn't need MSG.",
+      "one_liner": "The ‘Chinese restaurant’ scare was debunked — but MSG’s real job is to make hyper-processed food hard to stop eating, which is the actual problem.",
+      "why": "MSG’s acute sensitivity syndrome has been largely disproven in blinded studies. However, glutamate as an excitatory neurotransmitter, delivered at high concentrations through processed food, has prompted legitimate research into excitotoxicity at excessive doses. More practically, MSG is a palatability amplifier — it makes hyper-processed food hard to stop eating, which is its intended function and itself a health concern.",
+      "kristy_note": "The science isn’t settled enough to call this critical. Our concern is less the molecule and more what its presence signals: that the food needed a chemical enhancement to taste good. Whole food doesn’t need MSG.",
       "sources": [
         "Williams & Woessner, Annals of Allergy Asthma Immunology 2009 (debunking syndrome)",
         "Olney, Science 1969 (excitotoxicity original research)"
@@ -895,9 +895,9 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "Free glutamate that works just like MSG — used precisely because it dodges the 'contains MSG' line. A labeling workaround.",
-      "why": "Autolyzed yeast extract is created by breaking down yeast cell walls, releasing free glutamic acid (the same component as MSG) and other flavor compounds. It must not be called MSG even though it functions identically, because it's a natural fermentation product rather than a purified chemical. This creates a labeling loophole used extensively in processed soups, broths, snacks, and seasonings.",
-      "kristy_note": "If you're avoiding MSG but see yeast extract on the label, you're still getting free glutamate. We flag it not because the molecule is the enemy, but because the labeling is deliberately opaque.",
+      "one_liner": "Free glutamate that works just like MSG — used precisely because it dodges the ‘contains MSG’ line. A labeling workaround.",
+      "why": "Autolyzed yeast extract is created by breaking down yeast cell walls, releasing free glutamic acid (the same component as MSG) and other flavor compounds. It must not be called MSG even though it functions identically, because it’s a natural fermentation product rather than a purified chemical. This creates a labeling loophole used extensively in processed soups, broths, snacks, and seasonings.",
+      "kristy_note": "If you’re avoiding MSG but see yeast extract on the label, you’re still getting free glutamate. We flag it not because the molecule is the enemy, but because the labeling is deliberately opaque.",
       "sources": [
         "FDA Food Labeling: Questions and Answers on MSG"
       ],
@@ -917,9 +917,9 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "Another hidden MSG-style glutamate, from soy, corn, or wheat that's often GMO. The acid process that makes it can also throw off a probable carcinogen.",
+      "one_liner": "Another hidden MSG-style glutamate, from soy, corn, or wheat that’s often GMO. The acid process that makes it can also throw off a probable carcinogen.",
       "why": "HVP is produced by acid hydrolysis of vegetable protein, releasing free amino acids including glutamic acid at high concentrations. The process can also generate 3-MCPD (3-monochloropropanediol), a probable human carcinogen, depending on the acid hydrolysis method used. Multiple HVP products have been recalled due to Salmonella contamination as well.",
-      "kristy_note": "Deep in the ingredients of ramen seasoning packets, chip flavorings, and canned soups. Real food seasoned with real ingredients doesn't need this.",
+      "kristy_note": "Deep in the ingredients of ramen seasoning packets, chip flavorings, and canned soups. Real food seasoned with real ingredients doesn’t need this.",
       "sources": [
         "FDA HVP recall notice (2010)",
         "EFSA 3-MCPD opinion (2018)"
@@ -939,7 +939,7 @@
       "severity": "high",
       "evidence_tier": "credible_concern",
       "verdict": "skip",
-      "one_liner": "A white pigment for candy and coatings that Europe banned from food in 2021 — regulators there couldn't rule out that its nanoparticles damage DNA. Still allowed here.",
+      "one_liner": "A white pigment for candy and coatings that Europe banned from food in 2021 — regulators there couldn’t rule out that its nanoparticles damage DNA. Still allowed here.",
       "why": "The European Food Safety Authority concluded in 2021 that titanium dioxide nanoparticles cannot be excluded as genotoxic — meaning they may damage DNA — and revoked its authorization as a food additive in the EU. Concern centers on nanoparticle accumulation in the gut, potential intestinal inflammation, and genotoxicity. The FDA has not followed suit.",
       "kristy_note": "Used purely for whiteness. In candy. There is no reason food needs to be artificially whitened with a nanoparticle. Another EU-banned, US-permitted situation.",
       "sources": [
@@ -960,8 +960,8 @@
       "evidence_tier": "established",
       "verdict": "skip",
       "one_liner": "Vegetable oil bonded to bromine — the same element used in flame retardants — to suspend citrus flavor in soda. The FDA finally banned it from food in 2024, decades late.",
-      "why": "Bromine is an industrial chemical used in flame retardants. BVO accumulates in fatty tissue and has been linked in case studies to neurological symptoms, memory loss, and skin lesions in heavy soda consumers. The FDA itself said in 1970 that BVO was no longer considered safe, then left it in a 'provisional' status for 54 years before finally revoking authorization in 2024.",
-      "kristy_note": "Another 54-year regulatory lag. It's now banned, but phase-out timelines mean it may still be in some products. Mountain Dew and some sports drinks used it. Always worth checking current labels.",
+      "why": "Bromine is an industrial chemical used in flame retardants. BVO accumulates in fatty tissue and has been linked in case studies to neurological symptoms, memory loss, and skin lesions in heavy soda consumers. The FDA itself said in 1970 that BVO was no longer considered safe, then left it in a ‘provisional’ status for 54 years before finally revoking authorization in 2024.",
+      "kristy_note": "Another 54-year regulatory lag. It’s now banned, but phase-out timelines mean it may still be in some products. Mountain Dew and some sports drinks used it. Always worth checking current labels.",
       "sources": [
         "FDA Final Rule: Revoking BVO Authorization (July 2024)",
         "EWG BVO report"
@@ -981,9 +981,9 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A single word that can stand for any of 2,000+ synthetic chemicals — and the recipe is a protected trade secret. You can't evaluate what they won't disclose.",
-      "why": "Under FDA regulations, manufacturers are not required to disclose what specific compounds make up 'artificial flavors.' A single 'artificial strawberry flavor' may contain dozens of synthetic chemicals. Without compound-level transparency, individual risk is unassessable. Some artificial flavors contain diacetyl (linked to respiratory disease at occupational exposure in popcorn factories) and other poorly characterized compounds.",
-      "kristy_note": "Our standard is simple: if you can't name the flavor, we can't clear it. Real strawberry flavor comes from real strawberries. Anything else is a transparency failure.",
+      "one_liner": "A single word that can stand for any of 2,000+ synthetic chemicals — and the recipe is a protected trade secret. You can’t evaluate what they won’t disclose.",
+      "why": "Under FDA regulations, manufacturers are not required to disclose what specific compounds make up ‘artificial flavors.‘ A single ‘artificial strawberry flavor’ may contain dozens of synthetic chemicals. Without compound-level transparency, individual risk is unassessable. Some artificial flavors contain diacetyl (linked to respiratory disease at occupational exposure in popcorn factories) and other poorly characterized compounds.",
+      "kristy_note": "Our standard is simple: if you can’t name the flavor, we can’t clear it. Real strawberry flavor comes from real strawberries. Anything else is a transparency failure.",
       "sources": [
         "FDA food ingredient definitions: artificial flavors",
         "NIOSH health hazard evaluation: diacetyl (2007)"
@@ -1002,9 +1002,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "'Natural' only means it started from a natural source — the actual compounds are undisclosed and processed beyond recognition. Opaque by design.",
-      "why": "The FDA's 'natural flavor' definition requires only that the flavoring originate from a natural source — not that the final compound resembles anything natural. The formulation is proprietary and does not have to be disclosed. This means a product can be 'organic' while containing a 'natural flavor' derived from any of thousands of natural-source chemical reactions. For consumers with allergies or sensitivities, it's unmanageable.",
-      "kristy_note": "We prefer products where every flavor source is named. 'Natural flavors' at the end of an otherwise clean ingredient list is forgivable. 'Natural flavors' on a short ingredient list where it's doing significant work — that's a different product.",
+      "one_liner": "‘Natural’ only means it started from a natural source — the actual compounds are undisclosed and processed beyond recognition. Opaque by design.",
+      "why": "The FDA’s ‘natural flavor’ definition requires only that the flavoring originate from a natural source — not that the final compound resembles anything natural. The formulation is proprietary and does not have to be disclosed. This means a product can be ‘organic’ while containing a ‘natural flavor’ derived from any of thousands of natural-source chemical reactions. For consumers with allergies or sensitivities, it’s unmanageable.",
+      "kristy_note": "We prefer products where every flavor source is named. ‘Natural flavors’ at the end of an otherwise clean ingredient list is forgivable. ‘Natural flavors’ on a short ingredient list where it’s doing significant work — that’s a different product.",
       "sources": [
         "FDA Code of Federal Regulations 21 CFR 101.22 (natural flavor definition)",
         "EWG's Food Scores Database analysis"
@@ -1023,9 +1023,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A fermented thickener that's one of the safer additives, though it can bloat sensitive stomachs. Mostly it's a marker that you're holding ultra-processed food.",
-      "why": "Xanthan gum is produced by fermenting glucose (often from corn) with Xanthomonas campestris bacteria. It's one of the safer food additives — it passes through the gut largely undigested and is fermented by gut bacteria. However, it can cause bloating and gas in sensitive individuals and at high intake. Some preterm infant formula safety concerns were identified in medical literature.",
-      "kristy_note": "Not our most alarming flag, but worth knowing. If a product needs xanthan gum to hold together, it's because it doesn't have enough real-food binders. Whole food crackers don't need gum. Look at what it's replacing.",
+      "one_liner": "A fermented thickener that’s one of the safer additives, though it can bloat sensitive stomachs. Mostly it’s a marker that you’re holding ultra-processed food.",
+      "why": "Xanthan gum is produced by fermenting glucose (often from corn) with Xanthomonas campestris bacteria. It’s one of the safer food additives — it passes through the gut largely undigested and is fermented by gut bacteria. However, it can cause bloating and gas in sensitive individuals and at high intake. Some preterm infant formula safety concerns were identified in medical literature.",
+      "kristy_note": "Not our most alarming flag, but worth knowing. If a product needs xanthan gum to hold together, it’s because it doesn’t have enough real-food binders. Whole food crackers don’t need gum. Look at what it’s replacing.",
       "sources": [
         "EFSA Scientific Opinion on Xanthan Gum (2017)",
         "NTP safety data"
@@ -1045,9 +1045,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A plant wax that makes candy and pills shiny — safe enough, with zero nutritional point. It's a cosmetic-processing tell, usually sitting on highly processed sugar.",
-      "why": "Carnauba wax is derived from Brazilian palm leaves and is considered non-toxic. It's used to create shiny coatings on candy, supplement pills, and some produce. It has no nutritional function. Its presence is cosmetic only, and its use in candy usually means you're eating highly processed sugar products.",
-      "kristy_note": "Not a health alarm, but it shows up on candy and gummy vitamins — both categories we'd rather you think twice about regardless of the wax.",
+      "one_liner": "A plant wax that makes candy and pills shiny — safe enough, with zero nutritional point. It’s a cosmetic-processing tell, usually sitting on highly processed sugar.",
+      "why": "Carnauba wax is derived from Brazilian palm leaves and is considered non-toxic. It’s used to create shiny coatings on candy, supplement pills, and some produce. It has no nutritional function. Its presence is cosmetic only, and its use in candy usually means you’re eating highly processed sugar products.",
+      "kristy_note": "Not a health alarm, but it shows up on candy and gummy vitamins — both categories we’d rather you think twice about regardless of the wax.",
       "sources": [
         "FDA GRAS determination for carnauba wax"
       ],
@@ -1070,9 +1070,9 @@
       "severity": "moderate",
       "evidence_tier": "credible_concern",
       "verdict": "flag",
-      "one_liner": "Preservatives in dried fruit and wine that can trigger severe asthma and allergic reactions — an estimated 5–10% of asthmatics react. That's why they have to be disclosed.",
+      "one_liner": "Preservatives in dried fruit and wine that can trigger severe asthma and allergic reactions — an estimated 5–10% of asthmatics react. That’s why they have to be disclosed.",
       "why": "Sulfites have been linked to life-threatening bronchospasm in sulfite-sensitive asthmatics, leading the FDA to ban their use on fresh fruits and vegetables (after multiple deaths) and to require label disclosure for any product containing over 10 ppm. In non-sensitive individuals at typical dietary levels, acute risk is low, but the high reactivity potential in vulnerable people makes disclosure critical.",
-      "kristy_note": "On the label as 'contains sulfites' by law when present above threshold. Worth noting for anyone with asthma, sulfite sensitivity, or who experiences wine headaches. Dried fruit without sulfites is available and tastes more like actual fruit.",
+      "kristy_note": "On the label as ‘contains sulfites’ by law when present above threshold. Worth noting for anyone with asthma, sulfite sensitivity, or who experiences wine headaches. Dried fruit without sulfites is available and tastes more like actual fruit.",
       "sources": [
         "FDA Food Advisory: Sulfites (21 CFR 101.100)",
         "Bush et al., Journal of Allergy and Clinical Immunology 1986"
@@ -1091,9 +1091,9 @@
       "severity": "moderate",
       "evidence_tier": "credible_concern",
       "verdict": "limit",
-      "one_liner": "The mold-inhibitor in most commercial bread. A rigorous kids' study tied it to irritability, restlessness, and disrupted sleep at everyday amounts.",
+      "one_liner": "The mold-inhibitor in most commercial bread. A rigorous kids’ study tied it to irritability, restlessness, and disrupted sleep at everyday amounts.",
       "why": "Calcium propionate is added to commercial bread to extend shelf life by inhibiting mold growth. A 2002 Australian double-blind crossover study found statistically significant increases in irritability, restlessness, inattention, and sleep disturbance in children consuming a diet with calcium propionate at normal dietary levels — effects that resolved after elimination. The study design was rigorous.",
-      "kristy_note": "The reason your commercial sandwich bread lasts weeks without mold. Real sourdough gets stale in three days because it doesn't have this. That's the trade-off, and we know which side we're on.",
+      "kristy_note": "The reason your commercial sandwich bread lasts weeks without mold. Real sourdough gets stale in three days because it doesn’t have this. That’s the trade-off, and we know which side we’re on.",
       "sources": [
         "Dengate & Ruben, Journal of Paediatrics and Child Health 2002",
         "EFSA Panel on Food Additives 2014"
@@ -1113,8 +1113,8 @@
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
       "one_liner": "Pure glucose from corn — it spikes blood sugar faster than table sugar. Just another name for sugar on the label, usually from GMO corn.",
-      "why": "Dextrose has a glycemic index of 100 (the reference point) — it raises blood glucose faster than table sugar. In sport nutrition contexts, this is intentional. In a processed food like crackers or sauces, it's a hidden sweetener. Not toxic but a transparency flag.",
-      "kristy_note": "You'll see this in condiments, cured meats, and processed snacks. It's just sugar. Worth knowing it's there when a product claims to be low-sugar.",
+      "why": "Dextrose has a glycemic index of 100 (the reference point) — it raises blood glucose faster than table sugar. In sport nutrition contexts, this is intentional. In a processed food like crackers or sauces, it’s a hidden sweetener. Not toxic but a transparency flag.",
+      "kristy_note": "You’ll see this in condiments, cured meats, and processed snacks. It’s just sugar. Worth knowing it’s there when a product claims to be low-sugar.",
       "sources": [
         "Foster-Powell et al., AJCN 2002 (glycemic index)"
       ],
@@ -1136,8 +1136,8 @@
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
       "one_liner": "Flour with the nutritious germ and bran stripped out, bleached, then dusted with a few synthetic vitamins to replace a fraction of what was lost. A high-glycemic shell of the original grain.",
-      "why": "White flour processing removes the bran and germ, eliminating fiber, essential fatty acids, vitamins B1, B3, B6, folic acid, phosphorus, zinc, copper, iron, and magnesium. The bleaching process using chlorine dioxide or benzoyl peroxide destroys remaining nutrients. Synthetic vitamins are then added back in amounts that don't fully replace the originals or match their bioavailability. The result is a high-glycemic starch with synthetic vitamin dust.",
-      "kristy_note": "The baseline flour in nearly all commercial baked goods. Our preference is stone-ground whole grain flour, sourdough fermented to reduce phytic acid, or ancient grains. When you eat something made with enriched bleached flour, you're mostly eating glucose.",
+      "why": "White flour processing removes the bran and germ, eliminating fiber, essential fatty acids, vitamins B1, B3, B6, folic acid, phosphorus, zinc, copper, iron, and magnesium. The bleaching process using chlorine dioxide or benzoyl peroxide destroys remaining nutrients. Synthetic vitamins are then added back in amounts that don’t fully replace the originals or match their bioavailability. The result is a high-glycemic starch with synthetic vitamin dust.",
+      "kristy_note": "The baseline flour in nearly all commercial baked goods. Our preference is stone-ground whole grain flour, sourdough fermented to reduce phytic acid, or ancient grains. When you eat something made with enriched bleached flour, you’re mostly eating glucose.",
       "sources": [
         "Slavin et al., JACN 2000 (whole grain vs. refined)",
         "USDA whole grain guidance"
@@ -1158,9 +1158,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A chemically or physically altered starch used to thicken and stabilize — and the label won't tell you the source grain or how it was modified. High-glycemic filler with no transparency.",
-      "why": "Modified food starch is processed to alter its natural properties for texture, stability, or behavior under heat and freezing. The FDA does not require disclosure of the source grain (important for gluten-sensitive individuals) or the modification method (which can include chemical agents). It's functionally a filler with a high glycemic impact similar to pure starch.",
-      "kristy_note": "Not our hardest flag, but its presence means the product needed a filler to hold texture — a processed food indicator. Also a hidden gluten source for celiacs since the grain source doesn't have to be disclosed.",
+      "one_liner": "A chemically or physically altered starch used to thicken and stabilize — and the label won’t tell you the source grain or how it was modified. High-glycemic filler with no transparency.",
+      "why": "Modified food starch is processed to alter its natural properties for texture, stability, or behavior under heat and freezing. The FDA does not require disclosure of the source grain (important for gluten-sensitive individuals) or the modification method (which can include chemical agents). It’s functionally a filler with a high glycemic impact similar to pure starch.",
+      "kristy_note": "Not our hardest flag, but its presence means the product needed a filler to hold texture — a processed food indicator. Also a hidden gluten source for celiacs since the grain source doesn’t have to be disclosed.",
       "sources": [
         "FDA food starch definitions (21 CFR 172.892)",
         "Celiac Disease Foundation: hidden gluten sources"
@@ -1185,8 +1185,8 @@
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
       "one_liner": "Red dye made from crushed cochineal insects — not vegan or vegetarian, and a cause of severe allergic reactions in some people. Rarely labeled in plain terms.",
-      "why": "Carmine is derived from cochineal scale insects (Dactylopius coccus), requiring roughly 70,000 insects per pound of dye. It can cause severe allergic reactions including anaphylaxis, with the FDA issuing a rule in 2011 requiring explicit label disclosure as 'cochineal extract' or 'carmine.' It's not inherently toxic, but it's an animal product hidden in food and cosmetics often without consumer awareness.",
-      "kristy_note": "Flagged for transparency, allergen potential, and the fact that it's labeled vaguely. It shows up in strawberry yogurt, juices, and cosmetics. Check if you're vegan, vegetarian, have shellfish allergies (cross-reactivity is possible), or if you're feeding children.",
+      "why": "Carmine is derived from cochineal scale insects (Dactylopius coccus), requiring roughly 70,000 insects per pound of dye. It can cause severe allergic reactions including anaphylaxis, with the FDA issuing a rule in 2011 requiring explicit label disclosure as ‘cochineal extract’ or ‘carmine.‘ It’s not inherently toxic, but it’s an animal product hidden in food and cosmetics often without consumer awareness.",
+      "kristy_note": "Flagged for transparency, allergen potential, and the fact that it’s labeled vaguely. It shows up in strawberry yogurt, juices, and cosmetics. Check if you’re vegan, vegetarian, have shellfish allergies (cross-reactivity is possible), or if you’re feeding children.",
       "sources": [
         "FDA Final Rule: Cochineal and Carmine Disclosure (2011)",
         "Wüthrich et al., Journal of Investigational Allergology 1997"
@@ -1207,8 +1207,8 @@
       "evidence_tier": "credible_concern",
       "verdict": "flag",
       "one_liner": "A synthetic solvent also used in antifreeze and de-icing fluid, here to carry flavors and hold moisture. Its presence usually means the product is leaning on other additives too.",
-      "why": "Propylene glycol is metabolized to lactate and pyruvate in the body and is generally recognized as safe at low doses. However, it can accumulate in the body at high dietary exposure and has been associated with central nervous system effects. Concerns around its use in pet food have been significant enough to ban it in cat food (but not dog food). In humans, it's a solvent for artificial colors and flavors — its presence often means the product contains other additives.",
-      "kristy_note": "More of a signal flag than a standalone danger: its presence usually means flavors or colors are using it as a carrier, so it's telling you something about the product's broader additive load.",
+      "why": "Propylene glycol is metabolized to lactate and pyruvate in the body and is generally recognized as safe at low doses. However, it can accumulate in the body at high dietary exposure and has been associated with central nervous system effects. Concerns around its use in pet food have been significant enough to ban it in cat food (but not dog food). In humans, it’s a solvent for artificial colors and flavors — its presence often means the product contains other additives.",
+      "kristy_note": "More of a signal flag than a standalone danger: its presence usually means flavors or colors are using it as a carrier, so it’s telling you something about the product’s broader additive load.",
       "sources": [
         "EFSA Scientific Opinion on Propylene Glycol (2018)",
         "ATSDR Toxicological Profile for Propylene Glycol"
@@ -1230,7 +1230,7 @@
       "verdict": "flag",
       "one_liner": "An anti-caking agent — essentially fine sand — that keeps powders from clumping. Low-risk, but a marker of processing; newer nanoparticle forms are worth watching.",
       "why": "Amorphous silicon dioxide is the food-safe form (distinct from crystalline silica, which causes silicosis). At dietary doses it is generally considered inert. However, nanoparticle forms of silica used in some food applications have raised concerns about intestinal absorption and potential inflammatory effects — research is early but worth tracking.",
-      "kristy_note": "It's sand, functionally. In your seasoning. Not alarming, but it's a clean-label flag — whole-food seasonings and spices don't need anti-caking agents.",
+      "kristy_note": "It’s sand, functionally. In your seasoning. Not alarming, but it’s a clean-label flag — whole-food seasonings and spices don’t need anti-caking agents.",
       "sources": [
         "EFSA Opinion on Silicon Dioxide (2018)",
         "Fruijtier-Pölloth, Archives of Toxicology 2012"
@@ -1250,9 +1250,9 @@
       "severity": "high",
       "evidence_tier": "kristys_standard",
       "verdict": "skip",
-      "one_liner": "Concentrated glucose from corn that spikes blood sugar and adds nothing else. When it turns up in savory foods like bread and ketchup, that's a cheap-sweetener tell.",
+      "one_liner": "Concentrated glucose from corn that spikes blood sugar and adds nothing else. When it turns up in savory foods like bread and ketchup, that’s a cheap-sweetener tell.",
       "why": "Corn syrup is primarily glucose (not the fructose-elevated HFCS but still a concentrated sugar with a GI near 100) used in candies, baked goods, pancake syrups, and surprisingly, savory foods like bread and ketchup. It provides sweetness and texture with zero nutrition, and its use in products signals a budget sweetener reliant on industrial corn agriculture.",
-      "kristy_note": "Distinct from HFCS but not better. If you see this in a bread or condiment, that product doesn't need to be in your house.",
+      "kristy_note": "Distinct from HFCS but not better. If you see this in a bread or condiment, that product doesn’t need to be in your house.",
       "sources": [
         "USDA FoodData Central"
       ],
@@ -1272,7 +1272,7 @@
       "verdict": "skip",
       "one_liner": "A chemical cousin of aspartame, dozens of times sweeter, with far less safety research behind it. It still breaks down to formaldehyde.",
       "why": "Neotame is structurally derived from aspartame but does not require a phenylketonuria (PKU) warning because the methanol release is supposedly lower. Its approval was based on relatively limited human studies. A 2023 International Sweeteners Association review acknowledged substantial gaps in long-term human safety data. It metabolizes to formaldehyde and neotame dimethyl ester, the latter of which has essentially no independent safety research.",
-      "kristy_note": "Less common than aspartame but found in some international products and food service applications. The 'not enough research' situation is itself a reason to avoid when whole-food alternatives exist.",
+      "kristy_note": "Less common than aspartame but found in some international products and food service applications. The ‘not enough research’ situation is itself a reason to avoid when whole-food alternatives exist.",
       "sources": [
         "FDA Neotame GRAS determination (2002)",
         "International Sweeteners Association safety review (2023)"
@@ -1290,9 +1290,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A common preservative that's low-risk on its own, though it damaged DNA in lab dishes at high doses. Mostly it's a tell: real food wouldn't need it to stay on the shelf.",
-      "why": "Potassium sorbate is metabolized like a fatty acid and is generally considered safe by most regulatory bodies. However, in vitro genotoxicity studies have shown DNA strand breaks at higher concentrations. The practical concern isn't acute toxicity — it's that its presence indicates a product that wouldn't be shelf-stable without chemical assistance, which tells you something about its real-food composition.",
-      "kristy_note": "Least alarming preservative on this list. We still flag it because of the in vitro signal and the processing indicator principle. If it's in a product that's otherwise clean and whole, it's probably not a dealbreaker.",
+      "one_liner": "A common preservative that’s low-risk on its own, though it damaged DNA in lab dishes at high doses. Mostly it’s a tell: real food wouldn’t need it to stay on the shelf.",
+      "why": "Potassium sorbate is metabolized like a fatty acid and is generally considered safe by most regulatory bodies. However, in vitro genotoxicity studies have shown DNA strand breaks at higher concentrations. The practical concern isn’t acute toxicity — it’s that its presence indicates a product that wouldn’t be shelf-stable without chemical assistance, which tells you something about its real-food composition.",
+      "kristy_note": "Least alarming preservative on this list. We still flag it because of the in vitro signal and the processing indicator principle. If it’s in a product that’s otherwise clean and whole, it’s probably not a dealbreaker.",
       "sources": [
         "Mamur et al., Cytotechnology 2010 (genotoxicity in vitro)",
         "EFSA Scientific Opinion on Potassium Sorbate (2015)"
@@ -1312,8 +1312,8 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A dough emulsifier that carries diacetyl — the compound behind factory-worker 'popcorn lung' when inhaled. Eating it is a lesser concern, but it's a sure sign of ultra-processed bread.",
-      "why": "DATEM contains diacetyl as a component of its structure. While the inhalation risks at factory levels are well-documented, dietary exposure is less studied. DATEM is a significant signal of highly processed bread — real bread from real bakers doesn't need it. It's approved GRAS but the diacetyl component and its use in ultra-processed bread products warrant a flag.",
+      "one_liner": "A dough emulsifier that carries diacetyl — the compound behind factory-worker ‘popcorn lung’ when inhaled. Eating it is a lesser concern, but it’s a sure sign of ultra-processed bread.",
+      "why": "DATEM contains diacetyl as a component of its structure. While the inhalation risks at factory levels are well-documented, dietary exposure is less studied. DATEM is a significant signal of highly processed bread — real bread from real bakers doesn’t need it. It’s approved GRAS but the diacetyl component and its use in ultra-processed bread products warrant a flag.",
       "kristy_note": "Standard in commercial sandwich bread alongside calcium propionate, azodicarbonamide, and conditioners. This is why commercial bread has five additives where artisan bread has none.",
       "sources": [
         "NIOSH diacetyl health hazard evaluation (2007)",
@@ -1334,8 +1334,8 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
-      "one_liner": "Table sugar split into glucose and fructose so it absorbs faster and holds moisture in candy. The split doesn't change what it does to you — it's still sugar.",
-      "why": "Invert sugar is chemically equivalent to equal parts glucose and fructose, the same components as HFCS and table sugar. The 'inversion' doesn't change its metabolic impact — if anything, splitting the bond may speed absorption. It's used for its humectant properties and sweetness intensity in confectionery.",
+      "one_liner": "Table sugar split into glucose and fructose so it absorbs faster and holds moisture in candy. The split doesn’t change what it does to you — it’s still sugar.",
+      "why": "Invert sugar is chemically equivalent to equal parts glucose and fructose, the same components as HFCS and table sugar. The ‘inversion’ doesn’t change its metabolic impact — if anything, splitting the bond may speed absorption. It’s used for its humectant properties and sweetness intensity in confectionery.",
       "kristy_note": "Fancy name, same outcome. Signals confectionery or highly processed baking where every variable is engineered for palatability.",
       "sources": [
         "USDA FoodData Central"
@@ -1357,9 +1357,9 @@
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A saturated fat that isn't the health villain it was made out to be — the real cost is ecological: it's a top driver of rainforest and orangutan-habitat loss. A values flag more than a health one.",
+      "one_liner": "A saturated fat that isn’t the health villain it was made out to be — the real cost is ecological: it’s a top driver of rainforest and orangutan-habitat loss. A values flag more than a health one.",
       "why": "Palm oil is approximately 50% saturated fat, which is not the health concern it was once portrayed as. It is relatively stable under heat and replaced many hydrogenated oils after the trans fat ban. The concern is primarily ecological: unsustainable palm cultivation is the leading driver of tropical deforestation in Indonesia and Malaysia. RSPO certification exists but has been criticized for insufficient enforcement.",
-      "kristy_note": "We flag this for values reasons primarily — it's not a health alarm in isolation. But holistic living means caring about where food comes from and what it costs the planet to produce it. If a product can use coconut oil or another fat instead, we prefer it.",
+      "kristy_note": "We flag this for values reasons primarily — it’s not a health alarm in isolation. But holistic living means caring about where food comes from and what it costs the planet to produce it. If a product can use coconut oil or another fat instead, we prefer it.",
       "sources": [
         "Wilmar International deforestation reports",
         "RSPO Watch: 3rd party critiques",
@@ -1380,8 +1380,8 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A bean fiber that's gentler than the synthetic emulsifiers — it even feeds good gut bacteria — but can cause bloating in bulk. A whole-food-lens flag, not an alarm.",
-      "why": "Guar gum is a soluble dietary fiber and is actually fermented by beneficial gut bacteria — it's more benign than synthetic emulsifiers. At very high doses it can cause gas, bloating, and bowel obstruction (it was used as a weight-loss supplement in the 1990s and caused esophageal obstructions). Dietary amounts in food are lower, but it's still a flag for the whole-food lens.",
+      "one_liner": "A bean fiber that’s gentler than the synthetic emulsifiers — it even feeds good gut bacteria — but can cause bloating in bulk. A whole-food-lens flag, not an alarm.",
+      "why": "Guar gum is a soluble dietary fiber and is actually fermented by beneficial gut bacteria — it’s more benign than synthetic emulsifiers. At very high doses it can cause gas, bloating, and bowel obstruction (it was used as a weight-loss supplement in the 1990s and caused esophageal obstructions). Dietary amounts in food are lower, but it’s still a flag for the whole-food lens.",
       "kristy_note": "Not alarming on its own. We note it because products using it often also have carrageenan or CMC, and the cumulative emulsifier load is worth thinking about.",
       "sources": [
         "EFSA Scientific Opinion on Guar Gum (2017)"
@@ -1401,7 +1401,7 @@
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
       "one_liner": "A bread and tortilla emulsifier your body handles fine on its own. The flag is what it travels with — the stack of conditioners and preservatives in commercial bread.",
-      "why": "SSL is metabolized to stearic acid and lactic acid — both compounds the body handles normally. It's among the more defensible food emulsifiers. However, it indicates the product needed structural help to function, and its co-occurrence with other emulsifiers, conditioners, and preservatives in commercial bread products is the real concern.",
+      "why": "SSL is metabolized to stearic acid and lactic acid — both compounds the body handles normally. It’s among the more defensible food emulsifiers. However, it indicates the product needed structural help to function, and its co-occurrence with other emulsifiers, conditioners, and preservatives in commercial bread products is the real concern.",
       "kristy_note": "Low individual concern, high context concern. Check what else is on that ingredient list with it.",
       "sources": [
         "EFSA Scientific Opinion on SSL (2012)"
@@ -1421,9 +1421,9 @@
       "severity": "flag",
       "evidence_tier": "kristys_standard",
       "verdict": "flag",
-      "one_liner": "A softer-sounding name for sugar that's barely less refined than white. The FDA called the term misleading in 2016 — because it's sugar.",
-      "why": "Evaporated cane juice retains slightly more molasses and trace minerals than white sugar, making it nominally 'less refined.' However, it is still essentially sucrose (50% glucose, 50% fructose) and is metabolically equivalent to table sugar. The FDA issued draft guidance in 2016 discouraging its use as a misleading name for sugar.",
-      "kristy_note": "The 'natural and unprocessed' branding on products using this term is doing a lot of work that the nutrition label doesn't support. It's still sugar. Count it as such.",
+      "one_liner": "A softer-sounding name for sugar that’s barely less refined than white. The FDA called the term misleading in 2016 — because it’s sugar.",
+      "why": "Evaporated cane juice retains slightly more molasses and trace minerals than white sugar, making it nominally ‘less refined.‘ However, it is still essentially sucrose (50% glucose, 50% fructose) and is metabolically equivalent to table sugar. The FDA issued draft guidance in 2016 discouraging its use as a misleading name for sugar.",
+      "kristy_note": "The ‘natural and unprocessed’ branding on products using this term is doing a lot of work that the nutrition label doesn’t support. It’s still sugar. Count it as such.",
       "sources": [
         "FDA Draft Guidance: Ingredients Declared as Evaporated Cane Juice (2016)"
       ],
@@ -1443,8 +1443,8 @@
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
       "one_liner": "Lower in omega-6 than most seed oils, but still solvent-extracted and refined — not a whole food. The gamma-oryzanol health angle is weaker than the marketing suggests.",
-      "why": "Rice bran oil has a more favorable omega-6 profile than soybean or sunflower oil, and gamma-oryzanol (a compound unique to rice bran) has been researched for cholesterol effects. However, it's still industrially refined using hexane in most commercial production, and while lower in linoleic acid than most seed oils, it's not a whole food. The research on gamma-oryzanol is weaker than often marketed.",
-      "kristy_note": "One of the less-bad seed oils but still not a Kristy first choice. We'd rather you cook with butter, ghee, or coconut oil and get gamma-oryzanol's supposed benefits from whole rice bran if you want it.",
+      "why": "Rice bran oil has a more favorable omega-6 profile than soybean or sunflower oil, and gamma-oryzanol (a compound unique to rice bran) has been researched for cholesterol effects. However, it’s still industrially refined using hexane in most commercial production, and while lower in linoleic acid than most seed oils, it’s not a whole food. The research on gamma-oryzanol is weaker than often marketed.",
+      "kristy_note": "One of the less-bad seed oils but still not a Kristy first choice. We’d rather you cook with butter, ghee, or coconut oil and get gamma-oryzanol’s supposed benefits from whole rice bran if you want it.",
       "sources": [
         "USDA FoodData Central",
         "Berger et al., AJCN 2005 (rice bran and cholesterol)"
@@ -1466,7 +1466,7 @@
       "verdict": "limit",
       "one_liner": "Sold as a wholesome, vegan sweetener, but it spikes blood sugar higher than table sugar — and because rice pulls arsenic from soil, it tends to run high in it.",
       "why": "Brown rice syrup is nearly 100% glucose (maltose breaks down to glucose rapidly), giving it one of the highest glycemic indexes of any sweetener. A 2012 Dartmouth study found elevated levels of inorganic arsenic (a Group 1 IARC carcinogen) in products using brown rice syrup as a primary sweetener, including infant formulas and energy bars.",
-      "kristy_note": "Looks clean, isn't clean. The vegan/natural positioning obscures one of the highest GIs in the sweetener category and an arsenic concern that particularly matters for infants and frequent consumers.",
+      "kristy_note": "Looks clean, isn’t clean. The vegan/natural positioning obscures one of the highest GIs in the sweetener category and an arsenic concern that particularly matters for infants and frequent consumers.",
       "sources": [
         "Jackson et al., Environmental Health Perspectives 2012 (arsenic in rice syrup)",
         "Foster-Powell et al., AJCN 2002 (GI data)"
@@ -1489,7 +1489,7 @@
       "verdict": "limit",
       "one_liner": "White flour rushed and whitened with chemical agents like chlorine — a process banned as a food additive in the EU. Unbleached is the cleaner shelf pick.",
       "why": "Bleaching flour with chemical agents destroys carotenoid pigments (which provide the natural cream color of flour), as well as residual vitamins and oils. Chlorinated flour has been banned in the EU because the process produces chlorinated compounds in the flour. In the US, both bleached and unbleached flour are permitted — unbleached is the cleaner option.",
-      "kristy_note": "Look for 'unbleached' on any flour label. It's a simple upgrade with no cost or taste difference in most applications. Always prefer whole grain over either.",
+      "kristy_note": "Look for ‘unbleached’ on any flour label. It’s a simple upgrade with no cost or taste difference in most applications. Always prefer whole grain over either.",
       "sources": [
         "EU Directive 2008/84/EC (prohibiting flour bleaching)",
         "FDA flour bleaching agent regulations"
@@ -1512,7 +1512,7 @@
       "one_liner": "A whole food humans have gathered and eaten for as long as recorded history. Minimally processed, unlike the refined sugars that replaced it.",
       "why": "Raw honey is unheated and unfiltered, leaving it closer to the state it left the hive in than the pasteurized, blended product that dominates the shelf. It is affirmed here as a traditional whole food and a minimally processed sweetener — not as a remedy, and not as a reason to eat more sugar.",
       "history": "Kept as food and as a traditional remedy across nearly every ancient culture — Egypt, Greece, China, Mesoamerica. Sealed jars recovered from Egyptian tombs were found still edible thousands of years later, a consequence of its chemistry.",
-      "kristy_note": "Straight up: it's still sugar, and anyone watching that should count honey like anything else. But a food people have eaten for all of recorded history is not the same thing as a syrup engineered in the last century. Use it like the real thing it is. Sparingly, on purpose."
+      "kristy_note": "Straight up: it’s still sugar, and anyone watching that should count honey like anything else. But a food people have eaten for all of recorded history is not the same thing as a syrup engineered in the last century. Use it like the real thing it is. Sparingly, on purpose."
     },
     {
       "id": "bone_broth",
@@ -1529,7 +1529,7 @@
       "one_liner": "Simmered bones — one of the oldest, most traditional foods there is, and a whole-food source of collagen and minerals.",
       "why": "Bone broth is made by simmering animal bones and connective tissue in water, drawing out collagen, gelatin, and minerals. It is affirmed here as a traditional whole food made from ingredients you can name — not as a treatment for anything.",
       "history": "A nose-to-tail staple across virtually every traditional cuisine, born of wasting nothing from an animal. Bones went into the pot because throwing them out was unthinkable, long before anyone analyzed what came out.",
-      "kristy_note": "Real broth gels in the fridge — that's the collagen, and it's the quickest way to tell it apart from salty brown water sold under the same name. Read the ingredients: bones, water, vegetables, salt. If it lists yeast extract and 'natural flavor,' it's a soup base wearing broth's name."
+      "kristy_note": "Real broth gels in the fridge — that’s the collagen, and it’s the quickest way to tell it apart from salty brown water sold under the same name. Read the ingredients: bones, water, vegetables, salt. If it lists yeast extract and ‘natural flavor,‘ it’s a soup base wearing broth’s name."
     },
     {
       "id": "fermented_foods",
@@ -1549,8 +1549,8 @@
       "evidence_tier": "time_tested",
       "one_liner": "Living, fermented whole foods central to traditional diets worldwide, long before anyone mapped a microbiome.",
       "why": "Fermentation uses live bacteria or yeast to transform and preserve a food. These are affirmed here as traditional whole foods with a long human record — a statement about how they have been eaten, not a claim about what they do in a body.",
-      "history": "Fermentation is humanity's oldest method of preserving food, developed independently on every continent — cabbage in Central Europe and Korea, milk across the steppe, soybeans throughout East Asia. It predates refrigeration by millennia.",
-      "kristy_note": "Look for these in the refrigerated section with live cultures on the label. Shelf-stable sauerkraut has usually been pasteurized, which kills what made it interesting — it's still cabbage, just no longer a living food."
+      "history": "Fermentation is humanity’s oldest method of preserving food, developed independently on every continent — cabbage in Central Europe and Korea, milk across the steppe, soybeans throughout East Asia. It predates refrigeration by millennia.",
+      "kristy_note": "Look for these in the refrigerated section with live cultures on the label. Shelf-stable sauerkraut has usually been pasteurized, which kills what made it interesting — it’s still cabbage, just no longer a living food."
     },
     {
       "id": "organ_meats",
@@ -1589,7 +1589,7 @@
       "one_liner": "A kitchen staple and traditional food across millennia of human cooking.",
       "why": "Garlic is a whole food used as both an aromatic and a seasoning in nearly every cuisine on earth. It is affirmed here on its history and its status as a real ingredient — a recognizable food on a label rather than a manufactured flavor compound.",
       "history": "Cultivated and eaten for thousands of years across Egypt, Rome, India, and China, where it appears in the earliest written records of cooking and trade. It is one of the oldest continuously cultivated food plants.",
-      "kristy_note": "Actual garlic on an ingredient list is a small sign someone cooked the food rather than assembled it. 'Natural garlic flavor' is a different thing entirely, and it reads differently."
+      "kristy_note": "Actual garlic on an ingredient list is a small sign someone cooked the food rather than assembled it. ‘Natural garlic flavor’ is a different thing entirely, and it reads differently."
     },
     {
       "id": "ginger",
@@ -1623,9 +1623,9 @@
       "polarity": "affirming",
       "evidence_tier": "time_tested",
       "one_liner": "The traditional Mediterranean cooking fat — pressed from whole olives rather than chemically extracted. Minimally processed in a category defined by heavy processing.",
-      "why": "Extra virgin olive oil is produced by mechanical pressing without solvents or high-heat refining, which is what separates it from the industrial seed oils. It is affirmed here on that processing distinction and on its long traditional use — not on any health outcome. Note that only the explicit whole-food form is affirmed: a bare 'olive oil' on a label may be refined, and Kristy will not affirm what the label doesn't state.",
+      "why": "Extra virgin olive oil is produced by mechanical pressing without solvents or high-heat refining, which is what separates it from the industrial seed oils. It is affirmed here on that processing distinction and on its long traditional use — not on any health outcome. Note that only the explicit whole-food form is affirmed: a bare ‘olive oil’ on a label may be refined, and Kristy will not affirm what the label doesn’t state.",
       "history": "Olives have been pressed for oil around the Mediterranean for thousands of years, by mechanical press long before industrial solvent extraction existed. The method predates the chemistry by millennia.",
-      "kristy_note": "The one cooking oil affirmed by name, and only when the label says extra virgin or cold-pressed. 'Olive oil' on its own can be refined or cut with something cheaper. Not a flag, but not an affirmation either. Make the label say it."
+      "kristy_note": "The one cooking oil affirmed by name, and only when the label says extra virgin or cold-pressed. ‘Olive oil’ on its own can be refined or cut with something cheaper. Not a flag, but not an affirmation either. Make the label say it."
     }
   ],
   "approved_alternatives": {

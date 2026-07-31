@@ -147,7 +147,9 @@ export const PERIMETER_SECTIONS = [
     shortcuts: [
       { q: 'Is organic worth it?', id: 'organic_worth_it_by_type' },
       { q: 'How do I pick a ripe one?', id: 'produce_ripeness_by_item' },
-      { q: "What's in season?", id: 'produce_in_season' },
+      // produce_in_season was folded into produce_seasonality — the two answered the
+      // same question and would have rendered near-identical cards.
+      { q: "What's in season?", id: 'produce_seasonality' },
     ],
     thinNote: null,
   },

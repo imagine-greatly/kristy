@@ -160,7 +160,7 @@ export default function Settings({
           </section>
 
           {/* Shopping preferences — the PRIMARY content for a grocery user: what
-              they're shopping for (goal / focuses / hard lines / constraints). The
+              they’re shopping for (goal / focuses / hard lines / constraints). The
               full editor is the goal switcher; here we summarize + link to it. */}
           <section className="set-section">
             <div className="set-section__label">Shopping preferences</div>

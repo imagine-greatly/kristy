@@ -19,7 +19,7 @@ const ADVICE = {
   holistic:
     "That lens holds. Say the word and the cart follows it: pasture-raised eggs, grass-fed meat, the least-processed version of each thing.",
   dinner:
-    "One sentence about the week and the groceries follow. How many dinners, who's eating.",
+    "One sentence about the week and the groceries follow. How many dinners, who’s eating.",
 };
 
 /* Demo-only mirror of the server's cart-command routing (server/lib/chatRouting.js).

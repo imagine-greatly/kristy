@@ -79,7 +79,7 @@ export default function IngredientPage({ id, onClose }) {
               <p style={{ ...kristyVoice, ...styles.callLine }}>
                 {error.notFound
                   ? "No page on that one yet."
-                  : "That didn't load just now."}
+                  : "That didn’t load just now."}
               </p>
               <button style={styles.ghost} onClick={onClose}>
                 Back to your scan
@@ -97,7 +97,7 @@ export default function IngredientPage({ id, onClose }) {
                 </p>
               )}
 
-              {/* Chips. An affirmed whole food has NO severity — it isn't graded on
+              {/* Chips. An affirmed whole food has NO severity — it isn’t graded on
                   the concern ramp — so it gets a single mint tier chip instead. */}
               <div style={styles.chipRow}>
                 {!affirming && (
@@ -120,7 +120,7 @@ export default function IngredientPage({ id, onClose }) {
               </div>
 
               {/* For a time-tested food the HISTORY LEADS — it is the evidence, and
-                  there is no "why it's bad" section, because it isn't bad. */}
+                  there is no "why it’s bad" section, because it isn’t bad. */}
               {affirming ? (
                 <>
                   {data.history && (
@@ -155,7 +155,7 @@ export default function IngredientPage({ id, onClose }) {
               )}
 
               {/* THE EVIDENCE — honestly tiered. For time_tested this is the whole
-                  point: say plainly that history is what's backing it. */}
+                  point: say plainly that history is what’s backing it. */}
               <section style={styles.section}>
                 <div style={styles.label}>The evidence</div>
                 <div style={styles.evLine}>
@@ -349,7 +349,7 @@ const styles = {
     background: colors.surface2,
   },
   swapText: { margin: 0, fontSize: 16, lineHeight: 1.5 },
-  swapPrimary: { color: colors.accentGold, fontWeight: 700 },
+  swapPrimary: { color: colors.ink, fontWeight: 700 },
   swapRest: { color: colors.textPrimary },
 
   ghost: {

@@ -141,7 +141,7 @@ async function cartEditReply({ userId, message, mode, prefs, premium }) {
 function describeCartResult(list, mode) {
   const items = (list?.items || []).filter((i) => !i.checked);
   if (!items.length) {
-    return "Your cart's empty now — tell me what the trip is for.";
+    return "Your cart’s empty now — tell me what the trip is for.";
   }
   const names = items.slice(0, 4).map((i) => String(i.name).toLowerCase());
   const rest = items.length - names.length;

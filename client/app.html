@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#040805" />
+    <meta name="theme-color" content="#050D08" />
     <title>Kristy — the coach for the whole store</title>
     <!-- Favicon = the mark: the gold hair silhouette on the forest ground. The
          ground is baked in because a favicon is an opaque square, unlike the app
@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
 
@@ -44,12 +44,12 @@
           if (painted || !root || root.childElementCount > 0) return;
           painted = true;
           root.innerHTML =
-            '<div style="min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;background:#040805;color:#F0E6C8;font-family:Inter,system-ui,sans-serif">' +
+            '<div style="min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;background:#050D08;color:#F4F1E8;font-family:Inter,system-ui,sans-serif">' +
             '<div style="max-width:380px">' +
-            '<p style="font-family:\'Playfair Display\',Georgia,serif;font-style:italic;font-size:22px;margin:0 0 10px">Kristy didn\'t start.</p>' +
-            '<p style="font-size:15px;line-height:1.55;color:#6B8F72;margin:0 0 18px">The app failed to load before it could show you anything. Reloading often clears it.</p>' +
-            '<button type="button" id="boot-reload" style="font-family:Inter,system-ui,sans-serif;font-size:15px;padding:11px 22px;border-radius:999px;border:1px solid #8B6F2E;background:transparent;color:#C9A84C;cursor:pointer">Reload</button>' +
-            '<pre id="boot-detail" style="margin:22px 0 0;padding:12px;border-radius:10px;background:#122718;color:#6B8F72;font-family:\'DM Mono\',ui-monospace,monospace;font-size:12px;line-height:1.5;text-align:left;white-space:pre-wrap;word-break:break-word"></pre>' +
+            '<p style="font-family:\'Playfair Display\',Georgia,serif;font-style:italic;font-size:26px;margin:0 0 10px">Kristy didn’t start.</p>' +
+            '<p style="font-size:15px;line-height:1.55;color:#9DB0A2;margin:0 0 18px">The app failed to load before it could show you anything. Reloading often clears it.</p>' +
+            '<button type="button" id="boot-reload" style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:600;padding:11px 22px;border-radius:8px;border:none;background:#EFE9D8;color:#0A1A11;cursor:pointer">Reload</button>' +
+            '<pre id="boot-detail" style="margin:22px 0 0;padding:12px;border-radius:8px;background:#10251A;color:#9DB0A2;font-family:\'DM Mono\',ui-monospace,monospace;font-size:12px;line-height:1.5;text-align:left;white-space:pre-wrap;word-break:break-word"></pre>' +
             '</div></div>';
           // textContent, not innerHTML — the detail is an error string, never markup.
           var pre = document.getElementById('boot-detail');

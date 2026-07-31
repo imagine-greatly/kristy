@@ -53,7 +53,7 @@ function friendlySendError(err) {
   // The SMS provider (Twilio) rejected the send: bad credentials, no verified sender,
   // or a trial account that can only text verified numbers.
   if (m.includes('error sending') || m.includes('sms provider') || m.includes('twilio'))
-    return "The text couldn't be sent from our end. Nothing wrong with your number.";
+    return "The text couldn’t be sent from our end. Nothing wrong with your number.";
 
   if (code.includes('signup_disabled') || m.includes('signups not allowed'))
     return 'New sign-ups by text are switched off right now.';
@@ -61,8 +61,8 @@ function friendlySendError(err) {
   if (err?.status === 429 || m.includes('rate') || m.includes('too many'))
     return 'Too many attempts. Wait a minute and try again.';
   if (m.includes('invalid') && m.includes('phone'))
-    return "That number doesn't look right. Include your country code (e.g. +1).";
-  return "The code didn't send. Check the number and try again.";
+    return "That number doesn’t look right. Include your country code (e.g. +1).";
+  return "The code didn’t send. Check the number and try again.";
 }
 
 function friendlyVerifyError(err) {
@@ -70,7 +70,7 @@ function friendlyVerifyError(err) {
   if (err?.status === 429 || m.includes('rate') || m.includes('too many'))
     return 'Too many attempts. Wait a minute and try again.';
   // Supabase returns "Token has expired or is invalid" for both cases.
-  return "That code didn't work. It may be wrong or expired. Tap Resend.";
+  return "That code didn’t work. It may be wrong or expired. Tap Resend.";
 }
 
 // Seconds to lock the "Resend" link after a code is sent (the code itself
@@ -212,7 +212,7 @@ export function SignInForm({ note = 'No password. A 6-digit code by text.' }) {
             ? 'Sending…'
             : resendIn > 0
             ? `Resend code in ${resendIn}s`
-            : "Didn't get it? Resend"}
+            : "Didn’t get it? Resend"}
         </button>
         <button className="auth__link" onClick={backToPhone}>
           Use a different number

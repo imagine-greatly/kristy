@@ -1,4 +1,4 @@
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyVoice, radii } from '../lib/tokens.js';
 import { FOCUS_DISCLAIMER } from '../lib/coachGoals.js';
 
 /* The one-time, in-voice "coach, not doctor" note — shown the first time ANY focus
@@ -43,10 +43,10 @@ const styles = {
   text: { margin: 0, fontSize: 17, lineHeight: 1.55, color: colors.textPrimary },
   btn: {
     padding: '13px 20px',
-    borderRadius: 14,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 16,

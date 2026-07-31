@@ -34,7 +34,7 @@ function greeting(hour) {
 export function buildRecap(prevTotals, now = new Date()) {
   const cal = fmt(prevTotals?.calories || 0);
   const protein = fmt(prevTotals?.protein || 0);
-  return `${greeting(now.getHours())} — yesterday you had ${cal} kcal and ${protein}g protein. Today's a clean slate, goals reset to zero.`;
+  return `${greeting(now.getHours())} — yesterday you had ${cal} kcal and ${protein}g protein. Today’s a clean slate, goals reset to zero.`;
 }
 
 export const recapMessage = (prevTotals, now = new Date()) => ({

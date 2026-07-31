@@ -105,7 +105,7 @@ export function composeReply({ goal, focuses, hardLines, constraints = [], unmap
   if (!unmapped.length) return head;
 
   const missed = unmapped.length > 1 ? `${unmapped.slice(0, -1).join(', ')} and ${unmapped[unmapped.length - 1]}` : unmapped[0];
-  return `${head} The ${missed} part isn't tracked here yet. Pick the closest goal above.`;
+  return `${head} The ${missed} part isn’t tracked here yet. Pick the closest goal above.`;
 }
 
 /** Map free text onto the taxonomy. Returns { goal, focuses, hardLines, unmapped, reply }. */

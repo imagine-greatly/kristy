@@ -55,7 +55,7 @@ export default function Upgrade({ subscription, trialEligible = false, onStartTr
         onClose();
         return;
       }
-      setError("The trial didn't start. Give it a moment and try again.");
+      setError("The trial didn’t start. Give it a moment and try again.");
     } catch (e) {
       setError(e?.message || 'Could not start your trial.');
     }

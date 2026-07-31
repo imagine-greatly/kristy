@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, radii } from '../lib/tokens.js';
 
 /**
  * Root error boundary. A crash anywhere in the tree used to unmount everything and
@@ -37,7 +37,7 @@ export default class ErrorBoundary extends React.Component {
         <div style={S.inner}>
           <p style={S.voice}>Something in here broke.</p>
           <p style={S.body}>
-            Not your shopping — this screen. Reloading usually clears it. If it doesn't,
+            Not your shopping — this screen. Reloading usually clears it. If it doesn’t,
             the details below say what happened.
           </p>
           <button type="button" style={S.button} onClick={() => window.location.reload()}>
@@ -69,21 +69,21 @@ const S = {
   },
   inner: { maxWidth: 380, width: '100%', textAlign: 'center' },
   voice: {
-    fontFamily: kristyVoice.fontFamily,
-    fontStyle: kristyVoice.fontStyle,
-    fontSize: 22,
+    ...kristyDisplay,
+    fontSize: 26,
     margin: '0 0 10px',
-    color: colors.textPrimary,
+    color: colors.ink,
   },
   body: { fontSize: 15, lineHeight: 1.55, color: colors.textMuted, margin: '0 0 18px' },
   button: {
     fontFamily: fonts.ui,
     fontSize: 15,
+    fontWeight: 600,
     padding: '11px 22px',
-    borderRadius: 999,
-    border: `1px solid ${colors.borderGold}`,
-    background: 'transparent',
-    color: colors.accentGold,
+    borderRadius: radii.button,
+    border: 'none',
+    background: colors.action,
+    color: colors.actionInk,
     cursor: 'pointer',
   },
   details: { marginTop: 22, textAlign: 'left' },

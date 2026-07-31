@@ -1,4 +1,4 @@
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 
 /* ═══════════════════════ Chat launcher — no blank box (Step 9) ═══════════════════════
@@ -35,8 +35,8 @@ export default function ChatLauncher({ entries = [], onScan }) {
 
 const styles = {
   wrap: { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 12, maxWidth: 400, margin: '0 auto', padding: '40px 22px 20px' },
-  avatar: { width: 48, height: 48, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${colors.borderGold}`, background: colors.surface, color: colors.accentGold, fontFamily: fonts.voice, fontStyle: 'italic', fontSize: 22 },
-  title: { ...kristyVoice, margin: '2px 0 0', fontSize: 22, color: colors.textPrimary },
+  avatar: { width: 48, height: 48, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${colors.borderGold}`, background: colors.surface, color: colors.brass, fontFamily: fonts.display, fontStyle: 'italic', fontSize: 26 },
+  title: { ...kristyDisplay, margin: '2px 0 0', fontSize: 26, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 14, color: colors.textMuted },
   stack: { width: '100%', display: 'flex', flexDirection: 'column', gap: 10, marginTop: 8 },
   entry: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2, width: '100%', padding: '13px 16px', borderRadius: 13, border: `1px solid ${colors.borderGold}`, background: colors.surface, cursor: 'pointer', textAlign: 'left' },

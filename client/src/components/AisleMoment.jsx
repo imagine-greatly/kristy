@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
 import { askPerimeter, fetchPerimeterSections, fetchPerimeterEntry } from '../lib/perimeter.js';
@@ -322,7 +322,7 @@ const styles = {
     maxWidth: 520, margin: '0 auto', width: '100%', boxSizing: 'border-box',
     padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 12,
   },
-  h1: { ...kristyVoice, margin: 0, fontSize: 26, color: colors.textPrimary },
+  h1: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
   thesis: { margin: 0, fontSize: 16.5, lineHeight: 1.5, color: colors.textPrimary },
   thesisSub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
   blurb: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
@@ -347,9 +347,10 @@ const styles = {
     border: `1px solid ${colors.borderGold}`, background: colors.surface,
     color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none',
   },
+  // The counter's ONE filled action. Everything else on this surface — the card's
+  // add-to-cart, the gate, the section shortcuts — is transparent + hairline.
   askGo: {
-    flex: '0 0 auto', padding: '13px 20px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep,
+    flex: '0 0 auto', padding: '13px 20px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
     fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
   },
   seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
@@ -393,7 +394,7 @@ const styles = {
   sectionTitle: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
   sectionBlurb: { fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textMuted },
   sectionCount: {
-    marginTop: 3, fontFamily: fonts.mono, fontSize: 10.5, color: colors.accentGoldMuted,
+    marginTop: 3, fontFamily: fonts.mono, fontSize: 10.5, color: colors.inkMuted,
     letterSpacing: '0.04em',
   },
 
@@ -418,8 +419,8 @@ const styles = {
     paddingLeft: 12, borderLeft: `2px solid ${colors.gold30}`,
   },
   otherHalf: {
-    marginTop: 12, padding: '11px 14px', borderRadius: 12, border: `1px solid ${colors.border}`,
-    background: 'transparent', color: colors.textMuted,
+    marginTop: 12, padding: '11px 14px', borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkMuted,
     fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
   },
 };

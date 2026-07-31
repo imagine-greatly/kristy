@@ -73,7 +73,7 @@ export function useCart(prefs) {
   const [premium, setPremium] = useState(false);
   const [loading, setLoading] = useState(() => loadCachedList() == null);
   const [busy, setBusy] = useState(''); // 'edit' | 'build' while composing
-  const [note, setNote] = useState(''); // Kristy's one-line summary after a compose
+  const [note, setNote] = useState(''); // Kristy’s one-line summary after a compose
   const [gated, setGated] = useState(false); // free user hit the NL editor
 
   // Load the authoritative cart on app open — not on the cart screen's mount — so it
@@ -284,7 +284,7 @@ export function useCart(prefs) {
               id: rid(),
               name: clean,
               category: category || 'Scanned',
-              checked: true, // it's in your hands — it's in the cart
+              checked: true, // it’s in your hands — it’s in the cart
               source: 'scan',
               tier: tier || null,
               ...(barcode ? { productName: clean } : {}),

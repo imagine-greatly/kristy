@@ -20,7 +20,7 @@ export const COACH_GOALS = [
     noteLabel: 'eating cleaner',
     readLabel: 'clean eating',
     blurb: 'Fewer additives, more real food.',
-    payoff: "Eating cleaner comes down to fewer mystery ingredients. Scan a label: what's real and what's filler, line by line.",
+    payoff: "Eating cleaner comes down to fewer mystery ingredients. Scan a label: what’s real and what’s filler, line by line.",
   },
   {
     value: 'high_protein',
@@ -29,7 +29,7 @@ export const COACH_GOALS = [
     noteLabel: 'high-protein shopping',
     readLabel: 'high-protein shopping',
     blurb: "Protein that pulls its weight, every trip.",
-    payoff: "Shopping high-protein: a product either pulls its weight or it's taking up cart space. Every scan settles it.",
+    payoff: "Shopping high-protein: a product either pulls its weight or it’s taking up cart space. Every scan settles it.",
   },
   {
     value: 'low_sugar',
@@ -46,8 +46,8 @@ export const COACH_GOALS = [
     title: 'Feeding a family',
     noteLabel: 'feeding your family',
     readLabel: 'family',
-    blurb: "What ends up in everyone's pantry.",
-    payoff: "Feeding a family is about what ends up in everyone's pantry. Staples the whole house actually eats, in cleaner versions.",
+    blurb: "What ends up in everyone’s pantry.",
+    payoff: "Feeding a family is about what ends up in everyone’s pantry. Staples the whole house actually eats, in cleaner versions.",
   },
   {
     value: 'gut_health',
@@ -83,7 +83,7 @@ export const COACH_GOALS = [
     noteLabel: 'building muscle',
     readLabel: 'muscle & strength',
     blurb: 'Protein first, quality close behind.',
-    payoff: "Building strength. The protein has to be real, and the rest of the label can't be undoing it.",
+    payoff: "Building strength. The protein has to be real, and the rest of the label can’t be undoing it.",
   },
   {
     value: 'pregnancy_postpartum',
@@ -102,7 +102,7 @@ export const COACH_GOALS = [
     noteLabel: 'eating for performance',
     readLabel: 'performance',
     blurb: 'Fuel that earns its place.',
-    payoff: "Eating for performance. Either it's real fuel or it's marketed that way — the label settles which.",
+    payoff: "Eating for performance. Either it’s real fuel or it’s marketed that way — the label settles which.",
   },
 ];
 
@@ -191,7 +191,7 @@ export const CONSTRAINTS = [
 // Section copy for the constraints picker (onboarding + switcher).
 export const CONSTRAINTS_SECTION = {
   title: 'What are you working with?',
-  sub: "Optional. Whatever you're working with, the cart works around it.",
+  sub: "Optional. Whatever you’re working with, the cart works around it.",
 };
 
 // The two retired goals map to a constraint. When a stored profile still holds one of

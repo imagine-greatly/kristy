@@ -1,6 +1,15 @@
-/* ───────────────────────── Kristy — Design System v2 ─────────────────────────
-   Deep forest green + antique gold. Inter for UI, DM Mono for numbers/data,
-   Playfair Display italic for Kristy's voice, Georgia for the wordmark.
+/* ───────────────────────── Kristy — Design System v3 ─────────────────────────
+   Deep forest green + brass. Inter for UI, DM Mono for numbers/data, Newsreader
+   roman for Kristy's voice and every verdict headline, Playfair Display italic
+   for display only (wordmark, page titles, pull-quotes).
+
+   Two rules the tokens alone cannot express, so they are enforced at every use
+   site rather than merely defined here:
+     • BRASS IS IDENTITY. It marks what a thing IS — the wordmark, the hairline+dot
+       motif, a tier badge, the active tab, chip text. It is never a large filled
+       surface, and never a sentence someone reads to make a decision.
+     • ONE FILLED BUTTON PER SCREEN, in --action. Everything else is transparent
+       with a 0.5px --hairline border, at 8px. The pill is reserved for chips.
 
    These :root custom properties are the CSS mirror of the canonical JS tokens in
    src/lib/tokens.js — JS/canvas surfaces import from there; keep the two in sync.
@@ -9,24 +18,51 @@
 :root {
   /* The forest surface ramp (mirrors lib/tokens.js exactly; mobile/src/theme/colors.ts
      uses the identical values). Deepest → lightest: bg-deep is the void / negative
-     space, bg is the #0B1F0F ground, surface + surface-2 are the lifted card tones. */
-  --bg-deep: #040805;
-  --bg: #0b1f0f;
-  --surface: #122718;
-  --surface-2: #1a3320;
-  --border: #1e3d26;
-  --border-gold: #8b6f2e;
-  --user-bubble: #1a3320;
-  --ai-bubble: #122718;
-  --accent-gold: #c9a84c;
-  --accent-gold-muted: #8b6f2e;
+     space, bg is the #0A1A11 ground, surface + surface-2 are the lifted card tones. */
+  --bg-deep: #050d08;
+  --bg: #0a1a11;
+  --surface: #10251a;
+  --surface-2: #16301f;
+  --hairline: #29402f;
+  --border: #29402f; /* alias — the shipped name for --hairline */
+  --border-gold: #5a4c25;
+  --user-bubble: #16301f;
+  --ai-bubble: #10251a;
+
+  /* Brass is IDENTITY ONLY: wordmark, the hairline+dot motif, tier badge, active
+     tab, chip text. Never a large filled surface, and never a sentence a shopper
+     reads to make a decision. */
+  --brass: #c4a65a;
+  --brass-dim: #5a4c25;
+  --accent-gold: #c4a65a; /* alias for --brass */
+  --accent-gold-muted: #5a4c25; /* alias for --brass-dim */
   --accent-mint: #4a9b6f;
   --accent-seafoam: #6bbf8e;
-  --text-primary: #f0e6c8;
-  --text-secondary: #c9a84c;
-  --text-muted: #6b8f72;
+
+  /* The ONE filled action per screen (Go, Ask, Scan a barcode, Add to cart).
+     Everything else is transparent with a 0.5px --hairline border. A gold fill
+     used to carry this and it left the brand colour with nothing to mark. */
+  --action: #efe9d8;
+  --action-ink: #0a1a11;
+
+  /* Three text levels, none of them gold. --text-secondary WAS gold and carried
+     decks and why-lines app-wide; it is now the muted ink and the alias stays so
+     no consumer has to be rewritten to stop shouting. */
+  --ink: #f4f1e8;
+  --ink-body: #c7d6cb;
+  --ink-muted: #9db0a2;
+  --text-primary: #f4f1e8; /* alias for --ink */
+  --text-body: #c7d6cb; /* alias for --ink-body */
+  --text-secondary: #9db0a2; /* alias for --ink-muted */
+  --text-muted: #9db0a2; /* alias for --ink-muted */
   --trend-muted: #6b9e85;
-  --ring-track: #1a3320;
+  --ring-track: #16301f;
+
+  /* Corner radii. A button is 8px; the pill is RESERVED for chips. Both were
+     pills, which flattened "tap this" and "this is a label" into one shape. */
+  --radius-button: 8px;
+  --radius-card: 14px;
+  --radius-chip: 999px;
 
   /* Status + scrims — mirror lib/tokens.js so nothing hardcodes a literal here. */
   --error: #ee8888;
@@ -43,7 +79,7 @@
      fill + a hairline top edge + a shadow), not by an outline, and gold is reserved
      for emphasis: the primary action, the active goal, the checked state.
      Mirrors colors.edgeHighlight / shadowCard / shadowRaised in lib/tokens.js. */
-  --edge-highlight: rgba(240, 230, 200, 0.05);
+  --edge-highlight: rgba(244, 241, 232, 0.05);
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.28);
   --shadow-raised: 0 4px 14px rgba(0, 0, 0, 0.34);
   /* The two composable lifts. `--lift-card` for a row/card resting on the ground,
@@ -52,18 +88,24 @@
   --lift-raised: inset 0 1px 0 var(--edge-highlight), var(--shadow-raised);
   --black: #000000;
   --white: #ffffff;
-  --scrim: rgba(7, 18, 11, 0.62);
-  --scrim-soft: rgba(7, 18, 11, 0.55);
-  --scrim-verdict: rgba(4, 8, 5, 0.72);
+  --scrim: rgba(5, 13, 8, 0.62);
+  --scrim-soft: rgba(5, 13, 8, 0.55);
+  --scrim-verdict: rgba(5, 13, 8, 0.72);
 
+  /* ── Type, assigned strictly ────────────────────────────────────────────────
+     --font-display  Playfair Display ITALIC. Wordmark, page titles, pull-quotes.
+                     Minimum 26px, max 2 per screen, NEVER inside a card — it is
+                     a display face and its hairlines vanish at card sizes on a
+                     dark ground.
+     --font-voice    Newsreader ROMAN 500. Kristy's voice, and every verdict
+                     headline on every counter card and scan result. The most
+                     important text in the app, set in the most legible face.
+     --font-ui       Inter. Everything else. */
   --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
   --font-serif: Georgia, 'Times New Roman', serif;
-  /* Kristy's spoken/coaching voice — Playfair Display italic (the locked-brand
-     serif, loaded in app.html exactly as the landing page). Georgia fallback so
-     it degrades to the shipped serif, never a generic sans. Use via
-     .kristy-voice below, or kristyVoice in lib/tokens.js. */
-  --font-voice: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-voice: 'Newsreader', Georgia, 'Times New Roman', serif;
 
   /* The menu drawer's width — a drawer at every width now, never a permanent rail. */
   --sidebar-w: 260px;
@@ -138,12 +180,34 @@ textarea {
 }
 
 /* ── Kristy's voice ──────────────────────────────────────────────────────────
-   Two type voices: everything factual/UI/ingredient stays Inter; Kristy's
-   spoken/coaching text renders in Playfair Display italic. The personal layer
-   must look as different as it is. (Mirrors kristyVoice in lib/tokens.js.) */
+   Newsreader roman 500. Her spoken lines and every verdict headline.
+   (Mirrors kristyVoice in lib/tokens.js.) */
 .kristy-voice {
   font-family: var(--font-voice);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* ── The display face ────────────────────────────────────────────────────────
+   Playfair Display italic. Wordmark, page titles, pull-quotes. Never under 26px
+   and never inside a card. (Mirrors kristyDisplay in lib/tokens.js.) */
+.kristy-display {
+  font-family: var(--font-display);
   font-style: italic;
+}
+
+/* ── The verdict headline ────────────────────────────────────────────────────
+   The single most important line in the app. One definition, so every counter
+   card and every scan result state it identically. */
+.verdict-headline {
+  font-family: var(--font-voice);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
 
 /* ── Gold thread/dot motif ───────────────────────────────────────────────────
@@ -484,9 +548,10 @@ textarea {
 .readonly-bar button {
   font-size: 12px;
   font-weight: 600;
-  color: var(--bg);
-  background: var(--accent-gold);
-  border-radius: 999px;
+  color: var(--ink-body);
+  background: transparent;
+  border: 0.5px solid var(--hairline);
+  border-radius: var(--radius-button);
   padding: 6px 12px;
   white-space: nowrap;
 }
@@ -551,9 +616,10 @@ textarea {
   transition: background 0.2s ease, color 0.2s ease, transform 0.18s
       cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* The composer send is the cart/chat screen's one filled action — "Go"/"Ask". */
 .send-btn.active {
-  background: var(--accent-gold);
-  color: var(--bg);
+  background: var(--action);
+  color: var(--action-ink);
   transform: scale(1);
 }
 .send-btn:disabled {
@@ -608,10 +674,11 @@ textarea {
   z-index: 1;
 }
 .sidebar__logo {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
+  font-style: italic;
   font-weight: 400;
-  font-size: 18px;
-  color: var(--accent-gold);
+  font-size: 26px;
+  color: var(--brass);
   letter-spacing: 0.01em;
 }
 
@@ -818,10 +885,11 @@ textarea {
   color: var(--accent-gold);
 }
 .auth__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
+  font-style: italic;
   font-size: 30px;
   font-weight: 400;
-  color: var(--accent-gold);
+  color: var(--brass);
   letter-spacing: 0.01em;
 }
 .auth__tag {
@@ -855,13 +923,14 @@ textarea {
 .auth__input::placeholder {
   color: var(--text-muted);
 }
+/* The one filled action on the sign-in screen. */
 .auth__btn {
   width: 100%;
-  background: var(--accent-gold);
-  color: var(--bg);
+  background: var(--action);
+  color: var(--action-ink);
   font-weight: 600;
   font-size: 15px;
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   padding: 14px 16px;
   transition: transform 0.12s ease, opacity 0.2s ease;
 }
@@ -1232,9 +1301,11 @@ textarea {
   font-size: 20px;
 }
 .verdict__looking {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  color: var(--text-primary);
+  font-family: var(--font-voice);
+  font-weight: 500;
+  font-size: 21px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
 .verdict__sub {
   font-size: 14px;
@@ -1291,20 +1362,26 @@ textarea {
   width: 100%;
   max-width: 360px;
 }
+/* Every non-primary button in the app: transparent, hairline border, 8px. The
+   filled treatment is spent once per screen and this is not it. */
 .verdict__btn {
   flex: 1;
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   padding: 13px 16px;
   font-size: 15px;
   font-weight: 600;
+  background: transparent;
+  border: 0.5px solid var(--hairline);
+  color: var(--ink-body);
   transition: transform 0.12s ease, opacity 0.2s ease, filter 0.15s ease;
 }
 .verdict__btn:active {
   transform: scale(0.99);
 }
 .verdict__btn--primary {
-  background: var(--accent-gold);
-  color: var(--bg);
+  background: var(--action);
+  border-color: transparent;
+  color: var(--action-ink);
 }
 .verdict__btn--primary:hover {
   filter: brightness(1.06);
@@ -1398,9 +1475,10 @@ textarea {
   justify-content: space-between;
 }
 .onb__logo {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--brass);
   letter-spacing: 0.01em;
 }
 .onb__count {
@@ -1446,9 +1524,9 @@ textarea {
 }
 .onb__chip {
   background: transparent;
-  border: 1px solid var(--gold-40);
-  color: var(--text-primary);
-  border-radius: 999px;
+  border: 0.5px solid var(--hairline);
+  color: var(--ink-body);
+  border-radius: var(--radius-chip);
   padding: 11px 16px;
   font-size: 14px;
   transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease,
@@ -1460,10 +1538,12 @@ textarea {
 .onb__chip:active {
   transform: scale(0.97);
 }
+/* Selected is marked in BRASS TEXT on a lifted chip, not a brass fill. Gold marks
+   what a thing is; it does not become a surface. */
 .onb__chip.selected {
-  background: var(--accent-gold);
-  border-color: var(--accent-gold);
-  color: var(--bg);
+  background: var(--surface-2);
+  border-color: var(--brass-dim);
+  color: var(--brass);
   font-weight: 600;
 }
 .onb__input {
@@ -1536,13 +1616,14 @@ textarea {
 .onb__back:hover {
   color: var(--text-primary);
 }
+/* The one filled action on an onboarding step. */
 .onb__btn {
   margin-left: auto;
-  background: var(--accent-gold);
-  color: var(--bg);
+  background: var(--action);
+  color: var(--action-ink);
   font-weight: 600;
   font-size: 15px;
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   padding: 13px 26px;
   transition: transform 0.12s ease, opacity 0.2s ease;
 }
@@ -1565,17 +1646,18 @@ textarea {
   justify-content: space-between;
 }
 .guest-mark {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--brass);
   letter-spacing: 0.01em;
   padding-left: 4px;
 }
 .guest-signin {
   background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--gold-40);
-  border-radius: 999px;
+  color: var(--ink-body);
+  border: 0.5px solid var(--hairline);
+  border-radius: var(--radius-button);
   padding: 7px 15px;
   font-size: 13px;
   transition: border-color 0.18s ease, color 0.18s ease;
@@ -1716,10 +1798,12 @@ textarea {
   background: var(--bg);
   z-index: 1;
 }
+/* A page title: display italic, at the floor. */
 .settings__title {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--brass);
 }
 .settings__body {
   padding: 20px;
@@ -1755,9 +1839,9 @@ textarea {
 }
 .set-chip {
   background: transparent;
-  border: 1px solid var(--gold-40);
-  color: var(--text-primary);
-  border-radius: 999px;
+  border: 0.5px solid var(--hairline);
+  color: var(--ink-body);
+  border-radius: var(--radius-chip);
   padding: 9px 15px;
   font-size: 14px;
   cursor: pointer;
@@ -1770,9 +1854,9 @@ textarea {
   transform: scale(0.97);
 }
 .set-chip.selected {
-  background: var(--accent-gold);
-  border-color: var(--accent-gold);
-  color: var(--bg);
+  background: var(--surface-2);
+  border-color: var(--brass-dim);
+  color: var(--brass);
   font-weight: 600;
 }
 .set-chip:disabled {
@@ -1877,14 +1961,15 @@ textarea {
   font-size: 14px;
   color: var(--text-primary);
 }
+/* The one filled action on Settings. */
 .set-membership__btn {
   flex-shrink: 0;
   font-size: 13px;
   font-weight: 600;
-  color: var(--bg);
-  background: var(--accent-gold);
-  border-radius: 999px;
-  padding: 6px 14px;
+  color: var(--action-ink);
+  background: var(--action);
+  border-radius: var(--radius-button);
+  padding: 7px 14px;
   transition: filter 0.15s ease;
 }
 .set-membership__btn:hover {
@@ -2007,10 +2092,11 @@ textarea {
   font-size: 18px;
 }
 .upgrade__title {
-  font-family: var(--font-serif);
-  font-size: 22px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
   font-weight: 500;
-  color: var(--accent-gold);
+  color: var(--brass);
 }
 .upgrade__tag {
   font-size: 14px;
@@ -2103,15 +2189,16 @@ textarea {
   font-size: 13px;
   color: var(--error);
 }
+/* The one filled action on the upgrade screen. */
 .upgrade__cta {
   width: 100%;
   max-width: 360px;
-  background: var(--accent-gold);
-  color: var(--bg);
+  background: var(--action);
+  color: var(--action-ink);
   font-weight: 700;
   font-size: 15px;
   padding: 13px;
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   margin-top: 4px;
   transition: filter 0.15s ease;
 }
@@ -2203,10 +2290,11 @@ body {
 .taste-banner__line {
   margin: 0;
   font-family: var(--font-voice);
-  font-style: italic;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.45;
-  color: var(--text-primary);
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
 .taste-banner__sub {
   margin: 6px 0 0;
@@ -2228,19 +2316,21 @@ body {
   flex: 1 1 200px;
   min-width: 0;
   font-family: var(--font-voice);
-  font-style: italic;
+  font-weight: 500;
   font-size: 14.5px;
   line-height: 1.45;
-  color: var(--text-primary);
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
+/* Not the screen's primary — the cart's composer send is. Transparent + hairline. */
 .taste-banner__savebtn {
   flex: 0 0 auto;
   min-height: 44px;
   padding: 11px 20px;
-  border: none;
-  border-radius: 999px;
-  background: var(--accent-gold);
-  color: var(--bg-deep);
+  border: 0.5px solid var(--hairline);
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--ink-body);
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 700;

@@ -82,7 +82,7 @@ export default function App() {
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false); // bring-your-own-list sheet
   // Grocery-coach entry restructure: the goal is a contextual MODE, not a door gate.
-  const [switcherOpen, setSwitcherOpen] = useState(false); // the chip's mode switcher
+  const [switcherOpen, setSwitcherOpen] = useState(false); // the chip’s mode switcher
   const [focusOffer, setFocusOffer] = useState(null); // { category, focus, line } | null
   const [disclaimerOpen, setDisclaimerOpen] = useState(false); // one-time coach-not-doctor
   const [coachOnbSkipped, setCoachOnbSkipped] = useState(false); // first-run coach onboarding dismissed
@@ -466,7 +466,7 @@ export default function App() {
      Categories come from the deterministic nutrition/KB signals on the verdict. */
   const CATEGORY_FOCUS = { sodium: 'lower_sodium', sugar: 'lower_sugar', blood_sugar: 'blood_sugar', heart: 'heart' };
   const OFFER_LINE = {
-    sodium: "That's two high-sodium picks you've put back. Want sodium flagged from here on?",
+    sodium: "That’s two high-sodium picks you’ve put back. Want sodium flagged from here on?",
     sugar: "Twice now on the high-sugar stuff. Want added sugar flagged from here on?",
     blood_sugar: 'Couple of blood-sugar spikers back to back. Want those flagged as we shop?',
     heart: 'Two now with the oils on the whole-food standard. Flag that from here on?',
@@ -575,7 +575,7 @@ export default function App() {
     const sub = await startTrial();
     setSubscription(sub);
     setUpgradeOpen(false);
-    if (!sub?.premium) return sub; // grant didn't land (pre-migration / already used)
+    if (!sub?.premium) return sub; // grant didn’t land (pre-migration / already used)
     trackEvent('trial_started');
     if (scan?.verdict?.gated && scan?.ingredients) {
       setScan((s) => (s ? { ...s, pickingGoal: true } : s));
@@ -714,7 +714,7 @@ export default function App() {
           id: rid(),
           role: 'ai',
           content:
-            "That didn't go through. Try again in a sec.",
+            "That didn’t go through. Try again in a sec.",
           macros: null,
         },
       ]);
@@ -754,7 +754,7 @@ export default function App() {
       applyScanResult(result, 'barcode', ticket);
     } catch {
       if (ticket !== scanSeqRef.current) return;
-      setScan({ mode: 'barcode', error: true, message: "That scan didn't go through. Try again in a sec." });
+      setScan({ mode: 'barcode', error: true, message: "That scan didn’t go through. Try again in a sec." });
     }
   }
 
@@ -790,7 +790,7 @@ export default function App() {
       applyScanResult(result, 'label', ticket);
     } catch {
       if (ticket !== scanSeqRef.current) return;
-      setScan({ mode: 'label', error: true, message: "Couldn't read that one. Try another shot, better lit." });
+      setScan({ mode: 'label', error: true, message: "Couldn’t read that one. Try another shot, better lit." });
     }
   }
 
@@ -1132,7 +1132,7 @@ export default function App() {
       )}
 
       {/* The composer is DOCKED on every surface and is a tool, not the centerpiece:
-          one slim bar beneath the cart for the messy input taps can't express — a whole
+          one slim bar beneath the cart for the messy input taps can’t express — a whole
           week of dinners, a standing preference, a question about one specific fish.
           Every normal cart action above is reachable without it. */}
       {!viewingPast && (

@@ -32,7 +32,7 @@ export default function MessageBubble({ message, onUpgrade, onRemovePref, onEdit
       <div className="avatar">K</div>
       <div className="ai-col">
         {isSummary && <span className="summary-tag">Weekly recap</span>}
-        {/* On the FREE tier the reply text IS the entry's short answer, and the card
+        {/* On the FREE tier the reply text IS the entry’s short answer, and the card
             below prints it again. Say it once. A PREMIUM reply is a personalized read
             that the card does not contain, so that one keeps its bubble. */}
         {!echoesCard && <div className="bubble ai">{content}</div>}
@@ -75,7 +75,7 @@ export default function MessageBubble({ message, onUpgrade, onRemovePref, onEdit
           </div>
         )}
 
-        {/* A locked-feature reply for a free user: Kristy's line lands as a normal
+        {/* A locked-feature reply for a free user: Kristy’s line lands as a normal
             bubble, with a quiet upgrade link. */}
         {message.upgrade && onUpgrade && (
           <button className="bubble-upgrade" onClick={onUpgrade}>

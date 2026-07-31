@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 
 /* ═══════════════ Perimeter answer — the decision, then the reason, then the depth ═══════════════
@@ -194,7 +194,7 @@ export default function PerimeterAnswer({
         );
       })}
 
-      {/* Kristy's personalized read (premium) + her better pick, one tap to apply. */}
+      {/* Kristy’s personalized read (premium) + her better pick, one tap to apply. */}
       {resp.answer && resp.matched && (
         <>
           <GoldThread />
@@ -248,7 +248,7 @@ const styles = {
   moreBtn: {
     alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: 6,
     marginTop: 2, padding: '7px 0', background: 'transparent', border: 'none',
-    color: colors.accentGoldMuted, fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700,
+    color: colors.inkMuted, fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700,
     letterSpacing: '0.02em', cursor: 'pointer',
   },
   moreCaret: { fontSize: 11, opacity: 0.8 },
@@ -264,23 +264,25 @@ const styles = {
   framingHead: { fontWeight: 700, color: colors.textSecondary },
   sources: { margin: '2px 0 0', fontFamily: fonts.ui, fontSize: 11, color: colors.textMuted },
   refine: {
-    alignSelf: 'stretch', marginTop: 2, padding: '12px 16px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui,
+    alignSelf: 'stretch', marginTop: 2, padding: '12px 16px', borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`, background: 'transparent',
+    color: colors.inkBody, fontFamily: fonts.ui,
     fontWeight: 700, fontSize: 14.5, cursor: 'pointer', textAlign: 'left',
   },
   // The counter's cart tap. Gold-outlined rather than gold-filled: it is the entry's
   // action, not the loudest thing on a screen that is mostly guidance.
   pick: {
-    alignSelf: 'stretch', marginTop: 4, minHeight: 44, padding: '11px 14px', borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
-    color: colors.textPrimary, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14,
-    cursor: 'pointer', textAlign: 'left',
+    alignSelf: 'stretch', marginTop: 4, minHeight: 44, padding: '11px 14px',
+    borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent', color: colors.ink, fontFamily: fonts.ui,
+    fontWeight: 700, fontSize: 14, cursor: 'pointer', textAlign: 'left',
   },
   pickDone: { color: colors.textMuted, cursor: 'default' },
   gate: { display: 'flex', flexDirection: 'column', gap: 10 },
   gateCta: {
-    alignSelf: 'stretch', padding: '12px 16px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui,
+    alignSelf: 'stretch', padding: '12px 16px', borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`, background: 'transparent',
+    color: colors.inkBody, fontFamily: fonts.ui,
     fontWeight: 700, fontSize: 15, cursor: 'pointer',
   },
 };

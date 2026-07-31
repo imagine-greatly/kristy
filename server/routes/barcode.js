@@ -5,7 +5,7 @@ import { saveMeal, saveChatMessage } from '../lib/store.js';
 
 const router = Router();
 const round = (x) => Math.round(Number(x) || 0);
-const NOT_FOUND_MSG = "Couldn't find that one — try typing it out instead.";
+const NOT_FOUND_MSG = "Couldn’t find that one — try typing it out instead.";
 
 // POST /api/barcode  { barcode } → looks up Open Food Facts, logs the meal.
 // Returns the same shape as /api/chat so the frontend handles it identically.

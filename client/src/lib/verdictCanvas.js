@@ -141,7 +141,7 @@ export function drawVerdictCard(canvas, verdict, format = 'portrait') {
   const labelSize = Math.round(W * 0.0245);
   ctx.fillStyle = COL.gold;
   ctx.font = `500 ${labelSize}px ${MONO}`;
-  drawTracked(ctx, `KRISTY'S VERDICT · ${kindWord}`, P, labelY, labelSize * 0.22);
+  drawTracked(ctx, `KRISTY’S VERDICT · ${kindWord}`, P, labelY, labelSize * 0.22);
 
   let cursor = labelY + Math.round(isPortrait ? H * 0.062 : H * 0.058);
 

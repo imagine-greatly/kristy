@@ -39,7 +39,7 @@ import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 // single most valuable signal this surface produces, and it cannot be collected
 // retroactively. What is stored is the TOPIC, never the asker. See lib/counterGaps.js.
 
-const ERROR_MSG = "That read didn't come together just now. Give it a second and ask again.";
+const ERROR_MSG = "That read didn’t come together just now. Give it a second and ask again.";
 
 // The withheld personalized read, in Kristy's voice (named value, not "go premium").
 // No first person: the value is named, nobody is performing it.

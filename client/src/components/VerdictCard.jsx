@@ -50,8 +50,8 @@ export default function VerdictCard({ loading, verdict, error, isGuest, onClose,
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: "Kristy's Verdict",
-          text: verdict?.verdict_line || "Kristy's Verdict",
+          title: "Kristy’s Verdict",
+          text: verdict?.verdict_line || "Kristy’s Verdict",
         });
         return;
       }
@@ -89,7 +89,7 @@ export default function VerdictCard({ loading, verdict, error, isGuest, onClose,
   return (
     <div className="verdict">
       <div className="verdict__scrim" onClick={onClose} />
-      <div className="verdict__sheet" role="dialog" aria-modal="true" aria-label="Kristy's Verdict">
+      <div className="verdict__sheet" role="dialog" aria-modal="true" aria-label="Kristy’s Verdict">
         <button className="verdict__close" onClick={onClose} aria-label="Close">
           <CloseIcon />
         </button>

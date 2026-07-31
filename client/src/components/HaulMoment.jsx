@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { HaulIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
@@ -156,7 +156,7 @@ function NextTrip({ carryForward, onStartNextCart }) {
 
       <Group label="Worth repeating" items={keep} />
       <Group label="Never made it in" items={missed} hint="still worth having" />
-      <Group label="there's a better pick" items={replace} hint="tap to bring it anyway" />
+      <Group label="there’s a better pick" items={replace} hint="tap to bring it anyway" />
 
       <button
         type="button"
@@ -173,7 +173,7 @@ function NextTrip({ carryForward, onStartNextCart }) {
           ? 'Starting…'
           : state === 'done'
             ? 'Next cart started ✓'
-            : `Start next week's cart (${chosen.size})`}
+            : `Start next week’s cart (${chosen.size})`}
       </button>
     </div>
   );
@@ -319,7 +319,7 @@ export default function HaulMoment({
 const styles = {
   wrap: { maxWidth: 480, margin: '0 auto', width: '100%', boxSizing: 'border-box', padding: '20px 18px 28px', display: 'flex', flexDirection: 'column', gap: 18 },
   head: { display: 'flex', flexDirection: 'column', gap: 4 },
-  title: { ...kristyVoice, margin: 0, fontSize: 24, color: colors.textPrimary },
+  title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
 
   bar: { display: 'flex', width: '100%', height: 14, borderRadius: 999, overflow: 'hidden', background: colors.surface2, border: 'none' },
@@ -332,7 +332,7 @@ const styles = {
 
   read: { display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start' },
   readText: { margin: 0, fontSize: 17, lineHeight: 1.5, color: colors.textPrimary },
-  unlock: { marginTop: 2, padding: '10px 18px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
+  unlock: { marginTop: 2, padding: '10px 18px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 700, fontSize: 14, cursor: 'pointer' },
 
   /* ── Carry-forward into next week's cart ── */
   cf: {
@@ -340,7 +340,7 @@ const styles = {
     padding: '16px 16px 18px', borderRadius: 16,
     border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
   },
-  cfTitle: { margin: 0, fontSize: 19, lineHeight: 1.35, color: colors.textPrimary },
+  cfTitle: { ...kristyVoice, margin: 0, fontSize: 19, lineHeight: 1.35, color: colors.ink },
   cfGroup: { display: 'flex', flexDirection: 'column', gap: 7 },
   cfLabel: { fontFamily: fonts.ui, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: colors.textMuted },
   cfHint: { fontWeight: 500, letterSpacing: 0, textTransform: 'none', color: colors.textMuted },
@@ -368,7 +368,8 @@ const styles = {
 
   actions: { display: 'flex', gap: 10, marginTop: 4 },
   action: { flex: 1, padding: '13px 16px', borderRadius: 12, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
-  actionPrimary: { border: 'none', background: colors.accentGold, color: colors.bgDeep },
+  // The haul's ONE filled action.
+  actionPrimary: { border: 'none', background: colors.action, color: colors.actionInk },
   actionGhost: { border: 'none', background: colors.surface2, color: colors.textSecondary, fontWeight: 600 },
 
   ask: { alignSelf: 'center', marginTop: 4, padding: '8px 12px', background: 'transparent', border: 'none', color: colors.textSecondary, fontFamily: fonts.ui, fontSize: 13.5, cursor: 'pointer' },

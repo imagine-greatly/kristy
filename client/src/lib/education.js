@@ -6,7 +6,7 @@
 export const AMBIENT_ISMS = [
   'Read the back, not the front. The front is marketing; the back is the truth.',
   'Shop the edges of the store. The real food lives on the perimeter.',
-  "The best foods don't have an ingredient list. They are the ingredient.",
+  "The best foods don’t have an ingredient list. They are the ingredient.",
 ];
 
 let last = -1;

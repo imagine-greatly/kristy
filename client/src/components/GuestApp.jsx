@@ -136,7 +136,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { id: rid(), role: 'ai', content: "That didn't go through. Try again in a sec.", macros: null },
+        { id: rid(), role: 'ai', content: "That didn’t go through. Try again in a sec.", macros: null },
       ]);
     } finally {
       setTyping(false);
@@ -178,8 +178,8 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
         error: true,
         message:
           args.mode === 'label'
-            ? "Couldn't read that one. Try another shot, better lit."
-            : "That scan didn't go through. Try again in a sec.",
+            ? "Couldn’t read that one. Try another shot, better lit."
+            : "That scan didn’t go through. Try again in a sec.",
       });
     }
   }

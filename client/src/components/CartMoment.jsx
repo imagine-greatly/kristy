@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { BarcodeIcon, CloseIcon, AisleIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
@@ -69,8 +69,8 @@ const TIER_FLAG = {
   approved: { label: 'Approved', fg: colors.accentSeafoam, bd: colors.accentMint, bg: colors.mintTint9 },
   approved_with_note: { label: 'With a note', fg: colors.accentGold, bd: colors.gold30, bg: colors.goldTint9 },
   use_with_intention: { label: 'With intention', fg: colors.accentGold, bd: colors.gold30, bg: colors.goldTint9 },
-  swap_recommended: { label: "She'd swap this", fg: colors.error, bd: colors.dangerBorder, bg: colors.dangerTint },
-  skip: { label: "She'd skip this", fg: colors.error, bd: colors.dangerBorder, bg: colors.dangerTint },
+  swap_recommended: { label: "She’d swap this", fg: colors.error, bd: colors.dangerBorder, bg: colors.dangerTint },
+  skip: { label: "She’d skip this", fg: colors.error, bd: colors.dangerBorder, bg: colors.dangerTint },
 };
 const flagged = (it) => it.source === 'swap' || it.tier === 'swap_recommended' || it.tier === 'skip';
 
@@ -154,7 +154,7 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
           {((item.source === 'user' && item.category !== 'From your haul') || item.refined || flag) && (
             <span style={styles.itemMeta}>
               {/* A haul carry-forward is stored as `user` so it survives a regeneration,
-                  but the shopper didn't type it — its section header already says where
+                  but the shopper didn’t type it — its section header already says where
                   it came from, so it carries no "You added" tag. */}
               {item.source === 'user' && item.category !== 'From your haul' && (
                 <span style={styles.tagQuiet}>You added</span>
@@ -170,7 +170,7 @@ function CartRow({ item, open, detail, onToggle, onOpen, onDetail, onRemove, onR
         <span style={{ ...styles.chev, transform: open ? 'rotate(90deg)' : 'none' }} aria-hidden="true">›</span>
       </div>
 
-      {/* KRISTY'S ONE COMMENT. It sits BESIDE the item, never on it — the name above
+      {/* KRISTY’S ONE COMMENT. It sits BESIDE the item, never on it — the name above
           is untouched, nothing is struck through, and the row is not going anywhere.
           One line, two answers, and both of them end it: take the swap, or keep what
           you picked. Whichever you choose, this never appears on that item again. */}
@@ -353,9 +353,9 @@ export default function CartMoment({
 
       {/* Her one-line read on the whole cart — the blend, named in her voice. */}
       {list.intro && <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>}
-      {/* On a BUILD the compose summary becomes the cart's intro, so showing the note
+      {/* On a BUILD the compose summary becomes the cart’s intro, so showing the note
           as well printed her sentence twice, one under the other. The note is for an
-          EDIT ("rice out, couscous in") — a line the intro doesn't already carry. */}
+          EDIT ("rice out, couscous in") — a line the intro doesn’t already carry. */}
       {note && note !== list.intro && <p style={{ ...kristyVoice, ...styles.note }}>{note}</p>}
 
       {!goals.length && onSetGoal && (
@@ -367,8 +367,8 @@ export default function CartMoment({
       {/* The two ways to fill it, side by side and identical. */}
       <FillRow onScan={onScan} onAskAisle={onAskAisle} />
 
-      {/* Someone who already wrote a list shouldn't have to retype it into a cart.
-          Deliberately quieter than the two fill actions: most trips don't start from
+      {/* Someone who already wrote a list shouldn’t have to retype it into a cart.
+          Deliberately quieter than the two fill actions: most trips don’t start from
           a piece of paper. */}
       {onImport && (
         <button type="button" style={styles.linkBtn} onClick={onImport}>
@@ -439,7 +439,7 @@ export default function CartMoment({
       )}
 
       {/* The way back to the question. A returning shopper with a live cart is never
-          re-asked — this is how they say "that trip's done, start me over." */}
+          re-asked — this is how they say "that trip’s done, start me over." */}
       <div style={styles.footRow}>
         <button
           type="button"
@@ -516,7 +516,7 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onScan, onAs
         </button>
       </form>
 
-      {/* Starting points — a tap fills the field, it doesn't submit for you. */}
+      {/* Starting points — a tap fills the field, it doesn’t submit for you. */}
       <div style={styles.seeds}>
         {TRIP_SEEDS.map((s) => (
           <button
@@ -540,7 +540,7 @@ function TripQuestion({ cart, premium, gated, onUpgrade, onSetGoal, onScan, onAs
           counter keeps the prominence it earned and Scan simply matches it. */}
       <FillRow onScan={onScan} onAskAisle={onAskAisle} />
 
-      {/* THE OPT-IN. Some shoppers do want a cart handed to them. That's a choice
+      {/* THE OPT-IN. Some shoppers do want a cart handed to them. That’s a choice
           they make, on every tier, not the default state of the screen. */}
       <button type="button" style={styles.ghostBtn} onClick={cart.rebuild} disabled={busy}>
         Or build a full cart
@@ -638,7 +638,7 @@ const styles = {
 
   head: { display: 'flex', flexDirection: 'column', gap: 10 },
   headTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
-  title: { ...kristyVoice, margin: 0, fontSize: 26, color: colors.textPrimary },
+  title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
 
   // The finished trip, announced on the cart instead of hijacking the opening surface.
   doneRow: {
@@ -651,7 +651,7 @@ const styles = {
   doneLine: { fontSize: 14.5, lineHeight: 1.4, color: colors.textPrimary },
   doneCta: {
     flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700,
-    color: colors.accentGold, whiteSpace: 'nowrap',
+    color: colors.inkBody, whiteSpace: 'nowrap',
   },
 
   progressWrap: { display: 'flex', flexDirection: 'column', gap: 6 },
@@ -688,7 +688,7 @@ const styles = {
 
   nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },
   nudgeLine: { fontSize: 15, lineHeight: 1.5, color: colors.textPrimary },
-  nudgeCta: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: 999, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 13.5, cursor: 'pointer' },
+  nudgeCta: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 700, fontSize: 13.5, cursor: 'pointer' },
 
   // Sections breathe — a bigger gap BETWEEN groups than between rows, so the eye reads
   // "produce, then meat" rather than one undifferentiated column.
@@ -792,7 +792,7 @@ const styles = {
 
   /* ── The entry question ── */
   ask: { display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 8 },
-  askQ: { margin: 0, fontSize: 23, lineHeight: 1.35, color: colors.textPrimary },
+  askQ: { ...kristyDisplay, margin: 0, fontSize: 26, lineHeight: 1.3, color: colors.ink },
   askSub: { margin: '-6px 0 0', fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
   askForm: { display: 'flex', gap: 8, alignItems: 'stretch' },
   askInput: {
@@ -800,9 +800,9 @@ const styles = {
     border: `1px solid ${colors.borderGold}`, background: colors.surface,
     color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none',
   },
+  // The cart's ONE filled action.
   askGo: {
-    flex: '0 0 auto', padding: '13px 18px', borderRadius: 12, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep,
+    flex: '0 0 auto', padding: '13px 18px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
     fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
   },
   seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
@@ -822,6 +822,6 @@ const styles = {
 
   footRow: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' },
   rebuildGhost: { padding: '9px 16px', borderRadius: 999, border: 'none', background: 'transparent', color: colors.textMuted, fontFamily: fonts.ui, fontWeight: 600, fontSize: 13, cursor: 'pointer' },
-  buildBtn: { padding: '13px 18px', borderRadius: 12, border: 'none', background: colors.accentGold, color: colors.bgDeep, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
-  ghostBtn: { padding: '12px 18px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: 'transparent', color: colors.textSecondary, fontFamily: fonts.ui, fontWeight: 600, fontSize: 14.5, cursor: 'pointer' },
+  buildBtn: { padding: '13px 18px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer' },
+  ghostBtn: { padding: '12px 18px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 600, fontSize: 14.5, cursor: 'pointer' },
 };

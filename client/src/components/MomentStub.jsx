@@ -1,4 +1,4 @@
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 
@@ -36,15 +36,15 @@ const styles = {
     padding: '56px 24px 24px',
   },
   icon: { color: colors.accentGold, display: 'flex' },
-  title: { ...kristyVoice, margin: '2px 0 0', fontSize: 24, color: colors.textPrimary },
+  title: { ...kristyDisplay, margin: '2px 0 0', fontSize: 26, color: colors.ink },
   line: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.55, color: colors.textMuted, maxWidth: 320 },
   cta: {
     marginTop: 8,
     padding: '12px 24px',
-    borderRadius: 999,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     fontFamily: fonts.ui,
     fontWeight: 700,
     fontSize: 15,

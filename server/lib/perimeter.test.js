@@ -85,18 +85,82 @@ test('the matcher returns nothing for an off-topic question (→ honest no-answe
   assert.equal(matchEntries('how do I fix my car?').length, 0);
 });
 
-test('raw milk is present, balanced (risk AND why people choose it), and makes no cure claim', () => {
+/* ═══════════════ Raw is a sourcing question (VOICE_SPEC.md) ═══════════════
+   The raw cards are organized around WHO MADE IT, not around whether raw is safe.
+   That is an editorial stance, and it is only defensible because three things hold at
+   once, which is what these tests pin:
+
+     • the card is about sourcing, and it does not hedge its own recommendation;
+     • it never claims a food cures, treats or reverses anything;
+     • it never argues that a documented risk is invented — and where an outcome is
+       concentrated in a specific group, it names that group ONCE, concretely.
+
+   The middle and last of those are the safety line. Losing either would turn an
+   opinionated card into an irresponsible one, so they are asserted, not trusted. */
+
+// Never, in any framing, on any raw card.
+const CURE_CLAIM = /\b(cures?|treats?|heals?|reverses?|remed(y|ies)|detox\w*)\b/i;
+// The other direction: arguing the documented risk away.
+const RISK_DENIAL = /\b(overblown|overstated|invented|fear-?monger\w*|regulatory theater|myth|hysteria|not a real risk)\b/i;
+// Hedging its own recommendation, which the principle forbids outright.
+const HEDGE = /\b(consider the risks?|talk to your doctor|ask your doctor|some people choose|weigh the risks?)\b/i;
+
+test('raw milk is a sourcing card: enthusiastic, unhedged, and it names the group once', () => {
   const raw = perimeterKb.entries.find((e) => e.id === 'raw_milk');
   assert.ok(raw, 'raw_milk entry exists');
-  const text = `${raw.short_answer} ${raw.detail} ${raw.kristy_take}`.toLowerCase();
-  // Respects the choice…
-  assert.ok(/tradition|taste|closer to its source|fair reason/.test(text));
-  // …states the risk plainly (established), naming vulnerable groups…
-  assert.ok(/listeria|salmonella|e\. coli|campylobacter|risk/.test(text));
-  assert.ok(/children|pregnan|immune/.test(text));
-  // …and makes NO treatment/cure/advocacy claim.
-  assert.ok(!/cures?|treats?|heals?|prevents?|reverses?/.test(text));
-  assert.equal(raw.evidence_tier, 'established');
+  const all = JSON.stringify(raw);
+  const text = all.toLowerCase();
+
+  // Sourcing IS the answer, not a caveat attached to one.
+  assert.match(text, /farm/, 'the card is organized around the producer');
+  assert.match(text, /test results|tests/, 'a farm that publishes its testing is the signal');
+  assert.match(text, /herd/, 'the herd is named as part of the answer');
+
+  // It does not hedge, and it does not argue with the epidemiology either.
+  assert.doesNotMatch(all, HEDGE, 'a raw card never hedges its own recommendation');
+  assert.doesNotMatch(all, RISK_DENIAL, 'Kristy does not litigate epidemiology');
+  assert.doesNotMatch(all, CURE_CLAIM, 'no raw food cures, treats or reverses anything');
+
+  // THE ONE THING THAT GETS NAMED. Concrete, in watch_out, and not a vague disclaimer.
+  const watch = (raw.watch_out || []).join(' ').toLowerCase();
+  assert.ok(raw.watch_out?.length, 'raw milk carries an authored watch_out');
+  assert.match(watch, /pregnan/, 'pregnancy is named');
+  assert.match(watch, /\bfive\b|\bchildren\b|\bkids\b/, 'young children are named');
+  assert.match(watch, /immunocompromised|immune/, 'immunocompromised households are named');
+
+  // The tier describes the KIND of claim, and says so rather than reading as a safety rating.
+  assert.equal(raw.evidence_tier, 'time_tested');
+  assert.match(raw.tier_note || '', /not a health claim/i, 'the tier note disclaims itself');
+});
+
+test('the named group appears ONCE across raw dairy, not repeated on every card', () => {
+  // Repeating it on every raw card turns a practical insider detail into boilerplate,
+  // which is how a reader learns to skip it. The sibling cards link instead.
+  const siblings = ['raw_kefir', 'clabber', 'raw_aged_cheese'];
+  for (const id of siblings) {
+    const e = perimeterKb.entries.find((x) => x.id === id);
+    assert.ok(e, `${id} exists`);
+    const watch = (e.watch_out || []).join(' ');
+    assert.doesNotMatch(watch, /pregnan/i, `${id} must not repeat the named group`);
+    assert.match(watch, /raw milk card/i, `${id} points at the card that carries it`);
+    assert.doesNotMatch(JSON.stringify(e), CURE_CLAIM);
+    assert.doesNotMatch(JSON.stringify(e), RISK_DENIAL);
+    assert.doesNotMatch(JSON.stringify(e), HEDGE);
+  }
+});
+
+test('a named group is added only where one exists, never for symmetry', () => {
+  // An unnecessary caution is the same failure as a missing one: it tells the reader
+  // Kristy is not discriminating. Raw honey names infants; raw nuts name nobody.
+  const honey = perimeterKb.entries.find((e) => e.id === 'honey_adulteration');
+  assert.match((honey.watch_out || []).join(' '), /infant/i, 'raw honey names infants');
+
+  const nuts = perimeterKb.entries.find((e) => e.id === 'nuts_raw_vs_roasted');
+  const nutWatch = (nuts.watch_out || []).join(' ');
+  assert.ok(nutWatch, 'raw nuts still carry the label-term reality');
+  assert.doesNotMatch(nutWatch, /pregnan|immunocompromised|infant/i, 'raw nuts name no group, because there is none');
+  // …and it carries the part that IS true: the word is theater on US almonds.
+  assert.match(nutWatch, /pasteurized by law|steam/i, '"raw" almonds are pasteurized by law');
 });
 
 test('publicEntry exposes sources for display (the free layer is a verbatim KB read)', () => {

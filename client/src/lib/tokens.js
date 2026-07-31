@@ -10,53 +10,83 @@
        here.
      • className / CSS consumers read the twin --var in index.css.
 
-   Two type voices (the personal layer must look as different as it is):
-     • Inter  — everything factual, UI, and ingredient text.
-     • Playfair Display *italic* — Kristy's spoken/coaching text (`kristyVoice`).
-   DM Mono stays for numbers/data; Georgia is the wordmark + serif fallback. */
+   THREE type voices, assigned strictly (see `fonts` below):
+     • Playfair Display *italic* — DISPLAY only. Wordmark, page titles, pull-quotes.
+       Minimum 26px, max 2 per screen, never inside a card. Its hairlines vanish at
+       card sizes on a dark ground, which is why it is fenced off from body work.
+     • Newsreader *roman* 500 — Kristy's VOICE. Every verdict headline on every
+       counter card and every scan result. The most important text in the app, so
+       it is set in the most legible of the three.
+     • Inter — everything else: eyebrows, decks, checklists, buttons, badges, meta.
+   DM Mono stays for numbers/data.
+
+   GOLD IS IDENTITY ONLY: wordmark, the hairline+dot motif, tier badge, active tab,
+   chip text. Never a large filled surface, and never a sentence a shopper reads to
+   make a decision — those are --ink / --ink-body / --ink-muted. The primary action
+   on a screen is `action` (warm bone), exactly one per screen. */
 
 export const colors = {
   // ── Grounds ──
-  bgDeep: '#040805', // near-black "void" — card gradient top, <meta theme-color>, verdict scrim
-  bg: '#0B1F0F', // forest-green ground        (--bg)
-  surface: '#122718', //                        (--surface)
-  surface2: '#1A3320', //                       (--surface-2)
-  border: '#1E3D26', //                         (--border)
-  borderGold: '#8B6F2E', //                     (--border-gold)
+  bgDeep: '#050D08', // near-black "void" — card gradient top, <meta theme-color>, verdict scrim
+  bg: '#0A1A11', // forest-green ground        (--bg)
+  surface: '#10251A', // cards                  (--surface)
+  surface2: '#16301F', // chips, inputs         (--surface-2)
+  border: '#29402F', // the hairline            (--hairline / --border)
+  hairline: '#29402F', //                       (--hairline)
+  borderGold: '#5A4C25', //                     (--brass-dim)
   // A card is defined by its LIFT off the ground, not by an outline. These are the two
   // pieces that replaces a border with: a hairline top highlight for the lifted edge,
   // and the drop shadow that separates a surface from the ground beneath it.
   // (Block W — the all-green field read flat because every layer shared one value and
   // every element was outlined.)
-  edgeHighlight: 'rgba(240,230,200,0.05)', // 1px inner top edge on a raised surface
+  edgeHighlight: 'rgba(244,241,232,0.05)', // 1px inner top edge on a raised surface
   shadowCard: '0 1px 2px rgba(0,0,0,0.28)', // a row resting on the ground
   shadowRaised: '0 4px 14px rgba(0,0,0,0.34)', // the composer / an expanded drawer
-  checkboxRest: 'rgba(240,230,200,0.22)', // unchecked box — visible, not gold
-  userBubble: '#1A3320',
-  aiBubble: '#122718',
+  checkboxRest: 'rgba(244,241,232,0.22)', // unchecked box — visible, not gold
+  userBubble: '#16301F',
+  aiBubble: '#10251A',
 
   // ── Gold + accents ──
-  accentGold: '#C9A84C', //                     (--accent-gold)
-  accentGoldMuted: '#8B6F2E', //                (--accent-gold-muted)
+  // Brass is IDENTITY. It marks what a thing IS (a tier, the active tab, the
+  // wordmark, the thread) and never what a thing SAYS.
+  brass: '#C4A65A', //                          (--brass)
+  brassDim: '#5A4C25', //                       (--brass-dim)
+  accentGold: '#C4A65A', // alias — the shipped name for brass  (--accent-gold)
+  accentGoldMuted: '#5A4C25', // alias for brass-dim (--accent-gold-muted)
   accentMint: '#4A9B6F', //                     (--accent-mint)
   accentSeafoam: '#6BBF8E', //                  (--accent-seafoam)
 
-  // ── Text ──
-  textPrimary: '#F0E6C8', //                    (--text-primary)
-  textSecondary: '#C9A84C', //                  (--text-secondary)
-  textMuted: '#6B8F72', //                      (--text-muted)
-  ringTrack: '#1A3320', //                      (--ring-track)
+  // ── The one filled action ─────────────────────────────────────────────────
+  // Warm bone, near-white. Exactly ONE per screen: the primary CTA (Go, Ask,
+  // Scan a barcode, Add to cart). Every other button is transparent with a
+  // hairline border. A gold fill used to carry this job and it made every
+  // screen shout in the brand colour, which left nothing for identity.
+  action: '#EFE9D8', //                         (--action)
+  actionInk: '#0A1A11', //                      (--action-ink)
+
+  // ── Text ─────────────────────────────────────────────────────────────────
+  // Three levels, and none of them is gold. `textSecondary` used to BE gold and
+  // carried decks and why-lines all over the app — that is the single biggest
+  // source of gold on a sentence someone reads to make a decision.
+  ink: '#F4F1E8', // verdict headlines          (--ink)
+  inkBody: '#C7D6CB', // checklists, expanded body (--ink-body)
+  inkMuted: '#9DB0A2', // decks, eyebrows, metadata (--ink-muted)
+  textPrimary: '#F4F1E8', // alias for ink      (--text-primary)
+  textSecondary: '#9DB0A2', // alias for ink-muted (--text-secondary)
+  textBody: '#C7D6CB', // alias for ink-body    (--text-body)
+  textMuted: '#9DB0A2', // alias for ink-muted  (--text-muted)
+  ringTrack: '#16301F', //                      (--ring-track)
 
   // ── Weight-trend lines (Sidebar / weightChart) ──
   trendMint: '#4A9B6F', // on-track
   trendMuted: '#6B9E85', // maintaining / off-goal
 
   // ── Precomputed gold/border tints (CSS uses color-mix; JS gets the rgba) ──
-  gold30: 'rgba(139,111,46,0.30)', //           (--gold-30)
-  gold40: 'rgba(139,111,46,0.40)', //           (--gold-40)
-  gold50: 'rgba(139,111,46,0.50)', //           (--gold-50)
-  border60: 'rgba(30,61,38,0.60)', //           (--border-60)
-  goldTint9: 'rgba(201,168,76,0.09)', // selected plan card bg
+  gold30: 'rgba(90,76,37,0.30)', //             (--gold-30)
+  gold40: 'rgba(90,76,37,0.40)', //             (--gold-40)
+  gold50: 'rgba(90,76,37,0.50)', //             (--gold-50)
+  border60: 'rgba(41,64,47,0.60)', //           (--border-60)
+  goldTint9: 'rgba(196,166,90,0.09)', // selected plan card bg
   // Mint counterparts, derived from accentSeafoam/accentMint at the same weights —
   // the approved register needs a tint of its own so an affirmation never has to
   // borrow gold. Gold marks a concern; mint marks a food Kristy stands behind.
@@ -64,10 +94,10 @@ export const colors = {
   mintTint9: 'rgba(107,191,142,0.09)',
 
   // ── Scrims / overlays ──
-  scrim: 'rgba(7,18,11,0.62)',
-  scrimSoft: 'rgba(7,18,11,0.55)',
-  scrimUpgrade: 'rgba(7,18,11,0.60)',
-  scrimVerdict: 'rgba(4,8,5,0.72)',
+  scrim: 'rgba(5,13,8,0.62)',
+  scrimSoft: 'rgba(5,13,8,0.55)',
+  scrimUpgrade: 'rgba(5,13,8,0.60)',
+  scrimVerdict: 'rgba(5,13,8,0.72)',
 
   // ── Status / danger ──
   error: '#EE8888',
@@ -79,30 +109,59 @@ export const colors = {
   white: '#FFFFFF',
 };
 
-// Font stacks. `voice` is the one new rule — Kristy's coaching/spoken face. It
-// leads with Playfair Display (loaded in app.html, exactly as the landing page)
-// and falls back to Georgia so it degrades to the shipped serif, never to a
-// generic sans.
+// Font stacks. Both serifs are loaded in app.html and both fall back to Georgia,
+// so a font failure degrades to the shipped serif, never to a generic sans.
 export const fonts = {
   ui: "'Inter', system-ui, -apple-system, sans-serif", //        (--font-ui)
   mono: "'DM Mono', ui-monospace, monospace", //                 (--font-mono)
-  serif: "Georgia, 'Times New Roman', serif", // wordmark + fallback (--font-serif)
-  voice: "'Playfair Display', Georgia, 'Times New Roman', serif", // (--font-voice)
+  serif: "Georgia, 'Times New Roman', serif", // fallback        (--font-serif)
+  display: "'Playfair Display', Georgia, 'Times New Roman', serif", // (--font-display)
+  voice: "'Newsreader', Georgia, 'Times New Roman', serif", //    (--font-voice)
 };
 
-// kristyVoice — spread onto any element's inline style to render Kristy's voice.
-// The className twin is `.kristy-voice` in index.css. Playfair Display *italic*.
+// kristyDisplay — Playfair Display *italic*. The wordmark, page titles ("Your
+// cart", "The counter", "Produce", "Your haul") and pull-quote lines, and nothing
+// else. NEVER below 26px and NEVER inside a card: Playfair is a display face and
+// its hairlines disappear at card sizes on a dark ground. Two per screen, max.
+export const kristyDisplay = {
+  fontFamily: fonts.display,
+  fontStyle: 'italic',
+};
+
+// kristyVoice — Newsreader ROMAN 500. Kristy's speaking voice, and every verdict
+// headline on every counter card and scan result. This is the most important text
+// in the app, so it is set in the most legible face, not the prettiest one.
+// The className twin is `.kristy-voice` in index.css.
 export const kristyVoice = {
   fontFamily: fonts.voice,
-  fontStyle: 'italic',
+  fontStyle: 'normal',
+  fontWeight: 500,
+  letterSpacing: '-0.005em',
+};
+
+// The verdict headline, complete. 21px/1.3 --ink. Spread this rather than
+// re-deriving the size on each card, so every headline in the app matches.
+export const verdictHeadline = {
+  ...kristyVoice,
+  fontSize: 21,
+  lineHeight: 1.3,
+  color: colors.ink,
+};
+
+// Corner radii. A button is 8px; full-round is RESERVED for chips. When both were
+// pills there was no hierarchy between "tap this" and "this is a label".
+export const radii = {
+  button: 8,
+  card: 14,
+  chip: 999,
 };
 
 // The thin gold thread/dot motif, as tokens. The reusable element that draws it
 // lives in components/GoldThread.jsx; canvas surfaces read these directly.
 export const motif = {
   threadColor: colors.gold40, // hairline gold rule
-  threadColorStrong: 'rgba(201,168,76,0.55)', // the emphasised rule on the verdict card
-  dotColor: colors.accentGold,
+  threadColorStrong: 'rgba(196,166,90,0.55)', // the emphasised rule on the verdict card
+  dotColor: colors.brass,
   dotSize: 5, // px
 };
 
@@ -114,4 +173,4 @@ export const layout = {
   inputMax: 680,
 };
 
-export default { colors, fonts, kristyVoice, motif, layout };
+export default { colors, fonts, kristyDisplay, kristyVoice, verdictHeadline, radii, motif, layout };

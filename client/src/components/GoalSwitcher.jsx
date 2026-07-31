@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { CloseIcon } from './Icons.jsx';
 import { COACH_GOALS, FOCUSES, NON_NEGOTIABLES, CONSTRAINTS, CONSTRAINTS_SECTION } from '../lib/coachGoals.js';
@@ -367,7 +367,7 @@ const styles = {
     cursor: 'pointer',
   },
   body: { display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 6 },
-  title: { ...kristyVoice, margin: 0, fontSize: 24, color: colors.textPrimary },
+  title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   goals: { display: 'flex', flexDirection: 'column', gap: 10, margin: '6px 0 2px' },
   goal: {
@@ -390,7 +390,7 @@ const styles = {
   goalBlurb: { fontFamily: fonts.ui, fontSize: 13, color: colors.textMuted },
   goalCheck: { position: 'absolute', right: 16, top: 14, color: colors.accentGold, fontSize: 16, fontWeight: 700 },
   threadWrap: { margin: '8px 0 2px' },
-  section: { ...kristyVoice, margin: '6px 0 0', fontSize: 18, color: colors.textPrimary },
+  section: { fontFamily: fonts.ui, fontWeight: 600, margin: '6px 0 0', fontSize: 15, letterSpacing: '0.01em', color: colors.ink },
   chips: { display: 'flex', flexWrap: 'wrap', gap: 8, margin: '2px 0 4px' },
   chip: {
     // No nowrap: a custom line can carry a long KB name (carboxymethylcellulose),
@@ -425,7 +425,7 @@ const styles = {
     background: colors.surface,
     color: colors.textPrimary,
     fontFamily: fonts.ui,
-    fontSize: 15, // >=16 avoids iOS zoom-on-focus; 15 is the app's existing input scale
+    fontSize: 15, // >=16 avoids iOS zoom-on-focus; 15 is the app’s existing input scale
   },
   results: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 6 },
   result: {
@@ -452,14 +452,15 @@ const styles = {
   /* Free-text intake */
   freeWrap: { display: 'flex', flexDirection: 'column', gap: 8 },
   freeForm: { display: 'flex', gap: 8, alignItems: 'stretch', flexWrap: 'wrap' },
+  // This sheet's ONE filled action.
   freeBtn: {
     flex: '0 0 auto',
     minHeight: 44,
     padding: '11px 16px',
-    borderRadius: 12,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     fontFamily: fonts.ui,
     fontSize: 14,
     fontWeight: 700,

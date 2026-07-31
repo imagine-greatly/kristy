@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { importList } from '../lib/list.js';
 
 /* ═══════════════════ Import a list the shopper already wrote ═══════════════════
@@ -28,7 +28,7 @@ export default function ImportList({ onClose, onImported }) {
       onImported(res.list, res.summary);
       onClose();
     } catch (err) {
-      setError(err?.message || "That didn't go through. Try again.");
+      setError(err?.message || "That didn’t go through. Try again.");
     } finally {
       setBusy('');
     }
@@ -110,7 +110,7 @@ const S = {
     background: colors.surface, maxHeight: '88vh', overflowY: 'auto',
   },
   head: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
-  title: { ...kristyVoice, margin: 0, fontSize: 22, color: colors.textPrimary },
+  title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
   close: {
     flex: '0 0 auto', width: 36, height: 36, borderRadius: 999, border: 'none',
     background: 'transparent', color: colors.textMuted, fontSize: 16, cursor: 'pointer',
@@ -119,8 +119,8 @@ const S = {
   photo: {
     display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2,
     width: '100%', minHeight: 56, padding: '12px 16px', marginTop: 4,
-    borderRadius: 14, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
-    color: colors.accentGold, fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700,
+    borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent',
+    color: colors.inkBody, fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700,
     cursor: 'pointer', textAlign: 'left',
   },
   photoSub: { fontSize: 12.5, fontWeight: 500, color: colors.textMuted },
@@ -135,8 +135,8 @@ const S = {
   },
   err: { ...kristyVoice, margin: 0, fontSize: 14, color: colors.error },
   go: {
-    width: '100%', minHeight: 50, marginTop: 4, borderRadius: 14, border: 'none',
-    background: colors.accentGold, color: colors.bgDeep,
+    width: '100%', minHeight: 50, marginTop: 4, borderRadius: radii.button, border: 'none',
+    background: colors.action, color: colors.actionInk,
     fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, cursor: 'pointer',
   },
   dim: { opacity: 0.5, cursor: 'default' },

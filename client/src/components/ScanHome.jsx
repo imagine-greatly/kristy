@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { colors, fonts, kristyVoice } from '../lib/tokens.js';
+import { colors, fonts, kristyDisplay, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import { BarcodeIcon, CameraIcon, AisleIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
@@ -25,7 +25,7 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
           : 'Ingredient by ingredient, against how you eat. Half the store, though.'}
       </p>
 
-      {/* ONE reflex action. The barcode button stays big and physical because it's
+      {/* ONE reflex action. The barcode button stays big and physical because it’s
           the thing you hit one-handed with a box in the other. */}
       <div style={styles.actions}>
         <button type="button" style={styles.primary} onClick={onScanBarcode}>
@@ -52,7 +52,7 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
         />
       </div>
 
-      {/* The label path's real standing, stated once. Not error recovery: no barcode
+      {/* The label path’s real standing, stated once. Not error recovery: no barcode
           database covers a whole store, and a photographed panel reads anything. */}
       <p style={styles.aisleNote}>A photo of the ingredient panel reads anything a barcode misses.</p>
 
@@ -97,8 +97,8 @@ const styles = {
     margin: '0 auto',
     padding: '48px 22px 24px',
   },
-  mark: { fontFamily: fonts.voice, fontStyle: 'italic', fontSize: 30, color: colors.accentGold },
-  headline: { ...kristyVoice, margin: '4px 0 0', fontSize: 26, lineHeight: 1.25, color: colors.textPrimary },
+  mark: { fontFamily: fonts.display, fontStyle: 'italic', fontSize: 30, color: colors.brass },
+  headline: { ...kristyDisplay, margin: '4px 0 0', fontSize: 26, lineHeight: 1.25, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.5, color: colors.textMuted, maxWidth: 320 },
   actions: { width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 14 },
   // The reflex. Gold, tall, unmissable — one of the few places gold is spent.
@@ -108,10 +108,10 @@ const styles = {
     justifyContent: 'center',
     gap: 11,
     padding: '19px 20px',
-    borderRadius: 16,
+    borderRadius: radii.button,
     border: 'none',
-    background: colors.accentGold,
-    color: colors.bgDeep,
+    background: colors.action,
+    color: colors.actionInk,
     boxShadow: colors.shadowRaised,
     fontFamily: fonts.ui,
     fontWeight: 700,
@@ -127,9 +127,9 @@ const styles = {
     justifyContent: 'center',
     gap: 7,
     padding: '11px 12px',
-    borderRadius: 12,
-    border: 'none',
-    background: colors.surface,
+    borderRadius: radii.button,
+    border: `0.5px solid ${colors.hairline}`,
+    background: 'transparent',
     boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
     color: colors.textMuted,
     fontFamily: fonts.ui,
