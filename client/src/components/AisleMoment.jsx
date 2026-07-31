@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter, fetchPerimeterSections, fetchPerimeterEntry } from '../lib/perimeter.js';
+import { askPerimeter, fetchCounterSections, fetchCounterCard } from '../lib/perimeter.js';
+import CounterCard from './CounterCard.jsx';
 import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════ The counter — the half of the store with no label ═══════════════
@@ -56,7 +57,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
 
   useEffect(() => {
     let alive = true;
-    fetchPerimeterSections()
+    fetchCounterSections()
       .then((s) => alive && setSections(s))
       .catch(() => alive && setLoadErr(true));
     return () => {
@@ -69,7 +70,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     setPersonal(null);
     trackEvent('perimeter-entry', { id, via });
     try {
-      const data = await fetchPerimeterEntry(id);
+      const data = await fetchCounterCard(id);
       setEntry(data ? { state: 'done', data } : { state: 'error' });
     } catch {
       setEntry({ state: 'error' });
@@ -142,17 +143,18 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         {entry.state === 'error' && <p style={styles.muted}>That one did not load. Try again.</p>}
         {entry.state === 'done' && (
           <>
-            {/* The entry renders through the SAME card as an asked question, so a
-                browsed topic and an asked one are the same object to the reader —
-                decision first, depth on tap. `detail` used to be printed underneath
-                the card as a loose paragraph; it lives inside the full read now. */}
-            <PerimeterAnswer
-              resp={{ matched: true, entries: [entry.data], answer: null, gated: false }}
-              onAddToCart={onAddToCart}
-            />
+            {/* A browsed topic is a CARD, read straight out of counter_cards. Summary
+                first — eyebrow, tier, headline, the do line, the cart tap — with the
+                why, the checklist, the traps and the tier note one tap down. A card
+                Pass 3 generates renders through this identical component. */}
+            <CounterCard card={entry.data} onAddToCart={onAddToCart} />
 
             {hasProfile && !personal && (
-              <button type="button" style={styles.personalize} onClick={() => readAgainstProfile(entry.data)}>
+              <button
+                type="button"
+                style={styles.personalize}
+                onClick={() => readAgainstProfile({ question: entry.data.topic, title: entry.data.topic })}
+              >
                 Read this against your cart
               </button>
             )}
@@ -189,17 +191,17 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         )}
 
         <div style={styles.topics}>
-          {openSection.topics.map((t) => (
-            <TopicRow key={t.id} topic={t} onOpen={openEntry} />
+          {(openSection.cards || []).map((t) => (
+            <TopicRow key={t.slug} topic={t} onOpen={openEntry} />
           ))}
         </div>
 
-        {!!openSection.labelTopics?.length && (
+        {!!openSection.labelCards?.length && (
           <>
             <div style={styles.groupLabel}>Label terms read here</div>
             <div style={styles.topics}>
-              {openSection.labelTopics.map((t) => (
-                <TopicRow key={t.id} topic={t} onOpen={openEntry} />
+              {openSection.labelCards.map((t) => (
+                <TopicRow key={t.slug} topic={t} onOpen={openEntry} />
               ))}
             </div>
           </>
@@ -304,15 +306,17 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
 // A browse row shows the DECISION, not the background. It used to print the short
 // answer, which meant three lines of essay per row and a tap on every one to find the
 // call. Often the row is now the whole answer and the tap is for the depth.
+// A browse row is EYEBROW + HEADLINE and nothing else. That density was already right
+// before the card split and it stays right: the row's job is to let a shopper choose
+// which card to open, and the do line belongs on the card they chose, not on forty rows
+// they skimmed past. The server sends only these fields for the same reason.
 function TopicRow({ topic, onOpen }) {
   return (
-    <button type="button" style={styles.topic} onClick={() => onOpen(topic.id)}>
-      <span style={styles.topicTitle}>{topic.title}</span>
-      {(topic.decision || topic.short_answer) && (
-        <span style={topic.decision ? styles.topicDecision : styles.topicShort}>
-          {topic.decision || topic.short_answer}
-        </span>
-      )}
+    <button type="button" style={styles.topic} onClick={() => onOpen(topic.slug)} data-browse-row={topic.slug}>
+      <span style={styles.topicTitle}>
+        {topic.kind === 'home' ? `At home · ${topic.eyebrow}` : topic.eyebrow}
+      </span>
+      {topic.headline && <span style={styles.topicDecision}>{topic.headline}</span>}
     </button>
   );
 }

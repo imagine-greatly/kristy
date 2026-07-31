@@ -35,7 +35,9 @@ change is a deliberate release**, not a side effect of syncing a branch.
 - **The card component split has not been built.** `PerimeterAnswer.jsx` still renders
   the OLD shape (decision → why → 3-item checklist → tap for depth). Nothing in the
   client reads `counter_cards` yet.
-- **The skim tests do not exist** (Amendment 4: ≤3 rendered summary lines at 390px,
+- ~~**The skim tests do not exist**~~ — they exist (`client/test/skim.mjs`), and Amendment 4's
+  ≤3-line clause is **WITHDRAWN**. See "The summary-line standard" below. (Original text:
+  ≤3 rendered summary lines at 390px,
   headline ≤12 words, do ≤14 words + first token a verb, exactly one tier badge, no
   checklist in summary state).
 - **The six representative screenshots have not been taken.**
@@ -176,6 +178,27 @@ tradeoffs between the two." (not a verb-action) · "Look for better ingredients.
 **A `home` card holds the same bar.** The observable is in the kitchen rather than the
 aisle. It is not a lower standard.
 
+### The summary-line standard — per element, and ≤3 total is WITHDRAWN
+
+Amendment 4 asked for **≤3 rendered summary lines**. It was withdrawn on 2026-07-31: it
+cannot coexist with the other two limits in the same spec, and measuring proved it rather
+than arguing it. At 390px a 14-word `do` line at 14px Inter wraps to two lines on **all
+80** cards, and a 12-word headline at 20px Playfair wraps to two on **72**. Eyebrow 1 +
+headline 2 + do 2 = 5, and the floor is 4. Reaching 3 would take roughly a 6-word headline
+and a 6-word `do` line — far under ≤12 and ≤14.
+
+**The standard is per element**, enforced in `client/test/skim.mjs`:
+
+| element | lines | why |
+| --- | --- | --- |
+| eyebrow | **≤1** | it is a label. Long KB titles ("Egg labels: cage-free, free-range, pasture-raised, organic") were taking three lines and pushing the `do` line off the screen. Clamped with an ellipsis in `CounterCard`. |
+| headline | **≤2** | three means the verdict is too long to skim, and it is trimmable in the KB. Three cards hit this and were trimmed. |
+| `do` | **≤2** | the floor for a 14-word imperative at this width. |
+| summary total | **≤5** | the sum. A ceiling, not a target — it exists so a fourth element cannot join the summary without someone deciding to. |
+
+**Do not reintroduce a total-line target below 5.** If a tighter summary is wanted, that is
+a change to the word limits, not to the renderer.
+
 ### A headline passes when
 
 1. **It states a verdict** — a call, not a description. A trim that leaves it
@@ -304,14 +327,13 @@ Pass 2 spec. Summary is eyebrow · tier badge · headline · `do` · optional CT
 get the distinct eyebrow and no CTA. **Do not touch the section browse list** — it
 already shows eyebrow + headline only, which is the right density.
 
-**5. Write the skim tests.** Render every card summary at 390px and assert: summary block
-≤3 rendered lines of text excluding the CTA; headline ≤12 words; `do` ≤14 words with a
-verb first; exactly one tier badge; no card renders a checklist in summary state.
+**5. ✅ DONE — the skim tests.** `client/test/skim.mjs` renders every card at a true 390px
+and asserts the standard below, plus: headline ≤12 words; `do` ≤14 words with a verb
+first; exactly one tier badge; no checklist in summary state; the expanded block not
+mounted before the tap; no home card offering an add-to-cart; nothing overflowing 390px.
 
-**6. Screenshot six representative cards** over CDP at 390px — one each across produce,
-meat, seafood, dairy, pantry and label terms.
-
-> ### ⛔ STOP 2 — show the six screenshots before writing the remaining cards.
+**6. ✅ DONE — six representative cards** captured over CDP at 390px, one per section, each
+in both states, covering a `home` card and cards with an empty `watch_out`.
 
 **7. Remaining polish**, then Pass 3.
 

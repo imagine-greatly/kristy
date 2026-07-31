@@ -26,6 +26,8 @@
 // docs/do-lines-review.md; everything else is authored KB content re-ordered. This
 // file writes to the shared pool and therefore may never read per-user state.
 
+import { readFileSync } from 'node:fs';
+
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { PERIMETER_SECTIONS } from './perimeter.js';
 
@@ -348,4 +350,92 @@ export function rowToCard(row) {
   if (!row) return null;
   const { do_line: doLine, ...rest } = row;
   return { ...rest, do: doLine || '' };
+}
+
+/* ═══════════════════════════ Reading the corpus ═══════════════════════════ */
+
+// The client renders CARDS, and counter_cards is where they live — including the ones
+// Pass 3 generates, which is the whole reason the table exists rather than the projection
+// being computed per request.
+//
+// THIS MODULE MAY NEVER READ PER-USER STATE. It writes to the shared pool, and
+// privacyLine.test.js forbids it importing the per-user readers, because that import is
+// what a join would have to look like. The read path lives here for the same reason the
+// write path does: one module, one rule, one test covering both.
+
+// The reviewed do lines, for the degraded path only. Read once at load, and optional —
+// on a server whose deploy does not carry docs/ this simply stays empty, which is a
+// thinner fallback rather than a broken one.
+const fallbackDoLines = (() => {
+  try {
+    const url = new URL('../../docs/do-lines-review.md', import.meta.url);
+    return parseReviewTable(readFileSync(url, 'utf8'));
+  } catch {
+    return new Map();
+  }
+})();
+
+/**
+ * Project the whole authored KB, for when the table cannot be reached.
+ *
+ * Degrading to the KB is honest: every curated card in the table was derived from it, so
+ * the shopper gets the same answer. What is lost is the generated cards, which is the
+ * correct thing to lose — a generated card is the one thing that exists nowhere else.
+ */
+export function projectAll() {
+  return (perimeterKb.entries || []).map((e) =>
+    projectEntry(e, { doLine: fallbackDoLines.get(e.id)?.do || '' })
+  );
+}
+
+const CARD_COLUMNS =
+  'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, why, ' +
+  'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, source, use_count';
+
+// A real select, never a head:true count — PostgREST answers 204 / null / no error for a
+// table that does not exist, which reads as "present, empty" and would render the counter
+// as an empty store rather than as a degraded one.
+async function selectCards(client, apply) {
+  if (!client) return null;
+  try {
+    const { data, error } = await apply(client.from(TABLE).select(CARD_COLUMNS));
+    if (error) return null;
+    return (data || []).map(rowToCard);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * One card by slug. Falls back to the KB projection when the table is unreachable.
+ * @param {string} slug
+ * @param {object} [client]  injectable Supabase client — the store is testable without a database
+ */
+export async function getCard(slug, client) {
+  const id = String(slug || '').trim();
+  if (!id) return null;
+  const rows = await selectCards(client, (q) => q.eq('slug', id).limit(1));
+  if (rows && rows.length) return rows[0];
+  if (rows) return null; // the table answered, and it has no such card
+  return projectAll().find((c) => c.slug === id) || null;
+}
+
+/**
+ * Every card in a browse section, curated and generated alike.
+ */
+export async function getSectionCards(section, client) {
+  const id = String(section || '').trim();
+  if (!id) return [];
+  const rows = await selectCards(client, (q) => q.eq('section', id).order('slug'));
+  if (rows) return rows;
+  return projectAll().filter((c) => c.section === id);
+}
+
+/**
+ * The whole corpus. Used by the browse index and by the skim tests, which have to render
+ * every card rather than a sample — a bar that holds for six cards is not a bar.
+ */
+export async function getAllCards(client) {
+  const rows = await selectCards(client, (q) => q.order('slug'));
+  return rows || projectAll();
 }

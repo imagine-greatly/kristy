@@ -129,3 +129,28 @@ export async function fetchPerimeterSections() {
   if (IS_DEMO) return OFFLINE_SECTIONS;
   throw new Error('The counter did not load. Try again.');
 }
+
+/* ═══════════════ The card corpus ═══════════════
+   The counter's answers now live in `counter_cards` — the 80 projected from the authored
+   KB, and every one Pass 3 generates for a question the KB could not answer. A generated
+   card renders through the identical component, which is the whole reason the corpus is a
+   table rather than a projection recomputed per request.
+
+   Browsing is public: no account, no model call, no cost. Same as it ever was. */
+
+let cardSectionCache = null;
+
+export async function fetchCounterSections() {
+  if (cardSectionCache) return cardSectionCache;
+  const res = await fetch(`${apiBase}/api/counter/sections`);
+  if (!res.ok) throw new Error('The counter did not load. Try again.');
+  const { sections } = await res.json();
+  cardSectionCache = sections || [];
+  return cardSectionCache;
+}
+
+export async function fetchCounterCard(slug) {
+  const res = await fetch(`${apiBase}/api/counter/cards/${encodeURIComponent(slug)}`);
+  if (!res.ok) return null;
+  return res.json();
+}

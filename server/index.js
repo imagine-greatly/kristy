@@ -18,6 +18,7 @@ import scanRoute, { guestScanRouter } from './routes/scan.js';
 import haulRoute from './routes/haul.js';
 import listRoute from './routes/list.js';
 import perimeterRoute from './routes/perimeter.js';
+import counterRoute from './routes/counter.js';
 import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
@@ -59,6 +60,7 @@ app.use('/api/guest', guestVerdictRouter); // no auth — guest verdict (shares 
 app.use('/api/guest', guestScanRouter); // no auth — guest scan extraction (shares the guest IP budget)
 app.use('/api', ingredientRoute); // public — ingredient detail pages (KB read, no auth, no cost)
 app.use('/api', perimeterRoute); // public — browse + ask the Perimeter KB; personalization needs an account
+app.use('/api', counterRoute); // public — the counter CARD corpus (counter_cards), curated + generated
 app.use('/api', preferencesRoute); // public — taxonomy + KB search; free-text interpret costs a call
 app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', scanRoute); // authed — scan extraction (barcode + label vision) → /verdict

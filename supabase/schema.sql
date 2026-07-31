@@ -390,10 +390,20 @@ create trigger subscriptions_touch_updated_at
   before update on subscriptions
   for each row execute function public.touch_subscription_updated_at();
 
--- BACKFILL — give every EXISTING user (me + test accounts) a 7-day trial
--- starting now, matching the automatic trial new users get at onboarding.
--- Idempotent: users who already have a subscription row are left untouched.
-insert into public.subscriptions (user_id, status, provider, trial_ends_at)
-select u.id, 'trialing', 'promo', now() + interval '7 days'
-from auth.users u
-on conflict (user_id) do nothing;
+-- THE TRIAL BACKFILL LIVES IN supabase/backfill_trials.sql AND IS NOT PART OF THIS FILE.
+--
+-- It used to sit here, and it fired on every re-run of this file. It granted a 7-day
+-- trial to the one live account twice, through two different doors, simply because
+-- somebody applied the schema to pick up a missing table. `on conflict do nothing` made
+-- it look idempotent, and it is — per user, at a point in time. It is NOT idempotent
+-- across time: anyone who signed up since the last run has no row to conflict with, so
+-- they get a fresh trial every apply.
+--
+-- That matters more than one row suggests, because ensureTrial() is idempotent BY
+-- EXISTENCE — any subscription row at all means the user can never be granted a trial
+-- again. A backfill they never asked for silently spends the only one they had.
+--
+-- THIS FILE IS SCHEMA. It creates tables, columns, indexes, policies, functions and
+-- triggers, and it writes no rows — so applying it can never change what a user has.
+-- schemaSafety.test.js enforces that, because the guarantee should not depend on anyone
+-- remembering it.

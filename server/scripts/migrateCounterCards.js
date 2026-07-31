@@ -101,15 +101,81 @@ if (DRY) {
 
 /* ── Write ────────────────────────────────────────────────────────────────── */
 
-// Imported lazily so --dry-run works with no Supabase credentials at all: the report
+// Both imported lazily so --dry-run works with no Supabase credentials at all: the report
 // is the useful half during authoring, and it should never need a database.
-const { supabase } = await import('../lib/supabase.js');
+//
+// dotenv has to land BEFORE lib/supabase.js evaluates, or the client is built with no URL
+// and every failure below reports as "apply the SQL first" when the real cause is a
+// missing credential — a wrong diagnosis is worse than no diagnosis.
+// The write phase is a function so it can RETURN an exit code rather than call
+// process.exit() mid-flight. Killing the process while a Supabase fetch handle is still
+// closing trips a libuv assertion on Windows and the shell sees 127 — which reads as
+// "command not found" rather than "the migration refused to write".
+async function write() {
+  await import('dotenv/config');
+  const { supabase } = await import('../lib/supabase.js');
 
-const rows = cards.map(cardToRow);
-const { error } = await supabase.from(TABLE).upsert(rows, { onConflict: 'slug' });
-if (error) {
-  console.error('[counter-cards] upsert failed:', error.message);
-  console.error('[counter-cards] has supabase/counter_cards.sql been applied?');
-  process.exit(1);
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    console.error('\n[counter-cards] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set.');
+    console.error('[counter-cards] nothing was written. --dry-run needs no credentials.');
+    return 1;
+  }
+
+  const rows = cards.map(cardToRow);
+
+  // PREFLIGHT — a real select, never a head:true count. PostgREST answers 204 / null count
+  // / no error for a table that does not exist, which reads as "present, empty"; a real
+  // select against a missing table returns PGRST205 and says so.
+  const { data: before, error: preErr } = await supabase.from(TABLE).select('slug');
+  if (preErr) {
+    console.error('[counter-cards] cannot read the table:', preErr.message);
+    console.error('[counter-cards] apply supabase/counter_cards.sql first.');
+    return 1;
+  }
+  const existing = new Set((before || []).map((r) => r.slug));
+
+  const { error } = await supabase.from(TABLE).upsert(rows, { onConflict: 'slug' });
+  if (error) {
+    console.error('[counter-cards] upsert failed:', error.message);
+    // 42P10 is Postgres saying ON CONFLICT (slug) has no unique index to infer from. It is
+    // a LOUD failure, not a silent duplicate insert — but the index still has to be there,
+    // and counter_cards_slug_key is what makes this script re-runnable at all.
+    if (/42P10|no unique|exclusion constraint/i.test(error.message)) {
+      console.error('[counter-cards] the unique index on slug is missing — counter_cards_slug_key.');
+    }
+    console.error('[counter-cards] has supabase/counter_cards.sql been applied?');
+    return 1;
+  }
+
+  // ── Idempotency, accounted for rather than asserted ──
+  // A second run must report 0 inserted and every card updated. If the unique index on
+  // slug were missing the upsert would append instead of update and the row count would
+  // climb — so the count IS the live proof of the constraint, checked by behaviour rather
+  // than by reading a catalog PostgREST will not show us.
+  const inserted = rows.filter((r) => !existing.has(r.slug)).length;
+  const updated = rows.length - inserted;
+
+  const { data: after, error: postErr } = await supabase.from(TABLE).select('slug');
+  if (postErr) {
+    console.error('[counter-cards] wrote, but could not verify:', postErr.message);
+    return 1;
+  }
+  const total = (after || []).length;
+  const distinct = new Set((after || []).map((r) => r.slug)).size;
+
+  console.log(
+    `[counter-cards] upserted ${rows.length} curated cards — ${inserted} inserted, ${updated} updated. ✓`
+  );
+  console.log(`[counter-cards] table now holds ${total} rows (${distinct} distinct slugs).`);
+
+  if (total !== distinct) {
+    console.error(
+      `\n[counter-cards] DUPLICATE SLUGS: ${total} rows for ${distinct} slugs — ` +
+        'the unique index on slug is missing and the upsert appended instead of updating.'
+    );
+    return 1;
+  }
+  return 0;
 }
-console.log(`[counter-cards] upserted ${rows.length} curated cards. ✓`);
+
+process.exitCode = await write();

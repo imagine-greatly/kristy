@@ -302,6 +302,19 @@ equality *is* the positioning.
 - The trial has **one explicit door** (`POST /api/subscription/trial`), idempotent.
   Setting a goal grants nothing — coupling them silently spent a 7-day trial on a casual
   goal-tap and killed the 3-free-notes taste mechanic.
+- **`ensureTrial` is idempotent BY EXISTENCE**: any `subscriptions` row at all, in any
+  status, is returned untouched. So a row the shopper did not ask for permanently spends
+  the only trial they had. That makes a stray write expensive, not merely untidy.
+- **Applying the schema must never change what a user has, and a test enforces it.** The
+  trial backfill used to sit at the bottom of `schema.sql` and fired on **every re-run** —
+  it granted the one live account a trial twice, through two different doors, each time as
+  a side effect of applying the schema to pick up a missing table. `on conflict do nothing`
+  reads as idempotent and is, per user at one moment; across time it is not, because anyone
+  who signed up since the last apply has no row to conflict with. It now lives in
+  **`supabase/backfill_trials.sql`**, run deliberately and never as part of a schema apply,
+  and `schemaSafety.test.js` fails if any other `supabase/*.sql` file contains an
+  `insert`/`update`/`delete`/`truncate` outside a function body. **Never put a data write
+  in a schema file.**
 - Free = scan + the universal layer + the counter's free layer, always. Paid =
   personalized note, focus/constraint-aware cart, haul read, conversational cart edits.
 
@@ -314,7 +327,15 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (281 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (354 tests). Client: `cd client && npx vite build`.
+- **The counter card's shape bar is executable, and it runs against generated cards too.**
+  `server/lib/counterCardLint.js` holds the rules (the observable may not sit in both the
+  headline and the `do` line; the em-dash-then-justification share has a ceiling; within-
+  section closing duplication fails; verb distribution is reported and never fails). Pass 3
+  must call `lintCard` before persisting a generated card.
+- **Rendered-line claims need a browser.** `cd client && node test/skim.mjs` renders all 80
+  cards at a true 390px over CDP and measures line boxes; `node test/shots.mjs` captures
+  the six representative cards. Both need the API server running on :3001.
 - If a git write fails with "permission denied", it's OneDrive locking `.git` — retry.
   Never hand-edit the KB or committed files to recover.
 
@@ -322,13 +343,15 @@ equality *is* the positioning.
 
 ## Open items
 
-- ⚠️ **Two migrations outstanding.** Verified against the live Supabase in `server/.env`
+- ⚠️ **One migration outstanding.** Verified against the live Supabase in `server/.env`
   on 2026-07-30: `scanned_products`, `shopping_lists`, `haul_scans`, `verdicts`,
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
-  `free_notes_used`, `non_negotiables`) are all **applied**. Still missing: **`counter_gaps`**
-  (`supabase/schema.sql`, new — the counter gap log captures nothing until it lands) and
-  **`push_tokens`** (`supabase/push_tokens.sql`). Code degrades gracefully without both.
+  `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
+  on 2026-07-31, when **`counter_cards`** (80 rows), **`counter_gaps`** and the
+  `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
+  missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
+  degrades gracefully without it.
 - ⚠️ **Phone OTP** is built end to end but not switched on. Remaining, all outside the
   code: register the Send SMS hook in the Supabase dashboard, put `BIRD_API_KEY` +
   `SEND_SMS_HOOK_SECRETS` in the server env, and clear **10DLC brand + campaign
