@@ -50,3 +50,43 @@ export function cartBuildLimited(ip) {
   cartHits.set(ip, recent);
   return false;
 }
+
+/* ── Counter questions — a SEPARATE bucket, for the same reason cart builds have one ──
+   The counter's free layer is a deterministic KB read: no model call, no inference cost,
+   and an anonymous caller can never reach the premium branch that would make one. Per
+   this file's own rule at the top — "Only real inference requests should consume a slot"
+   — it must not spend a stranger's free chats.
+
+   It did, and that is the bug this bucket exists to close. Asking eight questions at the
+   fish counter left a stranger with no guest chat, no guest verdict and no guest scan for
+   the hour, so the shopper who used the counter arrived at Kristy with LESS than the one
+   who ignored it. CLAUDE.md promised the opposite in as many words: "A guest's counter
+   answer also does not spend their free chat run — the model was never called."
+
+   It still needs a ceiling, because the endpoint is public and writes to the gap log. So
+   it gets its own generous window, sized for a shopper working through a real trip rather
+   than for the cost of inference — there is none. When generation lands in Pass 3 the
+   GENERATED path gets its own gate; this one stays the free deterministic read. */
+const COUNTER_WINDOW_MS = 60 * 60 * 1000;
+const COUNTER_MAX_PER_WINDOW = 40;
+const counterHits = new Map();
+
+export function counterAskLimited(ip) {
+  const now = Date.now();
+  const recent = (counterHits.get(ip) || []).filter((t) => now - t < COUNTER_WINDOW_MS);
+  if (recent.length >= COUNTER_MAX_PER_WINDOW) {
+    counterHits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  counterHits.set(ip, recent);
+  return false;
+}
+
+// Exported for the tests: a budget guarantee is worth asserting against the real numbers
+// rather than against a copy of them.
+export const BUDGETS = {
+  guest: { windowMs: WINDOW_MS, max: MAX_PER_WINDOW },
+  cartBuild: { windowMs: CART_WINDOW_MS, max: CART_MAX_PER_WINDOW },
+  counterAsk: { windowMs: COUNTER_WINDOW_MS, max: COUNTER_MAX_PER_WINDOW },
+};

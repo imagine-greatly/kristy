@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { optionalAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
-import { clientIp, rateLimited } from '../lib/guestRate.js';
+import { clientIp, counterAskLimited } from '../lib/guestRate.js';
 import { premiumForReq } from '../lib/subscription.js';
 import {
   perimeterKb,
@@ -94,10 +94,15 @@ perimeterRouter.post('/perimeter/ask', optionalAuth, userRateLimit, async (req, 
   const question = String(req.body?.question || '').trim();
   if (!question) return res.status(400).json({ error: 'question is required' });
 
-  // Anonymous callers are capped on the shared per-IP guest budget. Matching is
-  // deterministic and costs nothing, so the ceiling exists for the model call the
-  // premium branch would make — which an anonymous caller never reaches.
-  if (!req.user && rateLimited(clientIp(req))) {
+  // Anonymous callers get the COUNTER's own ceiling, not the shared guest budget.
+  //
+  // They used to draw on the shared one, and that was a real cost with no matching
+  // spend: matching is deterministic, an anonymous caller can never reach the premium
+  // branch that calls the model, and yet eight counter questions left a stranger with no
+  // guest chat, verdict or scan for the hour. The shopper who used the counter ended up
+  // with less than the one who ignored it, which is the opposite of what the free layer
+  // is for. See the bucket's own note in lib/guestRate.js.
+  if (!req.user && counterAskLimited(clientIp(req))) {
     return res.status(429).json({ error: true, message: 'Too many questions at once. Try again shortly.' });
   }
 
