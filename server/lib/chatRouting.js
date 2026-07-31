@@ -54,7 +54,7 @@ export function looksLikePerimeterQuestion(msg) {
 
 // The half of the store with no barcode: the counters themselves, the animals, the
 // catch, the case, the bins, and the label words that get read at them.
-const COUNTER_SUBJECT = new RegExp(
+export const COUNTER_SUBJECT = new RegExp(
   [
     '\\b(counter|butcher|fishmonger|deli|meat case|dairy case|bulk bin|bulk aisle|farm stand)\\b',
     '\\b(beef|steak|brisket|chuck|ribeye|rib eye|sirloin|tenderloin|roast|mince|ground (beef|turkey|chicken|pork|lamb))\\b',

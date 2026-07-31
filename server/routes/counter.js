@@ -1,7 +1,11 @@
 import { Router } from 'express';
-import { supabase } from '../lib/supabase.js';
+import { supabase, optionalAuth } from '../lib/supabase.js';
+import { clientIp, counterAskLimited } from '../lib/guestRate.js';
 import { PERIMETER_SECTIONS } from '../lib/perimeter.js';
 import { getCard, getSectionCards, getAllCards } from '../lib/counterCards.js';
+import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
+import { premiumForReq } from '../lib/subscription.js';
+import { composeAnswer } from '../lib/perimeter.js';
 
 // The Counter's card corpus, as the client reads it.
 //
@@ -109,5 +113,85 @@ counterRouter.get('/counter/cards/:slug', async (req, res) => {
     return res.status(500).json({ error: 'counter_unavailable' });
   }
 });
+
+/* ═══════════════════════════ Ask ═══════════════════════════
+   POST /api/counter/ask — the single ask route.
+
+   PUBLIC (optionalAuth), because the counter's free layer always has been: a stranger
+   asking what to buy is the acquisition moment, and a sign-in wall costs them the exact
+   thing they came to try. Generation is free too — a generated card persists and answers
+   every FUTURE asker for free, so it is corpus investment rather than a per-user benefit,
+   and the coverage gaps that matter surface on the free surface by definition.
+
+   The PERSONALIZED read stays premium and keeps its own claim lock: composeAnswer only
+   ever sees the seven whitelisted fields of a matched entry. */
+counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
+  const query = String(req.body?.query ?? req.body?.question ?? '').trim();
+  if (!query) return res.status(400).json({ error: 'query is required' });
+
+  // The read ceiling — the counter's own bucket, never the shared inference one. Scope
+  // rejections and retrieval hits make no model call, so this is about the endpoint being
+  // public, not about cost.
+  if (!req.user && counterAskLimited(clientIp(req))) {
+    return res.status(429).json({ error: true, message: 'Too many questions at once. Try again shortly.' });
+  }
+
+  try {
+    const result = await answerCounterQuestion({
+      query,
+      userId: req.user?.id || null,
+      ip: clientIp(req),
+      client: supabase,
+    });
+
+    if (result.out_of_scope || !result.card) return res.json(result);
+
+    // A GENERATED card is never personalized. composeAnswer is claim-locked to matched KB
+    // entries, and a generated card has none — personalizing it would mean a model call
+    // with nothing locked behind it, which is the failure the lock exists to prevent.
+    const personalizable = Array.isArray(result.entries) && result.entries.length > 0;
+    const { entries: _entries, ...body } = result;
+    if (!personalizable) return res.json(body);
+
+    // Personalization: premium, and only when there is something to read against.
+    const premium = req.user ? await premiumForReq(req) : false;
+    if (!premium) {
+      return res.json({ ...body, gated: true, upsell: PERSONAL_UPSELL });
+    }
+
+    try {
+      const { goal, focuses, hardLines, constraints } = readPrefs(req.body);
+      const { answer, refinement } = await composeAnswer({
+        question: query,
+        goal,
+        focuses,
+        hardLines,
+        constraints,
+        entries: result.entries,
+      });
+      return res.json({ ...body, personal: { answer, refinement } });
+    } catch (err) {
+      console.error('[kristy] counter personalization failed:', err?.message || err);
+      // The card still stands on its own. Degrade to it rather than failing the request.
+      return res.json(body);
+    }
+  } catch (err) {
+    console.error('[kristy] /api/counter/ask error:', err?.message || err);
+    return res.status(500).json({ error: 'counter_unavailable' });
+  }
+});
+
+const PERSONAL_UPSELL =
+  "That's the honest rundown, and it's free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week, with the better pick landing straight on the list.";
+
+function readPrefs(body = {}) {
+  const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);
+  return {
+    goal: typeof body.goal === 'string' ? body.goal : '',
+    focuses: list(body.focuses),
+    hardLines: list(body.hardLines ?? body.nonNegotiables),
+    constraints: list(body.constraints),
+  };
+}
 
 export default counterRouter;

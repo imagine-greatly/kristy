@@ -161,7 +161,7 @@ test('the aggregate writers are never handed a shopper', () => {
   // counterGaps, productStore and counterCards are the only modules that write to the
   // shared pool. None may import the per-user readers — that import is what a join
   // would have to look like, and it is far easier to forbid than to detect afterwards.
-  for (const mod of ['counterGaps.js', 'productStore.js', 'counterCards.js']) {
+  for (const mod of ['counterGaps.js', 'productStore.js', 'counterCards.js', 'counterGenerate.js']) {
     const src = readFileSync(join(__dirname, mod), 'utf8');
     assert.equal(
       /from '\.\/listBaseline\.js'|from '\.\/list\.js'|getShoppingList|getFullProfile/.test(src),

@@ -439,3 +439,84 @@ export async function getAllCards(client) {
   const rows = await selectCards(client, (q) => q.order('slug'));
   return rows || projectAll();
 }
+
+/* ═══════════════════════════ Retrieving a generated card ═══════════════════════════ */
+
+// STAGE TWO of retrieval, and it only ever runs when the curated matcher missed.
+//
+// The alternative designs all lose. Query-per-request puts a network round trip on the
+// free layer's hot path, which today has none. Reload-on-persist keeps an in-memory index
+// that a SECOND INSTANCE never learns about, so it regenerates a card that already exists
+// — the one failure "never generate what already exists" is meant to prevent, and the one
+// that costs money rather than accuracy. A TTL just shortens that window.
+//
+// So: nothing is cached. Curated cards score from memory (they only change by migration).
+// Generated cards are queried only on a curated miss — the path that was about to spend a
+// model call anyway, where one round trip is free by comparison.
+const GENERATED_FETCH_CAP = 500;
+
+/**
+ * Every generated card, most-used first, for scoring against a question the curated KB
+ * could not answer.
+ *
+ * @returns {Promise<{cards:Array, truncated:boolean, unavailable:boolean}>}
+ */
+export async function getGeneratedCards(client) {
+  if (!client) return { cards: [], truncated: false, unavailable: true };
+  try {
+    const { data, error } = await client
+      .from(TABLE)
+      .select(CARD_COLUMNS + ', aliases')
+      .eq('source', 'generated')
+      .order('use_count', { ascending: false })
+      .limit(GENERATED_FETCH_CAP);
+    if (error) throw new Error(error.message);
+    const cards = (data || []).map(rowToCard);
+    return {
+      cards,
+      // A silent cap reads as "scored everything" when it did not. gapFeed already
+      // reports truncation the same way, for the same reason.
+      truncated: cards.length >= GENERATED_FETCH_CAP,
+      unavailable: false,
+    };
+  } catch (err) {
+    // The corpus is unreachable. That is a reason to generate, not to fail — but the
+    // caller needs to know it could not check, so it is reported rather than swallowed.
+    console.warn('[kristy] generated cards unavailable:', err?.message || err);
+    return { cards: [], truncated: false, unavailable: true };
+  }
+}
+
+/**
+ * Score a question against generated cards using their authored aliases — the same
+ * deterministic shape the curated matcher uses, which is exactly why the generator is
+ * required to emit aliases and the lint fails a card without them.
+ */
+export function scoreGenerated(question, cards) {
+  const q = ` ${String(question || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim()} `;
+  if (q.trim().length < 2) return [];
+  const scored = [];
+  for (const c of cards || []) {
+    let score = 0;
+    for (const alias of c.aliases || []) {
+      const a = String(alias || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+      if (a && q.includes(` ${a} `)) score += Math.min(3, a.split(' ').length) + 1;
+    }
+    if (score > 0) scored.push({ card: c, score });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  return scored;
+}
+
+/** Bump the use counter on a retrieval hit. Fire-and-forget; a shopper never waits on it. */
+export async function bumpUseCount(slug, client, current = 0) {
+  if (!client || !slug) return;
+  try {
+    await client
+      .from(TABLE)
+      .update({ use_count: Number(current) + 1 })
+      .eq('slug', slug);
+  } catch (err) {
+    console.warn('[kristy] use_count not bumped:', err?.message || err);
+  }
+}

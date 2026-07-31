@@ -161,6 +161,21 @@ export function lintCard(card) {
     }
   }
 
+  // A GENERATED card must carry aliases, because aliases are the only way it can ever be
+  // RETRIEVED again. The deterministic matcher scores alias phrases; a card with none
+  // scores zero against every future question, so the next shopper asking the identical
+  // thing regenerates it. That is not a cosmetic gap — it is an unbounded spend loop and
+  // a corpus that forks into near-duplicates of the same answer.
+  if (card?.source === 'generated') {
+    const aliases = Array.isArray(card.aliases) ? card.aliases.filter((a) => String(a || '').trim()) : [];
+    if (aliases.length < 2) {
+      fail(
+        'ALIASES_MISSING',
+        `a generated card needs at least 2 aliases to be findable again; got ${aliases.length}`
+      );
+    }
+  }
+
   if (headline && doLine) {
     const shared = sharedObservables(headline, doLine);
     if (shared.length) {
