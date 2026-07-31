@@ -13,8 +13,7 @@
 // horizontal overflow. Playwright's viewport goes through Emulation.setDeviceMetricsOverride,
 // which is the thing that actually works.
 
-import { chromium } from '../../.ds-sync/node_modules/playwright/index.mjs';
-import { build } from '../../.ds-sync/node_modules/esbuild/lib/main.js';
+import { chromium, build } from './browser.mjs';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';

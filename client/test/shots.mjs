@@ -9,8 +9,7 @@
 // Chrome enforces a ~500px minimum window on Windows, so a 390px request renders at 504
 // and crops, which looks exactly like horizontal overflow.
 
-import { chromium } from '../../.ds-sync/node_modules/playwright/index.mjs';
-import { build } from '../../.ds-sync/node_modules/esbuild/lib/main.js';
+import { chromium, build } from './browser.mjs';
 import { createServer } from 'node:http';
 import { mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
