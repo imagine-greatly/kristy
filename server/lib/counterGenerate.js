@@ -155,6 +155,14 @@ VOICE — NO FIRST PERSON, ANYWHERE. Kristy is a standard, not a person narratin
 - NO EM-DASH ASIDES. Short plain sentences with periods.
 - HALF THE WORDS. Confidence reads as brevity.
 
+COPY — AMERICAN SPELLING AND TYPOGRAPHIC PUNCTUATION, everywhere on the card.
+- color, flavor, favor, gray, neighbor, liter, fiber, center, meter, organize, recognize.
+  NEVER colour, flavour, grey, neighbour, litre, fibre, centre, metre, organise, recognise.
+- Curly quotes and apostrophes only: “raw milk”, doesn’t, the carton’s.
+  NEVER straight ones: "raw milk", doesn't.
+A card that reads as written elsewhere is the one tell that separates it from the rest of
+the corpus, and it is checked.
+
 THE SHAPE RULES ARE MECHANICAL AND THEY ARE CHECKED. A card that breaks one is rejected
 and regenerated at full cost, so verify each before you return.
 

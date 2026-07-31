@@ -23,7 +23,7 @@ const base = {
   eyebrow: 'Melon selection',
   section: 'produce',
   kind: 'shelf',
-  headline: 'Nose and weight decide, not the rind colour.',
+  headline: 'Nose and weight decide, not the rind color.',
   do: 'Smell the stem end and press it lightly for give.',
   why: 'A ripe melon smells sweet where it left the vine.',
   look_for: ['Sweet smell at the stem end', 'Heavy for its size', 'Smooth stem scar'],
@@ -268,4 +268,31 @@ test('short aliases actually retrieve the card they are on', async () => {
   assert.ok(scoreGenerated('how do I pick a good cantaloupe', good).length > 0, 'short aliases must hit');
   const bad = [{ slug: 'gen_cantaloupe', aliases: ['how to tell if a cantaloupe is ripe'] }];
   assert.equal(scoreGenerated('how do I pick a good cantaloupe', bad).length, 0, 'sentence aliases cannot hit');
+});
+
+/* ═══════════════ Copy hygiene ═══════════════ */
+
+test('a British spelling FAILS lint, anywhere on the card', () => {
+  // The first generated card that reached production said "not its netted rind colour".
+  // Pass 1 swept the corpus for this and the generator never inherited it.
+  assert.ok(codes(lintCard(card({ headline: 'Rind colour decides nothing.' }))).includes('COPY_BRITISH'));
+  assert.ok(codes(lintCard(card({ why: 'The flavour is the tell.' }))).includes('COPY_BRITISH'));
+  // Not just the headline — a card is one voice.
+  assert.ok(codes(lintCard(card({ watch_out: ['Grey flesh means it has sat'] }))).includes('COPY_BRITISH'));
+  assert.ok(!codes(lintCard(card({ headline: 'Rind color decides nothing.' }))).includes('COPY_BRITISH'));
+});
+
+test('a straight quote or apostrophe FAILS lint', () => {
+  assert.ok(codes(lintCard(card({ do: 'Read the label for "raw milk" and an age.' }))).includes('COPY_STRAIGHT_QUOTE'));
+  assert.ok(codes(lintCard(card({ why: "The rind doesn't tell you." }))).includes('COPY_STRAIGHT_QUOTE'));
+  assert.ok(!codes(lintCard(card({ do: 'Read the label for “raw milk” and an age.' }))).includes('COPY_STRAIGHT_QUOTE'));
+});
+
+test('americanize preserves capitalisation and the surrounding sentence', async () => {
+  const { americanize, typographic } = await import('./counterCardLint.js');
+  assert.equal(americanize('Colour is oxygen, and the flavour follows.'), 'Color is oxygen, and the flavor follows.');
+  assert.equal(americanize('neighbouring shelves'), 'neighboring shelves');
+  assert.equal(americanize('color'), 'color', 'already-American text is untouched');
+  assert.equal(typographic('the "raw milk" label'), 'the “raw milk” label');
+  assert.equal(typographic("doesn't"), 'doesn’t');
 });

@@ -21,3 +21,23 @@ alter table counter_cards add column if not exists aliases jsonb not null defaul
 -- Nothing indexes it: alias scoring happens in JS over a bounded fetch (see
 -- getGeneratedCards), and a GIN index on a table this size would cost more to maintain
 -- than the scan it saves. Revisit if the generated corpus passes a few thousand rows.
+
+-- ─────────────────── The essentials shelf ───────────────────
+-- The counter index puts the ask bar first and then a handful of cards a shopper can read
+-- and expand IN PLACE, before any navigation. Three taps to an answer — tab, section, card
+-- — is a couch interaction, and it was occupying the position the store interaction should
+-- hold.
+--
+-- Two columns rather than one boolean: `essential` is the membership and `essential_rank`
+-- is the ORDER, which is a separate editorial decision. A shelf whose order falls out of
+-- whatever the query returned is not a shelf, it is a list.
+--
+-- Both default to off. Membership is chosen deliberately, never derived from use_count —
+-- a popularity sort would fill the most valuable space on the surface with whatever
+-- happened to be asked most last week.
+alter table counter_cards add column if not exists essential boolean not null default false;
+alter table counter_cards add column if not exists essential_rank int;
+
+-- The shelf's read: members only, in their authored order.
+create index if not exists counter_cards_essential_idx
+  on counter_cards (essential_rank) where essential;

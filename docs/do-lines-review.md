@@ -14,7 +14,7 @@ do` column in place; leave the other columns alone (they are re-derived from
 
 Could someone holding a cart act on this line **alone**, without reading anything else
 on the card? It must name something observable in the store — a word printed on a
-label, a colour, a number, a physical location, a specific product — and it must not
+label, a color, a number, a physical location, a specific product — and it must not
 restate the headline. The headline is the verdict; the `do` is the physical action. If
 they say the same thing, the card wastes its most valuable line.
 
@@ -29,7 +29,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `HOME` | the only real action is in the kitchen, not the store — the bar may not apply to this card |
 | `NARROW` | the action is real but only applies in a sub-case (e.g. only when baking) |
 | `DUPLICATE` | this card overlaps another closely enough that the two `do` lines will read alike |
-| `DRIFTED` | the line is observable and actionable, but it serves a NEIGHBOURING card's verdict rather than this one's |
+| `DRIFTED` | the line is observable and actionable, but it serves a NeighborING card's verdict rather than this one's |
 | `RULING4` | the observable sits in the headline, so no honest `do` line can avoid restating it — the fix is a headline edit in the KB, not a redraft here |
 | `HEADLINE Nw` | the KB `decision` this card uses as its headline is over the 12-word limit and needs trimming in the KB, not here |
 
@@ -144,7 +144,7 @@ named, plus four more the same question surfaced.
 | `label_organic_scope` | **DRIFTED (redrafted)** | The line was about seal tiers — the 70% rule, which is `label_nonGMO_vs_organic`'s subject. The verdict's actionable half is "read the panel anyway", which nothing served. |
 | `chicken_cuts_basics` | **DRIFTED (redrafted)** | Not in the named eight. Its line was about retained water, which is `air_chilled_chicken`'s whole subject, and near-duplicated that card's line. Its own verdict — bone-in thighs — went unserved. |
 | `yogurt_live_cultures` | **DRIFTED (flagged, not redrafted)** | Not in the named eight. Its line is about added sugars on flavored tubs, which is `yogurt_plain_vs_flavored`'s verdict. Its own observable sits in its headline, so this is a `RULING4` case: the fix is a headline edit, not a redraft. |
-| `washing_produce` | **DRIFTED (redrafted)** | Not in the named eight. Its `do` line was almost word-for-word `produce_storage`'s headline — one card's action was the neighbour's verdict. Redrafted onto its own (water-and-hands) verdict. |
+| `washing_produce` | **DRIFTED (redrafted)** | Not in the named eight. Its `do` line was almost word-for-word `produce_storage`'s headline — one card's action was the neighbor's verdict. Redrafted onto its own (water-and-hands) verdict. |
 | `pork_cuts_and_enhanced` | SERVES (rephrased) | On-verdict, but shares the headline-holds-the-observable shape and duplicated `air_chilled_chicken`'s closing clause. Construction changed only. |
 
 The pattern the handoff predicted holds and is sharper than expected: **every drifted line

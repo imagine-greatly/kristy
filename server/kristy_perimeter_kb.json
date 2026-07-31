@@ -73,7 +73,7 @@
       "detail": "Mercury accumulates up the food chain, so smaller, shorter-lived fish carry less. The FDA/EPA publish a ‘best/good/avoid’ list worth knowing. Sardines and canned salmon are small-fish standouts and happen to be cheap protein. This is information about the fish. It is not medical advice, and it is not a directive.",
       "evidence_tier": "established",
       "sources": [
-        "FDA/EPA 'Advice About Eating Fish'",
+        "FDA/EPA ‘Advice About Eating Fish’",
         "FDA mercury-in-commercial-fish testing"
       ],
       "kristy_take": "Sardines are one of the best-value whole foods in the store — small fish, real omega-3s, and you eat the whole thing.",
@@ -411,7 +411,7 @@
         "Freshness (a firm, standing yolk) tells you more than color."
       ],
       "labels_decoded": [],
-      "tier_note": "That feed and additives drive yolk colour is well established, and it is why colour reads nothing."
+      "tier_note": "That feed and additives drive yolk color is well established, and it is why color reads nothing."
     },
     {
       "id": "air_chilled_chicken",
@@ -464,7 +464,7 @@
       "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns — a legitimate reason to choose it, framed honestly. Look for USDA Process Verified or a third-party check to back the claim.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS 'raised without antibiotics' guidance",
+        "USDA FSIS ‘raised without antibiotics’ guidance",
         "FDA antibiotic-residue rules"
       ],
       "kristy_take": "A fair reason to choose it is resistance, not residues. Don’t let the label scare you into thinking regular chicken is full of drugs — it isn’t.",
@@ -798,7 +798,7 @@
       "detail": "Plain yogurt (especially Greek/strained) is a clean, high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways. ‘Live and active cultures’ tells you the fermentation is intact. This is a straightforward whole-vs-processed call.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "National Yogurt Association 'Live & Active Cultures' seal",
+        "National Yogurt Association ‘Live & Active Cultures’ seal",
         "USDA FoodData Central"
       ],
       "kristy_take": "Big tub of plain Greek, add your own berries. Cheaper than the little flavored cups and none of the dessert-level sugar.",
@@ -832,7 +832,7 @@
       "decision": "Worth the trouble of finding. Everything is in the sourcing.",
       "why": "Pasteurization is a shelf-life technology. The farm is the product here.",
       "short_answer": "The question is never the process, it is the producer. A named farm with a small herd on grass, a cold chain that does not break, and test results it publishes without being asked is the whole answer. Everything else is packaging.",
-      "detail": "Where raw milk can be sold at all varies by state, so the first practical question is usually where rather than whether. Herdshares fill the gap in a lot of places. The word \"raw\" is unregulated on most products, but on milk it is literal: not heat-treated. On cheese it means the same thing, and at US retail it also means aged sixty days or more, which is why aged raw cheese sits in plain sight on a counter where the milk cannot.",
+      "detail": "Where raw milk can be sold at all varies by state, so the first practical question is usually where rather than whether. Herdshares fill the gap in a lot of places. The word “raw” is unregulated on most products, but on milk it is literal: not heat-treated. On cheese it means the same thing, and at US retail it also means aged sixty days or more, which is why aged raw cheese sits in plain sight on a counter where the milk cannot.",
       "evidence_tier": "time_tested",
       "sources": [
         "CDC raw-milk outbreak data",
@@ -865,7 +865,7 @@
       "watch_out": [
         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
         "No named farm, no test results, no cold chain — that is not raw milk worth buying, that is just unpasteurized.",
-        "\"Raw\" on a cheese aged under 60 days at retail is worth a question about where it came from."
+        "“Raw” on a cheese aged under 60 days at retail is worth a question about where it came from."
       ],
       "card_why": "Pasteurization is a shelf-life technology. It flattens the live cultures, the enzymes, and the cream line along with everything else. Milk from a small pastured herd, handled cold and fast, is a different food from the commodity gallon. The farm is the product here. A farmer who tests, who keeps a small herd on grass, and who will walk you through the parlor is the entire margin between excellent and not worth it."
     },
@@ -979,8 +979,8 @@
         }
       ],
       "watch_out": [
-        "US almonds sold as \"raw\" are pasteurized by law, by steam or by PPO. The word is not literal here.",
-        "Most \"raw\" cashews were steamed out of the shell. Nobody sells a truly raw one.",
+        "US almonds sold as “raw” are pasteurized by law, by steam or by PPO. The word is not literal here.",
+        "Most “raw” cashews were steamed out of the shell. Nobody sells a truly raw one.",
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
       ],
       "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard."
@@ -1066,8 +1066,8 @@
       ],
       "watch_out": [
         "Not for infants under twelve months. Beekeepers say this themselves.",
-        "\"Raw\" with no named producer is frequently blended and filtered. The word is unregulated.",
-        "\"Pure honey\" is a marketing word with little enforcement. Traceability is the real check."
+        "“Raw” with no named producer is frequently blended and filtered. The word is unregulated.",
+        "“Pure honey” is a marketing word with little enforcement. Traceability is the real check."
       ],
       "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome."
     },
@@ -1125,8 +1125,8 @@
       "detail": "‘Natural’ is one of the emptiest words on a package. It is not ‘organic’, it is not a welfare or feed claim, and it doesn’t restrict pesticides, GMOs, or how an animal lived. When a claim actually matters to you, look for the specific, defined term (organic, grass-finished, pasture-raised) instead.",
       "evidence_tier": "established",
       "sources": [
-        "FDA 'natural' policy",
-        "USDA FSIS 'natural' definition for meat/poultry"
+        "FDA ‘natural’ policy",
+        "USDA FSIS ‘natural’ definition for meat/poultry"
       ],
       "kristy_take": "‘Natural’ tells you a marketing team was involved. Ignore it and read the actual ingredient list and the defined claims.",
       "buying_tips": [
@@ -1243,7 +1243,7 @@
       "detail": "The term signals outdoor access but sets a low, loosely-enforced bar. A small door to a small yard can qualify. If genuine outdoor living matters to you, ‘pasture-raised’ with a third-party certification (Certified Humane, Animal Welfare Approved) is the stronger claim.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS 'free-range' guidance",
+        "USDA FSIS ‘free-range’ guidance",
         "Certified Humane / AWA standards"
       ],
       "kristy_take": "‘Free-range’ is better than nothing, but it’s a low bar. For real outdoor time, look for certified pasture-raised.",
@@ -1410,7 +1410,7 @@
       "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it — Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” is the one term that does reach feed, and it requires the feed be organic — which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS labeling policy — no regulatory definition of \"pasture-raised\"",
+        "USDA FSIS labeling policy — no regulatory definition of “pasture-raised”",
         "Certified Humane pasture-raised standards (outdoor space requirements)",
         "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)"
       ],
@@ -1608,7 +1608,7 @@
       "question": "Does “lightly sweetened” mean anything?",
       "decision": "Go straight to the added-sugars line.",
       "why": "‘Lightly sweetened’ has no definition. The panel number is the one that cannot be spun.",
-      "short_answer": "No — it has no standardized definition, so it is worth exactly what the marketing department decided it was worth. Some neighbouring terms DO have definitions: “no sugar added” means none was added during processing (the food’s own sugars remain), and “reduced sugar” means at least 25% less than the reference product, which can still be a lot. The added-sugar line on the panel is the only one of these that cannot be spun.",
+      "short_answer": "No — it has no standardized definition, so it is worth exactly what the marketing department decided it was worth. Some neighboring terms DO have definitions: “no sugar added” means none was added during processing (the food’s own sugars remain), and “reduced sugar” means at least 25% less than the reference product, which can still be a lot. The added-sugar line on the panel is the only one of these that cannot be spun.",
       "detail": "This is a case where the regulated and the unregulated sit side by side on the same package. “Lightly sweetened” is not a defined claim. “No sugar added” and “reduced sugar” are defined, but neither means low: a juice with no added sugar is still concentrated fruit sugar, and 25% less than something very sweet is still sweet. Since added sugars became a separate line on the Nutrition Facts panel, the fastest honest read is to skip the front of the package entirely and look at that number, then check the ingredient list for the aliases — cane juice, syrups, concentrates.",
       "evidence_tier": "established",
       "sources": [
@@ -1694,7 +1694,7 @@
         "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
         "“Natural flavors” can carry solvents and carriers that need no separate declaration."
       ],
-      "tier_note": "The legal line between natural and artificial flavour is the starting material, and it is written down."
+      "tier_note": "The legal line between natural and artificial flavor is the starting material, and it is written down."
     },
     {
       "id": "egg_shell_color",
@@ -1734,7 +1734,7 @@
           "meaning": "Laid by a white-egg breed. The same egg inside."
         }
       ],
-      "tier_note": "Shell colour tracking breed is basic genetics, and it is why the price gap buys nothing."
+      "tier_note": "Shell color tracking breed is basic genetics, and it is why the price gap buys nothing."
     },
     {
       "id": "egg_freshness",
@@ -2000,7 +2000,7 @@
       "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid pooled in a tray, called purge, is the useful tell: a lot of it means the meat has sat, or was frozen and thawed, and it carries flavor away with it. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS \"The Color of Meat and Poultry\"",
+        "USDA FSIS “The Color of Meat and Poultry”",
         "USDA FSIS meat labeling and product dating guidance"
       ],
       "kristy_take": "Color is oxygen, not quality. Press it, look at the tray, smell it. Those three beat the sticker.",
@@ -2021,7 +2021,7 @@
           "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
         }
       ],
-      "tier_note": "Colour coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness."
+      "tier_note": "Color coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness."
     },
     {
       "id": "butcher_counter_asking",
@@ -2170,7 +2170,7 @@
       "detail": "USDA labeling rules force that qualifier, which is why every ‘uncured’ package carries a footnote most shoppers never read. The chemistry that fixes the color and preserves the meat is the same either way; only the source of the nitrate differs, and measured residual levels are broadly comparable. That does not make it a scam, it makes it a sourcing preference, and it is worth knowing that ‘uncured’ is a different statement from ‘no nitrites’. The bigger question at the deli case is how much processed meat a week holds, not which curing agent was used.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS labeling policy on 'uncured' and 'no nitrate or nitrite added' claims",
+        "USDA FSIS labeling policy on ‘uncured’ and ‘no nitrate or nitrite added’ claims",
         "Peer-reviewed comparisons of residual nitrite in conventionally and naturally cured meats"
       ],
       "kristy_take": "‘Uncured’ means cured with celery powder. The asterisk on the package says so. Same chemistry, different source.",
@@ -2215,7 +2215,7 @@
       "detail": "Methylmercury accumulates up the food chain, so a fish that ate thousands of smaller fish across twenty years carries far more than one that lived two years on plankton. That is why the pattern is so predictable by species. FDA and EPA publish it as a three-tier list (Best Choices, Good Choices, Choices to Avoid) and direct the advice at pregnant and nursing women and young children. This is information about the fish. Anything about a personal medical situation belongs with a doctor.",
       "evidence_tier": "established",
       "sources": [
-        "FDA/EPA 'Advice About Eating Fish' (2021 update)",
+        "FDA/EPA ‘Advice About Eating Fish’ (2021 update)",
         "FDA mercury concentrations in commercial fish and shellfish"
       ],
       "kristy_take": "Small and short-lived is the entire rule. Sardines, salmon and skipjack sit at the bottom of the chain, and they are the cheap ones.",
@@ -2512,7 +2512,7 @@
         "Buy at staggered ripeness so the whole week does not turn on Tuesday."
       ],
       "labels_decoded": [],
-      "tier_note": "Ethylene ripening its neighbours, and moisture rotting a drawer, are both well established."
+      "tier_note": "Ethylene ripening its neighbors, and moisture rotting a drawer, are both well established."
     },
     {
       "id": "milk_processing",
@@ -2644,7 +2644,7 @@
       "evidence_tier": "established",
       "sources": [
         "FDA standards of identity for yogurt",
-        "National Yogurt Association 'Live & Active Cultures' seal criteria",
+        "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
         "USDA FoodData Central"
       ],
       "kristy_take": "Plain, live cultures, and your own fruit. The flavored cups are dessert wearing a yogurt label.",
@@ -3186,7 +3186,7 @@
       "evidence_tier": "established",
       "sources": [
         "International Olive Council definitions of cold extraction",
-        "FDA labeling regulations (no federal definition of 'cold-pressed' for most oils)",
+        "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
         "Food-science references on solvent extraction and oil refining"
       ],
       "kristy_take": "Pressed or solvent-extracted is the real question, and ‘refined’ is the word that answers it.",
@@ -3484,18 +3484,18 @@
       "decision": "Start here. The one raw dairy sitting in plain sight.",
       "why": "US law allows raw cheese at sixty days, so the good counter already stocks it.",
       "card_why": "Aged raw-milk cheese is the raw dairy nobody has to hunt for — US rules allow it at sixty days and up, so a decent cheese counter already keeps a case of it. Sixty days of aging is a technology of its own, and it is the reason an aged raw cheddar tastes of the place it came from while a young commodity block tastes of very little. The organizing principle is the milk’s: ask who made it, from which herd, and how long it sat.",
-      "short_answer": "Look for \"raw milk\" or \"lait cru\" on the rind label with an age beside it, and buy from the cut-to-order counter rather than the pre-wrapped wall.",
+      "short_answer": "Look for “raw milk” or “lait cru” on the rind label with an age beside it, and buy from the cut-to-order counter rather than the pre-wrapped wall.",
       "detail": "The sixty-day rule is why raw cheese is legal at US retail where raw milk often is not. Aging concentrates the cheese and develops it, and a raw-milk cheese carries the character of one herd and one season in a way a standardized pasteurized curd is designed not to. A staffed counter can usually name the maker, the animal and the age, which is exactly the information the rind label is too small to hold.",
       "kristy_take": "Ask the monger who made it. A good one has been waiting to tell you.",
       "buying_tips": [
-        "\"Raw milk\" or \"lait cru\" printed on the rind label, with an age beside it.",
+        "“Raw milk” or “lait cru” printed on the rind label, with an age beside it.",
         "A named maker and a named herd, not just a country of origin.",
         "The cut-to-order counter over the pre-wrapped wall.",
         "Hard, aged styles first — alpine, aged cheddar, manchego, pecorino.",
         "Keep the rinds. They belong in a pot of beans or soup."
       ],
       "watch_out": [
-        "\"Pasteurized process cheese\", \"cheese product\" and \"cheese food\" are progressively less cheese.",
+        "“Pasteurized process cheese”, “cheese product” and “cheese food” are progressively less cheese.",
         "Raw dairy is not for every household. The raw milk card names who, once."
       ],
       "labels_decoded": [

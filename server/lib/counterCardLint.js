@@ -67,6 +67,76 @@ export const MAX_DO_WORDS = 12 + 2;
 export const MAX_ALIAS_WORDS = 4;
 export const MAX_HEADLINE_WORDS = 12;
 
+/* ═══════════════════════════ Copy hygiene ═══════════════════════════ */
+
+// AMERICAN SPELLING AND TYPOGRAPHIC PUNCTUATION, on every card.
+//
+// Pass 1 swept the whole corpus for this and the generator never inherited it: the first
+// card that shipped to production said "not its netted rind colour". A generated card
+// renders in the same component as a curated one and is supposed to be indistinguishable
+// from it — a British spelling is the exact kind of tell that makes it distinguishable.
+//
+// The raw batch of curated entries missed the sweep too, so this is not a generator-only
+// rule and it is not applied only to generated cards.
+const BRITISH = [
+  [/\bcolour(s|ed|ing|ful|less)?\b/gi, 'color$1'],
+  [/\bflavour(s|ed|ing|ful|less)?\b/gi, 'flavor$1'],
+  [/\bfavour(s|ed|ing|ite|ites)?\b/gi, 'favor$1'],
+  [/\bneighbour(s|ing|hood|hoods)?\b/gi, 'neighbor$1'],
+  [/\bbehaviour(s|al)?\b/gi, 'behavior$1'],
+  [/\blitre(s)?\b/gi, 'liter$1'],
+  [/\bfibre(s)?\b/gi, 'fiber$1'],
+  [/\bcentre(s|d)?\b/gi, 'center$1'],
+  [/\bmetre(s)?\b/gi, 'meter$1'],
+  [/\bgrey(ish)?\b/gi, 'gray$1'],
+  [/\borganis(e|es|ed|ing|ation|ations)\b/gi, 'organiz$1'],
+  [/\brecognis(e|es|ed|ing)\b/gi, 'recogniz$1'],
+  [/\banalys(e|es|ed|ing)\b/gi, 'analyz$1'],
+  [/\bdefence\b/gi, 'defense'],
+  [/\blicence\b/gi, 'license'],
+];
+
+// A straight quote or apostrophe. Kristy's copy uses “ ” and ’ everywhere else, so a
+// straight one is a card authored outside the house style.
+const STRAIGHT_QUOTE = /["']/;
+
+/**
+ * Rewrite British spellings to American, preserving the original capitalisation of the
+ * first letter. Exported because the corpus needed fixing as well as checking.
+ */
+export function americanize(text) {
+  let out = String(text ?? '');
+  for (const [re, replacement] of BRITISH) {
+    out = out.replace(re, (match, suffix = '') => {
+      const base = replacement.replace('$1', suffix || '');
+      // "Colour" → "Color", "colour" → "color".
+      return match[0] === match[0].toUpperCase() ? base[0].toUpperCase() + base.slice(1) : base;
+    });
+  }
+  return out;
+}
+
+/** Straight quotes and apostrophes → typographic ones. */
+export function typographic(text) {
+  return String(text ?? '')
+    // An apostrophe inside a word is always a right single quote.
+    .replace(/(\w)'(\w)/g, '$1’$2')
+    .replace(/(\w)'(\s|$|[.,;:!?)])/g, '$1’$2')
+    // Opening double quote after start, whitespace or an opening bracket; closing otherwise.
+    .replace(/(^|[\s([{—–-])"/g, '$1“')
+    .replace(/"/g, '”')
+    .replace(/(^|[\s([{])'/g, '$1‘')
+    .replace(/'/g, '’');
+}
+
+export function britishSpellings(text) {
+  const found = [];
+  for (const [re] of BRITISH) {
+    for (const m of String(text ?? '').matchAll(re)) found.push(m[0]);
+  }
+  return found;
+}
+
 /* ═══════════════════════════ Imperative ═══════════════════════════ */
 
 // A `do` line is an instruction, so its first token is a verb. Detecting that properly
@@ -244,6 +314,36 @@ export function lintCard(card) {
         'at least one alias must be one or two words — usually the bare subject noun, which is the most likely hit'
       );
     }
+  }
+
+  // Copy hygiene, across every readable field. A card is one voice, so a British spelling
+  // in watch_out is the same defect as one in the headline.
+  const copy = [
+    headline,
+    doLine,
+    card?.why,
+    card?.tier_note,
+    card?.topic,
+    card?.eyebrow,
+    card?.cta_item,
+    card?.detail,
+    card?.kristy_take,
+    ...(card?.look_for || []),
+    ...(card?.watch_out || []),
+  ]
+    .filter(Boolean)
+    .map(String);
+
+  const brit = [...new Set(copy.flatMap(britishSpellings))];
+  if (brit.length) {
+    fail('COPY_BRITISH', `British spelling: ${brit.map((w) => `"${w}"`).join(', ')} — the corpus is American`);
+  }
+  const straight = copy.filter((t) => STRAIGHT_QUOTE.test(t));
+  if (straight.length) {
+    fail(
+      'COPY_STRAIGHT_QUOTE',
+      `a straight quote or apostrophe in: "${straight[0].slice(0, 60)}…" — the corpus uses “ ” and ’`
+    );
   }
 
   const tierNote = String(card?.tier_note || '').trim();
