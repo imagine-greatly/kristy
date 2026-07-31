@@ -13,6 +13,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
+import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { toCard, slugFor, parseCardJSON } from './counterGenerate.js';
 import { claimLockViolations, readableText } from './counterClaimLock.js';
 import { lintCard } from './counterCardLint.js';
@@ -28,6 +29,7 @@ const base = {
   look_for: ['Sweet smell at the stem end', 'Heavy for its size', 'Smooth stem scar'],
   watch_out: [],
   tier: 'time_tested',
+  tier_note: 'Melons have been judged by nose and weight for as long as they have been sold.',
   cta_item: null,
   aliases: ['how to pick a melon', 'ripe melon', 'melon ripeness'],
 };
@@ -50,12 +52,28 @@ test('an invalid tier falls back to the most conservative one', () => {
   assert.equal(card({ tier: 'obviously_true' }).tier, 'kristys_standard');
 });
 
-test('a generated card carries the tier rubric, like every curated one', () => {
-  // Without it the reader sees a tier CHIP and never learns what that tier is worth — on
-  // the one kind of card that has no authored entry standing behind it.
+test('the tier note is AUTHORED, never filled from the rubric', () => {
+  // The corpus-wide defect: 75 of 80 curated cards fell back to the tier's definition, so
+  // a card about picking a melon rendered "Strong scientific consensus, major health
+  // organization classification…". The rubric guides the CHOICE of tier and belongs only
+  // in the prompt.
   const c = card();
-  assert.ok(c.tier_note && c.tier_note.length > 20, 'tier_note should come from the KB rubric');
-  assert.match(c.tier_note, /History is the evidence/);
+  assert.equal(c.tier_note, base.tier_note, 'the model’s own sentence must survive');
+  assert.equal(card({ tier_note: '' }).tier_note, null, 'no silent fallback to the rubric');
+});
+
+test('a tier note that quotes the rubric FAILS lint', () => {
+  const rubric = perimeterKb.evidence_tiers.established;
+  assert.ok(codes(lintCard(card({ tier: 'established', tier_note: rubric }))).includes('TIER_NOTE_IS_RUBRIC'));
+  // And a paraphrase that keeps the rubric's spine is caught by the shared-run check.
+  assert.ok(
+    codes(lintCard(card({ tier: 'established', tier_note: 'Settled enough to act on without debate here.' })))
+      .includes('TIER_NOTE_IS_RUBRIC')
+  );
+});
+
+test('a missing tier note FAILS lint — the chip would have nothing behind it', () => {
+  assert.ok(codes(lintCard(card({ tier_note: '' }))).includes('TIER_NOTE_MISSING'));
 });
 
 test('a home card can never carry an add-to-cart', () => {
@@ -70,9 +88,27 @@ test('fields the model invented do not ride along into the table', () => {
   assert.equal(c.evil, undefined);
 });
 
-test('the slug is derived from the question, so the same one collapses instead of forking', () => {
-  assert.equal(slugFor('how do i pick a good cantaloupe'), 'gen_how_do_i_pick_a_good_cantaloupe');
-  assert.equal(slugFor('how do i pick a good cantaloupe'), slugFor('how do i pick a good cantaloupe'));
+test('the slug comes from the TOPIC, not the shopper’s phrasing', () => {
+  // A question-derived slug carried the wording into an identifier —
+  // "gen_what_s_the_best_cut_of_steak_for_grilling" — so two phrasings of one question
+  // became two rows answering the same thing.
+  assert.equal(slugFor('Best steak cut for grilling'), 'gen_best_steak_cut_for_grilling');
+  const derived = toCard({ ...base, topic: 'Best steak cut for grilling' }, { slug: null, querySeed: 'x' });
+  assert.equal(derived.slug, 'gen_best_steak_cut_for_grilling');
+});
+
+test('an apostrophe is normalized away, not split on', () => {
+  // Deleting the character mid-word turned "what's" into "what_s". Curly and straight both.
+  assert.equal(slugFor("What's in season"), 'gen_whats_in_season');
+  assert.equal(slugFor('What’s in season'), 'gen_whats_in_season');
+});
+
+test('the eyebrow IS the topic — one rule, enforced', () => {
+  // It was drifting: identical to topic on two generated cards, a separate shorter phrase
+  // on the third. A label that sometimes restates and sometimes abbreviates cannot be learned.
+  const c = card({ topic: 'A2 milk claims' });
+  assert.equal(c.eyebrow, 'A2 milk claims');
+  assert.equal(toCard({ ...base, topic: 'A2 milk claims', eyebrow: 'Something else' }, { slug: null, querySeed: 'x' }).eyebrow, 'A2 milk claims');
 });
 
 test('parseCardJSON survives a code fence and surrounding prose', () => {
@@ -158,4 +194,24 @@ test('a generated card clears the SAME lint the 80 curated cards clear', () => {
 
 test('a generated card that describes instead of instructing fails', () => {
   assert.ok(codes(lintCard(card({ do: 'Melons are generally better in summer.' }))).includes('DO_NOT_IMPERATIVE'));
+});
+
+/* ═══════════════ The model failing is not the request failing ═══════════════ */
+
+test('an API error degrades to a discarded generation, never a 500', async () => {
+  // Rate limits, timeouts and an exhausted credit balance all arrive as a thrown API
+  // error. An uncaught one would 500 a shopper standing in an aisle; the counter already
+  // knows how to have nothing to say, and this routes into that path.
+  const { generateCard } = await import('./counterGenerate.js');
+  const original = process.env.ANTHROPIC_API_KEY;
+  process.env.ANTHROPIC_API_KEY = 'sk-ant-invalid-key-for-this-test';
+  try {
+    const out = await generateCard({ query: 'how do I pick a good cantaloupe', querySeed: 'x', entries: [] });
+    assert.equal(out.card, null);
+    assert.equal(out.reason, 'model_error');
+    assert.equal(out.attempts[0].violations[0].code, 'MODEL_ERROR');
+  } finally {
+    if (original === undefined) delete process.env.ANTHROPIC_API_KEY;
+    else process.env.ANTHROPIC_API_KEY = original;
+  }
 });

@@ -14,7 +14,7 @@
 
 import { scoreEntries } from './perimeter.js';
 import { inScope, outOfScopeLine } from './counterScope.js';
-import { normalizeQuestion, logCounterGap, WEAK_MATCH_CEILING } from './counterGaps.js';
+import { scrubQuestion, logCounterGap, WEAK_MATCH_CEILING } from './counterGaps.js';
 import { projectEntry, getGeneratedCards, scoreGenerated, bumpUseCount } from './counterCards.js';
 import { generateCard, persistCard } from './counterGenerate.js';
 import { generationLimited, globalCeilingReached } from './counterRate.js';
@@ -81,8 +81,6 @@ export async function answerCounterQuestion({
     return { card, source: 'curated', matched: true, score: top.score, entries: scored.map((s) => s.entry) };
   }
 
-  const normalized = normalizeQuestion(q);
-
   /* ── 2b. RETRIEVE — generated, queried ONLY now, on a curated miss. ── */
   const gen = await getGeneratedCards(client);
   const genScored = scoreGenerated(q, gen.cards);
@@ -133,7 +131,10 @@ export async function answerCounterQuestion({
 
   const { card, attempts, reason } = await generateCard({
     query: q,
-    normalizedQuery: normalized,
+    // The seed keeps the shopper's own wording — it is the Pass 5 authoring signal, and
+    // normalizeQuestion would flatten exactly the part worth reading. Identity is still
+    // scrubbed; see scrubQuestion.
+    querySeed: scrubQuestion(q),
     entries: scored.map((s) => s.entry),
   });
 

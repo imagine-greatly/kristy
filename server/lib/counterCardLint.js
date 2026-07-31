@@ -17,6 +17,49 @@
 // punish precision.
 export const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
 
+/* ═══════════════════════════ The tier note ═══════════════════════════ */
+
+// THE TIER NOTE IS AUTHORED, NOT DEFINED. It must say why THIS card's call carries THIS
+// tier — not what the tier means in general.
+//
+// The whole corpus failed this. 75 of 80 curated cards fell back to the KB's rubric, so a
+// reader tapping into a card about picking a cantaloupe was told "Strong scientific
+// consensus, major health organization classification, or regulatory action in multiple
+// countries". The tier chip is the one piece of the card that says what KIND of claim it
+// is, and pointing all of them at four generic definitions retires that signal entirely.
+//
+// The rubric belongs in the PROMPT, as guidance for choosing a tier. It may never appear
+// in output.
+import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+
+const RUBRICS = Object.values(perimeterKb.evidence_tiers || {});
+
+const normText = (s) =>
+  String(s || '')
+    .toLowerCase()
+    .replace(/[‘’]/g, "'")
+    .replace(/[^a-z0-9']+/g, ' ')
+    .trim();
+
+// Six consecutive words shared with a rubric is a quotation, not a coincidence — it also
+// catches the paraphrase that keeps the rubric's spine and swaps a word or two.
+const SHARED_RUN = 6;
+
+export function echoesRubric(note) {
+  const n = normText(note);
+  if (!n) return false;
+  for (const rubric of RUBRICS) {
+    const r = normText(rubric);
+    if (!r) continue;
+    if (r.includes(n) || n.includes(r)) return true;
+    const rw = r.split(' ');
+    for (let i = 0; i + SHARED_RUN <= rw.length; i++) {
+      if (n.includes(rw.slice(i, i + SHARED_RUN).join(' '))) return true;
+    }
+  }
+  return false;
+}
+
 export const MAX_DO_WORDS = 12 + 2;
 export const MAX_HEADLINE_WORDS = 12;
 
@@ -35,6 +78,10 @@ export const IMPERATIVE_VERBS = new Set([
   'scrub', 'search', 'skip', 'smell', 'sort', 'spend', 'split', 'squeeze', 'start', 'stop',
   'store', 'swap', 'take', 'taste', 'tip', 'touch', 'trace', 'try', 'turn', 'walk', 'wash',
   'watch', 'weigh', 'wrap',
+  // The sensory batch. Produce and the counters are judged by hand and nose, and the list
+  // was rejecting the most natural verbs for it — a generated cantaloupe card opened with
+  // "Sniff" and cost a full retry for being right.
+  'peel', 'shake', 'sniff', 'tap', 'thump',
 ]);
 
 export const firstToken = (s) =>
@@ -174,6 +221,16 @@ export function lintCard(card) {
         `a generated card needs at least 2 aliases to be findable again; got ${aliases.length}`
       );
     }
+  }
+
+  const tierNote = String(card?.tier_note || '').trim();
+  if (!tierNote) {
+    fail('TIER_NOTE_MISSING', 'the tier chip has no reasoning behind it');
+  } else if (echoesRubric(tierNote)) {
+    fail(
+      'TIER_NOTE_IS_RUBRIC',
+      `the tier note repeats the rubric's definition instead of saying why THIS call carries this tier — "${tierNote.slice(0, 70)}…"`
+    );
   }
 
   if (headline && doLine) {

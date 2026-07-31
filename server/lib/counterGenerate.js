@@ -49,30 +49,62 @@ statistic, a study, or a health claim, say so by returning "insufficient": true.
 THE CARD SHAPE — every field is required unless marked optional:
 
   topic       2-5 words naming the subject. Title case off; sentence case.
-  eyebrow     The same thing as topic. Short label, not a sentence.
   section     EXACTLY one of: produce | meat | seafood | eggs_dairy | bulk_pantry | label_terms
   kind        "shelf" (something to do in the store) or "home" (washing, storing, keeping)
-  headline    THE VERDICT. A call, not a description. Maximum 12 words. This is what the
-              shopper reads first and it must decide something for them.
-  do          THE PHYSICAL ACTION, maximum 14 words, starting with an imperative verb.
+  headline    THE VERDICT. A call, not a description. MAXIMUM 12 WORDS — count them. This
+              is what the shopper reads first and it must decide something for them.
+  do          THE PHYSICAL ACTION, MAXIMUM 14 WORDS — count them — starting with an
+              imperative verb from the list below.
               It must name something OBSERVABLE in the store: a word printed on a label, a
-              colour, a number, a physical location, a specific product. It must NOT
-              restate the headline — if the headline already names the printed word, the
-              do line has nothing left to say, so put the verdict in the headline and the
-              observable here.
-              Good: "Read the first ingredient — it must say whole wheat flour."
-              Good: "Press with a fingertip. It should spring back, not stay dented."
-              Bad:  "Choose high-quality options when possible."  (names nothing)
-              Bad:  "Organic is generally the better choice."     (restates, not an action)
+              colour, a number, a physical location, a specific product.
   why         2-3 sentences. The reasoning behind the verdict.
   look_for    3-5 short items. What to check, each one concrete.
   watch_out   0-3 short items. Traps and things that look good and are not. Empty array is
               fine and better than filler.
   tier        EXACTLY one of: established | credible_concern | kristys_standard | time_tested
+  tier_note   ONE authored sentence saying why THIS PARTICULAR CALL carries THAT tier.
+              Not a definition of the tier. Not a sentence that would fit any other card.
+              Good (established): "Weight order on an ingredient list is required by law,
+                which is what makes position readable at all."
+              Good (kristys_standard): "The fatty-acid gap is measurable and modest. Paying
+                up for it is a standard, not a proven upgrade."
+              Bad: "Strong scientific consensus or regulatory action. Settled enough to act
+                on." (that is the tier's definition, and it fits every card equally)
   cta_item    OPTIONAL. A grocery NAME and nothing else, if the answer resolves to one
               honest product ("Bone-in chicken thighs"). null otherwise. NEVER on a home card.
   aliases     4-8 short phrases a shopper might type to reach this card. Lowercase. These
               are how the card is found again — without them it is written once and lost.
+
+THE DO LINE MUST SERVE THE HEADLINE'S VERDICT. This is the single most common failure, so
+check it explicitly before returning.
+
+The headline decides something. The do line is how the shopper ACTS ON THAT DECISION at
+the shelf. If the do line answers a different question — even a good question, even one
+the shopper might also have — the card wastes its most valuable line.
+
+  WORKED FAIL:
+    headline: "A2 milk is a protein-type label, not a whole-food upgrade."
+    do:       "Check the carton for the A2 seal."
+    Why it fails: the verdict is that the A2 label is NOT the thing that matters. The do
+    line then sends the shopper to find that exact label. Someone asking this question has
+    already found the carton — they are asking whether it is worth it. The do line answers
+    "where is the A2 seal", which nobody asked.
+
+  WORKED PASS:
+    headline: "A2 milk is a protein-type label, not a whole-food upgrade."
+    do:       "Read past the A2 claim for the pasteurization method and herd."
+    Why it passes: the verdict says the label is not the deciding factor, and the action
+    sends the shopper to what IS.
+
+Test it in one question: if the headline is right, does doing the do line follow from it?
+
+SIGNAL CONSISTENCY. Any signal named in the headline must also appear in the do line or in
+look_for, and the do line must never introduce a signal the headline contradicts.
+
+  FAIL: headline "Weight and smell decide a cantaloupe" + do "Press for give and smell"
+        — the headline promised weight and the action never mentions it.
+  PASS: headline "Smell decides a cantaloupe, not the rind colour" + do "Smell the stem end
+        for sweetness" + look_for includes "Heavier than another of the same size".
 
 HARD RULES — a card that breaks any of these is thrown away, not fixed:
 
@@ -115,10 +147,35 @@ VOICE — NO FIRST PERSON, ANYWHERE. Kristy is a standard, not a person narratin
 - NO EM-DASH ASIDES. Short plain sentences with periods.
 - HALF THE WORDS. Confidence reads as brevity.
 
+THE SHAPE RULES ARE MECHANICAL AND THEY ARE CHECKED. A card that breaks one is rejected
+and regenerated at full cost, so verify each before you return.
+
+1. headline: 12 words or fewer. Count them.
+2. do: 14 words or fewer. Count them.
+3. do must START with one of these verbs, exactly:
+   ask, avoid, bring, buy, call, carry, check, choose, compare, count, cover, decide, fill,
+   find, flip, freeze, get, grab, hold, ignore, keep, leave, lift, look, move, open, pass,
+   peel, pick, pop, pour, press, pull, push, put, read, reach, rinse, rotate, rub, scan,
+   scoop, scrub, search, shake, skip, smell, sniff, sort, spend, split, squeeze, start,
+   stop, store, swap, take, tap, taste, thump, tip, touch, trace, try, turn, walk, wash,
+   watch, weigh, wrap
+   If the verb you want is not on this list, rewrite the line with one that is.
+4. NO DISTINCTIVE WORD MAY APPEAR IN BOTH the headline and the do line. If the headline
+   says "marbling", the do line may not say "marbling". Ordinary words (the, for, a) do not
+   count; the SUBJECT and the OBSERVABLE do.
+   FAIL: headline "Ribeye wins on marbling" + do "Look for marbling through the muscle"
+   PASS: headline "Ribeye wins on the fat inside the muscle" + do "Look for white flecks
+         threaded through the centre, not a rim of fat"
+5. tier_note is one sentence, specific to this card, and never the tier's definition.
+6. aliases: at least 4, lowercase, each one something a shopper would actually type.
+
+BEFORE YOU RETURN, RE-READ YOUR OWN CARD AND CHECK ALL SIX, plus the do-line verdict test
+and signal consistency above. Fix anything that fails. Then return the JSON.
+
 Return ONLY this JSON, no prose and no code fence:
-{"insufficient": false, "topic": "...", "eyebrow": "...", "section": "...", "kind": "shelf",
+{"insufficient": false, "topic": "...", "section": "...", "kind": "shelf",
  "headline": "...", "do": "...", "why": "...", "look_for": ["..."], "watch_out": ["..."],
- "tier": "...", "cta_item": null, "aliases": ["..."]}`;
+ "tier": "...", "tier_note": "...", "cta_item": null, "aliases": ["..."]}`;
 
 const SECTIONS = new Set(['produce', 'meat', 'seafood', 'eggs_dairy', 'bulk_pantry', 'label_terms']);
 const TIERS = new Set(['established', 'credible_concern', 'kristys_standard', 'time_tested']);
@@ -153,12 +210,20 @@ export function toCard(obj, { slug, querySeed }) {
   const kind = obj.kind === 'home' ? 'home' : 'shelf';
   const section = SECTIONS.has(obj.section) ? obj.section : null;
   const tier = TIERS.has(obj.tier) ? obj.tier : 'kristys_standard';
+  const topic = str(obj.topic);
   return {
-    slug,
+    // Derived from the TOPIC, not the raw question. A question-derived slug carried the
+    // shopper's phrasing into an identifier — "gen_what_s_the_best_cut_of_steak_for_grilling"
+    // — so "best steak for grilling" and "what's the best cut of steak for grilling" became
+    // two rows answering one thing.
+    slug: slug || slugFor(topic),
     section,
-    topic: str(obj.topic),
+    topic,
     kind,
-    eyebrow: str(obj.eyebrow) || str(obj.topic),
+    // ONE RULE: the eyebrow IS the topic. It was drifting — identical on two generated
+    // cards and a separate shorter phrase on the third — and an eyebrow that sometimes
+    // restates the topic and sometimes abbreviates it is a label the reader cannot learn.
+    eyebrow: topic,
     headline: str(obj.headline),
     do: str(obj.do),
     tier,
@@ -172,7 +237,12 @@ export function toCard(obj, { slug, querySeed }) {
     // Left null, a generated card would render a tier CHIP with no framing behind it —
     // the reader sees "Time-tested" and never learns what that is worth, on the one kind
     // of card where the claim has no authored entry standing behind it.
-    tier_note: (perimeterKb.evidence_tiers || {})[tier] || null,
+    // AUTHORED BY THE MODEL, never filled from the rubric. Populating it with the tier's
+    // own definition is what made 75 curated cards say "Strong scientific consensus, major
+    // health organization classification…" under a card about picking a melon. The rubric
+    // is guidance for CHOOSING a tier and belongs only in the prompt; lintCard fails a note
+    // that quotes it back.
+    tier_note: str(obj.tier_note) || null,
     detail: '',
     kristy_take: '',
     labels_decoded: [],
@@ -185,14 +255,20 @@ export function toCard(obj, { slug, querySeed }) {
 
 /* ═══════════════════════════ The slug ═══════════════════════════ */
 
-// Derived from the normalized query, so the same question maps to the same slug and the
-// upsert on `slug` collapses a race rather than forking the corpus.
-export function slugFor(normalizedQuery) {
-  const base = str(normalizedQuery)
+// Derived from the card's TOPIC, so two phrasings of one question collapse to one row and
+// the upsert on `slug` resolves a race instead of forking the corpus.
+//
+// Apostrophes are NORMALIZED AWAY rather than split on. Deleting the character mid-word
+// turned "what's" into "what_s"; a curly apostrophe did the same. The word survives whole.
+export function slugFor(topic) {
+  const base = str(topic)
     .toLowerCase()
+    .replace(/[’‘`´]/g, "'")
+    .replace(/'/g, '')
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '')
-    .slice(0, 60);
+    .slice(0, 60)
+    .replace(/_+$/, '');
   return `gen_${base || 'question'}`;
 }
 
@@ -238,13 +314,26 @@ function textOf(completion) {
  *
  * @returns {Promise<{ card:object|null, attempts:Array<{violations:Array, raw:object|null}>, reason?:string }>}
  */
-export async function generateCard({ query, normalizedQuery, entries = [] }) {
-  const slug = slugFor(normalizedQuery || query);
+export async function generateCard({ query, querySeed, entries = [] }) {
   const attempts = [];
   let corrective = null;
 
   for (let attempt = 1; attempt <= 2; attempt++) {
-    const raw = parseCardJSON(await callModel({ query, entries, corrective }));
+    // A MODEL FAILURE IS A DISCARDED GENERATION, NOT A BROKEN REQUEST. Rate limits,
+    // timeouts and an exhausted credit balance all arrive here as a thrown API error, and
+    // an uncaught one would 500 a shopper standing in an aisle. The counter already knows
+    // how to have nothing to say: it falls back to the nearest curated card and an honest
+    // line, which is exactly the right shape for this too.
+    let reply;
+    try {
+      reply = await callModel({ query, entries, corrective });
+    } catch (err) {
+      console.error('[kristy] counter generation call failed:', err?.message || err);
+      attempts.push({ violations: [{ code: 'MODEL_ERROR', detail: err?.message || 'call failed' }], raw: null });
+      return { card: null, attempts, reason: 'model_error' };
+    }
+
+    const raw = parseCardJSON(reply);
 
     if (!raw) {
       attempts.push({ violations: [{ code: 'UNPARSEABLE', detail: 'not valid JSON' }], raw: null });
@@ -258,7 +347,9 @@ export async function generateCard({ query, normalizedQuery, entries = [] }) {
       return { card: null, attempts, reason: 'insufficient' };
     }
 
-    const card = toCard(raw, { slug, querySeed: normalizedQuery || null });
+    // The slug comes from the card's own topic, so it is only known once the model has
+    // answered. toCard derives it.
+    const card = toCard(raw, { slug: null, querySeed: querySeed || null });
     const violations = [...lintCard(card), ...claimLockViolations(card)];
     if (!card.section) violations.push({ code: 'SECTION_INVALID', detail: `section "${raw.section}" is not a store section` });
 

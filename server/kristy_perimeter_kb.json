@@ -49,7 +49,8 @@
           "term": "Wild-caught / Alaskan",
           "meaning": "Caught in the wild; Alaskan fisheries are well managed."
         }
-      ]
+      ],
+      "tier_note": "The fat difference is real and small. Preferring wild is a sourcing standard, not a nutrition verdict."
     },
     {
       "id": "canned_fish_mercury",
@@ -91,7 +92,8 @@
           "term": "White / Albacore",
           "meaning": "A larger tuna — more mercury than light."
         }
-      ]
+      ],
+      "tier_note": "Mercury rising with size and lifespan is uncontested, and every advisory is built on it."
     },
     {
       "id": "shrimp_imported_vs_domestic",
@@ -130,7 +132,8 @@
           "term": "Farm-raised",
           "meaning": "Pond or tank raised; quality depends entirely on the operation."
         }
-      ]
+      ],
+      "tier_note": "Farm practices genuinely vary by origin, the concern is documented, and a certified bag is the clean swap."
     },
     {
       "id": "fresh_vs_previously_frozen_fish",
@@ -169,7 +172,8 @@
           "term": "Fresh (never frozen)",
           "meaning": "Never frozen — but possibly several days old depending on transit."
         }
-      ]
+      ],
+      "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion."
     },
     {
       "id": "beef_grassfed_vs_grainfed",
@@ -208,7 +212,8 @@
           "term": "Grain-fed / grain-finished",
           "meaning": "Finished on grain in a feedlot — the US default."
         }
-      ]
+      ],
+      "tier_note": "The fatty-acid gap is measurable and modest. Paying up for it is a standard, not a proven upgrade."
     },
     {
       "id": "grassfed_vs_grassfinished",
@@ -246,7 +251,8 @@
           "term": "100% grass-fed / grass-finished",
           "meaning": "Grass its entire life — the claim most people think ‘grass-fed’ means."
         }
-      ]
+      ],
+      "tier_note": "What each term is allowed to mean is written into the labelling rules."
     },
     {
       "id": "beef_cuts_basics",
@@ -289,7 +295,8 @@
         "Quick sear/grill: ribeye, strip, sirloin, tenderloin.",
         "Ground chuck (around 80/20) is the all-purpose workhorse."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact."
     },
     {
       "id": "ground_beef_lean_ratio",
@@ -324,7 +331,8 @@
           "term": "80/20, 85/15, 90/10",
           "meaning": "Lean % to fat % by weight — higher first number = leaner."
         }
-      ]
+      ],
+      "tier_note": "The ratio is a defined weight measure. What it changes is texture, which is cooking, not health."
     },
     {
       "id": "egg_labels",
@@ -373,7 +381,8 @@
           "term": "Soy-free / corn-free",
           "meaning": "A FEED claim — the only kind that addresses the ration. Must be printed explicitly."
         }
-      ]
+      ],
+      "tier_note": "The ladder of space claims is defined. Which rung is worth paying for is the standard."
     },
     {
       "id": "egg_yolk_color",
@@ -401,7 +410,8 @@
         "A varied diet often means deeper color — but so can additives.",
         "Freshness (a firm, standing yolk) tells you more than color."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "That feed and additives drive yolk colour is well established, and it is why colour reads nothing."
     },
     {
       "id": "air_chilled_chicken",
@@ -434,7 +444,8 @@
           "term": "Contains up to X% retained water",
           "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
         }
-      ]
+      ],
+      "tier_note": "Retained water is a disclosed number. Preferring air-chilled is a standard about handling."
     },
     {
       "id": "no_antibiotics_poultry",
@@ -471,7 +482,8 @@
           "term": "No antibiotic residues",
           "meaning": "True of all chicken by law — not a differentiator."
         }
-      ]
+      ],
+      "tier_note": "Residue limits apply to every bird sold, which is what leaves the claim about raising alone."
     },
     {
       "id": "organic_worth_it_by_type",
@@ -512,7 +524,8 @@
           "term": "Natural",
           "meaning": "Means essentially nothing on produce — no organic standard behind it."
         }
-      ]
+      ],
+      "tier_note": "Surface residue on thin skins is a real and reported signal, and peeling or swapping answers it cleanly."
     },
     {
       "id": "frozen_vs_fresh_produce",
@@ -542,7 +555,8 @@
         "Frozen berries and spinach are staples that never spoil.",
         "Great for smoothies, soups, and sheet-pan roasts."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Freezing at harvest and the losses across days in transit are both well documented."
     },
     {
       "id": "produce_seasonality",
@@ -585,7 +599,8 @@
         "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
         "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Reading the season off the pile is a shopping habit offered as a standard, not a nutrition claim."
     },
     {
       "id": "washing_produce",
@@ -614,7 +629,8 @@
         "Wash right before eating, not before storing (moisture = mold).",
         "No soap or bleach — plain water is the recommendation."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Plain running water is the published recommendation, and the produce washes are not."
     },
     {
       "id": "precut_produce_tradeoffs",
@@ -647,7 +663,8 @@
           "term": "Pre-washed / triple-washed",
           "meaning": "Washed at the plant — a rinse at home is still a reasonable habit."
         }
-      ]
+      ],
+      "tier_note": "The nutrient loss from cutting is minor and measured. Whether convenience earns the premium is the standard."
     },
     {
       "id": "grassfed_butter",
@@ -682,7 +699,8 @@
           "term": "European-style",
           "meaning": "Higher butterfat (≈82%+) — richer, not necessarily grass-fed."
         }
-      ]
+      ],
+      "tier_note": "Butter is a whole food either way. Grass-fed is a feed and taste preference, stated as one."
     },
     {
       "id": "whole_vs_reduced_fat_milk",
@@ -717,7 +735,8 @@
           "term": "Reduced-fat (2%) / low-fat (1%) / skim",
           "meaning": "Progressively more milk fat removed."
         }
-      ]
+      ],
+      "tier_note": "The dairy-fat research is genuinely mixed, so whole milk is offered as a standard rather than a finding."
     },
     {
       "id": "cheese_real_vs_processed",
@@ -757,7 +776,8 @@
           "term": "Pasteurized process cheese / cheese product / cheese food",
           "meaning": "Cheese blended with emulsifiers and other ingredients — progressively less actual cheese."
         }
-      ]
+      ],
+      "tier_note": "What may legally be called cheese is defined. Preferring the block is the standard laid over it."
     },
     {
       "id": "yogurt_plain_vs_flavored",
@@ -793,7 +813,8 @@
           "term": "Live and active cultures",
           "meaning": "The fermenting bacteria are present and viable."
         }
-      ]
+      ],
+      "tier_note": "The added-sugar difference is printed on the panel. Buying plain and sweetening it is the standard."
     },
     {
       "id": "raw_milk",
@@ -878,7 +899,8 @@
         "Basmati and California-grown tend to test lower in arsenic.",
         "Vary grains — oats, quinoa, barley — so rice isn’t every meal."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Rice taking up more inorganic arsenic than other grains is established, and so are the cooking steps that lower it."
     },
     {
       "id": "oats_steelcut_rolled_instant",
@@ -914,7 +936,8 @@
           "term": "Instant / flavored",
           "meaning": "Pre-cooked and usually pre-sweetened — read the added sugar."
         }
-      ]
+      ],
+      "tier_note": "The three forms differ only by defined processing, and the packet sugar is on the panel."
     },
     {
       "id": "nuts_raw_vs_roasted",
@@ -959,7 +982,8 @@
         "US almonds sold as \"raw\" are pasteurized by law, by steam or by PPO. The word is not literal here.",
         "Most \"raw\" cashews were steamed out of the shell. Nobody sells a truly raw one.",
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
-      ]
+      ],
+      "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard."
     },
     {
       "id": "olive_oil_buying",
@@ -999,7 +1023,8 @@
           "term": "Light / pure olive oil",
           "meaning": "Refined, milder — not a health ‘light’, just processed and less flavorful."
         }
-      ]
+      ],
+      "tier_note": "Adulteration in the olive oil trade is documented and ongoing, and those three signals are the check against it."
     },
     {
       "id": "honey_adulteration",
@@ -1043,7 +1068,8 @@
         "Not for infants under twelve months. Beekeepers say this themselves.",
         "\"Raw\" with no named producer is frequently blended and filtered. The word is unregulated.",
         "\"Pure honey\" is a marketing word with little enforcement. Traceability is the real check."
-      ]
+      ],
+      "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome."
     },
     {
       "id": "beans_dried_vs_canned",
@@ -1079,7 +1105,8 @@
           "term": "BPA-free",
           "meaning": "Can lining without BPA — a minor plus if it matters to you."
         }
-      ]
+      ],
+      "tier_note": "That rinsing removes much of the canning sodium is measured, and beans as the cheapest real protein is arithmetic."
     },
     {
       "id": "label_natural",
@@ -1116,7 +1143,8 @@
       "watch_out": [
         "“Natural” is largely undefined outside of meat, and rarely enforced anywhere.",
         "On meat it means no artificial ingredients and minimal processing. It says nothing about how the animal was raised."
-      ]
+      ],
+      "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record."
     },
     {
       "id": "label_made_with_real",
@@ -1153,7 +1181,8 @@
       "watch_out": [
         "“Made with real ___” sets no minimum. A trace amount earns the same words.",
         "The named ingredient often sits below the added sugar and the refined flour."
-      ]
+      ],
+      "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell."
     },
     {
       "id": "label_no_added_hormones",
@@ -1194,7 +1223,8 @@
       "watch_out": [
         "On chicken and pork it is a freebie — hormones are banned in both by law.",
         "On beef and dairy it is a real distinction, but only third-party verification backs it."
-      ]
+      ],
+      "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there."
     },
     {
       "id": "label_free_range",
@@ -1231,7 +1261,8 @@
       "watch_out": [
         "“Free-range” requires only some outdoor access, loosely defined and loosely enforced.",
         "It is not pasture. Without a certifier’s seal, nothing is auditing the claim."
-      ]
+      ],
+      "tier_note": "The requirements behind the term are written down, and how little they specify is the point."
     },
     {
       "id": "label_nonGMO_vs_organic",
@@ -1274,7 +1305,8 @@
         "Non-GMO covers that single issue — nothing about pesticides, feed or practices.",
         "Paying for both seals is paying twice. Organic already requires non-GMO.",
         "Some foods carry a non-GMO seal though no GMO version of them exists."
-      ]
+      ],
+      "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued."
     },
     {
       "id": "label_cage_free",
@@ -1311,7 +1343,8 @@
       "watch_out": [
         "Cage-free usually means indoors, and it can still mean crowded.",
         "It is a defined term for eggs. On other products it carries much less."
-      ]
+      ],
+      "tier_note": "What cage-free requires, and what it leaves out, are both specified in the standard."
     },
     {
       "id": "label_grass_fed_term",
@@ -1351,7 +1384,8 @@
       "watch_out": [
         "A bare “grass-fed” allows a grain finish in the feedlot before slaughter.",
         "The claim is weakly enforced on its own. Certification is what backs it."
-      ]
+      ],
+      "tier_note": "The bare term’s weak enforcement and its grain-finish allowance are both on the record."
     },
     {
       "id": "label_pasture_raised_feed",
@@ -1413,7 +1447,8 @@
         "Cage-free, free-range and pasture-raised are all SPACE claims. None says a word about feed.",
         "Organic reaches feed, but requires it be organic — usually organic soy and corn.",
         "“Grass-fed” on beef is the same trap: it can still end on grain."
-      ]
+      ],
+      "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other."
     },
     {
       "id": "label_organic_scope",
@@ -1462,7 +1497,8 @@
         "Organic is not pesticide-free. Approved natural pesticides are permitted.",
         "It is a production standard, not a quality grade — an organic cookie is still a cookie.",
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
-      ]
+      ],
+      "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included."
     },
     {
       "id": "produce_picking_ripeness",
@@ -1505,7 +1541,8 @@
           "term": "Hass",
           "meaning": "An avocado VARIETY, grown in several countries — not an origin."
         }
-      ]
+      ],
+      "tier_note": "Judging the piece over the sticker is a shopping habit held as a standard, not a measurement."
     },
     {
       "id": "label_multigrain_vs_whole_grain",
@@ -1553,7 +1590,8 @@
         "“Multigrain” is a headcount. Every one of those grains may be refined.",
         "“Made with whole grains” permits any fraction, and it is often small.",
         "Brown bread is frequently white flour with caramel coloring."
-      ]
+      ],
+      "tier_note": "Whole grain carries a definition and multigrain does not. That gap is the entire difference."
     },
     {
       "id": "label_lightly_sweetened",
@@ -1606,7 +1644,8 @@
         "“Lightly sweetened” has no regulatory meaning at all.",
         "“No sugar added” still allows the food’s own sugars, which can be substantial.",
         "“Reduced sugar” is 25% less than a reference food that may have been very sweet."
-      ]
+      ],
+      "tier_note": "The phrase has no legal definition. The added-sugars line does, and it cannot be spun."
     },
     {
       "id": "label_no_artificial_flavors",
@@ -1654,7 +1693,8 @@
       "watch_out": [
         "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
         "“Natural flavors” can carry solvents and carriers that need no separate declaration."
-      ]
+      ],
+      "tier_note": "The legal line between natural and artificial flavour is the starting material, and it is written down."
     },
     {
       "id": "egg_shell_color",
@@ -1693,7 +1733,8 @@
           "term": "White egg",
           "meaning": "Laid by a white-egg breed. The same egg inside."
         }
-      ]
+      ],
+      "tier_note": "Shell colour tracking breed is basic genetics, and it is why the price gap buys nothing."
     },
     {
       "id": "egg_freshness",
@@ -1739,7 +1780,8 @@
           "term": "Plant code (P-####)",
           "meaning": "The packing facility. Sits beside the pack date."
         }
-      ]
+      ],
+      "tier_note": "The Julian pack date is a required code with a defined meaning. The sell-by date is a schedule."
     },
     {
       "id": "egg_grades_sizes",
@@ -1789,7 +1831,8 @@
           "term": "Large / XL / Jumbo",
           "meaning": "Weight per dozen: 24, 27 and 30 ounces."
         }
-      ]
+      ],
+      "tier_note": "Grade and size are defined measures of appearance and weight. Neither describes the hen."
     },
     {
       "id": "egg_feed_claims",
@@ -1838,7 +1881,8 @@
           "term": "Soy-free / corn-free",
           "meaning": "A direct claim about the ration. Must be printed explicitly."
         }
-      ]
+      ],
+      "tier_note": "A feed claim has to be printed to be made, which is exactly why silence on the carton means nothing."
     },
     {
       "id": "egg_storage",
@@ -1880,7 +1924,8 @@
           "term": "Unwashed / farm fresh",
           "meaning": "Cuticle intact. Can be held at room temperature until washed."
         }
-      ]
+      ],
+      "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold."
     },
     {
       "id": "beef_grades_usda",
@@ -1930,7 +1975,8 @@
           "term": "Ungraded",
           "meaning": "Never submitted for grading. Says nothing about quality either way."
         }
-      ]
+      ],
+      "tier_note": "USDA grading measures marbling and maturity against a published standard, and nothing else."
     },
     {
       "id": "judging_meat_at_the_case",
@@ -1974,7 +2020,8 @@
           "term": "Purge",
           "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
         }
-      ]
+      ],
+      "tier_note": "Colour coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness."
     },
     {
       "id": "butcher_counter_asking",
@@ -2006,7 +2053,8 @@
         "Ask the sourcing question outright: grass-finished, air-chilled, where from.",
         "Ask them to portion it. Cutting, tying and boning are usually included."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat."
     },
     {
       "id": "chicken_cuts_basics",
@@ -2051,7 +2099,8 @@
           "term": "White meat (breast, tenderloin)",
           "meaning": "Low-use muscle. Lean and fast, dries out quickly."
         }
-      ]
+      ],
+      "tier_note": "Dark meat’s forgiveness is how the cut behaves. Defaulting to thighs is the standard over it."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -2096,7 +2145,8 @@
           "term": "Natural",
           "meaning": "On meat, minimally processed with no artificial ingredients. Says nothing about raising."
         }
-      ]
+      ],
+      "tier_note": "Added solution must be disclosed by weight, which is what makes the fine print worth finding."
     },
     {
       "id": "deli_meat_uncured",
@@ -2139,7 +2189,8 @@
           "term": "No nitrates or nitrites added*",
           "meaning": "The asterisk reads ‘except those naturally occurring in celery powder’."
         }
-      ]
+      ],
+      "tier_note": "Celery powder is the same nitrate chemistry under a different word, and the asterisk is required."
     },
     {
       "id": "mercury_by_fish",
@@ -2189,7 +2240,8 @@
           "term": "Ahi / bigeye",
           "meaning": "A large, long-lived tuna. Near the top of the range."
         }
-      ]
+      ],
+      "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it."
     },
     {
       "id": "fish_freshness_at_counter",
@@ -2227,7 +2279,8 @@
           "term": "Gaping",
           "meaning": "Flakes separating on a fillet. A sign it has aged."
         }
-      ]
+      ],
+      "tier_note": "The smell of spoilage is a documented chemical change, not an opinion about the fish."
     },
     {
       "id": "canned_fish_choosing",
@@ -2275,7 +2328,8 @@
           "term": "Skinless, boneless",
           "meaning": "Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating."
         }
-      ]
+      ],
+      "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it."
     },
     {
       "id": "farmed_fish_by_species",
@@ -2321,7 +2375,8 @@
           "term": "Product of [country]",
           "meaning": "Country-of-origin labeling. Required, and the most useful line on the package."
         }
-      ]
+      ],
+      "tier_note": "Filter feeders take no feed at all. Which farms are worth trusting is the standard."
     },
     {
       "id": "seafood_certifications",
@@ -2375,7 +2430,8 @@
           "term": "Seafood Watch",
           "meaning": "A ratings program, not a package seal."
         }
-      ]
+      ],
+      "tier_note": "Every real program publishes its scope, including the questions it does not answer."
     },
     {
       "id": "produce_ripeness_by_item",
@@ -2419,7 +2475,8 @@
         "Broccoli and cauliflower: tight dense heads, no yellowing between the florets.",
         "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one."
     },
     {
       "id": "produce_storage",
@@ -2454,7 +2511,8 @@
         "Greens: dry, with a paper towel in the bag to take up moisture.",
         "Buy at staggered ripeness so the whole week does not turn on Tuesday."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Ethylene ripening its neighbours, and moisture rotting a drawer, are both well established."
     },
     {
       "id": "milk_processing",
@@ -2506,7 +2564,8 @@
           "term": "Cream-top / non-homogenized",
           "meaning": "Cream separates and rises. Still pasteurized."
         }
-      ]
+      ],
+      "tier_note": "Ultra-pasteurization is disclosed on the carton. Preferring fewer steps is the standard."
     },
     {
       "id": "pre_shredded_cheese",
@@ -2560,7 +2619,8 @@
           "term": "Parmigiano-Reggiano",
           "meaning": "A protected designation with production rules and a stamped rind."
         }
-      ]
+      ],
+      "tier_note": "The anti-caking coating is on the ingredient list, and it is why the shreds melt badly."
     },
     {
       "id": "yogurt_live_cultures",
@@ -2614,7 +2674,8 @@
           "term": "Kefir",
           "meaning": "A drinkable ferment with a wider mix of cultures."
         }
-      ]
+      ],
+      "tier_note": "The live-cultures seal is a defined program, and heat treatment after culturing has to be disclosed."
     },
     {
       "id": "cream_vs_creamer",
@@ -2662,7 +2723,8 @@
           "term": "Non-dairy creamer",
           "meaning": "No dairy. Water or corn syrup solids, oil, emulsifiers and flavors."
         }
-      ]
+      ],
+      "tier_note": "Cream carries a legal milkfat minimum. Creamer carries none, because it is not dairy."
     },
     {
       "id": "flour_basics",
@@ -2716,7 +2778,8 @@
           "term": "Whole wheat",
           "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."
         }
-      ]
+      ],
+      "tier_note": "Bleached, enriched and whole are defined terms, and the germ’s oil turning is simply what fat does."
     },
     {
       "id": "bulk_bins_buying",
@@ -2751,7 +2814,8 @@
         "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
         "Buy what you will use in a month, and store it airtight and dark."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule."
     },
     {
       "id": "rancidity_check",
@@ -2785,7 +2849,8 @@
         "Nuts, seeds, whole-grain flour and nut butters keep far longer in the fridge or freezer.",
         "Buy oil in a size you will finish in a couple of months rather than the big bottle."
       ],
-      "labels_decoded": []
+      "labels_decoded": [],
+      "tier_note": "Rancid fat is a quality problem rather than a safety one, and it is flagged on exactly that basis."
     },
     {
       "id": "olive_oil_grades",
@@ -2843,7 +2908,8 @@
           "term": "Packed in [country]",
           "meaning": "Where it was bottled. Not where the olives grew."
         }
-      ]
+      ],
+      "tier_note": "Extra virgin and refined are defined grades, and what ‘light’ refers to is written down."
     },
     {
       "id": "nut_butter_ingredients",
@@ -2892,7 +2958,8 @@
           "term": "Reduced fat",
           "meaning": "Fat removed and usually replaced with sugar and starch."
         }
-      ]
+      ],
+      "tier_note": "What holds no-stir texture together is on the list. Wanting only peanuts is the standard."
     },
     {
       "id": "grains_beyond_rice",
@@ -2939,7 +3006,8 @@
           "term": "Whole / hulled",
           "meaning": "Bran intact. A longer cook, and it holds its chew."
         }
-      ]
+      ],
+      "tier_note": "Cook times and texture are properties of the grain, not a claim made about it."
     },
     {
       "id": "label_front_vs_back",
@@ -2985,7 +3053,8 @@
       "watch_out": [
         "Natural, wholesome and farm fresh carry little or no definition.",
         "When the front and the back disagree, the front is the one nobody had to check."
-      ]
+      ],
+      "tier_note": "The panel’s contents are mandated and the front of the box is not. That asymmetry is the whole rule."
     },
     {
       "id": "label_ingredient_order",
@@ -3032,7 +3101,8 @@
         "Everything after “contains 2% or less of” is a trace, and not in weight order.",
         "Sugars get split across syrups, concentrates and dextrose so no single one ranks high.",
         "“Enriched wheat flour” as a first ingredient is not “whole wheat flour”."
-      ]
+      ],
+      "tier_note": "Weight order is required by law, which is what makes position readable at all."
     },
     {
       "id": "label_third_party_seals",
@@ -3091,7 +3161,8 @@
         "An unnamed badge is often a company’s own mark — no published standard, no outside auditor.",
         "Each seal covers one scope. Organic is not welfare, and welfare is not pesticides.",
         "More seals is not a better food. It is a food that bought more audits."
-      ]
+      ],
+      "tier_note": "Who writes a standard and who audits it is public for every program worth the badge."
     },
     {
       "id": "label_cold_pressed_expeller",
@@ -3148,7 +3219,8 @@
         "No process word at all usually means solvent-extracted and refined.",
         "“Cold-pressed” is tightly defined only for olive oil.",
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
-      ]
+      ],
+      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one."
     },
     {
       "id": "label_sugar_free_substitutes",
@@ -3208,7 +3280,8 @@
       "watch_out": [
         "“Sugar-free” does not mean unsweetened — something else is doing the sweetening.",
         "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify."
-      ]
+      ],
+      "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in."
     },
     {
       "id": "label_wild_vs_farm_raised",
@@ -3260,7 +3333,8 @@
         "Origin can name where it was processed, not where it was caught.",
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
         "“Farm-raised” alone is not a verdict — the species and the operation decide it."
-      ]
+      ],
+      "tier_note": "Species, method and country are all required disclosures on unprocessed seafood."
     },
     {
       "id": "label_serving_size",
@@ -3310,7 +3384,8 @@
       "watch_out": [
         "Serving sizes reflect what people typically eat. They are not a recommendation.",
         "Two products only compare if their serving sizes match. Check both."
-      ]
+      ],
+      "tier_note": "Every number on the panel is per serving by rule, which is why the top two lines come first."
     },
     {
       "id": "raw_kefir",

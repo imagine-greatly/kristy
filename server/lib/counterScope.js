@@ -55,8 +55,13 @@ const DENY = [
 
 // A grocery ACT. The counter is about buying, and the home cards are about keeping and
 // washing, so all of it counts.
+// The keeping/spoiling/safety verbs are in here deliberately. "Is bagged salad safe" was
+// landing as off-topic, and it is a shopping question. Kristy does not ask whether a food
+// is safe, she asks who made it — so these route to a SOURCING answer, and the claim lock
+// is what stops that answer becoming reassurance. Anything genuinely medical is already
+// gone by this point: the deny list runs first.
 const GROCERY_ACT =
-  /\b(buy|buying|bought|choose|choosing|pick|picking|get|getting|shop|shopping|worth it|which|what kind|what type|look for|tell if|spot|store|storing|keep|keeping|freeze|freezing|thaw|wash|washing|rinse|prep|prepare|cook|cooking|ripe|fresh|freshness|quality|label|brand|aisle|price|cheaper|better|best|vs\.?|versus|difference)\b/i;
+  /\b(buy|buying|bought|choose|choosing|pick|picking|get|getting|shop|shopping|worth it|which|what kind|what type|look for|tell if|spot|store|storing|keep|keeping|freeze|freezing|thaw|wash|washing|rinse|prep|prepare|cook|cooking|ripe|fresh|freshness|quality|label|brand|aisle|price|cheaper|better|best|vs\.?|versus|difference|safe|safety|risky|spoil\w*|rot|rotten|go bad|last|lasts|expire\w*|shelf life)\b/i;
 
 // A grocery SUBJECT beyond the counter's own vocabulary — the packaged half, the store
 // itself, and the general food nouns a shopper uses.
