@@ -124,6 +124,16 @@ export async function answerCounterQuestion({
 
   if (!allowGeneration) return fallback('generation_disabled');
 
+  // FAIL CLOSED WHEN THE CORPUS IS UNREADABLE. If the generated cards cannot be queried,
+  // two things are true at once: this question cannot be deduped against what already
+  // exists, and a card written now probably cannot be stored either. Generating anyway
+  // spends real money on an answer that evaporates and regenerates on the very next ask —
+  // and the global ceiling counts PERSISTED rows, so it never engages to stop it.
+  //
+  // This is not hypothetical. counter_cards shipped without the `aliases` column, and that
+  // is exactly the loop production ran until supabase/counter_cards_aliases.sql landed.
+  if (gen.unavailable) return fallback('corpus_unavailable');
+
   const ceiling = await globalCeilingReached(client);
   if (ceiling.reached) return fallback(ceiling.reason === 'unreadable' ? 'ceiling_unreadable' : 'global_ceiling');
 

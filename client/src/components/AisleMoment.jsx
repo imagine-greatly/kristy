@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter, fetchCounterSections, fetchCounterCard } from '../lib/perimeter.js';
+import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard } from '../lib/perimeter.js';
 import CounterCard from './CounterCard.jsx';
+import CounterAnswer, { CounterAnswerSkeleton } from './CounterAnswer.jsx';
 import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════ The counter — the half of the store with no label ═══════════════
@@ -101,14 +102,17 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     }
   }
 
+  // ONE route for every ask — the bar and the seed chips both land here. The server
+  // decides whether the answer is a curated card, one generated for a question the KB
+  // never covered, or an out-of-scope line; all three come back in the same shape.
   async function runAsk(raw, via) {
     const q = String(raw || '').trim();
     if (!q || ask?.state === 'loading') return;
     setAsk({ state: 'loading' });
-    trackEvent('perimeter-ask', { via });
+    trackEvent('counter-ask', { via });
     try {
-      const resp = await askPerimeter({
-        question: q,
+      const resp = await askCounter({
+        query: q,
         goal: prefs?.goal || '',
         focuses: prefs?.focuses || [],
         hardLines: prefs?.hardLines || [],
@@ -259,10 +263,17 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         </div>
       </div>
 
+      {/* A card can take seconds to generate. The skeleton is the card's own shape, so the
+          layout does not jump and the wait reads as an answer arriving. */}
+      {ask?.state === 'loading' && (
+        <div style={styles.answer}>
+          <CounterAnswerSkeleton />
+        </div>
+      )}
       {ask?.state === 'error' && <p style={styles.muted}>That did not go through. Try again.</p>}
       {ask?.state === 'done' && (
         <div style={styles.answer}>
-          <PerimeterAnswer resp={ask.resp} onUpgrade={onUpgrade} onAddToCart={onAddToCart} />
+          <CounterAnswer resp={ask.resp} onUpgrade={onUpgrade} onAddToCart={onAddToCart} />
         </div>
       )}
 

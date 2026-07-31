@@ -215,3 +215,28 @@ test('an API error degrades to a discarded generation, never a 500', async () =>
     else process.env.ANTHROPIC_API_KEY = original;
   }
 });
+
+/* ═══════════════ Fail closed when the corpus cannot be read ═══════════════ */
+
+test('an unreadable generated corpus stops generation instead of spending on it', async () => {
+  // counter_cards shipped without the `aliases` column. Every generated card failed to
+  // persist and every read of them failed too, so the same question regenerated on every
+  // ask — and the global ceiling counts PERSISTED rows, so it never engaged to stop it.
+  // If the corpus cannot be read, this question cannot be deduped and a card written now
+  // probably cannot be stored: degrade to curated-only rather than pay for nothing.
+  const { answerCounterQuestion } = await import('./counterAskPipeline.js');
+  const brokenClient = {
+    from: () => ({
+      select: () => ({
+        eq: () => ({ order: () => ({ limit: async () => ({ data: null, error: { message: 'no aliases column' } }) }) }),
+      }),
+    }),
+  };
+  const out = await answerCounterQuestion({
+    query: 'how do I pick a good cantaloupe',
+    ip: '203.0.113.9',
+    client: brokenClient,
+  });
+  assert.equal(out.reason, 'corpus_unavailable');
+  assert.equal(out.matched, false, 'no generated card should be produced');
+});

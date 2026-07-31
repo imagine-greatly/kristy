@@ -154,3 +154,25 @@ export async function fetchCounterCard(slug) {
   if (!res.ok) return null;
   return res.json();
 }
+
+/* ═══════════════ Ask the counter ═══════════════
+   ONE route for every ask — the bar, the seed chips, and eventually the docked composer.
+   The server decides what comes back: a curated card, a card generated for a question the
+   KB never covered, or an out-of-scope line. The client renders all three the same way
+   because they ARE the same object; only `source` differs, and the shopper is not the
+   audience for that field.
+
+   Public, like the rest of the free layer. No account, no token required. */
+export async function askCounter({ query, goal = '', focuses = [], hardLines = [], constraints = [] }) {
+  const res = await fetch(`${apiBase}/api/counter/ask`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...(await authHeader()) },
+    body: JSON.stringify({ query, goal, focuses, hardLines, constraints }),
+  });
+  if (res.status === 429) {
+    const body = await res.json().catch(() => ({}));
+    return { rateLimited: true, line: body.message || 'Too many questions at once. Try again shortly.' };
+  }
+  if (!res.ok) throw new Error('The counter did not answer. Try again.');
+  return res.json();
+}

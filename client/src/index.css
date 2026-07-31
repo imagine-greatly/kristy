@@ -2336,3 +2336,15 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* The counter answer skeleton. A card takes seconds to generate, and a shape that
+   breathes reads as something arriving; a static grey block reads as broken. */
+@keyframes kristyPulse {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.6; }
+}
+@media (prefers-reduced-motion: reduce) {
+  @keyframes kristyPulse {
+    0%, 100% { opacity: 0.45; }
+  }
+}

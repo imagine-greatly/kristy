@@ -375,9 +375,15 @@ export async function persistCard(card, client) {
     if (error) throw new Error(error.message);
     return { persisted: true };
   } catch (err) {
-    // A shopper's answer never depends on our write succeeding. They get the card; the
-    // corpus misses one row and the gap log still recorded the question.
-    console.warn('[kristy] generated card not persisted:', err?.message || err);
+    // A shopper's answer never depends on our write succeeding — they get the card either
+    // way. But a persist failure is NOT a minor degradation: the loop's entire value is
+    // that the next shopper gets this answer free, and a card that cannot be stored
+    // regenerates at full price forever. It shipped once as a swallowed warning about a
+    // missing column and cost real money before anyone noticed, so it is an ERROR now.
+    console.error(
+      `[kristy] GENERATED CARD NOT PERSISTED (${card.slug}) — the corpus is not growing ` +
+        `and this question will regenerate on every ask: ${err?.message || err}`
+    );
     return { persisted: false, reason: err?.message || 'error' };
   }
 }

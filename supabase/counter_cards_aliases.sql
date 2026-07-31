@@ -1,0 +1,23 @@
+-- Kristy — counter_cards.aliases. Additive, idempotent, and urgent.
+--
+-- WHAT WAS BROKEN. A generated card carries `aliases` — the phrases a shopper might type
+-- to reach it — and they are the ONLY way a generated card is ever retrieved again. The
+-- deterministic matcher scores alias phrases; a card with none scores zero against every
+-- future question. counter_cards.sql shipped without the column, so:
+--
+--   1. Every generated card failed to persist (PGRST204), swallowed as a warning, so the
+--      corpus never grew.
+--   2. Reading generated cards back failed for the same reason, so nothing deduped.
+--   3. The same question regenerated on every ask — the unbounded spend loop the alias
+--      requirement exists to prevent.
+--   4. The global daily ceiling counts generated rows created today. That count is
+--      permanently zero when nothing persists, so the ceiling never engaged either.
+--
+-- jsonb rather than text[], to match look_for / watch_out / labels_decoded — the row
+-- mapper hands the whole card through one shape and a lone Postgres array would be the
+-- odd one out.
+alter table counter_cards add column if not exists aliases jsonb not null default '[]'::jsonb;
+
+-- Nothing indexes it: alias scoring happens in JS over a bounded fetch (see
+-- getGeneratedCards), and a GIN index on a table this size would cost more to maintain
+-- than the scan it saves. Revisit if the generated corpus passes a few thousand rows.
