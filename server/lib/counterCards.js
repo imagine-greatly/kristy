@@ -243,7 +243,11 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     kind,
 
     // ── summary ──
-    eyebrow: entry.title,
+    // The shelf renders eight eyebrows stacked, and the KB title is written to name a
+    // topic in a list, not to sit beside a tier badge in a 184px slot. Four of the eight
+    // clipped. `eyebrow_short` overrides where an entry authors one; the other 74 keep
+    // their title, which is why this is a fallback rather than a second field everywhere.
+    eyebrow: entry.eyebrow_short || entry.title,
     headline: entry.decision || '',
     do: String(doLine || '').trim(),
     tier: entry.evidence_tier || null,

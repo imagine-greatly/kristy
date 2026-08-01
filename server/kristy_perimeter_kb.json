@@ -50,7 +50,8 @@
           "meaning": "Caught in the wild; Alaskan fisheries are well managed."
         }
       ],
-      "tier_note": "The fat difference is real and small. Preferring wild is a sourcing standard, not a nutrition verdict."
+      "tier_note": "The fat difference is real and small. Preferring wild is a sourcing standard, not a nutrition verdict.",
+      "eyebrow_short": "Wild or farmed"
     },
     {
       "id": "canned_fish_mercury",
@@ -213,7 +214,8 @@
           "meaning": "Finished on grain in a feedlot — the US default."
         }
       ],
-      "tier_note": "The fatty-acid gap is measurable and modest. Paying up for it is a standard, not a proven upgrade."
+      "tier_note": "The fatty-acid gap is measurable and modest. Paying up for it is a standard, not a proven upgrade.",
+      "eyebrow_short": "Grass-fed beef"
     },
     {
       "id": "grassfed_vs_grassfinished",
@@ -382,7 +384,8 @@
           "meaning": "A FEED claim — the only kind that addresses the ration. Must be printed explicitly."
         }
       ],
-      "tier_note": "The ladder of space claims is defined. Which rung is worth paying for is the standard."
+      "tier_note": "The ladder of space claims is defined. Which rung is worth paying for is the standard.",
+      "eyebrow_short": "Egg labels"
     },
     {
       "id": "egg_yolk_color",
@@ -525,7 +528,8 @@
           "meaning": "Means essentially nothing on produce — no organic standard behind it."
         }
       ],
-      "tier_note": "Surface residue on thin skins is a real and reported signal, and peeling or swapping answers it cleanly."
+      "tier_note": "Surface residue on thin skins is a real and reported signal, and peeling or swapping answers it cleanly.",
+      "eyebrow_short": "Buying organic"
     },
     {
       "id": "frozen_vs_fresh_produce",
@@ -736,7 +740,8 @@
           "meaning": "Progressively more milk fat removed."
         }
       ],
-      "tier_note": "The dairy-fat research is genuinely mixed, so whole milk is offered as a standard rather than a finding."
+      "tier_note": "The dairy-fat research is genuinely mixed, so whole milk is offered as a standard rather than a finding.",
+      "eyebrow_short": "Whole vs. reduced"
     },
     {
       "id": "cheese_real_vs_processed",
@@ -2021,7 +2026,8 @@
           "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
         }
       ],
-      "tier_note": "Color coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness."
+      "tier_note": "Color coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness.",
+      "eyebrow_short": "Judging meat"
     },
     {
       "id": "butcher_counter_asking",
@@ -2476,7 +2482,8 @@
         "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base."
       ],
       "labels_decoded": [],
-      "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one."
+      "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one.",
+      "eyebrow_short": "Picking produce"
     },
     {
       "id": "produce_storage",
@@ -3011,7 +3018,7 @@
     },
     {
       "id": "label_front_vs_back",
-      "title": "The front sells, the back tells",
+      "title": "Front vs. back",
       "aliases": [
         "front of package",
         "back of package",
@@ -3054,7 +3061,8 @@
         "Natural, wholesome and farm fresh carry little or no definition.",
         "When the front and the back disagree, the front is the one nobody had to check."
       ],
-      "tier_note": "The panel’s contents are mandated and the front of the box is not. That asymmetry is the whole rule."
+      "tier_note": "The panel’s contents are mandated and the front of the box is not. That asymmetry is the whole rule.",
+      "eyebrow_short": "Front vs. back"
     },
     {
       "id": "label_ingredient_order",

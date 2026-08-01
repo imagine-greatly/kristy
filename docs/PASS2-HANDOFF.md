@@ -1,3 +1,11 @@
+> ## ⛔ SUPERSEDED — read `docs/PASS3-HANDOFF.md` first
+>
+> Passes 1, 2 and 3 all shipped to `main` on 2026-07-31. This file is kept for the Pass 2
+> rulings it records (the `do`-line bar, the summary-line standard, the raw/sourcing
+> principle, the named-group asymmetry) — those are still in force. Everything about STATE
+> in here is stale: the migration has run, the card component is built, the skim tests
+> exist, and the screenshots were taken.
+
 # Counter overhaul — Pass 2 handoff
 
 Written 2026-07-31, end of session. Assumes zero conversation history: everything
