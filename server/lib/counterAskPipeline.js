@@ -53,8 +53,7 @@ const GENERATED_HIT = 2;
 
 // What Kristy says when the corpus has nothing and generation could not run. Never an
 // error, never an explanation of a budget.
-const NO_READ =
-  'No solid read on that one yet. Better said than guessed — it is on the list to write.';
+const NO_READ = 'No solid read on that one yet.';
 
 /**
  * Answer one counter question.

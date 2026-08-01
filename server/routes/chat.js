@@ -18,6 +18,7 @@ import {
   composeAnswer,
   publicEntry,
   NO_ANSWER,
+  COUNTER_UPSELL,
 } from '../lib/perimeter.js';
 import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import { composeListEdit } from '../lib/listCompose.js';
@@ -43,9 +44,6 @@ const router = Router();
    never get hijacked. Gating mirrors /api/perimeter/ask: free gets the KB
    entry's own words; premium gets the personalized, claim-locked read. */
 
-// No first person: the value is named, nobody performs it (VOICE_SPEC).
-const PERIMETER_UPSELL =
-  "That's the honest rundown, free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week.";
 
 async function perimeterChatReply({ message, matched, premium, prefs }) {
   if (premium) {
@@ -72,7 +70,7 @@ async function perimeterChatReply({ message, matched, premium, prefs }) {
   const top = publicEntry(matched[0]);
   const lead = [top.decision, top.why].filter(Boolean).join(' ');
   const base = lead || top.short_answer || top.detail || NO_ANSWER;
-  return premium ? base : `${base} ${PERIMETER_UPSELL}`;
+  return premium ? base : `${base} ${COUNTER_UPSELL}`;
 }
 
 /* ───────────────────────── Cart commands ─────────────────────────

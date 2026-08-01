@@ -2,13 +2,14 @@ import { Router } from 'express';
 import { supabase, optionalAuth } from '../lib/supabase.js';
 import { clientIp, counterAskLimited } from '../lib/guestRate.js';
 import { PERIMETER_SECTIONS } from '../lib/perimeter.js';
-import { getCard, getSectionCards, getAllCards } from '../lib/counterCards.js';
+import { getCard, getSectionCards, getAllCards, getEssentialCards, bumpUseCount } from '../lib/counterCards.js';
 import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { composeAnswer } from '../lib/perimeter.js';
+import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 
 // The Counter's card corpus, as the client reads it.
 //
+//   GET /api/counter/essentials     the shelf the index renders in place, in authored order
 //   GET /api/counter/sections       the browse index — sections, each with its cards
 //   GET /api/counter/sections/:id   one section's cards
 //   GET /api/counter/cards/:slug    one card
@@ -92,6 +93,18 @@ counterRouter.get('/counter/sections/:id', async (req, res) => {
   }
 });
 
+// The essentials shelf — the cards the index renders in place, before any navigation.
+// Registered BEFORE /cards/:slug, which would otherwise swallow "essentials".
+counterRouter.get('/counter/essentials', async (_req, res) => {
+  try {
+    const cards = await getEssentialCards(supabase);
+    return res.json({ cards, count: cards.length });
+  } catch (err) {
+    console.error('[kristy] /api/counter/essentials error:', err?.message || err);
+    return res.status(500).json({ error: 'counter_unavailable' });
+  }
+});
+
 // The whole corpus. Registered BEFORE /cards/:slug, which would otherwise swallow it.
 counterRouter.get('/counter/cards', async (_req, res) => {
   try {
@@ -107,6 +120,11 @@ counterRouter.get('/counter/cards/:slug', async (req, res) => {
   try {
     const card = await getCard(req.params.slug, supabase);
     if (!card) return res.status(404).json({ error: 'not_found' });
+    // A BROWSE OPEN COUNTS, not just an ask that retrieved. use_count is a counter on the
+    // CARD — "this answer earned its place" — and a card someone navigated three taps to
+    // reach earned it at least as much as one a matcher surfaced. Fire-and-forget: nobody
+    // waits on our bookkeeping.
+    bumpUseCount(card.slug, supabase, card.use_count);
     return res.json(card);
   } catch (err) {
     console.error('[kristy] /api/counter/cards/:slug error:', err?.message || err);
@@ -156,7 +174,7 @@ counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
     // Personalization: premium, and only when there is something to read against.
     const premium = req.user ? await premiumForReq(req) : false;
     if (!premium) {
-      return res.json({ ...body, gated: true, upsell: PERSONAL_UPSELL });
+      return res.json({ ...body, gated: true, upsell: COUNTER_UPSELL });
     }
 
     try {
@@ -181,8 +199,6 @@ counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
   }
 });
 
-const PERSONAL_UPSELL =
-  "That's the honest rundown, and it's free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week, with the better pick landing straight on the list.";
 
 function readPrefs(body = {}) {
   const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);

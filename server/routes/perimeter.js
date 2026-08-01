@@ -11,6 +11,7 @@ import {
   sectionIndex,
   sectionById,
   NO_ANSWER,
+  COUNTER_UPSELL,
 } from '../lib/perimeter.js';
 import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 
@@ -41,10 +42,6 @@ import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 
 const ERROR_MSG = "That read didn’t come together just now. Give it a second and ask again.";
 
-// The withheld personalized read, in Kristy's voice (named value, not "go premium").
-// No first person: the value is named, nobody is performing it.
-const PERIMETER_UPSELL =
-  "That's the honest rundown, and it's free at every counter. The read for YOUR cart is the member part: this counter against your goal, your budget, your week, with the better pick landing straight on the list.";
 
 function readPrefs(body = {}) {
   const list = (v) => (Array.isArray(v) ? v.map((s) => String(s || '').trim()).filter(Boolean) : []);
@@ -139,7 +136,7 @@ perimeterRouter.post('/perimeter/ask', optionalAuth, userRateLimit, async (req, 
   const premium = req.user ? await premiumForReq(req) : false;
   if (!premium) {
     // Free: the entry content stands on its own; the personalized read is withheld.
-    return res.json({ matched: true, entries, answer: null, refinement: null, gated: true, upsell: PERIMETER_UPSELL });
+    return res.json({ matched: true, entries, answer: null, refinement: null, gated: true, upsell: COUNTER_UPSELL });
   }
 
   // Premium: the claim-locked, personalized answer (+ optional list refinement).

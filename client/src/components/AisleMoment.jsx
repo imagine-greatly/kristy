@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard } from '../lib/perimeter.js';
+import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard, fetchCounterEssentials } from '../lib/perimeter.js';
 import CounterCard from './CounterCard.jsx';
 import CounterAnswer, { CounterAnswerSkeleton } from './CounterAnswer.jsx';
 import { trackEvent } from '../lib/analytics.js';
@@ -41,6 +41,8 @@ const ASK_SEEDS = [
 export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
   const [sections, setSections] = useState(null);
   const [loadErr, setLoadErr] = useState(false);
+  const [essentials, setEssentials] = useState(null);
+  const [essErr, setEssErr] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [entry, setEntry] = useState(null); // { state, data }
   const [question, setQuestion] = useState('');
@@ -61,6 +63,12 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     fetchCounterSections()
       .then((s) => alive && setSections(s))
       .catch(() => alive && setLoadErr(true));
+    // The shelf loads alongside the sections rather than after them: it sits higher on
+    // the page, so waiting on the browse index would leave the most-read part blank
+    // longest.
+    fetchCounterEssentials()
+      .then((c) => alive && setEssentials(c))
+      .catch(() => alive && setEssErr(true));
     return () => {
       alive = false;
     };
@@ -220,25 +228,20 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
     );
   }
 
-  /* ── The index ── */
+  /* ── The index ──
+     ASK, then the ESSENTIALS, then BROWSE. The old order opened with a title, a thesis and
+     six section cards, which put every answer three taps away — tab, section, card —
+     through undifferentiated lists at each level. Nobody does that holding a cart.
+     Browsing is a couch interaction and it was occupying the position the store
+     interaction should hold. */
   return (
     <div style={styles.wrap}>
-      <h1 style={styles.h1}>The counter</h1>
-      <GoldThread />
-      <p style={{ ...kristyVoice, ...styles.thesis }}>
-        The half of the store with no label. The half that matters most.
-      </p>
-      <p style={styles.thesisSub}>
-        Meat, seafood, produce, eggs, dairy, bulk. No barcode to read, and still a right
-        answer at every one.
-      </p>
-
-      {/* ASK — the lead affordance, raised into a card of its own so it carries at
-          least the weight of the six section cards below it. Plain words in, the
-          same sourced entries out. No account anywhere in it. */}
+      {/* ASK — the hero, and the first thing on the surface. The page title moved into it:
+          a separate "The counter" heading above the input pushed the input down to repeat
+          the name of the tab the shopper just pressed. */}
       <div style={styles.askCard}>
-        <span style={styles.askHead}>Ask about any counter</span>
-        <span style={styles.askSub}>Which cut, wild or farmed, what to look for.</span>
+        <h1 style={styles.askHead}>Ask about any counter</h1>
+        <span style={styles.askSub}>Meat, seafood, produce, eggs, dairy and bulk. Ask about any of it.</span>
 
         <form style={styles.askForm} onSubmit={submitAsk}>
           <input
@@ -277,10 +280,28 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
         </div>
       )}
 
-      {/* BROWSE — the store, by section, in walking order. Each section carries the
-          handful of questions people actually ask standing at it, so the frequent
-          answers are ONE tap from here rather than section, scroll, topic. The
-          section card itself still opens the full list. */}
+      {/* ESSENTIALS — eight CARDS, not eight links. They render in summary state and
+          expand in place, so the most-asked answers in the store cost no navigation at
+          all: the verdict and the do line are already on screen, and the full read is one
+          tap that never leaves this page.
+
+          Hidden once an answer is on screen. The shopper asked something specific, and
+          eight other answers under it is noise at the moment they are reading. */}
+      {!ask && (
+        <>
+          <div style={styles.groupLabel}>Start here</div>
+          {essErr && <p style={styles.muted}>The essentials did not load.</p>}
+          {!essentials && !essErr && <p style={styles.muted}>Loading…</p>}
+          <div style={styles.essentials}>
+            {(essentials || []).map((c) => (
+              <CounterCard key={c.slug} card={c} onAddToCart={onAddToCart} />
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* BROWSE — the store, by section, in walking order, below the fold. Each section
+          carries the handful of questions people actually ask standing at it. */}
       <div style={styles.groupLabel}>Browse the counter</div>
       {loadErr && <p style={styles.muted}>The sections did not load. Try again.</p>}
       {!sections && !loadErr && <p style={styles.muted}>Loading…</p>}
@@ -307,7 +328,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
 
       {onScan && (
         <button type="button" style={styles.otherHalf} onClick={onScan}>
-          Got a barcode? That half is a scan →
+          Got a barcode? Scan it →
         </button>
       )}
     </div>
@@ -338,8 +359,6 @@ const styles = {
     padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 12,
   },
   h1: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
-  thesis: { margin: 0, fontSize: 16.5, lineHeight: 1.5, color: colors.textPrimary },
-  thesisSub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
   blurb: { margin: 0, fontFamily: fonts.ui, fontSize: 14, lineHeight: 1.5, color: colors.textMuted },
   muted: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
   back: {
@@ -349,24 +368,35 @@ const styles = {
 
   // The ask is a CARD, not a bare input. A section row is a raised surface, so an
   // input floating above them read as secondary to the thing it is meant to lead.
+  // THE HERO. It was a gold-tinted panel sized to compete with the section cards below
+  // it; as the first and largest thing on the surface that tint became the biggest gold
+  // area on the screen, which is the one thing gold is not for. Plain surface and the
+  // same inset edge every card carries — the hierarchy now comes from size and position,
+  // which is what should have been carrying it.
   askCard: {
-    display: 'flex', flexDirection: 'column', gap: 6, marginTop: 6,
-    padding: '14px 15px 15px', borderRadius: 14,
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
+    display: 'flex', flexDirection: 'column', gap: 7, marginTop: 2,
+    padding: '18px 17px 19px', borderRadius: 16,
+    border: 'none', background: colors.surface,
+    boxShadow: `inset 0 1px 0 ${colors.edgeHighlight}, ${colors.shadowCard}`,
   },
-  askHead: { fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, color: colors.textPrimary },
-  askSub: { fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textMuted },
-  askForm: { display: 'flex', gap: 8, marginTop: 4 },
+  essentials: { display: 'flex', flexDirection: 'column', gap: 10 },
+  askHead: { margin: 0, fontFamily: fonts.ui, fontSize: 19, fontWeight: 700, letterSpacing: '-0.01em', color: colors.textPrimary },
+  askSub: { fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
+  askForm: { display: 'flex', gap: 8, marginTop: 6 },
   askInput: {
-    flex: 1, minWidth: 0, padding: '13px 15px', borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`, background: colors.surface,
-    color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none',
+    flex: 1, minWidth: 0, padding: '15px 15px', borderRadius: 12,
+    // Hairline, not brass. This is the field a shopper types their question into and
+    // it was the one gold edge on the surface that was not identity.
+    border: `1px solid ${colors.hairline}`, background: colors.surface,
+    // 16px, not 15 — iOS zooms the viewport on focus for anything smaller, which on the
+    // hero input would jolt the whole page the moment a shopper taps it.
+    color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 16, outline: 'none',
   },
   // The counter's ONE filled action. Everything else on this surface — the card's
   // add-to-cart, the gate, the section shortcuts — is transparent + hairline.
   askGo: {
-    flex: '0 0 auto', padding: '13px 20px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
-    fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
+    flex: '0 0 auto', padding: '15px 22px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
+    fontFamily: fonts.ui, fontWeight: 700, fontSize: 15.5, cursor: 'pointer',
   },
   seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
   seed: {

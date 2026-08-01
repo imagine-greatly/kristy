@@ -140,18 +140,13 @@ export function contentWords(query) {
 // One line, in voice, no first person, no explanation of the gate. A shopper who asks
 // something medical gets a boundary and a door, not a lecture and not an error.
 const LINES = {
-  medical_condition:
-    'That one belongs with a doctor, not a grocery coach. The counter can help with what to buy once that conversation has happened.',
-  symptom:
-    'That one belongs with a doctor, not a grocery coach. The counter can help with what to buy once that conversation has happened.',
-  treatment:
-    'No food treats or cures anything, and anyone who says otherwise is selling something. The counter answers what to buy and how to tell good from bad.',
+  medical_condition: 'That one belongs with a doctor.',
+  symptom: 'That one belongs with a doctor.',
+  treatment: 'The counter answers what to buy and how to tell good from bad.',
   dosing:
     'Doses and supplements are a doctor’s call. The counter is for food you can put in a cart.',
-  diet_plan:
-    'Kristy is a grocery coach, not a meal planner. Ask about what to buy and how to choose it.',
-  weight_target:
-    'Kristy is a grocery coach, not a meal planner. Ask about what to buy and how to choose it.',
+  diet_plan: 'Ask about what to buy and how to choose it.',
+  weight_target: 'Ask about what to buy and how to choose it.',
   no_subject: 'Name the food and the counter can answer it.',
   off_topic: 'That one is outside the store. Ask about something in a cart.',
   empty: 'Ask about something in the store.',

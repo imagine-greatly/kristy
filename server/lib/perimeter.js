@@ -32,6 +32,12 @@ const STOPWORDS = new Set(
   'a an and are as at be but by do does for from how i if in is it its my no not of on or our so the their them then there this to up us was what when where which who why with you your'.split(' ')
 );
 
+// The withheld personalized read, in Kristy's voice. ONE string, imported by both the
+// counter route and the legacy perimeter alias — it was duplicated byte-for-byte in two
+// files, which is two places for a voice change to half-land.
+export const COUNTER_UPSELL =
+  'The read for your cart is the member part: this counter against your goal, your week, with the better pick landing on the list.';
+
 export const NO_ANSWER =
   perimeterKb.no_answer ||
   'No solid answer on that one yet. Better said than guessed.';

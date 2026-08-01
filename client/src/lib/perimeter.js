@@ -176,3 +176,17 @@ export async function askCounter({ query, goal = '', focuses = [], hardLines = [
   if (!res.ok) throw new Error('The counter did not answer. Try again.');
   return res.json();
 }
+
+/* The essentials shelf — the handful of cards the index renders IN PLACE, before any
+   navigation. Public and cached for the session: the list is editorial and changes on a
+   deploy, not between two taps. */
+let essentialsCache = null;
+
+export async function fetchCounterEssentials() {
+  if (essentialsCache) return essentialsCache;
+  const res = await fetch(`${apiBase}/api/counter/essentials`);
+  if (!res.ok) throw new Error('The counter did not load. Try again.');
+  const { cards } = await res.json();
+  essentialsCache = cards || [];
+  return essentialsCache;
+}

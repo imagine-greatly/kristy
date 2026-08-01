@@ -66,6 +66,37 @@ export function kindFor(slug) {
   return HOME_CARDS.has(slug) ? 'home' : 'shelf';
 }
 
+/* ═══════════════════════════ The essentials shelf ═══════════════════════════ */
+
+// The eight cards that sit on the counter index itself, readable and expandable without
+// any navigation at all. Three taps to an answer — tab, section, card — is a couch
+// interaction, and it was occupying the position the store interaction should hold.
+//
+// AUTHORED HERE, exactly like HOME_CARDS, and projected onto the row by the migration.
+// Membership is an editorial decision and belongs in version control where it can be
+// reviewed, not in a dashboard UPDATE nobody can diff. It is deliberately NOT derived from
+// use_count either: a popularity sort would fill the most valuable space on the surface
+// with whatever happened to be asked most last week.
+//
+// ORDER IS THE LIST ORDER. Two per section by construction, so the shelf stays balanced
+// and a cut to six does not need rebalancing.
+export const ESSENTIALS = [
+  'organic_worth_it_by_type', // Produce
+  'egg_labels', // Dairy & Eggs
+  'salmon_wild_vs_farmed', // Seafood
+  'label_front_vs_back', // Label terms
+  'produce_ripeness_by_item', // Produce
+  'beef_grassfed_vs_grainfed', // Meat
+  'judging_meat_at_the_case', // Meat
+  'whole_vs_reduced_fat_milk', // Dairy & Eggs
+];
+
+const ESSENTIAL_RANK = new Map(ESSENTIALS.map((slug, i) => [slug, i + 1]));
+
+export function essentialRankFor(slug) {
+  return ESSENTIAL_RANK.get(slug) ?? null;
+}
+
 /* ═══════════════════════════ Sentences ═══════════════════════════ */
 
 /**
@@ -232,6 +263,12 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     // that describes how to find itself is the shape a generated card already has, and
     // leaving curated rows blank would make the corpus two different things.
     aliases: Array.isArray(entry.aliases) ? entry.aliases : [],
+
+    // Always emitted, both fields, on every card — not only on the eight. A card dropped
+    // from the shelf has to be written back to false, or the migration would leave a
+    // stale `true` behind and the shelf would grow by subtraction.
+    essential: ESSENTIAL_RANK.has(entry.id),
+    essential_rank: essentialRankFor(entry.id),
 
     // ── the depth, so nothing is dropped ──
     detail: [...spill, entry.detail].filter(Boolean).join(' '),
@@ -444,6 +481,24 @@ export async function getSectionCards(section, client) {
 export async function getAllCards(client) {
   const rows = await selectCards(client, (q) => q.order('slug'));
   return rows || projectAll();
+}
+
+/**
+ * The essentials shelf, in authored order.
+ *
+ * Reads the table when it can, and falls back to projecting the authored list from the KB
+ * when it cannot — which covers both "the columns are not applied yet" and "they are, but
+ * the migration has not run". The list lives in code either way, so the fallback is not a
+ * degraded answer, it is the same answer computed a different way. The columns make it
+ * queryable; they are not what makes it true.
+ */
+export async function getEssentialCards(client) {
+  const rows = await selectCards(client, (q) =>
+    q.eq('essential', true).order('essential_rank', { ascending: true })
+  );
+  if (rows && rows.length) return rows;
+  const byId = new Map(projectAll().map((c) => [c.slug, c]));
+  return ESSENTIALS.map((slug) => byId.get(slug)).filter(Boolean);
 }
 
 /* ═══════════════════════════ Retrieving a generated card ═══════════════════════════ */

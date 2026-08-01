@@ -137,6 +137,79 @@ export function britishSpellings(text) {
   return found;
 }
 
+/* ═══════════════════════════ Voice tics ═══════════════════════════ */
+
+// ONE mechanically-detectable AI cadence. REPORT ONLY — it does not fail a card. It is a
+// pattern-matcher over prose, and those are wrong often enough that gating on one would
+// reject good writing.
+//
+// TWO OTHER CHECKS WERE TRIED AND DROPPED, both for the same reason: they cannot tell the
+// tic from the voice.
+//
+//   "not X, but Y" where X appears nowhere else — flagged 45% of the corpus. "X, not Y" is
+//   the load-bearing shape here, because most of these cards exist to correct a belief:
+//   "flagged as a standard, not as settled science", "'Multigrain' is a headcount, not a
+//   standard". Separating a strawman from a contrast the reader needs requires knowing
+//   whether anyone actually holds the belief, which is not in the text.
+//
+//   Abstract subject + animate verb — a noun list narrow enough to be quiet catches
+//   nothing real, and one wide enough to catch something is noisier than the tic.
+
+const TIC_STOP = new Set([
+  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for', 'from', 'has', 'in', 'is',
+  'it', 'its', 'no', 'not', 'of', 'on', 'or', 'that', 'the', 'their', 'them', 'then',
+  'there', 'they', 'this', 'to', 'up', 'was', 'what', 'when', 'which', 'with', 'you', 'your',
+]);
+
+const contentTokens = (s) =>
+  (String(s || '').toLowerCase().match(/[a-z][a-z-]{2,}/g) || []).filter((w) => !TIC_STOP.has(w));
+
+/**
+ * TIC 1 — the antithesis snapclip. A clause, then the same clause inverted or intensified
+ * for weight: "The half of the store with no label. The half that matters most."
+ *
+ * The test is INFORMATION, not shape. A two-part line is fine — "Whole grain. 'Multigrain'
+ * is a headcount, not a standard" earns its second half. It chimes when the second clause
+ * repeats a content word from the first and introduces no new noun of its own.
+ */
+export function antithesisChime(text) {
+  const s = String(text || '').trim();
+  const parts = s.split(/(?:\.|;|—)\s+/).map((p) => p.trim()).filter((p) => p.split(/\s+/).length >= 2);
+  const hits = [];
+  for (let i = 1; i < parts.length; i++) {
+    const first = new Set(contentTokens(parts[i - 1]));
+    const second = contentTokens(parts[i]);
+    if (!first.size || !second.length) continue;
+    const echoed = second.filter((w) => first.has(w));
+    const fresh = second.filter((w) => !first.has(w));
+    // Echoes something, and brings nothing of its own.
+    if (echoed.length && fresh.length <= 1) {
+      hits.push({ echo: echoed[0], clause: parts[i] });
+    }
+  }
+  return hits;
+}
+
+/**
+ * Report the tics on a card. Never part of lintCard — these do not gate anything.
+ */
+export function voiceTics(card) {
+  const fields = {
+    headline: card?.headline,
+    do: card?.do ?? card?.do_line,
+    why: card?.why,
+    tier_note: card?.tier_note,
+  };
+  const out = [];
+  for (const [field, text] of Object.entries(fields)) {
+    if (!text) continue;
+    for (const h of antithesisChime(text)) {
+      out.push({ code: 'TIC_ANTITHESIS', field, detail: `"${h.clause}" echoes "${h.echo}" and adds nothing` });
+    }
+  }
+  return out;
+}
+
 /* ═══════════════════════════ Imperative ═══════════════════════════ */
 
 // A `do` line is an instruction, so its first token is a verb. Detecting that properly
