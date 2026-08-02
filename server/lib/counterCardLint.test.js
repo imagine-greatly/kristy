@@ -391,9 +391,10 @@ test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
 });
 
 test('all curated cards clear the per-card bar', () => {
-  // 74 after the 2026-08-02 overlap sweep folded six duplicate-verdict cards and
-  // demoted `clabber`, and the A2 card landed. See RETIRED in counterCards.js.
-  assert.equal(CARDS.length, 74);
+  // 74 after the 2026-08-02 overlap sweep folded six duplicate-verdict cards and demoted
+  // `clabber`, and the A2 card landed; 75 once `berries_picking` was promoted from a
+  // generated row. See RETIRED / RETIRED_GENERATED in counterCards.js.
+  assert.equal(CARDS.length, 75);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

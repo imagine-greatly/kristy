@@ -64,7 +64,7 @@ only by prompt.
    split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
    budget, the store's stock or their spare time is a retreat and does not. Firmer is
    never looser with facts — **if a claim needs a false mechanism to sound convincing, the
-   claim is wrong.** Both enforced by `counterCardLint.js` over all 74 cards, curated and
+   claim is wrong.** Both enforced by `counterCardLint.js` over all 75 cards, curated and
    generated.
 
 8. **No price, ever.** Kristy does not know what anything costs. Budget means
@@ -82,7 +82,7 @@ only by prompt.
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
   `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (74 entries) answers
+  thing the verdict engine sees. `kristy_perimeter_kb.json` (75 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
@@ -245,6 +245,24 @@ equality *is* the positioning.
   so it is a fixed defect and not a pattern; the other hubs already generalize. Per-item do
   lines matched to the query were considered and rejected for now: browse has no query, so
   the card would render differently when asked than when browsed.
+- **GENERALIZING A HUB'S DO LINE ORPHANS WHATEVER THE GENERALIZATION EXCLUDES.** The fix
+  above is a qualifier — "anything that ripens after picking" — and a qualifier is a
+  boundary. That one is the climacteric/non-climacteric split and it covers **4 of the
+  hub's 11 items**: cantaloupe, tomatoes and stone fruit exactly, avocado only in part
+  (it ripens after picking, but the action is the stem nub, not smell). Orphaned:
+  **watermelon, pineapple, citrus, grapes, cherries** (none ripen after picking) and
+  **asparagus, broccoli, leafy greens** (never ripen at all). The defect class did improve
+  — the old berry line gave a WRONG instruction to ten of eleven items, a qualifier is
+  merely silent — but silence is not coverage. **Check the boundary before shipping a
+  qualifier, and count what falls outside it.**
+- **The generator has been trying to decompose that hub the whole time, and it is worth
+  listening to.** Three of the four cards Pass 3 has ever written were produce per-item
+  cards: cantaloupe, pineapple, berries. Two were folded back as duplicates and were
+  genuinely duplicates. `berries_picking` was not — it appeared *after* the hub's do line
+  stopped covering berries, so it was coverage, and it was promoted to curated rather than
+  retired. A generated card that owns a subject belongs in version control where it can be
+  edited; a generated card restating a curated verdict gets folded. The difference is
+  whether the hub still holds that verdict.
 - **Decision-first is content, not styling.** `decision`/`why` are authored per entry in
   the KB, re-ranked from its own short_answer/kristy_take/tips — never new research.
   The depth is demoted, never deleted. The **tier chip stays above the tap** even though
@@ -456,7 +474,7 @@ equality *is* the positioning.
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (74 rows as of the 2026-08-02 sweep), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (75 rows as of the 2026-08-02 sweep), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.

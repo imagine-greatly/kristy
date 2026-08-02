@@ -2448,7 +2448,6 @@
         "watermelon",
         "pineapple",
         "how to pick tomatoes",
-        "picking berries",
         "ripe peach",
         "how to pick asparagus",
         "how to pick broccoli",
@@ -2493,7 +2492,6 @@
         "Cantaloupe: creamy gold under the netting, a sweet smell at the stem end, slight give.",
         "Watermelon: a deep yellow field spot, heavy for its size, a hollow thunk.",
         "Pineapple: sweet at the base, deep green leaves, a slight give in the shell. Color is not the tell.",
-        "Berries: turn the container over. Juice stains or one furry berry means the whole punnet is going.",
         "Tomatoes: fragrant at the stem, heavy for their size, and never from the cold case.",
         "Stone fruit: fragrant, with a slight give at the shoulder rather than the tip.",
         "Citrus: heavy for its size, with thin smooth skin. Weight beats color.",
@@ -2507,6 +2505,55 @@
       "labels_decoded": [],
       "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one.",
       "eyebrow_short": "Picking produce"
+    },
+    {
+      "id": "berries_picking",
+      "title": "Picking berries",
+      "aliases": [
+        "berries",
+        "berry",
+        "strawberries",
+        "blueberries",
+        "raspberries",
+        "blackberries",
+        "picking berries",
+        "buying berries",
+        "fresh berries",
+        "berry carton",
+        "berry container",
+        "berry mold",
+        "strawberry freshness",
+        "moldy berries"
+      ],
+      "category": "produce",
+      "question": "How do I pick a good carton of berries?",
+      "decision": "The carton’s underside decides, not the berries on top.",
+      "why": "Berries mold from the bottom up under their own weight, long before the top layer shows it.",
+      "short_answer": "Turn the container over before anything else. The fruit at the bottom carries the load, so it bruises and molds first while the top layer stays presentable long after the carton has turned. A dry, clean underside means it was packed recently and has not sat wet. Juice pooling or a fuzzy spot means decay is already running, and one furry berry takes the punnet.",
+      "detail": "Berries do not ripen after picking. Unlike a peach or a cantaloupe, what is in the carton is exactly what you are buying — there is no counter-ripening to rescue an underripe punnet, and no reason to buy firm and wait. That makes the carton itself the whole decision. Weight and moisture are what work against it: the bottom layer carries the load, condensation inside a clamshell keeps that layer damp, and mold spreads berry to berry by contact. Clamshells also get re-stacked at the store, so a fresh-looking top layer can sit on fruit that arrived days earlier. Buy them cold, keep them dry, and wash them at the moment you eat them rather than when you unpack.",
+      "evidence_tier": "established",
+      "sources": [
+        "postharvest handling references for soft fruit (non-climacteric ripening, decay by contact)",
+        "USDA produce grading and handling standards"
+      ],
+      "kristy_take": "Flip the carton. The top layer is the display and the bottom layer is the truth.",
+      "cart_pick": "Fresh berries",
+      "buying_tips": [
+        "A dry, unstained bottom on the carton. That is the whole check.",
+        "No fuzzy white or gray spot on any berry. One takes the punnet.",
+        "Green caps still fresh on strawberries, not browned and dry.",
+        "Deep, even color for the variety, and uniform size in the container.",
+        "Buy them cold, from the refrigerated display rather than a room-temperature stack."
+      ],
+      "watch_out": [
+        "Berries do not ripen after picking. Buying firm and waiting does not work the way it does for stone fruit.",
+        "Condensation fogging the plastic traps moisture and speeds the mold.",
+        "Clamshells re-stacked at the store hide older fruit under a fresh top layer.",
+        "A carton that already smells sweet or fermented is past it."
+      ],
+      "labels_decoded": [],
+      "tier_note": "That berries decay from the bottom under their own weight, and do not ripen after picking, is settled postharvest handling — and it is why the underside is the check.",
+      "eyebrow_short": "Picking berries"
     },
     {
       "id": "produce_storage",

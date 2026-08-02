@@ -148,6 +148,16 @@ export const RETIRED_GENERATED = [
   // now has the aliases to match them. The cantaloupe card had been served three times.
   'gen_picking_a_ripe_cantaloupe',
   'gen_picking_a_ripe_pineapple',
+
+  // PROMOTED, not folded — the only one of these that was right. It was generated when
+  // `produce_ripeness_by_item`'s do line was rewritten to generalize ("smell the stem end
+  // on anything that ripens after picking"), which excludes berries by construction:
+  // berries are non-climacteric and do not ripen after picking at all. The hub stopped
+  // holding a berry verdict, so a card that does is coverage rather than duplication. Its
+  // content is now authored in the KB as `berries_picking` and the row is retired like any
+  // other. A generated card that owns a subject belongs in version control where it can be
+  // edited, not left as a row that survived review.
+  'gen_picking_fresh_berries',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */
