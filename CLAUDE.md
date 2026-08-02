@@ -420,6 +420,19 @@ equality *is* the positioning.
 
 ## Verifying
 
+- **A COMMENT ASSERTING AN INVARIANT IS NOT AN INVARIANT. If it is load-bearing, test it.**
+  The retrieval-floor comment claimed curated and generated admit on the same evidence, and
+  was wrong three consecutive times in three different ways — different constants, then
+  matching constants with mismatched operators, then matching constants AND operators over
+  two scorers that measure different things. Each version was written by someone who had
+  just looked at the code, and each read as settled fact to the next person. The same shape
+  produced the "curated entries carry a dozen aliases" premise that held the gate too high
+  for months, and the "nothing is deployed" conclusion in this file's own history. **The
+  pattern is not carelessness, it is that prose records intent while code executes
+  mechanism, and the two drift silently.** `counterFloor.test.js` is the correction: it
+  states the floor once, in the unit both paths share, and reads the pipeline source so an
+  edit that quietly drops the check fails. Where a comment explains WHY, keep it. Where it
+  asserts THAT something holds, write the test and let the comment point at it.
 - **Verify mobile over CDP, not `--window-size`.** Chrome enforces a ~500px minimum
   window on Windows: `--window-size=390` renders at 504 and crops, which looks exactly
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
@@ -460,6 +473,20 @@ equality *is* the positioning.
   did, for one migration run, including one whose verdict contradicted a curated card
   outright. Generated retirement is `RETIRED_GENERATED` with its own `source = 'generated'`
   delete, and a test fails if either list holds the other's kind.
+- **PROMOTE A GENERATED CARD ON DEMAND OR ON CORPUS-CORRECTION, NEVER ON CORRECTNESS.**
+  Correctness is already the floor for a generated card existing at all — lint, the claim
+  lock and the tier system enforce it before anything persists. If correctness were also
+  the promotion bar, every generated card would be promoted and the generated corpus would
+  never exist: Pass 3 becomes a curation pipeline with extra steps. `berries_picking` was
+  promoted because it corrected a regression the curated corpus had just created (the hub's
+  new do line excluded berries by construction) and it owned a subject with real demand.
+  `gen_guanciale_worth_buying` is correct, fills a genuine gap, and stays generated —
+  `use_count` is 0 and the only thing that ever asked was a verification probe. **When
+  `use_count` climbs, promote.** That is the signal the counter exists to give.
+- **Keeping at least one real generated row is not untidiness.** At zero, stage 2b of the
+  ask pipeline has nothing to retrieve and is untestable in production — the same argument
+  as `coverageStats.fromVision`: a number climbing over time is the only evidence the loop
+  is running rather than merely wired correctly.
 - **A fold's real anchor may be a PROMPT, not a row.** `gen_a1_vs_a2_yogurt` contradicted
   the curated A2 card because `counterGenerate.js` carried that exact headline as its
   worked FAIL/PASS example for "the do line must serve the headline". Deleting the row
@@ -490,7 +517,7 @@ equality *is* the positioning.
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (75 rows as of the 2026-08-02 sweep), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (76 rows as of the 2026-08-02 sweep: 75 curated + 1 generated), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.
