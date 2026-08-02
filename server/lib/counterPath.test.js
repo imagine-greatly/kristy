@@ -52,7 +52,9 @@ test('the shortcuts cover the questions the spec named, at the counter they belo
   const has = (sectionId, entryId) =>
     sectionById(sectionId).shortcuts.some((sc) => sc.id === entryId);
   assert.ok(has('meat', 'beef_cuts_basics'), 'meat: which cut for X');
-  assert.ok(has('meat', 'grassfed_vs_grassfinished'), 'meat: grass-fed vs finished');
+  // The grass-fed/grass-finished question now resolves to the beef card, which states
+  // both words as one standard. Its own card was folded on 2026-08-01.
+  assert.ok(has('meat', 'beef_grassfed_vs_grainfed'), 'meat: grass-fed vs finished');
   assert.ok(has('seafood', 'salmon_wild_vs_farmed'), 'fish: wild or farmed');
   assert.ok(has('seafood', 'mercury_by_fish'), 'fish: low-mercury');
   assert.ok(has('produce', 'organic_worth_it_by_type'), 'produce: organic worth it');

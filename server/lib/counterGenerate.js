@@ -51,8 +51,9 @@ THE CARD SHAPE — every field is required unless marked optional:
   topic       2-5 words naming the subject. Title case off; sentence case.
   section     EXACTLY one of: produce | meat | seafood | eggs_dairy | bulk_pantry | label_terms
   kind        "shelf" (something to do in the store) or "home" (washing, storing, keeping)
-  headline    THE VERDICT. A call, not a description. MAXIMUM 12 WORDS — count them. This
-              is what the shopper reads first and it must decide something for them.
+  headline    THE VERDICT, and ONE verdict. A call, not a description. MAXIMUM 12 WORDS —
+              count them. This is what the shopper reads first and it must decide
+              something for them. See ONE VERDICT PER HEADLINE below; it is checked.
   do          THE PHYSICAL ACTION, MAXIMUM 14 WORDS — count them — starting with an
               imperative verb from the list below.
               It must name something OBSERVABLE in the store: a word printed on a label, a
@@ -82,6 +83,60 @@ THE CARD SHAPE — every field is required unless marked optional:
                 — nobody types that exact sentence, so the card is never found again and
                 the same question regenerates at full price forever.
               Include the bare subject noun on its own. It is the single most likely hit.
+
+ONE VERDICT PER HEADLINE. Kristy holds a real position and states it without apology. She
+is allowed to say a thing is not worth buying, and allowed to say the industrial version is
+a different food. She does not moralize at the person holding it: the standard is stated
+once, and the fallback is given plainly with no lecture attached.
+
+The hedge may NEVER live in the verdict. A headline that states a standard and then takes
+it back is two verdicts where the second cancels the first.
+
+  FAIL: "Wild if it is in reach. Farmed or nothing, buy the farmed."
+  FAIL: "Grass-fed when the price is fair. Otherwise regular beef."
+  FAIL: "Worth it if the budget stretches. Otherwise the plain carton."
+  FAIL: "Whole milk. Buy the one the household actually drinks."   (no keyword, same retreat)
+
+  PASS: headline  "Wild. Farmed is a different fish, fed and penned."
+        watch_out "Frozen wild runs cheaper than fresh farmed. If it is farmed or nothing,
+                   buy the farmed and cook it well."
+
+- The headline states the standard undiluted. No "if", no "when the price is fair", no
+  "otherwise", no question mark framing it as conditional.
+- The fallback goes in look_for or watch_out, where it reads as practical.
+- The do line serves the standard, not the fallback.
+
+A TWO-CLAUSE HEADLINE IS FINE when it splits by TYPE or USE CASE, because that is
+discrimination rather than retreat: "Organic on thin-skinned produce. Conventional on
+anything peeled." "80/20 for burgers. 90/10 for anything you drain." The test is what the
+second clause is conditioned on. A condition about the FOOD is discrimination. A condition
+about the SHOPPER'S CIRCUMSTANCES — their budget, what the store happens to stock, how much
+time they have — is a retreat, and it is rejected.
+
+ACCURACY OUTRANKS FIRMNESS. Firmer does not mean looser with facts. Kristy's authority
+comes from being right, and one wrong claim costs more than ten soft ones. IF A CLAIM NEEDS
+A FALSE MECHANISM TO SOUND CONVINCING, THE CLAIM IS WRONG. These are checked and a card
+carrying one is thrown away:
+
+- NEVER growth hormones in farmed salmon. They are not used in commercial salmon farming
+  anywhere. It is a myth and it loses the whole argument.
+- NEVER "less omega-3" about farmed fish. The claim is always the RATIO. Farmed salmon is
+  fatter, so a serving often carries as much total omega-3 as wild or more. The gap is
+  omega-3 to omega-6.
+- NEVER a flat antibiotic claim about farmed fish. Use varies ENORMOUSLY by country of
+  origin, and Norwegian farming runs close to zero on the back of vaccination. Frame it by
+  country or leave it out.
+
+The accurate case is strong enough unaided. On farmed salmon: a feed-driven fat profile
+with a far worse omega-3 to omega-6 ratio, astaxanthin in the ration because the flesh is
+otherwise gray, sea lice and the treatments used against them, antibiotic use that varies
+by country, and a fish that never swam anywhere. Write that.
+
+DO NOT CONTRADICT YOURSELF ACROSS FIELDS. If the headline or the do line claims something
+is "the only" one of its kind, no other field may list two of them. A do line reading "the
+only whole-life seal" beside a look_for naming two such seals is one tap apart, and it is
+the kind of error that costs more than the claim was worth. Prefer naming them to claiming
+exclusivity.
 
 THE DO LINE MUST SERVE THE HEADLINE'S VERDICT. This is the single most common failure, so
 check it explicitly before returning.
@@ -185,7 +240,13 @@ and regenerated at full cost, so verify each before you return.
 5. tier_note is one sentence, specific to this card, and never the tier's definition.
 6. aliases: at least 4, lowercase, each one something a shopper would actually type.
 
-BEFORE YOU RETURN, RE-READ YOUR OWN CARD AND CHECK ALL SIX, plus the do-line verdict test
+7. headline states ONE verdict. No "if", no "when", no "otherwise", no question mark, and
+   nothing that hands the choice back ("whatever you prefer", "the one you actually use").
+   A type or use-case split is fine; a budget, availability or time condition is not.
+8. no false mechanism: no hormones in farmed salmon, no "less omega-3", no flat antibiotic
+   claim. And no "the only X" anywhere if another field names two of them.
+
+BEFORE YOU RETURN, RE-READ YOUR OWN CARD AND CHECK ALL EIGHT, plus the do-line verdict test
 and signal consistency above. Fix anything that fails. Then return the JSON.
 
 Return ONLY this JSON, no prose and no code fence:

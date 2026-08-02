@@ -190,6 +190,89 @@ export function antithesisChime(text) {
   return hits;
 }
 
+/* ═══════════════════════════ Intra-card contradiction ═══════════════════════════ */
+
+// A DEFECT CLASS FOUND BY HAND, 2026-08-01. A do line read "the American Grassfed seal,
+// the only whole-life claim on the case" while look_for on the SAME CARD listed two seals
+// that both audit the whole life. The card contradicted itself one tap apart, every field
+// passed every existing check, and nothing would have caught it.
+//
+// REPORT ONLY, and it stays that way unless it earns more. The general problem — does
+// this card disagree with itself — needs to know what the words mean. What is tractable
+// is the narrow shape that actually shipped: an EXCLUSIVITY claim in the verdict or the
+// action, next to a field that ENUMERATES more than one of the thing.
+//
+// MEASURED ON 2026-08-01 across all 82: 5 cards flagged, 2 of them real — the live
+// `grassfed_vs_grassfinished` do line making the same false "the only whole-life claim"
+// I had just fixed one card over, and `label_cold_pressed_expeller`, whose headline says
+// "Only one is mechanical" while its own body explains that expeller-pressed AND
+// cold-pressed are both mechanical. Three false positives, all the same shape: "nothing
+// else" used to mean "no other INGREDIENTS" (honey, real cheese), where a list elsewhere
+// on the card is not an enumeration of the excluded thing. That ratio earns a report.
+//
+// NARROWING IT TO PROPER NOUNS ONLY WAS TRIED AND REJECTED: it drops to zero hits and
+// loses both real finds, because a card enumerates its instances as quoted label terms as
+// often as it names certifiers.
+//
+// A COUNT CHECK WAS BUILT AND DELETED. "A number in the verdict contradicted by a list
+// elsewhere" produced 13 hits and NOT ONE was real: "30 ounces", "two months", "three
+// things", "both sides of the carton", "the first three ingredients". Every one compares
+// a count of something in the WORLD against the length of a list on the CARD, which is a
+// category error the shape cannot escape. Same failure as the two checks dropped in
+// Pass 3, and dropped on the same standard.
+
+const EXCLUSIVITY = /\b(the only|the sole|nothing else|no other|the one and only|only one)\b/i;
+
+/**
+ * The nameable things in a piece of text: multi-word proper nouns (a certifier, a brand,
+ * a standard) and quoted terms (a printed label word). These are what a card enumerates
+ * when it lists instances, and they are the only enumeration a regex can see honestly.
+ */
+export function nameables(text) {
+  const s = String(text || '');
+  const propers = s.match(/\b[A-Z][a-z]+(?:\s+(?:by\s+)?[A-Z][A-Za-z]+)+\b/g) || [];
+  const quoted = [...s.matchAll(/[‘“]([^’”]{2,40})[’”]/g)].map((m) => m[1].trim());
+  return [...new Set([...propers, ...quoted])];
+}
+
+/**
+ * Where a card appears to disagree with itself. Empty is the passing state, and a hit is
+ * a prompt to look, never a verdict.
+ *
+ * @returns {Array<{code:string, detail:string}>}
+ */
+export function contradictions(card) {
+  const out = [];
+  const verdict = [card?.headline, card?.do ?? card?.do_line].filter(Boolean).map(String);
+  const elsewhere = {
+    why: card?.why,
+    detail: card?.detail,
+    kristy_take: card?.kristy_take,
+    look_for: (card?.look_for || []).join(' · '),
+    watch_out: (card?.watch_out || []).join(' · '),
+    labels_decoded: (card?.labels_decoded || []).map((l) => `${l?.term} ${l?.meaning}`).join(' · '),
+  };
+
+  // 1. Exclusivity in the verdict, enumeration everywhere else.
+  const exclusive = verdict.find((t) => EXCLUSIVITY.test(t));
+  if (exclusive) {
+    for (const [field, text] of Object.entries(elsewhere)) {
+      const named = nameables(text);
+      if (named.length >= 2) {
+        out.push({
+          code: 'CONTRADICTION_EXCLUSIVITY',
+          detail: `"${exclusive.match(EXCLUSIVITY)[0]}" in the verdict, but ${field} names ${named.length}: ${named
+            .slice(0, 3)
+            .map((n) => `"${n}"`)
+            .join(', ')}`,
+        });
+      }
+    }
+  }
+
+  return out;
+}
+
 /**
  * Report the tics on a card. Never part of lintCard — these do not gate anything.
  */
@@ -207,7 +290,182 @@ export function voiceTics(card) {
       out.push({ code: 'TIC_ANTITHESIS', field, detail: `"${h.clause}" echoes "${h.echo}" and adds nothing` });
     }
   }
+  out.push(...contradictions(card).map((c) => ({ ...c, field: 'card' })));
   return out;
+}
+
+/* ═══════════════════════════ One verdict per headline ═══════════════════════════ */
+
+// THE HEDGE MAY NOT LIVE IN THE VERDICT. The corpus shipped nine headlines shaped
+// "standard, then retreat" — "Wild if it is in reach. Farmed or nothing, buy the farmed",
+// "Grass-fed when the price is fair. Otherwise regular beef", "Worth it if the budget
+// stretches. Otherwise the plain carton". Each is two verdicts where the second cancels
+// the first, and Kristy negotiates with herself before the shopper has asked. The
+// standard goes in the headline undiluted; the fallback moves to look_for or watch_out,
+// where it reads as practical rather than as a retreat.
+//
+// A TWO-CLAUSE HEADLINE IS NOT THE DEFECT, and this is the whole difficulty. Four
+// headlines split by TYPE or USE CASE and are correct:
+//
+//   "Organic on thin-skinned produce. Conventional on anything peeled."
+//   "Meaningful on beef and dairy. A freebie on chicken and pork."
+//   "Pay for grade on a quick-cooked steak. Skip it on anything braised."
+//   "80/20 for burgers. 90/10 for anything you drain."
+//
+// Those are discrimination — the standard differs by what is in your hand. Banning two
+// clauses would delete them along with the hedges, so the check tests WHAT THE SECOND
+// CLAUSE IS CONDITIONED ON instead. A condition about the FOOD is discrimination. A
+// condition about the SHOPPER'S CIRCUMSTANCES — their budget, what the store happens to
+// stock, how much time they have — is the retreat.
+
+// The fallback stated outright. `otherwise` and `unless` have no innocent reading in a
+// verdict, and neither does the "X or nothing, buy the X" construction.
+//
+// "or nothing" needs the comma or a following imperative: "Clean seawater or nothing
+// means yes" is a description of a smell, not a fallback, and it was the false positive
+// that made a bare /or nothing/ useless.
+const FALLBACK_OUTRIGHT = [
+  [/\botherwise\b/i, 'otherwise'],
+  [/\bunless\b/i, 'unless'],
+  [/\bor nothing,/i, 'or nothing,'],
+  [/\bor nothing\b\s+(buy|take|get|grab)\b/i, 'or nothing + imperative'],
+];
+
+// A conditional marker. On its own this proves nothing — "Wash it when you eat it" is
+// temporal and correct — so it only counts alongside a circumstance below.
+const CONDITIONAL = /\b(if|when|whenever|where|as long as|provided)\b/i;
+
+// THE SHOPPER'S CIRCUMSTANCES. This list is the load-bearing part of the check: a
+// condition drawn from here is about the person, not the food, and a standard that bends
+// to it is a standard being withdrawn.
+const CIRCUMSTANCE =
+  /\b(budget|price|prices|priced|afford|affordable|cost|costs|money|cheap|cheaper|expensive|worth it|stretch(es)?|fair|reasonable|close)\b|\b(in reach|available|in stock|they have it|the store (has|carries|stocks)|it is there|there is (any|some)|you can find|carries it)\b|\b(time|hurry|busy|quick enough|convenience|convenient)\b|\b(you want|you like|you prefer|if that matters|you care)\b/i;
+
+// A QUESTION IN THE HEADLINE IS A CONDITIONAL FRAME. "Paying grass-fed prices? Buy
+// grass-FINISHED" reads as firm and is still "if you are paying…". The card states the
+// standard for everyone or it is not a standard.
+const QUESTION_FRAME = /\?/;
+
+// THE RETREAT WITH NO KEYWORD. "Whole milk. Buy the one the household actually drinks."
+// carries no conditional at all and does the identical thing: names the pick, then hands
+// the choice back. A keyword scan misses it, so the deference phrasing is matched
+// directly.
+const DEFERENCE = [
+  [/\bwhatever\b/i, 'whatever'],
+  [/\bwhichever\b/i, 'whichever'],
+  [/\bthe one (you|they|the household|your|he|she)\b/i, 'the one you/they/the household'],
+  [/\bup to you\b/i, 'up to you'],
+  [/\byour call\b/i, 'your call'],
+  [/\bwhat works (for|best)\b/i, 'what works for'],
+  [/\bactually (drinks?|eats?|uses?|cooks?)\b/i, 'what they actually drink/eat'],
+];
+
+/**
+ * The hedges in a headline. Empty is the passing state.
+ *
+ * @returns {Array<{kind:string, detail:string}>}
+ */
+export function headlineHedge(headline) {
+  const h = String(headline || '').trim();
+  if (!h) return [];
+  const hits = [];
+
+  for (const [re, name] of FALLBACK_OUTRIGHT) {
+    if (re.test(h)) hits.push({ kind: 'fallback', detail: `"${name}" states a fallback in the verdict` });
+  }
+  const cond = h.match(CONDITIONAL);
+  const circ = h.match(CIRCUMSTANCE);
+  if (cond && circ) {
+    hits.push({
+      kind: 'circumstance',
+      detail: `"${cond[0]}" conditions the verdict on "${circ[0]}" — the shopper's circumstances, not the food`,
+    });
+  }
+  if (QUESTION_FRAME.test(h)) {
+    hits.push({ kind: 'question', detail: 'a question frames the verdict as conditional' });
+  }
+  for (const [re, name] of DEFERENCE) {
+    const m = h.match(re);
+    if (m) hits.push({ kind: 'deference', detail: `"${m[0]}" (${name}) hands the decision back to the shopper` });
+  }
+  return hits;
+}
+
+/* ═══════════════════════════ Accuracy: the false mechanisms ═══════════════════════════ */
+
+// FIRMER IS NOT LOOSER WITH FACTS. Kristy's authority comes from being right, and one
+// wrong claim costs more than ten soft ones. Each rule here is a claim that would make a
+// TRUE position sound more convincing by resting it on something false — which is the one
+// way a firmer voice can do real damage.
+//
+// These are not hypothetical. The accurate case against farmed salmon is strong on its
+// own: a feed-driven fat profile with a far worse omega-3 to omega-6 ratio, astaxanthin
+// in the ration because the flesh is otherwise gray, sea lice and their treatments, and
+// antibiotic use that varies enormously by country. None of it needs propping up.
+
+const FARMED_FISH = /\b(farmed|farm-raised|aquaculture|penned)\b/i;
+const SALMON_CONTEXT = /\b(salmon|farmed fish|aquaculture)\b/i;
+
+const MECHANISMS = [
+  {
+    id: 'salmon_hormones',
+    // FALSE. Growth hormones are not used in commercial salmon farming anywhere. The
+    // claim is a persistent myth and it is the fastest way to lose the whole argument.
+    test: (t) => SALMON_CONTEXT.test(t) && /\bhormones?\b/i.test(t),
+    why: 'growth hormones in farmed salmon — they are not used in commercial salmon farming, and the claim is false',
+  },
+  {
+    id: 'salmon_omega3_amount',
+    // The claim is ALWAYS the RATIO, never the amount. Farmed salmon is fatter, so a
+    // serving often carries as much total omega-3 as wild or more. "Less omega-3" is
+    // false and it is the easy thing to reach for.
+    test: (t) =>
+      FARMED_FISH.test(t) && /\b(less|lower|fewer|little|hardly any|not much|no real)\s+omega-3\b/i.test(t),
+    why: 'farmed fish having less omega-3 — the claim is about the omega-3 to omega-6 RATIO, never the amount',
+  },
+  {
+    id: 'antibiotics_flat',
+    // Antibiotic use in aquaculture varies enormously by country of origin: Norwegian
+    // farming runs close to zero on the back of vaccination, others run far higher. A
+    // flat claim is false for the best producers and unfalsifiable for the rest.
+    test: (t) =>
+      /\b(full of|pumped (full )?of|loaded with|riddled with|swimming in|dosed with)\s+antibiotics\b/i.test(t),
+    why: 'a flat antibiotic claim — use varies enormously by country of origin and must be framed that way',
+  },
+  {
+    id: 'antibiotics_unframed',
+    // Naming antibiotics on a farmed-fish card WITHOUT the country framing is the same
+    // claim by omission. This is a required-context rule rather than a banned phrase,
+    // because the defect is what the sentence leaves out.
+    test: (t) =>
+      FARMED_FISH.test(t) &&
+      /\bantibiotic/i.test(t) &&
+      !/\b(countr\w+|origin|varies|varying|vary|by producer|norway|norwegian|chile|chilean)\b/i.test(t),
+    why:
+      'antibiotics named on a farmed-fish card with no country framing — always "varies by country of origin", ' +
+      'never a flat claim',
+  },
+];
+
+/**
+ * The false mechanisms on a card. Empty is the passing state.
+ * @returns {Array<{id:string, why:string}>}
+ */
+export function falseMechanisms(card) {
+  const text = [
+    card?.headline,
+    card?.do ?? card?.do_line,
+    card?.why,
+    card?.detail,
+    card?.kristy_take,
+    card?.tier_note,
+    ...(card?.look_for || []),
+    ...(card?.watch_out || []),
+    ...(card?.labels_decoded || []).map((l) => `${l?.term} ${l?.meaning}`),
+  ]
+    .filter(Boolean)
+    .join('  ');
+  return MECHANISMS.filter((m) => m.test(text)).map(({ id, why }) => ({ id, why }));
 }
 
 /* ═══════════════════════════ Imperative ═══════════════════════════ */
@@ -341,6 +599,16 @@ export function lintCard(card) {
   if (!headline) fail('HEADLINE_MISSING', 'the card has no verdict');
   else if (words(headline) > MAX_HEADLINE_WORDS) {
     fail('HEADLINE_TOO_LONG', `${words(headline)}w > ${MAX_HEADLINE_WORDS}: ${headline}`);
+  }
+
+  // ONE VERDICT PER HEADLINE. The fallback belongs in look_for or watch_out.
+  for (const h of headlineHedge(headline)) {
+    fail('HEADLINE_HEDGED', `${h.detail}. State the standard undiluted; move the fallback to watch_out`);
+  }
+
+  // Accuracy outranks firmness. A claim that needs a false mechanism is a wrong claim.
+  for (const m of falseMechanisms(card)) {
+    fail('CLAIM_FALSE_MECHANISM', m.why);
   }
 
   if (!doLine) {

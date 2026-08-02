@@ -146,8 +146,11 @@ test('the three worked examples read as calls, not background', () => {
   const byId = (id) => entries.find((e) => e.id === id);
   // "Which cut for stew" → the cut, first word.
   assert.match(byId('beef_cuts_basics').decision, /^Chuck\./);
-  // "Wild vs farmed salmon" → the call, then the fallback, with no hedge in front.
-  assert.match(byId('salmon_wild_vs_farmed').decision, /^Wild if/);
+  // "Wild vs farmed salmon" → the call and nothing else. This used to read "Wild if it
+  // is in reach. Farmed or nothing, buy the farmed", which is two verdicts where the
+  // second cancels the first. Under the one-verdict rule the fallback lives in
+  // watch_out, and it may never climb back into the headline.
+  assert.match(byId('salmon_wild_vs_farmed').decision, /^Wild\./);
   // "Is organic worth it" → where it earns it and where it does not.
   assert.match(byId('organic_worth_it_by_type').decision, /^Organic on thin-skinned/);
 });

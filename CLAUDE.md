@@ -59,10 +59,18 @@ only by prompt.
    whole-food standard, not settled science". A reader must always know whether a claim
    is settled science, a credible concern, or a standard.
 
-7. **No price, ever.** Kristy does not know what anything costs. Budget means
+7. **One verdict per headline, and accuracy outranks firmness.** The headline states the
+   standard undiluted; the fallback moves to `look_for`/`watch_out`. A two-clause headline
+   split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
+   budget, the store's stock or their spare time is a retreat and does not. Firmer is
+   never looser with facts — **if a claim needs a false mechanism to sound convincing, the
+   claim is wrong.** Both enforced by `counterCardLint.js` over all 81 cards, curated and
+   generated.
+
+8. **No price, ever.** Kristy does not know what anything costs. Budget means
    cost-conscious food *selection*. Relative terms only, never a number.
 
-8. **No negative claims about named brands.** Teach the label truth instead ("pasture-
+9. **No negative claims about named brands.** Teach the label truth instead ("pasture-
    raised means space, not feed — the word to find is soy-free"). It is defensible,
    never goes stale, and makes the shopper competent at every product.
 
@@ -74,7 +82,7 @@ only by prompt.
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
   `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (77 entries) answers
+  thing the verdict engine sees. `kristy_perimeter_kb.json` (79 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
@@ -327,7 +335,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (406 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (415 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
@@ -336,9 +344,17 @@ equality *is* the positioning.
   shipped, silently stopping the generated corpus from growing.
 - **The counter card's shape bar is executable, and it runs against generated cards too.**
   `server/lib/counterCardLint.js` holds the rules (the observable may not sit in both the
-  headline and the `do` line; the em-dash-then-justification share has a ceiling; within-
-  section closing duplication fails; verb distribution is reported and never fails). Pass 3
-  must call `lintCard` before persisting a generated card.
+  headline and the `do` line; one verdict per headline; no false mechanism; the em-dash-
+  then-justification share has a ceiling; within-section closing duplication fails; verb
+  distribution and intra-card contradiction are reported and never fail). Pass 3 must call
+  `lintCard` before persisting a generated card.
+- **A fold is a removal AND a delete, in one operation.** The migration upserts on slug and
+  never removes, so an entry deleted from the KB leaves its row alive in `counter_cards` —
+  still retrievable, still matching on its own aliases, and no longer editable because the
+  file it came from is gone. Retirement is declared in `RETIRED` (`counterCards.js`) and the
+  migration deletes those rows in the same run. Move the folded card's aliases onto its
+  absorber and repoint any section `shortcut`, or the fold is a coverage regression wearing
+  a tidy diff.
 - **Rendered-line claims need a browser.** `cd client && node test/skim.mjs` renders all 80
   cards at a true 390px over CDP and measures line boxes; `node test/shots.mjs` captures
   the six representative cards. Both need the API server running on :3001.

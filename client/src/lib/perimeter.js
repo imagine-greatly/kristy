@@ -13,12 +13,12 @@ function demoAnswer(question) {
       matched: true,
       entries: [{
         id: 'salmon_wild_vs_farmed', title: 'Wild vs. farmed salmon', category: 'seafood',
-        short_answer: 'Genuinely different fish. Wild is leaner on a varied diet, farmed is fattier on formulated feed. Both are real food.',
+        short_answer: 'Two different animals sold under one name. Wild eats krill and small fish across open ocean; farmed eats a formulated ration, astaxanthin included.',
         evidence_tier: 'kristys_standard',
-        buying_tips: ['Frozen wild Alaskan is often cheaper and fresher than "fresh" farmed.', 'Sockeye and coho are almost always wild.'],
+        buying_tips: ['Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed.', 'Sockeye and coho are almost always wild.'],
         sources: ['NOAA Fisheries / Seafood Watch'],
       }],
-      answer: 'Wild if it is in reach. That is a whole-food-standard call, not settled science. Frozen wild Alaskan is usually the smart buy. Farmed or nothing? Buy the farmed.',
+      answer: 'Wild. Farmed salmon is a different fish, fed and penned. Frozen wild is usually the smart buy. If it is farmed or nothing, buy the farmed and cook it well.',
       refinement: 'Wild-caught salmon',
       gated: false,
     };

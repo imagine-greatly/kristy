@@ -66,6 +66,27 @@ export function kindFor(slug) {
   return HOME_CARDS.has(slug) ? 'home' : 'shelf';
 }
 
+/* ═══════════════════════════ Retired cards ═══════════════════════════ */
+
+// A FOLD IS NOT A DELETION FROM THE KB. The migration UPSERTS on slug and never removes,
+// so an entry deleted from kristy_perimeter_kb.json leaves its row alive in counter_cards
+// — still retrievable, still matching on its own aliases, still answering shoppers with
+// copy that no longer exists in version control. That is the worst possible half-state:
+// the card cannot be edited, because the file it came from no longer has it.
+//
+// So retirement is DECLARED here and the migration deletes these rows as a step of the
+// same run that upserts the rest. Fold and delete are one operation or the fold is a bug.
+//
+// A retired slug's aliases must be moved onto the card that absorbs it, or the questions
+// it used to answer stop resolving to anything.
+export const RETIRED = [
+  // Folded into `beef_grassfed_vs_grainfed` on 2026-08-01. The essentials beef card now
+  // states grass-fed AND grass-finished as one standard, which is all this card said, and
+  // `label_grass_fed_term` already carried the same content for the Label terms section.
+  // Three cards on one label was two too many. Its aliases moved onto the beef card.
+  'grassfed_vs_grassfinished',
+];
+
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */
 
 // The eight cards that sit on the counter index itself, readable and expandable without

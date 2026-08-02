@@ -36,34 +36,33 @@ Also: imperative, starts with a verb, ≤14 words.
 
 | slug | section | current headline | proposed do | flag |
 | --- | --- | --- | --- | --- |
-| `salmon_wild_vs_farmed` | seafood | Wild if it is in reach. Farmed or nothing, buy the farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
+| `salmon_wild_vs_farmed` | seafood | Wild. Farmed is a different fish, fed and penned. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
 | `canned_fish_mercury` | seafood | Go small. The short-lived fish are the ones to stock. | Read the can for “light” or “skipjack”; “white” means albacore. | — |
-| `shrimp_imported_vs_domestic` | seafood | Wild American shrimp when it is there. Otherwise a certified farm. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
+| `shrimp_imported_vs_domestic` | seafood | Wild American. Most shrimp is imported, farmed, and anonymous. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
 | `fresh_vs_previously_frozen_fish` | seafood | Buy the frozen. Thaw it overnight in the fridge. | Ask the counter “was this previously frozen?” before paying the fresh premium. | — |
-| `beef_grassfed_vs_grainfed` | meat | Grass-fed when the price is fair. Otherwise regular beef. | Buy grass-fed as ground beef or chuck, not as ribeye. | — |
-| `grassfed_vs_grassfinished` | meat | Paying grass-fed prices? Buy grass-FINISHED. | Look for the American Grassfed seal, the only whole-life claim. | — |
+| `beef_grassfed_vs_grainfed` | meat | Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Look for fine white flecks through the muscle, not a thick fat rim. | — |
 | `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the cut name too: “ground chuck” beats plain “ground beef.” | — |
-| `egg_labels` | eggs_dairy | Worth it if the budget stretches. Otherwise the plain carton. | Find a certifier’s seal beside “pasture-raised”, not the words alone. | — |
-| `egg_yolk_color` | eggs_dairy | Ignore the yolk color. Buy on how the hen was raised. | Read the raising claim on the carton side, not the yolk photo on front. | — |
-| `air_chilled_chicken` | meat | Air-chilled if the price is close. Regular chicken if it is not. | Check the package for “retained water up to”. That percentage is water. | — |
+| `egg_labels` | eggs_dairy | Soy-free and corn-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
+| `egg_yolk_color` | eggs_dairy | Ignore the yolk color. Nobody can read a diet off it. | Read the printed feed words instead of judging the yolk photo. | — |
+| `air_chilled_chicken` | meat | Air-chilled. A water-chilled bird absorbs the bath it was cooled in. | Check the package for “retained water up to”. That percentage is water. | — |
 | `no_antibiotics_poultry` | meat | A fair choice, not a cleaner bird. Don’t pay the premium. | Look for “USDA Process Verified” beside the claim, or put it back. | — |
 | `organic_worth_it_by_type` | produce | Organic on thin-skinned produce. Conventional on anything peeled. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen. Cheaper, no waste, and in season all year. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Walk the farmers’-market table before the produce aisle. | — |
 | `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
-| `precut_produce_tradeoffs` | produce | Buy it if convenience is what gets vegetables eaten. | Check the use-by date — pre-cut spoils days before whole produce does. | — |
-| `grassfed_butter` | eggs_dairy | Real butter over any spread. Grass-fed if the budget allows. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
-| `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Buy the one the household actually drinks. | Skip the chocolate and strawberry jugs, where the added sugar sits. | — |
+| `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date — pre-cut spoils days before whole produce does. | — |
+| `grassfed_butter` | eggs_dairy | Grass-fed butter, and the difference is visible before you taste it. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
+| `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Everything else has been through another step. | Read the milkfat percentage on the panel, not the cap color. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Buy a block of real cheese and slice it yourself. | Read the list for milk, salt, cultures, rennet. Nothing else belongs. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain, big tub. Add your own fruit. | Take the big plain tub, not the single-serve fruit cups. | — |
 | `raw_milk` | eggs_dairy | Worth the trouble of finding. Everything is in the sourcing. | Buy from a farm you can visit that posts its test results. | — |
 | `rice_arsenic` | bulk_pantry | Rinse it, cook it in extra water, drain it. Vary the grains. | Buy basmati or California-grown — the bag prints the origin. | — |
 | `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats, any form. Skip the flavored instant packets. | Turn the canister over. One ingredient, and it is oats. | — |
-| `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Check what they were roasted in. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
+| `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Oil-roasted means a seed oil was added. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
 | `olive_oil_buying` | bulk_pantry | Recent harvest date, dark bottle, one country of origin. | Put back anything unusually cheap for extra-virgin. | — |
 | `honey_adulteration` | bulk_pantry | Raw and local. The list should read honey and nothing else. | Buy honey with a producer and a region named on the jar. | — |
-| `beans_dried_vs_canned` | bulk_pantry | Dried when there is time. Canned and rinsed when there is not. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
+| `beans_dried_vs_canned` | bulk_pantry | Dried. Same bean, a fraction of the price, and your own salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
 | `label_natural` | label_terms | Ignore it. Read the ingredient list instead. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | Flip it over. Find where that ingredient falls in the list. | Count how far down the list that ingredient sits — past third is trace. | — |
 | `label_no_added_hormones` | label_terms | Meaningful on beef and dairy. A freebie on chicken and pork. | Look for a third-party verifier on the beef and dairy claim. | — |
@@ -80,22 +79,22 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_shell_color` | eggs_dairy | Buy the cheaper carton. Shell color is the breed. | Open the carton and check every egg for cracks before buying. | — |
 | `egg_freshness` | eggs_dairy | Read the three-digit pack date, not the sell-by. | Find the three-digit number beside the plant code. Higher is fresher. | — |
 | `egg_grades_sizes` | eggs_dairy | Compare price per ounce. Grade and size say nothing about the hen. | Read the weight per dozen on the carton end: 24, 27, 30 ounces. | — |
-| `egg_feed_claims` | eggs_dairy | Space and feed are two different claims. | Look for “soy-free” or “corn-free” printed on the carton. | — |
+| `egg_feed_claims` | eggs_dairy | ‘Vegetarian-fed’ is the one to walk away from. | Check whether the carton claims outdoor access and no animal protein at once. | — |
 | `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door — it swings warm every open. | — |
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Buy Select for the braise and put the money into Choice steaks. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Press with a fingertip. It should spring back, not stay dented. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask for the bones and trim behind the counter, usually free. | — |
-| `chicken_cuts_basics` | meat | Bone-in thighs. A whole bird when there is time for stock. | Put back the boneless skinless. It is the same bird, priced up. | — |
+| `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice a whole roasted turkey breast instead. | — |
 | `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
 | `fish_freshness_at_counter` | seafood | Smell it first. Clean seawater or nothing means yes. | Check it is bedded in ice, not sitting in its own liquid. | — |
 | `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
 | `farmed_fish_by_species` | seafood | Farmed shellfish, trout and char are the good ones. | Buy the farmed mussels, clams and oysters — they are fed nothing. | — |
-| `seafood_certifications` | seafood | MSC is wild. ASC and BAP are farms. | Check the badge names a program you can look up. Unnamed is marketing. | — |
+| `seafood_certifications` | seafood | MSC on wild. A farm seal is a floor, not a recommendation. | Check the badge names a program you can look up. Unnamed is marketing. | — |
 | `produce_ripeness_by_item` | produce | Pick up two and take the heavier one. | Turn the berry container over and check for juice stains underneath. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
-| `milk_processing` | eggs_dairy | Plain pasteurized over ultra. Cream-top if the store has it. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
+| `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
 | `pre_shredded_cheese` | eggs_dairy | Buy the block and grate it. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_live_cultures` | eggs_dairy | Plain, and it should still be alive. | Find “live and active cultures” printed on the tub. | — |
 | `cream_vs_creamer` | eggs_dairy | Cream or half-and-half. ‘Non-dairy creamer’ is not dairy. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
@@ -103,14 +102,14 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `rancidity_check` | bulk_pantry | Smell it. Old paint or crayons means it is spent. | Buy oil in a dark bottle small enough to finish in two months. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin, a harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
-| `nut_butter_ingredients` | bulk_pantry | Peanuts, and salt if you want it. Nothing else. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
+| `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
 | `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Grab bulgur or quinoa for a weeknight — both cook in fifteen minutes. | — |
 | `label_front_vs_back` | label_terms | Turn it over. Decide from the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Read the first three ingredients, then the added-sugar line. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
-| `label_third_party_seals` | label_terms | Ask who wrote the standard, and who audits it. | Trace the seal to an organization, not the brand’s own logo. | — |
-| `label_cold_pressed_expeller` | label_terms | Two ways to get oil out. Only one is mechanical. | Read for a process word. No process word means solvent-extracted. | — |
+| `label_third_party_seals` | label_terms | A published standard and an outside auditor, or it is a sticker. | Trace the seal to an organization, not the brand’s own logo. | — |
+| `label_cold_pressed_expeller` | label_terms | Pressed, not extracted. ‘Refined’ is the word that gives it away. | Read for a process word. No process word means solvent-extracted. | — |
 | `label_sugar_free_substitutes` | label_terms | Read what replaced the sugar. ‘Unsweetened’ is the plainer word. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
-| `label_wild_vs_farm_raised` | label_terms | Read all three: species, wild or farmed, and country. | Buy the skin-on fillet — a bare fillet is the easy one to substitute. | — |
+| `label_wild_vs_farm_raised` | label_terms | Species, method, country. All three required, and none stops substitution. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
 | `label_serving_size` | label_terms | Read the top two lines before any of the numbers. | Check both packages list the same serving size before comparing anything. | — |
 | `raw_kefir` | eggs_dairy | The best thing a farm does with its milk. Buy it cultured. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `clabber` | eggs_dairy | The oldest ferment there is. Good milk does it by itself. | Buy an extra bottle of the raw milk and let one sit out. | — |
@@ -199,7 +198,7 @@ Duplicate closings and constructions found, and what was done:
 - `nothing else belongs` / `and stops there` (`cheese_real_vs_processed`,
   `yogurt_plain_vs_flavored`) — varied the yogurt line.
 - **"find the third-party seal" appears on seven cards** — `egg_labels`,
-  `grassfed_vs_grassfinished`, `no_antibiotics_poultry`, `label_free_range`,
+  `grassfed_vs_grassfinished` (folded 2026-08-01), `no_antibiotics_poultry`, `label_free_range`,
   `label_no_added_hormones`, `label_third_party_seals`, `seafood_certifications`. Five name
   a specific seal and earn their place; `label_third_party_seals` was redrafted onto a
   different act. **`label_no_added_hormones` and `seafood_certifications` are left alone —

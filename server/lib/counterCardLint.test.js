@@ -14,10 +14,14 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
-import { projectEntry, parseReviewTable } from './counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from './counterCards.js';
+import { PERIMETER_SECTIONS } from './perimeter.js';
 import {
   lintCard,
   lintCorpus,
+  headlineHedge,
+  falseMechanisms,
+  contradictions,
   sharedObservables,
   closingConstruction,
   words,
@@ -124,7 +128,7 @@ test('ONE shared subject noun is fine — the do line still earns its place', ()
   // the cut. Flagging this would make the check useless.
   assert.deepEqual(
     sharedObservables(
-      'Grass-fed when the price is reasonable. Regular beef when it is not.',
+      'Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish.',
       'Buy grass-fed as ground beef or chuck, not as ribeye.'
     ),
     []
@@ -245,17 +249,123 @@ test('verb distribution is REPORTED and never fails', () => {
 
 test('the corpus verb report is populated and every opener is a known verb', () => {
   const { report } = lintCorpus(CARDS);
-  assert.equal(report.total, 80);
+  assert.equal(report.total, CARDS.length);
   assert.ok(report.verbs.length > 10, 'the corpus should not collapse to a handful of verbs');
   for (const { verb } of report.verbs) {
     assert.ok(IMPERATIVE_VERBS.has(verb), `"${verb}" opens a do line but is not a known verb`);
   }
 });
 
+/* ═══════════════════════════ One verdict per headline ═══════════════════════════ */
+
+test('the hedge in the verdict is caught, in all four of its shapes', () => {
+  // The nine that shipped, one per shape.
+  const hedged = [
+    'Wild if it is in reach. Farmed or nothing, buy the farmed.',
+    'Grass-fed when the price is fair. Otherwise regular beef.',
+    'Worth it if the budget stretches. Otherwise the plain carton.',
+    'Air-chilled if the price is close. Regular chicken if it is not.',
+    'Plain pasteurized over ultra. Cream-top if the store has it.',
+    'Dried when there is time. Canned and rinsed when there is not.',
+    'Paying grass-fed prices? Buy grass-FINISHED.',
+    // No conditional keyword at all, and the identical retreat: name the pick, then
+    // hand the choice straight back.
+    'Whole milk. Buy the one the household actually drinks.',
+  ];
+  for (const h of hedged) assert.ok(headlineHedge(h).length, `not caught: ${h}`);
+});
+
+test('a type or use-case split is discrimination, and must survive', () => {
+  // THE CHECK EXISTS TO SPARE THESE. A two-clause headline is not the defect; a second
+  // clause conditioned on the shopper's WALLET is. Banning two clauses would delete the
+  // four headlines where the standard genuinely differs by what is in your hand.
+  const splits = [
+    'Organic on thin-skinned produce. Conventional on anything peeled.',
+    'Meaningful on beef and dairy. A freebie on chicken and pork.',
+    'Pay for grade on a quick-cooked steak. Skip it on anything braised.',
+    '80/20 for burgers. 90/10 for anything you drain.',
+  ];
+  for (const h of splits) assert.deepEqual(headlineHedge(h), [], `false positive: ${h}`);
+});
+
+test('a temporal "when" and a descriptive "or nothing" are not hedges', () => {
+  // Both were false positives on the first draft of this check. "Wash it when you eat
+  // it" is a time, not a condition; "clean seawater or nothing" describes a smell.
+  assert.deepEqual(headlineHedge('Wash it when you eat it, not when you unpack it.'), []);
+  assert.deepEqual(headlineHedge('Smell it first. Clean seawater or nothing means yes.'), []);
+});
+
+/* ═══════════════════════════ Accuracy ═══════════════════════════ */
+
+test('the false mechanisms are refused, however true the position they prop up', () => {
+  const card = (why) => ({ headline: 'Wild.', do: 'Take the frozen sockeye.', why, tier_note: 'x' });
+  // Not used in commercial salmon farming anywhere. The claim is a myth.
+  assert.ok(falseMechanisms(card('Farmed salmon is raised on growth hormones.')).length);
+  // Farmed salmon is fatter and often carries MORE total omega-3. The claim is the ratio.
+  assert.ok(falseMechanisms(card('Farmed fish has less omega-3 than wild.')).length);
+  assert.ok(falseMechanisms(card('Farmed shrimp is full of antibiotics.')).length);
+  // Naming antibiotics on a farmed card without the country framing is the same claim
+  // by omission — this one is a required-context rule, not a banned phrase.
+  assert.ok(falseMechanisms(card('Farmed fish is treated with antibiotics.')).length);
+  assert.deepEqual(
+    falseMechanisms(card('Antibiotic use on farms varies enormously by country of origin.')),
+    []
+  );
+  // The accurate case has to pass, or the rule is just a gag.
+  assert.deepEqual(
+    falseMechanisms(
+      card('Farmed salmon eats a formulated ration, which leaves it with a far worse omega-3 to omega-6 ratio.')
+    ),
+    []
+  );
+});
+
+test('an exclusivity claim beside an enumeration is reported, never gated', () => {
+  // The defect this was built from: a do line claiming the sole whole-life seal, beside
+  // a look_for naming two of them.
+  const card = {
+    headline: 'Grass-fed and grass-finished.',
+    do: 'Look for the American Grassfed seal, the only whole-life claim on the case.',
+    look_for: ['The seals that audit the whole life: American Grassfed Association, Certified Grassfed by AGW.'],
+    tier_note: 'x',
+  };
+  assert.ok(contradictions(card).some((c) => c.code === 'CONTRADICTION_EXCLUSIVITY'));
+  // Report only. It must never fail a card.
+  assert.ok(!lintCard(card).some((v) => v.code.startsWith('CONTRADICTION')));
+});
+
 /* ═══════════════════════════ The whole curated corpus ═══════════════════════════ */
 
-test('all 80 curated cards clear the per-card bar', () => {
-  assert.equal(CARDS.length, 80);
+test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
+  // A fold is two operations that must both happen: the entry leaves the KB and the row
+  // leaves counter_cards. Declaring a slug RETIRED while it is still an entry would make
+  // the migration upsert and then delete the same row every run — the card would vanish
+  // from production while still looking present in the file.
+  for (const slug of RETIRED) {
+    assert.ok(
+      !perimeterKb.entries.some((e) => e.id === slug),
+      `${slug} is declared RETIRED but is still an authored entry`
+    );
+    // A section shortcut must already be browsable in that section. Folding a card
+    // without repointing its shortcut leaves a tap that resolves to nothing — the
+    // grass-fed shortcut did exactly this and only a test caught it.
+    for (const section of PERIMETER_SECTIONS) {
+      assert.ok(
+        !(section.shortcuts || []).some((sc) => sc.id === slug),
+        `${section.id} still has a shortcut pointing at retired ${slug}`
+      );
+    }
+  }
+  // The questions a folded card used to answer have to resolve to the card that absorbed
+  // it, or the fold is a coverage regression wearing a tidy diff.
+  const beef = perimeterKb.entries.find((e) => e.id === 'beef_grassfed_vs_grainfed');
+  for (const alias of ['grass finished', 'grass-finished', '100% grass fed']) {
+    assert.ok(beef.aliases.includes(alias), `beef card did not absorb the alias "${alias}"`);
+  }
+});
+
+test('all curated cards clear the per-card bar', () => {
+  assert.equal(CARDS.length, 79);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

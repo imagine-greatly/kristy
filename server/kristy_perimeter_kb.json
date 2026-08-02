@@ -24,33 +24,38 @@
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
-      "decision": "Wild if it is in reach. Farmed or nothing, buy the farmed.",
-      "why": "Different diets, different fat. Wild is the whole-food-standard pick, not a health verdict.",
-      "short_answer": "Genuinely different fish. Wild salmon eats a varied ocean diet and tends to be leaner with a different fat makeup; farmed is raised on formulated feed, is usually fattier, and is colored to look like wild. Both are real food. Wild is the whole-food-standard pick when the budget allows, and that is a preference, not a health verdict.",
-      "detail": "The fatty-acid difference between wild and farmed is real and measurable, and that part is established. Farming concerns (crowding, feed, sea-lice treatments, and contaminant load in some operations) are a credible, still-debated concern, and quality varies a lot by producer and country. Farmed salmon is not ‘bad food’; it is an affordable way to eat fish. Preferring wild is a whole-food call, not a claim that farmed will harm anyone.",
+      "decision": "Wild. Farmed is a different fish, fed and penned.",
+      "why": "Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.",
+      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean; farmed salmon eats a formulated ration built largely on plant protein and vegetable oil, which leaves it with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into that ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin.",
+      "detail": "The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries / Seafood Watch",
         "USDA FoodData Central (fatty-acid composition)"
       ],
-      "kristy_take": "Wild Alaskan if it is in reach. If it is farmed or nothing, buy the farmed. Eating the fish beats skipping it.",
+      "kristy_take": "Wild, and frozen wild before fresh farmed. Farmed is the fallback, never the standard.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
-        "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that’s been in transit.",
-        "Sockeye and coho are almost always wild; color is deep because of diet, not dye.",
-        "‘Fresh’ at the counter is frequently previously-frozen — ask; it’s not a downgrade."
+        "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
+        "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
+        "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade."
+      ],
+      "watch_out": [
+        "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
+        "Frozen wild runs cheaper than fresh farmed. If it is farmed or nothing, buy the farmed and cook it well.",
+        "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish."
       ],
       "labels_decoded": [
         {
-          "term": "Atlantic salmon",
-          "meaning": "Almost always farmed — wild Atlantic salmon is effectively off the market."
+          "term": "Farm-raised",
+          "meaning": "Required on the case label. On salmon it almost always means Atlantic in a pen."
         },
         {
           "term": "Wild-caught / Alaskan",
           "meaning": "Caught in the wild; Alaskan fisheries are well managed."
         }
       ],
-      "tier_note": "The fat difference is real and small. Preferring wild is a sourcing standard, not a nutrition verdict.",
+      "tier_note": "The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.",
       "eyebrow_short": "Wild or farmed"
     },
     {
@@ -108,21 +113,21 @@
       ],
       "category": "seafood",
       "question": "Is imported or domestic shrimp better?",
-      "decision": "Wild American shrimp when it is there. Otherwise a certified farm.",
-      "why": "Most shrimp is imported and farmed, and standards vary. The certification is the check.",
-      "short_answer": "Most shrimp in US stores is imported and farmed. Domestic wild shrimp (US Gulf/Atlantic) and better-certified farmed shrimp are the picks when they are available. The concern with some imported farmed shrimp is inconsistent farming standards, not that shrimp is bad.",
-      "detail": "Roughly 90% of US shrimp is imported, much of it pond-farmed. Standards vary widely by country and producer, and only a small share of imports is inspected. Certifications and country-of-origin labeling help you choose. This is a sourcing-quality call, tiered as a credible concern, not a health verdict on shrimp.",
+      "decision": "Wild American. Most shrimp is imported, farmed, and anonymous.",
+      "why": "Country of origin is printed by law. It is the one sourcing question with an answer.",
+      "short_answer": "Most shrimp in US stores is imported and farmed, and what stands behind it varies enormously by country of origin. Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery. Where the bag is farmed, a credible certification is what stands in for knowing the farm.",
+      "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Farming practice, pond management and antibiotic use vary by producing country rather than by the word ‘farmed’, so origin plus a certification does more work than any claim on the front of the bag. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value.",
       "evidence_tier": "credible_concern",
       "sources": [
         "NOAA Fisheries country-of-origin data",
         "Monterey Bay Seafood Watch"
       ],
-      "kristy_take": "Wild US Gulf when it is there, otherwise a reputable certified farm. Either way, shrimp is a lean, quick protein.",
+      "kristy_take": "Read the country first. It is printed by law and it is most of the answer.",
       "cart_pick": "Wild American shrimp",
       "buying_tips": [
-        "Country-of-origin is required on the label — read it.",
-        "Look for ‘wild American/Gulf’ or a credible farm certification (e.g., BAP, ASC).",
-        "Frozen raw shrimp gives you the most control and usually the best price."
+        "Country-of-origin is required on the label. Read it before anything on the front.",
+        "‘Wild American’ or ‘Gulf’ is the traceable one.",
+        "Frozen raw gives the most control over the cooking, and usually the best value."
       ],
       "labels_decoded": [
         {
@@ -134,7 +139,11 @@
           "meaning": "Pond or tank raised; quality depends entirely on the operation."
         }
       ],
-      "tier_note": "Farm practices genuinely vary by origin, the concern is documented, and a certified bag is the clean swap."
+      "tier_note": "Farm practices genuinely vary by origin, the concern is documented, and a certified bag is the clean swap.",
+      "watch_out": [
+        "Where wild American is not stocked, a BAP or ASC certification is the check that stands in for knowing the farm.",
+        "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier."
+      ]
     },
     {
       "id": "fresh_vs_previously_frozen_fish",
@@ -184,77 +193,47 @@
         "grass-fed",
         "grain fed beef",
         "grain-finished",
-        "beef"
-      ],
-      "category": "beef",
-      "question": "Is grass-fed beef worth it?",
-      "decision": "Grass-fed when the price is fair. Otherwise regular beef.",
-      "why": "The fat profile differs, modestly. Paying up is a whole-food-standard call, not settled science.",
-      "short_answer": "Grass-fed beef has a modestly different fat profile, leaner with a bit more omega-3 and some other fatty acids. That difference is real, if small in absolute terms. Whether it is worth the money is a whole-food-standard call, not settled science. Both are good, real protein.",
-      "detail": "The compositional difference between grass-fed and grain-finished is established but modest. It is not a different food, it is a slightly different fat makeup. The preference for grass-fed is about how the animal was raised and what it ate. That is a whole-food and values call, said plainly rather than dressed up as a proven health upgrade.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        "USDA FoodData Central",
-        "peer-reviewed reviews of grass- vs grain-fed fatty acids"
-      ],
-      "kristy_take": "Grass-fed when the price is reasonable, regular beef when it is not. A cheaper cut of real beef beats an expensive processed ‘protein’ every time.",
-      "cart_pick": "Grass-fed ground beef",
-      "buying_tips": [
-        "Watch for ‘grass-fed’ vs ‘grass-finished’ — they are not the same (see that entry).",
-        "Cheaper grass-fed cuts (chuck, ground) get you the sourcing without the ribeye price.",
-        "On a budget, regular ground beef is still a clean whole food."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Grass-fed",
-          "meaning": "Ate grass at some point — but may have been grain-finished before slaughter."
-        },
-        {
-          "term": "Grain-fed / grain-finished",
-          "meaning": "Finished on grain in a feedlot — the US default."
-        }
-      ],
-      "tier_note": "The fatty-acid gap is measurable and modest. Paying up for it is a standard, not a proven upgrade.",
-      "eyebrow_short": "Grass-fed beef"
-    },
-    {
-      "id": "grassfed_vs_grassfinished",
-      "title": "Grass-fed vs. grass-FINISHED beef",
-      "aliases": [
+        "beef",
         "grass finished",
         "grass-finished",
         "100% grass fed",
         "grass fed grass finished"
       ],
       "category": "beef",
-      "question": "What’s the difference between grass-fed and grass-finished?",
-      "decision": "Paying grass-fed prices? Buy grass-FINISHED.",
-      "why": "‘Grass-fed’ allows a grain finish. Only ‘grass-finished’ means grass the whole life.",
-      "short_answer": "This is the label most people misread. ‘Grass-fed’ only means the animal ate grass at some point — it can still be finished on grain. ‘Grass-finished’ (or ‘100% grass-fed’) means grass its whole life. If the grass-raising is why you’re paying up, that’s the word to look for.",
-      "detail": "Because ‘grass-fed’ isn’t tightly enforced as a standalone claim, a lot of ‘grass-fed’ beef is grain-finished for the last months. ‘100% grass-fed’ or ‘grass-finished’ is the honest version of the claim. This is about label literacy, not health.",
-      "evidence_tier": "established",
+      "question": "Is grass-fed beef worth it?",
+      "decision": "Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish.",
+      "why": "‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard.",
+      "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze for most of their lives, spend the last months in a feedlot on grain, and the package still says grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ is the claim that covers the whole life, and it is the one worth paying for. The fat profile follows the finish, not the start.",
+      "detail": "The USDA withdrew its own grass-fed marketing standard in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "USDA FSIS labeling guidance",
-        "American Grassfed Association standards"
+        "USDA FoodData Central",
+        "peer-reviewed reviews of grass- vs grain-fed fatty acids"
       ],
-      "kristy_take": "If you’re paying grass-fed prices, get grass-FINISHED. Otherwise you’re buying the same feedlot finish with a nicer sticker.",
-      "cart_pick": "Grass-finished beef",
+      "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
+      "cart_pick": "Grass-finished ground beef",
       "buying_tips": [
-        "Look for ‘100% grass-fed’ or ‘grass-finished’, not just ‘grass-fed’.",
-        "Third-party certification (e.g., American Grassfed) is the strongest signal.",
-        "Ask the butcher directly — a good counter will know."
+        "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
+        "Ground and chuck are the cheapest way into a whole-life grass animal.",
+        "At the counter, ask what the animal was finished on and for how long."
+      ],
+      "watch_out": [
+        "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
+        "Pasture artwork on the package is not a claim. The words are the claim.",
+        "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat."
       ],
       "labels_decoded": [
         {
           "term": "Grass-fed",
-          "meaning": "Ate grass at some point; may be grain-finished."
+          "meaning": "Ate grass at some point. May still have been grain-finished before slaughter."
         },
         {
-          "term": "100% grass-fed / grass-finished",
-          "meaning": "Grass its entire life — the claim most people think ‘grass-fed’ means."
+          "term": "Grain-fed / grain-finished",
+          "meaning": "Finished on grain in a feedlot. The US default."
         }
       ],
-      "tier_note": "What each term is allowed to mean is written into the labelling rules."
+      "tier_note": "What each of the two words is allowed to mean is documented fact. Insisting on the whole-life claim is a standard, not a finding.",
+      "eyebrow_short": "Grass-fed beef"
     },
     {
       "id": "beef_cuts_basics",
@@ -338,33 +317,43 @@
     },
     {
       "id": "egg_labels",
-      "title": "Egg labels: cage-free, free-range, pasture-raised, organic",
+      "title": "Egg labels, and what the hen ate",
       "aliases": [
         "eggs",
         "egg labels",
         "cage free eggs",
         "free range eggs",
         "pasture raised eggs",
-        "organic eggs"
+        "organic eggs",
+        "soy free eggs",
+        "corn free eggs",
+        "hen feed",
+        "what hens eat"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Worth it if the budget stretches. Otherwise the plain carton.",
-      "why": "The labels are a ladder of space, not a different egg. Any egg is a cheap complete protein.",
-      "short_answer": "They’re a ladder of how much outdoor access the hens got. Cage-free means out of cages but often still indoors and crowded; free-range means some outdoor access (loosely defined); pasture-raised (especially Certified Humane) means real time on pasture. Organic layers on top of that. Higher up the ladder generally means a better-raised hen — not a dramatically different egg on your plate.",
-      "detail": "Only some of these terms are tightly enforced. ‘Pasture-raised’ paired with a third-party certification (Certified Humane, AGA) is the most meaningful claim; ‘cage-free’ and ‘free-range’ are weaker. Nutrition differences exist but are modest. This is mostly an animal-welfare and preference call, and it is framed that way here.",
+      "decision": "Soy-free and corn-free first, then organic, then pasture-raised.",
+      "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
+      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. They describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. Most pasture-raised hens are still on soy and corn. The order that matters is soy-free and corn-free first, then organic, then pasture-raised: what she ate, then how it was grown, then how much room she had.",
+      "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
         "Certified Humane standards"
       ],
-      "kristy_take": "Pasture-raised if the budget stretches; plain eggs if it doesn’t. An egg is one of the cheapest complete proteins there is either way.",
-      "cart_pick": "Pasture-raised eggs",
+      "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
+      "cart_pick": "Soy-free pasture-raised eggs",
       "buying_tips": [
-        "‘Pasture-raised’ + a certification seal is the strongest claim.",
-        "‘Cage-free’ and ‘free-range’ are loosely defined — don’t overpay for the words alone.",
-        "Plain conventional eggs are still an excellent, cheap whole food.",
-        "All three of these are SPACE claims — none of them says what the hen was fed. If that matters, look for “soy-free” printed on the carton."
+        "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
+        "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
+        "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
+        "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
+        "Plain conventional eggs are still one of the cheapest complete proteins in the store."
+      ],
+      "watch_out": [
+        "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
+        "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
+        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which."
       ],
       "labels_decoded": [
         {
@@ -384,7 +373,7 @@
           "meaning": "A FEED claim — the only kind that addresses the ration. Must be printed explicitly."
         }
       ],
-      "tier_note": "The ladder of space claims is defined. Which rung is worth paying for is the standard.",
+      "tier_note": "What each carton word is allowed to mean is defined. Ranking feed above room is the standard.",
       "eyebrow_short": "Egg labels"
     },
     {
@@ -398,20 +387,20 @@
       ],
       "category": "poultry_eggs",
       "question": "Does a darker yolk mean a healthier egg?",
-      "decision": "Ignore the yolk color. Buy on how the hen was raised.",
-      "why": "Color comes from feed, and additives do it too. It says nothing about the egg.",
-      "short_answer": "Not really. Yolk color comes from what the hen eats — marigold, corn, greens, or added pigments — not from how nutritious the egg is. A deep-orange yolk can signal a varied diet, but it can also be feed additives. Color alone doesn’t tell you much.",
-      "detail": "Producers can and do adjust yolk color with feed. Pasture and varied diets tend to produce deeper color, but so do supplements added specifically for that look. It’s a weak proxy for quality, not proof of it.",
+      "decision": "Ignore the yolk color. Nobody can read a diet off it.",
+      "why": "Color is pigment in the feed. A varied diet and an additive look identical.",
+      "short_answer": "Yolk color comes from pigment in the feed and from nothing else. A varied diet with real greens and insects deepens it. So does marigold extract or paprika added to the ration for exactly that effect, and the two are indistinguishable by eye. That is precisely why the printed feed words are the tell and the color is not.",
+      "detail": "Producers can and do dial yolk color with feed, and the supplements that do it are sold for the purpose. Pasture and varied diets tend to produce deeper color too, which is what makes the signal useless: the same shade arrives by two completely different routes and the carton never says which one. Freshness is a different question and it does show, in a yolk that stands up in the pan and a white that holds together.",
       "evidence_tier": "established",
       "sources": [
         "USDA egg-quality references",
         "poultry-science feed-pigment literature"
       ],
-      "kristy_take": "Don’t buy eggs on yolk color. Buy them on how the hen was raised, if that matters to you.",
+      "kristy_take": "Deep orange is either a good diet or a pigment. The yolk will not tell you which.",
       "buying_tips": [
-        "Judge eggs by the raising claim, not the yolk photo on the carton.",
-        "A varied diet often means deeper color — but so can additives.",
-        "Freshness (a firm, standing yolk) tells you more than color."
+        "A varied diet deepens yolk color. So does an additive bought to do it.",
+        "Freshness shows in the pan: a yolk that stands up, a white that holds together.",
+        "The yolk photo on the carton is artwork, not a sample."
       ],
       "labels_decoded": [],
       "tier_note": "That feed and additives drive yolk color is well established, and it is why color reads nothing."
@@ -427,20 +416,20 @@
       ],
       "category": "poultry",
       "question": "Is air-chilled chicken better?",
-      "decision": "Air-chilled if the price is close. Regular chicken if it is not.",
-      "why": "Cold air instead of a water bath means no absorbed water weight and better skin.",
-      "short_answer": "Air-chilled chicken is cooled with cold air instead of a communal water bath, so it doesn’t soak up water weight and tends to have better texture and crispier skin. It’s a quality-and-value point — you’re not paying for absorbed water — more than a health one.",
+      "decision": "Air-chilled. A water-chilled bird absorbs the bath it was cooled in.",
+      "why": "Cold air instead of a communal tank. Nothing soaks in, and the skin starts dry.",
+      "short_answer": "Air-chilled birds are cooled in cold air. Water-chilled birds go through a communal chilled-water tank and come out having taken some of it on, which is then sold by the pound. Retained water has to be disclosed on the label, so the number is printed rather than inferred. Skin that did not start out wet is also the skin that crisps.",
       "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FSIS poultry-chilling references"
       ],
-      "kristy_take": "If the price is close, air-chilled — better skin, no water weight. If not, regular chicken is still a clean, cheap protein.",
+      "kristy_take": "Air-chilled. Better skin, and nothing on the scale that is not chicken.",
       "cart_pick": "Air-chilled whole chicken",
       "buying_tips": [
-        "Look for ‘air-chilled’ on the package if crispy skin matters to you.",
-        "Water-chilled birds can carry ‘retained water up to X%‘ on the label — check it.",
-        "Either way, a whole bird is the cheapest way to buy chicken."
+        "‘Air-chilled’ is printed on the package when it applies.",
+        "A whole bird is the cheapest way to buy chicken either way.",
+        "Skin that starts dry is the skin that crisps."
       ],
       "labels_decoded": [
         {
@@ -448,7 +437,11 @@
           "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
         }
       ],
-      "tier_note": "Retained water is a disclosed number. Preferring air-chilled is a standard about handling."
+      "tier_note": "Retained water is a disclosed number. Preferring air-chilled is a standard about handling.",
+      "watch_out": [
+        "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
+        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan."
+      ]
     },
     {
       "id": "no_antibiotics_poultry",
@@ -504,7 +497,7 @@
       "question": "Is organic produce worth the extra money?",
       "decision": "Organic on thin-skinned produce. Conventional on anything peeled.",
       "why": "Residue sits on the surface, so skin and peeling do most of the work.",
-      "short_answer": "It depends on the item. The reasonable rule of thumb: thin-skinned produce you eat whole (berries, leafy greens, apples) carries more surface residue, so that’s where organic buys you the most; thick-skinned or peeled produce (avocado, banana, citrus, onion) you can comfortably buy conventional. Just know the popular ‘Dirty Dozen’ list itself is contested — treat it as a rough guide, not settled science.",
+      "short_answer": "Thin-skinned produce you eat whole (berries, leafy greens, apples, grapes) carries more surface residue, and that is where organic earns the money. Thick-skinned or peeled produce (avocado, banana, citrus, onion) you buy conventional without a second thought. The ‘Dirty Dozen’ list is a rough guide with contested methodology, not a ranking to shop from.",
       "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The thin-skin/high-residue reasoning is sound as a prioritization tool. The specific ‘Dirty Dozen’ ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win.",
       "evidence_tier": "credible_concern",
       "sources": [
@@ -512,11 +505,15 @@
         "EPA tolerance limits",
         "peer-reviewed critiques of Dirty Dozen methodology"
       ],
-      "kristy_take": "If organic means you buy fewer vegetables, buy conventional and eat more. More produce beats perfect produce.",
+      "kristy_take": "Spend it on the ones you eat whole. Everything you peel, buy plain.",
       "buying_tips": [
         "Prioritize organic for thin-skinned, eaten-whole items (berries, greens, apples).",
-        "Buy conventional for peeled/thick-skinned (avocado, banana, citrus, onion).",
-        "Wash conventional produce well — it removes some residue and dirt."
+        "Buy conventional for peeled and thick-skinned produce (avocado, banana, citrus, onion).",
+        "Wash conventional produce well. It removes some residue and dirt."
+      ],
+      "watch_out": [
+        "The ‘Dirty Dozen’ ranking is contested on its methodology. The thin-skin reasoning holds; the list order does not.",
+        "If organic means fewer vegetables in the cart, buy conventional and eat more."
       ],
       "labels_decoded": [
         {
@@ -648,19 +645,19 @@
       ],
       "category": "produce",
       "question": "Is pre-cut produce a good buy?",
-      "decision": "Buy it if convenience is what gets vegetables eaten.",
-      "why": "It costs more and spoils faster. Nutrient loss from cutting is minor.",
-      "short_answer": "It’s a fair trade of money and shelf life for time. Pre-cut and bagged produce costs more per pound and spoils faster once cut, but if the convenience is the difference between eating vegetables and not, it’s worth it. Nutrient loss from cutting is minor.",
+      "decision": "Whole produce. Pre-cut costs more and keeps less.",
+      "why": "Cutting opens every surface at once. It costs more and it keeps for days, not weeks.",
+      "short_answer": "Cutting produce starts the clock. Pre-cut and bagged costs more per pound and gives up the one thing whole produce is good at, which is sitting there until the day you need it. The nutrient loss from cutting itself is minor and measured. The spoilage is the real cost.",
       "detail": "Cutting exposes more surface to air and light, so pre-cut produce loses a little more nutrition and freshness over time and carries a small extra food-safety consideration — rinse bagged greens even if ‘pre-washed’. The real cost is price and a shorter fridge life. For a short-on-time week, that can be exactly the right call.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA fresh-cut produce guidance"
       ],
-      "kristy_take": "If pre-washed greens are what gets a salad on the table on a busy week, buy them. Perfect is the enemy of eaten.",
+      "kristy_take": "Buy it whole and cut it yourself. Two minutes, and it keeps a week longer.",
       "buying_tips": [
-        "Use pre-cut produce within a couple of days — it spoils faster.",
-        "Give ‘pre-washed’ greens a quick rinse anyway.",
-        "Whole produce is cheaper if you’ll actually get to it."
+        "Whole produce is cheaper per pound and keeps far longer.",
+        "Use pre-cut within a couple of days. It spoils fast once opened.",
+        "Give ‘pre-washed’ greens a rinse anyway."
       ],
       "labels_decoded": [
         {
@@ -668,7 +665,11 @@
           "meaning": "Washed at the plant — a rinse at home is still a reasonable habit."
         }
       ],
-      "tier_note": "The nutrient loss from cutting is minor and measured. Whether convenience earns the premium is the standard."
+      "tier_note": "The nutrient loss from cutting is minor and measured. Whether convenience earns the premium is the standard.",
+      "watch_out": [
+        "If a bag of pre-washed greens is the difference between a salad and no salad, buy the bag. Eaten beats perfect.",
+        "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
+      ]
     },
     {
       "id": "grassfed_butter",
@@ -682,21 +683,21 @@
       ],
       "category": "dairy",
       "question": "Is grass-fed butter worth it?",
-      "decision": "Real butter over any spread. Grass-fed if the budget allows.",
-      "why": "Butter is a whole food either way. Grass-fed is a taste and feed preference, not a claim.",
-      "short_answer": "Grass-fed butter has a slightly different fat profile and a richer color and flavor from the cows’ diet. Butter is a whole food either way. Grass-fed is a preference for taste and how the cows were fed, not a health claim over regular butter.",
-      "detail": "The compositional difference (a bit more of certain fatty acids, more beta-carotene giving the golden color) is real but modest. Butter is a traditional whole-food fat, and choosing it over industrial seed oils is the whole-food standard. Grass-fed versus regular butter is a smaller flavor-and-values decision on top of that.",
+      "decision": "Grass-fed butter, and the difference is visible before you taste it.",
+      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it.",
+      "short_answer": "Cows on grass eat carotene and it goes straight into the fat, which is why grass-fed butter runs deep yellow toward orange while winter butter from the same dairy runs pale. The fatty-acid profile shifts modestly in the same direction. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage.",
+      "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter and to cost less. Within real butter, the grass difference is a feed difference showing up three ways at once — in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
         "dairy fatty-acid composition literature"
       ],
-      "kristy_take": "Real butter over margarine or seed-oil spreads, every time. That is the whole-food standard. Grass-fed if the budget allows, regular butter if not.",
+      "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
       "cart_pick": "Grass-fed butter",
       "buying_tips": [
-        "European-style/grass-fed butters are richer and higher in fat — great for baking and finishing.",
-        "Regular butter is still real, whole food — don’t let ‘grass-fed’ shame the basic block.",
-        "Salted vs unsalted is a cooking choice; unsalted gives you control."
+        "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
+        "European-style butters are higher in fat, a separate axis from what the cows ate.",
+        "Salted or unsalted is a cooking choice. Unsalted gives control."
       ],
       "labels_decoded": [
         {
@@ -704,7 +705,12 @@
           "meaning": "Higher butterfat (≈82%+) — richer, not necessarily grass-fed."
         }
       ],
-      "tier_note": "Butter is a whole food either way. Grass-fed is a feed and taste preference, stated as one."
+      "tier_note": "The color and the fat both shift measurably with the diet. Paying up for them is the standard.",
+      "watch_out": [
+        "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
+        "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
+        "Color tracks the season as well as the standard. The same dairy churns paler in winter."
+      ]
     },
     {
       "id": "whole_vs_reduced_fat_milk",
@@ -719,20 +725,24 @@
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",
-      "decision": "Whole milk. Buy the one the household actually drinks.",
-      "why": "Least tinkered with, and more filling. A preference, and the dairy-fat research is mixed.",
-      "short_answer": "The whole-food standard is whole, minimally processed milk. More satisfying, less tinkered with than skim. That is a preference, not a mandate: the old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed. Buy the one the household actually drinks.",
-      "detail": "For years the guidance was ‘always low-fat dairy’. The evidence behind that for otherwise-healthy people has weakened, and dairy fat’s effects are an area of honest debate. Whole gets the nod here for satiety and minimal processing, marked as a whole-food-standard read rather than settled science. A doctor’s advice for a specific situation outranks it.",
+      "decision": "Whole milk. Everything else has been through another step.",
+      "why": "Skim is whole milk with the fat taken out. Fewer steps is the standard here.",
+      "short_answer": "Whole milk is the one that had the least done to it. Reduced-fat, low-fat and skim are all whole milk with milkfat removed, and the fat is what carries the flavor and most of the fullness. The old blanket advice to always choose low-fat dairy has softened and the research on dairy fat is genuinely mixed, so the call here rests on the processing, which is the part that is checkable.",
+      "detail": "For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "reviews of dairy-fat and cardiometabolic outcomes (contested literature)"
       ],
-      "kristy_take": "Whole milk. It keeps you full and it is the least messed-with. Still a preference, and not one worth arguing against a doctor’s advice.",
+      "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
       "cart_pick": "Whole milk",
       "buying_tips": [
-        "Whole milk is minimally processed; skim has the fat removed.",
-        "Grass-fed/pasture milk is a further preference layer if you want it.",
-        "Plain over flavored — chocolate/strawberry milks carry a lot of added sugar."
+        "Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
+        "Grass-fed and pasture milk is a further layer, and a separate question from the fat.",
+        "Cream-top means non-homogenized. The cream line is the visible version of fewer steps."
+      ],
+      "watch_out": [
+        "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
+        "Ultra-pasteurized whole milk is still a further step. A date months out is the tell."
       ],
       "labels_decoded": [
         {
@@ -740,7 +750,7 @@
           "meaning": "Progressively more milk fat removed."
         }
       ],
-      "tier_note": "The dairy-fat research is genuinely mixed, so whole milk is offered as a standard rather than a finding.",
+      "tier_note": "The processing difference is a fact about the carton. Preferring the least-handled one is the standard.",
       "eyebrow_short": "Whole vs. reduced"
     },
     {
@@ -957,16 +967,16 @@
       ],
       "category": "bulk_pantry",
       "question": "Are raw or roasted nuts better?",
-      "decision": "Raw or dry-roasted. Check what they were roasted in.",
-      "why": "Many roasted nuts are cooked in cottonseed or soybean oil. Dry-roasted keeps it to the nut.",
-      "short_answer": "Nuts are a great whole food either way. The thing worth checking is what they are roasted in: many roasted nuts are cooked in cottonseed, soybean, or other seed oils and salted heavily. Raw or dry-roasted (no added oil) keeps it to just the nut. That is the version to reach for.",
+      "decision": "Raw or dry-roasted. Oil-roasted means a seed oil was added.",
+      "why": "Cottonseed and soybean oil are the usual roasting mediums. Dry-roasted keeps it to the nut.",
+      "short_answer": "The thing worth checking is what they were roasted in. Many roasted nuts are cooked in cottonseed, soybean or other seed oils and salted heavily, and it shows up on a two-line ingredient list almost nobody turns over to read. Raw or dry-roasted keeps it to the nut and the salt.",
       "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. ‘Peanuts, cottonseed oil, salt’ is common. Roasting itself is fine; the added oil is the part to notice.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
         "product ingredient labeling"
       ],
-      "kristy_take": "Raw or dry-roasted, unsalted or lightly salted. Check the label — if there’s a seed oil in your almonds, that’s an easy swap.",
+      "kristy_take": "Raw or dry-roasted. A seed oil in the almonds is the easiest swap in the store.",
       "cart_pick": "Raw or dry-roasted almonds",
       "buying_tips": [
         "Look for ‘dry roasted’ or ‘raw’ — no added oil.",
@@ -1089,21 +1099,21 @@
       ],
       "category": "bulk_pantry",
       "question": "Are dried or canned beans better?",
-      "decision": "Dried when there is time. Canned and rinsed when there is not.",
-      "why": "Rinsing cuts the sodium. Beans are the cheapest real protein in the building.",
-      "short_answer": "Both are excellent, cheap whole foods. Dried are the cheapest and let you control salt, but take planning and time; canned are nearly as good and hugely convenient — just rinse them to cut sodium. On a budget, dried win on price; short on time, canned win, and it’s a small difference.",
+      "decision": "Dried. Same bean, a fraction of the price, and your own salt.",
+      "why": "Nothing in the store competes per serving, and the salt is yours to set.",
+      "short_answer": "Dried beans are the cheapest protein in the store by a wide margin, and cooking them is the only way to control the salt. They ask for planning rather than skill: a slow cooker or a pressure cooker takes the work out. Canned beans are genuinely close, and a rinse under the tap removes much of the sodium the can added.",
       "detail": "Nutritionally dried and canned beans are very close. Canned adds convenience and some sodium (rinsing removes a good chunk). If you avoid certain can linings, look for ‘BPA-free’ cans or cartons, though that’s a minor point. Beans are one of the best protein-and-fiber values in the whole store.",
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
         "studies on rinsing canned beans and sodium"
       ],
-      "kristy_take": "Dried when there is time to plan, canned and rinsed when there is not. Either way, beans are the cheapest real protein in the building.",
+      "kristy_take": "A bag of dried beans and a slow cooker. Nothing in the store competes.",
       "cart_pick": "Dried beans",
       "buying_tips": [
-        "Rinse canned beans to cut sodium significantly.",
-        "Dried beans are cheapest; a slow cooker makes them effortless.",
-        "‘No salt added’ cans give you full control."
+        "Dried beans cost a fraction of canned per serving.",
+        "A slow cooker or pressure cooker removes the planning problem.",
+        "Whole beans with unbroken skins cook evenly. Split ones turn to mush."
       ],
       "labels_decoded": [
         {
@@ -1111,7 +1121,11 @@
           "meaning": "Can lining without BPA — a minor plus if it matters to you."
         }
       ],
-      "tier_note": "That rinsing removes much of the canning sodium is measured, and beans as the cheapest real protein is arithmetic."
+      "tier_note": "That rinsing removes much of the canning sodium is measured, and beans as the cheapest real protein is arithmetic.",
+      "watch_out": [
+        "Canned and rinsed is close, and rinsing cuts much of the sodium the can added.",
+        "‘No salt added’ cans give full control if the tap rinse is not enough."
+      ]
     },
     {
       "id": "label_natural",
@@ -1477,7 +1491,7 @@
         "USDA National Organic Program, 7 CFR Part 205 (permitted and prohibited substances)",
         "USDA AMS organic labeling and certification requirements"
       ],
-      "kristy_take": "Organic tells you how it was grown, not what it is. It’s a real standard and it’s worth paying for on some things — but the seal on a box of cookies is still a box of cookies.",
+      "kristy_take": "Organic tells you how it was grown, not what it is. The seal on a box of cookies is still a box of cookies.",
       "buying_tips": [
         "Organic is about inputs and practices — read the ingredient panel separately.",
         "It is not pesticide-free; approved natural pesticides are permitted.",
@@ -1854,9 +1868,9 @@
       ],
       "category": "poultry_eggs",
       "question": "What do the feed claims on an egg carton mean?",
-      "decision": "Space and feed are two different claims.",
-      "why": "Space words never imply feed. ‘Vegetarian-fed’ sits oddly beside a real pasture claim.",
-      "short_answer": "These are the only words on the carton that address what the hen ate. ‘Soy-free’ and ‘corn-free’ mean what they say and have to be printed. ‘Omega-3 enriched’ means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized. ‘Vegetarian-fed’ is the strange one: hens are natural omnivores, so it means she was kept off animal protein, which also means she was not out foraging bugs.",
+      "decision": "‘Vegetarian-fed’ is the one to walk away from.",
+      "why": "Hens are omnivores. That claim and a real pasture claim work against each other.",
+      "short_answer": "‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access is eating insects and worms. The rest of the feed words are plainer. ‘Soy-free’ and ‘corn-free’ mean exactly what they say and have to be printed. ‘Omega-3 enriched’ means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized.",
       "detail": "The space claims (cage-free, free-range, pasture-raised) never touch feed, so the feed words carry that job alone. ‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access eats insects and worms. Omega-3 enrichment is real chemistry rather than marketing, but with no set quantity two enriched cartons can differ a lot. Certified organic reaches feed and requires it be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown, not what the feed is.",
       "evidence_tier": "established",
       "sources": [
@@ -1864,7 +1878,7 @@
         "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
         "Poultry-science literature on omega-3 enrichment of eggs"
       ],
-      "kristy_take": "Feed claims are the only ones on the carton about what she ate. ‘Vegetarian-fed’ is the odd one out: a hen on real pasture is eating bugs.",
+      "kristy_take": "A hen on real pasture is eating bugs. That claim says she was not.",
       "cart_pick": "Soy-free pasture-raised eggs",
       "buying_tips": [
         "Space claims and feed claims are separate words. One never implies the other.",
@@ -2078,7 +2092,7 @@
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
-      "decision": "Bone-in thighs. A whole bird when there is time for stock.",
+      "decision": "Bone-in thighs. Boneless skinless is the priciest form of the same bird.",
       "why": "Dark meat is forgiving and hard to overcook. Boneless skinless is the priciest form of it.",
       "short_answer": "Whole bird is the cheapest per pound and leaves a carcass for stock. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store.",
@@ -2400,9 +2414,9 @@
       ],
       "category": "seafood",
       "question": "Do the sustainability seals on seafood mean anything?",
-      "decision": "MSC is wild. ASC and BAP are farms.",
+      "decision": "MSC on wild. A farm seal is a floor, not a recommendation.",
       "why": "Each seal answers one narrow question, and none of them speaks to freshness.",
-      "short_answer": "They mean something specific and narrow, and knowing which is which is the whole trick. The blue MSC label covers WILD fisheries and how the stock is managed. ASC covers FARMED fish and the conditions of the farm. BAP also covers farmed, with a one-to-four star scale for how far up the chain the audit reached. Seafood Watch is not a label at all, it is a ratings guide you look up.",
+      "short_answer": "The blue MSC label covers wild fisheries and how the stock is managed, which is the one that lines up with buying wild in the first place. ASC and BAP audit farms: published standards, real auditors, and a floor rather than a recommendation. BAP’s one-to-four stars count how far up the chain the audit reached. Seafood Watch is not a label at all, it is a ratings guide you look up.",
       "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds and the gear does not wreck the habitat. ASC and BAP audit farms. BAP’s stars count the audited links: one is the processing plant, four adds the farm, hatchery and feed mill. All three publish their standards and send auditors, which is more than an unbacked word on a package offers. What none of them tell you is anything about the fish in front of you: how fresh it is, how it tastes, or how it was handled since.",
       "evidence_tier": "established",
       "sources": [
@@ -2411,7 +2425,7 @@
         "Global Seafood Alliance Best Aquaculture Practices star system",
         "Monterey Bay Aquarium Seafood Watch methodology"
       ],
-      "kristy_take": "A seal answers one question and no others. MSC is wild fisheries, ASC and BAP are farms. None of them says the fish is fresh.",
+      "kristy_take": "MSC on a wild fishery is the seal that means what you hoped it meant.",
       "buying_tips": [
         "Blue MSC label: a wild fishery, audited for stock and habitat impact.",
         "ASC: a farm, audited on environmental and social standards.",
@@ -2437,7 +2451,12 @@
           "meaning": "A ratings program, not a package seal."
         }
       ],
-      "tier_note": "Every real program publishes its scope, including the questions it does not answer."
+      "tier_note": "Every real program publishes its scope, including the questions it does not answer.",
+      "watch_out": [
+        "No seal speaks to freshness. That is still the nose, the eyes and the ice.",
+        "A BAP star count is how many links were audited, not how good the fish is.",
+        "Seafood Watch is a guide to look up, not a seal to spot on a package."
+      ]
     },
     {
       "id": "produce_ripeness_by_item",
@@ -2536,16 +2555,16 @@
       ],
       "category": "dairy",
       "question": "What is the difference between pasteurized, ultra-pasteurized and homogenized milk?",
-      "decision": "Plain pasteurized over ultra. Cream-top if the store has it.",
-      "why": "Fewer steps is the whole-food standard here. A processing preference, not a health verdict.",
-      "short_answer": "Three separate processes. Pasteurization is a short heat step that kills pathogens, around 161F for 15 seconds. Ultra-pasteurization goes much hotter, roughly 280F for a couple of seconds, which is why some cartons carry dates months out. Homogenization is not heat at all: it forces the fat into droplets small enough that cream never rises. Non-homogenized cream-top milk is still pasteurized.",
+      "decision": "Plain pasteurized. Ultra is a shelf-life technology, not better milk.",
+      "why": "Fewer steps is the whole-food standard. Ultra buys months on a date and costs the milk its character.",
+      "short_answer": "Fewer steps is the standard here. Pasteurization is a short heat step, around 161F for fifteen seconds. Ultra-pasteurization goes to roughly 280F, which is what puts a date months out on a carton and what makes the milk refuse to culture. Homogenization is not heat at all: it forces the fat into droplets small enough that cream never rises.",
       "detail": "These three get muddled constantly. Heat is about shelf life and safety; homogenization is about texture and whether the cream separates. Ultra-pasteurization changes flavor noticeably and makes milk reluctant to culture into yogurt or cheese, which is the practical reason people avoid it rather than a nutritional one. On the whole-food standard the read is simple: fewer processing steps, so plain pasteurized and non-homogenized where the store carries them. That is a preference about processing, not a claim that ultra-pasteurized milk is bad for anyone.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA Pasteurized Milk Ordinance (time and temperature standards)",
         "FDA milk labeling and processing definitions"
       ],
-      "kristy_take": "Fewer steps is the standard. Plain pasteurized over ultra, cream-top if the store has it. A processing preference, not a health verdict.",
+      "kristy_take": "The shortest date on the shelf is usually the least-handled milk.",
       "cart_pick": "Non-homogenized whole milk",
       "buying_tips": [
         "‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out.",
@@ -2932,7 +2951,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What should be in a jar of peanut butter?",
-      "decision": "Peanuts, and salt if you want it. Nothing else.",
+      "decision": "Peanuts and salt. No-stir means an oil was added.",
       "why": "No-stir texture comes from added palm or hydrogenated oil, and usually sugar with it.",
       "short_answer": "Peanuts. Salt if you want it. That is the whole list on the good jars. The no-stir versions get their texture from added palm oil or hydrogenated oil, and most also add sugar. Oil sitting on top is not a fault, it is the sign that nothing was added to stop it. Stir it in once, then keep the jar upside down in the fridge.",
       "detail": "The separation people complain about is what natural peanut butter does, because ground peanuts are peanuts and oil. Stabilizers fix the texture and turn it into a product with a longer ingredient list. Sugar shows up in most conventional jars, and reduced-fat versions typically replace the removed fat with sugar and starch, which is the opposite of the trade most people think they are making. The same reading applies to almond, cashew and sunflower butters. One or two ingredients on the back is the standard, and it is easy to find.",
@@ -3128,8 +3147,8 @@
       ],
       "category": "label_terms",
       "question": "How do I know if a seal on a package means anything?",
-      "decision": "Ask who wrote the standard, and who audits it.",
-      "why": "A badge a company gave itself fails all three. Each seal covers one scope and no others.",
+      "decision": "A published standard and an outside auditor, or it is a sticker.",
+      "why": "A badge a company gave itself has neither. Each real seal covers one scope.",
       "short_answer": "Ask three questions of any seal. Who set the standard, is it published, and does an independent body audit against it. A badge a company created for its own products answers none of the three. USDA Organic, Certified Humane, Animal Welfare Approved, Global Animal Partnership, American Grassfed and the Non-GMO Project all publish standards and use outside auditors. What no seal tells you is anything it never set out to measure.",
       "detail": "The gap between a certification and a marketing badge is entirely in the audit. Real programs publish their standard, so anyone can read exactly what was checked, and they send inspectors. The second half of reading a seal is scope: an organic seal covers inputs and practices and says nothing about welfare beyond a baseline, a welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only. Stacking seals on a package does not make it a better food, it makes it a food that paid for several audits. The ingredient panel still decides what the thing actually is.",
       "evidence_tier": "established",
@@ -3139,7 +3158,7 @@
         "Non-GMO Project verification standard",
         "American Grassfed Association standards"
       ],
-      "kristy_take": "Who wrote the standard, is it published, and who inspects against it. A badge a company gave itself fails all three.",
+      "kristy_take": "A badge a company gave itself is a sticker. The real ones publish, and they inspect.",
       "buying_tips": [
         "Look for a named program, not a decorative badge. If the standard cannot be looked up, it is marketing.",
         "Each seal covers one scope. Organic is not welfare, welfare is not pesticides, non-GMO is neither.",
@@ -3187,9 +3206,9 @@
       ],
       "category": "label_terms",
       "question": "What do ‘cold-pressed’ and ‘expeller-pressed’ mean on an oil?",
-      "decision": "Two ways to get oil out. Only one is mechanical.",
-      "why": "Expeller and cold-pressed are mechanical. Most supermarket oil is extracted, then refined.",
-      "short_answer": "They describe how the oil got out of the seed or fruit. Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed means mechanical pressing with the temperature held down, and for olive oil in the EU that is a defined limit. Most supermarket cooking oil is neither: it is solvent-extracted, then refined, bleached and deodorized. ‘Refined’ is the word that tells you which.",
+      "decision": "Pressed, not extracted. ‘Refined’ is the word that gives it away.",
+      "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
+      "short_answer": "Two of these words describe pressing and one describes what happens afterwards. Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down, and for olive oil in the EU that is a defined limit. Most supermarket cooking oil is neither: it is solvent-extracted, then refined, bleached and deodorized.",
       "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. Processing is the honest basis for preferring the pressed version, and that is a whole-food-standard call rather than a settled finding.",
       "evidence_tier": "established",
       "sources": [
@@ -3197,7 +3216,7 @@
         "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
         "Food-science references on solvent extraction and oil refining"
       ],
-      "kristy_take": "Pressed or solvent-extracted is the real question, and ‘refined’ is the word that answers it.",
+      "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
       "buying_tips": [
         "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
         "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
@@ -3305,9 +3324,9 @@
       ],
       "category": "label_terms",
       "question": "What has to be on a seafood label?",
-      "decision": "Read all three: species, wild or farmed, and country.",
+      "decision": "Species, method, country. All three required, and none stops substitution.",
       "why": "All three are required on unprocessed seafood. Origin can mean where it was processed.",
-      "short_answer": "For most unprocessed fish and shellfish at retail, three things: the species name, whether it was wild-caught or farm-raised, and the country of origin. That is federal country-of-origin labeling, one of the few places a store must tell you where food came from. The catch is that origin can mean where it was processed rather than where it was caught.",
+      "short_answer": "Three things are required on most unprocessed fish and shellfish at retail: the species name, whether it was wild-caught or farm-raised, and the country of origin. That is federal country-of-origin labeling, and it is one of the few places a store must tell you where food came from. The catch is that origin can mean where it was processed rather than where it was caught.",
       "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses.",
       "evidence_tier": "established",
       "sources": [
@@ -3315,7 +3334,7 @@
         "FDA Seafood List (acceptable market names)",
         "Peer-reviewed and government studies of seafood species substitution"
       ],
-      "kristy_take": "Species, wild or farmed, and country. All three are required on the case. Read them together, not one at a time.",
+      "kristy_take": "Species, method, country. Then buy it skin-on, because the species name is the one that gets swapped.",
       "buying_tips": [
         "Look for all three: species, wild or farm-raised, and country of origin.",
         "Origin can mean where it was processed, not where it was caught. Ask if it matters.",
@@ -3340,7 +3359,7 @@
       "watch_out": [
         "Origin can name where it was processed, not where it was caught.",
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
-        "“Farm-raised” alone is not a verdict — the species and the operation decide it."
+        "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
       ],
       "tier_note": "Species, method and country are all required disclosures on unprocessed seafood."
     },

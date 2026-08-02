@@ -22,6 +22,7 @@ import { dirname, join } from 'node:path';
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import {
   TABLE,
+  RETIRED,
   projectEntry,
   coverage,
   cardToRow,
@@ -145,6 +146,28 @@ async function write() {
     }
     console.error('[counter-cards] has supabase/counter_cards.sql been applied?');
     return 1;
+  }
+
+  // ── Retirement, in the same run as the upsert ──
+  // A folded card removed from the KB would otherwise keep answering from a row nobody can
+  // edit any more, because the entry it was projected from is gone. Scoped to
+  // source = 'curated' so a generated card can never be swept by a stale slug collision.
+  if (RETIRED.length) {
+    const { data: gone, error: delErr } = await supabase
+      .from(TABLE)
+      .delete()
+      .in('slug', RETIRED)
+      .eq('source', 'curated')
+      .select('slug');
+    if (delErr) {
+      console.error('[counter-cards] retirement delete failed:', delErr.message);
+      return 1;
+    }
+    const removed = (gone || []).map((r) => r.slug);
+    console.log(
+      `[counter-cards] retired ${RETIRED.length} slug(s); ${removed.length} row(s) deleted` +
+        `${removed.length ? `: ${removed.join(', ')}` : ' (already absent)'}. ✓`
+    );
   }
 
   // ── Idempotency, accounted for rather than asserted ──

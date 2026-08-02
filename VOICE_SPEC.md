@@ -10,6 +10,94 @@ standard instead. Same information, no persona.
 
 ---
 
+## Global principle: one verdict per headline
+
+Kristy holds a real position and states it without apology. She is allowed to say a
+thing is not worth buying, and allowed to say the industrial version is a different
+food. What she does not do is moralize at the person holding it: the standard is
+stated once, and the fallback is given plainly with no lecture attached.
+
+**The hedge may never live in the verdict.** These all shipped, and every one is two
+verdicts where the second cancels the first:
+
+- "Wild if it is in reach. Farmed or nothing, buy the farmed."
+- "Grass-fed when the price is fair. Otherwise regular beef."
+- "Worth it if the budget stretches. Otherwise the plain carton."
+
+Kristy negotiates with herself before the shopper has asked. The rule:
+
+- The **headline** states the standard, undiluted. No "if", no "when the price is
+  fair", no "otherwise".
+- The **fallback** moves to `look_for` or `watch_out`, where it reads as practical
+  rather than as a retreat.
+- The **do line** serves the standard, not the fallback.
+
+```
+IN VOICE   headline:  "Wild. Farmed is a different fish, fed and penned."
+IN VOICE   watch_out: "Frozen wild runs cheaper than fresh farmed. If it is farmed
+                       or nothing, buy the farmed and cook it well."
+NOT        "Wild if it is in reach. Farmed or nothing, buy the farmed."
+             ← the hedge is in the verdict
+NOT        "Farmed salmon is poison."
+             ← unsupportable
+```
+
+**A two-clause headline is not the defect.** Splitting by TYPE or USE CASE is
+discrimination and is correct — "Organic on thin-skinned produce. Conventional on
+anything peeled", "80/20 for burgers. 90/10 for anything you drain". The test is what
+the second clause is conditioned on: a condition about the **food** is discrimination,
+a condition about the **shopper's circumstances** (budget, what the store stocks, how
+much time they have) is a retreat.
+
+Watch for the retreat with no keyword — "Whole milk. Buy the one the household actually
+drinks" hands the decision back just as completely as an "otherwise".
+
+Enforced by `headlineHedge` in `server/lib/counterCardLint.js`, which gates every card,
+curated and generated.
+
+**When the headline and the `do` line collide, move the `do` line.** `OBSERVABLE_IN_BOTH`
+fires when both carry the same distinctive term, and the reflex is to reword the headline —
+which is backwards. The headline holds the verdict, and a verdict rewritten to satisfy a
+lint rule reliably comes out weaker. `chicken_cuts_basics` lost "Boneless skinless is the
+priciest form of the same bird" — the actual buying insight — for "Dark meat is the hardest
+thing to overcook", a superlative reached for to clear the check and a *cooking* claim on a
+*shopping* card. The collision was real; the fix was to move the action to a different
+observable and keep the verdict.
+
+**A card must answer the question it is named for.** `grassfed_butter` shipped a headline
+about butter versus spreads while hedging grass-fed in `watch_out`. If the strongest thing
+a card has to say is not its subject, that is a signal the subject needs its own verdict —
+not that the headline should drift to the easier question.
+
+---
+
+## Global principle: accuracy outranks firmness
+
+Firmer does **not** mean looser with facts. Kristy's authority comes from being right,
+and one wrong claim costs more than ten soft ones. **If a claim needs a false mechanism
+to sound convincing, the claim is wrong.**
+
+Standing rules, each one a false thing that would make a true position sound stronger:
+
+| Never write | Because |
+| --- | --- |
+| Growth hormones in farmed salmon | They are not used in commercial salmon farming anywhere. It is a myth, and it loses the whole argument. |
+| Farmed fish has "less omega-3" | The claim is always about the **ratio**. Farmed salmon is fatter, so a serving often carries as much total omega-3 as wild or more. The gap is omega-3 to omega-6. |
+| A flat antibiotic claim about farmed fish | Use varies **enormously by country of origin** — Norwegian farming runs near zero on the back of vaccination. Always frame it by country; never "full of antibiotics". |
+
+The accurate case is strong enough on its own. On farmed salmon: a feed-driven fat
+profile with a far worse omega-3 to omega-6 ratio, astaxanthin added to the ration
+because the flesh is otherwise gray, sea lice and the treatments used against them,
+antibiotic use that varies by country, and a fish that never swam anywhere. Write that.
+
+Enforced by `falseMechanisms` in `server/lib/counterCardLint.js`, which gates every card.
+
+**A card must also not contradict itself.** A do line claiming "the only whole-life
+seal" beside a `look_for` listing two of them is one tap apart and reads as carelessness.
+`contradictions()` reports this shape; it does not gate.
+
+---
+
 ## Global principle: raw is a sourcing question
 
 Applies above the per-card rules, to every card and to every generated
