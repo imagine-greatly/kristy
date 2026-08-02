@@ -194,6 +194,16 @@ equality *is* the positioning.
   Counter's own placeholder read "Wild or farmed salmon?". `isBareEitherOr` closes it —
   both sides must survive `contentWords`, which is what keeps "when does the store close
   or open" out. Only the plain "or" was ever broken; `GROCERY_ACT` already listed "vs".
+- **A definitional question is a counter question, and the length bound is what makes it
+  safe.** "what is skyr" was answered "that one is outside the store". Probed over twelve
+  `what is X` queries where X is a word the KB *itself teaches*, **seven were rejected** —
+  skyr, clabber, natamycin, bulgur, astaxanthin, skipjack, BCM-7. A shopper reading an
+  unfamiliar word off a package has no grocery verb in the sentence and often no word the
+  vocabulary knows, so neither the subject check nor the act check can see it.
+  `isBareDefinitional` admits it, bounded to **≤5 words and ≤2 content words** — a package
+  word is short, a question with structure ("what is the capital of France") is not. The
+  first version had no bound and the existing off-topic test caught it in one run; the fix
+  was the bound, never a weaker guard. Both directions are pinned by tests.
 - **Retrieval confidence and the gap log's weak ceiling are DIFFERENT NUMBERS.** They were
   one constant under "one number, one meaning", and they are two meanings: one is a
   retrieval judgment with a generation bill attached, the other an editorial judgment about
@@ -357,7 +367,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (421 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (423 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
