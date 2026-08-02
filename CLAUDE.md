@@ -64,7 +64,7 @@ only by prompt.
    split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
    budget, the store's stock or their spare time is a retreat and does not. Firmer is
    never looser with facts — **if a claim needs a false mechanism to sound convincing, the
-   claim is wrong.** Both enforced by `counterCardLint.js` over all 81 cards, curated and
+   claim is wrong.** Both enforced by `counterCardLint.js` over all 74 cards, curated and
    generated.
 
 8. **No price, ever.** Kristy does not know what anything costs. Budget means
@@ -82,7 +82,7 @@ only by prompt.
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
   `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (79 entries) answers
+  thing the verdict engine sees. `kristy_perimeter_kb.json` (74 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
@@ -187,8 +187,30 @@ equality *is* the positioning.
   vetoed) is consulted only after the matcher returns empty. Both signals are required:
   either alone is somebody else's question, and answering "how much protein is in
   chicken" with "no solid read" is a worse regression than the improvisation it closes.
-- **A bare either/or is a question.** "wild or farmed", "brown or white eggs" carry no
-  question word and no punctuation, and used to route past the KB entirely.
+- **A bare either/or is a question**, and it took two fixes in two places. "wild or
+  farmed", "brown or white eggs" carry no question word and no punctuation, and used to
+  route past the KB entirely. `looksLikeCounterQuestion` was fixed first; **`inScope` was
+  not**, so `/counter/ask` still answered "that one is outside the store" while the
+  Counter's own placeholder read "Wild or farmed salmon?". `isBareEitherOr` closes it —
+  both sides must survive `contentWords`, which is what keeps "when does the store close
+  or open" out. Only the plain "or" was ever broken; `GROCERY_ACT` already listed "vs".
+- **Retrieval confidence and the gap log's weak ceiling are DIFFERENT NUMBERS.** They were
+  one constant under "one number, one meaning", and they are two meanings: one is a
+  retrieval judgment with a generation bill attached, the other an editorial judgment about
+  the authoring backlog. Sharing it pinned the curated gate at `> 3`, which is
+  **structurally unreachable for the commonest question shape** — a single-word alias
+  scores 2, a title overlap on that same noun adds 1, and nothing else lands, so a query
+  whose only content word is a bare noun tops out at exactly 3 forever. "best yogurt to
+  buy" hit the correct card, with no runner-up, and paid for a 20-second generation every
+  time. `CONFIDENT` is now its own constant at `> 2`; `WEAK_MATCH_CEILING` stays at 3.
+  Measured 2026-08-02: 10 curated hits of 20 became 15, every rescued query scored 3 with
+  no runner-up, and the 17-query miss rate went 35% → 6%.
+- **The premise that held the gate up was never measured.** The comment justifying the
+  higher curated bar claimed curated entries carry "a dozen aliases" against a generated
+  card's six. Actual curated counts: **min 3, median 7, mean 7.11, max 19** — generated
+  cards are authored with 6 to 8. There was no alias advantage and never had been. Record
+  measured numbers, not characterizations; this is the second time a written-down
+  conclusion stopped anyone checking.
 - **Decision-first is content, not styling.** `decision`/`why` are authored per entry in
   the KB, re-ranked from its own short_answer/kristy_take/tips — never new research.
   The depth is demoted, never deleted. The **tier chip stays above the tap** even though
@@ -335,13 +357,19 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (420 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (421 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
   live audit in `docs/SCHEMA-AUDIT.md` compares live against the file and is therefore
   blind to a column missing from BOTH — which is exactly how `counter_cards.aliases`
   shipped, silently stopping the generated corpus from growing.
+- **The section depth floor is 8, and the count is a proxy worth watching.** `aisle.test.js`
+  requires 8 topics per shopper-facing section as a stand-in for "answers as much as a scan
+  does" — a claim about CONTENT. Removing a duplicate lowers the count without lowering the
+  content, which is why the mercury fold could take seafood 9 → 8 legitimately; a section
+  that shrank by DELETION must not get the same pass. Seafood is now the thinnest section
+  and holds the next authoring slot.
 - **The counter card's shape bar is executable, and it runs against generated cards too.**
   `server/lib/counterCardLint.js` holds the rules (the observable may not sit in both the
   headline and the `do` line; one verdict per headline; no false mechanism; the em-dash-
@@ -354,7 +382,21 @@ equality *is* the positioning.
   file it came from is gone. Retirement is declared in `RETIRED` (`counterCards.js`) and the
   migration deletes those rows in the same run. Move the folded card's aliases onto its
   absorber and repoint any section `shortcut`, or the fold is a coverage regression wearing
-  a tidy diff.
+  a tidy diff. **Grep wider than the shortcuts** — the 2026-08-02 sweep left three live
+  `perimeterId` references in `list.js` that only `list.test.js` caught.
+- **TWO retirement lists, and a slug in the wrong one deletes NOTHING.** The migration
+  removes `RETIRED` with `.eq('source','curated')` so a retired KB slug can never sweep a
+  generated card that collides with it. That scoping is correct and it means `RETIRED` is
+  *structurally incapable* of retiring a generated row: put a `gen_` slug there and the run
+  reports "retired 11 slugs", deletes nothing, and the card stays live and answering. Four
+  did, for one migration run, including one whose verdict contradicted a curated card
+  outright. Generated retirement is `RETIRED_GENERATED` with its own `source = 'generated'`
+  delete, and a test fails if either list holds the other's kind.
+- **A fold's real anchor may be a PROMPT, not a row.** `gen_a1_vs_a2_yogurt` contradicted
+  the curated A2 card because `counterGenerate.js` carried that exact headline as its
+  worked FAIL/PASS example for "the do line must serve the headline". Deleting the row
+  alone would have left the thing that regenerates it. When a generated card is wrong,
+  check whether the generator was *taught* it.
 - **The deploy boundary is `server/`, and a test is the fence.** Railway's Root Directory
   is `server/`, so anything the runtime reads from outside it exists on a laptop and is
   missing on the box, silently and forever. `deployBoundary.test.js` resolves the path
@@ -380,7 +422,7 @@ equality *is* the positioning.
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (80 rows), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (74 rows as of the 2026-08-02 sweep), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.
