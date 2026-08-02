@@ -26,9 +26,8 @@
 // docs/do-lines-review.md; everything else is authored KB content re-ordered. This
 // file writes to the shared pool and therefore may never read per-user state.
 
-import { readFileSync } from 'node:fs';
-
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+import doLines from './doLines.json' with { type: 'json' };
 import { PERIMETER_SECTIONS } from './perimeter.js';
 
 export const TABLE = 'counter_cards';
@@ -431,17 +430,18 @@ export function rowToCard(row) {
 // what a join would have to look like. The read path lives here for the same reason the
 // write path does: one module, one rule, one test covering both.
 
-// The reviewed do lines, for the degraded path only. Read once at load, and optional —
-// on a server whose deploy does not carry docs/ this simply stays empty, which is a
-// thinner fallback rather than a broken one.
-const fallbackDoLines = (() => {
-  try {
-    const url = new URL('../../docs/do-lines-review.md', import.meta.url);
-    return parseReviewTable(readFileSync(url, 'utf8'));
-  } catch {
-    return new Map();
-  }
-})();
+// The reviewed do lines, read from lib/doLines.json — INSIDE the deploy boundary.
+//
+// This used to read docs/do-lines-review.md through a try/catch, annotated "a thinner
+// fallback rather than a broken one". That judgment was wrong and it is what stopped
+// anyone checking: Railway's Root Directory is `server/`, so docs/ never ships, the catch
+// fired on every production boot, and the degraded state was not thinner — it was a card
+// with no action on it, which is the one field the card exists to carry.
+//
+// doLines.json is generated from the markdown by scripts/buildDoLines.js and the two are
+// held together by doLines.test.js. The import has NO fallback: a missing file fails at
+// boot, loudly, which is the correct behaviour for something every card depends on.
+const fallbackDoLines = new Map(Object.entries(doLines).map(([slug, line]) => [slug, { do: line }]));
 
 /**
  * Project the whole authored KB, for when the table cannot be reached.

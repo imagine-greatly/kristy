@@ -20,17 +20,16 @@ import { generateCard, persistCard } from './counterGenerate.js';
 import { generationLimited, globalCeilingReached } from './counterRate.js';
 
 // The reviewed do lines, for projecting a curated entry into a card at request time.
-// Loaded once; see counterCards.js for why this is optional.
-import { parseReviewTable } from './counterCards.js';
-import { readFileSync } from 'node:fs';
+//
+// READ FROM lib/doLines.json, NOT FROM docs/. This used to read the review markdown
+// through a try/catch that fell back to an empty Map, and the comment called that
+// degradation "thinner rather than broken". It was broken: Railway's Root Directory is
+// `server/`, docs/ never ships, and so EVERY curated card this pipeline returned carried
+// an empty do line in production. The import below has no fallback on purpose — a missing
+// file now takes the server down at boot instead of quietly serving gutted cards.
+import doLines from './doLines.json' with { type: 'json' };
 
-const reviewed = (() => {
-  try {
-    return parseReviewTable(readFileSync(new URL('../../docs/do-lines-review.md', import.meta.url), 'utf8'));
-  } catch {
-    return new Map();
-  }
-})();
+const reviewed = new Map(Object.entries(doLines).map(([slug, line]) => [slug, { do: line }]));
 
 // A retrieval is confident enough to answer with when the deterministic matcher scores it
 // above the weak ceiling — the same threshold the gap log uses to decide that an entry
