@@ -802,34 +802,37 @@
         "greek yogurt",
         "flavored yogurt",
         "plain yogurt",
-        "live cultures",
-        "probiotic yogurt"
+        "best yogurt",
+        "yogurt added sugar"
       ],
       "category": "dairy",
       "question": "What should I look for in yogurt?",
       "decision": "Plain, big tub. Add your own fruit.",
-      "why": "Flavored cups carry dessert-level added sugar. Plain is milk and live cultures.",
-      "short_answer": "Buy plain and sweeten it yourself. Flavored yogurts often carry as much added sugar as dessert; plain yogurt is just milk and live cultures. Look for ‘live and active cultures’, and add your own fruit or honey if you want it sweet.",
-      "detail": "Plain yogurt (especially Greek/strained) is a clean, high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways. ‘Live and active cultures’ tells you the fermentation is intact. This is a straightforward whole-vs-processed call.",
+      "why": "Flavored cups carry dessert-level added sugar. Plain is the same yogurt without it.",
+      "short_answer": "Buy plain and sweeten it yourself. The big plain tub is cheaper per ounce than the single-serve cups besides, and it is the same yogurt underneath. Add your own fruit or a little honey if you want it sweet.",
+      "detail": "Plain yogurt, especially Greek or strained, is a clean high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question and a separate card.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "National Yogurt Association ‘Live & Active Cultures’ seal",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "FDA added-sugars labeling requirements"
       ],
-      "kristy_take": "Big tub of plain Greek, add your own berries. Cheaper than the little flavored cups and none of the dessert-level sugar.",
+      "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
       "cart_pick": "Plain whole-milk Greek yogurt",
       "buying_tips": [
         "Plain over flavored — sweeten it yourself with fruit.",
-        "Look for ‘live and active cultures’.",
+        "Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.",
         "Greek/strained is higher protein; whole-milk versions are more filling."
       ],
       "labels_decoded": [
         {
-          "term": "Live and active cultures",
-          "meaning": "The fermenting bacteria are present and viable."
+          "term": "Added sugars",
+          "meaning": "The line that separates a plain tub from a dessert. It is printed on both."
         }
       ],
-      "tier_note": "The added-sugar difference is printed on the panel. Buying plain and sweetening it is the standard."
+      "tier_note": "The added-sugar difference is printed on the panel. Buying plain and sweetening it is the standard.",
+      "watch_out": [
+        "The single-serve fruit cups are the expensive form and the sweet one at the same time."
+      ]
     },
     {
       "id": "raw_milk",
@@ -2599,34 +2602,36 @@
       "title": "Live cultures, kefir and skyr",
       "aliases": [
         "live and active cultures",
+        "live cultures",
         "probiotic yogurt",
         "kefir",
         "skyr",
         "strained yogurt",
         "yogurt cultures",
         "icelandic yogurt",
-        "cultured dairy"
+        "cultured dairy",
+        "heat treated yogurt",
+        "shelf stable yogurt",
+        "dead cultures"
       ],
       "category": "dairy",
-      "question": "Which cultured dairy should I buy?",
-      "decision": "Plain, and it should still be alive.",
-      "why": "The flavored versions are where the added sugar lives. Strained styles hold more protein.",
-      "short_answer": "Look for ‘Live and Active Cultures’ on the tub, which means the fermenting bacteria are still there and viable. Greek and skyr are strained, so they are thicker and carry more protein per spoon. Kefir is a drinkable ferment with a wider mix of cultures than yogurt. Buy all of them plain: the flavored versions are where the added sugar lives, and that line is on the back.",
-      "detail": "Yogurt is milk plus two required cultures, and everything past that (extra strains, straining, thickeners) is what separates one tub from another. ‘Live and Active Cultures’ is a seal with a defined threshold behind it, and heat-treated shelf-stable yogurts do not carry it. Strained styles pour off whey, which concentrates the protein and is why a cup of Greek reads so differently from a cup of regular. Kefir ferments with a broader mix of bacteria and yeasts. None of that survives a fruit-on-the-bottom cup, so read the added-sugar line and add your own fruit instead.",
+      "question": "How do I know the cultures are still alive?",
+      "decision": "Buy it alive. Heat-treated after culturing is a dead ferment.",
+      "why": "Heat treatment after culturing ends the ferment. Strained styles hold more protein per spoon.",
+      "short_answer": "A tub can be yogurt and carry nothing living. What makes one shelf-stable is exactly what ends it, so the cold case is the first filter and the seal is the second. Greek and skyr are strained, which is why they are thicker and carry more protein per spoon. Kefir is a drinkable ferment with a wider mix of cultures than yogurt.",
+      "detail": "Yogurt is milk plus two required cultures, and everything past that — extra strains, straining, thickeners — is what separates one tub from another. ‘Live and Active Cultures’ is a seal with a defined threshold behind it, and heat-treated shelf-stable yogurts do not carry it, which is the cleanest tell on the shelf. Straining pours off whey and concentrates the protein, which is why a cup of Greek reads so differently from a cup of regular. Kefir ferments with a broader mix of bacteria and yeasts than yogurt does. None of this is a question about sugar; that is the plain-versus-flavored call and it is a separate card.",
       "evidence_tier": "established",
       "sources": [
         "FDA standards of identity for yogurt",
         "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
         "USDA FoodData Central"
       ],
-      "kristy_take": "Plain, live cultures, and your own fruit. The flavored cups are dessert wearing a yogurt label.",
+      "kristy_take": "The cold case, every time. A shelf-stable tub is a ferment somebody ended on purpose.",
       "cart_pick": "Plain kefir",
       "buying_tips": [
-        "Find ‘Live and Active Cultures’. Heat-treated shelf-stable tubs do not carry it.",
-        "Plain, always. Sweeten it yourself with fruit or a little honey.",
+        "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
         "Greek and skyr are strained: thicker, more protein per spoon.",
         "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
-        "Read the added-sugar line on any flavored version before deciding.",
         "Whole-milk versions are more filling and less tinkered with than fat-free."
       ],
       "labels_decoded": [
@@ -2647,7 +2652,12 @@
           "meaning": "A drinkable ferment with a wider mix of cultures."
         }
       ],
-      "tier_note": "The live-cultures seal is a defined program, and heat treatment after culturing has to be disclosed."
+      "tier_note": "The live-cultures seal is a defined program, and heat treatment after culturing has to be disclosed.",
+      "watch_out": [
+        "A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.",
+        "‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one."
+      ],
+      "eyebrow_short": "Live cultures"
     },
     {
       "id": "cream_vs_creamer",

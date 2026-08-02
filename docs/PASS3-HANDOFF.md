@@ -359,10 +359,19 @@ Nothing blocks the store test. In rough order of value:
   - **Collapse the token aliases so names match values.** `textSecondary` resolves to
     `--ink-muted`, `accentGold` to `--brass`. A name that lies is worse than a long name.
   - **Delete the `pass2-counter-overhaul` branch.** It is fully merged into `main`.
-- **32 cards still render an empty `watch_out`.** Pass 5 authoring, not a bug — a misfiring
-  heuristic that files "do this" under "watch out" inverts the advice. Down from ~41: the
-  voice recalibration authored one on every card whose headline gave up a fallback, because
-  `watch_out` is where a relocated fallback lands.
+- **24 cards still render an empty `watch_out`.** Pass 5 authoring, not a bug — a misfiring
+  heuristic that files "do this" under "watch out" inverts the advice. Down from ~41 → 32 →
+  24: the voice recalibration authored one on every card whose headline gave up a fallback
+  (`watch_out` is where a relocated fallback lands), and the 2026-08-02 overlap sweep
+  authored more while merging.
+- **AUTHORING GAP: there is no general cooking-oil card.** `"which oil for cooking"` is the
+  one query in the 17-query recall set that still returns nothing, and lowering the
+  retrieval gate cannot fix it — the corpus genuinely has no entry. What exists is
+  `olive_oil_grades` (buying real EVOO), `rancidity_check` (has it turned) and
+  `label_cold_pressed_expeller` (the process words). None of them answers "what do I cook
+  with", which is a question every shopper has and the seed-oil objection makes load-bearing.
+  A card here needs the heat/smoke-point discrimination without a health claim in either
+  direction, and it is a whole-food-standard call, not a finding.
 - **`counter_gaps` is the authoring backlog** and it is capturing now. `gapFeed` ranks it by
   frequency. That data, plus `use_count`, is the evidence for what to author next — and the
   reason "recently viewed" was skipped rather than built: it competes for the space the

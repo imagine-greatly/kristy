@@ -92,7 +92,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_ripeness_by_item` | produce | Pick up two and take the heavier one. | Turn the berry container over and check for juice stains underneath. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
-| `yogurt_live_cultures` | eggs_dairy | Plain, and it should still be alive. | Find “live and active cultures” printed on the tub. | — |
+| `yogurt_live_cultures` | eggs_dairy | Buy it alive. Heat-treated after culturing is a dead ferment. | Find “live and active cultures” on the tub. Shelf-stable never carries it. | — |
 | `cream_vs_creamer` | eggs_dairy | Cream or half-and-half. ‘Non-dairy creamer’ is not dairy. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Take the smallest whole-wheat bag on the shelf. The germ oil turns. | — |
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
@@ -136,7 +136,7 @@ named, plus four more the same question surfaced.
 | `label_no_added_hormones` | SERVES | Operationalizes the meaningful half of the verdict. Left alone, though it is the seventh "find the seal" line in the corpus — see below. |
 | `label_organic_scope` | **DRIFTED (redrafted)** | The line was about seal tiers — the 70% rule, which is `label_nonGMO_vs_organic`'s subject. The verdict's actionable half is "read the panel anyway", which nothing served. |
 | `chicken_cuts_basics` | **DRIFTED (redrafted)** | Not in the named eight. Its line was about retained water, which is `air_chilled_chicken`'s whole subject, and near-duplicated that card's line. Its own verdict — bone-in thighs — went unserved. |
-| `yogurt_live_cultures` | **DRIFTED (flagged, not redrafted)** | Not in the named eight. Its line is about added sugars on flavored tubs, which is `yogurt_plain_vs_flavored`'s verdict. Its own observable sits in its headline, so this is a `RULING4` case: the fix is a headline edit, not a redraft. |
+| `yogurt_live_cultures` | **RESOLVED 2026-08-02** | Was: "its line is about added sugars, which is `yogurt_plain_vs_flavored`'s verdict, and its own observable sits in its headline — a `RULING4` case; the fix is a headline edit, not a redraft." That was the right diagnosis and it is now done. The headline leads with the TRAP as verdict ("Buy it alive. Heat-treated after culturing is a dead ferment"), the observable moved down to the do line, and the added-sugar content went back to the card that owns it. The two cards were the overlap audit's one genuine SPLIT DIFFERENTLY: same tub, two checks, and one of them was being made twice. |
 | `washing_produce` | **DRIFTED (redrafted)** | Not in the named eight. Its `do` line was almost word-for-word `produce_storage`'s headline — one card's action was the neighbor's verdict. Redrafted onto its own (water-and-hands) verdict. |
 | `pork_cuts_and_enhanced` | SERVES (rephrased) | On-verdict, but shares the headline-holds-the-observable shape and duplicated `air_chilled_chicken`'s closing clause. Construction changed only. |
 
