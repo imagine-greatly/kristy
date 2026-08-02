@@ -393,8 +393,9 @@ test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
 test('all curated cards clear the per-card bar', () => {
   // 74 after the 2026-08-02 overlap sweep folded six duplicate-verdict cards and demoted
   // `clabber`, and the A2 card landed; 75 once `berries_picking` was promoted from a
-  // generated row. See RETIRED / RETIRED_GENERATED in counterCards.js.
-  assert.equal(CARDS.length, 75);
+  // generated row; 81 with the six kitchen-technique `home` cards. See RETIRED /
+  // RETIRED_GENERATED in counterCards.js and HOME_CARDS for the technique class.
+  assert.equal(CARDS.length, 81);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

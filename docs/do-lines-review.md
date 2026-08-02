@@ -47,8 +47,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `no_antibiotics_poultry` | meat | A fair choice, not a cleaner bird. Don’t pay the premium. | Look for “USDA Process Verified” beside the claim, or put it back. | — |
 | `organic_worth_it_by_type` | produce | Organic on thin-skinned produce. Conventional on anything peeled. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen. Cheaper, no waste, and in season all year. | Read the bag’s ingredient list for one word: the vegetable. | — |
+| `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
 | `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Walk the farmers’-market table before the produce aisle. | — |
 | `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
+| `baking_soda_soak` | produce · home | Baking soda takes the surface residue. Water mostly does not. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date — pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Grass-fed butter, and the difference is visible before you taste it. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Everything else has been through another step. | Read the milkfat percentage on the panel, not the cap color. | — |
@@ -61,6 +63,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Oil-roasted means a seed oil was added. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
 | `honey_adulteration` | bulk_pantry | Raw and local. The list should read honey and nothing else. | Buy honey with a producer and a region named on the jar. | — |
 | `beans_dried_vs_canned` | bulk_pantry | Dried. Same bean, a fraction of the price, and your own salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
+| `bean_soak_salt` | bulk_pantry · home | Salt the soak. The rule against it has it backwards. | Stir a heaped tablespoon of salt into the soaking water. | — |
 | `label_natural` | label_terms | Ignore it. Read the ingredient list instead. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | Flip it over. Find where that ingredient falls in the list. | Count how far down the list that ingredient sits — past third is trace. | — |
 | `label_no_added_hormones` | label_terms | Meaningful on beef and dairy. A freebie on chicken and pork. | Look for a third-party verifier on the beef and dairy claim. | — |
@@ -80,6 +83,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door — it swings warm every open. | — |
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Buy Select for the braise and put the money into Choice steaks. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Press with a fingertip. It should spring back, not stay dented. | — |
+| `dry_brine` | meat · home | Salt it the day before, and leave it uncovered. | Weigh out salt at one percent of the meat’s weight. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask for the bones and trim behind the counter, usually free. | — |
 | `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
@@ -92,11 +96,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_ripeness_by_item` | produce | Pick up two and take the heavier one. | Smell the stem end on anything that ripens after picking. | — |
 | `berries_picking` | produce | The carton’s underside decides, not the berries on top. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
+| `revive_greens` | produce · home | Limp is water loss, not spoilage. It comes back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
 | `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
 | `yogurt_live_cultures` | eggs_dairy | Buy it alive. Heat-treated after culturing is a dead ferment. | Find “live and active cultures” on the tub. Shelf-stable never carries it. | — |
 | `cream_vs_creamer` | eggs_dairy | Cream or half-and-half. ‘Non-dairy creamer’ is not dairy. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Take the smallest whole-wheat bag on the shelf. The germ oil turns. | — |
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
+| `whole_spices` | bulk_pantry | Buy whole. Ground spice is already going stale on the shelf. | Toast them in a dry pan until they smell, then grind. | — |
 | `rancidity_check` | bulk_pantry | Smell it. Old paint or crayons means it is spent. | Buy oil in a dark bottle small enough to finish in two months. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin, a recent harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
 | `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |

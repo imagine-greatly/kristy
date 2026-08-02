@@ -444,7 +444,7 @@
       "buying_tips": [
         "Prioritize organic for thin-skinned, eaten-whole items (berries, greens, apples).",
         "Buy conventional for peeled and thick-skinned produce (avocado, banana, citrus, onion).",
-        "Wash conventional produce well. It removes some residue and dirt."
+        "Soak the conventional thin-skinned ones. A baking soda soak takes more surface residue off than a rinse."
       ],
       "watch_out": [
         "The ‘Dirty Dozen’ ranking is contested on its methodology. The thin-skin reasoning holds; the list order does not.",
@@ -493,6 +493,47 @@
       ],
       "labels_decoded": [],
       "tier_note": "Freezing at harvest and the losses across days in transit are both well documented."
+    },
+    {
+      "id": "freezing_produce",
+      "title": "Freezing what is about to turn",
+      "aliases": [
+        "freezing vegetables",
+        "freeze produce",
+        "blanch",
+        "blanching",
+        "freezer burn",
+        "freeze vegetables",
+        "freeze fruit",
+        "about to go off",
+        "freezing herbs"
+      ],
+      "category": "produce",
+      "question": "How do I freeze produce before it goes off?",
+      "decision": "The freezer does not stop a vegetable. Boiling water does.",
+      "why": "Enzymes keep working below freezing and turn color and flavor. A brief scald ends them.",
+      "short_answer": "Freezing slows a vegetable down, it does not switch it off. The enzymes that drive ripening and browning carry on at freezer temperatures, slowly, which is why an unblanched bag of beans comes out gray and tasting of hay months later. Sixty seconds in boiling water denatures them, and everything after that is about keeping air and ice crystals away from the food.",
+      "detail": "Fruit is the exception and it is a real one: the enzymes that matter in fruit mostly affect appearance rather than flavor, and blanching would cook the texture out, so berries, banana and stone fruit go in raw. For vegetables the sequence is scald, chill hard in ice water to stop the cooking, dry, then freeze in a single layer before bagging — a tray first, so the pieces stay separate instead of fusing into one brick you have to break with a knife. Air is the other enemy: what is called freezer burn is water subliming off the surface and leaving it dried and oxidised, and pressing the air out of the bag is most of the defense. Very high-water vegetables collapse whatever you do.",
+      "evidence_tier": "established",
+      "kristy_take": "Sixty seconds in boiling water, then ice, then a tray. That is the whole method.",
+      "sources": [
+        "food-preservation guidance on enzyme inactivation and blanching times",
+        "work on sublimation and surface oxidation in frozen storage"
+      ],
+      "buying_tips": [
+        "Sixty seconds in boiling water, then straight into ice water to stop the cooking.",
+        "Freeze it flat on a tray before bagging, or it fuses into one brick.",
+        "Press the air out of the bag. Air is what burns it.",
+        "Fruit needs no blanching. Berries, banana and stone fruit go in as they are.",
+        "Date the bag. Frozen is not indefinite."
+      ],
+      "watch_out": [
+        "Freezing rescues nothing that has already started to turn. It holds what you put in.",
+        "High-water vegetables collapse on thawing: cucumber, lettuce, radish. Those are not freezer candidates."
+      ],
+      "labels_decoded": [],
+      "tier_note": "That enzymes survive freezing and a brief scald denatures them is settled food preservation science. It is also the step almost every home freeze skips.",
+      "eyebrow_short": "Freezing it"
     },
     {
       "id": "produce_seasonality",
@@ -566,7 +607,51 @@
         "No soap or bleach — plain water is the recommendation."
       ],
       "labels_decoded": [],
-      "tier_note": "Plain running water is the published recommendation, and the produce washes are not."
+      "tier_note": "Plain running water is the published recommendation, and the produce washes are not.",
+      "watch_out": [
+        "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak."
+      ]
+    },
+    {
+      "id": "baking_soda_soak",
+      "title": "Getting residue off conventional produce",
+      "aliases": [
+        "baking soda soak",
+        "baking soda",
+        "wash off pesticides",
+        "remove pesticides",
+        "pesticide residue",
+        "get pesticides off",
+        "soak produce",
+        "produce residue",
+        "residue"
+      ],
+      "category": "produce",
+      "question": "Does washing actually get the pesticide residue off?",
+      "decision": "Baking soda takes the surface residue. Water mostly does not.",
+      "why": "A rinse moves dirt. Bicarbonate breaks residue down, and it needs minutes to do it.",
+      "short_answer": "A soak does what a rinse cannot. Sodium bicarbonate degrades some pesticide residues on the skin, and running water mostly relocates them — but the working version is twelve to fifteen minutes in solution, not thirty seconds under the tap. It is a surface treatment and only a surface treatment: what has already moved into the flesh stays there.",
+      "detail": "The study everyone is quoting applied two pesticides to organic Gala apples and compared tap water, a one percent baking soda solution, and the bleach solution used commercially. Baking soda came out ahead of both, removing most of the surface phosmet at twelve minutes and most of the surface thiabendazole at fifteen. The same work is where the limit comes from: thiabendazole was mapped eighty micrometers into the fruit and phosmet twenty, and nothing applied to the outside reaches that. A later comparison across apples, grapes, lemons and strawberries put baking soda alone lower and found a commercial product ahead of it, so the honest position is that the soak beats water and the ranking against bottled washes is not settled.",
+      "evidence_tier": "credible_concern",
+      "sources": [
+        "Yang et al. 2017, J. Agric. Food Chem. — baking soda vs tap water vs a commercial bleach solution, on lab-dosed organic apples",
+        "2025 comparison of household and commercial washing agents across apples, grapes, lemons and strawberries"
+      ],
+      "kristy_take": "A rinse is for dirt. If residue is the reason, it is a soak and it takes twelve minutes.",
+      "buying_tips": [
+        "A teaspoon of baking soda per two cups of water, enough to cover the fruit.",
+        "Twelve to fifteen minutes in the bowl. Thirty seconds under the tap is not the same thing.",
+        "Worth the trouble on thin-skinned conventional fruit you eat whole: apples, grapes, berries.",
+        "Rinse the soda off with plain water afterward."
+      ],
+      "watch_out": [
+        "Systemic pesticides do not come off. Thiabendazole was mapped eighty micrometers into the apple, and no surface treatment reaches that.",
+        "Peeling removes more than any soak, and it removes the peel with it.",
+        "The circulating ‘ninety percent of pesticides’ line overstates the study. Two compounds were measured, on apples the researchers had dosed themselves."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Surface residue is a real peer-reviewed concern. The removal numbers are two compounds in one study and a later one puts baking soda lower, so the technique is sound and the magnitude is not settled.",
+      "eyebrow_short": "Residue"
     },
     {
       "id": "precut_produce_tradeoffs",
@@ -1094,6 +1179,45 @@
         "Canned and rinsed is close, and rinsing cuts much of the sodium the can added.",
         "‘No salt added’ cans give full control if the tap rinse is not enough."
       ]
+    },
+    {
+      "id": "bean_soak_salt",
+      "title": "Salting the bean soak",
+      "aliases": [
+        "salt beans",
+        "bean soak",
+        "soaking beans",
+        "salt the soak",
+        "tough beans",
+        "beans wont soften",
+        "hard beans",
+        "salting beans",
+        "soak water"
+      ],
+      "category": "bulk_pantry",
+      "question": "Does salting the soak water make beans tough?",
+      "decision": "Salt the soak. The rule against it has it backwards.",
+      "why": "Sodium loosens the pectin in the seed coat, so a salted soak leaves the skin softer.",
+      "short_answer": "It is the opposite of the received wisdom. Sodium works its way into the seed coat and displaces the calcium and magnesium holding the pectin together, which weakens the skin rather than tightening it — so salted beans cook more evenly and blow out less. The rule against salting is old, widely repeated, and wrong about the mechanism.",
+      "detail": "Two different things got confused. Acid does firm a bean: tomato, vinegar, wine and molasses added early will keep skins tough for hours, which is why a pot of chili can sit at a stubborn crunch. Hard water does it too, because the calcium and magnesium in it cross-link the pectin. Salt does neither. It is the one common addition that moves the other way, and the folk rule appears to have collected all three effects under the one ingredient people add most. Age matters more than any of it: beans that have sat for years never fully soften, whatever is in the water.",
+      "evidence_tier": "kristys_standard",
+      "kristy_take": "Salt the water. The rule your grandmother gave you was about the tomatoes.",
+      "sources": [
+        "food-chemistry work on pectin cross-linking and cation exchange in legume seed coats",
+        "controlled kitchen testing of salted versus unsalted soaks"
+      ],
+      "buying_tips": [
+        "A heaped tablespoon of salt per quart of soaking water, overnight.",
+        "Salt the cooking water as well. The same softening applies while they simmer.",
+        "Buy from a bin that turns over. Old beans stay hard however you soak them."
+      ],
+      "watch_out": [
+        "Acid genuinely does harden beans. Hold the tomato, vinegar and molasses until the skins are tender.",
+        "Hard tap water works against you: the calcium and magnesium in it do the opposite of what sodium does."
+      ],
+      "labels_decoded": [],
+      "tier_note": "The cation-exchange mechanism is real food chemistry, but the practical size of it comes from cooking literature rather than a settled body of study. Kristy holds it as the standard because the rule it replaces is demonstrably wrong.",
+      "eyebrow_short": "Salting the soak"
     },
     {
       "id": "label_natural",
@@ -2008,6 +2132,50 @@
       "eyebrow_short": "Judging meat"
     },
     {
+      "id": "dry_brine",
+      "title": "Dry-brining meat",
+      "aliases": [
+        "dry brine",
+        "dry brining",
+        "salt meat ahead",
+        "salting meat",
+        "brine",
+        "wet brine",
+        "season ahead",
+        "salt steak",
+        "salt chicken"
+      ],
+      "category": "beef",
+      "question": "When should I salt meat, and is a brine worth it?",
+      "decision": "Salt it the day before, and leave it uncovered.",
+      "why": "Salt pulls moisture out, then goes back in with it. The dried surface is what browns.",
+      "short_answer": "Salt early and skip the bucket. Applied a day ahead, salt dissolves in the meat’s own surface moisture, draws more out, and that concentrated brine is reabsorbed — seasoning the muscle through rather than sitting on it, and loosening the proteins so they hold on to water during cooking. Left uncovered in the fridge, the surface dries at the same time, and a dry surface is the whole precondition for browning.",
+      "detail": "A wet brine does some of the same seasoning work and adds water while it does it, which is the problem: the extra moisture has to boil off before the surface can brown, so the crust arrives late or not at all. Dry-brining gets the interior seasoning without that trade. Timing scales with thickness — a large roast or a thick steak wants a day, chops and cuts under an inch are fine with an hour, and even fifteen minutes beats salting at the pan, because that is long enough for the salt to dissolve but not long enough to draw a wet film that then has to evaporate. The one place it inverts is ground meat. The amount is worth stating by weight rather than by spoon, because kosher salt brands differ by nearly half in density: a teaspoon of Morton is about 4.8 grams and a teaspoon of Diamond Crystal about 2.8, so the same spoon delivers wildly different salt.",
+      "evidence_tier": "established",
+      "kristy_take": "Salt the day before, uncovered. It is the cheapest thing you can do to a piece of meat.",
+      "sources": [
+        "food-science work on salt diffusion and protein denaturation in muscle",
+        "Maillard browning and the surface-moisture threshold",
+        "published dry-brine ratios by cut (0.75–1.25% poultry, 1–1.5% beef steaks, 1.5–2% large roasts)"
+      ],
+      "buying_tips": [
+        "One percent of the meat by weight — about four and a half grams a pound.",
+        "A day ahead for a roast or a thick steak. An hour covers chops.",
+        "Uncovered, on a rack, so the surface can actually dry.",
+        "Without a scale: a rounded teaspoon and a half of Diamond Crystal per pound, or a level teaspoon of Morton.",
+        "A large roast or a brisket takes more, closer to one and a half percent."
+      ],
+      "watch_out": [
+        "Kosher salt brands are not interchangeable by volume. A teaspoon of Morton weighs nearly twice a teaspoon of Diamond Crystal, and at this ratio that is the difference between seasoned and inedible.",
+        "Enhanced pork and koshered poultry arrive already salted. Read for ‘solution added’ and skip this on those.",
+        "Ground meat is the exception. Salt dissolves the proteins and the texture turns springy, so salt burgers as they hit the pan.",
+        "Skip the wet brine. It adds the water that then has to boil off before anything browns."
+      ],
+      "labels_decoded": [],
+      "tier_note": "How salt moves through muscle, and why a dry surface browns and a wet one steams, are both basic food chemistry. The timing is the part people skip.",
+      "eyebrow_short": "Dry-brining"
+    },
+    {
       "id": "butcher_counter_asking",
       "title": "What to ask the butcher",
       "aliases": [
@@ -2569,7 +2737,6 @@
         "how to store fruit",
         "ethylene",
         "keep produce fresh",
-        "wilted greens",
         "should i refrigerate tomatoes",
         "food waste produce"
       ],
@@ -2595,6 +2762,45 @@
       ],
       "labels_decoded": [],
       "tier_note": "Ethylene ripening its neighbors, and moisture rotting a drawer, are both well established."
+    },
+    {
+      "id": "revive_greens",
+      "title": "Reviving wilted greens",
+      "aliases": [
+        "wilted greens",
+        "limp lettuce",
+        "revive greens",
+        "wilted lettuce",
+        "limp greens",
+        "crisp up greens",
+        "wilted herbs",
+        "limp celery",
+        "bendy carrots"
+      ],
+      "category": "produce",
+      "question": "Can I bring limp greens back, or are they finished?",
+      "decision": "Limp is water loss, not spoilage. It comes back.",
+      "why": "The cells have gone slack. Given cold water they refill and the leaf goes rigid again.",
+      "short_answer": "Most of what gets thrown out is thirsty rather than spoiled. A leaf is held rigid by the pressure of water inside its cells, and once that pressure drops the whole thing goes limp — but the cells are intact and they will take the water back. Thirty minutes in cold water restores most of it. What does not come back is anything that has actually started to break down.",
+      "detail": "The same mechanism explains why the trick is worth doing on more than lettuce. Celery, carrots, radishes, chard, kale and soft herbs all go limp by the same route and all firm up again. Cutting a sliver off the stem end first matters for anything with a stem, because the vessels seal and a fresh cut lets water move again, exactly as it does for cut flowers. Cold matters too — cold water is taken up more readily and it firms the cell walls at the same time. Bagged, pre-washed greens revive least, because they have already been cut and a cut edge does not reseal.",
+      "evidence_tier": "established",
+      "kristy_take": "Cold water and half an hour. Most of the greens in the bin did not need to be there.",
+      "sources": [
+        "plant physiology of turgor pressure and cell-wall rigidity",
+        "postharvest handling guidance on rehydrating leafy vegetables"
+      ],
+      "buying_tips": [
+        "Thirty minutes in cold water covers most of it. An hour for the worst of them.",
+        "Cut a sliver off the stem end first, the way you would for cut flowers.",
+        "Spin or pat them dry afterward, or the water you just added rots them in the drawer."
+      ],
+      "watch_out": [
+        "Yellowing, sliminess or a smell is decay, and cold water does nothing for it. That one goes out.",
+        "Pre-washed bagged greens revive least. They were cut before you bought them and a cut edge does not reseal."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Turgor pressure is basic plant physiology, and it is why a leaf goes rigid again. Nothing about it makes an old leaf new.",
+      "eyebrow_short": "Wilted greens"
     },
     {
       "id": "milk_processing",
@@ -2855,6 +3061,46 @@
       ],
       "labels_decoded": [],
       "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule."
+    },
+    {
+      "id": "whole_spices",
+      "title": "Whole spices and toasting",
+      "aliases": [
+        "whole spices",
+        "ground spices",
+        "spices",
+        "toasting spices",
+        "spice grinder",
+        "stale spices",
+        "cumin",
+        "coriander seed",
+        "peppercorns"
+      ],
+      "category": "bulk_pantry",
+      "question": "Are whole spices worth the trouble over ground?",
+      "decision": "Buy whole. Ground spice is already going stale on the shelf.",
+      "why": "The aroma is volatile oil. Grinding opens the surface up and it leaves from there.",
+      "short_answer": "What you are buying in a spice is volatile oil, and volatile means exactly what it sounds like. Whole, the oil is sealed inside a seed or a bark and holds for a couple of years. Ground, the surface area jumps and the same oil is off into the air within months — which is why a jar of ground cumin that smells of nothing is not spoiled, it is just empty. Grinding as you go is the whole difference, and warming them first drives the oils out where you can taste them.",
+      "detail": "Toasting is worth separating from grinding. A dry pan over medium heat until the smell arrives across the kitchen does two things: it drives volatile compounds to the surface and it starts browning reactions in the seed that build flavors that were not there before. Toast whole, then grind, and use it — toasted spice fades faster than raw whole spice, so it is not something to do in a batch and store. A blade grinder is adequate and a mortar is better for anything you want texture from. A handful of spices are only sold ground because the whole form is impractical to break down at home, and those are worth buying in the smallest quantity you will actually finish.",
+      "evidence_tier": "established",
+      "kristy_take": "Whole, and grind what you need. A jar of ground spice is a jar with a clock on it.",
+      "sources": [
+        "volatile-compound retention studies on whole versus ground spice storage",
+        "food-science references on dry-roasting and aromatic release"
+      ],
+      "buying_tips": [
+        "Whole spices hold for a couple of years. Ground ones are tired inside six months.",
+        "A dry pan over medium heat, until you can smell them across the kitchen.",
+        "Buy from a bin that turns over, in the smallest amount you will finish."
+      ],
+      "watch_out": [
+        "Some are only sold ground and that is fine: turmeric, paprika, cinnamon. Buy those small and often.",
+        "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
+      ],
+      "labels_decoded": [],
+      "tier_note": "That volatile aromatics escape faster from a ground surface is straightforward chemistry, and the shelf-life gap follows directly from it.",
+      "eyebrow_short": "Whole spices",
+      "cart_pick": "Whole peppercorns"
     },
     {
       "id": "rancidity_check",

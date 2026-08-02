@@ -64,7 +64,7 @@ only by prompt.
    split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
    budget, the store's stock or their spare time is a retreat and does not. Firmer is
    never looser with facts — **if a claim needs a false mechanism to sound convincing, the
-   claim is wrong.** Both enforced by `counterCardLint.js` over all 75 cards, curated and
+   claim is wrong.** Both enforced by `counterCardLint.js` over all 81 cards, curated and
    generated.
 
 8. **No price, ever.** Kristy does not know what anything costs. Budget means
@@ -82,7 +82,7 @@ only by prompt.
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
   `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (75 entries) answers
+  thing the verdict engine sees. `kristy_perimeter_kb.json` (81 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
@@ -250,6 +250,30 @@ equality *is* the positioning.
   cards are authored with 6 to 8. There was no alias advantage and never had been. Record
   measured numbers, not characterizations; this is the second time a written-down
   conclusion stopped anyone checking.
+- **KITCHEN TECHNIQUE IS A CARD CLASS, and `kind='home'` is what carries it.** Kristy knows
+  what works at home, not only what to buy. Six technique cards landed 2026-08-02:
+  `baking_soda_soak`, `bean_soak_salt`, `dry_brine`, `revive_greens`, `freezing_produce`
+  (all `home`) and `whole_spices` (`shelf`). The bar is identical to a shelf card — firm
+  verdict, accurate mechanism, honest tier — plus one rule of its own: **mechanical only.
+  What happens to the food and why. Never a bodily outcome**, which is where this category
+  fails if it fails. `home` suppresses the add-to-cart in the projection AND the client, so
+  a card whose verdict is a PURCHASE decision must be `shelf` however kitchen-shaped its do
+  line is; `whole_spices` was authored `home` and moved for exactly that reason.
+- **The imperative-verb list was aisle-shaped, and launching the class widened it.** Five of
+  the six cards could not state their own action: `soak`, `stir`, `trim`, `blanch`, `toast`
+  were all missing from `IMPERATIVE_VERBS`, which held `read`/`check`/`look`/`take`. The
+  guard was right to stop the cards and the fix was to widen it deliberately with the
+  reasoning recorded in the list, not to reword six cards around a vocabulary gap. Adding a
+  verb stays a deliberate act — that is the point of the list being explicit rather than a
+  heuristic.
+- **Where the popular claim outruns the evidence, the card states the narrower true thing
+  and the gap goes in `watch_out`.** `baking_soda_soak` exists because of this: the
+  circulating "removes 90% of pesticides" line overstates Yang et al. 2017, which measured
+  **two** compounds on apples the researchers had dosed themselves, at 80% and 96% after a
+  **twelve-to-fifteen-minute soak** — and found thiabendazole eighty micrometers *inside*
+  the fruit, where nothing applied outside reaches. A 2025 comparison put baking soda alone
+  lower still and had a commercial product ahead of it, so the drafted claim "beats
+  commercial washes" was **dropped before authoring**. Verify the study, not the retelling.
 - **A HUB CARD'S DO LINE MUST WORK FOR WHATEVER BROUGHT THE SHOPPER THERE.**
   `produce_ripeness_by_item` answers 14 items and its do line named one: a question about
   melon returned an instruction about berries, in the most prominent line on the card. That
@@ -517,7 +541,7 @@ equality *is* the positioning.
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (76 rows as of the 2026-08-02 sweep: 75 curated + 1 generated), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (82 rows as of 2026-08-02: 81 curated + 1 generated), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.

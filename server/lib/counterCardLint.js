@@ -487,6 +487,13 @@ export const IMPERATIVE_VERBS = new Set([
   // was rejecting the most natural verbs for it — a generated cantaloupe card opened with
   // "Sniff" and cost a full retry for being right.
   'peel', 'shake', 'sniff', 'tap', 'thump',
+  // The KITCHEN batch, added with the `home` technique cards on 2026-08-02. This list was
+  // built for aisle actions — read, check, look, take — and a card whose observable is at
+  // the stove has a different vocabulary. Every one of these was a card that could not
+  // state its own action: the baking-soda card opens "Soak", the bean card "Stir", the
+  // greens card "Trim", the freezing card "Blanch", the spice card "Toast". Adding a verb
+  // stays a deliberate act, which is the point of the list being explicit.
+  'blanch', 'soak', 'stir', 'toast', 'trim',
 ]);
 
 export const firstToken = (s) =>

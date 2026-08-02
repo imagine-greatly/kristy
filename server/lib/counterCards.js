@@ -59,7 +59,18 @@ export function sectionForCategory(category) {
 //
 // Authored, not detected. A heuristic over "does this sound like a kitchen?" would be
 // wrong on the interesting cases and there are only ever a handful.
-const HOME_CARDS = new Set(['washing_produce', 'egg_storage', 'produce_storage']);
+const HOME_CARDS = new Set([
+  'washing_produce', 'egg_storage', 'produce_storage',
+  // The kitchen-technique class, 2026-08-02. These are not "no store action to name" the
+  // way the three above are — they are cards whose whole subject IS the action, and it
+  // happens at home. `whole_spices` is the awkward one: its verdict ("buy whole") is a
+  // shelf decision and only its do line is a kitchen one, so it is the member of this set
+  // most likely to want moving back. See the note in the handoff.
+  // `whole_spices` was here and is NOT: its verdict ("buy whole") is a purchase decision,
+  // and `home` suppresses the add-to-cart in both the projection and the client. A card
+  // that tells you what to buy has to be able to put it in the cart.
+  'baking_soda_soak', 'bean_soak_salt', 'dry_brine', 'revive_greens', 'freezing_produce',
+]);
 
 export function kindFor(slug) {
   return HOME_CARDS.has(slug) ? 'home' : 'shelf';
