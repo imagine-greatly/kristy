@@ -1439,9 +1439,9 @@
       ],
       "category": "label_terms",
       "question": "Does ‘made with real fruit’ mean it’s healthy?",
-      "decision": "Flip it over. Find where that ingredient falls in the list.",
-      "why": "It only means some is in there. Early in the list means real amounts, late means a trace.",
-      "short_answer": "No — it only means some of that ingredient is in there, often a tiny amount. ‘Made with real fruit’ can be a splash of juice concentrate in a sugary snack; ‘made with whole grain’ can be mostly refined flour. Flip it over and read the ingredient list and the amounts.",
+      "decision": "The front names an ingredient. Find it in the list.",
+      "why": "Position is the whole story. Weight order means past third is a trace, not a serving.",
+      "short_answer": "Whatever the front brags about, the back tells you how much of it there is. Ingredients are listed by weight, so an ingredient sitting fourth or later is present in a quantity too small to matter — “made with real fruit” is a true statement about a trace. The claim is never a lie; it is a fact about presence, and presence is not amount.",
       "detail": "‘Made with real ___‘ is a front-of-pack claim that sets no minimum you’d find meaningful. The ingredient list, ordered by weight, tells you whether that ‘real’ thing is a headline ingredient or a rounding error. This is exactly the kind of claim to check against the back of the package.",
       "evidence_tier": "established",
       "sources": [
@@ -3564,9 +3564,9 @@
       ],
       "category": "bulk_pantry",
       "question": "How do I tell if nuts, oil or flour have gone rancid?",
-      "decision": "Smell it. Old paint or crayons means it is spent.",
-      "why": "Rancid fat tastes sharp and bitter, with a scratch that does not fade. Quality, not safety.",
-      "short_answer": "Smell and taste, and trust them. Rancid fat smells like old paint, crayons, putty or nail polish, and it tastes sharp and bitter with a scratch at the back of the throat that does not fade. It happens to nuts, seeds, whole-grain flour, wheat germ, nut butters and every oil. It is a quality problem rather than a safety emergency: the food is spent, and it will make whatever you put it in taste bad.",
+      "decision": "Fats turn, and the nose is the only test that works.",
+      "why": "Oxidized oil has a smell nothing else has. No date on the package will tell you.",
+      "short_answer": "Nuts, whole-grain flour and any oil all carry fat, and fat goes off. The tell is a smell most people already know without a name for it: old paint, crayons, putty, or a dusty cupboard. Nothing on the label predicts it, because the clock starts at pressing or milling and runs on heat, light and air rather than on the printed date.",
       "detail": "Oxidation is fat reacting with air, and light, heat and time all speed it up. That is the whole reason good olive oil comes in dark glass and gets stored away from the stove, and why whole-grain flour keeps months while white flour keeps almost indefinitely. The peppery catch at the back of the throat in fresh olive oil is a different sensation from the flat bitter scratch of a rancid one, and the difference is learnable in a single side-by-side taste. Once you can smell it, the bulk bin, the back of the pantry and the half-used oil bottle all become easy calls.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -3575,11 +3575,9 @@
       ],
       "kristy_take": "Old paint and crayons is the smell. Once you know it, half the back of the pantry starts making sense.",
       "buying_tips": [
-        "Smell nuts and seeds before they go in the cart, especially from a bulk bin.",
-        "Rancid reads as paint, crayon, putty or nail polish. Sharp and bitter on the tongue.",
-        "Dark glass or tin for oil, stored away from the stove rather than beside it.",
-        "Nuts, seeds, whole-grain flour and nut butters keep far longer in the fridge or freezer.",
-        "Buy oil in a size you will finish in a couple of months rather than the big bottle."
+        "Buy oil in a dark bottle, in a size you will finish inside two months.",
+        "Keep whole-grain flour and shelled nuts in the freezer. The germ oil is what turns.",
+        "Smell a bulk bin before you fill a bag from it."
       ],
       "labels_decoded": [],
       "tier_note": "Rancid fat is a quality problem rather than a safety one, and it is flagged on exactly that basis.",
@@ -4268,10 +4266,10 @@
         "lait cru"
       ],
       "question": "Is raw milk cheese worth buying?",
-      "decision": "Start here. The one raw dairy sitting in plain sight.",
-      "why": "US law allows raw cheese at sixty days, so the good counter already stocks it.",
+      "decision": "Raw-milk cheese, aged. Legal everywhere and already in the case.",
+      "why": "Sixty days of aging is the federal line. Past it, raw-milk cheese sells anywhere.",
       "card_why": "Aged raw-milk cheese is the raw dairy nobody has to hunt for — US rules allow it at sixty days and up, so a decent cheese counter already keeps a case of it. Sixty days of aging is a technology of its own, and it is the reason an aged raw cheddar tastes of the place it came from while a young commodity block tastes of very little. The organizing principle is the milk’s: ask who made it, from which herd, and how long it sat.",
-      "short_answer": "Look for “raw milk” or “lait cru” on the rind label with an age beside it, and buy from the cut-to-order counter rather than the pre-wrapped wall.",
+      "short_answer": "It is the raw dairy nobody has to go looking for. US law permits raw-milk cheese aged sixty days or more to be sold across state lines, so it sits in ordinary cheese cases beside everything else — no farm visit, no herdshare, no state-by-state map. Most traditional European cheeses are made this way, which is why so many of them qualify.",
       "detail": "The sixty-day rule is why raw cheese is legal at US retail where raw milk often is not. Aging concentrates the cheese and develops it, and a raw-milk cheese carries the character of one herd and one season in a way a standardized pasteurized curd is designed not to. A staffed counter can usually name the maker, the animal and the age, which is exactly the information the rind label is too small to hold.",
       "kristy_take": "Ask the monger who made it. A good one has been waiting to tell you.",
       "buying_tips": [

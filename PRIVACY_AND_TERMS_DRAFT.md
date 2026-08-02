@@ -479,7 +479,7 @@ it tells you is medical advice.**
 The Service has a free tier. Paid membership unlocks personalized notes, focus-aware
 carts, haul reads, and conversational cart edits.
 
-- **Pricing:** `[[$7.99]]`/month or `[[$59.99]]`/year.
+- **Pricing:** `[[$5]]`/month or `[[$45]]`/year.
 - **Free trial:** `[[7]]` days, started explicitly by you.
 - **Renewal:** subscriptions renew automatically until cancelled.
 - **Cancellation:** cancel any time; access continues to the end of the paid period.

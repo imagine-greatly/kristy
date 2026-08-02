@@ -407,3 +407,8 @@ create trigger subscriptions_touch_updated_at
 -- triggers, and it writes no rows — so applying it can never change what a user has.
 -- schemaSafety.test.js enforces that, because the guarantee should not depend on anyone
 -- remembering it.
+
+-- The counter's full-read meter. Its own column rather than reusing free_notes_used,
+-- which meters personalized verdict notes on the scan path: two products, two counters,
+-- one shared mechanic. DDL only — never a data write in a schema file.
+alter table user_goals add column if not exists free_reads_used int default 0;

@@ -11,6 +11,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -20,8 +21,9 @@ import doLines from './doLines.json' with { type: 'json' };
 import { parseReviewTable, RETIRED } from './counterCards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const reviewed = parseReviewTable(
-  readFileSync(join(__dirname, '..', '..', 'docs', 'do-lines-review.md'), 'utf8')
+const reviewed = nonEmpty(
+  parseReviewTable(readFileSync(join(__dirname, '..', '..', 'docs', 'do-lines-review.md'), 'utf8')),
+  'the reviewed do-line table'
 );
 
 test('doLines.json agrees with the reviewed markdown, exactly', () => {
@@ -40,10 +42,10 @@ test('doLines.json agrees with the reviewed markdown, exactly', () => {
 test('every authored entry has a do line, and no retired one does', () => {
   // The do line is the field the card exists to carry, so a missing one is not a gap in
   // a build product — it is a card with no action on it.
-  for (const e of perimeterKb.entries) {
+  for (const e of nonEmpty(perimeterKb.entries, 'perimeterKb.entries')) {
     assert.ok(doLines[e.id], `${e.id} has no do line in doLines.json`);
   }
-  for (const slug of RETIRED) {
+  for (const slug of nonEmpty(RETIRED, 'RETIRED')) {
     assert.ok(!doLines[slug], `${slug} is retired but still carries a do line`);
   }
 });

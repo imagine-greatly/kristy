@@ -6,6 +6,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { CHAT_SYSTEM_PROMPT, buildPreferencesBlock } from './prompts.js';
 import { looksLikePerimeterQuestion, looksLikePreferenceDeclaration } from './chatRouting.js';
 

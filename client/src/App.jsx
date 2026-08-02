@@ -53,6 +53,7 @@ import ScanSheet from './components/ScanSheet.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ScanHome from './components/ScanHome.jsx';
 import AisleMoment from './components/AisleMoment.jsx';
+import UpgradeSheet from './components/UpgradeSheet.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
 import CartMoment from './components/CartMoment.jsx';
 import ImportList from './components/ImportList.jsx';
@@ -560,6 +561,12 @@ export default function App() {
   }
 
   // Open the upgrade view (from a locked feature, the sidebar, or settings).
+  // THE ASK APPEARS AT TWO MOMENTS AND NOWHERE ELSE: the fourth full-read tap, and a
+  // list save. Not on open, not on a scan, not on an ask, never a banner. Interrupting
+  // someone mid-aisle is how this gets deleted.
+  const [upgradeSheet, setUpgradeSheet] = useState(null); // { reason, itemCount }
+  const askToUpgrade = (reason, itemCount = 0) => setUpgradeSheet({ reason, itemCount });
+
   function openUpgrade() {
     setSidebarOpen(false);
     setUpgradeOpen(true);
@@ -1087,6 +1094,7 @@ export default function App() {
               onSetGoal={() => setSwitcherOpen(true)}
               onUpgrade={openUpgrade}
               onScan={() => setCameraOpen(true)}
+              onSaveList={subscription?.premium ? null : (n) => askToUpgrade('list', n)}
               onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
               onHaul={() => setMoment('haul')}
@@ -1103,6 +1111,7 @@ export default function App() {
           {/* The unlabeled half, as a destination. Free to browse, no account. */}
           {moment === 'aisle' && (
             <AisleMoment
+              onUpgradeSheet={() => askToUpgrade('read')}
               onAddToCart={cart.add}
               prefs={{
                 goal: goalNoteLabel(goalsOf(profile)),
@@ -1241,6 +1250,16 @@ export default function App() {
         />
       )}
 
+      {/* The ask, at its two moments. Rendered above everything so a tap that hits the
+          meter never leaves the shopper looking at a dead expander. */}
+      {upgradeSheet && (
+        <UpgradeSheet
+          reason={upgradeSheet.reason}
+          itemCount={upgradeSheet.itemCount}
+          onClose={() => setUpgradeSheet(null)}
+          onPick={() => { setUpgradeSheet(null); openUpgrade(); }}
+        />
+      )}
       {upgradeOpen && (
         <Upgrade
           subscription={subscription}

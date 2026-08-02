@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { colors, fonts, kristyVoice, radii } from '../lib/tokens.js';
+import CardTeaser from './CardTeaser.jsx';
 
 /* ═══════════════ Counter card — the summary is the product, the depth is on tap ═══════════════
 
@@ -30,7 +31,14 @@ const TIER_LABEL = {
 };
 export const tierLabel = (t) => TIER_LABEL[t] || t;
 
-export default function CounterCard({ card, onAddToCart, compact = false, defaultOpen = false }) {
+/* THE SUMMARY IS ALWAYS FREE — eyebrow, tier chip, headline, do line, cart pick. A
+   shopper in an aisle never hits a wall. `card.locked` means the server withheld the
+   depth: the tap then opens the TEASER rather than a padlock, because the point of the
+   moment is showing how much is behind it. */
+export default function CounterCard({
+  card, onAddToCart, compact = false, defaultOpen = false, onUpgrade, onRequestFull,
+  purchasable = true,
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const [added, setAdded] = useState(false);
 
@@ -38,9 +46,10 @@ export default function CounterCard({ card, onAddToCart, compact = false, defaul
   const s = compact ? compactStyles : fullStyles;
 
   const home = card.kind === 'home';
+  const locked = card.locked === true;
   const lookFor = card.look_for || [];
   const watchOut = card.watch_out || [];
-  const hasDepth = Boolean(card.why || lookFor.length || watchOut.length || card.tier_note);
+  const hasDepth = locked || Boolean(card.why || lookFor.length || watchOut.length || card.tier_note);
 
   return (
     <article style={s.card} data-counter-card={card.slug} data-kind={card.kind || 'shelf'}>
@@ -97,7 +106,10 @@ export default function CounterCard({ card, onAddToCart, compact = false, defaul
         <button
           type="button"
           style={styles.moreBtn}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            if (!open && locked && onRequestFull) onRequestFull(card.slug);
+            setOpen((v) => !v);
+          }}
           aria-expanded={open}
           data-full-read
         >
@@ -109,6 +121,10 @@ export default function CounterCard({ card, onAddToCart, compact = false, defaul
       {/* ── EXPANDED ──────────────────────────────────────────────────────── */}
       {open && (
         <div style={styles.depth} data-expanded>
+          {locked ? (
+            <CardTeaser card={card} onUpgrade={onUpgrade} purchasable={purchasable} />
+          ) : (
+          <>
           {card.why && <p style={s.why}>{card.why}</p>}
 
           {lookFor.length > 0 && (
@@ -148,6 +164,8 @@ export default function CounterCard({ card, onAddToCart, compact = false, defaul
               {card.tier && <span style={styles.tierNoteHead}>{tierLabel(card.tier)}. </span>}
               {card.tier_note}
             </p>
+          )}
+          </>
           )}
         </div>
       )}

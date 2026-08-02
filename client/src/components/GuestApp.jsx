@@ -48,6 +48,13 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
   const [exchanges, setExchanges] = useState(0);
   const [gate, setGate] = useState(null); // null | { line, terminal, reason }
 
+  // NO PLAN BUTTONS FOR A GUEST, and that is a decision rather than an omission. Buying
+  // needs an account, an account needs a phone code, and phone codes are blocked on 10DLC
+  // carrier registration — so a guest who tapped a plan would type a number, press Send
+  // code, and wait for a message that cannot arrive. They keep the whole free surface and
+  // the teaser, which still shows how much sits behind the gate. They are simply not
+  // offered a purchase that cannot complete. See `purchasable` on AisleMoment.
+
   const invite = () => setGate({ reason: 'invite', line: INVITE_LINE, terminal: false });
   // Sign-in offered as PERSISTENCE, at the point where persistence is the thing
   // being asked for. Always dismissible — declining leaves the session fully usable.
@@ -243,6 +250,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                 constraints: prefs?.constraints || [],
               }}
               onUpgrade={save}
+              purchasable={false}
               onScan={() => setMoment('scan')}
             />
           )}
@@ -323,6 +331,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       )}
 
       {gate && <GuestGate line={gate.line} terminal={gate.terminal} onDismiss={() => setGate(null)} />}
+
     </div>
   );
 }

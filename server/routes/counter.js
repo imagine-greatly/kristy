@@ -2,7 +2,10 @@ import { Router } from 'express';
 import { supabase, optionalAuth } from '../lib/supabase.js';
 import { clientIp, counterAskLimited } from '../lib/guestRate.js';
 import { PERIMETER_SECTIONS } from '../lib/perimeter.js';
-import { getCard, getSectionCards, getAllCards, getEssentialCards, bumpUseCount } from '../lib/counterCards.js';
+import {
+  getCard, getSectionCards, getAllCards, getEssentialCards, bumpUseCount, forViewer,
+} from '../lib/counterCards.js';
+import { getFreeReadsUsed, incrementFreeReadsUsed } from '../lib/store.js';
 import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
@@ -24,6 +27,17 @@ import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 // the whole card down for a list of forty topics would be slower and no more useful.
 
 export const counterRouter = Router();
+
+// Three, the same number and the same mechanic as the scan path's free notes.
+export const FREE_READ_LIMIT = 3;
+
+// A viewer, for the paid boundary. The sync form is for browse lists, which must not
+// grow a database read per card; the async form resolves premium on single-card paths.
+const anonViewer = () => ({});
+async function viewerFor(req) {
+  if (!req.user) return {};
+  return { premium: await premiumForReq(req) };
+}
 
 // A browse row is the least a shopper needs to choose: what it is, and the call.
 const browseRow = (c) => ({
@@ -75,11 +89,12 @@ counterRouter.get('/counter/sections', async (_req, res) => {
   }
 });
 
-counterRouter.get('/counter/sections/:id', async (req, res) => {
+counterRouter.get('/counter/sections/:id', optionalAuth, async (req, res) => {
   const meta = PERIMETER_SECTIONS.find((s) => s.id === req.params.id);
   if (!meta) return res.status(404).json({ error: 'not_found' });
   try {
-    const cards = await getSectionCards(meta.id, supabase);
+    const viewer = await viewerFor(req);
+    const cards = (await getSectionCards(meta.id, supabase)).map((c) => forViewer(c, viewer));
     return res.json({
       id: meta.id,
       title: meta.title,
@@ -95,9 +110,11 @@ counterRouter.get('/counter/sections/:id', async (req, res) => {
 
 // The essentials shelf — the cards the index renders in place, before any navigation.
 // Registered BEFORE /cards/:slug, which would otherwise swallow "essentials".
-counterRouter.get('/counter/essentials', async (_req, res) => {
+counterRouter.get('/counter/essentials', optionalAuth, async (_req, res) => {
   try {
-    const cards = await getEssentialCards(supabase);
+    // Essentials are ALWAYS full — forViewer returns them untouched. They still go
+    // through the boundary so there is one rule here, not a rule and an exception.
+    const cards = (await getEssentialCards(supabase)).map((c) => forViewer(c, anonViewer()));
     return res.json({ cards, count: cards.length });
   } catch (err) {
     console.error('[kristy] /api/counter/essentials error:', err?.message || err);
@@ -106,9 +123,12 @@ counterRouter.get('/counter/essentials', async (_req, res) => {
 });
 
 // The whole corpus. Registered BEFORE /cards/:slug, which would otherwise swallow it.
-counterRouter.get('/counter/cards', async (_req, res) => {
+counterRouter.get('/counter/cards', optionalAuth, async (req, res) => {
   try {
-    const cards = await getAllCards(supabase);
+    // THE BULK ENDPOINT IS THE SCRAPE SURFACE. Before this boundary it handed the whole
+    // corpus, every field, to any unauthenticated caller in a single request.
+    const viewer = await viewerFor(req);
+    const cards = (await getAllCards(supabase)).map((c) => forViewer(c, viewer));
     return res.json({ cards, count: cards.length });
   } catch (err) {
     console.error('[kristy] /api/counter/cards error:', err?.message || err);
@@ -116,7 +136,53 @@ counterRouter.get('/counter/cards', async (_req, res) => {
   }
 });
 
-counterRouter.get('/counter/cards/:slug', async (req, res) => {
+
+/* ═══════════════════════════ The full read ═══════════════════════════
+
+   GET /api/counter/cards/:slug/full — the metered route, and the only one that spends
+   anything.
+
+   Three free full reads, then the gate. Signed-in users are metered server-side on
+   `free_reads_used`. SIGNED-OUT STRANGERS GET THE THREE TOO, deliberately: requiring an
+   account to experience depth costs exactly the moment that acquires them. Their count
+   is held by the client and sent up.
+
+   THAT IS A CHOICE, NOT AN OVERSIGHT. Metering a stranger server-side needs an
+   identifier, and the counter s privacy claim is that its free layer stores no personal
+   data — counter_gaps carries no user key, no IP, no session. An IP-keyed meter would
+   break that to enforce a limit that a cleared localStorage defeats anyway, and it would
+   spend one stranger s reads on another behind a shared office or carrier address. The
+   scrape surface that actually mattered was the BULK endpoint, and that one is closed.
+   This route is per-slug and sits behind the counter s existing IP rate limiter. */
+counterRouter.get('/counter/cards/:slug/full', optionalAuth, async (req, res) => {
+  try {
+    const card = await getCard(req.params.slug, supabase);
+    if (!card) return res.status(404).json({ error: 'not_found' });
+
+    const premium = req.user ? await premiumForReq(req) : false;
+    // Essentials never spend a read — the shelf is where free depth is demonstrated.
+    if (premium || card.essential) return res.json({ card, spent: false, premium });
+
+    const gate = () => res
+      .status(402)
+      .json({ gated: true, card: forViewer(card, {}), limit: FREE_READ_LIMIT });
+
+    if (!req.user) {
+      const spent = Number(req.query.spent) || 0;
+      if (spent >= FREE_READ_LIMIT) return gate();
+      return res.json({ card, spent: true, remaining: FREE_READ_LIMIT - spent - 1 });
+    }
+
+    const used = await getFreeReadsUsed(req.user.id);
+    if (used >= FREE_READ_LIMIT) return gate();
+    await incrementFreeReadsUsed(req.user.id);
+    return res.json({ card, spent: true, remaining: FREE_READ_LIMIT - used - 1 });
+  } catch (err) {
+    console.error('[kristy] /api/counter/cards/:slug/full error:', err?.message || err);
+    return res.status(500).json({ error: 'counter_unavailable' });
+  }
+});
+counterRouter.get('/counter/cards/:slug', optionalAuth, async (req, res) => {
   try {
     const card = await getCard(req.params.slug, supabase);
     if (!card) return res.status(404).json({ error: 'not_found' });
@@ -125,7 +191,7 @@ counterRouter.get('/counter/cards/:slug', async (req, res) => {
     // reach earned it at least as much as one a matcher surfaced. Fire-and-forget: nobody
     // waits on our bookkeeping.
     bumpUseCount(card.slug, supabase, card.use_count);
-    return res.json(card);
+    return res.json(forViewer(card, await viewerFor(req)));
   } catch (err) {
     console.error('[kristy] /api/counter/cards/:slug error:', err?.message || err);
     return res.status(500).json({ error: 'counter_unavailable' });
@@ -163,6 +229,10 @@ counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
     });
 
     if (result.out_of_scope || !result.card) return res.json(result);
+
+    // Asking is free and unlimited, generation included. The CARD it returns obeys the
+    // same boundary a browsed one does — the ask is not a side door around the meter.
+    result.card = forViewer(result.card, await viewerFor(req));
 
     // A GENERATED card is never personalized. composeAnswer is claim-locked to matched KB
     // entries, and a generated card has none — personalizing it would mean a model call

@@ -505,6 +505,68 @@ export function parseReviewTable(markdown) {
   return out;
 }
 
+/* ═══════════════════════════ The paid boundary ═══════════════════════════ */
+
+// WHAT IS FREE IS THE SUMMARY, AND IT IS FREE ON EVERY SURFACE, FOREVER: eyebrow, tier
+// chip, headline, do line, cart pick. A shopper standing in an aisle never hits a wall —
+// that is the acquisition engine and the reputation, and it is not negotiable.
+//
+// WHAT IS PAID IS THE DEPTH. These eight fields and nothing else.
+export const DEPTH_FIELDS = [
+  'why', 'look_for', 'watch_out', 'tier_note', 'detail', 'kristy_take', 'labels_decoded', 'sources',
+];
+
+// THE WITHHOLDING HAPPENS HERE, ON THE SERVER, NOT IN THE CLIENT. Before this the whole
+// corpus was one unauthenticated GET away — `/api/counter/cards` returned all 82 cards
+// with every field to anyone with curl, so the moat was already downloadable. A client
+// that merely HIDES depth still received it.
+//
+// THE TEASER SHIPS GEOMETRY, NEVER WORDS. The first check goes down in full, because a
+// shopper has to see that the depth is real. The next few go down as LENGTHS — the true
+// character count of each line — so the client can render blocks that wrap exactly where
+// the real lines wrap. The counts are true counts. That shows how much is there without
+// handing a third of every card to an unpaid caller, which is a strange thing to do in
+// the same change that stops handing over all of it.
+export function summarize(card) {
+  if (!card) return card;
+  const rest = { ...card };
+  for (const f of DEPTH_FIELDS) delete rest[f];
+  const lookFor = Array.isArray(card.look_for) ? card.look_for : [];
+  const watchOut = Array.isArray(card.watch_out) ? card.watch_out : [];
+  return {
+    ...rest,
+    locked: true,
+    teaser: {
+      // Fully legible. The hook is that this is the card's real first check.
+      look_for_first: lookFor[0] || null,
+      // True per-line lengths for the fade. Three is what fits above a phone fold.
+      faded_lengths: lookFor.slice(1, 4).map((t) => String(t).length),
+      // "4 more checks, 2 traps, and why this carries the tier." Everything past the one
+      // legible line counts as more — a faded line is teased, not read.
+      remaining: {
+        look_for: Math.max(0, lookFor.length - 1),
+        watch_out: watchOut.length,
+        tier_note: Boolean(card.tier_note),
+      },
+    },
+  };
+}
+
+/**
+ * Apply the boundary to one card.
+ *
+ * ESSENTIALS ARE ALWAYS FULL, for everyone, and never touch the meter. The eight sit on
+ * the index before any navigation: a shopper who spends all three free reads on the shelf
+ * never reaches the counter and never learns the other seventy-four exist. Free depth on
+ * the shelf proves the reads are worth having; the meter then proves the BREADTH is what
+ * the membership buys. Those are different jobs and they need different surfaces.
+ */
+export function forViewer(card, { premium = false, unlocked = false } = {}) {
+  if (!card) return card;
+  if (premium || unlocked || card.essential) return card;
+  return summarize(card);
+}
+
 /* ═══════════════════════════ Row mapping ═══════════════════════════ */
 
 // `do` is a reserved keyword in Postgres, so the column is `do_line`. These two
@@ -561,7 +623,11 @@ export function projectAll() {
 
 const CARD_COLUMNS =
   'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, why, ' +
-  'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count';
+  'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count, ' +
+  // ESSENTIAL IS LOAD-BEARING NOW. It was cosmetic when every card returned everything;
+  // with the paid boundary it decides whether a card is served in full, so a column
+  // missing from this list silently gates the eight cards that must never gate.
+  'essential, essential_rank';
 
 // A real select, never a head:true count — PostgREST answers 204 / null / no error for a
 // table that does not exist, which reads as "present, empty" and would render the counter

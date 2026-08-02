@@ -23,6 +23,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve, relative, sep } from 'node:path';
@@ -82,7 +83,9 @@ const inside = (abs) => {
 
 test('nothing the server runs reads a path outside server/', () => {
   const escapes = [];
-  for (const file of runtimeFiles()) {
+  // Guarded: an empty file list would pass this fence without checking anything, and
+  // the fence is what stands between a laptop-only path and a broken deploy.
+  for (const file of nonEmpty(runtimeFiles(), 'runtime files under lib/, routes/ and index.js', 10)) {
     const src = readFileSync(file, 'utf8');
     for (const { literal, abs } of resolvedPaths(src, file)) {
       // Bare package specifiers never start with "." and are not collected at all.

@@ -9,6 +9,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -24,6 +25,8 @@ import {
   contradictions,
   sharedObservables,
   closingConstruction,
+  copulaAbstraction,
+  antithesisChime,
   words,
   firstToken,
   IMPERATIVE_VERBS,
@@ -37,9 +40,10 @@ const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
 
 /* ═══════════════════════════ The curated corpus ═══════════════════════════ */
 
-const reviewed = parseReviewTable(readFileSync(REVIEW_FILE, 'utf8'));
-const CARDS = (perimeterKb.entries || []).map((e) =>
-  projectEntry(e, { doLine: reviewed.get(e.id)?.do || '' })
+const reviewed = nonEmpty(parseReviewTable(readFileSync(REVIEW_FILE, 'utf8')), 'the reviewed do-line table');
+const CARDS = nonEmpty(
+  (perimeterKb.entries || []).map((e) => projectEntry(e, { doLine: reviewed.get(e.id)?.do || '' })),
+  'the projected card corpus'
 );
 
 const codes = (violations) => violations.map((v) => v.code);
@@ -341,13 +345,13 @@ test('the two retirement lists cannot be confused for each other', () => {
   // reported as retired, the row stays live, and the card keeps answering shoppers. Four
   // generated cards sat in RETIRED for exactly one migration run this way, including one
   // whose verdict contradicted a curated card outright.
-  for (const slug of RETIRED) {
+  for (const slug of nonEmpty(RETIRED, 'RETIRED')) {
     assert.ok(
       !slug.startsWith('gen_'),
       `${slug} is a generated slug in RETIRED — the curated-scoped delete will silently skip it. Use RETIRED_GENERATED.`
     );
   }
-  for (const slug of RETIRED_GENERATED) {
+  for (const slug of nonEmpty(RETIRED_GENERATED, 'RETIRED_GENERATED')) {
     assert.ok(
       slug.startsWith('gen_'),
       `${slug} is in RETIRED_GENERATED but is not a generated slug — the generated-scoped delete will silently skip it.`
@@ -375,7 +379,7 @@ test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
     // A section shortcut must already be browsable in that section. Folding a card
     // without repointing its shortcut leaves a tap that resolves to nothing — the
     // grass-fed shortcut did exactly this and only a test caught it.
-    for (const section of PERIMETER_SECTIONS) {
+    for (const section of nonEmpty(PERIMETER_SECTIONS, 'PERIMETER_SECTIONS', 6)) {
       assert.ok(
         !(section.shortcuts || []).some((sc) => sc.id === slug),
         `${section.id} still has a shortcut pointing at retired ${slug}`
@@ -414,4 +418,44 @@ test('every curated card carries a do line and a headline', () => {
     assert.ok(card.headline, `${card.slug} has no headline`);
     assert.ok(IMPERATIVE_VERBS.has(firstToken(card.do)), `${card.slug} opens with a non-verb`);
   }
+});
+
+/* ═══════════════════════════ TIC — the copula abstraction ═══════════════════════════ */
+
+test('the copula-abstraction check catches what the chime does not', () => {
+  // The monetization copy pass rejected this line on sight and antithesisChime passed it.
+  // The two checks look for different things: the chime is LEXICAL (a clause repeating a
+  // word and adding nothing), this one is INFORMATIONAL (a clause whose only payload is an
+  // abstract noun). Both are narrow. Neither is review.
+  const rejected = 'The cart is yours. Keeping it is the membership.';
+  assert.deepEqual(antithesisChime(rejected), [], 'the chime is blind to this shape — that is the point');
+  const hits = copulaAbstraction(rejected);
+  assert.equal(hits.length, 1);
+  assert.equal(hits[0].noun, 'membership');
+});
+
+test('the copula check does not fire on a clause that lands somewhere concrete', () => {
+  // Parallel construction that carries real information is not this defect.
+  assert.deepEqual(
+    copulaAbstraction('A nutritionist answers the questions you bring. This one answers the questions you didn’t know to ask, in the aisle, while it still matters.'),
+    []
+  );
+  // A tier note naming a standard is not this defect either — "standard" is deliberately
+  // NOT in the abstract list, because the corpus uses it as a real category.
+  assert.deepEqual(
+    copulaAbstraction('The processing difference is a fact about the carton. Preferring the least-handled one is the standard.'),
+    []
+  );
+});
+
+test('copula abstraction is REPORTED, never failed, and reads zero on the corpus', () => {
+  const { violations, report } = lintCorpus(CARDS);
+  assert.equal(
+    violations.some((v) => v.code === 'COPULA_ABSTRACTION'), false,
+    'this check reports — it must never gate authoring on a rhetorical judgment'
+  );
+  assert.deepEqual(
+    report.copulaAbstraction, [],
+    'a corpus hit means either the copy drifted or the check is noisy. Read it before promoting it.'
+  );
 });

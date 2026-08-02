@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard, fetchCounterEssentials } from '../lib/perimeter.js';
+import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard, fetchCounterEssentials, fetchCounterFull } from '../lib/perimeter.js';
 import CounterCard from './CounterCard.jsx';
+import { readsSpent, spendRead } from '../lib/readMeter.js';
 import CounterAnswer, { CounterAnswerSkeleton } from './CounterAnswer.jsx';
 import { trackEvent } from '../lib/analytics.js';
 
@@ -38,7 +39,9 @@ const ASK_SEEDS = [
   'Is organic worth it for berries',
 ];
 
-export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
+export default function AisleMoment({
+  prefs, onUpgrade, onUpgradeSheet, onScan, onAddToCart, purchasable = true,
+}) {
   const [sections, setSections] = useState(null);
   const [loadErr, setLoadErr] = useState(false);
   const [essentials, setEssentials] = useState(null);
@@ -48,6 +51,25 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
   const [question, setQuestion] = useState('');
   const [ask, setAsk] = useState(null); // { state, resp }
   const [personal, setPersonal] = useState(null); // { state, resp } — this topic, read against the profile
+  // Cards whose full read this session has already paid for or been granted. Keyed by
+  // slug so a card opened twice never spends twice.
+  const [unlocked, setUnlocked] = useState({});
+
+  // THE ONLY PLACE A READ IS SPENT. Essentials come back unlocked and cost nothing —
+  // the server decides that, not this component.
+  async function requestFull(slug) {
+    if (unlocked[slug]) return;
+    try {
+      const out = await fetchCounterFull(slug, readsSpent());
+      // Gated. A shopper who can buy gets the ask; a guest gets the teaser the card is
+      // already about to render, and no offer they cannot complete.
+      if (out.gated) { if (purchasable) (onUpgradeSheet || onUpgrade)?.(); return; }
+      if (out.spent) spendRead();
+      setUnlocked((u) => ({ ...u, [slug]: out.card }));
+    } catch { /* leave it locked; the teaser still reads */ }
+  }
+  const view = (c) => (c && unlocked[c.slug]) || c;
+  const upgradeFromCard = () => { if (purchasable) (onUpgradeSheet || onUpgrade)?.(); };
 
   // Is there anything to personalize against? No profile → no offer, rather than a
   // button that promises a tailored read and returns the universal one.
@@ -159,7 +181,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
                 first — eyebrow, tier, headline, the do line, the cart tap — with the
                 why, the checklist, the traps and the tier note one tap down. A card
                 Pass 3 generates renders through this identical component. */}
-            <CounterCard card={entry.data} onAddToCart={onAddToCart} />
+            <CounterCard card={view(entry.data)} onAddToCart={onAddToCart} onUpgrade={upgradeFromCard} onRequestFull={requestFull} purchasable={purchasable} />
 
             {hasProfile && !personal && (
               <button
@@ -276,7 +298,16 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
       {ask?.state === 'error' && <p style={styles.muted}>That did not go through. Try again.</p>}
       {ask?.state === 'done' && (
         <div style={styles.answer}>
-          <CounterAnswer resp={ask.resp} onUpgrade={onUpgrade} onAddToCart={onAddToCart} />
+          {/* The ASKED card is the one a stranger meets first, so it has to carry the same
+              two handles a browsed card does: the metered fetch, and the sheet. Without
+              onRequestFull the tap opens a teaser that never tries to unlock. */}
+          <CounterAnswer
+            resp={{ ...ask.resp, card: view(ask.resp?.card) }}
+            onUpgrade={upgradeFromCard}
+            onAddToCart={onAddToCart}
+            onRequestFull={requestFull}
+            purchasable={purchasable}
+          />
         </div>
       )}
 
@@ -294,7 +325,7 @@ export default function AisleMoment({ prefs, onUpgrade, onScan, onAddToCart }) {
           {!essentials && !essErr && <p style={styles.muted}>Loading…</p>}
           <div style={styles.essentials}>
             {(essentials || []).map((c) => (
-              <CounterCard key={c.slug} card={c} onAddToCart={onAddToCart} />
+              <CounterCard key={c.slug} card={view(c)} onAddToCart={onAddToCart} onUpgrade={upgradeFromCard} onRequestFull={requestFull} purchasable={purchasable} />
             ))}
           </div>
         </>

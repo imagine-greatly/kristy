@@ -20,7 +20,7 @@ import CounterCard from './CounterCard.jsx';
    an admission that the bar is lower, and it would teach shoppers to discount exactly the
    answers the corpus is growing from. */
 
-export default function CounterAnswer({ resp, onUpgrade, onAddToCart }) {
+export default function CounterAnswer({ resp, onUpgrade, onAddToCart, onRequestFull, purchasable = true }) {
   if (!resp) return null;
 
   // Out of scope, or over the read ceiling. One line, in voice, no error state and no
@@ -55,7 +55,7 @@ export default function CounterAnswer({ resp, onUpgrade, onAddToCart }) {
         </p>
       )}
 
-      <CounterCard card={resp.card} onAddToCart={onAddToCart} />
+      <CounterCard card={resp.card} onAddToCart={onAddToCart} onUpgrade={onUpgrade} onRequestFull={onRequestFull} purchasable={purchasable} />
 
       {/* Kristy's personalized read (premium). */}
       {resp.personal?.answer && (

@@ -269,6 +269,7 @@ export default function CartMoment({
   constraints = [],
   onSetGoal,
   onUpgrade,
+  onSaveList,
   onScan,
   onAskAisle,
   onImport,
@@ -280,6 +281,15 @@ export default function CartMoment({
   const [draft, setDraft] = useState('');
 
   const { list, premium, loading, note, gated, progress } = cart;
+
+  // SAVING IS THE PAID PART. Building the cart is free and stays free — the shopper
+  // sees every item and every read they collected. What the membership buys is the
+  // cart still being here next week, so the gate sits on the save and nowhere else.
+  // Counted off `progress`, which is what the cart's own header already trusts ("3 of 8
+  // in the cart"). Reading `list.items` directly was wrong for the GUEST cart, whose
+  // shape differs, and the save control silently never rendered for exactly the people
+  // the gate is aimed at.
+  const itemCount = progress?.total ?? (list?.items || []).length;
 
   // Kristy's fuller read on one item, rendered inline.
   //
@@ -361,6 +371,20 @@ export default function CartMoment({
       {!goals.length && onSetGoal && (
         <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
           Set how you eat →
+        </button>
+      )}
+
+      {/* SAVING IS THE PAID PART, and it is the only gate on this surface. Everything
+          above stays: the items, the reads, the swaps. A member keeps them next week.
+
+          WHETHER TO OFFER IT IS THE CALLER'S CALL, not this component's. An earlier
+          version checked `!premium` here and silently never rendered for guests,
+          because the guest cart reports `premium: true` to suppress upgrade UI it has
+          no account to act on. A component that second-guesses its own props about a
+          value that means something different per caller will always get it wrong. */}
+      {itemCount > 0 && onSaveList && (
+        <button type="button" style={styles.saveBtn} onClick={() => onSaveList(itemCount)} data-save-list>
+          Save this list
         </button>
       )}
 
@@ -634,6 +658,12 @@ function Nudge({ line, cta, onUpgrade }) {
 }
 
 const styles = {
+  saveBtn: {
+    alignSelf: "stretch", minHeight: 44, padding: "12px 15px", cursor: "pointer",
+    borderRadius: radii.button, border: `1px solid ${colors.gold30}`,
+    background: colors.goldTint9, color: colors.ink,
+    fontFamily: fonts.ui, fontWeight: 700, fontSize: 14.5, textAlign: "left",
+  },
   wrap: { maxWidth: 520, margin: '0 auto', width: '100%', boxSizing: 'border-box', padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 },
 
   head: { display: 'flex', flexDirection: 'column', gap: 10 },

@@ -8,6 +8,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 
 import { evaluateIngredients } from './verdictEngine.js';
 import { parseIngredientsJSON, LABEL_VISION_SYSTEM } from './labelVision.js';
@@ -75,7 +76,7 @@ test("seed oils, a petroleum-derived preservative, a dye and artificial flavors 
 test('every flag carries an honest evidence tier, named as such', () => {
   const { ingredients } = parseIngredientsJSON(SNACK_REPLY);
   const v = evaluateIngredients(ingredients.join(', '));
-  for (const item of v.universalLayer) {
+  for (const item of nonEmpty(v.universalLayer, 'the verdict universal layer')) {
     assert.ok(
       ['established', 'credible_concern', 'kristys_standard', 'time_tested'].includes(
         item.evidence_tier

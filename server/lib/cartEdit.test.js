@@ -7,6 +7,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { sanitizeList, applyCompose, buildCart, CART_TIERS } from './cartEdit.js';
 import {
   looksLikeCartCommand,
@@ -35,7 +36,7 @@ test('a tier the engine never assigns is dropped, and an unknown source falls ba
 });
 
 test('every tier the verdict engine can assign is accepted', () => {
-  for (const tier of CART_TIERS) {
+  for (const tier of nonEmpty(CART_TIERS, 'CART_TIERS')) {
     const out = sanitizeList({ items: [{ name: 'X', source: 'scan', tier }] });
     assert.equal(out.items[0].tier, tier);
   }

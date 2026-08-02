@@ -7,6 +7,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 import { buildCarryForward, seedNextCart, distribution, tierBucket } from './haul.js';
 
 const scans = [
@@ -62,7 +63,7 @@ test('seedNextCart produces plain cart rows, deduped, tagged to the haul', () =>
     items.map((i) => i.name),
     ['Olive oil', 'Wild salmon']
   );
-  for (const i of items) {
+  for (const i of nonEmpty(items, 'the seeded next-cart rows')) {
     assert.equal(i.checked, false);
     assert.equal(i.category, 'From your haul');
     // Rows are NAMES ONLY — a cart row never carries a claim.
@@ -73,7 +74,7 @@ test('seedNextCart produces plain cart rows, deduped, tagged to the haul', () =>
 test('the default carry-forward never includes a product she flagged', () => {
   const cf = buildCarryForward({ scans, cartItems });
   const defaults = [...cf.keep, ...cf.missed].map((x) => x.name);
-  for (const flagged of cf.replace) {
+  for (const flagged of nonEmpty(cf.replace, 'the carry-forward replacements')) {
     assert.ok(
       !defaults.includes(flagged.name),
       `"${flagged.name}" was flagged — it must be offered, never pre-selected`

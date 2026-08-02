@@ -149,6 +149,21 @@ export async function fetchCounterSections() {
   return cardSectionCache;
 }
 
+/* THE METERED READ. A locked card carries only its summary; this is the one request
+   that can spend a free read. The signed-out count rides up as `spent` so the server
+   can answer honestly without keeping an identifier for a stranger. A 402 comes back
+   WITH the summary card, never empty — the gate is a teaser, not a wall. */
+export async function fetchCounterFull(slug, spent = 0) {
+  const res = await fetch(
+    `${apiBase}/api/counter/cards/${encodeURIComponent(slug)}/full?spent=${spent}`,
+    { headers: await authHeader() }
+  );
+  const body = await res.json().catch(() => ({}));
+  if (res.status === 402) return { gated: true, card: body.card || null };
+  if (!res.ok) throw new Error(body.error || `counter_full_${res.status}`);
+  return { gated: false, card: body.card, spent: Boolean(body.spent) };
+}
+
 export async function fetchCounterCard(slug) {
   const res = await fetch(`${apiBase}/api/counter/cards/${encodeURIComponent(slug)}`);
   if (!res.ok) return null;

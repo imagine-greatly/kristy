@@ -26,6 +26,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { scoreEntries } from './perimeter.js';
@@ -33,7 +34,7 @@ import { inScope } from './counterScope.js';
 import { projectEntry } from './counterCards.js';
 
 const MIN_PHRASINGS = 3;
-const entries = perimeterKb.entries || [];
+const entries = nonEmpty(perimeterKb.entries || [], 'perimeterKb.entries');
 
 // The real gate, restated: `counterAskPipeline` admits on a score at or above the floor
 // AND at least one alias hit. A phrasing that only clears one of those does not reach a

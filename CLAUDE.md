@@ -446,6 +446,36 @@ equality *is* the positioning.
   the full-page `Auth` had none. Carriers look for the opt-in wording beside the phone field.
 
 **Money**
+- **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card
+  SUMMARY (eyebrow, tier chip, headline, do line, cart pick), all scanning, unlimited
+  asking including generation, all browsing, and building a cart in-session. Paid: the
+  depth (`why`, `look_for`, `watch_out`, `tier_note`, `detail`, `kristy_take`,
+  `labels_decoded`, `sources`) and SAVING a list. `summarize()` / `forViewer()` in
+  counterCards.js strip the depth **before it leaves the server** — a client that merely
+  hides it has already received it, and before this every card route handed the whole
+  corpus to any unauthenticated caller in one GET.
+- **THE EIGHT ESSENTIALS ARE ALWAYS FULL and never touch the meter.** They sit on the index
+  before any navigation: a shopper who spends three reads on the shelf never reaches the
+  counter and never learns the other seventy-three exist. Free depth on the shelf proves
+  the reads are worth having; the meter proves BREADTH is what the membership buys.
+- **THE TEASER SHIPS GEOMETRY, NEVER WORDS.** Past the meter, "The full read" shows the
+  card's real first check in full, then the next few as true CHARACTER LENGTHS faded out,
+  then true counts ("4 more checks, 2 traps"). Sending the actual withheld text would leak
+  a third of every card to an unpaid caller in the same change that stops leaking all of
+  it. A padlock says no; this says look how much of this there is.
+- **`free_reads_used` is its own counter, NOT the `free_notes_used` pool.** That one meters
+  personalized verdict notes on the SCAN path. Sharing an integer would spend the counter's
+  depth on three scans and make the gate copy false. Same mechanic, same words, different
+  column. Signed-out shoppers are metered client-side in localStorage — an IP-keyed meter
+  would break the counter's no-personal-data claim to enforce a limit a cleared storage
+  defeats anyway.
+- **GUESTS ARE OFFERED NO PLAN BUTTONS** (`purchasable={false}`). Buying needs an account,
+  an account needs a phone code, and phone codes are blocked on 10DLC — a guest who tapped
+  a plan would type a number, press Send code, and wait for a message that cannot arrive.
+  They keep the whole free surface and the teaser. Restore the buttons the day sign-in works.
+- **The ask appears at TWO moments and nowhere else**: the fourth full-read tap, and a list
+  save. Not on open, not on a scan, not on an ask, never a banner.
+
 - Price *ids* are configuration, never hardcoded, and the client never sees them.
   Displayed prices have exactly one source per client (`lib/pricing`).
 - The trial has **one explicit door** (`POST /api/subscription/trial`), idempotent.
@@ -471,6 +501,18 @@ equality *is* the positioning.
 
 ## Verifying
 
+- **AN ASSERTION OVER AN EMPTY COLLECTION PASSES. Guard every one of them.** `[].every(fn)`
+  is `true` and `for (const x of []) assert(...)` runs nothing, so a check whose collection
+  is empty BY ACCIDENT reports success — worse than no check, because the suite now carries
+  a green tick where the coverage used to be. This shipped: the paid-boundary verification
+  read `cards.filter(c => c.essential).every(c => c.why)` and printed "essentials full ✓"
+  while **all eight were being gated**, because `essential` was missing from `CARD_COLUMNS`
+  and the filter returned nothing. The bug walked past its own verification.
+  **`nonEmpty(coll, name, min?)` in `lib/testGuards.js` is the fix, and bind it at the
+  COLLECTION rather than at the loop** — a module-level `const entries = nonEmpty(...)`
+  throws at import, so every test in that file is honest by construction instead of by
+  discipline. Swept 2026-08-02: 73 at-risk sites → 49, and the remainder iterate array
+  literals, which cannot be empty by accident.
 - **A COMMENT ASSERTING AN INVARIANT IS NOT AN INVARIANT. If it is load-bearing, test it.**
   The retrieval-floor comment claimed curated and generated admit on the same evidence, and
   was wrong three consecutive times in three different ways — different constants, then
@@ -572,18 +614,36 @@ equality *is* the positioning.
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.
-- ⚠️ **Phone OTP** is built end to end but not switched on. Remaining, all outside the
-  code: register the Send SMS hook in the Supabase dashboard, put `BIRD_API_KEY` +
-  `SEND_SMS_HOOK_SECRETS` in the server env, and clear **10DLC brand + campaign
-  registration** at Bird — US carriers block unregistered A2P traffic, so nothing sends
-  until that lands, and it is a multi-day queue, not a toggle.
+- 🚨 **SIGN-IN IS DOWN, AND IT NOW BLOCKS REVENUE.** Verified 2026-08-02 against
+  production: `POST /api/auth/hooks/send-sms` returns **503 "SMS provider is not
+  configured"**, so `BIRD_API_KEY` and/or `SEND_SMS_HOOK_SECRETS` are absent from the
+  Railway env. Supabase has `phone: true` and **`email: false`** — there is no email
+  fallback at the provider OR in the UI (`SignInForm` is `type="tel"` only). So nobody can
+  create an account, and therefore nobody can pay.
+  **The provider wired in code is BIRD, not Twilio** — `@messagebird/sdk` is a real
+  dependency, `birdSms.js` is the transport, and the live `/privacy` page names Bird as the
+  SMS processor. Twilio appears only as error-string matching in `Auth.jsx` (Supabase's
+  BUILT-IN provider errors mention Twilio) and in one line of PRIVACY_AND_TERMS_DRAFT.md
+  that says outright "Twilio is not a dependency anywhere in the repo". If the decision was
+  to move to Twilio, **that decision is not in the code**.
+  **Nothing in this repo records a 10DLC submission** anywhere — every document that
+  mentions it calls it outstanding. External dashboard state cannot be verified from here.
+  **Shortest path to a working sign-in: turn on EMAIL OTP.** It has no carrier gate at all.
+  Supabase `email` is currently false; enabling it plus an email field on `SignInForm` and
+  an SMTP sender is days of work against a multi-week 10DLC queue. Phone can follow.
 - **Known-dead, left in place**: `/api/photo`, `/api/weight`, the weekly-summary
   pipeline, `mealResolver`, `store.js setMacroTracking`; client `lib/logging.js
   sendPhoto`, `api.js sendWeightLog`, several `data.js` readers, `lib/dayBoundary.js`.
   Unrouted since macro tracking was removed; DB tables untouched. Delete in a dedicated
   pass.
-- `mobile/docs/LAUNCH_CHECKLIST.md` still lists the pre-launch prices ($8.99/$49.99);
-  shipped pricing is $7.99/mo and $59.99/yr.
+- **Pricing is $5/mo and $45/yr**, annual as the hero. The annual per-month figure is
+  the line that goes wrong: $45 ÷ 12 = **$3.75/month**, and against $5 × 12 = $60 that
+  is **25%** off. The old note read "About $5/month, billed yearly" — true against
+  $59.99, and it would have advertised annual as identical to monthly the moment
+  monthly became $5. Recompute both lines whenever either price moves. Sources:
+  `client/src/lib/pricing.js`, `mobile/src/lib/pricing.ts`. **Stripe Price objects and
+  `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL` must be updated in the dashboard and
+  the server env — they are not in this repo.**
 
 ---
 

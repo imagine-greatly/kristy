@@ -533,3 +533,44 @@ export async function upsertSubscription(userId, patch = {}) {
   if (error) throw new Error(error.message);
   return data;
 }
+
+/* ═══════════════════════════ The full-read meter ═══════════════════════════ */
+
+// ITS OWN COUNTER, NOT THE free_notes_used POOL, and the reasoning is the whole point of
+// having two. `free_notes_used` meters PERSONALIZED VERDICT NOTES on the scan path. This
+// meters FULL READS on the counter path. Sharing one integer would mean three scans
+// silently spend the counter's depth, and the wall then arrives at a moment the shopper
+// cannot connect to anything they did — and it would make the gate copy false, because
+// "you have read three" would fire on someone's first tap.
+//
+// "One number, one mechanic, one explanation" is satisfied by the mechanic and the words
+// being identical — three, then the same gate, the same sentence. Not by the same column.
+
+/** How many free full reads a signed-in user has spent. */
+export async function getFreeReadsUsed(userId) {
+  try {
+    const { data } = await supabase
+      .from('user_goals')
+      .select('free_reads_used')
+      .eq('user_id', userId)
+      .maybeSingle();
+    return Number(data?.free_reads_used) || 0;
+  } catch {
+    return 0; // column not migrated yet → fail OPEN, the same posture as free_notes_used
+  }
+}
+
+/** Spend one free full read. Returns the new count. */
+export async function incrementFreeReadsUsed(userId) {
+  const used = await getFreeReadsUsed(userId);
+  try {
+    const { data } = await supabase
+      .from('user_goals')
+      .upsert({ user_id: userId, free_reads_used: used + 1, updated_at: new Date().toISOString() })
+      .select('free_reads_used')
+      .single();
+    return Number(data?.free_reads_used) || used + 1;
+  } catch {
+    return used + 1;
+  }
+}

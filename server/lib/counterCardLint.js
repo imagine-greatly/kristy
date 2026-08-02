@@ -228,6 +228,58 @@ const EXCLUSIVITY = /\b(the only|the sole|nothing else|no other|the one and only
  * a standard) and quoted terms (a printed label word). These are what a card enumerates
  * when it lists instances, and they are the only enumeration a regex can see honestly.
  */
+/* ═══════════════════════════ TIC — the copula abstraction ═══════════════════════════ */
+
+// A SECOND CLAUSE THAT INVERTS THE FIRST AND LANDS ON AN ABSTRACT NOUN.
+//
+//   "The cart is yours. Keeping it is the membership."
+//
+// That was caught by eye during the monetization copy pass, and `antithesisChime` PASSED
+// it — the two checks look for different things. The chime is LEXICAL: a clause that
+// repeats a content word from the one before and brings nothing new. Here nothing is
+// repeated at all. The defect is that the second clause restates the relationship in the
+// abstract, so it reads as cadence and carries no information a reader can act on.
+//
+// REPORT-ONLY, deliberately. It fires on a rhetorical shape rather than a checkable fact,
+// which is a weaker footing than every other rule in this file, and a noisy report is
+// cheap where a noisy failure blocks authoring. Promote it only if the false-positive
+// count stays at zero across the corpus.
+const COPULA = /\b(is|are|was|were)\b/i;
+
+// Nouns that name a relationship rather than a thing. A clause whose only payload is one
+// of these has told the reader nothing they can do.
+const ABSTRACT_PAYLOAD = new Set([
+  'membership', 'point', 'difference', 'deal', 'idea', 'trick', 'answer', 'reason',
+  'catch', 'question', 'secret', 'purpose', 'upgrade', 'value', 'benefit', 'advantage',
+]);
+
+// Words that carry no concreteness of their own, so they cannot rescue a clause: bare
+// gerunds of doing, and the pronoun-ish subjects these lines lean on.
+const NOT_CONCRETE = new Set([
+  'keeping', 'saving', 'having', 'being', 'doing', 'getting', 'making', 'taking',
+  'that', 'this', 'these', 'those', 'one', 'ones', 'yours', 'ours', 'theirs',
+]);
+
+/**
+ * The copula-abstraction hits in a string. Empty is the passing state.
+ * @returns {Array<{clause:string, noun:string}>}
+ */
+export function copulaAbstraction(text) {
+  const s = String(text || '').trim();
+  const parts = s.split(/(?:\.|;|—)\s+/).map((p) => p.trim()).filter((p) => p.split(/\s+/).length >= 2);
+  const hits = [];
+  for (let i = 1; i < parts.length; i++) {
+    const p = parts[i];
+    if (!COPULA.test(p)) continue;
+    const toks = contentTokens(p);
+    const abstract = toks.filter((t) => ABSTRACT_PAYLOAD.has(t));
+    if (!abstract.length) continue;
+    const concrete = toks.filter((t) => !ABSTRACT_PAYLOAD.has(t) && !NOT_CONCRETE.has(t));
+    if (concrete.length === 0) hits.push({ clause: p, noun: abstract[0] });
+  }
+  return hits;
+}
+
 export function nameables(text) {
   const s = String(text || '');
   const propers = s.match(/\b[A-Z][a-z]+(?:\s+(?:by\s+)?[A-Z][A-Za-z]+)+\b/g) || [];
@@ -828,8 +880,27 @@ export function lintCorpus(cards) {
   }
   const verbs = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([verb, n]) => ({ verb, n }));
 
+  // ── copula abstraction: REPORTED, NEVER FAILED ──
+  // Added 2026-08-02 after the monetization copy pass, where `antithesisChime` PASSED a
+  // line that was rejected on sight ("The cart is yours. Keeping it is the membership").
+  // It fires on a rhetorical shape rather than a checkable fact, which is weaker footing
+  // than anything else here, so it reports. Measured at zero across 961 corpus fields on
+  // the day it landed — promote it to a violation only if that holds over time.
+  const copula = [];
+  for (const c of list) {
+    for (const [field, text] of Object.entries({
+      headline: c?.headline, do: doOf(c), why: c?.why, tier_note: c?.tier_note,
+      detail: c?.detail, kristy_take: c?.kristy_take,
+    })) {
+      if (!text) continue;
+      for (const h of copulaAbstraction(text)) {
+        copula.push({ slug: c.slug, field, clause: h.clause, noun: h.noun });
+      }
+    }
+  }
+
   return {
     violations,
-    report: { verbs, emDashShare: share, total: list.length },
+    report: { verbs, emDashShare: share, total: list.length, copulaAbstraction: copula },
   };
 }

@@ -8,6 +8,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { nonEmpty } from './testGuards.js';
 
 import { perimeterKb, sectionIndex, sectionById, PERIMETER_SECTIONS, publicEntry } from './perimeter.js';
 
@@ -35,7 +36,7 @@ test('a shortcut points at a real entry that is browsable in that section', () =
 });
 
 test('a shortcut is a question in the shopper\'s words, and carries the call with it', () => {
-  for (const s of sectionIndex()) {
+  for (const s of nonEmpty(sectionIndex(), 'the section index', 6)) {
     for (const sc of s.shortcuts) {
       assert.ok(sc.q.length <= 42, `${s.id}: "${sc.q}" is too long for a chip`);
       // It is the shopper asking, so it is phrased as a question.
@@ -81,8 +82,8 @@ test('the fewest taps to a counter answer is one', () => {
 test('a browse row answers without a tap at all', () => {
   // Section, then read. The row carries the call, so opening the topic is for the
   // depth rather than for the answer.
-  for (const s of sectionIndex()) {
-    for (const t of s.topics) {
+  for (const s of nonEmpty(sectionIndex(), 'the section index', 6)) {
+    for (const t of nonEmpty(s.topics, `${s.id} topics`)) {
       assert.ok(t.decision && t.decision.trim(), `${t.id} browses without its call`);
     }
   }

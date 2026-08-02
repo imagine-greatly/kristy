@@ -65,7 +65,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beans_dried_vs_canned` | bulk_pantry | Dried. Same bean, a fraction of the price, and your own salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
 | `bean_soak_salt` | bulk_pantry · home | Salt the soak. The rule against it has it backwards. | Stir a heaped tablespoon of salt into the soaking water. | — |
 | `label_natural` | label_terms | Ignore it. Read the ingredient list instead. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
-| `label_made_with_real` | label_terms | Flip it over. Find where that ingredient falls in the list. | Count how far down the list that ingredient sits — past third is trace. | — |
+| `label_made_with_real` | label_terms | The front names an ingredient. Find it in the list. | Count how far down it sits. Past third is a trace. | — |
 | `label_no_added_hormones` | label_terms | Meaningful on beef and dairy. A freebie on chicken and pork. | Look for a third-party verifier on the beef and dairy claim. | — |
 | `label_nonGMO_vs_organic` | label_terms | One seal, and Organic covers more ground. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
 | `label_cage_free` | label_terms | Neither means pasture. Certified pasture-raised is the one that does. | Read the carton for a welfare certifier: Certified Humane, AWA, G.A.P. | — |
@@ -103,7 +103,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Take the smallest whole-wheat bag on the shelf. The germ oil turns. | — |
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Buy whole. Ground spice is already going stale on the shelf. | Toast them in a dry pan until they smell, then grind. | — |
-| `rancidity_check` | bulk_pantry | Smell it. Old paint or crayons means it is spent. | Buy oil in a dark bottle small enough to finish in two months. | — |
+| `rancidity_check` | bulk_pantry | Fats turn, and the nose is the only test that works. | Smell for old paint or crayons. That one is finished. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin, a recent harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
 | `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
 | `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Grab bulgur or quinoa for a weeknight — both cook in fifteen minutes. | — |
@@ -115,7 +115,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_wild_vs_farm_raised` | label_terms | Species, method, country. All three required, and none stops substitution. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
 | `label_serving_size` | label_terms | Read the top two lines before any of the numbers. | Check both packages list the same serving size before comparing anything. | — |
 | `raw_kefir` | eggs_dairy | The best thing a farm does with its milk. Buy it cultured. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
-| `raw_aged_cheese` | eggs_dairy | Start here. The one raw dairy sitting in plain sight. | Read the rind label for “raw milk” and an age in months. | — |
+| `raw_aged_cheese` | eggs_dairy | Raw-milk cheese, aged. Legal everywhere and already in the case. | Read the rind label for an age in months. | — |
 | `sprouts_raw` | produce | Buy them cold and crisp, or grow them on the counter. | Check the roots are still white and the clamshell is not fogged. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**

@@ -6,7 +6,9 @@
 // Keep the numbers in sync with client/src/lib/pricing.js. Nothing else in the
 // mobile app should hardcode a price literal — import from here.
 //
-// Launch math: $59.99/yr ÷ 12 ≈ $5.00/mo; vs $7.99 × 12 = $95.88 that's ~37% off.
+// Launch math: $45/yr ÷ 12 = $3.75/mo exactly; vs $5 × 12 = $60 that is $15, or 25%
+// off. Recompute BOTH lines whenever either price moves — the previous note read
+// "About $5/month, billed yearly", which became a lie the moment monthly hit $5.
 
 export type PlanId = 'annual' | 'monthly';
 
@@ -19,14 +21,14 @@ export const PRICING: Record<PlanId, {
 }> = {
   annual: {
     label: 'Annual',
-    price: '$59.99',
+    price: '$45',
     per: '/year',
-    note: 'About $5/month, billed yearly',
-    badge: 'Save 37%',
+    note: '$3.75/month, billed yearly',
+    badge: 'Save 25%',
   },
   monthly: {
     label: 'Monthly',
-    price: '$7.99',
+    price: '$5',
     per: '/month',
     note: 'Billed monthly, cancel anytime',
     badge: null,
