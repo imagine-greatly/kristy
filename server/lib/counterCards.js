@@ -158,6 +158,15 @@ export const RETIRED_GENERATED = [
   // other. A generated card that owns a subject belongs in version control where it can be
   // edited, not left as a row that survived review.
   'gen_picking_fresh_berries',
+
+  // PURE DUPLICATION of `berries_picking` — same verdict (the underside decides), same
+  // action (turn the container over), look_for near-verbatim. It exists only because the
+  // curated gate rejected `berries_picking` at score 2 while the generated gate admitted
+  // at 2: "are these strawberries fresh" hits one bare alias, gets no title-word overlap,
+  // and scored exactly on the line the two operators disagreed about. Fixing the operator
+  // is what stops this recurring; folding the row is the cleanup. Its strawberry-specific
+  // aliases moved onto `berries_picking`.
+  'gen_strawberry_freshness_check',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */

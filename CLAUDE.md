@@ -217,6 +217,22 @@ equality *is* the positioning.
   word is short, a question with structure ("what is the capital of France") is not. The
   first version had no bound and the existing off-topic test caught it in one run; the fix
   was the bound, never a weaker guard. Both directions are pinned by tests.
+- **THE RETRIEVAL FLOOR IS ONE ALIAS HIT, and it is asserted in alias hits — not in a
+  threshold.** Curated and generated retrieval must admit on the same evidence. That was
+  claimed in a comment three times and enforced zero times, drifting a different way each
+  time: (1) different constants, justified by an unmeasured premise about alias counts;
+  (2) same constants, different OPERATORS (`>` vs `>=`), so curated silently needed one
+  more point; (3) same constants AND operators, still not parity — because `scoreGenerated`
+  reads ONLY aliases while `scoreEntries` adds title-word overlap, so a curated score of 2
+  can be two generic title words and no food at all. `"is guanciale worth buying"` scored 2
+  on `farmed_fish_by_species` off its title "Which farmed fish are worth buying" — the words
+  "worth" and "buying" — and would have answered a cured-pork question with a farmed-fish
+  card. **A number cannot express this; the unit has to.** `scoreEntries` reports
+  `aliasScore` separately and the gate requires `aliasScore > 0`. Note `score >= 2` is
+  vacuous on the curated side (scoreEntries floors its own results at 2), so the alias check
+  does all the work. `counterFloor.test.js` pins both paths to one statement of the floor.
+  Each drift cost money: a curated card rejected at the floor regenerates as a duplicate,
+  and two of the generator's cards were exactly that.
 - **Retrieval confidence and the gap log's weak ceiling are DIFFERENT NUMBERS.** They were
   one constant under "one number, one meaning", and they are two meanings: one is a
   retrieval judgment with a generation bill attached, the other an editorial judgment about
@@ -409,7 +425,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (423 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (428 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The

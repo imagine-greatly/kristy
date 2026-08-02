@@ -52,23 +52,43 @@ const reviewed = new Map(Object.entries(doLines).map(([slug, line]) => [slug, { 
 // already been served to three shoppers.
 //
 // MEASURED, not characterized, over 20 realistic queries: "> 3" answered 10 from curated,
-// "> 2" answers 15. Every query the change rescues scored exactly 3 with NO RUNNER-UP, so
-// the match was unambiguous and this buys recall without trading precision for it. "> 1"
-// adds one more query and starts admitting bare title-word coincidences, which is where
-// the trade would actually begin.
+// ">= 2" answers 15. Every query the change rescues scored exactly 3 with NO RUNNER-UP, so
+// the match was unambiguous and this buys recall without trading precision for it.
+//
+// THIS CONSTANT IS NOT THE REAL GATE — the `aliasScore > 0` beside it is. scoreEntries
+// already floors its own returned results at 2, so `score >= 2` is true whenever anything
+// matched at all. The number is kept because it names the intent and because a future
+// scorer change could lift that internal floor; the alias check is what actually decides.
+// See GENERATED_HIT below for why the floor had to move into the alias unit.
 const CONFIDENT = 2;
 
-// GENERATED CARDS GET THE SAME BAR. There is no longer an asymmetry to justify.
+// GENERATED CARDS GET THE SAME BAR. Read the three lines of code, not this sentence — the
+// comment has claimed parity twice and been wrong twice, in a different way each time.
 //
-// This was a deliberately lower bar, resting on curated entries carrying "a dozen aliases"
-// against a generated card's six. That premise was never measured and it is false. Curated
-// alias counts, over all 79 entries: min 3, median 7, mean 7.11, max 19. Generated cards
-// are authored with 6 to 8. Curated has no alias advantage, so there was never a reason
-// for it to clear a higher bar — and the unchecked premise is exactly what kept it there.
+//   v1  Curated `> 3`, generated `>= 2`, justified by curated entries carrying "a dozen
+//       aliases". Never measured, and false: curated is min 3 / median 7 / mean 7.11 /
+//       max 19, generated 6 to 8.
+//   v2  Both constants set to 2 and the comment said "one alias hit is the floor either
+//       way" — but the OPERATORS were left `>` and `>=`, so curated still needed 3. The
+//       constants matched and the bars did not.
+//   v3  Operators aligned to `>=`. Still not parity, and this is the subtle one:
+//       scoreGenerated scores ONLY aliases, so its 2 always means "an alias matched".
+//       scoreEntries adds title-word overlap, so ITS 2 can be two generic title words and
+//       no food at all. "is guanciale worth buying" scored 2 on `farmed_fish_by_species`
+//       off the title "Which farmed fish are worth buying" — the words "worth" and
+//       "buying". Cured pork answered with a farmed-fish card. Same number, different
+//       meaning, and no operator can fix that.
 //
-// One alias hit is the floor either way: both scorers award 2 for a single-word alias, so
-// this is "at least one authored alias matched". The costs are not symmetric — a slightly
-// loose retrieval shows a closely-related card, a strict one bills for a duplicate answer.
+// SO THE FLOOR IS EXPRESSED IN THE UNIT BOTH SCORERS SHARE: at least one ALIAS hit.
+// scoreEntries now reports `aliasScore` separately and the gate reads it. Both paths admit
+// on exactly "one authored alias matched", which is what every version of this comment
+// meant and none of them enforced. Note that `score >= 2` alone is vacuous on the curated
+// side — scoreEntries already floors its own results at 2 — so aliasScore is doing all the
+// work here, not the constant.
+//
+// Measured: on the 17 phrased queries this changes nothing (none score exactly 2). On 14
+// bare nouns it is 10/14 → 13/14, every newly admitted match correct and unambiguous, and
+// guanciale correctly falls through. `counterFloor.test.js` pins the two together.
 const GENERATED_HIT = 2;
 
 // What Kristy says when the corpus has nothing and generation could not run. Never an
@@ -104,7 +124,7 @@ export async function answerCounterQuestion({
   /* ── 2a. RETRIEVE — curated, from memory, zero I/O. ── */
   const scored = scoreEntries(q, 3);
   const top = scored[0];
-  if (top && top.score > CONFIDENT) {
+  if (top && top.score >= CONFIDENT && top.aliasScore > 0) {
     const card = projectEntry(top.entry, { doLine: reviewed.get(top.entry.id)?.do || '' });
     // The matched entries ride along for the PREMIUM personalization only. They are the
     // claim lock's input: composeAnswer sees seven whitelisted fields of these and nothing

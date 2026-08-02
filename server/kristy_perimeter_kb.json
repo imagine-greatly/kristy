@@ -1469,10 +1469,6 @@
       "id": "produce_picking_ripeness",
       "title": "Does the origin sticker matter?",
       "aliases": [
-        "how to pick an avocado",
-        "avocado",
-        "avocados",
-        "ripe avocado",
         "how to pick produce",
         "is mexican produce better",
         "where produce comes from",
@@ -2292,7 +2288,10 @@
         "bones in sardines",
         "tinned sardines",
         "canned salmon",
-        "tinned tuna"
+        "tinned tuna",
+        "sardines",
+        "sardine",
+        "canned sardines"
       ],
       "category": "seafood",
       "question": "What should I look for in canned fish?",
@@ -2523,7 +2522,13 @@
         "berry container",
         "berry mold",
         "strawberry freshness",
-        "moldy berries"
+        "moldy berries",
+        "fresh strawberries",
+        "strawberry carton",
+        "clamshell strawberries",
+        "moldy strawberries",
+        "clamshell",
+        "strawberry"
       ],
       "category": "produce",
       "question": "How do I pick a good carton of berries?",

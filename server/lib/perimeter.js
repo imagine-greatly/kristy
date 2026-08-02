@@ -52,17 +52,26 @@ export function scoreEntries(question, limit = 3) {
 
   const scored = [];
   for (const e of perimeterKb.entries || []) {
-    let score = 0;
+    // ALIAS SCORE IS TRACKED SEPARATELY, and callers gate on it. A total of 2 is reachable
+    // two completely different ways — one real alias hit, or two generic title words — and
+    // the number alone cannot tell them apart. "is guanciale worth buying" scored 2 against
+    // `farmed_fish_by_species` purely on the title "Which farmed fish are worth buying":
+    // the words "worth" and "buying", with no food overlap whatsoever. That is a wrong card
+    // rather than a loosely-related one, and a retrieval gate reading only `score` will
+    // serve it. Additive on purpose — nothing that consumed `{entry, score}` changes.
+    let aliasScore = 0;
+    let titleScore = 0;
     for (const alias of e.aliases || []) {
       const a = norm(alias);
-      if (a && q.includes(` ${a} `)) score += Math.min(3, a.split(' ').length) + 1;
+      if (a && q.includes(` ${a} `)) aliasScore += Math.min(3, a.split(' ').length) + 1;
     }
     // Title-word overlap is a weaker signal (helps single-word questions). Deduped and
     // stopword-filtered so a common word can't manufacture a match on its own.
     for (const w of new Set(norm(e.title).split(' '))) {
-      if (w.length >= 4 && !STOPWORDS.has(w) && q.includes(` ${w} `)) score += 1;
+      if (w.length >= 4 && !STOPWORDS.has(w) && q.includes(` ${w} `)) titleScore += 1;
     }
-    if (score > 0) scored.push({ entry: e, score });
+    const score = aliasScore + titleScore;
+    if (score > 0) scored.push({ entry: e, score, aliasScore, titleScore });
   }
 
   scored.sort((a, b) => b.score - a.score);

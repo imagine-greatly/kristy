@@ -22,7 +22,12 @@ test('a plain-words counter question reaches its sourced entry', () => {
     ['which cut for stew', 'beef_cuts_basics'],
     ['what does pasture-raised leave out', 'label_pasture_raised_feed'],
     ['is organic worth it for berries', 'label_organic_scope'],
-    ['how do I pick a ripe avocado', 'produce_picking_ripeness'],
+    // Ripeness goes to the by-item hub, and ORIGIN goes to the origin card. These were one
+    // card until the 2026-08-02 refocus and both held `avocado` aliases afterward, which
+    // left a bare "avocado" tied at 2 and decided by KB order — it landed on the origin
+    // card, which answers a question nobody asked here.
+    ['how do I pick a ripe avocado', 'produce_ripeness_by_item'],
+    ['where was this grown', 'produce_picking_ripeness'],
   ];
   for (const [q, id] of wants) {
     assert.ok(looksLikePerimeterQuestion(q), `"${q}" must route to the counter`);
