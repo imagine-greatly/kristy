@@ -2612,7 +2612,12 @@
         "cultured dairy",
         "heat treated yogurt",
         "shelf stable yogurt",
-        "dead cultures"
+        "dead cultures",
+        "alive",
+        "still alive",
+        "live yogurt",
+        "yogurt alive",
+        "is my yogurt alive"
       ],
       "category": "dairy",
       "question": "How do I know the cultures are still alive?",

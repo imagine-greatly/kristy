@@ -34,6 +34,42 @@ test('A FOOD THE VOCABULARY HAS NEVER HEARD OF is still in scope', () => {
   ok('what should I look for in rambutan');
 });
 
+test('A BARE EITHER/OR IS A QUESTION, on this gate too', () => {
+  // `looksLikeCounterQuestion` was fixed for this and `inScope` was not, so /counter/ask
+  // answered "that one is outside the store" while the Counter's own ask placeholder read
+  // "Wild or farmed salmon?". Trimming one word off the app's own suggestion rejected it.
+  // Only the plain "or" was ever broken — GROCERY_ACT already listed "vs".
+  ok('wild or farmed');
+  ok('brown or white eggs');
+  ok('block or shredded');
+  // Both sides must survive contentWords, which is what keeps store logistics out: the
+  // clauses here are all words contentWords already strips to nothing.
+  no('when does the store close or open');
+  // One split point only. A list is a shopping list, not a question about which to buy.
+  assert.equal(inScope('milk or eggs or bread').ok, true); // rescued by the SUBJECT, not the either/or
+});
+
+test('A DEFINITIONAL QUESTION IS A COUNTER QUESTION', () => {
+  // Seven of twelve "what is X" probes over words the KB itself teaches were rejected as
+  // off-topic. Each is a shopper reading a word off a package — the exact moment the
+  // counter is supposed to earn its place.
+  ok('what is skyr');
+  ok('what is clabber');
+  ok('what is natamycin');
+  ok('what is bulgur');
+  ok('what is astaxanthin');
+  ok('what is skipjack');
+  ok('what does natamycin mean');
+  // A subject is still required, and the bare form is anchored so it cannot fire
+  // mid-sentence.
+  no('what is it', 'no_subject');
+  no('and what is left over', 'off_topic');
+  // THE LENGTH BOUND IS THE DISCRIMINATOR. A package word is short; a question with
+  // structure is not, and general knowledge must stay out of a food gate.
+  no('what is the capital of France', 'off_topic');
+  no('what is the meaning of life', 'off_topic');
+});
+
 test('storing and preparing count, not just buying', () => {
   ok('how do I store fresh basil');
   ok('should I wash blueberries before storing them');

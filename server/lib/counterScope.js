@@ -101,6 +101,9 @@ export function inScope(query) {
   // any concrete noun is enough, and the real filters are the ones that can afford to be
   // strict: the deny list above, the generator's own "insufficient" escape, and the claim
   // lock and lint on the way out.
+  //
+  // Three shapes reach this point, and each one was a real rejection of a real question.
+  //
   // A BARE EITHER/OR IS A QUESTION, and this gate used to be the last place that was not
   // true. "wild or farmed" carries no question word, no question mark and no grocery verb —
   // the shopper is standing in front of two things and naming them, which is the most
@@ -113,7 +116,21 @@ export function inScope(query) {
   // different function on a different path and it never reached here. Note the "vs" form
   // already worked — GROCERY_ACT lists `vs` and `versus` — so the defect was only ever the
   // plain "or", which is the form a person actually types.
-  const hasAct = GROCERY_ACT.test(q) || isBareEitherOr(q);
+  //
+  // A DEFINITIONAL QUESTION IS A COUNTER QUESTION — it is the Label terms section's whole
+  // purpose, phrased the way a person actually phrases it. A shopper reading an unfamiliar
+  // word off a package and asking what it is has no grocery VERB in the sentence and often
+  // no word this file has heard of, so both of the checks above miss it.
+  //
+  // Measured 2026-08-02 over twelve "what is X" probes where X is a word the KB itself
+  // teaches: SEVEN came back "that one is outside the store" — skyr, clabber, natamycin,
+  // bulgur, astaxanthin, skipjack, BCM-7. Each of those words is printed on a package or
+  // sits in a card, and each one is the exact moment the counter is supposed to be useful.
+  //
+  // The length bound in isBareDefinitional is what keeps general knowledge out — "what is
+  // the capital of France" is six words and a question with structure, not a package word.
+  // A test pins both directions.
+  const hasAct = GROCERY_ACT.test(q) || isBareEitherOr(q) || isBareDefinitional(q);
   if (hasAct && contentWords(q).length > 0) return { ok: true };
 
   // An act with nothing concrete in it — "what should I get", "which one is better" — is
@@ -138,6 +155,31 @@ const EMPTY = new Set(
     + 'those to try type up use want was way we what when where which who why will with '
     + 'worth would you your').split(' ')
 );
+
+// "What is X", "what are X", "what does X mean", "meaning of X". Anchored at the start for
+// the bare forms so a mid-sentence "…and what is left" cannot trip it.
+const DEFINITIONAL = /^\s*(what|whats|what's)\s+(is|are|does|do)\b|\bwhat does\b.*\bmean\b|\bmeaning of\b/i;
+
+/**
+ * A definitional question SHORT ENOUGH to be a word read off a package.
+ *
+ * The length bound is the whole discriminator and it is not arbitrary. Someone holding a
+ * carton and asking about a word on it types three or four words: "what is skyr", "what
+ * does natamycin mean". A question that needs six or more is asking about something with
+ * structure — "what is the capital of France" — and that is not a package word.
+ *
+ * Without the bound the definitional rule admits general knowledge, which a test caught
+ * immediately. With it, "what is bitcoin" still gets through; that is the same accepted
+ * tradeoff as any unknown noun (it matches nothing, the generator's "insufficient" escape
+ * discards, the shopper gets an honest miss) and it is a far cheaper error than telling
+ * someone asking about skyr that they are outside the store.
+ */
+export function isBareDefinitional(query) {
+  const q = str(query);
+  if (!DEFINITIONAL.test(q)) return false;
+  const words = q.split(/\s+/).filter(Boolean).length;
+  return words <= 5 && contentWords(q).length <= 2;
+}
 
 /**
  * Is the whole query a comparison between two named things?
