@@ -58,7 +58,12 @@
         }
       ],
       "tier_note": "The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.",
-      "eyebrow_short": "Wild or farmed"
+      "eyebrow_short": "Wild or farmed",
+      "asked_as": [
+        "wild or farmed salmon",
+        "is farmed salmon bad",
+        "which salmon should i buy"
+      ]
     },
     {
       "id": "shrimp_imported_vs_domestic",
@@ -102,6 +107,11 @@
       "watch_out": [
         "Where wild American is not stocked, a BAP or ASC certification is the check that stands in for knowing the farm.",
         "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier."
+      ],
+      "asked_as": [
+        "is imported shrimp ok",
+        "what shrimp should i buy",
+        "is farmed shrimp bad"
       ]
     },
     {
@@ -142,7 +152,12 @@
           "meaning": "Never frozen — but possibly several days old depending on transit."
         }
       ],
-      "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion."
+      "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion.",
+      "asked_as": [
+        "should i buy fresh or frozen fish",
+        "is frozen fish worse than fresh",
+        "was this fish previously frozen"
+      ]
     },
     {
       "id": "beef_grassfed_vs_grainfed",
@@ -192,7 +207,12 @@
         }
       ],
       "tier_note": "What each of the two words is allowed to mean is documented fact. Insisting on the whole-life claim is a standard, not a finding.",
-      "eyebrow_short": "Grass-fed beef"
+      "eyebrow_short": "Grass-fed beef",
+      "asked_as": [
+        "is grass fed beef worth it",
+        "grass fed or regular beef",
+        "is grass fed actually better"
+      ]
     },
     {
       "id": "beef_cuts_basics",
@@ -216,7 +236,8 @@
         "shank",
         "round",
         "steak",
-        "steak cuts"
+        "steak cuts",
+        "cut of beef"
       ],
       "category": "beef",
       "question": "Which beef cut should I buy?",
@@ -236,7 +257,12 @@
         "Ground chuck (around 80/20) is the all-purpose workhorse."
       ],
       "labels_decoded": [],
-      "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact."
+      "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact.",
+      "asked_as": [
+        "which beef cut for stew",
+        "what cut of beef should i buy",
+        "cheap beef cut for slow cooking"
+      ]
     },
     {
       "id": "ground_beef_lean_ratio",
@@ -272,7 +298,12 @@
           "meaning": "Lean % to fat % by weight — higher first number = leaner."
         }
       ],
-      "tier_note": "The ratio is a defined weight measure. What it changes is texture, which is cooking, not health."
+      "tier_note": "The ratio is a defined weight measure. What it changes is texture, which is cooking, not health.",
+      "asked_as": [
+        "what ground beef should i buy",
+        "which ground beef for burgers",
+        "is 80/20 or 90/10 better"
+      ]
     },
     {
       "id": "egg_labels",
@@ -292,7 +323,8 @@
         "what eggs",
         "best eggs",
         "eggs to buy",
-        "which egg carton"
+        "which egg carton",
+        "carton of eggs"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
@@ -338,7 +370,12 @@
         }
       ],
       "tier_note": "What each carton word is allowed to mean is defined. Ranking feed above room is the standard.",
-      "eyebrow_short": "Egg labels"
+      "eyebrow_short": "Egg labels",
+      "asked_as": [
+        "what eggs should i buy",
+        "which egg carton is best",
+        "which carton of eggs should i get"
+      ]
     },
     {
       "id": "air_chilled_chicken",
@@ -376,6 +413,11 @@
       "watch_out": [
         "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
         "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan."
+      ],
+      "asked_as": [
+        "what is air chilled chicken",
+        "is air chilled chicken better",
+        "which chicken should i buy"
       ]
     },
     {
@@ -414,7 +456,12 @@
           "meaning": "True of all chicken by law — not a differentiator."
         }
       ],
-      "tier_note": "Residue limits apply to every bird sold, which is what leaves the claim about raising alone."
+      "tier_note": "Residue limits apply to every bird sold, which is what leaves the claim about raising alone.",
+      "asked_as": [
+        "does no antibiotics mean anything",
+        "is antibiotic free chicken better",
+        "should i pay for no antibiotics"
+      ]
     },
     {
       "id": "organic_worth_it_by_type",
@@ -426,7 +473,12 @@
         "clean fifteen",
         "pesticides",
         "organic fruit",
-        "organic vegetables"
+        "organic vegetables",
+        "is organic worth it",
+        "should i buy organic",
+        "pay for organic",
+        "organic worth the money",
+        "produce should be organic"
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
@@ -461,7 +513,12 @@
         }
       ],
       "tier_note": "Surface residue on thin skins is a real and reported signal, and peeling or swapping answers it cleanly.",
-      "eyebrow_short": "Buying organic"
+      "eyebrow_short": "Buying organic",
+      "asked_as": [
+        "is organic worth it",
+        "should i buy organic produce",
+        "which produce should be organic"
+      ]
     },
     {
       "id": "frozen_vs_fresh_produce",
@@ -492,7 +549,12 @@
         "Great for smoothies, soups, and sheet-pan roasts."
       ],
       "labels_decoded": [],
-      "tier_note": "Freezing at harvest and the losses across days in transit are both well documented."
+      "tier_note": "Freezing at harvest and the losses across days in transit are both well documented.",
+      "asked_as": [
+        "are frozen vegetables any good",
+        "should i buy frozen vegetables",
+        "is frozen produce as good as fresh"
+      ]
     },
     {
       "id": "freezing_produce",
@@ -533,7 +595,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "That enzymes survive freezing and a brief scald denatures them is settled food preservation science. It is also the step almost every home freeze skips.",
-      "eyebrow_short": "Freezing it"
+      "eyebrow_short": "Freezing it",
+      "asked_as": [
+        "how do i freeze vegetables",
+        "can i freeze produce before it goes bad",
+        "do i need to blanch before freezing"
+      ]
     },
     {
       "id": "produce_seasonality",
@@ -577,7 +644,12 @@
         "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season."
       ],
       "labels_decoded": [],
-      "tier_note": "Reading the season off the pile is a shopping habit offered as a standard, not a nutrition claim."
+      "tier_note": "Reading the season off the pile is a shopping habit offered as a standard, not a nutrition claim.",
+      "asked_as": [
+        "does buying in season matter",
+        "what produce is in season",
+        "is seasonal produce cheaper"
+      ]
     },
     {
       "id": "washing_produce",
@@ -587,7 +659,10 @@
         "wash vegetables",
         "wash fruit",
         "produce wash",
-        "clean produce"
+        "clean produce",
+        "wash produce",
+        "wash my produce",
+        "do i need to wash"
       ],
       "category": "produce",
       "question": "How should I wash produce?",
@@ -610,6 +685,11 @@
       "tier_note": "Plain running water is the published recommendation, and the produce washes are not.",
       "watch_out": [
         "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak."
+      ],
+      "asked_as": [
+        "how should i wash produce",
+        "do i need to wash vegetables",
+        "is a produce wash worth it"
       ]
     },
     {
@@ -651,7 +731,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "Surface residue is a real peer-reviewed concern. The removal numbers are two compounds in one study and a later one puts baking soda lower, so the technique is sound and the magnitude is not settled.",
-      "eyebrow_short": "Residue"
+      "eyebrow_short": "Residue",
+      "asked_as": [
+        "how do i get pesticides off produce",
+        "does washing remove pesticides",
+        "baking soda soak for fruit"
+      ]
     },
     {
       "id": "precut_produce_tradeoffs",
@@ -661,7 +746,12 @@
         "pre-washed",
         "bagged salad",
         "precut vegetables",
-        "convenience produce"
+        "convenience produce",
+        "pre cut",
+        "precut",
+        "pre cut fruit",
+        "pre cut vegetables",
+        "cut fruit"
       ],
       "category": "produce",
       "question": "Is pre-cut produce a good buy?",
@@ -689,6 +779,11 @@
       "watch_out": [
         "If a bag of pre-washed greens is the difference between a salad and no salad, buy the bag. Eaten beats perfect.",
         "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
+      ],
+      "asked_as": [
+        "is pre cut fruit worth it",
+        "should i buy pre cut vegetables",
+        "is bagged salad a good buy"
       ]
     },
     {
@@ -730,6 +825,11 @@
         "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
         "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
         "Color tracks the season as well as the standard. The same dairy churns paler in winter."
+      ],
+      "asked_as": [
+        "is grass fed butter worth it",
+        "which butter should i buy",
+        "is grass fed butter better"
       ]
     },
     {
@@ -741,7 +841,10 @@
         "skim milk",
         "reduced fat milk",
         "low fat milk",
-        "milk fat"
+        "milk fat",
+        "which milk",
+        "what milk",
+        "milk should i buy"
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",
@@ -771,7 +874,12 @@
         }
       ],
       "tier_note": "The processing difference is a fact about the carton. Preferring the least-handled one is the standard.",
-      "eyebrow_short": "Whole vs. reduced"
+      "eyebrow_short": "Whole vs. reduced",
+      "asked_as": [
+        "whole milk or skim",
+        "which milk should i buy",
+        "is whole milk better than 2%"
+      ]
     },
     {
       "id": "a2_vs_a1_milk",
@@ -821,7 +929,12 @@
         }
       ],
       "tier_note": "The breed genetics and the peptide are established. That A2 is the better carton is Kristy’s preference for the older herds, not a finding.",
-      "eyebrow_short": "A2 vs. A1"
+      "eyebrow_short": "A2 vs. A1",
+      "asked_as": [
+        "is a2 milk worth it",
+        "what is a2 milk",
+        "a2 or regular milk"
+      ]
     },
     {
       "id": "cheese_real_vs_processed",
@@ -877,7 +990,12 @@
         "‘Cheese product’, ‘cheese food’ and ‘pasteurized process’ all mean emulsifiers blended in. That is a different product from cheese.",
         "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting."
       ],
-      "eyebrow_short": "Block vs. bag"
+      "eyebrow_short": "Block vs. bag",
+      "asked_as": [
+        "block cheese or shredded",
+        "is pre shredded cheese ok",
+        "what cheese should i buy"
+      ]
     },
     {
       "id": "yogurt_plain_vs_flavored",
@@ -917,6 +1035,11 @@
       "tier_note": "The added-sugar difference is printed on the panel. Buying plain and sweetening it is the standard.",
       "watch_out": [
         "The single-serve fruit cups are the expensive form and the sweet one at the same time."
+      ],
+      "asked_as": [
+        "best yogurt to buy",
+        "which yogurt should i get",
+        "is flavored yogurt bad"
       ]
     },
     {
@@ -976,7 +1099,12 @@
         "No named farm, no test results, no cold chain — that is not raw milk worth buying, that is just unpasteurized.",
         "“Raw” on a cheese aged under 60 days at retail is worth a question about where it came from."
       ],
-      "card_why": "Pasteurization is a shelf-life technology. It flattens the live cultures, the enzymes, and the cream line along with everything else. Milk from a small pastured herd, handled cold and fast, is a different food from the commodity gallon. The farm is the product here. A farmer who tests, who keeps a small herd on grass, and who will walk you through the parlor is the entire margin between excellent and not worth it."
+      "card_why": "Pasteurization is a shelf-life technology. It flattens the live cultures, the enzymes, and the cream line along with everything else. Milk from a small pastured herd, handled cold and fast, is a different food from the commodity gallon. The farm is the product here. A farmer who tests, who keeps a small herd on grass, and who will walk you through the parlor is the entire margin between excellent and not worth it.",
+      "asked_as": [
+        "is raw milk worth it",
+        "should i buy raw milk",
+        "is raw milk safe"
+      ]
     },
     {
       "id": "rice_arsenic",
@@ -1009,7 +1137,12 @@
         "Vary grains — oats, quinoa, barley — so rice isn’t every meal."
       ],
       "labels_decoded": [],
-      "tier_note": "Rice taking up more inorganic arsenic than other grains is established, and so are the cooking steps that lower it."
+      "tier_note": "Rice taking up more inorganic arsenic than other grains is established, and so are the cooking steps that lower it.",
+      "asked_as": [
+        "should i worry about arsenic in rice",
+        "which rice has less arsenic",
+        "is rice safe to eat"
+      ]
     },
     {
       "id": "oats_steelcut_rolled_instant",
@@ -1046,7 +1179,12 @@
           "meaning": "Pre-cooked and usually pre-sweetened — read the added sugar."
         }
       ],
-      "tier_note": "The three forms differ only by defined processing, and the packet sugar is on the panel."
+      "tier_note": "The three forms differ only by defined processing, and the packet sugar is on the panel.",
+      "asked_as": [
+        "which oats should i buy",
+        "are steel cut oats better",
+        "is instant oatmeal ok"
+      ]
     },
     {
       "id": "nuts_raw_vs_roasted",
@@ -1092,7 +1230,12 @@
         "Most “raw” cashews were steamed out of the shell. Nobody sells a truly raw one.",
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
       ],
-      "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard."
+      "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard.",
+      "asked_as": [
+        "raw or roasted nuts",
+        "which nuts should i buy",
+        "are roasted nuts worse"
+      ]
     },
     {
       "id": "honey_adulteration",
@@ -1137,7 +1280,12 @@
         "“Raw” with no named producer is frequently blended and filtered. The word is unregulated.",
         "“Pure honey” is a marketing word with little enforcement. Traceability is the real check."
       ],
-      "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome."
+      "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome.",
+      "asked_as": [
+        "how do i know honey is real",
+        "is store honey fake",
+        "what honey should i buy"
+      ]
     },
     {
       "id": "beans_dried_vs_canned",
@@ -1178,6 +1326,11 @@
       "watch_out": [
         "Canned and rinsed is close, and rinsing cuts much of the sodium the can added.",
         "‘No salt added’ cans give full control if the tap rinse is not enough."
+      ],
+      "asked_as": [
+        "dried or canned beans",
+        "are canned beans ok",
+        "which beans should i buy"
       ]
     },
     {
@@ -1197,7 +1350,10 @@
         "beans go tough",
         "salt beans tough",
         "bean skins",
-        "soak beans"
+        "soak beans",
+        "salt make beans",
+        "make beans hard",
+        "beans hard"
       ],
       "category": "bulk_pantry",
       "question": "Does salting the soak water make beans tough?",
@@ -1222,7 +1378,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "The cation-exchange mechanism is real food chemistry, but the practical size of it comes from cooking literature rather than a settled body of study. Kristy holds it as the standard because the rule it replaces is demonstrably wrong.",
-      "eyebrow_short": "Salting the soak"
+      "eyebrow_short": "Salting the soak",
+      "asked_as": [
+        "do salted beans go tough",
+        "should i salt the bean soak",
+        "does salt make beans hard"
+      ]
     },
     {
       "id": "label_natural",
@@ -1260,7 +1421,12 @@
         "“Natural” is largely undefined outside of meat, and rarely enforced anywhere.",
         "On meat it means no artificial ingredients and minimal processing. It says nothing about how the animal was raised."
       ],
-      "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record."
+      "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record.",
+      "asked_as": [
+        "what does natural mean on a label",
+        "does natural mean anything",
+        "is natural a real claim"
+      ]
     },
     {
       "id": "label_made_with_real",
@@ -1298,7 +1464,12 @@
         "“Made with real ___” sets no minimum. A trace amount earns the same words.",
         "The named ingredient often sits below the added sugar and the refined flour."
       ],
-      "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell."
+      "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell.",
+      "asked_as": [
+        "does made with real fruit mean anything",
+        "what does made with real mean",
+        "is made with real fruit good"
+      ]
     },
     {
       "id": "label_no_added_hormones",
@@ -1307,7 +1478,10 @@
         "no added hormones",
         "hormone free",
         "no hormones",
-        "raised without hormones"
+        "raised without hormones",
+        "hormones in chicken",
+        "hormones in beef",
+        "added hormones"
       ],
       "category": "label_terms",
       "question": "Does ‘no added hormones’ mean anything?",
@@ -1340,7 +1514,12 @@
         "On chicken and pork it is a freebie — hormones are banned in both by law.",
         "On beef and dairy it is a real distinction, but only third-party verification backs it."
       ],
-      "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there."
+      "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there.",
+      "asked_as": [
+        "does no added hormones mean anything",
+        "are there hormones in chicken",
+        "is no hormones worth paying for"
+      ]
     },
     {
       "id": "label_nonGMO_vs_organic",
@@ -1384,7 +1563,12 @@
         "Paying for both seals is paying twice. Organic already requires non-GMO.",
         "Some foods carry a non-GMO seal though no GMO version of them exists."
       ],
-      "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued."
+      "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued.",
+      "asked_as": [
+        "non gmo or organic",
+        "difference between non gmo and organic",
+        "should i buy non gmo"
+      ]
     },
     {
       "id": "label_cage_free",
@@ -1438,7 +1622,12 @@
         "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
       "tier_note": "What each term requires, and how little it specifies, are both written into the standards.",
-      "eyebrow_short": "Cage-free, free-range"
+      "eyebrow_short": "Cage-free, free-range",
+      "asked_as": [
+        "what does cage free mean",
+        "is free range better than cage free",
+        "does free range mean outside"
+      ]
     },
     {
       "id": "label_grass_fed_term",
@@ -1446,7 +1635,10 @@
       "aliases": [
         "grass fed label",
         "grass-fed claim",
-        "grass fed meaning"
+        "grass fed meaning",
+        "grass fed claim",
+        "grass fed enough",
+        "grass fed on the label"
       ],
       "category": "label_terms",
       "question": "Is ‘grass-fed’ on the label enough?",
@@ -1479,7 +1671,12 @@
         "A bare “grass-fed” allows a grain finish in the feedlot before slaughter.",
         "The claim is weakly enforced on its own. Certification is what backs it."
       ],
-      "tier_note": "The bare term’s weak enforcement and its grain-finish allowance are both on the record."
+      "tier_note": "The bare term’s weak enforcement and its grain-finish allowance are both on the record.",
+      "asked_as": [
+        "does grass fed on the label mean anything",
+        "is grass fed enough on its own",
+        "what does the grass fed claim require"
+      ]
     },
     {
       "id": "label_pasture_raised_feed",
@@ -1542,7 +1739,12 @@
         "Organic reaches feed, but requires it be organic — usually organic soy and corn.",
         "“Grass-fed” on beef is the same trap: it can still end on grain."
       ],
-      "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other."
+      "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other.",
+      "asked_as": [
+        "what does pasture raised actually mean",
+        "does pasture raised mean no soy",
+        "is pasture raised worth it"
+      ]
     },
     {
       "id": "label_organic_scope",
@@ -1592,7 +1794,12 @@
         "It is a production standard, not a quality grade — an organic cookie is still a cookie.",
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
       ],
-      "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included."
+      "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included.",
+      "asked_as": [
+        "what does the organic seal guarantee",
+        "what does usda organic cover",
+        "does organic mean the ingredients are good"
+      ]
     },
     {
       "id": "produce_picking_ripeness",
@@ -1605,7 +1812,11 @@
         "origin sticker",
         "product of mexico",
         "country of origin produce",
-        "where was this grown"
+        "where was this grown",
+        "country on the sticker",
+        "mexican produce",
+        "origin matter",
+        "country of origin"
       ],
       "category": "produce",
       "question": "Does the country on the sticker tell me anything about quality?",
@@ -1639,7 +1850,12 @@
       "watch_out": [
         "‘Product of ___’ is a growing region, not a grade. Nothing on the sticker ranks quality."
       ],
-      "eyebrow_short": "Origin sticker"
+      "eyebrow_short": "Origin sticker",
+      "asked_as": [
+        "does the country on the sticker matter",
+        "is mexican produce worse",
+        "where was this grown"
+      ]
     },
     {
       "id": "label_multigrain_vs_whole_grain",
@@ -1688,7 +1904,12 @@
         "“Made with whole grains” permits any fraction, and it is often small.",
         "Brown bread is frequently white flour with caramel coloring."
       ],
-      "tier_note": "Whole grain carries a definition and multigrain does not. That gap is the entire difference."
+      "tier_note": "Whole grain carries a definition and multigrain does not. That gap is the entire difference.",
+      "asked_as": [
+        "is multigrain whole grain",
+        "multigrain or whole wheat bread",
+        "what bread is actually whole grain"
+      ]
     },
     {
       "id": "label_lightly_sweetened",
@@ -1742,7 +1963,12 @@
         "“No sugar added” still allows the food’s own sugars, which can be substantial.",
         "“Reduced sugar” is 25% less than a reference food that may have been very sweet."
       ],
-      "tier_note": "The phrase has no legal definition. The added-sugars line does, and it cannot be spun."
+      "tier_note": "The phrase has no legal definition. The added-sugars line does, and it cannot be spun.",
+      "asked_as": [
+        "what does lightly sweetened mean",
+        "is lightly sweetened less sugar",
+        "does lightly sweetened mean anything"
+      ]
     },
     {
       "id": "label_no_artificial_flavors",
@@ -1753,7 +1979,10 @@
         "natural flavoring",
         "artificial flavors",
         "what are natural flavors",
-        "flavoring"
+        "flavoring",
+        "natural flavor",
+        "what is natural flavor",
+        "is natural flavor"
       ],
       "category": "label_terms",
       "question": "If it says no artificial flavors, what is the flavoring?",
@@ -1791,7 +2020,12 @@
         "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
         "“Natural flavors” can carry solvents and carriers that need no separate declaration."
       ],
-      "tier_note": "The legal line between natural and artificial flavor is the starting material, and it is written down."
+      "tier_note": "The legal line between natural and artificial flavor is the starting material, and it is written down.",
+      "asked_as": [
+        "what is natural flavor",
+        "does no artificial flavors mean anything",
+        "what is the flavoring then"
+      ]
     },
     {
       "id": "egg_shell_color",
@@ -1846,7 +2080,12 @@
       "watch_out": [
         "The yolk photo on the carton is artwork, not a sample."
       ],
-      "eyebrow_short": "Shell and yolk"
+      "eyebrow_short": "Shell and yolk",
+      "asked_as": [
+        "brown or white eggs",
+        "are brown eggs better",
+        "does a dark yolk mean anything"
+      ]
     },
     {
       "id": "egg_freshness",
@@ -1859,7 +2098,16 @@
         "expired eggs",
         "sell by eggs",
         "are my eggs still good",
-        "egg pack date"
+        "egg pack date",
+        "eggs are fresh",
+        "fresh eggs",
+        "how old are these eggs",
+        "egg carton date",
+        "pack date",
+        "egg date",
+        "egg carton",
+        "date on an egg carton",
+        "date on the carton"
       ],
       "category": "poultry_eggs",
       "question": "How do I tell how fresh eggs are?",
@@ -1893,7 +2141,12 @@
           "meaning": "The packing facility. Sits beside the pack date."
         }
       ],
-      "tier_note": "The Julian pack date is a required code with a defined meaning. The sell-by date is a schedule."
+      "tier_note": "The Julian pack date is a required code with a defined meaning. The sell-by date is a schedule.",
+      "asked_as": [
+        "how do i tell if eggs are fresh",
+        "what date is on an egg carton",
+        "how old are these eggs"
+      ]
     },
     {
       "id": "egg_grades_sizes",
@@ -1906,7 +2159,12 @@
         "large eggs",
         "jumbo eggs",
         "medium eggs",
-        "what does grade aa mean"
+        "what does grade aa mean",
+        "egg grades",
+        "egg sizes",
+        "which egg size",
+        "grade a",
+        "does grade a mean"
       ],
       "category": "poultry_eggs",
       "question": "What do egg grades and sizes actually mean?",
@@ -1944,7 +2202,12 @@
           "meaning": "Weight per dozen: 24, 27 and 30 ounces."
         }
       ],
-      "tier_note": "Grade and size are defined measures of appearance and weight. Neither describes the hen."
+      "tier_note": "Grade and size are defined measures of appearance and weight. Neither describes the hen.",
+      "asked_as": [
+        "what does grade a mean on eggs",
+        "which egg size is best value",
+        "do egg grades matter"
+      ]
     },
     {
       "id": "egg_feed_claims",
@@ -1957,7 +2220,9 @@
         "soy free eggs",
         "corn free eggs",
         "what were the hens fed",
-        "hen feed claims"
+        "hen feed claims",
+        "hens eat",
+        "the hens ate"
       ],
       "category": "poultry_eggs",
       "question": "What do the feed claims on an egg carton mean?",
@@ -1994,7 +2259,12 @@
           "meaning": "A direct claim about the ration. Must be printed explicitly."
         }
       ],
-      "tier_note": "A feed claim has to be printed to be made, which is exactly why silence on the carton means nothing."
+      "tier_note": "A feed claim has to be printed to be made, which is exactly why silence on the carton means nothing.",
+      "asked_as": [
+        "what does vegetarian fed mean",
+        "are omega 3 eggs worth it",
+        "what did the hens eat"
+      ]
     },
     {
       "id": "egg_storage",
@@ -2006,7 +2276,11 @@
         "unwashed eggs",
         "egg cuticle",
         "farm eggs on the counter",
-        "how long do eggs last"
+        "how long do eggs last",
+        "keep eggs",
+        "store eggs",
+        "eggs in the fridge",
+        "eggs need to be refrigerated"
       ],
       "category": "poultry_eggs",
       "question": "Do eggs have to be refrigerated?",
@@ -2037,7 +2311,12 @@
           "meaning": "Cuticle intact. Can be held at room temperature until washed."
         }
       ],
-      "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold."
+      "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold.",
+      "asked_as": [
+        "do eggs need to be refrigerated",
+        "where should i keep eggs",
+        "why are us eggs in the fridge"
+      ]
     },
     {
       "id": "beef_grades_usda",
@@ -2050,7 +2329,10 @@
         "beef grade",
         "usda grade",
         "what does prime mean",
-        "marbling"
+        "marbling",
+        "prime choice select",
+        "beef grades",
+        "usda grades"
       ],
       "category": "beef",
       "question": "What do Prime, Choice and Select mean?",
@@ -2088,7 +2370,12 @@
           "meaning": "Never submitted for grading. Says nothing about quality either way."
         }
       ],
-      "tier_note": "USDA grading measures marbling and maturity against a published standard, and nothing else."
+      "tier_note": "USDA grading measures marbling and maturity against a published standard, and nothing else.",
+      "asked_as": [
+        "what does prime choice select mean",
+        "is prime beef worth it",
+        "do beef grades matter"
+      ]
     },
     {
       "id": "judging_meat_at_the_case",
@@ -2102,7 +2389,12 @@
         "is brown meat bad",
         "meat purge",
         "how to tell if meat is fresh",
-        "fresh meat"
+        "fresh meat",
+        "tell if meat is good",
+        "this meat any good",
+        "pick meat",
+        "meat at the counter",
+        "good meat"
       ],
       "category": "meat_counter",
       "question": "How do I tell good meat from the case?",
@@ -2134,7 +2426,12 @@
         }
       ],
       "tier_note": "Color coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness.",
-      "eyebrow_short": "Judging meat"
+      "eyebrow_short": "Judging meat",
+      "asked_as": [
+        "how do i tell if meat is good",
+        "is this meat any good",
+        "how do i pick meat at the counter"
+      ]
     },
     {
       "id": "dry_brine",
@@ -2186,7 +2483,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "How salt moves through muscle, and why a dry surface browns and a wet one steams, are both basic food chemistry. The timing is the part people skip.",
-      "eyebrow_short": "Dry-brining"
+      "eyebrow_short": "Dry-brining",
+      "asked_as": [
+        "when should i salt a steak",
+        "is a brine worth it",
+        "should i salt meat ahead"
+      ]
     },
     {
       "id": "butcher_counter_asking",
@@ -2219,7 +2521,12 @@
         "Ask them to portion it. Cutting, tying and boning are usually included."
       ],
       "labels_decoded": [],
-      "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat."
+      "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat.",
+      "asked_as": [
+        "what should i ask the butcher",
+        "what do i say at the meat counter",
+        "can the butcher cut it for me"
+      ]
     },
     {
       "id": "chicken_cuts_basics",
@@ -2233,7 +2540,11 @@
         "dark meat",
         "white meat",
         "drumstick",
-        "which chicken cut"
+        "which chicken cut",
+        "thighs",
+        "breasts",
+        "thighs or breasts",
+        "boneless skinless"
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
@@ -2265,7 +2576,12 @@
           "meaning": "Low-use muscle. Lean and fast, dries out quickly."
         }
       ],
-      "tier_note": "Dark meat’s forgiveness is how the cut behaves. Defaulting to thighs is the standard over it."
+      "tier_note": "Dark meat’s forgiveness is how the cut behaves. Defaulting to thighs is the standard over it.",
+      "asked_as": [
+        "which chicken cut should i buy",
+        "thighs or breasts",
+        "is boneless skinless worth it"
+      ]
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -2311,7 +2627,12 @@
           "meaning": "On meat, minimally processed with no artificial ingredients. Says nothing about raising."
         }
       ],
-      "tier_note": "Added solution must be disclosed by weight, which is what makes the fine print worth finding."
+      "tier_note": "Added solution must be disclosed by weight, which is what makes the fine print worth finding.",
+      "asked_as": [
+        "which pork cut should i buy",
+        "what does solution added mean",
+        "what is enhanced pork"
+      ]
     },
     {
       "id": "deli_meat_uncured",
@@ -2355,7 +2676,12 @@
           "meaning": "The asterisk reads ‘except those naturally occurring in celery powder’."
         }
       ],
-      "tier_note": "Celery powder is the same nitrate chemistry under a different word, and the asterisk is required."
+      "tier_note": "Celery powder is the same nitrate chemistry under a different word, and the asterisk is required.",
+      "asked_as": [
+        "is uncured deli meat nitrite free",
+        "what does uncured mean",
+        "is deli meat cured with celery"
+      ]
     },
     {
       "id": "mercury_by_fish",
@@ -2411,7 +2737,12 @@
           "meaning": "A large, long-lived tuna. Near the top of the range."
         }
       ],
-      "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it."
+      "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it.",
+      "asked_as": [
+        "which fish are low in mercury",
+        "is tuna high in mercury",
+        "what fish has the least mercury"
+      ]
     },
     {
       "id": "fish_freshness_at_counter",
@@ -2427,7 +2758,10 @@
         "salmon",
         "fresh salmon",
         "tuna",
-        "is the fish fresh"
+        "is the fish fresh",
+        "tell if fish is fresh",
+        "fish is fresh",
+        "fish smell like"
       ],
       "category": "seafood",
       "question": "How do I tell if fish at the counter is fresh?",
@@ -2454,7 +2788,12 @@
           "meaning": "Flakes separating on a fillet. A sign it has aged."
         }
       ],
-      "tier_note": "The smell of spoilage is a documented chemical change, not an opinion about the fish."
+      "tier_note": "The smell of spoilage is a documented chemical change, not an opinion about the fish.",
+      "asked_as": [
+        "how do i tell if fish is fresh",
+        "is this fish fresh",
+        "what should fish smell like"
+      ]
     },
     {
       "id": "canned_fish_choosing",
@@ -2509,7 +2848,12 @@
           "meaning": "Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating."
         }
       ],
-      "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it."
+      "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it.",
+      "asked_as": [
+        "what canned fish should i buy",
+        "is tuna in oil or water better",
+        "which sardines should i buy"
+      ]
     },
     {
       "id": "farmed_fish_by_species",
@@ -2556,7 +2900,12 @@
           "meaning": "Country-of-origin labeling. Required, and the most useful line on the package."
         }
       ],
-      "tier_note": "Filter feeders take no feed at all. Which farms are worth trusting is the standard."
+      "tier_note": "Filter feeders take no feed at all. Which farms are worth trusting is the standard.",
+      "asked_as": [
+        "is farmed fish worth buying",
+        "which farmed fish are ok",
+        "is farmed trout bad"
+      ]
     },
     {
       "id": "seafood_certifications",
@@ -2570,7 +2919,9 @@
         "seafood certification",
         "best aquaculture practices",
         "marine stewardship council",
-        "sustainability"
+        "sustainability",
+        "seafood seals",
+        "sustainability seal"
       ],
       "category": "seafood",
       "question": "Do the sustainability seals on seafood mean anything?",
@@ -2616,6 +2967,11 @@
         "No seal speaks to freshness. That is still the nose, the eyes and the ice.",
         "A BAP star count is how many links were audited, not how good the fish is.",
         "Seafood Watch is a guide to look up, not a seal to spot on a package."
+      ],
+      "asked_as": [
+        "do seafood seals mean anything",
+        "what is msc certified",
+        "is the sustainability label real"
       ]
     },
     {
@@ -2654,7 +3010,10 @@
         "choosing produce",
         "fruit ripeness",
         "vegetable quality",
-        "ripe fruit"
+        "ripe fruit",
+        "melon is ripe",
+        "melon",
+        "is it ripe"
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
@@ -2684,7 +3043,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one.",
-      "eyebrow_short": "Picking produce"
+      "eyebrow_short": "Picking produce",
+      "asked_as": [
+        "how do i pick a ripe cantaloupe",
+        "how do i pick a good avocado",
+        "how do i tell if a melon is ripe"
+      ]
     },
     {
       "id": "berries_picking",
@@ -2739,7 +3103,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "That berries decay from the bottom under their own weight, and do not ripen after picking, is settled postharvest handling — and it is why the underside is the check.",
-      "eyebrow_short": "Picking berries"
+      "eyebrow_short": "Picking berries",
+      "asked_as": [
+        "how do i pick berries",
+        "are these strawberries fresh",
+        "how do i buy good berries"
+      ]
     },
     {
       "id": "produce_storage",
@@ -2751,7 +3120,12 @@
         "ethylene",
         "keep produce fresh",
         "should i refrigerate tomatoes",
-        "food waste produce"
+        "food waste produce",
+        "store vegetables",
+        "store produce",
+        "produce go bad",
+        "goes bad fast",
+        "keep vegetables"
       ],
       "category": "produce",
       "question": "How do I keep produce from going off before I use it?",
@@ -2774,7 +3148,12 @@
         "Buy at staggered ripeness so the whole week does not turn on Tuesday."
       ],
       "labels_decoded": [],
-      "tier_note": "Ethylene ripening its neighbors, and moisture rotting a drawer, are both well established."
+      "tier_note": "Ethylene ripening its neighbors, and moisture rotting a drawer, are both well established.",
+      "asked_as": [
+        "how do i keep produce fresh longer",
+        "how should i store vegetables",
+        "why does my produce go bad so fast"
+      ]
     },
     {
       "id": "revive_greens",
@@ -2824,7 +3203,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "Turgor pressure is basic plant physiology, and it is why a leaf goes rigid again. Nothing about it makes an old leaf new.",
-      "eyebrow_short": "Wilted greens"
+      "eyebrow_short": "Wilted greens",
+      "asked_as": [
+        "my lettuce went limp",
+        "can i revive wilted greens",
+        "are limp greens still good"
+      ]
     },
     {
       "id": "milk_processing",
@@ -2877,7 +3261,12 @@
           "meaning": "Cream separates and rises. Still pasteurized."
         }
       ],
-      "tier_note": "Ultra-pasteurization is disclosed on the carton. Preferring fewer steps is the standard."
+      "tier_note": "Ultra-pasteurization is disclosed on the carton. Preferring fewer steps is the standard.",
+      "asked_as": [
+        "what is ultra pasteurized milk",
+        "what does homogenized mean",
+        "difference between pasteurized and ultra pasteurized"
+      ]
     },
     {
       "id": "yogurt_live_cultures",
@@ -2944,7 +3333,12 @@
         "A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.",
         "‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one."
       ],
-      "eyebrow_short": "Live cultures"
+      "eyebrow_short": "Live cultures",
+      "asked_as": [
+        "is my yogurt still alive",
+        "what does live and active cultures mean",
+        "what is skyr"
+      ]
     },
     {
       "id": "cream_vs_creamer",
@@ -2956,7 +3350,9 @@
         "half and half",
         "whipping cream",
         "what is in coffee creamer",
-        "creamer ingredients"
+        "creamer ingredients",
+        "cream and creamer",
+        "creamer"
       ],
       "category": "dairy",
       "question": "What is the difference between cream and coffee creamer?",
@@ -2993,7 +3389,12 @@
           "meaning": "No dairy. Water or corn syrup solids, oil, emulsifiers and flavors."
         }
       ],
-      "tier_note": "Cream carries a legal milkfat minimum. Creamer carries none, because it is not dairy."
+      "tier_note": "Cream carries a legal milkfat minimum. Creamer carries none, because it is not dairy.",
+      "asked_as": [
+        "difference between cream and creamer",
+        "is coffee creamer dairy",
+        "what is half and half"
+      ]
     },
     {
       "id": "flour_basics",
@@ -3048,7 +3449,12 @@
           "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."
         }
       ],
-      "tier_note": "Bleached, enriched and whole are defined terms, and the germ’s oil turning is simply what fat does."
+      "tier_note": "Bleached, enriched and whole are defined terms, and the germ’s oil turning is simply what fat does.",
+      "asked_as": [
+        "which flour should i buy",
+        "what does enriched flour mean",
+        "is bleached flour bad"
+      ]
     },
     {
       "id": "bulk_bins_buying",
@@ -3061,7 +3467,10 @@
         "scoop bins",
         "bulk nuts",
         "bulk grains",
-        "bulk spices"
+        "bulk spices",
+        "bulk section",
+        "buy in bulk",
+        "bulk a good deal"
       ],
       "category": "bulk_pantry",
       "question": "Is the bulk bin section actually a good deal?",
@@ -3084,7 +3493,12 @@
         "Buy what you will use in a month, and store it airtight and dark."
       ],
       "labels_decoded": [],
-      "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule."
+      "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
+      "asked_as": [
+        "is the bulk section a good deal",
+        "should i buy from bulk bins",
+        "is bulk food cheaper"
+      ]
     },
     {
       "id": "whole_spices",
@@ -3124,7 +3538,12 @@
       "labels_decoded": [],
       "tier_note": "That volatile aromatics escape faster from a ground surface is straightforward chemistry, and the shelf-life gap follows directly from it.",
       "eyebrow_short": "Whole spices",
-      "cart_pick": "Whole peppercorns"
+      "cart_pick": "Whole peppercorns",
+      "asked_as": [
+        "whole or ground spices",
+        "are whole spices worth it",
+        "how long do spices last"
+      ]
     },
     {
       "id": "rancidity_check",
@@ -3137,7 +3556,11 @@
         "stale nuts",
         "rancid flour",
         "bitter oil",
-        "how to tell if oil is rancid"
+        "how to tell if oil is rancid",
+        "gone rancid",
+        "nuts are rancid",
+        "oil gone bad",
+        "has it gone bad"
       ],
       "category": "bulk_pantry",
       "question": "How do I tell if nuts, oil or flour have gone rancid?",
@@ -3159,7 +3582,12 @@
         "Buy oil in a size you will finish in a couple of months rather than the big bottle."
       ],
       "labels_decoded": [],
-      "tier_note": "Rancid fat is a quality problem rather than a safety one, and it is flagged on exactly that basis."
+      "tier_note": "Rancid fat is a quality problem rather than a safety one, and it is flagged on exactly that basis.",
+      "asked_as": [
+        "how do i tell if nuts are rancid",
+        "has my olive oil gone bad",
+        "what does rancid smell like"
+      ]
     },
     {
       "id": "olive_oil_grades",
@@ -3178,7 +3606,8 @@
         "extra virgin olive oil",
         "evoo",
         "olive oil adulteration",
-        "real olive oil"
+        "real olive oil",
+        "extra virgin"
       ],
       "category": "bulk_pantry",
       "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
@@ -3230,7 +3659,12 @@
         "‘Packed in [country]’ is where it was bottled. Look for ‘product of’ instead.",
         "Extreme cheapness for extra-virgin is a flag, not a find."
       ],
-      "eyebrow_short": "Real extra-virgin"
+      "eyebrow_short": "Real extra-virgin",
+      "asked_as": [
+        "how do i buy real olive oil",
+        "what does extra virgin mean",
+        "what is light olive oil"
+      ]
     },
     {
       "id": "nut_butter_ingredients",
@@ -3280,7 +3714,12 @@
           "meaning": "Fat removed and usually replaced with sugar and starch."
         }
       ],
-      "tier_note": "What holds no-stir texture together is on the list. Wanting only peanuts is the standard."
+      "tier_note": "What holds no-stir texture together is on the list. Wanting only peanuts is the standard.",
+      "asked_as": [
+        "what should be in peanut butter",
+        "is natural peanut butter better",
+        "why does my peanut butter separate"
+      ]
     },
     {
       "id": "grains_beyond_rice",
@@ -3295,7 +3734,11 @@
         "whole grains",
         "which grain",
         "sorghum",
-        "wheat berries"
+        "wheat berries",
+        "besides rice",
+        "instead of rice",
+        "other grains",
+        "what grains"
       ],
       "category": "bulk_pantry",
       "question": "What else should I be buying besides rice?",
@@ -3328,7 +3771,12 @@
           "meaning": "Bran intact. A longer cook, and it holds its chew."
         }
       ],
-      "tier_note": "Cook times and texture are properties of the grain, not a claim made about it."
+      "tier_note": "Cook times and texture are properties of the grain, not a claim made about it.",
+      "asked_as": [
+        "what grains should i buy besides rice",
+        "what else can i cook instead of rice",
+        "is quinoa worth it"
+      ]
     },
     {
       "id": "label_front_vs_back",
@@ -3340,7 +3788,13 @@
         "how to read a food label",
         "food label",
         "marketing claims",
-        "front of pack"
+        "front of pack",
+        "front of the package",
+        "front of the box",
+        "back of the package",
+        "read on a label",
+        "front label",
+        "look on a package"
       ],
       "category": "label_terms",
       "question": "Where on a package should I actually be looking?",
@@ -3376,7 +3830,12 @@
         "When the front and the back disagree, the front is the one nobody had to check."
       ],
       "tier_note": "The panel’s contents are mandated and the front of the box is not. That asymmetry is the whole rule.",
-      "eyebrow_short": "Front vs. back"
+      "eyebrow_short": "Front vs. back",
+      "asked_as": [
+        "where should i look on a package",
+        "is the front of the box reliable",
+        "what should i read on a label"
+      ]
     },
     {
       "id": "label_ingredient_order",
@@ -3424,7 +3883,12 @@
         "Sugars get split across syrups, concentrates and dextrose so no single one ranks high.",
         "“Enriched wheat flour” as a first ingredient is not “whole wheat flour”."
       ],
-      "tier_note": "Weight order is required by law, which is what makes position readable at all."
+      "tier_note": "Weight order is required by law, which is what makes position readable at all.",
+      "asked_as": [
+        "how do i read an ingredient list",
+        "does ingredient order matter",
+        "what does contains 2% or less mean"
+      ]
     },
     {
       "id": "label_third_party_seals",
@@ -3438,7 +3902,11 @@
         "animal welfare approved",
         "global animal partnership",
         "what does the seal mean",
-        "is the seal real"
+        "is the seal real",
+        "seal legitimate",
+        "seals mean",
+        "third party seal",
+        "certification is real"
       ],
       "category": "label_terms",
       "question": "How do I know if a seal on a package means anything?",
@@ -3484,7 +3952,12 @@
         "Each seal covers one scope. Organic is not welfare, and welfare is not pesticides.",
         "More seals is not a better food. It is a food that bought more audits."
       ],
-      "tier_note": "Who writes a standard and who audits it is public for every program worth the badge."
+      "tier_note": "Who writes a standard and who audits it is public for every program worth the badge.",
+      "asked_as": [
+        "do the seals on packages mean anything",
+        "how do i know a certification is real",
+        "what makes a seal legitimate"
+      ]
     },
     {
       "id": "label_cold_pressed_expeller",
@@ -3542,7 +4015,12 @@
         "“Cold-pressed” is tightly defined only for olive oil.",
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
       ],
-      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one."
+      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one.",
+      "asked_as": [
+        "what does cold pressed mean",
+        "what is expeller pressed",
+        "difference between cold pressed and refined"
+      ]
     },
     {
       "id": "label_sugar_free_substitutes",
@@ -3603,7 +4081,12 @@
         "“Sugar-free” does not mean unsweetened — something else is doing the sweetening.",
         "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify."
       ],
-      "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in."
+      "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in.",
+      "asked_as": [
+        "what is in sugar free food",
+        "what does sugar free actually mean",
+        "what sweetener is in this"
+      ]
     },
     {
       "id": "label_wild_vs_farm_raised",
@@ -3615,7 +4098,10 @@
         "cool labeling",
         "seafood labels",
         "fish labeling",
-        "species substitution"
+        "species substitution",
+        "seafood label",
+        "fish label",
+        "on a seafood label"
       ],
       "category": "label_terms",
       "question": "What has to be on a seafood label?",
@@ -3656,7 +4142,12 @@
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
         "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
       ],
-      "tier_note": "Species, method and country are all required disclosures on unprocessed seafood."
+      "tier_note": "Species, method and country are all required disclosures on unprocessed seafood.",
+      "asked_as": [
+        "what has to be on a seafood label",
+        "what does a fish label have to say",
+        "is the fish label reliable"
+      ]
     },
     {
       "id": "label_serving_size",
@@ -3707,7 +4198,12 @@
         "Serving sizes reflect what people typically eat. They are not a recommendation.",
         "Two products only compare if their serving sizes match. Check both."
       ],
-      "tier_note": "Every number on the panel is per serving by rule, which is why the top two lines come first."
+      "tier_note": "Every number on the panel is per serving by rule, which is why the top two lines come first.",
+      "asked_as": [
+        "why is the serving size so small",
+        "how do i read serving size",
+        "what does per serving mean"
+      ]
     },
     {
       "id": "raw_kefir",
@@ -3753,7 +4249,12 @@
       ],
       "cart_pick": "Plain raw kefir",
       "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
-      "evidence_tier": "time_tested"
+      "evidence_tier": "time_tested",
+      "asked_as": [
+        "is raw kefir worth buying",
+        "should i buy raw kefir",
+        "what is raw kefir"
+      ]
     },
     {
       "id": "raw_aged_cheese",
@@ -3800,7 +4301,12 @@
       ],
       "cart_pick": "Aged raw-milk cheddar",
       "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
-      "evidence_tier": "time_tested"
+      "evidence_tier": "time_tested",
+      "asked_as": [
+        "is raw milk cheese worth it",
+        "what is raw milk cheese",
+        "is aged raw cheese worth buying"
+      ]
     },
     {
       "id": "sprouts_raw",
@@ -3848,7 +4354,12 @@
         "FDA sprout safety guidance",
         "USDA FoodData Central"
       ],
-      "cart_pick": "Broccoli sprouts"
+      "cart_pick": "Broccoli sprouts",
+      "asked_as": [
+        "are sprouts worth buying",
+        "how do i pick sprouts",
+        "should i buy raw sprouts"
+      ]
     }
   ]
 }

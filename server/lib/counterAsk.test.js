@@ -21,7 +21,10 @@ test('a plain-words counter question reaches its sourced entry', () => {
     ['wild or farmed salmon', 'salmon_wild_vs_farmed'],
     ['which cut for stew', 'beef_cuts_basics'],
     ['what does pasture-raised leave out', 'label_pasture_raised_feed'],
-    ['is organic worth it for berries', 'label_organic_scope'],
+    // Was label_organic_scope, which answers what the SEAL covers. This asks whether to
+    // pay, on a specific item, and organic_worth_it_by_type is the card that decides it
+    // ("Organic on thin-skinned produce" / "spend the organic money on berries").
+    ['is organic worth it for berries', 'organic_worth_it_by_type'],
     // Ripeness goes to the by-item hub, and ORIGIN goes to the origin card. These were one
     // card until the 2026-08-02 refocus and both held `avocado` aliases afterward, which
     // left a bare "avocado" tied at 2 and decided by KB order — it landed on the origin

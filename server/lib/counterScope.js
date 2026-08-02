@@ -61,14 +61,14 @@ const DENY = [
 // is what stops that answer becoming reassurance. Anything genuinely medical is already
 // gone by this point: the deny list runs first.
 const GROCERY_ACT =
-  /\b(buy|buying|bought|choose|choosing|pick|picking|get|getting|shop|shopping|worth it|which|what kind|what type|look for|tell if|spot|store|storing|keep|keeping|freeze|freezing|thaw|wash|washing|rinse|prep|prepare|cook|cooking|ripe|fresh|freshness|quality|label|brand|aisle|price|cheaper|better|best|vs\.?|versus|difference|safe|safety|risky|spoil\w*|rot|rotten|go bad|last|lasts|expire\w*|shelf life)\b/i;
+  /\b(buy|buying|bought|choose|choosing|pick|picking|get|getting|shop|shopping|worth it|which|what kind|what type|look for|tell if|spot|store|storing|keep|keeping|freeze|freezing|thaw|wash|washing|rinse|prep|prepare|cook|cooking|ripe|fresh|freshness|quality|label|brand|aisle|price|cheaper|better|best|vs\.?|versus|difference|safe|safety|risky|spoil\w*|rot|rotten|go bad|last|lasts|expire\w*|shelf life|read|reading|grown|raised|fed)\b/i;
 
 // A grocery SUBJECT beyond the counter's own vocabulary — the packaged half, the store
 // itself, and the general food nouns a shopper uses.
 // NOT "store" / "market" / "supermarket". Those name a PLACE, not a thing to buy, and as
 // sufficient subjects they let "when does the store close" straight through the gate.
 const GROCERY_SUBJECT =
-  /\b(food|pantry|fridge|freezer|shelf|package|packaged|canned|frozen|bread|pasta|cereal|snacks?|crackers?|chips|soda|juice|coffee|tea|chocolate|sugar|salt|oil|vinegar|sauce|condiments?|ingredients?|nutrition label|expiration|expiry|use[- ]?by|sell[- ]?by|best[- ]?before)\b/i;
+  /\b(food|pantry|fridge|freezer|shelf|package|packaged|canned|frozen|bread|pasta|cereal|snacks?|crackers?|chips|soda|juice|coffee|tea|chocolate|sugar|salt|oil|vinegar|sauce|condiments?|ingredients?|nutrition label|antibiotics?|hormones?|natural|hens?|serving sizes?|panel|seals?|certifications?|certified|sticker|meat|grains?|sweeten\w*|box|carton|jar|tin|bag|expiration|expiry|use[- ]?by|sell[- ]?by|best[- ]?before)\b/i;
 
 /**
  * Decide whether a query belongs to the counter at all.
@@ -130,7 +130,7 @@ export function inScope(query) {
   // The length bound in isBareDefinitional is what keeps general knowledge out — "what is
   // the capital of France" is six words and a question with structure, not a package word.
   // A test pins both directions.
-  const hasAct = GROCERY_ACT.test(q) || isBareEitherOr(q) || isBareDefinitional(q);
+  const hasAct = GROCERY_ACT.test(q) || isBareEitherOr(q) || isBareDefinitional(q) || isMeaningQuestion(q);
   if (hasAct && contentWords(q).length > 0) return { ok: true };
 
   // An act with nothing concrete in it — "what should I get", "which one is better" — is
@@ -181,6 +181,30 @@ export function isBareDefinitional(query) {
   return words <= 5 && contentWords(q).length <= 2;
 }
 
+// A QUESTION ABOUT WHAT A PRINTED WORD MEANS. This is the Label terms section's entire
+// job, and the section was largely unreachable by the phrasing people use for it: "does no
+// antibiotics mean anything", "what does lightly sweetened mean", "what does prime choice
+// select mean", "do the seals on packages mean anything". None carries a grocery verb, most
+// name a phrase this file has never heard of, and `isBareDefinitional` misses them because
+// they run past its length bound.
+//
+// Measured over the authored `asked_as` phrasings: this shape accounted for the single
+// largest block of rejections, across nineteen label cards plus egg, beef and oil cards.
+//
+// A subject is still required, and "mean/anything/actually/really" do not count as one —
+// so "does that mean anything" stays out while "does no antibiotics mean anything" comes in.
+// Only the VERB forms count. "what is the meaning of life" is the noun form and it is not a
+// question about a printed word; the first draft of this rule admitted it, and the existing
+// off-topic test caught that the same way it caught the capital of France.
+const MEANING = /\b(means?)\b/i;
+const MEANING_FILLER = /^(mean|means|meaning|anything|actually|really|much)$/i;
+
+export function isMeaningQuestion(query) {
+  const q = str(query);
+  if (!MEANING.test(q)) return false;
+  return contentWords(q).some((w) => !MEANING_FILLER.test(w));
+}
+
 /**
  * Is the whole query a comparison between two named things?
  *
@@ -201,7 +225,10 @@ export function contentWords(query) {
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, ' ')
     .split(/\s+/)
-    .filter((w) => w.length >= 3 && !EMPTY.has(w));
+    // A token carrying a digit counts from two characters: "80/20" and "90/10" split to
+    // two-character tokens and were dropped, so a lean-ratio question had an act and no
+    // subject. Numbers are how people name some products.
+    .filter((w) => (/[0-9]/.test(w) ? w.length >= 2 : w.length >= 3) && !EMPTY.has(w));
 }
 
 /* ═══════════════════════════ What she says instead ═══════════════════════════ */

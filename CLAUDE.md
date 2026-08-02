@@ -207,6 +207,15 @@ equality *is* the positioning.
   and the claim lock and lint sit on the way out. A wrongly-admitted question costs one
   discarded model call. A wrongly-refused one tells a shopper their question does not
   belong, on the surface built to win them.
+- **A LABEL QUESTION IS THE LABEL SECTION'S WHOLE JOB, and scope was refusing it.** "does no
+  antibiotics mean anything", "what does lightly sweetened mean", "do the seals on packages
+  mean anything" — none carries a grocery verb, most name a phrase the vocabulary has never
+  heard, and all were `off_topic`. This was the single largest block of `asked_as` rejections.
+  `isMeaningQuestion` admits them: mean/means as a **VERB**, plus a subject that is not
+  itself filler. The noun form is excluded deliberately — the first draft admitted "what is
+  the meaning of life", and the existing off-topic test caught it, the same way it caught the
+  capital of France. `read` was also never in `GROCERY_ACT`, on a product whose entire job is
+  reading labels; nor was the bare word `meat`.
 - **A definitional question is a counter question, and the length bound is what makes it
   safe.** "what is skyr" was answered "that one is outside the store". Probed over twelve
   `what is X` queries where X is a word the KB *itself teaches*, **seven were rejected** —
@@ -250,14 +259,24 @@ equality *is* the positioning.
   cards are authored with 6 to 8. There was no alias advantage and never had been. Record
   measured numbers, not characterizations; this is the second time a written-down
   conclusion stopped anyone checking.
-- **A NEW CARD NEEDS THE BARE NOUNS AND THE PHRASINGS PEOPLE TYPE, NOT THE ONES ITS TITLE
-  USES — and this has now regenerated a duplicate three times.** `berries_picking` lacked
-  bare `strawberries`; `revive_greens` lacked bare `lettuce`, `limp` and `wilted` and was
-  regenerated as `gen_limp_lettuce_revival` within an hour of being authored, near-verbatim.
-  The pattern: an author names aliases from the card's own vocabulary ("limp lettuce",
-  "wilted lettuce") and a shopper types the words in a different order or one at a time.
-  **Author aliases from the question, then verify by asking it.** A curated card that
-  exists, is correct, and cannot be retrieved costs a generation every time it is asked.
+- **EVERY CARD CARRIES ITS OWN QUESTIONS, IN `asked_as`, AND A TEST ASKS THEM.** Three or
+  more realistic phrasings per card, authored **from the question, never from the card's own
+  vocabulary** — "my lettuce went limp", not "wilted greens revival". They live on the entry
+  rather than in a fixture, because a fixture is a second list that drifts. `counterReach.test.js`
+  runs all of them through the real gate and fails if any lands on another card, on title
+  words alone, or on nothing. **A new card is not done until it can be found.**
+  Run over the corpus for the first time on 2026-08-02 it failed **75 of 243 phrasings across
+  42 of 81 cards** — it was never a new-card problem, only a new-card *symptom*. Four
+  generated duplicates had already been paid for: `gen_picking_a_ripe_cantaloupe`,
+  `gen_picking_good_produce`, `gen_strawberry_freshness_check` and `gen_limp_lettuce_revival`,
+  the last regenerated within an hour of `revive_greens` being authored. The causes, in size
+  order: the scope gate refusing label questions; hub cards outscoring their references;
+  missing bare nouns; and title-only matches the alias gate correctly rejects.
+- **Be SPECIFIC, not numerous, when a hub steals a question.** The matcher scores by phrase
+  length, so a reference out-ranks its hub with one longer alias rather than five short ones —
+  and a short generic alias is actively dangerous: `meat any good` on
+  `judging_meat_at_the_case` matched "is goat meat any good", a species the KB says nothing
+  about. It is `this meat any good` now.
 - **KITCHEN TECHNIQUE IS A CARD CLASS, and `kind='home'` is what carries it.** Kristy knows
   what works at home, not only what to buy. Six technique cards landed 2026-08-02:
   `baking_soda_soak`, `bean_soak_salt`, `dry_brine`, `revive_greens`, `freezing_produce`
@@ -470,7 +489,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (428 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (433 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
