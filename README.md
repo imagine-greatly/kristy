@@ -288,7 +288,9 @@ mechanic and spent a weekly-cadence trial on a casual goal-tap.
 
 ### Billing
 
-**Stripe (web)** is live: **$5/month · $45/year** (annual is the hero: $3.75/month, 25% off).
+**Stripe (web)**: **$5.99/month · $44.99/year** (annual is the hero: $3.75/month, 37% off).
+Prices are authored once in `client/src/lib/pricing.js`; the effective monthly and the
+saving percentage are derived, and `server/lib/pricing.test.js` enforces both.
 
 - Price **ids** are configuration and never reach the client. The server reads
   `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL` from env; the client posts a plan *name*

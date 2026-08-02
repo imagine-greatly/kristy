@@ -185,10 +185,10 @@
 
     <h3>Who delivers the messages</h3>
     <p>
-      SMS delivery is handled on our behalf by <strong>Bird</strong> (formerly
-      MessageBird). We pass Bird your phone number and the verification code so the
-      message can be sent. Bird acts as our service provider and does not use your
-      number for its own purposes.
+      SMS delivery is handled on our behalf by <strong>Twilio</strong>, through our
+      authentication provider Supabase. Your phone number and the verification code are
+      passed to Twilio so the message can be sent. Twilio acts as our service provider and
+      does not use your number for its own purposes.
     </p>
 
     <h2>We do not sell or share your phone number</h2>
@@ -280,7 +280,7 @@
     <div class="tablewrap">
       <table>
         <tr><th>Provider</th><th>What it handles</th></tr>
-        <tr><td><strong>Bird</strong></td><td>SMS delivery of your sign-in codes</td></tr>
+        <tr><td><strong>Twilio</strong></td><td>SMS delivery of your sign-in codes</td></tr>
         <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, phone number, preferences, list, and history</td></tr>
         <tr><td><strong>Vercel</strong></td><td>Web hosting and web analytics</td></tr>
         <tr><td><strong>Railway</strong></td><td>Application server</td></tr>

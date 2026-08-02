@@ -8,8 +8,8 @@ Products (must match **exactly** across App Store Connect and RevenueCat):
 
 | Plan    | Price   | Suggested product ID        | RevenueCat package |
 | ------- | ------- | --------------------------- | ------------------ |
-| Monthly | $5.00   | `kristy_monthly`            | `$rc_monthly`      |
-| Annual  | $45.00  | `kristy_annual`             | `$rc_annual`       |
+| Monthly | $5.99   | `kristy_monthly`            | `$rc_monthly`      |
+| Annual  | $44.99  | `kristy_annual`             | `$rc_annual`       |
 
 Bundle ID: **`com.kristyapproved.app`** (set in `app.config.js`; change there if you prefer another).
 
@@ -42,9 +42,9 @@ Create **two auto-renewable subscriptions** in one **Subscription Group**
 (e.g. group name "Kristy Coaching"):
 
 1. **Monthly** — Reference name "Kristy Monthly", Product ID `kristy_monthly`,
-   Duration 1 month, Price **$5.00**.
+   Duration 1 month, Price **$5.99**.
 2. **Annual** — Reference name "Kristy Annual", Product ID `kristy_annual`,
-   Duration 1 year, Price **$45.00**.
+   Duration 1 year, Price **$44.99**.
 
 For each: add a localized display name + description, and one **subscription
 review screenshot** (Apple requires it; a screenshot of the in-app upgrade sheet

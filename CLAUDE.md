@@ -413,21 +413,24 @@ equality *is* the positioning.
   module-evaluation crash). `VITE_API_URL` is required in a production build.
 
 **Phone sign-in**
-- **Supabase's built-in MessageBird provider is dead — never re-enable it.** It calls
-  Bird's retired originator+body API and gets a 422, which reaches the shopper as "the
-  code didn't send" for a number that was always correct. Delivery is ours, via the
-  **Send SMS Hook** (`POST /api/auth/hooks/send-sms`). Supabase still mints and verifies
-  the OTP; we only carry the digits.
-- **Bird's current API is a TEMPLATE model, not a text model.** `bird.sms.send({ to,
-  template: { name, parameters: { code } } })`. `from` and `category` are derived from the
-  template and are *rejected* if passed. Carriers vet the template, which is the point.
-- **`toE164` is not tidying — without it every send fails.** Supabase stores
-  `auth.users.phone` with no leading `+`, and Bird 422s on bare digits.
-- **The hook's signature is the only gate.** The URL is public and the body is a phone
-  number plus a live code, so an unsigned call is a stranger, not a degraded call: 401,
-  nothing else. Raw body before `express.json()`, exactly like the Stripe webhook.
-- Bird's SDK timeout is cut to 3.5s with **no** SDK-level retry, because a Supabase auth
-  hook has a 5s budget for the whole round trip. Supabase owns the retry.
+- **Twilio, via Supabase's BUILT-IN phone provider. Nothing server-side.** It is configured
+  entirely in the Supabase dashboard (Auth → Providers → Phone → Twilio): Supabase mints
+  the code, Twilio delivers it, and this repo is not in the path. `SignInForm` calls
+  `supabase.auth.signInWithOtp({ phone })`, which is provider-agnostic — it needs no change
+  when the dashboard config lands.
+- **BIRD IS DELETED, and do not bring it back.** A custom Send SMS Hook once routed
+  delivery through Bird. That approach was abandoned in favour of the built-in integration,
+  and the code was left in the repo — `birdSms.js`, `sendSmsHook.js`, `routes/authHooks.js`,
+  the `@messagebird/sdk` dependency, `BIRD_API_KEY`, `SEND_SMS_HOOK_SECRETS`, and a mount
+  in `index.js`. Removed 2026-08-02. It had been describing a plan nobody was following for
+  long enough to mislead a reader into reporting Bird as the live provider — which is
+  exactly what happened. **Dead code that describes an abandoned decision is worse than no
+  code: it is documentation that lies.**
+- **Do not add a delivery hook back without a reason the dashboard cannot meet.** The hook
+  existed only to work around Bird; the built-in provider needs none.
+- **No second auth rail.** Email OTP was proposed as a faster path and rejected: building a
+  parallel sign-in days before the first one clears is two things to maintain and one more
+  surface to get wrong. Supabase has `email: false` and it stays that way.
 
 **Legal pages and 10DLC**
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean
@@ -614,36 +617,38 @@ equality *is* the positioning.
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.
-- 🚨 **SIGN-IN IS DOWN, AND IT NOW BLOCKS REVENUE.** Verified 2026-08-02 against
-  production: `POST /api/auth/hooks/send-sms` returns **503 "SMS provider is not
-  configured"**, so `BIRD_API_KEY` and/or `SEND_SMS_HOOK_SECRETS` are absent from the
-  Railway env. Supabase has `phone: true` and **`email: false`** — there is no email
-  fallback at the provider OR in the UI (`SignInForm` is `type="tel"` only). So nobody can
-  create an account, and therefore nobody can pay.
-  **The provider wired in code is BIRD, not Twilio** — `@messagebird/sdk` is a real
-  dependency, `birdSms.js` is the transport, and the live `/privacy` page names Bird as the
-  SMS processor. Twilio appears only as error-string matching in `Auth.jsx` (Supabase's
-  BUILT-IN provider errors mention Twilio) and in one line of PRIVACY_AND_TERMS_DRAFT.md
-  that says outright "Twilio is not a dependency anywhere in the repo". If the decision was
-  to move to Twilio, **that decision is not in the code**.
-  **Nothing in this repo records a 10DLC submission** anywhere — every document that
-  mentions it calls it outstanding. External dashboard state cannot be verified from here.
-  **Shortest path to a working sign-in: turn on EMAIL OTP.** It has no carrier gate at all.
-  Supabase `email` is currently false; enabling it plus an email field on `SignInForm` and
-  an SMTP sender is days of work against a multi-week 10DLC queue. Phone can follow.
+- ⚠️ **Phone sign-in is not live yet, and it gates revenue** — no account, no purchase.
+  **10DLC brand + campaign are SUBMITTED and in verification at Twilio** (as of 2026-08-02);
+  nothing else is expected to block it. Remaining, all in the Supabase dashboard: Auth →
+  Providers → Phone → enable, select **Twilio**, and fill **Account SID**, **Auth Token**
+  and **Message Service SID** from the Twilio console. **No server work, no env vars, no
+  redeploy** — the app is already correct for this and needs nothing.
 - **Known-dead, left in place**: `/api/photo`, `/api/weight`, the weekly-summary
   pipeline, `mealResolver`, `store.js setMacroTracking`; client `lib/logging.js
   sendPhoto`, `api.js sendWeightLog`, several `data.js` readers, `lib/dayBoundary.js`.
   Unrouted since macro tracking was removed; DB tables untouched. Delete in a dedicated
   pass.
-- **Pricing is $5/mo and $45/yr**, annual as the hero. The annual per-month figure is
-  the line that goes wrong: $45 ÷ 12 = **$3.75/month**, and against $5 × 12 = $60 that
-  is **25%** off. The old note read "About $5/month, billed yearly" — true against
-  $59.99, and it would have advertised annual as identical to monthly the moment
-  monthly became $5. Recompute both lines whenever either price moves. Sources:
-  `client/src/lib/pricing.js`, `mobile/src/lib/pricing.ts`. **Stripe Price objects and
-  `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL` must be updated in the dashboard and
-  the server env — they are not in this repo.**
+- **TWO PRICE NUMBERS ARE AUTHORED. THE EFFECTIVE MONTHLY AND THE SAVING ARE DERIVED.**
+  `MONTHLY_CENTS` and `ANNUAL_CENTS` in `client/src/lib/pricing.js` (mirrored in
+  `mobile/src/lib/pricing.ts`) are the only places a price is written down. Everything
+  else — `$3.75/month, billed yearly`, `Save 37%` — is arithmetic.
+  **This was hand-written twice and wrong twice.** At $7.99/$59.99 the note read "About
+  $5/month", correct then; when monthly moved to $5 that line advertised annual as
+  IDENTICAL to monthly. Rewritten to "$3.75/month … Save 25%", right for $5/$45 and wrong
+  the moment the real prices ($5.99/$44.99) landed — the true saving is **37%**, because
+  the baseline is $5.99 × 12 = $71.88, not $60. A wrong percentage on a pricing page is
+  the one copy error that costs trust immediately.
+  The saving is **FLOORED, never rounded**: overstating a saving is the error that
+  matters, understating by a fraction of a point costs nothing.
+  `server/lib/pricing.test.js` asserts the rendered strings against the arithmetic AND
+  fails if any price, saving or per-month figure is hardcoded anywhere else — it caught
+  the mobile module and a boot log the same day it was written.
+- **A STALE Stripe price id is the one billing failure nothing can detect.** Absent is safe
+  and loud (`missingStripeConfig()` names the vars, billing 503s, and there is no fallback
+  anywhere in `lib/stripe.js`). Stale is silent: the id resolves to a real live price with
+  the OLD amount and checkout charges it against a page showing the new one. **Recreate the
+  Stripe Price objects and update `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL` whenever
+  the displayed price changes** — they are not in this repo and no test can reach them.
 
 ---
 

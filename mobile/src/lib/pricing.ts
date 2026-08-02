@@ -1,14 +1,33 @@
-// SINGLE SOURCE for launch pricing DISPLAY (mobile) — the fallback strings shown
-// until RevenueCat offerings load. Once offerings load, the store's priceString
-// is the source of truth (Apple prices are tier-based and region-localized), so
-// these are only the pre-load / IAP-unavailable fallback.
+// SINGLE SOURCE for launch pricing DISPLAY (mobile) — the fallback strings shown until
+// RevenueCat offerings load. Once offerings load, the store's priceString is the source of
+// truth (Apple prices are tier-based and region-localized), so these are only the pre-load
+// / IAP-unavailable fallback.
 //
-// Keep the numbers in sync with client/src/lib/pricing.js. Nothing else in the
-// mobile app should hardcode a price literal — import from here.
+// ═══ TWO NUMBERS ARE AUTHORED. EVERYTHING ELSE IS DERIVED. ═══
 //
-// Launch math: $45/yr ÷ 12 = $3.75/mo exactly; vs $5 × 12 = $60 that is $15, or 25%
-// off. Recompute BOTH lines whenever either price moves — the previous note read
-// "About $5/month, billed yearly", which became a lie the moment monthly hit $5.
+// Same rule as client/src/lib/pricing.js, and keep the two numbers in sync with it. The
+// effective monthly and the saving percentage are ARITHMETIC, not copy, and they were
+// hand-written twice and wrong twice — most recently "Save 25%" against $5.99/$44.99,
+// where the real saving is 37%. A wrong percentage on a pricing screen is the one copy
+// error that costs trust immediately, so it is no longer possible to write one down.
+//
+// `server/lib/pricing.test.js` fails if any price, saving or per-month figure is hardcoded
+// outside the two pricing modules — that test is what caught this file.
+//
+// Integer cents, because 5.99 * 12 in floating point is 71.88000000000001.
+const MONTHLY_CENTS = 599;
+const ANNUAL_CENTS = 4499;
+
+const money = (c: number) => `$${(c / 100).toFixed(2)}`;
+
+export const ANNUALIZED_MONTHLY_CENTS = MONTHLY_CENTS * 12;
+export const EFFECTIVE_MONTHLY_CENTS = Math.round(ANNUAL_CENTS / 12);
+
+// FLOORED, never rounded — understating by a fraction of a point costs nothing, and
+// overstating a saving is the error that matters.
+export const SAVING_PERCENT = Math.floor(
+  (1 - ANNUAL_CENTS / ANNUALIZED_MONTHLY_CENTS) * 100
+);
 
 export type PlanId = 'annual' | 'monthly';
 
@@ -21,16 +40,16 @@ export const PRICING: Record<PlanId, {
 }> = {
   annual: {
     label: 'Annual',
-    price: '$45',
+    price: money(ANNUAL_CENTS),
     per: '/year',
-    note: '$3.75/month, billed yearly',
-    badge: 'Save 25%',
+    note: `${money(EFFECTIVE_MONTHLY_CENTS)}/month, billed yearly`,
+    badge: `Save ${SAVING_PERCENT}%`,
   },
   monthly: {
     label: 'Monthly',
-    price: '$5',
+    price: money(MONTHLY_CENTS),
     per: '/month',
-    note: 'Billed monthly, cancel anytime',
+    note: 'Cancel anytime',
     badge: null,
   },
 };

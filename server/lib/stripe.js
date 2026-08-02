@@ -41,6 +41,31 @@ export function missingStripeConfig() {
   return missing;
 }
 
+// LOUD AT BOOT, not only at the first checkout attempt.
+//
+// The price ids are the one piece of billing config that can be WRONG rather than absent:
+// a stale id points at a real, live Stripe price with the old amount, and checkout would
+// happily charge $59.99 against a page reading $44.99. Absent is safe and loud; stale is
+// silent. There is deliberately no fallback anywhere in this module — `priceIdForPlan`
+// returns '' and the route 503s by name — so the only way to charge the wrong amount is a
+// price id that exists and is out of date. This log is the reminder to re-check them
+// whenever the displayed price changes.
+{
+  const missing = missingStripeConfig();
+  if (missing.length) {
+    console.error(
+      `[kristy] Stripe is NOT configured — missing: ${missing.join(', ')}. `
+      + 'Billing endpoints will return 503. No price is assumed and nothing falls back.'
+    );
+  } else {
+    console.log(
+      '[kristy] Stripe configured. VERIFY the price ids still match the amounts in '
+      + 'client/src/lib/pricing.js — an id that is merely STALE charges the old amount '
+      + 'silently, and nothing here can detect that.'
+    );
+  }
+}
+
 /** First allowed client origin — where Checkout/portal redirect back to. */
 export function clientOrigin() {
   return (process.env.CLIENT_ORIGIN || 'http://localhost:5173')

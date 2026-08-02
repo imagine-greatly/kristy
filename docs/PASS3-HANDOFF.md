@@ -89,7 +89,9 @@ Do not reopen these without reading the reasoning.
 - **The Counter is fully usable signed out**, verified with real pointer clicks. The gate
   mounts only in `GuestApp` and only when an action calls `invite()` or `save()`; browsing,
   opening a card, expanding it and asking never raise it. This matters because SMS is still
-  down on 10DLC, so a signed-out visitor could not clear a gate even if one appeared.
+  down pending 10DLC verification at Twilio, so a signed-out visitor could not clear a gate
+  even if one appeared. Provider is Twilio via Supabase's built-in phone integration; the
+  old Bird hook was deleted 2026-08-02.
 - **`query_seed` keeps the shopper's wording**, scrubbed of identity but not normalized.
   It is the Pass 5 authoring signal; `normalizeQuestion` would flatten the part worth
   reading. Preserving a sentence is not the same as preserving a person.

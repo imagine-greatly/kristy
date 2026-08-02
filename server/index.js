@@ -23,7 +23,6 @@ import subscriptionRoute from './routes/subscription.js';
 import billingRoute from './routes/billing.js';
 import stripeWebhookRoute from './routes/stripe.js';
 import revenueCatWebhookRoute from './routes/revenuecat.js';
-import authHooksRoute from './routes/authHooks.js';
 import pushRoute from './routes/push.js';
 import internalRoute from './routes/internal.js';
 import { startCron } from './cron.js';
@@ -42,10 +41,12 @@ app.use(cors({ origin: origins }));
 // discards) the raw payload. Everything below uses the JSON parser as normal.
 app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }), stripeWebhookRoute);
 
-// Supabase Auth hooks, same rule and for the same reason: the Standard Webhooks
-// signature covers the exact bytes Supabase sent, so this must see the raw body
-// too. Public URL, but every call is signature-gated — see routes/authHooks.js.
-app.use('/api/auth/hooks', express.raw({ type: 'application/json' }), authHooksRoute);
+// NO AUTH HOOK. Phone sign-in runs on Supabase's BUILT-IN Twilio provider, configured in
+// the Supabase dashboard — Supabase mints the code AND delivers it, so nothing about SMS
+// touches this server. The custom Send SMS Hook that used to mount here existed to route
+// delivery through Bird, and Bird is gone: that path was abandoned in favour of the
+// built-in integration and the code sat here unremoved, describing a plan nobody was
+// following. Do not add a delivery hook back without a reason the dashboard cannot meet.
 
 app.use(express.json({ limit: '1mb' }));
 

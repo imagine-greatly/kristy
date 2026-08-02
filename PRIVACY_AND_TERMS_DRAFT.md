@@ -21,7 +21,7 @@ anyone qualified to give legal advice.
 
 | Brief said | Code actually does |
 | --- | --- |
-| SMS OTP via **Twilio** | **Bird** (formerly MessageBird), via a custom Supabase Send-SMS hook. Twilio is not a dependency anywhere in the repo. Supabase mints and verifies the code; Bird only carries the digits. |
+| SMS OTP via **Twilio** | **Twilio**, via Supabase's BUILT-IN phone provider — configured in the Supabase dashboard, no custom hook and nothing server-side. A Bird integration existed and was abandoned; its code was deleted 2026-08-02. |
 | (not mentioned) | **Vercel Web Analytics** is installed and live in the web client (`@vercel/analytics`), sending pageviews plus ~14 custom product events. It is a data practice that must be disclosed. |
 | (not mentioned) | **Open Food Facts** — every barcode scanned is sent to a public third-party API (`world.openfoodfacts.org`). That is a disclosure to an independent third party, not a processor acting on your instructions. |
 
@@ -75,8 +75,9 @@ We use phone-number sign-in with a one-time code (OTP). Your number is stored by
 authentication provider, Supabase, and is used to identify your account and to send you
 sign-in codes.
 
-The code is generated and verified by Supabase. Delivery is handled by **Bird** (formerly
-MessageBird): we pass Bird your phone number and the code so the message can be sent. We
+The code is generated and verified by Supabase. Delivery is handled by **Twilio** through
+Supabase's built-in provider: your phone number and the code are passed to Twilio so the
+message can be sent. We
 do not use your number for marketing.
 
 > ⚖️ **FLAG 2 — SMS consent and A2P compliance.** US SMS is regulated (TCPA, carrier 10DLC
@@ -86,7 +87,7 @@ do not use your number for marketing.
 > transactional OTP traffic. `CLAUDE.md` records that 10DLC registration was still
 > outstanding as of this draft.
 
-> ⚖️ **FLAG 3 — Bird as a sub-processor.** Confirm a signed DPA with Bird, its data
+> ⚖️ **FLAG 3 — Twilio as a sub-processor.** Confirm a signed DPA with Twilio, its data
 > location, and its retention period for message content (the OTP code is a live
 > credential in transit).
 
@@ -310,7 +311,7 @@ it on our behalf, under contract:
 | **Railway** | Application server — processes requests in transit | `[[REGION]]` |
 | **Vercel** | Web hosting and web analytics | `[[REGION]]` |
 | **Anthropic** | AI processing of your questions, coaching text, and label photos | `[[REGION]]` |
-| **Bird** | SMS delivery of sign-in codes | `[[REGION]]` |
+| **Twilio** | SMS delivery of sign-in codes | `[[REGION]]` |
 | **Stripe** | Payment processing (web) | `[[REGION]]` |
 | **Apple / RevenueCat** | In-app purchases and subscription status (iOS) | `[[REGION]]` |
 | **Expo** | Push notification delivery (mobile) | `[[REGION]]` |
@@ -479,7 +480,7 @@ it tells you is medical advice.**
 The Service has a free tier. Paid membership unlocks personalized notes, focus-aware
 carts, haul reads, and conversational cart edits.
 
-- **Pricing:** `[[$5]]`/month or `[[$45]]`/year.
+- **Pricing:** `[[$5.99]]`/month or `[[$44.99]]`/year.
 - **Free trial:** `[[7]]` days, started explicitly by you.
 - **Renewal:** subscriptions renew automatically until cancelled.
 - **Cancellation:** cancel any time; access continues to the end of the paid period.
@@ -590,7 +591,7 @@ These need engineering or process, not policy text:
 | Monitored privacy contact address and DSR workflow | Not defined | 21 |
 | Incident-response plan | Not defined | 23 |
 | Open Food Facts ODbL attribution | Not present | 28 |
-| 10DLC brand/campaign registration | Outstanding per `CLAUDE.md` | 2 |
+| 10DLC brand/campaign registration | **Submitted, in verification at Twilio** (2026-08-02) | 2 |
 
 ## C. What is already in good shape
 
