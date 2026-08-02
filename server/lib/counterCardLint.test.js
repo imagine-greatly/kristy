@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
-import { projectEntry, parseReviewTable, RETIRED } from './counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from './counterCards.js';
 import { PERIMETER_SECTIONS } from './perimeter.js';
 import {
   lintCard,
@@ -334,6 +334,32 @@ test('an exclusivity claim beside an enumeration is reported, never gated', () =
   assert.ok(!lintCard(card).some((v) => v.code.startsWith('CONTRADICTION')));
 });
 
+test('the two retirement lists cannot be confused for each other', () => {
+  // The migration deletes RETIRED with `.eq('source','curated')` and RETIRED_GENERATED
+  // with `.eq('source','generated')`, so that neither kind can ever sweep the other. The
+  // cost of that safety is that a slug in the WRONG list deletes nothing at all: it is
+  // reported as retired, the row stays live, and the card keeps answering shoppers. Four
+  // generated cards sat in RETIRED for exactly one migration run this way, including one
+  // whose verdict contradicted a curated card outright.
+  for (const slug of RETIRED) {
+    assert.ok(
+      !slug.startsWith('gen_'),
+      `${slug} is a generated slug in RETIRED — the curated-scoped delete will silently skip it. Use RETIRED_GENERATED.`
+    );
+  }
+  for (const slug of RETIRED_GENERATED) {
+    assert.ok(
+      slug.startsWith('gen_'),
+      `${slug} is in RETIRED_GENERATED but is not a generated slug — the generated-scoped delete will silently skip it.`
+    );
+    // A generated card has no KB entry by definition, so this list may never name one.
+    assert.ok(
+      !perimeterKb.entries.some((e) => e.id === slug),
+      `${slug} is declared RETIRED_GENERATED but is an authored KB entry`
+    );
+  }
+});
+
 /* ═══════════════════════════ The whole curated corpus ═══════════════════════════ */
 
 test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
@@ -365,7 +391,9 @@ test('a retired slug is gone from the KB, and its aliases were rehomed', () => {
 });
 
 test('all curated cards clear the per-card bar', () => {
-  assert.equal(CARDS.length, 79);
+  // 74 after the 2026-08-02 overlap sweep folded six duplicate-verdict cards and
+  // demoted `clabber`, and the A2 card landed. See RETIRED in counterCards.js.
+  assert.equal(CARDS.length, 74);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

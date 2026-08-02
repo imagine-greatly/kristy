@@ -126,12 +126,12 @@ const PICKS = {
     },
   },
   sardines: {
-    name: 'Canned wild sardines', category: 'Protein', perimeterId: 'canned_fish_mercury',
+    name: 'Canned wild sardines', category: 'Protein', perimeterId: 'mercury_by_fish',
     why: 'Small fish, low on the chain, and you eat the whole thing — real omega-3s.',
     alt: 'Or canned salmon with the bones in.',
   },
   canned_fish: {
-    name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'canned_fish_mercury',
+    name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'mercury_by_fish',
     why: 'Skipjack (the “light” tin) sits lower in mercury than albacore.',
     alt: 'Or canned salmon — bones in, more calcium.',
   },
@@ -294,7 +294,7 @@ const PICKS = {
     why: 'No soaking, done in twenty minutes, and they stretch a meal.',
   },
   evoo: {
-    name: 'Extra-virgin olive oil — dark bottle', category: 'Staples', perimeterId: 'olive_oil_buying',
+    name: 'Extra-virgin olive oil — dark bottle', category: 'Staples', perimeterId: 'olive_oil_grades',
     why: 'Look for a HARVEST date, not just “best by” — dark glass keeps it from going rancid.',
   },
   almonds: {

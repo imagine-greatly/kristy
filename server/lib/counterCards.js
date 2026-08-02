@@ -84,6 +84,70 @@ export const RETIRED = [
   // `label_grass_fed_term` already carried the same content for the Label terms section.
   // Three cards on one label was two too many. Its aliases moved onto the beef card.
   'grassfed_vs_grassfinished',
+
+  /* ── The 2026-08-02 overlap sweep. ──
+     The test applied throughout: two things learned, or one thing twice? Overlapping
+     SUBJECT is fine and the corpus is full of legitimate hub-and-reference pairs. These
+     six were one VERDICT stated twice, so a shopper who read both learned nothing the
+     second time. Every alias below moved onto its absorber before the delete. */
+
+  // → cheese_real_vs_processed. One decision (buy the block) wearing two applications,
+  // slice it and grate it. The shred card's additive list is the sharper observable and
+  // became the survivor's do line.
+  'pre_shredded_cheese',
+  // → egg_shell_color. One lesson (a visible egg attribute is not a signal) applied to two
+  // attributes. The shell card carried the buying action, so it absorbed the yolk card.
+  'egg_yolk_color',
+  // → olive_oil_grades. "Extra virgin, a harvest date, one country" and "Recent harvest
+  // date, dark bottle, one country of origin" are the same verdict twice. The grades card
+  // held the ‘pure’/‘light’/pomace decode, so it survived and took the bare `olive oil`
+  // alias — which had been sitting on the card that died, making this fold coverage-
+  // critical rather than cosmetic.
+  'olive_oil_buying',
+  // → mercury_by_fish. Identical `why` on both: mercury tracks size and lifespan. The
+  // by-fish card holds the full three-tier species list. The can-specific content
+  // (‘light’ vs ‘white’) went to canned_fish_choosing, which is already the can card.
+  'canned_fish_mercury',
+  // → label_cage_free. Both said "this barn label undersells, look for certified
+  // pasture-raised". Now one card covering both rungs of the same ladder.
+  'label_free_range',
+  // → raw_milk, as a look_for. Not a merge: the subject was too narrow to be a card at
+  // all. Its do line was "buy an extra bottle of the raw milk and let one sit out", which
+  // is an instruction about another card's product.
+  'clabber',
+
+];
+
+/* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */
+
+// A SECOND LIST, BECAUSE THE DELETE IS SOURCE-SCOPED AND MUST STAY THAT WAY.
+//
+// The migration deletes RETIRED rows with `.eq('source', 'curated')`, so that a slug
+// retired from the KB can never sweep away a generated card that happens to collide with
+// it. That protection is correct and worth keeping — which means RETIRED is structurally
+// incapable of removing a generated row. Putting a `gen_` slug in it looks like it works,
+// reports "retired 11 slugs", deletes nothing, and leaves the card live and answering.
+// That is exactly what happened on the first run of the 2026-08-02 sweep.
+//
+// So generated retirement gets its own list and its own delete, scoped to
+// `source = 'generated'`. Each list can only ever remove its own kind.
+//
+// Three of the four cards the generator has written were duplicates of curated content the
+// retrieval gate failed to find — see CONFIDENT in counterAskPipeline.js. That gate is now
+// `> 2`, which is the fix; these are the debt it already ran up.
+export const RETIRED_GENERATED = [
+  // Contradicted the curated `a2_vs_a1_milk` outright ("A2 is a protein-type label, not a
+  // whole-food upgrade for yogurt"). It was echoing counterGenerate's own worked FAIL/PASS
+  // example, which is why that example was rewritten onto `label_natural` in the same
+  // commit — deleting the row alone would have left the anchor that regenerates it.
+  'gen_a1_vs_a2_yogurt',
+  // → produce_picking_ripeness. "Judge the fruit itself, not the origin sticker" against
+  // the curated "Judge the piece, not the sticker". Near-verbatim.
+  'gen_picking_good_produce',
+  // → produce_ripeness_by_item, which already carried both of these as authored tips and
+  // now has the aliases to match them. The cantaloupe card had been served three times.
+  'gen_picking_a_ripe_cantaloupe',
+  'gen_picking_a_ripe_pineapple',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */

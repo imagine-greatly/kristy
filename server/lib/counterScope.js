@@ -101,7 +101,19 @@ export function inScope(query) {
   // any concrete noun is enough, and the real filters are the ones that can afford to be
   // strict: the deny list above, the generator's own "insufficient" escape, and the claim
   // lock and lint on the way out.
-  const hasAct = GROCERY_ACT.test(q);
+  // A BARE EITHER/OR IS A QUESTION, and this gate used to be the last place that was not
+  // true. "wild or farmed" carries no question word, no question mark and no grocery verb —
+  // the shopper is standing in front of two things and naming them, which is the most
+  // compressed way anyone asks this. It fell all the way through to `off_topic` and got
+  // "That one is outside the store", while the Counter's own ask placeholder reads "Wild or
+  // farmed salmon?". Trimming one word off the app's own suggestion told the shopper their
+  // question did not belong.
+  //
+  // COUNTER_INTENT has carried this shape since the chat-routing fix, but that is a
+  // different function on a different path and it never reached here. Note the "vs" form
+  // already worked — GROCERY_ACT lists `vs` and `versus` — so the defect was only ever the
+  // plain "or", which is the form a person actually types.
+  const hasAct = GROCERY_ACT.test(q) || isBareEitherOr(q);
   if (hasAct && contentWords(q).length > 0) return { ok: true };
 
   // An act with nothing concrete in it — "what should I get", "which one is better" — is
@@ -126,6 +138,21 @@ const EMPTY = new Set(
     + 'those to try type up use want was way we what when where which who why will with '
     + 'worth would you your').split(' ')
 );
+
+/**
+ * Is the whole query a comparison between two named things?
+ *
+ * The discipline is that BOTH sides must survive contentWords. That is what separates
+ * "wild or farmed" from "when does the store close or open" — the second one's clauses are
+ * store-logistics words that contentWords already strips to nothing, so it is not rescued.
+ * Exactly one split point is required too: a list ("milk or eggs or bread") is a shopping
+ * list, not a question about which to buy.
+ */
+export function isBareEitherOr(query) {
+  const parts = String(query || '').split(/\b(?:or|vs\.?|versus)\b/i);
+  if (parts.length !== 2) return false;
+  return parts.every((p) => contentWords(p).length > 0);
+}
 
 export function contentWords(query) {
   return String(query || '')

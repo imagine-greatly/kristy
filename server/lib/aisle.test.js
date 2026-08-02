@@ -45,9 +45,18 @@ test('the five shopper-facing sections exist and cover the KB', () => {
 test('every shopper-facing counter carries real depth, not a token entry', () => {
   // The depth bar: each counter with no barcode should answer as much as a scan does.
   // A section that drops below this is thin enough that a shopper would notice.
+  // THE FLOOR IS 8, AND THE COUNT IS A PROXY THAT NEEDS WATCHING. It stands in for "this
+  // section answers as much as a scan does", which is a claim about CONTENT. Removing a
+  // duplicate lowers the count without lowering the content: the 2026-08-02 sweep folded
+  // `canned_fish_mercury` into `mercury_by_fish` — the two carried an identical `why`
+  // ("mercury tracks size and lifespan") and the survivor holds the full three-tier
+  // species list plus the can-specific wording — and seafood went 9 → 8 having lost
+  // nothing a shopper could read. Lowering the floor is therefore correct here and would
+  // NOT be correct for a section that shrank by deletion. Seafood is now the thinnest
+  // section and the next authoring slot belongs to it.
   for (const id of ['meat', 'seafood', 'produce', 'eggs_dairy', 'bulk_pantry']) {
     const s = sectionById(id);
-    assert.ok(s.count >= 9, `${id} has only ${s.count} topics`);
+    assert.ok(s.count >= 8, `${id} has only ${s.count} topics`);
   }
   assert.ok(sectionById('label_terms').count >= 15, 'label truth is the thread through all of it');
 });

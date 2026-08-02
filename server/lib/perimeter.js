@@ -215,7 +215,7 @@ export const PERIMETER_SECTIONS = [
       'label_ingredient_order',
     ],
     shortcuts: [
-      { q: 'How do I buy real olive oil?', id: 'olive_oil_buying' },
+      { q: 'How do I buy real olive oil?', id: 'olive_oil_grades' },
       { q: 'Which oats?', id: 'oats_steelcut_rolled_instant' },
       { q: 'Is bulk worth it?', id: 'bulk_bins_buying' },
     ],

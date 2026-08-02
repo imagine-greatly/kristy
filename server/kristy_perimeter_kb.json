@@ -20,7 +20,9 @@
         "atlantic salmon",
         "sockeye",
         "king salmon",
-        "coho"
+        "coho",
+        "wild or farmed",
+        "wild vs farmed"
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
@@ -57,49 +59,6 @@
       ],
       "tier_note": "The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.",
       "eyebrow_short": "Wild or farmed"
-    },
-    {
-      "id": "canned_fish_mercury",
-      "title": "Canned fish and mercury",
-      "aliases": [
-        "canned fish",
-        "canned tuna",
-        "tuna",
-        "sardines",
-        "canned salmon",
-        "mercury",
-        "light tuna",
-        "albacore"
-      ],
-      "category": "seafood",
-      "question": "Which canned fish are lower in mercury?",
-      "decision": "Go small. The short-lived fish are the ones to stock.",
-      "why": "Mercury tracks size and lifespan. Small fish sit at the bottom of the chain.",
-      "short_answer": "Sardines, canned salmon, and canned light tuna (skipjack) are among the lower-mercury choices; albacore (‘white’) tuna and larger predator fish run higher. That part is well documented. Where mercury matters medically, that is a conversation for a doctor.",
-      "detail": "Mercury accumulates up the food chain, so smaller, shorter-lived fish carry less. The FDA/EPA publish a ‘best/good/avoid’ list worth knowing. Sardines and canned salmon are small-fish standouts and happen to be cheap protein. This is information about the fish. It is not medical advice, and it is not a directive.",
-      "evidence_tier": "established",
-      "sources": [
-        "FDA/EPA ‘Advice About Eating Fish’",
-        "FDA mercury-in-commercial-fish testing"
-      ],
-      "kristy_take": "Sardines are one of the best-value whole foods in the store — small fish, real omega-3s, and you eat the whole thing.",
-      "cart_pick": "Canned wild sardines",
-      "buying_tips": [
-        "Skipjack (labeled ‘light’) is lower-mercury than albacore (‘white’).",
-        "Sardines and canned salmon (with bones) are cheap, shelf-stable, and low on the chain.",
-        "In olive oil or water over soybean/other seed oils, if you’re avoiding those."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Light tuna",
-          "meaning": "Usually skipjack — smaller fish, lower mercury."
-        },
-        {
-          "term": "White / Albacore",
-          "meaning": "A larger tuna — more mercury than light."
-        }
-      ],
-      "tier_note": "Mercury rising with size and lifespan is uncontested, and every advisory is built on it."
     },
     {
       "id": "shrimp_imported_vs_domestic",
@@ -328,7 +287,12 @@
         "soy free eggs",
         "corn free eggs",
         "hen feed",
-        "what hens eat"
+        "what hens eat",
+        "which eggs",
+        "what eggs",
+        "best eggs",
+        "eggs to buy",
+        "which egg carton"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
@@ -375,35 +339,6 @@
       ],
       "tier_note": "What each carton word is allowed to mean is defined. Ranking feed above room is the standard.",
       "eyebrow_short": "Egg labels"
-    },
-    {
-      "id": "egg_yolk_color",
-      "title": "Egg yolk color myths",
-      "aliases": [
-        "yolk color",
-        "dark yolk",
-        "orange yolk",
-        "egg quality"
-      ],
-      "category": "poultry_eggs",
-      "question": "Does a darker yolk mean a healthier egg?",
-      "decision": "Ignore the yolk color. Nobody can read a diet off it.",
-      "why": "Color is pigment in the feed. A varied diet and an additive look identical.",
-      "short_answer": "Yolk color comes from pigment in the feed and from nothing else. A varied diet with real greens and insects deepens it. So does marigold extract or paprika added to the ration for exactly that effect, and the two are indistinguishable by eye. That is precisely why the printed feed words are the tell and the color is not.",
-      "detail": "Producers can and do dial yolk color with feed, and the supplements that do it are sold for the purpose. Pasture and varied diets tend to produce deeper color too, which is what makes the signal useless: the same shade arrives by two completely different routes and the carton never says which one. Freshness is a different question and it does show, in a yolk that stands up in the pan and a white that holds together.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA egg-quality references",
-        "poultry-science feed-pigment literature"
-      ],
-      "kristy_take": "Deep orange is either a good diet or a pigment. The yolk will not tell you which.",
-      "buying_tips": [
-        "A varied diet deepens yolk color. So does an additive bought to do it.",
-        "Freshness shows in the pan: a yolk that stands up, a white that holds together.",
-        "The yolk photo on the carton is artwork, not a sample."
-      ],
-      "labels_decoded": [],
-      "tier_note": "That feed and additives drive yolk color is well established, and it is why color reads nothing."
     },
     {
       "id": "air_chilled_chicken",
@@ -754,45 +689,110 @@
       "eyebrow_short": "Whole vs. reduced"
     },
     {
+      "id": "a2_vs_a1_milk",
+      "title": "A2 vs. A1 milk",
+      "aliases": [
+        "a2 milk",
+        "a2",
+        "a1 milk",
+        "a1",
+        "a2 vs a1",
+        "beta casein",
+        "bcm 7",
+        "jersey milk",
+        "guernsey",
+        "a2 yogurt",
+        "a1 yogurt",
+        "a2 protein",
+        "milk protein type"
+      ],
+      "category": "dairy",
+      "question": "Is A2 milk worth buying over regular milk?",
+      "decision": "A2 milk, and the difference is the breed, not the brand.",
+      "why": "One amino acid apart, and only A1 releases the BCM-7 peptide. Sourcing still outranks it.",
+      "short_answer": "Worth choosing when the rest of the carton is equal. Jerseys, Guernseys and most heritage and older European breeds carry A2; the high-output Holstein herds that fill supermarket cartons skew A1. Kristy prefers the older genetics. It sits below the herd and the processing, not above them.",
+      "detail": "The genetics are not in question: the A1 variant arose as a mutation in European herds and spread through the breeds selected hardest for volume, and the BCM-7 release is a straightforward consequence of where the amino acid sits in the chain. What is thin is everything downstream of that. The human studies on how A2 milk sits with people are small, inconsistent, and several were funded by the a2 Milk Company, which owns the branding and licenses the seal. So the honest position is a preference for the older genetics rather than a finding about what they do. A2 is also a marketing program, not only a breed trait — A2 milk from a confinement dairy is still a confinement dairy, and the seal says nothing about how the herd lived or how the milk was handled.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "characterization of the A1 and A2 beta-casein variants and BCM-7 release in digestion",
+        "human digestive-comfort trials on A2 milk (small, inconsistent, several industry-funded)"
+      ],
+      "kristy_take": "The older breeds, and one amino acid is the whole of it. Worth choosing. Not worth choosing first.",
+      "cart_pick": "A2 whole milk",
+      "buying_tips": [
+        "The ladder: raw from a farm you can name, then low-temp pasteurized and cream-top, then A2, then the carton in front of you.",
+        "Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal.",
+        "People who struggle with regular milk often do better on A2. Worth trying for a week.",
+        "A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change."
+      ],
+      "watch_out": [
+        "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
+        "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived."
+      ],
+      "labels_decoded": [
+        {
+          "term": "A2",
+          "meaning": "The herd was tested and carries only the A2 beta-casein variant. A breed-genetics claim, not a welfare or processing one."
+        }
+      ],
+      "tier_note": "The breed genetics and the peptide are established. That A2 is the better carton is Kristy’s preference for the older herds, not a finding.",
+      "eyebrow_short": "A2 vs. A1"
+    },
+    {
       "id": "cheese_real_vs_processed",
-      "title": "Real cheese vs. processed cheese",
+      "title": "Real cheese, and why the block beats the bag",
       "aliases": [
         "cheese",
         "processed cheese",
         "american cheese",
         "cheese product",
         "real cheese",
-        "cheese slices"
+        "cheese slices",
+        "pre shredded cheese",
+        "shredded cheese",
+        "cellulose in cheese",
+        "anti caking",
+        "block cheese",
+        "parmesan",
+        "parmigiano reggiano",
+        "grated cheese",
+        "natamycin"
       ],
       "category": "dairy",
-      "question": "How do I tell real cheese from processed?",
-      "decision": "Buy a block of real cheese and slice it yourself.",
-      "why": "Real cheese is milk, cultures, salt, enzymes. ‘Cheese product’ means emulsifiers blended in.",
-      "short_answer": "Read the name and the list. Real cheese is basically milk, cultures, salt, and enzymes. ‘Pasteurized process cheese’, ‘cheese product’, or ‘cheese food’ means emulsifiers and added ingredients blended in. Both are edible. Real cheese is the whole-food version.",
-      "detail": "The legal name tells you a lot: ‘cheese’ vs ‘pasteurized process cheese’ vs ‘cheese product’ is a descending ladder of how much is actually cheese. A short ingredient list (milk, salt, cultures, rennet/enzymes) is the tell for the real thing. This is label literacy, not a health scare.",
+      "question": "Should I buy block cheese, slices, or pre-shredded?",
+      "decision": "Buy the block. Slice it or grate it yourself.",
+      "why": "Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.",
+      "short_answer": "Read the name and the list. Real cheese is basically milk, cultures, salt, and enzymes. ‘Pasteurized process cheese’, ‘cheese product’, or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese carrying an anti-caking coating — usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
+      "detail": "Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA standards of identity for cheese",
         "FDA process-cheese labeling rules"
       ],
-      "kristy_take": "Buy a block of real cheese and slice it yourself — cheaper per pound than the individually-wrapped ‘product’, and it’s actually cheese.",
-      "cart_pick": "A block of real cheese",
+      "kristy_take": "Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.",
+      "cart_pick": "Block cheese",
       "buying_tips": [
         "Look for a short list: milk, salt, cultures, enzymes/rennet.",
-        "Blocks are cheaper per pound than pre-sliced or shredded.",
-        "Pre-shredded often has anti-caking starch added — minor, but there."
+        "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
+        "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+        "Keep hard-cheese rinds. They belong in a pot of beans or soup."
       ],
       "labels_decoded": [
         {
-          "term": "Cheese",
-          "meaning": "The real standard-of-identity product."
+          "term": "Pasteurized process cheese / cheese product / cheese food",
+          "meaning": "An emulsified blend. Not cheese by the standard of identity."
         },
         {
-          "term": "Pasteurized process cheese / cheese product / cheese food",
-          "meaning": "Cheese blended with emulsifiers and other ingredients — progressively less actual cheese."
+          "term": "Parmigiano-Reggiano",
+          "meaning": "A protected name with a stamped rind. ‘Parmesan’ alone is generic in the US."
         }
       ],
-      "tier_note": "What may legally be called cheese is defined. Preferring the block is the standard laid over it."
+      "tier_note": "What may be called cheese is a standard of identity, and the shred coatings are printed on the bag. Both are checkable.",
+      "watch_out": [
+        "‘Cheese product’, ‘cheese food’ and ‘pasteurized process’ all mean emulsifiers blended in. That is a different product from cheese.",
+        "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting."
+      ],
+      "eyebrow_short": "Block vs. bag"
     },
     {
       "id": "yogurt_plain_vs_flavored",
@@ -840,7 +840,12 @@
         "raw dairy",
         "unpasteurized",
         "herdshare",
-        "cow share"
+        "cow share",
+        "clabber",
+        "clabbered milk",
+        "bonny clabber",
+        "soured raw milk",
+        "naturally soured milk"
       ],
       "category": "dairy",
       "question": "Is raw milk better?",
@@ -860,7 +865,8 @@
         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
         "Glass bottles and a bottling date you can read. Days, not weeks.",
         "A cream line at the top. That is the milk telling you what it is.",
-        "Raw cultured dairy — kefir, clabber, aged raw cheese — from the same farm."
+        "Raw cultured dairy — kefir, clabber, aged raw cheese — from the same farm.",
+        "Buy an extra bottle and let one sit out a day or two. Live raw milk clabbers into something worth eating; pasteurized milk only spoils."
       ],
       "labels_decoded": [
         {
@@ -999,47 +1005,6 @@
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
       ],
       "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard."
-    },
-    {
-      "id": "olive_oil_buying",
-      "title": "Buying real extra-virgin olive oil",
-      "aliases": [
-        "olive oil",
-        "extra virgin olive oil",
-        "evoo",
-        "olive oil adulteration",
-        "real olive oil"
-      ],
-      "category": "bulk_pantry",
-      "question": "How do I buy real extra-virgin olive oil?",
-      "decision": "Recent harvest date, dark bottle, one country of origin.",
-      "why": "Olive oil is widely adulterated. Those three signals are what a real bottle carries.",
-      "short_answer": "Olive oil is one of the more adulterated products in the store — some ‘extra-virgin’ has been cut with cheaper oils or is old and rancid. Your best signals are a harvest date (recent), a dark bottle (light degrades it), a single country of origin, and a price that isn’t suspiciously cheap. Taste is the final judge: good EVOO is fresh and peppery.",
-      "detail": "Fraud in the olive oil trade is well-documented, from dilution to mislabeled grade. A harvest/crop date beats a distant ‘best by’ date; dark glass or tin protects it; single-origin and third-party seals (like some regional or quality certifications) help. This is a buy-it-right issue, framed as label and freshness literacy.",
-      "evidence_tier": "credible_concern",
-      "sources": [
-        "UC Davis Olive Center testing",
-        "reporting on olive-oil adulteration",
-        "IOC grade standards"
-      ],
-      "kristy_take": "Recent harvest date, dark bottle, single origin, stored away from heat. A little peppery burn at the back of the throat is the good stuff.",
-      "cart_pick": "Extra-virgin olive oil in a dark bottle",
-      "buying_tips": [
-        "Look for a HARVEST date, not just ‘best by’ — and buy recent.",
-        "Dark glass or tin protects it from light; store away from the stove.",
-        "Single country of origin and a real price; extreme cheapness is a flag."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Extra-virgin",
-          "meaning": "The top grade — first press, low acidity — but enforcement is imperfect, so freshness cues matter."
-        },
-        {
-          "term": "Light / pure olive oil",
-          "meaning": "Refined, milder — not a health ‘light’, just processed and less flavorful."
-        }
-      ],
-      "tier_note": "Adulteration in the olive oil trade is documented and ongoing, and those three signals are the check against it."
     },
     {
       "id": "honey_adulteration",
@@ -1246,44 +1211,6 @@
       "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there."
     },
     {
-      "id": "label_free_range",
-      "title": "“Free-range”",
-      "aliases": [
-        "free range",
-        "free-range",
-        "free range chicken",
-        "free range label"
-      ],
-      "category": "label_terms",
-      "question": "What does ‘free-range’ actually require?",
-      "decision": "A low bar. For real outdoor time, look for certified pasture-raised.",
-      "why": "It means some outdoor access, with the amount and the quality left undefined.",
-      "short_answer": "Less than most people picture. For poultry, ‘free-range’ means the birds had some access to the outdoors — but the amount, duration, and quality of that access aren’t tightly defined. It’s a step above ‘cage-free’ in spirit, but without a certification behind it, don’t assume rolling pastures.",
-      "detail": "The term signals outdoor access but sets a low, loosely-enforced bar. A small door to a small yard can qualify. If genuine outdoor living matters to you, ‘pasture-raised’ with a third-party certification (Certified Humane, Animal Welfare Approved) is the stronger claim.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA FSIS ‘free-range’ guidance",
-        "Certified Humane / AWA standards"
-      ],
-      "kristy_take": "‘Free-range’ is better than nothing, but it’s a low bar. For real outdoor time, look for certified pasture-raised.",
-      "buying_tips": [
-        "Don’t assume ‘free-range’ means pasture — it’s loosely defined.",
-        "Third-party welfare certifications tell you far more.",
-        "‘Pasture-raised’ + a seal is the meaningful version."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Free-range",
-          "meaning": "Some outdoor access, loosely defined and enforced."
-        }
-      ],
-      "watch_out": [
-        "“Free-range” requires only some outdoor access, loosely defined and loosely enforced.",
-        "It is not pasture. Without a certifier’s seal, nothing is auditing the claim."
-      ],
-      "tier_note": "The requirements behind the term are written down, and how little they specify is the point."
-    },
-    {
       "id": "label_nonGMO_vs_organic",
       "title": "Non-GMO vs. Organic",
       "aliases": [
@@ -1329,41 +1256,57 @@
     },
     {
       "id": "label_cage_free",
-      "title": "“Cage-free”",
+      "title": "“Cage-free” and “free-range”",
       "aliases": [
         "cage free",
         "cage-free",
         "cage free eggs label",
-        "cage free chicken"
+        "cage free chicken",
+        "free range",
+        "free-range",
+        "free range chicken",
+        "free range label",
+        "free range eggs"
       ],
       "category": "label_terms",
-      "question": "Does ‘cage-free’ mean the hens roam outside?",
-      "decision": "Better than caged. Still a barn, not a meadow.",
-      "why": "Uncaged usually means indoors and crowded. Outdoors is free-range, or certified pasture-raised.",
-      "short_answer": "No. ‘Cage-free’ means hens aren’t kept in cages, but they’re typically still housed indoors in large barns and can be crowded. It’s a real change from battery cages, but it is not ‘outdoors’ and not ‘pasture’. If outdoor access is the point, that’s ‘free-range’ or, better, certified ‘pasture-raised’.",
-      "detail": "Cage-free is a genuine welfare step up from conventional cages, and for eggs it’s a defined term. But people often read it as ‘roaming a field’, which it isn’t. Match the word to what you actually want: indoors-but-uncaged (cage-free), some outdoors (free-range), real pasture (certified pasture-raised).",
+      "question": "What do ‘cage-free’ and ‘free-range’ actually require?",
+      "decision": "Neither means pasture. Certified pasture-raised is the one that does.",
+      "why": "Cage-free is a barn. Free-range adds a door, with the size and the hours left undefined.",
+      "short_answer": "Both are weaker than they sound, in two different ways. ‘Cage-free’ means the hens are not in cages, but they are typically housed indoors in large barns and can be crowded — a real step up from battery cages, and not outdoors. ‘Free-range’ means some outdoor access, but the amount, duration and quality of that access are not tightly defined, and a small door onto a small yard qualifies. If outdoor living is the point, the claim to look for is ‘pasture-raised’ with a third-party certification behind it.",
+      "detail": "The two terms mark rungs on the same ladder and people routinely read both as a meadow. Cage-free is a defined term for eggs and a genuine welfare improvement on conventional cages; on products other than eggs it carries much less. Free-range signals outdoor access but sets a low, loosely-enforced bar with no certification required. Above both sits pasture-raised, which only means anything with a certifier attached: Certified Humane, Animal Welfare Approved, or Global Animal Partnership. Match the word to what you actually want rather than to the picture on the carton.",
       "evidence_tier": "established",
       "sources": [
         "USDA egg-labeling definitions",
-        "Certified Humane space standards"
+        "USDA FSIS ‘free-range’ guidance",
+        "Certified Humane / AWA space standards"
       ],
-      "kristy_take": "Cage-free is better than caged, but it’s still a barn. Don’t picture a meadow.",
+      "kristy_take": "Cage-free is a barn and free-range is a door. Neither is a field. The seal is what tells you.",
       "buying_tips": [
         "Cage-free = uncaged, usually indoors — not outdoor access.",
-        "Want outdoors? Look for free-range, ideally certified pasture-raised.",
-        "For eggs specifically it’s a defined term; on other products, less so."
+        "Free-range = some outdoor access, with the amount and quality undefined.",
+        "For real outdoor time: ‘pasture-raised’ plus a certifier seal.",
+        "For eggs both are defined terms; on other products they carry much less."
       ],
       "labels_decoded": [
         {
           "term": "Cage-free",
           "meaning": "Not caged — but usually indoors and possibly crowded."
+        },
+        {
+          "term": "Free-range",
+          "meaning": "Some outdoor access, loosely defined and enforced."
+        },
+        {
+          "term": "Pasture-raised + certifier",
+          "meaning": "The one with real outdoor requirements and an auditor behind it."
         }
       ],
       "watch_out": [
         "Cage-free usually means indoors, and it can still mean crowded.",
-        "It is a defined term for eggs. On other products it carries much less."
+        "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
-      "tier_note": "What cage-free requires, and what it leaves out, are both specified in the standard."
+      "tier_note": "What each term requires, and how little it specifies, are both written into the standards.",
+      "eyebrow_short": "Cage-free, free-range"
     },
     {
       "id": "label_grass_fed_term",
@@ -1521,7 +1464,7 @@
     },
     {
       "id": "produce_picking_ripeness",
-      "title": "Picking good produce — ripeness, not origin",
+      "title": "Does the origin sticker matter?",
       "aliases": [
         "how to pick an avocado",
         "avocado",
@@ -1530,26 +1473,29 @@
         "how to pick produce",
         "is mexican produce better",
         "where produce comes from",
-        "picking fruit"
+        "picking fruit",
+        "origin sticker",
+        "product of mexico",
+        "country of origin produce",
+        "where was this grown"
       ],
       "category": "produce",
-      "question": "How do I pick good produce — and does the country of origin matter?",
+      "question": "Does the country on the sticker tell me anything about quality?",
       "decision": "Judge the piece, not the sticker.",
       "why": "Origin tells you the season. Quality tracks ripeness, handling and time in transit.",
-      "short_answer": "Judge the individual piece, not the sticker. Origin mostly tells you what season it was grown in, not how good it is — the same variety is grown in several countries, and quality tracks ripeness, handling, and how long it has been in transit. Learn the checks for the specific item and you can pick well from any bin.",
-      "detail": "Avocados are the clearest example of the confusion. Hass is a VARIETY, and it is grown in California, Mexico, Peru and elsewhere; the growing regions have different seasons, which is why the origin sticker changes through the year. That is a calendar difference, not a quality ranking — and ranking origins is exactly the kind of shortcut that stops you looking at the fruit in your hand. The checks that actually work are physical: firmness for the stage you need it, weight for its size, skin and color appropriate to the variety, and no soft spots or weeping. Buy at staggered ripeness when you can, so the bag lasts the week instead of turning all at once.",
+      "short_answer": "The sticker is a calendar, not a grade. The same variety is grown in several countries, and which one is on the shelf changes through the year because the growing regions have different seasons. Quality tracks ripeness, handling and how long it has been in transit — none of which the country tells you. Learn the checks for the specific item and you can pick well from any bin.",
+      "detail": "Avocados are the clearest example of the confusion. Hass is a VARIETY, and it is grown in California, Mexico, Peru and elsewhere; the growing regions have different seasons, which is why the origin sticker changes through the year. That is a calendar difference, not a quality ranking — and ranking one country over another on a produce sticker is a habit worth dropping, because the piece in your hand is the only thing that answers the question. Where origin does earn attention is transit time: something grown closer was picked closer to ripe, which is a handling argument rather than a country one.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA produce grading and handling standards",
         "University extension produce selection and ripening guidance"
       ],
-      "kristy_take": "Nobody picks a good avocado off the sticker. Flick the little stem nub — green underneath means ready, brown means you’re late — and press with your whole palm, not a thumb, or you’ll bruise the one you just bought for someone else.",
+      "kristy_take": "Nobody picks a good avocado off the sticker. The country tells you the month, not the fruit.",
       "buying_tips": [
-        "Avocado: pop the stem nub — green under it means ripe, brown means overripe, and stuck fast means give it days.",
-        "Press with your palm, never your fingertips — fingertip pressure is what bruises the bin.",
-        "Buy at staggered firmness so they ripen across the week rather than all on Tuesday.",
-        "Heavy for its size is a good sign in most fruit — it means water content, not pith.",
-        "Origin tells you the season more than the quality. Judge the piece, not the label."
+        "Origin tells you the season more than the quality. Judge the piece, not the label.",
+        "Press with your palm and take the heavier of two. That is the judgment the sticker cannot make.",
+        "A shorter trip usually means it was picked closer to ripe. That is transit, not country.",
+        "Same variety, several countries: ‘Hass’ names the avocado, not where it grew."
       ],
       "labels_decoded": [
         {
@@ -1561,7 +1507,11 @@
           "meaning": "An avocado VARIETY, grown in several countries — not an origin."
         }
       ],
-      "tier_note": "Judging the piece over the sticker is a shopping habit held as a standard, not a measurement."
+      "tier_note": "Judging the piece over the sticker is a shopping habit held as a standard, not a measurement.",
+      "watch_out": [
+        "‘Product of ___’ is a growing region, not a grade. Nothing on the sticker ranks quality."
+      ],
+      "eyebrow_short": "Origin sticker"
     },
     {
       "id": "label_multigrain_vs_whole_grain",
@@ -1717,30 +1667,37 @@
     },
     {
       "id": "egg_shell_color",
-      "title": "Brown vs. white eggs",
+      "title": "Egg color — shell and yolk",
       "aliases": [
         "brown eggs",
         "white eggs",
         "egg shell color",
         "eggshell color",
         "are brown eggs better",
-        "brown vs white eggs"
+        "brown vs white eggs",
+        "yolk color",
+        "dark yolk",
+        "orange yolk",
+        "egg quality",
+        "egg color"
       ],
       "category": "poultry_eggs",
-      "question": "Are brown eggs better than white?",
-      "decision": "Buy the cheaper carton. Shell color is the breed.",
-      "why": "White breeds lay white, red breeds lay brown. Inside the shell it is the same egg.",
-      "short_answer": "No. Shell color is the breed of hen and nothing else. White-feathered breeds lay white eggs, red-feathered breeds lay brown, and inside the shell they are the same egg. Brown often costs more because those breeds are larger and eat more, not because the egg is better.",
-      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. What actually changes an egg is the hen’s diet, her age, and how fresh it is, and none of that is visible from outside the shell. The price gap on brown eggs is a feed-cost and marketing gap. It is one of the most reliable places in the store to pay more for nothing.",
+      "question": "Do brown shells or darker yolks mean a better egg?",
+      "decision": "Buy the cheaper carton. Neither shell nor yolk color reads anything.",
+      "why": "Shell color is the breed. Yolk color is pigment in the feed, and an additive matches a good diet exactly.",
+      "short_answer": "No, on both counts. Shell color is the breed of hen: white-feathered breeds lay white, red-feathered breeds lay brown, and inside the shell they are the same egg. Yolk color comes from pigment in the feed — a varied diet with real greens deepens it, and so does marigold extract added to the ration for that exact effect. The two are indistinguishable by eye. That is why the printed feed words are the tell and the color never is.",
+      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. Brown often costs more because those breeds are larger and eat more, not because the egg is better. Yolk color is the more tempting signal and the more misleading one: producers can and do dial it with feed, and the supplements sold to do it are sold for exactly that purpose. Pasture and varied diets deepen color too, which is what makes it useless — the same shade arrives by two completely different routes and the carton never says which. What actually changes an egg is the hen’s diet, her age, and how fresh it is, and none of it is visible from outside.",
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (shell color and breed)",
         "Poultry-science references on eggshell pigmentation"
       ],
-      "kristy_take": "Shell color is the hen’s breed. Buy the cheaper carton and put the difference into how she was raised, if that is what matters.",
+      "kristy_take": "Shell color is the breed and yolk color is the feed bag. Buy the cheaper carton and put the difference into how she was raised.",
       "buying_tips": [
         "Ignore shell color. It says nothing about the egg inside.",
+        "A varied diet deepens yolk color. So does an additive bought to do it.",
         "Speckles and small rough patches are normal shell variation.",
+        "Freshness shows in the pan: a yolk that stands up, a white that holds together.",
         "What changes an egg is diet, age and freshness. None of it shows on the shell."
       ],
       "labels_decoded": [
@@ -1751,9 +1708,17 @@
         {
           "term": "White egg",
           "meaning": "Laid by a white-egg breed. The same egg inside."
+        },
+        {
+          "term": "Deep orange yolk",
+          "meaning": "Pigment in the feed. Could be pasture, could be marigold extract."
         }
       ],
-      "tier_note": "Shell color tracking breed is basic genetics, and it is why the price gap buys nothing."
+      "tier_note": "Shell color tracking breed is basic genetics, and feed driving yolk pigment is well established. Both are why the color buys nothing.",
+      "watch_out": [
+        "The yolk photo on the carton is artwork, not a sample."
+      ],
+      "eyebrow_short": "Shell and yolk"
     },
     {
       "id": "egg_freshness",
@@ -2225,7 +2190,11 @@
         "bigeye",
         "high mercury fish",
         "low mercury fish",
-        "methylmercury"
+        "methylmercury",
+        "mercury in canned tuna",
+        "light tuna",
+        "albacore",
+        "is tuna high in mercury"
       ],
       "category": "seafood",
       "question": "Which fish are low in mercury and which are high?",
@@ -2245,7 +2214,8 @@
         "Middle: albacore and yellowfin tuna, halibut, grouper, snapper, mahi mahi.",
         "Highest: swordfish, shark, king mackerel, marlin, orange roughy, bigeye tuna, Gulf tilefish.",
         "‘Light’ tuna is usually skipjack and sits well below ‘white’ albacore.",
-        "FDA and EPA aim the advice at pregnant and nursing women and young children. Anything medical is a doctor’s call."
+        "FDA and EPA aim the advice at pregnant and nursing women and young children. Anything medical is a doctor’s call.",
+        "Sardines and canned salmon (with bones) are cheap, shelf-stable, and low on the chain."
       ],
       "labels_decoded": [
         {
@@ -2273,7 +2243,11 @@
         "fish eyes",
         "fish gills",
         "is this fish fresh",
-        "gaping fillet"
+        "gaping fillet",
+        "salmon",
+        "fresh salmon",
+        "tuna",
+        "is the fish fresh"
       ],
       "category": "seafood",
       "question": "How do I tell if fish at the counter is fresh?",
@@ -2313,7 +2287,9 @@
         "sardines in olive oil",
         "canned tuna buying",
         "bones in sardines",
-        "tinned sardines"
+        "tinned sardines",
+        "canned salmon",
+        "tinned tuna"
       ],
       "category": "seafood",
       "question": "What should I look for in canned fish?",
@@ -2333,7 +2309,8 @@
         "Bone-in and skin-on sardines and salmon. The bones soften completely.",
         "The list should read fish, oil or water, salt. Anything longer is a sauce.",
         "Good oil-packed tins are worth using in the dish rather than draining.",
-        "Skipjack (‘light’) sits lower on the mercury range than albacore (‘white’)."
+        "Skipjack (‘light’) sits lower on the mercury range than albacore (‘white’).",
+        "Skipjack (labeled ‘light’) is lower-mercury than albacore (labeled ‘white’)."
       ],
       "labels_decoded": [
         {
@@ -2474,7 +2451,28 @@
         "how to pick broccoli",
         "ripe mango",
         "picking citrus",
-        "how to pick fruit"
+        "how to pick fruit",
+        "how to pick an avocado",
+        "avocado",
+        "avocados",
+        "ripe avocado",
+        "how to pick produce",
+        "picking fruit",
+        "ripe cantaloupe",
+        "cantaloupe smell",
+        "cantaloupe ripeness",
+        "muskmelon",
+        "pick a melon",
+        "ripe pineapple",
+        "pick a pineapple",
+        "pineapple ripeness",
+        "pineapple smell",
+        "produce",
+        "pick produce",
+        "choosing produce",
+        "fruit ripeness",
+        "vegetable quality",
+        "ripe fruit"
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
@@ -2498,7 +2496,10 @@
         "Citrus: heavy for its size, with thin smooth skin. Weight beats color.",
         "Asparagus: tight closed tips and a cut end that is not dried and split.",
         "Broccoli and cauliflower: tight dense heads, no yellowing between the florets.",
-        "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base."
+        "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base.",
+        "Avocado: pop the stem nub — green under it means ripe, brown means overripe, and stuck fast means give it days.",
+        "Press with your palm, never your fingertips — fingertip pressure is what bruises the bin.",
+        "Buy at staggered firmness so they ripen across the week rather than all on Tuesday."
       ],
       "labels_decoded": [],
       "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one.",
@@ -2592,61 +2593,6 @@
         }
       ],
       "tier_note": "Ultra-pasteurization is disclosed on the carton. Preferring fewer steps is the standard."
-    },
-    {
-      "id": "pre_shredded_cheese",
-      "title": "Block vs. pre-shredded cheese",
-      "aliases": [
-        "pre shredded cheese",
-        "shredded cheese",
-        "cellulose in cheese",
-        "anti caking",
-        "block cheese",
-        "parmesan",
-        "parmigiano reggiano",
-        "grated cheese",
-        "natamycin"
-      ],
-      "category": "dairy",
-      "question": "Is pre-shredded cheese worth it?",
-      "decision": "Buy the block and grate it.",
-      "why": "Bagged shreds carry an anti-caking coating, which is why they never melt smoothly.",
-      "short_answer": "It is real cheese with additions. Shredded bags carry an anti-caking coating, usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. That coating is why bagged shreds never melt as smoothly as cheese grated at home. Block is cheaper per pound and melts properly. On naming: ‘Parmesan’ is generic in the US, while ‘Parmigiano-Reggiano’ is a protected name with rules behind it.",
-      "detail": "Powdered cellulose is plant fiber and natamycin is a naturally derived antifungal, and neither one is alarming. The honest objection is that you pay more per pound for cheese cut with something that is not cheese and that works worse in a sauce. Grating a block takes a minute. On hard cheeses the naming question matters more than the shredding one: the US does not protect ‘Parmesan’, so anything from a wedge of aged cow’s milk cheese to a shaker of mostly powder can carry the word, while ‘Parmigiano-Reggiano’ is a controlled designation with a stamped rind.",
-      "evidence_tier": "established",
-      "sources": [
-        "FDA standards of identity for cheese",
-        "FDA regulations on anti-caking agents and natamycin in shredded cheese",
-        "EU protected designation of origin for Parmigiano-Reggiano"
-      ],
-      "kristy_take": "Buy the block. Cheaper per pound, melts properly, and grating it takes a minute.",
-      "cart_pick": "Block cheddar",
-      "buying_tips": [
-        "Read the bag: potato starch, powdered cellulose and natamycin are the additions.",
-        "Block is cheaper per pound and melts smoothly. Bagged shreds resist.",
-        "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
-        "A short list (milk, salt, cultures, enzymes) is the tell for real cheese.",
-        "Keep hard-cheese rinds. They belong in a pot of beans or soup."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Powdered cellulose",
-          "meaning": "Plant fiber used as an anti-caking coating on shreds."
-        },
-        {
-          "term": "Natamycin",
-          "meaning": "A mold inhibitor applied to the surface of shredded cheese."
-        },
-        {
-          "term": "Parmesan",
-          "meaning": "A generic term in the US. Not a controlled name."
-        },
-        {
-          "term": "Parmigiano-Reggiano",
-          "meaning": "A protected designation with production rules and a stamped rind."
-        }
-      ],
-      "tier_note": "The anti-caking coating is on the ingredient list, and it is why the shreds melt badly."
     },
     {
       "id": "yogurt_live_cultures",
@@ -2880,7 +2826,7 @@
     },
     {
       "id": "olive_oil_grades",
-      "title": "Olive oil grades and ‘packed in’",
+      "title": "Buying real extra-virgin olive oil",
       "aliases": [
         "olive oil grades",
         "virgin olive oil",
@@ -2890,28 +2836,32 @@
         "refined olive oil",
         "packed in italy",
         "olive oil label",
-        "first cold pressed"
+        "first cold pressed",
+        "olive oil",
+        "extra virgin olive oil",
+        "evoo",
+        "olive oil adulteration",
+        "real olive oil"
       ],
       "category": "bulk_pantry",
-      "question": "What do the olive oil grades on the label mean?",
-      "decision": "Extra virgin, a harvest date, one country.",
-      "why": "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to color and taste.",
-      "short_answer": "Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Pure’, ‘classic’ and ‘light’ all mean refined oil blended with a little virgin for flavor, and ‘light’ refers to color and taste rather than calories. Pomace oil is solvent-extracted from the leftover paste. ‘Packed in Italy’ is a shipping fact, not an origin.",
-      "detail": "The grades are real standards, but US enforcement of them is limited, which is why freshness cues matter as much as the word on the front. The refined grades are not poison, they are simply a different product made the way a seed oil is made, and priced accordingly. The origin line is what catches people: bottling location and country of origin are separate claims, so a bottle can be pressed from oil grown across several countries and packed in one. A single country of origin plus a recent harvest date is the pairing that tells you the most.",
+      "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
+      "decision": "Extra virgin, a recent harvest date, one country.",
+      "why": "Olive oil is widely adulterated. ‘Pure’, ‘classic’ and ‘light’ all mean refined oil.",
+      "short_answer": "Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Pure’, ‘classic’ and ‘light’ all mean refined oil blended with a little virgin back in, and ‘light’ refers to color and taste rather than calories. Past the grade, olive oil is one of the more adulterated products in the store, so the three signals that matter are a recent harvest date, a dark bottle, and a single country of origin.",
+      "detail": "Grade and provenance are two separate checks and a bottle has to pass both. On grade: pomace oil is solvent-extracted from the paste left after pressing and is a different product; ‘first cold pressed’ is a legacy phrase with no added legal force. On provenance: ‘packed in [country]’ names where it was bottled, not where the olives grew, and ‘product of’ is the phrase that names the origin. A harvest date beats a best-by date every time, because the oil degrades from the day it is pressed. Dark glass or tin protects it from light, and a price that is unusually low for extra-virgin is a flag rather than a find.",
       "evidence_tier": "established",
       "sources": [
         "International Olive Council trade standard for olive oils",
         "USDA AMS United States Standards for Grades of Olive Oil (voluntary)",
         "FDA labeling rules on country of origin"
       ],
-      "kristy_take": "‘Light’ is about color, not calories. ‘Pure’ means refined. Extra virgin, a harvest date and one country is the whole label.",
+      "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
       "buying_tips": [
         "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
-        "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color.",
-        "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
-        "‘Packed in [country]‘ is where it was bottled. Look for ‘product of’ instead.",
-        "A harvest date beats a best-by date every time.",
-        "‘First cold pressed’ is mostly a legacy phrase. Modern mills press once."
+        "Look for a HARVEST date, not just ‘best by’ — and buy recent.",
+        "Dark glass or tin protects it from light; store away from the stove.",
+        "Single country of origin, named with ‘product of’.",
+        "‘First cold pressed’ is a legacy phrase and adds nothing legally."
       ],
       "labels_decoded": [
         {
@@ -2935,7 +2885,15 @@
           "meaning": "Where it was bottled. Not where the olives grew."
         }
       ],
-      "tier_note": "Extra virgin and refined are defined grades, and what ‘light’ refers to is written down."
+      "tier_note": "The grades are legal definitions with a taste panel behind them, and the origin wording is regulated. Both are readable off the bottle.",
+      "cart_pick": "Extra-virgin olive oil",
+      "watch_out": [
+        "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color, not calories.",
+        "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
+        "‘Packed in [country]’ is where it was bottled. Look for ‘product of’ instead.",
+        "Extreme cheapness for extra-virgin is a flag, not a find."
+      ],
+      "eyebrow_short": "Real extra-virgin"
     },
     {
       "id": "nut_butter_ingredients",
@@ -3457,42 +3415,6 @@
         "FDA state raw-milk sale regulations"
       ],
       "cart_pick": "Plain raw kefir",
-      "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
-      "evidence_tier": "time_tested"
-    },
-    {
-      "id": "clabber",
-      "title": "Clabber",
-      "category": "dairy",
-      "aliases": [
-        "clabber",
-        "clabbered milk",
-        "bonny clabber",
-        "soured raw milk",
-        "naturally soured milk"
-      ],
-      "question": "What is clabber and can I still buy milk that does it?",
-      "decision": "The oldest ferment there is. Good milk does it by itself.",
-      "why": "Raw milk sours into something worth eating. Pasteurized milk just spoils.",
-      "card_why": "Clabber is what milk does on its own when it is still alive and left alone. Before cultures came in packets this is how a kitchen soured milk on purpose — a jar on the counter, a day or two, and it sets thick and tangy under the cream. It only works with raw milk from a herd you trust, because the culture doing the work is whatever the farm already had. That is the whole appeal and the whole requirement.",
-      "short_answer": "Clabber needs live raw milk, so the card is really about which milk to buy. A named farm, the freshest bottling date on the shelf, and a visible cream line.",
-      "detail": "Clabbered milk was a staple across the American South and much of northern Europe long before refrigeration, eaten with fruit or cornbread and used as a leavener. It sets like a loose custard with the cream turning to a soft skin on top. Pasteurized milk cannot do this: with the original cultures gone, what grows instead is spoilage.",
-      "kristy_take": "Buy the extra bottle and let one sit. That is the entire method.",
-      "buying_tips": [
-        "Raw milk from a farm you already buy from. Clabber needs the live culture.",
-        "The freshest bottling date on the shelf, in glass.",
-        "A visible cream line. Clabber sets underneath it.",
-        "A warm spot in the kitchen, out of the sun, and a day or two of patience."
-      ],
-      "watch_out": [
-        "Pasteurized milk will not clabber. Without its cultures it spoils instead.",
-        "Raw dairy is not for every household. The raw milk card names who, once."
-      ],
-      "labels_decoded": [],
-      "sources": [
-        "USDA FoodData Central",
-        "FDA state raw-milk sale regulations"
-      ],
       "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
       "evidence_tier": "time_tested"
     },

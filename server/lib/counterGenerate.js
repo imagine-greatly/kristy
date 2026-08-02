@@ -146,18 +146,18 @@ the shelf. If the do line answers a different question — even a good question,
 the shopper might also have — the card wastes its most valuable line.
 
   WORKED FAIL:
-    headline: "A2 milk is a protein-type label, not a whole-food upgrade."
-    do:       "Check the carton for the A2 seal."
-    Why it fails: the verdict is that the A2 label is NOT the thing that matters. The do
-    line then sends the shopper to find that exact label. Someone asking this question has
-    already found the carton — they are asking whether it is worth it. The do line answers
-    "where is the A2 seal", which nobody asked.
+    headline: "Ignore it. Read the ingredient list instead."
+    do:       "Look for the word ‘natural’ on the front of the package."
+    Why it fails: the verdict is that the claim is NOT the thing that matters. The do line
+    then sends the shopper to find that exact word. Someone asking this question is already
+    holding the package — they are asking whether the claim is worth anything. The do line
+    answers "where is the word natural", which nobody asked.
 
   WORKED PASS:
-    headline: "A2 milk is a protein-type label, not a whole-food upgrade."
-    do:       "Read past the A2 claim for the pasteurization method and herd."
-    Why it passes: the verdict says the label is not the deciding factor, and the action
-    sends the shopper to what IS.
+    headline: "Ignore it. Read the ingredient list instead."
+    do:       "Look for a defined word instead: organic, grass-finished, or pasture-raised."
+    Why it passes: the verdict says the claim is not the deciding factor, and the action
+    sends the shopper to the words that are.
 
 Test it in one question: if the headline is right, does doing the do line follow from it?
 

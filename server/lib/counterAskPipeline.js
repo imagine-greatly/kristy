@@ -14,7 +14,7 @@
 
 import { scoreEntries } from './perimeter.js';
 import { inScope, outOfScopeLine } from './counterScope.js';
-import { scrubQuestion, logCounterGap, WEAK_MATCH_CEILING } from './counterGaps.js';
+import { scrubQuestion, logCounterGap } from './counterGaps.js';
 import { projectEntry, getGeneratedCards, scoreGenerated, bumpUseCount } from './counterCards.js';
 import { generateCard, persistCard } from './counterGenerate.js';
 import { generationLimited, globalCeilingReached } from './counterRate.js';
@@ -31,23 +31,44 @@ import doLines from './doLines.json' with { type: 'json' };
 
 const reviewed = new Map(Object.entries(doLines).map(([slug, line]) => [slug, { do: line }]));
 
-// A retrieval is confident enough to answer with when the deterministic matcher scores it
-// above the weak ceiling — the same threshold the gap log uses to decide that an entry
-// exists and answers badly. One number, one meaning.
-const CONFIDENT = WEAK_MATCH_CEILING;
+// RETRIEVAL CONFIDENCE IS ITS OWN NUMBER, and it is deliberately NOT the gap log's.
+//
+// These were one constant, justified as "one number, one meaning". They are two meanings.
+// WEAK_MATCH_CEILING answers "does an entry exist that answers this badly enough to be
+// worth re-authoring" — an editorial judgment about the backlog, and it stays at 3. This
+// answers "is this match good enough to show a shopper instead of paying for a generation"
+// — a retrieval judgment with a price attached. Sharing one number meant tuning retrieval
+// silently re-scoped the authoring queue, and it pinned this gate to a value retrieval
+// could not justify.
+//
+// THE OLD GATE WAS UNREACHABLE FOR THE COMMONEST QUESTION SHAPE. scoreEntries awards
+// min(3, aliasWords) + 1 per alias hit, plus 1 per distinct title word. So a query whose
+// only content word is a bare noun scores 2 for the single-word alias and 1 for the title
+// overlap on that same noun. Three, always. Held to "> 3" it could never pass on that noun
+// alone however exactly right the card was: "best yogurt to buy" scored 3 against
+// yogurt_plain_vs_flavored — the correct card, no runner-up — and fell through to a
+// 20-second generation every time. Three of the four cards the generator has written are
+// duplicates of curated content it failed to retrieve this way, and one of those has
+// already been served to three shoppers.
+//
+// MEASURED, not characterized, over 20 realistic queries: "> 3" answered 10 from curated,
+// "> 2" answers 15. Every query the change rescues scored exactly 3 with NO RUNNER-UP, so
+// the match was unambiguous and this buys recall without trading precision for it. "> 1"
+// adds one more query and starts admitting bare title-word coincidences, which is where
+// the trade would actually begin.
+const CONFIDENT = 2;
 
-// GENERATED CARDS GET A LOWER BAR, and the asymmetry is deliberate.
+// GENERATED CARDS GET THE SAME BAR. There is no longer an asymmetry to justify.
 //
-// The curated ceiling assumes a KB entry carrying a dozen aliases, several of which hit a
-// real question, so the scores accumulate past 3. A generated card carries six or seven
-// aliases authored for ONE subject: on "how do I pick a good cantaloupe" exactly one of
-// them lands — the bare noun — for a score of 2. Held to the curated ceiling, the card
-// that was just written for this exact question never answers it, and the question
-// regenerates at full price forever. That is precisely what it did.
+// This was a deliberately lower bar, resting on curated entries carrying "a dozen aliases"
+// against a generated card's six. That premise was never measured and it is false. Curated
+// alias counts, over all 79 entries: min 3, median 7, mean 7.11, max 19. Generated cards
+// are authored with 6 to 8. Curated has no alias advantage, so there was never a reason
+// for it to clear a higher bar — and the unchecked premise is exactly what kept it there.
 //
-// One alias hit is the floor: scoreGenerated awards 2 for a single-word alias, so this is
-// "at least one authored alias matched". The costs are not symmetric — a slightly loose
-// retrieval shows a closely-related card, a strict one bills for a duplicate answer.
+// One alias hit is the floor either way: both scorers award 2 for a single-word alias, so
+// this is "at least one authored alias matched". The costs are not symmetric — a slightly
+// loose retrieval shows a closely-related card, a strict one bills for a duplicate answer.
 const GENERATED_HIT = 2;
 
 // What Kristy says when the corpus has nothing and generation could not run. Never an

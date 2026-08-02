@@ -136,7 +136,10 @@ test('raw milk is a sourcing card: enthusiastic, unhedged, and it names the grou
 test('the named group appears ONCE across raw dairy, not repeated on every card', () => {
   // Repeating it on every raw card turns a practical insider detail into boilerplate,
   // which is how a reader learns to skip it. The sibling cards link instead.
-  const siblings = ['raw_kefir', 'clabber', 'raw_aged_cheese'];
+  // `clabber` was demoted to a look_for on raw_milk on 2026-08-02 — its subject was
+  // too narrow to carry a card, and its own do line was an instruction about the raw
+  // milk card's product. The rule it was covered by is unchanged for the rest.
+  const siblings = ['raw_kefir', 'raw_aged_cheese'];
   for (const id of siblings) {
     const e = perimeterKb.entries.find((x) => x.id === id);
     assert.ok(e, `${id} exists`);
@@ -297,7 +300,26 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
     /\b(mexican|californian|peruvian)\s+\w*\s*(are|is)?\s*(better|worse|superior|inferior)\b/,
     'must never rank one origin above another'
   );
-  assert.ok(p.buying_tips.some((t) => /stem/i.test(t)), 'teaches an actual physical check');
+  // The card must still put a HAND on the fruit. The 2026-08-02 refocus narrowed it to
+  // the origin question and moved the per-item ripeness checks onto
+  // `produce_ripeness_by_item`, which is the hub a shopper looking for them actually
+  // lands on — but a card that only argues about stickers is a lecture. It keeps the
+  // "judge the piece" half of its own verdict as a physical action.
+  assert.ok(
+    p.buying_tips.some((t) => /\b(press|palm|heavier|weigh)\b/i.test(t)),
+    'teaches an actual physical check'
+  );
+
+  // ...and the checks it handed over must have landed, or the refocus was a deletion.
+  const byItem = perimeterKb.entries.find((e) => e.id === 'produce_ripeness_by_item');
+  assert.ok(byItem, 'the by-item ripeness hub must exist');
+  assert.ok(
+    byItem.buying_tips.some((t) => /stem/i.test(t)),
+    'the stem check moved to the by-item hub, it did not evaporate'
+  );
+  for (const alias of ['avocado', 'how to pick an avocado', 'cantaloupe', 'pineapple']) {
+    assert.ok(byItem.aliases.includes(alias), `by-item hub did not absorb the alias "${alias}"`);
+  }
 });
 
 /* ── The depth bar ───────────────────────────────────────────────────────────────
@@ -334,9 +356,9 @@ test('every counter answers the questions a shopper actually has standing at it'
     ['how do i pick a ripe melon', 'produce_ripeness_by_item'],
     ['is organic produce worth it', 'organic_worth_it_by_type'],
     ['what is ultra pasteurized milk', 'milk_processing'],
-    ['is pre shredded cheese ok', 'pre_shredded_cheese'],
+    ['is pre shredded cheese ok', 'cheese_real_vs_processed'],
     ['should i worry about arsenic in rice', 'rice_arsenic'],
-    ['how do i buy real extra virgin olive oil', 'olive_oil_buying'],
+    ['how do i buy real extra virgin olive oil', 'olive_oil_grades'],
     ['how do i know if nuts are rancid', 'rancidity_check'],
   ];
   for (const [q, id] of wants) {

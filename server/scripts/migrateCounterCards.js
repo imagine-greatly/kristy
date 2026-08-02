@@ -23,6 +23,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import {
   TABLE,
   RETIRED,
+  RETIRED_GENERATED,
   projectEntry,
   coverage,
   cardToRow,
@@ -165,7 +166,29 @@ async function write() {
     }
     const removed = (gone || []).map((r) => r.slug);
     console.log(
-      `[counter-cards] retired ${RETIRED.length} slug(s); ${removed.length} row(s) deleted` +
+      `[counter-cards] retired ${RETIRED.length} curated slug(s); ${removed.length} row(s) deleted` +
+        `${removed.length ? `: ${removed.join(', ')}` : ' (already absent)'}. ✓`
+    );
+  }
+
+  // ── Generated retirement, scoped to source = 'generated' ──
+  // Its own list and its own delete for the same reason the one above is scoped: neither
+  // kind may ever sweep the other. A generated slug placed in RETIRED silently deletes
+  // nothing — the row stays live and keeps answering — so the two cannot share a list.
+  if (RETIRED_GENERATED.length) {
+    const { data: gone, error: delErr } = await supabase
+      .from(TABLE)
+      .delete()
+      .in('slug', RETIRED_GENERATED)
+      .eq('source', 'generated')
+      .select('slug');
+    if (delErr) {
+      console.error('[counter-cards] generated retirement delete failed:', delErr.message);
+      return 1;
+    }
+    const removed = (gone || []).map((r) => r.slug);
+    console.log(
+      `[counter-cards] retired ${RETIRED_GENERATED.length} generated slug(s); ${removed.length} row(s) deleted` +
         `${removed.length ? `: ${removed.join(', ')}` : ' (already absent)'}. ✓`
     );
   }

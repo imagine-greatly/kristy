@@ -214,15 +214,15 @@ test('every perimeterId resolves to a REAL entry in the perimeter KB', () => {
 test('the fish / beef / oil / rice picks reflect what the perimeter KB actually knows', () => {
   const find = (items, re) => items.find((i) => re.test(i.name));
 
-  // Fish: small fish sit lower on the chain (canned_fish_mercury) — not "fatty fish".
+  // Fish: small fish sit lower on the chain (mercury_by_fish) — not "fatty fish".
   const fish = find(generateList({ goal: 'pregnancy_postpartum', premium: true }).items, /sardine/i);
   assert.ok(fish, 'a specific fish, not a category');
-  assert.equal(fish.perimeterId, 'canned_fish_mercury');
+  assert.equal(fish.perimeterId, 'mercury_by_fish');
 
-  // Oil: real EVOO, reasoned from the harvest-date/dark-bottle tell (olive_oil_buying).
+  // Oil: real EVOO, reasoned from the harvest-date/dark-bottle tell (olive_oil_grades).
   const oil = find(generateList({ goal: 'eating_cleaner' }).items, /olive oil/i);
   assert.match(oil.name, /extra-virgin/i);
-  assert.equal(oil.perimeterId, 'olive_oil_buying');
+  assert.equal(oil.perimeterId, 'olive_oil_grades');
   assert.match(oil.why, /harvest date/i);
 
   // Rice: basmati + the rinse habit (rice_arsenic).
