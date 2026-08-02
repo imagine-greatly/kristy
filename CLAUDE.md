@@ -194,6 +194,19 @@ equality *is* the positioning.
   Counter's own placeholder read "Wild or farmed salmon?". `isBareEitherOr` closes it —
   both sides must survive `contentWords`, which is what keeps "when does the store close
   or open" out. Only the plain "or" was ever broken; `GROCERY_ACT` already listed "vs".
+- **SCOPE HAS BEEN WRONG IN ONE DIRECTION EVERY TIME. It is too tight, never too loose.**
+  Four corrections now, and all four were the gate refusing a real shopper: requiring a
+  known food noun and rejecting "how do I pick a good cantaloupe" with "name the food";
+  landing "is bagged salad safe" as off-topic; rejecting a bare either/or on `inScope`
+  after `looksLikeCounterQuestion` was already fixed; and rejecting seven of twelve `what
+  is X` queries over words the KB itself teaches. Zero corrections have gone the other
+  way. The file's own header says the two failure modes "are not symmetric" and it is
+  right, but the asymmetry has never once been the one it was written to guard against —
+  the deny list has held. **When in doubt here, admit and let the downstream filters
+  refuse**: the matcher returns nothing, the generator's "insufficient" escape discards,
+  and the claim lock and lint sit on the way out. A wrongly-admitted question costs one
+  discarded model call. A wrongly-refused one tells a shopper their question does not
+  belong, on the surface built to win them.
 - **A definitional question is a counter question, and the length bound is what makes it
   safe.** "what is skyr" was answered "that one is outside the store". Probed over twelve
   `what is X` queries where X is a word the KB *itself teaches*, **seven were rejected** —
@@ -221,6 +234,17 @@ equality *is* the positioning.
   cards are authored with 6 to 8. There was no alias advantage and never had been. Record
   measured numbers, not characterizations; this is the second time a written-down
   conclusion stopped anyone checking.
+- **A HUB CARD'S DO LINE MUST WORK FOR WHATEVER BROUGHT THE SHOPPER THERE.**
+  `produce_ripeness_by_item` answers 14 items and its do line named one: a question about
+  melon returned an instruction about berries, in the most prominent line on the card. That
+  is a wrong instruction, not a related-card tradeoff, and lowering the retrieval gate made
+  it worse by routing every ripeness query there. The line is now the second generalizing
+  check the card already taught ("smell the stem end on anything that ripens after
+  picking") — the headline carries weight, the do line carries smell, and the 14 per-item
+  checks stay in `look_for` one tap down. **A swept audit found this on exactly one card**,
+  so it is a fixed defect and not a pattern; the other hubs already generalize. Per-item do
+  lines matched to the query were considered and rejected for now: browse has no query, so
+  the card would render differently when asked than when browsed.
 - **Decision-first is content, not styling.** `decision`/`why` are authored per entry in
   the KB, re-ranked from its own short_answer/kristy_take/tips — never new research.
   The depth is demoted, never deleted. The **tier chip stays above the tap** even though
