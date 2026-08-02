@@ -178,6 +178,15 @@ export const RETIRED_GENERATED = [
   // is what stops this recurring; folding the row is the cleanup. Its strawberry-specific
   // aliases moved onto `berries_picking`.
   'gen_strawberry_freshness_check',
+
+  // → revive_greens, authored the same day and near-verbatim: "Ice water fixes limp
+  // lettuce, never spoiled lettuce" against the curated "Limp is water loss, not
+  // spoilage. It comes back." The curated card existed, was correct, and could not be
+  // retrieved — it carried "limp lettuce" and "wilted lettuce" but not bare `lettuce`,
+  // `limp` or `wilted`, so "my lettuce went limp" scored zero against it. THIRD time a
+  // new card has been regenerated through an alias gap. A new card needs the bare nouns
+  // and the phrasings people type, not only the ones its title uses.
+  'gen_limp_lettuce_revival',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */

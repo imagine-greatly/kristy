@@ -250,6 +250,14 @@ equality *is* the positioning.
   cards are authored with 6 to 8. There was no alias advantage and never had been. Record
   measured numbers, not characterizations; this is the second time a written-down
   conclusion stopped anyone checking.
+- **A NEW CARD NEEDS THE BARE NOUNS AND THE PHRASINGS PEOPLE TYPE, NOT THE ONES ITS TITLE
+  USES — and this has now regenerated a duplicate three times.** `berries_picking` lacked
+  bare `strawberries`; `revive_greens` lacked bare `lettuce`, `limp` and `wilted` and was
+  regenerated as `gen_limp_lettuce_revival` within an hour of being authored, near-verbatim.
+  The pattern: an author names aliases from the card's own vocabulary ("limp lettuce",
+  "wilted lettuce") and a shopper types the words in a different order or one at a time.
+  **Author aliases from the question, then verify by asking it.** A curated card that
+  exists, is correct, and cannot be retrieved costs a generation every time it is asked.
 - **KITCHEN TECHNIQUE IS A CARD CLASS, and `kind='home'` is what carries it.** Kristy knows
   what works at home, not only what to buy. Six technique cards landed 2026-08-02:
   `baking_soda_soak`, `bean_soak_salt`, `dry_brine`, `revive_greens`, `freezing_produce`
