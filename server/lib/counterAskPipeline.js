@@ -126,6 +126,20 @@ export async function answerCounterQuestion({
   const top = scored[0];
   if (top && top.score >= CONFIDENT && top.aliasScore > 0) {
     const card = projectEntry(top.entry, { doLine: reviewed.get(top.entry.id)?.do || '' });
+    // USE_COUNT COUNTED THE WRONG THING. A generated retrieval hit bumped it (below) and a
+    // browse open bumped it (routes/counter.js), but a CURATED retrieval hit — the single
+    // commonest way a card gets used — did not. So the number read as "how often this card
+    // was browsed to", never "how often it answered", and every curated card was undercounted
+    // against every generated one on the one axis they are compared: `use_count` is the
+    // stated promotion signal for a generated card, and it was being measured on a scale the
+    // curated corpus was not on.
+    //
+    // NO COUNT IS PASSED, and that is not an oversight. This card is projected from the
+    // in-memory KB with zero I/O, so there is no row in hand and therefore no current value
+    // — passing `card.use_count` would hand bumpUseCount `undefined` and write NaN. It reads
+    // the row itself when the count is absent. Fire-and-forget, so the extra round trip is
+    // off the shopper's path entirely.
+    bumpUseCount(top.entry.id, client);
     // The matched entries ride along for the PREMIUM personalization only. They are the
     // claim lock's input: composeAnswer sees seven whitelisted fields of these and nothing
     // else. A GENERATED card carries none, which is why it is never personalized — there

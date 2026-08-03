@@ -25,6 +25,10 @@ export const USER_TABLES = [
   'subscriptions',
   'haul_scans',
   'shopping_lists',
+  // Every trip they ever took, with the items and the cards attached to them. The archive
+  // that makes "same as last week" possible is also, by construction, the longest record of
+  // a person's shopping this app holds — so it leaves with them, explicitly, first.
+  'trips',
   'push_tokens',
   // user_goals last: the signup trigger recreates a row on this table, so clearing it
   // before the others buys nothing. It is also the row the profile hangs off.

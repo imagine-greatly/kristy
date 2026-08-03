@@ -763,13 +763,40 @@ export function scoreGenerated(question, cards) {
   return scored;
 }
 
-/** Bump the use counter on a retrieval hit. Fire-and-forget; a shopper never waits on it. */
-export async function bumpUseCount(slug, client, current = 0) {
+/**
+ * Bump the use counter on a hit. Fire-and-forget; a shopper never waits on it.
+ *
+ * `current` IS OPTIONAL, AND OMITTING IT IS THE CORRECT CALL FROM THE CURATED PATH. Two of
+ * the three call sites already hold a row and know the count. The third — a curated
+ * retrieval hit — projects its card from the in-memory KB with no I/O at all, so it has no
+ * count to pass; handing it `card.use_count` yields `undefined` and `Number(undefined) + 1`
+ * is NaN, which would silently null the column on every ask. When the count is absent it is
+ * read here instead.
+ *
+ * READ-MODIFY-WRITE IS A LOST UPDATE and this has always been one: two concurrent hits both
+ * read N and both write N+1, so the second is swallowed. It undercounts, never overcounts,
+ * which is the harmless direction for a popularity signal — but the real fix is an atomic
+ * `update ... set use_count = use_count + 1` behind an RPC, and it is proposed with the
+ * trips migration rather than bolted on here.
+ */
+export async function bumpUseCount(slug, client, current) {
   if (!client || !slug) return;
   try {
+    let base = Number(current);
+    if (!Number.isFinite(base)) {
+      const { data, error } = await client
+        .from(TABLE)
+        .select('use_count')
+        .eq('slug', slug)
+        .maybeSingle();
+      // No row, or the table is unreachable. There is nothing to increment and inventing a
+      // starting value would write a count for a card that may not exist.
+      if (error || !data) return;
+      base = Number(data.use_count) || 0;
+    }
     await client
       .from(TABLE)
-      .update({ use_count: Number(current) + 1 })
+      .update({ use_count: base + 1 })
       .eq('slug', slug);
   } catch (err) {
     console.warn('[kristy] use_count not bumped:', err?.message || err);

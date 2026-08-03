@@ -5,6 +5,7 @@ import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
 import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
+import { attachCards } from '../lib/listMatch.js';
 import { looksLikePerimeterQuestion, looksLikeCounterQuestion } from '../lib/chatRouting.js';
 import { scoreEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
 import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
@@ -202,7 +203,7 @@ router.post('/list', (req, res) => {
     const prefs = sanitizeGuestPrefs(req.body || {});
     if (!prefs.goals.length) return res.status(400).json({ error: 'goals_required' });
 
-    const list = generateList({ ...prefs, premium: true });
+    const list = attachCards(generateList({ ...prefs, premium: true }));
     return res.json({ list, taste: true, prefs });
   } catch (err) {
     console.error(`[kristy] /api/guest/list error @ ${new Date().toISOString()}:`, err?.message || err);
@@ -226,6 +227,39 @@ router.post('/list', (req, res) => {
 
    This one DOES make a model call, so it draws on the shared per-IP inference budget
    (the same pool as guest chat) rather than the free deterministic cart-build bucket. */
+/* POST /api/guest/list/attach   { list }
+   Attach counter cards to a guest's list and hand it straight back.
+
+   CARD ATTACHMENT IS NOT GATED — it is the feature that makes someone want the thing, so a
+   stranger gets it in full. But a guest cart lives entirely in localStorage and never
+   reaches the server, so the attachment that happens inside POST /api/list for a signed-in
+   shopper has nowhere to happen for them. This is that hook, and it is the ONLY thing this
+   endpoint does.
+
+   Nothing is stored. Deterministic, no model call, so it costs a KB scan of an in-memory
+   array and is not metered — the same posture as the counter's free layer, for the same
+   reason. Rate-limited on the shared cart bucket only so it cannot be used to walk the
+   corpus; every card it names is already free to read at /api/counter/cards/:slug.
+
+   Unmatched items DO land in the gap log, exactly as a signed-in shopper's do. That table
+   holds no identity from anybody, so a guest's "kombucha" is precisely as anonymous as an
+   account holder's — and it is the more valuable signal, because this is the surface where
+   people arrive with what they actually buy. */
+router.post('/list/attach', (req, res) => {
+  try {
+    if (cartBuildLimited(clientIp(req))) {
+      return res.status(429).json({ error: 'rate_limited', message: 'Give it a minute and try again.' });
+    }
+    const clean = sanitizeList(req.body?.list);
+    if (!clean) return res.status(400).json({ error: 'list is required' });
+    return res.json({ list: attachCards(clean), guest: true });
+  } catch (err) {
+    console.error(`[kristy] /api/guest/list/attach error @ ${new Date().toISOString()}:`, err?.message || err);
+    // A list with no cards on it is still a list. Never fail the shopper's cart over this.
+    return res.status(503).json({ error: true });
+  }
+});
+
 router.post('/list/compose', async (req, res) => {
   const instruction = String(req.body?.instruction || '').trim();
   const mode = req.body?.mode === 'edit' ? 'edit' : 'build';
@@ -262,7 +296,7 @@ router.post('/list/compose', async (req, res) => {
         ? buildCart(current, add, { goal: prefs.goals[0] || null, summary })
         : applyCompose(current, { add, remove }, { instruction });
 
-    return res.json({ list: sanitizeList(next) || next, summary, premium: false, guest: true });
+    return res.json({ list: attachCards(sanitizeList(next) || next), summary, premium: false, guest: true });
   } catch (err) {
     console.error(`[kristy] /api/guest/list/compose error @ ${new Date().toISOString()}:`, err?.message || err);
     return res.status(503).json({

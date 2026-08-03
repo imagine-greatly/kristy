@@ -84,16 +84,11 @@ export const UPGRADE_COPY = {
       'A nutritionist answers the questions you bring. This one answers the questions '
       + 'you didn’t know to ask, in the aisle, while it still matters.',
   },
-  list: {
-    // The concrete line LEADS. An earlier draft opened "The cart is yours. Keeping it
-    // is the membership" — two clauses where the second inverts the first for cadence
-    // and says nothing you can act on. `copulaAbstraction` in counterCardLint now
-    // reports that shape; it did not exist when the line was written.
-    headline: (n) => `${n === 1 ? 'One item' : `${n} items`}, and the read behind each one.`,
-    body:
-      'Next week it is still here, and so is what you decided. The swaps you took and '
-      + 'the ones you turned down come with it.',
-  },
+  // THERE IS NO `list` ENTRY, AND ADDING ONE BACK MEANS SELLING SOMETHING FREE. It read
+  // "Next week it is still here" — but the list has been persisted server-side for every
+  // signed-in shopper the whole time, so the sentence described no capability the reader
+  // did not already have. The list is free: building, saving, keeping, the attached cards.
+  // The membership is the full read, and `read` above is the only ask.
 };
 
 /** "4 more checks, 2 traps, and why this carries the tier." — built from real counts. */

@@ -259,6 +259,16 @@ equality *is* the positioning.
   cards are authored with 6 to 8. There was no alias advantage and never had been. Record
   measured numbers, not characterizations; this is the second time a written-down
   conclusion stopped anyone checking.
+- **ALIAS AUTHORING DIFFERS BY SURFACE: QUESTIONS FOR ASK, BARE NOUNS FOR LIST.** An alias
+  is matched by whole-phrase containment, so `"how to pick tomatoes"` can only ever be found
+  by someone typing that sentence — and a shopper writing a list types `tomatoes`. Measured
+  2026-08-02 over a 30-item list: `tomato` AND `tomatoes` both missed a card that authors
+  "Tomatoes: fragrant at the stem"; `nuts` hit while `almonds` missed; `cheese` hit while
+  `cheddar` missed; `uncured bacon` hit while `bacon` missed. **It is not a plural problem
+  and stemming would not have fixed it** — it is that the aliases were written in the card's
+  own topic vocabulary. Every card now needs both: the phrasings people ASK, and the bare
+  nouns they WRITE. This is the fifth consecutive time this defect has shipped, and the list
+  is the first surface whose input is bare nouns exclusively.
 - **EVERY CARD CARRIES ITS OWN QUESTIONS, IN `asked_as`, AND A TEST ASKS THEM.** Three or
   more realistic phrasings per card, authored **from the question, never from the card's own
   vocabulary** — "my lettuce went limp", not "wilted greens revival". They live on the entry
@@ -451,12 +461,33 @@ equality *is* the positioning.
 **Money**
 - **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card
   SUMMARY (eyebrow, tier chip, headline, do line, cart pick), all scanning, unlimited
-  asking including generation, all browsing, and building a cart in-session. Paid: the
-  depth (`why`, `look_for`, `watch_out`, `tier_note`, `detail`, `kristy_take`,
-  `labels_decoded`, `sources`) and SAVING a list. `summarize()` / `forViewer()` in
-  counterCards.js strip the depth **before it leaves the server** — a client that merely
-  hides it has already received it, and before this every card route handed the whole
-  corpus to any unauthenticated caller in one GET.
+  asking including generation, all browsing, and **the entire list** — building it, saving
+  it, keeping it across trips, the cards attached to its items. Paid: the depth (`why`,
+  `look_for`, `watch_out`, `tier_note`, `detail`, `kristy_take`, `labels_decoded`,
+  `sources`). `summarize()` / `forViewer()` in counterCards.js strip the depth **before it
+  leaves the server** — a client that merely hides it has already received it, and before
+  this every card route handed the whole corpus to any unauthenticated caller in one GET.
+- **THE LIST IS FREE, AND THE ONE TIME IT WAS SOLD IT WAS ALREADY GIVEN AWAY.** A "Save
+  this list" button rendered for non-premium shoppers and opened the upgrade ask — but
+  `POST /api/list` is `requireAuth` with no premium check and every cart mutation calls it,
+  so the save had happened before the button was drawn. It asked for money for a completed
+  action, which is worse than a wall: a wall is at least honest about where the boundary
+  is. Removed 2026-08-02, along with `UPGRADE_COPY.list`. **The list is the retention
+  engine and metering it works against what it is for** — the thing that brings someone
+  back next week is the thing you least want a toll on. `gate.mjs` asserts no
+  `[data-save-list]` control exists on any tier.
+- **THE FREE SURFACE STATES THE CALL; THE COST OF THE CALL LIVES IN THE DEPTH. THAT IS THE
+  GATE WORKING, NOT A DEFECT.** A card with a real tradeoff puts the verdict in the headline
+  and what the verdict costs in `watch_out` — which is paid. `rice_arsenic` is the clearest
+  case (buy white; the bran's magnesium, fiber, manganese and B6 are what you give up), but
+  it is a property of **every** card that names a downside, not of that one. It looks like a
+  card hiding its own cost and it is not: the tier chip is free and it is the honest signal,
+  saying whether the line above it is settled science, a credible concern or a standard. A
+  shopper who never pays still learns that a `kristys_standard` verdict is a preference.
+  **Do not "fix" this by promoting `watch_out` into the free layer** — that is the depth,
+  it is what the membership buys, and the eight essentials already exist to prove the depth
+  is worth having. If a specific card's cost is load-bearing enough to be free, the lever is
+  making that card an essential, not widening the boundary for all eighty-one.
 - **THE EIGHT ESSENTIALS ARE ALWAYS FULL and never touch the meter.** They sit on the index
   before any navigation: a shopper who spends three reads on the shelf never reaches the
   counter and never learns the other seventy-three exist. Free depth on the shelf proves
@@ -476,8 +507,9 @@ equality *is* the positioning.
   an account needs a phone code, and phone codes are blocked on 10DLC — a guest who tapped
   a plan would type a number, press Send code, and wait for a message that cannot arrive.
   They keep the whole free surface and the teaser. Restore the buttons the day sign-in works.
-- **The ask appears at TWO moments and nowhere else**: the fourth full-read tap, and a list
-  save. Not on open, not on a scan, not on an ask, never a banner.
+- **The ask appears at ONE moment and nowhere else**: the fourth full-read tap. It was two
+  until the list-save ask was removed as dishonest (above). Not on open, not on a scan, not
+  on an ask, not on a save, never a banner.
 
 - Price *ids* are configuration, never hardcoded, and the client never sees them.
   Displayed prices have exactly one source per client (`lib/pricing`).
@@ -497,8 +529,18 @@ equality *is* the positioning.
   and `schemaSafety.test.js` fails if any other `supabase/*.sql` file contains an
   `insert`/`update`/`delete`/`truncate` outside a function body. **Never put a data write
   in a schema file.**
-- Free = scan + the universal layer + the counter's free layer, always. Paid =
-  personalized note, focus/constraint-aware cart, haul read, conversational cart edits.
+- Free = scan + the universal layer + the counter's free layer + **the whole list**,
+  always. Paid = personalized note, focus/constraint-aware cart, haul read.
+- **BUILDING A CART FROM A SENTENCE IS FREE, BEHIND A BUDGET — NOT A GATE.** It was premium
+  on both doors (`/api/list/compose` and the `looksLikeCartCommand` branch in chat), and a
+  signed-out GUEST could already do it through `composeGuestList`. So signing up bought a
+  shopper LESS of the thing the cart is for. `LIST_COMPOSE_FREE_LIMIT` is **12 per day** for
+  free callers, premium exempt: a day because a build is a per-TRIP act and an hourly bucket
+  lets someone hit a wall mid-build then resets at 4am, and twelve because one build plus ten
+  refinements is past any real session while sitting above the guest's shared eight — so the
+  incoherence is fixed rather than inverted. **Both doors move together or the gate just
+  relocates** to whichever one the shopper did not try first. The over-budget line is not an
+  upsell; the ask still appears at exactly one moment.
 
 ---
 
@@ -534,7 +576,7 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (433 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (445 tests). Client: `cd client && npx vite build`.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The

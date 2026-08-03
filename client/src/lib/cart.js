@@ -21,6 +21,7 @@ import {
   composeList,
   composeGuestList,
   buildGuestList,
+  attachGuestCards,
 } from './list.js';
 import { trackEvent } from './analytics.js';
 import { guestList, recordGuestList } from './guestState.js';
@@ -303,18 +304,20 @@ export function useCart(prefs) {
     async (instruction, mode = 'edit') => {
       const text = String(instruction || '').trim();
       if (!text || busy) return { ok: false };
-      if (!premium) {
-        setGated(true);
-        return { ok: false, gated: true };
-      }
+      // NO PREMIUM CHECK. Building the cart from a sentence is free — a guest could always
+      // do it, so refusing a signed-in shopper here made an account worth less than none.
+      // The server holds a daily budget instead of a gate; `gated` survives only because
+      // the composer can still come back over budget.
       setBusy(mode);
       setNote('');
       setGated(false);
       const res = await composeList({ instruction: text, mode, prefs: prefsRef.current });
       setBusy('');
-      if (res?.gated) {
-        setGated(true);
-        return { ok: false, gated: true };
+      if (res?.budget) {
+        // A ceiling, not a wall — so it says so and offers no plan. `note` is the same
+        // channel her compose summaries use, which is where the shopper is already looking.
+        setNote(res.message || '');
+        return { ok: false, budget: true };
       }
       if (res?.list) {
         listRef.current = res.list;
@@ -440,6 +443,52 @@ export function useGuestCart({ onNeedsAccount, prefs } = {}) {
   useEffect(() => {
     listRef.current = list;
   }, [list]);
+
+  /* CARD ATTACHMENT IS NOT GATED, so a guest gets it too — and their cart never touches the
+     server, so it has to be asked for explicitly.
+
+     Fires only when a MATCHABLE row has not been looked at yet, which is what makes this
+     quiet: adding an item triggers one call, and checking things off for the next forty
+     minutes triggers none. The server stamps `carded` on every row it inspects including
+     the misses, so a row is never re-sent.
+
+     Merged by ROW ID rather than replacing the list, for the same reason mergeOffers does
+     it: the shopper may have checked or removed something while the call was in flight, and
+     their edit outranks our annotation. */
+  const uncarded = (list?.items || []).some(
+    (i) => !i.carded && (i.source === 'user' || i.source === 'imported' || i.source === 'template')
+  );
+
+  useEffect(() => {
+    if (!uncarded) return;
+    let alive = true;
+    (async () => {
+      const carded = await attachGuestCards(listRef.current);
+      if (!alive || !carded) return;
+      const byId = new Map(carded.items.map((i) => [i.id, i]));
+      const cur = listRef.current;
+      if (!cur || !Array.isArray(cur.items)) return;
+      let changed = false;
+      const items = cur.items.map((i) => {
+        const c = byId.get(i.id);
+        if (!c || i.carded) return i;
+        changed = true;
+        return {
+          ...i,
+          carded: true,
+          ...(c.cardSlug ? { cardSlug: c.cardSlug, cardSection: c.cardSection } : {}),
+        };
+      });
+      if (!changed) return;
+      const next = { ...cur, items };
+      listRef.current = next;
+      setList(next);
+      recordGuestList(next);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [uncarded]);
 
   // Same discipline as useCart: compute the next list eagerly and persist as a plain
   // side effect, never inside a setState updater React may run twice.

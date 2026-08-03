@@ -46,6 +46,41 @@ const userLimiter = createRateLimiter({
   max: AUTH_RATE_LIMIT,
 });
 
+/* ── Building a cart from a sentence — A BUDGET, NOT A GATE ────────────────────────
+   This was premium-only, and that was incoherent in the one direction nobody wants: a
+   GUEST already gets it free (composeGuestList, behind the shared 8/hour IP budget), so
+   signing up made a shopper WORSE OFF at the thing the list is for. The list is free —
+   building it included — and the honest answer to a per-use cost is a ceiling, not a wall.
+
+   TWELVE PER DAY, and both halves of that are chosen rather than inherited.
+
+   The WINDOW is a day because a build is a per-TRIP act. Nobody composes a cart on the
+   hour; they do it once or twice a week and then edit it. An hourly window is the wrong
+   unit twice over — it lets someone burn the whole budget in five minutes and hit a wall
+   mid-build, and it resets at 4am when nobody is shopping.
+
+   TWELVE because one full build plus ten refinements ("no fish", "snacks for the kids",
+   "swap the rice") is already past the top of any real session, and it sits ABOVE the
+   guest's shared eight so the incoherence is fixed rather than inverted — a signed-in free
+   shopper is now strictly better off than a stranger, which is the only ordering that makes
+   sense. It is a ceiling on a script, not a limit a shopper meets.
+
+   Premium skips it. `userRateLimit` (60/hr across all authed cost-bearing endpoints) still
+   sits underneath both, so this is the narrower of two ceilings, never the only one. */
+export const LIST_COMPOSE_FREE_LIMIT = Number(process.env.LIST_COMPOSE_FREE_LIMIT) || 12;
+const LIST_COMPOSE_WINDOW_MS = 24 * 60 * 60 * 1000;
+
+export const listComposeLimited = createRateLimiter({
+  windowMs: LIST_COMPOSE_WINDOW_MS,
+  max: LIST_COMPOSE_FREE_LIMIT,
+});
+
+// Kristy-voiced, and deliberately NOT an upsell. The ask appears at one moment in this
+// product — the fourth full-read tap — and a budget message is not that moment. Saying
+// "become a member" here would re-sell the thing that was just made free.
+export const LIST_COMPOSE_BUDGET_MESSAGE =
+  'That is a lot of rebuilding for one day. The cart is still here, and adding by hand always works.';
+
 /**
  * Express middleware — MUST run after requireAuth (it reads req.user.id). On
  * limit it responds with the graceful {error, message} shape the client renders

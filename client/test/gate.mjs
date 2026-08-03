@@ -116,13 +116,19 @@ if (await page.locator('[data-card-teaser]').count()) {
 }
 await shot('2-teaser');
 
-/* ── The cart. Building it is free; SAVING is where a guest meets sign-in, which is the
-      honest order — an account first, a membership after. ── */
+/* ── The cart, and it is free end to end: building it, keeping it, the cards attached to
+      it. There is NO save control on this surface for anyone, on any tier.
+
+      There was one. It rendered for non-premium shoppers and opened the upgrade ask —
+      over a save that every cart mutation had already performed against /api/list. This
+      asserts rather than logs, because the whole point is that the count is zero and a
+      console line nobody reads cannot tell you when it stops being. ── */
 await click('[data-cta]', 'Add to cart');
 await tab('Cart');
 await page.waitForTimeout(1000);
-const guestSave = await page.locator('[data-save-list]').count();
-console.log(`  guest save control: ${guestSave} (0 — saving routes through the sign-in gate)`);
+const saveControls = await page.locator('[data-save-list]').count();
+console.log(`  save controls on the cart: ${saveControls} (must be 0 — the list is free)`);
+if (saveControls) throw new Error('a save control is asking for money for something free');
 await shot('3-cart-free');
 
 await browser.close();

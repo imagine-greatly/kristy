@@ -93,6 +93,45 @@ export async function fetchPerimeterEntry(id) {
   return IS_DEMO ? demoAnswer(id).entries[0] || null : null;
 }
 
+/* Card summaries for the slugs on a cart, in ONE request.
+
+   A cart with seven matches would otherwise mean seven round trips, or pulling all 82
+   cards to render four lines each. Public and free — the summary always has been.
+
+   Cached for the session by slug, because the cart regroups on every render and the
+   corpus only changes by migration. A slug already held is never re-requested, so
+   checking items off for forty minutes issues no traffic at all. */
+const summaryCache = new Map();
+
+export async function fetchCardSummaries(slugs = []) {
+  const want = [...new Set(slugs.filter(Boolean))];
+  const missing = want.filter((s) => !summaryCache.has(s));
+  if (missing.length) {
+    try {
+      const res = await fetch(
+        `${apiBase}/api/counter/summaries?slugs=${encodeURIComponent(missing.join(','))}`,
+        { headers: await authHeader() }
+      );
+      if (res.ok) {
+        const { cards } = await res.json();
+        for (const slug of missing) {
+          // A slug the server did not return is cached as null on purpose: a retired card
+          // is a permanent absence, and re-asking for it on every render would be a loop.
+          summaryCache.set(slug, cards?.[slug] || null);
+        }
+      }
+    } catch {
+      /* A row with no card attached is still a row. Never fail a cart over this. */
+    }
+  }
+  const out = {};
+  for (const s of want) {
+    const c = summaryCache.get(s);
+    if (c) out[s] = c;
+  }
+  return out;
+}
+
 /* ── Browse by store section. Public, cached for the session: the KB is a static
       file server-side, so re-fetching it on every visit to the surface is waste.
 

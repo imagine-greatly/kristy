@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
-import { userRateLimit } from '../lib/rateLimit.js';
+import { userRateLimit, listComposeLimited, LIST_COMPOSE_BUDGET_MESSAGE } from '../lib/rateLimit.js';
 import { buildPreferencesBlock } from '../lib/prompts.js';
 import { generateReply } from '../lib/chatEngine.js';
 import { premiumForReq } from '../lib/subscription.js';
@@ -24,7 +24,7 @@ import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { buildBaseline } from '../lib/listBaseline.js';
-import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
+import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
 import {
   getFullProfile,
   saveChatMessage,
@@ -209,19 +209,23 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
     const premium = await premiumForReq(req);
 
     // 1. An instruction to change the CART? The docked composer is the cart's editor,
-    //    so this edits the cart instead of talking about it. Premium, gated from the
-    //    DB exactly like /api/list/compose. Runs first: a command is never a question.
+    //    so this edits the cart instead of talking about it. Runs first: a command is
+    //    never a question.
+    //
+    //    FREE, BEHIND THE SAME DAILY BUDGET /api/list/compose USES. This was premium and
+    //    answered with an upsell line — on the same capability a signed-out guest already
+    //    had. Both doors into the cart's editor have to agree, or the gate just moves to
+    //    whichever one the shopper did not try first.
     if (looksLikeCartCommand(message)) {
-      if (!premium) {
+      if (!premium && listComposeLimited(userId)) {
         await saveChatMessage(userId, { role: 'user', content: message });
-        await saveChatMessage(userId, { role: 'ai', content: LIST_COMPOSE_UPSELL });
+        await saveChatMessage(userId, { role: 'ai', content: LIST_COMPOSE_BUDGET_MESSAGE });
         return res.json({
-          message: LIST_COMPOSE_UPSELL,
+          message: LIST_COMPOSE_BUDGET_MESSAGE,
           hasFood: false,
           macros: null,
           foods: [],
           insight: '',
-          upgrade: true,
         });
       }
       // A whole-cart build can carry a standing lens with it ("build a holistically

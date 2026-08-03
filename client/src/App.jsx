@@ -1094,7 +1094,6 @@ export default function App() {
               onSetGoal={() => setSwitcherOpen(true)}
               onUpgrade={openUpgrade}
               onScan={() => setCameraOpen(true)}
-              onSaveList={subscription?.premium ? null : (n) => askToUpgrade('list', n)}
               onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
               onHaul={() => setMoment('haul')}

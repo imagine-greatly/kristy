@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
-import { userRateLimit } from '../lib/rateLimit.js';
+import { userRateLimit, listComposeLimited, LIST_COMPOSE_BUDGET_MESSAGE } from '../lib/rateLimit.js';
 import {
   getFullProfile,
   getShoppingList,
@@ -15,8 +15,9 @@ import { parseListText, specifyImportedItems, importSummary } from '../lib/listI
 import { readListPhoto } from '../lib/listVision.js';
 import { imageUpload } from '../lib/upload.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
-import { sanitizeList, applyCompose, buildCart, LIST_COMPOSE_UPSELL } from '../lib/cartEdit.js';
+import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
 import { attachOffers } from '../lib/listVoice.js';
+import { attachCards } from '../lib/listMatch.js';
 import { buildBaseline, suppressedByBaseline } from '../lib/listBaseline.js';
 
 // The List — server-persisted and server-gated (Step 8 → durable).
@@ -167,6 +168,17 @@ router.get('/list', requireAuth, async (req, res) => {
       try { await clearPendingSwaps(userId); } catch { /* best-effort */ }
     }
 
+    /* CARDS ATTACH ON READ TOO, not only on write. A list that already existed before this
+       shipped has no `carded` rows and would otherwise sit uncarded until the shopper
+       happened to edit it. attachCards returns the SAME OBJECT when nothing needed looking
+       at, so this is free on every subsequent load and the persist below never fires
+       spuriously. */
+    const carded = attachCards(list);
+    if (carded !== list) {
+      list = carded;
+      await persist(userId, { list });
+    }
+
     return res.json({ list, premium });
   } catch (err) {
     console.error('[kristy] GET /api/list error:', err.message);
@@ -193,7 +205,9 @@ router.post('/list', requireAuth, async (req, res) => {
     // save is a no-op. Nothing is removed or renamed here — the most that happens is
     // a note appearing beside an item the shopper is still buying.
     const declined = signals?.declinedSwaps || stored?.signals?.declinedSwaps || [];
-    const list = attachOffers(clean, { declined });
+    // Both are idempotent by a stamped flag (`offered` / `carded`), so a row added on this
+    // save is looked at exactly once and every later save is a no-op over it.
+    const list = attachCards(attachOffers(clean, { declined }));
 
     await persist(userId, { list, signals });
     // The list rides back so the offer lands on the row the shopper is looking at,
@@ -216,7 +230,9 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
 
     const sig = listSignature({ goals, nonNegotiables, focuses, constraints });
-    const list = generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium });
+    const list = attachCards(
+      generateList({ goals, nonNegotiables, focuses, constraints, nextList: pending, signals, premium })
+    );
     await persist(userId, { list, signals: { ...signals, sig } });
     if (premium && pending.length) {
       try { await clearPendingSwaps(userId); } catch { /* best-effort */ }
@@ -240,9 +256,12 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
   if (!instruction) return res.status(400).json({ error: 'instruction is required' });
 
   try {
+    // A BUDGET, NOT A GATE. Building a list is building a list, and the list is free — a
+    // guest already got this. Free callers get their own daily ceiling; see
+    // LIST_COMPOSE_FREE_LIMIT for why it is twelve a day rather than an hourly bucket.
     const premium = await premiumForReq(req);
-    if (!premium) {
-      return res.json({ gated: true, premium: false, upsell: LIST_COMPOSE_UPSELL });
+    if (!premium && listComposeLimited(userId)) {
+      return res.status(429).json({ error: true, message: LIST_COMPOSE_BUDGET_MESSAGE });
     }
 
     const profile = await getFullProfile(userId).catch(() => ({}));
@@ -275,7 +294,7 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
         ? buildCart(current, add, { goal, summary })
         : applyCompose(current, { add, remove }, { instruction });
 
-    const clean = sanitizeList(list) || list;
+    const clean = attachCards(sanitizeList(list) || list);
     // Stamp the CURRENT preference signature onto a conversationally-built cart.
     // Without this a cart built after a goal change reads as stale on the next load
     // and gets regenerated from the template — silently throwing away the cart the
@@ -378,7 +397,7 @@ router.post('/list/import', requireAuth, userRateLimit, imageUpload.single('imag
       items: [...current.items, ...items],
     };
 
-    const clean = sanitizeList(merged) || merged;
+    const clean = attachCards(sanitizeList(merged) || merged);
     await saveShoppingList(userId, { list: clean });
     return res.json({ list: clean, summary, imported: items.length, specified });
   } catch (err) {

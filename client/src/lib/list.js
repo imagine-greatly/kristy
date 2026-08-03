@@ -107,7 +107,16 @@ async function authFetch(path, opts = {}) {
       ...(opts.headers || {}),
     },
   });
-  if (!res.ok) throw new Error(`list ${path} ${res.status}`);
+  if (!res.ok) {
+    // THE BODY RIDES ON THE ERROR. A bare `throw new Error(status)` threw away the
+    // server's Kristy-voiced message, so a 429 over the compose budget surfaced to the
+    // shopper as "that did not go through, try it once more" — which is wrong, and
+    // actively invites the retry the ceiling exists to stop.
+    const err = new Error(`list ${path} ${res.status}`);
+    err.status = res.status;
+    err.body = await res.json().catch(() => null);
+    throw err;
+  }
   return res.json();
 }
 
@@ -274,10 +283,12 @@ export async function composeList({ instruction, mode = 'edit', prefs = {} } = {
 
   try {
     const res = await authFetch('/api/list/compose', { method: 'POST', body: JSON.stringify({ instruction: text, mode }) });
-    if (res?.gated) return { gated: true, upsell: res.upsell, premium: false };
     if (res?.list && Array.isArray(res.list.items)) saveCache(res.list);
     return { list: res?.list || null, summary: res?.summary || '', premium: !!res?.premium };
-  } catch {
+  } catch (err) {
+    // Over the daily build budget. Not a gate and not an upsell — the shopper is told
+    // plainly, in her voice, and adding by hand still works.
+    if (err?.status === 429) return { budget: true, message: err.body?.message || '' };
     return { error: true };
   }
 }
@@ -312,6 +323,34 @@ export async function composeGuestList({ instruction, mode = 'build', prefs = {}
     return { list: json?.list || null, summary: json?.summary || '', premium: false };
   } catch {
     return { error: true };
+  }
+}
+
+/* Attach counter cards to a GUEST's cart.
+
+   A signed-in shopper gets this inside POST /api/list, which every cart mutation already
+   calls. A guest's cart lives entirely in localStorage and never reaches the server, so
+   without this hook the one thing that makes the list worth having would be the one thing a
+   stranger could not see — on the surface built to win them.
+
+   Deterministic and free, so it is called only when there is something new to look at (the
+   caller checks for an unstamped row first) and never on a checkbox. Any failure returns
+   null and the caller keeps the cart exactly as it was: a list with no cards on it is still
+   a list, and this must never be able to break someone's trip. */
+export async function attachGuestCards(list) {
+  if (!list || !Array.isArray(list.items) || !list.items.length) return null;
+  if (IS_DEMO) return null;
+  try {
+    const res = await fetch(`${apiBase}/api/guest/list/attach`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ list }),
+    });
+    if (!res.ok) return null;
+    const json = await res.json().catch(() => null);
+    return json?.list && Array.isArray(json.list.items) ? json.list : null;
+  } catch {
+    return null;
   }
 }
 

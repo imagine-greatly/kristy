@@ -40,3 +40,9 @@ desktop.ini
 .design-sync/
 .ds-sync/
 ds-bundle/
+
+# ─────────── Browser-test output ───────────
+# shots.mjs, skim.mjs and cart.mjs render the real surfaces over CDP and write PNGs here.
+# They are evidence for one run, regenerated on demand — a screenshot in version control
+# goes stale the first time a token changes and then quietly lies about what ships.
+client/test/shots/

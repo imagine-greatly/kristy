@@ -137,6 +137,45 @@ counterRouter.get('/counter/cards', optionalAuth, async (req, res) => {
 });
 
 
+/* GET /api/counter/summaries?slugs=a,b,c
+   The summaries for a known set of slugs, in one request.
+
+   THE LIST NEEDS MANY CARDS AT ONCE AND NONE OF THEM WHOLE. A cart with seven matches
+   would otherwise mean seven round trips to /cards/:slug, or shipping all 82 to render
+   four lines each. Both are wrong for a surface a shopper opens in an aisle.
+
+   It goes through `forViewer` like every other card route rather than hand-rolling a
+   projection, so there is one paid boundary and not a second one shaped slightly
+   differently — the eyebrow, tier, headline, do line and cart pick are free forever, and
+   the depth is withheld here exactly as it is everywhere else.
+
+   NO use_count BUMP. A card that rode along with a list render was not opened, and
+   counting it would make the number mean "appeared on screen" — which is the same
+   mistake the essentials shelf is already excluded from. The bump happens when the
+   shopper actually taps through to /cards/:slug. */
+const SUMMARY_SLUG_CAP = 200;
+
+counterRouter.get('/counter/summaries', optionalAuth, async (req, res) => {
+  const slugs = String(req.query.slugs || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, SUMMARY_SLUG_CAP);
+  if (!slugs.length) return res.json({ cards: {} });
+  try {
+    const want = new Set(slugs);
+    const viewer = await viewerFor(req);
+    const cards = {};
+    for (const c of await getAllCards(supabase)) {
+      if (want.has(c.slug)) cards[c.slug] = forViewer(c, viewer);
+    }
+    return res.json({ cards });
+  } catch (err) {
+    console.error('[kristy] /api/counter/summaries error:', err?.message || err);
+    return res.status(500).json({ error: 'counter_unavailable' });
+  }
+});
+
 /* ═══════════════════════════ The full read ═══════════════════════════
 
    GET /api/counter/cards/:slug/full — the metered route, and the only one that spends

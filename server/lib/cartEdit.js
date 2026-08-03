@@ -54,6 +54,24 @@ export function sanitizeList(list) {
       // and only ever used to READ a KB entry — never to write one.
       ...(it.perimeterId ? { perimeterId: String(it.perimeterId).slice(0, 64) } : {}),
       ...(it.alt ? { alt: String(it.alt).slice(0, 160) } : {}),
+
+      /* ── The counter card this item matched (listMatch.js) ──
+         `cardSlug` IS NOT `perimeterId`, and they are kept apart on purpose even though a
+         curated card's slug and a KB entry's id are the same string. `perimeterId` means
+         "the authored PICK on this row cites this entry"; `cardSlug` means "what the shopper
+         wrote matched this card". One is a citation, the other a retrieval hit, they render
+         differently — an authored `why` versus the card's `do` line — and a generated card
+         (`gen_*`) has a slug but no KB entry at all, so the namespaces are not even fully
+         shared. Collapsing them would make an authored line indistinguishable from a match. */
+      ...(it.cardSlug ? { cardSlug: String(it.cardSlug).slice(0, 64) } : {}),
+      // Denormalized from the card at match time so a COMPLETED trip keeps the walking order
+      // it was actually shopped in, even after the corpus is refiled or the card retired.
+      ...(it.cardSection ? { cardSection: String(it.cardSection).slice(0, 32) } : {}),
+      // MATCH ONCE. The same discipline as `offered`: stamped on every row the matcher
+      // inspects, including the ones that matched nothing, so a reload can never re-run
+      // retrieval over a row or log its miss a second time. It has to survive the round trip
+      // or the gap log becomes a count of how often the app was opened.
+      ...(it.carded ? { carded: true } : {}),
       // ── Imported-list fields (Block 8). These carry the AUTONOMY guarantees, so
       // they have to survive the save or the promise breaks on reload: what the
       // shopper originally wrote, a swap we only OFFERED, and a row we couldn't read
@@ -150,7 +168,9 @@ export function buildCart(current, add = [], { goal, summary } = {}) {
   };
 }
 
-// The withheld conversational-building capability, in Kristy's voice (a named value,
-// not "go premium"). Free users still get a real basic cart + manual add/remove.
-export const LIST_COMPOSE_UPSELL =
-  'Building a cart from one sentence is part of a membership. Adding by hand always works.';
+// NOTHING IS WITHHELD HERE ANY MORE. `LIST_COMPOSE_UPSELL` lived here — "building a cart
+// from one sentence is part of a membership" — and it went when composing became free
+// behind a daily budget (LIST_COMPOSE_FREE_LIMIT in lib/rateLimit.js). A guest could
+// already do this through the public composer, so selling it to a signed-in shopper meant
+// signing up bought them LESS. The list is free, building it included, on both the cart's
+// own editor and the docked composer in chat.
