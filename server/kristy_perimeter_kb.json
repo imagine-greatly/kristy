@@ -954,7 +954,9 @@
         "parmesan",
         "parmigiano reggiano",
         "grated cheese",
-        "natamycin"
+        "natamycin",
+        "cheddar",
+        "mozzarella"
       ],
       "category": "dairy",
       "question": "Should I buy block cheese, slices, or pre-shredded?",
@@ -1115,33 +1117,50 @@
         "brown rice",
         "white rice",
         "rice arsenic",
-        "basmati"
+        "basmati",
+        "white basmati",
+        "jasmine rice",
+        "sushi rice",
+        "long grain rice",
+        "white or brown rice"
       ],
       "category": "bulk_pantry",
-      "question": "Should I worry about arsenic in rice?",
-      "decision": "Rinse it, cook it in extra water, drain it. Vary the grains.",
-      "why": "Rice takes up more inorganic arsenic than other grains. The habits lower what comes with it.",
-      "short_answer": "Rice takes up more inorganic arsenic from soil and water than most grains — that’s established. You don’t need to fear rice, but a few simple habits lower your exposure: rinse it, cook it in extra water and drain, and vary your grains. Brown rice runs a bit higher than white because the arsenic concentrates in the bran.",
-      "detail": "Inorganic arsenic in rice is real and measured by the FDA, which is why the practical guidance exists. Cooking rice like pasta — in 6:1 water, then draining — cuts inorganic arsenic substantially, and rinsing helps too. Basmati (especially from certain regions) and California rice tend to test lower. For most people this is about sensible habits, not avoidance; for infants, the guidance to limit rice cereal is more specific.",
-      "evidence_tier": "established",
+      "question": "Should I buy white rice or brown?",
+      "decision": "White over brown. White basmati over plain white.",
+      "why": "Arsenic concentrates in the bran, and the bran is what brown rice keeps.",
+      "short_answer": "Rice takes up more inorganic arsenic from soil and water than other grains, and the bran holds most of what it takes up. Brown rice therefore tests about half again higher than white, in every testing program that has looked. Variety and origin move it further than color does: white basmati is the strong pick, and plain long-grain white is only a small step below brown.",
+      "detail": "Two testing programs put numbers on it. Consumer Reports measured brown rice at 113 ppb inorganic arsenic against white at 72; Healthy Babies Bright Futures measured 129 against 86. By variety, basmati averaged 55 ppb and sushi rice 57, while plain long-grain and parboiled both averaged 101. Origin moves it as much as color does. Rice grown in Arkansas, Louisiana, Mississippi, Missouri and Texas tests highest, and California, India and Pakistan test lowest. Why the southern crop runs high is not settled. Those fields carry residue from decades of arsenical pesticides used on cotton, and the same fields also have sandier soil, which releases arsenic more readily than clay. Both explanations are published and neither has been shown to be the whole of it. Cooking is the other lever, and it is a large one: boiling rice in plenty of water and pouring the water off removes 40 to 60 percent of the inorganic arsenic, while rinsing and soaking were each measured at 5 percent or less. The FDA has set an action level of 100 ppb for infant rice cereal and has set nothing for table rice.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "FDA guidance on arsenic in rice",
-        "Consumer Reports arsenic-in-rice testing",
-        "peer-reviewed rice-cooking arsenic-reduction studies"
+        "Consumer Reports rice heavy-metals testing, 2026",
+        "Healthy Babies Bright Futures, What’s in Your Family’s Rice?, 2025",
+        "FDA action level for inorganic arsenic in infant rice cereal",
+        "Zavala and Duxbury on arsenic in US rice by growing region",
+        "NIH Office of Dietary Supplements, food sources of magnesium"
       ],
-      "kristy_take": "Rinse rice, cook it in extra water, drain it, and do not build every meal on rice. Simple habits, no fear.",
-      "cart_pick": "Basmati rice",
+      "kristy_take": "Take the white basmati. Boil it in plenty of water and pour the water off. Rice was never where anybody got their minerals.",
+      "cart_pick": "White basmati rice",
       "buying_tips": [
-        "Rinse rice before cooking; cook in extra water (about 6:1) and drain.",
-        "Basmati and California-grown tend to test lower in arsenic.",
+        "Boil it in plenty of water and pour the water off. That step takes out 40 to 60 percent.",
+        "Basmati and sushi rice test lowest. Plain long-grain and parboiled test highest.",
+        "California, India and Pakistan on the bag run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas.",
         "Vary grains — oats, quinoa, barley — so rice isn’t every meal."
       ],
+      "watch_out": [
+        "Rinsing and soaking barely move it. Five percent or less, measured both ways.",
+        "Brown keeps the magnesium, fiber, manganese and B6 that milling takes off. Half a cup carries 42 mg of magnesium where white carries 10. Half a cup of cooked spinach carries 78.",
+        "Plain white long-grain is only a small step below brown. The variety and the origin do more work than the color."
+      ],
       "labels_decoded": [],
-      "tier_note": "Rice taking up more inorganic arsenic than other grains is established, and so are the cooking steps that lower it.",
+      "tier_note": "The gap between brown and white is measured and repeated. Buying white anyway is a standard, not a finding, and nothing here says brown rice harms anyone.",
       "asked_as": [
         "should i worry about arsenic in rice",
         "which rice has less arsenic",
-        "is rice safe to eat"
+        "is rice safe to eat",
+        "white or brown rice",
+        "is brown rice actually better",
+        "which rice should i buy",
+        "does it matter where rice is grown"
       ]
     },
     {
@@ -1195,7 +1214,13 @@
         "raw nuts",
         "dry roasted",
         "nuts in oil",
-        "mixed nuts"
+        "mixed nuts",
+        "almonds",
+        "almond",
+        "walnuts",
+        "pecans",
+        "cashews",
+        "pistachios"
       ],
       "category": "bulk_pantry",
       "question": "Are raw or roasted nuts better?",
@@ -2984,6 +3009,8 @@
         "watermelon",
         "pineapple",
         "how to pick tomatoes",
+        "tomatoes",
+        "tomato",
         "ripe peach",
         "how to pick asparagus",
         "how to pick broccoli",

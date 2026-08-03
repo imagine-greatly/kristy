@@ -58,7 +58,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `cheese_real_vs_processed` | eggs_dairy | Buy the block. Slice it or grate it yourself. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain, big tub. Add your own fruit. | Take the big plain tub, not the single-serve fruit cups. | — |
 | `raw_milk` | eggs_dairy | Worth the trouble of finding. Everything is in the sourcing. | Buy from a farm you can visit that posts its test results. | — |
-| `rice_arsenic` | bulk_pantry | Rinse it, cook it in extra water, drain it. Vary the grains. | Buy basmati or California-grown — the bag prints the origin. | — |
+| `rice_arsenic` | bulk_pantry | White over brown. White basmati over plain white. | Read the origin on the bag: India, Pakistan or California. | — |
 | `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats, any form. Skip the flavored instant packets. | Turn the canister over. One ingredient, and it is oats. | — |
 | `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Oil-roasted means a seed oil was added. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
 | `honey_adulteration` | bulk_pantry | Raw and local. The list should read honey and nothing else. | Buy honey with a producer and a region named on the jar. | — |

@@ -222,6 +222,29 @@ a feed-driven fat profile with a far worse ratio, astaxanthin in the ration beca
 flesh is otherwise gray, sea lice and the treatments used against them, antibiotic use that
 varies by country, and a fish that never swam anywhere.
 
+### The first card where Kristy's standard points AWAY from the less-processed option
+
+`rice_arsenic` carries `kristys_standard` and its verdict is "White over brown. White
+basmati over plain white." Every other card wearing that tier points at the whole food.
+This one is correct anyway, and the reason is the basis: **the tier is carrying a
+contaminant-load judgment, not a processing judgment.** Arsenic concentrates in the bran,
+the bran is what brown rice keeps, and two testing programs measure the gap at about half
+again (Consumer Reports 113 ppb against 72, HBBF 129 against 86). Where the objection is
+contaminant rather than refinement, the whole-food heuristic has nothing to say and the
+measurement leads.
+
+That makes the tier's own rubric — "the whole-food standard leads here" — read against the
+card, which is why `tier_note` is authored to carry the weight instead: "Buying white
+anyway is a standard, not a finding, and nothing here says brown rice harms anyone." Do not
+"fix" the tier by moving it to `established`. The arsenic differential is established; the
+instruction *therefore buy white* is a call, and the chip has to say which one it is.
+
+The trade is stated rather than hidden, in `watch_out`, with the numbers at one serving
+size: brown at 42 mg magnesium a half-cup, white at 10, cooked spinach at 78. A first draft
+compared a **cup** of brown rice (84 mg) against an ounce of almonds (80) and read as
+parity — the comparison argued against the position it was there to support. Compare at
+equal servings, and compare the GAP the switch actually costs, not the food's total.
+
 ### When the headline and the do line collide, move the DO LINE
 
 `OBSERVABLE_IN_BOTH` fires when both carry the same distinctive term, and the reflex is to
@@ -374,6 +397,22 @@ Nothing blocks the store test. In rough order of value:
   with", which is a question every shopper has and the seed-oil objection makes load-bearing.
   A card here needs the heat/smoke-point discrimination without a health claim in either
   direction, and it is a whole-food-standard call, not a finding.
+- **AUTHORING QUEUE FROM THE LIST SURFACE (2026-08-02).** The Phase 1 match probe ran a
+  realistic 30-item list through `scoreEntries` and named four gaps. Three of the seven
+  misses were alias gaps and were fixed in the same pass (`tomatoes`/`tomato` onto
+  `produce_ripeness_by_item`, tree-nut species onto `nuts_raw_vs_roasted`,
+  `cheddar`/`mozzarella` onto `cheese_real_vs_processed`), taking the measured rate 71% →
+  83% with zero false positives. These four are real authoring and are queued, not forced:
+  - **`bacon`** — deliberately NOT aliased onto `deli_meat_uncured`. That card answers the
+    *uncured* question (the celery-powder asterisk) and that is half an answer for someone
+    who wrote "bacon" on a list. **A half-right card is worse than an honest miss**, because
+    the miss is logged and the half-right one is not.
+  - **`bananas`** — `produce_ripeness_by_item` lists eleven items and bananas is not one.
+  - **`spinach`** and **`romaine`** — the hub covers "Leafy greens: perky rather than limp"
+    in `look_for`, but its do line is "smell the stem end on anything that ripens after
+    picking" and greens never ripen. Aliasing them to the hub would hand a shopper buying
+    spinach an instruction about smelling stem ends. **Same orphan boundary as the
+    cantaloupe fix** — a qualifier is a boundary, and this is what falls outside it.
 - **`counter_gaps` is the authoring backlog** and it is capturing now. `gapFeed` ranks it by
   frequency. That data, plus `use_count`, is the evidence for what to author next — and the
   reason "recently viewed" was skipped rather than built: it competes for the space the
