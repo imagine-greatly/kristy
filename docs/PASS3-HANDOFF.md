@@ -448,118 +448,180 @@ Nothing blocks the store test. In rough order of value:
 
 ---
 
-## 7. The list surface, 2026-08-03 — and the verification chain that could not see it
+## 7. The list surface — 2026-08-03
 
-Four defects were reported off a live 390px render of a **composed** cart. Three were
-symptoms of the same root cause, and the root cause was in the VERIFICATION, not the code.
+Four defects reported off a live 390px render of a **composed** cart. Three were symptoms
+of one root cause, and the root cause was in the VERIFICATION rather than in the code.
 
-### 7.1 A MOCK IS NOT A RENDER, AND EVERYTHING DOWNSTREAM INHERITED ITS BLIND SPOT
+### 7.1 A mock is not a render, and everything downstream inherited its blind spot
 
 `phase2-density.html` — the Phase 2 "for approval" mock — was **hand-authored HTML**. 526
 lines with the brand tokens pasted in as CSS variables. It never mounted `CartMoment`.
 
-That mattered because of what it was built FROM: twelve **bare nouns** (Blueberries,
-Pineapple, Ground beef, Olive oil), taken from the Phase 1 probe, which invented them. The
-mock contains **zero occurrences of the string "why"**. Then `cartHarness.jsx` was written
-from the mock and used the same twelve nouns with no `why`, and `cart.mjs` measured the
-harness.
+What it was built FROM is what mattered: twelve **bare nouns** (Blueberries, Pineapple,
+Ground beef, Olive oil), taken from the Phase 1 probe, which invented them. The mock
+contains **zero occurrences of the string "why"**. `cartHarness.jsx` was then written from
+the mock with the same twelve nouns and no `why`, and `cart.mjs` measured the harness.
 
-So: mock → probe → harness → browser test, four artifacts agreeing with each other and
-none of them agreeing with the product, where **all 51 PICKS carry a `why`** and 22 carry
-an authored `perimeterId`. Every matched row shipped rendering the PICK's `why` AND the
-card's do line — two prose lines where the mock showed one — and nothing in the chain
-could see it, because nothing in the chain ever held a `why`.
+Four artifacts agreeing with each other and none agreeing with the product, where **all 51
+PICKS carry a `why`** and 22 carry an authored `perimeterId`. Every matched row shipped
+rendering the PICK's `why` AND the card's do line — two prose lines where the mock showed
+one — and nothing in the chain could see it, because nothing in the chain ever held a `why`.
 
-**RULE: A FOR-APPROVAL MOCK RENDERS THE REAL COMPONENT OR IT IS NOT EVIDENCE.** Hand-built
-HTML shows what someone intends, which is worth having — but it must be labelled as intent
-and may never become the basis of a fixture. It is the same failure as the stale demo
-mirrors: a hand-maintained copy of a surface drifts from the surface, and the copy is what
-gets checked.
+> **A FOR-APPROVAL MOCK RENDERS THE REAL COMPONENT OR IT IS NOT EVIDENCE.** Hand-built HTML
+> shows what someone intends, which is worth having — but it must be labelled as intent and
+> may never become the basis of a fixture. Same failure as the stale demo mirrors: a
+> hand-maintained copy of a surface drifts from the surface, and the copy is what gets
+> checked.
 
-**Fixed:** `client/test/buildFixture.mjs` is now the ONE place a browser fixture comes
-from. It runs the shipping `attachCards` over the shipping `PICKS` and writes JSON; both
-`cart.mjs` and `composed.mjs` regenerate before every run, so a fixture cannot drift from
-the matcher. `cart.mjs`'s expectations are **derived from the fixture** (row count,
-attachment count, collapse slug, tap target) rather than written beside it — hardcoding
-them is how a fixture and its assertions drift together into agreeing about a shape the
-product cannot emit. It throws rather than passing vacuously if the fixture loses its
-collapse or matches nothing.
+### 7.2 One prose line per row
 
-### 7.2 THE PROBE MEASURED "DID SOMETHING MATCH", NOT "DID THE RIGHT THING MATCH"
+A matched row is **name + eyebrow + do line**; the PICK's `why` is suppressed. The `why`
+sells the item to someone who already wrote it down; the do line tells them how to buy it
+at the shelf, and only the second does work in a store. An **unmatched** row keeps its
+`why` — it is the only prose it has.
 
-Phase 1 reported 71%→83% coverage with **zero false positives**. Both numbers were true of
-what it asked, and it asked the wrong thing twice:
+Suppression keys on the block's `hasCard`, **not** on `item.cardSlug`: the attachment
+renders only once its summary arrives, so keying on the slug would blank the prose for the
+length of that fetch and leave the row empty if it failed.
 
-1. **Its only failure class was "matched something that should have matched nothing."** Six
-   items were marked `expect: 'none'`; everything else scored `hit ? pass : miss`. An item
-   landing on the WRONG CARD counted as a **success**. "Frozen broccoli or green beans" →
-   `beans_dried_vs_canned` ("fill a bag from the bulk bin", on a frozen item) would have
-   been tallied inside the 83%.
-2. **Its input was bare nouns it invented**, not the composed names the compose flow emits.
-
-**Fixed:** `server/scripts/listMatchProbe.js` measures correctness against two ground
-truths — the authored `perimeterId` (22 picks), and food-word overlap for retrieval-only
-matches — and **exits non-zero on a wrong match**. A miss is reported and does not fail:
-coverage is an authoring backlog, that is what `counter_gaps` is for. A wrong match fails,
-because a wrong do line is worse than no do line.
-
-Verified it can fail: with authored precedence and the state guard disabled to simulate the
-pre-fix matcher, it exits 1 and names all six defects. **Current: 0 wrong, 0 dropped, 31/31
-attached correct, 22/22 against authored truth.**
-
-### 7.3 THE MATCHER FIXES
+### 7.3 The matcher
 
 - **AN AUTHORED `perimeterId` OUTRANKS RETRIEVAL** (`cardForItem`). A PICK names its entry
   deliberately and claim-locked; retrieval guesses at a string. Retrieval had overridden
-  **6 of 22** authored ids and lost a 7th — 27% wrong on the only rows with a ground truth.
-  The authored id is still validated: retired, `home` or non-aisle falls through.
+  **6 of 22** authored ids and lost a 7th — **27% wrong** on the only rows where a ground
+  truth exists. The authored id is still validated: retired, `home` or non-aisle falls
+  through to retrieval rather than attaching something the corpus no longer stands behind.
 - **A STATE WORD IS A SUBJECT** (`stateContradicts`). `fish_freshness_at_counter` genuinely
   carries the bare alias `tuna`; `beans_dried_vs_canned` genuinely carries `beans`. Both
   cleared the alias floor honestly — the card was about a different STATE of the same food,
-  which no score can express. Fires only when BOTH the item and the card name a state, which
-  is what stops it refusing "Raw or dry-roasted almonds". It is a VETO, never a score: it
-  cannot make the list and the ask disagree about which card is best, only make the list
-  decline one.
+  which no score can express. Fires only when **both** the item and the card name a state,
+  which is what stops it refusing "Raw or dry-roasted almonds" (`nuts_raw_vs_roasted` names
+  none). It is a **veto, never a score**: it cannot make the list and the ask disagree about
+  which card is best, only make the list decline one the ask would serve. Explicit list,
+  widened deliberately, in the spirit of `IMPERATIVE_VERBS`.
 - **A LABEL CARD IS NOT AN AISLE CARD.** `label_terms` is a reference section — 18 entries —
-  and `LIST_SECTIONS` omits it on purpose. `label_pasture_raised_feed` (8) beat `egg_labels`
-  (6) on "Pasture-raised eggs", so the row carried a card, showed no trailing label *because*
-  it had one, and sat in "Everything else" anyway. Falls through like a home card.
-- **A BARE PROCESS WORD IS NOT A SUBJECT.** `raw_milk` carried the alias `unpasteurized`,
-  which matched "Unpasteurized miso" and would match unpasteurized juice, cheese or
-  sauerkraut. Removed; `unpasteurized milk` and `raw milk` remain and all three `asked_as`
-  phrasings say "raw milk". Same defect as `meat any good` on `judging_meat_at_the_case`.
-- **`canned_fish` was retargeted** from `mercury_by_fish` to `canned_fish_choosing`, and its
-  `why` rewritten to match the card rather than the card kept to match the `why`.
-  `mercury_by_fish`'s do line is "Check the species name on the case tag" — a fish-COUNTER
-  instruction on a can. `sardines` deliberately stays on `mercury_by_fish`; `list.test.js`
-  pins it with a stated reason (small fish sit lower on the chain), which is a claim about
-  the fish rather than the tin.
+  and `LIST_SECTIONS` omits it on purpose ("nobody walks to it"). But the matcher did not
+  know that, so `label_pasture_raised_feed` (8) beat `egg_labels` (6) on "Pasture-raised
+  eggs": the row carried a card, showed no trailing label *because* it had one, and sat in
+  "Everything else" anyway. Falls through like a home card — same category error, same
+  treatment.
+- **A BARE PROCESS WORD IS NOT A SUBJECT EITHER.** `raw_milk` carried the alias
+  `unpasteurized`, which matched "Unpasteurized miso" and would equally match unpasteurized
+  juice, cheese or sauerkraut. Removed; `unpasteurized milk` and `raw milk` remain and all
+  three of the card's `asked_as` phrasings say "raw milk". Same defect as `meat any good` on
+  `judging_meat_at_the_case`. `label_natural` and `label_organic_scope` still carry bare
+  `natural` / `organic`, which is correct on the ASK path and now unreachable from a list.
+- **A ROW SORTS BY THE SECTION IT DISPLAYS.** Sorting read `cardSection` (only set on a
+  match); the label read the cart `category` (always set). "Baby spinach" sorted to the
+  trailing group wearing the word Produce, three times on one twelve-item list.
+  `CATEGORY_SECTION` translates only the cart categories naming the SAME aisle a walk
+  section names, and always outputs a counter section id, so the counter's vocabulary still
+  wins. `TRAILING_LABEL` additionally refuses to emit any `LIST_SECTIONS` title, so a label
+  is structurally incapable of naming a section again. A stored `cardSection` still beats
+  the fallback, or a refiled corpus would stop moving rows where it files them.
 
-### 7.4 TWO SAVE CONTROLS CAME BACK, BECAUSE A SELECTOR IS NOT A RULE
+### 7.4 When a pick's card and its `why` disagree, the `why` moves
+
+`canned_fish` pointed at `mercury_by_fish`, whose do line is *"Check the species name on the
+case tag"* — a fish-**counter** instruction on a can, the same location error as the ice
+line, one notch quieter. Retargeted to `canned_fish_choosing`, and the `why` rewritten to
+match the card rather than the card kept to match the `why`:
+
+> *Packed in olive oil or water, never "vegetable oil" — and skipjack is the lighter tin on
+> mercury.*
+
+It leads with the pack medium, that card's actual verdict, and keeps the skipjack tell that
+justifies naming the pick skipjack. The claim still traces — `canned_fish_choosing`'s own
+buying tips carry the skipjack/albacore line.
+
+**`sardines` deliberately stays on `mercury_by_fish`.** `list.test.js` pins it with a stated
+reason (small fish sit lower on the chain), which is a claim about the FISH rather than
+about the tin.
+
+### 7.5 Two save controls came back, because a selector is not a rule
 
 `gate.mjs` greps `[data-save-list]` on the authenticated cart. It saw neither of the two
 shipped afterwards: **"Save this cart"** in the guest header, and **"Keep it"** under "Save
-your cart" — a permanent BANNER above the guest list, which is the shape the money rule
-names outright ("not on a save, never a banner"). `cartFree.test.js` now greps what a
-SHOPPER READS across all of `client/src`, because a button can drop an attribute, change
-class or move component and still say the same wrong thing to the same person.
+your cart" — a permanent BANNER above the guest list whenever a cart existed, which is the
+shape the money rule names outright (*"not on a save, never a banner"*). `cartFree.test.js`
+now greps what a **shopper reads** across all of `client/src`, because a button can drop an
+attribute, change class or move component and still say the same wrong thing to the same
+person. The guest sign-in path stays — a guest genuinely has no account — but loses the word
+"Save", which promises persistence while phone sign-in is blocked on 10DLC.
 
-### 7.5 MEASURED, 390px, the same twelve before and after
+### 7.6 The chain itself, rebuilt
+
+- **`client/test/buildFixture.mjs` is the one place a browser fixture comes from** — the
+  shipping `attachCards` over the shipping `PICKS`. Both `cart.mjs` and `composed.mjs`
+  regenerate before every run, so a fixture cannot drift from the matcher.
+- **`cart.mjs` derives its expectations from its fixture** — row count, attachment count,
+  collapse slug, tap target — instead of writing them down beside it. Hardcoding is how a
+  fixture and its assertions drift *together* into agreeing about a shape the product cannot
+  emit. It throws rather than passing vacuously if the fixture loses its collapse or matches
+  nothing. The tap target must also be an *unchecked* matched row, or the false-to-true
+  toggle assertion is untestable.
+- **`cart.mjs` asks whether the surface WORKS** (tap targets, collapse, real pointer clicks,
+  first-paint state); **`composed.mjs` asks what it COSTS** (line boxes, page height) and
+  holds the two honesty rules with no other home.
+- **`server/scripts/listMatchProbe.js` replaces the Phase 1 probe.** That one reported
+  71%-to-83% with zero false positives, and both numbers were true of what it asked — it
+  asked the wrong thing twice: its only failure class was "matched something that should
+  have matched nothing" (an item landing on the WRONG card counted as a **success**), and
+  its input was bare nouns it invented. The replacement measures correctness against the
+  authored id and against food-word overlap, and **exits non-zero on a wrong match**. A miss
+  reports and does not fail: coverage is the `counter_gaps` backlog's job, a wrong do line is
+  nobody's. **Verified it can fail** by simulating the pre-fix matcher — it names all six
+  defects and exits 1.
+
+### 7.7 Measured, 390px, the same twelve before and after
 
 | | before | after |
 |---|---|---|
 | lines per matched row | 8.22 | **6.10** |
-| cost of a match | +4.56 | **+2.60** |
+| cost of a match vs unmatched | +4.56 | **+2.60** |
 | page height | 2290px | **2002px** |
-| sections | 6, incl. "Everything else" ×4 | **5, no trailing group** |
-| wrong attachments (51 PICKS) | 6 of 32 | **0 of 31** |
+| sections | 6, incl. "Everything else" x4 | **5, no trailing group** |
+| wrong attachments over 51 PICKS | 6 of 32 | **0 of 31** |
+| against authored ground truth | 16/22 | **22/22** |
 
-### 7.6 LEFT ALONE, DELIBERATELY
+Verified on production after deploy: `canned skipjack tuna` reaches `canned_fish_choosing`
+with the pack-medium do line; `unpasteurized miso` no longer reaches `raw_milk`; `is raw
+milk safe` and `unpasteurized milk` still do, so the alias removal cost no coverage.
 
-**Composed PICK names stay composed.** "Frozen broccoli or green beans", "Raw or
-dry-roasted almonds" — 12 of 51 carry an " or "/" and "/em-dash shape. Measured at 390px,
-**none of them wraps**; what wrapped was the `why` beneath, now suppressed on matched rows.
-`canonicalItem` splits on the em-dash and strips a qualifier list to drive blend dedup;
-`listBaseline` keys `kept` frequency on the NAME, so renaming resets every stored shopping
-profile; `applyCompose` protects rows by name-in-instruction matching. Resetting all of that
-to fix wrapping that does not happen is a bad trade. The matching harm is handled above.
+### 7.8 Left alone, deliberately
+
+**Composed PICK names stay composed.** 12 of 51 carry an " or " / " and " / em-dash shape.
+Measured at 390px, **none of them wraps** — what wrapped was the `why` beneath, now
+suppressed on matched rows. `canonicalItem` splits on the em-dash and strips a qualifier
+list to drive blend dedup; `listBaseline` keys `kept` frequency on the NAME, so renaming
+resets every stored shopping profile; `applyCompose` protects rows by name-in-instruction
+matching. Resetting all of that to fix wrapping that does not happen is a bad trade. The
+matching harm is handled by the guards in 7.3.
+
+### 7.9 Commit scope — the trips feature shipped a day late, under a title saying it had
+
+`3267c95 The list becomes the trip, and the whole list is free` landed the list matcher and
+**not** the trips feature. `server/lib/trips.js`, `server/routes/trips.js`, `trips.test.js`
+and the loop harness stayed **untracked**, while `server/index.js`, `routes/list.js` and
+`routes/haul.js` imported them. `main` was not broken — HEAD carried no trips references at
+all — but the feature was absent from it for a day, and every local check was green because
+every local check runs against the working tree, which had the files.
+
+They landed with the list-surface fixes in `a3a9d24`, which is not where they belonged.
+
+**`node server/scripts/commitGuard.js` before any commit that claims a feature.** It resolves
+import specifiers and path literals for real — so `trips.js` the module is caught and the
+word "trips" in a comment is not — and exits 1 naming the exact `git add`.
+`commitScope.test.js` runs the same logic over the tracked tree in `npm test`, because a
+guard nobody remembers to invoke is a guard that catches the case nobody remembered.
+
+This is the **same family as the vacuous-assertion rule**: both are *the check passed because
+it could not see the thing*. `nonEmpty` binds at the collection; this binds at the commit.
+
+> `GUARDED` says where an untracked file is a problem. **It must never also decide what gets
+> READ.** Conflating the two exempted `server/index.js` — outside every guarded prefix, and
+> the file that mounts every route — from the first draft of this guard, which therefore
+> missed the exact import that caused the incident. Sources are every tracked code file, the
+> same distinction `deployBoundary.test.js` makes when it scans `lib/`, `routes/` AND
+> `index.js`.

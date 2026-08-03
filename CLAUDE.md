@@ -701,6 +701,28 @@ was invisible until something rendered one**
   throws at import, so every test in that file is honest by construction instead of by
   discipline. Swept 2026-08-02: 73 at-risk sites → 49, and the remainder iterate array
   literals, which cannot be empty by accident.
+- **THE SAME FAMILY, ONE LEVEL UP: A COMMIT THAT OMITS THE FILE IS GREEN FOR THE SAME
+  REASON AN EMPTY COLLECTION IS.** Every test runs against the WORKING TREE, and the
+  working tree has the file whether or not git does — so a module written, imported, tested
+  and committed-around passes everything locally and is simply absent from `main`. `git
+  commit -a` does not add untracked files. **This has happened twice**, the clearest being
+  `3267c95 The list becomes the trip, and the whole list is free`, which landed the list
+  matcher and NOT the trips feature: `server/lib/trips.js`, `server/routes/trips.js`,
+  `trips.test.js` and the loop harness stayed untracked for a day under a commit title
+  asserting they had shipped, while `server/index.js` imported one of them. Both defects are
+  *the check passed because it could not see the thing*; `nonEmpty` binds at the collection,
+  and this binds at the commit.
+  **`node server/scripts/commitGuard.js` before any commit that claims a feature.** It
+  resolves import specifiers and path literals for real — so `trips.js` the module is caught
+  and the word "trips" in a comment is not — and exits 1 naming the exact `git add`.
+  `commitScope.test.js` runs the same logic over the tracked tree in `npm test`, because a
+  guard nobody remembers to invoke is a guard that catches the case nobody remembered.
+  **`GUARDED` says where an untracked file is a problem; it must never also decide what gets
+  READ.** Conflating the two exempted `server/index.js` — outside every guarded prefix, and
+  the file that mounts every route — from the first draft of this guard, which therefore
+  missed the exact import that caused the incident. Sources are every tracked code file.
+  Same distinction `deployBoundary.test.js` makes when it scans `lib/`, `routes/` AND
+  `index.js`.
 - **A COMMENT ASSERTING AN INVARIANT IS NOT AN INVARIANT. If it is load-bearing, test it.**
   The retrieval-floor comment claimed curated and generated admit on the same evidence, and
   was wrong three consecutive times in three different ways — different constants, then
@@ -719,7 +741,7 @@ was invisible until something rendered one**
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (473 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (476 tests). Client: `cd client && npx vite build`.
 - **`node server/scripts/listMatchProbe.js` is the match probe, and it FAILS on a wrong
   match** rather than counting it. Run it after any KB alias edit, any `perimeterId` change
   and any matcher change — it is the cheapest check that the corpus still answers the list
