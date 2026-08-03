@@ -1051,7 +1051,6 @@
         "raw milk",
         "unpasteurized milk",
         "raw dairy",
-        "unpasteurized",
         "herdshare",
         "cow share",
         "clabber",
@@ -2836,7 +2835,13 @@
         "tinned tuna",
         "sardines",
         "sardine",
-        "canned sardines"
+        "canned sardines",
+        "skipjack",
+        "canned skipjack tuna",
+        "skipjack tuna",
+        "tuna in a can",
+        "canned mackerel",
+        "canned anchovies"
       ],
       "category": "seafood",
       "question": "What should I look for in canned fish?",

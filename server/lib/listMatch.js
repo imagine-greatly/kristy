@@ -17,7 +17,7 @@
 // matches nothing simply gets no card, which costs one KB scan of an in-memory array and
 // zero model calls. The gate is a cost control on a path that has no cost.
 
-import { scoreEntries } from './perimeter.js';
+import { scoreEntries, perimeterKb } from './perimeter.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
 import { logCounterGap } from './counterGaps.js';
 
@@ -64,17 +64,43 @@ const SECTION_RANK = new Map(LIST_SECTIONS.map((s, i) => [s.id, i]));
    the name, applied after matching and never instead of it. */
 const FROZEN = /\bfrozen\b/i;
 
+/* A ROW MUST NOT DISPLAY A SECTION IT IS NOT SORTED INTO, and it used to do exactly that.
+
+   Sorting read `cardSection`, which only exists when a card matched. The LABEL beside an
+   unmatched row read the cart CATEGORY, which exists either way. So "Baby spinach" —
+   category Produce, no card — sorted into "Everything else" and rendered the word Produce
+   next to itself, three times on one twelve-item list. Two vocabularies again, which is
+   the thing the counter-section reconciliation was supposed to have ended.
+
+   This is the translation between them, and it is a translation rather than a second index
+   because the OUTPUT is always a counter section id — the counter's vocabulary still wins.
+   It is deliberately tiny: only the cart categories that name the SAME aisle a walk section
+   names. 'Protein' spans meat, seafood and dairy, so it maps to nothing and stays a label;
+   'Bakery' and 'Snacks' are not aisles the counter covers, so they stay labels too. That is
+   what the mock showed as well — Sourdough sat under "Everything else" wearing "Bakery". */
+const CATEGORY_SECTION = new Map([
+  ['produce', 'produce'],
+  ['dairy & eggs', 'eggs_dairy'],
+]);
+
+/** The walk section a cart CATEGORY names, or null if it does not name one. */
+export function sectionForCartCategory(category) {
+  return CATEGORY_SECTION.get(String(category || '').trim().toLowerCase()) || null;
+}
+
 /**
  * Where a row sits on the walk. Null means the trailing group.
  *
- * Reads the STORED `cardSection` rather than re-deriving it, so a completed trip keeps the
- * order it was shopped in even after the corpus is refiled or a card is retired.
+ * Prefers the STORED `cardSection` rather than re-deriving it, so a completed trip keeps
+ * the order it was shopped in even after the corpus is refiled or a card is retired. The
+ * cart category is a FALLBACK for rows no card claimed, never an override.
  */
 export function sectionForItem(item) {
   if (!item) return null;
   if (FROZEN.test(item.name || '')) return 'frozen';
   const s = item.cardSection;
-  return SECTION_RANK.has(s) ? s : null;
+  if (SECTION_RANK.has(s)) return s;
+  return sectionForCartCategory(item.category);
 }
 
 /** Sort key for a section id. Unmatched sorts last, which is what the trailing group is. */
@@ -83,6 +109,81 @@ export function sectionRank(id) {
 }
 
 /* ═══════════════════════════ Matching one item ═══════════════════════════ */
+
+const BY_ID = new Map((perimeterKb.entries || []).map((e) => [e.id, e]));
+
+/** The KB entry behind a slug, or null. */
+export function entryById(slug) {
+  return BY_ID.get(String(slug || '')) || null;
+}
+
+/* LABEL CARDS ARE NOT AISLE CARDS, and they must not attach to a list row.
+
+   `label_terms` is a REFERENCE section on the Counter — eighteen entries explaining what a
+   phrase on a package means. LIST_SECTIONS deliberately omits it, and its own comment says
+   why: nobody walks to it. But `matchItemToCard` did not know that, so a label card could
+   still win a row, and when one did the row got a `cardSlug` with a section the walk has no
+   place for — which resolved to null and dropped the row into "Everything else".
+
+   "Pasture-raised eggs" is the case: `label_pasture_raised_feed` (8) beat `egg_labels` (6),
+   so the row carried a card, showed no trailing label because it HAD a card, and sat in the
+   trailing group anyway. It is the same category error as a home card — a true card that
+   answers a different question than the one a shopper standing in an aisle is asking — so
+   it gets the same treatment: fall through to the next candidate, never fail outright. */
+const NON_AISLE_SECTIONS = new Set(['label_terms']);
+
+/* ── The state guard ──────────────────────────────────────────────────────────────────
+
+   A WRONG DO LINE IS WORSE THAN NO DO LINE, and the way this matcher produced one was
+   always the same: a long item name whose HEAD is a preparation state, matching a card on
+   a bare noun buried further along.
+
+     "Canned skipjack tuna"           -> fish_freshness_at_counter, on the alias "tuna"
+     "Frozen broccoli or green beans" -> beans_dried_vs_canned,     on the alias "beans"
+
+   Both scored legitimately. `fish_freshness_at_counter` really does carry the bare alias
+   "tuna", `beans_dried_vs_canned` really does carry "beans", and both cleared the alias
+   floor honestly. The floor was never the problem — the card was about a DIFFERENT STATE
+   of the same food, and nothing in the score can express that. Telling someone to check
+   their tuna is bedded in ice is wrong in a way that "no card" is not.
+
+   So: if the item names a state and the card is about a state, they have to share one.
+   BOTH sides must be non-empty for the guard to fire, which is what stops it over-refusing
+   — "Raw or dry-roasted almonds" names a state and `nuts_raw_vs_roasted` names none, so
+   the guard stays out of it. This is a deliberate, explicit list in the same spirit as
+   IMPERATIVE_VERBS: widening it is an act, not a heuristic. */
+const STATES = {
+  frozen: /\bfrozen\b/,
+  canned: /\bcanned\b|\btinned\b|\bin a can\b/,
+  dried: /\bdried\b|\bdry\b/,
+  fresh: /\bfresh\b/,
+};
+
+function statesIn(text) {
+  const t = ` ${String(text || '').toLowerCase()} `;
+  const out = new Set();
+  for (const [name, re] of Object.entries(STATES)) if (re.test(t)) out.add(name);
+  return out;
+}
+
+/** The states a CARD is about — read from its own title and aliases, never hand-assigned. */
+function cardStates(entry) {
+  return statesIn([entry?.title || '', ...(entry?.aliases || [])].join(' '));
+}
+
+/**
+ * True when the item's preparation state contradicts the card's.
+ *
+ * Silent when either side names no state at all, which is the common case.
+ */
+export function stateContradicts(name, entry) {
+  const want = statesIn(name);
+  if (!want.size) return false;
+  const has = cardStates(entry);
+  if (!has.size) return false;
+  for (const s of want) if (has.has(s)) return false;
+  return true;
+}
 
 /**
  * The card a written grocery item resolves to, or null.
@@ -104,6 +205,8 @@ export function matchItemToCard(name) {
   for (const c of scoreEntries(q, CANDIDATES)) {
     if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
     if (kindFor(c.entry.id) === 'home') continue;
+    if (NON_AISLE_SECTIONS.has(sectionForCategory(c.entry.category))) continue;
+    if (stateContradicts(q, c.entry)) continue;
     return {
       slug: c.entry.id,
       section: sectionForCategory(c.entry.category),
@@ -111,6 +214,37 @@ export function matchItemToCard(name) {
     };
   }
   return null;
+}
+
+/**
+ * The card for a whole ROW, which is not the same question as the card for a NAME.
+ *
+ * AN AUTHORED `perimeterId` IS GROUND TRUTH AND OUTRANKS RETRIEVAL. A PICK names the entry
+ * its judgment came from — that is what the field is for, it is claim-locked, and it was
+ * chosen by a person. Retrieval is a guess about a string. Running the guess over a row
+ * that already carried the answer is how "Canned skipjack tuna", authored to
+ * `mercury_by_fish`, ended up telling a shopper to check the ice at a counter it will never
+ * be sold from.
+ *
+ * Measured over the 51 shipping PICKS: 22 carry an authored id, and retrieval overrode 6 of
+ * them and lost a 7th. That is a 27% error rate on the only rows where a ground truth
+ * exists to check against — and the Phase 1 probe could not see any of it, because it asked
+ * "did something match", never "did the RIGHT thing match".
+ *
+ * The authored id is still validated: an entry that has been retired, refiled as a home
+ * card or filed to a non-aisle section falls through to retrieval rather than attaching
+ * something the corpus no longer stands behind.
+ */
+export function cardForItem(item) {
+  const authored = item?.perimeterId ? entryById(item.perimeterId) : null;
+  if (
+    authored &&
+    kindFor(authored.id) !== 'home' &&
+    !NON_AISLE_SECTIONS.has(sectionForCategory(authored.category))
+  ) {
+    return { slug: authored.id, section: sectionForCategory(authored.category), score: null };
+  }
+  return matchItemToCard(item?.name);
 }
 
 /* ═══════════════════════════ Attaching to a whole list ═══════════════════════════ */
@@ -147,7 +281,7 @@ export function attachCards(list, { log = true } = {}) {
     if (it.carded || !MATCHABLE.has(it.source)) return it;
     changed = true;
 
-    const hit = matchItemToCard(it.name);
+    const hit = cardForItem(it);
     if (!hit) {
       // The miss IS the product signal. Someone writing "kombucha" every week with nothing
       // behind it is the authoring queue writing itself out of real intent, which is the

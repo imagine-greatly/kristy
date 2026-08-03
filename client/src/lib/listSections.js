@@ -37,11 +37,26 @@ const SECTION_IDS = new Set(LIST_SECTIONS.map((s) => s.id));
    frozen peas — left alone it split one freezer across two places on the same list. */
 const FROZEN = /\bfrozen\b/i;
 
+/* A ROW MUST NOT DISPLAY A SECTION IT IS NOT SORTED INTO. Sorting read `cardSection`,
+   which only exists when a card matched; the label beside an unmatched row read the cart
+   CATEGORY, which exists either way. "Baby spinach" sorted into "Everything else" and
+   rendered the word Produce beside itself. Mirrors CATEGORY_SECTION in listMatch.js. */
+const CATEGORY_SECTION = new Map([
+  ['produce', 'produce'],
+  ['dairy & eggs', 'eggs_dairy'],
+]);
+
+/** The walk section a cart CATEGORY names, or null if it does not name one. */
+export function sectionForCartCategory(category) {
+  return CATEGORY_SECTION.get(String(category || '').trim().toLowerCase()) || null;
+}
+
 /** Where a row sits on the walk. Null means the trailing group. */
 export function sectionForItem(item) {
   if (!item) return null;
   if (FROZEN.test(item.name || '')) return 'frozen';
-  return SECTION_IDS.has(item.cardSection) ? item.cardSection : null;
+  if (SECTION_IDS.has(item.cardSection)) return item.cardSection;
+  return sectionForCartCategory(item.category);
 }
 
 /* Rows that are not part of the walk at all.

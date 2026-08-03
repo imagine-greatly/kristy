@@ -34,9 +34,11 @@ const CAP_LINE =
   'Sign in and none of it gets thrown away. Your scans, your cart, your preferences.';
 const LIMIT_LINE = 'That\'s the free run. Sign in to keep going.';
 const INVITE_LINE = 'Sign in whenever. Your scans, haul and preferences stick from there.';
-// The offer that matters: it arrives AFTER the cart exists, and it's about keeping
-// what they already made — never "sign up to continue."
-const SAVE_LINE = 'Save your cart. Sign in, no password, just a text.';
+// NOT A SAVE LINE. It used to be — "Save your cart. Sign in, no password, just a text." —
+// and it fronted two controls that both promised persistence for something already free.
+// What actually needs an account here is a REBUILD, which reads a stored profile the guest
+// does not have. That is what this says now, and it is the only thing it claims.
+const ACCOUNT_LINE = 'Rebuilding reads your stored preferences. Sign in — no password, just a text.';
 
 // The stateless, gated app. Guests can SCAN and see the universal layer (what's in
 // the food) for free — the acquisition hook. The goal-personalized note and the
@@ -58,7 +60,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
   const invite = () => setGate({ reason: 'invite', line: INVITE_LINE, terminal: false });
   // Sign-in offered as PERSISTENCE, at the point where persistence is the thing
   // being asked for. Always dismissible — declining leaves the session fully usable.
-  const save = () => setGate({ reason: 'save', line: SAVE_LINE, terminal: false });
+  const save = () => setGate({ reason: 'save', line: ACCOUNT_LINE, terminal: false });
 
   const prefs = guestPrefs();
   // The stranger's cart. Building it by talking works with NO account (the public
@@ -199,8 +201,20 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
     <div className="app app--guest">
       <header className="topbar topbar--guest">
         <div className="guest-mark">Kristy</div>
-        <button className="guest-signin" onClick={cart.hasCart ? save : invite}>
-          {cart.hasCart ? 'Save this cart' : 'Sign in'}
+        {/* ONE LABEL, AND IT IS NEVER "SAVE". A save control on a cart surface was removed
+            once already — it asked for an action that had either happened or cannot happen,
+            and the list is free either way. This header rebuilt it under a different name
+            in a different component, which is why the gate test could not see it: that test
+            greps `[data-save-list]` on the authenticated cart, and this is an unattributed
+            button on the guest one. A control is not gone because one selector stopped
+            finding it.
+
+            The sign-in path itself is right and stays — a guest genuinely has no account.
+            What goes is the word "Save", which promises persistence at a moment when phone
+            sign-in is blocked on 10DLC, so the code it would send cannot arrive. Same
+            reasoning as `purchasable={false}` on the plans. */}
+        <button className="guest-signin" onClick={invite}>
+          Sign in
         </button>
       </header>
 
@@ -256,18 +270,16 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
           )}
           {moment === 'list' && (
             <>
-              {/* The offer arrives once a cart EXISTS, so it reads as keeping
-                  something rather than a toll on the way in. */}
-              {cart.hasCart && (
-                <div className="taste-banner">
-                  <div className="taste-banner__save">
-                    <span className="taste-banner__saveline">{SAVE_LINE}</span>
-                    <button type="button" className="taste-banner__savebtn" onClick={save}>
-                      Keep it
-                    </button>
-                  </div>
-                </div>
-              )}
+              {/* NO BANNER. This was the SECOND save control on this surface — "Keep it",
+                  under "Save your cart", standing permanently above the list whenever a
+                  cart existed. The header one is gone for reading as a toll on something
+                  free; this one is worse, because it is the shape the rule names outright:
+                  "The ask appears at ONE moment and nowhere else — not on open, not on a
+                  scan, not on an ask, not on a save, never a banner."
+
+                  Both survived the original removal by not being the component that was
+                  stripped and not carrying the attribute the test greps. A repeated ask is
+                  the thing that gets an app deleted, however kindly it is worded. */}
               <CartMoment
                 cart={cart}
                 goals={prefs?.coach_goals || []}

@@ -364,6 +364,141 @@ equality *is* the positioning.
   long digit runs and capped at 160 chars *before* the insert, because free text typed by
   a stranger is the one place identity arrives by accident.
 
+**Trips — the list is a record, not a scratchpad**
+- **`shopping_lists` HELD ONE OVERWRITTEN LIST PER USER, and that blocked everything.**
+  `user_id` was its primary key, so a finished trip could not be archived, "same as last
+  week" had no last week, and `startNewTrip` wrote `{items: []}` over a completed trip and
+  destroyed the record. `trips` (`supabase/trips.sql`) is that record: many per shopper,
+  exactly one active, held by a **partial unique index** rather than a code path — the
+  failure mode is concurrency, and a double-tapped button cannot see the other request.
+- **`signals` and `next_list` DO NOT MOVE.** `signals` is cross-trip pattern memory and
+  filed per trip it would forget the shopper every week; `next_list` spans the boundary
+  between trips by definition. So `shopping_lists` survives as the shopping *profile*, its
+  `list` column becomes a fossil, and `buildBaseline` / the swap queue are untouched.
+- **Three statuses, and the third is the honest one.** "Start a new trip" fires at 3-of-12.
+  Under active/completed alone it must either mark a half-finished trip `completed` — which
+  lies to the Haul and lets it seed the next trip — or delete it, which is the bug being
+  removed. **An untouched trip is REUSED rather than archived**: filing a no-op as history
+  fills the archive with evidence of nothing.
+- **Completing is an explicit tap, never the last checkbox.** Auto-completing would thrash
+  on an uncheck-and-recheck and would take the decision away while the shopper is still
+  standing in the store.
+- **ADOPTION IS GATED ON "NO TRIPS AT ALL", NOT "NO ACTIVE TRIP".** There is no backfill —
+  a pre-trips list becomes that shopper's first trip on their next read. Gating on the
+  absence of an *active* trip would resurrect the legacy list as a new trip on every single
+  completion, forever, because `shopping_lists.list` keeps its items. Pinned by a test that
+  completes an adopted trip and asserts it does not come back.
+- **ONE SEEDING DOOR: `POST /api/trips/next`.** `/api/haul/next` was a second one, with its
+  own pick-list and button on the Haul. Two doors onto one act is how a record drifts —
+  they can disagree about what a new trip starts from and nothing says which is right. Its
+  carry-forward computation survives *inside* the new endpoint; the button does not. There
+  is no `accept` parameter: everything is preselected and the cart is itself the editing
+  surface, so a selection UI in front of it is the same choice made twice.
+- **A SEEDED ROW IS RE-MATCHED, not copied with its card.** `carded`/`cardSlug` are stripped
+  on the way in. Keeping them would freeze the list against a corpus that grows weekly, and
+  an item bought every single trip is the likeliest to have had a card authored for it
+  since. It re-logs the misses, which is correct rather than noisy: they bought it again,
+  and frequency is exactly what `counter_gaps` exists to capture. The row also drops `tier`
+  (a verdict belongs to the scan that produced it) and the whole offer set (a resolved offer
+  is spent), and keeps the groceries — `why`, `perimeterId`, `alt`.
+- **`missed` is gone as a concept.** It meant "on the cart, never checked off" and only
+  existed because there was no trip record to seed from. The whole trip now seeds unchecked.
+- **THE HAUL READS COMPLETED TRIPS; IT DOES NOT WRITE BOUGHT ROWS.** `haul_scans`'s unit is
+  a scan carrying a verdict tier, and `tierBucket` returns `'swap'` for anything it does not
+  recognise — so a tier-less bought item would render RED on the distribution bar. **The bar
+  is a distribution of VERDICTS and an unscanned item honestly has none**, so `bought` rides
+  as its own field with its own count and the bar stays scans-only. No migration, nothing
+  miscoloured.
+
+**The composed row is a different input shape from the typed one, and everything below
+was invisible until something rendered one**
+- **A MOCK IS NOT A RENDER, AND A FIXTURE COPIED FROM A MOCK INHERITS ITS BLIND SPOT.**
+  The Phase 2 mock was hand-authored HTML built from the bare nouns the Phase 1 probe
+  invented; `cartHarness.jsx` was then modelled on the mock. So the mock, the probe and the
+  browser test that measured the build all used twelve bare nouns carrying **no `why`** —
+  and the product's own compose flow puts a `why` on all 51 PICKS. The double-prose row
+  could not be seen by any artifact in that chain. **A for-approval mock renders the real
+  component or it is not evidence**; hand-built HTML shows intent, must be labelled as
+  intent, and may never become the basis of a fixture. Full account in `PASS3-HANDOFF.md` §7.
+- **A BROWSER FIXTURE IS BUILT, NEVER WRITTEN.** `client/test/buildFixture.mjs` is the one
+  place they come from — the shipping `attachCards` over the shipping `PICKS` — and both
+  `cart.mjs` and `composed.mjs` regenerate before every run, so a fixture cannot drift from
+  the matcher. **`cart.mjs`'s expectations are DERIVED from its fixture**, not written beside
+  it: hardcoding "12 rows, 6 attachments" is how a fixture and its assertions drift together
+  into agreeing about a shape the product cannot emit. It throws rather than passing
+  vacuously if the fixture loses its collapse or matches nothing.
+- **ONE PROSE LINE PER ROW, AND WHEN THERE IS A CARD IT IS THE CARD'S.** A matched row is
+  name + eyebrow + do line; the PICK's `why` is suppressed. The `why` sells the item to
+  someone who already wrote it down, the do line tells them how to buy it at the shelf, and
+  only the second does work in a store. An unmatched row keeps its `why` — it is the only
+  prose it has. Suppression keys on the block's `hasCard`, **not** on `item.cardSlug`: the
+  attachment renders only once its summary has arrived, so keying on the slug would blank
+  the prose for the length of that fetch and leave the row empty if it failed. Measured at
+  390px over the twelve: 8.22 → 6.10 lines per matched row, page 2290px → 2002px.
+- **AN AUTHORED `perimeterId` IS GROUND TRUTH AND OUTRANKS RETRIEVAL.** A PICK names the
+  entry its judgment came from; retrieval is a guess about a string. Running the guess over
+  a row that already carried the answer is how "Canned skipjack tuna" reached
+  `fish_freshness_at_counter` — "check it is bedded in ice" — on the bare alias "tuna".
+  Measured over the 51 PICKS: 22 carry an authored id and retrieval overrode **6** of them
+  and lost a 7th, a 27% error rate on the only rows where a ground truth exists. The
+  authored id is still validated (retired, home or non-aisle falls through), so this cannot
+  attach something the corpus no longer stands behind.
+- **THE PHASE 1 PROBE MEASURED "DID SOMETHING MATCH", NEVER "DID THE RIGHT THING MATCH".**
+  It reported 71%→83% with zero false positives, and both numbers were true of what it
+  asked. Its false-positive class was only the six items it expected to match *nothing*; an
+  item that matched the WRONG card counted as a hit. It also fed bare nouns it invented,
+  not the composed names the compose flow emits. **A probe's input shape and its failure
+  definition are both part of the claim** — state them, or the number means less than it
+  looks like. `server/scripts/listMatchProbe.js` replaces it: correctness against the
+  authored id and against food-word overlap, **exiting non-zero on a wrong match** while a
+  miss only reports (coverage is `counter_gaps`'s job, a wrong do line is nobody's).
+  Verified it can fail by simulating the pre-fix matcher — it names all six defects and
+  exits 1. Current: **0 wrong, 31/31 attached correct, 22/22 against authored truth.**
+- **A STATE WORD IS A SUBJECT, and a card about a different state of the same food is a
+  wrong answer no score can catch.** `fish_freshness_at_counter` really carries "tuna" and
+  `beans_dried_vs_canned` really carries "beans"; both cleared the alias floor honestly.
+  `stateContradicts` vetoes a candidate when the item names a state (frozen/canned/dried/
+  fresh) and the card names only others. **Both sides must name one for it to fire**, which
+  is what stops it over-refusing — "Raw or dry-roasted almonds" names a state and
+  `nuts_raw_vs_roasted` names none. It is a veto, never a score: it can only make the list
+  decline a card the ask would serve, which is the asymmetry "a wrong do line is worse than
+  no do line" asks for. Explicit list, widened deliberately, like `IMPERATIVE_VERBS`.
+- **A BARE PROCESS WORD IS NOT A SUBJECT EITHER.** `raw_milk` carried the alias
+  `unpasteurized`, which matched "Unpasteurized miso" — and would have matched unpasteurized
+  juice, cheese or sauerkraut. Removed; `unpasteurized milk` and `raw milk` remain and all
+  three of the card's `asked_as` phrasings say "raw milk". Same defect as `meat any good` on
+  `judging_meat_at_the_case`. `label_natural` and `label_organic_scope` still carry bare
+  `natural` / `organic`, which is correct on the ASK path and now unreachable from a list.
+- **A LABEL CARD IS NOT AN AISLE CARD.** `label_terms` is a reference section — its own
+  comment in `LIST_SECTIONS` says nobody walks to it — but the matcher did not know that, so
+  `label_pasture_raised_feed` (8) beat `egg_labels` (6) on "Pasture-raised eggs". The row
+  then carried a card, showed no trailing label *because* it had one, and sat in "Everything
+  else" anyway. It falls through like a home card: same category error, same treatment.
+- **A ROW SORTS BY THE SECTION IT DISPLAYS, AND NEVER DISPLAYS ONE IT IS NOT SORTED INTO.**
+  Sorting read `cardSection` (only set on a match); the label read the cart `category`
+  (always set). "Baby spinach" sorted to the trailing group wearing the word Produce, three
+  times on one twelve-item list — two vocabularies again. `CATEGORY_SECTION` translates the
+  handful of cart categories that name the SAME aisle a walk section names, and the output
+  is always a counter section id, so the counter's vocabulary still wins. Deliberately tiny:
+  'Protein' spans meat, seafood and dairy and maps to nothing; Bakery and Snacks are not
+  aisles the counter covers and stay labels. `TRAILING_LABEL` additionally refuses to emit
+  any `LIST_SECTIONS` title, so a label is structurally incapable of naming a section again.
+- **THE CART CATEGORY IS A FALLBACK, NEVER AN OVERRIDE.** A stored `cardSection` still wins,
+  or a refiled corpus would stop moving rows where it files them.
+- **WHEN A PICK'S CARD AND ITS `why` DISAGREE, THE `why` MOVES.** `canned_fish` pointed at
+  `mercury_by_fish`, whose do line is "Check the species name on the case tag" — a fish-
+  COUNTER instruction on a can, the same location error as the ice line one notch quieter.
+  Retargeted to `canned_fish_choosing` and the `why` rewritten to lead with the pack medium,
+  that card's actual verdict. **`sardines` deliberately stays on `mercury_by_fish`** —
+  `list.test.js` pins it with a stated reason (small fish sit lower on the chain), which is
+  a claim about the fish rather than about the tin.
+- **COMPOSED PICK NAMES STAY COMPOSED.** 12 of 51 carry an " or "/" and "/em-dash shape and
+  it is tempting to flatten them. Measured at 390px, **none of them wraps** — what wrapped
+  was the `why` beneath, now suppressed. `canonicalItem` splits on the em-dash and strips a
+  qualifier list to drive blend dedup, `listBaseline` keys `kept` frequency on the NAME so
+  renaming resets every stored shopping profile, and `applyCompose` protects rows by
+  name-in-instruction matching. The matching harm is handled by the guards above instead.
+
 **The list is the shopper's**
 - **The item always stays.** A row the shopper added is never removed, renamed or
   struck. Kristy attaches a note *beside* it. `applyCompose` protects `user` and
@@ -474,7 +609,15 @@ equality *is* the positioning.
   action, which is worse than a wall: a wall is at least honest about where the boundary
   is. Removed 2026-08-02, along with `UPGRADE_COPY.list`. **The list is the retention
   engine and metering it works against what it is for** — the thing that brings someone
-  back next week is the thing you least want a toll on. `gate.mjs` asserts no
+  back next week is the thing you least want a toll on.
+  **AND IT CAME BACK TWICE, BECAUSE A SELECTOR IS NOT A RULE.** `gate.mjs` greps
+  `[data-save-list]` on the authenticated cart, so it saw neither of the two controls
+  shipped afterwards: **"Save this cart"** in the GUEST header, and **"Keep it"** under
+  "Save your cart" — a permanent BANNER above the guest list whenever a cart existed, which
+  is the shape the ask rule names outright ("not on a save, never a banner"). Both removed
+  2026-08-03. `cartFree.test.js` greps what a SHOPPER READS across all of `client/src`,
+  because a button can drop an attribute, change class or move component and still say the
+  same wrong thing to the same person. `gate.mjs` asserts no
   `[data-save-list]` control exists on any tier.
 - **THE FREE SURFACE STATES THE CALL; THE COST OF THE CALL LIVES IN THE DEPTH. THAT IS THE
   GATE WORKING, NOT A DEFECT.** A card with a real tradeoff puts the verdict in the headline
@@ -576,7 +719,24 @@ equality *is* the positioning.
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (445 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (473 tests). Client: `cd client && npx vite build`.
+- **`node server/scripts/listMatchProbe.js` is the match probe, and it FAILS on a wrong
+  match** rather than counting it. Run it after any KB alias edit, any `perimeterId` change
+  and any matcher change — it is the cheapest check that the corpus still answers the list
+  correctly, and it needs no browser and no server.
+- **`node client/test/composed.mjs` measures what the list COSTS** — lines per row, page
+  height — and holds the two honesty rules with no other home: a matched row may not carry
+  both a `why` and a do line, and a row may not display a section it is not sorted into.
+  `cart.mjs` asks whether the surface WORKS; this asks what it costs. Both render composed
+  PICKS through `buildFixture.mjs`.
+- **The list surface is measured in a browser, not eyeballed.** `node client/test/cart.mjs`
+  renders the real CartMoment at a true 390px over CDP and asserts the geometry (44px check
+  targets, zero horizontal overflow, the collapse) with **real pointer clicks**;
+  `node client/test/loop.mjs` runs the whole trip loop — build, check, complete, seed — and
+  fails if a seeded row arrives checked or loses its card. The seed in that test is computed
+  by the shipping `buildNextTripList` in node and injected, because trips.js reaches the KB
+  through `node:fs` and cannot be bundled for a browser; the SEMANTICS are proven separately
+  in `trips.test.js` against the real functions.
 - **What the code writes must exist in the migrations, and a test checks it.**
   `schemaContract.test.js` compares every key `cardToRow` emits against the columns
   declared in `supabase/*.sql`, plus a sweep over inline insert/update literals. The
@@ -656,7 +816,8 @@ equality *is* the positioning.
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
   on 2026-07-31, when **`counter_cards`** (82 rows as of 2026-08-02: 81 curated + 1 generated), **`counter_gaps`** and the
-  `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. Still
+  `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. **`trips`** (`supabase/trips.sql`) and the `counter_gaps.source` column plus the
+  `bump_card_use_count` RPC (`supabase/list_attach.sql`) were applied 2026-08-02. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
   degrades gracefully without it.
 - ⚠️ **Phone sign-in is not live yet, and it gates revenue** — no account, no purchase.

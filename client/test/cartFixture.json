@@ -1,0 +1,138 @@
+[
+  {
+    "id": "i0",
+    "name": "Blueberries or strawberries",
+    "category": "Produce",
+    "checked": true,
+    "source": "template",
+    "why": "The sweet thing that isn’t candy — whichever is in season.",
+    "carded": true,
+    "cardSlug": "berries_picking",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i1",
+    "name": "Avocado",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "A whole-food fat that needs no cooking.",
+    "carded": true,
+    "cardSlug": "produce_ripeness_by_item",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i2",
+    "name": "Baby spinach",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "Goes into eggs, soup, or a salad with no prep at all.",
+    "carded": true
+  },
+  {
+    "id": "i3",
+    "name": "Sweet potatoes",
+    "category": "Produce",
+    "checked": true,
+    "source": "template",
+    "why": "More nutrient-dense than a white potato, and sweet enough to need nothing on it. Bake a tray, eat off it all week.",
+    "carded": true
+  },
+  {
+    "id": "i4",
+    "name": "Chicken thighs, bone-in",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "More forgiving than breasts and cheaper per pound — hard to dry out.",
+    "perimeterId": "air_chilled_chicken",
+    "carded": true,
+    "cardSlug": "air_chilled_chicken",
+    "cardSection": "meat"
+  },
+  {
+    "id": "i5",
+    "name": "Wild-caught salmon",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "Wild when the budget allows. A whole-food-standard call, not a verdict on farmed.",
+    "perimeterId": "salmon_wild_vs_farmed",
+    "carded": true,
+    "cardSlug": "salmon_wild_vs_farmed",
+    "cardSection": "seafood"
+  },
+  {
+    "id": "i6",
+    "name": "Pasture-raised eggs",
+    "category": "Protein",
+    "checked": true,
+    "source": "template",
+    "why": "Pasture-raised is the one egg label with real meaning behind it.",
+    "perimeterId": "egg_labels",
+    "carded": true,
+    "cardSlug": "egg_labels",
+    "cardSection": "eggs_dairy"
+  },
+  {
+    "id": "i7",
+    "name": "Plain whole-milk Greek yogurt",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "Plain, so you’re not buying dessert — add your own fruit.",
+    "perimeterId": "yogurt_plain_vs_flavored",
+    "carded": true,
+    "cardSlug": "yogurt_plain_vs_flavored",
+    "cardSection": "eggs_dairy"
+  },
+  {
+    "id": "i8",
+    "name": "Canned black beans",
+    "category": "Staples",
+    "checked": false,
+    "source": "template",
+    "why": "The cheapest real protein in the building — rinse them to cut the sodium.",
+    "perimeterId": "beans_dried_vs_canned",
+    "carded": true,
+    "cardSlug": "beans_dried_vs_canned",
+    "cardSection": "bulk_pantry"
+  },
+  {
+    "id": "i9",
+    "name": "Dried lentils",
+    "category": "Fiber",
+    "checked": false,
+    "source": "template",
+    "why": "No soaking, done in twenty minutes, and they stretch a meal.",
+    "perimeterId": "beans_dried_vs_canned",
+    "carded": true,
+    "cardSlug": "beans_dried_vs_canned",
+    "cardSection": "bulk_pantry"
+  },
+  {
+    "id": "i10",
+    "name": "Extra-virgin olive oil — dark bottle",
+    "category": "Staples",
+    "checked": false,
+    "source": "template",
+    "why": "Look for a HARVEST date, not just “best by” — dark glass keeps it from going rancid.",
+    "perimeterId": "olive_oil_grades",
+    "carded": true,
+    "cardSlug": "olive_oil_grades",
+    "cardSection": "bulk_pantry"
+  },
+  {
+    "id": "i11",
+    "name": "Frozen broccoli or green beans",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "Picked ripe and frozen fast — cheaper than fresh and it never spoils.",
+    "perimeterId": "frozen_vs_fresh_produce",
+    "carded": true,
+    "cardSlug": "frozen_vs_fresh_produce",
+    "cardSection": "produce"
+  }
+]

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { requireAuth } from '../lib/supabase.js';
+import { requireAuth, supabase } from '../lib/supabase.js';
 import {
   saveHaulScan,
   getHaulScans,
@@ -7,7 +7,8 @@ import {
   getShoppingList,
   saveShoppingList,
 } from '../lib/store.js';
-import { distribution, generateHaulRead, buildCarryForward, seedNextCart } from '../lib/haul.js';
+import { distribution, generateHaulRead, buildCarryForward } from '../lib/haul.js';
+import { activeTrip, completedTripsSince } from '../lib/trips.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
 import { sanitizeList } from '../lib/cartEdit.js';
@@ -50,6 +51,7 @@ router.get('/haul', requireAuth, async (req, res) => {
   const tzOffset = Number(req.query.tzOffset) || 0;
   try {
     const week = await getHaulScans(userId, 7);
+    const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
     const todayKey = localDay(new Date().toISOString(), tzOffset);
     const trip = week.filter((s) => localDay(s.scanned_at, tzOffset) === todayKey);
     const dist = distribution(week);
@@ -59,10 +61,34 @@ router.get('/haul', requireAuth, async (req, res) => {
     const premium = await premiumForReq(req);
     const profile = await getFullProfile(userId).catch(() => ({}));
 
-    // The loop into next week. Deterministic and free — this is the shopper's own
-    // record, not an insight, and it's the whole point of reading a finished trip.
-    const row = await getShoppingList(userId).catch(() => null);
-    const cartItems = Array.isArray(row?.list?.items) ? row.list.items : [];
+    /* TWO DIFFERENT THINGS, AND THE HAUL MUST NOT BLEND THEM.
+       A SCAN is a verdict: Kristy read the label and made a call. A BOUGHT item is a row
+       the shopper ticked off — she has an opinion about many of them, but not a verdict,
+       because nothing was read. Counting them together would produce a number that means
+       neither, and the distribution bar in particular is a distribution OF VERDICTS: an
+       unscanned item honestly has none, and forcing one on it would colour every bought
+       item as a swap (tierBucket returns 'swap' for anything it does not recognise).
+
+       So `bought` rides alongside `week` and the bar stays scans-only. */
+    const live = await activeTrip(userId, supabase).catch(() => null);
+    const cartItems = Array.isArray(live?.items) ? live.items : [];
+
+    const finished = await completedTripsSince(userId, since, supabase).catch(() => []);
+    const bought = [];
+    const seenBought = new Set();
+    for (const t of finished) {
+      for (const it of t.items || []) {
+        if (!it.checked || it.source === 'swap') continue;
+        const key = String(it.name).toLowerCase();
+        if (seenBought.has(key)) continue;
+        seenBought.add(key);
+        bought.push({ name: it.name, cardSlug: it.cardSlug || null, completed_at: t.completed_at });
+      }
+    }
+
+    // Still computed, but no longer SERVED as a pick-list: `missed` is what makes the
+    // weekly read's "the fish never made it in again" nudge honest. The seeding act it
+    // used to feed lives at POST /api/trips/next now.
     const carryForward = buildCarryForward({ scans: week, cartItems });
 
     const { goals, constraints } = migrateGoalSet({
@@ -87,9 +113,11 @@ router.get('/haul', requireAuth, async (req, res) => {
     return res.json({
       trip,
       week,
-      distribution: dist,
+      // What was BOUGHT, kept separate from what was SCANNED. Different meanings, so
+      // different fields and a different count on the surface.
+      bought,
+      distribution: dist, // OF VERDICTS. Scans only, always.
       read,
-      carryForward,
       insightsGated: !premium && week.length > 0,
     });
   } catch (err) {
@@ -98,68 +126,10 @@ router.get('/haul', requireAuth, async (req, res) => {
   }
 });
 
-/* POST /api/haul/next   { accept?: string[] }
-   Start next week's cart from this trip. The trip that just ended is the best
-   information we have about the next one, and it was previously thrown away — the
-   Haul read ended in a nudge that the shopper then had to act on by hand.
-
-   `accept` is the shopper's chosen carry-forwards; omitted, it defaults to the safe
-   set (what they kept + what they skipped), never the products she flagged. Every
-   name is validated against the ACTUAL carry-forward set computed server-side, so a
-   tampering client can't inject arbitrary rows, and no model is involved at all. */
-router.post('/haul/next', requireAuth, async (req, res) => {
-  const userId = req.user.id;
-  try {
-    const week = await getHaulScans(userId, 7);
-    const row = await getShoppingList(userId).catch(() => null);
-    const cartItems = Array.isArray(row?.list?.items) ? row.list.items : [];
-    const cf = buildCarryForward({ scans: week, cartItems });
-
-    // The shopper's selection, filtered to what we actually offered.
-    const offered = new Map(
-      [...cf.keep, ...cf.replace, ...cf.missed].map((x) => [x.name.toLowerCase(), x.name])
-    );
-    const requested = Array.isArray(req.body?.accept) ? req.body.accept : null;
-    const names = requested
-      ? requested.map((n) => offered.get(String(n).trim().toLowerCase())).filter(Boolean)
-      : [...cf.keep, ...cf.missed].map((x) => x.name);
-
-    if (!names.length) {
-      return res.status(400).json({ error: 'Nothing to carry forward yet.' });
-    }
-
-    const profile = await getFullProfile(userId).catch(() => ({}));
-    const { goals, constraints } = migrateGoalSet({
-      goals: Array.isArray(profile.coach_goals) ? profile.coach_goals : [],
-      goal: profile.coach_goal || null,
-      constraints: Array.isArray(profile.constraints) ? profile.constraints : [],
-    });
-
-    const list =
-      sanitizeList({
-        goal: goals[0] || null,
-        intro: "Starting from last week — what you kept, and what never made it in.",
-        items: seedNextCart(names),
-      }) || null;
-    if (!list) return res.status(500).json({ error: 'Could not start the next cart.' });
-
-    const signals = { ...(row?.signals || EMPTY_SIGNALS) };
-    signals.sig = listSignature({
-      goals,
-      nonNegotiables: profile.non_negotiables || [],
-      focuses: profile.focuses || [],
-      constraints,
-    });
-    try {
-      await saveShoppingList(userId, { list, signals });
-    } catch (err) {
-      console.warn('[kristy] haul→next persist skipped:', err.message);
-    }
-    return res.json({ list });
-  } catch (err) {
-    console.error('[kristy] POST /api/haul/next error:', err.message);
-    return res.status(500).json({ error: 'Could not start the next cart.' });
-  }
-});
+/* POST /api/haul/next IS GONE. It seeded a new cart from accepted carry-forwards, and it
+   was a SECOND door onto an act the cart also offers ("same as last week"). Two doors onto
+   one act is how a record drifts: they can disagree about what a new trip starts from and
+   nothing says which is right. Its carry-forward computation survives inside
+   POST /api/trips/next, which is now the only way a trip is seeded. */
 
 export default router;

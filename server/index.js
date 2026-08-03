@@ -17,6 +17,7 @@ import preferencesRoute from './routes/preferences.js';
 import scanRoute, { guestScanRouter } from './routes/scan.js';
 import haulRoute from './routes/haul.js';
 import listRoute from './routes/list.js';
+import tripsRoute from './routes/trips.js';
 import perimeterRoute from './routes/perimeter.js';
 import counterRoute from './routes/counter.js';
 import subscriptionRoute from './routes/subscription.js';
@@ -67,6 +68,7 @@ app.use('/api', verdictRoute); // authed — Kristy's Verdict
 app.use('/api', scanRoute); // authed — scan extraction (barcode + label vision) → /verdict
 app.use('/api', haulRoute); // authed — the Haul (record scans + aggregate trip/week + read)
 app.use('/api', listRoute); // authed — the List (server-persisted + server-gated capabilities)
+app.use('/api', tripsRoute); // authed — the trip lifecycle (complete / new / same as last week)
 app.use('/api', historyRoute);
 app.use('/api', weeklySummaryRoute);
 app.use('/api', barcodeRoute);

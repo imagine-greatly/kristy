@@ -326,6 +326,57 @@ export async function composeGuestList({ instruction, mode = 'build', prefs = {}
   }
 }
 
+/* ───────── The trip lifecycle ─────────
+   Three acts, one door each. `startNewTrip` and `completeTrip` replace what used to be
+   a client-side "write an empty list" and nothing at all; `seedFromLastTrip` is the
+   single seeding act — /api/haul/next's button is gone and its carry-forward computation
+   now happens inside this one. */
+
+/** Is there a completed trip worth repeating? Used to decide whether the control renders
+ *  at all, so nobody is offered a button that answers 409. */
+export async function tripSeedable() {
+  if (IS_DEMO) return { seedable: false, items: 0 };
+  try {
+    return await authFetch('/api/trips/seedable', { method: 'GET' });
+  } catch {
+    return { seedable: false, items: 0 };
+  }
+}
+
+/** "Same as last week." */
+export async function seedFromLastTrip() {
+  try {
+    const res = await authFetch('/api/trips/next', { method: 'POST' });
+    if (res?.list) saveCache(res.list);
+    return { list: res?.list || null };
+  } catch (err) {
+    return { error: true, reason: err?.body?.error || 'error' };
+  }
+}
+
+/** Finish the active trip. It is archived, never erased. */
+export async function completeTrip() {
+  try {
+    const res = await authFetch('/api/trips/complete', { method: 'POST' });
+    if (res?.list) saveCache(res.list);
+    return { list: res?.list || null };
+  } catch (err) {
+    return { error: true, reason: err?.body?.error || 'error' };
+  }
+}
+
+/** Start over. An untouched trip is reused rather than archived, server-side. */
+export async function startNewTripRemote() {
+  try {
+    const res = await authFetch('/api/trips/new', { method: 'POST' });
+    const list = res?.list || { goal: null, intro: '', items: [] };
+    saveCache(list);
+    return { list, reused: Boolean(res?.reused) };
+  } catch {
+    return { error: true };
+  }
+}
+
 /* Attach counter cards to a GUEST's cart.
 
    A signed-in shopper gets this inside POST /api/list, which every cart mutation already

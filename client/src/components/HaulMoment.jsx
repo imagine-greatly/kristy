@@ -104,80 +104,12 @@ function ActionButton({ label, doneLabel, primary, onClick }) {
    What they KEPT and what they SKIPPED are pre-selected: both are their own record.
    What she'd SWAP is offered but never pre-selected — carrying a product she flagged
    into next week on the shopper's behalf would be putting words in their mouth. */
-function NextTrip({ carryForward, onStartNextCart }) {
-  const keep = carryForward?.keep || [];
-  const missed = carryForward?.missed || [];
-  const replace = carryForward?.replace || [];
-
-  const [chosen, setChosen] = useState(() => new Set([...keep, ...missed].map((x) => x.name)));
-  const [state, setState] = useState('idle'); // idle | working | done
-
-  if (!keep.length && !missed.length && !replace.length) return null;
-
-  const toggle = (name) =>
-    setChosen((cur) => {
-      const next = new Set(cur);
-      if (next.has(name)) next.delete(name);
-      else next.add(name);
-      return next;
-    });
-
-  const Group = ({ label, items, hint }) =>
-    items.length ? (
-      <div style={styles.cfGroup}>
-        <div style={styles.cfLabel}>
-          {label}
-          {hint && <span style={styles.cfHint}> · {hint}</span>}
-        </div>
-        <div style={styles.cfChips}>
-          {items.map((x) => {
-            const on = chosen.has(x.name);
-            return (
-              <button
-                key={x.name}
-                type="button"
-                onClick={() => toggle(x.name)}
-                aria-pressed={on}
-                style={{ ...styles.cfChip, ...(on ? styles.cfChipOn : null) }}
-              >
-                {on ? '✓ ' : '+ '}
-                {x.name}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    ) : null;
-
-  return (
-    <div style={styles.cf}>
-      <GoldThread />
-      <p style={{ ...kristyVoice, ...styles.cfTitle }}>Start next week from this one.</p>
-
-      <Group label="Worth repeating" items={keep} />
-      <Group label="Never made it in" items={missed} hint="still worth having" />
-      <Group label="there’s a better pick" items={replace} hint="tap to bring it anyway" />
-
-      <button
-        type="button"
-        style={{ ...styles.action, ...styles.actionPrimary }}
-        disabled={!chosen.size || state === 'working'}
-        onClick={async () => {
-          if (!chosen.size || state === 'working') return;
-          setState('working');
-          const ok = await onStartNextCart?.([...chosen]);
-          setState(ok ? 'done' : 'idle');
-        }}
-      >
-        {state === 'working'
-          ? 'Starting…'
-          : state === 'done'
-            ? 'Next cart started ✓'
-            : `Start next week’s cart (${chosen.size})`}
-      </button>
-    </div>
-  );
-}
+/* NextTrip IS GONE, and its button with it. It offered a pick-list of carry-forwards and
+   a "start next week's cart" action — a SECOND door onto the act the cart now offers as
+   "same as last week". Two doors onto one act is how a trip record drifts: they can
+   disagree about what a new trip starts from and nothing in the system says which is
+   right. The carry-forward computation survives inside POST /api/trips/next, where the
+   seed is built; what is removed is the parallel path, not the behaviour. */
 
 export default function HaulMoment({
   haul,
@@ -189,7 +121,6 @@ export default function HaulMoment({
   onShareHaul,
   onAsk,
   onUpgrade,
-  onStartNextCart,
 }) {
   if (loading && !haul) {
     return (
@@ -206,6 +137,7 @@ export default function HaulMoment({
   const trip = haul?.trip || [];
   const d = haul?.distribution || { approved: 0, note: 0, swap: 0, total: 0 };
   const checkedOff = cartProgress?.checked || 0;
+  const bought = haul?.bought || [];
 
   // Empty — before the first trip. An invitation, not a dead end, and it names both
   // halves of the trip: what you scan AND what you check off in the cart.
@@ -244,10 +176,18 @@ export default function HaulMoment({
         <h1 style={styles.title}>Your haul</h1>
         {/* The trip, counted honestly: scans are verdicts, check-offs are cart rows.
             Neither is dressed up as the other. */}
+        {/* TWO DIFFERENT THINGS, SAID SEPARATELY. A scan is a VERDICT — Kristy read the
+            label and made a call. A bought item is a row that was ticked off; she has an
+            opinion about many of them but not a verdict, because nothing was read.
+            Blending them into one number would produce a count that means neither. */}
         <p style={styles.sub}>
-          {trip.length} scanned this trip
-          {checkedOff > 0 ? ` · ${checkedOff} checked off` : ''} · {week.length} this week
+          {trip.length} scanned this trip · {week.length} scanned this week
         </p>
+        {bought.length > 0 && (
+          <p style={styles.subBought}>
+            {bought.length} bought and checked off — no label read on {bought.length === 1 ? 'it' : 'them'}
+          </p>
+        )}
       </div>
 
       <DistributionBar d={d} />
@@ -270,8 +210,9 @@ export default function HaulMoment({
         </div>
       ) : null}
 
-      {/* The read ends in a nudge; this is where the nudge becomes the next cart. */}
-      <NextTrip carryForward={haul?.carryForward} onStartNextCart={onStartNextCart} />
+      {/* The read ends in a nudge, and the nudge is acted on where the next trip is
+          actually built: the cart's "Same as last week". Not here, in a second place that
+          can disagree with it. */}
 
       {trip.length > 0 && (
         <div style={styles.section}>
@@ -320,6 +261,7 @@ const styles = {
   wrap: { maxWidth: 480, margin: '0 auto', width: '100%', boxSizing: 'border-box', padding: '20px 18px 28px', display: 'flex', flexDirection: 'column', gap: 18 },
   head: { display: 'flex', flexDirection: 'column', gap: 4 },
   title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
+  subBought: { margin: '2px 0 0', fontFamily: fonts.ui, fontSize: 12.5, color: colors.textMuted, opacity: 0.85 },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
 
   bar: { display: 'flex', width: '100%', height: 14, borderRadius: 999, overflow: 'hidden', background: colors.surface2, border: 'none' },

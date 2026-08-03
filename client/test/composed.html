@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composed cart harness</title>
+    <!--
+      A HARNESS, NOT A DEMO. It mounts the real CartMoment against a COMPOSED cart — the
+      shape the compose flow actually returns, with authored PICK names and a `why` on
+      every row — so the list can be measured and clicked at a true 390px.
+
+      cart.html renders bare nouns with no `why`. This renders what a shopper gets. Both
+      exist: the bare-noun list is what someone TYPES, the composed list is what Kristy
+      BUILDS, and they are different enough that a defect can hide in one and not the other.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./composedHarness.jsx"></script>
+  </body>
+</html>

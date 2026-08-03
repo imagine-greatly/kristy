@@ -22,6 +22,10 @@ import {
   composeGuestList,
   buildGuestList,
   attachGuestCards,
+  tripSeedable,
+  seedFromLastTrip,
+  completeTrip as completeTripRemote,
+  startNewTripRemote,
 } from './list.js';
 import { trackEvent } from './analytics.js';
 import { guestList, recordGuestList } from './guestState.js';
@@ -340,18 +344,51 @@ export function useCart(prefs) {
     if (summary) setNote(summary);
   }, []);
 
-  // Start a new trip: empty the cart so the surface returns to Kristy's question.
-  // An EMPTY saved cart is a real state, distinct from "never had one" — the server
-  // holds it empty rather than refilling it from the goal template.
-  const startNewTrip = useCallback(() => {
-    const next = { goal: listRef.current?.goal || null, intro: '', items: [] };
+  /* ── The trip lifecycle. All three are SERVER acts now. ──
+     Starting over used to write `{items: []}` over the stored list, which is exactly how a
+     finished trip got destroyed with no record of it. The server decides whether the trip
+     it is replacing is archived (something was checked) or simply reused (nothing was), so
+     the client cannot get that wrong by forgetting to ask. */
+  const startNewTrip = useCallback(async () => {
+    const { list: fresh } = await startNewTripRemote();
+    const next = fresh || { goal: null, intro: '', items: [] };
     listRef.current = next;
     setList(next);
     setNote('');
     setGated(false);
-    saveList(next);
     trackEvent('cart-new-trip', {});
   }, []);
+
+  // Finish the trip. Archived, never erased — this is what "same as last week" reads.
+  const completeTrip = useCallback(async () => {
+    const res = await completeTripRemote();
+    if (res?.error) return { ok: false };
+    const next = res.list || { goal: null, intro: '', items: [] };
+    listRef.current = next;
+    setList(next);
+    trackEvent('trip-complete', {});
+    return { ok: true };
+  }, []);
+
+  // "Same as last week" — the ONE seeding act.
+  const seedFromLast = useCallback(async () => {
+    const res = await seedFromLastTrip();
+    if (res?.error || !res.list) return { ok: false, reason: res?.reason };
+    listRef.current = res.list;
+    setList(res.list);
+    setNote(res.list.intro || '');
+    trackEvent('trip-seed', { items: res.list.items?.length || 0 });
+    return { ok: true };
+  }, []);
+
+  // Whether to OFFER it. Checked on mount and after a completion, so the control never
+  // appears for a shopper with no completed trip behind them.
+  const [seedable, setSeedable] = useState({ seedable: false, items: 0 });
+  useEffect(() => {
+    let alive = true;
+    tripSeedable().then((s) => alive && setSeedable(s));
+    return () => { alive = false; };
+  }, [list?.items?.length === 0]);
 
   const rebuild = useCallback(async () => {
     trackEvent('list-build', { source: 'rebuild' });
@@ -398,6 +435,9 @@ export function useCart(prefs) {
     // the trip is for instead of handing over a template.
     hasCart: Array.isArray(list?.items) && list.items.length > 0,
     startNewTrip,
+    completeTrip,
+    seedFromLast,
+    seedable,
     progress: cartProgress(list),
     setNote,
     setGated,
@@ -664,6 +704,13 @@ export function useGuestCart({ onNeedsAccount, prefs } = {}) {
     gated,
     hasCart: Array.isArray(list?.items) && list.items.length > 0,
     startNewTrip,
+    /* A GUEST HAS NO TRIP HISTORY, and that is honest rather than a gap: trips are rows
+       keyed to an account, and there is no account. So the two acts that read history are
+       absent and `seedable` is false, which is what stops the cart offering "same as last
+       week" to someone who has no last week the server could find. */
+    completeTrip: async () => ({ ok: false }),
+    seedFromLast: async () => ({ ok: false }),
+    seedable: { seedable: false, items: 0 },
     progress: cartProgress(list),
     setNote,
     setGated,

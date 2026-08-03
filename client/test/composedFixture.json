@@ -1,0 +1,138 @@
+[
+  {
+    "id": "i0",
+    "name": "Pasture-raised eggs",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "Pasture-raised is the one egg label with real meaning behind it.",
+    "perimeterId": "egg_labels",
+    "carded": true,
+    "cardSlug": "egg_labels",
+    "cardSection": "eggs_dairy"
+  },
+  {
+    "id": "i1",
+    "name": "Plain whole-milk Greek yogurt",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "Plain, so you’re not buying dessert — add your own fruit.",
+    "perimeterId": "yogurt_plain_vs_flavored",
+    "carded": true,
+    "cardSlug": "yogurt_plain_vs_flavored",
+    "cardSection": "eggs_dairy"
+  },
+  {
+    "id": "i2",
+    "name": "Canned skipjack tuna",
+    "category": "Protein",
+    "checked": false,
+    "source": "template",
+    "why": "Packed in olive oil or water, never “vegetable oil” — and skipjack is the lighter tin on mercury.",
+    "perimeterId": "canned_fish_choosing",
+    "carded": true,
+    "cardSlug": "canned_fish_choosing",
+    "cardSection": "seafood"
+  },
+  {
+    "id": "i3",
+    "name": "Baby spinach",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "Goes into eggs, soup, or a salad with no prep at all.",
+    "carded": true
+  },
+  {
+    "id": "i4",
+    "name": "Carrots and bell peppers",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "Both keep for weeks and get eaten raw when you’re hungry.",
+    "perimeterId": "produce_seasonality",
+    "carded": true,
+    "cardSlug": "produce_seasonality",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i5",
+    "name": "Blueberries or strawberries",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "The sweet thing that isn’t candy — whichever is in season.",
+    "carded": true,
+    "cardSlug": "berries_picking",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i6",
+    "name": "Raw or dry-roasted almonds",
+    "category": "Snacks",
+    "checked": false,
+    "source": "template",
+    "why": "Dry-roasted means no seed oil in your nuts — read the ingredient line.",
+    "perimeterId": "nuts_raw_vs_roasted",
+    "carded": true,
+    "cardSlug": "nuts_raw_vs_roasted",
+    "cardSection": "bulk_pantry"
+  },
+  {
+    "id": "i7",
+    "name": "Avocado",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "A whole-food fat that needs no cooking.",
+    "carded": true,
+    "cardSlug": "produce_ripeness_by_item",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i8",
+    "name": "Frozen broccoli or green beans",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "Picked ripe and frozen fast — cheaper than fresh and it never spoils.",
+    "perimeterId": "frozen_vs_fresh_produce",
+    "carded": true,
+    "cardSlug": "frozen_vs_fresh_produce",
+    "cardSection": "produce"
+  },
+  {
+    "id": "i9",
+    "name": "Sweet potatoes",
+    "category": "Produce",
+    "checked": false,
+    "source": "template",
+    "why": "More nutrient-dense than a white potato, and sweet enough to need nothing on it. Bake a tray, eat off it all week.",
+    "carded": true
+  },
+  {
+    "id": "i10",
+    "name": "Steel-cut oats",
+    "category": "Staples",
+    "checked": false,
+    "source": "template",
+    "why": "The least-processed oat — chewy, slow, and no sugar snuck in.",
+    "perimeterId": "oats_steelcut_rolled_instant",
+    "carded": true,
+    "cardSlug": "oats_steelcut_rolled_instant",
+    "cardSection": "bulk_pantry"
+  },
+  {
+    "id": "i11",
+    "name": "Extra-virgin olive oil — dark bottle",
+    "category": "Staples",
+    "checked": false,
+    "source": "template",
+    "why": "Look for a HARVEST date, not just “best by” — dark glass keeps it from going rancid.",
+    "perimeterId": "olive_oil_grades",
+    "carded": true,
+    "cardSlug": "olive_oil_grades",
+    "cardSection": "bulk_pantry"
+  }
+]

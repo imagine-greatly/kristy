@@ -445,3 +445,121 @@ Nothing blocks the store test. In rough order of value:
 - **PowerShell hangs in this environment.** Use Bash.
 - **Verify mobile over CDP**, never `--window-size`: Chrome enforces a ~500px minimum window
   on Windows, so a 390px request renders at 504 and crops.
+
+---
+
+## 7. The list surface, 2026-08-03 — and the verification chain that could not see it
+
+Four defects were reported off a live 390px render of a **composed** cart. Three were
+symptoms of the same root cause, and the root cause was in the VERIFICATION, not the code.
+
+### 7.1 A MOCK IS NOT A RENDER, AND EVERYTHING DOWNSTREAM INHERITED ITS BLIND SPOT
+
+`phase2-density.html` — the Phase 2 "for approval" mock — was **hand-authored HTML**. 526
+lines with the brand tokens pasted in as CSS variables. It never mounted `CartMoment`.
+
+That mattered because of what it was built FROM: twelve **bare nouns** (Blueberries,
+Pineapple, Ground beef, Olive oil), taken from the Phase 1 probe, which invented them. The
+mock contains **zero occurrences of the string "why"**. Then `cartHarness.jsx` was written
+from the mock and used the same twelve nouns with no `why`, and `cart.mjs` measured the
+harness.
+
+So: mock → probe → harness → browser test, four artifacts agreeing with each other and
+none of them agreeing with the product, where **all 51 PICKS carry a `why`** and 22 carry
+an authored `perimeterId`. Every matched row shipped rendering the PICK's `why` AND the
+card's do line — two prose lines where the mock showed one — and nothing in the chain
+could see it, because nothing in the chain ever held a `why`.
+
+**RULE: A FOR-APPROVAL MOCK RENDERS THE REAL COMPONENT OR IT IS NOT EVIDENCE.** Hand-built
+HTML shows what someone intends, which is worth having — but it must be labelled as intent
+and may never become the basis of a fixture. It is the same failure as the stale demo
+mirrors: a hand-maintained copy of a surface drifts from the surface, and the copy is what
+gets checked.
+
+**Fixed:** `client/test/buildFixture.mjs` is now the ONE place a browser fixture comes
+from. It runs the shipping `attachCards` over the shipping `PICKS` and writes JSON; both
+`cart.mjs` and `composed.mjs` regenerate before every run, so a fixture cannot drift from
+the matcher. `cart.mjs`'s expectations are **derived from the fixture** (row count,
+attachment count, collapse slug, tap target) rather than written beside it — hardcoding
+them is how a fixture and its assertions drift together into agreeing about a shape the
+product cannot emit. It throws rather than passing vacuously if the fixture loses its
+collapse or matches nothing.
+
+### 7.2 THE PROBE MEASURED "DID SOMETHING MATCH", NOT "DID THE RIGHT THING MATCH"
+
+Phase 1 reported 71%→83% coverage with **zero false positives**. Both numbers were true of
+what it asked, and it asked the wrong thing twice:
+
+1. **Its only failure class was "matched something that should have matched nothing."** Six
+   items were marked `expect: 'none'`; everything else scored `hit ? pass : miss`. An item
+   landing on the WRONG CARD counted as a **success**. "Frozen broccoli or green beans" →
+   `beans_dried_vs_canned` ("fill a bag from the bulk bin", on a frozen item) would have
+   been tallied inside the 83%.
+2. **Its input was bare nouns it invented**, not the composed names the compose flow emits.
+
+**Fixed:** `server/scripts/listMatchProbe.js` measures correctness against two ground
+truths — the authored `perimeterId` (22 picks), and food-word overlap for retrieval-only
+matches — and **exits non-zero on a wrong match**. A miss is reported and does not fail:
+coverage is an authoring backlog, that is what `counter_gaps` is for. A wrong match fails,
+because a wrong do line is worse than no do line.
+
+Verified it can fail: with authored precedence and the state guard disabled to simulate the
+pre-fix matcher, it exits 1 and names all six defects. **Current: 0 wrong, 0 dropped, 31/31
+attached correct, 22/22 against authored truth.**
+
+### 7.3 THE MATCHER FIXES
+
+- **AN AUTHORED `perimeterId` OUTRANKS RETRIEVAL** (`cardForItem`). A PICK names its entry
+  deliberately and claim-locked; retrieval guesses at a string. Retrieval had overridden
+  **6 of 22** authored ids and lost a 7th — 27% wrong on the only rows with a ground truth.
+  The authored id is still validated: retired, `home` or non-aisle falls through.
+- **A STATE WORD IS A SUBJECT** (`stateContradicts`). `fish_freshness_at_counter` genuinely
+  carries the bare alias `tuna`; `beans_dried_vs_canned` genuinely carries `beans`. Both
+  cleared the alias floor honestly — the card was about a different STATE of the same food,
+  which no score can express. Fires only when BOTH the item and the card name a state, which
+  is what stops it refusing "Raw or dry-roasted almonds". It is a VETO, never a score: it
+  cannot make the list and the ask disagree about which card is best, only make the list
+  decline one.
+- **A LABEL CARD IS NOT AN AISLE CARD.** `label_terms` is a reference section — 18 entries —
+  and `LIST_SECTIONS` omits it on purpose. `label_pasture_raised_feed` (8) beat `egg_labels`
+  (6) on "Pasture-raised eggs", so the row carried a card, showed no trailing label *because*
+  it had one, and sat in "Everything else" anyway. Falls through like a home card.
+- **A BARE PROCESS WORD IS NOT A SUBJECT.** `raw_milk` carried the alias `unpasteurized`,
+  which matched "Unpasteurized miso" and would match unpasteurized juice, cheese or
+  sauerkraut. Removed; `unpasteurized milk` and `raw milk` remain and all three `asked_as`
+  phrasings say "raw milk". Same defect as `meat any good` on `judging_meat_at_the_case`.
+- **`canned_fish` was retargeted** from `mercury_by_fish` to `canned_fish_choosing`, and its
+  `why` rewritten to match the card rather than the card kept to match the `why`.
+  `mercury_by_fish`'s do line is "Check the species name on the case tag" — a fish-COUNTER
+  instruction on a can. `sardines` deliberately stays on `mercury_by_fish`; `list.test.js`
+  pins it with a stated reason (small fish sit lower on the chain), which is a claim about
+  the fish rather than the tin.
+
+### 7.4 TWO SAVE CONTROLS CAME BACK, BECAUSE A SELECTOR IS NOT A RULE
+
+`gate.mjs` greps `[data-save-list]` on the authenticated cart. It saw neither of the two
+shipped afterwards: **"Save this cart"** in the guest header, and **"Keep it"** under "Save
+your cart" — a permanent BANNER above the guest list, which is the shape the money rule
+names outright ("not on a save, never a banner"). `cartFree.test.js` now greps what a
+SHOPPER READS across all of `client/src`, because a button can drop an attribute, change
+class or move component and still say the same wrong thing to the same person.
+
+### 7.5 MEASURED, 390px, the same twelve before and after
+
+| | before | after |
+|---|---|---|
+| lines per matched row | 8.22 | **6.10** |
+| cost of a match | +4.56 | **+2.60** |
+| page height | 2290px | **2002px** |
+| sections | 6, incl. "Everything else" ×4 | **5, no trailing group** |
+| wrong attachments (51 PICKS) | 6 of 32 | **0 of 31** |
+
+### 7.6 LEFT ALONE, DELIBERATELY
+
+**Composed PICK names stay composed.** "Frozen broccoli or green beans", "Raw or
+dry-roasted almonds" — 12 of 51 carry an " or "/" and "/em-dash shape. Measured at 390px,
+**none of them wraps**; what wrapped was the `why` beneath, now suppressed on matched rows.
+`canonicalItem` splits on the em-dash and strips a qualifier list to drive blend dedup;
+`listBaseline` keys `kept` frequency on the NAME, so renaming resets every stored shopping
+profile; `applyCompose` protects rows by name-in-instruction matching. Resetting all of that
+to fix wrapping that does not happen is a bad trade. The matching harm is handled above.

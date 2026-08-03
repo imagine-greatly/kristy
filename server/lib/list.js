@@ -130,9 +130,24 @@ const PICKS = {
     why: 'Small fish, low on the chain, and you eat the whole thing — real omega-3s.',
     alt: 'Or canned salmon with the bones in.',
   },
+  /* THE CARD FOLLOWS THE ROW, NOT THE OTHER WAY AROUND. This pointed at `mercury_by_fish`,
+     whose do line is "Check the species name on the case tag" — a fish-COUNTER instruction
+     on a can, the same location error as sending someone to check the ice on a tin, one
+     notch quieter. `canned_fish_choosing` is the card for a thing sold in a can, and its
+     own buying tips carry the skipjack/albacore mercury line anyway, so the claim the name
+     rests on is still sourced.
+
+     The `why` was rewritten to match the card rather than the card kept to match the `why`:
+     it now leads with the pack medium, which is that card's actual verdict ("Packed in
+     olive oil or water. Bones and skin left in. Three ingredients on the back."), and keeps
+     the skipjack tell that justifies naming this pick skipjack at all.
+
+     `sardines` deliberately stays on `mercury_by_fish` — list.test.js pins it there with a
+     stated reason (small fish sit lower on the chain), and that is a claim about the FISH
+     rather than about the tin. */
   canned_fish: {
-    name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'mercury_by_fish',
-    why: 'Skipjack (the “light” tin) sits lower in mercury than albacore.',
+    name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'canned_fish_choosing',
+    why: 'Packed in olive oil or water, never “vegetable oil” — and skipjack is the lighter tin on mercury.',
     alt: 'Or canned salmon — bones in, more calcium.',
   },
   salmon: {

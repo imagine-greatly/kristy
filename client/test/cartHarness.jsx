@@ -1,53 +1,32 @@
-/* Mount the REAL CartMoment against a fixture cart. See cart.html for why.
+/* Mount the REAL CartMoment against a REAL composed cart. See cart.html for why.
  *
- * The fixture is the 12-item list from the Phase 2 approval, in the exact shape the server
- * returns it — `cardSlug` and `cardSection` are what attachCards() stamps, not values
- * invented here. Seven match a card across four sections; five do not.
+ * THE FIXTURE IS BUILT, NOT WRITTEN. It used to be twelve bare nouns — "Blueberries",
+ * "Eggs", "Olive oil" — with no `why` on any row, transcribed from the Phase 2 mock, which
+ * was hand-authored HTML rather than a render of this component. The product never emits
+ * that shape: all 51 shipping PICKS carry a `why` and 22 carry an authored `perimeterId`.
+ * A row rendering both a `why` and a card's do line was therefore invisible to this test,
+ * to the mock it came from, and to the probe the mock came from.
+ *
+ * `cart.mjs` now regenerates `cartFixture.json` from the shipping PICKS through the
+ * shipping `attachCards` before every run, so what is measured here is what a shopper gets.
  */
 
 import { createRoot } from 'react-dom/client';
 import { useState } from 'react';
 import CartMoment from '../src/components/CartMoment.jsx';
 import { cartProgress } from '../src/lib/cart.js';
+import FIXTURE from './cartFixture.json';
 import '../src/index.css';
 
-const ITEMS = [
-  ['Blueberries', 'berries_picking', 'produce', true],
-  ['Bananas', null, null, false],
-  ['Pineapple', 'produce_ripeness_by_item', 'produce', false],
-  ['Strawberries', 'berries_picking', 'produce', true],
-  ['Ground beef', 'ground_beef_lean_ratio', 'meat', false],
-  ['Eggs', 'egg_labels', 'eggs_dairy', true],
-  ['Whole milk', 'whole_vs_reduced_fat_milk', 'eggs_dairy', false],
-  ['Olive oil', 'olive_oil_grades', 'bulk_pantry', false],
-  ['Sourdough', null, null, false],
-  ['Tortillas', null, null, false],
-  ['Coffee', null, null, false],
-  ['Paper towels', null, null, false],
-].map(([name, cardSlug, cardSection, checked], i) => ({
-  id: `i${i}`,
-  name,
-  category: name === 'Sourdough' ? 'Bakery' : 'Added',
-  checked,
-  source: 'user',
-  carded: true,
-  ...(cardSlug ? { cardSlug, cardSection } : {}),
-}));
-
 function Harness() {
-  const [list, setList] = useState({ goal: null, intro: '', items: ITEMS });
+  const [list, setList] = useState({ goal: null, intro: '', items: FIXTURE });
   const mutate = (fn) => setList((cur) => fn(cur));
 
   const cart = {
     list,
-    premium: true, // suppress the membership nudge; it is not what is being measured
-    loading: false,
-    busy: '',
-    note: '',
     hasCart: true,
+    loading: false,
     progress: cartProgress(list),
-    setNote: () => {},
-    setGated: () => {},
     toggle: (id) =>
       mutate((c) => ({ ...c, items: c.items.map((i) => (i.id === id ? { ...i, checked: !i.checked } : i)) })),
     remove: (id) => mutate((c) => ({ ...c, items: c.items.filter((i) => i.id !== id) })),
@@ -56,18 +35,13 @@ function Harness() {
         ...c,
         items: [...c.items, { id: `n${c.items.length}`, name, category: 'Added', checked: false, source: 'user' }],
       })),
-    refine: () => {},
-    keepItem: () => {},
+    keep: () => {},
     takeOffer: () => {},
-    addScan: () => {},
-    addSwaps: () => {},
-    applyList: () => {},
-    compose: async () => ({ ok: false }),
-    rebuild: () => {},
+    compose: async () => {},
     startNewTrip: () => mutate(() => ({ goal: null, intro: '', items: [] })),
   };
 
-  return <CartMoment cart={cart} goals={['eating_cleaner']} goal="eating cleaner" />;
+  return <CartMoment cart={cart} goals={[]} goal={null} />;
 }
 
 createRoot(document.getElementById('root')).render(<Harness />);

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { requireAuth } from '../lib/supabase.js';
+import { requireAuth, supabase } from '../lib/supabase.js';
 import { userRateLimit, listComposeLimited, LIST_COMPOSE_BUDGET_MESSAGE } from '../lib/rateLimit.js';
 import {
   getFullProfile,
@@ -18,6 +18,7 @@ import { migrateGoalSet } from '../lib/taxonomy.js';
 import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
 import { attachOffers } from '../lib/listVoice.js';
 import { attachCards } from '../lib/listMatch.js';
+import { activeTripOrAdopt, activeTrip, insertTrip, saveTripItems, tripToList } from '../lib/trips.js';
 import { buildBaseline, suppressedByBaseline } from '../lib/listBaseline.js';
 
 // The List — server-persisted and server-gated (Step 8 → durable).
@@ -103,9 +104,22 @@ function nudgeTowardProfile(fresh, stored, baseline) {
   return { ...stored, items: [...items, ...additions] };
 }
 
+/* PERSIST WRITES THE ACTIVE TRIP, and falls back to creating one.
+   `signals` still goes to shopping_lists, because it is cross-trip pattern memory and
+   filing it per trip would forget the shopper every week. So one call, two destinations,
+   split by what the data actually is rather than by where it used to live. */
 async function persist(userId, patch) {
   try {
-    await saveShoppingList(userId, patch);
+    if (patch.signals !== undefined) {
+      await saveShoppingList(userId, { signals: patch.signals });
+    }
+    if (patch.list !== undefined) {
+      const live = await activeTrip(userId, supabase);
+      if (live) await saveTripItems(live.id, patch.list, supabase);
+      // No active trip and something to save → this IS the start of a trip. A scan in the
+      // aisle before the shopper has said what the trip is for has to work.
+      else if (patch.list?.items?.length) await insertTrip(userId, patch.list, supabase);
+    }
   } catch (err) {
     console.warn('[kristy] list persist skipped:', err.message);
   }
@@ -120,7 +134,14 @@ router.get('/list', requireAuth, async (req, res) => {
     const row = await getShoppingList(userId);
     const signals = normalizeSignals(row?.signals || EMPTY_SIGNALS);
     const pending = Array.isArray(row?.next_list) ? row.next_list : [];
-    const stored = row?.list && Array.isArray(row.list.items) ? row.list : null;
+
+    /* THE ACTIVE TRIP IS THE LIST NOW. `shopping_lists.list` is the fossil: read once, on a
+       shopper who has never had a trip, and adopted as their first one. After that it is
+       never read again — see adoptLegacyList for why the gate is "no trips at all" rather
+       than "no active trip". `signals` and `next_list` on that same row stay live and
+       cross-trip, which is why the row is not retired outright. */
+    const trip = await activeTripOrAdopt(userId, row?.list, supabase);
+    const stored = trip ? tripToList(trip) : null;
 
     const sig = listSignature({ goals, nonNegotiables, focuses, constraints });
     const storedSig = row?.signals?.sig || null;

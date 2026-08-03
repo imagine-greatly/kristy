@@ -10,7 +10,6 @@ import {
   loadProfile,
   saveHaulScan,
   loadHaul,
-  startNextCart,
 } from './lib/data.js';
 import {
   goalNoteLabel,
@@ -824,14 +823,6 @@ export default function App() {
   // the next one: the shopper's accepted carry-forwards are written as the new cart
   // (server-validated against what was actually offered), and we drop them straight
   // into it — the loop closes on the surface where the next trip happens.
-  async function handleStartNextCart(accepted) {
-    const { list } = await startNextCart(accepted);
-    if (!list) return false;
-    cart.applyList(list, list.intro || '');
-    trackEvent('list-build', { source: 'haul-carryforward', items: list.items?.length || 0 });
-    setMoment('list');
-    return true;
-  }
 
   async function loadHaulData() {
     setHaulLoading(true);
@@ -1097,6 +1088,12 @@ export default function App() {
               onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
               onHaul={() => setMoment('haul')}
+              onComplete={async () => {
+                // Finishing archives the trip and lands the shopper on the Haul, which is
+                // the read on what they just did. The cart returns to Kristy's question.
+                const res = await cart.completeTrip();
+                if (res?.ok) setMoment('haul');
+              }}
             />
           )}
           {moment === 'scan' && (
@@ -1133,7 +1130,6 @@ export default function App() {
               onShareHaul={handleShareHaul}
               onAsk={askAboutHaul}
               onUpgrade={openUpgrade}
-              onStartNextCart={handleStartNextCart}
             />
           )}
         </div>

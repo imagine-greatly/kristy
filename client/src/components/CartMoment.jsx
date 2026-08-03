@@ -28,7 +28,7 @@ import { readsSpent, spendRead } from '../lib/readMeter.js';
    Order, titles and the one location rule now live in lib/listSections.js, mirrored from
    the server and pinned by listSectionsMirror.test.js. Which CARD a row gets is decided
    once, on the server, at attach time — never here. */
-import { groupForWalk } from '../lib/listSections.js';
+import { groupForWalk, LIST_SECTIONS } from '../lib/listSections.js';
 
 /* ───────── Her read on a row, at a glance ─────────
    Only a genuine distinction is labelled. A template row carries no tag — tagging
@@ -65,11 +65,20 @@ function ProgressBar({ progress }) {
    this usable one-handed in an aisle. Everything Kristy has to say about it lives in the
    attachment below, which is shared when two rows resolve to the same card.
 
-   `why` still renders inline where a row has one: that is an AUTHORED pick's reasoning
-   (`perimeterId`, from PICKS) and it is a different thing from a matched card's do line.
-   A row can carry both; the authored line is hers about this pick, the do line is the
-   card's about the subject. */
-function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
+   ONE PROSE LINE PER ROW, AND WHEN THERE IS A CARD IT IS THE CARD'S. This once read "a
+   row can carry both; the authored line is hers about this pick, the do line is the card's
+   about the subject" — true, and still the wrong call in a store. The `why` sells the item
+   to someone who has already written it down; the do line tells them how to buy it at the
+   shelf. Only the second does any work while standing there, so a matched row is name +
+   eyebrow + do, and the `why` is suppressed.
+
+   An UNMATCHED row keeps its `why`, because it is the only prose that row has.
+
+   The signal is `hasCard` from the block rather than `item.cardSlug` on the row: the
+   attachment renders only once its summary has arrived, and suppressing on the slug alone
+   would blank the prose for the length of that fetch and leave the row with nothing at all
+   if it failed. Suppress exactly when the replacement is on screen. */
+function CartRow({ item, hasCard, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
   const isSwapCallout = item.source === 'swap';
   const flag = item.tier ? TIER_FLAG[item.tier] : null;
   const checked = !!item.checked;
@@ -87,7 +96,7 @@ function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
   const showAdded = mixed && item.source === 'user' && item.category !== 'From your haul';
 
   return (
-    <div style={styles.row}>
+    <div style={styles.row} data-cart-row={item.id}>
       <div style={styles.rowHead}>
         <button
           type="button"
@@ -111,6 +120,7 @@ function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
 
         <div style={styles.rowBody}>
           <span
+            data-name
             style={{
               ...styles.itemName,
               ...(isSwapCallout ? styles.itemNameSwap : null),
@@ -120,7 +130,7 @@ function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
             {item.name}
           </span>
 
-          {item.why && <span style={styles.itemWhy}>{item.why}</span>}
+          {item.why && !hasCard && <span data-why style={styles.itemWhy}>{item.why}</span>}
 
           {(showAdded || item.refined || flag) && (
             <span style={styles.itemMeta}>
@@ -136,7 +146,7 @@ function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
             nothing — inconsistent presence is honest, and inventing a category so every
             row had one would be the drifting second index all over again. */}
         {!item.cardSlug && TRAILING_LABEL(item) && (
-          <span style={styles.catLabel}>{TRAILING_LABEL(item)}</span>
+          <span data-cat-label style={styles.catLabel}>{TRAILING_LABEL(item)}</span>
         )}
 
         <button
@@ -179,8 +189,19 @@ function CartRow({ item, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
 // `cart.add` stamps on anything typed, so it is a null rather than a category — and
 // the live-group categories name their own section header already.
 const HIDDEN_CATEGORIES = new Set(['Added', 'Pantry', 'From your haul', 'Scanned']);
-const TRAILING_LABEL = (item) =>
-  item.category && !HIDDEN_CATEGORIES.has(item.category) ? item.category : null;
+
+// AND IT MAY NEVER BE THE NAME OF A SECTION. A category that names a walk section now sorts
+// the row INTO that section (sectionForCartCategory), so reaching this line with one would
+// mean the row is displaying a section it was not sorted into — the exact incoherence that
+// put three Produce-labelled rows under "Everything else". Sorting is the fix; this is the
+// structural guarantee that it stays fixed, because a label can no longer say `Produce` at
+// all. Every remaining label — Bakery, Snacks, Protein — names no section, so it cannot lie.
+const SECTION_TITLES = new Set(LIST_SECTIONS.map((s) => s.title));
+const TRAILING_LABEL = (item) => {
+  const c = item.category;
+  if (!c || HIDDEN_CATEGORIES.has(c) || SECTION_TITLES.has(c)) return null;
+  return c;
+};
 
 /* ───────── A BLOCK: one card, and every row that claimed it ─────────
    This is the collapse. Blueberries and strawberries both resolve to `berries_picking`,
@@ -213,6 +234,7 @@ function CartBlock({ block, card, mixed, open, onOpen, onToggle, onRemove, onKee
         <CartRow
           key={it.id}
           item={it}
+          hasCard={hasCard}
           mixed={mixed}
           onToggle={onToggle}
           onRemove={onRemove}
@@ -229,9 +251,9 @@ function CartBlock({ block, card, mixed, open, onOpen, onToggle, onRemove, onKee
           aria-expanded={false}
           data-attach={block.slug}
         >
-          <span style={styles.attachEyebrow}>{card.kind === 'home' ? `At home · ${card.eyebrow}` : card.eyebrow}</span>
-          <span style={styles.attachDo}>
-            <span>{card.do}</span>
+          <span data-attach-eyebrow style={styles.attachEyebrow}>{card.kind === 'home' ? `At home · ${card.eyebrow}` : card.eyebrow}</span>
+          <span data-attach-do style={styles.attachDo}>
+            <span data-do-text>{card.do}</span>
             <span style={styles.attachChev} aria-hidden="true">›</span>
           </span>
         </button>
@@ -273,6 +295,7 @@ export default function CartMoment({
   onAskAisle,
   onImport,
   onHaul,
+  onComplete,
 }) {
   const [openSlug, setOpenSlug] = useState(null);
   const [cards, setCards] = useState({}); // slug → the card summary
@@ -352,7 +375,7 @@ export default function CartMoment({
   if (!hasItems) {
     return (
       <div style={styles.wrap}>
-        <Header progress={progress} onHaul={onHaul} />
+        <Header progress={progress} onComplete={onComplete} />
         {loading ? (
           <p style={{ ...kristyVoice, ...styles.intro }}>Pulling your cart together&hellip;</p>
         ) : (
@@ -379,7 +402,7 @@ export default function CartMoment({
 
   return (
     <div style={styles.wrap}>
-      <Header progress={progress} onHaul={onHaul} />
+      <Header progress={progress} onComplete={onComplete} />
 
       {/* Her one-line read on the whole cart — the blend, named in her voice. */}
       {list.intro && <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>}
@@ -426,7 +449,7 @@ export default function CartMoment({
       <div style={styles.groups}>
         {groups.map((g) => (
           <div key={g.id || 'trailing'} style={styles.group} data-walk-section={g.id || 'trailing'}>
-            <div style={styles.groupLabel}>{g.title}</div>
+            <div data-group-label style={styles.groupLabel}>{g.title}</div>
             {g.blocks.map((b) => (
               <CartBlock
                 key={b.key}
@@ -572,6 +595,32 @@ function TripQuestion({ cart, premium, onUpgrade, onSetGoal, onScan, onAskAisle,
           counter keeps the prominence it earned and Scan simply matches it. */}
       <FillRow onScan={onScan} onAskAisle={onAskAisle} />
 
+      {/* SAME AS LAST WEEK — the single seeding act, and the highest-value tap on this
+          screen. Groceries are mostly repeat, so the second trip should be easier than the
+          first; that is what a habit feels like. It renders only when the server says
+          there IS a completed trip to read, so nobody is offered a button that answers 409.
+
+          It sits above "build a full cart" deliberately: a real previous trip beats a
+          generated template every time, and the template is the fallback for someone who
+          has no history yet. */}
+      {cart.seedable?.seedable && (
+        <button
+          type="button"
+          style={styles.seedBtn}
+          data-seed-last
+          disabled={busy}
+          onClick={async () => {
+            const res = await cart.seedFromLast();
+            if (!res?.ok) setErr('That did not go through. Try it once more.');
+          }}
+        >
+          <span style={styles.seedLabel}>Same as last week</span>
+          <span style={styles.seedSub}>
+            {cart.seedable.items} item{cart.seedable.items === 1 ? '' : 's'}, unchecked and ready to edit
+          </span>
+        </button>
+      )}
+
       {/* THE OPT-IN. Some shoppers do want a cart handed to them. That’s a choice
           they make, on every tier, not the default state of the screen. */}
       <button type="button" style={styles.ghostBtn} onClick={cart.rebuild} disabled={busy}>
@@ -590,7 +639,7 @@ function TripQuestion({ cart, premium, onUpgrade, onSetGoal, onScan, onAskAisle,
   );
 }
 
-function Header({ progress, onHaul }) {
+function Header({ progress, onComplete }) {
   return (
     <div style={styles.head}>
       <div style={styles.headTop}>
@@ -600,10 +649,14 @@ function Header({ progress, onHaul }) {
       {/* The app opens here now, always. A finished trip used to hijack the opening
           surface and land on the Haul; it is announced on the cart instead, where the
           shopper already is, and reading it stays one tap away. */}
-      {progress.total > 0 && progress.complete && onHaul && (
-        <button type="button" style={styles.doneRow} onClick={onHaul}>
+      {/* THE COMPLETION DOOR. It was a link to the Haul; it is the act itself now, because
+          a trip that is never completed is never archived and "same as last week" has
+          nothing to read. Explicit, never automatic on the last checkbox — an uncheck and
+          recheck would otherwise archive the trip out from under someone still shopping. */}
+      {progress.total > 0 && progress.complete && onComplete && (
+        <button type="button" style={styles.doneRow} onClick={onComplete} data-complete-trip>
           <span style={{ ...kristyVoice, ...styles.doneLine }}>Trip done. Everything checked off.</span>
-          <span style={styles.doneCta}>Read the haul →</span>
+          <span style={styles.doneCta}>Finish the trip →</span>
         </button>
       )}
     </div>
@@ -861,6 +914,13 @@ const styles = {
     fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
   },
   seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
+  seedBtn: {
+    alignSelf: 'stretch', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 3,
+    minHeight: 44, padding: '13px 16px', borderRadius: 14, cursor: 'pointer',
+    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9, textAlign: 'left',
+  },
+  seedLabel: { fontFamily: fonts.ui, fontSize: 15, fontWeight: 700, color: colors.textPrimary },
+  seedSub: { fontFamily: fonts.ui, fontSize: 12.5, color: colors.textMuted },
   seed: {
     padding: '9px 14px', borderRadius: 999, border: `1px solid ${colors.border}`,
     background: colors.surface, color: colors.textSecondary,
