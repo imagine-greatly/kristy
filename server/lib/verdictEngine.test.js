@@ -48,7 +48,18 @@ test('creamer (canola oil + cane sugar + carrageenan) → swap_recommended, 3 fl
   const tiersById = Object.fromEntries(layer.map((i) => [i.id, i.evidence_tier]));
   assert.equal(tiersById.canola_oil, 'kristys_standard');
   assert.equal(tiersById.evaporated_cane_juice, 'kristys_standard');
-  assert.equal(tiersById.carrageenan, 'credible_concern');
+  /* CARRAGEENAN WAS `credible_concern` HERE AND THE EVIDENCE DID NOT SUPPORT IT.
+     The inflammation and tumor-promotion literature it rested on is overwhelmingly
+     about POLIGEENAN — a degraded low-molecular-weight form made with harsh acid and
+     heat, not permitted in food and not what a label means by carrageenan. The entry
+     asserted the finding flatly, on the additive a skeptical reader is most likely to
+     know about, which made it the single line most able to discredit the other 73.
+     Re-tiered to the standard it actually is: a processing aid with no nutritional
+     purpose, thin and contested evidence, and avoidable on most shelves. */
+  assert.equal(tiersById.carrageenan, 'kristys_standard');
+  // The creamer's tier is unmoved — canola oil carries `high` on its own, so dropping
+  // carrageenan from `high` to `moderate` changes what the card SAYS, not what it scores.
+  assert.equal(scoreVerdict(matched), 'swap_recommended');
 });
 
 // ── Required case 2: two-ingredient whole-milk yogurt → approved ─────────────
