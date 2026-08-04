@@ -380,3 +380,86 @@ test('a hard line a GUEST declared is honored — a refusal is not a paid featur
   const hit = (honored.hardLines?.violated || []).find((x) => x.value === 'no gums');
   assert.ok(hit && hit.names.includes('Guar Gum'), 'the violated line names the ingredient');
 });
+
+/* ═══════════ REVERSE MATCHING IS GONE, AND BOTH DIRECTIONS ARE PINNED ═══════════
+
+   Measured over 18 real products: stage attribution was EXACT 30, FORWARD 9, REVERSE 2
+   — and both reverse hits were false claims about a real label.
+
+   The pair below is the whole argument, and it came out of ONE scan session:
+
+     Cheerios prints "Corn Starch". The token resolved UP to the alias "modified corn
+     starch" and the card told the shopper the label "won't tell you the source grain".
+     The label names the grain. A false concern, invented by the matcher — downstream
+     of every guard the claim lock owns, because the claim lock only stops the MODEL.
+
+     Great Value's oat cereal prints "modified cornstarch", one word, and matched
+     NOTHING — earning the gold seal for the product that actually contains it.
+
+   So the same entry flagged the product without it and missed the product with it.
+   Removing reverse fixes the first; despaced-exact fixes the second.
+
+   REVERSE WAS ALSO PAPERING OVER MISSING ALIASES, which is the deeper reason it had to
+   go: "cane sugar" and "enriched wheat flour" are ordinary US label terms that were
+   only ever reachable by escalating a token to a longer alias. They are authored now,
+   so they match EXACTLY — on the evidence the label actually gives.                 */
+
+test('a label term is never escalated to a more specific one it did not say', () => {
+  // Plain corn starch is not modified food starch, and must not be flagged as it.
+  assert.deepEqual(matchIngredients('corn starch').matched, []);
+  assert.deepEqual(
+    matchIngredients('Whole Grain Oats, Corn Starch, Sugar, Salt').matched.map((e) => e.id),
+    [],
+    'the real Cheerios list flags nothing',
+  );
+});
+
+test('a compound spelling still matches — the miss does not become the new failure', () => {
+  const one = matchIngredients('modified cornstarch').matched.map((e) => e.id);
+  assert.deepEqual(one, ['modified_food_starch'], '"cornstarch" is "corn starch"');
+  const two = matchIngredients('modified corn starch').matched.map((e) => e.id);
+  assert.deepEqual(two, ['modified_food_starch'], 'and the spaced spelling is unchanged');
+  // Bare cornstarch is NOT modified food starch and must stay unmatched — despacing is
+  // equality, never containment, so it cannot manufacture the escalation just removed.
+  assert.deepEqual(matchIngredients('cornstarch').matched, []);
+});
+
+test('the terms reverse used to reach are authored aliases now', () => {
+  assert.deepEqual(
+    matchIngredients('cane sugar').matched.map((e) => e.id),
+    ['evaporated_cane_juice'],
+  );
+  assert.deepEqual(
+    matchIngredients('enriched wheat flour').matched.map((e) => e.id),
+    ['enriched_bleached_flour'],
+  );
+});
+
+/* ═══════════ A DISPLAY NAME IS A CLAIM ═══════════
+
+   `enriched_bleached_flour` rendered "Enriched Bleached Flour" — with a one-liner
+   asserting the flour was bleached — on Oreo ("unbleached enriched flour") and Kraft
+   Mac ("Enriched Wheat Flour"). The `why` was defensible: refining strips the germ and
+   bran, and that is true of unbleached flour too. The NAME was not.
+
+   The corpus already had the right home for the bleaching claim in a separate
+   `bleached_flour` entry, so the aliases that genuinely mean bleached moved there. */
+
+test('an unbleached label is never told its flour was bleached', () => {
+  for (const label of [
+    'unbleached enriched flour',
+    'enriched wheat flour',
+    'unbleached enriched wheat flour',
+  ]) {
+    const hit = matchIngredients(label).matched;
+    assert.equal(hit.length, 1, `${label} matches one entry`);
+    assert.equal(hit[0].id, 'enriched_bleached_flour');
+    assert.doesNotMatch(hit[0].name, /bleach/i, `"${hit[0].name}" must not claim bleaching`);
+    assert.doesNotMatch(hit[0].one_liner, /\bbleached,/i, 'nor may the one-liner assert it');
+  }
+  // A label that DOES say bleached still gets the entry that means it.
+  assert.deepEqual(
+    matchIngredients('bleached flour').matched.map((e) => e.id),
+    ['bleached_flour'],
+  );
+});

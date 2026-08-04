@@ -3,6 +3,7 @@ import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { evaluateIngredients, tokenizeIngredients, genericSwap } from '../lib/verdictEngine.js';
+import { looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
 import { composeNote } from '../lib/verdictNote.js';
 import { selectCardIsm, ismContext } from '../lib/education.js';
 import { premiumForReq, decidePersonalization, FREE_NOTE_LIMIT } from '../lib/subscription.js';
@@ -97,6 +98,26 @@ function hasIngredients(ingredients) {
   return String(ingredients || '').trim().length > 0;
 }
 
+/* THE GUARDS BELONG TO THE ENDPOINT, NOT TO ONE CALLER.
+   `looksNonEnglish` and `isReadableIngredientList` existed only inside scanExtract, so
+   they protected the barcode path and nothing else. But the tier is computed from
+   `ingredients` alone and ZERO MATCHES SCORES AS `approved` — so any string the KB
+   cannot read is a gold seal. A French panel matches nothing. "n/a" matches nothing.
+   Neither is a clean product; both were a stamp.
+
+   /api/guest/verdict is public and unauthenticated, which made that a reachable path
+   rather than a theoretical one. The guards move here so every caller clears them,
+   including a client we did not write — the Swift one included. */
+export function unreadable(ingredients) {
+  const joined = Array.isArray(ingredients) ? ingredients.join(', ') : String(ingredients || '');
+  if (!isReadableIngredientList(joined)) return 'placeholder';
+  if (looksNonEnglish(joined)) return 'language';
+  return null;
+}
+
+// Kristy-voiced, and it does not pretend to a verdict it cannot reach.
+const UNREADABLE_MSG = "Nothing readable in that ingredient list. Photograph the panel instead.";
+
 // The gold seal is earned only at `approved`; swap is meaningful only when there's
 // something to move away from. Both mirror the prompt's own rules, enforced here so
 // the response shape is guaranteed regardless of what the model returns.
@@ -119,6 +140,9 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
   const { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete, barcode } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
+  }
+  if (unreadable(ingredients)) {
+    return res.status(422).json({ error: true, unreadable: true, message: UNREADABLE_MSG });
   }
 
   try {
@@ -190,6 +214,10 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   const { ingredients, readComplete, barcode, nonNegotiables } = readBody(req.body);
   if (!hasIngredients(ingredients)) {
     return res.status(400).json({ error: 'ingredients is required' });
+  }
+  // The public one. This is the path that made the guards' absence reachable.
+  if (unreadable(ingredients)) {
+    return res.status(422).json({ error: true, unreadable: true, message: UNREADABLE_MSG });
   }
 
   // Abuse protection, same soft-gate shape as guest chat so the client can show the

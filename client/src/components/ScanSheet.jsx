@@ -194,22 +194,33 @@ export default function ScanSheet({
     // fixes that, so it gets its own state — asking for one more photo, rather than
     // sending the shopper off to type a name they didn't need to type.
     const retryPhoto = !!scan.retryPhoto;
+    /* `conflict`: the database holds TWO ingredient lists for this barcode that would
+       score differently, so there is no honest verdict to give from either one. It gets
+       its own state because "Not in the data yet" would be a lie — it is in the data
+       twice — and because the shopper is the only one who can settle it. They are
+       holding the package; the database is not. */
+    const conflict = !!scan.conflict;
     const title = scan.unreadable
       ? 'That barcode came through unclear'
-      : retryPhoto
-        ? 'One more shot'
-        : barcodeMiss
-          ? 'Not in the data yet'
-          : "Can’t read that panel";
+      : conflict
+        ? 'The label settles this one'
+        : retryPhoto
+          ? 'One more shot'
+          : barcodeMiss
+            ? 'Not in the data yet'
+            : "Can’t read that panel";
     const sub = scan.unreadable
       ? "Guessing from a partial read is worse than not knowing. Snap the ingredient label instead."
-      : retryPhoto
+      : conflict
         ? scan.message ||
-          "That panel didn’t come through. One more shot of the ingredients list, straight on and filling the frame."
-        : barcodeMiss
-          ? 'Not in the data yet. Snap the ingredient label instead. That works on anything.'
-          : scan.message ||
-            'Try the ingredients panel again, better lit. Or type the product name.';
+          'Two different ingredient lists on file for this one. A photo of the panel settles it.'
+        : retryPhoto
+          ? scan.message ||
+            "That panel didn’t come through. One more shot of the ingredients list, straight on and filling the frame."
+          : barcodeMiss
+            ? 'Not in the data yet. Snap the ingredient label instead. That works on anything.'
+            : scan.message ||
+              'Try the ingredients panel again, better lit. Or type the product name.';
     content = (
       <Centered title={title} sub={sub}>
         {scan.product?.name && <div style={styles.productHint}>{scan.product.name}</div>}

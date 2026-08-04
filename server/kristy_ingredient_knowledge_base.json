@@ -1123,21 +1123,22 @@
     },
     {
       "id": "enriched_bleached_flour",
-      "name": "Enriched Bleached Flour",
+      "name": "Enriched Flour",
       "aliases": [
-        "bleached flour",
         "enriched flour",
+        "enriched wheat flour",
         "white flour",
         "wheat flour (enriched)",
-        "unbleached enriched wheat flour"
+        "unbleached enriched wheat flour",
+        "unbleached enriched flour"
       ],
       "category": "processing_agent",
       "severity": "moderate",
       "evidence_tier": "kristys_standard",
       "verdict": "limit",
-      "one_liner": "Flour with the nutritious germ and bran stripped out, bleached, then dusted with a few synthetic vitamins to replace a fraction of what was lost. A high-glycemic shell of the original grain.",
-      "why": "White flour processing removes the bran and germ, eliminating fiber, essential fatty acids, vitamins B1, B3, B6, folic acid, phosphorus, zinc, copper, iron, and magnesium. The bleaching process using chlorine dioxide or benzoyl peroxide destroys remaining nutrients. Synthetic vitamins are then added back in amounts that don’t fully replace the originals or match their bioavailability. The result is a high-glycemic starch with synthetic vitamin dust.",
-      "kristy_note": "The baseline flour in nearly all commercial baked goods. Our preference is stone-ground whole grain flour, sourdough fermented to reduce phytic acid, or ancient grains. When you eat something made with enriched bleached flour, you’re mostly eating glucose.",
+      "one_liner": "Flour with the germ and bran milled out, then dusted with a few synthetic vitamins to replace a fraction of what was removed. A high-glycemic shell of the original grain — bleached or not.",
+      "why": "White flour processing removes the bran and germ, eliminating fiber, essential fatty acids, vitamins B1, B3, B6, folic acid, phosphorus, zinc, copper, iron, and magnesium. Synthetic vitamins are then added back in amounts that don’t fully replace the originals or match their bioavailability. The result is a high-glycemic starch with synthetic vitamin dust. Whether the flour was also chemically bleached is a separate question with its own answer — “unbleached” on the bag says nothing about the milling.",
+      "kristy_note": "The baseline flour in nearly all commercial baked goods, and “unbleached enriched” is the same refined flour without the whitening step. Our preference is stone-ground whole grain flour, sourdough fermented to reduce phytic acid, or ancient grains. When you eat something made with enriched flour, you’re mostly eating glucose.",
       "sources": [
         "Slavin et al., JACN 2000 (whole grain vs. refined)",
         "USDA whole grain guidance"
@@ -1412,6 +1413,7 @@
       "id": "evaporated_cane_juice",
       "name": "Evaporated Cane Juice",
       "aliases": [
+        "cane sugar",
         "cane juice crystals",
         "dehydrated cane juice",
         "whole cane sugar",
@@ -1478,10 +1480,13 @@
       "id": "bleached_flour",
       "name": "Bleached Flour",
       "aliases": [
+        "bleached flour",
         "chlorinated flour",
         "bleached white flour",
         "flour (bleached)",
-        "chemically bleached flour"
+        "chemically bleached flour",
+        "bleached enriched flour",
+        "enriched bleached flour"
       ],
       "category": "processing_agent",
       "severity": "moderate",

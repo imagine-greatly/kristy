@@ -309,13 +309,17 @@ export async function runProductScan({ mode, barcode, file, goal = '', nonNegoti
   const ingredients = String(ex?.ingredients || '').trim();
   if (!ingredients) {
     // Product not found, or nothing readable. `retryPhoto` distinguishes "that photo
-    // didn't come through" (a better shot fixes it) from "no list here at all".
+    // didn't come through" (a better shot fixes it) from "no list here at all", and
+    // `conflict` distinguishes both from "the database holds two different lists for
+    // this barcode" — which is not a miss, and which only the shopper's own photo can
+    // settle.
     return {
       found: false,
       source: ex?.source || 'none',
       product: ex?.product || null,
       message: ex?.message,
       ...(ex?.retryPhoto ? { retryPhoto: true } : {}),
+      ...(ex?.conflict ? { conflict: true } : {}),
     };
   }
 

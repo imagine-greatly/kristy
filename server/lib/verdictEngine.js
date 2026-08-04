@@ -149,6 +149,33 @@ for (const entry of kb.ingredients) {
 }
 INDEX.sort((a, b) => b.key.length - a.key.length);
 
+// ── Compound spelling ────────────────────────────────────────────────────────
+// A label writes "modified cornstarch"; the KB writes "modified corn starch". One
+// space, and the flag is missed — Great Value's oat cereal carries modified starch
+// and earned a clean gold seal because of it, in the same run where Cheerios was
+// FLAGGED for plain "Corn Starch" it does not contain.
+//
+// EXACT-ONLY, NEVER SUBSTRING. Comparing despaced strings throws word boundaries
+// away, so `containsPhrase` cannot be run against them — "corn starch" would sit
+// inside "popcornstarch". Equality is safe because it compares whole tokens to whole
+// keys, which is what makes this an alternate spelling of stage 1 rather than a new,
+// looser stage.
+//
+// Only multi-word keys are indexed: a single-word key already matches its own
+// spelling exactly, and adding it here would just duplicate stage 1.
+//
+// Measured across all 343 keys: 2 collisions, and both are the alias collisions
+// CLAUDE.md already documents as harmless (`partially hydrogenated soybean oil`,
+// `bleached flour`). First-wins mirrors stage 1's behaviour on duplicate keys, so
+// this introduces no new ambiguity.
+const despace = (s) => s.replace(/[\s-]+/g, '');
+const DESPACED = new Map();
+for (const { key, entry } of INDEX) {
+  if (!/[\s-]/.test(key)) continue;
+  const d = despace(key);
+  if (!DESPACED.has(d)) DESPACED.set(d, entry);
+}
+
 const isBoundary = (ch) => ch === undefined || !/[a-z0-9]/.test(ch);
 
 // Does `needle` appear in `haystack` as a whole word/phrase? "sugar" matches
@@ -167,35 +194,43 @@ function containsPhrase(haystack, needle) {
 //   1. EXACT — token equals a name/alias. Always preferred (e.g. "vegetable oil"
 //      is the Vegetable Oil entry, never the longer "partially hydrogenated
 //      vegetable oil" alias of a critical entry).
+//   1b. DESPACED EXACT — the same match under an alternate compound spelling
+//      ("modified cornstarch" = "modified corn starch"). Still equality, so it is
+//      a spelling of stage 1 and not a looser stage of its own.
 //   2. FORWARD — the token CONTAINS a key as a whole phrase, i.e. the token
 //      names this (sub)ingredient. Take the longest contained key (most
 //      specific). INDEX is longest-first, so the first hit is the longest.
-//   3. REVERSE — a MULTI-WORD token sits inside a more specific alias
-//      ("cane sugar" ⊂ "whole cane sugar"). Take the SHORTEST containing key
-//      (least escalation). The multi-word gate stops bare generics ("salt",
-//      "milk", "oil") from reverse-matching a longer, unrelated alias.
-// Reverse is last and least-escalating on purpose: it never overrides an exact
-// or forward reading, so a common token can't be misattributed to a longer,
-// more-severe alias.
+//
+// ── REVERSE MATCHING IS GONE, AND ITS ABSENCE IS THE FIX ────────────────────
+//
+// There used to be a stage 3: a multi-word token sitting INSIDE a more specific
+// alias resolved UP to it ("cane sugar" ⊂ "whole cane sugar"). Affirming entries
+// were already excluded from it, on the grounds that bare "olive oil" must not
+// become "extra virgin olive oil" and earn a badge the label never gave.
+//
+// THE CONCERN SIDE HAD NO SUCH GUARD, AND THERE IT INVENTS A CONCERN. Cheerios
+// prints "Corn Starch"; the token resolved up to the alias "modified corn starch"
+// and the card told a shopper the label "won't tell you the source grain or how it
+// was modified". The label names the grain. That is a false claim about a real
+// product, produced by the matcher rather than by the model — downstream of every
+// guard the claim lock owns.
+//
+// The argument is exactly symmetric to the affirming one and the measurement backs
+// it: over the 18 real products probed, stage attribution was EXACT 30, FORWARD 9,
+// REVERSE 2 — and both reverse hits were the two false positives, with zero true
+// positives anywhere in the sample. Reverse can only ever fire on a token that is
+// NOT itself a KB key, which is precisely the case where there is no evidence for
+// the escalation. The genuinely dangerous pairs ("corn syrup" ⊂ "high fructose corn
+// syrup", "vegetable oil" ⊂ "partially hydrogenated vegetable oil") were never at
+// risk because each is its own exact key and stage 1 already won.
+//
+// Excluding concerns as well as affirmations leaves the stage empty, so it is
+// deleted rather than emptied. Don't flag what the label didn't say.
 function bestMatch(token) {
   for (const { key, entry } of INDEX) if (token === key) return entry; // 1
+  const compound = DESPACED.get(despace(token)); // 1b
+  if (compound) return compound;
   for (const { key, entry } of INDEX) if (containsPhrase(token, key)) return entry; // 2
-  if (token.includes(' ')) {
-    let best = null; // 3
-    for (const { key, entry } of INDEX) {
-      // Affirming entries never REVERSE-match. Reverse resolves a token UP to a
-      // longer, more specific alias — which for an affirmation means badging a
-      // token that never named the whole-food form: bare "olive oil" would
-      // resolve to "extra virgin olive oil" and get affirmed, and bare "coconut
-      // oil" to "unrefined coconut oil". Refined and unrefined share a name on a
-      // label and the matcher cannot tell them apart, so an affirmation requires
-      // an EXACT or FORWARD hit — the label has to actually say it.
-      // Don't affirm what you can't verify.
-      if (isAffirming(entry)) continue;
-      if (containsPhrase(key, token) && (!best || key.length < best.key.length)) best = { key, entry };
-    }
-    if (best) return best.entry;
-  }
   return null;
 }
 

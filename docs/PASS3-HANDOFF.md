@@ -891,3 +891,33 @@ SMS Hook back — Bird was deleted 2026-08-02 and the hook existed only to work 
 Until this lands, guests are offered **no plan buttons** (`purchasable={false}`): buying needs
 an account, an account needs a phone code, and a guest who tapped a plan would wait for a
 message that cannot arrive. **Restore the buttons the day sign-in works.**
+
+---
+
+## 10 — Must move server-side BEFORE the Swift client
+
+The rule, agreed 2026-08-04: **a claim, a content choice, or anything that changes what a
+shopper is told → server. A gesture, a layout, or something that must work offline mid-aisle
+→ client. Anything genuinely in between → server**, because there will be three clients and
+each duplication below becomes copy #3 the day Swift starts.
+
+Nothing here is moved yet. This is the list, with why each one is content rather than
+presentation.
+
+1. **`client/src/lib/list.js:776` `GOAL_TEMPLATES` / `:845` `FOCUS_ITEMS`** — ~300 lines of
+   list-generation content duplicating `server/lib/list.js`, under a comment that says "keep
+   them in sync." Nothing enforces it. Demo already reads the real public endpoints for the
+   counter and for chat; the list is the surface that was left behind.
+2. **`client/src/lib/coachGoals.js`** — 311 lines of goals, non-negotiables, focuses and
+   constraints, including Kristy-voiced `payoff` copy. Voice is content.
+3. **Tier → prose, written five times** — `ScanVerdictCard.jsx:34-46`, `CartMoment.jsx:50-52`,
+   `HaulMoment.jsx:24`, `App.jsx:886-888`, `data.js:258`. The server already knows the tier;
+   it should send the label with it.
+4. **`client/src/lib/verdictRamp.js`** — the colours are presentation and stay. The strings
+   are not: `AFFIRMATION_MEANING` ("Backed by history, not a lab"), `SEVERITY_CALL`,
+   `EVIDENCE_LABEL` are claims about evidence quality and belong with the KB.
+
+The pattern that works is already in the repo: `client/src/lib/listSections.js` declares
+itself a mirror of `server/lib/listMatch.js` and `listSectionsMirror.test.js` fails if the
+ids, titles, order or frozen rule drift. **Where a mirror is genuinely unavoidable, it needs
+that treatment before it ships, not after.**

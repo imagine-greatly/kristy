@@ -13,6 +13,8 @@ import {
   isReadableIngredientList,
   pickEnglishText,
   looksNonEnglish,
+  pickImportedText,
+  sameVerdict,
 } from './scanExtract.js';
 
 /* ───────────────────────── Identity: sameGtin ───────────────────────── */
@@ -83,4 +85,55 @@ test('an English list still resolves', () => {
     pickEnglishText({ ingredients_text: 'Oats, honey, salt', lang: 'en' }),
     'Oats, honey, salt'
   );
+});
+
+/* ───────────── Two lists, one product — the live/imported cross-check ─────────────
+
+   The incident: a US Heinz ketchup barcode returned the UK recipe (tomatoes, vinegar,
+   sugar, salt) and earned `approved` plus the gold seal, on a product whose real US
+   label leads with high fructose corn syrup.
+
+   IT WAS NOT A MARKET MISMATCH, and that matters because it is the fix that suggests
+   itself first. The record was tagged `en:united-states`, in English, at the US pack
+   size — measured across 20 sampled products, market mismatches numbered ZERO. A
+   country or GS1-prefix guard would have caught nothing, including this.
+
+   What happened is that OFF keeps a live, contributor-editable `ingredients_text_en`
+   AND the raw `ingredients_text_en_imported` from the source database, and a
+   contributor edit had shadowed a correct USDA import. The right answer was in the
+   same API response the whole time, in a field we never asked for.                  */
+
+test('pickImportedText holds the raw import to the same English standard', () => {
+  assert.equal(
+    pickImportedText({ ingredients_text_en_imported: 'Oats, honey, salt' }),
+    'Oats, honey, salt'
+  );
+  // A foreign import is no more usable than a foreign live field.
+  assert.equal(pickImportedText({ ingredients_text_imported: 'sucre, huile, sel' }), '');
+  assert.equal(
+    pickImportedText({ ingredients_text_imported: 'Wheat flour, sugar', lang: 'fr' }),
+    ''
+  );
+  assert.equal(pickImportedText({}), '', 'absent is not a conflict');
+});
+
+test('DISAGREEMENT IS MEASURED IN VERDICTS, NOT IN CHARACTERS', () => {
+  // The real Heinz pair, verbatim from the live record. Live scores clean; the import
+  // carries HFCS. Different tiers ⇒ two answers ⇒ Kristy gives neither.
+  const live =
+    'Tomatoes (148g per 100g ketchup), Natural Vinegar, Sugar, Salt, Spice and Herb Extracts (contains Celery), Spices.';
+  const imported =
+    'Tomato concentrate from red ripe tomatoes, distilled vinegar, high fructose corn syrup, corn syrup, salt, spice, onion powder, natural flavoring';
+  const heinz = sameVerdict(live, imported);
+  assert.equal(heinz.agree, false, 'the ketchup disagrees with itself');
+  assert.deepEqual(heinz.tiers, ['approved', 'skip']);
+
+  /* THE BENIGN CASE MUST STAY SILENT, and this is why the signal is the tier rather
+     than the text. The real Trader Joe's soy beverage pair differs by a whole phrase —
+     word-overlap scored it 60%, under any threshold worth setting — but both lists say
+     "water and soybeans" and both score `approved`. Firing here would cost a shopper a
+     photo to be told the same thing twice. Measured over the sample, text similarity
+     fired on 2 of 18 and verdict equivalence on 1 of 18; the one was Heinz. */
+  const quiet = sameVerdict('WATER, ORGANIC SOYBEANS CONTAINS SOY', 'Water, organic soybeans');
+  assert.equal(quiet.agree, true, 'a difference that changes no verdict is not a conflict');
 });

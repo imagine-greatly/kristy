@@ -229,3 +229,40 @@ test('an unrecognized panel value degrades to partial, not full', () => {
 test('malformed vision output yields nothing, not a guess', () => {
   assert.equal(parseIngredientsJSON('not json at all'), null);
 });
+
+/* ═══════════ THE GUARDS BELONG TO THE ENDPOINT, NOT TO ONE CALLER ═══════════
+
+   Enumerating every path to `stamp: true` turned up one that needed no scan at all.
+   `stamp` has a single producer — `tier === 'approved' && no hard line violated` — and
+   `approved` means "zero KB entries matched". So ANY string the KB cannot read scores
+   as a clean product: a French panel matches nothing, "n/a" matches nothing, and both
+   came back with the gold seal.
+
+   The language and placeholder guards did exist. They lived inside `scanExtract`, which
+   means they protected the barcode path and nothing else, while `/api/guest/verdict`
+   sits public and unauthenticated and accepts whatever `ingredients` it is handed.
+
+   They are on the endpoint now. This is the tripwire for anyone who moves them back,
+   and for the Swift client, which will call these routes without going through any of
+   the JavaScript that used to be the only thing standing here. */
+
+test('an unreadable ingredient string can never reach the engine', async () => {
+  const { unreadable } = await import('../routes/verdict.js');
+
+  const placeholders = ['n/a', 'N/A', '-', '  ', 'none', '???'];
+  nonEmpty(placeholders, 'placeholder strings');
+  for (const p of placeholders) {
+    assert.equal(unreadable(p), 'placeholder', `"${p}" is not an ingredient list`);
+  }
+
+  const foreign = ['sucre, huile de tournesol, sel', 'azúcar, aceite de girasol', 'Zucker, Weizen, Salz'];
+  nonEmpty(foreign, 'foreign strings');
+  for (const f of foreign) {
+    assert.equal(unreadable(f), 'language', `"${f}" is not English and would score clean`);
+  }
+
+  // A real list — including a legitimately short single-ingredient one — still passes.
+  const real = ['Oats, honey, salt', 'Peanuts.', 'carrots', ['Water', 'Organic soybeans']];
+  nonEmpty(real, 'readable lists');
+  for (const r of real) assert.equal(unreadable(r), null, `${JSON.stringify(r)} must pass`);
+});

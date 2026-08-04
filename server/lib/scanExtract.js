@@ -20,6 +20,8 @@
 
 import { readLabelIngredients } from './labelVision.js';
 import { lookupProduct, retainProduct } from './productStore.js';
+import { evaluateIngredients } from './verdictEngine.js';
+import { recordConflict } from './ingredientConflicts.js';
 
 const OFF_BASE = 'https://world.openfoodfacts.org/api/v2/product';
 const OFF_FIELDS = [
@@ -32,6 +34,12 @@ const OFF_FIELDS = [
   'categories_tags',
   'ingredients_text_en',
   'ingredients_text',
+  // The RAW IMPORT, kept by Open Food Facts alongside the live editable field.
+  // `ingredients_text_en` is contributor-editable; `_imported` is what the source
+  // database supplied. When they disagree the product has two ingredient lists and
+  // we have no way to tell which is on the shelf — see `sameVerdict` below.
+  'ingredients_text_en_imported',
+  'ingredients_text_imported',
   'nutriments',
   'image_front_url',
   'image_url',
@@ -79,6 +87,52 @@ export function pickEnglishText(p = {}) {
   return raw;
 }
 
+// ── The two-lists guard ──────────────────────────────────────────────────────
+// A US Heinz ketchup barcode returned the UK recipe — tomatoes, vinegar, sugar,
+// salt — and scored a clean `approved` with the gold seal, on a product whose real
+// US label leads with high fructose corn syrup. The record was NOT wrong about the
+// market: it was tagged `en:united-states`, in English, at the US pack size. A
+// CONTRIBUTOR EDIT had overwritten `ingredients_text_en`, and the correct text was
+// still sitting in the same API response under `ingredients_text_en_imported`.
+//
+// So the failure is not a market mismatch (measured: 0 of 20 sampled products had
+// one). It is that OFF keeps a live, editable field and a raw imported field, and
+// nothing here ever compared them.
+//
+// WHAT COUNTS AS DISAGREEMENT IS THE VERDICT, NOT THE TEXT. Comparing strings needs
+// a similarity threshold, and every threshold is arbitrary: measured over the sample,
+// a 70% word-overlap cutoff fired on two products, and one of them ("water, organic
+// soybeans" vs "water, organic soybeans, contains soy") was a difference that changes
+// nothing a shopper would ever act on. Scoring BOTH texts and comparing the resulting
+// tier has no threshold in it and fires only when the two lists would tell the shopper
+// different things — 1 of 18 on the same sample, and it was Heinz.
+//
+// The engine is used here as an EQUIVALENCE TEST, never to produce a verdict. The
+// verdict is still computed once, by /verdict, from whichever list survives.
+
+/** The raw imported ingredient text, held to the same English standard as the live one. */
+export function pickImportedText(p = {}) {
+  const en = String(p.ingredients_text_en_imported || '').trim();
+  if (en) return en;
+  const raw = String(p.ingredients_text_imported || '').trim();
+  if (!raw) return '';
+  const lang = String(p.lang || p.lc || '').toLowerCase();
+  if (lang && lang !== 'en') return '';
+  if (looksNonEnglish(raw)) return '';
+  return raw;
+}
+
+/**
+ * Would these two ingredient lists produce the same verdict? Anything else is a
+ * disagreement the shopper would notice.
+ * @returns {{ agree:boolean, tiers:[string,string] }}
+ */
+export function sameVerdict(a, b) {
+  const tierA = evaluateIngredients(a, {}).tier;
+  const tierB = evaluateIngredients(b, {}).tier;
+  return { agree: tierA === tierB, tiers: [tierA, tierB] };
+}
+
 // ── Identity guard ───────────────────────────────────────────────────────────
 // A lookup must only ever answer about the barcode that was actually scanned.
 // Returning someone else's product is the single worst failure this path has —
@@ -102,6 +156,11 @@ export function sameGtin(a, b) {
 // APPROVED STAMP on a product Kristy never read. Same liability as the language
 // guard, so it gets the same treatment: unreadable ⇒ no ingredients ⇒ no stamp.
 const USELESS_TEXT = /^(n\/?a|none|nil|null|undefined|unknown|tbd|[-–—.,;:?*_\s]+)$/i;
+
+// Kristy-voiced, and it names the real situation rather than blaming the shopper or
+// the database. No first person, no service narration (VOICE_SPEC).
+const CONFLICTING_DATA =
+  "Two different ingredient lists on file for this one. A photo of the panel settles it.";
 
 /** Is this string substantive enough to be a real ingredient statement? */
 export function isReadableIngredientList(text) {
@@ -217,6 +276,37 @@ export async function extractFromBarcode(barcode) {
   // 1. Open Food Facts ENGLISH ingredient text (foreign text is rejected here so
   //    it can never reach the engine and produce a false "approved").
   const text = pickEnglishText(p);
+
+  // 1a. TWO LISTS, ONE PRODUCT. Before trusting the live field, check it against the
+  //     raw import. If they would score differently, this record contains two answers
+  //     and we cannot tell which one is on the shelf — so Kristy does not guess and
+  //     does not stamp. The shopper is holding the package; their photo settles it,
+  //     and OFF'S OWN PANEL PHOTO DOES NOT — it is the same disputed record in image
+  //     form (verified: the stored Heinz panel is the UK label, and vision read the
+  //     wrong recipe straight back out of it).
+  const imported = pickImportedText(p);
+  if (text && isReadableIngredientList(text) && imported && isReadableIngredientList(imported)) {
+    const { agree, tiers } = sameVerdict(text, imported);
+    if (!agree) {
+      // Logged, never surfaced, and holding no identity — the sample has to grow on
+      // real scans before the rule ("prefer the import") can be judged on more than
+      // twenty products.
+      recordConflict({ barcode: code, name: product.name, brand: product.brand, live: text, imported, tiers });
+      return {
+        found: false,
+        source: 'conflict',
+        product,
+        ingredients: '',
+        nutrition,
+        // Its own state: this is not "we don't have it" (we have two of it) and not
+        // "your photo was bad" (there was no photo, so `retryPhoto` would put the
+        // wrong words on the button). The client asks for a first photo.
+        conflict: true,
+        message: CONFLICTING_DATA,
+      };
+    }
+  }
+
   if (text && isReadableIngredientList(text)) {
     // Retain the OFF hit too, not just the vision reads. It costs nothing, and it
     // means the catalog keeps working when OFF is throttling or down — the failure
