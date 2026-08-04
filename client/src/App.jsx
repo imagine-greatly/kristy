@@ -1319,7 +1319,11 @@ export default function App() {
       {importOpen && (
         <ImportList
           onClose={() => setImportOpen(false)}
-          onImported={(list, summary) => { cart.applyList(list, summary); setMoment("list"); }}
+          /* 'home' — NOT 'list'. There is no 'list' moment; the cart stopped being a tab when
+             it became the centre of the dashboard, and this call site was never updated.
+             Importing set a state nothing renders, so the shopper watched their list import
+             and land on a blank surface. */
+          onImported={(list, summary) => { cart.applyList(list, summary); setMoment('home'); }}
         />
       )}
 

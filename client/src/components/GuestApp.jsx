@@ -10,6 +10,7 @@ import AisleMoment from './AisleMoment.jsx';
 import ScanSheet from './ScanSheet.jsx';
 import MomentStub from './MomentStub.jsx';
 import Dashboard from './Dashboard.jsx';
+import ShopMode from './ShopMode.jsx';
 import { HaulIcon } from './Icons.jsx';
 import { sendGuestChat } from '../lib/api.js';
 import { runProductScan } from '../lib/logging.js';
@@ -305,6 +306,19 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                 onScan={() => setMoment('scan')}
                 onAskAisle={() => setMoment('aisle')}
                 onHaul={() => setMoment('haul')}
+                /* THE WALK IS FREE, and omitting these is what made "Start shopping" dead on
+                   production for every real visitor. Phone sign-in is blocked on 10DLC, so
+                   `session` is null for everybody and this component — not App's dashboard
+                   branch — is the only home surface anyone actually reaches. The hero was
+                   rendering its button off a string literal and binding `onClick` to
+                   undefined. See the note on Hero in Dashboard.jsx.
+
+                   `onComplete` is deliberately NOT passed. Completing writes a `trips` row
+                   keyed to an account, and a guest has none; the hero now renders that state
+                   doorless rather than offering a button that cannot do what it says. Same
+                   shape as `seedable` never firing `completed` here. */
+                onStartShopping={() => setMoment('shop')}
+                onResume={() => setMoment('shop')}
               />
             </>
           )}
@@ -321,6 +335,9 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
         </div>
       )}
 
+      {/* SHOP MODE OWNS THE VIEWPORT, here exactly as it does on the account path. The bar is
+          ABSENT rather than disabled — same rule App applies. */}
+      {moment !== 'shop' && (
       <BottomNav
         active={moment}
         cartProgress={cart.progress}
@@ -330,6 +347,29 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
         onHaul={() => setMoment('haul')}
         onChat={() => setMoment('chat')}
       />
+      )}
+
+      {/* THE OTHER STATE. `position: fixed; inset: 0`, so it sits out here with the overlays
+          rather than in the surface stack above. Exiting returns to the dashboard, where the
+          hero reads RESUME — leaving shop mode never completes a trip.
+
+          No `onComplete` and no `onSection`: the first needs an account (ShopMode already
+          guards its finish button on the handler existing), and the second only exists to
+          tell the scan sheet which aisle a shopper is standing in, which the guest scan
+          sheet does not read. Both are optional by construction, not by accident. */}
+      {moment === 'shop' && (
+        <ShopMode
+          cart={cart}
+          prefs={{
+            focuses: prefs?.focuses || [],
+            hardLines: prefs?.non_negotiables || [],
+            constraints: prefs?.constraints || [],
+          }}
+          onExit={() => setMoment('home')}
+          onScan={() => setCameraOpen(true)}
+          onUpgrade={save}
+        />
+      )}
 
       {scan && (
         <ScanSheet

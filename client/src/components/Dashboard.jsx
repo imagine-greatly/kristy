@@ -74,12 +74,28 @@ function walkGroups(items) {
    down and letting the alternative outshout the answer.
 
    dash.mjs counts bone-filled buttons per state, so neither can drift back. */
+/* THE ACTION NEEDS A LABEL *AND* A HANDLER, and that conjunction is the fix for a real
+   production defect rather than defensive noise. The gate used to be `action &&` alone —
+   a string literal, so always true — while `onClick={onAction}` took whatever it was given.
+   `GuestApp` renders this component and passed no hero handlers at all, so "Start shopping"
+   painted, took the tap, and did nothing. Nothing threw, so there was nothing in a console
+   and nothing for an error boundary to catch: an inert control is INVISIBLE to every check
+   that looks for failure, because it does not fail. It succeeds at doing nothing.
+
+   Requiring the handler makes an unwired action VANISH instead, which is loud: dash.mjs
+   already counts exactly one bone-filled action per state, so a hero that lost its button
+   fails that count. The defect converts from silent to caught by a test that already exists.
+
+   It also gives the guest `finished` state its correct shape for free. A guest has no
+   account, so there is no trip row to file and no completion door to offer; omitting
+   `onComplete` renders "Everything checked off / Trip done." with no button, rather than a
+   door that lies. Same reasoning as `seedable` never firing `completed` for a guest. */
 function Hero({ kicker, line, action, sub, onAction, tone = 'action', actionAttr }) {
   return (
     <div style={styles.hero} data-hero>
       {kicker && <span style={styles.kicker} data-hero-kicker>{kicker}</span>}
       <p style={styles.heroLine} data-hero-line>{line}</p>
-      {action && (
+      {action && onAction && (
         <button
           type="button"
           style={{ ...styles.heroBtn, ...(tone === 'gold' ? styles.heroBtnGold : null) }}
