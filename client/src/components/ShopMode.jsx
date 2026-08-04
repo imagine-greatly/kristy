@@ -400,21 +400,19 @@ export default function ShopMode({
   );
 }
 
-/* The full read, as a sheet over shop mode. The tier chip is the FIRST thing on it — the
-   decision is a claim, and settled science must never render identically to a standard. */
-const TIER_LABEL = {
-  established: 'Settled',
-  credible_concern: 'Credible concern',
-  kristys_standard: 'Whole-food standard',
-};
-
+/* The full read, as a sheet over shop mode. THE TIER IS A SENTENCE, NOT A CHIP — the claim
+   the chip made ("Credible concern", floating above a decision it did not name) was a
+   classification with nothing to attach to. The decision is still a claim and settled
+   science must still never render identically to a standard, so the tier is here; it is
+   `tier_note`, free since 2026-08-04, and it says which kind of claim this is in words that
+   have a referent. Below the do line, because a qualification follows what it qualifies. */
 function CardSheet({ card, onClose }) {
   return (
     <div style={styles.sheetScrim} onClick={onClose} data-card-sheet={card.slug}>
       <div style={styles.sheet} onClick={(e) => e.stopPropagation()}>
-        <span style={styles.sheetTier} data-tier-badge>{TIER_LABEL[card.tier] || card.tier}</span>
         <p style={styles.sheetHead}>{card.headline}</p>
         <p style={styles.sheetDo}>{card.do}</p>
+        {card.tier_note && <p style={styles.sheetTierNote} data-tier-note>{card.tier_note}</p>}
         <button type="button" style={styles.sheetClose} onClick={onClose}>Close</button>
       </div>
     </div>
@@ -576,13 +574,11 @@ const styles = {
     borderRadius: '18px 18px 0 0', background: colors.surface,
     display: 'flex', flexDirection: 'column', gap: 8,
   },
-  sheetTier: {
-    alignSelf: 'flex-start', fontFamily: fonts.ui, fontSize: 10, fontWeight: 700,
-    letterSpacing: '0.09em', textTransform: 'uppercase', color: colors.accentGold,
-    padding: '4px 10px', borderRadius: 999, border: `1px solid ${colors.gold30}`,
-  },
   sheetHead: { ...kristyVoice, margin: 0, fontSize: 21, lineHeight: 1.3, color: colors.ink },
   sheetDo: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.45, color: colors.textBody },
+  // Replaces the gold chip. Gold stays identity-only — it was carrying a CLASSIFICATION
+  // here, which is the drift the brand lock exists to stop. Demoted by size, not opacity.
+  sheetTierNote: { margin: 0, fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.45, color: colors.textMuted },
   sheetClose: {
     alignSelf: 'flex-start', marginTop: 6, minHeight: 44, padding: '10px 0',
     border: 'none', background: 'transparent', color: colors.textMuted,

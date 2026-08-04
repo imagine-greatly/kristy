@@ -23,13 +23,10 @@ import CardTeaser from './CardTeaser.jsx';
 
    Tokens only. Her spoken lines are kristyVoice, everything factual is Inter. */
 
-const TIER_LABEL = {
-  established: 'Settled',
-  credible_concern: 'Credible concern',
-  kristys_standard: 'Whole-food standard',
-  time_tested: 'Time-tested',
-};
-export const tierLabel = (t) => TIER_LABEL[t] || t;
+/* THE TIER LABEL MAP IS GONE, not commented out and not left exported "in case". It existed
+   only to render the chip, nothing imported it, and a lookup table describing a removed
+   surface is documentation that lies — the same reason Bird was deleted rather than left
+   dormant. The tier reaches the reader as `tier_note`, authored per card. */
 
 /* THE SUMMARY IS ALWAYS FREE — eyebrow, tier chip, headline, do line, cart pick. A
    shopper in an aisle never hits a wall. `card.locked` means the server withheld the
@@ -49,7 +46,10 @@ export default function CounterCard({
   const locked = card.locked === true;
   const lookFor = card.look_for || [];
   const watchOut = card.watch_out || [];
-  const hasDepth = locked || Boolean(card.why || lookFor.length || watchOut.length || card.tier_note);
+  // `tier_note` IS NOT DEPTH ANY MORE, so it cannot be what earns the tap. It renders free
+  // on the summary above; counting it here would offer "The full read" on a card whose only
+  // remaining content the reader is already looking at.
+  const hasDepth = locked || Boolean(card.why || lookFor.length || watchOut.length);
 
   return (
     <article style={s.card} data-counter-card={card.slug} data-kind={card.kind || 'shelf'}>
@@ -67,11 +67,12 @@ export default function CounterCard({
         >
           {home ? `At home · ${card.eyebrow}` : card.eyebrow}
         </span>
-        {card.tier && (
-          <span style={styles.tier} data-tier-badge>
-            {tierLabel(card.tier)}
-          </span>
-        )}
+        {/* NO TIER CHIP. "Credible concern" sat here, above a card about buying organic,
+            naming a claim the card had not made — a label with no referent. It is a
+            classification of evidence rendered as furniture, and a reader cannot tell what
+            it is classifying. The tier still has to reach them (non-negotiable #6), so it
+            reaches them as the SENTENCE below the do line, which says the same thing with
+            something to attach to. */}
       </div>
 
       {/* THE HEADLINE. Her call, stated as fact. */}
@@ -83,6 +84,22 @@ export default function CounterCard({
       {card.do && (
         <p style={s.doLine} data-do-line>
           {card.do}
+        </p>
+      )}
+
+      {/* THE TIER, AS A SENTENCE, ON THE FREE SURFACE. This is where the chip's job went.
+          It sits BELOW the do line rather than above the headline, because decision-first is
+          content and the order is the claim: the call, then how to act on it, then what kind
+          of claim it was. A qualification reads as a qualification when it follows the thing
+          it qualifies.
+
+          It is free — `tier_note` left DEPTH_FIELDS in the same change. Behind the tap it
+          would satisfy nobody: 73 of 81 cards never open for a free reader, and #6 says a
+          reader must ALWAYS know whether this is settled science, a credible concern or a
+          standard. Two cards carrying different tiers may never render identically here. */}
+      {card.tier_note && (
+        <p style={styles.tierNote} data-tier-note>
+          {card.tier_note}
         </p>
       )}
 
@@ -157,14 +174,9 @@ export default function CounterCard({
             </div>
           )}
 
-          {/* What the tier this card carries is actually worth. The chip above says WHICH
-              kind of claim it is; this says what that kind of claim is worth. */}
-          {card.tier_note && (
-            <p style={styles.tierNote}>
-              {card.tier && <span style={styles.tierNoteHead}>{tierLabel(card.tier)}. </span>}
-              {card.tier_note}
-            </p>
-          )}
+          {/* THE TIER NOTE IS NOT REPEATED HERE. It moved to the summary when the chip was
+              removed, and printing it twice on one card would make the depth look padded
+              with something the reader already had. */}
           </>
           )}
         </div>
@@ -175,11 +187,6 @@ export default function CounterCard({
 
 const styles = {
   top: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  tier: {
-    flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.03em',
-    color: colors.textSecondary, padding: '2px 8px', borderRadius: 999,
-    border: `1px solid ${colors.gold30}`, background: colors.goldTint9, whiteSpace: 'nowrap',
-  },
   eyebrowClamp: {
     flex: '1 1 auto', minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
   },
@@ -221,8 +228,10 @@ const styles = {
     border: `1px solid ${colors.hairline}`, background: 'transparent',
     color: colors.textSecondary, fontSize: 10, fontWeight: 700, lineHeight: 1,
   },
+  // Inter, not kristyVoice: this is a factual statement about evidence, not something she
+  // says. Solid textMuted rather than a faded textSecondary — a demotion by SIZE, never by
+  // opacity, which is the rule shop mode's contrast failure established.
   tierNote: { margin: 0, fontFamily: fonts.ui, fontSize: 12, lineHeight: 1.45, color: colors.textMuted },
-  tierNoteHead: { fontWeight: 700, color: colors.textSecondary },
 };
 
 const fullStyles = {

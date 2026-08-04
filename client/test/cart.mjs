@@ -172,13 +172,24 @@ const card = await page.evaluate(() => {
   return {
     slug: c?.getAttribute('data-counter-card'),
     headline: c?.querySelector('[data-headline]')?.textContent?.trim(),
-    tier: c?.querySelector('[data-tier-badge]')?.textContent?.trim() || null,
+    /* THE TIER IS A SENTENCE NOW, NOT A CHIP. `[data-tier-badge]` is asserted ABSENT rather
+       than simply stopped being read: the chip was a classification with no referent
+       ("Credible concern" over a card about buying organic) and a test that just drops the
+       check would let it grow back silently. What replaces it is `[data-tier-note]`, and
+       non-negotiable #6 still binds — a reader must always know whether this is settled
+       science, a credible concern or a standard, so SOMETHING here has to say so. */
+    badge: c?.querySelector('[data-tier-badge]') ? 'present' : 'absent',
+    tierNote: c?.querySelector('[data-tier-note]')?.textContent?.trim() || null,
     cta: c?.querySelector('[data-cta]') ? 'present' : 'absent',
   };
 });
 check(card.slug === tapSlug, `the right card opened (${card.slug})`);
 check(Boolean(card.headline), `it carries its headline ("${card.headline}")`);
-check(Boolean(card.tier), `the tier chip travels with the tap (${card.tier})`);
+check(card.badge === 'absent', 'NO tier chip — it was a label with nothing to label');
+check(
+  Boolean(card.tierNote) && card.tierNote.split(/\s+/).length >= 5,
+  `the tier travels with the tap AS A SENTENCE ("${card.tierNote}")`
+);
 check(card.cta === 'absent', 'NO add-to-cart on a card opened from a row');
 
 await page.screenshot({ path: join(OUT, 'cart-390-open.png') });

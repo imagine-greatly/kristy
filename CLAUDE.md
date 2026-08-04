@@ -366,9 +366,11 @@ equality *is* the positioning.
   whether the hub still holds that verdict.
 - **Decision-first is content, not styling.** `decision`/`why` are authored per entry in
   the KB, re-ranked from its own short_answer/kristy_take/tips — never new research.
-  The depth is demoted, never deleted. The **tier chip stays above the tap** even though
-  the rest of the tier framing moved behind it: the decision is a claim, and settled
-  science must never render identically to a whole-food standard.
+  The depth is demoted, never deleted. The **tier stays above the tap** — as `tier_note`, a
+  sentence below the do line, free. The chip that used to hold that slot is gone: the
+  decision is a claim and settled science must never render identically to a whole-food
+  standard, but a bare classification badge said which tier without saying what it was
+  classifying. See the tier-sentence entry under **Money**.
 - Section `shortcuts` carry no content — a `q` in the shopper's words and an `id` that
   must already be browsable in that section. A second, drifting index of the counter is
   the thing they must not become.
@@ -679,11 +681,10 @@ was invisible until something rendered one**
 
 **Money**
 - **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card
-  SUMMARY (eyebrow, tier chip, headline, do line, cart pick), all scanning, unlimited
-  asking including generation, all browsing, and **the entire list** — building it, saving
-  it, keeping it across trips, the cards attached to its items. Paid: the depth (`why`,
-  `look_for`, `watch_out`, `tier_note`, `detail`, `kristy_take`, `labels_decoded`,
-  `sources`). `summarize()` / `forViewer()` in counterCards.js strip the depth **before it
+  SUMMARY (eyebrow, headline, do line, cart pick, **and the tier sentence**), all scanning,
+  unlimited asking including generation, all browsing, and **the entire list** — building it,
+  saving it, keeping it across trips, the cards attached to its items. Paid: the depth
+  (`why`, `look_for`, `watch_out`, `detail`, `kristy_take`, `labels_decoded`, `sources`). `summarize()` / `forViewer()` in counterCards.js strip the depth **before it
   leaves the server** — a client that merely hides it has already received it, and before
   this every card route handed the whole corpus to any unauthenticated caller in one GET.
 - **THE LIST IS FREE, AND THE ONE TIME IT WAS SOLD IT WAS ALREADY GIVEN AWAY.** A "Save
@@ -708,13 +709,37 @@ was invisible until something rendered one**
   and what the verdict costs in `watch_out` — which is paid. `rice_arsenic` is the clearest
   case (buy white; the bran's magnesium, fiber, manganese and B6 are what you give up), but
   it is a property of **every** card that names a downside, not of that one. It looks like a
-  card hiding its own cost and it is not: the tier chip is free and it is the honest signal,
-  saying whether the line above it is settled science, a credible concern or a standard. A
-  shopper who never pays still learns that a `kristys_standard` verdict is a preference.
-  **Do not "fix" this by promoting `watch_out` into the free layer** — that is the depth,
-  it is what the membership buys, and the eight essentials already exist to prove the depth
-  is worth having. If a specific card's cost is load-bearing enough to be free, the lever is
-  making that card an essential, not widening the boundary for all eighty-one.
+  card hiding its own cost and it is not: **the tier SENTENCE is free and it is the honest
+  signal**, saying whether the line above it is settled science, a credible concern or a
+  standard. A shopper who never pays still learns that a `kristys_standard` verdict is a
+  preference. **Do not "fix" this by promoting `watch_out` into the free layer** — that is
+  the depth, it is what the membership buys, and the eight essentials already exist to prove
+  the depth is worth having. If a specific card's cost is load-bearing enough to be free, the
+  lever is making that card an essential, not widening the boundary for all eighty-one.
+- **THE TIER IS A SENTENCE, NOT A CHIP — AND THE SENTENCE HAD TO BE MADE FREE BEFORE THE CHIP
+  COULD GO.** "Credible concern" sat above a card about buying organic: a classification
+  rendered as furniture, naming a claim the card never made, with nothing for the reader to
+  attach it to. Removed 2026-08-04 from `CounterCard`, `ShopMode`'s sheet and
+  `PerimeterAnswer`. The list attachment never had one — `CartMoment` had already reasoned it
+  out ("a list is things to buy; a tier is a claim about evidence, and on a row it is
+  furniture raising a question nobody is asking mid-task"). **But non-negotiable #6 binds and
+  `tier_note` was PAID.** Only the eight essentials are ever full, so dropping the chip alone
+  would have left **73 of 81 cards** stating a verdict to a free shopper with no tier signal
+  at all. So `tier_note` left `DEPTH_FIELDS` in the same change and renders below the do line
+  — a **swap of one free signal for a better one**, not a widening. It buys no depth: `why`,
+  `look_for` and `watch_out` are untouched. Scale, measured: **established 49 ·
+  kristys_standard 24 · time_tested 5 · credible_concern 3** — the objected-to label was on
+  three cards. **Do not restore the chip to "make the tier scannable"**; a bare tier word is
+  precisely what has no referent.
+- **THE PAID BOUNDARY HAD NO TEST AT ALL, which is how a field moved out of it silently.**
+  `summarize()` / `forViewer()` in `counterCards.js` are the money boundary, and 507 tests
+  passed after `tier_note` was moved off the paid side. That is not evidence the move was
+  safe — it is evidence the boundary was held up by a comment, the same shape as the
+  retrieval floor being wrong three times. `paidBoundary.test.js` pins both halves over the
+  real corpus: the seven depth fields never reach a free viewer, and **every card tells a
+  free reader what kind of claim it is**. Put `tier_note` back in `DEPTH_FIELDS` and the #6
+  assertion fails by name. It also pins that the replacement stays a SENTENCE — a `tier_note`
+  under five words, or equal to the tier's own name, is the chip growing back inside a `<p>`.
 - **THE EIGHT ESSENTIALS ARE ALWAYS FULL and never touch the meter.** They sit on the index
   before any navigation: a shopper who spends three reads on the shelf never reaches the
   counter and never learns the other seventy-three exist. Free depth on the shelf proves
@@ -978,6 +1003,18 @@ was invisible until something rendered one**
   Providers → Phone → enable, select **Twilio**, and fill **Account SID**, **Auth Token**
   and **Message Service SID** from the Twilio console. **No server work, no env vars, no
   redeploy** — the app is already correct for this and needs nothing.
+- ⚠️ **The scan card is still the full-height takeover, and the replacement is specced but
+  unbuilt.** It should be a **bottom sheet**: summary, full read on tap, the camera staying
+  live behind it, and the approved state as the SMALLEST state in the app — Yuka's shape
+  (photo, name, verdict, detail on tap), which is the one thing about Yuka worth taking.
+  Recorded here on 2026-08-04 because it was queued in conversation and written down
+  **nowhere** — not in `docs/`, not here, not in a commit. A decision that lives only in a
+  thread does not survive a `/clear`, which is the same class of defect as a comment
+  asserting an invariant: it reads as tracked precisely because someone remembers it.
+  Related and also queued: on a **photo** read the card's image slot is empty (OFF has no
+  stored image for a product read off a panel) — the fix is a client-side crop of the
+  shopper's own photo, held in memory for the session, **nothing persisted or uploaded
+  beyond the vision call that already happens**, so the no-images-stored rule is unchanged.
 - **Known-dead, left in place**: `/api/photo`, `/api/weight`, the weekly-summary
   pipeline, `mealResolver`, `store.js setMacroTracking`; client `lib/logging.js
   sendPhoto`, `api.js sendWeightLog`, several `data.js` readers, `lib/dayBoundary.js`.

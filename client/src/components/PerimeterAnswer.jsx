@@ -27,13 +27,8 @@ import { GoldThread } from './GoldThread.jsx';
 
    Tokens only. Her spoken lines are kristyVoice, everything factual is Inter. */
 
-const TIER_LABEL = {
-  established: 'Settled',
-  credible_concern: 'Credible concern',
-  kristys_standard: 'Whole-food standard',
-  time_tested: 'Time-tested',
-};
-export const tierLabel = (t) => TIER_LABEL[t] || t;
+/* The tier label map is GONE with the chip it existed to render, and nothing imported it.
+   A lookup table for a removed surface is documentation that lies. */
 
 // The default checklist is capped so the first view stays inside the five-second
 // budget. The remainder is not dropped — it opens with the rest of the depth.
@@ -84,9 +79,12 @@ export default function PerimeterAnswer({
           <div key={e.id} style={s.entry}>
             {/* The topic name is an overline, not a headline. It labels what is being
                 answered; the decision under it is the answer. */}
+            {/* NO TIER CHIP. Same removal as CounterCard: a classification rendered as a
+                badge names no referent — "Credible concern" above a topic title is a label
+                on nothing. The tier still has to reach the reader (non-negotiable #6) and it
+                does, as the framing SENTENCE below the why. */}
             <div style={styles.entryTop}>
               <span style={s.topicName}>{e.title}</span>
-              {e.evidence_tier && <span style={styles.tier}>{tierLabel(e.evidence_tier)}</span>}
             </div>
 
             {/* THE DECISION. Her call, stated as fact. */}
@@ -100,6 +98,15 @@ export default function PerimeterAnswer({
 
             {/* THE WHY. One line, and the whole teaching mechanism of the surface. */}
             {e.why && <p style={s.why}>{e.why}</p>}
+
+            {/* WHAT KIND OF CLAIM THAT WAS. This is where the chip's job went — it moved up
+                out of the depth so it sits beside the call rather than behind a scroll,
+                because #6 requires the reader to always know. The tier's own word is dropped
+                as a prefix: the sentence already says which kind of claim it is, and the
+                bold label was the chip growing back inside a paragraph. */}
+            {e.evidence_framing && (
+              <p style={styles.framing} data-tier-note>{e.evidence_framing}</p>
+            )}
 
             {/* ONE TAP INTO THE CART, on the decision itself. Scanning puts a product
                 in the trip; the counter has to do the same or it stays a reference
@@ -174,16 +181,10 @@ export default function PerimeterAnswer({
                   </div>
                 )}
 
-                {/* Her standard on the topic, and what the tier actually means. The
-                    chip above says WHICH kind of claim it is; this says what that
-                    kind of claim is worth. */}
+                {/* Her standard on the topic. The evidence framing is NOT repeated here —
+                    it moved up beside the call when the chip was removed, and printing it
+                    twice would pad the depth with something already read. */}
                 {e.kristy_take && <p style={{ ...kristyVoice, ...s.take }}>{e.kristy_take}</p>}
-                {e.evidence_framing && (
-                  <p style={styles.framing}>
-                    <span style={styles.framingHead}>{tierLabel(e.evidence_tier)}. </span>
-                    {e.evidence_framing}
-                  </p>
-                )}
 
                 {(e.sources || []).length > 0 && (
                   <p style={styles.sources}>Sources: {e.sources.join(' · ')}</p>
@@ -226,11 +227,6 @@ export default function PerimeterAnswer({
 const styles = {
   wrap: { display: 'flex', flexDirection: 'column', gap: 12 },
   entryTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  tier: {
-    flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.03em',
-    color: colors.textSecondary, padding: '2px 8px', borderRadius: 999,
-    border: `1px solid ${colors.gold30}`, background: colors.goldTint9, whiteSpace: 'nowrap',
-  },
   tipsBlock: { display: 'flex', flexDirection: 'column', gap: 6, marginTop: 2 },
   tipsHead: {
     fontFamily: fonts.ui, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em',
@@ -261,7 +257,6 @@ const styles = {
   labelTerm: { fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700, color: colors.textSecondary },
   labelMeaning: { fontFamily: fonts.ui, fontSize: 12.5, lineHeight: 1.4, color: colors.textMuted },
   framing: { margin: 0, fontFamily: fonts.ui, fontSize: 12, lineHeight: 1.45, color: colors.textMuted },
-  framingHead: { fontWeight: 700, color: colors.textSecondary },
   sources: { margin: '2px 0 0', fontFamily: fonts.ui, fontSize: 11, color: colors.textMuted },
   refine: {
     alignSelf: 'stretch', marginTop: 2, padding: '12px 16px', borderRadius: radii.button,

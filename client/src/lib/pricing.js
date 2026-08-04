@@ -91,12 +91,16 @@ export const UPGRADE_COPY = {
   // The membership is the full read, and `read` above is the only ask.
 };
 
-/** "4 more checks, 2 traps, and why this carries the tier." — built from real counts. */
-export function teaserMore({ look_for = 0, watch_out = 0, tier_note = false } = {}) {
+/** "4 more checks, 2 traps." — built from real counts.
+ *
+ *  NO LONGER COUNTS THE TIER NOTE. That sentence became free on 2026-08-04 when the tier
+ *  chip was removed and the tier had to reach a free reader some other way — so it now sits
+ *  on the summary, above this tap. Advertising it as something waiting behind the tap would
+ *  be teasing the reader with a line already on their screen. */
+export function teaserMore({ look_for = 0, watch_out = 0 } = {}) {
   const bits = [];
   if (look_for > 0) bits.push(`${look_for} more check${look_for === 1 ? '' : 's'}`);
   if (watch_out > 0) bits.push(`${watch_out} trap${watch_out === 1 ? '' : 's'}`);
-  if (!bits.length) return tier_note ? 'Why this carries the tier.' : '';
-  const tail = tier_note ? ', and why this carries the tier' : '';
-  return `${bits.join(', ')}${tail}.`;
+  if (!bits.length) return '';
+  return `${bits.join(', ')}.`;
 }

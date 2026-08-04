@@ -507,13 +507,24 @@ export function parseReviewTable(markdown) {
 
 /* ═══════════════════════════ The paid boundary ═══════════════════════════ */
 
-// WHAT IS FREE IS THE SUMMARY, AND IT IS FREE ON EVERY SURFACE, FOREVER: eyebrow, tier
-// chip, headline, do line, cart pick. A shopper standing in an aisle never hits a wall —
-// that is the acquisition engine and the reputation, and it is not negotiable.
+// WHAT IS FREE IS THE SUMMARY, AND IT IS FREE ON EVERY SURFACE, FOREVER: eyebrow, headline,
+// do line, cart pick, and THE TIER SENTENCE. A shopper standing in an aisle never hits a
+// wall — that is the acquisition engine and the reputation, and it is not negotiable.
 //
-// WHAT IS PAID IS THE DEPTH. These eight fields and nothing else.
+// `tier_note` MOVED OUT OF THE DEPTH ON 2026-08-04, and it is a SWAP rather than a giveaway.
+// The free surface used to carry the tier as a CHIP — "Credible concern" sitting above a
+// card about buying organic, a label with no referent, naming a claim it did not make. The
+// chip is gone from every surface. But non-negotiable #6 says a reader must ALWAYS know
+// whether a claim is settled science, a credible concern or a standard, and the sentence can
+// only carry that if the reader receives it: `summarize()` stripped `tier_note`, and only
+// the eight essentials are ever full, so 73 of 81 cards would have reached a free shopper
+// with NO tier signal at all. Since the chip was already free, promoting the sentence trades
+// one free signal for a better one. It buys no depth — `why`, `look_for` and `watch_out` are
+// untouched, and they are what the membership is actually for.
+//
+// WHAT IS PAID IS THE DEPTH. These seven fields and nothing else.
 export const DEPTH_FIELDS = [
-  'why', 'look_for', 'watch_out', 'tier_note', 'detail', 'kristy_take', 'labels_decoded', 'sources',
+  'why', 'look_for', 'watch_out', 'detail', 'kristy_take', 'labels_decoded', 'sources',
 ];
 
 // THE WITHHOLDING HAPPENS HERE, ON THE SERVER, NOT IN THE CLIENT. Before this the whole
@@ -541,12 +552,13 @@ export function summarize(card) {
       look_for_first: lookFor[0] || null,
       // True per-line lengths for the fade. Three is what fits above a phone fold.
       faded_lengths: lookFor.slice(1, 4).map((t) => String(t).length),
-      // "4 more checks, 2 traps, and why this carries the tier." Everything past the one
-      // legible line counts as more — a faded line is teased, not read.
+      // "4 more checks, 2 traps." Everything past the one legible line counts as more — a
+      // faded line is teased, not read. NO `tier_note` HERE ANY MORE: it is free, it is
+      // already on the summary above this tap, and teasing something the reader can see is
+      // how a gate starts lying about where it sits.
       remaining: {
         look_for: Math.max(0, lookFor.length - 1),
         watch_out: watchOut.length,
-        tier_note: Boolean(card.tier_note),
       },
     },
   };
