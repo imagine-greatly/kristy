@@ -830,6 +830,16 @@ was invisible until something rendered one**
   missed the exact import that caused the incident. Sources are every tracked code file.
   Same distinction `deployBoundary.test.js` makes when it scans `lib/`, `routes/` AND
   `index.js`.
+- **EVERY SOURCE GETS FETCHED BEFORE IT SHIPS. A citation written from memory is the
+  same defect class as a comment asserting an invariant** — it reads as verified
+  precisely because it is written down, and the next reader has no way to tell the
+  difference. This nearly shipped on `carrageenan`, the one entry whose entire fix is
+  the distinction between a real finding and a retold one. Fetching it made the entry
+  STRONGER rather than merely safer: the EFSA 2018 re-evaluation found no carcinogenicity
+  or genotoxicity concern for the food-grade additive and that it is not absorbed intact,
+  while making the ADI temporary — a better sentence than the sourced version of the old
+  claim would have been. The real finding beats the retold one often enough that fetching
+  is worth it on the merits, not only as hygiene.
 - **A COMMENT ASSERTING AN INVARIANT IS NOT AN INVARIANT. If it is load-bearing, test it.**
   The retrieval-floor comment claimed curated and generated admit on the same evidence, and
   was wrong three consecutive times in three different ways — different constants, then

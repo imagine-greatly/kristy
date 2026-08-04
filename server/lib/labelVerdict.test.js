@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import { nonEmpty } from './testGuards.js';
 
 import { evaluateIngredients } from './verdictEngine.js';
-import { parseIngredientsJSON, LABEL_VISION_SYSTEM } from './labelVision.js';
+import { parseIngredientsJSON, sugarsPer100g, LABEL_VISION_SYSTEM } from './labelVision.js';
 import { guardIncompleteRead } from '../routes/verdict.js';
 
 // A realistic vision reply for a mass-market snack panel.
@@ -40,13 +40,44 @@ test('vision returns identity + list + panel completeness, and no judgment', () 
   assert.equal(out.brand, 'Storebrand');
   assert.equal(out.panel, 'full');
   assert.equal(out.ingredients.length, 7);
-  // The contract has no field a health claim could travel in.
+  /* The contract has no field a health claim could travel in.
+
+     `sugarsG` / `servingG` were added for the seal gate and they do NOT widen this.
+     Both are numbers COPIED off a printed panel — the same act as copying "canola
+     oil" off the ingredient line — and neither is read by anything that judges: they
+     are divided into g/100g and compared against a threshold the ENGINE owns. Vision
+     still cannot say a product is good or bad, and a number it invents can only ever
+     withhold a seal, never grant one.
+
+     Nothing else from the nutrition panel is admitted, and that is deliberate rather
+     than incidental: calories, protein, fat and sodium have no consumer in this
+     codebase, and a field with no consumer is where the next claim gets in. */
   for (const k of Object.keys(out)) {
     assert.ok(
-      ['ingredients', 'productName', 'brand', 'panel'].includes(k),
+      ['ingredients', 'productName', 'brand', 'panel', 'sugarsG', 'servingG'].includes(k),
       `unexpected field from vision: ${k}`
     );
   }
+});
+
+test('the sugar number is transcription, and an absent one never becomes zero', () => {
+  // A reading of zero is a real reading and must survive.
+  const zero = parseIngredientsJSON('{"ingredients":["water"],"panel":"full","sugars_g":0,"serving_g":240}');
+  assert.equal(zero.sugarsG, 0, 'zero sugars is a fact, not a missing value');
+  assert.equal(sugarsPer100g(zero), 0);
+
+  // An absent one must NOT become zero — that would be a zero-sugar claim about a
+  // product whose panel was never in frame.
+  const absent = parseIngredientsJSON('{"ingredients":["oats","sugar"],"panel":"full"}');
+  assert.equal(absent.sugarsG, null);
+  assert.equal(sugarsPer100g(absent), null, 'no number ⇒ the gate cannot fire');
+
+  // Sugars without a serving weight is unusable: 12g could be a teaspoon or a tub.
+  assert.equal(sugarsPer100g({ sugarsG: 12, servingG: null }), null);
+  assert.equal(sugarsPer100g({ sugarsG: 12, servingG: 0 }), null, 'a zero serving is refused');
+
+  // The conversion the engine's threshold is expressed in.
+  assert.equal(sugarsPer100g({ sugarsG: 12, servingG: 40 }), 30);
 });
 
 test('the vision prompt is transcribe-only and forbids inventing identity', () => {

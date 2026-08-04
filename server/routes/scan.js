@@ -4,7 +4,7 @@ import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, rateLimited } from '../lib/guestRate.js';
 import { imageUpload } from '../lib/upload.js';
 import { extractFromBarcode, looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
-import { readLabelIngredients } from '../lib/labelVision.js';
+import { readLabelIngredients, sugarsPer100g } from '../lib/labelVision.js';
 import { retainProduct } from '../lib/productStore.js';
 
 // Scan extraction — the front door of the grocery coach. Both entry points parse
@@ -45,7 +45,7 @@ function readLabel(reqFile) {
      - a non-English transcription is UNREADABLE (the KB is English, so a foreign
        string matches nothing and scores as zero concerns — a silent approval);
      - `panel: 'none'` means no list was legible, which is a re-shot, not a verdict. */
-function buildLabelResult({ ingredients, productName, brand, panel }, barcode = null) {
+function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, servingG }, barcode = null) {
   const joined = ingredients.join(', ');
 
   if (panel === 'none' || !ingredients.length) {
@@ -85,6 +85,16 @@ function buildLabelResult({ ingredients, productName, brand, panel }, barcode = 
     panel,
   });
 
+  /* THE ONE NUMBER OFF THE NUTRITION PANEL. Everything else there is ignored — a
+     shopper can read "12g protein" themselves and nobody can read "tripotassium
+     phosphate". Sugars is the exception because the seal gate needs grams: the label
+     says "sugar" but never how much, and position was the proxy we rejected.
+
+     Null when the panel was not in frame or not legible, which is the honest
+     degradation — no withholding, and no false seal either, because the ingredient
+     engine still scores the list it did read. */
+  const addedSugar = sugarsPer100g({ sugarsG, servingG });
+
   return {
     found: true,
     source: 'vision',
@@ -92,6 +102,9 @@ function buildLabelResult({ ingredients, productName, brand, panel }, barcode = 
     // Never inferred — a wrong name on a right verdict is still a wrong product.
     product: { barcode: code, name: productName || null, brand: brand || null, image: null, aisle: '' },
     ingredients: joined,
+    // Shaped exactly like the OFF path's nutrition so /verdict and the engine cannot
+    // tell which door the number came in through.
+    nutrition: addedSugar == null ? null : { sodium: null, addedSugar, fiber: null, caffeine: null },
     // Carried so /verdict can withhold approval on a half-read list.
     ...(panel === 'partial' ? { partialRead: true } : {}),
   };

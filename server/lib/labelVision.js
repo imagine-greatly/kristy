@@ -12,7 +12,23 @@
 import { anthropic, MODEL } from './anthropic.js';
 
 const str = (x) => String(x ?? '').trim();
+// A number or null. Deliberately not `Number(x) || null` — that maps a legitimate 0
+// to null, and deliberately not bare `Number(x)`, which maps '' and null to 0. A
+// zero-sugar reading is a real reading; an absent one must never become zero.
+const num = (x) => (x === null || x === undefined || x === '' || Number.isNaN(Number(x)) ? null : Number(x));
 
+// INGREDIENTS ONLY, PLUS ONE NUMBER. Kristy's job is what is IN it, not the macros — a
+// shopper can read "12g protein" for themselves, and nobody can read "tripotassium
+// phosphate". So the nutrition panel is ignored entirely except for total sugars.
+//
+// THAT ONE EXCEPTION IS THE SEAL GATE. `sugarWithholdsSeal` needs grams to withhold the
+// seal from a jam whose second ingredient is sugar, and ingredients alone cannot supply
+// it: the label says "sugar" but not how much, and position is the proxy we rejected
+// (Cheerios carries sugar third at 3.6 g/100g). Measured over four real panels, asking
+// for the number costs +15-20 output tokens and no latency separable from noise — so it
+// rides along when legible and is null when not. A missing number degrades honestly:
+// no withholding, and no false seal either, because the ingredient engine still runs.
+//
 // Transcribe-only. Explicitly forbids translation/interpretation so the model
 // returns the label verbatim for the engine to tokenize.
 //
@@ -25,9 +41,9 @@ const str = (x) => String(x ?? '').trim();
 // ingredient reads to the engine as an absent concern.
 export const LABEL_VISION_SYSTEM = `You are an OCR transcriber for food packaging. You are shown a photo of a packaged food's label — it may be curved, low-light, or partially cropped. Transcribe only what is PRINTED. You do not interpret, judge, rank, or comment on anything, and you never assess whether a food is healthy.
 
-Return three things:
+Return four things:
 
-1. "ingredients" — the ingredient list EXACTLY as printed: every ingredient in order, including sub-ingredients in parentheses and any percentages. Do not translate, add, remove, correct, or reorder. Ignore nutrition-facts numbers, marketing text, and allergen "contains" lines. If no ingredient list is legible, return an empty array.
+1. "ingredients" — the ingredient list EXACTLY as printed: every ingredient in order, including sub-ingredients in parentheses and any percentages. Do not translate, add, remove, correct, or reorder. Ignore marketing text and allergen "contains" lines. If no ingredient list is legible, return an empty array.
 
 2. "product_name" and "brand" — ONLY if printed and legible in the photo. Transcribe them as printed. If either is not visible or you are unsure, return null for it. Never guess a product or brand from packaging colors, style, or the ingredients themselves.
 
@@ -37,7 +53,9 @@ Return three things:
    - "none": no ingredient list is legible at all.
    Judge this honestly and conservatively. If you are unsure whether you saw the whole list, say "partial". An honest "partial" is always better than a confident guess.
 
-Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none"}`;
+4. "sugars_g" and "serving_g" — from the Nutrition Facts panel, and ONLY if that panel is legible in this same photo: total sugars in grams per serving, and the serving size in grams. Return null for either one you cannot read directly off the label. NEVER estimate, infer, or calculate these from the ingredients — a null is correct and useful, a guess is not. Ignore every other nutrition number; calories, protein, fat and sodium are not wanted.
+
+Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null}`;
 
 // Only these three are meaningful; anything else the model invents collapses to the
 // safe end. 'partial' is the fallback for an unrecognized value ON PURPOSE — an
@@ -70,7 +88,26 @@ export function parseIngredientsJSON(text) {
     productName: str(obj.product_name) || null,
     brand: str(obj.brand) || null,
     panel,
+    // A number read off the panel, or null. NEVER coerced: `Number('')` is 0 and a
+    // zero-sugar claim is a claim, so anything unparseable stays null and the seal
+    // gate simply does not fire.
+    sugarsG: num(obj.sugars_g),
+    servingG: num(obj.serving_g),
   };
+}
+
+/**
+ * Grams of sugar per 100g, from a per-serving reading — the unit the engine's
+ * ADDED_SUGAR_HIGH threshold is expressed in.
+ *
+ * Both numbers are required and a zero serving size is refused: without the serving
+ * weight, "12g of sugar" could be a teaspoon or a tub. Returns null rather than
+ * guessing, and null means the gate does not fire — which is the honest degradation,
+ * not a silent pass, because the ingredient engine still scores the list.
+ */
+export function sugarsPer100g({ sugarsG, servingG }) {
+  if (!Number.isFinite(sugarsG) || !Number.isFinite(servingG) || servingG <= 0) return null;
+  return (sugarsG / servingG) * 100;
 }
 
 /**

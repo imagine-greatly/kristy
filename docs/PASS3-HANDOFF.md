@@ -921,3 +921,48 @@ The pattern that works is already in the repo: `client/src/lib/listSections.js` 
 itself a mirror of `server/lib/listMatch.js` and `listSectionsMirror.test.js` fails if the
 ids, titles, order or frozen rule drift. **Where a mirror is genuinely unavoidable, it needs
 that treatment before it ships, not after.**
+
+
+---
+
+## 11 — Photo-first makes the Swift port matter MORE, not less
+
+The scanner is being flipped: a photo of the ingredient panel becomes the primary
+action and the barcode becomes a fast path. The audit forced it — **19% barcode
+coverage** on independently-sourced products, and when Open Food Facts did hit, the
+data was wrong badly enough to put a gold seal on a corn-syrup product. The shopper's
+photo has none of those failure modes: right product, right market, right now.
+
+**THE READABILITY CHECK IS THE WHOLE ARGUMENT, AND IT IS FREE ON NATIVE AND EXPENSIVE ON
+WEB.** A photo that cannot be read is the false-seal problem in a new costume, so the
+flow has to know whether the panel was legible BEFORE it produces a verdict.
+
+- **Web has nothing.** There is no on-device text detection in a browser. The only way
+  to discover the shot was unusable is to upload it, spend ~1.5–3.4s and a model call,
+  and then ask the shopper to try again — after they have already waited.
+- **Native gets it for nothing.** `VNRecognizeTextRequest` runs on the live preview in
+  milliseconds, on device. A Swift client can refuse to fire the model call until the
+  panel actually resolves. No round trip, no spend, no shopper told to re-shoot after
+  waiting.
+
+**This belongs near the top of the Swift spec.** It is the single biggest quality
+difference between the two clients, and it is not a polish item — it is the difference
+between a scanner that asks for a second photo and one that never needed to.
+
+The rest of the capture gap points the same way, and every item is a capture-quality
+property a browser does not expose:
+
+| | Web today | Native iOS |
+| --- | --- | --- |
+| Focus / exposure on a small panel | `getUserMedia` defaults; no tap-to-focus, no exposure lock | AVFoundation tap-to-focus, exposure + white-balance lock |
+| Capture resolution | browser default, commonly 640×480 — **marginal for 6pt ingredient type** | full sensor stills |
+| Text detection before spending a call | none | `VNRecognizeTextRequest`, milliseconds, on device |
+| Barcode + text from one frame | ZXing decodes the barcode only | VisionKit does both |
+| Torch / stabilization | neither | both |
+
+**So: photo-first is built MINIMALLY in React and PROPERLY in Swift.** Minimal on web
+means photo as the primary action, ingredients-only prompt, barcode captured silently as
+the join key, `partialRead` honored, and an honest re-shoot ask. That is real and
+shippable and it will carry a re-shoot rate nobody enjoys. Do not invest past that on
+web — the 640×480 default alone likely explains a meaningful share of it, and building
+around an API that cannot be fixed is money spent on the wrong client.

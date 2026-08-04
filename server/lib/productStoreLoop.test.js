@@ -287,3 +287,43 @@ test('the barcode resolver consults our own store BEFORE Open Food Facts', () =>
   );
   assert.ok(offFetch > 0);
 });
+
+/* ═══════ A LOW-CONFIDENCE ROW IS SERVED, AND IT IS A CURATION QUEUE ═══════
+
+   Under photo-first, most rows in the catalog get built from a shopper's panel photo,
+   and the vision call reports `partial` far more often than `full` — four out of four
+   on Open Food Facts' own deliberately-cropped panels. Withholding a `low` row would
+   fill the store with rows it refuses to serve and leave the moat at four.
+
+   So it IS served, and the only thing it costs is the seal: the row travels with its
+   confidence, `extractFromBarcode` marks it `partialRead`, and /verdict withholds
+   `approved`. The FLAGS stand, which is right on its own terms — a half-read list can
+   never falsely flag (everything matched was really printed) and can only falsely
+   approve. A flagged product with no seal is a useful answer.
+
+   Driven through the real functions rather than by seeding a row, because the claim is
+   a sequence: a partial read is stored, served, and then superseded. */
+
+test('a low-confidence row answers, and a fuller read replaces it', async () => {
+  const { client, rows } = fakeStore();
+
+  await retainProduct({
+    barcode: '0012345678905', name: 'Photographed thing',
+    ingredients: 'oats, canola oil', source: 'vision', panel: 'partial', client,
+  });
+  assert.equal(rows[0].confidence, 'low', 'a partial panel is stored as low confidence');
+
+  const served = await lookupProduct('0012345678905', { client });
+  assert.ok(served, 'a low-confidence row is NOT withheld from the next shopper');
+  assert.equal(served.ingredients, 'oats, canola oil');
+  assert.equal(served.confidence, 'low', 'and its confidence rides along so the seal can be withheld');
+
+  // vision/full (2) outranks vision/partial (1), so the queue drains on a better scan.
+  await retainProduct({
+    barcode: '0012345678905', name: 'Photographed thing',
+    ingredients: 'oats, canola oil, salt, natural flavor', source: 'vision', panel: 'full', client,
+  });
+  const better = await lookupProduct('0012345678905', { client });
+  assert.equal(better.confidence, 'high', 'the curation queue drains as the product is re-scanned');
+  assert.match(better.ingredients, /natural flavor/, 'the fuller list wins');
+});
