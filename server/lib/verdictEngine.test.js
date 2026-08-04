@@ -12,6 +12,8 @@ import {
   tokenizeIngredients,
   kb,
   TIERS,
+  buildApprovedRead,
+  namesAddedSugar,
 } from './verdictEngine.js';
 import { hardLineIds } from './hardLines.js';
 
@@ -462,4 +464,79 @@ test('an unbleached label is never told its flour was bleached', () => {
     matchIngredients('bleached flour').matched.map((e) => e.id),
     ['bleached_flour'],
   );
+});
+
+/* ═══════════ THE APPROVED STATE REPORTS, IT DOES NOT CLAIM ═══════════
+
+   `approved` means ZERO of 74 KB entries matched. The seal says "Kristy Approved" and
+   the prose under it said "This one is clean. No industrial additives, no processing
+   tricks — just real food." Eight of ten approved products got that near-verbatim,
+   varying only the closer, and one of them was a strawberry jam.
+
+   The second line is read off the label, so it cannot become a template. */
+
+test('the approved read says what was checked and what is in it', () => {
+  const cheerios = buildApprovedRead('Whole Grain Oats, Corn Starch, Sugar, Salt, Wheat Starch.');
+  assert.equal(cheerios.checked, 'Read all 5. None of them are on the list.');
+  assert.equal(cheerios.names, 'whole grain oats, corn starch, sugar, salt, wheat starch.');
+
+  // n=1 — the counting line reads absurd, so it does not appear.
+  const oats = buildApprovedRead('whole grain rolled oats,');
+  assert.equal(oats.checked, 'One ingredient: whole grain rolled oats.');
+  assert.equal(oats.names, '');
+
+  // Long lists stop at five. Ingredient lists are weight-ordered, so the first five
+  // ARE the product — naming all 29 would be the six-essays problem in a new place.
+  const long = buildApprovedRead('a, b, c, d, e, f, g, h, i, j');
+  assert.equal(long.checked, 'Read all 10. None of them are on the list.');
+  assert.equal(long.names, 'a, b, c, d, e…');
+
+  // It only exists where it applies.
+  assert.ok(evaluateIngredients('Oats, salt').approvedRead, 'present on approved');
+  assert.equal(evaluateIngredients('canola oil').approvedRead, null, 'absent otherwise');
+});
+
+/* ═══════════ A NUMBER MAY WITHHOLD A SEAL THE INGREDIENTS GRANTED ═══════════
+
+   The widest hole under the seal was a product whose ingredients are real, complete,
+   and simply outside the KB. Kirkland Strawberry Spread took the gold seal on
+   "Strawberries, sugar, fruit pectin citric acid".
+
+   POSITION WAS THE OBVIOUS FIX AND IT IS THE WRONG ONE. "Sugar in the first three"
+   withholds 2 of 10 seals across the sample and one of them is Cheerios, where sugar
+   is third by weight at 3.6 g/100g — trading one false claim for another. Quantity
+   separates them cleanly at a threshold this file already had.                     */
+
+test('added sugar withholds the seal by QUANTITY, never by position', () => {
+  const jam = { addedSugar: 44.4 };
+  const cereal = { addedSugar: 3.57 };
+
+  // The real Kirkland list: sugar is second AND the product is 44 g/100g.
+  const spread = evaluateIngredients('Strawberries, sugar, fruit pectin citric acid', { nutrition: jam });
+  assert.equal(spread.tier, 'approved', 'the ingredient engine still finds nothing');
+  assert.equal(spread.stamp, false, 'but the seal is withheld');
+  assert.equal(spread.sugarHeavy, true);
+
+  // The real Cheerios list: sugar is THIRD, and the product is 3.6 g/100g.
+  const cheerios = evaluateIngredients('Whole Grain Oats, Corn Starch, Sugar, Salt', { nutrition: cereal });
+  assert.equal(cheerios.stamp, true, 'position alone must never cost a seal');
+  assert.equal(cheerios.sugarHeavy, false);
+});
+
+test('BOTH conditions are required, which is what spares whole fruit', () => {
+  // Sugar-heavy by the numbers, no added sugar NAMED — a bag of fruit. The gate is the
+  // only thing standing between "we read the label" and "we flagged a strawberry".
+  const fruit = evaluateIngredients('Strawberries', { nutrition: { addedSugar: 44.4 } });
+  assert.equal(fruit.stamp, true, 'no added sugar on the label ⇒ the number is not ours to read');
+  assert.equal(fruit.sugarHeavy, false);
+
+  // Added sugar named, quantity absent (OFF populates added-sugars on almost nothing,
+  // and a missing number is not evidence of a small one).
+  const unknown = evaluateIngredients('Oats, sugar', { nutrition: null });
+  assert.equal(unknown.sugarHeavy, false, 'no number ⇒ no withholding');
+
+  // A KB sugar_alias term counts as "named" too, not just the plain word.
+  assert.ok(namesAddedSugar(['strawberries', 'evaporated cane juice']));
+  assert.ok(namesAddedSugar(['water', 'organic cane sugar']), 'a qualifier does not hide it');
+  assert.equal(namesAddedSugar(['strawberries', 'pectin']), false);
 });

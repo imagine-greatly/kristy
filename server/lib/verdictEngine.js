@@ -286,6 +286,120 @@ export function scoreVerdict(matchedEntries) {
   return 'approved_with_note';
 }
 
+// ── The approved read ────────────────────────────────────────────────────────
+// `approved` means ZERO KB ENTRIES MATCHED. The seal says "Kristy Approved". Those
+// are different claims, and the prose under the seal was asserting the second:
+// "This one is clean. No industrial additives, no processing tricks — just real
+// food." Eight of ten approved products got that sentence near-verbatim, varying
+// only the closer, and one of them was a strawberry jam whose second ingredient is
+// sugar. With 74 entries the KB's silence is not evidence of a clean product.
+//
+// So the approved state stops claiming and starts REPORTING: what was checked, and
+// what is actually in it. The second line is read off the label, which is why it can
+// never become a template and why it puts the jam's sugar in front of the shopper
+// without Kristy having to hold a position on sugar at all.
+//
+// Deterministic and free — no model call, so the commonest tier costs nothing and
+// cannot drift.
+const APPROVED_NAMES_SHOWN = 5;
+
+/**
+ * The factual read for an approved product: what was checked, and what is in it.
+ * @returns {{ checked:string, names:string }}
+ */
+export function buildApprovedRead(rawIngredientList) {
+  const tokens = tokenizeIngredients(rawIngredientList);
+  // Ingredient lists are weight-ordered, so the first few ARE the product. Naming all
+  // 29 of a cereal's tokens would be the six-essays problem in a new place.
+  const shown = tokens.slice(0, APPROVED_NAMES_SHOWN);
+  const label = (t) => t.replace(/[.;:]+$/, '');
+  const names = shown.map(label).join(', ');
+
+  if (tokens.length === 1) {
+    // The counting line reads absurd at n=1.
+    return { checked: `One ingredient: ${label(tokens[0])}.`, names: '' };
+  }
+  return {
+    checked: `Read all ${tokens.length}. None of them are on the list.`,
+    names: tokens.length > shown.length ? `${names}…` : `${names}.`,
+  };
+}
+
+// ── Added sugar, by QUANTITY ─────────────────────────────────────────────────
+// The widest hole under the seal: ingredients real, complete, and simply outside the
+// KB. Kirkland Strawberry Spread — "Strawberries, sugar, fruit pectin citric acid" —
+// took the gold seal because the KB holds no bare-sugar concern.
+//
+// POSITION IS A BAD PROXY AND WAS REJECTED. A "sugar in the first three ingredients"
+// rule withholds 2 of 10 seals across the sample, and one of them is Cheerios, where
+// sugar is third by weight at 3.6 g/100g because there is so little of anything else.
+// That trades one false claim for another. The QUANTITY is already fetched on every
+// scan and thrown away unless a focus is set: the jam is 44.4 g/100g, three times the
+// threshold that already exists in this file.
+//
+// TWO CONDITIONS, AND BOTH ARE REQUIRED. An added-sugar ingredient has to be NAMED on
+// the label, and the quantity has to clear the bar. The naming condition is what stops
+// this flagging whole fruit: a bag of strawberries is sugar-heavy by the numbers and
+// has no added sugar in it, so the gate never fires. It also licenses the fallback —
+// `added-sugars_100g` is null on most OFF records, and falling back to TOTAL sugars is
+// only defensible once the label has told us added sugar is present.
+//
+// Explicit list, widened deliberately — same discipline as IMPERATIVE_VERBS. The nine
+// KB `sugar_alias` entries come from the KB itself so the two cannot drift; the plain
+// terms below are the ones the KB has no concern entry for and never will, because
+// "sugar" is not an objection, it is an amount.
+//
+// RAW HONEY AND MAPLE SYRUP ARE DELIBERATELY ABSENT. For those the sugar IS the food,
+// they are single-ingredient products the KB affirms as time-tested, and including
+// them would pull the seal off a jar of honey to tell a shopper honey is sugary.
+const PLAIN_ADDED_SUGARS = [
+  'sugar', 'brown sugar', 'raw sugar', 'turbinado sugar', 'powdered sugar',
+  'confectioners sugar', 'coconut sugar', 'palm sugar', 'beet sugar', 'molasses',
+  'malt syrup', 'barley malt', 'barley malt syrup', 'tapioca syrup', 'fructose',
+  'sucrose', 'caramel', 'honey powder', 'date sugar',
+];
+
+const ADDED_SUGAR_KEYS = (() => {
+  const keys = new Set(PLAIN_ADDED_SUGARS.map(norm));
+  for (const entry of kb.ingredients) {
+    if (entry.category !== 'sugar_alias') continue;
+    for (const k of [entry.name, ...(entry.aliases || [])]) {
+      const n = norm(k);
+      // The KB's display names carry punctuation ("Agave Nectar / Agave Syrup") that
+      // never appears as a token; the aliases are the label forms.
+      if (n && !n.includes('/')) keys.add(n);
+    }
+  }
+  return keys;
+})();
+
+/** Does the label NAME an added sugar? (Not "is this sweet" — that is the number's job.) */
+export function namesAddedSugar(tokens = []) {
+  return tokens.some((t) => {
+    const clean = norm(t).replace(/[.;:]+$/, '');
+    if (ADDED_SUGAR_KEYS.has(clean)) return true;
+    // "organic cane sugar", "sugar (beet)" — the token names one, with a qualifier.
+    for (const key of ADDED_SUGAR_KEYS) if (containsPhrase(clean, key)) return true;
+    return false;
+  });
+}
+
+/**
+ * May this product keep the seal on its sugar? Requires BOTH an added sugar named on
+ * the label AND a quantity at or over the threshold.
+ * @returns {boolean} true when the seal must be withheld
+ */
+export function sugarWithholdsSeal(tokens, nutrition) {
+  if (!namesAddedSugar(tokens)) return false;
+  // `addedSugar` ALREADY carries the documented fallback to total sugars, because OFF
+  // populates `added-sugars_100g` on almost nothing. That fallback was safe for focus
+  // emphasis and would NOT be safe for the seal on its own — it cannot tell jam from
+  // fruit. The naming condition above is what licenses it here: by this line the label
+  // has said an added sugar is in the product, so the total is a floor on it.
+  const { addedSugar } = normalizeNutrition(nutrition);
+  return addedSugar != null && addedSugar >= ADDED_SUGAR_HIGH;
+}
+
 /** buildUniversalLayer — the factual layer, verbatim from the KB. For each
  *  flagged ingredient: name, one_liner, severity, and evidence_tier. No model,
  *  no invented text. (id is included for stable keying; it's factual.) */
@@ -519,10 +633,16 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
   const violated = matchHardLines(matched, hardLines);
   const tier = escalateTier(baseTier, focus.triggered.length + violated.length);
 
+  // A NUMBER MAY WITHHOLD A SEAL THE INGREDIENT ENGINE GRANTED. The seal claims what
+  // was checked, and the quantity of added sugar is something we checked — it arrives
+  // on every scan and was previously read only for shoppers who had opted into the
+  // sugar focus. Withholding only; it can never grant a seal, exactly like a hard line.
+  const sugarHeavy = tier === 'approved' && sugarWithholdsSeal(tokenizeIngredients(rawIngredientList), nutrition);
+
   // The user drew this line themselves, so a product that crosses it is not
   // "approved" for them no matter how clean the rest of the label is. The seal
   // stays earned — this only ever takes it away, never grants it.
-  const stamp = tier === 'approved' && violated.length === 0;
+  const stamp = tier === 'approved' && violated.length === 0 && !sugarHeavy;
 
   // Hard lines are the loudest thing on the card: surface what crossed them
   // first, then focus-relevant, then the rest.
@@ -542,5 +662,10 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
     unmatched,
     focus: { active: focus.active, triggered: focus.triggered, leadsWith: focus.leadsWith, signals: focus.signals },
     hardLines: { violated }, // [{ value, label, names[] }] — additive, never reshapes the above
+    // Additive, both of them (non-negotiable #5). `approvedRead` is the factual copy
+    // the approved card renders instead of the old template; `sugarHeavy` says why a
+    // product that matched nothing still did not earn the seal.
+    approvedRead: tier === 'approved' ? buildApprovedRead(rawIngredientList) : null,
+    sugarHeavy,
   };
 }

@@ -264,7 +264,7 @@ export default function ScanVerdictCard({
   if (!verdict) return null;
   const {
     tier, stamp, universalLayer = [], affirmationLayer = [], note, swap, education, upsell,
-    freeTastesLeft, needsGoal, signals, ingredientsRead,
+    freeTastesLeft, needsGoal, signals, ingredientsRead, approvedRead, sugarHeavy,
   } = verdict;
   const meta = TIER_META[tier] || TIER_META.approved_with_note;
   const call = TIER_CALL[tier] || TIER_CALL.approved_with_note;
@@ -287,6 +287,24 @@ export default function ScanVerdictCard({
 
       {/* Verdict — the earned seal, or Kristy’s call. Never the seal unless stamp is true. */}
       {stamp ? <ApprovedSeal /> : <VerdictBar meta={meta} call={call} />}
+
+      {/* THE APPROVED READ — what was checked, and what is in it.
+          This replaced a sentence the model wrote on every clean product: "This one is
+          clean. No industrial additives, no processing tricks — just real food." Eight of
+          ten approved scans got it near-verbatim. `approved` means nothing MATCHED, out of
+          74 entries, which is not the same claim as "clean" — so the card reports instead.
+
+          The second line is read off the label, which is why it can never become a
+          template and why a strawberry spread whose second ingredient is sugar now shows
+          the shopper that word, with Kristy holding no position on sugar at all. */}
+      {approvedRead && (
+        <section style={styles.section}>
+          <p style={styles.approvedChecked}>{approvedRead.checked}</p>
+          {approvedRead.names && <p style={styles.approvedNames}>{approvedRead.names}</p>}
+          {/* A number withheld the seal the ingredient engine granted. Say which. */}
+          {sugarHeavy && <p style={styles.approvedNames}>Added sugar is high for the category.</p>}
+        </section>
+      )}
 
       {/* What’s inside — the factual universal layer, one chip per flagged ingredient,
           closed with Kristy’s evidence-honesty line (free on every card). */}
@@ -473,6 +491,23 @@ const styles = {
     fontSize: 12,
     color: colors.textMuted,
     letterSpacing: '0.01em',
+  },
+  /* The approved read is FACTUAL text, so it is Inter and not kristyVoice — she is not
+     speaking here, the label is. Same reasoning that keeps ingredient names out of
+     Playfair everywhere else on this card. */
+  approvedChecked: {
+    margin: '2px 0 0',
+    fontFamily: fonts.ui,
+    fontSize: 13.5,
+    color: colors.textPrimary,
+    letterSpacing: '0.01em',
+  },
+  approvedNames: {
+    margin: '4px 0 0',
+    fontFamily: fonts.ui,
+    fontSize: 12.5,
+    lineHeight: 1.45,
+    color: colors.textMuted,
   },
   rows: { display: 'flex', flexDirection: 'column', gap: 6 },
   row: {

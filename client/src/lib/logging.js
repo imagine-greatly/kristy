@@ -262,7 +262,12 @@ async function fetchVerdict({ ingredients, goal, nonNegotiables, focuses, constr
     // now, and a refusal is not a personalization luxury — resolving one is a KB read
     // with no model call, so it is free on every tier. Goal/focuses/constraints stay
     // OFF this path: those drive the personalized note, which is still gated.
-    ? { ingredients, nonNegotiables, readComplete, ...(barcode ? { barcode } : {}) }
+    //
+    // `nutrition` DOES ride it, though, and has to. The added-sugar seal gate is a
+    // deterministic read of a number the scan already fetched — no model, no cost — and
+    // withholding it from guests would mean the SAME PRODUCT carried the seal for a
+    // stranger and not for a member. A seal that means two things is not a seal.
+    ? { ingredients, nonNegotiables, nutrition, readComplete, ...(barcode ? { barcode } : {}) }
     : { ingredients, goal, nonNegotiables, focuses, constraints, nutrition, personalize, readComplete, ...(barcode ? { barcode } : {}) };
   const res = await fetch(`${apiBase}${path}`, {
     method: 'POST',

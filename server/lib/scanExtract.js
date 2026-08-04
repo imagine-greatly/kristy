@@ -9,16 +9,19 @@
 //      one photographed off a label because OFF didn't have it. This layer is what
 //      makes the coverage gap close itself: every miss that gets photographed fills
 //      its own hole for the next person.
-//   1. Open Food Facts ingredients text (English preferred) — the fast, free path.
-//   2. If OFF knows the product but has no ingredient text, fall back to a vision
-//      read of the label image OFF stores (a real photographed panel).
-//   3. Otherwise: found but no ingredients (the client offers the label photo).
+//   1. Open Food Facts ingredients text (English preferred) — the fast, free path,
+//      cross-checked against OFF's own raw import before it is trusted.
+//   2. Otherwise: found but no ingredients (the client offers the label photo).
+//
+// THERE IS NO SERVER-SIDE VISION STEP ANY MORE. There was one, reading the panel photo
+// OFF stores; it is deleted and the reasoning is recorded at the point it used to sit.
+// Vision still runs on the SHOPPER'S photo, in routes/scan.js, which is a different and
+// much better piece of evidence: their package, their market, in their hand.
 //
 // Every layer returns INGREDIENTS ONLY. A cached hit is not a cached verdict — it
 // goes through the same engine + KB + claim lock as a fresh lookup, so the judgment
 // is always recomputed against the current KB and the shopper's current preferences.
 
-import { readLabelIngredients } from './labelVision.js';
 import { lookupProduct, retainProduct } from './productStore.js';
 import { evaluateIngredients } from './verdictEngine.js';
 import { recordConflict } from './ingredientConflicts.js';
@@ -43,7 +46,6 @@ const OFF_FIELDS = [
   'nutriments',
   'image_front_url',
   'image_url',
-  'image_ingredients_url',
 ].join(',');
 
 const UA = { 'User-Agent': 'Kristy/1.0 (grocery coach; nutrition app)' };
@@ -211,14 +213,6 @@ export function productMeta(p = {}, barcode = null) {
   };
 }
 
-async function fetchImageBase64(url) {
-  const r = await fetch(url, { headers: UA });
-  if (!r.ok) return null;
-  const type = (r.headers.get('content-type') || 'image/jpeg').split(';')[0];
-  const buf = Buffer.from(await r.arrayBuffer());
-  return { base64: buf.toString('base64'), mediaType: type };
-}
-
 /**
  * Resolve a barcode to a product + ingredient list.
  * @returns {Promise<{ found:boolean, source:'off'|'vision'|'none', product:object|null, ingredients:string }>}
@@ -322,42 +316,27 @@ export async function extractFromBarcode(barcode) {
     return { found: true, source: 'off', product, ingredients: text, nutrition };
   }
 
-  // 2. Vision fallback on the label image OFF stores. The transcription must ALSO
-  //    clear the English guard — a French panel reads as French just as easily.
-  if (p.image_ingredients_url) {
-    try {
-      const img = await fetchImageBase64(p.image_ingredients_url);
-      if (img) {
-        const { ingredients, panel } = await readLabelIngredients(img);
-        const joined = ingredients.join(', ');
-        if (ingredients.length && !looksNonEnglish(joined) && isReadableIngredientList(joined)) {
-          // A vision read WITH a barcode is the most valuable row in the catalog:
-          // it's a product OFF couldn't answer for, now permanently answerable.
-          retainProduct({
-            barcode: code,
-            name: product.name,
-            brand: product.brand,
-            ingredients: joined,
-            source: 'vision',
-            panel,
-          });
-          // A partial read rides along as such — OFF's stored panel photo can be
-          // cropped just like a shopper's, and the unread tail is where a concern
-          // hides. The verdict route withholds approval on an incomplete read.
-          return {
-            found: true,
-            source: 'vision',
-            product,
-            ingredients: joined,
-            nutrition,
-            ...(panel === 'partial' ? { partialRead: true } : {}),
-          };
-        }
-      }
-    } catch {
-      /* fall through to no-ingredients */
-    }
-  }
+  /* 2. THE OFF PANEL-PHOTO FALLBACK IS DELETED, AND IT WAS NOT A FALLBACK.
+        It used to fire here: when OFF had the product but no usable ingredient text,
+        it fetched `image_ingredients_url` and ran a vision transcription over it.
+        Measured, it earned none of its cost:
+
+          REACH        gated on OFF holding a panel photo — 7 of 17 records that had
+                       no ingredient text carried one, so it could not even fire on
+                       ~6 in 10 of the exact cases it existed for.
+          PRICE        ~3,400ms for the model call plus 440–2,584ms to fetch the image,
+                       against a 215ms scan. A 16× step, speculatively.
+          FAILURE      the Kirkland panel OFF stores is IN FRENCH. Vision transcribed
+                       French, the English guard correctly threw it away, and the 3.4s
+                       and the Haiku spend bought nothing.
+          AND WORSE    it is not independent evidence. The Heinz panel OFF stores is
+                       the UK label. Vision read the wrong recipe straight back out of
+                       it — the same bad record laundered through a second modality,
+                       arriving at the same false gold seal.
+
+        A photo of the product in the SHOPPER'S hand has none of those properties: right
+        market, right pack, right now. Every no-ingredients case falls through to it, as
+        it already did whenever this branch failed to fire. */
 
   // 3. Known product, but nothing readable in English → NO ingredients, NO stamp.
   //    The client auto-pivots to the photograph-the-label path.
