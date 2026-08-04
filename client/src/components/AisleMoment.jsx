@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
 import { GoldThread } from './GoldThread.jsx';
 import PerimeterAnswer from './PerimeterAnswer.jsx';
-import { askPerimeter, askCounter, fetchCounterSections, fetchCounterCard, fetchCounterEssentials, fetchCounterFull } from '../lib/perimeter.js';
+import { askPerimeter, fetchCounterSections, fetchCounterCard, fetchCounterEssentials } from '../lib/perimeter.js';
 import CounterCard from './CounterCard.jsx';
-import { readsSpent, spendRead } from '../lib/readMeter.js';
-import CounterAnswer, { CounterAnswerSkeleton } from './CounterAnswer.jsx';
+import { useCardMeter } from '../lib/cardMeter.js';
+import CounterAsk from './CounterAsk.jsx';
 import { trackEvent } from '../lib/analytics.js';
 
 /* ═══════════════ The counter — the half of the store with no label ═══════════════
@@ -31,14 +31,6 @@ import { trackEvent } from '../lib/analytics.js';
 
    Tokens only. Spoken lines are kristyVoice, everything factual is Inter. */
 
-// Seeds span the counters on purpose: one glance should say meat, fish, eggs, produce.
-const ASK_SEEDS = [
-  'Wild or farmed salmon',
-  'Which cut for stew',
-  'What pasture-raised leaves out',
-  'Is organic worth it for berries',
-];
-
 export default function AisleMoment({
   prefs, onUpgrade, onUpgradeSheet, onScan, onAddToCart, purchasable = true,
 }) {
@@ -48,28 +40,14 @@ export default function AisleMoment({
   const [essErr, setEssErr] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [entry, setEntry] = useState(null); // { state, data }
-  const [question, setQuestion] = useState('');
-  const [ask, setAsk] = useState(null); // { state, resp }
+  const [answered, setAnswered] = useState(false); // an answer is on screen (owned by CounterAsk)
   const [personal, setPersonal] = useState(null); // { state, resp } — this topic, read against the profile
-  // Cards whose full read this session has already paid for or been granted. Keyed by
-  // slug so a card opened twice never spends twice.
-  const [unlocked, setUnlocked] = useState({});
-
-  // THE ONLY PLACE A READ IS SPENT. Essentials come back unlocked and cost nothing —
-  // the server decides that, not this component.
-  async function requestFull(slug) {
-    if (unlocked[slug]) return;
-    try {
-      const out = await fetchCounterFull(slug, readsSpent());
-      // Gated. A shopper who can buy gets the ask; a guest gets the teaser the card is
-      // already about to render, and no offer they cannot complete.
-      if (out.gated) { if (purchasable) (onUpgradeSheet || onUpgrade)?.(); return; }
-      if (out.spent) spendRead();
-      setUnlocked((u) => ({ ...u, [slug]: out.card }));
-    } catch { /* leave it locked; the teaser still reads */ }
-  }
-  const view = (c) => (c && unlocked[c.slug]) || c;
+  /* THE READ METER IS `useCardMeter`, SHARED. This file and CartMoment each carried a copy
+     of it — same call, same counter — and adding the ask as a third caller is what made
+     that indefensible. A guest gets the teaser and no offer they cannot complete, which is
+     why the gated callback is withheld rather than the meter being different. */
   const upgradeFromCard = () => { if (purchasable) (onUpgradeSheet || onUpgrade)?.(); };
+  const { requestFull, view } = useCardMeter(purchasable ? upgradeFromCard : undefined);
 
   // Is there anything to personalize against? No profile → no offer, rather than a
   // button that promises a tailored read and returns the universal one.
@@ -130,40 +108,6 @@ export default function AisleMoment({
     } catch {
       setPersonal({ state: 'error' });
     }
-  }
-
-  // ONE route for every ask — the bar and the seed chips both land here. The server
-  // decides whether the answer is a curated card, one generated for a question the KB
-  // never covered, or an out-of-scope line; all three come back in the same shape.
-  async function runAsk(raw, via) {
-    const q = String(raw || '').trim();
-    if (!q || ask?.state === 'loading') return;
-    setAsk({ state: 'loading' });
-    trackEvent('counter-ask', { via });
-    try {
-      const resp = await askCounter({
-        query: q,
-        goal: prefs?.goal || '',
-        focuses: prefs?.focuses || [],
-        hardLines: prefs?.hardLines || [],
-        constraints: prefs?.constraints || [],
-      });
-      setAsk({ state: 'done', resp });
-    } catch {
-      setAsk({ state: 'error' });
-    }
-  }
-
-  function submitAsk(e) {
-    e?.preventDefault();
-    runAsk(question, 'aisle');
-  }
-
-  // A seed ASKS. It used to only fill the box, which made the shortcut two taps —
-  // the tap, then the same Ask button they could have reached by typing.
-  function askSeed(seed) {
-    setQuestion(seed);
-    runAsk(seed, 'seed');
   }
 
   /* ── A single topic, read in full ── */
@@ -261,55 +205,24 @@ export default function AisleMoment({
       {/* ASK — the hero, and the first thing on the surface. The page title moved into it:
           a separate "The counter" heading above the input pushed the input down to repeat
           the name of the tab the shopper just pressed. */}
+      {/* THE ASK IS `CounterAsk`, THE SAME COMPONENT THE DASHBOARD AND SHOP MODE RENDER.
+          It used to be written out here — input, seeds, answer, and its own copy of the read
+          meter — and shop mode needing an ask overlay would have made that three. Two asks
+          that look alike are two meters, and the day they diverge is the day the gate copy
+          becomes false on one of them, silently, because the drifted surface still looks
+          right. The deck stays here because it introduces the SURFACE; the ask does not. */}
       <div style={styles.askCard}>
-        <h1 style={styles.askHead}>Ask about any counter</h1>
-        <span style={styles.askSub}>Meat, seafood, produce, eggs, dairy and bulk. Ask about any of it.</span>
-
-        <form style={styles.askForm} onSubmit={submitAsk}>
-          <input
-            style={styles.askInput}
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Wild or farmed salmon?"
-            aria-label="Ask about the counter"
-            disabled={ask?.state === 'loading'}
-          />
-          <button type="submit" style={styles.askGo} disabled={!question.trim() || ask?.state === 'loading'}>
-            {ask?.state === 'loading' ? '…' : 'Ask'}
-          </button>
-        </form>
-
-        <div style={styles.seeds}>
-          {ASK_SEEDS.map((s) => (
-            <button key={s} type="button" style={styles.seed} onClick={() => askSeed(s)}>
-              {s}
-            </button>
-          ))}
-        </div>
+        <h1 style={styles.askHead}>Where the guidance comes from</h1>
+        <span style={styles.askSub}>Every note on your list came from here. Ask for whatever it did not cover.</span>
+        <CounterAsk
+          prefs={prefs}
+          via="counter"
+          purchasable={purchasable}
+          onUpgrade={upgradeFromCard}
+          onAddToCart={onAddToCart}
+          onAnswer={setAnswered}
+        />
       </div>
-
-      {/* A card can take seconds to generate. The skeleton is the card's own shape, so the
-          layout does not jump and the wait reads as an answer arriving. */}
-      {ask?.state === 'loading' && (
-        <div style={styles.answer}>
-          <CounterAnswerSkeleton />
-        </div>
-      )}
-      {ask?.state === 'error' && <p style={styles.muted}>That did not go through. Try again.</p>}
-      {ask?.state === 'done' && (
-        <div style={styles.answer}>
-          {/* The ASKED card is the one a stranger meets first, so it has to carry the same
-              two handles a browsed card does: the metered fetch, and the sheet. Without
-              onRequestFull the tap opens a teaser that never tries to unlock. */}
-          <CounterAnswer
-            resp={{ ...ask.resp, card: view(ask.resp?.card) }}
-            onUpgrade={upgradeFromCard}
-            onAddToCart={onAddToCart}
-            onRequestFull={requestFull}
-            purchasable={purchasable}
-          />
-        </div>
-      )}
 
       {/* ESSENTIALS — eight CARDS, not eight links. They render in summary state and
           expand in place, so the most-asked answers in the store cost no navigation at
@@ -318,7 +231,7 @@ export default function AisleMoment({
 
           Hidden once an answer is on screen. The shopper asked something specific, and
           eight other answers under it is noise at the moment they are reading. */}
-      {!ask && (
+      {!answered && (
         <>
           <div style={styles.groupLabel}>Start here</div>
           {essErr && <p style={styles.muted}>The essentials did not load.</p>}
@@ -413,29 +326,8 @@ const styles = {
   essentials: { display: 'flex', flexDirection: 'column', gap: 10 },
   askHead: { margin: 0, fontFamily: fonts.ui, fontSize: 19, fontWeight: 700, letterSpacing: '-0.01em', color: colors.textPrimary },
   askSub: { fontFamily: fonts.ui, fontSize: 13.5, lineHeight: 1.5, color: colors.textMuted },
-  askForm: { display: 'flex', gap: 8, marginTop: 6 },
-  askInput: {
-    flex: 1, minWidth: 0, padding: '15px 15px', borderRadius: 12,
-    // Hairline, not brass. This is the field a shopper types their question into and
-    // it was the one gold edge on the surface that was not identity.
-    border: `1px solid ${colors.hairline}`, background: colors.surface,
-    // 16px, not 15 — iOS zooms the viewport on focus for anything smaller, which on the
-    // hero input would jolt the whole page the moment a shopper taps it.
-    color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 16, outline: 'none',
-  },
   // The counter's ONE filled action. Everything else on this surface — the card's
   // add-to-cart, the gate, the section shortcuts — is transparent + hairline.
-  askGo: {
-    flex: '0 0 auto', padding: '15px 22px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
-    fontFamily: fonts.ui, fontWeight: 700, fontSize: 15.5, cursor: 'pointer',
-  },
-  seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
-  seed: {
-    padding: '8px 13px', borderRadius: 999, border: `1px solid ${colors.border}`,
-    background: colors.surface, color: colors.textSecondary,
-    fontFamily: fonts.ui, fontSize: 13, fontWeight: 600, cursor: 'pointer',
-  },
-  answer: { marginTop: 4 },
   personalize: {
     alignSelf: 'flex-start', padding: '10px 14px', borderRadius: 12,
     border: `1px solid ${colors.border}`, background: 'transparent', color: colors.textSecondary,

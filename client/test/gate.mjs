@@ -124,7 +124,10 @@ await shot('2-teaser');
       asserts rather than logs, because the whole point is that the count is zero and a
       console line nobody reads cannot tell you when it stops being. ── */
 await click('[data-cta]', 'Add to cart');
-await tab('Cart');
+// TAB ONE IS "HOME" NOW. The cart stopped being a destination beside the others and became
+// the centre of the planning surface; the tab that opened it opens that. The assertion below
+// is unchanged and still the point — the list is free on whatever the surface is called.
+await tab('Home');
 await page.waitForTimeout(1000);
 const saveControls = await page.locator('[data-save-list]').count();
 console.log(`  save controls on the cart: ${saveControls} (must be 0 — the list is free)`);

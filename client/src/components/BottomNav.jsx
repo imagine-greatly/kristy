@@ -1,8 +1,24 @@
 import { colors, fonts } from '../lib/tokens.js';
 import { ListIcon, HaulIcon, BarcodeIcon, AisleIcon } from './Icons.jsx';
 
-/* ═══════════════ Nav — Cart · Scan · Counter · Haul ═══════════════
+/* ═══════════════ Nav — Home · Scan · Counter · Haul ═══════════════
    FOUR EQUAL TABS. No throne.
+
+   TAB ONE IS HOME, NOT CART, AND THE BAR SURVIVED THE CHANGE. The cart stopped being a
+   destination beside the others — it is the centre of the planning surface now, so the tab
+   that used to open it opens that. What did NOT happen is deleting the bar: the Counter is
+   the moat and has no other permanent entry point, and demoting it from a fixed bar to a
+   card on a scrolling surface is a real discoverability loss for the one thing a scanner
+   app cannot copy. The Cart/home distinction died; the bar did not.
+
+   The equality argument survives too, and not by luck: `FillRow` asserts it on the home
+   surface in byte-identical treatment, which is why moving the cart into the dashboard is
+   not a quiet demotion of the counter.
+
+   IT HIDES ENTIRELY IN SHOP MODE. That is a mode, not a tab — full screen, entered
+   deliberately, exited deliberately — and a tab bar under it would offer four ways to fall
+   out of the thing the shopper just chose to be in. The caller decides; this component
+   simply is not rendered.
 
    The scanner used to sit here as an oversized raised gold circle, and Block 6 fixed
    the wrong half of that by giving the Counter a matching raised circle beside it: two
@@ -48,10 +64,11 @@ export default function BottomNav({ active, cartProgress, onList, onScan, onAisl
     <nav style={styles.nav} aria-label="Primary">
       <div style={styles.row}>
         <Tab
-          label="Cart"
-          active={active === 'list'}
+          label="Home"
+          active={active === 'home'}
           icon={<ListIcon size={22} />}
           badge={cartBadge}
+          ariaLabel={cartBadge ? `Home, ${cartBadge} in the cart` : 'Home'}
           onClick={onList}
         />
         {/* The two ways to fill it. Identical treatment, on purpose. */}

@@ -45,4 +45,11 @@ ds-bundle/
 # shots.mjs, skim.mjs and cart.mjs render the real surfaces over CDP and write PNGs here.
 # They are evidence for one run, regenerated on demand — a screenshot in version control
 # goes stale the first time a token changes and then quietly lies about what ships.
+#
+# The rule named ONE directory because one existed. dash.mjs, shop.mjs and composed.mjs each
+# write their own, and the reasoning above applies to every one of them — so it is a glob
+# now rather than a list somebody has to remember to extend.
 client/test/shots/
+client/test/shots-*/
+# …except the monetization gate's, which was already tracked before this rule generalised.
+!client/test/shots-gate/

@@ -9,7 +9,7 @@ import ScanHome from './ScanHome.jsx';
 import AisleMoment from './AisleMoment.jsx';
 import ScanSheet from './ScanSheet.jsx';
 import MomentStub from './MomentStub.jsx';
-import CartMoment from './CartMoment.jsx';
+import Dashboard from './Dashboard.jsx';
 import { HaulIcon } from './Icons.jsx';
 import { sendGuestChat } from '../lib/api.js';
 import { runProductScan } from '../lib/logging.js';
@@ -77,7 +77,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
 
   // Home is the CART either way. Empty, it asks what the trip is for — which is the
   // first thing a stranger should be answering, not a template they never requested.
-  const [moment, setMoment] = useState('list');
+  const [moment, setMoment] = useState('home');
   const [cameraOpen, setCameraOpen] = useState(false);
   const [scan, setScan] = useState(null); // null | { loading, mode, found, verdict, product, gate, error }
 
@@ -268,7 +268,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
               onScan={() => setMoment('scan')}
             />
           )}
-          {moment === 'list' && (
+          {moment === 'home' && (
             <>
               {/* NO BANNER. This was the SECOND save control on this surface — "Keep it",
                   under "Save your cart", standing permanently above the list whenever a
@@ -280,8 +280,22 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                   Both survived the original removal by not being the component that was
                   stripped and not carrying the attribute the test greps. A repeated ask is
                   the thing that gets an app deleted, however kindly it is worded. */}
-              <CartMoment
+              {/* THE SAME HOME SURFACE THE ACCOUNT PATH GETS. A guest's cart has to behave
+                  like a cart or the payoff is a screenshot rather than the product, and that
+                  includes the hero that says what happens next. Two different home surfaces
+                  is how the two would drift.
+
+                  `seedable` is always false for a guest — trips are rows keyed to an account
+                  and there is no account — so the `completed` state cannot fire here. That is
+                  honest rather than a gap: they have no last week for the server to read. */}
+              <Dashboard
                 cart={cart}
+                prefs={{
+                  goal: '',
+                  focuses: prefs?.focuses || [],
+                  hardLines: prefs?.non_negotiables || [],
+                  constraints: prefs?.constraints || [],
+                }}
                 goals={prefs?.coach_goals || []}
                 nonNegotiables={prefs?.non_negotiables || []}
                 focuses={prefs?.focuses || []}
@@ -310,7 +324,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       <BottomNav
         active={moment}
         cartProgress={cart.progress}
-        onList={() => setMoment('list')}
+        onList={() => setMoment('home')}
         onScan={() => setMoment('scan')}
         onAisle={() => setMoment('aisle')}
         onHaul={() => setMoment('haul')}
@@ -330,9 +344,9 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
           onAddToCart={({ name, tier, barcode }) => {
             cart.addScan({ name, tier, barcode });
             setScan(null);
-            setMoment('list');
+            setMoment('home');
           }}
-          onOpenCart={() => { setScan(null); setMoment('list'); }}
+          onOpenCart={() => { setScan(null); setMoment('home'); }}
         />
       )}
 

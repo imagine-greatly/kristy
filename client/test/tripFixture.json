@@ -1,0 +1,612 @@
+{
+  "items": [
+    {
+      "id": "i0",
+      "name": "Blueberries or strawberries",
+      "category": "Produce",
+      "checked": true,
+      "source": "template",
+      "why": "The sweet thing that isn’t candy — whichever is in season.",
+      "carded": true,
+      "cardSlug": "berries_picking",
+      "cardSection": "produce"
+    },
+    {
+      "id": "i1",
+      "name": "Avocado",
+      "category": "Produce",
+      "checked": true,
+      "source": "template",
+      "why": "A whole-food fat that needs no cooking.",
+      "carded": true,
+      "cardSlug": "produce_ripeness_by_item",
+      "cardSection": "produce"
+    },
+    {
+      "id": "i2",
+      "name": "Baby spinach",
+      "category": "Produce",
+      "checked": true,
+      "source": "template",
+      "why": "Goes into eggs, soup, or a salad with no prep at all.",
+      "carded": true
+    },
+    {
+      "id": "i3",
+      "name": "Carrots and bell peppers",
+      "category": "Produce",
+      "checked": true,
+      "source": "template",
+      "why": "Both keep for weeks and get eaten raw when you’re hungry.",
+      "perimeterId": "produce_seasonality",
+      "carded": true,
+      "cardSlug": "produce_seasonality",
+      "cardSection": "produce"
+    },
+    {
+      "id": "i4",
+      "name": "Sweet potatoes",
+      "category": "Produce",
+      "checked": false,
+      "source": "template",
+      "why": "More nutrient-dense than a white potato, and sweet enough to need nothing on it. Bake a tray, eat off it all week.",
+      "carded": true
+    },
+    {
+      "id": "i5",
+      "name": "Whatever fruit is in season",
+      "category": "Produce",
+      "checked": false,
+      "source": "template",
+      "why": "Apples, citrus, stone fruit, melon, grapes, pears. In season is cheaper and tastes like something.",
+      "perimeterId": "produce_seasonality",
+      "carded": true,
+      "cardSlug": "produce_seasonality",
+      "cardSection": "produce"
+    },
+    {
+      "id": "i6",
+      "name": "Bananas and apples",
+      "category": "Produce",
+      "checked": false,
+      "source": "template",
+      "why": "The two most kids will actually eat, and no packaging.",
+      "carded": true
+    },
+    {
+      "id": "i7",
+      "name": "Chicken thighs, bone-in",
+      "category": "Protein",
+      "checked": false,
+      "source": "template",
+      "why": "More forgiving than breasts and cheaper per pound — hard to dry out.",
+      "perimeterId": "air_chilled_chicken",
+      "carded": true,
+      "cardSlug": "air_chilled_chicken",
+      "cardSection": "meat"
+    },
+    {
+      "id": "i8",
+      "name": "Wild-caught salmon",
+      "category": "Protein",
+      "checked": false,
+      "source": "template",
+      "why": "Wild when the budget allows. A whole-food-standard call, not a verdict on farmed.",
+      "perimeterId": "salmon_wild_vs_farmed",
+      "carded": true,
+      "cardSlug": "salmon_wild_vs_farmed",
+      "cardSection": "seafood"
+    },
+    {
+      "id": "i9",
+      "name": "Pasture-raised eggs",
+      "category": "Protein",
+      "checked": false,
+      "source": "template",
+      "why": "Pasture-raised is the one egg label with real meaning behind it.",
+      "perimeterId": "egg_labels",
+      "carded": true,
+      "cardSlug": "egg_labels",
+      "cardSection": "eggs_dairy"
+    },
+    {
+      "id": "i10",
+      "name": "Plain whole-milk Greek yogurt",
+      "category": "Protein",
+      "checked": false,
+      "source": "template",
+      "why": "Plain, so you’re not buying dessert — add your own fruit.",
+      "perimeterId": "yogurt_plain_vs_flavored",
+      "carded": true,
+      "cardSlug": "yogurt_plain_vs_flavored",
+      "cardSection": "eggs_dairy"
+    },
+    {
+      "id": "i11",
+      "name": "Canned black beans",
+      "category": "Staples",
+      "checked": false,
+      "source": "template",
+      "why": "The cheapest real protein in the building — rinse them to cut the sodium.",
+      "perimeterId": "beans_dried_vs_canned",
+      "carded": true,
+      "cardSlug": "beans_dried_vs_canned",
+      "cardSection": "bulk_pantry"
+    },
+    {
+      "id": "i12",
+      "name": "Dried lentils",
+      "category": "Fiber",
+      "checked": false,
+      "source": "template",
+      "why": "No soaking, done in twenty minutes, and they stretch a meal.",
+      "perimeterId": "beans_dried_vs_canned",
+      "carded": true,
+      "cardSlug": "beans_dried_vs_canned",
+      "cardSection": "bulk_pantry"
+    },
+    {
+      "id": "i13",
+      "name": "Extra-virgin olive oil — dark bottle",
+      "category": "Staples",
+      "checked": false,
+      "source": "template",
+      "why": "Look for a HARVEST date, not just “best by” — dark glass keeps it from going rancid.",
+      "perimeterId": "olive_oil_grades",
+      "carded": true,
+      "cardSlug": "olive_oil_grades",
+      "cardSection": "bulk_pantry"
+    },
+    {
+      "id": "i14",
+      "name": "Frozen broccoli or green beans",
+      "category": "Produce",
+      "checked": false,
+      "source": "template",
+      "why": "Picked ripe and frozen fast — cheaper than fresh and it never spoils.",
+      "perimeterId": "frozen_vs_fresh_produce",
+      "carded": true,
+      "cardSlug": "frozen_vs_fresh_produce",
+      "cardSection": "produce"
+    }
+  ],
+  "cards": {
+    "berries_picking": {
+      "slug": "berries_picking",
+      "section": "produce",
+      "topic": "Picking berries",
+      "kind": "shelf",
+      "eyebrow": "Picking berries",
+      "headline": "The carton’s underside decides, not the berries on top.",
+      "do": "Flip the container and check for juice stains or fuzz.",
+      "tier": "established",
+      "cta_item": "Fresh berries",
+      "aliases": [
+        "berries",
+        "berry",
+        "strawberries",
+        "blueberries",
+        "raspberries",
+        "blackberries",
+        "picking berries",
+        "buying berries",
+        "fresh berries",
+        "berry carton",
+        "berry container",
+        "berry mold",
+        "strawberry freshness",
+        "moldy berries",
+        "fresh strawberries",
+        "strawberry carton",
+        "clamshell strawberries",
+        "moldy strawberries",
+        "clamshell",
+        "strawberry"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "A dry, unstained bottom on the carton. That is the whole check.",
+        "faded_lengths": [
+          60,
+          68,
+          82
+        ],
+        "remaining": {
+          "look_for": 4,
+          "watch_out": 4,
+          "tier_note": true
+        }
+      }
+    },
+    "produce_ripeness_by_item": {
+      "slug": "produce_ripeness_by_item",
+      "section": "produce",
+      "topic": "How to pick it, item by item",
+      "kind": "shelf",
+      "eyebrow": "Picking produce",
+      "headline": "Pick up two and take the heavier one.",
+      "do": "Smell the stem end on anything that ripens after picking.",
+      "tier": "established",
+      "cta_item": null,
+      "aliases": [
+        "how to pick a melon",
+        "ripe melon",
+        "cantaloupe",
+        "watermelon",
+        "pineapple",
+        "how to pick tomatoes",
+        "tomatoes",
+        "tomato",
+        "ripe peach",
+        "how to pick asparagus",
+        "how to pick broccoli",
+        "ripe mango",
+        "picking citrus",
+        "how to pick fruit",
+        "how to pick an avocado",
+        "avocado",
+        "avocados",
+        "ripe avocado",
+        "how to pick produce",
+        "picking fruit",
+        "ripe cantaloupe",
+        "cantaloupe smell",
+        "cantaloupe ripeness",
+        "muskmelon",
+        "pick a melon",
+        "ripe pineapple",
+        "pick a pineapple",
+        "pineapple ripeness",
+        "pineapple smell",
+        "produce",
+        "pick produce",
+        "choosing produce",
+        "fruit ripeness",
+        "vegetable quality",
+        "ripe fruit",
+        "melon is ripe",
+        "melon",
+        "is it ripe"
+      ],
+      "essential": true,
+      "essential_rank": 5,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Cantaloupe: creamy gold under the netting, a sweet smell at the stem end, slight give.",
+        "faded_lengths": [
+          73,
+          99,
+          83
+        ],
+        "remaining": {
+          "look_for": 11,
+          "watch_out": 0,
+          "tier_note": true
+        }
+      }
+    },
+    "produce_seasonality": {
+      "slug": "produce_seasonality",
+      "section": "produce",
+      "topic": "Buying produce in season",
+      "kind": "shelf",
+      "eyebrow": "Buying produce in season",
+      "headline": "Buy what is piled high and cheap this week.",
+      "do": "Walk the farmers’-market table before the produce aisle.",
+      "tier": "kristys_standard",
+      "cta_item": "Whatever fruit is in season",
+      "aliases": [
+        "fall produce",
+        "in season",
+        "in season now",
+        "produce season",
+        "season by month",
+        "seasonal fruit",
+        "seasonal produce",
+        "seasonal vegetables",
+        "seasonality",
+        "spring produce",
+        "summer produce",
+        "what is in season",
+        "winter produce"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "The cheapest, most abundant produce this week is usually what’s in season.",
+        "faded_lengths": [
+          52,
+          70,
+          75
+        ],
+        "remaining": {
+          "look_for": 7,
+          "watch_out": 0,
+          "tier_note": true
+        }
+      }
+    },
+    "air_chilled_chicken": {
+      "slug": "air_chilled_chicken",
+      "section": "meat",
+      "topic": "Air-chilled chicken",
+      "kind": "shelf",
+      "eyebrow": "Air-chilled chicken",
+      "headline": "Air-chilled. A water-chilled bird absorbs the bath it was cooled in.",
+      "do": "Check the package for “retained water up to”. That percentage is water.",
+      "tier": "kristys_standard",
+      "cta_item": "Air-chilled whole chicken",
+      "aliases": [
+        "air chilled chicken",
+        "air-chilled",
+        "chicken",
+        "water chilled"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "‘Air-chilled’ is printed on the package when it applies.",
+        "faded_lengths": [
+          59,
+          45
+        ],
+        "remaining": {
+          "look_for": 2,
+          "watch_out": 2,
+          "tier_note": true
+        }
+      }
+    },
+    "salmon_wild_vs_farmed": {
+      "slug": "salmon_wild_vs_farmed",
+      "section": "seafood",
+      "topic": "Wild vs. farmed salmon",
+      "kind": "shelf",
+      "eyebrow": "Wild or farmed",
+      "headline": "Wild. Farmed is a different fish, fed and penned.",
+      "do": "Take the frozen sockeye from the freezer case, not the fresh Atlantic.",
+      "tier": "kristys_standard",
+      "cta_item": "Wild-caught salmon",
+      "aliases": [
+        "salmon",
+        "wild salmon",
+        "farmed salmon",
+        "atlantic salmon",
+        "sockeye",
+        "king salmon",
+        "coho",
+        "wild or farmed",
+        "wild vs farmed"
+      ],
+      "essential": true,
+      "essential_rank": 3,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
+        "faded_lengths": [
+          90,
+          83
+        ],
+        "remaining": {
+          "look_for": 2,
+          "watch_out": 3,
+          "tier_note": true
+        }
+      }
+    },
+    "egg_labels": {
+      "slug": "egg_labels",
+      "section": "eggs_dairy",
+      "topic": "Egg labels, and what the hen ate",
+      "kind": "shelf",
+      "eyebrow": "Egg labels",
+      "headline": "Soy-free and corn-free first, then organic, then pasture-raised.",
+      "do": "Check the small regional cartons. That is where a feed claim appears.",
+      "tier": "kristys_standard",
+      "cta_item": "Soy-free pasture-raised eggs",
+      "aliases": [
+        "eggs",
+        "egg labels",
+        "cage free eggs",
+        "free range eggs",
+        "pasture raised eggs",
+        "organic eggs",
+        "soy free eggs",
+        "corn free eggs",
+        "hen feed",
+        "what hens eat",
+        "which eggs",
+        "what eggs",
+        "best eggs",
+        "eggs to buy",
+        "which egg carton",
+        "carton of eggs"
+      ],
+      "essential": true,
+      "essential_rank": 2,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
+        "faded_lengths": [
+          95,
+          95,
+          101
+        ],
+        "remaining": {
+          "look_for": 4,
+          "watch_out": 3,
+          "tier_note": true
+        }
+      }
+    },
+    "yogurt_plain_vs_flavored": {
+      "slug": "yogurt_plain_vs_flavored",
+      "section": "eggs_dairy",
+      "topic": "Plain vs. flavored yogurt",
+      "kind": "shelf",
+      "eyebrow": "Plain vs. flavored yogurt",
+      "headline": "Plain, big tub. Add your own fruit.",
+      "do": "Take the big plain tub, not the single-serve fruit cups.",
+      "tier": "kristys_standard",
+      "cta_item": "Plain whole-milk Greek yogurt",
+      "aliases": [
+        "yogurt",
+        "greek yogurt",
+        "flavored yogurt",
+        "plain yogurt",
+        "best yogurt",
+        "yogurt added sugar"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Plain over flavored — sweeten it yourself with fruit.",
+        "faded_lengths": [
+          95,
+          71
+        ],
+        "remaining": {
+          "look_for": 2,
+          "watch_out": 1,
+          "tier_note": true
+        }
+      }
+    },
+    "beans_dried_vs_canned": {
+      "slug": "beans_dried_vs_canned",
+      "section": "bulk_pantry",
+      "topic": "Dried vs. canned beans",
+      "kind": "shelf",
+      "eyebrow": "Dried vs. canned beans",
+      "headline": "Dried. Same bean, a fraction of the price, and your own salt.",
+      "do": "Fill a bag from the bulk bin. Whole beans, no split skins.",
+      "tier": "established",
+      "cta_item": "Dried beans",
+      "aliases": [
+        "beans",
+        "dried beans",
+        "canned beans",
+        "lentils",
+        "legumes",
+        "bpa cans"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Dried beans cost a fraction of canned per serving.",
+        "faded_lengths": [
+          62,
+          69
+        ],
+        "remaining": {
+          "look_for": 2,
+          "watch_out": 2,
+          "tier_note": true
+        }
+      }
+    },
+    "olive_oil_grades": {
+      "slug": "olive_oil_grades",
+      "section": "bulk_pantry",
+      "topic": "Buying real extra-virgin olive oil",
+      "kind": "shelf",
+      "eyebrow": "Real extra-virgin",
+      "headline": "Extra virgin, a recent harvest date, one country.",
+      "do": "Read “product of”, not “packed in” — they name different countries.",
+      "tier": "established",
+      "cta_item": "Extra-virgin olive oil",
+      "aliases": [
+        "olive oil grades",
+        "virgin olive oil",
+        "light olive oil",
+        "pure olive oil",
+        "pomace oil",
+        "refined olive oil",
+        "packed in italy",
+        "olive oil label",
+        "first cold pressed",
+        "olive oil",
+        "extra virgin olive oil",
+        "evoo",
+        "olive oil adulteration",
+        "real olive oil",
+        "extra virgin"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
+        "faded_lengths": [
+          61,
+          68,
+          50
+        ],
+        "remaining": {
+          "look_for": 4,
+          "watch_out": 4,
+          "tier_note": true
+        }
+      }
+    },
+    "frozen_vs_fresh_produce": {
+      "slug": "frozen_vs_fresh_produce",
+      "section": "produce",
+      "topic": "Frozen vs. fresh produce",
+      "kind": "shelf",
+      "eyebrow": "Frozen vs. fresh produce",
+      "headline": "Frozen. Cheaper, no waste, and in season all year.",
+      "do": "Read the bag’s ingredient list for one word: the vegetable.",
+      "tier": "established",
+      "cta_item": "Frozen vegetables, no sauce",
+      "aliases": [
+        "frozen vegetables",
+        "frozen fruit",
+        "fresh vs frozen",
+        "frozen produce",
+        "frozen berries"
+      ],
+      "essential": false,
+      "essential_rank": null,
+      "source": "curated",
+      "query_seed": null,
+      "locked": true,
+      "teaser": {
+        "look_for_first": "Check the bag lists just the vegetable/fruit — no sauces or added sugar.",
+        "faded_lengths": [
+          56,
+          49
+        ],
+        "remaining": {
+          "look_for": 2,
+          "watch_out": 0,
+          "tier_note": true
+        }
+      }
+    }
+  }
+}

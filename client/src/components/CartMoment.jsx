@@ -1,16 +1,28 @@
 import { useEffect, useState } from 'react';
-import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
-import { BarcodeIcon, CloseIcon, AisleIcon } from './Icons.jsx';
+import { colors, fonts, kristyVoice, radii } from '../lib/tokens.js';
+import { CloseIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
 import CounterCard from './CounterCard.jsx';
-import { fetchCardSummaries, fetchCounterFull } from '../lib/perimeter.js';
-import { readsSpent, spendRead } from '../lib/readMeter.js';
+import FillRow from './FillRow.jsx';
+import { fetchCardSummaries } from '../lib/perimeter.js';
+import { useCardMeter } from '../lib/cardMeter.js';
 
-/* ═══════════════════════ The cart — the home surface ═══════════════════════
-   The trip, as a structured object you act on by touch. This is the dashboard: what
-   to get, what's checked, what Kristy flagged, what she'd swap. Everything a normal
+/* ═══════════════════════ The cart — THE LIST BODY ═══════════════════════
+   The trip, as a structured object you act on by touch: what to get, what's checked,
+   what Kristy flagged, what she'd swap. Everything a normal
    trip needs is a TAP — check, swap, ask, remove, add, scan. The docked composer
    below is for the messy stuff taps can't express; nothing here requires it.
+
+   THIS FILE USED TO BE THE WHOLE SURFACE and is now one part of it. Its header
+   (`CartHeader.jsx`) and its entry question (`TripQuestion.jsx`) moved out to the
+   dashboard, which answers "what happens next" one level up. That was not a tidying pass:
+   rendering a hero above this component printed the trip's standing TWICE — "Your cart /
+   4 of 15 in the cart" directly under "Produce — 4 of 7" — and in the empty state the trip
+   question repeated the hero verbatim, both lines, on one screen.
+
+   What stays here is everything about the LIST: the walk sections, the collapse, the
+   attachments, the offers, the add row. The composer decides how the trip announces
+   itself; this decides how it reads.
 
    Kristy's coaching lives IN the object: her blend intro at the top, a verdict chip
    on anything scanned, her haul callouts as gold-ruled rows, and — on tap — the
@@ -41,23 +53,6 @@ const TIER_FLAG = {
   skip: { label: "She’d skip this", fg: colors.error, bd: colors.dangerBorder, bg: colors.dangerTint },
 };
 const flagged = (it) => it.source === 'swap' || it.tier === 'swap_recommended' || it.tier === 'skip';
-
-function ProgressBar({ progress }) {
-  return (
-    <div style={styles.progressWrap}>
-      <div style={styles.progressTrack}>
-        <div style={{ ...styles.progressFill, width: `${progress.pct}%` }} />
-      </div>
-      <span style={styles.progressLabel}>
-        {progress.total === 0
-          ? 'Nothing in the cart yet'
-          : progress.complete
-            ? `All ${progress.total} in the cart`
-            : `${progress.checked} of ${progress.total} in the cart`}
-      </span>
-    </div>
-  );
-}
 
 /* ───────── One row: a name, a box, and nothing else ─────────
    THE ROW IS FOR CHECKING OFF. It carries the shopper's own item and a 44px target to
@@ -323,28 +318,12 @@ export default function CartMoment({
     };
   }, [slugKey]);
 
-  /* THE SAME CALL AND THE SAME METER THE COUNTER USES — `fetchCounterFull` plus the
-     localStorage read count — not a second one wearing the cart's clothes. A card opened
-     from a list row and the same card opened by browsing must cost a shopper exactly the
-     same thing, or the meter is two mechanics that will drift and the gate copy stops
-     being true on one of them. Essentials still come back unlocked and spend nothing;
-     the server decides that, not this component. */
-  const [unlocked, setUnlocked] = useState({});
-
-  async function requestFull(slug) {
-    if (unlocked[slug]) return;
-    try {
-      const out = await fetchCounterFull(slug, readsSpent());
-      if (out.gated) {
-        onUpgrade?.();
-        return;
-      }
-      if (out.spent) spendRead();
-      setUnlocked((u) => ({ ...u, [slug]: out.card }));
-    } catch {
-      /* leave it locked; the teaser still reads */
-    }
-  }
+  /* THE READ METER IS `useCardMeter`, AND IT IS THE ONLY ONE. This file used to carry its
+     own copy of it beside AisleMoment's — same call, same counter, same words, written out
+     twice and kept in agreement by hand. Its own comment explained why that was dangerous.
+     A card opened from a list row and the same card opened by browsing cost a shopper
+     exactly the same thing because they are now literally the same function. */
+  const { requestFull, view } = useCardMeter(onUpgrade);
 
   /* THE LIST IS FREE, ALL OF IT — building it, saving it, keeping it next week. There is
      no save control here and there must not be one again.
@@ -366,31 +345,20 @@ export default function CartMoment({
     setDraft('');
   }
 
-  /* ── No trip underway → Kristy ASKS. ──
-     This is the entry state, and it is deliberately not a list. A pre-generated
-     "nutrient-dense whole foods" template was a guess: we had no idea what this
-     particular trip was for. So the cart begins as a question, and the answer is
-     what builds it — conversation in, list out. */
+  /* ── No trip underway → THE COMPOSER ASKS, not this file. ──
+     The entry state is `TripQuestion`, and it now belongs to the surface above: the
+     dashboard's hero asks what the trip is for, and the question renders beneath it with
+     its heading suppressed. Rendering both printed the same two lines twice.
+
+     Loading stays here, because it is a fact about the CART rather than about the trip —
+     the composer cannot know the list is still in flight. */
   const hasItems = list && Array.isArray(list.items) && list.items.length > 0;
   if (!hasItems) {
-    return (
+    return loading ? (
       <div style={styles.wrap}>
-        <Header progress={progress} onComplete={onComplete} />
-        {loading ? (
-          <p style={{ ...kristyVoice, ...styles.intro }}>Pulling your cart together&hellip;</p>
-        ) : (
-          <TripQuestion
-            cart={cart}
-            premium={premium}
-            onUpgrade={onUpgrade}
-            onSetGoal={onSetGoal}
-            onScan={onScan}
-            onAskAisle={onAskAisle}
-            goals={goals}
-          />
-        )}
+        <p style={{ ...kristyVoice, ...styles.intro }}>Pulling your cart together&hellip;</p>
       </div>
-    );
+    ) : null;
   }
 
   const groups = groupForWalk(list.items);
@@ -402,8 +370,6 @@ export default function CartMoment({
 
   return (
     <div style={styles.wrap}>
-      <Header progress={progress} onComplete={onComplete} />
-
       {/* Her one-line read on the whole cart — the blend, named in her voice. */}
       {list.intro && <p style={{ ...kristyVoice, ...styles.intro }}>{list.intro}</p>}
       {/* On a BUILD the compose summary becomes the cart’s intro, so showing the note
@@ -429,22 +395,23 @@ export default function CartMoment({
         </button>
       )}
 
-      {/* THE COMPOSE NUDGE IS GONE. It read "building the cart from a sentence is part of
-          a membership" — on a capability a signed-out guest already had, which made an
-          account worth less than none. Composing is free behind a daily budget now, and a
-          budget announces itself through `note` when it is actually reached, rather than
-          pre-emptively selling a wall that no longer exists.
+      {/* THE UPGRADE NUDGE IS GONE, AND IT IS THE SECOND ASK REMOVED FROM THIS SURFACE.
+          The first was "Save this list", which asked for money for a save that had already
+          happened. This one was quieter and broke the same rule: it rendered whenever
+          `premium === false` and the cart had rows, carried "Unlock the full cart" into the
+          Upgrade screen, and did it ON OPEN, as a BANNER. THE ASK APPEARS AT ONE MOMENT —
+          the fourth full-read tap — and the rule names this shape outright: "not on open,
+          not on a scan, not on an ask, not on a save, never a banner."
 
-          What survives is the one thing membership still shapes about a cart: focus- and
-          constraint-aware picks, and the haul swaps folding in. That is a real difference
-          and it is named plainly, without claiming the cart itself is withheld. */}
-      {premium === false && (
-        <Nudge
-          line="Basic cart. Membership shapes it around your focuses and folds in your haul swaps."
-          cta="Unlock the full cart"
-          onUpgrade={onUpgrade}
-        />
-      )}
+          Its line was also the weakest argument available for membership. "Basic cart" is a
+          judgement on something the shopper built themselves, printed above their own rows,
+          every single load — which is the nagging that gets an app deleted, in the one place
+          it can do the most damage.
+
+          What membership actually shapes about a cart (focus-aware picks, haul swaps folding
+          in) is a real difference and it is visible in the rows themselves. It does not need
+          a banner to announce it, and `cartFree.test.js` now greps what a SHOPPER READS
+          across all of client/src so this cannot come back a third time wearing new markup. */}
 
       <div style={styles.groups}>
         {groups.map((g) => (
@@ -454,7 +421,7 @@ export default function CartMoment({
               <CartBlock
                 key={b.key}
                 block={b}
-                card={b.slug ? (unlocked[b.slug] || cards[b.slug]) : null}
+                card={b.slug ? view(cards[b.slug]) : null}
                 mixed={mixedSources}
                 open={openSlug === b.slug}
                 onOpen={setOpenSlug}
@@ -514,223 +481,13 @@ export default function CartMoment({
   );
 }
 
-/* ═══════════════════ The entry state: a question, not a list ═══════════════════
-   A trip starts LEAN. The cart used to generate an 18-item template before a single
-   question had been asked, and however good each row was, nobody requested it — so the
-   whole thing read as generic and imposed. Suggestions in the void hurt the product.
-
-   So the shopper drives: they name what they're getting, and the cart is the OUTPUT of
-   that. Preferences shape which VERSION of each item lands, not what gets added.
-
-   The quick-taps SEED the field rather than firing immediately, which keeps the answer
-   editable and teaches the shape of a good one without making it a form.
-
-   A full cart is still available for anyone who wants one handed over. It's a button
-   now, not the landing state. */
-const TRIP_SEEDS = [
-  'Chicken, rice, something for breakfast',
-  'Three dinners this week',
-  'Snacks the kids will eat',
-  'Just a few things',
-];
-
-function TripQuestion({ cart, premium, onUpgrade, onSetGoal, onScan, onAskAisle, goals }) {
-  const [text, setText] = useState('');
-  const [err, setErr] = useState('');
-  const busy = !!cart.busy;
-
-  async function submit(e) {
-    e?.preventDefault();
-    const answer = text.trim();
-    if (!answer || busy) return;
-    setErr('');
-    const res = await cart.compose(answer, 'build');
-    if (res?.ok) setText('');
-    // `budget` and `needsAccount` both already say their own piece — over-budget through
-    // `note`, sign-in through the account offer. Only a real failure gets "try again",
-    // because telling someone to retry against a ceiling is how you make them retry.
-    else if (!res?.budget && !res?.needsAccount) setErr('That did not go through. Try it once more.');
-  }
-
-  return (
-    <div style={styles.ask}>
-      <p style={{ ...kristyVoice, ...styles.askQ }}>What are you getting this week?</p>
-      <p style={styles.askSub}>Name it in your own words. Rough is fine.</p>
-
-      <form style={styles.askForm} onSubmit={submit}>
-        <input
-          style={styles.askInput}
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Chicken, rice, snacks for the kids…"
-          aria-label="What you are getting this week"
-          disabled={busy}
-        />
-        <button type="submit" style={styles.askGo} disabled={!text.trim() || busy}>
-          {busy ? '…' : 'Go'}
-        </button>
-      </form>
-
-      {/* Starting points — a tap fills the field, it doesn’t submit for you. */}
-      <div style={styles.seeds}>
-        {TRIP_SEEDS.map((s) => (
-          <button
-            key={s}
-            type="button"
-            style={styles.seed}
-            onClick={() => setText(s)}
-            disabled={busy}
-          >
-            {s}
-          </button>
-        ))}
-      </div>
-
-      {busy && <AmbientIsm style={{ marginTop: 16 }} />}
-      {err && <p style={styles.askErr}>{err}</p>}
-
-      {/* THE IDENTITY, on the emptiest screen in the app: the two halves of the store,
-          at the same weight. The counter had this slot to itself and Scan had none,
-          which said the opposite of what it should. Both are gold-edged now, so the
-          counter keeps the prominence it earned and Scan simply matches it. */}
-      <FillRow onScan={onScan} onAskAisle={onAskAisle} />
-
-      {/* SAME AS LAST WEEK — the single seeding act, and the highest-value tap on this
-          screen. Groceries are mostly repeat, so the second trip should be easier than the
-          first; that is what a habit feels like. It renders only when the server says
-          there IS a completed trip to read, so nobody is offered a button that answers 409.
-
-          It sits above "build a full cart" deliberately: a real previous trip beats a
-          generated template every time, and the template is the fallback for someone who
-          has no history yet. */}
-      {cart.seedable?.seedable && (
-        <button
-          type="button"
-          style={styles.seedBtn}
-          data-seed-last
-          disabled={busy}
-          onClick={async () => {
-            const res = await cart.seedFromLast();
-            if (!res?.ok) setErr('That did not go through. Try it once more.');
-          }}
-        >
-          <span style={styles.seedLabel}>Same as last week</span>
-          <span style={styles.seedSub}>
-            {cart.seedable.items} item{cart.seedable.items === 1 ? '' : 's'}, unchecked and ready to edit
-          </span>
-        </button>
-      )}
-
-      {/* THE OPT-IN. Some shoppers do want a cart handed to them. That’s a choice
-          they make, on every tier, not the default state of the screen. */}
-      <button type="button" style={styles.ghostBtn} onClick={cart.rebuild} disabled={busy}>
-        Or build a full cart
-      </button>
-
-      {/* Nothing is withheld on this screen. The question is the free path in, for
-          everyone — there is no tier in which typing an answer here does not work. */}
-
-      {!goals.length && onSetGoal && (
-        <button type="button" style={styles.linkBtn} onClick={onSetGoal}>
-          Set how you like to eat →
-        </button>
-      )}
-    </div>
-  );
-}
-
-function Header({ progress, onComplete }) {
-  return (
-    <div style={styles.head}>
-      <div style={styles.headTop}>
-        <h1 style={styles.title}>Your cart</h1>
-      </div>
-      <ProgressBar progress={progress} />
-      {/* The app opens here now, always. A finished trip used to hijack the opening
-          surface and land on the Haul; it is announced on the cart instead, where the
-          shopper already is, and reading it stays one tap away. */}
-      {/* THE COMPLETION DOOR. It was a link to the Haul; it is the act itself now, because
-          a trip that is never completed is never archived and "same as last week" has
-          nothing to read. Explicit, never automatic on the last checkbox — an uncheck and
-          recheck would otherwise archive the trip out from under someone still shopping. */}
-      {progress.total > 0 && progress.complete && onComplete && (
-        <button type="button" style={styles.doneRow} onClick={onComplete} data-complete-trip>
-          <span style={{ ...kristyVoice, ...styles.doneLine }}>Trip done. Everything checked off.</span>
-          <span style={styles.doneCta}>Finish the trip →</span>
-        </button>
-      )}
-    </div>
-  );
-}
-
-/* ═══════════ The two ways to fill the cart, at identical weight ═══════════
-   This row is the whole positioning in one component. Scanning vets the packaged
-   half; the counter answers the unlabeled half (meat, fish, eggs, produce, bulk).
-   Neither is the primary. They are the same size, the same border, the same gold,
-   and they sit side by side so the equality is impossible to miss.
-
-   The cart header used to carry a solid-gold "Scan" pill and the counter got a plain
-   grey ghost button further down the page. That was a throne in miniature. */
-function FillRow({ onScan, onAskAisle }) {
-  if (!onScan && !onAskAisle) return null;
-  return (
-    <div style={styles.fillRow}>
-      {onScan && (
-        <button type="button" style={styles.fill} onClick={onScan}>
-          <span style={styles.fillIcon}><BarcodeIcon size={20} /></span>
-          <span style={styles.fillLabel}>Scan</span>
-          <span style={styles.fillSub}>A barcode or a label</span>
-        </button>
-      )}
-      {onAskAisle && (
-        <button type="button" style={styles.fill} onClick={onAskAisle}>
-          <span style={styles.fillIcon}><AisleIcon size={20} /></span>
-          <span style={styles.fillLabel}>Counter</span>
-          <span style={styles.fillSub}>Meat, fish, produce</span>
-        </button>
-      )}
-    </div>
-  );
-}
-
-function Nudge({ line, cta, onUpgrade }) {
-  return (
-    <div style={styles.nudge}>
-      <span style={{ ...kristyVoice, ...styles.nudgeLine }}>{line}</span>
-      {onUpgrade && (
-        <button type="button" style={styles.nudgeCta} onClick={onUpgrade}>
-          {cta}
-        </button>
-      )}
-    </div>
-  );
-}
 
 const styles = {
   wrap: { maxWidth: 520, margin: '0 auto', width: '100%', boxSizing: 'border-box', padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 },
 
-  head: { display: 'flex', flexDirection: 'column', gap: 10 },
-  headTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
-  title: { ...kristyDisplay, margin: 0, fontSize: 26, color: colors.ink },
 
   // The finished trip, announced on the cart instead of hijacking the opening surface.
-  doneRow: {
-    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10,
-    width: '100%', boxSizing: 'border-box', marginTop: 4,
-    padding: '11px 14px', borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9,
-    textAlign: 'left', cursor: 'pointer',
-  },
-  doneLine: { fontSize: 14.5, lineHeight: 1.4, color: colors.textPrimary },
-  doneCta: {
-    flex: '0 0 auto', fontFamily: fonts.ui, fontSize: 12.5, fontWeight: 700,
-    color: colors.inkBody, whiteSpace: 'nowrap',
-  },
 
-  progressWrap: { display: 'flex', flexDirection: 'column', gap: 6 },
-  progressTrack: { width: '100%', height: 6, borderRadius: 999, background: colors.surface2, overflow: 'hidden' },
-  progressFill: { height: '100%', background: colors.accentGold, borderRadius: 999, transition: 'width 0.25s ease' },
-  progressLabel: { fontFamily: fonts.ui, fontSize: 12.5, color: colors.textMuted },
 
   intro: { margin: 0, fontSize: 16, lineHeight: 1.5, color: colors.textPrimary },
   note: { margin: '2px 0 0', fontSize: 15, lineHeight: 1.5, color: colors.textSecondary },
@@ -739,29 +496,7 @@ const styles = {
   /* THE TWO WAYS TO FILL THE CART. Byte-identical styling on purpose: same width,
      same border, same gold, same type. Whatever is true of one is true of the other,
      which is the entire point of the row. */
-  fillRow: { display: 'flex', gap: 10 },
-  fill: {
-    flex: '1 1 0',
-    minWidth: 0,
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 3,
-    padding: '13px 14px',
-    borderRadius: 14,
-    border: `1px solid ${colors.borderGold}`,
-    background: colors.goldTint9,
-    textAlign: 'left',
-    cursor: 'pointer',
-  },
-  fillIcon: { display: 'flex', color: colors.accentGold, marginBottom: 2 },
-  fillLabel: { fontFamily: fonts.ui, fontSize: 15, fontWeight: 700, color: colors.textPrimary },
-  fillSub: { fontFamily: fonts.ui, fontSize: 12, lineHeight: 1.35, color: colors.textMuted },
 
-  nudge: { display: 'flex', flexDirection: 'column', gap: 10, padding: '14px 16px', borderRadius: 12, border: `1px solid ${colors.borderGold}`, background: colors.goldTint9 },
-  nudgeLine: { fontSize: 15, lineHeight: 1.5, color: colors.textPrimary },
-  nudgeCta: { alignSelf: 'flex-start', padding: '9px 16px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 700, fontSize: 13.5, cursor: 'pointer' },
 
   // Sections breathe — a bigger gap BETWEEN groups than between rows, so the eye reads
   // "produce, then meat" rather than one undifferentiated column.
@@ -899,37 +634,9 @@ const styles = {
 
 
   /* ── The entry question ── */
-  ask: { display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 8 },
-  askQ: { ...kristyDisplay, margin: 0, fontSize: 26, lineHeight: 1.3, color: colors.ink },
-  askSub: { margin: '-6px 0 0', fontFamily: fonts.ui, fontSize: 13.5, color: colors.textMuted },
-  askForm: { display: 'flex', gap: 8, alignItems: 'stretch' },
-  askInput: {
-    flex: 1, minWidth: 0, padding: '13px 15px', borderRadius: 12,
-    border: `1px solid ${colors.borderGold}`, background: colors.surface,
-    color: colors.textPrimary, fontFamily: fonts.ui, fontSize: 15, outline: 'none',
-  },
   // The cart's ONE filled action.
-  askGo: {
-    flex: '0 0 auto', padding: '13px 18px', borderRadius: radii.button, border: 'none', background: colors.action, color: colors.actionInk,
-    fontFamily: fonts.ui, fontWeight: 700, fontSize: 15, cursor: 'pointer',
-  },
-  seeds: { display: 'flex', flexWrap: 'wrap', gap: 8 },
-  seedBtn: {
-    alignSelf: 'stretch', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 3,
-    minHeight: 44, padding: '13px 16px', borderRadius: 14, cursor: 'pointer',
-    border: `1px solid ${colors.borderGold}`, background: colors.goldTint9, textAlign: 'left',
-  },
-  seedLabel: { fontFamily: fonts.ui, fontSize: 15, fontWeight: 700, color: colors.textPrimary },
-  seedSub: { fontFamily: fonts.ui, fontSize: 12.5, color: colors.textMuted },
-  seed: {
-    padding: '9px 14px', borderRadius: 999, border: `1px solid ${colors.border}`,
-    background: colors.surface, color: colors.textSecondary,
-    fontFamily: fonts.ui, fontSize: 13.5, fontWeight: 600, cursor: 'pointer',
-  },
-  askErr: { margin: 0, fontFamily: fonts.ui, fontSize: 13.5, color: colors.error },
 
 
   footRow: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' },
   rebuildGhost: { padding: '9px 16px', borderRadius: 999, border: 'none', background: 'transparent', color: colors.textMuted, fontFamily: fonts.ui, fontWeight: 600, fontSize: 13, cursor: 'pointer' },
-  ghostBtn: { padding: '12px 18px', borderRadius: radii.button, border: `0.5px solid ${colors.hairline}`, background: 'transparent', color: colors.inkBody, fontFamily: fonts.ui, fontWeight: 600, fontSize: 14.5, cursor: 'pointer' },
 };

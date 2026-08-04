@@ -34,8 +34,44 @@ function Frame({ children, onClose }) {
    the trip, so scanning visibly builds the same cart you planned — the "keep it" of a
    real aisle. Her read rides along with the item (the cart shows the tier), so nothing
    about the coaching is lost when the sheet closes. */
-function CartAction({ tier, onAddToCart, onOpenCart }) {
+function CartAction({ tier, onAddToCart, onOpenCart, shop }) {
   const [added, setAdded] = useState(false);
+
+  /* IN SHOP MODE THE SCAN IS USUALLY SOMETHING ALREADY ON THE LIST. A shopper standing in
+     produce scanning a carton of blueberries wrote "Blueberries or strawberries" down last
+     night — adding a second row for the thing in their hand is the wrong act. So when the
+     scan resolves to a row that is already there, the offer is to TICK IT; otherwise it
+     joins the section they are standing in, which is the only place they could be.
+
+     `shop` is absent everywhere else, so every other surface keeps the behaviour it had. */
+  if (shop && !added) {
+    const row = shop.row;
+    return (
+      <div style={styles.cartRow}>
+        <button
+          type="button"
+          style={styles.cartPrimary}
+          data-shop-cart-action
+          data-shop-match={row ? row.id : ''}
+          onClick={() => {
+            if (row) shop.onCheckOff(row.id);
+            else shop.onAddToSection();
+            setAdded(true);
+          }}
+        >
+          {row ? `Check off ${row.name}` : `Add to ${shop.sectionTitle}`}
+        </button>
+      </div>
+    );
+  }
+  if (shop && added) {
+    return (
+      <div style={styles.cartRow}>
+        <span style={styles.cartDone}>{shop.row ? 'Checked off ✓' : 'On the list ✓'}</span>
+      </div>
+    );
+  }
+
   if (!onAddToCart) return null;
 
   const wouldSwap = tier === 'swap_recommended' || tier === 'skip';
@@ -94,6 +130,8 @@ export default function ScanSheet({
   onPickGoal,
   onAddToCart,
   onOpenCart,
+  // Present ONLY in shop mode: { row, sectionTitle, onCheckOff, onAddToSection }.
+  shop,
   focusOffer,
   onAcceptFocus,
   onDismissFocus,
@@ -229,7 +267,7 @@ export default function ScanSheet({
           unlockLabel={unlockLabel}
           onOpenIngredient={onOpenIngredient}
         />
-        <CartAction tier={scan.verdict.tier} onAddToCart={onAddToCart} onOpenCart={onOpenCart} />
+        <CartAction tier={scan.verdict.tier} onAddToCart={onAddToCart} onOpenCart={onOpenCart} shop={shop} />
         {/* Contextual focus offer — a quiet, in-voice nudge after a pattern of the
             same flag. Never a modal; part of the sheet, dismissible, one per session. */}
         {focusOffer && (

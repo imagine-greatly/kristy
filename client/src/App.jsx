@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, lazy, Suspense } from 'react';
+import { useCallback, useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { IS_DEMO } from './lib/config.js';
 import { supabase } from './lib/supabase.js';
 import { dayKey, dateLabel } from './lib/format.js';
@@ -30,6 +30,7 @@ import {
 } from './lib/guestState.js';
 import { pushSwaps, saveList } from './lib/list.js';
 import { useCart, initialMoment } from './lib/cart.js';
+import { matchRow } from './lib/rowMatch.js';
 import { trackEvent } from './lib/analytics.js';
 import { sendChat, deleteAccount, getSubscription, startTrial } from './lib/api.js';
 import { runProductScan, requestGoalNote } from './lib/logging.js';
@@ -54,7 +55,8 @@ import ScanHome from './components/ScanHome.jsx';
 import AisleMoment from './components/AisleMoment.jsx';
 import UpgradeSheet from './components/UpgradeSheet.jsx';
 import HaulMoment from './components/HaulMoment.jsx';
-import CartMoment from './components/CartMoment.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import ShopMode from './components/ShopMode.jsx';
 import ImportList from './components/ImportList.jsx';
 import ChatLauncher from './components/ChatLauncher.jsx';
 import HaulShareCard from './components/HaulShareCard.jsx';
@@ -113,7 +115,12 @@ export default function App() {
   // back to the cart on any doubt: a just-finished trip is the one case worth landing
   // somewhere else, because the Haul read is what's useful then. Every surface stays
   // one tap away regardless.
-  const [moment, setMoment] = useState(initialMoment); // 'scan' | 'list' | 'haul' | 'chat'
+  const [moment, setMoment] = useState(initialMoment); // 'scan' | 'home' | 'aisle' | 'haul' | 'chat' | 'shop'
+  // The walk section shop mode is currently showing, reported up so a scan landing while
+  // it is open can offer the right act. Null on every other surface. `useCallback` so the
+  // effect that pushes it does not re-fire on every App render.
+  const [shopSection, setShopSection] = useState(null);
+  const reportShopSection = useCallback((s) => setShopSection(s), []);
   // The composer is docked on every surface; this bumps to pull focus into it when a
   // tap affordance ("Build me a cart for…") hands off to the deep-input path.
   const [composerFocus, setComposerFocus] = useState(0);
@@ -1073,10 +1080,19 @@ export default function App() {
 
       {moment !== 'chat' && (
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
-          {/* The cart is the home surface: the trip taking shape, acted on by touch. */}
-          {moment === 'list' && (
-            <CartMoment
+          {/* HOME — the planning surface. The cart is not a tab beside this; it is what
+              this is built around, so the hero answers "what happens next" and the list it
+              acts on sits directly beneath. Shop mode is the other state and it is a MODE,
+              entered from the hero here. */}
+          {moment === 'home' && (
+            <Dashboard
               cart={cart}
+              prefs={{
+                goal: goalNoteLabel(goalsOf(profile)),
+                focuses: profile?.focuses || [],
+                hardLines: profile?.non_negotiables || [],
+                constraints: resolveConstraints(profile),
+              }}
               goals={goalsOf(profile)}
               goal={goalNoteLabel(goalsOf(profile))}
               nonNegotiables={profile?.non_negotiables || []}
@@ -1087,10 +1103,12 @@ export default function App() {
               onScan={() => setCameraOpen(true)}
               onAskAisle={() => setMoment('aisle')}
               onImport={() => setImportOpen(true)}
-              onHaul={() => setMoment('haul')}
+              onHaul={openHaul}
+              onStartShopping={() => setMoment('shop')}
+              onResume={() => setMoment('shop')}
               onComplete={async () => {
                 // Finishing archives the trip and lands the shopper on the Haul, which is
-                // the read on what they just did. The cart returns to Kristy's question.
+                // the read on what they just did. Home returns to Kristy's question.
                 const res = await cart.completeTrip();
                 if (res?.ok) setMoment('haul');
               }}
@@ -1125,7 +1143,7 @@ export default function App() {
               loading={haulLoading}
               cartProgress={cart.progress}
               onScan={() => setCameraOpen(true)}
-              onOpenCart={() => setMoment('list')}
+              onOpenCart={() => setMoment('home')}
               onAddToList={handleAddToList}
               onShareHaul={handleShareHaul}
               onAsk={askAboutHaul}
@@ -1139,7 +1157,10 @@ export default function App() {
           one slim bar beneath the cart for the messy input taps can’t express — a whole
           week of dinners, a standing preference, a question about one specific fish.
           Every normal cart action above is reachable without it. */}
-      {!viewingPast && (
+      {/* The composer is docked on every surface EXCEPT shop mode, which owns the viewport
+          and carries its own Scan/Ask branch bar instead — a keyboard-raising text field
+          under a list you are walking is not the input a shopper in an aisle wants. */}
+      {!viewingPast && moment !== 'shop' && (
         <InputBar
           value={input}
           onChange={setInput}
@@ -1150,15 +1171,18 @@ export default function App() {
           // Kept SHORT on purpose: a placeholder that wraps makes the composer three
           // lines tall, and a composer that tall stops reading as a docked tool and
           // starts competing with the cart for the screen.
-          placeholder={moment === 'list' ? 'Ask, or build a whole cart…' : 'Ask anything, or scan it.'}
+          placeholder={moment === 'home' ? 'Ask, or build a whole cart…' : 'Ask anything, or scan it.'}
           focusSignal={composerFocus}
         />
       )}
 
+      {/* SHOP MODE OWNS THE VIEWPORT. The bar is absent there rather than disabled — see
+          BottomNav's own note. Every other surface keeps it. */}
+      {moment !== 'shop' && (
       <BottomNav
         active={moment}
         cartProgress={cart.progress}
-        onList={() => setMoment('list')}
+        onList={() => setMoment('home')}
         // Scan lands on the scan surface, NOT the raw camera. The choices there —
         // barcode, label photo, walk up to a counter — are the product; opening the
         // viewfinder first hid two of the three behind an X-out-of-a-modal.
@@ -1167,6 +1191,34 @@ export default function App() {
         onHaul={openHaul}
         onChat={() => setMoment('chat')}
       />
+      )}
+
+      {/* SHOP MODE — a MODE, not a moment in the scroll column. It is `position: fixed;
+          inset: 0`, so it is rendered up here with the overlays rather than inside the
+          surface stack: it owns the viewport, and App has already suppressed the tab bar
+          and the docked composer above. Exiting returns to the dashboard, where the
+          mid-trip hero says RESUME — leaving shop mode never completes a trip. */}
+      {moment === 'shop' && (
+        <ShopMode
+          cart={cart}
+          prefs={{
+            goal: goalNoteLabel(goalsOf(profile)),
+            focuses: profile?.focuses || [],
+            hardLines: profile?.non_negotiables || [],
+            constraints: resolveConstraints(profile),
+          }}
+          onExit={() => setMoment('home')}
+          onScan={() => setCameraOpen(true)}
+          onUpgrade={() => askToUpgrade('read')}
+          // The section the shopper is standing in, so a scan can say "Add to Produce"
+          // instead of guessing a category. ShopMode owns it; this only reads it.
+          onSection={reportShopSection}
+          onComplete={async () => {
+            const res = await cart.completeTrip();
+            if (res?.ok) setMoment('haul');
+          }}
+        />
+      )}
 
       {verdict && (
         <VerdictCard
@@ -1186,8 +1238,34 @@ export default function App() {
           onLabelFile={handleVerdictFile}
           onPickGoal={handlePickGoal}
           onAddToCart={handleAddScanToCart}
-          onOpenCart={() => { closeScan(); setMoment('list'); }}
-          onAsk={() => { askAboutScan(); closeScan(); }}
+          onOpenCart={() => { closeScan(); setMoment('home'); }}
+          /* IN SHOP MODE THE SCAN ACTS ON THE LIST IN FRONT OF THE SHOPPER. If the product
+             resolves to a row already on it, the offer is to tick that row rather than add a
+             duplicate of the thing they are holding; otherwise it joins the section they are
+             standing in. Absent on every other surface, which keeps their behaviour intact.
+             Closing this sheet never touches shop mode — it is mounted underneath. */
+          shop={
+            moment === 'shop'
+              ? {
+                  row: matchRow(scan?.product?.name, cart.list?.items || [], shopSection?.id),
+                  sectionTitle: shopSection?.title || 'the cart',
+                  onCheckOff: (id) => { cart.toggle(id); closeScan(); },
+                  onAddToSection: () => { handleAddScanToCart(); closeScan(); },
+                }
+              : undefined
+          }
+          /* THE SHEET'S CHAT ASK IS SUPPRESSED IN SHOP MODE, and that is a decision rather
+             than an omission. It routes to `askAboutScan`, which opens the CHAT thread —
+             `setMoment('chat')` — and that unmounts shop mode, throwing away the section and
+             scroll position exactly as the ask branch button used to. Same leak, one layer
+             down, and it would have shipped because the scan sheet looks the same everywhere.
+
+             Suppressing rather than re-routing is the right call on its own terms too: chat
+             is the deep-input surface for "the messy input taps cannot express", and a
+             shopper holding a product in an aisle with a verdict already on screen does not
+             want a thread. The counter ask is one tap away on the branch bar, over the top,
+             and it comes back to the same pixel. */
+          onAsk={moment === 'shop' ? undefined : () => { askAboutScan(); closeScan(); }}
           onUpgrade={() => { closeScan(); openUpgrade(); }}
           onStartTrial={handleStartTrial}
           trialEligible={trialEligible}

@@ -15,7 +15,7 @@
 
 import { createRoot } from 'react-dom/client';
 import { useState } from 'react';
-import CartMoment from '../src/components/CartMoment.jsx';
+import Dashboard from '../src/components/Dashboard.jsx';
 import { cartProgress } from '../src/lib/cart.js';
 import '../src/index.css';
 
@@ -65,7 +65,16 @@ function Harness() {
     },
   };
 
-  return <CartMoment cart={cart} goals={['eating_cleaner']} goal="eating cleaner" onComplete={() => cart.completeTrip()} />;
+  /* THE HOME SURFACE, WHICH IS WHERE THE LOOP ACTUALLY HAPPENS. This drives the two
+     controls the loop is about — `[data-complete-trip]` and `[data-seed-last]` — and both
+     are now the Dashboard's own hero actions rather than controls buried in the cart:
+     finishing a trip and starting the next one ARE the answer to "what happens next", which
+     is the one question this surface exists to answer.
+
+     Rendering the real Dashboard rather than a hand-wired composition is what keeps this a
+     test of the shipping surface. If the hero stops carrying either attribute, the loop
+     fails here rather than in production. */
+  return <Dashboard cart={cart} goals={['eating_cleaner']} goal="eating cleaner" onComplete={() => cart.completeTrip()} />;
 }
 
 createRoot(document.getElementById('root')).render(<Harness />);

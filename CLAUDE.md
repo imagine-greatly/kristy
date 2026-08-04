@@ -98,12 +98,25 @@ only by prompt.
 
 ## The interface
 
-**Nav: Cart · Scan · Counter · Haul** — four equal tabs, no throne. Scan and Counter are
+**TWO STATES AND ONE LOOP.** *Before the store* you plan, on the dashboard — unhurried, two
+hands, at home. *In the store* you walk, in **shop mode** — one thing on screen, full
+viewport. Everything else is a tool you branch to from one of those two and come back to.
+
+**Nav: Home · Scan · Counter · Haul** — four equal tabs, no throne. Scan and Counter are
 identical in size and treatment because they are the two ways to fill the cart, and that
 equality *is* the positioning.
 
-- **Cart** is home, unconditionally. Empty, it asks what the trip is for rather than
-  dumping a template; the answer builds it. Chat-editable from the docked composer.
+- **THE CART TAB IS GONE AND THE BAR SURVIVED.** The cart stopped being a destination beside
+  the others — it is the centre of the dashboard now, so tab one is **Home**. What did *not*
+  happen is deleting the bar: the Counter is the moat and has no other permanent entry point,
+  and demoting it from a fixed bar to a card on a scrolling surface is a real discoverability
+  loss for the one thing a scanner app cannot copy. The equality argument survives the move
+  because `FillRow` asserts it on the home surface in byte-identical treatment — which is
+  why it lives in its own module and is imported twice rather than copied.
+- **Home** is the dashboard, unconditionally (`initialMoment` returns `'home'`, still with no
+  condition in it). It answers ONE question immediately — *what happens next* — in five
+  states, and that answer is the first child and the largest type on the surface in every one.
+  Empty, it asks what the trip is for rather than dumping a template; the answer builds it.
 - **Scan** = the packaged half: barcode, or a label photo that reads anything.
 - **Counter** = the unlabeled half, and **asking leads**. A question in plain words —
   from the ask card at the top of the surface or the docked composer anywhere — returns
@@ -113,7 +126,12 @@ equality *is* the positioning.
 - **Every counter answer is decision-first**: the call in one line, the why in one
   line, the checklist, then the full sourced read on tap. Its picks add to the cart in
   one tap.
-- **Haul** reads the trip back and carries items forward.
+- **Haul** reads the trip back and carries items forward. It is a destination reached from
+  the bottom of the dashboard, not a panel on it — it answers "how did that go", which is a
+  question you only have once a trip is behind you.
+- **Shop mode is a MODE, not a tab.** Entered from the dashboard hero (START / RESUME),
+  exited deliberately. It owns the viewport at `zIndex: 45` — above the tab bar, *below*
+  every sheet — and App suppresses the tab bar and the docked composer while it is up.
 
 ---
 
@@ -363,6 +381,66 @@ equality *is* the positioning.
   timestamp; no user key, no IP, no session. The question text is scrubbed of emails and
   long digit runs and capped at 160 chars *before* the insert, because free text typed by
   a stranger is the one place identity arrives by accident.
+
+**The dashboard and shop mode**
+- **THE HERO IS THE ANSWER TO "WHAT NEXT", AND IT IS MEASURED, NOT ASSERTED.** Five states —
+  `empty` / `completed` / `ready` / `midtrip` / `finished` — resolved from `cart.progress` and
+  `cart.seedable`, storing no new concept. `dash.mjs` reads the rendered boxes and fails if
+  anything renders above the hero, if anything is set larger than it, or if the hero copy is
+  repeated below it.
+- **THERE ARE FIVE STATES, NOT FOUR, AND THE FIFTH NEARLY SHIPPED AS A BUG.** A trip with
+  every box ticked is not "mid-trip" and its answer is not RESUME, it is FINISH. Folded in, a
+  shopper who had just walked their whole list would have been told to resume it.
+- **EXACTLY ONE BONE-FILLED ACTION PER SCREEN, AND IT IS THE HERO'S.** Both halves were wrong
+  until they were COUNTED in a browser: `finished` had **zero** (a gold-bordered button — the
+  quietest answer of the five, in the state where a shopper most wants to be done) and
+  `completed` had **two** (the hero plus TripQuestion's "Go"). Neither is visible in a
+  stylesheet — one is an absence, the other is two components each correct alone. Resolved by
+  stepping the FIELD down (`submitTone="quiet"`), never the hero. Counted per state in
+  `dash.mjs`.
+- **`CartHeader` WAS EXTRACTED AND THEN DELETED**, and that is the right sequence rather than
+  churn. Splitting it is what made the seam measurable; rendering the composition showed the
+  hero does not *relocate* it but *supersedes* it — title, standing and completion door all
+  move up. A component nothing renders is dead code describing an abandoned decision.
+- **THE TYPE INVERTS IN SHOP MODE.** The DO LINE leads at 17.5px and the item name demotes to
+  an 11.5px eyebrow; the cart has those at 15px/13.5px the other way round. An UNMATCHED row
+  keeps its name in the lead slot — the inversion is a claim that the do line is more useful,
+  not a house style. One prose line per row is inherited, not relaxed.
+- **A SPENT INSTRUCTION IS DEMOTED BY SIZE, NEVER BY OPACITY.** The first fix was 11.5px at
+  50% — **2.90:1** against the ground, where WCAG needs 4.5:1, so a shopper who checked
+  something by mistake could not read back what they had dismissed. Transparency removes
+  contrast from exactly the people who need it and still looks fine to whoever shipped it.
+  13px at full `textMuted` is 7.84:1. `shop.mjs` computes contrast from RENDERED colour,
+  folding in every ancestor opacity, so a fade reintroduced anywhere above fails.
+- **ADVANCING IS FREE SCROLL, AND THE ACTIVE SECTION IS THE ONE FILLING THE MOST SCREEN.**
+  Not "the last section whose top crossed the viewport top" — a COLLAPSED section breaks that:
+  once produce is done it is 66px tall, so a shopper well into meat still had the header
+  naming a section entirely off screen. The collapse and the header rule were each right
+  alone and wrong together, visible only with a completed section behind you.
+- **EVERY BRANCH OUT OF SHOP MODE IS AN OVERLAY, NEVER A NAVIGATION.** It is never unmounted,
+  so "return to the same section and scroll position" needs no restoration code — there is
+  nothing to restore. **This leaked twice**: the Ask branch button wired to
+  `setMoment('aisle')`, and one layer down the scan sheet's chat ask (`askAboutScan` →
+  `setMoment('chat')`), invisible because the sheet looks identical on every surface. The
+  chat ask is now withheld in shop mode on its own merits too — chat is the deep-input
+  surface, and a shopper holding a product with a verdict on screen does not want a thread.
+  A test forbids `setMoment` inside `ShopMode.jsx`.
+- **A SCAN IN SHOP MODE ACTS ON THE LIST IN FRONT OF THE SHOPPER.** Resolving to a row already
+  there offers "Check off [row]"; anything else joins the section they are standing in.
+  `rowMatch.js` is deliberately conservative and refuses far more than it could — a missed
+  match costs one extra row, a WRONG match ticks something never bought, and the list is a
+  record that seeds next week and feeds the shopping profile. Every content word of the row
+  must appear in the product, a state word (frozen/canned/dried/fresh) on both sides that
+  disagrees vetoes, and an ambiguous tie is no match at all.
+- **THE SCREEN WAKE LOCK IS SHOP MODE ONLY, AND THE RE-ACQUIRE IS THE FEATURE.** The browser
+  releases the lock whenever the document hides, so acquire-once code passes every test ever
+  written for it and then dies at the first notification, permanently, for the rest of the
+  walk. `shop.mjs` HIDES and RESTORES the document for real and asserts a NEW sentinel;
+  verified to fail on acquire-once code before being trusted. Support (2026-08-03): iOS/iPadOS
+  Safari 16.4+, Chrome 85+, Firefox 126+, Samsung 14+, ~93%. **Installed iOS PWAs were broken
+  below 18.4** and there IS a `manifest.json`, so that is a live case — it degrades to a
+  no-op, and no NoSleep.js video hack. Every rejection is silent: a shopper who cannot get a
+  wake lock is not helped by being told about a browser API mid-aisle.
 
 **Trips — the list is a record, not a scratchpad**
 - **`shopping_lists` HELD ONE OVERWRITTEN LIST PER USER, and that blocked everything.**
@@ -653,6 +731,29 @@ was invisible until something rendered one**
 - **The ask appears at ONE moment and nowhere else**: the fourth full-read tap. It was two
   until the list-save ask was removed as dishonest (above). Not on open, not on a scan, not
   on an ask, not on a save, never a banner.
+  **AND THERE WAS A THIRD, WHICH SURVIVED BOTH EARLIER REMOVALS.** The premium `Nudge` on the
+  cart rendered whenever `premium === false` and the cart had rows — "Basic cart. Membership
+  shapes it…" plus "Unlock the full cart", **on open, as a banner, above the shopper's own
+  list, every load**. It carried no `[data-save-list]`, said nothing about saving, and was not
+  in `GuestApp`, so every existing check missed it. Removed 2026-08-03. Its copy was also the
+  weakest argument available for membership: "Basic cart" is a judgement on something the
+  shopper built themselves. **The checkable shape is an upgrade affordance whose render
+  condition contains NO ACTION** — tier alone is not a moment, because every non-member
+  satisfies it on every render, which is exactly what makes it a banner. `cartFree.test.js`
+  pins that over nine named content surfaces, and separately pins that `UPGRADE_COPY` has
+  exactly one key and every `askToUpgrade` call site passes it (a second key is how the
+  list-save ask existed at all). **Chrome is deliberately excluded**: the sidebar entry, the
+  settings row and the header's premium mark are destinations a shopper navigated to, not an
+  interruption of a surface with a pitch about the content on it.
+- **ONE ASK COMPONENT, ONE READ METER, AND BOTH ARE ENFORCED.** `CounterAsk` renders on the
+  Counter index, the dashboard and the shop-mode overlay; `useCardMeter` is the only thing
+  that spends a read. **The meter had already drifted into two copies** — `AisleMoment` and
+  `CartMoment` each carried their own `requestFull`, agreeing only because somebody kept them
+  agreeing, under a comment in `CartMoment` warning about that exact risk. Shop mode's overlay
+  would have been the third. A card opened in an aisle must cost exactly what the same card
+  costs from the couch, or the gate copy is false on one surface and nobody finds out.
+  `cartFree.test.js` fails if any file outside `CounterAsk` calls `askCounter`, or any file
+  outside `cardMeter` calls `fetchCounterFull` / `spendRead` / `readsSpent`.
 
 - Price *ids* are configuration, never hardcoded, and the client never sees them.
   Displayed prices have exactly one source per client (`lib/pricing`).
@@ -741,7 +842,20 @@ was invisible until something rendered one**
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (476 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` (483 tests). Client: `cd client && npx vite build`.
+- **`vite build` COMPILES A DEAD REFERENCE HAPPILY.** Moving the ask out of `AisleMoment` left
+  a `{!ask && …}` behind — a live `ReferenceError` that took the whole Counter surface down,
+  through a clean build. Only `gate.mjs`, which drives the real surface, caught it. A green
+  build is not a rendered surface; run the browser suites after any component split.
+- **`node client/test/dash.mjs`** renders all five dashboard states at a true 390px **in the
+  real app frame** (the real `TopBar` above it) and asserts the hero rule and the one-filled-
+  action rule. Rendering the Dashboard alone made "hero top = 0px" a fact about a harness.
+- **`node client/test/shop.mjs`** measures shop mode: geometry, the type inversion, WCAG
+  contrast off rendered colour, the collapse mid-scroll, **the wake lock hidden and restored
+  for real**, and return-to-position broken four ways (deep scroll → scan → close; scan open →
+  backgrounded → restored → close; ask → real submitted query → close; and the ask reached
+  from inside the scan overlay). Position is asserted as an exact `scrollTop`, not "roughly
+  the same section".
 - **`node server/scripts/listMatchProbe.js` is the match probe, and it FAILS on a wrong
   match** rather than counting it. Run it after any KB alias edit, any `perimeterId` change
   and any matcher change — it is the cheapest check that the corpus still answers the list

@@ -56,11 +56,18 @@ export function cartProgress(list) {
 
 /** The surface to open on. Synchronous (cache only) — never delays or blocks boot. */
 export function initialMoment() {
-  // THE CART IS HOME, unconditionally. This used to open a just-finished trip on the
-  // Haul, which was a real convenience and a small lie about what the app is: the
-  // answer to "where does this open" has to be one place. The finished trip is not
-  // lost, it is announced ON the cart, which is where the shopper already is.
-  return 'list';
+  // HOME, UNCONDITIONALLY — and the word is the only thing that changed. This used to open
+  // a just-finished trip on the Haul, which was a real convenience and a small lie about
+  // what the app is: the answer to "where does this open" has to be one place.
+  //
+  // IT STAYS UNCONDITIONAL EVEN THOUGH SHOP MODE EXISTS, and that is the point of the
+  // dashboard rather than an oversight. A shopper who backgrounds the app mid-aisle and
+  // comes back needs to land exactly where they were — but auto-entering a full-screen mode
+  // on boot would put a shopper standing at home into the store, and it would make this
+  // function depend on state it cannot read synchronously. Instead the dashboard's mid-trip
+  // hero IS the resume: loudest thing on the surface, one deliberate tap, and it names the
+  // aisle it is returning to. The trip is never lost; it is announced where they already are.
+  return 'home';
 }
 
 /** Scanned products the shopper kept, as cart rows (used by the Haul's trip view). */
