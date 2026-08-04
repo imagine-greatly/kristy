@@ -1,7 +1,9 @@
 import { Router } from 'express';
 import { timingSafeEqual } from 'node:crypto';
 import { gapFeed } from '../lib/counterGaps.js';
-import { coverageStats, topScannedProducts } from '../lib/productStore.js';
+import { coverageStats, topScannedProducts, lowConfidenceRows } from '../lib/productStore.js';
+import { scanFunnel } from '../lib/scanEvents.js';
+import { conflictFeed } from '../lib/ingredientConflicts.js';
 
 // The internal growth view — the cores, compounding, where we can see it.
 //
@@ -67,10 +69,16 @@ export const internalRouter = Router();
 
 /** Every number on the view, gathered once. */
 async function growthSnapshot() {
-  const [coverage, gaps, topProducts] = await Promise.all([
+  const [coverage, gaps, topProducts, funnel, curation, conflicts] = await Promise.all([
     coverageStats(),
     gapFeed({ limit: 40 }),
     topScannedProducts({ limit: 20 }),
+    // The funnel (did photo-first work), the curation queue (which rows are shaky),
+    // and the records that disagree with themselves. All three read aggregate tables
+    // that hold no identity — the property is structural, not a filter applied here.
+    scanFunnel({ days: 30 }),
+    lowConfidenceRows({ limit: 40 }),
+    conflictFeed({ limit: 40 }),
   ]);
 
   return {
@@ -80,6 +88,15 @@ async function growthSnapshot() {
       // The share of the catalog nobody else has. The moat, as a fraction.
       ownedShare: coverage.total > 0 ? Math.round((coverage.fromVision / coverage.total) * 100) : 0,
     },
+    // DID THE FLIP WORK? One row per scan ATTEMPT, so the failures the catalog cannot
+    // see — the unreadable photo, the shopper who gave up — are counted here.
+    funnel,
+    // The rows built from a partial read. The ACTION IS DELETE, NOT EDIT: a hand-typed
+    // ingredient list is a vision read with worse provenance and no confidence signal.
+    // Most of this drains itself when a fuller read of the same product arrives.
+    curation: { available: curation.available, rows: curation.rows },
+    // Records where Open Food Facts disagrees with itself. Kristy answers from neither.
+    conflicts: { available: conflicts.available, rows: conflicts.conflicts },
     counter: {
       unavailable: gaps.unavailable === true,
       // The authoring backlog: what to write next, in the order shoppers asked.

@@ -45,7 +45,13 @@ function tableBlocks(text) {
 const TABLES = tableBlocks(sql);
 
 // The tables that deliberately hold no person: the aggregate pool.
-const AGGREGATE_TABLES = ['scanned_products', 'counter_gaps', 'counter_cards'];
+// A TABLE SHIPPED WITH THE RIGHT POSTURE IN ITS SQL AND ITS COMMENTS IS NOT ENFORCED.
+// `ingredient_conflicts` was written with no user key, RLS on and a header explaining
+// why — and was not added HERE, which is the only thing that checks. That is the exact
+// "a comment asserting an invariant is not an invariant" failure, committed by the same
+// hand that wrote the rule down. Every new aggregate table joins this list in the same
+// change that creates it.
+const AGGREGATE_TABLES = ['scanned_products', 'counter_gaps', 'counter_cards', 'ingredient_conflicts', 'scan_events'];
 
 test('the migrations actually parsed — this suite is not vacuously passing', () => {
   assert.ok(TABLES.length >= 10, `expected the schema to parse; got ${TABLES.length} tables`);

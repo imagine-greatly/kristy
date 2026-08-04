@@ -289,3 +289,38 @@ export async function stampTier(barcode, tier) {
     console.warn('[kristy] product tier stamp skipped:', err?.message || err);
   }
 }
+
+/**
+ * The curation queue — rows built from a partial vision read, most-hit first.
+ *
+ * `coverageStats` reports HOW MANY low-confidence rows exist; this reports WHICH, which
+ * is the difference between knowing there is a backlog and being able to work it.
+ * Ordered by `scan_count` on purpose: the shaky row twelve shoppers hit is worth acting
+ * on and the one nobody has hit since it was written is not.
+ *
+ * THE ACTION IS DELETE, NOT EDIT. A hand-typed ingredient list is a vision read with
+ * worse provenance and no confidence signal — it arrives as `high` because a person
+ * wrote it, carries no record of who or when, and can never be corrected by the loop
+ * that produced it. Deleting the row costs one shopper one photo and puts the product
+ * back in front of the self-heal path, which is the thing that actually improves.
+ * Promotion needs no action at all: `trustRank` already lets a later `vision/full` read
+ * replace a `vision/partial` one, so most of this queue drains itself.
+ *
+ * AGGREGATE: products and how often each was seen. The table holds no identity to
+ * narrow by. Never throws — an unmigrated table reports an empty queue.
+ */
+export async function lowConfidenceRows({ client = supabase, limit = 40 } = {}) {
+  try {
+    const { data, error } = await client
+      .from(TABLE)
+      .select('barcode, name, brand, ingredients, source, scan_count, first_seen, last_seen')
+      .eq('confidence', 'low')
+      .order('scan_count', { ascending: false })
+      .limit(limit);
+    if (error) throw new Error(error.message);
+    return { available: true, rows: data || [] };
+  } catch (err) {
+    console.warn('[kristy] curation queue unavailable:', err?.message || err);
+    return { available: false, rows: [] };
+  }
+}
