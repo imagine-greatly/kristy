@@ -86,8 +86,14 @@ only by prompt.
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
-  at `kristyapproved.vercel.app` on a **GitHub-connected Vercel project**, so a push to
-  `main` auto-deploys with no staging gate and no manual step. There is no `.vercel/`
+  at **`kristyapproved.com`** — that is the canonical front door and the one thing to verify
+  against. `kristyapproved.vercel.app` is a secondary alias that serves the same build; this
+  file named it as production for months and it is not. **The distinction is load-bearing
+  because the SERVER only trusts origins in `CLIENT_ORIGIN`**, so the alias served the app
+  while every API call from it was blocked by CORS — which reads exactly like a broken
+  deploy when it is a doc error. Both are allowlisted now (2026-08-03). It runs on a
+  **GitHub-connected Vercel project**, so a push to `main` auto-deploys with no staging gate
+  and no manual step. There is no `.vercel/`
   locally and the project is not visible to the MCP integration's account — neither
   absence means what it looks like, and this file previously drew exactly that wrong
   conclusion ("nothing is deployed, pushing publishes nothing"). Verified 2026-07-30 by

@@ -14,10 +14,10 @@ blocked on code.
 
 | | |
 | --- | --- |
-| Web | `kristyapproved.com` — Vercel, GitHub-connected, a push to `main` deploys in about a minute |
+| Web | `kristyapproved.com` — Vercel, GitHub-connected, a push to `main` deploys in about a minute. `kristyapproved.vercel.app` is a secondary alias serving the same build; **CLAUDE.md called it production for months and it is not** |
 | API | `kristy-server-production.up.railway.app` — Railway project **`happy-enchantment`**, service `kristy-server`, Root Directory `server/` |
-| Corpus | `counter_cards`, 81 rows: 79 curated + 2 generated |
-| Tests | `cd server && npm test` → **420** |
+| Corpus | `counter_cards`, 82 rows: 81 curated + 1 generated |
+| Tests | `cd server && npm test` → **483**, plus six browser suites (§8.7) |
 
 > The `kristy-api.up.railway.app` URL in older docs is **dead**. Do not trust it.
 
@@ -625,3 +625,269 @@ it could not see the thing*. `nonEmpty` binds at the collection; this binds at t
 > missed the exact import that caused the incident. Sources are every tracked code file, the
 > same distinction `deployBoundary.test.js` makes when it scans `lib/`, `routes/` AND
 > `index.js`.
+
+---
+
+## 8. Two states and one loop — 2026-08-03
+
+Shipped in `b8dff0a`. The cart stopped being a tab and became the centre of a **planning
+surface**; a new full-screen **mode** carries the list through the store.
+
+### 8.1 The model
+
+**BEFORE THE STORE — the dashboard.** Plan: build the list, seed from last week, ask, look
+things up. Unhurried, two hands, at home.
+
+**IN THE STORE — shop mode.** One thing on screen, walking with you. Full viewport, entered
+deliberately from the dashboard hero, exited deliberately.
+
+Everything else is a tool you branch to from one of those two and come back from.
+
+### 8.2 The navigation, and what did NOT change
+
+Tab one is **Home**, not Cart. The cart is not a destination beside the others — it is what
+the dashboard is built around.
+
+**The bar survived, deliberately.** The Counter is the moat and has no other permanent entry
+point; demoting it from a fixed bar to a card on a scrolling surface is a real
+discoverability loss for the one thing a scanner app cannot copy. The Scan/Counter equality
+argument survives the move because `FillRow` asserts it on the home surface in
+byte-identical treatment — which is why it is its own module, imported twice, never copied.
+
+`initialMoment` still returns one value with no condition in it (`home`). Shop mode never
+hijacks boot: the mid-trip hero **is** the resume, one deliberate tap, and it names the aisle
+it returns to.
+
+### 8.3 The dashboard's five states
+
+Resolved from `cart.progress` and `cart.seedable`; no new stored concept.
+
+| state | hero says | action |
+| --- | --- | --- |
+| `empty` | What are you getting this week? | *(the field is the action)* |
+| `completed` | Same as last week? | Start from those N items |
+| `ready` | The list is ready. | **Start shopping** |
+| `midtrip` | Produce — 4 of 7 | **Resume shopping** |
+| `finished` | Trip done. | Finish the trip |
+
+**THERE ARE FIVE, NOT FOUR, AND THE FIFTH NEARLY SHIPPED AS A BUG.** A trip with every box
+ticked is not "mid-trip" and its answer is not RESUME, it is FINISH. Folded in, a shopper who
+had just walked their whole list would have been told to resume it.
+
+`CartHeader` was extracted from `CartMoment` and then **deleted**. That sequence is correct
+rather than churn: splitting it is what made the seam measurable, and rendering the
+composition showed the hero does not *relocate* it but *supersedes* it — title, standing and
+completion door all move up. `[data-complete-trip]` and `[data-seed-last]` now live on hero
+actions, which is why `loop.mjs` drives the Dashboard.
+
+### 8.4 Shop mode
+
+- **The type inverts.** The DO LINE leads at 17.5px; the item name demotes to an 11.5px
+  eyebrow. The cart has those at 15px/13.5px the other way round. An **unmatched** row keeps
+  its name in the lead slot — the inversion is a claim that the do line is more useful, not a
+  house style. One prose line per row is inherited from the cart, not relaxed.
+- **A spent instruction is demoted by SIZE, never opacity.** First draft: 11.5px at 50%,
+  which measures **2.90:1** where WCAG needs 4.5:1 — a shopper who checked something by
+  mistake could not read back what they had dismissed. 13px at full `textMuted` is 7.84:1.
+  Transparency removes contrast from exactly the people who need it and still looks fine to
+  whoever shipped it.
+- **Advancing is free scroll**, and the active section is **the one filling the most screen**
+  — not "the last section whose top crossed the viewport top", which a *collapsed* section
+  breaks: once produce is done it is 66px tall, so a shopper well into meat had the header
+  naming a section entirely off screen. The collapse and the header rule were each right
+  alone and wrong together.
+- **Two tap targets at opposite edges.** Check is 56px hard left (the 44px floor is a seated
+  minimum; this is pressed while pushing a trolley), card-open is 44px hard right, 256px
+  apart, and the large text between them is **inert**.
+- A finished section collapses to one line, still in place, one tap from reopening.
+
+### 8.5 THE OVERLAY PATTERN — the thing that decides whether it gets used twice
+
+**Every branch out of shop mode is an overlay. It is never unmounted, so "return to the same
+section and scroll position" needs no restoration code — there is nothing to restore.**
+
+This leaked **twice**:
+
+1. the Ask branch button wired to `setMoment('aisle')`;
+2. one layer down, `ScanSheet`'s own Ask → `askAboutScan` → `setMoment('chat')`, invisible
+   because the sheet looks identical on every surface.
+
+The chat ask is withheld in shop mode on its own merits too: chat is the deep-input surface
+for "the messy input taps cannot express", and a shopper holding a product with a verdict on
+screen does not want a thread. The counter ask is one tap away on the branch bar.
+
+`cartFree.test.js` forbids `setMoment` anywhere inside `ShopMode.jsx`, so this class cannot
+return a third time. Shop mode also moved to `zIndex: 45` — it was **60, tied** with
+`ScanSheet`, `UpgradeSheet`, `GoalSwitcher` and `CoachOnboarding`, staying underneath only by
+JSX source order.
+
+**A scan in shop mode acts on the list in front of the shopper**: resolving to a row already
+there offers "Check off [row]", anything else joins the current section. `rowMatch.js` is
+deliberately conservative — every content word of the row must appear in the product, a
+disagreeing state word (frozen/canned/dried/fresh) on both sides vetoes, and an ambiguous tie
+is **no match**. A miss costs one extra row; a wrong tick marks something never bought, and
+the list is a record that seeds next week and feeds the shopping profile.
+
+### 8.6 ONE ASK, ONE METER — and it had already drifted
+
+`CounterAsk` renders on the Counter index, the dashboard, and the shop-mode overlay.
+`useCardMeter` is the only thing that spends a read.
+
+**The meter was already two copies.** `AisleMoment` and `CartMoment` each carried their own
+`unlocked` map and `requestFull` — same call, same counter — agreeing only because somebody
+kept them agreeing, *under a comment in `CartMoment` warning about exactly that risk*. The
+overlay would have been the third. A card opened in an aisle must cost exactly what the same
+card costs from the couch, or the gate copy is false on one surface and nobody finds out.
+
+`cartFree.test.js` fails if any file outside `CounterAsk` calls `askCounter`, or any file
+outside `cardMeter` calls `fetchCounterFull` / `spendRead` / `readsSpent`, or if any of the
+three surfaces stops rendering `CounterAsk`.
+
+**The premium `Nudge` is removed** — the third upgrade ask on the cart, after the list-save
+button and the guest banner. It rendered whenever `premium === false` and the cart had rows:
+on open, as a banner, above the shopper's own list, every load. It carried no
+`[data-save-list]`, said nothing about saving, and was not in `GuestApp`, so every existing
+check missed it. **The checkable shape is an upgrade affordance whose render condition
+contains no ACTION** — tier alone is not a moment, because every non-member satisfies it on
+every render.
+
+### 8.7 The wake lock
+
+Shop mode only. Held while mounted, released on exit and on unmount.
+
+**THE RE-ACQUIRE IS THE FEATURE.** The browser releases the lock whenever the document hides,
+so acquire-once code passes every test written for it and then dies at the first
+notification — permanently, for the rest of the walk. `shop.mjs` **hides and restores the
+document for real** and asserts a NEW sentinel; it was verified to fail on acquire-once code
+before being trusted.
+
+Headless Chromium has the real API and rejects every request (no screen), which splits the
+verification honestly: the real API tests the degrade path, and a spec-faithful stub — one
+that **models the platform's release-on-hide**, since a stub without it would pass the very
+bug this catches — tests re-acquisition.
+
+Support, verified 2026-08-03: iOS/iPadOS Safari **16.4+**, Chrome 85+, Firefox 126+, Samsung
+14+, ~93% global. **Installed iOS PWAs were broken below 18.4** and `client/public/manifest.json`
+exists, so that is a live case: it degrades to a no-op, and no NoSleep.js video hack. Every
+rejection is silent — a shopper who cannot get a wake lock is not helped by being told about
+a browser API mid-aisle.
+
+### 8.8 The browser suites
+
+Six now. All must pass; `cart`/`composed`/`gate` need the API on `:3001`, `gate` also the
+client dev server on `:5174`.
+
+| | asks |
+| --- | --- |
+| `cart.mjs` | does the list surface WORK — targets, collapse, real pointer clicks |
+| `composed.mjs` | what it COSTS — line boxes, page height, the two honesty rules |
+| `loop.mjs` | build → check → complete → seed, through the Dashboard |
+| `gate.mjs` | the monetization gate, signed out |
+| `dash.mjs` | five dashboard states **in the real app frame**, hero rule, one-bone-action |
+| `shop.mjs` | shop-mode geometry, WCAG contrast off rendered colour, the collapse mid-scroll, the wake lock, return-to-position broken four ways |
+
+> **`vite build` COMPILES A DEAD REFERENCE HAPPILY.** Moving the ask out of `AisleMoment`
+> left a dangling `ask` reference behind — a live `ReferenceError` that took the **whole
+> Counter surface** down, through a clean build. Only `gate.mjs`, which drives the real
+> surface, caught it. A green build is not a rendered surface.
+
+### 8.9 Found by rendering, not by reasoning
+
+Every one of these passed review, passed the build, and was invisible until a browser drew it:
+
+- the spent-instruction demote measured 2.90:1 (§8.4)
+- `finished` had **zero** bone-filled actions and `completed` had **two** — one is an
+  absence, the other is two components each correct alone
+- the hero copy repeated **verbatim** below itself in the `empty` state, which is what turned
+  "wrap CartMoment in a dashboard" into "split it"
+- a collapsed section broke the sticky header (§8.4)
+- the dangling `ask` reference (§8.8)
+- shop mode tied at `zIndex: 60` (§8.5)
+
+---
+
+## 9. Still open
+
+### 9.1 `antithesisChime` does not catch its own docstring example
+
+The rule's own worked example — **"The half of the store with no label. The half that matters
+most."** — passes the check written to catch it. No test pins it.
+
+```
+"…no label. The half that matters most."         -> []      (clean)
+"…no label. The half that matters."              -> CHIME
+"…no label. The half that matters most of all."  -> []      (clean)
+```
+
+The cause is the `fresh.length <= 1` threshold in `counterCardLint.js`: the canonical
+instance has exactly **two** fresh words, and padding to three evades it again.
+
+**The fix, and the order it must be done in:** raise the threshold (`<= 2`), pin BOTH the
+canonical sentence and the "most of all" variant as tests, then **re-run the lint over all 82
+cards and report the new hits before acting on them**. It is a rhetorical-shape rule, which
+is weaker footing than anything else in that file — the same reason `copulaAbstraction` is
+report-only. **If the fix is noisy, say so and leave it**; a noisy failure blocks authoring,
+and this rule has never blocked a real defect.
+
+Note the deck copy it was written about is gone anyway: the Counter now opens with
+*"Where the guidance comes from / Every note on your list came from here. Ask for whatever it
+did not cover."*
+
+### 9.2 THE CORS GAP IN THE DISCIPLINE — nothing catches this class
+
+`deployBoundary.test.js` catches a path that exists on a laptop and not on the box.
+**Nothing catches an env var that makes the deployed client unable to reach the deployed
+server.** Every suite passes because they run against `localhost:3001`, where `CLIENT_ORIGIN`
+defaults to the right value.
+
+It surfaced by accident: driving the live surface after a push showed every API call from
+`kristyapproved.vercel.app` blocked by CORS. The product was fine — `kristyapproved.com` is
+the canonical domain and was correctly allowlisted — but **CLAUDE.md named the alias as
+production**, so the documented URL to verify against was the one that could not work. A doc
+error that reads exactly like a broken deploy, and the conclusion drawn from it ("production
+CORS is broken") was wrong.
+
+Both origins are allowlisted now (2026-08-03), on Railway `happy-enchantment` / `kristy-server`:
+
+```
+CLIENT_ORIGIN=https://kristyapproved.com,https://kristyapproved.vercel.app
+```
+
+Verified after the redeploy: both return their own `access-control-allow-origin`, an unknown
+origin still gets none (it is an allowlist, not a wildcard), and both domains render the
+dashboard at 390px with zero CORS errors.
+
+**What is still missing is the CHECK.** A post-deploy smoke test would have to hit the live
+API with the live web origin and assert the header comes back — which needs both deployed, so
+it cannot be a unit test. It is the only defect class here with no tripwire at all.
+
+### 9.3 A STALE Stripe price id is the one billing failure nothing can detect
+
+Unchanged and still true. Absent is safe and loud (`missingStripeConfig()` names the vars,
+billing 503s, no fallback anywhere in `lib/stripe.js`). **Stale is silent**: the id resolves
+to a real live price with the OLD amount and checkout charges it against a page showing the
+new one.
+
+The displayed prices are `$5.99` / `$44.99`, authored in `client/src/lib/pricing.js` — the
+effective monthly and the 37% saving are derived from those two numbers, never written down.
+**Recreate the Stripe Price objects and update `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL`
+whenever the displayed price changes.** They are not in this repo and no test can reach them.
+
+### 9.4 Phone sign-in — 10DLC / Twilio, and it gates revenue
+
+No account, no purchase. **10DLC brand + campaign were SUBMITTED and in verification at
+Twilio** as of 2026-08-02; nothing else is expected to block it.
+
+Remaining, all in the **Supabase dashboard** — Auth → Providers → Phone:
+
+1. enable the provider
+2. select **Twilio**
+3. fill **Account SID**, **Auth Token**, **Message Service SID** from the Twilio console
+
+**No server work, no env vars, no redeploy.** `SignInForm` already calls
+`supabase.auth.signInWithOtp({ phone })`, which is provider-agnostic. Do **not** add a Send
+SMS Hook back — Bird was deleted 2026-08-02 and the hook existed only to work around it.
+
+Until this lands, guests are offered **no plan buttons** (`purchasable={false}`): buying needs
+an account, an account needs a phone code, and a guest who tapped a plan would wait for a
+message that cannot arrive. **Restore the buttons the day sign-in works.**
