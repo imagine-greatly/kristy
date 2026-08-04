@@ -19,7 +19,7 @@ const GREETINGS = {
 const SUBTITLES = [
   'The box, and the counter it never came in.',
   'Say what the trip is for.',
-  'Scan the label, or ask about the counter.',
+  'Photograph the label, or ask about the counter.',
   'Meat, fish, eggs, produce, bulk. No barcode needed.',
 ];
 

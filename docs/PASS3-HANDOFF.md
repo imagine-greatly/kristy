@@ -966,3 +966,36 @@ the join key, `partialRead` honored, and an honest re-shoot ask. That is real an
 shippable and it will carry a re-shoot rate nobody enjoys. Do not invest past that on
 web — the 640×480 default alone likely explains a meaningful share of it, and building
 around an API that cannot be fixed is money spent on the wrong client.
+
+---
+
+## 12 — The landing page is a POSITIONING rewrite, not a copy fix
+
+Deferred deliberately. Do not touch `client/public/landing.html` until the capture flow
+has proven out on real photos.
+
+**The problem is that the page's argument is built on a distinction photo-first erases.**
+Its spine is the barcode boundary:
+
+- *"Yuka stops where the barcode stops. The counter still has a right answer."*
+- the **"Has a barcode / Has no barcode"** split panel — the page's central visual
+- *"Reads what has a barcode."* (the competitor column)
+- *"No barcode. Still a right answer."*
+- *"Name the trip. Scan the box. Ask the counter."*
+
+Every one of those is true today and stops being the story once Kristy reads labels
+first. "Yuka stops where the barcode stops" is an argument about coverage; photo-first
+means **Kristy doesn't stop there either**, which is a stronger claim and a different one.
+
+**FLAGGED: the half-and-half framing may not survive at all.** The labeled/unlabeled split
+was the organizing idea for the whole product, and it earned its place — but it is a
+statement about *what a scanner can read*, and photo-first is precisely the claim that
+the scanner boundary was never the real one. The counter is still the moat; the reason it
+is the moat may no longer be "no barcode."
+
+The replacement argument, if it holds after the photos: **a scanner looks up a number,
+Kristy reads the label.** That covers both halves of the store without needing the
+barcode boundary to carry it, and it is what the product actually does.
+
+**Sequence:** capture flow → measure the re-shoot rate → then rewrite the page, because
+if web capture turns out to be marginal the honest positioning is different again.

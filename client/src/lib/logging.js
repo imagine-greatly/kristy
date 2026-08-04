@@ -57,7 +57,7 @@ export async function sendBarcode({ barcode }) {
   if (body && body.message) {
     return { error: true, message: body.message, hasFood: false, macros: null, foods: [], insight: '' };
   }
-  throw new Error("Couldn’t reach the barcode service — try again.");
+  throw new Error("Couldn’t reach the product database — try again, or photograph the label.");
 }
 
 /* ───────── Photo ───────── */

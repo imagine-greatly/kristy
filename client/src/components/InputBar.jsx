@@ -60,7 +60,7 @@ export default function InputBar({
   return (
     <div className="inputbar">
       <div className={`inputbar__inner${focused ? ' focused' : ''}`}>
-        <button className="input-icon-btn" onClick={onBarcode} aria-label="Scan barcode">
+        <button className="input-icon-btn" onClick={onBarcode} aria-label="Scan a barcode">
           <BarcodeIcon />
         </button>
         {onVerdictFile && (
@@ -68,7 +68,7 @@ export default function InputBar({
             <button
               className="input-icon-btn input-icon-btn--verdict"
               onClick={() => verdictRef.current?.click()}
-              aria-label="Scan a label"
+              aria-label="Photograph the ingredient label"
               title="Kristy’s Verdict"
             >
               <VerdictIcon />

@@ -28,7 +28,7 @@ export default function FillRow({ onScan, onAskAisle }) {
         <button type="button" style={styles.fill} onClick={onScan}>
           <span style={styles.fillIcon}><BarcodeIcon size={20} /></span>
           <span style={styles.fillLabel}>Scan</span>
-          <span style={styles.fillSub}>A barcode or a label</span>
+          <span style={styles.fillSub}>The label, or a barcode</span>
         </button>
       )}
       {onAskAisle && (

@@ -25,17 +25,23 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
           : 'Ingredient by ingredient, against how you eat. Half the store, though.'}
       </p>
 
-      {/* ONE reflex action. The barcode button stays big and physical because it’s
-          the thing you hit one-handed with a box in the other. */}
+      {/* PHOTO IS THE PRIMARY ACTION NOW, and it is the reflex one: big, physical, the
+          thing you hit one-handed with a box in the other.
+
+          It used to be the barcode, and measurement is what moved it. Coverage came in at
+          19% on independently sourced products, and when the database did answer it was
+          wrong badly enough to put a gold seal on a corn-syrup ketchup. The photo has none
+          of those failure modes — right product, right market, right now — and it is truer
+          to what Kristy is. A scanner looks up a number. She reads the label. */}
       <div style={styles.actions}>
-        <button type="button" style={styles.primary} onClick={onScanBarcode}>
-          <BarcodeIcon size={24} />
-          <span>Scan a barcode</span>
+        <button type="button" style={styles.primary} onClick={() => fileRef.current?.click()}>
+          <CameraIcon size={24} />
+          <span>Photograph the label</span>
         </button>
 
-        <button type="button" style={styles.minor} onClick={() => fileRef.current?.click()}>
-          <CameraIcon size={17} />
-          <span>Photograph the label</span>
+        <button type="button" style={styles.minor} onClick={onScanBarcode}>
+          <BarcodeIcon size={17} />
+          <span>Scan a barcode</span>
         </button>
 
         <input
@@ -52,9 +58,10 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
         />
       </div>
 
-      {/* The label path’s real standing, stated once. Not error recovery: no barcode
-          database covers a whole store, and a photographed panel reads anything. */}
-      <p style={styles.aisleNote}>A photo of the ingredient panel reads anything a barcode misses.</p>
+      {/* THIS LINE WAS EXACTLY BACKWARDS once the photo became primary — it framed the
+          panel as the thing you do when the barcode misses. The barcode is the shortcut
+          now, and the honest thing to say about it is that it is fast when it works. */}
+      <p style={styles.aisleNote}>A barcode is faster when the database has it. The panel always reads.</p>
 
       {/* THE OTHER HALF, and it does not read as a fallback. "Nothing to scan?" framed
           the counter as what you do when the real feature fails. It is the differentiator:
