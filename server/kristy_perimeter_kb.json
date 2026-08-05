@@ -1094,7 +1094,7 @@
           "meaning": "Gently heated. Closer to raw than the commodity gallon, and widely sold."
         }
       ],
-      "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
+      "tier_note": "Drinking milk from a known herd is old practice with thin modern study behind it. The standard being held is about the farm, not a health claim.",
       "watch_out": [
         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
         "No named farm, no test results, no cold chain — that is not raw milk worth buying, that is just unpasteurized.",
@@ -4278,7 +4278,7 @@
         "FDA state raw-milk sale regulations"
       ],
       "cart_pick": "Plain raw kefir",
-      "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
+      "tier_note": "Culturing milk to keep it is among the oldest preservation methods and barely studied as a modern product. The case for it is the live ferment, not a health outcome.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw kefir worth buying",
@@ -4330,7 +4330,7 @@
         "USDA FoodData Central"
       ],
       "cart_pick": "Aged raw-milk cheddar",
-      "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
+      "tier_note": "Aging raw milk into cheese predates refrigeration and the sixty-day rule that now governs it. Preferring it is a standard about how the cheese was made, not a health claim.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw milk cheese worth it",
@@ -4379,7 +4379,7 @@
         }
       ],
       "evidence_tier": "time_tested",
-      "tier_note": "Traditional food with centuries behind it and thin modern study. This tier is Kristy’s sourcing standard, not a health claim.",
+      "tier_note": "Sprouting seeds for food goes back centuries with little modern study behind it. Buying them cold is a freshness standard, not a health claim.",
       "sources": [
         "FDA sprout safety guidance",
         "USDA FoodData Central"

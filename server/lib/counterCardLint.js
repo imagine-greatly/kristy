@@ -748,11 +748,29 @@ export function lintCard(card) {
 
   const tierNote = String(card?.tier_note || '').trim();
   if (!tierNote) {
-    fail('TIER_NOTE_MISSING', 'the tier chip has no reasoning behind it');
+    fail('TIER_NOTE_MISSING', 'the tier has no sentence carrying it on the free surface');
   } else if (echoesRubric(tierNote)) {
     fail(
       'TIER_NOTE_IS_RUBRIC',
       `the tier note repeats the rubric's definition instead of saying why THIS call carries this tier — "${tierNote.slice(0, 70)}…"`
+    );
+  }
+
+  /* THE NOTE MAY NOT POINT AT THE TIER, because there is nothing to point at. The chip that
+     named it was removed on 2026-08-04 (a classification rendered as a badge labels nothing),
+     and `tier_note` took over its job on the free summary. Four curated cards — raw_milk,
+     raw_kefir, raw_aged_cheese, sprouts_raw — shared one sentence reading "This tier is
+     Kristy's sourcing standard", which the moment the chip went became a definite reference
+     to a thing no longer on screen. Exactly the referent-less problem the chip had, inverted.
+
+     They also slipped `TIER_NOTE_IS_RUBRIC`: near-paraphrases of the rubric rather than the
+     rubric itself, and that check only catches the literal text. This one is structural. */
+  if (tierNote && /\b(this|the)\s+tier\b/i.test(tierNote)) {
+    fail(
+      'TIER_NOTE_SELF_REFERENCE',
+      `the tier note says "${tierNote.match(/\b(?:this|the)\s+tier\b/i)[0]}" — nothing on the ` +
+        'card names the tier any more, so the phrase points at nothing. Say what the claim ' +
+        'IS about this food instead.'
     );
   }
 

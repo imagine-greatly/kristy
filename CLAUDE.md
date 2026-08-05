@@ -85,6 +85,17 @@ only by prompt.
   thing the verdict engine sees. `kristy_perimeter_kb.json` (81 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
+- ⚠️ **`GuestApp` IS PRODUCTION. `App`'s own surface stack has never rendered for a real
+  visitor.** Phone sign-in is blocked on 10DLC, so `session` is null for everybody, so
+  `App.jsx` returns `GuestApp` at the `!IS_DEMO && !session` guard — hundreds of lines before
+  its dashboard/scan/aisle/haul branches. Consequences, and none of them are subtle: a bug in
+  `GuestApp` is a bug **every** shopper has; a fix in `App`'s branch reaches **nobody** until
+  sign-in lands; and reading `App.jsx` to learn "what a shopper sees" is reading the wrong
+  file — it is the natural one to open, it has the fuller wiring, and it is inert.
+  **Diagnose from `GuestApp.jsx` first.** This is how "Start shopping" was dead on production
+  while the correct handler sat in `App.jsx` being reviewed and re-reviewed. A full audit of
+  where the two surfaces disagree is queued and NOT done: the hero was found by accident and
+  nothing says it was the only divergence.
 - **`main` is production. Pushing publishes, in about a minute.** The web client is live
   at **`kristyapproved.com`** — that is the canonical front door and the one thing to verify
   against. `kristyapproved.vercel.app` is a secondary alias that serves the same build; this
@@ -954,6 +965,25 @@ was invisible until something rendered one**
   then-justification share has a ceiling; within-section closing duplication fails; verb
   distribution and intra-card contradiction are reported and never fail). Pass 3 must call
   `lintCard` before persisting a generated card.
+- ⚠️ **EDITING A CURATED CARD IS A TWO-STEP ACT, AND NOTHING REMINDS YOU OF THE SECOND.**
+  `routes/counter.js` reads `getAllCards(supabase)` — cards are served from the
+  **`counter_cards` table**, not from `kristy_perimeter_kb.json`. So a KB edit changes the
+  tests, the probes and every local fixture, and changes **nothing a shopper sees**, silently,
+  until `node server/scripts/migrateCounterCards.js` runs against the live database. Green
+  suite, correct file, unchanged product. The KB stays the source of record and the migration
+  is idempotent (upsert on slug), so re-running is always safe; `--dry-run` needs no
+  credentials and reports what would move.
+- **A TIER NOTE MAY NOT POINT AT THE TIER, and four cards did.** `raw_milk`, `raw_kefir`,
+  `raw_aged_cheese` and `sprouts_raw` shared ONE authored sentence saying "**This tier** is
+  Kristy's sourcing standard" — written when a chip named the tier beside it. The chip was
+  removed, and the phrase became a definite reference to something no longer on screen: the
+  referent-less problem the chip had, inverted. They slipped `TIER_NOTE_IS_RUBRIC` because
+  that check only catches the literal rubric text and these were near-paraphrases. Two guards
+  now, because neither defect is visible from one card: `lintCard` fires
+  **`TIER_NOTE_SELF_REFERENCE`** on `this tier`/`the tier`, and `paidBoundary.test.js` fails
+  if **any two cards share a tier sentence** — a sentence on four cards is the rubric wearing
+  a costume. `raw_milk` keeps "not a health claim" verbatim; `perimeter.test.js` requires it,
+  and it caught a rewrite that had drifted to "never about health."
 - **A fold is a removal AND a delete, in one operation.** The migration upserts on slug and
   never removes, so an entry deleted from the KB leaves its row alive in `counter_cards` —
   still retrievable, still matching on its own aliases, and no longer editable because the
@@ -1008,6 +1038,13 @@ was invisible until something rendered one**
 ---
 
 ## Open items
+
+- 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14** (written 2026-08-04
+  so a cold start needs no thread): list-creation audit A–E → design review → build (blocked
+  on explicit approval) · scan card bottom sheet · photo thumbnail · attachment-eyebrow report
+  · **GuestApp/App divergence audit** · **harness sweep for the props-supplied pattern** ·
+  Swift prerequisites (§10's four content duplications, then `SWIFT-SPEC.md`). §13 of the same
+  doc holds this session's findings in full.
 
 - ⚠️ **One migration outstanding.** Verified against the live Supabase in `server/.env`
   on 2026-07-30: `scanned_products`, `shopping_lists`, `haul_scans`, `verdicts`,

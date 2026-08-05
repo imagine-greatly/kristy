@@ -999,3 +999,261 @@ barcode boundary to carry it, and it is what the product actually does.
 
 **Sequence:** capture flow → measure the re-shoot rate → then rewrite the page, because
 if web capture turns out to be marginal the honest positioning is different again.
+
+
+---
+
+## 13 — The session of 2026-08-04: four checks that could not see their own subject
+
+Everything below shipped. The through-line is one defect class in four costumes: **the check
+passed because it could not see the thing.** That is the same family as an assertion over an
+empty collection and a commit that omits its file, and it now has four more members.
+
+### 13.1 GuestApp is production. App has never rendered for a real visitor.
+
+**`App.jsx`'s dashboard branch is unreachable in production and has been the whole time.**
+Phone sign-in is blocked on 10DLC carrier registration, so `supabase.auth` never mints a
+session, so `session` is null for **every** visitor, so `App.jsx:975` (`!IS_DEMO && !session`)
+returns `GuestApp` — hundreds of lines before its own surface stack is reached.
+
+This is not a subtle inference. It means:
+
+- Any bug in `GuestApp` is a bug **every** shopper has.
+- Any fix in `App`'s branch reaches **nobody** until sign-in works.
+- Reading `App.jsx` to understand "what a shopper sees" is reading the wrong file. It is the
+  natural file to open, it is the one with the full wiring, and it is inert.
+
+**Read `GuestApp.jsx` first when diagnosing anything a shopper reports.** An audit of where
+the two surfaces disagree is queued below and has not been done — the hero was found by
+accident, and nothing says it is the only divergence.
+
+### 13.2 The dead hero, and why nothing anywhere caught it
+
+"Start shopping" on the dashboard painted, accepted taps, and did nothing on
+kristyapproved.com. `Resume shopping` too. So did `Finish the trip`, unreported only because
+reaching it needs every box ticked.
+
+**Cause.** `GuestApp.jsx` rendered `<Dashboard>` and passed no hero handlers at all —
+`onStartShopping`, `onResume`, `onComplete` were simply absent. `Dashboard`'s `Hero` gated
+its button on `action &&`, a string literal that is always true, then bound
+`onClick={onAction}` to whatever it was handed. React renders `onClick={undefined}` as a
+button with no listener.
+
+**AN INERT CONTROL IS INVISIBLE TO EVERY CHECK THAT LOOKS FOR FAILURE, BECAUSE IT DOES NOT
+FAIL.** Nothing throws. No console error, nothing for the error boundary, nothing for the
+build. `vite build` was clean. The suite was green. The button was on screen, correctly
+labelled, correctly styled, doing nothing. **There is no artifact of this defect except a
+shopper tapping it.**
+
+**Fix.** `Hero` now requires `action && onAction &&`. An unwired action **vanishes** rather
+than going inert — which is loud, because `dash.mjs` already counts exactly one bone-filled
+action per state, so the defect converts into a failure of a test that already existed. That
+also gives the guest `finished` state its correct shape for free: no account, no `trips` row,
+so no completion door rather than one that cannot file anything. `ShopMode.jsx:344` already
+guarded its finish button this way, so the conjunction is the house pattern, not an invention.
+
+Found alongside: `App.jsx` called `setMoment("list")` and there is no `'list'` moment. Import
+navigated to a surface with no branch and painted nothing. A dead state name is an inert
+button that has already been pressed.
+
+### 13.3 dashHarness supplied the props a real call site owns
+
+**`dash.mjs` mounts `Dashboard` through `dashHarness.jsx`, which constructs the hero handlers
+itself.** So it is *structurally incapable* of noticing a call site that forgets them. It was
+green throughout, measuring a composition the product does not perform.
+
+This is worse than a coverage gap. A gap is an area nobody tested; this is a test that
+**appears** to cover the thing and cannot, because the harness supplies exactly the part
+that was broken. No amount of adding views to that harness would have found it.
+
+> **A harness proves the COMPONENT. Only the real call site proves the WIRING.**
+
+`client/test/heroAction.mjs` mounts the real `GuestApp` and passes only the two props `App`
+passes it. Every hero handler under test comes from `GuestApp`'s own source or not at all. It
+was verified to fail on the pre-fix code, reproducing the production symptom exactly: button
+renders, reads correctly, **throws nothing**, shop mode never opens.
+
+`server/lib/heroWiring.test.js` holds the same invariant with no browser, on every commit:
+every `<Dashboard>` call site wires the two actions that enter shop mode, `Hero` keeps the
+conjunction, `GuestApp` mounts `ShopMode`, and no surface sets a moment nothing renders. Four
+of its five assertions fail on the old code.
+
+**A sweep for this pattern across every other harness is queued and NOT done.** `cartHarness`,
+`shopHarness`, `loopHarness`, `composedHarness` and `skim-harness` all construct props. Each
+one is a candidate for the same blindness.
+
+### 13.4 The paid boundary had no test at all
+
+`summarize()` / `forViewer()` in `counterCards.js` are the money boundary — the only thing
+between a card's depth and an unauthenticated caller. **They had zero coverage.**
+
+`tier_note` was moved out of `DEPTH_FIELDS` and **515 tests passed.** Nothing broke, but
+nothing *could have reported it* either: the suite was silent about that boundary in both
+directions, so it would equally have passed if `why` had been moved. A field crossing the
+paid boundary is the most consequential edit in this repo and it was unobserved.
+
+`server/lib/paidBoundary.test.js` is the correction, over the real corpus: the seven depth
+fields never reach a free viewer, essentials stay full, the teaser ships geometry and counts
+rather than withheld words, and **every card tells a free reader what kind of claim it is.**
+
+> **When a rule is the product's economics or its promises, the absence of a failing test is
+> not evidence. Ask what would have gone red.**
+
+### 13.5 Tier chips became tier sentences, and the swap was bigger than the complaint
+
+The chip read "Credible concern" above a card about buying organic — a classification
+rendered as furniture, naming a claim the card never made, with nothing to attach to.
+Removed from `CounterCard`, `ShopMode`'s sheet and `PerimeterAnswer`. **The list attachment
+never had one**: `CartMoment.jsx:211` had already reasoned it out ("a list is things to buy;
+a tier is a claim about evidence, and on a row it is furniture raising a question nobody is
+asking mid-task").
+
+**The chip could not simply go.** Non-negotiable #6 requires a reader to ALWAYS know whether
+a claim is settled science, a credible concern or a standard — and `tier_note` was PAID.
+Only the eight essentials are ever full, so removing the chip alone would have left **73 of
+81 cards** stating a verdict to a free shopper with no tier signal whatsoever. So `tier_note`
+left `DEPTH_FIELDS` in the same change and renders below the do line. A **swap of one free
+signal for a better one**, not a widening: the chip was already free, and `why` / `look_for`
+/ `watch_out` are untouched.
+
+**THE DISTRIBUTION IS WHY THIS WAS BIGGER THAN THE OBJECTION**, and it was measured, not
+assumed:
+
+| tier | cards |
+| --- | --- |
+| `established` | 49 |
+| `kristys_standard` | 24 |
+| `time_tested` | 5 |
+| `credible_concern` | **3** |
+
+The label being objected to was on **three** cards. The other 78 read "Settled" /
+"Whole-food standard" / "Time-tested" — and had the same referent problem, less visibly. A
+complaint about one label was really a complaint about the form.
+
+### 13.6 Four tier_notes pointed at the chip that had just been deleted
+
+`raw_milk`, `raw_kefir`, `raw_aged_cheese` and `sprouts_raw` — 4 of the 5 `time_tested`
+cards — shared **one identical authored sentence**:
+
+> "Traditional food with centuries behind it and thin modern study. **This tier** is Kristy's
+> sourcing standard, not a health claim."
+
+The moment the chip went, "This tier" became a definite reference to something no longer on
+screen: **the referent-less problem the chip had, inverted**, and shipped to production for
+one commit. They also slipped `TIER_NOTE_IS_RUBRIC`, which only catches the literal rubric
+text — these were near-paraphrases.
+
+Each now carries a distinct sentence naming what the tradition claim actually is for that
+food. `raw_milk` keeps "not a health claim" **verbatim** because `perimeter.test.js` requires
+it: that is the one card where a tier note reading as a safety rating is least acceptable,
+and the guard caught a first draft that had drifted to "never about health."
+
+Two new guards, because neither defect is visible from a single card:
+
+- `lintCard` → **`TIER_NOTE_SELF_REFERENCE`**, structural, fires on `this tier` / `the tier`.
+- `paidBoundary.test.js` → **no two cards may share a tier sentence.** A sentence on four
+  cards is the rubric wearing a costume.
+
+### 13.7 A KB edit does NOT reach production on its own
+
+**`routes/counter.js` reads `getAllCards(supabase)` — cards are served from the
+`counter_cards` TABLE, not from `kristy_perimeter_kb.json`.** Editing the KB changes the
+tests, the probes and the local fixtures, and changes **nothing a shopper sees**, silently,
+until `node server/scripts/migrateCounterCards.js` runs against the live database.
+
+The KB remains the source of record and the migration is idempotent (upsert on slug), so
+re-running is safe. `--dry-run` needs no credentials. After the fix above: `81 curated cards
+— 0 inserted, 81 updated`, verified by fetching the four slugs from the live API and
+asserting four distinct sentences and no "this tier".
+
+**Editing a curated card is a two-step act. The second step is not optional and nothing
+reminds you.**
+
+### 13.8 A threshold that would have mandated the defect
+
+The bone buttons were reduced (a full-width slab of warm bone on near-black green reads as
+harsh, and the harshness is **area**, not hue — gold at that size would be worse, because
+gold is identity and a control is not where identity gets spent).
+
+`dash.mjs` then failed: it held the TopBar goal chip to **a quarter of the hero action's
+area** — a ceiling calibrated when the action was a 350x56 slab and nothing was near it.
+Sized as an action, satisfying that ratio would have required a ~308px-wide button. **The
+test would have mandated the banner as the price of passing.**
+
+The number went; the intent was tested directly. Dominance on that surface comes from FILL,
+not square pixels. A first rewrite asserted the chip had *no* background and failed — the
+chip **is** filled (`rgb(22,48,31)`), it just recedes into the ground. Transparency was never
+the property. It now reads relative luminance off rendered colour: **action 0.816, chip
+0.024**, a 34x separation that no resize can fake, plus a strict area inequality so a chip
+still cannot grow into a comparable target.
+
+> When a measured rule blocks a deliberate change, check whether the rule is measuring its
+> own intent or a number that was true of the old design.
+
+---
+
+## 14 — The open queue, in order
+
+Written 2026-08-04 so tomorrow starts cold. Nothing below is started unless stated.
+
+**Done this session (shipped, on `main`, verified on production):** the dead hero + its two
+tests · tier chips → sentences + `paidBoundary.test.js` · bone button sizing · scan tab copy ·
+the four self-referencing tier_notes + two new guards.
+
+1. **List creation audit, A–E. Report only, stop after.** — *next, not started.*
+   - **A. Compose as it stands.** Is `/api/list/compose` one-shot, or can it take a follow-up
+     against an existing list? What does `applyCompose` do — can it handle "no seafood" as an
+     *instruction* rather than a new list? **If refining rebuilds from scratch, that is the
+     core work and everything else is layout.**
+   - **B. The two lists.** Run compose as it exists today, verbatim output for: a parent
+     feeding four kids, no time, wants them to eat it; a college student, no money, one pan.
+   - **C. Household context.** What does `user_goals` capture about household size, who is
+     fed, cooking time, budget? Does compose use any of it? Propose the smallest set of facts
+     that would make the two lists in B actually differ, and where they get asked. **From
+     goals ONCE, never per trip.**
+   - **D. The four inputs.** `listVision.js` — what it does, where it is called, whether
+     anything in the UI reaches it; accuracy on a Notes screenshot, printed handwriting,
+     rushed cursive, with the failure mode for each; items-with-quantities or a sentence?
+     Voice — what web speech recognition actually does **on iOS Safari, verified not assumed**;
+     good enough to feed compose directly, or must it land in the field for review? Type and
+     same-as-last-week exist.
+   - **E. One camera, three targets.** Written list, ingredient panel, barcode are one capture
+     flow. Share a component? What does that do to the queued capture work?
+2. **List creation design review.** Real component renders at 390px, no hand-built HTML — a
+   for-approval mock renders the real component or it is not evidence (§7). Empty state and
+   list state; ranked inputs **recommended from the audit's findings, not assumed**; how a
+   refinement renders its change; small work vs new structure. **Stop after the review.**
+3. **Build list creation. BLOCKED ON EXPLICIT APPROVAL of #2.** Order: iterative compose
+   first, then the room with typing, then photo sharing the capture component, then voice.
+   **Stop after iterative compose** and demo a refinement end to end — build a list, say "no
+   seafood", show what changed. Real pointer clicks. **Nothing pushed until seen.**
+4. **Scan card redesign — bottom sheet, not the 3,000px takeover.** Summary + full read on
+   tap, camera stays live, approved state is the SMALLEST state in the app. Yuka's shape:
+   photo, name, verdict, detail on tap. *(Was queued in conversation and recorded nowhere
+   until 2026-08-04 — see CLAUDE.md open items.)*
+5. **Scan card thumbnail from the shopper's photo.** On a photo read the image slot is empty;
+   OFF has no stored image for a product read off a panel. Client-side crop and downscale,
+   **in memory for the session only, nothing persisted, nothing uploaded beyond the vision
+   call that already happens** — the no-images-stored rule is unchanged and must be
+   *confirmed, not assumed*. First deliverable is a report: where the slot is fed today and
+   what it costs.
+6. **List attachment eyebrow — REPORT ONLY, DO NOT CHANGE.** Eyebrow + do line + chevron is
+   three lines. Does the eyebrow earn its place? "PICKING PRODUCE" above "Smell the stem end
+   on anything that ripens after picking" is a label on an instruction that may not need one.
+   Show the list at 390px **with and without**, real component via `buildFixture.mjs`.
+7. **GuestApp / App divergence audit.** §13.1. The hero was found by accident. Enumerate
+   every place the two surfaces disagree and decide which is right — `GuestApp` is what
+   ships, so any divergence is a production defect until proven deliberate.
+8. **Harness sweep for the props-supplied pattern.** §13.3. `cartHarness`, `shopHarness`,
+   `loopHarness`, `composedHarness`, `skim-harness` all construct props. For each: does it
+   supply something a real call site owns? Where it does, the fix is a test against the real
+   surface, not another view in the harness.
+9. **Swift prerequisites.** Move the four content duplications in §10 server-side
+   (`GOAL_TEMPLATES`/`FOCUS_ITEMS`, `coachGoals.js`, tier→prose written five times,
+   `verdictRamp.js` strings), each with the `listSectionsMirror.test.js` treatment where a
+   mirror is unavoidable. **Then** write `docs/SWIFT-SPEC.md`.
+
+**Still blocking revenue, unchanged:** phone sign-in. 10DLC brand + campaign submitted and in
+verification at Twilio. Remaining work is Supabase dashboard only — Auth → Providers → Phone
+→ enable, select Twilio, fill Account SID / Auth Token / Message Service SID. No server work,
+no env vars, no redeploy. **Until it lands, §13.1 holds: every visitor is a guest.**

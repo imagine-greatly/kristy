@@ -93,6 +93,33 @@ test('the tier sentence is a sentence, not the chip growing back', () => {
   }
 });
 
+test('no two cards share a tier sentence, and none points at the tier', () => {
+  /* CORPUS-LEVEL, because neither defect is visible from one card. Four cards shared a
+     single sentence — "Traditional food with centuries behind it… This tier is Kristy's
+     sourcing standard" — which was invisible to per-card lint by construction, and became
+     a dangling reference the moment the chip it named was removed. `lintCard` now catches
+     the self-reference; only a sweep catches the duplication. A sentence on four cards is
+     the rubric wearing a costume, and the whole point of `tier_note` is that it says why
+     THIS call carries THIS tier. */
+  const byNote = new Map();
+  for (const c of CARDS) {
+    const n = String(c.tier_note || '').trim();
+    assert.ok(
+      !/\b(this|the)\s+tier\b/i.test(n),
+      `${c.slug} says "${n.match(/\b(?:this|the)\s+tier\b/i)?.[0]}" — nothing names the tier ` +
+        `on the card any more, so it points at nothing.`
+    );
+    byNote.set(n, [...(byNote.get(n) || []), c.slug]);
+  }
+  for (const [n, slugs] of byNote) {
+    assert.equal(
+      slugs.length,
+      1,
+      `${slugs.length} cards share one tier sentence (${slugs.join(', ')}): "${n.slice(0, 60)}…"`
+    );
+  }
+});
+
 test('essentials stay full for everyone and never touch the meter', () => {
   for (const card of ESSENTIALS) {
     const out = forViewer(card, { premium: false, unlocked: false });
