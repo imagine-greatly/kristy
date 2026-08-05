@@ -17,13 +17,24 @@
 > deleted — no text entry anywhere, 44px targets sized for one-handed use with a trolley
 > (§6).
 >
-> **If it comes back, it comes back with deterministic scaling in code** — a one-person base
-> amount multiplied by headcount, rather than the model scaling it. That is the ONE argument
-> for a structured `qty`+`unit` schema over the free string this proposal otherwise
-> recommends, because multiplying "1 dozen" requires parsing it. **Measure deterministic vs
-> prompt-driven scaling BEFORE choosing the shape.** Everything below stands as the record of
-> what was measured; the recommendation in §1 is conditional on that measurement, not
-> settled.
+> **If it comes back, these four are already settled. Do not re-derive them.**
+>
+> 1. **Measure deterministic scaling in code FIRST** — a one-person base amount multiplied by
+>    headcount, rather than the model scaling it. That is the ONE argument for a structured
+>    `qty`+`unit` schema over a free string, because multiplying "1 dozen" requires parsing
+>    it. The §1 recommendation is conditional on this measurement, not settled.
+> 2. **A free string is otherwise right.** The enum did not prevent a bad amount, it prevented
+>    an honest one: the model's best answer for salt and pepper was **"as needed"**, which
+>    `qty`+`unit` could not express and turned into a wrong `1 pack`. It also went **off a
+>    14-value enum on the first run** (`bottle`, for olive oil).
+> 3. **Separate field, NEVER folded into the name.** Measured: `rowMatch` loses **3 of 4**
+>    matches, so a scan can no longer tick the row off; `canonicalItem` keys differ **5/5**,
+>    which fragments `listBaseline`'s frequency and resets every stored shopping profile.
+>    (`matchItemToCard` survives, because alias containment is robust to a prefix — that one
+>    place is not enough to justify it.)
+> 4. **Editing an amount is a third interaction kind and it is UNBUDGETED.** The cart has only
+>    ever checked and deleted — no text entry anywhere, 44px targets sized for one-handed use
+>    with a trolley. Scope it separately from emitting the amount.
 >
 > **Headcount stays out of onboarding until something can scale with it.** Capturing a fact
 > the output visibly ignores is the failure mode named for photo import: the server writing

@@ -1240,14 +1240,56 @@ the test holds the **logic**, including a drift guard that fails if the suite-fi
 stops matching the corpus git actually tracks. A regex that has drifted off the naming
 convention is a comment asserting an invariant, in executable clothing.
 
-**AND THE COMMIT NEVER HAPPENED.** Separately and on the same day: the fixes above were
-reported committed and pushed, and `HEAD` had not moved (`fcad019`), `main` was level with
-`origin/main`, the reflog showed no new entry, and both files were still untracked. Nothing
-was on `main`, so nothing deployed, while the working tree was green and the work looked
-done. **`commitGuard` runs BEFORE a commit and says nothing about whether one landed** —
-that is `git log` / `git status` afterwards, and it is the one step in this whole chain with
-no guard at all. The belief that a commit happened is itself unverified, and on a repo where
-`main` auto-deploys, "pushed" and "believed pushed" look identical from inside the editor.
+See §13.10 — on the same day, the belief that this commit *had* happened turned out to be
+the next member of the family.
+
+### 13.10 "Pushed" and "believed pushed" are indistinguishable from inside the editor — IN BOTH DIRECTIONS
+
+**The last member of the family, and the only one that is symmetric.** Every other member is
+a check that could not see its subject. This one is a *person* who cannot see it, and the
+error goes both ways. Twice on 2026-08-05, one hour apart:
+
+| | belief | reality |
+| --- | --- | --- |
+| first | the refinement fixes were committed and pushed | `HEAD` was `fcad019`, unmoved. Reflog empty of it. Both files untracked. **Nothing deployed** — the destructive `no seafood` bug was still live. |
+| second | nothing had landed, `HEAD` was still `fcad019` | `HEAD` was `c956ab6`, **five commits ahead**. `ls-remote` agreed. GitHub's API agreed. Working tree clean. |
+
+The two mistakes have opposite signs and the identical cause: **the state is not visible from
+where the work happens.** A green suite, a clean-looking tree and a confident summary are
+produced the same way whether or not a commit exists — and the second case shows the failure
+is not carelessness about staging, because there was nothing left to stage. It is that
+"did this land" is a question about a remote, answered from memory.
+
+**Neither direction is cheap.** Believing it landed leaves a known-destructive bug in
+production under a summary saying it is fixed. Believing it did not leaves work being redone
+— and redoing a commit is not harmless on a repo where `main` auto-deploys.
+
+**`commitGuard` cannot help with either.** It runs BEFORE a commit; its whole subject is what
+a commit would carry. Nothing in this repo checks that a commit *happened*, and nothing can,
+because the answer lives on a server.
+
+**So it is a procedure, not a guard.** After any commit that claims a feature, and before
+reporting one landed:
+
+```
+git rev-parse HEAD          # did HEAD actually move
+git reflog -3               # is there a commit entry for it
+git ls-remote origin main   # ask the SERVER, not the local remote-tracking cache
+gh api repos/<o>/<r>/contents/<path>?ref=main   # read the file back off the remote
+```
+
+`git status -sb` showing `## main...origin/main` is **not** sufficient: it compares against a
+cached ref that a failed push leaves untouched. The last line is the only one that proves the
+content is there rather than the pointer.
+
+**Verified on production the same way, and that is the real end of the chain** — a push is
+not a deploy. Against `kristy-server-production.up.railway.app`, live, via the deployed
+client's own endpoint: `"no seafood"` in the destructive `mode:"build"` returned **7 rows from
+9** (pre-fix: 0); the category bridge removed both seafood rows from a list of the shopper's
+OWN typed rows; `"make this healthier"` over their own junk returned **"Nothing came off.
+Diet soda, doritos and oreos stayed. Rows you added come off with a tap."**; and a
+`"no money"` build came back with no price label. **Behaviour on the live box is the only
+evidence a fix shipped.**
 
 ---
 
