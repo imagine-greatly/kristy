@@ -2,8 +2,13 @@
 
 **Read this first, then `SWIFT-SPEC.md`.** This document is the state; that one is the spec.
 
-`main` is at **`5ba19fb`** and pushed. `cd server && npm test` → **572 pass, 0 fail**.
-`cd client && npx vite build` → clean.
+`main` is at **`ec41f89`** and pushed. `cd server && npm test` → **573 pass, 0 fail**.
+`cd client && npx vite build` → clean. Working tree clean.
+
+**One live warning before you start:** the guest endpoints are rate-limited to **8 inference
+calls per hour per IP**. I exhausted that budget at the end of this session by using
+`/api/guest/list/import` as a deploy-readiness probe — don't do that; poll `/api/health`, which
+is free. It means the last item in §2 is deployed but unread.
 
 Two facts that change how you read everything else:
 
@@ -82,7 +87,14 @@ or by real HTTP.** Treat it as unproven.
   UI is currently near-unreachable in practice.**
 - **`onImport` in `GuestApp`** — the control now renders, but no one has tapped it on production.
   The endpoint behind it *is* verified.
-- ✅ **Guest import via the TEXT path — VERIFIED on production** (see §1).
+- ✅ **Guest import via the TEXT path — VERIFIED on production**: HTTP 200, 4 items in, 2
+  sharpened, correct summary.
+- ⚠️ **The "no completeness claim on a photo import" wording is DEPLOYED BUT NOT READ BACK.**
+  The code is on `main` (`ec41f89`) and Railway auto-deploys, and the rule is covered by
+  `listImport.test.js` in both directions — but I exhausted the guest endpoint's 8-per-hour IP
+  budget using it as a deploy-readiness probe, so the production read returns 429. **First thing
+  to check on a fresh IP:** a photo import's summary must not contain the word "all"; a typed
+  one still should.
 - **`severity_label` on the ingredient payload.** Server-side move done, client reads it,
   no production read.
 - **`tierBucket` single-sourcing** — pinned against the server by `tierBucketMirror.test.js`;
@@ -140,9 +152,27 @@ session and it had not been updated.
 
 ### Not started
 
-4. **List creation design review** — real component renders at 390px, no hand-built HTML.
-   Then build, in order: iterative compose, the room with typing, photo, voice. *The audit
-   feeding this is done: `LIST-CREATION-AUDIT.md`.*
+4. ⭐ **LIST CREATION — THE ONE SUBSTANTIAL REACT FEATURE STILL UNBUILT.** Everything else in
+   this queue is a defect, a report, or a Swift decision; this is the only remaining piece of
+   *product*. Read `LIST-CREATION-AUDIT.md` before designing anything.
+
+   **The audit's central finding, which reframes the whole item: compose ALREADY REFINES.**
+   `mode:'edit'` over an existing list returns a removal, not a rebuild — measured, and now
+   verified on production (§1). So this is **a wiring job plus layout, not an engine build.**
+   What is missing is that nothing in the UI can reach it:
+   - There is exactly ONE compose call site in the entire client (`TripQuestion.jsx:50`) and it
+     hardcodes `mode: 'build'`.
+   - `TripQuestion` renders only when the list is **empty**, so the moment there is one row there
+     is no text input at all — the only textual affordance left is `+ Add an item`, a literal
+     append with no model.
+   - The other door, the chat cart branch, is `/api/chat` and **`/api/guest/chat` has no cart
+     branch** — so on production it is unreachable (item 3).
+
+   **The three engine bugs that would have made refinement destructive are fixed and verified**
+   (§1), so the path is now safe to open. Remaining order: **design review first** — real
+   component renders at 390px, no hand-built HTML, because a for-approval mock that is not the
+   real component is not evidence (`PASS3-HANDOFF.md` §7.1). Then iterative compose, the room
+   with typing, photo (sharing the capture component), voice last — and voice is Swift-only.
 5. **Scan card redesign — bottom sheet, not the 3,000px takeover.** Summary + full read on tap,
    camera stays live, approved state the SMALLEST state in the app. **In SwiftUI this is
    `presentationDetents` over a live camera — doing it in Swift first is defensible.**
