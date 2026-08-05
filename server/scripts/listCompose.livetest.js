@@ -61,6 +61,25 @@ try {
   ck('build: no price (budget ≠ dollar figure)', !PRICE_RE.test(textOf(build)), build.summary);
   ck('build: no health claim', !HEALTH_RE.test(textOf(build)), build.summary);
   console.log(`\n  e.g. build → ${namesOf(build)}\n       summary → ${build.summary}`);
+
+  /* 4) THE SHOPPER'S OWN WORDS MENTION MONEY, which is the case case 3 could not reach.
+        Case 3 already carries `constraints: ['budget']` and this same PRICE_RE, and it
+        passed 10/10 while every run of this persona put "Cheap protein and carbs" in the
+        summary. The difference is the INSTRUCTION: "three high-protein dinners for four"
+        never mentions money, so nothing pulled the word out of the prompt.
+
+        A constraint in the profile and money in the sentence are two different triggers,
+        and only the second one reproduced it. Measured 4/4 before the prompt fix. */
+  const broke = await composeListEdit({
+    instruction: 'college student, no money, one pan',
+    mode: 'build',
+    currentItems: [],
+    goal: null, focuses: [], hardLines: [], constraints: ['budget', 'cooking_for_one'],
+  });
+  ck('broke: composed a real cart', broke.add.length >= 6, `${broke.add.length} items`);
+  ck('broke: no price LABEL when the shopper says "no money"', !PRICE_RE.test(textOf(broke)), broke.summary);
+  ck('broke: no health claim', !HEALTH_RE.test(textOf(broke)), broke.summary);
+  console.log(`\n  e.g. no-money → ${namesOf(broke)}\n       summary → ${broke.summary}`);
 } catch (err) {
   ck('live run completed without error', false, err?.message || String(err));
 }

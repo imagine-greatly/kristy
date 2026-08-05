@@ -57,6 +57,42 @@ test('the compose system prompt forbids price + health claims and lists the sect
    The cart is the OUTPUT of what they said, not a template wearing their name. These
    pin the three rules that make that true, so a future prompt edit can't quietly
    restore template-first behaviour. */
+/* A PROMPT MAY NOT MODEL THE WORD IT BANS.
+   Measured 2026-08-05: every budget-constrained generation put "Cheap protein and carbs"
+   in the summary — 4 runs of 4 — against the prompt's own rule forbidding a
+   "cheap/expensive" label. The livetest already greps for `\bcheap(er)?\b` AND already
+   exercises a `budget` constraint, and it passed 10/10, because its instruction never
+   mentions money and the shopper's own words are the trigger.
+
+   The root cause is not the missing case, it is that the prompt used the banned word twice
+   as its OWN vocabulary for what to do — "cheaper-per-nutrition SELECTION" and "budget →
+   cheaper staples" — while forbidding it in the same breath. A model given the word in a
+   prescription will use the word. Naming it inside the prohibition is necessary and stays;
+   using it anywhere else is the defect, and that distinction is what this checks.
+
+   This is the half that runs on every commit. The live half is case 4 of
+   scripts/listCompose.livetest.js, because only a real call can catch real output. */
+test('the compose prompt never uses "cheap" outside the prohibition that names it', () => {
+  // Strip the quoted ban, which HAS to say the words in order to forbid them.
+  const withoutBan = LIST_COMPOSE_SYSTEM.replace(/never the words "cheap" or "expensive"[^\n]*/gi, '')
+    .replace(/"cheap\/expensive"/gi, '')
+    .replace(/"cheap"|"expensive"/gi, '');
+  const leaks = withoutBan.match(/\bcheap(er|est)?\b/gi) || [];
+  assert.deepEqual(
+    leaks,
+    [],
+    'the prompt prescribes the word it forbids — a model handed "cheaper staples" writes "cheap protein"'
+  );
+});
+
+test('the compose prompt gives budget a vocabulary of its own, not a price label', () => {
+  // A ban with no substitute is a gap the model fills from its own habits. These are the
+  // words it should reach for instead.
+  assert.match(LIST_COMPOSE_SYSTEM, /\bstretch(es)?\b/i, 'budget needs the words to use, not only the ones to avoid');
+  assert.match(LIST_COMPOSE_SYSTEM, /dried beans/i, 'and a concrete selection example');
+  assert.match(LIST_COMPOSE_SYSTEM, /NO PRICE/);
+});
+
 test('the compose prompt makes the shopper drive and forbids padding', () => {
   assert.match(LIST_COMPOSE_SYSTEM, /THE SHOPPER DRIVES/);
   assert.match(LIST_COMPOSE_SYSTEM, /DO NOT PAD/);
