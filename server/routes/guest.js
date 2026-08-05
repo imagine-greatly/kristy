@@ -29,6 +29,20 @@ import {
 
 const router = Router();
 
+/* A cart arriving as a multipart text field is a STRING; as JSON it is already an object.
+   Both doors of the guest import take a cart in the body, so this normalises before
+   sanitizeList sees it. Never throws — an unparseable field is simply no cart. */
+function parseListField(v) {
+  if (!v) return null;
+  if (typeof v !== 'string') return v;
+  try {
+    return JSON.parse(v);
+  } catch {
+    return null;
+  }
+}
+
+
 /* ───────────────────────── Neutral guest context ─────────────────────────
    Kristy still sounds like herself, but references no stored data — because
    there is none, and no preferences are set yet. This replaces the profile/
@@ -308,7 +322,13 @@ router.post('/list/import', imageUpload.single('image'), async (req, res) => {
       premium: false,
     });
 
-    const current = sanitizeList(req.body?.list) || { goal: null, intro: '', items: [] };
+    /* A MULTIPART FIELD IS A STRING. Found by driving real images at production: the client
+       sends the current cart as `form.append('list', JSON.stringify(current))`, multer hands it
+       back as text, `sanitizeList` saw a string instead of `{items:[…]}` and returned null — so
+       `current` fell back to empty and the import REPLACED the shopper's cart. The route's own
+       append guarantee, defeated by the transport. JSON path is unaffected (it arrives parsed),
+       which is exactly why only a real multipart request could show this. */
+    const current = sanitizeList(parseListField(req.body?.list)) || { goal: null, intro: '', items: [] };
     const summary = importSummary({ items, specified, offers });
     // APPENDED, never a replacement — an import must not wipe a cart already in progress.
     const merged = { ...current, intro: summary, items: [...current.items, ...items] };
