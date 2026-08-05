@@ -15,7 +15,7 @@ import { parseListText, specifyImportedItems, importSummary } from '../lib/listI
 import { readListPhoto } from '../lib/listVision.js';
 import { imageUpload } from '../lib/upload.js';
 import { migrateGoalSet } from '../lib/taxonomy.js';
-import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
+import { sanitizeList, applyCompose, buildCart, composeOutcome, reconcileSummary } from '../lib/cartEdit.js';
 import { attachOffers } from '../lib/listVoice.js';
 import { attachCards } from '../lib/listMatch.js';
 import { activeTripOrAdopt, activeTrip, insertTrip, saveTripItems, tripToList } from '../lib/trips.js';
@@ -315,6 +315,12 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
         ? buildCart(current, add, { goal, summary })
         : applyCompose(current, { add, remove }, { instruction });
 
+    // THE LINE SHE SAYS IS RECONCILED AGAINST THE LIST SHE PRODUCED. The composer is told
+    // what to propose, never what the cart will accept, so an owned row it asked to remove
+    // comes back with a summary claiming it left. All three compose doors do this.
+    const outcome = composeOutcome(current, list, { add, remove });
+    const said = reconcileSummary(summary, outcome, mode);
+
     const clean = attachCards(sanitizeList(list) || list);
     // Stamp the CURRENT preference signature onto a conversationally-built cart.
     // Without this a cart built after a goal change reads as stale on the next load
@@ -325,7 +331,7 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
       list: clean,
       signals: { ...signals, sig: listSignature({ goals, nonNegotiables, focuses, constraints }) },
     });
-    return res.json({ list: clean, summary, premium: true });
+    return res.json({ list: clean, summary: said, premium: true });
   } catch (err) {
     console.error('[kristy] POST /api/list/compose error:', err.message);
     return res.status(503).json({

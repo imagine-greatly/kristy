@@ -190,13 +190,44 @@ export function looksLikeCartCommand(msg) {
   return true;
 }
 
-/** Which compose mode a cart command implies: a whole new cart, or an edit to this one. */
-export function cartCommandMode(msg) {
+// A message that asks, in so many words, for the cart to START AGAIN. This is the only
+// shape besides a build verb on an explicit cart that earns the destructive mode once
+// there is a list to lose.
+const NEW_CART = /\b(start (over|again|fresh)|from scratch|scrap (it|this|the (cart|list))|new (cart|list|trip))\b/i;
+
+/**
+ * Which compose mode a cart command implies: a whole new cart, or an edit to this one.
+ *
+ * `build` REPLACES — buildCart carries forward only the swap callouts and the scans, and
+ * drops everything else. So it is the right answer when there is nothing to lose, and a
+ * data loss when there is.
+ *
+ * IT USED TO DEFAULT TO 'build', AND THAT IS BACKWARDS. Measured 2026-08-05 over five real
+ * refinement phrasings — "no seafood", "the kids will not eat fish", "take the salmon off",
+ * "make it cheaper", "nothing that needs an oven" — ALL FIVE returned 'build', because none
+ * carries a leading edit verb and the default caught everything else. "no seafood" then
+ * correctly proposed nothing to add, and the build replaced a nine-row list with zero rows.
+ * The destructive mode was the fallthrough for every sentence the anchored verb list did
+ * not recognise, which is the widest possible gate on the narrowest possible evidence.
+ *
+ * So `hasItems` is now part of the decision. It defaults false, which is the trip-question
+ * case (`TripQuestion` asks on an empty cart and hardcodes 'build') — every existing caller
+ * and every existing test keeps its answer.
+ *
+ * This is a ROUTING fix and it is one gate. `buildCart` refuses to empty a populated list
+ * on its own account, because this repo has twice found two gates that were each supposed
+ * to hold the same rule and disagreed.
+ */
+export function cartCommandMode(msg, { hasItems = false } = {}) {
   const m = String(msg || '').trim();
   // A leading edit verb is always an edit, even alongside a build word
   // ("add a cheaper cut and build out the week" → edit the cart in place).
   if (EDIT_LEAD.test(m)) return 'edit';
-  return 'build';
+  // NOTHING TO LOSE. A build is what fills an empty cart; this is the ordinary path.
+  if (!hasItems) return 'build';
+  // SOMETHING TO LOSE, so replacing it has to be ASKED FOR rather than defaulted into.
+  if (NEW_CART.test(m)) return 'build';
+  return BUILD_VERB.test(m) && EXPLICIT_CART.test(m) ? 'build' : 'edit';
 }
 
 /**

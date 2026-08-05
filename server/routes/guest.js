@@ -4,9 +4,9 @@ import { detectMemoryAction } from '../lib/guestGate.js';
 import { clientIp, rateLimited, cartBuildLimited } from '../lib/guestRate.js';
 import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
-import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
+import { sanitizeList, applyCompose, buildCart, composeOutcome, reconcileSummary } from '../lib/cartEdit.js';
 import { attachCards } from '../lib/listMatch.js';
-import { looksLikePerimeterQuestion, looksLikeCounterQuestion } from '../lib/chatRouting.js';
+import { looksLikePerimeterQuestion, looksLikeCounterQuestion, cartCommandMode } from '../lib/chatRouting.js';
 import { scoreEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
 import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import {
@@ -291,12 +291,25 @@ router.post('/list/compose', async (req, res) => {
       constraints: prefs.constraints,
     });
 
+    // A GUEST'S LIST IS A LIST, so the mode is decided the same way it is for an account:
+    // 'build' replaces, and it does not get to replace a cart the stranger already has
+    // unless they asked for that. The body still carries a mode — the client's cart hook
+    // sends one — but a refinement typed against nine rows must not be routed into a
+    // rebuild by the default, which is what emptied a nine-row list in the audit.
+    const resolved = mode === 'build' && current.items.length
+      ? cartCommandMode(instruction, { hasItems: true })
+      : mode;
+
     const next =
-      mode === 'build'
+      resolved === 'build'
         ? buildCart(current, add, { goal: prefs.goals[0] || null, summary })
         : applyCompose(current, { add, remove }, { instruction });
 
-    return res.json({ list: attachCards(sanitizeList(next) || next), summary, premium: false, guest: true });
+    // Same reconciliation as the authed door. Both doors move together or the honesty
+    // just relocates to whichever one the shopper did not use.
+    const said = reconcileSummary(summary, composeOutcome(current, next, { add, remove }), resolved);
+
+    return res.json({ list: attachCards(sanitizeList(next) || next), summary: said, premium: false, guest: true });
   } catch (err) {
     console.error(`[kristy] /api/guest/list/compose error @ ${new Date().toISOString()}:`, err?.message || err);
     return res.status(503).json({

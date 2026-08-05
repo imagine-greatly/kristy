@@ -107,14 +107,142 @@ const REMOVE_STOPWORDS = new Set(
   'and or the a an of my our some more less any all with for from that this those these plain fresh frozen whole real organic'.split(' ')
 );
 
-function namedInInstruction(instruction, name) {
-  const text = ` ${String(instruction || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ')} `;
-  if (text.trim().length < 2) return false;
-  return String(name)
+const words = (s) =>
+  String(s ?? '')
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
-    .some((w) => w.length >= 3 && !REMOVE_STOPWORDS.has(w) && text.includes(` ${w}`));
+    .filter(Boolean);
+
+/* ── A CATEGORY IS A NAME ──────────────────────────────────────────────────────────
+   The check below required a word from the ROW to appear in the instruction, and
+   "Wild-caught salmon fillets" shares nothing with "no seafood". So the protection
+   refused the shopper's own explicit exclusion: measured 2026-08-05, the same model
+   output that removed both seafood rows from a template list removed NEITHER from a
+   typed one, and the summary said "Seafood out." either way. Refinement worked on
+   Kristy's list and silently no-opped on the shopper's, which is the reverse of what
+   anyone would predict and the wrong way round for the list people care about.
+
+   The table is EXPLICIT AND SMALL, widened deliberately — the same discipline as
+   `IMPERATIVE_VERBS` and listMatch's state words. It exists so a VAGUE instruction
+   still names nothing: "make this healthier" carries no category, so it reaches no
+   owned row, so the spine rule is untouched. A category earns an entry only if a
+   shopper would type it as an exclusion AND its membership is readable off a label.
+
+   THE ALTERNATIVE, AND WHY IT LOST. The cheaper fix is to detect an exclusion SHAPE
+   ("no X", "without X", "won't eat X") and trust the model's `remove` whenever one is
+   present. That needs no vocabulary and generalizes to "no nightshades" for free — but
+   it hands the spine rule to the model, and "no more junk in this cart" is an exclusion
+   shape too. An explicit table fails in the safe direction instead: an unnamed category
+   declines the removal, and (c) below makes a declined removal VISIBLE rather than
+   silent, so the cost is one honest sentence instead of a row the shopper loses.
+
+   `fish` and `shellfish` both resolve to the whole seafood category on purpose. A
+   shopper who types "no fish" and gets their shrimp back has been answered on a
+   technicality. `meat` deliberately does NOT reach seafood — someone who means no
+   animal flesh at all says so, and under-removing is now honest where over-removing is
+   never recoverable.
+
+   `unless` is a VETO, never a score, and it is the reason the table is safe to have:
+   `milk` and `butter` are dairy words that appear in things that are not dairy, so
+   without it "no dairy" takes the oat milk and the peanut butter off a list the shopper
+   typed by hand. Same shape as `stateContradicts` in listMatch.js. */
+const CATEGORIES = [
+  {
+    names: ['seafood', 'fish', 'fishes', 'shellfish'],
+    members: [
+      'fish', 'seafood', 'salmon', 'tuna', 'skipjack', 'shrimp', 'shrimps', 'prawn', 'prawns',
+      'cod', 'tilapia', 'halibut', 'trout', 'sardine', 'sardines', 'anchovy', 'anchovies',
+      'mackerel', 'herring', 'crab', 'lobster', 'scallop', 'scallops', 'mussel', 'mussels',
+      'clam', 'clams', 'oyster', 'oysters', 'squid', 'calamari', 'pollock', 'snapper',
+      'catfish', 'swordfish',
+    ],
+  },
+  {
+    names: ['dairy'],
+    members: [
+      'milk', 'cheese', 'cheddar', 'mozzarella', 'parmesan', 'ricotta', 'cottage', 'yogurt',
+      'yoghurt', 'skyr', 'kefir', 'butter', 'ghee', 'cream', 'creamer', 'buttermilk', 'clabber',
+    ],
+    // "Oat milk", "almond milk", "coconut cream", "peanut butter", "apple butter", "cocoa butter".
+    unless: ['oat', 'oats', 'almond', 'cashew', 'soy', 'coconut', 'peanut', 'nut', 'apple', 'cocoa', 'hemp', 'rice'],
+  },
+  {
+    names: ['meat', 'meats'],
+    members: [
+      'beef', 'steak', 'brisket', 'pork', 'bacon', 'ham', 'prosciutto', 'guanciale', 'pancetta',
+      'lamb', 'mutton', 'veal', 'venison', 'chicken', 'turkey', 'duck', 'sausage', 'salami',
+      'pepperoni', 'chorizo', 'liver',
+    ],
+    unless: ['plant', 'vegan', 'mock', 'meatless', 'tofu', 'tempeh', 'veggie'],
+  },
+  {
+    names: ['pork'],
+    members: ['pork', 'bacon', 'ham', 'prosciutto', 'guanciale', 'pancetta', 'chorizo', 'lard'],
+  },
+  {
+    names: ['egg', 'eggs'],
+    members: ['egg', 'eggs'],
+  },
+  {
+    names: ['nuts', 'nut'],
+    members: [
+      'nuts', 'almond', 'almonds', 'cashew', 'cashews', 'walnut', 'walnuts', 'pecan', 'pecans',
+      'pistachio', 'pistachios', 'hazelnut', 'hazelnuts', 'macadamia', 'peanut', 'peanuts',
+    ],
+  },
+  {
+    names: ['gluten', 'wheat'],
+    members: [
+      'bread', 'sourdough', 'pasta', 'flour', 'tortilla', 'tortillas', 'bagel', 'bagels',
+      'cracker', 'crackers', 'couscous', 'barley', 'rye', 'wheat', 'farro', 'bulgur', 'seitan',
+    ],
+    unless: ['free', 'gf'],
+  },
+];
+
+/** Exported for the test that keeps the table explicit — Sets, so membership is exact. */
+export const EXCLUSION_CATEGORIES = CATEGORIES.map((c) => ({
+  names: c.names,
+  members: new Set(c.members),
+  unless: new Set(c.unless || []),
+}));
+
+/* Does the instruction name a CATEGORY this row belongs to? Triggers are matched as whole
+   words, so "no meatballs" cannot fire the meat category off a prefix.
+
+   Note this only ever widens what counts as "named" for a removal the MODEL ALREADY
+   PROPOSED, against a list it was given. It cannot originate a removal, so "add more
+   seafood" — where nothing is proposed for removal — never reaches it. */
+function namedByCategory(instructionWords, rowWords) {
+  for (const cat of EXCLUSION_CATEGORIES) {
+    if (!cat.names.some((n) => instructionWords.has(n))) continue;
+    if (rowWords.some((w) => cat.unless.has(w))) continue; // the veto
+    if (rowWords.some((w) => cat.members.has(w))) return true;
+  }
+  return false;
+}
+
+function namedInInstruction(instruction, name) {
+  const instrWords = words(instruction);
+  if (!instrWords.length) return false;
+  const rowWords = words(name);
+  // Their own words naming the item itself. Unchanged.
+  const text = ` ${instrWords.join(' ')} `;
+  if (rowWords.some((w) => w.length >= 3 && !REMOVE_STOPWORDS.has(w) && text.includes(` ${w}`))) {
+    return true;
+  }
+  return namedByCategory(new Set(instrWords), rowWords);
+}
+
+/* One predicate for "does this proposed removal name this row", used by the edit AND by
+   the outcome report below. Two copies of a fuzzy name match is how a summary and a list
+   end up disagreeing about what happened, which is the defect (c) exists to close. */
+export function matchesRemoval(name, proposedRemoval) {
+  const n = String(name ?? '').toLowerCase();
+  const r = String(proposedRemoval ?? '').toLowerCase();
+  if (!n || !r) return false;
+  return n === r || n.includes(r) || r.includes(n);
 }
 
 // Apply a claim-safe compose result (add/remove by name) to the current cart,
@@ -122,10 +250,7 @@ function namedInInstruction(instruction, name) {
 export function applyCompose(current, { add = [], remove = [] }, { instruction = '' } = {}) {
   const items = Array.isArray(current?.items) ? [...current.items] : [];
   const rm = remove.map((r) => String(r).toLowerCase()).filter(Boolean);
-  const dropped = (name) => {
-    const n = String(name).toLowerCase();
-    return rm.some((r) => n === r || n.includes(r) || r.includes(n));
-  };
+  const dropped = (name) => rm.some((r) => matchesRemoval(name, r));
   // Never remove a haul-swap callout via a text instruction; those are Kristy's notes,
   // not shopping rows. A scanned row is the shopper's own decision — also protected.
   // The shopper's own adds and their imported list are protected the same way, unless
@@ -149,10 +274,25 @@ export function applyCompose(current, { add = [], remove = [] }, { instruction =
   return { ...current, items: [...kept, ...annotateFromPicks(added)] };
 }
 
-// A fresh cart from one sentence ("three high-protein dinners for four"). Her haul
-// callouts and anything already scanned into the trip lead; the rest is replaced.
+/* A fresh cart from one sentence ("three high-protein dinners for four"). Her haul
+   callouts and anything already scanned into the trip lead; the rest is replaced.
+
+   AND IT REFUSES TO REPLACE SOMETHING WITH NOTHING. Measured 2026-08-05: "no seafood"
+   routed here (see cartCommandMode), the composer correctly proposed nothing to add —
+   there is nothing to add — and a nine-row list came back with zero rows. A build with
+   no items is not a cart; it is a deletion wearing a build's name, and there is no
+   instruction for which emptying the shopper's list is the right reading.
+
+   This is the STRUCTURAL half of that fix and it is deliberately redundant with the
+   routing half. A phrasing gate is one gate, and this repo has twice shipped two gates
+   that were each meant to hold the same rule and quietly disagreed. The intro is left
+   alone too: stamping a summary that describes a build which did not happen is defect
+   (c) arriving by a side door. */
 export function buildCart(current, add = [], { goal, summary } = {}) {
-  const carried = (current?.items || []).filter((i) => i.source === 'swap' || i.source === 'scan');
+  const existing = current?.items || [];
+  const usable = (add || []).filter((a) => String(a?.name ?? '').trim());
+  if (!usable.length && existing.length) return current;
+  const carried = existing.filter((i) => i.source === 'swap' || i.source === 'scan');
   const seen = new Set(carried.map((i) => String(i.name).toLowerCase()));
   const items = [];
   for (const a of add) {
@@ -166,6 +306,88 @@ export function buildCart(current, add = [], { goal, summary } = {}) {
     intro: summary || current?.intro || '',
     items: [...carried, ...annotateFromPicks(items)],
   };
+}
+
+/* ═══════════════ THE SUMMARY MAY NOT OUTRUN THE EDIT ═══════════════
+   The line the shopper reads came straight from the model, and the model is told what was
+   PROPOSED, never what was applied. So when the protection above declined a removal, she
+   said "Seafood out." with the seafood still on the list — measured 2026-08-05, on the
+   shopper's own rows, which is the case the protection makes commonest.
+
+   `describeCartResult` in routes/chat.js was written for exactly this, and its comment is
+   right: "It reads the FINAL list, so it can only describe rows that really exist — it
+   never claims an item it didn't add." But it was reached as `summary || describeCartResult(...)`,
+   so it ran only when the model returned nothing at all. The honest path was the rare one.
+
+   These two functions are how all three doors get the same answer. `composeOutcome` reads
+   the two LISTS — before and after — so it cannot be fooled by what the model intended,
+   and `reconcileSummary` discards her line whenever a proposal was declined.
+
+   IT DISCARDS RATHER THAN EDITS, deliberately. The model was never told which rows are
+   protected, so it cannot have been right about the refusal by accident, and rewriting a
+   sentence in her voice by regex is how a voice becomes a template. A whole line, replaced
+   by a true one, beats a half-true one every time. */
+
+const lower = (s) => String(s ?? '').toLowerCase();
+const joinNames = (arr) =>
+  arr.length > 1 ? `${arr.slice(0, -1).join(', ')} and ${arr[arr.length - 1]}` : arr[0] || '';
+const sentence = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+
+/**
+ * What an edit ACTUALLY did. Read off the two lists, never off the proposal.
+ * `refused` is the number the summary must not contradict: removals the model asked for,
+ * against rows that were really there, which are still there afterwards.
+ */
+export function composeOutcome(before, after, proposed = {}) {
+  const beforeNames = (before?.items || []).map((i) => String(i.name));
+  const afterNames = (after?.items || []).map((i) => String(i.name));
+  const afterSet = new Set(afterNames.map(lower));
+  const beforeSet = new Set(beforeNames.map(lower));
+
+  const removed = beforeNames.filter((n) => !afterSet.has(lower(n)));
+  const added = afterNames.filter((n) => !beforeSet.has(lower(n)));
+
+  const refused = [];
+  for (const r of proposed.remove || []) {
+    const hit = beforeNames.filter((n) => matchesRemoval(n, r));
+    if (!hit.length) continue; // it named nothing on the list; there was nothing to refuse
+    const survivors = hit.filter((n) => afterSet.has(lower(n)));
+    refused.push(...survivors);
+  }
+
+  return {
+    removed,
+    added,
+    refused: [...new Set(refused)],
+    changed: removed.length > 0 || added.length > 0,
+    beforeCount: beforeNames.length,
+    afterCount: afterNames.length,
+  };
+}
+
+// Rows the shopper added come off with a tap, and saying so once is what makes a declined
+// removal read as their authority rather than as a failure.
+const OWNERSHIP = 'Rows you added come off with a tap.';
+
+/** Her line, or a true one. Never a line that claims something the list refused. */
+export function reconcileSummary(summary, outcome, mode = 'edit') {
+  if (!outcome) return summary;
+
+  if (outcome.refused.length) {
+    const kept = joinNames(outcome.refused.slice(0, 3).map(lower));
+    const kicker = outcome.removed.length
+      ? `${sentence(joinNames(outcome.removed.slice(0, 3).map(lower)))} off.`
+      : 'Nothing came off.';
+    return `${kicker} ${sentence(kept)} stayed. ${OWNERSHIP}`;
+  }
+
+  // A build that had nothing to build. The list was kept (see buildCart), so a summary
+  // describing a new cart is describing something that did not happen.
+  if (mode === 'build' && !outcome.changed && outcome.beforeCount > 0) {
+    return 'Nothing in that to build a cart from. The list is as it was.';
+  }
+
+  return summary;
 }
 
 // NOTHING IS WITHHELD HERE ANY MORE. `LIST_COMPOSE_UPSELL` lived here — "building a cart

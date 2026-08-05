@@ -24,7 +24,7 @@ import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { listSignature, EMPTY_SIGNALS } from '../lib/list.js';
 import { buildBaseline } from '../lib/listBaseline.js';
-import { sanitizeList, applyCompose, buildCart } from '../lib/cartEdit.js';
+import { sanitizeList, applyCompose, buildCart, composeOutcome, reconcileSummary } from '../lib/cartEdit.js';
 import {
   getFullProfile,
   saveChatMessage,
@@ -85,13 +85,17 @@ async function perimeterChatReply({ message, matched, premium, prefs }) {
    grocery NAMES and sections, and lib/cartEdit applies the change deterministically,
    so nothing it writes can carry a health claim, a price, or a hard-line violation. */
 
-async function cartEditReply({ userId, message, mode, prefs, premium }) {
+async function cartEditReply({ userId, message, prefs, premium }) {
   const row = await getShoppingList(userId).catch(() => null);
   // No cart yet → build from EMPTY. The shopper's sentence is the whole input; a
   // pre-generated template here would mix items they never asked for into the cart
   // they did, with no way to tell which was which.
   const current =
     row?.list && Array.isArray(row.list.items) ? row.list : { goal: prefs.goal, intro: '', items: [] };
+
+  // A build REPLACES, so whether one is appropriate depends on whether there is a list to
+  // lose — which is why this is decided here and not in the route.
+  const mode = cartCommandMode(message, { hasItems: current.items.length > 0 });
 
   const { add, remove, summary } = await composeListEdit({
     instruction: message,
@@ -128,7 +132,11 @@ async function cartEditReply({ userId, message, mode, prefs, premium }) {
     // the edit isn't persisted, but the shopper still gets it on this session.
     console.warn('[kristy] chat cart persist skipped:', err.message);
   }
-  return { list, summary };
+  // Reconciled here, so the docked composer and the cart's own editor say the same true
+  // thing about the same edit. `describeCartResult` below is still the no-summary
+  // fallback; it is no longer the only thing standing between a lie and the shopper.
+  const said = reconcileSummary(summary, composeOutcome(current, list, { add, remove }), mode);
+  return { list, summary: said, mode };
 }
 
 /* A cart edit ALWAYS reports what it did. The old fallback was "Updated your cart." —
@@ -265,10 +273,14 @@ router.post('/chat', requireAuth, userRateLimit, async (req, res) => {
       }
 
       try {
-        const mode = cartCommandMode(message);
-        const { list, summary } = await cartEditReply({ userId, message, mode, prefs: activePrefs, premium });
+        /* THE MODE IS CHOSEN INSIDE, because choosing it needs the LIST. `build` replaces,
+           so "no seafood" against nine rows must not be routed into a rebuild — and only
+           the function that has already read the cart knows whether there is anything to
+           lose. It comes back out for the reply and the client's listUpdate. */
+        const { list, summary, mode } = await cartEditReply({ userId, message, prefs: activePrefs, premium });
         // Never a bare acknowledgment. If the composer gave no summary, say what
-        // actually landed in the cart rather than "Updated your cart."
+        // actually landed in the cart rather than "Updated your cart." `summary` has
+        // already been reconciled against the applied list inside cartEditReply.
         const answer = summary || describeCartResult(list, mode);
         await saveChatMessage(userId, { role: 'user', content: message });
         await saveChatMessage(userId, { role: 'ai', content: answer });
