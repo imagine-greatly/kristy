@@ -334,10 +334,17 @@ const styles = {
   },
   // Playfair italic 28px — a page title, one per screen, over the 26px display floor.
   heroLine: { ...kristyDisplay, margin: 0, fontSize: 28, lineHeight: 1.2, color: colors.ink },
+  /* SIZED LIKE AN ACTION, NOT A BANNER. This was `alignSelf: 'stretch'` at 56px tall and
+     17px — a full-width slab of warm bone on near-black forest green, and the harshness was
+     never the hue, it was the AREA. Roughly 350×56 of near-white is a lit panel; the same
+     colour at 150×46 is a button. Bone is unchanged and stays the one filled action per
+     screen — gold would be worse here, not better, because gold is identity and spending it
+     on a control is the drift the brand lock exists to stop.
+     46px keeps it above the 44px touch minimum the cart's check targets are held to. */
   heroBtn: {
-    alignSelf: 'stretch', minHeight: 56, padding: '16px 20px', borderRadius: radii.button,
+    alignSelf: 'flex-start', minHeight: 46, padding: '12px 22px', borderRadius: radii.button,
     border: 'none', background: colors.action, color: colors.actionInk,
-    fontFamily: fonts.ui, fontSize: 17, fontWeight: 700, cursor: 'pointer',
+    fontFamily: fonts.ui, fontSize: 15.5, fontWeight: 700, cursor: 'pointer',
   },
   heroBtnGold: { background: colors.goldTint9, color: colors.textPrimary, border: `1px solid ${colors.borderGold}` },
   heroSub: { ...kristyVoice, fontSize: 14, lineHeight: 1.45, color: colors.textMuted },

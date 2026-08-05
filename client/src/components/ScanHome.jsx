@@ -19,10 +19,15 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
       <div style={styles.mark}>Kristy</div>
       <GoldThread />
       <h1 style={styles.headline}>What&rsquo;s in the box?</h1>
+      {/* "Half the store, though." IS GONE. It conceded a limit the product does not have —
+          this tab is one of two ways to fill the cart, not a partial version of the job. The
+          concession also arrived at the worst possible moment: directly under the headline,
+          before the shopper has done anything, arguing against the surface they just opened.
+          The counter is a capability and it gets stated as one below, not as an apology. */}
       <p style={styles.sub}>
         {guest
-          ? 'Ingredient by ingredient. No account needed. Half the store, though.'
-          : 'Ingredient by ingredient, against how you eat. Half the store, though.'}
+          ? 'Ingredient by ingredient. No account needed.'
+          : 'Ingredient by ingredient, against how you eat.'}
       </p>
 
       {/* PHOTO IS THE PRIMARY ACTION NOW, and it is the reflex one: big, physical, the
@@ -72,10 +77,16 @@ export default function ScanHome({ onScanBarcode, onLabelFile, onOpenChat, onAsk
           <span style={styles.otherHalfIcon}>
             <AisleIcon size={20} />
           </span>
+          {/* BOTH LINES USED TO DEFINE THIS HALF BY WHAT CANNOT READ IT — "The half with no
+              barcode", "No scanner reads this half." True of scanners, and irrelevant: the
+              claim that matters is that KRISTY reads it. Naming the gap is how the previous
+              copy made the moat sound like a blind spot, on the one surface where a shopper
+              is deciding whether the unlabeled half is covered at all. It is the moat, so it
+              is stated as a capability. */}
           <span style={styles.otherHalfText}>
-            <span style={styles.otherHalfTitle}>The half with no barcode</span>
+            <span style={styles.otherHalfTitle}>The counter, answered</span>
             <span style={styles.otherHalfSub}>
-              Meat, seafood, produce, dairy, bulk. No scanner reads this half.
+              Meat, seafood, produce, dairy, bulk. No barcode needed.
             </span>
           </span>
           <span style={styles.otherHalfChev} aria-hidden="true">›</span>
@@ -107,14 +118,24 @@ const styles = {
   mark: { fontFamily: fonts.display, fontStyle: 'italic', fontSize: 30, color: colors.brass },
   headline: { ...kristyDisplay, margin: '4px 0 0', fontSize: 26, lineHeight: 1.25, color: colors.ink },
   sub: { margin: 0, fontFamily: fonts.ui, fontSize: 15, lineHeight: 1.5, color: colors.textMuted, maxWidth: 320 },
-  actions: { width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 14 },
-  // The reflex. Gold, tall, unmissable — one of the few places gold is spent.
+  // `alignItems: center` so the primary sizes to its own content instead of inheriting the
+  // column's full width — CENTER rather than flex-start because this whole surface is
+  // centred (mark, headline, sub, footer line all are). Left-aligning just the button put it
+  // out of square with everything above it, which the render showed and the style did not.
+  // The barcode option below still stretches: it is a quiet outlined row, and a wide
+  // hairline costs nothing. It is bone that has to be rationed, not width.
+  actions: { width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, marginTop: 14 },
+  /* THE REFLEX, AND STILL THE ONE FILLED ACTION — just no longer a banner. It was
+     full-width at 19px padding and 16.5px type, which put a large field of near-white
+     across the surface. Area was the problem, not the colour: the comment above this used
+     to say "gold, tall, unmissable" while the style has been BONE the whole time, which is
+     its own small lesson about comments describing what code once did. */
   primary: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 11,
-    padding: '19px 20px',
+    gap: 9,
+    padding: '13px 20px',
     borderRadius: radii.button,
     border: 'none',
     background: colors.action,
@@ -122,7 +143,7 @@ const styles = {
     boxShadow: colors.shadowRaised,
     fontFamily: fonts.ui,
     fontWeight: 700,
-    fontSize: 16.5,
+    fontSize: 15.5,
     cursor: 'pointer',
   },
   // Subordinate: a card lift, no gold, smaller type. Present, not competing.

@@ -86,6 +86,9 @@ const frame = await page.evaluate(() => {
     chipW: Math.round(r(chip)?.width || 0),
     chipArea: Math.round((r(chip)?.width || 0) * (r(chip)?.height || 0)),
     chipColor: chip ? getComputedStyle(chip).color : null,
+    // Read off RENDERED style, so a fill introduced by any ancestor rule is caught.
+    chipBg: chip ? getComputedStyle(chip).backgroundColor : null,
+    actionBg: action ? getComputedStyle(action).backgroundColor : null,
     lineSize: px(line, 'fontSize'),
     lineW: Math.round(r(line)?.width || 0),
     lineColor: line ? getComputedStyle(line).color : null,
@@ -122,10 +125,42 @@ check(
    203px — but that ratio is mostly a fact about how short "Produce — 4 of 7" happens to be,
    not about anything competing. A metric whose result swings on the length of a string is
    measuring the string. What "competes" actually means here is claiming comparable weight
-   as a target, so it is compared to the hero's ACTION, by area. */
+   as a target, so it is compared to the hero's ACTION.
+
+   THE THRESHOLD WAS ONE QUARTER, AND IT WAS A FACT ABOUT A SLAB. The hero action used to be
+   `alignSelf: stretch` at 56px — roughly 350×56 — so a quarter of it was a generous ceiling
+   that nothing was near. When the action was deliberately reduced to an action-sized control
+   (2026-08-04: a full-width field of warm bone on near-black green reads as harsh, and the
+   harshness is AREA, not hue), the same ratio started demanding a ~308px-wide button to stay
+   satisfied. It would have mandated the banner as the price of passing.
+
+   So the number went and the INTENT stayed, tested directly. Dominance on this surface comes
+   from FILL, not from square pixels: the hero action is the screen's only bone-filled
+   control and the chip is a hairline outline. That is the property worth pinning, and it
+   cannot be satisfied by making a button bigger. The area check survives as a strict
+   inequality so the chip still cannot grow into a comparable target. */
+/* DOMINANCE BY LUMINANCE, which is what "filled" actually meant. The first draft of this
+   asserted the chip had NO background and failed: the chip is `rgb(22,48,31)`, a dark green
+   tint. It is filled — it just recedes into the near-black ground instead of advancing off
+   it. Transparency was never the property; being the one thing on screen made of warm bone
+   is. So this reads relative luminance off the RENDERED colour: the hero action is light on
+   a dark surface, the chip sits down in the ground with everything else. A shrunken button
+   cannot fail this, and a chip cannot pass it by growing. */
+const lum = (c) => {
+  const [r, g, b] = (String(c).match(/[\d.]+/g) || [0, 0, 0]).slice(0, 3).map(Number);
+  const f = (v) => { const s = v / 255; return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4; };
+  return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+};
+const chipLum = lum(frame.chipBg);
+const actionLum = lum(frame.actionBg);
 check(
-  frame.chipArea < frame.actionArea / 4,
-  `the chip claims a quarter of the hero action's area or less (${frame.chipArea}px² vs ${frame.actionArea}px²)`
+  actionLum > 0.5 && chipLum < 0.1,
+  `the hero action is the one thing made of bone; the chip recedes into the ground ` +
+    `(action luminance ${actionLum.toFixed(3)}, chip ${chipLum.toFixed(3)})`
+);
+check(
+  frame.chipArea < frame.actionArea,
+  `the chip is a smaller target than the hero action (${frame.chipArea}px² vs ${frame.actionArea}px²)`
 );
 /* And it is not drawn at headline contrast. `--ink-muted` against the hero line's `--ink`
    is the difference between chrome you can find and content you read. */

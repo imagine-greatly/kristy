@@ -923,15 +923,20 @@ textarea {
 .auth__input::placeholder {
   color: var(--text-muted);
 }
-/* The one filled action on the sign-in screen. */
+/* The one filled action on the sign-in screen. Sized like an action, not a banner: it was
+   `width: 100%`, a full-bleed slab of warm bone on the dark ground. The harshness of these
+   was never the hue — it is the AREA of near-white. Bone stays; gold at this size would be
+   worse, because gold is identity and a control is not the place to spend it.
+   Min-height keeps it above the 44px touch target. */
 .auth__btn {
-  width: 100%;
+  align-self: flex-start;
+  min-height: 46px;
   background: var(--action);
   color: var(--action-ink);
   font-weight: 600;
   font-size: 15px;
   border-radius: var(--radius-button);
-  padding: 14px 16px;
+  padding: 12px 24px;
   transition: transform 0.12s ease, opacity 0.2s ease;
 }
 .auth__btn:hover {

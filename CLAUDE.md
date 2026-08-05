@@ -833,6 +833,28 @@ was invisible until something rendered one**
   throws at import, so every test in that file is honest by construction instead of by
   discipline. Swept 2026-08-02: 73 at-risk sites → 49, and the remainder iterate array
   literals, which cannot be empty by accident.
+- **THE SAME FAMILY: A BOUNDARY WITH NO TEST IS A COMMENT, AND IT STAYS GREEN WHILE A FIELD
+  WALKS ACROSS IT.** `summarize()` / `forViewer()` in `counterCards.js` are the money
+  boundary — the only thing between a card's depth and an unauthenticated caller — and they
+  had **zero** coverage. `tier_note` was moved out of `DEPTH_FIELDS` and **515 tests passed**.
+  Nothing was broken by that move, but nothing *could have* reported it either: the suite was
+  silent about the paid boundary in both directions, so it would equally have passed if `why`
+  had been moved. A field crossing the paid boundary is the single most consequential edit in
+  this repo and it was unobserved. `paidBoundary.test.js` is the correction. **When a rule is
+  the product's economics or its promises, the absence of a failing test is not evidence —
+  ask what would have gone red.**
+- **THE SAME FAMILY: A HARNESS THAT SUPPLIES THE PROPS VERIFIES A WIRING PRODUCTION NEVER
+  RUNS.** `dash.mjs` mounts Dashboard through `dashHarness.jsx`, which constructs the hero's
+  handlers itself. So it is *structurally incapable* of noticing a call site that forgets
+  them — and `GuestApp`, the only home surface any real visitor reaches, rendered
+  `<Dashboard>` with no hero handlers at all. "Start shopping" painted, took the tap and did
+  nothing on production while that suite was green, because the suite was measuring a
+  composition the product does not perform. **A harness proves the component; only the real
+  call site proves the wiring.** `heroAction.mjs` mounts the real `GuestApp` and passes only
+  what `App` passes. Related: an inert control is invisible to every check that looks for
+  failure, *because it does not fail* — no throw, no console error, no failed build. `Hero`
+  now requires a label AND a handler so an unwired action vanishes instead, which the
+  existing per-state action count already catches.
 - **THE SAME FAMILY, ONE LEVEL UP: A COMMIT THAT OMITS THE FILE IS GREEN FOR THE SAME
   REASON AN EMPTY COLLECTION IS.** Every test runs against the WORKING TREE, and the
   working tree has the file whether or not git does — so a module written, imported, tested
