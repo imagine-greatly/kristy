@@ -267,7 +267,11 @@ export function useCart(prefs) {
       if (!newName) return;
       mutate((cur) => ({
         ...cur,
-        items: cur.items.map((i) => (i.id === id ? { ...i, name: newName, refined: true } : i)),
+        // `needsFix`/`note` are dropped: once the shopper has said what the row IS, the
+        // "couldn't read this" note is stale and would keep flagging a row that is now correct.
+        items: cur.items.map((i) =>
+          i.id === id ? { ...i, name: newName, refined: true, needsFix: false, note: '' } : i
+        ),
       }));
       trackEvent('perimeter-refine', { item: newName });
     },
@@ -583,7 +587,11 @@ export function useGuestCart({ onNeedsAccount, prefs } = {}) {
       if (!newName) return;
       mutate((cur) => ({
         ...cur,
-        items: cur.items.map((i) => (i.id === id ? { ...i, name: newName, refined: true } : i)),
+        // `needsFix`/`note` are dropped: once the shopper has said what the row IS, the
+        // "couldn't read this" note is stale and would keep flagging a row that is now correct.
+        items: cur.items.map((i) =>
+          i.id === id ? { ...i, name: newName, refined: true, needsFix: false, note: '' } : i
+        ),
       }));
     },
     [mutate]

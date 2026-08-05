@@ -93,12 +93,34 @@ chip. The hard-line case is starker: the server's "label" **is the matching phra
 keys on**, so it is lowercase and identical to the id by design. Asserting equality would force
 one register onto three positions — the same mistake §3 rejects for tier→prose.
 
-⚠️ **OPEN, for a human: are the first two deliberate?** "Family" vs "Feeding a family" and the
-dropped "(dyes & preservatives)" are each plausibly a chip-width decision AND plausibly an
-un-synced edit. I could not resolve intent from the code, and guessing either way is worse than
-asking. **If they are deliberate, the client file should say so per row; if not, they are two
-one-word fixes.** Note the goal chip register also feeds nothing but the UI — `labelForGoal` is
-what reaches the model — so neither difference can currently produce a wrong claim.
+### ⚠️ OPEN AND LEFT OPEN — two label mismatches, deliberately unresolved
+
+**Decided 2026-08-05: these stay open. Guessing would be worse than the gap.**
+
+| id | client (chip) | server (shown to the model) |
+| --- | --- | --- |
+| goal `family` | "Family" | "Feeding a family" |
+| focus `additive_sensitive` | "Additive-sensitive" | "Additive-sensitive (dyes & preservatives)" |
+
+Each is **equally plausibly a deliberate chip-width decision and an un-synced edit**, and
+nothing in the code distinguishes them: there is no comment, no commit message tying the two
+files together, and no test that ever compared them. Picking one reading and "fixing" it would
+either destroy an intentional register or launder a real drift as intentional — and this survey
+has already caught itself calling three parser artifacts "drift", so a confident guess here is
+exactly the failure mode to avoid.
+
+**Neither can currently produce a wrong claim, which is why leaving them open is safe.**
+`labelForGoal` / `labelForFocus` — the SERVER labels — are what `buildComposeInput` shows the
+model. The client chip strings reach only the onboarding picker, the goal switcher and the
+settings row. So the worst live consequence is a shopper reading "Family" on a chip and the
+model being told "Feeding a family", which is the same preference either way.
+
+**What would resolve it:** whoever authored the chip copy says which register they meant. If
+deliberate, the client rows should carry a one-line note saying so — the same way
+`NON_NEGOTIABLES` already explains that its `value` is the phrase the engine matches on. If not,
+they are two one-word edits. Until then `constraintsMirror.test.js` asserts **ids and order
+only** for goals, focuses and hard lines, and says in its own comment that wording is
+deliberately not compared and why.
 
 ---
 

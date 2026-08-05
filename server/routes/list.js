@@ -389,7 +389,19 @@ async function rawItemsFromRequest(req) {
 }
 
 router.post('/list/import', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
-  const userId = req.userId;
+  /* `req.user.id`, NOT `req.userId`. This route read `req.userId`, which `requireAuth` has never
+     set — it sets `req.user` and nothing else, and no middleware anywhere in this server assigns
+     `req.userId`. So `userId` was `undefined` on EVERY request: `getShoppingList(undefined)`
+     failed and was swallowed to null, dropping the cart the shopper was already building and
+     defeating this route's own "APPENDED, never a replacement" guarantee; then
+     `saveShoppingList(undefined, …)` upserted a row with no `user_id`, threw, and the catch
+     returned 503 — after the vision call had already been paid for.
+
+     It survived because nothing could see it: the only caller is `ImportList`, which is imported
+     only by `App.jsx`, whose surface stack has never rendered for a real visitor, and there was
+     no route-level test. `listImport.test.js` covers the lib functions and never the route.
+     `importRoute.test.js` covers it now. */
+  const userId = req.user.id;
   try {
     const rawItems = await rawItemsFromRequest(req);
     if (!rawItems.length) {

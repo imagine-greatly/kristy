@@ -73,7 +73,8 @@ const flagged = (it) => it.source === 'swap' || it.tier === 'swap_recommended' |
    attachment renders only once its summary has arrived, and suppressing on the slug alone
    would blank the prose for the length of that fetch and leave the row with nothing at all
    if it failed. Suppress exactly when the replacement is on screen. */
-function CartRow({ item, hasCard, mixed, onToggle, onRemove, onKeep, onTakeOffer }) {
+function CartRow({ item, hasCard, mixed, onToggle, onRemove, onKeep, onTakeOffer, onFix }) {
+  const [fixTo, setFixTo] = useState(item.name === 'Unreadable item' ? '' : item.name);
   const isSwapCallout = item.source === 'swap';
   const flag = item.tier ? TIER_FLAG[item.tier] : null;
   const checked = !!item.checked;
@@ -126,6 +127,41 @@ function CartRow({ item, hasCard, mixed, onToggle, onRemove, onKeep, onTakeOffer
           </span>
 
           {item.why && !hasCard && <span data-why style={styles.itemWhy}>{item.why}</span>}
+
+          {/* A ROW WE COULD NOT READ SAYS SO, AND CAN BE FIXED HERE.
+              `needsFix` and `note` have been written by listImport since imports shipped and
+              NOTHING rendered them — the server wrote "Couldn't read this one — tap to fix it."
+              for a tap that did not exist. So a confident misread ("tp" transcribed as
+              "butter") landed as an ordinary row and shopped like a real one. Measured after
+              the vision prompt was tightened: crossed-out lines now drop 9/9, but a misread
+              still recurred 1 in 9 — the prompt reduces it and cannot close it, which is why
+              the EDITABLE path is the actual fix rather than a nicety. Same shape as a false
+              gold seal: a wrong read presented as fact. */}
+          {item.needsFix && onFix && (
+            <form
+              data-needs-fix
+              style={styles.fixRow}
+              onSubmit={(e) => {
+                e.preventDefault();
+                const v = fixTo.trim();
+                if (v) onFix(item.id, v);
+              }}
+            >
+              <span style={styles.needsFix}>{item.note || 'Couldn’t read this one.'}</span>
+              <span style={styles.fixInputRow}>
+                <input
+                  style={styles.fixInput}
+                  value={fixTo}
+                  onChange={(e) => setFixTo(e.target.value)}
+                  placeholder="What does it say?"
+                  aria-label={`Correct the item we could not read${item.name ? `: ${item.name}` : ''}`}
+                />
+                <button type="submit" style={styles.fixBtn} disabled={!fixTo.trim()}>
+                  Fix it
+                </button>
+              </span>
+            </form>
+          )}
 
           {(showAdded || item.refined || flag) && (
             <span style={styles.itemMeta}>
@@ -211,7 +247,7 @@ const TRAILING_LABEL = (item) => {
    NO TIER CHIP HERE. A list is things to buy; a tier is a claim about evidence, and on a
    row it is furniture raising a question nobody is asking mid-task. The chip travels with
    the tap and is the first thing on the opened card. */
-function CartBlock({ block, card, mixed, open, onOpen, onToggle, onRemove, onKeep, onTakeOffer, onRequestFull, onUpgrade }) {
+function CartBlock({ block, card, mixed, open, onOpen, onToggle, onRemove, onKeep, onTakeOffer, onFix, onRequestFull, onUpgrade }) {
   const hasCard = Boolean(block.slug && card);
   const allChecked = block.items.every((i) => i.checked);
   const isSwap = block.items[0]?.source === 'swap';
@@ -235,6 +271,7 @@ function CartBlock({ block, card, mixed, open, onOpen, onToggle, onRemove, onKee
           onRemove={onRemove}
           onKeep={onKeep}
           onTakeOffer={onTakeOffer}
+          onFix={onFix}
         />
       ))}
 
@@ -429,6 +466,13 @@ export default function CartMoment({
                 onRemove={cart.remove}
                 onKeep={cart.keepItem}
                 onTakeOffer={cart.takeOffer}
+                /* THE FIX IS A RENAME, reusing the primitive the perimeter refinement already
+                   uses: cart.refine sets the name, marks the row refined, and clears
+                   needsFix/note so a corrected row stops flagging itself. Passed from HERE
+                   because `cart` is in scope here and not inside CartBlock — a handler defined
+                   in the wrong component compiles cleanly and throws at render, which is the
+                   dead-reference defect this file has already shipped once. */
+                onFix={cart.refine}
                 onRequestFull={requestFull}
                 onUpgrade={onUpgrade}
               />
@@ -588,6 +632,25 @@ const styles = {
 
   // Her reasoning. Playfair italic so it reads as HER, not as a product subtitle.
   itemWhy: { ...kristyVoice, fontSize: 13.5, lineHeight: 1.45, color: colors.textMuted, overflowWrap: 'anywhere' },
+
+  /* DEMOTED BY SIZE, NEVER BY OPACITY — the shop-mode contrast lesson applies here too. 13px
+     at full textSecondary, no transparency, so the one row that most needs reading is not the
+     one rendered faintest. */
+  needsFix: {
+    fontFamily: fonts.ui, fontSize: 13, lineHeight: 1.45, color: colors.textSecondary,
+    overflowWrap: 'anywhere',
+  },
+  fixRow: { display: 'flex', flexDirection: 'column', gap: 5, marginTop: 2, width: '100%' },
+  fixInputRow: { display: 'flex', gap: 6, alignItems: 'stretch', width: '100%' },
+  fixInput: {
+    flex: 1, minWidth: 0, minHeight: 40, padding: '8px 11px', borderRadius: 10,
+    border: `1px solid ${colors.borderGold}`, background: colors.bg, color: colors.textPrimary,
+    fontFamily: fonts.ui, fontSize: 14, outline: 'none',
+  },
+  fixBtn: {
+    padding: 0, border: 'none', background: 'transparent', color: colors.accentGold,
+    fontFamily: fonts.ui, fontSize: 13, fontWeight: 700, cursor: 'pointer', textDecoration: 'underline',
+  },
 
   itemMeta: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginTop: 3 },
   tagQuiet: { fontFamily: fonts.ui, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: colors.textMuted, opacity: 0.8 },

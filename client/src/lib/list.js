@@ -176,18 +176,27 @@ export async function importList({ text, file } = {}) {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  const headers = { Authorization: `Bearer ${session?.access_token}` };
+
+  /* TWO DOORS, CHOSEN BY WHETHER THERE IS AN ACCOUNT. `/api/list/import` is requireAuth, and
+     every real visitor is currently a guest, so posting there with no token was a 401 — the
+     photo path could not work for anybody even once its own bug was fixed. The guest twin
+     stores nothing and takes the cart in the body, so it needs the current list passed in. */
+  const authed = !!session?.access_token;
+  const path = authed ? '/api/list/import' : '/api/guest/list/import';
+  const headers = authed ? { Authorization: `Bearer ${session.access_token}` } : {};
+  const current = authed ? null : loadCachedList();
 
   let res;
   if (file) {
     const form = new FormData();
     form.append('image', file);
-    res = await fetch(`${apiBase}/api/list/import`, { method: 'POST', headers, body: form });
+    if (current) form.append('list', JSON.stringify(current));
+    res = await fetch(`${apiBase}${path}`, { method: 'POST', headers, body: form });
   } else {
-    res = await fetch(`${apiBase}/api/list/import`, {
+    res = await fetch(`${apiBase}${path}`, {
       method: 'POST',
       headers: { ...headers, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: String(text || '') }),
+      body: JSON.stringify({ text: String(text || ''), ...(current ? { list: current } : {}) }),
     });
   }
   if (!res.ok) throw new Error('That list did not read. Try again, or type it in.');

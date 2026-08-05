@@ -27,7 +27,11 @@ Rules:
 
 3. If a word or line is illegible, do NOT guess it. Return that entry with "unreadable": true and put whatever letters you could actually make out in "text" (an empty string if none). A guess is worse than a blank here — someone will shop from this.
 
-4. Ignore anything that is not a shopping item: headings ("Groceries", "Costco"), dates, prices, totals, doodles, phone numbers, crossed-out lines. Skip crossed-out items entirely; they were removed on purpose.
+   THIS IS THE RULE YOU ARE MOST LIKELY TO BREAK, so apply a stricter test than "can I make a good guess". If you would not bet on the word, it is unreadable. A short scrawled word is the dangerous case: "tp" read as "butter" sends someone home with the wrong thing and quietly rewrites what they asked for. Marking a legible word unreadable costs one tap to fix. Inventing a plausible one costs their trust. When those two are close, choose "unreadable": true.
+
+4. Ignore anything that is not a shopping item: headings ("Groceries", "Costco"), dates, prices, totals, doodles, phone numbers.
+
+5. A CROSSED-OUT ITEM IS NOT ON THE LIST. Omit it completely — do not return it, not even marked unreadable. Any line with a stroke through the words, scribbled over, or struck through however faintly, was DELIBERATELY REMOVED by the person who wrote it. Putting it back is the worst mistake you can make here, worse than missing a legible item: they decided against it and you would be overruling them. If a line has a horizontal mark running through the text, it is crossed out even when the words underneath are perfectly readable — readability is not the test, the stroke is.
 
 Return ONLY this JSON: {"items": [{"text": "milk", "unreadable": false}, {"text": "ch??se", "unreadable": true}]}
 

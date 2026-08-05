@@ -20,6 +20,7 @@ import { trackEvent } from '../lib/analytics.js';
 
 // Lazy — only pulls the @zxing decoder when the scanner opens.
 const CameraModal = lazy(() => import('./CameraModal.jsx'));
+const ImportList = lazy(() => import('./ImportList.jsx'));
 
 const rid = () =>
   (crypto.randomUUID && crypto.randomUUID()) || `id-${Date.now()}-${Math.random()}`;
@@ -50,6 +51,7 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
   const [typing, setTyping] = useState(false);
   const [exchanges, setExchanges] = useState(0);
   const [gate, setGate] = useState(null); // null | { line, terminal, reason }
+  const [importOpen, setImportOpen] = useState(false); // bring-your-own-list sheet
 
   // NO PLAN BUTTONS FOR A GUEST, and that is a decision rather than an omission. Buying
   // needs an account, an account needs a phone code, and phone codes are blocked on 10DLC
@@ -317,6 +319,12 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
                    keyed to an account, and a guest has none; the hero now renders that state
                    doorless rather than offering a button that cannot do what it says. Same
                    shape as `seedable` never firing `completed` here. */
+                /* THE PHOTO PATH REACHES A SHOPPER NOW. This prop was absent, and CartMoment
+                   renders its import control only `{onImport && …}`, so "Import a list" was
+                   invisible on the only home surface anyone actually sees — the same omission
+                   shape as the hero handlers. Its endpoint was broken too (req.userId) and had
+                   no guest twin; all three had to land together or it still would not work. */
+                onImport={() => setImportOpen(true)}
                 onStartShopping={() => setMoment('shop')}
                 onResume={() => setMoment('shop')}
               />
@@ -393,6 +401,15 @@ export default function GuestApp({ onOpenIngredient, onEditPrefs }) {
       {cameraOpen && (
         <Suspense fallback={null}>
           <CameraModal open={cameraOpen} onClose={() => setCameraOpen(false)} onScan={handleGuestScan} />
+          {importOpen && (
+            <ImportList
+              onClose={() => setImportOpen(false)}
+              onImported={(list, summary) => {
+                cart.applyList(list, summary);
+                setMoment('home');
+              }}
+            />
+          )}
         </Suspense>
       )}
 

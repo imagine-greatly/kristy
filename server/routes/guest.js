@@ -6,6 +6,9 @@ import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart, composeOutcome, reconcileSummary } from '../lib/cartEdit.js';
 import { attachCards } from '../lib/listMatch.js';
+import { readListPhoto } from '../lib/listVision.js';
+import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
+import { imageUpload } from '../lib/upload.js';
 import { looksLikePerimeterQuestion, looksLikeCounterQuestion, cartCommandMode } from '../lib/chatRouting.js';
 import { scoreEntries, publicEntry, NO_ANSWER } from '../lib/perimeter.js';
 import { logCounterGap, WEAK_MATCH_CEILING } from '../lib/counterGaps.js';
@@ -257,6 +260,72 @@ router.post('/list/attach', (req, res) => {
     console.error(`[kristy] /api/guest/list/attach error @ ${new Date().toISOString()}:`, err?.message || err);
     // A list with no cards on it is still a list. Never fail the shopper's cart over this.
     return res.status(503).json({ error: true });
+  }
+});
+
+/* ═══════════ POST /api/guest/list/import — a stranger's OWN written list ═══════════
+   The authed twin of this is `/api/list/import`. It existed alone, which meant the photo path
+   was unreachable for every real visitor twice over: `GuestApp` never passed `onImport`, and
+   even wired up, `importList` posts with a bearer token to a `requireAuth` route.
+
+   Reading a label with vision is free for everyone including guests — it is the acquisition
+   hook — and reading a shopping LIST is the same act. Gating it would put a wall in front of
+   work the shopper has already done by hand.
+
+   Nothing is stored: the cart rides in and back out in the response, exactly as
+   /list/compose does, and lives in guest state until there is an account. Prefs ride in the
+   body and are filtered against the taxonomy. It draws on the shared per-IP inference budget
+   because it makes a vision call. */
+router.post('/list/import', imageUpload.single('image'), async (req, res) => {
+  if (rateLimited(clientIp(req))) {
+    return res.status(429).json({
+      error: true,
+      message: 'That is a lot at once. Give it a minute, or sign in to keep going.',
+      gate: true,
+      reason: 'limit',
+    });
+  }
+  try {
+    const rawItems = req.file
+      ? (await readListPhoto({ base64: req.file.buffer.toString('base64'), mediaType: req.file.mimetype || 'image/jpeg' })).items
+      : parseListText(req.body?.text);
+
+    if (!rawItems.length) {
+      return res.json({
+        list: null,
+        summary: "I couldn't make out a list in that — type it in and I'll take it from there.",
+        imported: 0,
+        guest: true,
+      });
+    }
+
+    const prefs = sanitizeGuestPrefs(req.body?.prefs || req.body || {});
+    // A guest is not premium, so the constraint-tuned specifics stay off exactly as they do on
+    // the authed route. The AUTONOMY guarantees do not depend on premium and apply in full.
+    const { items, specified, offers } = specifyImportedItems(rawItems, {
+      nonNegotiables: prefs.nonNegotiables,
+      constraints: prefs.constraints,
+      premium: false,
+    });
+
+    const current = sanitizeList(req.body?.list) || { goal: null, intro: '', items: [] };
+    const summary = importSummary({ items, specified, offers });
+    // APPENDED, never a replacement — an import must not wipe a cart already in progress.
+    const merged = { ...current, intro: summary, items: [...current.items, ...items] };
+
+    return res.json({
+      list: attachCards(sanitizeList(merged) || merged),
+      summary,
+      imported: items.length,
+      specified,
+      guest: true,
+    });
+  } catch (err) {
+    console.error(`[kristy] /api/guest/list/import error @ ${new Date().toISOString()}:`, err?.message || err);
+    return res.status(503).json({
+      error: true,
+      message: "I couldn't read that list just now — try again, or type it in.",
+    });
   }
 });
 
