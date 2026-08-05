@@ -30,9 +30,12 @@ The four dimensions, kept distinct:
 - focuses: health things to WATCH (a preference about themselves).
 - hard_lines: what they REFUSE — ingredients/patterns they never want in the cart.
 - constraints: their real-life CIRCUMSTANCES — budget, short on time, picky kids, no
-  kitchen, cooking for one. These combine freely with any goal/focus. "cheap" or "on a
-  budget" → the budget constraint; "no time to cook" → short on time; "kids won't eat it"
-  → picky kids. A constraint is a situation, never a health claim.
+  kitchen, one pan, no oven, cooking for one. These combine freely with any goal/focus.
+  "cheap" or "on a budget" → the budget constraint; "no time to cook" → short on time;
+  "kids won't eat it" → picky kids. TIME AND EQUIPMENT ARE DIFFERENT: "one pan", "one
+  burner", "only a skillet" → one_pan; "no oven", "just a hotplate" → no_oven; "dorm
+  room", "no kitchen" → no_kitchen. Never map an equipment phrase to short_on_time.
+  A constraint is a situation, never a health claim.
 
 ABSOLUTE RULES:
 - You may ONLY return values from the lists provided in the DATA payload. Never invent

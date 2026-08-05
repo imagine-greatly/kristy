@@ -32,11 +32,25 @@ export const GOALS = [
 // nothing here forces a choice between those. Constraints introduce NO health claim,
 // so the claim lock is unaffected; they shape the LIST heavily and the note lightly,
 // and NEVER move a verdict tier. Multi-select, optional, never pre-checked.
+// TIME AND EQUIPMENT ARE DIFFERENT CONSTRAINTS, and collapsing them cost a real list.
+// Measured 2026-08-05: the student persona's list was good only because they typed the
+// words "one pan" into the trip question — nothing stored it, so trip two lost it. The
+// nearest stored fact was `no_kitchen`, which means no kitchen AT ALL and is the wrong
+// answer for someone with a hob and one pan; and `short_on_time` carried the equipment
+// meaning too ("little or no cooking"), so one bit was doing two jobs.
+//
+// `one_pan` and `no_oven` are the equipment facts. There is deliberately NO "full kitchen"
+// value: a constraints row holds things that CONSTRAIN, so a full kitchen is the absence of
+// one — the same way "has a kitchen" was never a value beside `no_kitchen`. A chip meaning
+// "nothing applies" is furniture, and the shopper still reaches all three states (one pan /
+// no oven / neither).
 export const CONSTRAINTS = [
   { value: 'budget', label: 'Shopping on a budget' },
   { value: 'short_on_time', label: 'Short on time' },
   { value: 'picky_kids', label: 'Picky kids' },
   { value: 'no_kitchen', label: 'No real kitchen' },
+  { value: 'one_pan', label: 'One pan, one burner' },
+  { value: 'no_oven', label: 'No oven' },
   { value: 'cooking_for_one', label: 'Cooking for one' },
 ];
 

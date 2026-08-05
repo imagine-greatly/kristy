@@ -876,15 +876,25 @@ const CONSTRAINT_ITEMS = {
   no_kitchen: [
     pick('canned_fish'), pick('nut_butter'), pick('rice'), pick('whole_fruit'),
   ],
+  // Mirrors server/lib/list.js — equipment is not time, and both builders have to know it.
+  one_pan: [
+    pick('eggs'), pick('beans'), pick('rice'), pick('garlic_onions'),
+  ],
+  no_oven: [
+    pick('eggs'), pick('frozen_veg'), pick('canned_fish'), pick('rice'),
+  ],
   cooking_for_one: [
     pick('eggs'), pick('frozen_veg'), pick('canned_fish'), pick('steel_cut_oats'),
   ],
 };
 const CONSTRAINT_INTRO = {
   budget: 'easy on the receipt',
-  short_on_time: 'fast — little to no cooking',
+  // TIME ONLY — see the note in server/lib/list.js.
+  short_on_time: 'fast to get on the table',
   picky_kids: 'kid-friendly',
   no_kitchen: 'no-cook wherever possible',
+  one_pan: 'one pan, one burner',
+  no_oven: 'nothing that needs the oven',
   cooking_for_one: 'portioned for one',
 };
 function constraintClauseLocal(constraints) {

@@ -532,6 +532,18 @@ const CONSTRAINT_ITEMS = {
   no_kitchen: [
     pick('canned_fish'), pick('nut_butter'), pick('rice'), pick('whole_fruit'),
   ],
+  /* EQUIPMENT IS NOT TIME, and the template path has to know that too. Without these two
+     entries the equipment fact would be captured in onboarding, honoured by the
+     conversational composer, and INERT on "Or build a full cart" — a fact the shopper can
+     see being ignored on one of the two builders. Per-ITEM variants (the `no_kitchen:` keys
+     inside individual PICKS) are deliberately not authored yet: those need a considered
+     substitute per item, and folding items in is the part that carries no such judgment. */
+  one_pan: [
+    pick('eggs'), pick('beans'), pick('rice'), pick('garlic_onions'),
+  ],
+  no_oven: [
+    pick('eggs'), pick('frozen_veg'), pick('canned_fish'), pick('rice'),
+  ],
   cooking_for_one: [
     pick('eggs'), pick('frozen_veg'), pick('canned_fish'), pick('steel_cut_oats'),
   ],
@@ -541,9 +553,13 @@ const CONSTRAINT_ITEMS = {
 // (reads after "Kept it "). Names the constraint plainly — never a price.
 const CONSTRAINT_INTRO = {
   budget: 'easy on the receipt',
-  short_on_time: 'fast — little to no cooking',
+  // TIME ONLY. This read "fast — little to no cooking", which is an equipment claim wearing
+  // a time label; `one_pan` and `no_oven` carry the equipment half now.
+  short_on_time: 'fast to get on the table',
   picky_kids: 'kid-friendly',
   no_kitchen: 'no-cook wherever possible',
+  one_pan: 'one pan, one burner',
+  no_oven: 'nothing that needs the oven',
   cooking_for_one: 'portioned for one',
 };
 

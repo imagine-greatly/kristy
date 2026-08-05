@@ -180,11 +180,17 @@ export const FOCUSES = [
 // time at once). Multi-select, optional, never pre-checked. They shape the List and
 // the note's emphasis, and NEVER move a verdict — so they carry no health claim.
 // Values mirror server/lib/taxonomy.js CONSTRAINTS; keep them in sync.
+// TIME AND EQUIPMENT ARE DIFFERENT CONSTRAINTS. `short_on_time`'s blurb used to read
+// "Little or no cooking" — an EQUIPMENT statement standing in for a time one, which is the
+// collapse `one_pan` / `no_oven` exist to undo. Time is now only about minutes.
+// There is no "full kitchen" chip on purpose: see the note in server/lib/taxonomy.js.
 export const CONSTRAINTS = [
   { value: 'budget', label: 'Shopping on a budget', blurb: 'Stretch the cart without eating garbage.' },
-  { value: 'short_on_time', label: 'Short on time', blurb: 'Little or no cooking. Fast wins.' },
+  { value: 'short_on_time', label: 'Short on time', blurb: 'Twenty minutes, not an evening.' },
   { value: 'picky_kids', label: 'Picky kids', blurb: 'It has to actually get eaten.' },
   { value: 'no_kitchen', label: 'No real kitchen', blurb: 'Minimal equipment — dorm, office, small space.' },
+  { value: 'one_pan', label: 'One pan, one burner', blurb: 'One vessel on a hob. Nothing that needs a second pot.' },
+  { value: 'no_oven', label: 'No oven', blurb: 'Nothing that needs roasting or baking.' },
   { value: 'cooking_for_one', label: 'Cooking for one', blurb: "Small portions, nothing that spoils before you finish it." },
 ];
 
