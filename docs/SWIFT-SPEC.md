@@ -591,19 +591,22 @@ So the new session does not rediscover them.
 
 ## What is thin, honestly
 
-- **§A endpoint shapes are names, not schemas.** I listed paths and methods; I did not write
-  request/response `Codable` structs. That is the single biggest gap for someone actually
-  starting, and it should be generated from the routes rather than hand-written here.
+**Two items that were listed here are now closed** — `docs/api-shapes.generated.md` covers §A
+response shapes (generated, drift-tested), and §A2 specifies StoreKit ↔ `subscriptions`. What
+remains:
+
+- **REQUEST bodies are still not specified anywhere.** The generator derives responses only;
+  request shapes are read out of scattered `req.body?.x` accesses and were not reliably
+  recoverable. **This is now the biggest §A gap** — write them by hand per endpoint against the
+  handler, starting with `/list/compose`, `/list/import`, `/counter/ask` and `/verdict`.
 - **§D is comprehensive on rules and silent on layout.** It says the hero is largest; it does
   not say what the dashboard looks like. That is deliberate (§F) but it means a Swift dev has
   no visual target and will need the running web app or screenshots.
 - **§E option 1 is unproven.** I have not verified that `ImageRenderer` → pixel sampling
   actually works for a text-on-background contrast read in a test. It is plausible, not
-  demonstrated. Treat as a spike, not a plan.
-- **StoreKit ↔ RevenueCat ↔ `subscriptions` is sketched, not specified.** The trial has one
-  explicit idempotent door and `ensureTrial` is idempotent *by existence*, so a stray write
-  permanently spends a shopper's only trial. That interaction with StoreKit needs its own
-  section before anyone writes purchase code.
+  demonstrated. Treat as a spike, not a plan. (The *web* equivalent is proven and shipping —
+  `client/test/needsFix.mjs` reads 8.59:1 off rendered colour with ancestor opacity folded in,
+  so the technique is sound; only the Swift analogue is unverified.)
 - **Offline behaviour is barely covered.** §B2 says rowMatch must work offline; nothing says
   what the rest of the app does with no network mid-aisle, which is a real store condition and
   a place native could be much better than web.
