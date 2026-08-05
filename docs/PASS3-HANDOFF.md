@@ -1190,6 +1190,65 @@ still cannot grow into a comparable target.
 > When a measured rule blocks a deliberate change, check whether the rule is measuring its
 > own intent or a number that was true of the old design.
 
+### 13.9 The guard for missing files could not see a missing test — and a commit that was believed pushed was never made
+
+**Two members of the family on one day, 2026-08-05, and the second one is the funnier of
+the two.**
+
+**A REFERENCE IS NOT ALWAYS AN IMPORT.** `commitGuard.js` printed `nothing this commit
+carries references an untracked file` while `server/lib/listRefine.test.js` — eighteen
+tests, the entire proof of a three-bug fix — sat untracked in a guarded directory. It even
+printed the count (`1 untracked in guarded dirs`) and did nothing with it.
+
+The blind spot is structural: **nothing imports a test file.** The guard resolves import
+specifiers and path literals, which is exactly right for the defect it was built for
+(`server/index.js` importing an untracked `routes/trips.js`) and structurally incapable of
+seeing a file the *runner* finds by pattern. The guard built to catch a missing test could
+not catch a missing test. Same family as `dashHarness` supplying the props a real call site
+owns (§13.3): the check appears to cover the thing and cannot.
+
+Widened to three resolvable reference kinds:
+
+1. **Imports and relative path literals.** Unchanged.
+2. **Bare filename literals.** `join(__dirname, 'tripFixture.json')` — `PATH_LITERAL`
+   required a leading `./`, so **every browser fixture was invisible**: `cartFixture.json`,
+   `composedFixture.json`, `tripFixture.json`, `skim-harness.jsx`, `shot-harness.jsx`. A
+   fixture read by name is referenced exactly as hard as one that is imported.
+3. **Test-runner discovery.** `npm test` is `node --test`, which walks for `*.test.js`. That
+   pattern *is* the reference. `isSuiteFile` also covers `client/test/*.{mjs,jsx}`, since
+   CLAUDE.md's Verifying section invokes those by name and the harnesses beside them are
+   what make them run.
+
+`docs` joined `GUARDED` for one reason and it is not tidiness: `scripts/buildDoLines.js`
+**reads** `docs/do-lines-review.md`, and that file not shipping is why every curated `do`
+line was missing from production.
+
+**WHAT STILL CANNOT BE CAUGHT, recorded rather than papered over.** A doc that nothing
+resolves by path — `docs/LIST-CREATION-AUDIT.md` is the live example — has no resolvable
+reference anywhere in the tree. Whether it belongs in a commit is a judgment about intent
+and static analysis cannot make it. Failing on every untracked file would fire on scratch
+notes and get the guard switched off. So **the remainder is NAMED, never counted**: a bare
+count is what a human reads straight past, and reading straight past it is how eighteen
+tests stayed untracked.
+
+**Tree-state enforcement stayed in the CLI and out of `npm test`, deliberately.** An
+untracked test file is a defect at COMMIT time, not at test time — the suite runs in the
+working tree, where the file is present and passing. Asserting tree state in
+`commitScope.test.js` would go red every time anyone wrote a test before staging it, and a
+suite that cries wolf during ordinary work stops being read. So the CLI holds the state and
+the test holds the **logic**, including a drift guard that fails if the suite-file pattern
+stops matching the corpus git actually tracks. A regex that has drifted off the naming
+convention is a comment asserting an invariant, in executable clothing.
+
+**AND THE COMMIT NEVER HAPPENED.** Separately and on the same day: the fixes above were
+reported committed and pushed, and `HEAD` had not moved (`fcad019`), `main` was level with
+`origin/main`, the reflog showed no new entry, and both files were still untracked. Nothing
+was on `main`, so nothing deployed, while the working tree was green and the work looked
+done. **`commitGuard` runs BEFORE a commit and says nothing about whether one landed** —
+that is `git log` / `git status` afterwards, and it is the one step in this whole chain with
+no guard at all. The belief that a commit happened is itself unverified, and on a repo where
+`main` auto-deploys, "pushed" and "believed pushed" look identical from inside the editor.
+
 ---
 
 ## 14 — The open queue, in order

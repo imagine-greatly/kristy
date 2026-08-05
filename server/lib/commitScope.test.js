@@ -20,7 +20,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { danglingReferences, trackedSources, GUARDED } from '../scripts/commitGuard.js';
+import { danglingReferences, trackedSources, GUARDED, isSuiteFile } from '../scripts/commitGuard.js';
 import { nonEmpty } from './testGuards.js';
 
 // Bound at the collection. If git is unavailable or the repo is not a checkout, every
@@ -52,9 +52,64 @@ test('the guard reads more than it guards', () => {
 
 test('the guarded directories are the ones where an untracked file means an incomplete commit', () => {
   for (const d of nonEmpty(GUARDED, 'guarded directories', 4)) {
-    assert.match(d, /^(server|client|mobile)\//, `${d} should be a source directory`);
+    // `docs` earns its place because a build script RESOLVES one of them: buildDoLines.js
+    // reads docs/do-lines-review.md, and that file not shipping is why every curated `do`
+    // line was missing in production.
+    assert.match(d, /^(server|client|mobile)\/|^docs$/, `${d} should be a source or resolved-content directory`);
   }
   // A scratchpad file or a local .env is deliberately out of scope: untracked is correct
   // for those, and a guard that shouts about them gets switched off.
   assert.ok(!GUARDED.includes('server'), 'guarding all of server/ would sweep in .env and scratch files');
+});
+
+/* ═══════════ A REFERENCE IS NOT ALWAYS AN IMPORT ═══════════
+   2026-08-05: commitGuard printed "nothing this commit carries references an untracked
+   file" while `server/lib/listRefine.test.js` — eighteen tests, the whole proof of a
+   three-bug fix — sat untracked in a guarded directory. Nothing imports a test file, so an
+   import graph is structurally incapable of seeing one. The guard built to catch a missing
+   test could not catch a missing test: the third member of this family, and the first one
+   found inside the guard itself.
+
+   WHY THE TREE-STATE CHECK IS THE CLI'S JOB AND NOT THIS FILE'S. An untracked test file is
+   a defect at COMMIT time, not at test time — `npm test` runs in the working tree, where
+   the file is present and running. Asserting tree state here would go red every time
+   anyone wrote a test before staging it, which is most of the time, and a suite that cries
+   wolf during ordinary work is a suite people stop reading. So `commitGuard.js` enforces
+   the state before a commit, and this pins the LOGIC — that discovery counts as a
+   reference, and that the pattern still matches the real corpus. A regex that has drifted
+   off the naming convention is a comment asserting an invariant, in executable clothing. */
+
+test('the suite-file pattern still matches every suite file git actually tracks', () => {
+  // The drift guard. If the convention moves (`foo.spec.js`) or a browser suite lands with
+  // a new extension, this fails rather than the guard quietly covering less than it says.
+  const tracked = nonEmpty(
+    SOURCES.filter((f) => /\.test\.[cm]?js$/.test(f) || f.startsWith('client/test/')),
+    'tracked suite files',
+    20
+  );
+  const missed = tracked.filter((f) => !isSuiteFile(f) && !f.endsWith('.json'));
+  assert.deepEqual(missed, [], 'these are suite files the guard would not recognise as one');
+});
+
+test('an untracked suite file is reported even though nothing imports it', () => {
+  // Synthetic, so it holds whatever the tree happens to look like right now.
+  for (const f of nonEmpty(
+    ['server/lib/listRefine.test.js', 'server/lib/anything.test.js', 'client/test/newSuite.mjs', 'client/test/newHarness.jsx'],
+    'suite-shaped paths'
+  )) {
+    assert.ok(isSuiteFile(f), `${f} is discovered by the runner, so it is referenced`);
+  }
+  // And the things that are NOT suite files stay out, or the guard fails on scratch modules.
+  for (const f of ['server/lib/cartEdit.js', 'client/src/App.jsx', 'docs/LIST-CREATION-AUDIT.md']) {
+    assert.ok(!isSuiteFile(f), `${f} is not found by the runner`);
+  }
+});
+
+test('a bare filename counts as a path — the browser fixtures are reached that way', () => {
+  // `join(__dirname, 'tripFixture.json')` has no leading './', so PATH_LITERAL missed every
+  // one of them: cartFixture, composedFixture, tripFixture, skim-harness, shot-harness.
+  // Proven by the tree-mode scan being clean while those files are tracked; the assertion
+  // that matters is that the scan RESOLVES them at all, which it now does by name.
+  const bad = danglingReferences({ mode: 'tree' });
+  assert.deepEqual(bad.map((b) => `${b.from} -> ${b.resolved}`), [], 'a bare-name reference must resolve like any other');
 });
