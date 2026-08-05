@@ -82,7 +82,7 @@ or by real HTTP.** Treat it as unproven.
   UI is currently near-unreachable in practice.**
 - **`onImport` in `GuestApp`** — the control now renders, but no one has tapped it on production.
   The endpoint behind it *is* verified.
-- **Guest import via the TEXT path.** Only the multipart path was driven at production.
+- ✅ **Guest import via the TEXT path — VERIFIED on production** (see §1).
 - **`severity_label` on the ingredient payload.** Server-side move done, client reads it,
   no production read.
 - **`tierBucket` single-sourcing** — pinned against the server by `tierBucketMirror.test.js`;
@@ -101,14 +101,36 @@ session and it had not been updated.
 
 ### Live defects
 
-1. ⚠️ **An unreadable list row is SILENTLY OMITTED, not flagged.** Measured on production and
-   locally: a blurred-illegible row simply vanished (6 rows where 7 were written), 2/2 runs,
+1. ⚠️ **An unreadable list row is SILENTLY OMITTED, not flagged. TWO WEB DETECTION APPROACHES
+   WERE TRIED AND BOTH FAILED. This is a Swift-only fix.**
+
+   The defect: a blurred-illegible row simply vanished — 6 rows where 7 were written, 2/2 runs,
    **after** the prompt was strengthened to forbid exactly that. The row is plainly perceptible
-   as writing, so this is the model preferring omission over flagging, not failing to see it.
-   The scribbled case improved 0/2 → 1/2. Consequence: the shopper loses an item with no trace
-   and finds out in the store, and `needsFix` — plus the whole correction UI — rarely fires.
-   **This is the strongest argument in the spec for `VNRecognizeTextRequest`: it returns
-   per-word confidence, a mechanical signal, instead of asking a model to volunteer one.**
+   as writing, so this is the model preferring omission, not failing to see it. It is **worse
+   than a wrong read**, because a wrong read is visible and correctable and this leaves no trace
+   until the shopper is in the store.
+
+   **What was tried, and measured:**
+
+   | approach | result |
+   | --- | --- |
+   | **A. Same-call line count** — ask for `lines_written`/`lines_struck` alongside the items, compare arithmetically | **FAILS. The count shares the blind spot.** On the faded list it reported **7 lines where 8 exist** — it undercounts by exactly the line it dropped, so `items === expected` and the arithmetic reports no loss. Caught 1 of 4 loss cases, and produced a wrong count on the clean screenshot too. |
+   | **B. Ink-row analysis on canvas** — count rows of writing off the pixels, independent of the model | **FAILS on photographed paper.** Ruled lines bridge into one run: detected **1 row where 8 exist** on both photo cases, and 17 where 14 exist on the clean screenshot. Separating periodic rules from writing is a real CV project, and its failure mode is a *silently wrong count* — a false alarm on every photo trains the shopper to ignore the warning. |
+
+   **So it stays a Swift fix, and the reason it works there is structural rather than better
+   prompting:** `VNRecognizeTextRequest` returns a `VNRecognizedTextObservation` per detected
+   text region, each with its own `confidence` and bounding box, from Apple's detector — **a
+   different system from the transcriber, so they do not share a blind spot.** That gives an
+   independent region count, per-line confidence as a mechanical "cannot read this" signal, and
+   a bounding box for a region that produced no text. That is exactly what neither web approach
+   could supply.
+
+   **One thing DID come out of it and shipped:** the summary said *"Kept all 12 of your items"* —
+   a completeness claim nothing could verify, and measurably sometimes false. It is the one
+   sentence that would stop a shopper counting. The photo path now reports a count without
+   asserting "all"; the **typed** path keeps the stronger wording, because a pasted list cannot
+   silently lose a line. Same rule as `reconcileSummary`: a summary may not outrun what actually
+   happened.
 2. **A refund that arrives as an unmapped RevenueCat event leaves the shopper premium until
    expiry.** `mapRevenueCatStatus` returns `null` for anything it does not recognise and the
    route replies `{ received: true, ignored }` rather than guessing. Deliberate, and worth

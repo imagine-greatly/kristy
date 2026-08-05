@@ -329,7 +329,9 @@ router.post('/list/import', imageUpload.single('image'), async (req, res) => {
        append guarantee, defeated by the transport. JSON path is unaffected (it arrives parsed),
        which is exactly why only a real multipart request could show this. */
     const current = sanitizeList(parseListField(req.body?.list)) || { goal: null, intro: '', items: [] };
-    const summary = importSummary({ items, specified, offers });
+    // `verbatim` only when the shopper TYPED it: a pasted list cannot silently lose a line,
+    // so it may claim completeness. A photo may not — see importSummary.
+    const summary = importSummary({ items, specified, offers, verbatim: !req.file });
     // APPENDED, never a replacement — an import must not wipe a cart already in progress.
     const merged = { ...current, intro: summary, items: [...current.items, ...items] };
 

@@ -426,7 +426,9 @@ router.post('/list/import', requireAuth, userRateLimit, imageUpload.single('imag
     const current =
       row?.list && Array.isArray(row.list.items) ? row.list : { goal, intro: '', items: [] };
 
-    const summary = importSummary({ items, specified, offers });
+    // `verbatim` only when the shopper TYPED it: a pasted list cannot silently lose a line,
+    // so it may claim completeness. A photo may not — see importSummary.
+    const summary = importSummary({ items, specified, offers, verbatim: !req.file });
     // Imported items are APPENDED, never a replacement — an import must not silently
     // wipe a cart the shopper was already building.
     const merged = {

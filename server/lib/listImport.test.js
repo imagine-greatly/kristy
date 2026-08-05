@@ -103,9 +103,27 @@ test('no imported row carries a health-outcome claim', () => {
 
 test("Kristy's summary is 'kept it, sharpened it' — never 'fixed your choices'", () => {
   const r = specifyImportedItems(parseListText('milk\nDoritos'), {});
-  const line = importSummary(r);
+  // A TYPED list cannot silently lose a line, so it may claim completeness.
+  const line = importSummary({ ...r, verbatim: true });
   assert.match(line, /kept all 2/i);
   assert.doesNotMatch(line, /\b(fixed|removed|deleted|replaced|bad|unhealthy|junk)\b/i);
+});
+
+test('A PHOTO IMPORT MAY NOT CLAIM COMPLETENESS — it cannot know it got everything', () => {
+  /* Measured 2026-08-05: a row the vision layer cannot read is SILENTLY OMITTED rather than
+     returned flagged (2/2 on a plainly-visible blurred line), and asking the model for a line
+     count does not help because the count agrees with the omission. So on a photographed list
+     "Kept all 12 of your items" can be said over 13 written lines — and it is precisely the
+     sentence that would stop the shopper counting. The number stays; the word "all" is not
+     ours to say. Same rule as reconcileSummary. */
+  const r = specifyImportedItems(parseListText('milk\nDoritos'), {});
+  const photo = importSummary(r); // verbatim defaults to false — the photo path
+  assert.doesNotMatch(photo, /\ball\b/i, 'a photo import must not assert it captured everything');
+  assert.match(photo, /\b2\b/, 'the count itself is honest and stays');
+  assert.doesNotMatch(photo, /\b(fixed|removed|deleted|replaced|bad|unhealthy|junk)\b/i);
+
+  // And the two paths must actually differ, or the distinction is decorative.
+  assert.notEqual(photo, importSummary({ ...r, verbatim: true }));
 });
 
 test('vision transcription parses defensively and never invents an item', () => {

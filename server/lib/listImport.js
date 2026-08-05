@@ -279,9 +279,23 @@ function attachOfferIfClashes(item, name, lineIds, resolved, offers) {
 /* ── 5. Kristy's line about what she did ──────────────────────────────────────
    "Kept your list, made it sharper" — never "fixed your choices". Egoless: it states
    what happened to the list, it doesn't narrate a service being performed. */
-export function importSummary({ items, specified, offers }) {
+/* "KEPT ALL" WAS A COMPLETENESS CLAIM NOTHING COULD VERIFY, and measurement showed it is
+   sometimes false. A row the vision layer cannot read is SILENTLY OMITTED rather than returned
+   flagged — measured 2/2 on a blurred line that is plainly visible as writing, and the model's
+   own line count agrees with the omission, so the arithmetic cannot catch it either (see
+   SWIFT-HANDOFF §3). So on a photographed list, "Kept all 12 of your items" can be said over 13
+   written lines, and it is the one sentence that would stop the shopper counting.
+
+   The number is honest; the word "all" is not ours to say. Same rule as reconcileSummary: a
+   summary may not outrun what actually happened. It reads as a count now, and the SOURCE matters
+   — a typed or pasted list cannot lose a line, so that path keeps the stronger wording. */
+export function importSummary({ items, specified, offers, verbatim = false }) {
   if (!items.length) return 'Nothing readable on that one. Try typing it out.';
-  const parts = [`Kept all ${items.length} of your items`];
+  const parts = [
+    verbatim
+      ? `Kept all ${items.length} of your items`
+      : `${items.length} item${items.length === 1 ? '' : 's'} in, straight off your list`,
+  ];
   if (specified) parts.push(`sharpened ${specified} of them into what to actually reach for`);
   const line = `${parts.join(', ')}.`;
   if (offers.length) {
