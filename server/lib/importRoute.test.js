@@ -157,10 +157,17 @@ test('the vision prompt forbids reinstating a crossed-out item, in the strongest
   // problem. After this rule it drops 9/9.
   assert.match(vision, /CROSSED-OUT ITEM IS NOT ON THE LIST/i);
   assert.match(vision, /readability is not the test/i, 'the stroke, not the legibility, is the test');
-  assert.ok(
-    !/crossed-out.*unreadable|unreadable.*crossed-out/i.test(vision.replace(/not even marked unreadable/i, '')),
-    'a crossed-out row must be omitted entirely, not returned marked unreadable'
-  );
+  /* A crossed-out row is OMITTED; an unreadable row is RETURNED FLAGGED. Both instructions must
+     be present and must not be conflated.
+
+     The first version of this assertion tried to prove they were not conflated by forbidding the
+     two words from appearing near each other — which then failed the moment the prompt explained
+     the distinction properly ("the ONLY lines that get omitted entirely are crossed-out ones").
+     A check that cannot tell prose ABOUT the rule from a violation OF it is this family's own
+     defect, and it has now bitten twice in this one file. So it asserts the two instructions
+     positively instead. */
+  assert.match(vision, /not even marked unreadable/i, 'a struck row must not come back flagged');
+  assert.match(vision, /UNREADABLE LINE IS STILL A LINE\. RETURN IT/i, 'an illegible row must not be omitted');
 });
 
 test('the vision prompt biases toward "unreadable" over a confident guess', () => {
