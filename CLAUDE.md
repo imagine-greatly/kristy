@@ -898,6 +898,27 @@ was invisible until something rendered one**
   while making the ADI temporary — a better sentence than the sourced version of the old
   claim would have been. The real finding beats the retold one often enough that fetching
   is worth it on the merits, not only as hygiene.
+- **A PROMPT'S WORKED EXAMPLE BECOMES ITS OUTPUT. Never write the forbidden thing down.**
+  Twice now, the exact text a prompt carried as an illustration came back as the product's
+  own words. `gen_a1_vs_a2_yogurt` contradicted the curated A2 card because
+  `counterGenerate.js` held that headline as its worked FAIL/PASS example. And every
+  budget-constrained list put **"Cheap protein and carbs"** in the summary — because
+  `LIST_COMPOSE_SYSTEM` contained the literal phrase *"Cheap protein asked for"* as its
+  example for when liver belongs on a list, while banning a "cheap/expensive" label two lines
+  later. The model was not inventing either one; it was **echoing the prompt**. When output is
+  wrong, check whether the generator was *taught* it before assuming it improvised.
+  **Distinguish two forms, because only one is avoidable.** A forbidden WORD has to be named
+  to be banned ("never the words 'cheap' or 'expensive'") — that sits inside a prohibition
+  frame and is low risk. A forbidden PHRASE demonstrated as example output is high risk and
+  always avoidable: **describe the defect instead of writing the bad line.** And a ban with no
+  substitute is a gap the model fills from habit, so name the words it SHOULD use — budget got
+  "stretches / goes further / more per pound", and the model adopted them verbatim.
+  **A worked example must also never quote the live corpus.** Swept 2026-08-05:
+  `COUNTER_GEN_SYSTEM`'s examples are **verbatim `decision` fields of three shipping cards** —
+  `salmon_wild_vs_farmed`, `label_natural`, `organic_worth_it_by_type`, plus that first card's
+  `watch_out`. The generator is shown real curated output as the thing to imitate, which is
+  the mechanism behind the four generated duplicates already paid for. Illustrations must be
+  invented, or clearly marked as belonging to a card that already exists.
 - **A COMMENT ASSERTING AN INVARIANT IS NOT AN INVARIANT. If it is load-bearing, test it.**
   The retrieval-floor comment claimed curated and generated admit on the same evidence, and
   was wrong three consecutive times in three different ways — different constants, then

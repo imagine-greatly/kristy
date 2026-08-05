@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { SEVERITY_LABEL } from '../lib/severityLabels.js';
 import { kb } from '../lib/verdictEngine.js';
 import { selectCardIsm, ismContext } from '../lib/education.js';
 
@@ -28,6 +29,12 @@ function publicEntry(e) {
     // branches on this: no severity chip, no "why it's bad" section, history first.
     polarity: e.polarity === 'affirming' ? 'affirming' : 'concern',
     severity: e.severity,
+    // THE SHORT SEVERITY CHIP IS A CLAIM REGISTER AND IT IS SERVED, NOT RESTATED.
+    // It lived only in the client (`verdictRamp.js SEVERITY_LABEL`), so a second client would
+    // have restated "Skip always" / "Strong case to avoid" in its own words — a claim that
+    // drifts. `framing.severity` below is the KB's own long description of the level; this is
+    // the four-word tag the row shows. Additive: nothing that read this payload before cares.
+    severity_label: SEVERITY_LABEL[e.severity] || null,
     evidence_tier: e.evidence_tier,
     verdict: e.verdict || null,
     one_liner: e.one_liner,

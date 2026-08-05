@@ -563,7 +563,7 @@ const PICKS = {
   },
   canned_fish: {
     name: 'Canned skipjack tuna', category: 'Protein', perimeterId: 'canned_fish_mercury',
-    why: 'Skipjack (the “light” tin) sits lower in mercury than albacore.',
+    why: 'Packed in olive oil or water, never “vegetable oil” — and skipjack is the lighter tin on mercury.',
     alt: 'Or canned salmon — bones in, more calcium.',
   },
   salmon: {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { colors, fonts, kristyDisplay, kristyVoice, radii } from '../lib/tokens.js';
+import { tierBucket } from '../lib/tierBucket.js';
 import { GoldThread } from './GoldThread.jsx';
 import { HaulIcon } from './Icons.jsx';
 import AmbientIsm from './AmbientIsm.jsx';
@@ -20,8 +21,6 @@ const BUCKET = {
   note: { label: 'With a note', color: colors.accentGold, chipFg: colors.accentGold },
   swap: { label: 'Swap', color: colors.danger, chipFg: colors.error },
 };
-const bucketOf = (tier) =>
-  tier === 'approved' ? 'approved' : tier === 'approved_with_note' || tier === 'use_with_intention' ? 'note' : 'swap';
 
 function DistributionBar({ d }) {
   const total = Math.max(1, d.total);
@@ -49,7 +48,7 @@ function DistributionBar({ d }) {
 // One scanned item. When it's something she'd swap, the row carries its OWN one-tap
 // route into the next cart — the insight and the action in the same place.
 function ItemRow({ scan, onAddOne }) {
-  const b = bucketOf(scan.tier);
+  const b = tierBucket(scan.tier);
   const swappable = scan.tier === 'swap_recommended' || scan.tier === 'skip';
   const [added, setAdded] = useState(false);
 

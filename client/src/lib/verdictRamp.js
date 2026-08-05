@@ -24,12 +24,11 @@ export function severityColor(sev) {
   }
 }
 
-export const SEVERITY_LABEL = {
-  critical: 'Skip always',
-  high: 'Strong case to avoid',
-  moderate: 'Worth knowing',
-  flag: 'On the radar',
-};
+/* SEVERITY_LABEL IS GONE FROM HERE — it moved to server/lib/severityLabels.js and arrives on
+   the ingredient payload as `severity_label`. "Skip always" is a verdict about how much a
+   concern matters, and a claim restated per client is a claim that drifts. Do not add it back:
+   render what the server sends. `EVIDENCE_LABEL` below deliberately stayed — see the note in
+   severityLabels.js about sanitizeFlagged's whitelist. */
 
 // evidence_tier → the small tag shown on rows + the detail page.
 export const EVIDENCE_LABEL = {

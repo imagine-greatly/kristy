@@ -4,7 +4,6 @@ import { GoldThread } from './GoldThread.jsx';
 import { fetchIngredient } from '../lib/ingredients.js';
 import {
   severityColor,
-  SEVERITY_LABEL,
   EVIDENCE_LABEL,
   SEVERITY_CALL,
   AFFIRMING_TIER,
@@ -103,7 +102,7 @@ export default function IngredientPage({ id, onClose }) {
                 {!affirming && (
                   <span style={styles.sevChip}>
                     <span style={{ ...styles.dot, background: severityColor(data.severity) }} />
-                    {SEVERITY_LABEL[data.severity] || data.severity}
+                    {data.severity_label || data.severity}
                   </span>
                 )}
                 <span style={affirming ? { ...styles.evChip, ...styles.evChipAffirm } : styles.evChip}>

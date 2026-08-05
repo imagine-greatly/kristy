@@ -1,3 +1,4 @@
+import { tierBucket } from './tierBucket.js';
 // Unified data layer. In real mode it reads/writes Supabase (RLS-protected,
 // per-user). In demo mode it uses localStorage so the UI is fully usable
 // with no backend. AI chat itself goes through ./api.js.
@@ -254,13 +255,11 @@ const rid = () =>
   (typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID()) ||
   `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-const haulBucket = (t) =>
-  t === 'approved' ? 'approved' : t === 'approved_with_note' || t === 'use_with_intention' ? 'note' : 'swap';
 
 function haulDistribution(scans) {
   const d = { approved: 0, note: 0, swap: 0, total: 0 };
   for (const s of scans) {
-    d[haulBucket(s.tier)] += 1;
+    d[tierBucket(s.tier)] += 1;
     d.total += 1;
   }
   return d;

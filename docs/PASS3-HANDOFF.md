@@ -901,26 +901,57 @@ shopper is told → server. A gesture, a layout, or something that must work off
 → client. Anything genuinely in between → server**, because there will be three clients and
 each duplication below becomes copy #3 the day Swift starts.
 
-Nothing here is moved yet. This is the list, with why each one is content rather than
-presentation.
+### ⚠️ THIS SECTION WAS WRONG IN THREE OF ITS FOUR PARTICULARS. Corrected 2026-08-05.
 
-1. **`client/src/lib/list.js:776` `GOAL_TEMPLATES` / `:845` `FOCUS_ITEMS`** — ~300 lines of
-   list-generation content duplicating `server/lib/list.js`, under a comment that says "keep
-   them in sync." Nothing enforces it. Demo already reads the real public endpoints for the
-   counter and for chat; the list is the surface that was left behind.
-2. **`client/src/lib/coachGoals.js`** — 311 lines of goals, non-negotiables, focuses and
-   constraints, including Kristy-voiced `payoff` copy. Voice is content.
-3. **Tier → prose, written five times** — `ScanVerdictCard.jsx:34-46`, `CartMoment.jsx:50-52`,
-   `HaulMoment.jsx:24`, `App.jsx:886-888`, `data.js:258`. The server already knows the tier;
-   it should send the label with it.
-4. **`client/src/lib/verdictRamp.js`** — the colours are presentation and stay. The strings
-   are not: `AFFIRMATION_MEANING` ("Backed by history, not a lab"), `SEVERITY_CALL`,
-   `EVIDENCE_LABEL` are claims about evidence quality and belong with the KB.
+**It was written from reading the files, not from measuring them, and it was quoted back as
+settled fact for a day.** Full working in `docs/DUPLICATION-SURVEY.md`. The rule at the top
+still holds; the inventory below did not. **"Four duplications, serve each from an endpoint"
+turned out to be ONE endpoint move, one small claim register, one real deduplication, and one
+thing that should be left alone.**
+
+1. ~~**`GOAL_TEMPLATES` / `FOCUS_ITEMS` duplicate the server**~~ → **LEAVE IT. It is demo
+   fixture data.** Every caller is behind `IS_DEMO` (`client/src/lib/list.js:134`, `:203`,
+   `:240`, `:1066`) and nothing outside that file imports any of it. The real client already
+   calls `GET /api/list` and `POST /api/list/rebuild`. **Demo's stated purpose is "no backend
+   at all", so an endpoint would defeat the one thing it exists for.** Measured drift across all
+   51 picks: **exactly one** — `canned_fish.why`, where the server's rewrite (see "the `why`
+   MOVES") never reached the client. **Fixed 2026-08-05.** It becomes copy #3 only if Swift
+   ships a demo mode, and then the answer is a bundled fixture, not a route.
+2. **`coachGoals.js` — CORRECT, and it is the only genuine endpoint move.** The ids and labels
+   are already served by `GET /api/preferences/taxonomy`; what is client-only is the *copy* —
+   blurbs, section titles, payoff lines. **`constraintsMirror.test.js` now covers all four
+   dimensions on ids and order**, which is the prerequisite. The copy move is next and is not
+   done.
+3. ~~**Tier → prose, written five times**~~ → **ONE duplicate plus THREE deliberate registers.**
+   The duplicate was the *bucketing function* — `HaulMoment.jsx` and `data.js`, byte-identical,
+   and a third copy in `server/lib/haul.js` which is the authority. **Single-sourced 2026-08-05**
+   into `client/src/lib/tierBucket.js` with `tierBucketMirror.test.js` pinning it against the
+   server, including the load-bearing unrecognised-tier→`'swap'` default. The other three are
+   the same tier in three grammatical positions — a card badge ("Approved with note"), a cart
+   chip ("With a note"), a sentence fragment ("approved, with a note") — and **collapsing them
+   would be a regression.** "The server should send the label with it" is wrong for the same
+   reason: one register cannot serve three positions.
+4. **`verdictRamp.js` — CORRECT in principle, wrong in its particulars.** It names
+   `AFFIRMATION_MEANING` and `SEVERITY_CALL`, **neither of which exists in that file.** What
+   does: `SEVERITY_LABEL` (a claim register — **moved server-side 2026-08-05** to
+   `lib/severityLabels.js`, served as `severity_label` on the ingredient payload), and
+   `SEV_RANK` / `severityColor` (token binding — **stays client-side**; sending hex over HTTP
+   would defeat the Swift asset catalog). `EVIDENCE_LABEL` **deliberately did not move**: it
+   also renders in `ScanVerdictCard` off a matched entry, and a matched entry is shaped by
+   `sanitizeFlagged`, whose five-field whitelist is a claim-lock boundary with a test on it.
+   Widening a claim-lock whitelist to carry a label needs deciding on its own merits, not as a
+   side effect of tidying.
+
+**The lesson, which is this document's own recurring one:** an inventory written from reading is
+a comment asserting an invariant. Three of these four claims were confidently wrong, and the
+error was always in the same direction — **assuming a duplication is a duplication because two
+files contain similar text.** Measure the callers before proposing a move.
 
 The pattern that works is already in the repo: `client/src/lib/listSections.js` declares
 itself a mirror of `server/lib/listMatch.js` and `listSectionsMirror.test.js` fails if the
 ids, titles, order or frozen rule drift. **Where a mirror is genuinely unavoidable, it needs
-that treatment before it ships, not after.**
+that treatment before it ships, not after.** Two more now have it: `constraintsMirror.test.js`
+and `tierBucketMirror.test.js`.
 
 
 ---

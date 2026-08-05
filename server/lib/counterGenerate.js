@@ -92,14 +92,14 @@ once, and the fallback is given plainly with no lecture attached.
 The hedge may NEVER live in the verdict. A headline that states a standard and then takes
 it back is two verdicts where the second cancels the first.
 
-  FAIL: "Wild if it is in reach. Farmed or nothing, buy the farmed."
-  FAIL: "Grass-fed when the price is fair. Otherwise regular beef."
-  FAIL: "Worth it if the budget stretches. Otherwise the plain carton."
-  FAIL: "Whole milk. Buy the one the household actually drinks."   (no keyword, same retreat)
+  FAIL: "Single-ingredient tahini if the shop has it. Otherwise any jar."
+  FAIL: "Kettle-cooked when the price is fair. Otherwise the ordinary bag."
+  FAIL: "Worth it if the budget stretches. Otherwise skip it."
+  FAIL: "Turnips. Buy the ones the household actually eats."   (no keyword, same retreat)
 
-  PASS: headline  "Wild. Farmed is a different fish, fed and penned."
-        watch_out "Frozen wild runs cheaper than fresh farmed. If it is farmed or nothing,
-                   buy the farmed and cook it well."
+  PASS: headline  "Single-ingredient tahini. Added oil makes a thinner, sweeter paste."
+        watch_out "It separates hard and wants a real stir. If the only jar on the shelf has
+                   added oil in it, buy that one."
 
 - The headline states the standard undiluted. No "if", no "when the price is fair", no
   "otherwise", no question mark framing it as conditional.
@@ -107,8 +107,8 @@ it back is two verdicts where the second cancels the first.
 - The do line serves the standard, not the fallback.
 
 A TWO-CLAUSE HEADLINE IS FINE when it splits by TYPE or USE CASE, because that is
-discrimination rather than retreat: "Organic on thin-skinned produce. Conventional on
-anything peeled." "80/20 for burgers. 90/10 for anything you drain." The test is what the
+discrimination rather than retreat: "Okra small and firm for frying. Anything longer for
+stewing." "Whole turnips for roasting. Sliced thin for a raw salad." The test is what the
 second clause is conditioned on. A condition about the FOOD is discrimination. A condition
 about the SHOPPER'S CIRCUMSTANCES — their budget, what the store happens to stock, how much
 time they have — is a retreat, and it is rejected.
@@ -146,28 +146,28 @@ the shelf. If the do line answers a different question — even a good question,
 the shopper might also have — the card wastes its most valuable line.
 
   WORKED FAIL:
-    headline: "Ignore it. Read the ingredient list instead."
-    do:       "Look for the word ‘natural’ on the front of the package."
+    headline: "It decides nothing. Nobody defines the phrase."
+    do:       "Look for the words ‘small batch’ on the front of the package."
     Why it fails: the verdict is that the claim is NOT the thing that matters. The do line
-    then sends the shopper to find that exact word. Someone asking this question is already
+    then sends the shopper to find that exact phrase. Someone asking this question is already
     holding the package — they are asking whether the claim is worth anything. The do line
-    answers "where is the word natural", which nobody asked.
+    answers "where is the phrase printed", which nobody asked.
 
   WORKED PASS:
-    headline: "Ignore it. Read the ingredient list instead."
-    do:       "Look for a defined word instead: organic, grass-finished, or pasture-raised."
+    headline: "It decides nothing. Nobody defines the phrase."
+    do:       "Turn the package over and count what is actually in it."
     Why it passes: the verdict says the claim is not the deciding factor, and the action
-    sends the shopper to the words that are.
+    sends the shopper to the thing that is.
 
 Test it in one question: if the headline is right, does doing the do line follow from it?
 
 SIGNAL CONSISTENCY. Any signal named in the headline must also appear in the do line or in
 look_for, and the do line must never introduce a signal the headline contradicts.
 
-  FAIL: headline "Weight and smell decide a cantaloupe" + do "Press for give and smell"
+  FAIL: headline "Weight and give decide a persimmon" + do "Press the shoulder for yield"
         — the headline promised weight and the action never mentions it.
-  PASS: headline "Smell decides a cantaloupe, not the rind colour" + do "Smell the stem end
-        for sweetness" + look_for includes "Heavier than another of the same size".
+  PASS: headline "Give decides a persimmon, not the colour" + do "Press the shoulder for a
+        slight yield" + look_for includes "Dense for its size against another the same width".
 
 HARD RULES — a card that breaks any of these is thrown away, not fixed:
 
@@ -232,11 +232,11 @@ and regenerated at full cost, so verify each before you return.
    watch, weigh, wrap
    If the verb you want is not on this list, rewrite the line with one that is.
 4. NO DISTINCTIVE WORD MAY APPEAR IN BOTH the headline and the do line. If the headline
-   says "marbling", the do line may not say "marbling". Ordinary words (the, for, a) do not
+   says "collagen", the do line may not say "collagen". Ordinary words (the, for, a) do not
    count; the SUBJECT and the OBSERVABLE do.
-   FAIL: headline "Ribeye wins on marbling" + do "Look for marbling through the muscle"
-   PASS: headline "Ribeye wins on the fat inside the muscle" + do "Look for white flecks
-         threaded through the centre, not a rim of fat"
+   FAIL: headline "Kohlrabi wins on density" + do "Look for a dense bulb"
+   PASS: headline "Kohlrabi wins on how little of it is woody" + do "Take the ones no wider
+         than a tennis ball, with the leaves still stiff"
 5. tier_note is one sentence, specific to this card, and never the tier's definition.
 6. aliases: at least 4, lowercase, each one something a shopper would actually type.
 
