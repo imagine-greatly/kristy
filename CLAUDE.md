@@ -451,6 +451,11 @@ equality *is* the positioning.
   record that seeds next week and feeds the shopping profile. Every content word of the row
   must appear in the product, a state word (frozen/canned/dried/fresh) on both sides that
   disagrees vetoes, and an ambiguous tie is no match at all.
+  ⚠️ **EXCEPT FOR A ONE-WORD ROW, WHERE IT IS NOT CONSERVATIVE AT ALL — see Open items.**
+  "Every content word of the row must appear in the product" is trivially true when the row
+  has one word, so a row reading "Yogurt" is ticked by "Greek Yogurt Covered Raisins". The
+  comment above that rule names that exact example as the over-match it refuses; it does not
+  refuse it, and never did.
 - **THE SCREEN WAKE LOCK IS SHOP MODE ONLY, AND THE RE-ACQUIRE IS THE FEATURE.** The browser
   releases the lock whenever the document hides, so acquire-once code passes every test ever
   written for it and then dies at the first notification, permanently, for the rest of the
@@ -1103,6 +1108,30 @@ was invisible until something rendered one**
 ---
 
 ## Open items
+
+- 🐞 **`rowMatch.js` OVER-MATCHES A ONE-WORD ROW, AND IT IS THE EXPENSIVE SIDE OF THE
+  ASYMMETRY.** Rule 5 — every content word of the ROW must appear in the product — is
+  vacuous at one word, so `words("yogurt") ⊆ words("Greek yogurt raisins")` and the shopper
+  is offered **"Check off Yogurt"** for a bag of raisins. Accepting it ticks a row they never
+  bought; the list is a record, so it seeds next week's trip and feeds the shopping profile.
+  A miss costs one uncheck, this costs a lie that propagates.
+
+  **The comment on that rule names this exact example as the over-match it refuses.** It does
+  not refuse it and the code never did — a comment asserting an invariant, in the file whose
+  whole argument is that it refuses more than it could.
+
+  **The likely fix is a floor on the ROW's own substance, not a change to the coverage rule**
+  — a single generic word is not an identity, so require either two content words or one long
+  enough to be a product rather than a category. Do not narrow rule 5 instead: "Greek yogurt"
+  written against "Fage Total 5% Greek Yogurt" scanned is the direction that actually happens
+  and must keep matching.
+
+  **Fix order, and it is not optional: JS first, then both clients.** The Swift port
+  (`kristy-ios`, `Kristy/Core/RowMatch.swift`) reproduces this behaviour **deliberately** —
+  two clients disagreeing about which row a scan ticks is worse than one shared, known
+  over-match. It is pinned there as it BEHAVES, so when this lands **one iOS check goes red
+  and names itself**; that is the intended signal, not a break. Full statement in the iOS
+  repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
 
 - ⏸ **THE UNPUSHED COMMIT ON `main` IS DELIBERATE, NOT FORGOTTEN.** `POST /api/trips/import`
   (`a5c5d22`) is held: nothing can reach it (`requireAuth`, sign-in blocked on 10DLC), its
