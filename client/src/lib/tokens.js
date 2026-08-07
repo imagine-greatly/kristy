@@ -23,7 +23,13 @@
    GOLD IS IDENTITY ONLY: wordmark, the hairline+dot motif, tier badge, active tab,
    chip text. Never a large filled surface, and never a sentence a shopper reads to
    make a decision — those are --ink / --ink-body / --ink-muted. The primary action
-   on a screen is `action` (warm bone), exactly one per screen. */
+   on a screen is `action` (warm bone), exactly one per screen.
+
+   ⚠️ THE SECOND SENTENCE OF THAT PARAGRAPH IS SUPERSEDED IN kristy-ios AND STILL
+   TRUE HERE. Gold IS a fill there, at small sizes — see `brassFill` below, where the
+   rule and its measurements live. The web client has not migrated and `action` is
+   what it ships. Two repos, one palette, and the divergence is in the RULE rather
+   than in the values, which is why both sets of values are in this file. */
 
 export const colors = {
   // ── Grounds ──
@@ -61,8 +67,43 @@ export const colors = {
   // Scan a barcode, Add to cart). Every other button is transparent with a
   // hairline border. A gold fill used to carry this job and it made every
   // screen shout in the brand colour, which left nothing for identity.
+  //
+  // ⚠️ THIS RULE HAS BEEN SUPERSEDED IN kristy-ios AND NOT YET HERE. See the two
+  // tokens below. `action` is still what the web client ships — 16 files and three
+  // rules in index.css — so it stays until a deliberate migration, and the divergence
+  // is written down rather than discovered.
   action: '#EFE9D8', //                         (--action)
   actionInk: '#0A1A11', //                      (--action-ink)
+
+  // ── The two primary tiers (kristy-ios, 2026-08-07) ────────────────────────
+  // FILL SCALES INVERSELY WITH AREA. Small gold is jewelry; large gold is a warning
+  // label. The old rule above diagnosed a real symptom — a gold fill made every screen
+  // shout — and named the wrong cause: the variable was never the colour, it was the
+  // AREA. So a SMALL primary is a gold fill with near-black text; a LARGE primary is a
+  // brass hairline on a lifted surface, taking its presence from height, weight,
+  // letterspacing and elevation. Bone and white become forbidden as a fill.
+  //
+  // THESE ARE THE ONLY TWO COLOURS IN THE BRAND THAT WERE AUTHORED IN THE iOS REPO
+  // RATHER THAN HERE. They are mirrored into this file on the day they were chosen so
+  // there is one palette rather than two, and so the next person reading either file
+  // finds the same values. **A change to either is a change in both repos.**
+  //
+  // Chosen from three candidates each, rendered side by side at real size on a phone.
+  // The measurements are recorded because the rejected options are the argument:
+  //   brassFill      #C4A65A 8.38:1 — is `brass` itself, so a fill reads as the same
+  //                                   swatch enlarged, not a different weight of metal
+  //                  #B08C3C 6.24:1 — CHOSEN
+  //                  #9A7526 4.63:1 — clears the 4.5 floor by 0.13; too tight for the
+  //                                   smallest type in the system
+  //   surfaceLifted  #1A281A 1.17:1 — barely a lift (today's `surface` is 1.11:1)
+  //                  #262E1C 1.27:1 — CHOSEN
+  //                  #343620 1.45:1 — stops reading as this ground warmed and starts
+  //                                   reading as a colour of its own
+  // The lifted ratios are SEPARATION, not legibility — nothing is read against that
+  // surface, ink sits on it (`ink` measures 12.48:1 there, `inkMuted` 6.15:1).
+  brassFill: '#B08C3C', // small primary fill   (--brass-fill)
+  brassFillInk: '#050D08', // text on it, 6.24:1 (--brass-fill-ink)
+  surfaceLifted: '#262E1C', // large primary ground (--surface-lifted)
 
   // ── Text ─────────────────────────────────────────────────────────────────
   // Three levels, and none of them is gold. `textSecondary` used to BE gold and

@@ -41,9 +41,26 @@
 
   /* The ONE filled action per screen (Go, Ask, Scan a barcode, Add to cart).
      Everything else is transparent with a 0.5px --hairline border. A gold fill
-     used to carry this and it left the brand colour with nothing to mark. */
+     used to carry this and it left the brand colour with nothing to mark.
+
+     ⚠️ SUPERSEDED IN kristy-ios, NOT YET HERE — see --brass-fill below. This is
+     still what the web client ships and it stays until a deliberate migration. */
   --action: #efe9d8;
   --action-ink: #0a1a11;
+
+  /* FILL SCALES INVERSELY WITH AREA. Small gold is jewelry; large gold is a
+     warning label. The rule above named the wrong cause: the variable was never
+     the colour, it was the AREA. A SMALL primary is a gold fill with near-black
+     text; a LARGE primary is a brass hairline on --surface-lifted, taking its
+     presence from height, weight, letterspacing and elevation.
+
+     Authored in kristy-ios and mirrored here — the only two brand colours that did
+     not originate in this file. A change to either is a change in BOTH repos. The
+     rationale and the rejected candidates are in lib/tokens.js; no web surface
+     consumes these yet. */
+  --brass-fill: #b08c3c;
+  --brass-fill-ink: #050d08;
+  --surface-lifted: #262e1c;
 
   /* Three text levels, none of them gold. --text-secondary WAS gold and carried
      decks and why-lines app-wide; it is now the muted ink and the alias stays so
