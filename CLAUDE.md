@@ -1104,6 +1104,12 @@ was invisible until something rendered one**
 
 ## Open items
 
+- ⏸ **THE UNPUSHED COMMIT ON `main` IS DELIBERATE, NOT FORGOTTEN.** `POST /api/trips/import`
+  (`a5c5d22`) is held: nothing can reach it (`requireAuth`, sign-in blocked on 10DLC), its
+  tests have never run (no Node on this machine), and pushing this repo deploys. **The full
+  reasoning and the unblock condition live in the iOS repo's `docs/SWIFT-HANDOFF.md` §3,
+  item 0** — one queue, not two. Do not push it to be helpful.
+
 - 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14** (written 2026-08-04
   so a cold start needs no thread): list-creation audit A–E → design review → build (blocked
   on explicit approval) · scan card bottom sheet · photo thumbnail · attachment-eyebrow report
