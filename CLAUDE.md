@@ -45,11 +45,49 @@ commits** (`POST /api/trips/import`, see **Open items**). So in this repo `git p
 *publish*, and pushing "to be safe" ships a feature that is being held on purpose, along with
 whatever else is ahead.
 
-**Commit always — that is what a dropped session threatens. Push only when the turn's work is
-meant to go live**, and never merely to satisfy the rule above. The commit is what protects the
-hours; the push protects nothing further and can cost a deploy nobody chose. When work is
-committed and deliberately unpushed, **say so in the report** rather than leaving "ahead N" for
-the next session to discover and helpfully resolve.
+**Commit always — that is what a dropped session threatens. Push to `main` only when the turn's
+work is meant to go live**, and never merely to satisfy the rule above. When work is committed
+and deliberately unpushed, **say so in the report** rather than leaving "ahead N" for the next
+session to discover and helpfully resolve.
+
+### ⚠️ THE HELD STACK LIVES ON `origin/held`. `main` BEING BEHIND IS NOT LOST WORK.
+
+**If you find `main` behind what the docs describe, fetch `held` — do not reconstruct anything.**
+
+```
+git fetch origin held && git log --oneline --reverse origin/main..origin/held
+```
+
+`held` is a **backup branch, not a deploy target.** Railway builds from `main` and Vercel's
+production deployment tracks `main`, so pushing here publishes nothing; a Vercel *preview* build
+for the branch is expected and harmless — its origin is not in `CLIENT_ORIGIN`, so every API
+call from it is CORS-blocked, which is the correct outcome for a URL nobody should be using.
+
+**Why it exists:** committing protects work from a dropped session, which is the threat the rule
+above is written for. It does nothing about **losing the machine** — and this runs on a rented
+Mac mini reached over SSH. Nine commits, including a feature that cannot be pushed to `main`,
+sat on one disk. That is the same risk one layer up, and the answer is a branch that backs them
+up without deploying them.
+
+**Keep it current: after any commit that stays off `main`, push it here too.**
+
+```
+git push origin main:held
+```
+
+⚠️ **`osxkeychain` CANNOT AUTHENTICATE OVER SSH ON THIS BOX AND FAILS IN A WAY THAT READS AS
+SUCCESS.** It errors `-25308` (`errSecInteractionNotAllowed` — no UI session to unlock the
+keychain) and the push dies with `could not read Username for 'https://github.com'`. Piping that
+through `tail` shows exit 0, because the exit status belongs to `tail`. Use `gh`, which is
+authenticated:
+
+```
+git -c credential.helper='!gh auth git-credential' push origin main:held
+```
+
+Note `-25308` *also* appears on pushes that fully succeed, so **the error text distinguishes
+nothing** — only `ls-remote` plus reading a file back off the branch does. This is the four-step
+above, and it is why the four-step is not a formality.
 
 ### Scope: one surface per prompt
 
