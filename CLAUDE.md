@@ -1213,11 +1213,18 @@ was invisible until something rendered one**
   and names itself**; that is the intended signal, not a break. Full statement in the iOS
   repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
 
-- ⏸ **THE UNPUSHED COMMIT ON `main` IS DELIBERATE, NOT FORGOTTEN.** `POST /api/trips/import`
-  (`a5c5d22`) is held: nothing can reach it (`requireAuth`, sign-in blocked on 10DLC), its
-  tests have never run (no Node on this machine), and pushing this repo deploys. **The full
-  reasoning and the unblock condition live in the iOS repo's `docs/SWIFT-HANDOFF.md` §3,
-  item 0** — one queue, not two. Do not push it to be helpful.
+- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, NOT FORGOTTEN — AND ONLY ONE OF THEM IS
+  THE FEATURE.** `POST /api/trips/import` (`ff295ff`) is held: nothing can reach it
+  (`requireAuth`, sign-in blocked on 10DLC), its tests have never run (no Node on this
+  machine), and pushing this repo deploys. **The full reasoning and the unblock condition
+  live in the iOS repo's `docs/SWIFT-HANDOFF.md` §3, item 0** — one queue, not two. Do not
+  push it to be helpful.
+  **`e8770c8` (bought-vs-skipped) SITS BELOW IT AND IS FREE TO SHIP**, deliberately ordered
+  first so it can go alone: `git push origin e8770c8:main` sends that commit and nothing
+  above it. It carries no route and is inert until something writes the field.
+  ⚠️ **Both were one commit (`a5c5d22`) until 2026-08-08.** They were split because the
+  feature and the field were bundled, so approving one meant approving both. If you find that
+  hash in an older document, it is these two.
 
 - 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14** (written 2026-08-04
   so a cold start needs no thread): list-creation audit A–E → design review → build (blocked
