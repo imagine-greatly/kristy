@@ -27,6 +27,21 @@ A bad approval costs a revert; a dropped session with uncommitted work costs the
 
 - **Stopping mid-unit to ask a question? Commit what exists first**, message prefixed `wip:`,
   then ask.
+- ⚠️ **COMMIT FIRST, PLANT SECOND, REVERT THIRD. PROVING A CHECK CAN FAIL IS ROUTINE HERE
+  AND IT IS INHERENTLY DESTRUCTIVE.** Nearly every guard in both repos was "verified to fail
+  on the defect it names" before being trusted, and the only way to do that is to break the
+  source on purpose and put it back. **`git checkout -- <file>` puts it back to the last
+  COMMIT, not to what you had.** So planting a defect in a file carrying uncommitted work
+  and reverting deletes that work, silently, with a command whose whole job is to be safe.
+  **This happened 2026-08-08** and cost the approved-state collapse in `ScanSheet.swift` and
+  the detent set in `ScanBranch.swift` — both rewritten from scratch. The order that was
+  followed was verify-then-commit; the order is **commit, then plant, then revert.**
+  It is the same lesson as the rule above with the threat inverted: there, the danger is a
+  dropped session taking uncommitted work; here it is *you* taking it, with a routine
+  command, in the middle of doing something careful. `git stash` is not the fix either — it
+  takes the test you are trying to run along with the source you are trying to break, and a
+  suite that then runs zero tests reports **success**, which is the empty-collection defect
+  wearing a green tick.
 - **Never end a turn with anything untracked. Ever.** `git add -A`, never `git commit -a` —
   `-a` does not add untracked files, and that is precisely how `3267c95` shipped a commit
   titled for the trips feature while `server/lib/trips.js` and `server/routes/trips.js` stayed
