@@ -342,6 +342,12 @@ export async function extractFromBarcode(barcode) {
       ingredients: text,
       source: 'off',
       panel: 'full',
+      // ⚠️ WE HAVE ALWAYS RECEIVED THIS AND ALWAYS THROWN IT AWAY. `aisleFromCategories`
+      // turns OFF's `categories_tags` into a human aisle a few lines up, it goes out on the
+      // response as `product.aisle`, and it stopped here because there was no column to put
+      // it in. It costs nothing — no extra request, no extra field on the fetch, no model
+      // call — and it categorises every OFF hit the catalog will ever retain.
+      aisle: product.aisle,
     });
     return { found: true, source: 'off', product, ingredients: text, nutrition };
   }
