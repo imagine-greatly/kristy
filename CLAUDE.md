@@ -380,6 +380,52 @@ equality *is* the positioning.
   confirm production capture — it writes a probe row to the live DB, resolves it back,
   checks the row carries no identity, and cleans up. Unit tests cannot do this.
 
+**Swaps — three phases, and the order is the whole decision** (ruled 2026-08-08)
+
+- ⚠️ **THE INGREDIENT-LEVEL SWAP IS NOT A PRODUCT RECOMMENDATION AND NEVER WAS. It is cut
+  from the scan card.** `genericSwap` returns the `swap` sentence off the highest-severity
+  matched **INGREDIENT** entry, and an ingredient entry answers *"what do I use instead of
+  this ingredient"* — a question asked **in a kitchen, by someone cooking.** The scan card
+  is read by someone holding a sealed package in an aisle. Scan a protein bar sweetened
+  with agave and `agave_syrup` answers *"small amounts of raw honey, 100% pure maple syrup,
+  or Medjool dates"*: baking advice, in her voice, to someone who cannot bake the bar.
+  **Measured over all 67 swap sentences in the KB**: 14 are explicit kitchen instructions
+  ("make your own dressings", "home-popped popcorn with butter", "for any application
+  requiring solid fat"); **4 are editorial notes addressed to a KB maintainer** and were
+  being rendered verbatim to shoppers — `neotame` reads, in full, *"See aspartame swap
+  recommendations."*; and the ones that do name a shelf product are right by accident of
+  authoring rather than by construction — `cottonseed_oil` says *"Read every peanut butter
+  label"* to anyone scanning a cracker. **The field is still sent and still decoded.**
+  Deleting it client-side would be a decoder that cannot see its subject (the
+  `approvedRead` defect). The one place it is legitimately the right answer is the
+  **ingredient page** (`scan.md` §5), which is a cooking-context surface and is unbuilt.
+  ⚠️ **`client/src` is FROZEN, so kristyapproved.com keeps rendering it.** That divergence
+  is accepted, not overlooked: the web client is the behavioural spec, not the product.
+- **THE REPLACEMENT IS SAME CATEGORY, BETTER VERSION. A bad bar swaps for a good bar** —
+  not for steak, not for parmesan, not for "eat a whole food instead". Three reasons, and
+  they are recorded so this is not relitigated from intuition:
+  - **A swap must be actionable at the shelf.** Someone holding a bar at 4pm needs
+    something they can eat in a car. "Have steak" does not answer the question they asked.
+  - **It is the coach's move.** Kristy meets someone inside the choice they have already
+    made and improves it. Telling them the choice itself is wrong is moralizing, which
+    `VOICE_SPEC.md` forbids.
+  - **The whole-food position is expressed through WHICH product she approves.** A bar that
+    is dates, nuts and salt is a whole food in a wrapper. **The standard lives in the pick,
+    not in refusing to answer.**
+- ⏳ **THE CATALOG IS THE PREREQUISITE, THE PHOTO PATH IS WHAT FILLS IT, AND THE FEATURE IS
+  SMALL ONCE THE DATA EXISTS AND IMPOSSIBLE BEFORE.** A product-level swap needs to know
+  what a thing IS to know what it can be swapped for, and **nothing in this repo carries a
+  product category.** `scanned_products` has no such column; `ismContext`'s `categories` are
+  INGREDIENT categories (`seed_oil`, `sugar_alias`) and answer a different question; and the
+  one category-like value that exists — OFF's `aisle`, derived from `categories_tags` in
+  `scanExtract.js:177` — **is computed, put on the response, and then discarded at
+  retention**, because `retainProduct` has nowhere to put it. The catalog is at 4 rows.
+  **Adding the field to the write path is nearly free today and cannot be backfilled**: a
+  year of scans retained without a category is a year of rows that can never answer "what
+  else is this". So the field lands first and the feature waits for the rows.
+  **Do not build the swap engine before then** — a suggestion drawn from a handful of rows
+  is not a thin feature, it is an absurd one, and it would be absurd in Kristy's voice.
+
 **The counter**
 - The free layer is **public** (`optionalAuth`): a deterministic KB read with no model
   call and no stored data. Requiring an account bought nothing and cost a stranger the
