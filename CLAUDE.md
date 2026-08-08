@@ -6,6 +6,76 @@ decision stops being load-bearing, delete it from here.
 
 ---
 
+## WORKING DISCIPLINE — read before touching anything
+
+**Claude Code runs here over SSH, from Windows into a rented Scaleway Mac mini, and sessions
+drop mid-task with no warning.** When one does, the conversation is gone and **every file
+already written to disk survives**. Report → approve → commit is backwards for that reality: it
+puts the one durable act last. Twice now hours of work sat untracked when a session died, and
+once it survived only because it happened to be in a directory nobody had cleaned out.
+
+### The rule: COMMIT BEFORE REPORTING
+
+When a unit of work is done — in this order, and before the summary is written:
+
+```
+git add -A  →  commit with a real message  →  push  →  four-step verify  →  THEN report
+```
+
+**Approval is not a precondition for committing.** Approval applies to what is already on disk.
+A bad approval costs a revert; a dropped session with uncommitted work costs the hours.
+
+- **Stopping mid-unit to ask a question? Commit what exists first**, message prefixed `wip:`,
+  then ask.
+- **Never end a turn with anything untracked. Ever.** `git add -A`, never `git commit -a` —
+  `-a` does not add untracked files, and that is precisely how `3267c95` shipped a commit
+  titled for the trips feature while `server/lib/trips.js` and `server/routes/trips.js` stayed
+  untracked for a day (see **Verifying**, and run `node server/scripts/commitGuard.js`).
+- **The four-step verify is not a formality.** A push has reported success in this project while
+  the remote had not moved, and the keychain error that accompanied it appears on successful
+  pushes too — so the error text cannot distinguish them and neither can the exit code. Only
+  reading content back off the remote can: `git rev-parse HEAD` → `git reflog` →
+  `git ls-remote origin main` → **read a file back from the remote and diff it against local.**
+
+### ⚠️ THE PUSH STEP IS THE ONE STEP THIS REPO CANNOT TAKE ON REFLEX
+
+**`main` here is production and pushing publishes, in about a minute** — Vercel for the client,
+Railway for the server, no staging gate. And `main` currently carries **deliberately unpushed
+commits** (`POST /api/trips/import`, see **Open items**). So in this repo `git push` is a
+*publish*, and pushing "to be safe" ships a feature that is being held on purpose, along with
+whatever else is ahead.
+
+**Commit always — that is what a dropped session threatens. Push only when the turn's work is
+meant to go live**, and never merely to satisfy the rule above. The commit is what protects the
+hours; the push protects nothing further and can cost a deploy nobody chose. When work is
+committed and deliberately unpushed, **say so in the report** rather than leaving "ahead N" for
+the next session to discover and helpfully resolve.
+
+### Scope: one surface per prompt
+
+Each prompt is scoped to one surface or one contained unit, with the expected output files
+stated up front. **Your half: before starting, list the files you expect to create or modify.**
+That list is the checklist a resumed session judges itself against. If the work turns out to
+need files outside the list, **say so rather than silently widening.**
+
+### RESUMING AFTER A DROPPED SESSION
+
+```
+Treat every existing file as COMPLETE unless visibly truncated.
+Never recreate a type or a file that already exists. Never run an
+audit pass over finished work. Do only what is missing, judged
+against the expected-files list in the prompt that was
+interrupted.
+A rewrite of finished work still compiles. That is what makes it
+dangerous: a fresh session cannot distinguish "I did not write
+this" from "this is wrong."
+```
+
+**This block is in the file rather than in a prompt on purpose.** After a drop, nobody
+remembers to paste it — a session that reads it automatically is the entire point.
+
+---
+
 ## What Kristy is
 
 A **grocery coach for the whole store**, not a scanner with a list.
