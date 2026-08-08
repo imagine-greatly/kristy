@@ -76,6 +76,60 @@ remembers to paste it — a session that reads it automatically is the entire po
 
 ---
 
+## THIS REPO HAS TWO HALVES AND THEY HAVE DIFFERENT RULES
+
+Ruled 2026-08-08, when the native client became the thing being built and this repo stopped
+being the thing being built. **The product is now one iOS client (`kristy-ios`) talking to the
+server in this repo.** What lives here splits cleanly in two, and conflating them is how a
+frozen file gets edited and a live route gets changed by accident.
+
+### `client/src` — DEAD. FROZEN. INSPIRATION ONLY.
+
+The React SPA is **finished and is never edited again, for any reason.** Not a typo, not a
+token, not a dead import, not a "while I was in there". It is deployed and it still serves
+`kristyapproved.com`, but no further work goes into it.
+
+What it *is*, and why it is kept rather than deleted: the **behavioural specification** for the
+iOS client, and the record of decisions that were arrived at by **measurement** rather than
+design — the contrast floor, the hero rule, the active-section rule, the type inversion, the
+one-filled-action count. Those are rules the Swift client must satisfy, and this is the evidence
+they were ever true. Read it, cite it, copy the reasoning out of it. Do not write to it.
+
+⚠️ **`client/src/lib/tokens.js` IS THE BRAND'S SOURCE OF TRUTH AND FREEZING IT HAS A COST THAT
+IS ALREADY PAID ONCE.** `kristy-ios` validates its whole asset catalog against that file
+(`Tools/checks/palette_mirror.sh`), and `7b421e3` added three colours to it — `brassFill`,
+`brassFillInk`, `surfaceLifted` — on the day the iOS repo authored them, precisely so one
+palette in two repos would not drift. Frozen means that mirroring-back can no longer happen, so
+**a new brand colour is now a decision that has to be made deliberately, not a file edit.** The
+mirror check will fail on an unmirrored colour, which is correct: the value genuinely is not in
+the brand.
+
+### `server/` — LIVE INFRASTRUCTURE, AND GOVERNED RATHER THAN FROZEN
+
+Every surface of the iOS app is a thin renderer over these routes. The server may change. **It
+may not change as a side effect of iOS work.**
+
+- **A server change is separately proposed and separately approved work**, with its own prompt
+  and its own scope. Routes, KB entries, model prompts, the lint, the tests — all of it.
+- **An iOS prompt may not produce a server change.** iOS work that turns out to need one
+  **stops and asks**: name the route, the shape, and what the client cannot do without it. It
+  does not implement it, and it does not route around it in Swift — a Swift workaround is a
+  second source of truth arriving by the back door, which the no-vendoring rule already forbids.
+- **A finding is not a fix.** "The server does X wrong" belongs in `kristy-ios/docs/API-FINDINGS.md`
+  with its evidence, and waits.
+
+**Why a rule and not a preference:** `main` here **auto-deploys to production** with no staging
+gate; it carries **deliberately unpushed commits** (see **Open items**); and **Node is not
+installed on the machine this work happens on**, so a server change made during iOS work cannot
+be run, cannot be tested, and publishes on push. Those three compose into an unreviewed,
+untested change going live because it looked small.
+
+**What is NOT covered by this and stays ordinary work:** `docs/`, this file, `supabase/*.sql`
+migrations that have not been applied, and anything explicitly scoped as server work in its own
+prompt.
+
+---
+
 ## What Kristy is
 
 A **grocery coach for the whole store**, not a scanner with a list.
