@@ -1320,6 +1320,16 @@ was invisible until something rendered one**
   ⚠️ **Both were one commit (`a5c5d22`) until 2026-08-08.** They were split because the
   feature and the field were bundled, so approving one meant approving both. If you find that
   hash in an older document, it is these two.
+  ⚠️ **THE STACK ALSO CARRIES CATEGORY CAPTURE NOW** — `productCategory.js`, the
+  `scanned_products` migration, the vision prompt's fifth field, and the OFF `aisle` finally
+  being passed to `retainProduct` instead of discarded. Held for the same three reasons and
+  **one more that runs the other way: it has a clock on it.** A category cannot be
+  backfilled, so every scan retained before it lands is a row that can never answer "what
+  else is this". Full proposal in `docs/CATEGORY-CAPTURE.md`; the queue entry, as always, is
+  the iOS repo's `SWIFT-HANDOFF.md` §3 — one queue, not two.
+  ⚠️ **Apply `supabase/product_category.sql` BEFORE the code deploys.** Without the columns
+  every retain logs `column does not exist` and silently stops retaining, which is the worst
+  way for it to fail.
 
 - 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14** (written 2026-08-04
   so a cold start needs no thread): list-creation audit A–E → design review → build (blocked
