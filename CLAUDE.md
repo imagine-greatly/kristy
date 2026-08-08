@@ -491,6 +491,28 @@ equality *is* the positioning.
   carry-forward computation survives *inside* the new endpoint; the button does not. There
   is no `accept` parameter: everything is preselected and the cart is itself the editing
   surface, so a selection UI in front of it is the same choice made twice.
+- **THE CONVERSION DOOR IS `POST /api/trips/import`, AND ADOPTION HAPPENS INSIDE IT.** A guest
+  completes three trips on the device, signs in, and is told there is no last week — a lie told
+  at the moment of conversion, about the mechanic retention runs on. Declaring local trips
+  session-scoped was the cheaper answer and the wrong one: it makes the archive real right up to
+  the moment it would start paying. ⚠️ **THE ORDER IS THE WHOLE FEATURE AND IT IS SILENTLY
+  DESTRUCTIVE BACKWARDS.** `adoptLegacyList` gates on "has this user ever had a trip at all";
+  import WRITES trips. Land the archive first and that gate closes forever, stranding the
+  shopper's ACTIVE cart in `shopping_lists.list` — the one list they were actually holding, gone,
+  with nothing to fail. So both halves live inside `importGuestTrips` and a caller cannot
+  sequence them wrongly **because a caller cannot perform either half.** One-shot on that same
+  gate, which is where its idempotency comes from: an account with trips is declined (409), never
+  merged into. Completed trips only — the seeder and the Haul both filter to `completed`, so
+  importing abandoned ones is archive weight with a forgery surface and no consumer, **and that
+  loss belongs in the sign-in copy.** `status` is server-written, every row goes through
+  `sanitizeList`, and **timestamps are clamped to `[now − 1y, now]` with `started ≤ completed`**:
+  `lastCompletedTrip` orders by `completed_at desc`, so an unclamped year-3000 value does not
+  merely look wrong, it becomes the thing every future seed reads, forever, on an account that
+  has since shopped for real. `clientId` is echoed and never stored — letting a client choose a
+  row id lets it collide with one. Nothing derived crosses: no `haul_scans`, no `use_count`, no
+  `counter_gaps`, no verdicts recomputed, so an imported trip cannot move an aggregate or
+  anything money-adjacent. **`trip_id` on `haul_scans` is NOT part of this** — scan association
+  stays lost, as its own migration and its own decision.
 - **A SEEDED ROW IS RE-MATCHED, not copied with its card.** `carded`/`cardSlug` are stripped
   on the way in. Keeping them would freeze the list against a corpus that grows weekly, and
   an item bought every single trip is the likeliest to have had a card authored for it
@@ -854,6 +876,28 @@ was invisible until something rendered one**
   this repo and it was unobserved. `paidBoundary.test.js` is the correction. **When a rule is
   the product's economics or its promises, the absence of a failing test is not evidence —
   ask what would have gone red.**
+- **THE SAME FAMILY, AND THE HARDEST ONE: EACH SITE REASONS CORRECTLY IN ISOLATION; THE DEFECT
+  APPEARS ONLY WHEN YOU ADD THEM UP.** Every other member has a wrong artifact somewhere — an
+  empty filter, an over-supplying harness, a missing test, a drifted comment, an untracked file.
+  This one has none, which is why nothing found it for months. **The entire trip lifecycle has
+  never executed for a real shopper** (found 2026-08-07): all four `/api/trips/*` routes are
+  `requireAuth`, which is correct because they write to `trips`; sign-in is blocked on 10DLC,
+  which is a carrier fact; so `seedable` is permanently false, which is the honest answer when
+  the endpoint needs an account; so the dashboard's `finished` state renders **doorless**, which
+  is right because a button that cannot do what it says is worse than no button. Four correct
+  decisions whose sum is a shopper whose completed list stays a live cart forever, with no tap
+  that files it and no last week. The statuses, the partial unique index, the reuse rule and the
+  re-matching seed are built, tested and correct, and none has ever run. `trips.test.js` is
+  honest about what it measures; what it measures is a path production cannot enter.
+  **The subject is the composition, and no file owns a composition** — so there is nowhere to put
+  the failing test, and a diff review structurally cannot see it either. The check is to walk the
+  path end to end as a real visitor with no diff in hand: state the capability ("can a shopper
+  finish a trip and start the next one from it?") and evaluate the conjunction of every gate
+  between. **The tell is a `false` that is CONSTANT rather than conditional** — a flag whose true
+  branch has never been taken in production is not a flag, and everything downstream of it is
+  unbuilt rather than untested. Distinct from the harness entry below: there the call site was
+  *wrong* and a real-call-site test found it; here every call site is right, so no test of any
+  call site can find it.
 - **THE SAME FAMILY: A HARNESS THAT SUPPLIES THE PROPS VERIFIES A WIRING PRODUCTION NEVER
   RUNS.** `dash.mjs` mounts Dashboard through `dashHarness.jsx`, which constructs the hero's
   handlers itself. So it is *structurally incapable* of noticing a call site that forgets
