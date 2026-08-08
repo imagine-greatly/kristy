@@ -10,6 +10,7 @@
 // concern: the worst a misread does is match the wrong KB entry or nothing.
 
 import { anthropic, MODEL } from './anthropic.js';
+import { normalizeCategory, UNCATEGORIZED } from './productCategory.js';
 
 const str = (x) => String(x ?? '').trim();
 // A number or null. Deliberately not `Number(x) || null` — that maps a legitimate 0
@@ -32,6 +33,16 @@ const num = (x) => (x === null || x === undefined || x === '' || Number.isNaN(Nu
 // Transcribe-only. Explicitly forbids translation/interpretation so the model
 // returns the label verbatim for the engine to tokenize.
 //
+// IT ALSO NAMES THE PRODUCT'S CATEGORY, and that is a description rather than a judgement.
+// "bar", "cereal", "yogurt" is what the package IS — the same class of fact as the brand
+// printed on it, and it makes no claim about the food. It is here rather than derived later
+// because the photo is not stored (scan.md §8) and the OFF response is not kept, so a row
+// retained without one can never be given one: the only moment this is knowable for free is
+// while a model is already looking at the package. Cost is the same argument the sugars
+// field won on — one short enum value, well under the +15-20 output tokens measured there.
+// The value is validated against the closed list in lib/productCategory.js and an
+// unrecognized answer collapses to "other"; it is never read as a confident one.
+//
 // It now also reads the product's IDENTITY (name/brand as printed) and self-reports
 // how much of the ingredient panel it could actually read. Both are still pure
 // transcription — no judgment, no inference. The identity exists so a vision-read
@@ -41,7 +52,7 @@ const num = (x) => (x === null || x === undefined || x === '' || Number.isNaN(Nu
 // ingredient reads to the engine as an absent concern.
 export const LABEL_VISION_SYSTEM = `You are an OCR transcriber for food packaging. You are shown a photo of a packaged food's label — it may be curved, low-light, or partially cropped. Transcribe only what is PRINTED. You do not interpret, judge, rank, or comment on anything, and you never assess whether a food is healthy.
 
-Return four things:
+Return five things:
 
 1. "ingredients" — the ingredient list EXACTLY as printed: every ingredient in order, including sub-ingredients in parentheses and any percentages. Do not translate, add, remove, correct, or reorder. Ignore marketing text and allergen "contains" lines. If no ingredient list is legible, return an empty array.
 
@@ -55,7 +66,11 @@ Return four things:
 
 4. "sugars_g" and "serving_g" — from the Nutrition Facts panel, and ONLY if that panel is legible in this same photo: total sugars in grams per serving, and the serving size in grams. Return null for either one you cannot read directly off the label. NEVER estimate, infer, or calculate these from the ingredients — a null is correct and useful, a guess is not. Ignore every other nutrition number; calories, protein, fat and sodium are not wanted.
 
-Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null}`;
+5. "category" — what KIND of product this is, chosen from this list and nothing else:
+bar, cereal, cracker, chip_snack, cookie_sweet_snack, bread, pasta_grain, sauce_condiment, dressing, nut_butter, spread_jam, yogurt, cheese, milk_plant_milk, juice, soda_drink, sports_energy_drink, frozen_meal, canned_protein, canned_vegetable, soup_broth, baking_ingredient, oil_fat, seasoning, supplement, other.
+   Judge it from the package in front of you — the product name, the form, the packaging. If none of them fits, return "other"; do not stretch one to fit. This is a description of the product, never a judgement about it.
+
+Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null, "category": "one of the listed values"}`;
 
 // Only these three are meaningful; anything else the model invents collapses to the
 // safe end. 'partial' is the fallback for an unrecognized value ON PURPOSE — an
@@ -83,6 +98,11 @@ export function parseIngredientsJSON(text) {
   const panel = ingredients.length === 0 ? 'none' : PANELS.has(panelRaw) ? panelRaw : 'partial';
   return {
     ingredients,
+    // Closed vocabulary, and an unrecognized value becomes `other` rather than null — the
+    // same posture as `panel` above. `other` plus the raw string says "we looked and it did
+    // not fit"; a null says "nobody looked", and those are different facts.
+    category: normalizeCategory(obj.category),
+    categoryRaw: str(obj.category) || null,
     // Identity is transcription, not identification: an empty/absent value stays
     // null rather than becoming a guess.
     productName: str(obj.product_name) || null,
@@ -128,7 +148,7 @@ export async function readLabelIngredients({ base64, mediaType = 'image/jpeg' })
           { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } },
           {
             type: 'text',
-            text: 'Transcribe the ingredient list printed on this label, plus the product name and brand if they are legible, and report how completely you could read the ingredient list.',
+            text: 'Transcribe the ingredient list printed on this label, plus the product name and brand if they are legible, name what kind of product it is from the list, and report how completely you could read the ingredient list.',
           },
         ],
       },
@@ -136,6 +156,9 @@ export async function readLabelIngredients({ base64, mediaType = 'image/jpeg' })
   });
   const text = completion.content?.[0]?.text || '';
   return (
-    parseIngredientsJSON(text) || { ingredients: [], productName: null, brand: null, panel: 'none' }
+    parseIngredientsJSON(text) || {
+      ingredients: [], productName: null, brand: null, panel: 'none',
+      category: UNCATEGORIZED, categoryRaw: null,
+    }
   );
 }

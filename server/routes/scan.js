@@ -45,7 +45,7 @@ function readLabel(reqFile) {
      - a non-English transcription is UNREADABLE (the KB is English, so a foreign
        string matches nothing and scores as zero concerns — a silent approval);
      - `panel: 'none'` means no list was legible, which is a re-shot, not a verdict. */
-function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, servingG }, barcode = null) {
+function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, servingG, category }, barcode = null) {
   const joined = ingredients.join(', ');
 
   if (panel === 'none' || !ingredients.length) {
@@ -83,6 +83,10 @@ function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, ser
     ingredients: joined,
     source: 'vision',
     panel,
+    // WHAT IT IS, read off the package by the call that was already looking at it. Retained
+    // rather than returned: the client has no use for it and a category on the verdict card
+    // would be a claim about the product that the claim lock never authorised.
+    category,
   });
 
   /* THE ONE NUMBER OFF THE NUTRITION PANEL. Everything else there is ignored — a

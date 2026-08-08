@@ -25,6 +25,7 @@
 
 import { createHash } from 'node:crypto';
 import { supabase } from './supabase.js';
+import { categoryFields } from './productCategory.js';
 
 const TABLE = 'scanned_products';
 const str = (x) => String(x ?? '').trim();
@@ -123,6 +124,12 @@ export async function retainProduct({
   source,
   panel = 'full',
   tier = null,
+  // WHAT THE PRODUCT IS. Either is accepted and `categoryFields` decides: the vision door
+  // supplies `category` from the closed list, the OFF door supplies the `aisle` it already
+  // derives and has been discarding here since this file was written. Both end up as one
+  // validated value plus the raw string that makes `other` diagnosable.
+  category = null,
+  aisle = null,
   client = supabase,
 }) {
   const text = str(ingredients);
@@ -133,6 +140,9 @@ export async function retainProduct({
   // de-dupes against its own repeats.
   const hash = code ? null : productHash(name, text);
   const confidence = confidenceFor({ source, panel });
+  // Resolved once: the insert and the update branch must agree about what this read says
+  // the product is, and computing it twice is how they would stop agreeing.
+  const categoryOf = categoryFields({ category, aisle });
 
   try {
     const key = code ? { barcode: code } : { product_hash: hash };
@@ -152,6 +162,14 @@ export async function retainProduct({
         source,
         confidence,
         tier,
+        // ⚠️ SPELLED OUT RATHER THAN SPREAD, ON PURPOSE. `schemaContract.test.js` sweeps
+        // inline insert/update literals for TOP-LEVEL KEYS and compares them against the
+        // migrations — a `...spread` produces no key to see, so spreading here would write
+        // two columns that the one check watching for undeclared columns is structurally
+        // blind to. That is the same shape as the sweep being blind to `cardToRow`, which
+        // is why that mapper needs its own test. Keep these literal.
+        category: categoryOf.category,
+        category_raw: categoryOf.category_raw,
       });
       if (error) throw new Error(error.message);
       return { retained: true, created: true, confidence };
@@ -171,6 +189,16 @@ export async function retainProduct({
       if (name) patch.name = name;
       if (brand) patch.brand = brand;
       if (tier) patch.tier = tier;
+      // ⚠️ THE CATEGORY MOVES WITH THE INGREDIENTS, UNDER THE SAME TRUST RULE, AND IT MAY
+      // NOT BE WRITTEN OUTSIDE THIS BRANCH. A weaker read overwriting the category is the
+      // same defect as a weaker read overwriting the list — one cropped photo filed under a
+      // known-good barcode would retitle the product for everyone. And it may not be
+      // written UNCONDITIONALLY either: a resolved `other` landing on top of a real value
+      // is a silent downgrade, so only a genuine value replaces one.
+      if (categoryOf.category && categoryOf.category !== 'other') {
+        patch.category = categoryOf.category;
+        patch.category_raw = categoryOf.category_raw;
+      }
     }
     // Otherwise: a weaker read against a better-sourced row. Count the sighting,
     // keep the good data. One cropped photo — or one photo filed under the wrong
