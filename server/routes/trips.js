@@ -8,6 +8,7 @@ import {
   startNewTrip,
   insertTrip,
   buildNextTripList,
+  importGuestTrips,
   tripToList,
 } from '../lib/trips.js';
 
@@ -16,6 +17,7 @@ import {
  *   POST /api/trips/complete   finish the active trip; it is archived, never erased
  *   POST /api/trips/new        start a fresh one (reuses an untouched trip)
  *   POST /api/trips/next       "Same as last week"
+ *   POST /api/trips/import     a converting guest's archive, once
  *
  * THERE IS ONE SEEDING DOOR AND THIS IS IT. `/api/haul/next` used to be a second one: the
  * Haul offered a pick-list of carry-forwards and a button, while the cart would have
@@ -78,6 +80,33 @@ router.post('/trips/next', requireAuth, async (req, res) => {
   } catch (err) {
     console.error('[kristy] POST /api/trips/next error:', err?.message || err);
     return res.status(500).json({ error: 'Could not start the next trip.' });
+  }
+});
+
+/* POST /api/trips/import — the conversion door.
+ *
+ * A guest's completed trips, carried into the account they just made. Everything about why
+ * — and the ordering hazard that makes adoption and import one operation rather than two —
+ * is on `importGuestTrips`. The route is deliberately thin: it holds no rule of its own,
+ * because the rule that matters is a SEQUENCE and a sequence sitting in a route handler is
+ * a sequence a second caller can get wrong.
+ *
+ * `requireAuth`, and there is no guest twin. Signing in is the entire premise. */
+router.post('/trips/import', requireAuth, async (req, res) => {
+  try {
+    const out = await importGuestTrips(req.user.id, { trips: req.body?.trips }, supabase);
+    if (!out.ok) {
+      // 409, not 403: an account that already has trips is not forbidden from importing,
+      // it is past the one moment when importing means anything. The client can tell the
+      // shopper their account already has history rather than that something broke.
+      if (out.reason === 'has_trips') return res.status(409).json({ error: 'has_trips', active: out.active });
+      if (out.reason === 'unavailable') return res.status(503).json({ error: 'unavailable' });
+      return res.status(500).json({ error: 'Could not carry those trips over.', active: out.active });
+    }
+    return res.json(out);
+  } catch (err) {
+    console.error('[kristy] POST /api/trips/import error:', err?.message || err);
+    return res.status(500).json({ error: 'Could not carry those trips over.' });
   }
 });
 

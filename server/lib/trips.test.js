@@ -24,6 +24,8 @@ import {
   buildNextTripList,
   seedItem,
   saveTripItems,
+  importGuestTrips,
+  IMPORT_MAX_TRIPS,
 } from './trips.js';
 import { sanitizeList } from './cartEdit.js';
 import { nonEmpty } from './testGuards.js';
@@ -33,11 +35,11 @@ import { nonEmpty } from './testGuards.js';
 /**
  * @param {object} [seed]
  * @param {object} [seed.legacyList]  a pre-trips `shopping_lists.list`, for the adoption
- *   path. **The fake is table-AWARE from here on**: it used to ignore the table name
- *   entirely and answer every `from()` out of the trips array, which is harmless only
- *   while `trips` is the one table this file touches. A fake that answers the wrong table
- *   with plausible data is the findings family in miniature, so it was fixed before a
- *   second table arrived rather than after.
+ *   and import paths. **The fake is table-AWARE from here on**: it used to ignore the
+ *   table name entirely and answer every `from()` out of the trips array, which was
+ *   harmless while trips was the only table this file touched and is not harmless now that
+ *   `importGuestTrips` reads `shopping_lists` to adopt. A fake that answers the wrong table
+ *   with plausible data is the findings family in miniature.
  */
 function fakeClient({ legacyList = null } = {}) {
   const rows = [];
@@ -362,4 +364,157 @@ test('boughtLast REPLACES, never accumulates — one hop is the whole claim', ()
 
   const dropped = seedItem({ ...item('Olive oil'), checked: false, boughtLast: true });
   assert.equal(dropped.boughtLast, false);
+});
+
+/* ═══════════════ The conversion door ═══════════════
+
+   THE ORDER IS THE WHOLE FEATURE AND IT IS SILENTLY DESTRUCTIVE BACKWARDS, so the first
+   test here is a sequence rather than an assertion about a return value. Adoption is gated
+   on "has this user ever had a trip at all"; import writes trips. Land the archive first
+   and that gate closes forever, stranding the shopper's ACTIVE cart in
+   `shopping_lists.list` — the one list they were actually holding, lost, with nothing to
+   fail. Both halves live inside `importGuestTrips` for exactly that reason, and what this
+   asserts is that the live cart survives an import that happens in the same breath. */
+
+const guestTrip = (name, over = {}) => ({
+  clientId: `local-${name}`,
+  goal: null,
+  intro: '',
+  items: [item(name, { checked: true })],
+  startedAt: '2026-07-24T09:00:00.000Z',
+  completedAt: '2026-07-24T10:30:00.000Z',
+  ...over,
+});
+
+test('ADOPT THEN IMPORT — the live cart is not stranded by the archive landing', async () => {
+  const db = fakeClient({ legacyList: { goal: 'eating_cleaner', intro: '', items: [item('Bananas')] } });
+
+  const out = await importGuestTrips(USER, { trips: [guestTrip('Blueberries'), guestTrip('Olive oil')] }, db);
+  assert.equal(out.ok, true);
+  assert.equal(out.active, 'adopted', 'the cart they were holding became their active trip');
+  assert.equal(out.imported.length, 2, 'and both completed trips crossed');
+  assert.equal(out.seedable, true, '"same as last week" is true immediately');
+
+  // The assertion that would fail if the order were reversed: adoption would have found
+  // trips and declined, and this would be null.
+  const live = await activeTrip(USER, db);
+  assert.ok(live, 'THE ACTIVE CART SURVIVED');
+  assert.equal(live.items[0].name, 'Bananas');
+  assert.equal(nonEmpty(db.rows, 'trip rows').length, 3, 'one active, two archived');
+  assert.equal(db.rows.filter((r) => r.status === 'completed').length, 2);
+});
+
+test('and the imported archive is what the next trip seeds from', async () => {
+  const db = fakeClient();
+  await importGuestTrips(USER, { trips: [guestTrip('Blueberries')] }, db);
+  const last = await lastCompletedTrip(USER, db);
+  assert.ok(last, 'the converting guest has a last week');
+  const next = buildNextTripList({ completed: last, scans: [] });
+  const row = nonEmpty(next.items, 'seeded items')[0];
+  assert.equal(row.name, 'Blueberries');
+  assert.equal(row.boughtLast, true, 'their history came with it — that is the retention mechanic');
+});
+
+test('ONE SHOT — an account with trips is declined, not merged into', async () => {
+  const db = fakeClient();
+  await insertTrip(USER, { items: [item('Eggs')] }, db);
+
+  const out = await importGuestTrips(USER, { trips: [guestTrip('Blueberries')] }, db);
+  assert.equal(out.ok, false);
+  assert.equal(out.reason, 'has_trips', 'an account with history is not converting');
+  assert.equal(db.rows.length, 1, 'and nothing was written');
+});
+
+test('a replay is a decline, which is where the idempotency comes from', async () => {
+  const db = fakeClient();
+  const trips = [guestTrip('Blueberries')];
+  assert.equal((await importGuestTrips(USER, { trips }, db)).ok, true);
+  assert.equal((await importGuestTrips(USER, { trips }, db)).reason, 'has_trips');
+  assert.equal(db.rows.length, 1, 'no duplicate archive');
+});
+
+/* ── Forgery ── */
+
+test('THE YEAR 3000 CANNOT PIN ITSELF TO THE TOP OF "same as last week"', async () => {
+  // Not merely wrong-looking: `lastCompletedTrip` orders by completed_at desc, so an
+  // unclamped future timestamp becomes the thing EVERY future seed reads, forever, on an
+  // account that has since shopped for real.
+  const db = fakeClient();
+  await importGuestTrips(USER, {
+    trips: [
+      guestTrip('Forged', { completedAt: '3000-01-01T00:00:00.000Z' }),
+      guestTrip('Ancient', { completedAt: '1970-01-01T00:00:00.000Z', startedAt: '1970-01-01T00:00:00.000Z' }),
+    ],
+  }, db);
+
+  const now = Date.now();
+  const year = 365 * 24 * 60 * 60 * 1000;
+  for (const row of nonEmpty(db.rows, 'imported rows')) {
+    const at = Date.parse(row.completed_at);
+    assert.ok(at <= now + 1000, `${row.items[0].name}: clamped back to now`);
+    assert.ok(at >= now - year - 1000, `${row.items[0].name}: clamped forward to the floor`);
+    assert.ok(Date.parse(row.started_at) <= at, 'a trip cannot finish before it began');
+  }
+});
+
+test('status is SERVER-written — a client cannot post a second active trip', async () => {
+  const db = fakeClient({ legacyList: { items: [item('Bananas')] } });
+  await importGuestTrips(USER, {
+    trips: [guestTrip('Sneaky', { status: 'active' }), guestTrip('Also', { status: 'abandoned' })],
+  }, db);
+  assert.equal(db.rows.filter((r) => r.status === 'active').length, 1, 'only the adopted cart is active');
+  assert.equal(db.rows.filter((r) => r.status === 'completed').length, 2, 'the rest are completed, as written here');
+  assert.equal(db.rows.filter((r) => r.status === 'abandoned').length, 0);
+});
+
+test('every row goes through sanitizeList, so nothing can be invented', async () => {
+  const db = fakeClient();
+  await importGuestTrips(USER, {
+    trips: [guestTrip('Milk', {
+      items: [{
+        id: 'x', name: 'Whole milk', category: 'Added', checked: true, boughtLast: true,
+        source: 'admin', tier: 'kristy_says_yes', why: 'x'.repeat(500), invented: 'nope',
+      }],
+    })],
+  }, db);
+  const row = nonEmpty(db.rows, 'imported rows')[0].items[0];
+  assert.equal(row.source, 'user', 'an unrecognised source is rewritten');
+  assert.equal(row.tier, undefined, 'an invented tier does not survive the enum guard');
+  assert.equal(row.invented, undefined, 'and an unknown field is not a field');
+  assert.equal(row.why.length, 200, 'lengths are capped');
+  assert.equal(row.boughtLast, true, 'while the history the door exists to carry does');
+});
+
+test('an empty trip is skipped and SAID, never silently dropped', async () => {
+  const db = fakeClient();
+  const out = await importGuestTrips(USER, {
+    trips: [guestTrip('Real'), guestTrip('Hollow', { items: [] })],
+  }, db);
+  assert.equal(out.imported.length, 1);
+  assert.deepEqual(out.skipped, [{ clientId: 'local-Hollow', reason: 'empty' }]);
+});
+
+test('the cap is reported rather than applied quietly', async () => {
+  const db = fakeClient();
+  const many = Array.from({ length: IMPORT_MAX_TRIPS + 3 }, (_, i) => guestTrip(`Week ${i}`));
+  const out = await importGuestTrips(USER, { trips: many }, db);
+  assert.equal(out.imported.length, IMPORT_MAX_TRIPS);
+  assert.equal(out.skipped.length, 3, 'a cap nobody is told about reads as "we took everything"');
+  assert.equal(out.skipped.every((s) => s.reason === 'over_limit'), true);
+});
+
+test('clientId is echoed and never stored — it cannot become a row key', async () => {
+  const db = fakeClient();
+  const out = await importGuestTrips(USER, { trips: [guestTrip('Blueberries')] }, db);
+  assert.equal(out.imported[0].clientId, 'local-Blueberries', 'the client can mark what crossed');
+  assert.notEqual(out.imported[0].id, 'local-Blueberries', 'but the row id is ours');
+  assert.equal(nonEmpty(db.rows, 'imported rows')[0].clientId, undefined, 'and it is not persisted');
+});
+
+test('nothing to import is still a successful adoption', async () => {
+  const db = fakeClient({ legacyList: { items: [item('Bananas')] } });
+  const out = await importGuestTrips(USER, { trips: [] }, db);
+  assert.equal(out.ok, true);
+  assert.equal(out.active, 'adopted', 'a guest with no completed trips still keeps their cart');
+  assert.equal(out.seedable, false, 'and is honestly told there is no last week');
 });
