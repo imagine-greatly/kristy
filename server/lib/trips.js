@@ -225,7 +225,12 @@ export async function activeTripOrAdopt(userId, legacyList, client) {
 // just ended, not about the thing being bought again.
 export function seedItem(item) {
   const {
-    checked: _checked,
+    checked,
+    // The PREVIOUS `boughtLast` goes. It describes the trip before the one that just
+    // ended, and one hop is the whole claim: `boughtLast` means "on the last list and
+    // not ticked", not "has been skipped at some point". Keeping the old value would let
+    // a stale stamp ride forward under a name that says it is fresh.
+    boughtLast: _boughtLast,
     tier: _tier,
     // A resolved offer is SPENT. Carrying `offered` forward would mean the swap could never
     // be raised again on a future trip; carrying the offer itself would re-ask a question
@@ -244,7 +249,11 @@ export function seedItem(item) {
     id: _id,
     ...keep
   } = item;
-  return { ...keep, id: randomUUID(), checked: false };
+  // The new trip is UNCHECKED — nothing has been bought yet. But the trip that just ended
+  // is recorded rather than discarded: `checked` becomes `boughtLast`. Always written,
+  // true or false, because a seeded row genuinely knows both answers; absence is reserved
+  // for a row that has never been through a trip boundary.
+  return { ...keep, id: randomUUID(), checked: false, boughtLast: !!checked };
 }
 
 /**
@@ -271,16 +280,29 @@ export function buildNextTripList({ completed, scans = [] }) {
   const cf = buildCarryForward({ scans, cartItems: completed?.items || [] });
 
   // Scanned, no objection, and not already a row — worth repeating.
+  //
+  // THESE ROWS NEVER PASS THROUGH `seedItem`, so `boughtLast` has to be set here by hand
+  // or the field is silently absent on exactly the rows most certain to deserve it: a
+  // carry-forward row exists BECAUSE it was scanned last trip, and scanning it in the
+  // store is the strongest evidence of purchase the record has. Leaving it absent would
+  // mean "never seeded", which is the one thing these rows are not.
   for (const k of cf.keep) {
     const key = k.name.toLowerCase();
     if (present.has(key)) continue;
     present.add(key);
-    items.push({ id: randomUUID(), name: k.name, category: 'From your haul', checked: false, source: 'user' });
+    items.push({
+      id: randomUUID(), name: k.name, category: 'From your haul',
+      checked: false, boughtLast: true, source: 'user',
+    });
   }
 
   // She would have picked differently. A SUGGESTION, never preselected and never a
   // shoppable row — carrying a product she flagged into next week on the shopper's behalf
   // would be putting words in their mouth.
+  //
+  // NO `boughtLast` HERE, and that is the field's definition working rather than an
+  // oversight. "Swap out: X" is a row that has never been on a list; the shopper bought
+  // X, not this. Stamping it `true` would claim they bought the suggestion.
   const suggestions = cf.replace.map((r) => ({
     id: randomUUID(),
     name: `Swap out: ${r.name}`,

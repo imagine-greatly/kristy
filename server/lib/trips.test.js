@@ -23,16 +23,30 @@ import {
   activeTripOrAdopt,
   buildNextTripList,
   seedItem,
+  saveTripItems,
 } from './trips.js';
+import { sanitizeList } from './cartEdit.js';
 import { nonEmpty } from './testGuards.js';
 
 /* ═══════════════ A fake Supabase, honest about the one constraint that matters ═══════════════ */
 
-function fakeClient() {
+/**
+ * @param {object} [seed]
+ * @param {object} [seed.legacyList]  a pre-trips `shopping_lists.list`, for the adoption
+ *   path. **The fake is table-AWARE from here on**: it used to ignore the table name
+ *   entirely and answer every `from()` out of the trips array, which is harmless only
+ *   while `trips` is the one table this file touches. A fake that answers the wrong table
+ *   with plausible data is the findings family in miniature, so it was fixed before a
+ *   second table arrived rather than after.
+ */
+function fakeClient({ legacyList = null } = {}) {
   const rows = [];
+  const lists = legacyList ? [{ user_id: USER, list: legacyList }] : [];
   const api = {
     rows,
-    from() {
+    lists,
+    from(table) {
+      const store = table === 'shopping_lists' ? lists : rows;
       let filters = [];
       let order = null;
       let limit = null;
@@ -43,25 +57,36 @@ function fakeClient() {
         order(col, opts) { order = [col, opts?.ascending !== false]; return q; },
         limit(n) { limit = n; return q; },
         single() { return q.then((r) => ({ data: r.data?.[0] ?? r.data ?? null, error: r.error })); },
-        insert(row) {
+        // PostgREST's tolerant single: no row is `null`, not an error.
+        maybeSingle() { return q.single(); },
+        insert(input) {
           // THE PARTIAL UNIQUE INDEX, enforced here too. Without it this fake would happily
           // hold two active trips and the test would pass while production rejected the write.
-          if (row.status === 'active' && rows.some((r) => r.user_id === row.user_id && r.status === 'active')) {
-            return { select: () => ({ single: async () => ({ data: null, error: { message: 'trips_one_active' } }) }) };
+          // Checked over the WHOLE batch before anything is pushed, so a rejected multi-row
+          // insert cannot leave half of itself behind — which a real one could not either.
+          const incoming = Array.isArray(input) ? input : [input];
+          const activeUsers = new Set(store.filter((r) => r.status === 'active').map((r) => r.user_id));
+          for (const row of incoming) {
+            if (row.status !== 'active') continue;
+            if (activeUsers.has(row.user_id)) return rejected({ message: 'trips_one_active' });
+            activeUsers.add(row.user_id);
           }
-          const full = { started_at: new Date().toISOString(), completed_at: null, ...row };
-          rows.push(full);
-          return { select: () => ({ single: async () => ({ data: full, error: null }) }) };
+          const added = incoming.map((row) => {
+            const full = { started_at: new Date().toISOString(), completed_at: null, ...row };
+            store.push(full);
+            return full;
+          });
+          return resolved(added);
         },
         update(patch) {
           const upd = { eq(col, val) { filters.push([col, val]); return upd; },
             select() { return upd; },
-            async single() { const hit = api._match(filters)[0]; if (hit) Object.assign(hit, patch); return { data: hit || null, error: null }; },
-            then(res) { const hits = api._match(filters); hits.forEach((h) => Object.assign(h, patch)); return Promise.resolve({ data: hits, error: null }).then(res); } };
+            async single() { const hit = api._match(store, filters)[0]; if (hit) Object.assign(hit, patch); return { data: hit || null, error: null }; },
+            then(res) { const hits = api._match(store, filters); hits.forEach((h) => Object.assign(h, patch)); return Promise.resolve({ data: hits, error: null }).then(res); } };
           return upd;
         },
         then(resolve) {
-          let out = api._match(filters);
+          let out = api._match(store, filters);
           if (order) out = [...out].sort((a, b) => (order[1] ? 1 : -1) * String(a[order[0]] ?? '').localeCompare(String(b[order[0]] ?? '')));
           if (limit != null) out = out.slice(0, limit);
           return Promise.resolve({ data: out, error: null }).then(resolve);
@@ -69,14 +94,29 @@ function fakeClient() {
       };
       return q;
     },
-    _match(filters) {
-      return rows.filter((r) =>
+    _match(store, filters) {
+      return store.filter((r) =>
         filters.every(([c, v]) => (c === '__gte' ? String(r[v[0]] ?? '') >= String(v[1]) : r[c] === v))
       );
     },
   };
   return api;
 }
+
+/* An insert's result, awaitable either way: `.select().single()` for one row, `.select()`
+   awaited directly for a batch. Both spellings are in the shipping code. */
+const resolved = (added) => ({
+  select: () => ({
+    single: async () => ({ data: added[0] ?? null, error: null }),
+    then: (res) => Promise.resolve({ data: added, error: null }).then(res),
+  }),
+});
+const rejected = (error) => ({
+  select: () => ({
+    single: async () => ({ data: null, error }),
+    then: (res) => Promise.resolve({ data: null, error }).then(res),
+  }),
+});
 
 const USER = 'u1';
 const item = (name, over = {}) => ({ id: `x-${name}`, name, category: 'Added', checked: false, source: 'user', ...over });
@@ -242,4 +282,84 @@ test('an empty legacy list is not adopted — there is nothing to keep', async (
   const db = fakeClient();
   assert.equal(await adoptLegacyList(USER, { items: [] }, db), null);
   assert.equal(db.rows.length, 0);
+});
+
+/* ═══════════════ Bought-vs-skipped, across the boundary AND across a save ═══════════════
+
+   THE DEFECT THIS SECTION EXISTS FOR IS INVISIBLE TO A TEST THAT NEVER SAVES. `seedItem`
+   can stamp `boughtLast` correctly, the carry-forward rows can carry it, every assertion
+   over the returned object can pass — and the field can still be gone from the product,
+   because `sanitizeList` is a strict whitelist and a field it does not name is dropped on
+   the first write. So the assertions below are made on the far side of a real save and a
+   real read-back through the fake client, not on the value the seeder happened to return.
+
+   (`buildNextTripList` sanitizes its own output, so the whitelist is in fact load-bearing
+   one line before the seeder returns. That makes the first test here fail without the
+   whitelist entry too — which is welcome, and not the reason the round trip is written
+   out. The route is where the shopper's copy of the list is actually persisted, and that
+   is the path a regression would take.) */
+
+test('BOUGHT-VS-SKIPPED SURVIVES THE SAVE — the whole point, run as a round trip', async () => {
+  const db = fakeClient();
+
+  // A trip where one thing was bought and one thing was walked past.
+  const t1 = await insertTrip(USER, { items: [item('Blueberries'), item('Olive oil')] }, db);
+  t1.items = t1.items.map((i) => ({ ...i, checked: i.name === 'Blueberries' }));
+  await completeTrip(USER, db);
+
+  const seeded = buildNextTripList({ completed: await lastCompletedTrip(USER, db), scans: [] });
+
+  // The SAVE. This is what `POST /api/list` does to the shopper's list on every mutation,
+  // and it is the step that erased the field.
+  const t2 = await insertTrip(USER, {}, db);
+  await saveTripItems(t2.id, sanitizeList(seeded), db);
+
+  // The READ-BACK. Off the stored row, not off the object we just built.
+  const stored = nonEmpty((await activeTrip(USER, db)).items, 'stored items');
+  const berries = stored.find((i) => i.name === 'Blueberries');
+  const oil = stored.find((i) => i.name === 'Olive oil');
+
+  assert.equal(berries.boughtLast, true, 'they bought it — that has to survive the write');
+  assert.equal(oil.boughtLast, false, 'on the list, never ticked: the signal worth having');
+  assert.equal(berries.checked, false, 'and the NEW trip still starts unchecked');
+  assert.equal(oil.checked, false);
+});
+
+test('an item never seeded carries NO boughtLast — absent is not the same as skipped', () => {
+  // The tri-state. A row typed this morning has not skipped anything, and collapsing it
+  // into `false` would invent a week that never happened.
+  const typed = nonEmpty(sanitizeList({ items: [item('Bananas')] }).items, 'typed items')[0];
+  assert.equal('boughtLast' in typed, false);
+
+  // And a `false` is preserved rather than dropped, which the truthy-spread idiom used by
+  // every other optional field on the row would have got wrong.
+  const skipped = sanitizeList({ items: [item('Bananas', { boughtLast: false })] }).items[0];
+  assert.equal(skipped.boughtLast, false);
+});
+
+test('a carry-forward row is stamped bought; a swap SUGGESTION is not', () => {
+  const completed = { goal: null, items: [item('Blueberries', { checked: true })] };
+  const scans = [
+    { product_name: 'Canned sardines', tier: 'approved' },
+    { product_name: 'Toaster pastries', tier: 'swap_recommended' },
+  ];
+  const next = buildNextTripList({ completed, scans });
+
+  const carried = next.items.find((i) => i.name === 'Canned sardines');
+  assert.ok(carried, 'the scan came forward');
+  assert.equal(carried.boughtLast, true, 'it was scanned in the store, which is how we know');
+
+  const suggestion = next.items.find((i) => i.name.startsWith('Swap out:'));
+  assert.ok(suggestion, 'the flagged product is still offered');
+  assert.equal('boughtLast' in suggestion, false, 'they bought the product, not the suggestion');
+});
+
+test('boughtLast REPLACES, never accumulates — one hop is the whole claim', () => {
+  // A row that was skipped last week and bought this week reports bought. Carrying the old
+  // value forward would let a stale stamp ride under a name that says it is fresh.
+  const seeded = seedItem({ ...item('Olive oil'), checked: true, boughtLast: false });
+  assert.equal(seeded.boughtLast, true);
+
+  const dropped = seedItem({ ...item('Olive oil'), checked: false, boughtLast: true });
+  assert.equal(dropped.boughtLast, false);
 });

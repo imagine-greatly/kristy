@@ -40,6 +40,21 @@ export function sanitizeList(list) {
       name: String(it.name || '').slice(0, 140),
       category: String(it.category || 'Added').slice(0, 60),
       checked: !!it.checked,
+      // BOUGHT-VS-SKIPPED, CARRIED ACROSS THE TRIP BOUNDARY. `checked` is about the trip
+      // in hand; `boughtLast` is what the row did on the trip before it, stamped by the
+      // seeder. An item that goes on the list every week and is never ticked is the most
+      // useful thing the record knows, and it was being thrown away at seed time.
+      //
+      // THIS ENTRY IS WHY THE OTHER THREE SITES WORK. The whitelist is strict, so a field
+      // it does not name is dropped on the first save — and `buildNextTripList` sanitizes
+      // its own output, so without this line the seeder would erase its own stamp before
+      // returning it, and every test that never saves would still pass.
+      //
+      // TRI-STATE, DELIBERATELY: `true` bought, `false` on the list and skipped, ABSENT
+      // never seeded at all. A row the shopper typed this morning has not skipped
+      // anything, and collapsing it into `false` would invent a week that never happened.
+      // Hence the typeof guard rather than the truthy spread used below.
+      ...(typeof it.boughtLast === 'boolean' ? { boughtLast: it.boughtLast } : {}),
       source: SOURCES.includes(it.source) ? it.source : 'user',
       ...(it.productName ? { productName: String(it.productName).slice(0, 140) } : {}),
       // A scanned row carries the verdict it came in with, so the cart keeps showing
