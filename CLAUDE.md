@@ -95,14 +95,25 @@ design — the contrast floor, the hero rule, the active-section rule, the type 
 one-filled-action count. Those are rules the Swift client must satisfy, and this is the evidence
 they were ever true. Read it, cite it, copy the reasoning out of it. Do not write to it.
 
-⚠️ **`client/src/lib/tokens.js` IS THE BRAND'S SOURCE OF TRUTH AND FREEZING IT HAS A COST THAT
-IS ALREADY PAID ONCE.** `kristy-ios` validates its whole asset catalog against that file
-(`Tools/checks/palette_mirror.sh`), and `7b421e3` added three colours to it — `brassFill`,
-`brassFillInk`, `surfaceLifted` — on the day the iOS repo authored them, precisely so one
-palette in two repos would not drift. Frozen means that mirroring-back can no longer happen, so
-**a new brand colour is now a decision that has to be made deliberately, not a file edit.** The
-mirror check will fail on an unmirrored colour, which is correct: the value genuinely is not in
-the brand.
+⚠️ **`client/src/lib/tokens.js` IS NO LONGER THE BRAND. IT IS A FROZEN HISTORICAL COPY.**
+The brand moved to **`Brand/tokens.json` in `kristy-ios`** on 2026-08-08, and that file is now
+the source of truth for every colour in the product. Nothing writes to `tokens.js` again.
+
+**It moved because freezing it had built a guaranteed failure into a check.** `kristy-ios`
+validates its whole asset catalog against the brand (`Tools/checks/palette_mirror.sh`), so with
+the brand in a frozen file, the next colour authored on iOS could not be recorded — and the
+check would then fail on a colour that legitimately *is* part of the brand. A check whose only
+escape hatch is editing a frozen file is a check that gets disabled. The brand belongs where
+the app is.
+
+- `tokens.js` still ships to `kristyapproved.com` and the values are unchanged, so **nothing
+  breaks**.
+- **The three iOS-authored colours in it are a SNAPSHOT, not a live mirror.** `brassFill`,
+  `brassFillInk` and `surfaceLifted` were written back by `7b421e3` on 2026-08-07 so one
+  palette in two repos would not drift. **That was the last mirroring; the route is closed.**
+  The web client consumes none of the three.
+- If you are reading `tokens.js` to learn the brand, it is currently accurate and it will not
+  stay that way. **Read `kristy-ios/Brand/tokens.json`.**
 
 ### `server/` — LIVE INFRASTRUCTURE, AND GOVERNED RATHER THAN FROZEN
 
