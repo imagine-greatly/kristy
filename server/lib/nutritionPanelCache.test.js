@@ -251,9 +251,12 @@ test('an unrecognised value normalizes to NULL and never to absent — the failu
   assert.equal(log.inserted[0].nutrition_panel, null);
 });
 
-test('a label photo does NOT erase a stored absent — it discards calories by design', async () => {
-  // The vision path deliberately does not read energy, so it has nothing to say here. If a
-  // no-opinion read wrote NULL, one photo of the detergent would hand the seal straight back.
+test('a label photo does NOT erase a stored absent — the TRUST RULE is what stops it', async () => {
+  // ⚠️ NAMED FOR THE MECHANISM THAT ACTUALLY DOES THE WORK, because the obvious wording was
+  // wrong. A label photo cannot erase an OFF row's panel because `vision` ranks BELOW `off`, so
+  // it never reaches the panel write at all — not because of the `if (panelOf)` guard. Written
+  // the tidy way, this test passed with that guard deleted, which made it a green tick over an
+  // untested invariant. The guard has its own test below.
   const { client, rows } = fakeStore([
     {
       barcode: '0030772117484',
@@ -273,6 +276,37 @@ test('a label photo does NOT erase a stored absent — it discards calories by d
   });
 
   assert.equal(rows[0].nutrition_panel, 'absent', 'a read with nothing to say must say nothing');
+});
+
+test('an EQUAL-rank read with nothing to say says nothing — the guard, tested on its own', async () => {
+  // This is the case `if (panelOf)` exists for, and the only one that reaches it: a read that
+  // outranks nothing and is outranked by nothing, carrying no panel opinion. Two vision reads
+  // of the same row do that (rank 2 vs 2 → the incoming read is authoritative for the list).
+  //
+  // ⚠️ NO CURRENT CALL SITE PRODUCES THIS, and that is exactly why it is pinned here rather
+  // than left to a comment. The OFF door always computes a panel and the vision door never
+  // writes one, so the guard is protecting the NEXT writer. Delete it and this test is the only
+  // thing in the suite that notices — verified by deleting it.
+  const { client, rows } = fakeStore([
+    {
+      barcode: 'v',
+      ingredients: OLIVES,
+      source: 'vision',
+      confidence: 'high',
+      nutrition_panel: 'absent',
+    },
+  ]);
+
+  await retainProduct({
+    barcode: 'v',
+    ingredients: `${OLIVES}, olive oil`,
+    source: 'vision',
+    panel: 'full',
+    client,
+  });
+
+  assert.equal(rows[0].ingredients, `${OLIVES}, olive oil`, 'the equal-rank read IS authoritative for the list');
+  assert.equal(rows[0].nutrition_panel, 'absent', 'and still may not erase a panel it knows nothing about');
 });
 
 test('a WEAKER read may not relabel the panel, exactly as it may not relabel the list', async () => {

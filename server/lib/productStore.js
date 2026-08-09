@@ -261,12 +261,20 @@ export async function retainProduct({
         patch.category_raw = categoryOf.category_raw;
       }
       // ⚠️ THE PANEL MOVES WITH THE INGREDIENTS, UNDER THE SAME TRUST RULE, AND ONLY WHEN THIS
-      // READ ACTUALLY HAS ONE. Both halves matter and they fail in opposite directions:
-      //   • Outside `incomingBeats` it would let a weaker read relabel a product for everyone
-      //     — the same defect as a weaker read overwriting the list or the category.
-      //   • Unconditionally, a null from a source that never looked (every label photo) would
-      //     erase a real 'absent' and hand the seal back to the detergent this gate exists to
-      //     catch. A read with nothing to say must say nothing, not "no panel".
+      // READ ACTUALLY HAS ONE. The two conditions do different jobs and only one of them is
+      // load-bearing today — recorded that way round, because the tidy version of this comment
+      // was wrong and its test passed anyway:
+      //   • `incomingBeats` is what stops a WEAKER read relabelling a product for everyone,
+      //     the same defect as a weaker read overwriting the list or the category. This is
+      //     what actually blocks a label photo from erasing an OFF row's 'absent' — vision
+      //     ranks below off, so such a read never reaches this line at all.
+      //   • `if (panelOf)` is for an EQUAL-OR-BETTER read that has nothing to say. No current
+      //     call site produces one (the OFF door always computes a panel; the vision door
+      //     never writes one and could not outrank OFF anyway), so this guard is protecting
+      //     against the NEXT writer, not a live path. It stays, and it is tested, because "a
+      //     read with nothing to say must say nothing" is the invariant a future call site
+      //     will otherwise break silently: a null landing here hands the seal straight back to
+      //     the detergent this gate exists to catch.
       if (panelOf) patch.nutrition_panel = panelOf;
     }
     // Otherwise: a weaker read against a better-sourced row. Count the sighting,
