@@ -5,11 +5,8 @@ import cors from 'cors';
 import chatRoute from './routes/chat.js';
 import guestRoute from './routes/guest.js';
 import historyRoute from './routes/history.js';
-import weeklySummaryRoute from './routes/weeklySummary.js';
 import barcodeRoute from './routes/barcode.js';
-import photoRoute from './routes/photo.js';
 import onboardingRoute from './routes/onboarding.js';
-import weightRoute from './routes/weight.js';
 import accountRoute from './routes/account.js';
 import verdictRoute, { guestVerdictRouter } from './routes/verdict.js';
 import ingredientRoute from './routes/ingredient.js';
@@ -26,7 +23,6 @@ import stripeWebhookRoute from './routes/stripe.js';
 import revenueCatWebhookRoute from './routes/revenuecat.js';
 import pushRoute from './routes/push.js';
 import internalRoute from './routes/internal.js';
-import { startCron } from './cron.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -70,11 +66,8 @@ app.use('/api', haulRoute); // authed — the Haul (record scans + aggregate tri
 app.use('/api', listRoute); // authed — the List (server-persisted + server-gated capabilities)
 app.use('/api', tripsRoute); // authed — the trip lifecycle (complete / new / same as last week)
 app.use('/api', historyRoute);
-app.use('/api', weeklySummaryRoute);
 app.use('/api', barcodeRoute);
-app.use('/api', photoRoute);
 app.use('/api', onboardingRoute);
-app.use('/api', weightRoute);
 app.use('/api', accountRoute);
 app.use('/api', subscriptionRoute);
 app.use('/api/billing', billingRoute);
@@ -117,5 +110,4 @@ process.on('uncaughtException', (err) => {
 
 app.listen(PORT, () => {
   console.log(`[kristy] server listening on http://localhost:${PORT}`);
-  startCron();
 });

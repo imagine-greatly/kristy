@@ -298,17 +298,6 @@ Mounted at: `/api`
 - `200` → { matched: Bool, entries: ???, answer: ???, refinement: ???, gated: Bool }
 - `200` → { matched: Bool, entries: ???, answer: String?, refinement: String?, gated: Bool, error: Bool, message: ??? }
 
-## photo.js
-
-Mounted at: `/api`
-
-### POST /photo  ·  requireAuth
-
-- `400` → { error: String }
-- `200` → { isEstimate: ???, estimateNote: ??? }
-  - plus a spread of `base` — **NEEDS HAND-CHECK**
-- `500` → { error: String, message: ???, hasFood: Bool, macros: String?, foods: […], insight: String }
-
 ## preferences.js
 
 Mounted at: `/api`
@@ -453,40 +442,11 @@ Mounted at: `(unmounted)`
 - `422` → { error: Bool, unreadable: Bool, message: ??? }
 - `200` → { gate: Bool, reason: String }
 
-## weeklySummary.js
-
-Mounted at: `/api`
-
-### POST /weekly-summary  ·  public
-
-- `200` → { ok: Bool, generated: ??? }
-- `500` → { error: String }
-- `200` → { ok: Bool, summary: ??? }
-- `500` → { error: String }
-
-## weight.js
-
-Mounted at: `/api`
-
-### POST /weight  ·  requireAuth
-
-- `400` → { error: String }
-- `200` → { locked: String, upgrade: Bool, message: String, saved: String?, trend: String?, recalculated: String? }
-- `200` → { saved: …, trend: …, recalculated: ??? }
-- `500` → { error: String }
-
-### GET /weight/history  ·  requireAuth
-
-- `200` → `rows.map((r) => ({
-        logged_at: r.logged_at,
-        weight_value: r.weigh` — **NEEDS HAND-CHECK** (built elsewhere)
-- `500` → { error: String }
-
 ---
 
 ## NEEDS HAND-CHECK
 
-27 of 60 handlers have at least one response this script cannot
+25 of 56 handlers have at least one response this script cannot
 expand. Confirm these by hand before writing a Codable for them.
 
 - `POST /checkout` (billing.js) — opaque: NOT_CONFIGURED
@@ -505,7 +465,6 @@ expand. Confirm these by hand before writing a Codable for them.
 - `GET /growth.html` (internal.js) — no res.json
 - `GET /perimeter/sections/:id` (perimeter.js) — opaque: section
 - `GET /perimeter/:id` (perimeter.js) — opaque: publicEntry(entry)
-- `POST /photo` (photo.js) — spread: base
 - `POST /preferences/interpret` (preferences.js) — opaque: await interpretPreferences(text)
 - `POST /scan/barcode` (scan.js) — opaque: await extractFromBarcode(barcode)
 - `POST /scan/label` (scan.js) — opaque: buildLabelResult(await readLabel(req.file), req.body?.barcode)
@@ -515,8 +474,5 @@ expand. Confirm these by hand before writing a Codable for them.
 - `GET /subscription` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(row)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
-- `GET /weight/history` (weight.js) — opaque: rows.map((r) => ({
-        logged_at: r.logged_at,
-        weight_value: r.weigh
 
-_60 handlers, 168 literal responses derived._
+_56 handlers, 156 literal responses derived._

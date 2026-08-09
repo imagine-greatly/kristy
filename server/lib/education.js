@@ -11,7 +11,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const EDU = JSON.parse(readFileSync(join(__dirname, '..', 'kristy_education.json'), 'utf8'));
 
 export const ISMS = EDU.isms;
-export const AMBIENT = EDU.isms.filter((i) => i.trigger.type === 'ambient');
+/* `AMBIENT` was exported here and imported by NOTHING. It filtered the three ambient
+   pull-quotes out of kristy_education.json for a server surface that was never built:
+   the lines that shipped came from the frozen `client/src/lib/education.js`, and iOS
+   renders none of them. An export with no consumer is the shape `labelVerdict.test.js`
+   warns about — it reads as a wired feature to anyone who greps for it, which is how the
+   three ambient entries in the JSON came to be treated as the source of record for
+   something no route serves.
+   ⚠️ THE THREE JSON ENTRIES STAY. Two of them are shipped lint failures (CLAUDE.md, Open
+   items) and the record of that is worth more than the tidiness of deleting them; nothing
+   reads them now, so they cost nothing. */
 // Contextual (non-ambient) isms, highest priority first — first match wins.
 const CARD = EDU.isms.filter((i) => i.trigger.type !== 'ambient').sort((a, b) => b.priority - a.priority);
 

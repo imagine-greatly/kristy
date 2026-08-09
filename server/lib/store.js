@@ -182,29 +182,13 @@ export async function saveCoachProfile(userId, { coach_goal = null, coach_goals 
 }
 
 /**
- * Toggle macro tracking (opt-in; default OFF). This is the one switch that turns
- * the calorie/macro/weight machinery back on for a user. Best-effort like the
- * other coach writes: if the column isn't migrated yet the upsert errors and we
- * report it, leaving the user in the default OFF state.
- * @returns {Promise<boolean>} the persisted value (false on failure).
- */
-export async function setMacroTracking(userId, enabled) {
-  try {
-    const { data, error } = await supabase
-      .from('user_goals')
-      .upsert(
-        { user_id: userId, macro_tracking: !!enabled, updated_at: new Date().toISOString() },
-        { onConflict: 'user_id' }
-      )
-      .select('macro_tracking')
-      .single();
-    if (error) throw new Error(error.message);
-    return !!data?.macro_tracking;
-  } catch (err) {
-    console.error('[kristy] setMacroTracking failed:', err.message);
-    return false;
-  }
-}
+/* `setMacroTracking` lived here — the one switch that turned the calorie/macro/weight
+   machinery back on for a user. Removed 2026-08-09 with the rest of that machinery.
+   ⚠️ THE COLUMN STAYS. `user_goals.macro_tracking` is still declared in the migrations
+   and `getGoals` still reads it, because dropping a column is a data write and this is a
+   code deletion. Nothing writes it now, so it is false for everybody, which is the state
+   the product wants — macro tracking was REMOVED, not hidden and not opt-in, and
+   `macroGuard` enforces that independently of any flag. */
 
 /** Record a scanned product in the user's haul (Step 7). Returns the saved row. */
 export async function saveHaulScan(userId, { product_name = null, brand = null, tier = null, barcode = null } = {}) {
