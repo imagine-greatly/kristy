@@ -10,7 +10,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { nonEmpty } from './testGuards.js';
 
-import { evaluateIngredients } from './verdictEngine.js';
+import { evaluateIngredients, buildUnverifiedRead } from './verdictEngine.js';
 import { parseIngredientsJSON, sugarsPer100g, LABEL_VISION_SYSTEM } from './labelVision.js';
 import { guardIncompleteRead } from '../routes/verdict.js';
 
@@ -414,6 +414,32 @@ test('the withheld read leads with the STANDARD, never with the shortfall', () =
   // A regex for it would be a closed vocabulary reporting zero false positives by
   // construction, which is the counterCardLint.js lesson. It is held by the doc comment on
   // `buildUnverifiedRead` and by review, not by this test.
+});
+
+// ⚠️ **`checked` STATES THE WORK, NEVER THE FINDING.** The endorsement's last surviving element
+// was "None of them are on the list" — the clean-bill sentence, sitting directly above the line
+// that withdraws it. It is the same act as naming the ingredients, which this function already
+// refuses: a detergent matches nothing because the KB is a FOOD KB, so the absence of matches
+// belongs to the knowledge base and not to the product, and stating it as an outcome presents a
+// structural fact as a finding.
+//
+// Pinned on BOTH shapes, because the one-ingredient branch said "One ingredient: water." — which
+// is the dropped `names` field arriving through the other door.
+test('the withheld read reports how much was read, never what it came to', () => {
+  const many = buildUnverifiedRead(DETERGENT);
+  const one = buildUnverifiedRead('Water');
+
+  assert.match(many.checked, /^Read all \d+\.$/, 'the multi-ingredient read states the count only');
+  assert.equal(one.checked, 'One ingredient.', 'the one-ingredient read names the ingredient');
+
+  for (const [shape, read] of [['many', many], ['one', one]]) {
+    // The finding, in either of the two forms it has taken.
+    assert.doesNotMatch(read.checked, /on the list|none of them|nothing|clean|flagged/i,
+      `the ${shape} shape reports a finding — that is the endorsement surviving the withholding`);
+    // And `names` may not grow back through this field: no ingredient may be spoken here.
+    assert.doesNotMatch(read.checked, /:/,
+      `the ${shape} shape names an ingredient back — that is the act \`names\` was dropped for`);
+  }
 });
 
 // ⚠️ **THE TWO FIELDS ARE ONE DECISION AND MUST LEAVE TOGETHER.** `approvedRead` is nulled at

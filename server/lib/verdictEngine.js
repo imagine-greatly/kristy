@@ -355,14 +355,34 @@ export function buildApprovedRead(rawIngredientList) {
  * rules out — with nothing on screen to point at as the claim. **That is harder to see than
  * saying it outright and it is no more defensible.** A claim the copy sets up is a claim the
  * copy made.
+ * ⚠️ **`checked` STATES THE WORK AND NEVER THE FINDING — narrowed 2026-08-09, WITH THE RENDER
+ * IN HAND.** It used to read *"Read all 13. None of them are on the list."* Shot on the real
+ * card, that sentence sits directly above the refusal in the same face and the same weight, so
+ * the shopper reads a clean bill and then a withdrawal of it, in two lines that look identical.
+ *
+ * **It is the same act this function already refuses one notch quieter.** `names` was dropped
+ * because naming the surfactants back was what presented them as clean food — and *"none of
+ * them are on the list"* presents a STRUCTURAL FACT as a finding: a detergent matches nothing
+ * because the knowledge base is a food knowledge base, so the absence of matches is a property
+ * of the KB rather than a property of the product. Stating it as an outcome is the endorsement
+ * surviving the withholding.
+ *
+ * So `checked` is now the work only: **how much was read, never what it came to.**
+ *
+ * ⚠️ **THE ONE-INGREDIENT SHAPE NAMED THE INGREDIENT AND IS FIXED WITH IT.** *"One ingredient:
+ * water."* is `names` exactly, at n=1, arriving through the other branch — the rule cannot hold
+ * on twelve ingredients and break on one.
+ *
+ * **THE COST IS REAL AND IT IS ACCEPTED.** On a genuine food with a thin Open Food Facts record
+ * — the case this whole gate has to stay honest about — "none flagged" was true and useful, and
+ * this drops it. The card cannot tell that product from a detergent; that is the entire reason
+ * the gate exists. Fail closed, the same asymmetry the seal itself runs on.
  * @returns {{ checked:string, why:string }}
  */
 export function buildUnverifiedRead(rawIngredientList) {
   const tokens = tokenizeIngredients(rawIngredientList);
   return {
-    checked: tokens.length === 1
-      ? `One ingredient: ${tokens[0].replace(/[.;:]+$/, '')}.`
-      : `Read all ${tokens.length}. None of them are on the list.`,
+    checked: tokens.length === 1 ? 'One ingredient.' : `Read all ${tokens.length}.`,
     why: 'The seal is earned on a food label, and this one has no panel to read.',
   };
 }
