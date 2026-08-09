@@ -836,6 +836,33 @@ was invisible until something rendered one**
   name-in-instruction matching. The matching harm is handled by the guards above instead.
 
 **The list is the shopper's**
+- ⚠️ **KRISTY CARRIES ANYTHING AND JUDGES ONLY FOOD.** Ruled 2026-08-09, after compose
+  refused `"add dish soap"` over a twelve-row cart and returned the summary *"Dish soap is
+  not a grocery item — it belongs in household supplies, not on the food list."* It was
+  right that dish soap is not food and wrong about what follows.
+  - **A non-food row goes on the list.** Trailing group, no card, no do line, no
+    attachment. She has nothing to say about it and **her silence is honest** — it is what
+    makes the rows she *does* speak on visibly the food ones.
+  - **She never scores, flags, approves or swaps a non-food item.** Scanned, the answer is
+    *"that isn't something Kristy reads."* Not a verdict, not a score, not a tier.
+  - **Compose may never refuse to add what a shopper asked for, and may never explain why
+    it declined.** That refusal is finding **H** — a server fix, held, and explicitly not
+    worked around in a client.
+
+  Three reasons, recorded so this is not relitigated from intuition:
+  - **Nobody makes two lists.** If dish soap cannot go on ours they keep the other half in
+    Notes, and **the incomplete list is the one that gets abandoned.** The list is the
+    retention engine; refusing half a grocery trip is the most expensive thing it can do.
+  - **Judging cleaners needs a second knowledge base and a second claim discipline.** It is
+    the fight Yuka picked and lost — their cosmetics scoring is their weakest surface, and
+    a mediocre score on a bottle of detergent would put every claim in non-negotiable #2 on
+    ground the KB cannot stand on.
+  - **Refusing to score a non-food item is a POSITIONING STATEMENT, and it is stronger than
+    a mediocre score.** "That isn't something Kristy reads" says exactly what she is for.
+
+  ⚠️ **The silence is the feature, so do not "improve" it later with a household KB, a
+  generic tidiness note, or an eyebrow reading "no guidance".** Each of those turns an
+  honest absence into a weak claim, which is the trade this ruling exists to refuse.
 - **The item always stays.** A row the shopper added is never removed, renamed or
   struck. Kristy attaches a note *beside* it. `applyCompose` protects `user` and
   `imported` rows from a model-proposed removal unless the shopper's own words name the
