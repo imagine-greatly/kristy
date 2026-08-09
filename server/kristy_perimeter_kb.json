@@ -3833,24 +3833,21 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
-        "Qian et al. 2024, PNAS — nanoplastics in bottled water measured by stimulated Raman scattering microscopy",
-        "ANSES 2025, Journal of Food Composition and Analysis — microplastics in bottled drinks traced to paint on metal caps",
-        "Westerhoff et al. 2008, Water Research; Shotyk et al. — antimony migration from PET with storage time and temperature"
+        "ANSES 2025, Journal of Food Composition and Analysis — plastic particles in bottled drinks traced to paint on metal caps, and reduced ~70% by cleaning the caps before sealing"
       ],
       "kristy_take": "Spring, in glass, from a place that can be found on a map. Everything else is a process wearing a mountain on the label.",
       "cart_pick": "Spring water in glass",
       "buying_tips": [
         "A spring with a name and a town behind it. “Bottled at the source” means something when the source is printed.",
-        "Glass, with the cap still clean and unscuffed.",
+        "Glass where the water is sold in glass. It is inert, it adds nothing, and it takes nothing.",
         "“Mineral water” is spring water with the dissolved solids to prove the ground it came from. Nothing may be added to it.",
         "Sparkling from a named spring is the same decision with bubbles in it. Read the label the same way.",
         "“Purified”, “distilled”, “deionized” and “reverse osmosis” are processes. The source is not on that label, and it does not have to be."
       ],
       "watch_out": [
         "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen, and it costs less. It is the honest fallback, not the standard.",
-        "Glass is inert and the cap is not. French food-safety researchers traced the microplastics in glass-bottled drinks to paint shedding off the metal caps, and water was the least affected of everything they measured.",
-        "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle.",
-        "Heat and time move antimony out of PET into the water. A case left in a hot car is the wrong storage for the wrong container."
+        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic found in glass-bottled drinks to paint flaking off painted metal caps, scratched by rubbing together in storage before they were ever used. Cleaning the caps first took most of it back out. The glass sheds nothing.",
+        "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle."
       ],
       "labels_decoded": [
         {
@@ -3874,7 +3871,7 @@
           "meaning": "True of every PET bottle and always was. PET is not made with BPA. The claim describes a plastic the bottle never contained."
         }
       ],
-      "tier_note": "The label definitions are federal and the plastics work is published. Holding out for a named spring in glass on top of them is the standard.",
+      "tier_note": "The label definitions behind this are federal. The standard being held is about the source and the container, never a claim about health.",
       "eyebrow_short": "Bottled water",
       "asked_as": [
         "what bottled water should i buy",
