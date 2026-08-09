@@ -155,8 +155,8 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     // the in-voice goal ask where the note would be. No model call, no note, and —
     // critically — no free "taste" consumed: setting a goal is not itself a read.
     if (!personalize) {
-      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, sugarHeavy } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
-      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
+      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, unverifiedRead, unverifiedAsFood, sugarHeavy } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
+      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [], unverifiedAsFood }));
       // The generic KB swap (a field read, no model call) is FREE — everyone gets
       // "here's a better shelf." The goal-aware swap stays a member benefit.
       return send(res, {
@@ -180,14 +180,14 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // focus offer still works for a goal-set user who's out of free tastes.
       // Hard lines still apply: they're a deterministic KB match with no model
       // call, and a line the user drew is a promise, not a member benefit.
-      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, sugarHeavy } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
-      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [] }));
-      return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, sugarHeavy }, { readComplete, barcode });
+      const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, unverifiedRead, unverifiedAsFood, sugarHeavy } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
+      const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [], unverifiedAsFood }));
+      return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
     // the claim-locked Haiku note.
-    const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, sugarHeavy } = evaluateIngredients(ingredients, { focuses, nutrition, hardLines: nonNegotiables });
+    const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, unverifiedRead, unverifiedAsFood, sugarHeavy } = evaluateIngredients(ingredients, { focuses, nutrition, hardLines: nonNegotiables });
     /* APPROVED COMPOSES NOTHING, AND THAT IS THE FIX.
        With zero matched entries the model had nothing to rephrase, so it wrote the same
        sentence every time: eight of ten approved products came back with "This one is
@@ -203,13 +203,13 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
     const { note, swap } = skipNote
       ? { note: null, swap: null }
       : await composeNote({ tier, goal, nonNegotiables, constraints, matched, affirmed, focus, hardLines });
-    const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses }));
+    const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses, unverifiedAsFood }));
     if (consumesFree && !skipNote) await incrementFreeNotesUsed(req.user.id);
     const freeTastesLeft = premium
       ? null
       : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree && !skipNote ? 1 : 0)));
 
-    return send(res, { tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines, approvedRead, sugarHeavy }, { readComplete, barcode });
+    return send(res, { tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -252,15 +252,15 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   // Nutrition rides the guest path too. The added-sugar seal gate is deterministic and
   // costs nothing, and without it the SAME PRODUCT would carry the seal for a guest and
   // not for a member — the one thing a seal can never do is mean two things.
-  const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, hardLines, approvedRead, sugarHeavy } =
+  const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, hardLines, approvedRead, unverifiedRead, unverifiedAsFood, sugarHeavy } =
     evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
   const education = selectCardIsm(
-    ismContext({ matched, tier, ingredientCount: count, focuses: [] })
+    ismContext({ matched, tier, ingredientCount: count, focuses: [], unverifiedAsFood })
   );
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return send(res, { tier, stamp, universalLayer, affirmationLayer, hardLines, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count, approvedRead, sugarHeavy }, { readComplete, barcode });
+  return send(res, { tier, stamp, universalLayer, affirmationLayer, hardLines, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
 });
 
 export default verdictRouter;

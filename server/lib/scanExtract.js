@@ -199,7 +199,37 @@ export function nutritionFromOFF(p = {}) {
   // a missing sodium figure leaves the sodium focus quiet.
   const fiber = num(n['fiber_100g']) ?? num(n['fibre_100g']);
   const caffeine = num(n['caffeine_100g']);
-  return { sodium, addedSugar, fiber, caffeine };
+
+  // ⚠️ **DOES THIS SOURCE DECLARE CALORIES? A thing sold to be eaten does.**
+  //
+  // Not a focus signal — it is the seal gate for a NON-FOOD product, and it is read here
+  // rather than in the engine because only the caller knows whether a source that publishes
+  // energy was consulted at all. `approved` means "zero KB entries matched", so a detergent
+  // matches nothing and earns the seal: Dawn Platinum Plus Powerwash (0030772117484) came
+  // back `stamp: true` on production, with "A few ingredients, all real. This is what food
+  // used to look like" printed under it. docs/NON-FOOD-SEAL.md.
+  //
+  // ⚠️ **TRI-STATE, AND THE THIRD STATE IS THE WHOLE SAFETY OF IT.** `absent` means THIS
+  // source was asked and had none. It must never be confused with "nobody asked" — the label
+  // photo path deliberately discards calories ("calories, protein, fat and sodium are not
+  // wanted"), so a two-state flag would withhold the seal from every product a shopper
+  // photographs. That fix for a false seal on detergent would have stripped the seal off
+  // every clean food read from a panel.
+  //
+  // Measured: both Dawns carry only OFF's COMPUTED keys (nova-group, the
+  // fruits-vegetables estimates, a derived added-sugars) and no `energy-kcal` at all;
+  // Nutella carries 52 keys including real energy. `energy_100g` is kJ and is accepted as
+  // the same evidence — the question is whether a figure was declared, not its unit.
+  const energyKcal = num(n['energy-kcal_100g'])
+    ?? (num(n['energy_100g']) != null ? num(n['energy_100g']) / 4.184 : null);
+
+  return {
+    sodium,
+    addedSugar,
+    fiber,
+    caffeine,
+    nutritionPanel: energyKcal == null ? 'absent' : 'present',
+  };
 }
 
 /** Display meta for the scan verdict card header. Factual, straight from OFF. */

@@ -325,6 +325,30 @@ export function buildApprovedRead(rawIngredientList) {
   };
 }
 
+/**
+ * The read for a product that matched nothing and declared no nutrition panel.
+ *
+ * ⚠️ **THE COPY MAY NOT OUTRUN THE SIGNAL.** The non-food ruling's answer for a scan is
+ * *"that isn't something Kristy reads"* — **that sentence is not available here.** It asserts
+ * the product is not food, and the evidence is that a database had no calorie figure. A real
+ * food with a thin OFF record would be told it is not food, which is a fabricated claim and
+ * non-negotiable #2. Saying the strong sentence on weak evidence is the same error as the
+ * seal, pointing the other way.
+ *
+ * So it states what is missing, states the rule, and claims nothing about the product. It is
+ * exactly right about a bottle of Dawn without ever asserting Dawn is not food.
+ * @returns {{ checked:string, why:string }}
+ */
+export function buildUnverifiedRead(rawIngredientList) {
+  const tokens = tokenizeIngredients(rawIngredientList);
+  return {
+    checked: tokens.length === 1
+      ? `One ingredient: ${tokens[0].replace(/[.;:]+$/, '')}.`
+      : `Read all ${tokens.length}. None of them are on the list.`,
+    why: 'No nutrition panel on this one. The seal needs a food label behind it.',
+  };
+}
+
 // ── Added sugar, by QUANTITY ─────────────────────────────────────────────────
 // The widest hole under the seal: ingredients real, complete, and simply outside the
 // KB. Kirkland Strawberry Spread — "Strawberries, sugar, fruit pectin citric acid" —
@@ -639,10 +663,35 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
   // sugar focus. Withholding only; it can never grant a seal, exactly like a hard line.
   const sugarHeavy = tier === 'approved' && sugarWithholdsSeal(tokenizeIngredients(rawIngredientList), nutrition);
 
+  // ⚠️ **NOTHING SAYS THIS IS FOOD, SO THE SEAL DOES NOT GO ON IT.**
+  //
+  // `approved` means ZERO KB ENTRIES MATCHED (`scoreVerdict`, and the comment above
+  // `buildApprovedRead`). A detergent matches nothing, so it earned the gold seal —
+  // measured live on Dawn Platinum Plus Powerwash, with the `clean_label` ism printed under
+  // it about dipropylene glycol butyl ether.
+  //
+  // ⚠️ **THE COLLISION IS DESIGNED, WHICH IS WHY NO SCORING FIX REACHES IT.** `CLAUDE.md`
+  // records as load-bearing that whole-food fats are clean BECAUSE the KB holds no entry for
+  // them, with a regression test guarding it. Matching nothing is the signature of the
+  // cleanest possible food AND of something that is not food. The ingredient list cannot
+  // separate them and no new KB entry ever will.
+  //
+  // So the evidence comes from outside the list: **a thing sold to be eaten declares
+  // calories.** `'absent'` means a source that publishes energy for food was consulted and
+  // had none. `'unknown'` — the photo path, and any caller that sent no nutrition — withholds
+  // NOTHING, which is why this tests `!== 'absent'` and never `=== 'present'`.
+  //
+  // ⚠️ **FAIL CLOSED, and do not carry the counter's asymmetry across.** There, scope has been
+  // wrong in one direction every time and the rule is "when in doubt, admit", because a
+  // wrongly-refused question tells a shopper they do not belong. **Here a wrong approval is a
+  // gold seal on a cleaning product and a wrong refusal is a missing endorsement.** The
+  // analogy is the most likely way to get this wrong.
+  const unverifiedAsFood = tier === 'approved' && nutrition?.nutritionPanel === 'absent';
+
   // The user drew this line themselves, so a product that crosses it is not
   // "approved" for them no matter how clean the rest of the label is. The seal
-  // stays earned — this only ever takes it away, never grants it.
-  const stamp = tier === 'approved' && violated.length === 0 && !sugarHeavy;
+  // stays earned — these only ever take it away, never grant it.
+  const stamp = tier === 'approved' && violated.length === 0 && !sugarHeavy && !unverifiedAsFood;
 
   // Hard lines are the loudest thing on the card: surface what crossed them
   // first, then focus-relevant, then the rest.
@@ -665,7 +714,18 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
     // Additive, both of them (non-negotiable #5). `approvedRead` is the factual copy
     // the approved card renders instead of the old template; `sugarHeavy` says why a
     // product that matched nothing still did not earn the seal.
-    approvedRead: tier === 'approved' ? buildApprovedRead(rawIngredientList) : null,
+    // ⚠️ **`approvedRead` GOES NULL WHEN THE SEAL IS WITHHELD THIS WAY, AND THE NULL IS THE
+    // LOAD-BEARING HALF.** It is the endorsement: "Read all 13. None of them are on the
+    // list", followed by the surfactants named back as the evidence of cleanliness. Adding a
+    // sibling flag and leaving this populated would mean **every already-shipped client keeps
+    // rendering it unchanged**, because a client cannot fail closed on a field it has never
+    // heard of. Nulling the old field degrades correctly on every build ever shipped.
+    approvedRead: tier === 'approved' && !unverifiedAsFood ? buildApprovedRead(rawIngredientList) : null,
+    // The withheld read takes its place. `checked` carries over because it was true of the
+    // detergent and stays true; the ingredient NAMES do not, because naming them was the act
+    // that presented them as clean food.
+    unverifiedRead: unverifiedAsFood ? buildUnverifiedRead(rawIngredientList) : null,
+    unverifiedAsFood,
     sugarHeavy,
   };
 }

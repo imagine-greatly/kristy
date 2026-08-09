@@ -323,3 +323,81 @@ test('an unreadable ingredient string can never reach the engine', async () => {
   nonEmpty(real, 'readable lists');
   for (const r of real) assert.equal(unreadable(r), null, `${JSON.stringify(r)} must pass`);
 });
+
+/* ═══════════ THE SEAL DOES NOT REACH A BOTTLE OF DAWN ═══════════
+
+   `approved` means ZERO KB ENTRIES MATCHED, so a detergent matches nothing and earned the
+   gold seal — measured live on production, 0030772117484, with the `clean_label` ism printed
+   under it about dipropylene glycol butyl ether.
+
+   The collision is DESIGNED: whole-food fats are clean because the KB holds no entry for
+   them (Block E above guards exactly that). Matching nothing is the signature of the
+   cleanest possible food AND of something that is not food, so no scoring change separates
+   them. The evidence has to come from outside the ingredient list, and a thing sold to be
+   eaten declares calories.
+
+   ⚠️ THE THIRD STATE IS THE SAFETY. 'unknown' must withhold NOTHING — the photo path
+   discards calories on purpose, so a two-state flag would strip the seal off every clean
+   food a shopper photographs. That regression is pinned first and by name. */
+
+const DETERGENT =
+  'WATER, DIPROPYLENE GLYCOL BUTYL ETHER, C10-16 ALKYLDIMETHYLAMINE OXIDE, LAURYL GLUCOSIDE, '
+  + 'HEXYL ETHOXYLATE, TETRASODIUM GLUTAMATE DIACETATE, SODIUM XYLENESULFONATE, ETHANOLAMINE, '
+  + 'ALCOHOL DENAT., PHENOXYETHANOL, FRAGRANCES, SODIUM CITRATE, PPG-26';
+
+test('a product whose source declared no nutrition panel does not get the seal', () => {
+  const v = evaluateIngredients(DETERGENT, { nutrition: { nutritionPanel: 'absent' } });
+  assert.equal(v.tier, 'approved', 'nothing matched, so the TIER is still approved');
+  assert.equal(v.stamp, false, 'THE GOLD SEAL IS ON A CLEANING PRODUCT');
+  assert.equal(v.unverifiedAsFood, true);
+});
+
+test("'unknown' withholds nothing — the photo path must not lose its seals", () => {
+  for (const nutrition of [null, {}, { nutritionPanel: 'unknown' }, { sodium: 1 }]) {
+    const v = evaluateIngredients('Oats, honey, salt', { nutrition });
+    assert.equal(v.stamp, true, `a clean food lost its seal on ${JSON.stringify(nutrition)}`);
+    assert.equal(v.unverifiedAsFood, false);
+  }
+});
+
+test('a declared panel leaves the seal exactly as it was', () => {
+  const v = evaluateIngredients('Oats, honey, salt', { nutrition: { nutritionPanel: 'present' } });
+  assert.equal(v.stamp, true);
+  assert.equal(v.unverifiedAsFood, false);
+});
+
+test('it withholds and can NEVER grant, escalate, flag or swap', () => {
+  // A product that already fails on its ingredients is untouched by this gate: it cannot be
+  // made worse, and the absent panel cannot add a concern the KB did not find.
+  const flagged = evaluateIngredients('Water, Red 40, sugar', { nutrition: { nutritionPanel: 'absent' } });
+  const same = evaluateIngredients('Water, Red 40, sugar', { nutrition: { nutritionPanel: 'present' } });
+  assert.equal(flagged.tier, same.tier, 'the gate moved a TIER');
+  assert.deepEqual(flagged.universalLayer.map((x) => x.id), same.universalLayer.map((x) => x.id));
+  assert.equal(flagged.unverifiedAsFood, false, 'only an approved product can be unverified');
+  // And it can never turn a withheld seal INTO one.
+  assert.equal(flagged.stamp, false);
+});
+
+test('the endorsement is replaced, not decorated — approvedRead goes null', () => {
+  const v = evaluateIngredients(DETERGENT, { nutrition: { nutritionPanel: 'absent' } });
+  // ⚠️ THE NULL IS THE LOAD-BEARING HALF. Leaving `approvedRead` populated beside a new flag
+  // would mean every ALREADY-SHIPPED client keeps rendering "Read all 13. None of them are on
+  // the list", followed by the surfactants named back as the evidence of cleanliness. A client
+  // cannot fail closed on a field it has never heard of.
+  assert.equal(v.approvedRead, null, 'the endorsement still renders on every shipped client');
+  assert.ok(v.unverifiedRead, 'and nothing took its place');
+  assert.match(v.unverifiedRead.why, /no nutrition panel/i);
+  // The copy may not outrun the signal: the evidence is a missing calorie figure, so it may
+  // never assert the product is not food. A real food with a thin OFF record reads this too.
+  assert.doesNotMatch(v.unverifiedRead.why, /not food|isn't food|not something/i);
+});
+
+test('she says nothing at all about a product she cannot verify is food', async () => {
+  const { selectCardIsm, ismContext } = await import('./education.js');
+  const v = evaluateIngredients(DETERGENT, { nutrition: { nutritionPanel: 'absent' } });
+  const ism = selectCardIsm(ismContext({
+    matched: v.matched, tier: v.tier, ingredientCount: 13, unverifiedAsFood: v.unverifiedAsFood,
+  }));
+  // `clean_label` is triggered by verdict:approved and is what shipped under the Dawn seal.
+  assert.equal(ism, null, 'an education ism renders on a product nothing says is food');
+});
