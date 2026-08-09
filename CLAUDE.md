@@ -1383,14 +1383,31 @@ was invisible until something rendered one**
 
 ## Open items
 
-- 🐞 **THE SEAL GATE IS LIVE BUT THE CACHE PATH BYPASSES IT, AND CLOSING THAT NEEDS A
-  MIGRATION.** Shipped and verified on production 2026-08-09: a panel-less product returns
-  `stamp:false` with the withheld read, a declared panel is untouched. **But it only fires
-  where the nutrition came from OFF.** `POST /api/guest/scan/barcode` on `3017620422003`
-  answered `source:"store"` with `nutrition:null` — `scanned_products` stores ingredients and
-  **no nutrition at all**, so a product already in our own catalog resolves to `unknown` and
-  `unknown` withholds nothing. That is the correct default and it means **the self-heal loop
-  reopens the hole for every product it caches**, which over time is most of them.
+- ✅ **CLOSED ON PRODUCTION 2026-08-09 — THE CACHE PATH NO LONGER WALKS AROUND THE SEAL GATE,
+  AND THE TWO NAMED FALSE SEALS ARE CLEARED.** Migration applied, code deployed, driven live:
+  `POST /api/guest/scan/barcode` on **`0030772117484`** now answers `source:"store"` with
+  `nutrition.nutritionPanel:"absent"`, and the verdict door returns **`stamp:false`**,
+  `education:null` — the *"A few ingredients, all real. This is what food used to look like"*
+  line is gone — `approvedRead:null`, and `unverifiedRead` in its place: *"No nutrition panel on
+  this one. The seal needs a food label behind it."* **Non-negotiable #4 holds on the cache
+  path.** Both Dawn rows carry `absent`, which is how the `update`'s row count was confirmed
+  without database access: **2**.
+  **Verified in the other direction too, which matters more:** a clean food with a declared
+  panel keeps `stamp:true` and its `approvedRead`, and so does one with **no panel data at all**
+  — `unknown` withholds nothing, so nothing already in the catalog lost its seal.
+  ⚠️ **THE DYED DAWN (`0030772006023`) IS STILL REFUSED BY COINCIDENCE, NOT BY THIS GATE.** It
+  comes back `swap_recommended` on `yellow_5`/`blue_1`, and `unverifiedAsFood` requires
+  `tier === 'approved'`, so the gate is *structurally unable* to act on it. If OFF ever loses
+  those dye entries the gate catches it — but do not read that product's refusal as evidence
+  this works. The dye-free SKU one barcode over is the one that proves it.
+  ⚠️ **`unverifiedAsFood` IS NOT ON THE WIRE.** The engine returns it, `routes/verdict.js` does
+  not forward it; a client keys off `unverifiedRead`/`stamp` instead, which is deliberate (a
+  client cannot fail closed on a field it has never heard of). Do not add it to a decoder
+  expecting it to arrive.
+  **Kept for the mechanism, which is load-bearing:** the gate only ever fires where the
+  nutrition came from OFF, and `scanned_products` stored **no nutrition at all** — so before
+  this, a product already in our own catalog resolved to `unknown`, `unknown` withheld nothing,
+  and **the self-heal loop reopened the hole for every product it cached.**
   ✅ **THE CODE IS BUILT AND COMMITTED, 2026-08-09. THE MIGRATION IS NOT APPLIED.**
   `nutrition_panel` on `scanned_products`, written by `retainProduct` when the OFF read carried
   one, returned by `lookupProduct`, and handed back by `extractFromBarcode`'s store branch as a
