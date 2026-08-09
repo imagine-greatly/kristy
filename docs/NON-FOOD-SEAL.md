@@ -132,6 +132,54 @@ That was true of the detergent and stays true. What must go is what it was used 
 The strong sentence keeps its home: **§4's category signal is a positive observation and can
 carry it.** Two strengths of evidence, two sentences, and they must not be collapsed.
 
+### 2a. ⚠️ REVISED 2026-08-09, AFTER LOOKING AT IT — and the copy is the smaller half
+
+**Shipped copy above is correct and reads as a shortfall.** It leads with an absence
+(*"No nutrition panel on this one"*), which sounds like a lookup that failed rather than a
+standard being applied, and it frames the rule around what *the seal* needs rather than
+around what she is willing to stand behind. The ask that produced this revision: **it should
+sound like Kristy declining, not like the app failing.**
+
+**Proposed replacement for `why` — one sentence, no apology, no "not supported", no hint that
+it is coming later:**
+
+> **The seal is earned on a food label, and this one has no panel to read.**
+
+Why this one:
+- **It leads with the standard, not the absence.** That inversion is the entire complaint.
+- **"Earned" is non-negotiable #4's own word** — *the stamp is earned*. The refusal speaks the
+  product's existing rule rather than improvising an excuse for this scan, which is what makes
+  a boundary read as deliberate rather than as a gap.
+- **It still claims nothing about the product.** It says what the seal requires and what this
+  scan had. The obscure olive oil with a thin OFF record gets the same true sentence.
+- Linted clean on `antithesisChime` and `copulaAbstraction`; 16 words, zero first person, no
+  em-dash aside.
+
+⚠️ **A CLEAN LINT IS NOT EVIDENCE THE COPY IS GOOD HERE.** Six candidates were run through both
+checks and **all six passed, including the one being replaced** — the rules are lexical and this
+judgment is editorial. Recording that so the pass is not later cited as a measurement, which is
+the *"zero false positives by construction"* trap `copulaAbstraction`'s own header warns about.
+
+⚠️ **THE TEMPTING CANDIDATE, AND WHY IT IS OUT.** *"Kristy stamps food, and food comes with a
+panel. This one carries none."* names her, sounds most like her, and **smuggles the forbidden
+claim in as an inference**: if food comes with a panel and this has none, the reader concludes
+it is not food. That is the copy outrunning the signal by implication instead of by assertion,
+which is harder to see and exactly as wrong. Every candidate that mentions what food *has* fails
+this way.
+
+⚠️ **AND THE COPY IS THE SMALLER HALF, BECAUSE NOTHING RENDERS IT.** `VerdictResponse` in
+`kristy-ios` declares no `unverifiedRead`, so today the sentence is dropped on the floor and the
+card reads **"Approved."** over *"That's what's in it…"* over **[ Add to the cart ]** — an
+endorsement of dish soap with the gold seal removed and nothing else changed. **Rewording this
+field changes nothing a shopper sees until the client decodes it**, so the wording and the
+decoding ship together. Full render and evidence: `kristy-ios/docs/SWIFT-HANDOFF.md` §3, item 0f.
+
+**Not proposed: a change to `checked`.** *"Read all 12. None of them are on the list."* is the
+endorsement sentence reused on the withheld card, and it does read as praise the `why` then
+retracts. It is also **true**, and the alternative is a second sentence about the product on a
+card that just declined to make one. Flagged, not changed — and it should be decided with the
+render in hand rather than from the field list.
+
 ---
 
 ## 3. The education line and `approvedRead` — both currently narrate surfactants as clean food
