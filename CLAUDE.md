@@ -1150,6 +1150,27 @@ was invisible until something rendered one**
   incoherence is fixed rather than inverted. **Both doors move together or the gate just
   relocates** to whichever one the shopper did not try first. The over-budget line is not an
   upsell; the ask still appears at exactly one moment.
+- **WHICH BUCKET A GUEST DOOR DRAWS IS DERIVED FROM "DOES THIS REACH A MODEL", NEVER DECIDED
+  PER ROUTE.** `guestRate.js` has said *"only real inference requests should consume a slot"*
+  since the day it was written, and by eye that question has now been answered wrongly on four
+  routes in three different directions: the counter spent an inference slot on a KB read, the
+  cart build spent one on a template, `/guest/scan/barcode` spent one on a Supabase read plus
+  an Open Food Facts fetch, and `/guest/verdict` spent one on a scoring pass whose handler is
+  not even `async`. **They point different ways precisely because each was decided separately,
+  which is why fixing any one never surfaced the others.** Fixed 2026-08-09 and verified live:
+  the two model-free scan hops moved to their own bucket, `/guest/scan/label` stayed on the
+  inference budget because it is a real vision call, and `guestBudget.test.js` asserts the
+  split per HANDLER — a file-wide grep cannot, because `scan.js` legitimately contains both.
+- ⚠️ **A BUDGET SPENT IN HOPS CANNOT BE READ AS A BUDGET FOR ANYTHING A SHOPPER DOES, AND
+  THAT GAP HALVED THIS ONE WITH NOBODY EDITING A NUMBER.** `MAX_PER_WINDOW = 8` was authored
+  2026-07-13, when `/api/guest/verdict` **was** the vision call: a guest scan was one hop
+  through one door and eight meant eight scans. Three days later (`a672ca8`) the scan doors
+  took over extraction and the verdict door became deterministic — so a scan became two hits
+  and the ceiling became **four**, silently, with no edit to make it happen and nothing to
+  report it. **So 8 was never sized against the doubled cost; it predates the doubling.** The
+  fix restores what it was chosen to mean rather than raising it. The scan bucket is therefore
+  sized in **SCANS** — 30 an hour, 2 hits each on the barcode path — with the multiplication
+  exported and asserted, so a third hop fails a test instead of halving it again.
 
 ---
 
@@ -1260,7 +1281,10 @@ was invisible until something rendered one**
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` (483 tests). Client: `cd client && npx vite build`.
+- `cd server && npm test` — **618 on `main` + the held stack, 607 on `origin/main`**, and the
+  difference is `trips.test.js`'s import half, which is held. A bare count here has been stale
+  four times (it read 483 while the suite ran 613); what is stable is that the number is
+  printed by the run and the two trees differ by the hold. Client: `cd client && npx vite build`.
 - **`vite build` COMPILES A DEAD REFERENCE HAPPILY.** Moving the ask out of `AisleMoment` left
   a `{!ask && …}` behind — a live `ReferenceError` that took the whole Counter surface down,
   through a clean build. Only `gate.mjs`, which drives the real surface, caught it. A green
@@ -1382,6 +1406,42 @@ was invisible until something rendered one**
 ---
 
 ## Open items
+
+- 🐞⚠️ **THE SEAL IS WITHHELD AND THE CARD STILL SAYS "APPROVED." — THE iOS CLIENT NEVER
+  LEARNED `unverifiedRead`.** Found 2026-08-09 by reading the Swift after the server went
+  green, which is the same order that found the `NutritionInput` gap one layer up. Driven
+  live, `POST /api/guest/verdict` on `0030772117484` with `nutritionPanel:"absent"` returns
+  `stamp:false`, `approvedRead:null`, `education:null` and `unverifiedRead:{checked, why}`.
+  **`ScanModels.swift` declares no such field**, so on the product itself:
+  - `stamp:false` swaps `KristySeal()` for `VerdictBar(tier:)` — and `VerdictBar`'s call for
+    `.approved` is the single word **"Approved."**, in Playfair pull-quote, seafoam on a mint
+    border. **The gold seal came off and the green light stayed on.**
+  - `approvedRead:null` removes the evidence block, correctly.
+  - `unverifiedRead` is **dropped on the floor**, so the one sentence that says why the seal
+    was withheld never renders.
+  - What is left is a bar reading "Approved.", nothing under it, and the withheld-read
+    upsell.
+  ⚠️ **THIS IS WHY THE COPY QUESTION IS NOT YET A COPY QUESTION.** There is no refusal on
+  screen to improve — improving `unverifiedRead`'s wording changes nothing a shopper sees
+  until the client decodes it. **The proposal and the decoding land together or neither
+  does.** Same family as every other entry here: correct server, correct null, correct
+  degradation-by-nulling — and a client that cannot see the subject. Note the nulling of
+  `approvedRead` did exactly its job (no false evidence); it is `VerdictBar` that has no
+  concept of a withheld approval, because until this gate existed there was no such state.
+- ⏳ **THE GUEST BUDGET IS A PROPERTY OF UPTIME, NOT OF THE SHOPPER. FINE NOW, WRONG AT
+  SCALE.** All four buckets in `guestRate.js` are module-level `Map`s in one process, so
+  **every deploy hands every IP a full budget back** and Railway redeploys on every push to
+  `main`. The file has always said so (*"good enough for a single instance; swap for a shared
+  store if this ever runs multi-process"*) — what was not written down is that the reset is
+  not only a multi-process problem: a single instance restarting is enough. Three consequences
+  worth having in one place: the ceiling a shopper actually experiences is bounded by
+  **deploy frequency**, not by the number; a busy release day quietly makes the free tier
+  unlimited; and **it cannot be measured** — there is no counter to read, and `rateLimited`
+  records a hit when it is NOT limited, so asking whether budget remains spends the slot that
+  answers. **Not urgent**: the limiter exists for abuse and cost, both of which are still
+  bounded per-instance, and a stranger cannot know when a deploy happened. **It becomes real
+  the moment a second instance exists** — at that point the budget is divided by the instance
+  count and the numbers stop meaning anything at all. Recorded here rather than rediscovered.
 
 - ✅ **CLOSED ON PRODUCTION 2026-08-09 — THE CACHE PATH NO LONGER WALKS AROUND THE SEAL GATE,
   AND THE TWO NAMED FALSE SEALS ARE CLEARED.** Migration applied, code deployed, driven live:
@@ -1517,12 +1577,15 @@ was invisible until something rendered one**
   ⚠️ **NOT BEING FIXED, AND THAT IS A DECISION.** `client/src` is **frozen** — the lines that
   actually ship come from `client/src/lib/education.js` and rewriting them would be an edit to
   the behavioural spec for copy on a client that is no longer the product. **And the other copy
-  is dead:** `AMBIENT` is exported from `server/lib/education.js:14` and **imported by nothing**,
+  is dead:** `AMBIENT` was exported from `server/lib/education.js` and **imported by nothing**,
   so `kristy_education.json`'s three ambient entries are the source of record for a feature no
   route serves. iOS renders none of them.
-  **Delete the dead export in the same pass that deletes the other known-dead code** (below) —
-  not on its own, because an export with no consumer is exactly the "field with no consumer"
-  shape `labelVerdict.test.js` warns about and it should go with its neighbours.
+  ✅ **THE DEAD EXPORT IS GONE — deleted 2026-08-09 in the dedicated pass** (below), which is
+  where this entry asked for it rather than on its own. **The three JSON entries STAY**, and
+  the two failures above are why: nothing reads them, so they cost nothing, and the record of
+  a measured defect is worth more than the tidiness of deleting the evidence for it. **The
+  lint failures themselves are still not fixed and still will not be** — the lines that ship
+  come from the frozen `client/src/lib/education.js`.
 
 - ✅ **FIXED IN SWIFT 2026-08-09 — a one-word row is a CATEGORY, not an identity. `rowMatch.js`
   KEEPS THE OVER-MATCH, DELIBERATELY.** Rule 5 — every content word of the ROW must appear in
@@ -1639,11 +1702,39 @@ was invisible until something rendered one**
   stored image for a product read off a panel) — the fix is a client-side crop of the
   shopper's own photo, held in memory for the session, **nothing persisted or uploaded
   beyond the vision call that already happens**, so the no-images-stored rule is unchanged.
-- **Known-dead, left in place**: `/api/photo`, `/api/weight`, the weekly-summary
-  pipeline, `mealResolver`, `store.js setMacroTracking`; client `lib/logging.js
-  sendPhoto`, `api.js sendWeightLog`, several `data.js` readers, `lib/dayBoundary.js`.
-  Unrouted since macro tracking was removed; DB tables untouched. Delete in a dedicated
-  pass.
+- ✅ **THE DEDICATED PASS RAN 2026-08-09. THE SERVER HALF IS GONE; THE CLIENT HALF CANNOT
+  BE DONE AND THAT IS NOT AN OVERSIGHT.** Deleted: `routes/photo.js`, `routes/weight.js`,
+  `routes/weeklySummary.js`, `lib/weekly.js`, `lib/mealResolver.js`, `store.js
+  setMacroTracking`, and — unreachable once those went — `lib/usda.js`,
+  `lib/historyRecall.js`, `cron.js` and the `node-cron` dependency. `lib/insights.js` was
+  already imported by nothing and went with them. The dead `AMBIENT` export left
+  `lib/education.js` in the same pass, as its own entry above asked. **No database change**:
+  `meal_logs`, `weight_logs`, `weekly_summaries` and `user_goals.macro_tracking` all stay
+  declared, because a code deletion is not a data write.
+  ⚠️ **THE CRON WAS LIVE AND IT WAS A WEEKLY BILL.** `startCron` fired every Sunday at 8am
+  and `generateAllWeeklySummaries` makes one model call per user over a table nothing has
+  written since macro tracking was removed. Dead code that costs money every week is the
+  Bird lesson with an invoice attached.
+  ⚠️ **THE CLIENT HALF IS BLOCKED BY THE FREEZE, PERMANENTLY.** `lib/logging.js sendPhoto`,
+  `api.js sendWeightLog`, the `data.js` readers and `lib/dayBoundary.js` are all in
+  `client/src`, which is frozen — *"not a typo, not a token, not a dead import"*. So they
+  stay, and `kristyapproved.com` keeps shipping functions that now post to routes that
+  return 404. **That is accepted on the same terms as the ingredient-level swap and the
+  `rowMatch` over-match**: the web client is the behavioural spec, not the product. Nothing
+  in `client/src` calls either function, so no surface changes.
+  ⚠️ **ONE CALL SITE DID DIE: `mobile/src/context/AppProvider.tsx:471` calls `sendPhoto`.**
+  `mobile/` is the unfinished Expo port, superseded by `kristy-ios` on 2026-08-08, and
+  shipping that call site would require un-removing macro tracking, which `macroGuard`
+  forbids structurally. Recorded rather than repaired.
+  **Not deleted, and each for a reason:** `lib/push.js` (`pushToUser`) — Expo push is
+  *deferred*, not abandoned, and `routes/push.js` still registers tokens; note the weekly
+  cron was its only CALLER, so push now has a registration door and no send path.
+  `routes/barcode.js` — not on the list, still mounted, and the only remaining caller of
+  `store.js saveMeal`; whether it is superseded by `/api/scan/barcode` is a real question
+  and a separate one. **Unused EXPORTS inside still-live modules were left alone**
+  (`store.js` meal/weekly readers, `weightLog.js` trend helpers, `context.js` builders):
+  that is a different pass with a different risk profile, and mixing it in is how a live
+  reader gets deleted under a "dead code" heading.
 - **TWO PRICE NUMBERS ARE AUTHORED. THE EFFECTIVE MONTHLY AND THE SAVING ARE DERIVED.**
   `MONTHLY_CENTS` and `ANNUAL_CENTS` in `client/src/lib/pricing.js` (mirrored in
   `mobile/src/lib/pricing.ts`) are the only places a price is written down. Everything
