@@ -845,6 +845,8 @@ was invisible until something rendered one**
     makes the rows she *does* speak on visibly the food ones.
   - **She never scores, flags, approves or swaps a non-food item.** Scanned, the answer is
     *"that isn't something Kristy reads."* Not a verdict, not a score, not a tier.
+    🐞 ⚠️ **THIS HALF IS VIOLATED IN PRODUCTION TODAY — see Open items, "the gold seal reaches
+    a bottle of dish soap". The list half holds and is verified; the scan half does not.**
   - **Compose may never refuse to add what a shopper asked for, and may never explain why
     it declined.** That refusal is finding **H** — a server fix, held, and explicitly not
     worked around in a client.
@@ -1325,6 +1327,54 @@ was invisible until something rendered one**
 ---
 
 ## Open items
+
+- 🐞⚠️ **THE GOLD SEAL REACHES A BOTTLE OF DISH SOAP, AND IT IS LIVE.** Driven against
+  production 2026-08-09. `POST /api/guest/verdict` on **`0030772117484` (Dawn Platinum Plus
+  Powerwash)** — a real barcode `/api/guest/scan/barcode` resolves `found: true` from OFF,
+  with OFF's own ingredient string — returns **`tier: "approved"`, `stamp: true`**, `education`
+  *"A few ingredients, all real. This is what food used to look like"*, and an `approvedRead`
+  that reads the surfactants back by name as the evidence: *"Read all 13. None of them are on
+  the list."* **Non-negotiable #4 says the stamp is earned. It is being given to a cleaning
+  product.**
+
+  **`stamp` has one producer — `tier === 'approved' && !violated && !sugarHeavy`
+  (`verdictEngine.js:645`) — and `approved` means ZERO KB ENTRIES MATCHED (`:281`, and the
+  file's own comment at `:290`).** ⚠️ **The collision is DESIGNED and that is why no scoring
+  fix reaches it:** this file records, as load-bearing, that *whole-food fats are clean because
+  the KB holds no entry for them*, with a regression test guarding it. **Matching nothing is
+  the signature of the cleanest possible food and of something that is not food.** The
+  ingredient list cannot separate them and no new entry ever will — a detergent is invisible to
+  a food KB by construction, and being invisible is what earns the seal.
+
+  ⚠️ **WHAT PROTECTS A PRODUCT TODAY IS A COINCIDENCE.** The other Dawn (`0030772006023`) came
+  back `swap_recommended` — but only because it carries `yellow_5` and `blue_1`, so she read
+  dish soap as food, objected to its **colouring**, and offered *"naturally colored products
+  using turmeric, saffron, or annatto"*. The dye-free formula one SKU over sails through.
+
+  **`unreadable()` (`routes/verdict.js:111`) does not and should not cover this.** It refuses
+  `placeholder` and `language` — *"we could not read this"*, never *"this is not food"*. A
+  detergent panel is long, English and perfectly readable. Widening it would make "unreadable"
+  mean two things.
+
+  **The gating signal, measured over four products:** OFF's `product_type` says `food` for all
+  three detergents; `categories_tags` is present on **one of three**, so **category capture
+  (below) would gate Mrs. Meyer's and miss both Dawns — a real argument for landing it, and NOT
+  a closure of this**; the strongest discriminator is the absence of a *measured* nutrition
+  panel (no `energy-kcal` at all, against Nutella's 52 keys). ⚠️ **That cannot be a refusal** —
+  a real food with a thin OFF record looks identical — **but it can be a seal WITHHOLDING, and
+  that lever already exists**: `sugarHeavy` and `hardLines` withhold and can never grant
+  (`verdictEngine.js:640`, *"Withholding only; it can never grant a seal"*). Same shape, same
+  expression.
+
+  ⚠️ **FAIL CLOSED, AND DO NOT CARRY THE COUNTER'S ASYMMETRY ACROSS — it points the other way.**
+  On the counter, scope has been wrong in one direction every time (too tight) and the rule is
+  *when in doubt, admit*, because a wrongly-refused question tells a shopper they do not belong.
+  **Here a wrong approval is a gold seal on bleach; a wrong refusal is "that isn't something
+  Kristy reads"**, which is the ruling's own honest answer and costs nothing.
+
+  Full evidence, verbatim responses and the signal table: `kristy-ios/docs/API-FINDINGS.md` §12,
+  queued as item **I** at the top of that repo's `SWIFT-HANDOFF.md` §3. **No client workaround** —
+  a food detector in Swift is a second opinion about what food is.
 
 - 🐞 **`rowMatch.js` OVER-MATCHES A ONE-WORD ROW, AND IT IS THE EXPENSIVE SIDE OF THE
   ASYMMETRY.** Rule 5 — every content word of the ROW must appear in the product — is
