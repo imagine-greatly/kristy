@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
-import { clientIp, rateLimited } from '../lib/guestRate.js';
+import { clientIp, scanLookupLimited } from '../lib/guestRate.js';
 import { evaluateIngredients, tokenizeIngredients, genericSwap } from '../lib/verdictEngine.js';
 import { looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
 import { composeNote } from '../lib/verdictNote.js';
@@ -236,9 +236,16 @@ guestVerdictRouter.post('/verdict', (req, res) => {
     return res.status(422).json({ error: true, unreadable: true, message: UNREADABLE_MSG });
   }
 
-  // Abuse protection, same soft-gate shape as guest chat so the client can show the
-  // sign-in overlay.
-  if (rateLimited(clientIp(req))) {
+  /* Abuse protection, same soft-gate shape as guest chat so the client can show the
+     sign-in overlay.
+
+     ⚠️ THE SCAN BUCKET, NOT THE INFERENCE ONE — and the comment eight lines above is the
+     reason: this path is "deterministic, no model call, no cost" by its own description,
+     and it drew the inference budget anyway. That is the counter's bug one route over,
+     and it cost more, because unlike the counter this door is not optional — EVERY guest
+     scan ends here, so it doubled the price of the product's front door. It still needs a
+     ceiling; it tokenizes a string a stranger supplied. */
+  if (scanLookupLimited(clientIp(req))) {
     return res.json({ gate: true, reason: 'limit' });
   }
 

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/supabase.js';
 import { userRateLimit } from '../lib/rateLimit.js';
-import { clientIp, rateLimited } from '../lib/guestRate.js';
+import { clientIp, rateLimited, scanLookupLimited } from '../lib/guestRate.js';
 import { imageUpload } from '../lib/upload.js';
 import { extractFromBarcode, looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
 import { readLabelIngredients, sugarsPer100g } from '../lib/labelVision.js';
@@ -141,9 +141,14 @@ scanRouter.post('/scan/label', requireAuth, userRateLimit, imageUpload.single('i
 });
 
 /* ───────────────────────── Guest ─────────────────────────
-   Guests scan for free — the generous acquisition hook. Shares the same per-IP
-   budget as guest chat/verdict (lib/guestRate). The client sends the extracted
-   ingredients to /api/guest/verdict for the universal layer only (no personal note). */
+   Guests scan for free — the generous acquisition hook. The client sends the extracted
+   ingredients to /api/guest/verdict for the universal layer only (no personal note).
+
+   ⚠️ THE TWO DOORS DRAW DIFFERENT BUDGETS, AND WHICH ONE IS DECIDED BY WHETHER A MODEL
+   IS ABOUT TO BE CALLED — not by the fact that both are called "scan". The barcode door
+   resolves from Supabase and Open Food Facts and reaches no model at any point, so it
+   draws the scan bucket; the label door is a vision call and draws the shared inference
+   budget alongside guest chat, compose and import. */
 export const guestScanRouter = Router();
 
 guestScanRouter.post('/scan/barcode', async (req, res) => {
@@ -151,7 +156,9 @@ guestScanRouter.post('/scan/barcode', async (req, res) => {
   if (!barcode || !String(barcode).trim()) {
     return res.status(400).json({ error: 'barcode is required' });
   }
-  if (rateLimited(clientIp(req))) return res.json({ gate: true, reason: 'limit' });
+  // No model on this path — a database read and a third-party fetch. It still needs a
+  // ceiling (public door, outbound request), which is what the scan bucket is.
+  if (scanLookupLimited(clientIp(req))) return res.json({ gate: true, reason: 'limit' });
   try {
     return res.json(await extractFromBarcode(barcode));
   } catch (err) {
@@ -162,6 +169,7 @@ guestScanRouter.post('/scan/barcode', async (req, res) => {
 
 guestScanRouter.post('/scan/label', imageUpload.single('image'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'image is required' });
+  // A real vision call, so this one genuinely belongs on the inference budget.
   if (rateLimited(clientIp(req))) return res.json({ gate: true, reason: 'limit' });
   try {
     return res.json(buildLabelResult(await readLabel(req.file), req.body?.barcode));
