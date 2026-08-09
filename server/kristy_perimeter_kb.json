@@ -4079,7 +4079,7 @@
       "decision": "Pressed, not extracted. ‘Refined’ is the word that gives it away.",
       "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
       "short_answer": "Two of these words describe pressing and one describes what happens afterwards. Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down, and for olive oil in the EU that is a defined limit. Most supermarket cooking oil is neither: it is solvent-extracted, then refined, bleached and deodorized.",
-      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. Processing is the honest basis for preferring the pressed version, and that is a whole-food-standard call rather than a settled finding.",
+      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that.",
       "evidence_tier": "established",
       "sources": [
         "International Olive Council definitions of cold extraction",
@@ -4088,6 +4088,7 @@
       ],
       "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
       "buying_tips": [
+        "Which oil it is comes first. Olive, avocado and coconut are the ones worth pressing well; a cold-pressed canola is still canola.",
         "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
         "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
         "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
@@ -4113,11 +4114,12 @@
         }
       ],
       "watch_out": [
+        "A pressed seed oil is still a seed oil. These words rank how the oil was made and say nothing about what it was made from.",
         "No process word at all usually means solvent-extracted and refined.",
         "“Cold-pressed” is tightly defined only for olive oil.",
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
       ],
-      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one.",
+      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one. This ranks how an oil was made, never which oil to buy, and that question comes first.",
       "asked_as": [
         "what does cold pressed mean",
         "what is expeller pressed",

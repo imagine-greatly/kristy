@@ -111,7 +111,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_front_vs_back` | label_terms | Turn it over. Decide from the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Read the first three ingredients, then the added-sugar line. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
 | `label_third_party_seals` | label_terms | A published standard and an outside auditor, or it is a sticker. | Trace the seal to an organization, not the brand’s own logo. | — |
-| `label_cold_pressed_expeller` | label_terms | Pressed, not extracted. ‘Refined’ is the word that gives it away. | Read for a process word. No process word means solvent-extracted. | — |
+| `label_cold_pressed_expeller` | label_terms | Pressed, not extracted. ‘Refined’ is the word that gives it away. | Read the oil name first, then look for a process word. | — |
 | `label_sugar_free_substitutes` | label_terms | Read what replaced the sugar. ‘Unsweetened’ is the plainer word. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
 | `label_wild_vs_farm_raised` | label_terms | Species, method, country. All three required, and none stops substitution. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
 | `label_serving_size` | label_terms | Read the top two lines before any of the numbers. | Check both packages list the same serving size before comparing anything. | — |
