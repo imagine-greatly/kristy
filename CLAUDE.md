@@ -1407,7 +1407,64 @@ was invisible until something rendered one**
 
 ## Open items
 
-- 🐞⚠️ **THE SEAL IS WITHHELD AND THE CARD STILL SAYS "APPROVED." — THE iOS CLIENT NEVER
+- ✅ **CLOSED ON PRODUCTION 2026-08-09 — THE CARD READS AS KRISTY DECLINING, ON BOTH HALVES.**
+  Server shipped (cherry-picked past the hold, `6ae8a8e`): `why` leads with the standard
+  — *"The seal is earned on a food label, and this one has no panel to read."* — `checked` is
+  the work only (*"Read all 13."*, and *"One ingredient."* at n=1; the second sentence and the
+  named ingredient were the endorsement surviving the withholding), and the `needsGoal` branch
+  no longer drops the field. Client shipped: `unverifiedRead` decoded, rendered in the
+  endorsement's slot, **`VerdictBar` gains a `withheld` axis** reading *"No verdict on this
+  one."* in the neutral treatment, and the guest upsell is suppressed. **The cart action stays**
+  — she carries anything and judges only food. Driven live on `0030772117484`; a clean food with
+  a declared panel and one with no panel data both keep `stamp:true` and their full read.
+
+- 🐞⚠️ **THE PANEL SIGNAL IS WEAKER THAN THE GATE ASSUMES, AND IT IS MISFIRING ON PRODUCTION
+  TODAY — BOTTLED WATER.** Measured 2026-08-09 against Open Food Facts over real foods that
+  carry an ingredient list: **2.7% of the most-scanned products (n=480) have no `energy` key at
+  all**, rising to **8.8% at the thin end (n=160)**. Those are not exotic — Raisin Bran, cut
+  green beans, popcorn, ranch seasoning mix. **And the single largest cluster in the
+  most-scanned sample is WATER, which has no calories because it is water.** Driven live:
+  `6111035002175` (Sidi Ali mineral water) returns `nutritionPanel:"absent"`, **`stamp:false`**
+  and the withheld-read sentence. **A real grocery item is being told the seal needs a food
+  label behind it.**
+  ⚠️ **THE COPY IS WHAT KEEPS THIS SURVIVABLE, AND THAT WAS THE POINT OF WRITING IT THAT WAY.**
+  It states the standard and claims nothing about the product, so on a bottle of water it is
+  *odd* rather than *false* — the failure mode the wording was built for, now observed rather
+  than hypothesised. **Do not "fix" this by making the sentence more specific about the
+  product.**
+  **The real fix is a second signal, and it is already on the held stack:** `product_category`.
+  `nutritionPanel === 'absent'` AND no food category is far more specific than either alone.
+  Until then the gate trades a false seal on a detergent for a withheld seal on water, which is
+  the right side of the asymmetry and is not free.
+
+- 🐞 **THE DYED DAWN IS STILL READ AS FOOD, AND `unverifiedAsFood` IS STRUCTURALLY UNABLE TO
+  REACH IT.** `0030772006023` comes back `swap_recommended` on `yellow_5`/`blue_1`, and the gate
+  requires `tier === 'approved'` (`verdictEngine.js:689`) — so on production she objects to dish
+  soap's **colouring**, her education line reads *"That color isn't food. It's petroleum in a
+  costume."*, and `genericSwap` offers *"naturally colored products using turmeric, saffron, or
+  annatto"*. **A product is protected from the food treatment only by NOT containing a flagged
+  food ingredient**, which is exactly backwards.
+  **The panel signal is orthogonal to the tier and the gate should not be conditioned on it** —
+  ruled 2026-08-09. What that decoupling must and must not touch:
+  - **NULL `education` and `swap` on every tier.** Both are food claims: one is her voice
+    asserting something about the product, the other a purchase recommendation inside the food
+    category. These are the two lines that make the dyed Dawn absurd.
+  - **POPULATE `unverifiedRead` on every tier**, which is what moves the bar to *"No verdict on
+    this one."* and stops *"Swap it. There's a better pick."* being said about a detergent.
+  - ⚠️ **NEVER SUPPRESS `universalLayer`. FLAGS STAND.** Same rule as a partial read: a matched
+    concern was really printed on the label, so it can never be false, and suppressing it is the
+    one move that could hide a genuine concern on a genuine food. **Withholding is about
+    refusing to ENDORSE, never about silencing a warning** — `verdictEngine.js:640` already says
+    the lever *"can never grant a seal, escalate a tier, add a flag or manufacture a swap"*, and
+    the inverse of "never add" is not "sometimes remove".
+  ⚠️ **THE COST IS MEASURED AND IT IS NOT ZERO: a flagged REAL food with a thin OFF record loses
+  its verdict WORD** (the bar reads "No verdict on this one." instead of "Skip. Put it back.")
+  **while keeping every flag.** At the rates above that is ~3% of scanned products, ~9% at the
+  thin end. Flags surviving is what makes the trade acceptable; if `universalLayer` were
+  suppressed too it would not be.
+
+- 🐞⚠️ **HISTORICAL — FIXED 2026-08-09, kept for the mechanism. THE SEAL WAS WITHHELD AND THE
+  CARD STILL SAID "APPROVED." — THE iOS CLIENT NEVER
   LEARNED `unverifiedRead`.** Found 2026-08-09 by reading the Swift after the server went
   green, which is the same order that found the `NutritionInput` gap one layer up. Driven
   live, `POST /api/guest/verdict` on `0030772117484` with `nutritionPanel:"absent"` returns
