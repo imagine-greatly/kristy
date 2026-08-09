@@ -187,6 +187,30 @@ strong refusal where the tag exists. Neither waits for the other.
 
 ---
 
+## 4a. ⚠️ The scope boundary this sits inside — ruled 2026-08-09
+
+Recorded so the question is not re-opened every time the silence looks like a gap, and
+because it is the reason §4 stops where it does. **Kristy is food and food-adjacent only.**
+
+**Future scope, if any: cookware, storage, water filters, foil, parchment** — the things food
+*touches*, judged with the same whole-food logic one step out. **Not household cleaners, not
+cosmetics, not general grocery.**
+
+- **The moat is hand-authored and does not transfer.** Measured: **81 curated counter cards,
+  74 ingredient entries**, plus the tier system, the claim lock and the lint on top of them.
+- **The honest answer for cleaners is usually "it doesn't matter much"** — a KB whose truthful
+  output is a shrug makes the app thinner for having it.
+- **The purchase frequency is wrong for a habit.** The list retains because groceries are
+  weekly; dish soap is bought every few months.
+- ⚠️ **It is the fight Yuka picked and lost.** A mediocre score in a second category does not
+  add a category — **it discounts the first one.**
+
+**What this means for §1:** the gate is not a step toward scoring cleaners and must never be
+built as one. It exists so the seal stays inside the category the corpus can stand behind.
+Full statement in `CLAUDE.md` under "The list is the shopper's".
+
+---
+
 ## 5. Deliberately out of scope
 
 **Asking vision for calories.** It would give the photo path the same signal and make the gate

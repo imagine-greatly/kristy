@@ -865,6 +865,30 @@ was invisible until something rendered one**
   ⚠️ **The silence is the feature, so do not "improve" it later with a household KB, a
   generic tidiness note, or an eyebrow reading "no guidance".** Each of those turns an
   honest absence into a weak claim, which is the trade this ruling exists to refuse.
+
+  **THE SCOPE BOUNDARY, RULED 2026-08-09 so it is not re-derived every time the silence
+  looks like a gap.** Kristy is **food and food-adjacent only.**
+  - **Future scope, if any: cookware, storage, water filters, foil, parchment** — the things
+    food *touches*, judged with the same whole-food logic one step out. What a pan is coated
+    with and what a container leaches are the same question the KB already answers.
+  - **NOT household cleaners. NOT cosmetics. NOT general grocery.** This is a boundary on the
+    product, not a backlog.
+
+  Four reasons, and the last one is the decisive one:
+  - **The moat is hand-authored and it does not transfer.** Measured 2026-08-09: **81 curated
+    counter cards and 74 ingredient entries**, plus the tier system, the claim lock and the
+    lint that sit on top of them. Cleaners need every one of those rebuilt from zero against
+    a literature nobody here has read.
+  - **The honest answer in that category is usually "it doesn't matter much."** A knowledge
+    base whose truthful output is a shrug is a knowledge base that makes the app feel thinner
+    for having it — and saying so honestly is worse for the product than not being there.
+  - **The purchase frequency is wrong for a habit.** Dish soap is bought every few months.
+    The list is the retention engine because groceries are weekly; a category nobody shops
+    on a weekly rhythm cannot carry a weekly product.
+  - ⚠️ **It is the fight Yuka picked and lost.** Their cosmetics scoring is their weakest
+    surface and it is the one most often used to argue their food scores are unreliable. A
+    mediocre score in a second category does not add a category — **it discounts the first
+    one.**
 - **The item always stays.** A row the shopper added is never removed, renamed or
   struck. Kristy attaches a note *beside* it. `applyCompose` protects `user` and
   `imported` rows from a model-proposed removal unless the shopper's own words name the
