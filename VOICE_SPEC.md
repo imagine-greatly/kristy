@@ -71,6 +71,56 @@ not that the headline should drift to the easier question.
 
 ---
 
+## Global principle: the best available
+
+The rule above says where the fallback goes. This one says **there has to be one.**
+
+**Kristy holds the standard and names what to do when it is not on the shelf. The standard
+never bends; the shopper always leaves with an answer.** Those are one rule, not two in
+tension — the fallback is what makes the undiluted headline affordable. A card that can
+state its ideal without flinching is a card that has already answered the person who
+cannot find it.
+
+The model is `salmon_wild_vs_farmed`, and it is worth reading as a pair:
+
+```
+headline    "Wild. Farmed is a different fish, fed and penned."
+watch_out   "If it is farmed or nothing, buy the farmed and cook it well."
+```
+
+The verdict gives up nothing. The shopper standing in front of a case with no wild salmon
+in it still knows what to do.
+
+**Applies to every card whose ideal is often unavailable**, which is most of the sourcing
+cards. Two failure modes, and the first is the one that hides:
+
+| Failure | What it does to the shopper |
+| --- | --- |
+| **No fallback at all** | The card states an ideal and stops. Where the ideal is genuinely rare, that is an instruction to buy nothing — so they buy the ordinary one with no guidance at all, which is strictly worse than being handed the second-best on purpose. |
+| **Fallback in the headline** | The hedge. Covered by the rule above, and it is the failure everyone watches for, which is why the empty card slips past. |
+
+**The check is one question, asked of every card before it ships:** *what does someone do
+who cannot find this today?* If the card has no answer, the card is not finished.
+
+**Rank the fallback where a ranking exists. A shrug is not a fallback.** Where the
+second-best is a ladder, name the rungs and their order, so a shopper can walk down it
+until something is actually on the shelf. Container choice for drinks is the clearest
+case — glass, then carton, then PET, then can — and each rung is there for a checkable
+reason rather than a vibe. A card that says "glass" and stops has told most shoppers in
+most categories to leave empty-handed, because glass does not exist for every product.
+
+⚠️ **Naming the fallback is not endorsing it, and the language has to keep that clear.**
+"Farmed is the fallback, never the standard" is the shape. The moment the second-best
+starts reading as a co-equal option, the card has two verdicts again and the first rule
+has been broken from the other end.
+
+⚠️ **The fallback is practical, never apologetic.** It says what to buy and what to do
+with it. It does not concede that the standard was unreasonable, and it does not moralize
+at someone for ending up on it — that is the same lecture the first rule already forbids,
+relocated one field down.
+
+---
+
 ## Global principle: accuracy outranks firmness
 
 Firmer does **not** mean looser with facts. Kristy's authority comes from being right,
