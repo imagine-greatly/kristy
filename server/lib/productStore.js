@@ -30,6 +30,25 @@ import { categoryFields } from './productCategory.js';
 const TABLE = 'scanned_products';
 const str = (x) => String(x ?? '').trim();
 
+/* The columns a lookup has always read. Named so the `nutrition_panel` retry below asks for
+   exactly this and cannot drift from it by being retyped. */
+const LOOKUP_COLUMNS = 'barcode, name, brand, ingredients, source, confidence, tier';
+
+/* ⚠️ THE ONLY TWO VALUES THAT MAY EVER BE WRITTEN TO OR READ FROM `nutrition_panel`.
+   The engine's gate is tri-state and the third state is the whole safety of it: 'absent' means
+   a source that publishes energy was asked and had none, and it withholds the seal. NULL means
+   nobody asked, and it withholds nothing. So an unrecognised string must normalize to NULL and
+   never to 'absent' — the failure direction matters, because getting it backwards strips the
+   seal off every clean food whose row predates this column. */
+const PANEL_VALUES = new Set(['present', 'absent']);
+
+/** The one place a caller's panel claim becomes a storable value. Anything that is not
+ *  'present' or 'absent' — including 'unknown', which is a READ state and never a stored one —
+ *  becomes null, meaning "this read had nothing to say about a panel". */
+function panelValue(nutritionPanel) {
+  return PANEL_VALUES.has(nutritionPanel) ? nutritionPanel : null;
+}
+
 /** Stable identity for a label-only read (no barcode to key on). */
 export function productHash(name, ingredients) {
   const basis = `${str(name).toLowerCase()}|${str(ingredients).toLowerCase()}`;
@@ -55,17 +74,44 @@ export function confidenceFor({ source, panel }) {
  * caller in the app is untouched.
  *
  * @returns {Promise<null | { found:true, source:'store', product:object,
- *   ingredients:string, confidence:string, originalSource:string }>}
+ *   ingredients:string, confidence:string, originalSource:string,
+ *   nutritionPanel:'present'|'absent'|null }>}
  */
 export async function lookupProduct(barcode, { client = supabase } = {}) {
   const code = str(barcode);
   if (!code) return null;
   try {
-    const { data, error } = await client
+    let { data, error } = await client
       .from(TABLE)
-      .select('barcode, name, brand, ingredients, source, confidence, tier')
+      .select(`${LOOKUP_COLUMNS}, nutrition_panel`)
       .eq('barcode', code)
       .maybeSingle();
+
+    // ⚠️ ONE RETRY WITHOUT `nutrition_panel`, AND IT IS NOT DEFENSIVENESS FOR ITS OWN SAKE.
+    // PostgREST fails the WHOLE select on an undeclared column, so before the migration is
+    // applied this read returns an error for every row and `lookupProduct` answers null —
+    // which does not degrade the panel, it takes THE ENTIRE SELF-HEAL LOOP DOWN. Every product
+    // we own and OFF does not would report "not found", silently, behind one console.warn.
+    // That is the read side of the same failure the category migration warns about ("every
+    // retain logs column does not exist and silently stops retaining"), and it is worse,
+    // because retention failing loses tomorrow's coverage while this loses today's answers.
+    // The retry costs one round trip in the broken state and nothing once the column exists,
+    // and it degrades to EXACTLY today's behaviour: no panel, so `unknown`, so nothing
+    // withheld. The alternative — select('*') — would swallow a genuinely missing column
+    // forever and never tell anyone.
+    if (error) {
+      ({ data, error } = await client
+        .from(TABLE)
+        .select(LOOKUP_COLUMNS)
+        .eq('barcode', code)
+        .maybeSingle());
+      if (!error) {
+        console.warn(
+          '[kristy] scanned_products.nutrition_panel is missing — apply supabase/product_category.sql. ' +
+            'Cached products cannot withhold the seal until it exists.',
+        );
+      }
+    }
     if (error || !data || !str(data.ingredients)) return null;
     return {
       found: true,
@@ -82,6 +128,12 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
       // Where the ingredient text originally came from, kept for honesty in logs
       // and for later curation ("this row is an OCR read, not an OFF record").
       originalSource: data.source || 'unknown',
+      // THE SEAL GATE, CARRIED BACK OUT OF THE CACHE. Only 'present'/'absent' are ever
+      // stored, so anything else — a NULL row from before this column, an unmigrated table
+      // that took the retry above — normalizes to null here and reads as `unknown`
+      // downstream, which withholds nothing. The caller decides what to do with it; this
+      // function does not guess on the store's behalf.
+      nutritionPanel: PANEL_VALUES.has(data.nutrition_panel) ? data.nutrition_panel : null,
     };
   } catch (err) {
     console.warn('[kristy] product store lookup skipped:', err?.message || err);
@@ -130,6 +182,11 @@ export async function retainProduct({
   // validated value plus the raw string that makes `other` diagnosable.
   category = null,
   aisle = null,
+  // WHETHER A FOOD LABEL WAS BEHIND IT. 'present' / 'absent' from a source that publishes
+  // energy — which today is OFF and only OFF. Everything else, including the label-photo path
+  // (it discards calories by design), leaves this alone and the row stays NULL, which reads
+  // back as `unknown` and withholds nothing. Omitting it is the safe default on purpose.
+  nutritionPanel = null,
   client = supabase,
 }) {
   const text = str(ingredients);
@@ -143,6 +200,9 @@ export async function retainProduct({
   // Resolved once: the insert and the update branch must agree about what this read says
   // the product is, and computing it twice is how they would stop agreeing.
   const categoryOf = categoryFields({ category, aisle });
+  // Same reason as the line above: the insert and the update branch must agree, and computing
+  // it twice is how they would stop agreeing.
+  const panelOf = panelValue(nutritionPanel);
 
   try {
     const key = code ? { barcode: code } : { product_hash: hash };
@@ -170,6 +230,7 @@ export async function retainProduct({
         // is why that mapper needs its own test. Keep these literal.
         category: categoryOf.category,
         category_raw: categoryOf.category_raw,
+        nutrition_panel: panelOf,
       });
       if (error) throw new Error(error.message);
       return { retained: true, created: true, confidence };
@@ -199,6 +260,14 @@ export async function retainProduct({
         patch.category = categoryOf.category;
         patch.category_raw = categoryOf.category_raw;
       }
+      // ⚠️ THE PANEL MOVES WITH THE INGREDIENTS, UNDER THE SAME TRUST RULE, AND ONLY WHEN THIS
+      // READ ACTUALLY HAS ONE. Both halves matter and they fail in opposite directions:
+      //   • Outside `incomingBeats` it would let a weaker read relabel a product for everyone
+      //     — the same defect as a weaker read overwriting the list or the category.
+      //   • Unconditionally, a null from a source that never looked (every label photo) would
+      //     erase a real 'absent' and hand the seal back to the detergent this gate exists to
+      //     catch. A read with nothing to say must say nothing, not "no panel".
+      if (panelOf) patch.nutrition_panel = panelOf;
     }
     // Otherwise: a weaker read against a better-sourced row. Count the sighting,
     // keep the good data. One cropped photo — or one photo filed under the wrong

@@ -261,7 +261,20 @@ export async function extractFromBarcode(barcode) {
       source: 'store',
       product: own.product,
       ingredients: own.ingredients,
-      nutrition: null,
+      // ⚠️ SHAPED LIKE THE OFF PATH'S NUTRITION SO THE ENGINE CANNOT TELL WHICH DOOR THE PANEL
+      // CAME IN THROUGH — the same rule the vision path already follows. The focus numbers are
+      // genuinely absent from the store (this table holds identity and an ingredient list, not
+      // a panel), and they stay null rather than being invented: `normalizeNutrition` maps a
+      // null field and a missing object to the same thing, so this is behaviour-identical to
+      // the `nutrition: null` it replaces for sodium, added sugar, fiber, caffeine and
+      // `sugarHeavy`. The ONLY signal it adds is the seal gate.
+      //
+      // And it stays null when the row has no panel, rather than becoming an object full of
+      // nulls: `unknown` is what a caller that sent no nutrition gets, and a cached row from
+      // before this column is exactly that caller. Withholds nothing, which is correct.
+      nutrition: own.nutritionPanel
+        ? { sodium: null, addedSugar: null, fiber: null, caffeine: null, nutritionPanel: own.nutritionPanel }
+        : null,
       // A row built from a partial panel stays honest about it, so the verdict route
       // still withholds a clean approval it can't support.
       ...(own.confidence === 'low' ? { partialRead: true } : {}),
@@ -342,6 +355,13 @@ export async function extractFromBarcode(barcode) {
       ingredients: text,
       source: 'off',
       panel: 'full',
+      // ⚠️ THE SAME OMISSION AS `aisle`, ONE FIELD OVER, AND WITH A LIVE FALSE SEAL BEHIND IT.
+      // `nutritionFromOFF` has already decided whether this record declares energy, the answer
+      // goes out on the response, and it stopped here for want of a column — so the moment a
+      // product is cached the barcode door answers `unknown` and the gate that exists to keep
+      // the stamp off a bottle of dish soap cannot fire. Retaining it is what makes the gate
+      // survive its own self-heal loop. No extra request, no extra field, no model call.
+      nutritionPanel: nutrition?.nutritionPanel ?? null,
       // ⚠️ WE HAVE ALWAYS RECEIVED THIS AND ALWAYS THROWN IT AWAY. `aisleFromCategories`
       // turns OFF's `categories_tags` into a human aisle a few lines up, it goes out on the
       // response as `product.aisle`, and it stopped here because there was no column to put
