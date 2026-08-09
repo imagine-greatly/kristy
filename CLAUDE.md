@@ -1507,25 +1507,43 @@ was invisible until something rendered one**
   and names itself**; that is the intended signal, not a break. Full statement in the iOS
   repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
 
-- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, NOT FORGOTTEN — AND ONLY ONE OF THEM IS
-  THE FEATURE.** `POST /api/trips/import` (`ff295ff`) is held: nothing can reach it
-  (`requireAuth`, sign-in blocked on 10DLC), its tests have never run (no Node on this
-  machine), and pushing this repo deploys. **The full reasoning and the unblock condition
-  live in the iOS repo's `docs/SWIFT-HANDOFF.md` §3, item 0** — one queue, not two. Do not
-  push it to be helpful.
-  **`e8770c8` (bought-vs-skipped) SITS BELOW IT AND IS FREE TO SHIP**, deliberately ordered
-  first so it can go alone: `git push origin e8770c8:main` sends that commit and nothing
-  above it. It carries no route and is inert until something writes the field.
-  ⚠️ **Both were one commit (`a5c5d22`) until 2026-08-08.** They were split because the
-  feature and the field were bundled, so approving one meant approving both. If you find that
-  hash in an older document, it is these two.
-  ⚠️ **THE STACK ALSO CARRIES CATEGORY CAPTURE NOW** — `productCategory.js`, the
+- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, NOT FORGOTTEN — AND WHAT IS HELD IS THE
+  IMPORT ROUTE AND CATEGORY CAPTURE, NOT THE WHOLE STACK.** `POST /api/trips/import` is held:
+  nothing can reach it (`requireAuth`, sign-in blocked on 10DLC), and pushing this repo
+  deploys. **The full reasoning lives in the iOS repo's `docs/SWIFT-HANDOFF.md` §3, item 0** —
+  one queue, not two. Do not push it to be helpful.
+  ⚠️ **RULED 2026-08-09: ITS TEST CONDITION CLEARED AND IT IS STILL HELD.** Node is installed,
+  so `trips.test.js` runs and passes 27/27 — and that was only ever *one* of three reasons.
+  Nothing can still call it, and it was written ahead of a client whose guest trip record has
+  changed since. **It gets reviewed against what the iOS client actually needs before it
+  ships, not pushed because it now passes.** A cleared blocker is not an approval.
+  ⚠️ **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase
+  or a partial push, and this entry has been wrong with both.** It named `a5c5d22`, which
+  stopped resolving when the commit was split; then `e8770c8`, which stopped resolving when
+  the stack was replayed. **Only the SUBJECT is stable.** Compute the rest:
+
+  ```
+  git log --oneline --reverse origin/main..HEAD
+  ```
+
+  ✅ **BOUGHT-VS-SKIPPED HAS SHIPPED** — `boughtLast` in `cartEdit.js` and `trips.js`, on
+  `origin/main` since 2026-08-08. This entry called it "FREE TO SHIP" and described it as
+  sitting below the import route for a day *after it had already gone live*. It was ordered
+  first precisely so it could go alone, and it did.
+  ⚠️ **THE FINDING I SEAL GATE AND THE `buildApiShapes` FIX ALSO SHIPPED — CHERRY-PICKED PAST
+  THE HOLD, NOT PUSHED WITH IT.** That is the move when something above the hold is urgent and
+  the hold still stands, and it is why stack timestamps interleave with `origin/main`'s.
+  **A reader reconstructing this history from commit dates alone will get the order wrong.**
+  ⚠️ **THE STACK ALSO CARRIES CATEGORY CAPTURE** — `productCategory.js`, the
   `scanned_products` migration, the vision prompt's fifth field, and the OFF `aisle` finally
-  being passed to `retainProduct` instead of discarded. Held for the same three reasons and
-  **one more that runs the other way: it has a clock on it.** A category cannot be
-  backfilled, so every scan retained before it lands is a row that can never answer "what
-  else is this". Full proposal in `docs/CATEGORY-CAPTURE.md`; the queue entry, as always, is
-  the iOS repo's `SWIFT-HANDOFF.md` §3 — one queue, not two.
+  being passed to `retainProduct` instead of discarded. **One reason runs the other way: it
+  has a clock on it.** A category cannot be backfilled, so every scan retained before it lands
+  is a row that can never answer "what else is this". Proposal: `docs/CATEGORY-CAPTURE.md`.
+  ⚠️ **ITS BLOCKER IS NO LONGER NODE. IT IS CREDENTIALS.** Node is `v26.7.0` and everything
+  held runs green — suite 602/602, `productCategory.test.js` 8/8, `commitGuard.js` clean. What
+  is missing is the ability to **apply** the migration: there is **no `server/.env` on this
+  machine, no `supabase` CLI and no `psql`**, so the schema step needs a human in the
+  dashboard. Three documents cited Node as this blocker. That was true and is not.
   ⚠️ **Apply `supabase/product_category.sql` BEFORE the code deploys.** Without the columns
   every retain logs `column does not exist` and silently stops retaining, which is the worst
   way for it to fail.
