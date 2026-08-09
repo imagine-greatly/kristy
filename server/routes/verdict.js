@@ -159,9 +159,18 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [], unverifiedAsFood }));
       // The generic KB swap (a field read, no model call) is FREE — everyone gets
       // "here's a better shelf." The goal-aware swap stays a member benefit.
+      // ⚠️ `unverifiedRead` RIDES HERE TOO, AND IT WAS DROPPED. Three of the four send sites
+      // in this file forwarded it and this one destructured it and did not — so a signed-in
+      // shopper with no goal set got the seal correctly withheld, `approvedRead` correctly
+      // nulled, and **nothing on the card saying why**. Same defect as the client never
+      // declaring the field, one layer earlier: every individual line correct, the field
+      // silently absent at the end of it. Currently unreachable (`!personalize` needs an
+      // account, and sign-in is blocked on 10DLC) — a constant-false branch, which is why
+      // nothing found it. Fixed rather than filed, because it is one word and the branch
+      // goes live the day sign-in does.
       return send(res, {
         tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education,
-        needsGoal: true, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, sugarHeavy,
+        needsGoal: true, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy,
       }, { readComplete, barcode });
     }
 

@@ -386,10 +386,71 @@ test('the endorsement is replaced, not decorated — approvedRead goes null', ()
   // cannot fail closed on a field it has never heard of.
   assert.equal(v.approvedRead, null, 'the endorsement still renders on every shipped client');
   assert.ok(v.unverifiedRead, 'and nothing took its place');
-  assert.match(v.unverifiedRead.why, /no nutrition panel/i);
   // The copy may not outrun the signal: the evidence is a missing calorie figure, so it may
   // never assert the product is not food. A real food with a thin OFF record reads this too.
   assert.doesNotMatch(v.unverifiedRead.why, /not food|isn't food|not something/i);
+});
+
+test('the withheld read leads with the STANDARD, never with the shortfall', () => {
+  const v = evaluateIngredients(DETERGENT, { nutrition: { nutritionPanel: 'absent' } });
+  const why = v.unverifiedRead.why;
+
+  // It still names the missing thing, in the product's own word — the shopper is holding the
+  // box and `panel` is what is written on it.
+  assert.match(why, /\bpanel\b/i, 'it names what is missing, concretely');
+
+  // ⚠️ THE DIRECTION IS THE POINT. Opening on the absence ("No nutrition panel on this one")
+  // frames a bottle of Dawn as having FALLEN SHORT of a bar it was never in the running for,
+  // and reaches the rule second. Leading with the rule is also the sentence that survives on
+  // the case this whole gate has to stay honest about: a real food with a thin OFF record.
+  const opener = why.split(/[,.]/)[0];
+  assert.match(opener, /\bseal\b/i, 'the first clause states the standard');
+  assert.doesNotMatch(why, /^\s*(no|not|there'?s no|missing|without)\b/i,
+    'the sentence may not open on what the product lacks');
+
+  // ⚠️ NOT CHECKED HERE, AND SAYING SO RATHER THAN IMPLYING COVERAGE. The rejected wording
+  // — "Kristy stamps food, and food comes with a panel" — carries the forbidden claim as an
+  // INFERENCE the reader completes, and no assertion over this string can see that shape.
+  // A regex for it would be a closed vocabulary reporting zero false positives by
+  // construction, which is the counterCardLint.js lesson. It is held by the doc comment on
+  // `buildUnverifiedRead` and by review, not by this test.
+});
+
+// ⚠️ **THE TWO FIELDS ARE ONE DECISION AND MUST LEAVE TOGETHER.** `approvedRead` is nulled at
+// exactly the moment `unverifiedRead` is populated — that swap is the entire fix — so a route
+// that forwards one and not the other ships the withholding with no explanation attached, which
+// is the shipped client defect reproduced one layer earlier.
+//
+// It happened: three of the four `send` sites in routes/verdict.js forwarded `unverifiedRead`
+// and the `needsGoal` branch destructured it and dropped it. Nothing caught it because that
+// branch is CONSTANT-FALSE in production (`!personalize` needs an account; sign-in is blocked
+// on 10DLC) — the tell CLAUDE.md names for a whole feature that has never executed.
+//
+// Read off the SOURCE rather than driven, deliberately: the unreachable branch is precisely the
+// one no request can exercise, so a behavioural test cannot reach the defect it exists to catch.
+test('every verdict send site that ships approvedRead also ships unverifiedRead', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { fileURLToPath } = await import('node:url');
+  const { join, dirname } = await import('node:path');
+  const src = readFileSync(
+    join(dirname(fileURLToPath(import.meta.url)), '..', 'routes', 'verdict.js'), 'utf8'
+  );
+
+  // Every `send(res, { ... })` payload, matched to its closing brace on the same statement.
+  const payloads = nonEmpty(
+    [...src.matchAll(/send\(\s*res\s*,\s*\{([\s\S]*?)\}\s*,\s*\{/g)].map(m => m[1]),
+    'send(res, {...}) payloads in routes/verdict.js', 3
+  );
+
+  const shipsApprovedRead = nonEmpty(
+    payloads.filter(p => /\bapprovedRead\b/.test(p)),
+    'payloads carrying approvedRead', 3
+  );
+  for (const payload of shipsApprovedRead) {
+    assert.match(payload, /\bunverifiedRead\b/,
+      'a send site forwards approvedRead but drops unverifiedRead — the seal is withheld '
+      + 'and the card has nothing that says why');
+  }
 });
 
 test('she says nothing at all about a product she cannot verify is food', async () => {

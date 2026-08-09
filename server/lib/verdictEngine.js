@@ -337,6 +337,24 @@ export function buildApprovedRead(rawIngredientList) {
  *
  * So it states what is missing, states the rule, and claims nothing about the product. It is
  * exactly right about a bottle of Dawn without ever asserting Dawn is not food.
+ *
+ * ⚠️ **LEAD WITH THE STANDARD, NOT WITH THE ABSENCE — reworded 2026-08-09.** The first version
+ * opened *"No nutrition panel on this one"*, which puts a **shortfall in this product** in the
+ * first clause and reaches the rule second. Read on a bottle of Dawn that is exactly backwards:
+ * the product has not fallen short of anything, the seal simply has a bar and this is not the
+ * kind of thing that can clear it. Leading with the rule is also the sentence that stays true
+ * on the real food with a thin OFF record — the case the paragraph above exists to protect.
+ *
+ * **`panel` is the product's own word**, off the box the shopper is holding, so the sentence
+ * names the missing thing concretely without naming a category for the product.
+ *
+ * ⚠️ **THE REJECTED ALTERNATIVE, RECORDED BECAUSE IT IS THE TEMPTING ONE.**
+ * *"Kristy stamps food, and food comes with a panel"* is firmer and reads better, and it is the
+ * forbidden claim arriving as an INFERENCE instead of an assertion: the shopper completes the
+ * syllogism themselves and lands on *this is not food* — the exact sentence the paragraph above
+ * rules out — with nothing on screen to point at as the claim. **That is harder to see than
+ * saying it outright and it is no more defensible.** A claim the copy sets up is a claim the
+ * copy made.
  * @returns {{ checked:string, why:string }}
  */
 export function buildUnverifiedRead(rawIngredientList) {
@@ -345,7 +363,7 @@ export function buildUnverifiedRead(rawIngredientList) {
     checked: tokens.length === 1
       ? `One ingredient: ${tokens[0].replace(/[.;:]+$/, '')}.`
       : `Read all ${tokens.length}. None of them are on the list.`,
-    why: 'No nutrition panel on this one. The seal needs a food label behind it.',
+    why: 'The seal is earned on a food label, and this one has no panel to read.',
   };
 }
 
