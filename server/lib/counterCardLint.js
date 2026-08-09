@@ -242,8 +242,31 @@ const EXCLUSIVITY = /\b(the only|the sole|nothing else|no other|the one and only
 //
 // REPORT-ONLY, deliberately. It fires on a rhetorical shape rather than a checkable fact,
 // which is a weaker footing than every other rule in this file, and a noisy report is
-// cheap where a noisy failure blocks authoring. Promote it only if the false-positive
-// count stays at zero across the corpus.
+// cheap where a noisy failure blocks authoring.
+//
+// ⚠️ DO NOT PROMOTE THIS OUT OF REPORT-ONLY ON "ZERO FALSE POSITIVES ACROSS THE CORPUS."
+// That was the bar this comment used to set, and it is the wrong bar — a check with a
+// narrow closed vocabulary produces zero false positives BY CONSTRUCTION, so the number
+// measures the size of the word list rather than the quality of the rule.
+//
+// THE FALSE NEGATIVE, measured 2026-08-09. Any content noun that is not in
+// ABSTRACT_PAYLOAD counts as the rescuing concrete noun, so ONE unlisted abstraction
+// clears the clause:
+//
+//     "The trip is over. The record is the point."   → PASSES
+//
+// `point` is on the list and `record` is not, so `concrete` comes back non-empty and the
+// hit is suppressed. `record` is no more concrete than `point`. **The check can only
+// catch abstraction it already has the word for**, and the fix is not a longer list:
+// abstract nouns are an open class, and every word added moves the same defect one word
+// further out. See kristy-ios/CLAUDE.md §1.8e/§1.8f — this is the third link in a chain
+// where each checker was written for what the previous one missed and then missed in the
+// same direction.
+//
+// A THIRD SHAPE THIS CANNOT SEE AT ALL: an abstract noun as SUBJECT with a lexical verb
+// of existing — "The real food lives on the perimeter." No copula, so the COPULA gate
+// never opens, and the abstraction is in the subject rather than the payload. It is
+// shipped copy on the frozen web client. Deliberately NOT given a third checker.
 const COPULA = /\b(is|are|was|were)\b/i;
 
 // Nouns that name a relationship rather than a thing. A clause whose only payload is one

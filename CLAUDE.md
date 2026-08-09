@@ -946,11 +946,18 @@ was invisible until something rendered one**
 - **NO SHARED POOL. Each surface that earns one gets its OWN line, about what THAT surface
   is for.** A pool is what forces the lines to be generic enough to fit anywhere, which is
   exactly what makes them feel like filler wherever they land.
-- **They earn the space by being rare, and by sitting where there is nothing else to do.**
-  A shopper mid-aisle does not want an aphorism; someone looking at an empty Haul does.
-  ⚠️ **So the test is not "is this surface quiet" but "is there an action here"** — the empty
-  dashboard is the quietest surface in the app and must NOT have one, because the one thing
-  a shopper is there to do is on it.
+- ⚠️ **THE TEST IS "IS THERE AN ACTION HERE", NOT "IS THE SURFACE QUIET."** They earn the
+  space by being rare and by sitting where there is nothing else to do — a shopper mid-aisle
+  does not want an aphorism, someone looking at an empty Haul does. **Quietness is the
+  tempting test and it is the wrong one: the empty dashboard is the quietest screen in the
+  app and must NEVER carry one**, because the single thing a shopper came to do is sitting
+  on it. A line there competes with the answer instead of filling a gap.
+- **Approved, 2026-08-09 — the empty Haul, and it is the only surface that qualifies in the
+  iOS client:** *"Finish a trip and it lands here. Next week starts from what you actually
+  bought."* Concrete subject in both clauses, no lexical echo, no copula, and it says what
+  the surface is FOR rather than offering an aphorism about food — which is the whole reason
+  the shared pool was dropped. **Exactly one surface qualifying is the right answer, not a
+  thin one.** Linted clean against `antithesisChime` and `copulaAbstraction` before approval.
 - ⚠️ **NEVER in shop mode, on the scan sheet, or on any surface a shopper reads while
   standing in a store.** Transient states are worse than busy ones: a line nobody finishes
   reading before it disappears is decoration that also wasted the wait.
@@ -1423,6 +1430,28 @@ was invisible until something rendered one**
   Full evidence, verbatim responses and the signal table: `kristy-ios/docs/API-FINDINGS.md` §12,
   queued as item **I** at the top of that repo's `SWIFT-HANDOFF.md` §3. **No client workaround** —
   a food detector in Swift is a second opinion about what food is.
+
+- 🐞 **TWO OF THE THREE AMBIENT PULL-QUOTES ARE SHIPPED LINT FAILURES, AND THE SERVER'S COPY
+  OF THEM IS DEAD CODE.** Measured 2026-08-09 with the real `antithesisChime`:
+  - `read_the_back` — *"Read the back, not the front. The front is marketing; the back is the
+    truth."* echoes **front**, second clause brings nothing of its own.
+  - `no_label` — *"The best foods don't have an ingredient list. They are the ingredient."*
+    echoes **ingredient**.
+  - `shop_the_edges` passes both checks and is still wrong — *"The real food lives on the
+    perimeter"* is the third defect class nothing can see (`kristy-ios/CLAUDE.md` §1.8e).
+
+  **Rate: 2 of 3 ambient lines fail, against 0 of 12 contextual ones.** Pull-quote copy is
+  measurably the loosest in the product, and it is loose precisely because no rule owns it.
+
+  ⚠️ **NOT BEING FIXED, AND THAT IS A DECISION.** `client/src` is **frozen** — the lines that
+  actually ship come from `client/src/lib/education.js` and rewriting them would be an edit to
+  the behavioural spec for copy on a client that is no longer the product. **And the other copy
+  is dead:** `AMBIENT` is exported from `server/lib/education.js:14` and **imported by nothing**,
+  so `kristy_education.json`'s three ambient entries are the source of record for a feature no
+  route serves. iOS renders none of them.
+  **Delete the dead export in the same pass that deletes the other known-dead code** (below) —
+  not on its own, because an export with no consumer is exactly the "field with no consumer"
+  shape `labelVerdict.test.js` warns about and it should go with its neighbours.
 
 - 🐞 **`rowMatch.js` OVER-MATCHES A ONE-WORD ROW, AND IT IS THE EXPENSIVE SIDE OF THE
   ASYMMETRY.** Rule 5 — every content word of the ROW must appear in the product — is
