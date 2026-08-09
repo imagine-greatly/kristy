@@ -147,12 +147,33 @@ function inferType(after) {
 function scanFile(file) {
   const src = readFileSync(join(ROUTES, file), 'utf8');
   const out = [];
-  for (const m of [...src.matchAll(ROUTE_RE)]) {
+  const matches = [...src.matchAll(ROUTE_RE)];
+  for (let i = 0; i < matches.length; i++) {
+    const m = matches[i];
     const [, , method, path, middleware = ''] = m;
-    // Everything from this handler to the next route definition.
+    // ⚠️ EVERYTHING FROM THIS HANDLER TO THE NEXT ROUTE DEFINITION — TAKEN FROM THE MATCH
+    // LIST, NOT BY SEARCHING FOR A SUBSTRING OF THE ROUTER'S OWN NAME.
+    //
+    // This read `src.indexOf('outer.', start + 10)`: find the tail of "Router.", skipping
+    // the current declaration by a hardcoded ten characters. **Ten is the length of no
+    // identifier in this codebase**, and where "outer." begins at index >= 10 in the router's
+    // OWN name, the search finds the declaration it was supposed to skip. `next` then lands
+    // ~10 bytes past `start` and the handler body is sliced to nothing — so the route is
+    // reported as having no responses, and that absence was published as a SERVER FACT in
+    // docs/api-shapes.generated.md.
+    //
+    // Measured 2026-08-09: it silently emptied FOUR routers — `guestScanRouter` (10),
+    // `guestVerdictRouter` (13), `ingredientRouter` (11) and `perimeterRouter` (10) — nine
+    // handlers, and every one of them public or guest, i.e. the whole surface a real visitor
+    // reaches. `counterRouter` (8), `scanRouter` (5), `verdictRouter` (8) and
+    // `internalRouter` (9) happened to sit under the threshold, which is why the file looked
+    // plausible. Finding B, kristy-ios/docs/API-FINDINGS.md §2.
+    //
+    // The match list already knows where the next route starts. Asking it cannot drift with
+    // an identifier's length, and there is no number to get wrong.
     const start = m.index;
-    const next = src.indexOf('outer.', start + 10);
-    const body = src.slice(start, next === -1 ? src.length : next);
+    const next = i + 1 < matches.length ? matches[i + 1].index : src.length;
+    const body = src.slice(start, next);
 
     const responses = [];
     for (const r of body.matchAll(/res\s*\.\s*(?:status\(\s*(\d{3})\s*\)\s*\.\s*)?json\s*\(/g)) {

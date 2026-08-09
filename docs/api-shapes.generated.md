@@ -196,7 +196,9 @@ Mounted at: `/api`
 
 ### GET /ingredient/:id  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `404` → { error: String }
+- `200` → { education: ??? }
+  - plus a spread of `publicEntry(entry)` — **NEEDS HAND-CHECK**
 
 ## internal.js
 
@@ -271,23 +273,30 @@ Mounted at: `/api`
 
 ### GET /perimeter  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `200` → { topics: ??? }
 
 ### GET /perimeter/sections  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `200` → { sections: ??? }
 
 ### GET /perimeter/sections/:id  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `404` → { error: String }
+- `200` → `section` — **NEEDS HAND-CHECK** (built elsewhere)
 
 ### GET /perimeter/:id  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `404` → { error: String }
+- `200` → `publicEntry(entry)` — **NEEDS HAND-CHECK** (built elsewhere)
 
 ### POST /perimeter/ask  ·  optionalAuth
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `400` → { error: String }
+- `429` → { error: Bool, message: String }
+- `200` → { matched: Bool, entries: […], answer: ???, refinement: String?, gated: Bool }
+- `200` → { matched: Bool, entries: ???, answer: String?, refinement: String?, gated: Bool, upsell: ??? }
+- `200` → { matched: Bool, entries: ???, answer: ???, refinement: ???, gated: Bool }
+- `200` → { matched: Bool, entries: ???, answer: String?, refinement: String?, gated: Bool, error: Bool, message: ??? }
 
 ## photo.js
 
@@ -366,11 +375,17 @@ Mounted at: `(unmounted)`
 
 ### POST /scan/barcode  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `400` → { error: String }
+- `200` → { gate: Bool, reason: String }
+- `200` → `await extractFromBarcode(barcode)` — **NEEDS HAND-CHECK** (built elsewhere)
+- `502` → { error: Bool, message: ??? }
 
 ### POST /scan/label  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `400` → { error: String }
+- `200` → { gate: Bool, reason: String }
+- `200` → `buildLabelResult(await readLabel(req.file), req.body?.barcode)` — **NEEDS HAND-CHECK** (built elsewhere)
+- `502` → { error: Bool, message: ??? }
 
 ## stripe.js
 
@@ -417,6 +432,14 @@ Mounted at: `/api`
 - `200` → { trip: ???, list: ???, from: ??? }
 - `500` → { error: String }
 
+### POST /trips/import  ·  requireAuth
+
+- `409` → { error: String, active: ??? }
+- `503` → { error: String }
+- `500` → { error: String, active: ??? }
+- `200` → `out` — **NEEDS HAND-CHECK** (built elsewhere)
+- `500` → { error: String }
+
 ### GET /trips/seedable  ·  requireAuth
 
 - `200` → { seedable: ???, items: ???, completedAt: ??? }
@@ -434,7 +457,9 @@ Mounted at: `(unmounted)`
 
 ### POST /verdict  ·  public
 
-- no `res.json` found (streams, redirects, or `res.send`) — **NEEDS HAND-CHECK**
+- `400` → { error: String }
+- `422` → { error: Bool, unreadable: Bool, message: ??? }
+- `200` → { gate: Bool, reason: String }
 
 ## weeklySummary.js
 
@@ -469,7 +494,7 @@ Mounted at: `/api`
 
 ## NEEDS HAND-CHECK
 
-31 of 60 handlers have at least one response this script cannot
+28 of 61 handlers have at least one response this script cannot
 expand. Confirm these by hand before writing a Codable for them.
 
 - `POST /checkout` (billing.js) — opaque: NOT_CONFIGURED
@@ -483,27 +508,24 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /counter/ask` (counter.js) — spread: body
 - `POST /counter/ask` (counter.js) — opaque: body
 - `POST /chat` (guest.js) — opaque: result
-- `GET /ingredient/:id` (ingredient.js) — no res.json
+- `GET /ingredient/:id` (ingredient.js) — spread: publicEntry(entry)
 - `GET /growth` (internal.js) — opaque: await growthSnapshot()
 - `GET /growth.html` (internal.js) — no res.json
-- `GET /perimeter` (perimeter.js) — no res.json
-- `GET /perimeter/sections` (perimeter.js) — no res.json
-- `GET /perimeter/sections/:id` (perimeter.js) — no res.json
-- `GET /perimeter/:id` (perimeter.js) — no res.json
-- `POST /perimeter/ask` (perimeter.js) — no res.json
+- `GET /perimeter/sections/:id` (perimeter.js) — opaque: section
+- `GET /perimeter/:id` (perimeter.js) — opaque: publicEntry(entry)
 - `POST /photo` (photo.js) — spread: base
 - `POST /preferences/interpret` (preferences.js) — opaque: await interpretPreferences(text)
 - `POST /scan/barcode` (scan.js) — opaque: await extractFromBarcode(barcode)
 - `POST /scan/label` (scan.js) — opaque: buildLabelResult(await readLabel(req.file), req.body?.barcode)
-- `POST /scan/barcode` (scan.js) — no res.json
-- `POST /scan/label` (scan.js) — no res.json
+- `POST /scan/barcode` (scan.js) — opaque: await extractFromBarcode(barcode)
+- `POST /scan/label` (scan.js) — opaque: buildLabelResult(await readLabel(req.file), req.body?.barcode)
 - `GET /subscription` (subscription.js) — opaque: subscriptionSummary(row)
 - `GET /subscription` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(row)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
-- `POST /verdict` (verdict.js) — no res.json
+- `POST /trips/import` (trips.js) — opaque: out
 - `GET /weight/history` (weight.js) — opaque: rows.map((r) => ({
         logged_at: r.logged_at,
         weight_value: r.weigh
 
-_60 handlers, 147 literal responses derived._
+_61 handlers, 172 literal responses derived._

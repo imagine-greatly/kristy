@@ -52,9 +52,35 @@ test('vision returns identity + list + panel completeness, and no judgment', () 
      Nothing else from the nutrition panel is admitted, and that is deliberate rather
      than incidental: calories, protein, fat and sodium have no consumer in this
      codebase, and a field with no consumer is where the next claim gets in. */
+  /* `category` / `categoryRaw` ADMITTED 2026-08-09, and the guard was right to stop and ask.
+
+     They arrived with category capture and this whitelist was not updated, so this test
+     failed the first time anyone ran it — which was the first time Node existed on the build
+     machine, two days after the commit landed. **The guard did its job; nothing else in the
+     repo would have noticed.**
+
+     Why they are admissible on the same terms as `sugarsG`:
+       * `category` is a CLOSED ENUM chosen from a fixed list in the prompt, and anything
+         off that list collapses to `other` in `normalizeCategory`. A claim cannot travel in
+         a value the parser will not emit.
+       * The prompt says it in the prompt: "a description of the product, never a judgement
+         about it." It answers WHAT THIS IS, which is the same act as copying "canola oil"
+         off the ingredient line.
+       * Both have a real consumer — `productCategory.js` → `scanned_products.category` —
+         which is the actual bar this list enforces. The rule is not "no new fields", it is
+         "no field with no consumer", because that is where the next claim gets in.
+       * Neither reaches a model prompt, a card, or a shopper. `category_raw` is capped at
+         120 chars and exists so a miss is diagnosable and the enum can be widened on
+         evidence rather than on taste.
+
+     ⚠️ THE CONDITION ON `categoryRaw`, since it is the one that is NOT a closed enum: it is
+     free model text that gets PERSISTED. It is safe only while nothing renders it. **If a
+     surface ever displays it, it stops being diagnostic and becomes copy nobody wrote**,
+     and it needs the same treatment as any other model output at that point. */
   for (const k of Object.keys(out)) {
     assert.ok(
-      ['ingredients', 'productName', 'brand', 'panel', 'sugarsG', 'servingG'].includes(k),
+      ['ingredients', 'productName', 'brand', 'panel', 'sugarsG', 'servingG',
+       'category', 'categoryRaw'].includes(k),
       `unexpected field from vision: ${k}`
     );
   }
