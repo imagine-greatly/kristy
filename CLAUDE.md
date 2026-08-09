@@ -252,7 +252,7 @@ only by prompt.
    split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
    budget, the store's stock or their spare time is a retreat and does not. Firmer is
    never looser with facts — **if a claim needs a false mechanism to sound convincing, the
-   claim is wrong.** Both enforced by `counterCardLint.js` over all 81 cards, curated and
+   claim is wrong.** Both enforced by `counterCardLint.js` over all 82 cards, curated and
    generated.
 
 8. **No price, ever.** Kristy does not know what anything costs. Budget means
@@ -270,7 +270,7 @@ only by prompt.
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
   `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (81 entries) answers
+  thing the verdict engine sees. `kristy_perimeter_kb.json` (82 entries) answers
   *questions* about the counter and is **never** fed to the engine.
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - ⚠️ **`GuestApp` IS PRODUCTION. `App`'s own surface stack has never rendered for a real
@@ -875,7 +875,7 @@ was invisible until something rendered one**
     product, not a backlog.
 
   Four reasons, and the last one is the decisive one:
-  - **The moat is hand-authored and it does not transfer.** Measured 2026-08-09: **81 curated
+  - **The moat is hand-authored and it does not transfer.** Measured 2026-08-09: **82 curated
     counter cards and 74 ingredient entries**, plus the tier system, the claim lock and the
     lint that sit on top of them. Cleaners need every one of those rebuilt from zero against
     a literature nobody here has read.
@@ -1049,7 +1049,7 @@ was invisible until something rendered one**
   preference. **Do not "fix" this by promoting `watch_out` into the free layer** — that is
   the depth, it is what the membership buys, and the eight essentials already exist to prove
   the depth is worth having. If a specific card's cost is load-bearing enough to be free, the
-  lever is making that card an essential, not widening the boundary for all eighty-one.
+  lever is making that card an essential, not widening the boundary for all eighty-two.
 - **THE TIER IS A SENTENCE, NOT A CHIP — AND THE SENTENCE HAD TO BE MADE FREE BEFORE THE CHIP
   COULD GO.** "Credible concern" sat above a card about buying organic: a classification
   rendered as furniture, naming a claim the card never made, with nothing for the reader to
@@ -1058,11 +1058,11 @@ was invisible until something rendered one**
   out ("a list is things to buy; a tier is a claim about evidence, and on a row it is
   furniture raising a question nobody is asking mid-task"). **But non-negotiable #6 binds and
   `tier_note` was PAID.** Only the eight essentials are ever full, so dropping the chip alone
-  would have left **73 of 81 cards** stating a verdict to a free shopper with no tier signal
+  would have left **74 of 82 cards** stating a verdict to a free shopper with no tier signal
   at all. So `tier_note` left `DEPTH_FIELDS` in the same change and renders below the do line
   — a **swap of one free signal for a better one**, not a widening. It buys no depth: `why`,
   `look_for` and `watch_out` are untouched. Scale, measured: **established 49 ·
-  kristys_standard 24 · time_tested 5 · credible_concern 3** — the objected-to label was on
+  kristys_standard 25 · time_tested 5 · credible_concern 3** — the objected-to label was on
   three cards. **Do not restore the chip to "make the tier scannable"**; a bare tier word is
   precisely what has no referent.
 - **THE PAID BOUNDARY HAD NO TEST AT ALL, which is how a field moved out of it silently.**
@@ -1736,7 +1736,9 @@ was invisible until something rendered one**
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (82 rows as of 2026-08-02: 81 curated + 1 generated), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (82 rows as of 2026-08-02: 81 curated + 1 generated;
+  the KB carries **82 curated** since `bottled_water_buying` landed 2026-08-09 and the table is
+  one `migrateCounterCards.js` run behind it — the two-step act, awaiting approval), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. **`trips`** (`supabase/trips.sql`) and the `counter_gaps.source` column plus the
   `bump_card_use_count` RPC (`supabase/list_attach.sql`) were applied 2026-08-02. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code

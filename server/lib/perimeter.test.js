@@ -384,7 +384,18 @@ test('label truth is threaded through every counter, not parked in one section',
 test('NO entry anywhere in the KB claims a health outcome, in either direction', () => {
   // Wider than the label-truth check below: the no-treatment rule is absolute across
   // the whole perimeter, and it is symmetric (nothing cures and nothing causes).
-  const OUTCOME = /\b(cures?|heals?|prevents?|reverses?|detox|remed(y|ies)|immunity|diagnos\w*)\b/i;
+  //
+  // ⚠️ `reverse osmosis` IS A WATER TREATMENT, NOT A HEALTH OUTCOME, and it is the one
+  // exception this pattern carries. It is carved out by NAME rather than by dropping
+  // `reverses?`, which stays live for everything else — the ban is on a food reversing a
+  // condition, and "reverse" only stops being that word when "osmosis" follows it.
+  // `bottled_water_buying` is why: FDA's standard of identity (21 CFR 165.110) defines
+  // purified water as distillation, deionization or reverse osmosis, the phrase is
+  // printed on real bottles, and a card that decodes label terms cannot decode that one
+  // without saying it. Widened deliberately, like IMPERATIVE_VERBS and the state-word
+  // list; the negative lookahead is the whole carve-out, so "reverses inflammation" and
+  // "reverse the damage" still fail exactly as before.
+  const OUTCOME = /\b(cures?|heals?|prevents?|reverses?(?!\s+osmosis)|detox|remed(y|ies)|immunity|diagnos\w*)\b/i;
   for (const e of perimeterKb.entries) {
     assert.doesNotMatch(JSON.stringify(e), OUTCOME, `${e.id} makes a health-outcome claim`);
   }

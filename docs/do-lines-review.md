@@ -107,6 +107,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `olive_oil_grades` | bulk_pantry | Extra virgin, a recent harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
 | `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
 | `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Grab bulgur or quinoa for a weeknight — both cook in fifteen minutes. | — |
+| `bottled_water_buying` | bulk_pantry | Spring water from a named source, in glass. | Turn the bottle over and find the town and state it came from. | — |
 | `label_front_vs_back` | label_terms | Turn it over. Decide from the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Read the first three ingredients, then the added-sugar line. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
 | `label_third_party_seals` | label_terms | A published standard and an outside auditor, or it is a sticker. | Trace the seal to an organization, not the brand’s own logo. | — |

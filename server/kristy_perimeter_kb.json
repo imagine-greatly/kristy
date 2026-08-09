@@ -3809,6 +3809,81 @@
       ]
     },
     {
+      "id": "bottled_water_buying",
+      "title": "Buying bottled water",
+      "aliases": [
+        "bottled water",
+        "spring water",
+        "sparkling water",
+        "mineral water",
+        "purified water",
+        "distilled water",
+        "drinking water",
+        "still water",
+        "seltzer",
+        "case of water",
+        "water bottles"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which bottled water should I buy?",
+      "decision": "Spring water from a named source, in glass.",
+      "why": "Spring water comes from a place. Purified is a process run on whatever came out of the tap.",
+      "short_answer": "Two different products sharing one shelf. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement.",
+      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
+        "Qian et al. 2024, PNAS — nanoplastics in bottled water measured by stimulated Raman scattering microscopy",
+        "ANSES 2025, Journal of Food Composition and Analysis — microplastics in bottled drinks traced to paint on metal caps",
+        "Westerhoff et al. 2008, Water Research; Shotyk et al. — antimony migration from PET with storage time and temperature"
+      ],
+      "kristy_take": "Spring, in glass, from a place that can be found on a map. Everything else is a process wearing a mountain on the label.",
+      "cart_pick": "Spring water in glass",
+      "buying_tips": [
+        "A spring with a name and a town behind it. “Bottled at the source” means something when the source is printed.",
+        "Glass, with the cap still clean and unscuffed.",
+        "“Mineral water” is spring water with the dissolved solids to prove the ground it came from. Nothing may be added to it.",
+        "Sparkling from a named spring is the same decision with bubbles in it. Read the label the same way.",
+        "“Purified”, “distilled”, “deionized” and “reverse osmosis” are processes. The source is not on that label, and it does not have to be."
+      ],
+      "watch_out": [
+        "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen, and it costs less. It is the honest fallback, not the standard.",
+        "Glass is inert and the cap is not. French food-safety researchers traced the microplastics in glass-bottled drinks to paint shedding off the metal caps, and water was the least affected of everything they measured.",
+        "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle.",
+        "Heat and time move antimony out of PET into the water. A case left in a hot car is the wrong storage for the wrong container."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Spring water",
+          "meaning": "From an underground formation that flows to the surface on its own. Collected at the spring or from a bore hole in the same formation."
+        },
+        {
+          "term": "Purified / distilled / deionized / reverse osmosis",
+          "meaning": "A treatment, not a place. It says what was done to the water and nothing about where it started."
+        },
+        {
+          "term": "Mineral water",
+          "meaning": "Spring water carrying at least 250 ppm total dissolved solids from the ground. Adding minerals is not permitted."
+        },
+        {
+          "term": "From a community water system",
+          "meaning": "Municipal tap. Required on the label, unless the bottler purified it, which removes the requirement."
+        },
+        {
+          "term": "BPA-free",
+          "meaning": "True of every PET bottle and always was. PET is not made with BPA. The claim describes a plastic the bottle never contained."
+        }
+      ],
+      "tier_note": "The label definitions are federal and the plastics work is published. Holding out for a named spring in glass on top of them is the standard.",
+      "eyebrow_short": "Bottled water",
+      "asked_as": [
+        "what bottled water should i buy",
+        "is spring water better than purified",
+        "glass or plastic water bottles",
+        "what does purified water mean"
+      ]
+    },
+    {
       "id": "label_front_vs_back",
       "title": "Front vs. back",
       "aliases": [
