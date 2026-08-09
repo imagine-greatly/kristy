@@ -65,6 +65,26 @@ work is meant to go live**, and never merely to satisfy the rule above. When wor
 and deliberately unpushed, **say so in the report** rather than leaving "ahead N" for the next
 session to discover and helpfully resolve.
 
+⚠️ **BUT `git push` IS NOT THE ONLY PUBLISH CHANNEL, AND THE HOLD ONLY COVERS ONE OF THEM.**
+`node server/scripts/migrateCounterCards.js` writes the corpus straight to the live
+`counter_cards` table. It needs no push, no deploy and no approval from Railway — just the
+credentials in `server/.env`. **So for anything whose only artifact is card content, "unpushed"
+does not imply "not live".**
+
+Observed 2026-08-10: `0a84782` (the `mercury_by_fish` sardines fix) sits on `origin/held` and
+**not** on `origin/main` — undeployed by every measure git can report — while its text is
+serving to anonymous callers in production, because the migration ran. That is the two-step act
+working exactly as designed (**the KB is the source of record, the table is what ships**), and
+it is *why* a KB edit is safe to commit onto a held stack. It is recorded here because the
+inference it breaks is the natural one: reading `origin/main..HEAD` tells you what code is
+held, and tells you **nothing** about what a shopper is reading.
+
+**The practical rule:** a commit that touches only `kristy_perimeter_kb.json` publishes when
+the migration runs, so **say in the report whether it has**, the same way an unpushed commit is
+reported. The two states are independent and both need stating: *committed / pushed* is the
+code, *migrated / not* is the corpus. The card commits already say `Not migrated.` in their
+messages — that line is the other half of this and should not be dropped.
+
 ### ⚠️ THE HELD STACK LIVES ON `origin/held`. `main` BEING BEHIND IS NOT LOST WORK.
 
 **If you find `main` behind what the docs describe, fetch `held` — do not reconstruct anything.**
@@ -928,6 +948,32 @@ was invisible until something rendered one**
 - **Goals weight the margins.** A profile change *leans* the stored cart (≤3 additions),
   it does not regenerate it; focus/constraint anchors are capped at 4. Rebuild is still
   a choice, never a side effect of tapping a goal.
+- ⚠️ **A STORED PREFERENCE ONLY EVER BUYS THE THING A SHOPPER WOULD NOT BOTHER SAYING AGAIN,
+  AND THAT WAS MEASURED AT NEARLY ZERO ON THE ONE SURFACE THAT TRIED IT.** `LIST-CREATION-AUDIT.md`
+  §C: the same sentence handed to compose twice, once bare and once with the full profile,
+  produced lists that **barely differed** — because the sentence already carried the context.
+  Someone who types "steak night for four" has said the goal, the constraint and the occasion
+  in six words, and a stored `family` flag adds nothing to it.
+
+  **THIS IS THE STANDING ARGUMENT AGAINST PERSONALIZATION-BY-GENERATION, and it should be
+  quoted rather than re-derived.** The recurring proposal is that the corpus feels static and
+  the answer is per-shopper generated guidance. It is not, on three grounds and the first is
+  the measurement above:
+  - **The marginal value of knowing the shopper is small where they are already speaking.**
+    Compose, ask and scan all take an utterance or a barcode. The input carries the context.
+  - **The corpus is trustworthy *because* it is pre-decided.** Every curated card passed
+    tiering, the claim lock, `lintCard`, `counterReach` and an editorial pass. Per-shopper
+    generation gets none of those at request time, and **the generated cards are where the
+    worst defects have lived** — a card contradicting a curated verdict, four paid-for
+    duplicates, a hub answering a question about a species the KB says nothing about.
+  - **`/counter/ask` already covers the edges**, with generation behind the retrieval floor,
+    the lint and the claim lock. The uncovered question is a logged gap and an authoring
+    decision, which is the slow correct path.
+
+  **What IS missing is the app knowing anything about a shopper — and the answer to that is
+  SELECTION, never authorship.** Same cards, different ones surfaced, by a selector that is
+  itself authored and reviewable. See the essentials-never-reorder ruling under **Money** for
+  the shape, and its counter-example for how a selector goes wrong.
 - The baseline holds grocery **names** only — what they keep buying, what they removed,
   what they declined. `kept` is deliberately not deduped: occurrences are the frequency.
 - **The pattern memory is private, and it leaves with the shopper.** `shopping_lists`
@@ -1100,6 +1146,32 @@ was invisible until something rendered one**
   before any navigation: a shopper who spends three reads on the shelf never reaches the
   counter and never learns the other seventy-three exist. Free depth on the shelf proves
   the reads are worth having; the meter proves BREADTH is what the membership buys.
+- ⚠️ **THE ESSENTIALS NEVER REORDER. MARK THE ONES ON THIS SHOPPER'S LIST; KEEP AUTHORED
+  ORDER.** Ruled 2026-08-10, when per-shopper selection was surveyed. Sorting the shelf by
+  what is in the cart is the tempting version and it is worse than the fixed one, for two
+  reasons neither of which is visible in the diff that would do it:
+  - **The order encodes an invariant that sorting destroys silently.** `ESSENTIALS` is
+    authored **two per section** *"so the shelf stays balanced and a cut to six does not need
+    rebalancing"* (`counterCards.js`). Sort by a produce-heavy cart and both produce cards go
+    to the top, the balance is gone, and **nothing fails** — there is no assertion that could,
+    because the property belongs to the authored list and a sort is applied after it.
+  - **Position is what a shelf is for.** Eight cards a shopper learns the position of is a
+    small durable map of the product. A shelf that rearranges itself is eight cards nobody
+    ever learns, and it costs precisely the returning shopper — the population the whole
+    retention argument is about.
+
+  **This is the same ruling `counterCards.js:201` already made about `use_count`**, one notch
+  weaker in the sample: that comment refuses to derive *membership* from popularity because it
+  *"would fill the most valuable space on the surface with whatever happened to be asked most
+  last week."* Reordering per shopper is that argument with a sample of one person and one
+  week. **Membership and order are the same editorial decision and both stay in version
+  control.**
+
+  **What is allowed, and it gets the whole intent:** leave the eight where they are and *mark*
+  the ones matching the shopper's list. Same eight, same positions, one extra signal. It needs
+  no new stored state — `POST /api/guest/list/attach` already computes a `cardSlug` per row, so
+  "is an essential on this list" is a set intersection over data the client already holds, and
+  it works for a guest with no account.
 - **THE TEASER SHIPS GEOMETRY, NEVER WORDS.** Past the meter, "The full read" shows the
   card's real first check in full, then the next few as true CHARACTER LENGTHS faded out,
   then true counts ("4 more checks, 2 traps"). Sending the actual withheld text would leak
@@ -1242,6 +1314,30 @@ was invisible until something rendered one**
   unbuilt rather than untested. Distinct from the harness entry below: there the call site was
   *wrong* and a real-call-site test found it; here every call site is right, so no test of any
   call site can find it.
+- ⚠️ **THE SECOND CONSTANT-FALSE COMPOSITION, FOUND 2026-08-10 BY THE SAME WALK: THE SHOPPING
+  PROFILE HAS NEVER ACCUMULATED FOR ANYBODY.** `buildBaseline` (`lib/listBaseline.js`) reads
+  `shopping_lists.signals` and computes `staples` (occurrences of `kept` above a threshold —
+  frequency deliberately undeduped), `avoided` and `declined`. It is written, tested and
+  correct. **Its input is empty and always has been.** Every `/api/list*` route is
+  `requireAuth`; sign-in is blocked on 10DLC; and `Kristy/Core/Cart.swift:11` says so in a
+  comment header — *"Why there is no `GET /api/list` in here: every visitor is a guest."*
+  Nothing writes `signals`, so `staples` is permanently `[]`.
+
+  **Identical shape to the trips entry above, and it was found the same way and not by any
+  test.** Each decision is right alone — the routes must be `requireAuth` because they write
+  per-user rows; the client is right not to call an endpoint no visitor can reach; 10DLC is a
+  carrier fact — and the sum is a personalization mechanism that has never executed. **The
+  tell is the same: a value that is CONSTANT rather than conditional.** `staples` is not
+  untested, it is unreached, and everything downstream of it is unbuilt rather than unverified.
+
+  ⚠️ **AND THE SIGNAL IT WANTS IS ALREADY BEING COLLECTED SOMEWHERE ELSE AND THROWN AWAY.**
+  `GuestTripBook.archive` in `kristy-ios` holds every completed trip with every `ListRow` and
+  its checked state, on device, already persisted and already capped with `dropped` counted
+  honestly. The only thing that reads it is `CarryOver.of(book)`, which **counts trips** for
+  the sign-in disclosure. So the computation exists on one side of the wire with no input and
+  the input exists on the other with no computation. That is the queue item under **Open
+  items**; the reason it is recorded *here* is that neither half is a defect and no diff
+  contains it.
 - **THE SAME FAMILY: A HARNESS THAT SUPPLIES THE PROPS VERIFIES A WIRING PRODUCTION NEVER
   RUNS.** `dash.mjs` mounts Dashboard through `dashHarness.jsx`, which constructs the hero's
   handlers itself. So it is *structurally incapable* of noticing a call site that forgets
@@ -1325,10 +1421,12 @@ was invisible until something rendered one**
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` — **618 on `main` + the held stack, 607 on `origin/main`**, and the
-  difference is `trips.test.js`'s import half, which is held. A bare count here has been stale
-  four times (it read 483 while the suite ran 613); what is stable is that the number is
-  printed by the run and the two trees differ by the hold. Client: `cd client && npx vite build`.
+- `cd server && npm test` — **623 on `main` + the held stack**, measured 2026-08-10. `origin/main`
+  runs that minus `trips.test.js`'s import half, which is held; **that second number is
+  deliberately not written down any more.** A bare count here has been stale five times (it read
+  483 while the suite ran 613, then 618/607 while it ran 623), and half of every stale pair was
+  a number nobody had run — recording only the one that was actually printed is what stops the
+  next drift. Client: `cd client && npx vite build`.
 - **`vite build` COMPILES A DEAD REFERENCE HAPPILY.** Moving the ask out of `AisleMoment` left
   a `{!ask && …}` behind — a live `ReferenceError` that took the whole Counter surface down,
   through a clean build. Only `gate.mjs`, which drives the real surface, caught it. A green
@@ -1768,6 +1866,38 @@ was invisible until something rendered one**
   every retain logs `column does not exist` and silently stops retaining, which is the worst
   way for it to fail.
 
+- ⏳ **QUEUED — DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE. It is the unlock for every
+  per-shopper mechanic downstream, and it is the only one whose computation already exists.**
+  Ruled 2026-08-10 out of the selection survey. `buildBaseline` is written, tested and correct
+  and its server-side input is permanently empty (see **Verifying**, the second constant-false
+  composition); `GuestTripBook.archive` on device holds exactly the input shape it wants. The
+  work is to run that computation over the archive **in the client**, giving `staples` /
+  `avoided` for a guest with **no account, no server change and no new stored data** — the
+  archive is already persisted, so this reads what is there rather than capturing anything new.
+
+  **Nothing is proposed to consume it yet, and that is deliberate** — it is the signal, not a
+  surface. The candidates it unblocks, in the order they were ranked: marking the essentials
+  that are on this shopper's list (**never reordering them** — see **Money**); then attachment
+  ties broken by purchase history.
+
+  ⚠️ **PRICE THE `canonicalItem` DUPLICATION BEFORE STARTING; IT IS THE REAL COST AND IT IS NOT
+  THE PART THAT LOOKS EXPENSIVE.** `buildBaseline`'s frequency counting is trivial — twenty
+  lines. What it depends on is `canonicalItem`, which is what makes "Bananas" and "bananas, ripe"
+  the same staple, and which exists as **JS in `server/lib` and in the frozen `client/src`**.
+  Running the computation on device means a **third implementation, in Swift**, of a
+  canonicalizer whose disagreements would be silent: the two copies would file the same grocery
+  under different staples and no test spans both languages. That is a second source of truth
+  arriving exactly the way the no-vendoring rule forbids. **The alternatives are to be
+  considered before any Swift is written**, not after: run the derivation server-side over an
+  uploaded archive (needs an endpoint a guest can reach, which is the whole reason this is
+  device-side), or narrow the on-device version to exact-name matching and **state that
+  narrower claim** rather than reimplementing the canonicalizer badly.
+
+  ⚠️ **DO NOT LET THIS BECOME A CAPTURE PROJECT.** The temptation on reading it is to start
+  storing what shoppers buy. **The record already exists** — the whole finding is that it is
+  collected and unread. Anything that adds a new store here is a different item with a
+  different privacy argument, and it does not inherit this one's.
+
 - 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14** (written 2026-08-04
   so a cold start needs no thread): list-creation audit A–E → design review → build (blocked
   on explicit approval) · scan card bottom sheet · photo thumbnail · attachment-eyebrow report
@@ -1780,9 +1910,12 @@ was invisible until something rendered one**
   `subscriptions`, `meal_logs`, `weight_logs`, `chat_messages`, `weekly_summaries` and
   every `user_goals` column (`coach_goals`, `constraints`, `macro_tracking`, `focuses`,
   `free_notes_used`, `non_negotiables`) are all **applied**. Re-verified column-by-column
-  on 2026-07-31, when **`counter_cards`** (82 rows as of 2026-08-02: 81 curated + 1 generated;
-  the KB carries **82 curated** since `bottled_water_buying` landed 2026-08-09 and the table is
-  one `migrateCounterCards.js` run behind it — the two-step act, awaiting approval), **`counter_gaps`** and the
+  on 2026-07-31, when **`counter_cards`** (**85 rows as of 2026-08-10: 82 curated + 3
+  generated**, audited row-by-row against the KB — every curated slug has a row and no row is
+  unauthored. The generated three are `gen_guanciale_worth_buying`, `gen_goat_meat_quality` and
+  `gen_live_fermented_foods`, all at `use_count` 0; this line said "81 + 1" for eight days while
+  two more were live, because a generated row is written by the pipeline and never appears in a
+  diff. **Re-count it here, do not carry it forward.**), **`counter_gaps`** and the
   `counter_gap_feed` view also landed — full audit in `docs/SCHEMA-AUDIT.md`. **`trips`** (`supabase/trips.sql`) and the `counter_gaps.source` column plus the
   `bump_card_use_count` RPC (`supabase/list_attach.sql`) were applied 2026-08-02. Still
   missing: **`push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo push. Code
