@@ -432,14 +432,6 @@ Mounted at: `/api`
 - `200` → { trip: ???, list: ???, from: ??? }
 - `500` → { error: String }
 
-### POST /trips/import  ·  requireAuth
-
-- `409` → { error: String, active: ??? }
-- `503` → { error: String }
-- `500` → { error: String, active: ??? }
-- `200` → `out` — **NEEDS HAND-CHECK** (built elsewhere)
-- `500` → { error: String }
-
 ### GET /trips/seedable  ·  requireAuth
 
 - `200` → { seedable: ???, items: ???, completedAt: ??? }
@@ -494,7 +486,7 @@ Mounted at: `/api`
 
 ## NEEDS HAND-CHECK
 
-28 of 61 handlers have at least one response this script cannot
+27 of 60 handlers have at least one response this script cannot
 expand. Confirm these by hand before writing a Codable for them.
 
 - `POST /checkout` (billing.js) — opaque: NOT_CONFIGURED
@@ -523,9 +515,8 @@ expand. Confirm these by hand before writing a Codable for them.
 - `GET /subscription` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(row)
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
-- `POST /trips/import` (trips.js) — opaque: out
 - `GET /weight/history` (weight.js) — opaque: rows.map((r) => ({
         logged_at: r.logged_at,
         weight_value: r.weigh
 
-_61 handlers, 172 literal responses derived._
+_60 handlers, 168 literal responses derived._
