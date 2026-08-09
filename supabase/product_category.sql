@@ -57,8 +57,24 @@ create index if not exists scanned_products_category_idx
 -- time, is most of them. Verified on production: 0030772117484 (Dawn Platinum Plus Powerwash)
 -- answers `source:"store"`, `nutrition:null`, and comes back `tier:"approved"`, `stamp:true`.
 --
--- ⚠️ NOT BACKFILLABLE, for exactly the reason `category` is not: the figure was on an OFF
--- response nobody kept. Same clock, same shape, same migration.
+-- ⚠️ NOT BACKFILLABLE FOR THE HALF THAT MATTERS, AND THAT IS NARROWER THAN THIS FILE FIRST
+-- CLAIMED. Measured 2026-08-09 by re-querying OFF for both cached Dawns: it still answers, with
+-- no energy key, so the panel a row got FROM OFF is re-derivable at one free HTTP request per
+-- barcode — and so is `category`, from the same response. What is genuinely gone is a VISION
+-- row's: the photo is never stored (scan.md §8), so nothing can be asked a second time.
+-- The clock is therefore real but it runs on the vision rows, which are the moat — the products
+-- OFF cannot answer for at all. Recorded because the original wording here ("the figure was on
+-- a response we did not keep") reads as "the whole catalog is unrecoverable", which would make
+-- anyone conclude the already-cached false seals are permanent. They are not; see below.
+--
+-- ⚠️ APPLYING THIS DOES NOT CLEAR A PRODUCT ALREADY CACHED. Every existing row is NULL, NULL
+-- reads as `unknown`, and the barcode door returns from the store BEFORE any OFF fetch — so a
+-- product already in the catalog keeps whatever seal it has, indefinitely, and a label photo
+-- cannot fix it either (vision ranks below off, so the panel write is skipped). Two named live
+-- false seals are in that state: 0030772117484 and 0030772006023, both Dawn. Clearing them is a
+-- DATA WRITE and deliberately NOT in this file — schemaSafety.test.js fails if any supabase/*.sql
+-- carries one, because applying a schema must never change what anyone has. The statement to run
+-- separately is in the handoff.
 --
 -- TRI-STATE, AND NULL IS THE THIRD STATE RATHER THAN A FOURTH. 'present' / 'absent' are the
 -- only values ever written; NULL means "no source that publishes energy has been asked about

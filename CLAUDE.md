@@ -1391,10 +1391,34 @@ was invisible until something rendered one**
   **no nutrition at all**, so a product already in our own catalog resolves to `unknown` and
   `unknown` withholds nothing. That is the correct default and it means **the self-heal loop
   reopens the hole for every product it caches**, which over time is most of them.
-  **The fix is a `nutrition_panel` column on `scanned_products`, written by `retainProduct`
-  when the OFF read had one** — and like `category` it **cannot be backfilled**, because the
-  figure was on a response nobody kept. Same clock, same shape, and it should go in the SAME
-  migration as `product_category.sql` rather than as a third one.
+  ✅ **THE CODE IS BUILT AND COMMITTED, 2026-08-09. THE MIGRATION IS NOT APPLIED.**
+  `nutrition_panel` on `scanned_products`, written by `retainProduct` when the OFF read carried
+  one, returned by `lookupProduct`, and handed back by `extractFromBarcode`'s store branch as a
+  `nutrition` object shaped like the OFF path's — so the engine cannot tell which door the panel
+  came in through. It lives in the SAME migration as `product_category.sql`, not a third one:
+  two runs against one table for one reason is how the second gets forgotten, and a forgotten
+  one here leaves a deployed gate that cannot fire. **613 tests**, ten of them new, each verified
+  to fail on the defect it names. `nutritionPanelCache.test.js` drives the real
+  `extractFromBarcode` (its client is now injectable for exactly this) rather than rebuilding the
+  mapping, because a test that assembled its own `nutrition` object would be the props-supplied
+  harness defect — which is how this shipped in the first place.
+  ⚠️ **`lookupProduct` RETRIES ONCE WITHOUT THE COLUMN.** PostgREST fails the whole select on an
+  undeclared column, so pre-migration this would answer null for **every** row and take the
+  entire self-heal loop down — not the panel, the loop. That is the read side of "silently stops
+  retaining", and worse: retention failing loses tomorrow's coverage, this loses today's answers.
+  ⚠️ **APPLYING THE MIGRATION DOES NOT CLEAR A PRODUCT ALREADY CACHED, AND TWO NAMED FALSE SEALS
+  ARE IN THAT STATE.** Every existing row is NULL, NULL reads as `unknown`, and the store branch
+  returns *before* any OFF fetch — so nothing ever re-reads it. `0030772117484` and
+  `0030772006023` (both Dawn) stay gold-sealed indefinitely, and a label photo cannot fix them
+  either (vision ranks below off, so the panel write is skipped). Clearing them is a **data
+  write**, deliberately not in the migration (`schemaSafety.test.js`), and it is one `update`.
+  ⚠️ **"CANNOT BE BACKFILLED" IS NARROWER THAN THIS ENTRY CLAIMED.** Measured 2026-08-09 by
+  re-querying OFF for both Dawns: it still answers, with no energy key, so a panel that came
+  from OFF is re-derivable at one free request per barcode — and so is `category`, off the same
+  response. What is genuinely unrecoverable is a **vision** row's, because the photo is never
+  stored. The clock is real and it runs on the vision rows, which are the moat. The old wording
+  read as "the whole catalog is lost", which would make anyone conclude the cached false seals
+  are permanent. They are not.
   ⚠️ **The web client keeps the false seal regardless**: `client/src` is frozen and never
   forwarded `nutrition` either. That is accepted — the web client is the behavioural spec,
   not the product.
