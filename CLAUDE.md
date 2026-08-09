@@ -1507,29 +1507,44 @@ was invisible until something rendered one**
   not on its own, because an export with no consumer is exactly the "field with no consumer"
   shape `labelVerdict.test.js` warns about and it should go with its neighbours.
 
-- 🐞 **`rowMatch.js` OVER-MATCHES A ONE-WORD ROW, AND IT IS THE EXPENSIVE SIDE OF THE
-  ASYMMETRY.** Rule 5 — every content word of the ROW must appear in the product — is
-  vacuous at one word, so `words("yogurt") ⊆ words("Greek yogurt raisins")` and the shopper
-  is offered **"Check off Yogurt"** for a bag of raisins. Accepting it ticks a row they never
-  bought; the list is a record, so it seeds next week's trip and feeds the shopping profile.
-  A miss costs one uncheck, this costs a lie that propagates.
+- ✅ **FIXED IN SWIFT 2026-08-09 — a one-word row is a CATEGORY, not an identity. `rowMatch.js`
+  KEEPS THE OVER-MATCH, DELIBERATELY.** Rule 5 — every content word of the ROW must appear in
+  the product — is vacuous at one word, so `words("yogurt") ⊆ words("Greek yogurt raisins")`
+  and the shopper was offered **"Check off Yogurt"** for a bag of raisins. The list is a
+  record, so accepting it seeds next week's trip and feeds the shopping profile: a miss costs
+  one uncheck, this costs a lie that propagates. **The comment on that rule names this exact
+  example as the over-match it refuses**, and the code never did — a comment asserting an
+  invariant, in the file whose whole argument is that it refuses more than it could.
 
-  **The comment on that rule names this exact example as the over-match it refuses.** It does
-  not refuse it and the code never did — a comment asserting an invariant, in the file whose
-  whole argument is that it refuses more than it could.
+  ⚠️ **IT WAS NEVER ONE EXAMPLE.** Measured against the real JS matcher over ten cases:
+  `Yogurt`→"Greek Yogurt Covered Raisins", `Milk`→"Oat Milk Creamer", `Butter`→"Peanut Butter
+  Cups", `Rice`→"Rice Krispies Treats". **Four wrong ticks in ten, every one in the expensive
+  direction.** The single documented example made it look like an edge case.
 
-  **The likely fix is a floor on the ROW's own substance, not a change to the coverage rule**
-  — a single generic word is not an identity, so require either two content words or one long
-  enough to be a product rather than a category. Do not narrow rule 5 instead: "Greek yogurt"
-  written against "Fage Total 5% Greek Yogurt" scanned is the direction that actually happens
-  and must keep matching.
+  ⚠️ **THE FIX THIS ENTRY PRESCRIBED DOES NOT WORK, AND IT WOULD HAVE SHIPPED LOOKING LIKE A
+  FIX.** It said to floor the ROW's own substance — "one long enough to be a product rather
+  than a category". **"Yogurt" is six letters and "bananas" is seven**, so no floor separates
+  them; measured, that fix still gets 2 of the 4 wrong, including the named example. Length was
+  the wrong axis. **The fix is the PRODUCT'S HEAD NOUN**: English puts the head last in a
+  compound, so the question is whether the row's word is what the product fundamentally IS —
+  "Greek Yogurt Covered Raisins" is raisins. A tail of **cut/form words** may follow (`fillet`,
+  `breast`, `steak`, `loin`…), which is what keeps `Salmon`→"Wild-Caught Salmon Fillet" and
+  `Chicken`→"Chicken Breast" matching — the two cases a bare head-noun rule breaks. `cups`,
+  `bites`, `bars`, `chips` and `treats` are deliberately excluded: they name a different product
+  *made out of* the row's ingredient, which is the over-match being closed. Rule 5 is untouched.
 
-  **Fix order, and it is not optional: JS first, then both clients.** The Swift port
-  (`kristy-ios`, `Kristy/Core/RowMatch.swift`) reproduces this behaviour **deliberately** —
-  two clients disagreeing about which row a scan ticks is worse than one shared, known
-  over-match. It is pinned there as it BEHAVES, so when this lands **one iOS check goes red
-  and names itself**; that is the intended signal, not a break. Full statement in the iOS
-  repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
+  ⚠️ **"JS FIRST, THEN BOTH CLIENTS" DESCRIBED A ROUTE THAT DOES NOT EXIST.** `rowMatch.js` is
+  in **`client/src`, which is FROZEN** — so the fix could not land there first and could never
+  reach the web client at all. Ruled 2026-08-09: **Swift only.** `kristyapproved.com` keeps the
+  over-match, as **accepted divergence on the same terms as the ingredient-level swap** — the
+  web client is the behavioural spec, not the product. Do not "finish the job" by editing
+  `rowMatch.js`; that is the freeze, and the divergence is the recorded decision.
+
+  **The pinned iOS check did its job.** It asserted the DEFECT on purpose, so the fix turned it
+  red with its own name on it — `1 of 107 failed, got nil, wanted Optional("Yogurt")` — and was
+  flipped in the commit *after* the fix, never the same one. Now 114 checks, and the head-noun
+  rule, the `cutWords` allowance and the exclusion of `cups` were each verified to fail on the
+  defect they name. Full statement: iOS repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
 
 - ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, NOT FORGOTTEN — AND WHAT IS HELD IS THE
   IMPORT ROUTE AND CATEGORY CAPTURE, NOT THE WHOLE STACK.** `POST /api/trips/import` is held:
