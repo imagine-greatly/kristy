@@ -35,7 +35,8 @@
         "NOAA Fisheries / Seafood Watch",
         "USDA FoodData Central (fatty-acid composition)"
       ],
-      "kristy_take": "Wild, and frozen wild before fresh farmed. Farmed is the fallback, never the standard.",
+      "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
+      "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
         "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
@@ -44,7 +45,7 @@
       ],
       "watch_out": [
         "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
-        "Frozen wild runs cheaper than fresh farmed. If it is farmed or nothing, buy the farmed and cook it well.",
+        "Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best.",
         "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish."
       ],
       "labels_decoded": [
@@ -185,6 +186,7 @@
         "peer-reviewed reviews of grass- vs grain-fed fatty acids"
       ],
       "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
+      "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
       "cart_pick": "Grass-finished ground beef",
       "buying_tips": [
         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
@@ -1072,6 +1074,7 @@
         "USDA/FDA pasteurization nutrient references"
       ],
       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
+      "instead": "Raw aged cheese from a named dairy. Sixty days of aging puts it in every state, already in the case.",
       "buying_tips": [
         "A farm that publishes its herd test results. The good ones are proud of them.",
         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
@@ -1283,6 +1286,7 @@
         "True Source Honey / origin-traceability programs"
       ],
       "kristy_take": "Local raw honey from someone you can trace. Use it because you like it — it’s still sugar, just a real, old one.",
+      "instead": "Maple syrup with one producer named on the jug. The same sourcing question, and far easier to answer.",
       "cart_pick": "Raw local honey",
       "buying_tips": [
         "Ingredient list should read ‘honey’ and nothing else.",
@@ -3652,6 +3656,7 @@
         "FDA labeling rules on country of origin"
       ],
       "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
+      "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
       "buying_tips": [
         "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
         "Look for a HARVEST date, not just ‘best by’ — and buy recent.",

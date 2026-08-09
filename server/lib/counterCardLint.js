@@ -67,6 +67,42 @@ export const MAX_DO_WORDS = 12 + 2;
 export const MAX_ALIAS_WORDS = 4;
 export const MAX_HEADLINE_WORDS = 12;
 
+// The redirect is ONE sentence on the free summary, sitting under the do line. Longer than
+// this and it is competing with the verdict for the most valuable space on the card.
+const MAX_INSTEAD_WORDS = 24;
+
+// Language that turns a fallback into a second verdict.
+const CO_EQUAL = /\b(just as good|equally good|either works|either one|both work|no worse|as good as|just as well|equally fine)\b/i;
+
+/* The things a headline REFUSES, so a redirect can be checked against them.
+
+   A verdict states a standard and names what it is standing against — "Wild. Farmed is a
+   different fish", "Whole produce. Pre-cut costs more". The second half is the refusal, and
+   a redirect that names it is offering the rejected thing back. Distinctive words only:
+   grammar and the subject noun are shared by construction and carry no signal. */
+function refusedTerms(headline) {
+  const text = String(headline || '');
+  // Everything after the first sentence break is where the refusal lives; the first
+  // sentence is the STANDARD.
+  const [standard = '', ...rest] = text.split(/[.;]/);
+  const words = (t) =>
+    t.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/).filter(Boolean);
+
+  /* ⚠️ A WORD IN BOTH CLAUSES IS THE SUBJECT, NOT THE REFUSAL, and dropping this makes the
+     check fire on correct cards. `beef_grassfed_vs_grainfed` reads "Grass-fed and
+     grass-finished. Grass-fed alone is still a feedlot finish" — "grass" sits in the
+     standard AND in the thing being refused, so a redirect naming grass-finished ground
+     beef (which fully MEETS the standard, just in a cheaper cut) would be rejected as a
+     lesser version of what the headline turned down. The refusal is only ever the words the
+     standard does not also claim. */
+  const inStandard = new Set(words(standard));
+  return [...new Set(
+    words(rest.join(' ')).filter(
+      (w) => w.length >= 5 && !GRAMMAR.has(w) && !NEUTRAL.has(w) && !inStandard.has(w)
+    )
+  )];
+}
+
 /* ═══════════════════════════ Copy hygiene ═══════════════════════════ */
 
 // AMERICAN SPELLING AND TYPOGRAPHIC PUNCTUATION, on every card.
@@ -795,6 +831,66 @@ export function lintCard(card) {
         'card names the tier any more, so the phrase points at nothing. Say what the claim ' +
         'IS about this food instead.'
     );
+  }
+
+  /* ═══════ `instead` — the free redirect, and the ways it goes wrong ═══════
+
+     THE FIELD EXISTS BECAUSE THE REDIRECT WAS PAID. It lived in `watch_out`, so the shopper
+     who could not afford the standard was the one who could not read what to buy instead.
+     Moving it free fixes that and opens two new failure modes, both of which this catches,
+     because a dedicated field is the likeliest place for each of them to appear.
+
+     ⚠️ ONE: IT NAMES A LESSER VERSION OF THE SAME THING. That is the defect the field was
+     built to end — "if it is farmed or nothing, buy the farmed" lowers the bar rather than
+     redirecting, and by the salmon card's own argument farmed Atlantic is a different
+     product. An `instead` names a DIFFERENT thing: sardines, canned wild, mackerel.
+     Detected structurally rather than by vocabulary: if the redirect leads with a hedge, or
+     repeats the subject the headline already rejected, it is not an instead.
+
+     ⚠️ TWO: IT READS AS CO-EQUAL. VOICE_SPEC names this as the way the rule breaks from the
+     other end — the moment the second-best sounds like an equal option, the card has two
+     verdicts again and "one verdict per headline" is broken one field down. */
+  const instead = String(card?.instead || '').trim();
+  if (instead) {
+    if (words(instead) > MAX_INSTEAD_WORDS) {
+      fail('INSTEAD_TOO_LONG', `${words(instead)}w > ${MAX_INSTEAD_WORDS}: the redirect is one sentence, not a second card`);
+    }
+
+    // A conditional opening is the hedge relocated. "If it is farmed or nothing…" is the
+    // shape; the redirect states what to buy, it does not negotiate about whether to.
+    if (CONDITIONAL.test(instead.split(/[.,;]/)[0] || '')) {
+      fail(
+        'INSTEAD_HEDGED',
+        `the redirect opens on a condition — "${instead.slice(0, 60)}…". Name what to buy instead; ` +
+          'the condition ("when the standard is not there") is what the field already means.'
+      );
+    }
+
+    // CO-EQUAL LANGUAGE. "just as good", "either works", "equally" — each makes the fallback
+    // a second verdict, which is the failure VOICE_SPEC warns about by name.
+    if (CO_EQUAL.test(instead)) {
+      fail(
+        'INSTEAD_CO_EQUAL',
+        `"${instead.match(CO_EQUAL)[0]}" makes the redirect an equal option. The headline is the ` +
+          'answer; this is what to do when the answer is not there.'
+      );
+    }
+
+    /* ⚠️ THE REDIRECT MAY NOT BE THE THING THE HEADLINE JUST REFUSED. This is the structural
+       version of "a different thing, not a lesser version". The salmon headline rejects
+       "farmed"; a redirect containing "farmed" is the card disagreeing with itself one field
+       apart — which VOICE_SPEC states as the test for whether a fallback clears the floor.
+       Compared on DISTINCTIVE words only, so "salmon" appearing in both is fine and
+       "farmed" in both is not. */
+    const refused = refusedTerms(headline);
+    const echoed = refused.filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(instead));
+    if (echoed.length) {
+      fail(
+        'INSTEAD_ECHOES_REFUSED',
+        `the redirect names ${echoed.map((t) => `"${t}"`).join(', ')}, which the headline rejects. ` +
+          'That is a lesser version of the same thing, not an instead.'
+      );
+    }
   }
 
   if (headline && doLine) {

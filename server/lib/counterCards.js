@@ -379,6 +379,24 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     // renderer to remember.
     cta_item: kind === 'home' ? null : entry.cart_pick || null,
 
+    // WHAT TO BUY WHEN THE STANDARD IS NOT ON THE SHELF, AND IT IS FREE ON PURPOSE.
+    //
+    // The redirect was living in `watch_out`, which is PAID — so a shopper who could not
+    // afford the standard, i.e. exactly the person the redirect is for, was the one who
+    // could not read it. That is the wrong half behind the wall. See VOICE_SPEC, "the best
+    // available".
+    //
+    // ⚠️ NOTHING MOVED FROM PAID TO FREE TO MAKE ROOM FOR THIS. `DEPTH_FIELDS` is untouched
+    // and still seven; this is a NEW authored sentence, so the membership loses nothing it
+    // used to have. That is what makes it a different act from the `tier_note` promotion,
+    // which was a swap.
+    //
+    // Null where the card has no honest redirect, and null is a real answer rather than a
+    // gap to fill: if nothing in or beside the category clears the floor, saying so is the
+    // point. `lintCard` enforces the rest — it must name a DIFFERENT thing, never a lesser
+    // version of the same one, and it may never read as co-equal with the headline.
+    instead: String(entry.instead || '').trim() || null,
+
     // ── expanded ──
     why,
     look_for,
@@ -634,7 +652,10 @@ export function projectAll() {
 }
 
 const CARD_COLUMNS =
-  'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, why, ' +
+  // `instead` is FREE and sits with the summary fields, not the depth. A column missing
+  // from this list is served as undefined, which for a free field means the redirect
+  // silently stops rendering — the same shape as `essential` gating the eight essentials.
+  'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, instead, why, ' +
   'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count, ' +
   // ESSENTIAL IS LOAD-BEARING NOW. It was cosmetic when every card returned everything;
   // with the paid boundary it decides whether a card is served in full, so a column

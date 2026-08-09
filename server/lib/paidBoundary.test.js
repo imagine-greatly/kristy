@@ -21,6 +21,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { DEPTH_FIELDS, summarize, forViewer, projectEntry, projectAll } from './counterCards.js';
 import { nonEmpty } from './testGuards.js';
+import { lintCard } from './counterCardLint.js';
 
 /* THE CORPUS, BOUND AT THE COLLECTION. `projectAll()` returning empty would make every
    assertion below vacuously true and print a green tick where the boundary used to be —
@@ -116,6 +117,63 @@ test('no two cards share a tier sentence, and none points at the tier', () => {
       slugs.length,
       1,
       `${slugs.length} cards share one tier sentence (${slugs.join(', ')}): "${n.slice(0, 60)}…"`
+    );
+  }
+});
+
+/* ═══════ `instead` — the free redirect ═══════
+
+   THE FIELD WAS ADDED BECAUSE THE REDIRECT WAS PAID. It lived in `watch_out`, so the
+   shopper who could not afford the standard was the one who could not read what to buy
+   instead — the wrong half behind the wall. VOICE_SPEC, "the best available".
+
+   ⚠️ Pinned in BOTH directions for the same reason `tier_note` is: free-but-untested is how
+   a field walks back across the boundary in silence, and paid-by-accident here would
+   re-create the exact defect the column was cut for. */
+test('the redirect is FREE, and no depth field moved to make room for it', () => {
+  assert.ok(
+    !DEPTH_FIELDS.includes('instead'),
+    'instead is in DEPTH_FIELDS. The redirect is what a shopper on a budget needs most, ' +
+      'and metering it puts the wrong half behind the wall.'
+  );
+  assert.equal(
+    DEPTH_FIELDS.length,
+    7,
+    'DEPTH_FIELDS changed size while `instead` was added. The redirect is a NEW authored ' +
+      'sentence — nothing may be demoted to pay for it, or this stops being additive and ' +
+      'becomes a rollback of the membership.'
+  );
+  for (const card of METERED) {
+    const out = summarize(card);
+    assert.ok(
+      'instead' in out,
+      `${card.slug} loses its redirect on the free summary — summarize() stripped it.`
+    );
+    assert.equal(
+      out.instead,
+      card.instead,
+      `${card.slug}'s redirect is altered for a free viewer. It is free verbatim or not free.`
+    );
+  }
+});
+
+test('a card that carries a redirect names a DIFFERENT thing, never a lesser version', () => {
+  /* The rule is enforced per-card by lintCard (INSTEAD_ECHOES_REFUSED and friends); this
+     asserts the corpus actually satisfies it, which is the half a per-card linter cannot
+     claim on its own. Guarded at the collection: if no card carries a redirect yet, this
+     test would pass over an empty set and report a boundary nobody is holding. */
+  const withRedirect = CARDS.filter((c) => String(c.instead || '').trim());
+  assert.ok(
+    withRedirect.length > 0,
+    'no card carries `instead`. The column exists and the corpus uses it nowhere, so every ' +
+      'assertion about it is vacuous — see lib/testGuards.js on empty collections.'
+  );
+  for (const card of withRedirect) {
+    const found = lintCard(card).filter((v) => v.code.startsWith('INSTEAD_'));
+    assert.deepEqual(
+      found,
+      [],
+      `${card.slug}'s redirect fails the rule: ${found.map((f) => `${f.code} — ${f.detail}`).join(' | ')}`
     );
   }
 });
