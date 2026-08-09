@@ -81,15 +81,37 @@ tension — the fallback is what makes the undiluted headline affordable. A card
 state its ideal without flinching is a card that has already answered the person who
 cannot find it.
 
-The model is `salmon_wild_vs_farmed`, and it is worth reading as a pair:
+⚠️ **THE FALLBACK MUST CLEAR THE FLOOR, AND WHERE NOTHING IN THE CATEGORY DOES, THE
+FALLBACK IS A DIFFERENT CATEGORY.** This is the half that is easy to get wrong, because
+a lowered bar looks like a fallback and satisfies the rule above without answering anyone.
+
+`salmon_wild_vs_farmed` is the case that exposes it, and it is a **counter**-example rather
+than the model:
 
 ```
-headline    "Wild. Farmed is a different fish, fed and penned."
-watch_out   "If it is farmed or nothing, buy the farmed and cook it well."
+NOT   watch_out: "If it is farmed or nothing, buy the farmed and cook it well."
+        ← lowers the bar. By this card's OWN argument farmed Atlantic is a different
+          product — fed, penned, colored — and the fat profile is what the shopper
+          came for. So this gives no standard AND no alternative.
+DO    watch_out: canned wild salmon, sardines, mackerel — actually wild, and the
+          canned wild runs cheaper than the fresh farmed fillet.
 ```
 
-The verdict gives up nothing. The shopper standing in front of a case with no wild salmon
-in it still knows what to do.
+**The honest fallback is sideways, not down.** And it is almost never "spend more":
+frozen wild beats fresh farmed on price, canned wild beats a fillet, chuck beats a
+mediocre steak, chicken thighs beat grass-fed steak. **Kristy pointing sideways is what
+makes her usable on a budget** — the redirect answers the affordability worry instead of
+creating one.
+
+The test for whether a fallback clears the floor is the card's own argument: **if the
+card spends a paragraph explaining why the second-best is a different product, it cannot
+then recommend the second-best.** That is the card disagreeing with itself one field
+apart.
+
+Where the second-best genuinely does clear the floor, "best available" applies normally
+and stays inside the category — a Tetra Pak of real coconut water is a good answer, so
+the ladder runs glass → carton → PET without leaving the shelf. **The difference is only
+ever whether the fallback is still a good answer.**
 
 **Applies to every card whose ideal is often unavailable**, which is most of the sourcing
 cards. Two failure modes, and the first is the one that hides:
@@ -118,6 +140,55 @@ has been broken from the other end.
 with it. It does not concede that the standard was unreasonable, and it does not moralize
 at someone for ending up on it — that is the same lecture the first rule already forbids,
 relocated one field down.
+
+---
+
+## Global principle: the thing outranks the handling
+
+Same family as "the best available", and it answers the question that one leaves open —
+*the standard is about what?*
+
+**The thing itself outranks how it was handled. Sourcing beats processing beats packaging.**
+
+```
+Air-chilled decides between two birds raised the same way. It does not beat what the
+bird ate or how it lived. Organic, soy-free, pasture-raised with some retained water
+beats conventional grain-fed air-chilled.
+
+Glass decides between two honest coconut waters. It does not beat a real one in
+plastic over a reconstituted one in a carton.
+```
+
+**The lower rungs only order versions that already clear the standard.** That is the whole
+of it, and it is why this sits beside the fallback rule rather than under it: the fallback
+rule says the second-best must still be a good answer, and this one says which axis
+"good" is measured on. A ladder built on the wrong axis sorts confidently and sends the
+shopper to the worse product.
+
+**Every card that answers a processing or packaging question owes the shopper the rank.**
+A shopper who lands on a handling card gets a firm verdict with nothing telling them a
+bigger question sits above it — and a firm verdict is exactly what stops them looking
+further. This is not optional polish; it is what keeps a narrow card from reading as the
+whole decision.
+
+The corpus already does this well in several places, and these are the models:
+
+| card | how it states the rank |
+| --- | --- |
+| `egg_shell_color` | "Buy the cheaper carton and **put the difference into how she was raised**." |
+| `egg_grades_sizes` | "Grade and size **say nothing about the hen**." — in the headline |
+| `rice_arsenic` | "**The variety and the origin do more work than the color.**" |
+| `fresh_vs_previously_frozen_fish` | "**Frozen wild**, without hesitation" — names wild before it names frozen |
+| `oats_steelcut_rolled_instant` | "Plain oats, **any form**" — says outright that the processing rung does not decide |
+
+⚠️ **"Sourcing" means how the thing came to be what it is — not any fact about it.** A
+narrow genetic or cosmetic attribute is not sourcing, and reading it as such would make
+two correct cards wrong. `egg_shell_color` ranks husbandry above shell color, and
+`a2_vs_a1_milk` ranks processing above breed — *"the A2 claim says nothing about
+processing, and processing is the higher-order question"*. Both are right: a breed marker
+and a shell color are facts about the animal, not accounts of how it lived. The hierarchy
+ranks **husbandry, feed, origin and species** above handling, and it does not promote every
+attribute that happens to be biological.
 
 ---
 
