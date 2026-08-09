@@ -248,13 +248,20 @@ export function productMeta(p = {}, barcode = null) {
  * @returns {Promise<{ found:boolean, source:'off'|'vision'|'none', product:object|null, ingredients:string }>}
  *   `ingredients` is a comma-joined string the verdict engine tokenizes; '' when none.
  */
-export async function extractFromBarcode(barcode) {
+export async function extractFromBarcode(barcode, { client } = {}) {
   const code = String(barcode || '').trim();
   if (!code) return { found: false, source: 'none', product: null, ingredients: '' };
 
   // 0. Kristy's own store first. Free, instant, and it holds exactly the products
   //    the public databases don't. Degrades silently to OFF if unavailable.
-  const own = await lookupProduct(code);
+  //
+  // ⚠️ `client` IS INJECTABLE FOR THE SAME REASON `lookupProduct`'S IS: the claim about the
+  // cache path is a SEQUENCE, and a test that rebuilt this function's mapping itself would be
+  // verifying a composition the product never performs — the props-supplied harness defect
+  // (CLAUDE.md, Verifying). A store hit returns before any fetch, so driving THIS function
+  // with a fake store exercises the real call site and needs no network. Defaults to the real
+  // client, so every caller in the app is untouched.
+  const own = await lookupProduct(code, client ? { client } : undefined);
   if (own && isReadableIngredientList(own.ingredients) && !looksNonEnglish(own.ingredients)) {
     return {
       found: true,
