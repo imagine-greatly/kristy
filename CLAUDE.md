@@ -1383,6 +1383,36 @@ was invisible until something rendered one**
 
 ## Open items
 
+- 🐞 **THE SEAL GATE IS LIVE BUT THE CACHE PATH BYPASSES IT, AND CLOSING THAT NEEDS A
+  MIGRATION.** Shipped and verified on production 2026-08-09: a panel-less product returns
+  `stamp:false` with the withheld read, a declared panel is untouched. **But it only fires
+  where the nutrition came from OFF.** `POST /api/guest/scan/barcode` on `3017620422003`
+  answered `source:"store"` with `nutrition:null` — `scanned_products` stores ingredients and
+  **no nutrition at all**, so a product already in our own catalog resolves to `unknown` and
+  `unknown` withholds nothing. That is the correct default and it means **the self-heal loop
+  reopens the hole for every product it caches**, which over time is most of them.
+  **The fix is a `nutrition_panel` column on `scanned_products`, written by `retainProduct`
+  when the OFF read had one** — and like `category` it **cannot be backfilled**, because the
+  figure was on a response nobody kept. Same clock, same shape, and it should go in the SAME
+  migration as `product_category.sql` rather than as a third one.
+  ⚠️ **The web client keeps the false seal regardless**: `client/src` is frozen and never
+  forwarded `nutrition` either. That is accepted — the web client is the behavioural spec,
+  not the product.
+
+- ✅ **FIXED 2026-08-09 — the gold seal no longer reaches a bottle of dish soap.**
+  Kept here rather than deleted because the mechanism is load-bearing and the CACHE half above
+  is still open. `stamp` gains a third withholding term, `unverifiedAsFood`, on the same terms
+  as `sugarHeavy` and `hardLines`: it can never grant a seal, escalate a tier, add a flag or
+  manufacture a swap. `approvedRead` goes **null** when it fires (a client cannot fail closed
+  on a field it has never heard of), `unverifiedRead` takes its place, and `selectCardIsm`
+  returns nothing at all — every ism in that file is a claim about food.
+  ⚠️ **THE CLIENT NEVER HANDED THE FIELD BACK, AND THAT NEARLY MADE ALL OF IT DECORATION.**
+  The server computes `nutritionPanel` on the barcode door and judges on the verdict door;
+  iOS's `VerdictRequest` declared a `NutritionInput` and **populated it at neither call site**.
+  Correct server, correct decoder, correct call sites, no gate — the findings family, found by
+  reading the client after the server was green. Fixed in `kristy-ios` the same day.
+  **Old statement of the defect, kept for the mechanism:**
+
 - 🐞⚠️ **THE GOLD SEAL REACHES A BOTTLE OF DISH SOAP, AND IT IS LIVE.** Driven against
   production 2026-08-09. `POST /api/guest/verdict` on **`0030772117484` (Dawn Platinum Plus
   Powerwash)** — a real barcode `/api/guest/scan/barcode` resolves `found: true` from OFF,
