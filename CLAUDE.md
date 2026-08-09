@@ -936,6 +936,30 @@ was invisible until something rendered one**
   forever". `coverageStats` treats a null count as unavailable, and reachability checks use
   a real `select`, never a head.
 
+**The ambient line — fixed per surface, never rotated** (ruled 2026-08-09)
+
+- **A LINE THAT CHANGES EVERY LOAD IS DECORATION. A FIXED LINE BECOMES WHAT THAT SURFACE
+  SAYS.** The web client picks randomly from a shared pool of three on every mount
+  (`nextAmbientIsm`, `AmbientIsm.jsx`), which makes the line a property of the *render*
+  rather than of the *surface* — a fortune cookie. Fixed, it reads like a person who says
+  the same true thing about the same place every time.
+- **NO SHARED POOL. Each surface that earns one gets its OWN line, about what THAT surface
+  is for.** A pool is what forces the lines to be generic enough to fit anywhere, which is
+  exactly what makes them feel like filler wherever they land.
+- **They earn the space by being rare, and by sitting where there is nothing else to do.**
+  A shopper mid-aisle does not want an aphorism; someone looking at an empty Haul does.
+  ⚠️ **So the test is not "is this surface quiet" but "is there an action here"** — the empty
+  dashboard is the quietest surface in the app and must NOT have one, because the one thing
+  a shopper is there to do is on it.
+- ⚠️ **NEVER in shop mode, on the scan sheet, or on any surface a shopper reads while
+  standing in a store.** Transient states are worse than busy ones: a line nobody finishes
+  reading before it disappears is decoration that also wasted the wait.
+- **The three existing lines are WEB-ONLY and the server's copy of them is dead.**
+  `AMBIENT` is exported from `server/lib/education.js` and imported by nothing; the lines
+  that ship come from the frozen `client/src/lib/education.js`. iOS renders **none** — it
+  renders only the *contextual* (triggered) isms on the scan card, which are a different
+  thing and are not covered by this rule.
+
 **Demo and failure**
 - **Demo must never fabricate, and never under-report.** It once silently engaged on a
   misconfigured production build and served a fixture for every scan; separately, hand-
