@@ -161,7 +161,7 @@
   like horizontal overflow. Use `Emulation.setDeviceMetricsOverride`.
 - Measure, don't eyeball: geometry claims ("equal weight") should be read off
   `getBoundingClientRect`, not judged from a screenshot.
-- `cd server && npm test` — **627 on `main` + the held stack**, measured 2026-08-10. `origin/main`
+- `cd server && npm test` — **644 on `main` + the held stack**, measured 2026-08-10. `origin/main`
   runs that minus `trips.test.js`'s import half, which is held; **that second number is
   deliberately not written down any more.** A bare count here has been stale five times (it read
   483 while the suite ran 613, then 618/607 while it ran 623), and half of every stale pair was

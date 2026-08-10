@@ -244,7 +244,7 @@ made during iOS work publishes unreviewed, on push, because it looked small.
 
 ⚠️ **THE THIRD REASON USED TO BE "NODE IS NOT INSTALLED ON THIS MACHINE" AND IT IS NO LONGER
 TRUE** (`brew install node`, 2026-08-09; measured here 2026-08-10 as **v26.7.0**, running the
-full server suite at **627 pass / 0 fail**). **The rule is unchanged and the reason was never
+full server suite at **644 pass / 0 fail**). **The rule is unchanged and the reason was never
 only that tests could not run** — it is that a route change riding in on an iOS prompt gets no
 scope and no review before it deploys. Server changes are *testable* now; they are still
 separately proposed and separately approved.
@@ -843,7 +843,7 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **627 pass on `main` + the held stack**, measured 2026-08-10. A bare count here has been stale five times — **record only a number you actually ran.** |
+| `cd server && npm test` | **644 pass on `main` + the held stack**, measured 2026-08-10. A bare count here has been stale five times — **record only a number you actually ran.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. **Exits non-zero on a wrong match**; a miss only reports. Run after any alias edit, `perimeterId` change or matcher change. |
