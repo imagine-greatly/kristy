@@ -1055,6 +1055,25 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   (an unsweetened tea is not water) in a vocabulary that gates a fail-closed exemption. Separately
   proposed: it changes what `category` is written for products well beyond water, and that field is
   what part 3 reads. Account and the measured tag list are in that file.
+- 🐞 ⏳ **OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER, SO THE PARSE AND THE TEXT CAN BE
+  DIFFERENT DOCUMENTS** (measured 2026-08-10). `ingredients_lc` names the language OFF actually
+  parsed. Cristaline `3274080005003`: `ingredients_lc = "fr"`, and OFF's parse is **one**
+  ingredient — `en:spring-water`, CIQUAL 18066 — while `pickEnglishText` returns
+  `ingredients_text_en`, which a contributor filled with a **nine-line mineral table**
+  (`"Eau de source Noemie ⏎ Calcium Ca2+ 113 mg/l ⏎ …"`). The French field holds the correct
+  `"Eau de source"`. So the record contains a right answer and a wrong one, in different
+  language fields, and the code reads the wrong one **by preferring English**, which is the
+  correct preference for every other purpose.
+  **THIS IS THE TWO-LISTS DISAGREEMENT ON A NEW AXIS, AND `sameVerdict` IS THE PRECEDENT** —
+  same shape as the Heinz live-vs-imported defect, same fix available (score both, compare the
+  tier, refuse to guess when they differ), except the second document here is a different
+  LANGUAGE field rather than the raw import. `pickImportedText` returns `''` for this product,
+  so the existing guard never engages.
+  ⚠️ **IT IS NOT THE PANEL-GATE TRIGGER AND MUST NOT BE FOLDED INTO IT.** It does not catch
+  Sidi Ali `6111035002175`, where `ingredients_text_fr` is the mineral list too — parse and text
+  agree there and are wrong together. Separately proposed; it changes what text is read for
+  products well beyond water.
+
 - ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE** (ruled 2026-08-10). `buildBaseline` is
   written, tested and correct with a permanently empty input; `GuestTripBook.archive` holds exactly
   the input shape it wants. Run that computation **in the client** for a guest with no account, no
