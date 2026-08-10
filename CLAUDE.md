@@ -239,10 +239,18 @@ may not change as a side effect of iOS work.**
   with its evidence, and waits.
 
 **Why a rule and not a preference:** `main` here **auto-deploys to production** with no staging
-gate; it carries **deliberately unpushed commits** (see **Open items**); and **Node is not
-installed on the machine this work happens on**, so a server change made during iOS work cannot
-be run, cannot be tested, and publishes on push. Those three compose into an unreviewed,
-untested change going live because it looked small.
+gate, and it carries **deliberately unpushed commits** (see **Open items**) — so a server change
+made during iOS work publishes unreviewed, on push, because it looked small.
+
+⚠️ **THE THIRD REASON USED TO BE "NODE IS NOT INSTALLED ON THIS MACHINE" AND IT IS NO LONGER
+TRUE** (`brew install node`, 2026-08-09; measured here 2026-08-10 as **v26.7.0**, running the
+full server suite at **623 pass / 0 fail**). **The rule is unchanged and the reason was never
+only that tests could not run** — it is that a route change riding in on an iOS prompt gets no
+scope and no review before it deploys. Server changes are *testable* now; they are still
+separately proposed and separately approved.
+📎 **`kristy-ios/CLAUDE.md` had already corrected this and this copy had not** — the two-copies
+divergence that produced the category-capture error, caught here by running the thing the
+sentence said was impossible. If you change one, change both.
 
 **What is NOT covered by this and stays ordinary work:** `docs/`, this file, `supabase/*.sql`
 migrations that have not been applied, and anything explicitly scoped as server work in its own
@@ -893,9 +901,23 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   about the product, so on a bottle of water it is *odd* rather than *false*. Do not "fix" this by
   making the sentence more specific about the product.** The real fix is a second signal —
   `product_category`, which is **on `origin/main`, not held** (corrected 2026-08-10; see the
-  category-capture entry below). ⚠️ **So the fix's code is shipped and the defect is still live**,
-  which means what is missing is the wiring, the migration, or both — start with the migration
-  question in that entry.
+  category-capture entry below). ⚠️ **So the fix's code is shipped and the defect is still live** —
+  and the reason is now measured rather than guessed at.
+  ⚠️ **IT IS THE WIRING, NOT THE MIGRATION, AND THE SIGNAL WAS NEVER GOING TO BLOCK THIS ON ITS
+  OWN** (traced 2026-08-10). Two gaps, both real, and the second is the load-bearing one:
+  **(a)** `PRODUCT_CATEGORIES` has **no water value**, so water lands in `other` — measured by
+  running the live OFF record for `6111035002175` through `categoryFromAisle`: `waters`,
+  `spring waters`, `mineral waters`, `sparkling water` and `beverages` **all** return `other`.
+  **(b)** ⚠️ **`category` IS WRITE-ONLY.** `categoryFields()` is called from exactly one place —
+  `productStore.js:202`, the retain path — and `verdictEngine.js:727` computes `unverifiedAsFood`
+  from `nutritionPanel` alone and **never sees a category**. So the field is collected correctly
+  and read by nothing, and adding `water` alone would leave the row right and unread.
+  📋 `docs/CATEGORY-CAPTURE.md` said this itself — *"it does not touch the verdict engine … nothing
+  here can change a verdict"* — correct scoping when written, and also the statement that the fix
+  named here lies outside what was built. **Two documents one directory apart, each locally
+  coherent.** ⏸ **The widening + wiring is specced and HELD for the server queue** in that file,
+  including why part 3 is an explicit allowlist and never a general "trust the panel if we know
+  the category": that guard fails closed on purpose and `other` must never be exempt.
 - 🐞 **THE DYED DAWN IS STILL READ AS FOOD, AND `unverifiedAsFood` IS STRUCTURALLY UNABLE TO REACH
   IT.** `0030772006023` comes back `swap_recommended` on `yellow_5`/`blue_1`, and the gate requires
   `tier === 'approved'` (`verdictEngine.js:689`) — so **a product is protected from the food
