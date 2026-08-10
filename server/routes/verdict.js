@@ -124,6 +124,18 @@ const UNREADABLE_MSG = "Nothing readable in that ingredient list. Photograph the
 const swapForTier = (tier, swap) =>
   tier === 'approved' || tier === 'approved_with_note' ? null : swap;
 
+// ⚠️ **A SWAP IS A FOOD RECOMMENDATION, SO IT GOES WHEN NOTHING CONFIRMS THIS IS FOOD** —
+// on EVERY tier, which is the half of the decoupling that lives out here. "Try this instead"
+// on a bottle of dish soap is Kristy recommending a groceries aisle for a cleaning product,
+// and the flagged tiers are exactly the ones that used to be exempt from the check.
+//
+// ⚠️ **ONE HELPER RATHER THAN FOUR INLINE TERNARIES, BECAUSE THIS FILE HAS ALREADY LOST A
+// FIELD ACROSS THESE FOUR SEND SITES.** `unverifiedRead` was forwarded by three of them and
+// dropped by the fourth — every line individually correct, the field silently absent at the
+// end of one path (see the comment on the `!personalize` branch). A rule that has to be
+// retyped four times is a rule that will be applied three times.
+const readSwap = (unverifiedAsFood, swap) => (unverifiedAsFood ? null : swap);
+
 // The withheld read (Task B #3): Kristy holding back her last sentence, not an ad.
 // ONE line where the personalized note would be, paired in-card with the upgrade /
 // sign-in affordance. Same line for authed-gated and guests — only the CTA differs.
@@ -169,7 +181,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // nothing found it. Fixed rather than filed, because it is one word and the branch
       // goes live the day sign-in does.
       return send(res, {
-        tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education,
+        tier, stamp, universalLayer, affirmationLayer, note: null, swap: readSwap(unverifiedAsFood, genericSwap(matched, tier)), education,
         needsGoal: true, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy,
       }, { readComplete, barcode });
     }
@@ -191,7 +203,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       // call, and a line the user drew is a promise, not a member benefit.
       const { tier, stamp, universalLayer, affirmationLayer, affirmed, matched, focus, hardLines, approvedRead, unverifiedRead, unverifiedAsFood, sugarHeavy } = evaluateIngredients(ingredients, { nutrition, hardLines: nonNegotiables });
       const education = selectCardIsm(ismContext({ matched, tier, ingredientCount: count, focuses: [], unverifiedAsFood }));
-      return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
+      return send(res, { tier, stamp, universalLayer, affirmationLayer, note: null, swap: readSwap(unverifiedAsFood, genericSwap(matched, tier)), education, gated: true, upsell: UPSELL, signals: focus.signals, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
     }
 
     // PERSONALIZED — a member, or one of the free tastes: full focus escalation +
@@ -218,7 +230,7 @@ verdictRouter.post('/verdict', requireAuth, userRateLimit, async (req, res) => {
       ? null
       : Math.max(0, FREE_NOTE_LIMIT - (freeNotesUsed + (consumesFree && !skipNote ? 1 : 0)));
 
-    return send(res, { tier, stamp, universalLayer, affirmationLayer, note, swap: swapForTier(tier, swap), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
+    return send(res, { tier, stamp, universalLayer, affirmationLayer, note, swap: readSwap(unverifiedAsFood, swapForTier(tier, swap)), focus, signals: focus.signals, education, gated: false, freeTastesLeft, ingredientsRead: count, hardLines, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
   } catch (err) {
     console.error(
       `[kristy] /api/verdict error (user ${req.user.id}) @ ${new Date().toISOString()}:`,
@@ -276,7 +288,7 @@ guestVerdictRouter.post('/verdict', (req, res) => {
   // Same gated shape as the free-authed path so the card surfaces the sign-in nudge
   // where the personalized read would be (the guest scan funnel, M-2). The generic
   // KB swap is free for guests too (field read, no model call).
-  return send(res, { tier, stamp, universalLayer, affirmationLayer, hardLines, note: null, swap: genericSwap(matched, tier), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
+  return send(res, { tier, stamp, universalLayer, affirmationLayer, hardLines, note: null, swap: readSwap(unverifiedAsFood, genericSwap(matched, tier)), education, gated: true, upsell: GUEST_UPSELL, ingredientsRead: count, approvedRead, unverifiedRead, sugarHeavy }, { readComplete, barcode });
 });
 
 export default verdictRouter;

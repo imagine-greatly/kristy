@@ -107,8 +107,18 @@ function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, ser
     product: { barcode: code, name: productName || null, brand: brand || null, image: null, aisle: '' },
     ingredients: joined,
     // Shaped exactly like the OFF path's nutrition so /verdict and the engine cannot
-    // tell which door the number came in through.
-    nutrition: addedSugar == null ? null : { sodium: null, addedSugar, fiber: null, caffeine: null },
+    // tell which door the number came in through — which now includes the category, read
+    // off the package by the vision call that was already looking at it. It is the same
+    // field the retain a few lines up stores; sending it too is what lets a PHOTOGRAPHED
+    // water reach the seal gate's exemption, rather than only an Open Food Facts one.
+    //
+    // ⚠️ `nutritionPanel` IS STILL DELIBERATELY ABSENT HERE. The photo path discards
+    // calories on purpose, so this door has not asked and must report `unknown`, never
+    // `absent` — a two-state read would strip the seal off every product a shopper
+    // photographs. Adding a category does not change what this door knows about a panel.
+    nutrition: addedSugar == null && !category
+      ? null
+      : { sodium: null, addedSugar, fiber: null, caffeine: null, category: category ?? null },
     // Carried so /verdict can withhold approval on a half-read list.
     ...(panel === 'partial' ? { partialRead: true } : {}),
   };

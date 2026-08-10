@@ -83,7 +83,7 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
   try {
     let { data, error } = await client
       .from(TABLE)
-      .select(`${LOOKUP_COLUMNS}, nutrition_panel`)
+      .select(`${LOOKUP_COLUMNS}, nutrition_panel, category`)
       .eq('barcode', code)
       .maybeSingle();
 
@@ -134,6 +134,12 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
       // downstream, which withholds nothing. The caller decides what to do with it; this
       // function does not guess on the store's behalf.
       nutritionPanel: PANEL_VALUES.has(data.nutrition_panel) ? data.nutrition_panel : null,
+      // ⚠️ READ BACK FOR THE SAME REASON `nutritionPanel` IS: a CACHED product must be able to
+      // answer the seal gate, or the gate works once and then stops working the moment the
+      // self-heal loop starts doing its job. Both columns arrive in the same migration and both
+      // are covered by the retry above, so an unmigrated table degrades identically for the
+      // pair — to null, which is not exempt, which withholds nothing it did not already.
+      category: data.category || null,
     };
   } catch (err) {
     console.warn('[kristy] product store lookup skipped:', err?.message || err);

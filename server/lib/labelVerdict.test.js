@@ -373,9 +373,22 @@ test('it withholds and can NEVER grant, escalate, flag or swap', () => {
   const same = evaluateIngredients('Water, Red 40, sugar', { nutrition: { nutritionPanel: 'present' } });
   assert.equal(flagged.tier, same.tier, 'the gate moved a TIER');
   assert.deepEqual(flagged.universalLayer.map((x) => x.id), same.universalLayer.map((x) => x.id));
-  assert.equal(flagged.unverifiedAsFood, false, 'only an approved product can be unverified');
   // And it can never turn a withheld seal INTO one.
   assert.equal(flagged.stamp, false);
+
+  // ⚠️ **THIS ASSERTION USED TO READ `unverifiedAsFood === false`, "only an approved product
+  // can be unverified", AND THAT WAS THE DEFECT** (reversed 2026-08-10). Conditioning the gate
+  // on `tier === 'approved'` meant a product was protected from the food treatment only by
+  // CONTAINING A FLAGGED FOOD INGREDIENT — so the dyed Dawn (`0030772006023`), which matches
+  // `yellow_5` / `blue_1`, was read as food while a cleaner detergent was caught. The
+  // predicate now asks its question on every tier.
+  assert.equal(flagged.unverifiedAsFood, true, 'the tier must not be able to protect a non-food');
+
+  // ⚠️ **WHAT MUST NOT CHANGE, AND IT IS THE LINE ABOVE THIS ONE TOO: FLAGS STAND.** A matched
+  // concern was really printed off the list that was really there, so it can never be false
+  // whatever the thing turns out to be. Withholding is about refusing to ENDORSE, never about
+  // silencing a warning.
+  assert.ok(flagged.universalLayer.length > 0, 'the warning survives the withholding');
 });
 
 test('the endorsement is replaced, not decorated — approvedRead goes null', () => {
@@ -395,9 +408,17 @@ test('the withheld read leads with the STANDARD, never with the shortfall', () =
   const v = evaluateIngredients(DETERGENT, { nutrition: { nutritionPanel: 'absent' } });
   const why = v.unverifiedRead.why;
 
-  // It still names the missing thing, in the product's own word — the shopper is holding the
-  // box and `panel` is what is written on it.
-  assert.match(why, /\bpanel\b/i, 'it names what is missing, concretely');
+  // ⚠️ **THIS USED TO REQUIRE THE WORD `panel` AND THE REQUIREMENT IS NOW REVERSED**
+  // (2026-08-10). Naming the missing thing concretely was right while a missing panel was the
+  // ONLY way to reach this sentence. It is not any more: the predicate also fires on the LIST,
+  // and a bottled water declaring 0 kcal has `nutritionPanel: 'present'` (0 is not null) while
+  // its ingredient text is a mineral analysis. "This one has no panel to read" would then be a
+  // FALSE STATEMENT ABOUT THE PRODUCT, printed in Kristy's voice.
+  //
+  // **A sentence that can be false is worse than one that is vaguer.** Pinned absent rather
+  // than merely pinning the replacement present, so the concrete clause cannot quietly return
+  // the next time someone finds the sentence vague.
+  assert.doesNotMatch(why, /\bpanel\b/i, 'it may not name a shortfall that is not always the reason');
 
   // ⚠️ THE DIRECTION IS THE POINT. Opening on the absence ("No nutrition panel on this one")
   // frames a bottle of Dawn as having FALLEN SHORT of a bar it was never in the running for,

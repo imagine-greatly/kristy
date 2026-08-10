@@ -383,8 +383,104 @@ export function buildUnverifiedRead(rawIngredientList) {
   const tokens = tokenizeIngredients(rawIngredientList);
   return {
     checked: tokens.length === 1 ? 'One ingredient.' : `Read all ${tokens.length}.`,
-    why: 'The seal is earned on a food label, and this one has no panel to read.',
+    // ⚠️ THE SECOND CLAUSE USED TO NAME THE PANEL AND THAT BECAME FALSE. It read "...and this
+    // one has no panel to read", which was true while a missing panel was the only way to get
+    // here. It is not any more: `readsAsNutrientPanel` fires on the LIST, and a bottled water
+    // declaring 0 kcal has `nutritionPanel: 'present'` (0 is not null) while its ingredient
+    // text is still a mineral analysis. That sentence would then be a false statement about
+    // the product, printed in Kristy's voice, on the surface built to be trusted.
+    //
+    // ONE SENTENCE, ONE CLAIM, AND IT STATES THE STANDARD RATHER THAN THE PRODUCT. That is
+    // also what keeps it survivable on a bottle of water: it claims nothing about what the
+    // thing is, so at worst it is odd rather than wrong. **A sentence that can be false is
+    // worse than one that is vaguer** — and a second sentence for a second reason is how a
+    // voice becomes a taxonomy, which is why every input lands on this one line.
+    why: 'The seal is earned on a food label, and nothing here confirms one.',
   };
+}
+
+// ── ONE PREDICATE, MULTIPLE INPUTS: nothing confirms this is a food label we read ────────
+//
+// Three separate gates used to be three separate conditions that happened to agree. They are
+// one question — *does anything confirm this is food we actually read?* — asked of whatever
+// evidence exists, and they are collected here so a fourth input has one place to land.
+//
+// ⚠️ **THE PANEL VOCABULARY IS A CONTENT RULE AND IT IS TAKEN KNOWINGLY.** The comment on
+// `unverifiedAsFood` says the evidence must come from outside the list, and provenance was
+// looked for first (2026-08-10): Open Food Facts has **no composition or mineral-analysis
+// field at all** — 261 keys on the Sidi Ali record, one ingredients text per language and
+// nothing else. `minerals_tags` looks like the answer and is downstream of the same string
+// (Cristaline's English text IS a mineral table and its `minerals_tags` is empty, because OFF
+// parsed the French field). `product_type` calls Dawn dish soap `food`. There is no
+// provenance to stand on, so this is a content rule by decision rather than by default.
+//
+// WHAT IT TESTS IS VOCABULARY, NOT PLAUSIBILITY. Not "could these be food" — that needs a
+// food lexicon, and refusing to build one is why the KB is the only thing that names foods.
+// It asks whether the list is written in the words of a NUTRITION PANEL: the names of things
+// reported *in* a panel rather than *on* an ingredient list. Sidi Ali's seven tokens are all
+// of them; Nutella's eight are none.
+const NUTRIENT_NAMES = new Set([
+  'sodium', 'calcium', 'magnesium', 'potassium', 'bicarbonates', 'sulfates', 'sulphates',
+  'chlorides', 'nitrates', 'silica', 'fluoride', 'fluorides', 'iron', 'zinc', 'phosphorus',
+  'manganese', 'selenium', 'copper', 'iodine', 'chromium', 'molybdenum', 'minerals',
+]);
+
+// ⚠️ **THE MINERAL COMPOUNDS THAT ARE SOLD AS FOOD, EXCLUDED DELIBERATELY.** Salt is sodium
+// chloride, baking soda is sodium bicarbonate, cream of tartar is potassium bitartrate. Each
+// is a real single-ingredient food whose entire label is a mineral name, so a rule reading
+// only the vocabulary withholds the seal from all three.
+//
+// **THIS IS A DENY-SET RATHER THAN AN ABSENCE, ON PURPOSE.** Leaving them merely unlisted
+// protects them only until somebody widens `NUTRIENT_NAMES` — and widening it is exactly the
+// maintenance this rule invites, because the next mineral water will name an ion nobody
+// listed. A token here makes the whole predicate stand down, so the protection survives the
+// widening instead of being silently spent by it.
+//
+// Verified: none of Sidi Ali's seven tokens is one of these, so the exclusion costs nothing
+// on the case the rule exists for. `readsAsNutrientPanel.test.js` pins both halves.
+const MINERAL_FOODS = new Set([
+  'salt', 'sea salt', 'table salt', 'rock salt', 'kosher salt', 'iodized salt',
+  'sodium chloride', 'sodium bicarbonate', 'baking soda', 'bicarbonate of soda',
+  'cream of tartar', 'potassium bitartrate',
+]);
+
+/** Is this ingredient text a nutrition panel wearing an ingredient list's clothes? */
+export function readsAsNutrientPanel(tokens) {
+  const list = (Array.isArray(tokens) ? tokens : []).map((t) => String(t || '').trim().toLowerCase()).filter(Boolean);
+  if (list.length === 0) return false;
+  if (list.some((t) => MINERAL_FOODS.has(t))) return false;
+  return list.every((t) => NUTRIENT_NAMES.has(t));
+}
+
+// ⚠️ **THE EXEMPTION IS AN EXACT-MATCH ALLOWLIST AND NEVER `categoryFromAisle`'S SUBSTRING
+// MATCH.** This is the one input that WEAKENS a fail-closed gate — it lets a product past —
+// so it gets the strictest possible reading of its own value. `other` and `NULL` are both
+// non-exempt permanently and by construction: they are simply not in the set, and the live
+// table is the argument. Of its four `nutrition_panel: 'absent'` rows, two are the waters and
+// two are DISH SOAP, so any rule shaped like "we know the category, so trust the panel"
+// exempts dish soap.
+const FOOD_CATEGORIES = new Set(['water']);
+
+/**
+ * NOTHING CONFIRMS THIS IS A FOOD LABEL WE ACTUALLY READ.
+ *
+ * ⚠️ **THE CONTENT SIGNAL IS AN `OR`, NOT A THIRD `AND`, AND THAT IS THE WHOLE STRUCTURE.**
+ * Sidi Ali *is* water and water *is* food, so the category exemption vouches for it
+ * correctly — both product-level inputs pass. The misread is not about the product, it is
+ * about the DOCUMENT: a seven-token mineral analysis is not that product's ingredient list,
+ * so the engine never read a label at all, and `approved` on it is wrong before the seal is
+ * ever reached. ANDing the content signal in would make it unreachable in precisely the case
+ * it exists for.
+ *
+ * `unknown` still withholds NOTHING — the panel test stays `=== 'absent'` and is never
+ * written as `!== 'present'`, because the photo path discards calories and a two-state read
+ * would strip the seal off every product a shopper photographs.
+ */
+export function nothingConfirmsFood({ tokens = [], nutrition = null } = {}) {
+  const category = String(nutrition?.category ?? '').trim().toLowerCase();
+  const noProductEvidence = nutrition?.nutritionPanel === 'absent' && !FOOD_CATEGORIES.has(category);
+  const noLabelEvidence = readsAsNutrientPanel(tokens);
+  return noProductEvidence || noLabelEvidence;
 }
 
 // ── Added sugar, by QUANTITY ─────────────────────────────────────────────────
@@ -708,6 +804,14 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
   // measured live on Dawn Platinum Plus Powerwash, with the `clean_label` ism printed under
   // it about dipropylene glycol butyl ether.
   //
+  // ⚠️ **THAT BARCODE CAN NO LONGER BE RE-MEASURED, AND A FUTURE SESSION WILL TRY.**
+  // `0030772117484` returns `status: 0` from Open Food Facts as of 2026-08-10 — the record is
+  // gone, not merely thin. **Its absence is not evidence that anything was fixed**, and no
+  // result for it may be asserted from a lookup that now legitimately answers "not found".
+  // The live case that IS still measurable is the dyed Dawn, `0030772006023`, which is a
+  // different product and a different failure (it MATCHES `yellow_5` / `blue_1`, so it was
+  // never the clean-detergent case at all — it was the one the tier condition below let past).
+  //
   // ⚠️ **THE COLLISION IS DESIGNED, WHICH IS WHY NO SCORING FIX REACHES IT.** `CLAUDE.md`
   // records as load-bearing that whole-food fats are clean BECAUSE the KB holds no entry for
   // them, with a regression test guarding it. Matching nothing is the signature of the
@@ -724,7 +828,22 @@ export function evaluateIngredients(rawIngredientList, options = {}) {
   // wrongly-refused question tells a shopper they do not belong. **Here a wrong approval is a
   // gold seal on a cleaning product and a wrong refusal is a missing endorsement.** The
   // analogy is the most likely way to get this wrong.
-  const unverifiedAsFood = tier === 'approved' && nutrition?.nutritionPanel === 'absent';
+  //
+  // ⚠️ **`tier === 'approved'` IS GONE FROM THIS LINE AND ITS ABSENCE IS THE FIX** (ruled
+  // 2026-08-09, built 2026-08-10). Conditioning on the tier meant a product was protected from
+  // the food treatment only by CONTAINING A FLAGGED FOOD INGREDIENT, which is exactly
+  // backwards: the dyed Dawn (`0030772006023`) came back `swap_recommended` on `yellow_5` /
+  // `blue_1` and was therefore read as food, while a cleaner detergent was caught. The
+  // predicate now asks its question of every tier.
+  //
+  // ⚠️ **AND IT MUST NEVER SUPPRESS `universalLayer`. FLAGS STAND.** A matched concern was
+  // really printed off the list that was really there, so it can never be false, whatever the
+  // thing turns out to be. **Withholding is about refusing to ENDORSE, never about silencing a
+  // warning** — see the return, where the layer is built unconditionally.
+  //
+  // The measured cost is not zero and was accepted: a flagged real food with a thin OFF record
+  // loses its verdict WORD while keeping every flag.
+  const unverifiedAsFood = nothingConfirmsFood({ tokens: tokenizeIngredients(rawIngredientList), nutrition });
 
   // The user drew this line themselves, so a product that crosses it is not
   // "approved" for them no matter how clean the rest of the label is. The seal

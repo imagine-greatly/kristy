@@ -122,6 +122,33 @@ const OFF_AISLE_PATTERNS = [
      Why it matters more than a mis-shelved row: the exemption this vocabulary is FOR
      (part 3, held) keys on the category to let a product past a fail-closed panel gate.
      A watermelon landing in `water` is not a filing error there, it is a wrong approval. */
+  /* 🐞 ⚠️ **READ THIS BEFORE FIXING THE `unsweetened beverages` DEFECT. WIDENING WATER HERE
+     REMOVES A CATCH THAT IS CURRENTLY FIRING IN PRODUCTION.**
+
+     The known defect: `aisleFromCategories` takes the LAST `categories_tags` entry as the most
+     specific, and it is not a specificity hierarchy. Cristaline `3274080005003` runs
+     `… waters → spring waters → unsweetened beverages`, so it lands in `other` while carrying
+     two tags that map to `water`. The fix is to map from the TAG LIST, most specific *mapped*
+     hit. That fix is correct and it is queued.
+
+     ⚠️ **WHAT IT ALSO DOES, MEASURED 2026-08-10.** Cristaline is `approved` today on an
+     ingredient text that is a nine-line MINERAL TABLE — a contributor filled
+     `ingredients_text_en` with it while the French field holds the correct "Eau de source".
+     It is caught right now only because its category resolves to `other`, so the panel gate's
+     product-level half fires. Give it `water` and the exemption vouches for it — and the
+     content half does NOT pick it up, because its tokens are the mangled dump with units and a
+     brand name (`"eau de source noemie calcium ca2+ 113 mg/l…"`), not the bare nutrient names
+     `readsAsNutrientPanel` tests for. Measured: `FIRES = false`. **An approved gold-seal
+     candidate, un-caught by a fix that is right about aisles.**
+
+     Each site reasons correctly alone and no file owns the composition, which is why this
+     warning is HERE, at the point of the change, and not only in the queue — a note in a queue
+     file is not where the person widening this list will be looking.
+
+     **Land the `ingredients_lc` guard first, or at minimum re-run the Cristaline barcode
+     through the gate as part of the aisle fix.** That guard — parse and text being different
+     documents, the two-lists disagreement on a language axis — is what actually catches this
+     product, and `sameVerdict` is its precedent. */
   ['water', ['waters', 'mineral water', 'spring water', 'sparkling water', 'bottled water',
     'drinking water', 'seltzer']],
   ['soda_drink', ['soda', 'sodas', 'carbonated drink', 'cola', 'soft drink']],

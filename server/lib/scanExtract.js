@@ -25,6 +25,7 @@
 import { lookupProduct, retainProduct } from './productStore.js';
 import { evaluateIngredients } from './verdictEngine.js';
 import { recordConflict } from './ingredientConflicts.js';
+import { categoryFromAisle } from './productCategory.js';
 
 const OFF_BASE = 'https://world.openfoodfacts.org/api/v2/product';
 const OFF_FIELDS = [
@@ -279,8 +280,16 @@ export async function extractFromBarcode(barcode, { client } = {}) {
       // And it stays null when the row has no panel, rather than becoming an object full of
       // nulls: `unknown` is what a caller that sent no nutrition gets, and a cached row from
       // before this column is exactly that caller. Withholds nothing, which is correct.
-      nutrition: own.nutritionPanel
-        ? { sodium: null, addedSugar: null, fiber: null, caffeine: null, nutritionPanel: own.nutritionPanel }
+      // The category joins the panel here on the same terms: present when the row has one,
+      // absent entirely when it does not, so a pre-migration row is byte-identical to the
+      // `nutrition: null` this replaced. A cached water keeps its exemption; a cached row
+      // from before the column simply is not exempt.
+      nutrition: own.nutritionPanel || own.category
+        ? {
+            sodium: null, addedSugar: null, fiber: null, caffeine: null,
+            nutritionPanel: own.nutritionPanel ?? null,
+            category: own.category ?? null,
+          }
         : null,
       // A row built from a partial panel stays honest about it, so the verdict route
       // still withholds a clean approval it can't support.
@@ -315,7 +324,20 @@ export async function extractFromBarcode(barcode, { client } = {}) {
 
   const p = data.product;
   const product = productMeta(p, code);
-  const nutrition = nutritionFromOFF(p); // sodium + added sugar per 100g (for focuses)
+  // ⚠️ **THE CATEGORY RIDES ON `nutrition` BECAUSE THAT IS THE CHANNEL THAT DEMONSTRABLY
+  // REACHES THE ENGINE.** `nutritionPanel` gets from here to `evaluateIngredients` by the
+  // client echoing this object back to /verdict, and it is proven to work end to end — it is
+  // why production reports `nutritionPanel: "absent"` on Sidi Ali today. A second channel
+  // would have to be built and proven; this one already carries an input to the same gate.
+  //
+  // ⚠️ **AND SHIPPING IT ANYWHERE ELSE WOULD REPEAT THE DEFECT THIS FIX EXISTS FOR.**
+  // `category` was already being collected correctly, by `categoryFields()` on the retain
+  // path, and read by NOTHING — write-only, with the gate it was for unable to see it. Putting
+  // it on a field the engine never receives would be the same mistake one layer over.
+  //
+  // A client that drops the field, or an old build that never knew it, sends no category —
+  // which is not exempt, which is today's behaviour. Fails closed by construction.
+  const nutrition = { ...nutritionFromOFF(p), category: categoryFromAisle(product.aisle) };
 
   // 1. Open Food Facts ENGLISH ingredient text (foreign text is rejected here so
   //    it can never reach the engine and produce a false "approved").
