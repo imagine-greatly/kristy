@@ -135,3 +135,125 @@ unlabeled half has its own sections and no barcode points at a fish counter.
 5. **Then check `other` rate**, and treat it as the authoring backlog it is designed to be —
    `select category_raw, count(*) from scanned_products where category = 'other' group by 1
    order by 2 desc`.
+
+📎 **Step 1 is now DONE and its warning is spent.** Node is on this machine (v26.7.0,
+2026-08-10) and `productCategory.test.js` runs: **8 tests, 8 pass**, inside a full server
+suite of **623 pass / 0 fail**. Those assertions are evidence now, not source. The warning
+is left above because it was true when written and the correction is the useful part.
+
+---
+
+# ⏸ HELD FOR THE SERVER QUEUE — the water widening (proposed 2026-08-10)
+
+**Not implemented. This is a proposal, and it is a SERVER change**, so it gets its own prompt
+and its own approval per CLAUDE.md's two-halves rule. Recorded here with its evidence.
+
+## What prompted it
+
+The bottled-water defect in CLAUDE.md's **Live defects**: `6111035002175` comes back
+`nutritionPanel:"absent"`, `stamp:false` and the withheld-read sentence, because the product
+has no `energy` key. That entry names the fix as *"a second signal — `product_category`"*, and
+notes the confusing part: **the category code is shipped on `origin/main` and the defect is
+still live.**
+
+## ⚠️ THE FIRST FINDING IS THAT THE WIDENING IS NOT THE FIX, AND ON ITS OWN WOULD CHANGE NOTHING
+
+Two independent gaps, and only the first is the one that was being looked for.
+
+### (A) The vocabulary gap — real, and measured
+
+`PRODUCT_CATEGORIES` has **no water value**, so bottled water lands in `other`. Measured
+2026-08-10 by running the live OFF record for `6111035002175` through `categoryFromAisle`:
+
+```
+OFF categories_tags : en:beverages … en:waters, en:spring-waters,
+                      en:mineral-waters, en:natural-mineral-waters
+derived aisle       : "natural mineral waters"
+categoryFromAisle   : other
+  waters          -> other      sparkling water -> other
+  spring waters   -> other      beverages       -> other
+  mineral waters  -> other
+energy keys in OFF  : []   ← none, which is what makes the panel 'absent'
+```
+
+### (B) ⚠️ THE WIRING GAP — bigger, and it is why the migration could never have blocked this
+
+**`category` is WRITE-ONLY today.** Traced 2026-08-10:
+
+- `categoryFields()` is called from **exactly one place**: `productStore.js:202`, the retain
+  path. Nothing else in `lib/` or `routes/` calls it.
+- `verdictEngine.js:727` is the gate — `unverifiedAsFood = tier === 'approved' &&
+  nutrition?.nutritionPanel === 'absent'`. **It never sees a category**, and `verdictEngine.js`
+  contains no reference to a product category at all (its `category` hits are KB *ingredient*
+  categories — `sugar_alias`, additives — which is the exact confusion `productCategory.js`'s
+  own header warns about).
+
+**So the field is being collected correctly and read by nothing.** Applying the migration,
+which is done, could not have closed this defect, and neither can adding `water` on its own —
+the row would simply be right and unread.
+
+📋 **This document said so itself and nobody joined it up.** *"It does not touch the ingredient
+KB, the verdict engine, the claim lock or any tier. Nothing here can change a verdict."* That
+was a correct scoping decision when written. It is also, read against the open item, the
+statement that **the fix named in Live defects lies outside what was built** — and the two
+documents have sat one directory apart saying compatible things that nobody put together.
+Same shape as the category-capture-is-held error: two documents, each locally coherent.
+
+## The change, in three parts and in this order
+
+**1. Widen the vocabulary — TWO files, because the list is stated twice.**
+
+- `server/lib/productCategory.js` — add `water` to `PRODUCT_CATEGORIES`.
+- `server/lib/labelVision.js:70` — add `water` to the inline list in the prompt.
+
+⚠️ **A one-file change is a red suite, and that is the test working.** `productCategory.test.js`
+asserts `PRODUCT_CATEGORIES ⊆ LABEL_VISION_SYSTEM` — *"THE PROMPT AND THE VOCABULARY ARE ONE
+LIST"* — so a value the model is never offered fails immediately rather than silently becoming
+unreturnable.
+
+**2. Add the OFF aisle patterns**, in `OFF_AISLE_PATTERNS`. ⚠️ **Order is significant and is not
+alphabetical** (the file says so). `water` must sit **above** `juice` and `soda_drink`: OFF's
+water tags are compound and `sparkling water` must not be eaten by a `soda` pattern. Proposed
+entry, placed above `soda_drink`:
+
+```js
+['water', ['water', 'waters', 'mineral water', 'spring water', 'sparkling water', 'seltzer']],
+```
+
+**3. THE PART THAT ACTUALLY FIXES THE DEFECT — thread the category into the gate.** This is the
+one that crosses the boundary this document drew, so it is the one that needs the argument, not
+the two above.
+
+## ⚠️ What part 3 must not become
+
+- **It is loosening a FAIL-CLOSED guard, and the guard's comment is right.** *"A wrong approval
+  is a gold seal on a cleaning product and a wrong refusal is a missing endorsement."* So the
+  exemption is an **explicit allowlist of categories that legitimately declare no energy**, not
+  a general "if we know the category, trust the panel". Bottled water is the clear member. Every
+  other candidate — `seasoning`, `supplement` — gets argued individually or stays out.
+- **The exemption must key on a category the SOURCE asserted, never on one inferred from a
+  thin record.** A product with no OFF data lands in `other`, and `other` must never be
+  exempt — that is precisely the thin-record case the gate exists for.
+- ⚠️ **It must not suppress anything but the withholding.** Same rule the dyed-Dawn entry
+  states: flags stand. This only ever restores a verdict WORD to a product that earned it.
+
+## What it needs before it is written
+
+⚠️ **The vocabulary's own widening rule is the gate, and this machine cannot satisfy it.**
+`productCategory.js`: *"Do not add a value because it sounds missing; add it because rows are
+sitting in `other` asking for it."* The evidence query needs DB credentials this box does not
+have (no `server/.env`, no `supabase` CLI, no `psql`) — **the same wall the migration question
+hit**:
+
+```sql
+select category_raw, count(*) from scanned_products
+where category = 'other' group by 1 order by 2 desc;
+```
+
+**Water rows in that result are the go-ahead** for part 1. Parts 2 and 3 stand on the OFF
+measurement above regardless, and the CLAUDE.md open item's own numbers — 2.7% of the
+most-scanned products carry no `energy` key at all, 8.8% at the thin end, **largest single
+cluster is water** — are what makes this worth queueing rather than filing.
+
+**`category_raw` is collecting that evidence now**, which is the column doing the exact job it
+was added for.
