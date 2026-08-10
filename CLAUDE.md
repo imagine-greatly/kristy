@@ -856,7 +856,10 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   sentence. ⚠️ **The copy is what keeps this survivable — it states the standard and claims nothing
   about the product, so on a bottle of water it is *odd* rather than *false*. Do not "fix" this by
   making the sentence more specific about the product.** The real fix is a second signal —
-  `product_category`, already on the held stack.
+  `product_category`, which is **on `origin/main`, not held** (corrected 2026-08-10; see the
+  category-capture entry below). ⚠️ **So the fix's code is shipped and the defect is still live**,
+  which means what is missing is the wiring, the migration, or both — start with the migration
+  question in that entry.
 - 🐞 **THE DYED DAWN IS STILL READ AS FOOD, AND `unverifiedAsFood` IS STRUCTURALLY UNABLE TO REACH
   IT.** `0030772006023` comes back `swap_recommended` on `yellow_5`/`blue_1`, and the gate requires
   `tier === 'approved'` (`verdictEngine.js:689`) — so **a product is protected from the food
@@ -874,8 +877,8 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 ### Held deliberately — do not "discover" these and land them
 
-- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE. What is held is the IMPORT ROUTE and CATEGORY
-  CAPTURE.** Nothing can reach `POST /api/trips/import` (`requireAuth`, sign-in blocked on 10DLC),
+- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE. What is held is the IMPORT ROUTE.** Nothing
+  can reach `POST /api/trips/import` (`requireAuth`, sign-in blocked on 10DLC),
   and pushing this repo deploys. **Full reasoning is in the iOS repo's `docs/SWIFT-HANDOFF.md` §3
   item 0 — one queue, not two. Do not push it to be helpful.**
   ⚠️ **Its test condition cleared and it is still held.** A cleared blocker is not an approval; it
@@ -892,12 +895,47 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   commit dates alone will get the order wrong.** A bare `git push` sends everything ahead; pushing a
   specific commit by hash is the only way to ship the bottom of a stack without the top.
 
-  ⚠️ **CATEGORY CAPTURE HAS A CLOCK ON IT.** A category cannot be backfilled from a **vision** row
-  (the photo is never stored), so every scan retained before it lands is a row that can never answer
-  "what else is this". An OFF row *is* re-derivable at one free request per barcode.
-  ⚠️ **Its blocker is credentials, not Node.** ⚠️ **Apply `supabase/product_category.sql` BEFORE the
-  code deploys** — without the columns every retain logs `column does not exist` and **silently stops
-  retaining**, the worst way for it to fail.
+  🐞 ⚠️ **CATEGORY CAPTURE IS NOT HELD. IT IS ON `origin/main`, AND THIS ENTRY SAID THE OPPOSITE
+  FOR TWO DAYS — AS DID THE iOS REPO'S COPY OF IT.** Corrected 2026-08-10 by computing it rather
+  than reading it. `server/lib/productCategory.js`, `productCategory.test.js` and
+  `supabase/product_category.sql` all resolve on `origin/main`, and all three commits are
+  ancestors of it:
+
+  ```
+  git merge-base --is-ancestor 2ce5f9f origin/main   # Category capture: the field a swap needs
+  git merge-base --is-ancestor 860f573 origin/main   # nutrition_panel on scanned_products
+  git merge-base --is-ancestor 3f0ada4 origin/main   # what the migration does not fix
+  ```
+
+  ⚠️ **THE ERROR IS NOT COSMETIC, BECAUSE THIS ENTRY'S OWN WARNING WAS AN ORDERING RULE.** It said
+  *"apply `supabase/product_category.sql` BEFORE the code deploys — without the columns every
+  retain logs `column does not exist` and **silently stops retaining**."* **The code is pushed, and
+  `main` auto-deploys.** So the ordering this warned about has either already been satisfied or
+  already been violated, and the document that was supposed to make somebody check said the code
+  had not gone anywhere.
+
+  ⚠️ **WHETHER THE MIGRATION WAS APPLIED CANNOT BE ANSWERED FROM THIS MACHINE** — no `server/.env`,
+  no `supabase` CLI, no `psql`. **It is the open question and it needs a human in the dashboard.**
+  What is known about the failure shape, read from the source:
+  - **The READ side degrades and says so.** `productStore.js` retries the lookup without
+    `nutrition_panel` and logs a named line: *"scanned_products.nutrition_panel is missing — apply
+    supabase/product_category.sql."* **Check the Railway logs for that string first; it is the
+    cheapest possible answer to the question.**
+  - **The WRITE side has no retry.** The insert spells `category`, `category_raw` and
+    `nutrition_panel` literally and does `if (error) throw`. If the columns are absent, retaining a
+    **new** product throws every time.
+  - `docs/SCHEMA-AUDIT.md` **does not mention `product_category` at all**, so the one document whose
+    job is to compare live schema against the migrations is silent on the newest one.
+
+  ⚠️ **THE CLOCK IS UNCHANGED AND IT IS WHY THIS MATTERS EITHER WAY.** A category cannot be
+  backfilled from a **vision** row (the photo is never stored), so every scan retained without the
+  columns is a row that can never answer "what else is this". An OFF row *is* re-derivable at one
+  free request per barcode.
+
+  📋 **The lesson, which is this repo's own:** the entry identified held work correctly by SUBJECT
+  and then **listed a subject that was not on the stack** — so the rule against hashes and "ahead N"
+  held, and nobody ran the command it prescribes. **Computing it is only a fix if someone computes
+  it.** Two documents stated it, which is precisely why a reader had no way to notice.
 
 ### Standing risks, not urgent
 

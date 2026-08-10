@@ -35,7 +35,10 @@
   *odd* rather than *false* — the failure mode the wording was built for, now observed rather
   than hypothesised. **Do not "fix" this by making the sentence more specific about the
   product.**
-  **The real fix is a second signal, and it is already on the held stack:** `product_category`.
+  **The real fix is a second signal:** `product_category` — which is **on `origin/main`, not
+  held** (corrected 2026-08-10, see the held-stack entry). ⚠️ **So the second signal's code has
+  shipped and this defect is still live**, which narrows the question to the wiring, the
+  migration, or both — and the migration question is the one to settle first.
   `nutritionPanel === 'absent'` AND no food category is far more specific than either alone.
   Until then the gate trades a false seal on a detergent for a withheld seal on water, which is
   the right side of the asymmetry and is not free.
@@ -287,7 +290,7 @@
   defect they name. Full statement: iOS repo's `docs/SWIFT-HANDOFF.md` §3 item 0a.
 
 - ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, NOT FORGOTTEN — AND WHAT IS HELD IS THE
-  IMPORT ROUTE AND CATEGORY CAPTURE, NOT THE WHOLE STACK.** `POST /api/trips/import` is held:
+  IMPORT ROUTE, NOT THE WHOLE STACK.** `POST /api/trips/import` is held:
   nothing can reach it (`requireAuth`, sign-in blocked on 10DLC), and pushing this repo
   deploys. **The full reasoning lives in the iOS repo's `docs/SWIFT-HANDOFF.md` §3, item 0** —
   one queue, not two. Do not push it to be helpful.
@@ -313,19 +316,46 @@
   THE HOLD, NOT PUSHED WITH IT.** That is the move when something above the hold is urgent and
   the hold still stands, and it is why stack timestamps interleave with `origin/main`'s.
   **A reader reconstructing this history from commit dates alone will get the order wrong.**
-  ⚠️ **THE STACK ALSO CARRIES CATEGORY CAPTURE** — `productCategory.js`, the
-  `scanned_products` migration, the vision prompt's fifth field, and the OFF `aisle` finally
-  being passed to `retainProduct` instead of discarded. **One reason runs the other way: it
-  has a clock on it.** A category cannot be backfilled, so every scan retained before it lands
-  is a row that can never answer "what else is this". Proposal: `docs/CATEGORY-CAPTURE.md`.
-  ⚠️ **ITS BLOCKER IS NO LONGER NODE. IT IS CREDENTIALS.** Node is `v26.7.0` and everything
-  held runs green — suite 602/602, `productCategory.test.js` 8/8, `commitGuard.js` clean. What
-  is missing is the ability to **apply** the migration: there is **no `server/.env` on this
-  machine, no `supabase` CLI and no `psql`**, so the schema step needs a human in the
-  dashboard. Three documents cited Node as this blocker. That was true and is not.
-  ⚠️ **Apply `supabase/product_category.sql` BEFORE the code deploys.** Without the columns
-  every retain logs `column does not exist` and silently stops retaining, which is the worst
-  way for it to fail.
+  🐞 ⚠️ **CATEGORY CAPTURE IS NOT ON THE STACK. IT IS ON `origin/main`, AND THIS ENTRY SAID
+  OTHERWISE FOR TWO DAYS — SO DID `CLAUDE.md` AND THE iOS REPO'S `SWIFT-HANDOFF.md` §3 item
+  0b.** Corrected 2026-08-10 by computing it. `server/lib/productCategory.js`,
+  `productCategory.test.js` and `supabase/product_category.sql` all resolve on `origin/main`,
+  and all three commits are ancestors of it — `2ce5f9f` (the field a same-category swap needs),
+  `860f573` (`nutrition_panel` on `scanned_products`), `3f0ada4` (what the migration does not
+  fix):
+
+  ```
+  git merge-base --is-ancestor 2ce5f9f origin/main && echo "on main"
+  git ls-tree origin/main -- server/lib/productCategory.js
+  ```
+
+  ⚠️ **THIS IS NOT A TIDY-UP, BECAUSE THE CLAIM THAT WENT STALE WAS AN ORDERING RULE.** The
+  line below it read *"apply `supabase/product_category.sql` BEFORE the code deploys."* **The
+  code is pushed, and `main` auto-deploys.** So that ordering has already been settled one way
+  or the other, and every document that was supposed to prompt someone to check said the code
+  was still sitting on a laptop.
+
+  ⚠️ **THE OPEN QUESTION IS WHETHER THE MIGRATION WAS APPLIED, AND IT CANNOT BE ANSWERED FROM
+  THIS MACHINE** — no `server/.env`, no `supabase` CLI, no `psql`. It needs a human in the
+  dashboard. **The cheapest answer first:** `productStore.js`'s read path retries without
+  `nutrition_panel` and logs a named line — *"scanned_products.nutrition_panel is missing —
+  apply supabase/product_category.sql"* — so **grep the Railway logs for it before doing
+  anything else.** The write path has no such retry: the insert names `category`,
+  `category_raw` and `nutrition_panel` literally and does `if (error) throw`, so absent columns
+  break the retain of every **new** product.
+  ⚠️ **`docs/SCHEMA-AUDIT.md` does not mention `product_category` at all**, so the one document
+  whose job is to compare the live schema against the migrations is silent on the newest one.
+
+  ⚠️ **THE CLOCK IS UNCHANGED AND IT IS WHY THIS MATTERS EITHER WAY.** A category cannot be
+  backfilled from a vision row (the photo is never stored), so every scan retained without the
+  columns is a row that can never answer "what else is this". An OFF row *is* re-derivable at
+  one free request per barcode. Proposal: `docs/CATEGORY-CAPTURE.md`.
+
+  📋 **The lesson is this entry's own, turned on itself.** It correctly forbids identifying held
+  work by hash or by "ahead N", prescribes computing it by SUBJECT — **and then named a subject
+  that was not on the stack.** The rule held; nobody ran the command. **Computing it is only a
+  fix if someone computes it**, and three documents stating the same wrong thing is exactly what
+  removes a reader's chance of noticing.
 
 - ⏳ **QUEUED — DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE. It is the unlock for every
   per-shopper mechanic downstream, and it is the only one whose computation already exists.**
