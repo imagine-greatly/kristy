@@ -257,3 +257,59 @@ cluster is water** — are what makes this worth queueing rather than filing.
 
 **`category_raw` is collecting that evidence now**, which is the column doing the exact job it
 was added for.
+
+---
+
+## ✅ THE EVIDENCE QUERY HAS NOW BEEN RUN (2026-08-10, live `scanned_products`)
+
+Read-only, service-role, `select` only. **The wall is down** — `server/.env` carries
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` on this box now.
+
+**First result, and it closes a question this document opened: the migration is applied AND the
+write path works.** The query returned rather than erroring on a missing column, and rows carry
+real values. **Retention is not silently broken.**
+
+**The catalog is 15 rows.** 13 carry `category: NULL` (retained before the columns existed and
+**not backfillable**); **2 carry a category, and both are `other`.**
+
+| `category` | `nutrition_panel` | name | `category_raw` |
+| --- | --- | --- | --- |
+| `other` | `absent` | Sidi Ali | `"natural mineral waters"` |
+| `other` | `absent` | Cristaline | `"unsweetened beverages"` |
+
+### ⚠️ BOTH CATEGORIZED ROWS ARE BOTTLED WATER, AND BOTH WOULD MISFIRE
+
+`6111035002175` is in the table in exactly the predicted state — `other` / `absent`. **And it is
+not alone: Cristaline is a second bottled water**, landing in `other` by a different raw string
+(`unsweetened beverages`, not a water word at all). **So a `water` value plus water-only aisle
+patterns would still miss Cristaline** — the OFF tag that reached it was a beverage tag. That is
+an argument for the patterns covering the beverage aisle, not only the word "water", and it is
+exactly the kind of thing the raw column exists to reveal.
+
+### ⚠️⚠️ THE FIND THAT CHANGES PART 3 — THE PANEL SIGNAL'S OTHER HALF IS SITTING IN THE SAME TABLE
+
+**Four rows carry `nutrition_panel: 'absent'`. Two are the waters. The other two are `Dish Soap`
+and `Dawn Platinum Plus Powerwash`.**
+
+**That is the entire problem in one 15-row table.** `absent` is doing two completely different
+jobs — *"water, which legitimately declares no calories"* and *"dish soap, which is not food"* —
+and **the panel signal cannot tell them apart, which is precisely why it is the thing standing
+between Dawn and a gold seal.**
+
+⚠️ **SO PART 3 IS NOT "RELAX THE GATE WHEN WE KNOW THE CATEGORY". THE TWO DISH-SOAP ROWS CARRY
+`category: NULL`, AND IF RESCANNED TODAY WOULD ALMOST CERTAINLY CARRY `other`** — the same value
+the waters carry. **A rule keyed on "we have a category" would exempt dish soap.** The allowlist
+must be *specific values that are food and legitimately calorie-free*, and **`other` and `NULL`
+must both be non-exempt, permanently.** This document already said `other` must never be exempt;
+the live table is now the evidence for it, and it is stronger than the argument was.
+
+### What this does and does not license
+
+- ✅ **The mechanism is proven**: water reaches `other`, the raw string survives, it is
+  diagnosable. Part 1 and part 2 are justified.
+- ⚠️ **The FREQUENCY case is not made, and should not be claimed.** Two rows out of fifteen is
+  not a frequency ranking — it is a 15-row catalog with 13 pre-migration nulls. **The honest
+  justification for widening is the live defect plus the OFF-wide measurement, NOT "the `other`
+  bucket shows demand".** Anyone re-reading this later should not inflate n=2 into a trend.
+- **Re-run this query once the catalog is larger.** It is the same query; the answer will
+  actually rank something.
