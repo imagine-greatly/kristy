@@ -924,6 +924,8 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   scores it zero. What changed is that the seal is withheld and the withheld read prints.
   **The misread is contained at the seal, not fixed at the read.** ⏳ Still open as a QUESTION,
   not a fix: what should a thin or non-ingredient list produce? Nothing is proposed, deliberately.
+  ✅ **Re-driven on production 2026-08-11 and unchanged** — `tier:"approved"`, `stamp:false`,
+  `unverifiedRead` present, `education`/`swap` null. Account: `docs/OPEN-ITEMS.md`.
 - 🐞 ⚠️ **THE CATEGORY UPGRADE CANNOT REACH A ROW ALREADY IN `scanned_products`** (measured
   2026-08-10, the day the water patterns shipped). A cache hit returns early in `scanExtract.js`
   with the row's **stored** category (`productStore.js:142`) and never re-fetches Open Food Facts,
@@ -1059,23 +1061,25 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   proposed: it changes what `category` is written for products well beyond water, and that field is
   what part 3 reads. Account and the measured tag list are in that file.
 - 🐞 ⏳ **OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER, SO THE PARSE AND THE TEXT CAN BE
-  DIFFERENT DOCUMENTS** (measured 2026-08-10). `ingredients_lc` names the language OFF actually
-  parsed. Cristaline `3274080005003`: `ingredients_lc = "fr"`, and OFF's parse is **one**
-  ingredient — `en:spring-water`, CIQUAL 18066 — while `pickEnglishText` returns
-  `ingredients_text_en`, which a contributor filled with a **nine-line mineral table**
-  (`"Eau de source Noemie ⏎ Calcium Ca2+ 113 mg/l ⏎ …"`). The French field holds the correct
-  `"Eau de source"`. So the record contains a right answer and a wrong one, in different
-  language fields, and the code reads the wrong one **by preferring English**, which is the
-  correct preference for every other purpose.
-  **THIS IS THE TWO-LISTS DISAGREEMENT ON A NEW AXIS, AND `sameVerdict` IS THE PRECEDENT** —
-  same shape as the Heinz live-vs-imported defect, same fix available (score both, compare the
-  tier, refuse to guess when they differ), except the second document here is a different
-  LANGUAGE field rather than the raw import. `pickImportedText` returns `''` for this product,
-  so the existing guard never engages.
+  DIFFERENT DOCUMENTS** (found 2026-08-10, **re-measured against OFF 2026-08-11, unchanged**).
+  `ingredients_lc` names the language OFF actually parsed. Cristaline `3274080005003`:
+  `ingredients_lc = "fr"`, parse is **one** ingredient (`en:spring-water`), `ingredients_text_fr`
+  is the correct `"Eau de source"` — and `pickEnglishText` returns `ingredients_text_en`, a
+  contributor-filled **nine-line mineral table**. The record holds a right answer and a wrong one
+  in different language fields, and the code reads the wrong one **by preferring English**, which
+  is the correct preference for every other product.
+  ⚠️ **THE ENGLISH FIELD IS NOT A TRANSLATION, IT IS A DIFFERENT DOCUMENT** — so a language check
+  passes it (the mineral table *is* English) and the whole language layer is asking the wrong
+  question.
+  **THIS IS THE TWO-LISTS DISAGREEMENT ON A NEW AXIS, AND `sameVerdict` IS THE PRECEDENT** — same
+  shape as the Heinz live-vs-imported defect, same fix available (score both, compare the tier,
+  refuse to guess when they differ). `pickImportedText` returns `''` here, so the existing guard
+  **cannot** engage: the second document is a LANGUAGE field, which it has never looked at.
   ⚠️ **IT IS NOT THE PANEL-GATE TRIGGER AND MUST NOT BE FOLDED INTO IT.** It does not catch
   Sidi Ali `6111035002175`, where `ingredients_text_fr` is the mineral list too — parse and text
-  agree there and are wrong together. Separately proposed; it changes what text is read for
-  products well beyond water.
+  agree there and are wrong together. **Two products, one symptom, two unrelated causes.**
+  Separately proposed; in range is every product whose `ingredients_lc` is not `en`, i.e. most of
+  the non-US catalog. Account: `docs/OPEN-ITEMS.md`.
 
 - ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE** (ruled 2026-08-10). `buildBaseline` is
   written, tested and correct with a permanently empty input; `GuestTripBook.archive` holds exactly

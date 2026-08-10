@@ -491,6 +491,23 @@
 **Ruled open as a QUESTION, not a fix, and it OUTRANKS the water exemption** (part 3 of
 `docs/CATEGORY-CAPTURE.md`, which now waits on the answer).
 
+✅ **RE-MEASURED ON PRODUCTION 2026-08-11 AND UNCHANGED.** Driven through the guest path,
+`6111035002175`:
+
+```
+POST /api/guest/scan/barcode   → source:"store", nutritionPanel:"absent", category:"other"
+POST /api/guest/verdict        → tier:"approved", stamp:false,
+                                 unverifiedRead:{checked:"Read all 7.", …},
+                                 education:null, swap:null, universalLayer:[]
+```
+
+**Both halves of the containment are working and the read underneath is still wrong.** The seal
+is withheld, the withheld read prints, the depth is nulled — and the engine still scores a
+seven-token mineral analysis as a clean list and still calls it `approved`. Recorded as a
+re-measurement rather than a new finding, because **the value of this entry is that the number
+stops being a memory**: the tier is the thing that would silently change if somebody "fixed" the
+read, and nothing else on this page would move if it did.
+
 ### What was found
 
 Sidi Ali's ingredient list, as the engine receives it, is a **mineral analysis** —
@@ -540,3 +557,74 @@ correctly in isolation, and the defect only appears when you add it to what the 
 - **The dyed-Dawn tier decoupling is ruled WITH part 3**, not with this. Same gate, same function,
   one change — but it lands after the question is answered, because decoupling the gate from the
   tier changes which products reach the exemption at all.
+
+---
+
+## 🐞 THE `ingredients_lc` GUARD: OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER
+
+**Queued, separately proposed, NOT built** (found 2026-08-10, re-measured 2026-08-11).
+The rule is in `CLAUDE.md` under **Queued**; this is the account.
+
+### What was found
+
+`ingredients_lc` names the language Open Food Facts **actually parsed**. It is not decoration and
+it is not the display language — it is the field that says which text the structured
+`ingredients` array was derived from. **When it is not `en`, the parse and the English text can be
+two different documents about the same product**, and nothing in the code notices.
+
+Cristaline `3274080005003`, re-fetched from OFF 2026-08-11 and byte-for-byte as first recorded:
+
+| field | value |
+| --- | --- |
+| `ingredients_lc` | `"fr"` |
+| parsed `ingredients` | **one** entry — `en:spring-water` |
+| `ingredients_text_fr` | `"Eau de source"` — **correct** |
+| `ingredients_text_en` | `"Eau de source Noemie ⏎ Calcium Ca2+ 113 mg/l ⏎ Magnesium Mg2+ 228 mg/l ⏎ …"` — a **nine-line mineral table** a contributor filled |
+
+So **the record contains a right answer and a wrong one, in different language fields**, and
+`pickEnglishText` reads the wrong one *by preferring English* — which is the correct preference
+for every other product in the database. The French field is right and is never consulted; the
+structured parse is right and is never consulted either.
+
+⚠️ **THE ENGLISH FIELD IS NOT A TRANSLATION, IT IS A DIFFERENT DOCUMENT.** That is the whole
+finding. A language guard that asked *"is this text English"* would pass it — the mineral table is
+in English. `looksNonEnglish` returns false on it, correctly, and lets it through. **The defect is
+invisible to every check the language layer already has**, because the language layer's question is
+the wrong question.
+
+### ⚠️ This is the two-lists disagreement on a new axis, and `sameVerdict` is the precedent
+
+Same shape as the Heinz live-vs-imported defect: **one product, two ingredient lists, no way to
+tell which is on the shelf.** Same fix available and already written for the other axis — score
+both, compare the tier, and **refuse to guess when they differ.**
+
+⚠️ **The existing guard cannot engage here.** `sameVerdict` compares the live field against the
+**raw import**, and `pickImportedText` returns `''` for this product — there is no import to
+disagree with. The second document is a different **LANGUAGE** field, which that guard has never
+looked at. So the machinery exists, the precedent is settled, and the axis is unwatched.
+
+### ⚠️ What this does NOT cover — and why it must not be folded into the panel gate
+
+**It does not catch Sidi Ali `6111035002175`, and that is the reason it is its own item.**
+Measured the same way, 2026-08-11:
+
+```
+ingredients_lc      = "fr"
+ingredients_text_fr = "Sodium, Calcium, Magnésium, Potassium, Bicarbonates, Sulfates, Chlorures,"
+```
+
+**The French field is the mineral list too.** Parse and text AGREE there, and they are wrong
+together — so a disagreement guard sees nothing to disagree about and passes it through. Sidi Ali
+is the **upstream question** above (*what should a thin or non-ingredient list produce*), not this.
+
+**Two products, one symptom, two unrelated causes.** Folding them into one fix would ship a guard
+that appears to solve bottled water and silently covers half of it — and the half it misses is the
+one already earning `approved` on production today. **They are recorded apart on purpose.**
+
+### Scope, stated so it is not underestimated
+
+**It changes what text is read for products well beyond water.** Any product whose
+`ingredients_lc` is not `en` is in range, which is most of the non-US catalog. That is why it is
+**separately proposed** and not a footnote to the water work: the blast radius is the whole
+non-English half of Open Food Facts, and the fix's failure direction has to be argued before it is
+written, not after.
