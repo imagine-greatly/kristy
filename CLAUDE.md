@@ -938,8 +938,20 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   ⚠️ **IT FAILS IN THE SAFE DIRECTION AND THAT IS WHY IT IS RECORDED RATHER THAN RUSHED** —
   `other` is non-exempt, so a stale category can only withhold a seal, never grant one.
   **But part 3 would then be inert for precisely the products that motivated it**, which makes
-  this a prerequisite to part 3 rather than a footnote to it. Not proposed: the fix touches the
-  store's read path, and that is separately scoped server work.
+  this a prerequisite to part 3 rather than a footnote to it.
+  ✅ **THE FIX IS APPROVED AS DESIGNED (2026-08-11) AND ITS PREREQUISITE IS NOW CLEAR** — the
+  migration is applied and being written to (see the category-capture entry below). **Still not
+  written: it touches the store's READ path, which is separately scoped server work and needs
+  its own prompt.** The approved shape, recorded so it is not re-derived:
+  - **A VERSION STAMP, NOT A TTL AND NOT "IS THE CATEGORY `other`".** A TTL re-fetches rows that
+    were already right; keying on `other` cannot tell "we looked and it is genuinely other" from
+    "we looked before the patterns existed".
+  - ⚠️ **THE BUMP RULE IS AN ASYMMETRY AND IT IS THE PART THAT IS EASY TO GET BACKWARDS. Bump on
+    `other`. Bump on not-found. DO NOT bump on a network failure.** A network failure is not
+    evidence about the product, and stamping one records "we checked" for a check that never
+    happened — which retires the row from re-checking forever on the strength of a timeout.
+  - The failure direction stays safe either way: `other` is non-exempt, so a stale category can
+    only withhold a seal, never grant one.
 - ⏸ **PART 3 — THE CATEGORY EXEMPTION — IS STILL HELD**, now on two things: the upstream question
   above, and the cache finding above. Context for why water is the cluster worth the trouble:
   **2.7% of the most-scanned OFF products carry no `energy` key at all, rising to 8.8% at the thin
@@ -1015,9 +1027,24 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   already been violated, and the document that was supposed to make somebody check said the code
   had not gone anywhere.
 
-  ⚠️ **WHETHER THE MIGRATION WAS APPLIED CANNOT BE ANSWERED FROM THIS MACHINE** — no `server/.env`,
-  no `supabase` CLI, no `psql`. **It is the open question and it needs a human in the dashboard.**
-  What is known about the failure shape, read from the source:
+  ✅ **ANSWERED 2026-08-11: THE MIGRATION IS APPLIED, AND IT IS BEING WRITTEN TO.** Measured
+  against the live table with the credentials in `server/.env`: `category`, `category_raw` and
+  `nutrition_panel` all resolve on `scanned_products` (`select` returns 200, not a 42703), and
+  of **18 rows, 5 carry a category and 7 carry a `nutrition_panel`** — so the write path is not
+  throwing and has not been. Sidi Ali and Cristaline both read `category: other`,
+  `nutrition_panel: absent`, which is the stale-category finding above, not a schema failure.
+  ⚠️ **THIS ENTRY'S OWN PREMISE WAS STALE, AND IT IS THE SAME DEFECT IT WAS WRITTEN ABOUT.** It
+  said the question "cannot be answered from this machine — no `server/.env`" while
+  **Infrastructure state, in this same file, recorded the Supabase credentials as live.** Two
+  statements, one document, contradicting each other for a day, and the pessimistic one was the
+  one a reader would act on. **The check was one query.**
+  📌 **The log grep this was going to be settled by is not runnable here** — no `railway` CLI, no
+  `RAILWAY_TOKEN` in `server/.env` — and it is now moot: the read-side degrade line
+  (*"scanned_products.nutrition_panel is missing"*) only ever logs when the column is absent,
+  and it is present. **Query the table, do not hunt the log.** That is the cheaper answer to
+  every question of this shape.
+  What was known about the failure shape, read from the source, and kept because it is the
+  reason the answer mattered:
   - **The READ side degrades and says so.** `productStore.js` retries the lookup without
     `nutrition_panel` and logs a named line: *"scanned_products.nutrition_panel is missing — apply
     supabase/product_category.sql."* **Check the Railway logs for that string first; it is the
