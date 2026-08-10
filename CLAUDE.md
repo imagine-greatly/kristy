@@ -843,7 +843,7 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **644 pass on `main` + the held stack**, measured 2026-08-10. A bare count here has been stale five times — **record only a number you actually ran.** |
+| `cd server && npm test` | **644 pass on `main` (the held stack) and 633 on `origin/main`**, both measured 2026-08-10. ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, and say which branch ran it.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. **Exits non-zero on a wrong match**; a miss only reports. Run after any alias edit, `perimeterId` change or matcher change. |
@@ -904,72 +904,61 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 ### Live defects
 
-- 🐞 ⚠️ **THE PANEL SIGNAL IS WEAKER THAN THE GATE ASSUMES, AND IT IS MISFIRING ON PRODUCTION TODAY
-  — BOTTLED WATER.** Measured over Open Food Facts: **2.7% of the most-scanned products have no
-  `energy` key at all**, rising to **8.8% at the thin end**, and the largest single cluster is
-  **water**. `6111035002175` returns `nutritionPanel:"absent"`, `stamp:false` and the withheld-read
-  sentence. ⚠️ **The copy is what keeps this survivable — it states the standard and claims nothing
-  about the product, so on a bottle of water it is *odd* rather than *false*. Do not "fix" this by
-  making the sentence more specific about the product.** The real fix is a second signal —
-  `product_category`, which is **on `origin/main`, not held** (corrected 2026-08-10; see the
-  category-capture entry below). ⚠️ **So the fix's code is shipped and the defect is still live** —
-  and the reason is now measured rather than guessed at.
-  ⚠️ **IT IS THE WIRING, NOT THE MIGRATION, AND THE SIGNAL WAS NEVER GOING TO BLOCK THIS ON ITS
-  OWN** (traced 2026-08-10). Two gaps, both real, and the second is the load-bearing one:
-  **(a)** `PRODUCT_CATEGORIES` has **no water value**, so water lands in `other` — measured by
-  running the live OFF record for `6111035002175` through `categoryFromAisle`: `waters`,
-  `spring waters`, `mineral waters`, `sparkling water` and `beverages` **all** return `other`.
-  **(b)** ⚠️ **`category` IS WRITE-ONLY.** `categoryFields()` is called from exactly one place —
-  `productStore.js:202`, the retain path — and `verdictEngine.js:727` computes `unverifiedAsFood`
-  from `nutritionPanel` alone and **never sees a category**. So the field is collected correctly
-  and read by nothing, and adding `water` alone would leave the row right and unread.
-  📋 `docs/CATEGORY-CAPTURE.md` said this itself — *"it does not touch the verdict engine … nothing
-  here can change a verdict"* — correct scoping when written, and also the statement that the fix
-  named here lies outside what was built. **Two documents one directory apart, each locally
-  coherent.**
-  ✅ **PARTS 1–2 ARE SHIPPED (2026-08-10, committed not pushed).** `water` is in
-  `PRODUCT_CATEGORIES` and in the `labelVision` prompt (one list stated twice, and the
-  subset test makes a one-file widening a red suite), and the OFF aisle patterns sit below
-  `energy drink` and above `soda`/`juice`. Measured on the live OFF record: `6111035002175`
-  → aisle `natural mineral waters` → **`water`**, where it returned `other` before.
+- ✅ **SHIPPED AND VERIFIED LIVE (2026-08-10): ONE PREDICATE — `nothingConfirmsFood`.** Three gates
+  that happened to agree became one question asked of whatever evidence exists. On `origin/main`
+  as `22b35a8`, with the water category beneath it as `f6c895f`. **The dyed-Dawn decoupling landed
+  inside it** — `tier === 'approved'` is gone from the gate, so a product is no longer protected
+  from the food treatment by containing a flagged food ingredient. Driven on production through
+  the guest path after the deploy, all five cases:
+  - `0030772006023` **dyed Dawn → FIRES** on `swap_recommended`: `education: null`, `swap: null`,
+    `unverifiedRead` present — and ⚠️ **`universalLayer` INTACT, both `yellow_5` and `blue_1` still
+    printed.** That is the half that mattered: **flags stand.** Withholding refuses to ENDORSE; it
+    never silences a warning.
+  - `6111035002175` **Sidi Ali → FIRES.** `3274080005003` **Cristaline → FIRES.**
+  - `3017620422003` **Nutella → SILENT**: `unverifiedRead: null`, `education` present, flags intact.
+  - `0030000010402` Quaker Old Fashioned Oats — `whole grain rolled oats`, panel present —
+    **SILENT, `tier: approved`, `stamp: true`. The seal still lands.**
+- ❓ ⚠️ **THE UPSTREAM QUESTION IS STILL OPEN, AND THE PREDICATE CONTAINS IT RATHER THAN ANSWERING
+  IT.** Sidi Ali still returns **`tier: "approved"`** on production today: the engine still reads a
+  seven-token mineral analysis as a clean ingredient list, still matches no KB concern, still
+  scores it zero. What changed is that the seal is withheld and the withheld read prints.
+  **The misread is contained at the seal, not fixed at the read.** ⏳ Still open as a QUESTION,
+  not a fix: what should a thin or non-ingredient list produce? Nothing is proposed, deliberately.
+- 🐞 ⚠️ **THE CATEGORY UPGRADE CANNOT REACH A ROW ALREADY IN `scanned_products`** (measured
+  2026-08-10, the day the water patterns shipped). A cache hit returns early in `scanExtract.js`
+  with the row's **stored** category (`productStore.js:142`) and never re-fetches Open Food Facts,
+  so `categoryFromAisle` never runs again. The upgrade branch written for exactly this
+  (`productStore.js:265` — patch when a fresh category is better than `other`) lives on the
+  **retain** path, which the cache hit bypasses. **Evidence, both halves measured the same hour:**
+  Sidi Ali's live OFF record resolves `natural mineral waters` → **`water`** through the shipped
+  patterns, while production returns **`category: "other"`** — the row was retained before the
+  patterns existed and cannot be told about them.
+  ⚠️ **IT FAILS IN THE SAFE DIRECTION AND THAT IS WHY IT IS RECORDED RATHER THAN RUSHED** —
+  `other` is non-exempt, so a stale category can only withhold a seal, never grant one.
+  **But part 3 would then be inert for precisely the products that motivated it**, which makes
+  this a prerequisite to part 3 rather than a footnote to it. Not proposed: the fix touches the
+  store's read path, and that is separately scoped server work.
+- ⏸ **PART 3 — THE CATEGORY EXEMPTION — IS STILL HELD**, now on two things: the upstream question
+  above, and the cache finding above. Context for why water is the cluster worth the trouble:
+  **2.7% of the most-scanned OFF products carry no `energy` key at all, rising to 8.8% at the thin
+  end**, and the largest single cluster is water. When the exemption lands it gets **its own strict
+  exact-tag test and never rides on `categoryFromAisle`'s substring match**; it stays an explicit
+  allowlist, never a general "trust the panel if we know the category", and **`other` and `NULL`
+  are both non-exempt permanently.** The live table is the argument: of its four
+  `nutrition_panel: 'absent'` rows, two are the waters and two are **dish soap**.
   ⚠️ **THE PATTERN IS THE PLURAL `waters`, NOT THE BARE WORD THE PROPOSAL NAMED.** Matching is
   `includes`, so bare `water` also eats `watermelons`, `water chestnuts` and `water biscuits` —
-  produce, a canned vegetable and a cracker, all silently becoming a drink. **That is not a
-  mis-shelved row: part 3 lets a category past a fail-closed gate, so a watermelon in `water`
-  is a wrong approval.** The plural cannot match any of the three, and it is the form OFF's own
-  tags use. Asserted in `productCategory.test.js`, and the assertion was proven to fail on
-  `watermelons` before being trusted.
-  ⏸ **PART 3 IS HELD, ON A DIFFERENT REASON THAN BEFORE.** It waits on the upstream question
-  below, which outranks it. When that is answered the exemption gets **its own strict exact-tag
-  test and never rides on `categoryFromAisle`'s substring match** — and it stays an explicit
-  allowlist, never a general "trust the panel if we know the category": the guard fails closed
-  on purpose and **`other` and `NULL` must both be non-exempt, permanently.** The live table is
-  the evidence — of its four `nutrition_panel: 'absent'` rows, two are the waters and two are
-  **dish soap**, so a rule keyed on "we have a category" would exempt dish soap.
-- ❓ ⚠️ **THE UPSTREAM QUESTION, AND IT OUTRANKS THE EXEMPTION: `approved` ON A 7-TOKEN MINERAL
-  ANALYSIS IS WRONG BEFORE THE SEAL IS EVER REACHED.** Sidi Ali's `"sodium, calcium,
-  magnesium…"` is a **mineral panel** and the engine read it as a clean ingredient list — it
-  matched no KB concern, so it scored zero concerns, so it earned `approved`. The panel gate is
-  the only thing standing between that and a gold seal, which is why part 3 cannot be ruled
-  first: **it is an exemption from the one check that is currently catching an upstream
-  misread.** ⏳ **Open as a QUESTION, not a fix: what should a thin or non-ingredient list
-  produce?** Nothing is proposed yet, deliberately.
-- ⏸ **THE DYED-DAWN DECOUPLING IS RULED WITH PART 3** — same gate, same function, one change.
-  See the entry below; neither lands until the question above is answered.
-- 🐞 **THE DYED DAWN IS STILL READ AS FOOD, AND `unverifiedAsFood` IS STRUCTURALLY UNABLE TO REACH
-  IT.** `0030772006023` comes back `swap_recommended` on `yellow_5`/`blue_1`, and the gate requires
-  `tier === 'approved'` (`verdictEngine.js:689`) — so **a product is protected from the food
-  treatment only by NOT containing a flagged food ingredient**, which is exactly backwards. Ruled
-  2026-08-09: **the gate should not be conditioned on the tier.** What that decoupling must do —
-  null `education` and `swap` on every tier, populate `unverifiedRead` on every tier — and ⚠️ **what
-  it must NEVER do: suppress `universalLayer`. FLAGS STAND.** A matched concern was really printed,
-  so it can never be false. **Withholding is about refusing to ENDORSE, never about silencing a
-  warning.** The measured cost is not zero: a flagged real food with a thin OFF record loses its
-  verdict WORD while keeping every flag.
-  ⚠️ **`unverifiedAsFood` IS NOT ON THE WIRE.** The engine returns it, `routes/verdict.js` does not
-  forward it; a client keys off `unverifiedRead` / `stamp` instead, which is deliberate — **a client
-  cannot fail closed on a field it has never heard of. Do not add it to a decoder expecting it to
-  arrive.**
+  produce, a canned vegetable and a cracker, all silently becoming a drink. **Part 3 lets a
+  category past a fail-closed gate, so a watermelon in `water` is a wrong approval.** Asserted in
+  `productCategory.test.js`, and the assertion was proven to fail on `watermelons` before being
+  trusted.
+- ⚠️ **`unverifiedAsFood` IS STILL NOT ON THE WIRE, AND THAT IS DELIBERATE.** The engine returns
+  it; `routes/verdict.js` does not forward it. A client keys off `unverifiedRead` / `stamp`
+  instead — **a client cannot fail closed on a field it has never heard of. Do not add it to a
+  decoder expecting it to arrive.** What the routes now carry is `readSwap`, **one helper across
+  all four send sites**, because this file has already lost a field across those four: three
+  forwarded `unverifiedRead` and the fourth did not. A rule that must be retyped four times is a
+  rule that will be applied three times.
 
 ### Held deliberately — do not "discover" these and land them
 
@@ -990,6 +979,20 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   stack timestamps interleave with `origin/main`'s.** ⚠️ **A reader reconstructing this history from
   commit dates alone will get the order wrong.** A bare `git push` sends everything ahead; pushing a
   specific commit by hash is the only way to ship the bottom of a stack without the top.
+
+  ✅ **DONE ONCE, ON 2026-08-10, AND THE CLEANUP TURNED OUT TO BE PART OF THE MOVE.** The water
+  category and the food predicate were shipped past the hold on a two-commit branch cut from
+  `origin/main` (`ship-verify`), pushed as `ship-verify:main`. **The import route never left the
+  machine** — verified by grepping `importGuestTrips` and `/trips/import` out of `origin/main`
+  *after* the push, never by reading the push output.
+  ⚠️ **THEN `main` WAS REBASED ONTO THE NEW `origin/main`, AND THAT SECOND STEP IS NOT OPTIONAL.**
+  A cherry-pick leaves the ORIGINAL commits sitting on the stack under different hashes, so the
+  command above — the one this entry prescribes as ground truth — went on naming two subjects that
+  were already live. **That is this entry's own recorded failure, reproduced by the fix for it,
+  within the hour.** The rebase dropped both as already-applied (`skipped previously applied
+  commit`), and the result was proven **content-identical** to the pre-rebase tip
+  (`git diff ef598a8 main` empty, suite still 644) *before* `main:held` was force-updated.
+  **A cherry-pick past the hold is not finished until the stack stops claiming what it shipped.**
 
   🐞 ⚠️ **CATEGORY CAPTURE IS NOT HELD. IT IS ON `origin/main`, AND THIS ENTRY SAID THE OPPOSITE
   FOR TWO DAYS — AS DID THE iOS REPO'S COPY OF IT.** Corrected 2026-08-10 by computing it rather
