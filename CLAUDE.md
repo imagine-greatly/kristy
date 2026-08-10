@@ -147,6 +147,42 @@ this" from "this is wrong."
 **This block is in the file rather than in a prompt on purpose.** After a drop, nobody
 remembers to paste it — a session that reads it automatically is the entire point.
 
+### EVERY SESSION STARTS COLD
+
+**SSH drops end the conversation and keep the disk. Assume you are resuming.** Before any
+work, without being asked:
+
+```
+- git status --porcelain on BOTH repos; commit and push anything
+  outstanding
+- confirm kristy-ios HEAD against its remote by READING A FILE BACK,
+  not by comparing hashes
+- report kristy main vs origin/main and origin/held
+- report the server suite count and the iOS UI suite count
+- report anything left in flight: a background run, a half-finished
+  fix, an unmigrated corpus change
+```
+
+**Then state what you understand the current task to be, and STOP if it is not obvious from
+the repo.**
+
+⚠️ **The last line is the load-bearing one.** The check is cheap and a session will run it
+willingly; the failure mode is running it, finding a `wip:` commit and four unpushed ones, and
+*inferring* a task from them. **A dropped session leaves work in a state, not an instruction** —
+what was half-built says nothing about whether it should be finished, and this repo's history
+is full of the resumed session confidently rewriting something that was already done.
+
+⚠️ **"Push anything outstanding" MEANS `kristy-ios` AND `main:held` — NOT `kristy` `main`.**
+Pushing this repo's `main` publishes to production in about a minute and the stack carries
+deliberately held commits. The reflex this block installs is the exact reflex the next section
+forbids. Commit everything, always; push `kristy-ios`, push `main:held`, and leave `main` alone
+unless the turn's work is meant to go live.
+
+📎 **A twin of this block lives in `kristy-ios/CLAUDE.md`** — a session starting in either repo
+has to find it. **Two copies is the shape that produced the category-capture error** (one entry
+stated in two documents, both wrong, for two days), so if you change one, change both, and
+prefer deleting a copy over letting them disagree.
+
 ---
 
 ## THIS REPO HAS TWO HALVES AND THEY HAVE DIFFERENT RULES
