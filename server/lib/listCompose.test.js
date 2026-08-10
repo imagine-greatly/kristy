@@ -131,3 +131,47 @@ test('the compose prompt forbids inventing brands and redirects to the label', (
   // A brand is allowed only when the shopper supplied it.
   assert.match(LIST_COMPOSE_SYSTEM, /ONLY if the shopper named it first/i);
 });
+
+/* ───────── THE LIST CARRIES ANYTHING AND JUDGES ONLY FOOD ─────────
+   CLAUDE.md, ruled 2026-08-09: "Compose may never refuse to add what a shopper asked for,
+   and may never explain why it declined." This was a stated promise with NO test — the
+   second member of the findings family — and the prompt broke it two ways: it called its
+   own output "grocery ITEMS ONLY", and its not-about-groceries door read as a licence to
+   decline a non-food item and narrate the refusal.
+
+   The rest of the machinery was already right, which is why the defect was prompt-only: a
+   composed row's `section` becomes its cart `category` (cartEdit.js), 'Pantry' names no
+   walk section (listSections.js CATEGORY_SECTION), so a non-food row lands in the trailing
+   "Everything else" group with no card and no do line — exactly what the ruling describes.
+   Only the model's willingness to emit the row at all was missing. */
+
+test('the compose prompt puts a non-food item ON the list rather than declining it', () => {
+  assert.match(LIST_COMPOSE_SYSTEM, /THE LIST CARRIES ANYTHING\. YOU JUDGE ONLY FOOD\./);
+  // The instruction must be to ADD it, and to say nothing about it.
+  assert.match(LIST_COMPOSE_SYSTEM, /PUT IT ON THE LIST/);
+  assert.match(LIST_COMPOSE_SYSTEM, /NEVER decline an item/);
+  assert.match(LIST_COMPOSE_SYSTEM, /never say anything ABOUT it/);
+  // ⚠️ The silence is the feature: an honest absence, never a weak claim in its place.
+  assert.match(LIST_COMPOSE_SYSTEM, /Adding it and saying nothing IS the correct handling/);
+  // It must not call its own output food-only — that framing is what made a refusal read
+  // as obedience. "SHOPPING ITEMS" is the replacement; "grocery ITEMS ONLY" is the defect.
+  assert.ok(
+    !/grocery ITEMS ONLY/.test(LIST_COMPOSE_SYSTEM),
+    'the prompt still describes its output as grocery-only, which is what declined dish soap'
+  );
+});
+
+test('the not-about-groceries door cannot be read as a non-food refusal', () => {
+  /* The door is legitimate — an instruction naming nothing to buy has nothing to add — so
+     it stays. What it may never be is the exit a non-food ITEM takes. A ban with no
+     substitute is a gap the model fills from habit, so the door names the rule to use
+     instead rather than only forbidding itself. */
+  assert.match(LIST_COMPOSE_SYSTEM, /names NOTHING TO BUY/);
+  assert.match(LIST_COMPOSE_SYSTEM, /An item being non-food is never a reason to use it/);
+  assert.match(LIST_COMPOSE_SYSTEM, /THE LIST CARRIES ANYTHING above/);
+  // The superseded wording keyed on the INSTRUCTION's subject, which is the misread.
+  assert.ok(
+    !/not about groceries at all/.test(LIST_COMPOSE_SYSTEM),
+    'the old door survives; it is the sentence that licensed the refusal'
+  );
+});

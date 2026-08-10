@@ -67,7 +67,7 @@ Return five things:
 4. "sugars_g" and "serving_g" — from the Nutrition Facts panel, and ONLY if that panel is legible in this same photo: total sugars in grams per serving, and the serving size in grams. Return null for either one you cannot read directly off the label. NEVER estimate, infer, or calculate these from the ingredients — a null is correct and useful, a guess is not. Ignore every other nutrition number; calories, protein, fat and sodium are not wanted.
 
 5. "category" — what KIND of product this is, chosen from this list and nothing else:
-bar, cereal, cracker, chip_snack, cookie_sweet_snack, bread, pasta_grain, sauce_condiment, dressing, nut_butter, spread_jam, yogurt, cheese, milk_plant_milk, juice, soda_drink, sports_energy_drink, frozen_meal, canned_protein, canned_vegetable, soup_broth, baking_ingredient, oil_fat, seasoning, supplement, other.
+bar, cereal, cracker, chip_snack, cookie_sweet_snack, bread, pasta_grain, sauce_condiment, dressing, nut_butter, spread_jam, yogurt, cheese, milk_plant_milk, juice, soda_drink, sports_energy_drink, water, frozen_meal, canned_protein, canned_vegetable, soup_broth, baking_ingredient, oil_fat, seasoning, supplement, other.
    Judge it from the package in front of you — the product name, the form, the packaging. If none of them fits, return "other"; do not stretch one to fit. This is a description of the product, never a judgement about it.
 
 Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null, "category": "one of the listed values"}`;

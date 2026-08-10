@@ -71,6 +71,36 @@ test('THE ORDER OF THE OFF AISLE MAP IS LOAD-BEARING — the specific beats the 
   }
 });
 
+test('the live defect maps: the OFF aisle that reached `other` now reaches water', () => {
+  // 6111035002175 (Sidi Ali). Its real derived aisle, measured off the live OFF record —
+  // the string that returned `other` and left the withheld-read sentence on a water bottle.
+  assert.equal(categoryFromAisle('natural mineral waters'), 'water');
+  // The other shapes OFF actually uses for the category.
+  assert.equal(categoryFromAisle('waters'), 'water');
+  assert.equal(categoryFromAisle('spring waters'), 'water');
+  assert.equal(categoryFromAisle('sparkling water'), 'water');
+  assert.equal(categoryFromAisle('bottled water'), 'water');
+});
+
+test('⚠️ WATER IS THE PLURAL ON PURPOSE — a bare `water` substring eats three real aisles', () => {
+  /* The guard, asserted rather than commented. Matching is `includes`, so the pattern the
+     proposal named — bare 'water' — would have classed all three of these as a drink. The
+     cost is not a mis-shelved row: the exemption this vocabulary exists for lets a category
+     past a fail-closed panel gate, so a watermelon in `water` is a wrong approval. */
+  const substringTraps = [
+    ['watermelons', 'produce is not a beverage'],
+    ['water chestnuts', 'a canned vegetable is not a beverage'],
+    ['water biscuits', 'a cracker is not a beverage'],
+  ];
+  for (const [aisle, why] of nonEmpty(substringTraps, 'substringTraps')) {
+    assert.notEqual(categoryFromAisle(aisle), 'water', `"${aisle}" was eaten by the water pattern — ${why}`);
+  }
+  // And the ordering half: the drink patterns above and below water still win their own.
+  assert.equal(categoryFromAisle('energy drinks'), 'sports_energy_drink');
+  assert.equal(categoryFromAisle('carbonated drinks'), 'soda_drink');
+  assert.equal(categoryFromAisle('orange juice'), 'juice');
+});
+
 test('a real OFF aisle string maps, and an unmapped one is other rather than a guess', () => {
   assert.equal(categoryFromAisle('breakfast cereals'), 'cereal');
   assert.equal(categoryFromAisle('carbonated drinks'), 'soda_drink');

@@ -59,6 +59,11 @@ export const PRODUCT_CATEGORIES = [
   'juice',
   'soda_drink',
   'sports_energy_drink',
+  // Added 2026-08-10 on the evidence the widening rule above demands: both categorized rows
+  // in the live catalog are bottled water sitting in `other` (`docs/CATEGORY-CAPTURE.md`),
+  // and water is the largest single cluster of the OFF-wide products carrying no `energy`
+  // key. It is a value the catalog is asking for, not one that sounded missing.
+  'water',
   'frozen_meal',
   'canned_protein',
   'canned_vegetable',
@@ -103,6 +108,22 @@ export function normalizeCategory(value) {
    picks. A miss is `other` with the raw aisle kept, exactly like the vision path. */
 const OFF_AISLE_PATTERNS = [
   ['sports_energy_drink', ['energy drink', 'sports drink', 'isotonic']],
+  /* ⚠️ WATER SITS HERE — BELOW `energy drink`, ABOVE `soda` AND `juice` — and it is NOT the
+     bare word `water`.
+
+     THE PLURAL IS THE GUARD, AND IT IS LOAD-BEARING. Matching is `includes`, so a bare
+     'water' pattern also matches `watermelons`, `water chestnuts` and `water biscuits` —
+     a produce row, a canned vegetable and a cracker, all silently becoming a drink. The
+     plural `waters` cannot: in every one of those the letters after `water` are `m`, ` c`
+     and ` b`. OFF's own tags for the category are already plural (`en:waters`,
+     `en:mineral-waters`, `en:spring-waters`), so the safe form is also the accurate one,
+     and the singular compounds below are spelled out rather than bought with a substring.
+
+     Why it matters more than a mis-shelved row: the exemption this vocabulary is FOR
+     (part 3, held) keys on the category to let a product past a fail-closed panel gate.
+     A watermelon landing in `water` is not a filing error there, it is a wrong approval. */
+  ['water', ['waters', 'mineral water', 'spring water', 'sparkling water', 'bottled water',
+    'drinking water', 'seltzer']],
   ['soda_drink', ['soda', 'sodas', 'carbonated drink', 'cola', 'soft drink']],
   ['juice', ['juice', 'nectar']],
   ['milk_plant_milk', ['milk', 'plant-based milk', 'plant milk', 'creamer']],
