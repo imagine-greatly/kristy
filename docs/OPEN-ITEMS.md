@@ -483,3 +483,60 @@
   the OLD amount and checkout charges it against a page showing the new one. **Recreate the
   Stripe Price objects and update `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL` whenever
   the displayed price changes** — they are not in this repo and no test can reach them.
+
+---
+
+## ❓ THE UPSTREAM QUESTION: `approved` ON A MINERAL PANEL (opened 2026-08-10)
+
+**Ruled open as a QUESTION, not a fix, and it OUTRANKS the water exemption** (part 3 of
+`docs/CATEGORY-CAPTURE.md`, which now waits on the answer).
+
+### What was found
+
+Sidi Ali's ingredient list, as the engine receives it, is a **mineral analysis** —
+`"sodium, calcium, magnesium…"`, seven tokens of water chemistry. It is not an ingredient list in
+any sense the KB was built for, and the engine read it as a **clean** one: no token matched a KB
+concern, zero concerns scored, so the product earned **`approved`**.
+
+**The panel gate is the only thing between that and a gold seal.** `unverifiedAsFood` fires on
+`tier === 'approved' && nutritionPanel === 'absent'`, and bottled water satisfies both — which is
+why the withheld-read sentence appears on a water bottle at all.
+
+### ⚠️ Why this reorders the queue
+
+Part 3 is an **exemption from that gate**, keyed on the product's category. Ship it first and the
+water is exempted — which means the `approved` it already earned on a seven-token mineral panel
+goes through to the seal. **So the exemption's effect depends entirely on whether the upstream read
+is right, and nobody had asked.** The gate is currently doing two jobs: the one it was designed for
+(*is this food at all*) and one nobody assigned it (*catching a tier earned on a non-ingredient
+list*). Removing it for water removes the second silently.
+
+That is the same shape as the findings-family entry on constant `false` flags: the exemption reasons
+correctly in isolation, and the defect only appears when you add it to what the engine already did.
+
+### The question, stated so it can be answered
+
+**What should a thin or non-ingredient list produce?** Sub-questions, none of them settled:
+
+- Is there a **token floor** below which no tier is earned, or is a count the wrong instrument —
+  salt is one ingredient and legitimately clean?
+- Is a **mineral analysis** a recognisable shape (all tokens are minerals / the list reads as a
+  chemical panel), and if so is it its own answer rather than a clean read?
+- Does `approved` on a list that matched **nothing at all** differ from `approved` on a list that
+  matched nothing *after* matching something? Zero concerns from zero recognised food is not the
+  same evidence as zero concerns from a full label.
+- Which of these is a **KB** question and which is an **engine** question? A mineral entry in the
+  ingredient KB would be the wrong instrument — the KB is concerns-only, and minerals are not a
+  concern.
+
+### ⚠️ What this does NOT license
+
+- **No fix is proposed and none should be inferred.** The measurement is one product.
+- **FLAGS STAND, whatever the answer.** Anything here that withholds a verdict WORD may never
+  suppress `universalLayer`. A matched concern was really printed and cannot be false.
+- **It is not a reason to make the withheld-read sentence more specific about the product.** That
+  copy is what keeps the water case survivable: it states the standard and claims nothing about
+  what is in the bottle, so on water it is *odd* rather than *false*.
+- **The dyed-Dawn tier decoupling is ruled WITH part 3**, not with this. Same gate, same function,
+  one change — but it lands after the question is answered, because decoupling the gate from the
+  tier changes which products reach the exemption at all.

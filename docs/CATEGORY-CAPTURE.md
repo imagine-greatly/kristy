@@ -313,3 +313,77 @@ the live table is now the evidence for it, and it is stronger than the argument 
   bucket shows demand".** Anyone re-reading this later should not inflate n=2 into a trend.
 - **Re-run this query once the catalog is larger.** It is the same query; the answer will
   actually rank something.
+
+---
+
+## ✅ PARTS 1 AND 2 ARE SHIPPED (2026-08-10). PART 3 IS HELD ON AN UPSTREAM QUESTION.
+
+Committed, not pushed (the stack carries the held import route). Server suite **627 pass / 0 fail**.
+
+**What shipped:** `water` in `PRODUCT_CATEGORIES` and in `labelVision.js`'s inline list, plus the
+OFF aisle patterns placed below `energy drink` and above `soda` and `juice`, as specced.
+
+**Measured on the live OFF record**, not asserted: `6111035002175` → derived aisle
+`natural mineral waters` → **`water`**. Every water tag on that record (`waters`, `spring waters`,
+`mineral waters`, `natural mineral waters`) now maps; the two `beverages` tags still return
+`other`, which is correct — they are not a water claim.
+
+### ⚠️ THE PATTERN IS `waters`, NOT THE `water` THIS DOCUMENT PROPOSED
+
+The proposal above named the bare word. Matching is `includes`, so bare `water` also matches:
+
+| aisle | what it really is | what bare `water` made it |
+| --- | --- | --- |
+| `watermelons` | produce | `water` |
+| `water chestnuts` | canned vegetable | `water` |
+| `water biscuits` | cracker | `water` |
+
+The plural cannot match any of them — the next character is `m`, ` c`, ` b` — and it is the form
+OFF's own tags already use (`en:waters`, `en:mineral-waters`, `en:spring-waters`), so the safe
+form is also the accurate one. The singular compounds (`mineral water`, `sparkling water`, …) are
+spelled out rather than bought with a substring.
+
+⚠️ **Why this is not a tidiness point.** Part 3 keys on the category to let a product past a
+**fail-closed** gate. In that world a watermelon in `water` is not a mis-shelved row, it is a
+**wrong approval** — the exact failure this document says the guard exists to prevent. The three
+rows above are asserted in `productCategory.test.js`, and the assertion was **proven to fail on
+`watermelons`** before it was trusted.
+
+### ⚠️ CRISTALINE IS STILL `other`, AND THE FIX THIS DOCUMENT FLOATED IS THE WRONG ONE
+
+Above, the Cristaline row prompted: *"an argument for the patterns covering the beverage aisle,
+not only the word water"*. **Measured against the live OFF record for `3274080005003`, that is the
+wrong conclusion — the water evidence is already on the record and the aisle derivation throws it
+away:**
+
+```
+[0] beverages and beverages preparations → other
+[1] beverages                           → other
+[2] waters                              → water   ← the answer is right here
+[3] spring waters                       → water   ← and here
+[4] unsweetened beverages               → other   ← LAST, so this is the aisle we use
+```
+
+**`aisleFromCategories` takes the LAST tag on the premise that it is the most specific. That
+premise is false.** `en:unsweetened-beverages` is not more specific than `en:spring-waters`; it is
+an orthogonal **dietary** axis, and OFF's tag order is not a specificity hierarchy. So the row
+lands in `other` while carrying two tags that say `water`.
+
+**Widening the water patterns to swallow `beverages` would be the wrong fix twice over:** it would
+not be true (an unsweetened tea is not water), and it would make `water` the beverage catch-all —
+in a vocabulary whose whole purpose is to gate a fail-closed exemption.
+
+**The right shape is to map the category from the TAG LIST rather than from the single derived
+aisle string**, taking the most specific *mapped* hit rather than the last tag. ⏳ **Not done, and
+deliberately not done here:** it changes `categoryFromAisle`'s input contract, it changes what
+`category` is written for products well beyond water, and that field is what part 3's exemption
+reads. It is a separately-proposed server change, and it is now measured rather than guessed.
+
+📋 **This also generalises past water.** Any product whose last tag is a dietary one — unsweetened,
+no-added-sugar, organic — loses its aisle the same way. That is a category-capture defect, not a
+water defect, and `category_raw` is what made it visible.
+
+### Stored rows are not rewritten
+
+`categoryFromAisle` runs at **retain** time only, so the two live rows keep `other` until they are
+scanned again. Sidi Ali would now be `water`; Cristaline would still be `other`.

@@ -612,7 +612,18 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   - **She never scores, flags, approves or swaps a non-food item.** Scanned, the answer is
     *"that isn't something Kristy reads."*
   - **Compose may never refuse to add what a shopper asked for, and may never explain why it
-    declined.**
+    declined.** ⚠️ **THIS WAS A PROMISE WITH NO TEST AND PRODUCTION WAS BREAKING BOTH HALVES OF
+    IT** (measured 2026-08-10, `POST /api/guest/list/compose`, "add dish soap" over a three-row
+    cart): the row **was not added**, and the summary read *"Dish soap is not a grocery item…"* —
+    a refusal, narrated, with an em-dash aside the voice rule also forbids. **Prompt-only defect
+    and prompt-only fix**, because everything downstream was already right: a composed row's
+    `section` becomes its cart `category`, `Pantry` names no walk section, so the row lands in the
+    trailing group with no card and no do line — exactly what this rule describes. Only the
+    model's willingness to emit the row was missing. Fixed by `THE LIST CARRIES ANYTHING` in
+    `LIST_COMPOSE_SYSTEM`, and the not-about-groceries door now names the rule to use instead of
+    itself. **One prompt, three call sites** (list, chat, guest), so it cannot be half-fixed.
+    Pinned in `listCompose.test.js` — the old wording is asserted **absent**, not just the new
+    wording present.
   - ⚠️ **The silence is the feature, so do not "improve" it later** with a household KB, a generic
     tidiness note, or an eyebrow reading "no guidance". Each turns an honest absence into a weak claim.
 - ⚠️ **THE SCOPE BOUNDARY (ruled 2026-08-09): food and food-adjacent only.** Future scope, if any:
@@ -915,9 +926,36 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   📋 `docs/CATEGORY-CAPTURE.md` said this itself — *"it does not touch the verdict engine … nothing
   here can change a verdict"* — correct scoping when written, and also the statement that the fix
   named here lies outside what was built. **Two documents one directory apart, each locally
-  coherent.** ⏸ **The widening + wiring is specced and HELD for the server queue** in that file,
-  including why part 3 is an explicit allowlist and never a general "trust the panel if we know
-  the category": that guard fails closed on purpose and `other` must never be exempt.
+  coherent.**
+  ✅ **PARTS 1–2 ARE SHIPPED (2026-08-10, committed not pushed).** `water` is in
+  `PRODUCT_CATEGORIES` and in the `labelVision` prompt (one list stated twice, and the
+  subset test makes a one-file widening a red suite), and the OFF aisle patterns sit below
+  `energy drink` and above `soda`/`juice`. Measured on the live OFF record: `6111035002175`
+  → aisle `natural mineral waters` → **`water`**, where it returned `other` before.
+  ⚠️ **THE PATTERN IS THE PLURAL `waters`, NOT THE BARE WORD THE PROPOSAL NAMED.** Matching is
+  `includes`, so bare `water` also eats `watermelons`, `water chestnuts` and `water biscuits` —
+  produce, a canned vegetable and a cracker, all silently becoming a drink. **That is not a
+  mis-shelved row: part 3 lets a category past a fail-closed gate, so a watermelon in `water`
+  is a wrong approval.** The plural cannot match any of the three, and it is the form OFF's own
+  tags use. Asserted in `productCategory.test.js`, and the assertion was proven to fail on
+  `watermelons` before being trusted.
+  ⏸ **PART 3 IS HELD, ON A DIFFERENT REASON THAN BEFORE.** It waits on the upstream question
+  below, which outranks it. When that is answered the exemption gets **its own strict exact-tag
+  test and never rides on `categoryFromAisle`'s substring match** — and it stays an explicit
+  allowlist, never a general "trust the panel if we know the category": the guard fails closed
+  on purpose and **`other` and `NULL` must both be non-exempt, permanently.** The live table is
+  the evidence — of its four `nutrition_panel: 'absent'` rows, two are the waters and two are
+  **dish soap**, so a rule keyed on "we have a category" would exempt dish soap.
+- ❓ ⚠️ **THE UPSTREAM QUESTION, AND IT OUTRANKS THE EXEMPTION: `approved` ON A 7-TOKEN MINERAL
+  ANALYSIS IS WRONG BEFORE THE SEAL IS EVER REACHED.** Sidi Ali's `"sodium, calcium,
+  magnesium…"` is a **mineral panel** and the engine read it as a clean ingredient list — it
+  matched no KB concern, so it scored zero concerns, so it earned `approved`. The panel gate is
+  the only thing standing between that and a gold seal, which is why part 3 cannot be ruled
+  first: **it is an exemption from the one check that is currently catching an upstream
+  misread.** ⏳ **Open as a QUESTION, not a fix: what should a thin or non-ingredient list
+  produce?** Nothing is proposed yet, deliberately.
+- ⏸ **THE DYED-DAWN DECOUPLING IS RULED WITH PART 3** — same gate, same function, one change.
+  See the entry below; neither lands until the question above is answered.
 - 🐞 **THE DYED DAWN IS STILL READ AS FOOD, AND `unverifiedAsFood` IS STRUCTURALLY UNABLE TO REACH
   IT.** `0030772006023` comes back `swap_recommended` on `yellow_5`/`blue_1`, and the gate requires
   `tier === 'approved'` (`verdictEngine.js:689`) — so **a product is protected from the food
@@ -1005,6 +1043,18 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 ### Queued
 
+- 🐞 ⏳ **THE AISLE IS DERIVED FROM THE LAST OFF TAG ON A FALSE PREMISE, AND IT THROWS AWAY THE
+  ANSWER** (measured 2026-08-10). `aisleFromCategories` takes the last `categories_tags` entry as
+  "most specific". It is not a specificity hierarchy: for `3274080005003` the tags run
+  `… waters → spring waters → unsweetened beverages`, so the row lands in **`other`** while
+  carrying two tags that map to `water`. `en:unsweetened-beverages` is an orthogonal **dietary**
+  axis, and any product whose last tag is a dietary one (unsweetened, no-added-sugar, organic)
+  loses its aisle the same way. **This is a category-capture defect, not a water one.** The shape
+  is to map from the TAG LIST, most specific *mapped* hit — **not** to widen the water patterns to
+  swallow `beverages`, which is what `docs/CATEGORY-CAPTURE.md` first floated and would be untrue
+  (an unsweetened tea is not water) in a vocabulary that gates a fail-closed exemption. Separately
+  proposed: it changes what `category` is written for products well beyond water, and that field is
+  what part 3 reads. Account and the measured tag list are in that file.
 - ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE** (ruled 2026-08-10). `buildBaseline` is
   written, tested and correct with a permanently empty input; `GuestTripBook.archive` holds exactly
   the input shape it wants. Run that computation **in the client** for a guest with no account, no
@@ -1024,6 +1074,16 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   session's findings in full.
 
 ### Infrastructure state
+
+- ⚠️ **`server/.env` ON THIS BOX HAS REAL SUPABASE CREDENTIALS AND A PLACEHOLDER MODEL KEY. THE
+  TWO ARE NOT THE SAME "WALL".** Measured 2026-08-10: `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
+  are live (the evidence query runs), while `ANTHROPIC_API_KEY` is **byte-identical to
+  `.env.example`'s `sk-ant-xxxxx`** and returns `401 invalid x-api-key`. `USDA_API_KEY` and both
+  Stripe keys are **empty strings**. **So anything whose behaviour depends on a model call cannot
+  be verified locally** — prompt changes are testable only by asserting on the prompt text, plus
+  the real endpoint on production. `docs/CATEGORY-CAPTURE.md` says "the wall is down", which is
+  true of the DB and **only** the DB; read as "this box can do live things now" it is wrong in
+  the expensive direction.
 
 - ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
   push. Code degrades gracefully without it. Everything else is applied — full audit in
