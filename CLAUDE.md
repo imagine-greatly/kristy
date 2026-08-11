@@ -1088,6 +1088,25 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 ### Queued
 
+- 🐞 ⏳ **`/guest/list/attach` IS METERED BY A BUDGET SIZED FOR A DIFFERENT ACT** (measured
+  2026-08-11, from the iOS side). It draws `cartBuildLimited` — **20/hour, sized for the one
+  cart build a shopper does per trip** — while an attach is made by the CLIENT on every cold
+  launch carrying uncarded rows and once per added item. **This is the fourth instance of one
+  correction**, and the first where the door was already out of the inference pool: the rule
+  the other three established is a bucketed ceiling **sized for the act it protects**, and
+  attach was put in the nearest existing bucket instead of given one. Attach names no model
+  call — `sanitizeList`, then a synchronous scan of an in-memory KB — so `guestRate.js`'s own
+  header settles which side it is on.
+  ⚠️ **A REFUSED ATTACH PRODUCES MORE ATTACHES, NOT FEWER.** `Cart.merge` persists `carded`,
+  so a success stops the next launch calling and a refusal leaves every row uncarded for the
+  rest of the window. The bucket has positive feedback, and "re-run on a fresh hour" is a
+  weaker remedy than it reads.
+  **Evidence:** the iOS UI suite's attach-triggering launches total **20 deterministically —
+  exactly the ceiling — before two test classes that inherit a sticky fixture contribute
+  anything**; ~23 measured. ⚠️ **The suite is the DETECTOR, not the subject** — a twelve-item
+  list plus eight aisle additions plus three cold launches is 23 for a real shopper, so sizing
+  this for CI would be the same mistake one layer along. Proposal, with the counts per test
+  class and the rejected one-liner: `docs/ATTACH-BUCKET.md`. Separately proposed server work.
 - 🐞 ⏳ **THE AISLE IS DERIVED FROM THE LAST OFF TAG ON A FALSE PREMISE, AND IT THROWS AWAY THE
   ANSWER** (measured 2026-08-10). `aisleFromCategories` takes the last `categories_tags` entry as
   "most specific". It is not a specificity hierarchy: for `3274080005003` the tags run
@@ -1192,6 +1211,7 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 | `docs/PASS3-HANDOFF.md` | §14 is the full queue in order; §13 is that session's findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema compared against the migration files. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
+| `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
 | `mobile/docs/LAUNCH_CHECKLIST.md` | Unfinished App Store submission work. |
 
 ⚠️ **THIS FILE HAS A CONTEXT BUDGET AND IT IS LOAD-BEARING.** On 2026-08-10 it reached 156,456
