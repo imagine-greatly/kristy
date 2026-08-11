@@ -707,9 +707,16 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   in two commits, 2026-08-11. **An editor re-flowing a paragraph reads what is above the line they
   are standing on**, so a rule that binds four sentences is written above four sentences — the
   duplication is the mechanism, not clutter.
-  ⏳ **STILL WRAPPED IN BOTH FILES, AND NOT FIXED: the consent-by-entry sentence** (`privacy.html`
-  ~199, `terms.html` ~184). Same defect class, same required-element list, and the first one where
-  **neither** file knew the rule — so nothing on the page hints it applies. Its own scoped edit.
+  ✅ **THE CONSENT-BY-ENTRY SENTENCE IS FIXED TOO (2026-08-11), and it was the instructive one.**
+  It was wrapped in **both** files — the only one of the four where **neither** page kept the
+  rule, so unlike the others there was no unbroken sibling anywhere to notice it against. **That
+  is the version of this defect that survives indefinitely: nothing on the page disagrees with
+  it.** All four required sentences are now unbroken in both files, each with the rule recorded
+  directly above it.
+  ⚠️ **The two files word that sentence DIFFERENTLY** (`constitutes your consent … at that
+  number` vs `is your consent`) **and both were left exactly as they were.** Reconciling them is
+  a copy decision, not a wrap fix, and making it inside a 10DLC-shaped edit is how a required
+  element gets reworded by accident.
 - The pages must also carry: OTP purpose, that entering a number *constitutes consent*, one message
   per sign-in request, STOP/HELP, "message and data rates may apply", and the processor list.
   ⚠️ **Every one of those is a match target, so the unbroken-line rule is a property of the LIST,
