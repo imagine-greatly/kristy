@@ -699,8 +699,21 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 - ⚠️ **The carrier sentence sits on ONE unbroken source line with no tags inside it.** A2P 10DLC
   review is often automated against raw HTML, and a line wrap fails the match — rejection code **805**.
   **Do not re-wrap it to fit the column.**
+- ⚠️ **A CONSTRAINT RECORDED ABOVE ONE SENTENCE DOES NOT TRAVEL TO ITS NEIGHBOUR — WRITE IT ABOVE
+  EVERY SENTENCE IT BINDS.** Both required SMS sentences sit in the same paragraph, and each file
+  kept the rule for one of them and broke it for the other: `terms.html` wrapped *"Message and data
+  rates may apply."* while `privacy.html` wrapped *"Carriers are not liable…"*, each with an unbroken
+  sibling directly beside it and one note, attached to a **third** sentence, stating the rule. Fixed
+  in two commits, 2026-08-11. **An editor re-flowing a paragraph reads what is above the line they
+  are standing on**, so a rule that binds four sentences is written above four sentences — the
+  duplication is the mechanism, not clutter.
+  ⏳ **STILL WRAPPED IN BOTH FILES, AND NOT FIXED: the consent-by-entry sentence** (`privacy.html`
+  ~199, `terms.html` ~184). Same defect class, same required-element list, and the first one where
+  **neither** file knew the rule — so nothing on the page hints it applies. Its own scoped edit.
 - The pages must also carry: OTP purpose, that entering a number *constitutes consent*, one message
   per sign-in request, STOP/HELP, "message and data rates may apply", and the processor list.
+  ⚠️ **Every one of those is a match target, so the unbroken-line rule is a property of the LIST,
+  not of the two sentences that happen to have notes above them.**
 - **The SMS consent line lives in `SignInForm`, not on the surrounding screen.**
 
 **Money**
