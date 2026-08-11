@@ -944,6 +944,17 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 
 ### Live defects
 
+- 🐞 ⚠️ **`hello@kristyapproved.com` DOES NOT EXIST, AND FOUR LIVE PAGES PRINT IT** (2026-08-11).
+  `/support` (twice — it is the entire "getting help" section), `/privacy` and `/terms`. **This
+  is a LIVE GAP, not a pending task:** a shopper or a reviewer emailing that address today gets
+  a bounce, and the support page additionally promises **a reply within two business days**.
+  ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO ADDRESS** — App Review checks the support
+  URL, and "we answer email" plus a hard bounce reads as abandonware rather than as an
+  oversight. **The pages are correct and stay as they are; the mailbox is what is missing.**
+  Being set up (owner's own item). **Nothing here should be edited to work around it** — a
+  second address, a contact form or a softened reply promise would each be a worse answer than
+  the mailbox existing. **Re-check before any App Store submission**; it gates nothing else.
+
 - ✅ **SHIPPED AND VERIFIED LIVE (2026-08-10): ONE PREDICATE — `nothingConfirmsFood`.** Three gates
   that happened to agree became one question asked of whatever evidence exists. On `origin/main`
   as `22b35a8`, with the water category beneath it as `f6c895f`. **The dyed-Dawn decoupling landed
