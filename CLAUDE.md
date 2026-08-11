@@ -684,9 +684,29 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   boundary, and the inline boot guard in `app.html` — the only one that can catch a
   module-evaluation crash). `VITE_API_URL` is required in a production build.
 
-**Phone sign-in**
+**Phone sign-in — ⚠️ DORMANT, NOT PENDING (ruled 2026-08-11)**
+- ⚠️ **THE iOS RAIL IS SIGN IN WITH APPLE. PHONE OTP IS RETAINED DELIBERATELY, UNUSED, AND
+  CANNOT CARRY TRAFFIC WITHOUT 10DLC RE-REGISTRATION.** It is **a fallback that was kept on
+  purpose, not a path in progress** — the distinction is the whole entry. Read as "in
+  progress" it sends someone to finish a registration nothing is waiting on; read as deleted
+  it gets rebuilt later for real money. **Keep the code, keep the honest label.**
+- **This is the Bird shape with the threat inverted, which is why it is written down.** Bird
+  was dead code describing an abandoned decision and a session read it as the plan. Phone OTP
+  is *live* code describing a **deferred** decision, and the same misreading is available: the
+  rule below says dead code that lies is worse than no code, and **an unlabelled dormant rail
+  lies in exactly the same way.**
+- **Measured on the live project 2026-08-11, and it corrects this file:** the Supabase phone
+  provider is **already ENABLED** (`external_phone_enabled: true`) — this file said enabling it
+  was outstanding. So a send is **attempted** today and fails at Twilio for want of an approved
+  campaign; `friendlySendError` maps that to *"The text couldn't be sent from our end."*
+  ⚠️ **If phone is confirmed dead product-wide, TURN THE PROVIDER OFF** — `friendlySendError`
+  already has the accurate branch (*"Text sign-in is switched off for this app right now"*), so
+  the honest message is a dashboard toggle away and needs **no edit to the frozen client.**
+- **Nobody has ever signed in, on any rail.** Two `auth.users` rows exist (2026-07-27,
+  2026-08-03), **both unconfirmed, both `last_sign_in_at` null**, one of them a 555 test
+  number. There is no user to migrate, no session to preserve, and no revenue depending on it.
 - **Twilio, via Supabase's BUILT-IN phone provider. Nothing server-side.** `SignInForm` calls
-  `supabase.auth.signInWithOtp({ phone })`, which needs no change when the dashboard config lands.
+  `supabase.auth.signInWithOtp({ phone })`, which needs no change if the rail is ever revived.
 - **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
   worse than no code: it is documentation that lies.**
 - **Do not add a delivery hook back without a reason the dashboard cannot meet.**
@@ -1197,10 +1217,17 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   (`gen_guanciale_worth_buying`, `gen_goat_meat_quality`, `gen_live_fermented_foods`). ⚠️ **A
   generated row is written by the pipeline and never appears in a diff — re-count it here, do not
   carry it forward.** This line said "81 + 1" for eight days while two more were live.
-- ⚠️ **Phone sign-in is not live yet, and it gates revenue** — no account, no purchase. **10DLC brand
-  + campaign are SUBMITTED and in verification at Twilio.** Remaining, all in the Supabase dashboard:
-  Auth → Providers → Phone → enable, select **Twilio**, fill **Account SID**, **Auth Token** and
-  **Message Service SID**. **No server work, no env vars, no redeploy.**
+- ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT
+  PHONE.** Corrected 2026-08-11; this entry previously read as a phone-provider checklist and
+  sent readers to finish a 10DLC registration nothing is waiting on. See **Phone sign-in**,
+  which is **DORMANT, not pending**.
+  **Measured live, same day:** `external_phone_enabled: true` (this file said it was
+  outstanding), `external_email_enabled: false` (correct, and it stays), **`apple: false`** —
+  so the Apple provider is **not enabled yet** and no iOS shopper can authenticate today
+  either. That is `kristy-ios/docs/ios-specs/siwa-config-runbook.md` **Track B**, in progress.
+  ⚠️ **UNTIL TRACK B LANDS THERE ARE NO ACCOUNTS ON ANY RAIL, so anything gated on an account
+  — every purchase — is unreachable regardless of how much of it is built.** Two `auth.users`
+  rows exist, both unconfirmed, neither ever signed in.
 
 ---
 
