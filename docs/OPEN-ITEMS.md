@@ -628,3 +628,73 @@ one already earning `approved` on production today. **They are recorded apart on
 **separately proposed** and not a footnote to the water work: the blast radius is the whole
 non-English half of Open Food Facts, and the fix's failure direction has to be argued before it is
 written, not after.
+
+---
+
+## 🐞 `/privacy` AND `/terms` DESCRIBE AN SMS PRACTICE, AND THE APP STORE IS ABOUT TO POINT AT THEM
+
+**Queued 2026-08-11 from the iOS side. NOT started, and the first step is a product ruling
+rather than an edit.**
+
+### What was found
+
+`client/public/privacy.html` and `client/public/terms.html` were written for **A2P 10DLC
+review**: OTP purpose, consent-by-entry, one message per sign-in request, STOP/HELP,
+"message and data rates may apply", the processor list. Measured: **16 SMS/OTP-shaped
+matches in `privacy.html` and 6 in `terms.html`.**
+
+**Sign in with Apple replaced the phone rail on iOS on 2026-08-11.** The iOS client has no
+phone field, sends no SMS, and asks for no phone number — `requestedScopes = [.email]` and
+nothing else. So for the client that is about to ship, these pages describe a data practice
+that does not exist.
+
+### ⚠️ THE OBVIOUS FIX IS THE WRONG ONE, AND IT IS DESTRUCTIVE IN A WAY GIT CANNOT SHOW YOU
+
+The natural move — *"the phone rail is gone, delete the SMS language"* — breaks two things
+that are still live:
+
+1. **THE WEB CLIENT STILL HAS THE PHONE RAIL, AND IT CAN NEVER BE CHANGED.**
+   `client/src/components/Auth.jsx:117` calls `supabase.auth.signInWithOtp({ phone })`.
+   `client/src` is **frozen** — no edit, for any reason — so that call site is permanent.
+   The pages are the privacy policy for `kristyapproved.com` too, and for that client they
+   are arguably still accurate.
+2. **10DLC IS STILL IN VERIFICATION AT TWILIO.** The brand and campaign were submitted and
+   have not been withdrawn. ⚠️ **The carrier sentence sits on ONE unbroken source line with
+   no tags inside it, because A2P review is often automated against raw HTML and a line wrap
+   fails the match — rejection code 805.** An editor rewriting this page for iOS reasons has
+   every incentive to re-wrap that line and no reason to know why it is shaped that way.
+   **Deleting it outright fails a review that is currently pending.**
+
+### The ruling that has to come first
+
+**Is phone sign-in dead product-wide, or superseded only on iOS?** Nothing in either repo
+answers this, and the two answers produce opposite edits:
+
+- **Dead product-wide** → the SMS content comes out, the 10DLC campaign is *withdrawn* at
+  Twilio rather than left pending, and the one-unbroken-line rule dies with it. The frozen
+  web `signInWithOtp` becomes permanently dead code, which the freeze makes acceptable but
+  should be stated rather than discovered.
+- **Superseded on iOS only** → the SMS content **stays**, and the work is an **addition**:
+  a Sign in with Apple section covering what Apple returns (email or its private relay,
+  never a name), plus the account-deletion disclosure. Nothing is deleted.
+
+**The second is more likely correct and is the safe default**, because it is the only one
+that does not touch a pending carrier review. It is recorded as a question anyway: the
+default is a default, not a finding.
+
+### Why it is not urgent and is also not optional
+
+`docs/SWIFT-HANDOFF.md` §3 item 18 needs a **privacy URL** as a required App Store metadata
+field, and the **privacy nutrition labels must match what the policy says.** So this lands
+on submission day whether or not it is queued — which is the classic shape item 18 was
+written about. ⚠️ **A policy describing SMS consent, attached to an app with no phone
+field, is a reviewer question at best.**
+
+### Scope
+
+`client/public/` only — **NOT `client/src`**, which is frozen, and not the server. But
+`main` here **auto-deploys to production**, and these are the pages a carrier and an App
+Store reviewer read. So it is **separately proposed and separately approved work with its
+own prompt**, and the rewrite is checked against `vercel.json` and the vite middleware,
+which both rewrite these to clean URLs so dev, preview and production agree about a URL
+printed on an external form.

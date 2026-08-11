@@ -1108,6 +1108,19 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   Separately proposed; in range is every product whose `ingredients_lc` is not `en`, i.e. most of
   the non-US catalog. Account: `docs/OPEN-ITEMS.md`.
 
+- 🐞 ⏳ **`/privacy` AND `/terms` DESCRIBE AN SMS PRACTICE THE iOS CLIENT DOES NOT HAVE, AND THE
+  APP STORE IS ABOUT TO POINT AT THEM** (queued 2026-08-11 from the iOS side). Both pages were
+  written for A2P 10DLC review — OTP purpose, consent-by-entry, STOP/HELP, the carrier sentence
+  — and **Sign in with Apple replaced the phone rail on iOS**, which has no phone field at all.
+  Measured: 16 SMS-shaped matches in `privacy.html`, 6 in `terms.html`.
+  ⚠️ **THE OBVIOUS FIX IS THE DESTRUCTIVE ONE.** Deleting the SMS language breaks two live
+  things: `client/src/components/Auth.jsx:117` still calls `signInWithOtp({ phone })` and
+  **`client/src` is frozen**, so the web rail is permanent; and **10DLC is still in verification
+  at Twilio**, where the carrier sentence's one-unbroken-line shape is what passes an automated
+  review (rejection code **805**). **The first step is a product ruling, not an edit: is phone
+  sign-in dead product-wide, or superseded only on iOS?** The second is likelier and is the safe
+  default — it makes the work an ADDITION (an Apple section, the deletion disclosure) with
+  nothing removed. `client/public/` only; separately proposed. Account: `docs/OPEN-ITEMS.md`.
 - ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE** (ruled 2026-08-10). `buildBaseline` is
   written, tested and correct with a permanently empty input; `GuestTripBook.archive` holds exactly
   the input shape it wants. Run that computation **in the client** for a guest with no account, no
