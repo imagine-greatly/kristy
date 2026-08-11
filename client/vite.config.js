@@ -11,11 +11,24 @@ import { fileURLToPath } from 'url';
 //
 // This same rewrite runs on the dev server and `vite preview`, so routing is
 // identical in dev, preview, and production.
-// Clean URLs for the legal pages. They are registered with mobile carriers as part of
-// A2P 10DLC campaign review, so they must resolve at a stable, extensionless path — and
-// they must resolve here too, or dev and production disagree about a URL that is printed
-// on an external form. The .html paths keep working, so older links do not break.
-const CLEAN_PAGES = { '/privacy': '/privacy.html', '/terms': '/terms.html' };
+// Clean URLs for the legal and support pages. Every one of them is printed on an
+// EXTERNAL form we do not control — App Store Connect requires a support URL and a
+// privacy policy URL, and the legal pages were additionally registered with mobile
+// carriers for A2P 10DLC review. So they must resolve at a stable, extensionless path,
+// and they must resolve HERE too, or dev and production disagree about a URL somebody
+// has already typed somewhere else. The .html paths keep working, so older links do not
+// break.
+//
+// ⚠️ ADDING A PAGE HERE IS TWO EDITS, NOT ONE — this table and `client/vercel.json`.
+// This one serves dev and preview; that one serves production. A page added to only one
+// of them works perfectly for whoever added it and 404s for everybody else, and the
+// person who finds out is a reviewer.
+const CLEAN_PAGES = {
+  '/privacy': '/privacy.html',
+  '/terms': '/terms.html',
+  // Required by App Review, and it must resolve before the build is submitted.
+  '/support': '/support.html',
+};
 
 function rewrite(req) {
   const path = (req.url || '/').split('?')[0];
