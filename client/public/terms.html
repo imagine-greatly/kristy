@@ -87,6 +87,13 @@
       margin: 28px 0; color: var(--mint); font-size: 15px;
     }
 
+    /* Which platform a section covers. Muted and inline: it qualifies the heading
+       without competing with it, because a reader only needs one of the two. */
+    .scope {
+      color: var(--mint); font-weight: 400;
+      font-size: .62em; letter-spacing: .02em; white-space: nowrap;
+    }
+
     .draft {
       border: 1px solid rgba(45,90,61,.5);
       border-radius: 4px; padding: 14px 18px; margin-bottom: 36px;
@@ -142,30 +149,80 @@
 
     <h2>Your account</h2>
     <p>
-      You sign in with your mobile phone number and a one-time code sent by SMS. There is
-      no password. Keep access to that number secure — anyone who can receive your codes
-      can reach your account. You are responsible for activity on your account. Tell us
-      at <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a> if you
-      believe someone else has access.
+      There is no password on either platform, and <strong>how you sign in depends on where
+      you are using Kristy.</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>On the website</strong>, you sign in with your mobile phone number and a
+        one-time code sent by SMS. Keep access to that number secure — anyone who can
+        receive your codes can reach your account.
+      </li>
+      <li>
+        <strong>In the iPhone app</strong>, you sign in with <strong>Sign in with
+        Apple</strong>. <strong>The app has no phone number field and sends no SMS</strong>,
+        so the SMS section below does not apply to it. Keep your Apple ID secure — anyone
+        who can use it can reach your account. You can withdraw the app's access in
+        Settings → your name → Sign in with Apple; that signs you out and deletes nothing.
+      </li>
+    </ul>
+    <p>
+      You are responsible for activity on your account. Tell us at
+      <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a> if you believe
+      someone else has access.
     </p>
     <p>You must be at least 13 years old to use Kristy Approved.</p>
 
-    <h2>SMS messages</h2>
+    <!-- ⚠️ DO NOT DELETE THIS SECTION BECAUSE THE iOS APP DOES NOT USE SMS.
+         Both rails are live: the website still signs in by phone code (client/src is
+         frozen, Auth.jsx still calls signInWithOtp), and A2P 10DLC registration is IN
+         VERIFICATION at Twilio, which reads this text. Add for iOS; remove nothing.
+         The same note is in privacy.html. -->
+
+    <h2>SMS messages <span class="scope">— the website</span></h2>
     <p>
-      <strong>Entering your phone number and requesting a code is your consent to receive
-      a one-time verification code by SMS.</strong> You will receive
+      <!-- ⚠️ ONE UNBROKEN SOURCE LINE, NO TAGS INSIDE THE SENTENCE. DO NOT RE-WRAP IT TO FIT
+           THE COLUMN, AND DO NOT REWORD IT FOR iOS.
+           The consent-by-entry statement is a REQUIRED A2P 10DLC element and review is often
+           automated against RAW HTML, so a line wrap a human reader never notices fails the
+           match — rejection code 805.
+           ⚠️ THIS ONE WAS WRAPPED IN BOTH FILES until 2026-08-11, unlike the other two, so
+           there was no unbroken sibling anywhere on either page to notice it against.
+           ⚠️ THE WORDING HERE DIFFERS FROM privacy.html's ("is your consent" vs "constitutes
+           your consent … at that number") AND BOTH ARE LEFT AS THEY WERE. Only line breaks
+           moved in this edit; reconciling the two is a copy decision, not a wrap fix, and
+           doing it inside a 10DLC-shaped edit is how a required element gets reworded by
+           accident. See the twin in privacy.html. -->
+      <strong>Entering your phone number and requesting a code is your consent to receive a one-time verification code by SMS.</strong>
+      You will receive
       <strong>one message per sign-in request</strong>. We do not send marketing or
       promotional messages.
     </p>
     <p>
-      <strong>Reply STOP to opt out at any time. Reply HELP for help.</strong> Message and
-      data rates may apply. Carriers are not liable for delayed or undelivered messages.
+      <strong>Reply STOP to opt out at any time. Reply HELP for help.</strong>
+      <!-- ⚠️ THE NEXT SENTENCE IS ONE UNBROKEN SOURCE LINE WITH NO TAGS INSIDE IT. DO NOT
+           RE-WRAP IT TO FIT THE COLUMN, AND DO NOT REWORD IT FOR iOS.
+           It is a REQUIRED A2P 10DLC element, and review is often automated against RAW
+           HTML — a line wrap a human reader would never notice fails the match, rejection
+           code 805. It is the same constraint as the do-not-sell sentence below, and it
+           was NOT being kept here: this sentence was wrapped across two source lines until
+           2026-08-11 while its sibling in privacy.html was not, so the two files disagreed
+           about a rule only one of them recorded. The rule is written here now because
+           this is where an editor re-flowing the paragraph is standing.
+           See the matching note below, and the twin in privacy.html. -->
+      Message and data rates may apply.
+      Carriers are not liable for delayed or undelivered messages.
       How we handle your number is described in our
       <a href="/privacy">Privacy Policy</a>, including this commitment:
     </p>
-    <!-- One unbroken source line, no tags inside the sentence — see the same note in
-         privacy.html. Automated carrier review can match raw HTML, and a line wrap
-         breaks it. Do not re-wrap. -->
+    <!-- ⚠️ ONE UNBROKEN SOURCE LINE, NO TAGS INSIDE THE SENTENCE. DO NOT RE-WRAP IT TO FIT
+         THE COLUMN, AND DO NOT REWORD IT FOR iOS.
+         A2P 10DLC review is often automated and matches against RAW HTML, so a line wrap a
+         human reader would never notice fails the match — rejection code 805. The
+         registration is in verification at Twilio right now.
+         This sentence is about the WEBSITE's phone rail, which is still live and still the
+         only way to sign in there. The iPhone app using Sign in with Apple changes nothing
+         about it. See the same note in privacy.html. -->
     <p><strong>We do not sell or share your phone number, mobile information, or SMS opt-in consent with third parties or affiliates for marketing purposes.</strong></p>
 
     <h2>Not medical or professional advice</h2>

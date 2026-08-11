@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Kristy Approved</title>
-  <meta name="description" content="How Kristy Approved collects, uses, and protects your data — including phone numbers used for SMS sign-in codes." />
+  <meta name="description" content="How Kristy Approved collects, uses, and protects your data — including phone numbers used for SMS sign-in codes on the website, and Sign in with Apple in the iPhone app." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://kristyapproved.vercel.app/privacy" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -99,6 +99,13 @@
     .pledge p { margin: 0; color: var(--cream); }
     .pledge p + p { margin-top: 12px; }
 
+    /* Which platform a section covers. Muted and inline: it qualifies the heading
+       without competing with it, because a reader only needs one of the two. */
+    .scope {
+      color: var(--mint); font-weight: 400;
+      font-size: .62em; letter-spacing: .02em; white-space: nowrap;
+    }
+
     .draft {
       border: 1px solid rgba(45,90,61,.5);
       border-radius: 4px; padding: 14px 18px; margin-bottom: 36px;
@@ -149,7 +156,35 @@
       we share it with, and what you can do about it.
     </p>
 
-    <h2>Phone numbers and SMS messages</h2>
+    <h2>How you sign in, and why this page describes two ways</h2>
+    <p>
+      Kristy has no passwords on either platform. How you prove an account is yours depends
+      on where you are using it, so the two sections below describe two different sign-in
+      methods. <strong>Only one of them applies to you.</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>The website at kristyapproved.com</strong> signs you in with your mobile
+        phone number and a one-time code sent by SMS. The next section is about that.
+      </li>
+      <li>
+        <strong>The Kristy iPhone app</strong> signs you in with
+        <strong>Sign in with Apple</strong>. <strong>It has no phone number field and never
+        asks for your number</strong>, so nothing in the SMS section applies to it. The
+        section after next is about that.
+      </li>
+    </ul>
+
+    <!-- ⚠️ DO NOT DELETE THE SMS SECTIONS BECAUSE THE iOS APP DOES NOT USE SMS.
+         The two rails are live at the same time and this page covers both. The website
+         still signs in by phone code — client/src is frozen and Auth.jsx still calls
+         signInWithOtp, so that rail is permanent, not legacy. Everything from here to the
+         end of the pledge block below is also the text A2P 10DLC review reads, and that
+         registration is IN VERIFICATION, not withdrawn. Removing it fails the review and
+         breaks the live web rail's disclosure in the same edit.
+         Add for iOS; remove nothing. -->
+
+    <h2>Phone numbers and SMS messages <span class="scope">— the website</span></h2>
 
     <h3>What we collect and why</h3>
     <p>
@@ -160,9 +195,18 @@
 
     <h3>How you opt in</h3>
     <p>
-      <strong>Entering your phone number on the sign-in screen and requesting a code
-      constitutes your consent to receive a one-time verification code by SMS at that
-      number.</strong> No other consent is bundled into it, and you are not enrolled in
+      <!-- ⚠️ ONE UNBROKEN SOURCE LINE, NO TAGS INSIDE THE SENTENCE. DO NOT RE-WRAP IT TO FIT
+           THE COLUMN, AND DO NOT REWORD IT FOR iOS.
+           The consent-by-entry statement is a REQUIRED A2P 10DLC element and review is often
+           automated against RAW HTML, so a line wrap a human reader never notices fails the
+           match — rejection code 805.
+           ⚠️ THIS ONE WAS WRAPPED IN BOTH FILES until 2026-08-11, unlike the other two, so
+           there was no unbroken sibling anywhere on either page to notice it against. That is
+           the version of this defect most likely to survive indefinitely: nothing on the page
+           disagreed with it. Third instance; see the twin in terms.html, whose wording differs
+           and is deliberately left alone. -->
+      <strong>Entering your phone number on the sign-in screen and requesting a code constitutes your consent to receive a one-time verification code by SMS at that number.</strong>
+      No other consent is bundled into it, and you are not enrolled in
       any marketing or promotional messaging by signing in.
     </p>
 
@@ -178,8 +222,20 @@
       <strong>Reply STOP to any message to opt out</strong> and you will receive no
       further SMS messages from us. <strong>Reply HELP for help</strong>, or email us at
       <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
-      <strong>Message and data rates may apply.</strong> Carriers are not liable for
-      delayed or undelivered messages. If you opt out you can still use the app, but you
+      <strong>Message and data rates may apply.</strong>
+      <!-- ⚠️ THE NEXT SENTENCE IS ONE UNBROKEN SOURCE LINE WITH NO TAGS INSIDE IT. DO NOT
+           RE-WRAP IT TO FIT THE COLUMN, AND DO NOT REWORD IT FOR iOS.
+           It is a REQUIRED A2P 10DLC element, and review is often automated against RAW
+           HTML — a line wrap a human reader would never notice fails the match, rejection
+           code 805. It is the same constraint as the do-not-sell sentence below, and it
+           was NOT being kept here: this sentence was wrapped across two source lines until
+           2026-08-11, while the "Message and data rates" sentence immediately above it was
+           unbroken and its twin in terms.html was wrapped instead. EACH FILE KEPT THE RULE
+           FOR ONE SENTENCE AND BROKE IT FOR THE OTHER — a constraint recorded above one
+           sentence does not travel to its neighbour, so it is written above both.
+           See the matching note below, and the twin in terms.html. -->
+      Carriers are not liable for delayed or undelivered messages.
+      If you opt out you can still use the app, but you
       will not be able to sign in by SMS code until you opt back in.
     </p>
 
@@ -191,13 +247,17 @@
       does not use your number for its own purposes.
     </p>
 
-    <h2>We do not sell or share your phone number</h2>
+    <h2>We do not sell or share your phone number <span class="scope">— the website</span></h2>
 
     <div class="pledge">
-      <!-- Deliberately on ONE unbroken source line, with no tags inside the sentence.
+      <!-- ⚠️ DELIBERATELY ON ONE UNBROKEN SOURCE LINE, WITH NO TAGS INSIDE THE SENTENCE.
+           DO NOT RE-WRAP IT TO FIT THE COLUMN WIDTH, AND DO NOT REWORD IT FOR iOS.
            Carrier / A2P 10DLC review is often automated, and a scanner matching against
-           raw HTML fails on a line wrap that a human reader would never notice. Do not
-           re-wrap this line to fit the column width. -->
+           raw HTML fails on a line wrap that a human reader would never notice —
+           rejection code 805. The registration is IN VERIFICATION at Twilio right now,
+           so this is a live dependency and not a historical one.
+           It is about the WEBSITE's phone rail, which is still the only way to sign in
+           there. The iPhone app using Sign in with Apple changes nothing about it. -->
       <p><strong>We do not sell or share your phone number, mobile information, or SMS opt-in consent with third parties or affiliates for marketing purposes.</strong></p>
       <p>
         Your phone number is used solely to authenticate you and to deliver the sign-in
@@ -207,6 +267,55 @@
         acting under contract, for the sole purpose of sending the code you asked for.
       </p>
     </div>
+
+    <h2>Sign in with Apple <span class="scope">— the iPhone app</span></h2>
+
+    <h3>What we receive, and what we do not</h3>
+    <p>
+      <strong>The iPhone app signs you in with Sign in with Apple. It has no phone number
+      field, does not ask for your phone number, and sends no SMS.</strong> When you tap the
+      button, Apple authenticates you on the device and gives us the following — and nothing
+      else:
+    </p>
+    <ul>
+      <li>
+        <strong>An identifier for you that is specific to Kristy.</strong> Apple generates a
+        different one for every app, so it cannot be used to recognize you anywhere else.
+        This is what your account, list, and history are attached to.
+      </li>
+      <li>
+        <strong>Your email address</strong> — or, if you choose <strong>Hide My Email</strong>
+        on Apple's screen, a private relay address Apple creates for Kristy. We treat the two
+        the same way and we cannot tell your real address from the relay. We use it to reach
+        you about your account. You can turn the relay off, or stop forwarding altogether, in
+        Settings → your name → Sign in with Apple.
+      </li>
+    </ul>
+    <p>
+      <strong>We do not collect your name, and we do not ask Apple for it.</strong> Sign in
+      with Apple can pass an app your name on the first sign-in; Kristy requests only your
+      email address, so <strong>Apple never sends us your name at all</strong> and there is
+      nothing for us to store. <strong>We never receive your Apple ID password, and Apple
+      does not tell us anything about your other apps or purchases.</strong>
+    </p>
+
+    <h3>Turning it off</h3>
+    <p>
+      You can withdraw the app's access at any time in Settings → your name →
+      Sign in with Apple → Kristy → <strong>Stop using Apple ID</strong>. The app signs you
+      out the next time it checks. <strong>That is not the same as deleting your account, and
+      it does not erase anything</strong> — it stops the sign-in from working, and your data
+      stays until you delete it. To remove the data, use <strong>Delete my account</strong>
+      as described under “Deleting your data” below; that door works the same on both
+      platforms.
+    </p>
+
+    <h3>What the rest of this page covers</h3>
+    <p>
+      Everything below this point — what else we collect, how we use it, who we share it
+      with, how long we keep it, and how you delete it — <strong>applies to both the website
+      and the iPhone app equally.</strong> Only the sign-in method differs.
+    </p>
 
     <h2>What else we collect</h2>
 
@@ -271,8 +380,9 @@
       the details of <strong>products</strong> that have been scanned, and the
       <strong>text of counter questions</strong> our knowledge base could not answer well,
       so we know what to write next. <strong>Neither carries any user identifier</strong>
-      — no account, no phone number, no IP address — and neither can be traced back to
-      you. This separation is enforced in our code, not just by policy.
+      — no account, no phone number, no email address, no Apple identifier, no IP address —
+      and neither can be traced back to you. This separation is enforced in our code, not
+      just by policy.
     </p>
 
     <h2>Who we share information with</h2>
@@ -280,13 +390,13 @@
     <div class="tablewrap">
       <table>
         <tr><th>Provider</th><th>What it handles</th></tr>
-        <tr><td><strong>Twilio</strong></td><td>SMS delivery of your sign-in codes</td></tr>
-        <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, phone number, preferences, list, and history</td></tr>
+        <tr><td><strong>Twilio</strong></td><td>SMS delivery of your sign-in codes, on the website only</td></tr>
+        <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, your phone number or email address depending on how you sign in, preferences, list, and history</td></tr>
         <tr><td><strong>Vercel</strong></td><td>Web hosting and web analytics</td></tr>
         <tr><td><strong>Railway</strong></td><td>Application server</td></tr>
         <tr><td><strong>Anthropic</strong></td><td>AI processing of your questions, coaching text, and label photos</td></tr>
         <tr><td><strong>Stripe</strong></td><td>Payment processing on the web</td></tr>
-        <tr><td><strong>Apple</strong></td><td>In-app purchases and subscription status on iOS</td></tr>
+        <tr><td><strong>Apple</strong></td><td>Sign in with Apple, in-app purchases, and subscription status on iOS</td></tr>
         <tr><td><strong>Open Food Facts</strong></td><td>Public product database. Receives the barcode you scanned, with no user identifier attached</td></tr>
       </table>
     </div>
@@ -321,6 +431,12 @@
       history, and sign-in record. It is immediate and cannot be undone. You can also
       email <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a> and we
       will remove it for you.
+    </p>
+    <p>
+      <strong>This is the same door on the website and in the iPhone app, and it is the only
+      one that erases anything.</strong> On iPhone, revoking Kristy from Settings → your name
+      → Sign in with Apple stops you signing in but deletes nothing; use Delete my account if
+      you want the data gone.
     </p>
 
     <h2>Security</h2>
