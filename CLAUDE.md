@@ -986,10 +986,27 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   Sidi Ali's live OFF record resolves `natural mineral waters` → **`water`** through the shipped
   patterns, while production returns **`category: "other"`** — the row was retained before the
   patterns existed and cannot be told about them.
-  ⚠️ **IT FAILS IN THE SAFE DIRECTION AND THAT IS WHY IT IS RECORDED RATHER THAN RUSHED** —
-  `other` is non-exempt, so a stale category can only withhold a seal, never grant one.
-  **But part 3 would then be inert for precisely the products that motivated it**, which makes
-  this a prerequisite to part 3 rather than a footnote to it.
+  ⚠️ **THE ORDERING CONSTRAINT, AND IT IS THE WHOLE FIX: THE RE-READ MUST ROUTE THROUGH
+  `retainProduct`, NOT MERELY RE-FETCH.** The upgrade branch is `productStore.js:262`, inside
+  `if (incomingBeats)`, inside `retainProduct` — and on this path `retainProduct` has exactly one
+  call site, `scanExtract.js:380`, which sits **past the cache-hit `return` at
+  `scanExtract.js:266`**. So a version stamp that decides "re-fetch this row" and uses the answer
+  in memory fixes one response and never the row: the next scan re-fetches, and the one after
+  that. ⚠️ **IT WOULD SHIP AS DECORATION AND EVERY CHECK ON IT WOULD PASS**, because the response
+  carries the right category and that is the only thing an end-to-end assertion looks at — the
+  row is the subject and nothing reads it back. **The cache-hit branch has to fall through to
+  the fetch-and-retain path.**
+  ⚠️ **THE STALE STATE FAILS SAFE; THE FIX DOES NOT, AND THIS ENTRY READ THE OPPOSITE UNTIL
+  2026-08-12.** `other` is non-exempt, so a stale category can only withhold a seal — true, and
+  it is a claim about the **defect**. **The fix's entire job is to turn `other` into `water`, and
+  `water` GRANTS**: `FOOD_CATEGORIES` is live (part 3 below shipped). This fix is what makes the
+  exemption reachable for the first time, so it inherits the exemption's prerequisites instead of
+  merely unblocking it.
+  ✅ **BUT IT IS STILL SAFE TO LAND FIRST, MEASURED — DO NOT READ THE ABOVE AS A BLOCK.** Sidi
+  Ali `6111035002175` becomes exempt under this fix and the **document** half still catches it
+  (`readsAsNutrientPanel` is `true` on its seven tokens, pinned in `foodPredicate.test.js`).
+  Cristaline `3274080005003` is the one that breaks — and it cannot reach `water` without the
+  **aisle** fix, which is where that constraint is recorded.
   ✅ **THE FIX IS APPROVED AS DESIGNED (2026-08-11) AND ITS PREREQUISITE IS NOW CLEAR** — the
   migration is applied and being written to (see the category-capture entry below). **Still not
   written: it touches the store's READ path, which is separately scoped server work and needs
@@ -1001,16 +1018,32 @@ Read the account before you change a rule; the rule alone is enough to obey one.
     `other`. Bump on not-found. DO NOT bump on a network failure.** A network failure is not
     evidence about the product, and stamping one records "we checked" for a check that never
     happened — which retires the row from re-checking forever on the strength of a timeout.
-  - The failure direction stays safe either way: `other` is non-exempt, so a stale category can
-    only withhold a seal, never grant one.
-- ⏸ **PART 3 — THE CATEGORY EXEMPTION — IS STILL HELD**, now on two things: the upstream question
-  above, and the cache finding above. Context for why water is the cluster worth the trouble:
-  **2.7% of the most-scanned OFF products carry no `energy` key at all, rising to 8.8% at the thin
-  end**, and the largest single cluster is water. When the exemption lands it gets **its own strict
-  exact-tag test and never rides on `categoryFromAisle`'s substring match**; it stays an explicit
-  allowlist, never a general "trust the panel if we know the category", and **`other` and `NULL`
-  are both non-exempt permanently.** The live table is the argument: of its four
-  `nutrition_panel: 'absent'` rows, two are the waters and two are **dish soap**.
+  - ⚠️ **THE FAILURE DIRECTION IS SAFE ONLY WHILE THE ROW STAYS STALE.** `other` is non-exempt,
+    so an un-upgraded row can only withhold a seal — but a row this fix upgrades to `water` is
+    exempt on the product half from that moment. **The safe direction belongs to the bug, not to
+    the fix**; see the ordering constraint above.
+- ✅ ⚠️ **PART 3 — THE CATEGORY EXEMPTION — SHIPPED, AND THIS ENTRY SAID "STILL HELD" UNTIL
+  2026-08-12.** `FOOD_CATEGORIES = new Set(['water'])` at `verdictEngine.js:462`, read by
+  `nothingConfirmsFood` at `:481`. It is on **`origin/main`**, i.e. deployed, and it landed
+  **inside `22b35a8`** — the predicate commit this file already records two entries above as
+  shipped and verified live. **The exemption rode in with the predicate and the held-work entry
+  never caught up**, so one document described the same change as both live and held.
+  ⚠️ **COMPUTE IT, DO NOT READ IT** — the same lesson as the category-capture entry below, which
+  was wrong for two days in exactly this direction:
+  ```
+  git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '
+  ```
+  **All three properties this entry listed as future requirements are already built and pinned**
+  in `foodPredicate.test.js`: exact-match never substring (`watermelon` must not exempt), `other`
+  and `NULL` non-exempt permanently, and an explicit allowlist rather than "trust the panel if we
+  know the category". Context for why water was the cluster worth it: **2.7% of the most-scanned
+  OFF products carry no `energy` key at all, rising to 8.8% at the thin end**, and the largest
+  single cluster is water. The live table was the argument: of its four `nutrition_panel:
+  'absent'` rows, two are the waters and two are **dish soap**.
+  ⚠️ **WHAT IS STILL HELD IS ONLY ITS REACH, AND THAT IS NOT THE SAME THING.** No production row
+  is exempt today, because the waters still read `category: other` — the cache finding above. So
+  the exemption is **live and unreachable**, which is the state that reads as "held" from the
+  outside and is not: nothing has to be decided to turn it on, and the cache fix turns it on.
   ⚠️ **THE PATTERN IS THE PLURAL `waters`, NOT THE BARE WORD THE PROPOSAL NAMED.** Matching is
   `includes`, so bare `water` also eats `watermelons`, `water chestnuts` and `water biscuits` —
   produce, a canned vegetable and a cracker, all silently becoming a drink. **Part 3 lets a
@@ -1157,6 +1190,19 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   (an unsweetened tea is not water) in a vocabulary that gates a fail-closed exemption. Separately
   proposed: it changes what `category` is written for products well beyond water, and that field is
   what part 3 reads. Account and the measured tag list are in that file.
+  ⚠️ **THE PREREQUISITE, AND IT IS NOT VISIBLE FROM THE DEFECT: LANDING THIS FIX REMOVES A CATCH
+  THAT IS FIRING IN PRODUCTION RIGHT NOW.** Cristaline is `approved` today on an ingredient text
+  that is a **nine-line mineral table**, and the only reason the gate holds it is that its category
+  resolves to `other`. This fix resolves it to `water` — which **is exempt** (part 3 shipped; see
+  above) — and the document half does **not** pick it up: its tokens are a mangled dump with units
+  and a brand name (`"eau de source noemie calcium ca2+ 113 mg/l…"`), not the bare nutrient names
+  `readsAsNutrientPanel` tests for. **Measured 2026-08-10: `FIRES = false`.** An approved gold-seal
+  candidate, un-caught by a fix that is right about aisles.
+  **So: land the `ingredients_lc` guard first, or at minimum drive `3274080005003` through the gate
+  as part of this fix and assert the outcome.** That guard is what actually catches this product.
+  📎 **The same warning sits at the point of the change**, in `productCategory.js` above the `water`
+  patterns — deliberately duplicated, because each site reasons correctly alone and no file owns
+  the composition. **If you change one, change both.**
 - 🐞 ⏳ **OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER, SO THE PARSE AND THE TEXT CAN BE
   DIFFERENT DOCUMENTS** (found 2026-08-10, **re-measured against OFF 2026-08-11, unchanged**).
   `ingredients_lc` names the language OFF actually parsed. Cristaline `3274080005003`:
@@ -1177,6 +1223,11 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   agree there and are wrong together. **Two products, one symptom, two unrelated causes.**
   Separately proposed; in range is every product whose `ingredients_lc` is not `en`, i.e. most of
   the non-US catalog. Account: `docs/OPEN-ITEMS.md`.
+  ⬆️ **THIS IS NOW A PREREQUISITE, NOT ONLY A DEFECT: THE AISLE FIX IS UNSAFE WITHOUT IT.** That
+  fix resolves Cristaline to `water`, `water` is exempt (part 3 shipped), and the document half
+  measures `FIRES = false` on this product's mangled tokens — so the mineral table takes the gold
+  seal. **Landing this guard first is what makes the aisle fix safe.** Recorded at both ends on
+  purpose; the constraint is stated in full in the aisle entry above.
 
 - 🐞 ⏳ **`/privacy` AND `/terms` DESCRIBE AN SMS PRACTICE THE iOS CLIENT DOES NOT HAVE, AND THE
   APP STORE IS ABOUT TO POINT AT THEM** (queued 2026-08-11 from the iOS side). Both pages were

@@ -316,7 +316,20 @@ the live table is now the evidence for it, and it is stronger than the argument 
 
 ---
 
-## ✅ PARTS 1 AND 2 ARE SHIPPED (2026-08-10). PART 3 IS HELD ON AN UPSTREAM QUESTION.
+## ✅ PARTS 1 AND 2 ARE SHIPPED (2026-08-10). ⚠️ SO IS PART 3 — CORRECTED 2026-08-12.
+
+> ⚠️ **THIS HEADING READ "PART 3 IS HELD ON AN UPSTREAM QUESTION" UNTIL 2026-08-12 AND IT WAS
+> WRONG.** `FOOD_CATEGORIES = new Set(['water'])` sits at `verdictEngine.js:462`, is read by
+> `nothingConfirmsFood` at `:481`, and is on **`origin/main`** — it landed inside `22b35a8`, the
+> predicate commit. **Three documents carried the held claim** (this one, `CLAUDE.md` and
+> `docs/OPEN-ITEMS.md`) and the code disagreed with all three, which is this document's own
+> recorded failure repeated on its own subject. Verify by computing, never by reading:
+> `git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '`.
+>
+> **What IS still true is that no production row is exempt**, because the waters still read
+> `category: other` — the cache-hit finding. The exemption is **live and unreachable**, and the
+> cache fix is what turns it on. The current state and every ordering constraint live in
+> `CLAUDE.md` **Open items**; that is the authority, not this file.
 
 Committed, not pushed (the stack carries the held import route). Server suite **627 pass / 0 fail**.
 

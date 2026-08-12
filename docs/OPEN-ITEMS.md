@@ -489,7 +489,14 @@
 ## ❓ THE UPSTREAM QUESTION: `approved` ON A MINERAL PANEL (opened 2026-08-10)
 
 **Ruled open as a QUESTION, not a fix, and it OUTRANKS the water exemption** (part 3 of
-`docs/CATEGORY-CAPTURE.md`, which now waits on the answer).
+`docs/CATEGORY-CAPTURE.md`).
+
+> ⚠️ **CORRECTED 2026-08-12: PART 3 DID NOT WAIT.** This sentence read "which now waits on the
+> answer" and the exemption had already shipped — `FOOD_CATEGORIES = new Set(['water'])`,
+> `verdictEngine.js:462`, on `origin/main` inside `22b35a8`. **The question is still open and the
+> exemption is live anyway**, so the two were never actually sequenced. No production row is
+> exempt yet only because the waters still read `category: other`. Ordering constraints are in
+> `CLAUDE.md` **Open items**.
 
 ✅ **RE-MEASURED ON PRODUCTION 2026-08-11 AND UNCHANGED.** Driven through the guest path,
 `6111035002175`:
@@ -554,9 +561,13 @@ correctly in isolation, and the defect only appears when you add it to what the 
 - **It is not a reason to make the withheld-read sentence more specific about the product.** That
   copy is what keeps the water case survivable: it states the standard and claims nothing about
   what is in the bottle, so on water it is *odd* rather than *false*.
-- **The dyed-Dawn tier decoupling is ruled WITH part 3**, not with this. Same gate, same function,
-  one change — but it lands after the question is answered, because decoupling the gate from the
-  tier changes which products reach the exemption at all.
+- ✅ **THE DYED-DAWN TIER DECOUPLING HAS LANDED — CORRECTED 2026-08-12.** This read "it lands
+  after the question is answered". It did not wait either: `nothingConfirmsFood` takes
+  `{ tokens, nutrition }` and **no tier at all** (`verdictEngine.js:846`), and `tier === 'approved'`
+  survives only in `stamp` and `approvedRead` (`:851`, `:880`), which is correct — the seal still
+  needs the tier; the **gate** no longer does. Driven live 2026-08-10 on `0030772006023`, which
+  fires on `swap_recommended` with `universalLayer` intact. **Three ordering claims in this
+  family were stale in the same direction** — this, part 3, and the exemption's status.
 
 ---
 
