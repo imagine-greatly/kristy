@@ -695,13 +695,17 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   is *live* code describing a **deferred** decision, and the same misreading is available: the
   rule below says dead code that lies is worse than no code, and **an unlabelled dormant rail
   lies in exactly the same way.**
-- **Measured on the live project 2026-08-11, and it corrects this file:** the Supabase phone
-  provider is **already ENABLED** (`external_phone_enabled: true`) — this file said enabling it
-  was outstanding. So a send is **attempted** today and fails at Twilio for want of an approved
-  campaign; `friendlySendError` maps that to *"The text couldn't be sent from our end."*
-  ⚠️ **If phone is confirmed dead product-wide, TURN THE PROVIDER OFF** — `friendlySendError`
-  already has the accurate branch (*"Text sign-in is switched off for this app right now"*), so
-  the honest message is a dashboard toggle away and needs **no edit to the frozen client.**
+- ✅ **THE PROVIDER IS NOW OFF, MEASURED 2026-08-13: `phone: false`.** The owner turned it off
+  when Sign in with Apple was enabled. So the honest branch is the one that fires:
+  `friendlySendError` renders *"Text sign-in is switched off for this app right now"*, which is
+  now **true** rather than aspirational, and it took **no edit to the frozen client** — exactly
+  as this entry predicted. The previous state is kept below because the prediction is the part
+  worth trusting next time.
+  ⚠️ **The dormant-not-deleted ruling is UNCHANGED by the toggle.** The code stays, the label
+  stays. A provider switched off is still a rail that can be revived from a dashboard; what
+  would make it dead is deleting `signInWithOtp`, and that is not done and is not proposed.
+  *(Superseded, 2026-08-11: `external_phone_enabled: true` — a send was attempted and failed at
+  Twilio for want of an approved campaign, rendering "The text couldn't be sent from our end.")*
 - **Nobody has ever signed in, on any rail.** Two `auth.users` rows exist (2026-07-27,
   2026-08-03), **both unconfirmed, both `last_sign_in_at` null**, one of them a 555 test
   number. There is no user to migrate, no session to preserve, and no revenue depending on it.
@@ -1283,13 +1287,28 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   PHONE.** Corrected 2026-08-11; this entry previously read as a phone-provider checklist and
   sent readers to finish a 10DLC registration nothing is waiting on. See **Phone sign-in**,
   which is **DORMANT, not pending**.
-  **Measured live, same day:** `external_phone_enabled: true` (this file said it was
-  outstanding), `external_email_enabled: false` (correct, and it stays), **`apple: false`** —
-  so the Apple provider is **not enabled yet** and no iOS shopper can authenticate today
-  either. That is `kristy-ios/docs/ios-specs/siwa-config-runbook.md` **Track B**, in progress.
-  ⚠️ **UNTIL TRACK B LANDS THERE ARE NO ACCOUNTS ON ANY RAIL, so anything gated on an account
-  — every purchase — is unreachable regardless of how much of it is built.** Two `auth.users`
-  rows exist, both unconfirmed, neither ever signed in.
+  ✅ **TRACK B IS DONE, MEASURED ON THE LIVE PROJECT 2026-08-13** via `GET /auth/v1/settings`
+  with the anon key: **`apple: true`**, **`phone: false`**, `email: false`. All three are what
+  they should be — Apple on, the dormant phone rail off, email never. Track C is done too: the
+  anon key is in `Config/Base.xcconfig` **and is in the built product**, verified by reading
+  `KristySupabaseAnonKey` back out of the built `Info.plist` rather than off the config line.
+  ⚠️ **THE ENDPOINT IS STRUCTURALLY BLIND TO B-3 AND THAT IS WHY THIS IS NOT "SIGN-IN WORKS".**
+  It returns a boolean per provider and **no client id at all**, so it can prove the provider is
+  on and can never prove the bundle id under Client IDs is right. **The first thing that tests
+  B-3 is a completed token exchange**, and that has still never happened — see the gate below.
+  ⚠️ **THERE ARE STILL NO ACCOUNTS ON ANY RAIL, so anything gated on an account — every
+  purchase — is unreachable regardless of how much of it is built.** Two `auth.users` rows
+  exist, both unconfirmed, neither ever signed in. **The blocker is no longer a dashboard.**
+- 🐞 ⚠️ **THE SIMULATOR CANNOT PROVE THE TOKEN EXCHANGE, AND THE REASON IS NOT THE ONE THE
+  REPO HAD RECORDED** (measured 2026-08-13). Driven for real: the button is reachable and
+  hittable, the tap reaches `ASAuthorizationController`, and the system answers with a
+  SpringBoard alert — ***"Sign in to your Apple Account — You need to sign in to your Apple
+  Account in Settings."*** **The simulator device has no Apple Account** (its account store
+  holds two `local` rows and nothing else), and **it does not inherit the Mac's.**
+  ⚠️ **NO TOKEN IS MINTED, SO NOTHING DOWNSTREAM IS TESTED.** `auth.error` never renders and
+  the `auth` log category is **silent** — `SupabaseAuth.signIn` is never called, so B-2/B-3
+  error mapping cannot fire and proves nothing either way. **This is a FOURTH cause, upstream
+  of all three the runbook maps.** Account and the fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
 
 ---
 
