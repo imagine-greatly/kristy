@@ -1317,6 +1317,29 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   is no positive control that the channel carries anything; an absence in a channel never
   shown to work is this repo's own findings-family defect, committed in the act of reporting
   one. Account and the fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
+  ✅ **RE-DRIVEN INDEPENDENTLY 2026-08-13 BY A SESSION WITHOUT THE FIRST ONE'S OUTPUT, AND
+  IT REPRODUCES EXACTLY** — same alert label, same two body lines, same `[Close] [Settings]`,
+  Apple's sheet again absent, `auth.error` again never rendered. **The cause was then read
+  from the opposite end**: the simulator's own `Accounts3.sqlite` holds no Apple Account
+  while the host's `Accounts4.sqlite` holds `devonmorrell2007@gmail.com` under `akd`. Cause
+  and symptom measured separately and agreeing is what makes this a diagnosis.
+  ⚠️ **`defaults read MobileMeAccounts` IS THE WRONG CHECK AND IT LIES IN THE EXPENSIVE
+  DIRECTION** — it returns "domain does not exist" on this box, which is **iCloud**
+  unconfigured, not the Apple Account missing. Read the account store.
+  ✅ ⚠️ **THE "SECOND BLOCKER" — THE SIWA ENTITLEMENT MISSING FROM THE BUILT PRODUCT — IS
+  WITHDRAWN, MEASURED. IT IS PRESENT.** The runbook filed it on `Kristy.app.xcent` being an
+  empty dict and `codesign -d --entitlements` returning `<dict></dict>`; **both are
+  device-signing artifacts and a simulator build uses neither.** The simulator carries
+  entitlements in `Kristy.app-Simulated.xcent` and in the binary's `__TEXT,__entitlements`
+  section, and **both hold `com.apple.developer.applesignin = ["Default"]`**. `FAKETEAMID`
+  in the `application-identifier` is what Xcode substitutes with no `DEVELOPMENT_TEAM` and
+  is correct for a simulator build, not a strip. **`ENTITLEMENTS_ALLOWED = NO` was inferred,
+  never observed.**
+  ⚠️ **IT IS THE FINDINGS FAMILY COMMITTED WHILE DOCUMENTING THE FINDINGS FAMILY** — a check
+  that could not see its subject, filed as an instance of checks that cannot see their
+  subject, and believable precisely *because* the repo already had two real ones. **Confirm
+  the artifact is the right one before filing a third.** So the account alert is the only
+  known simulator blocker, and nothing needs fixing before the next sign-in attempt.
 
 ---
 
