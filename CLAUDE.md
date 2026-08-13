@@ -1305,10 +1305,18 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   SpringBoard alert — ***"Sign in to your Apple Account — You need to sign in to your Apple
   Account in Settings."*** **The simulator device has no Apple Account** (its account store
   holds two `local` rows and nothing else), and **it does not inherit the Mac's.**
-  ⚠️ **NO TOKEN IS MINTED, SO NOTHING DOWNSTREAM IS TESTED.** `auth.error` never renders and
-  the `auth` log category is **silent** — `SupabaseAuth.signIn` is never called, so B-2/B-3
-  error mapping cannot fire and proves nothing either way. **This is a FOURTH cause, upstream
-  of all three the runbook maps.** Account and the fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
+  ⚠️ **NO TOKEN IS MINTED, SO NOTHING DOWNSTREAM IS TESTED**, so B-2/B-3 error mapping cannot
+  fire and proves nothing either way. **This is a FOURTH cause, upstream of all three the
+  runbook maps**, and the only one with no on-screen error at all. What the conclusion rests
+  on is POSITIVE evidence: the alert itself, `(AuthenticationServices) Modal authorization
+  request with options` in the app process log (so the control **is** wired), XCUITest finding
+  **no** `ASAuthorizationRemoteViewController` (Apple's sheet never presented), and `auth.error`
+  never rendering.
+  ⚠️ **NOT "the `auth` log category is silent" — that was claimed here before it was checked
+  and it is withdrawn.** Every category on that subsystem is empty, `scan` included, so there
+  is no positive control that the channel carries anything; an absence in a channel never
+  shown to work is this repo's own findings-family defect, committed in the act of reporting
+  one. Account and the fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
 
 ---
 
