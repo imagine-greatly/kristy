@@ -748,6 +748,41 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 - **The SMS consent line lives in `SignInForm`, not on the surrounding screen.**
 
 **Money**
+
+⚠️ **THE PRICING MODEL IS LOCKED (2026-08-14) AND NOTHING BELOW IT IS BUILT. THE RULES IN THIS
+SECTION DESCRIBE WHAT SHIPS; THE MODEL DESCRIBES WHAT WAS RULED, AND THE TWO DISAGREE ON NEARLY
+EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MODEL.md`.
+**Do not read a rule below as superseded until the work lands — every one of them is live.**
+- **Trips 1 and 2: everything, nothing gated.** The ask lands at the **END OF TRIP 2, on
+  Finish** — the highest-intent moment the product produces. Trip 3 is a reminder, not the ask.
+- **After the trial the COUNTER STAYS FREE**: full cards, the ask, scanning. **Making a list,
+  walking a trip, and the Haul are members only.** ⚠️ **THE PAID BOUNDARY INVERTS** — the depth
+  becomes free and the list becomes paid, which retires `DEPTH_FIELDS`, `summarize()`, the read
+  meter, the teaser and the essentials' *reason* (their authored order stands on its own).
+- **$5.99/month, $44.99/year.** ✅ Already the shipped constants in all three clients.
+- ⚠️ **THE GATE NEVER LANDS INSIDE A TRIP, AND IT IS MECHANICAL, NOT CAREFUL: THE ALLOWANCE IS
+  SPENT AT COMPLETION, NEVER AT START.** Nothing between entry and Finish reads it, so there is
+  no path on which a mid-walk gate could appear by mistake.
+- ⚠️ **NO PARTIAL LIST, EVER.** Not one free item, not the list without cards, not a limited
+  trip. **The moment the list works at all for free the trial stops meaning anything and the
+  model collapses back into freemium.** A lapsed dashboard shows their LAST list, greyed and
+  **non-interactive** — no taps, no chevrons — because live card chevrons would make it a
+  working browsing index, which is a list that works.
+- **THE COUNTER CARRIES NO ASK, ANYWHERE.** It is free as a conversion argument, not as
+  generosity: a locked app gets deleted and a deleted app never converts. It is deliberately a
+  reference book next to something they have already had, **and that gap is the pitch.**
+- ⚠️ **COUNT TRIPS ON-DEVICE; THE ACCOUNT PRESERVES THE COUNT, IT DOES NOT ENFORCE IT.** There
+  is no server-enforceable gate for a guest — everything a guest does goes through
+  `/api/guest/*` — so the gate is a client claim whatever else is decided. The count is its own
+  **monotonic** field: `archive` is capped at 25 and trims from the front, so deriving it from
+  the archive starts silently forgiving at trip 26. **`evaluatePremium` takes ZERO change** —
+  a trip count is not a subscription, and putting one in it breaks the `is_premium()` SQL
+  mirror that nothing enforces.
+- ⚠️ **NOBODY CAN BUY ANYTHING TODAY, UNDER ANY MODEL, AND THIS OUTRANKS THE MODEL.**
+  `Purchasing.isAvailable` is constant false (no adapter), `canPurchase` is false for every
+  real visitor, and **Sign in with Apple has never completed one token exchange.** The adapter
+  and one real sign-in are upstream of all of it.
+
 - **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card SUMMARY
   (eyebrow, headline, do line, cart pick, **and the tier sentence**), all scanning, unlimited asking
   including generation, all browsing, and **the entire list**. Paid: the depth (`why`, `look_for`,
@@ -1356,6 +1391,7 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 | `BARCODE_COVERAGE.md` | Provider options assessed, none integrated. A decision doc. |
 | `docs/PASS3-HANDOFF.md` | §14 is the full queue in order; §13 is that session's findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema compared against the migration files. |
+| `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** The five answers, the inverted paid boundary, the five open decisions. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
 | `mobile/docs/LAUNCH_CHECKLIST.md` | Unfinished App Store submission work. |
