@@ -1225,6 +1225,33 @@ EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRIC
 
 ### Queued
 
+- ⏳ ⚠️ **NOTHING REPORTS A COMPLETED-TRIP COUNT, SO A SIGNED-IN SHOPPER'S METER IS THE
+  DEVICE'S — AND A DEVICE METER IS RESETTABLE BY REINSTALL** (ruled 2026-08-15, option 3:
+  **device meter now, this route queued as a real item**).
+  **The addition is small and it is named in `docs/PRICING-MODEL.md` §3a: `completedTrips`
+  on the response of `GET /api/trips/seedable`** — one field on a door the client already
+  has to call, rather than a second door onto the same fact. `trips` has no count column
+  either; the count is `select count(*) where status='completed'`, not stored.
+  ⚠️ **UNTIL IT EXISTS, THE RULING'S OWN LIMIT IS LIVE AND IT IS WRITTEN HERE SO WHOEVER
+  PICKS THIS UP SEES IT AT THE POINT OF THE WORK, NOT ONLY IN A REPORT:** after sign-in the
+  client still has no number to reconcile *against*, so `TripAllowance.reconciled` runs with
+  `server: 0` on every carry and the phone stays the source of truth for a **paid
+  entitlement**. **A reinstall AFTER signing in therefore resets a count the server already
+  knows** — the shopper returns with a fresh device book, `reconciled(device: 0, server: 0)`
+  is 0, and the free run re-arms.
+  ⚠️ **THAT IS NOT THE ACCEPTED LOOPHOLE AND MUST NOT BE FILED UNDER IT.** The accepted one
+  is scoped to **PRE-ACCOUNT** trips, where the alternative is a sign-in wall in front of the
+  thing that sells the app. Past sign-in there is an account, a row, and a server that could
+  answer — so the same reset is a different thing, was **not** ruled, and is a defect this
+  route closes rather than a cost anybody agreed to.
+  ✅ **`max(server, …)` is already written for it.** The never-subtract half is not
+  conditional on this route landing, so the day `completedTrips` starts arriving the carry
+  needs no re-reasoning: a real server count immediately outranks whatever the phone holds.
+  📎 The client half is built and pinned — `TripAllowance.reconciled`, `GuestTripBook
+  .tripsCompleted`, `Tools/triploop`. **Separately proposed server work**; it is one field on
+  an existing authed route and it is downstream of one completed Sign in with Apple token
+  exchange, which has still never happened.
+
 - 🐞 ⏳ **`/guest/list/attach` IS METERED BY A BUDGET SIZED FOR A DIFFERENT ACT** (measured
   2026-08-11, from the iOS side). It draws `cartBuildLimited` — **20/hour, sized for the one
   cart build a shopper does per trip** — while an attach is made by the CLIENT on every cold

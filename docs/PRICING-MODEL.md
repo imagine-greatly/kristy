@@ -779,7 +779,22 @@ building the pricing model before them produces a paywall nobody can pay.
 ## 7. OPEN DECISIONS
 
 **Closed 2026-08-14 by ruling:** the account question (§1), the Haul (§4), the lapsed
-dashboard (§4), and **import SETS the count rather than adding to it** (§3a).
+dashboard (§4), and **how import reconciles the count** (§3a) — ruled that day as *"import
+SETS the count"* and **superseded the same day by SUM AND CAP AT 2**. ⚠️ **This line named
+the superseded version for a day.** §3a has held sum-and-cap throughout, so the summary of
+the decisions and the decisions disagreed, and the summary is the half a reader skims.
+**Name the ruling, not its first draft.**
+
+**Closed 2026-08-15 by ruling — WHAT METERS THE FREE RUN AFTER SIGN-IN: option 3, the device
+meter now, with the count route queued as a real item.** There is no server route reporting a
+completed-trip count and no column for one, so the alternative on the table was seeding the
+server count from the carry and letting the device remain authoritative. **Rejected: that
+makes the phone the permanent source of truth for a paid entitlement**, so a reinstall *after*
+signing in would reset a count the server already knows. ⚠️ **The reinstall loophole was
+accepted for PRE-ACCOUNT trips deliberately (§1); extending it past sign-in is a different
+thing and was not ruled.** The limit this leaves live until the route lands is recorded in the
+queue entry itself — `CLAUDE.md` → Open items → Queued — rather than only in a report, because
+the person who closes it is the person who needs to read it.
 
 Still open:
 
