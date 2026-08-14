@@ -345,40 +345,60 @@ are already load-bearing rather than convenient:
 **So the reconciliation is: the device count is the truth until sign-in; import carries the
 trips; the server count is the truth afterwards.** Three details make that work:
 
-1. ⚠️ **RULED 2026-08-14 — SUM AND CAP AT 2. NEVER SUBTRACT, NEVER RE-ARM.**
+1. ⚠️ **RULED 2026-08-15 — MAX AND CAP AT 2. NEVER SUBTRACT, NEVER RE-ARM.**
+   *(Superseding **SUM AND CAP AT 2**, ruled 2026-08-14, which double-counted.)*
 
    ```
-   reconciled = max(server, min(2, device + server))
+   reconciled = max(server, min(2, max(device, server)))
    ```
 
    **The asymmetry decides it: a dodge costs $5.99, a false denial costs a paying
    customer.** Those are not comparable amounts, so the rule is built to fail toward the
    shopper — but only where failing toward them cannot hand the allowance back.
 
-   - **Sum, not set.** At the ask the server side is 0 (import is one-shot on *has this
-     user ever had a trip at all*), so summing and setting agree there — `0 + 2 = 2`, the
-     same two trips being carried, not two more. **They diverge on the second sign-in**,
-     which is where setting is dangerous: a member who reinstalls and signs back in from a
-     phone holding 0 or 1 local trips would have their real count *overwritten downward* by
-     a fresh device. That is the re-arm, and it is why the operation is addition.
+   - ⚠️ **WHY SUM WAS WRONG: IT COUNTS A MEMBER'S TRIPS TWICE.** `Cart.finishTrip` writes
+     **both** — it files the trip on the device record *and* refreshes the entitlement
+     count — so a trip a signed-in shopper walks is on **both sides** of this arithmetic.
+     Adding them makes one trip read as two. **Sum was written for a world in which each
+     side held DIFFERENT trips, and that world does not exist.**
+   - ⚠️ **THE CEILING WOULD HAVE HIDDEN IT.** At `device 2, server 2` sum gives 4, the cap
+     flattens it to 2, and max gives 2 — identical. **The two disagree at exactly one
+     point: `device 1, server 1`**, one real trip, where sum calls the free run spent with a
+     free trip still owed. Every assertion in `Tools/triploop` passed under both rules
+     because none of them stood on that point. It does now, and it is the whole finding.
+   - **Why max is safe — no shopper can hold two independent counts.** Either the device is
+     **ahead** (guest trips walked here and not carried yet) or the two sides are **equal**
+     (the same trips, counted on both, because the finish path writes both). There is no
+     third arrangement in which each side holds trips the other has never heard of, which is
+     the only arrangement addition would be right for. The device being **behind** is
+     reachable — a reinstall after signing in — and max takes the server's number there,
+     which is the correct answer and what §3a step 4 exists to supply.
    - **`max(server, …)` is the never-subtract guarantee, stated rather than assumed.** The
      cap can otherwise lower a stored count that is somehow already above it, which is the
-     one arrangement of these three numbers that gives an allowance back.
-   - **The cap is what keeps the count a fact about the allowance** rather than a lifetime
-     trip odometer that means something different every time the allowance changes.
-   - ⚠️ **The old wording here was "IMPORT SETS THE COUNT, IT DOES NOT ADD TO IT", and it is
-     superseded.** Its worry was right and is preserved: **the ask must never consume the
-     allowance it was asking about.** Sum-and-cap satisfies that at the ask and additionally
-     survives the reinstall that setting does not.
+     one arrangement of these three numbers that gives an allowance back. It is also what
+     makes a fresh phone unable to overwrite a real count downward — the re-arm the sum rule
+     was reaching for, and max keeps it.
+   - **The cap stays, and it is now belt and braces.** `max(device, server)` cannot exceed
+     the allowance by more than an odometer does, so the cap is no longer load-bearing for
+     this arithmetic — **kept anyway, because it is cheap on an entitlement and the version
+     that holds only where someone checked is the version that breaks when the allowance
+     changes.**
+   - ⚠️ **The wording before sum was "IMPORT SETS THE COUNT, IT DOES NOT ADD TO IT".** Its
+     worry survives both revisions: **the ask must never consume the allowance it was asking
+     about.** Max satisfies it at the ask (the server side is 0 there, so max returns the
+     device's own two trips) and survives the reinstall that setting does not.
 
-2. ⚠️ **THE DEVICE COUNT AND `imported.length` WILL DISAGREE, LEGITIMATELY. SUM FROM THE
-   DEVICE COUNT, NOT FROM `imported.length`.** Import skips empty trips (`reason: 'empty'`)
-   and over-limit ones (`'over_limit'`), and abandoned trips never cross, so a monotonic
-   device count of 2 can import as 1. **`imported.length` is what was FILED; the device
-   count is what was WALKED, and the allowance is spent by walking.** Summing the filed
-   number would hand back a free trip for every trip the import declined — the dodge
-   direction, arriving by accident. The device count is the term; the difference is
-   disclosed rather than silently resolved, which is what `CarryOverNotice` is for.
+2. ⚠️ **THE DEVICE COUNT AND `imported.length` WILL DISAGREE, LEGITIMATELY. RECONCILE FROM
+   THE DEVICE COUNT, NOT FROM `imported.length`.** Import skips empty trips
+   (`reason: 'empty'`) and over-limit ones (`'over_limit'`), and abandoned trips never cross,
+   so a monotonic device count of 2 can import as 1. **`imported.length` is what was FILED;
+   the device count is what was WALKED, and the allowance is spent by walking.** Taking the
+   filed number would hand back a free trip for every trip the import declined — the dodge
+   direction, arriving by accident. ⚠️ **Max does not rescue this and the change from sum
+   makes it look like it might:** at the ask the server side is 0, so `max(filed, 0)` is the
+   filed number, undercounted exactly as `filed + 0` was. The device count is the term; the
+   difference is disclosed rather than silently resolved, which is what `CarryOverNotice` is
+   for.
 
    ⚠️ **THE ZERO-DEVICE EDGE CASE IS STRUCTURALLY UNREACHABLE AT THE ASK, NOT HANDLED**
    (ruled 2026-08-14). Nothing reaches this sheet from a device with no local trips — the
@@ -390,26 +410,55 @@ trips; the server count is the truth afterwards.** Three details make that work:
 3. **`IMPORT_MAX_TRIPS = 25` already mirrors `GuestTripBook.archiveLimit = 25`.** They must
    stay equal; a comment says so on both sides and nothing enforces it.
 
-⚠️ **AND THE ONE PIECE THAT IS MISSING FROM THE IMPORT PATH ITSELF:** step 1 adopts the live
-cart from `shopping_lists.list`, and the thing that puts it there is **`claimGuestWork`, which
-lives in `client/src/App.jsx` — the frozen web client, and the inert half of it.** There is no
-iOS equivalent. **So on iOS the import door files the archive correctly and the shopper's
-ACTIVE cart crosses through nothing.** Both repos' comments describe `claimGuestWork` as
-though it were shared infrastructure; it is one function in a file that can never be edited.
-**This must be built on the iOS side before the ask can be honest about "your list, twelve
-items" carrying over.**
+✅ ⚠️ **ADOPT-ONLY IS THE CARRY, AND THERE IS NOTHING TO BUILD FOR IT** (ruled 2026-08-15,
+closing what this section previously called *"the one piece that is missing from the import
+path itself"*).
+
+Step 1 of `importGuestTrips` adopts the live cart from `shopping_lists.list`, and the thing
+that puts it there is `claimGuestWork` in the frozen `client/src/App.jsx`. There is no iOS
+equivalent — and **iOS does not need one, because the premise that made it a gap is a web
+premise.**
+
+**The web needs that door because the web has TWO carts:** a guest's in `localStorage`, a
+member's in a server row, so something has to move one into the other at sign-in. **iOS has
+one.** `GuestTripRecord.active` *is* the cart for a guest and a member alike, `Cart` never
+branches on identity, and no client writes `/api/list`. An iOS shopper signs in and their
+list is still the list they were holding — **it crosses by not moving.** Nothing is lost, so
+there is nothing for a second door to do.
+
+⚠️ **SO DO NOT LATER BUILD AN iOS `claimGuestWork` BECAUSE `TripImportResponse.active` READS
+`"none"`.** That is the misreading this ruling exists to prevent, and it is available to
+anyone who finds the field without the reasoning. `"none"` is the server truthfully reporting
+that it found no legacy list to adopt, which is the right answer for every iOS convert there
+will ever be. **Making it say `"adopted"` would mean writing the live cart into
+`shopping_lists` first — giving iOS the second cart the web is stuck with, in order to then
+need the door that reconciles it.** That is a regression wearing a feature's name. The
+reasoning is recorded at both ends: `TripModels.swift` on the field itself, and
+`CarryOver.swift` where the disclosure lists what crosses.
+
+📎 **It changes the day `/api/list` gets an iOS client**, because from then a member's cart
+genuinely does live on the server. Not before.
 
 ### The order of work this implies
 
 1. ✅ **The monotonic device count — DONE** (2026-08-14/15). `GuestTripBook.tripsCompleted`,
-   its decoder backfill, `TripAllowance`, the write→refresh→read finish path, and
-   `TripCompletion.spentTheFreeRun`. Pinned by `Tools/triploop` and
-   `Tools/checks/trip_finish_order.sh`.
+   its decoder backfill, `TripAllowance`, the read→write→refresh→read finish path, and
+   `TripCompletion.spentTheFreeRun`. Pinned by `Tools/triploop` (200 checks, which now drive
+   the real `Cart` and `Session`) and `Tools/checks/trip_finish_order.sh`.
    ⏳ **`CarryOverNotice` is STILL NOT WIRED into `SignInSurface`** — it remains the cheapest
    piece of this whole model and it is still a component with no production call site.
-2. ⏳ The iOS equivalent of `claimGuestWork` — the active cart's own door. **Untouched.** So
-   the archive crosses and the live cart does not, and `TripImportResponse.active` is always
-   `"none"` on iOS. It is documented on that field rather than left to be rediscovered.
+   ✅ **And the ask is bound to the ENTITLEMENT count, not to the device record** (ruled
+   2026-08-15). It keyed on `TripCompletion.spentTheFreeRun`, which is the GUEST count: a
+   member signing in on a fresh install has an empty book, so that flag is false on every
+   trip they ever walk and **the ask would never fire for them at all.** ⚠️ **It changes no
+   outcome today — measured, not assumed:** with the old binding planted back, triploop
+   stays green at 200/200, because the two numbers are equal for every shopper alive. That
+   is why it is pinned by a check rather than by a test.
+2. ✅ **The iOS equivalent of `claimGuestWork` — NOTHING TO BUILD** (ruled 2026-08-15). See
+   **adopt-only is the carry**, directly above: iOS has one cart, the live list crosses by
+   not moving, and `TripImportResponse.active` reading `"none"` is the true answer rather
+   than a symptom. Recorded on the field, in `CarryOver.swift` and here, because the
+   misreading — *"the door is missing, build it"* — is the natural one.
 3. ✅ **`POST /trips/import` in `KristyAPI` — WRITTEN 2026-08-15 by ruling, and NOT verified
    with real HTTP.** Shape read from `routes/trips.js` and `lib/trips.js` directly; transport
    unproven, and the two are different claims. ⚠️ **The route is still committed and
@@ -793,10 +842,12 @@ building the pricing model before them produces a paywall nobody can pay.
 
 **Closed 2026-08-14 by ruling:** the account question (§1), the Haul (§4), the lapsed
 dashboard (§4), and **how import reconciles the count** (§3a) — ruled that day as *"import
-SETS the count"* and **superseded the same day by SUM AND CAP AT 2**. ⚠️ **This line named
-the superseded version for a day.** §3a has held sum-and-cap throughout, so the summary of
-the decisions and the decisions disagreed, and the summary is the half a reader skims.
-**Name the ruling, not its first draft.**
+SETS the count"*, superseded the same day by *sum and cap at 2*, and **superseded again on
+2026-08-15 by MAX AND CAP AT 2**, which is the live rule. ⚠️ **This line named a superseded
+version for a day once already** — §3a held the current rule throughout while the summary
+named its first draft, and the summary is the half a reader skims. **Name the ruling, not its
+first draft.** Sum was not a wording problem: it **double-counted a member's trips**, because
+the finish path writes both sides. The account is in §3a item 1.
 
 **Closed 2026-08-15 by ruling — WHAT METERS THE FREE RUN AFTER SIGN-IN: option 3, the device
 meter now, with the count route queued as a real item.** There is no server route reporting a

@@ -774,18 +774,27 @@ EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRIC
 - ⚠️ **THE 0-FOREVER BLOCKER COMES FIRST: NO CLIENT WRITES TRIPS.** `KristyAPI` implements no
   `/api/trips/*` route at all, so `completedTripCount` has never been non-zero and could not
   have been. The server side is finished and unreached; making a trip real is a **client**
-  project. Reconciliation at the ask is `POST /trips/import`, and the rule is **SUM AND CAP
-  AT 2 — `max(server, min(2, device + server))`, never subtract, never re-arm** (ruled
-  2026-08-14, superseding *"it SETS the count"*). **The asymmetry decides it: a dodge costs
-  $5.99, a false denial costs a paying customer.** Setting and summing agree at the ask
-  (server is 0 there, so the old rule's worry — the ask spending the allowance it was asking
-  about — is still satisfied) and **diverge on the second sign-in**, where setting lets a
-  fresh phone overwrite a real count downward and hand the allowance back. **Sum the DEVICE
-  count, never `imported.length`**: the allowance is spent by walking, and import
-  legitimately files fewer trips than were walked. The zero-device case is **structurally
-  unreachable at the ask** and gets no branch. ⚠️ **And `claimGuestWork`, the
-  active cart's door into the account, lives in the FROZEN `client/src/App.jsx` and has no iOS
-  equivalent**, so today the archive crosses and the live cart does not.
+  project. Reconciliation at the ask is `POST /trips/import`, and the rule is **MAX AND CAP
+  AT 2 — `max(server, min(2, max(device, server)))`, never subtract, never re-arm** (ruled
+  2026-08-15, superseding *sum and cap*, which superseded *"it SETS the count"*). **The
+  asymmetry decides it: a dodge costs $5.99, a false denial costs a paying customer.**
+  ⚠️ **SUM DOUBLE-COUNTED A MEMBER'S TRIPS: `Cart.finishTrip` WRITES BOTH SIDES**, so a trip a
+  signed-in shopper walks is on both terms and adding them makes one trip read as two. **Sum
+  was written for a world where each side held different trips, and that world does not
+  exist** — either the device is ahead (guest trips not carried yet) or the two are equal.
+  ⚠️ **AND THE CEILING HID IT**: the two rules agree everywhere the cap bites and disagree at
+  exactly **one point, `device 1, server 1`** — where sum spends a free trip that is still
+  owed. Every existing assertion passed under both. **The cap stays anyway; belt and braces on
+  an entitlement is cheap.** Reconcile from the DEVICE count, never `imported.length`: the
+  allowance is spent by walking, and import legitimately files fewer trips than were walked.
+  The zero-device case is **structurally unreachable at the ask** and gets no branch.
+  ✅ **`claimGuestWork` NEEDS NO iOS EQUIVALENT — ADOPT-ONLY IS THE CARRY** (ruled 2026-08-15).
+  The web needs that door because the web has **two** carts, a guest's in `localStorage` and a
+  member's in a server row. **iOS has one**: the active trip on the device is the cart for a
+  guest and a member alike, so the live list crosses by not moving. ⚠️ **Do not build one
+  because `TripImportResponse.active` reads `"none"`** — that is the server truthfully saying
+  it found no legacy list, and making it say `"adopted"` means giving iOS the second cart the
+  web is stuck with. It changes only when `/api/list` gets an iOS client.
 - **$5.99/month, $44.99/year.** ✅ Already the shipped constants in all three clients.
 - ⚠️ **THE GATE NEVER LANDS INSIDE A TRIP, AND IT IS MECHANICAL, NOT CAREFUL: THE ALLOWANCE IS
   SPENT AT COMPLETION, NEVER AT START.** Nothing between entry and Finish reads it, so there is
@@ -1247,10 +1256,20 @@ EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRIC
   ✅ **`max(server, …)` is already written for it.** The never-subtract half is not
   conditional on this route landing, so the day `completedTrips` starts arriving the carry
   needs no re-reasoning: a real server count immediately outranks whatever the phone holds.
+  ⚠️ **THE SECOND HALF OF THE LIMIT IS NOW MEASURED, NOT PREDICTED, AND IT IS A DIFFERENT
+  SHOPPER FROM THE ONE ABOVE.** Driven 2026-08-15 as case 2b in `Tools/triploop`, through the
+  real `Cart` and `Session`: give the entitlement count a server trip (`reconciled(device: 0,
+  server: 1)` is 1, correctly) and then walk a trip. **The ask does not fire.** The phone
+  counts its own trips from zero, the entitlement count cannot rise past what the device
+  knows, and **the crossing lands one trip late** — a free trip nobody was owed. It fails
+  toward the shopper, which is the asymmetry working rather than a second defect, and it is
+  the same root cause: the device is the only counter there is. **Both halves close together
+  when this route lands.**
   📎 The client half is built and pinned — `TripAllowance.reconciled`, `GuestTripBook
-  .tripsCompleted`, `Tools/triploop`. **Separately proposed server work**; it is one field on
-  an existing authed route and it is downstream of one completed Sign in with Apple token
-  exchange, which has still never happened.
+  .tripsCompleted`, `Tools/triploop` (200 checks, driving the real finish path).
+  **Separately proposed server work**; it is one field on an existing authed route and it is
+  downstream of one completed Sign in with Apple token exchange, which has still never
+  happened.
 
 - 🐞 ⏳ **`/guest/list/attach` IS METERED BY A BUDGET SIZED FOR A DIFFERENT ACT** (measured
   2026-08-11, from the iOS side). It draws `cartBuildLimited` — **20/hour, sized for the one
