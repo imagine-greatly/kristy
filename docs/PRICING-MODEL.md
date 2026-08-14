@@ -624,13 +624,6 @@ It satisfies the standing rule that an upgrade affordance whose render condition
 action is a banner: the render condition here is **a spent allowance and a real door**, not a
 tier check that every non-member satisfies on every render.
 
-### Trip 3 — the reminder is the state of the door, not a new thing on screen
-
-No modal, no banner, no second sheet. On trip 3 the hero's action **is** the membership door,
-sitting above the greyed list from §4. That is the whole reminder. It satisfies "an upgrade
-affordance whose render condition contains no action is a banner" — the render condition is a
-completed allowance and a real door, not a tier check.
-
 ---
 
 ## 6. ⚠️ THE BOTTOM LINE THAT OUTRANKS ALL FIVE
