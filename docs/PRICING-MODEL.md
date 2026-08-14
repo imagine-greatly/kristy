@@ -401,13 +401,26 @@ items" carrying over.**
 
 ### The order of work this implies
 
-1. The monotonic device count, and `CarryOverNotice` wired into `SignInSurface`.
-2. The iOS equivalent of `claimGuestWork` — the active cart's own door.
-3. `POST /trips/import` in `KristyAPI`, verified with real HTTP. ⚠️ **It is committed and
-   deliberately unpushed. A cleared blocker is not an approval** — it gets reviewed against
-   what the client actually needs before it ships, and it is not pushed to make a client work.
-4. `completedTrips` on `/trips/seedable`, and the rest of `/api/trips/*` as their surfaces
-   get built.
+1. ✅ **The monotonic device count — DONE** (2026-08-14/15). `GuestTripBook.tripsCompleted`,
+   its decoder backfill, `TripAllowance`, the write→refresh→read finish path, and
+   `TripCompletion.spentTheFreeRun`. Pinned by `Tools/triploop` and
+   `Tools/checks/trip_finish_order.sh`.
+   ⏳ **`CarryOverNotice` is STILL NOT WIRED into `SignInSurface`** — it remains the cheapest
+   piece of this whole model and it is still a component with no production call site.
+2. ⏳ The iOS equivalent of `claimGuestWork` — the active cart's own door. **Untouched.** So
+   the archive crosses and the live cart does not, and `TripImportResponse.active` is always
+   `"none"` on iOS. It is documented on that field rather than left to be rediscovered.
+3. ✅ **`POST /trips/import` in `KristyAPI` — WRITTEN 2026-08-15 by ruling, and NOT verified
+   with real HTTP.** Shape read from `routes/trips.js` and `lib/trips.js` directly; transport
+   unproven, and the two are different claims. ⚠️ **The route is still committed and
+   deliberately unpushed, and the client is built around its absence** — `TripCarry` treats a
+   404 as retryable, never as a carry that happened. **A cleared blocker is not an approval,
+   and a client that wants a route is not one either. It is not pushed to make the client
+   work.**
+4. ⏳ `completedTrips` on `/trips/seedable`, and the rest of `/api/trips/*` as their surfaces
+   get built. ⚠️ **Now the load-bearing one**, and queued as a real item in `CLAUDE.md` with
+   the limit it leaves live: until it exists every carry runs with `server: 0`, so the phone
+   stays the source of truth for a paid entitlement past sign-in.
 
 **All four are downstream of one completed Sign in with Apple token exchange, which has still
 never happened.**
