@@ -636,6 +636,44 @@ deletes the opening line of the ask, which is the argument.
 It is a small device-local counter and it is **not** part of the trip write path built for
 this ruling.
 
+⚠️ **NEVER SUBSTITUTE THE COUNTER SURFACE'S OWN NUMBER FOR IT** (ruled 2026-08-14). There is a
+real, available count of cards this shopper has opened — `CardMeter`, `use_count` — and it is
+the wrong number: **it is a real number from a different surface, and in this sentence it would
+read as though it were about the trip.** Beside "twelve items" and "four sections", every
+number on the line is understood as a fact about the walk they just did. Borrowing one that
+is not makes the whole line untrustworthy, and it is the sort of substitution that looks like
+thrift while shipping a lie.
+
+#### ⚠️ WHEN THERE ARE NO NUMBERS — THE ORDINAL ALONE (ruled 2026-08-14)
+
+**The numbers line is the argument when there is one. When there is not, the ordinal is still
+true and still the point.**
+
+> **That was your second trip.**
+> **The next one needs a membership.**
+
+**A shopper who shopped without ticking anything has not done anything wrong**, and the sheet
+must not read as though they had. No apology, no empty state, no "you didn't add anything" —
+the ordinal is a complete opening on its own.
+
+⚠️ **THE THRESHOLD IS ALL THREE AT ZERO, NOT ANY ONE OF THEM.** This is the part that gets
+implemented backwards, because "drop the line if a number is missing" is the easier condition
+to write and it is wrong. **`Twelve items. Four sections. Zero cards read.` still renders** —
+as *"Twelve items. Four sections."* — because **a list of things the corpus has nothing for is
+an honest trip**, and it is a trip worth naming. `Twelve items. Zero sections.` cannot happen;
+`zero cards` can, and routinely will.
+
+**A zero clause is dropped rather than spelled.** *"Zero cards read"* is true and is not an
+argument, and it sits four lines above *"the counter stays free"* — printing it tells the
+shopper they never used the thing being sold to them, in the sentence built to persuade them.
+
+⚠️ **IMPLEMENT IT AS "NOTHING SURVIVED", NOT AS A THREE-ZERO TEST, OR THE SECTIONS RULE PUTS A
+HOLE IN IT.** Sections is dropped at **1** as well as at 0, so a literal `items == 0 &&
+sections == 0 && cards == 0` check passes a trip of 0 items and 1 section straight through to
+an **empty line**. Build the clauses, and render the line only if at least one survived.
+All-three-at-zero is then a *consequence* of the rule rather than a second condition that can
+disagree with it.
+
 #### Why the buttons read that way
 
 - **`Sign in to continue` names the act, not the promise.** The ruling is that the account
