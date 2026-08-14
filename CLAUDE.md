@@ -755,10 +755,29 @@ EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRIC
 **Do not read a rule below as superseded until the work lands — every one of them is live.**
 - **Trips 1 and 2: everything, nothing gated.** The ask lands at the **END OF TRIP 2, on
   Finish** — the highest-intent moment the product produces. Trip 3 is a reminder, not the ask.
-- **After the trial the COUNTER STAYS FREE**: full cards, the ask, scanning. **Making a list,
-  walking a trip, and the Haul are members only.** ⚠️ **THE PAID BOUNDARY INVERTS** — the depth
-  becomes free and the list becomes paid, which retires `DEPTH_FIELDS`, `summarize()`, the read
-  meter, the teaser and the essentials' *reason* (their authored order stands on its own).
+- **After the trial the COUNTER STAYS FREE**: full cards, the ask, scanning. **Making a list
+  and walking a trip are members only.** ⚠️ **THE PAID BOUNDARY INVERTS** — the depth becomes
+  free and the list becomes paid, which retires `DEPTH_FIELDS`, `summarize()`, the read meter,
+  the teaser and the essentials' *reason* (their authored order stands on its own).
+- ⚠️ **THE HAUL IS FREE TOO** (ruled 2026-08-14, superseding "members only"): **withholding a
+  record of what someone already did is punitive rather than persuasive**, and its value comes
+  from trips they can no longer take. **What stays locked is SEEDING** — "same as last week"
+  creates an active trip, and an active trip is the list. *Free* here means READABLE, not that
+  its doors open.
+- ⚠️ **THE ACCOUNT GATES THE ASK, NOT THE TRIAL.** Trips 1–2 are counted on-device with no
+  account, because a guest can build a list and walk a store today and **that is the thing
+  that sells the app.** Signing in is what continues past the ask; from that moment the count
+  is server-side and cannot be reset. **THE REINSTALL LOOPHOLE IS ACCEPTED DELIBERATELY** —
+  someone who wipes to dodge a $5.99 ask was never converting, and the cost of blocking them
+  is every shopper who bounces at a sign-in screen before seeing the product. **Do not "fix"
+  it later with a device identifier.**
+- ⚠️ **THE 0-FOREVER BLOCKER COMES FIRST: NO CLIENT WRITES TRIPS.** `KristyAPI` implements no
+  `/api/trips/*` route at all, so `completedTripCount` has never been non-zero and could not
+  have been. The server side is finished and unreached; making a trip real is a **client**
+  project. Reconciliation at the ask is `POST /trips/import` — **it SETS the count, never adds
+  to it**, or the ask spends the allowance it was asking about. ⚠️ **And `claimGuestWork`, the
+  active cart's door into the account, lives in the FROZEN `client/src/App.jsx` and has no iOS
+  equivalent**, so today the archive crosses and the live cart does not.
 - **$5.99/month, $44.99/year.** ✅ Already the shipped constants in all three clients.
 - ⚠️ **THE GATE NEVER LANDS INSIDE A TRIP, AND IT IS MECHANICAL, NOT CAREFUL: THE ALLOWANCE IS
   SPENT AT COMPLETION, NEVER AT START.** Nothing between entry and Finish reads it, so there is

@@ -3,6 +3,20 @@
 The rule lives in `CLAUDE.md` § **Money**. This is the account: the model, the five
 questions answered against measured state, and the decisions that are still open.
 
+⚠️ **FIVE RULINGS LANDED 2026-08-14, AFTER THE FIRST DRAFT, AND TWO OF THEM CHANGED THE MODEL
+AS ORIGINALLY STATED.** They are folded into the sections below rather than appended, so there
+is one description of the model and not two. Recorded here only as an index of what moved:
+
+1. **The account gates the ASK, not the trial** (§1). Trips 1–2 counted on-device, no account.
+   Signing in is what continues past the ask, and from that moment the count is server-side.
+2. ⚠️ **THE 0-FOREVER FINDING IS THE BLOCKER AND COMES FIRST** (§3). No client writes trips.
+3. ⚠️ **THE HAUL IS FREE AFTER THE TRIAL** (§4) — it was "members only" in the original model
+   and is not any more. Withholding a record of what someone already did is punitive rather
+   than persuasive, and its value comes from trips they can no longer take.
+4. **The lapsed dashboard is the greyed last list, with the Counter card the only live
+   control** (§4).
+5. **The end-of-trip-2 copy is approved as a proposal only** (§5) and ships when signed off.
+
 ⚠️ **NOTHING HERE IS BUILT.** Every line below describes an intended state. What ships today
 is the *old* boundary — depth-is-paid, three free reads, the fourth-tap ask — and the two
 disagree on nearly every point. Where a section says what exists today it is marked
@@ -16,8 +30,13 @@ disagree on nearly every point. Where a section says what exists today it is mar
 - **The ask lands at the END OF TRIP 2, on Finish** — not at the start of trip 3. The highest-
   intent moment the product will ever produce: they have just walked a store with it. Kristy
   can be specific. Trip 3 is a **reminder**, not the ask.
-- **After the trial the Counter stays free**: full cards, the ask, scanning. **Making a list,
-  walking a trip, and the Haul are members only.**
+- **After the trial the Counter stays free**: full cards, the ask, scanning. **Making a list
+  and walking a trip are members only.**
+- ⚠️ **THE HAUL IS FREE TOO** (ruled 2026-08-14, superseding "the Haul is members only" as
+  first stated). It is a record of what they already did, and **withholding it is punitive
+  rather than persuasive** — its value comes from trips they can no longer take, which is the
+  same argument as the greyed list. **What stays locked is SEEDING**, because "same as last
+  week" builds an active trip, and an active trip is the list. See §4.
 - **$5.99/month, $44.99/year.**
 
 ### Why the Counter stays free — a conversion argument, not generosity
@@ -101,10 +120,25 @@ identifier it must not have.** So for the shoppers who actually exist, the gate 
 claim whatever else is decided. Any statement that the gate is "enforced" is a statement about
 the client.
 
-### RECOMMENDATION
+### ⚠️ RULED 2026-08-14 — COUNT LOCALLY, GATE THE **ASK** ON THE ACCOUNT, NOT THE TRIAL
 
-**Count on-device. Make the account the thing that PRESERVES the count, not the thing that
-enforces it.**
+**A guest can build a list and walk a store today, and that is the thing that sells the app.
+Requiring an account before trip one puts a wall in front of the value.**
+
+- **Trips 1 and 2 are counted on-device. No account, no sign-in, nothing asked for.**
+- **The ask at the end of trip 2 requires signing in to continue.** Sign-in is the door
+  through the ask, not a prerequisite for reaching it.
+- **From that moment the count is server-side and cannot be reset.**
+
+⚠️ **THE REINSTALL LOOPHOLE IS ACCEPTED DELIBERATELY. IT IS NOT AN OVERSIGHT AND MUST NOT BE
+"FIXED" LATER.** Someone who wipes and reinstalls to dodge a $5.99 ask was never converting.
+The cost of blocking them is **every shopper who bounces at a sign-in screen before seeing the
+product** — a much larger number, made of exactly the people who would have paid. Any future
+proposal to close this hole (a device identifier, a server-side fingerprint, a receipt check
+before trip one) is trading a real conversion population for a fake one, and this paragraph is
+the answer to it.
+
+### How that ruling is implemented
 
 1. The device holds a **monotonic `tripsCompleted` integer** in `GuestTripBook`, incremented
    in `GuestTripRecord.complete()`.
@@ -250,6 +284,103 @@ monotonic-field requirement.
 
 ---
 
+## 3a. ⚠️ THE 0-FOREVER BLOCKER, AND WHAT IT TAKES TO MAKE A COMPLETED TRIP REAL
+
+**MEASURED: no client writes trips. `completedTripCount` has never been non-zero on any
+account, and could not have been.** This is the blocker and it is upstream of the model.
+
+The tell is `CLAUDE.md` §1.8's: **a `false` that is constant rather than conditional.** Every
+piece of the trip lifecycle is built, tested and correct — three statuses, the partial unique
+index, the reuse rule, the re-matching seed — and **none of it has ever executed for a real
+shopper.** It is unbuilt in effect rather than untested.
+
+### What is actually missing, per side
+
+**Server — nothing is missing. It is finished and unreached.**
+`POST /trips/complete`, `/trips/new`, `/trips/next`, `GET /trips/seedable` are all written,
+all `requireAuth`, all covered. `completeTrip` writes `{status:'completed', completed_at}`.
+The table is applied and indexed. **The server needs one addition and it is small:** nothing
+exposes a *count*. `/trips/seedable` answers seedable/items/completedAt, not "how many". Add
+`completedTrips` to that response rather than a new route — one field on a door the client
+already has to call, versus a second door onto the same fact.
+
+**Client — everything is missing, and the reason is recorded rather than accidental.**
+**MEASURED: `KristyAPI` implements no `/api/trips/*` route at all**, and says so under
+*"Not implemented, and why"*: each authed route is its own unit of work with its own surface,
+and a `Codable` written from `api-shapes.generated.md` and never exercised is a comment
+asserting an invariant. That reasoning stands. What it means for this model is that
+**"make a completed trip real for a member" is a client project, not a server one.**
+
+**The device before sign-in — mostly built.** `GuestTripRecord.complete()` archives with
+`ending: .completed`; the reuse rule and the explicit-tap rule are ported and pinned in
+`Tools/triploop`. Two gaps:
+1. **The monotonic count does not exist** (§1). `archive` is capped at 25 and trims from the
+   front, so the archive cannot carry it.
+2. ⚠️ **`CarryOverNotice` is built and has no production call site.** It computes the exact
+   disclosure the ask needs — what carries, what is lost — is exercised by `triploop`, and
+   renders in `DesignProposals`. **It appears nowhere in `SignInSurface`.** That is finding
+   #4's shape exactly: a harness proves the component, only the real call site proves the
+   wiring. It is the single cheapest piece of this whole model, and it is already written.
+
+### ⚠️ THE RECONCILIATION AT THE MOMENT OF THE ASK — USE `/trips/import`
+
+**It is the same shape as the conversion door because it IS the conversion door.** The ask at
+the end of trip 2 is a converting guest signing in with an archive on the phone. That is
+precisely what `importGuestTrips` was written for, and reusing it is right for reasons that
+are already load-bearing rather than convenient:
+
+- **The order hazard is already solved inside it.** Adoption of the live cart happens *before*
+  the archive is filed, both inside one function, because a caller that sequenced them
+  backwards would strand the shopper's active cart forever. **A caller cannot get the order
+  wrong because a caller cannot perform either half.** A new reconciliation path would have to
+  re-solve that, and would not.
+- **It is one-shot on "has this user ever had a trip at all"** — the same gate as adoption. It
+  cannot be replayed to inflate history and a second call declines (409) rather than
+  duplicating.
+- **`status` is server-written**, every row goes through `sanitizeList`, and **timestamps are
+  clamped to `[now − 1y, now]` with `started ≤ completed`** — which matters more here than it
+  did before, because these rows now decide whether someone has paid. An unclamped
+  `completedAt` would sit at the top of `lastCompletedTrip` forever.
+
+**So the reconciliation is: the device count is the truth until sign-in; import carries the
+trips; the server count is the truth afterwards.** Three details make that work:
+
+1. ⚠️ **IMPORT SETS THE COUNT, IT DOES NOT ADD TO IT.** These are the same two trips being
+   carried, not two more. `imported.length` is already returned. **Getting this backwards
+   means the ask consumes the allowance it was asking about** — the shopper signs in to
+   continue and is immediately out again, on the same tap.
+2. ⚠️ **THE DEVICE COUNT AND `imported.length` WILL DISAGREE, LEGITIMATELY, AND THE SERVER
+   MUST WIN.** Import skips empty trips (`reason: 'empty'`) and over-limit ones
+   (`'over_limit'`), and abandoned trips never cross. A monotonic device count of 2 can
+   therefore import as 1. **The server count is what gates from then on**, and the difference
+   is disclosed rather than silently resolved — which is what `CarryOverNotice` is for.
+3. **`IMPORT_MAX_TRIPS = 25` already mirrors `GuestTripBook.archiveLimit = 25`.** They must
+   stay equal; a comment says so on both sides and nothing enforces it.
+
+⚠️ **AND THE ONE PIECE THAT IS MISSING FROM THE IMPORT PATH ITSELF:** step 1 adopts the live
+cart from `shopping_lists.list`, and the thing that puts it there is **`claimGuestWork`, which
+lives in `client/src/App.jsx` — the frozen web client, and the inert half of it.** There is no
+iOS equivalent. **So on iOS the import door files the archive correctly and the shopper's
+ACTIVE cart crosses through nothing.** Both repos' comments describe `claimGuestWork` as
+though it were shared infrastructure; it is one function in a file that can never be edited.
+**This must be built on the iOS side before the ask can be honest about "your list, twelve
+items" carrying over.**
+
+### The order of work this implies
+
+1. The monotonic device count, and `CarryOverNotice` wired into `SignInSurface`.
+2. The iOS equivalent of `claimGuestWork` — the active cart's own door.
+3. `POST /trips/import` in `KristyAPI`, verified with real HTTP. ⚠️ **It is committed and
+   deliberately unpushed. A cleared blocker is not an approval** — it gets reviewed against
+   what the client actually needs before it ships, and it is not pushed to make a client work.
+4. `completedTrips` on `/trips/seedable`, and the rest of `/api/trips/*` as their surfaces
+   get built.
+
+**All four are downstream of one completed Sign in with Apple token exchange, which has still
+never happened.**
+
+---
+
 ## 4. SURFACE BY SURFACE — WHAT A LAPSED SHOPPER SEES
 
 Lapsed = finished trip 2, did not buy. Guest or member; today, always guest.
@@ -284,6 +415,15 @@ The tempting alternative — leave the card chevrons live, since the Counter is 
 is **rejected**: it turns the greyed list into a working browsing index, which is a list that
 works, which is the partial list the model forbids. Nothing is lost by killing the taps.
 Every one of those cards is one question away on the Counter tab.
+
+⚠️ **THE COUNTER CARD SITS UNDER THE GREYED LIST AND IS THE ONLY LIVE CONTROL ON THE SURFACE**
+(ruled 2026-08-14). One card, below the dead list, pointing at the thing that still works.
+That is what makes the surface a *contrast* rather than a wall: everything above it is theirs
+and frozen, the one thing below it is alive and free.
+- **It is not a second primary.** The hero's action is the ask; the Counter card is tier 3 or
+  quieter. `onePrimaryActionAtMost("HomeSurface")` already fails the build if that slips.
+- **It carries no ask and no price.** It is the free surface's door, and putting a membership
+  line on it would be the ask appearing twice on one screen.
 
 ### Counter — FREE, AND MORE GENEROUS THAN TODAY
 
@@ -328,14 +468,23 @@ The hard constraint holds mechanically: **allowance is spent at completion, so a
 started while allowance remained always completes.** Nothing between entry and Finish reads
 the allowance, so there is no code path on which a gate could appear mid-walk even by mistake.
 
-### Haul — MEMBERS ONLY, EXCEPT THEIR OWN HISTORY
+### Haul — ⚠️ FREE (ruled 2026-08-14, superseding "members only")
 
-Same argument as the list: a lapsed shopper keeps **reading** the trips they finished. Locking
-someone out of their own record is the same mistake as deleting their list.
+A lapsed shopper reads their Haul in full. Every finished trip, every bought row, every left-
+behind row.
 
-What is locked is the **seeding** — "same as last week", carry-forward, the next-trip build.
+**Withholding a record of what someone already did is punitive rather than persuasive**, and
+its value comes from trips they can no longer take — so charging for it charges for the
+absence of the thing they are actually being sold. Same logic as the greyed list, and the
+same logic that keeps the Counter free: it is a reference to something they have already had,
+and that gap is the pitch.
 
-**Where the ask appears:** on the locked seed door.
+⚠️ **WHAT STAYS LOCKED IS SEEDING, AND THE BOUNDARY IS EASY TO LOSE HERE.** "Same as last
+week", carry-forward and the next-trip build all **create an active trip**, and an active trip
+is the list. A Haul that seeds is a list that works for free, which is the partial list the
+model forbids. **"The Haul is free" means the Haul is READABLE, not that its doors open.**
+
+**Where the ask appears:** on the locked seed door, and nowhere else on the surface.
 
 ### Summary of every ask location
 
@@ -347,7 +496,7 @@ What is locked is the **seeding** — "same as last week", carry-forward, the ne
 | Dashboard | inside the hero action, above the greyed list. Never a banner. |
 | The list | on the disabled compose field |
 | Shop mode | on entry only |
-| Haul | on the locked seed door |
+| Haul | on the locked seed door only — **the record itself is free** |
 
 ---
 
@@ -380,32 +529,100 @@ counter, not per-shopper. It needs a small per-trip counter on the device. **If 
 built, the line comes out** — a number in that sentence is arithmetic the shopper can check,
 which is the same class of error as an overstated saving on a pricing page.
 
-### The copy
+### The copy — PROPOSAL, for sign-off before it ships
 
 Voice: zero first person, no em-dash asides, half the words. Kristy's spoken line in Playfair
 italic; every factual and UI line in Inter.
 
-> **Two trips, walked.** *(Kristy, Playfair italic — largest type on the sheet)*
+#### Worked example — a real trip 2: 12 rows, 4 sections, 11 picked up, 9 cards opened
+
+> ### *Two trips, walked.*
+> *(Kristy, Playfair italic, largest type on the sheet)*
 >
-> Twelve items. Four sections. Nine cards read. *(Inter, factual)*
+> **Twelve items. Four sections. Eleven picked up.**
+> **Nine cards read at the counter.**
+> *(Inter, factual — these are the numbers, and they are theirs)*
 >
-> That was the free run. Building a list, walking it, and reading the haul are the membership
-> now.
+> That was the free run. Building a list and walking it are the membership from here.
 >
-> The counter does not change. Every card, every question, every scan stays free.
+> The counter does not change. Every card, every question, every scan stays free. So does the
+> haul.
 >
-> **[ See the membership ]**  $44.99/year · $3.75/month, billed yearly
+> $5.99 a month, or $44.99 a year.
+>
+> *Two finished trips come with you.* *(the `CarryOverNotice`, only when it has something)*
+>
+> **[ Sign in to continue ]**
 > **[ Not now ]**
 
-Notes on the copy:
-- The third line is the pitch and it must stay. It is the sentence that makes the Counter's
-  freeness legible as a *decision* rather than as leftovers.
+#### The template, and where every number comes from
+
+| slot | source | fallback if absent |
+| --- | --- | --- |
+| `{items}` items | `trip.shoppable.count` | ✅ always present |
+| `{sections}` sections | distinct walk sections on the trip | **drop the clause** if 1 |
+| `{checked}` picked up | `rows.filter { $0.checked == true }.count` | **drop the clause** if 0 |
+| `{cards}` cards read | ⚠️ **NOT RECORDED TODAY** — needs a per-trip counter | **drop the whole line** |
+| carry-over line | `CarryOverNotice.of(book)` | **render nothing** — it returns nil when there is nothing to disclose |
+
+⚠️ **A NUMBER THAT IS NOT MEASURED DOES NOT GO IN THE SENTENCE.** "Nine cards read" is
+arithmetic the shopper can check, in the same class as an overstated saving on a pricing page.
+If the per-trip card counter is not built, **that line is cut and the ask is four lines
+instead of five.** It is not filled with an estimate, a session count, or `use_count`.
+
+#### Why the buttons read that way
+
+- **`Sign in to continue` names the act, not the promise.** The ruling is that the account
+  gates the ask; the tap opens sign-in, not a purchase. A button reading *"See the
+  membership"* would be describing what happens two steps later, and a guest cannot complete
+  a purchase from here — `canPurchase` is false for a guest by construction, and buying needs
+  an account.
+- ⚠️ **THE PRICE IS DISCLOSED IN THE BODY, NOT ON THE BUTTON, AND THAT IS THE RECONCILIATION
+  OF TWO RULES THAT PULL OPPOSITE WAYS.** `auth.md` §9 says no price is named to anyone who
+  cannot pay it, because a price beside a door that does not open is the dead "Start shopping"
+  with a number attached. Here the door **does** open, onto sign-in. **Concealing the price to
+  win a sign-in would be the worse violation of the same principle** — it makes the tap a
+  trick. So: the number is said plainly in the body, and the button promises only the sign-in
+  it can actually deliver.
 - **Both prices are derived, never authored here.** `Pricing.monthlyCents = 599` and
-  `annualCents = 4499` are the only two numbers written down, and `$3.75` is arithmetic with
-  the saving **floored**. `purchase_rules.sh` fails if a currency amount appears in any other
-  Swift file.
-- **"Not now" must actually work.** Trip 3 is a reminder, not the ask; declining costs nothing
-  beyond a quieter door.
+  `annualCents = 4499` are the only two numbers written down anywhere.
+  `purchase_rules.sh` fails if a currency amount appears in any other Swift file, **so this
+  copy must interpolate them and must not spell them.**
+- **"Not now" must actually work.** Trip 3 is a reminder, not the ask. Declining costs nothing
+  beyond a quieter door, and nothing on trip 3 re-presents this sheet.
+
+#### The three lines that are load-bearing, and why each stays
+
+1. **"That was the free run."** It names the trial as having been a trial. Without it the gate
+   reads as something that was switched on, rather than something that was spent.
+2. **"The counter does not change… So does the haul."** This is the pitch. It makes the free
+   half legible as a **decision** rather than as leftovers, and it is the sentence that keeps
+   the app installed. ⚠️ **The haul clause is newly true** and is the part most likely to be
+   dropped by someone working from the original model.
+3. **The numbers.** Generic copy at this moment wastes the highest-intent moment the product
+   will ever produce. *They have just walked a store with it.* "Twelve items, four sections,
+   eleven picked up" is evidence; "unlock the full experience" is a banner.
+
+#### What the copy must never do here
+
+- **Never name what they lose.** No "you will lose your list", no countdown, no strike-through.
+  The greyed dashboard already shows them, and showing beats threatening.
+- **Never apologise for the ask**, and never soften it into a question. One verdict per
+  headline is a voice rule and it applies to this sheet too.
+- **No em-dash asides. No "I", "me", "my", "we" or "our".** The draft above is clean; check any
+  revision against `VOICE_SPEC.md` rather than against this file.
+- **Never a price on the button, and never a price anywhere for a shopper who cannot reach a
+  purchase at all** if that state ever exists again.
+
+### Trip 3 — the reminder is the state of the door, not a new thing on screen
+
+No modal, no banner, no second sheet, no re-presentation of the ask. On trip 3 the hero's
+action **is** the membership door, above the greyed list, with the Counter card below it. That
+is the whole reminder.
+
+It satisfies the standing rule that an upgrade affordance whose render condition contains no
+action is a banner: the render condition here is **a spent allowance and a real door**, not a
+tier check that every non-member satisfies on every render.
 
 ### Trip 3 — the reminder is the state of the door, not a new thing on screen
 
@@ -433,15 +650,21 @@ building the pricing model before them produces a paywall nobody can pay.
 
 ---
 
-## 7. OPEN DECISIONS — none of these are made here
+## 7. OPEN DECISIONS
+
+**Closed 2026-08-14 by ruling:** the account question (§1), the Haul (§4), the lapsed
+dashboard (§4), and **import SETS the count rather than adding to it** (§3a).
+
+Still open:
 
 1. **Two trials cannot both exist** (§2). Does the trip allowance supersede the 7-day promo
-   trial, or is the promo deleted?
-2. **Does import set or add the count?** (§3, caveat 2). Recommendation: set.
-3. **Is personalized verdict-note metering annexed by "scanning is free"?** (§4).
+   trial, or is the promo deleted? ⚠️ `ensureTrial`'s idempotency-by-existence **would not
+   catch the overlap**, because the two count different things.
+2. **Is personalized verdict-note metering annexed by "scanning is free"?** (§4).
    Recommendation: no.
-4. **What replaces `paidBoundary.test.js`'s assertions** once the boundary inverts (§2). The
+3. **What replaces `paidBoundary.test.js`'s assertions** once the boundary inverts (§2). The
    file must not simply be deleted.
-5. **Does the web client keep the old model forever?** It is frozen, it is served by
+4. **Does the web client keep the old model forever?** It is frozen, it is served by
    `/api/guest/*`, and gating the authed routes leaves it untouched — so the answer is
    probably "yes, by omission", and that should be a decision rather than a side effect.
+5. **The end-of-trip-2 copy** (§5) is a proposal awaiting sign-off.
