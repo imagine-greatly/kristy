@@ -562,7 +562,20 @@ counter, not per-shopper. It needs a small per-trip counter on the device. **If 
 built, the line comes out** — a number in that sentence is arithmetic the shopper can check,
 which is the same class of error as an overstated saving on a pricing page.
 
-### The copy — PROPOSAL, for sign-off before it ships
+### The copy — APPROVED, and the clause rules are now EXECUTABLE
+
+✅ **BUILT 2026-08-14: `kristy-ios/Kristy/Core/TripAskOpening.swift`**, exercised in
+`Tools/triploop` (134 checks). **The three opening lines are a value, not four strings inside
+a view** — every rule below is a condition about *which clauses survive*, each of which reads
+as obvious and is wrong in a way nothing would fail on. The threshold, the zero-clause drop,
+the ordinal fallback and "a swap callout is not an item" are all pinned, and each was proven
+to fail on the defect it names before being trusted. **The surface is still unbuilt**; what
+exists is the content and its rules.
+
+⚠️ **`cardsRead` HAS NO PRODUCER YET AND PRODUCTION PASSES `nil`.** The per-trip counter is
+still not built, so the shipped lead line is *"Twelve items. Four sections."* until it is.
+
+
 
 Voice: zero first person, no em-dash asides, half the words. Kristy's spoken line in Playfair
 italic; every factual and UI line in Inter.
