@@ -345,15 +345,48 @@ are already load-bearing rather than convenient:
 **So the reconciliation is: the device count is the truth until sign-in; import carries the
 trips; the server count is the truth afterwards.** Three details make that work:
 
-1. ⚠️ **IMPORT SETS THE COUNT, IT DOES NOT ADD TO IT.** These are the same two trips being
-   carried, not two more. `imported.length` is already returned. **Getting this backwards
-   means the ask consumes the allowance it was asking about** — the shopper signs in to
-   continue and is immediately out again, on the same tap.
-2. ⚠️ **THE DEVICE COUNT AND `imported.length` WILL DISAGREE, LEGITIMATELY, AND THE SERVER
-   MUST WIN.** Import skips empty trips (`reason: 'empty'`) and over-limit ones
-   (`'over_limit'`), and abandoned trips never cross. A monotonic device count of 2 can
-   therefore import as 1. **The server count is what gates from then on**, and the difference
-   is disclosed rather than silently resolved — which is what `CarryOverNotice` is for.
+1. ⚠️ **RULED 2026-08-14 — SUM AND CAP AT 2. NEVER SUBTRACT, NEVER RE-ARM.**
+
+   ```
+   reconciled = max(server, min(2, device + server))
+   ```
+
+   **The asymmetry decides it: a dodge costs $5.99, a false denial costs a paying
+   customer.** Those are not comparable amounts, so the rule is built to fail toward the
+   shopper — but only where failing toward them cannot hand the allowance back.
+
+   - **Sum, not set.** At the ask the server side is 0 (import is one-shot on *has this
+     user ever had a trip at all*), so summing and setting agree there — `0 + 2 = 2`, the
+     same two trips being carried, not two more. **They diverge on the second sign-in**,
+     which is where setting is dangerous: a member who reinstalls and signs back in from a
+     phone holding 0 or 1 local trips would have their real count *overwritten downward* by
+     a fresh device. That is the re-arm, and it is why the operation is addition.
+   - **`max(server, …)` is the never-subtract guarantee, stated rather than assumed.** The
+     cap can otherwise lower a stored count that is somehow already above it, which is the
+     one arrangement of these three numbers that gives an allowance back.
+   - **The cap is what keeps the count a fact about the allowance** rather than a lifetime
+     trip odometer that means something different every time the allowance changes.
+   - ⚠️ **The old wording here was "IMPORT SETS THE COUNT, IT DOES NOT ADD TO IT", and it is
+     superseded.** Its worry was right and is preserved: **the ask must never consume the
+     allowance it was asking about.** Sum-and-cap satisfies that at the ask and additionally
+     survives the reinstall that setting does not.
+
+2. ⚠️ **THE DEVICE COUNT AND `imported.length` WILL DISAGREE, LEGITIMATELY. SUM FROM THE
+   DEVICE COUNT, NOT FROM `imported.length`.** Import skips empty trips (`reason: 'empty'`)
+   and over-limit ones (`'over_limit'`), and abandoned trips never cross, so a monotonic
+   device count of 2 can import as 1. **`imported.length` is what was FILED; the device
+   count is what was WALKED, and the allowance is spent by walking.** Summing the filed
+   number would hand back a free trip for every trip the import declined — the dodge
+   direction, arriving by accident. The device count is the term; the difference is
+   disclosed rather than silently resolved, which is what `CarryOverNotice` is for.
+
+   ⚠️ **THE ZERO-DEVICE EDGE CASE IS STRUCTURALLY UNREACHABLE AT THE ASK, NOT HANDLED**
+   (ruled 2026-08-14). Nothing reaches this sheet from a device with no local trips — the
+   sheet is presented BY the completion of trip 2 on that device. So the `device = 0` term
+   only ever arrives through some *other* sign-in door (Settings), where summing zero is
+   already the right answer and never-subtract already protects the stored count. **No
+   branch is written for it.** A branch there would be code whose true case has never
+   executed, which is the constant-`false` shape this repo keeps finding.
 3. **`IMPORT_MAX_TRIPS = 25` already mirrors `GuestTripBook.archiveLimit = 25`.** They must
    stay equal; a comment says so on both sides and nothing enforces it.
 
@@ -534,16 +567,15 @@ which is the same class of error as an overstated saving on a pricing page.
 Voice: zero first person, no em-dash asides, half the words. Kristy's spoken line in Playfair
 italic; every factual and UI line in Inter.
 
-#### Worked example — a real trip 2: 12 rows, 4 sections, 11 picked up, 9 cards opened
+#### Worked example — a real trip 2: 12 rows, 4 sections, 9 cards opened
 
-> ### *Two trips, walked.*
-> *(Kristy, Playfair italic, largest type on the sheet)*
->
-> **Twelve items. Four sections. Eleven picked up.**
-> **Nine cards read at the counter.**
-> *(Inter, factual — these are the numbers, and they are theirs)*
->
-> That was the free run. Building a list and walking it are the membership from here.
+**✅ REVISED AND APPROVED 2026-08-14. The opening line was cut.**
+
+> **Twelve items. Four sections. Nine cards read.**
+> **That was your second trip.**
+> **The next one needs a membership.**
+> *(Inter, factual, largest type on the sheet — the numbers lead because the numbers are
+> the argument)*
 >
 > The counter does not change. Every card, every question, every scan stays free. So does the
 > haul.
@@ -554,6 +586,31 @@ italic; every factual and UI line in Inter.
 >
 > **[ Sign in to continue ]**
 > **[ Not now ]**
+> Restore purchases *(quiet, third, never a filled button — see below)*
+
+#### ⚠️ What the revision cut, and why the cut is the point
+
+The draft opened *"Two trips, walked."* in Playfair over the numbers. **That is the app
+narrating its own accounting, and the numbers underneath already say it.** Nobody needs
+telling how many trips they took by the thing that counted them. The revision opens on what
+just happened instead, and folds the boundary into the same block.
+
+Three consequences, each deliberate:
+
+1. **"That was the free run. Building a list and walking it are the membership from here."
+   is gone**, absorbed by *"The next one needs a membership."* The load-bearing job of that
+   line — naming the trial as having been a trial, so the gate reads as something **spent**
+   rather than something switched on — is done by *"That was your second trip"* sitting
+   directly above it. Two sentences became two shorter ones and no meaning left.
+2. ⚠️ **"Eleven picked up" is gone.** Three numbers is the sentence's natural length and the
+   picked-up count is the weakest of the four: it is the only one that can read as a score on
+   how they shopped. The fallback table below no longer carries it.
+3. ⚠️ **THE SHEET NOW HAS NO LINE IN KRISTY'S VOICE, AND THAT IS CORRECT.** *"Two trips,
+   walked."* was the only Playfair italic on it. **The commercial ask is the app's, not
+   hers** — she is a coach, and a coach who asks for money at the end of the walk is a
+   different character. Every line here is Inter, factual, and that is now a rule for this
+   sheet rather than an accident of the edit. **Do not reintroduce a spoken line to "warm it
+   up".**
 
 #### The template, and where every number comes from
 
@@ -561,14 +618,23 @@ italic; every factual and UI line in Inter.
 | --- | --- | --- |
 | `{items}` items | `trip.shoppable.count` | ✅ always present |
 | `{sections}` sections | distinct walk sections on the trip | **drop the clause** if 1 |
-| `{checked}` picked up | `rows.filter { $0.checked == true }.count` | **drop the clause** if 0 |
-| `{cards}` cards read | ⚠️ **NOT RECORDED TODAY** — needs a per-trip counter | **drop the whole line** |
+| `{cards}` cards read | ⚠️ **NOT RECORDED TODAY** — needs a per-trip counter | **drop the clause** |
+| "your second trip" | the monotonic device count | ✅ built — `GuestTripBook.tripsCompleted` |
 | carry-over line | `CarryOverNotice.of(book)` | **render nothing** — it returns nil when there is nothing to disclose |
 
 ⚠️ **A NUMBER THAT IS NOT MEASURED DOES NOT GO IN THE SENTENCE.** "Nine cards read" is
 arithmetic the shopper can check, in the same class as an overstated saving on a pricing page.
-If the per-trip card counter is not built, **that line is cut and the ask is four lines
-instead of five.** It is not filled with an estimate, a session count, or `use_count`.
+It is not filled with an estimate, a session count, or `use_count`.
+
+⚠️ **THE FALLBACK CHANGED WITH THE REVISION AND IT IS EASY TO CARRY THE OLD ONE OVER.** Cards
+read used to be its own line, so the fallback was *drop the whole line*. **It is now a clause
+in the lead sentence, so the fallback is DROP THE CLAUSE** — the sentence becomes *"Twelve
+items. Four sections."* and the numbers still lead. Applying the old fallback to the new copy
+deletes the opening line of the ask, which is the argument.
+
+**Dependency, named:** the lead line ships in full only once the per-trip card counter exists.
+It is a small device-local counter and it is **not** part of the trip write path built for
+this ruling.
 
 #### Why the buttons read that way
 
@@ -590,6 +656,22 @@ instead of five.** It is not filled with an estimate, a session count, or `use_c
   copy must interpolate them and must not spell them.**
 - **"Not now" must actually work.** Trip 3 is a reminder, not the ask. Declining costs nothing
   beyond a quieter door, and nothing on trip 3 re-presents this sheet.
+- ⚠️ **RESTORE IS PRESENT (ruled 2026-08-14) — App Review requires it on any surface offering
+  a subscription, and a returning member meeting a paywall is the worst first impression the
+  app can make.** Third control, quiet, never a filled button: `onePrimaryActionAtMost` holds
+  and the hero's action stays the only filled one.
+
+  ⚠️ **AND IT CANNOT BE THE EXISTING CONTROL AS-IS, WHICH THE RULING DID NOT COVER.**
+  **MEASURED:** `RestorePurchasesControl` takes a **`MemberID` non-optionally**, and so does
+  `PurchaseProvider.restore` — deliberately, because a restore attributes an entitlement to an
+  account and the type refuses to let a call site guess. **The shopper at this sheet is a
+  guest and has no `MemberID`.** So on this one surface the restore control **routes through
+  sign-in first**: same door as the primary action, then the restore. It is still an explicit,
+  always-visible restore control, which is what App Review is checking for, and it is honest —
+  there is genuinely nothing to attribute an entitlement to until they sign in.
+
+  **Do not "fix" this by making `MemberID` optional.** The non-optional is the thing stopping a
+  restore from resolving to nobody, and it is reasoned at `PurchaseProvider.swift:28`.
 
 #### The three lines that are load-bearing, and why each stays
 

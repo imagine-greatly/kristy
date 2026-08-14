@@ -774,8 +774,16 @@ EVERY POINT.** Account, the five answers and the five open decisions: `docs/PRIC
 - ⚠️ **THE 0-FOREVER BLOCKER COMES FIRST: NO CLIENT WRITES TRIPS.** `KristyAPI` implements no
   `/api/trips/*` route at all, so `completedTripCount` has never been non-zero and could not
   have been. The server side is finished and unreached; making a trip real is a **client**
-  project. Reconciliation at the ask is `POST /trips/import` — **it SETS the count, never adds
-  to it**, or the ask spends the allowance it was asking about. ⚠️ **And `claimGuestWork`, the
+  project. Reconciliation at the ask is `POST /trips/import`, and the rule is **SUM AND CAP
+  AT 2 — `max(server, min(2, device + server))`, never subtract, never re-arm** (ruled
+  2026-08-14, superseding *"it SETS the count"*). **The asymmetry decides it: a dodge costs
+  $5.99, a false denial costs a paying customer.** Setting and summing agree at the ask
+  (server is 0 there, so the old rule's worry — the ask spending the allowance it was asking
+  about — is still satisfied) and **diverge on the second sign-in**, where setting lets a
+  fresh phone overwrite a real count downward and hand the allowance back. **Sum the DEVICE
+  count, never `imported.length`**: the allowance is spent by walking, and import
+  legitimately files fewer trips than were walked. The zero-device case is **structurally
+  unreachable at the ask** and gets no branch. ⚠️ **And `claimGuestWork`, the
   active cart's door into the account, lives in the FROZEN `client/src/App.jsx` and has no iOS
   equivalent**, so today the archive crosses and the live cart does not.
 - **$5.99/month, $44.99/year.** ✅ Already the shipped constants in all three clients.
