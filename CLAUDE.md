@@ -608,7 +608,10 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   side effect of tapping a goal.
 - ⚠️ **THE STANDING ARGUMENT AGAINST PERSONALIZATION-BY-GENERATION — quote it, do not re-derive it.**
   A stored preference only ever buys the thing a shopper would not bother saying again, and that was
-  measured at nearly zero: the input already carries the context. **The corpus is trustworthy
+  measured at nearly zero: the input already carries the context. **The measurement is
+  `docs/LIST-CREATION-AUDIT.md` §C** — the same sentence composed twice, bare and with the full
+  profile, produced lists that barely differed. **A rule that says *quote it* has to say where.**
+  **The corpus is trustworthy
   *because* it is pre-decided**, and the generated cards are where the worst defects have lived.
   **What IS missing is the app knowing anything about a shopper — and the answer to that is
   SELECTION, never authorship.** Same cards, different ones surfaced, by a selector that is itself
@@ -873,6 +876,21 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
 
 ### Rules with teeth
 
+- ⚠️ **A PIPELINE'S EXIT CODE BELONGS TO ITS LAST COMMAND. THE DURABLE FIX IS `set -o pipefail`,
+  AND IT IS NOT `$PIPESTATUS`.** This is the `osxkeychain`/`tail` trap in a second costume:
+  `xcodebuild ... | tail` reported **exit 0 having built nothing**, because the `-destination`
+  name did not exist — the build never ran and `tail` succeeded at printing the complaint.
+  **Measured on this box, and the bash reflex fails silently here:** in zsh `$PIPESTATUS` is
+  **empty** (it is bash-only), so a `${PIPESTATUS[0]}` guard copied from bash reads nothing and
+  **guards nothing while looking like a guard**; zsh spells it `$pipestatus`, lowercase, and
+  **clobbers it on the very next command**, so even the correct spelling is wrong one line later.
+  `set -o pipefail` works in **both** shells and needs no variable to survive. Use it, or drop the
+  pipe and read the log from a file.
+  ⚠️ **AND THE EXIT CODE IS ONLY HALF. A GREEN STATUS IS NOT EVIDENCE THE WORK HAPPENED — ASSERT
+  ON THE ARTIFACT.** `pipefail` would have caught this one; it would **not** catch a build that
+  exits 0 having compiled nothing. **Name the destination from `xcodebuild -showdestinations` and
+  check the built `.app` is newer than the run.** This is the findings family at the command line:
+  the check reported success because it could not see its subject.
 - **EVERY SOURCE GETS FETCHED BEFORE IT SHIPS. A citation written from memory is the same defect
   class as a comment asserting an invariant.** The real finding beats the retold one often enough
   that fetching is worth it on the merits, not only as hygiene.
@@ -898,7 +916,7 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **644 pass on `main` (the held stack) and 633 on `origin/main`**, both measured 2026-08-10. ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, and say which branch ran it.** |
+| `cd server && npm test` | **644 pass on `main` (the held stack), re-measured 2026-08-15; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. **Exits non-zero on a wrong match**; a miss only reports. Run after any alias edit, `perimeterId` change or matcher change. |
@@ -946,7 +964,10 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
   `server/`, so anything the runtime reads from outside it exists on a laptop and is missing on the
   box, silently and forever. `deployBoundary.test.js` resolves the path literals in `lib/`, `routes/`
   **and `index.js`**; `scripts/` is exempt by name. `doLines.json` is the fix for the one that
-  shipped: **edit the table, re-run `scripts/buildDoLines.js`, commit both.**
+  shipped: **edit the table in `docs/do-lines-review.md`, re-run `scripts/buildDoLines.js`, commit
+  both.** ⚠️ **NAME THE TABLE, ALWAYS** — the markdown is the authored source and the JSON is
+  generated from it, so "edit the table" without the path sends an editor to the generated file,
+  where `doLines.test.js` will fail them for a disagreement they were told to create.
 - If a git write fails with "permission denied", it's OneDrive locking `.git` — retry. **Never
   hand-edit the KB or committed files to recover.**
 
@@ -1196,6 +1217,7 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 | File | What it is |
 | --- | --- |
+| `docs/WORKING-DISCIPLINE.md` | **The account behind every rule in Working discipline** — the incidents, the measurements, the superseded versions. |
 | `docs/DECISIONS.md` | **The account behind every rule in Load-bearing decisions** — the incident, the measurement, the superseded version. |
 | `docs/VERIFYING.md` | **The account behind every rule in Verifying** — all five members of the findings family in full. |
 | `docs/OPEN-ITEMS.md` | **Open items in full**, including everything closed, with the driven-live evidence. |
@@ -1208,6 +1230,8 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 | `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** The five answers, the inverted paid boundary, the five open decisions. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
+| `docs/LIST-CREATION-AUDIT.md` | §C is the measurement the anti-personalization rule tells you to quote. |
+| `docs/do-lines-review.md` | The **authored** do-line table. `server/lib/doLines.json` is generated from it. |
 | `mobile/docs/LAUNCH_CHECKLIST.md` | Unfinished App Store submission work. |
 
 ⚠️ **THIS FILE HAS A CONTEXT BUDGET AND IT IS LOAD-BEARING.** On 2026-08-10 it reached 156,456
