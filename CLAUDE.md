@@ -8,11 +8,14 @@ decision stops being load-bearing, delete it from here.
 
 ## WORKING DISCIPLINE — read before touching anything
 
+**Every rule here was paid for. The incidents, the measurements and the superseded versions are
+in `docs/WORKING-DISCIPLINE.md`. Read the account before you change a rule; the rule alone is
+enough to obey one.**
+
 **Claude Code runs here over SSH, from Windows into a rented Scaleway Mac mini, and sessions
 drop mid-task with no warning.** When one does, the conversation is gone and **every file
 already written to disk survives**. Report → approve → commit is backwards for that reality: it
-puts the one durable act last. Twice now hours of work sat untracked when a session died, and
-once it survived only because it happened to be in a directory nobody had cleaned out.
+puts the one durable act last.
 
 ### The rule: COMMIT BEFORE REPORTING
 
@@ -33,21 +36,16 @@ A bad approval costs a revert; a dropped session with uncommitted work costs the
   source on purpose and put it back. **`git checkout -- <file>` puts it back to the last
   COMMIT, not to what you had.** So planting a defect in a file carrying uncommitted work
   and reverting deletes that work, silently, with a command whose whole job is to be safe.
-  **This happened 2026-08-08** and cost the approved-state collapse in `ScanSheet.swift` and
-  the detent set in `ScanBranch.swift` — both rewritten from scratch. The order that was
-  followed was verify-then-commit; the order is **commit, then plant, then revert.**
-  It is the same lesson as the rule above with the threat inverted: there, the danger is a
-  dropped session taking uncommitted work; here it is *you* taking it, with a routine
-  command, in the middle of doing something careful. `git stash` is not the fix either — it
-  takes the test you are trying to run along with the source you are trying to break, and a
-  suite that then runs zero tests reports **success**, which is the empty-collection defect
-  wearing a green tick.
+  It has cost two files, rewritten from scratch. **The order is commit, then plant, then
+  revert.** `git stash` is not the fix either — it takes the test you are trying to run along
+  with the source you are trying to break, and a suite that then runs zero tests reports
+  **success**, which is the empty-collection defect wearing a green tick.
 - **Never end a turn with anything untracked. Ever.** `git add -A`, never `git commit -a` —
-  `-a` does not add untracked files, and that is precisely how `3267c95` shipped a commit
-  titled for the trips feature while `server/lib/trips.js` and `server/routes/trips.js` stayed
-  untracked for a day (see **Verifying**, and run `node server/scripts/commitGuard.js`).
+  `-a` does not add untracked files, and that is precisely how a commit titled for the trips
+  feature shipped while its two source files stayed untracked for a day. Run
+  `node server/scripts/commitGuard.js`.
 - **The four-step verify is not a formality.** A push has reported success in this project while
-  the remote had not moved, and the keychain error that accompanied it appears on successful
+  the remote had not moved, and the keychain error that accompanies it appears on successful
   pushes too — so the error text cannot distinguish them and neither can the exit code. Only
   reading content back off the remote can: `git rev-parse HEAD` → `git reflog` →
   `git ls-remote origin main` → **read a file back from the remote and diff it against local.**
@@ -56,9 +54,8 @@ A bad approval costs a revert; a dropped session with uncommitted work costs the
 
 **`main` here is production and pushing publishes, in about a minute** — Vercel for the client,
 Railway for the server, no staging gate. And `main` currently carries **deliberately unpushed
-commits** (`POST /api/trips/import`, see **Open items**). So in this repo `git push` is a
-*publish*, and pushing "to be safe" ships a feature that is being held on purpose, along with
-whatever else is ahead.
+commits** (see **Open items**). So in this repo `git push` is a *publish*, and pushing "to be
+safe" ships a feature that is being held on purpose, along with whatever else is ahead.
 
 **Commit always — that is what a dropped session threatens. Push to `main` only when the turn's
 work is meant to go live**, and never merely to satisfy the rule above. When work is committed
@@ -69,20 +66,17 @@ session to discover and helpfully resolve.
 `node server/scripts/migrateCounterCards.js` writes the corpus straight to the live
 `counter_cards` table. It needs no push, no deploy and no approval from Railway — just the
 credentials in `server/.env`. **So for anything whose only artifact is card content, "unpushed"
-does not imply "not live".**
+does not imply "not live".** A KB edit has served text to production shoppers while its commit
+sat on `origin/held` and not on `origin/main` — undeployed by every measure git can report.
+That is the two-step act working as designed (**the KB is the source of record, the table is
+what ships**), and it is *why* a KB edit is safe to commit onto a held stack. **The inference it
+breaks is the natural one:** `origin/main..HEAD` tells you what code is held and **nothing**
+about what a shopper is reading.
 
-Observed 2026-08-10: `0a84782` (the `mercury_by_fish` sardines fix) sits on `origin/held` and
-**not** on `origin/main` — undeployed by every measure git can report — while its text is
-serving to anonymous callers in production, because the migration ran. That is the two-step act
-working exactly as designed (**the KB is the source of record, the table is what ships**), and
-it is *why* a KB edit is safe to commit onto a held stack. It is recorded here because the
-inference it breaks is the natural one: reading `origin/main..HEAD` tells you what code is
-held, and tells you **nothing** about what a shopper is reading.
-
-**The practical rule:** a commit that touches only `kristy_perimeter_kb.json` publishes when
-the migration runs, so **say in the report whether it has**, the same way an unpushed commit is
-reported. The two states are independent and both need stating: *committed / pushed* is the
-code, *migrated / not* is the corpus. The card commits already say `Not migrated.` in their
+**The practical rule:** a commit that touches only `kristy_perimeter_kb.json` publishes when the
+migration runs, so **say in the report whether it has**, the same way an unpushed commit is
+reported. **The two states are independent and both need stating: *committed / pushed* is the
+code, *migrated / not* is the corpus.** The card commits already say `Not migrated.` in their
 messages — that line is the other half of this and should not be dropped.
 
 ### ⚠️ THE HELD STACK LIVES ON `origin/held`. `main` BEING BEHIND IS NOT LOST WORK.
@@ -98,11 +92,8 @@ production deployment tracks `main`, so pushing here publishes nothing; a Vercel
 for the branch is expected and harmless — its origin is not in `CLIENT_ORIGIN`, so every API
 call from it is CORS-blocked, which is the correct outcome for a URL nobody should be using.
 
-**Why it exists:** committing protects work from a dropped session, which is the threat the rule
-above is written for. It does nothing about **losing the machine** — and this runs on a rented
-Mac mini reached over SSH. Nine commits, including a feature that cannot be pushed to `main`,
-sat on one disk. That is the same risk one layer up, and the answer is a branch that backs them
-up without deploying them.
+**Why it exists:** committing protects work from a dropped session. It does nothing about
+**losing the machine** — and this runs on a rented Mac mini reached over SSH.
 
 **Keep it current: after any commit that stays off `main`, push it here too.**
 
@@ -174,7 +165,7 @@ is full of the resumed session confidently rewriting something that was already 
 
 ⚠️ **"Push anything outstanding" MEANS `kristy-ios` AND `main:held` — NOT `kristy` `main`.**
 Pushing this repo's `main` publishes to production in about a minute and the stack carries
-deliberately held commits. The reflex this block installs is the exact reflex the next section
+deliberately held commits. The reflex this block installs is the exact reflex the section above
 forbids. Commit everything, always; push `kristy-ios`, push `main:held`, and leave `main` alone
 unless the turn's work is meant to go live.
 
@@ -187,10 +178,9 @@ prefer deleting a copy over letting them disagree.
 
 ## THIS REPO HAS TWO HALVES AND THEY HAVE DIFFERENT RULES
 
-Ruled 2026-08-08, when the native client became the thing being built and this repo stopped
-being the thing being built. **The product is now one iOS client (`kristy-ios`) talking to the
-server in this repo.** What lives here splits cleanly in two, and conflating them is how a
-frozen file gets edited and a live route gets changed by accident.
+**The product is now one iOS client (`kristy-ios`) talking to the server in this repo.** What
+lives here splits cleanly in two, and conflating them is how a frozen file gets edited and a
+live route gets changed by accident.
 
 ### `client/src` — DEAD. FROZEN. INSPIRATION ONLY.
 
@@ -205,22 +195,18 @@ one-filled-action count. Those are rules the Swift client must satisfy, and this
 they were ever true. Read it, cite it, copy the reasoning out of it. Do not write to it.
 
 ⚠️ **`client/src/lib/tokens.js` IS NO LONGER THE BRAND. IT IS A FROZEN HISTORICAL COPY.**
-The brand moved to **`Brand/tokens.json` in `kristy-ios`** on 2026-08-08, and that file is now
-the source of truth for every colour in the product. Nothing writes to `tokens.js` again.
-
-**It moved because freezing it had built a guaranteed failure into a check.** `kristy-ios`
-validates its whole asset catalog against the brand (`Tools/checks/palette_mirror.sh`), so with
-the brand in a frozen file, the next colour authored on iOS could not be recorded — and the
-check would then fail on a colour that legitimately *is* part of the brand. A check whose only
-escape hatch is editing a frozen file is a check that gets disabled. The brand belongs where
-the app is.
+The brand is **`Brand/tokens.json` in `kristy-ios`**, and that file is now the source of truth
+for every colour in the product. Nothing writes to `tokens.js` again. **It moved because
+freezing it had built a guaranteed failure into a check** — `kristy-ios` validates its whole
+asset catalog against the brand (`Tools/checks/palette_mirror.sh`), so with the brand in a
+frozen file the next colour authored on iOS could not be recorded, and the check would then fail
+on a colour that legitimately *is* part of the brand. **A check whose only escape hatch is
+editing a frozen file is a check that gets disabled.**
 
 - `tokens.js` still ships to `kristyapproved.com` and the values are unchanged, so **nothing
   breaks**.
-- **The three iOS-authored colours in it are a SNAPSHOT, not a live mirror.** `brassFill`,
-  `brassFillInk` and `surfaceLifted` were written back by `7b421e3` on 2026-08-07 so one
-  palette in two repos would not drift. **That was the last mirroring; the route is closed.**
-  The web client consumes none of the three.
+- **The three iOS-authored colours in it are a SNAPSHOT, not a live mirror** — `brassFill`,
+  `brassFillInk` and `surfaceLifted`. **That was the last mirroring; the route is closed.**
 - If you are reading `tokens.js` to learn the brand, it is currently accurate and it will not
   stay that way. **Read `kristy-ios/Brand/tokens.json`.**
 
@@ -239,18 +225,14 @@ may not change as a side effect of iOS work.**
   with its evidence, and waits.
 
 **Why a rule and not a preference:** `main` here **auto-deploys to production** with no staging
-gate, and it carries **deliberately unpushed commits** (see **Open items**) — so a server change
-made during iOS work publishes unreviewed, on push, because it looked small.
+gate, and it carries **deliberately unpushed commits** — so a server change made during iOS work
+publishes unreviewed, on push, because it looked small.
 
 ⚠️ **THE THIRD REASON USED TO BE "NODE IS NOT INSTALLED ON THIS MACHINE" AND IT IS NO LONGER
-TRUE** (`brew install node`, 2026-08-09; measured here 2026-08-10 as **v26.7.0**, running the
-full server suite at **644 pass / 0 fail**). **The rule is unchanged and the reason was never
-only that tests could not run** — it is that a route change riding in on an iOS prompt gets no
-scope and no review before it deploys. Server changes are *testable* now; they are still
-separately proposed and separately approved.
-📎 **`kristy-ios/CLAUDE.md` had already corrected this and this copy had not** — the two-copies
-divergence that produced the category-capture error, caught here by running the thing the
-sentence said was impossible. If you change one, change both.
+TRUE.** Node is installed and the full server suite runs here. **The rule is unchanged and the
+reason was never only that tests could not run** — it is that a route change riding in on an iOS
+prompt gets no scope and no review before it deploys. Server changes are *testable* now; they
+are still separately proposed and separately approved.
 
 **What is NOT covered by this and stays ordinary work:** `docs/`, this file, `supabase/*.sql`
 migrations that have not been applied, and anything explicitly scoped as server work in its own
