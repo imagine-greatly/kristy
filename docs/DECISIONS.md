@@ -913,3 +913,45 @@ was invisible until something rendered one**
   fix restores what it was chosen to mean rather than raising it. The scan bucket is therefore
   sized in **SCANS** — 30 an hour, 2 hits each on the barcode path — with the multiplication
   exported and asserted, so a third hop fails a test instead of halving it again.
+
+---
+
+## The auth rail, extracted verbatim 2026-08-15
+
+These entries had no account anywhere in `docs/` when the second CLAUDE.md split ran.
+What this file already carried about phone sign-in was the 2026-08-10 version, written
+before the DORMANT ruling and before the provider was measured off — **a superseded
+account is worse than an absent one**, so the current text is copied in whole rather
+than reconciled. Copied byte-for-byte out of CLAUDE.md before any condensation.
+
+**Phone sign-in — ⚠️ DORMANT, NOT PENDING (ruled 2026-08-11)**
+- ⚠️ **THE iOS RAIL IS SIGN IN WITH APPLE. PHONE OTP IS RETAINED DELIBERATELY, UNUSED, AND
+  CANNOT CARRY TRAFFIC WITHOUT 10DLC RE-REGISTRATION.** It is **a fallback that was kept on
+  purpose, not a path in progress** — the distinction is the whole entry. Read as "in
+  progress" it sends someone to finish a registration nothing is waiting on; read as deleted
+  it gets rebuilt later for real money. **Keep the code, keep the honest label.**
+- **This is the Bird shape with the threat inverted, which is why it is written down.** Bird
+  was dead code describing an abandoned decision and a session read it as the plan. Phone OTP
+  is *live* code describing a **deferred** decision, and the same misreading is available: the
+  rule below says dead code that lies is worse than no code, and **an unlabelled dormant rail
+  lies in exactly the same way.**
+- ✅ **THE PROVIDER IS NOW OFF, MEASURED 2026-08-13: `phone: false`.** The owner turned it off
+  when Sign in with Apple was enabled. So the honest branch is the one that fires:
+  `friendlySendError` renders *"Text sign-in is switched off for this app right now"*, which is
+  now **true** rather than aspirational, and it took **no edit to the frozen client** — exactly
+  as this entry predicted. The previous state is kept below because the prediction is the part
+  worth trusting next time.
+  ⚠️ **The dormant-not-deleted ruling is UNCHANGED by the toggle.** The code stays, the label
+  stays. A provider switched off is still a rail that can be revived from a dashboard; what
+  would make it dead is deleting `signInWithOtp`, and that is not done and is not proposed.
+  *(Superseded, 2026-08-11: `external_phone_enabled: true` — a send was attempted and failed at
+  Twilio for want of an approved campaign, rendering "The text couldn't be sent from our end.")*
+- **Nobody has ever signed in, on any rail.** Two `auth.users` rows exist (2026-07-27,
+  2026-08-03), **both unconfirmed, both `last_sign_in_at` null**, one of them a 555 test
+  number. There is no user to migrate, no session to preserve, and no revenue depending on it.
+- **Twilio, via Supabase's BUILT-IN phone provider. Nothing server-side.** `SignInForm` calls
+  `supabase.auth.signInWithOtp({ phone })`, which needs no change if the rail is ever revived.
+- **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
+  worse than no code: it is documentation that lies.**
+- **Do not add a delivery hook back without a reason the dashboard cannot meet.**
+- **No second auth rail.** Supabase has `email: false` and it stays that way.

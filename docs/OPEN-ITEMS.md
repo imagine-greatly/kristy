@@ -709,3 +709,101 @@ Store reviewer read. So it is **separately proposed and separately approved work
 own prompt**, and the rewrite is checked against `vercel.json` and the vite middleware,
 which both rewrite these to clean URLs so dev, preview and production agree about a URL
 printed on an external form.
+
+---
+
+## Extracted verbatim 2026-08-15, ahead of the second CLAUDE.md split
+
+Two entries whose account lived only in CLAUDE.md. Copied byte-for-byte before any
+condensation, so the rules that stay in CLAUDE.md have somewhere lossless to point.
+
+### 🐞 The support mailbox does not exist, and four live pages print it
+
+- 🐞 ⚠️ **`hello@kristyapproved.com` DOES NOT EXIST, AND FOUR LIVE PAGES PRINT IT** (2026-08-11).
+  `/support` (twice — it is the entire "getting help" section), `/privacy` and `/terms`. **This
+  is a LIVE GAP, not a pending task:** a shopper or a reviewer emailing that address today gets
+  a bounce, and the support page additionally promises **a reply within two business days**.
+  ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO ADDRESS** — App Review checks the support
+  URL, and "we answer email" plus a hard bounce reads as abandonware rather than as an
+  oversight. **The pages are correct and stay as they are; the mailbox is what is missing.**
+  Being set up (owner's own item). **Nothing here should be edited to work around it** — a
+  second address, a contact form or a softened reply promise would each be a worse answer than
+  the mailbox existing. **Re-check before any App Store submission**; it gates nothing else.
+
+### Infrastructure state
+
+- ⚠️ **`server/.env` ON THIS BOX HAS REAL SUPABASE CREDENTIALS AND A PLACEHOLDER MODEL KEY. THE
+  TWO ARE NOT THE SAME "WALL".** Measured 2026-08-10: `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
+  are live (the evidence query runs), while `ANTHROPIC_API_KEY` is **byte-identical to
+  `.env.example`'s `sk-ant-xxxxx`** and returns `401 invalid x-api-key`. `USDA_API_KEY` and both
+  Stripe keys are **empty strings**. **So anything whose behaviour depends on a model call cannot
+  be verified locally** — prompt changes are testable only by asserting on the prompt text, plus
+  the real endpoint on production. `docs/CATEGORY-CAPTURE.md` says "the wall is down", which is
+  true of the DB and **only** the DB; read as "this box can do live things now" it is wrong in
+  the expensive direction.
+
+- ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
+  push. Code degrades gracefully without it. Everything else is applied — full audit in
+  `docs/SCHEMA-AUDIT.md`.
+  **`counter_cards` is at 85 rows as of 2026-08-10: 82 curated + 3 generated**
+  (`gen_guanciale_worth_buying`, `gen_goat_meat_quality`, `gen_live_fermented_foods`). ⚠️ **A
+  generated row is written by the pipeline and never appears in a diff — re-count it here, do not
+  carry it forward.** This line said "81 + 1" for eight days while two more were live.
+- ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT
+  PHONE.** Corrected 2026-08-11; this entry previously read as a phone-provider checklist and
+  sent readers to finish a 10DLC registration nothing is waiting on. See **Phone sign-in**,
+  which is **DORMANT, not pending**.
+  ✅ **TRACK B IS DONE, MEASURED ON THE LIVE PROJECT 2026-08-13** via `GET /auth/v1/settings`
+  with the anon key: **`apple: true`**, **`phone: false`**, `email: false`. All three are what
+  they should be — Apple on, the dormant phone rail off, email never. Track C is done too: the
+  anon key is in `Config/Base.xcconfig` **and is in the built product**, verified by reading
+  `KristySupabaseAnonKey` back out of the built `Info.plist` rather than off the config line.
+  ⚠️ **THE ENDPOINT IS STRUCTURALLY BLIND TO B-3 AND THAT IS WHY THIS IS NOT "SIGN-IN WORKS".**
+  It returns a boolean per provider and **no client id at all**, so it can prove the provider is
+  on and can never prove the bundle id under Client IDs is right. **The first thing that tests
+  B-3 is a completed token exchange**, and that has still never happened — see the gate below.
+  ⚠️ **THERE ARE STILL NO ACCOUNTS ON ANY RAIL, so anything gated on an account — every
+  purchase — is unreachable regardless of how much of it is built.** Two `auth.users` rows
+  exist, both unconfirmed, neither ever signed in. **The blocker is no longer a dashboard.**
+- 🐞 ⚠️ **THE SIMULATOR CANNOT PROVE THE TOKEN EXCHANGE, AND THE REASON IS NOT THE ONE THE
+  REPO HAD RECORDED** (measured 2026-08-13). Driven for real: the button is reachable and
+  hittable, the tap reaches `ASAuthorizationController`, and the system answers with a
+  SpringBoard alert — ***"Sign in to your Apple Account — You need to sign in to your Apple
+  Account in Settings."*** **The simulator device has no Apple Account** (its account store
+  holds two `local` rows and nothing else), and **it does not inherit the Mac's.**
+  ⚠️ **NO TOKEN IS MINTED, SO NOTHING DOWNSTREAM IS TESTED**, so B-2/B-3 error mapping cannot
+  fire and proves nothing either way. **This is a FOURTH cause, upstream of all three the
+  runbook maps**, and the only one with no on-screen error at all. What the conclusion rests
+  on is POSITIVE evidence: the alert itself, `(AuthenticationServices) Modal authorization
+  request with options` in the app process log (so the control **is** wired), XCUITest finding
+  **no** `ASAuthorizationRemoteViewController` (Apple's sheet never presented), and `auth.error`
+  never rendering.
+  ⚠️ **NOT "the `auth` log category is silent" — that was claimed here before it was checked
+  and it is withdrawn.** Every category on that subsystem is empty, `scan` included, so there
+  is no positive control that the channel carries anything; an absence in a channel never
+  shown to work is this repo's own findings-family defect, committed in the act of reporting
+  one. Account and the fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
+  ✅ **RE-DRIVEN INDEPENDENTLY 2026-08-13 BY A SESSION WITHOUT THE FIRST ONE'S OUTPUT, AND
+  IT REPRODUCES EXACTLY** — same alert label, same two body lines, same `[Close] [Settings]`,
+  Apple's sheet again absent, `auth.error` again never rendered. **The cause was then read
+  from the opposite end**: the simulator's own `Accounts3.sqlite` holds no Apple Account
+  while the host's `Accounts4.sqlite` holds `devonmorrell2007@gmail.com` under `akd`. Cause
+  and symptom measured separately and agreeing is what makes this a diagnosis.
+  ⚠️ **`defaults read MobileMeAccounts` IS THE WRONG CHECK AND IT LIES IN THE EXPENSIVE
+  DIRECTION** — it returns "domain does not exist" on this box, which is **iCloud**
+  unconfigured, not the Apple Account missing. Read the account store.
+  ✅ ⚠️ **THE "SECOND BLOCKER" — THE SIWA ENTITLEMENT MISSING FROM THE BUILT PRODUCT — IS
+  WITHDRAWN, MEASURED. IT IS PRESENT.** The runbook filed it on `Kristy.app.xcent` being an
+  empty dict and `codesign -d --entitlements` returning `<dict></dict>`; **both are
+  device-signing artifacts and a simulator build uses neither.** The simulator carries
+  entitlements in `Kristy.app-Simulated.xcent` and in the binary's `__TEXT,__entitlements`
+  section, and **both hold `com.apple.developer.applesignin = ["Default"]`**. `FAKETEAMID`
+  in the `application-identifier` is what Xcode substitutes with no `DEVELOPMENT_TEAM` and
+  is correct for a simulator build, not a strip. **`ENTITLEMENTS_ALLOWED = NO` was inferred,
+  never observed.**
+  ⚠️ **IT IS THE FINDINGS FAMILY COMMITTED WHILE DOCUMENTING THE FINDINGS FAMILY** — a check
+  that could not see its subject, filed as an instance of checks that cannot see their
+  subject, and believable precisely *because* the repo already had two real ones. **Confirm
+  the artifact is the right one before filing a third.** So the account alert is the only
+  known simulator blocker, and nothing needs fixing before the next sign-in attempt.
+
