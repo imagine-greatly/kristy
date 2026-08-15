@@ -1,5 +1,35 @@
 -- subscriptions.status / subscriptions.provider — the CHECK constraints.
 --
+-- ⚠️ 2026-08-16 — THE SETTLING QUERY BELOW HAS BEEN RUN. THIS FILE IS **NOT** A NO-OP.
+--
+-- The audit further down concluded "probably a no-op, do not run it" and then said, correctly,
+-- that it had only read the CODE and `schema.sql` and not the live constraint. The live
+-- constraint has now been measured — behaviourally, because nothing here can run raw SQL:
+--
+--     cd server && node --use-system-ca scripts/subscriptionConstraints.livetest.js
+--
+--   status    live accepts  trialing, active, past_due, canceled, expired   ← matches schema.sql
+--   provider  live accepts  stripe, promo, revenuecat                       ← DRIFTED
+--                           `'apple'` is REJECTED and `'revenuecat'` is permitted —
+--                           the exact inverse of what schema.sql declares.
+--
+-- ⚠️ **`routes/revenuecat.js:98` WRITES `provider: 'apple'` ON EVERY WEBHOOK**, so as the live
+-- table stands every RevenueCat write fails on a CHECK violation, the handler 500s, and the
+-- platform retries until it gives up. The half that was feared — `'expired'` being rejected and
+-- a lapsed subscriber keeping access — **does not reproduce**; `'expired'` is accepted and
+-- always was. What actually breaks is INITIAL_PURCHASE, so a shopper who has just paid gets no
+-- row and no access. Account: `docs/SCHEMA-AUDIT.md`.
+--
+-- **So the reconciliation at the bottom of this file is now the right statements** — it restores
+-- `'apple'` and drops the writerless `'revenuecat'`. It is still separately proposed, separately
+-- approved work: applying DDL to the live table is not something to do as a side effect of
+-- reading this comment. Nothing is currently costing money — no rail produces an account and
+-- `Purchasing.isAvailable` gates every affordance — but the FIRST SANDBOX PURCHASE FIRES IT.
+--
+-- ─────────────────────────────────────────────────────────────────────────────────────────
+-- The original audit follows, unedited. Its code enumeration is still accurate and is why the
+-- reconciliation keeps `'apple'` rather than teaching the route to write `'revenuecat'`.
+--
 -- ⚠️ READ THIS BEFORE RUNNING IT. THE PREMISE DID NOT REPRODUCE.
 --
 -- This file was written to widen `SUBSCRIPTION_STATUSES` and add a `'revenuecat'` provider.

@@ -197,3 +197,69 @@ PostgREST's OpenAPI document exposes columns and types. It does **not** expose R
 indexes, check constraints, or triggers, so none of those were verified here — a table can
 match this audit column-for-column and still be missing its unique index or its RLS policy.
 Confirming those needs SQL against the database directly, not the REST surface.
+
+---
+
+## 2026-08-16 — the first CHECK constraint ever read live, and it had drifted
+
+⚠️ **`subscriptions.provider` LIVE-REJECTS `'apple'`, WHICH IS THE VALUE EVERY REVENUECAT
+WEBHOOK WRITES.** Measured, not inferred:
+
+```
+cd server && node --use-system-ca scripts/subscriptionConstraints.livetest.js
+```
+
+| column | live accepts | `schema.sql` declares | verdict |
+| --- | --- | --- | --- |
+| `status` | `trialing, active, past_due, canceled, expired` | identical | ✅ matches |
+| `provider` | `stripe, promo, **revenuecat**` | `stripe, **apple**, promo` | ❌ **drifted both ways** |
+
+**The section above says this audit cannot see constraints. That is still true of its
+method** — the OpenAPI document exposes no CHECK. What settled it was a *behavioural* probe:
+offer each candidate value to the real column under an ephemeral user and record what the
+table takes. It is the same move as the self-heal loop being proven by behaviour rather than
+by reading the source.
+
+⚠️ **THE CONTROL IS WHY THE READING IS TRUSTWORTHY.** An accept-only probe cannot distinguish
+"the constraint is wide" from "there is no constraint" — it reports the widest possible good
+news in exactly the case where the guard is gone. Both columns were therefore also offered a
+junk value that **must** be rejected, and both rejected it, so a CHECK is live and enforcing
+on each. Without that control this table would have been an assertion over a collection the
+probe could not see.
+
+### What it costs, and the direction
+
+`routes/revenuecat.js:98` writes `provider: 'apple'` on **every** webhook it handles — not
+just expirations. So today, with the live constraint as measured, **every RevenueCat webhook
+write fails on a CHECK violation**, the handler returns 500, and RevenueCat retries with
+backoff until it gives up.
+
+⚠️ **THE CONSEQUENCE IS THE OPPOSITE OF THE ONE THAT WAS FEARED, AND IT IS WORSE.** The
+concern on the record was that an `EXPIRATION` event would fail to write and a lapsed
+subscriber would keep access. `'expired'` is accepted and always was — that half does not
+reproduce. What actually breaks is `INITIAL_PURCHASE`: it cannot write either, so a shopper
+who has **just paid** gets no `subscriptions` row, `evaluatePremium(null)` is false, and they
+have a free account. Not "someone keeps access they stopped paying for" but "someone pays and
+receives nothing", which is the failure that generates refunds and App Review complaints.
+
+**It is not costing money today** — `Purchasing.isAvailable` gates every purchase affordance,
+no rail has ever produced an account, and nothing has ever been bought. It is a landmine
+armed for the first real transaction, which makes the first sandbox purchase the moment it
+fires.
+
+### The fix is the file that says not to run it
+
+`supabase/subscription_status_check.sql` audits the code, concludes the migration is probably
+a no-op, and says **run the query first**. The query has now been run and it shows the gap the
+file anticipated, so **the file's own contingency is active**: its statements restore `'apple'`
+and drop `'revenuecat'`, which is exactly the reconciliation the measurement calls for.
+
+⚠️ **DO NOT READ THAT AS APPROVAL TO RUN IT.** Applying DDL to the live table is separately
+proposed and separately approved server work. What changed is only that its premise is settled:
+the "probably a no-op" reading is now known to be wrong, and its header should stop saying so.
+
+⚠️ **AND DO NOT `FIX` THIS BY WRITING `'revenuecat'` FROM THE ROUTE INSTEAD.** That is the
+cheaper-looking direction and the file already argues it down: `SubscriptionSnapshot.Provider`
+decodes an unrecognised value to `.unrecognized`, `hasManagedBilling` is then false, and
+`MembershipRow` offers a paying member **"See plans"** instead of **"Manage"** — the door to
+their own billing page, missing, for the only shoppers who have paid.
