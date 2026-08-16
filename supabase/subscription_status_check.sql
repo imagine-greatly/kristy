@@ -1,30 +1,46 @@
 -- subscriptions.status / subscriptions.provider — the CHECK constraints.
 --
--- ⚠️ 2026-08-16 — THE SETTLING QUERY BELOW HAS BEEN RUN. THIS FILE IS **NOT** A NO-OP.
+-- ⚠️ 2026-08-16 — READ THIS BLOCK BEFORE THE ONE UNDER IT. STEP 1 IS **HALF APPLIED**, AND
+-- THE LIVE TABLE IS NOW IN A STATE NEITHER THIS FILE NOR schema.sql DESCRIBES.
 --
--- The audit further down concluded "probably a no-op, do not run it" and then said, correctly,
--- that it had only read the CODE and `schema.sql` and not the live constraint. The live
--- constraint has now been measured — behaviourally, because nothing here can run raw SQL:
+-- Third live reading, same script, unpiped, exit 0:
 --
 --     cd server && node --use-system-ca scripts/subscriptionConstraints.livetest.js
 --
 --   status    live accepts  trialing, active, past_due, canceled, expired   ← matches schema.sql
---   provider  live accepts  stripe, promo, revenuecat                       ← DRIFTED
---                           `'apple'` is REJECTED and `'revenuecat'` is permitted —
---                           the exact inverse of what schema.sql declares.
+--   provider  live accepts  stripe, apple, promo, revenuecat               ← A SUPERSET OF BOTH
+--   control   REJECTED on both columns  ← so these are WIDE constraints, not dropped ones
 --
--- ⚠️ **`routes/revenuecat.js:98` WRITES `provider: 'apple'` ON EVERY WEBHOOK**, so as the live
--- table stands every RevenueCat write fails on a CHECK violation, the handler 500s, and the
--- platform retries until it gives up. The half that was feared — `'expired'` being rejected and
--- a lapsed subscriber keeping access — **does not reproduce**; `'expired'` is accepted and
--- always was. What actually breaks is INITIAL_PURCHASE, so a shopper who has just paid gets no
--- row and no access. Account: `docs/SCHEMA-AUDIT.md`.
+-- ✅ **THE BLOCKING HALF IS CLEARED.** `'apple'` is accepted, so `routes/revenuecat.js:98`
+-- writes, the handler no longer 500s, and INITIAL_PURCHASE lands. The shopper who has just
+-- paid gets their row.
 --
--- **So the reconciliation at the bottom of this file is now the right statements** — it restores
--- `'apple'` and drops the writerless `'revenuecat'`. It is still separately proposed, separately
--- approved work: applying DDL to the live table is not something to do as a side effect of
--- reading this comment. Nothing is currently costing money — no rail produces an account and
--- `Purchasing.isAvailable` gates every affordance — but the FIRST SANDBOX PURCHASE FIRES IT.
+-- ⚠️ **THE SECOND HALF OF STEP 1 IS NOT APPLIED: `'revenuecat'` IS STILL ACCEPTED.** So the
+-- live vocabulary is `stripe, apple, promo, revenuecat` — wider than schema.sql declares
+-- (which omits `revenuecat`) and wider than step 1 intends (which drops it). **Whatever was
+-- run added `'apple'` without removing `'revenuecat'`; it was not this file's step 1.**
+--
+-- ⚠️ **DO NOT RE-RUN STEP 1 ON THAT READING ALONE.** It drops every provider CHECK and rebuilds
+-- one, which is correct DDL for this state and is still DDL against a live table carrying real
+-- constraints — separately proposed, separately approved work. The urgency is gone with the
+-- blocking half: `'revenuecat'` is a permitted value that **nothing writes**, so it costs no
+-- webhook and no shopper today. It is a slot, and this file's own argument is about what fills
+-- a slot later.
+--
+-- ⚠️ **THE CONTROL LINE IS WHY THE ABOVE IS WORTH ANYTHING.** An accept-only probe cannot tell
+-- a WIDE constraint from NO constraint, and would print its most reassuring output in exactly
+-- the case where the column has lost its guard. The control was offered and rejected on both
+-- columns, so a CHECK is live and enforcing on each.
+--
+-- 📋 **THE LESSON, AND THIS ENTRY HAS NOW BEEN WRONG IN BOTH DIRECTIONS.** It read "no-op, do
+-- not run" (wrong), then "still broken, someone reported it fixed" (right at the time), and now
+-- "half applied". **Every one of those was settled by running the script and none by reading a
+-- file.** ⚠️ **And the trap has only changed sides:** *"provider accepts revenuecat"* was the
+-- misleading half of the fixed-sounding sentence before, and it is still true now — it is
+-- simply no longer the interesting line. **Read `apple`, then read `revenuecat`, and read both.**
+--
+-- The status half never reproduced: `'expired'` is accepted and always was. Account:
+-- `docs/SCHEMA-AUDIT.md`.
 --
 -- ─────────────────────────────────────────────────────────────────────────────────────────
 -- The original audit follows, unedited. Its code enumeration is still accurate and is why the

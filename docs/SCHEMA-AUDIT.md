@@ -200,7 +200,49 @@ Confirming those needs SQL against the database directly, not the REST surface.
 
 ---
 
+## 2026-08-16 (later) — re-read a third time: `'apple'` is accepted, and step 1 is HALF applied
+
+⚠️ **THE SECTION BELOW THIS ONE IS THE ORIGINAL FINDING AND ITS HEADLINE IS NO LONGER TRUE.
+It is kept because its mechanism, its cost analysis and its control argument all still stand.**
+
+Third reading, same script, run **unpiped**, exit 0:
+
+| column | live accepts | `schema.sql` declares | verdict |
+| --- | --- | --- | --- |
+| `status` | `trialing, active, past_due, canceled, expired` | identical | ✅ matches |
+| `provider` | `stripe, apple, promo, revenuecat` | `stripe, apple, promo` | ⚠️ **a superset of both** |
+
+- ✅ **`'apple'` is accepted.** The webhook writes, the handler no longer 500s,
+  `INITIAL_PURCHASE` lands. **The blocking half is cleared** — and with it
+  `kristy-ios/docs/PURCHASING.md` §7.0 blocker **D**, which is updated to match.
+- ⚠️ **`'revenuecat'` is still accepted and still undeclared.** So the live vocabulary is
+  wider than `schema.sql` *and* wider than the reconciliation intends. **Whatever was applied
+  added `'apple'` without dropping `'revenuecat'`; it was not `subscription_status_check.sql`
+  step 1**, which does both in one rebuild.
+- ✅ **The control was rejected on both columns**, so these are WIDE constraints and not
+  dropped ones — the distinction an accept-only probe structurally cannot make.
+
+**What is left is not urgent and is still not automatic.** `'revenuecat'` is a permitted value
+with **no writer** (enumerated below across all four `upsertSubscription` call sites), so it
+costs no webhook and no shopper today. Closing it is DDL against a live table and stays
+separately proposed, separately approved server work.
+
+📋 **THE LESSON, AND THIS ENTRY HAS NOW BEEN WRONG IN BOTH DIRECTIONS.** It read *no-op, do not
+run*, then *still broken*, now *half applied*. **All three were settled by running the script;
+none by reading a file — including this one.** ⚠️ **The trap it named has changed sides rather
+than gone away:** *"provider accepts revenuecat"* is still a true sentence and still settles
+nothing. Read the `apple` line, then the `revenuecat` line, and read both.
+
+⚠️ **AND DO NOT PIPE THE SCRIPT.** `… | tail` returns `tail`'s status, and the bash reflex
+`${PIPESTATUS[0]}` is **empty in zsh** — hit while taking this measurement; the first run
+printed a bare `EXIT=`. Read it unpiped or into a file.
+
+---
+
 ## 2026-08-16 — the first CHECK constraint ever read live, and it had drifted
+
+> ⚠️ **SUPERSEDED ON ITS HEADLINE FINDING — see the section above.** `'apple'` is accepted now.
+> Everything else here, including the cost analysis and the control argument, still holds.
 
 ⚠️ **`subscriptions.provider` LIVE-REJECTS `'apple'`, WHICH IS THE VALUE EVERY REVENUECAT
 WEBHOOK WRITES.** Measured, not inferred:
