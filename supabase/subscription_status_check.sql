@@ -113,47 +113,85 @@
 -- ever genuinely needed, the client's `Provider` enum and `hasManagedBilling` must gain the
 -- case **in the same change**, or a paying member loses the door to their billing page.
 
+-- ═══ STEP 0 — PRE-FLIGHT, READ-ONLY. RUN THIS FIRST AND READ BOTH ANSWERS ═══════════════
+--
+-- ⚠️ ADDING A CHECK VALIDATES EVERY EXISTING ROW, so a single row holding a value the new
+-- list omits makes the ALTER fail. The table held 0 rows on 2026-08-13; that is a stale
+-- measurement and this is the query that refreshes it. A row reading `provider='revenuecat'`
+-- would have to be corrected before the provider statement can run.
+--
+--   select conname, pg_get_constraintdef(oid) as def
+--   from pg_constraint
+--   where conrelid = 'public.subscriptions'::regclass and contype = 'c';
+--
+--   select provider, status, count(*) from public.subscriptions group by 1, 2 order by 3 desc;
+
+-- ═══ STEP 1 — THE PROVIDER HALF. THIS IS THE ONE THAT NEEDS RUNNING ═════════════════════
+--
+-- ⚠️ **RUN THE PROVIDER BLOCK ONLY. THE STATUS BLOCK IS A MEASURED NO-OP AND IS KEPT BELOW
+-- FOR THE CASE WHERE STEP 0 SAYS OTHERWISE.** Both live constraints were read behaviourally
+-- on 2026-08-16 (`scripts/subscriptionConstraints.livetest.js`): `status` accepts exactly the
+-- five values `schema.sql` declares, and re-running its DDL would drop and re-add an identical
+-- constraint — an ACCESS EXCLUSIVE lock and a full revalidation, bought for nothing. Touching
+-- a constraint that is already correct is not free and is not more careful.
+--
+-- ⚠️ **THE LOOP IS NOT A STYLE CHOICE — `limit 1` WAS WRONG HERE.** This file previously
+-- dropped ONE matching constraint. If a hand-written migration ever left two constraints on
+-- the column, dropping one leaves the other enforcing, the accepted set becomes their
+-- INTERSECTION, and `add constraint` then fails on a duplicate name — a half-applied state
+-- whose symptom is identical to not having run it. Drop every match, then declare one list.
+-- (Measured today: there is exactly one provider constraint, so `limit 1` would have worked.
+-- It is the state this could not see that the loop is for.)
+
 do $$
+declare c record;
 begin
-  -- status
-  if exists (
-    select 1 from pg_constraint
-    where conrelid = 'public.subscriptions'::regclass
-      and contype = 'c'
-      and pg_get_constraintdef(oid) like '%status%'
-  ) then
-    execute (
-      select 'alter table public.subscriptions drop constraint ' || quote_ident(conname)
-      from pg_constraint
-      where conrelid = 'public.subscriptions'::regclass
-        and contype = 'c'
-        and pg_get_constraintdef(oid) like '%status%'
-      limit 1
-    );
-  end if;
-
-  alter table public.subscriptions
-    add constraint subscriptions_status_check
-    check (status in ('trialing', 'active', 'past_due', 'canceled', 'expired'));
-
-  -- provider
-  if exists (
-    select 1 from pg_constraint
+  for c in
+    select conname from pg_constraint
     where conrelid = 'public.subscriptions'::regclass
       and contype = 'c'
       and pg_get_constraintdef(oid) like '%provider%'
-  ) then
-    execute (
-      select 'alter table public.subscriptions drop constraint ' || quote_ident(conname)
-      from pg_constraint
-      where conrelid = 'public.subscriptions'::regclass
-        and contype = 'c'
-        and pg_get_constraintdef(oid) like '%provider%'
-      limit 1
-    );
-  end if;
+  loop
+    execute format('alter table public.subscriptions drop constraint %I', c.conname);
+  end loop;
 
+  -- The list is every value a writer in this repo can produce, enumerated from the code
+  -- rather than from the integration's name:
+  --   'promo'   lib/subscription.js:111   ensureTrial
+  --   'stripe'  routes/stripe.js:52, 80, 101
+  --   'apple'   routes/revenuecat.js:98   — ONE call site, an unconditional literal, so it is
+  --                                         what EVERY RevenueCat event type writes
   alter table public.subscriptions
     add constraint subscriptions_provider_check
     check (provider in ('stripe', 'apple', 'promo'));
 end $$;
+
+-- ═══ STEP 2 — PROVE IT, AND THE LINE TO READ ═══════════════════════════════════════════
+--
+--   cd server && node --use-system-ca scripts/subscriptionConstraints.livetest.js
+--
+--   provider 'apple' accepted:      YES   ← fixed
+--   provider 'revenuecat' accepted: NO    ← the writerless slot is closed
+--
+-- ⚠️ **BOTH LINES, NOT THE FIRST ONE.** "provider accepts revenuecat" is a true sentence about
+-- the BROKEN table as well as a wrong one about the fixed table, and reading it as success is
+-- the recorded way this blocker gets ticked off while every webhook write still 500s.
+
+-- ═══ THE STATUS HALF — KEPT, NOT FOR RUNNING. See step 1. ══════════════════════════════
+--
+-- do $$
+-- declare c record;
+-- begin
+--   for c in
+--     select conname from pg_constraint
+--     where conrelid = 'public.subscriptions'::regclass
+--       and contype = 'c'
+--       and pg_get_constraintdef(oid) like '%status%'
+--   loop
+--     execute format('alter table public.subscriptions drop constraint %I', c.conname);
+--   end loop;
+--
+--   alter table public.subscriptions
+--     add constraint subscriptions_status_check
+--     check (status in ('trialing', 'active', 'past_due', 'canceled', 'expired'));
+-- end $$;

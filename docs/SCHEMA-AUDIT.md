@@ -263,3 +263,86 @@ cheaper-looking direction and the file already argues it down: `SubscriptionSnap
 decodes an unrecognised value to `.unrecognized`, `hasManagedBilling` is then false, and
 `MembershipRow` offers a paying member **"See plans"** instead of **"Manage"** — the door to
 their own billing page, missing, for the only shoppers who have paid.
+
+---
+
+## THE SWEEP — EVERY OTHER CHECK CONSTRAINT, AGAINST WHAT THE CODE ACTUALLY EMITS (2026-08-16)
+
+The provider drift was found by reading a live constraint. The obvious next question is whether
+the *same class of error* — a vocabulary verified against what an integration is **called**
+rather than against what a writer **emits** — sits anywhere else. Swept by enumerating every
+`check (… in (…))` in `supabase/*.sql` and then reading every writer that can reach the column.
+
+### ⚠️ THE STRUCTURAL FINDING FIRST: NOTHING IN THE SUITE CHECKS A VALUE LIST AT ALL
+
+`schemaContract.test.js` is the test that would be assumed to cover this, and it does not.
+It compares **column names** and explicitly skips constraint bodies — its parser drops any
+token matching `^(primary|unique|foreign|check|constraint|exclude)\b`. So a column can be
+declared, written, and carry a CHECK whose list disagrees with every value the code produces,
+and the suite is green. **Confirmed by grep: no test file in `server/` mentions `'apple'`,
+`'stripe'`, `'promo'` or `'revenuecat'` at all.**
+
+`constraintsMirror.test.js` is the right *shape* applied to a different subject — it pins the
+onboarding taxonomy across the client/server boundary. Nothing does that for a DB constraint.
+
+**So the provider drift was not missed by an unlucky gap. There is no check of this kind, and
+644 passing tests say nothing about any CHECK's value list.**
+
+### The columns, and they are otherwise clean
+
+| column | CHECK declares | what the code emits | verdict |
+| --- | --- | --- | --- |
+| `subscriptions.status` | trialing, active, past_due, canceled, expired | `ensureTrial`→trialing; `mapStripeStatus`→all five; `mapRevenueCatStatus`→trialing/active/past_due/expired | ✅ live re-measured, matches |
+| `subscriptions.provider` | schema.sql: stripe, apple, promo — **LIVE: stripe, promo, revenuecat** | `promo` (ensureTrial), `stripe` (×3 in routes/stripe.js), `apple` (routes/revenuecat.js:98) | 🐞 **the defect** |
+| `counter_gaps.outcome` | miss, weak | `logCounterGap` rejects anything else before insert | ✅ |
+| `counter_gaps.source` | ask, list | `SOURCES` set in the writer, unknown → `{logged:false}` | ✅ |
+| `counter_cards.kind` / `.tier` / `.source` | shelf/home · 4 tiers · curated/generated | `cardToRow` is a pass-through of the corpus | ✅ and **fails loudly** — see below |
+| `trips.status` | active, completed, abandoned | all three written as literals in `lib/trips.js` | ✅ |
+| `chat_messages.role` | user, ai | every one of the 14 call sites passes `'user'` or `'ai'` | ✅ |
+
+**`'revenuecat'` is written by nothing.** Enumerated across every `upsertSubscription` call site
+(4) and every `provider:` literal in `lib/`, `routes/`, `index.js`. It appears only in scripts.
+
+### ⚠️ THE FAILURE MODE IS WHAT SEPARATES THESE, NOT THE VOCABULARY
+
+Two of these tables swallow a CHECK violation and two do not, and that is the property worth
+carrying forward — it decides how long a future drift lives before anyone sees it.
+
+- **Loud:** `counter_cards` is written only by `migrateCounterCards.js`, run by hand. A CHECK
+  violation is an error in front of the operator, immediately.
+- **Loud:** `trips`, `chat_messages` — the error reaches a request.
+- ⚠️ **Silent:** `counter_gaps` is fire-and-forget by design (`console.warn`, never thrown, so a
+  shopper's answer never waits on the backlog). **A live CHECK drift on that table would stop
+  gap logging entirely and nothing would report it** — the authoring backlog would simply go
+  quiet, which reads exactly like nobody asking.
+- ⚠️ **Silent:** `subscriptions`, via the webhook — the handler 500s and RevenueCat retries into
+  a backoff nobody is watching. This is the one that drifted.
+
+### 🐞 THE FALSE WITNESS, AND IT IS IN THIS REPO TODAY
+
+`server/scripts/premium.livetest.js:25`:
+
+```js
+ck('RevenueCat/Apple active → premium (same shape, any provider)',
+   evaluatePremium({ provider: 'revenuecat', status: 'active', current_period_end: future }));
+```
+
+It passes. **It proves nothing, and it is the exact artifact that makes `'revenuecat'` feel
+verified.** `evaluatePremium` (lib/subscription.js:42–49) reads `status` and the two date fields
+and **never reads `provider`** — so the assertion holds for any string whatsoever, including one
+no writer emits and the live table would reject. A check named for the integration, asserting a
+value from the integration's name, against a function structurally incapable of disagreeing.
+
+**Change the literal to `'apple'`** — the value the webhook actually writes — and the line stops
+being a witness for a vocabulary it cannot see. (Its parenthetical *"any provider"* is true and
+is the point: it is a *deliberate* statement that provider is not read, which is fine — what is
+not fine is choosing `'revenuecat'` as the sample value.)
+
+### What this sweep did NOT do
+
+⚠️ **Only `subscriptions` has had a live constraint read. Every other row in the table above is
+`supabase/*.sql` compared against code** — which is precisely the method that reported
+"probably a no-op" and was wrong. `scripts/subscriptionConstraints.livetest.js` is extendable to
+the other columns, but it writes probe rows, and for `counter_gaps` / `counter_cards` those are
+**shared-pool tables** rather than an ephemeral user's own row. That is a different safety
+argument and it is not made here. **Unmeasured, and stated as unmeasured.**
