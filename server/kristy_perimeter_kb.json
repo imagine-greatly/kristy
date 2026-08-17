@@ -4469,6 +4469,72 @@
         "how do i pick sprouts",
         "should i buy raw sprouts"
       ]
+    },
+    {
+      "id": "strawberries_organic_residue",
+      "title": "Strawberries and pesticide residue",
+      "aliases": [
+        "organic strawberries",
+        "buy organic strawberries",
+        "strawberry pesticides",
+        "pesticides on strawberries",
+        "strawberry pesticide residue",
+        "sprayed strawberries",
+        "pesticides in strawberries",
+        "strawberries have pesticides",
+        "pesticides on berries",
+        "organic berries",
+        "buy organic berries",
+        "driscoll",
+        "driscolls",
+        "driscoll’s",
+        "driscolls strawberries",
+        "driscoll’s strawberries"
+      ],
+      "category": "produce",
+      "question": "Are strawberries worth buying organic?",
+      "decision": "Buy strawberries organic. The skin is the food here.",
+      "why": "Residue sits on the surface, and a strawberry has no peel to take away.",
+      "short_answer": "Strawberries are the strongest case in produce for buying organic: thin-skinned, eaten whole, nothing to peel. Independent testing commissioned in May 2026 screened two boxes of Driscoll’s strawberries, one conventional and one organic, at an EPA-certified lab for more than 500 pesticides. The conventional box came back carrying 12 residues, eight of them fluorinated compounds the testers classed as PFAS. The organic box came back non-detect. One box tested once is not a measurement of a brand, and it is still the cleanest picture there is of the choice made at the case.",
+      "detail": "The residues were reported at levels prohibited in the European Union, Taiwan, Chile, Korea and Russia. The testers did not report them as over US federal limits and did not compare them to US tolerances either way, so what the screen shows is a comparison against foreign standards rather than a domestic violation. Whether fluorinated pesticides count as PFAS is contested in its own right: the structural definition used by the OECD covers them, and the EPA says they do not meet its own regulatory definition. Separately, Driscoll’s faces proposed consumer class actions filed in federal court in California in mid-2026 alleging it did not disclose PFAS-linked pesticide residues on its conventional berries, and a former food safety compliance manager has sued in Ventura County Superior Court alleging he was pushed out after raising pesticide compliance concerns. Driscoll’s rejects both sets of allegations and calls the consumer claims without merit. Nothing in either case has been decided.",
+      "evidence_tier": "credible_concern",
+      "sources": [
+        "Independent pesticide screen commissioned by Mamavation, May 2026, EPA-certified laboratory; scientific review by Dr. Craig Downs, Haereticus Environmental Laboratory",
+        "Proposed consumer class actions, U.S. District Court for the Northern District of California, filed June and July 2026",
+        "Harada v. Driscoll’s, Ventura County Superior Court, filed June 2026",
+        "USDA National Organic Program, 7 CFR Part 205"
+      ],
+      "kristy_take": "Of everything in the produce aisle, this is the one to buy organic.",
+      "instead": "Frozen organic strawberries, same seal and same rules.",
+      "cart_pick": "Organic strawberries",
+      "buying_tips": [
+        "The USDA Organic seal is the whole check. No seal on the clamshell means conventional, whatever else the box says.",
+        "The two cartons sit side by side and look almost identical. Read the seal, not the photograph.",
+        "A brand that sells both lines is selling both. The name on the box says nothing about which one is in your hand."
+      ],
+      "watch_out": [
+        "One box of each, screened once, and the testers call it a spot-check. It is a reason to buy organic, not a measurement of a brand.",
+        "The lawsuits are filings, not findings. Driscoll’s denies them and nothing has been decided.",
+        "Certified organic restricts synthetic pesticides. It is not a promise of a blank screen on every box."
+      ],
+      "labels_decoded": [
+        {
+          "term": "USDA Organic",
+          "meaning": "Certified to the National Organic Program: no synthetic pesticides from the prohibited list, verified by an accredited certifier."
+        },
+        {
+          "term": "Non-detect",
+          "meaning": "The screen found nothing at its reporting limit. That is a result on one sample, not a property of a product line."
+        }
+      ],
+      "tier_note": "One lab’s spot-check and a set of unresolved filings. Enough to decide which box to pick, and not enough to call it settled.",
+      "eyebrow_short": "Organic strawberries",
+      "asked_as": [
+        "should i buy organic strawberries",
+        "are driscolls strawberries safe",
+        "do strawberries have pesticides on them",
+        "are organic strawberries worth it"
+      ]
     }
   ]
 }
