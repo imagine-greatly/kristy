@@ -671,7 +671,17 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   revenue depending on it.
 - **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
   worse than no code: it is documentation that lies.**
-- **No second auth rail.** Supabase has `email: false` and it stays that way.
+- ⚠️ **THE SECOND RAIL IS EMAIL, IT IS ON, AND THAT REVERSES THE RULE THAT USED TO SIT HERE.**
+  Measured live 2026-08-18, cache-busted: **`email: true`**, `apple: true`, `phone: false`,
+  `mailer_autoconfirm: true`. The old rule read *"No second auth rail — Supabase has
+  `email: false` and it stays that way"*, and a session finding the provider on would have
+  read that as drift and turned it off. **It is deliberate: the email rail is blocker H in
+  `kristy-ios/docs/PURCHASING.md` §7.0 and it is the only prerequisite of the restore-transfer
+  proof (§7.3.8).** Apple stays the primary rail; email exists to prove the transfer.
+  ⚠️ **`mailer_autoconfirm: true` IS A SEPARATE SWITCH AND IT IS STILL ON** — so any
+  password/`signUp` path would confirm an address nobody proved they own. **OTP is fine
+  (possession of the code is the proof); a `signUp` path is not.** Nothing ships one today,
+  which is why this is a note and not a defect.
 
 **Legal pages and 10DLC**
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean URLs in both

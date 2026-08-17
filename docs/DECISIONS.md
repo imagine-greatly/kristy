@@ -712,6 +712,14 @@ was invisible until something rendered one**
 - **No second auth rail.** Email OTP was proposed as a faster path and rejected: building a
   parallel sign-in days before the first one clears is two things to maintain and one more
   surface to get wrong. Supabase has `email: false` and it stays that way.
+  ⚠️ **REVERSED 2026-08-18, DELIBERATELY, AND THE ACCOUNT ABOVE IS WHY IT HELD FOR SO LONG.**
+  The provider is now `email: true`, measured live. What changed is not the maintenance
+  argument — that still stands — but the arrival of a proof that needs a second rail:
+  RevenueCat's restore-transfer behaviour (blocker E) can only be demonstrated by signing the
+  same purchase into a second account, and Apple's rail cannot produce two accounts on one
+  device on demand. **The rule was right on its own terms and was outlived by a requirement it
+  did not know about.** Kept in full rather than deleted, because the maintenance cost it names
+  is now a cost being paid rather than one avoided.
 
 **Legal pages and 10DLC**
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean
@@ -954,4 +962,5 @@ than reconciled. Copied byte-for-byte out of CLAUDE.md before any condensation.
 - **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
   worse than no code: it is documentation that lies.**
 - **Do not add a delivery hook back without a reason the dashboard cannot meet.**
-- **No second auth rail.** Supabase has `email: false` and it stays that way.
+- ⚠️ **No second auth rail — REVERSED 2026-08-18.** `email: true`, measured live. See the
+  account above and `kristy-ios/docs/PURCHASING.md` §7.0 blocker H.
