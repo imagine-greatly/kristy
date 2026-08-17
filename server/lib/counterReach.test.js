@@ -113,3 +113,62 @@ test('asked_as never reaches the model or the row', () => {
   assert.equal(card.asked_as, undefined, 'asked_as must not be projected onto the card');
   assert.equal('asked_as' in card, false, 'asked_as must not appear as a key at all');
 });
+
+/* ═════════ The strawberry boundary — residue leads, freshness stays reachable ═════════
+
+   RULED 2026-08-18: a shopper typing a bare `strawberries` is choosing which box to buy,
+   and residue is the bigger of the two decisions — PFAS does not wash off, while a soft
+   berry is visible through the clamshell. So `strawberries` and `strawberry` moved off
+   `berries_picking` onto `strawberries_organic_residue`.
+
+   ⚠️ THIS REVERSES A DECISION THAT WAS ITSELF MADE TO FIX AN INCIDENT. The header of this
+   file records `gen_strawberry_freshness_check` — a duplicate card generated precisely
+   because `berries_picking` had no bare `strawberries`. Taking it away again re-opens that
+   hole unless the freshness phrasings still land, which is what the four compensating
+   aliases (`pick strawberries`, `i pick strawberries`, `strawberries fresh`, `these
+   strawberries fresh`, plus bare `moldy`) are for.
+
+   So the split is pinned here rather than left to alias arithmetic. Both directions are
+   asserted: a bare noun goes to residue, a freshness phrasing goes to picking. Measured,
+   not assumed — before the compensating aliases, four of the freshness phrasings TIED at 3
+   and resolved to `berries_picking` only by its position in the KB array, which is not a
+   guarantee anybody should be relying on.
+
+   ⚠️ ONE KNOWN TIE REMAINS AND IS DELIBERATE: the bare phrase "fresh strawberries" scores
+   3 on both cards and breaks toward freshness on corpus order alone. There is no second
+   phrase inside it to award, so the only fixes are a broader alias (bare `fresh`, which
+   would reach across the whole corpus) or dropping a bare noun the ruling put here. It is
+   asserted below so a reorder fails loudly instead of silently flipping. */
+
+const boundary = (q) => scoreEntries(q, 3)[0]?.entry.id ?? null;
+
+test('a bare strawberry row asks which box to buy, not whether it is fresh', () => {
+  for (const q of ['strawberries', 'strawberry', '1 lb strawberries', 'organic strawberries']) {
+    assert.equal(boundary(q), 'strawberries_organic_residue', `"${q}" should reach the residue card`);
+  }
+  for (const q of ['driscoll', 'driscolls', 'driscolls strawberries']) {
+    assert.equal(boundary(q), 'strawberries_organic_residue', `"${q}" should reach the residue card`);
+  }
+});
+
+test('the freshness question still reaches berries_picking after the reversal', () => {
+  for (const q of [
+    'how do i pick strawberries',
+    'are these strawberries fresh',
+    'moldy strawberries',
+    'fresh strawberries',
+    'strawberry freshness',
+    'clamshell strawberries',
+    'picking berries',
+  ]) {
+    assert.equal(boundary(q), 'berries_picking', `"${q}" is a freshness question and must stay on the picking card`);
+  }
+});
+
+test('the reversal is scoped to strawberries and leaves the other berries alone', () => {
+  // The residue card's evidence is strawberries. Routing a bare `berries` to it would hand
+  // a blueberry question a strawberry answer, which is the hub rule running backwards.
+  for (const q of ['berries', 'blueberries', 'raspberries', 'blackberries']) {
+    assert.equal(boundary(q), 'berries_picking', `"${q}" is not in the strawberry ruling's scope`);
+  }
+});

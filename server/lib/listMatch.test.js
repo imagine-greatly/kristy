@@ -162,16 +162,24 @@ test('scanned and swap rows are never carded', () => {
 
 /* ═══════════════ Collapse ═══════════════ */
 
+// ⚠️ THE PAIR WAS blueberries + strawberries UNTIL 2026-08-18, and the strawberry ruling
+// broke it: `strawberries` now reaches `strawberries_organic_residue`, so the two rows stop
+// sharing a card and the collapse has nothing to collapse. The COLLAPSE is unchanged — the
+// fixture's example was. Raspberries is the replacement because it is still a plain
+// `berries_picking` subject, which is the property this test needs and the only one.
+//
+// The behavioral cost is real and belongs to the ruling rather than to this file: a list
+// holding blueberries and strawberries now renders TWO cards where it rendered one.
 test('two items on one card render the card once, with both named', () => {
   const list = attachCards(
-    sanitizeList({ items: [item('blueberries'), item('strawberries'), item('olive oil')] }),
+    sanitizeList({ items: [item('blueberries'), item('raspberries'), item('olive oil')] }),
     { log: false }
   );
   const groups = collapseByCard(list.items);
   const berries = groups.find((g) => g.slug === 'berries_picking');
   assert.ok(berries, 'the shared card must be present');
   assert.equal(berries.items.length, 2);
-  assert.deepEqual(berries.items.map((i) => i.name), ['blueberries', 'strawberries']);
+  assert.deepEqual(berries.items.map((i) => i.name), ['blueberries', 'raspberries']);
   assert.equal(groups.filter((g) => g.slug === 'berries_picking').length, 1, 'rendered once');
 });
 

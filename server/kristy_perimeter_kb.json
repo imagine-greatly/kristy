@@ -3092,7 +3092,6 @@
       "aliases": [
         "berries",
         "berry",
-        "strawberries",
         "blueberries",
         "raspberries",
         "blackberries",
@@ -3109,7 +3108,13 @@
         "clamshell strawberries",
         "moldy strawberries",
         "clamshell",
-        "strawberry"
+        "pick strawberries",
+        "picking strawberries",
+        "i pick strawberries",
+        "strawberries fresh",
+        "these strawberries fresh",
+        "strawberry container",
+        "moldy"
       ],
       "category": "produce",
       "question": "How do I pick a good carton of berries?",
@@ -4474,6 +4479,8 @@
       "id": "strawberries_organic_residue",
       "title": "Strawberries and pesticide residue",
       "aliases": [
+        "strawberries",
+        "strawberry",
         "organic strawberries",
         "buy organic strawberries",
         "strawberry pesticides",
@@ -4527,7 +4534,7 @@
           "meaning": "The screen found nothing at its reporting limit. That is a result on one sample, not a property of a product line."
         }
       ],
-      "tier_note": "One lab’s spot-check and a set of unresolved filings. Enough to decide which box to pick, and not enough to call it settled.",
+      "tier_note": "The filings exist and their contents are unproven. The screen measured one box. The thin skin was never the part in question.",
       "eyebrow_short": "Organic strawberries",
       "asked_as": [
         "should i buy organic strawberries",
