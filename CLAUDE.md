@@ -926,7 +926,7 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **644 pass on `main` (the held stack), re-measured 2026-08-15; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **647 pass, 0 fail, on `main` (the held stack), re-measured 2026-08-18; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. **Exits non-zero on a wrong match**; a miss only reports. Run after any alias edit, `perimeterId` change or matcher change. |
