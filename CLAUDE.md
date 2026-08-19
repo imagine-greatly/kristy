@@ -150,6 +150,8 @@ work, without being asked:
   not by comparing hashes
 - report kristy main vs origin/main and origin/held
 - report the server suite count and the iOS UI suite count
+- run kristy-ios Tools/checks/runners_compile.sh -- the swiftc drivers
+  decay silently and three of three had (kristy-ios CLAUDE.md 1.8i)
 - report anything left in flight: a background run, a half-finished
   fix, an unmigrated corpus change
 ```
@@ -681,8 +683,10 @@ Read the account before you change a rule; the rule alone is enough to obey one.
 - ⚠️ **THE COST IS THE 10DLC REGISTRATION AND IT IS ACCEPTED, NOT OVERLOOKED.** The deleted
   sentences were the required A2P 10DLC elements, each kept on one unbroken source line for an
   automated review (rejection code 805), and the registration was **in verification at Twilio**.
-  A dead rail needs no registration, so it is **moot and should be withdrawn.** ⛔ **Do not
-  re-add those sentences to pass a review while the provider is off** — that puts a false
+  A dead rail needs no registration, so it is **moot and should be withdrawn.**
+  ✅ **The owner took the withdrawal as their own item, 2026-08-19** — not a repo task, and
+  nothing here is blocked on it.
+  ⛔ **Do not re-add those sentences to pass a review while the provider is off** — that puts a false
   collection statement back on a live page to satisfy a review of a rail nothing uses. They are
   recoverable from git history at the commit that removed them, **and the two files worded the
   consent sentence differently on purpose**, so a revival copies from history rather than from
@@ -721,6 +725,27 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   statement on a live page, in service of a registration for a rail nothing uses.
 - **The SMS consent line in `SignInForm` is in the frozen `client/src` and stays there** — frozen,
   not endorsed. **Do not open the frozen client to finish this ruling.**
+- ✅ **PUBLISHED AND VERIFIED SERVED, 2026-08-19. The pages were CHERRY-PICKED PAST THE HOLD**
+  (`9355a39` + `293a63f` on `origin/main`) rather than waiting for the stack: a live compliance
+  page asserting a collection that cannot occur outranks the tidiness of the hold, and App
+  Review reads these URLs. **Verified by FETCHING, not by reading source** — `/privacy` and
+  `/terms` on **both** `kristyapproved.com` and the `.vercel.app` alias return 200 and are
+  **byte-identical to the committed files**; the SMS strings are absent from the served bytes.
+  The stack was rebased afterwards and `28fc3ff` reduced to its CLAUDE.md half, so it no longer
+  claims what it shipped.
+- ⛔ **`/privacy` NO LONGER CLAIMS A DELETE DOOR ON THE WEBSITE, AND DO NOT RESTORE ONE.** It
+  said *"This is the same door on the website and in the iPhone app"* and *"that door works the
+  same on both platforms"*. **Both false, and the page contradicted itself two screens earlier**,
+  where it already says Sign in with Apple in the iPhone app is the only way to sign in.
+  **Measured before changing it:** the web door is `App.jsx:1298`, inside the branch
+  `App.jsx:975` returns past for every real visitor, and `GuestApp` has no settings or delete
+  door at all — unreachable twice over. **The iPhone app is the only route**
+  (`DeleteAccountSection.swift` → `DELETE /api/account`).
+  ⚠️ **THE NON-OBVIOUS HALF WAS THE SCOPE PARAGRAPH**, which listed *"how you delete it"* among
+  the things applying to website and app **equally** — now the one thing that does not, so
+  deletion is carved out **by name** rather than dropped silently.
+  ⚠️ **This becomes wrong again the day the web client gets a working sign-in.** It is a
+  landing page today; if that changes, this paragraph is the one to re-read.
 
 **Money**
 
