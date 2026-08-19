@@ -165,3 +165,56 @@ instruction; §1–§5 above are. Where the two disagree, above wins — the app
 
      📎 The twin note is in privacy.html. If you change one, change both. -->
 ```
+
+---
+
+## The legal-page rules as CLAUDE.md stated them, extracted verbatim 2026-08-19, ahead of the third CLAUDE.md split
+
+Held here verbatim so the condensation in `CLAUDE.md` removes nothing. The RULES stay
+in `CLAUDE.md`; this is the account they point at.
+
+**Legal pages — SERVED TO THE PUBLIC, AND THE ACCOUNT NO LONGER LIVES IN THEM**
+
+*Every ruling behind these pages — phone sign-in, the retired 10DLC rules and their recovery
+procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.md`.*
+
+- `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean URLs in both
+  `vercel.json` and the vite middleware so dev, preview and production agree about the URL.
+- ⚠️ **THE SAME RULE NOW BINDS `client/public/landing.html`, 2026-08-19.** It printed the app's
+  internal component map in comments — the brand-token module, `ScanVerdictCard`,
+  `PerimeterAnswer`, `ListMoment`, `HaulMoment` — on the public front door. **Nothing was false;
+  the audience was wrong.** Moved to `docs/LANDING-PAGE-PROVENANCE.md`, pointers left in place,
+  **comment-only so the rendered page is byte-identical.** ⛔ **No repo path, component filename
+  or token identifier goes back into that file.** ⚠️ **Its POSITIONING comments were deliberately
+  left** — a separate call, recorded in the doc, **not a later tidy-up.**
+- ⚠️ **A SERVED PAGE IS NOT A SOURCE FILE, AND "EACH FILE CARRIES ITS RULING" DOES NOT APPLY TO
+  ONE.** That rule is good and unchanged **for files nobody outside the project reads**. These are
+  read by App Review and by anyone who opens source, and they carried two long HTML comments
+  holding the provider measurements, *"nobody has ever signed in, on any rail"*, and the state of
+  a Twilio registration. **Nothing in them was false; the audience was wrong, and false is not the
+  test for a served page.** Moved to `docs/LEGAL-PAGE-RULINGS.md` 2026-08-19, verbatim in its
+  appendix. **Each page keeps a ONE-LINE POINTER and nothing else.**
+- ⛔ **DO NOT WRITE REASONING BACK INTO THESE PAGES.** Not a measurement, not a provider state, not
+  a business fact, not a "why we removed X". **If a session editing the page needs to know it, the
+  pointer is what it needs to find.** ✅ Side effect worth keeping: the two comments were
+  deliberately different and each said *"if you change one, change both"* — the twin-copy shape
+  this repo has been burned by. **One doc and two identical pointers cannot disagree.**
+- ⛔ **THE SMS SECTIONS ARE GONE, 2026-08-19. DO NOT RE-ADD THEM TO PASS A REVIEW WHILE THE
+  PROVIDER IS OFF** — that is a false collection statement on a live page, for a registration for
+  a rail nothing uses. Both pages state Kristy collects no phone numbers and sends no SMS. **The
+  unbroken-line/805 rules are RETIRED, not deleted** — recovery procedure in the doc, and it is
+  recovery **from `9355a39`**, per file, because the two wordings differed on purpose.
+- **The SMS consent line in `SignInForm` is in the frozen `client/src` and stays there** — frozen,
+  not endorsed. **Do not open the frozen client to finish this ruling.**
+- ⛔ **`/privacy` CLAIMS NO DELETE DOOR ON THE WEBSITE, AND DO NOT RESTORE ONE.** The iPhone app is
+  the only route (`DeleteAccountSection.swift` → `DELETE /api/account`); the web door is
+  unreachable twice over, measured. Deletion is carved out of the scope paragraph **by name**.
+  ⚠️ **This becomes wrong again the day the web client gets a working sign-in.**
+- ✅ **PUBLISHED AND VERIFIED SERVED, 2026-08-19**, cherry-picked past the hold (`9355a39` +
+  `293a63f`), verified **by FETCHING** on both `kristyapproved.com` and the `.vercel.app` alias.
+  ⚠️ **THAT VERIFICATION IS NOW ONE COMMIT STALE, DELIBERATELY, AND HERE IS THE PRECISE STATE:
+  the comment move is COMMITTED AND UNPUSHED, so the served bytes still carry the old comments.**
+  **The pages a shopper or a reviewer READS are byte-identical to what is committed** — proven by
+  stripping comments from both files and diffing against `HEAD`, identical — so the divergence is
+  invisible content only. **It publishes on the next push of these files, and the fetch-verify
+  must be re-run then.**

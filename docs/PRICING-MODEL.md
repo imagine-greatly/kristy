@@ -873,3 +873,167 @@ Still open:
    `/api/guest/*`, and gating the authed routes leaves it untouched — so the answer is
    probably "yes, by omission", and that should be a decision rather than a side effect.
 5. **The end-of-trip-2 copy** (§5) is a proposal awaiting sign-off.
+
+---
+
+## Money, extracted verbatim 2026-08-19, ahead of the third CLAUDE.md split
+
+Held here verbatim so the condensation in `CLAUDE.md` removes nothing. The RULES stay
+in `CLAUDE.md`; this is the account they point at.
+
+**Money**
+
+⚠️ **THE PRICING MODEL IS LOCKED AND NOTHING BELOW IT IS BUILT. THE RULES IN THIS SECTION
+DESCRIBE WHAT SHIPS; THE MODEL DESCRIBES WHAT WAS RULED, AND THE TWO DISAGREE ON NEARLY EVERY
+POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MODEL.md`.
+**Do not read a rule below as superseded until the work lands — every one of them is live.**
+
+*The trial and the count*
+- **Trips 1 and 2: everything, nothing gated.** The ask lands at the **END OF TRIP 2, on
+  Finish** — the highest-intent moment the product produces. Trip 3 is a reminder, not the ask.
+- **After the trial the COUNTER STAYS FREE**: full cards, the ask, scanning. **Making a list
+  and walking a trip are members only.** ⚠️ **THE PAID BOUNDARY INVERTS** — the depth becomes
+  free and the list becomes paid, which retires `DEPTH_FIELDS`, `summarize()`, the read meter,
+  the teaser and the essentials' *reason* (their authored order stands on its own).
+- ⚠️ **THE HAUL IS FREE TOO**: **withholding a record of what someone already did is punitive
+  rather than persuasive**, and its value comes from trips they can no longer take. **What stays
+  locked is SEEDING** — "same as last week" creates an active trip, and an active trip is the
+  list. *Free* here means READABLE, not that its doors open.
+- ⚠️ **THE ACCOUNT GATES THE ASK, NOT THE TRIAL.** Trips 1–2 are counted on-device with no
+  account, because a guest can build a list and walk a store today and **that is the thing
+  that sells the app.** Signing in is what continues past the ask; from that moment the count
+  is server-side and cannot be reset. **THE REINSTALL LOOPHOLE IS ACCEPTED DELIBERATELY** —
+  someone who wipes to dodge a $5.99 ask was never converting, and the cost of blocking them
+  is every shopper who bounces at a sign-in screen before seeing the product. **Do not "fix"
+  it later with a device identifier.** ⚠️ **That acceptance is scoped to PRE-ACCOUNT trips
+  only** — see the queued count route, which closes the post-sign-in case.
+- ⚠️ **THE 0-FOREVER BLOCKER: NO CLIENT WRITES TRIPS.** The server side is finished and
+  unreached; making a trip real is a **client** project. Reconciliation at the ask is
+  `POST /trips/import`, and the rule is **MAX AND CAP AT 2 —
+  `max(server, min(2, max(device, server)))`, never subtract, never re-arm.**
+  **The asymmetry decides it: a dodge costs $5.99, a false denial costs a paying customer.**
+  ⚠️ **SUM DOUBLE-COUNTED A MEMBER'S TRIPS: `Cart.finishTrip` WRITES BOTH SIDES**, and the two
+  rules disagree at exactly **one point, `device 1, server 1`**, which is why every existing
+  assertion passed under both. **The cap stays anyway; belt and braces on an entitlement is
+  cheap.** Reconcile from the DEVICE count, never `imported.length`: the allowance is spent by
+  walking, and import legitimately files fewer trips than were walked. The zero-device case is
+  **structurally unreachable at the ask** and gets no branch.
+- ✅ **`claimGuestWork` NEEDS NO iOS EQUIVALENT — ADOPT-ONLY IS THE CARRY.** The web needs that
+  door because the web has **two** carts; **iOS has one**: the active trip on the device is the
+  cart for a guest and a member alike, so the live list crosses by not moving. ⚠️ **Do not build
+  one because `TripImportResponse.active` reads `"none"`** — that is the server truthfully
+  saying it found no legacy list, and making it say `"adopted"` means giving iOS the second cart
+  the web is stuck with. It changes only when `/api/list` gets an iOS client.
+- ⚠️ **COUNT TRIPS ON-DEVICE; THE ACCOUNT PRESERVES THE COUNT, IT DOES NOT ENFORCE IT.** There
+  is no server-enforceable gate for a guest, so the gate is a client claim whatever else is
+  decided. The count is its own **monotonic** field: `archive` is capped at 25 and trims from
+  the front, so deriving it from the archive starts silently forgiving at trip 26.
+  **`evaluatePremium` takes ZERO change** — a trip count is not a subscription, and putting one
+  in it breaks the `is_premium()` SQL mirror that nothing enforces.
+- ⚠️ **THE GATE NEVER LANDS INSIDE A TRIP, AND IT IS MECHANICAL, NOT CAREFUL: THE ALLOWANCE IS
+  SPENT AT COMPLETION, NEVER AT START.** Nothing between entry and Finish reads it, so there is
+  no path on which a mid-walk gate could appear by mistake.
+- ⚠️ **NO PARTIAL LIST, EVER.** Not one free item, not the list without cards, not a limited
+  trip. **The moment the list works at all for free the trial stops meaning anything and the
+  model collapses back into freemium.** A lapsed dashboard shows their LAST list, greyed and
+  **non-interactive** — no taps, no chevrons — because live card chevrons would make it a
+  working browsing index, which is a list that works.
+- **THE COUNTER CARRIES NO ASK, ANYWHERE.** It is free as a conversion argument, not as
+  generosity: a locked app gets deleted and a deleted app never converts. It is deliberately a
+  reference book next to something they have already had, **and that gap is the pitch.**
+- ⚠️ **NOBODY CAN BUY ANYTHING TODAY, UNDER ANY MODEL, AND THIS OUTRANKS THE MODEL.** The
+  conclusion is unchanged; **one of its two stated reasons went stale and is corrected here.**
+  ✅ **THE ADAPTER LANDED 2026-08-15 AND THIS LINE SAID OTHERWISE FOR FOUR DAYS.**
+  `Purchasing.isAvailable` is **no longer constant false**: `RevenueCatProvider` is injected in
+  `KristyApp.provider()` and `KRISTY_REVENUECAT_KEY` is a real `appl_` key in
+  `Config/Base.xcconfig`. **Do not read this bullet as "build the adapter" — it is built, and
+  rebuilding it is the cost of leaving the line wrong.** (It still returns `nil` deliberately
+  under a local StoreKit configuration — *a till that cannot ring must not paint* — which is a
+  guard, not an absence.)
+  ⛔ **WHAT ACTUALLY BLOCKS IT IS THE ACCOUNT, AND ONLY THE ACCOUNT.** `canPurchase` is
+  `identity == .member`, every real visitor is a guest, and **Sign in with Apple has never
+  completed one token exchange.** So **one real sign-in is upstream of all of it** — one act,
+  not two, and it needs a device.
+
+*The paid boundary as it ships today*
+- **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card SUMMARY
+  (eyebrow, headline, do line, cart pick, **and the tier sentence**), all scanning, unlimited asking
+  including generation, all browsing, and **the entire list**. Paid: the depth (`why`, `look_for`,
+  `watch_out`, `detail`, `kristy_take`, `labels_decoded`, `sources`). `summarize()` / `forViewer()`
+  strip the depth **before it leaves the server** — a client that merely hides it has already
+  received it.
+- **THE LIST IS FREE, AND METERING IT WORKS AGAINST WHAT IT IS FOR.** No save-list ask, on any tier,
+  in any wording. **A SELECTOR IS NOT A RULE** — it came back twice past a `[data-save-list]` grep, so
+  `cartFree.test.js` greps **what a SHOPPER READS** across all of `client/src`.
+- **THE FREE SURFACE STATES THE CALL; THE COST OF THE CALL LIVES IN THE DEPTH. That is the gate
+  working, not a defect.** **Do not "fix" it by promoting `watch_out` into the free layer** — that is
+  the depth, and it is what the membership buys. If a card's cost is load-bearing enough to be free,
+  the lever is **making that card an essential**, not widening the boundary for all eighty-two.
+- **THE TIER IS A SENTENCE, NOT A CHIP.** `tier_note` is free and renders below the do line; the bare
+  classification chip is gone. **Do not restore the chip to "make the tier scannable"** — a bare tier
+  word is precisely what has no referent.
+- **THE PAID BOUNDARY HAD NO TEST AT ALL, which is how a field moved out of it silently.**
+  `paidBoundary.test.js` pins both halves over the real corpus, and pins that the replacement stays a
+  SENTENCE — a `tier_note` under five words, or equal to the tier's own name, is the chip growing back
+  inside a `<p>`.
+- **THE EIGHT ESSENTIALS ARE ALWAYS FULL and never touch the meter.** Free depth on the shelf proves
+  the reads are worth having; the meter proves BREADTH is what the membership buys.
+- ⚠️ **THE ESSENTIALS NEVER REORDER. MARK THE ONES ON THIS SHOPPER'S LIST; KEEP AUTHORED ORDER.**
+  `ESSENTIALS` is authored **two per section** so the shelf stays balanced, and a sort destroys that
+  silently — **nothing could fail, because the property belongs to the authored list.** And position
+  is what a shelf is for. **Membership and order are the same editorial decision and both stay in
+  version control.** Marking needs no new stored state.
+- **THE TEASER SHIPS GEOMETRY, NEVER WORDS.** The real first check in full, then true CHARACTER
+  LENGTHS faded out, then true counts. Sending the withheld text would leak a third of every card in
+  the same change that stops leaking all of it.
+- **`free_reads_used` is its own counter, NOT the `free_notes_used` pool.** Signed-out shoppers are
+  metered client-side in localStorage — an IP-keyed meter would break the counter's no-personal-data
+  claim to enforce a limit a cleared storage defeats anyway.
+- **GUESTS ARE OFFERED NO PLAN BUTTONS** (`purchasable={false}`) — buying needs an account.
+  **Restore the buttons the day sign-in works.**
+- **The ask appears at ONE moment and nowhere else: the fourth full-read tap.** Not on open, not on a
+  scan, not on an ask, not on a save, **never a banner**. ⚠️ **The checkable shape is an upgrade
+  affordance whose render condition contains NO ACTION** — tier alone is not a moment, because every
+  non-member satisfies it on every render. `UPGRADE_COPY` has exactly one key and every
+  `askToUpgrade` call site passes it. **Chrome is deliberately excluded**: a destination a shopper
+  navigated to is not an interruption.
+- **ONE ASK COMPONENT, ONE READ METER, AND BOTH ARE ENFORCED.** A card opened in an aisle must cost
+  exactly what the same card costs from the couch. `cartFree.test.js` fails if any file outside
+  `CounterAsk` calls `askCounter`, or any file outside `cardMeter` calls `fetchCounterFull` /
+  `spendRead` / `readsSpent`.
+
+*Prices, the trial door and the budgets*
+- **$5.99/month, $44.99/year.** ✅ Already the shipped constants in all three clients.
+- **Price *ids* are configuration, never hardcoded, and the client never sees them.** Displayed prices
+  have exactly one source per client (`lib/pricing`).
+- **TWO PRICE NUMBERS ARE AUTHORED. THE EFFECTIVE MONTHLY AND THE SAVING ARE DERIVED.**
+  `MONTHLY_CENTS` and `ANNUAL_CENTS` in `client/src/lib/pricing.js` (mirrored in
+  `mobile/src/lib/pricing.ts`) are the only places a price is written down; `$3.75/month` and
+  `Save 37%` are arithmetic. **This was hand-written twice and wrong twice.** The saving is
+  **FLOORED, never rounded** — overstating a saving is the error that matters.
+  `server/lib/pricing.test.js` fails if any price, saving or per-month figure is hardcoded elsewhere.
+- ⚠️ **A STALE Stripe price id is the one billing failure nothing can detect.** Absent is safe and
+  loud; stale resolves to a real live price with the OLD amount and charges it against a page showing
+  the new one. **Recreate the Stripe Price objects and update `STRIPE_PRICE_MONTHLY` /
+  `STRIPE_PRICE_ANNUAL` whenever the displayed price changes** — they are not in this repo and no test
+  can reach them.
+- **The trial has one explicit door** (`POST /api/subscription/trial`), idempotent. **Setting a goal
+  grants nothing.**
+- **`ensureTrial` is idempotent BY EXISTENCE**: any `subscriptions` row at all, in any status, is
+  returned untouched. **A stray write permanently spends the only trial they had.**
+- ⚠️ **Applying the schema must never change what a user has. Never put a data write in a schema
+  file.** The trial backfill lives in `supabase/backfill_trials.sql`, run deliberately;
+  `schemaSafety.test.js` fails if any other `supabase/*.sql` file contains an
+  `insert`/`update`/`delete`/`truncate` outside a function body.
+- **BUILDING A CART FROM A SENTENCE IS FREE, BEHIND A BUDGET — NOT A GATE.**
+  `LIST_COMPOSE_FREE_LIMIT` is **12 per day** for free callers, premium exempt. **Both doors move
+  together or the gate just relocates.** The over-budget line is not an upsell.
+- **WHICH BUCKET A GUEST DOOR DRAWS IS DERIVED FROM "DOES THIS REACH A MODEL", NEVER DECIDED PER
+  ROUTE.** By eye that question was answered wrongly on four routes in three directions.
+  `guestBudget.test.js` asserts the split per **HANDLER** — a file-wide grep cannot, because `scan.js`
+  legitimately contains both.
+- ⚠️ **A BUDGET SPENT IN HOPS CANNOT BE READ AS A BUDGET FOR ANYTHING A SHOPPER DOES.** The scan
+  bucket is sized in **SCANS** — 30 an hour, 2 hits each — **with the multiplication exported and
+  asserted**, so a third hop fails a test instead of silently halving the ceiling.
+
+---

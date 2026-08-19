@@ -964,3 +964,59 @@ than reconciled. Copied byte-for-byte out of CLAUDE.md before any condensation.
 - **Do not add a delivery hook back without a reason the dashboard cannot meet.**
 - ⚠️ **No second auth rail — REVERSED 2026-08-18.** `email: true`, measured live. See the
   account above and `kristy-ios/docs/PURCHASING.md` §7.0 blocker H.
+
+---
+
+## Phone sign-in, extracted verbatim 2026-08-19, ahead of the third CLAUDE.md split
+
+Held here verbatim so the condensation in `CLAUDE.md` removes nothing. The RULES stay
+in `CLAUDE.md`; this is the account they point at.
+
+**Phone sign-in — ⛔ DEAD PRODUCT-WIDE, RULED 2026-08-19**
+
+*Account, including the measured provider states and the Bird parallel: `docs/DECISIONS.md`.*
+- ⛔ **RULED: PHONE SIGN-IN IS DEAD PRODUCT-WIDE — NOT "superseded on iOS", NOT "dormant".**
+  This **reverses the dormant-not-deleted ruling that stood here**, and the reversal is the
+  load-bearing part: that entry said the honest label was *retained, unused, revivable*, and a
+  session reading it would defend the SMS text on the legal pages as a live disclosure. **It is
+  not.** What settles it is three facts that are each measured, not argued:
+  **the provider is OFF** (`phone: false`, live and cache-busted 2026-08-18), **nobody has ever
+  signed in on any rail** — no user to migrate, no session to preserve, no revenue — and
+  **`client/src` is frozen and the web client becomes a landing page**, so `Auth.jsx`'s
+  `signInWithOtp({ phone })` is an inert form rather than a permanent rail.
+- ⚠️ **THE CODE IS NOT DELETED AND THAT IS NOT A CONTRADICTION.** `client/src` is frozen, so
+  `signInWithOtp` stays where it is — **frozen, not endorsed.** The ruling is about what the
+  PRODUCT does and what its pages may claim, and those two are what changed. **Do not open the
+  frozen client to finish this ruling**; there is nothing there to finish.
+- ⚠️ **WHAT THE REVERSAL ACTUALLY LICENSED, AND IT IS ALREADY DONE: `/privacy` AND `/terms`
+  NO LONGER DESCRIBE AN SMS PRACTICE.** With the provider off, *"We collect your mobile phone
+  number so we can send you a one-time verification code"* was **false on a live page** — a
+  policy asserting a collection that cannot occur, which is worse than silence. Both pages now
+  say Kristy collects no phone numbers and sends no SMS. **The "DO NOT DELETE THE SMS SECTIONS"
+  notes in both files are superseded and must not be restored**; each file carries the ruling
+  in their place.
+- ⚠️ **THE COST IS THE 10DLC REGISTRATION AND IT IS ACCEPTED, NOT OVERLOOKED.** The deleted
+  sentences were the required A2P 10DLC elements, each kept on one unbroken source line for an
+  automated review (rejection code 805), and the registration was **in verification at Twilio**.
+  A dead rail needs no registration, so it is **moot and should be withdrawn.**
+  ✅ **The owner took the withdrawal as their own item, 2026-08-19** — not a repo task, and
+  nothing here is blocked on it.
+  ⛔ **Do not re-add those sentences to pass a review while the provider is off** — that puts a false
+  collection statement back on a live page to satisfy a review of a rail nothing uses. They are
+  recoverable from git history at the commit that removed them, **and the two files worded the
+  consent sentence differently on purpose**, so a revival copies from history rather than from
+  one file.
+- **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
+  worse than no code: it is documentation that lies.**
+- ⚠️ **THE SECOND RAIL IS EMAIL, IT IS ON, AND THAT REVERSES THE RULE THAT USED TO SIT HERE.**
+  Measured live 2026-08-18, cache-busted: **`email: true`**, `apple: true`, `phone: false`,
+  `mailer_autoconfirm: true`. The old rule read *"No second auth rail — Supabase has
+  `email: false` and it stays that way"*, and a session finding the provider on would have
+  read that as drift and turned it off. **It is deliberate: the email rail is blocker H in
+  `kristy-ios/docs/PURCHASING.md` §7.0 and it is the only prerequisite of the restore-transfer
+  proof (§7.3.8).** Apple stays the primary rail; email exists to prove the transfer.
+  ⚠️ **`mailer_autoconfirm: true` IS A SEPARATE SWITCH AND IT IS STILL ON** — so any
+  password/`signUp` path would confirm an address nobody proved they own. **OTP is fine
+  (possession of the code is the proof); a `signUp` path is not.** Nothing ships one today,
+  which is why this is a note and not a defect.
+

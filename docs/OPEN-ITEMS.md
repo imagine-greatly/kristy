@@ -807,3 +807,266 @@ condensation, so the rules that stay in CLAUDE.md have somewhere lossless to poi
   the artifact is the right one before filing a third.** So the account alert is the only
   known simulator blocker, and nothing needs fixing before the next sign-in attempt.
 
+
+---
+
+## The board as CLAUDE.md stated it, extracted verbatim 2026-08-19, ahead of the third CLAUDE.md split
+
+Held here verbatim so the condensation in `CLAUDE.md` removes nothing. The RULES stay
+in `CLAUDE.md`; this is the account they point at.
+
+## Open items
+
+**This is the live board — status and the rule each item imposes. Closed items, the driven-live
+evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
+
+### Live defects
+
+- 🐞 ⚠️ **`hello@kristyapproved.com`: FIVE MENTIONS ACROSS THREE LIVE PAGES** — `/privacy` (2),
+  `/terms` (2), `/support` (1); the landing page has none. **Counted off the SERVED pages
+  2026-08-19**, because this entry previously read *"four live pages"* and neither the page count
+  nor the mention count was right. ⚠️ **RE-COUNT IT; DO NOT CARRY THE NUMBER FORWARD.**
+  **A LIVE GAP, not a pending task** if the mailbox does not receive: `/support` additionally
+  promises a reply within two business days, and ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO
+  ADDRESS** — App Review checks the support URL.
+  ⚠️ **THE STATUS MOVED AND THIS ENTRY IS NARROWED RATHER THAN CLOSED. `kristyapproved.com` NOW
+  HAS AN MX RECORD** — `kristyapproved-com.mail.protection.outlook.com`, measured 2026-08-19 —
+  so the domain's mail is configured, which it was not when this was filed. **An MX proves the
+  domain can route mail; it does NOT prove the `hello@` mailbox exists or that anyone reads it,
+  and those are what the pages promise.** No TXT/SPF record answered.
+  ⛔ **THE ONLY CHECK THAT SETTLES IT IS SENDING MAIL TO IT, WHICH IS AN OUTWARD-FACING ACT AND IS
+  THE OWNER'S** — do not send test mail from a session to close this. **The pages are correct and
+  stay as they are; the mailbox is what is missing.** **Nothing here should be edited to work
+  around it.** **Re-check before any App Store submission.**
+
+- ✅ **SHIPPED AND VERIFIED LIVE: ONE PREDICATE — `nothingConfirmsFood`**, on `origin/main` as
+  `22b35a8`. Three gates that happened to agree became one question asked of whatever evidence
+  exists, and the dyed-Dawn decoupling landed inside it. **The rule it establishes: withholding
+  refuses to ENDORSE; it never silences a warning** — `universalLayer` stays intact and flags stand.
+  Driven on production through the guest path, all five cases: `docs/OPEN-ITEMS.md`.
+- ❓ ⚠️ **THE UPSTREAM QUESTION IS STILL OPEN, AND THE PREDICATE CONTAINS IT RATHER THAN ANSWERING
+  IT.** The engine still reads a seven-token mineral analysis as a clean ingredient list and scores
+  it zero; what changed is that the seal is withheld and the withheld read prints. **The misread is
+  contained at the seal, not fixed at the read.** ⏳ Open as a QUESTION: what should a thin or
+  non-ingredient list produce? **Nothing is proposed, deliberately.**
+- 🐞 ⚠️ **THE CATEGORY UPGRADE CANNOT REACH A ROW ALREADY IN `scanned_products`.** A cache hit
+  returns early in `scanExtract.js` with the row's **stored** category and never re-fetches OFF, so
+  `categoryFromAisle` never runs again; the upgrade branch written for exactly this lives on the
+  **retain** path, which the cache hit bypasses.
+  ⚠️ **THE ORDERING CONSTRAINT, AND IT IS THE WHOLE FIX: THE RE-READ MUST ROUTE THROUGH
+  `retainProduct`, NOT MERELY RE-FETCH.** A version stamp that decides "re-fetch this row" and uses
+  the answer in memory fixes one response and never the row. ⚠️ **IT WOULD SHIP AS DECORATION AND
+  EVERY CHECK ON IT WOULD PASS**, because the response carries the right category and that is all an
+  end-to-end assertion looks at — the row is the subject and nothing reads it back. **The cache-hit
+  branch has to fall through to the fetch-and-retain path.**
+  ✅ **APPROVED AS DESIGNED; its prerequisite (the migration) is applied. Still not written: it
+  touches the store's READ path, which is separately scoped server work and needs its own prompt.**
+  The approved shape, recorded so it is not re-derived:
+  - **A VERSION STAMP, NOT A TTL AND NOT "IS THE CATEGORY `other`".** A TTL re-fetches rows that
+    were already right; keying on `other` cannot tell "we looked and it is genuinely other" from
+    "we looked before the patterns existed".
+  - ⚠️ **THE BUMP RULE IS AN ASYMMETRY AND IT IS THE PART THAT IS EASY TO GET BACKWARDS. Bump on
+    `other`. Bump on not-found. DO NOT bump on a network failure.** A network failure is not
+    evidence about the product, and stamping one records "we checked" for a check that never
+    happened — retiring the row from re-checking forever on the strength of a timeout.
+  - ⚠️ **THE FAILURE DIRECTION IS SAFE ONLY WHILE THE ROW STAYS STALE.** `other` is non-exempt, so
+    an un-upgraded row can only withhold a seal — but a row this fix upgrades to `water` is exempt
+    on the product half from that moment. **The safe direction belongs to the bug, not to the fix.**
+  - ✅ **It is still safe to land first, measured** — the document half catches Sidi Ali. Cristaline
+    is the one that breaks, and it cannot reach `water` without the aisle fix.
+- ✅ **PART 3 — THE CATEGORY EXEMPTION — SHIPPED.** `FOOD_CATEGORIES = new Set(['water'])`, read by
+  `nothingConfirmsFood`, on `origin/main` inside `22b35a8`. ⚠️ **COMPUTE IT, DO NOT READ IT:**
+  `git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '`. Pinned in
+  `foodPredicate.test.js`: exact-match never substring, `other`/`NULL` non-exempt permanently, an
+  explicit allowlist rather than "trust the panel if we know the category".
+  ⚠️ **WHAT IS STILL HELD IS ONLY ITS REACH.** No production row is exempt today, because the waters
+  still read `category: other` — the cache finding above. The exemption is **live and unreachable**;
+  nothing has to be decided to turn it on, and the cache fix turns it on.
+  ⚠️ **THE PATTERN IS THE PLURAL `waters`, NOT THE BARE WORD.** Matching is `includes`, so bare
+  `water` also eats `watermelons`, `water chestnuts` and `water biscuits`. **Part 3 lets a category
+  past a fail-closed gate, so a watermelon in `water` is a wrong approval.** Asserted in
+  `productCategory.test.js`, proven to fail on `watermelons` before being trusted.
+- ⚠️ **`unverifiedAsFood` IS STILL NOT ON THE WIRE, AND THAT IS DELIBERATE.** The engine returns it;
+  `routes/verdict.js` does not forward it. A client keys off `unverifiedRead` / `stamp` instead — **a
+  client cannot fail closed on a field it has never heard of. Do not add it to a decoder expecting it
+  to arrive.** What the routes carry is `readSwap`, **one helper across all four send sites**,
+  because this file has already lost a field across those four. **A rule that must be retyped four
+  times is a rule that will be applied three times.**
+
+### Held deliberately — do not "discover" these and land them
+
+- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE. What is held is the IMPORT ROUTE.** Nothing can
+  reach `POST /api/trips/import` (`requireAuth`, and no rail has ever produced an account), and
+  pushing this repo deploys. **Full reasoning: `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 — one
+  queue, not two. Do not push it to be helpful.**
+  ⚠️ **Its test condition cleared and it is still held.** A cleared blocker is not an approval; it
+  gets reviewed against what the iOS client actually needs before it ships.
+  ⚠️ **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase or a
+  partial push, and this entry has been wrong with both. Only the SUBJECT is stable.** Compute it:
+
+  ```
+  git log --oneline --reverse origin/main..HEAD
+  ```
+
+  **When something above the hold is urgent, CHERRY-PICK IT PAST — that is the move, and it is why
+  stack timestamps interleave with `origin/main`'s.** ⚠️ **A reader reconstructing this history from
+  commit dates alone will get the order wrong.** A bare `git push` sends everything ahead; pushing a
+  specific commit by hash is the only way to ship the bottom of a stack without the top.
+  ⚠️ **AND THE REBASE AFTERWARDS IS NOT OPTIONAL.** A cherry-pick leaves the ORIGINAL commits on the
+  stack under different hashes, so the command above goes on naming subjects that are already live —
+  **this entry's own failure, reproduced by the fix for it, within the hour.** Prove the rebased tip
+  is content-identical to the pre-rebase tip before force-updating `main:held`. **A cherry-pick past
+  the hold is not finished until the stack stops claiming what it shipped.**
+  📋 **The lesson, which is this repo's own:** the entry identified held work correctly by SUBJECT
+  and then listed a subject that was not on the stack, and **two documents stated it, which is
+  precisely why a reader had no way to notice.** **Computing it is only a fix if someone computes it.**
+
+### Standing risks, not urgent
+
+- ⏳ **THE GUEST BUDGET IS A PROPERTY OF UPTIME, NOT OF THE SHOPPER.** All four buckets in
+  `guestRate.js` are module-level `Map`s in one process, so **every deploy hands every IP a full
+  budget back** and Railway redeploys on every push to `main`. **It cannot be measured** —
+  `rateLimited` records a hit when it is NOT limited, so asking whether budget remains spends the
+  slot that answers. **It becomes real the moment a second instance exists.**
+
+### Queued
+
+- ⏳ ⚠️ **NOTHING REPORTS A COMPLETED-TRIP COUNT, SO A SIGNED-IN SHOPPER'S METER IS THE DEVICE'S —
+  AND A DEVICE METER IS RESETTABLE BY REINSTALL.** The addition is named in `docs/PRICING-MODEL.md`
+  §3a: **`completedTrips` on the response of `GET /api/trips/seedable`** — one field on a door the
+  client already calls. The count is `select count(*) where status='completed'`, not stored.
+  ⚠️ **UNTIL IT EXISTS THE RULING'S OWN LIMIT IS LIVE, AND IT IS WRITTEN HERE SO WHOEVER PICKS THIS
+  UP SEES IT AT THE POINT OF THE WORK:** after sign-in the client still has no number to reconcile
+  *against*, so `TripAllowance.reconciled` runs with `server: 0` and the phone stays the source of
+  truth for a **paid entitlement**. **A reinstall AFTER signing in resets a count the server already
+  knows.**
+  ⚠️ **THAT IS NOT THE ACCEPTED LOOPHOLE AND MUST NOT BE FILED UNDER IT.** The accepted one is scoped
+  to **PRE-ACCOUNT** trips, where the alternative is a sign-in wall in front of the thing that sells
+  the app. Past sign-in there is an account, a row, and a server that could answer — so the same
+  reset **was not ruled**, and is a defect this route closes rather than a cost anybody agreed to.
+  ⚠️ **The second half of the limit is measured, not predicted, and it is a different shopper:** give
+  the entitlement count a server trip and walk a trip, and **the ask does not fire** — the crossing
+  lands one trip late, a free trip nobody was owed. It fails toward the shopper, which is the
+  asymmetry working rather than a second defect. **Both halves close together when this route lands.**
+  ✅ **`max(server, …)` is already written for it**, so the day `completedTrips` starts arriving the
+  carry needs no re-reasoning. 📎 The client half is built and pinned — `TripAllowance.reconciled`,
+  `GuestTripBook.tripsCompleted`, `Tools/triploop`. **Separately proposed server work**, downstream
+  of one completed Sign in with Apple token exchange.
+
+- 🐞 ⏳ **`/guest/list/attach` IS METERED BY A BUDGET SIZED FOR A DIFFERENT ACT.** It draws
+  `cartBuildLimited` — **20/hour, sized for the one cart build a shopper does per trip** — while an
+  attach is made by the CLIENT on every cold launch carrying uncarded rows and once per added item.
+  **The rule the other three instances established is a bucketed ceiling sized for the act it
+  protects**, and attach was put in the nearest existing bucket instead of given one. Attach names no
+  model call, so `guestRate.js`'s own header settles which side it is on.
+  ⚠️ **A REFUSED ATTACH PRODUCES MORE ATTACHES, NOT FEWER.** `Cart.merge` persists `carded`, so a
+  success stops the next launch calling and a refusal leaves every row uncarded for the rest of the
+  window. The bucket has positive feedback, and "re-run on a fresh hour" is weaker than it reads.
+  ⚠️ **The iOS suite is the DETECTOR, not the subject** — sizing this for CI would be the same
+  mistake one layer along. Counts per test class and the rejected one-liner: `docs/ATTACH-BUCKET.md`.
+  Separately proposed server work.
+- 🐞 ⏳ **THE AISLE IS DERIVED FROM THE LAST OFF TAG ON A FALSE PREMISE, AND IT THROWS AWAY THE
+  ANSWER.** `aisleFromCategories` takes the last `categories_tags` entry as "most specific"; it is
+  not a specificity hierarchy, and any product whose last tag is a **dietary** one (unsweetened,
+  no-added-sugar, organic) loses its aisle. **This is a category-capture defect, not a water one.**
+  The shape is to map from the TAG LIST, most specific *mapped* hit — **not** to widen the water
+  patterns to swallow `beverages`, which would be untrue in a vocabulary that gates a fail-closed
+  exemption. Separately proposed; account in `docs/CATEGORY-CAPTURE.md`.
+  ⚠️ **THE PREREQUISITE, AND IT IS NOT VISIBLE FROM THE DEFECT: LANDING THIS FIX REMOVES A CATCH THAT
+  IS FIRING IN PRODUCTION RIGHT NOW.** Cristaline is `approved` today on a nine-line mineral table,
+  and the only reason the gate holds it is that its category resolves to `other`. This fix resolves
+  it to `water`, which **is exempt**, and the document half does **not** pick it up — measured
+  `FIRES = false`. **So: land the `ingredients_lc` guard first, or at minimum drive `3274080005003`
+  through the gate as part of this fix and assert the outcome.**
+  📎 **The same warning sits at the point of the change**, in `productCategory.js` above the `water`
+  patterns — deliberately duplicated, because each site reasons correctly alone and no file owns the
+  composition. **If you change one, change both.**
+- 🐞 ⏳ **OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER, SO THE PARSE AND THE TEXT CAN BE DIFFERENT
+  DOCUMENTS.** `ingredients_lc` names the language OFF actually parsed; `pickEnglishText` prefers
+  English, which is the correct preference for every other product. ⚠️ **THE ENGLISH FIELD IS NOT A
+  TRANSLATION, IT IS A DIFFERENT DOCUMENT** — so a language check passes it and the whole language
+  layer is asking the wrong question. **THIS IS THE TWO-LISTS DISAGREEMENT ON A NEW AXIS, AND
+  `sameVerdict` IS THE PRECEDENT** (score both, compare the tier, refuse to guess when they differ);
+  the existing guard **cannot** engage, because the second document is a LANGUAGE field it has never
+  looked at.
+  ⚠️ **IT IS NOT THE PANEL-GATE TRIGGER AND MUST NOT BE FOLDED INTO IT.** It does not catch Sidi Ali,
+  where parse and text agree and are wrong together. **Two products, one symptom, two unrelated
+  causes.** In range: every product whose `ingredients_lc` is not `en`.
+  ⬆️ **THIS IS A PREREQUISITE, NOT ONLY A DEFECT: THE AISLE FIX IS UNSAFE WITHOUT IT.**
+
+- ✅ **CLOSED 2026-08-19 — THE PRODUCT RULING CAME FIRST AND IT WENT THE OTHER WAY.** This entry
+  said the first step was a ruling — *dead product-wide, or superseded only on iOS?* — and named
+  the second as "likelier and the safe default". **The ruling is DEAD PRODUCT-WIDE**, so the work
+  was a deletion rather than the addition this entry predicted. `/privacy` and `/terms` no longer
+  describe an SMS practice; both state that Kristy collects no phone numbers and sends no SMS.
+  ⚠️ **THE ENTRY'S OWN OBJECTION IS ANSWERED RATHER THAN OVERRULED, AND THE ANSWER IS THE PART
+  WORTH KEEPING.** It called deletion destructive because `Auth.jsx` still calls
+  `signInWithOtp({ phone })` in the frozen client, and because 10DLC was in verification. **The
+  first is not a live rail: the provider is `phone: false`, so that call cannot complete** — the
+  form is inert, and the page was therefore asserting a collection that **cannot occur**, which is
+  worse than a gap. The second is **moot on a dead rail** and the registration should be withdrawn.
+  ⛔ **Do not re-add the SMS text to pass a carrier review.** See **Phone sign-in** and **Legal
+  pages** for the recovery procedure if the rail is ever revived.
+  ⚠️ **STILL TRUE AND UNTOUCHED: the support-address gap above.** App Review reads that URL, and a
+  mailbox is what is missing — not a page edit.
+- ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE.** `buildBaseline` is written, tested and
+  correct with a permanently empty input; `GuestTripBook.archive` holds exactly the input shape it
+  wants. Run that computation **in the client** for a guest with no account, no server change and no
+  new stored data. **Nothing is proposed to consume it yet, and that is deliberate.**
+  ⚠️ **PRICE THE `canonicalItem` DUPLICATION BEFORE STARTING** — a third implementation in Swift of a
+  canonicalizer whose disagreements would be silent. **Consider the alternatives before any Swift is
+  written**, including narrowing to exact-name matching and **stating that narrower claim.**
+  ⚠️ **DO NOT LET THIS BECOME A CAPTURE PROJECT.** The record already exists; the whole finding is
+  that it is collected and unread.
+- ⚠️ **The scan card is still the full-height takeover, and the replacement is specced but unbuilt** —
+  a **bottom sheet**: summary, full read on tap, camera live behind it, and the approved state as the
+  SMALLEST state in the app. Related and queued: on a **photo** read the card's image slot is empty;
+  the fix is a client-side crop of the shopper's own photo held in memory for the session, **nothing
+  persisted or uploaded beyond the vision call that already happens.**
+- 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14**, with §13 holding that
+  session's findings in full.
+
+### Infrastructure state
+
+**Measured state and its evidence: `docs/OPEN-ITEMS.md`. The rules it imposes:**
+
+- ⚠️ **`server/.env` ON THIS BOX HAS REAL SUPABASE CREDENTIALS AND A PLACEHOLDER MODEL KEY. THE TWO
+  ARE NOT THE SAME "WALL".** `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` are live; `ANTHROPIC_API_KEY`
+  is byte-identical to `.env.example`'s placeholder and returns `401`. `USDA_API_KEY` and both Stripe
+  keys are **empty strings**. **So anything whose behaviour depends on a model call cannot be verified
+  locally** — prompt changes are testable only by asserting on the prompt text, plus the real endpoint
+  on production. **"The wall is down" is true of the DB and only the DB**; read as "this box can do
+  live things now" it is wrong in the expensive direction.
+- ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
+  push. Code degrades gracefully without it. Everything else is applied — audit in
+  `docs/SCHEMA-AUDIT.md`.
+- ⚠️ **`counter_cards` is 82 curated + generated rows, and a generated row is written by the pipeline
+  and never appears in a diff — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
+  "81 + 1" for eight days while two more were live.
+- ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT PHONE.**
+  See **Phone sign-in**, which is **DORMANT, not pending**.
+  ✅ **Provider state measured on the live project: `apple: true`, `phone: false`, `email: false`** —
+  all three what they should be. The anon key is in `Config/Base.xcconfig` and in the built product.
+  ⚠️ **`GET /auth/v1/settings` IS STRUCTURALLY BLIND TO THE CLIENT-ID QUESTION** — it returns a
+  boolean per provider and **no client id at all**, so it can prove the provider is on and can never
+  prove the bundle id under Client IDs is right. **The first thing that tests that is a completed
+  token exchange**, and that has never happened.
+  ⚠️ **THERE ARE STILL NO ACCOUNTS ON ANY RAIL**, so anything gated on an account — every purchase —
+  is unreachable regardless of how much of it is built. **The blocker is no longer a dashboard.**
+- 🐞 ⚠️ **THE SIMULATOR CANNOT PROVE THE TOKEN EXCHANGE: THE SIMULATOR DEVICE HAS NO APPLE ACCOUNT,
+  AND IT DOES NOT INHERIT THE MAC'S.** The tap reaches `ASAuthorizationController` and the system
+  answers with a SpringBoard alert. **NO TOKEN IS MINTED, SO NOTHING DOWNSTREAM IS TESTED.**
+  Reproduced independently, with cause and symptom measured separately and agreeing.
+  ⚠️ **`defaults read MobileMeAccounts` IS THE WRONG CHECK AND IT LIES IN THE EXPENSIVE DIRECTION** —
+  it returns "domain does not exist", which is **iCloud** unconfigured, not the Apple Account missing.
+  **Read the account store.** Fix: `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
+  ✅ ⚠️ **THE "SECOND BLOCKER" — THE SIWA ENTITLEMENT MISSING — IS WITHDRAWN, MEASURED. IT IS
+  PRESENT.** It was filed on `.xcent` being an empty dict and `codesign -d --entitlements` returning
+  `<dict></dict>`; **both are device-signing artifacts and a simulator build uses neither.**
+  ⚠️ **IT IS THE FINDINGS FAMILY COMMITTED WHILE DOCUMENTING THE FINDINGS FAMILY** — a check that
+  could not see its subject, filed as an instance of checks that cannot see their subject, and
+  believable precisely *because* the repo already had two real ones. **Confirm the artifact is the
+  right one before filing a third.** So the account alert is the only known simulator blocker.
+
+---
+
