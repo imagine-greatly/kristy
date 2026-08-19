@@ -1043,12 +1043,22 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 ### Live defects
 
-- 🐞 ⚠️ **`hello@kristyapproved.com` DOES NOT EXIST, AND FOUR LIVE PAGES PRINT IT.** `/support`
-  (twice), `/privacy` and `/terms`. **A LIVE GAP, not a pending task:** email it today and it
-  bounces, and `/support` additionally promises a reply within two business days. ⚠️ **A BOUNCING
-  SUPPORT ADDRESS IS WORSE THAN NO ADDRESS** — App Review checks the support URL. **The pages are
-  correct and stay as they are; the mailbox is what is missing.** Being set up (owner's own item).
-  **Nothing here should be edited to work around it.** **Re-check before any App Store submission.**
+- 🐞 ⚠️ **`hello@kristyapproved.com`: FIVE MENTIONS ACROSS THREE LIVE PAGES** — `/privacy` (2),
+  `/terms` (2), `/support` (1); the landing page has none. **Counted off the SERVED pages
+  2026-08-19**, because this entry previously read *"four live pages"* and neither the page count
+  nor the mention count was right. ⚠️ **RE-COUNT IT; DO NOT CARRY THE NUMBER FORWARD.**
+  **A LIVE GAP, not a pending task** if the mailbox does not receive: `/support` additionally
+  promises a reply within two business days, and ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO
+  ADDRESS** — App Review checks the support URL.
+  ⚠️ **THE STATUS MOVED AND THIS ENTRY IS NARROWED RATHER THAN CLOSED. `kristyapproved.com` NOW
+  HAS AN MX RECORD** — `kristyapproved-com.mail.protection.outlook.com`, measured 2026-08-19 —
+  so the domain's mail is configured, which it was not when this was filed. **An MX proves the
+  domain can route mail; it does NOT prove the `hello@` mailbox exists or that anyone reads it,
+  and those are what the pages promise.** No TXT/SPF record answered.
+  ⛔ **THE ONLY CHECK THAT SETTLES IT IS SENDING MAIL TO IT, WHICH IS AN OUTWARD-FACING ACT AND IS
+  THE OWNER'S** — do not send test mail from a session to close this. **The pages are correct and
+  stay as they are; the mailbox is what is missing.** **Nothing here should be edited to work
+  around it.** **Re-check before any App Store submission.**
 
 - ✅ **SHIPPED AND VERIFIED LIVE: ONE PREDICATE — `nothingConfirmsFood`**, on `origin/main` as
   `22b35a8`. Three gates that happened to agree became one question asked of whatever evidence
