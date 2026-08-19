@@ -901,14 +901,12 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 - ⚠️ **A PIPELINE'S EXIT CODE BELONGS TO ITS LAST COMMAND. THE DURABLE FIX IS `set -o pipefail`,
   AND IT IS NOT `$PIPESTATUS`.** This is the `osxkeychain`/`tail` trap in a second costume:
-  `xcodebuild ... | tail` reported **exit 0 having built nothing**, because the `-destination`
-  name did not exist — the build never ran and `tail` succeeded at printing the complaint.
+  `xcodebuild ... | tail` reported **exit 0 having built nothing**.
   **Measured on this box, and the bash reflex fails silently here:** in zsh `$PIPESTATUS` is
-  **empty** (it is bash-only), so a `${PIPESTATUS[0]}` guard copied from bash reads nothing and
+  **empty** (it is bash-only), so a `${PIPESTATUS[0]}` guard copied from bash
   **guards nothing while looking like a guard**; zsh spells it `$pipestatus`, lowercase, and
-  **clobbers it on the very next command**, so even the correct spelling is wrong one line later.
-  `set -o pipefail` works in **both** shells and needs no variable to survive. Use it, or drop the
-  pipe and read the log from a file.
+  **clobbers it on the very next command**. `set -o pipefail` works in **both** shells and needs
+  no variable to survive. Use it, or drop the pipe and read the log from a file.
   ⚠️ **AND THE EXIT CODE IS ONLY HALF. A GREEN STATUS IS NOT EVIDENCE THE WORK HAPPENED — ASSERT
   ON THE ARTIFACT.** `pipefail` would have caught this one; it would **not** catch a build that
   exits 0 having compiled nothing. **Name the destination from `xcodebuild -showdestinations` and
@@ -942,6 +940,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 | `cd server && npm test` | **647 pass, 0 fail, on `main` (the held stack), re-measured 2026-08-18; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
+| `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
 | `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. **Exits non-zero on a wrong match**; a miss only reports. Run after any alias edit, `perimeterId` change or matcher change. |
 | `node client/test/dash.mjs` | Five dashboard states at a true 390px **in the real app frame**; the hero rule and the one-filled-action rule. |
 | `node client/test/shop.mjs` | Shop-mode geometry, the type inversion, WCAG contrast off **rendered** colour, the collapse mid-scroll, **the wake lock hidden and restored for real**, return-to-position broken four ways. |
@@ -1216,18 +1215,18 @@ before starting, not after.**
 | File | What it is |
 | --- | --- |
 | `docs/WORKING-DISCIPLINE.md` | **The account behind every rule in Working discipline** — the incidents, the measurements, the superseded versions. |
-| `docs/DECISIONS.md` | **The account behind every rule in Load-bearing decisions** — the incident, the measurement, the superseded version. |
+| `docs/DECISIONS.md` | **The account behind every rule in Load-bearing decisions** — the incident, the measurement, the superseded version, in the same order. |
 | `docs/VERIFYING.md` | **The account behind every rule in Verifying** — all five members of the findings family in full. |
 | `docs/OPEN-ITEMS.md` | **Open items in full**, including everything closed, with the driven-live evidence. |
-| `VOICE_SPEC.md` | The voice rule, in full. Still enforced in all six model prompts. |
+| `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** Includes *The trial and the count*, §0–§3a, which moved out of `CLAUDE.md` 2026-08-19. |
+| `VOICE_SPEC.md` | The voice rule, in full. Enforced in all six model prompts. |
 | `VISION.md` | Character direction. Deliberately post-mechanics, largely unbuilt. |
 | `README.md` | How the thing runs: setup, endpoints, data flow. |
 | `BARCODE_COVERAGE.md` | Provider options assessed, none integrated. A decision doc. |
 | `docs/PASS3-HANDOFF.md` | §14 is the full queue in order; §13 is that session's findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema compared against the migration files. |
-| `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** The five answers, the inverted paid boundary, the five open decisions. |
-| `docs/LANDING-PAGE-PROVENANCE.md` | **The account behind `client/public/landing.html`** — what the ported blocks must stay true to, the removed comments verbatim, and the positioning comments left in on purpose. |
-| `docs/LEGAL-PAGE-RULINGS.md` | **The account behind `/privacy` and `/terms`** — the phone ruling, the retired 10DLC rules and how to recover them, the delete door. Moved out of the served HTML. |
+| `docs/LANDING-PAGE-PROVENANCE.md` | The account behind `client/public/landing.html` — the removed comments verbatim, and the positioning comments left in on purpose. |
+| `docs/LEGAL-PAGE-RULINGS.md` | The account behind `/privacy` and `/terms` — the phone ruling, the retired 10DLC rules and how to recover them, the delete door. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
 | `docs/LIST-CREATION-AUDIT.md` | §C is the measurement the anti-personalization rule tells you to quote. |
@@ -1243,26 +1242,23 @@ nothing reports it and every session after it is quietly working from a shorter 
 **Keep it under 100,000 characters.** When a section grows past its share, the split is always the
 same one: **the RULE stays here, the ACCOUNT moves to `docs/`.** Check with `wc -c CLAUDE.md`.
 
-⚠️ **THAT SPLIT IS NOW AT ITS FLOOR, AND THE NUMBER IS MEASURED RATHER THAN ESTIMATED.** The third
-split (2026-08-19, 99,590 → 91,656) condensed the four largest blocks and **every account it could
-move had already been moved by the second one.** Measured yields on a full rule-preserving rewrite:
-**Working discipline 4%, Legal pages 5%, Money 26%, Open items 20%.** ⛔ **So do not open this file
-intending to "condense it again" — that lever is spent, and a session that pulls it anyway will
-start deleting rules to hit a number.**
+⚠️ **THAT SPLIT IS AT ITS FLOOR AND THE NUMBER IS MEASURED.** The third split (2026-08-19,
+99,590 → 94,049) rewrote the four largest blocks and found **every account it could move had
+already been moved by the second one**: Working discipline yielded **4%**, Legal pages **5%**.
+**Only 26,736 characters sit in blocks longer than 600, and those are the densest blocks in the
+file.** ⛔ **So do not open this file to "condense it again" — that lever is spent, and a session
+that pulls it anyway starts deleting rules to hit a number.**
 
-⚠️ **THE ONLY REMAINING LEVER IS MOVING A WHOLE RULE-BLOCK OUT OF ALWAYS-LOADED CONTEXT, AND THAT
-IS A PRODUCT DECISION, NOT AN EDITORIAL ONE.** The test that licensed the one such move so far:
-**the block governs work that is entirely unbuilt, and the first act of anyone building it is to
-open the doc anyway.** That is why *The trial and the count* now lives in `docs/PRICING-MODEL.md`
-§0–§3a behind a loud pointer. **A block governing shipped code fails that test however tempting its
-size** — the frozen `client/src` rules are not candidates either, because `client/test/` still runs
-them. **Ask before moving a second one.**
+⚠️ **THE ONLY LEVER LEFT IS MOVING A WHOLE RULE-BLOCK OUT OF ALWAYS-LOADED CONTEXT, WHICH IS A
+PRODUCT DECISION, NOT AN EDITORIAL ONE.** The test that licensed the one such move: **the block
+governs work that is entirely unbuilt, and whoever builds it opens the doc anyway.** That is why
+*The trial and the count* now lives in `docs/PRICING-MODEL.md` §0–§3a behind a pointer. **A block
+governing shipped code fails that test however large it is** — the frozen `client/src` rules are
+not candidates either, because `client/test/` still runs them. **Ask before moving a second one.**
 
-📎 **VERIFY A SPLIT, DO NOT ASSERT IT.** Extract every `**bold**` span from the pre-split file and
-require each to still appear verbatim in `CLAUDE.md` ∪ `docs/`. The third split ran 564 spans at
-564/564, and **the extractor was proven able to fail before it was trusted** — dropping the
-Verifying section reports 27 missing. ⚠️ **What it proves is that nothing left the CORPUS; it
-cannot tell you a rule left the always-loaded FILE**, so it is a safety net under an editorial
-judgement, never a substitute for one.
+📎 **VERIFY A SPLIT, DO NOT ASSERT IT — and it is a script, because computing it is only a fix if
+someone computes it:** `node server/scripts/claudeMdSplitCheck.js <ref-before-the-split>`. It ran
+564/564 here and **caught four real gaps**, all a rewritten table row where a bold boundary moved.
+⚠️ **It proves nothing left the CORPUS; it cannot tell you a rule left this FILE.**
 
 One-shot task specs are deleted once shipped; the reasoning worth keeping lives above.
