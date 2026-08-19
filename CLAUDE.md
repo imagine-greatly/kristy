@@ -655,20 +655,38 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   boundary, and the inline boot guard in `app.html` — the only one that can catch a
   module-evaluation crash). `VITE_API_URL` is required in a production build.
 
-**Phone sign-in — ⚠️ DORMANT, NOT PENDING**
+**Phone sign-in — ⛔ DEAD PRODUCT-WIDE, RULED 2026-08-19**
 
 *Account, including the measured provider states and the Bird parallel: `docs/DECISIONS.md`.*
-- ⚠️ **THE iOS RAIL IS SIGN IN WITH APPLE. PHONE OTP IS RETAINED DELIBERATELY, UNUSED, AND
-  CANNOT CARRY TRAFFIC WITHOUT 10DLC RE-REGISTRATION.** It is **a fallback that was kept on
-  purpose, not a path in progress.** Read as "in progress" it sends someone to finish a
-  registration nothing is waiting on; read as deleted it gets rebuilt later for real money.
-  **Keep the code, keep the honest label.**
-- **The provider is OFF** (`phone: false`), so `friendlySendError`'s *"Text sign-in is switched
-  off for this app right now"* is now true rather than aspirational. **The dormant-not-deleted
-  ruling is UNCHANGED by the toggle** — what would make it dead is deleting `signInWithOtp`, and
-  that is not done and is not proposed.
-- **Nobody has ever signed in, on any rail.** No user to migrate, no session to preserve, no
-  revenue depending on it.
+- ⛔ **RULED: PHONE SIGN-IN IS DEAD PRODUCT-WIDE — NOT "superseded on iOS", NOT "dormant".**
+  This **reverses the dormant-not-deleted ruling that stood here**, and the reversal is the
+  load-bearing part: that entry said the honest label was *retained, unused, revivable*, and a
+  session reading it would defend the SMS text on the legal pages as a live disclosure. **It is
+  not.** What settles it is three facts that are each measured, not argued:
+  **the provider is OFF** (`phone: false`, live and cache-busted 2026-08-18), **nobody has ever
+  signed in on any rail** — no user to migrate, no session to preserve, no revenue — and
+  **`client/src` is frozen and the web client becomes a landing page**, so `Auth.jsx`'s
+  `signInWithOtp({ phone })` is an inert form rather than a permanent rail.
+- ⚠️ **THE CODE IS NOT DELETED AND THAT IS NOT A CONTRADICTION.** `client/src` is frozen, so
+  `signInWithOtp` stays where it is — **frozen, not endorsed.** The ruling is about what the
+  PRODUCT does and what its pages may claim, and those two are what changed. **Do not open the
+  frozen client to finish this ruling**; there is nothing there to finish.
+- ⚠️ **WHAT THE REVERSAL ACTUALLY LICENSED, AND IT IS ALREADY DONE: `/privacy` AND `/terms`
+  NO LONGER DESCRIBE AN SMS PRACTICE.** With the provider off, *"We collect your mobile phone
+  number so we can send you a one-time verification code"* was **false on a live page** — a
+  policy asserting a collection that cannot occur, which is worse than silence. Both pages now
+  say Kristy collects no phone numbers and sends no SMS. **The "DO NOT DELETE THE SMS SECTIONS"
+  notes in both files are superseded and must not be restored**; each file carries the ruling
+  in their place.
+- ⚠️ **THE COST IS THE 10DLC REGISTRATION AND IT IS ACCEPTED, NOT OVERLOOKED.** The deleted
+  sentences were the required A2P 10DLC elements, each kept on one unbroken source line for an
+  automated review (rejection code 805), and the registration was **in verification at Twilio**.
+  A dead rail needs no registration, so it is **moot and should be withdrawn.** ⛔ **Do not
+  re-add those sentences to pass a review while the provider is off** — that puts a false
+  collection statement back on a live page to satisfy a review of a rail nothing uses. They are
+  recoverable from git history at the commit that removed them, **and the two files worded the
+  consent sentence differently on purpose**, so a revival copies from history rather than from
+  one file.
 - **BIRD IS DELETED, and do not bring it back.** **Dead code that describes an abandoned decision is
   worse than no code: it is documentation that lies.**
 - ⚠️ **THE SECOND RAIL IS EMAIL, IT IS ON, AND THAT REVERSES THE RULE THAT USED TO SIT HERE.**
@@ -683,25 +701,26 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   (possession of the code is the proof); a `signUp` path is not.** Nothing ships one today,
   which is why this is a note and not a defect.
 
-**Legal pages and 10DLC**
+**Legal pages — and the 10DLC rules are RETIRED, not merely satisfied**
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean URLs in both
-  `vercel.json` and the vite middleware so dev, preview and production agree about a URL printed on
-  an external carrier form.
-- ⚠️ **EACH REQUIRED SMS SENTENCE SITS ON ONE UNBROKEN SOURCE LINE WITH NO TAGS INSIDE IT.** A2P
-  10DLC review is often automated against raw HTML, and a line wrap fails the match — rejection
-  code **805**. **Do not re-wrap any of them to fit the column.**
-- ⚠️ **A CONSTRAINT RECORDED ABOVE ONE SENTENCE DOES NOT TRAVEL TO ITS NEIGHBOUR — WRITE IT ABOVE
-  EVERY SENTENCE IT BINDS.** All four required sentences are unbroken in both files, each with the
-  rule recorded directly above it. **An editor re-flowing a paragraph reads what is above the line
-  they are standing on**, so the duplication is the mechanism, not clutter.
-- ⚠️ **The two files word the consent sentence DIFFERENTLY and both are left exactly as they are.**
-  Reconciling them is a copy decision, not a wrap fix, and making it inside a 10DLC-shaped edit is
-  how a required element gets reworded by accident.
-- The pages must also carry: OTP purpose, that entering a number *constitutes consent*, one message
-  per sign-in request, STOP/HELP, "message and data rates may apply", and the processor list.
-  ⚠️ **Every one of those is a match target, so the unbroken-line rule is a property of the LIST,
-  not of the two sentences that happen to have notes above them.**
-- **The SMS consent line lives in `SignInForm`, not on the surrounding screen.**
+  `vercel.json` and the vite middleware so dev, preview and production agree about the URL.
+- ⛔ **THE SMS SECTIONS ARE GONE, 2026-08-19, AND THE UNBROKEN-LINE RULES WENT WITH THEM.** This
+  section used to hold four rules about keeping each required A2P 10DLC sentence on one unbroken
+  source line (rejection code **805**), which sentences were match targets, and that the two files
+  worded the consent sentence differently on purpose. **All of it described text that no longer
+  exists.** Phone sign-in is dead product-wide — see **Phone sign-in** — and both pages now state
+  that Kristy collects no phone numbers and sends no SMS.
+- ⚠️ **THE RULES ARE RECORDED AS RETIRED RATHER THAN DELETED, BECAUSE THE PAGES ARE STILL LIVE AND
+  THE TRAP IS UNCHANGED IF THE RAIL IS EVER REVIVED.** If it is: recover the sentences **from git
+  history at the commit that removed them**, not from one file, because the two wordings differed
+  deliberately; put the unbroken-line note **above every sentence it binds**, since a constraint
+  recorded above one sentence does not travel to its neighbour; and re-add the whole list — OTP
+  purpose, consent-by-entry, one message per request, STOP/HELP, rates, processors — because the
+  rule is a property of the LIST, not of the sentences that happen to carry notes.
+- ⛔ **DO NOT RE-ADD THEM TO PASS A REVIEW WHILE THE PROVIDER IS OFF.** That is a false collection
+  statement on a live page, in service of a registration for a rail nothing uses.
+- **The SMS consent line in `SignInForm` is in the frozen `client/src` and stays there** — frozen,
+  not endorsed. **Do not open the frozen client to finish this ruling.**
 
 **Money**
 
@@ -1161,16 +1180,21 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
   causes.** In range: every product whose `ingredients_lc` is not `en`.
   ⬆️ **THIS IS A PREREQUISITE, NOT ONLY A DEFECT: THE AISLE FIX IS UNSAFE WITHOUT IT.**
 
-- 🐞 ⏳ **`/privacy` AND `/terms` DESCRIBE AN SMS PRACTICE THE iOS CLIENT DOES NOT HAVE, AND THE APP
-  STORE IS ABOUT TO POINT AT THEM.** Both pages were written for A2P 10DLC review, and Sign in with
-  Apple replaced the phone rail on iOS, which has no phone field at all.
-  ⚠️ **THE OBVIOUS FIX IS THE DESTRUCTIVE ONE.** Deleting the SMS language breaks two live things:
-  `Auth.jsx` still calls `signInWithOtp({ phone })` and **`client/src` is frozen**, so the web rail is
-  permanent; and **10DLC is still in verification at Twilio**, where the carrier sentence's
-  one-unbroken-line shape is what passes an automated review (rejection code **805**). **The first
-  step is a product ruling, not an edit: is phone sign-in dead product-wide, or superseded only on
-  iOS?** The second is likelier and is the safe default — it makes the work an ADDITION (an Apple
-  section, the deletion disclosure) with nothing removed. `client/public/` only; separately proposed.
+- ✅ **CLOSED 2026-08-19 — THE PRODUCT RULING CAME FIRST AND IT WENT THE OTHER WAY.** This entry
+  said the first step was a ruling — *dead product-wide, or superseded only on iOS?* — and named
+  the second as "likelier and the safe default". **The ruling is DEAD PRODUCT-WIDE**, so the work
+  was a deletion rather than the addition this entry predicted. `/privacy` and `/terms` no longer
+  describe an SMS practice; both state that Kristy collects no phone numbers and sends no SMS.
+  ⚠️ **THE ENTRY'S OWN OBJECTION IS ANSWERED RATHER THAN OVERRULED, AND THE ANSWER IS THE PART
+  WORTH KEEPING.** It called deletion destructive because `Auth.jsx` still calls
+  `signInWithOtp({ phone })` in the frozen client, and because 10DLC was in verification. **The
+  first is not a live rail: the provider is `phone: false`, so that call cannot complete** — the
+  form is inert, and the page was therefore asserting a collection that **cannot occur**, which is
+  worse than a gap. The second is **moot on a dead rail** and the registration should be withdrawn.
+  ⛔ **Do not re-add the SMS text to pass a carrier review.** See **Phone sign-in** and **Legal
+  pages** for the recovery procedure if the rail is ever revived.
+  ⚠️ **STILL TRUE AND UNTOUCHED: the support-address gap above.** App Review reads that URL, and a
+  mailbox is what is missing — not a page edit.
 - ⏳ **DERIVE A BASELINE FROM THE DEVICE TRIP ARCHIVE.** `buildBaseline` is written, tested and
   correct with a permanently empty input; `GuestTripBook.archive` holds exactly the input shape it
   wants. Run that computation **in the client** for a guest with no account, no server change and no
