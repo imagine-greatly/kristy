@@ -43,10 +43,8 @@
   <style>
     /* ═════════════════════════════════════════════════════════════════════
        Kristy — grocery-coach landing page.
-       Every color + face below is lifted verbatim from the app's locked brand
-       tokens (client/src/lib/tokens.js), NOT re-picked. The two type voices are
-       the app's: Inter for everything factual/UI/ingredient, Playfair Display
-       *italic* (.voice) for Kristy's spoken/coaching lines.
+       Before editing the colors, the faces or any of the ported card blocks,
+       read docs/LANDING-PAGE-PROVENANCE.md in the application repository.
     ═════════════════════════════════════════════════════════════════════ */
     :root {
       /* Grounds */
@@ -104,7 +102,7 @@
     ::selection { background: var(--gold); color: var(--bg-deep); }
     a { color: inherit; }
 
-    /* Kristy's voice — Playfair Display italic. Mirrors `kristyVoice` in tokens.js. */
+    /* Kristy's voice — Playfair Display italic. See LANDING-PAGE-PROVENANCE.md. */
     .voice { font-family: var(--font-voice); font-style: italic; }
 
     /* ───────── Shared CTA button (gold, in Kristy's face) ───────── */
@@ -192,7 +190,7 @@
       color: var(--text-muted); letter-spacing: .02em; margin-bottom: 26px;
     }
     /* The headline IS the two-voice split: the category half factual (Inter), Kristy's
-       half in Playfair italic (kristyVoice). */
+       half in Playfair italic. See LANDING-PAGE-PROVENANCE.md. */
     .hero__title { line-height: 1.04; letter-spacing: -.01em; }
     .hero__lede {
       display: block; font-family: var(--font-ui); font-weight: 300;
@@ -224,8 +222,8 @@
     .hero__demo-cap { font-family: var(--font-ui); font-style: italic; font-size: 12px; color: var(--text-muted); }
 
     /* ═════════════════════════════ VERDICT CARD ═════════════════════════════
-       A faithful DOM port of client/src/components/ScanVerdictCard.jsx. Same
-       tokens, same structure: header · seal|bar · what's-inside · note · swap · ism. */
+       A ported card block. Same tokens, same structure: header · seal|bar ·
+       what's-inside · note · swap · ism. See LANDING-PAGE-PROVENANCE.md. */
     .vc {
       width: 100%; max-width: 420px; margin: 0 auto; box-sizing: border-box;
       display: flex; flex-direction: column; gap: 18px; padding: 18px;
@@ -287,9 +285,9 @@
     .vc__ism p { font-family: var(--font-voice); font-style: italic; font-size: 14px; line-height: 1.5; text-align: center; color: var(--text-muted); max-width: 320px; }
 
     /* ═════════════════════════════ COUNTER CARD ═════════════════════════════
-       A faithful DOM port of client/src/components/PerimeterAnswer.jsx — the answer
-       for the half of the store with no barcode. It gets the HERO slot, because the
-       unlabeled half is the differentiator and the scan verdict is table stakes. */
+       A ported card block — the answer for the half of the store with no barcode.
+       It gets the HERO slot, because the unlabeled half is the differentiator and
+       the scan verdict is table stakes. See LANDING-PAGE-PROVENANCE.md. */
     .pc {
       width: 100%; max-width: 420px; margin: 0 auto; box-sizing: border-box;
       display: flex; flex-direction: column; gap: 12px; padding: 18px;
@@ -435,7 +433,7 @@
     .screen__bar span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--text-muted); text-transform: uppercase; }
     .screen__body { padding: 18px 16px 22px; }
 
-    /* ── List (Beat 1) — DOM port of ListMoment.jsx ── */
+    /* ── List (Beat 1) — ported block ── */
     .lst__head { display: flex; align-items: center; gap: 10px; }
     .lst__title { font-family: var(--font-voice); font-style: italic; font-size: 24px; color: var(--text); }
     .lst__icon { color: var(--gold); display: flex; }
@@ -451,7 +449,7 @@
     .lst__name b { color: var(--gold); font-weight: 600; }
     .lst__x { flex: 0 0 auto; color: var(--text-muted); font-size: 16px; line-height: 1; }
 
-    /* ── Haul (Beat 3) — DOM port of HaulMoment.jsx scorecard ── */
+    /* ── Haul (Beat 3) — ported scorecard block ── */
     .haul__head { display: flex; flex-direction: column; gap: 4px; }
     .haul__title { font-family: var(--font-voice); font-style: italic; font-size: 24px; color: var(--text); }
     .haul__sub { font-family: var(--font-ui); font-size: 13.5px; color: var(--text-muted); }

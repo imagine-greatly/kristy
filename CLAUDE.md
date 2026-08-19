@@ -712,6 +712,13 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
 
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean URLs in both
   `vercel.json` and the vite middleware so dev, preview and production agree about the URL.
+- ⚠️ **THE SAME RULE NOW BINDS `client/public/landing.html`, 2026-08-19.** It printed the app's
+  internal component map in comments — the brand-token module, `ScanVerdictCard`,
+  `PerimeterAnswer`, `ListMoment`, `HaulMoment` — on the public front door. **Nothing was false;
+  the audience was wrong.** Moved to `docs/LANDING-PAGE-PROVENANCE.md`, pointers left in place,
+  **comment-only so the rendered page is byte-identical.** ⛔ **No repo path, component filename
+  or token identifier goes back into that file.** ⚠️ **Its POSITIONING comments were deliberately
+  left** — a separate call, recorded in the doc, **not a later tidy-up.**
 - ⚠️ **A SERVED PAGE IS NOT A SOURCE FILE, AND "EACH FILE CARRIES ITS RULING" DOES NOT APPLY TO
   ONE.** That rule is good and unchanged **for files nobody outside the project reads**. These are
   read by App Review and by anyone who opens source, and they carried two long HTML comments
@@ -1302,6 +1309,7 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 | `docs/PASS3-HANDOFF.md` | §14 is the full queue in order; §13 is that session's findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema compared against the migration files. |
 | `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** The five answers, the inverted paid boundary, the five open decisions. |
+| `docs/LANDING-PAGE-PROVENANCE.md` | **The account behind `client/public/landing.html`** — what the ported blocks must stay true to, the removed comments verbatim, and the positioning comments left in on purpose. |
 | `docs/LEGAL-PAGE-RULINGS.md` | **The account behind `/privacy` and `/terms`** — the phone ruling, the retired 10DLC rules and how to recover them, the delete door. Moved out of the served HTML. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
