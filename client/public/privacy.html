@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Kristy Approved</title>
-  <meta name="description" content="How Kristy Approved collects, uses, and protects your data — including phone numbers used for SMS sign-in codes on the website, and Sign in with Apple in the iPhone app." />
+  <meta name="description" content="How Kristy Approved collects, uses, and protects your data, and how Sign in with Apple works in the iPhone app." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://kristyapproved.vercel.app/privacy" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -141,7 +141,7 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 30, 2026</p>
+    <p class="updated">Last updated: August 19, 2026</p>
 
     <p class="draft">
       <strong>Working version.</strong> This policy accurately describes how Kristy
@@ -156,119 +156,48 @@
       we share it with, and what you can do about it.
     </p>
 
-    <h2>How you sign in, and why this page describes two ways</h2>
+    <!-- ⚠️ RULED 2026-08-19: PHONE SIGN-IN IS DEAD PRODUCT-WIDE, NOT SUPERSEDED ONLY ON iOS.
+         This block replaces two SMS sections and an A2P 10DLC pledge that were kept here on
+         purpose until that ruling, under a "do not delete, the web rail is live" note. THAT
+         NOTE IS SUPERSEDED AND IS NOT TO BE RESTORED. What settles it is not a preference:
+
+           * Supabase's phone provider is OFF, measured live and cache-busted 2026-08-18
+             (phone: false, apple: true, email: true). No SMS can be sent.
+           * NOBODY HAS EVER SIGNED IN, ON ANY RAIL, so there are no numbers held and no
+             users to migrate.
+           * client/src is frozen and the web client becomes a landing page. Auth.jsx still
+             calls signInWithOtp, and with the provider off that call cannot complete — an
+             inert form, not a live rail.
+
+         So the deleted sections did not describe a practice that had ended; they described
+         a practice that CANNOT HAPPEN. A privacy policy asserting a data collection that
+         does not occur is worse than one that is silent about it.
+
+         ⚠️ THE CONSEQUENCE, STATED RATHER THAN DISCOVERED: the deleted sentences were the
+         REQUIRED A2P 10DLC elements, each kept on one unbroken source line because carrier
+         review is often automated against raw HTML (rejection code 805). A 10DLC
+         registration was IN VERIFICATION at Twilio. With phone sign-in dead product-wide
+         that registration is moot and should be withdrawn — but if it is ever revived, this
+         page needs those sentences back in their unbroken form. They are in git history at
+         the commit that removed them. DO NOT re-add them to satisfy a review while the
+         provider is off: that would put a false collection statement back on a live page. -->
+
+    <h2>How you sign in</h2>
     <p>
-      Kristy has no passwords on either platform. How you prove an account is yours depends
-      on where you are using it, so the two sections below describe two different sign-in
-      methods. <strong>Only one of them applies to you.</strong>
+      Kristy has no passwords. <strong>The Kristy iPhone app signs you in with
+      Sign in with Apple, and that is the only way to sign in.</strong> The section below
+      describes exactly what Apple gives us.
     </p>
-    <ul>
-      <li>
-        <strong>The website at kristyapproved.com</strong> signs you in with your mobile
-        phone number and a one-time code sent by SMS. The next section is about that.
-      </li>
-      <li>
-        <strong>The Kristy iPhone app</strong> signs you in with
-        <strong>Sign in with Apple</strong>. <strong>It has no phone number field and never
-        asks for your number</strong>, so nothing in the SMS section applies to it. The
-        section after next is about that.
-      </li>
-    </ul>
-
-    <!-- ⚠️ DO NOT DELETE THE SMS SECTIONS BECAUSE THE iOS APP DOES NOT USE SMS.
-         The two rails are live at the same time and this page covers both. The website
-         still signs in by phone code — client/src is frozen and Auth.jsx still calls
-         signInWithOtp, so that rail is permanent, not legacy. Everything from here to the
-         end of the pledge block below is also the text A2P 10DLC review reads, and that
-         registration is IN VERIFICATION, not withdrawn. Removing it fails the review and
-         breaks the live web rail's disclosure in the same edit.
-         Add for iOS; remove nothing. -->
-
-    <h2>Phone numbers and SMS messages <span class="scope">— the website</span></h2>
-
-    <h3>What we collect and why</h3>
     <p>
-      <strong>We collect your mobile phone number so we can send you a one-time
-      verification code (OTP) by SMS to sign you in to your account.</strong> Kristy has
-      no passwords: the code is how you prove the account is yours.
-    </p>
-
-    <h3>How you opt in</h3>
-    <p>
-      <!-- ⚠️ ONE UNBROKEN SOURCE LINE, NO TAGS INSIDE THE SENTENCE. DO NOT RE-WRAP IT TO FIT
-           THE COLUMN, AND DO NOT REWORD IT FOR iOS.
-           The consent-by-entry statement is a REQUIRED A2P 10DLC element and review is often
-           automated against RAW HTML, so a line wrap a human reader never notices fails the
-           match — rejection code 805.
-           ⚠️ THIS ONE WAS WRAPPED IN BOTH FILES until 2026-08-11, unlike the other two, so
-           there was no unbroken sibling anywhere on either page to notice it against. That is
-           the version of this defect most likely to survive indefinitely: nothing on the page
-           disagreed with it. Third instance; see the twin in terms.html, whose wording differs
-           and is deliberately left alone. -->
-      <strong>Entering your phone number on the sign-in screen and requesting a code constitutes your consent to receive a one-time verification code by SMS at that number.</strong>
-      No other consent is bundled into it, and you are not enrolled in
-      any marketing or promotional messaging by signing in.
+      <strong>We do not collect phone numbers and we do not send SMS messages.</strong>
+      Kristy has no text-message sign-in on any platform: not in the iPhone app, which has
+      no phone number field at all, and not on this website. An earlier version of this page
+      described a phone-code sign-in for the website; <strong>that method was retired before
+      anyone used it</strong>, and nothing here collects, stores, or transmits a phone
+      number.
     </p>
 
-    <h3>Message frequency</h3>
-    <p>
-      <strong>One message per sign-in request.</strong> You receive a verification code
-      only when you ask for one. We do not send recurring, promotional, or marketing
-      messages.
-    </p>
-
-    <h3>How you opt out, and how to get help</h3>
-    <p>
-      <strong>Reply STOP to any message to opt out</strong> and you will receive no
-      further SMS messages from us. <strong>Reply HELP for help</strong>, or email us at
-      <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
-      <strong>Message and data rates may apply.</strong>
-      <!-- ⚠️ THE NEXT SENTENCE IS ONE UNBROKEN SOURCE LINE WITH NO TAGS INSIDE IT. DO NOT
-           RE-WRAP IT TO FIT THE COLUMN, AND DO NOT REWORD IT FOR iOS.
-           It is a REQUIRED A2P 10DLC element, and review is often automated against RAW
-           HTML — a line wrap a human reader would never notice fails the match, rejection
-           code 805. It is the same constraint as the do-not-sell sentence below, and it
-           was NOT being kept here: this sentence was wrapped across two source lines until
-           2026-08-11, while the "Message and data rates" sentence immediately above it was
-           unbroken and its twin in terms.html was wrapped instead. EACH FILE KEPT THE RULE
-           FOR ONE SENTENCE AND BROKE IT FOR THE OTHER — a constraint recorded above one
-           sentence does not travel to its neighbour, so it is written above both.
-           See the matching note below, and the twin in terms.html. -->
-      Carriers are not liable for delayed or undelivered messages.
-      If you opt out you can still use the app, but you
-      will not be able to sign in by SMS code until you opt back in.
-    </p>
-
-    <h3>Who delivers the messages</h3>
-    <p>
-      SMS delivery is handled on our behalf by <strong>Twilio</strong>, through our
-      authentication provider Supabase. Your phone number and the verification code are
-      passed to Twilio so the message can be sent. Twilio acts as our service provider and
-      does not use your number for its own purposes.
-    </p>
-
-    <h2>We do not sell or share your phone number <span class="scope">— the website</span></h2>
-
-    <div class="pledge">
-      <!-- ⚠️ DELIBERATELY ON ONE UNBROKEN SOURCE LINE, WITH NO TAGS INSIDE THE SENTENCE.
-           DO NOT RE-WRAP IT TO FIT THE COLUMN WIDTH, AND DO NOT REWORD IT FOR iOS.
-           Carrier / A2P 10DLC review is often automated, and a scanner matching against
-           raw HTML fails on a line wrap that a human reader would never notice —
-           rejection code 805. The registration is IN VERIFICATION at Twilio right now,
-           so this is a live dependency and not a historical one.
-           It is about the WEBSITE's phone rail, which is still the only way to sign in
-           there. The iPhone app using Sign in with Apple changes nothing about it. -->
-      <p><strong>We do not sell or share your phone number, mobile information, or SMS opt-in consent with third parties or affiliates for marketing purposes.</strong></p>
-      <p>
-        Your phone number is used solely to authenticate you and to deliver the sign-in
-        codes you request. Mobile opt-in data and consent are never shared with any
-        third party or affiliate for marketing, promotional, or lead-generation
-        purposes. The only party that receives your number is our SMS delivery provider,
-        acting under contract, for the sole purpose of sending the code you asked for.
-      </p>
-    </div>
-
-    <h2>Sign in with Apple <span class="scope">— the iPhone app</span></h2>
+    <h2>Sign in with Apple</h2>
 
     <h3>What we receive, and what we do not</h3>
     <p>
@@ -313,8 +242,8 @@
     <h3>What the rest of this page covers</h3>
     <p>
       Everything below this point — what else we collect, how we use it, who we share it
-      with, how long we keep it, and how you delete it — <strong>applies to both the website
-      and the iPhone app equally.</strong> Only the sign-in method differs.
+      with, how long we keep it, and how you delete it — <strong>applies to the website and
+      the iPhone app equally.</strong>
     </p>
 
     <h2>What else we collect</h2>
@@ -390,8 +319,7 @@
     <div class="tablewrap">
       <table>
         <tr><th>Provider</th><th>What it handles</th></tr>
-        <tr><td><strong>Twilio</strong></td><td>SMS delivery of your sign-in codes, on the website only</td></tr>
-        <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, your phone number or email address depending on how you sign in, preferences, list, and history</td></tr>
+        <tr><td><strong>Supabase</strong></td><td>Database and authentication — your account, your email address, preferences, list, and history</td></tr>
         <tr><td><strong>Vercel</strong></td><td>Web hosting and web analytics</td></tr>
         <tr><td><strong>Railway</strong></td><td>Application server</td></tr>
         <tr><td><strong>Anthropic</strong></td><td>AI processing of your questions, coaching text, and label photos</td></tr>
@@ -471,7 +399,7 @@
 
     <h2>Contact</h2>
     <p>
-      Questions about privacy, or about SMS messages? Email
+      Questions about privacy? Email
       <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
     </p>
 
