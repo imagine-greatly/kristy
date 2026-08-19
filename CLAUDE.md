@@ -300,8 +300,9 @@ only by prompt.
    split by TYPE or USE CASE is discrimination and stays; one conditioned on the shopper's
    budget, the store's stock or their spare time is a retreat and does not. Firmer is
    never looser with facts — **if a claim needs a false mechanism to sound convincing, the
-   claim is wrong.** Both enforced by `counterCardLint.js` over all 82 cards, curated and
-   generated.
+   claim is wrong.** Both enforced by `counterCardLint.js` over the **whole** corpus, curated and
+   generated. **The count is stated once, in Infrastructure state** — it drifted here for days
+   because three places held it.
 
 8. **No price, ever.** Kristy does not know what anything costs. Budget means
    cost-conscious food *selection*. Relative terms only, never a number.
@@ -317,9 +318,10 @@ only by prompt.
 - **Server is authoritative** (`server/`, Railway). KB + matching + tier scoring + the
   claim-locked model calls. Clients are thin renderers.
 - **Two knowledge bases, never merged.**
-  `kristy_ingredient_knowledge_base.json` (74 entries) scores products — it is the only
-  thing the verdict engine sees. `kristy_perimeter_kb.json` (82 entries) answers
-  *questions* about the counter and is **never** fed to the engine.
+  `kristy_ingredient_knowledge_base.json` (74 entries, measured 2026-08-19, same on both
+  branches) scores products — it is the only thing the verdict engine sees.
+  `kristy_perimeter_kb.json` answers *questions* about the counter and is **never** fed to the
+  engine; **its count is stated once, in Infrastructure state.**
 - **Web SPA is the reference client**; `mobile/` (Expo/RN) is the App Store port.
 - ⚠️ **`GuestApp` IS PRODUCTION. `App`'s own surface stack has never rendered for a real
   visitor.** Phone sign-in is blocked on 10DLC, so `session` is null for everybody, so
@@ -716,8 +718,11 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   internal component map in comments on the public front door. **Nothing was false; the audience
   was wrong.** Moved to `docs/LANDING-PAGE-PROVENANCE.md`, pointers left in place, **comment-only
   so the rendered page is byte-identical.** ⛔ **No repo path, component filename or token
-  identifier goes back into that file.** ⚠️ **Its POSITIONING comments were deliberately
-  left** — a separate call, recorded in the doc, **not a later tidy-up.**
+  identifier goes back into that file.** ✅ **RULED 2026-08-19: ITS POSITIONING COMMENTS STAY, AND
+  THAT IS NOW SETTLED RATHER THAN DEFERRED.** The doc had left it open as a proposal; **the owner
+  closed it — anyone who cares reads the positioning off the RENDERED page in ten seconds, so
+  removing the comments buys nothing.** ⛔ **Do not re-propose it, and do not strip them as a side
+  effect of some later edit.**
 - ⛔ **DO NOT WRITE REASONING BACK INTO THESE PAGES.** Not a measurement, not a provider state, not
   a business fact, not a "why we removed X". **If a session editing the page needs to know it, the
   pointer is what it needs to find.** ✅ Side effect worth keeping: the two comments each said
@@ -740,8 +745,15 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   the comment move is COMMITTED AND UNPUSHED, so the served bytes still carry the old comments.**
   **The pages a shopper or a reviewer READS are byte-identical to what is committed** — proven by
   stripping comments from both files and diffing against `HEAD`, identical — so the divergence is
-  invisible content only. **It publishes on the next push of these files, and the fetch-verify
-  must be re-run then.**
+  invisible content only. **Re-verified 2026-08-19 on all three files, and the strip must cover
+  HTML *and* CSS comments** — `landing.html`'s pointer lives in a `/* */` block inside `<style>`,
+  so an HTML-only strip reports a false difference. **It publishes on the next push of these
+  files, and the fetch-verify must be re-run then.**
+  ⏸ ⛔ **AND IT IS NOT PUSHED YET ON PURPOSE — RULED 2026-08-19: THE COMMENT MOVE IS HELD UNTIL
+  THE `hello@` MAILBOX RESOLVES.** The gate is the support-address defect under **Open items**,
+  not anything wrong with the move. **Do not push these files to "finish the fetch-verify"** — the
+  verify is the *consequence* of the push, never a reason for one, and the pages a reviewer reads
+  are already correct.
 
 **Money**
 
@@ -1070,10 +1082,15 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
 
 ### Held deliberately — do not "discover" these and land them
 
-- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE. What is held is the IMPORT ROUTE.** Nothing can
+- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, AND THERE ARE NOW TWO HOLDS ON ONE STACK WITH
+  DIFFERENT GATES — DO NOT COLLAPSE THEM INTO ONE.** What is held is **(a) the IMPORT ROUTE** and
+  **(b) the legal/landing COMMENT MOVE**. Nothing can
   reach `POST /api/trips/import` (`requireAuth`, and no rail has ever produced an account), and
   pushing this repo deploys. **Full reasoning: `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 — one
   queue, not two. Do not push it to be helpful.**
+  ⛔ **(b) IS GATED ON THE `hello@` MAILBOX, RULED 2026-08-19** — rule and reasoning under **Legal
+  pages**. ⚠️ **A stack is pushed as a stack, so clearing ONE gate releases NOTHING.** Both gates
+  open before `main` moves; **an urgent item above them cherry-picks past, per the rule below.**
   ⚠️ **Its test condition cleared and it is still held.** A cleared blocker is not an approval; it
   gets reviewed against what the iOS client actually needs before it ships.
   ⚠️ **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase or a
@@ -1186,9 +1203,16 @@ before starting, not after.**
   on production. **"The wall is down" is true of the DB and only the DB.**
 - ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
   push. Code degrades gracefully without it. Everything else is applied — `docs/SCHEMA-AUDIT.md`.
-- ⚠️ **`counter_cards` is 82 curated + generated rows, and a generated row is written by the pipeline
-  and never appears in a diff — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
-  "81 + 1" for eight days while two more were live.
+- ⚠️ **THE CORPUS COUNT LIVES HERE AND NOWHERE ELSE, AND A GENERATED ROW IS WRITTEN BY THE PIPELINE
+  AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
+  "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or
+  by parse:**
+  - **LIVE `counter_cards`: 85 rows — 82 `curated` + 3 `generated`.**
+  - **`kristy_perimeter_kb.json`: 83 entries on `main` (the held stack), 82 on `origin/main`.**
+  - ⚠️ **THOSE TWO ARE NOT IN CONFLICT AND THE GAP IS THE POINT: THE 83RD CARD IS COMMITTED AND
+    NOT MIGRATED** (`8ca62ab`, the first brand-naming card), so the KB — the source of record —
+    is one ahead of the table, which is what ships. **This is the committed/migrated pair doing
+    exactly what it is for.** A session finding 83 ≠ 82 has found the migration queue, not a bug.
 - ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT PHONE.**
   See **Phone sign-in**, which is **DEAD PRODUCT-WIDE, not pending**.
   ⚠️ **`GET /auth/v1/settings` IS STRUCTURALLY BLIND TO THE CLIENT-ID QUESTION** — a boolean per

@@ -1040,9 +1040,12 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 - ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
   push. Code degrades gracefully without it. Everything else is applied — audit in
   `docs/SCHEMA-AUDIT.md`.
-- ⚠️ **`counter_cards` is 82 curated + generated rows, and a generated row is written by the pipeline
-  and never appears in a diff — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
-  "81 + 1" for eight days while two more were live.
+- ⚠️ **THE CORPUS COUNT IS NOT RESTATED HERE ON PURPOSE — IT LIVES IN `CLAUDE.md` UNDER
+  Infrastructure state, IN ONE PLACE.** A generated row is written by the pipeline and never
+  appears in a diff, so **RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
+  "81 + 1" for eight days while two more were live, **and then held a stale `82 curated` while
+  `CLAUDE.md` had been corrected — the twin-copy defect, on the very number whose whole rule is
+  that it drifts.** That is why the figure now has exactly one home.
 - ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT PHONE.**
   See **Phone sign-in**, which is **DORMANT, not pending**.
   ✅ **Provider state measured on the live project: `apple: true`, `phone: false`, `email: false`** —

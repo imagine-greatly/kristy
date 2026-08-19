@@ -185,8 +185,11 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   `PerimeterAnswer`, `ListMoment`, `HaulMoment` — on the public front door. **Nothing was false;
   the audience was wrong.** Moved to `docs/LANDING-PAGE-PROVENANCE.md`, pointers left in place,
   **comment-only so the rendered page is byte-identical.** ⛔ **No repo path, component filename
-  or token identifier goes back into that file.** ⚠️ **Its POSITIONING comments were deliberately
-  left** — a separate call, recorded in the doc, **not a later tidy-up.**
+  or token identifier goes back into that file.** ✅ **RULED 2026-08-19: ITS POSITIONING COMMENTS
+  STAY.** This entry previously read *"deliberately left — a separate call"*, which described an
+  OPEN question; **the owner closed it.** The reasoning: **the positioning is legible off the
+  rendered page in about ten seconds to anyone who cares, so stripping the comments buys nothing.**
+  ⛔ **Do not re-propose it.** Full ruling: `docs/LANDING-PAGE-PROVENANCE.md`.
 - ⚠️ **A SERVED PAGE IS NOT A SOURCE FILE, AND "EACH FILE CARRIES ITS RULING" DOES NOT APPLY TO
   ONE.** That rule is good and unchanged **for files nobody outside the project reads**. These are
   read by App Review and by anyone who opens source, and they carried two long HTML comments

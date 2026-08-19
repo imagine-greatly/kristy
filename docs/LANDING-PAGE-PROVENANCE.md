@@ -97,12 +97,18 @@ removed them; kept here so a reader never has to.
 
 ---
 
-## What was deliberately NOT removed, and why it is a separate call
+## What was deliberately NOT removed — RULED, not merely deferred
 
 ⚠️ **THE PAGE STILL CARRIES ITS POSITIONING REASONING IN COMMENTS, AND THAT WAS NOT THIS
 CHANGE'S SCOPE.** *"the reason to be here"*, *"table stakes and every scanner has one"*, *"the
 category is named exactly ONCE on this page"*, *"louder than the scan beat on purpose"*. **This
 is marketing strategy, legible to a competitor reading source.** It is a different question from
 the source map — it is arguably *fine* on a marketing page, where the argument is the product —
-and **it is a judgment for the owner, not a tidy-up.** Recorded here so it is a decision rather
-than an oversight. **Do not remove it as a side effect of some later edit; propose it.**
+and **it is a judgment for the owner, not a tidy-up.**
+
+✅ **THE OWNER RULED IT 2026-08-19: THE POSITIONING COMMENTS STAY.** The reasoning, which is what
+stops it being re-opened: **the positioning is legible off the RENDERED page in about ten seconds
+to anyone who cares**, so stripping the comments **buys nothing** while costing the reasoning that
+makes the page editable. ⛔ **This section is now a CLOSED ruling. Do not remove them as a side
+effect of a later edit, and do not propose it again** — the paragraph above is the argument that
+was already heard and answered, not a live question.
