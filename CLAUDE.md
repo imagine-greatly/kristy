@@ -705,48 +705,44 @@ Read the account before you change a rule; the rule alone is enough to obey one.
   (possession of the code is the proof); a `signUp` path is not.** Nothing ships one today,
   which is why this is a note and not a defect.
 
-**Legal pages — and the 10DLC rules are RETIRED, not merely satisfied**
+**Legal pages — SERVED TO THE PUBLIC, AND THE ACCOUNT NO LONGER LIVES IN THEM**
+
+*Every ruling behind these pages — phone sign-in, the retired 10DLC rules and their recovery
+procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.md`.*
+
 - `/privacy` and `/terms` are **static pages in `client/public/`**, rewritten to clean URLs in both
   `vercel.json` and the vite middleware so dev, preview and production agree about the URL.
-- ⛔ **THE SMS SECTIONS ARE GONE, 2026-08-19, AND THE UNBROKEN-LINE RULES WENT WITH THEM.** This
-  section used to hold four rules about keeping each required A2P 10DLC sentence on one unbroken
-  source line (rejection code **805**), which sentences were match targets, and that the two files
-  worded the consent sentence differently on purpose. **All of it described text that no longer
-  exists.** Phone sign-in is dead product-wide — see **Phone sign-in** — and both pages now state
-  that Kristy collects no phone numbers and sends no SMS.
-- ⚠️ **THE RULES ARE RECORDED AS RETIRED RATHER THAN DELETED, BECAUSE THE PAGES ARE STILL LIVE AND
-  THE TRAP IS UNCHANGED IF THE RAIL IS EVER REVIVED.** If it is: recover the sentences **from git
-  history at the commit that removed them**, not from one file, because the two wordings differed
-  deliberately; put the unbroken-line note **above every sentence it binds**, since a constraint
-  recorded above one sentence does not travel to its neighbour; and re-add the whole list — OTP
-  purpose, consent-by-entry, one message per request, STOP/HELP, rates, processors — because the
-  rule is a property of the LIST, not of the sentences that happen to carry notes.
-- ⛔ **DO NOT RE-ADD THEM TO PASS A REVIEW WHILE THE PROVIDER IS OFF.** That is a false collection
-  statement on a live page, in service of a registration for a rail nothing uses.
+- ⚠️ **A SERVED PAGE IS NOT A SOURCE FILE, AND "EACH FILE CARRIES ITS RULING" DOES NOT APPLY TO
+  ONE.** That rule is good and unchanged **for files nobody outside the project reads**. These are
+  read by App Review and by anyone who opens source, and they carried two long HTML comments
+  holding the provider measurements, *"nobody has ever signed in, on any rail"*, and the state of
+  a Twilio registration. **Nothing in them was false; the audience was wrong, and false is not the
+  test for a served page.** Moved to `docs/LEGAL-PAGE-RULINGS.md` 2026-08-19, verbatim in its
+  appendix. **Each page keeps a ONE-LINE POINTER and nothing else.**
+- ⛔ **DO NOT WRITE REASONING BACK INTO THESE PAGES.** Not a measurement, not a provider state, not
+  a business fact, not a "why we removed X". **If a session editing the page needs to know it, the
+  pointer is what it needs to find.** ✅ Side effect worth keeping: the two comments were
+  deliberately different and each said *"if you change one, change both"* — the twin-copy shape
+  this repo has been burned by. **One doc and two identical pointers cannot disagree.**
+- ⛔ **THE SMS SECTIONS ARE GONE, 2026-08-19. DO NOT RE-ADD THEM TO PASS A REVIEW WHILE THE
+  PROVIDER IS OFF** — that is a false collection statement on a live page, for a registration for
+  a rail nothing uses. Both pages state Kristy collects no phone numbers and sends no SMS. **The
+  unbroken-line/805 rules are RETIRED, not deleted** — recovery procedure in the doc, and it is
+  recovery **from `9355a39`**, per file, because the two wordings differed on purpose.
 - **The SMS consent line in `SignInForm` is in the frozen `client/src` and stays there** — frozen,
   not endorsed. **Do not open the frozen client to finish this ruling.**
-- ✅ **PUBLISHED AND VERIFIED SERVED, 2026-08-19. The pages were CHERRY-PICKED PAST THE HOLD**
-  (`9355a39` + `293a63f` on `origin/main`) rather than waiting for the stack: a live compliance
-  page asserting a collection that cannot occur outranks the tidiness of the hold, and App
-  Review reads these URLs. **Verified by FETCHING, not by reading source** — `/privacy` and
-  `/terms` on **both** `kristyapproved.com` and the `.vercel.app` alias return 200 and are
-  **byte-identical to the committed files**; the SMS strings are absent from the served bytes.
-  The stack was rebased afterwards and `28fc3ff` reduced to its CLAUDE.md half, so it no longer
-  claims what it shipped.
-- ⛔ **`/privacy` NO LONGER CLAIMS A DELETE DOOR ON THE WEBSITE, AND DO NOT RESTORE ONE.** It
-  said *"This is the same door on the website and in the iPhone app"* and *"that door works the
-  same on both platforms"*. **Both false, and the page contradicted itself two screens earlier**,
-  where it already says Sign in with Apple in the iPhone app is the only way to sign in.
-  **Measured before changing it:** the web door is `App.jsx:1298`, inside the branch
-  `App.jsx:975` returns past for every real visitor, and `GuestApp` has no settings or delete
-  door at all — unreachable twice over. **The iPhone app is the only route**
-  (`DeleteAccountSection.swift` → `DELETE /api/account`).
-  ⚠️ **THE NON-OBVIOUS HALF WAS THE SCOPE PARAGRAPH**, which listed *"how you delete it"* among
-  the things applying to website and app **equally** — now the one thing that does not, so
-  deletion is carved out **by name** rather than dropped silently.
-  ⚠️ **This becomes wrong again the day the web client gets a working sign-in.** It is a
-  landing page today; if that changes, this paragraph is the one to re-read.
-
+- ⛔ **`/privacy` CLAIMS NO DELETE DOOR ON THE WEBSITE, AND DO NOT RESTORE ONE.** The iPhone app is
+  the only route (`DeleteAccountSection.swift` → `DELETE /api/account`); the web door is
+  unreachable twice over, measured. Deletion is carved out of the scope paragraph **by name**.
+  ⚠️ **This becomes wrong again the day the web client gets a working sign-in.**
+- ✅ **PUBLISHED AND VERIFIED SERVED, 2026-08-19**, cherry-picked past the hold (`9355a39` +
+  `293a63f`), verified **by FETCHING** on both `kristyapproved.com` and the `.vercel.app` alias.
+  ⚠️ **THAT VERIFICATION IS NOW ONE COMMIT STALE, DELIBERATELY, AND HERE IS THE PRECISE STATE:
+  the comment move is COMMITTED AND UNPUSHED, so the served bytes still carry the old comments.**
+  **The pages a shopper or a reviewer READS are byte-identical to what is committed** — proven by
+  stripping comments from both files and diffing against `HEAD`, identical — so the divergence is
+  invisible content only. **It publishes on the next push of these files, and the fetch-verify
+  must be re-run then.**
 **Money**
 
 ⚠️ **THE PRICING MODEL IS LOCKED AND NOTHING BELOW IT IS BUILT. THE RULES IN THIS SECTION
@@ -1306,6 +1302,7 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 | `docs/PASS3-HANDOFF.md` | §14 is the full queue in order; §13 is that session's findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema compared against the migration files. |
 | `docs/PRICING-MODEL.md` | **The locked pricing model, and NOTHING in it is built.** The five answers, the inverted paid boundary, the five open decisions. |
+| `docs/LEGAL-PAGE-RULINGS.md` | **The account behind `/privacy` and `/terms`** — the phone ruling, the retired 10DLC rules and how to recover them, the delete door. Moved out of the served HTML. |
 | `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
 | `docs/LIST-CREATION-AUDIT.md` | §C is the measurement the anti-personalization rule tells you to quote. |

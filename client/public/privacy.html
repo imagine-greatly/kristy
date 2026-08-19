@@ -156,31 +156,8 @@
       we share it with, and what you can do about it.
     </p>
 
-    <!-- ⚠️ RULED 2026-08-19: PHONE SIGN-IN IS DEAD PRODUCT-WIDE, NOT SUPERSEDED ONLY ON iOS.
-         This block replaces two SMS sections and an A2P 10DLC pledge that were kept here on
-         purpose until that ruling, under a "do not delete, the web rail is live" note. THAT
-         NOTE IS SUPERSEDED AND IS NOT TO BE RESTORED. What settles it is not a preference:
-
-           * Supabase's phone provider is OFF, measured live and cache-busted 2026-08-18
-             (phone: false, apple: true, email: true). No SMS can be sent.
-           * NOBODY HAS EVER SIGNED IN, ON ANY RAIL, so there are no numbers held and no
-             users to migrate.
-           * client/src is frozen and the web client becomes a landing page. Auth.jsx still
-             calls signInWithOtp, and with the provider off that call cannot complete — an
-             inert form, not a live rail.
-
-         So the deleted sections did not describe a practice that had ended; they described
-         a practice that CANNOT HAPPEN. A privacy policy asserting a data collection that
-         does not occur is worse than one that is silent about it.
-
-         ⚠️ THE CONSEQUENCE, STATED RATHER THAN DISCOVERED: the deleted sentences were the
-         REQUIRED A2P 10DLC elements, each kept on one unbroken source line because carrier
-         review is often automated against raw HTML (rejection code 805). A 10DLC
-         registration was IN VERIFICATION at Twilio. With phone sign-in dead product-wide
-         that registration is moot and should be withdrawn — but if it is ever revived, this
-         page needs those sentences back in their unbroken form. They are in git history at
-         the commit that removed them. DO NOT re-add them to satisfy a review while the
-         provider is off: that would put a false collection statement back on a live page. -->
+    <!-- Before editing this page — and before adding anything about text-message sign-in —
+         read docs/LEGAL-PAGE-RULINGS.md in the application repository. -->
 
     <h2>How you sign in</h2>
     <p>
