@@ -763,10 +763,19 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
 - **THE COUNTER CARRIES NO ASK, ANYWHERE.** It is free as a conversion argument, not as
   generosity: a locked app gets deleted and a deleted app never converts. It is deliberately a
   reference book next to something they have already had, **and that gap is the pitch.**
-- ⚠️ **NOBODY CAN BUY ANYTHING TODAY, UNDER ANY MODEL, AND THIS OUTRANKS THE MODEL.**
-  `Purchasing.isAvailable` is constant false (no adapter), `canPurchase` is false for every
-  real visitor, and **Sign in with Apple has never completed one token exchange.** The adapter
-  and one real sign-in are upstream of all of it.
+- ⚠️ **NOBODY CAN BUY ANYTHING TODAY, UNDER ANY MODEL, AND THIS OUTRANKS THE MODEL.** The
+  conclusion is unchanged; **one of its two stated reasons went stale and is corrected here.**
+  ✅ **THE ADAPTER LANDED 2026-08-15 AND THIS LINE SAID OTHERWISE FOR FOUR DAYS.**
+  `Purchasing.isAvailable` is **no longer constant false**: `RevenueCatProvider` is injected in
+  `KristyApp.provider()` and `KRISTY_REVENUECAT_KEY` is a real `appl_` key in
+  `Config/Base.xcconfig`. **Do not read this bullet as "build the adapter" — it is built, and
+  rebuilding it is the cost of leaving the line wrong.** (It still returns `nil` deliberately
+  under a local StoreKit configuration — *a till that cannot ring must not paint* — which is a
+  guard, not an absence.)
+  ⛔ **WHAT ACTUALLY BLOCKS IT IS THE ACCOUNT, AND ONLY THE ACCOUNT.** `canPurchase` is
+  `identity == .member`, every real visitor is a guest, and **Sign in with Apple has never
+  completed one token exchange.** So **one real sign-in is upstream of all of it** — one act,
+  not two, and it needs a device.
 
 *The paid boundary as it ships today*
 - **THE PAID BOUNDARY IS A SERVER BOUNDARY.** Free forever, on every surface: the card SUMMARY
