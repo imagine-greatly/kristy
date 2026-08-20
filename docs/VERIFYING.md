@@ -110,6 +110,47 @@
   READ.** Conflating the two exempted `server/index.js` — outside every guarded prefix, and
   the file that mounts every route — from the first draft of this guard, which therefore
   missed the exact import that caused the incident. Sources are every tracked code file.
+- ⚠️ **THE SIXTH MEMBER, AND THE FIRST POINTED AT A DELIVERABLE RATHER THAN A TEST: A SHOT
+  WITH NO CARDS, AND IT LOOKED FINE.** Found 2026-08-20 while shooting the App Store
+  screenshots. `AppStoreShots.testSlot1Dashboard` posed the dashboard, cleared the tab bar,
+  froze the status bar at 9:41 and captured 1320 × 2868 of a **bare checklist** — every row
+  uncarded, no eyebrow, no do line, no note. **Nothing failed and nothing could have.** The
+  app launched, the fixture loaded, the anchor was on screen, the geometry was clean and the
+  capture was written. The artifact was a screenshot of a to-do app, and slot 1 is the shot
+  whose entire job is to say *this is not a to-do app*.
+
+  **The cause is the attach bucket and it is the operational half of this entry.** Four runs
+  inside forty-five minutes spent `/guest/list/attach` — `cartBuildLimited`, 20/hour, and one
+  suite run makes ~23 attaches (`docs/ATTACH-BUCKET.md`) — and the window slides from the
+  **last allowed** attach, so repeated runs keep it pinned shut. Every row came back uncarded
+  because the server refused, and **a refused attach and an unremarkable grocery item render
+  identically**. ⚠️ **Iterating on the runner and shooting the deliverable are the SAME ACT
+  here**, so every debugging run spends the budget the real run needs. **Shoot once, on a
+  clean bucket: delete the app, wait a genuine hour clear of the last allowed attach, run the
+  class once.**
+
+  ⚠️ **WHY IT IS ITS OWN MEMBER AND NOT AN INSTANCE OF THE FIRST.** The other five all end at
+  a check — a suite, a guard, a boundary — and the worst case is a green tick over nothing.
+  This one ends at **an artifact a person looks at and then ships**. That changes what the
+  failure costs and who is positioned to catch it: **a test blind to its subject goes green,
+  but a deliverable blind to its subject looks FINISHED**, and a finished-looking artifact is
+  reviewed for polish — is it sharp, is the status bar right, is anything clipped — never for
+  whether its subject is present at all. Every one of those polish questions had a good answer
+  here. **It was five minutes from App Store Connect.**
+
+  📋 **The generalisation, which is the part worth carrying to the next deliverable: ASK WHAT
+  THE ARTIFACT WOULD LOOK LIKE IF THE THING IT ARGUES WERE ABSENT.** When the honest answer is
+  "fine", the emptiness *is* the defect and **nothing downstream can see it** — not an exit
+  code, not an assertion, not a reviewer's eye, because none of them is looking for a thing
+  that was never there. **Absence is what an artifact is worst at reporting.**
+
+  **The fix, and it is the same shape as `nonEmpty`: bind the guard to the SUBJECT.** Slots 1
+  and 3 now call `requireCards`, which fails the shot and writes a named diagnostic capture
+  instead of posing an empty list beautifully. ⚠️ **The eyebrow is the tell, not the do line**
+  — an eyebrow renders only where a card attached, and it is present in both the dashboard's
+  row treatment and shop mode's. ⚠️ **Slot 5 has the same exposure through a different door**:
+  its refinement is a live model call against `LIST_COMPOSE_FREE_LIMIT` (12/day, free
+  callers), so it captures a diagnostic and skips rather than shooting an unchanged list.
   Same distinction `deployBoundary.test.js` makes when it scans `lib/`, `routes/` AND
   `index.js`.
 - **EVERY SOURCE GETS FETCHED BEFORE IT SHIPS. A citation written from memory is the

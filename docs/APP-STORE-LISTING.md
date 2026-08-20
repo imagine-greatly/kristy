@@ -391,11 +391,15 @@ full read" still closed.
    `", ."` artifact ("…ascorbic acid, to maintain color, ."), and `scan-approved-expanded` is cut
    off mid-sentence at the bottom edge — **which is why the collapsed shot is the one listed and
    not the expanded one.**
-2. ⚠️ **CONTENT BLEEDS UNDER THE TRANSLUCENT TAB BAR ON SLOTS 1, 2 AND 5 — NOT 4.** ⚠️ **This
-   entry named slot 4 when it was written and slot 4 is CLEAN**, measured off the pixels: the
-   card ends well above the bar with empty space under it. The third bleeding shot is **slot 5**
+2. ✅ **CONTENT BLEEDING UNDER THE TRANSLUCENT TAB BAR IS DECIDED, NOT FIXED — RULED 2026-08-20:
+   KEEP THE HERO, LET THE BAR OVERLAP.** It affects slots 1, 2 and 5 — **not 4**. ⚠️ **This entry
+   named slot 4 when it was written and slot 4 is CLEAN**, measured off the pixels: the card ends
+   well above the bar with empty space under it. The third bleeding shot is **slot 5**
    (`compose-refined`), where "Bone-in chicken thighs" is cut in half. **Corrected 2026-08-20 by
    looking; the first version was written from memory of the set rather than from the set.**
+   ⛔ **This is no longer an item to clear before submitting.** The runner still nudges for a gap
+   and takes one where it can get it without losing the hero; where it cannot, the overlap ships.
+   **Do not reopen this as a defect against a delivered shot.**
 3. **Set the status bar before capture.** The audit shots read `03:59`–`04:09` with a live
    battery. `xcrun simctl status_bar <device> override --time 9:41 --batteryState charged
    --batteryLevel 100 --cellularBars 4`. It is the difference between a screenshot and a capture.
@@ -417,13 +421,24 @@ quietly converted the audit set into marketing.
   reach a store listing by accident.
 - **Tab-bar clearance is geometry, not judgement** — it drags in small steps until no text frame
   inside the scroll view intersects the bar's frame.
-- ⚠️ **THE ANCHOR WINS AND THE COMPROMISE IS LOUD.** Measured on the real surface, "clear of the
-  tab bar" and "hero still on screen" frequently cannot both hold: the bar's top edge is y=873,
-  the dashboard's rows are ~18pt of text on ~50pt pitch, and every offset with a gap under the
-  bar has already lost the hero. Failing there yields **no deliverable at all**, and a row
-  continuing under a translucent bar is ordinary iOS. So the artifact is renamed
-  **`-BAR-NOT-CLEARED`** and the run prints what was caught. **A person picks; nothing is decided
-  by a default.**
+- ✅ **RULED 2026-08-20 BY THE OWNER: KEEP THE HERO, LET THE BAR OVERLAP.** Measured on the real
+  surface, "clear of the tab bar" and "hero still on screen" frequently cannot both hold: the
+  bar's top edge is y=873, the dashboard's rows are ~18pt of text on ~50pt pitch, and every
+  offset with a gap under the bar has already lost the hero. **A shopper reading a store listing
+  looks at the TOP of the image, and a translucent bar over a row is ordinary iOS — nobody reads
+  it as a defect. Losing the hero costs the thing the screenshot exists for.**
+  ⛔ **So `-BAR-NOT-CLEARED` IS RETIRED AND MUST NOT COME BACK.** Both poses now write the plain
+  filename and the run log alone says what was settled for. The suffix marked as provisional an
+  outcome that is now decided, and **a caveat in a filename outlives the decision that retired
+  it** — every downstream step would go on asking a question that has an answer.
+  ⚠️ **AND THE RULING IS ENFORCED IN THE PIXELS, NOT ONLY IN THE NAMING.** The branch where
+  nudging costs the anchor now **undoes that nudge and asserts the anchor came back**, the same
+  shape the status-bar branch already had. Under this ruling a heroless frame is the one
+  unshippable outcome, so it may not be the frame that gets captured; reporting the loss while
+  shooting it anyway would honour the ruling in the log and break it in the deliverable.
+  ⚠️ **THE STATUS BAR IS NOT COVERED BY THE RULING.** Content under a translucent tab bar is
+  ordinary iOS; content under the CLOCK is the render that made `compose-refined-rows` unusable.
+  It keeps its own branch and its own nudge-back.
 - ⚠️ **THE STATUS BAR IS A STOP CONDITION, NOT A KEEP-GOING ONE.** Nudging scrolls content up, so
   once the eyebrow slides under the clock every further nudge makes it worse while the loop reads
   "still not clear" as a reason to continue. **The first run reproduced exactly the render that
@@ -440,6 +455,14 @@ allowed** attach, so repeated runs keep it pinned shut.
 the screenshot argued that Kristy is a to-do app. **It is the findings family aimed at a
 deliverable instead of a test** — the check could not see the thing that mattered, because the
 thing that mattered was absent, and absence is what a screenshot is worst at reporting.
+
+📎 **IT IS NOW THE SIXTH MEMBER OF THE FINDINGS FAMILY, RECORDED 2026-08-20** — the rule in
+`CLAUDE.md` *Verifying*, the account in `docs/VERIFYING.md`. **The first member pointed at a
+DELIVERABLE rather than a test**, and that is why it earned its own entry rather than being filed
+under the empty-collection one: a test blind to its subject goes green, but **a deliverable blind
+to its subject looks FINISHED**, and a finished-looking artifact gets reviewed for polish, never
+for whether its subject is present. **Ask what the artifact would look like if the thing it argues
+were absent; when the answer is "fine", the emptiness is the defect.**
 
 **Slots 1 and 3 now REQUIRE an attached card** and skip loudly with a diagnostic capture rather
 than posing an empty list beautifully. The eyebrow is the tell: it renders only where a card

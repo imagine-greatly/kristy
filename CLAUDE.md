@@ -880,10 +880,10 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 **The commands are here. The incident behind each rule is in `docs/VERIFYING.md`.**
 
-### The findings family — five members, one shape
+### The findings family — six members, one shape
 
 **A check reports success because it cannot see the thing it is checking.** Recognise the shape;
-`docs/VERIFYING.md` has all five in full.
+`docs/VERIFYING.md` has all six in full.
 
 1. **AN ASSERTION OVER AN EMPTY COLLECTION PASSES. Guard every one of them.** `[].every(fn)` is
    `true`. **`nonEmpty(coll, name, min?)` in `lib/testGuards.js` is the fix, and bind it at the
@@ -908,6 +908,24 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
    **`node server/scripts/commitGuard.js`** before any commit that claims a feature.
    ⚠️ **`GUARDED` says where an untracked file is a problem; it must never also decide what gets
    READ** — conflating the two exempted `server/index.js`, the file that mounts every route.
+6. ⚠️ **THE FIRST ONE POINTED AT A DELIVERABLE RATHER THAN A TEST, AND IT WOULD HAVE SHIPPED TO
+   THE APP STORE.** The slot-1 store screenshot came back with **every row uncarded** — four runs
+   inside forty-five minutes had spent the `/guest/list/attach` bucket. **Nothing failed.** The
+   capture succeeded, the geometry was clean, the status bar read 9:41, and the artifact argued
+   that Kristy is a to-do app. **A test blind to its subject goes green; a DELIVERABLE blind to
+   its subject looks FINISHED**, and a finished-looking artifact is reviewed for polish, not for
+   whether its subject is present. **So a shot whose whole argument is content must ASSERT the
+   content and skip loudly when it is missing** — `requireCards`, and **the eyebrow is the tell**,
+   because it renders only where a card attached.
+   ⚠️ **The generalisation, and it is the reason this is its own member: ASK WHAT THE ARTIFACT
+   WOULD LOOK LIKE IF THE THING IT ARGUES WERE ABSENT. When the answer is "fine", the emptiness IS
+   the defect and nothing downstream can see it** — no exit code, no assertion and no reviewer's
+   eye is looking for a thing that was never there. **Absence is what an artifact is worst at
+   reporting**, which is exactly the family's shape aimed one step further downstream than the
+   other five reach.
+   ⚠️ **AND ITS TRAP IS OPERATIONAL: iterating on the runner and shooting the deliverable are the
+   SAME ACT here**, so every debugging run spends the budget the real run needs. **Shoot once, on
+   a clean bucket.**
 
 ### Rules with teeth
 
