@@ -45,11 +45,18 @@ be re-checked with it:**
 ## 2. Keywords — 100 max, comma-separated, no spaces
 
 ```
-shopping,list,food,ingredient,label,scanner,barcode,produce,meat,seafood,dairy,eggs,organic,additive
+shopping,list,food,ingredient,label,scanner,barcode,produce,meat,seafood,dairy,eggs,organic,healthy
 ```
 
-**100 characters exactly, 14 terms.** No space follows a comma — a space is a wasted character
+**99 characters, 14 terms.** No space follows a comma — a space is a wasted character
 and Apple does not need one.
+
+✅ **RULED 2026-08-20 BY THE OWNER: THE LAST SLOT IS `healthy`, AND IT IS SETTLED.** The
+argument is reach, not rank: **`healthy` is what someone types when they do not know what they
+want**, which is a bigger surface than `butcher` or `pantry` — **and both of those are already
+implied by the description**, which names the counter and the sections outright. ⛔ **Do not
+re-open the swap table below to re-argue this**; it is kept for its measurements, not as a live
+question.
 
 **Nothing here repeats the app name or the subtitle.** Excluded for that reason and that reason
 only: `kristy`, `grocery`, `coach`, `for`, `every`, `aisle`.
@@ -59,15 +66,21 @@ only: `kristy`, `grocery`, `coach`, `for`, `every`, `aisle`.
 phrase buys the same result twice. Singulars are used throughout because Apple stems; `scanner`
 is preferred over `scan` because it stems *down* to cover both and the noun is what people type.
 
-**The last slot is the one to argue about.** `additive` is in it because that is a term this app
-can plausibly rank for. Swap-ins, all measured, all fitting:
+**The last slot was the one to argue about, and it is now decided** (ruling above). `additive`
+held it because it is a term this app can plausibly rank for; it lost to reach. The alternatives,
+kept for their measurements:
 
 | swap `additive` → | total | why you might |
 | --- | --- | --- |
-| `healthy` | 96 | Much larger volume, and a new app will not rank on it. Cheap to try, unlikely to pay. |
-| `butcher` | 96 | Narrow and very on-message for the counter. |
-| `pantry` | 95 | Broad, generic, competitive. |
-| `market` | 95 | Stems to "supermarket"/"farmers market". |
+| ✅ `healthy` | **99** | **CHOSEN.** Much larger volume and a new app will not rank on it — but it is the word for a shopper with no noun yet, and that is the surface neither of the next two reach. |
+| `butcher` | 99 | Narrow and very on-message for the counter. **Already implied by the description.** |
+| `pantry` | 98 | Broad, generic, competitive. **Already implied by the description.** |
+| `market` | 98 | Stems to "supermarket"/"farmers market". |
+
+⚠️ **THE TOTALS IN THAT TABLE WERE THREE LOW AND ARE RE-MEASURED ABOVE.** Every row was computed
+against an 89-character base; the string without `additive` is 92 including its trailing comma.
+Nothing changes — all four fit either way — but **a number in this file is a measurement, and one
+carried forward without being re-run is how the corpus count drifted for eight days.**
 
 ⛔ **DO NOT ADD A HEALTH-OUTCOME TERM** — `keto`, `paleo`, `detox`, `cholesterol`, `antiinflammatory`.
 Kristy's no-treatment rule is structural in the product, and a keyword that promises an outcome
@@ -332,19 +345,115 @@ structurally prevented from introducing a claim it was not given.
 
 ## 8. Screenshots — which six, in which order
 
+⚠️ **FIVE OR SIX, NOT SIX.** Slot 6 is gated on the Mac and **has no fallback** (ruled 2026-08-20). Everything below describes the full set; **five is a shippable listing.**
+
 **Source: `/Users/m1/kristy-review-screenshots/audit-2026-08-18/` — 67 PNGs from a real
 `Tools/uisuite/run.sh` against the live production server.** Captures of the real app, not
 mocks.
 
-⚠️ **ALL SIX MUST BE RETAKEN, AND IT IS NOT ABOUT THEIR CONTENT. EVERY ONE OF THE 67 IS
-1206 × 2622 — iPhone 17 Pro, the 6.3-inch class. App Store Connect's required iPhone slot is
-6.9-inch: 1320 × 2868 or 1290 × 2796.** Measured across all 67 with `sips`; there is exactly one
-size in the directory and it is the wrong one. **The 6.9-inch device is already available on this
-box** — `paywall-review-1320x2868.png` one directory up was shot at it. So the retake is a re-run
-of the suite against an iPhone 17 Pro Max destination, not new work.
+⚠️ **THAT DIRECTORY IS THE AUDIT SET AND IT IS THE WRONG SIZE — IT IS NO LONGER THE
+DELIVERABLE.** Every one of the 67 is 1206 × 2622 (iPhone 17 Pro, 6.3-inch); App Store Connect's
+required iPhone slot is 6.9-inch, 1320 × 2868 or 1290 × 2796. Measured across all 67 with `sips`.
+**The retake has since happened at the right size — see the state block below** — so read this
+paragraph as the reason the audit set is not shippable, **not as an instruction to re-shoot
+anything already delivered.**
 
-**Take the retake as the moment to also fix the three things below**, since the shoot is happening
-anyway.
+### 📍 THE SHOOT'S STATE — MEASURED 2026-08-20 18:46, AND THIS IS THE BOARD
+
+**Deliverables live in `/Users/m1/kristy-review-screenshots/appstore-1.0/`. All are 1320 × 2868,
+measured with `sips`.** The shoot ran at **17:47** on a bucket clean for 14 hours, iPhone 17 Pro
+Max, status bar frozen at 9:41.
+
+| slot | state | file |
+| --- | --- | --- |
+| 1 | 🔴 **NO ARTIFACT.** The run failed rather than skipped. | — |
+| 2 | ✅ **APPROVED AS SHOT** | `slot2-counter-index.png` |
+| 3 | ✅ **APPROVED AS SHOT** | `slot3-shop-mode.png` |
+| 4 | ✅ **APPROVED AS SHOT** | `slot4-card-summary.png` |
+| 5 | 🔴 **SKIPPED**, diagnostic only | `slot5-DIAGNOSTIC-refinement-did-not-apply.png` |
+| 6 | ⏳ Real hardware, gated on the Mac. **No fallback — ship five** (ruling above). | — |
+
+✅ **RULED 2026-08-20 BY THE OWNER: SLOTS 2, 3 AND 4 ARE APPROVED AS SHOT.** ⚠️ **THIS CLOSES
+FIX #2's SLOT-2 RE-SHOOT, WHICH IS STILL LISTED BELOW AS OUTSTANDING WORK.** The 17:51 commit
+queued "slots 1, 2 and 5 re-shoot" because slot 2's ask card had been clipped by nudging that
+bought nothing; **the give-it-back fix landed and the owner has accepted the delivered frame
+either way.** ⛔ **So the re-shoot is slots 1 and 5 ONLY.** Do not re-shoot an approved slot to
+tidy a fix into it — every run costs the attach bucket, and slots 2–4 are done.
+
+⚠️ **THE RE-SHOOT QUEUED FOR ~18:55 DOES NOT EXIST AS A SCHEDULED THING, AND NOTHING WILL RUN
+IT.** Verified rather than assumed, 2026-08-20 18:46: `crontab -l` — none; `atq` — empty;
+`~/Library/LaunchAgents` — no such directory; no agent scheduled in-session. **The 03:45 schedule
+died with its session and so did this one** — a queued run in this project is an intention held
+by a conversation, and **a dropped session takes it with them while leaving every file on disk**,
+which is the exact asymmetry the working discipline is built around. 📎 **The rule: a shoot is
+run, not scheduled. If it is not in a shell you are watching, it is not queued.**
+
+#### Slot 1 — ⚠️ THE HERO QUESTION IS OPEN, AND THE LOOP HAS NEVER RUN
+
+**`nudgeBack` became a loop in `kristy-ios` `cda2568`, committed 17:51. The shots are stamped
+17:47. The fix landed four minutes AFTER the only shoot since, so it has not executed once.**
+
+⛔ **SO "DOES THE HERO RETURN?" HAS NO ANSWER YET, AND THE 17:47 RUN IS NOT EVIDENCE ABOUT IT** —
+that run exercised the single-drag version from `980a41f`, and its failure is what *caused* the
+loop. Reading the failure as a verdict on the loop would be reading a fix's motivation as its
+result. **What settles it is one run of `testSlot1Dashboard` on a clean bucket, and nothing else.**
+
+✅ **The guard behaved correctly and is not what needs changing.** Slot 1 failed loudly at
+`XCTAssertTrue(restored, …)` rather than writing a heroless frame — which under the keep-the-hero
+ruling is the one unshippable outcome. **The absence of a slot-1 file is the ruling being enforced
+in the pixels**, exactly as designed.
+
+#### Slot 5 — ✅ THE FAULT IS FOUND, AND IT WAS THE TAP
+
+**Located 2026-08-20 by reading the diagnostic capture, which is what that capture exists for.**
+Neither the door nor the apply: **the submit was never tapped.**
+
+`AppStoreShots` tapped `app.buttons["Go"].firstMatch`. `ComposeField` gives the gold button
+`.accessibilityLabel("Update the list")` in refine mode — deliberately, so a screen reader hears
+what the tap does — **so `buttons["Go"]` cannot match it.** `ComposeRoomShots.swift:283` has
+tapped `"Update the list"` all along; the new runner typed the word on the button's face instead.
+
+⚠️ **AND `.firstMatch` IS WHY IT WAS SILENT RATHER THAN LOUD.** A bare `.tap()` on that query
+fails with "no matches found" and names the defect in one line. `.firstMatch` resolved to
+*something* — **the keyboard's own Go key**, which `submitLabel(.go)` puts on screen a few points
+below and which `ComposeField`'s own comment had predicted would be ambiguous. **A missing element
+became a wrong element, and the wrong element was unreadable.**
+
+📌 **The tell was in the pixels the whole time: a caret on a blank second line.** The field is
+`axis: .vertical`, where the return key inserts a newline and `onSubmit` never fires — so the tap
+landed, the field grew a line, and the list sat unchanged for the full 60s.
+📎 **That is also a PRODUCTION finding, filed and not fixed:** a shopper who finishes typing and
+presses the key that says **Go** gets a blank line and no list change. `kristy-ios`
+`docs/API-FINDINGS.md` §11.5. **The gold button is unaffected, which is why nothing ever caught
+it** — every path anyone drives goes through the button.
+
+✅ **The test-side fix is committed** (`kristy-ios`, `AppStoreShots.swift`). **Slot 5 still needs
+its run.**
+
+#### ⚠️ THE BUCKET IS SPENT AGAIN, AND THE STARTUP CHECK IS WHAT SPENT IT
+
+**A full `Tools/uisuite/run.sh` was started at 18:45 to answer the standing state-check block's
+"report the iOS UI suite count".** One suite run makes ~23 attaches against `cartBuildLimited`
+(20/hour), and the blackout is **63 minutes from the last allowed attach** (`API-FINDINGS.md`
+§14.5). **So the earliest clean bucket for the slots 1 and 5 re-shoot is ~19:50**, not 18:55.
+
+⚠️ **THIS IS A REAL CONFLICT BETWEEN TWO RULES IN THIS REPO AND NEITHER ONE NAMES IT.** *Every
+session starts cold* requires the UI suite count on startup; *shoot once, on a clean bucket*
+requires that no run happen before the deliverable's. **They are the same act against the same
+budget**, and a session that obeys the first has already broken the second before it reads the
+prompt. 📎 **The rule this leaves: WHEN A SHOOT IS OUTSTANDING, REPORT THE UI SUITE COUNT FROM
+THE LAST RECORDED RUN AND SAY SO — do not re-run it.** The count is a number in a document; the
+bucket is a resource with a 63-minute recovery, and only one of the two is scarce.
+
+⚠️ **A SECOND COST, AND IT IS UNRECOVERABLE: `run.sh` OPENS WITH `rm -rf "$OUT"`.** The 18:45 run
+deleted the 17:47 shoot's result bundle at `$TMPDIR/kristy-uisuite/`. The exported PNGs survived
+because they had already been written out; **the run log and every failure message did not.**
+Slot 1's assertion text was recovered only because `cda2568`'s commit message recorded the run's
+verdict in prose. 📎 **A result bundle at a fixed path is one run deep. Export what a later
+session will need, or copy the bundle beside the shots.**
+
+**The three fixes below were written for the 17:47 retake. Fix #2 is a ruling, fix #3 is done —
+the delivered shots read 9:41. Fix #1 is still open and belongs to the Mac.**
 
 ### The six, in order
 
@@ -357,7 +466,7 @@ anyway.
 | 5 | `ComposeRoomShots--compose-refined.png` | **The list rewrites when you change your mind.** "Seafood out. Added deli turkey and bread for quick lunches", with the two struck rows each offering "Put it back". |
 | 6 | `ScanSurfaceShots--scan-approved-collapsed.png` | **The packaged half and the seal.** ⚠️ **Needs a real-device retake — see below.** Slot 6 is the least-viewed slot, which is why the shot needing the most work is in it. |
 
-**Every one of the six is the free experience.** Nothing above is behind the membership: the
+**Every one of them is the free experience.** Nothing above is behind the membership: the
 list, shop mode, the haul and every card *summary* are free forever, the counter ask is free and
 unlimited, and slot 4's card is showing exactly the layer a signed-out shopper sees, with "The
 full read" still closed.
@@ -375,11 +484,17 @@ full read" still closed.
   slot-6 candidate the moment sign-in works** and that line stops rendering.
 - ⛔ **`ComposeRoomShots--compose-refined-rows.png`** — captured mid-scroll with the status bar
   overlapping the content. Unusable, and not fixable by cropping.
-- **`CounterUITests--07-ask-answer.png`** — strong, and the runner-up to slot 2. Held back only
+- **`CounterUITests--07-ask-answer.png`** — strong, and the runner-up to slot 2. Held back
   because it repeats slot 2's surface, and it carries an upgrade line ("The read for your cart is
-  the member part") that is honest but off-message in a store listing. **Use it in place of slot 6
-  if a real-device scan shoot is not possible before submitting** — at the cost of leaving
-  scanning unrepresented while `scanner` and `barcode` sit in the keyword field.
+  the member part") that is honest but off-message in a store listing.
+  ⛔ **RULED 2026-08-20 BY THE OWNER: THERE IS NO SLOT-6 FALLBACK. SHIP FIVE.** The previous
+  version of this bullet nominated this shot as the stand-in if the real-device scan shoot does
+  not happen before submission. **It is withdrawn.** ⚠️ **A COUNTER ANSWER POSING AS A SCAN SHOT
+  IS WORSE THAN SCANNING BEING UNREPRESENTED** — it is a second counter surface in a slot the
+  listing has told the reviewer is the packaged half, and **the keyword field can carry `scanner`
+  and `barcode` without a screenshot proving them.** So: **five slots if the Mac does not happen,
+  and slot 6 is real if it does.** ⛔ **Do not re-propose a substitute for slot 6 from the
+  existing set** — this is the shape the ruling forbids, not this one file.
 
 ### The three fixes to make during the retake
 
@@ -478,10 +593,13 @@ spends the budget that the real run needs.
 
 - **All 67 are dark.** That is correct and not a gap: `INFOPLIST_KEY_UIUserInterfaceStyle = Dark`,
   the brand has one palette, and a light-mode screenshot would be of a surface that does not exist.
-- **No caption overlays are proposed here.** If captions are added later, slot 1 and slot 2 carry
-  the argument and slots 3–6 should stay bare; a caption on every shot is how a listing starts
-  looking like a deck.
-- ⚠️ **Six is the working set, not the ceiling — App Store Connect accepts up to 10.** If slots 7
+- ⛔ **RULED 2026-08-20 BY THE OWNER: NO CAPTIONS. BARE SHOTS, ALL OF THEM.** This closes the
+  question rather than deferring it — **the screenshots say what the app is, and a caption is a
+  second voice explaining the first. Kristy does not narrate.** ⛔ **Do not propose a caption on
+  slot 1 or slot 2 later**; the earlier version of this line held that door open and it is now
+  shut. The reasoning is the same one that governs the ambient line and the voice spec, applied
+  one surface further out.
+- ⚠️ **Six is the working set, not the ceiling — App Store Connect accepts up to 10** (and five is the floor, ruled above). If slots 7
   and 8 are ever wanted, `HomeSurfaceShots--home-empty.png` (what the first launch actually looks
   like) and the post-sign-in haul are the two candidates. **Neither is worth blocking submission
   on.**

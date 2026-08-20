@@ -150,6 +150,14 @@ work, without being asked:
   not by comparing hashes
 - report kristy main vs origin/main and origin/held
 - report the server suite count and the iOS UI suite count
+  -- BUT IF A SHOOT IS OUTSTANDING, REPORT THE UI COUNT FROM THE
+    LAST RECORDED RUN AND SAY SO. DO NOT RE-RUN IT. One suite run
+    makes ~23 attaches against a 20/hour bucket with a 63-minute
+    recovery, so this line and "shoot once, on a clean bucket" are
+    the same act against the same budget -- and obeying this one
+    first has already broken that one. The count is a number in a
+    document; the bucket is the scarce thing. (2026-08-20: it cost
+    the 18:55 re-shoot.)
 - run kristy-ios Tools/checks/runners_compile.sh -- the swiftc drivers
   decay silently and three of three had (kristy-ios CLAUDE.md 1.8i)
 - report anything left in flight: a background run, a half-finished
