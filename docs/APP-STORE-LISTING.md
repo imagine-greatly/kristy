@@ -420,17 +420,34 @@ in the give-back branch, and **it works** — the hero came back to its natural 
 did the same from the same branch. The mechanism reverses nudging. **What is unproven is only the
 harder case**: recovery after the anchor has actually scrolled off.
 
-📎 **How to settle the remaining half without waiting for it to happen by chance:** it needs a
-surface where 8 nudges DO cost the anchor. Slot 1 at 1320 × 2868 has more vertical room than the
-1206 × 2622 run that produced this, so **the Pro Max re-shoot is not guaranteed to reach it
-either.** Treat the branch as untested until a run reports it.
+⛔ **THE BOUNDARY, RECORDED SO NOBODY WAITS ON IT: THE ANCHOR-LOST BRANCH MAY STAY UNTESTED
+INDEFINITELY, AND THAT IS THE EXPECTED OUTCOME RATHER THAN A PENDING ONE.** Settling it needs a
+surface where 8 nudges DO cost the anchor. ⚠️ **The re-shoot makes that LESS likely, not more:**
+the evidence run was 1206 × 2622 and the deliverable is **1320 × 2868**, which has more vertical
+room, so the hero survives more nudging on the Pro Max than it did on the Pro. **Every future
+shoot of this slot is at the larger size.** 📎 **So do not read a passing slot-1 run as the loop
+being proven, and do not queue "wait for it to happen" as work** — nothing in the normal course
+of shooting this deliverable is expected to enter that branch. If it is ever to be proven, it is
+proven deliberately, on a surface built to lose the anchor, not by watching runs go green.
 
-🐞 **AND ONE DEFECT FOUND WHILE READING THAT LOG LINE: THE GIVE-BACK BRANCH CLAIMS SUCCESS IT DOES
-NOT CHECK.** It says *"it was given back"* unconditionally — `nudgeBack` is `@discardableResult`
-and that branch discards it, unlike the anchor-lost branch which asserts on it. **If the give-back
-failed, the log would say it succeeded and the shot would ship clipped.** It happened to work here
-and the pixels are why we know. **This is a comment asserting an invariant, one layer out: the
-run log is prose about a mechanism, and prose drifts from mechanism silently.**
+✅ **AND ONE DEFECT FOUND WHILE READING THAT LOG LINE, NOW FIXED (`kristy-ios` `3d425d2`): THE
+GIVE-BACK BRANCH CLAIMED SUCCESS IT DID NOT CHECK.** It said *"it was given back"* unconditionally —
+`nudgeBack` is `@discardableResult` and that branch discarded it. **If the give-back failed, the log
+would have said it succeeded and the shot would have shipped clipped.** It happened to work here and
+the pixels are why we know. **This is a comment asserting an invariant, one layer out: the run log
+is prose about a mechanism, and prose drifts from mechanism silently.** It now binds `restored` and
+asserts it, and `continueAfterFailure` is `false`, so a failed give-back writes no shot at all.
+
+🐞 ⚠️ **THE SAME DEFECT IS STILL LIVE IN THE STATUS-BAR BRANCH, AND THIS DOCUMENT SAID OTHERWISE.**
+`nudgeBack(app, budget: 4) { offenderOfStatusBar(app) == nil }` also discards its result, under a
+pose reading *"Nudged back off it, so the shot keeps its anchor and a clean clock"* — **so a failed
+nudge-back there ships content under the CLOCK, which is the render that made `compose-refined-rows`
+unusable, with a log line saying the clock is clean.** ⚠️ **The runner section below claims the
+anchor-lost branch was given "the same shape the status-bar branch already had"; the status-bar
+branch has the UNDO and has never had the ASSERT.** ⛔ **Deliberately NOT fixed in the same turn as
+the give-back**: a new assertion that has never run can only turn a shippable frame into no
+deliverable, and it would land in the same build as a shoot with one clean bucket to spend. **It is
+a separately proposed change, and the assert belongs in it.**
 
 #### Slot 5 — ✅ THE FAULT IS FOUND, AND IT WAS THE TAP
 
@@ -584,8 +601,10 @@ quietly converted the audit set into marketing.
   outcome that is now decided, and **a caveat in a filename outlives the decision that retired
   it** — every downstream step would go on asking a question that has an answer.
   ⚠️ **AND THE RULING IS ENFORCED IN THE PIXELS, NOT ONLY IN THE NAMING.** The branch where
-  nudging costs the anchor now **undoes that nudge and asserts the anchor came back**, the same
-  shape the status-bar branch already had. Under this ruling a heroless frame is the one
+  nudging costs the anchor **undoes that nudge and asserts the anchor came back**, and so does the
+  budget-exhausted give-back (`3d425d2`). ⚠️ **The status-bar branch does the UNDO and NOT the
+  assert — this line used to say it already had that shape and it never did**; see the open defect
+  in the slot-1 section above. Under this ruling a heroless frame is the one
   unshippable outcome, so it may not be the frame that gets captured; reporting the loss while
   shooting it anyway would honour the ruling in the log and break it in the deliverable.
   ⚠️ **THE STATUS BAR IS NOT COVERED BY THE RULING.** Content under a translucent tab bar is
