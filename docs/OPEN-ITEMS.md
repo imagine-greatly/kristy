@@ -833,10 +833,30 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 ### Live defects
 
+- ✅ **CLOSED 2026-08-20 — THE MAILBOX RECEIVES AND THE OWNER READS IT.** The account below is
+  kept because the entry was wrong twice on its way here and both errors are instructive; the
+  live rule it leaves is in `CLAUDE.md` under **Live defects**.
+  ⚠️ **IT CLOSED ON THE OWNER'S CONFIRMATION, WHICH IS THE STANDARD IT ALWAYS SET** — the same
+  standing as the App Store Connect rows in `kristy-ios/docs/PURCHASING.md` §7.0, and for the
+  same reason: **no session here has a channel that can read it.**
+  ⚠️ **THE MX RECORD WAS NEVER THE ANSWER, AND THE NARROWED-NOT-CLOSED STEP BELOW IS WHY THIS
+  ITEM DID NOT CLOSE A DAY EARLY ON EVIDENCE THAT DOES NOT REACH.** An MX proves the domain can
+  route mail; **receiving is a different claim**, and only the outward-facing act settles it.
+  ⚠️ **CLOSING IT RELEASES NOTHING BY ITSELF** — it was gate (b) of two on one held stack.
+
+  **The two rulings this closure supersedes, kept verbatim because a session working from an
+  overturned version defends a hold that no longer has a gate:**
+  > ⏸ ⛔ **AND IT IS NOT PUSHED YET ON PURPOSE — RULED 2026-08-19: THE COMMENT MOVE IS HELD UNTIL THE `hello@` MAILBOX RESOLVES.**
+  > ⛔ **(b) IS GATED ON THE `hello@` MAILBOX, RULED 2026-08-19**
+
+  ⚠️ **BOTH ARE SUPERSEDED AS TO THEIR GATE AND NEITHER IS SUPERSEDED AS TO THE HOLD.** The
+  mailbox no longer holds anything; **(a), the import route, still does.**
+
+  **The account, as filed:**
 - 🐞 ⚠️ **`hello@kristyapproved.com`: FIVE MENTIONS ACROSS THREE LIVE PAGES** — `/privacy` (2),
   `/terms` (2), `/support` (1); the landing page has none. **Counted off the SERVED pages
-  2026-08-19**, because this entry previously read *"four live pages"* and neither the page count
-  nor the mention count was right. ⚠️ **RE-COUNT IT; DO NOT CARRY THE NUMBER FORWARD.**
+  2026-08-19.** This entry previously read *"four live pages"* and neither the page count nor the
+  mention count was right. ⚠️ **RE-COUNT IT; DO NOT CARRY THE NUMBER FORWARD.**
   **A LIVE GAP, not a pending task** if the mailbox does not receive: `/support` additionally
   promises a reply within two business days, and ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO
   ADDRESS** — App Review checks the support URL.

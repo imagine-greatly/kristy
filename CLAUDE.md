@@ -757,11 +757,13 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   HTML *and* CSS comments** — `landing.html`'s pointer lives in a `/* */` block inside `<style>`,
   so an HTML-only strip reports a false difference. **It publishes on the next push of these
   files, and the fetch-verify must be re-run then.**
-  ⏸ ⛔ **AND IT IS NOT PUSHED YET ON PURPOSE — RULED 2026-08-19: THE COMMENT MOVE IS HELD UNTIL
-  THE `hello@` MAILBOX RESOLVES.** The gate is the support-address defect under **Open items**,
-  not anything wrong with the move. **Do not push these files to "finish the fetch-verify"** — the
-  verify is the *consequence* of the push, never a reason for one, and the pages a reviewer reads
-  are already correct.
+  ⏸ ✅ **ITS GATE CLEARED 2026-08-20 — THE `hello@` MAILBOX RECEIVES — AND IT IS STILL NOT
+  PUSHED.** The comment move's own gate is open; **the stack it sits on is not.** The import route
+  above it is still held, **a stack is pushed as a stack**, and ⚠️ **a cleared gate is not an
+  approval.** **Do not push these files to "finish the fetch-verify"** — the verify is the
+  *consequence* of the push, never a reason for one, and the pages a reviewer reads are already
+  correct. **If this move is wanted live before the import route is, cherry-pick it past the
+  hold** — and the rebase afterwards is not optional.
 
 **Money**
 
@@ -1043,20 +1045,16 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
 
 ### Live defects
 
-- 🐞 ⚠️ **`hello@kristyapproved.com`: FIVE MENTIONS ACROSS THREE LIVE PAGES** — `/privacy` (2),
-  `/terms` (2), `/support` (1); the landing page has none. **Counted off the SERVED pages
-  2026-08-19.** ⚠️ **RE-COUNT IT; DO NOT CARRY THE NUMBER FORWARD.**
-  **A LIVE GAP, not a pending task** if the mailbox does not receive: `/support` additionally
-  promises a reply within two business days, and ⚠️ **A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO
-  ADDRESS** — App Review checks the support URL.
-  ⚠️ **THE STATUS MOVED AND THIS ENTRY IS NARROWED RATHER THAN CLOSED. `kristyapproved.com` NOW
-  HAS AN MX RECORD** — `kristyapproved-com.mail.protection.outlook.com`, measured 2026-08-19.
-  **An MX proves the domain can route mail; it does NOT prove the `hello@` mailbox exists or that
-  anyone reads it, and those are what the pages promise.**
-  ⛔ **THE ONLY CHECK THAT SETTLES IT IS SENDING MAIL TO IT, WHICH IS AN OUTWARD-FACING ACT AND IS
-  THE OWNER'S** — do not send test mail from a session to close this. **The pages are correct and
-  stay as they are; the mailbox is what is missing.** **Nothing here should be edited to work
-  around it.** **Re-check before any App Store submission.**
+- ✅ **CLOSED 2026-08-20 — `hello@kristyapproved.com` RECEIVES AND THE OWNER READS IT.** Owner's
+  confirmation is the whole evidence and that is the standard this item always set: ⛔ **the only
+  check that settles it is sending mail to it, which is an outward-facing act and is the owner's.**
+  The pages were correct throughout and **no page was edited to work around it.**
+  ⚠️ **THE RULE IT LEAVES: A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO ADDRESS** — `/support`
+  promises a reply within two business days and App Review checks the support URL. **Re-check the
+  mailbox still receives before any App Store submission**; an MX record does not prove it, and
+  this item spent a day narrowed on exactly that distinction.
+  ⚠️ **THIS CLEARS GATE (b) ONLY — IT RELEASES NOTHING BY ITSELF.** See **Held deliberately**: the
+  stack carries two holds with different gates and **a stack is pushed as a stack.**
 
 - ✅ **SHIPPED AND VERIFIED LIVE: ONE PREDICATE — `nothingConfirmsFood`**, on `origin/main` as
   `22b35a8`; driven on production through the guest path, all five cases. The rule it leaves:
@@ -1114,9 +1112,11 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
   reach `POST /api/trips/import` (`requireAuth`, and no rail has ever produced an account), and
   pushing this repo deploys. **Full reasoning: `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 — one
   queue, not two. Do not push it to be helpful.**
-  ⛔ **(b) IS GATED ON THE `hello@` MAILBOX, RULED 2026-08-19** — rule and reasoning under **Legal
-  pages**. ⚠️ **A stack is pushed as a stack, so clearing ONE gate releases NOTHING.** Both gates
-  open before `main` moves; **an urgent item above them cherry-picks past, per the rule below.**
+  ✅ **(b)'s GATE CLEARED 2026-08-20 — the `hello@` mailbox receives** (rule and reasoning under
+  **Legal pages**). ⚠️ **AND `main` HAS NOT MOVED, WHICH IS THIS ENTRY'S OWN RULE ARRIVING ON
+  SCHEDULE.** ⚠️ **A stack is pushed as a stack, so clearing ONE gate releases NOTHING.** (a) —
+  the import route — is still held on its own terms, so **both gates are not open and `main`
+  stays where it is**; **an urgent item above them cherry-picks past, per the rule below.**
   ⚠️ **Its test condition cleared and it is still held.** A cleared blocker is not an approval; it
   gets reviewed against what the iOS client actually needs before it ships.
   ⚠️ **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase or a
