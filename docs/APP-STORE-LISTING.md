@@ -358,20 +358,36 @@ required iPhone slot is 6.9-inch, 1320 × 2868 or 1290 × 2796. Measured across 
 paragraph as the reason the audit set is not shippable, **not as an instruction to re-shoot
 anything already delivered.**
 
-### 📍 THE SHOOT'S STATE — MEASURED 2026-08-20 18:46, AND THIS IS THE BOARD
+### 📍 THE SHOOT'S STATE — MEASURED 2026-08-20 20:13, AND THIS IS THE BOARD
 
-**Deliverables live in `/Users/m1/kristy-review-screenshots/appstore-1.0/`. All are 1320 × 2868,
-measured with `sips`.** The shoot ran at **17:47** on a bucket clean for 14 hours, iPhone 17 Pro
-Max, status bar frozen at 9:41.
+**Deliverables live in `/Users/m1/kristy-review-screenshots/appstore-1.0/`. All five are
+1320 × 2868, measured with `sips` on each file after the re-shoot.** Slots 2–4 were shot at
+**17:47**; slots 1 and 5 were re-shot at **20:09** and **20:13**, all on iPhone 17 Pro Max with
+the status bar frozen at 9:41.
 
 | slot | state | file |
 | --- | --- | --- |
-| 1 | 🔴 **NO ARTIFACT.** The run failed rather than skipped. | — |
+| 1 | 🟡 **DELIVERED, AWAITING THE OWNER'S LOOK** | `slot1-dashboard.png` |
 | 2 | ✅ **APPROVED AS SHOT** | `slot2-counter-index.png` |
 | 3 | ✅ **APPROVED AS SHOT** | `slot3-shop-mode.png` |
 | 4 | ✅ **APPROVED AS SHOT** | `slot4-card-summary.png` |
-| 5 | 🔴 **SKIPPED**, diagnostic only | `slot5-DIAGNOSTIC-refinement-did-not-apply.png` |
+| 5 | 🟡 **DELIVERED, AWAITING THE OWNER'S LOOK** | `slot5-compose-refined.png` |
 | 6 | ⏳ Real hardware, gated on the Mac. **No fallback — ship five** (ruling above). | — |
+
+**Both re-shoots were run in a watched shell, not scheduled.** The two diagnostics they replaced
+are filed in `evidence-2026-08-20/` under names that say what they are; ⛔ **nothing named
+`DIAGNOSTIC` or `EVIDENCE` belongs in `appstore-1.0/`.**
+
+#### The 20:09 and 20:13 runs, in three lines
+
+- **Slot 1 passed and took the give-back branch again** — `“SEAFOOD” … nudging did not find a gap
+  in 8 steps` — this time with the give-back **asserted**. ⚠️ **So the anchor-lost branch did not
+  execute on the Pro Max either, exactly as the boundary below predicts.**
+- **Slot 5 skipped at 20:09 for a THIRD cause and the diagnostic is what found it** — the
+  refinement HAD applied; the test was watching for a button labelled by its FACE. Fixed
+  (`kristy-ios` `7833f96`) and shot clean at 20:13, pose `bar overlapping` on “Carrots”.
+- **The bucket held.** Slot 1 got its cards (three carded rows in the frame) and no attach 429
+  appeared in either run — the 18:45 suite's blackout had expired.
 
 ✅ **RULED 2026-08-20 BY THE OWNER: SLOTS 2, 3 AND 4 ARE APPROVED AS SHOT.** ⚠️ **THIS CLOSES
 FIX #2's SLOT-2 RE-SHOOT, WHICH IS STILL LISTED BELOW AS OUTSTANDING WORK.** The 17:51 commit
@@ -395,7 +411,9 @@ and its attachment is a complete dashboard: hero *"The list is ready."* first ch
 type, fully on screen at its natural offset; **two rows carrying real cards** (`PICKING PRODUCE`
 and `CHICKEN CUTS…`); the tab bar overlapping "Ground beef, 80/20" exactly as the ruling accepts.
 
-⚠️ **AND IT IS NOT A DELIVERABLE — TWO REASONS, BOTH DISQUALIFYING.** It is **1206 × 2622**
+⚠️ **AND THAT 18:45 ATTACHMENT IS NOT A DELIVERABLE — TWO REASONS, BOTH DISQUALIFYING. THE
+DELIVERABLE EXISTS AND IT IS THE 20:09 RUN'S** (`slot1-dashboard.png`, board above); this
+paragraph is about the evidence frame only, and both files are kept. It is **1206 × 2622**
 (`run.sh` defaults to iPhone 17 Pro, not Pro Max) and **the status bar reads 18:47**, because the
 9:41 override is part of the shoot procedure and not of `run.sh`. **It is evidence, not a shot** —
 kept, with both disqualifications in its filename so it cannot be mistaken for one, at
@@ -473,10 +491,26 @@ presses the key that says **Go** gets a blank line and no list change. `kristy-i
 `docs/API-FINDINGS.md` §11.5. **The gold button is unaffected, which is why nothing ever caught
 it** — every path anyone drives goes through the button.
 
-✅ **The test-side fix is committed** (`kristy-ios`, `AppStoreShots.swift`). **Slot 5 still needs
-its run** — the 18:45 suite skipped it again, but that run was built at 18:45 from `cda2568` and
-therefore **predates the fix**; its skip message is the old text, which is how you can tell.
-**That skip is not evidence against the fix.**
+✅ **The tap fix worked, and it exposed a SECOND control addressed by its pixels — 2026-08-20
+20:09.** With the tap landing, slot 5 skipped again and **the diagnostic capture showed the
+refinement had fully applied**: *"Seafood out. Added bread, sweet potatoes, carrots, and
+chickpeas to build lunch around the proteins already here."*, both seafood rows struck, both
+put-back buttons on screen. The test was waiting 60s for `label BEGINSWITH "Put it back"` —
+**the word on the button's face.** `RefinementSummary` overrides the whole button with
+`.accessibilityLabel("Put \(row.name) back on the list")`, so the face and the label share no
+prefix and that query can never match; `ComposeRoomShots:287` has always used the real label.
+📎 **THAT IS THE SAME DEFECT AS THE `"Go"` TAP, TWENTY LINES LATER IN THE SAME TEST, AND FIXING
+THE FIRST IS WHAT EXPOSED IT. The rule this leaves, now paid for twice: in the shot runner,
+address a control by what a SCREEN READER hears, never by what the pixels read.**
+
+⚠️ **AND IT WOULD HAVE BITTEN A THIRD TIME ONE LINE ON:** the pose anchor was authored as
+`"Put it back"`, which is not a `staticText` either, so `nudgeClearOfTabBar`'s opening assertion
+would have failed for the same reason. The anchor is now **read off the button that matched**,
+so the pose agrees with whatever the model actually struck on that run.
+
+✅ **SHOT CLEAN AT 20:13** (`kristy-ios` `7833f96`): 1 passed, 0 skipped, 0 failed.
+`slot5-compose-refined.png`, 1320 × 2868, clock 9:41, both struck rows offering "Put it back",
+the summary card whole, the bar overlapping "Carrots" — the accepted pose.
 
 #### ⚠️ THE BUCKET IS SPENT AGAIN, AND THE STARTUP CHECK IS WHAT SPENT IT
 
