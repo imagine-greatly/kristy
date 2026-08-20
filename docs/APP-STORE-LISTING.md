@@ -388,20 +388,49 @@ by a conversation, and **a dropped session takes it with them while leaving ever
 which is the exact asymmetry the working discipline is built around. 📎 **The rule: a shoot is
 run, not scheduled. If it is not in a shell you are watching, it is not queued.**
 
-#### Slot 1 — ⚠️ THE HERO QUESTION IS OPEN, AND THE LOOP HAS NEVER RUN
+#### Slot 1 — ✅ THE HERO IS BACK, AND ⚠️ THE ASSERTION THAT ASKS ABOUT IT STILL HAS NOT RUN
 
-**`nudgeBack` became a loop in `kristy-ios` `cda2568`, committed 17:51. The shots are stamped
-17:47. The fix landed four minutes AFTER the only shoot since, so it has not executed once.**
+**Measured 2026-08-20 18:49, in the 18:45 suite run.** `testSlot1Dashboard` **PASSED** (49.6s),
+and its attachment is a complete dashboard: hero *"The list is ready."* first child, largest
+type, fully on screen at its natural offset; **two rows carrying real cards** (`PICKING PRODUCE`
+and `CHICKEN CUTS…`); the tab bar overlapping "Ground beef, 80/20" exactly as the ruling accepts.
 
-⛔ **SO "DOES THE HERO RETURN?" HAS NO ANSWER YET, AND THE 17:47 RUN IS NOT EVIDENCE ABOUT IT** —
-that run exercised the single-drag version from `980a41f`, and its failure is what *caused* the
-loop. Reading the failure as a verdict on the loop would be reading a fix's motivation as its
-result. **What settles it is one run of `testSlot1Dashboard` on a clean bucket, and nothing else.**
+⚠️ **AND IT IS NOT A DELIVERABLE — TWO REASONS, BOTH DISQUALIFYING.** It is **1206 × 2622**
+(`run.sh` defaults to iPhone 17 Pro, not Pro Max) and **the status bar reads 18:47**, because the
+9:41 override is part of the shoot procedure and not of `run.sh`. **It is evidence, not a shot** —
+kept, with both disqualifications in its filename so it cannot be mistaken for one, at
+`/Users/m1/kristy-review-screenshots/evidence-2026-08-20/`. ⛔ **Do not put it in
+`appstore-1.0/`.** It was copied out of the result bundle deliberately, because the next
+`run.sh` will `rm -rf` that bundle.
 
-✅ **The guard behaved correctly and is not what needs changing.** Slot 1 failed loudly at
-`XCTAssertTrue(restored, …)` rather than writing a heroless frame — which under the keep-the-hero
-ruling is the one unshippable outcome. **The absence of a slot-1 file is the ruling being enforced
-in the pixels**, exactly as designed.
+⚠️ **NOW THE PART THAT MATTERS, AND IT IS THE FINDINGS FAMILY AGAIN: THE BRANCH THE QUESTION IS
+ABOUT DID NOT EXECUTE.** The run log names the branch taken —
+
+> `slot1-dashboard: SHIPPED WITH THE BAR OVERLAPPING — "Ground beef, 80/20" … nudging did not
+> find a gap in 8 steps, so it was given back and the surface shipped at its natural offset`
+
+— which is **fix #2's budget-exhausted give-back**, not **fix #1's anchor-lost branch**. The hero
+was never lost across those 8 nudges, so `XCTAssertTrue(restored, …)` — the assertion that asks
+whether a LOST hero comes back — **was never reached.** ⛔ **So "slot 1 passed" must not be read
+as "the loop is proven."** A green test that never entered the branch under test is the family's
+own shape, and this file is where it would be easiest to miss.
+
+✅ **What IS proven, in the pixels rather than in the exit code:** `nudgeBack`-as-a-loop **ran**,
+in the give-back branch, and **it works** — the hero came back to its natural offset and slot 2
+did the same from the same branch. The mechanism reverses nudging. **What is unproven is only the
+harder case**: recovery after the anchor has actually scrolled off.
+
+📎 **How to settle the remaining half without waiting for it to happen by chance:** it needs a
+surface where 8 nudges DO cost the anchor. Slot 1 at 1320 × 2868 has more vertical room than the
+1206 × 2622 run that produced this, so **the Pro Max re-shoot is not guaranteed to reach it
+either.** Treat the branch as untested until a run reports it.
+
+🐞 **AND ONE DEFECT FOUND WHILE READING THAT LOG LINE: THE GIVE-BACK BRANCH CLAIMS SUCCESS IT DOES
+NOT CHECK.** It says *"it was given back"* unconditionally — `nudgeBack` is `@discardableResult`
+and that branch discards it, unlike the anchor-lost branch which asserts on it. **If the give-back
+failed, the log would say it succeeded and the shot would ship clipped.** It happened to work here
+and the pixels are why we know. **This is a comment asserting an invariant, one layer out: the
+run log is prose about a mechanism, and prose drifts from mechanism silently.**
 
 #### Slot 5 — ✅ THE FAULT IS FOUND, AND IT WAS THE TAP
 
@@ -428,7 +457,9 @@ presses the key that says **Go** gets a blank line and no list change. `kristy-i
 it** — every path anyone drives goes through the button.
 
 ✅ **The test-side fix is committed** (`kristy-ios`, `AppStoreShots.swift`). **Slot 5 still needs
-its run.**
+its run** — the 18:45 suite skipped it again, but that run was built at 18:45 from `cda2568` and
+therefore **predates the fix**; its skip message is the old text, which is how you can tell.
+**That skip is not evidence against the fix.**
 
 #### ⚠️ THE BUCKET IS SPENT AGAIN, AND THE STARTUP CHECK IS WHAT SPENT IT
 
@@ -436,6 +467,12 @@ its run.**
 "report the iOS UI suite count".** One suite run makes ~23 attaches against `cartBuildLimited`
 (20/hour), and the blackout is **63 minutes from the last allowed attach** (`API-FINDINGS.md`
 §14.5). **So the earliest clean bucket for the slots 1 and 5 re-shoot is ~19:50**, not 18:55.
+
+⚠️ **AND THE RUN MEASURED THE COST WHILE PAYING IT: 5 OF ITS 6 SKIPS ARE ATTACH 429s.** All five
+`ShopModeShots` cases skipped with *"the attach door answered 429"*. **The result — 55 tests, 49
+passed, 6 skipped, 0 failed — is therefore not comparable to the 2026-08-16 record of 50/49/0/1**;
+the total grew by the five `AppStoreShots` cases, and five of the skips are the budget, not the
+code. 📎 **Record it as three numbers with the cause attached, never as "49 passed".**
 
 ⚠️ **THIS IS A REAL CONFLICT BETWEEN TWO RULES IN THIS REPO AND NEITHER ONE NAMES IT.** *Every
 session starts cold* requires the UI suite count on startup; *shoot once, on a clean bucket*
