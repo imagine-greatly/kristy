@@ -283,25 +283,25 @@ collects through App Store Connect is excluded from this label by Apple's own ru
 surface. ⛔ **`/privacy` states there is no delete door on the website and that is deliberate;
 the iPhone app is the only route.** Do not answer the questionnaire as though a web door exists.
 
-### ⛔ BEFORE THESE ANSWERS ARE TRUE: ONE APP CHANGE IS OUTSTANDING
+### ✅ THE APP CHANGE THAT WAS OUTSTANDING HERE IS DONE — `ef58686`, ON `origin/main`
 
-⚠️ **`Kristy/PrivacyInfo.xcprivacy` IS NOW STALE IN TWO PLACES, AND ITS OWN COMMENT PREDICTED
-ONE OF THEM.** This is app-source work in `kristy-ios`, it is not done, and **nothing in this
-document does it.** Both are findings, recorded here because the nutrition label cannot be filed
-honestly while the bundled manifest disagrees with it:
+**Both halves shipped in `kristy-ios` and were re-measured here 2026-08-20 rather than taken from
+the commit message:** `Kristy/PrivacyInfo.xcprivacy` now declares **Email Address, User ID,
+Purchase History and Other User Content as LINKED, Photos or Videos as UNLINKED, no tracking,
+`UserDefaults/CA92.1`** — read out of the bundled manifest with `plistlib` — and the false
+"no third-party SDKs" sentence is deleted and replaced with the two real package references.
+**That is byte-for-byte the table above**, which is the only thing this entry ever asked for:
+the manifest and the nutrition label are two renderings of one answer and a reviewer can open
+both. `Tools/checks/privacy_manifest.sh` passes and reads the built `.app`, not the repo — ✅ run
+here 2026-08-20: *manifest is in the built app, parses, 5 collected types, 4 linked + 1 unlinked,
+each matched by NAME and LINKED FLAG.*
 
-1. **The manifest declares only Photos-or-Videos and Other-User-Content, both unlinked.** Its own
-   comment says: *"`NSPrivacyCollectedDataTypeLinkedToUser` IS FALSE BECAUSE THERE ARE NO
-   ACCOUNTS … THE DAY SIGN-IN LANDS, THIS BECOMES A LIE AND MUST BE REVISITED."* **Sign-in ships
-   in 1.0.** The manifest needs Email Address, User ID and Purchase History added, and the two
-   existing entries re-judged.
-2. **The comment asserts "there are also NO third-party SDKs — the pbxproj carries no package
-   references".** ⚠️ **That is false as of today, measured:** the pbxproj carries
-   `supabase-swift` and RevenueCat `purchases-ios`. Nothing breaks — RevenueCat's manifest merges
-   in correctly and supabase-swift needs none — **but the sentence is a signed statement that is
-   now wrong, in the file whose whole job is to be right.**
+⚠️ **NOTE WHAT CAUGHT THE ORIGINAL DEFECT, BECAUSE NO TEST COULD HAVE:** a person writing the
+nutrition label found that the two documents disagreed. **Change both or neither** — that rule is
+in the manifest's own header and it is the only thing standing between them.
 
-⚠️ **AND ONE THING THAT IS NOT A METADATA PROBLEM BUT WILL END THE REVIEW:** an auto-renewable
+⚠️ **AND ONE THING THAT IS NOT A METADATA PROBLEM BUT WILL END THE REVIEW, AND IT IS STILL FULLY
+OPEN:** an auto-renewable
 subscription has to be *purchasable by the reviewer*, and today `canPurchase` is
 `identity == .member` while **Sign in with Apple has never completed a single token exchange**.
 A reviewer who cannot sign in cannot buy, and an IAP that cannot be exercised is rejected under
