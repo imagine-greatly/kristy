@@ -694,6 +694,24 @@ was invisible until something rendered one**
   module-evaluation crash). `VITE_API_URL` is required in a production build.
 
 **Phone sign-in**
+
+⛔ **SUPERSEDED 2026-08-19: PHONE SIGN-IN IS DEAD PRODUCT-WIDE, AND THIS IS THE OLDEST OF THREE
+COPIES.** The block below is the ORIGINAL account, written while the rail was being built, so it
+reads as a rail in progress — *"it needs no change when the dashboard config lands"* describes a
+landing that is not coming. Settled by three measurements, not by argument: **the provider is
+OFF** (`phone: false`, cache-busted 2026-08-18), **nobody has ever signed in on any rail**, and
+**`client/src` is frozen**. The rule is in `CLAUDE.md` under **Phone sign-in**; the current
+account is at *Phone sign-in, extracted verbatim 2026-08-19* in this file.
+⚠️ **THE CHAIN RUNS THROUGH THE `DORMANT` BLOCK, NOT AROUND IT — three copies, two reversals,
+and a session that finds only one marker has found an older half.** Original (here) → **DORMANT,
+NOT PENDING** (2026-08-11, its own marker) → **DEAD PRODUCT-WIDE** (2026-08-19). Kept verbatim
+because holding the superseded version is this file's job.
+⚠️ **THE `email: false` RULE AT THE FOOT OF THIS BLOCK IS A DIFFERENT REVERSAL AND ALREADY
+CARRIES ITS OWN MARKER.** Two reversals sit inside one block, on different dates, for unrelated
+reasons — phone went dead, email came **ON** (`email: true`, measured 2026-08-18). **Do not fold
+them into one marker**; the email rail is deliberate and a session reading them as one story
+turns it off.
+
 - **Twilio, via Supabase's BUILT-IN phone provider. Nothing server-side.** It is configured
   entirely in the Supabase dashboard (Auth → Providers → Phone → Twilio): Supabase mints
   the code, Twilio delivers it, and this repo is not in the path. `SignInForm` calls
@@ -933,6 +951,14 @@ account is worse than an absent one**, so the current text is copied in whole ra
 than reconciled. Copied byte-for-byte out of CLAUDE.md before any condensation.
 
 **Phone sign-in — ⚠️ DORMANT, NOT PENDING (ruled 2026-08-11)**
+
+⛔ **SUPERSEDED 2026-08-19: THIS WHOLE BLOCK IS THE OVERTURNED RULING. PHONE SIGN-IN IS DEAD
+PRODUCT-WIDE.** The current account is **below**, under *Phone sign-in, extracted verbatim
+2026-08-19*; the rules are in `CLAUDE.md` under **Phone sign-in**. ⚠️ **The reversal is the
+load-bearing part: a session working from the text below will defend the SMS text on the legal
+pages as a live disclosure, and that text is GONE.** Kept verbatim because this file's job is to
+hold the superseded version, and because the prediction in it — that the provider going off
+would need no edit to the frozen client — is the part worth trusting next time.
 - ⚠️ **THE iOS RAIL IS SIGN IN WITH APPLE. PHONE OTP IS RETAINED DELIBERATELY, UNUSED, AND
   CANNOT CARRY TRAFFIC WITHOUT 10DLC RE-REGISTRATION.** It is **a fallback that was kept on
   purpose, not a path in progress** — the distinction is the whole entry. Read as "in

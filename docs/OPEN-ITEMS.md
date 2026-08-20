@@ -753,11 +753,22 @@ condensation, so the rules that stay in CLAUDE.md have somewhere lossless to poi
   PHONE.** Corrected 2026-08-11; this entry previously read as a phone-provider checklist and
   sent readers to finish a 10DLC registration nothing is waiting on. See **Phone sign-in**,
   which is **DORMANT, not pending**.
+  ⛔ **SUPERSEDED 2026-08-19 — PHONE SIGN-IN IS DEAD PRODUCT-WIDE, NOT DORMANT.** The
+  dormant-not-deleted ruling this line points at was **reversed**; the current rule is in
+  `CLAUDE.md` under **Phone sign-in** and its account is in `docs/DECISIONS.md` under
+  *Phone sign-in, extracted verbatim 2026-08-19*. **The text above is kept verbatim because
+  this is an extract block, not because it is current.**
   ✅ **TRACK B IS DONE, MEASURED ON THE LIVE PROJECT 2026-08-13** via `GET /auth/v1/settings`
   with the anon key: **`apple: true`**, **`phone: false`**, `email: false`. All three are what
   they should be — Apple on, the dormant phone rail off, email never. Track C is done too: the
   anon key is in `Config/Base.xcconfig` **and is in the built product**, verified by reading
   `KristySupabaseAnonKey` back out of the built `Info.plist` rather than off the config line.
+  ⚠️ **`email: false` AND "email never" ARE BOTH SUPERSEDED — RE-MEASURED 2026-08-18,
+  CACHE-BUSTED: `email: true`.** The email rail is **deliberately on**: it is blocker H in
+  `kristy-ios/docs/PURCHASING.md` §7.0 and the only prerequisite of the restore-transfer proof
+  (§7.3.8). Apple stays the primary rail. **A session reading the line above would see the
+  provider as drift and turn it off** — that is the defect this marker exists to prevent.
+  `mailer_autoconfirm: true` is a separate switch and is still on.
   ⚠️ **THE ENDPOINT IS STRUCTURALLY BLIND TO B-3 AND THAT IS WHY THIS IS NOT "SIGN-IN WORKS".**
   It returns a boolean per provider and **no client id at all**, so it can prove the provider is
   on and can never prove the bundle id under Client IDs is right. **The first thing that tests
@@ -1050,6 +1061,10 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
   See **Phone sign-in**, which is **DORMANT, not pending**.
   ✅ **Provider state measured on the live project: `apple: true`, `phone: false`, `email: false`** —
   all three what they should be. The anon key is in `Config/Base.xcconfig` and in the built product.
+  ⛔ **BOTH CLAUSES ABOVE ARE SUPERSEDED, AND THIS IS AN EXTRACT BLOCK SO THEY STAY VERBATIM.**
+  **Phone is DEAD PRODUCT-WIDE (ruled 2026-08-19), not dormant**, and **`email: true`
+  (re-measured 2026-08-18, cache-busted)** — the email rail is deliberate, not drift. Current
+  rules: `CLAUDE.md` under **Phone sign-in**. Account: `docs/DECISIONS.md`.
   ⚠️ **`GET /auth/v1/settings` IS STRUCTURALLY BLIND TO THE CLIENT-ID QUESTION** — it returns a
   boolean per provider and **no client id at all**, so it can prove the provider is on and can never
   prove the bundle id under Client IDs is right. **The first thing that tests that is a completed
