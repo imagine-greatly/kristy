@@ -391,14 +391,65 @@ full read" still closed.
    `", ."` artifact ("…ascorbic acid, to maintain color, ."), and `scan-approved-expanded` is cut
    off mid-sentence at the bottom edge — **which is why the collapsed shot is the one listed and
    not the expanded one.**
-2. ⚠️ **CONTENT BLEEDS UNDER THE TRANSLUCENT TAB BAR ON SLOTS 1, 2 AND 4.** Half-height letters
-   of the next row show through beneath the bar. It is the real app behaving correctly and it
-   looks like a rendering bug at thumbnail size. **Fix by ending the scroll on a card boundary
-   before capture**, not by editing the image.
-3. **Set the status bar before capture.** The shots read `03:59`–`04:09` with a live battery.
-   `xcrun simctl status_bar <device> override --time 9:41 --batteryState charged --batteryLevel 100
-   --cellularBars 4`. Cosmetic, costs one line in the runner, and it is the difference between a
-   screenshot and a capture.
+2. ⚠️ **CONTENT BLEEDS UNDER THE TRANSLUCENT TAB BAR ON SLOTS 1, 2 AND 5 — NOT 4.** ⚠️ **This
+   entry named slot 4 when it was written and slot 4 is CLEAN**, measured off the pixels: the
+   card ends well above the bar with empty space under it. The third bleeding shot is **slot 5**
+   (`compose-refined`), where "Bone-in chicken thighs" is cut in half. **Corrected 2026-08-20 by
+   looking; the first version was written from memory of the set rather than from the set.**
+3. **Set the status bar before capture.** The audit shots read `03:59`–`04:09` with a live
+   battery. `xcrun simctl status_bar <device> override --time 9:41 --batteryState charged
+   --batteryLevel 100 --cellularBars 4`. It is the difference between a screenshot and a capture.
+
+### The runner: `kristy-ios/KristyUITests/AppStoreShots.swift`
+
+**Added 2026-08-20.** It drives the same surfaces with the same fixtures and captures them
+**posed** — chosen scroll offset, frozen status bar, nothing clipped.
+
+⚠️ **IT IS A SEPARATE FILE FROM THE AUDIT SUITES ON PURPOSE.** `HomeSurfaceShots`,
+`CounterUITests`, `ComposeRoomShots` and `ShopModeShots` capture whatever the surface does,
+because that is what makes their shots evidence — **a shot posed until it is flattering has
+stopped being evidence**, and that set caught four live defects. Posing them in place would have
+quietly converted the audit set into marketing.
+
+**What it enforces, so the deliverable cannot go quietly wrong:**
+
+- **Slot 4 asserts the full-read control is still CLOSED before capturing**, so paid depth cannot
+  reach a store listing by accident.
+- **Tab-bar clearance is geometry, not judgement** — it drags in small steps until no text frame
+  inside the scroll view intersects the bar's frame.
+- ⚠️ **THE ANCHOR WINS AND THE COMPROMISE IS LOUD.** Measured on the real surface, "clear of the
+  tab bar" and "hero still on screen" frequently cannot both hold: the bar's top edge is y=873,
+  the dashboard's rows are ~18pt of text on ~50pt pitch, and every offset with a gap under the
+  bar has already lost the hero. Failing there yields **no deliverable at all**, and a row
+  continuing under a translucent bar is ordinary iOS. So the artifact is renamed
+  **`-BAR-NOT-CLEARED`** and the run prints what was caught. **A person picks; nothing is decided
+  by a default.**
+- ⚠️ **THE STATUS BAR IS A STOP CONDITION, NOT A KEEP-GOING ONE.** Nudging scrolls content up, so
+  once the eyebrow slides under the clock every further nudge makes it worse while the loop reads
+  "still not clear" as a reason to continue. **The first run reproduced exactly the render that
+  made `compose-refined-rows` unusable.** It now undoes that nudge and reports.
+
+### ⛔ THE ONE THAT NEARLY SHIPPED: A SHOT WITH NO CARDS, AND IT LOOKED FINE
+
+⚠️ **FOUR RUNS INSIDE FORTY-FIVE MINUTES SPENT THE `/guest/list/attach` BUCKET, SO EVERY ROW CAME
+BACK UNCARDED AND THE DASHBOARD RENDERED AS A BARE CHECKLIST.** `cartBuildLimited` is 20/hour and
+one suite run makes ~23 attaches (`docs/ATTACH-BUCKET.md`), and the window slides from the **last
+allowed** attach, so repeated runs keep it pinned shut.
+
+**NOTHING FAILED.** The capture succeeded, the geometry was clean, the status bar read 9:41, and
+the screenshot argued that Kristy is a to-do app. **It is the findings family aimed at a
+deliverable instead of a test** — the check could not see the thing that mattered, because the
+thing that mattered was absent, and absence is what a screenshot is worst at reporting.
+
+**Slots 1 and 3 now REQUIRE an attached card** and skip loudly with a diagnostic capture rather
+than posing an empty list beautifully. The eyebrow is the tell: it renders only where a card
+attached. ⚠️ **Slot 5 has the same exposure through a different door** — its refinement is a live
+model call against `LIST_COMPOSE_FREE_LIMIT` (12/day, free callers).
+
+📎 **THE OPERATIONAL RULE THIS LEAVES: SHOOT ONCE, ON A CLEAN BUCKET.** Delete the app, wait a
+genuine hour clear of the last allowed attach, run the class once. **Iterating on the runner and
+shooting the deliverable are the same act here, and that is the trap** — every debugging run
+spends the budget that the real run needs.
 
 ### Notes on the set as a whole
 
