@@ -1255,6 +1255,7 @@ before starting, not after.**
 | `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, with the measured counts. Not written. |
 | `docs/LIST-CREATION-AUDIT.md` | §C is the measurement the anti-personalization rule tells you to quote. |
 | `docs/do-lines-review.md` | The **authored** do-line table. `server/lib/doLines.json` is generated from it. |
+| `docs/APP-STORE-LISTING.md` | **Every App Store Connect field for 1.0**, counts measured. Names the six screenshots, the retakes, and the one app change the privacy answers still need. |
 | `mobile/docs/LAUNCH_CHECKLIST.md` | Unfinished App Store submission work. |
 
 ⚠️ **THIS FILE HAS A CONTEXT BUDGET AND IT IS LOAD-BEARING.** On 2026-08-10 it reached 156,456
