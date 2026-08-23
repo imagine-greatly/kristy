@@ -1,8 +1,13 @@
 # Voice pass — Phase 0: the register, on four real cards
 
 **Status: PROPOSAL. Nothing in the KB is edited. Nothing is migrated.**
-This document exists to settle the register on a small sample before ~29,500 words are
-rewritten in it. If the voice below is wrong, it is four cards thrown away rather than 83.
+This document settles the register on a small sample before the corpus is rewritten in it.
+
+> ⚠️ **REVISION 2 (2026-08-23). The first version of this document got the machinery
+> backwards and priced the work wrongly. §3 is rewritten and §5 is deleted.** The claim
+> *"only one lint constraint has to move — the imperative gate"* was **wrong**: it was measured
+> against the wrong field. See §3. **Zero lint constraints have to move.** The register was
+> never fighting the lint.
 
 ---
 
@@ -10,234 +15,250 @@ rewritten in it. If the voice below is wrong, it is four cards thrown away rathe
 
 **She is not a coach and she is not a list.**
 
-- A **coach** tells you what to do. That is the voice the corpus has today, and it is not a
-  writing habit — it is enforced (§3).
-- A **list** is the utility. It is how value reaches the shopper, not who she is.
+- A **coach** tells you what to do.
+- A **list** is the utility — how value reaches the shopper, not who she is.
 
 **She is the presence behind everything in the app.** You meet her first and foremost through
 the guided list; the other surfaces are other parts of the same guide.
 
-> **The voice rule already models the character, and this is the load-bearing observation.**
-> She never says "I" and she is never absent. That grammar — *assumed, not announced* — is not
-> merely a style constraint on her sentences. It is what she is, everywhere. No mascot, no
-> "Kristy says", no persona announcing itself; and yet no surface that is not hers.
-
-**The architecture that follows:**
+> **The voice rule already models the character.** She never says "I" and she is never absent.
+> That grammar — *assumed, not announced* — is not merely a style constraint on her sentences.
+> It is what she is, everywhere. No mascot, no "Kristy says", no persona announcing itself;
+> and yet no surface that is not hers.
 
 | | |
 | --- | --- |
 | **Kristy** | the guide behind everything — tone, judgment, presence |
-| **The guided list** | how you interact with her, first and foremost. The main value. The point every other part converges on |
+| **The guided list** | how you interact with her, first and foremost. The main value, and the point every other part converges on |
 | **Scan** | stands alone, and feeds the list |
 | **The Counter** | stands alone, and is **the bank the list pulls its cards from** |
 | **Haul** | reads the trip back and carries it forward |
 
-⚠️ **Converging on the list does not make the other parts subordinate.** Scan is a real
-destination for someone holding a box. The Counter is a real destination for someone standing
-at a case — *and* it is the reservoir every attached card is drawn from. Both things are true
-and the second is why the Counter cannot be demoted to a panel.
+⚠️ **Converging on the list does not make the other parts subordinate.**
 
 ---
 
-## 2. The register rule, in one line
+## 2. The register rule
 
 > **A presence states what is true. A coach tells you what to do.**
 
-Checkable, because it is grammatical mood, not vibe:
-
-1. **Declarative, not imperative.** State the situation; the action follows from it.
-2. **No antithesis as a compression device** — "X, not Y", "the one to walk away from",
-   "the difference is A, not B". These are argument shapes. A shopper is not arguing with
-   anyone; they are picking a cheese.
-3. **No zingers.** `kristy_take` stops being a punchline and becomes the practical aside.
+1. **Declarative, not imperative** — in the **headline**. (The `do` line is a different field
+   with a different job; see §3.)
+2. **No antithesis as a compression device** — "X, not Y", "the one to walk away from". These
+   are argument shapes. A shopper is not arguing with anyone; they are picking a cheese.
+3. **No zingers.** `kristy_take` is a practical aside, not a punchline.
 4. **Zero first person — unchanged.** It is the model, not an exception to it.
-5. **The call is still made, still first, still unhedged.** Decision-first survives; the
-   command does not.
-6. **Warmth comes from explaining the shopper's situation**, never from softening the verdict.
+5. **The call is still made, still first, still unhedged.**
 
-⚠️ **What this is NOT.** It is not a licence to hedge. Non-negotiable #7 forbids retreating
-from a standard because of budget, stock or time, and that stands untouched. What #7 never
-required was that the sentence be curt — *"half the words"* is a concision rule that has been
-read as a sternness rule.
+### ⚠️ 2a — SHORT IS THE POINT, AND WARM IS NOT WORDY
 
-📎 **The product's own best line is already in this register:** *"pasture-raised means space,
-not feed — the word to find is soy-free."* It explains a label instead of scolding one.
+**Revision 2 exists partly because the first draft traded stern for WORDY.** A shopper standing
+at a case does not want an explanation, they want **clarity** — *which eggs, which milk, which
+meat.* The headline cap of **12 words is not the enemy; it is the specification.**
+
+### ⚠️ 2b — THE REASON IS ALWAYS THE HEALTH REASON
+
+**The first draft justified block cheese on price and melting.** Both true, both irrelevant, and
+together they quietly **changed what the card stands for.** Kristy's standard is processing:
+the block wins because it has nothing added to it. Melting is a side benefit.
+
+**This is the more serious of the two errors**, because it is not a tone miss — a card that
+argues from the wrong premise has stopped being a health card while still reading fine. It is
+one step over from *"a claim that needs a false mechanism is a wrong claim"*: the mechanism here
+was **true but beside the point**, which nothing checks for.
+
+📎 **`egg_labels` is the model and it already exists:**
+**"Soy-free and corn-free first, then organic, then pasture-raised."** Eight words, declarative,
+no command, health-framed, and it hands over a *ladder*. **It needs no rewrite.** Everything
+below is written to match it.
 
 ---
 
-## 3. Why the tone is machinery, not writing — measured
+## 3. The machinery — what actually gates what
+
+⚠️ **The KB's `decision` field is NOT the `do` line, and confusing the two is what broke
+revision 1.** They are two different strings with two different jobs and two different rules.
+
+| | source | what it is | rendered | gated by |
+| --- | --- | --- | --- | --- |
+| **`headline`** | KB `decision` | **the verdict** — what the card says | free | `MAX_HEADLINE_WORDS = 12` |
+| **`do`** | `docs/do-lines-review.md` | **the physical act** — what you do with your hands | free | `IMPERATIVE_VERBS` + `MAX_DO_WORDS = 14` |
+
+Worked through on one card:
+
+- **headline** — *"Buy the block. Slice it or grate it yourself."*
+- **do** — *"Read the bag for potato starch, cellulose and natamycin before buying shreds."*
+
+**The imperative gate governs the `do` line, where an imperative is CORRECT** — it describes a
+physical act. It has never touched the headline. **The tone problem lives entirely in the
+headline and the depth fields, and none of them is imperative-gated.**
+
+**Measured, running the lint exactly as `counterCardLint.test.js` does:**
+
+```
+cards: 83 | per-card violations: []   corpus violations: []
+```
+
+**The corpus is clean today and stays clean under a declarative headline.** The register change
+is **purely editorial. Zero code changes to the lint.**
+
+> ⚠️ **What revision 1 did wrong, recorded because it is this repo's own named defect.** It
+> asserted *"83 of 83 do lines open with an imperative verb — the lint requires it"* from the
+> **existence of the rule**, never having run it. **"The rule exists" was measured; "it binds
+> this field" was assumed, written down as a measurement, and then used to price the work.**
+> Running it took one command and returned the opposite answer.
+
+### 3a — The tone statistics, correctly labelled
+
+Still true, now attached to the right field. These are **headlines**, not do lines:
 
 | | |
 | --- | --- |
-| Cards in the KB | **83** |
-| Do lines opening with an imperative verb | **83 of 83** — `counterCardLint` *requires* it |
-| Do lines carrying a second clipped sentence | **58 of 83 (70%)** |
+| Headlines carrying a second clipped sentence | **58 of 83 (70%)** |
 | Headlines using the "X, not Y" antithesis | **27 of 83 (33%)** |
 | Core prose strings using it | **75 of 415 (18%)** |
 
-Three interlocking constraints produce it:
+📋 **And the corpus already contains the warm voice.** `short_answer` — the one field with no
+word cap — reads warm and explanatory on nearly every card. Compression is what produced the
+sternness, and §2a is why the answer is *not* to lift the cap.
 
-1. **`IMPERATIVE_VERBS`** (`counterCardLint.js:589`) — a 70-word whitelist, and every do line
-   must open with one. This is *why* they read as orders.
-2. **`MAX_DO_WORDS = 14`, `MAX_HEADLINE_WORDS = 12`.** Do lines run 33–74 chars, median 55.
-   You cannot be warm and explanatory in 14 words that must begin with a command verb, so the
-   writing compresses into antithesis and two-beat imperative pairs — the only shapes that fit.
-3. **`VOICE_SPEC.md`'s "half the words"**, enforced in six model prompts, rewards exactly that
-   compression.
+### 3b — Scope the pass to the free five
 
-⚠️ **THE COROLLARY, AND IT DECIDES THE ORDER OF THE WHOLE PASS: rewriting strings alone will
-fail the lint, and `counterGenerate.js` will regenerate the old tone into every new card.**
-The order is **rule → lint → prompts → corpus**. This is the repo's own rule arriving again —
-*a fold's real anchor may be a PROMPT, not a row.*
+The paid boundary decides where this matters most. **Free on every surface: `eyebrow`,
+`headline`, `do`, `cart_pick`, `tier_note`.** Everything else is paid depth.
 
-📋 **The corpus already contains the warm voice.** `short_answer` — the field with no word cap —
-reads warm and explanatory on nearly every card. The stern voice lives exclusively in the
-capped fields. That is the diagnosis confirming itself: **compression produced the sternness.**
+**83 cards × 5 short fields = ~415 strings that every shopper reads**, versus ~29,500 words of
+total prose. **The free five are the pass.** The depth fields follow, and they are the easy
+half — long-form fields are where warmth is cheap.
 
 ---
 
 ## 4. The four cards
 
-Chosen to span the range: two dairy (one a purchase call, one a "worth it?" call), one eggs
-(label-claim reading), one seafood (the counter, the moat). ⚠️ **No `kind: home` technique card
-is in the sample because none exists in the KB** — that class lives only in generated rows, and
-it needs its own sample before the generated corpus is touched.
+Chosen to span the range: two dairy, one eggs, one seafood. ⚠️ **No `kind: home` technique card
+is in the sample because none exists in the KB** — that class lives only in generated rows and
+needs its own sample.
+
+⚠️ **Only the `headline` moves in every case. The `do` lines below are UNCHANGED and correct.**
 
 ---
 
 ### 4.1 `cheese_real_vs_processed` · dairy · `kristys_standard`
 
-**decision**
-- **was** — Buy the block. Slice it or grate it yourself.
-- **now** — Block cheese costs less per pound and melts more smoothly than shreds.
+| | |
+| --- | --- |
+| **headline was** | Buy the block. Slice it or grate it yourself. |
+| **headline now** | **The block is the least processed of the three.** *(8w)* |
+| **do — unchanged** | Read the bag for potato starch, cellulose and natamycin before buying shreds. |
 
-**why**
-- **was** — Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.
-- **now** — Real cheese is milk, cultures, salt and enzymes. Bagged shreds carry a starch or cellulose coating so they do not clump in the bag.
+⚠️ **Revision 1 proposed *"Block cheese costs less per pound and melts more smoothly than
+shreds"* — that is the §2b error in one line.** It is true and it is not why the block wins.
 
-**tier_note**
-- **was** — What may be called cheese is a standard of identity, and the shred coatings are printed on the bag. Both are checkable.
-- **now** — What can legally be called cheese is set by a standard of identity, and the shred coatings are printed on the bag. Both are things you can check yourself.
+**why** — *was:* Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.
+**now:** Real cheese is milk, cultures, salt and enzymes. Shreds carry potato starch or cellulose plus natamycin, and process cheese adds emulsifiers on top.
 
-**kristy_take**
-- **was** — Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.
-- **now** — A box grater gets through a week of cheese in a couple of minutes, and a block keeps longer than shreds once it is opened.
+**tier_note** — *was:* What may be called cheese is a standard of identity, and the shred coatings are printed on the bag. Both are checkable.
+**now:** What can legally be called cheese is set by a standard of identity, and the coatings are printed on the bag. Both are things you can check yourself.
 
-**watch_out[0]**
-- **was** — 'Cheese product', 'cheese food' and 'pasteurized process' all mean emulsifiers blended in. That is a different product from cheese.
-- **now** — 'Cheese product', 'cheese food' and 'pasteurized process' all mean emulsifiers have been blended in. Those are a different product from cheese, and the name on the front is where it is declared.
+**kristy_take** — *was:* Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.
+**now:** A block keeps longer than shreds once it is opened, and a box grater gets through a week of cheese in a couple of minutes.
 
 ---
 
 ### 4.2 `egg_feed_claims` · poultry_eggs · `established`
 
-**decision**
-- **was** — 'Vegetarian-fed' is the one to walk away from.
-- **now** — 'Vegetarian-fed' works against a pasture claim, because hens on grass eat insects.
+⚠️ **You were right that this is the niche card.** The ladder a shopper needs lives on
+`egg_labels`, which already states it correctly. **This card's job is narrower: decode the feed
+words.** So its headline should lead with the feed words that matter, not with the one to avoid.
 
-**why**
-- **was** — Hens are omnivores. That claim and a real pasture claim work against each other.
-- **now** — Hens are omnivores. A bird with real outdoor access is eating insects and worms, so a vegetarian ration suggests she stayed inside.
+| | |
+| --- | --- |
+| **headline was** | 'Vegetarian-fed' is the one to walk away from. |
+| **headline now** | **Soy-free and corn-free are the feed words that matter.** *(9w)* |
 
-**tier_note**
-- **was** — A feed claim has to be printed to be made, which is exactly why silence on the carton means nothing.
-- **now** — A feed claim has to be printed to be made, so a carton that says nothing about feed has not made a claim either way.
+📎 **Vegetarian-fed moves down into `watch_out`, where a niche negative belongs.** The verdict
+on it is unchanged — it is still a signal the hen stayed inside.
 
-**kristy_take**
-- **was** — A hen on real pasture is eating bugs. That claim says she was not.
-- **now** — The feed words and the space words are separate claims, and the carton that gets both right usually comes from a smaller producer.
+**why** — *was:* Hens are omnivores. That claim and a real pasture claim work against each other.
+**now:** Hens are omnivores. A bird with real outdoor access is eating insects and worms, so a vegetarian ration suggests she stayed inside.
 
-📎 **This is the clearest case in the sample.** The old line scolds a label; the new one
-explains what the phrase means and lets the implication land. **The verdict is unchanged** —
-vegetarian-fed is still a negative signal.
+**tier_note** — *was:* A feed claim has to be printed to be made, which is exactly why silence on the carton means nothing.
+**now:** A feed claim has to be printed to be made, so a carton that says nothing about feed has not made a claim either way.
 
----
-
-### 4.3 `a2_vs_a1_milk` · dairy · `kristys_standard`
-
-**decision**
-- **was** — A2 milk, and the difference is the breed, not the brand.
-- **now** — A2 is worth choosing once the rest of the carton is equal.
-
-⚠️ **Note what changed here beyond tone.** The old line does not state a call at all — it
-states a *correction*. The new line is the card's actual verdict, and it is **more**
-decision-first than what it replaces, not less.
-
-**why**
-- **was** — One amino acid apart, and only A1 releases the BCM-7 peptide. Sourcing still outranks it.
-- **now** — The two milks are one amino acid apart, and only A1 releases the BCM-7 peptide. How the milk was handled still matters more than which protein it carries.
-
-**tier_note**
-- **was** — The breed genetics and the peptide are established. That A2 is the better carton is Kristy's preference for the older herds, not a finding.
-- **now** — The breed genetics and the peptide are established. That A2 makes the better carton is Kristy's preference for the older herds rather than a finding.
-
-📎 Barely touched, deliberately — **this tier note is already the model.** It names the
-ownership rather than deleting it, which is what the rephrased-not-deleted rule asks for.
-
-**kristy_take**
-- **was** — The older breeds, and one amino acid is the whole of it. Worth choosing. Not worth choosing first.
-- **now** — The older breeds are the whole of the difference. Worth choosing once the herd and the processing are settled.
+**kristy_take** — *was:* A hen on real pasture is eating bugs. That claim says she was not.
+**now:** The feed words and the space words are separate claims, and the carton that gets both right usually comes from a smaller producer.
 
 ---
 
-### 4.4 `salmon_wild_vs_farmed` · seafood · `kristys_standard`
+### 4.3 `egg_labels` · poultry_eggs · `kristys_standard` — **NO CHANGE**
 
-**decision**
-- **was** — Wild. Farmed is a different fish, fed and penned.
-- **now** — Wild salmon is the one worth buying, and frozen wild counts.
+| | |
+| --- | --- |
+| **headline** | Soy-free and corn-free first, then organic, then pasture-raised. |
 
-**why**
-- **was** — Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.
-- **now** — Farmed salmon eats a formulated ration built largely on plant protein and vegetable oil, which changes the fat it carries. Wild salmon eats krill and small fish.
-
-**tier_note**
-- **was** — The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.
-- **now** — The feed, the added pigment and the pens are documented. Holding out for wild on top of them is Kristy's standard rather than a finding.
-
-**kristy_take**
-- **was** — Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.
-- **now** — Frozen wild is usually cheaper than fresh farmed and it was frozen at its best. When the case has no wild in it, the tinned aisle does.
+**Left exactly as it is.** It is the register the other 82 are being written toward.
 
 ---
 
-## 5. What these four cards cost the machinery
+### 4.4 `a2_vs_a1_milk` · dairy · `kristys_standard`
 
-Measured against the current lint, so the ruling is priced rather than guessed:
+| | |
+| --- | --- |
+| **headline was** | A2 milk, and the difference is the breed, not the brand. |
+| **headline now** | **A2 does not release BCM-7, but processing matters more.** *(9w)* |
 
-| constraint | today | what the sample needs |
-| --- | --- | --- |
-| `IMPERATIVE_VERBS` | do line must open with a command verb | **must become optional** — all four new do lines are declarative |
-| `MAX_DO_WORDS` | 14 | **11–14 holds.** All four fit. No change needed |
-| `MAX_HEADLINE_WORDS` | 12 | unchanged |
-| `why` / `kristy_take` | no cap, but written to the clipped house style | the style rule moves; no code change |
+⚠️ **Note what changed beyond tone.** The old line does not state a call at all — it states a
+*correction*. The new one gives the health mechanism **and** its honest rank in one line.
 
-⚠️ **Only ONE lint constraint actually has to change**, and that is the imperative gate. The
-word caps survive — which is worth knowing, because it means the pass is a rewrite under the
-existing budget rather than a widening of it. The clipped voice was never the cap's fault
-alone; it was the cap **plus** the mandatory command verb.
+**why** — *was:* One amino acid apart, and only A1 releases the BCM-7 peptide. Sourcing still outranks it.
+**now:** The two milks are one amino acid apart, and only A1 releases the BCM-7 peptide on digestion. How the milk was handled still outranks which protein it carries.
+
+**tier_note** — *was:* The breed genetics and the peptide are established. That A2 is the better carton is Kristy's preference for the older herds, not a finding.
+**now:** Barely touched — **this tier note is already the model.** It names the ownership rather than deleting it, which is what the rephrased-not-deleted rule asks for.
+
+**kristy_take** — *was:* The older breeds, and one amino acid is the whole of it. Worth choosing. Not worth choosing first.
+**now:** The older breeds are the whole of the difference. Worth having once the herd and the processing are settled.
 
 ---
 
-## 6. Risks this sample does not yet clear
+### 4.5 `salmon_wild_vs_farmed` · seafood · `kristys_standard`
 
-- ⚠️ **`paidBoundary.test.js` fails if any two cards share a tier sentence.** 83 tier notes
-  must remain 83 *distinct* sentences, and a bulk rewrite converging on one warm phrasing is
-  precisely how that breaks. Run it per batch, not at the end.
+| | |
+| --- | --- |
+| **headline was** | Wild. Farmed is a different fish, fed and penned. |
+| **headline now** | **Wild salmon carries the better fat, and frozen wild counts.** *(10w)* |
+
+**why** — *was:* Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.
+**now:** Farmed salmon eats a ration built largely on plant protein and vegetable oil, which leaves it far higher in omega-6. Wild salmon eats krill and small fish.
+
+**tier_note** — *was:* The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.
+**now:** The feed, the added pigment and the pens are documented. Holding out for wild on top of them is Kristy's standard rather than a finding.
+
+**kristy_take** — *was:* Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.
+**now:** Frozen wild is usually cheaper than fresh farmed and it was frozen at its best. When the case has no wild in it, the tinned aisle does.
+
+---
+
+## 5. Risks this sample does not clear
+
+- ⚠️ **`paidBoundary.test.js` fails if any two cards share a tier sentence.** 83 tier notes must
+  remain 83 *distinct* sentences, and a bulk rewrite converging on one warm phrasing is exactly
+  how that breaks. Run it per batch, not at the end.
 - ⚠️ **`counterReach.test.js`** fails if a card stops being findable, lands on another card, or
-  is found on title words alone. Titles and headlines are exactly what a tone pass moves.
+  is found on title words alone. Headlines are what a tone pass moves.
 - ⚠️ **`listMatchProbe.js` exits non-zero on a WRONG match.** Run after every batch.
-- ⚠️ **The claim lock and the symmetric no-treatment rule.** Softening is generally the safe
-  direction, but neutral phrasing can smuggle in a causal reading that stern phrasing blocked.
-- ⚠️ **Publishing is a separate act with no push.** `migrateCounterCards.js` writes the corpus
-  straight to the live `counter_cards` table. **Committed / pushed and migrated / not are
-  independent states and both need stating.** Nothing here is migrated.
+- ⚠️ **The §2b error has no automated detector.** A card argued from a true-but-irrelevant
+  mechanism passes every check and reads fine. **Only reading it against the tier does.**
+- ⚠️ **Publishing is a separate act with no push.** `migrateCounterCards.js` writes straight to
+  the live `counter_cards` table. **Committed / pushed and migrated / not are independent and
+  both need stating.** Nothing here is migrated.
 
 ---
 
-## 7. Open, and deliberately not decided here
+## 6. Open, and deliberately not decided here
 
-- **The navigation fork.** Does "guided" mean the app knows store layout and aisle order, or
-  section order only? Today it is a fixed perimeter-ish sequence. Real per-store guidance is a
-  different product with a data problem attached. **Nothing is proposed.**
-- **The generated corpus.** Three generated rows are live and no `kind: home` card exists in
-  the KB. That class needs its own sample before `counterGenerate.js` is retuned.
+- **The navigation fork.** Does "guided" mean store layout and aisle order, or section order
+  only? Real per-store guidance is a different product with a data problem attached.
+  **Nothing is proposed.**
+- **The generated corpus.** Three generated rows are live; no `kind: home` card exists in the
+  KB. That class needs its own sample before `counterGenerate.js` is retuned.
