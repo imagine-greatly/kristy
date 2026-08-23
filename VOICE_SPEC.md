@@ -59,6 +59,31 @@ rules. It does not reach the claim lock, the no-treatment rule, or `accuracy out
 firmness`** — those are not craft, and a wrong health claim is a real harm rather than a worse
 sentence.
 
+### The fact serves the direction
+
+⚠️ **Ruled 2026-08-23, and it is the other wall.** *State the fact, do not rank it* is a rule
+about not PERFORMING. It is not a licence to be inert. **A card that states a true thing and
+points nowhere has done nothing for a shopper standing at a case.**
+
+**Lead with which one. Follow with why, in words the shopper already owns.**
+
+⚠️ **DIRECTION IS NOT A COMMAND, AND THAT DISTINCTION IS THE WHOLE BALANCE.** *"Buy the
+block"* is a command. *"the one that matters"* is a significance claim. **A plainly stated
+verdict is neither** — it is the card doing its job.
+
+⚠️ **NEVER NAME A TERM THE CARD DOES NOT EXPLAIN.** A shopper who does not already know the
+term cannot get a direction out of it, **and may well read it backwards** — a named compound
+sounds like a benefit as easily as a cost. **An unexplained technical string is not
+information; it is decoration that reads as authority**, which is the §"state the fact" defect
+arriving from the other side.
+
+**The test: cover the rest of the card and read the headline alone. If a shopper cannot tell
+which one to reach for, it has failed** — however true it is.
+
+**Where a mechanism genuinely needs a name, the name lives in the expanded read, where there is
+room to say what it does.** The headline gets the plain-language version.
+
+
 ---
 
 ## Global principle: one verdict per headline
