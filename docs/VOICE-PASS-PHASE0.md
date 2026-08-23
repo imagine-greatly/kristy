@@ -148,7 +148,7 @@ needs its own sample.
 | | |
 | --- | --- |
 | **headline was** | Buy the block. Slice it or grate it yourself. |
-| **headline now** | **The block is the least processed of the three.** *(8w)* |
+| **headline now** | **The block is the least processed of the three.** *(9w)* |
 | **do — unchanged** | Read the bag for potato starch, cellulose and natamycin before buying shreds. |
 
 ⚠️ **Revision 1 proposed *"Block cheese costs less per pound and melts more smoothly than
