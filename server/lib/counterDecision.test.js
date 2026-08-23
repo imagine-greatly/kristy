@@ -144,14 +144,38 @@ test('a decision can never be minted by the model', () => {
 /* ── The decisions the spec called for, by name ────────────────────────────────── */
 
 test('the three worked examples read as calls, not background', () => {
+  // ⚠️ THIS TEST USED TO PIN THE CLIPPED FORM AND THAT WAS A STYLE, NOT THE RULE.
+  // It asserted /^Chuck\./ and /^Wild\./ — the bare noun plus a full stop. What it was
+  // protecting is real and is kept: the headline must open with the CALL, so a shopper
+  // reading it alone knows what to reach for. What it also encoded, accidentally, was
+  // the two-beat fragment register retired by VOICE_SPEC on 2026-08-23 ("state the fact,
+  // do not rank it" / "the fact serves the direction"). A card may now say which one AND
+  // why in one sentence, which the old regexes made impossible.
+  //
+  // So the assertion moved from the SHAPE to the PROPERTY, and it got stricter in the
+  // process: the pick must still lead, and the headline must now also be a SENTENCE
+  // rather than a fragment. A bare "Chuck." passed the old test and fails this one.
   const byId = (id) => entries.find((e) => e.id === id);
-  // "Which cut for stew" → the cut, first word.
-  assert.match(byId('beef_cuts_basics').decision, /^Chuck\./);
-  // "Wild vs farmed salmon" → the call and nothing else. This used to read "Wild if it
-  // is in reach. Farmed or nothing, buy the farmed", which is two verdicts where the
-  // second cancels the first. Under the one-verdict rule the fallback lives in
-  // watch_out, and it may never climb back into the headline.
-  assert.match(byId('salmon_wild_vs_farmed').decision, /^Wild\./);
+  const leads = (id, pick) => {
+    const d = byId(id).decision;
+    const words = d.trim().split(/\s+/);
+    assert.ok(
+      words.slice(0, 3).some((w) => w.replace(/[^A-Za-z-]/g, '').toLowerCase() === pick.toLowerCase()),
+      `${id}: "${pick}" must lead the headline, not sit in the background — got: ${d}`
+    );
+    assert.ok(
+      words.length >= 6,
+      `${id}: the headline is a fragment (${words.length}w), not a sentence — got: ${d}`
+    );
+    return d;
+  };
+  // "Which cut for stew" → the cut, leading.
+  leads('beef_cuts_basics', 'Chuck');
+  // "Wild vs farmed salmon" → ONE verdict. This used to read "Wild if it is in reach.
+  // Farmed or nothing, buy the farmed", which is two verdicts where the second cancels
+  // the first. Under the one-verdict rule the fallback lives in watch_out, and it may
+  // never climb back into the headline.
+  leads('salmon_wild_vs_farmed', 'Wild');
   // "Is organic worth it" → where it earns it and where it does not.
-  assert.match(byId('organic_worth_it_by_type').decision, /^Organic on thin-skinned/);
+  leads('organic_worth_it_by_type', 'Organic');
 });
