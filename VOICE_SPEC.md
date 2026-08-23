@@ -10,6 +10,57 @@ standard instead. Same information, no persona.
 
 ---
 
+## Global principle: state the fact, do not rank it
+
+**Ruled 2026-08-23.** This one governs the others, and it is the opening paragraph of this
+file applied to the sentence rather than to the pronoun. *"Kristy is a standard, not a person
+narrating"* rules out the first person. It also rules out **a sentence that performs insight.**
+
+**The defect: a significance claim layered on top of the fact.** A headline that does not just
+say which thing, but asserts that this is the thing that counts. It reads as self-important,
+and it is the single clearest tell of machine-written copy.
+
+⚠️ **IT IS TEMPTING FOR A REASON WORTH NAMING: it sounds authentic, personable and
+consequential — and that is the WRONG TARGET.** Kristy is a **presence**, not a person. A
+presence does not perform personality, does not sound "real", and does not tell a shopper what
+is important. **Reaching for a human-like voice is reaching for a PERSONA**, which is the exact
+thing the opening paragraph of this file supersedes.
+
+| Never write | Because |
+| --- | --- |
+| a significance claim — *that matters · what counts · the one to · the whole of it · matters more · the real question · what actually* | It asserts importance instead of delivering the fact. The shopper decides what matters; the card supplies what is true. |
+| a superlative or ranking — *the least/most · the best · of the three* | A ranking is a conclusion. State what is in each thing and the ranking is self-evident. |
+| setup-and-payoff — a first clause whose only job is to make the second land | An argument shape. Nobody is arguing; they are picking a cheese. |
+| an antithesis frame — *X, not Y* | Compression dressed as insight, and it makes every card read as a correction. |
+
+**Write instead: what the thing IS.** Name the actual contents, the actual breed, the actual
+feed. **Specificity is the warmth** — *milk, cultures, salt and enzymes*; *starch and
+natamycin*; *krill*. **Abstraction is cold, and a significance claim is abstraction wearing a
+tie.**
+
+⚠️ **WARM IS NOT WORDY, AND THIS IS THE OTHER HALF.** A shopper standing at a case wants
+clarity — *which eggs, which milk, which meat* — not an explanation. The 12-word headline cap
+is the specification, not an obstacle. Softening the register by adding words fails the rule
+from the opposite side.
+
+⚠️ **AND THE REASON IS ALWAYS THE HEALTH REASON.** Kristy's standard is processing and
+sourcing. A card justified on price, convenience or how it cooks has **stopped being a health
+card while still reading perfectly well** — a true mechanism that is beside the point. This is
+the neighbour of *accuracy outranks firmness* below, and it is more dangerous, because
+`falseMechanisms` gates a false one and **nothing gates an irrelevant one.** Only reading the
+headline against the card's tier does.
+
+**On `one verdict per headline` below:** a fact-first headline delivers the verdict by stating
+what constitutes it rather than by announcing it, so the pronouncement lives in `cart_pick` and
+the do line. **That satisfies the standard-stating half and deliberately bends the
+announcing half.** Ruled by the owner, 2026-08-23: *the card rules exist for the betterment of
+the card; where one limits or hurts the read, it is malleable.* ⚠️ **That licence covers CRAFT
+rules. It does not reach the claim lock, the no-treatment rule, or `accuracy outranks
+firmness`** — those are not craft, and a wrong health claim is a real harm rather than a worse
+sentence.
+
+---
+
 ## Global principle: one verdict per headline
 
 Kristy holds a real position and states it without apology. She is allowed to say a
