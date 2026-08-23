@@ -3,7 +3,7 @@
 **Status: PROPOSAL. Nothing in the KB is edited. Nothing is migrated.**
 This document settles the register on a small sample before the corpus is rewritten in it.
 
-> ⚠️ **REVISION 2 (2026-08-23). The first version of this document got the machinery
+> ⚠️ **REVISION 3 (2026-08-23) — see §2c, the AI-authority tic. REVISION 2. The first version of this document got the machinery
 > backwards and priced the work wrongly. §3 is rewritten and §5 is deleted.** The claim
 > *"only one lint constraint has to move — the imperative gate"* was **wrong**: it was measured
 > against the wrong field. See §3. **Zero lint constraints have to move.** The register was
@@ -71,6 +71,39 @@ was **true but beside the point**, which nothing checks for.
 **"Soy-free and corn-free first, then organic, then pasture-raised."** Eight words, declarative,
 no command, health-framed, and it hands over a *ladder*. **It needs no rewrite.** Everything
 below is written to match it.
+
+### ⚠️ 2c — THE TIC: A SENTENCE THAT CLAIMS ITS OWN IMPORTANCE
+
+**Revision 2's headlines were rejected on sight and they are the clearest specimen in this
+document.** *"Soy-free and corn-free are the feed words **that matter**."* *"The block is the
+**least** processed **of the three**."*
+
+**The mechanism: a significance claim layered on top of the fact.** The sentence does not just
+say which words — it asserts that these are the ones that MATTER. It performs insight instead of
+delivering information, and it reads as **pretentious, self-important, and unmistakably
+machine-written.** It is the register of a voice trying to sound authentic and consequential.
+
+⚠️ **AND THAT IS EXACTLY THE WRONG TARGET, BECAUSE KRISTY IS NOT A PERSON.** §1 settles it — she
+is a **presence**. A presence does not perform personality, does not sound "real", and does not
+tell you what is important. **Reaching for an authentic, personable, human-like voice is
+reaching for a PERSONA, which is a different character from the one this app has.**
+
+**Three shapes, banned:**
+
+1. **Significance claims** — *that matters · what counts · the one to · the whole of it ·
+   matters more · the real question · what actually*
+2. **Superlatives and rankings** — *the least/most · the best · of the three*
+3. **Setup-and-payoff** — a first clause whose only job is to make the second one land.
+
+> **THE RULE: state the fact. Let the shopper draw the conclusion.**
+> **Warmth comes from naming the actual things** — milk, cultures, salt, enzymes; starch and
+> natamycin; krill. **Specificity is warm. Abstraction is cold, and a significance claim is
+> abstraction wearing a tie.**
+
+📎 **Checkable, and it fits machinery that already exists.** `counterCardLint` already carries
+`antithesisChime` and `copulaAbstraction` as **reported, never failed** metrics. A third of the
+same kind — a phrase list for the shapes above — is the natural home for this. **Proposed, not
+written.**
 
 ---
 
@@ -148,11 +181,14 @@ needs its own sample.
 | | |
 | --- | --- |
 | **headline was** | Buy the block. Slice it or grate it yourself. |
-| **headline now** | **The block is the least processed of the three.** *(9w)* |
+| **headline now** | **Block cheese has nothing added. Shreds carry starch and natamycin.** *(10w)* |
 | **do — unchanged** | Read the bag for potato starch, cellulose and natamycin before buying shreds. |
 
-⚠️ **Revision 1 proposed *"Block cheese costs less per pound and melts more smoothly than
-shreds"* — that is the §2b error in one line.** It is true and it is not why the block wins.
+⚠️ **Two rejected drafts on this one card, and they are different errors.** Revision 1's
+*"costs less per pound and melts more smoothly"* is §2b — true, and not why the block wins.
+Revision 2's *"the least processed of the three"* is §2c — the health frame is now right, and
+the sentence still ranks and pronounces instead of stating. **The version above only names what
+is in each one.**
 
 **why** — *was:* Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.
 **now:** Real cheese is milk, cultures, salt and enzymes. Shreds carry potato starch or cellulose plus natamycin, and process cheese adds emulsifiers on top.
@@ -174,10 +210,13 @@ words.** So its headline should lead with the feed words that matter, not with t
 | | |
 | --- | --- |
 | **headline was** | 'Vegetarian-fed' is the one to walk away from. |
-| **headline now** | **Soy-free and corn-free are the feed words that matter.** *(9w)* |
+| **headline now** | **Soy-free and corn-free mean exactly that, and both must be printed.** *(11w)* |
 
 📎 **Vegetarian-fed moves down into `watch_out`, where a niche negative belongs.** The verdict
 on it is unchanged — it is still a signal the hen stayed inside.
+
+⚠️ **The useful fact is that these words are LITERAL and must be printed**, which is what makes
+carton silence meaningless. Revision 2 buried that under a claim about which words matter.
 
 **why** — *was:* Hens are omnivores. That claim and a real pasture claim work against each other.
 **now:** Hens are omnivores. A bird with real outdoor access is eating insects and worms, so a vegetarian ration suggests she stayed inside.
@@ -205,10 +244,10 @@ on it is unchanged — it is still a signal the hen stayed inside.
 | | |
 | --- | --- |
 | **headline was** | A2 milk, and the difference is the breed, not the brand. |
-| **headline now** | **A2 does not release BCM-7, but processing matters more.** *(9w)* |
+| **headline now** | **A2 milk comes from Jersey, Guernsey and older herds.** *(9w)* |
 
-⚠️ **Note what changed beyond tone.** The old line does not state a call at all — it states a
-*correction*. The new one gives the health mechanism **and** its honest rank in one line.
+⚠️ **The old line does not state a call at all — it states a *correction*.** The version above
+names the breeds instead, which is the thing a shopper can actually find on a carton.
 
 **why** — *was:* One amino acid apart, and only A1 releases the BCM-7 peptide. Sourcing still outranks it.
 **now:** The two milks are one amino acid apart, and only A1 releases the BCM-7 peptide on digestion. How the milk was handled still outranks which protein it carries.
@@ -226,7 +265,7 @@ on it is unchanged — it is still a signal the hen stayed inside.
 | | |
 | --- | --- |
 | **headline was** | Wild. Farmed is a different fish, fed and penned. |
-| **headline now** | **Wild salmon carries the better fat, and frozen wild counts.** *(10w)* |
+| **headline now** | **Wild salmon eats krill; farmed eats a plant-oil ration.** *(9w)* |
 
 **why** — *was:* Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.
 **now:** Farmed salmon eats a ration built largely on plant protein and vegetable oil, which leaves it far higher in omega-6. Wild salmon eats krill and small fish.
@@ -256,6 +295,13 @@ on it is unchanged — it is still a signal the hen stayed inside.
 ---
 
 ## 6. Open, and deliberately not decided here
+
+- ⚠️ **WHERE THE VERDICT LIVES, AND THIS ONE NEEDS A RULING.** Non-negotiable #7 says *"one
+  verdict per headline, and the headline states the standard undiluted."* A **fact-first**
+  headline delivers the verdict by stating what constitutes it rather than by announcing it —
+  *"Block cheese has nothing added"* leaves no doubt what to buy — but the pronouncement moves
+  into `cart_pick` and the `do` line. **Either that satisfies #7 or it amends it. It should be
+  settled deliberately rather than drift.**
 
 - **The navigation fork.** Does "guided" mean store layout and aisle order, or section order
   only? Real per-store guidance is a different product with a data problem attached.
