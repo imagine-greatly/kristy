@@ -272,10 +272,24 @@ only by prompt.
 
 ## Non-negotiables
 
-1. **Reuse the locked brand. Never invent.** Near-black forest green, gold accents,
-   Playfair Display + Inter, thin gold thread/dot motif. Import from `lib/tokens.js`.
-   Kristy's spoken text = `kristyVoice` (Playfair italic); all factual/UI/ingredient
-   text = Inter. Never substitute a color or a face.
+1. ⛔ **OVERTURNED BY THE OWNER, 2026-08-24 — ON iOS ONLY. THE APP COMES OFF DARK STOCK
+   AND GOES ONTO PAPER.** This rule read *"Reuse the locked brand. Never invent."* and it
+   **no longer binds `kristy-ios`**. Warm paper ground `#F5F1E6`, green-black ink, and
+   **green / ochre / orange as the food ladder every shopper already reads off packaging**;
+   **`Fraunces` replaces Playfair Display Italic and Newsreader**; and ⚠️ **the near-black
+   forest green and the brass are NOT deleted — they CONCENTRATE into the seal's plate and
+   appear nowhere else.** Brass is **forbidden off the plate**: it measures 2.08:1 on paper,
+   which is not a low-contrast accent but an invisible one.
+   **The ruling, every value, the build order: `kristy-ios/docs/ios-specs/paper.md`, whose
+   §0 is the premise every other section derives from.**
+   ⚠️ **RECORDED IN THREE PLACES, ALL THREE OR NONE** (§9): `kristy-ios/Brand/tokens.json`
+   `_stance`, `kristy-ios/CLAUDE.md`, and here. ⚠️ **`palette_mirror.sh` NEEDS NO CHANGE AND
+   MUST NOT BE LOOSENED** — it checks the catalog against the brand file and both moved together.
+   **STILL BINDING:** the frozen `client/src` keeps the old brand and `lib/tokens.js` its
+   values — **this reversal changes no byte there.** **The VOICE rule is untouched**; what
+   changed is *which serif* and *where the boundary sits* (the do line crosses to it).
+   ⛔ **And "never invent" still binds every colour authored from here on** — the reversal
+   licensed **one ruled palette, not open season.**
 
 2. **The claim lock is law.** Every health/ingredient claim traces to a matched entry
    in a knowledge base. The model may rephrase tone but may NEVER introduce a concern,
