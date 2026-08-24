@@ -480,41 +480,53 @@
         "should i buy organic",
         "pay for organic",
         "organic worth the money",
-        "produce should be organic"
+        "produce should be organic",
+        "bananas",
+        "banana",
+        "onions",
+        "onion",
+        "kiwi",
+        "kiwis",
+        "potatoes",
+        "potato"
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
-      "decision": "Organic on thin-skinned produce. Conventional on anything peeled.",
-      "why": "Residue sits on the surface, so skin and peeling do most of the work.",
-      "short_answer": "Thin-skinned produce you eat whole (berries, leafy greens, apples, grapes) carries more surface residue, and that is where organic earns the money. Thick-skinned or peeled produce (avocado, banana, citrus, onion) you buy conventional without a second thought. The ‘Dirty Dozen’ list is a rough guide with contested methodology, not a ranking to shop from.",
-      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The thin-skin/high-residue reasoning is sound as a prioritization tool. The specific ‘Dirty Dozen’ ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win.",
+      "decision": "Organic where the skin gets eaten. Conventional on anything peeled.",
+      "why": "Residue sits on the surface, so whatever gets thrown away takes it along.",
+      "short_answer": "What gets eaten skin and all carries the residue, and that is where organic earns the money: berries, leafy greens, apples, grapes, potatoes. What gets peeled goes in the cart conventional without a second thought, and that includes several that feel delicate and are not: avocado, kiwi, mango, banana, citrus, onion. Avocado tests among the cleanest produce in the country, because the part that was sprayed is the part that goes in the bin.",
+      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the exposure, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win.",
       "evidence_tier": "credible_concern",
       "sources": [
         "USDA Pesticide Data Program",
         "EPA tolerance limits",
-        "peer-reviewed critiques of Dirty Dozen methodology"
+        "peer-reviewed critiques of Dirty Dozen methodology",
+        "EWG Shopper's Guide to Pesticides in Produce (2025)"
       ],
-      "kristy_take": "Spend it on the ones you eat whole. Everything you peel, buy plain.",
+      "kristy_take": "Spend it on the ones eaten whole. Everything that gets peeled, buy plain.",
       "buying_tips": [
-        "Prioritize organic for thin-skinned, eaten-whole items (berries, greens, apples).",
-        "Buy conventional for peeled and thick-skinned produce (avocado, banana, citrus, onion).",
-        "Soak the conventional thin-skinned ones. A baking soda soak takes more surface residue off than a rinse."
+        "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.",
+        "Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.",
+        "Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse."
       ],
       "watch_out": [
-        "The ‘Dirty Dozen’ ranking is contested on its methodology. The thin-skin reasoning holds; the list order does not.",
+        "The rule is the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they sit on the plain side; a potato reads as sturdy and gets eaten skin-on, so it does not.",
+        "Sturdy vegetables eaten whole are the gap this rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low anyway, so nothing is lost buying those plain.",
+        "Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.",
+        "The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.",
         "If organic means fewer vegetables in the cart, buy conventional and eat more."
       ],
       "labels_decoded": [
         {
           "term": "USDA Organic",
-          "meaning": "Grown to the National Organic Program rules — no synthetic pesticides/fertilizers; certified."
+          "meaning": "Grown to the National Organic Program rules and certified, with no SYNTHETIC pesticides. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones."
         },
         {
           "term": "Natural",
-          "meaning": "Means essentially nothing on produce — no organic standard behind it."
+          "meaning": "Means essentially nothing on produce, with no organic standard behind it."
         }
       ],
-      "tier_note": "Surface residue on thin skins is a real and reported signal, and peeling or swapping answers it cleanly.",
+      "tier_note": "Surface residue on what gets eaten whole is a real and reported signal, and peeling or swapping answers it cleanly.",
       "eyebrow_short": "Buying organic",
       "asked_as": [
         "is organic worth it",
