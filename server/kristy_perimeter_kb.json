@@ -632,7 +632,10 @@
         "spring produce",
         "summer produce",
         "what is in season",
-        "winter produce"
+        "winter produce",
+        "butternut squash",
+        "acorn squash",
+        "winter squash"
       ],
       "category": "produce",
       "question": "Does buying produce in season matter?",
