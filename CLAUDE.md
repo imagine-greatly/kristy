@@ -1247,12 +1247,20 @@ before starting, not after.**
   AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
   "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or
   by parse:**
-  - **LIVE `counter_cards`: 85 rows — 82 `curated` + 3 `generated`.**
+  - **LIVE `counter_cards`: 86 rows — 83 `curated` + 3 `generated`. Re-measured by query
+    2026-08-24, immediately after a migration.**
   - **`kristy_perimeter_kb.json`: 83 entries on `main` (the held stack), 82 on `origin/main`.**
-  - ⚠️ **THOSE TWO ARE NOT IN CONFLICT AND THE GAP IS THE POINT: THE 83RD CARD IS COMMITTED AND
-    NOT MIGRATED** (`8ca62ab`, the first brand-naming card), so the KB — the source of record —
-    is one ahead of the table, which is what ships. **This is the committed/migrated pair doing
-    exactly what it is for.** A session finding 83 ≠ 82 has found the migration queue, not a bug.
+  - ✅ **THE KB/TABLE GAP IS CLOSED. Both hold 83 curated.** The 83rd card (`8ca62ab`, the first
+    brand-naming card) sat committed-and-unmigrated for five days and went live in the same
+    migration as the organic rewrite — **which is the committed/migrated pair working, and also
+    the warning it carries: a migration publishes EVERYTHING the KB is ahead by, not only the
+    card you came to ship.** Check `--dry-run`'s insert count against what you intended.
+  - ⚠️ **`origin/main` IS STILL AT 82 AND THAT IS NOT A CONFLICT.** The KB is the source of
+    record and the table is what ships; the deployed BRANCH is a third thing and is behind both.
+    **A session finding 83 ≠ 82 has found the held stack, not a bug.**
+  - ⚠️ **`migrateCounterCards.js` LOADS `.env` FROM THE WORKING DIRECTORY**, so run it from
+    `server/`. Run from the repo root it reports *"SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are
+    not set"* and writes nothing — **which reads as a missing credential and is a missing `cd`.**
 - ⚠️ **ACCOUNTS GATE REVENUE, AND THE RAIL THAT WILL CARRY THEM IS SIGN IN WITH APPLE — NOT PHONE.**
   See **Phone sign-in**, which is **DEAD PRODUCT-WIDE, not pending**.
   ⚠️ **`GET /auth/v1/settings` IS STRUCTURALLY BLIND TO THE CLIENT-ID QUESTION** — a boolean per
