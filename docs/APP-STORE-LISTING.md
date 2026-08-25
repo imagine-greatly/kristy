@@ -391,6 +391,16 @@ blind to its subject *when taken*; this is an artifact staying blind while its s
    dark stance**, which was the *forced* appearance when they were taken and is now the
    secondary one. Verified by reading the PNGs, not by inferring from dates.
 
+✅ **CAUSE 1 IS NOW MEASURED OFF RENDERED PIXELS, NOT INFERRED FROM DATES.** The app was
+launched and sampled 2026-08-25 17:43: the ground reads **`#F5F1E6` at three points**, which is
+`Brand/tokens.json`'s `paper` exactly. Headline in Fraunces, green-black ink, the tab bar on
+`card`. Evidence frame kept at
+`/Users/m1/kristy-review-screenshots/evidence-2026-08-25/PROOF-app-renders-on-paper-NOT-A-SHOT-…png`
+— ⛔ **named so it can never be mistaken for a deliverable**: it is 1206 × 2622 (iPhone 17 Pro,
+the suite's destination, not the Pro Max) and the clock reads 17:43. **It is evidence, not a
+shot**, and the same rule as `evidence-2026-08-20/` applies: nothing named `PROOF` or `EVIDENCE`
+belongs in `appstore-1.0/`.
+
 2. ⛔ **SLOT 4'S CARD COPY IS SUPERSEDED, AND IT IS THE HEADLINE — the largest type in the
    frame.** The shot reads *"A2 milk, and the difference is the breed, not the brand."* The
    live counter door serves *"A2 is worth choosing, and it suits people ordinary milk upsets."*
