@@ -358,7 +358,59 @@ required iPhone slot is 6.9-inch, 1320 × 2868 or 1290 × 2796. Measured across 
 paragraph as the reason the audit set is not shippable, **not as an instruction to re-shoot
 anything already delivered.**
 
-### 📍 THE SHOOT'S STATE — MEASURED 2026-08-20 20:13, AND THIS IS THE BOARD
+### ⛔ ALL FIVE DELIVERED SHOTS ARE OBSOLETE — FOUND 2026-08-25, AND THE BOARD BELOW IS STALE
+
+⚠️ **THE SET WAS SHOT ON 2026-08-20 AND THE PRODUCT CHANGED UNDER IT ON 2026-08-24. NOTHING
+REPORTED THIS, AND NOTHING COULD:** a screenshot is a file on disk. It does not recompile, no
+check reads it, and it goes stale silently while continuing to look exactly as finished as the
+day it was approved. **This is the sixth findings-family member aimed one step further along
+than it has been aimed before** — the artifact was blind to its subject when it was taken, and
+this is the artifact staying blind while its subject moves.
+
+**Two independent causes, either one disqualifying:**
+
+1. ⛔ **THE BRAND MOVED AND THE SHOTS DID NOT.** Non-negotiable #1 was overturned 2026-08-24:
+   the app comes off dark stock and onto **paper** (`Brand/tokens.json` → `paper #F5F1E6`,
+   `card #FFFDF7`, `ink #14251A`; `kristy-ios/docs/ios-specs/paper.md`). `Palette.swift` states
+   it plainly — **"Light is the primary appearance; dark ships as a genuine second one"**, and
+   the `.preferredColorScheme(.dark)` pin came out the same day. **Every delivered shot is the
+   dark stance**, which was the *forced* appearance when they were taken and is now the
+   secondary one. Verified by reading the PNGs, not by inferring from dates.
+
+2. ⛔ **SLOT 4'S CARD COPY IS SUPERSEDED, AND IT IS THE HEADLINE — the largest type in the
+   frame.** The shot reads *"A2 milk, and the difference is the breed, not the brand."* The
+   live counter door serves *"A2 is worth choosing, and it suits people ordinary milk upsets."*
+   — queried on production 2026-08-25. The voice pass rewrote it and the 2026-08-24 migration
+   published it. ⚠️ **THIS IS THE COMMITTED/MIGRATED PAIR WORKING EXACTLY AS DESIGNED AND
+   BITING A THIRD ARTIFACT.** A card edit needs no push and no deploy, so a screenshot of a
+   card can go stale with **nothing in git moving at all** — `origin/main..HEAD` says nothing
+   about what a shopper reads, and it says nothing about what a screenshot shows either.
+
+📎 **HOW IT SURFACED, which is the part worth keeping:** not by anyone looking at the shots. The
+UI suite was run for its COUNT, and `testSlot4CardSummary` went red on
+`XCTAssertTrue … "the browse rows never arrived"` — because the test pins the old headline
+verbatim. **The test that failed was pinned to the same stale string the deliverable was**, so
+the suite found the screenshot defect by accident while failing for its own reason.
+
+⚠️ **THE RULE THIS LEAVES, AND IT BELONGS AT THE TOP OF ANY SHOOT: A SCREENSHOT IS A CLAIM WITH
+A TIMESTAMP, AND THE ONLY THING THAT KEEPS IT TRUE IS RE-SHOOTING IT. Re-shoot the set as the
+LAST act before submission, never as an early one** — every commit and every migration between
+the shoot and the upload can invalidate it, and none of them will say so.
+
+⏳ **WHAT THE RE-SHOOT NEEDS, and it is not just a re-run:**
+- **The five slots re-shot on paper**, at 1320 × 2868, clock 9:41.
+- ⚠️ **`AppStoreShots.swift` PINS CARD COPY VERBATIM AND THAT IS NOW A KNOWN TRAP.** Slot 4's
+  headline literal must be updated from the LIVE DOOR, not from the KB, and not from memory.
+  **Whether it should pin copy at all is a real question** — pinning is what makes the shot
+  assert its subject (`requireCards`), and it is also what makes it break on an editorial pass.
+  The answer is probably to pin the SLUG and read the headline off the row.
+- **Slot 6 is unchanged: still gated on the Mac, still no fallback, still ship five.**
+
+### 📍 THE 2026-08-20 BOARD, KEPT AS THE RECORD OF A SET THAT WAS CORRECT WHEN TAKEN
+
+⛔ **EVERYTHING BELOW DESCRIBES THE SUPERSEDED SET.** It is kept because the three fixes, the
+poses, the bucket arithmetic and the two runner defects it records are all still true and are
+what the re-shoot inherits. **Do not read any ✅ in it as a live approval.**
 
 **Deliverables live in `/Users/m1/kristy-review-screenshots/appstore-1.0/`. All five are
 1320 × 2868, measured with `sips` on each file after the re-shoot.** Slots 2–4 were shot at
