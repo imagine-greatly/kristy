@@ -418,6 +418,31 @@ the shoot and the upload can invalidate it, and none of them will say so.
   **Whether it should pin copy at all is a real question** — pinning is what makes the shot
   assert its subject (`requireCards`), and it is also what makes it break on an editorial pass.
   The answer is probably to pin the SLUG and read the headline off the row.
+- 🐞 ⚠️ **SLOT 5 CANNOT BE SHOT UNTIL THE GIVE-BACK IS FIXED, AND IT IS THE ASSERTION DOING
+  ITS JOB RATHER THAN A NEW BREAK.** Measured in the 2026-08-25 suite run:
+
+  > `slot 5 · compose refined: 8 nudge(s) found no gap and the give-back did NOT bring the
+  > anchor "Wild salmon fillets" back to its natural offset (started at 471.17, now 371.50)`
+
+  The give-back under-restored by ~100pt, so the frame would have shipped with the top of the
+  surface scrolled away. ✅ **THIS IS EXACTLY WHAT `3d425d2` WAS FOR** — that branch used to
+  claim *"it was given back"* unconditionally because `nudgeBack` is `@discardableResult` and
+  the result was discarded. **Bound and asserted, it refused to write a shot.** Before that
+  commit this run would have produced a clipped deliverable under a log line saying it was
+  restored.
+  ⚠️ **AND NOTE THE ANCHOR: "Wild salmon fillets", where the 2026-08-20 shot posed on
+  "Carrots".** Slot 5 drives the LIVE model, so the refinement differs run to run and the pose
+  anchor is whatever that run struck. **A fix must not assume a particular row.**
+  ⛔ **DO NOT DEBUG THIS ON A SPENT BUCKET.** Iterating on the runner and shooting the
+  deliverable are the same act against the same budget — §1.6's operational trap — so the fix
+  and the shoot want one clean hour together, not two halves of one.
+- 🐞 **AND THE STATUS-BAR BRANCH STILL HAS THE DEFECT `3d425d2` FIXED IN THE GIVE-BACK
+  BRANCH.** `nudgeBack(app, budget: 4) { offenderOfStatusBar(app) == nil }` still discards its
+  result, under a pose reading *"Nudged back off it, so the shot keeps its anchor and a clean
+  clock"* — so a failed nudge there ships content under the CLOCK while claiming otherwise.
+  **It was deliberately deferred so a never-run assertion could not turn a shippable frame into
+  no deliverable. That reason has now expired: there is no shippable frame.** Fix it in the
+  same change as the give-back.
 - **Slot 6 is unchanged: still gated on the Mac, still no fallback, still ship five.**
 - ✅ **THE UNDECIDED SEAL DOES NOT BLOCK THIS, CHECKED RATHER THAN ASSUMED.** `paper.md` §11
   leaves `Metal.metal`'s deep stop open — *"now `ochre` … doing a job on `plate` that nothing
