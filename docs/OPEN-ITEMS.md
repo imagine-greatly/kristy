@@ -903,8 +903,31 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
   - ⚠️ **THE FAILURE DIRECTION IS SAFE ONLY WHILE THE ROW STAYS STALE.** `other` is non-exempt, so
     an un-upgraded row can only withhold a seal — but a row this fix upgrades to `water` is exempt
     on the product half from that moment. **The safe direction belongs to the bug, not to the fix.**
-  - ✅ **It is still safe to land first, measured** — the document half catches Sidi Ali. Cristaline
-    is the one that breaks, and it cannot reach `water` without the aisle fix.
+  - ✅ **It is still safe to land first, RE-MEASURED 2026-08-25 against the live row** — the
+    document half catches Sidi Ali. `readsAsNutrientPanel` returns **true** on its seven stored
+    tokens, so `nothingConfirmsFood` withholds under `category='water'` exactly as it does under
+    `other`, and the upgrade changes its outcome not at all.
+    ⚠️ **THE RE-MEASUREMENT NEARLY FILED A FALSE FINDING AND THE NEAR-MISS IS THE PART WORTH
+    KEEPING.** The first probe read `tokens` off `evaluateIngredients`'s return — which has no
+    such key — so it passed `[]`, `readsAsNutrientPanel` hit its own empty-collection guard and
+    returned `false`, and Sidi Ali appeared to take a gold seal under `water`. **The check was
+    wrong, not the code**, and it was believable because this repo has real instances of exactly
+    that shape. The real call site tokenizes with `tokenizeIngredients(rawIngredientList)`; a
+    probe that does not is asking a different question. **When a check and the code disagree,
+    suspect the check** — and the findings family caught its own probe here.
+  - ⏳ **DEFERRED 2026-08-25, AND THE REASON IS A MEASUREMENT RATHER THAN A PRIORITY CALL.**
+    `scanned_products` holds **18 rows**, queried live: 8 are vision test rows with a null
+    barcode, and exactly **two** carry a stale category this fix would move (Sidi Ali, whose
+    outcome does not change, and Cristaline, which the language guard now refuses upstream). **So
+    its reach today is two dev rows and no shopper.**
+    ⚠️ **AND THE URGENCY ARGUMENT THAT JUSTIFIED THE CATEGORY COLUMN DOES NOT TRANSFER TO THIS.**
+    The column was urgent because **a row retained without a category can never be given one** —
+    the panel photo is gone and the OFF response is not kept. The version stamp has the opposite
+    property: it **re-derives from OFF on demand**, so a row it fixes in six months is fixed
+    exactly as well as one fixed today. **Nothing is lost by waiting, which is not true of any
+    other item in this section.** It becomes real when a catalog exists — i.e. when there are
+    shoppers — and it should land then, not days before a submission, since it restructures the
+    scan front door's control flow and turns on a fail-closed exemption.
 - ✅ **PART 3 — THE CATEGORY EXEMPTION — SHIPPED.** `FOOD_CATEGORIES = new Set(['water'])`, read by
   `nothingConfirmsFood`, on `origin/main` inside `22b35a8`. ⚠️ **COMPUTE IT, DO NOT READ IT:**
   `git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '`. Pinned in
