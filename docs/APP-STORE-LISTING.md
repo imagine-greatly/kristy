@@ -466,6 +466,50 @@ the shoot and the upload can invalidate it, and none of them will say so.
   surface where a dark ground was least wrong, so it is the one least able to answer whether
   paper works. **Look at slot 3 before believing slot 1.**
 
+### 🎬 HOW TO SHOOT THE SET — the runbook, because it was prose in three places
+
+**Every step below is here because skipping it has cost a shoot.** Written 2026-08-25 while
+running it.
+
+**1. Know which buckets you are about to spend, and that they are THREE, not one.**
+   `guestRate.js` is a **rolling 60-minute window** per bucket — read it rather than assuming a
+   reset — and a REFUSED request does not push a timestamp, so **a 429 costs nothing and
+   extends nothing.** That is why the recovery is measured from the last *allowed* call.
+
+   | bucket | size | what spends it in a shoot |
+   | --- | --- | --- |
+   | `cartBuildLimited` | **20/hr** | `/guest/list/attach` — one per slot that launches a trip |
+   | `rateLimited` | **8/hr** | `/guest/list/compose` — slot 5 needs **two** (build + refine) |
+   | counter | 40/hr | the counter door — slots 2 and 4 |
+
+   ⚠️ **A FULL SUITE RUN MAKES ~23 ATTACHES AND EXHAUSTS THE FIRST BUCKET.** Shooting only
+   `AppStoreShots` needs ~5. **Never shoot inside an hour of a full suite run.**
+
+**2. Erase the device, do not merely wait.** ⚠️ **The bucket has POSITIVE FEEDBACK** — a refused
+   attach leaves rows uncarded, and a real cart persists that, so the next launch asks for more
+   than the last did. (`-kristy.debug.trip` re-seeds wholesale and is immune, but nothing else
+   is, and the rule should not depend on which door you came through.)
+
+**3. Boot ONLY the Pro Max, and shut the others.** The deliverable is **1320 × 2868**;
+   `run.sh` defaults to iPhone 17 Pro, which is **1206 × 2622**. That default is how all 67
+   audit captures came out the wrong product with nothing failing.
+
+**4. Freeze the clock, and verify it in pixels rather than trusting the command.**
+   `xcrun simctl status_bar <udid> override --time 9:41 --batteryState charged --batteryLevel 100 --cellularBars 4`
+
+**5. Shoot once, only the shots:**
+   `KRISTY_UISUITE_DEST='platform=iOS Simulator,name=iPhone 17 Pro Max' ./Tools/uisuite/run.sh -only-testing:KristyUITests/AppStoreShots`
+
+**6. EXPORT IMMEDIATELY — `Tools/uisuite/export_shots.sh "" <dir>`.** ⚠️ **`run.sh` opens with
+   `rm -rf "$OUT"`, so the bundle is ONE RUN DEEP** and the next run destroys the shots, the log
+   and every failure message. The script enforces 1320 × 2868 and renames anything else
+   `WRONGSIZE-…`, and refuses an empty export — *"0 shots, no failures"* is the
+   empty-collection defect wearing a green tick.
+
+⛔ **AND THE ONE THAT IS NOT A STEP: DO NOT ITERATE ON THE RUNNER AND SHOOT IN THE SAME HOUR.**
+They are the same act against the same budget. Fix the runner, verify it **builds** and that the
+rebuilt test binary actually contains the change, and shoot once.
+
 ### 📍 THE 2026-08-20 BOARD, KEPT AS THE RECORD OF A SET THAT WAS CORRECT WHEN TAKEN
 
 ⛔ **EVERYTHING BELOW DESCRIBES THE SUPERSEDED SET.** It is kept because the three fixes, the
