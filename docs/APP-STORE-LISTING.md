@@ -421,6 +421,18 @@ A TIMESTAMP, AND THE ONLY THING THAT KEEPS IT TRUE IS RE-SHOOTING IT. Re-shoot t
 LAST act before submission, never as an early one** — every commit and every migration between
 the shoot and the upload can invalidate it, and none of them will say so.
 
+✅ **THE PAPER SET IS SHOT — 2026-08-25, five slots, `kristy-review-screenshots/appstore-paper-2026-08-25/`.**
+All five are 1320 × 2868, clock 9:41, exported through `export_shots.sh` so the size is
+enforced rather than eyeballed. The run logs and summaries sit beside them.
+⚠️ **AND THE RULE ABOVE APPLIES TO THIS SET THE DAY IT WAS TAKEN: a screenshot is a claim with
+a timestamp.** Slot 4 shows a live counter card and slot 5 a live model refinement, so **a
+migration or a voice pass invalidates them with nothing in git moving.** ⛔ **Re-shoot as the
+LAST act before submission** — this set is evidence that the runner works and that paper reads,
+**not** a set that can sit until a submission date.
+📎 **Shot in two runs, and the second was not a retry of the first:** slots 1–4 at 19:50, slot 5
+alone at 20:05 after the give-back fix below. **Slots 1–4 were exported before the fix was
+written** — the bundle is one run deep, and the second run's `rm -rf` would have taken them.
+
 ⏳ **WHAT THE RE-SHOOT NEEDS, and it is not just a re-run:**
 - **The five slots re-shot on paper**, at 1320 × 2868, clock 9:41.
 - ⚠️ **`AppStoreShots.swift` PINS CARD COPY VERBATIM AND THAT IS NOW A KNOWN TRAP.** Slot 4's
@@ -428,31 +440,41 @@ the shoot and the upload can invalidate it, and none of them will say so.
   **Whether it should pin copy at all is a real question** — pinning is what makes the shot
   assert its subject (`requireCards`), and it is also what makes it break on an editorial pass.
   The answer is probably to pin the SLUG and read the headline off the row.
-- 🐞 ⚠️ **SLOT 5 CANNOT BE SHOT UNTIL THE GIVE-BACK IS FIXED, AND IT IS THE ASSERTION DOING
-  ITS JOB RATHER THAN A NEW BREAK.** Measured in the 2026-08-25 suite run:
-
-  > `slot 5 · compose refined: 8 nudge(s) found no gap and the give-back did NOT bring the
-  > anchor "Wild salmon fillets" back to its natural offset (started at 471.17, now 371.50)`
-
-  The give-back under-restored by ~100pt, so the frame would have shipped with the top of the
-  surface scrolled away. ✅ **THIS IS EXACTLY WHAT `3d425d2` WAS FOR** — that branch used to
-  claim *"it was given back"* unconditionally because `nudgeBack` is `@discardableResult` and
-  the result was discarded. **Bound and asserted, it refused to write a shot.** Before that
-  commit this run would have produced a clipped deliverable under a log line saying it was
-  restored.
-  ⚠️ **AND NOTE THE ANCHOR: "Wild salmon fillets", where the 2026-08-20 shot posed on
-  "Carrots".** Slot 5 drives the LIVE model, so the refinement differs run to run and the pose
-  anchor is whatever that run struck. **A fix must not assume a particular row.**
-  ⛔ **DO NOT DEBUG THIS ON A SPENT BUCKET.** Iterating on the runner and shooting the
-  deliverable are the same act against the same budget — §1.6's operational trap — so the fix
-  and the shoot want one clean hour together, not two halves of one.
-- 🐞 **AND THE STATUS-BAR BRANCH STILL HAS THE DEFECT `3d425d2` FIXED IN THE GIVE-BACK
-  BRANCH.** `nudgeBack(app, budget: 4) { offenderOfStatusBar(app) == nil }` still discards its
-  result, under a pose reading *"Nudged back off it, so the shot keeps its anchor and a clean
-  clock"* — so a failed nudge there ships content under the CLOCK while claiming otherwise.
-  **It was deliberately deferred so a never-run assertion could not turn a shippable frame into
-  no deliverable. That reason has now expired: there is no shippable frame.** Fix it in the
-  same change as the give-back.
+- ✅ **SLOT 5 IS SHOT, AND THE GIVE-BACK DEFECT WAS NOT THE ONE THIS ENTRY NAMED.** It read
+  "the give-back under-restored by ~100pt" and stopped there, which is an outcome, not a
+  mechanism. Measured 2026-08-25 by making the failure print its own steps:
+  **the escalation had never once run.**
+  `nudgeBack` steps at 1.5% and escalates to 18% "after two consecutive steps that moved
+  nothing" — and it tested `abs(after - before) < 2`, *did THIS step move anything*. The slot-5
+  surface **oscillated**: the anchor owed 98pt, fourteen steps each moved it ≥2pt, the net gain
+  was ~16pt, and every gesture in the run log is the small step. **A step that bounced straight
+  back reset the counter exactly like a step that had worked**, so the escalation was
+  structurally unreachable on the one state that needs it.
+  ⚠️ **THE RULE: MOVEMENT IS NOT PROGRESS.** The subject is the DEBT, so the counter measures
+  against the best offset seen, not against the step's own start. A give-back that is genuinely
+  climbing passes its own high-water mark every step and still never escalates — the property
+  that made the small step safe to keep, kept rather than traded.
+  ⚠️ **AND THE HONEST STATUS OF THAT FIX: IT IS LANDED AND UNEXERCISED.** The 20:05 run passed
+  **without reaching the escalation** — 8 forward nudges, ONE give-back step, restored. The
+  surface barely scrolled, which is itself the finding: **the 98pt the first run blamed on
+  nudging was almost certainly never scroll at all**, but a layout settling after the keyboard
+  dismissal. ⛔ **So do not record this as "the fix is proven."** What is proven is that slot 5
+  can be shot; the escalation is a guard that has not yet had to fire.
+  📎 **Two diagnostics landed with it and they are why the next failure costs one run, not two:**
+  the failure now prints the **step trace** (a start and an end offset cannot tell a surface that
+  refused to move from one that oscillated), **captures a frame before refusing** (a refusal used
+  to spend a compose call and an attach and produce no picture), and **counts how many elements
+  the anchor label matched** — more than one means `.firstMatch` was reading a different element
+  step to step, the defect this file has been burned by twice.
+  ⚠️ **THE ANCHOR STILL VARIES RUN TO RUN** — "Wild salmon fillets" here, "Carrots" on
+  2026-08-20 — because slot 5 drives the live model. **A fix must not assume a particular row.**
+- ✅ **THE STATUS-BAR BRANCH ASSERTS ITS NUDGE-BACK — DONE 2026-08-25, and this entry is the
+  tombstone.** It discarded `nudgeBack`'s result under a pose reading *"Nudged back off it, so
+  the shot keeps its anchor and a clean clock"*, so a failed nudge shipped content under the
+  CLOCK while claiming otherwise. **The deferral's stated reason — a never-run assertion could
+  only turn a shippable frame into no deliverable — expired when the whole set went void on the
+  paper move**, and it was fixed then. `@discardableResult` came off `nudgeBack` in the same
+  change, so **a future discarded result is a compiler warning rather than a silent claim.**
 - **Slot 6 is unchanged: still gated on the Mac, still no fallback, still ship five.**
 - ✅ **THE UNDECIDED SEAL DOES NOT BLOCK THIS, CHECKED RATHER THAN ASSUMED.** `paper.md` §11
   leaves `Metal.metal`'s deep stop open — *"now `ochre` … doing a job on `plate` that nothing
