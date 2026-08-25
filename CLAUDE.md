@@ -1249,8 +1249,11 @@ before starting, not after.**
   by parse:**
   - **LIVE `counter_cards`: 86 rows — 83 `curated` + 3 `generated`. Re-measured by query
     2026-08-24, immediately after a migration.**
-  - **`kristy_perimeter_kb.json`: 83 entries on `main` (the held stack), 82 on `origin/main`.**
-  - ✅ **THE KB/TABLE GAP IS CLOSED. Both hold 83 curated.** The 83rd card (`8ca62ab`, the first
+  - **`kristy_perimeter_kb.json`: 84 entries on `main` (the held stack), 82 on `origin/main`.**
+  - ⚠️ **KB ONE AHEAD AGAIN, DELIBERATELY: `label_artificial_color` is COMMITTED, NOT
+    MIGRATED** — 84 in the KB, 83 in the table. **The pair working, not a defect.** Its
+    migration must report **1 inserted / 83 updated.**
+  - ✅ **The gap closed before this one:** the 83rd card (`8ca62ab`, the first
     brand-naming card) sat committed-and-unmigrated for five days and went live in the same
     migration as the organic rewrite — **which is the committed/migrated pair working, and also
     the warning it carries: a migration publishes EVERYTHING the KB is ahead by, not only the

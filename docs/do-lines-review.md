@@ -116,6 +116,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_sugar_free_substitutes` | label_terms | Read what replaced the sugar. ‘Unsweetened’ is the plainer word. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
 | `label_wild_vs_farm_raised` | label_terms | Species, method, country. All three required, and none stops substitution. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
 | `label_serving_size` | label_terms | Read the top two lines before any of the numbers. | Check both packages list the same serving size before comparing anything. | — |
+| `label_artificial_color` | label_terms | “Artificial color” is a category, not a color. Titanium dioxide qualifies. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | The best thing a farm does with its milk. Buy it cultured. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Raw-milk cheese, aged. Legal everywhere and already in the case. | Read the rind label for an age in months. | — |
 | `sprouts_raw` | produce | Buy them cold and crisp, or grow them on the counter. | Check the roots are still white and the clamshell is not fogged. | — |

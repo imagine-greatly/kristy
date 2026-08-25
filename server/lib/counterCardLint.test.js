@@ -399,9 +399,10 @@ test('all curated cards clear the per-card bar', () => {
   // `clabber`, and the A2 card landed; 75 once `berries_picking` was promoted from a
   // generated row; 81 with the six kitchen-technique `home` cards; 82 with
   // `bottled_water_buying` (2026-08-09); 83 with `strawberries_organic_residue`
-  // (2026-08-18), the first card that names a brand. See RETIRED / RETIRED_GENERATED in
+  // (2026-08-18), the first card that names a brand; 84 with `label_artificial_color`
+  // (2026-08-25), from the EU gap scan. See RETIRED / RETIRED_GENERATED in
   // counterCards.js and HOME_CARDS for the technique class.
-  assert.equal(CARDS.length, 83);
+  assert.equal(CARDS.length, 84);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

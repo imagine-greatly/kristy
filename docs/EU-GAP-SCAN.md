@@ -15,7 +15,39 @@ bases. **Most of what came back is already covered**, and that is the useful hal
 
 ## Genuine gaps, ranked
 
-**1. ⚠️ A `label_terms` CARD ON THE ADDITIVES THE EU BANNED AND THE US DID NOT.**
+**1. ✅ CLOSED 2026-08-25 — `label_artificial_color`, AND THE SOURCES NARROWED IT ON THE WAY IN.**
+Authored as a titanium-dioxide anchor rather than the hub of five this entry proposed, because
+**only titanium dioxide is genuinely hidden**: 21 CFR 101.22(k)(1) requires every certified dye
+to be declared by name, and (k)(2) lets colors exempt from certification ride as *"Artificial
+Color"* or *"Color Added"*. Bromate, ADA, BHA and BHT are all named on the panel, so a hub do
+line would have generalized away the one tell worth teaching.
+⚠️ **AND THE SAFETY FRAME THIS ENTRY IMPLIED DOES NOT SURVIVE ITS OWN SOURCES.** EFSA's words
+are *"could not exclude genotoxicity"* and *"could not establish a safe level"* — an inability
+to prove safety, not a finding of harm; it also found the evidence for general toxic effects
+inconclusive. **JECFA re-evaluated in 2023 and concluded it is safe**, and the UK FSA, Health
+Canada and FSANZ all declined to follow the EU. NTP carcinogenicity studies found no cancer.
+So the card teaches the **labeling rule**, which is written down and `established`, and the
+regulatory disagreement rides in `watch_out` — the popular-claim-outruns-evidence rule applied
+to a claim this document was about to repeat. **BVO is not on the card: the FDA revoked it, and
+the ingredient KB's own entry already said so.**
+
+📝 **TWO FINDINGS, NEITHER FIXED, BOTH SEPARATELY-SCOPED SERVER WORK:**
+- ⚠️ **THE SCOPE GATE HAS NEVER HEARD OF AN ADDITIVE.** `COUNTER_SUBJECT` and `GROCERY_SUBJECT`
+  are explicit vocabulary lists holding counter nouns and label words, and **no additive or
+  color name is in either.** So `is titanium dioxide banned` and `is titanium dioxide in candy`
+  reach `off_topic` while retrieval scores the right card every time — measured, not inferred.
+  The card is reachable only through incidental paths (`isBareDefinitional` carries *what is
+  titanium dioxide*, `isMeaningQuestion` carries *what does artificial color mean*), and its
+  `asked_as` was authored to in-scope phrasings rather than widening the gate. **This is the
+  too-tight direction the rule says scope has been wrong in every time.**
+- ⚠️ **THE INGREDIENT KB'S `titanium_dioxide` ENTRY IS ONE-SIDED AGAINST THESE SOURCES.** It
+  cites EFSA and calls it *"Another EU-banned, US-permitted situation"* with no mention of
+  JECFA 2023, the NTP result, or the four regulators who disagreed. **It is `credible_concern`
+  scoring data, so changing it changes verdicts** — a finding, not a fix.
+
+*Superseded proposal, kept because the reasoning still holds for the four named additives:*
+
+**⚠️ A `label_terms` CARD ON THE ADDITIVES THE EU BANNED AND THE US DID NOT.**
 The ingredient KB scores them; **nothing teaches a shopper to recognise them.** That is the
 "teach the label truth" principle exactly — defensible, never goes stale, makes the shopper
 competent at every product rather than suspicious of one brand. Titanium dioxide (E171) is the

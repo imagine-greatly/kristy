@@ -4335,6 +4335,76 @@
       ]
     },
     {
+      "id": "label_artificial_color",
+      "title": "“Artificial color” and what it need not name",
+      "aliases": [
+        "titanium dioxide",
+        "artificial color",
+        "artificial colors",
+        "artificial coloring",
+        "color added",
+        "colour added",
+        "e171",
+        "e 171",
+        "food coloring",
+        "food dye",
+        "what is titanium dioxide",
+        "is titanium dioxide safe",
+        "titanium dioxide in food"
+      ],
+      "category": "label_terms",
+      "question": "What does “artificial color” mean on an ingredient list?",
+      "decision": "“Artificial color” is a category, not a color. Titanium dioxide qualifies.",
+      "why": "Certified dyes must be named. The rest may be declared as a group.",
+      "short_answer": "Two rules, split on certification. A certified dye must be declared by its own name, so “Red 40” and “Blue 1” always appear as themselves. A color exempt from certification does not have to: federal labeling rules let it ride as “Artificial Color,” “Artificial Color Added” or “Color Added.” Titanium dioxide sits in that second group. It is the white pigment used for opacity in candy shells, frosting, chewing gum and creamy dressings, capped at one percent of the food by weight. A label may name it outright as “colored with titanium dioxide,” and nothing requires that.",
+      "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) covers color additives subject to certification and requires each to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) covers color additives not subject to certification and permits the collective terms instead, offering “Colored with ______” as the alternative that names the substance. Titanium dioxide is listed at 21 CFR 73.575, which sets the one percent ceiling and states that batches are exempt from certification.\n\nSo the generic phrase is a signal rather than a blank. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which. The declaration is legal and complete. It is simply less specific than it looks, and knowing what the category holds is the whole skill.",
+      "evidence_tier": "established",
+      "sources": [
+        "FDA 21 CFR 101.22(k) (declaration of color additives on the ingredient list)",
+        "FDA 21 CFR 73.575 (titanium dioxide: one percent limit, exempt from certification)",
+        "FDA, Titanium Dioxide as a Color Additive in Foods (color additive petition under review)",
+        "EFSA (2021), safety assessment of the food additive titanium dioxide E 171",
+        "JECFA (2023), re-evaluation of titanium dioxide"
+      ],
+      "kristy_take": "Named colors had to name themselves. The collective phrase covers the ones that did not. So “artificial color” stands where an ingredient would be: legal, complete, and vaguer than it looks.",
+      "buying_tips": [
+        "Certified dyes appear by name and number. “Red 40” is always “Red 40.”",
+        "“Artificial color” and “color added” cover the colors that need no name.",
+        "“Colored with titanium dioxide” is that additive named on purpose, not by rule.",
+        "Color sits low on an ingredient list, because the amounts used are small."
+      ],
+      "watch_out": [
+        "The EU withdrawal turned on an unresolved genotoxicity question, not a demonstrated harm.",
+        "JECFA reviewed the same additive in 2023 and found dietary intake no hazard.",
+        "The UK, Canada, Australia and New Zealand reviewed it and did not follow the EU."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Artificial color",
+          "meaning": "A color additive exempt from certification. The panel need not say which."
+        },
+        {
+          "term": "Color added",
+          "meaning": "The same permitted collective term, interchangeable with “artificial color.”"
+        },
+        {
+          "term": "Colored with titanium dioxide",
+          "meaning": "The additive named outright. Permitted, and never required."
+        },
+        {
+          "term": "Red 40, Blue 1",
+          "meaning": "Certified dyes. Each must be declared by name, so they cannot be pooled."
+        }
+      ],
+      "tier_note": "The declaration split is written into federal labeling regulation, not inferred from practice.",
+      "asked_as": [
+        "what does artificial color mean",
+        "what is titanium dioxide",
+        "is titanium dioxide safe",
+        "what does color added mean"
+      ]
+    },
+    {
       "id": "raw_kefir",
       "title": "Raw kefir",
       "category": "dairy",
