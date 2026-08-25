@@ -15,6 +15,8 @@ import {
   looksNonEnglish,
   pickImportedText,
   sameVerdict,
+  translationMismatch,
+  languageConflict,
 } from './scanExtract.js';
 
 /* ───────────────────────── Identity: sameGtin ───────────────────────── */
@@ -136,4 +138,109 @@ test('DISAGREEMENT IS MEASURED IN VERDICTS, NOT IN CHARACTERS', () => {
      fired on 2 of 18 and verdict equivalence on 1 of 18; the one was Heinz. */
   const quiet = sameVerdict('WATER, ORGANIC SOYBEANS CONTAINS SOY', 'Water, organic soybeans');
   assert.equal(quiet.agree, true, 'a difference that changes no verdict is not a conflict');
+});
+
+/* ─────── The language guard: the parse and the text are different documents ───────
+
+   The incident, measured 2026-08-25 against the live Open Food Facts record for
+   Cristaline `3274080005003`: `ingredients_lc` is `fr`, the parsed document is the
+   two-word "Eau de source", and `ingredients_text_en` holds a nine-line MINERAL
+   ANALYSIS a contributor pasted in. `pickEnglishText` preferred the English field, so
+   the engine scored a mineral table as an ingredient list, matched nothing, and
+   returned zero concerns — a silent `approved`.
+
+   ⚠️ THE TWO-LISTS GUARD ABOVE CANNOT REACH THIS AND THE REASON IS STRUCTURAL, NOT AN
+   OVERSIGHT: it compares TIERS, and the KB is English, so a French list matches nothing
+   and scores `approved` while junk English that also matches nothing scores `approved`
+   too. They agree. Every cross-language pair agrees. A different test was needed.
+
+   The fixtures below are the REAL fields off the live API, not invented ones — the
+   sample is recorded at `TRANSLATION_EXPANSION_CEILING` in `scanExtract.js`. */
+
+// Cristaline 3274080005003, verbatim.
+const CRISTALINE_PARSED = 'Eau de source';
+const CRISTALINE_EN =
+  'Eau de source Noemie\r\n\r\nCalcium Ca2+ 113 mg/l\r\nMagnesium Mg2+ 228 mg/l\r\n' +
+  'Sodium Na 7 mg/l\r\nPotassium K 2 mg/l\r\nSilice SiOz 15 mg/l\r\n' +
+  'Bicarbonates HCO3 - 447 mg/l\r\nSulfates SO42 - 53 mg/l\r\nChlorure Cl - 8 mg/l\r\n' +
+  'Nitrates NO3 - <2 mg/l\r\nFluor F - <1 mg/l\r\npH 7.3';
+
+test('the mineral table filed as English is not a translation of what OFF parsed', () => {
+  assert.ok(translationMismatch(CRISTALINE_PARSED, CRISTALINE_EN));
+  assert.ok(
+    languageConflict({
+      ingredients_lc: 'fr',
+      ingredients_text: CRISTALINE_PARSED,
+      ingredients_text_en: CRISTALINE_EN,
+    }),
+    'the record holds two documents and the guard must say so'
+  );
+});
+
+test('the seven measured translations all survive the guard', () => {
+  /* Every genuine translation in the sample, as (parsed, en) LENGTHS — the ratio is the
+     only thing the guard reads, so the lengths are the whole fixture. Widest was 0.98.
+     ⚠️ THIS IS THE ASSERTION THAT FAILS IF THE CEILING IS EVER TIGHTENED TOWARD 1.0,
+     which is the edit that would start refusing honest reads. */
+  const measured = [
+    [354, 346], // Prince biscuits          0.98
+    [278, 269], // Cruesly nut mix          0.97
+    [460, 403], // Pain de mie seigle       0.88
+    [192, 165], // Nocciolata bio           0.86
+    [57, 25],   // Skyr nature 0%           0.44
+    [127, 42],  // Noir Intense             0.33
+    [114, 33],  // Pur beurre de cacahuète  0.29
+  ];
+  assert.equal(measured.length, 7, 'the sample is seven translations; do not shrink it');
+  for (const [parsedLen, enLen] of measured) {
+    assert.equal(
+      translationMismatch('x'.repeat(parsedLen), 'y'.repeat(enLen)),
+      false,
+      `a translation at ${(enLen / parsedLen).toFixed(2)}× must not be refused`
+    );
+  }
+});
+
+test('an English-parsed record is out of range entirely', () => {
+  // When OFF parsed English, the English field IS the parsed document. There is no second
+  // document, so there is nothing to disagree with — however long the field happens to be.
+  assert.equal(
+    languageConflict({
+      ingredients_lc: 'en',
+      ingredients_text: 'Oats',
+      ingredients_text_en: 'Oats, honey, salt, sunflower oil, and a great deal more besides',
+    }),
+    false
+  );
+});
+
+test('an unparsed record is not a conflict — silence is not evidence', () => {
+  // No parsed document to compare against. Refusing here would fail closed on every
+  // record OFF has not got to yet, which is a miss manufactured out of nothing.
+  assert.equal(languageConflict({ ingredients_lc: 'fr', ingredients_text_en: 'Spring water' }), false);
+  assert.equal(translationMismatch('', 'Spring water'), false);
+  assert.equal(translationMismatch('Eau de source', ''), false);
+});
+
+test('a French document filed in the English field is refused outright', () => {
+  /* `06175700`, verbatim: `ingredients_lc` is `fr` and `ingredients_text_en` is FRENCH —
+     and a different recipe from the buckwheat the parsed field carries (corn flour, rice
+     flour, sea salt vs "Farine de sarrasin"). Two documents AND a language error.
+     ⚠️ THE FIELD NAME IS A CONTRIBUTOR'S ASSERTION. `looksNonEnglish` was applied to the
+     FALLBACK text and skipped on the field whose whole claim is that it is English. */
+  const en = 'Farine de maïs* (70%), farine de riz*, sel marin. * K issus de l\'agriculture biologique.';
+  assert.ok(looksNonEnglish(en), 'the guard that already existed does see this');
+  assert.equal(
+    pickEnglishText({ ingredients_lc: 'fr', ingredients_text: 'Farine de sarrasin.', ingredients_text_en: en }),
+    '',
+    'a foreign string must never reach the engine, whichever field it arrived in'
+  );
+});
+
+test('the imported English field is held to the same standard', () => {
+  assert.equal(pickImportedText({ ingredients_text_en_imported: 'sucre, huile de tournesol' }), '');
+  assert.equal(
+    pickImportedText({ ingredients_text_en_imported: 'Sugar, sunflower oil' }),
+    'Sugar, sunflower oil'
+  );
 });

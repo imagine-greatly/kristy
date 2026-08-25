@@ -80,14 +80,87 @@ export function looksNonEnglish(text) {
  */
 export function pickEnglishText(p = {}) {
   const en = String(p.ingredients_text_en || '').trim();
-  if (en) return en;
+  // ⚠️ THE EXPLICIT ENGLISH FIELD IS NOT SELF-CERTIFYING, AND IT USED TO BE RETURNED
+  // UNCHECKED. `looksNonEnglish` was applied to the FALLBACK text and skipped on the field
+  // whose whole claim is that it is English — so the one document nobody verified was the one
+  // trusted most. Measured on `06175700`: `ingredients_text_en` holds FRENCH
+  // ("Farine de maïs*, farine de riz*, sel marin"), and it is a different recipe from the
+  // buckwheat the parsed field carries. The field name is a contributor's assertion, not OFF's.
+  if (en) return looksNonEnglish(en) ? '' : en;
 
   const raw = String(p.ingredients_text || '').trim();
   if (!raw) return '';
-  const lang = String(p.lang || p.lc || '').toLowerCase();
+  const lang = parsedLanguage(p);
   if (lang && lang !== 'en') return ''; // OFF says it's another language → don't trust it
   if (looksNonEnglish(raw)) return ''; // unknown language but clearly foreign
   return raw;
+}
+
+// ── The language guard: the parse and the text can be DIFFERENT DOCUMENTS ────────────
+// `ingredients_lc` names the language Open Food Facts actually PARSED, and it is not the
+// same question as what language the product is in. When it is not `en`, OFF parsed some
+// other field, and `ingredients_text_en` is a sibling nobody validated against it.
+//
+// ⚠️ THE ENGLISH FIELD IS NOT A TRANSLATION, IT IS A SECOND DOCUMENT — so a language check
+// passes it and the whole language layer above is asking the wrong question. This is the
+// two-lists disagreement on a new axis, and `sameVerdict` is the precedent for the SHAPE:
+// two answers on file, no way to tell which is on the shelf, so Kristy does not guess and
+// does not stamp. ⚠️ IT IS NOT THE PRECEDENT FOR THE TEST. `sameVerdict` compares TIERS,
+// and a tier comparison is structurally blind across languages: the KB is English, so a
+// French list matches nothing and scores `approved`, and a junk English list that also
+// matches nothing scores `approved` too. The two agree, and the guard that fired on Heinz
+// cannot fire here — measured, not assumed.
+//
+// ⚠️ AND IT IS NOT THE PANEL-GATE TRIGGER. It does not catch Sidi Ali, where the parse and
+// the text agree and are wrong together. Two products, one symptom, two unrelated causes.
+
+/** The language OFF actually parsed, which `lang`/`lc` only approximate. */
+function parsedLanguage(p = {}) {
+  return String(p.ingredients_lc || p.lang || p.lc || '').toLowerCase();
+}
+
+/* THE CONSTANT IS MEASURED, AND THE SAMPLE IS RECORDED BECAUSE A BARE NUMBER HERE WOULD BE
+   A GUESS WEARING A CONSTANT'S CLOTHES. Sampled 2026-08-25 over the French market — every
+   OFF product in the first 60 hits whose `ingredients_lc` was not `en` AND which carried a
+   non-empty `ingredients_text_en`, 9 of 60 in range, each classified by READING it rather
+   than by the rule under test:
+
+     7 genuine translations   len(en)/len(parsed) = 0.29 0.33 0.44 0.86 0.88 0.97 0.98
+     2 different documents    len(en)/len(parsed) = 8.32  20.23
+
+   A translation restates a document; it does not multiply it. French→English usually
+   SHRINKS, which is why every genuine case lands at or below 1.0. The gap between the widest
+   translation (0.98) and the nearest junk (8.32) is more than 8×, so this is a canyon rather
+   than a knife edge — but it is still a threshold, so it is set at 2.0: double the observed
+   ceiling, to leave room for a terse source expanding into English, and still 4× below
+   anything measured to be junk. ⚠️ RAISE IT ONLY ON MEASURED TRANSLATIONS THAT FAIL IT, and
+   record them here. Lowering it toward 1.0 would start refusing honest reads. */
+const TRANSLATION_EXPANSION_CEILING = 2;
+
+/**
+ * Is the English field too large to be a translation of the document OFF parsed?
+ *
+ * A guard, never a score — it answers one question and the answer is a veto. An empty
+ * parsed document cannot be compared against, so it is NOT a mismatch: silence is not
+ * evidence, and refusing on it would fail closed on every record OFF has yet to parse.
+ */
+export function translationMismatch(parsed, en) {
+  const a = String(parsed || '').trim();
+  const b = String(en || '').trim();
+  if (!a || !b) return false;
+  return b.length > a.length * TRANSLATION_EXPANSION_CEILING;
+}
+
+/**
+ * Does this record hold two documents where it should hold one translation?
+ *
+ * Scoped to `ingredients_lc !== 'en'`, which is the exact range: when OFF parsed English,
+ * the English field IS the parsed document and there is no second document to disagree with.
+ */
+export function languageConflict(p = {}) {
+  const lang = parsedLanguage(p);
+  if (!lang || lang === 'en') return false;
+  return translationMismatch(p.ingredients_text, p.ingredients_text_en);
 }
 
 // ── The two-lists guard ──────────────────────────────────────────────────────
@@ -116,10 +189,14 @@ export function pickEnglishText(p = {}) {
 /** The raw imported ingredient text, held to the same English standard as the live one. */
 export function pickImportedText(p = {}) {
   const en = String(p.ingredients_text_en_imported || '').trim();
-  if (en) return en;
+  // Held to the same standard as the live field one function up, and for the same reason:
+  // the two-lists guard compares TIERS, so handing it a foreign document asks a question it
+  // is blind to — a French list matches no English KB entry and scores `approved`, agreeing
+  // with anything else that also matches nothing.
+  if (en) return looksNonEnglish(en) ? '' : en;
   const raw = String(p.ingredients_text_imported || '').trim();
   if (!raw) return '';
-  const lang = String(p.lang || p.lc || '').toLowerCase();
+  const lang = parsedLanguage(p);
   if (lang && lang !== 'en') return '';
   if (looksNonEnglish(raw)) return '';
   return raw;
@@ -343,7 +420,41 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   //    it can never reach the engine and produce a false "approved").
   const text = pickEnglishText(p);
 
-  // 1a. TWO LISTS, ONE PRODUCT. Before trusting the live field, check it against the
+  // 1a. TWO LANGUAGES, ONE RECORD. Before the two-lists guard can ask whether the live and
+  //     imported fields agree, there is a prior question it cannot ask: is the English field
+  //     a translation of what OFF parsed, or a different document filed under an English
+  //     name? `ingredients_lc` is what makes that checkable, and nothing here had ever read
+  //     it. Same outcome as 1b below, because it is the same situation — two answers on file
+  //     — and the shopper is holding the package, so their photo settles it.
+  if (languageConflict(p)) {
+    recordConflict({
+      barcode: code,
+      name: product.name,
+      brand: product.brand,
+      live: String(p.ingredients_text_en || ''),
+      imported: String(p.ingredients_text || ''),
+      // ⚠️ NO TIERS, AND THE EMPTY ARRAY IS THE HONEST VALUE RATHER THAN A MISSING ONE.
+      // `live_tier`/`imported_tier` record what the two lists SCORED, and nothing was scored
+      // here — this conflict is decided before any evaluation, and a cross-language tier
+      // comparison is the blind test documented on `languageConflict`. Writing a marker like
+      // `'language'` into a tier column would put two kinds of thing in one field and break
+      // every query that reads the table for a tier distribution. Two null tiers alongside
+      // two texts is also what DISTINGUISHES this row from a Heinz-shaped one, which always
+      // carries both.
+      tiers: [],
+    });
+    return {
+      found: false,
+      source: 'conflict',
+      product,
+      ingredients: '',
+      nutrition,
+      conflict: true,
+      message: CONFLICTING_DATA,
+    };
+  }
+
+  // 1b. TWO LISTS, ONE PRODUCT. Before trusting the live field, check it against the
   //     raw import. If they would score differently, this record contains two answers
   //     and we cannot tell which one is on the shelf — so Kristy does not guess and
   //     does not stamp. The shopper is holding the package; their photo settles it,
