@@ -180,12 +180,16 @@ test('the mineral table filed as English is not a translation of what OFF parsed
   );
 });
 
-test('the seven measured translations all survive the guard', () => {
+test('the nine measured translations all survive the guard', () => {
   /* Every genuine translation in the sample, as (parsed, en) LENGTHS — the ratio is the
      only thing the guard reads, so the lengths are the whole fixture. Widest was 0.98.
      ⚠️ THIS IS THE ASSERTION THAT FAILS IF THE CEILING IS EVER TIGHTENED TOWARD 1.0,
      which is the edit that would start refusing honest reads. */
   const measured = [
+    // ⚠️ THE LAST TWO ARE THE POINT OF THIS LIST. Both are OVER 1.0 — a translation CAN
+    // expand — and they were found only by sampling German/Spanish/Italian after the first
+    // French-only pass concluded translations always shrink. A rule measured on one language
+    // and applied to every non-English parse is an assumption, not a measurement.
     [354, 346], // Prince biscuits          0.98
     [278, 269], // Cruesly nut mix          0.97
     [460, 403], // Pain de mie seigle       0.88
@@ -193,8 +197,10 @@ test('the seven measured translations all survive the guard', () => {
     [57, 25],   // Skyr nature 0%           0.44
     [127, 42],  // Noir Intense             0.33
     [114, 33],  // Pur beurre de cacahuète  0.29
+    [100, 103], // EU sweep                 1.03
+    [100, 105], // EU sweep                 1.05  ← the widest genuine translation measured
   ];
-  assert.equal(measured.length, 7, 'the sample is seven translations; do not shrink it');
+  assert.equal(measured.length, 9, 'the sample is nine translations; do not shrink it');
   for (const [parsedLen, enLen] of measured) {
     assert.equal(
       translationMismatch('x'.repeat(parsedLen), 'y'.repeat(enLen)),
