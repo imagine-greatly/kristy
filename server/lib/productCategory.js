@@ -96,16 +96,21 @@ export function normalizeCategory(value) {
 }
 
 /* ── OPEN FOOD FACTS ALREADY TELLS US, AND WE HAVE BEEN THROWING IT AWAY ────────────────
-   `scanExtract.js:177` turns `categories_tags` into a human aisle — `en:breakfast-cereals`
-   becomes `breakfast cereals` — puts it on the response as `product.aisle`, and then
-   `retainProduct` drops it on the floor because there was no column. It is derived, it is
-   free, it costs one more field on a call already being made, and it applies to every OFF
-   hit the catalog has ever retained.
+   `aisleFromCategories` in `scanExtract.js` turns `categories_tags` into a human aisle —
+   `en:breakfast-cereals` becomes `breakfast cereals` — and puts it on the response as
+   `product.aisle`. It is derived, it is free, it costs one more field on a call already
+   being made, and it applies to every OFF hit the catalog has ever retained.
 
    Matched by SUBSTRING against the aisle string, longest pattern first, because OFF's tags
-   are compound ("plant-based-foods-and-beverages, cereals-and-potatoes, breakfast-cereals")
-   and the last tag is the most specific — which is the one `aisleFromCategories` already
-   picks. A miss is `other` with the raw aisle kept, exactly like the vision path. */
+   are compound ("plant-based-foods-and-beverages, cereals-and-potatoes, breakfast-cereals").
+   A miss is `other` with the raw aisle kept, exactly like the vision path.
+
+   ⚠️ **THIS PARAGRAPH USED TO END "and the last tag is the most specific — which is the one
+   `aisleFromCategories` already picks." BOTH HALVES WERE WRONG BY 2026-08-25** and the
+   sentence is kept, corrected, because it is the premise the fixed defect below rested on.
+   `categories_tags` is an ORDER, not a specificity hierarchy, and the walk now takes the
+   most specific *mapped* hit rather than the last entry. **A comment asserting an invariant
+   is not an invariant** — this one is asserted in `scanExtract.test.js` now. */
 const OFF_AISLE_PATTERNS = [
   ['sports_energy_drink', ['energy drink', 'sports drink', 'isotonic']],
   /* ⚠️ WATER SITS HERE — BELOW `energy drink`, ABOVE `soda` AND `juice` — and it is NOT the
@@ -122,33 +127,35 @@ const OFF_AISLE_PATTERNS = [
      Why it matters more than a mis-shelved row: the exemption this vocabulary is FOR
      (part 3, held) keys on the category to let a product past a fail-closed panel gate.
      A watermelon landing in `water` is not a filing error there, it is a wrong approval. */
-  /* 🐞 ⚠️ **READ THIS BEFORE FIXING THE `unsweetened beverages` DEFECT. WIDENING WATER HERE
-     REMOVES A CATCH THAT IS CURRENTLY FIRING IN PRODUCTION.**
+  /* ✅ **THE `unsweetened beverages` DEFECT IS FIXED — 2026-08-25 — AND THE WARNING THAT
+     STOOD HERE IS KEPT AS A RULE BECAUSE THE TRAP IT NAMES IS STILL ONE STEP AWAY.**
 
-     The known defect: `aisleFromCategories` takes the LAST `categories_tags` entry as the most
+     The defect: `aisleFromCategories` took the LAST `categories_tags` entry as the most
      specific, and it is not a specificity hierarchy. Cristaline `3274080005003` runs
-     `… waters → spring waters → unsweetened beverages`, so it lands in `other` while carrying
-     two tags that map to `water`. The fix is to map from the TAG LIST, most specific *mapped*
-     hit. That fix is correct and it is queued.
+     `… waters → spring waters → unsweetened beverages`, so it landed in `other` while
+     carrying two tags that map to `water`. Fixed at the tag walk in `scanExtract.js` —
+     most specific *mapped* hit — ⛔ **NOT by widening the patterns below**, which is the
+     edit that would file every soda and juice as water to rescue one bottle of it.
 
-     ⚠️ **WHAT IT ALSO DOES, MEASURED 2026-08-10.** Cristaline is `approved` today on an
-     ingredient text that is a nine-line MINERAL TABLE — a contributor filled
-     `ingredients_text_en` with it while the French field holds the correct "Eau de source".
-     It is caught right now only because its category resolves to `other`, so the panel gate's
-     product-level half fires. Give it `water` and the exemption vouches for it — and the
-     content half does NOT pick it up, because its tokens are the mangled dump with units and a
-     brand name (`"eau de source noemie calcium ca2+ 113 mg/l…"`), not the bare nutrient names
-     `readsAsNutrientPanel` tests for. Measured: `FIRES = false`. **An approved gold-seal
-     candidate, un-caught by a fix that is right about aisles.**
+     ⚠️ **WHAT THE FIX ALSO DOES, AND WHY IT NEEDED A PREREQUISITE.** Cristaline's
+     `ingredients_text_en` is a nine-line MINERAL TABLE a contributor pasted in while the
+     French field holds the correct "Eau de source". Giving it `water` hands it the part-3
+     exemption past a fail-closed panel gate, and the gate's content half does NOT pick it
+     up — its tokens are the mangled dump with units and a brand name, not the bare nutrient
+     names `readsAsNutrientPanel` tests for. Measured: `FIRES = false`. An approved gold-seal
+     candidate, un-caught by a fix that is right about aisles.
 
-     Each site reasons correctly alone and no file owns the composition, which is why this
-     warning is HERE, at the point of the change, and not only in the queue — a note in a queue
-     file is not where the person widening this list will be looking.
+     ✅ **THE PREREQUISITE LANDED FIRST, WHICH IS WHY THIS WAS SAFE TO SHIP.**
+     `languageConflict` in `scanExtract.js` reads `ingredients_lc` — the language OFF
+     actually PARSED — and refuses a record whose English field is too large to be a
+     translation of it. It sits UPSTREAM of the category, so Cristaline is refused before a
+     category is ever consulted. Driven live through the whole gate on 2026-08-25 and pinned
+     in `scanExtract.test.js` as a COMPOSITION test, because each site reasons correctly
+     alone and no file owns the sum.
 
-     **Land the `ingredients_lc` guard first, or at minimum re-run the Cristaline barcode
-     through the gate as part of the aisle fix.** That guard — parse and text being different
-     documents, the two-lists disagreement on a language axis — is what actually catches this
-     product, and `sameVerdict` is its precedent. */
+     ⛔ **SO THE STANDING RULE IS: THIS VOCABULARY LETS A PRODUCT PAST A FAIL-CLOSED GATE.
+     Anything added below is a claim that a product in that category is food. Do not widen
+     it to fix a filing problem** — the aisle is decided at the tag walk, not here. */
   ['water', ['waters', 'mineral water', 'spring water', 'sparkling water', 'bottled water',
     'drinking water', 'seltzer']],
   ['soda_drink', ['soda', 'sodas', 'carbonated drink', 'cola', 'soft drink']],

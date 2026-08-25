@@ -17,7 +17,10 @@ import {
   sameVerdict,
   translationMismatch,
   languageConflict,
+  aisleFromCategories,
 } from './scanExtract.js';
+
+import { categoryFromAisle } from './productCategory.js';
 
 /* ───────────────────────── Identity: sameGtin ───────────────────────── */
 
@@ -243,4 +246,92 @@ test('the imported English field is held to the same standard', () => {
     pickImportedText({ ingredients_text_en_imported: 'Sugar, sunflower oil' }),
     'Sugar, sunflower oil'
   );
+});
+
+/* ─────── The aisle is the most specific MAPPED tag, not the last one ───────
+
+   `categories_tags` is an order, not a specificity hierarchy. Taking the last entry as
+   "the most specific" means any product whose last tag happens to be a DIETARY one loses
+   its aisle — and the answer was sitting in the list the whole time.
+
+   ⚠️ THE FIX IS WHICH TAG IS CONSULTED. It is NOT a wider `water` pattern: widening
+   `water` to swallow `beverages` would file every soda and juice as water to rescue one
+   bottle of it. */
+
+// Cristaline 3274080005003, verbatim off the live API.
+const CRISTALINE_TAGS = [
+  'en:beverages-and-beverages-preparations',
+  'en:beverages',
+  'en:waters',
+  'en:spring-waters',
+  'en:unsweetened-beverages',
+];
+
+test('a dietary last tag no longer costs a product its aisle', () => {
+  assert.equal(aisleFromCategories(CRISTALINE_TAGS), 'spring waters');
+  assert.equal(categoryFromAisle(aisleFromCategories(CRISTALINE_TAGS)), 'water');
+  // The old rule, named so a regression says what it broke rather than just going red.
+  assert.equal(
+    categoryFromAisle('unsweetened beverages'),
+    'other',
+    'the last tag maps to nothing — which is why reading it as "most specific" lost the aisle'
+  );
+});
+
+test('an already-correct last tag is unchanged', () => {
+  // The walk must not disturb the products that were never broken: when the last tag maps,
+  // it IS the most specific mapped hit and it is returned first.
+  assert.equal(
+    aisleFromCategories(['en:plant-based-foods', 'en:cereals-and-potatoes', 'en:breakfast-cereals']),
+    'breakfast cereals'
+  );
+  assert.equal(categoryFromAisle(aisleFromCategories(['en:snacks', 'en:crackers'])), 'cracker');
+});
+
+test('when nothing maps, the last tag still comes back verbatim', () => {
+  /* `other` plus the string that failed is strictly more informative than an empty aisle —
+     it is what makes `category_raw` a frequency-rankable backlog rather than a silence.
+     Same argument `counter_gaps` makes for the counter's authoring backlog. */
+  assert.equal(aisleFromCategories(['en:groceries', 'en:unclassifiable-things']), 'unclassifiable things');
+  assert.equal(aisleFromCategories([]), '');
+  assert.equal(aisleFromCategories(null), '');
+});
+
+test('the walk prefers the specific end when two tags both map', () => {
+  // `waters` and `spring-waters` both map; the more specific one is the aisle. A product
+  // tagged both `beverages` and `sodas` must not come back as the generic.
+  assert.equal(aisleFromCategories(['en:waters', 'en:spring-waters']), 'spring waters');
+  assert.equal(aisleFromCategories(['en:beverages', 'en:sodas']), 'sodas');
+});
+
+/* ─────── The composition: no file owns it, so the test lives at the seam ───────
+
+   ⚠️ EACH SITE REASONS CORRECTLY ALONE AND THE DEFECT ONLY APPEARS ADDED UP. The aisle
+   fix is right about aisles. The `water` exemption is right about water. Composed on the
+   Cristaline record they hand a gold seal to a mineral analysis, because resolving the
+   category to `water` lets it past a fail-closed panel gate — and the gate's CONTENT half
+   is measured not to pick it up (the tokens are a mangled dump with units and a brand
+   name, not the bare nutrient names `readsAsNutrientPanel` tests for).
+
+   The ordering constraint recorded in `productCategory.js` is what makes it safe: the
+   language guard is upstream of all of it and refuses the record before a category is ever
+   consulted. THIS TEST IS THAT CONSTRAINT, EXECUTABLE — driven live against the real API
+   2026-08-25, and pinned here on the real payload so it needs no network.
+
+   ⚠️ IF THIS GOES RED, DO NOT LOOSEN IT. It means a bottle of water is one step from the
+   seal again. */
+
+test('the aisle fix does NOT hand Cristaline the exemption, because the guard is upstream', () => {
+  const record = {
+    ingredients_lc: 'fr',
+    ingredients_text: CRISTALINE_PARSED,
+    ingredients_text_en: CRISTALINE_EN,
+    categories_tags: CRISTALINE_TAGS,
+  };
+
+  // The aisle fix works, and this is the half that WOULD be dangerous alone.
+  assert.equal(categoryFromAisle(aisleFromCategories(record.categories_tags)), 'water');
+
+  // And it never gets consulted, because the record is refused one layer up.
+  assert.ok(languageConflict(record), 'the refusal must happen BEFORE the category matters');
 });

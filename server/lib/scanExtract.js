@@ -25,7 +25,7 @@
 import { lookupProduct, retainProduct } from './productStore.js';
 import { evaluateIngredients } from './verdictEngine.js';
 import { recordConflict } from './ingredientConflicts.js';
-import { categoryFromAisle } from './productCategory.js';
+import { categoryFromAisle, UNCATEGORIZED } from './productCategory.js';
 
 const OFF_BASE = 'https://world.openfoodfacts.org/api/v2/product';
 const OFF_FIELDS = [
@@ -252,13 +252,41 @@ export function isReadableIngredientList(text) {
 }
 
 // OFF categories_tags → a short human aisle/type ("en:breakfast-cereals" → "breakfast cereals").
-function aisleFromCategories(tags) {
-  if (!Array.isArray(tags) || tags.length === 0) return '';
-  const last = tags[tags.length - 1] || '';
-  return last
+function tagToAisle(tag) {
+  return String(tag || '')
     .replace(/^[a-z]{2}:/, '')
     .replace(/-/g, ' ')
     .trim();
+}
+
+/**
+ * Pick the aisle from OFF's category tags.
+ *
+ * ⚠️ **THIS USED TO TAKE THE LAST TAG AS "THE MOST SPECIFIC" AND THAT PREMISE IS FALSE.**
+ * `categories_tags` is an order, not a specificity hierarchy, so any product whose last tag
+ * happens to be a DIETARY one loses its aisle entirely. Cristaline `3274080005003` runs
+ * `beverages-and-beverages-preparations → beverages → waters → spring-waters →
+ * unsweetened-beverages`: it landed in `other` while carrying two tags that map to `water`.
+ * The answer was in the list and the code was reading past it.
+ *
+ * ⚠️ **THE FIX IS THE MOST SPECIFIC *MAPPED* HIT, NOT A WIDER WATER PATTERN.** Widening
+ * `water` to swallow `beverages` would file every soda and juice as water to rescue one
+ * bottle — the defect is which tag is consulted, and it is fixed there.
+ *
+ * Walks from the specific end back, because OFF orders general → specific often enough for
+ * that to be the right preference, and takes the first tag the closed vocabulary actually
+ * recognises. **A tag nothing maps is not an answer**, so it is skipped rather than
+ * returned. When NOTHING maps, the last tag is still returned verbatim — that is the old
+ * behaviour, and it is what keeps `category_raw` diagnosable: `other` plus the string that
+ * failed is strictly more informative than an empty aisle.
+ */
+export function aisleFromCategories(tags) {
+  if (!Array.isArray(tags) || tags.length === 0) return '';
+  for (let i = tags.length - 1; i >= 0; i -= 1) {
+    const aisle = tagToAisle(tags[i]);
+    if (aisle && categoryFromAisle(aisle) !== UNCATEGORIZED) return aisle;
+  }
+  return tagToAisle(tags[tags.length - 1]);
 }
 
 // Per-100g nutrition the focus escalation needs: sodium + added sugar (g/100g).
