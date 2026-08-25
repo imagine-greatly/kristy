@@ -991,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **647 pass, 0 fail, on `main` (the held stack), re-measured 2026-08-18; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — the 11-test delta is the held import route's own tests (`trips.test.js`), which by definition are not on the deployed branch. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **658 pass, 0 fail, on `main` (the held stack), re-measured 2026-08-25 — 647 before that day's two scan-path guards added 11; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — `origin/main` lacks everything the held stack carries, tests included, so it is behind by construction. ⚠️ **THIS CELL USED TO SAY "the 11-test delta is `trips.test.js`" AND IT RECONCILED IN NEITHER DIRECTION** — measured 2026-08-25, `trips.test.js` is **27** tests and the branch gap was **14**. The gap's composition is UNMEASURED and now says so rather than carrying a number forward; **re-measure `origin/main` before quoting its number.** A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
@@ -1185,30 +1185,25 @@ before starting, not after.**
   ⚠️ **The iOS suite is the DETECTOR, not the subject** — sizing this for CI would be the same
   mistake one layer along. Counts and the rejected one-liner: `docs/ATTACH-BUCKET.md`. Separately
   proposed server work.
-- 🐞 ⏳ **THE AISLE IS DERIVED FROM THE LAST OFF TAG ON A FALSE PREMISE, AND IT THROWS AWAY THE
-  ANSWER.** `aisleFromCategories` takes the last `categories_tags` entry as "most specific"; it is
-  not a specificity hierarchy, so any product whose last tag is a **dietary** one loses its aisle.
-  **This is a category-capture defect, not a water one.** Map from the TAG LIST, most specific
-  *mapped* hit — **not** by widening the water patterns to swallow `beverages`.
-  Account: `docs/CATEGORY-CAPTURE.md`.
-  ⚠️ **THE PREREQUISITE, AND IT IS NOT VISIBLE FROM THE DEFECT: LANDING THIS FIX REMOVES A CATCH THAT
-  IS FIRING IN PRODUCTION RIGHT NOW.** Cristaline is `approved` today on a nine-line mineral table
-  and the only reason the gate holds it is that its category resolves to `other`. This fix resolves
-  it to `water`, which **is exempt**, and the document half does **not** pick it up — measured
-  `FIRES = false`. **So: land the `ingredients_lc` guard first, or at minimum drive `3274080005003`
-  through the gate as part of this fix and assert the outcome.**
-  📎 **The same warning sits at the point of the change**, in `productCategory.js` above the `water`
-  patterns — deliberately duplicated. **If you change one, change both.**
-- 🐞 ⏳ **OFF PARSES ONE LANGUAGE AND KRISTY READS ANOTHER, SO THE PARSE AND THE TEXT CAN BE DIFFERENT
-  DOCUMENTS.** `ingredients_lc` names the language OFF actually parsed; `pickEnglishText` prefers
-  English. ⚠️ **THE ENGLISH FIELD IS NOT A TRANSLATION, IT IS A DIFFERENT DOCUMENT** — so a language
-  check passes it and the whole language layer is asking the wrong question. **THIS IS THE TWO-LISTS
-  DISAGREEMENT ON A NEW AXIS, AND `sameVerdict` IS THE PRECEDENT**; the existing guard **cannot**
-  engage, because the second document is a LANGUAGE field it has never looked at.
-  ⚠️ **IT IS NOT THE PANEL-GATE TRIGGER AND MUST NOT BE FOLDED INTO IT** — it does not catch Sidi
-  Ali, where parse and text agree and are wrong together. **Two products, one symptom, two unrelated
-  causes.** In range: every product whose `ingredients_lc` is not `en`.
-  ⬆️ **THIS IS A PREREQUISITE, NOT ONLY A DEFECT: THE AISLE FIX IS UNSAFE WITHOUT IT.**
+- ✅ **CLOSED 2026-08-25 — BOTH SCAN-PATH DEFECTS, IN THE RECORDED ORDER, AND THE ORDER IS THE
+  ONLY REASON THE SECOND WAS SAFE.** `aa97026` (the language guard) then `f82cf9e` (the aisle).
+  **On `origin/held`, not `origin/main`. Not migrated: no corpus change.** Suite **658**.
+  ⚠️ **The rules they leave, all live:**
+  - ⛔ **THE PRODUCT-CATEGORY VOCABULARY LETS A PRODUCT PAST A FAIL-CLOSED GATE**, so adding to it
+    claims things in that category are food. **DO NOT WIDEN IT TO FIX A FILING PROBLEM** — the
+    aisle is decided at the tag walk in `scanExtract.js`. Widening `water` to swallow `beverages`
+    files every soda as water to rescue one bottle.
+  - ⚠️ **A CONTRIBUTOR-NAMED FIELD IS AN ASSERTION.** `ingredients_text_en` was returned unchecked
+    while `looksNonEnglish` guarded only the *fallback* text. **Guard the field whose name makes
+    the claim.**
+  - ⚠️ **`sameVerdict` IS BLIND ACROSS LANGUAGES, WHICH IS WHY A SECOND GUARD EXISTS.** The KB is
+    English, so a foreign list and junk English both match nothing and both score `approved` —
+    **every cross-language pair agrees.** Do not fold `languageConflict` into it.
+  - 📎 **`TRANSLATION_EXPANSION_CEILING` is 2.0 with its SAMPLE recorded beside it** (7
+    translations at 0.29–0.98 vs 2 junk at 8.32/20.23). **Raise it only on measured translations
+    that fail it, and add them to the sample.**
+  📎 The composition — aisle resolving to `water` **and** the refusal landing upstream of it — is
+  its own test. **Red there means a bottle of water is one step from the seal again.**
 - ✅ **CLOSED 2026-08-19 — the SMS text on `/privacy` and `/terms`.** The ruling came first and went
   the other way: **DEAD PRODUCT-WIDE**, so the work was a deletion rather than the addition this
   entry predicted. Live rules are under **Phone sign-in** and **Legal pages** above; the objection it

@@ -387,10 +387,33 @@ not be true (an unsweetened tea is not water), and it would make `water` the bev
 in a vocabulary whose whole purpose is to gate a fail-closed exemption.
 
 **The right shape is to map the category from the TAG LIST rather than from the single derived
-aisle string**, taking the most specific *mapped* hit rather than the last tag. ⏳ **Not done, and
-deliberately not done here:** it changes `categoryFromAisle`'s input contract, it changes what
-`category` is written for products well beyond water, and that field is what part 3's exemption
-reads. It is a separately-proposed server change, and it is now measured rather than guessed.
+aisle string**, taking the most specific *mapped* hit rather than the last tag.
+
+✅ **SHIPPED 2026-08-25 — `f82cf9e`, on `origin/held`.** Implemented at `aisleFromCategories` in
+`scanExtract.js` rather than at `categoryFromAisle`, which is what kept the input contract intact:
+the walk picks the most specific *mapped* tag and hands `categoryFromAisle` a single aisle string
+exactly as before, so nothing downstream changed shape. **One producer, two consumers** (the
+response's `nutrition.category` and the retain path's `aisle`), so the read and write paths agree
+by construction rather than by discipline. The unmapped fallback is unchanged and deliberate: when
+nothing maps, the LAST tag still comes back verbatim, because `other` plus the string that failed
+is what keeps `category_raw` a rankable backlog.
+
+⚠️ **AND THE PREREQUISITE THIS DOCUMENT DEMANDED WAS HONOURED, WHICH IS THE PART WORTH KEEPING.**
+The predicted danger was real and measured: the fix DOES resolve Cristaline to `water`, which IS
+the exempt category. It is safe only because `languageConflict` (`aa97026`) landed first and sits
+UPSTREAM of the category — the record is refused before a category is ever consulted. Driven live
+through the whole gate the same day:
+
+```
+3274080005003  aisle "spring waters" → water   languageConflict TRUE  ⇒ conflict, NO STAMP
+06175700       aisle "extruded crispbreads" → cracker, conflict       ⇒ conflict, NO STAMP
+7622210449283  a genuine translation, unaffected           ⇒ reads swap_recommended
+```
+
+📎 **The composition is pinned as its own test** — the aisle resolving to `water` AND the refusal
+landing upstream of it, asserted together — because each site reasons correctly alone and no file
+owns the sum. ⛔ **If it goes red, do not loosen it: it means a bottle of water is one step from
+the seal again.**
 
 📋 **This also generalises past water.** Any product whose last tag is a dietary one — unsweetened,
 no-added-sugar, organic — loses its aisle the same way. That is a category-capture defect, not a
