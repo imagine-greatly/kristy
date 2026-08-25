@@ -360,12 +360,26 @@ anything already delivered.**
 
 ### ⛔ ALL FIVE DELIVERED SHOTS ARE OBSOLETE — FOUND 2026-08-25, AND THE BOARD BELOW IS STALE
 
-⚠️ **THE SET WAS SHOT ON 2026-08-20 AND THE PRODUCT CHANGED UNDER IT ON 2026-08-24. NOTHING
-REPORTED THIS, AND NOTHING COULD:** a screenshot is a file on disk. It does not recompile, no
-check reads it, and it goes stale silently while continuing to look exactly as finished as the
-day it was approved. **This is the sixth findings-family member aimed one step further along
-than it has been aimed before** — the artifact was blind to its subject when it was taken, and
-this is the artifact staying blind while its subject moves.
+⚠️ **THE SET WAS SHOT ON 2026-08-20 AND THE PRODUCT CHANGED UNDER IT ON 2026-08-24.**
+
+⛔ **AND THE FIRST HALF OF THIS WAS ALREADY WRITTEN DOWN — IN THE OTHER DOCUMENT. THAT IS THE
+ACTUAL DEFECT HERE, AND IT IS NOT "nobody noticed".** `kristy-ios/docs/ios-specs/paper.md` §10,
+the paper build order, ends step 6 with **"Six shots are void either way."** It has said so
+since the reversal was authored. **This file went on saying five were delivered and three were
+`✅ APPROVED AS SHOT`** — so the document holding the shoot board and the document holding the
+build order disagreed about whether the deliverable existed, for a day, and **a reader in either
+one had no way to see the other.** That is this repo's twin-copy shape exactly, and it is why
+the rule is *prefer deleting a copy over letting them disagree.*
+
+📎 **What was NOT recorded anywhere, and is new: cause 2 below.** `paper.md` could not have
+known it — it is a corpus change, not a brand one. **So the set is void for two unrelated
+reasons and only one of them had been written down.**
+
+⚠️ **AND THE GENERAL SHAPE IS STILL WORTH NAMING, because it is what let one document drift
+from the other unnoticed: a screenshot is a file on disk.** It does not recompile, no check
+reads it, and it goes on looking exactly as finished as the day it was approved. **The
+findings family aimed one step further along than §1.6 reaches** — that entry is an artifact
+blind to its subject *when taken*; this is an artifact staying blind while its subject moves.
 
 **Two independent causes, either one disqualifying:**
 
@@ -405,6 +419,17 @@ the shoot and the upload can invalidate it, and none of them will say so.
   assert its subject (`requireCards`), and it is also what makes it break on an editorial pass.
   The answer is probably to pin the SLUG and read the headline off the row.
 - **Slot 6 is unchanged: still gated on the Mac, still no fallback, still ship five.**
+- ✅ **THE UNDECIDED SEAL DOES NOT BLOCK THIS, CHECKED RATHER THAN ASSUMED.** `paper.md` §11
+  leaves `Metal.metal`'s deep stop open — *"now `ochre` … doing a job on `plate` that nothing
+  measured. Decide it with the seal; do not inherit it"* — which would be a reason to wait if
+  the seal were in frame. **It is not.** `Metal` is **plate-only** (§7, and `Thread.swift`
+  restates it), and the plate appears in none of slots 1–5: dashboard, counter index, shop
+  mode, a counter card summary and the compose room. The seal is slot 6's subject, and slot 6
+  is gated on hardware regardless. **Shoot 1–5 now; the seal decision rides with slot 6.**
+- ⚠️ **THE STANCE IS JUDGED ON SHOP MODE FIRST, NOT THE DASHBOARD** — `paper.md` §0's
+  two-rooms rule, and it applies to the shoot as much as to the build: the dashboard is the
+  surface where a dark ground was least wrong, so it is the one least able to answer whether
+  paper works. **Look at slot 3 before believing slot 1.**
 
 ### 📍 THE 2026-08-20 BOARD, KEPT AS THE RECORD OF A SET THAT WAS CORRECT WHEN TAKEN
 
