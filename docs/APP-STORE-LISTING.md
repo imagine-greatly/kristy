@@ -710,9 +710,19 @@ spends the budget that the real run needs.
 | Sign-in required to review | **No** — the free experience opens without an account |
 | Demo account | Not needed; see the review notes in §7 |
 
-🐞 ⚠️ **THE SUPPORT URL PROMISES A REPLY TO `hello@kristyapproved.com` WITHIN TWO BUSINESS DAYS,
-AND WHETHER THAT MAILBOX RECEIVES IS STILL OPEN.** The domain has an MX record; an MX proves the
-domain can route mail and **does not** prove the mailbox exists or that anyone reads it. **App
-Review checks the support URL, and a bouncing support address is worse than no address.**
-⛔ **Do not work around it by changing the pages** — they are correct. This is the owner's item
-and it is tracked under **Open items** in `CLAUDE.md`. **Re-check it before submitting.**
+✅ **CLOSED 2026-08-20 — `hello@kristyapproved.com` RECEIVES AND THE OWNER READS IT.** ⚠️ **THIS
+ENTRY READ "STILL OPEN" FOR FIVE DAYS AFTER IT WAS SETTLED**, which is the stale-marker defect
+this repo keeps finding in its own queues: a document describing work as outstanding after it
+landed. Corrected 2026-08-25 by checking `CLAUDE.md`'s Open items rather than by remembering.
+
+⚠️ **THE RULE IT LEAVES IS UNCHANGED AND STILL BINDS: A BOUNCING SUPPORT ADDRESS IS WORSE THAN
+NO ADDRESS.** `/support` promises a reply within two business days and App Review checks the
+support URL. ⛔ **AN MX RECORD IS NOT THE CHECK** — it proves the domain can route mail and says
+nothing about whether the mailbox exists or anyone reads it. This item spent a day narrowed on
+exactly that distinction. **The only check that settles it is sending mail to it, which is an
+outward-facing act and is the owner's. Re-check before any submission.**
+
+📍 **All four public URLs verified served 2026-08-25 by FETCHING them**, which is what a reviewer
+does: `/` `200`, `/privacy` `200`, `/terms` `200`, `/support` `200` on `kristyapproved.com`, with
+the support page printing `hello@kristyapproved.com` and the domain's MX resolving to Outlook.
+⛔ **Do not work around any of it by changing the pages** — they are correct.
