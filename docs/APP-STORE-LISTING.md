@@ -433,6 +433,20 @@ LAST act before submission** — this set is evidence that the runner works and 
 alone at 20:05 after the give-back fix below. **Slots 1–4 were exported before the fix was
 written** — the bundle is one run deep, and the second run's `rm -rf` would have taken them.
 
+⛔ **SLOT 4 IS INVALIDATED AGAIN, 2026-08-26, AND THIS TIME IT WAS DELIBERATE — the A2 do line
+was fixed for grammar.** The live door serves *"…and it suits people ordinary milk upsets"*, a
+zero-relative construction that garden-paths on *"people ordinary"*; the KB now reads *"…and it
+suits people upset by ordinary milk"* (`34844d3`). **The shot renders the defective line as the
+largest type in the frame** — verified by opening the PNG, not inferred from the commit.
+⚠️ **AND THE ORDER IS FORCED: MIGRATE, THEN RE-SHOOT.** The runner poses against the LIVE door,
+so shooting before the migration re-captures the same defect and spends the bucket doing it.
+📎 **SLOTS 1, 2, 3 AND 5 WERE RE-EXAMINED THE SAME DAY AND STAND.** Opened and read: hero
+present on 1 and 5, cards attached with their eyebrows on 1, tab bar correct on 2 (the old set's
+mirrored labels are gone), and slot 5's *"MEAT"* under the bar is **the owner's 2026-08-20
+ruling — keep the hero, let the bar overlap — not a defect to fix.** So this is a ONE-SLOT
+re-shoot, which is the cheapest this has ever been against a 20/hour bucket. ⛔ **Do not take
+the whole set again to be tidy.**
+
 ⏳ **WHAT THE RE-SHOOT NEEDS, and it is not just a re-run:**
 - **The five slots re-shot on paper**, at 1320 × 2868, clock 9:41.
 - ⚠️ **`AppStoreShots.swift` PINS CARD COPY VERBATIM AND THAT IS NOW A KNOWN TRAP.** Slot 4's
