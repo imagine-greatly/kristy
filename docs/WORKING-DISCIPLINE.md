@@ -259,3 +259,70 @@ sentence said was impossible. If you change one, change both.
 **What is NOT covered by this and stays ordinary work:** `docs/`, this file, `supabase/*.sql`
 migrations that have not been applied, and anything explicitly scoped as server work in its own
 prompt.
+
+---
+
+## The two publish channels of a KB edit (2026-08-26)
+
+**The rule is in `CLAUDE.md` → Corpus and schema. This is the account.**
+
+### What the file said, and why it was believable
+
+`CLAUDE.md` carried, for months:
+
+> A KB edit changes the tests, the probes and every local fixture and changes **nothing a
+> shopper sees** until `node server/scripts/migrateCounterCards.js` runs.
+
+Every clause of that is true **of the counter route**. `routes/counter.js` genuinely serves
+from the `counter_cards` table, the migration genuinely is the thing that puts a card in
+front of an iOS shopper, and the committed/migrated pair genuinely is the two-state report
+the file asks for. It was not sloppy. It was **a correct statement about one route,
+generalised to the corpus.**
+
+### What is actually true
+
+`lib/perimeter.js` reads `kristy_perimeter_kb.json` **from disk at import**:
+
+```js
+const KB_PATH = join(__dirname, '..', 'kristy_perimeter_kb.json');
+export const perimeterKb = JSON.parse(readFileSync(KB_PATH, 'utf8'));
+```
+
+and `index.js` mounts `routes/perimeter.js` at `/api` — public, `optionalAuth`. That route
+serves those entries to anyone: `publicEntry(entry)` on the by-id door, and `entries` on the
+ask door. **So pushing `main` publishes the KB to the web as soon as Railway restarts.**
+
+**Two channels, independent, either one sufficient:**
+
+| act | reaches | surface |
+| --- | --- | --- |
+| `migrateCounterCards.js` | `counter_cards` table | the iOS client |
+| `git push origin main` | the JSON file on the box | the web, `/api/perimeter/*` |
+
+So *"committed, not migrated"* does not mean no shopper has read it, and *"not pushed"* does
+not mean the table is stale. **Neither state implies the other and both need saying.**
+
+### Why it survived — and this is the part worth keeping
+
+⚠️ **THE CHANNEL A PUSH PUBLISHES IS THE ONE NOBODY WORKING ON THE CLIENT CAN REACH.**
+`kristy-ios/Tools/checks/perimeter_door.sh` exists specifically to keep the iOS client off
+`/api/perimeter/*`. That check is right and should stay. But its consequence is that every
+session doing iOS work is *structurally blind* to the web channel: it cannot call it, it has
+no reason to read its route, and the one document that would have told it says the channel
+is inert.
+
+**This is the findings family aimed at a document rather than a test.** The rule reported
+"nothing publishes" because it could not see the thing that publishes — and unlike a green
+test, a rule that is wrong produces no artifact at all. Nothing was ever going to go red.
+
+📎 **The generalisation: a rule scoped to one route, written without naming the route, becomes
+a rule about the system.** The original sentence would have been correct and durable with
+four extra words — *"nothing an iOS shopper sees"*. Name the surface a claim is about,
+especially when the repo has more than one client and one of them is frozen.
+
+### How it was verified, 2026-08-26
+
+Not from the docs. `grep` for runtime readers of the KB outside tests → `lib/perimeter.js`;
+`grep` for its importers → four routes; `grep perimeter index.js` → the `/api` mount; then
+the route's own `res.json` calls read directly. Four commands, and every one of them reads
+executing code rather than prose about it.

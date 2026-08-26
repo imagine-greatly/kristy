@@ -69,6 +69,16 @@ for (const d of missing) console.log('MISSING: ' + d);
 const kept = baseline.length - missing.length;
 console.log(`\nclaudeMdSplitCheck: ${kept}/${baseline.length} directives from ${ref} still present ` +
             `across ${files.length} files, ${missing.length} MISSING`);
-console.log(`CLAUDE.md is now ${fs.statSync(path.join(repo, 'CLAUDE.md')).size} characters.`);
+/* ⚠️ `statSync().size` IS BYTES AND THIS LINE CALLED THEM CHARACTERS. The budget in
+   CLAUDE.md is stated in CHARACTERS — the 2026-08-10 incident that set it was 156,456
+   against 150,000 — and this file is dense in emoji and arrows, every one multibyte. The
+   two diverged by ~1,100 on 2026-08-26, which is enough to report a file OVER budget that
+   is comfortably under it. That error runs in the expensive direction: the documented
+   response to being over budget is moving rules out of always-loaded context, so an
+   overstated count buys a real deletion to fix an imaginary overflow. Both are printed
+   now, because which one is the limit is exactly the thing that was ambiguous. */
+const md = fs.readFileSync(path.join(repo, 'CLAUDE.md'), 'utf8');
+console.log(`CLAUDE.md is now ${md.length} characters (${Buffer.byteLength(md, 'utf8')} bytes). ` +
+            `The 100,000 budget is CHARACTERS — check with \`wc -m\`, not \`wc -c\`.`);
 
 process.exit(missing.length ? 1 : 0);

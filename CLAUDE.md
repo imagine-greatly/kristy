@@ -1007,11 +1007,14 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 ### Corpus and schema
 
 - ⚠️ **EDITING A CURATED CARD IS A TWO-STEP ACT, AND NOTHING REMINDS YOU OF THE SECOND.**
-  `routes/counter.js` serves from the **`counter_cards` table**, not from
-  `kristy_perimeter_kb.json`. A KB edit changes the tests, the probes and every local fixture and
-  changes **nothing a shopper sees** until `node server/scripts/migrateCounterCards.js` runs. The KB
-  stays the source of record; the migration is idempotent (upsert on slug) and `--dry-run` needs no
-  credentials.
+  `routes/counter.js` serves from the **`counter_cards` table**, so a card reaches **iOS** only
+  when `node server/scripts/migrateCounterCards.js` runs. The KB stays the source of record; the
+  migration is idempotent (upsert on slug) and `--dry-run` needs no credentials.
+- ⛔ **A KB EDIT HAS TWO PUBLISH CHANNELS AND THIS ENTRY CLAIMED ONE. Either alone publishes:
+  MIGRATE → table → iOS. PUSH → file → web** (`routes/perimeter.js`, mounted at `/api`, serves the
+  KB off disk). So *"committed, not migrated"* does **not** mean no shopper has read it. **State
+  both, every time.** ⚠️ **The web channel is unreachable from iOS** (`perimeter_door.sh`), which is
+  why this was wrong for months. Account: `docs/WORKING-DISCIPLINE.md`.
 - **The counter card's shape bar is executable.** `server/lib/counterCardLint.js` holds the rules,
   and **Pass 3 must call `lintCard` before persisting a generated card.**
 - **A TIER NOTE MAY NOT POINT AT THE TIER.** `lintCard` fires `TIER_NOTE_SELF_REFERENCE` on
@@ -1311,7 +1314,11 @@ a rule that is not in context does not apply, and **its absence is invisible fro
 nothing reports it and every session after it is quietly working from a shorter file than it thinks.
 
 **Keep it under 100,000 characters.** When a section grows past its share, the split is always the
-same one: **the RULE stays here, the ACCOUNT moves to `docs/`.** Check with `wc -c CLAUDE.md`.
+same one: **the RULE stays here, the ACCOUNT moves to `docs/`.** Check with **`wc -m CLAUDE.md`**
+— ⚠️ **`-m` NOT `-c`. This said `-c`, which counts BYTES**, and the two now differ by ~1,100: this
+file is dense in emoji and arrows, every one of them multibyte. The limit is stated in CHARACTERS
+(the 2026-08-10 incident was 156,456 against 150,000), so `-c` reports a file over budget that is
+not, and the fix for that reads as deleting rules to hit a number.
 
 ⚠️ **THAT SPLIT IS AT ITS FLOOR AND THE NUMBER IS MEASURED.** The third split (2026-08-19,
 99,590 → 94,049) rewrote the four largest blocks and found **every account it could move had
