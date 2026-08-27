@@ -1245,17 +1245,15 @@ before starting, not after.**
   AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
   "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or
   by parse:**
-  - **LIVE `counter_cards`: 86 rows — 83 `curated` + 3 `generated`. Re-measured by query
-    2026-08-24, immediately after a migration.**
+  - **LIVE `counter_cards`: 87 rows — 84 `curated` + 3 `generated`. Re-measured by query
+    2026-08-27, immediately after a migration.**
   - **`kristy_perimeter_kb.json`: 84 entries on `main` (the held stack), 82 on `origin/main`.**
-  - ⚠️ **KB ONE AHEAD AGAIN, DELIBERATELY: `label_artificial_color` is COMMITTED, NOT
-    MIGRATED** — 84 in the KB, 83 in the table. **The pair working, not a defect.** Its
-    migration must report **1 inserted / 83 updated.**
-  - ✅ **The gap closed before this one:** the 83rd card (`8ca62ab`, the first
-    brand-naming card) sat committed-and-unmigrated for five days and went live in the same
-    migration as the organic rewrite — **which is the committed/migrated pair working, and also
-    the warning it carries: a migration publishes EVERYTHING the KB is ahead by, not only the
-    card you came to ship.** Check `--dry-run`'s insert count against what you intended.
+  - ✅ **KB AND TABLE AGREE AT 84 CURATED, 2026-08-27.** The migration reported **1 inserted
+    (`label_artificial_color`) / 83 updated**, exactly the count `6430718` predicted, and both
+    it and the corrected `a2_vs_a1_milk` do line were **read back off the live table.**
+    ⚠️ **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to
+    ship** — the 83rd card rode along five days late once. **Diff the KB against the table
+    before running it**; `--dry-run` does NOT report an insert count, so it cannot answer this.
   - ⚠️ **`origin/main` IS STILL AT 82 AND THAT IS NOT A CONFLICT.** The KB is the source of
     record and the table is what ships; the deployed BRANCH is a third thing and is behind both.
     **A session finding 83 ≠ 82 has found the held stack, not a bug.**
