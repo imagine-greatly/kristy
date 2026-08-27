@@ -422,6 +422,12 @@ LAST act before submission, never as an early one** — every commit and every m
 the shoot and the upload can invalidate it, and none of them will say so.
 
 ✅ **THE PAPER SET IS SHOT — 2026-08-25, five slots, `kristy-review-screenshots/appstore-paper-2026-08-25/`.**
+⚠️ **THE CURRENT SET IS SPLIT ACROSS TWO DIRECTORIES AND NEITHER IS THE SUBMISSION SET.** Slots
+1, 2, 3 and 5 are in `appstore-paper-2026-08-25/`; **slot 4 in that directory is SUPERSEDED and
+the good one is `slot4-reshoot-2026-08-27/slot4-card-summary.png`.** The directories are dated
+rather than merged on purpose — a folder named for one date holding a shot from another is how
+a stale frame gets uploaded. **Assemble the upload set at submission, from the re-shoot the
+rule below demands, not by picking through these.**
 All five are 1320 × 2868, clock 9:41, exported through `export_shots.sh` so the size is
 enforced rather than eyeballed. The run logs and summaries sit beside them.
 ⚠️ **AND THE RULE ABOVE APPLIES TO THIS SET THE DAY IT WAS TAKEN: a screenshot is a claim with
@@ -433,13 +439,29 @@ LAST act before submission** — this set is evidence that the runner works and 
 alone at 20:05 after the give-back fix below. **Slots 1–4 were exported before the fix was
 written** — the bundle is one run deep, and the second run's `rm -rf` would have taken them.
 
-⛔ **SLOT 4 IS INVALIDATED AGAIN, 2026-08-26, AND THIS TIME IT WAS DELIBERATE — the A2 do line
-was fixed for grammar.** The live door serves *"…and it suits people ordinary milk upsets"*, a
-zero-relative construction that garden-paths on *"people ordinary"*; the KB now reads *"…and it
-suits people upset by ordinary milk"* (`34844d3`). **The shot renders the defective line as the
-largest type in the frame** — verified by opening the PNG, not inferred from the commit.
-⚠️ **AND THE ORDER IS FORCED: MIGRATE, THEN RE-SHOOT.** The runner poses against the LIVE door,
-so shooting before the migration re-captures the same defect and spends the bucket doing it.
+✅ **SLOT 4 IS RE-SHOT, 2026-08-27 — `kristy-review-screenshots/slot4-reshoot-2026-08-27/`.**
+1320 × 2868, clock 09:41, exported through `export_shots.sh` so the size is enforced. **The
+forced order was honoured: the migration ran FIRST** (1 inserted / 83 updated), then the shot,
+because the runner poses against the LIVE door and shooting first would have re-captured the
+same defect and spent the bucket doing it.
+📎 **It cost ONE test, not a suite run.** `KRISTY_UISUITE_DEST='…iPhone 17 Pro Max' \
+Tools/uisuite/run.sh -only-testing:KristyUITests/AppStoreShots/testSlot4CardSummary` — `run.sh`
+passes `"$@"` straight through to `xcodebuild`, so a one-slot re-shoot is a handful of attaches
+rather than ~23. **That is the cheapest form of this act and it should be the default whenever
+one slot is stale.**
+⚠️ **THE ARTIFACT WAS OPENED AND READ, NOT INFERRED FROM A GREEN RUN** — which is findings-family
+member 6 and the reason slot 4 existed in a defective state for two days. Confirmed in the
+pixels: the corrected headline is the largest type in the frame, `tier_note` renders as a
+SENTENCE below the do line (not a chip), the teaser is GEOMETRY rather than withheld text, and
+**"The full read" is present and CLOSED** — so the frame shows the free layer, not paid content
+on a store listing.
+📎 **What invalidated it, kept for the next reader:** the live door had served *"…and it suits
+people ordinary milk upsets"*, a zero-relative construction that garden-paths on *"people
+ordinary"* (`34844d3` fixed the KB 2026-08-26; the migration published it 2026-08-27).
+⚠️ **`LiveCopy.a2Headline` HAD TO MOVE WITH IT** (`kristy-ios@ae15140`). The slot-4 test waits on
+that exact string to find the browse row and then the card, so it pinned the defective line and
+would have gone red. **A stale-copy constant is the shoot's silent blocker: it fails the test
+rather than the shot, so it reads as a suite regression rather than as a shoot dependency.**
 📎 **SLOTS 1, 2, 3 AND 5 WERE RE-EXAMINED THE SAME DAY AND STAND.** Opened and read: hero
 present on 1 and 5, cards attached with their eyebrows on 1, tab bar correct on 2 (the old set's
 mirrored labels are gone), and slot 5's *"MEAT"* under the bar is **the owner's 2026-08-20
@@ -449,11 +471,18 @@ the whole set again to be tidy.**
 
 ⏳ **WHAT THE RE-SHOOT NEEDS, and it is not just a re-run:**
 - **The five slots re-shot on paper**, at 1320 × 2868, clock 9:41.
-- ⚠️ **`AppStoreShots.swift` PINS CARD COPY VERBATIM AND THAT IS NOW A KNOWN TRAP.** Slot 4's
-  headline literal must be updated from the LIVE DOOR, not from the KB, and not from memory.
-  **Whether it should pin copy at all is a real question** — pinning is what makes the shot
-  assert its subject (`requireCards`), and it is also what makes it break on an editorial pass.
-  The answer is probably to pin the SLUG and read the headline off the row.
+- ✅ **DONE 2026-08-27: the pinned copy was updated from the LIVE DOOR** — read back off
+  `counter_cards` after the migration, not copied from the KB and not from memory
+  (`kristy-ios@ae15140`). ⚠️ **The KB/table distinction is the whole point of that constant:**
+  copying from the KB makes it right about the source of record and wrong about the door the
+  app actually reads, and those two diverge for days at a time here on purpose.
+  ⏳ ⚠️ **THE DESIGN QUESTION IS STILL OPEN AND IS NOT CLOSED BY THIS FIX. `LiveCopy` PINS CARD
+  COPY VERBATIM, WHICH IS A STANDING TRAP.** Pinning is what makes the shot assert its subject
+  rather than photograph an empty frame (findings-family member 6), and it is *also* what makes
+  every editorial pass break the shoot. **The answer is probably to pin the SLUG and read the
+  headline off the row** — the assertion survives, the copy stops being duplicated, and an
+  editorial pass stops being a shoot dependency. **Not done, and not urgent while `LiveCopy`
+  has exactly one member** — it becomes urgent at the second.
 - ✅ **SLOT 5 IS SHOT, AND THE GIVE-BACK DEFECT WAS NOT THE ONE THIS ENTRY NAMED.** It read
   "the give-back under-restored by ~100pt" and stopped there, which is an outcome, not a
   mechanism. Measured 2026-08-25 by making the failure print its own steps:
