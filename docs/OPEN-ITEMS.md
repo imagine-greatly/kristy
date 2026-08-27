@@ -833,6 +833,42 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 ### Live defects
 
+- 🐞 ⚠️ **TWO UNCONFIRMED PHONE STUBS SIT IN `auth.users` WHILE `/privacy` TELLS THE PUBLIC
+  KRISTY COLLECTS NO PHONE NUMBERS. Measured live 2026-08-27**, service role, not inferred:
+
+  ```
+  de5fcdca…  phone 1415…0132  identities []  confirmed never  last_sign_in never
+  1b0d8071…  phone 1310…2983  identities []  confirmed never  last_sign_in never
+  subscriptions 0 rows · trips 0 rows · shopping_lists 0 rows
+  ```
+
+  **They are litter from the phone rail, which is DEAD PRODUCT-WIDE** — `signInWithOtp({phone})`
+  created the row, the OTP was never completed, so no identity was ever minted. Both predate the
+  ruling (2026-07-27 and 2026-08-03).
+  ✅ **NOTHING IS AT RISK AND THAT IS MEASURED, NOT ASSUMED.** No `subscriptions` row exists for
+  either, so **neither has spent the one trial `ensureTrial` grants by existence** — the failure
+  mode that entry warns about did not occur. No trips, so **neither would block
+  `importGuestTrips`**, which declines an account that already has trips with a 409.
+  ⚠️ **THE PRECISE CORRECTION THIS FORCES, AND IT IS THE REASON THIS IS FILED AT ALL: "THERE ARE
+  NO ACCOUNTS ON ANY RAIL" IS THE RIGHT CONCLUSION REACHED THROUGH A WRONG PREMISE.** `auth.users`
+  is **not empty** — it holds two rows. What is empty is *identities*, and an identity is what a
+  completed exchange mints. **A session that checks account existence with a row count gets the
+  right answer today and the wrong answer the moment a third stub appears.** Count identities, or
+  count `last_sign_in_at IS NOT NULL`. Never count rows.
+  ⏳ **THE OPEN QUESTION IS NOT TECHNICAL, IT IS A PUBLIC-CLAIM QUESTION, AND IT IS THE OWNER'S.**
+  `/privacy` says Kristy collects no phone numbers and sends no SMS. That is true of what the
+  product *does* — the provider is off and nothing can write a third stub — and it is **not true
+  of what the database currently holds.** Two stored phone numbers against a live page saying
+  none is a small inconsistency that App Review is unlikely to see and a data-subject request
+  would.
+  ⛔ **NOT DELETED, DELIBERATELY.** Deleting production `auth.users` rows is destructive and
+  outward-facing, the rows are inert, and **the page is not wrong about the practice** — so this
+  is a decision, not a defect to clear on sight. **The clean resolution is deleting the two stubs
+  so the stored data matches the published claim**, and it should be taken as its own scoped act
+  with the row ids above recorded first.
+  📎 **Re-measure before acting** — a stub is inert but the count is a live number, and this file
+  has carried stale counts before.
+
 - ✅ **CLOSED 2026-08-20 — THE MAILBOX RECEIVES AND THE OWNER READS IT.** The account below is
   kept because the entry was wrong twice on its way here and both errors are instructive; the
   live rule it leaves is in `CLAUDE.md` under **Live defects**.
