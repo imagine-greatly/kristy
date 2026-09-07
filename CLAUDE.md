@@ -276,6 +276,10 @@ only by prompt.
    AND GOES ONTO PAPER.** This rule read *"Reuse the locked brand. Never invent."* and it
    **no longer binds `kristy-ios`**. Warm paper ground `#F5F1E6`, green-black ink, and
    **green / ochre / orange as the food ladder every shopper already reads off packaging**;
+   ⚠️ **AMENDED 2026-09-07: THE GROUND IS SOLAR KRAFT `#CFBA8E` AND THE CARD IS `#F5F1E6`** —
+   the owner ruled the value, the premise (warm stock against a bright aisle) is unchanged,
+   and every accent deepened to hold AA on it (`paper.md` §1–§2). `#F5F1E6` quoted as "the
+   ground" anywhere is 2026-08-24 text; it is now the card. Brass on kraft is 1.24:1.
    **`Fraunces` replaces Playfair Display Italic and Newsreader**; and ⚠️ **the near-black
    forest green and the brass are NOT deleted — they CONCENTRATE into the seal's plate and
    appear nowhere else.** Brass is **forbidden off the plate**: it measures 2.08:1 on paper,
