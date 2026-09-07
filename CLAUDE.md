@@ -309,8 +309,12 @@ only by prompt.
    checkable. Focuses are preferences the user turns on about themselves, never
    inferences. Anything medical defers to a doctor.
 
-4. **The stamp is earned.** The gold "Kristy Approved" seal renders only when
-   `tier === 'approved'`. Every tier below gets a plain verdict bar.
+4. **The stamp is earned — AMENDED 2026-09-07, iOS ONLY.** The seal renders only when
+   `tier === 'approved'` **on a verdict**; every tier below gets a plain verdict bar.
+   ⛔ **Taken: the iOS landing's `empty` state carries it as the brand mark, and the earned one
+   differs by PLACEMENT** — stamped at the card's edge, off-axis, not centred. **Static; motion
+   was withdrawn (Reduce Motion kills it).** Three places per `paper.md` §9 —
+   **a SECOND reversal, not #1's.** `kristy-ios/.../surfaces.md` §1.4b.
 
 5. **Never reshape the engine output.** The matched-entry shape from
    `server/lib/verdictEngine.js` is consumed directly by the note composer and the card.
