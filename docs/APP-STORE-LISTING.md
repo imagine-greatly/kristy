@@ -431,7 +431,7 @@ rule below demands, not by picking through these.**
 All five are 1320 × 2868, clock 9:41, exported through `export_shots.sh` so the size is
 enforced rather than eyeballed. The run logs and summaries sit beside them.
 ⚠️ **AND THE RULE ABOVE APPLIES TO THIS SET THE DAY IT WAS TAKEN: a screenshot is a claim with
-a timestamp.** Slot 4 shows a live counter card and slot 5 a live model refinement, so **a
+a timestamp.** Slot 4 shows a live counter card and slot 5 a live model build, so **a
 migration or a voice pass invalidates them with nothing in git moving.** ⛔ **Re-shoot as the
 LAST act before submission** — this set is evidence that the runner works and that paper reads,
 **not** a set that can sit until a submission date.
@@ -544,7 +544,7 @@ running it.
    | bucket | size | what spends it in a shoot |
    | --- | --- | --- |
    | `cartBuildLimited` | **20/hr** | `/guest/list/attach` — one per slot that launches a trip |
-   | `rateLimited` | **8/hr** | `/guest/list/compose` — slot 5 needs **two** (build + refine) |
+   | `rateLimited` | **8/hr** | `/guest/list/compose` — slot 5 needs **one** (build only, 2026-09-08) |
    | counter | 40/hr | the counter door — slots 2 and 4 |
 
    ⚠️ **A FULL SUITE RUN MAKES ~23 ATTACHES AND EXHAUSTS THE FIRST BUCKET.** Shooting only
@@ -588,12 +588,32 @@ the status bar frozen at 9:41.
 
 | slot | state | file |
 | --- | --- | --- |
-| 1 | 🟡 **DELIVERED, AWAITING THE OWNER'S LOOK** | `slot1-dashboard.png` |
+| 1 | ⛔ **VOID — NEVER CAPTURED ON 2026-09-08, MUST BE RE-SHOT** | `slot1-dashboard.png` |
 | 2 | ✅ **APPROVED AS SHOT** | `slot2-counter-index.png` |
 | 3 | ✅ **APPROVED AS SHOT** | `slot3-shop-mode.png` |
 | 4 | ✅ **APPROVED AS SHOT** | `slot4-card-summary.png` |
-| 5 | 🟡 **DELIVERED, AWAITING THE OWNER'S LOOK** | `slot5-compose-refined.png` |
+| 5 | ⛔ **VOID — THE SLOT MOVED, SEE THE RULING BELOW THIS TABLE** | `slot5-compose-refined.png` |
 | 6 | ⏳ Real hardware, gated on the Mac. **No fallback — ship five** (ruling above). | — |
+
+⛔ **SLOT 5 MOVED TO THE EMPTY STATE, RULED BY THE OWNER 2026-09-08, AND THE SHOT DESCRIBED
+BELOW IS VOID.** P2 (`kristy-ios@b915c49`) scoped `ComposeField` to the `empty` state, so **a
+ready dashboard has no composer** and the refinement this slot was built on has no door left to
+drive. The slot **keeps its number, its filename and its argument** — *you type a sentence,
+Kristy builds the list* — and moves to where the composer now lives.
+
+**What changes for the shoot. Both are planning numbers, not prose:**
+
+- **It drives `.build`, not `.refine`, so it makes ONE `/guest/list/compose` call, not two.**
+  The bucket table above is corrected; budget the shoot off the corrected number.
+- **It renders no struck rows and no "Put it back".** So the 20:13 description further down is
+  the record of **a shot that can no longer be taken.** ⚠️ **Kept as history, never read as a
+  specification** — an anchor authored from it will look right and find nothing.
+
+⚠️ **SLOTS 1 AND 5 ARE BOTH UNSHOT AS OF 2026-09-08, AND THE ABSENCE IS THE THING NOTHING
+REPORTS.** Their assertions failed *upstream of the capture line* on that day's run, so **the set
+on disk holds slots 2, 3 and 4 only and is not a shippable store set.** A directory listing makes
+it look complete. **Say the absence out loud** — this is the findings family aimed at a
+deliverable: a set blind to what it is missing looks finished.
 
 **Both re-shoots were run in a watched shell, not scheduled.** The two diagnostics they replaced
 are filed in `evidence-2026-08-20/` under names that say what they are; ⛔ **nothing named
