@@ -588,12 +588,39 @@ the status bar frozen at 9:41.
 
 | slot | state | file |
 | --- | --- | --- |
-| 1 | ⛔ **VOID — NEVER CAPTURED ON 2026-09-08, MUST BE RE-SHOT** | `slot1-dashboard.png` |
+| 1 | ✅ **RE-SHOT 2026-09-08, CARDED AND READ BY EYE** | `appstore-reshoot-2026-09-08/slot1-dashboard.png` |
 | 2 | ✅ **APPROVED AS SHOT** | `slot2-counter-index.png` |
 | 3 | ✅ **APPROVED AS SHOT** | `slot3-shop-mode.png` |
 | 4 | ✅ **APPROVED AS SHOT** | `slot4-card-summary.png` |
-| 5 | ⛔ **VOID — THE SLOT MOVED, SEE THE RULING BELOW THIS TABLE** | `slot5-compose-refined.png` |
+| 5 | ⛔ **RE-SHOT 2026-09-08 AND STILL NOT SHIPPABLE — THE SENTENCE RENDERS TWICE** | `appstore-reshoot-2026-09-08/slot5-compose-refined.png` |
 | 6 | ⏳ Real hardware, gated on the Mac. **No fallback — ship five** (ruling above). | — |
+
+✅ **BOTH RE-SHOT 2026-09-08 IN ONE RUN — 2 passed, 0 skipped, 0 failed**, iPhone 17 Pro Max,
+`-only-testing:` on the two slots so it cost ~2 attaches rather than a suite's ~23. Both exported
+through `export_shots.sh` at 1320 × 2868 into
+`kristy-review-screenshots/appstore-reshoot-2026-09-08/`.
+⚠️ **THE ZERO IN "0 skipped" IS THE LOAD-BEARING NUMBER, NOT THE 2 IN "2 passed".** `requireCards`
+was **blind until this day** — its eyebrow regex also matched `PRODUCE`, `SEAFOOD`,
+`EVERYTHING ELSE` and `THIS TRIP`, so it passed on a wholly uncarded list, which is the exact
+artifact it exists to reject. It is now keyed on `cart.card` / `shop.card`, identifiers only a
+carded row emits. **A skip would have meant "no card"; it did not skip.**
+📎 **The status bar had to be re-applied by hand after the erase.** `run.sh` does not set it and
+`export_shots.sh` cannot see it — a live clock is invisible to every check and disagrees with
+slots 2–4 on the shelf.
+
+⛔ **SLOT 5 IS SHOT AND STILL NOT SHIPPABLE, AND WHAT IT FOUND IS A PRODUCT DEFECT RATHER THAN A
+SHOOT PROBLEM: THE COMPOSED SENTENCE RENDERS TWICE.** `RefinementSummary.swift:38` prints the
+server's `summary` in a card; `CartList.swift:29-30` prints `cart.list.intro` immediately below
+it. On a `.build` call the server returns **the same sentence for both**, so the shopper reads it
+once in Kristy's voice and again as the list's intro.
+⚠️ **THIS IS PRODUCTION, NOT A SCREENSHOT ARTIFACT — AND IT IS ON THE PATH EVERY NEW SHOPPER
+TAKES**, the empty dashboard's compose. It stayed invisible because slot 5 used to shoot the
+**refine** path, where the two sentences legitimately differ. **Moving the slot is what exposed
+it**; the move did not cause it.
+⏳ **UNFIXED, DELIBERATELY. The fix is app source and the choice is the owner's** — suppress the
+intro when it equals the summary, suppress `RefinementSummary` on a build, or reconcile the two
+server-side. ⛔ **Do not re-shoot slot 5 before it is ruled**: the shot is correct evidence of the
+app as it stands, and another capture spends the bucket to photograph the same defect.
 
 ⛔ **SLOT 5 MOVED TO THE EMPTY STATE, RULED BY THE OWNER 2026-09-08, AND THE SHOT DESCRIBED
 BELOW IS VOID.** P2 (`kristy-ios@b915c49`) scoped `ComposeField` to the `empty` state, so **a
