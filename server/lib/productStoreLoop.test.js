@@ -183,10 +183,19 @@ test('an empty store is a miss, not an error — OFF still gets its turn', async
 /* ═════════════════ Coverage: is the moat actually compounding? ═════════════════ */
 
 test('coverage counts the split that matters — borrowed vs owned', async () => {
+  // THE RECENT DATES ARE DERIVED, NOT WRITTEN DOWN, AND THAT IS THE POINT OF THIS BLOCK.
+  // `coverageStats` counts `first_seen >= now - recentDays`, so a hardcoded date inside
+  // that window is only inside it for `recentDays` days. Three of these were written as
+  // '2026-07-29' and the assertion below went red on 2026-09-08 — 41 days later, with
+  // nothing committed in between. The test aged out; the code never changed.
+  // A literal here does not pin the split, it pins the calendar.
+  const daysAgo = (n) => new Date(Date.now() - n * 24 * 60 * 60 * 1000).toISOString();
   const { client } = fakeStore([
-    { barcode: '1', source: 'off', confidence: 'high', first_seen: '2026-07-29T00:00:00.000Z' },
-    { barcode: '2', source: 'off', confidence: 'high', first_seen: '2026-07-29T00:00:00.000Z' },
-    { barcode: '3', source: 'vision', confidence: 'high', first_seen: '2026-07-29T00:00:00.000Z' },
+    { barcode: '1', source: 'off', confidence: 'high', first_seen: daysAgo(2) },
+    { barcode: '2', source: 'off', confidence: 'high', first_seen: daysAgo(2) },
+    { barcode: '3', source: 'vision', confidence: 'high', first_seen: daysAgo(2) },
+    // Deliberately ancient, and safe as a literal for the reason the others are not:
+    // it is outside the window from every direction the clock can move.
     { barcode: '4', source: 'vision', confidence: 'low', first_seen: '2020-01-01T00:00:00.000Z' },
   ]);
 
