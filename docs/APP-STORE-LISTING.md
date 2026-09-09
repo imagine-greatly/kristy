@@ -592,13 +592,23 @@ the status bar frozen at 9:41.
 | 2 | ✅ **APPROVED AS SHOT** | `slot2-counter-index.png` |
 | 3 | ✅ **APPROVED AS SHOT** | `slot3-shop-mode.png` |
 | 4 | ✅ **APPROVED AS SHOT** | `slot4-card-summary.png` |
-| 5 | ⛔ **RE-SHOT 2026-09-08 AND STILL NOT SHIPPABLE — THE SENTENCE RENDERS TWICE** | `appstore-reshoot-2026-09-08/slot5-compose-refined.png` |
+| 5 | ✅ **RE-SHOT 2026-09-09, THE SENTENCE RENDERS ONCE, READ BY EYE** | `appstore-reshoot-2026-09-09/slot5-compose-refined.png` |
 | 6 | ⏳ Real hardware, gated on the Mac. **No fallback — ship five** (ruling above). | — |
 
 ✅ **BOTH RE-SHOT 2026-09-08 IN ONE RUN — 2 passed, 0 skipped, 0 failed**, iPhone 17 Pro Max,
 `-only-testing:` on the two slots so it cost ~2 attaches rather than a suite's ~23. Both exported
 through `export_shots.sh` at 1320 × 2868 into
 `kristy-review-screenshots/appstore-reshoot-2026-09-08/`.
+
+✅ **SLOT 5 RE-SHOT ALONE 2026-09-09 — 1 passed, 0 skipped, 0 failed**, iPhone 17 Pro Max,
+exported through `export_shots.sh` at 1320 × 2868 into
+`kristy-review-screenshots/appstore-reshoot-2026-09-09/`. **One slot, so ~1 attach.** Pose:
+*"SHIPPED WITH THE BAR OVERLAPPING — “EGG LABELS” … nudging did not find a gap in 8 steps"* — the
+give-back branch, the same one the owner accepted for slot 1.
+⚠️ **FOUR SIMULATORS WERE BOOTED, WHICH MAKES `simctl … booted` AMBIGUOUS.** The documented
+pre-run steps — `uninstall booted`, and the 9:41 `status_bar override` — would have been aimed at
+whichever device `booted` resolved to. **Shut the others down and address the Pro Max by UDID**,
+or the shot ships with a live clock on the wrong device and nothing reports it.
 ⚠️ **THE ZERO IN "0 skipped" IS THE LOAD-BEARING NUMBER, NOT THE 2 IN "2 passed".** `requireCards`
 was **blind until this day** — its eyebrow regex also matched `PRODUCE`, `SEAFOOD`,
 `EVERYTHING ELSE` and `THIS TRIP`, so it passed on a wholly uncarded list, which is the exact
@@ -617,10 +627,17 @@ once in Kristy's voice and again as the list's intro.
 TAKES**, the empty dashboard's compose. It stayed invisible because slot 5 used to shoot the
 **refine** path, where the two sentences legitimately differ. **Moving the slot is what exposed
 it**; the move did not cause it.
-⏳ **UNFIXED, DELIBERATELY. The fix is app source and the choice is the owner's** — suppress the
-intro when it equals the summary, suppress `RefinementSummary` on a build, or reconcile the two
-server-side. ⛔ **Do not re-shoot slot 5 before it is ruled**: the shot is correct evidence of the
-app as it stands, and another capture spends the bucket to photograph the same defect.
+✅ **RULED, FIXED AND RE-SHOT — CLOSED 2026-09-09.** The owner took the second of the three
+options: **suppress `RefinementSummary` on a build.** `Cart.compose` now captures the mode
+**before** the network call and returns `summary: nil` on `.build` (`kristy-ios` `3ef56b0`), and
+`Tools/checks/compose_summary.sh` pins it — proven red on five planted mutations.
+⚠️ **THE MODE CAPTURE IS A CORRECTNESS FIX, NOT A STYLE CHOICE, AND IT IS THE PART THAT LOOKS
+INCIDENTAL.** `hasCart` reads `list`, which is reassigned from the response before the return, so
+a mode read *after* the call reads the post-build state and answers for the wrong branch.
+📎 **The 2026-09-09 frame is the evidence it holds: the composed sentence appears once, in
+Fraunces, above `PRODUCE`, with no second copy as the list intro.** ⚠️ **A GREEN TEST IS NOT THAT
+EVIDENCE** — nothing in `testSlot5ComposeRefined` asserts the sentence appears once, so the shot
+was read by eye and that is the only thing that settles it.
 
 ⛔ **SLOT 5 MOVED TO THE EMPTY STATE, RULED BY THE OWNER 2026-09-08, AND THE SHOT DESCRIBED
 BELOW IS VOID.** P2 (`kristy-ios@b915c49`) scoped `ComposeField` to the `empty` state, so **a
@@ -636,11 +653,17 @@ Kristy builds the list* — and moves to where the composer now lives.
   the record of **a shot that can no longer be taken.** ⚠️ **Kept as history, never read as a
   specification** — an anchor authored from it will look right and find nothing.
 
-⚠️ **SLOTS 1 AND 5 ARE BOTH UNSHOT AS OF 2026-09-08, AND THE ABSENCE IS THE THING NOTHING
-REPORTS.** Their assertions failed *upstream of the capture line* on that day's run, so **the set
-on disk holds slots 2, 3 and 4 only and is not a shippable store set.** A directory listing makes
-it look complete. **Say the absence out loud** — this is the findings family aimed at a
-deliverable: a set blind to what it is missing looks finished.
+✅ **SUPERSEDED 2026-09-09 — THE SET IS COMPLETE AT FIVE, AND IT IS SPLIT ACROSS THREE
+DIRECTORIES.** This paragraph recorded the day slots 1 and 5 failed *upstream of the capture
+line*, leaving a set of three that a directory listing made look finished. Both are shot now:
+**slot 1 on 2026-09-08, slots 2–4 in `appstore-1.0/`, slot 5 on 2026-09-09.**
+⚠️ **THE SPLIT IS THE LIVE TRAP AND IT REPLACES THE ABSENCE.** No single directory holds a
+shippable set, and each of the three holds files that *look* like one. **Assemble the upload set
+from the board above, file by file** — never by copying a directory.
+⛔ **SLOT 1 WAS NOT RE-SHOT ON 2026-09-09, DELIBERATELY.** `testSlot1Dashboard` launches
+`launch(trip: "ready")` — a seeded fixture — and makes **no compose call at all**, so the build-path
+fix cannot reach it and its 2026-09-08 frame is current, not stale. **Do not re-shoot an approved
+slot to tidy a fix into it**; every run costs the attach bucket.
 
 **Both re-shoots were run in a watched shell, not scheduled.** The two diagnostics they replaced
 are filed in `evidence-2026-08-20/` under names that say what they are; ⛔ **nothing named
