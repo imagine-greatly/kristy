@@ -19,6 +19,7 @@ import {
   sectionForItem,
   stateContradicts,
   cardStates,
+  STATES,
   entryById,
   LIST_SECTIONS,
 } from './listMatch.js';
@@ -28,6 +29,9 @@ import { perimeterKb } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Derived from the code's own STATES so this file never carries a second copy of the word list.
+const namesState = (text) => Object.values(STATES).some((re) => re.test(String(text).toLowerCase()));
 
 const item = (name, over = {}) => ({ id: 'x', name, category: 'Added', checked: false, source: 'user', ...over });
 
@@ -277,10 +281,11 @@ test('a preparation state the card contradicts suppresses the attachment', () =>
 });
 
 test('the state guard is silent unless BOTH sides name a state', () => {
-  // "dry-roasted" names a state, and so does `nuts_raw_vs_roasted` — it carries the alias
-  // "dry roasted" — so this pair attaches because the two sides SHARE `dried`, not because
-  // one side is empty. (The comment here used to claim the card names none; it does not.)
-  assert.ok(cardStates(entryById('nuts_raw_vs_roasted')).has('dried'));
+  // "dry-roasted" is not a preservation state and neither is the card's alias "dry roasted":
+  // bare `dry` is not in STATES, so BOTH sides read empty and the pair attaches on silence.
+  // (This test has claimed two different things about this pair — that the card names none,
+  // then that both sides share `dried`. The second was `\bdry\b` reading roasting as drying.)
+  assert.equal(cardStates(entryById('nuts_raw_vs_roasted')).size, 0);
   assert.equal(stateContradicts('Raw or dry-roasted almonds', entryById('nuts_raw_vs_roasted')), false);
   assert.equal(matchItemToCard('Raw or dry-roasted almonds').slug, 'nuts_raw_vs_roasted');
   // The genuinely empty side: a card whose text names no state is left alone whatever the
@@ -301,7 +306,7 @@ test('a produce card that names no state is implicitly about the fresh thing', (
   assert.ok(ripeness, 'the ripeness card is in the corpus');
   assert.equal(sectionForCategory(ripeness.category), 'produce');
   const text = [ripeness.title, ...(ripeness.aliases || [])].join(' ').toLowerCase();
-  assert.doesNotMatch(text, /\b(frozen|canned|tinned|dried|dry|fresh)\b/);
+  assert.equal(namesState(text), false, 'the ripeness card must not name a state in its own text');
   // And the read supplies the state the section implies.
   assert.deepEqual([...cardStates(ripeness)], ['fresh']);
 });
@@ -343,15 +348,56 @@ test('a produce card that names its own states keeps its own read', () => {
   assert.equal(matchItemToCard('frozen vegetables')?.slug, 'frozen_vs_fresh_produce');
 });
 
+test('bare "dry" is not a preservation state, so a dry-farmed or dry onion is still fresh', () => {
+  // `dried` used to read `\bdried\b|\bdry\b`. That was harmless while no produce card read a
+  // state; once a stateless produce card reads {fresh}, "dry-farmed tomatoes" and "dry onions"
+  // — fresh things — read {dried} and were vetoed off the ripeness card. On a list, dry means
+  // fresh as often as not (dry-farmed, dry onions, dry-aged), and in the corpus it never means
+  // dried at all: it reads roasting (`nuts_raw_vs_roasted`) and brining (`dry_brine`) as a state.
+  const ripeness = entryById('produce_ripeness_by_item');
+  assert.equal(stateContradicts('dry-farmed tomatoes', ripeness), false);
+  assert.equal(stateContradicts('dry onions', ripeness), false);
+  assert.equal(matchItemToCard('dry-farmed tomatoes')?.section, 'produce');
+  assert.equal(matchItemToCard('dry onions')?.section, 'produce');
+  // The one list use where dry DOES mean dried still lands: the beans card names `dried` in its
+  // own text and an item naming no state is never vetoed, so the pair attaches on silence.
+  assert.equal(matchItemToCard('dry beans')?.slug, 'beans_dried_vs_canned');
+  // And the card the old read got most wrong: dry-brining is done to a FRESH bird.
+  assert.equal(cardStates(entryById('dry_brine')).size, 0);
+  assert.equal(stateContradicts('fresh turkey', entryById('dry_brine')), false);
+  // The word is gone from the read, not merely narrowed. Sun-dried still crosses the hyphen.
+  assert.equal(stateContradicts('Sun-dried tomatoes', ripeness), true);
+});
+
+test('EVERY stateless produce card reads exactly {fresh}, not only the one that produced the rule', () => {
+  // The rule was written against `produce_ripeness_by_item`; the property belongs to the
+  // section. Bound at the collection so a corpus in which every produce card came to name a
+  // state fails loudly instead of asserting over nothing.
+  const stateless = nonEmpty(
+    perimeterKb.entries.filter((e) => {
+      if (sectionForCategory(e.category) !== 'produce') return false;
+      return !namesState([e.title, ...(e.aliases || [])].join(' '));
+    }),
+    'produce cards with no state text',
+    5
+  );
+  for (const e of stateless) {
+    assert.deepEqual([...cardStates(e)], ['fresh'], `${e.id} should read exactly {fresh}`);
+    // So the veto fires for a canned item, on every one of them, not only on the ripeness card.
+    assert.equal(stateContradicts('canned ' + e.title, e), true, e.id);
+    // And stays silent for an item that names no state — the item side is untouched.
+    assert.equal(stateContradicts(e.title, e), false, e.id);
+  }
+});
+
 test('the implicit fresh is produce-only: a stateless non-produce card still names none', () => {
   // Every non-produce, non-label aisle card whose own text names no state. Bound at the
   // collection so an empty filter fails loudly rather than passing vacuously.
-  const stateWord = /\b(frozen|canned|tinned|dried|dry|fresh)\b|\bin a can\b/;
   const stateless = nonEmpty(
     perimeterKb.entries.filter((e) => {
       const section = sectionForCategory(e.category);
       if (section === 'produce' || section === 'label_terms') return false;
-      return !stateWord.test([e.title, ...(e.aliases || [])].join(' ').toLowerCase());
+      return !namesState([e.title, ...(e.aliases || [])].join(' '));
     }),
     'non-produce cards with no state text',
     5

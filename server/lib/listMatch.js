@@ -150,11 +150,19 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
    So: if the item names a state and the card is about a state, they have to share one.
    BOTH sides must be non-empty for the guard to fire, which is what stops it over-refusing
    — an item naming a state against a card whose text names none is left alone, and that is
-   most of the corpus: 42 aisle cards outside produce name no state at all. (This used to
-   cite "Raw or dry-roasted almonds" against `nuts_raw_vs_roasted` as the empty-side case;
-   it is not one — the card carries the alias "dry roasted", so both sides read `dried` and
-   it attaches because they SHARE a state.) This is a deliberate, explicit list in the same
-   spirit as IMPERATIVE_VERBS: widening it is an act, not a heuristic.
+   most of the corpus: 42 aisle cards outside produce name no state at all. This is a
+   deliberate, explicit list in the same spirit as IMPERATIVE_VERBS: widening it is an act,
+   not a heuristic.
+
+   BARE `dry` IS NOT IN IT, AND IT WAS. `dried` read `\bdried\b|\bdry\b`, which was harmless
+   for exactly as long as no produce card read a state: the moment a stateless produce card
+   read {fresh}, "dry-farmed tomatoes" and "dry onions" — fresh things — read {dried} and were
+   vetoed off the ripeness card. On a list, dry means fresh as often as dried (dry-farmed,
+   dry onions, dry-aged), and in the corpus it never means dried at all: the only cards that
+   say it are `nuts_raw_vs_roasted` ("dry roasted") and `dry_brine`, so the old read vetoed
+   "fresh turkey" off the one card about what to do with a fresh turkey. Nothing is lost by
+   dropping it: "dry beans" names no state and the beans card names `dried` in its own text,
+   so that pair attaches on silence, which is what the both-sides rule is for.
 
    ONE STATE IS IMPLICIT, AND IT IS THE ONLY ONE. A produce card that names no state is
    about the FRESH thing, because fresh is what a produce section sells: `produce_ripeness_by_item`
@@ -170,12 +178,12 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
 
    It is still a veto and never a score, and this is the one place a state is inferred rather
    than read. Adding a second implicit state is the same deliberate act as widening the list. */
-const STATES = {
+export const STATES = Object.freeze({
   frozen: /\bfrozen\b/,
   canned: /\bcanned\b|\btinned\b|\bin a can\b/,
-  dried: /\bdried\b|\bdry\b/,
+  dried: /\bdried\b/,
   fresh: /\bfresh\b/,
-};
+});
 
 function statesIn(text) {
   const t = ` ${String(text || '').toLowerCase()} `;
