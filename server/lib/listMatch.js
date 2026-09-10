@@ -163,9 +163,11 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
    blueberries" — shelf-stable dried goods — a squeeze-or-pick instruction off a fresh
    produce card, which is the direction this whole guard exists to prevent. So the word
    stays and the lookahead names the compounds where dry modifies a technique rather than
-   the food (farmed, aged, roasted, brined, rubbed, cured). The cost, recorded in the test:
-   "dry onions" is a fresh thing that still reads {dried} and misses — a null, which is the
-   cheap failure. It is an explicit list like everything else here; widening it is an act.
+   the food — stems, so "dry farm" and "dry-farmed" are the same exemption. The cost,
+   recorded in the test: "dry onions" is a fresh thing that still reads {dried} and misses —
+   a null, which is the cheap failure. "Dry scallops" (untreated, fresh) is the same shape
+   and costs nothing today only because no seafood card names a state. It is an explicit
+   list like everything else here; widening it is an act.
    ONE STATE IS IMPLICIT, AND IT IS THE ONLY ONE. A produce card that names no state is
    about the FRESH thing, because fresh is what a produce section sells: `produce_ripeness_by_item`
    is about squeezing fruit, and its text says "tomatoes" without ever saying "fresh", so the
@@ -183,7 +185,7 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
 export const STATES = Object.freeze({
   frozen: /\bfrozen\b/,
   canned: /\bcanned\b|\btinned\b|\bin a can\b/,
-  dried: /\bdried\b|\bdry\b(?![- ]?(?:farmed|aged|roast|brin|rub|cured))/,
+  dried: /\bdried\b|\bdry\b(?![- ](?:farm|age|roast|brin|rub|cur))/,
   fresh: /\bfresh\b/,
 });
 

@@ -354,8 +354,10 @@ test('"dry" is a state except in the technique compounds, and the trade is recor
   // state; once a stateless produce card reads {fresh}, "dry-farmed tomatoes" read {dried}
   // and was vetoed off the ripeness card. The technique compounds are exempted:
   const ripeness = entryById('produce_ripeness_by_item');
-  assert.equal(stateContradicts('dry-farmed tomatoes', ripeness), false);
-  assert.equal(matchItemToCard('dry-farmed tomatoes')?.section, 'produce');
+  for (const q of ['dry-farmed tomatoes', 'dry farm tomatoes', 'dry farmed tomatoes']) {
+    assert.equal(stateContradicts(q, ripeness), false, q);
+    assert.equal(matchItemToCard(q)?.section, 'produce', q);
+  }
   assert.equal(cardStates(entryById('dry_brine')).size, 0, 'brining is a technique, not a state');
   // Dropping the word outright was tried and measured: these are shelf-stable dried goods
   // and they attached to FRESH produce cards — a squeeze-or-pick instruction for a bag of
