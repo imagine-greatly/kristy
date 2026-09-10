@@ -281,10 +281,11 @@ test('a preparation state the card contradicts suppresses the attachment', () =>
 });
 
 test('the state guard is silent unless BOTH sides name a state', () => {
-  // "dry-roasted" is not a preservation state and neither is the card's alias "dry roasted":
-  // bare `dry` is not in STATES, so BOTH sides read empty and the pair attaches on silence.
-  // (This test has claimed two different things about this pair — that the card names none,
-  // then that both sides share `dried`. The second was `\bdry\b` reading roasting as drying.)
+  // "dry-roasted" is a technique, not a preservation state, and so is the card's alias
+  // "dry roasted": the `dry` lookahead exempts both, so BOTH sides read empty and the pair
+  // attaches on silence. (This test has claimed two other things about this pair — that the
+  // card names none, then that both sides share `dried`. The second was `\bdry\b` reading
+  // roasting as drying.)
   assert.equal(cardStates(entryById('nuts_raw_vs_roasted')).size, 0);
   assert.equal(stateContradicts('Raw or dry-roasted almonds', entryById('nuts_raw_vs_roasted')), false);
   assert.equal(matchItemToCard('Raw or dry-roasted almonds').slug, 'nuts_raw_vs_roasted');
@@ -348,24 +349,29 @@ test('a produce card that names its own states keeps its own read', () => {
   assert.equal(matchItemToCard('frozen vegetables')?.slug, 'frozen_vs_fresh_produce');
 });
 
-test('bare "dry" is not a preservation state, so a dry-farmed or dry onion is still fresh', () => {
-  // `dried` used to read `\bdried\b|\bdry\b`. That was harmless while no produce card read a
-  // state; once a stateless produce card reads {fresh}, "dry-farmed tomatoes" and "dry onions"
-  // — fresh things — read {dried} and were vetoed off the ripeness card. On a list, dry means
-  // fresh as often as not (dry-farmed, dry onions, dry-aged), and in the corpus it never means
-  // dried at all: it reads roasting (`nuts_raw_vs_roasted`) and brining (`dry_brine`) as a state.
+test('"dry" is a state except in the technique compounds, and the trade is recorded here', () => {
+  // `dried` read `\bdried\b|\bdry\b` unconditionally. Harmless while no produce card read a
+  // state; once a stateless produce card reads {fresh}, "dry-farmed tomatoes" read {dried}
+  // and was vetoed off the ripeness card. The technique compounds are exempted:
   const ripeness = entryById('produce_ripeness_by_item');
   assert.equal(stateContradicts('dry-farmed tomatoes', ripeness), false);
-  assert.equal(stateContradicts('dry onions', ripeness), false);
   assert.equal(matchItemToCard('dry-farmed tomatoes')?.section, 'produce');
-  assert.equal(matchItemToCard('dry onions')?.section, 'produce');
-  // The one list use where dry DOES mean dried still lands: the beans card names `dried` in its
-  // own text and an item naming no state is never vetoed, so the pair attaches on silence.
+  assert.equal(cardStates(entryById('dry_brine')).size, 0, 'brining is a technique, not a state');
+  // Dropping the word outright was tried and measured: these are shelf-stable dried goods
+  // and they attached to FRESH produce cards — a squeeze-or-pick instruction for a bag of
+  // dried fruit, the direction the guard exists to prevent. They must stay off produce.
+  for (const q of ['dry pineapple', 'dry tomatoes', 'dry blueberries', 'dry banana chips']) {
+    assert.equal(stateContradicts(q, ripeness), true, q);
+    assert.notEqual(matchItemToCard(q)?.section, 'produce', `${q} attached to a fresh produce card`);
+  }
+  // THE COST, so it is visible when someone next touches the regex: "dry onions" is a fresh
+  // thing that reads {dried} and misses. A null is the cheap failure; a wrong do line is not.
+  assert.equal(stateContradicts('dry onions', ripeness), true);
+  assert.equal(matchItemToCard('dry onions'), null);
+  // The one list use where dry plainly means dried lands on the card that says so: both
+  // sides read `dried` and share it.
   assert.equal(matchItemToCard('dry beans')?.slug, 'beans_dried_vs_canned');
-  // And the card the old read got most wrong: dry-brining is done to a FRESH bird.
-  assert.equal(cardStates(entryById('dry_brine')).size, 0);
-  assert.equal(stateContradicts('fresh turkey', entryById('dry_brine')), false);
-  // The word is gone from the read, not merely narrowed. Sun-dried still crosses the hyphen.
+  // Sun-dried still crosses the hyphen.
   assert.equal(stateContradicts('Sun-dried tomatoes', ripeness), true);
 });
 

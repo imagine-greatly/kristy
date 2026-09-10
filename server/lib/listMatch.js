@@ -150,20 +150,22 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
    So: if the item names a state and the card is about a state, they have to share one.
    BOTH sides must be non-empty for the guard to fire, which is what stops it over-refusing
    — an item naming a state against a card whose text names none is left alone, and that is
-   most of the corpus: 42 aisle cards outside produce name no state at all. This is a
+   most of the corpus: most aisle cards outside produce name no state at all, and the
+   collection test in listMatch.test.js carries the count. This is a
    deliberate, explicit list in the same spirit as IMPERATIVE_VERBS: widening it is an act,
    not a heuristic.
 
-   BARE `dry` IS NOT IN IT, AND IT WAS. `dried` read `\bdried\b|\bdry\b`, which was harmless
-   for exactly as long as no produce card read a state: the moment a stateless produce card
-   read {fresh}, "dry-farmed tomatoes" and "dry onions" — fresh things — read {dried} and were
-   vetoed off the ripeness card. On a list, dry means fresh as often as dried (dry-farmed,
-   dry onions, dry-aged), and in the corpus it never means dried at all: the only cards that
-   say it are `nuts_raw_vs_roasted` ("dry roasted") and `dry_brine`, so the old read vetoed
-   "fresh turkey" off the one card about what to do with a fresh turkey. Nothing is lost by
-   dropping it: "dry beans" names no state and the beans card names `dried` in its own text,
-   so that pair attaches on silence, which is what the both-sides rule is for.
-
+   BARE `dry` IS A STATE, EXCEPT IN THE COMPOUNDS WHERE IT IS A TECHNIQUE. It read
+   `\bdried\b|\bdry\b` unconditionally, which was harmless for exactly as long as no produce
+   card read a state: the moment a stateless produce card read {fresh}, "dry-farmed tomatoes"
+   — a fresh thing — read {dried} and was vetoed off the ripeness card. Dropping the word
+   outright was tried and measured: it hands "dry pineapple", "dry tomatoes" and "dry
+   blueberries" — shelf-stable dried goods — a squeeze-or-pick instruction off a fresh
+   produce card, which is the direction this whole guard exists to prevent. So the word
+   stays and the lookahead names the compounds where dry modifies a technique rather than
+   the food (farmed, aged, roasted, brined, rubbed, cured). The cost, recorded in the test:
+   "dry onions" is a fresh thing that still reads {dried} and misses — a null, which is the
+   cheap failure. It is an explicit list like everything else here; widening it is an act.
    ONE STATE IS IMPLICIT, AND IT IS THE ONLY ONE. A produce card that names no state is
    about the FRESH thing, because fresh is what a produce section sells: `produce_ripeness_by_item`
    is about squeezing fruit, and its text says "tomatoes" without ever saying "fresh", so the
@@ -181,7 +183,7 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
 export const STATES = Object.freeze({
   frozen: /\bfrozen\b/,
   canned: /\bcanned\b|\btinned\b|\bin a can\b/,
-  dried: /\bdried\b/,
+  dried: /\bdried\b|\bdry\b(?![- ]?(?:farmed|aged|roast|brin|rub|cured))/,
   fresh: /\bfresh\b/,
 });
 
