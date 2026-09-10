@@ -149,9 +149,27 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
 
    So: if the item names a state and the card is about a state, they have to share one.
    BOTH sides must be non-empty for the guard to fire, which is what stops it over-refusing
-   — "Raw or dry-roasted almonds" names a state and `nuts_raw_vs_roasted` names none, so
-   the guard stays out of it. This is a deliberate, explicit list in the same spirit as
-   IMPERATIVE_VERBS: widening it is an act, not a heuristic. */
+   — an item naming a state against a card whose text names none is left alone, and that is
+   most of the corpus: 42 aisle cards outside produce name no state at all. (This used to
+   cite "Raw or dry-roasted almonds" against `nuts_raw_vs_roasted` as the empty-side case;
+   it is not one — the card carries the alias "dry roasted", so both sides read `dried` and
+   it attaches because they SHARE a state.) This is a deliberate, explicit list in the same
+   spirit as IMPERATIVE_VERBS: widening it is an act, not a heuristic.
+
+   ONE STATE IS IMPLICIT, AND IT IS THE ONLY ONE. A produce card that names no state is
+   about the FRESH thing, because fresh is what a produce section sells: `produce_ripeness_by_item`
+   is about squeezing fruit, and its text says "tomatoes" without ever saying "fresh", so the
+   both-sides rule never fired and "Canned tomatoes" attached to it — an instruction to
+   squeeze a tin, once the pick line lands on the row. `cardStates` therefore reads {fresh}
+   for a produce card whose own text yields nothing. The scope is exactly that narrow:
+
+     - the ITEM still has to name a state itself, or nothing is vetoed;
+     - a produce card that names its states (`frozen_vs_fresh_produce`) keeps its own read;
+     - a non-produce card with no state text still names none — a pantry card about beans
+       is not implicitly about fresh beans, and dairy, meat and seafood sell no single state.
+
+   It is still a veto and never a score, and this is the one place a state is inferred rather
+   than read. Adding a second implicit state is the same deliberate act as widening the list. */
 const STATES = {
   frozen: /\bfrozen\b/,
   canned: /\bcanned\b|\btinned\b|\bin a can\b/,
@@ -166,9 +184,22 @@ function statesIn(text) {
   return out;
 }
 
-/** The states a CARD is about — read from its own title and aliases, never hand-assigned. */
-function cardStates(entry) {
-  return statesIn([entry?.title || '', ...(entry?.aliases || [])].join(' '));
+// The one section whose cards are implicitly about the fresh thing. See the STATES block.
+const IMPLICITLY_FRESH_SECTION = 'produce';
+
+/**
+ * The states a CARD is about — read from its own title and aliases, never hand-assigned.
+ *
+ * The single exception is the produce section: a produce card whose own text names no state
+ * is about the fresh thing, so it reads as {fresh}. Every other card with no state text reads
+ * as none, which keeps the both-sides rule silent for it exactly as before.
+ */
+export function cardStates(entry) {
+  const read = statesIn([entry?.title || '', ...(entry?.aliases || [])].join(' '));
+  if (read.size === 0 && sectionForCategory(entry?.category) === IMPLICITLY_FRESH_SECTION) {
+    read.add('fresh');
+  }
+  return read;
 }
 
 /**

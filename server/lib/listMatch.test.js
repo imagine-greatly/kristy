@@ -18,11 +18,13 @@ import {
   groupForWalk,
   sectionForItem,
   stateContradicts,
+  cardStates,
   entryById,
   LIST_SECTIONS,
 } from './listMatch.js';
 import { sanitizeList } from './cartEdit.js';
-import { kindFor } from './counterCards.js';
+import { kindFor, sectionForCategory } from './counterCards.js';
+import { perimeterKb } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -275,12 +277,90 @@ test('a preparation state the card contradicts suppresses the attachment', () =>
 });
 
 test('the state guard is silent unless BOTH sides name a state', () => {
-  // This is what stops it over-refusing: "dry-roasted" names a state, `nuts_raw_vs_roasted`
-  // names none, so the guard stays out of it and the card attaches.
+  // "dry-roasted" names a state, and so does `nuts_raw_vs_roasted` — it carries the alias
+  // "dry roasted" — so this pair attaches because the two sides SHARE `dried`, not because
+  // one side is empty. (The comment here used to claim the card names none; it does not.)
+  assert.ok(cardStates(entryById('nuts_raw_vs_roasted')).has('dried'));
   assert.equal(stateContradicts('Raw or dry-roasted almonds', entryById('nuts_raw_vs_roasted')), false);
   assert.equal(matchItemToCard('Raw or dry-roasted almonds').slug, 'nuts_raw_vs_roasted');
+  // The genuinely empty side: a card whose text names no state is left alone whatever the
+  // item says. `raw_milk` is dairy and names none.
+  assert.equal(cardStates(entryById('raw_milk'))?.size ?? -1, 0);
+  assert.equal(stateContradicts('canned milk', entryById('raw_milk')), false);
   // And a state the card SHARES is not a contradiction.
   assert.equal(stateContradicts('frozen vegetables', entryById('frozen_vs_fresh_produce')), false);
+});
+
+/* ═══════════════ The one implicit state: a stateless produce card is fresh ═══════════════ */
+
+test('a produce card that names no state is implicitly about the fresh thing', () => {
+  // `produce_ripeness_by_item` is about squeezing fruit and never says "fresh", so the
+  // both-sides rule stayed silent and "Canned tomatoes" attached to it — an instruction to
+  // squeeze a tin. Pin the premise first: its own text really does name no state.
+  const ripeness = entryById('produce_ripeness_by_item');
+  assert.ok(ripeness, 'the ripeness card is in the corpus');
+  assert.equal(sectionForCategory(ripeness.category), 'produce');
+  const text = [ripeness.title, ...(ripeness.aliases || [])].join(' ').toLowerCase();
+  assert.doesNotMatch(text, /\b(frozen|canned|tinned|dried|dry|fresh)\b/);
+  // And the read supplies the state the section implies.
+  assert.deepEqual([...cardStates(ripeness)], ['fresh']);
+});
+
+test('a canned or dried item is vetoed off a stateless produce card', () => {
+  const ripeness = entryById('produce_ripeness_by_item');
+  assert.equal(stateContradicts('Canned tomatoes', ripeness), true);
+  // `\bdried\b` has to cross the hyphen, or "sun-dried" reads as naming no state at all.
+  assert.equal(stateContradicts('Sun-dried tomatoes', ripeness), true);
+  // A shared state is not a contradiction — both say fresh.
+  assert.equal(stateContradicts('Fresh tomatoes', ripeness), false);
+});
+
+test('Canned tomatoes never reaches the ripeness card through the matcher', () => {
+  // Null is an acceptable answer (an honest miss); a produce card is not. Asserted on the
+  // optional chain so a null result is checked rather than skipped.
+  const hit = matchItemToCard('Canned tomatoes');
+  assert.notEqual(hit?.slug, 'produce_ripeness_by_item');
+  assert.notEqual(hit?.section, 'produce', `attached ${hit?.slug}, a produce card, to a canned item`);
+  const dried = matchItemToCard('Sun-dried tomatoes');
+  assert.notEqual(dried?.slug, 'produce_ripeness_by_item');
+  assert.notEqual(dried?.section, 'produce', `attached ${dried?.slug}, a produce card, to a dried item`);
+});
+
+test('an item naming no state is never vetoed, and one naming the shared state still matches', () => {
+  // The item side of the both-sides rule is untouched: "tomatoes" names nothing, so the
+  // implicit fresh has nothing to contradict and the card attaches exactly as before.
+  assert.equal(matchItemToCard('tomatoes')?.slug, 'produce_ripeness_by_item');
+  assert.equal(matchItemToCard('Fresh tomatoes')?.slug, 'produce_ripeness_by_item');
+});
+
+test('a produce card that names its own states keeps its own read', () => {
+  // The implicit rule fills an EMPTY read only. `frozen_vs_fresh_produce` says both, so a
+  // frozen item still shares a state with it and still attaches.
+  const frozen = entryById('frozen_vs_fresh_produce');
+  const read = cardStates(frozen);
+  assert.ok(read.has('frozen') && read.has('fresh'), `read ${[...read].join(',')}`);
+  assert.equal(stateContradicts('frozen vegetables', frozen), false);
+  assert.equal(matchItemToCard('frozen vegetables')?.slug, 'frozen_vs_fresh_produce');
+});
+
+test('the implicit fresh is produce-only: a stateless non-produce card still names none', () => {
+  // Every non-produce, non-label aisle card whose own text names no state. Bound at the
+  // collection so an empty filter fails loudly rather than passing vacuously.
+  const stateWord = /\b(frozen|canned|tinned|dried|dry|fresh)\b|\bin a can\b/;
+  const stateless = nonEmpty(
+    perimeterKb.entries.filter((e) => {
+      const section = sectionForCategory(e.category);
+      if (section === 'produce' || section === 'label_terms') return false;
+      return !stateWord.test([e.title, ...(e.aliases || [])].join(' ').toLowerCase());
+    }),
+    'non-produce cards with no state text',
+    5
+  );
+  for (const e of stateless) {
+    assert.equal(cardStates(e).size, 0, `${e.id} (${e.category}) should name no state`);
+    // And so a canned item is NOT vetoed off it — the guard needs both sides, as before.
+    assert.equal(stateContradicts('canned ' + e.title, e), false, e.id);
+  }
 });
 
 test('a row sorts by the section it displays, never one it is not in', () => {
