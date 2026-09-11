@@ -488,7 +488,13 @@
         "kiwi",
         "kiwis",
         "potatoes",
-        "potato"
+        "potato",
+        "apples",
+        "apple",
+        "grapes",
+        "leafy greens",
+        "kale",
+        "lettuce"
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
@@ -3064,7 +3070,15 @@
         "ripe fruit",
         "melon is ripe",
         "melon",
-        "is it ripe"
+        "is it ripe",
+        "peaches",
+        "peach",
+        "nectarines",
+        "plums",
+        "lemons",
+        "limes",
+        "oranges",
+        "citrus"
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
