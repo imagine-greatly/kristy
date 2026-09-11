@@ -24,6 +24,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { matchItemToCard, entryById } from './listMatch.js';
+import { scoreEntries } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 
 // Row text → the card it must attach. Written the way a shopper writes it. Bound at module
@@ -37,6 +38,7 @@ const ROWS = nonEmpty(
     ['leafy greens', 'organic_worth_it_by_type'],
     ['Leafy greens', 'organic_worth_it_by_type'],
     ['kale', 'organic_worth_it_by_type'],
+    ['spinach', 'organic_worth_it_by_type'],
     ['lettuce', 'organic_worth_it_by_type'],
     ['peaches', 'produce_ripeness_by_item'],
     ['peach', 'produce_ripeness_by_item'],
@@ -89,4 +91,16 @@ test('revive_greens is a home card and carries no list alias that could attach',
   // (counterReach.test.js). Pinned so the two surfaces stay split deliberately.
   assert.equal(matchItemToCard('lettuce')?.slug, 'organic_worth_it_by_type');
   assert.ok(entryById('revive_greens'), 'revive_greens left the corpus');
+});
+
+// THE ASK PATH TIES ON `lettuce`, AND THE TIE IS DECIDED BY CORPUS ORDER. Both
+// `organic_worth_it_by_type` and `revive_greens` carry the exact alias, both score 2, and
+// `scoreEntries` sorts by score alone — stable — so the organic card wins because it sits
+// earlier in the KB. That is the right answer (a counter question is a buying question, and
+// revive is a home card) but nothing else records it: counterReach only asks revive's longer
+// phrasings. A KB reorder would flip it silently, so it is pinned here, the way
+// counterReach.test.js pins the "fresh strawberries" tie by name.
+test('bare "lettuce" on the ask path reaches the organic card, not the home card', () => {
+  const [first] = scoreEntries('lettuce');
+  assert.equal(first?.entry?.id, 'organic_worth_it_by_type');
 });

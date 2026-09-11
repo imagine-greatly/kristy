@@ -418,10 +418,10 @@ test('the implicit fresh is produce-only: a stateless non-produce card still nam
 });
 
 test('a row sorts by the section it displays, never one it is not in', () => {
-  // "Baby spinach" matches no card at all. It used to sort to the trailing group while
+  // "Baby zucchini" matches no card at all. It used to sort to the trailing group while
   // rendering the word Produce beside itself — sorted by cardSection, labelled by category.
-  assert.equal(matchItemToCard('Baby spinach'), null);
-  assert.equal(sectionForItem({ name: 'Baby spinach', category: 'Produce' }), 'produce');
+  assert.equal(matchItemToCard('Baby zucchini'), null);
+  assert.equal(sectionForItem({ name: 'Baby zucchini', category: 'Produce' }), 'produce');
   // A category that names no walk section still falls to the trailing group, and keeps its
   // label there — which is honest, because "Bakery" is not a section it could have sorted to.
   assert.equal(sectionForItem({ name: 'Real sourdough', category: 'Bakery' }), null);

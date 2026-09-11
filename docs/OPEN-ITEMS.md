@@ -1021,6 +1021,19 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 ### Queued
 
+- 🐞 ⏳ **A PRODUCT-FORM WORD IS NOT A SUBJECT EITHER, AND THE PROBE IS BLIND TO IT** (found by the
+  piece-4 critic, 2026-09-11). `apple sauce`, `apple cider vinegar`, `apple juice` and `kale chips`
+  attach to `organic_worth_it_by_type` and are served *"Organic where the skin gets eaten"* — on a
+  bottle of vinegar. The class predates `0f73fcd` (`potato chips`, `banana chips` already attached)
+  and that commit widened it to the apple/kale family through the singular aliases; plurals do not
+  widen it (`orange juice`, `grape juice` → none). ⚠️ **`judgeRetrieved` in `listMatchProbe.js`
+  returns CORRECT on the shared word, so adding these rows to `BARE_NOUNS` prints green.** The fix
+  is the `STATES` shape one axis over: an explicit **PRODUCT-FORM veto** (juice / sauce / vinegar /
+  chips / cider / dried-fruit forms) in `server/lib/listMatch.js`, a veto never a score, with a
+  matching probe rule and a test proven to fail on `apple sauce` before it is trusted. ⛔ **Do not
+  widen `STATES` to cover it** — a state and a form are different questions, and the state rule's
+  both-sides symmetry does not hold for forms. Separately scoped server work.
+
 - ⏳ ⚠️ **NOTHING REPORTS A COMPLETED-TRIP COUNT, SO A SIGNED-IN SHOPPER'S METER IS THE DEVICE'S —
   AND A DEVICE METER IS RESETTABLE BY REINSTALL.** The addition is named in `docs/PRICING-MODEL.md`
   §3a: **`completedTrips` on the response of `GET /api/trips/seedable`** — one field on a door the
