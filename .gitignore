@@ -53,3 +53,6 @@ client/test/shots/
 client/test/shots-*/
 # …except the monetization gate's, which was already tracked before this rule generalised.
 !client/test/shots-gate/
+
+# graphify build artifacts (machine-local interpreter path in sidecars)
+graphify-out/
