@@ -17,11 +17,42 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { anthropic, MODEL } from './anthropic.js';
+import { nonEmpty } from './testGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const KB_PATH = join(__dirname, '..', 'kristy_perimeter_kb.json');
 
 export const perimeterKb = JSON.parse(readFileSync(KB_PATH, 'utf8'));
+
+/* ───────────────────────── Two kinds of entry, one file ─────────────────────────
+   A QUESTION entry is a card: headline, depth, aliases authored as questions, an ask, a
+   sheet. A PICK (`kind: 'pick'`) is one authored sentence a shopper reads in the store on
+   a list row that has no card — the surface of the food, its weight, smell, color, a label
+   word. It is not a card: no headline, no depth, no ask, no sheet, never migrated to
+   `counter_cards` and never served by any counter door.
+
+   The KB holds both because the alias table and the section filing are the same, and the
+   list matcher reads one file. Everything that ANSWERS A QUESTION reads `questionEntries()`
+   and never `perimeterKb.entries` directly — the ask pool, the browse index, the entry
+   lookup, the section index — so a pick cannot be retrieved by an ask, listed in a
+   section, or fetched by id. One predicate, read by every door, rather than a filter
+   retyped per site: a rule that must be retyped four times is applied three times.
+
+   Guarded at the binding. A KB that filtered down to zero question entries would leave
+   every door answering nothing and every corpus test passing over nothing. */
+export const isPick = (e) => e?.kind === 'pick';
+
+/** The entries that answer questions — every entry that is not a pick. */
+export function questionEntries(entries = perimeterKb.entries || []) {
+  return entries.filter((e) => !isPick(e));
+}
+
+/** The picks — for the list matcher's floor and nothing that answers a question. */
+export function pickEntries(entries = perimeterKb.entries || []) {
+  return entries.filter(isPick);
+}
+
+const QUESTION_POOL = nonEmpty(questionEntries(), 'perimeterKb question entries');
 
 const str = (x) => String(x ?? '').trim();
 const norm = (s) => str(s).toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -45,13 +76,25 @@ export const NO_ANSWER =
 /* ───────────────────────── Retrieval (deterministic, no model) ─────────────────────────
    Score each entry by how many of its alias phrases (and title words) appear in the
    question. Longer alias phrases weigh more. Returns the best matches above a floor, so
-   an off-topic question yields nothing and Kristy says so honestly instead of improvising. */
-export function scoreEntries(question, limit = 3) {
+   an off-topic question yields nothing and Kristy says so honestly instead of improvising.
+
+   `scorePool` is the scorer over ANY entries and applies no kind filter — it is not a
+   door, and nothing that answers a question may call it with the raw array. It exists so
+   the list matcher's pick floor (a row with no card, scored against `pickEntries()`) can
+   use the identical alias arithmetic without reaching through the ask's filter.
+
+   `scoreEntries` is the ask's door: the same scorer over `questionEntries(pool)`. The
+   filter is applied HERE, not at the call site, so a caller handing in a pool that
+   carries a pick still never retrieves one — the ask is the surface a pick's bare-noun
+   alias would land on first, and "how do I pick X" is a question this corpus answers with
+   a card or not at all. `pool` is injectable so the exclusion can be proven with a fixture
+   pick rather than asserted over a corpus that holds none. */
+export function scorePool(question, entries, limit = 3) {
   const q = ` ${norm(question)} `;
   if (q.trim().length < 2) return [];
 
   const scored = [];
-  for (const e of perimeterKb.entries || []) {
+  for (const e of entries || []) {
     // ALIAS SCORE IS TRACKED SEPARATELY, and callers gate on it. A total of 2 is reachable
     // two completely different ways — one real alias hit, or two generic title words — and
     // the number alone cannot tell them apart. "is guanciale worth buying" scored 2 against
@@ -79,6 +122,10 @@ export function scoreEntries(question, limit = 3) {
   // drag in weakly-related ones.
   const top = scored[0]?.score || 0;
   return scored.filter((s) => s.score >= Math.max(2, top - 2)).slice(0, limit);
+}
+
+export function scoreEntries(question, limit = 3, pool = QUESTION_POOL) {
+  return scorePool(question, questionEntries(pool), limit);
 }
 
 /**
@@ -265,12 +312,28 @@ function topicCard(e) {
   };
 }
 
-const byId = (id) => (perimeterKb.entries || []).find((e) => e.id === id);
+/** The question entry behind an id, or null. A pick's id resolves to nothing here. */
+export function questionEntryById(id, pool = QUESTION_POOL) {
+  const want = String(id || '').trim();
+  return questionEntries(pool).find((e) => e.id === want) || null;
+}
+
+/** The public directory: id, title, category, question — for the web index. */
+export function publicIndex(pool = QUESTION_POOL) {
+  return questionEntries(pool).map((e) => ({
+    id: e.id,
+    title: e.title,
+    category: e.category || null,
+    question: e.question || null,
+  }));
+}
 
 /** Every section with its topic cards. Free — a KB read, no model, no account. */
-export function sectionIndex() {
+export function sectionIndex(pool = QUESTION_POOL) {
+  const entries = questionEntries(pool);
+  const byId = (id) => entries.find((e) => e.id === id);
   return PERIMETER_SECTIONS.map((s) => {
-    const topics = (perimeterKb.entries || [])
+    const topics = entries
       .filter((e) => s.categories.includes(e.category))
       .map(topicCard);
     const labelTopics = s.labels.map(byId).filter(Boolean).map(topicCard);
@@ -299,8 +362,8 @@ export function sectionIndex() {
 }
 
 /** One section, or null. */
-export function sectionById(id) {
-  return sectionIndex().find((s) => s.id === String(id || '').trim()) || null;
+export function sectionById(id, pool = QUESTION_POOL) {
+  return sectionIndex(pool).find((s) => s.id === String(id || '').trim()) || null;
 }
 
 /* ───────────────────────── The claim lock (what the MODEL may see) ─────────────────────────

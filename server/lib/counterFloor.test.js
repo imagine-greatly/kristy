@@ -24,12 +24,18 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
-import { scoreEntries } from './perimeter.js';
+import { nonEmpty } from './testGuards.js';
+import { scoreEntries, questionEntries } from './perimeter.js';
 import { scoreGenerated } from './counterCards.js';
 import { answerCounterQuestion } from './counterAskPipeline.js';
 
 const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+
+// QUESTION ENTRIES ONLY. The anchor below is "an entry with a single-word alias", and a
+// pick carries bare nouns by rule — so over the whole file `find` could land on a pick,
+// which the ask pool excludes by construction, and the floor test would fail for a reason
+// that has nothing to do with the floor.
+const ENTRIES = nonEmpty(questionEntries(), 'perimeterKb question entries');
 
 /* ═══════════════ The floor, stated once ═══════════════ */
 
@@ -39,7 +45,7 @@ const FLOOR_ALIAS_SCORE = 2;
 
 test('both scorers award the SAME points for one single-word alias hit', () => {
   // If these ever diverge, every threshold on both paths silently means something new.
-  const entry = perimeterKb.entries.find((e) => (e.aliases || []).some((a) => norm(a).split(' ').length === 1));
+  const entry = ENTRIES.find((e) => (e.aliases || []).some((a) => norm(a).split(' ').length === 1));
   assert.ok(entry, 'the KB must have at least one single-word alias to anchor this');
   const bare = entry.aliases.find((a) => norm(a).split(' ').length === 1);
 

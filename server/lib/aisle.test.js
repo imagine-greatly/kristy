@@ -1,8 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { sectionIndex, sectionById, PERIMETER_SECTIONS, perimeterKb } from './perimeter.js';
+import { nonEmpty } from './testGuards.js';
+import { sectionIndex, sectionById, PERIMETER_SECTIONS, questionEntries } from './perimeter.js';
 import { pickForName, annotateFromPicks, PICKS } from './list.js';
+
+// QUESTION ENTRIES ONLY. "Nothing in the KB may be unreachable by browsing" is a rule about
+// cards; a pick (`kind: 'pick'`) is unreachable by browsing ON PURPOSE — it is a sentence
+// for a list row, never a topic in a section. `sectionIndex()` already reads the same
+// predicate, so the depth floor below counts question entries by construction.
+const ENTRIES = nonEmpty(questionEntries(), 'perimeterKb question entries');
 
 /* ═══════════ The perimeter as a DESTINATION, not a search box ═══════════
    Scanning reads the labeled half of the store. These pin the other half: browsable
@@ -38,7 +45,7 @@ test('the five shopper-facing sections exist and cover the KB', () => {
   // Nothing in the KB may be unreachable by browsing — an entry no section lists is
   // content that exists and can never be found.
   const reachable = new Set(sectionIndex().flatMap((s) => [...s.topics, ...s.labelTopics]).map((t) => t.id));
-  const orphans = (perimeterKb.entries || []).map((e) => e.id).filter((id) => !reachable.has(id));
+  const orphans = ENTRIES.map((e) => e.id).filter((id) => !reachable.has(id));
   assert.deepEqual(orphans, [], `unreachable perimeter entries: ${orphans.join(', ')}`);
 });
 

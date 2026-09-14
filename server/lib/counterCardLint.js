@@ -31,6 +31,7 @@ export const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
 // The rubric belongs in the PROMPT, as guidance for choosing a tier. It may never appear
 // in output.
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+import { sectionForCategory, DEPTH_FIELDS } from './counterCards.js';
 
 const RUBRICS = Object.values(perimeterKb.evidence_tiers || {});
 
@@ -701,13 +702,223 @@ export function sharedObservables(headline, doLine) {
   return shared.length >= 2 ? shared : [];
 }
 
+/* ═══════════════════════════ The pick ═══════════════════════════ */
+
+// A PICK IS ONE SENTENCE ABOUT THE FOOD'S SURFACE, AND NOTHING ELSE.
+//
+// `kind: 'pick'` is a KB entry that carries the one line a shopper reads in the store on a
+// list row that has no question card — carrots, garlic, milk. It is not a card: no
+// headline, no depth, no ask, no sheet. It is never migrated to `counter_cards` and never
+// served by a counter door; it travels on the row. So it clears a different bar from a
+// card, and a stricter one, because nothing downstream re-reads it: no tier sentence says
+// what kind of claim it is, no depth carries the evidence, no `why` explains it. The line
+// has to be true on its face, which means it may only describe what a shopper can SEE,
+// FEEL, SMELL or READ on the food or its label — what happens to the food, never to the
+// body.
+//
+// THE VETO VOCABULARY IS EXPLICIT, like IMPERATIVE_VERBS, and for the same reason: a
+// part-of-speech judgment about "is this sentence about the body" cannot be reviewed, and a
+// list can. Matching is by word boundary, case-insensitive, base form plus a plural or
+// third-person `s`/`es`. It does NOT reach into other inflections on purpose: "cured" and
+// "treated" are processing words on the meat and produce counters ("dry-cured", "treated
+// with wax") and vetoing them would cost the mechanical line the list exists to allow. The
+// outcome nouns are the first net — a health claim names the thing it claims to help, and
+// "lowers blood sugar" trips on `blood` and `sugar` before it ever needs `lower` — so the
+// verb list is the second net, not the only one. Adding a word stays a deliberate act.
+//
+// KNOWN COST, accepted: the veto is vocabulary, not sense. "weight" is bodily here even
+// when an author means the bulb's heft, and "lower" is vetoed even for the lower shelf.
+// Write "heavy for its size" and "bottom shelf". A veto that tried to tell the senses
+// apart would be a guess dressed as a rule.
+export const MECHANICAL_VETO = {
+  // The body and its outcomes. Any of these in a pick line makes the sentence a claim about
+  // the shopper rather than a description of the food, and a claim needs the tier, the
+  // source and the depth a pick does not carry.
+  body: [
+    'heart', 'blood', 'sugar', 'cholesterol', 'inflammation', 'immune', 'gut', 'weight',
+    'cancer', 'disease', 'healthy',
+  ],
+  // Nutrition vocabulary. A pick may say a yolk is deep orange; it may not say why that is
+  // good for you. The moment a line names a nutrient it is asserting the food delivers it,
+  // which is the ingredient KB's job and the verdict engine's, never a list row's.
+  nutrition: ['nutrient', 'vitamin', 'mineral', 'protein', 'fiber', 'antioxidant', 'detox', 'toxin'],
+  // The no-treatment verbs, both directions (non-negotiable #3 is symmetric): a food that
+  // treats, cures, prevents, heals, lowers, boosts, fights, protects or supports anything,
+  // and a food that CAUSES anything. Kristy is a coach, not a doctor, and a list row is the
+  // last place in the app anyone would defer to one.
+  treatment: ['treat', 'cure', 'prevent', 'heal', 'lower', 'boost', 'cause', 'fight', 'protect', 'support'],
+};
+
+const VETO_WORDS = Object.values(MECHANICAL_VETO).flat();
+const VETO_RE = new RegExp(`\\b(${VETO_WORDS.join('|')})(s|es)?\\b`, 'i');
+
+/** The first vetoed word in a line, or null. */
+export function mechanicalVeto(line) {
+  const m = String(line || '').match(VETO_RE);
+  return m ? m[0] : null;
+}
+
+// The line's word bar. A card's do line is 14; a pick line has no headline above it to
+// share the work with, so it gets two more and no more — past this it is a paragraph a
+// shopper reads with one hand while holding the thing it describes.
+export const MAX_PICK_WORDS = 16;
+
+// A pick is a food, so it files under a counter. `label_terms` is a reference section, the
+// same exclusion the list matcher applies at attach (NON_AISLE_SECTIONS in listMatch.js): a
+// pick filed there could never reach a row and would be dead on arrival.
+const NON_AISLE_SECTION = 'label_terms';
+
+// Fields a pick may not carry. A pick with a headline or a depth field is a card that has
+// dodged the card's bar by declaring itself something else — and a field on a pick that no
+// surface renders is a claim nobody reviews. The list is every authored card field, plus
+// the paid boundary's own list so a field added to the depth is forbidden here without a
+// second edit. `sources` is the exception: it is a depth field on a card because it is
+// PAID there, and it is REQUIRED on a pick because it is the only thing that separates an
+// authored line from a remembered one. Nothing on a pick is served, so paid/free does not
+// apply to it.
+export const PICK_FORBIDDEN_FIELDS = new Set([
+  'asked_as', 'headline', 'why', 'tier_note', 'look_for', 'watch_out', 'detail',
+  'kristy_take', 'labels_decoded', 'cart_pick', 'short_answer', 'buying_tips', 'question',
+  'evidence_tier', 'instead', 'card_why', 'eyebrow_short',
+  ...DEPTH_FIELDS.filter((f) => f !== 'sources'),
+]);
+
+// Bare noun: lowercase, letters, spaces and hyphens, at most three words. An alias is
+// matched by whole-phrase containment against what a shopper TYPES on a list, and a list
+// says "carrots", never "how do I pick carrots".
+const MAX_PICK_ALIAS_WORDS = 3;
+const BARE_NOUN = /^[a-z][a-z\s-]*$/;
+
+// The number pair, by a simple suffix relation and nothing cleverer: `s`, `es`, or `y` to
+// `ies`. Not a stemmer. A shopper writes "carrots" and "carrot" both, and "cherries" and
+// "cherry" both, and each has to hit; a stemmer would admit pairs no shopper types.
+const PLURALS_OF = (a) => [
+  `${a}s`,
+  `${a}es`,
+  a.endsWith('y') ? `${a.slice(0, -1)}ies` : null,
+].filter(Boolean);
+
+const hasUrl = (s) => /https?:\/\/\S+/.test(String(s || ''));
+
+/**
+ * Lint one pick entry. Empty is the passing state.
+ * @returns {Array<{code:string, detail:string}>}
+ */
+export function lintPick(entry) {
+  const out = [];
+  const fail = (code, detail) => out.push({ code, detail });
+  const e = entry || {};
+
+  // ── Required ──
+  for (const f of ['id', 'title', 'category', 'decision']) {
+    if (!String(e[f] || '').trim()) fail('PICK_FIELD_MISSING', `a pick needs ${f}`);
+  }
+
+  // ── Forbidden ──
+  for (const f of Object.keys(e)) {
+    if (PICK_FORBIDDEN_FIELDS.has(f)) {
+      fail('PICK_FIELD_FORBIDDEN', `"${f}" is a card field — a pick is one sentence, not a card`);
+    }
+  }
+
+  // ── The food, bare ──
+  const title = String(e.title || '').trim();
+  if (title && (words(title) > 4 || /[.!?,;:]/.test(title))) {
+    fail('PICK_TITLE_NOT_BARE', `the title is the food, bare: "${title}"`);
+  }
+
+  // ── Filed under a counter ──
+  const category = String(e.category || '').trim();
+  if (category) {
+    const section = sectionForCategory(category);
+    if (!section) fail('PICK_CATEGORY_UNSECTIONED', `"${category}" maps to no counter section`);
+    else if (section === NON_AISLE_SECTION) {
+      fail('PICK_CATEGORY_NON_AISLE', `"${category}" files under ${section}, which no list row is ever sorted into`);
+    }
+  }
+
+  // ── Aliases: bare nouns, both numbers ──
+  const aliases = Array.isArray(e.aliases) ? e.aliases.map((a) => String(a || '').trim()).filter(Boolean) : [];
+  if (aliases.length < 2) {
+    fail('PICK_ALIASES_TOO_FEW', `a pick needs at least 2 bare-noun aliases; got ${aliases.length}`);
+  }
+  const notBare = aliases.filter((a) => !BARE_NOUN.test(a) || words(a) > MAX_PICK_ALIAS_WORDS);
+  if (notBare.length) {
+    fail(
+      'PICK_ALIAS_NOT_BARE',
+      `an alias is what a shopper types on a list — lowercase, ≤${MAX_PICK_ALIAS_WORDS} words: ${notBare.map((a) => `"${a}"`).join(', ')}`
+    );
+  }
+  const set = new Set(aliases);
+  const paired = aliases.some((a) => PLURALS_OF(a).some((p) => set.has(p)));
+  if (aliases.length && !paired) {
+    fail(
+      'PICK_ALIASES_NO_NUMBER_PAIR',
+      'aliases must carry a singular AND its plural (s / es / y→ies) — a list says "carrot" and "carrots" both'
+    );
+  }
+
+  // ── The line ──
+  const line = String(e.decision || '').trim();
+  if (line) {
+    // Exactly one sentence, closed with a period. Two sentences is a card's summary; a
+    // fragment is a label.
+    const terminals = (line.match(/[.!?](?=\s|$)/g) || []).length;
+    if (terminals !== 1 || !line.endsWith('.')) {
+      fail('PICK_LINE_NOT_ONE_SENTENCE', `exactly one sentence ending in a period: "${line}"`);
+    }
+    if (/\?/.test(line)) fail('PICK_LINE_QUESTION', `a pick states, it never asks: "${line}"`);
+    if (words(line) > MAX_PICK_WORDS) {
+      fail('PICK_LINE_TOO_LONG', `${words(line)}w > ${MAX_PICK_WORDS}: ${line}`);
+    }
+    // Zero first person (VOICE_SPEC). `I` is case-sensitive so "i" inside nothing trips;
+    // `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
+    if (/\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line)) {
+      fail('PICK_LINE_FIRST_PERSON', `no I/me/my/we/our on any line Kristy speaks: "${line}"`);
+    }
+    if (/—/.test(line)) fail('PICK_LINE_EM_DASH', `no em-dash asides: "${line}"`);
+    // No digits. A number is a measurement, and a measurement is a claim with a source a
+    // list row cannot show. "Heavy for its size", never "over 200g".
+    if (/\d/.test(line)) fail('PICK_LINE_DIGIT', `no digits on a pick line: "${line}"`);
+    const vetoed = mechanicalVeto(line);
+    if (vetoed) {
+      fail(
+        'PICK_LINE_NOT_MECHANICAL',
+        `"${vetoed}" is about the body, not the food. A pick describes surface, weight, smell, ` +
+          `color, firmness, date or a label word — what happens to the food, never to the shopper: "${line}"`
+      );
+    }
+    // Same house copy as every other line.
+    const brit = britishSpellings(line);
+    if (brit.length) fail('COPY_BRITISH', `British spelling: ${brit.map((w) => `"${w}"`).join(', ')} — the corpus is American`);
+    if (STRAIGHT_QUOTE.test(line)) fail('COPY_STRAIGHT_QUOTE', `a straight quote or apostrophe in: "${line}" — the corpus uses “ ” and ’`);
+  }
+
+  // ── Sources, each fetchable ──
+  // A URL is the bar because a URL can be fetched, and "every source gets fetched before it
+  // ships" is the rule. A source named from memory has no URL to give.
+  const sources = Array.isArray(e.sources) ? e.sources : [];
+  if (!sources.length) fail('PICK_SOURCES_MISSING', 'a pick needs at least one source, with a URL');
+  const noUrl = sources.filter((s) => !(hasUrl(s) || hasUrl(s?.url)));
+  if (noUrl.length) {
+    fail('PICK_SOURCE_NO_URL', `every pick source carries a URL it was fetched from; ${noUrl.length} of ${sources.length} do not`);
+  }
+
+  return out;
+}
+
 /* ═══════════════════════════ Per-card ═══════════════════════════ */
 
 /**
- * Lint one card — curated or generated.
+ * Lint one card — curated or generated — or one pick.
  * @returns {Array<{code:string, detail:string}>} empty when the card passes.
  */
 export function lintCard(card) {
+  // A pick is not a card and clears a different bar. Branching here rather than at the
+  // call site means the generation path, the corpus tests and any future door all reach
+  // the pick rules through the one function they already call.
+  if (card?.kind === 'pick') return lintPick(card);
+
   const out = [];
   const fail = (code, detail) => out.push({ code, detail });
 

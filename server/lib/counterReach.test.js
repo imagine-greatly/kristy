@@ -28,13 +28,16 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { nonEmpty } from './testGuards.js';
 
-import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
-import { scoreEntries } from './perimeter.js';
+import { scoreEntries, questionEntries } from './perimeter.js';
 import { inScope } from './counterScope.js';
 import { projectEntry } from './counterCards.js';
 
 const MIN_PHRASINGS = 3;
-const entries = nonEmpty(perimeterKb.entries || [], 'perimeterKb.entries');
+// QUESTION ENTRIES ONLY. A pick (`kind: 'pick'`) carries no `asked_as` by rule — it is a
+// sentence for a list row, not an answer to a question — and reachability through the ask
+// is precisely what it must never have. Binding to the whole file would fail every pick
+// for lacking phrasings, or worse, pass one that had them. Same predicate the ask reads.
+const entries = nonEmpty(questionEntries(), 'perimeterKb question entries');
 
 // The real gate, restated: `counterAskPipeline` admits on a score at or above the floor
 // AND at least one alias hit. A phrasing that only clears one of those does not reach a

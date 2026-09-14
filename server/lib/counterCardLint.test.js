@@ -16,10 +16,16 @@ import { dirname, join } from 'node:path';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from './counterCards.js';
-import { PERIMETER_SECTIONS } from './perimeter.js';
+import { PERIMETER_SECTIONS, questionEntries } from './perimeter.js';
+import { DEPTH_FIELDS } from './counterCards.js';
 import {
   lintCard,
+  lintPick,
   lintCorpus,
+  mechanicalVeto,
+  MECHANICAL_VETO,
+  MAX_PICK_WORDS,
+  PICK_FORBIDDEN_FIELDS,
   headlineHedge,
   falseMechanisms,
   contradictions,
@@ -41,8 +47,10 @@ const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
 /* ═══════════════════════════ The curated corpus ═══════════════════════════ */
 
 const reviewed = nonEmpty(parseReviewTable(readFileSync(REVIEW_FILE, 'utf8')), 'the reviewed do-line table');
+// QUESTION ENTRIES ONLY: a pick (`kind: 'pick'`) is linted by `lintPick`, never projected
+// into a card, and holding it to the card's bar would fail it for lacking a headline.
 const CARDS = nonEmpty(
-  (perimeterKb.entries || []).map((e) => projectEntry(e, { doLine: reviewed.get(e.id)?.do || '' })),
+  questionEntries().map((e) => projectEntry(e, { doLine: reviewed.get(e.id)?.do || '' })),
   'the projected card corpus'
 );
 
@@ -461,4 +469,132 @@ test('copula abstraction is REPORTED, never failed, and reads zero on the corpus
     report.copulaAbstraction, [],
     'a corpus hit means either the copy drifted or the check is noisy. Read it before promoting it.'
   );
+});
+
+/* ═══════════════════════════ The pick ═══════════════════════════ */
+
+// A pick is one sentence about the food's surface, on a list row with no card. It is not
+// a card and clears a different bar — stricter, because nothing downstream re-reads it.
+// The fixture food is invented for this file and absent from the corpus; every line is a
+// clean mechanical one, and the failing variants are built by inserting the defect into
+// it rather than by writing a claim out.
+const pick = (over = {}) => ({
+  id: 'pick_rutabaga',
+  kind: 'pick',
+  title: 'Rutabaga',
+  category: 'produce',
+  aliases: ['rutabaga', 'rutabagas'],
+  decision: 'Choose a firm root with smooth skin and no soft spots.',
+  sources: [{ name: 'Extension produce guide (fixture)', url: 'https://example.invalid/rutabaga' }],
+  ...over,
+});
+
+test('a clean pick passes, and lintCard routes it to lintPick', () => {
+  assert.deepEqual(lintPick(pick()), []);
+  assert.deepEqual(lintCard(pick()), [], 'lintCard must reach the pick rules through the one function every door calls');
+  assert.deepEqual(lintCard(pick({ decision: 'Is it firm?' })), lintPick(pick({ decision: 'Is it firm?' })));
+});
+
+test('a pick needs its five fields and forbids every card field', () => {
+  assert.ok(codes(lintPick(pick({ decision: '' }))).includes('PICK_FIELD_MISSING'));
+  assert.ok(codes(lintPick(pick({ title: '' }))).includes('PICK_FIELD_MISSING'));
+  for (const f of ['headline', 'why', 'tier_note', 'look_for', 'watch_out', 'detail', 'kristy_take', 'labels_decoded', 'cart_pick', 'asked_as']) {
+    assert.ok(codes(lintPick(pick({ [f]: 'x' }))).includes('PICK_FIELD_FORBIDDEN'), `${f} must be forbidden on a pick`);
+  }
+  // An empty value is still the card's shape arriving.
+  assert.ok(codes(lintPick(pick({ why: '' }))).includes('PICK_FIELD_FORBIDDEN'));
+});
+
+test('the forbidden set tracks the paid boundary, less sources', () => {
+  // A field added to DEPTH_FIELDS is forbidden on a pick without a second edit. `sources`
+  // is the one exception: paid on a card, REQUIRED on a pick.
+  for (const f of DEPTH_FIELDS) {
+    if (f === 'sources') assert.ok(!PICK_FORBIDDEN_FIELDS.has(f), 'sources is required on a pick');
+    else assert.ok(PICK_FORBIDDEN_FIELDS.has(f), `${f} is in the depth and must be forbidden on a pick`);
+  }
+});
+
+test('the title is the food, bare', () => {
+  assert.ok(codes(lintPick(pick({ title: 'Rutabaga, the root nobody buys.' }))).includes('PICK_TITLE_NOT_BARE'));
+  assert.deepEqual(lintPick(pick({ title: 'Yellow rutabaga' })), []);
+});
+
+test('a pick files under a counter, never under label terms or nowhere', () => {
+  assert.ok(codes(lintPick(pick({ category: 'frozen' }))).includes('PICK_CATEGORY_UNSECTIONED'));
+  assert.ok(codes(lintPick(pick({ category: 'label_terms' }))).includes('PICK_CATEGORY_NON_AISLE'));
+  for (const c of ['produce', 'beef', 'seafood', 'dairy', 'bulk_pantry', 'poultry_eggs']) {
+    assert.deepEqual(lintPick(pick({ category: c })), [], `${c} is a counter category`);
+  }
+});
+
+test('aliases are bare nouns, at least two, in both numbers', () => {
+  assert.ok(codes(lintPick(pick({ aliases: ['rutabaga'] }))).includes('PICK_ALIASES_TOO_FEW'));
+  assert.ok(codes(lintPick(pick({ aliases: ['rutabaga', 'how do i pick rutabaga'] }))).includes('PICK_ALIAS_NOT_BARE'));
+  assert.ok(codes(lintPick(pick({ aliases: ['Rutabaga', 'Rutabagas'] }))).includes('PICK_ALIAS_NOT_BARE'), 'typed, so lowercase');
+  assert.ok(codes(lintPick(pick({ aliases: ['rutabaga', 'swede'] }))).includes('PICK_ALIASES_NO_NUMBER_PAIR'));
+  // The three suffix relations, and nothing cleverer.
+  assert.deepEqual(lintPick(pick({ aliases: ['rutabaga', 'rutabagas'] })), []);
+  assert.deepEqual(lintPick(pick({ aliases: ['radish', 'radishes'] })), []);
+  assert.deepEqual(lintPick(pick({ aliases: ['cherry', 'cherries'] })), []);
+  assert.ok(codes(lintPick(pick({ aliases: ['leaf', 'leaves'] }))).includes('PICK_ALIASES_NO_NUMBER_PAIR'), 'not a stemmer');
+});
+
+test('the line is one sentence, a statement, sixteen words or fewer', () => {
+  assert.ok(codes(lintPick(pick({ decision: 'Choose a firm root. Skip the soft ones.' }))).includes('PICK_LINE_NOT_ONE_SENTENCE'));
+  assert.ok(codes(lintPick(pick({ decision: 'Choose a firm root with smooth skin' }))).includes('PICK_LINE_NOT_ONE_SENTENCE'));
+  assert.ok(codes(lintPick(pick({ decision: 'Is the root firm with smooth skin?' }))).includes('PICK_LINE_QUESTION'));
+  assert.equal(MAX_PICK_WORDS, 16);
+  const seventeen = 'Choose a firm root with smooth skin and no soft spots or cracks anywhere on the surface.';
+  assert.equal(words(seventeen), 17);
+  assert.ok(codes(lintPick(pick({ decision: seventeen }))).includes('PICK_LINE_TOO_LONG'));
+  const sixteen = 'Choose a firm root with smooth skin and no soft spots or cracks on the surface.';
+  assert.equal(words(sixteen), 16);
+  assert.deepEqual(lintPick(pick({ decision: sixteen })), []);
+});
+
+test('the line carries no first person, no em-dash, no digit', () => {
+  assert.ok(codes(lintPick(pick({ decision: 'Choose the root my hand finds firm.' }))).includes('PICK_LINE_FIRST_PERSON'));
+  assert.ok(codes(lintPick(pick({ decision: 'I choose the firm root.' }))).includes('PICK_LINE_FIRST_PERSON'));
+  // A country of origin is not a pronoun.
+  assert.deepEqual(lintPick(pick({ decision: 'Choose the US grown root with smooth skin.' })), []);
+  assert.ok(codes(lintPick(pick({ decision: 'Choose a firm root — soft means old.' }))).includes('PICK_LINE_EM_DASH'));
+  assert.ok(codes(lintPick(pick({ decision: 'Choose a root under 4 inches across.' }))).includes('PICK_LINE_DIGIT'));
+});
+
+test('the mechanical veto: every group fires, plurals fire, processing words do not', () => {
+  for (const group of Object.values(MECHANICAL_VETO)) {
+    for (const w of group) {
+      assert.equal(mechanicalVeto(`Choose the root that says ${w} on the sticker.`), w, `"${w}" must be vetoed`);
+      const line = `Choose the root that says ${w} on the sticker.`;
+      assert.ok(codes(lintPick(pick({ decision: line }))).includes('PICK_LINE_NOT_MECHANICAL'));
+    }
+  }
+  // Plural and third-person forms, and case.
+  assert.equal(mechanicalVeto('Choose the root with the most vitamins.'), 'vitamins');
+  assert.equal(mechanicalVeto('Choose the root that Boosts the dish.'), 'Boosts');
+  // Processing words on the counters are mechanical and must pass: the veto is base form
+  // plus s/es, deliberately, so "cured" and "treated" describe the food.
+  assert.equal(mechanicalVeto('Choose the dry-cured one with a treated rind.'), null);
+  // The vegetable's heart is still vetoed — the veto is vocabulary, not sense, and the
+  // cost is accepted.
+  assert.equal(mechanicalVeto('Choose the one whose heart feels firm.'), 'heart');
+  // "heal" does not reach into "healthy" by accident; "healthy" is listed on its own.
+  assert.equal(mechanicalVeto('Choose the healthiest looking one.'), null);
+  assert.equal(mechanicalVeto('Choose the healthy one.'), 'healthy');
+  // A clean surface line names none of it.
+  assert.equal(mechanicalVeto('Choose a firm root with smooth skin and no soft spots.'), null);
+});
+
+test('a pick carries at least one source, and every source carries a URL', () => {
+  assert.ok(codes(lintPick(pick({ sources: [] }))).includes('PICK_SOURCES_MISSING'));
+  // The card corpus names its sources without URLs. That is not enough for a pick: a URL
+  // is what makes "every source gets fetched" checkable.
+  assert.ok(codes(lintPick(pick({ sources: ['USDA FoodData Central'] }))).includes('PICK_SOURCE_NO_URL'));
+  assert.deepEqual(lintPick(pick({ sources: ['USDA guide https://example.invalid/guide'] })), [], 'a string carrying a URL is fine');
+  assert.deepEqual(lintPick(pick({ sources: [{ url: 'http://example.invalid/guide' }] })), []);
+});
+
+test('house copy holds on a pick line too', () => {
+  assert.ok(codes(lintPick(pick({ decision: 'Choose the root with the deepest colour.' }))).includes('COPY_BRITISH'));
+  assert.ok(codes(lintPick(pick({ decision: "Choose the root that doesn't give." }))).includes('COPY_STRAIGHT_QUOTE'));
 });

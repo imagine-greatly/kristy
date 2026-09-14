@@ -4,9 +4,10 @@ import { userRateLimit } from '../lib/rateLimit.js';
 import { clientIp, counterAskLimited } from '../lib/guestRate.js';
 import { premiumForReq } from '../lib/subscription.js';
 import {
-  perimeterKb,
   scoreEntries,
   publicEntry,
+  publicIndex,
+  questionEntryById,
   composeAnswer,
   sectionIndex,
   sectionById,
@@ -56,14 +57,15 @@ function readPrefs(body = {}) {
 export const perimeterRouter = Router();
 
 // ── Public index — the perimeter topics, for a browsable/indexable directory ──
+//
+// EVERY READ HERE GOES THROUGH lib/perimeter.js's question doors, never through the raw
+// entries array. The file holds picks too (`kind: 'pick'` — one sentence for a list row,
+// not a card), and this route serves the KB off disk, so a raw read of the entries array
+// would publish a pick on the web the moment one was authored, with no migration and no
+// deploy between. The predicate lives in one place and this file does not re-derive it;
+// kindFilter.test.js pins that the KB module's export is not even named in this file.
 perimeterRouter.get('/perimeter', (_req, res) => {
-  const topics = (perimeterKb.entries || []).map((e) => ({
-    id: e.id,
-    title: e.title,
-    category: e.category || null,
-    question: e.question || null,
-  }));
-  return res.json({ topics });
+  return res.json({ topics: publicIndex() });
 });
 
 /* ── Public browse-by-section — the perimeter as a DESTINATION, not a search box ──
@@ -80,8 +82,7 @@ perimeterRouter.get('/perimeter/sections/:id', (req, res) => {
 
 // ── Public entry — a full KB read (free universal layer, verbatim, no model) ──
 perimeterRouter.get('/perimeter/:id', (req, res) => {
-  const id = String(req.params.id || '').trim();
-  const entry = (perimeterKb.entries || []).find((e) => e.id === id);
+  const entry = questionEntryById(req.params.id);
   if (!entry) return res.status(404).json({ error: 'not_found' });
   return res.json(publicEntry(entry));
 });

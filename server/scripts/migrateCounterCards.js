@@ -14,12 +14,22 @@
 // is a re-ranking of authored content, so every sentence the KB holds has to land
 // somewhere on the card. Anything that does not is printed as a diff, by field, and
 // the run exits non-zero.
+//
+// PICKS ARE NEVER MIGRATED. A `kind: 'pick'` entry is one sentence for a list row, not a
+// card: it has no headline, no do line and no depth, and `counter_cards` has
+// `headline text not null` and `check (kind in ('shelf','home'))`, so a pick can neither
+// fit the row nor be read by anything that reads the table. It is skipped HERE, before
+// projection, counted and printed — so the table-backed doors cannot leak one by
+// construction, and so a pick never reaches `cardToRow` where it would fail the migration
+// as a card with no action on it. The projection phase is a function so a test can feed
+// a fixture pick through the identical path and watch it never arrive.
 
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+import { isPick, questionEntries } from '../lib/perimeter.js';
 import {
   TABLE,
   RETIRED,
@@ -33,72 +43,44 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
 
-const DRY = process.argv.includes('--dry-run');
-
-/* ── The reviewed do lines ─────────────────────────────────────────────────── */
-
-let reviewed = new Map();
-try {
-  reviewed = parseReviewTable(readFileSync(REVIEW_FILE, 'utf8'));
-} catch {
-  console.error(`[counter-cards] no review file at ${REVIEW_FILE}`);
-  console.error('[counter-cards] draft it first — the do line is authored, never derived.');
-  process.exit(1);
-}
+const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
 
 /* ── Project ──────────────────────────────────────────────────────────────── */
 
-const entries = perimeterKb.entries || [];
-const cards = [];
-const problems = { missingDo: [], unmapped: [], longHeadline: [], longDo: [], flagged: [] };
+/**
+ * Project every QUESTION entry into a card; set every pick aside.
+ *
+ * The one place the migration decides what becomes a row. `questionEntries` is the same
+ * predicate every read door uses, so the set that reaches `projectEntry` — and from there
+ * `cardToRow` — is the set a shopper can ask for, and nothing else.
+ *
+ * @param {Array} entries   the KB entries, picks included
+ * @param {Map} reviewed    slug → { do, flag } from docs/do-lines-review.md
+ * @returns {{ cards:Array, picks:Array, problems:object }}
+ */
+export function projectCorpus(entries, reviewed) {
+  const picks = (entries || []).filter(isPick);
+  const cards = [];
+  const problems = { missingDo: [], unmapped: [], longHeadline: [], longDo: [], flagged: [] };
 
-const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
+  for (const entry of questionEntries(entries || [])) {
+    const review = reviewed.get(entry.id);
+    const card = projectEntry(entry, { doLine: review?.do || '' });
 
-for (const entry of entries) {
-  const review = reviewed.get(entry.id);
-  const card = projectEntry(entry, { doLine: review?.do || '' });
+    if (!card.do) problems.missingDo.push(entry.id);
+    if (review?.flag && review.flag !== '—' && review.flag !== '-' && review.flag !== '') {
+      problems.flagged.push(`${entry.id} — ${review.flag}`);
+    }
+    if (words(card.headline) > 12) problems.longHeadline.push(`${entry.id} (${words(card.headline)}w)`);
+    if (card.do && words(card.do) > 14) problems.longDo.push(`${entry.id} (${words(card.do)}w)`);
 
-  if (!card.do) problems.missingDo.push(entry.id);
-  if (review?.flag && review.flag !== '—' && review.flag !== '-' && review.flag !== '') {
-    problems.flagged.push(`${entry.id} — ${review.flag}`);
+    const cov = coverage(entry, card);
+    for (const u of cov.unmapped) problems.unmapped.push(`${entry.id} · ${u.field}: ${u.text.slice(0, 90)}`);
+
+    cards.push(card);
   }
-  if (words(card.headline) > 12) problems.longHeadline.push(`${entry.id} (${words(card.headline)}w)`);
-  if (card.do && words(card.do) > 14) problems.longDo.push(`${entry.id} (${words(card.do)}w)`);
 
-  const cov = coverage(entry, card);
-  for (const u of cov.unmapped) problems.unmapped.push(`${entry.id} · ${u.field}: ${u.text.slice(0, 90)}`);
-
-  cards.push(card);
-}
-
-/* ── Report ───────────────────────────────────────────────────────────────── */
-
-const line = (label, list) => {
-  console.log(`\n${label}: ${list.length}`);
-  for (const x of list) console.log(`  · ${x}`);
-};
-
-console.log(`[counter-cards] ${entries.length} authored entries → ${cards.length} cards`);
-console.log(`[counter-cards] reviewed do lines found: ${reviewed.size}`);
-
-if (problems.unmapped.length) line('UNPLACED CONTENT (must be zero)', problems.unmapped);
-if (problems.missingDo.length) line('MISSING do LINE', problems.missingDo);
-if (problems.longHeadline.length) line('HEADLINE OVER 12 WORDS', problems.longHeadline);
-if (problems.longDo.length) line('do LINE OVER 14 WORDS', problems.longDo);
-if (problems.flagged.length) line('FLAGGED IN REVIEW (not blocking)', problems.flagged);
-
-const blocking =
-  problems.unmapped.length + problems.missingDo.length + problems.longHeadline.length + problems.longDo.length;
-
-if (blocking) {
-  console.error(`\n[counter-cards] ${blocking} blocking problem(s) — nothing was written.`);
-  process.exit(1);
-}
-console.log('\n[counter-cards] every authored sentence is placed. ✓');
-
-if (DRY) {
-  console.log('[counter-cards] --dry-run: nothing written.');
-  process.exit(0);
+  return { cards, picks, problems };
 }
 
 /* ── Write ────────────────────────────────────────────────────────────────── */
@@ -113,7 +95,7 @@ if (DRY) {
 // process.exit() mid-flight. Killing the process while a Supabase fetch handle is still
 // closing trips a libuv assertion on Windows and the shell sees 127 — which reads as
 // "command not found" rather than "the migration refused to write".
-async function write() {
+async function write(cards) {
   await import('dotenv/config');
   const { supabase } = await import('../lib/supabase.js');
 
@@ -224,4 +206,61 @@ async function write() {
   return 0;
 }
 
-process.exitCode = await write();
+/* ── Run ──────────────────────────────────────────────────────────────────── */
+
+async function main() {
+  const DRY = process.argv.includes('--dry-run');
+
+  // The reviewed do lines.
+  let reviewed = new Map();
+  try {
+    reviewed = parseReviewTable(readFileSync(REVIEW_FILE, 'utf8'));
+  } catch {
+    console.error(`[counter-cards] no review file at ${REVIEW_FILE}`);
+    console.error('[counter-cards] draft it first — the do line is authored, never derived.');
+    return 1;
+  }
+
+  const entries = perimeterKb.entries || [];
+  const { cards, picks, problems } = projectCorpus(entries, reviewed);
+
+  // ── Report ──
+  const line = (label, list) => {
+    console.log(`\n${label}: ${list.length}`);
+    for (const x of list) console.log(`  · ${x}`);
+  };
+
+  console.log(`[counter-cards] ${entries.length} authored entries → ${cards.length} cards`);
+  console.log(`[counter-cards] ${picks.length} picks skipped, never migrated`);
+  console.log(`[counter-cards] reviewed do lines found: ${reviewed.size}`);
+
+  if (problems.unmapped.length) line('UNPLACED CONTENT (must be zero)', problems.unmapped);
+  if (problems.missingDo.length) line('MISSING do LINE', problems.missingDo);
+  if (problems.longHeadline.length) line('HEADLINE OVER 12 WORDS', problems.longHeadline);
+  if (problems.longDo.length) line('do LINE OVER 14 WORDS', problems.longDo);
+  if (problems.flagged.length) line('FLAGGED IN REVIEW (not blocking)', problems.flagged);
+
+  const blocking =
+    problems.unmapped.length + problems.missingDo.length + problems.longHeadline.length + problems.longDo.length;
+
+  if (blocking) {
+    console.error(`\n[counter-cards] ${blocking} blocking problem(s) — nothing was written.`);
+    return 1;
+  }
+  console.log('\n[counter-cards] every authored sentence is placed. ✓');
+
+  if (DRY) {
+    console.log('[counter-cards] --dry-run: nothing written.');
+    return 0;
+  }
+
+  return write(cards);
+}
+
+// Run only when invoked as a script. Imported by a test, this file exposes `projectCorpus`
+// and does nothing else — a migration that ran on import would write to the live table
+// the moment a test file loaded it.
+const invokedDirectly = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (invokedDirectly) {
+  process.exitCode = await main();
+}
