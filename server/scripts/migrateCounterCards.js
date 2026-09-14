@@ -24,7 +24,7 @@
 // as a card with no action on it. The projection phase is a function so a test can feed
 // a fixture pick through the identical path and watch it never arrive.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 
@@ -260,7 +260,21 @@ async function main() {
 // Run only when invoked as a script. Imported by a test, this file exposes `projectCorpus`
 // and does nothing else — a migration that ran on import would write to the live table
 // the moment a test file loaded it.
-const invokedDirectly = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
-if (invokedDirectly) {
+//
+// Both sides are REAL paths. `import.meta.url` is already resolved through symlinks and
+// `process.argv[1]` is whatever the shell typed, so comparing them raw would, through a
+// symlinked checkout, decide "imported" and exit 0 having migrated nothing — a green
+// status with no subject. The no-op is printed for the same reason: silent is the one
+// thing a skipped migration may not be.
+const invokedAs = (() => {
+  try {
+    return process.argv[1] ? realpathSync(resolve(process.argv[1])) : null;
+  } catch {
+    return null;
+  }
+})();
+if (invokedAs === realpathSync(fileURLToPath(import.meta.url))) {
   process.exitCode = await main();
+} else {
+  console.log('[counter-cards] not run: imported, not invoked.');
 }

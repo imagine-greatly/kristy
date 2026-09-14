@@ -35,7 +35,7 @@ import {
   sectionIndex,
   sectionById,
 } from './perimeter.js';
-import { parseReviewTable, cardToRow, RETIRED, RETIRED_GENERATED } from './counterCards.js';
+import { parseReviewTable, cardToRow, projectAll, RETIRED, RETIRED_GENERATED } from './counterCards.js';
 import { lintCard } from './counterCardLint.js';
 import { projectCorpus } from '../scripts/migrateCounterCards.js';
 
@@ -158,6 +158,24 @@ test('the web route reads no entries array of its own', () => {
       `a raw read outside the partition: ${line.trim()}`
     );
   }
+});
+
+/* ═══════════════════ Door 2b — the KB fallback behind the table doors ═══════════════════ */
+
+test('projectAll, the fallback every /api/counter door degrades to, projects zero picks', () => {
+  // When `selectCards` returns null — no client, a select error, a throw — and when the
+  // essentials come back empty, the counter serves `projectAll()`. "Cannot leak by
+  // construction" has to hold there too, or a pick is served exactly when the table is down.
+  const cards = projectAll(WITH_PICK);
+  assert.equal(cards.length, REAL.length);
+  assert.ok(!cards.some((c) => c.slug === PICK.id), 'the fallback projected a pick into a card');
+  assert.ok(!projectAll().some((c) => c.slug === PICK.id));
+});
+
+test('…and the twin IS projected, so the fallback is open and the partition is what shuts it', () => {
+  const cards = projectAll(WITH_CARD);
+  assert.equal(cards.length, REAL.length + 1);
+  assert.ok(cards.some((c) => c.slug === PICK.id));
 });
 
 /* ═══════════════════ Door 3 — the migration ═══════════════════ */

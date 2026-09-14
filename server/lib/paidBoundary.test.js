@@ -20,7 +20,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { DEPTH_FIELDS, summarize, forViewer, projectEntry, projectAll } from './counterCards.js';
-import { questionEntries } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 import { lintCard } from './counterCardLint.js';
 
@@ -28,14 +27,12 @@ import { lintCard } from './counterCardLint.js';
    assertion below vacuously true and print a green tick where the boundary used to be —
    the precise failure that let all eight essentials ship gated under a passing check.
 
-   QUESTION ENTRIES ONLY, filtered by id. The boundary is a property of CARDS — a pick
-   (`kind: 'pick'`) has no depth to withhold and no tier sentence to carry, and is never
-   served, so every assertion below is meaningless on one. Filtered by id rather than by the
-   projected `kind`, because `projectEntry` derives `kind` from HOME_CARDS and would stamp a
-   pick `shelf`. ⚠️ `projectAll()` itself still projects every entry in the file; it is the
-   KB fallback the table-backed doors degrade to, and it lives in counterCards.js. */
-const QUESTION_IDS = new Set(nonEmpty(questionEntries(), 'perimeterKb question entries').map((e) => e.id));
-const CARDS = nonEmpty(projectAll().filter((c) => QUESTION_IDS.has(c.slug)), 'projected counter cards', 70);
+   `projectAll()` projects QUESTION ENTRIES ONLY — it partitions on the same predicate as
+   every other door, pinned by injection in kindFilter.test.js — so a pick (`kind: 'pick'`),
+   which has no depth to withhold and no tier sentence to carry, never reaches this
+   collection. No second filter here on purpose: one would hide a regression in the fallback
+   the table-backed doors degrade to. */
+const CARDS = nonEmpty(projectAll(), 'projected counter cards', 70);
 const ESSENTIALS = nonEmpty(CARDS.filter((c) => c.essential), 'essential cards', 8);
 const METERED = nonEmpty(CARDS.filter((c) => !c.essential), 'non-essential cards', 60);
 

@@ -28,7 +28,7 @@
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from './doLines.json' with { type: 'json' };
-import { PERIMETER_SECTIONS } from './perimeter.js';
+import { PERIMETER_SECTIONS, questionEntries } from './perimeter.js';
 
 export const TABLE = 'counter_cards';
 
@@ -644,9 +644,15 @@ const fallbackDoLines = new Map(Object.entries(doLines).map(([slug, line]) => [s
  * Degrading to the KB is honest: every curated card in the table was derived from it, so
  * the shopper gets the same answer. What is lost is the generated cards, which is the
  * correct thing to lose — a generated card is the one thing that exists nowhere else.
+ *
+ * QUESTION ENTRIES ONLY. This is the fallback every table-backed door degrades to, so it
+ * has to hold the same partition the migration holds: a pick (`kind: 'pick'`) is never a
+ * row in the table and may not become a card here either, or the counter would serve one
+ * exactly when the table is unreachable. Same predicate as every other door; `pool` is
+ * injectable so the exclusion is proven with a fixture rather than asserted.
  */
-export function projectAll() {
-  return (perimeterKb.entries || []).map((e) =>
+export function projectAll(pool = questionEntries()) {
+  return questionEntries(pool).map((e) =>
     projectEntry(e, { doLine: fallbackDoLines.get(e.id)?.do || '' })
   );
 }

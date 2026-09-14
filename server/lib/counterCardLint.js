@@ -718,30 +718,41 @@ export function sharedObservables(headline, doLine) {
 //
 // THE VETO VOCABULARY IS EXPLICIT, like IMPERATIVE_VERBS, and for the same reason: a
 // part-of-speech judgment about "is this sentence about the body" cannot be reviewed, and a
-// list can. Matching is by word boundary, case-insensitive, base form plus a plural or
-// third-person `s`/`es`. It does NOT reach into other inflections on purpose: "cured" and
-// "treated" are processing words on the meat and produce counters ("dry-cured", "treated
-// with wax") and vetoing them would cost the mechanical line the list exists to allow. The
-// outcome nouns are the first net — a health claim names the thing it claims to help, and
-// "lowers blood sugar" trips on `blood` and `sugar` before it ever needs `lower` — so the
-// verb list is the second net, not the only one. Adding a word stays a deliberate act.
+// list can. Matching is by word boundary, case-insensitive, base form plus `s`/`es` (a
+// plural or a third person) and `ing` (the participle a claim hides in: "boosting",
+// "supporting"). It does NOT reach into `ed` on purpose: "cured" and "treated" are
+// processing words on the meat and produce counters ("dry-cured", "treated with wax") and
+// vetoing them would cost the mechanical line the list exists to allow. The outcome nouns
+// are the first net — a health claim names the thing it claims to help, and "lowers blood
+// sugar" trips on `blood` and `sugar` before it ever needs `lower` — so the verb list is
+// the second net, not the only one. Adding a word stays a deliberate act.
 //
 // KNOWN COST, accepted: the veto is vocabulary, not sense. "weight" is bodily here even
 // when an author means the bulb's heft, and "lower" is vetoed even for the lower shelf.
 // Write "heavy for its size" and "bottom shelf". A veto that tried to tell the senses
 // apart would be a guess dressed as a rule.
+//
+// `fat` IS NOT ON THE LIST, deliberately. Marbling, the fat cap and "the white should be
+// bright, not yellow" are the mechanical read at the meat counter, and a pick for a
+// ribeye or a pork shoulder has to be able to say it. "Low-fat" as a health claim trips on
+// `health` or the outcome it is attached to, not on the word `fat`.
 export const MECHANICAL_VETO = {
   // The body and its outcomes. Any of these in a pick line makes the sentence a claim about
   // the shopper rather than a description of the food, and a claim needs the tier, the
-  // source and the depth a pick does not carry.
+  // source and the depth a pick does not carry. `health` and `immunity` are the nouns the
+  // vaguest claims hang on ("for the health benefits", "for immunity").
   body: [
-    'heart', 'blood', 'sugar', 'cholesterol', 'inflammation', 'immune', 'gut', 'weight',
-    'cancer', 'disease', 'healthy',
+    'heart', 'blood', 'sugar', 'cholesterol', 'inflammation', 'immune', 'immunity', 'gut',
+    'digestion', 'weight', 'cancer', 'disease', 'health', 'healthy',
   ],
   // Nutrition vocabulary. A pick may say a yolk is deep orange; it may not say why that is
-  // good for you. The moment a line names a nutrient it is asserting the food delivers it,
-  // which is the ingredient KB's job and the verdict engine's, never a list row's.
-  nutrition: ['nutrient', 'vitamin', 'mineral', 'protein', 'fiber', 'antioxidant', 'detox', 'toxin'],
+  // good for you. The moment a line names a nutrient, a calorie, a sodium level or "energy"
+  // it is asserting what the food delivers, which is the ingredient KB's job and the verdict
+  // engine's, never a list row's. A label's own printed numbers are a scan, not a pick.
+  nutrition: [
+    'nutrient', 'vitamin', 'mineral', 'protein', 'fiber', 'carb', 'calorie', 'sodium', 'energy',
+    'antioxidant', 'detox', 'toxin',
+  ],
   // The no-treatment verbs, both directions (non-negotiable #3 is symmetric): a food that
   // treats, cures, prevents, heals, lowers, boosts, fights, protects or supports anything,
   // and a food that CAUSES anything. Kristy is a coach, not a doctor, and a list row is the
@@ -750,7 +761,7 @@ export const MECHANICAL_VETO = {
 };
 
 const VETO_WORDS = Object.values(MECHANICAL_VETO).flat();
-const VETO_RE = new RegExp(`\\b(${VETO_WORDS.join('|')})(s|es)?\\b`, 'i');
+const VETO_RE = new RegExp(`\\b(${VETO_WORDS.join('|')})(s|es|ing)?\\b`, 'i');
 
 /** The first vetoed word in a line, or null. */
 export function mechanicalVeto(line) {

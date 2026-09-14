@@ -572,6 +572,23 @@ test('the mechanical veto: every group fires, plurals fire, processing words do 
   // Plural and third-person forms, and case.
   assert.equal(mechanicalVeto('Choose the root with the most vitamins.'), 'vitamins');
   assert.equal(mechanicalVeto('Choose the root that Boosts the dish.'), 'Boosts');
+  // The six the critic measured passing on the first cut, each named for the group and
+  // form it now trips on. Test inputs inside a prohibition frame — never example output.
+  const measured = [
+    ['Choose the bunch for boosting immunity.', 'boosting'],          // treatment, -ing
+    ['Pick the carton with the most calories.', 'calories'],           // nutrition, -s
+    ['Choose the one with less sodium.', 'sodium'],                    // nutrition
+    ['A good source of energy for the walk.', 'energy'],               // nutrition
+    ['Choose the low-fat carton for the health benefits.', 'health'],  // body — not `fat`
+    ['Pick the one supporting digestion.', 'supporting'],              // treatment, -ing
+  ];
+  for (const [line, hit] of measured) {
+    assert.equal(mechanicalVeto(line), hit, `"${line}" must trip on "${hit}"`);
+    assert.ok(codes(lintPick(pick({ decision: line }))).includes('PICK_LINE_NOT_MECHANICAL'));
+  }
+  // `fat` stays mechanical: marbling and the fat cap are the read at the meat counter.
+  assert.equal(mechanicalVeto('Choose the chop with a thick white fat cap.'), null);
+  assert.equal(mechanicalVeto('Pick the steak with fine marbling and firm fat.'), null);
   // Processing words on the counters are mechanical and must pass: the veto is base form
   // plus s/es, deliberately, so "cured" and "treated" describe the food.
   assert.equal(mechanicalVeto('Choose the dry-cured one with a treated rind.'), null);
