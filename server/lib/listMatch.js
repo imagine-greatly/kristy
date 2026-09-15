@@ -17,7 +17,7 @@
 // matches nothing simply gets no card, which costs one KB scan of an in-memory array and
 // zero model calls. The gate is a cost control on a path that has no cost.
 
-import { scoreEntries, perimeterKb } from './perimeter.js';
+import { scoreEntries, scorePool, pickEntries, perimeterKb } from './perimeter.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
 import { logCounterGap } from './counterGaps.js';
 
@@ -260,6 +260,27 @@ export function matchItemToCard(name) {
 }
 
 /**
+ * THE PICK FLOOR. Scored only for a row that ended with NO card — the caller enforces that
+ * order (`attachCards`), never this function. Same alias-containment scorer, same gate, same
+ * `stateContradicts` veto: a stateless produce pick reads as fresh, so "Canned tomatoes"
+ * cannot pick up a fresh-tomato line. No home / label check is needed — `lintPick` refuses
+ * a pick filed there. `pool` is injectable because the corpus holds no picks yet.
+ *
+ * @returns {{ id:string, line:string }|null}
+ */
+export function matchItemToPick(name, pool = perimeterKb.entries || []) {
+  const q = String(name || '').trim();
+  if (!q) return null;
+  for (const c of scorePool(q, pickEntries(pool), CANDIDATES)) {
+    if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
+    if (stateContradicts(q, c.entry)) continue;
+    if (!c.entry.decision) continue;
+    return { id: c.entry.id, line: c.entry.decision };
+  }
+  return null;
+}
+
+/**
  * The card for a whole ROW, which is not the same question as the card for a NAME.
  *
  * AN AUTHORED `perimeterId` IS GROUND TRUTH AND OUTRANKS RETRIEVAL. A PICK names the entry
@@ -315,8 +336,9 @@ const SHOPPER_AUTHORED = new Set(['user', 'imported']);
  * @param {object} list  a sanitized list doc
  * @param {object} [opts]
  * @param {boolean} [opts.log=true]  write unmatched shopper-authored rows to counter_gaps
+ * @param {object[]} [opts.pickPool]  KB entries to draw picks from; tests inject, prod reads the KB
  */
-export function attachCards(list, { log = true } = {}) {
+export function attachCards(list, { log = true, pickPool } = {}) {
   if (!list || !Array.isArray(list.items)) return list;
 
   let changed = false;
@@ -326,6 +348,10 @@ export function attachCards(list, { log = true } = {}) {
 
     const hit = cardForItem(it);
     if (!hit) {
+      // Cards first, picks only where no card attached. A pick is authored guidance, so a
+      // row that gets one is not a gap.
+      const pick = matchItemToPick(it.name, pickPool);
+      if (pick) return { ...it, carded: true, pickLine: pick.line, pickId: pick.id };
       // The miss IS the product signal. Someone writing "kombucha" every week with nothing
       // behind it is the authoring queue writing itself out of real intent, which is the
       // one thing you cannot collect retroactively.

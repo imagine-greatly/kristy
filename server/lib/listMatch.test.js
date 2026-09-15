@@ -13,6 +13,7 @@ import { dirname, join } from 'node:path';
 
 import {
   matchItemToCard,
+  matchItemToPick,
   attachCards,
   collapseByCard,
   groupForWalk,
@@ -25,7 +26,7 @@ import {
 } from './listMatch.js';
 import { sanitizeList } from './cartEdit.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
-import { perimeterKb } from './perimeter.js';
+import { perimeterKb, pickEntries } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -434,4 +435,85 @@ test('a matched card still beats the category fallback', () => {
     sectionForItem({ name: 'canned sardines', category: 'Produce', cardSection: 'seafood' }),
     'seafood'
   );
+});
+
+
+/* ═══════════════ The pick floor — cards first, picks only where no card attached ═══════════════
+
+   THE CORPUS HOLDS NO PICKS YET (they are authored in Piece 3), so the pool is injected the
+   way kindFilter.test.js does it, and bound with `nonEmpty` so a fixture that stops being a
+   pick fails here instead of passing vacuously. `carrots` is a real bare noun no card owns
+   today (the probe lists it as a miss); `apples` is owned by `organic_worth_it_by_type`. */
+
+const pickFixture = (id, title, aliases, decision) => ({
+  id, kind: 'pick', title, category: 'produce', aliases, decision,
+  sources: [{ name: 'fixture', url: 'https://example.invalid/pick' }],
+});
+const PICK_CARROTS = pickFixture('pick_carrots', 'Carrots', ['carrots', 'carrot'],
+  'Pick firm, bright carrots with no cracks.');
+const PICK_APPLES = pickFixture('pick_apples', 'Apples', ['apples', 'apple'],
+  'Pick firm apples with tight skin.');
+const PICK_TOMATOES = pickFixture('pick_tomatoes', 'Tomatoes', ['tomatoes', 'tomato'],
+  'Pick tomatoes heavy for their size.');
+const PICK_POOL = nonEmpty(
+  [...(perimeterKb.entries || []), PICK_CARROTS, PICK_APPLES, PICK_TOMATOES],
+  'KB plus fixture picks', 4
+);
+nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 3);
+
+// The fixture must be a bare noun no card owns, or the test proves precedence, not the floor.
+assert.equal(matchItemToCard('carrots'), null, 'carrots has no card today; re-pick the fixture noun');
+assert.equal(matchItemToCard('apples')?.slug, 'organic_worth_it_by_type');
+
+const attachWithPicks = (...names) =>
+  attachCards({ items: names.map((n) => item(n)) }, { log: false, pickPool: PICK_POOL }).items;
+
+test('a bare noun with no card gets the pick line, and no slug', () => {
+  const [row] = attachWithPicks('carrots');
+  assert.equal(row.carded, true);
+  assert.equal(row.cardSlug, undefined);
+  assert.equal(row.cardSection, undefined);
+  assert.equal(row.pickId, 'pick_carrots');
+  assert.equal(row.pickLine, PICK_CARROTS.decision);
+});
+
+test('a row a card owns keeps the card even when a pick also matches it', () => {
+  // apples matches BOTH the organic card and PICK_APPLES; the pick alone would attach.
+  assert.equal(matchItemToPick('apples', PICK_POOL)?.id, 'pick_apples');
+  const [row] = attachWithPicks('apples');
+  assert.equal(row.cardSlug, 'organic_worth_it_by_type');
+  assert.equal(row.pickLine, undefined);
+  assert.equal(row.pickId, undefined);
+});
+
+test('a stateless produce pick is fresh: canned/frozen rows get nothing', () => {
+  for (const name of ['Canned tomatoes', 'frozen carrots']) {
+    const [row] = attachWithPicks(name);
+    assert.equal(row.carded, true, name);
+    assert.equal(row.cardSlug, undefined, name);
+    assert.equal(row.pickLine, undefined, `${name} must not read a fresh tip`);
+  }
+});
+
+test('a non-food row gets no pick', () => {
+  const [row] = attachWithPicks('dish soap');
+  assert.equal(row.carded, true);
+  assert.equal(row.cardSlug, undefined);
+  assert.equal(row.pickLine, undefined);
+  assert.equal(row.pickId, undefined);
+});
+
+test('the pick line survives sanitizeList, and stays additive beside the card fields', () => {
+  const [row] = attachWithPicks('carrots');
+  const round = sanitizeList({ items: [row] }).items[0];
+  assert.equal(round.carded, true);
+  assert.equal(round.pickLine, PICK_CARROTS.decision);
+  assert.equal(round.pickId, 'pick_carrots');
+  assert.equal(round.cardSlug, undefined);
+});
+
+test('with no picks in the pool the floor is a no-op: same rows as before', () => {
+  const rows = attachCards({ items: [item('carrots')] }, { log: false }).items;
+  assert.equal(rows[0].carded, true);
+  assert.equal(rows[0].pickLine, undefined);
 });

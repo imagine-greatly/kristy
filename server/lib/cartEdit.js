@@ -86,6 +86,10 @@ export function sanitizeList(list) {
       // inspects, including the ones that matched nothing, so a reload can never re-run
       // retrieval over a row or log its miss a second time. It has to survive the round trip
       // or the gap log becomes a count of how often the app was opened.
+      // The pick line a card-less row earned (listMatch.js). Additive: never alongside a
+      // `cardSlug`, and it has to survive the save or `carded` hides its absence forever.
+      ...(it.pickLine ? { pickLine: String(it.pickLine).slice(0, 200) } : {}),
+      ...(it.pickId ? { pickId: String(it.pickId).slice(0, 64) } : {}),
       ...(it.carded ? { carded: true } : {}),
       // ── Imported-list fields (Block 8). These carry the AUTONOMY guarantees, so
       // they have to survive the save or the promise breaks on reload: what the

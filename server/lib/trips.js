@@ -423,6 +423,8 @@ export function seedItem(item) {
     carded: _carded,
     cardSlug: _cardSlug,
     cardSection: _cardSection,
+    pickLine: _pickLine,
+    pickId: _pickId,
     specifiedFrom: _specifiedFrom,
     needsFix: _needsFix,
     note: _note,

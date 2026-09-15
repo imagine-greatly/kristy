@@ -190,6 +190,7 @@ test('a seeded row drops the trip that just ended, and keeps the groceries', () 
     checked: true, tier: 'approved', why: 'Authored line.', perimeterId: 'whole_vs_reduced_fat_milk',
     alt: 'Or plain.', offered: true, swapOffer: 'Try this?', offerId: 'o1', swapTo: 'Raw milk',
     carded: true, cardSlug: 'whole_vs_reduced_fat_milk', cardSection: 'eggs_dairy',
+    pickLine: 'Old pick line.', pickId: 'pick_milk',
   });
 
   assert.equal(seeded.name, 'Whole milk');
@@ -206,6 +207,8 @@ test('a seeded row drops the trip that just ended, and keeps the groceries', () 
   // card authored for it since.
   assert.equal(seeded.carded, undefined, 'the match is re-run on the new trip');
   assert.equal(seeded.cardSlug, undefined);
+  assert.equal(seeded.pickLine, undefined, 'a pick line is a match too, and is re-run');
+  assert.equal(seeded.pickId, undefined);
 });
 
 test('a re-matched seed comes back carded, so the loop keeps up with the corpus', () => {

@@ -58,7 +58,7 @@
  */
 
 import { PICKS } from '../lib/list.js';
-import { cardForItem, entryById, matchItemToCard, STATES } from '../lib/listMatch.js';
+import { cardForItem, entryById, matchItemToCard, matchItemToPick, STATES } from '../lib/listMatch.js';
 import { sectionForCategory } from '../lib/counterCards.js';
 import { scoreEntries } from '../lib/perimeter.js';
 
@@ -126,10 +126,10 @@ const cardOwnStates = (entry) => {
  * OVERLAP and STATE, for a card that retrieval reached with no authored id.
  * Returns `{ verdict, detail }`.
  */
-function judgeRetrieved(name, slug) {
+function judgeRetrieved(name, slug, states = SHELF_STATES) {
   const entry = entryById(slug);
   const itemT = ` ${String(name).toLowerCase()} `;
-  const named = SHELF_STATES.filter((k) => STATES[k].test(itemT));
+  const named = states.filter((k) => STATES[k].test(itemT));
   if (named.length && sectionForCategory(entry?.category) === 'produce' && cardOwnStates(entry).size === 0) {
     return { verdict: 'WRONG', detail: `attached ${slug}, a produce card naming no state, to an item naming ${named.join('/')}` };
   }
@@ -202,6 +202,49 @@ if (bare.length < 20) {
   process.exit(1);
 }
 
+/* ═══ REALISTIC_26 — the plan's D4 list, verbatim, through the REAL attach order ═══
+
+   Card first, then the pick floor, on the corpus as committed (zero picks until Piece 3 lands,
+   so today `pick` is 0 everywhere and the line reads the same as the held baseline: 19/26).
+   Every row is food, so `guided/food` is guided/26.
+
+   WRONG, exits non-zero:
+     - a pick on a row a card owns (the order is cards first; a pick beside a slug is the
+       floor running before the ceiling)
+     - a pick sharing no food word with the row (that is a pick on a row that is not its
+       subject — the non-food case, judged the same way a card is)
+     - a fresh (stateless produce) pick on a canned / frozen / dried row
+   MISS only reports. */
+const REALISTIC_26 = [
+  'apples', 'bananas', 'strawberries', 'carrots', 'broccoli', 'bell peppers', 'leafy greens',
+  'spinach', 'lemons', 'garlic', 'onions', 'sweet potatoes', 'avocados', 'eggs', 'milk',
+  'greek yogurt', 'butter', 'cheddar cheese', 'chicken thighs', 'ground beef', 'salmon',
+  'brown rice', 'oats', 'olive oil', 'canned tomatoes', 'frozen peas',
+];
+const PICK_STATES = ['canned', 'frozen', 'dried'];
+const realistic = [];
+for (const name of REALISTIC_26) {
+  const card = matchItemToCard(name);
+  const pick = card ? null : matchItemToPick(name);
+  const both = card && matchItemToPick(name);
+  let verdict = 'MISS';
+  let detail = '';
+  let via = '(none)';
+  if (card) {
+    ({ verdict, detail } = judgeRetrieved(name, card.slug));
+    via = card.slug;
+    if (both) detail += ` (pick ${both.id} also matched and correctly lost)`;
+  } else if (pick) {
+    ({ verdict, detail } = judgeRetrieved(name, pick.id, PICK_STATES));
+    via = `pick:${pick.id}`;
+  }
+  realistic.push({ name, slug: via === '(none)' ? null : via, verdict, detail, pick: !!pick });
+}
+if (realistic.length !== 26) {
+  console.error(`REALISTIC_26 has ${realistic.length} rows — the population did not load`);
+  process.exit(1);
+}
+
 const by = (v) => rows.filter((r) => r.verdict === v);
 const correct = by('CORRECT');
 const wrong = by('WRONG');
@@ -250,9 +293,22 @@ console.log(`\n  BARE NOUNS ATTACHED              : ${bareAttached.length}/${bar
 console.log(`  WRONG (fails this probe)         : ${bareWrong.length}`);
 console.log(`  miss, no card (backlog)          : ${bareMiss.length}`);
 
-if (wrong.length || dropped.length || bareWrong.length) {
-  console.error(`\n${wrong.length + dropped.length + bareWrong.length} WRONG OR DROPPED — a wrong do line is worse than no do line:`);
-  for (const r of [...wrong, ...dropped, ...bareWrong]) console.error(`  ✗ ${pad(r.name, 40)} ${r.detail}`);
+const realWrong = realistic.filter((r) => r.verdict === 'WRONG');
+const realGuided = realistic.filter((r) => r.slug);
+console.log('\n═══════════ REALISTIC_26 (the plan\'s list, real attach order) ═══════════');
+for (const r of realistic) {
+  const mark = { CORRECT: ' ', WRONG: '✗', MISS: '·' }[r.verdict];
+  console.log(`  ${mark} ${pad(r.verdict, 8)} ${pad(r.name, 40)} ${pad(r.slug || '(none)', 30)} ${r.detail}`);
+}
+console.log(`\n  guided/food                      : ${realGuided.length}/${realistic.length}`);
+console.log(`  of which by a pick               : ${realistic.filter((r) => r.pick).length}`);
+console.log(`  WRONG (fails this probe)         : ${realWrong.length}`);
+console.log(`  miss, no guidance (backlog)      : ${realistic.length - realGuided.length}`);
+
+if (wrong.length || dropped.length || bareWrong.length || realWrong.length) {
+  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong];
+  console.error(`\n${all.length} WRONG OR DROPPED — a wrong do line is worse than no do line:`);
+  for (const r of all) console.error(`  ✗ ${pad(r.name, 40)} ${r.detail}`);
   process.exit(1);
 }
 console.log('\nno wrong matches');
