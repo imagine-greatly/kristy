@@ -301,13 +301,29 @@ const rowWords = (s) =>
  * untouched; this is the floor only. Numbers are ignored ("2 carrots" is carrots).
  */
 function aliasCoversRow(name, entry) {
-  const words = rowWords(name);
+  const words = rowWords(name).filter((w) => !INERT_MODIFIERS.has(w));
   if (!words.length) return false;
   return (entry.aliases || []).some((a) => {
     const has = new Set(rowWords(a));
     return words.every((w) => has.has(w));
   });
 }
+
+/**
+ * WORDS THAT QUALIFY A FOOD WITHOUT CHANGING WHAT IT IS. "organic carrots" is carrots.
+ *
+ * Explicit and widened deliberately, like IMPERATIVE_VERBS: an unknown modifier leaves the row
+ * bare, which is the safe direction (a missed pick costs one sentence; a wrong one is a claim
+ * about a different food). Never add a word that names a food or a form — oat, coconut,
+ * almond, soy, goat, chocolate, powder, bread, juice, cake, chips, tortilla — those are what
+ * the rule exists to stop. "fresh" is inert HERE because fresh-vs-frozen/canned is
+ * stateContradicts' job, which runs first and vetoes "fresh peas" against the frozen pick.
+ * Singular form (the fold runs first): "chips" would be "chip".
+ */
+export const INERT_MODIFIERS = new Set([
+  'organic', 'fresh', 'ripe', 'whole', 'large', 'small', 'medium', 'big', 'baby', 'bunch',
+  'bag', 'head', 'loose', 'local', 'red', 'green', 'yellow', 'white', 'purple', 'sweet',
+]);
 
 /**
  * The card for a whole ROW, which is not the same question as the card for a NAME.

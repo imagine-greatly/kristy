@@ -271,6 +271,17 @@ const compound = COMPOUND_ROWS.map((name) => {
   return { name, slug: got, verdict: got ? 'WRONG' : 'CORRECT', detail: got ? `attached ${got} to a compound row` : 'bare, as it should be' };
 });
 const compoundWrong = compound.filter((r) => r.verdict === 'WRONG');
+// Ordinary modified rows — a pick MUST land. A miss here is the coverage rule over-reaching.
+const MODIFIED_ROWS = [
+  'organic carrots', 'fresh basil', 'fresh cilantro', 'ripe mangoes', 'organic garlic',
+  'whole carrots', 'large cucumbers',
+];
+const modified = MODIFIED_ROWS.map((name) => {
+  const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+  const got = row.pickId || null;
+  return { name, slug: got, verdict: got ? 'CORRECT' : 'WRONG', detail: got ? `pick ${got}` : 'bare — the coverage rule ate an inert modifier' };
+});
+const modifiedWrong = modified.filter((r) => r.verdict === 'WRONG');
 
 const by = (v) => rows.filter((r) => r.verdict === v);
 const correct = by('CORRECT');
@@ -339,8 +350,15 @@ for (const r of compound) {
 }
 console.log(`\n  WRONG (fails this probe)         : ${compoundWrong.length}/${compound.length}`);
 
-if (wrong.length || dropped.length || bareWrong.length || realWrong.length || compoundWrong.length) {
-  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong, ...compoundWrong];
+console.log('\n═══════════ MODIFIED_ROWS (inert modifier + pick noun, must land) ═══════════');
+for (const r of modified) {
+  const mark = { CORRECT: ' ', WRONG: '✗' }[r.verdict];
+  console.log(`  ${mark} ${pad(r.verdict, 8)} ${pad(r.name, 40)} ${pad(r.slug || '(none)', 30)} ${r.detail}`);
+}
+console.log(`\n  WRONG (fails this probe)         : ${modifiedWrong.length}/${modified.length}`);
+
+if (wrong.length || dropped.length || bareWrong.length || realWrong.length || compoundWrong.length || modifiedWrong.length) {
+  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong, ...compoundWrong, ...modifiedWrong];
   console.error(`\n${all.length} WRONG OR DROPPED — a wrong do line is worse than no do line:`);
   for (const r of all) console.error(`  ✗ ${pad(r.name, 40)} ${r.detail}`);
   process.exit(1);

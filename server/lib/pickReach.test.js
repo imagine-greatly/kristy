@@ -51,6 +51,13 @@ const COMPOUND_ROWS = nonEmpty([
   'eggplant parm', 'broccoli slaw',
 ], 'COMPOUND_ROWS', 14);
 
+// Ordinary rows: a modifier in front of a pick's own noun that changes nothing about the food.
+// Every one went bare when the coverage rule first shipped; INERT_MODIFIERS is the fix.
+const MODIFIED_ROWS = nonEmpty([
+  'organic carrots', 'fresh basil', 'fresh cilantro', 'ripe mangoes', 'organic garlic',
+  'whole carrots', 'large cucumbers',
+], 'MODIFIED_ROWS', 7);
+
 const attach = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
 
 test('REALISTIC_26 is the list, 26 rows, no duplicates', () => {
@@ -118,4 +125,15 @@ test('a state or a count in front of a pick’s own noun still lands', () => {
 
 test('every pick in the corpus passes the lint', () => {
   for (const p of nonEmpty(pickEntries(), 'picks')) assert.deepEqual(lintCard(p), [], p.id);
+});
+
+test('an inert modifier in front of a pick’s noun still lands the pick', () => {
+  const bare = MODIFIED_ROWS.filter((name) => !attach(name).pickId);
+  assert.deepEqual(bare, [], `modified rows that went bare: ${bare.join(', ')}`);
+});
+
+test('"fresh" is inert for coverage and a state for the veto: fresh peas never gets the frozen pick', () => {
+  assert.notEqual(attach('fresh peas').pickId, 'pick_frozen_peas');
+  assert.equal(attach('whole milk').pickId, undefined, 'whole milk is a card row, not a pick');
+  assert.ok(attach('whole milk').cardSlug, 'whole milk keeps its card');
 });
