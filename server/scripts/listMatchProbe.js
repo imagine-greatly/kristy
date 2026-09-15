@@ -58,7 +58,7 @@
  */
 
 import { PICKS } from '../lib/list.js';
-import { cardForItem, entryById, matchItemToCard, matchItemToPick, STATES } from '../lib/listMatch.js';
+import { attachCards, cardForItem, entryById, matchItemToCard, matchItemToPick, STATES } from '../lib/listMatch.js';
 import { sectionForCategory } from '../lib/counterCards.js';
 import { scoreEntries } from '../lib/perimeter.js';
 
@@ -224,19 +224,31 @@ const REALISTIC_26 = [
 const PICK_STATES = ['canned', 'frozen', 'dried'];
 const realistic = [];
 for (const name of REALISTIC_26) {
-  const card = matchItemToCard(name);
-  const pick = card ? null : matchItemToPick(name);
-  const both = card && matchItemToPick(name);
+  // The REAL attach, not a re-implementation of its order: a probe that scores cards first
+  // itself would print CORRECT with the floor flipped in attachCards.
+  const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
+  const card = row.cardSlug || null;
+  const pick = row.pickId || null;
   let verdict = 'MISS';
   let detail = '';
   let via = '(none)';
-  if (card) {
-    ({ verdict, detail } = judgeRetrieved(name, card.slug));
-    via = card.slug;
-    if (both) detail += ` (pick ${both.id} also matched and correctly lost)`;
+  // Two shapes of the floor running first: the pick beside the slug, or the pick INSTEAD of
+  // the slug (an early return drops the card). Both are WRONG; only the second is what a
+  // flipped order actually produces, so a row with a pick is also checked against the card
+  // the corpus owns for it.
+  const owned = pick ? matchItemToCard(name)?.slug : null;
+  if (pick && (card || owned)) {
+    verdict = 'WRONG';
+    detail = `pick ${pick} on a row card ${card || owned} owns — the floor ran before the ceiling`;
+    via = `${card || owned}+pick:${pick}`;
+  } else if (card) {
+    ({ verdict, detail } = judgeRetrieved(name, card));
+    via = card;
+    const lost = matchItemToPick(name);
+    if (lost) detail += ` (pick ${lost.id} also matched and correctly lost)`;
   } else if (pick) {
-    ({ verdict, detail } = judgeRetrieved(name, pick.id, PICK_STATES));
-    via = `pick:${pick.id}`;
+    ({ verdict, detail } = judgeRetrieved(name, pick, PICK_STATES));
+    via = `pick:${pick}`;
   }
   realistic.push({ name, slug: via === '(none)' ? null : via, verdict, detail, pick: !!pick });
 }

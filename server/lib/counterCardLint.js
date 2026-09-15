@@ -32,6 +32,7 @@ export const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
 // in output.
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { sectionForCategory, DEPTH_FIELDS } from './counterCards.js';
+import { statesIn } from './listMatch.js';
 
 const RUBRICS = Object.values(perimeterKb.evidence_tiers || {});
 
@@ -809,6 +810,15 @@ const PLURALS_OF = (a) => [
   a.endsWith('y') ? `${a.slice(0, -1)}ies` : null,
 ].filter(Boolean);
 
+// Words that describe a food without naming one. A pick alias made only of these ("frozen",
+// "organic") is a subject-less alias: the matcher walks aliases by containment, so it would
+// attach the pick to any row carrying the word. Explicit list, widened deliberately.
+const MODIFIER_WORDS = new Set([
+  'frozen', 'canned', 'tinned', 'dried', 'dry', 'fresh',
+  'organic', 'raw', 'whole', 'wild', 'farmed', 'pasteurized', 'unpasteurized',
+]);
+const onlyModifiers = (a) => a.split(/[\s-]+/).filter(Boolean).every((w) => MODIFIER_WORDS.has(w));
+
 const hasUrl = (s) => /https?:\/\/\S+/.test(String(s || ''));
 
 /**
@@ -858,6 +868,25 @@ export function lintPick(entry) {
     fail(
       'PICK_ALIAS_NOT_BARE',
       `an alias is what a shopper types on a list — lowercase, ≤${MAX_PICK_ALIAS_WORDS} words: ${notBare.map((a) => `"${a}"`).join(', ')}`
+    );
+  }
+  // A state-bearing pick ("Frozen peas") is about the frozen thing. `stateContradicts` is
+  // silent when the ROW names no state, so a bare `peas` alias here would attach the frozen
+  // line to a fresh row. Every alias carries the state, or the pick does not ship.
+  if (title && statesIn(title).size) {
+    const stateless = aliases.filter((a) => !statesIn(a).size);
+    if (stateless.length) {
+      fail(
+        'PICK_ALIAS_DROPS_STATE',
+        `the title names a state, so every alias must too: ${stateless.map((a) => `"${a}"`).join(', ')}`
+      );
+    }
+  }
+  const subjectless = aliases.filter(onlyModifiers);
+  if (subjectless.length) {
+    fail(
+      'PICK_ALIAS_NO_SUBJECT',
+      `an alias must name a food, not only describe one: ${subjectless.map((a) => `"${a}"`).join(', ')}`
     );
   }
   const set = new Set(aliases);

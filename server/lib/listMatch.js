@@ -17,7 +17,7 @@
 // matches nothing simply gets no card, which costs one KB scan of an in-memory array and
 // zero model calls. The gate is a cost control on a path that has no cost.
 
-import { scoreEntries, scorePool, pickEntries, perimeterKb } from './perimeter.js';
+import { scoreEntries, scorePool, pickEntries, perimeterKb, isPick } from './perimeter.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
 import { logCounterGap } from './counterGaps.js';
 
@@ -189,7 +189,7 @@ export const STATES = Object.freeze({
   fresh: /\bfresh\b/,
 });
 
-function statesIn(text) {
+export function statesIn(text) {
   const t = ` ${String(text || '').toLowerCase()} `;
   const out = new Set();
   for (const [name, re] of Object.entries(STATES)) if (re.test(t)) out.add(name);
@@ -299,10 +299,14 @@ export function matchItemToPick(name, pool = perimeterKb.entries || []) {
  * card or filed to a non-aisle section falls through to retrieval rather than attaching
  * something the corpus no longer stands behind.
  */
-export function cardForItem(item) {
-  const authored = item?.perimeterId ? entryById(item.perimeterId) : null;
+export function cardForItem(item, pool) {
+  const id = item?.perimeterId;
+  // `pool` is the test seam: the real KB is a module-level map. A pick found here is a
+  // pick, not a card, and falls through like a home card does.
+  const authored = !id ? null : pool ? pool.find((e) => e.id === id) || null : entryById(id);
   if (
     authored &&
+    !isPick(authored) &&
     kindFor(authored.id) !== 'home' &&
     !NON_AISLE_SECTIONS.has(sectionForCategory(authored.category))
   ) {
@@ -346,7 +350,7 @@ export function attachCards(list, { log = true, pickPool } = {}) {
     if (it.carded || !MATCHABLE.has(it.source)) return it;
     changed = true;
 
-    const hit = cardForItem(it);
+    const hit = cardForItem(it, pickPool);
     if (!hit) {
       // Cards first, picks only where no card attached. A pick is authored guidance, so a
       // row that gets one is not a gap.

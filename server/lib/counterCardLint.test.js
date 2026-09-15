@@ -539,6 +539,21 @@ test('aliases are bare nouns, at least two, in both numbers', () => {
   assert.ok(codes(lintPick(pick({ aliases: ['leaf', 'leaves'] }))).includes('PICK_ALIASES_NO_NUMBER_PAIR'), 'not a stemmer');
 });
 
+test('a state-bearing pick carries the state on every alias, and no alias is only a modifier', () => {
+  // `stateContradicts` is silent when the ROW names no state, so a bare `peas` alias on a
+  // frozen pick would attach the frozen line to a fresh row. The lint is the structural fix.
+  const frozen = (aliases) => pick({ id: 'pick_frozen_peas', title: 'Frozen peas', aliases });
+  assert.ok(codes(lintPick(frozen(['frozen peas', 'peas']))).includes('PICK_ALIAS_DROPS_STATE'));
+  assert.ok(codes(lintPick(frozen(['peas', 'pea']))).includes('PICK_ALIAS_DROPS_STATE'));
+  assert.deepEqual(lintPick(frozen(['frozen peas', 'frozen pea'])), []);
+  // An alias made only of modifier words names no food at all.
+  assert.ok(codes(lintPick(frozen(['frozen peas', 'frozen pea', 'frozen']))).includes('PICK_ALIAS_NO_SUBJECT'));
+  assert.ok(codes(lintPick(pick({ aliases: ['rutabaga', 'rutabagas', 'organic'] }))).includes('PICK_ALIAS_NO_SUBJECT'));
+  assert.ok(codes(lintPick(pick({ aliases: ['rutabaga', 'rutabagas', 'fresh-dried'] }))).includes('PICK_ALIAS_NO_SUBJECT'), 'hyphens split');
+  // A stateless title is not held to the state rule.
+  assert.deepEqual(lintPick(pick({ aliases: ['rutabaga', 'rutabagas', 'fresh rutabaga'] })), []);
+});
+
 test('the line is one sentence, a statement, sixteen words or fewer', () => {
   assert.ok(codes(lintPick(pick({ decision: 'Choose a firm root. Skip the soft ones.' }))).includes('PICK_LINE_NOT_ONE_SENTENCE'));
   assert.ok(codes(lintPick(pick({ decision: 'Choose a firm root with smooth skin' }))).includes('PICK_LINE_NOT_ONE_SENTENCE'));

@@ -26,7 +26,7 @@ import {
 } from './listMatch.js';
 import { sanitizeList } from './cartEdit.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
-import { perimeterKb, pickEntries } from './perimeter.js';
+import { perimeterKb, pickEntries, isPick } from './perimeter.js';
 import { nonEmpty } from './testGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -455,11 +455,17 @@ const PICK_APPLES = pickFixture('pick_apples', 'Apples', ['apples', 'apple'],
   'Pick firm apples with tight skin.');
 const PICK_TOMATOES = pickFixture('pick_tomatoes', 'Tomatoes', ['tomatoes', 'tomato'],
   'Pick tomatoes heavy for their size.');
+// A frozen pick whose aliases carry the state — the shape lintPick admits. `frozen peas`
+// on a list must reach it; bare `peas` must not.
+const PICK_FROZEN_PEAS = pickFixture('pick_frozen_peas', 'Frozen peas', ['frozen peas', 'frozen pea'],
+  'Pick a bag that shakes loose, not one frozen into a block.');
+// The real KB with every pick removed, so the no-pick tests hold after Piece 3 authors picks.
+const CARDS_ONLY = nonEmpty((perimeterKb.entries || []).filter((e) => !isPick(e)), 'KB cards', 50);
 const PICK_POOL = nonEmpty(
-  [...(perimeterKb.entries || []), PICK_CARROTS, PICK_APPLES, PICK_TOMATOES],
-  'KB plus fixture picks', 4
+  [...CARDS_ONLY, PICK_CARROTS, PICK_APPLES, PICK_TOMATOES, PICK_FROZEN_PEAS],
+  'KB plus fixture picks', 5
 );
-nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 3);
+nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 4);
 
 // The fixture must be a bare noun no card owns, or the test proves precedence, not the floor.
 assert.equal(matchItemToCard('carrots'), null, 'carrots has no card today; re-pick the fixture noun');
@@ -513,7 +519,25 @@ test('the pick line survives sanitizeList, and stays additive beside the card fi
 });
 
 test('with no picks in the pool the floor is a no-op: same rows as before', () => {
-  const rows = attachCards({ items: [item('carrots')] }, { log: false }).items;
+  const rows = attachCards({ items: [item('carrots')] }, { log: false, pickPool: CARDS_ONLY }).items;
   assert.equal(rows[0].carded, true);
   assert.equal(rows[0].pickLine, undefined);
+});
+
+test('a state-bearing pick reaches its own state and never the bare row', () => {
+  assert.equal(matchItemToCard('peas'), null, 'peas has no card today; re-pick the fixture noun');
+  const [frozen, bare] = attachWithPicks('frozen peas', 'peas');
+  assert.equal(frozen.pickId, 'pick_frozen_peas');
+  assert.equal(bare.pickId, undefined);
+  assert.equal(bare.pickLine, undefined);
+});
+
+test('an authored perimeterId naming a pick falls through to retrieval, never to a slug', () => {
+  const [row] = attachCards(
+    { items: [{ ...item('carrots'), perimeterId: 'pick_carrots' }] },
+    { log: false, pickPool: PICK_POOL }
+  ).items;
+  assert.equal(row.cardSlug, undefined);
+  assert.equal(row.cardSection, undefined);
+  assert.equal(row.pickId, 'pick_carrots');
 });
