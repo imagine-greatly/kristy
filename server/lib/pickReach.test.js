@@ -21,6 +21,7 @@ import { nonEmpty } from './testGuards.js';
 
 import { attachCards, matchItemToCard } from './listMatch.js';
 import { pickEntries } from './perimeter.js';
+import { lintCard } from './counterCardLint.js';
 
 // Verbatim from the plan (D4) and from `scripts/listMatchProbe.js` REALISTIC_26. The script
 // runs at import, so it cannot export the list; a drift between the two is a test failure
@@ -37,6 +38,18 @@ const NON_FOOD = nonEmpty([
   'dish soap', 'aluminum foil', 'paper towels', 'toilet paper', 'bleach', 'dog food',
   'trash bags', 'sponges',
 ], 'NON_FOOD', 5);
+
+// Compound rows that CARRY a pick's bare noun and are a different food. Containment alone
+// attached every one of these ("oat milk" got the milk pick, whose line is about a carton
+// that may hold raw milk); the floor now requires the row's words — head noun included — to
+// all sit in one alias of the pick. Expected bare: no card, no pick. A card landing here
+// would be its own defect (the card's alias, not the floor's), and the row must stay bare
+// for this list to keep meaning what it says.
+const COMPOUND_ROWS = nonEmpty([
+  'oat milk', 'coconut milk', 'milk chocolate', 'corn tortillas', 'corn chips', 'corn flakes',
+  'garlic powder', 'garlic bread', 'lemon juice', 'juice boxes', 'carrot cake', 'basil pesto',
+  'eggplant parm', 'broccoli slaw',
+], 'COMPOUND_ROWS', 14);
 
 const attach = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
 
@@ -86,4 +99,23 @@ test('no pick alias lands on a row a card already owns', () => {
     }
   }
   assert.deepEqual(stolen, [], `pick aliases a card already owns:\n  ${stolen.join('\n  ')}`);
+});
+
+test('a compound row carrying a pick’s bare noun attaches nothing', () => {
+  const attached = COMPOUND_ROWS.filter((name) => {
+    const row = attach(name);
+    return row.cardSlug || row.pickId;
+  }).map((name) => { const r = attach(name); return `${name} → ${r.cardSlug || r.pickId}`; });
+  assert.deepEqual(attached, [], `compound rows Kristy spoke on: ${attached.join(', ')}`);
+});
+
+test('a state or a count in front of a pick’s own noun still lands', () => {
+  // The coverage rule must not eat the rows the picks were authored for.
+  for (const [name, id] of [['2 carrots', 'pick_carrots'], ['baby carrots', 'pick_carrots'], ['frozen peas', 'pick_frozen_peas']]) {
+    assert.equal(attach(name).pickId, id, name);
+  }
+});
+
+test('every pick in the corpus passes the lint', () => {
+  for (const p of nonEmpty(pickEntries(), 'picks')) assert.deepEqual(lintCard(p), [], p.id);
 });

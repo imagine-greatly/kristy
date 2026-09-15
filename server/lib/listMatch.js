@@ -275,9 +275,38 @@ export function matchItemToPick(name, pool = perimeterKb.entries || []) {
     if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
     if (stateContradicts(q, c.entry)) continue;
     if (!c.entry.decision) continue;
+    if (!aliasCoversRow(q, c.entry)) continue;
     return { id: c.entry.id, line: c.entry.decision };
   }
   return null;
+}
+
+// One trailing plural, folded so "carrot" and "carrots" are the same word. Both sides of
+// every comparison go through it, so a word it mangles ("asparagus" → "asparagu") still
+// agrees with itself.
+const singular = (w) => w.replace(/(?:[sxz]|[cs]h|o)es$/, (m) => m.slice(0, -2)).replace(/(?<=[^s])s$/, '');
+const rowWords = (s) =>
+  String(s || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/)
+    .filter((w) => w && !/^\d+$/.test(w)).map(singular);
+
+/**
+ * THE ROW'S HEAD NOUN, AND EVERY OTHER WORD ON IT, MUST BE IN ONE ALIAS OF THE PICK.
+ *
+ * Containment alone let a bare-noun alias land on any compound row that carried it: "oat
+ * milk" → the milk pick, whose line says the carton may hold raw milk; "corn tortillas" →
+ * corn; "garlic powder" → garlic; "carrot cake" → carrots. The head-noun check (the Swift
+ * fix for the one-word over-match, applied to the floor) is not enough on its own — "oat
+ * milk", "coconut milk" and "lemon juice" share their head with the alias — so the rule is
+ * the whole row: a modifier the pick's aliases never name is a different food. Cards are
+ * untouched; this is the floor only. Numbers are ignored ("2 carrots" is carrots).
+ */
+function aliasCoversRow(name, entry) {
+  const words = rowWords(name);
+  if (!words.length) return false;
+  return (entry.aliases || []).some((a) => {
+    const has = new Set(rowWords(a));
+    return words.every((w) => has.has(w));
+  });
 }
 
 /**

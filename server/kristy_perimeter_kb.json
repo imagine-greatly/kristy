@@ -4715,7 +4715,7 @@
         "garlic bulbs",
         "head of garlic"
       ],
-      "decision": "Pick firm heads, skip soft or sprouting ones, and keep garlic on the counter.",
+      "decision": "Pick firm heads and keep garlic on the counter.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -4774,15 +4774,11 @@
         "frozen green peas",
         "frozen sweet peas"
       ],
-      "decision": "Pick a bag that shakes loose; a solid frosty block has thawed and refrozen.",
+      "decision": "Pick a bag frozen solid with no drips on the pack and no off smell.",
       "sources": [
         {
-          "name": "Utah State University Extension: Freezing Basics",
-          "url": "https://extension.usu.edu/preserve-the-harvest/freezing-basics.php"
-        },
-        {
-          "name": "Nebraska Extension: Food Storage",
-          "url": "https://food.unl.edu/free-resource/food-storage/"
+          "name": "NDSU Extension: Food Freezing Guide",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/food-freezing-guide"
         }
       ]
     },
@@ -4796,15 +4792,11 @@
         "frozen broccoli florets",
         "frozen broccoli floret"
       ],
-      "decision": "Pick a bag that shakes loose; clumped ice or frost means it thawed on the way.",
+      "decision": "Pick a bag frozen solid; drips on the pack or an off smell mean it thawed.",
       "sources": [
         {
-          "name": "Utah State University Extension: Freezing Basics",
-          "url": "https://extension.usu.edu/preserve-the-harvest/freezing-basics.php"
-        },
-        {
-          "name": "Nebraska Extension: Food Storage",
-          "url": "https://food.unl.edu/free-resource/food-storage/"
+          "name": "NDSU Extension: Food Freezing Guide",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/food-freezing-guide"
         }
       ]
     },

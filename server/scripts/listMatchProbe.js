@@ -257,6 +257,21 @@ if (realistic.length !== 26) {
   process.exit(1);
 }
 
+// Compound rows that carry a pick's bare noun and are a different food. Expected BARE: a pick
+// here is the floor attaching a raw-milk line to oat milk; a card here is a card alias
+// over-reaching. Either is WRONG. Mirrored in pickReach.test.js COMPOUND_ROWS.
+const COMPOUND_ROWS = [
+  'oat milk', 'coconut milk', 'milk chocolate', 'corn tortillas', 'corn chips', 'corn flakes',
+  'garlic powder', 'garlic bread', 'lemon juice', 'juice boxes', 'carrot cake', 'basil pesto',
+  'eggplant parm', 'broccoli slaw',
+];
+const compound = COMPOUND_ROWS.map((name) => {
+  const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+  const got = row.cardSlug || row.pickId || null;
+  return { name, slug: got, verdict: got ? 'WRONG' : 'CORRECT', detail: got ? `attached ${got} to a compound row` : 'bare, as it should be' };
+});
+const compoundWrong = compound.filter((r) => r.verdict === 'WRONG');
+
 const by = (v) => rows.filter((r) => r.verdict === v);
 const correct = by('CORRECT');
 const wrong = by('WRONG');
@@ -317,8 +332,15 @@ console.log(`  of which by a pick               : ${realistic.filter((r) => r.pi
 console.log(`  WRONG (fails this probe)         : ${realWrong.length}`);
 console.log(`  miss, no guidance (backlog)      : ${realistic.length - realGuided.length}`);
 
-if (wrong.length || dropped.length || bareWrong.length || realWrong.length) {
-  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong];
+console.log('\n═══════════ COMPOUND_ROWS (carry a pick noun, expected bare) ═══════════');
+for (const r of compound) {
+  const mark = { CORRECT: ' ', WRONG: '✗' }[r.verdict];
+  console.log(`  ${mark} ${pad(r.verdict, 8)} ${pad(r.name, 40)} ${pad(r.slug || '(none)', 30)} ${r.detail}`);
+}
+console.log(`\n  WRONG (fails this probe)         : ${compoundWrong.length}/${compound.length}`);
+
+if (wrong.length || dropped.length || bareWrong.length || realWrong.length || compoundWrong.length) {
+  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong, ...compoundWrong];
   console.error(`\n${all.length} WRONG OR DROPPED — a wrong do line is worse than no do line:`);
   for (const r of all) console.error(`  ✗ ${pad(r.name, 40)} ${r.detail}`);
   process.exit(1);
