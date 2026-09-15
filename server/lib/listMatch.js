@@ -319,10 +319,17 @@ function aliasCoversRow(name, entry) {
  * the rule exists to stop. "fresh" is inert HERE because fresh-vs-frozen/canned is
  * stateContradicts' job, which runs first and vetoes "fresh peas" against the frozen pick.
  * Singular form (the fold runs first): "chips" would be "chip".
+ *
+ * "baby" and "green" were here and came out: baby corn has no husk, green garlic has no head,
+ * baby broccoli is broccolini — the pick's do line described a form the shopper was not
+ * holding. The colour words, "sweet" and "whole" are inert only while no pick exists for
+ * potatoes, onions, rice or chicken (sweet potatoes, red onions, whole chicken are different
+ * products and today resolve to cards because cards run first). WRONG_FOOD_ROWS in
+ * pickReach.test.js and the probe pin that; re-check them when a pick in those families lands.
  */
 export const INERT_MODIFIERS = new Set([
-  'organic', 'fresh', 'ripe', 'whole', 'large', 'small', 'medium', 'big', 'baby', 'bunch',
-  'bag', 'head', 'loose', 'local', 'red', 'green', 'yellow', 'white', 'purple', 'sweet',
+  'organic', 'fresh', 'ripe', 'whole', 'large', 'small', 'medium', 'big', 'bunch',
+  'bag', 'head', 'loose', 'local', 'red', 'yellow', 'white', 'purple', 'sweet',
 ]);
 
 /**

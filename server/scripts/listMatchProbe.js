@@ -282,6 +282,18 @@ const modified = MODIFIED_ROWS.map((name) => {
   return { name, slug: got, verdict: got ? 'CORRECT' : 'WRONG', detail: got ? `pick ${got}` : 'bare — the coverage rule ate an inert modifier' };
 });
 const modifiedWrong = modified.filter((r) => r.verdict === 'WRONG');
+// A modifier that makes a DIFFERENT product — a pick here is WRONG, a card is fine. Mirrored
+// in pickReach.test.js WRONG_FOOD_ROWS.
+const WRONG_FOOD_ROWS = [
+  'baby corn', 'green garlic', 'baby broccoli', 'sweet potatoes', 'green onions', 'red onions',
+  'whole chicken',
+];
+const wrongFood = WRONG_FOOD_ROWS.map((name) => {
+  const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+  const got = row.pickId || null;
+  return { name, slug: got || row.cardSlug || null, verdict: got ? 'WRONG' : 'CORRECT', detail: got ? `pick ${got} on a different product` : (row.cardSlug ? `card ${row.cardSlug}, no pick` : 'bare, no pick') };
+});
+const wrongFoodWrong = wrongFood.filter((r) => r.verdict === 'WRONG');
 
 const by = (v) => rows.filter((r) => r.verdict === v);
 const correct = by('CORRECT');
@@ -357,8 +369,15 @@ for (const r of modified) {
 }
 console.log(`\n  WRONG (fails this probe)         : ${modifiedWrong.length}/${modified.length}`);
 
-if (wrong.length || dropped.length || bareWrong.length || realWrong.length || compoundWrong.length || modifiedWrong.length) {
-  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong, ...compoundWrong, ...modifiedWrong];
+console.log('\n═══════════ WRONG_FOOD_ROWS (modifier makes a different product, never a pick) ═══════════');
+for (const r of wrongFood) {
+  const mark = { CORRECT: ' ', WRONG: '✗' }[r.verdict];
+  console.log(`  ${mark} ${pad(r.verdict, 8)} ${pad(r.name, 40)} ${pad(r.slug || '(none)', 30)} ${r.detail}`);
+}
+console.log(`\n  WRONG (fails this probe)         : ${wrongFoodWrong.length}/${wrongFood.length}`);
+
+if (wrong.length || dropped.length || bareWrong.length || realWrong.length || compoundWrong.length || modifiedWrong.length || wrongFoodWrong.length) {
+  const all = [...wrong, ...dropped, ...bareWrong, ...realWrong, ...compoundWrong, ...modifiedWrong, ...wrongFoodWrong];
   console.error(`\n${all.length} WRONG OR DROPPED — a wrong do line is worse than no do line:`);
   for (const r of all) console.error(`  ✗ ${pad(r.name, 40)} ${r.detail}`);
   process.exit(1);

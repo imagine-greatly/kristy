@@ -58,6 +58,13 @@ const MODIFIED_ROWS = nonEmpty([
   'whole carrots', 'large cucumbers',
 ], 'MODIFIED_ROWS', 7);
 
+// A modifier that makes a DIFFERENT product. A pick here describes a form the shopper is not
+// holding (baby corn has no husk; green garlic has no head). A card is fine; a pick is wrong.
+const WRONG_FOOD_ROWS = nonEmpty([
+  'baby corn', 'green garlic', 'baby broccoli', 'sweet potatoes', 'green onions', 'red onions',
+  'whole chicken',
+], 'WRONG_FOOD_ROWS', 7);
+
 const attach = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
 
 test('REALISTIC_26 is the list, 26 rows, no duplicates', () => {
@@ -130,6 +137,12 @@ test('every pick in the corpus passes the lint', () => {
 test('an inert modifier in front of a pick’s noun still lands the pick', () => {
   const bare = MODIFIED_ROWS.filter((name) => !attach(name).pickId);
   assert.deepEqual(bare, [], `modified rows that went bare: ${bare.join(', ')}`);
+});
+
+test('a modifier that names a different product never earns a pick', () => {
+  const picked = WRONG_FOOD_ROWS.filter((name) => attach(name).pickId)
+    .map((name) => `${name} → ${attach(name).pickId}`);
+  assert.deepEqual(picked, [], `wrong-food rows that got a pick: ${picked.join(', ')}`);
 });
 
 test('"fresh" is inert for coverage and a state for the veto: fresh peas never gets the frozen pick', () => {
