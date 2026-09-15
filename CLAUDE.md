@@ -1255,13 +1255,10 @@ before starting, not after.**
   by parse:**
   - **LIVE `counter_cards`: 87 rows — 84 `curated` + 3 `generated`. Re-measured by query
     2026-09-15, immediately after a migration.**
-  - **`kristy_perimeter_kb.json`: 109 entries on `main` (the held stack) — 84 cards + 25
-    `kind='pick'`; 82 on `origin/main`.** ⚠️ **PICKS ARE NEVER MIGRATED** — `listMatch.js`
-    reads them off the KB file, so a pick publishes on PUSH, not on migration.
-  - ✅ **KB AND TABLE AGREE AT 84 CURATED, 2026-09-15.** A field-by-field diff of the KB
-    projection against the live rows before the run showed exactly two cards drifted
-    (`aliases` on `organic_worth_it_by_type`, `produce_ripeness_by_item`); the migration
-    reported **0 inserted / 84 updated** and the re-diff read back **0 changed**.
+  - **`kristy_perimeter_kb.json`: 109 entries on `main` — 84 cards + 25 picks; 82 on
+    `origin/main`.** ⚠️ **PICKS NEVER MIGRATE** — `listMatch.js` reads the KB file; push publishes.
+  - ✅ **KB AND TABLE AGREE AT 84 CURATED, 2026-09-15** — diffed field-by-field before the
+    run (two cards' `aliases`), 0 inserted / 84 updated, re-diff read back 0 changed.
     ⚠️ **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to
     ship** — the 83rd card rode along five days late once. **Diff the KB against the table
     before running it**; `--dry-run` does NOT report an insert count, so it cannot answer this.
