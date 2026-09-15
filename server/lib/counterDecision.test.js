@@ -10,9 +10,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { nonEmpty } from './testGuards.js';
 
-import { perimeterKb, publicEntry, sanitizeForModel, buildAnswerInput, sectionIndex } from './perimeter.js';
+import { perimeterKb, questionEntries, publicEntry, sanitizeForModel, buildAnswerInput, sectionIndex } from './perimeter.js';
 
-const entries = nonEmpty(perimeterKb.entries || [], 'perimeterKb.entries');
+const entries = nonEmpty(questionEntries(perimeterKb.entries || []), 'questionEntries');
 
 /* ── Every topic leads with a call ─────────────────────────────────────────────── */
 

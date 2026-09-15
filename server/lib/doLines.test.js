@@ -19,6 +19,7 @@ import { dirname, join } from 'node:path';
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from './doLines.json' with { type: 'json' };
 import { parseReviewTable, RETIRED } from './counterCards.js';
+import { questionEntries } from './perimeter.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const reviewed = nonEmpty(
@@ -42,7 +43,7 @@ test('doLines.json agrees with the reviewed markdown, exactly', () => {
 test('every authored entry has a do line, and no retired one does', () => {
   // The do line is the field the card exists to carry, so a missing one is not a gap in
   // a build product — it is a card with no action on it.
-  for (const e of nonEmpty(perimeterKb.entries, 'perimeterKb.entries')) {
+  for (const e of nonEmpty(questionEntries(perimeterKb.entries), 'questionEntries')) {
     assert.ok(doLines[e.id], `${e.id} has no do line in doLines.json`);
   }
   for (const slug of nonEmpty(RETIRED, 'RETIRED')) {

@@ -6,6 +6,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   perimeterKb,
+  questionEntries,
   matchEntries,
   sanitizeForModel,
   buildAnswerInput,
@@ -329,7 +330,7 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
 
 test('every entry is a complete, sourced, tiered answer with a real checklist', () => {
   const tiers = new Set(Object.keys(perimeterKb.evidence_tiers));
-  for (const e of perimeterKb.entries) {
+  for (const e of questionEntries(perimeterKb.entries)) {
     for (const f of ['id', 'title', 'category', 'question', 'short_answer', 'detail', 'kristy_take']) {
       assert.ok(typeof e[f] === 'string' && e[f].trim(), `${e.id} is missing ${f}`);
     }

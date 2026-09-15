@@ -45,13 +45,13 @@ const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
 /* ═══════════════════ The fixture ═══════════════════ */
 
 const PICK = Object.freeze({
-  id: 'pick_kohlrabi',
+  id: 'pick_rambutan',
   kind: 'pick',
-  title: 'Kohlrabi',
+  title: 'Rambutan',
   category: 'produce',
-  aliases: ['kohlrabi', 'kohlrabis'],
+  aliases: ['rambutan', 'rambutans'],
   decision: 'Pick a bulb that feels heavy for its size with crisp leaves.',
-  sources: [{ name: 'Extension produce guide (fixture)', url: 'https://example.invalid/kohlrabi' }],
+  sources: [{ name: 'Extension produce guide (fixture)', url: 'https://example.invalid/rambutan' }],
 });
 
 // The same entry with the kind removed — a question entry in every other respect. What
@@ -61,13 +61,13 @@ const AS_CARD = (() => {
   return Object.freeze(rest);
 })();
 
-const REAL = nonEmpty(perimeterKb.entries || [], 'perimeterKb.entries');
+const REAL = nonEmpty(questionEntries(perimeterKb.entries || []), 'questionEntries');
 const WITH_PICK = [...REAL, PICK];
 const WITH_CARD = [...REAL, AS_CARD];
 
 test('the fixture food is absent from the corpus, so a hit proves injection', () => {
   const blob = JSON.stringify(REAL).toLowerCase();
-  assert.ok(!blob.includes('kohlrabi'), 'the fixture must not coincide with a real alias');
+  assert.ok(!blob.includes('rambutan'), 'the fixture must not coincide with a real alias');
   assert.equal(isPick(PICK), true);
   assert.equal(isPick(AS_CARD), false);
 });
@@ -82,17 +82,17 @@ test('questionEntries is the predicate, and it drops exactly the pick', () => {
 /* ═══════════════════ Door 1 — the ask pool ═══════════════════ */
 
 test('the ask pool never retrieves a pick, even for the pick’s own alias', () => {
-  for (const q of ['kohlrabi', 'kohlrabis', 'how do i pick kohlrabi', 'is kohlrabi fresh']) {
+  for (const q of ['rambutan', 'rambutans', 'how do i pick rambutan', 'is rambutan fresh']) {
     const scored = scoreEntries(q, 3, WITH_PICK);
     assert.ok(!scored.some((s) => isPick(s.entry)), `"${q}" retrieved a pick`);
     assert.ok(!scored.some((s) => s.entry.id === PICK.id), `"${q}" retrieved the pick by id`);
   }
   // The default pool, too — the one the routes read.
-  assert.ok(!scoreEntries('kohlrabi').some((s) => isPick(s.entry)));
+  assert.ok(!scoreEntries('rambutan').some((s) => isPick(s.entry)));
 });
 
 test('…and the twin IS retrieved, so the alias hits and only the kind excludes it', () => {
-  const top = scoreEntries('kohlrabi', 3, WITH_CARD)[0];
+  const top = scoreEntries('rambutan', 3, WITH_CARD)[0];
   assert.ok(top, 'the alias must hit when the entry is a question entry');
   assert.equal(top.entry.id, PICK.id);
   assert.ok(top.aliasScore > 0, 'on an alias, through the real gate');
@@ -104,7 +104,7 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
   // tempting alternative — taking the filter out of scoreEntries — never has a reason.
   assert.deepEqual(pickEntries(WITH_PICK).map((e) => e.id), [PICK.id]);
   assert.deepEqual(pickEntries(REAL), [], 'the corpus holds no pick yet — P3 changes this');
-  const top = scorePool('kohlrabi', pickEntries(WITH_PICK))[0];
+  const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');
   // And scoreEntries is scorePool over the question pool — one arithmetic, two pools.
@@ -221,7 +221,7 @@ test('the fixture pick passes the lint', () => {
 
 test('the lint fails the pick for each of the five defects it exists to catch', () => {
   // A question phrasing on a pick is the pick asking to be a card.
-  assert.ok(codes(lintCard({ ...PICK, asked_as: ['how do i pick kohlrabi'] })).includes('PICK_FIELD_FORBIDDEN'));
+  assert.ok(codes(lintCard({ ...PICK, asked_as: ['how do i pick rambutan'] })).includes('PICK_FIELD_FORBIDDEN'));
   // A body word. The line here is about the vegetable's core, and it is vetoed anyway: the
   // veto is vocabulary, not sense, and that cost is accepted.
   assert.ok(codes(lintCard({ ...PICK, decision: 'Pick a bulb whose heart feels firm under the thumb.' })).includes('PICK_LINE_NOT_MECHANICAL'));
@@ -232,5 +232,5 @@ test('the lint fails the pick for each of the five defects it exists to catch', 
   // A digit.
   assert.ok(codes(lintCard({ ...PICK, decision: 'Pick a bulb under 3 inches across with crisp leaves.' })).includes('PICK_LINE_DIGIT'));
   // No plural.
-  assert.ok(codes(lintCard({ ...PICK, aliases: ['kohlrabi', 'kohlrabi bulb'] })).includes('PICK_ALIASES_NO_NUMBER_PAIR'));
+  assert.ok(codes(lintCard({ ...PICK, aliases: ['rambutan', 'rambutan bulb'] })).includes('PICK_ALIASES_NO_NUMBER_PAIR'));
 });
