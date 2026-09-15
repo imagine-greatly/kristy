@@ -4642,6 +4642,503 @@
         "do strawberries have pesticides on them",
         "are organic strawberries worth it"
       ]
+    },
+    {
+      "id": "pick_carrots",
+      "kind": "pick",
+      "title": "Carrots",
+      "category": "produce",
+      "aliases": [
+        "carrots",
+        "carrot",
+        "baby carrots",
+        "carrot sticks"
+      ],
+      "decision": "Choose firm, deeply colored carrots and skip any that are soft or split.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Carrots",
+          "url": "https://food.unl.edu/article/carrots"
+        }
+      ]
+    },
+    {
+      "id": "pick_broccoli",
+      "kind": "pick",
+      "title": "Broccoli",
+      "category": "produce",
+      "aliases": [
+        "broccoli",
+        "broccoli crowns",
+        "broccoli crown",
+        "broccoli heads",
+        "broccoli head"
+      ],
+      "decision": "Pick firm, dark green heads with tight florets and pass on yellowing or damaged ones.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Broccoli",
+          "url": "https://food.unl.edu/article/broccoli"
+        }
+      ]
+    },
+    {
+      "id": "pick_bell_peppers",
+      "kind": "pick",
+      "title": "Bell peppers",
+      "category": "produce",
+      "aliases": [
+        "bell peppers",
+        "bell pepper",
+        "red bell pepper",
+        "green bell pepper",
+        "red peppers",
+        "green peppers",
+        "yellow peppers"
+      ],
+      "decision": "Pick firm, bright peppers with tight skin and skip any that are wrinkled or soft.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Bell Peppers",
+          "url": "https://food.unl.edu/article/bell-peppers"
+        }
+      ]
+    },
+    {
+      "id": "pick_garlic",
+      "kind": "pick",
+      "title": "Garlic",
+      "category": "produce",
+      "aliases": [
+        "garlic",
+        "garlic bulb",
+        "garlic bulbs",
+        "head of garlic"
+      ],
+      "decision": "Pick firm heads, skip soft or sprouting ones, and keep garlic on the counter.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Fresh Herbs",
+          "url": "https://food.unl.edu/article/fresh-herbs"
+        }
+      ]
+    },
+    {
+      "id": "pick_milk",
+      "kind": "pick",
+      "title": "Milk",
+      "category": "dairy",
+      "aliases": [
+        "milk",
+        "milks",
+        "gallon of milk",
+        "carton of milk"
+      ],
+      "decision": "Find the word pasteurized on the label; without it the carton may hold raw milk.",
+      "sources": [
+        {
+          "name": "FDA: The Dangers of Raw Milk",
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/dangers-raw-milk-unpasteurized-milk-can-pose-serious-health-risk"
+        }
+      ]
+    },
+    {
+      "id": "pick_canned_tomatoes",
+      "kind": "pick",
+      "title": "Canned tomatoes",
+      "category": "bulk_pantry",
+      "aliases": [
+        "canned tomatoes",
+        "canned tomato",
+        "tinned tomatoes",
+        "tinned tomato",
+        "canned diced tomatoes",
+        "canned crushed tomatoes"
+      ],
+      "decision": "Skip any can that is dented, rusted, or swollen; the date is a quality mark.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Food Storage",
+          "url": "https://food.unl.edu/free-resource/food-storage/"
+        }
+      ]
+    },
+    {
+      "id": "pick_frozen_peas",
+      "kind": "pick",
+      "title": "Frozen peas",
+      "category": "produce",
+      "aliases": [
+        "frozen peas",
+        "frozen pea",
+        "frozen green peas",
+        "frozen sweet peas"
+      ],
+      "decision": "Pick a bag that shakes loose; a solid frosty block has thawed and refrozen.",
+      "sources": [
+        {
+          "name": "Utah State University Extension: Freezing Basics",
+          "url": "https://extension.usu.edu/preserve-the-harvest/freezing-basics.php"
+        },
+        {
+          "name": "Nebraska Extension: Food Storage",
+          "url": "https://food.unl.edu/free-resource/food-storage/"
+        }
+      ]
+    },
+    {
+      "id": "pick_frozen_broccoli",
+      "kind": "pick",
+      "title": "Frozen broccoli",
+      "category": "produce",
+      "aliases": [
+        "frozen broccoli",
+        "frozen broccoli florets",
+        "frozen broccoli floret"
+      ],
+      "decision": "Pick a bag that shakes loose; clumped ice or frost means it thawed on the way.",
+      "sources": [
+        {
+          "name": "Utah State University Extension: Freezing Basics",
+          "url": "https://extension.usu.edu/preserve-the-harvest/freezing-basics.php"
+        },
+        {
+          "name": "Nebraska Extension: Food Storage",
+          "url": "https://food.unl.edu/free-resource/food-storage/"
+        }
+      ]
+    },
+    {
+      "id": "pick_cucumbers",
+      "kind": "pick",
+      "title": "Cucumbers",
+      "category": "produce",
+      "aliases": [
+        "cucumbers",
+        "cucumber",
+        "english cucumber",
+        "persian cucumbers",
+        "mini cucumbers"
+      ],
+      "decision": "Choose firm, dark green cucumbers and skip any with soft spots or a bulging middle.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Cucumbers",
+          "url": "https://food.unl.edu/article/cucumbers"
+        }
+      ]
+    },
+    {
+      "id": "pick_cauliflower",
+      "kind": "pick",
+      "title": "Cauliflower",
+      "category": "produce",
+      "aliases": [
+        "cauliflower",
+        "cauliflowers",
+        "cauliflower head",
+        "cauliflower heads"
+      ],
+      "decision": "Choose a bright, evenly colored head and skip any with brown spots.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Cauliflower",
+          "url": "https://food.unl.edu/article/cauliflower"
+        }
+      ]
+    },
+    {
+      "id": "pick_cabbage",
+      "kind": "pick",
+      "title": "Cabbage",
+      "category": "produce",
+      "aliases": [
+        "cabbage",
+        "cabbages",
+        "green cabbage",
+        "red cabbage",
+        "head of cabbage"
+      ],
+      "decision": "Choose a firm, glossy head whose stem end is trimmed, not dry or split.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Cabbage",
+          "url": "https://food.unl.edu/article/cabbage"
+        }
+      ]
+    },
+    {
+      "id": "pick_asparagus",
+      "kind": "pick",
+      "title": "Asparagus",
+      "category": "produce",
+      "aliases": [
+        "asparagus",
+        "asparagus spears",
+        "asparagus spear",
+        "asparagus bunch"
+      ],
+      "decision": "Choose stalks with dry, closed, compact tips and skip any that are limp.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Asparagus",
+          "url": "https://food.unl.edu/article/asparagus"
+        }
+      ]
+    },
+    {
+      "id": "pick_corn",
+      "kind": "pick",
+      "title": "Corn",
+      "category": "produce",
+      "aliases": [
+        "corn",
+        "sweet corn",
+        "ears of corn",
+        "ear of corn",
+        "corn cobs",
+        "corn cob"
+      ],
+      "decision": "Choose ears with green husks and fresh silk, and skip any that look dried out.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Sweet Corn",
+          "url": "https://food.unl.edu/article/sweet-corn"
+        }
+      ]
+    },
+    {
+      "id": "pick_eggplant",
+      "kind": "pick",
+      "title": "Eggplant",
+      "category": "produce",
+      "aliases": [
+        "eggplant",
+        "eggplants",
+        "globe eggplant",
+        "japanese eggplant"
+      ],
+      "decision": "Choose a shiny, smooth eggplant that feels heavy, with a green stem free of mold.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Eggplant",
+          "url": "https://food.unl.edu/article/eggplant"
+        }
+      ]
+    },
+    {
+      "id": "pick_beets",
+      "kind": "pick",
+      "title": "Beets",
+      "category": "produce",
+      "aliases": [
+        "beets",
+        "beet",
+        "beetroot",
+        "beetroots",
+        "red beets",
+        "golden beets"
+      ],
+      "decision": "Choose firm, smooth beets; smaller ones are more tender, and green leaves mean fresh.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Beets",
+          "url": "https://food.unl.edu/article/beets"
+        }
+      ]
+    },
+    {
+      "id": "pick_zucchini",
+      "kind": "pick",
+      "title": "Zucchini",
+      "category": "produce",
+      "aliases": [
+        "zucchini",
+        "zucchinis",
+        "summer squash",
+        "summer squashes",
+        "yellow squash"
+      ],
+      "decision": "Choose small to medium zucchini that are glossy, firm, and heavy for their size.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Summer Squash",
+          "url": "https://food.unl.edu/article/summer-squash"
+        }
+      ]
+    },
+    {
+      "id": "pick_cilantro",
+      "kind": "pick",
+      "title": "Cilantro",
+      "category": "produce",
+      "aliases": [
+        "cilantro",
+        "cilantro bunch",
+        "cilantro bunches",
+        "coriander leaves"
+      ],
+      "decision": "Choose bright, upright bunches with no yellow or brown leaves.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Fresh Herbs",
+          "url": "https://food.unl.edu/article/fresh-herbs"
+        }
+      ]
+    },
+    {
+      "id": "pick_parsley",
+      "kind": "pick",
+      "title": "Parsley",
+      "category": "produce",
+      "aliases": [
+        "parsley",
+        "parsley bunch",
+        "parsley bunches",
+        "italian parsley",
+        "flat leaf parsley"
+      ],
+      "decision": "Choose parsley that stands up, bright green with no brown spots or yellowed leaves.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Fresh Herbs",
+          "url": "https://food.unl.edu/article/fresh-herbs"
+        }
+      ]
+    },
+    {
+      "id": "pick_basil",
+      "kind": "pick",
+      "title": "Basil",
+      "category": "produce",
+      "aliases": [
+        "basil",
+        "basil bunch",
+        "basil bunches",
+        "sweet basil"
+      ],
+      "decision": "Choose basil that is bright and upright, not limp, with no brown spots.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Fresh Herbs",
+          "url": "https://food.unl.edu/article/fresh-herbs"
+        }
+      ]
+    },
+    {
+      "id": "pick_snap_peas",
+      "kind": "pick",
+      "title": "Snap peas",
+      "category": "produce",
+      "aliases": [
+        "snap peas",
+        "snap pea",
+        "sugar snap peas",
+        "sugar snap pea",
+        "snow peas",
+        "snow pea"
+      ],
+      "decision": "Choose firm, bright green pods with no blemishes.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Snap Peas",
+          "url": "https://food.unl.edu/article/snap-peas"
+        }
+      ]
+    },
+    {
+      "id": "pick_kohlrabi",
+      "kind": "pick",
+      "title": "Kohlrabi",
+      "category": "produce",
+      "aliases": [
+        "kohlrabi",
+        "kohlrabis",
+        "kohlrabi bulb",
+        "kohlrabi bulbs"
+      ],
+      "decision": "Choose firm bulbs that feel heavy with no cracks or bruises; smaller ones are more tender.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Kohlrabi",
+          "url": "https://food.unl.edu/article/kohlrabi"
+        }
+      ]
+    },
+    {
+      "id": "pick_okra",
+      "kind": "pick",
+      "title": "Okra",
+      "category": "produce",
+      "aliases": [
+        "okra",
+        "okras",
+        "okra pods",
+        "okra pod"
+      ],
+      "decision": "Choose bright green, firm pods and skip any that are limp, moldy, or dried out.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Okra",
+          "url": "https://food.unl.edu/article/okra"
+        }
+      ]
+    },
+    {
+      "id": "pick_swiss_chard",
+      "kind": "pick",
+      "title": "Swiss chard",
+      "category": "produce",
+      "aliases": [
+        "swiss chard",
+        "chard",
+        "chards",
+        "rainbow chard"
+      ],
+      "decision": "Choose dark green leaves and unsplit stalks, and skip any that are discolored.",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Swiss Chard",
+          "url": "https://food.unl.edu/article/swiss-chard"
+        }
+      ]
+    },
+    {
+      "id": "pick_mangoes",
+      "kind": "pick",
+      "title": "Mangoes",
+      "category": "produce",
+      "aliases": [
+        "mangoes",
+        "mango",
+        "mangos"
+      ],
+      "decision": "Squeeze gently and pick one that gives slightly; the red color says nothing about ripeness.",
+      "sources": [
+        {
+          "name": "National Mango Board: How to Choose a Mango",
+          "url": "https://www.mango.org/how-to-choose-a-mango/"
+        }
+      ]
+    },
+    {
+      "id": "pick_juice",
+      "kind": "pick",
+      "title": "Juice",
+      "category": "bulk_pantry",
+      "aliases": [
+        "juice",
+        "juices",
+        "orange juice",
+        "orange juices"
+      ],
+      "decision": "Most juice is pasteurized; an untreated juice in the cold case carries a warning label.",
+      "sources": [
+        {
+          "name": "FDA: What You Need to Know About Juice Safety",
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety"
+        }
+      ]
     }
   ]
 }
