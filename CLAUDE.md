@@ -991,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **720 pass, 0 fail, on `main`, measured 2026-09-16 after the Step 4 tier-note pass.** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **722 pass, 0 fail, on `main`, measured 2026-09-16 after the P2 produce-cards release (`e7da0e1`).** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
@@ -1236,13 +1236,13 @@ before starting, not after.**
   AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
   "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or
   by parse:**
-  - **LIVE `counter_cards`: 87 rows — 84 `curated` + 3 `generated`. Re-measured by query
-    2026-09-15, immediately after a migration.**
-  - **`kristy_perimeter_kb.json`: 109 entries — 84 cards + 25 picks — on `main` == `origin/main`,
-    live on Railway 2026-09-16 (84 topics fetched, pick lines attach).** ⚠️ **PICKS NEVER
+  - **LIVE `counter_cards`: 91 rows — 88 `curated` + 3 `generated`. Re-measured by the
+    migration's own read-back 2026-09-16 (4 inserted / 84 updated).**
+  - **`kristy_perimeter_kb.json`: 107 entries — 88 cards + 19 picks — on `main` == `origin/main`
+    == `origin/held` at `e7da0e1`, pushed 2026-09-16 (6 picks absorbed into 4 new produce cards).** ⚠️ **PICKS NEVER
     MIGRATE** — `listMatch.js` reads the KB file; push publishes.
-  - ✅ **KB AND TABLE AGREE AT 84 CURATED, 2026-09-15** — diffed field-by-field before the
-    run (two cards' `aliases`), 0 inserted / 84 updated, re-diff read back 0 changed.
+  - ✅ **KB AND TABLE AGREE AT 88 CURATED, 2026-09-16** — P2 migration: 4 inserted / 84
+    updated, table read back 91 rows / 91 distinct slugs.
     ⚠️ **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to
     ship** — the 83rd card rode along five days late once. **Diff the KB against the table
     before running it**; `--dry-run` does NOT report an insert count, so it cannot answer this.
