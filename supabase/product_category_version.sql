@@ -17,4 +17,4 @@
 --
 -- Applied by the owner in the Supabase SQL editor BEFORE the code that reads it deploys.
 
-alter table public.scanned_products add column if not exists category_version integer;
+alter table scanned_products add column if not exists category_version integer;
