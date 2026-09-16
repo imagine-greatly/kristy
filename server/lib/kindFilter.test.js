@@ -103,7 +103,9 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
   // with the identical alias arithmetic; this is the shape it reaches for, so that the
   // tempting alternative — taking the filter out of scoreEntries — never has a reason.
   assert.deepEqual(pickEntries(WITH_PICK).map((e) => e.id), [PICK.id]);
-  assert.equal(pickEntries(perimeterKb.entries).length, 25, 'the P3 batch: 25 picks in the raw corpus');
+  // 19 after the P2 produce-depth pass absorbed 6 picks (carrots, broccoli, onions, garlic,
+  // spinach, leafy greens) into full cards (2026-09-16).
+  assert.equal(pickEntries(perimeterKb.entries).length, 19, 'the P3 batch: 19 picks in the raw corpus');
   const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');

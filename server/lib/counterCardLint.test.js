@@ -411,8 +411,10 @@ test('all curated cards clear the per-card bar', () => {
   // `bottled_water_buying` (2026-08-09); 83 with `strawberries_organic_residue`
   // (2026-08-18), the first card that names a brand; 84 with `label_artificial_color`
   // (2026-08-25), from the EU gap scan. See RETIRED / RETIRED_GENERATED in
-  // counterCards.js and HOME_CARDS for the technique class.
-  assert.equal(CARDS.length, 84);
+  // counterCards.js and HOME_CARDS for the technique class. 88 with the P2
+  // produce-depth pass: `produce_root_vegetables`, `produce_brassicas`,
+  // `produce_onions_garlic`, `produce_leafy_greens` (2026-09-16).
+  assert.equal(CARDS.length, 88);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);
