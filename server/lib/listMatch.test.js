@@ -443,8 +443,9 @@ test('a matched card still beats the category fallback', () => {
    THE CORPUS HOLDS NO PICKS YET (they are authored in Piece 3), so the pool is injected the
    way kindFilter.test.js does it, and bound with `nonEmpty` so a fixture that stops being a
    pick fails here instead of passing vacuously. `celery` is a real bare noun no card owns
-   today (the probe lists it as a miss); `apples` is owned by `organic_worth_it_by_type`.
-   It was `carrots` until P2 gave `produce_root_vegetables` the bare alias. */
+   today (the probe lists it as a miss); `apples` is owned by `produce_apples_pears` since P3
+   (by `organic_worth_it_by_type` before that). It was `carrots` until P2 gave
+   `produce_root_vegetables` the bare alias. */
 
 const pickFixture = (id, title, aliases, decision) => ({
   id, kind: 'pick', title, category: 'produce', aliases, decision,
@@ -470,7 +471,7 @@ nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 4);
 
 // The fixture must be a bare noun no card owns, or the test proves precedence, not the floor.
 assert.equal(matchItemToCard('celery'), null, 'celery has no card today; re-pick the fixture noun');
-assert.equal(matchItemToCard('apples')?.slug, 'organic_worth_it_by_type');
+assert.equal(matchItemToCard('apples')?.slug, 'produce_apples_pears');
 
 const attachWithPicks = (...names) =>
   attachCards({ items: names.map((n) => item(n)) }, { log: false, pickPool: PICK_POOL }).items;
@@ -512,10 +513,10 @@ test('a compound row carrying a card’s bare noun attaches no card', () => {
 });
 
 test('a row a card owns keeps the card even when a pick also matches it', () => {
-  // apples matches BOTH the organic card and PICK_APPLES; the pick alone would attach.
+  // apples matches BOTH the apples/pears card and PICK_APPLES; the pick alone would attach.
   assert.equal(matchItemToPick('apples', PICK_POOL)?.id, 'pick_apples');
   const [row] = attachWithPicks('apples');
-  assert.equal(row.cardSlug, 'organic_worth_it_by_type');
+  assert.equal(row.cardSlug, 'produce_apples_pears');
   assert.equal(row.pickLine, undefined);
   assert.equal(row.pickId, undefined);
 });

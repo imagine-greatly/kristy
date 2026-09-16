@@ -124,6 +124,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_brassicas` | produce | Dark green, tight, and unbruised. Soft or slippery is spoilage. | Check for closed, dark green florets, then press the head for soft spots. | — |
 | `produce_onions_garlic` | produce | Firm and dry with papery skins, and nothing sprouting or moldy. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
 | `produce_leafy_greens` | produce | Crisp, even color, no wilt, yellowing, or decay. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
+| `produce_peppers` | produce | Firm and evenly colored, free of cracks, decay, or sunburn. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
+| `produce_apples_pears` | produce | Unbruised and undamaged. One spoiled fruit rots its neighbors faster. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
+| `produce_citrus` | produce | Firm and smooth, free of decay, drying, or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
+| `produce_stone_fruit` | produce | Unbruised and undamaged, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

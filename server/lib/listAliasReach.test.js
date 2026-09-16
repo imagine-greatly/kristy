@@ -31,23 +31,28 @@ import { nonEmpty } from './testGuards.js';
 // level so an empty table throws at import rather than passing vacuously.
 const ROWS = nonEmpty(
   [
-    ['apples', 'organic_worth_it_by_type'],
+    // P3 (2026-09-16): the plural reaches the curated apples/pears card; the bare singular
+    // still ties to the earlier organic hub. Both do lines work for an apple. Measured, not
+    // designed — see the P3 report.
+    ['apples', 'produce_apples_pears'],
     ['apple', 'organic_worth_it_by_type'],
-    ['Apples', 'organic_worth_it_by_type'],
+    ['Apples', 'produce_apples_pears'],
     ['grapes', 'organic_worth_it_by_type'],
     ['leafy greens', 'organic_worth_it_by_type'],
     ['Leafy greens', 'organic_worth_it_by_type'],
     ['kale', 'organic_worth_it_by_type'],
     ['spinach', 'organic_worth_it_by_type'],
     ['lettuce', 'organic_worth_it_by_type'],
-    ['peaches', 'produce_ripeness_by_item'],
+    // P3: stone fruit and citrus own their subjects now; `peach` singular still ties to the
+    // earlier ripeness hub, same shape as `apple` above.
+    ['peaches', 'produce_stone_fruit'],
     ['peach', 'produce_ripeness_by_item'],
-    ['nectarines', 'produce_ripeness_by_item'],
-    ['plums', 'produce_ripeness_by_item'],
-    ['lemons', 'produce_ripeness_by_item'],
-    ['limes', 'produce_ripeness_by_item'],
-    ['oranges', 'produce_ripeness_by_item'],
-    ['citrus', 'produce_ripeness_by_item'],
+    ['nectarines', 'produce_stone_fruit'],
+    ['plums', 'produce_stone_fruit'],
+    ['lemons', 'produce_citrus'],
+    ['limes', 'produce_citrus'],
+    ['oranges', 'produce_citrus'],
+    ['citrus', 'produce_citrus'],
     ['strawberries', 'strawberries_organic_residue'],
     ['strawberry', 'strawberries_organic_residue'],
   ],
