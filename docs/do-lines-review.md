@@ -48,7 +48,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `organic_worth_it_by_type` | produce | Organic on thin-skinned produce. Conventional on anything peeled. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen. Cheaper, no waste, and in season all year. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
-| `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Walk the farmers’-market table before the produce aisle. | — |
+| `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Read the farmers’ market as the signal for what is in season locally. | — |
 | `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
 | `baking_soda_soak` | produce · home | Baking soda takes the surface residue. Water mostly does not. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date — pre-cut spoils days before whole produce does. | — |
@@ -76,7 +76,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
-| `egg_shell_color` | eggs_dairy | Buy the cheaper carton. Neither shell nor yolk color reads anything. | Open the carton and check every egg for cracks before buying. | — |
+| `egg_shell_color` | eggs_dairy | Buy the cheaper carton. Neither shell nor yolk color reads anything. | Read the feed words printed on the carton. Skip the yolk photo. | — |
 | `egg_freshness` | eggs_dairy | Read the three-digit pack date, not the sell-by. | Find the three-digit number beside the plant code. Higher is fresher. | — |
 | `egg_grades_sizes` | eggs_dairy | Compare price per ounce. Grade and size say nothing about the hen. | Read the weight per dozen on the carton end: 24, 27, 30 ounces. | — |
 | `egg_feed_claims` | eggs_dairy | ‘Vegetarian-fed’ is the one to walk away from. | Check whether the carton claims outdoor access and no animal protein at once. | — |
@@ -87,7 +87,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask for the bones and trim behind the counter, usually free. | — |
 | `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
-| `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice a whole roasted turkey breast instead. | — |
+| `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
 | `fish_freshness_at_counter` | seafood | Smell it first. Clean seawater or nothing means yes. | Check it is bedded in ice, not sitting in its own liquid. | — |
 | `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
@@ -249,4 +249,21 @@ its own subject back.
 **The zero-flag state is not the end of the check.** Ruling 4 is now enforced by
 `counterCardLint.test.js` (the observable may not appear in both headline and `do_line`),
 so a future card cannot reintroduce it silently — including a card Pass 3 generates.
+
+---
+
+## 2026-09-16 — three lines narrowed to what their cards support
+
+Critic finding, 2026-09-16: the do line instructed a physical act no field of the entry
+supported (claim lock). Three narrowed:
+
+| slug | verdict | reasoning |
+| --- | --- | --- |
+| `produce_seasonality` | **NARROWED** | "Walk the farmers’-market table before the produce aisle" instructed a shopping trip the entry does not support. Narrowed to what the entry does support: reading the market as a season signal. |
+| `egg_shell_color` | **NARROWED** | "Open the carton and check every egg for cracks" is a physical act the entry never claims is diagnostic — the entry's subject is feed, not damage. Narrowed to the feed words the entry supports, with the yolk-photo miscue named directly. |
+| `deli_meat_uncured` | **NARROWED** | "a whole roasted turkey breast" named a species the entry never restricts to. Narrowed to "whole roasted meat", which the entry supports. |
+
+`washing_produce` finding **WITHDRAWN**: every clause in its do line traces to the entry —
+"scrub" and "spin" to `short_answer` ("scrub brush ... rinse and a spin") and "the firm ones"
+to `buying_tips` ("rub firm produce or use a brush"). No change made.
 
