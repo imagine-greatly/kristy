@@ -5764,7 +5764,7 @@
       "sources": [
         {
           "name": "USDA FSIS: Sausages and Food Safety",
-          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/sausages-food-safety"
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/sausages-and-food-safety"
         }
       ]
     },
@@ -5784,11 +5784,11 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Tofu is soybean curd sold by firmness; the package names it, from silken to extra firm.",
+      "decision": "Tofu is made from soybeans, sold by firmness; the package names it, silken to extra firm.",
       "sources": [
         {
-          "name": "Utah State University Extension: Tofu",
-          "url": "https://extension.usu.edu/nutrition/research/tofu"
+          "name": "Food Hero (Oregon State University Extension): All About Tofu",
+          "url": "https://foodhero.org/healthy-food/all-about-tofu-tips-select-press-marinate-and-cook-tofu"
         }
       ]
     },
@@ -5813,7 +5813,7 @@
       "sources": [
         {
           "name": "USDA FSIS: Lamb from Farm to Table",
-          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/lamb-farm-table"
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table"
         }
       ]
     },
@@ -5837,7 +5837,7 @@
       "sources": [
         {
           "name": "SNAP-Ed Seasonal Produce Guide: Celery",
-          "url": "https://snaped.fns.usda.gov/seasonal-produce-guide/celery"
+          "url": "https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/celery"
         }
       ]
     }
