@@ -250,6 +250,7 @@ export function matchItemToCard(name) {
     if (kindFor(c.entry.id) === 'home') continue;
     if (NON_AISLE_SECTIONS.has(sectionForCategory(c.entry.category))) continue;
     if (stateContradicts(q, c.entry)) continue;
+    if (!aliasNamesHead(q, c.entry)) continue;
     return {
       slug: c.entry.id,
       section: sectionForCategory(c.entry.category),
@@ -297,16 +298,46 @@ const rowWords = (s) =>
  * corn; "garlic powder" → garlic; "carrot cake" → carrots. The head-noun check (the Swift
  * fix for the one-word over-match, applied to the floor) is not enough on its own — "oat
  * milk", "coconut milk" and "lemon juice" share their head with the alias — so the rule is
- * the whole row: a modifier the pick's aliases never name is a different food. Cards are
- * untouched; this is the floor only. Numbers are ignored ("2 carrots" is carrots).
+ * the whole row: a modifier the pick's aliases never name is a different food. Cards get
+ * the head-noun half of this (`aliasNamesHead`, below, and why only half); this is the
+ * floor only. Numbers are ignored ("2 carrots" is carrots).
  */
 function aliasCoversRow(name, entry) {
-  const words = rowWords(name).filter((w) => !INERT_MODIFIERS.has(w));
+  const words = contentWords(name);
   if (!words.length) return false;
   return (entry.aliases || []).some((a) => {
     const has = new Set(rowWords(a));
     return words.every((w) => has.has(w));
   });
+}
+
+// The row's words with the inert modifiers stripped — the unit both guards read.
+const contentWords = (name) => rowWords(name).filter((w) => !INERT_MODIFIERS.has(w));
+
+/**
+ * THE CARD-PATH GUARD: THE ROW'S HEAD NOUN MUST BE IN ONE ALIAS OF THE CARD.
+ *
+ * Cards run first, so `aliasCoversRow` on the floor never saw "carrot cake" once
+ * `produce_root_vegetables` carried the bare alias "carrots": the card attached and the
+ * shopper was told how to pick a root vegetable for a cake. Porting the whole-row rule to
+ * cards was measured and rejected — card aliases are question-shaped, and multi-word rows
+ * attach on SEVERAL aliases at once ("Brown or jasmine rice", "Bone-in, skin-on chicken
+ * thighs", "cheddar cheese"); requiring every word in ONE alias cost eight correct rows
+ * and one of the 26. The head noun is the product (the Swift fix for the one-word
+ * over-match, CLAUDE.md): "carrot cake" is a cake, "garlic powder" is a powder, "broccoli
+ * slaw" is a slaw, and no produce card's aliases name any of them. A row whose head IS the
+ * card's noun — "organic carrots", "whole carrots", "2 carrots" — still lands.
+ *
+ * It is weaker than the floor's rule on purpose and only for the rows the floor's rule
+ * misfiles; a compound whose head is the card's own noun ("oat milk" against a milk card)
+ * is left to the card's aliases, as it was. Numbers and inert modifiers are ignored either
+ * side, so "carrots, organic" reads carrots.
+ */
+function aliasNamesHead(name, entry) {
+  const words = contentWords(name);
+  if (!words.length) return false;
+  const last = words[words.length - 1];
+  return (entry.aliases || []).some((a) => rowWords(a).includes(last));
 }
 
 /**

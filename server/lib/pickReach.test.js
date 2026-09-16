@@ -125,8 +125,10 @@ test('a compound row carrying a pick’s bare noun attaches nothing', () => {
 
 test('a state or a count in front of a pick’s own noun still lands', () => {
   // The coverage rule must not eat the rows the picks were authored for.
-  for (const [name, id] of [['2 carrots', 'pick_carrots'], ['baby carrots', 'pick_carrots'], ['frozen peas', 'pick_frozen_peas']]) {
-    assert.equal(attach(name).pickId, id, name);
+  assert.equal(attach('frozen peas').pickId, 'pick_frozen_peas');
+  // Carrots are a CARD now (P2, produce_root_vegetables); the same rule holds on the card path.
+  for (const name of ['2 carrots', 'baby carrots']) {
+    assert.equal(attach(name).cardSlug, 'produce_root_vegetables', name);
   }
 });
 
@@ -134,9 +136,16 @@ test('every pick in the corpus passes the lint', () => {
   for (const p of nonEmpty(pickEntries(), 'picks')) assert.deepEqual(lintCard(p), [], p.id);
 });
 
-test('an inert modifier in front of a pick’s noun still lands the pick', () => {
-  const bare = MODIFIED_ROWS.filter((name) => !attach(name).pickId);
+test('an inert modifier in front of a pick’s or card’s noun still lands it', () => {
+  const bare = MODIFIED_ROWS.filter((name) => { const r = attach(name); return !r.pickId && !r.cardSlug; });
   assert.deepEqual(bare, [], `modified rows that went bare: ${bare.join(', ')}`);
+  // The card-owned ones land the card, not nothing and not a pick.
+  for (const [name, slug] of [
+    ['organic carrots', 'produce_root_vegetables'], ['whole carrots', 'produce_root_vegetables'],
+    ['organic garlic', 'produce_onions_garlic'],
+  ]) {
+    assert.equal(attach(name).cardSlug, slug, name);
+  }
 });
 
 test('a modifier that names a different product never earns a pick', () => {
