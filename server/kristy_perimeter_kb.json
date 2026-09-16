@@ -2460,7 +2460,7 @@
       ],
       "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
       "buying_tips": [
-        "Not slimy, and no off smell. Either one is a pass.",
+        "Not slimy, and no off smell. Both, not either.",
         "Fine marbling through the muscle beats a thick fat cap on the outside.",
         "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
         "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
@@ -5761,7 +5761,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Sausage is a seasoned grind; the ingredient list says what went in beyond the meat.",
+      "decision": "Sausage is a seasoned grind; the ingredient list must name any curing agents beyond the meat.",
       "sources": [
         {
           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
