@@ -991,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **724 pass, 0 fail, on `main`, measured 2026-09-16 after the meat-narrowing + aliasNamesHead qualifier fix (`9a4a7c4`).** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-09-16 after the category cache-hit fix (`3e3cdc6`).** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
@@ -1085,34 +1085,22 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
   it zero; what changed is that the seal is withheld and the withheld read prints. **The misread is
   contained at the seal, not fixed at the read.** ⏳ Open as a QUESTION: what should a thin or
   non-ingredient list produce? **Nothing is proposed, deliberately.**
-- 🐞 ⚠️ **THE CATEGORY UPGRADE CANNOT REACH A ROW ALREADY IN `scanned_products`.** A cache hit
-  returns early in `scanExtract.js` with the row's **stored** category and never re-fetches OFF, so
-  `categoryFromAisle` never runs again; the upgrade branch written for exactly this lives on the
-  **retain** path, which the cache hit bypasses.
-  ⚠️ **THE ORDERING CONSTRAINT, AND IT IS THE WHOLE FIX: THE RE-READ MUST ROUTE THROUGH
-  `retainProduct`, NOT MERELY RE-FETCH.** A version stamp that decides "re-fetch this row" and uses
-  the answer in memory fixes one response and never the row. ⚠️ **IT WOULD SHIP AS DECORATION AND
-  EVERY CHECK ON IT WOULD PASS**, because the response carries the right category and that is all an
-  end-to-end assertion looks at — the row is the subject and nothing reads it back. **The cache-hit
-  branch has to fall through to the fetch-and-retain path.**
-  ✅ **APPROVED AS DESIGNED; its prerequisite (the migration) is applied. Still not written: it
-  touches the store's READ path, which is separately scoped server work and needs its own prompt.**
-  The approved shape, recorded so it is not re-derived — full reasoning in `docs/OPEN-ITEMS.md`:
-  - **A VERSION STAMP, NOT A TTL AND NOT "IS THE CATEGORY `other`".**
-  - ⚠️ **THE BUMP RULE IS AN ASYMMETRY AND IT IS THE PART THAT IS EASY TO GET BACKWARDS. Bump on
-    `other`. Bump on not-found. DO NOT bump on a network failure.** Stamping a timeout records
-    "we checked" for a check that never happened, retiring the row from re-checking forever.
-  - ⚠️ **THE FAILURE DIRECTION IS SAFE ONLY WHILE THE ROW STAYS STALE.** **The safe direction
-    belongs to the bug, not to the fix.**
-  - ✅ **It is still safe to land first, measured** — the document half catches Sidi Ali.
+- ✅ **CLOSED 2026-09-16 — `95dbe78`..`3e3cdc6`.** A stale row now falls through to a real re-read
+  routed through `retainProduct`, so the ROW is rewritten, not just the response. **The rule it
+  leaves: stamp on an OK OFF answer — including `other` and not-found — never on a network
+  failure or non-2xx; the re-read routes through `retainProduct` so the row moves, and the tests
+  read the row back.** ⚠️ **`supabase/product_category_version.sql` must be applied before `main`
+  is pushed** — the retain insert/update writes the column unconditionally. Pointer:
+  `docs/OPEN-ITEMS.md`.
 - ✅ **PART 3 — THE CATEGORY EXEMPTION — SHIPPED.** `FOOD_CATEGORIES = new Set(['water'])`, read by
   `nothingConfirmsFood`, on `origin/main` inside `22b35a8`; pinned in `foodPredicate.test.js`.
   ⚠️ **COMPUTE IT, DO NOT READ IT:**
   `git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '`.
   Two rules it leaves live:
   ⚠️ **WHAT IS STILL HELD IS ONLY ITS REACH** — no production row is exempt today, because the
-  waters still read `category: other` (the cache finding above). The exemption is **live and
-  unreachable**; the cache fix turns it on and nothing has to be decided first.
+  waters still read `category: other` (the cache finding above). The exemption is **now
+  reachable**: the category cache-hit fix (`95dbe78`..`3e3cdc6`) re-reads and stamps the row once
+  the migration is applied.
   ⚠️ **THE PATTERN IS THE PLURAL `waters`, NOT THE BARE WORD.** Matching is `includes`, so bare
   `water` also eats `watermelons`, `water chestnuts` and `water biscuits`. **Part 3 lets a category
   past a fail-closed gate, so a watermelon in `water` is a wrong approval.** Asserted in
@@ -1230,8 +1218,10 @@ before starting, not after.**
   keys are **empty strings**. **So anything whose behaviour depends on a model call cannot be verified
   locally** — prompt changes are testable only by asserting on the prompt text, plus the real endpoint
   on production. **"The wall is down" is true of the DB and only the DB.**
-- ⚠️ **One migration outstanding: `push_tokens`** (`supabase/push_tokens.sql`), deferred with Expo
-  push. Code degrades gracefully without it. Everything else is applied — `docs/SCHEMA-AUDIT.md`.
+- ⚠️ **Two migrations outstanding.** `push_tokens` (`supabase/push_tokens.sql`), deferred with Expo
+  push — code degrades gracefully without it. `supabase/product_category_version.sql` (the
+  category stamp column) — **code hard-fails the retain path without it; apply before pushing
+  `main`.** Everything else is applied — `docs/SCHEMA-AUDIT.md`.
 - ⚠️ **THE CORPUS COUNT LIVES HERE AND NOWHERE ELSE, AND A GENERATED ROW IS WRITTEN BY THE PIPELINE
   AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.** This line said
   "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or

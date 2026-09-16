@@ -964,6 +964,31 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
     other item in this section.** It becomes real when a catalog exists — i.e. when there are
     shoppers — and it should land then, not days before a submission, since it restructures the
     scan front door's control flow and turns on a fail-closed exemption.
+  - ✅ **CLOSED 2026-09-16 — `95dbe78`..`3e3cdc6`.** The version stamp shipped (migration
+    `supabase/product_category_version.sql`, constant `CATEGORY_VERSION` in
+    `server/lib/productCategory.js`); a `scanned_products` row whose `category_version !==
+    CATEGORY_VERSION` no longer returns early in `scanExtract.js` — it re-reads OFF and routes
+    through `retainProduct`, so the ROW is rewritten, not just the response served to that
+    request. Six tests in `server/lib/productStoreLoop.test.js`, each reading the row back from
+    `fakeStore` rather than asserting on the response: stale row + OFF returns water → row
+    stamped water v1; OFF fetch throws → version stays `null` (unstamped); OFF status 0 (not
+    found) → v1, category left unchanged; row already at current version → zero fetches made; OFF
+    returns a 503 with a JSON body → version stays `null` — **the critic's finding**, that a
+    non-2xx HTTP status with a parseable body is not a check that happened, so `r.ok` must gate
+    the stamp and not just a successful `.json()` parse ("a 503 is not a check"); a no-English
+    ingredient text with `en:waters` present → `markCategoryChecked` carries OFF's own category
+    through the language-guard edge, row stamped water v1. Stamp rule, unchanged from the
+    approved shape and now enforced: bump on any OK OFF reply, including one resolving to
+    `other` or not-found; never bump on a fetch throw or a non-2xx HTTP response.
+    ⚠️ **PREREQUISITE, NOT YET DONE:** `supabase/product_category_version.sql` must be applied in
+    the Supabase SQL editor before `main` is pushed — `retainProduct`'s insert/update now writes
+    `category_version` unconditionally, so an unmigrated column hard-fails every retain, not just
+    the category-stamp path. Suite measured 730/0 on `main` after `3e3cdc6`; not pushed, not
+    migrated.
+    ⚠️ **FLAGGED, NOT FIXED:** `markCategoryChecked` writes `category` on the no-English edge but
+    not `category_raw` (the two are meant to travel together — `categoryFields` is the helper
+    that returns both). Cheap to close but out of scope for this pass; the omission is silent
+    because nothing reads `category_raw` off that particular edge today.
 - ✅ **PART 3 — THE CATEGORY EXEMPTION — SHIPPED.** `FOOD_CATEGORIES = new Set(['water'])`, read by
   `nothingConfirmsFood`, on `origin/main` inside `22b35a8`. ⚠️ **COMPUTE IT, DO NOT READ IT:**
   `git show origin/main:server/lib/verdictEngine.js | grep -n 'FOOD_CATEGORIES = '`. Pinned in
