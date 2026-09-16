@@ -275,6 +275,11 @@ const compoundWrong = compound.filter((r) => r.verdict === 'WRONG');
 const MODIFIED_ROWS = [
   'organic carrots', 'fresh basil', 'fresh cilantro', 'ripe mangoes', 'organic garlic',
   'whole carrots', 'large cucumbers',
+  // P4 — the six WALK-2026-09-10 staple misses, in list wording. Deli turkey lands the
+  // deli card; rotisserie chicken lands air_chilled_chicken through its bare `chicken`
+  // alias (the card path owns every `… chicken` row, so it cannot be a pick — pickReach
+  // fails one that tries); the other four land picks.
+  'Rotisserie chicken', 'Deli turkey', 'Firm tofu', 'Lamb chops', 'Celery', 'Italian sausage',
 ];
 const modified = MODIFIED_ROWS.map((name) => {
   const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
@@ -285,6 +290,7 @@ const modifiedWrong = modified.filter((r) => r.verdict === 'WRONG');
 // A modifier that makes a DIFFERENT product — a pick here is WRONG, a card is fine. Mirrored
 // in pickReach.test.js WRONG_FOOD_ROWS.
 const WRONG_FOOD_ROWS = [
+  // `sweet potatoes` lands produce_root_vegetables (a card) since P2 — a card here is fine.
   'baby corn', 'green garlic', 'baby broccoli', 'sweet potatoes', 'green onions', 'red onions',
   'whole chicken',
 ];

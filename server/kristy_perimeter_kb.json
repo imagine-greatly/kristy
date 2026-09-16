@@ -2696,7 +2696,13 @@
         "no nitrates added",
         "nitrite free",
         "lunch meat",
-        "deli counter"
+        "deli counter",
+        "deli turkey",
+        "sliced turkey",
+        "turkey slices",
+        "turkey cold cuts",
+        "cold cuts",
+        "is deli turkey cured"
       ],
       "category": "deli",
       "question": "Is ‘uncured’ deli meat actually nitrite-free?",
@@ -2730,7 +2736,8 @@
       "asked_as": [
         "is uncured deli meat nitrite free",
         "what does uncured mean",
-        "is deli meat cured with celery"
+        "is deli meat cured with celery",
+        "is deli turkey cured"
       ]
     },
     {
@@ -5731,6 +5738,106 @@
         {
           "name": "FDA: What You Need to Know About Juice Safety",
           "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety"
+        }
+      ]
+    },
+    {
+      "id": "pick_sausage",
+      "kind": "pick",
+      "title": "Sausage",
+      "category": "pork",
+      "aliases": [
+        "sausage",
+        "sausages",
+        "italian sausage",
+        "italian sausages",
+        "pork sausage",
+        "pork sausages",
+        "breakfast sausage",
+        "breakfast sausages",
+        "chicken sausage",
+        "chicken sausages",
+        "bratwurst",
+        "bratwursts"
+      ],
+      "decision": "Sausage is a seasoned grind; the ingredient list says what went in beyond the meat.",
+      "sources": [
+        {
+          "name": "USDA FSIS: Sausages and Food Safety",
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/sausages-food-safety"
+        }
+      ]
+    },
+    {
+      "id": "pick_tofu",
+      "kind": "pick",
+      "title": "Tofu",
+      "category": "produce",
+      "aliases": [
+        "tofu",
+        "firm tofu",
+        "extra firm tofu",
+        "silken tofu",
+        "soft tofu",
+        "tofu block",
+        "tofu blocks",
+        "block of tofu",
+        "blocks of tofu"
+      ],
+      "decision": "Tofu is soybean curd sold by firmness; the package names it, from silken to extra firm.",
+      "sources": [
+        {
+          "name": "Utah State University Extension: Tofu",
+          "url": "https://extension.usu.edu/nutrition/research/tofu"
+        }
+      ]
+    },
+    {
+      "id": "pick_lamb",
+      "kind": "pick",
+      "title": "Lamb",
+      "category": "meat_counter",
+      "aliases": [
+        "lamb",
+        "lamb chop",
+        "lamb chops",
+        "leg of lamb",
+        "legs of lamb",
+        "ground lamb",
+        "lamb shoulder",
+        "lamb shoulders",
+        "rack of lamb",
+        "racks of lamb"
+      ],
+      "decision": "Lamb reads like beef at the case: firm and springy, a dry tray, no sour smell.",
+      "sources": [
+        {
+          "name": "USDA FSIS: Lamb from Farm to Table",
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/lamb-farm-table"
+        }
+      ]
+    },
+    {
+      "id": "pick_celery",
+      "kind": "pick",
+      "title": "Celery",
+      "category": "produce",
+      "aliases": [
+        "celery",
+        "celery stalk",
+        "celery stalks",
+        "celery heart",
+        "celery hearts",
+        "celery stick",
+        "celery sticks",
+        "bunch of celery",
+        "bunches of celery"
+      ],
+      "decision": "Pick celery with tight, crisp stalks; limp stalks have lost their water.",
+      "sources": [
+        {
+          "name": "SNAP-Ed Seasonal Produce Guide: Celery",
+          "url": "https://snaped.fns.usda.gov/seasonal-produce-guide/celery"
         }
       ]
     }
