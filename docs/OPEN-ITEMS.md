@@ -1141,6 +1141,17 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 - 📋 **THE FULL QUEUE, IN ORDER, LIVES IN `docs/PASS3-HANDOFF.md` §14**, with §13 holding that
   session's findings in full.
 
+🐞 **FOUR DO LINES OUTRUN THEIR CARD'S DEPTH, found by the critic 2026-09-16.** `egg_shell_color`'s
+do line instructs on cracks; nothing in the entry's fields says anything about a cracked shell.
+`deli_meat_uncured`'s do line swaps in a whole roasted turkey breast; the entry never mentions one.
+`produce_seasonality`'s do line points a shopper at a farmers'-market table; no field names a
+farmers' market. `washing_produce`'s do line instructs brush-and-spin; the entry says nothing about
+either technique. Each is a claim the shopper-facing do line makes that the sourced entry behind it
+does not support — the same shape the claim lock exists to catch, just on the do line rather than
+the `why`/`kristy_note` fields it currently guards. Fix: add the missing fact to the entry first, or
+narrow the do line in `docs/do-lines-review.md`, then regenerate with `scripts/buildDoLines.js` and
+commit both. Separately proposed server work.
+
 ### Infrastructure state
 
 **Measured state and its evidence: `docs/OPEN-ITEMS.md`. The rules it imposes:**

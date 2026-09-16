@@ -991,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **717 pass, 0 fail, on `main` == `origin/main`, measured 2026-09-16 just before the stack released.** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **720 pass, 0 fail, on `main`, measured 2026-09-16 after the Step 4 tier-note pass.** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
@@ -1020,6 +1020,10 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 - **A TIER NOTE MAY NOT POINT AT THE TIER.** `lintCard` fires `TIER_NOTE_SELF_REFERENCE` on
   `this tier` / `the tier`, and `paidBoundary.test.js` fails if **any two cards share a tier
   sentence** — a sentence on four cards is the rubric wearing a costume.
+- **A TIER NOTE COMMENTS ON THE DO LINE A SHOPPER SEES, NOT THE KB `decision`.** `lintCard` fires
+  `TIER_NOTE_ORPHANED` when a note shares vocabulary with the old decision and none with the
+  `doLines.json` line; 25 of 84 had drifted this way and were rewritten 2026-09-16. **The rule is
+  blind to a note that matches neither** — that is a known gap, not a bug.
 - **A fold is a removal AND a delete, in one operation.** The migration upserts and never removes, so
   retirement must be declared in `RETIRED`. **Move the folded card's aliases onto its absorber and
   repoint any section `shortcut`, or the fold is a coverage regression wearing a tidy diff.**
@@ -1153,6 +1157,12 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
 **Each item below is a POINTER PLUS ITS ONE TRAP. The reasoning is in the named doc — read it
 before starting, not after.**
 
+- 🐞 **FOUR DO LINES OUTRUN THEIR CARD'S DEPTH (critic, 2026-09-16): `egg_shell_color` (cracks),
+  `deli_meat_uncured` (whole roasted turkey breast), `produce_seasonality` (farmers'-market
+  table), `washing_produce` (brush / spin).** Each instructs something no field of its entry
+  supports — a claim-lock finding on the do line, which is the sentence a shopper reads. **Fix is
+  in the authored table `docs/do-lines-review.md`, then `scripts/buildDoLines.js`, then commit
+  both** — or add the fact to the entry first. Separately proposed server work.
 - ⏳ ⚠️ **NOTHING REPORTS A COMPLETED-TRIP COUNT, SO A SIGNED-IN SHOPPER'S METER IS THE DEVICE'S —
   AND A DEVICE METER IS RESETTABLE BY REINSTALL.** The fix is **`completedTrips` on the response of
   `GET /api/trips/seedable`** — `select count(*) where status='completed'`, not stored, one field on
