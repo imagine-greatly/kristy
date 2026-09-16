@@ -412,17 +412,21 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   // ⚠️ THE STAMP IS AN ASYMMETRY. Stamp when OFF ANSWERED and had nothing better (not found,
   // wrong product, unreadable text). Never stamp when OFF did not answer — a stamped timeout
   // records "we checked" for a check that never happened and retires the row for good.
-  const storeHitChecked = async () => {
-    await markCategoryChecked(code, client ? { client } : undefined);
+  // `category` is OFF's answer when it had the product but no English text: the aisle is
+  // still real, so it rides with the stamp instead of being dropped on the way out.
+  const storeHitChecked = async (category = null) => {
+    await markCategoryChecked(code, { ...(client ? { client } : {}), category });
     return storeHit;
   };
   const miss = () => ({ found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' });
 
   let data;
+  let ok = false;
   try {
     const r = await fetch(`${OFF_BASE}/${encodeURIComponent(code)}.json?fields=${OFF_FIELDS}`, {
       headers: UA,
     });
+    ok = r.ok === true;
     data = await r.json();
   } catch {
     // Network/parse failure against OFF — treat as "not found" so the client can
@@ -430,6 +434,10 @@ export async function extractFromBarcode(barcode, { client } = {}) {
     // hit is still the answer, unstamped, so the next scan re-reads.
     return storeHit || miss();
   }
+
+  // ⚠️ "ANSWERED" MEANS `r.ok`, NOT "THE BODY PARSED". A 503/429 carries a JSON body that
+  // parses fine and lacks `status: 1`, and stamping on that retires the row on an outage.
+  if (!ok) return storeHit || miss();
 
   if (data.status !== 1 || !data.product) {
     return storeHit ? storeHitChecked() : miss();
@@ -472,8 +480,7 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   //     it. Same outcome as 1b below, because it is the same situation — two answers on file
   //     — and the shopper is holding the package, so their photo settles it.
   if (languageConflict(p)) {
-    // ponytail: category not carried on this edge; add if a real row lands here
-    if (storeHit) return storeHitChecked();
+    if (storeHit) return storeHitChecked(nutrition.category);
     recordConflict({
       barcode: code,
       name: product.name,
@@ -512,8 +519,7 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   if (text && isReadableIngredientList(text) && imported && isReadableIngredientList(imported)) {
     const { agree, tiers } = sameVerdict(text, imported);
     if (!agree) {
-      // ponytail: category not carried on this edge; add if a real row lands here
-      if (storeHit) return storeHitChecked();
+      if (storeHit) return storeHitChecked(nutrition.category);
       // Logged, never surfaced, and holding no identity — the sample has to grow on
       // real scans before the rule ("prefer the import") can be judged on more than
       // twenty products.
@@ -591,7 +597,6 @@ export async function extractFromBarcode(barcode, { client } = {}) {
 
   // 3. Known product, but nothing readable in English → NO ingredients, NO stamp.
   //    The client auto-pivots to the photograph-the-label path.
-  // ponytail: category not carried on this edge; add if a real row lands here
-  if (storeHit) return storeHitChecked();
+  if (storeHit) return storeHitChecked(nutrition.category);
   return { found: false, source: 'none', product, ingredients: '', nutrition };
 }

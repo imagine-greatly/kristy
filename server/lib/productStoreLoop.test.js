@@ -376,6 +376,8 @@ async function withFetch(impl, run) {
 }
 
 const offOk = (product, code = STALE_WATER.barcode) => () => ({
+  ok: true,
+  status: 200,
   json: async () => ({ status: 1, code, product }),
 });
 
@@ -413,7 +415,7 @@ test('a fetch that throws stamps NOTHING — the row stays stale and is served a
 test('OFF not-found stamps the row so it is not re-read every scan; category unchanged', async () => {
   const { client, rows } = fakeStore([STALE_WATER]);
   const res = await withFetch(
-    () => ({ json: async () => ({ status: 0 }) }),
+    () => ({ ok: true, status: 200, json: async () => ({ status: 0 }) }),
     () => extractFromBarcode(STALE_WATER.barcode, { client }),
   );
 
@@ -421,6 +423,37 @@ test('OFF not-found stamps the row so it is not re-read every scan; category unc
   assert.equal(rows[0].category, 'other');
   assert.equal(res.source, 'store');
   assert.equal(res.found, true);
+});
+
+test('a non-OK OFF reply with a JSON body stamps NOTHING — an outage is not a check', async () => {
+  // 503/429 from OFF carry a JSON body that parses and lacks `status: 1`. Keyed on "parsed"
+  // that would read as not-found and retire the row for good; keyed on `r.ok` it is a
+  // network failure with extra steps.
+  const { client, rows } = fakeStore([STALE_WATER]);
+  const res = await withFetch(
+    () => ({ ok: false, status: 503, json: async () => ({}) }),
+    () => extractFromBarcode(STALE_WATER.barcode, { client }),
+  );
+
+  assert.equal(rows[0].category_version, null, 'a 503 is not a check');
+  assert.equal(rows[0].category, 'other');
+  assert.equal(res.found, true);
+  assert.equal(res.source, 'store', 'the store hit is still the answer');
+});
+
+test('OFF has the product but no English text: stamped AND the aisle it did have lands', async () => {
+  const { client, rows } = fakeStore([{ ...STALE_WATER, source: 'vision' }]);
+  const product = {
+    product_name: 'Eau de source',
+    categories_tags: ['en:beverages', 'en:waters'],
+    ingredients_text_fr: 'Eau de source',
+    ingredients_lc: 'fr',
+  };
+  const res = await withFetch(offOk(product), () => extractFromBarcode(STALE_WATER.barcode, { client }));
+
+  assert.equal(rows[0].category, 'water', 'the category OFF computed is not dropped on the no-English edge');
+  assert.equal(rows[0].category_version, CATEGORY_VERSION);
+  assert.equal(res.source, 'store', 'the store row still answers — OFF gave no readable text');
 });
 
 test('a row already at the current version never touches the network', async () => {

@@ -107,7 +107,8 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
         .maybeSingle());
       if (!error) {
         console.warn(
-          '[kristy] scanned_products.nutrition_panel is missing — apply supabase/product_category.sql. ' +
+          '[kristy] scanned_products.nutrition_panel is missing — apply supabase/product_category.sql ' +
+            'and supabase/product_category_version.sql. ' +
             'Cached products cannot withhold the seal until it exists.',
         );
       }
@@ -316,14 +317,15 @@ export async function retainProduct({
  * ⚠️ NEVER CALLED ON A NETWORK FAILURE — that asymmetry is the caller's to keep: a stamped
  * timeout is "we checked" for a check that never happened. Never throws.
  */
-export async function markCategoryChecked(barcode, { client = supabase } = {}) {
+export async function markCategoryChecked(barcode, { client = supabase, category = null } = {}) {
   const code = str(barcode);
   if (!code) return;
   try {
-    const { error } = await client
-      .from(TABLE)
-      .update({ category_version: CATEGORY_VERSION })
-      .eq('barcode', code);
+    const patch = { category_version: CATEGORY_VERSION };
+    // OFF had the product (so its aisle is real) but nothing readable — the category still
+    // lands. Same guard as the retain update branch: `other` never overwrites a value.
+    if (category && category !== 'other') patch.category = category;
+    const { error } = await client.from(TABLE).update(patch).eq('barcode', code);
     if (error) throw new Error(error.message);
   } catch (err) {
     console.warn('[kristy] category stamp skipped:', err?.message || err);
