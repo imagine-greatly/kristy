@@ -985,6 +985,18 @@ evidence and the reasoning behind each are in `docs/OPEN-ITEMS.md`.**
 
 ### Held deliberately — do not "discover" these and land them
 
+- ✅ **RELEASED 2026-09-16.** The owner delegated Step 3's P6 (`kristy-ios/docs/PLAN-step3-picklines.md`)
+  and the whole stack went to `origin/main` as `293a63f..51cdcbf`. Gates before the push: server
+  suite 717/0 on `main`, `listMatchProbe` exit 0, `commitGuard` clean, the three public pages
+  comment-stripped and md5-identical to `origin/main`. After: Railway `/api/perimeter` 82 → 84
+  topics with 0 picks in the browse, the production attach guiding `REALISTIC_26` at **26/26**
+  (19 cards + 7 picks), `kristyapproved.com` serving all three pages byte-identical to
+  `client/public/`. Cherry-picking P1+P2 past the hold was tried first on a scratch branch: the
+  KB hunk was one alias conflict, but `docs/OPEN-ITEMS.md` and every doc-touching commit
+  conflicted as modify/delete because `origin/main` never had those files — the pick would have
+  shipped code whose docs contradicted it. The import route deploys dormant; nothing can call it.
+  **The entry below is the hold as it stood, kept for its rules.**
+
 - ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE. What is held is the IMPORT ROUTE.** Nothing can
   reach `POST /api/trips/import` (`requireAuth`, and no rail has ever produced an account), and
   pushing this repo deploys. **Full reasoning: `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 — one

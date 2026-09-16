@@ -53,9 +53,10 @@ A bad approval costs a revert; a dropped session with uncommitted work costs the
 ### ⚠️ THE PUSH STEP IS THE ONE STEP THIS REPO CANNOT TAKE ON REFLEX
 
 **`main` here is production and pushing publishes, in about a minute** — Vercel for the client,
-Railway for the server, no staging gate. And `main` currently carries **deliberately unpushed
-commits** (see **Open items**). So in this repo `git push` is a *publish*, and pushing "to be
-safe" ships a feature that is being held on purpose, along with whatever else is ahead.
+Railway for the server, no staging gate. ✅ **The held stack was RELEASED 2026-09-16** (`main` ==
+`origin/main` == `origin/held`); nothing is held today, but the shape recurs — see **Held
+deliberately**. So in this repo `git push` is a *publish*, and pushing "to be safe" ships whatever
+is ahead, held on purpose or not.
 
 **Commit always — that is what a dropped session threatens. Push to `main` only when the turn's
 work is meant to go live**, and never merely to satisfy the rule above. When work is committed
@@ -174,9 +175,9 @@ what was half-built says nothing about whether it should be finished, and this r
 is full of the resumed session confidently rewriting something that was already done.
 
 ⚠️ **"Push anything outstanding" MEANS `kristy-ios` AND `main:held` — NOT `kristy` `main`.**
-Pushing this repo's `main` publishes to production in about a minute and the stack carries
-deliberately held commits. The reflex this block installs is the exact reflex the section above
-forbids. Commit everything, always; push `kristy-ios`, push `main:held`, and leave `main` alone
+Pushing this repo's `main` publishes to production in about a minute, and whenever a stack is
+held it carries the held commits. The reflex this block installs is the exact reflex the section
+above forbids. Commit everything, always; push `kristy-ios`, push `main:held`, and leave `main` alone
 unless the turn's work is meant to go live.
 
 📎 **A twin of this block lives in `kristy-ios/CLAUDE.md`** — a session starting in either repo
@@ -235,8 +236,8 @@ may not change as a side effect of iOS work.**
   with its evidence, and waits.
 
 **Why a rule and not a preference:** `main` here **auto-deploys to production** with no staging
-gate, and it carries **deliberately unpushed commits** — so a server change made during iOS work
-publishes unreviewed, on push, because it looked small.
+gate — so a server change made during iOS work publishes unreviewed, on push, because it looked
+small.
 
 ⚠️ **THE THIRD REASON USED TO BE "NODE IS NOT INSTALLED ON THIS MACHINE" AND IT IS NO LONGER
 TRUE.** Node is installed and the full server suite runs here. **The rule is unchanged and the
@@ -771,21 +772,12 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   ⚠️ **This becomes wrong again the day the web client gets a working sign-in.**
 - ✅ **PUBLISHED AND VERIFIED SERVED, 2026-08-19**, cherry-picked past the hold (`9355a39` +
   `293a63f`), verified **by FETCHING** on both `kristyapproved.com` and the `.vercel.app` alias.
-  ⚠️ **THAT VERIFICATION IS NOW ONE COMMIT STALE, DELIBERATELY, AND HERE IS THE PRECISE STATE:
-  the comment move is COMMITTED AND UNPUSHED, so the served bytes still carry the old comments.**
-  **The pages a shopper or a reviewer READS are byte-identical to what is committed** — proven by
-  stripping comments from both files and diffing against `HEAD`, identical — so the divergence is
-  invisible content only. **Re-verified 2026-08-19 on all three files, and the strip must cover
-  HTML *and* CSS comments** — `landing.html`'s pointer lives in a `/* */` block inside `<style>`,
-  so an HTML-only strip reports a false difference. **It publishes on the next push of these
-  files, and the fetch-verify must be re-run then.**
-  ⏸ ✅ **ITS GATE CLEARED 2026-08-20 — THE `hello@` MAILBOX RECEIVES — AND IT IS STILL NOT
-  PUSHED.** The comment move's own gate is open; **the stack it sits on is not.** The import route
-  above it is still held, **a stack is pushed as a stack**, and ⚠️ **a cleared gate is not an
-  approval.** **Do not push these files to "finish the fetch-verify"** — the verify is the
-  *consequence* of the push, never a reason for one, and the pages a reviewer reads are already
-  correct. **If this move is wanted live before the import route is, cherry-pick it past the
-  hold** — and the rebase afterwards is not optional.
+  ✅ **THE COMMENT MOVE PUBLISHED WITH THE STACK, 2026-09-16.** Before the push all three files
+  were comment-stripped and diffed against `origin/main`: identical, so the rendered pages did
+  not change. **The strip must cover HTML *and* CSS comments** — `landing.html`'s pointer lives
+  in a `/* */` block inside `<style>`, so an HTML-only strip reports a false difference.
+  **Fetch-verified 2026-09-16 on `kristyapproved.com`: all three served pages byte-identical to
+  `client/public/`, pointers present.**
 
 **Money**
 
@@ -999,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **658 pass, 0 fail, on `main` (the held stack), re-measured 2026-08-25 — 647 before that day's two scan-path guards added 11; 633 on `origin/main`, measured 2026-08-10 and not re-run since.** ⚠️ **TWO NUMBERS, AND THE SMALLER ONE IS NOT A REGRESSION** — `origin/main` lacks everything the held stack carries, tests included, so it is behind by construction. ⚠️ **THIS CELL USED TO SAY "the 11-test delta is `trips.test.js`" AND IT RECONCILED IN NEITHER DIRECTION** — measured 2026-08-25, `trips.test.js` is **27** tests and the branch gap was **14**. The gap's composition is UNMEASURED and now says so rather than carrying a number forward; **re-measure `origin/main` before quoting its number.** A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **717 pass, 0 fail, on `main` == `origin/main`, measured 2026-09-16 just before the stack released.** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
@@ -1078,8 +1070,7 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
   promises a reply within two business days and App Review checks the support URL. **Re-check the
   mailbox still receives before any App Store submission**; an MX record does not prove it, and
   this item spent a day narrowed on exactly that distinction.
-  ⚠️ **THIS CLEARS GATE (b) ONLY — IT RELEASES NOTHING BY ITSELF.** See **Held deliberately**: the
-  stack carries two holds with different gates and **a stack is pushed as a stack.**
+  ✅ **Gate (b) of the hold that was; the stack released 2026-09-16** (**Held deliberately**).
 
 - ✅ **SHIPPED AND VERIFIED LIVE: ONE PREDICATE — `nothingConfirmsFood`**, on `origin/main` as
   `22b35a8`; driven on production through the guest path, all five cases. The rule it leaves:
@@ -1131,36 +1122,23 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
 
 ### Held deliberately — do not "discover" these and land them
 
-- ⏸ **THE UNPUSHED COMMITS ON `main` ARE DELIBERATE, AND THERE ARE NOW TWO HOLDS ON ONE STACK WITH
-  DIFFERENT GATES — DO NOT COLLAPSE THEM INTO ONE.** What is held is **(a) the IMPORT ROUTE** and
-  **(b) the legal/landing COMMENT MOVE**. Nothing can
-  reach `POST /api/trips/import` (`requireAuth`, and no rail has ever produced an account), and
-  pushing this repo deploys. **Full reasoning: `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 — one
-  queue, not two. Do not push it to be helpful.**
-  ✅ **(b)'s GATE CLEARED 2026-08-20 — the `hello@` mailbox receives** (rule and reasoning under
-  **Legal pages**). ⚠️ **AND `main` HAS NOT MOVED, WHICH IS THIS ENTRY'S OWN RULE ARRIVING ON
-  SCHEDULE.** ⚠️ **A stack is pushed as a stack, so clearing ONE gate releases NOTHING.** (a) —
-  the import route — is still held on its own terms, so **both gates are not open and `main`
-  stays where it is**; **an urgent item above them cherry-picks past, per the rule below.**
-  ⚠️ **Its test condition cleared and it is still held.** A cleared blocker is not an approval; it
-  gets reviewed against what the iOS client actually needs before it ships.
+- ✅ **RELEASED 2026-09-16 — THE STACK IS LIVE. `main` == `origin/main` == `origin/held` at
+  `51cdcbf`; Railway verified by fetch (82 → 84 topics, 0 picks in the browse, pick lines on the
+  attach).** Both holds ended together: (b) the comment move's gate had cleared 2026-08-20; (a) the
+  import route ships **dormant** — `requireAuth`, no rail has produced an account — and its review
+  against what the iOS client needs happens **before the first client call, not before deploy**.
+  The owner delegated P6 (`kristy-ios/docs/PLAN-step3-picklines.md`) and the cherry-pick option
+  was tried first on a scratch branch: the KB hunk was trivial, but every doc-touching commit
+  conflicted on files `origin/main` never had, so it would have shipped a tree whose docs
+  contradict its code. **Rules the hold leaves, all live the next time something is held:**
   ⚠️ **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase or a
-  partial push, and this entry has been wrong with both. Only the SUBJECT is stable.** Compute it:
-
-  ```
-  git log --oneline --reverse origin/main..HEAD
-  ```
-
-  **When something above the hold is urgent, CHERRY-PICK IT PAST — that is the move, and it is why
-  stack timestamps interleave with `origin/main`'s.** ⚠️ **A reader reconstructing this history from
-  commit dates alone will get the order wrong.**
-  ⚠️ **AND THE REBASE AFTERWARDS IS NOT OPTIONAL.** A cherry-pick leaves the ORIGINAL commits on the
-  stack under different hashes, so the command above goes on naming subjects that are already live —
-  **this entry's own failure, reproduced by the fix for it, within the hour.** Prove the rebased tip
-  is content-identical to the pre-rebase tip before force-updating `main:held`. **A cherry-pick past
-  the hold is not finished until the stack stops claiming what it shipped.**
-  📋 **The lesson, which is this repo's own:** **two documents stated it, which is
-  precisely why a reader had no way to notice.** **Computing it is only a fix if someone computes it.**
+  partial push. Only the SUBJECT is stable.** Compute it: `git log --oneline --reverse origin/main..HEAD`.
+  **When something above a hold is urgent, CHERRY-PICK IT PAST — and THE REBASE AFTERWARDS IS NOT
+  OPTIONAL.** A cherry-pick leaves the original commits on the stack under different hashes, so the
+  command above goes on naming subjects already live. Prove the rebased tip content-identical to the
+  pre-rebase tip before force-updating `main:held`. **A stack is pushed as a stack; clearing one
+  gate releases nothing. A cleared blocker is not an approval.** Full reasoning of the hold that was:
+  `kristy-ios/docs/SWIFT-HANDOFF.md` §3 item 0 and `docs/OPEN-ITEMS.md`.
 
 ### Standing risks, not urgent
 
@@ -1198,7 +1176,7 @@ before starting, not after.**
   proposed server work.
 - ✅ **CLOSED 2026-08-25 — BOTH SCAN-PATH DEFECTS, IN THE RECORDED ORDER, AND THE ORDER IS THE
   ONLY REASON THE SECOND WAS SAFE.** `aa97026` (the language guard) then `f82cf9e` (the aisle).
-  **On `origin/held`, not `origin/main`. Not migrated: no corpus change.** Suite **658**.
+  **Live since the 2026-09-16 release. Not migrated: no corpus change.**
   ⚠️ **The rules they leave, all live:**
   - ⛔ **THE PRODUCT-CATEGORY VOCABULARY LETS A PRODUCT PAST A FAIL-CLOSED GATE**, so adding to it
     claims things in that category are food. **DO NOT WIDEN IT TO FIX A FILING PROBLEM** — the
@@ -1255,16 +1233,17 @@ before starting, not after.**
   by parse:**
   - **LIVE `counter_cards`: 87 rows — 84 `curated` + 3 `generated`. Re-measured by query
     2026-09-15, immediately after a migration.**
-  - **`kristy_perimeter_kb.json`: 109 entries on `main` — 84 cards + 25 picks; 82 on
-    `origin/main`.** ⚠️ **PICKS NEVER MIGRATE** — `listMatch.js` reads the KB file; push publishes.
+  - **`kristy_perimeter_kb.json`: 109 entries — 84 cards + 25 picks — on `main` == `origin/main`,
+    live on Railway 2026-09-16 (84 topics fetched, pick lines attach).** ⚠️ **PICKS NEVER
+    MIGRATE** — `listMatch.js` reads the KB file; push publishes.
   - ✅ **KB AND TABLE AGREE AT 84 CURATED, 2026-09-15** — diffed field-by-field before the
     run (two cards' `aliases`), 0 inserted / 84 updated, re-diff read back 0 changed.
     ⚠️ **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to
     ship** — the 83rd card rode along five days late once. **Diff the KB against the table
     before running it**; `--dry-run` does NOT report an insert count, so it cannot answer this.
-  - ⚠️ **`origin/main` IS STILL AT 82 AND THAT IS NOT A CONFLICT.** The KB is the source of
-    record and the table is what ships; the deployed BRANCH is a third thing and is behind both.
-    **A session finding 83 ≠ 82 has found the held stack, not a bug.**
+  - ⚠️ **THE DEPLOYED BRANCH IS A THIRD THING.** The KB is the source of record, the table is
+    what ships to iOS, and `origin/main` is what the web reads; while a stack is held they
+    disagree and **that is not a conflict.** Re-count all three, carry none forward.
   - ⚠️ **`migrateCounterCards.js` LOADS `.env` FROM THE WORKING DIRECTORY**, so run it from
     `server/`. Run from the repo root it reports *"SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are
     not set"* and writes nothing — **which reads as a missing credential and is a missing `cd`.**
