@@ -1,0 +1,27 @@
+# Tier notes orphaned by the do-line override — `TIER_NOTE_ORPHANED`, 25 of 84, measured 2026-09-16
+
+- salmon_wild_vs_farmed
+- organic_worth_it_by_type
+- produce_seasonality
+- washing_produce
+- baking_soda_soak
+- precut_produce_tradeoffs
+- cheese_real_vs_processed
+- rice_arsenic
+- oats_steelcut_rolled_instant
+- bean_soak_salt
+- label_cage_free
+- label_grass_fed_term
+- egg_shell_color
+- beef_grades_usda
+- judging_meat_at_the_case
+- chicken_cuts_basics
+- deli_meat_uncured
+- fish_freshness_at_counter
+- farmed_fish_by_species
+- produce_ripeness_by_item
+- whole_spices
+- rancidity_check
+- label_front_vs_back
+- label_wild_vs_farm_raised
+- raw_aged_cheese

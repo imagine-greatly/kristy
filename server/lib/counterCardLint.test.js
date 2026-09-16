@@ -39,7 +39,9 @@ import {
   MAX_DO_WORDS,
   MAX_HEADLINE_WORDS,
   MAX_EMDASH_SHARE,
+  tierNoteOrphaned,
 } from './counterCardLint.js';
+import doLines from './doLines.json' with { type: 'json' };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
@@ -629,4 +631,33 @@ test('a pick carries at least one source, and every source carries a URL', () =>
 test('house copy holds on a pick line too', () => {
   assert.ok(codes(lintPick(pick({ decision: 'Choose the root with the deepest colour.' }))).includes('COPY_BRITISH'));
   assert.ok(codes(lintPick(pick({ decision: "Choose the root that doesn't give." }))).includes('COPY_STRAIGHT_QUOTE'));
+});
+
+/* ═══════════════════════════ The tier note under the do line ═══════════════════════════ */
+
+// Invented card: the note echoes the decision's vocabulary and none of the do line's.
+test('a tier note written against the old decision, sharing nothing with the do line, is orphaned', () => {
+  const card = {
+    decision: 'Pickled turnips keep their crunch only when the brine is unheated.',
+    tier_note: 'That the crunch survives an unheated brine is documented, not a preference.',
+  };
+  assert.ok(tierNoteOrphaned(card, 'Shake the jar and choose the one with the cloudiest liquid.'));
+});
+
+test('a tier note that shares a content word with the do line is not orphaned', () => {
+  const card = {
+    decision: 'Pickled turnips keep their crunch only when the brine is unheated.',
+    tier_note: 'Cloudy liquid meaning live fermentation is documented fact, not a hunch.',
+  };
+  assert.equal(tierNoteOrphaned(card, 'Shake the jar and choose the one with the cloudiest liquid.'), false);
+  // No note, or no do line to sit under, is nothing to judge.
+  assert.equal(tierNoteOrphaned({ decision: 'x', tier_note: '' }, 'Shake the jar.'), false);
+  assert.equal(tierNoteOrphaned(card, ''), false);
+});
+
+// RED BY DESIGN until the 25 notes are rewritten (docs/tier-note-drift-2026-09-16.md).
+test('every curated card with a do line carries a tier note about THAT do line', () => {
+  const withDo = nonEmpty(questionEntries().filter((e) => doLines[e.id]), 'curated cards with a do line');
+  const orphaned = withDo.filter((e) => codes(lintCard(e)).includes('TIER_NOTE_ORPHANED')).map((e) => e.id);
+  assert.deepEqual(orphaned, [], `${orphaned.length} tier notes talk past their do line`);
 });

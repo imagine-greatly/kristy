@@ -31,6 +31,7 @@ export const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
 // The rubric belongs in the PROMPT, as guidance for choosing a tier. It may never appear
 // in output.
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+import doLines from './doLines.json' with { type: 'json' };
 import { sectionForCategory, DEPTH_FIELDS } from './counterCards.js';
 import { statesIn } from './listMatch.js';
 
@@ -60,6 +61,36 @@ export function echoesRubric(note) {
     }
   }
   return false;
+}
+
+/* THE TIER NOTE SITS UNDER THE DO LINE, AND THE DO LINE MOVED. Every curated card's shopper-
+   facing do line is overridden by doLines.json, but the tier notes were written against the
+   KB `decision` they used to sit beneath. Where the note shares vocabulary with the old
+   decision and none with the new do line, the sentence explaining the tier is explaining a
+   call the shopper cannot see. Word overlap, no model: content words are ≥4 letters after
+   dropping the grammar words below. Knobs tuned to the 25 the 2026-09-16 hand count found. */
+const TIER_NOTE_MIN_WORD = 4;
+const TIER_NOTE_STOP = new Set([
+  'that', 'this', 'with', 'from', 'have', 'will', 'when', 'what', 'than', 'then', 'them',
+  'they', 'their', 'there', 'here', 'into', 'onto', 'only', 'also', 'been', 'were', 'does',
+  'your', 'more', 'most', 'much', 'some', 'same', 'each', 'over', 'under', 'about', 'which',
+  'while', 'because', 'before', 'after', 'still', 'just', 'even', 'make', 'made', 'makes',
+  'need', 'needs',
+]);
+const contentWords = (s) =>
+  new Set(
+    (normText(s).match(/[a-z][a-z'-]*/g) || [])
+      .map((w) => w.replace(/'s$/, ''))
+      .filter((w) => w.length >= TIER_NOTE_MIN_WORD && !TIER_NOTE_STOP.has(w))
+  );
+const overlaps = (a, b) => [...contentWords(a)].some((w) => contentWords(b).has(w));
+
+/** True when the note echoes the decision and shares nothing with the do line it renders under. */
+export function tierNoteOrphaned(card, doLine) {
+  const note = card?.tier_note;
+  const decision = card?.decision ?? card?.headline;
+  if (!note || !doLine || !decision) return false;
+  return !overlaps(note, doLine) && overlaps(note, decision);
 }
 
 export const MAX_DO_WORDS = 12 + 2;
@@ -1081,6 +1112,18 @@ export function lintCard(card) {
       `the tier note says "${tierNote.match(/\b(?:this|the)\s+tier\b/i)[0]}" — nothing on the ` +
         'card names the tier any more, so the phrase points at nothing. Say what the claim ' +
         'IS about this food instead.'
+    );
+  }
+
+  // The do line a shopper reads is doLines.json's, not the card's own; a card with no entry
+  // there (a generated one) renders its own and is skipped.
+  const shownDo = doLines[card?.id ?? card?.slug];
+  if (tierNote && shownDo && tierNoteOrphaned(card, shownDo)) {
+    fail(
+      'TIER_NOTE_ORPHANED',
+      `${card?.id ?? card?.slug}: the tier note was written against the old decision and shares ` +
+        `no content word with the do line it sits under — "${shownDo}". Rewrite it to say ` +
+        'what kind of claim THAT line is.'
     );
   }
 
