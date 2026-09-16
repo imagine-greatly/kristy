@@ -14,6 +14,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import { lookupProduct, retainProduct, coverageStats } from './productStore.js';
+import { extractFromBarcode } from './scanExtract.js';
+import { CATEGORY_VERSION } from './productCategory.js';
 
 /* ───────────────────────── A fake Supabase, honest about the chain ─────────────────────────
    Mirrors exactly the call shapes productStore uses: .select().eq().maybeSingle(),
@@ -335,4 +337,100 @@ test('a low-confidence row answers, and a fuller read replaces it', async () => 
   const better = await lookupProduct('0012345678905', { client });
   assert.equal(better.confidence, 'high', 'the curation queue drains as the product is re-scanned');
   assert.match(better.ingredients, /natural flavor/, 'the fuller list wins');
+});
+
+/* ═══════ THE CATEGORY RE-READ: a stale row gets ONE more look at OFF ═══════
+
+   A cache hit used to return before `retainProduct`, so a row retained before the aisle fix
+   kept `category: other` forever and the engine's water exemption was live and unreachable.
+   Now a hit whose `category_version` is not the current pass falls through to the OFF fetch
+   and the ROW is what gets read back — the response carrying the right category proves
+   nothing, because a version stamp used only in memory would pass that assertion too.
+
+   The bump rule is an asymmetry: stamp on an OFF answer (found or not), never on a fetch
+   that threw. Each test below pins one edge, on the row. */
+
+const STALE_WATER = {
+  barcode: '3274080005003',
+  name: 'Spring water',
+  ingredients: 'Spring water',
+  source: 'off',
+  confidence: 'high',
+  category: 'other',
+  category_raw: 'unsweetened beverages',
+  category_version: null,
+};
+
+async function withFetch(impl, run) {
+  const calls = [];
+  const real = globalThis.fetch;
+  globalThis.fetch = async (...args) => {
+    calls.push(args);
+    return impl();
+  };
+  try {
+    return await run(calls);
+  } finally {
+    globalThis.fetch = real;
+  }
+}
+
+const offOk = (product, code = STALE_WATER.barcode) => () => ({
+  json: async () => ({ status: 1, code, product }),
+});
+
+test('a stale store row is re-read from OFF and the ROW is upgraded and stamped', async () => {
+  const { client, rows } = fakeStore([STALE_WATER]);
+  const product = {
+    product_name: 'Spring water',
+    categories_tags: ['en:beverages', 'en:waters', 'en:spring-waters', 'en:unsweetened-beverages'],
+    ingredients_text_en: 'Spring water',
+    ingredients_lc: 'en',
+    nutriments: { 'energy-kcal_100g': 0 },
+  };
+  const res = await withFetch(offOk(product), () => extractFromBarcode(STALE_WATER.barcode, { client }));
+
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].category, 'water', 'the row, not just the response, carries the upgrade');
+  assert.equal(rows[0].category_version, CATEGORY_VERSION, 'stamped: this row has been checked');
+  assert.equal(res.nutrition.category, 'water');
+});
+
+test('a fetch that throws stamps NOTHING — the row stays stale and is served as today', async () => {
+  const { client, rows } = fakeStore([STALE_WATER]);
+  const res = await withFetch(
+    () => { throw new Error('ECONNRESET'); },
+    () => extractFromBarcode(STALE_WATER.barcode, { client }),
+  );
+
+  assert.equal(rows[0].category_version, null, 'a timeout is not a check');
+  assert.equal(rows[0].category, 'other');
+  assert.equal(res.found, true);
+  assert.equal(res.source, 'store', 'the store hit is still the answer');
+  assert.equal(res.nutrition.category, 'other');
+});
+
+test('OFF not-found stamps the row so it is not re-read every scan; category unchanged', async () => {
+  const { client, rows } = fakeStore([STALE_WATER]);
+  const res = await withFetch(
+    () => ({ json: async () => ({ status: 0 }) }),
+    () => extractFromBarcode(STALE_WATER.barcode, { client }),
+  );
+
+  assert.equal(rows[0].category_version, CATEGORY_VERSION, 'OFF answered, so the check happened');
+  assert.equal(rows[0].category, 'other');
+  assert.equal(res.source, 'store');
+  assert.equal(res.found, true);
+});
+
+test('a row already at the current version never touches the network', async () => {
+  const { client } = fakeStore([{ ...STALE_WATER, category_version: CATEGORY_VERSION }]);
+  await withFetch(
+    () => { throw new Error('must not be called'); },
+    async (calls) => {
+      const res = await extractFromBarcode(STALE_WATER.barcode, { client });
+      assert.equal(calls.length, 0, 'a current row is a cache hit, full stop');
+      assert.equal(res.source, 'store');
+    },
+  );
 });

@@ -22,10 +22,10 @@
 // goes through the same engine + KB + claim lock as a fresh lookup, so the judgment
 // is always recomputed against the current KB and the shopper's current preferences.
 
-import { lookupProduct, retainProduct } from './productStore.js';
+import { lookupProduct, retainProduct, markCategoryChecked } from './productStore.js';
 import { evaluateIngredients } from './verdictEngine.js';
 import { recordConflict } from './ingredientConflicts.js';
-import { categoryFromAisle, UNCATEGORIZED } from './productCategory.js';
+import { categoryFromAisle, UNCATEGORIZED, CATEGORY_VERSION } from './productCategory.js';
 
 const OFF_BASE = 'https://world.openfoodfacts.org/api/v2/product';
 const OFF_FIELDS = [
@@ -368,8 +368,14 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   // with a fake store exercises the real call site and needs no network. Defaults to the real
   // client, so every caller in the app is untouched.
   const own = await lookupProduct(code, client ? { client } : undefined);
+  // A store hit whose category was decided by an OLDER pass of the aisle patterns (or never)
+  // is served as today's answer, but only after one OFF re-read — the cache hit used to return
+  // here unconditionally, so a row retained before an aisle fix kept `other` forever and the
+  // engine's category exemption was live and unreachable. `storeHit` is held, not returned,
+  // until the re-read below decides whether OFF has anything better.
+  let storeHit = null;
   if (own && isReadableIngredientList(own.ingredients) && !looksNonEnglish(own.ingredients)) {
-    return {
+    storeHit = {
       found: true,
       source: 'store',
       product: own.product,
@@ -400,7 +406,17 @@ export async function extractFromBarcode(barcode, { client } = {}) {
       // still withholds a clean approval it can't support.
       ...(own.confidence === 'low' ? { partialRead: true } : {}),
     };
+    if (own.categoryVersion === CATEGORY_VERSION) return storeHit;
   }
+
+  // ⚠️ THE STAMP IS AN ASYMMETRY. Stamp when OFF ANSWERED and had nothing better (not found,
+  // wrong product, unreadable text). Never stamp when OFF did not answer — a stamped timeout
+  // records "we checked" for a check that never happened and retires the row for good.
+  const storeHitChecked = async () => {
+    await markCategoryChecked(code, client ? { client } : undefined);
+    return storeHit;
+  };
+  const miss = () => ({ found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' });
 
   let data;
   try {
@@ -410,12 +426,13 @@ export async function extractFromBarcode(barcode, { client } = {}) {
     data = await r.json();
   } catch {
     // Network/parse failure against OFF — treat as "not found" so the client can
-    // offer the type-it fallback rather than erroring out the whole scan.
-    return { found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' };
+    // offer the type-it fallback rather than erroring out the whole scan. A stale store
+    // hit is still the answer, unstamped, so the next scan re-reads.
+    return storeHit || miss();
   }
 
   if (data.status !== 1 || !data.product) {
-    return { found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' };
+    return storeHit ? storeHitChecked() : miss();
   }
 
   // IDENTITY GUARD — the response must be about the code we asked for. OFF echoes
@@ -424,7 +441,7 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   // An honest miss costs a photo; a confident wrong verdict costs the relationship.
   if (data.code && !sameGtin(data.code, code)) {
     console.warn(`[kristy] OFF answered ${data.code} for ${code} — treating as a miss`);
-    return { found: false, source: 'none', product: { barcode: code, name: null }, ingredients: '' };
+    return storeHit ? storeHitChecked() : miss();
   }
 
   const p = data.product;
@@ -455,6 +472,8 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   //     it. Same outcome as 1b below, because it is the same situation — two answers on file
   //     — and the shopper is holding the package, so their photo settles it.
   if (languageConflict(p)) {
+    // ponytail: category not carried on this edge; add if a real row lands here
+    if (storeHit) return storeHitChecked();
     recordConflict({
       barcode: code,
       name: product.name,
@@ -493,6 +512,8 @@ export async function extractFromBarcode(barcode, { client } = {}) {
   if (text && isReadableIngredientList(text) && imported && isReadableIngredientList(imported)) {
     const { agree, tiers } = sameVerdict(text, imported);
     if (!agree) {
+      // ponytail: category not carried on this edge; add if a real row lands here
+      if (storeHit) return storeHitChecked();
       // Logged, never surfaced, and holding no identity — the sample has to grow on
       // real scans before the rule ("prefer the import") can be judged on more than
       // twenty products.
@@ -516,7 +537,11 @@ export async function extractFromBarcode(barcode, { client } = {}) {
     // Retain the OFF hit too, not just the vision reads. It costs nothing, and it
     // means the catalog keeps working when OFF is throttling or down — the failure
     // mode that used to read as "not found".
-    retainProduct({
+    // ⚠️ AWAITED ONLY ON THE RE-READ. Fire-and-forget is the rule for a fresh hit (the shopper
+    // is waiting on the verdict, not the catalog); on a stale store hit the whole point of the
+    // fetch was the row, so the row lands before the response leaves. `retainProduct` never
+    // throws. off/full outranks every row, so this is also the category upgrade.
+    const retained = retainProduct({
       barcode: code,
       name: product.name,
       brand: product.brand,
@@ -536,7 +561,9 @@ export async function extractFromBarcode(barcode, { client } = {}) {
       // it in. It costs nothing — no extra request, no extra field on the fetch, no model
       // call — and it categorises every OFF hit the catalog will ever retain.
       aisle: product.aisle,
+      ...(client ? { client } : {}),
     });
+    if (storeHit) await retained;
     return { found: true, source: 'off', product, ingredients: text, nutrition };
   }
 
@@ -564,5 +591,7 @@ export async function extractFromBarcode(barcode, { client } = {}) {
 
   // 3. Known product, but nothing readable in English → NO ingredients, NO stamp.
   //    The client auto-pivots to the photograph-the-label path.
+  // ponytail: category not carried on this edge; add if a real row lands here
+  if (storeHit) return storeHitChecked();
   return { found: false, source: 'none', product, ingredients: '', nutrition };
 }

@@ -25,7 +25,7 @@
 
 import { createHash } from 'node:crypto';
 import { supabase } from './supabase.js';
-import { categoryFields } from './productCategory.js';
+import { categoryFields, CATEGORY_VERSION } from './productCategory.js';
 
 const TABLE = 'scanned_products';
 const str = (x) => String(x ?? '').trim();
@@ -83,7 +83,7 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
   try {
     let { data, error } = await client
       .from(TABLE)
-      .select(`${LOOKUP_COLUMNS}, nutrition_panel, category`)
+      .select(`${LOOKUP_COLUMNS}, nutrition_panel, category, category_version`)
       .eq('barcode', code)
       .maybeSingle();
 
@@ -140,6 +140,10 @@ export async function lookupProduct(barcode, { client = supabase } = {}) {
       // are covered by the retry above, so an unmigrated table degrades identically for the
       // pair — to null, which is not exempt, which withholds nothing it did not already.
       category: data.category || null,
+      // Which pass of the aisle patterns last decided `category`. null = never checked, and
+      // the retry above lands here too — so an unmigrated table reads as stale, which costs
+      // one OFF re-read per scan and never a wrong answer.
+      categoryVersion: Number.isInteger(data.category_version) ? data.category_version : null,
     };
   } catch (err) {
     console.warn('[kristy] product store lookup skipped:', err?.message || err);
@@ -237,6 +241,9 @@ export async function retainProduct({
         category: categoryOf.category,
         category_raw: categoryOf.category_raw,
         nutrition_panel: panelOf,
+        // Only an OFF read has consulted the aisle patterns; a vision row stays null so the
+        // next barcode scan re-reads OFF once.
+        category_version: source === 'off' ? CATEGORY_VERSION : null,
       });
       if (error) throw new Error(error.message);
       return { retained: true, created: true, confidence };
@@ -266,6 +273,10 @@ export async function retainProduct({
         patch.category = categoryOf.category;
         patch.category_raw = categoryOf.category_raw;
       }
+      // ⚠️ STAMPED EVEN WHEN THE CATEGORY RESOLVED TO `other` — "we checked, the patterns had
+      // nothing" is a real answer. The guard above keeps `other` from overwriting a value; this
+      // keeps the row from being re-read on every scan. Off only: a vision read never consulted OFF.
+      if (source === 'off') patch.category_version = CATEGORY_VERSION;
       // ⚠️ THE PANEL MOVES WITH THE INGREDIENTS, UNDER THE SAME TRUST RULE, AND ONLY WHEN THIS
       // READ ACTUALLY HAS ONE. The two conditions do different jobs and only one of them is
       // load-bearing today — recorded that way round, because the tidy version of this comment
@@ -294,6 +305,28 @@ export async function retainProduct({
     // Unmigrated table / transient failure. Logged, never surfaced.
     console.warn('[kristy] product retain skipped:', err?.message || err);
     return { retained: false, reason: err?.message || 'error' };
+  }
+}
+
+/**
+ * Record that a row's category was checked against the current aisle patterns and OFF had
+ * nothing better to say (not found, identity mismatch, unreadable text). Retires the row from
+ * the re-read until CATEGORY_VERSION bumps.
+ *
+ * ⚠️ NEVER CALLED ON A NETWORK FAILURE — that asymmetry is the caller's to keep: a stamped
+ * timeout is "we checked" for a check that never happened. Never throws.
+ */
+export async function markCategoryChecked(barcode, { client = supabase } = {}) {
+  const code = str(barcode);
+  if (!code) return;
+  try {
+    const { error } = await client
+      .from(TABLE)
+      .update({ category_version: CATEGORY_VERSION })
+      .eq('barcode', code);
+    if (error) throw new Error(error.message);
+  } catch (err) {
+    console.warn('[kristy] category stamp skipped:', err?.message || err);
   }
 }
 
