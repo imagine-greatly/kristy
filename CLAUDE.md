@@ -991,7 +991,7 @@ the authority**. The five that bind a change to *this repo* are kept here in ful
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **722 pass, 0 fail, on `main`, measured 2026-09-16 after the P3+P4 produce-depth release (`e854294`).** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
+| `cd server && npm test` | **724 pass, 0 fail, on `main`, measured 2026-09-16 after the meat-narrowing + aliasNamesHead qualifier fix (`9a4a7c4`).** One number again, because the branches agree. A bare count here has been stale five times — **record only a number you actually ran, say which branch ran it, and date each number separately.** |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. ⚠️ **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.** Exits non-zero on a gap, and **refuses to report success on an empty extraction.** |
