@@ -108,6 +108,10 @@ const BARE_NOUNS = [
   // PLAN-step1-plumbing piece 4 — the bare nouns the hub-rule aliases were authored for.
   'apple', 'peach', 'nectarines', 'plums', 'limes', 'oranges', 'citrus', 'strawberries',
   'strawberry',
+  // The head-noun-before-a-qualifier rows (listMatch.js `aliasNamesHead`). Expected:
+  // "Peanut butter — …" CORRECT on nut_butter_ingredients (never on "salt", which is in
+  // NOT_A_FOOD so a salt match reads WRONG); "Beef or chicken liver" MISS — no card owns liver.
+  'Peanut butter — just peanuts and salt', 'Beef or chicken liver',
 ];
 
 /* The states an ITEM can name that no stateless produce card can answer. `fresh` is not here

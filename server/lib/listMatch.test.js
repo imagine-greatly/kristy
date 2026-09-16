@@ -109,6 +109,37 @@ test('bacon is an honest miss, on purpose', () => {
   assert.ok(matchItemToCard('uncured bacon'), 'the question it DOES answer still resolves');
 });
 
+/* ═══════════════ The head noun sits before a trailing qualifier ═══════════════ */
+
+test('a trailing qualifier does not move the head noun', () => {
+  // "Peanut butter — just peanuts and salt" is peanut butter; the words after the dash are a
+  // note about the label, not the product. The last-word rule read "salt" as the head and
+  // missed a card the bare name reaches. The miss is cheap and a wrong match is not, so the
+  // qualifier may never attach anything on its own words either.
+  const bare = matchItemToCard('peanut butter');
+  assert.ok(bare, '"peanut butter" must reach a card for this test to mean anything');
+  for (const name of [
+    'Peanut butter — just peanuts and salt',
+    'Peanut butter - just peanuts and salt',
+    'Peanut butter: just peanuts and salt',
+    'Peanut butter (just peanuts and salt)',
+  ]) {
+    assert.equal(matchItemToCard(name)?.slug, bare.slug, `"${name}" must attach ${bare.slug}`);
+  }
+  assert.equal(matchItemToCard('just peanuts and salt'), null, 'the qualifier alone attaches nothing');
+  // The comma is NOT a separator: "Bone-in, skin-on chicken thighs" puts its product after
+  // one, and truncating there cost that row. The comma form of this row is a miss, on purpose.
+  assert.equal(matchItemToCard('Peanut butter, just peanuts and salt'), null);
+  assert.ok(matchItemToCard('Bone-in, skin-on chicken thighs'), 'the row the comma rule protects');
+});
+
+test('an either/or whose head no card owns is an honest miss', () => {
+  // "Beef or chicken liver" has a trailing head ("liver") and no card names it. It must
+  // fall through — never land on the beef or chicken card, which speak to a different cut.
+  assert.equal(matchItemToCard('liver'), null, 'no card owns liver — re-check this test if one lands');
+  assert.equal(matchItemToCard('Beef or chicken liver'), null);
+});
+
 /* ═══════════════ Home cards never attach ═══════════════ */
 
 test('a kitchen-technique card never attaches to a list item', () => {

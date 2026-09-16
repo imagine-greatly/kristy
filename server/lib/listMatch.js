@@ -332,9 +332,22 @@ const contentWords = (name) => rowWords(name).filter((w) => !INERT_MODIFIERS.has
  * misfiles; a compound whose head is the card's own noun ("oat milk" against a milk card)
  * is left to the card's aliases, as it was. Numbers and inert modifiers are ignored either
  * side, so "carrots, organic" reads carrots.
+ *
+ * THE HEAD IS TAKEN BEFORE A TRAILING QUALIFIER. "Peanut butter — just peanuts and salt" is
+ * peanut butter; the words after the dash describe the label. Read whole, its last word was
+ * "salt" and the row missed a card the bare name reaches. So the head is the last word of
+ * the text BEFORE the first separator (dash, colon, semicolon, open paren). A row that puts
+ * its product after one ("Organic: carrots") now misses instead of matching — the cheap
+ * direction — and the probe pins that no shipping row does.
+ *
+ * THE COMMA IS NOT A SEPARATOR, measured: "Bone-in, skin-on chicken thighs" carries its
+ * modifiers BEFORE the comma and the product after, and truncating there turned a correct
+ * row into a miss. "Peanut butter, just peanuts and salt" therefore stays a miss — cheap,
+ * and the pick that ships uses the dash.
  */
+const QUALIFIER = /\s[—–-]\s|[:;(]/;
 function aliasNamesHead(name, entry) {
-  const words = contentWords(name);
+  const words = contentWords(String(name || '').split(QUALIFIER, 1)[0]);
   if (!words.length) return false;
   const last = words[words.length - 1];
   return (entry.aliases || []).some((a) => rowWords(a).includes(last));
