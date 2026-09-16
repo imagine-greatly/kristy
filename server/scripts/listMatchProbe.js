@@ -278,8 +278,8 @@ const MODIFIED_ROWS = [
 ];
 const modified = MODIFIED_ROWS.map((name) => {
   const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
-  const got = row.pickId || null;
-  return { name, slug: got, verdict: got ? 'CORRECT' : 'WRONG', detail: got ? `pick ${got}` : 'bare — the coverage rule ate an inert modifier' };
+  const got = row.pickId || row.cardSlug || null;
+  return { name, slug: got, verdict: got ? 'CORRECT' : 'WRONG', detail: got ? (row.pickId ? `pick ${row.pickId}` : `card ${row.cardSlug}`) : 'bare — the coverage rule ate an inert modifier' };
 });
 const modifiedWrong = modified.filter((r) => r.verdict === 'WRONG');
 // A modifier that makes a DIFFERENT product — a pick here is WRONG, a card is fine. Mirrored
