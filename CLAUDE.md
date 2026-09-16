@@ -1157,12 +1157,7 @@ doc, and a tombstone that grows an account back is this file's budget defect ret
 **Each item below is a POINTER PLUS ITS ONE TRAP. The reasoning is in the named doc — read it
 before starting, not after.**
 
-- 🐞 **FOUR DO LINES OUTRUN THEIR CARD'S DEPTH (critic, 2026-09-16): `egg_shell_color` (cracks),
-  `deli_meat_uncured` (whole roasted turkey breast), `produce_seasonality` (farmers'-market
-  table), `washing_produce` (brush / spin).** Each instructs something no field of its entry
-  supports — a claim-lock finding on the do line, which is the sentence a shopper reads. **Fix is
-  in the authored table `docs/do-lines-review.md`, then `scripts/buildDoLines.js`, then commit
-  both** — or add the fact to the entry first. Separately proposed server work.
+- ✅ **CLOSED 2026-09-16 — THE FOUR DO LINES: three narrowed to what their card supports, one withdrawn** (`washing_produce` traced on inspection). `f81a872`; evidence in the notes section of `docs/do-lines-review.md`. **Rule it leaves: the do line is claim-locked to the entry's own fields, same as every other sentence a shopper reads.**
 - ⏳ ⚠️ **NOTHING REPORTS A COMPLETED-TRIP COUNT, SO A SIGNED-IN SHOPPER'S METER IS THE DEVICE'S —
   AND A DEVICE METER IS RESETTABLE BY REINSTALL.** The fix is **`completedTrips` on the response of
   `GET /api/trips/seedable`** — `select count(*) where status='completed'`, not stored, one field on
