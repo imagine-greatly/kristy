@@ -41,6 +41,8 @@
    widening is `category_raw` on rows that landed in `other`, which is exactly what that
    column is for. Do not add a value because it sounds missing; add it because rows are
    sitting in `other` asking for it. */
+export const CATEGORY_VERSION = 1; // bump when the aisle patterns change — every stale row re-reads OFF once
+
 export const PRODUCT_CATEGORIES = [
   'bar',
   'cereal',
