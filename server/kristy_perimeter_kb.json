@@ -58,7 +58,7 @@
           "meaning": "Caught in the wild; Alaskan fisheries are well managed."
         }
       ],
-      "tier_note": "The feed, the added pigment and the pens are documented facts. Holding out for wild on top of them is the standard.",
+      "tier_note": "Frozen wild being the same fish is documented; reaching past the fresh Atlantic for it is the whole-food standard.",
       "eyebrow_short": "Wild or farmed",
       "asked_as": [
         "wild or farmed salmon",
@@ -533,7 +533,7 @@
           "meaning": "Means essentially nothing on produce, with no organic standard behind it."
         }
       ],
-      "tier_note": "Surface residue on what gets eaten whole is a real and reported signal, and peeling or swapping answers it cleanly.",
+      "tier_note": "Surface residue on berries and greens eaten whole is a credible concern, and the ranking behind any list of them is not settled.",
       "eyebrow_short": "Buying organic",
       "asked_as": [
         "is organic worth it",
@@ -668,7 +668,7 @@
         "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season."
       ],
       "labels_decoded": [],
-      "tier_note": "Reading the season off the pile is a shopping habit offered as a standard, not a nutrition claim.",
+      "tier_note": "Reading the season off the market table is a shopping habit held as a standard, not a nutrition claim.",
       "asked_as": [
         "does buying in season matter",
         "what produce is in season",
@@ -706,7 +706,7 @@
         "No soap or bleach — plain water is the recommendation."
       ],
       "labels_decoded": [],
-      "tier_note": "Plain running water is the published recommendation, and the produce washes are not.",
+      "tier_note": "A plain-water rinse is the settled published recommendation; the bottled produce washes are not.",
       "watch_out": [
         "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak."
       ],
@@ -754,7 +754,7 @@
         "The circulating ‘ninety percent of pesticides’ line overstates the study. Two compounds were measured, on apples the researchers had dosed themselves."
       ],
       "labels_decoded": [],
-      "tier_note": "Surface residue is a real peer-reviewed concern. The removal numbers are two compounds in one study and a later one puts baking soda lower, so the technique is sound and the magnitude is not settled.",
+      "tier_note": "Surface residue is a credible peer-reviewed concern, and the twelve-minute soak comes from one study whose numbers are not settled.",
       "eyebrow_short": "Residue",
       "asked_as": [
         "how do i get pesticides off produce",
@@ -799,7 +799,7 @@
           "meaning": "Washed at the plant — a rinse at home is still a reasonable habit."
         }
       ],
-      "tier_note": "The nutrient loss from cutting is minor and measured. Whether convenience earns the premium is the standard.",
+      "tier_note": "That pre-cut keeps days rather than weeks is measured; buying whole anyway is the whole-food standard.",
       "watch_out": [
         "If a bag of pre-washed greens is the difference between a salad and no salad, buy the bag. Eaten beats perfect.",
         "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
@@ -1011,7 +1011,7 @@
           "meaning": "A protected name with a stamped rind. ‘Parmesan’ alone is generic in the US."
         }
       ],
-      "tier_note": "What may be called cheese is a standard of identity, and the shred coatings are printed on the bag. Both are checkable.",
+      "tier_note": "The starch, cellulose and natamycin on the bag are printed facts; buying the block instead is the whole-food standard.",
       "watch_out": [
         "‘Cheese product’, ‘cheese food’ and ‘pasteurized process’ all mean emulsifiers blended in. That is a different product from cheese.",
         "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting."
@@ -1176,7 +1176,7 @@
         "Plain white long-grain is only a small step below brown. The variety and the origin do more work than the color."
       ],
       "labels_decoded": [],
-      "tier_note": "The gap between brown and white is measured and repeated. Buying white anyway is a standard, not a finding, and nothing here says brown rice harms anyone.",
+      "tier_note": "Origin moving the arsenic number is measured in two testing programs; shopping by it is the whole-food standard, not a finding of harm.",
       "asked_as": [
         "should i worry about arsenic in rice",
         "which rice has less arsenic",
@@ -1222,7 +1222,7 @@
           "meaning": "Pre-cooked and usually pre-sweetened — read the added sugar."
         }
       ],
-      "tier_note": "The three forms differ only by defined processing, and the packet sugar is on the panel.",
+      "tier_note": "One ingredient on the canister is a settled reading of the panel; the flavored packets are where the sugar sits.",
       "asked_as": [
         "which oats should i buy",
         "are steel cut oats better",
@@ -1427,7 +1427,7 @@
         "Hard tap water works against you: the calcium and magnesium in it do the opposite of what sodium does."
       ],
       "labels_decoded": [],
-      "tier_note": "The cation-exchange mechanism is real food chemistry, but the practical size of it comes from cooking literature rather than a settled body of study. Kristy holds it as the standard because the rule it replaces is demonstrably wrong.",
+      "tier_note": "Salt in the soaking water is real food chemistry held as a standard, since its practical size comes from kitchen testing rather than settled study.",
       "eyebrow_short": "Salting the soak",
       "asked_as": [
         "do salted beans go tough",
@@ -1671,7 +1671,7 @@
         "Cage-free usually means indoors, and it can still mean crowded.",
         "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
-      "tier_note": "What each term requires, and how little it specifies, are both written into the standards.",
+      "tier_note": "What a certifier audits, and how little cage-free and free-range specify on their own, are both written into published standards.",
       "eyebrow_short": "Cage-free, free-range",
       "asked_as": [
         "what does cage free mean",
@@ -1721,7 +1721,7 @@
         "A bare “grass-fed” allows a grain finish in the feedlot before slaughter.",
         "The claim is weakly enforced on its own. Certification is what backs it."
       ],
-      "tier_note": "The bare term’s weak enforcement and its grain-finish allowance are both on the record.",
+      "tier_note": "The grain finish a bare grass-fed claim allows, and the certification behind grass-finished, are both on the record.",
       "asked_as": [
         "does grass fed on the label mean anything",
         "is grass fed enough on its own",
@@ -2126,7 +2126,7 @@
           "meaning": "Pigment in the feed. Could be pasture, could be marigold extract."
         }
       ],
-      "tier_note": "Shell color tracking breed is basic genetics, and feed driving yolk pigment is well established. Both are why the color buys nothing.",
+      "tier_note": "Shell color tracking breed is settled genetics, so nothing visible in the carton says how the hen was raised.",
       "watch_out": [
         "The yolk photo on the carton is artwork, not a sample."
       ],
@@ -2420,7 +2420,7 @@
           "meaning": "Never submitted for grading. Says nothing about quality either way."
         }
       ],
-      "tier_note": "USDA grading measures marbling and maturity against a published standard, and nothing else.",
+      "tier_note": "Grade is a published USDA marbling score, and marbling only shows on a steak cooked fast, not on a braise.",
       "asked_as": [
         "what does prime choice select mean",
         "is prime beef worth it",
@@ -2475,7 +2475,7 @@
           "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
         }
       ],
-      "tier_note": "Color coming from oxygen exposure is settled chemistry, which is why it reads nothing about freshness.",
+      "tier_note": "Color coming from oxygen is settled chemistry, which is why the press and the spring back read more than the shade.",
       "eyebrow_short": "Judging meat",
       "asked_as": [
         "how do i tell if meat is good",
@@ -2626,7 +2626,7 @@
           "meaning": "Low-use muscle. Lean and fast, dries out quickly."
         }
       ],
-      "tier_note": "Dark meat’s forgiveness is how the cut behaves. Defaulting to thighs is the standard over it.",
+      "tier_note": "Skin rendering and basting is how the cut behaves; defaulting to skin-on thighs is the whole-food standard.",
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
@@ -2726,7 +2726,7 @@
           "meaning": "The asterisk reads ‘except those naturally occurring in celery powder’."
         }
       ],
-      "tier_note": "Celery powder is the same nitrate chemistry under a different word, and the asterisk is required.",
+      "tier_note": "Celery powder being the same nitrate chemistry as added nitrite is settled labeling fact, whichever cut the counter slices.",
       "asked_as": [
         "is uncured deli meat nitrite free",
         "what does uncured mean",
@@ -2838,7 +2838,7 @@
           "meaning": "Flakes separating on a fillet. A sign it has aged."
         }
       ],
-      "tier_note": "The smell of spoilage is a documented chemical change, not an opinion about the fish.",
+      "tier_note": "The smell it gives off and the ice it is bedded in are both documented freshness checks, not opinions about the fish.",
       "asked_as": [
         "how do i tell if fish is fresh",
         "is this fish fresh",
@@ -2956,7 +2956,7 @@
           "meaning": "Country-of-origin labeling. Required, and the most useful line on the package."
         }
       ],
-      "tier_note": "Filter feeders take no feed at all. Which farms are worth trusting is the standard.",
+      "tier_note": "Mussels and oysters taking no feed at all is documented; which farmed species clear the bar is the whole-food standard.",
       "asked_as": [
         "is farmed fish worth buying",
         "which farmed fish are ok",
@@ -3108,7 +3108,7 @@
         "Buy at staggered firmness so they ripen across the week rather than all on Tuesday."
       ],
       "labels_decoded": [],
-      "tier_note": "Weight tracking water content is physical, and it is why the heavier of two is the better one.",
+      "tier_note": "Which fruit ripens after picking is settled produce handling, and smell at the stem is the signal it gives.",
       "eyebrow_short": "Picking produce",
       "asked_as": [
         "how do i pick a ripe cantaloupe",
@@ -3607,7 +3607,7 @@
         "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
       ],
       "labels_decoded": [],
-      "tier_note": "That volatile aromatics escape faster from a ground surface is straightforward chemistry, and the shelf-life gap follows directly from it.",
+      "tier_note": "Volatile oils leaving faster once ground is straightforward chemistry, and toasting before the grind follows from it.",
       "eyebrow_short": "Whole spices",
       "cart_pick": "Whole peppercorns",
       "asked_as": [
@@ -3651,7 +3651,7 @@
         "Smell a bulk bin before you fill a bag from it."
       ],
       "labels_decoded": [],
-      "tier_note": "Rancid fat is a quality problem rather than a safety one, and it is flagged on exactly that basis.",
+      "tier_note": "The paint-and-crayon smell is oxidized fat, a quality problem rather than a safety one, and it is flagged on exactly that basis.",
       "asked_as": [
         "how do i tell if nuts are rancid",
         "has my olive oil gone bad",
@@ -3971,7 +3971,7 @@
         "Natural, wholesome and farm fresh carry little or no definition.",
         "When the front and the back disagree, the front is the one nobody had to check."
       ],
-      "tier_note": "The panel’s contents are mandated and the front of the box is not. That asymmetry is the whole rule.",
+      "tier_note": "The ingredient list, the added sugars and the serving size are mandated by regulation; the front of the box is not.",
       "eyebrow_short": "Front vs. back",
       "asked_as": [
         "where should i look on a package",
@@ -4286,7 +4286,7 @@
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
         "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
       ],
-      "tier_note": "Species, method and country are all required disclosures on unprocessed seafood.",
+      "tier_note": "Species, method and country are required disclosures, and substitution on a bare fillet is documented, which is why the skin stays on.",
       "asked_as": [
         "what has to be on a seafood label",
         "what does a fish label have to say",
@@ -4514,7 +4514,7 @@
         "USDA FoodData Central"
       ],
       "cart_pick": "Aged raw-milk cheddar",
-      "tier_note": "Aging raw milk into cheese predates refrigeration and the sixty-day rule that now governs it. Preferring it is a standard about how the cheese was made, not a health claim.",
+      "tier_note": "Aging raw milk into cheese predates refrigeration and the sixty-day rule; the months on the rind are history as the evidence, not a health claim.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw milk cheese worth it",
