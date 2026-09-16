@@ -1237,12 +1237,14 @@ before starting, not after.**
   "81 + 1" for eight days while two more were live. **Measured 2026-08-19, all three by query or
   by parse:**
   - **LIVE `counter_cards`: 95 rows — 92 `curated` + 3 `generated`. Re-measured by the
-    migration's own read-back 2026-09-16 (P3: 4 inserted / 88 updated).**
+    migration's own read-back 2026-09-16, late (meat-card narrowing + `pick_sausage`:
+    0 inserted / 92 updated).**
   - **`kristy_perimeter_kb.json`: 114 entries — 92 cards + 22 picks — on `main` == `origin/main`
-    == `origin/held` at `e854294`, pushed 2026-09-16 (P3: 4 produce cards, `pick_bell_peppers`
-    absorbed; P4: 4 staple picks).** ⚠️ **PICKS NEVER
+    == `origin/held` at `d3d892e`, pushed 2026-09-16 (P3: 4 produce cards, `pick_bell_peppers`
+    absorbed; P4: 4 staple picks; then meat card narrowed to sourced cues, `pick_sausage`
+    re-cited, `aliasNamesHead` qualifier fix).** ⚠️ **PICKS NEVER
     MIGRATE** — `listMatch.js` reads the KB file; push publishes.
-  - ✅ **KB AND TABLE AGREE AT 92 CURATED, 2026-09-16** — P3 migration: 4 inserted / 88
+  - ✅ **KB AND TABLE AGREE AT 92 CURATED, 2026-09-16** — last migration: 0 inserted / 92
     updated, table read back 95 rows / 95 distinct slugs.
     ⚠️ **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to
     ship** — the 83rd card rode along five days late once. **Diff the KB against the table
