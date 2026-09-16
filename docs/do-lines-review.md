@@ -120,6 +120,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `raw_kefir` | eggs_dairy | The best thing a farm does with its milk. Buy it cultured. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Raw-milk cheese, aged. Legal everywhere and already in the case. | Read the rind label for an age in months. | — |
 | `sprouts_raw` | produce | Buy them cold and crisp, or grow them on the counter. | Check the roots are still white and the clamshell is not fogged. | — |
+| `produce_root_vegetables` | produce | Buy firm roots. Skip anything soft, shriveled, or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
+| `produce_brassicas` | produce | Dark green, tight, and unbruised. Soft or slippery is spoilage. | Check for closed, dark green florets, then press the head for soft spots. | — |
+| `produce_onions_garlic` | produce | Firm and dry with papery skins, and nothing sprouting or moldy. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
+| `produce_leafy_greens` | produce | Crisp, even color, no wilt, yellowing, or decay. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

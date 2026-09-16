@@ -4644,42 +4644,377 @@
       ]
     },
     {
-      "id": "pick_carrots",
-      "kind": "pick",
-      "title": "Carrots",
-      "category": "produce",
+      "id": "produce_root_vegetables",
+      "title": "Root vegetables: carrots, potatoes, beets",
       "aliases": [
         "carrots",
         "carrot",
         "baby carrots",
-        "carrot sticks"
+        "carrot sticks",
+        "beets",
+        "beet",
+        "beetroot",
+        "beetroots",
+        "red beets",
+        "golden beets",
+        "sweet potatoes",
+        "sweet potato",
+        "yams",
+        "russet potatoes",
+        "red potatoes",
+        "yukon gold potatoes",
+        "fingerling potatoes",
+        "bag of potatoes",
+        "root vegetables",
+        "root vegetable",
+        "root veg",
+        "sprouting potatoes",
+        "potatoes with sprouts",
+        "sprouted potatoes",
+        "green potatoes",
+        "storing potatoes",
+        "store potatoes",
+        "potatoes last",
+        "potatoes keep",
+        "storing carrots",
+        "store carrots",
+        "carrots last",
+        "carrots keep",
+        "carrots still good",
+        "carrots with tops",
+        "carrot tops",
+        "fresh carrots",
+        "limp carrots",
+        "wilted carrots",
+        "storing beets",
+        "store beets",
+        "beets fresh",
+        "beets are fresh",
+        "fresh beets",
+        "beets with greens",
+        "storing sweet potatoes",
+        "sweet potatoes last",
+        "good potatoes",
+        "firm potatoes",
+        "soft potatoes"
       ],
-      "decision": "Choose firm, deeply colored carrots and skip any that are soft or split.",
+      "category": "produce",
+      "question": "How do I choose and store carrots, potatoes, sweet potatoes, and beets?",
+      "decision": "Buy firm roots. Skip anything soft, shriveled, or sprouting.",
+      "why": "Firm is the freshness signal every root shares, and each guide says to pass on the soft, shriveled, or sprouting ones.",
+      "short_answer": "Potatoes: firm and free of bruises, nicks, or soft spots, never green. Carrots: firm and well colored, with no green at the top and no wilt, flab, or cracks. Sweet potatoes: smooth and firm, uniform in shape and size, peel color even for the variety, free of damage. Beets: firm and round with a slender tap root; wilted leaves say little about the root as long as it is firm.",
+      "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues.",
+      "evidence_tier": "established",
       "sources": [
-        {
-          "name": "Nebraska Extension: Carrots",
-          "url": "https://food.unl.edu/article/carrots"
-        }
+        "Michigan State University Extension, Michigan Fresh: Selecting and Storing Potatoes, https://www.canr.msu.edu/resources/michigan_fresh_selecting_and_storing_potatoes_e3079",
+        "University of Maine Cooperative Extension, Carrots 101, https://extension.umaine.edu/publications/carrots-101/",
+        "UC Davis Postharvest Technology Center, Sweet Potato fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/sweet-potato",
+        "Ohio State University Extension, Selecting, Storing, and Serving Ohio Beets (HYG-5510), https://ohioline.osu.edu/factsheet/hyg-5510",
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+      ],
+      "kristy_take": "Squeeze before anything else. Firm is the whole test at this bin, and a root that gives has already lost the argument.",
+      "cart_pick": "Firm, unbruised roots with no sprouts; carrots with the tops off before they go in the fridge.",
+      "buying_tips": [
+        "Potatoes: firm, with no bruises, nicks, or soft spots.",
+        "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
+        "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety.",
+        "Beets: firm and round with a slender tap root. The leaves on top say nothing certain about the root.",
+        "Potatoes: a cool, dark, ventilated place, 45 to 50°F, for up to a month.",
+        "Carrots: a closed bag or container in the refrigerator, tops removed, up to two weeks. A wilted carrot revives in cold water.",
+        "Beets: stem trimmed to an inch, root end left on, refrigerated in a food-safe container up to two weeks."
+      ],
+      "watch_out": [
+        "A green tint, shriveling, or many sprouts on a potato: throw it away.",
+        "Green shoulders, wilt, flab, or cracks on a carrot.",
+        "Sweet potatoes kept cold take chilling injury: decay, internal browning, and shriveling. Cool and dry, never the refrigerator."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Firmness as the freshness test and topped carrots keeping longer are settled extension handling guidance.",
+      "eyebrow_short": "Root vegetables",
+      "asked_as": [
+        "should i buy sweet potatoes",
+        "how do i store potatoes at home",
+        "are these carrots still good",
+        "how do i tell if beets are fresh"
       ]
     },
     {
-      "id": "pick_broccoli",
-      "kind": "pick",
-      "title": "Broccoli",
-      "category": "produce",
+      "id": "produce_brassicas",
+      "title": "Broccoli, cauliflower, and cabbage",
       "aliases": [
         "broccoli",
         "broccoli crowns",
         "broccoli crown",
         "broccoli heads",
-        "broccoli head"
+        "broccoli head",
+        "cauliflower",
+        "cauliflowers",
+        "cauliflower head",
+        "cauliflower heads",
+        "cabbage",
+        "cabbages",
+        "green cabbage",
+        "red cabbage",
+        "head of cabbage",
+        "brassicas",
+        "fresh broccoli",
+        "broccoli fresh",
+        "broccoli still good",
+        "broccoli last",
+        "broccoli keep",
+        "broccoli yellowing",
+        "yellow broccoli",
+        "yellowing broccoli",
+        "broccoli florets",
+        "broccoli stems",
+        "storing broccoli",
+        "store broccoli",
+        "broccoli going bad",
+        "broccoli bad",
+        "wilted broccoli",
+        "soft broccoli",
+        "fresh cauliflower",
+        "cauliflower fresh",
+        "cauliflower is fresh",
+        "cauliflower still good",
+        "cauliflower last",
+        "cauliflower brown spots",
+        "storing cauliflower",
+        "store cauliflower",
+        "cauliflower going bad",
+        "fresh cabbage",
+        "cabbage fresh",
+        "cabbage still good",
+        "cabbage last",
+        "cabbage keep",
+        "storing cabbage",
+        "store cabbage",
+        "napa cabbage",
+        "savoy cabbage",
+        "cabbage leaves",
+        "wilted cabbage"
       ],
-      "decision": "Pick firm, dark green heads with tight florets and pass on yellowing or damaged ones.",
+      "category": "produce",
+      "question": "How do I pick fresh broccoli, cauliflower, or cabbage?",
+      "decision": "Dark green, tight, and unbruised. Soft or slippery is spoilage.",
+      "why": "Enlarged, opened, or yellowish-green florets mean broccoli past fresh, and a soft or slippery head is already spoiling.",
+      "short_answer": "Broccoli: dark green florets that are not enlarged, opened, yellowish-green, or wilted, on stems that are not thick and tough. Cauliflower: a head with no bruises or damage. Cabbage: outer leaves not wilted or insect-damaged; strip any that are. Any head that is soft or slippery stays on the shelf.",
+      "detail": "Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, cabbage and cauliflower are among the fifteen items with the lowest pesticide residues.",
+      "evidence_tier": "established",
       "sources": [
-        {
-          "name": "Nebraska Extension: Broccoli",
-          "url": "https://food.unl.edu/article/broccoli"
-        }
+        "Michigan State University Extension, Michigan Fresh: Broccoli, https://www.canr.msu.edu/resources/michigan_fresh_broccoli",
+        "Michigan State University Extension, Michigan Fresh: Cauliflower, https://www.canr.msu.edu/resources/michigan_fresh_cauliflower",
+        "Michigan State University Extension, Michigan Fresh: Cabbage, https://www.canr.msu.edu/resources/michigan_fresh_cabbage",
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+      ],
+      "kristy_take": "Look at the florets first. Dark green and closed tight, and the rest of the head follows.",
+      "cart_pick": "Broccoli with dark green, closed florets; a cauliflower with no bruises; a cabbage with fresh outer leaves.",
+      "buying_tips": [
+        "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
+        "Cauliflower: a head with no bruises or damage.",
+        "Cabbage: outer leaves fresh, not wilted or insect-damaged. Remove any that are.",
+        "Broccoli keeps in the refrigerator in a plastic bag with holes. Use it within three days.",
+        "Cabbage keeps several weeks in a plastic bag or wrap in the refrigerator, at 41°F or below.",
+        "Cut out the cabbage core and rinse the leaves under cool running water before using."
+      ],
+      "watch_out": [
+        "Florets enlarged, opened, yellowish-green, or wilted: the broccoli is not fresh.",
+        "Soft or slippery anywhere on the head is a sign of spoilage. Leave it.",
+        "Keep cauliflower away from raw meat and meat juices."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Open florets meaning stale and a soft head meaning spoiled come straight off the extension fact sheets.",
+      "eyebrow_short": "Broccoli and cabbage",
+      "asked_as": [
+        "is this broccoli still good",
+        "how do i store cabbage",
+        "how do i tell if cauliflower is fresh",
+        "how long does broccoli last"
+      ]
+    },
+    {
+      "id": "produce_onions_garlic",
+      "title": "Onions and garlic",
+      "aliases": [
+        "garlic",
+        "garlic bulb",
+        "garlic bulbs",
+        "head of garlic",
+        "garlic cloves",
+        "garlic clove",
+        "fresh garlic",
+        "sprouted garlic",
+        "garlic sprouting",
+        "garlic sprouts",
+        "soft garlic",
+        "storing garlic",
+        "store garlic",
+        "garlic last",
+        "garlic keep",
+        "garlic going bad",
+        "garlic bad",
+        "yellow onions",
+        "yellow onion",
+        "red onions",
+        "red onion",
+        "white onions",
+        "white onion",
+        "sweet onions",
+        "sweet onion",
+        "vidalia onions",
+        "bag of onions",
+        "storing onions",
+        "store onions",
+        "onions last",
+        "onions keep",
+        "onions sprouting",
+        "sprouting onions",
+        "sprouted onions",
+        "onion sprouting",
+        "onions going bad",
+        "onions bad",
+        "onions and garlic",
+        "onion and garlic",
+        "onions with potatoes",
+        "moldy onions",
+        "onion mold",
+        "soft onions",
+        "fresh onions",
+        "good onions",
+        "onions in the fridge",
+        "refrigerate onions",
+        "onions still good",
+        "alliums"
+      ],
+      "category": "produce",
+      "question": "How do I pick onions and garlic that will keep?",
+      "decision": "Firm and dry with papery skins, and nothing sprouting or moldy.",
+      "why": "A well-cured bulb has a dry neck and dry outer skins; a soft, scented, or sprouting one is already on its way out.",
+      "short_answer": "Onions: firm for their size, with little to no scent, the neck completely dry and not slippery, no cuts, bruises, or blemishes, no gray or black mold, no visible sprouting. Some loose skins are normal. Garlic: clean, white or the color typical of the variety, well cured with a dried neck and outer skins, cloves firm to the touch.",
+      "detail": "Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, onions are among the items with the lowest pesticide residues.",
+      "evidence_tier": "established",
+      "sources": [
+        "National Onion Association, All About Onions: How-Tos, https://www.onions-usa.org/all-about-onions/how-tos/",
+        "National Onion Association, Storage and Handling, https://onions-usa.org/all-about-onions/storage-and-handling/",
+        "UC Davis Postharvest Technology Center, Onions (Dry) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/onions-dry",
+        "UC Davis Postharvest Technology Center, Garlic fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/garlic",
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+      ],
+      "kristy_take": "Squeeze the bulb and smell it. Firm and quiet is the one to take home.",
+      "cart_pick": "Firm, dry onions with no scent and no sprouts; a head of garlic with a dried neck and firm cloves.",
+      "buying_tips": [
+        "Onions firm for their size, with little to no scent.",
+        "An onion neck that is completely dry to the touch, not slippery.",
+        "Garlic well cured: dried neck, dry outer skins, cloves firm to the touch.",
+        "Some loose skins on an onion are normal.",
+        "Whole onions: cool, dry, dark, with air moving. Never in plastic.",
+        "Cut onions go in a sealed container for up to seven days."
+      ],
+      "watch_out": [
+        "Cuts, bruises, blemishes, or gray or black mold on an onion.",
+        "Visible sprouting on either bulb.",
+        "Onions stored with potatoes or anything else that releases moisture. Keep them apart."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Squeezing for firmness and skipping the plastic bag are the onion growers’ own handling rules.",
+      "eyebrow_short": "Onions and garlic",
+      "asked_as": [
+        "how do i store garlic",
+        "are sprouting onions still good",
+        "should i refrigerate onions",
+        "how do i pick a good head of garlic"
+      ]
+    },
+    {
+      "id": "produce_leafy_greens",
+      "title": "Leafy greens: lettuce, spinach, kale",
+      "aliases": [
+        "romaine",
+        "romaine lettuce",
+        "iceberg lettuce",
+        "head of lettuce",
+        "head lettuce",
+        "butter lettuce",
+        "green leaf lettuce",
+        "red leaf lettuce",
+        "fresh lettuce",
+        "lettuce fresh",
+        "crisp lettuce",
+        "lettuce crisp",
+        "keep lettuce crisp",
+        "storing lettuce",
+        "store lettuce",
+        "lettuce last",
+        "lettuce keep",
+        "lettuce still good",
+        "baby spinach",
+        "fresh spinach",
+        "spinach fresh",
+        "bunch of spinach",
+        "bagged spinach",
+        "spinach yellowing",
+        "yellow spinach",
+        "storing spinach",
+        "store spinach",
+        "spinach last",
+        "spinach keep",
+        "spinach still good",
+        "spinach going bad",
+        "bunch of kale",
+        "curly kale",
+        "lacinato kale",
+        "baby kale",
+        "fresh kale",
+        "kale fresh",
+        "storing kale",
+        "store kale",
+        "kale last",
+        "kale keep",
+        "kale still good",
+        "kale wilting",
+        "kale going bad",
+        "salad greens",
+        "fresh greens",
+        "greens fresh",
+        "picking greens",
+        "choosing greens"
+      ],
+      "category": "produce",
+      "question": "How do I choose and keep lettuce, spinach, and kale?",
+      "decision": "Crisp, even color, no wilt, yellowing, or decay.",
+      "why": "Spinach is highly perishable and kale wilts in the warm, so the crispness of the leaf is the freshness date.",
+      "short_answer": "Lettuce: crisp leaves, bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A romaine head that is very loose is immature; very firm or hard is overmature. Spinach: uniformly green, not yellow-green, fully crisp, fairly clean, no serious damage. Kale: firm, deep colored leaves on moist, hardy stems, no browning, yellow, or small holes; smaller leaves are more tender and milder.",
+      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, spinach carries more pesticide residue by weight than any other type of produce, and kale is on the list as well.",
+      "evidence_tier": "established",
+      "sources": [
+        "UC Davis Postharvest Technology Center, Lettuce (Romaine) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lettuce-romaine",
+        "UC Davis Postharvest Technology Center, Spinach fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/spinach",
+        "Michigan State University Extension, Featured local foods for institutions (kale), https://www.canr.msu.edu/news/2016_featured_local_foods_for_institutions",
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+      ],
+      "kristy_take": "Pick the bunch that still stands up, and keep it cold from the cart to the crisper.",
+      "cart_pick": "Crisp, evenly green leaves with no yellowing or decay, straight into the coldest part of the refrigerator.",
+      "buying_tips": [
+        "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
+        "Romaine: a head that is neither very loose nor very hard. Loose is immature; hard is overmature.",
+        "Spinach: uniformly green, fully crisp, fairly clean.",
+        "Kale: firm, deep colored leaves on moist, hardy stems. Smaller leaves are more tender and milder.",
+        "Store lettuce and spinach as close to 32°F as the refrigerator gets.",
+        "Kale: plastic bag, air pressed out, unwashed, about five days in the refrigerator."
+      ],
+      "watch_out": [
+        "Yellow-green spinach or yellowing lettuce leaves.",
+        "Browning, yellow, or small holes on kale.",
+        "Washing kale before storing: water on the leaves brings faster spoilage."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Crisp leaves as the freshness test and cold storage for keeping are what the postharvest sheets for greens say.",
+      "eyebrow_short": "Leafy greens",
+      "asked_as": [
+        "is this spinach still good",
+        "how do i keep lettuce crisp",
+        "how do i pick fresh kale",
+        "how long does kale last in the fridge"
       ]
     },
     {
@@ -4701,25 +5036,6 @@
         {
           "name": "Nebraska Extension: Bell Peppers",
           "url": "https://food.unl.edu/article/bell-peppers"
-        }
-      ]
-    },
-    {
-      "id": "pick_garlic",
-      "kind": "pick",
-      "title": "Garlic",
-      "category": "produce",
-      "aliases": [
-        "garlic",
-        "garlic bulb",
-        "garlic bulbs",
-        "head of garlic"
-      ],
-      "decision": "Pick firm heads and keep garlic on the counter.",
-      "sources": [
-        {
-          "name": "Nebraska Extension: Fresh Herbs",
-          "url": "https://food.unl.edu/article/fresh-herbs"
         }
       ]
     },
@@ -4821,45 +5137,6 @@
       ]
     },
     {
-      "id": "pick_cauliflower",
-      "kind": "pick",
-      "title": "Cauliflower",
-      "category": "produce",
-      "aliases": [
-        "cauliflower",
-        "cauliflowers",
-        "cauliflower head",
-        "cauliflower heads"
-      ],
-      "decision": "Choose a bright, evenly colored head and skip any with brown spots.",
-      "sources": [
-        {
-          "name": "Nebraska Extension: Cauliflower",
-          "url": "https://food.unl.edu/article/cauliflower"
-        }
-      ]
-    },
-    {
-      "id": "pick_cabbage",
-      "kind": "pick",
-      "title": "Cabbage",
-      "category": "produce",
-      "aliases": [
-        "cabbage",
-        "cabbages",
-        "green cabbage",
-        "red cabbage",
-        "head of cabbage"
-      ],
-      "decision": "Choose a firm, glossy head whose stem end is trimmed, not dry or split.",
-      "sources": [
-        {
-          "name": "Nebraska Extension: Cabbage",
-          "url": "https://food.unl.edu/article/cabbage"
-        }
-      ]
-    },
-    {
       "id": "pick_asparagus",
       "kind": "pick",
       "title": "Asparagus",
@@ -4915,27 +5192,6 @@
         {
           "name": "Nebraska Extension: Eggplant",
           "url": "https://food.unl.edu/article/eggplant"
-        }
-      ]
-    },
-    {
-      "id": "pick_beets",
-      "kind": "pick",
-      "title": "Beets",
-      "category": "produce",
-      "aliases": [
-        "beets",
-        "beet",
-        "beetroot",
-        "beetroots",
-        "red beets",
-        "golden beets"
-      ],
-      "decision": "Choose firm, smooth beets; smaller ones are more tender, and green leaves mean fresh.",
-      "sources": [
-        {
-          "name": "Nebraska Extension: Beets",
-          "url": "https://food.unl.edu/article/beets"
         }
       ]
     },
