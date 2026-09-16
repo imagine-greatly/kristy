@@ -1390,6 +1390,10 @@ the four self-referencing tier_notes + two new guards.
    (`GOAL_TEMPLATES`/`FOCUS_ITEMS`, `coachGoals.js`, tier→prose written five times,
    `verdictRamp.js` strings), each with the `listSectionsMirror.test.js` treatment where a
    mirror is unavoidable. **Then** write `docs/SWIFT-SPEC.md`.
+10. **Rotisserie chicken — accepted 2026-09-16:** rows land on `air_chilled_chicken` via the
+    card path (bare `chicken` alias owns every "… chicken" row; a pick fails `pickReach`).
+    Queue a sourced `rotisserie_chicken` shelf card (what the rub/injection label says;
+    sodium/phosphate solution disclosure) when a fetchable source exists. **Do not add a pick.**
 
 **Still blocking revenue, unchanged:** phone sign-in. 10DLC brand + campaign submitted and in
 verification at Twilio. Remaining work is Supabase dashboard only — Auth → Providers → Phone

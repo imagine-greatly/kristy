@@ -2449,19 +2449,20 @@
       "category": "meat_counter",
       "question": "How do I tell good meat from the case?",
       "decision": "Color comes from oxygen and packaging, not from how fresh it is.",
-      "why": "Color is oxygen. Firm springy flesh and a dry tray are what actually tell you.",
-      "short_answer": "Color is the least useful signal and the one everybody uses. Bright red is beef that has met oxygen, purple-red is vacuum-packed beef that has not, and both are fine. Dull brown at the edges means it has been cut a while. What actually tells you: firm springy flesh, fine marbling through the muscle rather than a rim of fat, a dry tray, and no sour smell.",
-      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid pooled in a tray, called purge, is the useful tell: a lot of it means the meat has sat, or was frozen and thawed, and it carries flavor away with it. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them.",
+      "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
+      "short_answer": "Color is the least useful signal and the one everybody uses. Bright red is beef that has met oxygen, purple-red is vacuum-packed beef that has not, and both are fine. Dull brown at the edges means it has been cut a while. What actually tells you: a package that is fully sealed and not leaking meat juices, fine marbling through the muscle rather than a rim of fat, and no off smell or slimy surface.",
+      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS “The Color of Meat and Poultry”",
-        "USDA FSIS meat labeling and product dating guidance"
+        "USDA FSIS meat labeling and product dating guidance",
+        "University of Illinois Extension “Meat Shopping Safety Guidelines” https://extension.illinois.edu/meat-safety/shopping"
       ],
-      "kristy_take": "Color is oxygen, not quality. Press it, look at the tray, smell it. Those three beat the sticker.",
+      "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
       "buying_tips": [
-        "Firm and springy, not soft or tacky. It should push back.",
+        "Not slimy, and no off smell. Either one is a pass.",
         "Fine marbling through the muscle beats a thick fat cap on the outside.",
-        "A dry tray is a good sign. Pooled liquid means it has sat, or was frozen and thawed.",
+        "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
         "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
         "Take it from the back of the case where it is coldest, and get it home cold."
       ],
@@ -2472,10 +2473,10 @@
         },
         {
           "term": "Purge",
-          "meaning": "The liquid in the tray. More of it means the meat sat, or was frozen and thawed."
+          "meaning": "The liquid in the tray. What to check is the package: sealed, and not leaking it."
         }
       ],
-      "tier_note": "Color coming from oxygen is settled chemistry, which is why the press and the spring back read more than the shade.",
+      "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
       "eyebrow_short": "Judging meat",
       "asked_as": [
         "how do i tell if meat is good",
@@ -5763,8 +5764,16 @@
       "decision": "Sausage is a seasoned grind; the ingredient list says what went in beyond the meat.",
       "sources": [
         {
-          "name": "USDA FSIS: Sausages and Food Safety",
-          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/sausages-and-food-safety"
+          "name": "Cornell LII: 9 CFR § 319.140 Sausage",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.140"
+        },
+        {
+          "name": "Cornell LII: 9 CFR § 319.141 Fresh pork sausage",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.141"
+        },
+        {
+          "name": "Cornell LII: 9 CFR § 317.17 Curing agents in the ingredients statement",
+          "url": "https://www.law.cornell.edu/cfr/text/9/317.17"
         }
       ]
     },

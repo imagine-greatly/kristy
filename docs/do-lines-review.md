@@ -82,7 +82,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_feed_claims` | eggs_dairy | ‘Vegetarian-fed’ is the one to walk away from. | Check whether the carton claims outdoor access and no animal protein at once. | — |
 | `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door — it swings warm every open. | — |
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Buy Select for the braise and put the money into Choice steaks. | — |
-| `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Press with a fingertip. It should spring back, not stay dented. | — |
+| `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `dry_brine` | meat · home | Salt it the day before, and leave it uncovered. | Weigh out salt at one percent of the meat’s weight. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask for the bones and trim behind the counter, usually free. | — |
 | `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
