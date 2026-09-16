@@ -5809,11 +5809,15 @@
         "rack of lamb",
         "racks of lamb"
       ],
-      "decision": "Lamb reads like beef at the case: firm and springy, a dry tray, no sour smell.",
+      "decision": "Lamb reads like beef: skip tacky flesh or an off smell, whatever the color.",
       "sources": [
         {
           "name": "USDA FSIS: Lamb from Farm to Table",
           "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table"
+        },
+        {
+          "name": "USDA FSIS: The Color of Meat and Poultry",
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/color-meat-and-poultry"
         }
       ]
     },
@@ -5833,7 +5837,7 @@
         "bunch of celery",
         "bunches of celery"
       ],
-      "decision": "Pick celery with tight, crisp stalks; limp stalks have lost their water.",
+      "decision": "Pick celery with tight, crisp stalks; skip a bunch that has gone limp.",
       "sources": [
         {
           "name": "SNAP-Ed Seasonal Produce Guide: Celery",
