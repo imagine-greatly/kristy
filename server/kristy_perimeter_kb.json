@@ -251,7 +251,9 @@
       "detail": "Muscles that work hard (shoulder/chuck, shank, round) are tougher and cheaper and turn tender with time and moisture. Muscles that don’t (loin, rib) are tender and pricier and want fast, hot cooking. Knowing this is how you eat well on a budget.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "USDA Institutional Meat Purchase Specifications (cut nomenclature)"
+        "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
+        "Iowa State University Extension AnswerLine “Tender vs Less Tender Cuts of Meat” https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/",
+        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts"
       ],
       "kristy_take": "Chuck roast and a slow cooker will out-eat a mediocre steak any day, for half the price.",
       "cart_pick": "Chuck roast",
@@ -262,6 +264,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact.",
+      "watch_out": [
+        "Tenderness comes from how hard the muscle worked and how much connective tissue it carries, not from the age of the animal.",
+        "Chuck is shoulder and round is rear leg. Both are working muscles, less tender, and want liquid, low heat and time.",
+        "Loin and rib sit along the back and do little work, which is why they are the tender sections.",
+        "Marbling is the flecks of fat inside the muscle. More of it means a more tender, juicier steak once cooked, so look for it on a quick-cooked cut."
+      ],
       "asked_as": [
         "which beef cut for stew",
         "what cut of beef should i buy",
@@ -444,12 +452,14 @@
       "question": "Does ‘no antibiotics’ on chicken mean anything?",
       "decision": "Raised without antibiotics is a real claim, but not a cleaner bird.",
       "why": "No chicken may be sold with residues either way. The claim is about how the flock was raised.",
-      "short_answer": "‘Raised without antibiotics’ is a real, meaningful claim — those birds weren’t given antibiotics. But note that no chicken can legally be sold with antibiotic residues anyway, so ‘no antibiotics’ isn’t as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
-      "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns — a legitimate reason to choose it, framed honestly. Look for USDA Process Verified or a third-party check to back the claim.",
+      "short_answer": "‘Raised without antibiotics’ is a real claim: the producer states the birds were not given antibiotics. It rests on the producer’s own paperwork to USDA, and nobody inspects the farm to check it. No chicken can legally be sold with antibiotic residues anyway, so ‘no antibiotics’ isn’t as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
+      "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns — a legitimate reason to choose it, framed honestly. The claim itself is an affidavit, not an inspection, so look for USDA Process Verified or a third-party check to back it.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS ‘raised without antibiotics’ guidance",
-        "FDA antibiotic-residue rules"
+        "FDA antibiotic-residue rules",
+        "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
+        "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
       "kristy_take": "A fair reason to choose it is resistance, not residues. Don’t let the label scare you into thinking regular chicken is full of drugs — it isn’t.",
       "buying_tips": [
@@ -468,6 +478,13 @@
         }
       ],
       "tier_note": "Residue limits apply to every bird sold, which is what leaves the claim about raising alone.",
+      "watch_out": [
+        "The claim rests on the producer’s own affidavit to USDA. The agency does not inspect the farm, so oversight is weak. A third-party seal is what makes it checkable.",
+        "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
+        "‘No hormones’ on chicken is an empty claim. Hormones and steroids are not allowed in poultry, so every bird already qualifies.",
+        "‘Free range’ requires outdoor access and nothing more. A small door to a dirt pen counts. No grass is required and no time outside is set.",
+        "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics."
+      ],
       "asked_as": [
         "does no antibiotics mean anything",
         "is antibiotic free chicken better",
@@ -2403,7 +2420,8 @@
       "sources": [
         "USDA AMS Official United States Standards for Grades of Carcass Beef",
         "USDA AMS voluntary beef grading program",
-        "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean"
+        "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
+        "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
       ],
       "kristy_take": "Grade measures fat inside the muscle and nothing else. A Select chuck roast cooked low and slow beats a Prime steak cooked badly.",
       "buying_tips": [
@@ -2431,6 +2449,11 @@
         }
       ],
       "tier_note": "Grade is a published USDA marbling score, and marbling only shows on a steak cooked fast, not on a braise.",
+      "watch_out": [
+        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist, and a cut can pass USDA grading without earning that name. Read the grade separately.",
+        "Grading looks at marbling and the maturity of the animal. It does not look at breed, and it does not check how the cut looks or the texture of the marbling.",
+        "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
+      ],
       "asked_as": [
         "what does prime choice select mean",
         "is prime beef worth it",
@@ -2571,7 +2594,9 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
-        "MakeFoodSafe.com “Meat Grinding at Home Safety Tips” https://www.makefoodsafe.com/meat-grinding-at-home-safety-tips/"
+        "MakeFoodSafe.com “Meat Grinding at Home Safety Tips” https://www.makefoodsafe.com/meat-grinding-at-home-safety-tips/",
+        "Rising Star Custom Meats “4 Questions You Should Always Ask Your Local Butchers” https://www.risingstarmeats.com/4-questions-you-should-always-ask-your-local-butchers",
+        "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
       ],
       "kristy_take": "The counter is free expertise. Ask what came in today and what is cheap this week, then build dinner from the answer.",
       "cart_pick": "Soup bones for stock",
@@ -2584,6 +2609,12 @@
       ],
       "labels_decoded": [],
       "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat.",
+      "watch_out": [
+        "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out with a much more concentrated flavor. Ask which one it is.",
+        "Silverskin is connective tissue that does not break down in cooking. Ask to have it removed from a tenderloin or ribs.",
+        "Thickness is not fixed. Say how thick the steak should be, what size roast is needed and what lean-to-fat ratio the grind should have.",
+        "Unsure of the cut, name the primal first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+      ],
       "asked_as": [
         "what should i ask the butcher",
         "what do i say at the meat counter",

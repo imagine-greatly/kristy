@@ -59,16 +59,16 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | label_third_party_seals | label_terms | shelf | 4 | 0 | Y | Y | n/a |
 | label_wild_vs_farm_raised | label_terms | shelf | 3 | 0 | Y | Y | n/a |
 | air_chilled_chicken | meat | shelf | 2 | 1 | Y | Y | Y |
-| beef_cuts_basics | meat | shelf | 1 | 0 | N | N | N |
-| beef_grades_usda | meat | shelf | 3 | 1 | Y | N | Y |
+| beef_cuts_basics | meat | shelf | 3 | 2 | Y | Y | Y |
+| beef_grades_usda | meat | shelf | 4 | 2 | Y | Y | Y |
 | beef_grassfed_vs_grainfed | meat | shelf | 3 | 1 | Y | Y | Y |
-| butcher_counter_asking | meat | shelf | 2 | 1 | N | N | N |
+| butcher_counter_asking | meat | shelf | 4 | 3 | Y | Y | Y |
 | chicken_cuts_basics | meat | shelf | 3 | 1 | Y | Y | Y |
 | deli_meat_uncured | meat | shelf | 4 | 2 | Y | Y | Y |
 | dry_brine | meat | home | 3 | 0 | Y | Y | n/a |
 | ground_beef_lean_ratio | meat | shelf | 2 | 1 | Y | Y | Y |
 | judging_meat_at_the_case | meat | shelf | 3 | 1 | Y | N | Y |
-| no_antibiotics_poultry | meat | shelf | 2 | 0 | N | N | N |
+| no_antibiotics_poultry | meat | shelf | 4 | 2 | Y | Y | Y |
 | pork_cuts_and_enhanced | meat | shelf | 3 | 1 | Y | Y | Y |
 | baking_soda_soak | produce | home | 2 | 0 | Y | Y | n/a |
 | berries_picking | produce | shelf | 2 | 0 | Y | Y | N |
@@ -107,7 +107,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 |---|---|---|---|
 | bulk_pantry | 13 | 13 | no URL source (9) |
 | eggs_dairy | 16 | 16 | no URL source (10) |
-| meat | 11 | 3 | no URL source (2: beef_cuts_basics, no_antibiotics_poultry); no served watch_out (3: those two + butcher_counter_asking) |
+| meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
 | produce | 17 | 9 | no URL source (5) |
 | seafood | 8 | 8 | no URL source (5) |
 
@@ -121,9 +121,9 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 **eggs_dairy** (16): a2_vs_a1_milk, cheese_real_vs_processed, cream_vs_creamer, egg_feed_claims, egg_freshness, egg_grades_sizes, egg_labels, egg_shell_color, grassfed_butter, milk_processing, raw_aged_cheese, raw_kefir, raw_milk, whole_vs_reduced_fat_milk, yogurt_live_cultures, yogurt_plain_vs_flavored
 
-**meat** (3): beef_cuts_basics, butcher_counter_asking, no_antibiotics_poultry
+**meat** (0): none
 
-Meat batch 2026-09-20, authored from the appended sections of `docs/research/meat-sources.md`: 7 cards moved to bar A. `butcher_counter_asking` still fails: its only URL source (MakeFoodSafe.com) is the archive’s weakest-tier source, so it remains below 2 strong sources, and it has no served watch_out. `beef_cuts_basics` and `no_antibiotics_poultry` had no fetchable source and are unchanged. `beef_grades_usda` passes on the served watch_out only; its KB `watch_out` stays unauthored because the SDSU quote supports none.
+Meat batch 2026-09-20, authored from the appended sections of `docs/research/meat-sources.md`: 7 cards moved to bar A. Holistic pass, same day, from `## Depth audit, bar A — holistic pass (2026-09-20)`: the remaining four closed. `beef_cuts_basics` (Iowa State AnswerLine + Flannery Beef, watch_out authored), `no_antibiotics_poultry` (Consumer Reports + Rebel Pastures, watch_out authored, short_answer narrowed to producer-attested), `butcher_counter_asking` (Rising Star Meats + Butcher’s Handbook, watch_out authored; MakeFoodSafe kept), `beef_grades_usda` (Nicholas Markets, KB watch_out now authored). Not migrated.
 
 **produce** (9): berries_picking, frozen_vs_fresh_produce, organic_worth_it_by_type, precut_produce_tradeoffs, produce_picking_ripeness, produce_ripeness_by_item, produce_seasonality, sprouts_raw, strawberries_organic_residue
 
