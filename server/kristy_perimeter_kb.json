@@ -140,7 +140,7 @@
         "NOAA Fisheries handling guidance",
         "USDA/FDA seafood storage guidance",
         "Alaska Longline Fishermen’s Association “Why Frozen?” https://www.alfafish.org/why-frozen (frozen at sea within hours of catch, often fresher than ‘fresh’ fish after days in transit)",
-        "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (flash-freezing halts bacterial growth and enzymatic breakdown, preserving texture and flavor)"
+        "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (frozen almost immediately after being caught, often right on the boat; rapid freezing locks in freshness, flavor and nutrients, and no large ice crystals form, so texture and integrity remain)"
       ],
       "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
       "cart_pick": "Frozen wild fish fillets",
@@ -161,8 +161,8 @@
       ],
       "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion.",
       "watch_out": [
-        "‘Fresh’ on the sign means never frozen, not recently caught. Fish frozen at sea within hours of the catch can be fresher than fish that spent days in transit to the counter.",
-        "Flash-freezing stops the bacterial and enzymatic breakdown that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it."
+        "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours of the catch can be fresher than fish that spent days in transit to the counter.",
+        "Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it."
       ],
       "asked_as": [
         "should i buy fresh or frozen fish",
@@ -2925,7 +2925,7 @@
       "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it.",
       "watch_out": [
         "Low mercury is not the whole picture. EWG’s guide sets shrimp, catfish, tilapia, clams, scallops and pangasius apart as low in mercury but also low in omega-3s, against wild salmon, sardines, mussels, rainbow trout and Atlantic mackerel, which are low in mercury and high in omega-3s.",
-        "EWG lists canned light and albacore tuna, halibut, lobster, mahi mahi and sea bass as ones it tells pregnant women and children to limit or avoid, and shark, swordfish, tilefish, king mackerel, marlin, bluefin and bigeye tuna and orange roughy as too high to eat regularly. Anything medical is a doctor’s call."
+        "EWG runs stricter than FDA/EPA here: FDA puts canned light tuna in its lowest tier; EWG tells pregnant women and children to limit it, along with albacore, halibut, lobster, mahi mahi and sea bass. It lists shark, swordfish, tilefish, king mackerel, marlin, bluefin and bigeye tuna and orange roughy as too high to eat regularly. Anything medical is a doctor’s call."
       ],
       "asked_as": [
         "which fish are low in mercury",

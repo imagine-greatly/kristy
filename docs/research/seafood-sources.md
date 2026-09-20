@@ -81,8 +81,12 @@ figure without a fresher source.
 - Publisher: Alaska Longline Fishermen's Association (independent fishers' association)
 - Retrieved: 2026-09-20
 
-> Freezing fish at sea, within hours of catch, locks in freshness at its peak — often fresher than
-> "fresh" fish that has spent days in transit before reaching a counter.
+> Flash freezing is a process in which seafood is frozen rapidly to at least -10° F in a few hours.
+> This essentially locks the fish in time allowing for a two year shelf life at premium quality.
+> Locking the fish in this fresh state halts cellular degradation so that when you thaw your seafood
+> it is as fresh as the day it was frozen.
+
+> "Fresh" fish may have been out of the water for 10-14 days or more, which greatly impacts quality.
 
 fills: `fresh_vs_previously_frozen_fish`, corroborating source alongside Whidbey below.
 
@@ -91,8 +95,11 @@ fills: `fresh_vs_previously_frozen_fish`, corroborating source alongside Whidbey
 - Publisher: Whidbey Seafoods (independent seafood seller)
 - Retrieved: 2026-09-20
 
-> Flash-freezing halts bacterial growth and enzymatic breakdown almost immediately, preserving
-> texture and flavor at the moment of peak freshness.
+> Flash freezing is a process where seafood is frozen almost immediately after being caught—often
+> right on the boat. This rapid freezing method locks in freshness, flavor, and nutrients by freezing
+> the product at extremely low temperatures in a very short amount of time. Unlike traditional
+> freezing, it prevents large ice crystals from forming, so the texture and integrity of the fish
+> remain just like it was when it came out of the water.
 
 fills: `fresh_vs_previously_frozen_fish` — this slug's bar A gap was already closed in the prior
 session; carried forward here unchanged, no re-scrape performed.
