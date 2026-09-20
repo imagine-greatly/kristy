@@ -359,3 +359,215 @@ added" claim and gives a checkable watch_out: the product name must state the pe
 solution by law, and "enhanced" is banned from the name — so a shopper should read the fine print
 on the front label for a percentage rather than trusting a marketing word that legally cannot
 appear there.
+
+## Depth audit, bar A — holistic pass (2026-09-20)
+
+Redo of the four still-failing meat cards from the same-day pass above, fetched via Firecrawl
+instead of WebFetch (the earlier pass's `.gov` fetches 403'd from this box; Firecrawl reached
+independent butcher, extension, and watchdog sources on the first attempt for every URL below).
+Per the owner's sourcing stance — holistic, not a government channel, farmers-market/independent
+butcher sources preferred, "organic means nothing" — every card below carries at least one
+non-government source; regulation is not the spine of any of them.
+
+### beef_cuts_basics: Tender vs Less Tender Cuts of Meat
+
+- URL: https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Iowa State University Extension and Outreach's AnswerLine consumer food-science
+  service — public land-grant university extension, independent of any producer or brand.
+
+> "The tenderness of a cut of meat has more to do with the amount of connective tissue and the
+> amount of exercise the specific muscle receives, than with the age of the animal."
+
+Use: why (tough-vs-tender mechanics — connective tissue and muscle use, not age)
+
+> "Muscles that get more exercise, such as the leg, shoulder, and neck muscles, tend to have more
+> connective tissue and are therefore less tender. Muscles along the back, such as the loin and
+> rib, get less exercise, have less connective tissue, and are naturally more tender."
+
+Use: why (maps primal location — loin/rib vs. shoulder/leg — to tenderness)
+
+> "Cuts from the more exercised, less tender areas benefit from moist-heat cooking methods, such
+> as braising or stewing, which use liquid and low, slow heat to break down the connective
+> tissue."
+
+Use: sources / kristy_note (cooking-method implication of the same mechanic)
+
+### beef_cuts_basics: The Complete Guide to Beef Cuts
+
+- URL: https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Flannery Beef, a third-generation, family-owned independent butcher shop (San Rafael,
+  CA) — the article is bylined by a co-owner and working butcher, not a government or brand
+  marketing page.
+
+> "Written by Katie Flannery, third-generation butcher and co-owner of Flannery Beef... a
+  USDA-certified purveyor of prime dry aged beef, supplying Michelin-starred restaurants and home
+  cooks since 1963."
+
+Use: sources (author/standing statement for the `Standing:` field above)
+
+> "The chuck comes from the shoulder area of the cow... This is a well-exercised muscle group, so
+  the meat tends to be tougher but very flavorful."
+
+Use: why / look_for (chuck = shoulder, tough-but-flavorful, ties to exercise mechanic)
+
+> "The rib section... is known for producing some of the most tender and flavorful cuts, thanks to
+  the marbling and minimal connective tissue in this area."
+
+Use: why / look_for (rib = tender, marbling as the visible cue)
+
+> "The loin is located along the back of the cow and is one of the most tender sections because
+  these muscles do very little work."
+
+Use: why / look_for (loin = tender, ties tenderness to muscle work)
+
+> "The round comes from the rear leg of the cow. Because this area gets a lot of exercise, the
+  meat here tends to be leaner and less tender."
+
+Use: why / look_for (round = leg, lean and tougher)
+
+> "Marbling refers to the small flecks of fat within the muscle. The more marbling a cut has,
+  the more tender, juicy, and flavorful it will be when cooked."
+
+Use: look_for (marbling as the shelf-level visual cue)
+
+### no_antibiotics_poultry: Decoding the Labels on Meat Packages
+
+- URL: https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Consumer Reports — independent nonprofit product-testing and consumer-advocacy
+  organization, no producer or government affiliation; reporting is based on the organization's
+  own nationally representative consumer survey plus USDA/FSIS rule text.
+
+> "A 'no antibiotic' or 'raised without antibiotic' claim should be reliable but verification
+> isn't required. The meat producer can submit an affidavit to the USDA, but the agency does not
+> inspect the farms. However, the label does not mean that hormones [or] other drugs were not
+> used."
+
+Use: watch_out (raised-without-antibiotics is producer-attested, not USDA-inspected, and says
+nothing about hormones)
+
+> "[Natural] on meat and poultry labels does mean no artificial ingredients added to the cut of
+> meat and that the meat is minimally processed, but natural meat and poultry can be raised with
+> antibiotics and natural beef can be raised with synthetic hormones."
+
+Use: watch_out (natural says nothing about antibiotic or hormone use)
+
+> "This label is truthful, but can be misleading. Cattle can be raised with hormones, so a no
+> hormone claim on beef is meaningful. But the USDA does not allow hormones or steroids to be used
+> in poultry or pork."
+
+Use: watch_out (hormone-free on poultry is a true-but-empty claim — hormones are already banned
+for poultry, so the label adds no information)
+
+> "On meat labels, the USDA organic seal indicates that the animal was given only organic feed.
+> The animals can't be given antibiotics or growth hormones."
+
+Use: sources (what organic does affirmatively guarantee, for contrast with "natural")
+
+Dropped (from this same page, not used): a passage describing "Humanely Raised" as having no
+official or independently verified definition — kept for context but not quoted here because it
+does not speak to antibiotics, hormones, natural, or organic, the four claims this card covers.
+
+### no_antibiotics_poultry: Claim: Natural — Food Labels
+
+- URL: https://www.consumerreports.org/natural-foods/the-difference-between-labels-on-organic-and-natural-foods/
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Consumer Reports, same standing as above.
+
+Dropped: this URL resolved to a page substantially overlapping the "Decoding the Labels" article
+already quoted above; no additional non-duplicate verbatim passage was found worth a separate
+quote. **`no_antibiotics_poultry` therefore has one archived source this pass (Consumer Reports),
+short of the ≥2 target** — a second, non-CR source (extension or a watchdog such as the Cornucopia
+Institute) is still needed in a follow-up pass.
+
+### butcher_counter_asking: 4 Questions You Should Always Ask Your Local Butchers
+
+- URL: https://www.risingstarmeats.com/4-questions-you-should-always-ask-your-local-butchers
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Rising Star Custom Meats Inc, an independent custom-cutting butcher shop (Caldwell,
+  ID) with over 30 years in the trade — not a government or brand source.
+
+> "There are generally two methods for aging: wet aging and dry aging. Wet aging involves sealing
+> the cuts in plastic vacuum bags and letting them rest in a refrigerated environment. This method
+> retains moisture and happens quickly, but it does not concentrate the flavor as much. Dry aging
+> happens in a controlled, open-air cooler where moisture evaporates steadily over time. This
+> evaporation shrinks the overall weight of the beef but leaves behind an incredibly robust
+> flavor."
+
+Use: why / sources (wet-aged vs. dry-aged, a question to ask at the counter)
+
+> "You are not forced to accept whatever thickness the store manager decided on that morning. You
+> can specify exactly how thick you want your steak, what size roast will feed your family
+> comfortably, and what ratio of lean meat to fat you prefer."
+
+Use: cart_pick / why (custom cuts as the reason a counter beats the pre-packaged case)
+
+### butcher_counter_asking: How to Order Meat Like a Pro: Butcher Counter Communication Guide
+
+- URL: https://butchershandbook.com/guides/butcher-counter-terminology
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: The Butcher's Handbook, bylined by Elena Vasquez, described as having "spent two
+  decades behind butcher counters in Buenos Aires and the Basque Country" — an independent
+  food-writer/working-butcher source, not a retailer or government page.
+
+> "Do you have any dry-aged ribeyes?" — Aged beef has concentrated flavor and commands a premium
+
+Use: why (dry-aged as a specific ask at the counter, corroborates the Rising Star source)
+
+> "Can you remove the silverskin?" — Tough connective tissue that does not break down; worth
+> asking to have removed from tenderloins, ribs, or any visible silver membrane
+
+Use: sources (a concrete, checkable question to ask a butcher)
+
+> "When asking about a cut you are not sure about, reference the primal first. 'Do you have any
+> good roasts from the chuck?' or 'What cuts from the loin do you have today?' This shows you
+> understand the basics and opens up a real conversation about what is fresh and what will work
+> for your needs."
+
+Use: why (why naming the primal, not just the cut, is the effective way to talk to a butcher)
+
+### beef_grades_usda: Certified Angus Beef vs. USDA Prime: What's the Difference?
+
+- URL: https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Nicholas Markets, an independent New Jersey grocer with an in-house full-service
+  butcher shop — not a government source; explains a USDA program from a retailer's working
+  perspective rather than restating the regulation.
+
+> "USDA grading is a quality score, not a certification. A federal grader looks at marbling (the
+> flecks of fat within the muscle) and the maturity of the animal, then sorts the carcass into a
+> tier — Prime, Choice, Select, and so on."
+
+Use: sources (what the grade actually measures)
+
+> "USDA grading doesn't look at breed, doesn't set a maximum carcass size, and doesn't screen for
+> visual appeal or marbling texture. It's one measurement, applied broadly across every type of
+> cattle in the country."
+
+Use: watch_out (the grade says nothing about breed — a checkable pitfall for the next quote)
+
+> "Certified Angus Beef isn't a grade, it's a brand with ten specific quality checkpoints that beef
+> has to clear before it can carry the name... passing USDA grading alone doesn't earn the CAB
+> name."
+
+Use: watch_out ("Angus" branding on a package is a separate marketing standard, not itself a
+USDA grade — a shopper reading "Angus" on a label should not read it as "Prime" or any other
+government grade)
+
+### Dropped sources
+
+- `no_antibiotics_poultry`: Consumer Reports "Claim: Natural — Food Labels"
+  (https://www.consumerreports.org/natural-foods/the-difference-between-labels-on-organic-and-natural-foods/) —
+  scraped successfully but returned content overlapping the "Decoding the Labels on Meat Packages"
+  article already quoted; no distinct additional verbatim passage found. Not counted as a second
+  independent source; `no_antibiotics_poultry` remains at 1 archived source this pass, short of
+  the ≥2 target.
+- Two Firecrawl search queries for a hormone-free/"natural" watchdog angle returned low-quality
+  results (Facebook, Reddit, Yahoo Answers threads) with no fetchable article-quality page; none
+  were scraped.
+- Consumer Reports "Decoding the Labels on Meat Packages": a passage on antibiotic-resistant
+  bacteria and a separate WHO nitrate-carcinogenicity claim were both read but deliberately not
+  quoted anywhere in this pass — both are health-outcome claims and out of scope under the
+  claim-lock's no-health-outcome-claim rule, regardless of source quality.
