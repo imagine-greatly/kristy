@@ -2668,7 +2668,7 @@
       "question": "Which pork cut should I buy, and what does ‘solution added’ mean?",
       "decision": "Pork shoulder is the forgiving cut; enhanced pork is pumped with saltwater.",
       "why": "Shoulder is the value cut in the case. ‘Enhanced’ means injected brine, sold by the pound.",
-      "short_answer": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. Shoulder (Boston butt, picnic) is the braising and pulled-pork cut and it is cheap. Loin and tenderloin are lean and quick. The label to find is ‘enhanced’ or ‘contains up to X% solution’, which means injected saltwater and phosphates. You buy that liquid by the pound, and it is already salted.",
+      "short_answer": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. Shoulder (Boston butt, picnic) is the braising and pulled-pork cut and it is cheap. Loin and tenderloin are lean and quick. The figure to find is ‘contains up to X% solution’, which means injected saltwater and phosphates. You buy that liquid by the pound, and it is already salted.",
       "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture, because modern pork is bred lean and dries out. The percentage has to be declared. It is not unsafe, and it does make a lean chop more forgiving, but it changes what you paid for and it pre-seasons the meat, so a second brine oversalts it. Unenhanced pork browns better and tastes more like pork. Shoulder is the value cut of the whole animal: fatty, forgiving, and it feeds a crowd for very little.",
       "evidence_tier": "established",
       "sources": [
@@ -2681,7 +2681,7 @@
       "buying_tips": [
         "Braise or pull: shoulder, Boston butt, picnic, country-style ribs.",
         "Fast and lean: loin chops, tenderloin. Pull them early.",
-        "Read for ‘enhanced’ or ‘contains up to X% solution’. That is injected brine.",
+        "Read for ‘contains up to X% solution’. That is injected brine.",
         "Enhanced pork is already salted. Skip your own brine, and expect less browning.",
         "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie."
       ],
