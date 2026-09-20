@@ -9,19 +9,19 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | slug | section | kind | sources | sources w/ URL | served watch_out | KB watch_out authored | meets Bar A |
 |---|---|---|---|---|---|---|---|
 | bean_soak_salt | bulk_pantry | home | 2 | 0 | Y | Y | n/a |
-| beans_dried_vs_canned | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
-| bottled_water_buying | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
-| bulk_bins_buying | bulk_pantry | shelf | 2 | 0 | N | N | N |
-| flour_basics | bulk_pantry | shelf | 3 | 0 | N | N | N |
-| grains_beyond_rice | bulk_pantry | shelf | 3 | 0 | N | N | N |
-| honey_adulteration | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
-| nut_butter_ingredients | bulk_pantry | shelf | 3 | 0 | Y | N | N |
-| nuts_raw_vs_roasted | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
-| oats_steelcut_rolled_instant | bulk_pantry | shelf | 2 | 0 | Y | N | N |
-| olive_oil_grades | bulk_pantry | shelf | 3 | 0 | Y | Y | N |
-| rancidity_check | bulk_pantry | shelf | 2 | 0 | N | N | N |
-| rice_arsenic | bulk_pantry | shelf | 5 | 0 | Y | Y | N |
-| whole_spices | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
+| beans_dried_vs_canned | bulk_pantry | shelf | 2 | 1 | Y | Y | Y |
+| bottled_water_buying | bulk_pantry | shelf | 2 | 1 | Y | Y | Y |
+| bulk_bins_buying | bulk_pantry | shelf | 4 | 2 | Y | Y | Y |
+| flour_basics | bulk_pantry | shelf | 4 | 1 | Y | Y | Y |
+| grains_beyond_rice | bulk_pantry | shelf | 4 | 1 | Y | Y | Y |
+| honey_adulteration | bulk_pantry | shelf | 3 | 2 | Y | Y | Y |
+| nut_butter_ingredients | bulk_pantry | shelf | 4 | 1 | Y | Y | Y |
+| nuts_raw_vs_roasted | bulk_pantry | shelf | 3 | 1 | Y | Y | Y |
+| oats_steelcut_rolled_instant | bulk_pantry | shelf | 2 | 1 | Y | Y | Y |
+| olive_oil_grades | bulk_pantry | shelf | 5 | 2 | Y | Y | Y |
+| rancidity_check | bulk_pantry | shelf | 3 | 1 | Y | Y | Y |
+| rice_arsenic | bulk_pantry | shelf | 5 | 1 | Y | Y | Y |
+| whole_spices | bulk_pantry | shelf | 3 | 1 | Y | Y | Y |
 | a2_vs_a1_milk | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | cheese_real_vs_processed | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | cream_vs_creamer | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
@@ -105,7 +105,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 | section | total shelf cards | failing | why (most common) |
 |---|---|---|---|
-| bulk_pantry | 13 | 13 | no URL source (9) |
+| bulk_pantry | 13 | 0 | — (all 13 at bar A, 2026-09-21 holistic pass) |
 | eggs_dairy | 16 | 0 | — (all 16 at bar A, 2026-09-20 holistic pass) |
 | meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
 | produce | 17 | 0 | — (all 17 at bar A, 2026-09-20 holistic pass) |
@@ -117,7 +117,9 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 ## Failing slugs by section (Bar A) — research backlog
 
-**bulk_pantry** (13): beans_dried_vs_canned, bottled_water_buying, bulk_bins_buying, flour_basics, grains_beyond_rice, honey_adulteration, nut_butter_ingredients, nuts_raw_vs_roasted, oats_steelcut_rolled_instant, olive_oil_grades, rancidity_check, rice_arsenic, whole_spices
+**bulk_pantry** (0): none
+
+Pantry batch 2026-09-21, authored from `docs/research/pantry-sources.md`: 13 cards moved to bar A (`b49923f`), critic fixes applied after (olive-oil tautology reworded, spices ‘main way’ → ‘a primary way’ per source, bottled-water glass-vs-plastic note added, flour’s NutriMill filler source dropped). Not migrated.
 
 **eggs_dairy** (0): none
 
