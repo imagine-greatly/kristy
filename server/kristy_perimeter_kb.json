@@ -2215,7 +2215,8 @@
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS shell-egg dating and Julian pack codes",
-        "USDA Egg Grading Manual (air cell and interior quality)"
+        "USDA Egg Grading Manual (air cell and interior quality)",
+        "University of Nebraska–Lincoln Extension “Cracking the Date Code on Egg Cartons” (Julian pack date; eggs keep 4 to 5 weeks past the pack date refrigerated)"
       ],
       "kristy_take": "The three-digit number is the truth. The sell-by is the store’s schedule.",
       "buying_tips": [
@@ -2223,6 +2224,11 @@
         "Open the carton and check for cracks and leaks before it goes in the cart.",
         "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
         "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe."
+      ],
+      "watch_out": [
+        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart; the Julian code is the one that tells them apart.",
+        "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
+        "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early."
       ],
       "labels_decoded": [
         {
@@ -2283,6 +2289,11 @@
         "Baking assumes Large. Swapping sizes changes a batter more than it changes a scramble.",
         "Compare price per ounce, not per dozen. The bigger carton is not automatically the better buy."
       ],
+      "watch_out": [
+        "Neither grade nor size says anything about how the hen lived or what she ate. Those are separate labels.",
+        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large; it cannot be smaller.",
+        "AA and A differ only in the firmness of the white, and that fades with age. The pack date outranks the grade."
+      ],
       "labels_decoded": [
         {
           "term": "Grade AA",
@@ -2333,7 +2344,8 @@
       "sources": [
         "USDA FSIS labeling policy on feed claims",
         "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
-        "Poultry-science literature on omega-3 enrichment of eggs"
+        "Poultry-science literature on omega-3 enrichment of eggs",
+        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)"
       ],
       "kristy_take": "A hen on real pasture is eating bugs. That claim says she was not.",
       "cart_pick": "Soy-free pasture-raised eggs",
@@ -2343,6 +2355,11 @@
         "‘Omega-3 enriched’ means flax or algae in the ration. The amount is not standardized.",
         "‘Vegetarian-fed’ means no animal protein in the feed, which sits oddly beside a real pasture claim.",
         "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed."
+      ],
+      "watch_out": [
+        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced; feed from several unnamed suppliers often cannot, and the carton does not say which.",
+        "‘Organic’ on the feed is a claim about how the grain was grown. The watchdog view is that traceability of organic feed can be impenetrable once it leaves the farm, so a farm that grows its own is the stronger answer.",
+        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words."
       ],
       "labels_decoded": [
         {
@@ -3400,7 +3417,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA Pasteurized Milk Ordinance (time and temperature standards)",
-        "FDA milk labeling and processing definitions"
+        "FDA milk labeling and processing definitions",
+        "Michigan State University Extension, dairy processing article (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
       ],
       "kristy_take": "The shortest date on the shelf is usually the least-handled milk.",
       "cart_pick": "Non-homogenized whole milk",
@@ -3410,6 +3428,10 @@
         "‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it.",
         "Non-homogenized is still pasteurized. Two different processes.",
         "The shortest date on the shelf usually means the least processing, not worse milk."
+      ],
+      "watch_out": [
+        "Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.",
+        "Non-homogenized is not raw. It is still pasteurized; only the fat was left alone."
       ],
       "labels_decoded": [
         {
@@ -3532,7 +3554,8 @@
       "sources": [
         "FDA standards of identity for cream products, 21 CFR 131",
         "FDA food labeling regulations",
-        "Product ingredient labeling"
+        "Product ingredient labeling",
+        "Morning Fresh Dairy “Coffee Creamer, Half & Half, and Whipping Cream” https://www.morningfreshdairy.com/moo-news/an-explanation-on-coffee-creamer-half-half-and-whipping-cream.html"
       ],
       "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
       "cart_pick": "Half-and-half",
@@ -3542,6 +3565,11 @@
         "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
         "Flavored creamers are where the added sugar sits. Read the panel.",
         "Whole milk or half-and-half does the same job with a two-word ingredient list."
+      ],
+      "watch_out": [
+        "Most coffee creamers are dairy-free. Water, sugar and vegetable oil are the usual first three ingredients, and many are built on almond, oat or coconut milk rather than cream.",
+        "The flavored creamers carry the most sugar. That line on the panel is the one to read first.",
+        "Real cream can still carry carrageenan or gellan gum. The fat number is fixed by law; the list is not."
       ],
       "labels_decoded": [
         {

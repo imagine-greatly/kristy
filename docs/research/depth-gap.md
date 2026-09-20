@@ -24,19 +24,19 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | whole_spices | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
 | a2_vs_a1_milk | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | cheese_real_vs_processed | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| cream_vs_creamer | eggs_dairy | shelf | 3 | 0 | N | N | N |
-| egg_feed_claims | eggs_dairy | shelf | 3 | 0 | N | N | N |
-| egg_freshness | eggs_dairy | shelf | 2 | 0 | N | N | N |
-| egg_grades_sizes | eggs_dairy | shelf | 2 | 0 | N | N | N |
+| cream_vs_creamer | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
+| egg_feed_claims | eggs_dairy | shelf | 4 | 0 | Y | Y | N |
+| egg_freshness | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
+| egg_grades_sizes | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
 | egg_labels | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | egg_shell_color | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | egg_storage | eggs_dairy | home | 3 | 0 | N | N | n/a |
 | grassfed_butter | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| milk_processing | eggs_dairy | shelf | 2 | 0 | N | N | N |
+| milk_processing | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
 | raw_aged_cheese | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | raw_kefir | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | raw_milk | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
-| whole_vs_reduced_fat_milk | eggs_dairy | shelf | 1 | 0 | Y | Y | N |
+| whole_vs_reduced_fat_milk | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | yogurt_live_cultures | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
 | yogurt_plain_vs_flavored | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
 | label_artificial_color | label_terms | shelf | 5 | 0 | Y | Y | n/a |
@@ -106,7 +106,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | section | total shelf cards | failing | why (most common) |
 |---|---|---|---|
 | bulk_pantry | 13 | 13 | no URL source (9) |
-| eggs_dairy | 16 | 16 | no URL source (10) |
+| eggs_dairy | 16 | 13 | no URL source (13) — 3 at bar A, 2026-09-20 holistic pass |
 | meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
 | produce | 17 | 0 | — (all 17 at bar A, 2026-09-20 holistic pass) |
 | seafood | 8 | 8 | no URL source (5) |
@@ -119,7 +119,9 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 **bulk_pantry** (13): beans_dried_vs_canned, bottled_water_buying, bulk_bins_buying, flour_basics, grains_beyond_rice, honey_adulteration, nut_butter_ingredients, nuts_raw_vs_roasted, oats_steelcut_rolled_instant, olive_oil_grades, rancidity_check, rice_arsenic, whole_spices
 
-**eggs_dairy** (16): a2_vs_a1_milk, cheese_real_vs_processed, cream_vs_creamer, egg_feed_claims, egg_freshness, egg_grades_sizes, egg_labels, egg_shell_color, grassfed_butter, milk_processing, raw_aged_cheese, raw_kefir, raw_milk, whole_vs_reduced_fat_milk, yogurt_live_cultures, yogurt_plain_vs_flavored
+**eggs_dairy** (13): a2_vs_a1_milk, cheese_real_vs_processed, egg_feed_claims, egg_freshness, egg_labels, egg_shell_color, grassfed_butter, milk_processing, raw_aged_cheese, raw_kefir, raw_milk, yogurt_live_cultures, yogurt_plain_vs_flavored
+
+Dairy/eggs batch 2026-09-20, authored from `docs/research/dairy-eggs-sources.md`: 3 cards moved to bar A. `whole_vs_reduced_fat_milk` (Florida Dairy Farmers URL + MSU Extension processing, watch_out extended: 3.25%, skimmed never watered), `cream_vs_creamer` (Morning Fresh Dairy URL, watch_out authored: dairy-free creamers, flavored sugar, gums in real cream), `egg_grades_sizes` (Pete & Gerry’s URL + American Egg Board, watch_out authored: grade/size say nothing about the hen, next-size-up rule, AA/A fades with age). Three more got watch_out and a non-URL archive source but stay failing on the URL column: `egg_freshness` (UNL Extension Julian code), `egg_feed_claims` (Cornucopia feed-sourcing criteria), `milk_processing` (MSU Extension homogenization). ⚠️ The archive's closing note claims a fetched URL for all 16; its own entries carry a URL for only three (floridamilk, morningfresh, peteandgerrys). The other 13 entries have `URL: (description)` — the scrape files exist but the URLs were not written into the archive, so the remaining 10 untouched cards (already ≥2 sources + watch_out) need a re-fetch or the URLs recovered from the scrape headers before they can pass. Excluded on rule: a `milk_processing` watch_out line on shelf life that no archive source supported (claim lock). Not migrated.
 
 **meat** (0): none
 
