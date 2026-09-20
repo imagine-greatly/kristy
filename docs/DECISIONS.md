@@ -1046,3 +1046,80 @@ in `CLAUDE.md`; this is the account they point at.
   (possession of the code is the proof); a `signUp` path is not.** Nothing ships one today,
   which is why this is a note and not a defect.
 
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Non-negotiables, Architecture, The interface
+
+- **OVERTURNED BY THE OWNER, 2026-08-24 — ON iOS ONLY. THE APP COMES OFF DARK STOCK AND GOES ONTO PAPER.**
+- **no longer binds `kristy-ios`**
+- **green / ochre / orange as the food ladder every shopper already reads off packaging**
+- **AMENDED 2026-09-07: THE GROUND IS SOLAR KRAFT `#CFBA8E` AND THE CARD IS `#F5F1E6`**
+- **`Fraunces` replaces Playfair Display Italic and Newsreader**
+- **the near-black forest green and the brass are NOT deleted — they CONCENTRATE into the seal's plate and appear nowhere else.**
+- **forbidden off the plate**
+- **The ruling, every value, the build order: `kristy-ios/docs/ios-specs/paper.md`, whose §0 is the premise every other section derives from.**
+- **RECORDED IN THREE PLACES, ALL THREE OR NONE**
+- **`palette_mirror.sh` NEEDS NO CHANGE AND MUST NOT BE LOOSENED**
+- **STILL BINDING:**
+- **this reversal changes no byte there.**
+- **The VOICE rule is untouched**
+- **And "never invent" still binds every colour authored from here on**
+- **No-treatment rule, and it is symmetric.**
+- **The stamp is earned — AMENDED 2026-09-07, iOS ONLY.**
+- **Taken: the iOS landing's `empty` state carries it as the brand mark, and the earned one differs by PLACEMENT**
+- **Static; motion was withdrawn (Reduce Motion kills it).**
+- **a SECOND reversal, not #1's.**
+- **One verdict per headline, and accuracy outranks firmness.**
+- **if a claim needs a false mechanism to sound convincing, the claim is wrong.**
+- **The count is stated once, in Infrastructure state**
+- **its count is stated once, in Infrastructure state.**
+- **`GuestApp` IS PRODUCTION. `App`'s own surface stack has never rendered for a real visitor.**
+- **`main` is production. Pushing publishes, in about a minute.**
+- **The distinction is load-bearing because the SERVER only trusts origins in `CLIENT_ORIGIN`**
+- **TWO STATES AND ONE LOOP.**
+- **Nav: Home · Scan · Counter · Haul**
+- **THE CART TAB IS GONE AND THE BAR SURVIVED.**
+- **Shop mode is a MODE, not a tab.**
+
+### Load-bearing decisions (incl. Phone sign-in)
+
+- **Every entry below is a RULE. The incident that produced it, the measurement behind it and the version it superseded are in `docs/DECISIONS.md`, section by section, in the same order. Read the account before you change a rule; the rule alone is enough to obey one.**
+- **`scanned_products` holds products, not people — no `user_id` column, ever**
+- **THE INGREDIENT-LEVEL SWAP IS NOT A PRODUCT RECOMMENDATION. It is cut from the scan card.**
+- **THE CATALOG IS THE PREREQUISITE. Do not build the swap engine before the rows exist.**
+- **`cart_pick`, `decision` and `why` are deliberately NOT among the seven fields `sanitizeForModel` passes**
+- **SCOPE HAS BEEN WRONG IN ONE DIRECTION EVERY TIME — too tight, never too loose.**
+- **A LABEL QUESTION IS THE LABEL SECTION'S WHOLE JOB.**
+- **THE RETRIEVAL FLOOR IS ONE ALIAS HIT, asserted in alias hits — not in a threshold.**
+- **This defect has shipped five consecutive times.**
+- **KITCHEN TECHNIQUE IS A CARD CLASS, and `kind='home'` carries it.**
+- **mechanical only — what happens to the food and why, never a bodily outcome.**
+- **Adding to `IMPERATIVE_VERBS` stays a deliberate act**
+- **Where the popular claim outruns the evidence, the card states the narrower true thing and the gap goes in `watch_out`. Verify the study, not the retelling.**
+- **GENERALIZING A HUB'S DO LINE ORPHANS WHATEVER THE GENERALIZATION EXCLUDES. Check the boundary before shipping a qualifier, and count what falls outside it.**
+- **A generated card that OWNS a subject belongs in version control; one restating a curated verdict gets folded.**
+- **THERE ARE FIVE STATES, NOT FOUR.**
+- **The one-word over-match is FIXED IN SWIFT ONLY and `rowMatch.js` keeps it, deliberately.**
+- **Do not "finish the job" by editing `rowMatch.js`: it is in the frozen `client/src`, and the divergence is the recorded decision.**
+- **exactly one active, held by a partial unique index rather than a code path**
+- **Three statuses, and the third is the honest one. An untouched trip is REUSED rather than archived**
+- **a caller cannot sequence them wrongly because a caller cannot perform either half.**
+- **`trip_id` on `haul_scans` is NOT part of this.**
+- **expectations are DERIVED from the fixture**
+- **A PROBE'S INPUT SHAPE AND ITS FAILURE DEFINITION ARE BOTH PART OF THE CLAIM — state them.**
+- **A STATE WORD IS A SUBJECT.**
+- **Both sides must name one.**
+- **Her silence is honest**
+- **THE SCOPE BOUNDARY: food and food-adjacent only.**
+- **THE STANDING ARGUMENT AGAINST PERSONALIZATION-BY-GENERATION — quote it, do not re-derive it.**
+- **The measurement is `docs/LIST-CREATION-AUDIT.md` §C**
+- **A rule that says *quote it* has to say where.**
+- **The empty dashboard is the quietest screen in the app and must NEVER carry one**
+- **Approved, and the only qualifying surface in the iOS client — the empty Haul:**
+- **The three existing lines are WEB-ONLY.**
+- **WHAT THE REVERSAL LICENSED IS ALREADY DONE: `/privacy` AND `/terms` NO LONGER DESCRIBE AN SMS PRACTICE.**
+- **the cost is accepted, not overlooked**

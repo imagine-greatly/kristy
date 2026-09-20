@@ -221,3 +221,17 @@ procedure, the delete door, the publication evidence: `docs/LEGAL-PAGE-RULINGS.m
   stripping comments from both files and diffing against `HEAD`, identical — so the divergence is
   invisible content only. **It publishes on the next push of these files, and the fetch-verify
   must be re-run then.**
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Legal pages
+
+- **RULED 2026-08-19: ITS POSITIONING COMMENTS STAY, AND THAT IS NOW SETTLED RATHER THAN DEFERRED.**
+- **the owner closed it — anyone who cares reads the positioning off the RENDERED page in ten seconds, so removing the comments buys nothing.**
+- **Do not re-propose it, and do not strip them as a side effect of some later edit.**
+- **THE COMMENT MOVE PUBLISHED WITH THE STACK, 2026-09-16.**
+- **The strip must cover HTML *and* CSS comments**
+- **Fetch-verified 2026-09-16 on `kristyapproved.com`: all three served pages byte-identical to `client/public/`, pointers present.**

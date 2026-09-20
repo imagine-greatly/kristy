@@ -1037,3 +1037,20 @@ POINT.** Account, the five answers and the five open decisions: `docs/PRICING-MO
   asserted**, so a third hop fails a test instead of silently halving the ceiling.
 
 ---
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Money
+
+- **READ IT BEFORE TOUCHING THE TRIAL, THE TRIP COUNT, THE ASK OR THE ENTITLEMENT.**
+- **it governs work that is entirely unbuilt and mostly client-side**
+- **Moving it did not soften it**
+- **never the authority**
+- **what stays locked is SEEDING**
+- **`evaluatePremium` TAKES ZERO CHANGE**
+- **one real sign-in is upstream of all of it.**
+- **landed 2026-08-15**
+- **do not read this bullet as "build the adapter" — it is built, and rebuilding it is the cost of leaving the line wrong.**

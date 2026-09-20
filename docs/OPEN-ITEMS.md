@@ -1228,3 +1228,59 @@ commit both. Separately proposed server work.
 
 ---
 
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Open items / Infrastructure state
+
+- **A ✅ ENTRY HERE IS A ONE-LINE TOMBSTONE PLUS ANY RULE IT LEFT BEHIND, NOT AN ACCOUNT.**
+- **the evidence is in the doc, and a tombstone that grows an account back is this file's budget defect returning.**
+- **the only check that settles it is sending mail to it, which is an outward-facing act and is the owner's.**
+- **no page was edited to work around it.**
+- **THE RULE IT LEAVES: A BOUNCING SUPPORT ADDRESS IS WORSE THAN NO ADDRESS**
+- **Re-check the mailbox still receives before any App Store submission**
+- **Gate (b) of the hold that was; the stack released 2026-09-16**
+- **The rule it leaves: stamp on an OK OFF answer — including `other` and not-found — never on a network failure or non-2xx; the re-read routes through `retainProduct` so the row moves, and the tests read the row back.**
+- **now reachable**
+- **RELEASED 2026-09-16 — THE STACK IS LIVE. `main` == `origin/main` == `origin/held` at `51cdcbf`; Railway verified by fetch (82 → 84 topics, 0 picks in the browse, pick lines on the attach).**
+- **before the first client call, not before deploy**
+- **Rules the hold leaves, all live the next time something is held:**
+- **DO NOT IDENTIFY HELD WORK BY HASH OR BY "AHEAD N" — neither survives a split, a rebase or a partial push. Only the SUBJECT is stable.**
+- **When something above a hold is urgent, CHERRY-PICK IT PAST — and THE REBASE AFTERWARDS IS NOT OPTIONAL.**
+- **A stack is pushed as a stack; clearing one gate releases nothing. A cleared blocker is not an approval.**
+- **Each item below is a POINTER PLUS ITS ONE TRAP. The reasoning is in the named doc — read it before starting, not after.**
+- **CLOSED 2026-09-16 — THE FOUR DO LINES: three narrowed to what their card supports, one withdrawn**
+- **Rule it leaves: the do line is claim-locked to the entry's own fields, same as every other sentence a shopper reads.**
+- **THAT RESET IS NOT THE ACCEPTED LOOPHOLE AND MUST NOT BE FILED UNDER IT.**
+- **the ask fires one trip late**
+- **CLOSED 2026-08-25 — BOTH SCAN-PATH DEFECTS, IN THE RECORDED ORDER, AND THE ORDER IS THE ONLY REASON THE SECOND WAS SAFE.**
+- **Live since the 2026-09-16 release. Not migrated: no corpus change.**
+- **The rules they leave, all live:**
+- **THE PRODUCT-CATEGORY VOCABULARY LETS A PRODUCT PAST A FAIL-CLOSED GATE**
+- **DO NOT WIDEN IT TO FIX A FILING PROBLEM**
+- **A CONTRIBUTOR-NAMED FIELD IS AN ASSERTION.**
+- **Guard the field whose name makes the claim.**
+- **`sameVerdict` IS BLIND ACROSS LANGUAGES, WHICH IS WHY A SECOND GUARD EXISTS.**
+- **`TRANSLATION_EXPANSION_CEILING` is 2.0 with its SAMPLE recorded beside it**
+- **Raise it only on measured translations that fail it, and add them to the sample.**
+- **Red there means a bottle of water is one step from the seal again.**
+- **CLOSED 2026-08-19 — the SMS text on `/privacy` and `/terms`.**
+- **"The wall is down" is true of the DB and only the DB.**
+- **Two migrations outstanding.**
+- **code hard-fails the retain path without it; apply before pushing `main`.**
+- **THE CORPUS COUNT LIVES HERE AND NOWHERE ELSE, AND A GENERATED ROW IS WRITTEN BY THE PIPELINE AND NEVER APPEARS IN A DIFF — RE-COUNT IT, DO NOT CARRY THE NUMBER FORWARD.**
+- **Measured 2026-08-19, all three by query or by parse:**
+- **LIVE `counter_cards`: 95 rows — 92 `curated` + 3 `generated`. Re-measured by the migration's own read-back 2026-09-16, late (meat-card narrowing + `pick_sausage`: 0 inserted / 92 updated).**
+- **`kristy_perimeter_kb.json`: 114 entries — 92 cards + 22 picks — on `main` == `origin/main` == `origin/held` at `d3d892e`, pushed 2026-09-16 (P3: 4 produce cards, `pick_bell_peppers` absorbed; P4: 4 staple picks; then meat card narrowed to sourced cues, `pick_sausage` re-cited, `aliasNamesHead` qualifier fix).**
+- **PICKS NEVER MIGRATE**
+- **KB AND TABLE AGREE AT 92 CURATED, 2026-09-16**
+- **A migration publishes EVERYTHING the KB is ahead by, not only the card you came to ship**
+- **Diff the KB against the table before running it**
+- **THE DEPLOYED BRANCH IS A THIRD THING.**
+- **`migrateCounterCards.js` LOADS `.env` FROM THE WORKING DIRECTORY**
+- **which reads as a missing credential and is a missing `cd`.**
+- **DEAD PRODUCT-WIDE, not pending**
+- **The "second blocker" — the SIWA entitlement missing — is WITHDRAWN, measured. It is present**

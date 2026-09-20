@@ -326,3 +326,40 @@ Not from the docs. `grep` for runtime readers of the KB outside tests → `lib/p
 `grep` for its importers → four routes; `grep perimeter index.js` → the `/api` mount; then
 the route's own `res.json` calls read directly. Four commands, and every one of them reads
 executing code rather than prose about it.
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Working discipline / two halves
+
+- **Every rule here was paid for. The incidents, the measurements and the superseded versions are in `docs/WORKING-DISCIPLINE.md`. Read the account before you change a rule; the rule alone is enough to obey one.**
+- **The order is commit, then plant, then revert.**
+- **The held stack was RELEASED 2026-09-16**
+- **The inference it breaks is the natural one:**
+- **THE THIRD REASON USED TO BE "NODE IS NOT INSTALLED ON THIS MACHINE" AND IT IS NO LONGER TRUE.**
+
+### Companion docs table and the file-budget tail (the "do not condense again" paragraph is SUPERSEDED by the owner's 2026-09-21 order; the budget is now 50,000 chars)
+
+- **The account behind every rule in Working discipline**
+- **The account behind every rule in Load-bearing decisions**
+- **The account behind every rule in Verifying**
+- **The locked pricing model, and NOTHING in it is built.**
+- **THIS FILE HAS A CONTEXT BUDGET AND IT IS LOAD-BEARING.**
+- **150,000-character limit**
+- **its absence is invisible from the inside**
+- **Keep it under 100,000 characters.**
+- **the RULE stays here, the ACCOUNT moves to `docs/`.**
+- **`-m` NOT `-c`. This said `-c`, which counts BYTES**
+- **THAT SPLIT IS AT ITS FLOOR AND THE NUMBER IS MEASURED.**
+- **every account it could move had already been moved by the second one**
+- **Only 26,736 characters sit in blocks longer than 600, and those are the densest blocks in the file.**
+- **So do not open this file to "condense it again" — that lever is spent, and a session that pulls it anyway starts deleting rules to hit a number.**
+- **THE ONLY LEVER LEFT IS MOVING A WHOLE RULE-BLOCK OUT OF ALWAYS-LOADED CONTEXT, WHICH IS A PRODUCT DECISION, NOT AN EDITORIAL ONE.**
+- **the block governs work that is entirely unbuilt, and whoever builds it opens the doc anyway.**
+- **A block governing shipped code fails that test however large it is**
+- **Ask before moving a second one.**
+- **VERIFY A SPLIT, DO NOT ASSERT IT — and it is a script, because computing it is only a fix if someone computes it:**
+- **caught four real gaps**
+- **It proves nothing left the CORPUS; it cannot tell you a rule left this FILE.**

@@ -353,3 +353,44 @@
   the six representative cards. Both need the API server running on :3001.
 - If a git write fails with "permission denied", it's OneDrive locking `.git` — retry.
   Never hand-edit the KB or committed files to recover.
+
+
+## Moved from CLAUDE.md, 2026-09-21
+
+Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k → ~43k chars), kept here verbatim so `claudeMdSplitCheck.js` can find them. The rule each one states still lives in `CLAUDE.md` in shorter form.
+
+### Verifying
+
+- **The commands are here. The incident behind each rule is in `docs/VERIFYING.md`.**
+- **the tell is a `false` that is CONSTANT rather than conditional**
+- **THE FIRST ONE POINTED AT A DELIVERABLE RATHER THAN A TEST, AND IT WOULD HAVE SHIPPED TO THE APP STORE.**
+- **Nothing failed.**
+- **A test blind to its subject goes green; a DELIVERABLE blind to its subject looks FINISHED**
+- **So a shot whose whole argument is content must ASSERT the content and skip loudly when it is missing**
+- **The generalisation, and it is the reason this is its own member: ASK WHAT THE ARTIFACT WOULD LOOK LIKE IF THE THING IT ARGUES WERE ABSENT. When the answer is "fine", the emptiness IS the defect and nothing downstream can see it**
+- **AND ITS TRAP IS OPERATIONAL: iterating on the runner and shooting the deliverable are the SAME ACT here**
+- **Shoot once, on a clean bucket.**
+- **A PIPELINE'S EXIT CODE BELONGS TO ITS LAST COMMAND. THE DURABLE FIX IS `set -o pipefail`, AND IT IS NOT `$PIPESTATUS`.**
+- **exit 0 having built nothing**
+- **Measured on this box, and the bash reflex fails silently here:**
+- **guards nothing while looking like a guard**
+- **clobbers it on the very next command**
+- **AND THE EXIT CODE IS ONLY HALF. A GREEN STATUS IS NOT EVIDENCE THE WORK HAPPENED — ASSERT ON THE ARTIFACT.**
+- **Name the destination from `xcodebuild -showdestinations` and check the built `.app` is newer than the run.**
+- **EVERY SOURCE GETS FETCHED BEFORE IT SHIPS. A citation written from memory is the same defect class as a comment asserting an invariant.**
+- **Distinguish two forms:**
+- **a forbidden PHRASE demonstrated as example output is high risk and always avoidable — describe the defect instead of writing the bad line.**
+- **name the words it SHOULD use.**
+- **Measure, don't eyeball.**
+- **730 pass, 0 fail, on `main`, measured 2026-09-16 after the category cache-hit fix (`3e3cdc6`).**
+- **record only a number you actually ran, say which branch ran it, and date each number separately.**
+- **It proves nothing left the CORPUS and CANNOT tell you a rule left the always-loaded FILE.**
+- **refuses to report success on an empty extraction.**
+- **A KB EDIT HAS TWO PUBLISH CHANNELS AND THIS ENTRY CLAIMED ONE. Either alone publishes: MIGRATE → table → iOS. PUSH → file → web**
+- **The web channel is unreachable from iOS**
+- **The counter card's shape bar is executable.**
+- **A TIER NOTE MAY NOT POINT AT THE TIER.**
+- **A TIER NOTE COMMENTS ON THE DO LINE A SHOPPER SEES, NOT THE KB `decision`.**
+- **The rule is blind to a note that matches neither**
+- **What the code writes must exist in the migrations.**
+- **NAME THE TABLE, ALWAYS**
