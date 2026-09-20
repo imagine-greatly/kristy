@@ -493,3 +493,130 @@ Apples rank #40 and Pears rank #38 on the 2026 Dirty Dozen list per this standar
 > "Peaches pack a punch when it comes to pesticide contamination"
 
 Cherries rank #41 and Peaches rank #42 on the 2026 Dirty Dozen list per this standard.
+
+## Holistic produce sources (bar A, 2026-09-20)
+
+Sourcing stance: university extension, independent growers/watchdogs, farmers-market framing preferred over government-first; regulation cited only for what a label legally means; ≥1 independent (non-government) source per card. Fetched via Firecrawl only.
+
+### Source: Ohioline — "Selecting, Storing, and Serving Ohio Berries"
+- URL: https://ohioline.osu.edu/factsheet/HYG-5531
+- Publisher: Ohio State University Extension
+- Retrieved: 2026-09-20
+
+> "Choose plump, firm, well-shaped berries with a uniform, bright color."
+
+> "Berries should be free of mold, bruises, and excess moisture in the container."
+
+> "Check the bottom of the container for juice stains, which indicate crushed or moldy berries."
+
+fills: berries_picking — short_answer / watch_out (bottom-of-container check for crushed or moldy fruit; uniform color and firmness as buying cues).
+
+Judgment call: the source also states "Research has linked mold to some forms of cancer—always avoid moldy berries." This sentence is deliberately NOT archived as a quotable claim — it reads as a causation claim (mold → cancer) that the no-treatment rule forbids attributing to a food/food-safety issue on a Kristy card. The safe, carriable claim is the mechanical one: check for mold and avoid it, no disease attribution.
+
+### Source: SDSU Extension — "Fresh May Not Always Be Best"
+- URL: https://extension.sdstate.edu/fresh-may-not-always-be-best
+- Publisher: South Dakota State University Extension
+- Retrieved: 2026-09-20
+
+> "Frozen fruits and vegetables are typically picked and frozen at peak ripeness, which can lock in nutrients."
+
+> "Fresh produce that travels long distances or sits in storage can lose nutrients over time."
+
+fills: frozen_vs_fresh_produce — short_answer (peak-ripeness freezing rationale) and watch_out (fresh produce's nutrient loss in transit/storage is a real tradeoff, not an automatic win for "fresh").
+
+### Source: EWG — "The Clean Fifteen"
+- URL: https://www.ewg.org/foodnews/clean-fifteen.php
+- Publisher: Environmental Working Group (independent watchdog)
+- Retrieved: 2026-09-20
+
+> "These 15 items had the lowest amounts of pesticide residues, according to EWG's analysis of the most recent USDA data."
+
+> Avocados: ranked #04 (Clean Fifteen list, lowest-residue end)
+
+> Bananas: ranked #13 (Clean Fifteen list)
+
+fills: organic_worth_it_by_type — sources (gives the existing "EWG Shopper's Guide" citation a fetched URL) and short_answer corroboration (thick-peel produce like avocado/banana ranks lowest-residue, supporting "organic matters less for these").
+
+Judgment call: EWG is cited here strictly for its residue-ranking methodology (label/data meaning), consistent with the stance's "EWG only for label meaning not fear" instruction — not as a scare framing.
+
+### Source: Eat or Toss — "How to Assess Pre-Cut and Chopped Fruits and Vegetables After the Use-By, Best-By, or Sell-By Dates"
+- URL: https://www.eatortoss.com/how-to-assess-pre-cut-and-chopped-fruits-and-vegetables-after-the-use-by-or-best-by-or-sell-by-dates/
+- Publisher: Eat or Toss (independent food-science writer, interviews Faith Critzer, food science professor, University of Georgia)
+- Retrieved: 2026-09-20
+
+> "While the skin on whole fruits and vegetables protects them, sliced and chopped produce has more vulnerable exposed surface area and can easily support microbial growth."
+
+> "Be extra cautious with low-acid produce with a lot of vulnerable surface area, especially foods that contact dirt while they're growing. Melons are high on that list."
+
+> "Even if the food still looks great, [Faith] Critzer says she tries to eat pre-cut fruit by the 'sell by' date. If the date passes and the food still looks good, she said 'I would try and consume it two days, three days max after the date.'"
+
+> "These phrases [sell by/use by/best by] aren't regulated and reflect how the company has decided to present its product."
+
+fills: precut_produce_tradeoffs — watch_out (low-acid, high-surface-area items like melon are the higher-risk category; date labels are unregulated company choices, not safety cutoffs) and short_answer (practical few-days buffer past a printed date, attributed to a named food scientist, not asserted as Kristy's own rule).
+
+### Source: Cornell Cooperative Extension (Herkimer County) — "Deciphering Produce Labels and Codes"
+- URL: https://blogs.cornell.edu/cceherkimer/2021/07/06/deciphering-produce-labels-and-codes/
+- Publisher: Cornell University Cooperative Extension
+- Retrieved: 2026-09-20
+
+> "Four Digit Code: Produce with a four digit code beginning with a 3 or 4 means the produce was probably conventionally grown with the possible use of pesticides."
+
+> "Five Digit Code beginning with '9': Fruits and vegetables grown organically have a five digit code starting with a '9'."
+
+> "Pesticide-Free: This label could mean one of two things: 1) no pesticides were used during growing; or 2) pesticide residue has been washed away. There's no real way to know unless it bears an organic label."
+
+fills: produce_picking_ripeness — sources (PLU code meaning, cited only for what the sticker/label legally signals, per stance) and watch_out ("pesticide-free" is an unverifiable, unregulated claim absent an organic label).
+
+### Source: UGA Extension — "How to Pick a Ripe Watermelon"
+- URL: https://site.extension.uga.edu/evansag/2026/06/how-to-pick-a-ripe-watermelon/
+- Publisher: University of Georgia Extension
+- Retrieved: 2026-09-20
+
+> "Look at the ground spot: The underside of the melon (where it sat on the ground) should be a creamy yellow color. If it's pale green or white, it's likely underripe."
+
+> "Use the thump test: Tap the melon with your knuckles. A ripe melon gives off a dull, hollow sound, while an unripe one sounds high-pitched or metallic."
+
+> "Check the finish: Dull skin is a good sign. Shiny melons tend to be underripe."
+
+> "These tips work just as well at the grocery store even if you can't inspect the tendril. Look for the ground spot, use the thump test, and pick a melon that feels heavy and has a dull rind."
+
+fills: produce_ripeness_by_item — short_answer / watch_out (per-item ripeness cues: ground-spot color, thump sound, dull vs. shiny skin — item-specific, not a generic ripeness rule).
+
+### Source: Michigan State University Extension — "A How-To Guide to Eating for the Season"
+- URL: https://www.canr.msu.edu/news/a_how_to_guide_to_eating_for_the_season
+- Publisher: Michigan State University Extension
+- Retrieved: 2026-09-20
+
+> "Many people choose to eat seasonal foods to support local farmers, enjoy the freshest flavors, save money and celebrate the changing seasons."
+
+> "Summer offers the most variety. Almost all fruits, vegetables and herbs are in season, although some are only available for a short time. Enjoy strawberries first, followed by cherries, blueberries, blackberries and raspberries, then later peaches, melons, plums and pears."
+
+> "To find seasonal food near you, visit the Michigan Farmers Market Association's Find a Farmers Market site or LocalHarvest."
+
+fills: produce_seasonality — short_answer (farmers-market framing for finding in-season produce, matching the stance's "farmers market > store" priority) and sources.
+
+### Source: Michigan State University Extension — "Are Raw Sprouts Safe? For Growers: Part Two"
+- URL: https://www.canr.msu.edu/news/are_raw_sprouts_safe_for_growers_part_two
+- Publisher: Michigan State University Extension
+- Retrieved: 2026-09-20
+
+> "In sprouts, the seed can and does carry the foodborne illness pathogen... The best conditions for sprouting are also ideal for multiplication of pathogenic bacteria if they happen to be present on the seed." (quoting UC Davis)
+
+> "Raw sprouts are listed among other foods that are categorized as PHFs [potentially hazardous foods], as are meats, cheeses, cut melons, cut tomatoes and cut leafy greens."
+
+fills: sprouts_raw — watch_out (mechanical reason raw sprouts carry elevated pathogen risk: same conditions that sprout the seed favor bacterial growth) and sources.
+
+### Source: Mamavation — "Mamavation Finds PFAS-Laden Pesticides in Driscoll's Strawberries"
+- URL: https://mamavation.com/food/pfas-pesticides-driscolls-strawberries.html
+- Publisher: Mamavation (independent consumer testing/watchdog, EPA-certified lab, scientific review by Haereticus Environmental Laboratory)
+- Retrieved: 2026-09-20
+
+> "Driscoll's conventional strawberries contained residues of 12 different pesticides at levels prohibited in the European Union, Taiwan, Chile, Korea & Russia. 8 of those pesticides are considered PFAS 'forever chemicals.'"
+
+> "Driscoll's USDA Organic Strawberries — Non-detect. (Note: Over 500+ pesticides were tested for organic strawberries, including pesticides approved for organic use.)"
+
+> "Mamavation advisors recommend you stick to organic strawberries if you want to lower the amount of pesticides and PFAS you consume when purchasing produce."
+
+fills: strawberries_organic_residue — short_answer / watch_out (organic vs. conventional non-detect-vs-detected residue result, from an independent lab test) and sources.
+
+Judgment call: the source also quotes an advisor saying these pesticide metabolites "are associated with cancer risks, reproductive diseases, developmental diseases in children, and cause immune suppression." This sentence is NOT archived as a usable claim for the card — it is a causation/treatment-adjacent statement about disease risk that the no-treatment rule forbids attributing to a food or residue on a Kristy card, however it is worded in the source. Only the measured residue-detection facts (residue levels, non-detect on organic) are carried forward as claim-lockable content.
