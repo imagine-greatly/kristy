@@ -534,7 +534,9 @@
         "USDA Pesticide Data Program",
         "EPA tolerance limits",
         "peer-reviewed critiques of Dirty Dozen methodology",
-        "EWG Shopper's Guide to Pesticides in Produce (2025)"
+        "EWG Shopper's Guide to Pesticides in Produce (2025)",
+        "Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php",
+        "Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php"
       ],
       "kristy_take": "Spend it on the ones eaten whole. Everything that gets peeled, buy plain.",
       "buying_tips": [
@@ -581,12 +583,13 @@
       "question": "Is frozen produce as good as fresh?",
       "decision": "Frozen vegetables are picked ripe and frozen within hours.",
       "why": "Picked ripe and frozen fast. ‘Fresh’ can lose more over days in transit.",
-      "short_answer": "Often just as good — sometimes better. Frozen fruit and vegetables are picked ripe and frozen fast, which locks in nutrients, while ‘fresh’ produce can lose some over days of transit and shelf time. Frozen is cheaper, doesn’t spoil, and is one of the best budget moves in the store.",
+      "short_answer": "Often just as good, sometimes better. Frozen fruit and vegetables are typically picked and frozen at peak ripeness, which locks in nutrients, while ‘fresh’ produce that travels a long way or sits in storage can lose some over time. Frozen does not spoil, and it is one of the better budget moves in the store.",
       "detail": "Studies comparing frozen and fresh find them broadly comparable in nutrition, with frozen sometimes ahead for produce that traveled far. Freezing is just cold — no additives needed (check the bag is single-ingredient). This is established and it’s a genuine budget and waste win.",
       "evidence_tier": "established",
       "sources": [
         "peer-reviewed fresh-vs-frozen nutrient studies",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "South Dakota State University Extension “Fresh May Not Always Be Best” https://extension.sdstate.edu/fresh-may-not-always-be-best"
       ],
       "kristy_take": "Half a freezer of frozen vegetables and berries is a fine way to live. Zero waste, half the price, always in season.",
       "cart_pick": "Frozen vegetables, no sauce",
@@ -594,6 +597,10 @@
         "Check the bag lists just the vegetable/fruit — no sauces or added sugar.",
         "Frozen berries and spinach are staples that never spoil.",
         "Great for smoothies, soups, and sheet-pan roasts."
+      ],
+      "watch_out": [
+        "‘Fresh’ produce that traveled a long way or sat in storage can lose nutrients over time.",
+        "The advantage is picking and freezing at peak ripeness. ‘Fresh’ is not always best."
       ],
       "labels_decoded": [],
       "tier_note": "Freezing at harvest and the losses across days in transit are both well documented.",
@@ -679,7 +686,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Agricultural Marketing Service shipping-point season data",
-        "USDA seasonal produce guides"
+        "USDA seasonal produce guides",
+        "Michigan State University Extension “A How-To Guide to Eating for the Season” https://www.canr.msu.edu/news/a_how_to_guide_to_eating_for_the_season"
       ],
       "kristy_take": "Buy the vegetables that are cheap and piled high this week — that’s what’s in season, and it’s where your money goes furthest.",
       "cart_pick": "Whatever fruit is in season",
@@ -692,6 +700,10 @@
         "Autumn: winter squash, sweet potatoes, apples, pears, brussels sprouts, grapes.",
         "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
         "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season."
+      ],
+      "watch_out": [
+        "Summer has the most variety and some of it is only there for a short time. Strawberries come first, then cherries, blueberries, blackberries and raspberries, then peaches, melons, plums and pears.",
+        "To find what is in season near you, a farmers market or LocalHarvest is the direct route."
       ],
       "labels_decoded": [],
       "tier_note": "Reading the season off the market table is a shopping habit held as a standard, not a nutrition claim.",
@@ -811,7 +823,8 @@
       "detail": "Cutting exposes more surface to air and light, so pre-cut produce loses a little more nutrition and freshness over time and carries a small extra food-safety consideration — rinse bagged greens even if ‘pre-washed’. The real cost is price and a shorter fridge life. For a short-on-time week, that can be exactly the right call.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "FDA fresh-cut produce guidance"
+        "FDA fresh-cut produce guidance",
+        "Eat or Toss “How to Assess Pre-Cut and Chopped Fruits and Vegetables After the Use-By, Best-By, or Sell-By Dates” https://www.eatortoss.com/how-to-assess-pre-cut-and-chopped-fruits-and-vegetables-after-the-use-by-or-best-by-or-sell-by-dates/"
       ],
       "kristy_take": "Buy it whole and cut it yourself. Two minutes, and it keeps a week longer.",
       "buying_tips": [
@@ -828,7 +841,9 @@
       "tier_note": "That pre-cut keeps days rather than weeks is measured; buying whole anyway is the whole-food standard.",
       "watch_out": [
         "If a bag of pre-washed greens is the difference between a salad and no salad, buy the bag. Eaten beats perfect.",
-        "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
+        "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them.",
+        "Whole skin protects the fruit. Sliced and chopped produce has more exposed surface and supports microbial growth more easily, and low-acid items that grew touching dirt, melon first, need the most care.",
+        "‘Sell by’, ‘use by’ and ‘best by’ on a tub are not regulated. They are how the company chose to present the product, not a safety cutoff."
       ],
       "asked_as": [
         "is pre cut fruit worth it",
@@ -1903,7 +1918,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA produce grading and handling standards",
-        "University extension produce selection and ripening guidance"
+        "University extension produce selection and ripening guidance",
+        "Cornell Cooperative Extension (Herkimer County) “Deciphering Produce Labels and Codes” https://blogs.cornell.edu/cceherkimer/2021/07/06/deciphering-produce-labels-and-codes/"
       ],
       "kristy_take": "Nobody picks a good avocado off the sticker. The country tells you the month, not the fruit.",
       "buying_tips": [
@@ -1924,7 +1940,9 @@
       ],
       "tier_note": "Judging the piece over the sticker is a shopping habit held as a standard, not a measurement.",
       "watch_out": [
-        "‘Product of ___’ is a growing region, not a grade. Nothing on the sticker ranks quality."
+        "‘Product of ___’ is a growing region, not a grade. Nothing on the sticker ranks quality.",
+        "The number on the sticker says how it was grown, not how good it is. Four digits starting 3 or 4 means conventional; five digits starting 9 means organic.",
+        "‘Pesticide-free’ on a sign can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."
       ],
       "eyebrow_short": "Origin sticker",
       "asked_as": [
@@ -3156,7 +3174,8 @@
       "evidence_tier": "established",
       "sources": [
         "University extension produce selection and ripening guidance",
-        "USDA produce grading and handling standards"
+        "USDA produce grading and handling standards",
+        "University of Georgia Extension “How to Pick a Ripe Watermelon” https://site.extension.uga.edu/evansag/2026/06/how-to-pick-a-ripe-watermelon/"
       ],
       "kristy_take": "Pick up two and take the heavier one. That one habit beats every color rule going.",
       "buying_tips": [
@@ -3172,6 +3191,11 @@
         "Avocado: pop the stem nub — green under it means ripe, brown means overripe, and stuck fast means give it days.",
         "Press with your palm, never your fingertips — fingertip pressure is what bruises the bin.",
         "Buy at staggered firmness so they ripen across the week rather than all on Tuesday."
+      ],
+      "watch_out": [
+        "Watermelon: a pale green or white ground spot means likely underripe. Creamy yellow is the one to take.",
+        "A shiny watermelon rind tends to be underripe. Dull skin is the good sign, not the bad one.",
+        "The thump: ripe sounds dull and hollow, unripe sounds high-pitched or metallic."
       ],
       "labels_decoded": [],
       "tier_note": "Which fruit ripens after picking is settled produce handling, and smell is the signal it gives.",
@@ -3221,7 +3245,8 @@
       "evidence_tier": "established",
       "sources": [
         "postharvest handling references for soft fruit (non-climacteric ripening, decay by contact)",
-        "USDA produce grading and handling standards"
+        "USDA produce grading and handling standards",
+        "Ohio State University Extension “Selecting, Storing, and Serving Ohio Berries” (HYG-5531) https://ohioline.osu.edu/factsheet/HYG-5531"
       ],
       "kristy_take": "Flip the carton. The top layer is the display and the bottom layer is the truth.",
       "cart_pick": "Fresh berries",
@@ -3236,7 +3261,8 @@
         "Berries do not ripen after picking. Buying firm and waiting does not work the way it does for stone fruit.",
         "Condensation fogging the plastic traps moisture and speeds the mold.",
         "Clamshells re-stacked at the store hide older fruit under a fresh top layer.",
-        "A carton that already smells sweet or fermented is past it."
+        "A carton that already smells sweet or fermented is past it.",
+        "Juice stains on the bottom of the container mean crushed or moldy berries inside."
       ],
       "labels_decoded": [],
       "tier_note": "That berries decay from the bottom under their own weight, and do not ripen after picking, is settled postharvest handling — and it is why the underside is the check.",
@@ -4616,7 +4642,9 @@
       ],
       "watch_out": [
         "Not for pregnancy or anyone immunocompromised. Growers and the FDA agree on this one.",
-        "Slick, browning or sour-smelling sprouts are past it. That happens fast and it is visible."
+        "Slick, browning or sour-smelling sprouts are past it. That happens fast and it is visible.",
+        "The seed itself can carry the pathogen. The warm damp that sprouts it also multiplies any bacteria already on the seed.",
+        "Raw sprouts are classed as potentially hazardous foods alongside meats, cheeses, cut melon and cut leafy greens."
       ],
       "labels_decoded": [
         {
@@ -4632,7 +4660,8 @@
       "tier_note": "Sprouting seeds for food goes back centuries with little modern study behind it. Buying them cold is a freshness standard, not a health claim.",
       "sources": [
         "FDA sprout safety guidance",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "Michigan State University Extension “Are Raw Sprouts Safe? For Growers: Part Two” https://www.canr.msu.edu/news/are_raw_sprouts_safe_for_growers_part_two"
       ],
       "cart_pick": "Broccoli sprouts",
       "asked_as": [
@@ -4675,7 +4704,8 @@
         "Independent pesticide screen commissioned by Mamavation, May 2026, EPA-certified laboratory; scientific review by Dr. Craig Downs, Haereticus Environmental Laboratory",
         "Proposed consumer class actions, U.S. District Court for the Northern District of California, filed June and July 2026",
         "Harada v. Driscoll’s, Ventura County Superior Court, filed June 2026",
-        "USDA National Organic Program, 7 CFR Part 205"
+        "USDA National Organic Program, 7 CFR Part 205",
+        "Mamavation “Mamavation Finds PFAS-Laden Pesticides in Driscoll’s Strawberries” https://mamavation.com/food/pfas-pesticides-driscolls-strawberries.html"
       ],
       "kristy_take": "Of everything in the produce aisle, this is the one to buy organic.",
       "instead": "Frozen organic strawberries, same seal and same rules.",
@@ -4688,7 +4718,8 @@
       "watch_out": [
         "One box of each, screened once, and the testers call it a spot-check. It is a reason to buy organic, not a measurement of a brand.",
         "The lawsuits are filings, not findings. Driscoll’s denies them and nothing has been decided.",
-        "Certified organic restricts synthetic pesticides. It is not a promise of a blank screen on every box."
+        "Certified organic restricts synthetic pesticides. It is not a promise of a blank screen on every box.",
+        "The organic box was screened for more than 500 pesticides, including ones approved for organic use, and came back non-detect. One sample, one time."
       ],
       "labels_decoded": [
         {

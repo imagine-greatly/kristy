@@ -71,26 +71,26 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | no_antibiotics_poultry | meat | shelf | 4 | 2 | Y | Y | Y |
 | pork_cuts_and_enhanced | meat | shelf | 3 | 1 | Y | Y | Y |
 | baking_soda_soak | produce | home | 2 | 0 | Y | Y | n/a |
-| berries_picking | produce | shelf | 2 | 0 | Y | Y | N |
+| berries_picking | produce | shelf | 3 | 1 | Y | Y | Y |
 | freezing_produce | produce | home | 2 | 0 | Y | Y | n/a |
-| frozen_vs_fresh_produce | produce | shelf | 2 | 0 | N | N | N |
-| organic_worth_it_by_type | produce | shelf | 4 | 0 | Y | Y | N |
-| precut_produce_tradeoffs | produce | shelf | 1 | 0 | Y | Y | N |
+| frozen_vs_fresh_produce | produce | shelf | 3 | 1 | Y | Y | Y |
+| organic_worth_it_by_type | produce | shelf | 6 | 2 | Y | Y | Y |
+| precut_produce_tradeoffs | produce | shelf | 2 | 1 | Y | Y | Y |
 | produce_apples_pears | produce | shelf | 6 | 6 | Y | Y | Y |
 | produce_brassicas | produce | shelf | 4 | 4 | Y | Y | Y |
 | produce_citrus | produce | shelf | 4 | 4 | Y | Y | Y |
 | produce_leafy_greens | produce | shelf | 4 | 4 | Y | Y | Y |
 | produce_onions_garlic | produce | shelf | 5 | 5 | Y | Y | Y |
 | produce_peppers | produce | shelf | 2 | 2 | Y | Y | Y |
-| produce_picking_ripeness | produce | shelf | 2 | 0 | Y | Y | N |
-| produce_ripeness_by_item | produce | shelf | 2 | 0 | N | N | N |
+| produce_picking_ripeness | produce | shelf | 3 | 1 | Y | Y | Y |
+| produce_ripeness_by_item | produce | shelf | 3 | 1 | Y | Y | Y |
 | produce_root_vegetables | produce | shelf | 5 | 5 | Y | Y | Y |
-| produce_seasonality | produce | shelf | 2 | 0 | N | N | N |
+| produce_seasonality | produce | shelf | 3 | 1 | Y | Y | Y |
 | produce_stone_fruit | produce | shelf | 7 | 7 | Y | Y | Y |
 | produce_storage | produce | home | 2 | 0 | Y | N | n/a |
 | revive_greens | produce | home | 2 | 0 | Y | Y | n/a |
-| sprouts_raw | produce | shelf | 2 | 0 | Y | Y | N |
-| strawberries_organic_residue | produce | shelf | 4 | 0 | Y | Y | N |
+| sprouts_raw | produce | shelf | 3 | 1 | Y | Y | Y |
+| strawberries_organic_residue | produce | shelf | 5 | 1 | Y | Y | Y |
 | washing_produce | produce | home | 2 | 0 | Y | Y | n/a |
 | canned_fish_choosing | seafood | shelf | 2 | 0 | N | N | N |
 | farmed_fish_by_species | seafood | shelf | 2 | 0 | Y | N | N |
@@ -108,7 +108,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | bulk_pantry | 13 | 13 | no URL source (9) |
 | eggs_dairy | 16 | 16 | no URL source (10) |
 | meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
-| produce | 17 | 9 | no URL source (5) |
+| produce | 17 | 0 | — (all 17 at bar A, 2026-09-20 holistic pass) |
 | seafood | 8 | 8 | no URL source (5) |
 
 ## Non-shelf cards (kind='home' or section='label_terms') — listed, not scored against Bar A
@@ -125,7 +125,9 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 Meat batch 2026-09-20, authored from the appended sections of `docs/research/meat-sources.md`: 7 cards moved to bar A. Holistic pass, same day, from `## Depth audit, bar A — holistic pass (2026-09-20)`: the remaining four closed. `beef_cuts_basics` (Iowa State AnswerLine + Flannery Beef, watch_out authored), `no_antibiotics_poultry` (Consumer Reports + Rebel Pastures, watch_out authored, short_answer narrowed to producer-attested), `butcher_counter_asking` (Rising Star Meats + Butcher’s Handbook, watch_out authored; MakeFoodSafe kept), `beef_grades_usda` (Nicholas Markets, KB watch_out now authored). Not migrated.
 
-**produce** (9): berries_picking, frozen_vs_fresh_produce, organic_worth_it_by_type, precut_produce_tradeoffs, produce_picking_ripeness, produce_ripeness_by_item, produce_seasonality, sprouts_raw, strawberries_organic_residue
+**produce** (0): none
+
+Produce batch 2026-09-20, authored from `## Holistic produce sources (bar A, 2026-09-20)` in `docs/research/produce-sources.md`: 9 cards moved to bar A. `berries_picking` (Ohioline HYG-5531, watch_out extended), `frozen_vs_fresh_produce` (SDSU Extension, watch_out authored, short_answer narrowed to peak-ripeness/transit-loss), `organic_worth_it_by_type` (EWG Clean Fifteen + full list URLs), `precut_produce_tradeoffs` (Eat or Toss / UGA Critzer, watch_out extended: exposed surface, melon, unregulated dates), `produce_picking_ripeness` (Cornell CCE Herkimer, watch_out extended: PLU codes, ‘pesticide-free’), `produce_ripeness_by_item` (UGA Extension watermelon, watch_out authored), `produce_seasonality` (MSU Extension, watch_out authored: summer succession, farmers market/LocalHarvest), `sprouts_raw` (MSU Extension growers part two, watch_out extended: seed carries pathogen, PHF class), `strawberries_organic_residue` (Mamavation URL, watch_out extended: organic non-detect across 500+). Excluded on rule: Ohioline mold→cancer line and Mamavation PFAS→disease line (no-treatment), MSU “save money” (price). Not migrated.
 
 **seafood** (8): canned_fish_choosing, farmed_fish_by_species, fish_freshness_at_counter, fresh_vs_previously_frozen_fish, mercury_by_fish, salmon_wild_vs_farmed, seafood_certifications, shrimp_imported_vs_domestic
 
