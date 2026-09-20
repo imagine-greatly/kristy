@@ -183,7 +183,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
-        "peer-reviewed reviews of grass- vs grain-fed fatty acids"
+        "peer-reviewed reviews of grass- vs grain-fed fatty acids",
+        "Federal Register 2016-00440 “United States Standards for Livestock and Meat Marketing Claims, Withdrawal” (govinfo.gov) https://www.govinfo.gov/content/pkg/FR-2016-01-12/html/2016-00440.htm"
       ],
       "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
       "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
@@ -196,7 +197,8 @@
       "watch_out": [
         "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
         "Pasture artwork on the package is not a claim. The words are the claim.",
-        "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat."
+        "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
+        "USDA AMS withdrew its Grass (Forage) Fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose, so ask whose definition it is."
       ],
       "labels_decoded": [
         {
@@ -285,7 +287,8 @@
       "detail": "Fattier blends are cheaper and cook up juicier; leaner blends cost more and dry out faster. For dishes where you drain the fat anyway, a mid blend and a strainer gets you there for less. It’s a cooking-and-cost decision, not a health one.",
       "evidence_tier": "established",
       "sources": [
-        "USDA FSIS ground-beef labeling rules"
+        "USDA FSIS ground-beef labeling rules",
+        "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15"
       ],
       "kristy_take": "80/20 for burgers, 90/10 when it is getting drained into a sauce. On a budget, buy 80/20 and drain it. Cheaper than lean.",
       "cart_pick": "Ground beef, 80/20",
@@ -305,6 +308,10 @@
         "what ground beef should i buy",
         "which ground beef for burgers",
         "is 80/20 or 90/10 better"
+      ],
+      "watch_out": [
+        "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most."
       ]
     },
     {
@@ -396,7 +403,8 @@
       "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "USDA FSIS poultry-chilling references"
+        "USDA FSIS poultry-chilling references",
+        "9 CFR § 441.10 “Retained water in raw meat and poultry products” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/441.10"
       ],
       "kristy_take": "Air-chilled. Better skin, and nothing on the scale that is not chicken.",
       "cart_pick": "Air-chilled whole chicken",
@@ -414,7 +422,8 @@
       "tier_note": "Retained water is a disclosed number. Preferring air-chilled is a standard about handling.",
       "watch_out": [
         "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
-        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan."
+        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
+        "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional."
       ],
       "asked_as": [
         "what is air chilled chicken",
@@ -2393,7 +2402,8 @@
       "evidence_tier": "established",
       "sources": [
         "USDA AMS Official United States Standards for Grades of Carcass Beef",
-        "USDA AMS voluntary beef grading program"
+        "USDA AMS voluntary beef grading program",
+        "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean"
       ],
       "kristy_take": "Grade measures fat inside the muscle and nothing else. A Select chuck roast cooked low and slow beats a Prime steak cooked badly.",
       "buying_tips": [
@@ -2560,7 +2570,8 @@
       "detail": "A staffed counter answers things a package never will: whether the beef is grass-finished, whether the chicken was air-chilled, when it was actually cut. They will grind a chuck roast fresh, which beats the pre-packed tray and lets you choose the cut. They will french a rack, tie a roast, portion a whole fish. At most counters none of that costs extra. The cheap cuts sit in the same case, and the person behind the glass usually knows exactly how to cook them.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "USDA Institutional Meat Purchase Specifications (cut nomenclature)"
+        "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
+        "MakeFoodSafe.com “Meat Grinding at Home Safety Tips” https://www.makefoodsafe.com/meat-grinding-at-home-safety-tips/"
       ],
       "kristy_take": "The counter is free expertise. Ask what came in today and what is cheap this week, then build dinner from the answer.",
       "cart_pick": "Soup bones for stock",
@@ -2606,7 +2617,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (poultry composition)",
-        "USDA FSIS poultry labeling terms"
+        "USDA FSIS poultry labeling terms",
+        "9 CFR § 441.10 “Retained water in raw meat and poultry products” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/441.10"
       ],
       "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
       "cart_pick": "Bone-in chicken thighs",
@@ -2632,6 +2644,10 @@
         "which chicken cut should i buy",
         "thighs or breasts",
         "is boneless skinless worth it"
+      ],
+      "watch_out": [
+        "Retained water has to be disclosed on the label, along the lines of ‘contains up to __% retained water’. Read the tray for that line.",
+        "A raw single-ingredient bird may not carry retained water at all unless the processing that keeps it safe makes it unavoidable."
       ]
     },
     {
@@ -2657,7 +2673,8 @@
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling requirements for enhanced and solution-added meat",
-        "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)"
+        "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)",
+        "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2"
       ],
       "kristy_take": "Pork shoulder is the best value in the meat case. And read the fine print: ‘up to 12% solution’ is water sold by the pound.",
       "cart_pick": "Pork shoulder",
@@ -2683,6 +2700,10 @@
         "which pork cut should i buy",
         "what does solution added mean",
         "what is enhanced pork"
+      ],
+      "watch_out": [
+        "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, as in ‘contains 15% added solution’, so that figure is what to find.",
+        "The percentage is the solution weighed against the raw meat without it, so 15% means 15 parts solution to 100 parts meat."
       ]
     },
     {
@@ -2714,7 +2735,9 @@
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy on ‘uncured’ and ‘no nitrate or nitrite added’ claims",
-        "Peer-reviewed comparisons of residual nitrite in conventionally and naturally cured meats"
+        "Peer-reviewed comparisons of residual nitrite in conventionally and naturally cured meats",
+        "Niche Meat Processor Assistance Network “Uncured Bacon” https://www.nichemeatprocessing.org/uncured-bacon/",
+        "9 CFR § 317.17 curing-agent declaration and “uncured” labeling (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.17"
       ],
       "kristy_take": "‘Uncured’ means cured with celery powder. The asterisk on the package says so. Same chemistry, different source.",
       "buying_tips": [
@@ -2739,6 +2762,10 @@
         "what does uncured mean",
         "is deli meat cured with celery",
         "is deli turkey cured"
+      ],
+      "watch_out": [
+        "The qualifier to find reads ‘No nitrate or nitrite added except those naturally occurring in celery juice powder’. That sentence is the whole claim.",
+        "Every curing substance has to be named in the ingredients statement, so read the list, not only the asterisk."
       ]
     },
     {
