@@ -478,9 +478,45 @@ does not speak to antibiotics, hormones, natural, or organic, the four claims th
 
 Dropped: this URL resolved to a page substantially overlapping the "Decoding the Labels" article
 already quoted above; no additional non-duplicate verbatim passage was found worth a separate
-quote. **`no_antibiotics_poultry` therefore has one archived source this pass (Consumer Reports),
-short of the ≥2 target** — a second, non-CR source (extension or a watchdog such as the Cornucopia
-Institute) is still needed in a follow-up pass.
+quote.
+
+### no_antibiotics_poultry: The Truth About Chicken Labels: What You Need to Know
+
+- URL: https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know
+- Fetched: 2026-09-20 via Firecrawl
+- Standing: Rebel Pastures, an independent pasture-raised poultry producer writing from its own
+  farming practice — not a government, retailer, or brand-checkoff source. Second, non-Consumer
+  Reports source for this card; closes the ≥2 gap left open earlier in this pass.
+
+> "The USDA's 'outdoor access' requirement is laughable. It could mean a tiny door leading to a
+> small, dirt-covered pen that chickens never actually use. No requirement for fresh grass, no
+> regulation on how long they're outside. It's a loophole, not a meaningful standard."
+
+Use: watch_out (free range's regulatory minimum, from a producer who sells the higher-bar version)
+
+> "'All-Natural' has nothing to do with how chickens are raised. It only means no artificial
+> ingredients or colors were added after processing. Factory-farmed chicken can still be pumped
+> full of saline ('plumping'), fed unnatural diets, and raised in horrific conditions—all while
+> wearing the 'All-Natural' label."
+
+Use: watch_out (natural says nothing about how the bird was raised, corroborates the Consumer
+Reports quote above from an independent producer's perspective)
+
+> "All chicken in the U.S. is already hormone- and steroid-free by law. This label is like putting
+> 'Gluten-Free' on a bag of apples—it's a pointless claim designed to mislead you."
+
+Use: watch_out (hormone-free on poultry is meaningless — direct, plain-language corroboration of
+the Consumer Reports finding, from an independent pastured-poultry farm)
+
+> "While this claim can be legitimate, weak oversight means some 'antibiotic-free' products may
+> not be so."
+
+Use: watch_out (raised-without-antibiotics has weak oversight — corroborates the CR affidavit
+finding from a working producer's vantage point)
+
+Dropped (from this same page): a passage naming three specific companies (Chick-Fil-A, Panera
+Bread, Tyson) retracting antibiotic-free commitments — skipped per the no-negative-named-brand
+rule, even though it is not itself a health claim.
 
 ### butcher_counter_asking: 4 Questions You Should Always Ask Your Local Butchers
 
