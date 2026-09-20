@@ -919,7 +919,9 @@
       "detail": "For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "reviews of dairy-fat and cardiometabolic outcomes (contested literature)"
+        "reviews of dairy-fat and cardiometabolic outcomes (contested literature)",
+        "Michigan State University Extension, dairy processing article (milk standardized to skim, 1%, 2% and whole through separators)",
+        "Florida Dairy Farmers “How Much Fat is in Whole Milk?” https://www.floridamilk.com/in-the-news/blog/nutrition/how-much-fat-is-in-whole-milk-whole-2-low-fat-and-skim-milk-explained.stml"
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
       "cart_pick": "Whole milk",
@@ -930,7 +932,8 @@
       ],
       "watch_out": [
         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
-        "Ultra-pasteurized whole milk is still a further step. A date months out is the tell."
+        "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
+        "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat, and 2%, 1% and skim are made by skimming cream off before homogenization and adding less of it back, never by adding water."
       ],
       "labels_decoded": [
         {
@@ -2269,7 +2272,9 @@
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (AA, A and B standards)",
-        "USDA AMS shell egg size and weight classes"
+        "USDA AMS shell egg size and weight classes",
+        "American Egg Board “Egg Grades and Sizes” (Grade AA, A and B scored on interior and shell quality at packing, separate from the weight classes)",
+        "Pete & Gerry’s “Guide to Egg Sizes and Weights” https://www.peteandgerrys.com/blogs/field-notes/egg-size-guide"
       ],
       "kristy_take": "Grade is a looks score and size is a weight class. Neither one says anything about the hen.",
       "buying_tips": [
