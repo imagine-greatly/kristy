@@ -18,19 +18,26 @@ as a secondary source for `egg_grades_sizes` because its surrounding prose is st
 ## 1. Milk and cream
 
 ### Source: University of Minnesota Extension, "A2 milk" (umn-a2milk)
-- URL: (Extension fact sheet on A2 milk, UMN)
+- URL: https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics (fetched, Firecrawl, 2026-09-20)
 - Publisher: University of Minnesota Extension
 - Retrieved: 2026-09-20
 
-> A2 milk has not been proven by science to be easier to digest or better for people with lactose
-> intolerance than regular milk.
+> Claims that A2 milk is easier for humans to digest and improves health have not been proven by science.
+
+> Jersey, Guernsey, Normande and Brown Swiss breeds have a higher percentage of A2 genes than Holstein.
+
+> Cows that are A1A2 will produce milk that contains both A1 and A2 protein.
+
+> There have been claims that A2 milk is easier for humans to digest, improves health and lowers the
+> risk of some diseases. Many of these claims have not been proven by science. The most promising claim
+> is for easier human digestibility.
 
 fills: `a2_vs_a1_milk` — the model-safe framing: digestibility/health claims for A2 milk are
 explicitly stated as unproven, not merely omitted. This is the source to draw the card's caution
 language from directly rather than paraphrasing a firmer claim into it.
 
 ### Source: Michigan State University Extension, dairy processing (msu-milk)
-- URL: (MSU Extension article on milk processing)
+- URL: https://www.canr.msu.edu/news/they_did_what_to_your_milk (fetched, Firecrawl, 2026-09-20)
 - Publisher: Michigan State University Extension
 - Retrieved: 2026-09-20
 
@@ -99,7 +106,7 @@ one that says the same thing.
 ## 2. Cheese
 
 ### Source: Mason Dixie Foods, FDA cheese classification (masondixie-cheese)
-- URL: (Mason Dixie article on cheese classification standards)
+- URL: https://masondixiefoods.com/blogs/faqs/natural-cheese-vs-processed (fetched, Firecrawl, 2026-09-20)
 - Publisher: Mason Dixie Foods (independent food producer)
 - Retrieved: 2026-09-20
 
@@ -110,7 +117,7 @@ fills: `cheese_real_vs_processed` — the label-meaning distinction between "che
 and "cheese food," cited for what the term means rather than as a health argument.
 
 ### Source: Edible Seattle, on Cascadia Creamery (edibleseattle-rawcheese)
-- URL: (Edible Seattle feature on Cascadia Creamery and raw-milk cheese)
+- URL: https://edibleseattle.com/explore/artisans/in-the-raw/ (fetched, Firecrawl, 2026-09-20)
 - Publisher: Edible Seattle (independent food writer)
 - Retrieved: 2026-09-20
 
@@ -136,7 +143,7 @@ no-treatment rule.
 ## 3. Butter
 
 ### Source: Saxelby Cheesemongers, on grass-fed butter (saxelby-grassbutter)
-- URL: (Saxelby Cheesemongers article on grass-fed butter)
+- URL: https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better (fetched, Firecrawl, 2026-09-20)
 - Publisher: Saxelby Cheesemongers (independent cheesemonger)
 - Retrieved: 2026-09-20
 
@@ -154,7 +161,7 @@ no-treatment rule. Only the color/taste/texture portions of this source may be u
 ## 4. Yogurt and kefir
 
 ### Source: University of Florida IFAS Extension, "All About Yogurt" (ifas-yogurt)
-- URL: (UF/IFAS Extension yogurt fact sheet)
+- URL: https://ask.ifas.ufl.edu/publication/FS185 (fetched, Firecrawl, 2026-09-20)
 - Publisher: University of Florida IFAS Extension
 - Retrieved: 2026-09-20
 
@@ -176,7 +183,7 @@ health (Morelli 2014)." That line is omitted here; the fat-content and flavored-
 quoted above carry no health-outcome language and stand on their own.
 
 ### Source: University of Florida IFAS Extension, on kefir (ifas-kefir)
-- URL: (UF/IFAS Extension kefir fact sheet)
+- URL: https://ask.ifas.ufl.edu/publication/FS457 (fetched, Firecrawl, 2026-09-20)
 - Publisher: University of Florida IFAS Extension
 - Retrieved: 2026-09-20
 
@@ -193,7 +200,7 @@ of that language is carried into the card's sourced material.
 ## 5. Eggs
 
 ### Source: University of Nebraska–Lincoln Extension, "Cracking the Date Code on Egg Cartons" (unl-eggdate)
-- URL: (UNL Extension article on egg carton date codes)
+- URL: https://food.unl.edu/article/cracking-date-code-egg-cartons/ (fetched, Firecrawl, 2026-09-20)
 - Publisher: University of Nebraska–Lincoln Extension
 - Retrieved: 2026-09-20
 
@@ -203,7 +210,7 @@ of that language is carried into the card's sourced material.
 fills: `egg_freshness` — the pack-date calendar and storage window, unchanged from the earlier pass.
 
 ### Source: American Egg Board, "Egg Grades and Sizes" (incredibleegg-grades)
-- URL: (American Egg Board / incredibleegg.org article on egg grades and sizes)
+- URL: https://www.incredibleegg.org/professionals/foodservice/eggs-egg-products/shell-egg-sizes-grades/ (fetched, Firecrawl, 2026-09-20)
 - Publisher: American Egg Board
 - Retrieved: 2026-09-20
 
@@ -231,7 +238,7 @@ strongest of the three sources for this card and resolves the earlier scrape def
 secondary source since its surrounding prose is still usable.
 
 ### Source: Cornucopia Institute, egg scorecard criteria — "Add On Labels" (cornucopia-egg-criteria)
-- URL: (Cornucopia Institute egg scorecard methodology page, criteria section, not the brand ratings)
+- URL: https://www.cornucopia.org/egg-scorecard-criteria/ (fetched, Firecrawl, 2026-09-20; criteria page, not the brand ratings)
 - Publisher: The Cornucopia Institute (watchdog)
 - Retrieved: 2026-09-20
 
@@ -247,7 +254,7 @@ page, and is used only for that reason — the scorecard itself is off-limits un
 brand-claims rule.
 
 ### Source: Cornucopia Institute, egg scorecard criteria — "Feed Sourcing" (cornucopia-egg-criteria)
-- URL: (same document, Feed Sourcing section)
+- URL: https://www.cornucopia.org/egg-scorecard-criteria/ (same document, Feed Sourcing section; fetched, Firecrawl, 2026-09-20)
 - Publisher: The Cornucopia Institute (watchdog)
 - Retrieved: 2026-09-20
 
@@ -263,7 +270,7 @@ fills: `egg_feed_claims` directly — the generic tiers of what a feed-sourcing 
 verify, with no brand names attached.
 
 ### Source: Hendrix Genetics, on eggshell color (hendrix-shellcolor)
-- URL: (Hendrix Genetics article on eggshell color genetics)
+- URL: https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/ (fetched, Firecrawl, 2026-09-20)
 - Publisher: Hendrix Genetics (poultry breeding company)
 - Retrieved: 2026-09-20
 

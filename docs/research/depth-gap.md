@@ -22,23 +22,23 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | rancidity_check | bulk_pantry | shelf | 2 | 0 | N | N | N |
 | rice_arsenic | bulk_pantry | shelf | 5 | 0 | Y | Y | N |
 | whole_spices | bulk_pantry | shelf | 2 | 0 | Y | Y | N |
-| a2_vs_a1_milk | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| cheese_real_vs_processed | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
+| a2_vs_a1_milk | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| cheese_real_vs_processed | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | cream_vs_creamer | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
-| egg_feed_claims | eggs_dairy | shelf | 4 | 0 | Y | Y | N |
-| egg_freshness | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
+| egg_feed_claims | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
+| egg_freshness | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | egg_grades_sizes | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
-| egg_labels | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| egg_shell_color | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
+| egg_labels | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| egg_shell_color | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | egg_storage | eggs_dairy | home | 3 | 0 | N | N | n/a |
-| grassfed_butter | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| milk_processing | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
-| raw_aged_cheese | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| raw_kefir | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
-| raw_milk | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
+| grassfed_butter | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| milk_processing | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| raw_aged_cheese | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| raw_kefir | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
+| raw_milk | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
 | whole_vs_reduced_fat_milk | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
-| yogurt_live_cultures | eggs_dairy | shelf | 3 | 0 | Y | Y | N |
-| yogurt_plain_vs_flavored | eggs_dairy | shelf | 2 | 0 | Y | Y | N |
+| yogurt_live_cultures | eggs_dairy | shelf | 4 | 1 | Y | Y | Y |
+| yogurt_plain_vs_flavored | eggs_dairy | shelf | 3 | 1 | Y | Y | Y |
 | label_artificial_color | label_terms | shelf | 5 | 0 | Y | Y | n/a |
 | label_cage_free | label_terms | shelf | 3 | 0 | Y | Y | n/a |
 | label_cold_pressed_expeller | label_terms | shelf | 3 | 0 | Y | Y | n/a |
@@ -106,7 +106,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | section | total shelf cards | failing | why (most common) |
 |---|---|---|---|
 | bulk_pantry | 13 | 13 | no URL source (9) |
-| eggs_dairy | 16 | 13 | no URL source (13) — 3 at bar A, 2026-09-20 holistic pass |
+| eggs_dairy | 16 | 0 | — (all 16 at bar A, 2026-09-20 holistic pass) |
 | meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
 | produce | 17 | 0 | — (all 17 at bar A, 2026-09-20 holistic pass) |
 | seafood | 8 | 8 | no URL source (5) |
@@ -119,9 +119,9 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 
 **bulk_pantry** (13): beans_dried_vs_canned, bottled_water_buying, bulk_bins_buying, flour_basics, grains_beyond_rice, honey_adulteration, nut_butter_ingredients, nuts_raw_vs_roasted, oats_steelcut_rolled_instant, olive_oil_grades, rancidity_check, rice_arsenic, whole_spices
 
-**eggs_dairy** (13): a2_vs_a1_milk, cheese_real_vs_processed, egg_feed_claims, egg_freshness, egg_labels, egg_shell_color, grassfed_butter, milk_processing, raw_aged_cheese, raw_kefir, raw_milk, yogurt_live_cultures, yogurt_plain_vs_flavored
+**eggs_dairy** (0): none
 
-Dairy/eggs batch 2026-09-20, authored from `docs/research/dairy-eggs-sources.md`: 3 cards moved to bar A. `whole_vs_reduced_fat_milk` (Florida Dairy Farmers URL + MSU Extension processing, watch_out extended: 3.25%, skimmed never watered), `cream_vs_creamer` (Morning Fresh Dairy URL, watch_out authored: dairy-free creamers, flavored sugar, gums in real cream), `egg_grades_sizes` (Pete & Gerry’s URL + American Egg Board, watch_out authored: grade/size say nothing about the hen, next-size-up rule, AA/A fades with age). Three more got watch_out and a non-URL archive source but stay failing on the URL column: `egg_freshness` (UNL Extension Julian code), `egg_feed_claims` (Cornucopia feed-sourcing criteria), `milk_processing` (MSU Extension homogenization). ⚠️ The archive's closing note claims a fetched URL for all 16; its own entries carry a URL for only three (floridamilk, morningfresh, peteandgerrys). The other 13 entries have `URL: (description)` — the scrape files exist but the URLs were not written into the archive, so the remaining 10 untouched cards (already ≥2 sources + watch_out) need a re-fetch or the URLs recovered from the scrape headers before they can pass. Excluded on rule: a `milk_processing` watch_out line on shelf life that no archive source supported (claim lock). Not migrated.
+Dairy/eggs batch 2026-09-20, authored from `docs/research/dairy-eggs-sources.md`, two passes. First pass (`6aa7c72`): `whole_vs_reduced_fat_milk` (Florida Dairy Farmers URL + MSU Extension processing, watch_out extended), `cream_vs_creamer` (Morning Fresh Dairy URL, watch_out authored), `egg_grades_sizes` (Pete & Gerry’s URL + American Egg Board, watch_out authored); `egg_freshness`, `egg_feed_claims`, `milk_processing` got watch_out and a non-URL archive source. Second pass: the archive’s 13 `URL: (description)` placeholders were replaced with the canonical URLs read off the Firecrawl scrape files (no new fetch), the URL was written into each card’s `sources[]`, and watch_out was extended, claim-locked to the archive quotes: `a2_vs_a1_milk` (UMN Extension: digestibility unproven; breed is a tendency, A1A2 cows give both), `cheese_real_vs_processed` (Mason Dixie: 51% cheese floor), `raw_aged_cheese` and `raw_milk` (Edible Seattle: 60 days excludes fresh styles; raw = neither pasteurized nor homogenized; the maker has to know the milk), `grassfed_butter` (Saxelby: softer from more unsaturated fat, lower melting point), `yogurt_plain_vs_flavored` (IFAS FS185: plain’s sugar is lactose, ‘light’ = high-intensity sweetener, fruit-on-the-bottom and drinkables; the pre-existing ‘expensive form’ watch_out line was replaced under the no-price rule), `yogurt_live_cultures` (IFAS FS185: cultures must be listed, seal voluntary, some non-dairy skip them), `raw_kefir` (IFAS FS457: trace alcohol, commercial flavor varies with additions; health-benefit list excluded), `egg_labels` (Cornucopia criteria page: Certified Humane’s three tiers, the top-scored add-on labels; no brand ratings used), `egg_shell_color` (Hendrix Genetics: pigment goes on in the last hours, stress/age pale the shell; biliverdin breeds; disease causes excluded). Excluded on rule: Saxelby’s disease sentence; IFAS digestive-health lines; Edible Seattle ‘easier to digest’; MSU’s TB/brucellosis clause. Open for Devon: `a2_vs_a1_milk`’s decision ‘suits people upset by ordinary milk’ and buying tip ‘Worth trying for a week’ sit against the UMN ‘not proven’ line and were left untouched; `yogurt_plain_vs_flavored` and `cheese_real_vs_processed` short_answers still say ‘cheaper’ (pre-existing). Not migrated.
 
 **meat** (0): none
 

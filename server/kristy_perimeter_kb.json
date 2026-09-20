@@ -352,7 +352,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
-        "Certified Humane standards"
+        "Certified Humane standards",
+        "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/"
       ],
       "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
       "cart_pick": "Soy-free pasture-raised eggs",
@@ -366,7 +367,9 @@
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
-        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which."
+        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
+        "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier, and its cage-free tier requires no outdoor access at all; the watchdog scores them 60, 50 and 30 on the same scale.",
+        "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line."
       ],
       "labels_decoded": [
         {
@@ -870,7 +873,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
-        "dairy fatty-acid composition literature"
+        "dairy fatty-acid composition literature",
+        "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
       ],
       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
       "cart_pick": "Grass-fed butter",
@@ -889,7 +893,8 @@
       "watch_out": [
         "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
         "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
-        "Color tracks the season as well as the standard. The same dairy churns paler in winter."
+        "Color tracks the season as well as the standard. The same dairy churns paler in winter.",
+        "The softness is mechanical. Cream from cows on grass carries more unsaturated fat, which melts lower, so the bar gives at room temperature where a grain-fed one stays firm."
       ],
       "asked_as": [
         "is grass fed butter worth it",
@@ -976,7 +981,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "characterization of the A1 and A2 beta-casein variants and BCM-7 release in digestion",
-        "human digestive-comfort trials on A2 milk (small, inconsistent, several industry-funded)"
+        "human digestive-comfort trials on A2 milk (small, inconsistent, several industry-funded)",
+        "University of Minnesota Extension “A2 milk and A2 genetics” https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics"
       ],
       "kristy_take": "The older breeds, and one amino acid is the whole of it. Worth choosing. Not worth choosing first.",
       "cart_pick": "A2 whole milk",
@@ -988,7 +994,9 @@
       ],
       "watch_out": [
         "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
-        "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived."
+        "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
+        "Easier to digest is the most promising claim and still the unproven one. The extension line says the digestion and health claims for A2 have not been proven by science; the label reports which protein is in the carton and nothing more.",
+        "Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins, but a Holstein herd can be more than half A2A2, and an A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed."
       ],
       "labels_decoded": [
         {
@@ -1035,7 +1043,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA standards of identity for cheese",
-        "FDA process-cheese labeling rules"
+        "FDA process-cheese labeling rules",
+        "Mason Dixie Foods “Natural Cheese vs. Processed” https://masondixiefoods.com/blogs/faqs/natural-cheese-vs-processed"
       ],
       "kristy_take": "Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.",
       "cart_pick": "Block cheese",
@@ -1058,7 +1067,8 @@
       "tier_note": "The starch, cellulose and natamycin on the bag are printed facts; buying the block instead is the whole-food standard.",
       "watch_out": [
         "‘Cheese product’, ‘cheese food’ and ‘pasteurized process’ all mean emulsifiers blended in. That is a different product from cheese.",
-        "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting."
+        "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting.",
+        "‘Pasteurized process cheese product’ needs only 51% cheese. The other 49% can be salt, dyes, preservatives, extra dairy, emulsifiers or other additions, and the name on the front is the only warning."
       ],
       "eyebrow_short": "Block vs. bag",
       "asked_as": [
@@ -1087,7 +1097,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
-        "FDA added-sugars labeling requirements"
+        "FDA added-sugars labeling requirements",
+        "University of Florida IFAS Extension “All About Yogurt” (FS185) https://ask.ifas.ufl.edu/publication/FS185"
       ],
       "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
       "cart_pick": "Plain whole-milk Greek yogurt",
@@ -1104,7 +1115,9 @@
       ],
       "tier_note": "The added-sugar difference is printed on the panel. Buying plain and sweetening it is the standard.",
       "watch_out": [
-        "The single-serve fruit cups are the expensive form and the sweet one at the same time."
+        "Plain still lists sugar, and it is lactose. On plain the sugar line is the milk’s own; on flavored it is lactose plus what was added, and only the added-sugars line separates the two.",
+        "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
+        "Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors."
       ],
       "asked_as": [
         "best yogurt to buy",
@@ -1137,7 +1150,8 @@
       "sources": [
         "CDC raw-milk outbreak data",
         "FDA raw-milk regulations",
-        "USDA/FDA pasteurization nutrient references"
+        "USDA/FDA pasteurization nutrient references",
+        "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
       "instead": "Raw aged cheese from a named dairy. Sixty days of aging puts it in every state, already in the case.",
@@ -1167,7 +1181,8 @@
       "watch_out": [
         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
         "No named farm, no test results, no cold chain — that is not raw milk worth buying, that is just unpasteurized.",
-        "“Raw” on a cheese aged under 60 days at retail is worth a question about where it came from."
+        "“Raw” on a cheese aged under 60 days at retail is worth a question about where it came from.",
+        "Raw means neither step happened. The usual dairy milk has been both pasteurized and homogenized; raw has had neither, and that is the whole of what the word tells you."
       ],
       "card_why": "Pasteurization is a shelf-life technology. It flattens the live cultures, the enzymes, and the cream line along with everything else. Milk from a small pastured herd, handled cold and fast, is a different food from the commodity gallon. The farm is the product here. A farmer who tests, who keeps a small herd on grass, and who will walk you through the parlor is the entire margin between excellent and not worth it.",
       "asked_as": [
@@ -2149,7 +2164,8 @@
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (shell color and breed)",
-        "Poultry-science references on eggshell pigmentation"
+        "Poultry-science references on eggshell pigmentation",
+        "Hendrix Genetics “Eggshell color Eggsplained” https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/"
       ],
       "kristy_take": "Shell color is the breed and yolk color is the feed bag. Buy the cheaper carton and put the difference into how she was raised.",
       "buying_tips": [
@@ -2175,7 +2191,9 @@
       ],
       "tier_note": "Shell color tracking breed is settled genetics, so nothing visible in the carton says how the hen was raised.",
       "watch_out": [
-        "The yolk photo on the carton is artwork, not a sample."
+        "The yolk photo on the carton is artwork, not a sample.",
+        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying, and a stressed hen, an older hen or a hurried lay leaves less of it.",
+        "Blue and green shells are a breed trait too. A different pigment, biliverdin, laid down by breeds like the Araucana; the shell says which hen, and still nothing about the feed."
       ],
       "eyebrow_short": "Shell and yolk",
       "asked_as": [
@@ -2216,7 +2234,7 @@
       "sources": [
         "USDA FSIS shell-egg dating and Julian pack codes",
         "USDA Egg Grading Manual (air cell and interior quality)",
-        "University of Nebraska–Lincoln Extension “Cracking the Date Code on Egg Cartons” (Julian pack date; eggs keep 4 to 5 weeks past the pack date refrigerated)"
+        "University of Nebraska–Lincoln Extension “Cracking the Date Code on Egg Cartons” https://food.unl.edu/article/cracking-date-code-egg-cartons/ (Julian pack date; eggs keep 4 to 5 weeks past the pack date refrigerated)"
       ],
       "kristy_take": "The three-digit number is the truth. The sell-by is the store’s schedule.",
       "buying_tips": [
@@ -2345,7 +2363,7 @@
         "USDA FSIS labeling policy on feed claims",
         "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
         "Poultry-science literature on omega-3 enrichment of eggs",
-        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)"
+        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section https://www.cornucopia.org/egg-scorecard-criteria/ (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)"
       ],
       "kristy_take": "A hen on real pasture is eating bugs. That claim says she was not.",
       "cart_pick": "Soy-free pasture-raised eggs",
@@ -3418,7 +3436,7 @@
       "sources": [
         "FDA Pasteurized Milk Ordinance (time and temperature standards)",
         "FDA milk labeling and processing definitions",
-        "Michigan State University Extension, dairy processing article (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
+        "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
       ],
       "kristy_take": "The shortest date on the shelf is usually the least-handled milk.",
       "cart_pick": "Non-homogenized whole milk",
@@ -3490,7 +3508,8 @@
       "sources": [
         "FDA standards of identity for yogurt",
         "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "University of Florida IFAS Extension “All About Yogurt” (FS185) https://ask.ifas.ufl.edu/publication/FS185"
       ],
       "kristy_take": "The cold case, every time. A shelf-stable tub is a ferment somebody ended on purpose.",
       "cart_pick": "Plain kefir",
@@ -3521,7 +3540,9 @@
       "tier_note": "The live-cultures seal is a defined program, and heat treatment after culturing has to be disclosed.",
       "watch_out": [
         "A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.",
-        "‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one."
+        "‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one.",
+        "The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them; the seal is voluntary, so its absence alone proves nothing.",
+        "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
       ],
       "eyebrow_short": "Live cultures",
       "asked_as": [
@@ -4570,7 +4591,9 @@
       ],
       "watch_out": [
         "Shelf-stable kefir was heat-treated after culturing. The cultures are no longer live.",
-        "Raw dairy is not for every household. The raw milk card names who, once."
+        "Raw dairy is not for every household. The raw milk card names who, once.",
+        "Kefir may carry a trace of alcohol. The yeast in the grains makes it during the ferment, and a live bottle keeps it.",
+        "Commercial bottles taste different because of what was added. Flavoring, additives and sugar make the difference, so plain is the one where the ferment is what you taste."
       ],
       "labels_decoded": [
         {
@@ -4584,7 +4607,8 @@
       ],
       "sources": [
         "USDA FoodData Central",
-        "FDA state raw-milk sale regulations"
+        "FDA state raw-milk sale regulations",
+        "University of Florida IFAS Extension, kefir fact sheet (FS457) https://ask.ifas.ufl.edu/publication/FS457"
       ],
       "cart_pick": "Plain raw kefir",
       "tier_note": "Culturing milk to keep it is among the oldest preservation methods and barely studied as a modern product. The case for it is the live ferment, not a health outcome.",
@@ -4622,7 +4646,9 @@
       ],
       "watch_out": [
         "“Pasteurized process cheese”, “cheese product” and “cheese food” are progressively less cheese.",
-        "Raw dairy is not for every household. The raw milk card names who, once."
+        "Raw dairy is not for every household. The raw milk card names who, once.",
+        "Sixty days rules out every fresh style. A raw fromage blanc cannot meet it, so ‘raw’ on a soft fresh cheese at retail is a question, not a label.",
+        "A raw-cheese maker has to know the milk. Most American cheesemakers buy milk already pasteurized and homogenized and may know little about the farms it came from; raw removes that distance, which is the point of buying it."
       ],
       "labels_decoded": [
         {
@@ -4636,7 +4662,8 @@
       ],
       "sources": [
         "FDA 21 CFR 133 — cheese standards of identity (60-day aging)",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "cart_pick": "Aged raw-milk cheddar",
       "tier_note": "Aging raw milk into cheese predates refrigeration and the sixty-day rule; the months on the rind are history as the evidence, not a health claim.",
