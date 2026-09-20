@@ -3670,10 +3670,15 @@
       "sources": [
         "FDA standards of identity for enriched flour, 21 CFR 137",
         "FDA regulations on flour bleaching and maturing agents",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "NC State Extension, More In My Basket “Whole Wheat Flour Storage” https://morefood.org/whole-wheat-flour-storage/ (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
+        "NutriMill “How to Properly Store Whole Grains and Whole Grain Flour” https://nutrimill.com/blogs/life-in-healthy-balance/how-to-properly-store-whole-grains-and-whole-grain-flour (a home-mill maker’s storage guide, cited for storage practice only; its health claims are not carried onto this card)"
       ],
       "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
       "cart_pick": "Unbleached all-purpose flour",
+      "watch_out": [
+        "Whole wheat flour keeps the germ and its oil, and heat, air and moisture are what turn it. In a pantry at room temperature a month is the outside window; seal air out or other flavors and odors move in."
+      ],
       "buying_tips": [
         "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
         "‘Enriched’ means vitamins and iron added back after refining. Standard on white flour.",
@@ -3731,7 +3736,9 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA retail bulk food handling guidance",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "Civil Eats “US Supermarkets Are Doing Bulk Food All Wrong” https://civileats.com/2019/10/28/us-supermarkets-are-doing-bulk-food-all-wrong/ (a chain insisted the FDA food code forbids refilling your own container in the bulk aisle; the FDA describes the food code as a model offered for adoption by state and local governments, so the rule is the store’s)",
+        "The Counter “Are bulk bins safe during COVID-19?” https://thecounter.org/covid-19-coronavirus-bulk-aisle-health-grocery-beans-rice/ (the real touchpoint is customers’ repeated touching of the same equipment, gravity bin and scoop bin handles and scales, rather than the container a shopper brings)"
       ],
       "kristy_take": "Bulk is unbeatable on grains, beans and spices. On nuts and whole-grain flour it depends entirely on how fast that bin moves.",
       "cart_pick": "Bulk lentils",
@@ -3741,6 +3748,10 @@
         "Full busy bins turn over. A dusty half-empty one does not.",
         "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
         "Buy what you will use in a month, and store it airtight and dark."
+      ],
+      "watch_out": [
+        "The scoop, the bin handle and the scale are touched by every shopper before you. The container you bring is not the exposed part.",
+        "Bring-your-own-container rules vary by store. The FDA food code is a model offered to states and cities, so a store citing it is stating its own policy, not a single national rule."
       ],
       "labels_decoded": [],
       "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
@@ -3774,7 +3785,8 @@
       "kristy_take": "Whole, and grind what you need. A jar of ground spice is a jar with a clock on it.",
       "sources": [
         "volatile-compound retention studies on whole versus ground spice storage",
-        "food-science references on dry-roasting and aromatic release"
+        "food-science references on dry-roasting and aromatic release",
+        "Aradwad et al. “Key issues and challenges in spice grinding,” Cleaner Engineering and Technology Vol. 5, Dec 2021 https://www.sciencedirect.com/science/article/pii/S2666790821003074 (heat-induced quality loss is a primary technical challenge in spice grinding; grinding needs special emphasis considering significant quality loss due to heat generation)"
       ],
       "buying_tips": [
         "Whole spices hold for a couple of years. Ground ones are tired inside six months.",
@@ -3782,7 +3794,7 @@
         "Buy from a bin that turns over, in the smallest amount you will finish."
       ],
       "watch_out": [
-        "Some are only sold ground and that is fine: turmeric, paprika, cinnamon. Buy those small and often.",
+        "Grinding itself makes heat, and heat during grinding is the main way a spice loses quality before it is even in the jar. Small batches, ground as you go.",
         "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
       ],
       "labels_decoded": [],
@@ -3821,13 +3833,18 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "Peer-reviewed literature on lipid oxidation in foods",
-        "UC Davis Olive Center sensory standards for olive oil defects"
+        "UC Davis Olive Center sensory standards for olive oil defects",
+        "America’s Test Kitchen, Lisa McManus “How to Tell Good Olive Oil from Mediocre” https://www.americastestkitchen.com/articles/7474-how-to-tell-good-olive-oil-from-bad (heat, air, light, and time will wreck the best olive oil; rancid oil has a distinctive smell like varnish, putty, old walnuts, or crayons, and rancidity is more obvious in the mouth, so take a tiny sip when in doubt)"
       ],
       "kristy_take": "Old paint and crayons is the smell. Once you know it, half the back of the pantry starts making sense.",
       "buying_tips": [
         "Buy oil in a dark bottle, in a size you will finish inside two months.",
         "Keep whole-grain flour and shelled nuts in the freezer. The germ oil is what turns.",
         "Smell a bulk bin before you fill a bag from it."
+      ],
+      "watch_out": [
+        "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose, so a tiny sip settles a smell you are unsure of.",
+        "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly."
       ],
       "labels_decoded": [],
       "tier_note": "The paint-and-crayon smell is oxidized fat, a quality problem rather than a safety one, and it is flagged on exactly that basis.",
@@ -3867,7 +3884,9 @@
       "sources": [
         "International Olive Council trade standard for olive oils",
         "USDA AMS United States Standards for Grades of Olive Oil (voluntary)",
-        "FDA labeling rules on country of origin"
+        "FDA labeling rules on country of origin",
+        "UC Davis News “Most imported olive oils don’t match ‘extra virgin’ claims, study finds” https://www.ucdavis.edu/news/most-imported-olive-oils-don%E2%80%99t-match-%E2%80%98extra-virgin%E2%80%99-claims-study-finds (69 percent of imported oils sampled, against 10 percent of California oils, failed internationally accepted standards for extra virgin; the failed oils had defects such as rancidity)",
+        "UC Davis News “Imported olive oil quality unreliable, study finds” https://www.ucdavis.edu/news/imported-olive-oil-quality-unreliable-study-finds (73 percent of samples from the five top-selling imported brands failed two IOC-accredited taste panels; quality oils show the most recent harvest year and come in containers that keep out light)"
       ],
       "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
@@ -3906,7 +3925,7 @@
         "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color, not calories.",
         "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
         "‘Packed in [country]’ is where it was bottled. Look for ‘product of’ instead.",
-        "Extreme cheapness for extra-virgin is a flag, not a find."
+        "The grade on the front is not settled by the grade on the front. In UC Davis testing, 69 percent of imported oils sampled and 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. The most recent harvest year on the bottle and a container that keeps out light are the signals that held up."
       ],
       "eyebrow_short": "Real extra-virgin",
       "asked_as": [
@@ -3937,10 +3956,15 @@
       "sources": [
         "FDA standards of identity for peanut butter, 21 CFR 164.150",
         "Product ingredient labeling",
-        "USDA FoodData Central"
+        "USDA FoodData Central",
+        "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)"
       ],
       "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
       "cart_pick": "Natural peanut butter",
+      "watch_out": [
+        "A short ingredient list separates naturally and needs a stir before use. Palm oil or another added fat is what keeps a nut butter from separating on the shelf, and that is what the ingredient line is showing when it appears.",
+        "With no stabilizer in it, a natural jar left warm for a long stretch goes rancid. The fridge is where an opened jar belongs."
+      ],
       "buying_tips": [
         "The list should read peanuts, and salt if you want it. Nothing else is needed.",
         "Oil separated on top is the good sign — nothing was added to hold it in.",
@@ -3999,10 +4023,14 @@
       "sources": [
         "USDA FoodData Central",
         "FDA guidance on inorganic arsenic in rice",
-        "Whole Grains Council grain reference"
+        "Whole Grains Council grain reference",
+        "Jerry James Stone “How to Rinse Quinoa (Why the Salt Bath Method)” https://jerryjamesstone.com/how-to/how-to-rinse-quinoa-why-salt-bath-method/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)"
       ],
       "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
       "cart_pick": "Quinoa",
+      "watch_out": [
+        "Quinoa carries a bitter natural coating called saponin on its outer hull. Rinse it before cooking; that is what takes the bitterness off."
+      ],
       "buying_tips": [
         "Quick: bulgur (10 min), quinoa (15 min), buckwheat (15 min), millet (20 min).",
         "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
@@ -4052,7 +4080,7 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
-        "ANSES 2025, Journal of Food Composition and Analysis — plastic particles in bottled drinks traced to paint on metal caps, and reduced ~70% by cleaning the caps before sealing"
+        "ANSES “The caps of glass bottles contaminate beverages with microplastics” https://www.anses.fr/en/content/caps-glass-bottles-contaminate-beverages-microplastics (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 87 when caps were blown and rinsed before sealing)"
       ],
       "kristy_take": "Spring, in glass, from a place that can be found on a map. Everything else is a process wearing a mountain on the label.",
       "cart_pick": "Spring water in glass",
@@ -4064,8 +4092,8 @@
         "“Purified”, “distilled”, “deionized” and “reverse osmosis” are processes. The source is not on that label, and it does not have to be."
       ],
       "watch_out": [
-        "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen, and it costs less. It is the honest fallback, not the standard.",
-        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic found in glass-bottled drinks to paint flaking off painted metal caps, scratched by rubbing together in storage before they were ever used. Cleaning the caps first took most of it back out. The glass sheds nothing.",
+        "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen. It is the honest fallback, not the standard.",
+        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic found in glass-bottled drinks to the paint on painted metal caps, scratched by rubbing together in storage before they were ever used. Cleaning the caps first took most of it back out. For water specifically the counts were low in every container, glass or plastic.",
         "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle."
       ],
       "labels_decoded": [
