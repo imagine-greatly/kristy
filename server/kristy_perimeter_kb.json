@@ -1225,7 +1225,7 @@
       "detail": "Two testing programs put numbers on it. Consumer Reports measured brown rice at 113 ppb inorganic arsenic against white at 72; Healthy Babies Bright Futures measured 129 against 86. By variety, basmati averaged 55 ppb and sushi rice 57, while plain long-grain and parboiled both averaged 101. Origin moves it as much as color does. Rice grown in Arkansas, Louisiana, Mississippi, Missouri and Texas tests highest, and California, India and Pakistan test lowest. Why the southern crop runs high is not settled. Those fields carry residue from decades of arsenical pesticides used on cotton, and the same fields also have sandier soil, which releases arsenic more readily than clay. Both explanations are published and neither has been shown to be the whole of it. Cooking is the other lever, and it is a large one: boiling rice in plenty of water and pouring the water off removes 40 to 60 percent of the inorganic arsenic, while rinsing and soaking were each measured at 5 percent or less. The FDA has set an action level of 100 ppb for infant rice cereal and has set nothing for table rice.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "Consumer Reports rice heavy-metals testing, 2026",
+        "Consumer Reports, rice heavy-metals testing https://www.consumerreports.org/health/food-safety/arsenic-in-your-food-testing-shows-a-real-need-for-federal-standards-a1064475937/ (measurable inorganic arsenic in every sample tested; rinsing and soaking removed less than 8 percent, while the parboil-and-absorption method removed 50 to 58 percent)",
         "Healthy Babies Bright Futures, What’s in Your Family’s Rice?, 2025",
         "FDA action level for inorganic arsenic in infant rice cereal",
         "Zavala and Duxbury on arsenic in US rice by growing region",
@@ -1276,7 +1276,7 @@
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
-        "glycemic-response literature on oat processing"
+        "Michigan State University Extension “Love your oats” https://www.canr.msu.edu/news/love_your_oats (glycemic index measured at 42 for steel-cut oats, 55 for rolled and 83 for instant)"
       ],
       "kristy_take": "Big canister of plain rolled oats. Sweeten with fruit. The flavored packets are candy with an oat garnish.",
       "cart_pick": "Steel-cut oats",
@@ -1296,6 +1296,9 @@
         "which oats should i buy",
         "are steel cut oats better",
         "is instant oatmeal ok"
+      ],
+      "watch_out": [
+        "Steel-cut, rolled and instant are the same grain cut and cooked differently, and the processing shows in a measured number: one extension comparison put the glycemic index at 42 for steel-cut, 55 for rolled and 83 for instant."
       ]
     },
     {
@@ -1324,7 +1327,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
-        "product ingredient labeling"
+        "product ingredient labeling",
+        "Almond Board of California, pasteurization https://www.almonds.com/almond-industry/almond-board-california/food-safety/pasteurization (under the mandatory almond Salmonella rule a 4-log reduction is the standard; almonds treated for 5-log can be labeled “pasteurized”)"
       ],
       "kristy_take": "Raw or dry-roasted. A seed oil in the almonds is the easiest swap in the store.",
       "cart_pick": "Raw or dry-roasted almonds",
@@ -1373,8 +1377,9 @@
       "detail": "Diluting honey with rice or corn syrup, and ultra-filtering to hide origin, are documented problems in the global honey trade. Local and single-origin raw honey, and producers you can trace, are the reliable route. Being an old, traditional food is a fair reason to prefer real honey — but tradition speaks to it being a real food, not to any medical effect, and it’s still sugar.",
       "evidence_tier": "time_tested",
       "sources": [
-        "reporting on honey adulteration and ultra-filtration",
-        "True Source Honey / origin-traceability programs"
+        "Chemistry World “The honey fraud problem” https://www.chemistryworld.com/features/the-honey-fraud-problem/4020255.article (low-cost sugar syrups used to dilute or replace honey; the European Commission’s 2023 From the Hives report found apparent signs of adulteration in 46 percent of tested imported samples; detection is difficult because honey’s composition varies naturally with floral source, geography, hive management and processing)",
+        "True Source Honey / origin-traceability programs",
+        "American Academy of Pediatrics, AAP News https://publications.aap.org/aapnews (the AAP advises against putting honey in food, water or formula fed to infants)"
       ],
       "kristy_take": "Local raw honey from someone you can trace. Use it because you like it — it’s still sugar, just a real, old one.",
       "instead": "Maple syrup with one producer named on the jug. The same sourcing question, and far easier to answer.",
@@ -1395,9 +1400,10 @@
         }
       ],
       "watch_out": [
-        "Not for infants under twelve months. Beekeepers say this themselves.",
+        "Not for infants under twelve months. That is the American Academy of Pediatrics’ advice, not a beekeeper’s.",
         "“Raw” with no named producer is frequently blended and filtered. The word is unregulated.",
-        "“Pure honey” is a marketing word with little enforcement. Traceability is the real check."
+        "“Pure honey” is a marketing word with little enforcement. Traceability is the real check.",
+        "Adulteration is hard to test for because real honey varies naturally with the flowers, the place and the handling. A 2023 European Commission check found signs of it in 46 percent of the imported samples tested."
       ],
       "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome.",
       "asked_as": [
@@ -1426,7 +1432,7 @@
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
-        "studies on rinsing canned beans and sodium"
+        "Today’s Dietitian, sodium and canned beans https://www.todaysdietitian.com/newarchives/canned-beans-sodium.html (rinsing and draining canned beans can reduce their sodium content)"
       ],
       "kristy_take": "A bag of dried beans and a slow cooker. Nothing in the store competes.",
       "cart_pick": "Dried beans",
@@ -3671,8 +3677,8 @@
         "FDA standards of identity for enriched flour, 21 CFR 137",
         "FDA regulations on flour bleaching and maturing agents",
         "USDA FoodData Central",
-        "NC State Extension, More In My Basket “Whole Wheat Flour Storage” https://morefood.org/whole-wheat-flour-storage/ (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
-        "NutriMill “How to Properly Store Whole Grains and Whole Grain Flour” https://nutrimill.com/blogs/life-in-healthy-balance/how-to-properly-store-whole-grains-and-whole-grain-flour (a home-mill maker’s storage guide, cited for storage practice only; its health claims are not carried onto this card)"
+        "NC State Extension, More Food project “All About Flour” https://morefoodproject.org/blog/all-about-flour (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
+        "NutriMill “How to Store Flour” https://www.nutrimill.com/blogs/news/how-to-store-flour (a home-mill maker’s storage guide, cited for storage practice only; its health claims are not carried onto this card)"
       ],
       "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
       "cart_pick": "Unbleached all-purpose flour",
@@ -3737,8 +3743,8 @@
       "sources": [
         "FDA retail bulk food handling guidance",
         "USDA FoodData Central",
-        "Civil Eats “US Supermarkets Are Doing Bulk Food All Wrong” https://civileats.com/2019/10/28/us-supermarkets-are-doing-bulk-food-all-wrong/ (a chain insisted the FDA food code forbids refilling your own container in the bulk aisle; the FDA describes the food code as a model offered for adoption by state and local governments, so the rule is the store’s)",
-        "The Counter “Are bulk bins safe during COVID-19?” https://thecounter.org/covid-19-coronavirus-bulk-aisle-health-grocery-beans-rice/ (the real touchpoint is customers’ repeated touching of the same equipment, gravity bin and scoop bin handles and scales, rather than the container a shopper brings)"
+        "Civil Eats “Is Shopping in Bulk Still a Sustainable Choice?” https://civileats.com/2023/08/22/is-shopping-in-bulk-still-a-sustainable-choice/ (a chain insisted the FDA food code forbids refilling your own container in the bulk aisle; the FDA describes the food code as a model offered for adoption by state and local governments, so the rule is the store’s)",
+        "The Counter, bulk-bin hygiene reporting https://thecounter.org/bulk-bins-grocery-stores-bring-your-own-container-covid-19/ (the real touchpoint is customers’ repeated touching of the same equipment, gravity bin and scoop bin handles and scales, rather than the container a shopper brings)"
       ],
       "kristy_take": "Bulk is unbeatable on grains, beans and spices. On nuts and whole-grain flour it depends entirely on how fast that bin moves.",
       "cart_pick": "Bulk lentils",
@@ -3786,7 +3792,7 @@
       "sources": [
         "volatile-compound retention studies on whole versus ground spice storage",
         "food-science references on dry-roasting and aromatic release",
-        "Aradwad et al. “Key issues and challenges in spice grinding,” Cleaner Engineering and Technology Vol. 5, Dec 2021 https://www.sciencedirect.com/science/article/pii/S2666790821003074 (heat-induced quality loss is a primary technical challenge in spice grinding; grinding needs special emphasis considering significant quality loss due to heat generation)"
+        "Aradwad et al. “Key issues and challenges in spice grinding,” Cleaner Engineering and Technology Vol. 5, Dec 2021 https://www.sciencedirect.com/science/article/pii/S2666790821001654 (heat-induced quality loss is a primary technical challenge in spice grinding; grinding needs special emphasis considering significant quality loss due to heat generation)"
       ],
       "buying_tips": [
         "Whole spices hold for a couple of years. Ground ones are tired inside six months.",
@@ -3834,7 +3840,7 @@
       "sources": [
         "Peer-reviewed literature on lipid oxidation in foods",
         "UC Davis Olive Center sensory standards for olive oil defects",
-        "America’s Test Kitchen, Lisa McManus “How to Tell Good Olive Oil from Mediocre” https://www.americastestkitchen.com/articles/7474-how-to-tell-good-olive-oil-from-bad (heat, air, light, and time will wreck the best olive oil; rancid oil has a distinctive smell like varnish, putty, old walnuts, or crayons, and rancidity is more obvious in the mouth, so take a tiny sip when in doubt)"
+        "America’s Test Kitchen “How to Tell If Olive Oil Is Rancid” https://www.americastestkitchen.com/articles/1224-how-to-tell-if-olive-oil-is-rancid (heat, air, light, and time will wreck the best olive oil; rancid oil has a distinctive smell like varnish, putty, old walnuts, or crayons, and rancidity is more obvious in the mouth, so take a tiny sip when in doubt; store cool, dark, tightly capped, and use it up promptly)"
       ],
       "kristy_take": "Old paint and crayons is the smell. Once you know it, half the back of the pantry starts making sense.",
       "buying_tips": [
@@ -3885,8 +3891,8 @@
         "International Olive Council trade standard for olive oils",
         "USDA AMS United States Standards for Grades of Olive Oil (voluntary)",
         "FDA labeling rules on country of origin",
-        "UC Davis News “Most imported olive oils don’t match ‘extra virgin’ claims, study finds” https://www.ucdavis.edu/news/most-imported-olive-oils-don%E2%80%99t-match-%E2%80%98extra-virgin%E2%80%99-claims-study-finds (69 percent of imported oils sampled, against 10 percent of California oils, failed internationally accepted standards for extra virgin; the failed oils had defects such as rancidity)",
-        "UC Davis News “Imported olive oil quality unreliable, study finds” https://www.ucdavis.edu/news/imported-olive-oil-quality-unreliable-study-finds (73 percent of samples from the five top-selling imported brands failed two IOC-accredited taste panels; quality oils show the most recent harvest year and come in containers that keep out light)"
+        "UC Davis News “Study finds most imported olive oil fails international standards” https://www.ucdavis.edu/food/news/study-finds-most-imported-olive-oil-fails-international-standards (69 percent of imported oils sampled, against 10 percent of California oils, failed internationally accepted standards for extra virgin; the failed oils had defects such as rancidity)",
+        "UC Davis Olive Center “Study finds widespread quality problems in imported extra-virgin olive oil” https://olivecenter.ucdavis.edu/news-events/news/study-finds-widespread-quality-problems-imported-extra-virgin-olive-oil (73 percent of samples from the five top-selling imported brands failed two IOC-accredited taste panels; quality oils show the most recent harvest year and come in containers that keep out light)"
       ],
       "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
@@ -4024,7 +4030,7 @@
         "USDA FoodData Central",
         "FDA guidance on inorganic arsenic in rice",
         "Whole Grains Council grain reference",
-        "Jerry James Stone “How to Rinse Quinoa (Why the Salt Bath Method)” https://jerryjamesstone.com/how-to/how-to-rinse-quinoa-why-salt-bath-method/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)"
+        "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)"
       ],
       "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
       "cart_pick": "Quinoa",
@@ -4080,7 +4086,7 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
-        "ANSES “The caps of glass bottles contaminate beverages with microplastics” https://www.anses.fr/en/content/caps-glass-bottles-contaminate-beverages-microplastics (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 87 when caps were blown and rinsed before sealing)"
+        "ANSES “Plastic particles in bottled drinks are caused by caps” https://www.anses.fr/en/content/plastic-particles-bottled-drinks-are-caused-caps (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 106 when caps were blown clean and 87 when blowing was followed by rinsing)"
       ],
       "kristy_take": "Spring, in glass, from a place that can be found on a map. Everything else is a process wearing a mountain on the label.",
       "cart_pick": "Spring water in glass",
