@@ -33,7 +33,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries / Seafood Watch",
-        "USDA FoodData Central (fatty-acid composition)"
+        "USDA FoodData Central (fatty-acid composition)",
+        "Alaska Sea Grant, University of Alaska Fairbanks “Aquaculture” https://alaskaseagrant.org/our-work/aquaculture/ (Alaska law limits aquatic farming to shellfish and seaweeds; salmon ranching by nonprofit hatcheries supplements, not replaces, wild stocks)"
       ],
       "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
       "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
@@ -46,7 +47,8 @@
       "watch_out": [
         "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
         "Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best.",
-        "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish."
+        "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish.",
+        "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them."
       ],
       "labels_decoded": [
         {
@@ -85,7 +87,8 @@
       "evidence_tier": "credible_concern",
       "sources": [
         "NOAA Fisheries country-of-origin data",
-        "Monterey Bay Seafood Watch"
+        "Monterey Bay Seafood Watch",
+        "North Carolina Sea Grant, Coastwatch “Curbing the Import Appetite: Selling American Shrimp in the U.S. Market” https://ncseagrant.ncsu.edu/coastwatch/curbing-the-import-appetite-selling-american-shrimp-in-the-u-s-market/ (pond-raised imports vs. wild-caught: flavor, size uniformity, appearance)"
       ],
       "kristy_take": "Read the country first. It is printed by law and it is most of the answer.",
       "cart_pick": "Wild American shrimp",
@@ -107,7 +110,8 @@
       "tier_note": "Farm practices genuinely vary by origin, the concern is documented, and a certified bag is the clean swap.",
       "watch_out": [
         "Where wild American is not stocked, a BAP or ASC certification is the check that stands in for knowing the farm.",
-        "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier."
+        "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
+        "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound."
       ],
       "asked_as": [
         "is imported shrimp ok",
@@ -134,7 +138,9 @@
       "evidence_tier": "established",
       "sources": [
         "NOAA Fisheries handling guidance",
-        "USDA/FDA seafood storage guidance"
+        "USDA/FDA seafood storage guidance",
+        "Alaska Longline Fishermen’s Association “Why Frozen?” https://www.alfafish.org/why-frozen (frozen at sea within hours of catch, often fresher than ‘fresh’ fish after days in transit)",
+        "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (flash-freezing halts bacterial growth and enzymatic breakdown, preserving texture and flavor)"
       ],
       "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
       "cart_pick": "Frozen wild fish fillets",
@@ -154,6 +160,10 @@
         }
       ],
       "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion.",
+      "watch_out": [
+        "‘Fresh’ on the sign means never frozen, not recently caught. Fish frozen at sea within hours of the catch can be fresher than fish that spent days in transit to the counter.",
+        "Flash-freezing stops the bacterial and enzymatic breakdown that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it."
+      ],
       "asked_as": [
         "should i buy fresh or frozen fish",
         "is frozen fish worse than fresh",
@@ -2885,7 +2895,8 @@
       "evidence_tier": "established",
       "sources": [
         "FDA/EPA ‘Advice About Eating Fish’ (2021 update)",
-        "FDA mercury concentrations in commercial fish and shellfish"
+        "FDA mercury concentrations in commercial fish and shellfish",
+        "Environmental Working Group “EWG’s Consumer Guide to Seafood” https://www.ewg.org/consumer-guides/ewgs-consumer-guide-seafood (per-species mercury and omega-3 tiers; best bets wild salmon, sardines, mussels, rainbow trout, Atlantic mackerel)"
       ],
       "kristy_take": "Small and short-lived is the entire rule. Sardines, salmon and skipjack sit at the bottom of the chain, and a tin of any of them costs less than a fillet.",
       "cart_pick": "Canned light skipjack tuna",
@@ -2912,6 +2923,10 @@
         }
       ],
       "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it.",
+      "watch_out": [
+        "Low mercury is not the whole picture. EWG’s guide sets shrimp, catfish, tilapia, clams, scallops and pangasius apart as low in mercury but also low in omega-3s, against wild salmon, sardines, mussels, rainbow trout and Atlantic mackerel, which are low in mercury and high in omega-3s.",
+        "EWG lists canned light and albacore tuna, halibut, lobster, mahi mahi and sea bass as ones it tells pregnant women and children to limit or avoid, and shark, swordfish, tilefish, king mackerel, marlin, bluefin and bigeye tuna and orange roughy as too high to eat regularly. Anything medical is a doctor’s call."
+      ],
       "asked_as": [
         "which fish are low in mercury",
         "is tuna high in mercury",
@@ -2946,7 +2961,8 @@
       "evidence_tier": "established",
       "sources": [
         "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
-        "NOAA Fisheries seafood handling guidance"
+        "NOAA Fisheries seafood handling guidance",
+        "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)"
       ],
       "kristy_take": "Ask to smell it. Clean seawater or nothing means yes. Sharp and fishy means put it back.",
       "buying_tips": [
@@ -2963,6 +2979,10 @@
         }
       ],
       "tier_note": "The smell it gives off and the ice it is bedded in are both documented freshness checks, not opinions about the fish.",
+      "watch_out": [
+        "If only one check is possible, make it the gills. Red means recently slaughtered; brown, gray or green means the fish is past fresh.",
+        "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage, so a fish inside its date can still show gray, matte, sunken eyes."
+      ],
       "asked_as": [
         "how do i tell if fish is fresh",
         "is this fish fresh",
@@ -3002,7 +3022,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (canned fish composition)",
-        "Product ingredient labeling"
+        "Product ingredient labeling",
+        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (FAD-free / school-caught terms, the scope of ‘dolphin-safe’, the species behind ‘light’, ‘white’ and ‘ahi’)"
       ],
       "kristy_take": "Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist.",
       "cart_pick": "Sardines packed in olive oil",
@@ -3029,6 +3050,10 @@
         }
       ],
       "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it.",
+      "watch_out": [
+        "‘Dolphin-safe’ speaks to dolphins only; Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught, meaning purse seines used without a floating device that draws in juvenile fish, sharks and other bycatch.",
+        "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye."
+      ],
       "asked_as": [
         "what canned fish should i buy",
         "is tuna in oil or water better",
@@ -3059,7 +3084,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries aquaculture overviews",
-        "Monterey Bay Aquarium Seafood Watch species ratings"
+        "Monterey Bay Aquarium Seafood Watch species ratings",
+        "National Aquaculture Association, reporting Seafood Watch “Seafood Watch Points to U.S. Farmed Fish, Shellfish and Seaweed as ‘Super Green’” https://members.nationalaquaculture.org/news/Details/seafood-watch-points-to-u-s-farmed-fish-shellfish-and-seaweed-as-super-green-246504 (seven of ten Super Green seafoods are U.S. farmed: catfish, clams, hybrid striped bass, mussels, oysters, trout and steelhead, seaweed)"
       ],
       "kristy_take": "Farmed shellfish feed themselves by filtering water. That is about as clean as farming protein gets.",
       "cart_pick": "Farmed mussels",
@@ -3081,6 +3107,10 @@
         }
       ],
       "tier_note": "Mussels and oysters taking no feed at all is documented; which farmed species clear the bar is the whole-food standard.",
+      "watch_out": [
+        "Ratings run by species and by method, never by the word ‘farmed’. Seafood Watch’s Super Green list puts U.S. farmed catfish, clams, mussels, oysters, trout and steelhead and hybrid striped bass at the top.",
+        "U.S.-farmed white leg shrimp and tilapia rate Green on the same list. The rating names the origin and the system, so read the country before judging the species."
+      ],
       "asked_as": [
         "is farmed fish worth buying",
         "which farmed fish are ok",
@@ -3114,7 +3144,9 @@
         "Marine Stewardship Council fisheries standard",
         "Aquaculture Stewardship Council farm standards",
         "Global Seafood Alliance Best Aquaculture Practices star system",
-        "Monterey Bay Aquarium Seafood Watch methodology"
+        "Monterey Bay Aquarium Seafood Watch methodology",
+        "Marine Stewardship Council “The MSC blue fish label: what it means for you” https://www.msc.org/en-us/the-msc-blue-fish-label-what-it-means-for-you (wild-caught only; assessed on stock levels, bycatch and fishery management)",
+        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (‘dolphin-safe’ is not a sustainability claim)"
       ],
       "kristy_take": "MSC on a wild fishery is the seal that means what you hoped it meant.",
       "buying_tips": [
@@ -3146,7 +3178,8 @@
       "watch_out": [
         "No seal speaks to freshness. That is still the nose, the eyes and the ice.",
         "A BAP star count is how many links were audited, not how good the fish is.",
-        "Seafood Watch is a guide to look up, not a seal to spot on a package."
+        "Seafood Watch is a guide to look up, not a seal to spot on a package.",
+        "The MSC blue label means wild-caught fish from a fishery assessed on stock levels, bycatch and management. ‘Dolphin-safe’ on tuna is not a sustainability seal; Seafood Watch says to look for FAD-free or school-caught alongside it."
       ],
       "asked_as": [
         "do seafood seals mean anything",

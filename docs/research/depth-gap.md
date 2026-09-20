@@ -92,14 +92,14 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | sprouts_raw | produce | shelf | 3 | 1 | Y | Y | Y |
 | strawberries_organic_residue | produce | shelf | 5 | 1 | Y | Y | Y |
 | washing_produce | produce | home | 2 | 0 | Y | Y | n/a |
-| canned_fish_choosing | seafood | shelf | 2 | 0 | N | N | N |
-| farmed_fish_by_species | seafood | shelf | 2 | 0 | Y | N | N |
-| fish_freshness_at_counter | seafood | shelf | 2 | 0 | N | N | N |
-| fresh_vs_previously_frozen_fish | seafood | shelf | 2 | 0 | Y | N | N |
-| mercury_by_fish | seafood | shelf | 2 | 0 | N | N | N |
-| salmon_wild_vs_farmed | seafood | shelf | 2 | 0 | Y | Y | N |
-| seafood_certifications | seafood | shelf | 4 | 0 | Y | Y | N |
-| shrimp_imported_vs_domestic | seafood | shelf | 2 | 0 | Y | Y | N |
+| canned_fish_choosing | seafood | shelf | 3 | 1 | Y | Y | Y |
+| farmed_fish_by_species | seafood | shelf | 3 | 1 | Y | Y | Y |
+| fish_freshness_at_counter | seafood | shelf | 3 | 1 | Y | Y | Y |
+| fresh_vs_previously_frozen_fish | seafood | shelf | 4 | 2 | Y | Y | Y |
+| mercury_by_fish | seafood | shelf | 3 | 1 | Y | Y | Y |
+| salmon_wild_vs_farmed | seafood | shelf | 3 | 1 | Y | Y | Y |
+| seafood_certifications | seafood | shelf | 6 | 2 | Y | Y | Y |
+| shrimp_imported_vs_domestic | seafood | shelf | 3 | 1 | Y | Y | Y |
 
 ## Totals per section (Bar A, shelf-eligible cards only)
 
@@ -109,7 +109,7 @@ Bar A: kind='shelf' AND section != label_terms → needs ≥2 sources, ≥1 with
 | eggs_dairy | 16 | 0 | — (all 16 at bar A, 2026-09-20 holistic pass) |
 | meat | 11 | 0 | — (all 11 at bar A, 2026-09-20 holistic pass) |
 | produce | 17 | 0 | — (all 17 at bar A, 2026-09-20 holistic pass) |
-| seafood | 8 | 8 | no URL source (5) |
+| seafood | 8 | 0 | — (all 8 at bar A, 2026-09-20 holistic pass) |
 
 ## Non-shelf cards (kind='home' or section='label_terms') — listed, not scored against Bar A
 
@@ -131,5 +131,7 @@ Meat batch 2026-09-20, authored from the appended sections of `docs/research/mea
 
 Produce batch 2026-09-20, authored from `## Holistic produce sources (bar A, 2026-09-20)` in `docs/research/produce-sources.md`: 9 cards moved to bar A. `berries_picking` (Ohioline HYG-5531, watch_out extended), `frozen_vs_fresh_produce` (SDSU Extension, watch_out authored, short_answer narrowed to peak-ripeness/transit-loss), `organic_worth_it_by_type` (EWG Clean Fifteen + full list URLs), `precut_produce_tradeoffs` (Eat or Toss / UGA Critzer, watch_out extended: exposed surface, melon, unregulated dates), `produce_picking_ripeness` (Cornell CCE Herkimer, watch_out extended: PLU codes, ‘pesticide-free’), `produce_ripeness_by_item` (UGA Extension watermelon, watch_out authored), `produce_seasonality` (MSU Extension, watch_out authored: summer succession, farmers market/LocalHarvest), `sprouts_raw` (MSU Extension growers part two, watch_out extended: seed carries pathogen, PHF class), `strawberries_organic_residue` (Mamavation URL, watch_out extended: organic non-detect across 500+). Excluded on rule: Ohioline mold→cancer line and Mamavation PFAS→disease line (no-treatment), MSU “save money” (price). Not migrated.
 
-**seafood** (8): canned_fish_choosing, farmed_fish_by_species, fish_freshness_at_counter, fresh_vs_previously_frozen_fish, mercury_by_fish, salmon_wild_vs_farmed, seafood_certifications, shrimp_imported_vs_domestic
+**seafood** (0): none
+
+Seafood batch 2026-09-20, authored from `docs/research/seafood-sources.md`: 8 cards moved to bar A. `salmon_wild_vs_farmed` (Alaska Sea Grant URL, watch_out extended: Alaska law limits aquatic farming to shellfish/seaweed, hatchery ranching supplements wild runs), `shrimp_imported_vs_domestic` (NC Sea Grant Coastwatch URL, watch_out extended: uniform size/flawless look = pond-raised, wild graded to count per pound), `fresh_vs_previously_frozen_fish` (ALFA + Whidbey Seafoods URLs; the KB had NO watch_out field despite the archive saying one existed, so watch_out authored: frozen at sea within hours vs. days in transit, flash-freezing halts breakdown), `fish_freshness_at_counter` (Nofima URL, watch_out authored: gills as the one check, date alone unreliable), `canned_fish_choosing` (Seafood Watch canned-tuna URL, watch_out authored: dolphin-safe scope, FAD-free/school-caught, light/white/ahi species), `farmed_fish_by_species` (NAA/Seafood Watch Super Green URL, watch_out authored; the earlier row’s served-Y / KB-N split was the KB field being null — trusted the KB, authored it), `mercury_by_fish` (EWG guide URL, watch_out authored: low-mercury-low-omega-3 tier vs. best bets; EWG’s limit/avoid lists stated as EWG’s recommendation), `seafood_certifications` (MSC blue label + Seafood Watch URLs, watch_out extended: MSC = wild-caught assessed on stock/bycatch/management, dolphin-safe not a sustainability seal). Excluded on rule: EWG cognition/heart-disease lines, Nofima ‘safe if heated’ line (no-treatment); NC Sea Grant price-per-pound and retailer/brand names, Seafood Watch brand and store lists (no-price, no-brand). Open for Devon: EWG puts canned light tuna in its pregnant-women/children ‘limit or avoid’ tier while `mercury_by_fish` lists canned light tuna under ‘Lowest’ and picks canned light skipjack; pre-existing price words remain in `salmon_wild_vs_farmed` (`instead`, buying_tips, watch_out ‘cheaper’), `mercury_by_fish` (kristy_take ‘costs less’, buying_tips ‘cheapest’), `fresh_vs_previously_frozen_fish` (short_answer ‘cheaper’, detail ‘premium’, buying_tips ‘best price’) and `canned_fish_choosing` (detail ‘best value’); `canned_fish_choosing` buying_tips carries a duplicated skipjack/albacore line. Not migrated.
 
