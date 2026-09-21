@@ -582,9 +582,9 @@ A check reports success because it cannot see the thing it is checking.
 ### Infrastructure state
 - ⚠️ `server/.env`: real Supabase credentials; placeholder `ANTHROPIC_API_KEY` (401); `USDA_API_KEY`
   and Stripe keys empty. Model-dependent behaviour cannot be verified locally.
-- ⚠️ Migrations not confirmed applied: `supabase/push_tokens.sql` (degrades gracefully) and
-  `supabase/product_category_version.sql` (the retain path hard-fails without it; `main` has
-  been pushed since, so confirm with one query, queued). Everything else: `docs/SCHEMA-AUDIT.md`.
+- ✅ `product_category_version.sql` applied (measured 2026-09-21, real select).
+- ⛔ `push_tokens.sql` NOT applied — table missing from schema cache (measured 2026-09-21).
+  Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
   - LIVE `counter_cards`: **95 rows — 92 `curated` + 3 `generated`**, re-measured 2026-09-16;
     depth audit (bar A) migrated 2026-09-21, row count unchanged.
