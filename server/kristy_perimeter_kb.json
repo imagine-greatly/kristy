@@ -229,6 +229,66 @@
       ]
     },
     {
+      "id": "ground_beef_organ_blend",
+      "title": "Ground beef with liver and heart blended in",
+      "aliases": [
+        "ancestral blend ground beef",
+        "organ blend ground beef",
+        "liver blend ground beef",
+        "ground beef with liver",
+        "blended ground beef",
+        "organ meat blend",
+        "liver blend beef",
+        "beef with liver",
+        "ancestral blend"
+      ],
+      "category": "beef",
+      "question": "Is organ blend ground beef worth it?",
+      "decision": "Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.",
+      "why": "Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.",
+      "short_answer": "Under federal rules ‘ground beef’ is chopped beef and nothing else, cheek meat aside. Liver and heart are not permitted additions, so a product carrying them cannot use the standardized name and must wear a truthful descriptive one, with every ingredient listed. That is the whole test at the shelf: the label names liver and heart and gives each a share, or it does not. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.",
+      "detail": "9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
+        "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
+        "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
+        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+      ],
+      "kristy_take": "A blend that prints its numbers is honest ground beef. One that will not is a mystery bag.",
+      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.",
+      "cart_pick": "Liver and heart beef blend, shares stated",
+      "buying_tips": [
+        "Look for liver and heart named in the ingredient list, each with a percentage.",
+        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+        "Grass-finished applies to the blend the same way it applies to plain ground beef. Both words, or it is a grain finish."
+      ],
+      "watch_out": [
+        "Liver sets the vitamin A. NIH lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces; the adult upper intake is 3,000 mcg a day. Check the liver percent and keep servings ordinary.",
+        "At the shares producers print, 8 percent organ or 5 percent liver plus 3 percent heart, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
+        "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ground beef",
+          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
+        },
+        {
+          "term": "Ancestral blend / primal blend",
+          "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
+        }
+      ],
+      "tier_note": "The name rule is on record. Reading the ingredient list for each percentage is the ask.",
+      "eyebrow_short": "Organ blend beef",
+      "asked_as": [
+        "is organ blend ground beef worth it",
+        "what is ancestral blend beef",
+        "does the liver taste come through in blended ground beef",
+        "should i buy ground beef with liver in it"
+      ]
+    },
+    {
       "id": "beef_cuts_basics",
       "title": "Beef cuts — what’s for what",
       "aliases": [
