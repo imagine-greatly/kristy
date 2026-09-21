@@ -607,3 +607,95 @@ government grade)
   bacteria and a separate WHO nitrate-carcinogenicity claim were both read but deliberately not
   quoted anywhere in this pass — both are health-outcome claims and out of scope under the
   claim-lock's no-health-outcome-claim rule, regardless of source quality.
+
+## Roadmap P1 sources (2026-09-21)
+
+Card: `judging_meat_at_the_case`. All URLs below fetched this session via Firecrawl
+(`firecrawl scrape --only-main-content`), 200 body returned in every case. Note:
+`fsis.usda.gov` was reachable via Firecrawl this session (unlike the direct WebFetch/curl
+403 recorded elsewhere in this file and in `kristy-gov-fetches-403.md`) — flagged so a future
+session does not assume the domain is categorically blocked from every tool.
+
+### Source: Michigan State University Extension — "The color of meat depends on myoglobin: Part 1"
+
+- URL: https://www.canr.msu.edu/news/the_color_of_meat_depends_on_myoglobin_part_1
+- Publisher: Michigan State University Extension (Jeannine Schweihofer)
+- Fetched: 2026-09-21
+
+> "Color is used by consumers to determine if meat is fresh and safe to eat. It is the single most important driving factor in a consumer's decision to purchase meat."
+
+Use: why (why shoppers lean on color at the case)
+
+> "Myoglobin has three natural colors depending on its exposure to oxygen and the chemical state of the iron. If no oxygen is present, the meat appears purple red, like in vacuum packaged meat, and is in the deoxymyoglobin state. Meat is bright red when exposed to air and is typical of meat in retail display. Bright red color indicates oxymyoglobin is present. Meat appears tan or brown when only very small amounts of oxygen are present such as when two bright red pieces of meat are stacked on each other excluding the oxygen."
+
+Use: look_for (mechanical reason a package can look purple-red, bright red, or brown, and still be normal — packaging/oxygen exposure, not necessarily spoilage)
+
+> "Along with water from muscle, myoglobin is what is found in meat packages that leaks out of the muscles during storage and most people think is blood. Almost all of blood is removed from muscle at the time of slaughter."
+
+Use: look_for / detail (what the liquid in a meat tray actually is — myoglobin/water, not blood)
+
+> "Although brownish-red colored meat can indicate spoilage, it doesn't always mean that meat is spoiled. Purchasing meat that has been discounted at the retail counter because of discoloration can still be safe to consume if it is properly stored and prepared."
+
+Use: watch_out (brown/discolored meat is not an automatic spoilage signal by itself — a checkable, non-alarmist framing)
+
+### Source: Michigan State University Extension — "Dates on meat packages – Sell by, use by, freeze by, packaged on, expiration date"
+
+- URL: https://www.canr.msu.edu/news/dates_on_meat_packages_sell_by_use_by_freeze_by_packaged_on_expiration_date
+- Publisher: Michigan State University Extension (Jeannine Schweihofer)
+- Fetched: 2026-09-21
+
+> "Packaged on – This type of date is often used on fresh meat but also leaves the most room for confusion or error on behalf of the consumer. Most fresh meat can be stored at refrigerated temperatures for up to three days after packaging in typical meat tray overwrap style or butcher paper wrap packaging. Longer storage time of up to seven days from retail purchase can be used if the product is vacuum packaged with a good seal and the air is removed from the package."
+
+Use: watch_out / look_for (how to read a "packaged on" date and what it means for how long a tray-wrapped vs. vacuum-sealed cut stays good)
+
+> "Sell by – This creates an easy date for the retailer to know when the product has to be removed from their shelf and disposed of instead of being sold. In general, consumers have one to three days to use that meat product if it is fresh before there would be concern from a safety standpoint."
+
+Use: detail / sources (what "sell by" actually signals to the shopper vs. the retailer)
+
+### Source: USDA Food Safety and Inspection Service — "Food Product Dating"
+
+- URL: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating
+- Publisher: USDA Food Safety and Inspection Service
+- Fetched: 2026-09-21
+
+> "Except for infant formula, product dating is not required by federal regulations."
+
+Use: watch_out (a sell-by/best-if-used-by date on a meat package is voluntary, not a mandated safety cutoff)
+
+> "Manufacturers provide dating to help consumers and retailers decide when food is of best quality. Except for infant formula, dates are not an indicator of the product's safety and are not required by Federal law."
+
+Use: watch_out / detail (corroborates the MSU framing with the federal regulatory source directly — a date on the package is a quality signal from the packer, not a safety guarantee)
+
+Already-archived source reused for this card (no re-fetch needed): University of Illinois Extension,
+"Meat Shopping Safety Guidelines" (Shopping), https://extension.illinois.edu/meat-safety/shopping,
+retrieved 2026-09-16 (see section 1 above) — supports "package should not be leaking juices" as a
+purchase check.
+
+### Marbling — reused, no new fetch
+
+No new marbling-specific source was fetched for this card this session; the existing
+Flannery Beef quote already archived in this file ("Marbling refers to the small flecks of fat
+within the muscle. The more marbling a cut has, the more tender, juicy, and flavorful it will be
+when cooked." — https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts, fetched
+2026-09-20) covers marbling as a look_for cue and is directly reusable here.
+
+### "Enhanced" / solution disclosure — reused, no new fetch
+
+Reuses the already-archived Cornell LII 9 CFR § 317.2(e)(2) source (fetched 2026-09-20, section
+"pork_cuts_and_enhanced" above): the percentage of added solution must be declared on the label,
+and "enhanced" cannot appear in the product name — directly on point for this card's
+"enhanced"/solution disclosure watch_out.
+
+Card total: 5 distinct fetched sources (MSU myoglobin, MSU dates, FSIS dating, Illinois Extension
+shopping, Flannery Beef marbling) plus the reused Cornell LII solution-declaration source — well
+above the ≥2-source bar, 5+ with fetched URLs.
+
+## judging_meat_at_the_case watch_out gather
+
+Empty-`watch_out` gather requested by the dispatch — material above already supplies two
+checkable watch_out candidates without adding a health-outcome claim:
+1. Brown/discolored meat is not automatically spoiled (MSU myoglobin quote above) — a shopper
+   should not reflexively reject a discounted, discolored package on color alone if properly
+   stored.
+2. "Sell by" / "packaged on" dates are retailer/manufacturer-set and voluntary, not a federal
+   safety cutoff (MSU dates + FSIS Food Product Dating quotes above).

@@ -620,3 +620,104 @@ fills: sprouts_raw — watch_out (mechanical reason raw sprouts carry elevated p
 fills: strawberries_organic_residue — short_answer / watch_out (organic vs. conventional non-detect-vs-detected residue result, from an independent lab test) and sources.
 
 Judgment call: the source also quotes an advisor saying these pesticide metabolites "are associated with cancer risks, reproductive diseases, developmental diseases in children, and cause immune suppression." This sentence is NOT archived as a usable claim for the card — it is a causation/treatment-adjacent statement about disease risk that the no-treatment rule forbids attributing to a food or residue on a Kristy card, however it is worded in the source. Only the measured residue-detection facts (residue levels, non-detect on organic) are carried forward as claim-lockable content.
+
+## Roadmap P1 sources (2026-09-21)
+
+Card: `produce_storage`. All URLs below fetched this session via Firecrawl
+(`firecrawl scrape --only-main-content`), 200 body returned in every case.
+
+### Source: Michigan State University Extension — "All fruit and vegetables are not created equal when it comes to proper storage conditions"
+
+- URL: https://www.canr.msu.edu/news/all-fruit-and-vegetables-are-not-created-equal-when-it-comes-to-proper-storage-conditions
+- Publisher: Michigan State University Extension (published Jan 23, 2019, updated from an original by Ron Goldy)
+- Fetched: 2026-09-21
+
+> "Crops that produce significant amounts of ethylene during storage include: apple, pear, peach, plum, cantaloupe, tomato, plus several tropical fruits."
+
+Use: look_for (which everyday items are ethylene producers — counter placement matters)
+
+> "Cabbage and Brussels sprouts will turn yellow or crack and start to grow, carrots develop a bitter flavor due to ethylene-induced isocoumarin production and cucumbers deteriorate quicker."
+
+Use: watch_out (mechanical effect of storing ethylene-sensitive vegetables near ethylene producers — a checkable quality outcome, not a health claim)
+
+> Table 1 and Table 2 of the article give per-crop storage temperature, relative humidity, and
+> climacteric-vs-non-climacteric classification for roughly 50 common fruits and vegetables,
+> sourced to USDA-AMS and Kansas State Extension.
+
+Use: detail / sources (backbone reference table for counter-vs-fridge and humidity guidance across items)
+
+### Source: UMass Amherst Extension — "Optimal Storage Conditions and Ethylene Sensitivity of Fall Storage Crops"
+
+- URL: https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/optimal-storage-conditions-ethylene-sensitivity-of-fall-storage-crops
+- Publisher: University of Massachusetts Amherst Extension (A. Brown, A. Cavanagh, R. Hazzard — UMass; B. Sideman — UNH; 2011, updated Jan 11, 2018 by G. Higgins)
+- Fetched: 2026-09-21
+
+> Storage table rates ethylene sensitivity LOW / MODERATE / HIGH for beet, radish, turnip,
+> rutabaga, cabbage, carrot, garlic, onion, parsnip, potato, sweet potato, and winter squash,
+> alongside storage temperature and relative humidity for each.
+
+Use: look_for / detail (which root/storage vegetables are ethylene-sensitive vs. tolerant, with humidity targets)
+
+> "*Crops that produce significant amounts of ethylene during storage include: apple, pear, peach, plum, cantaloupe, tomato, plus several tropical fruits."
+
+Use: look_for (corroborates the MSU ethylene-producer list with an independent extension source)
+
+Card total: 2 distinct fetched sources, both university extension, both 200-body confirmed this
+session — meets the ≥2-source bar with 2 fetched URLs.
+
+### egg_storage
+
+Card: `egg_storage` (watch_out gather, empty field per dispatch).
+
+### Source: Egg Safety Center — "Safely store your eggs"
+
+- URL: https://eggsafety.org/safely-store-your-eggs/
+- Publisher: Egg Safety Center (industry-adjacent trade-association-style site, not an academic or
+  government source — cite accordingly, weight the WSU Extension source below as the primary/
+  independent one)
+- Fetched: 2026-09-21
+
+> "The best way to store eggs is to keep them in their carton and not in the egg container that may come with the refrigerator... The carton should be placed in the coldest part of the refrigerator, not in the door, where temperatures may fluctuate when it is opened and closed."
+
+Use: watch_out / look_for (carton placement — away from the door, not in a built-in door caddy)
+
+> "A cold egg left out at room temperature can sweat, facilitating the growth of bacteria that could contaminate the egg. Refrigerated eggs should not be left out for more than two hours."
+
+Use: watch_out (mechanical explanation of "sweating" and the resulting handling guidance — a food-safety-handling fact, not a treat/cure/prevent claim about the egg itself)
+
+> "It's not necessary to wash eggs you've purchased at a grocery store before preparing your eggs. At the egg processing plant, government regulations require that USDA-graded eggs be carefully washed and sanitized before being packed and packaged for the store."
+
+Use: watch_out (corrects a common over-caution — store-bought eggs are already washed/sanitized)
+
+### Source: Washington State University Extension — "Food Safety in a Minute, Episode 21: Egg Facts, Egg Storage"
+
+- URL: https://news.cahnrs.wsu.edu/podcasts/episode-21-egg-facts-egg-storage/
+- Publisher: Washington State University Extension (Susie Craig), podcast transcript
+- Fetched: 2026-09-21
+
+> "According to the American Egg Board, raw egg shells are best stored in their cartons on the middle or lower shelf of your refrigerator. Carton storage prevents the loss of carbon dioxide and moisture which lowers quality. Refrigerator temperatures have less fluctuation in the middle and lower shelves which also ensures quality."
+
+Use: look_for / watch_out (independent corroboration of carton + shelf placement, with the mechanism — CO2/moisture loss and temperature stability)
+
+> "Refrigerated eggs maintain their quality for about five weeks after the pack date when they are stored properly."
+
+Use: detail (concrete quality window from pack date)
+
+> "For food safety, all eggs whether raw or cooked in a prepared dish containing eggs should be refrigerated at or below forty degrees."
+
+Use: watch_out (temperature target)
+
+Card total: 2 distinct fetched sources, one industry-adjacent (Egg Safety Center) and one
+university-extension (WSU) — meets the ≥2-source bar with 2 fetched URLs, at least one
+independent academic source.
+
+### Dropped sources (2026-09-21 pass)
+
+- `https://ohioline.osu.edu/factsheet/hyg-5340` — resolved to an unrelated document ("Food
+  Preservation: Canning Soup"), wrong topic; not cited.
+- `https://extension.uconn.edu/publication/meaning-of-expiration-use-by-sell-by-dates/` —
+  returned HTTP 200 but the fetched content was entirely cookie-consent/privacy-policy
+  boilerplate (browser cookie-disabling instructions), no article text; unusable, not cited.
+- `https://extension.psu.edu/how-to-choose-the-right-cut-and-safely-store-fresh-meats` — genuine
+  404 ("Sorry for the corny error, but we couldn't find that page"); not cited. (Attempted for
+  `judging_meat_at_the_case`, logged here and in meat-sources.md's dropped-sources convention.)
