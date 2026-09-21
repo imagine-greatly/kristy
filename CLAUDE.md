@@ -587,8 +587,8 @@ A check reports success because it cannot see the thing it is checking.
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
   - LIVE `counter_cards`: **97 rows — 94 `curated` + 3 `generated`**, migration's post-upsert
-    count 2026-09-21 (`rotisserie_chicken` inserted, 93 updated).
-  - `kristy_perimeter_kb.json`: **116 entries — 94 cards + 22 picks** at `da12ca6`, 2026-09-21.
+    count 2026-09-22 (0 inserted, 94 updated; `bb6987a` watch_out on 3 cards).
+  - `kristy_perimeter_kb.json`: **116 entries — 94 cards + 22 picks** at `bb6987a`, 2026-09-22.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
   - KB and table agree at 94 curated. A migration publishes everything the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
