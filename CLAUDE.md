@@ -586,11 +586,11 @@ A check reports success because it cannot see the thing it is checking.
 - ⛔ `push_tokens.sql` NOT applied — table missing from schema cache (measured 2026-09-21).
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
-  - LIVE `counter_cards`: **95 rows — 92 `curated` + 3 `generated`**, re-measured 2026-09-16;
-    depth audit (bar A) migrated 2026-09-21, row count unchanged.
-  - `kristy_perimeter_kb.json`: **114 entries — 92 cards + 22 picks** at `d3d892e`, 2026-09-16.
+  - LIVE `counter_cards`: **96 rows — 93 `curated` + 3 `generated`**, migration's post-upsert
+    count 2026-09-21 (`ground_beef_organ_blend` inserted, 92 updated).
+  - `kristy_perimeter_kb.json`: **115 entries — 93 cards + 22 picks** at `bd2a29b`, 2026-09-21.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
-  - KB and table agree at 92 curated. A migration publishes everything the KB is ahead by.
+  - KB and table agree at 93 curated. A migration publishes everything the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
   the client id; only a completed token exchange can, and none has. No accounts exist on any rail.
 - 🐞 The simulator cannot prove the token exchange: the simulator device has no Apple account
