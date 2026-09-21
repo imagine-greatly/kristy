@@ -256,6 +256,16 @@ for (const name of REALISTIC_26) {
   }
   realistic.push({ name, slug: via === '(none)' ? null : via, verdict, detail, pick: !!pick });
 }
+// A named card the corpus owns must be the one attached; a neighbour stealing the row is WRONG.
+// `air_chilled_chicken` carries the bare alias `chicken`, so the rotisserie row is the hub test.
+const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
+for (const [name, slug] of Object.entries(OWNED_BY)) {
+  const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
+  const got = row.cardSlug || null;
+  const verdict = got === slug ? 'CORRECT' : got ? 'WRONG' : 'MISS';
+  console.log(`OWNED  ${verdict.padEnd(7)} "${name}" → ${got || '(none)'} (owner ${slug})`);
+  if (verdict === 'WRONG') process.exit(1);
+}
 if (realistic.length !== 26) {
   console.error(`REALISTIC_26 has ${realistic.length} rows — the population did not load`);
   process.exit(1);

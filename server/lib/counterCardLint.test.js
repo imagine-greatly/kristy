@@ -415,8 +415,9 @@ test('all curated cards clear the per-card bar', () => {
   // produce-depth pass: `produce_root_vegetables`, `produce_brassicas`,
   // `produce_onions_garlic`, `produce_leafy_greens` (2026-09-16). 92 with the P3 pass:
   // `produce_peppers`, `produce_apples_pears`, `produce_citrus`, `produce_stone_fruit`
-  // (2026-09-16). 93 with `ground_beef_organ_blend` (2026-09-21).
-  assert.equal(CARDS.length, 93);
+  // (2026-09-16). 93 with `ground_beef_organ_blend` (2026-09-21). 94 with `rotisserie_chicken`
+  // (2026-09-21).
+  assert.equal(CARDS.length, 94);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

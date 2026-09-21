@@ -39,6 +39,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `salmon_wild_vs_farmed` | seafood | Wild. Farmed is a different fish, fed and penned. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild American. Most shrimp is imported, farmed, and anonymous. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
 | `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
+| `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `fresh_vs_previously_frozen_fish` | seafood | Buy the frozen. Thaw it overnight in the fridge. | Ask the counter “was this previously frozen?” before paying the fresh premium. | — |
 | `beef_grassfed_vs_grainfed` | meat | Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Look for fine white flecks through the muscle, not a thick fat rim. | — |

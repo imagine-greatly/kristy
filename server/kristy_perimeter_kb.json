@@ -289,6 +289,75 @@
       ]
     },
     {
+      "id": "rotisserie_chicken",
+      "title": "Rotisserie chicken from the hot case",
+      "aliases": [
+        "rotisserie chicken",
+        "rotisserie",
+        "deli chicken",
+        "hot chicken",
+        "cooked whole chicken",
+        "store roasted chicken",
+        "seasoned rotisserie chicken",
+        "is rotisserie chicken healthy",
+        "what is in a rotisserie chicken",
+        "is the deli rotisserie chicken injected"
+      ],
+      "category": "poultry",
+      "question": "Is the rotisserie chicken worth buying?",
+      "decision": "Chicken and salt on the label: buy. Phosphate and starch: pass.",
+      "why": "Every ingredient must be listed in descending order; a solution names its percent and contents.",
+      "short_answer": "A rotisserie bird is either a chicken with salt and spices roasted in the store, or a chicken pumped with a seasoning solution before it went on the spit. The difference is printed on the sticker. 9 CFR 381.117(h) makes a raw bird with added solution state the percent and name each ingredient in the solution, and 381.118 makes every multi-ingredient poultry product list its ingredients by descending weight. So the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
+      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (Whole Foods Market’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird’s panel runs whole chickens, water, then a seasoning of salt, sodium phosphate, modified food starch, dextrin, carrageenan, sugar, dextrose and spice extractives, in descending order because 381.118 requires it.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
+        "9 CFR § 381.118 Ingredients statement (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.118",
+        "9 CFR § 424.21 Use of food ingredients and sources of radiation (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/424.21",
+        "USDA FSIS, Chicken from Farm to Table, Ready-Prepared Chicken https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/chicken-farm-table",
+        "USDA FSIS, ‘Danger Zone’ (40°F - 140°F) https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
+        "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/"
+      ],
+      "kristy_take": "A roasted chicken should list a chicken. When the list runs to phosphate and starch, the seasoning went in with a needle.",
+      "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
+      "cart_pick": "Plain rotisserie chicken",
+      "buying_tips": [
+        "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
+        "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
+        "Sodium phosphate, modified food starch, dextrin, carrageenan, sugar: each is a solution ingredient, listed in descending order by rule.",
+        "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
+      ],
+      "watch_out": [
+        "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase; if it will not be eaten in that window, cut it up and refrigerate in shallow covered containers.",
+        "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold; FSIS puts the growth range at 40 to 140°F.",
+        "Eat within 3 to 4 days, cold or reheated to 165°F. Freezing is fine; use within 4 months for texture."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Contains up to X% solution",
+          "meaning": "Required wording under 9 CFR 381.117(h) for a raw bird with added solution: the percent as a number, then every solution ingredient in descending order. ‘Enhanced’ is not allowed in the product name."
+        },
+        {
+          "term": "Basted / self basted",
+          "meaning": "FSIS term for a bone-in bird injected or marinated with broth, water, fat, spices or flavor enhancers, about 3 percent solution, with the ingredients named on the label."
+        },
+        {
+          "term": "Sodium phosphate",
+          "meaning": "A permitted poultry ingredient under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
+        }
+      ],
+      "tier_note": "Two federal label rules settle it; the ingredient list just needs reading.",
+      "eyebrow_short": "Rotisserie chicken",
+      "asked_as": [
+        "is rotisserie chicken healthy",
+        "what is in a rotisserie chicken",
+        "is the deli rotisserie chicken injected",
+        "should i buy the rotisserie chicken",
+        "does rotisserie chicken have added ingredients",
+        "is store roasted chicken okay"
+      ]
+    },
+    {
       "id": "beef_cuts_basics",
       "title": "Beef cuts — what’s for what",
       "aliases": [
