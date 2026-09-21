@@ -2592,6 +2592,11 @@
         }
       ],
       "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold.",
+      "watch_out": [
+        "A cold egg left out at room temperature can sweat, and moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
+        "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
+        "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant."
+      ],
       "asked_as": [
         "do eggs need to be refrigerated",
         "where should i keep eggs",
@@ -2693,7 +2698,10 @@
       "sources": [
         "USDA FSIS “The Color of Meat and Poultry”",
         "USDA FSIS meat labeling and product dating guidance",
-        "University of Illinois Extension “Meat Shopping Safety Guidelines” https://extension.illinois.edu/meat-safety/shopping"
+        "University of Illinois Extension “Meat Shopping Safety Guidelines” https://extension.illinois.edu/meat-safety/shopping",
+        "Michigan State University Extension “The color of meat depends on myoglobin: Part 1” https://www.canr.msu.edu/news/the_color_of_meat_depends_on_myoglobin_part_1",
+        "Michigan State University Extension “Dates on meat packages” https://www.canr.msu.edu/news/dates_on_meat_packages_sell_by_use_by_freeze_by_packaged_on_expiration_date",
+        "USDA FSIS “Food Product Dating” https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating"
       ],
       "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
       "buying_tips": [
@@ -2714,6 +2722,11 @@
         }
       ],
       "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
+      "watch_out": [
+        "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
+        "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging; a well-sealed vacuum pack can go up to seven.",
+        "Sell-by and use-by dates are set voluntarily by the packer or store, not required by federal law, and are not a safety indicator."
+      ],
       "eyebrow_short": "Judging meat",
       "asked_as": [
         "how do i tell if meat is good",
@@ -3508,7 +3521,9 @@
       "evidence_tier": "established",
       "sources": [
         "USDA and university extension postharvest storage guidance",
-        "FDA produce storage and safety guidance"
+        "FDA produce storage and safety guidance",
+        "Michigan State University Extension “All fruit and vegetables are not created equal when it comes to proper storage conditions” https://www.canr.msu.edu/news/all-fruit-and-vegetables-are-not-created-equal-when-it-comes-to-proper-storage-conditions",
+        "University of Massachusetts Amherst Extension “Optimal Storage Conditions and Ethylene Sensitivity of Fall Storage Crops” https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/optimal-storage-conditions-ethylene-sensitivity-of-fall-storage-crops"
       ],
       "kristy_take": "Wash it when you eat it, not when you unpack it. Half of what rots in a fridge was rinsed on the way in.",
       "buying_tips": [
@@ -3521,6 +3536,10 @@
       ],
       "labels_decoded": [],
       "tier_note": "Ethylene ripening its neighbors, and moisture rotting a drawer, are both well established.",
+      "watch_out": [
+        "Ethylene-sensitive vegetables stored near producers spoil faster: cabbage and Brussels sprouts yellow or crack, carrots turn bitter, cucumbers break down sooner.",
+        "Apples, pears, peaches, plums, cantaloupe and tomatoes give off significant ethylene. Keep them off the counter with anything sensitive."
+      ],
       "asked_as": [
         "how do i keep produce fresh longer",
         "how should i store vegetables",
