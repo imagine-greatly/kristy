@@ -590,7 +590,7 @@ A check reports success because it cannot see the thing it is checking.
     count 2026-09-21 (`rotisserie_chicken` inserted, 93 updated).
   - `kristy_perimeter_kb.json`: **116 entries — 94 cards + 22 picks** at `da12ca6`, 2026-09-21.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
-  - KB and table agree at 93 curated. A migration publishes everything the KB is ahead by.
+  - KB and table agree at 94 curated. A migration publishes everything the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
   the client id; only a completed token exchange can, and none has. No accounts exist on any rail.
 - 🐞 The simulator cannot prove the token exchange: the simulator device has no Apple account
