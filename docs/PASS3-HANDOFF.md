@@ -1326,7 +1326,7 @@ evidence a fix shipped.**
 
 ## 14 — The open queue, in order
 
-> ### ⚠️ SUPERSEDED FOR CURRENT STATE — see `docs/SWIFT-HANDOFF.md` §3.
+> ### ⚠️ SUPERSEDED FOR CURRENT STATE — see `docs/ROADMAP.md` (the queue; `SWIFT-HANDOFF.md` never existed; repointed 2026-09-21).
 > Written 2026-08-04 and **stale as of 2026-08-05**: item 1 (the list-creation audit) is done,
 > item 9's four duplications are resolved or deliberately left, and several live defects found
 > since are not listed here at all. The list below is kept as the record of what was queued on

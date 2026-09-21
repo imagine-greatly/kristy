@@ -560,7 +560,7 @@ A check reports success because it cannot see the thing it is checking.
   Not a capture project. Nothing consumes it yet.
 - ⏳ The scan card is still the full-height takeover; the bottom sheet is specced, unbuilt. Photo
   read: client-side crop held in memory for the session, nothing persisted.
-- 📋 The full queue in order: `docs/PASS3-HANDOFF.md` §14 (§13 holds that session's findings).
+- 📋 The path to production, in order: `docs/ROADMAP.md` (§14 of PASS3-HANDOFF is superseded).
 
 ### Rules left by closed items
 - Re-check `hello@kristyapproved.com` receives before any App Store submission; an MX record does
@@ -604,7 +604,8 @@ A check reports success because it cannot see the thing it is checking.
 | `docs/WORKING-DISCIPLINE.md` · `DECISIONS.md` · `VERIFYING.md` · `OPEN-ITEMS.md` | Accounts behind the sections above, same order. |
 | `docs/PRICING-MODEL.md` | Locked pricing model (none built); §0–§3a the trial and the count. |
 | `VOICE_SPEC.md` · `VISION.md` · `README.md` | Voice in full · character direction (unbuilt) · how it runs. |
-| `docs/PASS3-HANDOFF.md` | §14 the full queue; §13 findings. |
+| `docs/ROADMAP.md` | Path to production; the queue. |
+| `docs/PASS3-HANDOFF.md` | §13 findings; §14 superseded. |
 | `docs/SCHEMA-AUDIT.md` | Live schema vs migration files. |
 | `docs/LANDING-PAGE-PROVENANCE.md` · `LEGAL-PAGE-RULINGS.md` | Behind `landing.html`, `/privacy`, `/terms`. |
 | `docs/CATEGORY-CAPTURE.md` · `ATTACH-BUCKET.md` · `LIST-CREATION-AUDIT.md` (§C) | Held proposals; anti-personalization measurement. |
