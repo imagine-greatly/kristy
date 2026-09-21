@@ -1,8 +1,8 @@
 # CLAUDE.md — Kristy
 
 Branch: `main`. This file is the **current state** of the product and the rules that bind every
-change to it. Rules only; the incident and measurement behind each rule is in the companion doc
-named at the head of its section. Delete a rule here when it stops being load-bearing.
+change to it. Rules only; the account behind each section is in the companion doc named at its
+head. Delete a rule here when it stops being load-bearing.
 
 ---
 
@@ -11,65 +11,57 @@ named at the head of its section. Delete a rule here when it stops being load-be
 *Account: `docs/WORKING-DISCIPLINE.md`.*
 
 Claude Code runs here over SSH into a rented Scaleway Mac mini; sessions drop mid-task with no
-warning. The conversation is lost; every file written to disk survives.
+warning. The conversation is lost; every file on disk survives.
 
-### The rule: COMMIT BEFORE REPORTING
+### Commit before reporting
 
 ```
 git add -A  →  commit with a real message  →  push  →  four-step verify  →  THEN report
 ```
 
-- Approval is not a precondition for committing; approval applies to what is already on disk.
+- Approval is not a precondition for committing; it applies to what is already on disk.
 - Stopping mid-unit to ask a question: commit first, message prefixed `wip:`, then ask.
 - ⚠️ **Commit first, plant second, revert third.** Proving a check can fail means breaking the
   source on purpose; `git checkout -- <file>` restores the last COMMIT, so planting into
-  uncommitted work deletes it. `git stash` is not the fix (it stashes the test too, and a suite
-  running zero tests reports success).
+  uncommitted work deletes it. `git stash` stashes the test too (a suite running zero tests
+  reports success).
 - Never end a turn with anything untracked. `git add -A`, never `git commit -a`. Run
   `node server/scripts/commitGuard.js`.
-- The four-step verify: `git rev-parse HEAD` → `git reflog` → `git ls-remote origin main` →
-  read a file back from the remote and diff it against local. A push has reported success while
-  the remote had not moved; exit codes and keychain error text cannot distinguish the cases.
+- Four-step verify: `git rev-parse HEAD` → `git reflog` → `git ls-remote origin main` → read a
+  file back from the remote and diff it against local. A push has reported success while the
+  remote had not moved; exit codes and keychain text cannot tell the cases apart.
 
-### Session shape — one task, then /clear
+### One task per session
 
-- A session is ONE task. When its unit of work is committed and verified, the session is over. Do
-  not start the next task in the same session.
-- Every final report — full or partial — ends with a **continuation prompt**: a fenced block Devon
+- A session is ONE task. When its work is committed and verified, the session is over.
+- Every final report, full or partial, ends with a **continuation prompt**: a fenced block Devon
   pastes verbatim into the next session. It names the task, the exact next step, the files, the
-  verification commands, and what NOT to retry. Then say `/clear` is safe.
-- Write the handoff (`handoff` skill) before the continuation prompt; the prompt points at it.
-- Stopping mid-unit: `wip:` commit first, then the continuation prompt.
-- ~60k resident context is the boundary, not a warning: reach it → commit, handoff, continuation
-  prompt, stop.
+  verification commands, and what NOT to retry. Write the handoff (`handoff` skill) first; the
+  prompt points at it. Then say `/clear` is safe.
+- ~60k resident context is the boundary, not a warning: commit, handoff, continuation prompt, stop.
 
-### The push step
+### Pushing
 
-- `main` is production. Pushing publishes in about a minute (Vercel client, Railway server, no
-  staging gate). Commit always; **push `main` only when the turn's work is meant to go live**.
-  Committed-and-deliberately-unpushed work is stated in the report, never left as "ahead N".
-- `git push` is not the only publish channel. `node server/scripts/migrateCounterCards.js` writes
-  the KB straight to the live `counter_cards` table with no push or deploy. A commit touching only
-  `kristy_perimeter_kb.json` publishes when the migration runs. **State both, every time:
-  committed / pushed is the code; migrated / not is the corpus.** Card commits say `Not migrated.`
-- The held stack lives on `origin/held`, a backup branch, not a deploy target. If `main` is behind
-  what the docs describe, fetch `held`; do not reconstruct:
-  `git fetch origin held && git log --oneline --reverse origin/main..origin/held`.
-  A Vercel *preview* build for the branch is expected and harmless (CORS-blocked).
-  After any commit that stays off `main`, push it there too. `osxkeychain` cannot authenticate
-  over SSH here and fails in a way that reads as success (error `-25308` appears on successes
-  too). Use `gh`:
+- `main` is production (Vercel client, Railway server, live in about a minute, no staging gate).
+  Commit always; **push `main` only when the turn's work is meant to go live**.
+  Committed-and-unpushed work is stated in the report, never left as "ahead N".
+- A KB edit has two publish channels. MIGRATE (`node server/scripts/migrateCounterCards.js`, run
+  from `server/`, it loads `.env` from cwd) writes the KB to the live `counter_cards` table with
+  no push or deploy → iOS. PUSH publishes the file → web (`routes/perimeter.js`).
+  **State both, every time:** committed / pushed is the code; migrated / not is the corpus.
+  Card commits say `Not migrated.`
+- Commits that stay off `main` also go to `origin/held` (backup branch, not a deploy target). If
+  `main` is behind what the docs describe, fetch `held`, never reconstruct:
+  `git fetch origin held && git log --oneline --reverse origin/main..origin/held`. A Vercel
+  preview build for the branch is harmless (CORS-blocked). `osxkeychain` fails over SSH in a way
+  that reads as success (`-25308` appears on successes too); push with
+  `git -c credential.helper='!gh auth git-credential' push origin main:held` and prove it with
+  `ls-remote` plus a file read back.
 
-```
-git -c credential.helper='!gh auth git-credential' push origin main:held
-```
+### Scope
 
-  Only `ls-remote` plus reading a file back proves the push.
-
-### Scope: one surface per prompt
-
-Each prompt is one surface or one contained unit. Before starting, list the files you expect to
-create or modify; if the work needs files outside the list, say so rather than silently widening.
+One surface or one contained unit per prompt. List the files you expect to create or modify
+before starting; needing others is said, not silently done.
 
 ### Resuming after a dropped session
 
@@ -78,9 +70,8 @@ Treat every existing file as COMPLETE unless visibly truncated.
 Never recreate a type or a file that already exists. Never run an
 audit pass over finished work. Do only what is missing, judged
 against the expected-files list in the prompt that was interrupted.
-A rewrite of finished work still compiles. That is what makes it
-dangerous: a fresh session cannot distinguish "I did not write
-this" from "this is wrong."
+A rewrite of finished work still compiles: a fresh session cannot
+distinguish "I did not write this" from "this is wrong."
 ```
 
 ### Every session starts cold
@@ -93,19 +84,17 @@ Assume you are resuming. Before any work, unasked:
 - confirm kristy-ios HEAD against its remote by READING A FILE BACK,
   not by comparing hashes
 - report kristy main vs origin/main and origin/held
-- report the server suite count and the iOS UI suite count
-  -- if a shoot is outstanding, report the UI count from the last
-    recorded run and say so; DO NOT RE-RUN IT (one run makes ~23
-    attaches against a 20/hour bucket with a 63-minute recovery)
-- run kristy-ios Tools/checks/runners_compile.sh (the swiftc drivers
-  decay silently)
-- report anything left in flight: a background run, a half-finished
-  fix, an unmigrated corpus change
+- report the server suite count; report the iOS UI count from the
+  LAST RECORDED RUN and say so. Never re-run it unasked: one run is
+  ~23 attaches against a 20/hour bucket with a 63-minute recovery.
+- run kristy-ios Tools/checks/runners_compile.sh (drivers decay silently)
+- report anything in flight: a background run, a half-finished fix,
+  an unmigrated corpus change
 ```
 
 Then state what you understand the current task to be, and STOP if it is not obvious from the
-repo. A dropped session leaves work in a state, not an instruction; do not infer a task from a
-`wip:` commit. A twin of this block lives in `kristy-ios/CLAUDE.md`; change both or delete one.
+repo. A dropped session leaves work in a state, not an instruction; never infer a task from a
+`wip:` commit. This is the only copy of the list; `kristy-ios/CLAUDE.md` points here.
 
 ---
 
@@ -113,24 +102,22 @@ repo. A dropped session leaves work in a state, not an instruction; do not infer
 
 ### `client/src` — DEAD. FROZEN. INSPIRATION ONLY.
 
-The React SPA is finished and is never edited again, for any reason. It still serves
-`kristyapproved.com`. It is the behavioural specification for the iOS client and the record of
-measured decisions (contrast floor, hero rule, active-section rule, type inversion, one-filled-
-action count). Read it, cite it; do not write to it.
+The React SPA still serves `kristyapproved.com` and is never edited again, for any reason. It is
+the behavioural specification for the iOS client and the record of measured decisions (contrast
+floor, hero rule, active-section rule, type inversion, one-filled-action count). Read and cite;
+never write.
 
 - `client/src/lib/tokens.js` is a frozen historical copy, not the brand. The brand is
-  `kristy-ios/Brand/tokens.json`. The three iOS-authored colours in `tokens.js` (`brassFill`,
-  `brassFillInk`, `surfaceLifted`) were the last mirroring; the route is closed.
+  `kristy-ios/Brand/tokens.json`. The last mirroring (`brassFill`, `brassFillInk`,
+  `surfaceLifted`) closed the route.
 
 ### `server/` — live infrastructure, governed rather than frozen
 
-- A server change is separately proposed and separately approved work: routes, KB entries, model
-  prompts, lint, tests.
+- A server change is separately proposed and approved work: routes, KB entries, prompts, lint, tests.
 - An iOS prompt may not produce a server change. iOS work that needs one stops and asks (route,
-  shape, what the client cannot do without it); it does not route around it in Swift.
-- A finding is not a fix: it goes in `kristy-ios/docs/API-FINDINGS.md` with evidence.
-- Node is installed and the full suite runs here; the rule is about scope and review, not
-  testability.
+  shape, what the client cannot do without it); it never routes around it in Swift.
+- A finding is not a fix: `kristy-ios/docs/API-FINDINGS.md`, with evidence.
+- Node runs the full suite here; the rule is about scope and review, not testability.
 - Not covered: `docs/`, this file, unapplied `supabase/*.sql`, anything scoped as server work.
 
 ---
@@ -151,12 +138,12 @@ haul reads how it came out.
 
 1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-09-07: ground
    is solar kraft `#CFBA8E`, card is `#F5F1E6`, green-black ink, green / ochre / orange food
-   ladder, `Fraunces` for serif. Forest green and brass concentrate into the seal's plate and
-   appear nowhere else; brass off the plate is forbidden (2.08:1 on paper, 1.24:1 on kraft).
-   Spec: `kristy-ios/docs/ios-specs/paper.md` (§0 premise). Recorded in three places, all three
-   or none: `Brand/tokens.json` `_stance`, `kristy-ios/CLAUDE.md`, here. `palette_mirror.sh`
-   must not be loosened. The frozen `client/src` keeps the old brand. "Never invent" still binds
-   every colour authored from here on: one ruled palette, not open season.
+   ladder, `Fraunces` for serif. Forest green and brass live only in the seal's plate; brass off
+   the plate is forbidden (2.08:1 on paper, 1.24:1 on kraft). Spec:
+   `kristy-ios/docs/ios-specs/paper.md` (§0 premise). Recorded in three places, all three or
+   none: `Brand/tokens.json` `_stance`, `kristy-ios/CLAUDE.md`, here. `palette_mirror.sh` must
+   not be loosened. The frozen `client/src` keeps the old brand. "Never invent" still binds
+   every colour authored from here on.
 2. **The claim lock is law.** Every health/ingredient claim traces to a matched KB entry; the
    model may rephrase tone, never introduce a concern, statistic or claim. Enforced structurally
    (entries stripped to an allowed-field whitelist before the call) on every surface in Kristy's
@@ -175,8 +162,7 @@ haul reads how it came out.
    credible concern vs standard.
 7. **One verdict per headline; accuracy outranks firmness.** A two-clause headline split by TYPE
    or USE CASE stays; one conditioned on budget, stock or time is a retreat. If a claim needs a
-   false mechanism to sound convincing, the claim is wrong. Enforced by `counterCardLint.js` over
-   the whole corpus. Corpus count is stated once, in Infrastructure state.
+   false mechanism to sound convincing, the claim is wrong. Enforced by `counterCardLint.js`.
 8. **No price, ever.** Budget means cost-conscious selection; relative terms only.
 9. **No negative claims about named brands.** Teach the label truth instead.
 
@@ -186,18 +172,14 @@ haul reads how it came out.
 
 - Server is authoritative (`server/`, Railway): KB + matching + tier scoring + claim-locked model
   calls. Clients are thin renderers.
-- Two knowledge bases, never merged. `kristy_ingredient_knowledge_base.json` (74 entries) scores
-  products and is the only thing the engine sees. `kristy_perimeter_kb.json` answers counter
-  questions and is never fed to the engine.
+- Two knowledge bases, never merged. `kristy_ingredient_knowledge_base.json` (74 entries) is the
+  only thing the engine sees. `kristy_perimeter_kb.json` answers counter questions, never scored.
 - Web SPA is the reference client; `mobile/` (Expo/RN) is the App Store port.
 - ⚠️ **`GuestApp` is production; `App`'s own surface stack has never rendered for a real
-  visitor.** `session` is null for everybody, so `App.jsx` returns `GuestApp`. Diagnose from
-  `GuestApp.jsx` first. A full audit of where the two surfaces diverge is queued, not done.
-- `main` is production. `kristyapproved.com` is the canonical front door; `kristyapproved.vercel.app`
-  is a secondary alias. The server trusts only origins in `CLIENT_ORIGIN` (both allowlisted).
-  GitHub-connected Vercel: push to `main` auto-deploys. No `.vercel/` locally and not visible to
-  the MCP account; neither means undeployed. Check what a change does to a live surface before
-  pushing it.
+  visitor.** `session` is null for everybody. Diagnose from `GuestApp.jsx` first.
+- `kristyapproved.com` is the canonical front door; `kristyapproved.vercel.app` a secondary
+  alias. The server trusts only origins in `CLIENT_ORIGIN`. Push to `main` auto-deploys; no
+  `.vercel/` locally does not mean undeployed. Check what a change does live before pushing it.
 
 ---
 
@@ -227,14 +209,14 @@ treatment because they are the two ways to fill the cart; that equality is the p
 
 ## Load-bearing decisions
 
-*Account for every rule, in the same order: `docs/DECISIONS.md`.*
+*Account for every rule, same order: `docs/DECISIONS.md`.*
 
 **Scoring and the KB**
 - `matched` is concerns-only; affirmations ride in `affirmed` / `affirmationLayer`.
 - Whole-food fats are clean because the KB holds no entry for them; no future entry may match
   butter/ghee/tallow. A regression test is the tripwire.
 - Affirming entries are excluded from reverse matching.
-- Margarine is deliberately NOT aliased to `partially_hydrogenated_oil`; it has its own `seed_oil` entry.
+- Margarine is NOT aliased to `partially_hydrogenated_oil`; it has its own `seed_oil` entry.
 - `time_tested` justifies food-worth only, never a health outcome; `sanitizeAffirmed` withholds
   `history`, `why`, `kristy_note`.
 - `gluten-free` / `dairy-free` stay advisory.
@@ -257,8 +239,8 @@ treatment because they are the two ways to fill the cart; that equality is the p
   confirms production capture.
 
 **Swaps**
-- The ingredient-level swap (`genericSwap`) is cut from the scan card; the field is still sent and
-  decoded. Its home is the unbuilt ingredient page.
+- The ingredient-level swap (`genericSwap`) is cut from the scan card; the field is still sent
+  and decoded. Its home is the unbuilt ingredient page.
 - The replacement is same category, better version. A bad bar swaps for a good bar.
 - ⏳ The catalog is the prerequisite; do not build the swap engine before the rows exist.
   `docs/CATEGORY-CAPTURE.md`.
@@ -290,8 +272,8 @@ treatment because they are the two ways to fill the cart; that equality is the p
 - Adding to `IMPERATIVE_VERBS` is deliberate; record the reasoning in the list.
 - Where the popular claim outruns the evidence, state the narrower true thing; the gap goes in
   `watch_out`. Verify the study, not the retelling.
-- A hub card's do line must work for whatever brought the shopper there; generalizing it orphans
-  what the generalization excludes. Count what falls outside a qualifier before shipping it.
+- A hub card's do line must work for whatever brought the shopper there; count what falls
+  outside a qualifier before shipping it.
 - A generated card that owns a subject belongs in version control; one restating a curated
   verdict gets folded.
 - Decision-first is content: `decision` / `why` re-ranked from the entry's own material. Depth is
@@ -401,23 +383,21 @@ treatment because they are the two ways to fill the cart; that equality is the p
 
 **Phone sign-in — ⛔ DEAD PRODUCT-WIDE, ruled 2026-08-19**
 - Provider is OFF (`phone: false`), nobody has ever signed in on any rail, `client/src` is frozen.
-  Not "superseded on iOS", not "dormant". `Auth.jsx`'s `signInWithOtp({ phone })` stays frozen,
-  not endorsed; do not open the frozen client to finish this.
+  `Auth.jsx`'s `signInWithOtp({ phone })` stays frozen, not endorsed; do not open the frozen
+  client to finish this. Bird is deleted; do not bring it back.
 - `/privacy` and `/terms` no longer describe an SMS practice; do not re-add the sentences to pass
-  a review. The 10DLC registration is moot; the owner took the withdrawal as their own item.
-  Recovery, if ever, is from git history per file (the two wordings differed on purpose).
-- Bird is deleted; do not bring it back.
+  a review. The 10DLC registration is moot. Recovery, if ever, is from git history per file.
 - The second rail is EMAIL and it is ON (`email: true`, `apple: true`, `mailer_autoconfirm: true`,
-  measured 2026-08-18). Deliberate: blocker H in `kristy-ios/docs/PURCHASING.md` §7.0. Apple is
-  primary. `mailer_autoconfirm` means OTP is fine and a `signUp` path is not; nothing ships one.
+  measured 2026-08-18): blocker H in `kristy-ios/docs/PURCHASING.md` §7.0. Apple is primary.
+  `mailer_autoconfirm` means OTP is fine and a `signUp` path is not; nothing ships one.
 
 **Legal pages** — *account: `docs/LEGAL-PAGE-RULINGS.md`*
 - `/privacy` and `/terms` are static pages in `client/public/`, rewritten to clean URLs in
   `vercel.json` and the vite middleware.
 - ⛔ A served page is not a source file: no reasoning, measurement, provider state or "why we
   removed X" goes back into `/privacy`, `/terms` or `client/public/landing.html`. Each keeps a
-  one-line pointer to the doc. `landing.html`'s positioning comments stay (ruled 2026-08-19); no
-  repo path, component filename or token identifier goes back into it.
+  one-line pointer to the doc. `landing.html`'s positioning comments stay; no repo path,
+  component filename or token identifier goes back into it.
 - ⛔ `/privacy` claims no delete door on the website; the iPhone app is the only route
   (`DELETE /api/account`). Wrong again the day the web client gets a working sign-in.
 - All three published and fetch-verified byte-identical 2026-09-16. A comment-strip diff must
@@ -426,13 +406,12 @@ treatment because they are the two ways to fill the cart; that equality is the p
 **Money** — *the locked model, none of it built: `docs/PRICING-MODEL.md`. Every rule below is
 live until the model's work lands.*
 
-*The trial and the count (full rule set: `docs/PRICING-MODEL.md` §0–§3a, binding, read before
-touching the trial, trip count, ask or entitlement):*
+*The trial and the count (`docs/PRICING-MODEL.md` §0–§3a is binding; read it before touching the
+trial, trip count, ask or entitlement):*
 - After the trial the COUNTER STAYS FREE (full cards, ask, scanning); making a list and walking
   a trip are members only. The paid boundary inverts, retiring `DEPTH_FIELDS`, `summarize()`,
   the read meter, the teaser. The haul is free; seeding stays locked.
-- ⚠️ No partial list, ever.
-- The counter carries no ask, anywhere.
+- ⚠️ No partial list, ever. The counter carries no ask, anywhere.
 - ⚠️ `evaluatePremium` takes zero change. Reconciliation at the ask is `POST /trips/import`, rule
   **max and cap at 2 — `max(server, min(2, max(device, server)))`, never subtract, never re-arm.**
 - ⚠️ Nobody can buy anything today: `canPurchase` is `identity == .member`, every visitor is a
@@ -440,9 +419,9 @@ touching the trial, trip count, ask or entitlement):*
   (2026-08-15); do not rebuild it.
 
 *The paid boundary as it ships today*
-- The paid boundary is a server boundary. Free: card summary (eyebrow, headline, do line, cart
-  pick, tier sentence), all scanning, unlimited asking, all browsing, the entire list. Paid: the
-  depth (`why`, `look_for`, `watch_out`, `detail`, `kristy_take`, `labels_decoded`, `sources`),
+- It is a server boundary. Free: card summary (eyebrow, headline, do line, cart pick, tier
+  sentence), all scanning, unlimited asking, all browsing, the entire list. Paid: the depth
+  (`why`, `look_for`, `watch_out`, `detail`, `kristy_take`, `labels_decoded`, `sources`),
   stripped by `summarize()` / `forViewer()` before it leaves the server.
 - The list is free; no save-list ask on any tier. `cartFree.test.js` greps what a shopper reads.
 - The free surface states the call; the cost lives in the depth. Do not promote `watch_out`; make
@@ -498,31 +477,27 @@ A check reports success because it cannot see the thing it is checking.
 5. A commit that omits the file is green for the same reason. `git add -A`; run
    `node server/scripts/commitGuard.js`. `GUARDED` says where an untracked file is a problem and
    must never also decide what gets READ.
-6. A deliverable blind to its subject looks finished (the slot-1 screenshot with every row
-   uncarded). A shot whose argument is content must assert the content and skip loudly
-   (`requireCards`; the eyebrow is the tell). Ask what the artifact would look like if the thing
-   it argues were absent. Iterating on the runner and shooting the deliverable are the same act:
-   shoot once, on a clean bucket.
+6. A deliverable blind to its subject looks finished. A shot whose argument is content must
+   assert the content and skip loudly (`requireCards`). Ask what the artifact would look like if
+   the thing it argues were absent. Shoot once, on a clean bucket.
 
 ### Rules with teeth
 
-- A pipeline's exit code belongs to its last command: `set -o pipefail` (works in bash and zsh;
-  `$PIPESTATUS` is empty in zsh). A green status is not evidence the work happened; assert on the
-  artifact (name the destination from `xcodebuild -showdestinations`, check the built `.app` is
-  newer than the run).
+- A pipeline's exit code belongs to its last command: `set -o pipefail`. A green status is not
+  evidence the work happened; assert on the artifact (the built `.app` is newer than the run).
 - Every source gets fetched before it ships; a citation from memory is a defect.
 - A prompt's worked example becomes its output. Never write the forbidden phrase down; describe
-  the defect and name the words it should use. A worked example never quotes the live corpus.
+  the defect. A worked example never quotes the live corpus.
 - A comment asserting an invariant is not an invariant; if it is load-bearing, test it.
-- Verify mobile over CDP (`Emulation.setDeviceMetricsOverride`), not `--window-size`.
-- Measure, don't eyeball: geometry off `getBoundingClientRect`.
+- Verify mobile over CDP (`Emulation.setDeviceMetricsOverride`), not `--window-size`; geometry
+  off `getBoundingClientRect`, never eyeballed.
 - `vite build` compiles a dead reference happily; run the browser suites after any split.
 
 ### The commands
 
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-09-16** (`3e3cdc6`). Record only a number you ran, say which branch, date it. |
+| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-09-16** (`3e3cdc6`); 730 again 2026-09-21 on `main`. Record only a number you ran, say which branch, date it. |
 | `cd client && npx vite build` | Compiles. Not that anything renders. |
 | `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. Proves nothing left the CORPUS, not that a rule stayed in this FILE. Refuses to report success on an empty extraction. |
@@ -537,11 +512,9 @@ A check reports success because it cannot see the thing it is checking.
 
 ### Corpus and schema
 
-- Editing a curated card is a two-step act: `routes/counter.js` serves from the `counter_cards`
-  table, so a card reaches iOS only when `node server/scripts/migrateCounterCards.js` runs (from
-  `server/`, it loads `.env` from cwd). Idempotent upsert on slug; `--dry-run` needs no credentials.
-- ⛔ A KB edit has two publish channels: MIGRATE → table → iOS; PUSH → file → web
-  (`routes/perimeter.js`). State both, every time.
+- `routes/counter.js` serves from the `counter_cards` table, so a curated card reaches iOS only
+  when the migration runs (see Pushing). Idempotent upsert on slug; `--dry-run` needs no
+  credentials and reports no insert count, so diff KB against table before running it.
 - `server/lib/counterCardLint.js` is the executable shape bar; Pass 3 must call `lintCard` before
   persisting a generated card.
 - A tier note may not point at the tier (`TIER_NOTE_SELF_REFERENCE`); no two cards share a tier
@@ -566,39 +539,15 @@ A check reports success because it cannot see the thing it is checking.
 
 *Full text, closed items and evidence: `docs/OPEN-ITEMS.md`.*
 
-### Live defects
-- ✅ `hello@kristyapproved.com` receives (2026-08-20). Rule: re-check the mailbox receives before
-  any App Store submission; an MX record does not prove it.
-- ✅ `nothingConfirmsFood` shipped (`22b35a8`). Rule: withholding refuses to endorse; it never
-  silences a warning.
+### Open
 - ❓ ⏳ The engine still reads a seven-token mineral analysis as a clean list and scores it zero;
-  the misread is contained at the seal, not fixed at the read. Open as a question; nothing proposed.
-- ✅ Category cache-hit fix (`95dbe78`..`3e3cdc6`, 2026-09-16). Rule: stamp on an OK OFF answer
-  (including `other` and not-found), never on a network failure; re-reads route through
-  `retainProduct`. ⚠️ `supabase/product_category_version.sql` must be applied before `main` is
-  pushed.
-- ✅ Part 3, the category exemption: `FOOD_CATEGORIES = new Set(['water'])` (`22b35a8`). The
-  pattern is the plural `waters`, not the bare word (`watermelons`); `productCategory.test.js`.
-  Reach is held until the migration lands.
+  the misread is contained at the seal, not fixed at the read. Nothing proposed.
 - ⚠️ `unverifiedAsFood` is not on the wire, deliberately; clients key off `unverifiedRead` /
   `stamp`. Do not add it to a decoder expecting it to arrive. Routes carry `readSwap`, one
   helper across all four send sites.
-
-### Held deliberately
-- ✅ Stack released 2026-09-16 (`51cdcbf`); nothing is held today. Rules for the next hold: identify
-  held work by SUBJECT (`git log --oneline --reverse origin/main..HEAD`), never by hash or "ahead
-  N". Urgent work cherry-picks past, and the rebase afterwards is not optional (prove the rebased
-  tip content-identical before force-updating `main:held`). A stack is pushed as a stack; a
-  cleared blocker is not an approval.
-
-### Standing risks
 - ⏳ The guest budget is a property of uptime: `guestRate.js` buckets are in-process `Map`s, every
   deploy resets them, and `rateLimited` cannot be measured without spending a slot. Real the
   moment a second instance exists.
-
-### Queued
-- ✅ The four do lines (`f81a872`, 2026-09-16). Rule: the do line is claim-locked to the entry's
-  own fields.
 - ⏳ `completedTrips` on `GET /api/trips/seedable` (`count(*) where status='completed'`), spec
   `docs/PRICING-MODEL.md` §3a. The post-sign-in reinstall reset is NOT the accepted loophole (that
   is pre-account only). Client half built (`TripAllowance.reconciled`). Downstream of one SIWA
@@ -606,13 +555,6 @@ A check reports success because it cannot see the thing it is checking.
 - 🐞 ⏳ `/guest/list/attach` draws `cartBuildLimited` (20/hour, sized for one cart build) while
   the client attaches on every cold launch and added item; a refused attach produces more
   attaches. Do not size it for CI. `docs/ATTACH-BUCKET.md`.
-- ✅ Both scan-path defects (`aa97026` then `f82cf9e`, 2026-08-25; live 2026-09-16). Rules: ⛔ do
-  not widen the product-category vocabulary to fix a filing problem (the aisle is decided in
-  `scanExtract.js`); a contributor-named field is an assertion, guard `ingredients_text_en`;
-  `sameVerdict` is blind across languages, so `languageConflict` stays separate;
-  `TRANSLATION_EXPANSION_CEILING` is 2.0 with its sample recorded beside it. The composition
-  (aisle → `water` and the refusal upstream) is its own test.
-- ✅ SMS text on `/privacy` and `/terms` (2026-08-19); rules under Phone sign-in and Legal pages.
 - ⏳ Derive a baseline from the device trip archive, in the client, no server change. Price the
   `canonicalItem` duplication first; consider exact-name matching and state the narrower claim.
   Not a capture project. Nothing consumes it yet.
@@ -620,55 +562,57 @@ A check reports success because it cannot see the thing it is checking.
   read: client-side crop held in memory for the session, nothing persisted.
 - 📋 The full queue in order: `docs/PASS3-HANDOFF.md` §14 (§13 holds that session's findings).
 
+### Rules left by closed items
+- Re-check `hello@kristyapproved.com` receives before any App Store submission; an MX record does
+  not prove it (2026-08-20).
+- `nothingConfirmsFood` (`22b35a8`): withholding refuses to endorse; it never silences a warning.
+- Category cache-hit (`95dbe78`..`3e3cdc6`): stamp on an OK OFF answer (including `other` and
+  not-found), never on a network failure; re-reads route through `retainProduct`.
+- `FOOD_CATEGORIES = new Set(['water'])`: the pattern is the plural `waters`, not the bare word
+  (`watermelons`); `productCategory.test.js`. Reach is held until the migration lands.
+- The do line is claim-locked to the entry's own fields (`f81a872`).
+- Scan path (`aa97026`, `f82cf9e`): ⛔ do not widen the product-category vocabulary to fix a
+  filing problem (the aisle is decided in `scanExtract.js`); guard `ingredients_text_en`;
+  `languageConflict` stays separate from `sameVerdict`; `TRANSLATION_EXPANSION_CEILING` is 2.0
+  with its sample recorded beside it.
+- Holding a stack: identify held work by SUBJECT (`git log --oneline --reverse
+  origin/main..HEAD`), never by hash or "ahead N". Urgent work cherry-picks past; the rebase
+  afterwards is not optional. A cleared blocker is not an approval.
+
 ### Infrastructure state
-- ⚠️ `server/.env` has real Supabase credentials and a placeholder `ANTHROPIC_API_KEY` (401);
-  `USDA_API_KEY` and both Stripe keys are empty. Model-dependent behaviour cannot be verified
-  locally; "the wall is down" is true of the DB only.
-- ⚠️ Two migrations outstanding: `supabase/push_tokens.sql` (degrades gracefully) and
-  `supabase/product_category_version.sql` (retain path hard-fails without it; apply before
-  pushing `main`). Everything else applied: `docs/SCHEMA-AUDIT.md`.
+- ⚠️ `server/.env`: real Supabase credentials; placeholder `ANTHROPIC_API_KEY` (401); `USDA_API_KEY`
+  and Stripe keys empty. Model-dependent behaviour cannot be verified locally.
+- ⚠️ Migrations not confirmed applied: `supabase/push_tokens.sql` (degrades gracefully) and
+  `supabase/product_category_version.sql` (the retain path hard-fails without it; `main` has
+  been pushed since, so confirm with one query, queued). Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
-  - LIVE `counter_cards`: **95 rows — 92 `curated` + 3 `generated`**, re-measured 2026-09-16.
+  - LIVE `counter_cards`: **95 rows — 92 `curated` + 3 `generated`**, re-measured 2026-09-16;
+    depth audit (bar A) migrated 2026-09-21, row count unchanged.
   - `kristy_perimeter_kb.json`: **114 entries — 92 cards + 22 picks** at `d3d892e`, 2026-09-16.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
-  - KB and table agree at 92 curated (2026-09-16). A migration publishes everything the KB is
-    ahead by; diff KB against table before running it (`--dry-run` reports no insert count).
-  - The deployed branch is a third thing; while a stack is held the three disagree and that is
-    not a conflict.
-  - `migrateCounterCards.js` loads `.env` from cwd: run it from `server/`.
+  - KB and table agree at 92 curated. A migration publishes everything the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
   the client id; only a completed token exchange can, and none has. No accounts exist on any rail.
 - 🐞 The simulator cannot prove the token exchange: the simulator device has no Apple account
   (`defaults read MobileMeAccounts` is the wrong check; read the account store). Runbook:
-  `kristy-ios/docs/ios-specs/siwa-config-runbook.md`. The SIWA entitlement is present; the
-  account alert is the only known simulator blocker.
+  `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
 
 ## Companion docs
 
 | File | What it is |
 | --- | --- |
-| `docs/WORKING-DISCIPLINE.md` | Account behind Working discipline. |
-| `docs/DECISIONS.md` | Account behind Load-bearing decisions, same order. |
-| `docs/VERIFYING.md` | Account behind Verifying; the findings family in full. |
-| `docs/OPEN-ITEMS.md` | Open items in full, closed ones with evidence. |
-| `docs/PRICING-MODEL.md` | The locked pricing model (none built); §0–§3a the trial and the count. |
-| `VOICE_SPEC.md` | The voice rule, in full. |
-| `VISION.md` | Character direction, largely unbuilt. |
-| `README.md` | How the thing runs. |
-| `BARCODE_COVERAGE.md` | Provider options assessed, none integrated. |
+| `docs/WORKING-DISCIPLINE.md` · `DECISIONS.md` · `VERIFYING.md` · `OPEN-ITEMS.md` | Accounts behind the sections above, same order. |
+| `docs/PRICING-MODEL.md` | Locked pricing model (none built); §0–§3a the trial and the count. |
+| `VOICE_SPEC.md` · `VISION.md` · `README.md` | Voice in full · character direction (unbuilt) · how it runs. |
 | `docs/PASS3-HANDOFF.md` | §14 the full queue; §13 findings. |
 | `docs/SCHEMA-AUDIT.md` | Live schema vs migration files. |
-| `docs/LANDING-PAGE-PROVENANCE.md` | Account behind `client/public/landing.html`. |
-| `docs/LEGAL-PAGE-RULINGS.md` | Account behind `/privacy` and `/terms`. |
-| `docs/CATEGORY-CAPTURE.md` | The category-capture proposal, held. |
-| `docs/ATTACH-BUCKET.md` | The attach-bucket proposal, measured counts. |
-| `docs/LIST-CREATION-AUDIT.md` | §C is the anti-personalization measurement. |
-| `docs/do-lines-review.md` | The authored do-line table; `server/lib/doLines.json` is generated from it. |
-| `docs/APP-STORE-LISTING.md` | Every App Store Connect field for 1.0. |
-| `mobile/docs/LAUNCH_CHECKLIST.md` | Unfinished App Store submission work. |
+| `docs/LANDING-PAGE-PROVENANCE.md` · `LEGAL-PAGE-RULINGS.md` | Behind `landing.html`, `/privacy`, `/terms`. |
+| `docs/CATEGORY-CAPTURE.md` · `ATTACH-BUCKET.md` · `LIST-CREATION-AUDIT.md` (§C) | Held proposals; anti-personalization measurement. |
+| `docs/do-lines-review.md` | Authored do-line table; `server/lib/doLines.json` is generated from it. |
+| `docs/APP-STORE-LISTING.md` · `mobile/docs/LAUNCH_CHECKLIST.md` · `BARCODE_COVERAGE.md` | App Store fields; submission work; barcode providers (none integrated). |
 
 ## This file's budget
 
-Keep it under **50,000 characters**: `wc -m CLAUDE.md` (`-m` counts characters; `-c` counts bytes
+Keep it under **40,000 characters**: `wc -m CLAUDE.md` (`-m` counts characters; `-c` counts bytes
 and over-reports). When a section grows, the rule stays here and the account moves to `docs/`.
 Verify a split with `node server/scripts/claudeMdSplitCheck.js <ref-before-the-split>`.

@@ -394,3 +394,8 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k â†
 - **The rule is blind to a note that matches neither**
 - **What the code writes must exist in the migrations.**
 - **NAME THE TABLE, ALWAYS**
+
+## Directives moved from CLAUDE.md (2026-09-21)
+
+- **50,000 characters** â€” the split-check script's own printed budget message, superseded the
+  same day by the 40,000-character budget in `CLAUDE.md`'s own "This file's budget" section.

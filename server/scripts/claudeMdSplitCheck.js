@@ -79,6 +79,6 @@ console.log(`\nclaudeMdSplitCheck: ${kept}/${baseline.length} directives from ${
    now, because which one is the limit is exactly the thing that was ambiguous. */
 const md = fs.readFileSync(path.join(repo, 'CLAUDE.md'), 'utf8');
 console.log(`CLAUDE.md is now ${md.length} characters (${Buffer.byteLength(md, 'utf8')} bytes). ` +
-            `The 50,000 budget is CHARACTERS — check with \`wc -m\`, not \`wc -c\`.`);
+            `The 40,000 budget is CHARACTERS — check with \`wc -m\`, not \`wc -c\`.`);
 
 process.exit(missing.length ? 1 : 0);

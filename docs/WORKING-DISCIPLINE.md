@@ -363,3 +363,7 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k â†
 - **VERIFY A SPLIT, DO NOT ASSERT IT â€” and it is a script, because computing it is only a fix if someone computes it:**
 - **caught four real gaps**
 - **It proves nothing left the CORPUS; it cannot tell you a rule left this FILE.**
+
+## Directives moved from CLAUDE.md (2026-09-21)
+
+- **State both, every time: committed / pushed is the code; migrated / not is the corpus.**
