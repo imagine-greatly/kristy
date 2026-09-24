@@ -151,8 +151,9 @@ haul reads how it came out.
 3. **No-treatment rule, symmetric.** No food treats, manages, cures, prevents, lowers risk of,
    or causes anything. Objections are rooted in processing. Focuses are preferences the user
    turns on, never inferences. Medical defers to a doctor.
-4. **The stamp is earned.** No seal anywhere (ruled 2026-09-24). The logo on its forest plate
-   renders in the scan card's corner only when the server's `stamp` is true; the corner is empty
+4. **The stamp is earned.** The seal is the empty landing's mark, nowhere else (2026-09-24). The
+   logo on its forest plate renders in the scan card's corner only when the server's `stamp` is
+   true; the corner is empty
    otherwise. Static. `surfaces.md` "Scan card".
 5. **Never reshape the engine output.** `server/lib/verdictEngine.js`'s matched-entry shape is
    consumed directly; extend additively, never restructure.
