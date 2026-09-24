@@ -15,7 +15,7 @@ goods in every section, and guidance on how to shop for each item.
 | engine + ingredient KB | 74 entries, claim lock, whole-food fat tripwire, 730/0 suite | `cd server && npm test` → 730 pass, 0 fail, `main` 02c1c42, 2026-09-21 | yes |
 | counter corpus | 97 live rows (94 curated + 3 generated); KB 116 (94 cards + 22 picks). Bar A 65/65 shelf cards. Gaps: `watch_out` empty on 2 cards; `sources` missing on `judging_meat_at_the_case`, `produce_storage` | migration count 2026-09-21; `docs/research/depth-gap.md` | no (4 fields) |
 | iOS surfaces | Home, Scan, Counter, Haul, ShopMode, CardSheet, Auth, Membership, Settings all built to spec; no TODO markers | `kristy-ios/docs/ios-specs/*.md` (14 specs); last UI run 2026-09-08: 42 pass / 8 fail, re-anchored same day, **not re-run since** | unknown, needs measure |
-| visuals | 18 colorsets, **0 imagesets**. App icon exists (`AppIcon_1024.png`, 1024², universal) but is the **dark-stock brand**: near-black ground, brass hair silhouette. Seal artwork not made (`seal.md` §0). Warm pass PROPOSED, unbuilt (`warm-pass.md` §0) | `kristy-ios/Kristy/Resources/Assets.xcassets/AppIcon.appiconset/`; `kristy-ios/docs/ios-specs/seal.md`, `warm-pass.md` | no |
+| visuals | 18 colorsets, **0 imagesets**. App icon exists (`AppIcon_1024.png`, 1024², universal) but is the **dark-stock brand**: near-black ground, brass hair silhouette. Seal retired 2026-09-24 (ruling A): no seal anywhere; the logo composited on the forest plate is the icon and the scan card's earned mark. Warm pass PROPOSED, unbuilt (`warm-pass.md` §0) | `kristy-ios/Kristy/Resources/Assets.xcassets/AppIcon.appiconset/`; `kristy-ios/docs/ios-specs/seal.md`, `warm-pass.md` | no |
 | money | Ships depth-is-paid + 3 free reads + 4th-tap ask. Locked model (`PRICING-MODEL.md`) NOT built. RevenueCat adapter built 2026-08-15, never transacted. PURCHASING §7.0 blockers A–H all closed 2026-08-18 | `docs/PRICING-MODEL.md` §0–§3a; `kristy-ios/docs/PURCHASING.md` §0, §7.0 | no (decision §3) |
 | accounts | `apple: true`, `email: true`; **no Sign in with Apple token exchange has ever completed**; zero accounts on any rail | `PURCHASING.md` §0; `CLAUDE.md` Infrastructure state | no (needs device) |
 | store listing | Copy, keywords, privacy answers, review notes written and counted. Five shots exist, split across three dirs, and **stale** (card copy moved on migration) | `docs/APP-STORE-LISTING.md` §1–§8 | no (reshoot last) |
@@ -25,7 +25,7 @@ goods in every section, and guidance on how to shop for each item.
 
 The engine and corpus are dialed; the store half of "beautifully useful" is real and measured. "Warm"
 is carried by copy alone today: there is not one image, plate or illustration in the app (0
-imagesets), the seal renders as geometry with no artwork, and the only ambient line on iOS is the
+imagesets), the seal is retired (ruling A, 2026-09-24: no seal anywhere), and the only ambient line on iOS is the
 empty Haul's (`kristy-ios/Kristy/Surfaces/HaulSurface.swift:133`). The app icon is the old dark-stock
 brand with brass off the plate, against non-negotiable #1. `warm-pass.md` measured the flatness
 (44 bare card fills at 1.110:1) and its fix is proposed, not built. Whether the surfaces still pass is
@@ -43,11 +43,12 @@ rewrite); weeks, untestable until P0. (c) *Ship (a), build (b) as 1.1 after two 
 blind ahead of the first real sign-in stacks unproven on unproven, and VISION.md's sequencing rule
 (mechanics first, then depth) applies to money too.
 
-**Visuals.** (a) icon on paper + seal artwork only; (b) (a) + six section plates (Produce, Meat,
-Seafood, Dairy & Eggs, Pantry & Bulk, Label terms) for the counter index; (c) full illustration pass
-across every surface. **Recommended: (b).** The icon is a brand-rule violation and the seal is the
-stamp that is earned; plates give the counter its warmth in six images without touching layout. All
-via Higgsfield (`generate_image_batch` + `jobs_wait`); **spends credits, confirm before each batch.**
+**Visuals.** Ruled 2026-09-24 (ruling A): no seal anywhere; the icon is the logo composited on the
+forest plate in code, no seal artwork. Remaining choice: (a) icon only; (b) (a) + six section plates
+(Produce, Meat, Seafood, Dairy & Eggs, Pantry & Bulk, Label terms) for the counter index; (c) full
+illustration pass across every surface. **Recommended: (b).** Plates give the counter its warmth in
+six images without touching layout. All via Higgsfield (`generate_image_batch` + `jobs_wait`);
+**spends credits, confirm before each batch.**
 
 ## 4. The path to production
 
