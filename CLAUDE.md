@@ -138,8 +138,8 @@ haul reads how it came out.
 
 1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-09-07: ground
    is solar kraft `#CFBA8E`, card is `#F5F1E6`, green-black ink, green / ochre / orange food
-   ladder, `Fraunces` for serif. Forest green and brass live only in the seal's plate; brass off
-   the plate is forbidden (2.08:1 on paper, 1.24:1 on kraft). Spec:
+   ladder, `Fraunces` for serif. Forest green and brass live only on the logo's plate (icon
+   square, scan card corner mark); brass off it is forbidden (2.08:1 on paper, 1.24:1 on kraft):
    `kristy-ios/docs/ios-specs/paper.md` (§0 premise). Recorded in three places, all three or
    none: `Brand/tokens.json` `_stance`, `kristy-ios/CLAUDE.md`, here. `palette_mirror.sh` must
    not be loosened. The frozen `client/src` keeps the old brand. "Never invent" still binds
@@ -151,15 +151,15 @@ haul reads how it came out.
 3. **No-treatment rule, symmetric.** No food treats, manages, cures, prevents, lowers risk of,
    or causes anything. Objections are rooted in processing. Focuses are preferences the user
    turns on, never inferences. Medical defers to a doctor.
-4. **The stamp is earned.** The seal renders only when `tier === 'approved'` on a verdict; lower
-   tiers get a plain bar. iOS amendment 2026-09-07: the landing's `empty` state carries it as the
-   brand mark; the earned one differs by placement (card edge, off-axis). Static, no motion.
-   `surfaces.md` §1.4b.
+4. **The stamp is earned.** No seal anywhere (ruled 2026-09-24). The logo on its forest plate
+   renders in the scan card's corner only when the server's `stamp` is true; the corner is empty
+   otherwise. Static, no motion. `surfaces.md` "Scan card".
 5. **Never reshape the engine output.** `server/lib/verdictEngine.js`'s matched-entry shape is
    consumed directly; extend additively, never restructure.
 6. **Voice: zero first person.** `VOICE_SPEC.md`. No "I/me/my", no em-dash asides, half the
    words. Tier ownership is rephrased, not deleted: a reader always knows settled science vs
-   credible concern vs standard.
+   credible concern vs standard — except the scan card, which shows no tier (ruled 2026-09-24);
+   #2 and #3 still bind.
 7. **One verdict per headline; accuracy outranks firmness.** A two-clause headline split by TYPE
    or USE CASE stays; one conditioned on budget, stock or time is a retreat. If a claim needs a
    false mechanism to sound convincing, the claim is wrong. Enforced by `counterCardLint.js`.

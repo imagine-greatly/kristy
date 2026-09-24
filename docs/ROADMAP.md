@@ -75,19 +75,14 @@ Owners: **Devon** (needs hands on a device or a dashboard) · forge@tier · scou
    from `server/`) and record the post-upsert count in `CLAUDE.md` Infrastructure state.
 
 **P2 Visuals (Higgsfield; SSH now; credits)**
-6. Higgsfield: app icon = THE SEAL (ruled 2026-09-22). The icon is the seal's plate, so forest
-   green `#14472F` and brass `#C4A65A` are correct ON it (`paper.md` §7, lines 517–528); the brass
-   gradient portrait `Brand/kristy-logo.png` IS the mark and is never redrawn or replaced. Composition
-   to pick by eye on Wednesday's credits: (A, recommended) seal disc on kraft `#CFBA8E` ground;
-   (B) plate full-bleed. No wordmark (ruled NO 2026-09-22; seal carries no words, `seal.md` §0).
-   Anti-slop: no photoreal produce, no gradient globe, no added text. Replace `AppIcon_1024.png`
-   (single 1024 universal, `Contents.json` already single-size, opaque). Verification:
+6. No seal anywhere (ruled 2026-09-24). App icon = `Brand/kristy-logo.png` composited on a
+   forest `#14472F` square in code, single 1024 universal, `Contents.json` already single-size,
+   opaque; no Higgsfield generation. No wordmark (ruled NO 2026-09-22). Verification:
    `Tools/checks/palette_mirror.sh` green; `Tools/checks/icon_palette.sh` (real pixels vs tokens)
    green; installed icon seen on the simulator. Earlier wording here ("no brass", "no
    silhouette-of-a-woman") contradicted the brand and is retired.
-7. Higgsfield: seal artwork per `seal.md` (no words; forest green + brass on the plate only). The
-   same seal as step 6, at card-edge placement. Add as the first imageset. Verification: renders
-   only on `tier == approved` (CardSheet), static.
+7. Retired (ruling A, 2026-09-24): the scan card's logo corner mark is specced in kristy-ios
+   `surfaces.md` "Scan card" and is unbuilt.
 8. Higgsfield: six section plates, one batch, same palette, ink-line engraving style on kraft, no
    text. [PLACEHOLDER style anchor: 19th-c. seed-catalogue engravings]. forge@sonnet [T1] wires
    them into the counter index rows. Verification: `Tools/checks/contrast.sh` green; UI run in P5.
