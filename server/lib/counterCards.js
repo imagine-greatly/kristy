@@ -379,17 +379,7 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     // renderer to remember.
     cta_item: kind === 'home' ? null : entry.cart_pick || null,
 
-    // WHAT TO BUY WHEN THE STANDARD IS NOT ON THE SHELF, AND IT IS FREE ON PURPOSE.
-    //
-    // The redirect was living in `watch_out`, which is PAID — so a shopper who could not
-    // afford the standard, i.e. exactly the person the redirect is for, was the one who
-    // could not read it. That is the wrong half behind the wall. See VOICE_SPEC, "the best
-    // available".
-    //
-    // ⚠️ NOTHING MOVED FROM PAID TO FREE TO MAKE ROOM FOR THIS. `DEPTH_FIELDS` is untouched
-    // and still seven; this is a NEW authored sentence, so the membership loses nothing it
-    // used to have. That is what makes it a different act from the `tier_note` promotion,
-    // which was a swap.
+    // What to buy when the standard is not on the shelf.
     //
     // Null where the card has no honest redirect, and null is a real answer rather than a
     // gap to fill: if nothing in or beside the category clears the floor, saying so is the
@@ -523,77 +513,22 @@ export function parseReviewTable(markdown) {
   return out;
 }
 
-/* ═══════════════════════════ The paid boundary ═══════════════════════════ */
+/* ═══════════════════════════ Public card shape ═══════════════════════════ */
 
-// WHAT IS FREE IS THE SUMMARY, AND IT IS FREE ON EVERY SURFACE, FOREVER: eyebrow, headline,
-// do line, cart pick, and THE TIER SENTENCE. A shopper standing in an aisle never hits a
-// wall — that is the acquisition engine and the reputation, and it is not negotiable.
-//
-// `tier_note` MOVED OUT OF THE DEPTH ON 2026-08-04, and it is a SWAP rather than a giveaway.
-// The free surface used to carry the tier as a CHIP — "Credible concern" sitting above a
-// card about buying organic, a label with no referent, naming a claim it did not make. The
-// chip is gone from every surface. But non-negotiable #6 says a reader must ALWAYS know
-// whether a claim is settled science, a credible concern or a standard, and the sentence can
-// only carry that if the reader receives it: `summarize()` stripped `tier_note`, and only
-// the eight essentials are ever full, so 73 of 81 cards would have reached a free shopper
-// with NO tier signal at all. Since the chip was already free, promoting the sentence trades
-// one free signal for a better one. It buys no depth — `why`, `look_for` and `watch_out` are
-// untouched, and they are what the membership is actually for.
-//
-// WHAT IS PAID IS THE DEPTH. These seven fields and nothing else.
+// Retained as card-field metadata for the pick linter; no fields are withheld.
 export const DEPTH_FIELDS = [
   'why', 'look_for', 'watch_out', 'detail', 'kristy_take', 'labels_decoded', 'sources',
 ];
 
-// THE WITHHOLDING HAPPENS HERE, ON THE SERVER, NOT IN THE CLIENT. Before this the whole
-// corpus was one unauthenticated GET away — `/api/counter/cards` returned all 82 cards
-// with every field to anyone with curl, so the moat was already downloadable. A client
-// that merely HIDES depth still received it.
-//
-// THE TEASER SHIPS GEOMETRY, NEVER WORDS. The first check goes down in full, because a
-// shopper has to see that the depth is real. The next few go down as LENGTHS — the true
-// character count of each line — so the client can render blocks that wrap exactly where
-// the real lines wrap. The counts are true counts. That shows how much is there without
-// handing a third of every card to an unpaid caller, which is a strange thing to do in
-// the same change that stops handing over all of it.
+// Every card is free in full, without the optional lock and teaser fields.
 export function summarize(card) {
   if (!card) return card;
-  const rest = { ...card };
-  for (const f of DEPTH_FIELDS) delete rest[f];
-  const lookFor = Array.isArray(card.look_for) ? card.look_for : [];
-  const watchOut = Array.isArray(card.watch_out) ? card.watch_out : [];
-  return {
-    ...rest,
-    locked: true,
-    teaser: {
-      // Fully legible. The hook is that this is the card's real first check.
-      look_for_first: lookFor[0] || null,
-      // True per-line lengths for the fade. Three is what fits above a phone fold.
-      faded_lengths: lookFor.slice(1, 4).map((t) => String(t).length),
-      // "4 more checks, 2 traps." Everything past the one legible line counts as more — a
-      // faded line is teased, not read. NO `tier_note` HERE ANY MORE: it is free, it is
-      // already on the summary above this tap, and teasing something the reader can see is
-      // how a gate starts lying about where it sits.
-      remaining: {
-        look_for: Math.max(0, lookFor.length - 1),
-        watch_out: watchOut.length,
-      },
-    },
-  };
+  const { teaser, locked, ...full } = card;
+  return full;
 }
 
-/**
- * Apply the boundary to one card.
- *
- * ESSENTIALS ARE ALWAYS FULL, for everyone, and never touch the meter. The eight sit on
- * the index before any navigation: a shopper who spends all three free reads on the shelf
- * never reaches the counter and never learns the other seventy-four exist. Free depth on
- * the shelf proves the reads are worth having; the meter then proves the BREADTH is what
- * the membership buys. Those are different jobs and they need different surfaces.
- */
-export function forViewer(card, { premium = false, unlocked = false } = {}) {
-  if (!card) return card;
-  if (premium || unlocked || card.essential) return card;
+/** The public card shape is the same for guests and members. */
+export function forViewer(card) {
   return summarize(card);
 }
 
@@ -663,9 +598,7 @@ const CARD_COLUMNS =
   // silently stops rendering — the same shape as `essential` gating the eight essentials.
   'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, instead, why, ' +
   'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count, ' +
-  // ESSENTIAL IS LOAD-BEARING NOW. It was cosmetic when every card returned everything;
-  // with the paid boundary it decides whether a card is served in full, so a column
-  // missing from this list silently gates the eight cards that must never gate.
+  // Keep the essentials shelf and its authored order on every read path.
   'essential, essential_rank';
 
 // A real select, never a head:true count — PostgREST answers 204 / null / no error for a

@@ -512,10 +512,9 @@ test('a pick needs its five fields and forbids every card field', () => {
   assert.ok(codes(lintPick(pick({ why: '' }))).includes('PICK_FIELD_FORBIDDEN'));
 });
 
-test('the forbidden set tracks the paid boundary, less sources', () => {
-  // A field added to DEPTH_FIELDS is forbidden on a pick without a second edit. `sources`
-  // is the one exception: paid on a card, REQUIRED on a pick.
-  for (const f of DEPTH_FIELDS) {
+test('a pick forbids card depth fields, while sources remains required', () => {
+  // Cards are free in full; picks still exclude card depth and require sources.
+  for (const f of nonEmpty(DEPTH_FIELDS, 'card depth fields')) {
     if (f === 'sources') assert.ok(!PICK_FORBIDDEN_FIELDS.has(f), 'sources is required on a pick');
     else assert.ok(PICK_FORBIDDEN_FIELDS.has(f), `${f} is in the depth and must be forbidden on a pick`);
   }
