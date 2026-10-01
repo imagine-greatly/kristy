@@ -1,6 +1,6 @@
 # CLAUDE.md — Kristy
 
-Branch: `main`. State/rules; accounts in companions.
+Branch: `main`. State/rules; accounts in companions. Delete a rule here when it stops being load-bearing.
 
 ## WORKING DISCIPLINE
 
@@ -11,7 +11,7 @@ Branch: `main`. State/rules; accounts in companions.
 git add -A → commit with a real message → push → four-step verify → THEN report
 ```
 - Commit before approval; mid-unit question → commit `wip:` first.
-- **Commit first, plant second, revert third.** Checkout restores COMMIT, loses uncommitted work; stash removes tests (zero pass).
+- **Commit first, plant second, revert third.** Checkout restores COMMIT, loses uncommitted work; `git stash` stashes the test too (a suite running zero tests reports success).
 - No untracked at turn end: `git add -A`, never `git commit -a`; run `node server/scripts/commitGuard.js`.
 - Four-step: `git rev-parse HEAD` → `git reflog` → `git ls-remote origin main` → read remote file and diff local. Exit/keychain text proves nothing.
 
@@ -120,13 +120,13 @@ Web: `docs/DECISIONS.md`, “Architecture”/“The interface”.
 - Empty match → honest miss not coach; then only `looksLikeCounterQuestion`: subject AND buying intent, cooking veto.
 - Bare either/or (`isBareEitherOr`) in both `looksLikeCounterQuestion`/`inScope`; doubt → admit, downstream refuses.
 - `isMeaningQuestion`: mean/means VERB/non-filler subject, not noun; `isBareDefinitional` ≤5 words/≤2 content.
-- Floor one alias hit for both; curated `scoreEntries.aliasScore > 0`; `CONFIDENT > 2`, `WEAK_MATCH_CEILING` 3, never shared.
+- Retrieval floor one alias hit: gate requires `scoreEntries` `aliasScore > 0`; `counterFloor.test.js` pins curated and generated; `CONFIDENT > 2`, `WEAK_MATCH_CEILING` 3, never shared.
 - Measured numbers only; ask-question/list-noun aliases both required.
 - 3+ `asked_as`/card from questions not card vocabulary; `counterReach.test.js` asks; not done until findable.
 - Hub steal → one longer specific alias, never many dangerous short generics.
 - Technique `kind='home'`: mechanical, never bodily; no cart; PURCHASE = `shelf`; record deliberate `IMPERATIVE_VERBS` reasoning.
 - Claim beyond evidence → narrow truth, gap `watch_out`; verify study; hub do line all arrivals, count exclusions before ship.
-- Version generated subject-owner/fold curated repeat; `decision`/`why` from entry material, depth demoted not deleted, free `tier_note` above tap.
+- A generated card that owns a subject goes in version control; one restating a curated verdict gets folded; `decision`/`why` from entry material, depth demoted not deleted, free `tier_note` above tap.
 - `shortcuts`: only `q`/browsable `id`, no content; missing coverage `thinNote`.
 - `counter_gaps`/`gapFeed`: `/perimeter/ask` always, chat/guest only `looksLikeCounterQuestion`; no PERSONAL data: scrub emails/long digits, 160-char cap before insert.
 
@@ -141,7 +141,7 @@ Web: `docs/DECISIONS.md`, “Architecture”/“The interface”.
 - Sort displayed section; `CATEGORY_SECTION` counter ids/`TRAILING_LABEL` never `LIST_SECTIONS` titles; category fallback/`cardSection` wins; conflicting pick `why` moves; composed names stay (`listBaseline.kept` NAME).
 - Carry anything/judge food only: non-food trailing/no card/do line/score/flag/approval/swap; scan “that isn't something Kristy reads”; no household KB/tidiness/“no guidance” eyebrow.
 - Compose never refuses additions or explains a decline; one prompt/3 sites; food/food-adjacent only (future at most cookware/storage/filters/foil/parchment, never cleaners/cosmetics/general grocery).
-- `applyCompose`: no `user`/`imported` removal unless shopper names item; `attachOffers.offered` flags once, survives `sanitizeList`; a no is permanent, suppressing item not note; generic offers never typed brands.
+- `applyCompose`: no `user`/`imported` removal unless shopper names item; `attachOffers.offered` flags once, survives `sanitizeList`; a no is permanent and suppresses the item, not just the note; generic offers never typed brands.
 - Goals ≤3 adds/≤4 anchors, rebuild optional; quote `docs/LIST-CREATION-AUDIT.md` §C, never re-derive: card SELECTION missing, never authorship.
 - Baseline grocery names only; `kept` occurrences not deduped; private memory leaves with shopper, `USER_TABLES` all `auth.users` tables; `productStore`/`counterGaps` never import per-user readers (no aggregate joins).
 
@@ -189,7 +189,7 @@ Phone/email rules: companion “Phone sign-in”.
 ### Commands
 | Command | What it proves |
 | --- | --- |
-| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-09-16** (`3e3cdc6`); 730 again 2026-09-21 on `main`. Record only a number you ran, say which branch, date it. |
+| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-10-01** (`134fa83`). Record only a number you ran, say which branch, date it. |
 | `node server/scripts/commitGuard.js` | No claimed file untracked. |
 | `node server/scripts/claudeMdSplitCheck.js <ref>` | Bold directives verbatim in corpus, not placement; refuses empty extraction. |
 | `node server/scripts/listMatchProbe.js` | Wrong match fails; run after alias/`perimeterId`/matcher changes. |
@@ -201,13 +201,17 @@ Phone/email rules: companion “Phone sign-in”.
 - Tier notes: no self-reference/shared sentence (`TIER_NOTE_SELF_REFERENCE`); comment `doLines.json`, not KB `decision` (`TIER_NOTE_ORPHANED`), neither = known gap.
 - Fold = removal AND delete: `RETIRED` curated/`RETIRED_GENERATED` generated (wrong list no delete, tested); move aliases/repoint shortcuts/grep wider incl prompts.
 - Generated promotion: demand/corpus correction not correctness; rising `use_count` → promote; keep ≥1 real row.
-- Writes in migrations; section floor 8, deletion shrink cannot pass unchanged.
+- What the code writes must exist in the migrations (`schemaContract.test.js`); section floor 8, deletion shrink cannot pass unchanged.
 - Railway root `server/`; `deployBoundary.test.js`: `lib/`/`routes/`/`index.js`; do lines table `docs/do-lines-review.md` → `scripts/buildDoLines.js`, commit both, always name table.
 - Git permission denied: OneDrive locks `.git`; retry, never hand-edit KB.
 
 ## Open items
 
 Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
+
+- ⏳ `completedTrips` on `GET /api/trips/seedable` (`docs/PRICING-MODEL.md` §3a): client half built (`TripAllowance.reconciled`); downstream of one SIWA token exchange.
+- ⛔ Do not widen the product-category vocabulary to fix a filing problem (the aisle is decided in `scanExtract.js`).
+- Holding a stack: identify held work by SUBJECT (`git log --oneline --reverse origin/main..HEAD`), never by hash or "ahead N". Urgent work cherry-picks past; the rebase afterwards is not optional. A cleared blocker is not an approval.
 
 ### Infrastructure state
 - ⚠️ `server/.env`: real Supabase credentials; placeholder `ANTHROPIC_API_KEY` (401); `USDA_API_KEY`
@@ -244,4 +248,4 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
 
 ## This file's budget
 
-**20,000 characters or fewer**: `wc -m CLAUDE.md`, not bytes (`wc -c`). Growth: session rules here, detail in source-section companion; verify `node server/scripts/claudeMdSplitCheck.js <ref-before-the-split>`.
+**21,000 characters or fewer**: `wc -m CLAUDE.md`, not bytes (`wc -c`). Growth: session rules here, detail in source-section companion; verify `node server/scripts/claudeMdSplitCheck.js <ref-before-the-split>`.
