@@ -367,3 +367,97 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k �
 ## Directives moved from CLAUDE.md (2026-09-21)
 
 - **State both, every time: committed / pushed is the code; migrated / not is the corpus.**
+
+---
+
+## From CLAUDE.md — WORKING DISCIPLINE
+
+
+*Account: `docs/WORKING-DISCIPLINE.md`.*
+
+Claude Code runs here over SSH into a rented Scaleway Mac mini; sessions drop mid-task with no
+warning. The conversation is lost; every file on disk survives.
+
+### Commit before reporting
+
+```
+git add -A  →  commit with a real message  →  push  →  four-step verify  →  THEN report
+```
+
+- Approval is not a precondition for committing; it applies to what is already on disk.
+- Stopping mid-unit to ask a question: commit first, message prefixed `wip:`, then ask.
+- ⚠️ **Commit first, plant second, revert third.** Proving a check can fail means breaking the
+  source on purpose; `git checkout -- <file>` restores the last COMMIT, so planting into
+  uncommitted work deletes it. `git stash` stashes the test too (a suite running zero tests
+  reports success).
+- Never end a turn with anything untracked. `git add -A`, never `git commit -a`. Run
+  `node server/scripts/commitGuard.js`.
+- Four-step verify: `git rev-parse HEAD` → `git reflog` → `git ls-remote origin main` → read a
+  file back from the remote and diff it against local. A push has reported success while the
+  remote had not moved; exit codes and keychain text cannot tell the cases apart.
+
+### One task per session
+
+- A session is ONE task. When its work is committed and verified, the session is over.
+- Every final report, full or partial, ends with a **continuation prompt**: a fenced block Devon
+  pastes verbatim into the next session. It names the task, the exact next step, the files, the
+  verification commands, and what NOT to retry. Write the handoff (`handoff` skill) first; the
+  prompt points at it. Then say `/clear` is safe.
+- ~60k resident context is the boundary, not a warning: commit, handoff, continuation prompt, stop.
+
+### Pushing
+
+- `main` is production (Vercel client, Railway server, live in about a minute, no staging gate).
+  Commit always; **push `main` only when the turn's work is meant to go live**.
+  Committed-and-unpushed work is stated in the report, never left as "ahead N".
+- A KB edit has two publish channels. MIGRATE (`node server/scripts/migrateCounterCards.js`, run
+  from `server/`, it loads `.env` from cwd) writes the KB to the live `counter_cards` table with
+  no push or deploy → iOS. PUSH publishes the file → web (`routes/perimeter.js`).
+  **State both, every time:** committed / pushed is the code; migrated / not is the corpus.
+  Card commits say `Not migrated.`
+- Commits that stay off `main` also go to `origin/held` (backup branch, not a deploy target). If
+  `main` is behind what the docs describe, fetch `held`, never reconstruct:
+  `git fetch origin held && git log --oneline --reverse origin/main..origin/held`. A Vercel
+  preview build for the branch is harmless (CORS-blocked). `osxkeychain` fails over SSH in a way
+  that reads as success (`-25308` appears on successes too); push with
+  `git -c credential.helper='!gh auth git-credential' push origin main:held` and prove it with
+  `ls-remote` plus a file read back.
+
+### Scope
+
+One surface or one contained unit per prompt. List the files you expect to create or modify
+before starting; needing others is said, not silently done.
+
+---
+
+## From CLAUDE.md — Two halves, two rule sets
+
+
+### `client/src` — DEAD. FROZEN. INSPIRATION ONLY.
+
+The React SPA still serves `kristyapproved.com` and is never edited again, for any reason. It is
+the behavioural specification for the iOS client and the record of measured decisions (contrast
+floor, hero rule, active-section rule, type inversion, one-filled-action count). Read and cite;
+never write.
+
+- `client/src/lib/tokens.js` is a frozen historical copy, not the brand. The brand is
+  `kristy-ios/Brand/tokens.json`. The last mirroring (`brassFill`, `brassFillInk`,
+  `surfaceLifted`) closed the route.
+
+### `server/` — live infrastructure, governed rather than frozen
+
+- A server change is separately proposed and approved work: routes, KB entries, prompts, lint, tests.
+- An iOS prompt may not produce a server change. iOS work that needs one stops and asks (route,
+  shape, what the client cannot do without it); it never routes around it in Swift.
+- A finding is not a fix: `kristy-ios/docs/API-FINDINGS.md`, with evidence.
+- Node runs the full suite here; the rule is about scope and review, not testability.
+- Not covered: `docs/`, this file, unapplied `supabase/*.sql`, anything scoped as server work.
+
+---
+
+## From CLAUDE.md — This file's budget (superseded 40,000-character budget)
+
+
+Keep it under **40,000 characters**: `wc -m CLAUDE.md` (`-m` counts characters; `-c` counts bytes
+and over-reports). When a section grows, the rule stays here and the account moves to `docs/`.
+Verify a split with `node server/scripts/claudeMdSplitCheck.js <ref-before-the-split>`.

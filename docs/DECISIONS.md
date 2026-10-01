@@ -1123,3 +1123,334 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k �
 - **The three existing lines are WEB-ONLY.**
 - **WHAT THE REVERSAL LICENSED IS ALREADY DONE: `/privacy` AND `/terms` NO LONGER DESCRIBE AN SMS PRACTICE.**
 - **the cost is accepted, not overlooked**
+
+---
+
+## From CLAUDE.md — What Kristy is
+
+
+A **grocery coach for the whole store**, not a scanner with a list. The labeled half you scan;
+the unlabeled half (meat, fish, eggs, produce, dairy, bulk) is the moat. The cart is the center:
+scanning vets packaged things for it, the counter answers the unpackaged things going in, the
+haul reads how it came out.
+
+**Kristy is not a calorie tracker.** Macro tracking was removed: no macro cards, meal logging,
+"logged it" UI, or macro asides in chat. Enforced structurally by `macroGuard`.
+
+---
+
+## From CLAUDE.md — Architecture
+
+
+- Server is authoritative (`server/`, Railway): KB + matching + tier scoring + claim-locked model
+  calls. Clients are thin renderers.
+- Two knowledge bases, never merged. `kristy_ingredient_knowledge_base.json` (74 entries) is the
+  only thing the engine sees. `kristy_perimeter_kb.json` answers counter questions, never scored.
+- Web SPA is the reference client; `mobile/` (Expo/RN) is the App Store port.
+- ⚠️ **`GuestApp` is production; `App`'s own surface stack has never rendered for a real
+  visitor.** `session` is null for everybody. Diagnose from `GuestApp.jsx` first.
+- `kristyapproved.com` is the canonical front door; `kristyapproved.vercel.app` a secondary
+  alias. The server trusts only origins in `CLIENT_ORIGIN`. Push to `main` auto-deploys; no
+  `.vercel/` locally does not mean undeployed. Check what a change does live before pushing it.
+
+---
+
+## From CLAUDE.md — The interface
+
+
+Two states and one loop: *before the store* you plan on the dashboard; *in the store* you walk in
+shop mode, one thing on screen. Everything else is a tool you branch to and come back from.
+
+Nav: **Home · Scan · Counter · Haul**, four equal tabs. Scan and Counter are identical in
+treatment because they are the two ways to fill the cart; that equality is the positioning.
+
+- The cart tab is gone; the bar survived. The Counter has no other permanent entry point.
+  `FillRow` asserts the equality on the home surface, imported twice rather than copied.
+- Home is the dashboard unconditionally (`initialMoment` returns `'home'`). It answers *what
+  happens next* in five states; the answer is the first child and largest type. Empty, it asks
+  what the trip is for.
+- Scan = the packaged half: barcode or label photo.
+- Counter = the unlabeled half; asking leads. Browsing by section (Produce · Meat · Seafood ·
+  Dairy & Eggs · Pantry & Bulk · Label terms), each with one-tap shortcut questions.
+- Every counter answer is decision-first: call, why, checklist, then the full sourced read on
+  tap. Picks add to the cart in one tap.
+- Haul reads the trip back and carries items forward; reached from the bottom of the dashboard.
+- Shop mode is a MODE, not a tab: entered from the hero (START / RESUME), exited deliberately,
+  `zIndex: 45` above the tab bar and below every sheet; tab bar and composer suppressed.
+
+---
+
+## From CLAUDE.md — Load-bearing decisions
+
+
+*Account for every rule, same order: `docs/DECISIONS.md`.*
+
+**Scoring and the KB**
+- `matched` is concerns-only; affirmations ride in `affirmed` / `affirmationLayer`.
+- Whole-food fats are clean because the KB holds no entry for them; no future entry may match
+  butter/ghee/tallow. A regression test is the tripwire.
+- Affirming entries are excluded from reverse matching.
+- Margarine is NOT aliased to `partially_hydrogenated_oil`; it has its own `seed_oil` entry.
+- `time_tested` justifies food-worth only, never a health outcome; `sanitizeAffirmed` withholds
+  `history`, `why`, `kristy_note`.
+- `gluten-free` / `dairy-free` stay advisory.
+- Two harmless alias collisions exist; exact/longest-first priority resolves them.
+
+**Reading a label**
+- `tokenizeIngredients` restores the head noun onto sub-items, scoped to an oil/fat head.
+- A partial read may not produce a clean approval; flags stand, only `approved` is withheld.
+- Low confidence is a miss.
+
+**Lookups**
+- One decode per camera opening; monotonic ticket, stale response dropped. Barcode
+  checksum-validated before lookup. `sameGtin` tolerates zero-padding.
+- `scanned_products` holds products, not people: no `user_id` column, ever (a test greps).
+  Precedence `off/full > vision/full > vision/partial`. The store holds ingredients, never
+  judgments; a cached hit re-runs the engine.
+- The self-heal loop is proven by behaviour; the Supabase client is injectable on
+  `lookupProduct` / `retainProduct` / `coverageStats` for that reason.
+- `coverageStats.fromVision` is the moat, counted. Only `scripts/growthLoops.livetest.js`
+  confirms production capture.
+
+**Swaps**
+- The ingredient-level swap (`genericSwap`) is cut from the scan card; the field is still sent
+  and decoded. Its home is the unbuilt ingredient page.
+- The replacement is same category, better version. A bad bar swaps for a good bar.
+- ⏳ The catalog is the prerequisite; do not build the swap engine before the rows exist.
+  `docs/CATEGORY-CAPTURE.md`.
+
+**The counter**
+- The free layer is public (`optionalAuth`): deterministic KB read, no model, no stored data. A
+  guest's counter answer does not spend their free chat run.
+- `cart_pick`, `decision`, `why` are NOT among the seven fields `sanitizeForModel` passes. The
+  whitelist stays at seven.
+- No KB match gets the honest miss, never the coach. `looksLikeCounterQuestion` needs a counter
+  subject AND buying intent, cooking verbs vetoed, consulted only after the matcher returns empty.
+- A bare either/or is a question (`isBareEitherOr`) in `looksLikeCounterQuestion` AND `inScope`.
+- Scope has been wrong in one direction every time: too tight. When in doubt, admit and let the
+  downstream filters refuse.
+- `isMeaningQuestion` admits mean/means as a VERB plus a non-filler subject; noun form excluded.
+- `isBareDefinitional` is a counter question, bounded to ≤5 words and ≤2 content words.
+- The retrieval floor is one alias hit: `scoreEntries` reports `aliasScore`, the gate requires
+  `aliasScore > 0`. `counterFloor.test.js` pins curated and generated.
+- `CONFIDENT` is `> 2`; `WEAK_MATCH_CEILING` stays 3. Different numbers, never one constant.
+- Record measured numbers, not characterizations.
+- Alias authoring differs by surface: questions for ask, bare nouns for list. Every card needs both.
+- Every card carries its own questions in `asked_as` (3+, authored from the question, never
+  from the card's vocabulary); `counterReach.test.js` asks them. A new card is not done until it
+  can be found.
+- When a hub steals a question, be specific, not numerous: one longer alias out-ranks a hub; a
+  short generic alias is actively dangerous.
+- Kitchen technique is a card class, `kind='home'`: mechanical only, never a bodily outcome.
+  `home` suppresses add-to-cart, so a PURCHASE decision must be `shelf`.
+- Adding to `IMPERATIVE_VERBS` is deliberate; record the reasoning in the list.
+- Where the popular claim outruns the evidence, state the narrower true thing; the gap goes in
+  `watch_out`. Verify the study, not the retelling.
+- A hub card's do line must work for whatever brought the shopper there; count what falls
+  outside a qualifier before shipping it.
+- A generated card that owns a subject belongs in version control; one restating a curated
+  verdict gets folded.
+- Decision-first is content: `decision` / `why` re-ranked from the entry's own material. Depth is
+  demoted, never deleted; the tier stays above the tap as `tier_note`, free.
+- Section `shortcuts` carry no content: a `q` and an `id` already browsable there. `thinNote`
+  where a section does not cover something.
+- Misses are logged to `counter_gaps` (`gapFeed`). `/perimeter/ask` logs unconditionally; chat
+  and guest chat log only behind `looksLikeCounterQuestion`.
+- The free counter layer stores no PERSONAL data: question text scrubbed of emails and long digit
+  runs, capped at 160 chars before insert.
+
+**The dashboard and shop mode**
+- The hero answers "what next", measured not asserted: five states (`empty` / `completed` /
+  `ready` / `midtrip` / `finished`) from `cart.progress` and `cart.seedable`. `dash.mjs` fails
+  if anything renders above it, larger than it, or repeats its copy. Every box ticked is FINISH.
+- Exactly one bone-filled action per screen, the hero's; resolve a collision by stepping the
+  FIELD down.
+- The type inverts in shop mode: do line 17.5px, item name 11.5px eyebrow (cart: 15/13.5 the
+  other way). An unmatched row keeps its name in the lead slot. One prose line per row.
+- A spent instruction is demoted by size, never opacity; `shop.mjs` computes contrast from
+  rendered colour, folding in ancestor opacity.
+- Advancing is free scroll; the active section is the one filling the most screen.
+- Every branch out of shop mode is an overlay, never a navigation; a test forbids `setMoment`
+  inside `ShopMode.jsx`. The chat ask is withheld in shop mode.
+- A scan in shop mode acts on the list in front of the shopper; `rowMatch.js` is conservative.
+  ⚠️ The one-word over-match is fixed in Swift only (head noun, not a length floor); do not edit
+  `rowMatch.js`, the divergence is the recorded decision.
+- The screen wake lock is shop mode only, and the re-acquire on visibility is the feature.
+  Every rejection is silent.
+
+**Trips — the list is a record, not a scratchpad**
+- `trips` (`supabase/trips.sql`): many per shopper, exactly one active, held by a partial unique
+  index. `signals` and `next_list` do not move; `shopping_lists` survives as the profile.
+- Three statuses; an untouched trip is REUSED, not archived. Completing is an explicit tap.
+- Adoption is gated on "no trips at all", not "no active trip".
+- One seeding door: `POST /api/trips/next`, no `accept` parameter.
+- The conversion door is `POST /api/trips/import`; adoption happens inside `importGuestTrips`
+  so a caller cannot sequence the halves wrongly. One-shot; an account with trips is declined
+  (409). Completed trips only; `status` server-written; every row through `sanitizeList`;
+  timestamps clamped to `[now − 1y, now]` with `started ≤ completed`; `clientId` echoed, never
+  stored. `trip_id` on `haul_scans` is not part of this.
+- A seeded row is re-matched, not copied with its card: `carded` / `cardSlug` / `tier` and the
+  offer set are stripped; `why`, `perimeterId`, `alt` kept. `missed` is gone as a concept.
+- The haul reads completed trips and does not write bought rows; `bought` rides as its own field.
+
+**The composed row**
+- A mock is not a render. A for-approval mock renders the real component or is labelled intent,
+  and may never become the basis of a fixture.
+- A browser fixture is built by `client/test/buildFixture.mjs`, never written; expectations are
+  derived from it.
+- One prose line per row; with a card it is the card's. Suppression keys on the block's
+  `hasCard`, not `item.cardSlug`. An unmatched row keeps its `why`.
+- An authored `perimeterId` outranks retrieval, still validated.
+- `server/scripts/listMatchProbe.js` exits non-zero on a wrong match; a miss only reports.
+- `stateContradicts` vetoes when the item names a state (frozen/canned/dried/fresh) and the card
+  names only others; both sides must name one. A veto, never a score. Explicit list.
+- A bare process word is not a subject (`unpasteurized` alone matched miso).
+- `label_terms` is a reference section; it falls through like a home card.
+- A row sorts by the section it displays. `CATEGORY_SECTION` is tiny and always outputs a counter
+  section id; `TRAILING_LABEL` refuses to emit any `LIST_SECTIONS` title.
+- The cart category is a fallback, never an override; a stored `cardSection` wins.
+- When a pick's card and its `why` disagree, the `why` moves.
+- Composed pick names stay composed (`listBaseline` keys `kept` on the NAME).
+
+**The list is the shopper's**
+- ⚠️ Kristy carries anything and judges only food. A non-food row goes on the list: trailing
+  group, no card, no do line. She never scores, flags, approves or swaps it; scanned, the answer
+  is "that isn't something Kristy reads." The silence is the feature: no household KB, no
+  tidiness note, no "no guidance" eyebrow.
+- Compose may never refuse to add what a shopper asked for, and never explains a decline. One
+  prompt, three call sites; `listCompose.test.js` asserts the old wording ABSENT.
+- Scope boundary: food and food-adjacent only (future at most: cookware, storage, filters, foil,
+  parchment). Not cleaners, cosmetics, general grocery.
+- The item always stays. `applyCompose` protects `user` and `imported` rows from a model-proposed
+  removal unless the shopper's words name the item.
+- Flag once: `attachOffers` stamps `offered` on every inspected row; survives `sanitizeList`.
+- A no is permanent and suppresses the item, not just the note.
+- The offer table matches generic food words only; a typed brand stays unremarked.
+- Goals weight the margins: ≤3 additions, anchors capped at 4. Rebuild is a choice.
+- ⚠️ The standing argument against personalization-by-generation: quote
+  `docs/LIST-CREATION-AUDIT.md` §C, do not re-derive it. The corpus is trustworthy because it is
+  pre-decided; what is missing is SELECTION of cards, never authorship.
+- The baseline holds grocery names only; `kept` is not deduped (occurrences are the frequency).
+- The pattern memory is private and leaves with the shopper: explicit `USER_TABLES` sweep;
+  `privacyLine.test.js` fails if any table referencing `auth.users` is absent from it.
+- Individual behaviour never joins the aggregate pool: `productStore` and `counterGaps` may not
+  import the per-user readers (a test forbids the import).
+
+**Seeing the loops run**
+- `/api/internal/growth` 404s unless `INTERNAL_DASHBOARD_TOKEN` is 24+ chars; unauthorized gets
+  404, never 401. Reads only `coverageStats` / `gapFeed` / `topScannedProducts`; not a Kristy
+  surface, none of her brand.
+- A `head:true` count cannot tell a missing table from an empty one; null count is unavailable,
+  reachability uses a real `select`.
+
+**The ambient line — fixed per surface, never rotated**
+- A fixed line becomes what the surface says; no shared pool; each surface earns its own.
+- The test is "is there an action here", not "is the surface quiet". The empty dashboard never
+  carries one. Never in shop mode, the scan sheet, or any in-store surface.
+- The only qualifying iOS surface is the empty Haul: *"Finish a trip and it lands here. Next
+  week starts from what you actually bought."* The three existing lines are web-only.
+
+**Demo and failure**
+- Demo never fabricates and never under-reports; fallback only for no backend at all.
+- A missing env var names itself; three layers catch a bad deploy (null client, error boundary,
+  inline boot guard in `app.html`). `VITE_API_URL` is required in a production build.
+
+**Phone sign-in — ⛔ DEAD PRODUCT-WIDE, ruled 2026-08-19**
+- Provider is OFF (`phone: false`), nobody has ever signed in on any rail, `client/src` is frozen.
+  `Auth.jsx`'s `signInWithOtp({ phone })` stays frozen, not endorsed; do not open the frozen
+  client to finish this. Bird is deleted; do not bring it back.
+- `/privacy` and `/terms` no longer describe an SMS practice; do not re-add the sentences to pass
+  a review. The 10DLC registration is moot. Recovery, if ever, is from git history per file.
+- The second rail is EMAIL and it is ON (`email: true`, `apple: true`, `mailer_autoconfirm: true`,
+  measured 2026-08-18): blocker H in `kristy-ios/docs/PURCHASING.md` §7.0. Apple is primary.
+  `mailer_autoconfirm` means OTP is fine and a `signUp` path is not; nothing ships one.
+
+**Legal pages** — *account: `docs/LEGAL-PAGE-RULINGS.md`*
+- `/privacy` and `/terms` are static pages in `client/public/`, rewritten to clean URLs in
+  `vercel.json` and the vite middleware.
+- ⛔ A served page is not a source file: no reasoning, measurement, provider state or "why we
+  removed X" goes back into `/privacy`, `/terms` or `client/public/landing.html`. Each keeps a
+  one-line pointer to the doc. `landing.html`'s positioning comments stay; no repo path,
+  component filename or token identifier goes back into it.
+- ⛔ `/privacy` claims no delete door on the website; the iPhone app is the only route
+  (`DELETE /api/account`). Wrong again the day the web client gets a working sign-in.
+- All three published and fetch-verified byte-identical 2026-09-16. A comment-strip diff must
+  cover HTML and CSS comments.
+
+**Money** — *the locked model, none of it built: `docs/PRICING-MODEL.md`. Every rule below is
+live until the model's work lands.*
+
+*The trial and the count (`docs/PRICING-MODEL.md` §0–§3a is binding; read it before touching the
+trial, trip count, ask or entitlement):*
+- After the trial the COUNTER STAYS FREE (full cards, ask, scanning); making a list and walking
+  a trip are members only. The paid boundary inverts, retiring `DEPTH_FIELDS`, `summarize()`,
+  the read meter, the teaser. The haul is free; seeding stays locked.
+- ⚠️ No partial list, ever. The counter carries no ask, anywhere.
+- ⚠️ `evaluatePremium` takes zero change. Reconciliation at the ask is `POST /trips/import`, rule
+  **max and cap at 2 — `max(server, min(2, max(device, server)))`, never subtract, never re-arm.**
+- ⚠️ Nobody can buy anything today: `canPurchase` is `identity == .member`, every visitor is a
+  guest, Sign in with Apple has never completed a token exchange. The RevenueCat adapter is built
+  (2026-08-15); do not rebuild it.
+
+*The paid boundary as it ships today*
+- It is a server boundary. Free: card summary (eyebrow, headline, do line, cart pick, tier
+  sentence), all scanning, unlimited asking, all browsing, the entire list. Paid: the depth
+  (`why`, `look_for`, `watch_out`, `detail`, `kristy_take`, `labels_decoded`, `sources`),
+  stripped by `summarize()` / `forViewer()` before it leaves the server.
+- The list is free; no save-list ask on any tier. `cartFree.test.js` greps what a shopper reads.
+- The free surface states the call; the cost lives in the depth. Do not promote `watch_out`; make
+  the card an essential instead.
+- The tier is a sentence (`tier_note`), not a chip. `paidBoundary.test.js` pins both halves and
+  that `tier_note` is ≥5 words and not the tier's name.
+- The eight essentials are always full and never touch the meter. `ESSENTIALS` is authored two
+  per section and never reorders: mark, keep authored order.
+- The teaser ships geometry, never words.
+- `free_reads_used` is its own counter; signed-out shoppers are metered in localStorage.
+- Guests get no plan buttons (`purchasable={false}`); restore them the day sign-in works.
+- The ask appears at one moment: the fourth full-read tap. An upgrade affordance's render
+  condition must contain an ACTION. `UPGRADE_COPY` has one key. Chrome is excluded.
+- One ask component, one read meter: `cartFree.test.js` fails if any file outside `CounterAsk`
+  calls `askCounter`, or outside `cardMeter` calls `fetchCounterFull` / `spendRead` / `readsSpent`.
+
+*Prices, the trial door and the budgets*
+- $5.99/month, $44.99/year. Price ids are configuration, never seen by the client. Two numbers
+  authored (`MONTHLY_CENTS`, `ANNUAL_CENTS` in `client/src/lib/pricing.js`, mirrored in
+  `mobile/src/lib/pricing.ts`); effective monthly and saving are derived, saving FLOORED.
+  `server/lib/pricing.test.js` fails on any hardcoded figure elsewhere.
+- ⚠️ Recreate the Stripe Price objects and update `STRIPE_PRICE_MONTHLY` / `STRIPE_PRICE_ANNUAL`
+  whenever the displayed price changes; a stale id charges the old amount undetectably.
+- The trial has one door (`POST /api/subscription/trial`), idempotent BY EXISTENCE: any
+  `subscriptions` row is returned untouched. Setting a goal grants nothing.
+- Never put a data write in a schema file; the backfill is `supabase/backfill_trials.sql`.
+  `schemaSafety.test.js` enforces it.
+- Building a cart from a sentence is free behind a budget: `LIST_COMPOSE_FREE_LIMIT` 12/day,
+  premium exempt, both doors move together. The over-budget line is not an upsell.
+- Which bucket a guest door draws is derived from "does this reach a model", never per route;
+  `guestBudget.test.js` asserts per HANDLER.
+- The scan bucket is sized in SCANS (30/hour, 2 hits each), multiplication exported and asserted.
+
+---
+
+## From CLAUDE.md — Non-negotiables (2–9)
+
+2. **The claim lock is law.** Every health/ingredient claim traces to a matched KB entry; the
+   model may rephrase tone, never introduce a concern, statistic or claim. Enforced structurally
+   (entries stripped to an allowed-field whitelist before the call) on every surface in Kristy's
+   voice.
+3. **No-treatment rule, symmetric.** No food treats, manages, cures, prevents, lowers risk of,
+   or causes anything. Objections are rooted in processing. Focuses are preferences the user
+   turns on, never inferences. Medical defers to a doctor.
+4. **The stamp is earned.** The seal is the empty landing's mark, nowhere else (2026-09-24). The
+   logo on its forest plate renders in the scan card's corner only when the server's `stamp` is
+   true; the corner is empty
+   otherwise. Static. `surfaces.md` "Scan card".
+5. **Never reshape the engine output.** `server/lib/verdictEngine.js`'s matched-entry shape is
+   consumed directly; extend additively, never restructure.
+6. **Voice: zero first person.** `VOICE_SPEC.md`. No "I/me/my", no em-dash asides, half the
+   words. Tier ownership is rephrased, not deleted: a reader always knows settled science vs
+   credible concern vs standard, except on the scan card (no tier, ruled 2026-09-24).
+7. **One verdict per headline; accuracy outranks firmness.** A two-clause headline split by TYPE
+   or USE CASE stays; one conditioned on budget, stock or time is a retreat. If a claim needs a
+   false mechanism to sound convincing, the claim is wrong. Enforced by `counterCardLint.js`.
+8. **No price, ever.** Budget means cost-conscious selection; relative terms only.
+9. **No negative claims about named brands.** Teach the label truth instead.

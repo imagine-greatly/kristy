@@ -1284,3 +1284,50 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k �
 - **which reads as a missing credential and is a missing `cd`.**
 - **DEAD PRODUCT-WIDE, not pending**
 - **The "second blocker" — the SIWA entitlement missing — is WITHDRAWN, measured. It is present**
+
+---
+
+## From CLAUDE.md — Open items
+
+
+*Full text, closed items and evidence: `docs/OPEN-ITEMS.md`.*
+
+### Open
+- ❓ ⏳ The engine still reads a seven-token mineral analysis as a clean list and scores it zero;
+  the misread is contained at the seal, not fixed at the read. Nothing proposed.
+- ⚠️ `unverifiedAsFood` is not on the wire, deliberately; clients key off `unverifiedRead` /
+  `stamp`. Do not add it to a decoder expecting it to arrive. Routes carry `readSwap`, one
+  helper across all four send sites.
+- ⏳ The guest budget is a property of uptime: `guestRate.js` buckets are in-process `Map`s, every
+  deploy resets them, and `rateLimited` cannot be measured without spending a slot. Real the
+  moment a second instance exists.
+- ⏳ `completedTrips` on `GET /api/trips/seedable` (`count(*) where status='completed'`), spec
+  `docs/PRICING-MODEL.md` §3a. The post-sign-in reinstall reset is NOT the accepted loophole (that
+  is pre-account only). Client half built (`TripAllowance.reconciled`). Downstream of one SIWA
+  token exchange.
+- 🐞 ⏳ `/guest/list/attach` draws `cartBuildLimited` (20/hour, sized for one cart build) while
+  the client attaches on every cold launch and added item; a refused attach produces more
+  attaches. Do not size it for CI. `docs/ATTACH-BUCKET.md`.
+- ⏳ Derive a baseline from the device trip archive, in the client, no server change. Price the
+  `canonicalItem` duplication first; consider exact-name matching and state the narrower claim.
+  Not a capture project. Nothing consumes it yet.
+- ⏳ The scan card is still the full-height takeover; the bottom sheet is specced, unbuilt. Photo
+  read: client-side crop held in memory for the session, nothing persisted.
+- 📋 The path to production, in order: `docs/ROADMAP.md` (§14 of PASS3-HANDOFF is superseded).
+
+### Rules left by closed items
+- Re-check `hello@kristyapproved.com` receives before any App Store submission; an MX record does
+  not prove it (2026-08-20).
+- `nothingConfirmsFood` (`22b35a8`): withholding refuses to endorse; it never silences a warning.
+- Category cache-hit (`95dbe78`..`3e3cdc6`): stamp on an OK OFF answer (including `other` and
+  not-found), never on a network failure; re-reads route through `retainProduct`.
+- `FOOD_CATEGORIES = new Set(['water'])`: the pattern is the plural `waters`, not the bare word
+  (`watermelons`); `productCategory.test.js`. Reach is held until the migration lands.
+- The do line is claim-locked to the entry's own fields (`f81a872`).
+- Scan path (`aa97026`, `f82cf9e`): ⛔ do not widen the product-category vocabulary to fix a
+  filing problem (the aisle is decided in `scanExtract.js`); guard `ingredients_text_en`;
+  `languageConflict` stays separate from `sameVerdict`; `TRANSLATION_EXPANSION_CEILING` is 2.0
+  with its sample recorded beside it.
+- Holding a stack: identify held work by SUBJECT (`git log --oneline --reverse
+  origin/main..HEAD`), never by hash or "ahead N". Urgent work cherry-picks past; the rebase
+  afterwards is not optional. A cleared blocker is not an approval.

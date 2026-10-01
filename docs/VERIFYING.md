@@ -399,3 +399,82 @@ Bold directives removed from `CLAUDE.md` in the 2026-09-21 condensation (~94k �
 
 - **50,000 characters** — the split-check script's own printed budget message, superseded the
   same day by the 40,000-character budget in `CLAUDE.md`'s own "This file's budget" section.
+
+---
+
+## From CLAUDE.md — Verifying
+
+
+*Account: `docs/VERIFYING.md`.*
+
+### The findings family — six members, one shape
+
+A check reports success because it cannot see the thing it is checking.
+
+1. An assertion over an empty collection passes. `nonEmpty(coll, name, min?)` in
+   `lib/testGuards.js`, bound at the collection (module-level), not at the loop.
+2. A boundary with no test is a comment. When a rule is the economics or the promises, ask what
+   would have gone red.
+3. Each site reasons correctly in isolation; the defect appears only when you add them up. Walk
+   the path end to end as a real visitor; the tell is a `false` that is constant. Two open: the
+   trip lifecycle and the shopping profile (`buildBaseline`'s input has always been empty).
+4. A harness that supplies the props verifies a wiring production never runs; only the real call
+   site proves the wiring. Make the absence loud (`Hero` requires a label AND a handler).
+5. A commit that omits the file is green for the same reason. `git add -A`; run
+   `node server/scripts/commitGuard.js`. `GUARDED` says where an untracked file is a problem and
+   must never also decide what gets READ.
+6. A deliverable blind to its subject looks finished. A shot whose argument is content must
+   assert the content and skip loudly (`requireCards`). Ask what the artifact would look like if
+   the thing it argues were absent. Shoot once, on a clean bucket.
+
+### Rules with teeth
+
+- A pipeline's exit code belongs to its last command: `set -o pipefail`. A green status is not
+  evidence the work happened; assert on the artifact (the built `.app` is newer than the run).
+- Every source gets fetched before it ships; a citation from memory is a defect.
+- A prompt's worked example becomes its output. Never write the forbidden phrase down; describe
+  the defect. A worked example never quotes the live corpus.
+- A comment asserting an invariant is not an invariant; if it is load-bearing, test it.
+- Verify mobile over CDP (`Emulation.setDeviceMetricsOverride`), not `--window-size`; geometry
+  off `getBoundingClientRect`, never eyeballed.
+- `vite build` compiles a dead reference happily; run the browser suites after any split.
+
+### The commands
+
+| Command | What it proves |
+| --- | --- |
+| `cd server && npm test` | **730 pass, 0 fail, on `main`, measured 2026-09-16** (`3e3cdc6`); 730 again 2026-09-21 on `main`. Record only a number you ran, say which branch, date it. |
+| `cd client && npx vite build` | Compiles. Not that anything renders. |
+| `node server/scripts/commitGuard.js` | No file this commit claims is untracked. |
+| `node server/scripts/claudeMdSplitCheck.js <ref>` | A `CLAUDE.md` split removed nothing: every **bold** directive at `<ref>` still appears verbatim in `CLAUDE.md` ∪ `docs/`. Proves nothing left the CORPUS, not that a rule stayed in this FILE. Refuses to report success on an empty extraction. |
+| `node server/scripts/listMatchProbe.js` | The corpus still answers the list correctly. Exits non-zero on a wrong match. Run after any alias, `perimeterId` or matcher change. |
+| `node client/test/dash.mjs` | Five dashboard states at 390px in the real app frame; hero rule and one-filled-action rule. |
+| `node client/test/shop.mjs` | Shop-mode geometry, type inversion, contrast off rendered colour, collapse mid-scroll, wake lock, return-to-position. |
+| `node client/test/cart.mjs` | Real CartMoment at 390px with real pointer clicks: 44px targets, no horizontal overflow, the collapse. |
+| `node client/test/composed.mjs` | What the list costs: lines per row, page height, the two honesty rules. |
+| `node client/test/loop.mjs` | The whole trip loop; fails if a seeded row arrives checked or loses its card. |
+| `node client/test/gate.mjs` | Drives the real surface; the only thing that caught a dead reference through a clean build. |
+| `cd client && node test/skim.mjs` / `test/shots.mjs` | Rendered line boxes for all cards at 390px. Both need the API server on :3001. |
+
+### Corpus and schema
+
+- `routes/counter.js` serves from the `counter_cards` table, so a curated card reaches iOS only
+  when the migration runs (see Pushing). Idempotent upsert on slug; `--dry-run` needs no
+  credentials and reports no insert count, so diff KB against table before running it.
+- `server/lib/counterCardLint.js` is the executable shape bar; Pass 3 must call `lintCard` before
+  persisting a generated card.
+- A tier note may not point at the tier (`TIER_NOTE_SELF_REFERENCE`); no two cards share a tier
+  sentence (`paidBoundary.test.js`). A tier note comments on the `doLines.json` line, not the KB
+  `decision` (`TIER_NOTE_ORPHANED`); a note matching neither is a known gap.
+- A fold is a removal AND a delete: declare retirement in `RETIRED` (curated) or
+  `RETIRED_GENERATED` (generated; a slug in the wrong list deletes nothing, a test checks). Move
+  the folded card's aliases onto its absorber and repoint any shortcut. Grep wider than the
+  shortcuts. A fold's real anchor may be a prompt, not a row.
+- Promote a generated card on demand or on corpus-correction, never on correctness; when
+  `use_count` climbs, promote. Keep at least one real generated row.
+- What the code writes must exist in the migrations: `schemaContract.test.js`.
+- The section depth floor is 8; a section that shrank by deletion does not get the same pass.
+- The deploy boundary is `server/` (Railway Root Directory); `deployBoundary.test.js` fences
+  `lib/`, `routes/`, `index.js`. Do lines: edit the table in `docs/do-lines-review.md`, re-run
+  `scripts/buildDoLines.js`, commit both. Name the table, always.
+- A git "permission denied" is OneDrive locking `.git`; retry. Never hand-edit the KB to recover.
