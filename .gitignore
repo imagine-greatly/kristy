@@ -56,3 +56,5 @@ client/test/shots-*/
 
 # graphify build artifacts (machine-local interpreter path in sidecars)
 graphify-out/
+
+.serena/
