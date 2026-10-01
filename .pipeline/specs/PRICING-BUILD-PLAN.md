@@ -105,3 +105,7 @@ Trip 1 and trip 2 work with no account. Finishing trip 2 opens the ask: numbers 
 - **A missed gate site** gives trip 3 free. Caught by S1's router-walk test before any iOS work.
 - **Nothing authed is provable until one SIWA exchange:** count, reconcile and purchase run only in tests. Caught by P0 gating the `main` push and I4's flip.
 - **The wire decode** (scout 3): if `fadedLengths` is required, S2 must keep the field or ship after the iOS build. Decided before S2 dispatch.
+
+
+## Approval
+APPROVED by Devon 2026-10-01, all decisions at the recommended defaults (D1–D5).
