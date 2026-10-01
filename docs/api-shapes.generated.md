@@ -98,16 +98,13 @@ Mounted at: `/api`
 ### GET /counter/cards/:slug/full  ·  optionalAuth
 
 - `404` → { error: String }
-- `200` → { card: ???, spent: Bool, premium: ??? }
-- `402` → { gated: Bool, card: ???, limit: ??? }
-- `200` → { card: ???, spent: Bool, remaining: ??? }
-- `200` → { card: ???, spent: Bool, remaining: ??? }
+- `200` → { card: ??? }
 - `500` → { error: String }
 
 ### GET /counter/cards/:slug  ·  optionalAuth
 
 - `404` → { error: String }
-- `200` → `forViewer(card, await viewerFor(req))` — **NEEDS HAND-CHECK** (built elsewhere)
+- `200` → `forViewer(card)` — **NEEDS HAND-CHECK** (built elsewhere)
 - `500` → { error: String }
 
 ### POST /counter/ask  ·  optionalAuth
@@ -431,8 +428,8 @@ Mounted at: `/api`
 
 ### GET /trips/seedable  ·  requireAuth
 
-- `200` → { seedable: ???, items: ???, completedAt: ??? }
-- `200` → { seedable: Bool, items: Double, completedAt: String? }
+- `200` → { seedable: ???, items: ???, completedAt: ???, completedTrips: ??? }
+- `200` → { seedable: Bool, items: Double, completedAt: String?, completedTrips: ??? }
 
 ## verdict.js
 
@@ -461,7 +458,7 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /portal` (billing.js) — opaque: NOT_CONFIGURED
 - `POST /chat` (chat.js) — spread: …
 - `POST /chat` (chat.js) — spread: result
-- `GET /counter/cards/:slug` (counter.js) — opaque: forViewer(card, await viewerFor(req))
+- `GET /counter/cards/:slug` (counter.js) — opaque: forViewer(card)
 - `POST /counter/ask` (counter.js) — opaque: result
 - `POST /counter/ask` (counter.js) — opaque: body
 - `POST /counter/ask` (counter.js) — spread: body
@@ -484,4 +481,4 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /trips/import` (trips.js) — opaque: out
 
-_57 handlers, 160 literal responses derived._
+_57 handlers, 157 literal responses derived._

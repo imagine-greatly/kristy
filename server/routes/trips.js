@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { requireAuth, supabase } from '../lib/supabase.js';
 import { getHaulScans } from '../lib/store.js';
+import { completedTrips, requireTripAllowance } from '../lib/tripGate.js';
 import {
   activeTrip,
   lastCompletedTrip,
@@ -28,6 +29,7 @@ import {
 
 const router = Router();
 
+// Ungated: Finish on trip 2 must land; that tap opens the ask.
 router.post('/trips/complete', requireAuth, async (req, res) => {
   try {
     const out = await completeTrip(req.user.id, supabase);
@@ -41,7 +43,7 @@ router.post('/trips/complete', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/trips/new', requireAuth, async (req, res) => {
+router.post('/trips/new', requireAuth, requireTripAllowance, async (req, res) => {
   try {
     const out = await startNewTrip(req.user.id, supabase);
     if (!out.ok) return res.status(500).json({ error: out.reason });
@@ -57,7 +59,7 @@ router.post('/trips/new', requireAuth, async (req, res) => {
  * NO `accept` PARAMETER. `/api/haul/next` took one because carry-forwards were a pick-list;
  * everything is preselected now, and the cart the seed lands in IS the editing surface. A
  * selection UI in front of a list you are about to edit is the same choice made twice. */
-router.post('/trips/next', requireAuth, async (req, res) => {
+router.post('/trips/next', requireAuth, requireTripAllowance, async (req, res) => {
   const userId = req.user.id;
   try {
     // The partial unique index would reject a second active trip anyway. This is the
@@ -92,6 +94,7 @@ router.post('/trips/next', requireAuth, async (req, res) => {
  * a sequence a second caller can get wrong.
  *
  * `requireAuth`, and there is no guest twin. Signing in is the entire premise. */
+// Ungated: max-and-cap-at-2 reconciliation at the ask must run before purchase.
 router.post('/trips/import', requireAuth, async (req, res) => {
   try {
     const out = await importGuestTrips(req.user.id, { trips: req.body?.trips }, supabase);
@@ -112,18 +115,21 @@ router.post('/trips/import', requireAuth, async (req, res) => {
 
 /** Is there a week worth repeating? The client hides the control when there is not,
  *  rather than offering a button that answers 409. */
+// Ungated: reports the completed count, including after the allowance is spent.
 router.get('/trips/seedable', requireAuth, async (req, res) => {
+  const completed = await completedTrips(req.user.id, supabase).catch(() => null);
   try {
-    const completed = await lastCompletedTrip(req.user.id, supabase);
+    const trip = await lastCompletedTrip(req.user.id, supabase);
     return res.json({
-      seedable: Boolean(completed),
-      items: completed?.items?.filter((i) => i.source !== 'swap').length || 0,
-      completedAt: completed?.completed_at || null,
+      seedable: Boolean(trip),
+      items: trip?.items?.filter((i) => i.source !== 'swap').length || 0,
+      completedAt: trip?.completed_at || null,
+      completedTrips: completed,
     });
   } catch {
     // Degrade to "no", never to an error: a missing button is a smaller failure than a
     // cart that will not render.
-    return res.json({ seedable: false, items: 0, completedAt: null });
+    return res.json({ seedable: false, items: 0, completedAt: null, completedTrips: completed });
   }
 });
 

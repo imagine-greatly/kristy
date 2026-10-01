@@ -9,6 +9,7 @@ import {
   clearPendingSwaps,
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
+import { requireTripAllowance } from '../lib/tripGate.js';
 import { generateList, mergePendingSwaps, listSignature, canonicalItem, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
@@ -125,7 +126,7 @@ async function persist(userId, patch) {
   }
 }
 
-router.get('/list', requireAuth, async (req, res) => {
+router.get('/list', requireAuth, requireTripAllowance, async (req, res) => {
   const userId = req.user.id;
   try {
     const premium = await premiumForReq(req);
@@ -207,7 +208,7 @@ router.get('/list', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/list', requireAuth, async (req, res) => {
+router.post('/list', requireAuth, requireTripAllowance, async (req, res) => {
   const userId = req.user.id;
   const clean = sanitizeList(req.body?.list);
   if (!clean) return res.status(400).json({ error: 'list is required' });
@@ -240,7 +241,7 @@ router.post('/list', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/list/rebuild', requireAuth, async (req, res) => {
+router.post('/list/rebuild', requireAuth, requireTripAllowance, async (req, res) => {
   const userId = req.user.id;
   try {
     const premium = await premiumForReq(req);
@@ -266,19 +267,18 @@ router.post('/list/rebuild', requireAuth, async (req, res) => {
 });
 
 // POST /api/list/compose  { instruction, mode?: 'edit' | 'build' }
-// The conversational editor: natural language → a list edit. PREMIUM only (reads
-// premium from the DB, never the body) — free users get a Kristy-voiced, in-card
-// nudge (no wall). The one model call is claim-safe: it emits grocery item names +
+// The conversational editor: natural language → a list edit, within the trip allowance
+// or with a subscription. The one model call is claim-safe: it emits grocery item names +
 // sections + a one-line summary, and we apply add/remove deterministically.
-router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
+router.post('/list/compose', requireAuth, requireTripAllowance, userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const instruction = String(req.body?.instruction || '').trim();
   const mode = req.body?.mode === 'build' ? 'build' : 'edit';
   if (!instruction) return res.status(400).json({ error: 'instruction is required' });
 
   try {
-    // A BUDGET, NOT A GATE. Building a list is building a list, and the list is free — a
-    // guest already got this. Free callers get their own daily ceiling; see
+    // A BUDGET, separate from the trip gate. Non-premium callers within the allowance
+    // get their own daily ceiling; see
     // LIST_COMPOSE_FREE_LIMIT for why it is twelve a day rather than an hourly bucket.
     const premium = await premiumForReq(req);
     if (!premium && listComposeLimited(userId)) {
@@ -341,7 +341,7 @@ router.post('/list/compose', requireAuth, userRateLimit, async (req, res) => {
   }
 });
 
-router.post('/list/swaps', requireAuth, async (req, res) => {
+router.post('/list/swaps', requireAuth, requireTripAllowance, async (req, res) => {
   const userId = req.user.id;
   const swaps = Array.isArray(req.body?.swaps)
     ? req.body.swaps
@@ -368,9 +368,7 @@ router.post('/list/swaps', requireAuth, async (req, res) => {
    through the SAME deterministic specification, so a photographed list and a pasted
    one produce the same quality of cart.
 
-   Not premium-gated. Reading a label with vision is free for everyone including
-   guests (it's the acquisition hook); reading a shopping list is the same act, and
-   gating it would make importing feel like a toll on work the shopper already did.
+   The signed-in door requires a trip allowance or subscription; guest imports stay free.
    `premium` is still passed through, so the constraint-tuned specifics stay a paid
    capability exactly as they are in generateList.
 
@@ -388,7 +386,7 @@ async function rawItemsFromRequest(req) {
   return parseListText(req.body?.text);
 }
 
-router.post('/list/import', requireAuth, userRateLimit, imageUpload.single('image'), async (req, res) => {
+router.post('/list/import', requireAuth, requireTripAllowance, userRateLimit, imageUpload.single('image'), async (req, res) => {
   /* `req.user.id`, NOT `req.userId`. This route read `req.userId`, which `requireAuth` has never
      set — it sets `req.user` and nothing else, and no middleware anywhere in this server assigns
      `req.userId`. So `userId` was `undefined` on EVERY request: `getShoppingList(undefined)`
