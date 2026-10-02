@@ -4,6 +4,9 @@ import { supabase } from './supabase.js';
 /* Admin resolution, approved by Devon 2026-10-01 (PRICING-BUILD-PLAN S1).
  * PRICING-MODEL §2's "all four /trips/*" predates the five-route file: gate all
  * six list routes and only /trips/new and /trips/next, after authentication.
+ * Superseded by Ruling F (G1, Devon 2026-10-02): lists are free to create and edit, so
+ * only POST /trips/new (starting a trip is shop mode) is gated; the six list routes and
+ * /trips/next are open.
  * /trips/complete stays open so Finish on trip 2 lands and opens the ask.
  * /trips/import stays open for max-and-cap-at-2 reconciliation before purchase.
  * /trips/seedable stays open because it reports the completed count.

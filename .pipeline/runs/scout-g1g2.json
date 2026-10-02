@@ -1,0 +1,7 @@
+[
+  {"q": "Every call site of canRunATrip or the trip gate middleware in server/routes/list.js and server/routes/trips.js, with path:line and the route each guards", "terms": ["canRunATrip", "tripGate"], "repo": "/Users/m1/kristy"},
+  {"q": "The GATED and UNGATED expected route sets in server/test/acceptance/tripGateRoutes.test.js or server/lib/tripGateRoutes.test.js, path:line", "terms": ["GATED", "UNGATED"], "repo": "/Users/m1/kristy"},
+  {"q": "Which server endpoints iOS calls on shop entry, check-off and Finish (KristyAPI.swift functions and paths, and the ShopMode call sites)", "terms": ["trips/new", "enterShopMode", "trips/complete"], "repo": "/Users/m1/kristy-ios"},
+  {"q": "Everything that enforces the lapsed read-only list lock on iOS: LapsedList, the R123 counter-add guard, LapsedFlowUITests test 2, purchase_rules.sh anchors, the seed guard near HomeSurface.swift:489, path:line each", "terms": ["Lapsed", "R123", "isSpent", "lapsed"], "repo": "/Users/m1/kristy-ios"},
+  {"q": "enterShopMode definition and how isSpent presents the purchase ask, path:line", "terms": ["enterShopMode", "isSpent"], "repo": "/Users/m1/kristy-ios"}
+]

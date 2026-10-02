@@ -9,7 +9,6 @@ import {
   clearPendingSwaps,
 } from '../lib/store.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { requireTripAllowance } from '../lib/tripGate.js';
 import { generateList, mergePendingSwaps, listSignature, canonicalItem, EMPTY_SIGNALS } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
@@ -126,7 +125,7 @@ async function persist(userId, patch) {
   }
 }
 
-router.get('/list', requireAuth, requireTripAllowance, async (req, res) => {
+router.get('/list', requireAuth,async (req, res) => {
   const userId = req.user.id;
   try {
     const premium = await premiumForReq(req);
@@ -208,7 +207,7 @@ router.get('/list', requireAuth, requireTripAllowance, async (req, res) => {
   }
 });
 
-router.post('/list', requireAuth, requireTripAllowance, async (req, res) => {
+router.post('/list', requireAuth,async (req, res) => {
   const userId = req.user.id;
   const clean = sanitizeList(req.body?.list);
   if (!clean) return res.status(400).json({ error: 'list is required' });
@@ -241,7 +240,7 @@ router.post('/list', requireAuth, requireTripAllowance, async (req, res) => {
   }
 });
 
-router.post('/list/rebuild', requireAuth, requireTripAllowance, async (req, res) => {
+router.post('/list/rebuild', requireAuth,async (req, res) => {
   const userId = req.user.id;
   try {
     const premium = await premiumForReq(req);
@@ -270,7 +269,7 @@ router.post('/list/rebuild', requireAuth, requireTripAllowance, async (req, res)
 // The conversational editor: natural language → a list edit, within the trip allowance
 // or with a subscription. The one model call is claim-safe: it emits grocery item names +
 // sections + a one-line summary, and we apply add/remove deterministically.
-router.post('/list/compose', requireAuth, requireTripAllowance, userRateLimit, async (req, res) => {
+router.post('/list/compose', requireAuth,userRateLimit, async (req, res) => {
   const userId = req.user.id;
   const instruction = String(req.body?.instruction || '').trim();
   const mode = req.body?.mode === 'build' ? 'build' : 'edit';
@@ -341,7 +340,7 @@ router.post('/list/compose', requireAuth, requireTripAllowance, userRateLimit, a
   }
 });
 
-router.post('/list/swaps', requireAuth, requireTripAllowance, async (req, res) => {
+router.post('/list/swaps', requireAuth,async (req, res) => {
   const userId = req.user.id;
   const swaps = Array.isArray(req.body?.swaps)
     ? req.body.swaps
@@ -386,7 +385,7 @@ async function rawItemsFromRequest(req) {
   return parseListText(req.body?.text);
 }
 
-router.post('/list/import', requireAuth, requireTripAllowance, userRateLimit, imageUpload.single('image'), async (req, res) => {
+router.post('/list/import', requireAuth,userRateLimit, imageUpload.single('image'), async (req, res) => {
   /* `req.user.id`, NOT `req.userId`. This route read `req.userId`, which `requireAuth` has never
      set — it sets `req.user` and nothing else, and no middleware anywhere in this server assigns
      `req.userId`. So `userId` was `undefined` on EVERY request: `getShoppingList(undefined)`

@@ -13,13 +13,13 @@ const [{ default: list }, { default: trips }, { default: haul }] = await Promise
   import('../routes/haul.js'),
 ]);
 
-const GATED = nonEmpty([
-  'GET /list', 'POST /list', 'POST /list/rebuild', 'POST /list/compose',
-  'POST /list/swaps', 'POST /list/import', 'POST /trips/new', 'POST /trips/next',
-], 'expected gated routes', 8);
+// Ruling F (G1, 2026-10-02): list creation and editing are free; starting a trip is shop mode.
+const GATED = nonEmpty(['POST /trips/new'], 'expected gated routes', 1);
 const UNGATED = nonEmpty([
+  'GET /list', 'POST /list', 'POST /list/rebuild', 'POST /list/compose',
+  'POST /list/swaps', 'POST /list/import', 'POST /trips/next',
   'POST /trips/complete', 'POST /trips/import', 'GET /trips/seedable', 'GET /haul',
-], 'expected ungated routes', 4);
+], 'expected ungated routes', 11);
 const routes = nonEmpty([list, trips, haul].flatMap((router) => router.stack
   .filter((layer) => layer.route)
   .flatMap(({ route }) => Object.keys(route.methods).filter((method) => route.methods[method])
@@ -75,7 +75,7 @@ function fakeClient(completedCount) {
   return db;
 }
 
-test('all eight gated routes enforce trip allowance after auth and before every handler', () => {
+test('the gated route enforces trip allowance after auth and before every handler', () => {
   assert.deepEqual(gatedRoutes.map(({ key }) => key).sort(), [...GATED].sort());
   for (const { key, handles } of gatedRoutes) {
     assert.equal(handles[0], requireAuth, `${key}: auth first`);

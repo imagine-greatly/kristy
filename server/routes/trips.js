@@ -43,6 +43,7 @@ router.post('/trips/complete', requireAuth, async (req, res) => {
   }
 });
 
+// The one gated route: starting a trip is shop mode (Ruling F, G1 2026-10-02).
 router.post('/trips/new', requireAuth, requireTripAllowance, async (req, res) => {
   try {
     const out = await startNewTrip(req.user.id, supabase);
@@ -59,7 +60,7 @@ router.post('/trips/new', requireAuth, requireTripAllowance, async (req, res) =>
  * NO `accept` PARAMETER. `/api/haul/next` took one because carry-forwards were a pick-list;
  * everything is preselected now, and the cart the seed lands in IS the editing surface. A
  * selection UI in front of a list you are about to edit is the same choice made twice. */
-router.post('/trips/next', requireAuth, requireTripAllowance, async (req, res) => {
+router.post('/trips/next', requireAuth, async (req, res) => {
   const userId = req.user.id;
   try {
     // The partial unique index would reject a second active trip anyway. This is the
