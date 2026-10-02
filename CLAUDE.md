@@ -77,15 +77,17 @@ Account: `docs/DECISIONS.md`, “What Kristy is”.
 
 1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-09-07: ground
    is solar kraft `#CFBA8E`, card is `#F5F1E6`, green-black ink, green / ochre / orange food
-   ladder, `Fraunces` for serif. Forest green and brass live only on the logo's plate (icon,
-   scan corner mark); brass off it is forbidden (2.08:1 on paper, 1.24:1 on kraft):
+   ladder, `Fraunces` for serif. Ruled 2026-10-02: the olive seal (`KristySealCoin`, no words) is
+   the logo and app icon, on kraft; the forest `#14472F` plate no longer carries it (asset
+   install pending A2). Brass appears only as struck metal inside the seal artwork, an image
+   asset; never a UI colour, text, rule or fill. No dark scheme, kraft only:
    `kristy-ios/docs/ios-specs/paper.md` (§0 premise). Recorded in three places, all three or
    none: `Brand/tokens.json` `_stance`, `kristy-ios/CLAUDE.md`, here. `palette_mirror.sh` must
    not be loosened. The frozen `client/src` keeps the old brand. "Never invent" still binds
    every colour authored from here on.
 2. **The claim lock is law.** Health/ingredient claims trace to matched KB; tone only, no new concern/statistic/claim; whitelist before every Kristy-voice call.
 3. **No-treatment rule, symmetric.** Food never treats/manages/cures/prevents/lowers risk/causes anything; processing objections, user-set focuses never inferred, medical → doctor.
-4. **The stamp is earned.** Empty-landing seal only; static forest-plate scan-corner logo iff server `stamp` true, else empty.
+4. **The stamp is earned.** Empty-landing seal (flat spin) and the static seal at the scan corner iff server `stamp` true, else empty.
 5. **Never reshape the engine output.** `server/lib/verdictEngine.js` matched shape consumed directly, additive only.
 6. **Voice: zero first person.** `VOICE_SPEC.md`: no I/me/my/em-dash asides, half words; rephrase never delete science/concern/standard ownership, except no scan-card tier.
 7. **One verdict per headline; accuracy outranks firmness.** TYPE/USE CASE split stays, budget/stock/time retreats; false mechanism = wrong claim (`counterCardLint.js`).
