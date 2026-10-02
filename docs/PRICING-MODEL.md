@@ -32,11 +32,13 @@ disagree on nearly every point. Where a section says what exists today it is mar
   can be specific. Trip 3 is a **reminder**, not the ask.
 - **After the trial the Counter stays free**: full cards, the ask, scanning. **Making a list
   and walking a trip are members only.**
+  ⚠️ **Superseded 2026-10-02 by Ruling F** (Devon): "free users can edit and create their lists but they can only put them to use in shopmode which is paid, the creation of their list encourages buying shop mode". Lists (create/edit/compose/seed) are FREE; only walking a trip (shop mode, gate `POST /trips/new`) is members only. Shipped kristy `2caa6a6`; iOS: G2.
 - ⚠️ **THE HAUL IS FREE TOO** (ruled 2026-08-14, superseding "the Haul is members only" as
   first stated). It is a record of what they already did, and **withholding it is punitive
   rather than persuasive** — its value comes from trips they can no longer take, which is the
   same argument as the greyed list. **What stays locked is SEEDING**, because "same as last
   week" builds an active trip, and an active trip is the list. See §4.
+  ⚠️ **Superseded 2026-10-02 by Ruling F:** seeding (`POST /trips/next`) is FREE too; the haul is free (ruled in `5cf8330`); the only trip-allowance gate is `POST /trips/new` (starting a trip = shop mode). `/trips/complete`, `/trips/import`, `/trips/seedable`, `/haul` ungated.
 - **$5.99/month, $44.99/year.**
 
 ### Why the Counter stays free — a conversion argument, not generosity
@@ -62,6 +64,8 @@ Not one free item. Not the list without cards. Not a limited trip. Not a three-r
 **The moment the list works at all for free, the trial stops meaning anything and the model
 collapses back into freemium.** The list is binary: a member has it, a lapsed shopper reads a
 dead copy of their last one. There is no middle setting and no experiment that adds one.
+
+⚠️ **Superseded 2026-10-02 by Ruling F:** the binary is now shop mode, not the list. Free shoppers create and edit lists (the list is what encourages buying shop mode); a lapsed shopper no longer reads a dead copy. "No partial list" still holds: the free list is whole, never partial; the paid, all-or-nothing line is shop mode (`POST /trips/new`).
 
 ---
 
@@ -212,6 +216,7 @@ What that costs, concretely:
 
 **Gains a gate it has never had:** `GET/POST /api/list`, `/list/rebuild`, `/list/compose`,
 `/list/import`, all four `/trips/*`, and `/haul`.
+⚠️ **Superseded 2026-10-02 by Ruling F (kristy `2caa6a6`, building on `5cf8330`):** the list routes (`GET/POST /list`, `/list/rebuild`, `/list/compose`, `/list/swaps`, `/list/import`) and `POST /trips/next` are FREE. `POST /trips/new` is the only trip-allowance gate. `/trips/complete`, `/trips/import`, `/trips/seedable` and `/haul` are ungated (`/haul` free, as already ruled in `5cf8330`, overriding the wording above).
 ⚠️ **The list has never been gated at all, and one test actively asserts that.**
 `cartFree.test.js` greps everything a shopper reads across `client/src` for a save-list ask and
 fails if one appears. Under this model that test asserts the opposite of policy — on a client
@@ -479,6 +484,8 @@ never happened.**
 ## 4. SURFACE BY SURFACE — WHAT A LAPSED SHOPPER SEES
 
 Lapsed = finished trip 2, did not buy. Guest or member; today, always guest.
+
+⚠️ **Superseded 2026-10-02 by Ruling F:** the lapsed dashboard below (greyed, non-interactive last list) no longer applies. A lapsed shopper creates and edits lists freely; only starting a trip (shop mode, `POST /trips/new`) asks for membership. iOS: G2 removes the read-only list.
 
 ### On launch
 

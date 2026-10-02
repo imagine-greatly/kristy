@@ -908,6 +908,7 @@ turns it off.
   in a schema file.**
 - Free = scan + the universal layer + the counter's free layer + **the whole list**,
   always. Paid = personalized note, focus/constraint-aware cart, haul read.
+  ⚠️ **Superseded 2026-10-02 by Ruling F** (Devon): "free users can edit and create their lists but they can only put them to use in shopmode which is paid, the creation of their list encourages buying shop mode". After trial COUNTER FREE (full cards/ask/scans); lists free (create/edit/compose/seed), shop mode members only (gate: `POST /trips/new`); retire `DEPTH_FIELDS`/`summarize()`/meter/teaser; haul free. This supersedes the 2026-08-14 "making a list and walking a trip are members only" and "seeding locked" (`docs/PRICING-MODEL.md` §0). Shipped kristy `2caa6a6`; iOS: G2. "Haul read" paid above is likewise superseded: haul free.
 - **BUILDING A CART FROM A SENTENCE IS FREE, BEHIND A BUDGET — NOT A GATE.** It was premium
   on both doors (`/api/list/compose` and the `looksLikeCartCommand` branch in chat), and a
   signed-out GUEST could already do it through `composeGuestList`. So signing up bought a
