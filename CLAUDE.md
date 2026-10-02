@@ -155,7 +155,7 @@ Phone/email rules: companion “Phone sign-in”.
 ### Money
 *`docs/PRICING-MODEL.md`: locked/unbuilt; rules live until lands. Read binding §0–§3a before trial/count/ask/entitlement; verbatim companion “Money”.*
 
-- After trial COUNTER FREE (full cards/ask/scans), lists/walking members only; retire `DEPTH_FIELDS`/`summarize()`/meter/teaser; haul free, seeding locked.
+- After trial COUNTER FREE (full cards/ask/scans); Ruling F (2026-10-02): lists free (create/edit/compose/seed), shop mode members only (gate: `POST /trips/new`); retire `DEPTH_FIELDS`/`summarize()`/meter/teaser; haul free.
 - No partial list ever; counter no ask anywhere; `evaluatePremium` zero change; ask reconciliation `POST /trips/import`: **max and cap at 2 — `max(server, min(2, max(device, server)))`, never subtract, never re-arm.**
 - Nobody buys today: `canPurchase` = `identity == .member`, all guests, no SIWA token exchange; RevenueCat built (2026-08-15), never rebuild.
 - Today server: free summary (eyebrow/headline/do line/cart pick/tier sentence), scans/unlimited ask/browse/list; paid `why`/`look_for`/`watch_out`/`detail`/`kristy_take`/`labels_decoded`/`sources`, stripped pre-wire `summarize()`/`forViewer()`.
