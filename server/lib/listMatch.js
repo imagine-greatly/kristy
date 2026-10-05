@@ -17,7 +17,7 @@
 // matches nothing simply gets no card, which costs one KB scan of an in-memory array and
 // zero model calls. The gate is a cost control on a path that has no cost.
 
-import { scoreEntries, scorePool, pickEntries, perimeterKb, isPick } from './perimeter.js';
+import { scoreEntries, scorePool, pickEntries, perimeterKb, isPick, typeContradicts } from './perimeter.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
 import { logCounterGap } from './counterGaps.js';
 
@@ -182,51 +182,8 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
 
    It is still a veto and never a score, and this is the one place a state is inferred rather
    than read. Adding a second implicit state is the same deliberate act as widening the list. */
-export const STATES = Object.freeze({
-  frozen: /\bfrozen\b/,
-  canned: /\bcanned\b|\btinned\b|\bin a can\b/,
-  dried: /\bdried\b|\bdry\b(?![- ](?:farm|age|roast|brin|rub|cur))/,
-  fresh: /\bfresh\b/,
-});
-
-export function statesIn(text) {
-  const t = ` ${String(text || '').toLowerCase()} `;
-  const out = new Set();
-  for (const [name, re] of Object.entries(STATES)) if (re.test(t)) out.add(name);
-  return out;
-}
-
-// The one section whose cards are implicitly about the fresh thing. See the STATES block.
-const IMPLICITLY_FRESH_SECTION = 'produce';
-
-/**
- * The states a CARD is about — read from its own title and aliases, never hand-assigned.
- *
- * The single exception is the produce section: a produce card whose own text names no state
- * is about the fresh thing, so it reads as {fresh}. Every other card with no state text reads
- * as none, which keeps the both-sides rule silent for it exactly as before.
- */
-export function cardStates(entry) {
-  const read = statesIn([entry?.title || '', ...(entry?.aliases || [])].join(' '));
-  if (read.size === 0 && sectionForCategory(entry?.category) === IMPLICITLY_FRESH_SECTION) {
-    read.add('fresh');
-  }
-  return read;
-}
-
-/**
- * True when the item's preparation state contradicts the card's.
- *
- * Silent when either side names no state at all, which is the common case.
- */
-export function stateContradicts(name, entry) {
-  const want = statesIn(name);
-  if (!want.size) return false;
-  const has = cardStates(entry);
-  if (!has.size) return false;
-  for (const s of want) if (has.has(s)) return false;
-  return true;
-}
+// Kept as exports for callers/probes; the implementation now guards shared scoring.
+export { STATES, statesIn, cardStates, stateContradicts } from './perimeter.js';
 
 /**
  * The card a written grocery item resolves to, or null.
@@ -249,7 +206,6 @@ export function matchItemToCard(name) {
     if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
     if (kindFor(c.entry.id) === 'home') continue;
     if (NON_AISLE_SECTIONS.has(sectionForCategory(c.entry.category))) continue;
-    if (stateContradicts(q, c.entry)) continue;
     if (!aliasNamesHead(q, c.entry)) continue;
     return {
       slug: c.entry.id,
@@ -274,7 +230,6 @@ export function matchItemToPick(name, pool = perimeterKb.entries || []) {
   if (!q) return null;
   for (const c of scorePool(q, pickEntries(pool), CANDIDATES)) {
     if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
-    if (stateContradicts(q, c.entry)) continue;
     if (!c.entry.decision) continue;
     if (!aliasCoversRow(q, c.entry)) continue;
     return { id: c.entry.id, line: c.entry.decision };
@@ -404,7 +359,8 @@ export function cardForItem(item, pool) {
     authored &&
     !isPick(authored) &&
     kindFor(authored.id) !== 'home' &&
-    !NON_AISLE_SECTIONS.has(sectionForCategory(authored.category))
+    !NON_AISLE_SECTIONS.has(sectionForCategory(authored.category)) &&
+    !typeContradicts(item?.name, authored)
   ) {
     return { slug: authored.id, section: sectionForCategory(authored.category), score: null };
   }

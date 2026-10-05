@@ -31,7 +31,7 @@ import { dirname, join, resolve, relative, sep } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SERVER = resolve(__dirname, '..');
 
-/** Every .js file the server actually runs: lib/, routes/, and index.js. */
+/** Every runtime .js file, including any accidentally placed in the test directory. */
 function runtimeFiles() {
   const out = [];
   const walk = (dir) => {
@@ -50,6 +50,7 @@ function runtimeFiles() {
   };
   walk(join(SERVER, 'lib'));
   walk(join(SERVER, 'routes'));
+  walk(join(SERVER, 'test'));
   out.push(join(SERVER, 'index.js'));
   return out;
 }
@@ -111,7 +112,7 @@ test('the script exemption is a listed set, not a shape', () => {
   });
   assert.deepEqual(
     dirs.sort(),
-    ['lib', 'routes', 'scripts'],
+    ['lib', 'routes', 'scripts', 'test'],
     'a new top-level directory in server/ is not covered by the boundary test above — add it to runtimeFiles()'
   );
 });

@@ -73,6 +73,83 @@ export const NO_ANSWER =
   perimeterKb.no_answer ||
   'No solid answer on that one yet. Better said than guessed.';
 
+// Retrieval vetoes shared by counter cards and list cards/picks. A wrong type must
+// disappear before ranking: lowering its score still lets it win an empty aisle.
+export const STATES = Object.freeze({
+  frozen: /\bfrozen\b/,
+  canned: /\bcanned\b|\btinned\b|\bin a can\b/,
+  dried: /\bdried\b|\bdry\b(?![- ](?:farm|age|roast|brin|rub|cur))/,
+  fresh: /\bfresh\b/,
+});
+
+export function statesIn(text) {
+  const t = String(text || '').toLowerCase();
+  return new Set(Object.keys(STATES).filter((s) => STATES[s].test(t)));
+}
+
+export function cardStates(entry) {
+  const read = statesIn([entry?.title || '', ...(entry?.aliases || [])].join(' '));
+  // The produce aisle is the sole implicit fresh state; pantry/dairy/meat are not.
+  if (!read.size && entry?.category === 'produce') read.add('fresh');
+  return read;
+}
+
+export function stateContradicts(name, entry) {
+  const want = statesIn(name);
+  const has = cardStates(entry);
+  return want.size > 0 && has.size > 0 && ![...want].some((s) => has.has(s));
+}
+
+// Explicit product distinctions, not a per-query or per-card exception list.
+// States retain the existing both-sides rule. A named cut/form instead requires
+// coverage: a generic chicken alias does not authorize a whole bird for breast.
+const TYPES = [
+  {
+    breast: /\bbreasts?\b|\bwhite meat\b/,
+    thigh: /\bthighs?\b|\bdark meat\b/,
+    drumstick: /\bdrumsticks?\b/,
+    wing: /\bwings?\b/,
+    whole: /\bwhole (?:chicken|turkey|bird|duck|goose)\b/,
+  },
+  {
+    ground: /\bground\b|\bminced\b/,
+    deli: /\bdeli\b|\bcold cuts\b|\blunch meat\b|\bsliced (?:turkey|chicken|ham)\b/,
+    whole: /\bwhole (?:chicken|turkey|bird|duck|goose)\b/,
+  },
+  {
+    pretzel: /\bpretzel\b/,
+    sourdough: /\bsourdough\b/,
+    whole_wheat: /\bwhole wheat\b/,
+  },
+];
+
+const readTypes = (text, group) => new Set(
+  Object.keys(group).filter((t) => group[t].test(String(text || '').toLowerCase()))
+);
+
+export function typeContradicts(name, entry) {
+  if (stateContradicts(name, entry)) return true;
+  // Ignore trailing label notes, just as the list's head-noun guard does.
+  const subject = String(name || '').split(/\s[—–-]\s|[:;(]/, 1)[0];
+  const wantStates = statesIn(subject);
+  // A can is never an unspecified counter item. Even a stateless chicken/milk
+  // card must explicitly cover cans before its bare food alias can retrieve it.
+  if (wantStates.has('canned') && !cardStates(entry).has('canned')) return true;
+  // The recommendation outranks vocabulary: breast appears in a thighs card's
+  // comparison and aliases but is not what its headline/cart action recommends.
+  const verdict = String(entry?.decision || '').split(/\b(?:than|instead of|rather than|not)\b|;/i, 1)[0];
+  const vocabulary = [entry?.title || '', ...(entry?.aliases || [])].join(' ');
+  for (const group of TYPES) {
+    const want = readTypes(subject, group);
+    if (!want.size) continue;
+    const pick = readTypes(entry?.cart_pick, group);
+    const headline = readTypes(verdict, group);
+    const has = pick.size ? pick : headline.size ? headline : readTypes(vocabulary, group);
+    if (![...want].some((t) => has.has(t))) return true;
+  }
+  return false;
+}
+
 /* ───────────────────────── Retrieval (deterministic, no model) ─────────────────────────
    Score each entry by how many of its alias phrases (and title words) appear in the
    question. Longer alias phrases weigh more. Returns the best matches above a floor, so
@@ -95,6 +172,7 @@ export function scorePool(question, entries, limit = 3) {
 
   const scored = [];
   for (const e of entries || []) {
+    if (typeContradicts(question, e)) continue;
     // ALIAS SCORE IS TRACKED SEPARATELY, and callers gate on it. A total of 2 is reachable
     // two completely different ways — one real alias hit, or two generic title words — and
     // the number alone cannot tell them apart. "is guanciale worth buying" scored 2 against
@@ -115,6 +193,27 @@ export function scorePool(question, entries, limit = 3) {
     }
     const score = aliasScore + titleScore;
     if (score > 0) scored.push({ entry: e, score, aliasScore, titleScore });
+  }
+
+  // A bare noun can use ONE exact buying-question alias on an existing card.
+  // Only on an alias miss, never substring expansion: "oat milk" cannot steal
+  // "which milk should i buy". This keeps the hub-steal fix long and specific
+  // without spreading short generic aliases across the milk cards.
+  const bareWords = norm(question).split(' ');
+  if (bareWords.length <= 3 && bareWords.every((w) => w && !STOPWORDS.has(w))
+    && !scored.some((s) => s.aliasScore > 0)) {
+    const bare = norm(question);
+    const buyingAlias = `which ${bare} should i buy`;
+    const owners = (entries || []).filter((e) => !typeContradicts(question, e)
+      && [...(e.aliases || []), ...(e.asked_as || [])].some((a) => norm(a) === buyingAlias));
+    if (owners.length === 1) {
+      const e = owners[0];
+      const existing = scored.find((s) => s.entry === e);
+      if (existing) {
+        existing.aliasScore = 4;
+        existing.score += 4;
+      } else scored.push({ entry: e, score: 4, aliasScore: 4, titleScore: 0 });
+    }
   }
 
   scored.sort((a, b) => b.score - a.score);

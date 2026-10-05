@@ -90,6 +90,14 @@ export function inScope(query) {
   const hasSubject = COUNTER_SUBJECT.test(q) || GROCERY_SUBJECT.test(q);
   if (hasSubject) return { ok: true };
 
+  // The counter also accepts the list-noun shape. Unknown bare names must not
+  // require the grocery verb that the sentence fallback below requires. Keep
+  // this bounded and free of question/logistics scaffolding; the hard deny has
+  // already run, and retrieval can return the honest miss for an unknown noun.
+  const bareWords = q.toLowerCase().split(/\s+/);
+  if (bareWords.length <= 3 && bareWords.every((w) => /^[a-z][a-z-]*$/.test(w)
+    && !EMPTY.has(w))) return { ok: true };
+
   // A KNOWN FOOD NOUN CANNOT BE REQUIRED, and this is the correction that matters most in
   // this file. The first version demanded one, and rejected "how do I pick a good
   // cantaloupe" with "name the food" — while the shopper was naming the food. The word

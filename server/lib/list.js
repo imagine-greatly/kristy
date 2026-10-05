@@ -108,7 +108,7 @@ const PICKS = {
   },
   // ── Meat, fish, eggs ──
   chicken: {
-    name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'air_chilled_chicken',
+    name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'chicken_cuts_basics',
     why: 'More forgiving than breasts and cheaper per pound — hard to dry out.',
     alt: 'Or breasts if that’s what the house eats.',
     variants: {
@@ -118,7 +118,9 @@ const PICKS = {
     },
   },
   chicken_breast: {
-    name: 'Chicken breast', category: 'Protein', perimeterId: 'air_chilled_chicken',
+    // The available chicken cards recommend thighs or a whole bird. Keep the
+    // authored breast row, but leave its counter guidance as an honest miss.
+    name: 'Chicken breast', category: 'Protein',
     why: 'The lean anchor — portions clean and cooks fast.',
     variants: {
       short_on_time: { name: 'Rotisserie chicken', why: 'Already cooked — pull it apart and it feeds three meals.' },
