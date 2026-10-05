@@ -74,7 +74,7 @@ const GROCERY_SUBJECT =
  * Decide whether a query belongs to the counter at all.
  *
  * @param {string} query
- * @returns {{ ok: boolean, reason?: string }}
+ * @returns {{ ok: boolean, reason?: string, bare?: boolean }}
  *   ok:false with a reason the caller turns into ONE in-voice line — never an error
  *   state, and never an explanation of the rule that rejected it.
  */
@@ -93,10 +93,11 @@ export function inScope(query) {
   // The counter also accepts the list-noun shape. Unknown bare names must not
   // require the grocery verb that the sentence fallback below requires. Keep
   // this bounded and free of question/logistics scaffolding; the hard deny has
-  // already run, and retrieval can return the honest miss for an unknown noun.
+  // already run. This shape alone does not establish grocery intent: tag it so
+  // the ask pipeline uses retrieval only and returns an honest miss otherwise.
   const bareWords = q.toLowerCase().split(/\s+/);
   if (bareWords.length <= 3 && bareWords.every((w) => /^[a-z][a-z-]*$/.test(w)
-    && !EMPTY.has(w))) return { ok: true };
+    && !EMPTY.has(w))) return { ok: true, bare: true };
 
   // A KNOWN FOOD NOUN CANNOT BE REQUIRED, and this is the correction that matters most in
   // this file. The first version demanded one, and rejected "how do I pick a good

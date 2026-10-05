@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { nonEmpty } from '../lib/testGuards.js';
 import { inScope } from '../lib/counterScope.js';
 import { scoreEntries, scorePool, publicEntry } from '../lib/perimeter.js';
-import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
+import { answerCounterQuestion, NO_READ } from '../lib/counterAskPipeline.js';
 import { attachCards, cardForItem, entryById, matchItemToCard, matchItemToPick } from '../lib/listMatch.js';
 import { supabase } from '../lib/supabase.js';
 import { anthropic } from '../lib/anthropic.js';
@@ -77,11 +77,44 @@ const offline = {
 };
 mock.method(supabase, 'from', offline.from);
 mock.method(globalThis, 'fetch', () => { throw new Error('Probe must stay offline'); });
-mock.method(anthropic.messages, 'create', () => { throw new Error('Probe must not call a model'); });
+const model = mock.method(anthropic.messages, 'create', () => { throw new Error('Probe must not call a model'); });
+
+for (const query of nonEmpty([
+  'taylor swift', 'bitcoin', 'hello', 'weather tomorrow', 'stock prices',
+  'car insurance', 'iphone charger', 'kombucha',
+], 'bare misses that must never generate', 8)) {
+  test(`bare ask miss never generates: ${query}`, async () => {
+    const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'generator_called' }));
+    const modelCalls = model.mock.callCount();
+    const out = await answerCounterQuestion({
+      query, client: offline, ip: `bare-probe-${query}`, allowGeneration: true, generator,
+    });
+    assert.equal(generator.mock.callCount(), 0, `${query}: no generateCard`);
+    assert.equal(model.mock.callCount(), modelCalls, `${query}: no model`);
+    assert.deepEqual(inScope(query), { ok: true, bare: true });
+    assert.equal(out.card, null);
+    assert.equal(out.matched, false);
+    assert.equal(out.line, NO_READ);
+    assert.equal(out.reason, 'generation_disabled');
+  });
+}
+
+test('phrased grocery miss reaches the injected generator', async () => {
+  const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'insufficient' }));
+  const modelCalls = model.mock.callCount();
+  const out = await answerCounterQuestion({
+    query: 'how do I choose kombucha', client: offline, ip: 'phrased-probe', generator,
+  });
+  assert.equal(generator.mock.callCount(), 1);
+  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose kombucha');
+  assert.equal(model.mock.callCount(), modelCalls);
+  assert.equal(out.card, null);
+  assert.equal(out.reason, 'insufficient');
+});
 
 for (const [query, counterExpected, listExpected = counterExpected] of QUERIES) {
   test(`weekly probe: ${query}`, async () => {
-    assert.deepEqual(inScope(query), { ok: true }, `${query}: never a scope rejection`);
+    assert.equal(inScope(query).ok, true, `${query}: never a scope rejection`);
     const scored = scoreEntries(query, 3);
     // This is also the legacy perimeter route's deterministic response path.
     const entries = scored.map(({ entry }) => publicEntry(entry));

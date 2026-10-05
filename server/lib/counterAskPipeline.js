@@ -104,6 +104,7 @@ const NO_READ = 'No solid read on that one yet.';
  * @param {string} [p.ip]
  * @param {object} [p.client]        injectable Supabase client
  * @param {boolean} [p.allowGeneration=true]
+ * @param {function} [p.generator=generateCard] injectable card generator
  * @returns {Promise<object>} the response body
  */
 export async function answerCounterQuestion({
@@ -112,6 +113,7 @@ export async function answerCounterQuestion({
   ip = 'unknown',
   client = null,
   allowGeneration = true,
+  generator = generateCard,
 }) {
   const q = String(query || '').trim();
 
@@ -176,6 +178,13 @@ export async function answerCounterQuestion({
       topScore: top?.score ?? null,
     });
 
+  // Bare names can be groceries or off-topic text. Only a KB hit can answer
+  // them; a miss must never spend a generation slot or show an unrelated card.
+  if (scope.bare) {
+    logMiss(top ? 'weak' : 'miss');
+    return { card: null, matched: false, line: NO_READ, reason: 'generation_disabled' };
+  }
+
   /* ── 3. GENERATE, if there is budget for it. ── */
   const weakCurated = top ? { card: projectEntry(top.entry, { doLine: reviewed.get(top.entry.id)?.do || '' }), score: top.score } : null;
 
@@ -206,7 +215,7 @@ export async function answerCounterQuestion({
 
   if (generationLimited({ ip, userId })) return fallback('rate_limited');
 
-  const { card, attempts, reason } = await generateCard({
+  const { card, attempts, reason } = await generator({
     query: q,
     // The seed keeps the shopper's own wording — it is the Pass 5 authoring signal, and
     // normalizeQuestion would flatten exactly the part worth reading. Identity is still
