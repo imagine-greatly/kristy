@@ -11,32 +11,32 @@ import { supabase } from '../lib/supabase.js';
 import { anthropic } from '../lib/anthropic.js';
 
 const QUERIES = nonEmpty([
-  ['cereal', 'miss'],
-  ['granola', 'miss'],
+  ['cereal', 'breakfast_cereal'],
+  ['granola', 'breakfast_cereal'],
   ['oatmeal', 'oats_steelcut_rolled_instant'],
-  ['turkey', 'miss'],
-  ['ground turkey', 'miss'],
+  ['turkey', 'turkey_whole'],
+  ['ground turkey', 'ground_turkey'],
   ['deli turkey', 'deli_meat_uncured'],
-  ['chicken breast', 'miss'],
-  ['bacon', 'miss'],
-  ['bread', 'miss'],
-  ['sourdough', 'miss'],
-  ['pretzel bread', 'miss'],
-  ['whole wheat bread', 'label_multigrain_vs_whole_grain', 'miss'],
-  ['bagels', 'miss'],
-  ['tortillas', 'miss'],
-  ['pasta', 'miss'],
+  ['chicken breast', 'chicken_breast'],
+  ['bacon', 'bacon'],
+  ['bread', 'sandwich_bread'],
+  ['sourdough', 'sourdough'],
+  ['pretzel bread', 'pretzel_bread'],
+  ['whole wheat bread', 'sandwich_bread'],
+  ['bagels', 'bagels'],
+  ['tortillas', 'tortillas'],
+  ['pasta', 'pasta_dry'],
   ['rice', 'rice_arsenic'],
   ['peanut butter', 'nut_butter_ingredients'],
   ['yogurt', 'yogurt_plain_vs_flavored'],
   ['milk', 'whole_vs_reduced_fat_milk'],
-  ['oat milk', 'miss'],
+  ['oat milk', 'oat_milk'],
   ['cheese', 'cheese_real_vs_processed'],
   ['eggs', 'egg_labels'],
   ['butter', 'grassfed_butter'],
   ['olive oil', 'olive_oil_grades'],
   ['salmon', 'salmon_wild_vs_farmed'],
-  ['canned tuna', 'miss'],
+  ['canned tuna', 'canned_tuna'],
   ['apples', 'produce_apples_pears'],
   ['bananas', 'organic_worth_it_by_type'],
   ['spinach', 'organic_worth_it_by_type'],
@@ -47,7 +47,7 @@ const QUERIES = nonEmpty([
   ['ice cream', 'miss'],
   ['juice', 'miss', 'pick_juice'],
   ['soda', 'miss'],
-  ['coffee', 'miss'],
+  ['coffee', 'coffee_beans'],
   ['protein bar', 'miss'],
   ['hummus', 'miss'],
   ['salsa', 'miss'],
@@ -55,7 +55,7 @@ const QUERIES = nonEmpty([
   ['salad dressing', 'miss'],
   ['honey', 'honey_adulteration'],
   ['maple syrup', 'miss'],
-  ['hot dogs', 'miss'],
+  ['hot dogs', 'hot_dogs'],
   ['frozen pizza', 'miss'],
   ['baby food', 'miss'],
   ['kombucha', 'miss'],
@@ -133,7 +133,8 @@ test('named types cannot return a different cut, form or state, including cart p
   assert.ok(!breast.some((e) => e.id === 'chicken_cuts_basics'));
   assert.ok(!breast.some((e) => /thigh|whole chicken/i.test(e.cart_pick ?? '')));
   assert.notEqual(matchItemToCard('chicken breast')?.slug, 'chicken_cuts_basics');
-  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_cuts_basics' }), null);
+  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_breast' })?.slug, 'chicken_breast');
+  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_cuts_basics' })?.slug, 'chicken_breast', 'veto the thighs id, then retrieve the breast owner');
   assert.equal(matchItemToPick('chicken breast'), null);
   assert.ok(!scoreEntries('canned tuna', 100).some(({ entry }) => entry.id === 'fish_freshness_at_counter'));
   assert.notEqual(matchItemToCard('canned tuna')?.slug, 'fish_freshness_at_counter');

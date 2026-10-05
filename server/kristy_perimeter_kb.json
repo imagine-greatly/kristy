@@ -6217,6 +6217,708 @@
           "url": "https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/celery"
         }
       ]
+    },
+    {
+      "id": "sandwich_bread",
+      "title": "Sandwich bread",
+      "aliases": [
+        "sandwich bread",
+        "whole wheat sandwich bread",
+        "whole wheat bread",
+        "which bread"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which sandwich bread is whole wheat?",
+      "decision": "Whole wheat sandwich bread keeps the grain’s bran and germ.",
+      "why": "Whole wheat flour retains the grain’s natural proportions. That is the whole-food standard for sandwich bread.",
+      "short_answer": "US whole wheat bread uses whole wheat flour rather than ordinary refined flour. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
+      "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/136.180",
+        "https://www.law.cornell.edu/cfr/text/21/137.200",
+        "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+        "https://wholegrainscouncil.org/whole-grain-stamp"
+      ],
+      "kristy_take": "Whole wheat flour retains the grain’s natural proportions. That is the whole-food standard for sandwich bread.",
+      "cart_pick": "Whole wheat sandwich bread",
+      "buying_tips": [
+        "Check for whole wheat flour in the ingredients.",
+        "Without a stamp, use the flour names to check the loaf.",
+        "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements."
+      ],
+      "watch_out": [
+        "“Wheat” or “enriched” alone does not establish that the grain is whole.",
+        "A Basic Whole Grain Stamp allows more refined grain than whole grain."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Whole wheat",
+          "meaning": "Flour with wheat’s natural constituent proportions retained."
+        },
+        {
+          "term": "100% Whole Grain Stamp",
+          "meaning": "All grain ingredients are whole grain, with a minimum whole-grain amount per serving."
+        }
+      ],
+      "tier_note": "The flour names are documented label distinctions; choosing retained bran and germ is the whole-food standard.",
+      "asked_as": [
+        "which bread should i buy",
+        "how do you choose sandwich bread",
+        "what does enriched mean on sandwich bread"
+      ]
+    },
+    {
+      "id": "sourdough",
+      "title": "Sourdough bread",
+      "aliases": [
+        "sourdough",
+        "sourdough bread",
+        "naturally leavened sourdough bread"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you choose a traditionally fermented sourdough?",
+      "decision": "Sourdough fermented with a starter of wild yeast and bacteria.",
+      "why": "The whole-food standard favors starter fermentation. A sour flavor alone does not establish that process.",
+      "short_answer": "Traditional sourdough uses a flour-and-water starter containing wild yeasts and bacteria. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor.",
+      "detail": "Colorado State University Extension reports no US standard of identity for sourdough. Culture or starter may not be listed separately, so the baker can clarify the process. The fermentation review describes acid formation and leavening by microbes; it does not establish a health result for every retail loaf.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://extension.colostate.edu/resource/understanding-and-selecting-sourdough-for-health-benefits",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9524358/fullTextXML"
+      ],
+      "kristy_take": "The whole-food standard favors starter fermentation. A sour flavor alone does not establish that process.",
+      "cart_pick": "Starter-fermented sourdough bread",
+      "buying_tips": [
+        "Look for flour, water, salt, and a culture or starter.",
+        "Ask about the starter when the label does not list it separately.",
+        "Read for added vinegar or acetic acid; ask about fermentation rather than infer it from sour flavor."
+      ],
+      "watch_out": [
+        "The word sourdough alone does not establish traditional fermentation.",
+        "The archived review does not establish a health outcome for every loaf. Wheat sourdough still contains gluten."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Starter",
+          "meaning": "A flour-and-water culture containing wild yeast and bacteria."
+        },
+        {
+          "term": "Added vinegar or acetic acid",
+          "meaning": "Ingredients that can supply sour flavor; flavor alone does not verify starter fermentation."
+        }
+      ],
+      "tier_note": "Checking the starter identifies a documented fermentation process; preferring it is the whole-food standard.",
+      "asked_as": [
+        "how do you choose sourdough",
+        "what does starter mean on sourdough",
+        "what should a sourdough label say"
+      ]
+    },
+    {
+      "id": "pretzel_bread",
+      "title": "Pretzel bread",
+      "aliases": [
+        "pretzel bread",
+        "pretzel roll",
+        "pretzel rolls",
+        "alkaline dipped pretzel bread"
+      ],
+      "category": "bulk_pantry",
+      "question": "What should you check when buying pretzel bread?",
+      "decision": "Pretzel bread gets its crust from an alkaline bath before baking.",
+      "why": "The bath is a processing fact. The archived articles do not establish a health advantage.",
+      "short_answer": "A lye or baking-soda bath before baking produces the characteristic pretzel crust. Ask about the bath rather than judging the bread from its color alone.",
+      "detail": "The archived baking articles describe alkaline dipping before baking, including dough shaped into rolls. Lye and baking soda are different bath ingredients. These are culinary descriptions, with no comparative health study of pretzel bread.",
+      "evidence_tier": "time_tested",
+      "sources": [
+        "https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have",
+        "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
+      ],
+      "kristy_take": "The bath is a processing fact. The archived articles do not establish a health advantage.",
+      "cart_pick": "Alkaline-dipped pretzel bread",
+      "buying_tips": [
+        "Ask which bath the bakery uses before baking.",
+        "A baking-soda bath is another documented method when lye-dipped rolls are unavailable.",
+        "Ask whether the dark crust comes from dipping before baking."
+      ],
+      "watch_out": [
+        "The source set contains articles, not health trials. The crust does not establish a health benefit."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Alkaline bath",
+          "meaning": "A dip using lye or baking soda before baking to produce the characteristic crust."
+        }
+      ],
+      "tier_note": "Asking about the bath checks a traditional pretzel method documented in culinary articles; the tradition concerns the baking process.",
+      "asked_as": [
+        "how do you choose pretzel bread",
+        "what does lye dipped mean on pretzel rolls",
+        "what gives pretzel bread its brown crust"
+      ]
+    },
+    {
+      "id": "bagels",
+      "title": "Bagels",
+      "aliases": [
+        "bagel",
+        "bagels",
+        "boiled bakery bagels"
+      ],
+      "category": "bulk_pantry",
+      "question": "What should you ask before buying bagels?",
+      "decision": "Bagels boiled before baking have the traditional chewy exterior.",
+      "why": "Boiling describes how the bagel is made. The archived articles support texture facts, not health effects.",
+      "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
+      "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
+      "evidence_tier": "time_tested",
+      "sources": [
+        "https://www.tastingtable.com/1606040/why-boil-bagels-before-baking/",
+        "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
+      ],
+      "kristy_take": "Boiling describes how the bagel is made. The archived articles support texture facts, not health effects.",
+      "cart_pick": "Boiled bagels",
+      "buying_tips": [
+        "Ask the bakery about boiling before buying.",
+        "Without a process label, ask the baker rather than infer boiling from the shape.",
+        "Ask about the bath ingredients; baking soda changes alkalinity and browning."
+      ],
+      "watch_out": [
+        "Boiling and browning are processing and texture facts. The archived articles establish no health advantage."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Boiled before baking",
+          "meaning": "The traditional step that sets the chewy exterior."
+        }
+      ],
+      "tier_note": "Asking about the water bath checks traditional bagel making documented in culinary articles; the tradition concerns the baking process.",
+      "asked_as": [
+        "how do you choose bagels",
+        "how do you choose boiled bagels",
+        "does a darker bagel mean it was boiled"
+      ]
+    },
+    {
+      "id": "tortillas",
+      "title": "Corn vs. flour tortillas",
+      "aliases": [
+        "tortilla",
+        "tortillas",
+        "corn tortillas",
+        "flour tortillas",
+        "nixtamalized corn tortillas",
+        "corn tortilla",
+        "flour tortilla"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which tortillas should you choose, corn or flour?",
+      "decision": "Corn tortillas made from lime-treated corn, water, and salt.",
+      "why": "Masa comes from corn processed with limewater. A simple corn recipe is the whole-food standard here.",
+      "short_answer": "Traditional corn tortillas use corn cooked and soaked in alkaline limewater, then ground into masa. Flour tortillas typically use wheat flour, water, fat, salt, and leavening.",
+      "detail": "Masa harina is dried, ground nixtamalized corn dough. Corn flour alone is a different ingredient. Packaged corn tortillas can also contain wheat; the ingredient list shows the blend. The archived nixtamalization paper measures laboratory digestibility under particular processing conditions, not health outcomes from retail tortillas.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.tastingtable.com/1066360/masa-harina-vs-corn-flour-whats-the-difference/",
+        "https://www.healthline.com/nutrition/corn-vs-flour-tortilla",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11811476/fullTextXML"
+      ],
+      "kristy_take": "Masa comes from corn processed with limewater. A simple corn recipe is the whole-food standard here.",
+      "cart_pick": "Corn tortillas",
+      "buying_tips": [
+        "Read the list for masa or masa harina, water, and salt.",
+        "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
+        "Check whether the corn tortilla also lists wheat flour."
+      ],
+      "watch_out": [
+        "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
+        "The laboratory paper does not establish a health effect for a supermarket tortilla."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Masa harina",
+          "meaning": "Dried, ground corn dough made after nixtamalization."
+        },
+        {
+          "term": "Nixtamalized",
+          "meaning": "Corn cooked and soaked in alkaline limewater before grinding."
+        }
+      ],
+      "tier_note": "Masa and masa harina identify documented corn processing; choosing the simple corn recipe is the whole-food standard.",
+      "asked_as": [
+        "which tortillas should you buy",
+        "are corn or flour tortillas different",
+        "what should a corn tortilla ingredient list say"
+      ]
+    },
+    {
+      "id": "turkey_whole",
+      "title": "Whole turkey",
+      "aliases": [
+        "whole turkey",
+        "whole roasting turkey",
+        "which turkey"
+      ],
+      "category": "poultry",
+      "question": "What should you check on a whole turkey label?",
+      "decision": "Whole turkey without an injected basting solution.",
+      "why": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
+      "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
+      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
+      ],
+      "kristy_take": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
+      "cart_pick": "Whole turkey without added solution",
+      "buying_tips": [
+        "Read the solution ingredients beside the product name.",
+        "A frozen whole turkey can be checked for the same added-solution statement.",
+        "Read retained-water wording separately from the flavoring-solution statement."
+      ],
+      "watch_out": [
+        "“Natural” can appear on products containing a flavoring solution.",
+        "Retained water from chilling and an injected flavoring solution are different label disclosures."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Basted or self-basted",
+          "meaning": "Injected or marinated with a basting solution."
+        },
+        {
+          "term": "Fresh",
+          "meaning": "A regulated temperature-history description, separate from formulation."
+        }
+      ],
+      "tier_note": "Basting and added-solution statements describe documented processing; choosing a plain bird is the whole-food standard.",
+      "asked_as": [
+        "how do you choose a whole turkey",
+        "what does self basted mean on whole turkey",
+        "does this whole turkey have added brine",
+        "which turkey should i buy"
+      ]
+    },
+    {
+      "id": "ground_turkey",
+      "title": "Ground turkey",
+      "aliases": [
+        "ground turkey",
+        "minced turkey",
+        "plain ground turkey"
+      ],
+      "category": "poultry",
+      "question": "What should you check before buying ground turkey?",
+      "decision": "Plain ground turkey with its ingredients and fat content stated.",
+      "why": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
+      "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
+      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
+      ],
+      "kristy_take": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
+      "cart_pick": "Plain ground turkey",
+      "buying_tips": [
+        "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
+        "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
+        "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
+      ],
+      "watch_out": [
+        "Do not infer a fat level from the animal name. Read each pack."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Percent lean",
+          "meaning": "A composition claim that must appear with a percent-fat statement."
+        }
+      ],
+      "tier_note": "The ingredient and percent-fat statements are documented label information; selecting plain ground turkey is the whole-food standard.",
+      "asked_as": [
+        "how do you choose ground turkey",
+        "what does percent lean mean on ground turkey",
+        "does ground turkey have added ingredients"
+      ]
+    },
+    {
+      "id": "breakfast_cereal",
+      "title": "Breakfast cereal and granola",
+      "aliases": [
+        "cereal",
+        "breakfast cereal",
+        "granola",
+        "whole grain cereal"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you choose breakfast cereal or granola?",
+      "decision": "Whole-grain cereal or granola with less added sugar.",
+      "why": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
+      "short_answer": "The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola.",
+      "detail": "FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://wholegrainscouncil.org/whole-grain-stamp",
+        "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label"
+      ],
+      "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
+      "cart_pick": "Whole-grain breakfast cereal",
+      "buying_tips": [
+        "Check the 100% stamp rather than assume every stamp means all grain is whole.",
+        "Without a stamp, read the grain ingredients and the added-sugars line.",
+        "Read the added-sugars line even when honey or syrup is the named sweetener."
+      ],
+      "watch_out": [
+        "Honey-sweetened granola still has added sugar.",
+        "A grain stamp alone does not tell how much sugar was added."
+      ],
+      "labels_decoded": [
+        {
+          "term": "100% Whole Grain Stamp",
+          "meaning": "All grain ingredients are whole grain, with a minimum amount per serving."
+        },
+        {
+          "term": "Added sugars",
+          "meaning": "Includes sugars added during processing, including honey and syrups."
+        }
+      ],
+      "tier_note": "The stamp and added-sugars line disclose different ingredients; choosing whole grain and less added sugar is the whole-food standard.",
+      "asked_as": [
+        "how do you choose breakfast cereal",
+        "how do you choose granola",
+        "does a whole grain cereal stamp mean no added sugar"
+      ]
+    },
+    {
+      "id": "pasta_dry",
+      "title": "Dry pasta",
+      "aliases": [
+        "pasta",
+        "dry pasta",
+        "dried pasta",
+        "durum semolina dry pasta"
+      ],
+      "category": "bulk_pantry",
+      "question": "What should you check on a box of dry pasta?",
+      "decision": "Dry pasta made from durum semolina and water.",
+      "why": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
+      "short_answer": "US macaroni-product standards allow semolina, durum flour, farina, or flour with water and optional ingredients. The ingredient list shows which formulation is in the box.",
+      "detail": "Enriched pasta contains specified vitamins and iron under a separate standard; enrichment does not establish whole grain. Bronze-cut describes the die and the resulting rough surface. The archived culinary articles describe sauce adhesion, not a health advantage.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/139.110",
+        "https://www.law.cornell.edu/cfr/text/21/139.115",
+        "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+        "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/"
+      ],
+      "kristy_take": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
+      "cart_pick": "Dry durum semolina pasta",
+      "buying_tips": [
+        "Look for durum semolina and water in the list.",
+        "Plain dry pasta can be checked by ingredients without a bronze-cut claim.",
+        "Read enrichment separately from the flour name and any bronze-cut claim."
+      ],
+      "watch_out": [
+        "Bronze-cut is a surface-texture description. The source set establishes no health advantage from the die.",
+        "“Enriched” describes added nutrients, not whole-grain content."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Enriched",
+          "meaning": "Pasta meeting specified vitamin and iron requirements."
+        },
+        {
+          "term": "Bronze-cut",
+          "meaning": "Dough extruded through a bronze die, producing a rougher surface."
+        }
+      ],
+      "tier_note": "The flour and added ingredients are regulated label information; preferring a simple semolina formulation is the whole-food standard.",
+      "asked_as": [
+        "how do you choose dry pasta",
+        "does bronze cut pasta change the ingredients",
+        "what does enriched pasta mean"
+      ]
+    },
+    {
+      "id": "oat_milk",
+      "title": "Oat milk",
+      "aliases": [
+        "oat milk",
+        "oat drink",
+        "oat milk alternative"
+      ],
+      "category": "dairy",
+      "question": "What should you check before buying oat milk?",
+      "decision": "Oat milk with its protein and fortification checked on the carton.",
+      "why": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
+      "short_answer": "The archived paper studied six original oat drinks from the UK market. Their nutritional composition and fortification varied. Check the actual carton rather than treating oat milk as one formulation.",
+      "detail": "The paper describes production that can include milling, enzyme hydrolysis, formulation, and heat treatment. It notes that oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The study measured sensory, physical, and chemical properties, not health outcomes.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML"
+      ],
+      "kristy_take": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
+      "cart_pick": "Oat milk",
+      "buying_tips": [
+        "Read the protein line and the added vitamins and minerals on the carton.",
+        "Compare the labels of available oat drinks; the formulation can differ.",
+        "Read for stabilizers in the ingredient list; the study compared formulations with different stabilizer use."
+      ],
+      "watch_out": [
+        "The sole archived paper studied six original UK products, excluding barista, flavored, and sugar-free versions. It does not establish a universal health ranking.",
+        "No health effect follows from this sensory and composition study."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Fortified",
+          "meaning": "Vitamins or minerals have been added to the formulation."
+        }
+      ],
+      "tier_note": "Protein and added vitamins are composition checks; using the carton rather than assuming equivalence is the whole-food standard.",
+      "asked_as": [
+        "how do you choose oat milk",
+        "does every oat milk have the same protein",
+        "what does fortified oat milk mean"
+      ]
+    },
+    {
+      "id": "coffee_beans",
+      "title": "Coffee beans",
+      "aliases": [
+        "coffee beans",
+        "packaged roasted coffee beans",
+        "which coffee"
+      ],
+      "category": "bulk_pantry",
+      "question": "What should you check when buying coffee beans?",
+      "decision": "Coffee beans in a sealed bag that limits air exposure.",
+      "why": "Packaging and storage affect coffee chemistry. A sealed bag is the whole-food standard for this purchase.",
+      "short_answer": "Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Choose a sealed bag and keep it closed.",
+      "detail": "One archived study compared packaging for ground coffee pods; another examined different coffee presentations and packaging under accelerated heat storage. Their results show that packaging and conditions affect chemical stability. They do not establish a health advantage for one retail bean or a universal freshness deadline.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243642/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
+      ],
+      "kristy_take": "Packaging and storage affect coffee chemistry. A sealed bag is the whole-food standard for this purchase.",
+      "cart_pick": "Coffee beans in a sealed bag",
+      "buying_tips": [
+        "Check that the packaging is sealed.",
+        "A bag without a valve can still be checked for an intact seal; the valve alone is not the full packaging specification.",
+        "Keep the sealed coffee away from heat; the archived storage studies describe heat-related changes."
+      ],
+      "watch_out": [
+        "The sources include ground pods and accelerated storage tests. They do not prove a health advantage for a particular roast or bean.",
+        "No universal number of fresh days is established for all retail bags."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Packaging barrier",
+          "meaning": "The packaging’s resistance to exchange with the surrounding air."
+        }
+      ],
+      "tier_note": "Checking the seal applies documented storage chemistry; selecting closed packaging for beans is the whole-food standard.",
+      "asked_as": [
+        "how do you choose coffee beans",
+        "what should you check when buying coffee beans",
+        "does packaging matter when buying coffee beans",
+        "which coffee should i buy"
+      ]
+    },
+    {
+      "id": "bacon",
+      "title": "Bacon",
+      "aliases": [
+        "bacon",
+        "sliced bacon",
+        "packaged sliced bacon",
+        "uncured bacon nitrate free"
+      ],
+      "category": "deli",
+      "question": "What should you check when choosing bacon?",
+      "decision": "Bacon chosen by its curing ingredients, with the qualifier read.",
+      "why": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
+      "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
+      "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading",
+        "https://www.law.cornell.edu/cfr/text/9/317.17"
+      ],
+      "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
+      "cart_pick": "Bacon with disclosed curing ingredients",
+      "buying_tips": [
+        "Read any exception naming naturally occurring nitrates in celery powder.",
+        "Compare the disclosed curing ingredients across available bacon packs.",
+        "Read each ingredient in the curing mixture, including salt, sugar, and curing agents."
+      ],
+      "watch_out": [
+        "An uncured label does not by itself establish the absence of nitrates or nitrites.",
+        "The source set does not establish a health advantage from choosing celery-based curing."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Uncured",
+          "meaning": "A label that can appear on bacon using a natural curing source; read the qualifier."
+        },
+        {
+          "term": "No nitrates added*",
+          "meaning": "The fine print may except nitrates naturally occurring in celery powder."
+        }
+      ],
+      "tier_note": "The asterisk and curing ingredients are documented label facts; choosing by them is the whole-food standard.",
+      "asked_as": [
+        "how do you choose bacon",
+        "is uncured bacon nitrate free",
+        "what does the asterisk on bacon mean"
+      ]
+    },
+    {
+      "id": "hot_dogs",
+      "title": "Hot dogs",
+      "aliases": [
+        "hot dog",
+        "hot dogs",
+        "frankfurters",
+        "packaged beef hot dogs"
+      ],
+      "category": "deli",
+      "question": "What should you check on a pack of hot dogs?",
+      "decision": "Hot dogs with named meat and no mechanically separated poultry.",
+      "why": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
+      "short_answer": "Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product made by separating attached tissue from bones; its name belongs in the ingredient statement.",
+      "detail": "The US frankfurter standard distinguishes sausages with meat byproducts and requires “with byproducts” or “with variety meats” in their name. Mechanically separated poultry has its own regulatory definition. These processing distinctions support an ingredient choice, not a claim that one hot dog produces a health result.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/9/319.180",
+        "https://www.law.cornell.edu/cfr/text/9/381.173",
+        "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      ],
+      "kristy_take": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
+      "cart_pick": "Hot dogs with named meat",
+      "buying_tips": [
+        "Look for the named meat and read all other ingredients.",
+        "Compare formulations across available packs rather than assume a species claim describes every ingredient.",
+        "Check whether the list names mechanically separated chicken or turkey."
+      ],
+      "watch_out": [
+        "“Uncured” can still accompany celery-based curing. Read the qualifier.",
+        "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Mechanically separated poultry",
+          "meaning": "A paste-like ingredient made by mechanically separating tissue from poultry bones."
+        },
+        {
+          "term": "With byproducts",
+          "meaning": "Required wording for the byproduct-containing sausage formulation defined in the standard."
+        }
+      ],
+      "tier_note": "The meat ingredients and byproducts wording disclose regulated processing distinctions; choosing named meat is the whole-food standard.",
+      "asked_as": [
+        "how do you choose hot dogs",
+        "what does mechanically separated mean on hot dogs",
+        "what does with byproducts mean on frankfurters"
+      ]
+    },
+    {
+      "id": "canned_tuna",
+      "title": "Canned tuna",
+      "aliases": [
+        "canned tuna",
+        "tinned tuna",
+        "canned light tuna",
+        "canned skipjack tuna"
+      ],
+      "category": "seafood",
+      "question": "Which canned tuna should you choose?",
+      "decision": "Canned light tuna, including skipjack, has less mercury than albacore.",
+      "why": "The FDA fish advice separates canned light tuna from albacore by mercury category.",
+      "short_answer": "FDA’s chart places canned light tuna, including skipjack, in Best Choices and albacore in Good Choices. These categories reflect mercury levels. White tuna means albacore under the canned-tuna standard.",
+      "detail": "The canned-tuna standard distinguishes color, pack form, and packing medium. Light is a color designation, not a guarantee that every can contains skipjack. Oil or water describes packing, separate from the tuna’s mercury category.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fda.gov/food/consumers/advice-about-eating-fish",
+        "https://www.fda.gov/food/consumers/questions-answers-fdaepa-advice-about-eating-fish-those-who-might-become-or-are-pregnant-or",
+        "https://www.law.cornell.edu/cfr/text/21/161.190"
+      ],
+      "kristy_take": "The FDA fish advice separates canned light tuna from albacore by mercury category.",
+      "cart_pick": "Canned light tuna",
+      "buying_tips": [
+        "Check the light designation or a named skipjack species.",
+        "Canned light tuna can be chosen without a separately stated skipjack name.",
+        "Read the packing medium separately from the light or white designation."
+      ],
+      "watch_out": [
+        "Light is not one species. Do not assume every light can is skipjack.",
+        "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children; use its age and life-stage guidance rather than one rule for everyone."
+      ],
+      "labels_decoded": [
+        {
+          "term": "White tuna",
+          "meaning": "Albacore under the US canned-tuna standard."
+        },
+        {
+          "term": "Light tuna",
+          "meaning": "A color designation that can include skipjack and other tuna."
+        }
+      ],
+      "tier_note": "The light designation and skipjack name connect to FDA’s established lower-mercury fish category; packing ingredients are a separate label check.",
+      "asked_as": [
+        "which canned tuna should you buy",
+        "is canned light tuna the same as albacore",
+        "does light canned tuna always mean skipjack"
+      ]
+    },
+    {
+      "id": "chicken_breast",
+      "title": "Chicken breast",
+      "aliases": [
+        "chicken breast",
+        "chicken breasts",
+        "plain chicken breast"
+      ],
+      "category": "poultry",
+      "question": "What should you check when buying chicken breast?",
+      "decision": "Plain chicken breast without an added flavoring solution.",
+      "why": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
+      "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
+      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
+      ],
+      "kristy_take": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
+      "cart_pick": "Plain chicken breast without added solution",
+      "buying_tips": [
+        "Read the full product name for the solution percentage and ingredients.",
+        "Fresh or frozen breast can be checked for the same solution disclosure.",
+        "Read retained-water wording separately from the added flavoring ingredients."
+      ],
+      "watch_out": [
+        "“Natural” does not exclude a flavoring solution.",
+        "Retained chilling water is different from an added flavoring solution.",
+        "The archived woody-breast study does not establish a dependable visual test for shoppers."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Added solution",
+          "meaning": "A disclosed flavoring formulation incorporated into the poultry."
+        },
+        {
+          "term": "Retained water",
+          "meaning": "Water absorbed during post-slaughter processing, separately disclosed on the label."
+        }
+      ],
+      "tier_note": "The solution statement and its ingredients disclose documented processing; choosing plain breast is the whole-food standard.",
+      "asked_as": [
+        "how do you choose chicken breast",
+        "does natural chicken breast have added water",
+        "what does solution added mean on chicken breast"
+      ]
     }
   ]
 }

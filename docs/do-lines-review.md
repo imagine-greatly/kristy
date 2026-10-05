@@ -131,6 +131,22 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_citrus` | produce | Firm and smooth, free of decay, drying, or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
 | `produce_stone_fruit` | produce | Unbruised and undamaged, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
 
+| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the grain’s bran and germ. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
+| `sourdough` | bulk_pantry | Sourdough fermented with a starter of wild yeast and bacteria. | Ask the baker what leavens the dough; check for culture or starter. | — |
+| `pretzel_bread` | bulk_pantry | Pretzel bread gets its crust from an alkaline bath before baking. | Ask the baker whether the dough gets a lye or baking-soda bath. | — |
+| `bagels` | bulk_pantry | Bagels boiled before baking have the traditional chewy exterior. | Ask the baker about a water bath before the dough reaches the oven. | — |
+| `tortillas` | bulk_pantry | Corn tortillas made from lime-treated corn, water, and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
+| `turkey_whole` | meat | Whole turkey without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
+| `ground_turkey` | meat | Plain ground turkey with its ingredients and fat content stated. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
+| `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
+| `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
+| `oat_milk` | eggs_dairy | Oat milk with its protein and fortification checked on the carton. | Compare the protein line and read the ingredients for added vitamins and minerals. | — |
+| `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air exposure. | Check the bag’s seal and keep the coffee closed between uses. | — |
+| `bacon` | meat | Bacon chosen by its curing ingredients, with the qualifier read. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
+| `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
+| `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
+| `chicken_breast` | meat | Plain chicken breast without an added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
 

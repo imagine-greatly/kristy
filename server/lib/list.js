@@ -118,9 +118,8 @@ const PICKS = {
     },
   },
   chicken_breast: {
-    // The available chicken cards recommend thighs or a whole bird. Keep the
-    // authored breast row, but leave its counter guidance as an honest miss.
-    name: 'Chicken breast', category: 'Protein',
+    // The authored id points to guidance for this cut, validated by cardForItem.
+    name: 'Chicken breast', category: 'Protein', perimeterId: 'chicken_breast',
     why: 'The lean anchor — portions clean and cooks fast.',
     variants: {
       short_on_time: { name: 'Rotisserie chicken', why: 'Already cooked — pull it apart and it feeds three meals.' },

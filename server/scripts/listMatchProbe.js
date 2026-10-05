@@ -272,17 +272,21 @@ if (realistic.length !== 26) {
 }
 
 // Compound rows that carry a pick's bare noun and are a different food. Expected BARE: a pick
-// here is the floor attaching a raw-milk line to oat milk; a card here is a card alias
-// over-reaching. Either is WRONG. Mirrored in pickReach.test.js COMPOUND_ROWS.
+// here is the floor attaching a raw-milk line to oat milk. Only an explicitly authored
+// compound owner may attach a card. Mirrored in pickReach.test.js COMPOUND_ROWS.
 const COMPOUND_ROWS = [
   'oat milk', 'coconut milk', 'milk chocolate', 'corn tortillas', 'corn chips', 'corn flakes',
   'garlic powder', 'garlic bread', 'lemon juice', 'juice boxes', 'carrot cake', 'basil pesto',
   'eggplant parm', 'broccoli slaw',
 ];
+// Build 4 gives these compounds their own cards; the milk/corn picks still lose.
+const COMPOUND_OWNERS = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas' };
 const compound = COMPOUND_ROWS.map((name) => {
   const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
   const got = row.cardSlug || row.pickId || null;
-  return { name, slug: got, verdict: got ? 'WRONG' : 'CORRECT', detail: got ? `attached ${got} to a compound row` : 'bare, as it should be' };
+  const expected = COMPOUND_OWNERS[name] || null;
+  const correct = got === expected && !row.pickId;
+  return { name, slug: got, verdict: correct ? 'CORRECT' : 'WRONG', detail: expected ? `owner ${expected}, no pick` : (got ? `attached ${got} to an unowned compound row` : 'bare, as it should be') };
 });
 const compoundWrong = compound.filter((r) => r.verdict === 'WRONG');
 // Ordinary modified rows — a pick MUST land. A miss here is the coverage rule over-reaching.

@@ -95,18 +95,16 @@ test('the three list-surface aliases landed and still resolve', () => {
   }
 });
 
-test('a non-grocery matches nothing, and the gate is what refuses it', () => {
-  for (const name of ['paper towels', 'dish soap', 'ketchup', 'pasta sauce', 'cereal']) {
+test('non-grocery and unowned food rows attach no card', () => {
+  for (const name of ['paper towels', 'dish soap', 'ketchup', 'pasta sauce']) {
     assert.equal(matchItemToCard(name), null, `"${name}" must not attach a card`);
   }
 });
 
-test('bacon is an honest miss, on purpose', () => {
-  // deli_meat_uncured answers the UNCURED question — the celery-powder asterisk — which is
-  // half an answer for someone who wrote "bacon" on a list. A half-right card is worse than
-  // a miss, because the miss gets logged and the half-right one does not.
-  assert.equal(matchItemToCard('bacon'), null);
-  assert.ok(matchItemToCard('uncured bacon'), 'the question it DOES answer still resolves');
+test('bacon and cereal reach their Build 4 owners', () => {
+  assert.equal(matchItemToCard('bacon')?.slug, 'bacon');
+  assert.equal(matchItemToCard('cereal')?.slug, 'breakfast_cereal');
+  assert.ok(matchItemToCard('uncured bacon'), 'the curing question still resolves');
 });
 
 /* ═══════════════ The head noun sits before a trailing qualifier ═══════════════ */

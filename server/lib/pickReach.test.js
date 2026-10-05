@@ -42,9 +42,8 @@ const NON_FOOD = nonEmpty([
 // Compound rows that CARRY a pick's bare noun and are a different food. Containment alone
 // attached every one of these ("oat milk" got the milk pick, whose line is about a carton
 // that may hold raw milk); the floor now requires the row's words — head noun included — to
-// all sit in one alias of the pick. Expected bare: no card, no pick. A card landing here
-// would be its own defect (the card's alias, not the floor's), and the row must stay bare
-// for this list to keep meaning what it says.
+// all sit in one alias of the pick. Unowned compounds stay bare; Build 4 gives oat milk
+// and corn tortillas their own cards. The generic milk/corn picks must still lose.
 const COMPOUND_ROWS = nonEmpty([
   'oat milk', 'coconut milk', 'milk chocolate', 'corn tortillas', 'corn chips', 'corn flakes',
   'garlic powder', 'garlic bread', 'lemon juice', 'juice boxes', 'carrot cake', 'basil pesto',
@@ -115,12 +114,13 @@ test('no pick alias lands on a row a card already owns', () => {
   assert.deepEqual(stolen, [], `pick aliases a card already owns:\n  ${stolen.join('\n  ')}`);
 });
 
-test('a compound row carrying a pick’s bare noun attaches nothing', () => {
-  const attached = COMPOUND_ROWS.filter((name) => {
+test('a compound row attaches only its own authored card, never the generic pick', () => {
+  const owners = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas' };
+  for (const name of COMPOUND_ROWS) {
     const row = attach(name);
-    return row.cardSlug || row.pickId;
-  }).map((name) => { const r = attach(name); return `${name} → ${r.cardSlug || r.pickId}`; });
-  assert.deepEqual(attached, [], `compound rows Kristy spoke on: ${attached.join(', ')}`);
+    assert.equal(row.cardSlug ?? null, owners[name] ?? null, name);
+    assert.ok(!row.pickId, `${name}: generic pick must never attach`);
+  }
 });
 
 test('a state or a count in front of a pick’s own noun still lands', () => {
