@@ -16,8 +16,8 @@ git add -A → commit with a real message → push → four-step verify → THEN
 - Four-step: `git rev-parse HEAD` → `git reflog` → `git ls-remote origin main` → read remote file and diff local. Exit/keychain text proves nothing.
 
 ### One task per session
-- ONE task; committed/verified ends session; ~60k resident context: commit, handoff, continuation prompt, stop.
-- End every report with fenced **continuation prompt** for Devon: task, exact next step, files, verification, what NOT to retry. Handoff (`handoff` skill) first, linked in prompt. Say `/clear` is safe.
+- ONE task; committed/verified ends session; ~60k resident context: commit, handoff, compact, keep going.
+- No continuation prompts (Devon, 2026-10-05): Devon says when to move to a new session. Keep the handoff current so `/compact` is always safe.
 
 ### Pushing
 - `main`: production Vercel/Railway, ~minute, no staging. Commit always; **push `main` only when the turn's work is meant to go live**. Report committed/unpushed, never “ahead N”.
