@@ -75,12 +75,13 @@ Account: `docs/DECISIONS.md`, “What Kristy is”.
 
 ## Non-negotiables
 
-1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-09-07: ground
-   is solar kraft `#CFBA8E`, card is `#F5F1E6`, green-black ink, green / ochre / orange food
+1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-10-05 (Home E5): ground
+   is Toasted `#E6D2AE`, card is `#F8F0E0`, green-black ink, green / ochre / orange food
    ladder, `Fraunces` for serif. Ruled 2026-10-02: the olive seal (`KristySealCoin`, no words) is
    the logo and app icon, on kraft; the forest `#14472F` plate no longer carries it (asset
    install pending A2). Brass appears only as struck metal inside the seal artwork, an image
-   asset; never a UI colour, text, rule or fill. No dark scheme, kraft only:
+   asset. One gold (2026-10-05): eyebrows, hairlines, listening ring only; never fills,
+   buttons or body. No dark scheme, paper only:
    `kristy-ios/docs/ios-specs/paper.md` (§0 premise). Recorded in three places, all three or
    none: `Brand/tokens.json` `_stance`, `kristy-ios/CLAUDE.md`, here. `palette_mirror.sh` must
    not be loosened. The frozen `client/src` keeps the old brand. "Never invent" still binds
