@@ -8410,6 +8410,210 @@
         "are whole wheat buns worth buying",
         "how do i pick dinner rolls"
       ]
+    },
+    {
+      "id": "pastries_muffins",
+      "title": "Pastries and bakery muffins",
+      "aliases": [
+        "croissant",
+        "croissants",
+        "butter croissants",
+        "danish pastry",
+        "danish pastries",
+        "cheese danish",
+        "pastries",
+        "bakery pastries",
+        "bakery muffins",
+        "blueberry muffins",
+        "bran muffins"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which fat is in a pastry or a bakery muffin?",
+      "decision": "Pastry made with butter, named on the label or by the baker.",
+      "why": "Butter is the traditional fat in Danish pastry. Factory pastry often uses other fats instead.",
+      "short_answer": "Read the fat in the ingredients, or ask the baker. Butter is the traditional fat in Danish pastry. A bakery muffin rises without yeast and is made with butter or shortening.",
+      "detail": "Danish pastry is laminated, meaning butter is folded into a yeast dough in thin layers. Butter is the traditional fat. Industrial production often uses other fats, such as hydrogenated sunflower oil. The American muffin is a quick bread, a bread raised by baking soda instead of yeast. Butter or shortening, eggs and flavourings such as fruit go into the batter.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Danish_pastry",
+        "https://en.wikipedia.org/wiki/Muffin"
+      ],
+      "kristy_take": "The fat is the read on a pastry. Butter is the traditional one.",
+      "cart_pick": "Pastry made with butter",
+      "buying_tips": [
+        "Read the ingredients for butter by name.",
+        "Ask the baker which fat goes into the pastry.",
+        "Read a muffin’s ingredients for butter or shortening."
+      ],
+      "watch_out": [
+        "Factory pastry often uses other fats in place of butter, such as hydrogenated sunflower oil."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Butter",
+          "meaning": "The traditional fat in Danish pastry, named in the ingredients."
+        },
+        {
+          "term": "Shortening",
+          "meaning": "A fat some muffins use in place of butter."
+        }
+      ],
+      "tier_note": "The fat read comes from how these pastries are traditionally made.",
+      "asked_as": [
+        "how do i pick a good croissant",
+        "are bakery muffins worth buying",
+        "which danish pastry should i buy"
+      ]
+    },
+    {
+      "id": "muesli",
+      "title": "Muesli",
+      "aliases": [
+        "muesli",
+        "bircher muesli",
+        "swiss muesli",
+        "toasted muesli",
+        "muesli and granola"
+      ],
+      "category": "bulk_pantry",
+      "question": "How is muesli different from granola?",
+      "decision": "Muesli with no added sugar listed; granola is the baked, sweetened version.",
+      "why": "Muesli is a raw mix of rolled oats, fruit, nuts and seeds. Granola adds oil and sweetener, then bakes.",
+      "short_answer": "Read the ingredients for sugar, honey or syrup beyond the dried fruit. Plain muesli is raw rolled oats, dried fruit, nuts and seeds. Some muesli is sold toasted or sweetened.",
+      "detail": "Muesli is a loose mix of rolled oats or other rolled grains, dried fruit, nuts and seeds. It is not baked, and is traditionally soaked overnight in milk or juice. Granola starts from the same base, mixed with oil and a sweetener such as honey, maple syrup or sugar. It is then baked into crunchy clusters. Some muesli is sold toasted, and some brands sweeten it.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.healthline.com/nutrition/muesli-vs-granola",
+        "https://en.wikipedia.org/wiki/Muesli"
+      ],
+      "kristy_take": "Muesli and granola share a base. The sweetener and the oven split them.",
+      "cart_pick": "Muesli with no added sugar",
+      "buying_tips": [
+        "Read the ingredients for sugar, honey or syrup.",
+        "Pick a bag that lists only grains, fruit, nuts and seeds.",
+        "Check whether the bag says toasted."
+      ],
+      "watch_out": [
+        "Toasted or sweetened muesli sits closer to granola."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Toasted muesli",
+          "meaning": "Muesli that has been toasted, so it is no longer raw."
+        },
+        {
+          "term": "Bircher muesli",
+          "meaning": "The original style, soaked overnight before eating."
+        }
+      ],
+      "tier_note": "The ingredients read for sugar, honey or syrup comes from how muesli and granola are made.",
+      "asked_as": [
+        "what is the difference between muesli and granola",
+        "how do i pick a good muesli",
+        "does muesli have added sugar"
+      ]
+    },
+    {
+      "id": "bread_aisle",
+      "title": "The bread aisle",
+      "aliases": [
+        "bread aisle",
+        "what bread should i buy",
+        "how do i choose bread",
+        "read a bread label"
+      ],
+      "category": "bulk_pantry",
+      "question": "What bread should I buy?",
+      "decision": "Pick the bread type first, then read the first flour for “whole”.",
+      "why": "The first ingredient and the Whole Grain Stamp tell a whole grain loaf from a refined one.",
+      "short_answer": "Pick the type first: sandwich, sourdough, sprouted, gluten-free or buns. Then read the first ingredient for “whole”. “100% whole wheat” or “100% whole grain” on the label can be trusted.",
+      "detail": "The Whole Grain Stamp comes in three tiers. The 100% Stamp means all the grain is whole, with at least 16 g per serving. The 50%+ and Basic Stamps mean at least 8 g per serving. A first ingredient with “whole” makes the bread likely, not certain, to be mostly whole grain. A whole grain listed second can mean anywhere from 1% to 49% whole grain.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://wholegrainscouncil.org/node/13040",
+        "https://wholegrainscouncil.org/node/13053",
+        "https://wholegrainscouncil.org/whole-grain-stamp"
+      ],
+      "kristy_take": "The name on the front can mislead. The first ingredient is the read.",
+      "cart_pick": "Bread with a whole grain first",
+      "buying_tips": [
+        "Read the first ingredient for “whole”.",
+        "Trust “100% whole wheat” or “100% whole grain” on the label.",
+        "Check which Whole Grain Stamp is shown, if any."
+      ],
+      "watch_out": [
+        "“Enriched flour”, “bran” and “wheat germ” never mean whole grain.",
+        "“Wheat flour”, “multigrain” and “stoneground” may or may not be whole grain."
+      ],
+      "labels_decoded": [
+        {
+          "term": "100% Stamp",
+          "meaning": "All the grain is whole, at least 16 g per serving."
+        },
+        {
+          "term": "50%+ Stamp",
+          "meaning": "At least half the grain is whole, at least 8 g per serving."
+        },
+        {
+          "term": "Multigrain",
+          "meaning": "Several grains, which may be whole, refined or a mix."
+        }
+      ],
+      "tier_note": "The aisle read rests on the stamp rules and the order of the ingredient list.",
+      "asked_as": [
+        "what bread should i buy",
+        "how do i choose bread at the store",
+        "how do i read a bread label"
+      ]
+    },
+    {
+      "id": "pick_english_muffins",
+      "kind": "pick",
+      "title": "English muffins",
+      "category": "bulk_pantry",
+      "aliases": [
+        "english muffin",
+        "english muffins"
+      ],
+      "decision": "English muffins with whole wheat flour as the first ingredient.",
+      "sources": [
+        {
+          "name": "Wikipedia: English muffin",
+          "url": "https://en.wikipedia.org/wiki/English_muffin"
+        },
+        {
+          "name": "Whole Grains Council: Identifying whole grain products",
+          "url": "https://wholegrainscouncil.org/node/13040"
+        }
+      ]
+    },
+    {
+      "id": "pick_pita_naan",
+      "kind": "pick",
+      "title": "Pita and naan",
+      "category": "bulk_pantry",
+      "aliases": [
+        "pita",
+        "pitas",
+        "pita bread",
+        "pita breads",
+        "pita pocket",
+        "pita pockets",
+        "naan",
+        "naans",
+        "naan bread"
+      ],
+      "decision": "Pita with whole wheat flour first; naan is the richer one, made with yogurt.",
+      "sources": [
+        {
+          "name": "Busby’s Bakery: Naan vs pita",
+          "url": "https://www.busbysbakery.com/difference-between-naan-and-pita/"
+        },
+        {
+          "name": "Whole Grains Council: Identifying whole grain products",
+          "url": "https://wholegrainscouncil.org/node/13040"
+        }
+      ]
     }
   ]
 }
