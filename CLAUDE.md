@@ -88,7 +88,7 @@ Account: `docs/DECISIONS.md`, “What Kristy is”.
    every colour authored from here on.
 2. **The claim lock is law.** Health/ingredient claims trace to matched KB; tone only, no new concern/statistic/claim; whitelist before every Kristy-voice call.
 3. **No-treatment rule, symmetric.** Food never treats/manages/cures/prevents/lowers risk/causes anything; processing objections, user-set focuses never inferred, medical → doctor.
-4. **The stamp is earned.** Empty-landing seal (flat spin) and the static seal at the scan corner iff server `stamp` true, else empty.
+4. **The stamp is earned.** Seal still, turns only while listening (not Reduce Motion); scan-corner seal iff `stamp` true, else empty.
 5. **Never reshape the engine output.** `server/lib/verdictEngine.js` matched shape consumed directly, additive only.
 6. **Voice: zero first person.** `VOICE_SPEC.md`: no I/me/my/em-dash asides, half words; rephrase never delete science/concern/standard ownership, except no scan-card tier.
 7. **One verdict per headline; accuracy outranks firmness.** TYPE/USE CASE split stays, budget/stock/time retreats; false mechanism = wrong claim (`counterCardLint.js`).
