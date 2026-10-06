@@ -1351,8 +1351,8 @@
       "question": "Should I buy white rice or brown?",
       "decision": "Arsenic collects in the bran, which is why white rice carries less.",
       "why": "Arsenic concentrates in the bran, and the bran is what brown rice keeps.",
-      "short_answer": "Rice takes up more inorganic arsenic from soil and water than other grains, and the bran holds most of what it takes up. Brown rice therefore tests about half again higher than white, in every testing program that has looked. Variety and origin move it further than color does: white basmati is the strong pick, and plain long-grain white is only a small step below brown.",
-      "detail": "Two testing programs put numbers on it. Consumer Reports measured brown rice at 113 ppb inorganic arsenic against white at 72; Healthy Babies Bright Futures measured 129 against 86. By variety, basmati averaged 55 ppb and sushi rice 57, while plain long-grain and parboiled both averaged 101. Origin moves it as much as color does. Rice grown in Arkansas, Louisiana, Mississippi, Missouri and Texas tests highest, and California, India and Pakistan test lowest. Why the southern crop runs high is not settled. Those fields carry residue from decades of arsenical pesticides used on cotton, and the same fields also have sandier soil, which releases arsenic more readily than clay. Both explanations are published and neither has been shown to be the whole of it. Cooking is the other lever, and it is a large one: boiling rice in plenty of water and pouring the water off removes 40 to 60 percent of the inorganic arsenic, while rinsing and soaking were each measured at 5 percent or less. The FDA has set an action level of 100 ppb for infant rice cereal and has set nothing for table rice.",
+      "short_answer": "Rice takes up more arsenic from soil and water than other grains. The bran holds most of it. Brown rice tests about half again higher than white. Variety and origin matter more than color. White basmati is the strong pick.",
+      "detail": "Two testing programs put numbers on it. Consumer Reports measured brown rice at 113 ppb inorganic arsenic against white at 72; Healthy Babies Bright Futures measured 129 against 86. By variety, basmati averaged 55 ppb and sushi rice 57, while plain long-grain and parboiled both averaged 101. Origin moves it as much as color does. Rice grown in Arkansas, Louisiana, Mississippi, Missouri and Texas tests highest, and California, India and Pakistan test lowest. Why the southern crop runs high is not settled. Those fields carry residue from decades of arsenical pesticides used on cotton, and the same fields also have sandier soil, which releases arsenic more readily than clay. Both explanations are published and neither has been shown to be the whole of it. Cooking is the other lever, and it is a large one: boiling rice in plenty of water and pouring the water off removes 40 to 60 percent of the inorganic arsenic, while rinsing and soaking were each measured at 5 percent or less. The FDA has set an action level of 100 ppb for infant rice cereal and has set nothing for table rice. Rice takes up more inorganic arsenic from soil and water than other grains. Brown rice tests about half again higher than white in every testing program that has looked.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Consumer Reports, rice heavy-metals testing https://www.consumerreports.org/health/food-safety/arsenic-in-your-food-testing-shows-a-real-need-for-federal-standards-a1064475937/ (measurable inorganic arsenic in every sample tested; rinsing and soaking removed less than 8 percent, while the parboil-and-absorption method removed 50 to 58 percent)",
@@ -1367,7 +1367,7 @@
         "Boil it in plenty of water and pour the water off. That step takes out 40 to 60 percent.",
         "Basmati and sushi rice test lowest. Plain long-grain and parboiled test highest.",
         "California, India and Pakistan on the bag run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas.",
-        "Vary grains — oats, quinoa, barley — so rice isn’t every meal."
+        "Vary grains, such as oats, quinoa and barley, so rice isn’t every meal."
       ],
       "watch_out": [
         "Rinsing and soaking barely move it. Five percent or less, measured both ways.",
@@ -1401,8 +1401,8 @@
       "question": "What kind of oats should I buy?",
       "decision": "Plain oats are the same grain in every form; packets add sugar.",
       "why": "Same grain, cut differently. The packets are where the sugar is.",
-      "short_answer": "They’re the same grain processed differently. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. Buy plain oats — any form — and skip the flavored instant packets loaded with sugar.",
-      "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little — but plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is.",
+      "short_answer": "Same grain, processed three ways. Steel-cut are least processed, chewy and slow to cook. Rolled are steamed and flattened, and quick. Instant are pre-cooked and often pre-sweetened. Buy plain oats in any form, and skip flavored packets loaded with sugar.",
+      "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little — but plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. The measured number is the glycemic index: 42 for steel-cut, 55 for rolled and 83 for instant, in one extension comparison.",
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
@@ -1412,7 +1412,7 @@
       "cart_pick": "Steel-cut oats",
       "buying_tips": [
         "Plain oats in any form; steel-cut if you like chew and have time.",
-        "Skip flavored instant packets — check the sugar on the label.",
+        "Skip flavored instant packets. Check the sugar on the label.",
         "Bulk oats are pennies per serving."
       ],
       "labels_decoded": [
@@ -1428,7 +1428,7 @@
         "is instant oatmeal ok"
       ],
       "watch_out": [
-        "Steel-cut, rolled and instant are the same grain cut and cooked differently, and the processing shows in a measured number: one extension comparison put the glycemic index at 42 for steel-cut, 55 for rolled and 83 for instant."
+        "Steel-cut, rolled and instant are the same grain cut and cooked differently. The processing shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant."
       ]
     },
     {
@@ -1452,8 +1452,8 @@
       "question": "Are raw or roasted nuts better?",
       "decision": "Raw and dry-roasted nuts have nothing added but sometimes salt.",
       "why": "Cottonseed and soybean oil are the usual roasting mediums. Dry-roasted keeps it to the nut.",
-      "short_answer": "The thing worth checking is what they were roasted in. Many roasted nuts are cooked in cottonseed, soybean or other seed oils and salted heavily, and it shows up on a two-line ingredient list almost nobody turns over to read. Raw or dry-roasted keeps it to the nut and the salt.",
-      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. ‘Peanuts, cottonseed oil, salt’ is common. Roasting itself is fine; the added oil is the part to notice.",
+      "short_answer": "Check what they were roasted in. Many roasted nuts are cooked in cottonseed, soybean or other seed oils, and salted heavily. It shows on the two-line ingredient list. Raw or dry-roasted keeps it to the nut and salt.",
+      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. ‘Peanuts, cottonseed oil, salt’ is common. Roasting itself is fine; the added oil is the part to notice. The chemical treatment for “raw” almonds is PPO.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
@@ -1463,7 +1463,7 @@
       "kristy_take": "Raw or dry-roasted. A seed oil in the almonds is the easiest swap in the store.",
       "cart_pick": "Raw or dry-roasted almonds",
       "buying_tips": [
-        "Look for ‘dry roasted’ or ‘raw’ — no added oil.",
+        "Look for ‘dry roasted’ or ‘raw’, with no added oil.",
         "Read the ingredient line: many roasted nuts list cottonseed/soybean oil.",
         "Bulk bins are cheaper than jars for the same nut."
       ],
@@ -1478,7 +1478,7 @@
         }
       ],
       "watch_out": [
-        "US almonds sold as “raw” are pasteurized by law, by steam or by PPO. The word is not literal here.",
+        "US almonds sold as “raw” are pasteurized by law, by steam or by a chemical treatment. The word is not literal here.",
         "Most “raw” cashews were steamed out of the shell. Nobody sells a truly raw one.",
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
       ],
@@ -1503,8 +1503,8 @@
       "question": "How do I know honey is real?",
       "decision": "Supermarket honey is often blended and filtered; raw honey is neither.",
       "why": "Widely cut with cheap syrups. It is still a sweetener, just a real and old one.",
-      "short_answer": "Honey is another commonly adulterated product — some is cut with cheap syrups or heavily filtered. Your best bets are a single-source or local producer, ‘raw’ honey, and a short label that says nothing but ‘honey’. Honey is still a sugar, so it’s a sweetener to use with intention, but real honey is a whole food with a long history.",
-      "detail": "Diluting honey with rice or corn syrup, and ultra-filtering to hide origin, are documented problems in the global honey trade. Local and single-origin raw honey, and producers you can trace, are the reliable route. Being an old, traditional food is a fair reason to prefer real honey — but tradition speaks to it being a real food, not to any medical effect, and it’s still sugar.",
+      "short_answer": "Some honey is cut with cheap syrups or heavily filtered. Look for a local or single-source producer, ‘raw’, and a label that reads only ‘honey’. It is still a sugar, a sweetener to use with intention.",
+      "detail": "Diluting honey with rice or corn syrup, and ultra-filtering to hide origin, are documented problems in the global honey trade. Local and single-origin raw honey, and producers you can trace, are the reliable route. Being an old, traditional food is a fair reason to prefer real honey — but tradition speaks to it being a real food, not to any medical effect, and it’s still sugar. Honey is another commonly adulterated product. Real honey is a whole food with a long history.",
       "evidence_tier": "time_tested",
       "sources": [
         "Chemistry World “The honey fraud problem” https://www.chemistryworld.com/features/the-honey-fraud-problem/4020255.article (low-cost sugar syrups used to dilute or replace honey; the European Commission’s 2023 From the Hives report found apparent signs of adulteration in 46 percent of tested imported samples; detection is difficult because honey’s composition varies naturally with floral source, geography, hive management and processing)",
@@ -1517,7 +1517,7 @@
       "buying_tips": [
         "Ingredient list should read ‘honey’ and nothing else.",
         "Local, single-source, or ‘raw’ honey is the most trustworthy.",
-        "It’s still a sweetener — use it with intention."
+        "It’s still a sweetener. Use it with intention."
       ],
       "labels_decoded": [
         {
@@ -1557,8 +1557,8 @@
       "question": "Are dried or canned beans better?",
       "decision": "Dried beans are the same bean, and you control the salt.",
       "why": "Nothing in the store competes per serving, and the salt is yours to set.",
-      "short_answer": "Dried beans are the cheapest protein in the store by a wide margin, and cooking them is the only way to control the salt. They ask for planning rather than skill: a slow cooker or a pressure cooker takes the work out. Canned beans are genuinely close, and a rinse under the tap removes much of the sodium the can added.",
-      "detail": "Nutritionally dried and canned beans are very close. Canned adds convenience and some sodium (rinsing removes a good chunk). If you avoid certain can linings, look for ‘BPA-free’ cans or cartons, though that’s a minor point. Beans are one of the best protein-and-fiber values in the whole store.",
+      "short_answer": "Dried beans are the cheapest protein in the store, by a wide margin. Cooking them yourself is the only way to set the salt. Canned are close, and a rinse removes much of the sodium.",
+      "detail": "Nutritionally dried and canned beans are very close. Canned adds convenience and some sodium (rinsing removes a good chunk). If you avoid certain can linings, look for ‘BPA-free’ cans or cartons, though that’s a minor point. Beans are one of the best protein-and-fiber values in the whole store. Dried beans ask for planning rather than skill: a slow cooker or a pressure cooker takes the work out.",
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
@@ -1613,9 +1613,9 @@
       "category": "bulk_pantry",
       "question": "Does salting the soak water make beans tough?",
       "decision": "Brining beans softens the skins; the old rule has it backwards.",
-      "why": "Sodium loosens the pectin in the seed coat, so a salted soak leaves the skin softer.",
-      "short_answer": "It is the opposite of the received wisdom. Sodium works its way into the seed coat and displaces the calcium and magnesium holding the pectin together, which weakens the skin rather than tightening it — so salted beans cook more evenly and blow out less. The rule against salting is old, widely repeated, and wrong about the mechanism.",
-      "detail": "Two different things got confused. Acid does firm a bean: tomato, vinegar, wine and molasses added early will keep skins tough for hours, which is why a pot of chili can sit at a stubborn crunch. Hard water does it too, because the calcium and magnesium in it cross-link the pectin. Salt does neither. It is the one common addition that moves the other way, and the folk rule appears to have collected all three effects under the one ingredient people add most. Age matters more than any of it: beans that have sat for years never fully soften, whatever is in the water.",
+      "why": "Sodium loosens what holds the bean’s skin together, so a salted soak leaves the skin softer.",
+      "short_answer": "Sodium in the soak loosens the bean’s skin rather than tightening it. So salted beans cook more evenly and blow out less. The rule against salting is old, widely repeated, and wrong about the mechanism.",
+      "detail": "Two different things got confused. Acid does firm a bean: tomato, vinegar, wine and molasses added early will keep skins tough for hours, which is why a pot of chili can sit at a stubborn crunch. Hard water does it too, because the calcium and magnesium in it cross-link the pectin. Salt does neither. It is the one common addition that moves the other way, and the folk rule appears to have collected all three effects under the one ingredient people add most. Age matters more than any of it: beans that have sat for years never fully soften, whatever is in the water. It is the opposite of the received wisdom. Sodium works its way into the seed coat and displaces the calcium and magnesium holding the pectin together, which weakens the skin rather than tightening it, so salted beans cook more evenly and blow out less.",
       "evidence_tier": "kristys_standard",
       "kristy_take": "Salt the water. The rule your grandmother gave you was about the tomatoes.",
       "sources": [
@@ -3819,8 +3819,8 @@
       "question": "Which flour should I buy, and what does ‘enriched’ mean?",
       "decision": "Unbleached flour skips the chemical whitening step bleached flour goes through.",
       "why": "Protein content picks the flour. Whole wheat keeps the germ, and that oil turns.",
-      "short_answer": "Protein content picks the flour: bread flour is highest and builds chew, all-purpose is the middle, cake and pastry flour are lowest and stay tender. ‘Enriched’ means B vitamins and iron were added back after refining removed them. ‘Bleached’ means treated with a chemical whitening agent, while ‘unbleached’ was simply aged with air. Whole wheat keeps the bran and germ, so it behaves differently and turns rancid far sooner.",
-      "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Enrichment is a regulated add-back of thiamin, riboflavin, niacin, folic acid and iron, and it is standard on most white flour sold in the US. Bleaching speeds up the same softening that months of air exposure would have done. Whole wheat still carries the oil in the germ, so it keeps for months rather than years and belongs in the freezer if it is not going quickly. Its bran also cuts gluten strands, which is why an all-whole-wheat loaf comes out denser.",
+      "short_answer": "Protein content picks the flour. Bread flour is highest and builds chew. All-purpose is the middle. Cake and pastry flour are lowest and stay tender. Whole wheat keeps the bran and germ, so it turns rancid far sooner.",
+      "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Enrichment is a regulated add-back of thiamin, riboflavin, niacin, folic acid and iron, and it is standard on most white flour sold in the US. Bleaching speeds up the same softening that months of air exposure would have done. Whole wheat still carries the oil in the germ, so it keeps for months rather than years and belongs in the freezer if it is not going quickly. Its bran also cuts gluten strands, which is why an all-whole-wheat loaf comes out denser. ‘Enriched’ means B vitamins and iron were added back after refining removed them. ‘Bleached’ means treated with a chemical whitening agent, while ‘unbleached’ was simply aged with air. Whole wheat behaves differently in baking.",
       "evidence_tier": "established",
       "sources": [
         "FDA standards of identity for enriched flour, 21 CFR 137",
@@ -3831,7 +3831,7 @@
       "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
       "cart_pick": "Unbleached all-purpose flour",
       "watch_out": [
-        "Whole wheat flour keeps the germ and its oil, and heat, air and moisture are what turn it. In a pantry at room temperature a month is the outside window; seal air out or other flavors and odors move in."
+        "Whole wheat flour keeps the germ and its oil, and heat, air and moisture are what turn it. In a pantry at room temperature, a month is the outside window. Seal air out, or other flavors and odors move in."
       ],
       "buying_tips": [
         "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
@@ -3885,8 +3885,8 @@
       "question": "Is the bulk bin section actually a good deal?",
       "decision": "Dry staples keep well in bulk; anything oily turns rancid first.",
       "why": "Turnover is everything. Oil goes rancid in a slow bin, whatever the price says.",
-      "short_answer": "For anything with fast turnover, yes. Grains, beans, lentils, oats, rice and especially spices are dramatically cheaper by weight, and you buy exactly what you need. The catch is turnover: nuts, seeds and whole-grain flours carry oil that goes rancid, so a slow bin is a bad buy at any price. Look at whether the bin is full and busy, and smell what you scoop.",
-      "detail": "Bulk pricing strips out the packaging and the brand, which is most of what a shelf-stable staple costs. Spices are the extreme case, where a scoop from a bin costs a fraction of the same weight in a jar and is usually fresher because the bin moves. The risk sits entirely with the fatty items. Rancidity is the real quality question in this aisle, and it announces itself: rancid nuts and seeds smell like old paint or crayons and taste sharp and bitter. Bring your own jars where the store allows it, and note the tare weight.",
+      "short_answer": "Yes, when the bin turns over. Grains, beans, lentils, oats, rice and spices are dramatically cheaper by weight. Nuts, seeds and whole-grain flours carry oil that goes rancid. Pick a full, busy bin and smell what you scoop.",
+      "detail": "Bulk pricing strips out the packaging and the brand, which is most of what a shelf-stable staple costs. Spices are the extreme case, where a scoop from a bin costs a fraction of the same weight in a jar and is usually fresher because the bin moves. The risk sits entirely with the fatty items. Rancidity is the real quality question in this aisle, and it announces itself: rancid nuts and seeds smell like old paint or crayons and taste sharp and bitter. Bring your own jars where the store allows it, and note the tare weight. Spices especially are cheaper by weight, and you buy exactly what you need. The catch is turnover: nuts, seeds and whole-grain flours carry oil that goes rancid, so a slow bin is a bad buy at any price.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA retail bulk food handling guidance",
@@ -3905,7 +3905,7 @@
       ],
       "watch_out": [
         "The scoop, the bin handle and the scale are touched by every shopper before you. The container you bring is not the exposed part.",
-        "Bring-your-own-container rules vary by store. The FDA food code is a model offered to states and cities, so a store citing it is stating its own policy, not a single national rule."
+        "Bring-your-own-container rules vary by store. The FDA food code is a model offered to states and cities. A store citing it is stating its own policy, not a single national rule."
       ],
       "labels_decoded": [],
       "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
@@ -3933,8 +3933,8 @@
       "question": "Are whole spices worth the trouble over ground?",
       "decision": "Ground spice loses its oils within months; whole spice keeps them.",
       "why": "The aroma is volatile oil. Grinding opens the surface up and it leaves from there.",
-      "short_answer": "What you are buying in a spice is volatile oil, and volatile means exactly what it sounds like. Whole, the oil is sealed inside a seed or a bark and holds for a couple of years. Ground, the surface area jumps and the same oil is off into the air within months — which is why a jar of ground cumin that smells of nothing is not spoiled, it is just empty. Grinding as you go is the whole difference, and warming them first drives the oils out where you can taste them.",
-      "detail": "Toasting is worth separating from grinding. A dry pan over medium heat until the smell arrives across the kitchen does two things: it drives volatile compounds to the surface and it starts browning reactions in the seed that build flavors that were not there before. Toast whole, then grind, and use it — toasted spice fades faster than raw whole spice, so it is not something to do in a batch and store. A blade grinder is adequate and a mortar is better for anything you want texture from. A handful of spices are only sold ground because the whole form is impractical to break down at home, and those are worth buying in the smallest quantity you will actually finish.",
+      "short_answer": "A spice’s flavor is its oil, and that oil escapes into the air. Whole, it stays sealed inside the seed or bark for a couple of years. Ground, it is gone within months. Grind as you go.",
+      "detail": "Toasting is worth separating from grinding. A dry pan over medium heat until the smell arrives across the kitchen does two things: it drives volatile compounds to the surface and it starts browning reactions in the seed that build flavors that were not there before. Toast whole, then grind, and use it — toasted spice fades faster than raw whole spice, so it is not something to do in a batch and store. A blade grinder is adequate and a mortar is better for anything you want texture from. A handful of spices are only sold ground because the whole form is impractical to break down at home, and those are worth buying in the smallest quantity you will actually finish. What you are buying in a spice is volatile oil. Ground, the surface area jumps and the same oil is off into the air within months, which is why a jar of ground cumin that smells of nothing is not spoiled, it is just empty. Warming them first drives the oils out where you can taste them.",
       "evidence_tier": "established",
       "kristy_take": "Whole, and grind what you need. A jar of ground spice is a jar with a clock on it.",
       "sources": [
@@ -3948,7 +3948,7 @@
         "Buy from a bin that turns over, in the smallest amount you will finish."
       ],
       "watch_out": [
-        "Grinding itself makes heat, and heat during grinding is a primary way a spice loses quality before it is even in the jar. Small batches, ground as you go.",
+        "Grinding itself makes heat. Heat during grinding is a primary way a spice loses quality before it is even in the jar. Small batches, ground as you go.",
         "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
       ],
       "labels_decoded": [],
@@ -3982,8 +3982,8 @@
       "question": "How do I tell if nuts, oil or flour have gone rancid?",
       "decision": "Oils and nuts go rancid quietly, with no mold to warn you.",
       "why": "Oxidized oil has a smell nothing else has. No date on the package will tell you.",
-      "short_answer": "Nuts, whole-grain flour and any oil all carry fat, and fat goes off. The tell is a smell most people already know without a name for it: old paint, crayons, putty, or a dusty cupboard. Nothing on the label predicts it, because the clock starts at pressing or milling and runs on heat, light and air rather than on the printed date.",
-      "detail": "Oxidation is fat reacting with air, and light, heat and time all speed it up. That is the whole reason good olive oil comes in dark glass and gets stored away from the stove, and why whole-grain flour keeps months while white flour keeps almost indefinitely. The peppery catch at the back of the throat in fresh olive oil is a different sensation from the flat bitter scratch of a rancid one, and the difference is learnable in a single side-by-side taste. Once you can smell it, the bulk bin, the back of the pantry and the half-used oil bottle all become easy calls.",
+      "short_answer": "Nuts, whole-grain flour and oils all carry fat that goes off. The tell is a smell like old paint, crayons, putty, or a dusty cupboard. The printed date does not predict it. Heat, light and air set the clock.",
+      "detail": "Oxidation is fat reacting with air, and light, heat and time all speed it up. That is the whole reason good olive oil comes in dark glass and gets stored away from the stove, and why whole-grain flour keeps months while white flour keeps almost indefinitely. The peppery catch at the back of the throat in fresh olive oil is a different sensation from the flat bitter scratch of a rancid one, and the difference is learnable in a single side-by-side taste. Once you can smell it, the bulk bin, the back of the pantry and the half-used oil bottle all become easy calls. The tell is a smell most people already know without a name for it. Nothing on the label predicts it, because the clock starts at pressing or milling and runs on heat, light and air rather than on the printed date.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Peer-reviewed literature on lipid oxidation in foods",
@@ -3997,7 +3997,7 @@
         "Smell a bulk bin before you fill a bag from it."
       ],
       "watch_out": [
-        "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose, so a tiny sip settles a smell you are unsure of.",
+        "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of.",
         "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly."
       ],
       "labels_decoded": [],
@@ -4032,8 +4032,8 @@
       "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
       "decision": "Extra virgin means cold-pressed, and a harvest date tells you how fresh.",
       "why": "Olive oil is widely adulterated. ‘Pure’, ‘classic’ and ‘light’ all mean refined oil.",
-      "short_answer": "Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Pure’, ‘classic’ and ‘light’ all mean refined oil blended with a little virgin back in, and ‘light’ refers to color and taste rather than calories. Past the grade, olive oil is one of the more adulterated products in the store, so the three signals that matter are a recent harvest date, a dark bottle, and a single country of origin.",
-      "detail": "Grade and provenance are two separate checks and a bottle has to pass both. On grade: pomace oil is solvent-extracted from the paste left after pressing and is a different product; ‘first cold pressed’ is a legacy phrase with no added legal force. On provenance: ‘packed in [country]’ names where it was bottled, not where the olives grew, and ‘product of’ is the phrase that names the origin. A harvest date beats a best-by date every time, because the oil degrades from the day it is pressed. Dark glass or tin protects it from light, and a price that is unusually low for extra-virgin is a flag rather than a find.",
+      "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added. Look for a recent harvest date, a dark bottle and one country of origin.",
+      "detail": "Grade and provenance are two separate checks and a bottle has to pass both. On grade: pomace oil is solvent-extracted from the paste left after pressing and is a different product; ‘first cold pressed’ is a legacy phrase with no added legal force. On provenance: ‘packed in [country]’ names where it was bottled, not where the olives grew, and ‘product of’ is the phrase that names the origin. A harvest date beats a best-by date every time, because the oil degrades from the day it is pressed. Dark glass or tin protects it from light, and a price that is unusually low for extra-virgin is a flag rather than a find. Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Light’ refers to color and taste rather than calories. Past the grade, olive oil is one of the more adulterated products in the store.",
       "evidence_tier": "established",
       "sources": [
         "International Olive Council trade standard for olive oils",
@@ -4046,7 +4046,7 @@
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
       "buying_tips": [
         "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
-        "Look for a HARVEST date, not just ‘best by’ — and buy recent.",
+        "Look for a HARVEST date, not just ‘best by’. Buy recent.",
         "Dark glass or tin protects it from light; store away from the stove.",
         "Single country of origin, named with ‘product of’.",
         "‘First cold pressed’ is a legacy phrase and adds nothing legally."
@@ -4079,7 +4079,7 @@
         "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color, not calories.",
         "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
         "‘Packed in [country]’ is where it was bottled. Look for ‘product of’ instead.",
-        "The word on the front does not settle the grade. In UC Davis testing, 69 percent of imported oils sampled and 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. The most recent harvest year on the bottle and a container that keeps out light are the signals that held up."
+        "The word on the front does not settle the grade. In UC Davis testing, 69 percent of imported oils sampled failed the extra-virgin standard. So did 73 percent of samples from the top-selling imported brands. The most recent harvest year and a container that keeps out light are the signals that held up."
       ],
       "eyebrow_short": "Real extra-virgin",
       "asked_as": [
@@ -4104,8 +4104,8 @@
       "question": "What should be in a jar of peanut butter?",
       "decision": "Nut butter that separates is just nuts; no-stir has added oil.",
       "why": "No-stir texture comes from added palm or hydrogenated oil, and usually sugar with it.",
-      "short_answer": "Peanuts. Salt if you want it. That is the whole list on the good jars. The no-stir versions get their texture from added palm oil or hydrogenated oil, and most also add sugar. Oil sitting on top is not a fault, it is the sign that nothing was added to stop it. Stir it in once, then keep the jar upside down in the fridge.",
-      "detail": "The separation people complain about is what natural peanut butter does, because ground peanuts are peanuts and oil. Stabilizers fix the texture and turn it into a product with a longer ingredient list. Sugar shows up in most conventional jars, and reduced-fat versions typically replace the removed fat with sugar and starch, which is the opposite of the trade most people think they are making. The same reading applies to almond, cashew and sunflower butters. One or two ingredients on the back is the standard, and it is easy to find.",
+      "short_answer": "Peanuts, and salt if you want it. That is the whole list on the good jars. No-stir versions get their texture from added palm or hydrogenated oil. Most also add sugar. Oil on top is the good sign.",
+      "detail": "The separation people complain about is what natural peanut butter does, because ground peanuts are peanuts and oil. Stabilizers fix the texture and turn it into a product with a longer ingredient list. Sugar shows up in most conventional jars, and reduced-fat versions typically replace the removed fat with sugar and starch, which is the opposite of the trade most people think they are making. The same reading applies to almond, cashew and sunflower butters. One or two ingredients on the back is the standard, and it is easy to find. Oil sitting on top is not a fault, it is the sign that nothing was added to stop it. Stir it in once, then keep the jar upside down in the fridge.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "FDA standards of identity for peanut butter, 21 CFR 164.150",
@@ -4116,12 +4116,12 @@
       "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
       "cart_pick": "Natural peanut butter",
       "watch_out": [
-        "A short ingredient list separates naturally and needs a stir before use. Palm oil or another added fat is what keeps a nut butter from separating on the shelf, and that is what the ingredient line is showing when it appears.",
+        "A short ingredient list separates naturally and needs a stir before use. Palm oil or another added fat keeps a nut butter from separating on the shelf. That is what the ingredient line shows when it appears.",
         "With no stabilizer in it, a natural jar left warm for a long stretch goes rancid. The fridge is where an opened jar belongs."
       ],
       "buying_tips": [
         "The list should read peanuts, and salt if you want it. Nothing else is needed.",
-        "Oil separated on top is the good sign — nothing was added to hold it in.",
+        "Oil separated on top is the good sign. Nothing was added to hold it in.",
         "No-stir means palm oil or hydrogenated oil was added. Check for sugar too.",
         "Reduced-fat versions usually replace the fat with sugar and starch.",
         "Store natural jars upside down in the fridge. The oil redistributes on its own.",
@@ -4171,8 +4171,8 @@
       "question": "What else should I be buying besides rice?",
       "decision": "Grains other than rice cook like pasta, in plenty of salted water.",
       "why": "Bulgur, quinoa and buckwheat are fast. Farro and barley are made for soups and bowls.",
-      "short_answer": "Rotating grains is the cheapest upgrade in the pantry. Quinoa cooks in fifteen minutes and holds together cold. Farro and barley are chewy and made for soups and grain bowls. Buckwheat is not wheat at all and cooks fast. Millet and sorghum are cheap and carry no gluten. Bulgur is the fastest of the lot: ten minutes with boiling water and a lid.",
-      "detail": "Variety is worth it on its own terms, since different grains bring different textures and cooking times, and rotating them means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Most of these cook like pasta, in plenty of salted water and drained when tender, which is far more forgiving than the exact ratios rice wants. Buy them from the bulk bins where you can.",
+      "short_answer": "Rotating grains is the cheapest upgrade in the pantry. Quinoa cooks in fifteen minutes and holds together cold. Farro and barley are chewy, made for soups and bowls. Bulgur takes ten minutes with boiling water and a lid.",
+      "detail": "Variety is worth it on its own terms, since different grains bring different textures and cooking times, and rotating them means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Most of these cook like pasta, in plenty of salted water and drained when tender, which is far more forgiving than the exact ratios rice wants. Buy them from the bulk bins where you can. Buckwheat is not wheat at all and cooks fast. Millet and sorghum are cheap and carry no gluten. Bulgur is the fastest of the lot. The bitter coating on quinoa’s hull is called saponin.",
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
@@ -4183,10 +4183,10 @@
       "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
       "cart_pick": "Quinoa",
       "watch_out": [
-        "Quinoa carries a bitter natural coating called saponin on its outer hull. Rinse it before cooking; that is what takes the bitterness off."
+        "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off."
       ],
       "buying_tips": [
-        "Quick: bulgur (10 min), quinoa (15 min), buckwheat (15 min), millet (20 min).",
+        "Quick ones: bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20.",
         "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
         "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
         "Cook most of them like pasta, in salted water, and drain.",
@@ -4229,8 +4229,8 @@
       "question": "Which bottled water should I buy?",
       "decision": "Spring water comes from one named place; purified is treated tap.",
       "why": "Spring water comes from a place. Purified is a process run on whatever came out of the tap.",
-      "short_answer": "Two different products sharing one shelf. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement.",
-      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds.",
+      "short_answer": "Two products share one shelf. Spring water is defined by its underground source. Purified water is defined by its treatment, often of city water. Its label need not name the source.",
+      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
@@ -4247,7 +4247,7 @@
       ],
       "watch_out": [
         "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen. It is the honest fallback, not the standard.",
-        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic found in glass-bottled drinks to the paint on painted metal caps, scratched by rubbing together in storage before they were ever used. Cleaning the caps first took most of it back out. For water specifically the counts were low in every container, glass or plastic, glass slightly higher than plastic.",
+        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic in glass-bottled drinks to the paint on painted metal caps. The caps were scratched by rubbing together in storage, before they were ever used. Cleaning the caps first took most of it back out. For water specifically the counts were low in every container, glass or plastic, glass slightly higher than plastic.",
         "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle."
       ],
       "labels_decoded": [
@@ -6705,7 +6705,7 @@
       "cart_pick": "Coffee beans in a sealed bag",
       "buying_tips": [
         "Check that the packaging is sealed.",
-        "A bag without a valve can still be checked for an intact seal; the valve alone is not the full packaging specification.",
+        "A bag without a valve can still be checked for an intact seal. The valve alone is not the full packaging specification.",
         "Keep the sealed coffee away from heat; the archived storage studies describe heat-related changes."
       ],
       "watch_out": [
