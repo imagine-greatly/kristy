@@ -7255,7 +7255,9 @@
         "pepperoni",
         "guanciale worth buying",
         "how do you choose prosciutto",
-        "how do you choose salami"
+        "how do you choose salami",
+        "pork jowl",
+        "pork cheek"
       ],
       "category": "deli",
       "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
@@ -7318,7 +7320,9 @@
         "goat meat",
         "ground goat",
         "goat chops",
-        "mutton"
+        "mutton",
+        "chevon",
+        "cabrito"
       ],
       "category": "meat_counter",
       "question": "How do you judge lamb and goat meat quality?",
@@ -7663,7 +7667,7 @@
         "beef bones",
         "knuckle bones"
       ],
-      "decision": "Soup bones are sold by butchers and farmers; ask which bones they offer.",
+      "decision": "Ask the meat counter which soup bones it carries.",
       "sources": [
         {
           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
