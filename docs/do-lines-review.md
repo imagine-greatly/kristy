@@ -185,6 +185,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `coconut_milk_beverage` | eggs_dairy | Carton coconut milk is a drink; the can is for cooking. | Read the carton for “beverage” in the name, then the thickeners. | — |
 | `plant_butter` | eggs_dairy | Plant butter, read for which oils it is made from. | Read the ingredient list and find which oil comes first. | — |
 | `dairy_case` | eggs_dairy | Pick the dairy type first, then read what the carton promises. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
+| `kombucha` | bulk_pantry | Kombucha bought cold, from the refrigerated case. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
+| `sauerkraut` | bulk_pantry | Raw sauerkraut from the cold case, never heated. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |
+| `kimchi` | bulk_pantry | Crisp, bright kimchi to eat as is; sour, softer kimchi to cook. | Check the packed date, then read the list for fish sauce or shrimp. | — |
+| `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
+| `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother left in. | Read the label for “diluted” or a second vinegar named in a blend. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

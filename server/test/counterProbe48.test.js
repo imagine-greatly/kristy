@@ -58,7 +58,7 @@ const QUERIES = nonEmpty([
   ['hot dogs', 'hot_dogs'],
   ['frozen pizza', 'miss'],
   ['baby food', 'miss'],
-  ['kombucha', 'miss'],
+  ['kombucha', 'kombucha'], // K20 admin ruling: pinned gap now covered by the kombucha card.
 ], '48 weekly grocery queries', 48);
 assert.equal(QUERIES.length, 48);
 
@@ -81,7 +81,7 @@ const model = mock.method(anthropic.messages, 'create', () => { throw new Error(
 
 for (const query of nonEmpty([
   'taylor swift', 'bitcoin', 'hello', 'weather tomorrow', 'stock prices',
-  'car insurance', 'iphone charger', 'kombucha',
+  'car insurance', 'iphone charger', 'baby food', // K20 admin ruling: kombucha now matches; baby food is the pinned bare miss (:60).
 ], 'bare misses that must never generate', 8)) {
   test(`bare ask miss never generates: ${query}`, async () => {
     const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'generator_called' }));
@@ -99,14 +99,15 @@ for (const query of nonEmpty([
   });
 }
 
+// K20 admin ruling: kombucha now matches a card.
 test('phrased grocery miss reaches the injected generator', async () => {
   const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'insufficient' }));
   const modelCalls = model.mock.callCount();
   const out = await answerCounterQuestion({
-    query: 'how do I choose kombucha', client: offline, ip: 'phrased-probe', generator,
+    query: 'how do I choose baby food', client: offline, ip: 'phrased-probe', generator,
   });
   assert.equal(generator.mock.callCount(), 1);
-  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose kombucha');
+  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose baby food');
   assert.equal(model.mock.callCount(), modelCalls);
   assert.equal(out.card, null);
   assert.equal(out.reason, 'insufficient');

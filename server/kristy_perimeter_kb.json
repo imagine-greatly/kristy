@@ -9190,6 +9190,271 @@
         "how do i choose dairy at the store",
         "is ultrafiltered milk worth buying"
       ]
+    },
+    {
+      "id": "kombucha",
+      "title": "Kombucha",
+      "aliases": [
+        "kombucha",
+        "kombucha tea",
+        "bottled kombucha",
+        "flavored kombucha"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick kombucha?",
+      "decision": "Kombucha bought cold, from the refrigerated case.",
+      "why": "Bottled kombucha can keep fermenting, and its alcohol can climb. Commercial kombucha is usually under 0.5%.",
+      "short_answer": "Pick kombucha from the refrigerated case. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars. At 0.5% alcohol or more, federal alcohol rules apply.",
+      "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. Federal law calls a fermented drink beer at one-half of 1 percent alcohol by volume or more. TTB alcohol rules then apply, including a health warning statement on the container. They apply even if the alcohol reaches 0.5% after bottling. Some makers sell hard kombucha at over 5 percent alcohol.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kombucha",
+        "https://www.ttb.gov/kombucha/general-requirements",
+        "https://www.law.cornell.edu/uscode/text/26/5052"
+      ],
+      "kristy_take": "Kombucha keeps working in the bottle. The cold case and the label show where it stands.",
+      "cart_pick": "Kombucha from the refrigerated case",
+      "buying_tips": [
+        "Pick bottles from the refrigerated case.",
+        "Read the Nutrition Facts for added sugars.",
+        "Look for an alcohol statement on the label.",
+        "Keep it cold once home."
+      ],
+      "watch_out": [
+        "Hard kombucha is an alcoholic drink, sold at over 5 percent alcohol.",
+        "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Flavored kombucha",
+          "meaning": "Kombucha with fruit juice or spices added."
+        },
+        {
+          "term": "Health warning statement",
+          "meaning": "Required on any kombucha at 0.5% alcohol or more."
+        },
+        {
+          "term": "Hard kombucha",
+          "meaning": "Kombucha sold with over 5 percent alcohol."
+        }
+      ],
+      "tier_note": "Sugar and alcohol are both on the bottle, read rather than guessed.",
+      "asked_as": [
+        "which kombucha should i buy",
+        "how do i pick a kombucha",
+        "is bottled kombucha worth buying"
+      ]
+    },
+    {
+      "id": "sauerkraut",
+      "title": "Sauerkraut",
+      "aliases": [
+        "sauerkraut",
+        "kraut",
+        "raw sauerkraut",
+        "unpasteurized sauerkraut"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick sauerkraut?",
+      "decision": "Raw sauerkraut from the cold case, never heated.",
+      "why": "Raw kraut goes from fermenting straight to the package. Shelf-stable kraut is heated in the jar or can.",
+      "short_answer": "Pick sauerkraut labeled raw from the refrigerated case. Raw kraut is not heated and keeps its crunch. Shelf-stable jars and cans are heated, which stops fermenting. Refrigerated alone does not prove raw.",
+      "detail": "Sauerkraut is shredded cabbage mixed with salt and left to ferment. Lactic acid bacteria, the microbes that sour it, turn the cabbage sugars into acids. Home recipes aim for 2.25% to 2.5% salt. Raw kraut is packaged straight from fermentation without heat, then kept refrigerated. Shelf-stable kraut is packed in a jar or can, then heated. The heat stops fermentation and gives a shelf life of a few years. Fresh-pack pickles get their acid from vinegar, while sauerkraut is a fermented pickle product.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://chowhound.com/1745205/difference-raw-vs-canned-sauerkraut",
+        "https://hgic.clemson.edu/?p=35965",
+        "https://extension-store.montana.edu/montguides/canning-pickles-and-sauerkraut"
+      ],
+      "kristy_take": "The word raw and the cold case go together. The ingredient list shows how it was soured.",
+      "cart_pick": "Raw sauerkraut from the cold case",
+      "buying_tips": [
+        "Look for raw on the label.",
+        "Pick it from the refrigerated case.",
+        "Keep raw kraut cold once home.",
+        "Choose a shelf-stable jar for the pantry, knowing it was heated."
+      ],
+      "watch_out": [
+        "Refrigerated kraut is not always raw, so read the label.",
+        "Vinegar on the list means it was not soured by fermenting alone."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Raw",
+          "meaning": "Not heated after fermenting, and kept refrigerated."
+        },
+        {
+          "term": "Shelf-stable",
+          "meaning": "Heated in the jar or can, which stops fermentation."
+        }
+      ],
+      "tier_note": "Cabbage and salt alone is a craft standard for kraut made by fermenting.",
+      "asked_as": [
+        "which sauerkraut should i buy",
+        "how do i pick a sauerkraut",
+        "is raw sauerkraut worth buying"
+      ]
+    },
+    {
+      "id": "kimchi",
+      "title": "Kimchi",
+      "aliases": [
+        "kimchi",
+        "kimchee",
+        "radish kimchi",
+        "jarred kimchi"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick kimchi?",
+      "decision": "Crisp, bright kimchi to eat as is; sour, softer kimchi to cook.",
+      "why": "The packed date shows how long it has fermented. Kimchi moves from fresh to ripe to overripe.",
+      "short_answer": "Check when the kimchi was packed. Fresh kimchi looks crisp, plump and bright, for eating as is. Lighter, more pruned kimchi is well fermented and suits cooking. Read the list for fish sauce or shrimp.",
+      "detail": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt (the Codex standard). Fish sauce or salted seafood such as shrimp is often added. The packed date shows how long it has fermented, from fresh to ripe to overripe. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented. Fermenting kimchi makes carbon dioxide gas.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kimchi",
+        "https://www.tastingtable.com/1611638/store-bought-kimchi-fermentation-time",
+        "https://www.chowhound.com/1921456/store-bought-kimchi-problem/",
+        "https://www.traceone.com/resources/plm-compliance-blog/codex-alimentarius-releases-standard-for-kimchi"
+      ],
+      "kristy_take": "The packed date and the look of the cabbage tell the stage. Pick the stage for the meal.",
+      "cart_pick": "Kimchi with a recent packed date",
+      "buying_tips": [
+        "Check the label for the packed date.",
+        "Look for crisp, plump, bright cabbage to eat as is.",
+        "Pick lighter, softer kimchi to cook with now.",
+        "Read the ingredients for fish sauce or shrimp."
+      ],
+      "watch_out": [
+        "Labels do not always say fresh or well fermented.",
+        "Fish sauce or salted seafood is often in the seasoning."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Packed date",
+          "meaning": "Shows how long the kimchi has been fermenting."
+        },
+        {
+          "term": "Radish kimchi",
+          "meaning": "Kimchi made with cubed Korean radish instead of cabbage."
+        }
+      ],
+      "tier_note": "The packed date shows how far along the jar is.",
+      "asked_as": [
+        "which kimchi should i buy",
+        "how do i pick a kimchi",
+        "is radish kimchi worth buying"
+      ]
+    },
+    {
+      "id": "fermented_pickles",
+      "title": "Fermented pickles",
+      "aliases": [
+        "fermented pickles",
+        "brined pickles",
+        "half sour pickles",
+        "full sour pickles",
+        "lacto fermented pickles",
+        "naturally fermented pickles"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you find pickles that are actually fermented?",
+      "decision": "Pickles fermented in salt brine, sold refrigerated.",
+      "why": "Brined pickles sour in salt brine for weeks. Quick pickles get vinegar and are ready in a day or two.",
+      "short_answer": "Read the ingredients. Brined pickles ferment in salt brine with no vinegar, and usually must be refrigerated. Quick pickles are soured with vinegar instead. Some makers add vinegar to brined pickles too, so the list decides.",
+      "detail": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. Federal rules let acidified foods, meaning foods with acid added, be called pickles. Foods kept under refrigeration fall outside that rule. A half-sour has a shorter stay in the brine and is still crisp and bright green. A full-sour is fully fermented.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pickled_cucumber",
+        "https://www.law.cornell.edu/cfr/text/21/114.3",
+        "https://extension.oregonstate.edu/catalog/pub/pnw-355-pickling-vegetables"
+      ],
+      "kristy_take": "Pickle is a broad word. The ingredient list shows whether brine or vinegar did the souring.",
+      "cart_pick": "Refrigerated brined pickles, no vinegar",
+      "buying_tips": [
+        "Pick from the refrigerated case.",
+        "Read the ingredients for salt and no vinegar.",
+        "Choose half-sour for a crisp, bright green pickle.",
+        "Choose full-sour for a fully fermented pickle."
+      ],
+      "watch_out": [
+        "Refrigerated does not by itself mean fermented.",
+        "Some makers add vinegar to brined pickles as a preservative."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Kosher dill",
+          "meaning": "A pickle style with garlic and dill in salt brine, not necessarily kosher certified."
+        },
+        {
+          "term": "Half-sour",
+          "meaning": "A shorter stay in the brine, still crisp and bright green."
+        },
+        {
+          "term": "Full-sour",
+          "meaning": "Fully fermented in the brine."
+        }
+      ],
+      "tier_note": "Vinegar on the list marks a quick pickle, not a fermented one.",
+      "asked_as": [
+        "which fermented pickles should i buy",
+        "are brined pickles worth buying",
+        "how do i pick half sour pickles"
+      ]
+    },
+    {
+      "id": "raw_cider_vinegar",
+      "title": "Raw apple cider vinegar",
+      "aliases": [
+        "raw apple cider vinegar",
+        "unfiltered apple cider vinegar",
+        "apple cider vinegar with the mother",
+        "apple cider vinegar with mother",
+        "raw cider vinegar"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick raw apple cider vinegar?",
+      "decision": "Raw, unfiltered cider vinegar, with the mother left in.",
+      "why": "Unfiltered vinegar can keep the mother. The label names any added water or second vinegar.",
+      "short_answer": "Look for unfiltered or unpasteurized on the label, with the mother. Cider vinegar is made from fermented apple juice. A watered-down bottle must say diluted. A blend with spirit vinegar is labeled as a blend.",
+      "detail": "Cider vinegar is made from apple juice by two fermentations. Yeast first turns the sugars into alcohol, making cider. Acetic acid bacteria then turn the alcohol into acetic acid, the sour part of vinegar. That second step is called acetous fermentation. FDA guidance says each vinegar should contain 4 grams of acetic acid per 100 mL. A diluted vinegar must say “diluted with water to __ percent acid strength”, never below 4 percent. A blend of spirit and cider vinegar is labeled as a blend, names in order of predominance. The mother is a cellulose film of acetic bacteria. It may remain in unfiltered vinegar, is considered harmless, and can be filtered out.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cpg-sec-525825-vinegar-definitions-adulteration-vinegar-eels",
+        "https://en.wikipedia.org/wiki/Vinegar",
+        "https://en.wikipedia.org/wiki/Apple_cider_vinegar"
+      ],
+      "kristy_take": "The mother and the word unfiltered go together. Full strength and a single vinegar show on the label too.",
+      "cart_pick": "Unfiltered cider vinegar with the mother",
+      "buying_tips": [
+        "Look for unfiltered or with the mother on the label.",
+        "Check that the label does not say diluted.",
+        "Read the name for a second vinegar in a blend."
+      ],
+      "watch_out": [
+        "A diluted vinegar must state its acid strength on the label.",
+        "A blend of spirit and cider vinegar names both, the main one first."
+      ],
+      "labels_decoded": [
+        {
+          "term": "With the mother",
+          "meaning": "The film of vinegar bacteria is left in, unfiltered."
+        },
+        {
+          "term": "Unfiltered",
+          "meaning": "Not filtered, so the mother may remain."
+        },
+        {
+          "term": "Diluted with water",
+          "meaning": "Water was added. The label gives the acid strength, never below 4 percent."
+        }
+      ],
+      "tier_note": "A diluted or blended bottle has to say so on the label.",
+      "asked_as": [
+        "which raw apple cider vinegar should i buy",
+        "is unfiltered apple cider vinegar worth buying",
+        "how do i pick a raw cider vinegar"
+      ]
     }
   ]
 }
