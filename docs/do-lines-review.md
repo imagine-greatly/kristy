@@ -165,6 +165,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Ask to see the shellfish tag, then tap any open shell. | — |
 | `smoked_salmon` | seafood | Smoked salmon kept cold, read by its label word. | Read the label for nova, lox or kippered, then keep it refrigerated. | — |
 | `seafood_counter` | seafood | Pick the species first, then ask where and how it was raised. | Ask the counter for the species name, then check the fish sits on ice. | — |
+| `sprouted_grain_bread` | bulk_pantry | Sprouted grain bread with sprouted whole grains first, no added flour. | Read the first few ingredients, then check the rest for added flour. | — |
+| `sprouted_grains` | bulk_pantry | Sprouted grain labeled sprouted whole grain; no regulated definition exists. | Check the label names the grain as whole, not only its process. | — |
+| `specialty_flours` | bulk_pantry | Specialty flour labeled whole grain; stoneground alone does not promise it. | Read the flour name for “whole”, then check the fat line. | — |
+| `gluten_free_bread` | bulk_pantry | Gluten-free bread carrying the label claim, with its flours and binder read. | Find the claim on the bag, then read the ingredient list and the gum. | — |
+| `buns_rolls` | bulk_pantry | Buns and rolls named whole wheat, which rules out white flour. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

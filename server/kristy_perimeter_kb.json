@@ -8142,6 +8142,274 @@
           "url": "https://www.fisheries.noaa.gov/species/northern-anchovy"
         }
       ]
+    },
+    {
+      "id": "sprouted_grain_bread",
+      "title": "Sprouted grain bread",
+      "aliases": [
+        "sprouted grain bread",
+        "sprouted bread",
+        "sprouted wheat bread",
+        "sprouted whole grain bread"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which sprouted grain bread should you buy?",
+      "decision": "Sprouted grain bread with sprouted whole grains first, no added flour.",
+      "why": "Sprouted bread uses whole grains sprouted before milling. Some loaves add flour, and the ingredient list shows it.",
+      "short_answer": "Read the ingredients: sprouted whole grains should come first. Some loaves add flour or wheat gluten. Look in the refrigerated or freezer case. Sprouted wheat still contains gluten.",
+      "detail": "Sprouted bread is made from whole grains allowed to germinate, or sprout, before they are milled. Some sprouted breads are made with added flour or gluten. Besides wheat, a loaf may include millet, barley, lentils or soy. Most sprouted grain breads sit in the refrigerator or freezer section. The loaf tends to be denser and heavier than bread made from flour. Most are vegan, but check the label.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sprouted_bread",
+        "https://www.healthline.com/nutrition/sprouted-grain-bread",
+        "https://sporked.com/article/what-is-sprouted-bread/"
+      ],
+      "kristy_take": "The ingredient list settles it. Sprouted whole grains lead, and no extra flour follows.",
+      "cart_pick": "Sprouted grain bread, no added flour",
+      "buying_tips": [
+        "Read the first ingredients for sprouted whole grains.",
+        "Check the list for added flour or wheat gluten.",
+        "Look in the refrigerated or freezer case."
+      ],
+      "watch_out": [
+        "Sprouted wheat bread contains gluten, so it is not gluten-free.",
+        "Some sprouted loaves add flour or gluten, so the name alone does not settle it."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sprouted whole grain",
+          "meaning": "Whole grain kernels sprouted before milling."
+        },
+        {
+          "term": "Wheat gluten",
+          "meaning": "Gluten added to the dough on top of the grain."
+        }
+      ],
+      "tier_note": "Sprouted grains first is a label read; a loaf without added flour is the whole-food standard.",
+      "asked_as": [
+        "is sprouted grain bread worth buying",
+        "how do i pick a sprouted bread",
+        "why is sprouted bread in the freezer"
+      ]
+    },
+    {
+      "id": "sprouted_grains",
+      "title": "Sprouted whole grain",
+      "aliases": [
+        "sprouted grains",
+        "sprouted grain",
+        "sprouted whole grains",
+        "sprouted whole grain",
+        "sprouted flour",
+        "sprouted wheat flour"
+      ],
+      "category": "bulk_pantry",
+      "question": "What does sprouted whole grain mean on a label?",
+      "decision": "Sprouted grain labeled sprouted whole grain; no regulated definition exists.",
+      "why": "No rule defines “sprouted” alone. Sprouted grain that keeps the whole kernel is labeled “sprouted whole grain”.",
+      "short_answer": "No regulated definition of “sprouted” exists. Look for “sprouted whole grain” on the bag or flour. Sprouted grain that keeps its bran, germ and endosperm counts as whole grain.",
+      "detail": "A definition from AACC International (AACCI) counts sprouted grain as whole grain when it keeps all its original bran, germ and endosperm. The sprout must not grow longer than the kernel. Such grain should be labeled “sprouted whole grain”. USDA’s meat and poultry inspection agency, FSIS, accepts that definition. The whole grain claimed on a package is its dry weight, after the sprouting water is subtracted. A refined grain cannot sprout, because the sprout comes from the germ. Sprouting has to be a controlled process.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://wholegrainscouncil.org/node/13174",
+        "https://wholegrainscouncil.org/node/13248",
+        "https://www.todaysdietitian.com/whole-grains-sprouted-grains/",
+        "https://www.foodnavigator.com/Article/2018/11/12/Sprouted-grains-Are-we-any-closer-to-a-workable-definition/"
+      ],
+      "kristy_take": "The words “sprouted whole grain” carry the whole-grain meaning. “Sprouted” alone has no rule behind it.",
+      "cart_pick": "Grain or flour labeled sprouted whole grain",
+      "buying_tips": [
+        "Look for “sprouted whole” before the grain’s name.",
+        "Read “sprouted” alone as a term with no regulated definition.",
+        "Check that the ingredients name the grain as whole."
+      ],
+      "watch_out": [
+        "“Sprouted” has no regulated definition, so the word alone promises nothing.",
+        "Grain that sprouts by accident in the field is not meant for the food supply."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sprouted whole grain",
+          "meaning": "Sprouted grain that keeps all its bran, germ and endosperm."
+        },
+        {
+          "term": "Malted grain",
+          "meaning": "The UK label term for sprouted grain."
+        }
+      ],
+      "tier_note": "The label term comes from a grain-science definition, since no federal rule defines sprouted.",
+      "asked_as": [
+        "what does sprouted whole grain mean",
+        "are sprouted grains whole grains",
+        "how do i buy sprouted flour"
+      ]
+    },
+    {
+      "id": "specialty_flours",
+      "title": "Specialty flour",
+      "aliases": [
+        "spelt flour",
+        "einkorn flour",
+        "almond flour",
+        "almond meal",
+        "stone ground flour",
+        "stoneground flour",
+        "stone ground wheat flour",
+        "specialty flour",
+        "specialty flours"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you read a specialty flour bag?",
+      "decision": "Specialty flour labeled whole grain; stoneground alone does not promise it.",
+      "why": "A stone mill’s flour can still have its bran sifted out. The word “whole” on the bag is what settles it.",
+      "short_answer": "Look for “whole” in the flour’s name or first ingredient. “Stoneground” alone does not mean whole grain. Spelt and einkorn are wheats, so both contain gluten. Almond flour is usually made from skinned almonds.",
+      "detail": "Stone-milled flour can have its bran sifted out afterwards, so “stoneground wheat” is not always whole grain. US whole wheat flour keeps the wheat’s bran, germ and endosperm unaltered. The fat line is a check: whole wheat flour has about 2.5% total fat, white flour under 1%. Spelt and einkorn are both species of wheat, and both contain gluten. Almond flour is usually made from blanched, or skinned, almonds. Almond meal can be made from whole or blanched almonds. Ground almonds oxidize faster than whole ones.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://wholegrainscouncil.org/print/blog/2017/01/whole-grain-flour-sifting-true-false",
+        "https://www.npr.org/2013/03/01/173242994/seeking-a-grain-of-truth-in-whole-grain-labels",
+        "https://en.wikipedia.org/wiki/Spelt",
+        "https://en.wikipedia.org/wiki/Einkorn_wheat",
+        "https://en.wikipedia.org/wiki/Almond_flour"
+      ],
+      "kristy_take": "The word “whole” on the bag carries the meaning. The type of mill does not.",
+      "cart_pick": "Specialty flour labeled whole grain",
+      "buying_tips": [
+        "Look for “whole” in the flour’s name or first ingredient.",
+        "Check the fat line: about 2.5% for whole wheat flour, under 1% for white.",
+        "Read almond flour as usually skinned, and almond meal as either."
+      ],
+      "watch_out": [
+        "Spelt and einkorn flours contain gluten.",
+        "“Stoneground” alone does not mean the bran stayed in."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Stoneground",
+          "meaning": "Names the mill, not whether the bran stayed in."
+        },
+        {
+          "term": "Almond meal",
+          "meaning": "Ground almonds, with or without their skins."
+        }
+      ],
+      "tier_note": "Whole wheat flour has a federal definition; choosing whole over stoneground alone is the whole-food standard.",
+      "asked_as": [
+        "is stone ground flour whole grain",
+        "does spelt flour have gluten",
+        "what is the difference between almond flour and almond meal"
+      ]
+    },
+    {
+      "id": "gluten_free_bread",
+      "title": "Gluten-free bread",
+      "aliases": [
+        "gluten free bread",
+        "gluten-free bread",
+        "gf bread",
+        "gluten free loaf",
+        "gluten free sandwich bread"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick gluten-free bread?",
+      "decision": "Gluten-free bread carrying the label claim, with its flours and binder read.",
+      "why": "Four label wordings share one federal gluten limit. The claim covers gluten only, so the flours and binder still matter.",
+      "short_answer": "“Gluten-free”, “no gluten”, “free of gluten” and “without gluten” all meet one federal limit. The claim is voluntary. Bakers replace gluten with blended flours and starches, plus a gum that binds the loaf.",
+      "detail": "Under 21 CFR 101.91, all four wordings mean the food has less than 20 ppm (parts per million) gluten. Wheat starch may appear only if the food stays under 20 ppm. The claim is voluntary, defined by an FDA rule issued in 2013. Bakers replace gluten with a blend of flours and starches, such as rice, potato or tapioca. A hydrocolloid binder, usually xanthan gum or HPMC, mimics some of the stretch gluten gives. “Gluten-free” describes gluten content only.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-F/section-101.91",
+        "https://www.law.cornell.edu/cfr/text/21/101.91",
+        "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/gluten-free-labeling-foods",
+        "https://research.ucc.ie/en/publications/gluten-free-breads/"
+      ],
+      "kristy_take": "The claim settles the gluten. The ingredient list shows what holds the loaf together.",
+      "cart_pick": "Bread labeled gluten-free",
+      "buying_tips": [
+        "Check for one of the four gluten-free claim wordings.",
+        "Read which flours and starches replace the wheat.",
+        "Look for the gum that binds the loaf."
+      ],
+      "watch_out": [
+        "Celiac disease or a gluten concern? Ask a doctor which foods fit.",
+        "“Gluten-free” describes gluten content only, nothing else about the loaf."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Gluten-free",
+          "meaning": "Meets the federal gluten limit, as do “no gluten”, “free of gluten” and “without gluten”."
+        },
+        {
+          "term": "Wheat starch",
+          "meaning": "Allowed only when the food still meets the gluten-free limit."
+        }
+      ],
+      "tier_note": "The four claim wordings share one federal limit; reading the flours and binder is the label teaching.",
+      "asked_as": [
+        "how do i pick gluten free bread",
+        "is gluten free bread really gluten free",
+        "what holds gluten free bread together"
+      ]
+    },
+    {
+      "id": "buns_rolls",
+      "title": "Buns and rolls",
+      "aliases": [
+        "hamburger buns",
+        "hamburger bun",
+        "hot dog buns",
+        "hot dog bun",
+        "burger buns",
+        "dinner rolls",
+        "dinner roll",
+        "sandwich rolls",
+        "whole wheat buns",
+        "whole wheat rolls"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which buns and rolls are whole wheat?",
+      "decision": "Buns and rolls named whole wheat, which rules out white flour.",
+      "why": "Bread, rolls and buns share one federal standard. Buns and rolls named whole wheat are made from whole wheat flour only.",
+      "short_answer": "Read the name on the bag. “Whole wheat buns” and “whole wheat rolls” use whole wheat flour, with no white flour. “Enriched buns” are made with enriched flour instead.",
+      "detail": "Federal rule 21 CFR 136.110 sets one standard for bread, rolls and buns. Under 136.180, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Under 136.115, enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil. Dough conditioners and calcium propionate, a preservative, follow at 2% or less.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/136.110",
+        "https://www.law.cornell.edu/cfr/text/21/136.180",
+        "https://www.law.cornell.edu/cfr/text/21/136.115",
+        "https://smartlabel.syndigo.com/id/bdce1b9a-cc48-4c26-8003-92bf9073231d"
+      ],
+      "kristy_take": "The name on the bag is regulated. “Whole wheat” there means whole wheat flour only.",
+      "cart_pick": "Whole wheat buns or rolls",
+      "buying_tips": [
+        "Read the name on the bag for “whole wheat”.",
+        "Check the first ingredient for whole wheat flour.",
+        "Read “enriched buns” as made with enriched flour, not whole wheat."
+      ],
+      "watch_out": [
+        "Enriched buns use enriched flour in place of whole wheat flour.",
+        "A typical enriched bun also lists sugar, soybean oil and dough conditioners."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Whole wheat buns",
+          "meaning": "Made from whole wheat flour, with no white flour used."
+        },
+        {
+          "term": "Enriched buns",
+          "meaning": "Made with enriched flour in place of some or all of the flour."
+        },
+        {
+          "term": "Graham buns",
+          "meaning": "Another name covered by the whole wheat rule."
+        }
+      ],
+      "tier_note": "The bun names come from one federal standard, so the name on the bag is the thing to read.",
+      "asked_as": [
+        "which hamburger buns should i buy",
+        "are whole wheat buns worth buying",
+        "how do i pick dinner rolls"
+      ]
     }
   ]
 }

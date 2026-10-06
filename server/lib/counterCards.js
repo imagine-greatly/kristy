@@ -191,6 +191,8 @@ export const RETIRED_GENERATED = [
   'gen_goat_meat_quality',
   // → cured_pork (K15). "guanciale" is now a cured_pork alias; the card answers the ask.
   'gen_guanciale_worth_buying',
+  // → breakfast_cereal (K18). Its cereal and whole-grain aliases already serve the ask; asked_as is K9-frozen.
+  'gen_choosing_a_real_cereal',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */
