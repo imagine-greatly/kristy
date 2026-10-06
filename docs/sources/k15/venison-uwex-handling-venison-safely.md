@@ -1,0 +1,33 @@
+https://livestock.extension.wisc.edu/articles/handling-venison-safely/ | fetched 2026-10-06 | tool: scrapling bulk_get (text)
+
+Handling Venison Safely
+Written by
+JEFFREY J SINDELAR
+Venison is a nutritious game meat that you can enjoy as roasts, steaks, and ground venison; or use as an ingredient in sausages.
+How you handle venison just after the kill can have a tremendous impact on the safety and quality of the final product. Proper care must be taken as soon as you down the deer.
+Key points when handling venison
+Keep it clean
+Keep  it dry
+Keep it cold
+These tasks aren’t always easy to accomplish, but these tried and tested tips will help assure safe and good tasting venison.
+You do not need to further “bleed” a harvested deer. Remove the viscera from the body cavity as soon as possible, especially if the deer was hit in the gut area. This will help cool the carcass more quickly and limit bacterial spreading and growth. At the same time, you should also take your time. Be careful not to cut into the intestines, stomach or bladder during organ removal since these commonly contain bacteria (some potentially dangerous). This is also a good time to cut around the entrance and exit holes to remove any dirty or potentially contaminated material.
+If intestinal contents do happen to spill into the body cavity or the cavity is very bloody, special care should be taken to minimize the spread of potential contamination. You might carefully use a clean cloth or toweling to clean up any spill. Rinsing out the cavity with cold water soon after the deer has been killed can help by removing any bacteria that is a part of the spilled material. Spraying the internal cavity of the deer with a simple 50/50 solution of water and vinegar is a great option to help destroy some of the bacteria that may be present. In most cases, leaving the hide on the deer is a great way to keep the meat surface clean (prevent bacterial contamination) and prevent the outside of the carcass from drying out.
+Once you have removed the internal organs of your deer, you should focus on cooling the carcass as soon as possible. This will slow bacterial growth, improving food safety and improve the quality of your venison meat. Although, this is at times difficult to do, cooling the carcass quickly is critical to limit any bacterial growth as well as improving the eating qualities of your venison. The cooling process should begin within a couple hours of harvesting the deer. Propping open the body cavity, keeping the carcass in the shade and exposing it to air movement are all ways to mprove cooling. By suspending the deer from an overhead object, you can greatly speed up the cooling process since the air reaching the carcass will carry away any heat and provide a cooling effect. Be careful to not allow the carcass to freeze within the first six hours after harvest since this can result in the meat becoming tough.
+If you have the deer processed at a meat plant, get there as soon as possible to place the carcass under controlled cold temperature conditions.
+“Aging” refers to holding carcasses at 35-45 degrees to allow natural enzymes to tenderize the meat. Tenderizing will not occur if the carcass is frozen. It can take from 7 to 10 days of aging to result in a noticeable eating difference in your venison steaks. If you choose to age your venison, you must weigh the benefits of aging against the drying out of exposed surfaces (dehydration) and possible bacterial spoilage. In warm weather, it is not advised to age venison, since bacteria can grow quickly and to dangerous levels.
+Don’t use black garbage bags for storing venison trimmings destined for sausage making. These bags are often made from recycled plastics and are not intended, or approved, for food use. Instead, use clear or white food-grade plastic bags, or rigid plastic containers. With the added concerns of Chronic Wasting Disease (CWD), there are two important precautions to take when handling deer. First, do not eat any part of a deer that appears infected with CWD. Call the Wisconsin Department of Natural Resources (DNR) if you see a wild deer that appears emaciated or is behaving abnormally. Second, do not eat the eyes, brain, spinal cord, spleen, tonsils or lymph nodes of any deer. While CWD has occurred in the U.S. for decades, both the World Health Organization and the U.S. Centers for Disease Control and Prevention have found no scientific evidence that CWD can infect humans.
+Deer harvested with lead bullets have been shown to result in greater occurrences of bullet fragmentation which can spread great distances from the bullet wound leaving tiny pieces and fragments of the bullet in the tissues of the deer. If not detected during processing, these fragments could remain in the steaks and roasts. This can potentially be an even greater hazard in ground venison. Children under the age of 6 and pregnant women are at the greatest risk from lead exposure.
+In order to provide your family with safe, high-quality venison, follow these  food safety precautions.
+To help protect against lead contamination:
+–Consider alternative expanding non-lead ammunition such as cooper or other highweight retention lead bullets, such as bonded bullets.
+–Practice good hunting skills, aiming for the vitals behind the shoulder, or the neck or the head. Do not shoot a running deer.
+–Avoid consuming internal organs such as the heart which may contain extra lead from heart-lung shots.
+–Take care to avoid processing any meat with excessive shot damage. Trim a generous distance away from the wound channel and discard any meat that is bruised, discolored or contains hair, dirt, bone fragments or grass.
+To help protect against CWD:
+— Wear rubber or latex gloves when dressing and processing a deer.
+— Do not process or eat venison from a deer that shows signs of CWD.
+— Minimize contact with the brain, spinal cord, spleen and lymph nodes, and do not eat this tissue.
+–Do not cut through the spinal column except to remove the head. Use a knife or saw for that purpose only. Soak the knife or saw blade in a 50/50 solution of household bleach and water for 1 hour, or dispose of the blade altogether.
+–Use separate knives for field dressing and removing the meat from the carcass. Do not use household knives for field dressing. Clean all knives, equipment and cutting surfaces with hot soap and water after use and disinfect with a 50/50 solution of household bleach and water.
+— Remove only the meat, do not cut through any bones, and remove all fat and connective tissue before eating or storing the meat. This saves on freezer space and makes it easier to use. Do not stew deer bones for soup stock.
+Author: Jeffrey Sindelar
