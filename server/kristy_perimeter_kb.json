@@ -188,8 +188,8 @@
       "question": "Is grass-fed beef worth it?",
       "decision": "Grass-finished beef ate grass its whole life; grass-fed alone did not.",
       "why": "‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard.",
-      "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze for most of their lives, spend the last months in a feedlot on grain, and the package still says grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ is the claim that covers the whole life, and it is the one worth paying for. The fat profile follows the finish, not the start.",
-      "detail": "The USDA withdrew its own grass-fed marketing standard in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food.",
+      "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze most of their lives, eat feedlot grain for the last months, and still be labeled grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ covers the whole life. That one is worth paying for.",
+      "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
@@ -208,7 +208,7 @@
         "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
         "Pasture artwork on the package is not a claim. The words are the claim.",
         "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
-        "USDA AMS withdrew its Grass (Forage) Fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose, so ask whose definition it is."
+        "USDA withdrew its grass-fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose, so ask whose definition it is."
       ],
       "labels_decoded": [
         {
@@ -246,8 +246,8 @@
       "question": "Is organ blend ground beef worth it?",
       "decision": "Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.",
       "why": "Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.",
-      "short_answer": "Under federal rules ‘ground beef’ is chopped beef and nothing else, cheek meat aside. Liver and heart are not permitted additions, so a product carrying them cannot use the standardized name and must wear a truthful descriptive one, with every ingredient listed. That is the whole test at the shelf: the label names liver and heart and gives each a share, or it does not. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.",
-      "detail": "9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters.",
+      "short_answer": "Under federal rules, ‘ground beef’ is chopped beef only, cheek meat aside. A blend with liver or heart needs its own name and full ingredient list. The test is whether the label gives liver and heart each a share.",
+      "detail": "9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
@@ -265,8 +265,8 @@
         "Grass-finished applies to the blend the same way it applies to plain ground beef. Both words, or it is a grain finish."
       ],
       "watch_out": [
-        "Liver sets the vitamin A. NIH lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces; the adult upper intake is 3,000 mcg a day. Check the liver percent and keep servings ordinary.",
-        "At the shares producers print, 8 percent organ or 5 percent liver plus 3 percent heart, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
+        "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
+        "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
         "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
       ],
       "labels_decoded": [
@@ -387,8 +387,8 @@
       "question": "Which beef cut should I buy?",
       "decision": "Chuck is the cut that falls apart when you cook it slowly.",
       "why": "The hard-working cuts carry the connective tissue that melts into the broth.",
-      "short_answer": "Match the cut to the method: tougher, cheaper cuts (chuck, brisket, round) are made for low-and-slow braising and stews; tender cuts (ribeye, strip, tenderloin) are for quick high heat. The cheap cuts often have the most flavor if you cook them right.",
-      "detail": "Muscles that work hard (shoulder/chuck, shank, round) are tougher and cheaper and turn tender with time and moisture. Muscles that don’t (loin, rib) are tender and pricier and want fast, hot cooking. Knowing this is how you eat well on a budget.",
+      "short_answer": "Tougher, cheaper cuts like chuck, brisket and round want low-and-slow braising and stews. Tender cuts like ribeye, strip and tenderloin want quick high heat. The cheap cuts often have the most flavor if you cook them right.",
+      "detail": "Match the cut to the method. Muscles that work hard (shoulder/chuck, shank, round) are tougher and cheaper and turn tender with time and moisture. Muscles that don’t (loin, rib) are tender and pricier and want fast, hot cooking. Knowing this is how you eat well on a budget.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
@@ -405,7 +405,7 @@
       "labels_decoded": [],
       "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact.",
       "watch_out": [
-        "Tenderness comes from how hard the muscle worked and how much connective tissue it carries, not from the age of the animal.",
+        "Tenderness comes from how hard the muscle worked and how much connective tissue it carries. It does not come from the age of the animal.",
         "Chuck is shoulder and round is rear leg. Both are working muscles, less tender, and want liquid, low heat and time.",
         "Loin and rib sit along the back and do little work, which is why they are the tender sections.",
         "Marbling is the flecks of fat inside the muscle. More of it means a more tender, juicier steak once cooked, so look for it on a quick-cooked cut."
@@ -431,7 +431,7 @@
       "question": "What ground beef lean ratio should I get?",
       "decision": "80/20 for burgers. 90/10 for anything you drain.",
       "why": "The numbers are lean-to-fat by weight. It is a cooking choice, not a health one.",
-      "short_answer": "The numbers are lean-to-fat by weight: 80/20 is 20% fat (juicy, best for burgers), 90/10 is leaner (better for tacos, sauces, or draining fat). Neither is ‘healthier’ in any way that matters much — pick by what you’re cooking and your budget.",
+      "short_answer": "80/20 is 20% fat, juicy and best for burgers. 90/10 is leaner, better for tacos, sauces or draining fat. Neither is ‘healthier’ in any way that matters much. Pick by what you’re cooking and your budget.",
       "detail": "Fattier blends are cheaper and cook up juicier; leaner blends cost more and dry out faster. For dishes where you drain the fat anyway, a mid blend and a strainer gets you there for less. It’s a cooking-and-cost decision, not a health one.",
       "evidence_tier": "established",
       "sources": [
@@ -2623,8 +2623,8 @@
       "question": "What do Prime, Choice and Select mean?",
       "decision": "Grade is a marbling score, and marbling only shows in fast cooking.",
       "why": "Grade measures marbling and age. It says nothing about how the animal was raised.",
-      "short_answer": "They grade marbling, the fat threaded inside the muscle, along with the age of the animal. Prime has the most, Choice is the middle and the usual retail grade, Select is leanest and driest. It is a cooking and eating-quality scale. It says nothing about how the animal was raised, what it was fed, or whether it ever got outside.",
-      "detail": "Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all, including much grass-finished beef, whose marbling pattern the scale was not built around. Marbling melts during cooking, which is why a Prime steak forgives high heat and a Select one dries out. On a braising cut the grade matters far less, because time and moisture do the work the fat would have done. Grade and sourcing are two separate axes, and neither implies the other.",
+      "short_answer": "Grade scores marbling, the fat inside the muscle, and age. Prime has the most, Choice is the usual middle grade, Select is leanest and driest. It says nothing about how the animal was raised, fed, or whether it got outside.",
+      "detail": "Grade is a cooking and eating-quality scale, and marbling is the fat threaded inside the muscle. Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all, including much grass-finished beef, whose marbling pattern the scale was not built around. Marbling melts during cooking, which is why a Prime steak forgives high heat and a Select one dries out. On a braising cut the grade matters far less, because time and moisture do the work the fat would have done. Grade and sourcing are two separate axes, and neither implies the other.",
       "evidence_tier": "established",
       "sources": [
         "USDA AMS Official United States Standards for Grades of Carcass Beef",
@@ -2659,8 +2659,8 @@
       ],
       "tier_note": "Grade is a published USDA marbling score, and marbling only shows on a steak cooked fast, not on a braise.",
       "watch_out": [
-        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist, and a cut can pass USDA grading without earning that name. Read the grade separately.",
-        "Grading looks at marbling and the maturity of the animal. It does not look at breed, and it does not check how the cut looks or the texture of the marbling.",
+        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.",
+        "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
         "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
       ],
       "asked_as": [
@@ -2692,8 +2692,8 @@
       "question": "How do I tell good meat from the case?",
       "decision": "Color comes from oxygen and packaging, not from how fresh it is.",
       "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
-      "short_answer": "Color is the least useful signal and the one everybody uses. Bright red is beef that has met oxygen, purple-red is vacuum-packed beef that has not, and both are fine. Dull brown at the edges means it has been cut a while. What actually tells you: a package that is fully sealed and not leaking meat juices, fine marbling through the muscle rather than a rim of fat, and no off smell or slimy surface.",
-      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them.",
+      "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, fine marbling, no off smell or slime.",
+      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS “The Color of Meat and Poultry”",
@@ -2724,8 +2724,8 @@
       "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
       "watch_out": [
         "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
-        "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging; a well-sealed vacuum pack can go up to seven.",
-        "Sell-by and use-by dates are set voluntarily by the packer or store, not required by federal law, and are not a safety indicator."
+        "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven.",
+        "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator."
       ],
       "eyebrow_short": "Judging meat",
       "asked_as": [
@@ -2760,8 +2760,8 @@
       "question": "When should I salt meat, and is a brine worth it?",
       "decision": "Salting a day ahead seasons the meat through and dries the surface.",
       "why": "Salt pulls moisture out, then goes back in with it. The dried surface is what browns.",
-      "short_answer": "Salt early and skip the bucket. Applied a day ahead, salt dissolves in the meat’s own surface moisture, draws more out, and that concentrated brine is reabsorbed — seasoning the muscle through rather than sitting on it, and loosening the proteins so they hold on to water during cooking. Left uncovered in the fridge, the surface dries at the same time, and a dry surface is the whole precondition for browning.",
-      "detail": "A wet brine does some of the same seasoning work and adds water while it does it, which is the problem: the extra moisture has to boil off before the surface can brown, so the crust arrives late or not at all. Dry-brining gets the interior seasoning without that trade. Timing scales with thickness — a large roast or a thick steak wants a day, chops and cuts under an inch are fine with an hour, and even fifteen minutes beats salting at the pan, because that is long enough for the salt to dissolve but not long enough to draw a wet film that then has to evaporate. The one place it inverts is ground meat. The amount is worth stating by weight rather than by spoon, because kosher salt brands differ by nearly half in density: a teaspoon of Morton is about 4.8 grams and a teaspoon of Diamond Crystal about 2.8, so the same spoon delivers wildly different salt.",
+      "short_answer": "Salt early. A day ahead, salt draws out moisture that soaks back in, seasoning the meat through. It also helps the meat hold water as it cooks. Left uncovered in the fridge, the surface dries, and dry surfaces brown.",
+      "detail": "Salt early and skip the bucket. Applied a day ahead, salt dissolves in the meat’s own surface moisture, draws more out, and that concentrated brine is reabsorbed. That seasons the muscle through rather than sitting on it, and loosens the proteins so they hold on to water during cooking. Left uncovered in the fridge, the surface dries at the same time, and a dry surface is the whole precondition for browning. A wet brine does some of the same seasoning work and adds water while it does it, which is the problem: the extra moisture has to boil off before the surface can brown, so the crust arrives late or not at all. Dry-brining gets the interior seasoning without that trade. Timing scales with thickness. A large roast or a thick steak wants a day, chops and cuts under an inch are fine with an hour, and even fifteen minutes beats salting at the pan, because that is long enough for the salt to dissolve but not long enough to draw a wet film that then has to evaporate. The one place it inverts is ground meat. The amount is worth stating by weight rather than by spoon, because kosher salt brands differ by nearly half in density: a teaspoon of Morton is about 4.8 grams and a teaspoon of Diamond Crystal about 2.8, so the same spoon delivers wildly different salt.",
       "evidence_tier": "established",
       "kristy_take": "Salt the day before, uncovered. It is the cheapest thing you can do to a piece of meat.",
       "sources": [
@@ -2770,14 +2770,14 @@
         "published dry-brine ratios by cut (0.75–1.25% poultry, 1–1.5% beef steaks, 1.5–2% large roasts)"
       ],
       "buying_tips": [
-        "One percent of the meat by weight — about four and a half grams a pound.",
+        "One percent of the meat by weight, about four and a half grams a pound.",
         "A day ahead for a roast or a thick steak. An hour covers chops.",
         "Uncovered, on a rack, so the surface can actually dry.",
         "Without a scale: a rounded teaspoon and a half of Diamond Crystal per pound, or a level teaspoon of Morton.",
         "A large roast or a brisket takes more, closer to one and a half percent."
       ],
       "watch_out": [
-        "Kosher salt brands are not interchangeable by volume. A teaspoon of Morton weighs nearly twice a teaspoon of Diamond Crystal, and at this ratio that is the difference between seasoned and inedible.",
+        "Kosher salt brands are not interchangeable by volume. A teaspoon of Morton weighs nearly twice a teaspoon of Diamond Crystal. At this ratio, that is the difference between seasoned and inedible.",
         "Enhanced pork and koshered poultry arrive already salted. Read for ‘solution added’ and skip this on those.",
         "Ground meat is the exception. Salt dissolves the proteins and the texture turns springy, so salt burgers as they hit the pan.",
         "Skip the wet brine. It adds the water that then has to boil off before anything browns."
@@ -2806,8 +2806,8 @@
       "question": "What should I ask at the butcher counter?",
       "decision": "The butcher knows what came in today and what needs selling.",
       "why": "The counter is free expertise. Custom grinds, portioning and bones are usually included.",
-      "short_answer": "The service counter is free expertise most shoppers walk straight past. Ask what came in today, ask the sourcing question directly, and ask for a custom grind or a cut portioned the way you want it. Ask for bones and trim, which are often cheap or free and make stock. Ask what is coming down in price this week, then build the week around the answer.",
-      "detail": "A staffed counter answers things a package never will: whether the beef is grass-finished, whether the chicken was air-chilled, when it was actually cut. They will grind a chuck roast fresh, which beats the pre-packed tray and lets you choose the cut. They will french a rack, tie a roast, portion a whole fish. At most counters none of that costs extra. The cheap cuts sit in the same case, and the person behind the glass usually knows exactly how to cook them.",
+      "short_answer": "The service counter is free expertise most shoppers walk past. Ask what came in today and ask the sourcing question directly. Ask for a custom grind, a cut portioned your way, and bones and trim for stock.",
+      "detail": "A staffed counter answers things a package never will: whether the beef is grass-finished, whether the chicken was air-chilled, when it was actually cut. They will grind a chuck roast fresh, which beats the pre-packed tray and lets you choose the cut. They will french a rack, tie a roast, portion a whole fish. At most counters none of that costs extra. The cheap cuts sit in the same case, and the person behind the glass usually knows exactly how to cook them. Ask what is coming down in price this week, then build the week around the answer. Unsure of the cut, name the primal first: a roast from the chuck, a cut from the loin.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
@@ -2830,7 +2830,7 @@
         "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out with a much more concentrated flavor. Ask which one it is.",
         "Silverskin is connective tissue that does not break down in cooking. Ask to have it removed from a tenderloin or ribs.",
         "Thickness is not fixed. Say how thick the steak should be, what size roast is needed and what lean-to-fat ratio the grind should have.",
-        "Unsure of the cut, name the primal first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+        "Unsure of the cut, name the section first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
       ],
       "asked_as": [
         "what should i ask the butcher",
@@ -2916,8 +2916,8 @@
       "question": "Which pork cut should I buy, and what does ‘solution added’ mean?",
       "decision": "Pork shoulder is the forgiving cut; enhanced pork is pumped with saltwater.",
       "why": "Shoulder is the value cut in the case. ‘Enhanced’ means injected brine, sold by the pound.",
-      "short_answer": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. Shoulder (Boston butt, picnic) is the braising and pulled-pork cut and it is cheap. Loin and tenderloin are lean and quick. The figure to find is ‘contains up to X% solution’, which means injected saltwater and phosphates. You buy that liquid by the pound, and it is already salted.",
-      "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture, because modern pork is bred lean and dries out. The percentage has to be declared. It is not unsafe, and it does make a lean chop more forgiving, but it changes what you paid for and it pre-seasons the meat, so a second brine oversalts it. Unenhanced pork browns better and tastes more like pork. Shoulder is the value cut of the whole animal: fatty, forgiving, and it feeds a crowd for very little.",
+      "short_answer": "Hard-working muscles go low and slow, lean ones go fast. Shoulder is the cheap braising and pulled-pork cut. Loin and tenderloin are lean and quick. ‘Contains up to X% solution’ means injected saltwater, sold by the pound and already salted.",
+      "detail": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. The figure to find is ‘contains up to X% solution’, which means injected saltwater and phosphates. A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture, because modern pork is bred lean and dries out. The percentage has to be declared. It is not unsafe, and it does make a lean chop more forgiving, but it changes what you paid for and it pre-seasons the meat, so a second brine oversalts it. Unenhanced pork browns better and tastes more like pork. Shoulder is the value cut of the whole animal: fatty, forgiving, and it feeds a crowd for very little.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling requirements for enhanced and solution-added meat",
@@ -2950,8 +2950,8 @@
         "what is enhanced pork"
       ],
       "watch_out": [
-        "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, as in ‘contains 15% added solution’, so that figure is what to find.",
-        "The percentage is the solution weighed against the raw meat without it, so 15% means 15 parts solution to 100 parts meat."
+        "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.",
+        "The percentage is the solution weighed against the raw meat without it. So 15% means 15 parts solution to 100 parts meat."
       ]
     },
     {
@@ -2978,8 +2978,8 @@
       "question": "Is ‘uncured’ deli meat actually nitrite-free?",
       "decision": "‘Uncured’ meat is cured, using celery powder instead of added nitrite.",
       "why": "Celery juice powder is a concentrated natural nitrate source. Same chemistry, different source.",
-      "short_answer": "No, and the package says so if you find the asterisk. ‘Uncured, no nitrates or nitrites added’ is required to be followed by a qualifier along the lines of ‘except those naturally occurring in celery powder’. Celery juice powder is a concentrated natural nitrate source, so the meat is cured, just with a vegetable-derived agent rather than a synthetic one.",
-      "detail": "USDA labeling rules force that qualifier, which is why every ‘uncured’ package carries a footnote most shoppers never read. The chemistry that fixes the color and preserves the meat is the same either way; only the source of the nitrate differs, and measured residual levels are broadly comparable. That does not make it a scam, it makes it a sourcing preference, and it is worth knowing that ‘uncured’ is a different statement from ‘no nitrites’. The bigger question at the deli case is how much processed meat a week holds, not which curing agent was used.",
+      "short_answer": "No. ‘Uncured’ packages must carry a qualifier, along the lines of ‘except those naturally occurring in celery powder’. Celery juice powder is a concentrated natural nitrate source. So the meat is cured, with a vegetable-derived agent, not a synthetic one.",
+      "detail": "No, and the package says so if you find the asterisk. ‘Uncured, no nitrates or nitrites added’ is required to be followed by a qualifier along the lines of ‘except those naturally occurring in celery powder’. USDA labeling rules force that qualifier, which is why every ‘uncured’ package carries a footnote most shoppers never read. The chemistry that fixes the color and preserves the meat is the same either way; only the source of the nitrate differs, and measured residual levels are broadly comparable. That does not make it a scam, it makes it a sourcing preference, and it is worth knowing that ‘uncured’ is a different statement from ‘no nitrites’. The bigger question at the deli case is how much processed meat a week holds, not which curing agent was used.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy on ‘uncured’ and ‘no nitrate or nitrite added’ claims",
@@ -6787,7 +6787,7 @@
       "question": "What should you check on a pack of hot dogs?",
       "decision": "Hot dogs with named meat and no mechanically separated poultry.",
       "why": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
-      "short_answer": "Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product made by separating attached tissue from bones; its name belongs in the ingredient statement.",
+      "short_answer": "Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Its name belongs in the ingredient statement.",
       "detail": "The US frankfurter standard distinguishes sausages with meat byproducts and requires “with byproducts” or “with variety meats” in their name. Mechanically separated poultry has its own regulatory definition. These processing distinctions support an ingredient choice, not a claim that one hot dog produces a health result.",
       "evidence_tier": "kristys_standard",
       "sources": [
