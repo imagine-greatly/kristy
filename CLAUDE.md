@@ -75,8 +75,8 @@ Account: `docs/DECISIONS.md`, “What Kristy is”.
 
 ## Non-negotiables
 
-1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-10-05 (Home E5): ground
-   is Toasted `#E6D2AE`, card is `#F8F0E0`, green-black ink, green / ochre / orange food
+1. ⛔ **Brand (iOS only): paper, not dark stock.** Ruled 2026-08-24, amended 2026-10-06 (TF4): ground
+   is Oat `#E9E2D0`, card is `#FAF7EF`, green-black ink, green / ochre / orange food
    ladder, `Fraunces` for serif. Ruled 2026-10-02: the olive seal (`KristySealCoin`, no words) is
    the logo and app icon, on Toasted; the forest `#14472F` plate no longer carries it (asset
    install pending A2). Brass appears only as struck metal inside the seal artwork, an image
