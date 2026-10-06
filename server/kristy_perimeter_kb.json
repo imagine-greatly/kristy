@@ -7105,7 +7105,7 @@
         "turmeric root",
         "turmeric roots"
       ],
-      "decision": "Choose firm, smooth roots, not cracked or withered, and keep them sealed in the fridge.",
+      "decision": "Pick firm roots, ginger smooth and uncracked, and keep both sealed in the fridge.",
       "sources": [
         {
           "name": "University of Minnesota Extension: Ginger",
@@ -7114,6 +7114,10 @@
         {
           "name": "Ask Extension: Preserving fresh turmeric root",
           "url": "https://ask.extension.org/kb/faq.php?id=924127"
+        },
+        {
+          "name": "UF/IFAS Gardening Solutions: Turmeric",
+          "url": "https://gardeningsolutions.ifas.ufl.edu/plants/edibles/vegetables/turmeric/"
         }
       ]
     },
@@ -7150,7 +7154,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Carton egg whites are pasteurized or otherwise treated to kill bacteria under the federal standard.",
+      "decision": "Carton egg whites are pasteurized or otherwise treated to destroy Salmonella under the federal standard.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
