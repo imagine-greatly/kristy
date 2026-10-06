@@ -1110,8 +1110,8 @@
   {
     "item": "lamb",
     "section": "Meat",
-    "mechanism": "pick",
-    "expect": "pick_lamb"
+    "mechanism": "card",
+    "expect": "lamb_goat"
   },
   {
     "item": "celery",

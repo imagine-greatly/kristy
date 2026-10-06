@@ -60,7 +60,7 @@ test('both scorers award the SAME points for one single-word alias hit', () => {
 test('scoreEntries reports aliasScore separately from title overlap', () => {
   // The gate reads aliasScore. If the field vanishes the gate silently passes `undefined
   // > 0` — false — and EVERY curated retrieval stops working, so this is load-bearing.
-  const s = scoreEntries('is guanciale worth buying', 3)[0];
+  const s = scoreEntries('is rambutan worth buying', 3)[0];
   if (s) {
     assert.equal(typeof s.aliasScore, 'number', 'aliasScore must be reported');
     assert.equal(typeof s.titleScore, 'number', 'titleScore must be reported');
@@ -82,13 +82,14 @@ test('THE CURATED FLOOR IS ONE ALIAS HIT — a bare noun is admitted', async () 
 });
 
 test('TITLE WORDS ALONE ARE NOT A MATCH, however many of them there are', async () => {
+  // K15 gave guanciale an alias (cured_pork); rambutan keeps the title-word-only shape.
   // The v3 regression. Same score of 2, no food overlap whatsoever, wrong card.
-  const s = scoreEntries('is guanciale worth buying', 3)[0];
+  const s = scoreEntries('is rambutan worth buying', 3)[0];
   if (s) {
-    assert.equal(s.aliasScore, 0, 'the guanciale case must score zero on aliases');
+    assert.equal(s.aliasScore, 0, 'the rambutan case must score zero on aliases');
     assert.ok(s.titleScore >= 2, 'and it must still reach the numeric floor on title words');
   }
-  const out = await answerCounterQuestion({ query: 'is guanciale worth buying', allowGeneration: false });
+  const out = await answerCounterQuestion({ query: 'is rambutan worth buying', allowGeneration: false });
   assert.notEqual(out.matched, true, 'a title-word coincidence must never be served as a confident match');
 });
 

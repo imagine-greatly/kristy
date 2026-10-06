@@ -6167,35 +6167,6 @@
       ]
     },
     {
-      "id": "pick_lamb",
-      "kind": "pick",
-      "title": "Lamb",
-      "category": "meat_counter",
-      "aliases": [
-        "lamb",
-        "lamb chop",
-        "lamb chops",
-        "leg of lamb",
-        "legs of lamb",
-        "ground lamb",
-        "lamb shoulder",
-        "lamb shoulders",
-        "rack of lamb",
-        "racks of lamb"
-      ],
-      "decision": "Lamb reads like beef: skip tacky flesh or an off smell, whatever the color.",
-      "sources": [
-        {
-          "name": "USDA FSIS: Lamb from Farm to Table",
-          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table"
-        },
-        {
-          "name": "USDA FSIS: The Color of Meat and Poultry",
-          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/color-meat-and-poultry"
-        }
-      ]
-    },
-    {
       "id": "pick_celery",
       "kind": "pick",
       "title": "Celery",
@@ -7164,6 +7135,283 @@
           "name": "21 CFR 160.140, Egg whites",
           "url": "https://www.law.cornell.edu/cfr/text/21/160.140"
         }
+      ]
+    },
+    {
+      "id": "ham",
+      "title": "Ham",
+      "aliases": [
+        "ham",
+        "sliced ham",
+        "deli ham",
+        "spiral ham",
+        "honey ham",
+        "ham steak",
+        "smoked ham",
+        "country ham"
+      ],
+      "category": "deli",
+      "question": "Which ham should you buy?",
+      "decision": "Ham chosen by its label class, read for added water.",
+      "why": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
+      "short_answer": "A ham labeled plain “Ham” must meet the highest protein level. “Water Added” and “Ham and Water Product” mean more added solution. Water appears in the ingredients either way.",
+      "detail": "US labeling ties ham names to protein. “Ham” needs at least 20.5% protein in the lean portion. “Ham With Natural Juices” needs at least 18.5%. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” must state the percent of weight that is added ingredients. Fresh ham is the uncured leg of pork and is labeled “fresh” or “uncured”.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/hams-and-food-safety",
+        "https://www.canr.msu.edu/news/ham_for_the_holidays_and_all_year_long"
+      ],
+      "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
+      "cart_pick": "Ham with natural juices",
+      "buying_tips": [
+        "Read the product name for “Water Added” or a percent of added ingredients.",
+        "Check whether the label says fully cooked or cook before eating.",
+        "Find where water sits in the ingredients statement."
+      ],
+      "watch_out": [
+        "“Ham and Water Product” states the share of its weight that is added ingredients.",
+        "Fresh ham and country ham are not fully cooked and need cooking before eating."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ham With Natural Juices",
+          "meaning": "Cured ham with at least 18.5% protein."
+        },
+        {
+          "term": "Ham, Water Added",
+          "meaning": "At least 17.0% protein, with 10% added solution."
+        },
+        {
+          "term": "Fresh ham",
+          "meaning": "Uncured leg of pork, prepared without nitrate or nitrite."
+        }
+      ],
+      "tier_note": "The water-added classes are USDA labeling definitions; choosing the least added water is the whole-food standard.",
+      "asked_as": [
+        "which ham should i buy",
+        "what does water added mean on ham",
+        "is spiral ham fully cooked"
+      ]
+    },
+    {
+      "id": "turkey_bacon",
+      "title": "Turkey bacon",
+      "aliases": [
+        "turkey bacon"
+      ],
+      "category": "deli",
+      "question": "What does the turkey bacon label tell you?",
+      "decision": "Turkey bacon read by its descriptive name and curing ingredients.",
+      "why": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
+      "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
+      "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without nitrate or nitrite carries “Uncured” and “No Nitrate or Nitrite Added” beside its name.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bacon-and-food-safety",
+        "https://www.law.cornell.edu/cfr/text/9/317.17",
+        "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really"
+      ],
+      "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
+      "cart_pick": "Turkey bacon with listed curing ingredients",
+      "buying_tips": [
+        "Read the descriptive name beside “turkey bacon” for the meat used.",
+        "Read each curing ingredient in the ingredients statement.",
+        "Find any “Uncured” claim and the “No Nitrate or Nitrite Added” statement with it."
+      ],
+      "watch_out": [
+        "Turkey bacon is still a cured product, and its curing ingredients are on the label."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Cured turkey thigh meat",
+          "meaning": "The descriptive name that says which turkey meat the bacon is made from."
+        },
+        {
+          "term": "Uncured",
+          "meaning": "Made without added nitrate or nitrite, stated beside the product name."
+        }
+      ],
+      "tier_note": "The descriptive name and curing list are USDA labeling requirements, so reading them is the whole-food standard.",
+      "asked_as": [
+        "is turkey bacon cured",
+        "what is turkey bacon made of",
+        "how do you choose turkey bacon"
+      ]
+    },
+    {
+      "id": "cured_pork",
+      "title": "Cured pork",
+      "aliases": [
+        "prosciutto",
+        "salami",
+        "pancetta",
+        "guanciale",
+        "soppressata",
+        "pepperoni",
+        "guanciale worth buying"
+      ],
+      "category": "deli",
+      "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
+      "decision": "Cured pork, guanciale included, judged by its cut and curing ingredients.",
+      "why": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
+      "short_answer": "Prosciutto is dry-cured ham, and salami is a fermented, dried, cured ground product. Pancetta is cured belly. Guanciale is worth buying on the same terms: the cut named and the curing ingredients listed.",
+      "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. A product made without nitrate or nitrite is labeled “Uncured” with “No Nitrate or Nitrite Added”.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/hams-and-food-safety",
+        "https://extension.oregonstate.edu/catalog/pnw-784-making-cured-bacon-home",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bacon-and-food-safety",
+        "https://www.law.cornell.edu/cfr/text/9/317.17"
+      ],
+      "kristy_take": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
+      "cart_pick": "Cured pork with listed curing ingredients",
+      "buying_tips": [
+        "Read the product name for the cut, such as ham, belly, or jowl.",
+        "Read each curing ingredient in the ingredients statement.",
+        "Check whether the package says ready to eat or cook before eating."
+      ],
+      "watch_out": [
+        "An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Prosciutto",
+          "meaning": "Italian-style dry-cured raw ham, not smoked."
+        },
+        {
+          "term": "Pancetta",
+          "meaning": "Italian belly bacon, usually cured in salt and spices, then air-dried."
+        },
+        {
+          "term": "Uncured",
+          "meaning": "Made without added nitrate or nitrite, stated beside the product name."
+        }
+      ],
+      "tier_note": "Cut names and curing lists are USDA labeling facts; choosing cured pork by them is the whole-food standard.",
+      "asked_as": [
+        "is guanciale worth buying",
+        "how do you choose prosciutto",
+        "how do you choose salami"
+      ]
+    },
+    {
+      "id": "lamb_goat",
+      "title": "Lamb and goat",
+      "aliases": [
+        "lamb",
+        "lamb chop",
+        "lamb chops",
+        "leg of lamb",
+        "legs of lamb",
+        "ground lamb",
+        "lamb shoulder",
+        "lamb shoulders",
+        "rack of lamb",
+        "racks of lamb",
+        "goat meat",
+        "ground goat",
+        "goat chops",
+        "mutton"
+      ],
+      "category": "meat_counter",
+      "question": "How do you judge lamb and goat meat quality?",
+      "decision": "Lamb by its USDA grade, goat by firm, fine-grained flesh.",
+      "why": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+      "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
+      "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old and tastes milder than mutton. Goats under a year old are called kids. Meat from older goats is darker and less tender. A goat carcass rarely has much fat to protect it from drying.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
+      ],
+      "kristy_take": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+      "cart_pick": "USDA-graded lamb or firm, fine-grained goat",
+      "buying_tips": [
+        "Look for a USDA grade on lamb, most often Choice.",
+        "Pick lamb that is fine textured and firm, with white marbling.",
+        "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
+        "Read the primal cut on the label, such as shoulder or leg."
+      ],
+      "watch_out": [
+        "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
+        "Adult goat is relatively tough and is almost always stewed."
+      ],
+      "labels_decoded": [
+        {
+          "term": "USDA Choice",
+          "meaning": "A voluntary lamb quality grade, the one most graded supermarket lamb carries."
+        },
+        {
+          "term": "Mutton",
+          "meaning": "Meat from older sheep, stronger in flavor than lamb."
+        },
+        {
+          "term": "Kid",
+          "meaning": "Goat under a year of age."
+        }
+      ],
+      "tier_note": "Lamb grades and the absence of goat grades are USDA facts, and the flesh checks follow from them.",
+      "asked_as": [
+        "how do i judge goat meat quality",
+        "how do you choose lamb chops",
+        "what is the difference between lamb and mutton"
+      ]
+    },
+    {
+      "id": "organ_meats",
+      "title": "Organ meats",
+      "aliases": [
+        "organ meats",
+        "organ meat",
+        "beef liver",
+        "chicken livers",
+        "chicken liver",
+        "calf liver",
+        "beef heart",
+        "chicken hearts",
+        "beef tongue",
+        "beef kidney",
+        "sweetbreads",
+        "tripe",
+        "offal"
+      ],
+      "category": "meat_counter",
+      "question": "How do you buy and handle organ meats?",
+      "decision": "Organ meats bought for a cook within one to two days.",
+      "why": "Variety meats keep a shorter time than steaks and roasts. Each organ also suits its own cooking method.",
+      "short_answer": "Liver, kidney, tripe, sweetbreads, and tongue keep 1 to 2 days in the refrigerator. Cook all organ meats to 160°F. Heart and tongue are tough and suit moist heat.",
+      "detail": "Organ meats are also called variety meats or offal. Liver suits braising, pan broiling, or frying. Sweetbreads and kidneys suit braising, sautéing, or frying. Tripe, the beef stomach, is braised up to two hours to turn tender. Heart and tongue are best cooked in liquid because their muscle is tough.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table",
+        "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+      ],
+      "kristy_take": "Variety meats keep a shorter time than steaks and roasts. Each organ also suits its own cooking method.",
+      "cart_pick": "Organ meat for a cook within two days",
+      "buying_tips": [
+        "Buy organ meats for a cook within one to two days.",
+        "Ask the counter or a farmer which organs they offer.",
+        "Match the organ to the method, with heart and tongue braised."
+      ],
+      "watch_out": [
+        "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Variety meats",
+          "meaning": "Organ meats such as liver, heart, kidney, and tongue."
+        },
+        {
+          "term": "Tripe",
+          "meaning": "Beef stomach, braised up to two hours to turn tender."
+        }
+      ],
+      "tier_note": "The 1 to 2 day window and 160°F are USDA handling guidance, not a health call.",
+      "asked_as": [
+        "how do you buy organ meats",
+        "how long do organ meats keep",
+        "which organ meats should i buy"
       ]
     }
   ]

@@ -187,6 +187,10 @@ export const RETIRED_GENERATED = [
   // new card has been regenerated through an alias gap. A new card needs the bare nouns
   // and the phrasings people type, not only the ones its title uses.
   'gen_limp_lettuce_revival',
+  // → lamb_goat (K15). The card's goat quality ask carries the generated question.
+  'gen_goat_meat_quality',
+  // → cured_pork (K15). "guanciale" is now a cured_pork alias; the card answers the ask.
+  'gen_guanciale_worth_buying',
 ];
 
 /* ═══════════════════════════ The essentials shelf ═══════════════════════════ */
