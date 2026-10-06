@@ -1653,8 +1653,8 @@
       "question": "What does ‘natural’ mean on a label?",
       "decision": "‘Natural’ has no legal definition on most foods, so it promises nothing.",
       "why": "Barely defined and rarely enforced. It says nothing about how an animal was raised.",
-      "short_answer": "Almost nothing enforceable. On most foods the FDA hasn’t formally defined ‘natural’, and on meat/poultry the USDA only takes it to mean ‘no artificial ingredients and minimally processed’ — it says nothing about how the animal was raised, fed, or treated. Treat ‘natural’ as marketing, not a standard.",
-      "detail": "‘Natural’ is one of the emptiest words on a package. It is not ‘organic’, it is not a welfare or feed claim, and it doesn’t restrict pesticides, GMOs, or how an animal lived. When a claim actually matters to you, look for the specific, defined term (organic, grass-finished, pasture-raised) instead.",
+      "short_answer": "Almost nothing enforceable. The FDA has not formally defined ‘natural’ on most foods. On meat and poultry, the USDA takes it to mean ‘no artificial ingredients and minimally processed’. It says nothing about how the animal was raised or fed.",
+      "detail": "‘Natural’ is one of the emptiest words on a package. It is not ‘organic’, it is not a welfare or feed claim, and it doesn’t restrict pesticides, GMOs, or how an animal lived. When a claim actually matters to you, look for the specific, defined term (organic, grass-finished, pasture-raised) instead. On meat and poultry it says nothing about how the animal was raised, fed, or treated. Treat ‘natural’ as marketing, not a standard.",
       "evidence_tier": "established",
       "sources": [
         "FDA ‘natural’ policy",
@@ -1662,7 +1662,7 @@
       ],
       "kristy_take": "‘Natural’ tells you a marketing team was involved. Ignore it and read the actual ingredient list and the defined claims.",
       "buying_tips": [
-        "Don’t pay a premium for ‘natural’ — it’s rarely enforced.",
+        "Don’t pay a premium for ‘natural’. It is rarely enforced.",
         "Look for defined terms instead: organic, grass-finished, pasture-raised.",
         "The ingredient list beats any front-of-pack adjective."
       ],
@@ -1696,8 +1696,8 @@
       "question": "Does ‘made with real fruit’ mean it’s healthy?",
       "decision": "‘Made with real’ sets no minimum, so the amount can be tiny.",
       "why": "Position is the whole story. Weight order means past third is a trace, not a serving.",
-      "short_answer": "Whatever the front brags about, the back tells you how much of it there is. Ingredients are listed by weight, so an ingredient sitting fourth or later is present in a quantity too small to matter — “made with real fruit” is a true statement about a trace. The claim is never a lie; it is a fact about presence, and presence is not amount.",
-      "detail": "‘Made with real ___‘ is a front-of-pack claim that sets no minimum you’d find meaningful. The ingredient list, ordered by weight, tells you whether that ‘real’ thing is a headline ingredient or a rounding error. This is exactly the kind of claim to check against the back of the package.",
+      "short_answer": "Whatever the front brags about, the back says how much. Ingredients are listed by weight. An ingredient fourth or later is present in a quantity too small to matter. “Made with real” is about presence, not amount.",
+      "detail": "‘Made with real ___‘ is a front-of-pack claim that sets no minimum you’d find meaningful. The ingredient list, ordered by weight, tells you whether that ‘real’ thing is a headline ingredient or a rounding error. This is exactly the kind of claim to check against the back of the package. An ingredient sitting fourth or later is present in a quantity too small to matter, so “made with real fruit” is a true statement about a trace. The claim is never a lie; it is a fact about presence, and presence is not amount.",
       "evidence_tier": "established",
       "sources": [
         "FDA food-labeling regulations",
@@ -1705,7 +1705,7 @@
       ],
       "kristy_take": "‘Made with real fruit’ usually means ‘mostly made with sugar, with a wink of fruit.‘ Read the list.",
       "buying_tips": [
-        "Check where the ‘real’ ingredient falls in the list — early = more, late = trace.",
+        "Check where the ‘real’ ingredient falls in the list. Early means more; late means a trace.",
         "Compare to added sugar and refined flour higher in the list.",
         "Front-of-pack claims are marketing; the ingredient panel is the truth."
       ],
@@ -1742,8 +1742,8 @@
       "question": "Does ‘no added hormones’ mean anything?",
       "decision": "Poultry and pork cannot be given hormones, so the claim is free.",
       "why": "Hormones are already banned in pork and poultry, so every producer could print it.",
-      "short_answer": "It depends on the animal. For pork and poultry, added hormones are already banned by law — so ‘no added hormones’ there is true but meaningless (every producer could say it). For beef and dairy, hormone use is allowed, so the claim is meaningful and should be third-party verified.",
-      "detail": "By federal rule, hormones can’t be used in raising pigs or chickens, so any ‘hormone-free’ chicken label must also note that no poultry is raised with hormones. For beef and dairy the claim actually distinguishes producers. Knowing which animal you’re looking at tells you whether the claim is information or filler.",
+      "short_answer": "In pork and poultry, added hormones are banned by law. The claim there is true but meaningless; every producer could say it. Beef and dairy allow hormones, so there it is meaningful and should be third-party verified.",
+      "detail": "By federal rule, hormones can’t be used in raising pigs or chickens, so any ‘hormone-free’ chicken label must also note that no poultry is raised with hormones. For beef and dairy the claim actually distinguishes producers. Knowing which animal you’re looking at tells you whether the claim is information or filler. It depends on the animal.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS hormone-labeling rules",
@@ -1751,7 +1751,7 @@
       ],
       "kristy_take": "On chicken and pork, ‘no hormones’ is a freebie every producer earns. On beef and dairy, it actually means something.",
       "buying_tips": [
-        "Chicken/pork: hormones are banned anyway — don’t pay extra for the words.",
+        "Chicken/pork: hormones are banned anyway. Don’t pay extra for the words.",
         "Beef/dairy: the claim is meaningful; look for verification.",
         "Poultry labels must add ‘no hormones are used in poultry’ by rule."
       ],
@@ -1766,7 +1766,7 @@
         }
       ],
       "watch_out": [
-        "On chicken and pork it is a freebie — hormones are banned in both by law.",
+        "On chicken and pork it is a freebie. Hormones are banned in both by law.",
         "On beef and dairy it is a real distinction, but only third-party verification backs it."
       ],
       "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there.",
@@ -1790,8 +1790,8 @@
       "question": "What’s the difference between Non-GMO and Organic?",
       "decision": "Organic already forbids GMOs, so the second sticker adds nothing.",
       "why": "Organic already implies non-GMO, plus pesticide and practice rules. Non-GMO covers neither.",
-      "short_answer": "Organic is the broader standard: certified-organic food is also non-GMO, plus it restricts synthetic pesticides and fertilizers and requires certain practices. A ‘Non-GMO’ seal only addresses genetic engineering — it says nothing about pesticides or how the food was grown. Organic includes non-GMO; non-GMO doesn’t include organic.",
-      "detail": "The ‘Non-GMO Project Verified’ butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: ‘non-GMO’ on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Whether GMOs are a concern at all is a separate, debated question, and it stays honest here rather than oversold.",
+      "short_answer": "Organic is the broader standard. Certified-organic food is also non-GMO. It also restricts synthetic pesticides and fertilizers and requires certain practices. A ‘Non-GMO’ seal only addresses genetic engineering. It says nothing about pesticides or how the food was grown.",
+      "detail": "The ‘Non-GMO Project Verified’ butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: ‘non-GMO’ on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Whether GMOs are a concern at all is a separate, debated question, and it stays honest here rather than oversold. Organic includes non-GMO; non-GMO doesn’t include organic.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program",
@@ -1799,7 +1799,7 @@
       ],
       "kristy_take": "If you’re paying for one label, Organic covers more ground. And ‘non-GMO water’ is someone selling you nothing.",
       "buying_tips": [
-        "Organic already implies non-GMO — you don’t need both seals.",
+        "Organic already implies non-GMO. You don’t need both seals.",
         "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
         "Decide if GMOs actually matter to you before paying up for the seal."
       ],
@@ -1814,7 +1814,7 @@
         }
       ],
       "watch_out": [
-        "Non-GMO covers that single issue — nothing about pesticides, feed or practices.",
+        "Non-GMO covers that single issue. It says nothing about pesticides, feed or practices.",
         "Paying for both seals is paying twice. Organic already requires non-GMO.",
         "Some foods carry a non-GMO seal though no GMO version of them exists."
       ],
@@ -1843,8 +1843,8 @@
       "question": "What do ‘cage-free’ and ‘free-range’ actually require?",
       "decision": "Cage-free and free-range both describe a barn, not a field.",
       "why": "Cage-free is a barn. Free-range adds a door, with the size and the hours left undefined.",
-      "short_answer": "Both are weaker than they sound, in two different ways. ‘Cage-free’ means the hens are not in cages, but they are typically housed indoors in large barns and can be crowded — a real step up from battery cages, and not outdoors. ‘Free-range’ means some outdoor access, but the amount, duration and quality of that access are not tightly defined, and a small door onto a small yard qualifies. If outdoor living is the point, the claim to look for is ‘pasture-raised’ with a third-party certification behind it.",
-      "detail": "The two terms mark rungs on the same ladder and people routinely read both as a meadow. Cage-free is a defined term for eggs and a genuine welfare improvement on conventional cages; on products other than eggs it carries much less. Free-range signals outdoor access but sets a low, loosely-enforced bar with no certification required. Above both sits pasture-raised, which only means anything with a certifier attached: Certified Humane, Animal Welfare Approved, or Global Animal Partnership. Match the word to what you actually want rather than to the picture on the carton.",
+      "short_answer": "Both are weaker than they sound. ‘Cage-free’ hens are out of cages but typically indoors in large barns, and can be crowded. ‘Free-range’ adds some outdoor access, loosely defined. For outdoor living, look for ‘pasture-raised’ with a third-party certification.",
+      "detail": "The two terms mark rungs on the same ladder and people routinely read both as a meadow. Cage-free is a defined term for eggs and a genuine welfare improvement on conventional cages; on products other than eggs it carries much less. Free-range signals outdoor access but sets a low, loosely-enforced bar with no certification required. Above both sits pasture-raised, which only means anything with a certifier attached: Certified Humane, Animal Welfare Approved, or Global Animal Partnership. Match the word to what you actually want rather than to the picture on the carton. ‘Cage-free’ is a real step up from battery cages, and not outdoors. For ‘free-range’, the amount, duration and quality of outdoor access are not tightly defined, and a small door onto a small yard qualifies.",
       "evidence_tier": "established",
       "sources": [
         "USDA egg-labeling definitions",
@@ -1853,7 +1853,7 @@
       ],
       "kristy_take": "Cage-free is a barn and free-range is a door. Neither is a field. The seal is what tells you.",
       "buying_tips": [
-        "Cage-free = uncaged, usually indoors — not outdoor access.",
+        "Cage-free means uncaged, usually indoors. It does not mean outdoor access.",
         "Free-range = some outdoor access, with the amount and quality undefined.",
         "For real outdoor time: ‘pasture-raised’ plus a certifier seal.",
         "For eggs both are defined terms; on other products they carry much less."
@@ -1899,8 +1899,8 @@
       "question": "Is ‘grass-fed’ on the label enough?",
       "decision": "‘Grass-fed’ alone still allows a grain finish at the feedlot.",
       "why": "The bare claim is weakly enforced and still allows a grain finish.",
-      "short_answer": "Not by itself. ‘Grass-fed’ only tells you the animal ate grass at some point — after the USDA withdrew its formal standard, the bare claim is weakly enforced and animals can still be grain-finished. The claim that means what most people think is ‘100% grass-fed’ or ‘grass-finished’, ideally with a third-party seal.",
-      "detail": "This overlaps with the beef entries but it’s worth stating as a label rule: ‘grass-fed’ alone is soft; ‘100% grass-fed’, ‘grass-finished’, or certification (American Grassfed Association) is the honest version. Buy the specific claim, not the vague one.",
+      "short_answer": "Not by itself. ‘Grass-fed’ only means the animal ate grass at some point. It can still be grain-finished. Since the USDA withdrew its standard, the bare claim is weakly enforced. Look for ‘100% grass-fed’ or ‘grass-finished’, ideally third-party certified.",
+      "detail": "This overlaps with the beef entries but it’s worth stating as a label rule: ‘grass-fed’ alone is soft; ‘100% grass-fed’, ‘grass-finished’, or certification (American Grassfed Association) is the honest version. Buy the specific claim, not the vague one. After the USDA withdrew its formal standard, the bare claim is weakly enforced. The claim that means what most people think is ‘100% grass-fed’ or ‘grass-finished’.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling guidance",
@@ -1910,7 +1910,7 @@
       "buying_tips": [
         "‘100% grass-fed’ / ‘grass-finished’ beats a bare ‘grass-fed’.",
         "Third-party certification is the strongest backing.",
-        "Ask the butcher — they’ll usually know the sourcing."
+        "Ask the butcher. They’ll usually know the sourcing."
       ],
       "labels_decoded": [
         {
@@ -1952,19 +1952,19 @@
       "question": "Does “pasture-raised” mean the animal wasn’t fed soy and corn?",
       "decision": "It means space, not feed. The word to find is soy-free.",
       "why": "Cage-free, free-range and pasture-raised are room claims. Most of those hens still eat soy and corn.",
-      "short_answer": "No. Every one of those labels — cage-free, free-range, pasture-raised — describes SPACE, not FEED. They tell you how much room the animal had and whether it got outside. None of them says a word about what went in the trough, and most pasture-raised hens are still fed soy and corn. If feed is what you care about, the word to look for is “soy-free” — it has to be printed, because nothing else on the carton implies it.",
-      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it — Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” is the one term that does reach feed, and it requires the feed be organic — which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets.",
+      "short_answer": "No. Cage-free, free-range and pasture-raised all describe SPACE, not FEED. None says what went in the trough. Most pasture-raised hens are still fed soy and corn. If feed matters, look for a printed “soy-free”. Nothing else implies it.",
+      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” is the one term that does reach feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. If feed is what you care about, the word to look for is “soy-free”; it has to be printed, because nothing else on the carton implies it.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy — no regulatory definition of “pasture-raised”",
         "Certified Humane pasture-raised standards (outdoor space requirements)",
         "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)"
       ],
-      "kristy_take": "“Pasture-raised” means she went outside. It doesn’t mean anything about what she ate — most are still on soy and corn. If that matters to you, the word to find is “soy-free,” printed on the carton. Nothing else implies it.",
+      "kristy_take": "“Pasture-raised” means she went outside. It doesn’t mean anything about what she ate. Most are still on soy and corn. If that matters to you, the word to find is “soy-free,” printed on the carton. Nothing else implies it.",
       "buying_tips": [
-        "Space claims and feed claims are separate. Read the carton for both — one never implies the other.",
+        "Space claims and feed claims are separate. Read the carton for both; one never implies the other.",
         "If feed matters to you, look for “soy-free” or “corn-free” printed explicitly.",
-        "Organic requires organic feed — usually organic soy and corn. It answers how it was grown, not what it is.",
+        "Organic requires organic feed, usually organic soy and corn. It answers how it was grown, not what it is.",
         "For beef, the equivalent word is grass-FINISHED. “Grass-fed” alone can still end on grain."
       ],
       "labels_decoded": [
@@ -1991,7 +1991,7 @@
       ],
       "watch_out": [
         "Cage-free, free-range and pasture-raised are all SPACE claims. None says a word about feed.",
-        "Organic reaches feed, but requires it be organic — usually organic soy and corn.",
+        "Organic reaches feed, but requires it be organic. That usually means organic soy and corn.",
         "“Grass-fed” on beef is the same trap: it can still end on grain."
       ],
       "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other.",
@@ -2015,9 +2015,9 @@
       "category": "label_terms",
       "question": "What does the organic seal actually guarantee?",
       "decision": "Organic certifies how food was grown, not how processed it is.",
-      "why": "It covers inputs and practices, not nutrient density or processing. It is not pesticide-free.",
-      "short_answer": "It is a production standard, not a quality rating. Certified organic means no synthetic pesticides from the prohibited list, no GMOs, organic feed for animals, and no routine antibiotics or added hormones. It does not mean pesticide-free — approved natural ones are allowed — and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. An organic cookie is a cookie.",
-      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused — organic tells you how something was grown or raised, and you still have to look at what the thing actually is.",
+      "why": "It covers inputs and practices, not nutrition or processing. It is not pesticide-free.",
+      "short_answer": "It is a production standard, not a quality rating. Certified organic means no prohibited synthetic pesticides, no GMOs, organic feed for animals, and no routine antibiotics or added hormones. It is not pesticide-free. An organic cookie is a cookie.",
+      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no synthetic pesticides from the prohibited list. It does not mean pesticide-free (approved natural ones are allowed), and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program, 7 CFR Part 205 (permitted and prohibited substances)",
@@ -2025,10 +2025,10 @@
       ],
       "kristy_take": "Organic tells you how it was grown, not what it is. The seal on a box of cookies is still a box of cookies.",
       "buying_tips": [
-        "Organic is about inputs and practices — read the ingredient panel separately.",
+        "Organic is about inputs and practices. Read the ingredient panel separately.",
         "It is not pesticide-free; approved natural pesticides are permitted.",
         "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
-        "On animal products it does reach feed — but organic feed, not a different kind of feed."
+        "On animal products it does reach feed. It means organic feed, not a different kind of feed."
       ],
       "labels_decoded": [
         {
@@ -2046,7 +2046,7 @@
       ],
       "watch_out": [
         "Organic is not pesticide-free. Approved natural pesticides are permitted.",
-        "It is a production standard, not a quality grade — an organic cookie is still a cookie.",
+        "It is a production standard, not a quality grade. An organic cookie is still a cookie.",
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
       ],
       "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included.",
@@ -2130,18 +2130,18 @@
       "question": "Is multigrain bread whole grain?",
       "decision": "‘Multigrain’ counts grains; ‘whole grain’ says the bran stayed in.",
       "why": "Multigrain allows every grain to be refined. Whole grain means the kernel is intact.",
-      "short_answer": "Not necessarily, and usually not. “Multigrain” only means more than one grain is in there — every one of them can be refined. “Whole grain” means the kernel is intact: bran, germ and endosperm. They are answers to different questions, and only one of them is about refinement.",
-      "detail": "Neither term is a grading claim, but “whole grain” has a defined meaning tied to the intact kernel, while “multigrain” is a count. A loaf can be multigrain, seven-grain, or stone-ground and still be built on refined flour. The reliable read is the ingredient panel: a whole grain should be the FIRST ingredient, and “100% whole grain” on the front is stronger than “made with whole grains”, which permits any fraction. Color tells you nothing — brown bread is frequently white flour with caramel coloring.",
+      "short_answer": "Not necessarily, and usually not. “Multigrain” only means more than one grain is in there. Every one of them can be refined. “Whole grain” means the kernel is intact, bran and germ included.",
+      "detail": "Neither term is a grading claim, but “whole grain” has a defined meaning tied to the intact kernel, while “multigrain” is a count. A loaf can be multigrain, seven-grain, or stone-ground and still be built on refined flour. The reliable read is the ingredient panel: a whole grain should be the FIRST ingredient, and “100% whole grain” on the front is stronger than “made with whole grains”, which permits any fraction. Color tells you nothing. Brown bread is frequently white flour with caramel coloring. “Whole grain” means the kernel is intact: bran, germ and endosperm. They are answers to different questions, and only one of them is about refinement.",
       "evidence_tier": "established",
       "sources": [
         "FDA whole grain labeling guidance",
         "Whole Grains Council stamp criteria"
       ],
-      "kristy_take": "“Multigrain” is a headcount, not a standard — seven refined grains is still seven refined grains. Turn it over: a whole grain has to be the first ingredient, or the front of the bag is decoration.",
+      "kristy_take": "“Multigrain” is a headcount, not a standard. Seven refined grains is still seven refined grains. Turn it over: a whole grain has to be the first ingredient, or the front of the bag is decoration.",
       "buying_tips": [
         "Read the first ingredient. “Whole wheat flour” counts; “wheat flour” and “enriched flour” do not.",
         "“100% whole grain” is a real claim. “Made with whole grains” permits any fraction.",
-        "Ignore the color — brown can be caramel coloring on white flour."
+        "Ignore the color. Brown can be caramel coloring on white flour."
       ],
       "labels_decoded": [
         {
@@ -2184,8 +2184,8 @@
       "question": "Does “lightly sweetened” mean anything?",
       "decision": "‘Lightly sweetened’ is not defined, so the number is the only answer.",
       "why": "‘Lightly sweetened’ has no definition. The panel number is the one that cannot be spun.",
-      "short_answer": "No — it has no standardized definition, so it is worth exactly what the marketing department decided it was worth. Some neighboring terms DO have definitions: “no sugar added” means none was added during processing (the food’s own sugars remain), and “reduced sugar” means at least 25% less than the reference product, which can still be a lot. The added-sugar line on the panel is the only one of these that cannot be spun.",
-      "detail": "This is a case where the regulated and the unregulated sit side by side on the same package. “Lightly sweetened” is not a defined claim. “No sugar added” and “reduced sugar” are defined, but neither means low: a juice with no added sugar is still concentrated fruit sugar, and 25% less than something very sweet is still sweet. Since added sugars became a separate line on the Nutrition Facts panel, the fastest honest read is to skip the front of the package entirely and look at that number, then check the ingredient list for the aliases — cane juice, syrups, concentrates.",
+      "short_answer": "No. It has no standardized definition. Neighboring terms do: “no sugar added” means none was added during processing. “Reduced sugar” means at least 25% less than a reference product. Only the added-sugar line on the panel cannot be spun.",
+      "detail": "This is a case where the regulated and the unregulated sit side by side on the same package. “Lightly sweetened” is not a defined claim. “No sugar added” and “reduced sugar” are defined, but neither means low: a juice with no added sugar is still concentrated fruit sugar, and 25% less than something very sweet is still sweet. Since added sugars became a separate line on the Nutrition Facts panel, the fastest honest read is to skip the front of the package entirely and look at that number, then check the ingredient list for the aliases: cane juice, syrups, concentrates. ‘Lightly sweetened’ is worth exactly what the marketing department decided it was worth. “No sugar added” leaves the food’s own sugars, and “reduced sugar” can still be a lot.",
       "evidence_tier": "established",
       "sources": [
         "FDA 21 CFR 101.60 (nutrient content claims for sugars)",
@@ -2193,10 +2193,10 @@
       ],
       "kristy_take": "“Lightly sweetened” isn’t a standard, it’s an adjective. The added-sugar line is right there on the back and nobody gets to negotiate with it.",
       "buying_tips": [
-        "Go straight to “Added Sugars” on the panel — it is the one number that is defined.",
+        "Go straight to “Added Sugars” on the panel. It is the one number that is defined.",
         "“No sugar added” still allows the food’s own sugars, which can be substantial.",
         "“Reduced sugar” is relative to a reference product; 25% less than very sweet is still sweet.",
-        "Check the ingredient list for the aliases — syrups, cane juice, concentrates."
+        "Check the ingredient list for the aliases: syrups, cane juice, concentrates."
       ],
       "labels_decoded": [
         {
@@ -2246,8 +2246,8 @@
       "question": "If it says no artificial flavors, what is the flavoring?",
       "decision": "The claim bans synthetic flavoring but leaves everything else untouched.",
       "why": "Natural flavors are still engineered. The legal difference is the starting material.",
-      "short_answer": "Natural flavors — which are still permitted, and are still made in a lab. The legal difference is the SOURCE MATERIAL, not the processing: a natural flavor has to start from something plant or animal derived, an artificial one does not. Both arrive as engineered compounds, and either can be a proprietary blend of dozens of substances declared as two words on the panel.",
-      "detail": "The definition sits in 21 CFR 101.22: a natural flavor is derived from a spice, fruit, vegetable, edible yeast, herb, bark, bud, root, leaf, meat, seafood, egg or dairy product, whose significant function is flavoring. That is a rule about origin. It permits substantial processing, and it permits incidental additives (solvents, preservatives and carriers) to ride along inside the blend without separate declaration. So “no artificial flavors” is a true statement that answers a narrower question than most people think they are asking. The objection is the opacity rather than the word “artificial”: either way, two words on a panel stand in for a formulation nobody can see.",
+      "short_answer": "Natural flavors, still permitted and still made in a lab. The legal difference is the source material, not the processing. Natural flavors must start from a plant or animal. Either can be dozens of substances declared as two words.",
+      "detail": "The definition sits in 21 CFR 101.22: a natural flavor is derived from a spice, fruit, vegetable, edible yeast, herb, bark, bud, root, leaf, meat, seafood, egg or dairy product, whose significant function is flavoring. That is a rule about origin. It permits substantial processing, and it permits incidental additives (solvents, preservatives and carriers) to ride along inside the blend without separate declaration. So “no artificial flavors” is a true statement that answers a narrower question than most people think they are asking. The objection is the opacity rather than the word “artificial”: either way, two words on a panel stand in for a formulation nobody can see. A natural flavor has to start from something plant or animal derived; an artificial one does not. Both arrive as engineered compounds, and either can be a proprietary blend of dozens of substances declared as two words on the panel.",
       "evidence_tier": "established",
       "sources": [
         "FDA 21 CFR 101.22 (definitions of natural and artificial flavor)",
@@ -2255,7 +2255,7 @@
       ],
       "kristy_take": "“No artificial flavors” only rules out one kind of lab work. Natural flavoring is still a formulation, and it can be dozens of compounds hiding behind two words. That’s an opacity problem, not a chemistry one.",
       "buying_tips": [
-        "The claim rules out artificial flavoring only — natural flavoring is still permitted.",
+        "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
         "Both are engineered; the legal difference is the starting material, not the process.",
         "“Natural flavors” can carry solvents and carriers that need no separate declaration.",
         "A short ingredient list with recognisable food names beats any flavor claim on the front."
@@ -4303,8 +4303,8 @@
       "question": "Where on a package should I actually be looking?",
       "decision": "The front of a package is advertising; the back is regulated.",
       "why": "The front is written by marketing. The back is written by law.",
-      "short_answer": "The front of a package is advertising and the back is regulated. Every phrase on the front (natural, wholesome, farm fresh, made with real, lightly sweetened) is chosen by a marketing team, and only some of them have any legal definition at all. The ingredient list and the Nutrition Facts panel have to be true and have to follow a format. Turn it over first, and the front becomes noise.",
-      "detail": "This is the one habit that makes every other label question easy. Nearly all of the confusion in a grocery store comes from front-of-pack language, which is written to imply more than it commits to, and almost none of it comes from the panel on the back, which is defined down to the font. Three things on the back do most of the work: the ingredient list in descending order by weight, the added-sugars line, and the serving size the numbers are based on. When the front and the back disagree, the back is the one that had to be checked.",
+      "short_answer": "The front is advertising. The back is regulated. Front words like natural, wholesome and farm fresh come from marketing, and only some are legally defined. The ingredient list and Nutrition Facts panel have to be true. Turn it over first.",
+      "detail": "This is the one habit that makes every other label question easy. Nearly all of the confusion in a grocery store comes from front-of-pack language, which is written to imply more than it commits to, and almost none of it comes from the panel on the back, which is defined down to the font. Three things on the back do most of the work: the ingredient list in descending order by weight, the added-sugars line, and the serving size the numbers are based on. When the front and the back disagree, the back is the one that had to be checked. Every phrase on the front (natural, wholesome, farm fresh, made with real, lightly sweetened) is chosen by a marketing team, and only some of them have any legal definition at all. The ingredient list and the Nutrition Facts panel have to be true and have to follow a format. Turn it over first, and the front becomes noise.",
       "evidence_tier": "established",
       "sources": [
         "FDA food labeling regulations, 21 CFR Part 101",
@@ -4356,8 +4356,8 @@
       "question": "How do I read an ingredient list properly?",
       "decision": "Ingredients run heaviest first, so the first three are most of it.",
       "why": "The list runs in weight order. Split sugars keep any one of them from climbing it.",
-      "short_answer": "Ingredients are listed in descending order by weight, so the first three tell you most of what is in the package. Everything after ‘contains 2% or less of’ can appear in any order and is a trace amount. The trick worth knowing is sugar splitting: a product can list cane syrup, dextrose, juice concentrate and honey separately so no single one climbs the list, when together they would sit near the top.",
-      "detail": "The weight-order rule is the most useful thing on any package, because it turns a list into a ranking. A bread whose first ingredient is ‘whole wheat flour’ is a different food from one whose first ingredient is ‘enriched wheat flour’, whatever the bag says. The 2%-or-less clause exists because ordering trace additives serves nobody, and it also means everything below that line is a rounding error. Sugar splitting is legal and common, and the added-sugars line on the Nutrition Facts panel is the counter to it, because it totals them all whatever they were called.",
+      "short_answer": "Ingredients run heaviest first, so the first three are most of the package. Everything after ‘contains 2% or less of’ is a trace, in any order. Watch for split sugars, each listed separately so none climbs the list.",
+      "detail": "The weight-order rule is the most useful thing on any package, because it turns a list into a ranking. A bread whose first ingredient is ‘whole wheat flour’ is a different food from one whose first ingredient is ‘enriched wheat flour’, whatever the bag says. The 2%-or-less clause exists because ordering trace additives serves nobody, and it also means everything below that line is a rounding error. Sugar splitting is legal and common, and the added-sugars line on the Nutrition Facts panel is the counter to it, because it totals them all whatever they were called. A product can list cane syrup, dextrose, juice concentrate and honey separately so no single one climbs the list, when together they would sit near the top.",
       "evidence_tier": "established",
       "sources": [
         "FDA ingredient labeling requirements, 21 CFR 101.4",
@@ -4415,8 +4415,8 @@
       "question": "How do I know if a seal on a package means anything?",
       "decision": "A real seal names an outside auditor you can look up.",
       "why": "A badge a company gave itself has neither. Each real seal covers one scope.",
-      "short_answer": "Ask three questions of any seal. Who set the standard, is it published, and does an independent body audit against it. A badge a company created for its own products answers none of the three. USDA Organic, Certified Humane, Animal Welfare Approved, Global Animal Partnership, American Grassfed and the Non-GMO Project all publish standards and use outside auditors. What no seal tells you is anything it never set out to measure.",
-      "detail": "The gap between a certification and a marketing badge is entirely in the audit. Real programs publish their standard, so anyone can read exactly what was checked, and they send inspectors. The second half of reading a seal is scope: an organic seal covers inputs and practices and says nothing about welfare beyond a baseline, a welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only. Stacking seals on a package does not make it a better food, it makes it a food that paid for several audits. The ingredient panel still decides what the thing actually is.",
+      "short_answer": "Ask three questions of any seal. Who set the standard? Is it published? Does an independent body audit against it? A company’s own badge answers none of them. No seal covers what it never set out to measure.",
+      "detail": "The gap between a certification and a marketing badge is entirely in the audit. Real programs publish their standard, so anyone can read exactly what was checked, and they send inspectors. The second half of reading a seal is scope: an organic seal covers inputs and practices and says nothing about welfare beyond a baseline, a welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only. Stacking seals on a package does not make it a better food, it makes it a food that paid for several audits. The ingredient panel still decides what the thing actually is. A badge a company created for its own products answers none of the three questions. USDA Organic, Certified Humane, Animal Welfare Approved, Global Animal Partnership, American Grassfed and the Non-GMO Project all publish standards and use outside auditors. What no seal tells you is anything it never set out to measure.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program certification requirements",
@@ -4451,7 +4451,7 @@
         }
       ],
       "watch_out": [
-        "An unnamed badge is often a company’s own mark — no published standard, no outside auditor.",
+        "An unnamed badge is often a company’s own mark, with no published standard and no outside auditor.",
         "Each seal covers one scope. Organic is not welfare, and welfare is not pesticides.",
         "More seals is not a better food. It is a food that bought more audits."
       ],
@@ -4479,8 +4479,8 @@
       "question": "What do ‘cold-pressed’ and ‘expeller-pressed’ mean on an oil?",
       "decision": "Cold-pressed oil is squeezed; refined oil is pulled out with solvent.",
       "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
-      "short_answer": "Two of these words describe pressing and one describes what happens afterwards. Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down, and for olive oil in the EU that is a defined limit. Most supermarket cooking oil is neither: it is solvent-extracted, then refined, bleached and deodorized.",
-      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that.",
+      "short_answer": "Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down. Most supermarket cooking oil is neither. It is solvent-extracted, then refined, bleached and deodorized.",
+      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit.",
       "evidence_tier": "established",
       "sources": [
         "International Olive Council definitions of cold extraction",
@@ -4548,8 +4548,8 @@
       "question": "If it says sugar-free, what is doing the sweetening?",
       "decision": "‘Sugar-free’ means something replaced the sugar rather than nothing.",
       "why": "‘Sugar-free’ is a defined claim about what came out. The list names what went in.",
-      "short_answer": "Something else, and the ingredient list names it. ‘Sugar-free’ is a defined claim, under half a gram of sugar per serving, so the sweetness comes from a sugar alcohol (erythritol, maltitol, xylitol) or a high-intensity sweetener (stevia, monk fruit, sucralose, aspartame). ‘Unsweetened’ is the plainer word and generally means nothing sweet was added at all. The two are not interchangeable.",
-      "detail": "‘Sugar-free’ answers a Nutrition Facts question and says nothing about what took sugar’s place, which is why the ingredient list matters more here than on almost any other claim. Sugar alcohols appear by name and are also totalled on the panel; high-intensity sweeteners appear in the list and are used in tiny amounts. ‘Unsweetened’ has no formal FDA definition and in practice means no sweetener of any kind, including the non-caloric ones, which makes it the cleaner word to look for on yogurt, plant milk and apple sauce. ‘Naturally sweetened’ has no definition at all and covers honey, maple syrup and juice concentrate.",
+      "short_answer": "Something else, named on the ingredient list. ‘Sugar-free’ is defined as under half a gram of sugar per serving. The sweetness comes from a sugar alcohol or a high-intensity sweetener. ‘Unsweetened’ generally means nothing sweet was added at all.",
+      "detail": "‘Sugar-free’ answers a Nutrition Facts question and says nothing about what took sugar’s place, which is why the ingredient list matters more here than on almost any other claim. Sugar alcohols appear by name and are also totalled on the panel; high-intensity sweeteners appear in the list and are used in tiny amounts. ‘Unsweetened’ has no formal FDA definition and in practice means no sweetener of any kind, including the non-caloric ones, which makes it the cleaner word to look for on yogurt, plant milk and apple sauce. ‘Naturally sweetened’ has no definition at all and covers honey, maple syrup and juice concentrate. Under ‘sugar-free’, the sweetness comes from a sugar alcohol (erythritol, maltitol, xylitol) or a high-intensity sweetener (stevia, monk fruit, sucralose, aspartame). ‘Unsweetened’ is the plainer word, and the two are not interchangeable.",
       "evidence_tier": "established",
       "sources": [
         "FDA nutrient content claims for sugars, 21 CFR 101.60",
@@ -4583,7 +4583,7 @@
         }
       ],
       "watch_out": [
-        "“Sugar-free” does not mean unsweetened — something else is doing the sweetening.",
+        "“Sugar-free” does not mean unsweetened. Something else is doing the sweetening.",
         "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify."
       ],
       "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in.",
@@ -4612,8 +4612,8 @@
       "question": "What has to be on a seafood label?",
       "decision": "Seafood labels must name species, method and country, and still get swapped.",
       "why": "All three are required on unprocessed seafood. Origin can mean where it was processed.",
-      "short_answer": "Three things are required on most unprocessed fish and shellfish at retail: the species name, whether it was wild-caught or farm-raised, and the country of origin. That is federal country-of-origin labeling, and it is one of the few places a store must tell you where food came from. The catch is that origin can mean where it was processed rather than where it was caught.",
-      "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses.",
+      "short_answer": "Most unprocessed fish and shellfish at retail must show the species, wild-caught or farm-raised, and the country of origin. Federal country-of-origin labeling requires it. The catch: origin can mean where it was processed, not where it was caught.",
+      "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses. Country-of-origin labeling is one of the few places a store must tell you where food came from.",
       "evidence_tier": "established",
       "sources": [
         "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
@@ -4670,8 +4670,8 @@
       "question": "Why do the numbers on the panel look so low?",
       "decision": "The panel’s numbers are scaled to a serving the maker chose.",
       "why": "Every number is per serving. Half of what looks reasonable is a third of the package.",
-      "short_answer": "Because every number on the Nutrition Facts panel is per serving, and the servings-per-container line above it says how many of those the package holds. ‘About 2.5 servings’ means multiplying everything by two and a half. Serving sizes are set by regulation to reflect what people typically eat, not what is good for anyone, and larger single-serve packages now have to show a per-package column too.",
-      "detail": "This is the easiest number on a package to misread, and it is not an accident that it sits at the top in small type. The reference amounts are fixed by the FDA per food category, so competing products in the same category are genuinely comparable, which is the useful thing about them. What they are not is a recommendation. The 2016 label rules made serving sizes more realistic, put added sugars on their own line, and required dual-column labelling on packages that could plausibly be finished in one sitting. Read from the top down: servings per container first, serving size second, then the numbers.",
+      "short_answer": "Because every number on the Nutrition Facts panel is per serving. The servings-per-container line says how many the package holds. ‘About 2.5 servings’ means multiplying everything by two and a half. Serving sizes reflect what people typically eat.",
+      "detail": "This is the easiest number on a package to misread, and it is not an accident that it sits at the top in small type. The reference amounts are fixed by the FDA per food category, so competing products in the same category are genuinely comparable, which is the useful thing about them. What they are not is a recommendation. The 2016 label rules made serving sizes more realistic, put added sugars on their own line, and required dual-column labelling on packages that could plausibly be finished in one sitting. Read from the top down: servings per container first, serving size second, then the numbers. Serving sizes are set by regulation to reflect what people typically eat, not what is good for anyone, and larger single-serve packages now have to show a per-package column too.",
       "evidence_tier": "established",
       "sources": [
         "FDA Nutrition Facts label final rule (2016)",
@@ -4732,8 +4732,8 @@
       "question": "What does “artificial color” mean on an ingredient list?",
       "decision": "“Artificial color” is a category, not a color. Titanium dioxide qualifies.",
       "why": "Certified dyes must be named. The rest may be declared as a group.",
-      "short_answer": "Two rules, split on certification. A certified dye must be declared by its own name, so “Red 40” and “Blue 1” always appear as themselves. A color exempt from certification does not have to: federal labeling rules let it ride as “Artificial Color,” “Artificial Color Added” or “Color Added.” Titanium dioxide sits in that second group. It is the white pigment used for opacity in candy shells, frosting, chewing gum and creamy dressings, capped at one percent of the food by weight. A label may name it outright as “colored with titanium dioxide,” and nothing requires that.",
-      "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) covers color additives subject to certification and requires each to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) covers color additives not subject to certification and permits the collective terms instead, offering “Colored with ______” as the alternative that names the substance. Titanium dioxide is listed at 21 CFR 73.575, which sets the one percent ceiling and states that batches are exempt from certification.\n\nSo the generic phrase is a signal rather than a blank. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which. The declaration is legal and complete. It is simply less specific than it looks, and knowing what the category holds is the whole skill.",
+      "short_answer": "Two rules, split on certification. A certified dye must be declared by name, so “Red 40” always appears as itself. A color exempt from certification may ride as “Artificial Color” or “Color Added.” Titanium dioxide is one of those.",
+      "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) covers color additives subject to certification and requires each to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) covers color additives not subject to certification and permits the collective terms instead, offering “Colored with ______” as the alternative that names the substance. Titanium dioxide is listed at 21 CFR 73.575, which sets the one percent ceiling and states that batches are exempt from certification.\n\nSo the generic phrase is a signal rather than a blank. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which. The declaration is legal and complete. It is simply less specific than it looks, and knowing what the category holds is the whole skill.\n\nA certified dye must be declared by its own name, so “Red 40” and “Blue 1” always appear as themselves. A color exempt from certification does not have to: federal labeling rules let it ride as “Artificial Color,” “Artificial Color Added” or “Color Added.” Titanium dioxide is the white pigment used for opacity in candy shells, frosting, chewing gum and creamy dressings, capped at one percent of the food by weight. A label may name it outright as “colored with titanium dioxide,” and nothing requires that. The EU withdrawal turned on an unresolved genotoxicity question, not a demonstrated harm. JECFA reviewed the same additive in 2023 and found dietary intake no hazard.",
       "evidence_tier": "established",
       "sources": [
         "FDA 21 CFR 101.22(k) (declaration of color additives on the ingredient list)",
@@ -4750,8 +4750,8 @@
         "Color sits low on an ingredient list, because the amounts used are small."
       ],
       "watch_out": [
-        "The EU withdrawal turned on an unresolved genotoxicity question, not a demonstrated harm.",
-        "JECFA reviewed the same additive in 2023 and found dietary intake no hazard.",
+        "The EU withdrawal turned on an unresolved question about damage to DNA, not a demonstrated harm.",
+        "An international expert committee on food additives reviewed the same additive in 2023 and found dietary intake no hazard.",
         "The UK, Canada, Australia and New Zealand reviewed it and did not follow the EU."
       ],
       "labels_decoded": [
