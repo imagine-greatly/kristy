@@ -173,6 +173,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pastries_muffins` | bulk_pantry | Pastry made with butter, named on the label or by the baker. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
 | `muesli` | bulk_pantry | Muesli with no added sugar listed; granola is the baked, sweetened version. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
 | `bread_aisle` | bulk_pantry | Pick the bread type first, then read the first flour for “whole”. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
+| `plain_kefir` | eggs_dairy | Plain kefir, with no flavor named on the bottle. | Read the ingredient list for milk and kefir cultures only. | — |
+| `sour_cream` | eggs_dairy | Sour cream soured by bacteria, not by an added acid. | Read the name on the tub for “cultured” or “acidified”. | — |
+| `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat. | Read the ingredients for a culture, then count the stabilizers after it. | — |
+| `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
+| `ice_cream` | eggs_dairy | Ice cream that meets the standard, not a lookalike. | Read the small print under the flavor for “frozen dairy dessert”. | — |
+| `ghee` | eggs_dairy | Ghee or clarified butter: one dairy fat, simmered down. | Read the ingredient list for butter or cream as the only entry. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

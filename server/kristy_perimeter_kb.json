@@ -8614,6 +8614,295 @@
           "url": "https://wholegrainscouncil.org/node/13040"
         }
       ]
+    },
+    {
+      "id": "plain_kefir",
+      "title": "Plain kefir",
+      "aliases": [
+        "plain kefir",
+        "pasteurized kefir",
+        "flavored kefir",
+        "kefir drink"
+      ],
+      "category": "dairy",
+      "question": "How do you pick a bottle of kefir?",
+      "decision": "Plain kefir, with no flavor named on the bottle.",
+      "why": "Kefir is milk fermented by yeasts and bacteria. It is sold ready to drink, plain or flavored.",
+      "short_answer": "Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.",
+      "detail": "Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kefir",
+        "https://foodsmartcolorado.colostate.edu/recipes/preservation/understanding-and-making-kefir",
+        "https://extension.usu.edu/preserve-the-harvest/kefir"
+      ],
+      "kristy_take": "Plain kefir is the base drink, ready for a smoothie or a recipe.",
+      "cart_pick": "Plain kefir from the cold case",
+      "buying_tips": [
+        "Pick the bottle with no flavor named on the label.",
+        "Take it from the refrigerated case and keep it cold.",
+        "Use plain kefir in place of buttermilk or yogurt in recipes."
+      ],
+      "watch_out": [
+        "Kefir has a short shelf life. Keep it refrigerated."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Kefir cultures",
+          "meaning": "The starter: yeasts and bacteria that ferment the milk."
+        },
+        {
+          "term": "Flavored",
+          "meaning": "A flavor has been added to the plain kefir."
+        }
+      ],
+      "tier_note": "Milk and cultures alone is the whole-food reading of a kefir bottle.",
+      "asked_as": [
+        "is plain kefir worth buying",
+        "how do i pick a kefir drink",
+        "should i buy flavored kefir"
+      ]
+    },
+    {
+      "id": "sour_cream",
+      "title": "Sour cream",
+      "aliases": [
+        "sour cream",
+        "cultured sour cream",
+        "acidified sour cream"
+      ],
+      "category": "dairy",
+      "question": "How do you pick sour cream?",
+      "decision": "Sour cream soured by bacteria, not by an added acid.",
+      "why": "Cultured sour cream is soured by bacteria. Acidified sour cream is soured with added acids.",
+      "short_answer": "The tub names the method. Sour cream, or cultured sour cream, is cream soured by bacteria. Acidified sour cream is soured with added acids. Both hold at least 18 percent milkfat.",
+      "detail": "Under 21 CFR 131.160, sour cream is pasteurized cream soured by lactic acid bacteria. It may be named “Cultured sour cream”. Under 21 CFR 131.162, acidified sour cream is soured with acidifiers, with or without lactic acid bacteria. An acidifier is an added food-grade acid. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop syneresis, which is liquid separating out. A flavoring that characterizes the product is declared with the name.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/131.160",
+        "https://www.law.cornell.edu/cfr/text/21/131.162"
+      ],
+      "kristy_take": "Culturing is the traditional way to sour cream. The tub says which way was used.",
+      "cart_pick": "Cultured sour cream",
+      "buying_tips": [
+        "Pick a tub named “sour cream” or “cultured sour cream”.",
+        "Read the optional ingredients added for texture or shelf life.",
+        "Check the name for a declared flavor."
+      ],
+      "watch_out": [
+        "“Acidified” on the tub means added acids did the souring."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Cultured sour cream",
+          "meaning": "Cream soured by bacteria, the same food as sour cream."
+        },
+        {
+          "term": "Acidified sour cream",
+          "meaning": "Cream soured with added acids, with or without bacteria."
+        }
+      ],
+      "tier_note": "Souring by bacteria is the craft standard; acidified tubs meet a federal standard of their own.",
+      "asked_as": [
+        "how do i pick a sour cream",
+        "is cultured sour cream worth buying",
+        "should i buy acidified sour cream"
+      ]
+    },
+    {
+      "id": "cream_cheese",
+      "title": "Cream cheese",
+      "aliases": [
+        "cream cheese",
+        "neufchatel",
+        "neufchatel cheese",
+        "cream cheese spread"
+      ],
+      "category": "dairy",
+      "question": "How do you pick cream cheese?",
+      "decision": "Cream cheese by its standard name, at least 33% milkfat.",
+      "why": "The standard sets at least 33 percent milkfat, a bacterial culture, and stabilizers at 0.5 percent at most.",
+      "short_answer": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and a bacterial culture. Stabilizers are capped at 0.5 percent. American Neufchâtel closely resembles it.",
+      "detail": "Under 21 CFR 133.133, cream cheese is a soft, uncured cheese. It holds at least 33 percent milkfat and at most 55 percent moisture. Its dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel, sold in the United States, closely resembles cream cheese. French Neufchâtel ripens and grows a soft rind.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/133.133",
+        "https://www.masterclass.com/articles/neufchatel-cheese-vs-cream-cheese-explained"
+      ],
+      "kristy_take": "Cream cheese is a fresh cheese, so the name on the box carries the standard.",
+      "cart_pick": "Cream cheese with a culture listed",
+      "buying_tips": [
+        "Look for “cream cheese” as the name on the package.",
+        "Find a culture in the ingredient list.",
+        "Swap in Neufchâtel in most recipes; the two taste similar."
+      ],
+      "watch_out": [
+        "Stabilizers are allowed, up to 0.5 percent of the cheese."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Cream cheese",
+          "meaning": "A standard name: at least 33 percent milkfat, at most 55 percent moisture."
+        },
+        {
+          "term": "Neufchâtel",
+          "meaning": "In U.S. stores, a cheese that closely resembles cream cheese."
+        }
+      ],
+      "tier_note": "A culture in the ingredients is what the federal standard requires.",
+      "asked_as": [
+        "how do i pick a cream cheese",
+        "is neufchatel cheese worth buying",
+        "which cream cheese spread should i buy"
+      ]
+    },
+    {
+      "id": "cottage_cheese",
+      "title": "Cottage cheese",
+      "aliases": [
+        "cottage cheese",
+        "small curd cottage cheese",
+        "large curd cottage cheese",
+        "dry curd cottage cheese"
+      ],
+      "category": "dairy",
+      "question": "How do you pick cottage cheese?",
+      "decision": "Cottage cheese with its curd set by a culture.",
+      "why": "A curd set by acid must be labeled “directly set” beside the name. Without those words, a culture set it.",
+      "short_answer": "Cottage cheese is curd mixed with a creaming mixture. The label states its milkfat, at least 4 percent. Acid-set curd must say “directly set” near the name. Dry curd cottage cheese has under 0.5 percent milkfat.",
+      "detail": "Under 21 CFR 133.128, cottage cheese is dry curd mixed with a creaming mixture. It holds at least 4 percent milkfat and at most 80 percent moisture. The label states “not less than __ percent milkfat” with the name. Under 21 CFR 133.129, the curd is set by lactic acid bacteria or by food-grade acids. Direct acidification means an acid, not bacteria, sets the curd. That method is labeled “Directly set” or “Curd set by direct acidification”. Dry curd cottage cheese has less than 0.5 percent milkfat.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/133.128",
+        "https://www.law.cornell.edu/cfr/text/21/133.129"
+      ],
+      "kristy_take": "The setting method is printed by the name, so the tub answers the question.",
+      "cart_pick": "Cottage cheese with no “directly set”",
+      "buying_tips": [
+        "Read the milkfat statement beside the name.",
+        "Look for “directly set” or “curd set by direct acidification”.",
+        "Pick dry curd cottage cheese for the version under 0.5 percent milkfat."
+      ],
+      "watch_out": [
+        "“Directly set” means food-grade acid formed the curd, not a culture."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Directly set",
+          "meaning": "An acid, not a culture, set the curd."
+        },
+        {
+          "term": "Not less than 4 percent milkfat",
+          "meaning": "The stated milkfat, as a whole number."
+        },
+        {
+          "term": "Dry curd",
+          "meaning": "Curd with no creaming mixture, under 0.5 percent milkfat."
+        }
+      ],
+      "tier_note": "Culture-set curd is the craft standard; a directly set tub still meets the federal one.",
+      "asked_as": [
+        "how do i pick a cottage cheese",
+        "is dry curd cottage cheese worth buying",
+        "should i buy small curd cottage cheese"
+      ]
+    },
+    {
+      "id": "ice_cream",
+      "title": "Ice cream",
+      "aliases": [
+        "ice cream",
+        "vanilla ice cream",
+        "chocolate ice cream",
+        "ice cream pint"
+      ],
+      "category": "dairy",
+      "question": "How do you tell real ice cream from a lookalike?",
+      "decision": "Ice cream that meets the standard, not a lookalike.",
+      "why": "The name “ice cream” needs at least 10 percent milkfat. Short of that, the carton says “frozen dairy dessert”.",
+      "short_answer": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat.",
+      "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/135.110",
+        "https://www.mentalfloss.com/food/ice-cream/ice-cream-vs-frozen-dairy-dessert-what-is-difference"
+      ],
+      "kristy_take": "The words on the carton settle it. “Frozen dairy dessert” is the name for what falls short.",
+      "cart_pick": "A carton named “ice cream”",
+      "buying_tips": [
+        "Read the name on the carton, not the picture.",
+        "Look for “frozen dairy dessert” in the small print.",
+        "Read the ingredients for oils such as coconut or palm oil."
+      ],
+      "watch_out": [
+        "“Frozen dairy dessert” means the carton missed the ice cream standard."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ice cream",
+          "meaning": "At least 10 percent milkfat and 4.5 pounds to the gallon."
+        },
+        {
+          "term": "Frozen dairy dessert",
+          "meaning": "A frozen dessert that does not meet the ice cream standard."
+        },
+        {
+          "term": "Frozen custard",
+          "meaning": "Ice cream made with 1.4 percent egg yolk solids."
+        }
+      ],
+      "tier_note": "FDA defines the ice cream name, so the print on the carton decides.",
+      "asked_as": [
+        "which ice cream should i buy",
+        "how do i pick a vanilla ice cream",
+        "should i buy ice cream or frozen dairy dessert"
+      ]
+    },
+    {
+      "id": "ghee",
+      "title": "Ghee and clarified butter",
+      "aliases": [
+        "ghee",
+        "clarified butter",
+        "ghee butter"
+      ],
+      "category": "dairy",
+      "question": "How do you pick ghee?",
+      "decision": "Ghee or clarified butter: one dairy fat, simmered down.",
+      "why": "Clarified butter is butter with the water and milk solids removed. Ghee simmers longer for a nutty taste.",
+      "short_answer": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty taste.",
+      "detail": "Ghee is typically made by simmering butter, skimming the surface, and keeping the clear liquid fat. The solid residue that settles is discarded. Clarified butter is done once the water evaporates and the fat separates from the milk solids. Ghee is simmered further, which makes it nutty and aromatic. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ghee",
+        "https://www.healthline.com/nutrition/ghee"
+      ],
+      "kristy_take": "Plain ghee is butter, simmered down to its fat.",
+      "cart_pick": "Ghee made from butter alone",
+      "buying_tips": [
+        "Read the ingredient list for butter alone.",
+        "Expect spices on the list if the jar is flavored.",
+        "Choose ghee for its nutty taste and aroma."
+      ],
+      "watch_out": [
+        "Spices can be added to ghee, so a flavored jar lists more than butter."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Clarified butter",
+          "meaning": "Butter with the water and milk solids removed."
+        },
+        {
+          "term": "Ghee",
+          "meaning": "Clarified butter simmered longer, for a nutty taste."
+        }
+      ],
+      "tier_note": "Butter as the one ingredient is the whole-food reading of a ghee jar.",
+      "asked_as": [
+        "is ghee worth buying",
+        "how do i pick a good ghee",
+        "should i buy clarified butter"
+      ]
     }
   ]
 }
