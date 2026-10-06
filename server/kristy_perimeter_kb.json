@@ -28,8 +28,8 @@
       "question": "Is wild or farmed salmon better?",
       "decision": "Wild salmon is worth choosing; farmed eats a plant-oil ration.",
       "why": "Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.",
-      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean; farmed salmon eats a formulated ration built largely on plant protein and vegetable oil, which leaves it with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into that ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin.",
-      "detail": "The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
+      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a formulated ration built largely on plant protein and vegetable oil.",
+      "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries / Seafood Watch",
@@ -82,8 +82,8 @@
       "question": "Is imported or domestic shrimp better?",
       "decision": "Wild American shrimp is worth finding; most imports are pond-farmed.",
       "why": "Country of origin is printed by law. It is the one sourcing question with an answer.",
-      "short_answer": "Most shrimp in US stores is imported and farmed, and what stands behind it varies enormously by country of origin. Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery. Where the bag is farmed, a credible certification is what stands in for knowing the farm.",
-      "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Farming practice, pond management and antibiotic use vary by producing country rather than by the word ‘farmed’, so origin plus a certification does more work than any claim on the front of the bag. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value.",
+      "short_answer": "Most shrimp in US stores is imported and farmed, and what stands behind it varies enormously by country of origin. Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery.",
+      "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Farming practice, pond management and antibiotic use vary by producing country rather than by the word ‘farmed’, so origin plus a certification does more work than any claim on the front of the bag. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value. Where the bag is farmed, a credible certification is what stands in for knowing the farm.",
       "evidence_tier": "credible_concern",
       "sources": [
         "NOAA Fisheries country-of-origin data",
@@ -109,7 +109,7 @@
       ],
       "tier_note": "Farm practices genuinely vary by origin, the concern is documented, and a certified bag is the clean swap.",
       "watch_out": [
-        "Where wild American is not stocked, a BAP or ASC certification is the check that stands in for knowing the farm.",
+        "Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm.",
         "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
         "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound."
       ],
@@ -133,8 +133,8 @@
       "question": "Is fresh fish better than frozen?",
       "decision": "Fish frozen at sea is often fresher than what sits on ice.",
       "why": "Most ‘fresh’ at the counter was frozen first. Flash-frozen at sea beats days in transit.",
-      "short_answer": "Not necessarily. Most fish at the counter labeled ‘fresh’ has been previously frozen and thawed, and fish that’s flash-frozen at sea can be fresher than ‘fresh’ fish that’s spent days in transit. Frozen is often the smarter, cheaper buy.",
-      "detail": "Freezing at sea locks in quality within hours of the catch. ‘Fresh’ fish on ice may be several days from the water. Neither is a downgrade — but don’t pay a premium for ‘fresh’ assuming it’s better, and don’t re-freeze fish that was sold thawed.",
+      "short_answer": "Not necessarily. Most fish at the counter labeled ‘fresh’ has been previously frozen and thawed. Fish flash-frozen at sea can be fresher than ‘fresh’ fish that’s spent days in transit. Frozen is often the smarter, cheaper buy.",
+      "detail": "Freezing at sea locks in quality within hours of the catch. ‘Fresh’ fish on ice may be several days from the water. Neither is a downgrade. But don’t pay a premium for ‘fresh’ assuming it’s better, and don’t re-freeze fish that was sold thawed.",
       "evidence_tier": "established",
       "sources": [
         "NOAA Fisheries handling guidance",
@@ -145,7 +145,7 @@
       "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
       "cart_pick": "Frozen wild fish fillets",
       "buying_tips": [
-        "Ask the counter ‘was this previously frozen?‘ — the answer is often yes.",
+        "Ask the counter ‘was this previously frozen?’ The answer is often yes.",
         "Buy frozen and thaw at home for the best price and control.",
         "Don’t re-freeze fish that was sold thawed."
       ],
@@ -161,7 +161,7 @@
       ],
       "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion.",
       "watch_out": [
-        "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours of the catch can be fresher than fish that spent days in transit to the counter.",
+        "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter.",
         "Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it."
       ],
       "asked_as": [
@@ -3039,8 +3039,8 @@
       "question": "Which fish are low in mercury and which are high?",
       "decision": "Sardines, salmon and skipjack are small fish that live short lives.",
       "why": "Mercury tracks size and lifespan. The big long-lived predators carry the most.",
-      "short_answer": "It tracks size and lifespan almost perfectly. Small, short-lived fish carry the least and the big long-lived predators carry the most. Sardines, salmon and canned light (skipjack) tuna sit at the bottom; swordfish, shark, king mackerel and bigeye tuna sit at the top. FDA and EPA publish it as a three-tier list and aim the advice at pregnant and nursing women and young children.",
-      "detail": "Methylmercury accumulates up the food chain, so a fish that ate thousands of smaller fish across twenty years carries far more than one that lived two years on plankton. That is why the pattern is so predictable by species. FDA and EPA publish it as a three-tier list (Best Choices, Good Choices, Choices to Avoid) and direct the advice at pregnant and nursing women and young children. This is information about the fish. Anything about a personal medical situation belongs with a doctor.",
+      "short_answer": "It tracks size and lifespan almost perfectly. Small, short-lived fish carry the least. Big long-lived predators carry the most. Sardines, salmon and canned light tuna sit at the bottom. Swordfish, shark, king mackerel and bigeye tuna sit at the top.",
+      "detail": "Methylmercury accumulates up the food chain, so a fish that ate thousands of smaller fish across twenty years carries far more than one that lived two years on plankton. That is why the pattern is so predictable by species. FDA and EPA publish it as a three-tier list (Best Choices, Good Choices, Choices to Avoid) and direct the advice at pregnant and nursing women and young children. This is information about the fish. Anything about a personal medical situation belongs with a doctor. Canned light tuna is usually skipjack.",
       "evidence_tier": "established",
       "sources": [
         "FDA/EPA ‘Advice About Eating Fish’ (2021 update)",
@@ -3073,8 +3073,8 @@
       ],
       "tier_note": "Mercury accumulating up the food chain is settled, and the species lists follow directly from it.",
       "watch_out": [
-        "Low mercury is not the whole picture. EWG’s guide sets shrimp, catfish, tilapia, clams, scallops and pangasius apart as low in mercury but also low in omega-3s, against wild salmon, sardines, mussels, rainbow trout and Atlantic mackerel, which are low in mercury and high in omega-3s.",
-        "EWG runs stricter than FDA/EPA here: FDA puts canned light tuna in its lowest tier; EWG tells pregnant women and children to limit it, along with albacore, halibut, lobster, mahi mahi and sea bass. It lists shark, swordfish, tilefish, king mackerel, marlin, bluefin and bigeye tuna and orange roughy as too high to eat regularly. Anything medical is a doctor’s call."
+        "Low mercury is not the whole picture. EWG’s guide sets shrimp, catfish, tilapia, clams, scallops and pangasius apart as low in mercury. They are also low in omega-3s. Wild salmon, sardines, mussels, rainbow trout and Atlantic mackerel are low in mercury and high in omega-3s.",
+        "EWG runs stricter than FDA/EPA here. FDA puts canned light tuna in its lowest tier. EWG tells pregnant women and children to limit it, along with albacore, halibut, lobster, mahi mahi and sea bass. It lists shark, swordfish, tilefish, king mackerel, marlin, bluefin and bigeye tuna, and orange roughy. EWG rates all of them too high to eat regularly. Anything medical is a doctor’s call."
       ],
       "asked_as": [
         "which fish are low in mercury",
@@ -3105,8 +3105,8 @@
       "question": "How do I tell if fish at the counter is fresh?",
       "decision": "Fresh fish smells of clean seawater, or of nothing at all.",
       "why": "Sharp or ammonia means it has gone. Then check the eyes, the gills and the ice.",
-      "short_answer": "Smell first. Fresh fish smells like clean seawater or like almost nothing. A sharp fishy or ammonia note means it has gone. Then look: on a whole fish, clear domed eyes, bright red gills, tight scales, flesh that springs back. On fillets, a translucent sheen, flakes still holding together, no browning at the edges, and no liquid pooled underneath.",
-      "detail": "The ‘fishy’ smell people associate with fish is the smell of it breaking down, which makes it the single best gauge in the case. Whole fish tell you more than fillets, because eyes, gills and skin all age visibly. On a fillet the tell is gaping: muscle segments separate as it ages and the flesh loses its sheen. Ice matters as much as the fish, so it should be sitting on plenty of it and not in a puddle. Asking them to hand you a piece to smell is completely normal, and any good counter will.",
+      "short_answer": "Smell first. Fresh fish smells like clean seawater or like almost nothing. Sharp fishy or ammonia means it has gone. Whole fish: clear domed eyes, bright red gills, flesh that springs back. Fillets: a translucent sheen, no pooled liquid.",
+      "detail": "The ‘fishy’ smell people associate with fish is the smell of it breaking down, which makes it the single best gauge in the case. Whole fish tell you more than fillets, because eyes, gills and skin all age visibly. On a fillet the tell is gaping: muscle segments separate as it ages and the flesh loses its sheen. Ice matters as much as the fish, so it should be sitting on plenty of it and not in a puddle. Asking them to hand you a piece to smell is completely normal, and any good counter will. On a whole fish the scales should be tight. On a fillet the flakes should still hold together, with no browning at the edges and no liquid pooled underneath.",
       "evidence_tier": "established",
       "sources": [
         "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
@@ -3130,7 +3130,7 @@
       "tier_note": "The smell it gives off and the ice it is bedded in are both documented freshness checks, not opinions about the fish.",
       "watch_out": [
         "If only one check is possible, make it the gills. Red means recently slaughtered; brown, gray or green means the fish is past fresh.",
-        "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage, so a fish inside its date can still show gray, matte, sunken eyes."
+        "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage. A fish inside its date can still show gray, matte, sunken eyes."
       ],
       "asked_as": [
         "how do i tell if fish is fresh",
@@ -3166,8 +3166,8 @@
       "question": "What should I look for in canned fish?",
       "decision": "Tinned fish in olive oil or water, bones and skin left in.",
       "why": "The list should read fish, oil or water, salt. Anything longer is a sauce.",
-      "short_answer": "Read what it is packed in. Olive oil or water are the clean options; plenty of tins use soybean, cottonseed or unnamed ‘vegetable oil’, which matters if seed oils are a line you hold. Buy sardines and salmon with the bones and skin left in. And the ingredient list should read fish, oil or water, and salt. Anything longer is a sauce.",
-      "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food.",
+      "short_answer": "Read what it is packed in. Olive oil or water are the clean options. Plenty of tins use soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in.",
+      "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Soybean, cottonseed or unnamed ‘vegetable oil’ matters if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (canned fish composition)",
@@ -3181,8 +3181,8 @@
         "Bone-in and skin-on sardines and salmon. The bones soften completely.",
         "The list should read fish, oil or water, salt. Anything longer is a sauce.",
         "Good oil-packed tins are worth using in the dish rather than draining.",
-        "Skipjack (‘light’) sits lower on the mercury range than albacore (‘white’).",
-        "Skipjack (labeled ‘light’) is lower-mercury than albacore (labeled ‘white’)."
+        "Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’.",
+        "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’."
       ],
       "labels_decoded": [
         {
@@ -3200,7 +3200,7 @@
       ],
       "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it.",
       "watch_out": [
-        "‘Dolphin-safe’ speaks to dolphins only; Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught, meaning purse seines used without a floating device that draws in juvenile fish, sharks and other bycatch.",
+        "‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch.",
         "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye."
       ],
       "asked_as": [
@@ -3228,8 +3228,8 @@
       "question": "Is farmed fish worth buying?",
       "decision": "Farmed trout, char and shellfish are worth buying without hesitation.",
       "why": "‘Farmed’ is not a verdict. Mussels and oysters feed themselves by filtering water.",
-      "short_answer": "It depends entirely on the species and the operation, never on the word ‘farmed’. Farmed shellfish (mussels, oysters, clams) are the standout: they feed themselves by filtering water and need no feed at all. Farmed trout, arctic char and barramundi are generally well regarded. Salmon and shrimp vary enormously by producer and country, which is where certification and origin do real work.",
-      "detail": "Aquaculture is not one thing. A rope of mussels hanging in a bay takes nothing and adds nothing. A closed recirculating tank system for trout or char is tightly controlled. An open net pen or a coastal shrimp pond depends on the standards of the country and the company running it. So the useful question at the counter is which species and where from, rather than farmed or wild. Wild is the whole-food-standard preference where it is affordable, and that is a preference, not a health verdict on farmed fish. Eating the fish beats skipping it.",
+      "short_answer": "It depends entirely on the species and the operation, never on the word ‘farmed’. Farmed mussels, oysters and clams are the standout: they filter water and need no feed. Farmed trout, arctic char and barramundi are generally well regarded.",
+      "detail": "Aquaculture is not one thing. A rope of mussels hanging in a bay takes nothing and adds nothing. A closed recirculating tank system for trout or char is tightly controlled. An open net pen or a coastal shrimp pond depends on the standards of the country and the company running it. So the useful question at the counter is which species and where from, rather than farmed or wild. Wild is the whole-food-standard preference where it is affordable, and that is a preference, not a health verdict on farmed fish. Eating the fish beats skipping it. Farmed shellfish feed themselves by filtering water and need no feed at all. Salmon and shrimp vary enormously by producer and country, which is where certification and origin do real work.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "NOAA Fisheries aquaculture overviews",
@@ -3257,7 +3257,7 @@
       ],
       "tier_note": "Mussels and oysters taking no feed at all is documented; which farmed species clear the bar is the whole-food standard.",
       "watch_out": [
-        "Ratings run by species and by method, never by the word ‘farmed’. Seafood Watch’s Super Green list puts U.S. farmed catfish, clams, mussels, oysters, trout and steelhead and hybrid striped bass at the top.",
+        "Ratings run by species and by method, never by the word ‘farmed’. Seafood Watch’s Super Green list puts these at the top: U.S. farmed catfish, clams, mussels, oysters, trout and steelhead. U.S. farmed hybrid striped bass is there too.",
         "U.S.-farmed white leg shrimp and tilapia rate Green on the same list. The rating names the origin and the system, so read the country before judging the species."
       ],
       "asked_as": [
@@ -3286,8 +3286,8 @@
       "question": "Do the sustainability seals on seafood mean anything?",
       "decision": "MSC is the wild-catch seal worth trusting; farm seals set a minimum.",
       "why": "Each seal answers one narrow question, and none of them speaks to freshness.",
-      "short_answer": "The blue MSC label covers wild fisheries and how the stock is managed, which is the one that lines up with buying wild in the first place. ASC and BAP audit farms: published standards, real auditors, and a floor rather than a recommendation. BAP’s one-to-four stars count how far up the chain the audit reached. Seafood Watch is not a label at all, it is a ratings guide you look up.",
-      "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds and the gear does not wreck the habitat. ASC and BAP audit farms. BAP’s stars count the audited links: one is the processing plant, four adds the farm, hatchery and feed mill. All three publish their standards and send auditors, which is more than an unbacked word on a package offers. What none of them tell you is anything about the fish in front of you: how fresh it is, how it tastes, or how it was handled since.",
+      "short_answer": "The blue MSC label covers wild fisheries and how the stock is managed. ASC and BAP audit farms and set a floor, not a recommendation. Seafood Watch is not a label at all, it is a ratings guide.",
+      "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds and the gear does not wreck the habitat. ASC and BAP audit farms. BAP’s stars count the audited links: one is the processing plant, four adds the farm, hatchery and feed mill. All three publish their standards and send auditors, which is more than an unbacked word on a package offers. What none of them tell you is anything about the fish in front of you: how fresh it is, how it tastes, or how it was handled since. MSC is the seal that lines up with buying wild in the first place. ASC and BAP rest on published standards and real auditors. BAP’s one-to-four stars count how far up the chain the audit reached. Seafood Watch is a ratings guide you look up.",
       "evidence_tier": "established",
       "sources": [
         "Marine Stewardship Council fisheries standard",
@@ -5355,8 +5355,8 @@
       "question": "How do I choose and keep lettuce, spinach, and kale?",
       "decision": "Crisp, even color, no wilt, yellowing, or decay.",
       "why": "Spinach is highly perishable and kale wilts in the warm, so the crispness of the leaf is the freshness date.",
-      "short_answer": "Lettuce: crisp leaves, bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A romaine head that is very loose is immature; very firm or hard is overmature. Spinach: uniformly green, not yellow-green, fully crisp, fairly clean, no serious damage. Kale: firm, deep colored leaves on moist, hardy stems, no browning, yellow, or small holes; smaller leaves are more tender and milder.",
-      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, spinach carries more pesticide residue by weight than any other type of produce, and kale is on the list as well.",
+      "short_answer": "Lettuce: crisp, green outside, pale at the heart. Romaine: neither very loose nor very hard. Spinach: uniformly green and fully crisp. Kale: firm, deep colored leaves on moist, hardy stems.",
+      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, spinach carries more pesticide residue by weight than any other type of produce, and kale is on the list as well. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
       "evidence_tier": "established",
       "sources": [
         "UC Davis Postharvest Technology Center, Lettuce (Romaine) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lettuce-romaine",
@@ -5431,9 +5431,9 @@
       "category": "produce",
       "question": "How do I choose and keep bell peppers?",
       "decision": "Firm and evenly colored, free of cracks, decay, or sunburn.",
-      "why": "Firmness is a quality index on the postharvest sheet, and a shriveled pepper is one that has lost water in storage.",
-      "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, uniform in shape and size, free of cracks, decay, sunburn, disease, or insect damage. Pass on any that is bruised or damaged. A dark, sunken spot at the blossom end is blossom end rot.",
-      "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices.",
+      "why": "Firmness is a quality index on the postharvest sheet. A shriveled pepper has lost water in storage.",
+      "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, and uniform in shape and size. Skip any with cracks, decay, sunburn, disease, insect damage, or bruises.",
+      "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices. A dark, sunken spot at the blossom end is blossom end rot.",
       "evidence_tier": "established",
       "sources": [
         "UC Davis Postharvest Technology Center, Bell Pepper fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/bell-pepper",
@@ -5519,8 +5519,8 @@
       "question": "How do I choose and keep apples and pears?",
       "decision": "Unbruised and undamaged. One spoiled fruit rots its neighbors faster.",
       "why": "Damaged fruit spoils in storage, and spoiled fruit makes the sound apples and pears beside it ripen and rot faster.",
-      "short_answer": "Apples: firm and crisp, not mealy, free of bruising, decay, cracks at the stem or blossom end, and insect injury. Pears: sound shape and size, free of bruising, insect damage, and decay. Bartletts are picked mature-green and ripened off the tree, so a firm green pear is not a fault; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
-      "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both apples and pears appear.",
+      "short_answer": "Apples: firm and crisp, not mealy, free of bruising, decay, cracks, and insect injury. Pears: sound shape and size, free of bruising, insect damage, and decay. A firm green Bartlett is not a fault.",
+      "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both apples and pears appear. On apples, look for cracks at the stem or blossom end. Bartletts are picked mature-green and ripened off the tree; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
       "evidence_tier": "established",
       "sources": [
         "Oregon State University Extension, Picking and storing apples and pears (FS 147), https://extension.oregonstate.edu/gardening/fruit-vegetable/picking-storing-apples-pears",
@@ -5615,9 +5615,9 @@
       "category": "produce",
       "question": "How do I choose and keep oranges, lemons, and limes?",
       "decision": "Firm and smooth, free of decay, drying, or shriveling.",
-      "why": "Firm fruit with a sound rind is the quality index on the UC Davis citrus sheets; decay and shriveling are the defects.",
-      "short_answer": "Oranges: even, intense color, firm, smooth, free of decay, bruising, skin blemishes, and discoloration. A partly green orange can be fully mature; the color is set by degreening, which does not change the inside. Lemons: even yellow, smooth, firm, free of decay, drying, rind stains, and shriveling. Limes: green is preferred in the US, but yellow limes carry more juice; firm, smooth, free of bruises, oil spotting, and dryness.",
-      "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest.",
+      "why": "Firm fruit with a sound rind is the quality index on the UC Davis citrus sheets. Decay and shriveling are the defects.",
+      "short_answer": "Oranges: even color, firm, smooth, free of decay and bruising. A partly green orange can be fully mature. Lemons: even yellow, smooth, firm, no shriveling. Limes: firm and smooth, no dryness.",
+      "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting.",
       "evidence_tier": "established",
       "sources": [
         "UC Davis Postharvest Technology Center, Orange fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/orange",
@@ -5720,8 +5720,8 @@
       "question": "How do I choose and keep peaches, nectarines, plums, and cherries?",
       "decision": "Unbruised and undamaged, with the skin color fully turned.",
       "why": "Michigan Fresh gives the same instruction for peaches, plums, and cherries: buy fruit that is not bruised or damaged.",
-      "short_answer": "Peaches and nectarines: ground color turned from green to yellow; a flesh firmness of 2 to 3 pounds-force counts as ready to eat. Dark skin staining is inking, a cosmetic mark from abrasion that affects the skin only. Plums: skin color turned for the variety; 2 to 3 pounds-force means ready to eat. Cherries: at least light red across the whole surface, no cracks, bird pecks, shriveling, or decay; green, fleshy stems go with freshness.",
-      "detail": "The optimum storage for all of them is just above freezing, 30.5 to 32°F, and Michigan Fresh puts cherries in the refrigerator at or below 41°F. Plums held between 36 and 46°F, the killing range, are more susceptible to internal breakdown: mealiness, browning, and failure to ripen. Peaches, nectarines, and plums picked well mature ripen on their own without ethylene; ethylene does not speed cherry ripening. Keep stone fruit away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both peaches and cherries appear.",
+      "short_answer": "Peaches and nectarines: ground color turned from green to yellow. Plums: skin color turned for the variety. Cherries: at least light red all over, with green fleshy stems.",
+      "detail": "The optimum storage for all of them is just above freezing, 30.5 to 32°F, and Michigan Fresh puts cherries in the refrigerator at or below 41°F. Plums held between 36 and 46°F, the killing range, are more susceptible to internal breakdown: mealiness, browning, and failure to ripen. Peaches, nectarines, and plums picked well mature ripen on their own without ethylene; ethylene does not speed cherry ripening. Keep stone fruit away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both peaches and cherries appear. A peach or nectarine with a flesh firmness of 2 to 3 pounds-force counts as ready to eat, and the same holds for plums. Dark skin staining is inking, a cosmetic mark from abrasion that affects the skin only. Cherries should be at least light red across the whole surface, with no cracks, bird pecks, shriveling, or decay; green, fleshy stems go with freshness.",
       "evidence_tier": "established",
       "sources": [
         "UC Davis Postharvest Technology Center, Nectarine & Peach fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/peach",
@@ -6853,7 +6853,7 @@
       ],
       "watch_out": [
         "Light is not one species. Do not assume every light can is skipjack.",
-        "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children; use its age and life-stage guidance rather than one rule for everyone."
+        "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone."
       ],
       "labels_decoded": [
         {
