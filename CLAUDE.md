@@ -149,9 +149,9 @@ Web: `docs/DECISIONS.md`, “Architecture”/“The interface”.
 - Baseline grocery names only; `kept` occurrences not deduped; private memory leaves with shopper, `USER_TABLES` all `auth.users` tables; `productStore`/`counterGaps` never import per-user readers (no aggregate joins).
 
 ### Internal/ambient
-- `/api/internal/growth`: token 24+ chars or 404; unauthorized 404 not 401; only `coverageStats`/`gapFeed`/`topScannedProducts`, no Kristy brand; null count unavailable, real select proves reachability, `head:true` cannot distinguish missing/empty.
-Phone/email rules: companion “Phone sign-in”.
-- Ambient fixed/own per surface, never pooled/rotated; requires action, never empty dashboard/shop/scan sheet/in-store; only iOS empty Haul: “Finish a trip and it lands here. Next week starts from what you actually bought.”
+- `/api/internal/growth`: token 24+ chars, else 404 never 401; only `coverageStats`/`gapFeed`/`topScannedProducts`, no Kristy brand; null count unavailable, real select proves reachability, `head:true` cannot distinguish missing/empty.
+Phone/email: companion “Phone sign-in”.
+- Ambient fixed per surface, never pooled/rotated, needs action, never empty dashboard/shop/scan sheet/in-store; Try this week = offer not ambient; only iOS empty Haul: “Finish a trip and it lands here. Next week starts from what you actually bought.”
 
 ### Money
 *`docs/PRICING-MODEL.md`: locked/unbuilt; rules live until lands. Read binding §0–§3a before trial/count/ask/entitlement; verbatim companion “Money”.*

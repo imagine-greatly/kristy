@@ -589,6 +589,25 @@ was invisible until something rendered one**
   it is worded, and it is the thing that gets an app deleted.
 - **A no is permanent**, and it suppresses the *item*, not just the note. A declined
   swap that reappears as a "nudge" is the same suggestion by a side door.
+- **Try this week: an offer, not ambient; once per trip on list home with items, one `TRY_POOL` card's `cart_pick` + do line verbatim, Add / Not this one; a no is permanent; never landing/shop/scan/in-store; no authored copy.**
+  It is an offer, not ambient copy: ambient is unprompted Kristy-voice text, fixed per
+  surface. This line carries two actions, is keyed to one card id, and its text is a
+  curated card's free fields verbatim. It follows `attachOffers` semantics (flags once; a
+  no is permanent and suppresses the item) and is selection, never authorship. It never
+  shows on the empty dashboard or landing, nor in store. NN#2 and NN#3 hold because no new
+  sentence exists: the eyebrow is `cart_pick`, the body is the `doLines.json` entry, and
+  the free summary carries both. Lists are free. Displaces nothing built; adds one block
+  to list home. The ambient rule stands untouched.
+  The 20-id pool (D2, 2026-10-06): meat ground_beef_organ_blend, butcher_counter_asking,
+  beef_cuts_basics, pork_cuts_and_enhanced, air_chilled_chicken; seafood
+  salmon_wild_vs_farmed, shrimp_imported_vs_domestic, fresh_vs_previously_frozen_fish,
+  canned_fish_choosing, farmed_fish_by_species; dairy yogurt_live_cultures; pantry
+  grains_beyond_rice, beans_dried_vs_canned, bulk_bins_buying, oats_steelcut_rolled_instant,
+  honey_adulteration, nuts_raw_vs_roasted; bakery sourdough, pretzel_bread, tortillas.
+  Produce: none (every produce cart_pick is generic). Excluded: staples a list already
+  carries; a2_vs_a1_milk (decision is a body claim); raw_milk, raw_kefir,
+  raw_aged_cheese, sprouts_raw (safety caveat only in paid `watch_out`); label_*,
+  technique, home-kind and no-cart_pick cards. The pool does not last a year (20 < 52).
 - **The offer table matches generic food words only.** `cola` matched Coca-Cola,
   `wonder bread` matched Wonder, `frosted \w+` matched Frosted Flakes — each would have
   had Kristy judging a named product from its name alone. A typed brand stays unremarked;
