@@ -1198,6 +1198,8 @@ export function lintCard(card) {
     }
   }
 
+  // K13: the aisle-readability bar (VOICE_SPEC "Readable in the aisle") is fail-level for every card.
+  for (const f of readability(card)) fail(f.code, f.field ? `${f.field}: ${f.detail}` : f.detail);
   return out;
 }
 
@@ -1376,7 +1378,10 @@ export function readability(card) {
       : field === 'decision' ? (card?.decision ?? card?.headline)
       : card?.[field];
     if (v == null) continue;
-    for (const text of [].concat(v)) {
+    for (const raw of [].concat(v)) {
+      // look_for entries project labels_decoded as "Term — meaning": that one leading
+      // separator is not an aside. Drop the term; a second em-dash still fires.
+      const text = field === 'look_for' && typeof raw === 'string' ? raw.replace(/^[^—]*? — /, '') : raw;
       for (const s of sentences(text)) {
         const n = wordCount(s);
         if (n > SENTENCE_MAX) {

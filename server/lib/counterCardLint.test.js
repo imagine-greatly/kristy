@@ -707,3 +707,8 @@ rtest('READ_STACKED fires on two semicolons/parentheticals or an em-dash, clears
   rassert.deepEqual(rcodes({ why: 'Buy plain (not sweet), and skip the rest.' }), []);
   rassert.deepEqual(rcodes({ why: 'Buy plain; skip the rest.' }), []);
 });
+rtest('READ_STACKED: a look_for "Term — meaning" separator clears, a second em-dash fires', () => {
+  rassert.deepEqual(rcodes({ look_for: ['Term — meaning.'] }), []);
+  rassert.deepEqual(rcodes({ look_for: ['Term — meaning — aside.'] }), ['READ_STACKED']);
+});
+
