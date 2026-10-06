@@ -7148,7 +7148,9 @@
         "honey ham",
         "ham steak",
         "smoked ham",
-        "country ham"
+        "country ham",
+        "which ham should i buy",
+        "what does water added mean on ham"
       ],
       "category": "deli",
       "question": "Which ham should you buy?",
@@ -7197,7 +7199,10 @@
       "id": "turkey_bacon",
       "title": "Turkey bacon",
       "aliases": [
-        "turkey bacon"
+        "turkey bacon",
+        "turkey bacon strips",
+        "uncured turkey bacon",
+        "sliced turkey bacon"
       ],
       "category": "deli",
       "question": "What does the turkey bacon label tell you?",
@@ -7248,7 +7253,9 @@
         "guanciale",
         "soppressata",
         "pepperoni",
-        "guanciale worth buying"
+        "guanciale worth buying",
+        "how do you choose prosciutto",
+        "how do you choose salami"
       ],
       "category": "deli",
       "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
@@ -7287,7 +7294,7 @@
           "meaning": "Made without added nitrate or nitrite, stated beside the product name."
         }
       ],
-      "tier_note": "Cut names and curing lists are USDA labeling facts; choosing cured pork by them is the whole-food standard.",
+      "tier_note": "The asterisk and curing ingredients are USDA labeling rules for “uncured” claims.",
       "asked_as": [
         "is guanciale worth buying",
         "how do you choose prosciutto",
@@ -7412,6 +7419,256 @@
         "how do you buy organ meats",
         "how long do organ meats keep",
         "which organ meats should i buy"
+      ]
+    },
+    {
+      "id": "bison",
+      "title": "Bison",
+      "aliases": [
+        "bison",
+        "ground bison",
+        "bison burgers",
+        "bison steak",
+        "buffalo meat"
+      ],
+      "category": "meat_counter",
+      "question": "How do you buy bison?",
+      "decision": "Bison bought by its inspection mark, then handled like beef.",
+      "why": "Bison inspection can be federal or state. Once bought, bison keeps and cooks on the same rules as beef.",
+      "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
+      "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bison-farm-table",
+        "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/"
+      ],
+      "kristy_take": "Bison is a bovine with no marbling. Find the inspection mark, then treat it like beef.",
+      "cart_pick": "Bison with an inspection mark",
+      "buying_tips": [
+        "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
+        "Expect a deeper red than beef, since bison has no marbling.",
+        "Cook or freeze ground bison within 2 days, steaks within 3 to 5.",
+        "Bag the package separately to contain any leaks."
+      ],
+      "watch_out": [
+        "Bison can turn tough when cooked beyond medium or at high heat."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Buffalo",
+          "meaning": "The common name for American bison, which is not a true buffalo."
+        },
+        {
+          "term": "Beefalo",
+          "meaning": "A cross that is 3/8 bison and 5/8 domestic cattle."
+        }
+      ],
+      "tier_note": "The inspection mark and storage times are FSIS guidance for bison sold in stores.",
+      "asked_as": [
+        "how do you buy ground bison",
+        "how do you choose a bison steak",
+        "is bison the same as buffalo meat"
+      ]
+    },
+    {
+      "id": "venison_game",
+      "title": "Venison and game",
+      "aliases": [
+        "venison",
+        "ground venison",
+        "venison steak",
+        "elk",
+        "ground elk",
+        "wild boar",
+        "game meat"
+      ],
+      "category": "meat_counter",
+      "question": "How do you choose venison and game meat?",
+      "decision": "Venison from a fully refrigerated processor, trimmed of its fat.",
+      "why": "Game is often processed by small shops. Cold handling decides its safety, and the fat carries the gamey flavor.",
+      "short_answer": "Choose game processed in fully refrigerated facilities, with each animal handled on its own. Trim the fat to reduce the gamey flavor. Use refrigerated venison within two or three days.",
+      "detail": "Deer and elk can carry Chronic Wasting Disease (CWD). Research finds its abnormal proteins in brain, spinal cord and lymph tissue, not in muscle. No evidence shows it passing to humans naturally, but that is not ruled out. Extension guidance advises avoiding the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F. Wrapped game keeps 9 to 12 months frozen.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.ndsu.edu/agriculture/extension/publications/pocket-guide-care-and-handling-deer-and-elk",
+        "https://extension.psu.edu/proper-care-and-handling-of-venison-from-field-to-table",
+        "https://livestock.extension.wisc.edu/articles/handling-venison-safely/"
+      ],
+      "kristy_take": "Game is only as good as its cold handling. Trim the fat, and cook it to temperature.",
+      "cart_pick": "Venison from a refrigerated processor",
+      "buying_tips": [
+        "Ask whether the processor handles each animal individually.",
+        "Choose a processor with fully refrigerated facilities.",
+        "Trim the fat to reduce the gamey flavor.",
+        "Use unfrozen venison within two or three days."
+      ],
+      "watch_out": [
+        "Discard meat that is bruised, discolored, or has hair, dirt or bone fragments.",
+        "Skip the brain, spinal cord, eyes, spleen and lymph nodes of deer and elk."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Aging",
+          "meaning": "Holding meat at 34 to 37°F for days so its enzymes tenderize it."
+        },
+        {
+          "term": "CWD",
+          "meaning": "Chronic Wasting Disease, an illness found in deer and elk."
+        }
+      ],
+      "tier_note": "The handling steps come from extension guidance written for deer and elk.",
+      "asked_as": [
+        "how long does ground venison keep",
+        "how do you choose a venison steak",
+        "how do you choose ground elk"
+      ]
+    },
+    {
+      "id": "duck_meat",
+      "title": "Duck",
+      "aliases": [
+        "duck breast",
+        "duck breasts",
+        "whole duck",
+        "duck legs",
+        "duck leg",
+        "duck meat"
+      ],
+      "category": "poultry",
+      "question": "How do you choose duck?",
+      "decision": "Duck chosen by its class name, Grade A when graded.",
+      "why": "Federal rules name ducks by age. A duckling or roaster duck is young and tender-meated.",
+      "short_answer": "Read the class on the label. Duckling and roaster duck are young and tender. Mature duck has toughened flesh. A USDA Grade A shield marks the highest quality.",
+      "detail": "Federal rule 9 CFR 381.170 defines the classes. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old. Grading is voluntary, and Grade B and C ducks are rarely in supermarkets. Additives are not allowed on fresh duck. Processed duck, such as smoked breast, lists its additives. Cook duck to 165°F.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/duck-and-goose-farm-table",
+        "https://www.law.cornell.edu/cfr/text/9/381.170"
+      ],
+      "kristy_take": "The class name tells the age, and the age tells tenderness. Grade A is the top shield.",
+      "cart_pick": "Grade A duckling or roaster duck",
+      "buying_tips": [
+        "Read the class: duckling or roaster duck for tender meat.",
+        "Look for the USDA Grade A shield.",
+        "Check the freezer case, where most duck is sold.",
+        "Bag it separately to contain any leaks."
+      ],
+      "watch_out": [
+        "Use fresh duck within 1 or 2 days, or freeze it.",
+        "Hormones are not allowed in any US duck, so that claim sets no duck apart."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Duckling",
+          "meaning": "A young duck under 8 weeks old, tender-meated."
+        },
+        {
+          "term": "Roaster duck",
+          "meaning": "A young duck under 16 weeks old, still tender-meated."
+        },
+        {
+          "term": "Mature duck",
+          "meaning": "An adult duck over 6 months old, with toughened flesh."
+        }
+      ],
+      "tier_note": "The classes are federal definitions, and the grade shield is a USDA quality mark.",
+      "asked_as": [
+        "how do you choose duck breast",
+        "how long does a whole duck keep",
+        "how do you buy duck legs"
+      ]
+    },
+    {
+      "id": "meat_case",
+      "title": "The meat case",
+      "aliases": [
+        "meat case",
+        "which meat should i buy",
+        "what meat should i buy",
+        "choose a cut of meat"
+      ],
+      "category": "meat_counter",
+      "question": "Which meat should you buy?",
+      "decision": "Decide the cook first, then ask which cut fits it.",
+      "why": "The cut decides tenderness and the right heat. The label then names the cut, any grade, and the dates.",
+      "short_answer": "Start with the cook. Chuck and round are less tender and suit braising. Loin and rib are more tender. Then read the primal cut, any grade, and the use-by date.",
+      "detail": "Beef splits into four primal cuts: chuck, loin, rib and round. Labels should name the primal cut with the product, such as chuck roast. Store names for one cut vary by region, so the primal cut is the steadier clue. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Additives are not allowed on fresh beef.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
+      ],
+      "kristy_take": "The cook picks the cut. The primal name on the label confirms it.",
+      "cart_pick": "A cut labeled with its primal name",
+      "buying_tips": [
+        "Read the primal cut on the label, such as chuck or round.",
+        "Pick chuck or round for braising, loin or rib for tender cuts.",
+        "Check the use-by date, and freeze what will not be cooked in time.",
+        "Skip any package that smells off or feels slimy."
+      ],
+      "watch_out": [
+        "Store names for one cut vary by region, so read the primal cut instead.",
+        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Primal cut",
+          "meaning": "One of the four major beef sections: chuck, loin, rib or round."
+        },
+        {
+          "term": "Natural",
+          "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
+        }
+      ],
+      "tier_note": "Primal cuts and grades are USDA facts, and matching the cut to the cook follows from them.",
+      "asked_as": [
+        "which meat should i buy",
+        "what meat should i buy for dinner",
+        "how do i choose a cut of meat"
+      ]
+    },
+    {
+      "id": "pick_jerky",
+      "kind": "pick",
+      "title": "Jerky",
+      "category": "pork",
+      "aliases": [
+        "jerky",
+        "beef jerky",
+        "turkey jerky",
+        "meat stick",
+        "meat sticks"
+      ],
+      "decision": "Jerky is dried meat; the ingredients name the meat and any curing agent.",
+      "sources": [
+        {
+          "name": "NDSU Extension: Jerky",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/jerky-native-american-inspired-snack-we-all-can-enjoy-today"
+        },
+        {
+          "name": "Cornell LII: 9 CFR § 317.17 Curing agents in the ingredients statement",
+          "url": "https://www.law.cornell.edu/cfr/text/9/317.17"
+        }
+      ]
+    },
+    {
+      "id": "pick_soup_bones",
+      "kind": "pick",
+      "title": "Soup bones",
+      "category": "pork",
+      "aliases": [
+        "soup bone",
+        "soup bones",
+        "marrow bones",
+        "beef bones",
+        "knuckle bones"
+      ],
+      "decision": "Soup bones are sold by butchers and farmers; ask which bones they offer.",
+      "sources": [
+        {
+          "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
+          "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
+        }
       ]
     }
   ]

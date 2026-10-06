@@ -131,11 +131,12 @@ test('a trailing qualifier does not move the head noun', () => {
   assert.ok(matchItemToCard('Bone-in, skin-on chicken thighs'), 'the row the comma rule protects');
 });
 
-test('an either/or whose head no card owns is an honest miss', () => {
-  // "Beef or chicken liver" has a trailing head ("liver") and no card names it. It must
-  // fall through — never land on the beef or chicken card, which speak to a different cut.
-  assert.equal(matchItemToCard('liver'), null, 'no card owns liver — re-check this test if one lands');
-  assert.equal(matchItemToCard('Beef or chicken liver'), null);
+test('an either/or over liver lands on organ_meats, and bare liver stays a miss', () => {
+  // "Beef or chicken liver" has a trailing head ("liver"). Since K15 the organ_meats card
+  // owns "beef liver" and "chicken liver", so the row lands there, never on the beef or
+  // chicken card, which speak to a different cut. Bare "liver" is still owned by no card.
+  assert.equal(matchItemToCard('liver'), null, 'no card owns bare liver — re-check this test if one lands');
+  assert.equal(matchItemToCard('Beef or chicken liver')?.slug, 'organ_meats');
 });
 
 /* ═══════════════ Home cards never attach ═══════════════ */

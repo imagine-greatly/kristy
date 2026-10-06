@@ -149,6 +149,15 @@ Also: imperative, starts with a verb, ≤14 words.
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
 | `chicken_breast` | meat | Plain chicken breast without an added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+| `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+| `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
+| `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
+| `lamb_goat` | meat | Lamb by its USDA grade, goat by firm, fine-grained flesh. | Look for a USDA grade on lamb, and press goat for firm flesh. | — |
+| `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
+| `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
+| `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
+| `duck_meat` | meat | Duck chosen by its class name, Grade A when graded. | Read the class on the label, then look for the Grade A shield. | — |
+| `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read the primal cut on the label, such as chuck or round. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
