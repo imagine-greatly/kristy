@@ -815,10 +815,7 @@
         "spring produce",
         "summer produce",
         "what is in season",
-        "winter produce",
-        "butternut squash",
-        "acorn squash",
-        "winter squash"
+        "winter produce"
       ],
       "category": "produce",
       "question": "Does buying produce in season matter?",
@@ -3385,7 +3382,9 @@
         "lemons",
         "limes",
         "oranges",
-        "citrus"
+        "citrus",
+        "good cantaloupe",
+        "good pineapple"
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
@@ -3425,7 +3424,9 @@
       "asked_as": [
         "how do i pick a ripe cantaloupe",
         "how do i pick a good avocado",
-        "how do i tell if a melon is ripe"
+        "how do i tell if a melon is ripe",
+        "how do i pick a good cantaloupe",
+        "how do i pick a good pineapple"
       ]
     },
     {
@@ -7069,6 +7070,96 @@
         "are duck eggs safe to eat",
         "what is different about duck eggs",
         "how big are quail eggs"
+      ]
+    },
+    {
+      "id": "pick_winter_squash",
+      "kind": "pick",
+      "title": "Winter squash",
+      "category": "produce",
+      "aliases": [
+        "winter squash",
+        "winter squashes",
+        "butternut squash",
+        "acorn squash",
+        "spaghetti squash"
+      ],
+      "decision": "Pick firm squash, heavy for its size, with hard skin and no sunken or moldy spots.",
+      "sources": [
+        {
+          "name": "University of Maine Cooperative Extension: Winter Squash",
+          "url": "https://extension.umaine.edu/harvest-for-hunger/vegetable-basics/winter-squash/"
+        }
+      ]
+    },
+    {
+      "id": "pick_ginger_turmeric",
+      "kind": "pick",
+      "title": "Ginger and turmeric",
+      "category": "produce",
+      "aliases": [
+        "ginger",
+        "ginger root",
+        "ginger roots",
+        "turmeric",
+        "turmeric root",
+        "turmeric roots"
+      ],
+      "decision": "Choose firm, smooth roots, not cracked or withered, and keep them sealed in the fridge.",
+      "sources": [
+        {
+          "name": "University of Minnesota Extension: Ginger",
+          "url": "https://reallifegoodfood.umn.edu/vegetables/ginger"
+        },
+        {
+          "name": "Ask Extension: Preserving fresh turmeric root",
+          "url": "https://ask.extension.org/kb/faq.php?id=924127"
+        }
+      ]
+    },
+    {
+      "id": "pick_microgreens",
+      "kind": "pick",
+      "title": "Microgreens",
+      "category": "produce",
+      "aliases": [
+        "microgreens",
+        "microgreen",
+        "micro greens"
+      ],
+      "decision": "Microgreens are rarely washed before packing, so rinse them well before use.",
+      "sources": [
+        {
+          "name": "Science Meets Food: Microgreens",
+          "url": "https://sciencemeetsfood.org/microgreens/"
+        },
+        {
+          "name": "Penn State Extension: Ensuring Food Safety in Microgreens Production",
+          "url": "https://extension.psu.edu/ensuring-food-safety-in-microgreens-production"
+        }
+      ]
+    },
+    {
+      "id": "pick_egg_whites",
+      "kind": "pick",
+      "title": "Egg whites",
+      "category": "poultry_eggs",
+      "aliases": [
+        "egg whites",
+        "egg white",
+        "carton egg whites",
+        "liquid egg whites"
+      ],
+      "decision": "Carton egg whites are pasteurized or otherwise treated to kill bacteria under the federal standard.",
+      "sources": [
+        {
+          "name": "USDA FSIS: Egg Products and Food Safety",
+          "url": "https://www.fsis.usda.gov/es/node/3373"
+        },
+        {
+          "name": "21 CFR 160.140, Egg whites",
+          "url": "https://www.law.cornell.edu/cfr/text/21/160.140"
+        }
       ]
     }
   ]

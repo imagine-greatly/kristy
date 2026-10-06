@@ -815,10 +815,7 @@
         "spring produce",
         "summer produce",
         "what is in season",
-        "winter produce",
-        "butternut squash",
-        "acorn squash",
-        "winter squash"
+        "winter produce"
       ],
       "category": "produce",
       "question": "Does buying produce in season matter?",
@@ -3385,7 +3382,9 @@
         "lemons",
         "limes",
         "oranges",
-        "citrus"
+        "citrus",
+        "good cantaloupe",
+        "good pineapple"
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
@@ -3425,7 +3424,9 @@
       "asked_as": [
         "how do i pick a ripe cantaloupe",
         "how do i pick a good avocado",
-        "how do i tell if a melon is ripe"
+        "how do i tell if a melon is ripe",
+        "how do i pick a good cantaloupe",
+        "how do i pick a good pineapple"
       ]
     },
     {
