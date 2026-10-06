@@ -1,0 +1,94 @@
+[
+  {
+    "id": "118a2c09-4189-43cd-bcba-36220a64082e",
+    "slug": "gen_choosing_a_real_cereal",
+    "section": "bulk_pantry",
+    "topic": "Choosing a real cereal",
+    "kind": "shelf",
+    "eyebrow": "Choosing a real cereal",
+    "headline": "Whole grain listed first is what makes a cereal real.",
+    "do_line": "Flip the box and check what leads the ingredient list.",
+    "tier": "established",
+    "cta_item": null,
+    "why": "Ingredients are ordered by weight, so whatever comes first is the bulk of the box. A cereal built on refined flour with a grain name sprinkled in for marketing is a different food from one built on the grain itself.",
+    "look_for": [
+      "Whole wheat, whole oats, or whole corn as the very first word",
+      "Fiber grams per serving close to or above sugar grams",
+      "Only one sugar-type ingredient anywhere in the top three",
+      "A short ingredient list overall"
+    ],
+    "watch_out": [
+      "“Multigrain” or “made with whole grains” on the front with refined flour first on the back",
+      "Sugar split across cane sugar, corn syrup, and honey so no single one ranks high alone"
+    ],
+    "tier_note": "Ingredient order by weight is federally mandated, which is what makes first position a fact instead of a guess.",
+    "detail": "",
+    "kristy_take": "",
+    "labels_decoded": [],
+    "sources": [],
+    "source": "generated",
+    "query_seed": "What cereal",
+    "use_count": 0,
+    "created_at": "2026-10-02T18:56:39.539138+00:00",
+    "updated_at": "2026-10-02T18:56:39.539138+00:00",
+    "aliases": [
+      "cereal",
+      "breakfast cereal",
+      "whole grain cereal",
+      "cereal ingredients",
+      "healthy cereal",
+      "cereal sugar"
+    ],
+    "essential": false,
+    "essential_rank": null,
+    "instead": null
+  },
+  {
+    "id": "3a50bbac-d0b2-42bc-882c-3ef2c32e5b25",
+    "slug": "gen_live_fermented_foods",
+    "section": "bulk_pantry",
+    "topic": "Live fermented foods",
+    "kind": "shelf",
+    "eyebrow": "Live fermented foods",
+    "headline": "Cold storage is the real fermentation tell, not the word on front.",
+    "do_line": "Grab it from the chilled case, skip the shelf-stable jars.",
+    "tier": "kristys_standard",
+    "cta_item": null,
+    "why": "Live bacterial cultures die under the heat used to make a ferment shelf-stable at room temperature. A jar sitting on a dry shelf has been pasteurized for safety, so the cultures are gone even if the label still says fermented. The chilled case is where the bacteria are still active.",
+    "look_for": [
+      "Placement in the refrigerated or chilled case",
+      "Cloudy, active-looking brine",
+      "Label reading “raw” or “unpasteurized”",
+      "Cap slightly domed or hissing when opened",
+      "Small bubbles visible in the liquid"
+    ],
+    "watch_out": [
+      "Vinegar-pickled items on a dry shelf are pickled, not fermented",
+      "“Fermented” on a shelf-stable jar describes the process used, not what survives",
+      "Pasteurized versions taste flatter and hold longer at room temperature"
+    ],
+    "tier_note": "No label rule tracks live culture survival, so the refrigeration standard fills a gap regulators leave open.",
+    "detail": "",
+    "kristy_take": "",
+    "labels_decoded": [],
+    "sources": [],
+    "source": "generated",
+    "query_seed": "Fermented food",
+    "use_count": 0,
+    "created_at": "2026-08-03T23:08:43.981832+00:00",
+    "updated_at": "2026-08-03T23:08:43.981832+00:00",
+    "aliases": [
+      "fermented food",
+      "fermentation",
+      "raw ferments",
+      "live cultures",
+      "sauerkraut",
+      "kimchi",
+      "kombucha",
+      "fermented vegetables"
+    ],
+    "essential": false,
+    "essential_rank": null,
+    "instead": null
+  }
+]
