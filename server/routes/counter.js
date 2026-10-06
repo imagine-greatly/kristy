@@ -8,6 +8,7 @@ import {
 import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
+import { buildTryPool } from '../lib/tryPool.js';
 
 // The Counter's card corpus, as the client reads it.
 //
@@ -26,6 +27,10 @@ import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 // the whole card down for a list of forty topics would be slower and no more useful.
 
 export const counterRouter = Router();
+
+counterRouter.get('/counter/try', (_req, res) => {
+  return res.json({ items: buildTryPool() });
+});
 
 // A browse row is the least a shopper needs to choose: what it is, and the call.
 const browseRow = (c) => ({
