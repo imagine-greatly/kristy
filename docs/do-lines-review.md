@@ -179,6 +179,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
 | `ice_cream` | eggs_dairy | Ice cream that meets the standard, not a lookalike. | Read the small print under the flavor for “frozen dairy dessert”. | — |
 | `ghee` | eggs_dairy | Ghee or clarified butter: one dairy fat, simmered down. | Read the ingredient list for butter or cream as the only entry. | — |
+| `goat_sheep_dairy` | eggs_dairy | Goat or sheep dairy, bought for its flavor and its cheeses. | Read the ingredients for which animal’s milk went in. | — |
+| `almond_milk` | eggs_dairy | Unsweetened almond milk, read as a drink rather than a milk swap. | Read the Nutrition Facts for added sugars, then the protein. | — |
+| `soy_milk` | eggs_dairy | Fortified, unsweetened soy milk, the one plant drink in the dairy group. | Find calcium and vitamin D on the panel, and check for added sugars. | — |
+| `coconut_milk_beverage` | eggs_dairy | Carton coconut milk is a drink; the can is for cooking. | Read the carton for “beverage” in the name, then the thickeners. | — |
+| `plant_butter` | eggs_dairy | Plant butter, read for which oils it is made from. | Read the ingredient list and find which oil comes first. | — |
+| `dairy_case` | eggs_dairy | Pick the dairy type first, then read what the carton promises. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

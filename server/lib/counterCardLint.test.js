@@ -422,7 +422,8 @@ test('all curated cards clear the per-card bar', () => {
   // K15 adds 9: ham, turkey_bacon, cured_pork, lamb_goat, organ_meats, bison, venison_game, duck_meat, meat_case (2026-10-06).
   // K16 adds 7: white_fish, crab, lobster, scallops, clams_mussels_oysters, smoked_salmon, seafood_counter (2026-10-06).
   // K18 adds 8: sprouted_grain_bread, sprouted_grains, specialty_flours, gluten_free_bread, buns_rolls, pastries_muffins, muesli, bread_aisle (2026-10-06).
-  assert.equal(CARDS.length, 136);
+  // K19 adds 12: plain_kefir, sour_cream, cream_cheese, cottage_cheese, ice_cream, ghee, goat_sheep_dairy, almond_milk, soy_milk, coconut_milk_beverage, plant_butter, dairy_case (2026-10-06).
+  assert.equal(CARDS.length, 148);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

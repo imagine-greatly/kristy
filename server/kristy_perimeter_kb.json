@@ -8903,6 +8903,291 @@
         "how do i pick a good ghee",
         "should i buy clarified butter"
       ]
+    },
+    {
+      "id": "goat_sheep_dairy",
+      "title": "Goat and sheep dairy",
+      "aliases": [
+        "goat milk",
+        "goats milk",
+        "goat cheese",
+        "chevre",
+        "goat yogurt",
+        "goat butter",
+        "sheep milk",
+        "sheep cheese",
+        "sheep milk cheese",
+        "sheep yogurt"
+      ],
+      "category": "dairy",
+      "question": "How do you pick goat or sheep dairy?",
+      "decision": "Goat or sheep dairy, bought for its flavor and its cheeses.",
+      "why": "Goat milk becomes cheese, butter, ice cream and yogurt. Sheep milk goes into cheeses such as feta and Manchego.",
+      "short_answer": "Goat milk averages about 3.5 percent butterfat. Like cow’s milk, it contains lactose. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
+      "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. For that reason it does not need to be homogenized, and its cream rises over a few days. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Goat_milk",
+        "https://en.wikipedia.org/wiki/Sheep_milk"
+      ],
+      "kristy_take": "The animal named on the label decides what the cheese or carton is.",
+      "cart_pick": "Goat cheese or a sheep milk cheese",
+      "buying_tips": [
+        "Read the ingredients for goat milk or sheep milk.",
+        "Look for feta, pecorino romano, Roquefort or Manchego for sheep milk cheese.",
+        "Expect goat butter to be white, not yellow."
+      ],
+      "watch_out": [
+        "Lactose intolerance or a milk allergy? Ask a doctor which milks fit."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Chèvre",
+          "meaning": "French for goat; fromage de chèvre is goat cheese."
+        },
+        {
+          "term": "Pecorino romano",
+          "meaning": "An Italian cheese made from sheep milk."
+        }
+      ],
+      "tier_note": "The animal’s milk named in the ingredients is the whole standard here.",
+      "asked_as": [
+        "is goat milk worth buying",
+        "how do i pick a goat cheese",
+        "should i buy sheep milk cheese"
+      ]
+    },
+    {
+      "id": "almond_milk",
+      "title": "Which almond milk should you buy",
+      "aliases": [
+        "almond milk",
+        "almondmilk",
+        "unsweetened almond milk",
+        "almond beverage"
+      ],
+      "category": "dairy",
+      "question": "How do you pick almond milk?",
+      "decision": "Unsweetened almond milk, read as a drink rather than a milk swap.",
+      "why": "FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.",
+      "short_answer": "Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.",
+      "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Almond_milk",
+        "https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma"
+      ],
+      "kristy_take": "The carton panel, not the word milk, says what the drink brings.",
+      "cart_pick": "Unsweetened almond milk",
+      "buying_tips": [
+        "Pick unsweetened over sweetened, vanilla or chocolate.",
+        "Compare protein, vitamin D, calcium and potassium across cartons.",
+        "Check saturated fat on the panel."
+      ],
+      "watch_out": [
+        "FDA does not place almond drinks in the dairy group."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Fortified",
+          "meaning": "Vitamins or minerals were added to the drink."
+        },
+        {
+          "term": "Almond milk",
+          "meaning": "A name FDA says is established by common usage."
+        }
+      ],
+      "tier_note": "Added sugars and protein on the panel decide the pick, not the name.",
+      "asked_as": [
+        "how do i pick an almond milk",
+        "is unsweetened almond milk worth buying",
+        "which almond milk should i buy"
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "title": "Soy milk",
+      "aliases": [
+        "soy milk",
+        "soymilk",
+        "soya milk",
+        "unsweetened soy milk",
+        "soy beverage"
+      ],
+      "category": "dairy",
+      "question": "How do you pick soy milk?",
+      "decision": "Fortified, unsweetened soy milk, the one plant drink in the dairy group.",
+      "why": "FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group.",
+      "short_answer": "Soy milk is made by soaking and grinding soybeans, boiling, then filtering. It may be sweetened, flavored and fortified. FDA places only the fortified kind in the dairy group.",
+      "detail": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein content runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines include only fortified soy beverages in the dairy group. The reason given is that they have key nutrients similar to those in milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Soy_milk",
+        "https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma"
+      ],
+      "kristy_take": "Fortification is what places soy milk in the dairy group, so the carton settles it.",
+      "cart_pick": "Fortified unsweetened soy milk",
+      "buying_tips": [
+        "Pick unsweetened over flavored.",
+        "Compare protein and potassium across cartons.",
+        "Check saturated fat on the label."
+      ],
+      "watch_out": [
+        "Unfortified soy milk is not the version FDA places in the dairy group."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Fortified",
+          "meaning": "Vitamins or minerals were added to the drink."
+        },
+        {
+          "term": "Soy beverage",
+          "meaning": "The FDA name for soy milk in the dairy group."
+        }
+      ],
+      "tier_note": "Calcium and vitamin D on the panel show the fortification.",
+      "asked_as": [
+        "how do i pick a soy milk",
+        "is unsweetened soy milk worth buying",
+        "which soy milk should i buy"
+      ]
+    },
+    {
+      "id": "coconut_milk_beverage",
+      "title": "Coconut milk in a carton",
+      "aliases": [
+        "coconut milk beverage",
+        "carton coconut milk",
+        "coconut milk carton",
+        "coconut milk drink",
+        "boxed coconut milk"
+      ],
+      "category": "dairy",
+      "question": "Is carton coconut milk the same as the can?",
+      "decision": "Carton coconut milk is a drink; the can is for cooking.",
+      "why": "The carton blends coconut milk with water and holds about an eighth of the fat in the can.",
+      "short_answer": "Canned coconut milk is shredded coconut steeped and pressed. The carton beverage blends coconut milk with water, sugar, flavors, vitamins, preservatives and thickeners. It sits next to the soy milk.",
+      "detail": "Canned coconut milk is made by steeping shredded coconut in water or milk, then pressing it. The carton coconut milk beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of canned coconut milk. Tasters found the unsweetened carton surprisingly bland. One test kitchen’s bottom line: do not cook with the coconut milk beverage.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.cookscountry.com/how_tos/6667-canned-coconut-milk-vs-carton-packed-coconut-milk-beverage",
+        "https://www.tastingtable.com/1527981/canned-coconut-milk-carton-difference"
+      ],
+      "kristy_take": "The word on the carton marks the drink, and the can stays the cooking pick.",
+      "cart_pick": "Coconut milk beverage, for drinking",
+      "buying_tips": [
+        "Find it in the nondairy milk section, next to the soy milk.",
+        "Check for sugar and flavors on a sweetened carton.",
+        "Reach for the can, not the carton, for a recipe."
+      ],
+      "watch_out": [
+        "The carton beverage does not stand in for canned coconut milk in cooking."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Coconut milk beverage",
+          "meaning": "Coconut milk thinned with water and other ingredients."
+        }
+      ],
+      "tier_note": "A carton labeled beverage is a drink, judged by its thickeners and sugar.",
+      "asked_as": [
+        "is coconut milk beverage worth buying",
+        "how do i pick a coconut milk drink",
+        "should i buy carton coconut milk"
+      ]
+    },
+    {
+      "id": "plant_butter",
+      "title": "Plant butter",
+      "aliases": [
+        "plant butter",
+        "plant based butter",
+        "plant-based butter",
+        "vegan butter"
+      ],
+      "category": "dairy",
+      "question": "How do you pick a plant butter?",
+      "decision": "Plant butter, read for which oils it is made from.",
+      "why": "The oils differ from one plant butter to the next, and the ingredient list names them.",
+      "short_answer": "Plant butter is built on plant oils, and the ingredient list names them. One example lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
+      "detail": "The federal margarine standard, 21 CFR 166.110, is a reference point here, not a definition of plant butter. A food sold as margarine holds at least 80 percent fat. That fat comes from vegetable or rendered animal fats and oils. Those fats may have gone through an accepted process of physico-chemical modification, a physical or chemical change to the fat. Margarine must contain vitamin A. One plant butter’s label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/166.110",
+        "https://www.wegmans.com/shop/product/980978"
+      ],
+      "kristy_take": "The oils on the list say what the spread is built on.",
+      "cart_pick": "Plant butter with its oils named",
+      "buying_tips": [
+        "Find each oil named in the ingredient list.",
+        "Check whether a nut milk or culture is listed, as in some versions.",
+        "Compare the fat line on the Nutrition Facts."
+      ],
+      "watch_out": [
+        "The name alone does not say which oils went in."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Cultured cashew milk",
+          "meaning": "Water and cashews with cultures added, per one label."
+        }
+      ],
+      "tier_note": "Knowing which oil leads the list is the standard for any spread.",
+      "asked_as": [
+        "is plant butter worth buying",
+        "how do i pick a vegan butter",
+        "which plant based butter should i buy"
+      ]
+    },
+    {
+      "id": "dairy_case",
+      "title": "The dairy case",
+      "aliases": [
+        "dairy case",
+        "what dairy should i buy",
+        "how do i choose dairy",
+        "ultrafiltered milk",
+        "ultra filtered milk"
+      ],
+      "category": "dairy",
+      "question": "How do you choose dairy at the store?",
+      "decision": "Pick the dairy type first, then read what the carton promises.",
+      "why": "Each dairy type has its own card. The carton then shows added vitamins, pasture and filtering.",
+      "short_answer": "Start with the type: milk, yogurt, cheese, butter, cream or a plant drink. Then read the carton. Vitamins A and D are optional in milk, so the label tells. Organic dairy animals must graze pasture.",
+      "detail": "Under 21 CFR 131.110, adding vitamins A and D to milk is optional. If vitamin D is added, each quart holds 400 International Units (IU), a measure of vitamin amount. Under 7 CFR 205.240, organic dairy animals must graze pasture throughout the grazing season. That season must be at least 120 days per year. Ultrafiltered milk is pushed through a porous membrane under pressure, a process called ultrafiltration. It changes the water, lactose and some minerals, and concentrates the protein already in the milk. The label then shows more protein, less sugar and a longer shelf life.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/131.110",
+        "https://www.dairyreporter.com/Article/2026/03/13/how-ultrafiltered-milk-is-made-benefits-protein-process/",
+        "https://www.law.cornell.edu/cfr/text/7/205.240",
+        "https://www.farmanddairy.com/?p=14321"
+      ],
+      "kristy_take": "The type settles most of the choice, and the carton fills in the rest.",
+      "cart_pick": "Dairy picked by type, label read",
+      "buying_tips": [
+        "Choose the type first: milk, yogurt, cheese, butter, cream or a plant drink.",
+        "Check the milk label for vitamins A and D.",
+        "Read a filtered milk panel for its protein and sugar lines."
+      ],
+      "watch_out": [
+        "Vitamins in milk are optional, so check the label rather than assume."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Vitamin A and D added",
+          "meaning": "Optional in milk; the label says when it was done."
+        },
+        {
+          "term": "Organic",
+          "meaning": "On milk, the animals grazed pasture in the grazing season."
+        }
+      ],
+      "tier_note": "Added vitamins and grazing are label facts, read rather than assumed.",
+      "asked_as": [
+        "what dairy should i buy",
+        "how do i choose dairy at the store",
+        "is ultrafiltered milk worth buying"
+      ]
     }
   ]
 }
