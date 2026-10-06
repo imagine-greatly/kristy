@@ -8430,7 +8430,7 @@
       "category": "bulk_pantry",
       "question": "Which fat is in a pastry or a bakery muffin?",
       "decision": "Pastry made with butter, named on the label or by the baker.",
-      "why": "Butter is the traditional fat in Danish pastry. Factory pastry often uses other fats instead.",
+      "why": "Butter is the traditional fat in Danish pastry. Factory-made Danish pastry often uses other fats instead.",
       "short_answer": "Read the fat in the ingredients, or ask the baker. Butter is the traditional fat in Danish pastry. A bakery muffin rises without yeast and is made with butter or shortening.",
       "detail": "Danish pastry is laminated, meaning butter is folded into a yeast dough in thin layers. Butter is the traditional fat. Industrial production often uses other fats, such as hydrogenated sunflower oil. The American muffin is a quick bread, a bread raised by baking soda instead of yeast. Butter or shortening, eggs and flavourings such as fruit go into the batter.",
       "evidence_tier": "kristys_standard",
@@ -8446,7 +8446,7 @@
         "Read a muffin’s ingredients for butter or shortening."
       ],
       "watch_out": [
-        "Factory pastry often uses other fats in place of butter, such as hydrogenated sunflower oil."
+        "Factory-made Danish pastry often uses other fats in place of butter, such as hydrogenated sunflower oil."
       ],
       "labels_decoded": [
         {
