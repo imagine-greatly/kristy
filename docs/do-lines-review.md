@@ -53,7 +53,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Read the farmers’ market as the signal for what is in season locally. | — |
 | `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
 | `baking_soda_soak` | produce · home | Baking soda takes the surface residue. Water mostly does not. | Soak the fruit twelve minutes, then rinse it clean. | — |
-| `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date — pre-cut spoils days before whole produce does. | — |
+| `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Grass-fed butter, and the difference is visible before you taste it. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Everything else has been through another step. | Read the milkfat percentage on the panel, not the cap color. | — |
 | `a2_vs_a1_milk` | eggs_dairy | A2 milk, and the difference is the breed, not the brand. | Read the carton for a Jersey or Guernsey herd, or the A2 seal. | — |
