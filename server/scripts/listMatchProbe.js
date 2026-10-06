@@ -85,6 +85,47 @@ const words = (s) =>
 
 const pad = (s, n) => String(s ?? '').padEnd(n);
 
+/* ═══ --universe <path>: K2 coverage over the whole-store universe ═══
+   Each row goes through the real attach path (card first, then pick floor). Covered = a card
+   or pick attached. `carried` rows are counted apart and are never gaps. Exit 1 only when a
+   row's `expect` id is set and a different id attached. Default mode below is untouched. */
+const uIdx = process.argv.indexOf('--universe');
+if (uIdx > -1) {
+  const { readFileSync } = await import('node:fs');
+  const path = process.argv[uIdx + 1];
+  if (!path) { console.error('--universe needs a path'); process.exit(1); }
+  const universe = JSON.parse(readFileSync(path, 'utf8'));
+  if (!Array.isArray(universe) || universe.length < 1) { console.error('universe is empty'); process.exit(1); }
+  const sections = new Map();
+  const carried = [];
+  const gaps = [];
+  const wrongs = [];
+  for (const u of universe) {
+    const row = attachCards({ items: [{ name: u.item, source: 'user' }] }, { log: false }).items[0];
+    const got = row.cardSlug || row.pickId || null;
+    if (u.mechanism === 'carried') { carried.push({ item: u.item, got }); continue; }
+    const s = sections.get(u.section) || { covered: 0, total: 0 };
+    s.total += 1;
+    if (got) s.covered += 1; else gaps.push(`${u.section}: ${u.item}`);
+    sections.set(u.section, s);
+    if (u.expect && got && got !== u.expect) wrongs.push(`${u.item}: expected ${u.expect}, got ${got}`);
+    if (u.expect) console.log(`  expect ${pad(u.item, 36)} ${u.expect} -> ${got || '(none)'}`);
+  }
+  let cov = 0;
+  let tot = 0;
+  for (const [name, s] of sections) {
+    console.log(`${pad(name, 18)} ${s.covered}/${s.total}`);
+    cov += s.covered;
+    tot += s.total;
+  }
+  console.log(`${pad('TOTAL', 18)} ${cov}/${tot}`);
+  console.log(`carried (not gaps): ${carried.length}, of which attached something: ${carried.filter((c) => c.got).length}`);
+  console.log(`\nUNCOVERED (${gaps.length}):`);
+  for (const g of gaps) console.log(`  ${g}`);
+  if (wrongs.length) { console.error(`\n${wrongs.length} WRONG:`); for (const w of wrongs) console.error(`  ✗ ${w}`); process.exit(1); }
+  process.exit(0);
+}
+
 /* ═══ BARE_NOUNS — what a shopper types, with its provenance ═══
 
    PROVENANCE, checked 2026-09-11. Neither measured input list survives: API-FINDINGS §16

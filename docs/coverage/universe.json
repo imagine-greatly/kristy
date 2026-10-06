@@ -1,0 +1,1206 @@
+[
+  {
+    "item": "mushrooms",
+    "section": "Produce",
+    "mechanism": "card"
+  },
+  {
+    "item": "green beans",
+    "section": "Produce",
+    "mechanism": "pick"
+  },
+  {
+    "item": "winter squash",
+    "section": "Produce",
+    "mechanism": "pick"
+  },
+  {
+    "item": "ginger and turmeric root",
+    "section": "Produce",
+    "mechanism": "pick"
+  },
+  {
+    "item": "microgreens",
+    "section": "Produce",
+    "mechanism": "pick"
+  },
+  {
+    "item": "ham",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "turkey bacon",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "cured pork",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "lamb and goat",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "organ meats",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "bison",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "venison and game",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "duck",
+    "section": "Meat",
+    "mechanism": "card"
+  },
+  {
+    "item": "jerky",
+    "section": "Meat",
+    "mechanism": "pick"
+  },
+  {
+    "item": "soup bones",
+    "section": "Meat",
+    "mechanism": "pick"
+  },
+  {
+    "item": "white fish",
+    "section": "Seafood",
+    "mechanism": "card"
+  },
+  {
+    "item": "crab",
+    "section": "Seafood",
+    "mechanism": "card"
+  },
+  {
+    "item": "scallops",
+    "section": "Seafood",
+    "mechanism": "card"
+  },
+  {
+    "item": "mussels and clams and oysters",
+    "section": "Seafood",
+    "mechanism": "card"
+  },
+  {
+    "item": "smoked salmon",
+    "section": "Seafood",
+    "mechanism": "card"
+  },
+  {
+    "item": "lobster",
+    "section": "Seafood",
+    "mechanism": "pick"
+  },
+  {
+    "item": "fish sticks",
+    "section": "Seafood",
+    "mechanism": "pick"
+  },
+  {
+    "item": "anchovies",
+    "section": "Seafood",
+    "mechanism": "alias"
+  },
+  {
+    "item": "duck eggs",
+    "section": "Eggs",
+    "mechanism": "card"
+  },
+  {
+    "item": "quail eggs",
+    "section": "Eggs",
+    "mechanism": "pick"
+  },
+  {
+    "item": "carton egg whites",
+    "section": "Eggs",
+    "mechanism": "pick"
+  },
+  {
+    "item": "sprouted-grain bread",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "sprouted grains",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "specialty flours",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "gluten-free bread",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "buns and rolls",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "pastries and muffins",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "granola and muesli",
+    "section": "Bread & grains",
+    "mechanism": "card"
+  },
+  {
+    "item": "english muffins",
+    "section": "Bread & grains",
+    "mechanism": "pick"
+  },
+  {
+    "item": "pita and naan",
+    "section": "Bread & grains",
+    "mechanism": "pick"
+  },
+  {
+    "item": "grass-fed butter",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "whole vs reduced-fat milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "A2 vs A1 milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "real vs processed cheese",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "plain vs flavoured yogurt",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "live cultures in yogurt",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "raw milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "milk processing",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "cream vs creamer",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "raw kefir",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "raw aged cheese",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "oat milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "plain pasteurised kefir",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "sour cream",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "cream cheese",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "cottage cheese",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "ice cream",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "ghee",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "goat and sheep dairy",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "almond milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "soy milk",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "coconut milk (carton)",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "plant butter",
+    "section": "Dairy",
+    "mechanism": "card"
+  },
+  {
+    "item": "kombucha",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "sauerkraut",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "kimchi",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "miso",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "tempeh",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "fermented pickles",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "raw cider vinegar",
+    "section": "Fermented",
+    "mechanism": "card"
+  },
+  {
+    "item": "natto",
+    "section": "Fermented",
+    "mechanism": "pick"
+  },
+  {
+    "item": "bone broth and stock",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "salt",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "sugars and sweeteners",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "maple syrup",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "cooking oils",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "lard and tallow",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "seeds",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "dried fruit",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "cocoa and cacao",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "canned coconut milk",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "tea",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "pasta sauce",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "jam",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "ketchup and mustard",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "mayo",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "canned soup",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "olives",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "salsa",
+    "section": "Pantry",
+    "mechanism": "card"
+  },
+  {
+    "item": "nutritional yeast",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "vinegar",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "hot and soy sauce",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "seaweed",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "baking soda and powder",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "coconut water",
+    "section": "Pantry",
+    "mechanism": "pick"
+  },
+  {
+    "item": "dried herbs",
+    "section": "Pantry",
+    "mechanism": "alias"
+  },
+  {
+    "item": "crackers",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "tortilla chips",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "potato chips",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "popcorn",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "snack pretzels",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "snack bars",
+    "section": "Snacks",
+    "mechanism": "card"
+  },
+  {
+    "item": "trail mix",
+    "section": "Snacks",
+    "mechanism": "alias"
+  },
+  {
+    "item": "frozen pizza",
+    "section": "Frozen",
+    "mechanism": "card"
+  },
+  {
+    "item": "frozen meals",
+    "section": "Frozen",
+    "mechanism": "card"
+  },
+  {
+    "item": "fries",
+    "section": "Frozen",
+    "mechanism": "pick"
+  },
+  {
+    "item": "waffles",
+    "section": "Frozen",
+    "mechanism": "pick"
+  },
+  {
+    "item": "nuggets",
+    "section": "Frozen",
+    "mechanism": "pick"
+  },
+  {
+    "item": "hummus",
+    "section": "Deli & prepared",
+    "mechanism": "card"
+  },
+  {
+    "item": "prepared meals",
+    "section": "Deli & prepared",
+    "mechanism": "card"
+  },
+  {
+    "item": "deli salads",
+    "section": "Deli & prepared",
+    "mechanism": "pick"
+  },
+  {
+    "item": "fresh pasta",
+    "section": "Deli & prepared",
+    "mechanism": "pick"
+  },
+  {
+    "item": "soda",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "diet soda",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "energy drinks",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "sports drinks",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "candy",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "cookies",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "chocolate-hazelnut spread",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "oreos",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "doritos",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "nutella",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "fairlife",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "dish soap",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "aluminum foil",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "paper towels",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "toilet paper",
+    "section": "Carried",
+    "mechanism": "carried"
+  },
+  {
+    "item": "salmon",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "salmon_wild_vs_farmed"
+  },
+  {
+    "item": "shrimp",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "shrimp_imported_vs_domestic"
+  },
+  {
+    "item": "fresh fish",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "fresh_vs_previously_frozen_fish"
+  },
+  {
+    "item": "grass fed beef",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "beef_grassfed_vs_grainfed"
+  },
+  {
+    "item": "ancestral blend ground beef",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "ground_beef_organ_blend"
+  },
+  {
+    "item": "rotisserie chicken",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "rotisserie_chicken"
+  },
+  {
+    "item": "beef cuts",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "beef_cuts_basics"
+  },
+  {
+    "item": "ground beef",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "ground_beef_lean_ratio"
+  },
+  {
+    "item": "eggs",
+    "section": "Eggs",
+    "mechanism": "card",
+    "expect": "egg_labels"
+  },
+  {
+    "item": "air chilled chicken",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "air_chilled_chicken"
+  },
+  {
+    "item": "no antibiotics",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "no_antibiotics_poultry"
+  },
+  {
+    "item": "organic produce",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "organic_worth_it_by_type"
+  },
+  {
+    "item": "frozen vegetables",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "frozen_vs_fresh_produce"
+  },
+  {
+    "item": "fall produce",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_seasonality"
+  },
+  {
+    "item": "pre cut produce",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "precut_produce_tradeoffs"
+  },
+  {
+    "item": "grass fed butter",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "grassfed_butter"
+  },
+  {
+    "item": "whole milk",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "whole_vs_reduced_fat_milk"
+  },
+  {
+    "item": "a2 milk",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "a2_vs_a1_milk"
+  },
+  {
+    "item": "cheese",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "cheese_real_vs_processed"
+  },
+  {
+    "item": "yogurt",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "yogurt_plain_vs_flavored"
+  },
+  {
+    "item": "rice",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "rice_arsenic"
+  },
+  {
+    "item": "oats",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "oats_steelcut_rolled_instant"
+  },
+  {
+    "item": "nuts",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "nuts_raw_vs_roasted"
+  },
+  {
+    "item": "honey",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "honey_adulteration"
+  },
+  {
+    "item": "beans",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "beans_dried_vs_canned"
+  },
+  {
+    "item": "brown eggs",
+    "section": "Eggs",
+    "mechanism": "card",
+    "expect": "egg_shell_color"
+  },
+  {
+    "item": "egg freshness",
+    "section": "Eggs",
+    "mechanism": "card",
+    "expect": "egg_freshness"
+  },
+  {
+    "item": "egg grade",
+    "section": "Eggs",
+    "mechanism": "card",
+    "expect": "egg_grades_sizes"
+  },
+  {
+    "item": "vegetarian fed",
+    "section": "Eggs",
+    "mechanism": "card",
+    "expect": "egg_feed_claims"
+  },
+  {
+    "item": "usda prime",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "beef_grades_usda"
+  },
+  {
+    "item": "how to pick meat",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "judging_meat_at_the_case"
+  },
+  {
+    "item": "butcher",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "butcher_counter_asking"
+  },
+  {
+    "item": "chicken cuts",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "chicken_cuts_basics"
+  },
+  {
+    "item": "pork",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "pork_cuts_and_enhanced"
+  },
+  {
+    "item": "uncured",
+    "section": "Deli & prepared",
+    "mechanism": "card",
+    "expect": "deli_meat_uncured"
+  },
+  {
+    "item": "mercury",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "mercury_by_fish"
+  },
+  {
+    "item": "canned fish",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "canned_fish_choosing"
+  },
+  {
+    "item": "farmed fish",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "farmed_fish_by_species"
+  },
+  {
+    "item": "msc",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "seafood_certifications"
+  },
+  {
+    "item": "how to pick a melon",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_ripeness_by_item"
+  },
+  {
+    "item": "berries",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "berries_picking"
+  },
+  {
+    "item": "ultra pasteurized",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "milk_processing"
+  },
+  {
+    "item": "live and active cultures",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "yogurt_live_cultures"
+  },
+  {
+    "item": "coffee creamer",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "cream_vs_creamer"
+  },
+  {
+    "item": "flour",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "flour_basics"
+  },
+  {
+    "item": "bulk bins",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "bulk_bins_buying"
+  },
+  {
+    "item": "whole spices",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "whole_spices"
+  },
+  {
+    "item": "rancid",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "rancidity_check"
+  },
+  {
+    "item": "olive oil grades",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "olive_oil_grades"
+  },
+  {
+    "item": "peanut butter",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "nut_butter_ingredients"
+  },
+  {
+    "item": "quinoa",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "grains_beyond_rice"
+  },
+  {
+    "item": "bottled water",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "bottled_water_buying"
+  },
+  {
+    "item": "raw cheese",
+    "section": "Dairy",
+    "mechanism": "card",
+    "expect": "raw_aged_cheese"
+  },
+  {
+    "item": "sprouts",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "sprouts_raw"
+  },
+  {
+    "item": "strawberries",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "strawberries_organic_residue"
+  },
+  {
+    "item": "carrots",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_root_vegetables"
+  },
+  {
+    "item": "broccoli",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_brassicas"
+  },
+  {
+    "item": "garlic",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_onions_garlic"
+  },
+  {
+    "item": "romaine",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_leafy_greens"
+  },
+  {
+    "item": "bell peppers",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_peppers"
+  },
+  {
+    "item": "apples",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_apples_pears"
+  },
+  {
+    "item": "oranges",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_citrus"
+  },
+  {
+    "item": "peaches",
+    "section": "Produce",
+    "mechanism": "card",
+    "expect": "produce_stone_fruit"
+  },
+  {
+    "item": "milk carton",
+    "section": "Dairy",
+    "mechanism": "pick",
+    "expect": "pick_milk"
+  },
+  {
+    "item": "canned tomatoes",
+    "section": "Pantry",
+    "mechanism": "pick",
+    "expect": "pick_canned_tomatoes"
+  },
+  {
+    "item": "frozen peas",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_frozen_peas"
+  },
+  {
+    "item": "frozen broccoli",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_frozen_broccoli"
+  },
+  {
+    "item": "cucumbers",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_cucumbers"
+  },
+  {
+    "item": "asparagus",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_asparagus"
+  },
+  {
+    "item": "corn",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_corn"
+  },
+  {
+    "item": "eggplant",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_eggplant"
+  },
+  {
+    "item": "zucchini",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_zucchini"
+  },
+  {
+    "item": "cilantro",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_cilantro"
+  },
+  {
+    "item": "parsley",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_parsley"
+  },
+  {
+    "item": "basil",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_basil"
+  },
+  {
+    "item": "snap peas",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_snap_peas"
+  },
+  {
+    "item": "kohlrabi",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_kohlrabi"
+  },
+  {
+    "item": "okra",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_okra"
+  },
+  {
+    "item": "swiss chard",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_swiss_chard"
+  },
+  {
+    "item": "mangoes",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_mangoes"
+  },
+  {
+    "item": "juice",
+    "section": "Pantry",
+    "mechanism": "pick",
+    "expect": "pick_juice"
+  },
+  {
+    "item": "sausage",
+    "section": "Meat",
+    "mechanism": "pick",
+    "expect": "pick_sausage"
+  },
+  {
+    "item": "tofu",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_tofu"
+  },
+  {
+    "item": "lamb",
+    "section": "Meat",
+    "mechanism": "pick",
+    "expect": "pick_lamb"
+  },
+  {
+    "item": "celery",
+    "section": "Produce",
+    "mechanism": "pick",
+    "expect": "pick_celery"
+  },
+  {
+    "item": "sandwich bread",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "sandwich_bread"
+  },
+  {
+    "item": "sourdough",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "sourdough"
+  },
+  {
+    "item": "pretzel bread",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "pretzel_bread"
+  },
+  {
+    "item": "bagel",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "bagels"
+  },
+  {
+    "item": "tortilla",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "tortillas"
+  },
+  {
+    "item": "whole turkey",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "turkey_whole"
+  },
+  {
+    "item": "ground turkey",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "ground_turkey"
+  },
+  {
+    "item": "cereal",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "breakfast_cereal"
+  },
+  {
+    "item": "pasta",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "pasta_dry"
+  },
+  {
+    "item": "coffee beans",
+    "section": "Pantry",
+    "mechanism": "card",
+    "expect": "coffee_beans"
+  },
+  {
+    "item": "bacon",
+    "section": "Deli & prepared",
+    "mechanism": "card",
+    "expect": "bacon"
+  },
+  {
+    "item": "hot dog",
+    "section": "Deli & prepared",
+    "mechanism": "card",
+    "expect": "hot_dogs"
+  },
+  {
+    "item": "canned tuna",
+    "section": "Seafood",
+    "mechanism": "card",
+    "expect": "canned_tuna"
+  },
+  {
+    "item": "chicken breast",
+    "section": "Meat",
+    "mechanism": "card",
+    "expect": "chicken_breast"
+  }
+]

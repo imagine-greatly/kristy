@@ -1,0 +1,81 @@
+https://www.bls.gov/cpi/tables/relative-importance/2025.htm  fetched 2026-10-06 (scrapling make_request, css_selector "table tr", text; page title "Relative importance of components in the Consumer Price Indexes: U.S. city average, December 2025"; excerpt = Food and beverages / Food / Food at home rows, then Food away from home heads; indentation (hierarchy) lost in text extraction, row order verbatim; columns: Item and Group | U.S. City Average, CPI-U | U.S. City Average, CPI-W)
+Food and beverages	14.539	15.579
+Food	13.698	14.889
+Food at home	8.325	9.524
+Cereals and bakery products	1.035	1.131
+Cereals and cereal products	0.315	0.358
+Flour and prepared flour mixes	0.038	0.048
+Breakfast cereal	0.136	0.138
+Rice, pasta, cornmeal	0.141	0.173
+Bakery products	0.721	0.773
+Bread	0.175	0.197
+Fresh biscuits, rolls, muffins	0.120	0.126
+Cakes, cupcakes, and cookies	0.210	0.229
+Other bakery products	0.217	0.221
+Meats, poultry, fish, and eggs	1.995	2.416
+Meats, poultry, and fish	1.862	2.258
+Meats	1.186	1.454
+Beef and veal	0.638	0.750
+Uncooked ground beef	0.236	0.284
+Uncooked beef roasts	0.087	0.091
+Uncooked beef steaks	0.240	0.295
+Uncooked other beef and veal	0.076	0.080
+Pork	0.340	0.444
+Bacon, breakfast sausage, and related products	0.131	0.156
+Ham	0.066	0.088
+Pork chops	0.046	0.066
+Other pork including roasts, steaks, and ribs	0.097	0.135
+Other meats	0.207	0.260
+Poultry	0.363	0.456
+Chicken	0.291	0.377
+Other uncooked poultry including turkey	0.072	0.079
+Fish and seafood	0.314	0.347
+Fresh fish and seafood	0.165	0.185
+Processed fish and seafood	0.149	0.162
+Eggs	0.133	0.158
+Dairy and related products	0.758	0.828
+Milk	0.190	0.216
+Cheese and related products	0.261	0.270
+Ice cream and related products	0.115	0.125
+Other dairy and related products	0.192	0.217
+Fruits and vegetables	1.269	1.417
+Fresh fruits and vegetables	1.008	1.133
+Fresh fruits	0.532	0.602
+Apples	0.073	0.080
+Bananas	0.060	0.077
+Citrus fruits	0.077	0.088
+Other fresh fruits	0.322	0.357
+Fresh vegetables	0.476	0.531
+Potatoes	0.063	0.073
+Lettuce	0.044	0.045
+Tomatoes	0.063	0.077
+Other fresh vegetables	0.305	0.336
+Processed fruits and vegetables	0.262	0.284
+Canned fruits and vegetables	0.096	0.102
+Frozen fruits and vegetables	0.084	0.092
+Other processed fruits and vegetables including dried	0.082	0.090
+Nonalcoholic beverages and beverage materials	0.995	1.240
+Juices and nonalcoholic drinks	0.675	0.911
+Carbonated drinks	0.324	0.434
+Frozen noncarbonated juices and drinks	0.004	0.006
+Nonfrozen noncarbonated juices and drinks	0.346	0.471
+Beverage materials including coffee and tea	0.320	0.329
+Coffee	0.221	0.209
+Other beverage materials including tea	0.099	0.120
+Other food at home	2.273	2.492
+Sugar and sweets	0.328	0.343
+Sugar and sugar substitutes	0.032	0.039
+Candy and chewing gum	0.241	0.235
+Other sweets	0.055	0.069
+Fats and oils	0.231	0.244
+Butter and margarine	0.066	0.062
+Salad dressing	0.055	0.061
+Other fats and oils including peanut butter	0.110	0.122
+Other foods	1.714	1.905
+Soups	0.085	0.088
+Frozen and freeze dried prepared foods	0.305	0.343
+Snacks	0.372	0.404
+Spices, seasonings, condiments, sauces	0.317	0.349
+Baby food and formula	0.053	0.078
+Other miscellaneous foods	0.582	0.643
+Food away from home	5.373	5.366
