@@ -307,8 +307,8 @@
       "question": "Is the rotisserie chicken worth buying?",
       "decision": "Chicken and salt on the label: buy. Phosphate and starch: pass.",
       "why": "Every ingredient must be listed in descending order; a solution names its percent and contents.",
-      "short_answer": "A rotisserie bird is either a chicken with salt and spices roasted in the store, or a chicken pumped with a seasoning solution before it went on the spit. The difference is printed on the sticker. 9 CFR 381.117(h) makes a raw bird with added solution state the percent and name each ingredient in the solution, and 381.118 makes every multi-ingredient poultry product list its ingredients by descending weight. So the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (Whole Foods Market’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries.",
+      "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
+      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (Whole Foods Market’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
@@ -325,12 +325,12 @@
       "buying_tips": [
         "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
         "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
-        "Sodium phosphate, a starch or a sweetener after the water means a solution bird; the shorter the seasoning line, the plainer the chicken.",
+        "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
         "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
       ],
       "watch_out": [
-        "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase; if it will not be eaten in that window, cut it up and refrigerate in shallow covered containers.",
-        "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold; FSIS puts the growth range at 40 to 140°F.",
+        "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
+        "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold. FSIS puts the growth range at 40 to 140°F.",
         "Eat within 3 to 4 days, cold or reheated to 165°F. Freezing is fine; use within 4 months for texture."
       ],
       "labels_decoded": [
@@ -487,8 +487,8 @@
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
       "decision": "Soy-free and corn-free first, then organic, then pasture-raised.",
       "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
-      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. They describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. Most pasture-raised hens are still on soy and corn. The order that matters is soy-free and corn-free first, then organic, then pasture-raised: what she ate, then how it was grown, then how much room she had.",
-      "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for.",
+      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
+      "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
@@ -508,7 +508,7 @@
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
         "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
-        "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier, and its cage-free tier requires no outdoor access at all; the watchdog scores them 60, 50 and 30 on the same scale.",
+        "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line."
       ],
       "labels_decoded": [
@@ -550,8 +550,8 @@
       "question": "Is air-chilled chicken better?",
       "decision": "Air-chilled is worth choosing; the other kind is cooled in a tank.",
       "why": "Cold air instead of a communal tank. Nothing soaks in, and the skin starts dry.",
-      "short_answer": "Air-chilled birds are cooled in cold air. Water-chilled birds go through a communal chilled-water tank and come out having taken some of it on, which is then sold by the pound. Retained water has to be disclosed on the label, so the number is printed rather than inferred. Skin that did not start out wet is also the skin that crisps.",
-      "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method.",
+      "short_answer": "Air-chilled birds are cooled in cold air. Water-chilled birds go through a communal chilled-water tank. They come out holding some of that water, and it is sold by the pound. The label has to print that number.",
+      "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method. Retained water has to be disclosed on the label, so the number is printed rather than inferred. Skin that did not start out wet is also the skin that crisps.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FSIS poultry-chilling references",
@@ -595,8 +595,8 @@
       "question": "Does ‘no antibiotics’ on chicken mean anything?",
       "decision": "Raised without antibiotics is a real claim, but not a cleaner bird.",
       "why": "No chicken may be sold with residues either way. The claim is about how the flock was raised.",
-      "short_answer": "‘Raised without antibiotics’ is a real claim: the producer states the birds were not given antibiotics. It rests on the producer’s own paperwork to USDA, and nobody inspects the farm to check it. No chicken can legally be sold with antibiotic residues anyway, so ‘no antibiotics’ isn’t as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
-      "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns — a legitimate reason to choose it, framed honestly. The claim itself is an affidavit, not an inspection, so look for USDA Process Verified or a third-party check to back it.",
+      "short_answer": "‘Raised without antibiotics’ is a real claim, stated by the producer. Nobody inspects the farm to check it. No chicken can legally be sold with antibiotic residues anyway. The claim is about how the flock was raised, not residues.",
+      "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns. That is a legitimate reason to choose it, framed honestly. The claim itself is an affidavit, not an inspection, so look for USDA Process Verified or a third-party check to back it. The claim rests on the producer’s own paperwork to USDA. ‘No antibiotics’ isn’t as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS ‘raised without antibiotics’ guidance",
@@ -604,7 +604,7 @@
         "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
-      "kristy_take": "A fair reason to choose it is resistance, not residues. Don’t let the label scare you into thinking regular chicken is full of drugs — it isn’t.",
+      "kristy_take": "A fair reason to choose it is resistance, not residues. Don’t let the label scare you into thinking regular chicken is full of drugs. It isn’t.",
       "buying_tips": [
         "‘USDA Process Verified’ or a third-party seal backs the claim.",
         "All chicken is required to be residue-free at sale, labeled or not.",
@@ -2305,8 +2305,8 @@
       "question": "Do brown shells or darker yolks mean a better egg?",
       "decision": "Shell color is breed; yolk color is pigment in the feed.",
       "why": "Shell color is the breed. Yolk color is pigment in the feed, and an additive matches a good diet exactly.",
-      "short_answer": "No, on both counts. Shell color is the breed of hen: white-feathered breeds lay white, red-feathered breeds lay brown, and inside the shell they are the same egg. Yolk color comes from pigment in the feed — a varied diet with real greens deepens it, and so does marigold extract added to the ration for that exact effect. The two are indistinguishable by eye. That is why the printed feed words are the tell and the color never is.",
-      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. Brown often costs more because those breeds are larger and eat more, not because the egg is better. Yolk color is the more tempting signal and the more misleading one: producers can and do dial it with feed, and the supplements sold to do it are sold for exactly that purpose. Pasture and varied diets deepen color too, which is what makes it useless — the same shade arrives by two completely different routes and the carton never says which. What actually changes an egg is the hen’s diet, her age, and how fresh it is, and none of it is visible from outside.",
+      "short_answer": "No, on both counts. Shell color is the breed. Inside, white and brown are the same egg. Yolk color is pigment in the feed. A varied diet deepens it, and so does added marigold extract. The two look identical.",
+      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. Brown often costs more because those breeds are larger and eat more, not because the egg is better. Yolk color is the more tempting signal and the more misleading one: producers can and do dial it with feed, and the supplements sold to do it are sold for exactly that purpose. Pasture and varied diets deepen color too, which is what makes it useless: the same shade arrives by two completely different routes and the carton never says which. What actually changes an egg is the hen’s diet, her age, and how fresh it is, and none of it is visible from outside. White-feathered breeds lay white, red-feathered breeds lay brown, and inside the shell they are the same egg. A varied diet with real greens deepens yolk color, and so does marigold extract added to the ration for that exact effect. The two are indistinguishable by eye. That is why the printed feed words are the tell and the color never is. Blue and green shells carry a different pigment, biliverdin, laid down by breeds like the Araucana.",
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (shell color and breed)",
@@ -2338,8 +2338,8 @@
       "tier_note": "Shell color tracking breed is settled genetics, so nothing visible in the carton says how the hen was raised.",
       "watch_out": [
         "The yolk photo on the carton is artwork, not a sample.",
-        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying, and a stressed hen, an older hen or a hurried lay leaves less of it.",
-        "Blue and green shells are a breed trait too. A different pigment, biliverdin, laid down by breeds like the Araucana; the shell says which hen, and still nothing about the feed."
+        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
+        "Blue and green shells are a breed trait too. Breeds like the Araucana lay down a different pigment. The shell says which hen, and still nothing about the feed."
       ],
       "eyebrow_short": "Shell and yolk",
       "asked_as": [
@@ -2373,9 +2373,9 @@
       "category": "poultry_eggs",
       "question": "How do I tell how fresh eggs are?",
       "decision": "The three-digit code is the day the eggs were packed.",
-      "why": "The Julian date beside the plant code is the day it was packed. Sell-by is the store’s schedule.",
-      "short_answer": "Read the three-digit pack date, not the sell-by. US cartons carry a Julian date (001 to 365) stamped beside the plant code, and that is the day they were packed. Eggs are usually good well past a sell-by if they stayed cold. In the pan, a fresh egg has a yolk that stands up and a white that holds together.",
-      "detail": "The Julian pack date is the honest number: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction, not a safety cliff. The float test works because the air cell inside grows as an egg ages, so a fresh one lies flat in a bowl of water, an older one tilts up, and one that floats has gone far enough to skip. Eggs age much faster on the counter than in the fridge.",
+      "why": "The three-digit date beside the plant code is the day it was packed. Sell-by is the store’s schedule.",
+      "short_answer": "Read the three-digit pack date, not the sell-by. It sits beside the plant code: the day the eggs were packed. Eggs are usually good well past a sell-by if they stayed cold. Fresh yolks stand up in the pan.",
+      "detail": "The Julian pack date is the honest number: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction, not a safety cliff. The float test works because the air cell inside grows as an egg ages, so a fresh one lies flat in a bowl of water, an older one tilts up, and one that floats has gone far enough to skip. Eggs age much faster on the counter than in the fridge. US cartons carry a Julian date (001 to 365) stamped beside the plant code, and that is the day they were packed. In the pan, a fresh egg has a yolk that stands up and a white that holds together.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS shell-egg dating and Julian pack codes",
@@ -2384,13 +2384,13 @@
       ],
       "kristy_take": "The three-digit number is the truth. The sell-by is the store’s schedule.",
       "buying_tips": [
-        "Find the three-digit Julian pack date beside the plant code. Closer to today is fresher.",
+        "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
         "Open the carton and check for cracks and leaks before it goes in the cart.",
         "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
         "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe."
       ],
       "watch_out": [
-        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart; the Julian code is the one that tells them apart.",
+        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
         "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early."
       ],
@@ -2437,8 +2437,8 @@
       "question": "What do egg grades and sizes actually mean?",
       "decision": "Grade and size describe the egg’s looks and weight, not the hen.",
       "why": "Grade scores appearance, size is weight per dozen. Recipes assume Large.",
-      "short_answer": "Grade is an appearance and interior-quality score, not a nutrition or welfare one. AA has the firmest white and tallest yolk, A is a step down, B is fine to eat and mostly goes to processing. Size is pure weight per dozen: Large is 24 ounces, Extra Large 27, Jumbo 30. Recipes assume Large.",
-      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen, so a Jumbo carton is not a better egg, it is more egg. Comparing price per ounce rather than per dozen is usually where the value turns up.",
+      "short_answer": "Grade scores appearance and interior quality, not nutrition or welfare. AA has the firmest white and tallest yolk, A a step down. B is fine to eat and mostly goes to processing. Size is weight per dozen. Recipes assume Large.",
+      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen, so a Jumbo carton is not a better egg, it is more egg. Comparing price per ounce rather than per dozen is usually where the value turns up. Size is pure weight per dozen: Large is 24 ounces, Extra Large 27, Jumbo 30.",
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (AA, A and B standards)",
@@ -2455,8 +2455,8 @@
       ],
       "watch_out": [
         "Neither grade nor size says anything about how the hen lived or what she ate. Those are separate labels.",
-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large; it cannot be smaller.",
-        "AA, A and B are scored on interior and shell quality at the time of packing, a system separate from the size classes above it."
+        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+        "AA, A and B are scored on interior and shell quality at the time of packing. That system is separate from the size classes above it."
       ],
       "labels_decoded": [
         {
@@ -2502,8 +2502,8 @@
       "question": "What do the feed claims on an egg carton mean?",
       "decision": "Soy-free and corn-free are worth having, and both must be printed.",
       "why": "Hens are omnivores. That claim and a real pasture claim work against each other.",
-      "short_answer": "‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access is eating insects and worms. The rest of the feed words are plainer. ‘Soy-free’ and ‘corn-free’ mean exactly what they say and have to be printed. ‘Omega-3 enriched’ means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized.",
-      "detail": "The space claims (cage-free, free-range, pasture-raised) never touch feed, so the feed words carry that job alone. ‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access eats insects and worms. Omega-3 enrichment is real chemistry rather than marketing, but with no set quantity two enriched cartons can differ a lot. Certified organic reaches feed and requires it be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown, not what the feed is.",
+      "short_answer": "‘Vegetarian-fed’ quietly works against a genuine pasture claim. ‘Soy-free’ and ‘corn-free’ mean exactly what they say and have to be printed. ‘Omega-3 enriched’ means flax or algae in the ration. The egg carries more, but the amount is not standardized.",
+      "detail": "The space claims (cage-free, free-range, pasture-raised) never touch feed, so the feed words carry that job alone. ‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access eats insects and worms. Omega-3 enrichment is real chemistry rather than marketing, but with no set quantity two enriched cartons can differ a lot. Certified organic reaches feed and requires it be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown, not what the feed is. ‘Omega-3 enriched’ means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy on feed claims",
@@ -2521,8 +2521,8 @@
         "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed."
       ],
       "watch_out": [
-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced; feed from several unnamed suppliers often cannot, and the carton does not say which.",
-        "‘Organic’ on the feed is a claim about how the grain was grown. The watchdog view is that traceability of organic feed can be impenetrable once it leaves the farm, so a farm that grows its own is the stronger answer.",
+        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+        "‘Organic’ on the feed is a claim about how the grain was grown. The watchdog view is that traceability of organic feed can be impenetrable once it leaves the farm. So a farm that grows its own is the stronger answer.",
         "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words."
       ],
       "labels_decoded": [
@@ -2564,10 +2564,10 @@
       ],
       "category": "poultry_eggs",
       "question": "Do eggs have to be refrigerated?",
-      "decision": "Washing strips the cuticle, so US eggs need the fridge.",
-      "why": "Washing strips the cuticle that seals a porous shell. Unwashed farm eggs keep theirs.",
-      "short_answer": "In the US, yes. Eggs sold here are washed at the plant, and washing strips the cuticle, the natural coating that seals a porous shell. Once it is gone the egg needs constant refrigeration. Unwashed farm eggs keep their cuticle and can sit out, which is why cartons sit on an open shelf across much of Europe. What you should not do is move an egg between the two.",
-      "detail": "US rules require washing and sanitizing, then holding at 45F or below from the plant onward. Neither system is wrong; they solve the same problem from opposite ends. In the carton on a middle shelf is the right spot, not the door, where the temperature swings every time it opens. A cold egg brought to room temperature sweats, and moisture on a porous shell is exactly what the cuticle was preventing. Farm eggs bought unwashed can live on the counter, but the moment you wash them they join the fridge rules.",
+      "decision": "Washing strips the shell’s natural coating, so US eggs need the fridge.",
+      "why": "Washing strips the natural coating that seals a porous shell. Unwashed farm eggs keep theirs.",
+      "short_answer": "In the US, yes. Eggs sold here are washed at the plant. Washing strips the natural coating that seals a porous shell. After that, the egg needs constant refrigeration. Unwashed farm eggs keep the coating and can sit out.",
+      "detail": "US rules require washing and sanitizing, then holding at 45F or below from the plant onward. Neither system is wrong; they solve the same problem from opposite ends. In the carton on a middle shelf is the right spot, not the door, where the temperature swings every time it opens. A cold egg brought to room temperature sweats, and moisture on a porous shell is exactly what the cuticle was preventing. Farm eggs bought unwashed can live on the counter, but the moment you wash them they join the fridge rules. Washing strips the cuticle, the natural coating that seals a porous shell. Unwashed farm eggs keep their cuticle and can sit out, which is why cartons sit on an open shelf across much of Europe. What you should not do is move an egg between the two.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS shell egg refrigeration requirements (45F)",
@@ -2593,7 +2593,7 @@
       ],
       "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold.",
       "watch_out": [
-        "A cold egg left out at room temperature can sweat, and moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
+        "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
         "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant."
       ],
@@ -2860,8 +2860,8 @@
       "question": "Which cut of chicken should I buy?",
       "decision": "Bone-in thighs carry more fat and collagen than breast meat.",
       "why": "Dark meat is forgiving and hard to overcook. Boneless skinless is the priciest form of it.",
-      "short_answer": "Whole bird is the cheapest per pound and leaves a carcass for stock. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
-      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store.",
+      "short_answer": "Whole bird: cheapest per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
+      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (poultry composition)",
@@ -2894,8 +2894,8 @@
         "is boneless skinless worth it"
       ],
       "watch_out": [
-        "Retained water has to be disclosed on the label, along the lines of ‘contains up to __% retained water’. Read the tray for that line.",
-        "A raw single-ingredient bird may not carry retained water at all unless the processing that keeps it safe makes it unavoidable."
+        "Retained water has to be disclosed on the label. It reads along the lines of ‘contains up to __% retained water’. Read the tray for that line.",
+        "A raw single-ingredient bird may not carry retained water at all. The exception is when the processing that keeps it safe makes it unavoidable."
       ]
     },
     {
