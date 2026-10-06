@@ -1335,3 +1335,58 @@ export function lintCorpus(cards) {
     report: { verbs, emDashShare: share, total: list.length, copulaAbstraction: copula },
   };
 }
+
+/* ═══════════════ Readable in the aisle (VOICE_SPEC R2–R4) ═══════════════
+   Not wired into lintCard yet (K13); K5–K12 rewrite the cards it fires on.
+   Thresholds measured 2026-10-06 over the 109 curated cards: headline+do p95 25 / max 25;
+   short_answer p50 62 / max 112; sentence p90 23 / p95 27 / max 43. */
+export const HEADLINE_DO_MAX = 26;
+export const SHORT_ANSWER_MAX = 40;
+export const SENTENCE_MAX = 20;
+const READ_FIELDS = ['decision', 'short_answer', 'why', 'look_for', 'watch_out'];
+// ponytail: short abbreviation list; extend when a real card splits wrong.
+const ABBREV = /\b(e\.g|i\.e|vs|oz|lb|lbs|etc|approx|U\.S)\./gi;
+const wordCount = (s) => String(s || '').split(/\s+/).filter(Boolean).length;
+
+/** Split on . ! ? followed by whitespace or end; decimals and ABBREV stay whole. */
+export function sentences(text) {
+  return String(text || '')
+    .replace(ABBREV, (m) => m.replace(/\./g, '\u0000'))
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.replace(/\u0000/g, '.').trim())
+    .filter(Boolean);
+}
+
+/** Readability findings, same {code, field, detail} shape as voiceTics. Empty is the passing state. */
+export function readability(card) {
+  const out = [];
+  const id = card?.id ?? card?.slug;
+  const headline = card?.decision ?? card?.headline;
+  const doLine = doLines[id] ?? card?.do ?? card?.do_line;
+  const hd = wordCount(headline) + wordCount(doLine);
+  if (hd > HEADLINE_DO_MAX) {
+    out.push({ code: 'READ_FIVE_SECONDS', field: 'decision', detail: `headline + do line run ${hd} words; the bar is ${HEADLINE_DO_MAX}` });
+  }
+  const sa = wordCount(card?.short_answer);
+  if (sa > SHORT_ANSWER_MAX) {
+    out.push({ code: 'READ_FIVE_SECONDS', field: 'short_answer', detail: `${sa} words; the bar is ${SHORT_ANSWER_MAX}` });
+  }
+  for (const field of READ_FIELDS) {
+    const v = field === 'look_for' ? (card?.look_for ?? card?.buying_tips)
+      : field === 'decision' ? (card?.decision ?? card?.headline)
+      : card?.[field];
+    if (v == null) continue;
+    for (const text of [].concat(v)) {
+      for (const s of sentences(text)) {
+        const n = wordCount(s);
+        if (n > SENTENCE_MAX) {
+          out.push({ code: 'READ_SENTENCE_LONG', field, detail: `${n} words; the bar is ${SENTENCE_MAX}: "${s}"` });
+        }
+        const stacked = (s.match(/;/g) || []).length + (s.match(/\(/g) || []).length;
+        if (s.includes('—')) out.push({ code: 'READ_STACKED', field, detail: `em-dash aside: "${s}"` });
+        else if (stacked > 1) out.push({ code: 'READ_STACKED', field, detail: `${stacked} semicolons/parentheticals in one sentence: "${s}"` });
+      }
+    }
+  }
+  return out;
+}

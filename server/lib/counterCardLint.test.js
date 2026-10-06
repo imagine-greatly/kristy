@@ -666,3 +666,44 @@ test('every curated card with a do line carries a tier note about THAT do line',
   const orphaned = withDo.filter((e) => codes(lintCard(e)).includes('TIER_NOTE_ORPHANED')).map((e) => e.id);
   assert.deepEqual(orphaned, [], `${orphaned.length} tier notes talk past their do line`);
 });
+
+/* ═══════ readability (K4) ═══════ */
+import { test as rtest } from 'node:test';
+import rassert from 'node:assert/strict';
+import { readability, sentences, HEADLINE_DO_MAX, SHORT_ANSWER_MAX, SENTENCE_MAX } from './counterCardLint.js';
+
+const rwords = (n) => Array.from({ length: n }, (_, i) => `w${i}`).join(' ');
+const rcodes = (card) => readability({ id: 'fixture_readability', ...card }).map((f) => f.code);
+
+rtest('READ_FIVE_SECONDS fires over HEADLINE_DO_MAX and clears at it', () => {
+  rassert.ok(rcodes({ decision: rwords(HEADLINE_DO_MAX - 10), do: rwords(11) }).includes('READ_FIVE_SECONDS'));
+  rassert.deepEqual(rcodes({ decision: rwords(HEADLINE_DO_MAX - 10), do: rwords(10) }), []);
+});
+
+rtest('READ_FIVE_SECONDS fires on short_answer over SHORT_ANSWER_MAX and clears at it', () => {
+  rassert.ok(rcodes({ short_answer: rwords(SHORT_ANSWER_MAX + 1).replace(/w15 /, 'w15. ') }).includes('READ_FIVE_SECONDS'));
+  rassert.deepEqual(rcodes({ short_answer: rwords(SHORT_ANSWER_MAX).replace(/w15 /, 'w15. ').replace(/w30 /, 'w30. ') }), []);
+});
+
+rtest('READ_SENTENCE_LONG: raw KB buying_tips is read as look_for', () => {
+  const f = readability({ id: 'raw', buying_tips: [`${rwords(SENTENCE_MAX + 1)}.`] });
+  rassert.deepEqual(f.map((x) => [x.code, x.field]), [['READ_SENTENCE_LONG', 'look_for']]);
+});
+
+rtest('READ_SENTENCE_LONG: exactly SENTENCE_MAX does not fire, one more does; arrays handled', () => {
+  rassert.deepEqual(rcodes({ why: `${rwords(SENTENCE_MAX)}.` }), []);
+  rassert.deepEqual(rcodes({ look_for: [`${rwords(SENTENCE_MAX)}.`, 'Short one.'] }), []);
+  rassert.deepEqual(rcodes({ why: `${rwords(SENTENCE_MAX + 1)}.` }), ['READ_SENTENCE_LONG']);
+  rassert.deepEqual(rcodes({ watch_out: ['Fine.', `${rwords(SENTENCE_MAX + 1)}.`] }), ['READ_SENTENCE_LONG']);
+});
+
+rtest('sentence split keeps decimals and abbreviations whole', () => {
+  rassert.deepEqual(sentences('Pick 2.5 oz. vs. the tub, e.g. plain. Then go!'), ['Pick 2.5 oz. vs. the tub, e.g. plain.', 'Then go!']);
+});
+
+rtest('READ_STACKED fires on two semicolons/parentheticals or an em-dash, clears on one', () => {
+  rassert.deepEqual(rcodes({ why: 'Buy plain (not sweet); skip the rest.' }), ['READ_STACKED']);
+  rassert.deepEqual(rcodes({ why: 'Buy plain — the sweet one is dessert.' }), ['READ_STACKED']);
+  rassert.deepEqual(rcodes({ why: 'Buy plain (not sweet), and skip the rest.' }), []);
+  rassert.deepEqual(rcodes({ why: 'Buy plain; skip the rest.' }), []);
+});
