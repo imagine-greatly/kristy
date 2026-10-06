@@ -190,6 +190,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `kimchi` | bulk_pantry | Crisp, bright kimchi to eat as is; sour, softer kimchi to cook. | Check the packed date, then read the list for fish sauce or shrimp. | — |
 | `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
 | `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother left in. | Read the label for “diluted” or a second vinegar named in a blend. | — |
+| `miso` | bulk_pantry | White miso for most uses; red miso for a stronger, saltier taste. | Read the ingredients for which grain went in with the soybeans. | — |
+| `tempeh` | bulk_pantry | Tempeh that is a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
+| `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
+| `fermented` | bulk_pantry | Pick the food first, then read whether it was heated or vinegar-made. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

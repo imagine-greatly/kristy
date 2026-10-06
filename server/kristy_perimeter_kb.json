@@ -9455,6 +9455,217 @@
         "is unfiltered apple cider vinegar worth buying",
         "how do i pick a raw cider vinegar"
       ]
+    },
+    {
+      "id": "miso",
+      "title": "Miso paste",
+      "aliases": [
+        "miso",
+        "miso paste",
+        "white miso",
+        "yellow miso",
+        "red miso",
+        "shiro miso",
+        "which miso should i buy"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which miso do you buy?",
+      "decision": "White miso for most uses; red miso for a stronger, saltier taste.",
+      "why": "White miso is mild and the most versatile. Red is the saltiest and strongest.",
+      "short_answer": "Buy white miso if buying only one. It is soybeans and rice, mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
+      "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Pasteurized and unpasteurized miso do not differ much in flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Miso",
+        "https://favorflav.com/en/new/the-ultimate-miso-guide/",
+        "https://www.huffingtonpost.co.uk/entry/different-kinds-of-miso_n_6993590"
+      ],
+      "kristy_take": "One tub of white miso covers most uses. Red is the strong, salty one.",
+      "cart_pick": "White miso in a sealed tub",
+      "buying_tips": [
+        "Read the ingredients for the grain: rice, barley or none.",
+        "Pick white miso if buying only one.",
+        "Pick red miso for a stronger, saltier taste.",
+        "Keep the tub in the fridge after opening."
+      ],
+      "watch_out": [
+        "Red miso is the saltiest kind, so use less of it.",
+        "Darker miso tastes stronger, so match the color to the dish."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Shiro",
+          "meaning": "White miso: soybeans and rice, fermented a short time, mild and sweet."
+        },
+        {
+          "term": "Aka",
+          "meaning": "Red miso: the saltiest and strongest kind."
+        },
+        {
+          "term": "Mame miso",
+          "meaning": "Miso made from soybeans only, with no grain."
+        }
+      ],
+      "tier_note": "The grain on the list tells white, yellow and mame miso apart.",
+      "asked_as": [
+        "which miso should i buy",
+        "how do i pick a miso paste",
+        "is white miso worth buying"
+      ]
+    },
+    {
+      "id": "tempeh",
+      "title": "Tempeh",
+      "aliases": [
+        "tempeh",
+        "tempeh block",
+        "tempeh cake",
+        "multigrain tempeh"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick tempeh?",
+      "decision": "Tempeh that is a firm cake, bound white all through.",
+      "why": "A finished cake holds together as one piece. A loose one crumbles easily.",
+      "short_answer": "Pick a firm, dense cake held together by white growth all through. A loose cake that crumbles is unfinished. Read the list for soybeans alone or added grains. Pass on any pack with noticeable mold or odd colors.",
+      "detail": "Tempeh is cooked soybeans fermented with a Rhizopus culture, a mold, into a firm, dense cake. In good tempeh, a dense white mycelium, the threads of the mold, binds the beans into one cake. The whole cake should lift as one piece without crumbling. Unfinished tempeh is bound loosely and crumbles easily. Most versions add grains, seeds or other beans, and soy-free versions exist. It is sold cold, often near the tofu. It keeps up to three weeks in the fridge, and unopened blocks can be frozen for up to a month.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tempeh",
+        "https://tastingtable.com/1287275/the-only-guide-youll-ever-need-for-buying-tempeh",
+        "https://www.americastestkitchen.com/articles/575-what-is-tempeh"
+      ],
+      "kristy_take": "A tempeh cake should hold as one solid piece. The list shows what went in besides the soybeans.",
+      "cart_pick": "A firm tempeh cake, bound white",
+      "buying_tips": [
+        "Press the pack and feel for a firm cake that holds as one piece.",
+        "Read the ingredients for soybeans alone or added grains.",
+        "Pass on any pack with noticeable mold or odd discoloration.",
+        "Keep it cold, or freeze an unopened block."
+      ],
+      "watch_out": [
+        "A loose cake that crumbles easily is unfinished.",
+        "Noticeable mold or odd discoloration on the pack means pass on it."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Multigrain tempeh",
+          "meaning": "Tempeh with grains added to the soybeans."
+        },
+        {
+          "term": "Soy-free tempeh",
+          "meaning": "Tempeh made from grains or other beans, with no soy."
+        }
+      ],
+      "tier_note": "Soybeans alone or with grains is a choice the ingredients show.",
+      "asked_as": [
+        "which tempeh should i buy",
+        "how do i pick a tempeh",
+        "is tempeh worth buying"
+      ]
+    },
+    {
+      "id": "natto",
+      "title": "Natto",
+      "aliases": [
+        "natto",
+        "natto beans",
+        "natto pack"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick natto?",
+      "decision": "Natto in sealed trays from the cold case or freezer.",
+      "why": "Chilled natto keeps only days. Frozen, it keeps for months.",
+      "short_answer": "Natto is whole soybeans fermented until sticky and stringy, with a strong smell. It comes in small sealed trays, often with mustard and sauce packets. Buy it from the cold case or the freezer, and check the date.",
+      "detail": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong, like a pungent aged cheese. Mass-produced natto comes in small polystyrene trays, two or three to a pack, occasionally four. Each tray holds 40 to 50 g. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Natt%C5%8D",
+        "https://wiki.ubc.ca/Course:FNH200/Projects/2025/Natto",
+        "https://wiki.ubc.ca/Course:FNH200/Projects/2022/Natto"
+      ],
+      "kristy_take": "The strong smell and sticky strings are the food itself, not a fault.",
+      "cart_pick": "Natto trays from the cold case",
+      "buying_tips": [
+        "Check the date on the pack.",
+        "Look for trays kept cold or frozen.",
+        "Freeze what will not be eaten within days.",
+        "Expect a strong smell and sticky strings."
+      ],
+      "watch_out": [
+        "Chilled natto keeps only days, so buy what will be eaten soon.",
+        "A strong ammonia smell means it fermented too long."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Itobiki natto",
+          "meaning": "Stringy natto from whole steamed soybeans, the common supermarket kind."
+        },
+        {
+          "term": "Karashi",
+          "meaning": "The hot mustard packed with many natto trays."
+        }
+      ],
+      "tier_note": "A recent date is what the pack can show before opening.",
+      "asked_as": [
+        "which natto should i buy",
+        "how do i pick a natto",
+        "is natto worth buying"
+      ]
+    },
+    {
+      "id": "fermented",
+      "title": "Fermented foods",
+      "aliases": [
+        "fermented foods",
+        "which fermented foods should i buy",
+        "which fermented food should i buy",
+        "how do i pick a fermented food"
+      ],
+      "category": "bulk_pantry",
+      "question": "Which fermented foods are worth buying?",
+      "decision": "Pick the food first, then read whether it was heated or vinegar-made.",
+      "why": "Heat stops fermenting, and vinegar pickles without it. The label and the list show which.",
+      "short_answer": "Choose the food first, such as kraut, kimchi, pickles, miso or tempeh. Then read the label. Raw or unpasteurized on the label means it was not heated. Vinegar on the list means it was not made by fermenting alone.",
+      "detail": "Fermentation is microbes, yeasts or bacteria, turning sugars into acids or alcohol. Pasteurization treats packaged food with mild heat, usually below 100 °C. That heat destroys or deactivates most microbes, so a heated, shelf-stable jar is no longer fermenting. A cold case alone does not prove the food was not heated, so read the label. Quick pickles get their acid from vinegar in one or two days, without fermenting. The words live cultures report what the maker says is in the jar. Yogurt, kefir, aged raw cheese and sourdough each have their own card.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fermented_food",
+        "https://en.wikipedia.org/wiki/Pasteurization",
+        "https://chowhound.com/1745205/difference-raw-vs-canned-sauerkraut",
+        "https://extension.oregonstate.edu/catalog/pub/pnw-355-pickling-vegetables"
+      ],
+      "kristy_take": "Every ferment here has its own card. The label and the list settle the rest.",
+      "cart_pick": "A cold-case ferment labeled raw",
+      "buying_tips": [
+        "Pick the food first, then open its own card.",
+        "Check the label for raw or unpasteurized.",
+        "Read the ingredients for vinegar.",
+        "Look in the cold case, but trust the label over the shelf."
+      ],
+      "watch_out": [
+        "A cold case alone does not prove the food was not heated.",
+        "Shelf-stable jars were heated, which stops the fermenting."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Unpasteurized",
+          "meaning": "Not heat-treated, as the label states."
+        },
+        {
+          "term": "Live cultures",
+          "meaning": "Label wording that names cultures in the food, not a promise of any effect."
+        },
+        {
+          "term": "Shelf-stable",
+          "meaning": "Sealed and heated so it keeps at room temperature."
+        }
+      ],
+      "tier_note": "The label and the list say what heat and vinegar did.",
+      "asked_as": [
+        "which fermented food should i buy",
+        "how do i pick a fermented food",
+        "are fermented foods worth buying"
+      ]
     }
   ]
 }
