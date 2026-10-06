@@ -44,7 +44,7 @@ const QUERIES = nonEmpty([
   ['chips', 'miss'],
   ['crackers', 'miss'],
   ['cookies', 'miss'],
-  ['ice cream', 'miss'],
+  ['ice cream', 'ice_cream'], // K19 covers it (admin ruling 2026-10-06).
   ['juice', 'miss', 'pick_juice'],
   ['soda', 'miss'],
   ['coffee', 'coffee_beans'],
