@@ -417,8 +417,9 @@ test('all curated cards clear the per-card bar', () => {
   // `produce_peppers`, `produce_apples_pears`, `produce_citrus`, `produce_stone_fruit`
   // (2026-09-16). 93 with `ground_beef_organ_blend` (2026-09-21). 94 with `rotisserie_chicken`
   // (2026-09-21).
-  // Build 4 adds 15 cards, each owning one grocery type.
-  assert.equal(CARDS.length, 109);
+  // Build 4 adds 15 cards, each owning one grocery type. K14 adds 3:
+  // `produce_mushrooms`, `produce_green_beans`, `egg_duck_quail` (2026-10-06).
+  assert.equal(CARDS.length, 112);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

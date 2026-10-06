@@ -6919,6 +6919,157 @@
         "does natural chicken breast have added water",
         "what does solution added mean on chicken breast"
       ]
+    },
+    {
+      "id": "produce_mushrooms",
+      "title": "Mushrooms",
+      "aliases": [
+        "mushrooms",
+        "mushroom",
+        "cremini",
+        "shiitake",
+        "portobello",
+        "oyster mushrooms",
+        "button mushrooms"
+      ],
+      "category": "produce",
+      "question": "How do you pick good mushrooms?",
+      "decision": "Dry, firm mushrooms with no dark spots.",
+      "why": "Moisture is what spoils mushrooms. A dry, firm cap that is closed or slightly open is the fresh one.",
+      "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
+      "detail": "Penn State Extension, quoting a selection guide, looks for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/mushrooms",
+        "https://extension.psu.edu/preparing-and-preserving-mushrooms"
+      ],
+      "kristy_take": "A dry, firm mushroom is a fresh one. Moisture spoils them, so keep them cold in paper.",
+      "cart_pick": "Dry, firm mushrooms with no dark spots",
+      "buying_tips": [
+        "Feel for a dry, firm cap and pass on any with dark spots.",
+        "Pick closed caps for a mild flavor and open caps for a stronger one.",
+        "Buy them loose to take only the amount needed."
+      ],
+      "watch_out": [
+        "A plastic bag traps moisture and spoils mushrooms faster.",
+        "Wild-picked mushrooms need an expert. Cooking or drying does not destroy their toxins."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Portobello",
+          "meaning": "A large, mature cremini mushroom."
+        },
+        {
+          "term": "Cremini",
+          "meaning": "Also sold as baby bella. Firmer and earthier than white button mushrooms."
+        }
+      ],
+      "tier_note": "Extension guides check firmness, a dry cap and the gills, and all three show at the shelf.",
+      "asked_as": [
+        "how do i pick good mushrooms",
+        "how should i store mushrooms",
+        "what do dark spots on mushrooms mean"
+      ]
+    },
+    {
+      "id": "produce_green_beans",
+      "title": "Green beans",
+      "aliases": [
+        "green beans",
+        "green bean",
+        "string beans",
+        "snap beans",
+        "haricots verts"
+      ],
+      "category": "produce",
+      "question": "How do you pick good green beans?",
+      "decision": "Smooth, crisp, slender pods with no bulging seeds.",
+      "why": "Seeds bulging through the pod mean an over-mature bean. Those beans turn tough, stringy and starchy.",
+      "short_answer": "Choose green beans that are smooth, firm and crisp. Skip pods with bulging seeds, brown or rust spots, or a damp, sticky feel. Keep them cold and use them within five days.",
+      "detail": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Ohio State Extension describes good snap beans as firm, crisp and smooth, with no seeds bulging. Flabby, tough beans or bulging seeds are over-mature. Iowa State Extension adds: avoid beans with brown spots or a damp, sticky surface. Keep fresh beans cold and humid in the refrigerator and use them within five days if possible. Snap beans also come yellow, purple and red.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://ohioline.osu.edu/factsheet/hyg-5509",
+        "https://spendsmart.extension.iastate.edu/?p=1508",
+        "https://extension.umaine.edu/publications/4255e/"
+      ],
+      "kristy_take": "A crisp pod with flat, hidden seeds is a young bean. That is the one worth carrying home.",
+      "cart_pick": "Crisp, slender green beans",
+      "buying_tips": [
+        "Pick smooth, slender pods with no seeds bulging through.",
+        "Leave beans with brown or rust spots behind.",
+        "Store them cold and cook them within five days."
+      ],
+      "watch_out": [
+        "Skip beans that look damp or feel sticky.",
+        "Flabby pods and bulging seeds mean over-mature beans, which turn tough and stringy."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Snap beans",
+          "meaning": "Beans eaten pod and all while young. Green beans are one kind."
+        },
+        {
+          "term": "Wax beans",
+          "meaning": "Yellow or purple snap beans."
+        }
+      ],
+      "tier_note": "Pod texture and seed size are visible signs of maturity, checked by hand at the bin.",
+      "asked_as": [
+        "how do i pick good green beans",
+        "how long do green beans last",
+        "what do bulging seeds in green beans mean"
+      ]
+    },
+    {
+      "id": "egg_duck_quail",
+      "title": "Duck and quail eggs",
+      "aliases": [
+        "duck eggs",
+        "duck egg",
+        "quail eggs",
+        "quail egg"
+      ],
+      "category": "poultry_eggs",
+      "question": "What should a shopper know about duck and quail eggs?",
+      "decision": "Cook duck and quail eggs until white and yolk are solid.",
+      "why": "Salmonella incidents involving duck eggs arise from time to time. Thorough cooking is the safeguard for any egg.",
+      "short_answer": "Buy them clean, uncracked and cold. Ireland’s food safety authority advises cooking duck eggs until white and yolk are solid. Quail eggs are tiny, about 10 to 12 grams each.",
+      "detail": "The Food Safety Authority of Ireland advises eating duck eggs only when thoroughly cooked. Raw duck eggs stay out of raw or lightly cooked dishes such as homemade mayonnaise or tiramisu. A duck egg is larger and heavier than a hen’s egg, so it needs more cooking time. In one test kitchen weighing, duck yolks made up 42 percent of the egg’s weight, against 32 percent for chicken. US FDA consumer advice for eggs: check for clean, uncracked shells, refrigerate, and cook until yolk and white are firm. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply, and the authors recommend refrigerated storage.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fsai.ie/news-and-alerts/latest-news/advice-issued-on-the-safe-consumption-of-duck-eggs",
+        "https://webarchive.library.unt.edu/eot2008/20090117011150mp_/http:/www.cfsan.fda.gov/~dms/fs-eggs.html",
+        "https://scielo.br/j/asas/a/BzZDRQJ9ZpDR4bvH53Z5qjf/?lang=en",
+        "https://www.americastestkitchen.com/how_tos/6577-duck-eggs-versus-chicken-eggs"
+      ],
+      "kristy_take": "A duck or quail egg is still an egg. Buy it clean and cold, and cook it all the way through.",
+      "cart_pick": "Duck or quail eggs",
+      "buying_tips": [
+        "Open the carton and check that every shell is clean and uncracked.",
+        "Buy from a refrigerated case and keep them cold at home.",
+        "Plan a longer cooking time for duck eggs, which are larger than hen’s eggs."
+      ],
+      "watch_out": [
+        "Keep raw duck eggs out of dishes served raw or lightly cooked, such as homemade mayonnaise.",
+        "Do not taste a raw mix made with duck eggs."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Duck egg",
+          "meaning": "Larger and heavier than a hen’s egg, with a bigger share of yolk."
+        },
+        {
+          "term": "Quail egg",
+          "meaning": "A small egg of about 10 to 12 grams."
+        }
+      ],
+      "tier_note": "Clean, uncracked shells and thorough cooking come from Ireland’s food safety authority and US FDA egg guidance.",
+      "asked_as": [
+        "are duck eggs safe to eat",
+        "what is different about duck eggs",
+        "how big are quail eggs"
+      ]
     }
   ]
 }

@@ -130,6 +130,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_apples_pears` | produce | Unbruised and undamaged. One spoiled fruit rots its neighbors faster. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
 | `produce_citrus` | produce | Firm and smooth, free of decay, drying, or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
 | `produce_stone_fruit` | produce | Unbruised and undamaged, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
+| `produce_mushrooms` | produce | Dry, firm mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
+| `produce_green_beans` | produce | Smooth, crisp, slender pods with no bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
+| `egg_duck_quail` | eggs_dairy | Cook duck and quail eggs until white and yolk are solid. | Check that each shell is clean and uncracked before the carton goes in. | — |
 
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the grain’s bran and germ. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
 | `sourdough` | bulk_pantry | Sourdough fermented with a starter of wild yeast and bacteria. | Ask the baker what leavens the dough; check for culture or starter. | — |
