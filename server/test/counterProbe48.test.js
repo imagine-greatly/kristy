@@ -81,7 +81,7 @@ const model = mock.method(anthropic.messages, 'create', () => { throw new Error(
 
 for (const query of nonEmpty([
   'taylor swift', 'bitcoin', 'hello', 'weather tomorrow', 'stock prices',
-  'car insurance', 'iphone charger', 'baby food', // K20 admin ruling: kombucha now matches; baby food is the pinned bare miss (:60).
+  'car insurance', 'iphone charger', 'protein bar', // K20 admin ruling: kombucha now matches; protein bar is a pinned bare miss (:51), bare:true, in no K plan.
 ], 'bare misses that must never generate', 8)) {
   test(`bare ask miss never generates: ${query}`, async () => {
     const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'generator_called' }));
