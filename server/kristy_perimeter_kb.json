@@ -7674,6 +7674,317 @@
           "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
         }
       ]
+    },
+    {
+      "id": "white_fish",
+      "title": "White fish",
+      "aliases": [
+        "white fish",
+        "whitefish",
+        "white fish fillets",
+        "fish fillets",
+        "fish fillet",
+        "cod fillets",
+        "cod fillet",
+        "cod loins",
+        "atlantic cod",
+        "pollock",
+        "alaska pollock",
+        "haddock",
+        "halibut",
+        "tilapia",
+        "flounder",
+        "hake"
+      ],
+      "category": "seafood",
+      "question": "How do you pick good white fish?",
+      "decision": "White fish chosen by its named species, firm and mild-smelling.",
+      "why": "A fillet is hard to identify by eye, so the species name does that work. Firm flesh and a mild smell show the rest.",
+      "short_answer": "Ask which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
+      "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. Ragged tail ends are hard to cook properly, so pick center-cut pieces. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh. NOAA calls U.S. wild-caught Atlantic cod and Alaska pollock smart seafood choices.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://extension.oregonstate.edu/video/how-buy-fish-your-local-market",
+        "https://www.fda.gov/food/seafood-guidance-documents-regulatory-information/fda-dna-testing-wholesale-level-evaluate-proper-labeling-seafood-species",
+        "https://www.fisheries.noaa.gov/species/atlantic-cod",
+        "https://www.fisheries.noaa.gov/species/alaska-pollock"
+      ],
+      "kristy_take": "The species name comes first. Firm flesh and a clean smell confirm the piece.",
+      "cart_pick": "A named white fish fillet, firm and on ice",
+      "buying_tips": [
+        "Ask which species the fillet is.",
+        "Press the flesh and check that it springs back.",
+        "Skip fillets with dried, dark or discolored edges.",
+        "Pick a center-cut piece over a ragged tail end."
+      ],
+      "watch_out": [
+        "A fillet is hard to identify by eye, so the species name on the sign carries the weight.",
+        "Color alone does not show freshness, because diet, environment and color fixatives all change it."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Market name",
+          "meaning": "The accepted species name for a fish on a seafood label."
+        },
+        {
+          "term": "Alaska pollock",
+          "meaning": "A U.S. wild-caught white fish, sold mostly as fillets and as imitation crab."
+        }
+      ],
+      "tier_note": "Species labeling and the firmness checks come from FDA seafood guidance.",
+      "asked_as": [
+        "how do i pick good white fish",
+        "which white fish fillets should i buy",
+        "how do i choose cod fillets or haddock"
+      ]
+    },
+    {
+      "id": "crab",
+      "title": "Crab",
+      "aliases": [
+        "crab",
+        "crabs",
+        "live crab",
+        "live crabs",
+        "crab legs",
+        "king crab",
+        "snow crab",
+        "dungeness crab",
+        "blue crab",
+        "blue crabs",
+        "soft shell crab",
+        "crab meat",
+        "lump crab meat",
+        "imitation crab"
+      ],
+      "category": "seafood",
+      "question": "How do you pick a good crab?",
+      "decision": "Live crab that moves, or cooked crab with bright orange-red shells.",
+      "why": "Crabs spoil fast after death, so leg movement is the live test. Cooked crab shows its quality in shell color and smell.",
+      "short_answer": "Live crabs should move their legs, because they spoil fast after death. Cooked crab should have bright orange to red shells and no off odor.",
+      "detail": "FDA guidance says only live crabs should be selected and prepared, since they spoil rapidly after death. Keep live crabs in a ventilated container, never an airtight bag, and use them within 1 to 2 days. Soft-shell crabs are blue crabs that just molted, before the new shell hardens. Imitation crab is surimi, a seafood product made from cooked Alaska pollock. Surimi keeps refrigerated for up to 14 days.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
+        "https://extension.umaine.edu/publications/3110e/",
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://www.fisheries.noaa.gov/species/blue-crab",
+        "https://www.fisheries.noaa.gov/species/alaska-pollock"
+      ],
+      "kristy_take": "Movement for live crab. Shell color and a clean smell for cooked.",
+      "cart_pick": "Live crabs that move their legs",
+      "buying_tips": [
+        "Check that live crabs move their legs.",
+        "Look for bright orange to red shells on cooked crab.",
+        "Smell cooked crab and skip any with an off odor.",
+        "Buy unpackaged cooked crab only from a case kept apart from raw seafood."
+      ],
+      "watch_out": [
+        "A crab that does not move may have died, and dead crab spoils fast.",
+        "Imitation crab is made from pollock, not crab meat."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Jimmies",
+          "meaning": "Adult male blue crabs."
+        },
+        {
+          "term": "Sooks",
+          "meaning": "Adult female blue crabs."
+        },
+        {
+          "term": "Sponge crab",
+          "meaning": "A female blue crab carrying eggs."
+        },
+        {
+          "term": "Soft-shell",
+          "meaning": "A blue crab that just molted, before its new shell hardens."
+        },
+        {
+          "term": "Imitation crab",
+          "meaning": "A product made from cooked Alaska pollock, kept cold for up to 14 days."
+        }
+      ],
+      "tier_note": "Leg movement and shell color are extension and FDA buying checks.",
+      "asked_as": [
+        "how do i pick a good crab",
+        "how do i tell if cooked crab is good",
+        "what is a soft shell crab"
+      ]
+    },
+    {
+      "id": "lobster",
+      "title": "Lobster",
+      "aliases": [
+        "lobster",
+        "lobsters",
+        "live lobster",
+        "live lobsters",
+        "lobster tail",
+        "lobster tails",
+        "lobster meat",
+        "spiny lobster"
+      ],
+      "category": "seafood",
+      "question": "How do you pick a good lobster?",
+      "decision": "A live lobster that moves, or frozen tails that are hard-frozen.",
+      "why": "Lobsters spoil fast after death, so movement is the live test. Frozen tails show quality in clear meat and no odor.",
+      "short_answer": "A live lobster moves its legs, and its tail curls under when it is lifted. Frozen spiny lobster tails should have clear white meat and no odor, and be hard-frozen.",
+      "detail": "FDA guidance says only live lobsters should be selected and prepared, since they spoil rapidly after death. Raw lobster flesh should be clear and pearl-like, with little or no odor. Hard-shell and soft-shell lobsters are the same animal at different growth stages. A soft-shell lobster recently shed its old shell, so water sits between shell and meat. Use live lobster within 1 to 2 days.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
+        "https://extension.umaine.edu/publications/3110e/",
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://www.fisheries.noaa.gov/species/american-lobster",
+        "https://www.masterclass.com/articles/how-and-where-to-buy-live-lobster"
+      ],
+      "kristy_take": "Movement for a live lobster. Hard-frozen with clear meat for tails.",
+      "cart_pick": "A live lobster with a tail that curls under",
+      "buying_tips": [
+        "Ask the counter to lift the lobster and watch the tail.",
+        "Check that the claws and legs move.",
+        "Pick frozen tails that are hard-frozen, with clear white meat.",
+        "Skip frozen packs that are torn or show ice crystals."
+      ],
+      "watch_out": [
+        "A tail that hangs down when the lobster is lifted is a poor sign.",
+        "A dead lobster spoils fast, so only live lobsters should be cooked whole."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Spiny lobster",
+          "meaning": "Also called rock lobster, often sold as frozen tails."
+        },
+        {
+          "term": "Soft-shell",
+          "meaning": "A lobster that recently shed its shell, with water between shell and meat."
+        },
+        {
+          "term": "Hard-shell",
+          "meaning": "A lobster whose shell has fully hardened, with a higher meat yield."
+        }
+      ],
+      "tier_note": "The movement and tail checks are extension and FDA buying guidance.",
+      "asked_as": [
+        "how do i pick a good lobster",
+        "how do i tell if a lobster is alive",
+        "what are spiny lobster tails"
+      ]
+    },
+    {
+      "id": "scallops",
+      "title": "Scallops",
+      "aliases": [
+        "scallops",
+        "scallop",
+        "sea scallops",
+        "bay scallops",
+        "dry scallops",
+        "wet scallops",
+        "dry packed scallops"
+      ],
+      "category": "seafood",
+      "question": "Which scallops should you buy?",
+      "decision": "Dry scallops, with no added solution listed in the ingredients.",
+      "why": "Wet scallops are treated with a solution that makes them hold extra water. Dry scallops are untreated.",
+      "short_answer": "On packed scallops, read the ingredients: wet ones list a phosphate and water. At the counter, ask whether they are dry. Good scallops smell sweetish and sit in little liquid.",
+      "detail": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water. Packaged wet scallops should disclose the phosphate and water in the ingredients. Dry-packed scallops are untreated. Sea scallop meat is white, orange or pink. Smaller bay scallops are white, light tan or pinkish.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
+        "https://extension.umaine.edu/publications/3110e/",
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://www.fisheries.noaa.gov/species/atlantic-sea-scallop",
+        "https://www.thetakeout.com/1871820/avoid-wet-packed-scallop-perfect-sear/",
+        "https://www.chowhound.com/1573013/why-avoid-buying-wet-vs-dry-pack-scallops/"
+      ],
+      "kristy_take": "The ingredients line settles wet or dry. Dry is the one with nothing added.",
+      "cart_pick": "Dry-packed scallops",
+      "buying_tips": [
+        "Read the ingredients for a phosphate and water.",
+        "Ask the counter whether the scallops are dry.",
+        "Skip packs sitting in excess liquid.",
+        "Smell for a sweetish odor."
+      ],
+      "watch_out": [
+        "Wet scallops hold extra water, so they release moisture in the pan and sear poorly.",
+        "Loose scallops at the counter may carry no ingredient list, so ask."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Wet-packed",
+          "meaning": "Treated with a phosphate and water solution that holds extra water."
+        },
+        {
+          "term": "Dry-packed",
+          "meaning": "Untreated scallops, with nothing added."
+        }
+      ],
+      "tier_note": "The wet-pack disclosure is a label fact, read in the ingredients.",
+      "asked_as": [
+        "how do i pick good scallops",
+        "what are dry scallops",
+        "should i buy wet or dry scallops"
+      ]
+    },
+    {
+      "id": "clams_mussels_oysters",
+      "title": "Clams, mussels and oysters",
+      "aliases": [
+        "live clams",
+        "live mussels",
+        "live oysters",
+        "shucked oysters",
+        "shucked clams",
+        "oysters on the half shell",
+        "steamer clams",
+        "littleneck clams",
+        "shellfish tag"
+      ],
+      "category": "seafood",
+      "question": "How do you pick clams, mussels and oysters?",
+      "decision": "Live shellfish with a tag, closed shells and none cracked.",
+      "why": "The tag traces live shellfish to a certified shipper and harvest. A live shell closes when it is tapped.",
+      "short_answer": "Ask to see the tag on the sack of live clams, mussels or oysters. Shells should be closed, or close when tapped. Skip any that are cracked or broken.",
+      "detail": "Tags on live shellfish sacks name the certified shipper, the harvest date and the harvest area. The tag stays on until the container is empty, then is kept on file for 90 days. Unfrozen shucked containers under a half gallon carry a “Sell By” or “Best If Used By” date. Shucked oysters should be plump, with a mild odor and clear liquid.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
+        "https://www.dshs.texas.gov/seafood-aquatic-life-group/risks-eating-shellfish-seafood-aquatic-life",
+        "https://extension.umaine.edu/publications/3110e/"
+      ],
+      "kristy_take": "The tag first, then the tap. A shell that will not close stays at the store.",
+      "cart_pick": "Tagged live shellfish with closed shells",
+      "buying_tips": [
+        "Ask to see the shellfish tag.",
+        "Tap any open shell and check that it closes.",
+        "Skip cracked or broken shells.",
+        "Read the date on shucked containers."
+      ],
+      "watch_out": [
+        "Gaping shells that stay open mean the shellfish are dead.",
+        "Pregnant, older or immune-weakened? Ask a doctor about raw oysters."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Shellfish tag",
+          "meaning": "The certified shipper number, harvest date and harvest area for live shellfish."
+        },
+        {
+          "term": "Sell By",
+          "meaning": "The date on small containers of unfrozen shucked shellfish."
+        }
+      ],
+      "tier_note": "The tag rules are state and FDA shellfish requirements.",
+      "asked_as": [
+        "how do i pick live mussels",
+        "what does the shellfish tag mean",
+        "how do i buy shucked oysters"
+      ]
     }
   ]
 }

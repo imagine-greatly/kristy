@@ -158,6 +158,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
 | `duck_meat` | meat | Duck chosen by its class name, Grade A when graded. | Read the class on the label, then look for the Grade A shield. | — |
 | `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read the primal cut on the label, such as chuck or round. | — |
+| `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
+| `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
+| `lobster` | seafood | A live lobster that moves, or frozen tails that are hard-frozen. | Ask the counter to lift the lobster and check the tail curls under. | — |
+| `scallops` | seafood | Dry scallops, with no added solution listed in the ingredients. | Read the ingredients for a phosphate and water, or ask if they are dry. | — |
+| `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Ask to see the shellfish tag, then tap any open shell. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
