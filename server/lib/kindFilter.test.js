@@ -109,7 +109,8 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
   // 19 after P2 absorbed 6 (carrots, broccoli, onions, garlic, spinach, leafy greens).
   // 26 with K14's four (winter squash, ginger/turmeric, microgreens, egg whites), 2026-10-06.
   // 27 after K15: pick_lamb folded into the lamb_goat card, plus jerky and soup bones, 2026-10-06.
-  assert.equal(pickEntries(perimeterKb.entries).length, 27, 'K15: 27 picks in the raw corpus');
+  // 29 after K16: fish sticks and anchovies, 2026-10-06.
+  assert.equal(pickEntries(perimeterKb.entries).length, 29, 'K16: 29 picks in the raw corpus');
   const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');

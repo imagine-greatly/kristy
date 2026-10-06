@@ -163,6 +163,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `lobster` | seafood | A live lobster that moves, or frozen tails that are hard-frozen. | Ask the counter to lift the lobster and check the tail curls under. | — |
 | `scallops` | seafood | Dry scallops, with no added solution listed in the ingredients. | Read the ingredients for a phosphate and water, or ask if they are dry. | — |
 | `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Ask to see the shellfish tag, then tap any open shell. | — |
+| `smoked_salmon` | seafood | Smoked salmon kept cold, read by its label word. | Read the label for nova, lox or kippered, then keep it refrigerated. | — |
+| `seafood_counter` | seafood | Pick the species first, then ask where and how it was raised. | Ask the counter for the species name, then check the fish sits on ice. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

@@ -7985,6 +7985,163 @@
         "what does the shellfish tag mean",
         "how do i buy shucked oysters"
       ]
+    },
+    {
+      "id": "smoked_salmon",
+      "title": "Smoked salmon",
+      "aliases": [
+        "smoked salmon",
+        "cold smoked salmon",
+        "lox",
+        "nova lox",
+        "nova salmon",
+        "kippered salmon",
+        "smoked fish",
+        "smoked trout",
+        "smoked whitefish"
+      ],
+      "category": "seafood",
+      "question": "How do you pick smoked salmon?",
+      "decision": "Smoked salmon kept cold, read by its label word.",
+      "why": "Nova, lox and kippered mean refrigerated cold-smoked fish. Shelf-stable smoked fish is heat-treated and sealed instead.",
+      "short_answer": "Read the label word. Nova-style, lox, kippered and smoked mean refrigerated cold-smoked fish. Keep it cold from the case to the fridge. Shelf-stable smoked fish comes heat-treated in a sealed can, tin or jar.",
+      "detail": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually labeled nova-style, lox, kippered, smoked or jerky. These are cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. The cold-smoking process does not kill it, and refrigeration does not either. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Store refrigerated seafood in the coldest part of the fridge, at or below 40°F.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.cdc.gov/listeria/causes/meat-fish.html",
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://extension.umaine.edu/publications/3110e/"
+      ],
+      "kristy_take": "The label word tells the kind. Refrigerated smoked fish stays cold all the way home.",
+      "cart_pick": "Refrigerated smoked salmon from a cold case",
+      "buying_tips": [
+        "Read the label for nova, lox or kippered.",
+        "Pick it from a refrigerated case.",
+        "Put it in the fridge soon after buying.",
+        "Choose canned or jarred smoked fish to keep on the shelf."
+      ],
+      "watch_out": [
+        "Cold smoking and refrigeration do not kill Listeria.",
+        "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Nova-style",
+          "meaning": "Refrigerated cold-smoked fish."
+        },
+        {
+          "term": "Lox",
+          "meaning": "Refrigerated cold-smoked fish."
+        },
+        {
+          "term": "Kippered",
+          "meaning": "Refrigerated smoked fish, on the same label list as lox."
+        },
+        {
+          "term": "Shelf-stable",
+          "meaning": "Heat-treated and sealed, with no refrigeration needed before opening."
+        }
+      ],
+      "tier_note": "The label words come from FDA and CDC guidance on smoked fish.",
+      "asked_as": [
+        "how do i pick good smoked salmon",
+        "what is the difference between lox and smoked salmon",
+        "does smoked salmon need to stay cold"
+      ]
+    },
+    {
+      "id": "seafood_counter",
+      "title": "The seafood counter",
+      "aliases": [
+        "seafood counter",
+        "which seafood should i buy",
+        "what seafood should i buy",
+        "how do i choose seafood"
+      ],
+      "category": "seafood",
+      "question": "How do you choose seafood at the counter?",
+      "decision": "Pick the species first, then ask where and how it was raised.",
+      "why": "The species name is what a seafood label must get right. FDA DNA tests found it right 85% of the time.",
+      "short_answer": "Name the species, then ask where it came from and whether it was farmed. Fish should sit refrigerated or on a thick bed of ice. It should smell mild, and cooked seafood sits apart from raw.",
+      "detail": "FDA guidance says to buy fish refrigerated or on a thick bed of fresh ice, preferably under a cover. Fish should smell fresh and mild, not fishy, sour or ammonia-like. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. Around 85 percent of seafood eaten in the U.S. is imported. NOAA inspection is a fee-for-service program that plants choose to join. Participants may use an official mark showing federal inspection.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+        "https://extension.umaine.edu/publications/3110e/",
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
+        "https://www.fda.gov/food/seafood-guidance-documents-regulatory-information/fda-dna-testing-wholesale-level-evaluate-proper-labeling-seafood-species",
+        "https://www.fisheries.noaa.gov/insight/noaas-seafood-inspection-program",
+        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish"
+      ],
+      "kristy_take": "Species first, then where it came from. The ice and the smell confirm the rest.",
+      "cart_pick": "A named species from a cold, iced case",
+      "buying_tips": [
+        "Ask the counter for the species name.",
+        "Ask where it came from and whether it was farmed.",
+        "Check that the fish sits on ice or in a refrigerated case.",
+        "Check that cooked seafood is kept apart from raw."
+      ],
+      "watch_out": [
+        "Fishy, sour or ammonia odors mean the fish stays at the store."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Species name",
+          "meaning": "The acceptable market name for the fish, which FDA DNA testing checks."
+        },
+        {
+          "term": "Federal inspection mark",
+          "meaning": "A NOAA mark that plants in its fee-for-service program may use."
+        }
+      ],
+      "tier_note": "The counter checks come from FDA and extension seafood guidance.",
+      "asked_as": [
+        "which seafood should i buy",
+        "what seafood should i buy for dinner",
+        "how do i choose seafood at the store"
+      ]
+    },
+    {
+      "id": "pick_fish_sticks",
+      "kind": "pick",
+      "title": "Fish sticks",
+      "category": "seafood",
+      "aliases": [
+        "fish stick",
+        "fish sticks",
+        "fish finger",
+        "fish fingers"
+      ],
+      "decision": "Read under the name for “made from minced fish”, set in bold.",
+      "sources": [
+        {
+          "name": "Cornell LII: 21 CFR § 102.45 Fish sticks or portions made from minced fish",
+          "url": "https://www.law.cornell.edu/cfr/text/21/102.45"
+        }
+      ]
+    },
+    {
+      "id": "pick_anchovies",
+      "kind": "pick",
+      "title": "Anchovies",
+      "category": "seafood",
+      "aliases": [
+        "anchovy",
+        "anchovies",
+        "anchovy fillet",
+        "anchovy fillets"
+      ],
+      "decision": "Plump anchovy fillets packed in olive oil or salt, in a tin or jar.",
+      "sources": [
+        {
+          "name": "Saveur: The best anchovies",
+          "url": "https://www.saveur.com/shop/best-anchovies/"
+        },
+        {
+          "name": "NOAA Fisheries: Northern anchovy",
+          "url": "https://www.fisheries.noaa.gov/species/northern-anchovy"
+        }
+      ]
     }
   ]
 }

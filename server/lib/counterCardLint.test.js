@@ -420,7 +420,8 @@ test('all curated cards clear the per-card bar', () => {
   // Build 4 adds 15 cards, each owning one grocery type. K14 adds 3:
   // `produce_mushrooms`, `produce_green_beans`, `egg_duck_quail` (2026-10-06).
   // K15 adds 9: ham, turkey_bacon, cured_pork, lamb_goat, organ_meats, bison, venison_game, duck_meat, meat_case (2026-10-06).
-  assert.equal(CARDS.length, 121);
+  // K16 adds 7: white_fish, crab, lobster, scallops, clams_mussels_oysters, smoked_salmon, seafood_counter (2026-10-06).
+  assert.equal(CARDS.length, 128);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

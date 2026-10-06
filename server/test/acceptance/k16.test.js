@@ -39,14 +39,14 @@ const KEEPS = nonEmpty([
   ['fish counter', 'fresh_vs_previously_frozen_fish'], ['farmed tilapia', 'farmed_fish_by_species'],
   ['mussels', 'farmed_fish_by_species'], ['oysters', 'farmed_fish_by_species'], ['clams', 'farmed_fish_by_species'],
   ['canned anchovies', 'canned_fish_choosing'], ['sardines', 'canned_fish_choosing'], ['canned tuna', 'canned_tuna'],
-  ['smoked ham', 'ham'], ['meat sticks', 'pick_jerky'], ['meat case', 'meat_case'], ['oyster sauce', null],
+  ['smoked ham', 'ham'], ['meat sticks', 'pick_jerky'], ['meat case', 'meat_case'], ['oyster sauce', null], ['seafood', 'seafood_counter'],
   ['crab apples', 'produce_apples_pears'], ['lobster mushrooms', 'produce_mushrooms'],
 ], 'K16 keep rows', 20);
 const NOT_NEW = nonEmpty([
   'cod liver oil', 'fish oil', 'fish sauce', 'oyster sauce', 'oyster mushrooms', 'oyster crackers', 'clam juice', 'clamshell strawberries',
   'scallions', 'scalloped potatoes', 'smoked paprika', 'smoked sausage', 'smoked turkey', 'goldfish crackers', 'swedish fish',
   'white bread', 'white rice', 'white vinegar', 'carrot sticks', 'celery sticks', 'seafood seasoning', 'fish food',
-  'fish', 'seafood', 'shellfish', 'snow peas', 'king cake', 'tartar sauce', 'cocktail sauce', 'salmon', 'shrimp', 'cod',
+  'fish', 'shellfish', 'snow peas', 'king cake', 'tartar sauce', 'cocktail sauce', 'salmon', 'shrimp', 'cod',
 ], 'K16 not-new rows', 30);
 const FORBIDDEN = ['seafood', 'fish', 'shellfish', 'shell', 'live', 'smoked', 'stick', 'sticks', 'white', 'fillet', 'fillets', 'cod', 'oyster', 'oysters', 'clam', 'clams', 'mussel', 'mussels', 'salmon', 'shrimp', 'tuna', 'king', 'sea', 'tail', 'tails', 'legs'];
 const OWNERS = nonEmpty(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish', 'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'label_wild_vs_farm_raised', 'canned_tuna'], 'seafood ask owners', 10);
