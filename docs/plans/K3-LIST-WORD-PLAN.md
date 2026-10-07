@@ -141,3 +141,20 @@ All traced. K3-0a measures every compound row today, and each piece's acceptance
 4. **Moves.** *Default:* "bread" → `bread_aisle` and "chicken" → `chicken_cuts_basics`, if scout 1 shows both decisions are cut-agnostic; otherwise they stay.
 5. **No-redirect scope.** *Default:* K3-created and K3-edited cards only; K3-0a prints a count of existing cards whose fields hit the grep, and a retro pass becomes its own plan (it may conflict with the lint's `instead` field). *Alternative:* retro-fit now.
 6. **Universe `list_words`.** *Default:* yes; the label stays and the probe judges the words a shopper writes. *Alternative:* leave 191/206 as the standing figure.
+
+## K3-0a Result (measured 2026-10-07, in-process `attachCards`, no network)
+
+Devon approved the plan with every default (grouper/snapper stay in `white_fish`; no-redirect scope = K3 cards + count).
+The trace held except where marked **≠**. Every "measure" cell is now measured.
+
+- **Seafood, none:** fish, shellfish, cod, grouper, snapper, red snapper, mahi mahi, mahi, sole, whiting, rockfish, sea bass, branzino, perch, walleye, swai, basa, monkfish, ahi, trout, catfish. Ask "which fish should i buy" → none.
+- **Seafood, wrong:** salmon fillet(s) → `fish_freshness_at_counter`; salmon/tuna/halibut/swordfish steak → `beef_cuts_basics`; tuna, ahi tuna → `fish_freshness_at_counter`; swordfish → `mercury_by_fish`; **≠ clams, mussels, oysters → `farmed_fish_by_species`, not `clams_mussels_oysters`** (add to K3-1).
+- **Seafood, right:** seafood, halibut, tilapia, haddock, pollock, flounder, hake, white fish, fish fillets, salmon, wild salmon, shrimp, crab, scallops, lobster, fish sticks, sardines (`canned_fish_choosing`), anchovies, canned fish, smoked salmon, fresh fish, smoked fish (`smoked_salmon`). Ask "what should fish smell like" → `fish_freshness_at_counter`.
+- **Meat:** meat ✓, beef/pork/steak/lunch meat ✓, turkey → `turkey_whole`, lamb → `lamb_goat`, bison, venison → `venison_game`, sausage → `pick_sausage` ✓. None: meats, duck, ground meat, poultry. chicken → `air_chilled_chicken`.
+- **Produce:** produce ✓, ginger/turmeric ✓. None: fruit, fruits, vegetables, veggies, veggie, greens.
+- **Dairy:** **≠ dairy → `dairy_case` ✓ already**; milk → `whole_vs_reduced_fat_milk`; eggs/cheese/yogurt/butter/goat+sheep ✓. None: **cream**.
+- **Bread:** bread → `sandwich_bread`; pita/naan ✓. None: breads, buns, rolls.
+- **Pantry:** baking powder, spices, beans, nuts, rice, flour, honey, broth, coffee, juice ✓. None: oil, cooking oils, salt, seeds, tea, vinegar, sugar, sweeteners, sweetener, baking soda, sauce, **stock**, **water**.
+- **Snacks/frozen/deli:** none: snacks, chips, frozen, deli, fries, waffles, nuggets.
+- **Compounds today:** fish sauce, fish oil, fish tacos, goldfish, motor oil, baby oil, garlic salt, epsom salt, iced tea, tea tree oil, bird seed, cleaning vinegar, duck fat, duck sauce, garlic bread, banana bread, bread crumbs, waffle mix, artificial/monk fruit sweetener → none; **coconut oil, sesame seeds, sweet potato fries → none** (gaps, not collisions); olive oil → `olive_oil_grades`, sesame oil → `cooking_oils`, sea salt → `salt`, balsamic vinegar → `vinegar`, salted butter → `grassfed_butter`, salt pork → `pork_cuts_and_enhanced`, duck eggs → `egg_duck_quail`, bread flour → `flour_basics`, chicken nuggets → `frozen_nuggets`. Every K3 piece asserts these unchanged.
+- **No-redirect count (crude grep on decision/cart_pick/buying_tips/do line, existing cards): 20** — produce_seasonality, label_natural, egg_grades_sizes, deli_meat_uncured, canned_fish_choosing, produce_ripeness_by_item, berries_picking, label_sugar_free_substitutes, label_wild_vs_farm_raised, sprouts_raw, sourdough, bagels, tortillas, ground_turkey, breakfast_cereal, hot_dogs, cream_cheese, almond_milk, jam, tortilla_chips. Hits include in-family "instead" lines; the retro plan reads each one. K3-1 and K3-4 edit `produce_ripeness_by_item`, so it must pass the rule after K3-4.
