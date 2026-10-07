@@ -1,0 +1,56 @@
+{
+  "id": "fresh_pasta",
+  "title": "Fresh pasta",
+  "aliases": [
+    "fresh pasta",
+    "refrigerated pasta",
+    "fresh egg pasta",
+    "ravioli",
+    "tortellini"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick fresh pasta?",
+  "decision": "Fresh pasta of flour and egg, with little else listed.",
+  "why": "Fresh egg pasta is flour and egg. Many packs add nothing, and the list shows any extras.",
+  "short_answer": "Fresh egg pasta is softer and richer than dried, mostly from the egg. Many store packs have no additives, and some add ascorbic or citric acid. An opened pack keeps 2 to 3 days.",
+  "detail": "Traditionally, pasta rich with egg yolks comes from Emilia-Romagna, in the north of Italy. The south makes fresh pasta without eggs, from flour and water, such as orecchiette. Many fresh pastas now use a mix of semolina and 00 flour. A sfoglina is a woman who rolls fresh egg pasta by hand with a wooden pin and board. Hand-rolled sheets take a coarseness from the wood, so they hold sauce better. The classic ratio is one large egg for every 100g of flour. Store packs without additives are usually vacuum sealed or hold an oxygen packet. They are sold in the refrigerated case.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.tastingtable.com/854470/why-fresh-pasta-isnt-always-better-than-dried-pasta/",
+    "https://www.walksinsiderome.com/blog/what-to-do-in-rome-fresh-pasta-recipe/",
+    "https://www.chowhound.com/1821630/store-bought-fresh-pasta-preservatives",
+    "https://guide.michelin.com/hk/en/article/people/ask-the-expert-how-to-make-fresh-pasta-by-hand",
+    "https://www.law.cornell.edu/cfr/text/21/139.150"
+  ],
+  "kristy_take": "Traditionally, fresh egg pasta was rolled by hand for Sunday family dinners, on a wooden board.",
+  "cart_pick": "Fresh pasta of flour and egg",
+  "buying_tips": [
+    "Read the list; flour and egg with little else marks a plain pack.",
+    "Note ascorbic or citric acid on the list; some packs add them.",
+    "Pick a pack that is vacuum sealed or holds an oxygen packet."
+  ],
+  "watch_out": [
+    "Once opened, the pack is best used within 2 to 3 days."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Ascorbic acid",
+      "meaning": "Vitamin C, added to some fresh pasta as an acid."
+    },
+    {
+      "term": "Citric acid",
+      "meaning": "The acid that makes lemons taste sour; some fresh pasta lists it."
+    },
+    {
+      "term": "Egg noodles",
+      "meaning": "A US standard name for noodles made by drying, whose solids hold at least 5.5 percent egg or egg yolk solids."
+    }
+  ],
+  "tier_note": "An opened pack keeps only 2 to 3 days in the fridge.",
+  "asked_as": [
+    "which fresh pasta should i buy",
+    "is fresh pasta worth buying",
+    "is refrigerated pasta worth buying"
+  ],
+  "_do_line": "Check the date, and use an opened pack within 2 to 3 days."
+}

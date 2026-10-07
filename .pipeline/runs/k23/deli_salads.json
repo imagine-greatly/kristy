@@ -1,0 +1,49 @@
+{
+  "id": "deli_salads",
+  "title": "Deli salads",
+  "aliases": [
+    "deli salads",
+    "potato salad",
+    "chicken salad",
+    "egg salad",
+    "macaroni salad",
+    "coleslaw"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick deli salads?",
+  "decision": "Deli salads bought from the cold case, finished within days.",
+  "why": "Cold food stays at 40°F or below. Egg, tuna and macaroni salads keep 3 to 5 days.",
+  "short_answer": "Meats, cheeses and salads in the deli need the cold case. Leave a salad out no more than two hours. Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
+  "detail": "Extension advice is to refrigerate cold foods at 40°F or lower. Perishable take-out food should not sit at room temperature longer than two hours, or one hour above 90°F. Deli egg, tuna and macaroni salads keep 3 to 5 days in the fridge. Chicken salad keeps three to four days. The coldest spot is the back or bottom of the fridge. The door opens often to warm air. Salads made with mayonnaise do not freeze well.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
+    "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
+    "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+    "https://extension.uconn.edu/?p=20521"
+  ],
+  "kristy_take": "A food-service view: chicken, tuna and creamy egg salad belong in a cold display case.",
+  "cart_pick": "A deli salad from the cold case",
+  "buying_tips": [
+    "Buy salads from a refrigerated case.",
+    "Check the Sell-By date, and skip a tub past it.",
+    "Get it home cold; two hours out at most, one hour above 90°F."
+  ],
+  "watch_out": [
+    "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
+    "Salads made with mayonnaise do not freeze well."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Sell-By",
+      "meaning": "Tells the store how long to display the item; buy it before that date."
+    }
+  ],
+  "tier_note": "The fridge door is the wrong spot for a deli salad.",
+  "asked_as": [
+    "which deli salads should i buy",
+    "is potato salad worth buying",
+    "how do i pick a chicken salad"
+  ],
+  "_do_line": "Check the date; keep it at the back of the fridge, not the door."
+}
