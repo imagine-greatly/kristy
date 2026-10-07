@@ -1,0 +1,40 @@
+{
+ "id": "ketchup_mustard",
+ "title": "Ketchup and mustard",
+ "aliases": ["ketchup", "catsup", "tomato ketchup", "mustard", "yellow mustard", "dijon mustard", "stone ground mustard", "spicy brown mustard", "whole grain mustard"],
+ "category": "bulk_pantry",
+ "question": "How do you pick ketchup and mustard?",
+ "decision": "Ketchup led by tomato; mustard made of seed, vinegar and spice.",
+ "why": "Ketchup’s federal standard starts from tomato. Prepared mustard is ground seed, vinegar, turmeric, salt and spices.",
+ "short_answer": "Ketchup is made from tomato with vinegar, sweeteners and spices. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices. Iowa State puts opened ketchup at 6 months and mustard at 1 year.",
+ "detail": "Ketchup’s federal standard, 21 CFR 155.194, accepts three names: catsup, ketchup or catchup. It starts from tomato concentrate or liquid from red tomatoes. Vinegars, sweeteners, and spices, flavoring, onions or garlic are its optional ingredients. Lemon juice or suitable organic acids may be added only to adjust the pH, a measure of acidity. The mustard description here is the USDA AMS commercial item description, a federal purchase spec rather than retail law. It calls for ground mustard seed, vinegar, turmeric, salt and spices. Yellow seed goes into its Type I and Type II mustards, and brown seed into Types III to IX. Yellow mustard is smooth, with a mild flavor and slight acid taste. Dijon is smooth and pungent, with mild white wine notes. Stone ground is coarse and pungent, with visible specks of mustard seed. Spicy brown is slightly thick. Gums and artificial colors are not permitted, and added water must be declared. As a food history site reports, the Oxford English Dictionary traces ketchup to ke-tsiap. In the Amoy dialect of Chinese, that word means a brine of pickled fish. Mushroom, walnut and fish ketchups stayed more popular in the States until the mid-1800s.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/155.194",
+  "https://www.ams.usda.gov/sites/default/files/media/CID%20Mustard%2C%20Prepared.pdf",
+  "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+  "https://culinarylore.com/food-history:origin-of-ketchup/"
+ ],
+ "kristy_take": "By the Oxford English Dictionary’s account, ketchup was first a word for a brine of pickled fish. Today’s standard starts from tomato.",
+ "cart_pick": "Ketchup from tomato; mustard from seed",
+ "buying_tips": [
+  "Read the ketchup label for tomato concentrate and vinegar.",
+  "Read the mustard label for mustard seed, vinegar and spices.",
+  "Stone ground mustard shows visible specks of seed.",
+  "Dijon carries mild white wine notes; yellow mustard is mild.",
+  "Use an open condiment before opening a new one."
+ ],
+ "watch_out": [
+  "A ketchup that falls below the federal quality standard must say so on its label.",
+  "Opened condiments on the fridge door are easy to forget."
+ ],
+ "labels_decoded": [
+  {"term": "Catsup, Ketchup or Catchup", "meaning": "Three allowed names for the same standardized food."},
+  {"term": "Below Standard in Quality", "meaning": "The ketchup falls short of the federal quality standard. One allowed wording adds Low Consistency."},
+  {"term": "Stone ground", "meaning": "Coarse grained mustard with visible specks of mustard seed."},
+  {"term": "Best by", "meaning": "Best quality date, not a food safety date."}
+ ],
+ "tier_note": "Opened ketchup keeps months and mustard about a year, so the date matters.",
+ "asked_as": ["which ketchup should i buy", "which mustard should i buy", "is dijon mustard worth buying"],
+ "_do_line": "Check the jar for an open date, or write one on it at home."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "mayo",
+  "title": "Mayonnaise",
+  "aliases": ["mayo", "mayonnaise", "real mayonnaise", "avocado oil mayo", "olive oil mayo"],
+  "category": "bulk_pantry",
+  "question": "How do you pick mayonnaise?",
+  "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
+  "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
+  "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
+  "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners, spices and MSG. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.law.cornell.edu/cfr/text/21/169.140",
+    "https://www.law.cornell.edu/cfr/text/21/169.150",
+    "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
+    "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+  ],
+  "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
+  "cart_pick": "Mayonnaise by name, its lead oil read",
+  "buying_tips": [
+    "Check that the name on the jar is Mayonnaise.",
+    "Read which oil the ingredient list names first.",
+    "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+    "Once opened, keep it in the fridge and use it within 1 to 2 months."
+  ],
+  "watch_out": [
+    "A front label can name an oil that the ingredient list ranks lower."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Mayonnaise",
+      "meaning": "The standardized name: at least 65 percent oil, with egg yolk and vinegar or citrus juice."
+    },
+    {
+      "term": "Salad dressing",
+      "meaning": "A separate standard, thickened with a starchy paste; it holds more water and is sweeter."
+    },
+    {
+      "term": "Calcium disodium EDTA",
+      "meaning": "A sequestrant the mayonnaise standard allows, used to preserve color or flavor."
+    }
+  ],
+  "tier_note": "The front may name an oil that the ingredients rank lower.",
+  "asked_as": [
+    "which mayonnaise should i buy",
+    "is avocado oil mayo worth buying",
+    "how do i pick a mayo"
+  ],
+  "_do_line": "Read the ingredients for which oil comes first, whatever the front says."
+}

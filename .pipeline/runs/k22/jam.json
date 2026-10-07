@@ -1,0 +1,69 @@
+{
+ "id": "jam",
+ "title": "Jam and preserves",
+ "aliases": [
+  "jam",
+  "strawberry jam",
+  "raspberry jam",
+  "fruit preserves",
+  "strawberry preserves",
+  "grape jelly"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick jam or preserves?",
+ "decision": "Jam or preserves by name, made from fruit rather than juice.",
+ "why": "“Jam” and “Preserves” are standardized names made from fruit. Jelly is made from strained juice.",
+ "short_answer": "Look for “Jam” or “Preserves” in the name. Both are standardized and made from fruit with sugar. Jelly is made from strained juice. Reduced-sugar jars keep a shorter time once opened, so refrigerate them.",
+ "detail": "“Jam” and “Preserves” are standardized names. Jam is made from fruit and sugar at a fixed ratio: at least 47 parts fruit to 55 parts sugar for some fruits, and 45 to 55 for the rest. The finished jam is cooked to not less than 65 percent soluble solids. Jelly is made from the filtered or strained juice of the fruit. Pectin is the natural substance in fruit that makes it gel; commercial pectins are made from apples or citrus fruit. Special pectins exist for jars with less sugar or no added sugar. Those jars do not use sugar as a preservative, so some require refrigeration. When a jam names several fruits, they are listed in order of predominance by weight. Sugar can weigh more than the fruit in a standard jam. By one extension definition, jam is a sweet spread that holds its shape, made from crushed or chopped fruit. Jelly is a firm gel made from juice. Preserves are small whole fruits or uniform pieces in a thick, gelled syrup. Home-kitchen (cottage-food) jam follows the same federal standard of identity for each product.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/150.160",
+  "https://www.law.cornell.edu/cfr/text/21/150.140",
+  "https://ohioline.osu.edu/factsheet/HYG-5350",
+  "https://nchfp.uga.edu/how/make-jam-jelly/jams-jellies-general-information/storing-home-canned-jams-and-jellies/",
+  "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+  "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/216395.pdf",
+  "https://extension.umd.edu/sites/extension.umd.edu/files/publications/FS-1005%20Launching%20a%20Cottage%20Food%20Industry.pdf"
+ ],
+ "kristy_take": "Jams and preserves are cooked from crushed fruit or whole pieces. The name on the jar says which kind it is.",
+ "cart_pick": "Jam or preserves named for its fruit",
+ "buying_tips": [
+  "Read the name for “Jam” or “Preserves” with the fruit named.",
+  "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
+  "In a mixed-fruit jam, the fruits are listed by weight, most first.",
+  "Refrigerate the jar once opened.",
+  "At farmers markets, cottage-food jam labels name the maker and address."
+ ],
+ "watch_out": [
+  "Reduced-sugar jars lack the full preservative effect of sugar and keep a shorter time once opened."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Jam or Preserve",
+   "meaning": "A standardized name: fruit and sugar at a fixed ratio, at least 65 percent soluble solids."
+  },
+  {
+   "term": "Jelly",
+   "meaning": "Made from the filtered or strained juice of the fruit."
+  },
+  {
+   "term": "Pectin",
+   "meaning": "The natural fruit substance that gels; commercial pectin comes from apples or citrus."
+  },
+  {
+   "term": "Reduced sugar",
+   "meaning": "Less sugar to preserve it, so it keeps a shorter time once opened."
+  },
+  {
+   "term": "Made in a private home",
+   "meaning": "A cottage-food label statement: the jar was made in a home kitchen exempt from inspection."
+  }
+ ],
+ "tier_note": "Reduced-sugar jars keep a shorter time once opened, so cold storage matters.",
+ "asked_as": [
+  "which jam should i buy",
+  "how do i pick a strawberry jam",
+  "are fruit preserves worth buying"
+ ],
+ "_do_line": "Read the label for “reduced sugar”, then keep the opened jar cold."
+}

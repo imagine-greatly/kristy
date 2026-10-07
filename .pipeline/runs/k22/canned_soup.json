@@ -1,0 +1,71 @@
+{
+ "id": "canned_soup",
+ "title": "Canned soup",
+ "aliases": [
+  "canned soup",
+  "soup can",
+  "can of soup",
+  "low sodium soup",
+  "condensed soup"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick canned soup?",
+ "decision": "Canned soup with a short list, in a can without dents.",
+ "why": "Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can.",
+ "short_answer": "Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging.",
+ "detail": "Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/101.61",
+  "https://extension.psu.edu/making-use-of-canned-foods",
+  "https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/"
+ ],
+ "kristy_take": "A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning.",
+ "cart_pick": "Low sodium canned soup, undented can",
+ "buying_tips": [
+  "Read the front for low sodium versus reduced sodium.",
+  "Check reduced sodium claims for the named soup they compare against.",
+  "Check each can for deep dents, seam dents, leaks, rust and bulging lids.",
+  "Store cans cool and dry, between 50 °F and 70 °F.",
+  "Put new cans behind older ones and use the oldest first.",
+  "Wipe the lid before opening.",
+  "Move opened soup to a covered glass or plastic container in the refrigerator."
+ ],
+ "watch_out": [
+  "“No salt added” is not “sodium free”; the soup can still carry sodium.",
+  "Leave cans with deep dents or dents on the seam on the shelf."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Sodium free",
+   "meaning": "Less than 5 mg of sodium per standard serving."
+  },
+  {
+   "term": "Very low sodium",
+   "meaning": "35 mg or less of sodium per standard serving."
+  },
+  {
+   "term": "Low sodium",
+   "meaning": "140 mg or less of sodium per standard serving."
+  },
+  {
+   "term": "Reduced sodium",
+   "meaning": "At least 25 percent less sodium than a reference food the label names."
+  },
+  {
+   "term": "No salt added",
+   "meaning": "No salt added during processing; not the same as sodium free."
+  },
+  {
+   "term": "Best if used by",
+   "meaning": "Best flavor or quality, not a purchase or safety date."
+  }
+ ],
+ "tier_note": "Reduced sodium compares to a named soup; low sodium is a fixed ceiling.",
+ "asked_as": [
+  "which canned soup should i buy",
+  "how do i pick a canned soup",
+  "is low sodium soup worth buying"
+ ],
+ "_do_line": "Read the front for “low sodium” versus “reduced sodium”; they differ."
+}
