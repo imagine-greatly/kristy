@@ -11806,6 +11806,357 @@
         "are deli section foods worth buying",
         "which store deli case foods should i buy"
       ]
+    },
+    {
+      "id": "frozen_pizza",
+      "title": "Frozen pizza",
+      "aliases": [
+        "frozen pizza",
+        "frozen pizzas"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a frozen pizza?",
+      "decision": "Frozen pizza with a short crust list: flour, water, salt, yeast.",
+      "why": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
+      "short_answer": "Read the crust list first. Traditionally, Neapolitan dough holds only flour, water, salt and yeast. A crust sold as whole wheat should list whole wheat flour, not plain wheat flour.",
+      "detail": "Traditionally, Neapolitan dough is made only of flour, water, salt and yeast. The flour is 00 flour, a soft wheat flour of medium strength. The dough rises at least 8 hours, in two phases. Dough balls run 180 to 250 g. They are stretched by hand only, never pressed by machine or rolled with a pin. The finished pizza is no wider than 35 cm. Leftover dough balls are thrown out each evening. The pizza bakes on the floor of a wood oven at 430 to 485°C, for 60 to 90 seconds. The wood must give off no smoke or odor: oak, ash, beech and maple. Well baked means golden and unburnt, with a bread-scented rim and a soft center that folds without breaking. “Verace Pizza Napoletana” is a collective mark, a name its own association governs. It is not a DOP, the Italian protected name given only to first-stage foods such as cheese and oil. Ready pizzas and frozen dough balls are spreading today. On a US label, “pan style” means a pizza marketed in a pan with a thick crust. “Sicilian style” means a thick crust, usually 50 percent or more of the pizza.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://ilfattoalimentare.it/pizza-napoletana-disciplinare.html",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+        "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+        "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn"
+      ],
+      "kristy_take": "The short crust list is the standard here. Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
+      "cart_pick": "A pizza with a short crust list",
+      "buying_tips": [
+        "Read the crust list for flour, water, salt and yeast.",
+        "On a whole wheat crust, look for whole wheat flour listed first.",
+        "At home, double-wrap a pizza for the freezer: plastic wrap, then foil.",
+        "Air touching the surface leaves freezer burn, grayish-brown leathery spots."
+      ],
+      "watch_out": [
+        "A meat named on the box sets no minimum amount of that meat."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Wheat flour",
+          "meaning": "Plain flour, with the bran and germ removed. It is not a whole grain flour."
+        },
+        {
+          "term": "Whole wheat flour",
+          "meaning": "A whole grain flour. FDA draft advice: a crust sold as whole wheat uses it throughout."
+        },
+        {
+          "term": "Meat in the name",
+          "meaning": "A pizza named for a meat topping needs no minimum amount of that meat."
+        },
+        {
+          "term": "Imitation cheese",
+          "meaning": "Named on the label when a pizza holds less than one part cheese to nine parts cheese substitute."
+        }
+      ],
+      "tier_note": "A whole wheat crust uses whole wheat flour, not plain wheat flour.",
+      "asked_as": [
+        "which frozen pizza should i buy",
+        "is frozen pizza worth buying",
+        "how do i pick a frozen pizza"
+      ]
+    },
+    {
+      "id": "frozen_meals",
+      "title": "Frozen meals",
+      "aliases": [
+        "frozen meals",
+        "frozen dinners",
+        "frozen entrees",
+        "tv dinners"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a frozen meal?",
+      "decision": "The name on a frozen meal sets its meat minimum.",
+      "why": "A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent.",
+      "short_answer": "The product name sets a meat floor. A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent. Check the inspection mark and follow the package directions.",
+      "detail": "On a frozen meal, the product name sets a floor for the meat inside. A “Beef Stew” holds at least 25 percent of the named meat, measured as fresh meat. “Spaghetti with Meatballs and Sauce” holds at least 12 percent meat, measured as fresh meat. The sauce has to appear in the product name. The meatballs may be made with binders and extenders. For poultry, a stew holds at least 12 percent poultry, a dish named with vegetables 15, and an a-la-king 20. The name may add other descriptive words, such as “noodle”. A frozen poultry dinner holds at least 18 percent cooked deboned poultry or 2 oz., whichever is greater. That poultry is counted apart from appetizers and desserts. Frozen dinners and entrees hold their quality 3 to 4 months at 0°F. Freezer times are for quality only. Cream sauce is one food that does not freeze well. Cooking from frozen takes about one and a half times as long.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/9/319.304",
+        "https://www.law.cornell.edu/cfr/text/9/319.306",
+        "https://www.law.cornell.edu/cfr/text/9/381.167",
+        "https://www.law.cornell.edu/cfr/text/9/381.158",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+        "https://web.archive.org/web/2024id_/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety"
+      ],
+      "kristy_take": "The product name sets the meat floor. The package directions set how to thaw and heat the meal.",
+      "cart_pick": "A meal with the inspection mark",
+      "buying_tips": [
+        "Read the product name first: it sets the meat minimum.",
+        "Check the package for the inspection mark.",
+        "Read the label, since some products must be cooked from frozen.",
+        "At home, use frozen dinners within 3 to 4 months for best quality."
+      ],
+      "watch_out": [
+        "Cream sauce is one food that does not freeze well."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Inspection mark",
+          "meaning": "The meal was prepared in a USDA or State-inspected plant."
+        },
+        {
+          "term": "Beef Stew",
+          "meaning": "At least 25 percent of the named meat, measured as fresh meat."
+        },
+        {
+          "term": "Spaghetti with Meatballs and Sauce",
+          "meaning": "At least 12 percent meat, with the sauce named in the product name."
+        },
+        {
+          "term": "Poultry dinner",
+          "meaning": "At least 18 percent cooked deboned poultry or 2 oz., whichever is greater."
+        }
+      ],
+      "tier_note": "The inspection mark means an inspected plant made the meal.",
+      "asked_as": [
+        "which frozen meals should i buy",
+        "are frozen dinners worth buying",
+        "are tv dinners worth buying"
+      ]
+    },
+    {
+      "id": "frozen_fries",
+      "title": "Frozen fries",
+      "aliases": [
+        "frozen fries",
+        "frozen french fries",
+        "frozen hash browns"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick frozen fries?",
+      "decision": "Frozen fries of potatoes, oil and salt, with little else listed.",
+      "why": "At home, a hash brown takes potatoes, oil, salt and pepper. The bag’s list shows what else is in it.",
+      "short_answer": "Read the ingredient list on the bag. At home, a hash brown takes potatoes, oil, salt and pepper. Home fries take starchy potatoes and salt. Compare bags by what they list beyond those.",
+      "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.ams.usda.gov/sites/default/files/media/Frozen_French_Fried_Potatoes_Standard%5B1%5D.pdf",
+        "https://www.wgbh.org/news/2016-03-24/fry-and-fry-again-the-science-secrets-to-the-double-fry",
+        "https://patents.google.com/patent/US4254153",
+        "https://www.recipetineats.com/french-fries/",
+        "https://www.crunchycreamysweet.com/hash-browns-recipe/",
+        "https://extension.illinois.edu/sites/default/files/2024-12/air_fryer.pdf",
+        "https://brunswick.ces.ncsu.edu/2022/07/freezing"
+      ],
+      "kristy_take": "A short list of potatoes, oil and salt is the standard here. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
+      "cart_pick": "Fries listing potatoes, oil and salt",
+      "buying_tips": [
+        "Read the bag’s ingredient list for potatoes, oil and salt.",
+        "Compare bags by what each one lists beyond potatoes, oil and salt.",
+        "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
+        "Do not overcrowd the air fryer basket, so the fries cook evenly.",
+        "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%."
+      ],
+      "watch_out": [
+        "Fried foods frozen at home may lose their crispness."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Frozen french fried potatoes",
+          "meaning": "The grade standard’s name: mature white potatoes, deep-fried or blanched in fat or oil, then frozen."
+        },
+        {
+          "term": "U.S. Grade A",
+          "meaning": "Also “U.S. Fancy.” Good flavor, color and texture, practically uniform size, at least 90 points."
+        },
+        {
+          "term": "U.S. Grade B",
+          "meaning": "Also “U.S. Extra Standard.” Reasonably good on each count, at least 80 points. Grading is voluntary."
+        }
+      ],
+      "tier_note": "Potatoes, oil and salt make the whole home recipe.",
+      "asked_as": [
+        "which frozen fries should i buy",
+        "are frozen french fries worth buying",
+        "are frozen hash browns worth buying"
+      ]
+    },
+    {
+      "id": "frozen_waffles",
+      "title": "Frozen waffles",
+      "aliases": [
+        "frozen waffles",
+        "toaster waffles"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick frozen waffles?",
+      "decision": "Frozen waffles with a whole grain listed first.",
+      "why": "The ingredient list shows whether the first ingredient is a whole grain. “Wheat flour” is not one.",
+      "short_answer": "Read the first ingredient. “Whole wheat flour” and graham flour are whole grain. “Wheat flour” is plain flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
+      "detail": "FDA draft advice treats a grain as whole when the kernel is intact, ground, cracked or flaked. Its endosperm, germ and bran stay in the same proportions as the intact kernel. Rolled oats and quick oats count as whole grain. Graham flour is another name for whole wheat flour, which has its own federal standard of identity. A federal purchase description covers frozen heat-and-serve waffles. It is USDA’s commercial item description, a buying spec, not a label rule. Its ingredients are enriched flour, water, sugar, egg, oil, salt, flavorings, whey, leavening and emulsifiers or other stabilizers. Whole wheat flour is optional there. Its flours meet the federal standard for enriched flour or for whole wheat flour.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+        "https://www.ams.usda.gov/sites/default/files/media/CID%20Griddle%20Bread%2C%20Shelf%20Stable%20%28Waffles%2C%20Pancakes%2C%20French%20toast%2C%20Belgian%20Waffles%29.pdf",
+        "https://www.onceuponachef.com/recipes/waffle-recipe.html",
+        "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/"
+      ],
+      "kristy_take": "A whole grain listed first is the standard here. At home, yeasted waffles may be the gold standard for a light, crisp waffle. The batter rests overnight in the fridge for a crisp outside and tender inside.",
+      "cart_pick": "Waffles with a whole grain listed first",
+      "buying_tips": [
+        "Read the first ingredient for a whole grain, such as whole wheat flour.",
+        "Graham flour and rolled oats count as whole grain on the list.",
+        "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
+        "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen."
+      ],
+      "watch_out": [
+        "“Wheat flour” listed first means plain flour leads, not a whole grain."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Wheat flour",
+          "meaning": "Another name for flour. It is not a whole grain flour."
+        },
+        {
+          "term": "Whole wheat flour",
+          "meaning": "A whole grain flour with its own federal standard of identity."
+        },
+        {
+          "term": "Graham flour",
+          "meaning": "Another name for whole wheat flour."
+        }
+      ],
+      "tier_note": "Graham flour counts as whole wheat; plain wheat flour does not.",
+      "asked_as": [
+        "which frozen waffles should i buy",
+        "are frozen waffles worth buying",
+        "are toaster waffles worth buying"
+      ]
+    },
+    {
+      "id": "frozen_nuggets",
+      "title": "Frozen nuggets",
+      "aliases": [
+        "frozen chicken nuggets",
+        "chicken nuggets",
+        "frozen chicken tenders"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick frozen chicken nuggets?",
+      "decision": "Chicken nuggets that say white meat on the label.",
+      "why": "“White meat” means 100 percent light meat, and “mostly white meat” means 66 percent or more.",
+      "short_answer": "The label words set the light meat. “White meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. A plain “Chicken Nugget” is a solid piece of meat or poultry.",
+      "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/9/381.156",
+        "https://www.law.cornell.edu/cfr/text/9/381.166",
+        "https://www.law.cornell.edu/cfr/text/9/319.880",
+        "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
+        "https://www.law.cornell.edu/cfr/text/9/381.173",
+        "https://www.americastestkitchen.com/recipes/15619-tiny-chicken-tenders"
+      ],
+      "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
+      "cart_pick": "Nuggets labeled white meat",
+      "buying_tips": [
+        "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
+        "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
+        "Check for “white meat”, which means 100 percent light meat.",
+        "A nugget labeled “breaded” holds no more than 30 percent breading."
+      ],
+      "watch_out": [
+        "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
+      ],
+      "labels_decoded": [
+        {
+          "term": "White meat",
+          "meaning": "100 percent light meat."
+        },
+        {
+          "term": "Mostly white meat",
+          "meaning": "66 percent or more light meat."
+        },
+        {
+          "term": "Natural proportions",
+          "meaning": "50 to 65 percent light meat."
+        },
+        {
+          "term": "Breaded",
+          "meaning": "Batter and breading make up no more than 30 percent of the finished product."
+        },
+        {
+          "term": "Chopped and Formed",
+          "meaning": "The nugget is made from chopped and formed meat or poultry."
+        },
+        {
+          "term": "Ice glazed",
+          "meaning": "An ice glaze was used to set the breading."
+        },
+        {
+          "term": "Mechanically Separated Chicken",
+          "meaning": "Poultry with most of the bone removed by machine, in a paste-like form, with bone solids at most 1 percent."
+        }
+      ],
+      "tier_note": "Natural proportions promises less light meat than a white meat label.",
+      "asked_as": [
+        "which chicken nuggets should i buy",
+        "are frozen chicken nuggets worth buying",
+        "are frozen chicken tenders worth buying"
+      ]
+    },
+    {
+      "id": "frozen",
+      "title": "Frozen",
+      "aliases": [
+        "frozen aisle",
+        "frozen foods",
+        "frozen food aisle",
+        "freezer case"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you shop the frozen aisle?",
+      "decision": "Keep frozen at 0°F; then ask about pizza, meals or fries.",
+      "why": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food.",
+      "short_answer": "Buy only food frozen solid, and pick it up just before checkout. At home, keep the freezer at 0°F or below. For a closer look, ask about frozen pizza, meals or fries.",
+      "detail": "Food stored at 0°F or lower keeps its color, flavor and texture. Food held at 15°F may feel hard, but it is less solidly frozen than at 0°F. Over the same time, the 0°F food holds color, flavor and texture better. Freezing keeps quality but cannot improve flavor or texture. Processors flash-freeze food, which means freezing it very fast. Sellers keep it at 0°F or below to hold quality. Fast freezing makes tiny ice crystals. Slow freezing makes large ones that rupture cells, so moisture leaks out on thawing. Freezer burn shows as grayish-brown leathery spots where air reached the food. It can also show as white, dried-out patches that turn tough and dry. Folded foil can develop pinholes that let freezer burn in. Store shrink-film on meat breathes, so overwrap it to stop freezer burn. Freezer times and dates on frozen food mark quality only. “Do not refreeze” on a package is the packer’s quality advice. Quality can drop, and the packer cannot know home thawing conditions. Vermont’s rule has frozen display cases hold air at 0°F or lower. Each case there has a thermometer. A load line marks the top of the cold air at each end of the case. Cases sit away from door drafts, fans, lights and heaters. Thaw in the fridge, in cold water or in the microwave. Cooking from frozen takes about one and a half times as long.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+        "https://brunswick.ces.ncsu.edu/2022/07/freezing",
+        "https://brunswick.ces.ncsu.edu/2022/05/refreezing-foods/",
+        "https://www.extension.purdue.edu/extmedia/CFS/CFS-422-W.pdf",
+        "https://www.law.cornell.edu/regulations/vermont/20-014-Code-Vt-R-20-031-014-X"
+      ],
+      "kristy_take": "Freezing holds most of the quality food had when it went in, and never adds any. After the pick, handling is the shopper’s job.",
+      "cart_pick": "Packages frozen solid, picked up last",
+      "buying_tips": [
+        "Pick up frozen food just before checkout, and buy only food frozen solid.",
+        "Get it into the home freezer as soon as possible.",
+        "Keep the freezer at 0°F or below, and 5°F at most.",
+        "Ice cream that is not brick-hard means the freezer runs warm.",
+        "Label and date frozen food, and use the oldest first.",
+        "Cook or thaw by the label instructions."
+      ],
+      "watch_out": [
+        "Swinging freezer temperatures lose color, texture and flavor.",
+        "Refreezing loses some quality through moisture loss."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Do not refreeze",
+          "meaning": "The packer’s quality advice, since home thawing conditions are unknown."
+        },
+        {
+          "term": "Load line",
+          "meaning": "Under Vermont’s rule, the line marking the top of the cold air in a display case."
+        }
+      ],
+      "tier_note": "Food loses flavor and texture to freezer burn where air reached it.",
+      "asked_as": [
+        "which frozen foods should i buy",
+        "are frozen foods worth buying",
+        "which frozen aisle foods should i buy"
+      ]
     }
   ]
 }

@@ -56,7 +56,7 @@ const QUERIES = nonEmpty([
   ['honey', 'honey_adulteration'],
   ['maple syrup', 'maple_syrup'], // K21 admin ruling: pinned gap now covered by the maple_syrup card.
   ['hot dogs', 'hot_dogs'],
-  ['frozen pizza', 'miss'],
+  ['frozen pizza', 'frozen_pizza'], // K24: pinned gap now covered by the frozen_pizza card.
   ['baby food', 'miss'],
   ['kombucha', 'kombucha'], // K20 admin ruling: pinned gap now covered by the kombucha card.
 ], '48 weekly grocery queries', 48);
