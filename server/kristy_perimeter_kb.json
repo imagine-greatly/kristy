@@ -9666,6 +9666,394 @@
         "how do i pick a fermented food",
         "are fermented foods worth buying"
       ]
+    },
+    {
+      "id": "broth",
+      "title": "Broth",
+      "aliases": [
+        "broth",
+        "bone broth",
+        "chicken broth",
+        "beef broth",
+        "vegetable broth",
+        "chicken stock",
+        "beef stock"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick broth?",
+      "decision": "Broth is thin and light; bone broth simmers longer, runs thicker.",
+      "why": "Broth simmers meat a short time. Stock and bone broth simmer bones, and bone broth often simmers longer.",
+      "short_answer": "Broth is a thin, light liquid from meat simmered a short time. Stock and bone broth are simmered from bones. Bone broth is often simmered longer and comes out somewhat thicker. The three swap in for each other.",
+      "detail": "Regular broth is made by simmering meat with water, vegetables, herbs and spices for a short time. It is generally a thin liquid, light in color. Stock and bone broth are both made by simmering bones with vegetables, herbs and spices. Bone broth is often simmered longer, sometimes up to 24 hours, and comes out somewhat thicker. Commercial stock and broth are not very different in their ingredients, and many commercial broths list stock as an ingredient. The three can be used interchangeably. Sodium varies, and it is high unless the carton says low sodium or unsalted.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2025-05-16-bone-broth-hype-or-healthy",
+        "https://brunswick.ces.ncsu.edu/2023/03/stockbrothor-bone-brothwhats-the-difference",
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2015-04-02-broth-or-stock-whats-difference"
+      ],
+      "kristy_take": "Broth, stock and bone broth swap in for each other. Sodium is the read that differs.",
+      "cart_pick": "Low-sodium or unsalted broth",
+      "buying_tips": [
+        "Read the Nutrition Facts for sodium.",
+        "Look for low sodium or unsalted on the carton.",
+        "Pick bone broth or stock when a thicker liquid suits the dish."
+      ],
+      "watch_out": [
+        "Broth may have salt added, so a plain-looking carton can still run high in sodium."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Broth",
+          "meaning": "Meat simmered a short time, giving a thin, light liquid."
+        },
+        {
+          "term": "Stock",
+          "meaning": "Simmered from bones with vegetables, herbs and spices."
+        },
+        {
+          "term": "Bone broth",
+          "meaning": "Simmered from bones, often longer, and somewhat thicker than broth."
+        }
+      ],
+      "tier_note": "Sodium runs high unless the carton says low sodium or unsalted.",
+      "asked_as": [
+        "which broth should i buy",
+        "how do i pick a bone broth",
+        "is chicken broth worth buying"
+      ]
+    },
+    {
+      "id": "salt",
+      "title": "Salt",
+      "aliases": [
+        "salt",
+        "table salt",
+        "iodized salt",
+        "kosher salt",
+        "sea salt",
+        "flaky salt",
+        "pickling salt",
+        "canning salt",
+        "pink himalayan salt"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick salt?",
+      "decision": "Fine table salt or coarse kosher and sea salt: pick by grain.",
+      "why": "Crystal size changes how salt measures by volume. A salt without added iodide must say so on its label.",
+      "short_answer": "Table salt is fine-grained. Kosher salt is coarse, and sea salt usually has larger crystals. Different crystals do not measure the same by volume. Salt that is not iodized says “does not supply iodide” beside its name.",
+      "detail": "Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide.” The statement sits right after the name of the food. Iodide is the form of iodine added to iodized salt, and iodized salt is table salt with iodine added. An anticaking agent, an additive that keeps salt from caking, may be added to salt under 21 CFR 172.490. Kosher salt has a coarse texture. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. A third of a cup of kosher salt does not have the same density as a third of a cup of pickling salt. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/100.155",
+        "https://brunswick.ces.ncsu.edu/news/shaker-of-salt/",
+        "https://extension.umaine.edu/food-health/2024/07/18/salts/",
+        "https://extension.oregonstate.edu/ask-extension/featured/himalayan-pink-salt-safe-canning",
+        "https://www.law.cornell.edu/cfr/text/21/172.490"
+      ],
+      "kristy_take": "Grain is the choice. The iodide statement is the label read.",
+      "cart_pick": "Salt by grain: fine, coarse or flaky",
+      "buying_tips": [
+        "Pick table salt for fine grains, kosher or sea salt for coarse ones.",
+        "Pick pickling or canning salt for canning, since it has nothing added.",
+        "Pick flaky salt for sprinkling on top just before serving."
+      ],
+      "watch_out": [
+        "Curing salt, sometimes dyed pink and labeled “pink salt,” is not pink Himalayan salt.",
+        "Salts do not swap cup for cup, since crystal size changes the measure."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Iodized",
+          "meaning": "Table salt with iodine added."
+        },
+        {
+          "term": "Does not supply iodide",
+          "meaning": "The statement required on salt with no iodide added."
+        },
+        {
+          "term": "Pickling or canning salt",
+          "meaning": "Pure salt with nothing added."
+        }
+      ],
+      "tier_note": "A salt without iodide has to say so on its label.",
+      "asked_as": [
+        "which salt should i buy",
+        "is sea salt worth buying",
+        "is kosher salt worth buying"
+      ]
+    },
+    {
+      "id": "sugars",
+      "title": "Sugar",
+      "aliases": [
+        "sugar",
+        "white sugar",
+        "cane sugar",
+        "brown sugar",
+        "raw sugar",
+        "turbinado sugar",
+        "coconut sugar",
+        "granulated sugar"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick sugar?",
+      "decision": "Brown sugar is white sugar with molasses; pick by flavor.",
+      "why": "Sugar is crystallized from cane or beet juice, the same substance either way. Brown sugar adds molasses.",
+      "short_answer": "Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Light brown has less molasses than dark brown. Turbinado is a raw cane sugar, paler than brown sugar.",
+      "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/184.1854",
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2020-02-03-what-makes-brown-sugar-brown",
+        "https://extension.oregonstate.edu/food/preservation/sweeteners-nutritive-non-nutritive",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
+      ],
+      "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown.",
+      "cart_pick": "Plain sugar, white or brown",
+      "buying_tips": [
+        "Pick light or dark brown sugar; dark carries more molasses.",
+        "Read the added sugars line as a percent Daily Value on a plain sugar.",
+        "Keep brown sugar closed, since it hardens in open air."
+      ],
+      "watch_out": [
+        "Coconut sugar is made mostly of sucrose, like other sugar."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Includes Xg Added Sugars",
+          "meaning": "Not required on a single-ingredient sugar, which still shows a percent Daily Value."
+        },
+        {
+          "term": "†",
+          "meaning": "A symbol after the added sugars percent that leads to a footnote."
+        },
+        {
+          "term": "Turbinado",
+          "meaning": "Raw cane sugar with minimal refining."
+        }
+      ],
+      "tier_note": "Cane or beet is a preference, since the sugar is the same.",
+      "asked_as": [
+        "which sugar should i buy",
+        "is brown sugar worth buying",
+        "is coconut sugar worth buying"
+      ]
+    },
+    {
+      "id": "maple_syrup",
+      "title": "Maple syrup",
+      "aliases": [
+        "maple syrup",
+        "pure maple syrup",
+        "real maple syrup",
+        "grade a maple syrup",
+        "dark maple syrup"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick maple syrup?",
+      "decision": "Pure maple syrup; darker grades taste stronger.",
+      "why": "The name on the bottle is a standardized food name. Darker grades carry a stronger maple flavor.",
+      "short_answer": "Maple syrup is a standardized name. Table or pancake syrup is a different product with its own standard. Grade A runs from Golden to Very Dark. The darker the syrup, the stronger the maple flavor.",
+      "detail": "Under 21 CFR 168.140, the name of the food is “maple sirup,” and “syrup” is an allowed spelling. Table sirup, also sold as pancake or waffle sirup, falls under a separate standard, 21 CFR 168.180. Since 2015, producers grade by shared standards, and all consumer maple syrup is Grade A. Within Grade A, syrup is classed by color and taste: Golden, Amber, Dark and Very Dark. The flavor follows the color, from delicate to strong. Lighter classes are often poured onto food, and darker classes are often used for cooking. Under Vermont rules, “Vermont” appears with the grade on 100 percent pure maple syrup made entirely in the state.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/168.140",
+        "https://extension.unh.edu/blog/2022/03/making-grade-color-flavor-maple-syrup",
+        "https://libraries.uvm.edu/c.php?g=290518&p=1936103",
+        "https://www.law.cornell.edu/cfr/text/21/168.180",
+        "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
+      ],
+      "kristy_take": "The name settles the product. The grade color settles the flavor.",
+      "cart_pick": "Grade A maple syrup, color by taste",
+      "buying_tips": [
+        "Pick Golden or Amber for a delicate taste, Dark or Very Dark for a strong one.",
+        "Pick a darker grade for cooking.",
+        "Check that the name says maple syrup, not table or pancake syrup."
+      ],
+      "watch_out": [
+        "Table or pancake syrup is a different product from maple syrup."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Grade A",
+          "meaning": "All consumer maple syrup, classed within by color and taste."
+        },
+        {
+          "term": "Very Dark",
+          "meaning": "The darkest grade, with the strongest maple flavor."
+        },
+        {
+          "term": "Table sirup",
+          "meaning": "A separate standard; when maple flavor is claimed, maple sirup is at least 10 percent of it."
+        }
+      ],
+      "tier_note": "The name on the front is what the maple standard governs.",
+      "asked_as": [
+        "which maple syrup should i buy",
+        "how do i pick a maple syrup",
+        "is pure maple syrup worth buying"
+      ]
+    },
+    {
+      "id": "cooking_oils",
+      "title": "Cooking oils",
+      "aliases": [
+        "cooking oil",
+        "vegetable oil",
+        "canola oil",
+        "peanut oil",
+        "sunflower oil",
+        "safflower oil",
+        "sesame oil"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a cooking oil?",
+      "decision": "Refined oil for high heat; unrefined oil for its flavor.",
+      "why": "Refining leaves an oil neutral and steadier under long high heat. Unrefined oil keeps the flavor of its seed.",
+      "short_answer": "Store oils are mostly refined, bleached and deodorized, so they taste neutral. Minimally processed pressed oils keep the flavor of the seed. Refined oils stand up longer to deep-frying heat. Pick the oil by the heat it will meet.",
+      "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. RBD oils are designed to stand up longer to the long high heat of deep-fat frying. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use. Unrefined oils such as sesame carry flavors that can lift or clash with a dish.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://extension.psu.edu/processing-edible-oils",
+        "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
+        "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/"
+      ],
+      "kristy_take": "Heat use picks the oil. The label names the oil and how it was processed.",
+      "cart_pick": "An oil matched to its heat use",
+      "buying_tips": [
+        "Read the label for the oil’s name first.",
+        "Look for refined or unrefined on the bottle.",
+        "Pick an unrefined oil when its flavor belongs in the dish."
+      ],
+      "watch_out": [
+        "Oil that starts smoking in the pan is no longer fit to use."
+      ],
+      "labels_decoded": [
+        {
+          "term": "RBD",
+          "meaning": "Refined, bleached and deodorized, the usual store oil."
+        },
+        {
+          "term": "Smoke point",
+          "meaning": "The temperature at which an oil begins to smoke and burn."
+        }
+      ],
+      "tier_note": "The bottle names the oil, and the processing sets its heat use.",
+      "asked_as": [
+        "which vegetable oil should i buy",
+        "is sesame oil worth buying",
+        "how do i pick a peanut oil"
+      ]
+    },
+    {
+      "id": "lard_tallow",
+      "title": "Lard and tallow",
+      "aliases": [
+        "lard",
+        "leaf lard",
+        "tallow",
+        "beef tallow"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick lard or tallow?",
+      "decision": "Plain lard or tallow, with nothing added to harden it.",
+      "why": "Lard may be hardened with lard stearin or hydrogenated lard, and the label must say so.",
+      "short_answer": "Lard is pork fat, and leaf lard comes from the abdominal fat. Tallow is beef fat. A lard hardened with lard stearin or hydrogenated lard must say so on its label.",
+      "detail": "Under 9 CFR 319.702, lard is the fat rendered from clean and sound edible tissues from swine. Rendered fat is fat cooked out of the tissue. “Leaf lard” is lard from fresh leaf, or abdominal, fat. Lard may be hardened with lard stearin or hydrogenated lard, two lard-based hardeners, and the label must state it. Lard is white when solid. Tallow is the rendered fat from a beef animal, and no federal standard for it is cited here. Rendered animal fat, or a mix containing it, may contain no added water under 9 CFR 319.703. Shortening made from meat fats and vegetable oils is a different product, named for the fats in it under 9 CFR 319.701.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/9/319.702",
+        "https://animalscience.unl.edu/meats-terms-glossary/",
+        "https://www.law.cornell.edu/cfr/text/9/319.701",
+        "https://www.law.cornell.edu/cfr/text/9/319.703"
+      ],
+      "kristy_take": "Lard and tallow are one fat each. Anything added to firm them shows on the label.",
+      "cart_pick": "Lard or tallow with one fat listed",
+      "buying_tips": [
+        "Pick leaf lard for lard from the abdominal fat.",
+        "Read the ingredients for one fat: pork for lard, beef for tallow.",
+        "Check that a tub called shortening is not taken for plain lard."
+      ],
+      "watch_out": [
+        "“Shortening prepared with meat fats and vegetable oils” is a mixed fat, not plain lard."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Leaf lard",
+          "meaning": "Lard from fresh leaf, or abdominal, fat."
+        },
+        {
+          "term": "Hydrogenated lard",
+          "meaning": "A hardener that must be stated on a lard label."
+        },
+        {
+          "term": "Mixed fat shortening",
+          "meaning": "Meat fats and vegetable oils together, named in order of predominance."
+        }
+      ],
+      "tier_note": "Plain lard is a craft pick, and any hardener has to be named on the label.",
+      "asked_as": [
+        "is lard worth buying",
+        "is beef tallow worth buying",
+        "how do i pick a leaf lard"
+      ]
+    },
+    {
+      "id": "cocoa",
+      "title": "Cocoa powder",
+      "aliases": [
+        "cocoa",
+        "cocoa powder",
+        "unsweetened cocoa",
+        "dutch process cocoa",
+        "natural cocoa",
+        "cacao nibs",
+        "cocoa nibs"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick cocoa powder?",
+      "decision": "Natural cocoa or Dutch cocoa, matched to the leavener the recipe names.",
+      "why": "Natural cocoa is acidic and Dutch cocoa is not, so recipes pair each with a different leavener.",
+      "short_answer": "Natural cocoa, often sold as unsweetened cocoa, is acidic. Dutch cocoa is treated to neutralize that acid. A recipe with baking soda alone needs natural cocoa. Use the cocoa the recipe names.",
+      "detail": "Under 21 CFR 163, cocoa is pulverized from ground cacao nibs after part of the cacao fat is removed. Breakfast cocoa holds not less than 22 percent cacao fat. Cocoa holds less than 22 percent but not less than 10 percent, and lowfat cocoa less than 10 percent. An alkali is a base that neutralizes acid. When cocoa is processed with one, its name must carry “Processed with alkali” or the alkali’s name. Natural cocoa has a pH of 5 to 6, and Dutch-processed cocoa about 7. Baking soda needs an acid to rise, which natural cocoa supplies. Cacao nibs are cleaned, dried and cracked cacao beans with the shell removed.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/163.110",
+        "https://www.law.cornell.edu/cfr/text/21/163.112",
+        "https://www.law.cornell.edu/cfr/text/21/163.113",
+        "https://www.law.cornell.edu/cfr/text/21/163.114",
+        "https://blogs.extension.iastate.edu/answerline/2025/02/04/natural-vs-dutch-process-cocoa/"
+      ],
+      "kristy_take": "The recipe’s leavener picks the cocoa. The label says which one is in the tin.",
+      "cart_pick": "The cocoa type the recipe calls for",
+      "buying_tips": [
+        "Pick natural cocoa when the recipe leans on baking soda alone.",
+        "Pick Dutch cocoa when the recipe uses only baking powder.",
+        "Pick either for hot cocoa, fudge sauce or frosting."
+      ],
+      "watch_out": [
+        "Swapping one cocoa for the other changes the rise unless the leavener changes too."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Processed with alkali",
+          "meaning": "Dutch cocoa, with its acid neutralized."
+        },
+        {
+          "term": "Unsweetened cocoa",
+          "meaning": "Often another name for natural cocoa."
+        },
+        {
+          "term": "Cacao nibs",
+          "meaning": "Cracked cacao beans with the shell removed."
+        }
+      ],
+      "tier_note": "Alkali processing is a label fact, never a quality ranking.",
+      "asked_as": [
+        "which cocoa powder should i buy",
+        "how do i pick a cocoa powder",
+        "is dutch process cocoa worth buying"
+      ]
     }
   ]
 }

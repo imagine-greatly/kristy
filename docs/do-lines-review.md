@@ -194,6 +194,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `tempeh` | bulk_pantry | Tempeh that is a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
 | `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated or vinegar-made. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
+| `broth` | bulk_pantry | Broth is thin and light; bone broth simmers longer, runs thicker. | Read the Nutrition Facts for sodium, which varies from carton to carton. | — |
+| `salt` | bulk_pantry | Fine table salt or coarse kosher and sea salt: pick by grain. | Read the label for “does not supply iodide” beside the salt’s name. | — |
+| `sugars` | bulk_pantry | Brown sugar is white sugar with molasses; pick by flavor. | Read the ingredients for cane or beet; both make the same sugar. | — |
+| `maple_syrup` | bulk_pantry | Pure maple syrup; darker grades taste stronger. | Read the front for the standard name, not table or pancake syrup. | — |
+| `cooking_oils` | bulk_pantry | Refined oil for high heat; unrefined oil for its flavor. | Read the label for which oil is in the bottle, then its processing. | — |
+| `lard_tallow` | bulk_pantry | Plain lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
+| `cocoa` | bulk_pantry | Natural cocoa or Dutch cocoa, matched to the leavener the recipe names. | Read the label for “processed with alkali” after the name. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
