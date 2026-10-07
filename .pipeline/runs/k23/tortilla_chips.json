@@ -1,0 +1,55 @@
+{
+  "id": "tortilla_chips",
+  "title": "Tortilla chips",
+  "aliases": [
+    "tortilla chips",
+    "corn tortilla chips",
+    "restaurant style tortilla chips"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick tortilla chips?",
+  "decision": "Tortilla chips from corn cooked the traditional way, in limewater.",
+  "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
+  "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
+  "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Nixtamalization",
+    "https://www.fao.org/4/t0395e/T0395E05.htm",
+    "https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul",
+    "https://sporked.com/article/what-is-masa/",
+    "https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/",
+    "https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips"
+  ],
+  "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
+  "cart_pick": "Tortilla chips with masa listed",
+  "buying_tips": [
+    "Read the ingredients for masa or corn masa.",
+    "A trace of lime on the list points to the traditional cooking step.",
+    "“Restaurant-style” chips are tortillas cut into wedges and fried."
+  ],
+  "watch_out": [
+    "Some corn chips are made from corn that was never cooked in lime."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Masa",
+      "meaning": "A dough ground from corn that was cooked in an alkaline solution."
+    },
+    {
+      "term": "Lime",
+      "meaning": "On a chip list, the alkali the corn was cooked in, not the citrus fruit."
+    },
+    {
+      "term": "Corn chips",
+      "meaning": "A name sometimes used for chips made from corn that was never lime-cooked."
+    }
+  ],
+  "tier_note": "Masa on the ingredients means the corn was cooked first.",
+  "asked_as": [
+    "which tortilla chips should i buy",
+    "are tortilla chips worth buying",
+    "are restaurant style tortilla chips worth buying"
+  ],
+  "_do_line": "Read the ingredients for masa; plain cornmeal makes a corn chip instead."
+}

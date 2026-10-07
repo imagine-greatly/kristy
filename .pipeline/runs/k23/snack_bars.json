@@ -1,0 +1,56 @@
+{
+  "id": "snack_bars",
+  "title": "Granola and snack bars",
+  "aliases": [
+    "granola bar",
+    "granola bars",
+    "snack bar",
+    "snack bars",
+    "cereal bar"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a granola or snack bar?",
+  "decision": "Bars with oats or a whole grain first on the list.",
+  "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
+  "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
+  "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.law.cornell.edu/cfr/text/21/101.4",
+    "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+    "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+    "https://en.wikipedia.org/wiki/Granola"
+  ],
+  "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
+  "cart_pick": "Bars with oats or whole grain first",
+  "buying_tips": [
+    "Read the first ingredients; oats or another whole grain should lead.",
+    "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
+    "Many bars carry sugar and high fructose corn syrup, and the list shows which."
+  ],
+  "watch_out": [
+    "Enriched refined grains listed first mean refined grain leads the bar, not oats."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Added Sugars",
+      "meaning": "Sugars added in processing, sugars from syrups and honey, and sugars from concentrated fruit or vegetable juices."
+    },
+    {
+      "term": "Includes",
+      "meaning": "Placed before Added Sugars, it means those grams sit inside Total Sugars."
+    },
+    {
+      "term": "Rolled oats",
+      "meaning": "Oats flattened or steamed; they count as a whole grain."
+    }
+  ],
+  "tier_note": "The ingredients name both outright, whatever the wrapper front says.",
+  "asked_as": [
+    "which granola bars should i buy",
+    "how do i pick a granola bar",
+    "are snack bars worth buying"
+  ],
+  "_do_line": "Read the ingredients for high fructose corn syrup and hydrogenated oils."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "pretzels",
+  "title": "Pretzels",
+  "aliases": [
+    "pretzels",
+    "hard pretzels",
+    "pretzel twists",
+    "pretzel sticks"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick pretzels?",
+  "decision": "Pretzels dipped in lye before baking: the traditional German way.",
+  "why": "A lye dip gives traditional German pretzels their salty bite, chew and smooth mahogany crust.",
+  "short_answer": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked. Baking neutralizes the lye. The bath gives the chew and the glossy brown crust. A baking soda bath does the same job, milder.",
+  "detail": "Lye is sodium hydroxide, the strongest alkali a baker uses. On the pH scale, a measure of how strong an alkali is, lye reaches 14. A baking soda solution, sodium bicarbonate, sits at roughly 8.3, so it reacts less. Its pretzels come out lighter in color and flavor. The alkaline surface speeds browning, the Maillard reaction that shapes how the crust forms and tastes. A hard pretzel bakes about twice as long as a soft one. The German name, Laugenbrezel, means “lye pretzel.”",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have",
+    "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
+  ],
+  "kristy_take": "The story goes that monks in the Middle Ages twisted dough scraps into pretzels. German bakers still dip the dough in lye for the deepest color.",
+  "cart_pick": "Lye-dipped pretzels, deep brown",
+  "buying_tips": [
+    "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
+    "A paler pretzel can point to the milder baking soda bath.",
+    "Look for a crust that shines like polished mahogany."
+  ],
+  "watch_out": [
+    "Without an alkaline bath, a pretzel is just a tanned twist of dough."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Lye",
+      "meaning": "The alkaline bath of traditional pretzels; food-grade, diluted, and neutralized by baking."
+    },
+    {
+      "term": "Baking soda bath",
+      "meaning": "A milder alkaline bath that does the same job, with a lighter color."
+    }
+  ],
+  "tier_note": "A glossy, deep brown crust is the craft mark of the bath.",
+  "asked_as": [
+    "which pretzels should i buy",
+    "are hard pretzels worth buying",
+    "are pretzel sticks worth buying"
+  ],
+  "_do_line": "Check for a deep brown, glossy crust; the alkaline bath gives it."
+}
