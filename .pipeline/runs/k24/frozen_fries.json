@@ -1,0 +1,54 @@
+{
+  "id": "frozen_fries",
+  "title": "Frozen fries",
+  "aliases": ["frozen fries", "frozen french fries", "frozen hash browns"],
+  "category": "bulk_pantry",
+  "question": "How do you pick frozen fries?",
+  "decision": "Frozen fries of potatoes, oil and salt, with little else listed.",
+  "why": "At home, a hash brown takes potatoes, oil, salt and pepper. The bag’s list shows what else is in it.",
+  "short_answer": "Read the ingredient list on the bag. At home, a hash brown takes potatoes, oil, salt and pepper. Home fries take starchy potatoes and salt. Compare bags by what they list beyond those.",
+  "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.ams.usda.gov/sites/default/files/media/Frozen_French_Fried_Potatoes_Standard%5B1%5D.pdf",
+    "https://www.wgbh.org/news/2016-03-24/fry-and-fry-again-the-science-secrets-to-the-double-fry",
+    "https://patents.google.com/patent/US4254153",
+    "https://www.recipetineats.com/french-fries/",
+    "https://www.crunchycreamysweet.com/hash-browns-recipe/",
+    "https://extension.illinois.edu/sites/default/files/2024-12/air_fryer.pdf",
+    "https://brunswick.ces.ncsu.edu/2022/07/freezing"
+  ],
+  "kristy_take": "A short list of potatoes, oil and salt is the standard here. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
+  "cart_pick": "Fries listing potatoes, oil and salt",
+  "buying_tips": [
+    "Read the bag’s ingredient list for potatoes, oil and salt.",
+    "Compare bags by what each one lists beyond potatoes, oil and salt.",
+    "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
+    "Do not overcrowd the air fryer basket, so the fries cook evenly.",
+    "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%."
+  ],
+  "watch_out": [
+    "Fried foods frozen at home may lose their crispness."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Frozen french fried potatoes",
+      "meaning": "The grade standard’s name: mature white potatoes, deep-fried or blanched in fat or oil, then frozen."
+    },
+    {
+      "term": "U.S. Grade A",
+      "meaning": "Also “U.S. Fancy.” Good flavor, color and texture, practically uniform size, at least 90 points."
+    },
+    {
+      "term": "U.S. Grade B",
+      "meaning": "Also “U.S. Extra Standard.” Reasonably good on each count, at least 80 points. Grading is voluntary."
+    }
+  ],
+  "tier_note": "Potatoes, oil and salt make the whole home recipe.",
+  "asked_as": [
+    "which frozen fries should i buy",
+    "are frozen french fries worth buying",
+    "are frozen hash browns worth buying"
+  ],
+  "_do_line": "Read the ingredients for anything a home recipe would not use."
+}
