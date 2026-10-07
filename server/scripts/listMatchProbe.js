@@ -100,16 +100,30 @@ if (uIdx > -1) {
   const carried = [];
   const gaps = [];
   const wrongs = [];
+  const missing = [];
+  let hasWords = false;
+  const attachId = (name) => {
+    const r = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+    return r.cardSlug || r.pickId || null;
+  };
   for (const u of universe) {
-    const row = attachCards({ items: [{ name: u.item, source: 'user' }] }, { log: false }).items[0];
-    const got = row.cardSlug || row.pickId || null;
+    let got;
+    if (Array.isArray(u.list_words) && u.list_words.length) {
+      hasWords = true;
+      let all = true;
+      for (const w of u.list_words) {
+        const id = attachId(w);
+        if (!id) { all = false; missing.push(`${u.item}: ${w}`); } else if (u.expect && id !== u.expect) (all = false), wrongs.push(`${u.item} [${w}]: expected ${u.expect}, got ${id}`);
+      }
+      got = all ? u.expect || 'list_words' : null;
+    } else got = attachId(u.item);
     if (u.mechanism === 'carried') { carried.push({ item: u.item, got }); continue; }
     const s = sections.get(u.section) || { covered: 0, total: 0 };
     s.total += 1;
     if (got) s.covered += 1; else gaps.push(`${u.section}: ${u.item}`);
     sections.set(u.section, s);
     if (u.expect && got && got !== u.expect) wrongs.push(`${u.item}: expected ${u.expect}, got ${got}`);
-    if (u.expect) console.log(`  expect ${pad(u.item, 36)} ${u.expect} -> ${got || '(none)'}`);
+    if (u.expect && !u.list_words) console.log(`  expect ${pad(u.item, 36)} ${u.expect} -> ${got || '(none)'}`);
   }
   let cov = 0;
   let tot = 0;
@@ -122,6 +136,8 @@ if (uIdx > -1) {
   console.log(`carried (not gaps): ${carried.length}, of which attached something: ${carried.filter((c) => c.got).length}`);
   console.log(`\nUNCOVERED (${gaps.length}):`);
   for (const g of gaps) console.log(`  ${g}`);
+  if (hasWords) { console.log(`\nMISSING ${missing.length}`); for (const m of missing) console.log(`  ${m}`); }
+  if (process.argv.includes('--strict') && missing.length && !wrongs.length) process.exit(1);
   if (wrongs.length) { console.error(`\n${wrongs.length} WRONG:`); for (const w of wrongs) console.error(`  ✗ ${w}`); process.exit(1); }
   process.exit(0);
 }
