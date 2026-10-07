@@ -23,8 +23,8 @@ const CARDS = nonEmpty(['broth', 'salt', 'sugars', 'maple_syrup', 'cooking_oils'
 const NEW = CARDS;
 const BARE = nonEmpty(Object.entries({
   'broth': 'broth', 'bone broth': 'broth', 'chicken broth': 'broth', 'beef broth': 'broth', 'vegetable broth': 'broth', 'chicken stock': 'broth', 'beef stock': 'broth',
-  'salt': 'salt', 'table salt': 'salt', 'iodized salt': 'salt', 'kosher salt': 'salt', 'sea salt': 'salt', 'flaky salt': 'salt', 'pickling salt': 'salt', 'canning salt': 'salt', 'pink himalayan salt': 'salt',
-  'sugar': 'sugars', 'white sugar': 'sugars', 'cane sugar': 'sugars', 'brown sugar': 'sugars', 'raw sugar': 'sugars', 'turbinado sugar': 'sugars', 'coconut sugar': 'sugars', 'granulated sugar': 'sugars',
+  'table salt': 'salt', 'iodized salt': 'salt', 'kosher salt': 'salt', 'sea salt': 'salt', 'flaky salt': 'salt', 'pickling salt': 'salt', 'canning salt': 'salt', 'pink himalayan salt': 'salt',
+  'white sugar': 'sugars', 'cane sugar': 'sugars', 'brown sugar': 'sugars', 'raw sugar': 'sugars', 'turbinado sugar': 'sugars', 'coconut sugar': 'sugars', 'granulated sugar': 'sugars',
   'maple syrup': 'maple_syrup', 'pure maple syrup': 'maple_syrup', 'real maple syrup': 'maple_syrup', 'grade a maple syrup': 'maple_syrup', 'dark maple syrup': 'maple_syrup',
   'cooking oil': 'cooking_oils', 'vegetable oil': 'cooking_oils', 'canola oil': 'cooking_oils', 'peanut oil': 'cooking_oils', 'sunflower oil': 'cooking_oils', 'safflower oil': 'cooking_oils', 'sesame oil': 'cooking_oils',
   'lard': 'lard_tallow', 'leaf lard': 'lard_tallow', 'tallow': 'lard_tallow', 'beef tallow': 'lard_tallow',
@@ -34,8 +34,8 @@ const BARE = nonEmpty(Object.entries({
   'nutritional yeast': 'nutritional_yeast', 'nooch': 'nutritional_yeast', 'yeast flakes': 'nutritional_yeast',
   'canned coconut milk': 'canned_coconut_milk', 'coconut milk can': 'canned_coconut_milk', 'can of coconut milk': 'canned_coconut_milk',
   'dried herbs': 'dried_herbs', 'dried oregano': 'dried_herbs', 'dried basil': 'dried_herbs', 'dried thyme': 'dried_herbs', 'dried parsley': 'dried_herbs', 'dried rosemary': 'dried_herbs',
-  'tea': 'tea', 'black tea': 'tea', 'green tea': 'tea', 'oolong tea': 'tea', 'white tea': 'tea', 'loose leaf tea': 'tea', 'tea bags': 'tea', 'decaf tea': 'tea',
-}), 'K21 bare rows', 81);
+  'black tea': 'tea', 'green tea': 'tea', 'oolong tea': 'tea', 'white tea': 'tea', 'loose leaf tea': 'tea', 'tea bags': 'tea', 'decaf tea': 'tea',
+}), 'K21 bare rows', 78);
 const KEEPS = nonEmpty([
   ['olive oil', 'olive_oil_grades'], ['extra virgin olive oil', 'olive_oil_grades'], ['evoo', 'olive_oil_grades'],
   ['refined oil', null], ['unrefined oil', null], ['hexane', null], ['virgin coconut oil', null],

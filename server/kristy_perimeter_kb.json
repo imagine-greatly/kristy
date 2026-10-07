@@ -9726,7 +9726,6 @@
       "id": "salt",
       "title": "Salt",
       "aliases": [
-        "salt",
         "table salt",
         "iodized salt",
         "kosher salt",
@@ -9777,7 +9776,7 @@
       ],
       "tier_note": "A salt without iodide has to say so on its label.",
       "asked_as": [
-        "which salt should i buy",
+        "which table salt should i buy",
         "is sea salt worth buying",
         "is kosher salt worth buying"
       ]
@@ -9786,7 +9785,6 @@
       "id": "sugars",
       "title": "Sugar",
       "aliases": [
-        "sugar",
         "white sugar",
         "cane sugar",
         "brown sugar",
@@ -9834,7 +9832,7 @@
       ],
       "tier_note": "Cane or beet is a preference, since the sugar is the same.",
       "asked_as": [
-        "which sugar should i buy",
+        "which white sugar should i buy",
         "is brown sugar worth buying",
         "is coconut sugar worth buying"
       ]
@@ -9904,7 +9902,8 @@
         "peanut oil",
         "sunflower oil",
         "safflower oil",
-        "sesame oil"
+        "sesame oil",
+        "is sesame oil worth buying"
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a cooking oil?",
@@ -9952,7 +9951,8 @@
         "lard",
         "leaf lard",
         "tallow",
-        "beef tallow"
+        "beef tallow",
+        "is lard worth buying"
       ],
       "category": "bulk_pantry",
       "question": "How do you pick lard or tallow?",
