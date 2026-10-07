@@ -10054,6 +10054,306 @@
         "how do i pick a cocoa powder",
         "is dutch process cocoa worth buying"
       ]
+    },
+    {
+      "id": "seeds",
+      "title": "Chia, flax and hemp seeds",
+      "aliases": [
+        "chia seeds",
+        "flax seeds",
+        "flaxseed",
+        "ground flaxseed",
+        "hemp seeds",
+        "hemp hearts",
+        "sunflower seeds",
+        "pumpkin seeds"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick chia, flax and hemp seeds?",
+      "decision": "Whole chia, hulled hemp, and flax bought ground or ground at home.",
+      "why": "Flax gets ground before use. Hulled hemp needs no grinding, and chia works whole or ground.",
+      "short_answer": "Flax is ground at home in a coffee grinder or bought already ground. Hulled hemp seeds need no grinding. Chia is used whole or ground, and it turns to gel when soaked.",
+      "detail": "Flaxseed contains fat, so it can turn rancid over time, and opened flax belongs in the refrigerator. Seeds stored at room temperature for long periods turn rancid, so long keeping means the refrigerator or freezer. Shelled hemp seeds, also called hulled, do not need grinding before eating, unlike flax. A salty sunflower seed gets its salt from a soak in salt water before drying.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2024-04-12-learn-how-reap-nutritional-benefits-flaxseed",
+        "https://extension.illinois.edu/blogs/live-well-eat-well/2014-05-27-ch-ch-ch-chia",
+        "https://extension.oregonstate.edu/catalog/sp-50-534-drying-roasting-seeds",
+        "https://extension.illinois.edu/blogs/illinois-nutrition-edition/2014-11-05-kitchen-hemp-seeds"
+      ],
+      "kristy_take": "Flax is the one seed here that wants a grinder. Chia and hulled hemp go straight from the bag.",
+      "cart_pick": "Ground flaxseed, kept cold once opened",
+      "buying_tips": [
+        "Buy flax already ground, or whole for grinding at home.",
+        "Pick hulled hemp seeds when no grinding is wanted.",
+        "Pick chia whole or ground; soaked chia turns to gel."
+      ],
+      "watch_out": [
+        "Opened flax left warm can turn rancid, so it goes in the refrigerator.",
+        "Seeds kept at room temperature for long periods turn rancid."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Hulled",
+          "meaning": "Shelled hemp seeds, which need no grinding."
+        },
+        {
+          "term": "Ground flaxseed",
+          "meaning": "Flax already ground, so no grinder is needed."
+        }
+      ],
+      "tier_note": "Keeping opened flax cold is a freshness habit, never a safety rule.",
+      "asked_as": [
+        "which chia seeds should i buy",
+        "are hemp seeds worth buying",
+        "is ground flaxseed worth buying"
+      ]
+    },
+    {
+      "id": "dried_fruit",
+      "title": "Dried fruit",
+      "aliases": [
+        "dried fruit",
+        "raisins",
+        "dried apricots",
+        "dried cranberries",
+        "prunes",
+        "dried mango"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick dried fruit?",
+      "decision": "Dried fruit with the fruit alone on the ingredient list.",
+      "why": "A preservative that stops browning must be declared, and sweetened cranberries show added sugars.",
+      "short_answer": "Fruit alone is the plain pick. Some dried fruit carries a preservative that stops browning, and it has to be declared. Cranberries are tart, so makers sometimes add sugar to dried ones.",
+      "detail": "Sulfites, such as sulfur dioxide and sodium bisulfite, are preservatives that stop browning in fruit. Under 21 CFR 101.100, a sulfiting agent at 10 parts per million (ppm) or more in the finished food must be declared. Dried fruit appears on the lists of foods that carry sulfites. Cranberries are a naturally tart fruit, and makers sometimes add sugar to them. Sweetened dried cranberries show it on the added sugars line.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.100",
+        "https://farrp.unl.edu/farrp-resources/regulatory/sulfites-usa/",
+        "https://ask.ifas.ufl.edu/publication/FY731",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
+      ],
+      "kristy_take": "A bag that is just fruit has a one-word list. Anything longer names what joined it.",
+      "cart_pick": "Dried fruit with one ingredient",
+      "buying_tips": [
+        "Pick a bag whose list names only the fruit.",
+        "Expect added sugar on dried cranberries, since the fruit is tart.",
+        "Compare two bags of the same fruit by their lists."
+      ],
+      "watch_out": [
+        "Sweetened dried cranberries carry an added sugars figure on the Nutrition Facts."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sulfur dioxide or sodium bisulfite",
+          "meaning": "Sulfiting agents, declared at 10 parts per million or more."
+        },
+        {
+          "term": "“†” after added sugars",
+          "meaning": "Points to a statement elsewhere on certain sweetened cranberry products."
+        }
+      ],
+      "tier_note": "Fruit alone on the list is a craft preference, read from the ingredients, never a safety ranking.",
+      "asked_as": [
+        "which dried fruit should i buy",
+        "how do i pick a dried fruit",
+        "are dried apricots worth buying"
+      ]
+    },
+    {
+      "id": "nutritional_yeast",
+      "title": "Nutritional yeast",
+      "aliases": [
+        "nutritional yeast",
+        "nooch",
+        "yeast flakes"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick nutritional yeast?",
+      "decision": "Fortified or unfortified flakes are both inactive dried yeast.",
+      "why": "The yeast is grown as food, then heated and dried, so it is inactive either way.",
+      "short_answer": "Nutritional yeast is grown as food, then heated and dried, so it is inactive. Fortified yeast has vitamins added, and the ingredient list names them. Unfortified has none added. Fortified is the more common type.",
+      "detail": "Nutritional yeast is Saccharomyces cerevisiae, the same species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, meaning killed, then washed, dried and crumbled. Under 21 CFR 172.896, dried Saccharomyces cerevisiae may be used in food.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/172.896",
+        "https://www.healthline.com/nutrition/nutritional-yeast"
+      ],
+      "kristy_take": "Both kinds are the same inactive yeast. The ingredient list shows whether vitamins went in.",
+      "cart_pick": "Nutritional yeast flakes, either type",
+      "buying_tips": [
+        "Read the ingredient list to tell fortified from unfortified.",
+        "Pick flakes, granules or powder by how it will be used.",
+        "Look in the spice aisle or the bulk bins."
+      ],
+      "watch_out": [
+        "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Fortified",
+          "meaning": "Vitamins added during making, named in the ingredient list."
+        },
+        {
+          "term": "Unfortified",
+          "meaning": "No added vitamins, only what the yeast made as it grew."
+        }
+      ],
+      "tier_note": "Added vitamins are a label fact read from the ingredients, never a ranking.",
+      "asked_as": [
+        "which nutritional yeast should i buy",
+        "how do i pick a nutritional yeast",
+        "is nutritional yeast worth buying"
+      ]
+    },
+    {
+      "id": "canned_coconut_milk",
+      "title": "Canned coconut milk",
+      "aliases": [
+        "canned coconut milk",
+        "coconut milk can",
+        "can of coconut milk"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick canned coconut milk?",
+      "decision": "Canned coconut milk, read for what is added beyond coconut.",
+      "why": "Many cans add a gum such as guar gum, which thickens the milk and holds it steady.",
+      "short_answer": "Many cans of coconut milk add a gum such as guar gum. Guar gum is used in food to thicken and to hold a texture steady. The ingredient list shows anything added beyond coconut.",
+      "detail": "Under 21 CFR 184.1339, guar gum comes from the seed of the guar plant. Its listed uses in food include stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. Many canned coconut milks contain emulsifiers and stabilizers.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/184.1339",
+        "https://www.americastestkitchen.com/articles/8108-coconut-cream-vs-coconut-milk"
+      ],
+      "kristy_take": "The ingredient list shows whether the can holds coconut alone or coconut plus a gum.",
+      "cart_pick": "Canned coconut milk with a short list",
+      "buying_tips": [
+        "Read the ingredients for guar gum or another gum.",
+        "Compare two cans by how much the list holds beyond coconut.",
+        "Expect a gum on many cans, added to thicken the milk."
+      ],
+      "watch_out": [
+        "The carton coconut milk drink is a different product, covered on its own card."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Guar gum",
+          "meaning": "A gum from the guar seed, used to thicken and steady a texture."
+        }
+      ],
+      "tier_note": "A gum on the ingredients is a texture choice by the maker, never a ranking.",
+      "asked_as": [
+        "which canned coconut milk should i buy",
+        "how do i pick a canned coconut milk",
+        "is canned coconut milk worth buying"
+      ]
+    },
+    {
+      "id": "dried_herbs",
+      "title": "Dried herbs",
+      "aliases": [
+        "dried herbs",
+        "dried oregano",
+        "dried basil",
+        "dried thyme",
+        "dried parsley",
+        "dried rosemary"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick dried herbs?",
+      "decision": "One herb by name, or a blend whose list may say “spice”.",
+      "why": "Herbs such as basil and oregano count as spices on a label, so a blend may just say spice.",
+      "short_answer": "Basil, oregano, parsley, rosemary and thyme count as spices for labeling. A blend may list them as “spice” instead of by name. Irradiated herbs carry a logo and a statement.",
+      "detail": "Under 21 CFR 101.22, basil, marjoram, oregano, parsley, rosemary, sage, tarragon and thyme are listed as spices. A spice may be declared on the list simply as “spice”. Spices that also color, such as paprika, are declared as “spice and coloring” unless named. Under 21 CFR 101.4, ingredients appear in descending order of predominance. Irradiation is treatment of food with radiation. Under 21 CFR 179.26, an irradiated retail food carries a logo with “Treated with radiation” or “Treated by irradiation”.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.22",
+        "https://www.law.cornell.edu/cfr/text/21/179.26",
+        "https://www.law.cornell.edu/cfr/text/21/101.4"
+      ],
+      "kristy_take": "A blend’s list can say “spice” where a single-herb jar names the herb.",
+      "cart_pick": "A jar labeled with the herb’s own name",
+      "buying_tips": [
+        "Pick a single herb when the name on the jar matters.",
+        "Read a blend’s list for “spice” standing in for herb names.",
+        "Look for “spice and coloring” where a spice also adds color."
+      ],
+      "watch_out": [
+        "“Spice” on a list can cover several herbs without naming any of them."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Spice",
+          "meaning": "May stand for herbs or spices the list does not name."
+        },
+        {
+          "term": "Spice and coloring",
+          "meaning": "A spice that also adds color, such as paprika."
+        },
+        {
+          "term": "Treated with radiation",
+          "meaning": "Required wording, with a logo, on irradiated retail food."
+        }
+      ],
+      "tier_note": "An irradiated herb has to carry the logo on its label.",
+      "asked_as": [
+        "which dried herbs should i buy",
+        "how do i pick a dried oregano",
+        "are dried herbs worth buying"
+      ]
+    },
+    {
+      "id": "tea",
+      "title": "Tea",
+      "aliases": [
+        "black tea",
+        "green tea",
+        "oolong tea",
+        "white tea",
+        "loose leaf tea",
+        "tea bags",
+        "decaf tea",
+        "which black tea should i buy",
+        "how do i pick a green tea"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick tea?",
+      "decision": "Black, green, white and oolong are one plant; herbal is not tea.",
+      "why": "True tea is one plant’s leaf, and processing makes the types. Herbal blends come from other plants.",
+      "short_answer": "White, green, oolong, black and pu-erh tea all come from one plant’s leaves. Processing sets the type. Herbal teas come from other plants. All true tea has caffeine unless decaffeinated.",
+      "detail": "True tea is the leaf of the Camellia sinensis plant. Teas are usually divided into five types by how much oxidation they undergo during processing. Oxidation is a change in the leaf that shifts its color and flavor. All true teas contain caffeine unless they are deliberately decaffeinated during processing. Under 21 CFR 173.228, ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://lpi.oregonstate.edu/mic/food-beverages/tea",
+        "https://www.law.cornell.edu/cfr/text/21/173.228",
+        "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference"
+      ],
+      "kristy_take": "The color on the box is a processing choice. Decaffeinated is the word that changes the caffeine.",
+      "cart_pick": "The tea type the cup calls for",
+      "buying_tips": [
+        "Pick black, green, white or oolong by flavor; processing sets each one.",
+        "Read herbal blends for the plants inside, since none is true tea.",
+        "Read the box for “decaffeinated” when caffeine matters."
+      ],
+      "watch_out": [
+        "“Herbal tea” on a box means other plants, not the tea leaf."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Decaffeinated",
+          "meaning": "True tea put through a process to remove caffeine."
+        },
+        {
+          "term": "Herbal tea",
+          "meaning": "An infusion of other plants, not the tea leaf."
+        }
+      ],
+      "tier_note": "Caffeine is a label fact on tea, settled by the word decaffeinated.",
+      "asked_as": [
+        "which black tea should i buy",
+        "how do i pick a green tea",
+        "is loose leaf tea worth buying"
+      ]
     }
   ]
 }

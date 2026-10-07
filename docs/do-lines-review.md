@@ -201,6 +201,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `cooking_oils` | bulk_pantry | Refined oil for high heat; unrefined oil for its flavor. | Read the label for which oil is in the bottle, then its processing. | — |
 | `lard_tallow` | bulk_pantry | Plain lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
 | `cocoa` | bulk_pantry | Natural cocoa or Dutch cocoa, matched to the leavener the recipe names. | Read the label for “processed with alkali” after the name. | — |
+| `seeds` | bulk_pantry | Whole chia, hulled hemp, and flax bought ground or ground at home. | Check the bag date, and keep opened flax cold once home. | — |
+| `dried_fruit` | bulk_pantry | Dried fruit with the fruit alone on the ingredient list. | Read the ingredients for sulfites or sugar added to the fruit. | — |
+| `nutritional_yeast` | bulk_pantry | Fortified or unfortified flakes are both inactive dried yeast. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
+| `canned_coconut_milk` | bulk_pantry | Canned coconut milk, read for what is added beyond coconut. | Read the ingredients for gums such as guar gum. | — |
+| `dried_herbs` | bulk_pantry | One herb by name, or a blend whose list may say “spice”. | Check the label for the irradiation logo and “treated with radiation”. | — |
+| `tea` | bulk_pantry | Black, green, white and oolong are one plant; herbal is not tea. | Read the box for “decaffeinated”, since true tea holds caffeine otherwise. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
