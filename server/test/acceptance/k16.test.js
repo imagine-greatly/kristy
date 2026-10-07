@@ -37,7 +37,8 @@ const KEEPS = nonEmpty([
   ['salmon', 'salmon_wild_vs_farmed'], ['atlantic salmon', 'salmon_wild_vs_farmed'], ['shrimp', 'shrimp_imported_vs_domestic'],
   ['fresh fish', 'fresh_vs_previously_frozen_fish'], ['frozen fish', 'fresh_vs_previously_frozen_fish'], ['frozen fish fillets', 'white_fish'],
   ['fish counter', 'fresh_vs_previously_frozen_fish'], ['farmed tilapia', 'farmed_fish_by_species'],
-  ['mussels', 'farmed_fish_by_species'], ['oysters', 'farmed_fish_by_species'], ['clams', 'farmed_fish_by_species'],
+  // K3-1 (Devon-approved list-word plan) moves the bare shellfish rows to their own card.
+  ['mussels', 'clams_mussels_oysters'], ['oysters', 'clams_mussels_oysters'], ['clams', 'clams_mussels_oysters'],
   ['canned anchovies', 'canned_fish_choosing'], ['sardines', 'canned_fish_choosing'], ['canned tuna', 'canned_tuna'],
   ['smoked ham', 'ham'], ['meat sticks', 'pick_jerky'], ['meat case', 'meat_case'], ['oyster sauce', null], ['seafood', 'seafood_counter'],
   ['crab apples', 'produce_apples_pears'], ['lobster mushrooms', 'produce_mushrooms'],
@@ -46,9 +47,13 @@ const NOT_NEW = nonEmpty([
   'cod liver oil', 'fish oil', 'fish sauce', 'oyster sauce', 'oyster mushrooms', 'oyster crackers', 'clam juice', 'clamshell strawberries',
   'scallions', 'scalloped potatoes', 'smoked paprika', 'smoked sausage', 'smoked turkey', 'goldfish crackers', 'swedish fish',
   'white bread', 'white rice', 'white vinegar', 'carrot sticks', 'celery sticks', 'seafood seasoning', 'fish food',
-  'fish', 'shellfish', 'snow peas', 'king cake', 'tartar sauce', 'cocktail sauce', 'salmon', 'shrimp', 'cod',
-], 'K16 not-new rows', 30);
+  // K3-1 retired 'fish', 'shellfish' (-> seafood_counter) and 'cod' (-> white_fish) from this list.
+  'snow peas', 'king cake', 'tartar sauce', 'cocktail sauce', 'salmon', 'shrimp',
+], 'K16 not-new rows', 27);
 const FORBIDDEN = ['seafood', 'fish', 'shellfish', 'shell', 'live', 'smoked', 'stick', 'sticks', 'white', 'fillet', 'fillets', 'cod', 'oyster', 'oysters', 'clam', 'clams', 'mussel', 'mussels', 'salmon', 'shrimp', 'tuna', 'king', 'sea', 'tail', 'tails', 'legs'];
+// K3-1 adds these bare words on purpose (list-word plan); the K16 guards below exempt only them.
+const K3_1_ALIASES = ['cod', 'clams', 'mussels', 'oysters'];
+const K3_1_ASKS = ['which seafood should i buy', 'which fish should i buy', 'which shellfish should i buy'];
 const OWNERS = nonEmpty(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish', 'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'label_wild_vs_farm_raised', 'canned_tuna'], 'seafood ask owners', 10);
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
 
@@ -73,7 +78,7 @@ test('C4 broad card: seafood_counter owns exactly one short alias, "seafood coun
 test('C4 steal sweep: no pre-existing alias, run as a list row, lands on a K16 id', () => {
   const olds = nonEmpty(kb.entries.filter((e) => !NEW.includes(e.id)), 'pre-existing entries', 100);
   const hits = [];
-  for (const e of olds) for (const a of e.aliases ?? []) { const got = rowMatch(a); if (NEW.includes(got)) hits.push(`${e.id}:"${a}" -> ${got}`); }
+  for (const e of olds) for (const a of e.aliases ?? []) { const got = rowMatch(a); if (NEW.includes(got) && !(got === 'clams_mussels_oysters' && K3_1_ALIASES.includes(a))) hits.push(`${e.id}:"${a}" -> ${got}`); }
   assert.deepEqual(hits, []);
 });
 
@@ -110,11 +115,11 @@ test('C9 one entry per id, no forbidden or state alias, no forbidden bare-noun a
     assert.equal(kb.entries.filter((e) => e.id === id).length, 1, `${id} count`);
     const e = byId(id);
     for (const a of e.aliases) {
-      assert.ok(!FORBIDDEN.includes(a), `${id} alias ${a}`);
+      assert.ok(!FORBIDDEN.includes(a) || K3_1_ALIASES.includes(a), `${id} alias ${a}`);
       assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a), `${id} state alias ${a}`);
     }
     for (const q of e.asked_as ?? []) {
-      if (id === 'seafood_counter' && q === 'which seafood should i buy') continue;
+      if (id === 'seafood_counter' && K3_1_ASKS.includes(q)) continue;
       assert.ok(!FORBIDDEN.some((w) => q === `which ${w} should i buy`), `${id} ask ${q}`);
     }
   }

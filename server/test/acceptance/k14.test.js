@@ -138,7 +138,8 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
     const n = B.find((e) => e.id === o.id) ?? {};
     for (const k of new Set([...Object.keys(o), ...Object.keys(n)])) if (JSON.stringify(o[k]) !== JSON.stringify(n[k])) d.push(`${o.id}.${k}`);
   }
-  assert.deepEqual(d, ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as']);
+  // K3-1: salmon_wild_vs_farmed.aliases mirrors the salmon-cut alias additions (list-word plan).
+  assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases'].sort());
 });
 
 test('C12 passRule.js and k5–k11 are unedited since 3f34250', () => {
