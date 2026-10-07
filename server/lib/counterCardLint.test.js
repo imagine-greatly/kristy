@@ -425,7 +425,8 @@ test('all curated cards clear the per-card bar', () => {
   // K19 adds 12: plain_kefir, sour_cream, cream_cheese, cottage_cheese, ice_cream, ghee, goat_sheep_dairy, almond_milk, soy_milk, coconut_milk_beverage, plant_butter, dairy_case (2026-10-06).
   // K20 adds 9: kombucha, sauerkraut, kimchi, fermented_pickles, raw_cider_vinegar, miso, tempeh, natto, fermented (2026-10-07).
   // K21 adds 13: broth, salt, sugars, maple_syrup, cooking_oils, lard_tallow, cocoa, seeds, dried_fruit, nutritional_yeast, canned_coconut_milk, dried_herbs, tea (2026-10-07).
-  assert.equal(CARDS.length, 170);
+  // K22 adds 13: vinegar, pasta_sauce, jam, ketchup_mustard, mayo, hot_soy_sauce, canned_soup, olives, seaweed, baking_soda_powder, salsa, coconut_water, condiments (2026-10-07).
+  assert.equal(CARDS.length, 183);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

@@ -214,6 +214,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `mayo` | bulk_pantry | Mayonnaise by name: oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
 | `hot_soy_sauce` | bulk_pantry | Soy sauce brewed for months, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
 | `canned_soup` | bulk_pantry | Canned soup with a short list, in a can without dents. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
+| `olives` | bulk_pantry | Olives cured in brine, which ferments them slowly. | Check the jar date, and finish an opened jar within 2 weeks. | — |
+| `seaweed` | bulk_pantry | Dried sea vegetables labeled with their kind: nori, kombu or kelp. | Read the package for the seaweed’s kind by name, not just “seaweed”. | — |
+| `baking_soda_powder` | bulk_pantry | Baking soda needs an acid; double-acting powder carries its own. | Check the date, then test opened powder in hot water for foam. | — |
+| `salsa` | bulk_pantry | Salsa led by vegetables; a fresh tub stays cold. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
+| `coconut_water` | bulk_pantry | Coconut water alone on the list, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
+| `condiments` | bulk_pantry | Read the first ingredient; then ask about ketchup, mustard or mayo. | Check the serving size, a spoonful, before comparing two jars. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

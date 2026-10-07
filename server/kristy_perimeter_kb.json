@@ -10810,6 +10810,358 @@
         "how do i pick a canned soup",
         "is low sodium soup worth buying"
       ]
+    },
+    {
+      "id": "olives",
+      "title": "Olives",
+      "aliases": [
+        "olives",
+        "green olives",
+        "black olives",
+        "kalamata olives",
+        "castelvetrano olives",
+        "olives in brine",
+        "brine cured olives",
+        "oil cured olives"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick olives?",
+      "decision": "Olives cured in brine, which ferments them slowly.",
+      "why": "Fresh olives are bitter, and curing removes it. Brine curing ferments the fruit slowly, with water and salt.",
+      "short_answer": "Olives off the tree are very bitter, so they are cured before eating. Brine-cured olives ferment slowly in water and salt. Lye-cured olives are a milder style. Opened olives keep about 2 weeks.",
+      "detail": "Olives picked off the tree hold a very bitter compound called oleuropein. Curing leaches it out. The common curing methods are water, brine, lye and dry salt, and each gives a different texture and flavor. Water-cured olives stay slightly bitter, because water removes less oleuropein. Brine curing is a fermentation that turns the fruit’s sugars into lactic and acetic acids. It uses only water and salt, but takes a long time. Lye curing works quickly, and rinsing leaves a neutral olive that takes on flavors from vinegar and herbs. Salt gives olives their flavor and serves as a preservative. Salt curing has roots in ancient antiquity. Commercial table olives follow three main methods: Greek, Spanish and Californian. Greek-style olives are picked near full ripeness, at the purple stage, and cured in brine. Spanish-style green olives are treated with lye, rinsed, then fermented. California-style black ripe olives are lye-cured and darkened with air, then colored black with an iron salt. One review’s table puts debittering at 6–12 months for Greek, 1–7 months for Spanish and 1 week for California. The California method gives the mildest flavor and the least bitterness. USDA grade standards cover canned ripe olives (U.S. Grade A, B and C). USDA defines green olives as “completely fermented and cured” fruit of the olive tree.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.ccfruitandnuts.ucanr.edu/sites/default/files/2024-11/404165.pdf",
+        "https://ucanr.edu/sites/fresnonutrition/files/14350.pdf",
+        "https://mitchell.ucdavis.edu/sites/g/files/dgvnsk916/files/2019-09/Reducing%20Phenolics%20Related%20to%20Bitterness%20in%20Table%20Olives.._0.pdf",
+        "https://www.ams.usda.gov/sites/default/files/media/Canned%20Ripe%20Olives%20Standard.pdf",
+        "https://www.ams.usda.gov/sites/default/files/media/GreenOlivesStandard.pdf",
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+      ],
+      "kristy_take": "Cured the slow way, in brine, olives keep a salty, acidic, fermented flavor. Salt curing has roots in antiquity.",
+      "cart_pick": "Olives cured in brine",
+      "buying_tips": [
+        "Read the jar for the curing method: brine, lye or dry salt.",
+        "Greek-style olives are near-ripe purple fruit cured in brine.",
+        "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+        "California-style black ripe olives are the mildest and least bitter: a style, not a flaw.",
+        "Finish an opened jar within about 2 weeks."
+      ],
+      "watch_out": [
+        "Some Greek-style olives were briefly exposed to air to darken the fruit, with the color set by ferrous gluconate."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Lye",
+          "meaning": "Sodium hydroxide, used for curing olives quickly; rinsing removes it."
+        },
+        {
+          "term": "Sodium hydroxide",
+          "meaning": "The chemical name for lye on an olive label."
+        },
+        {
+          "term": "Ferrous gluconate",
+          "meaning": "An iron salt that sets the dark color of the fruit."
+        },
+        {
+          "term": "Ripe olives",
+          "meaning": "Canned olives oxidized in processing to a dark brown to black color."
+        },
+        {
+          "term": "U.S. Grade A",
+          "meaning": "A USDA quality grade for canned ripe olives; Grades B and C also exist."
+        }
+      ],
+      "tier_note": "An opened jar keeps about 2 weeks; brine curing is a craft choice.",
+      "asked_as": [
+        "which olives should i buy",
+        "are kalamata olives worth buying",
+        "are green olives worth buying"
+      ]
+    },
+    {
+      "id": "seaweed",
+      "title": "Seaweed",
+      "aliases": [
+        "seaweed",
+        "nori",
+        "nori sheets",
+        "kombu",
+        "kelp",
+        "wakame",
+        "dried seaweed",
+        "seaweed snacks",
+        "sea vegetables",
+        "is nori worth buying"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick seaweed?",
+      "decision": "Dried sea vegetables labeled with their kind: nori, kombu or kelp.",
+      "why": "Kinds differ widely, and several products label the species inadequately, so read for the kind by name.",
+      "short_answer": "Look for the kind by name, such as nori, kombu or kelp, not just “seaweed”. Kinds differ widely. Brown seaweeds such as kelp are dried, then ground or chopped for food.",
+      "detail": "Brown algae are seaweeds of listed species, among them Laminaria, Macrocystis and Undaria species. They are harvested mainly in coastal waters of the northern Atlantic and Pacific. The material is dried and ground or chopped for use in food. Kelp is also used in spices and seasonings as a flavor enhancer. As a food additive, kelp is the dehydrated, ground product made from certain Macrocystis and Laminaria species. One study found the species labeling inadequate or inaccurate for several products. Iodine content varies widely by kind, from 16 µg (micrograms) per gram in nori to over 8165 µg per gram in one sample of processed kelp granules. In Maine, most wild sea vegetables are harvested by hand at low tide in early spring. Harvesters trim the blades and leave the holdfast, the base that anchors the plant, for regrowth. Seaweed harvesting is generally done in the spring and summer months. Bullwhip kelp does not keep well under refrigeration or by freezing, so its blades are dried for storage.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/184.1120",
+        "https://www.law.cornell.edu/cfr/text/21/172.365",
+        "https://pubmed.ncbi.nlm.nih.gov/15588380/",
+        "https://foodandnutritionresearch.net/index.php/fnr/article/download/7584/13452",
+        "https://seagrant.umaine.edu/maine-seafood-guide/seaweed/",
+        "https://uaf.edu/ces/publications/database/food/bullwhip-kelp.php"
+      ],
+      "kristy_take": "Sea vegetables are gathered wild or farmed. In Maine, farmers grow sugar kelp and alaria on seeded lines, ropes preloaded with juvenile plants.",
+      "cart_pick": "Dried seaweed with its kind named",
+      "buying_tips": [
+        "Read the package for the kind: nori, kombu, kelp or another.",
+        "Laver, or nori, is soaked briefly or toasted dry.",
+        "Sugar kelp is soaked briefly, then simmered into broths.",
+        "Dulse is eaten as a snack straight from the bag."
+      ],
+      "watch_out": [
+        "Species labeling was inadequate or inaccurate on several products in one study.",
+        "A package that says only “seaweed” leaves the kind unnamed."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Nori",
+          "meaning": "Another name for laver, soaked briefly or toasted dry."
+        },
+        {
+          "term": "Kelp",
+          "meaning": "A brown seaweed, dried and ground or chopped for food."
+        },
+        {
+          "term": "Sea vegetables",
+          "meaning": "Another name for seaweed, gathered wild or farmed."
+        },
+        {
+          "term": "Dulse",
+          "meaning": "A salty red seaweed, often eaten straight from the bag."
+        }
+      ],
+      "tier_note": "The kind by name tells nori from kelp, which differ widely.",
+      "asked_as": [
+        "which seaweed should i buy",
+        "is nori worth buying",
+        "are seaweed snacks worth buying"
+      ]
+    },
+    {
+      "id": "baking_soda_powder",
+      "title": "Baking soda and baking powder",
+      "aliases": [
+        "baking powder",
+        "double acting baking powder",
+        "aluminum free baking powder",
+        "bicarbonate of soda",
+        "sodium bicarbonate"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick baking soda and baking powder?",
+      "decision": "Baking soda needs an acid; double-acting powder carries its own.",
+      "why": "Soda reacts with an acid at once. Double-acting powder carries two acids, one wet and one hot.",
+      "short_answer": "Baking soda is one ingredient and needs an acid such as buttermilk, yogurt or vinegar. Baking powder carries its own acids. Buy double-acting powder, check the date, and keep both dry.",
+      "detail": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Too much soda without enough acid can taste metallic. Federal rules list sodium bicarbonate as used in food with no limit beyond good manufacturing practice. Baking powder is soda plus acid salts and cornstarch. Its first acid, monocalcium phosphate, reacts as soon as the powder is wet. Its second acid is sodium acid pyrophosphate or sodium aluminum sulfate. That second acid reacts only once the batter is both wet and hot. In an “aluminum free” powder, the second acid is not sodium aluminum sulfate. Moisture makes both soda and powder react and change.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/184.1736",
+        "https://news.ncsu.edu/2014/05/baking-soda-powder",
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2024-12-06-baking-soda-vs-baking-powder",
+        "https://extension.psu.edu/storing-staple-ingredients-in-the-kitchen",
+        "https://extension.usu.edu/preserve-the-harvest/research/cooking-food-storage"
+      ],
+      "kristy_take": "Soda and powder are not interchangeable. Soda needs an acid from the other ingredients; double-acting powder brings its own.",
+      "cart_pick": "Double-acting baking powder, in date",
+      "buying_tips": [
+        "Read the can for “double acting”; most say it.",
+        "Look for the expiration date on the container.",
+        "Store baking powder in its original sealed can.",
+        "Dip only dry measuring spoons into either container.",
+        "To test soda, add 1 tablespoon vinegar to 1½ teaspoons soda; it should fizz."
+      ],
+      "watch_out": [
+        "Moisture makes both soda and powder react and change, so keep them dry.",
+        "Once opened, baking powder lasts about 6 months."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Double acting",
+          "meaning": "One acid works when the batter is wet, and a second works when it is hot."
+        },
+        {
+          "term": "Aluminum free",
+          "meaning": "The heat-acting acid is not the aluminum-based one."
+        },
+        {
+          "term": "Best if used by",
+          "meaning": "Baking powder carries a best-if-used-by date of 18-24 months."
+        }
+      ],
+      "tier_note": "Opened powder fades in months, and the foam test shows it.",
+      "asked_as": [
+        "which baking powder should i buy",
+        "is bicarbonate of soda worth buying",
+        "how do i pick a baking powder"
+      ]
+    },
+    {
+      "id": "salsa",
+      "title": "Salsa",
+      "aliases": [
+        "salsa",
+        "jarred salsa",
+        "chunky salsa",
+        "salsa jar",
+        "mild salsa",
+        "pico de gallo"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a salsa?",
+      "decision": "Salsa led by vegetables; a fresh tub stays cold.",
+      "why": "Salsa mixes low-acid onions and peppers with tomatoes and an added acid. A tub sold cold stays cold.",
+      "short_answer": "Salsa mixes low-acid onions and peppers with tomatoes and an acid, such as vinegar, lime or lemon juice. A shelf jar is heat-processed. A fresh tub sold from the cold case stays in the refrigerator.",
+      "detail": "Most salsa is a mix of low-acid foods, such as onions and peppers, with more acid foods, such as tomatoes. Vinegar or citrus juice, such as lemon or lime, often adds more acid. A shelf jar is an acidified food: acid is added to low-acid ingredients for a pH of 4.6 or below. pH is the measure of acidity. Federal rules also require an acidified food to be thermally processed, that is, heat-processed. Salsas are named among acidified foods. Foods stored, distributed and sold under refrigeration are outside that definition. For a shelf jar sold under inspection, a process authority reviews the recipe and sets its scheduled heat process. Some states have cottage-food laws that let home kitchens sell certain foods without inspection. In Virginia, for example, such a jar sells only directly to shoppers, such as at farmers markets. Its front label states it was processed and prepared without state inspection. Its label also names the maker, physical address and phone number. These are label facts about where a jar was made.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://extension.uconn.edu/?p=4483",
+        "https://www.law.cornell.edu/cfr/text/21/114.80",
+        "https://www.pubs.ext.vt.edu/FST/FST-321/FST-321",
+        "https://extension.colostate.edu/resource/making-pickled-peppers/"
+      ],
+      "kristy_take": "Salsa pairs low-acid onions and peppers with tomatoes and an acid. Vinegar, lime or lemon juice on the list names that acid.",
+      "cart_pick": "Salsa with vinegar or citrus on the list",
+      "buying_tips": [
+        "Look for onions, peppers and tomatoes alongside an acid on the list.",
+        "A fresh tub from the cold case goes straight back in the refrigerator.",
+        "Homemade salsa keeps up to one week in the refrigerator.",
+        "In Virginia, a home-kitchen jar sells directly to shoppers and names its maker, address and phone."
+      ],
+      "watch_out": [
+        "A tub sold from the cold case is meant to be stored under refrigeration, unlike a shelf jar."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Keep refrigerated",
+          "meaning": "A salsa stored, distributed and sold under refrigeration rather than heat-processed for the shelf."
+        },
+        {
+          "term": "Vinegar, lime juice or lemon juice",
+          "meaning": "The added acid that a salsa pairs with its low-acid onions and peppers."
+        },
+        {
+          "term": "Processed and prepared without state inspection",
+          "meaning": "A Virginia front-label statement on a home-kitchen jar sold directly to shoppers."
+        }
+      ],
+      "tier_note": "Vinegar or citrus on the ingredients is what lets a shelf jar keep.",
+      "asked_as": [
+        "which salsa should i buy",
+        "is jarred salsa worth buying",
+        "how do i pick a salsa"
+      ]
+    },
+    {
+      "id": "coconut_water",
+      "title": "Coconut water",
+      "aliases": [
+        "coconut water",
+        "pure coconut water",
+        "young coconut water"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick coconut water?",
+      "decision": "Coconut water alone on the list, with nothing added.",
+      "why": "Coconut water is the clear liquid from green coconuts. Some cartons add sugar, so the ingredients tell.",
+      "short_answer": "Coconut water is the clear liquid inside green, unripe coconuts, and it differs from coconut milk. Brands differ, and some add sugar. The shortest list is coconut water alone.",
+      "detail": "Coconut water is the clear liquid found inside green (unripe) coconuts. Coconut milk is different: it combines the grated meat of a ripe coconut with water. Brands differ, and some coconut waters have added sugars. Where the federal juice rule applies, a beverage with juice declares its share as “Contains __ percent juice” or “__ percent juice,” a whole number not greater than the actual share. Juice directly expressed from the fruit counts as 100 percent juice. Out of the nut, coconut water spoils quickly. Canned coconut water is given a high-temperature, short-time heat treatment, which keeps it long but takes away its natural flavor. Some coconut water is high-pressure processed (HPP) instead, and in one study it kept its original color and aroma better than heat-treated water. A whole young coconut still in its husk keeps its quality longer than a trimmed one.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://brunswick.ces.ncsu.edu/2025/04/coconut-products",
+        "https://www.law.cornell.edu/cfr/text/21/101.30",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6475728",
+        "https://pubmed.ncbi.nlm.nih.gov/23572707/"
+      ],
+      "kristy_take": "Fewest ingredients is the craft standard here: coconut water alone, with nothing added. Heat keeps a carton long but takes away its natural flavor.",
+      "cart_pick": "Coconut water with no added sugar",
+      "buying_tips": [
+        "Read the ingredients: coconut water alone, or with sugar added.",
+        "Canned coconut water is heat-treated, which takes away its natural flavor.",
+        "A whole young coconut in its husk keeps longer than a trimmed one."
+      ],
+      "watch_out": [
+        "Some coconut waters have added sugars; brands differ.",
+        "Coconut milk is a different product, made from grated ripe coconut meat and water."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Contains __ percent juice",
+          "meaning": "Where the juice rule applies, the juice share as a whole number, never above the actual."
+        },
+        {
+          "term": "100 percent juice",
+          "meaning": "Where the juice rule applies, juice directly expressed from the fruit."
+        }
+      ],
+      "tier_note": "When a percent line appears on the carton, it states the share.",
+      "asked_as": [
+        "which coconut water should i buy",
+        "is coconut water worth buying",
+        "how do i pick a coconut water"
+      ]
+    },
+    {
+      "id": "condiments",
+      "title": "Condiments",
+      "aliases": [
+        "condiments",
+        "condiment",
+        "condiment aisle"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick condiments?",
+      "decision": "Read the first ingredient; then ask about ketchup, mustard or mayo.",
+      "why": "Ingredients run from most to least, so the first one names what the jar is mostly made of.",
+      "short_answer": "Ingredients are listed from most to least, so the first one is the most. Panels count small servings, from a teaspoon to two tablespoons. Compare spoon to spoon, then ask about ketchup, mustard or mayo.",
+      "detail": "Federal labeling rule 21 CFR 101.4 lists ingredients by common name in descending order of predominance. The first ingredient is the one present in the largest amount. Serving sizes come from 21 CFR 101.12, and condiments get small ones. Catsup, soy sauce and vinegar count 1 tbsp. Mustards and hot sauces count 1 tsp. Dips such as salsa count 2 tbsp. Mayonnaise counts 15 g. Two jars only compare fairly at the same spoon.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://www.law.cornell.edu/cfr/text/21/101.12",
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+      ],
+      "kristy_take": "The fewest ingredients is a craft standard, not a safety line. The order on the label shows what leads.",
+      "cart_pick": "The jar whose first ingredient is the food",
+      "buying_tips": [
+        "Read the first ingredient; it is the one present in the largest amount.",
+        "Check the serving size before comparing two jars.",
+        "Write the open date on a jar the day it is opened.",
+        "Use an open condiment before opening a new one."
+      ],
+      "watch_out": [
+        "Opened condiments on the fridge door or shelf are easy to forget.",
+        "Mustard and hot sauce panels count a teaspoon, not a tablespoon."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ingredients",
+          "meaning": "Listed from most to least, so the first one leads."
+        },
+        {
+          "term": "Serving size",
+          "meaning": "A spoonful for most condiments; 1 tsp for mustards and hot sauces."
+        },
+        {
+          "term": "Best by",
+          "meaning": "Best quality date, not a food safety date."
+        }
+      ],
+      "tier_note": "Panels use a spoonful as the serving, so compare spoon to spoon.",
+      "asked_as": [
+        "which condiments should i buy",
+        "are condiments worth buying",
+        "how do i pick a condiment"
+      ]
     }
   ]
 }
