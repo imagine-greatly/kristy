@@ -11154,6 +11154,371 @@
         "are condiments worth buying",
         "how do i pick a condiment"
       ]
+    },
+    {
+      "id": "crackers",
+      "title": "Crackers",
+      "aliases": [
+        "crackers",
+        "saltines",
+        "soda crackers",
+        "water crackers",
+        "sourdough crackers",
+        "are saltines worth buying"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick crackers?",
+      "decision": "Crackers with a whole grain listed first on the ingredients.",
+      "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
+      "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+        "https://www.nutritionletter.tufts.edu/?p=148621",
+        "https://en.wikipedia.org/wiki/Cracker_(food)",
+        "https://bakerpedia.com/processes/crackers/",
+        "https://www.masterclass.com/articles/sourdough-crackers"
+      ],
+      "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
+      "cart_pick": "Crackers with a whole grain first",
+      "buying_tips": [
+        "Read the first ingredient; a whole grain there leads the cracker.",
+        "Look for “whole wheat flour” on the list, not just “wheat flour.”",
+        "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter."
+      ],
+      "watch_out": [
+        "A front that leads with whole-grain words can still list refined flour first."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Wheat flour",
+          "meaning": "A synonym of plain flour; it is not a whole grain flour."
+        },
+        {
+          "term": "Whole wheat flour",
+          "meaning": "Flour that counts as a whole grain."
+        },
+        {
+          "term": "Multigrain",
+          "meaning": "Made with several grains, which are often refined; it does not mean whole grain."
+        },
+        {
+          "term": "Soda crackers",
+          "meaning": "Saltines: fermented and raised with yeast, normally with no added sugar and little fat."
+        },
+        {
+          "term": "Water crackers",
+          "meaning": "Flour and water rolled thin and baked with no leavening."
+        }
+      ],
+      "tier_note": "Multigrain on the front names several grains, not whole ones.",
+      "asked_as": [
+        "which crackers should i buy",
+        "are saltines worth buying",
+        "are water crackers worth buying"
+      ]
+    },
+    {
+      "id": "tortilla_chips",
+      "title": "Tortilla chips",
+      "aliases": [
+        "tortilla chips",
+        "corn tortilla chips",
+        "restaurant style tortilla chips"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick tortilla chips?",
+      "decision": "Tortilla chips from corn cooked the traditional way, in limewater.",
+      "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
+      "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
+      "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nixtamalization",
+        "https://www.fao.org/4/t0395e/T0395E05.htm",
+        "https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul",
+        "https://sporked.com/article/what-is-masa/",
+        "https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/",
+        "https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips"
+      ],
+      "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
+      "cart_pick": "Tortilla chips with masa listed",
+      "buying_tips": [
+        "Read the ingredients for masa or corn masa.",
+        "A trace of lime on the list points to the traditional cooking step.",
+        "“Restaurant-style” chips are tortillas cut into wedges and fried."
+      ],
+      "watch_out": [
+        "Some corn chips are made from corn that was never cooked in lime."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Masa",
+          "meaning": "A dough ground from corn that was cooked in an alkaline solution."
+        },
+        {
+          "term": "Lime",
+          "meaning": "On a chip list, the alkali the corn was cooked in, not the citrus fruit."
+        },
+        {
+          "term": "Corn chips",
+          "meaning": "A name sometimes used for chips made from corn that was never lime-cooked."
+        }
+      ],
+      "tier_note": "Masa on the ingredients means the corn was cooked first.",
+      "asked_as": [
+        "which tortilla chips should i buy",
+        "are tortilla chips worth buying",
+        "are restaurant style tortilla chips worth buying"
+      ]
+    },
+    {
+      "id": "potato_chips",
+      "title": "Potato chips",
+      "aliases": [
+        "potato chips",
+        "kettle chips",
+        "kettle cooked chips",
+        "potato crisps"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick potato chips?",
+      "decision": "Potato chips cut as thin slices, the way chips began.",
+      "why": "A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes.",
+      "short_answer": "A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes.",
+      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
+        "https://www.chowhound.com/1803980/pringles-arent-potato-chips/",
+        "https://www.thetakeout.com/1833928/why-pringles-not-real-potato-chips/"
+      ],
+      "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
+      "cart_pick": "Potato chips sliced from potatoes",
+      "buying_tips": [
+        "Read the ingredients; a sliced chip starts with potatoes.",
+        "Identical, stackable shapes point to a crisp pressed from flakes.",
+        "Expect irregular sizes and folds in a bag of sliced chips."
+      ],
+      "watch_out": [
+        "“Potato crisps” can name a product pressed from dried potato flakes, not slices."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Made from dried potatoes",
+          "meaning": "The disclaimer for a chip pressed from dehydrated potato flakes rather than sliced."
+        },
+        {
+          "term": "Potato crisps",
+          "meaning": "The British word for chips, also taken by a stacked product to avoid that disclaimer."
+        }
+      ],
+      "tier_note": "A dried potatoes line on the label means flakes, not slices.",
+      "asked_as": [
+        "which potato chips should i buy",
+        "are kettle chips worth buying",
+        "are potato crisps worth buying"
+      ]
+    },
+    {
+      "id": "popcorn",
+      "title": "Popcorn",
+      "aliases": [
+        "popcorn",
+        "microwave popcorn",
+        "popcorn kernels"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick popcorn?",
+      "decision": "Plain popcorn kernels, popped with only what gets added.",
+      "why": "Plain kernels pop with no oil at all, so the cook decides on any butter, oil or salt.",
+      "short_answer": "Popcorn is its own variety of corn. Water inside the hard hull turns to steam, the hull bursts and the kernel turns inside out. Plain kernels pop in a paper bag in the microwave, no oil needed.",
+      "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://ag.purdue.edu/news/2020/02/whats-under-the-shell-of-this-popular-snack.html",
+        "https://www.nbcnews.com/id/wbna7584284",
+        "https://share.america.gov/popcorn-hails-from-americas-heartland/",
+        "https://www.csmonitor.com/The-Culture/Food/Stir-It-Up/2014/0903/The-easier-cheaper-way-to-make-air-popped-popcorn",
+        "https://blogs.extension.iastate.edu/answerline/2026/05/19/popcorn/"
+      ],
+      "kristy_take": "Popped corn found in Peru dates back 6,700 years. One extension view holds that whole kernels popped at home are the consumer-controlled option. Nebraska grows the most popcorn, and Indiana is second.",
+      "cart_pick": "Plain popcorn kernels",
+      "buying_tips": [
+        "Buy plain kernels and add butter or oil and salt at home, if wanted.",
+        "Loose kernels pop in a plain brown paper bag in the microwave.",
+        "Unpopped “old maids” come from hulls with cuts or weak spots."
+      ],
+      "watch_out": [
+        "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Popcorn kernels",
+          "meaning": "Whole dried kernels of popcorn, ready to pop."
+        },
+        {
+          "term": "Butterfly and mushroom",
+          "meaning": "The two popped shapes; mushroom is the one often sold prepopped and coated."
+        }
+      ],
+      "tier_note": "Popcorn with nothing besides it leaves oil and salt to the cook.",
+      "asked_as": [
+        "which popcorn should i buy",
+        "is microwave popcorn worth buying",
+        "which popcorn kernels should i buy"
+      ]
+    },
+    {
+      "id": "pretzels",
+      "title": "Pretzels",
+      "aliases": [
+        "pretzels",
+        "hard pretzels",
+        "pretzel twists",
+        "pretzel sticks"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick pretzels?",
+      "decision": "Pretzels dipped in lye before baking: the traditional German way.",
+      "why": "A lye dip gives traditional German pretzels their salty bite, chew and smooth mahogany crust.",
+      "short_answer": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked. Baking neutralizes the lye. The bath gives the chew and the glossy brown crust. A baking soda bath does the same job, milder.",
+      "detail": "Lye is sodium hydroxide, the strongest alkali a baker uses. On the pH scale, a measure of how strong an alkali is, lye reaches 14. A baking soda solution, sodium bicarbonate, sits at roughly 8.3, so it reacts less. Its pretzels come out lighter in color and flavor. The alkaline surface speeds browning, the Maillard reaction that shapes how the crust forms and tastes. A hard pretzel bakes about twice as long as a soft one. The German name, Laugenbrezel, means “lye pretzel.”",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have",
+        "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
+      ],
+      "kristy_take": "The story goes that monks in the Middle Ages twisted dough scraps into pretzels. German bakers still dip the dough in lye for the deepest color.",
+      "cart_pick": "Lye-dipped pretzels, deep brown",
+      "buying_tips": [
+        "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
+        "A paler pretzel can point to the milder baking soda bath.",
+        "Look for a crust that shines like polished mahogany."
+      ],
+      "watch_out": [
+        "Without an alkaline bath, a pretzel is just a tanned twist of dough."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Lye",
+          "meaning": "The alkaline bath of traditional pretzels; food-grade, diluted, and neutralized by baking."
+        },
+        {
+          "term": "Baking soda bath",
+          "meaning": "A milder alkaline bath that does the same job, with a lighter color."
+        }
+      ],
+      "tier_note": "A glossy, deep brown crust is the craft mark of the bath.",
+      "asked_as": [
+        "which pretzels should i buy",
+        "are hard pretzels worth buying",
+        "are pretzel sticks worth buying"
+      ]
+    },
+    {
+      "id": "snack_bars",
+      "title": "Granola and snack bars",
+      "aliases": [
+        "granola bar",
+        "granola bars",
+        "snack bar",
+        "snack bars",
+        "cereal bar"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a granola or snack bar?",
+      "decision": "Bars with oats or a whole grain first on the list.",
+      "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
+      "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+        "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "https://en.wikipedia.org/wiki/Granola"
+      ],
+      "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
+      "cart_pick": "Bars with oats or whole grain first",
+      "buying_tips": [
+        "Read the first ingredients; oats or another whole grain should lead.",
+        "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
+        "Many bars carry sugar and high fructose corn syrup, and the list shows which."
+      ],
+      "watch_out": [
+        "Enriched refined grains listed first mean refined grain leads the bar, not oats."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Added Sugars",
+          "meaning": "Sugars added in processing, sugars from syrups and honey, and sugars from concentrated fruit or vegetable juices."
+        },
+        {
+          "term": "Includes",
+          "meaning": "Placed before Added Sugars, it means those grams sit inside Total Sugars."
+        },
+        {
+          "term": "Rolled oats",
+          "meaning": "Oats flattened or steamed; they count as a whole grain."
+        }
+      ],
+      "tier_note": "The ingredients name both outright, whatever the wrapper front says.",
+      "asked_as": [
+        "which granola bars should i buy",
+        "how do i pick a granola bar",
+        "are snack bars worth buying"
+      ]
+    },
+    {
+      "id": "trail_mix",
+      "title": "Trail mix",
+      "aliases": [
+        "trail mix",
+        "gorp",
+        "student mix"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick trail mix?",
+      "decision": "Trail mix of nuts and dried fruit, with little else listed.",
+      "why": "Nuts and dried fruit are the old trail recipe, and the list runs in order of amount.",
+      "short_answer": "Trail mix began as nuts and dried fruit carried on the trail. Ingredients run in order of amount, so the list shows what leads and what was added.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. An extension guide makes the same point: the foods at the start of the list are the most in the recipe. Raw versus roasted nuts is its own question, with its own card. So is dried fruit.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.rei.com/blog/hike/the-origins-of-gorp",
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
+      ],
+      "kristy_take": "In 1833, Danish students ate studenterhavre, “student oats”: raisins and almonds, with chocolate at the holidays. A 1906 camping guide sent hikers out with nuts, raisins and sweet chocolate. A 1958 novel packs raisins, peanuts, dried apricots and prunes.",
+      "cart_pick": "Nuts and dried fruit, little else",
+      "buying_tips": [
+        "Read the first few ingredients; nuts and fruit should lead.",
+        "Compare mixes by how short the list runs beyond nuts and fruit.",
+        "Ingredients run in order of amount, so whatever is listed first makes up the most of the bag."
+      ],
+      "watch_out": [
+        "A long list can push the nuts and fruit behind other ingredients."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ingredients",
+          "meaning": "Listed in descending order of predominance, so the first one is the most."
+        },
+        {
+          "term": "GORP",
+          "meaning": "An old word for trail mix; “good ol’ raisins and peanuts” is a backronym, and a 1913 dictionary has “gorp” as a verb."
+        }
+      ],
+      "tier_note": "Nuts and fruit were the whole recipe on the old trails.",
+      "asked_as": [
+        "which trail mix should i buy",
+        "is trail mix worth buying",
+        "how do i pick a trail mix"
+      ]
     }
   ]
 }

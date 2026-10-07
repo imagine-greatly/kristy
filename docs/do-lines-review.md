@@ -220,6 +220,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `salsa` | bulk_pantry | Salsa led by vegetables; a fresh tub stays cold. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
 | `coconut_water` | bulk_pantry | Coconut water alone on the list, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
 | `condiments` | bulk_pantry | Read the first ingredient; then ask about ketchup, mustard or mayo. | Check the serving size, a spoonful, before comparing two jars. | — |
+| `crackers` | bulk_pantry | Crackers with a whole grain listed first on the ingredients. | Read the front for “multigrain”; it does not mean whole grain. | — |
+| `tortilla_chips` | bulk_pantry | Tortilla chips from corn cooked the traditional way, in limewater. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
+| `potato_chips` | bulk_pantry | Potato chips cut as thin slices, the way chips began. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
+| `popcorn` | bulk_pantry | Plain popcorn kernels, popped with only what gets added. | Read the ingredients for anything listed besides popcorn. | — |
+| `pretzels` | bulk_pantry | Pretzels dipped in lye before baking: the traditional German way. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
+| `snack_bars` | bulk_pantry | Bars with oats or a whole grain first on the list. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
+| `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, with little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

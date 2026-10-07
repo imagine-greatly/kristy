@@ -42,7 +42,7 @@ const QUERIES = nonEmpty([
   ['spinach', 'organic_worth_it_by_type'],
   ['frozen vegetables', 'frozen_vs_fresh_produce'],
   ['chips', 'miss'],
-  ['crackers', 'miss'],
+  ['crackers', 'crackers'], // K23: pinned gap now covered by the crackers card.
   ['cookies', 'miss'],
   ['ice cream', 'ice_cream'], // K19 covers it (admin ruling 2026-10-06).
   ['juice', 'miss', 'pick_juice'],
