@@ -1,0 +1,61 @@
+{
+  "id": "frozen_meals",
+  "title": "Frozen meals",
+  "aliases": [
+    "frozen meals",
+    "frozen dinners",
+    "frozen entrees",
+    "tv dinners"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a frozen meal?",
+  "decision": "The name on a frozen meal sets its meat minimum.",
+  "why": "A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent.",
+  "short_answer": "The product name sets a meat floor. A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent. Check the inspection mark and follow the package directions.",
+  "detail": "On a frozen meal, the product name sets a floor for the meat inside. A “Beef Stew” holds at least 25 percent of the named meat, measured as fresh meat. “Spaghetti with Meatballs and Sauce” holds at least 12 percent meat, measured as fresh meat. The sauce has to appear in the product name. The meatballs may be made with binders and extenders. For poultry, a stew holds at least 12 percent poultry, a dish named with vegetables 15, and an a-la-king 20. The name may add other descriptive words, such as “noodle”. A frozen poultry dinner holds at least 18 percent cooked deboned poultry or 2 oz., whichever is greater. That poultry is counted apart from appetizers and desserts. Frozen dinners and entrees hold their quality 3 to 4 months at 0°F. Freezer times are for quality only. Cream sauce is one food that does not freeze well. Cooking from frozen takes about one and a half times as long.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.law.cornell.edu/cfr/text/9/319.304",
+    "https://www.law.cornell.edu/cfr/text/9/319.306",
+    "https://www.law.cornell.edu/cfr/text/9/381.167",
+    "https://www.law.cornell.edu/cfr/text/9/381.158",
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+    "https://web.archive.org/web/2024id_/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety"
+  ],
+  "kristy_take": "The product name sets the meat floor. The package directions set how to thaw and heat the meal.",
+  "cart_pick": "A meal with the inspection mark",
+  "buying_tips": [
+    "Read the product name first: it sets the meat minimum.",
+    "Check the package for the inspection mark.",
+    "Read the label, since some products must be cooked from frozen.",
+    "At home, use frozen dinners within 3 to 4 months for best quality."
+  ],
+  "watch_out": [
+    "Cream sauce is one food that does not freeze well."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Inspection mark",
+      "meaning": "The meal was prepared in a USDA or State-inspected plant."
+    },
+    {
+      "term": "Beef Stew",
+      "meaning": "At least 25 percent of the named meat, measured as fresh meat."
+    },
+    {
+      "term": "Spaghetti with Meatballs and Sauce",
+      "meaning": "At least 12 percent meat, with the sauce named in the product name."
+    },
+    {
+      "term": "Poultry dinner",
+      "meaning": "At least 18 percent cooked deboned poultry or 2 oz., whichever is greater."
+    }
+  ],
+  "tier_note": "The inspection mark means an inspected plant made the meal.",
+  "asked_as": [
+    "which frozen meals should i buy",
+    "are frozen dinners worth buying",
+    "are tv dinners worth buying"
+  ],
+  "_do_line": "Check the inspection mark, then follow the package directions to heat it."
+}
