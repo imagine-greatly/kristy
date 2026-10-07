@@ -1,0 +1,37 @@
+{
+ "id": "condiments",
+ "title": "Condiments",
+ "aliases": ["condiments", "condiment"],
+ "category": "bulk_pantry",
+ "question": "How do you pick condiments?",
+ "decision": "Read the first ingredient; then ask about ketchup, mustard or mayo.",
+ "why": "Ingredients run from most to least, so the first one names what the jar is mostly made of.",
+ "short_answer": "Ingredients are listed from most to least, so the first one is the most. Panels count small servings, from a teaspoon to two tablespoons. Compare spoon to spoon, then ask about ketchup, mustard or mayo.",
+ "detail": "Federal labeling rule 21 CFR 101.4 lists ingredients by common name in descending order of predominance. The first ingredient is the one present in the largest amount. Serving sizes come from 21 CFR 101.12, and condiments get small ones. Catsup, soy sauce and vinegar count 1 tbsp. Mustards and hot sauces count 1 tsp. Dips such as salsa count 2 tbsp. Mayonnaise counts 15 g. Two jars only compare fairly at the same spoon.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/101.4",
+  "https://www.law.cornell.edu/cfr/text/21/101.12",
+  "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+ ],
+ "kristy_take": "The fewest ingredients is a craft standard, not a safety line. The order on the label shows what leads.",
+ "cart_pick": "The jar whose first ingredient is the food",
+ "buying_tips": [
+  "Read the first ingredient; it is the one present in the largest amount.",
+  "Check the serving size before comparing two jars.",
+  "Write the open date on a jar the day it is opened.",
+  "Use an open condiment before opening a new one."
+ ],
+ "watch_out": [
+  "Opened condiments on the fridge door or shelf are easy to forget.",
+  "Mustard and hot sauce panels count a teaspoon, not a tablespoon."
+ ],
+ "labels_decoded": [
+  {"term": "Ingredients", "meaning": "Listed from most to least, so the first one leads."},
+  {"term": "Serving size", "meaning": "A spoonful for most condiments; 1 tsp for mustards and hot sauces."},
+  {"term": "Best by", "meaning": "Best quality date, not a food safety date."}
+ ],
+ "tier_note": "Panels use a spoonful as the serving, so compare spoon to spoon.",
+ "asked_as": ["which condiments should i buy", "are condiments worth buying", "how do i pick a condiment"],
+ "_do_line": "Check the serving size, a spoonful, before comparing two jars."
+}

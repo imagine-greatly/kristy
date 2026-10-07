@@ -1,0 +1,70 @@
+{
+ "id": "olives",
+ "title": "Olives",
+ "aliases": [
+  "olives",
+  "green olives",
+  "black olives",
+  "kalamata olives",
+  "castelvetrano olives",
+  "olives in brine",
+  "brine cured olives",
+  "oil cured olives"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick olives?",
+ "decision": "Olives cured in brine, which ferments them slowly.",
+ "why": "Fresh olives are bitter, and curing removes it. Brine curing ferments the fruit slowly, with water and salt.",
+ "short_answer": "Olives off the tree are very bitter, so they are cured before eating. Brine-cured olives ferment slowly in water and salt. Lye-cured olives are a milder style. Opened olives keep about 2 weeks.",
+ "detail": "Olives picked off the tree hold a very bitter compound called oleuropein. Curing leaches it out. The common cures are water, brine, lye and dry salt, and each gives a different texture and flavor. Water-cured olives stay slightly bitter, because water removes less oleuropein. Brine curing is a fermentation that turns the fruit’s sugars into lactic and acetic acids. It uses only water and salt, but takes a long time. Lye curing works quickly, and rinsing leaves a neutral olive that takes on flavors from vinegar and herbs. Salt gives olives their flavor and serves as a preservative. Salt curing has roots in ancient antiquity. Commercial table olives follow three main methods: Greek, Spanish and Californian. Greek-style olives are picked near full ripeness, at the purple stage, and cured in brine. Spanish-style green olives are treated with lye, rinsed, then fermented. California-style black ripe olives are lye-cured and darkened with air, then colored black with an iron salt. One review’s table puts debittering at 6–12 months for Greek, 1–7 months for Spanish and 1 week for California. The California method gives the mildest flavor and the least bitterness. USDA grade standards cover canned ripe olives (U.S. Grade A, B and C). USDA defines green olives as “completely fermented and cured” fruit of the olive tree.",
+ "evidence_tier": "kristys_standard",
+ "sources": [
+  "https://www.ccfruitandnuts.ucanr.edu/sites/default/files/2024-11/404165.pdf",
+  "https://ucanr.edu/sites/fresnonutrition/files/14350.pdf",
+  "https://mitchell.ucdavis.edu/sites/g/files/dgvnsk916/files/2019-09/Reducing%20Phenolics%20Related%20to%20Bitterness%20in%20Table%20Olives.._0.pdf",
+  "https://www.ams.usda.gov/sites/default/files/media/Canned%20Ripe%20Olives%20Standard.pdf",
+  "https://www.ams.usda.gov/sites/default/files/media/GreenOlivesStandard.pdf",
+  "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+ ],
+ "kristy_take": "Cured the slow way, in brine, olives keep a salty, acidic, fermented flavor. Salt curing has roots in antiquity.",
+ "cart_pick": "Olives cured in brine",
+ "buying_tips": [
+  "Read the jar for the cure: brine, lye or dry salt.",
+  "Greek-style olives are near-ripe purple fruit cured in brine.",
+  "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+  "California-style black ripe olives are the mildest and least bitter: a style, not a flaw.",
+  "Finish an opened jar within about 2 weeks."
+ ],
+ "watch_out": [
+  "Some Greek-style olives were briefly exposed to air to darken the fruit, with the color set by ferrous gluconate."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Lye",
+   "meaning": "Sodium hydroxide, used to cure olives quickly; rinsing removes it."
+  },
+  {
+   "term": "Sodium hydroxide",
+   "meaning": "The chemical name for lye on an olive label."
+  },
+  {
+   "term": "Ferrous gluconate",
+   "meaning": "An iron salt that sets the dark color of the fruit."
+  },
+  {
+   "term": "Ripe olives",
+   "meaning": "Canned olives oxidized in processing to a dark brown to black color."
+  },
+  {
+   "term": "U.S. Grade A",
+   "meaning": "A USDA quality grade for canned ripe olives; Grades B and C also exist."
+  }
+ ],
+ "tier_note": "An opened jar keeps about 2 weeks; brine curing is a craft choice.",
+ "asked_as": [
+  "which olives should i buy",
+  "are kalamata olives worth buying",
+  "are green olives worth buying"
+ ],
+ "_do_line": "Check the jar date, and finish an opened jar within 2 weeks."
+}

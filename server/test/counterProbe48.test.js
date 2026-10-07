@@ -51,7 +51,7 @@ const QUERIES = nonEmpty([
   ['protein bar', 'miss'],
   ['hummus', 'miss'],
   ['salsa', 'miss'],
-  ['ketchup', 'miss'],
+  ['ketchup', 'ketchup_mustard'], // K22 admin ruling: pinned gap now covered by the ketchup_mustard card.
   ['salad dressing', 'miss'],
   ['honey', 'honey_adulteration'],
   ['maple syrup', 'maple_syrup'], // K21 admin ruling: pinned gap now covered by the maple_syrup card.

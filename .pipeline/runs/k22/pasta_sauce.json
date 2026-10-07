@@ -11,9 +11,9 @@
  "category": "bulk_pantry",
  "question": "How do you pick pasta sauce?",
  "decision": "Pasta sauce with tomatoes first and a short list.",
- "why": "Ingredients are listed by weight, most first, so tomatoes listed first means no ingredient outweighs them.",
- "short_answer": "Read the ingredient list. Ingredients run in descending order by weight, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
- "detail": "Ingredients on a label are listed by common name in descending order of predominance by weight, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+ "why": "Ingredients are listed most first, so tomatoes listed first means no ingredient outweighs them.",
+ "short_answer": "Read the ingredient list. Ingredients run from most to least, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
+ "detail": "Ingredients on a label are listed by common name in descending order of predominance, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
  "evidence_tier": "kristys_standard",
  "sources": [
   "https://www.law.cornell.edu/cfr/text/21/101.4",
@@ -35,7 +35,7 @@
  "labels_decoded": [
   {
    "term": "Ingredients",
-   "meaning": "Listed by weight, most first."
+   "meaning": "Listed most first."
   },
   {
    "term": "With ___",

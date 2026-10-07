@@ -1,0 +1,59 @@
+{
+ "id": "baking_soda_powder",
+ "title": "Baking soda and baking powder",
+ "aliases": [
+  "baking powder",
+  "double acting baking powder",
+  "aluminum free baking powder",
+  "bicarbonate of soda",
+  "sodium bicarbonate"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick baking soda and baking powder?",
+ "decision": "Baking soda needs an acid; double-acting powder carries its own.",
+ "why": "Soda reacts with an acid at once. Double-acting powder carries two acids, one wet and one hot.",
+ "short_answer": "Baking soda is one ingredient and needs an acid such as buttermilk, yogurt or vinegar. Baking powder carries its own acids. Buy double-acting powder, check the date, and keep both dry.",
+ "detail": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Too much soda without enough acid can taste metallic. Federal rules list sodium bicarbonate as used in food with no limit beyond good manufacturing practice. Baking powder is soda plus acid salts and cornstarch. Its first acid, monocalcium phosphate, reacts as soon as the powder is wet. Its second acid is sodium acid pyrophosphate or sodium aluminum sulfate. That second acid reacts only once the batter is both wet and hot. In an “aluminum free” powder, the second acid is not sodium aluminum sulfate. Moisture makes both soda and powder react and change.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/184.1736",
+  "https://news.ncsu.edu/2014/05/baking-soda-powder",
+  "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2024-12-06-baking-soda-vs-baking-powder",
+  "https://extension.psu.edu/storing-staple-ingredients-in-the-kitchen",
+  "https://extension.usu.edu/preserve-the-harvest/research/cooking-food-storage"
+ ],
+ "kristy_take": "Soda and powder are not interchangeable. Soda needs an acid from the other ingredients; double-acting powder brings its own.",
+ "cart_pick": "Double-acting baking powder, in date",
+ "buying_tips": [
+  "Read the can for “double acting”; most say it.",
+  "Look for the expiration date on the container.",
+  "Store baking powder in its original sealed can.",
+  "Dip only dry measuring spoons into either container.",
+  "To test soda, add 1 tablespoon vinegar to 1½ teaspoons soda; it should fizz."
+ ],
+ "watch_out": [
+  "Moisture makes both soda and powder react and change, so keep them dry.",
+  "Once opened, baking powder lasts about 6 months."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Double acting",
+   "meaning": "One acid works when the batter is wet, and a second works when it is hot."
+  },
+  {
+   "term": "Aluminum free",
+   "meaning": "The heat-acting acid is not the aluminum-based one."
+  },
+  {
+   "term": "Best if used by",
+   "meaning": "Baking powder carries a best-if-used-by date of 18-24 months."
+  }
+ ],
+ "tier_note": "Opened powder fades in months, and the foam test shows it.",
+ "asked_as": [
+  "which baking powder should i buy",
+  "is bicarbonate of soda worth buying",
+  "how do i pick a baking powder"
+ ],
+ "_do_line": "Check the date, then test opened powder in hot water for foam."
+}

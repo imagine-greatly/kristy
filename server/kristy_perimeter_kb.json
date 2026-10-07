@@ -10354,6 +10354,462 @@
         "how do i pick a green tea",
         "is loose leaf tea worth buying"
       ]
+    },
+    {
+      "id": "vinegar",
+      "title": "Vinegar",
+      "aliases": [
+        "white vinegar",
+        "distilled vinegar",
+        "red wine vinegar",
+        "white wine vinegar",
+        "balsamic vinegar",
+        "rice vinegar",
+        "malt vinegar"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick vinegar?",
+      "decision": "Vinegar by its printed acidity; 5 percent for pickling.",
+      "why": "Labels print percent acidity. 5 percent is the canning and pickling floor, and 4 percent bottles are sold too.",
+      "short_answer": "Read the percent acidity on the label. Canning and pickling recipes use 5 percent, and 4 percent bottles are sold too. Vinegar keeps almost indefinitely; best-by is about quality. On balsamic, only the full protected names carry aging rules.",
+      "detail": "Vinegar labels state percent acidity. Some state grain instead, a strength unit where 10 grain equals 1 percent acidity, so 50 grain is 5 percent. The acid in vinegar is acetic acid; as an ingredient, acetic acid is produced by fermentation or by synthesis. Once a bottle is open, harmless vinegar bacteria can cloud it, and a mother, a soft floating mass, can form when pasteurization was incomplete; both are harmless. Traditionally, wine vinegar was made the slow way: in the Orleans process, wood barrels of fermented alcohol liquid acetify for about 1 to 3 months. Most vinegar is now made from distilled grain alcohol, and the most common method today is the faster submerged method. As Il Post reports, the words aceto and balsamico on their own are generic; only the full protected names carry a rule. Traditional Balsamic Vinegar of Modena (DOP) is made from cooked grape must and aged in wooden barrels for at least 12 years, and at least 25 for Extravecchio. Aceto Balsamico di Modena (IGP) is cooked or concentrated grape must, at least 20 percent of the starting mass, with wine vinegar added, aged at least 60 days in wood under the Emilia-Romagna IGP rules.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://blogs.extension.iastate.edu/answerline/2021/05/11/vinegar-shelf-life-and-safety/",
+        "https://extension.sdstate.edu/safety-concern-vinegar-acidity-level-home-canning",
+        "https://news.vt.edu/articles/2023/07/low_acidity_vinegar_warning_expert.html",
+        "https://www.law.cornell.edu/cfr/text/21/184.1005",
+        "https://ucfoodsafety.sf.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/192137.pdf",
+        "https://www.balsamicotradizionale.it/en/?p=2270",
+        "https://www.ilpost.it/2019/12/05/aceto-balsamico/",
+        "https://bur.regione.emilia-romagna.it/area-bollettini/bollettini-in-lavorazione/luglio-periodico-parte-seconda-2a-quindicina.2023-07-19.9761992070/comunicato-relativo-alla-modifica-del-disciplinare-della-igp-aceto-balsamico-di-modena/modifica-disciplinare-della-ig.2023-07-19.1689746028"
+      ],
+      "kristy_take": "Traditionally, wine vinegar was made slowly in wood barrels over months. On the shelf today, the printed acidity is the number to read.",
+      "cart_pick": "Vinegar labeled 5 percent acidity",
+      "buying_tips": [
+        "Read the label for percent acidity.",
+        "Choose 5 percent acidity for canning or pickling.",
+        "An unpasteurized vinegar says so on its label.",
+        "On balsamic, read for the full protected name and its aging words.",
+        "Store vinegar cool, dark and tightly capped."
+      ],
+      "watch_out": [
+        "Vinegars at 4 percent acidity are sold, and they are not for canning or pickling.",
+        "Water or condensation inside the bottle can drop vinegar below 5 percent acidity."
+      ],
+      "labels_decoded": [
+        {
+          "term": "5% acidity",
+          "meaning": "The strength tested canning and pickling recipes use."
+        },
+        {
+          "term": "Best by",
+          "meaning": "Peak quality, not a safety date."
+        },
+        {
+          "term": "Traditional Balsamic Vinegar of Modena",
+          "meaning": "The DOP name: cooked grape must aged in wooden barrels at least 12 years."
+        },
+        {
+          "term": "Extravecchio",
+          "meaning": "Traditional balsamic aged at least 25 years."
+        },
+        {
+          "term": "Indicazione Geografica Protetta",
+          "meaning": "Marks the IGP Aceto Balsamico di Modena: grape must with wine vinegar, at least 60 days in wood."
+        },
+        {
+          "term": "Invecchiato",
+          "meaning": "IGP balsamic aged at least 3 years in wood."
+        }
+      ],
+      "tier_note": "Pasteurized or unpasteurized, vinegar keeps almost indefinitely on the shelf.",
+      "asked_as": [
+        "which white vinegar should i buy",
+        "is white vinegar worth buying",
+        "is balsamic vinegar worth buying"
+      ]
+    },
+    {
+      "id": "pasta_sauce",
+      "title": "Pasta sauce",
+      "aliases": [
+        "pasta sauce",
+        "marinara",
+        "marinara sauce",
+        "spaghetti sauce",
+        "jarred pasta sauce"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick pasta sauce?",
+      "decision": "Pasta sauce with tomatoes first and a short list.",
+      "why": "Ingredients are listed most first, so tomatoes listed first means no ingredient outweighs them.",
+      "short_answer": "Read the ingredient list. Ingredients run from most to least, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
+      "detail": "Ingredients on a label are listed by common name in descending order of predominance, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://www.law.cornell.edu/cfr/text/21/155.190",
+        "https://www.law.cornell.edu/cfr/text/21/114.3",
+        "https://extension.psu.edu/canning-tomatoes-dos-and-donts",
+        "https://ouritaliantable.com/sugo-di-pomodoro/"
+      ],
+      "kristy_take": "Tomatoes first and a short list is a craft standard. One Neapolitan family’s sugo is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+      "cart_pick": "Pasta sauce listing tomatoes first",
+      "buying_tips": [
+        "Read the first ingredient; tomatoes should lead.",
+        "Count what follows the tomatoes; a short list is the craft standard.",
+        "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
+      ],
+      "watch_out": [
+        "An ingredient listed ahead of the tomatoes outweighs them in the jar."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ingredients",
+          "meaning": "Listed most first."
+        },
+        {
+          "term": "With ___",
+          "meaning": "On canned tomatoes, names an added spice, seasoning or vegetable."
+        },
+        {
+          "term": "With tomato puree",
+          "meaning": "Names the packing medium the tomatoes sit in."
+        }
+      ],
+      "tier_note": "A short list led by tomatoes is a craft standard, not a safety line.",
+      "asked_as": [
+        "which pasta sauce should i buy",
+        "how do i pick a pasta sauce",
+        "is marinara sauce worth buying"
+      ]
+    },
+    {
+      "id": "jam",
+      "title": "Jam and preserves",
+      "aliases": [
+        "jam",
+        "strawberry jam",
+        "raspberry jam",
+        "fruit preserves",
+        "strawberry preserves",
+        "grape jelly"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick jam or preserves?",
+      "decision": "Jam or preserves by name, made from fruit rather than juice.",
+      "why": "“Jam” and “Preserves” are standardized names made from fruit. Jelly is made from strained juice.",
+      "short_answer": "Look for “Jam” or “Preserves” in the name. Both are standardized and made from fruit with sugar. Jelly is made from strained juice. Reduced-sugar jars keep a shorter time once opened, so refrigerate them.",
+      "detail": "“Jam” and “Preserves” are standardized names. Jam is made from fruit and sugar at a fixed ratio: at least 47 parts fruit to 55 parts sugar for some fruits, and 45 to 55 for the rest. The finished jam is cooked to not less than 65 percent soluble solids. Jelly is made from the filtered or strained juice of the fruit. Pectin is the natural substance in fruit that makes it gel; commercial pectins are made from apples or citrus fruit. Special pectins exist for jars with less sugar or no added sugar. Those jars do not use sugar as a preservative, so some require refrigeration. When a jam names several fruits, they are listed in order of predominance. Sugar can weigh more than the fruit in a standard jam. By one extension definition, jam is a sweet spread that holds its shape, made from crushed or chopped fruit. Jelly is a firm gel made from juice. Preserves are small whole fruits or uniform pieces in a thick, gelled syrup. Home-kitchen (cottage-food) jam follows the same federal standard of identity for each product.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/150.160",
+        "https://www.law.cornell.edu/cfr/text/21/150.140",
+        "https://ohioline.osu.edu/factsheet/HYG-5350",
+        "https://nchfp.uga.edu/how/make-jam-jelly/jams-jellies-general-information/storing-home-canned-jams-and-jellies/",
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+        "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/216395.pdf",
+        "https://extension.umd.edu/sites/extension.umd.edu/files/publications/FS-1005%20Launching%20a%20Cottage%20Food%20Industry.pdf"
+      ],
+      "kristy_take": "Jams and preserves are cooked from crushed fruit or whole pieces. The name on the jar says which kind it is.",
+      "cart_pick": "Jam or preserves named for its fruit",
+      "buying_tips": [
+        "Read the name for “Jam” or “Preserves” with the fruit named.",
+        "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
+        "In a mixed-fruit jam, the fruits are listed most first.",
+        "Refrigerate the jar once opened.",
+        "At farmers markets, cottage-food jam labels name the maker and address."
+      ],
+      "watch_out": [
+        "Reduced-sugar jars lack the full preservative effect of sugar and keep a shorter time once opened."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Jam or Preserve",
+          "meaning": "A standardized name: fruit and sugar at a fixed ratio, at least 65 percent soluble solids."
+        },
+        {
+          "term": "Jelly",
+          "meaning": "Made from the filtered or strained juice of the fruit."
+        },
+        {
+          "term": "Pectin",
+          "meaning": "The natural fruit substance that gels; commercial pectin comes from apples or citrus."
+        },
+        {
+          "term": "Reduced sugar",
+          "meaning": "Less sugar to preserve it, so it keeps a shorter time once opened."
+        },
+        {
+          "term": "Made in a private home",
+          "meaning": "A cottage-food label statement: the jar was made in a home kitchen exempt from inspection."
+        }
+      ],
+      "tier_note": "Reduced-sugar jars keep a shorter time once opened, so cold storage matters.",
+      "asked_as": [
+        "which jam should i buy",
+        "how do i pick a strawberry jam",
+        "are fruit preserves worth buying"
+      ]
+    },
+    {
+      "id": "ketchup_mustard",
+      "title": "Ketchup and mustard",
+      "aliases": [
+        "ketchup",
+        "catsup",
+        "tomato ketchup",
+        "mustard",
+        "yellow mustard",
+        "dijon mustard",
+        "stone ground mustard",
+        "spicy brown mustard",
+        "whole grain mustard"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick ketchup and mustard?",
+      "decision": "Ketchup led by tomato; mustard made of seed, vinegar and spice.",
+      "why": "Ketchup’s federal standard starts from tomato. Prepared mustard is ground seed, vinegar, turmeric, salt and spices.",
+      "short_answer": "Ketchup is made from tomato with vinegar, sweeteners and spices. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices. Iowa State puts opened ketchup at 6 months and mustard at 1 year.",
+      "detail": "Ketchup’s federal standard, 21 CFR 155.194, accepts three names: catsup, ketchup or catchup. It starts from tomato concentrate or liquid from red tomatoes. Vinegars, sweeteners, and spices, flavoring, onions or garlic are its optional ingredients. Lemon juice or suitable organic acids may be added only to adjust the pH, a measure of acidity. The mustard description here is the USDA AMS commercial item description, a federal purchase spec rather than retail law. It calls for ground mustard seed, vinegar, turmeric, salt and spices. Yellow seed goes into its Type I and Type II mustards, and brown seed into Types III to IX. Yellow mustard is smooth, with a mild flavor and slight acid taste. Dijon is smooth and pungent, with mild white wine notes. Stone ground is coarse and pungent, with visible specks of mustard seed. Spicy brown is slightly thick. Gums and artificial colors are not permitted, and added water must be declared. As a food history site reports, the Oxford English Dictionary traces ketchup to ke-tsiap. In the Amoy dialect of Chinese, that word means a brine of pickled fish. Mushroom, walnut and fish ketchups stayed more popular in the States until the mid-1800s.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/155.194",
+        "https://www.ams.usda.gov/sites/default/files/media/CID%20Mustard%2C%20Prepared.pdf",
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+        "https://culinarylore.com/food-history:origin-of-ketchup/"
+      ],
+      "kristy_take": "By the Oxford English Dictionary’s account, ketchup was first a word for a brine of pickled fish. Today’s standard starts from tomato.",
+      "cart_pick": "Ketchup from tomato; mustard from seed",
+      "buying_tips": [
+        "Read the ketchup label for tomato concentrate and vinegar.",
+        "Read the mustard label for mustard seed, vinegar and spices.",
+        "Stone ground mustard shows visible specks of seed.",
+        "Dijon carries mild white wine notes; yellow mustard is mild.",
+        "Use an open condiment before opening a new one."
+      ],
+      "watch_out": [
+        "A ketchup that falls below the federal quality standard must say so on its label.",
+        "Opened condiments on the fridge door are easy to forget."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Catsup, Ketchup or Catchup",
+          "meaning": "Three allowed names for the same standardized food."
+        },
+        {
+          "term": "Below Standard in Quality",
+          "meaning": "The ketchup falls short of the federal quality standard. One allowed wording adds Low Consistency."
+        },
+        {
+          "term": "Stone ground",
+          "meaning": "Coarse grained mustard with visible specks of mustard seed."
+        },
+        {
+          "term": "Best by",
+          "meaning": "Best quality date, not a food safety date."
+        }
+      ],
+      "tier_note": "Opened ketchup keeps months and mustard about a year, so the date matters.",
+      "asked_as": [
+        "which ketchup should i buy",
+        "which mustard should i buy",
+        "is dijon mustard worth buying"
+      ]
+    },
+    {
+      "id": "mayo",
+      "title": "Mayonnaise",
+      "aliases": [
+        "mayo",
+        "mayonnaise",
+        "real mayonnaise",
+        "avocado oil mayo",
+        "olive oil mayo"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick mayonnaise?",
+      "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
+      "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
+      "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
+      "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/169.140",
+        "https://www.law.cornell.edu/cfr/text/21/169.150",
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+      ],
+      "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
+      "cart_pick": "Mayonnaise by name, its lead oil read",
+      "buying_tips": [
+        "Check that the name on the jar is Mayonnaise.",
+        "Read which oil the ingredient list names first.",
+        "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+        "Once opened, keep it in the fridge and use it within 1 to 2 months."
+      ],
+      "watch_out": [
+        "A front label can name an oil that the ingredient list ranks lower."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Mayonnaise",
+          "meaning": "The standardized name: at least 65 percent oil, with egg yolk and vinegar or citrus juice."
+        },
+        {
+          "term": "Salad dressing",
+          "meaning": "A separate standard, thickened with a starchy paste; it holds more water and is sweeter."
+        },
+        {
+          "term": "Calcium disodium EDTA",
+          "meaning": "A sequestrant the mayonnaise standard allows, used to preserve color or flavor."
+        }
+      ],
+      "tier_note": "The front may name an oil that the ingredients rank lower.",
+      "asked_as": [
+        "which mayonnaise should i buy",
+        "is avocado oil mayo worth buying",
+        "how do i pick a mayo"
+      ]
+    },
+    {
+      "id": "hot_soy_sauce",
+      "title": "Soy sauce and hot sauce",
+      "aliases": [
+        "soy sauce",
+        "tamari",
+        "shoyu",
+        "low sodium soy sauce",
+        "naturally brewed soy sauce",
+        "hot sauce",
+        "fermented hot sauce",
+        "is tamari worth buying"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick soy sauce and hot sauce?",
+      "decision": "Soy sauce brewed for months, not made fast with acid.",
+      "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
+      "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Hot sauce is cooked with vinegar or fermented without it.",
+      "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/609323809/The_crucial_importance_of_soy_sauce_authenticity.pdf",
+        "https://www.law.cornell.edu/cfr/text/21/101.91",
+        "https://extension.oregonstate.edu/ask-extension/featured/how-do-i-start-selling-homemade-hot-sauce-oregon",
+        "https://www.ams.usda.gov/sites/default/files/media/Notice_of_validation_for_CID_Soy_Sauce_10292020.pdf",
+        "https://tastecooking.com/a-tale-of-two-tamaris/",
+        "https://repository.lsu.edu/gradschool_disstheses/4217"
+      ],
+      "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
+      "cart_pick": "Soy sauce brewed by fermentation",
+      "buying_tips": [
+        "Read the ingredients for wheat, on tamari too.",
+        "Read the front for a gluten-free claim.",
+        "On hot sauce, read for vinegar: cooked sauces use it, and fermented ones may not."
+      ],
+      "watch_out": [
+        "Little or no wheat is not the same as a gluten-free claim.",
+        "Shoyu is made from roughly equal parts wheat and soybeans."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Gluten-free",
+          "meaning": "Any unavoidable gluten is below 20 parts per million."
+        },
+        {
+          "term": "Wheat",
+          "meaning": "A gluten-containing grain, named on the ingredient list."
+        },
+        {
+          "term": "Tamari",
+          "meaning": "A Japanese soy sauce made from all or mostly soybeans."
+        },
+        {
+          "term": "Shoyu",
+          "meaning": "The prevalent Japanese style, roughly equal parts wheat and soybeans."
+        },
+        {
+          "term": "Fermented hot sauce",
+          "meaning": "A hot sauce fermented with no added vinegar."
+        }
+      ],
+      "tier_note": "Wheat on the ingredients is a label fact, and “gluten-free” has a set meaning.",
+      "asked_as": [
+        "which soy sauce should i buy",
+        "which hot sauce should i buy",
+        "is tamari worth buying"
+      ]
+    },
+    {
+      "id": "canned_soup",
+      "title": "Canned soup",
+      "aliases": [
+        "canned soup",
+        "soup can",
+        "can of soup",
+        "low sodium soup",
+        "condensed soup"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick canned soup?",
+      "decision": "Canned soup with a short list, in a can without dents.",
+      "why": "Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can.",
+      "short_answer": "Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging.",
+      "detail": "Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.61",
+        "https://extension.psu.edu/making-use-of-canned-foods",
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/"
+      ],
+      "kristy_take": "A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning.",
+      "cart_pick": "Low sodium canned soup, undented can",
+      "buying_tips": [
+        "Read the front for low sodium versus reduced sodium.",
+        "Check reduced sodium claims for the named soup they compare against.",
+        "Check each can for deep dents, seam dents, leaks, rust and bulging lids.",
+        "Store cans cool and dry, between 50 °F and 70 °F.",
+        "Put new cans behind older ones and use the oldest first.",
+        "Wipe the lid before opening.",
+        "Move opened soup to a covered glass or plastic container in the refrigerator."
+      ],
+      "watch_out": [
+        "“No salt added” is not “sodium free”; the soup can still carry sodium.",
+        "Leave cans with deep dents or dents on the seam on the shelf."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sodium free",
+          "meaning": "Less than 5 mg of sodium per standard serving."
+        },
+        {
+          "term": "Very low sodium",
+          "meaning": "35 mg or less of sodium per standard serving."
+        },
+        {
+          "term": "Low sodium",
+          "meaning": "140 mg or less of sodium per standard serving."
+        },
+        {
+          "term": "Reduced sodium",
+          "meaning": "At least 25 percent less sodium than a reference food the label names."
+        },
+        {
+          "term": "No salt added",
+          "meaning": "No salt added during processing; not the same as sodium free."
+        },
+        {
+          "term": "Best if used by",
+          "meaning": "Best flavor or quality, not a purchase or safety date."
+        }
+      ],
+      "tier_note": "Reduced sodium compares to a named soup; low sodium is a fixed ceiling.",
+      "asked_as": [
+        "which canned soup should i buy",
+        "how do i pick a canned soup",
+        "is low sodium soup worth buying"
+      ]
     }
   ]
 }

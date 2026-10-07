@@ -207,6 +207,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `canned_coconut_milk` | bulk_pantry | Canned coconut milk, read for what is added beyond coconut. | Read the ingredients for gums such as guar gum. | — |
 | `dried_herbs` | bulk_pantry | One herb by name, or a blend whose list may say “spice”. | Check the label for the irradiation logo and “treated with radiation”. | — |
 | `tea` | bulk_pantry | Black, green, white and oolong are one plant; herbal is not tea. | Read the box for “decaffeinated”, since true tea holds caffeine otherwise. | — |
+| `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
+| `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
+| `jam` | bulk_pantry | Jam or preserves by name, made from fruit rather than juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
+| `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard made of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
+| `mayo` | bulk_pantry | Mayonnaise by name: oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+| `hot_soy_sauce` | bulk_pantry | Soy sauce brewed for months, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
+| `canned_soup` | bulk_pantry | Canned soup with a short list, in a can without dents. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

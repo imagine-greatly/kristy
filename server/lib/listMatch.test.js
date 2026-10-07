@@ -95,9 +95,14 @@ test('the three list-surface aliases landed and still resolve', () => {
   }
 });
 
-test('non-grocery and unowned food rows attach no card', () => {
-  for (const name of ['paper towels', 'dish soap', 'ketchup', 'pasta sauce']) {
+test('non-grocery rows attach no card; K22 pantry rows attach their own card', () => {
+  for (const name of ['paper towels', 'dish soap']) {
     assert.equal(matchItemToCard(name), null, `"${name}" must not attach a card`);
+  }
+  // K22 admin ruling P1=A: these were "no card yet" pins; K22 covers them.
+  for (const [name, id] of [['ketchup', 'ketchup_mustard'], ['pasta sauce', 'pasta_sauce']]) {
+    const m = matchItemToCard(name);
+    assert.equal(m?.slug ?? m?.id ?? m?.entry?.id, id, `"${name}" must attach ${id}`);
   }
 });
 
