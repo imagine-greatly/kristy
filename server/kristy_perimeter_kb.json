@@ -11519,6 +11519,293 @@
         "is trail mix worth buying",
         "how do i pick a trail mix"
       ]
+    },
+    {
+      "id": "snacks",
+      "title": "Snacks",
+      "aliases": [
+        "snack aisle",
+        "snack food aisle",
+        "packaged snack foods"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick packaged snack foods?",
+      "decision": "Read the first ingredient; then ask about chips, crackers or popcorn.",
+      "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
+      "short_answer": "Ingredients run in order of amount, so the first one is the most. A whole grain, vegetable or bean should come first. Multigrain does not mean whole grain. For one snack, ask about chips, crackers or popcorn.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. Multigrain products are often made with several refined grains. Some veggie chips are potato flour colored with vegetable powder or extract, and the ingredients show it. Front-of-package claims and pictures can mislead, so the ingredient list settles it.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.nutritionletter.tufts.edu/?p=148621",
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+        "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
+      ],
+      "kristy_take": "The snack aisle reads best one product at a time. Chips, crackers and popcorn each have a card of their own.",
+      "cart_pick": "A snack with a whole grain listed first",
+      "buying_tips": [
+        "Read the first ingredient before the front of the bag.",
+        "Look for a whole grain, vegetable or bean listed first.",
+        "Read “multigrain” as several grains, not whole grains."
+      ],
+      "watch_out": [
+        "Front-of-package claims and pictures can mislead; the ingredient list settles it."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Multigrain",
+          "meaning": "Several grains, often refined ones; it does not mean whole grain."
+        },
+        {
+          "term": "Vegetable powder",
+          "meaning": "Powder or extract that colors a chip; check whether potato flour comes first."
+        }
+      ],
+      "tier_note": "Vegetable powder colors potato flour, so the chip is mostly potato.",
+      "asked_as": [
+        "which packaged snack foods should i buy",
+        "are packaged snack foods worth buying",
+        "which snack aisle foods should i buy"
+      ]
+    },
+    {
+      "id": "hummus",
+      "title": "Hummus",
+      "aliases": [
+        "hummus",
+        "hommus",
+        "hummus dip",
+        "is hummus worth buying"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick hummus?",
+      "decision": "Hummus of chickpeas and tahini, the traditional pairing.",
+      "why": "Hummus bi tahina names its two parts, chickpeas and tahini. Store tubs add lemon and salt.",
+      "short_answer": "Hummus is chickpeas and tahini, with garlic, lemon and salt. The word is Arabic for chickpea. Store tubs typically list chickpeas, tahini, lemon and salt, and every tub in one tasting had an acid.",
+      "detail": "The full name, hummus bi tahina, names chickpeas and tahini, a paste of sesame seeds. A 13th-century cookbook from Cairo holds the first written record, without tahini or garlic. Some historians trace the modern style to 18th-century Damascus. In Israel, Palestine and Lebanon it is a main dish, not just a dip. Guar gum thickens a tub and stops weeping, and roughly half the tubs in one tasting used it. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground. Homemade hummus keeps three to four days in an airtight container in the fridge.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.britannica.com/topic/hummus",
+        "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
+        "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
+        "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/"
+      ],
+      "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
+      "cart_pick": "Hummus led by chickpeas and tahini",
+      "buying_tips": [
+        "Read the list for chickpeas and tahini at the top.",
+        "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+        "A tub listing guar gum runs thicker; without it, water and grind set the texture."
+      ],
+      "watch_out": [
+        "A grainy tub likely comes from a coarse grind of the chickpeas."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Tahini",
+          "meaning": "A paste of toasted sesame seeds, the second half of hummus bi tahina."
+        },
+        {
+          "term": "Guar gum",
+          "meaning": "A thickener that binds the dip and stops weeping."
+        },
+        {
+          "term": "Citric acid",
+          "meaning": "An acid, used like lemon, to balance the richness of chickpeas and tahini."
+        },
+        {
+          "term": "Pasteurized",
+          "meaning": "Heated before packing and sealing, as most store-bought hummus is."
+        }
+      ],
+      "tier_note": "The ingredients name guar gum when a tub uses it for texture.",
+      "asked_as": [
+        "which hummus should i buy",
+        "is hummus worth buying",
+        "how do i pick a hummus"
+      ]
+    },
+    {
+      "id": "deli_salads",
+      "title": "Deli salads",
+      "aliases": [
+        "deli salads",
+        "potato salad",
+        "chicken salad",
+        "egg salad",
+        "macaroni salad",
+        "coleslaw",
+        "is potato salad worth buying",
+        "how do i pick a chicken salad"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick deli salads?",
+      "decision": "Deli salads bought from the cold case, finished within days.",
+      "why": "Cold food stays at 40°F or below. Egg, tuna and macaroni salads keep 3 to 5 days.",
+      "short_answer": "Meats, cheeses and salads in the deli need the cold case. Leave a salad out no more than two hours. Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
+      "detail": "Extension advice is to refrigerate cold foods at 40°F or lower. Perishable take-out food should not sit at room temperature longer than two hours, or one hour above 90°F. Deli egg, tuna and macaroni salads keep 3 to 5 days in the fridge. Chicken salad keeps three to four days. The coldest spot is the back or bottom of the fridge. The door opens often to warm air. Salads made with mayonnaise do not freeze well.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
+        "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
+        "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+        "https://extension.uconn.edu/?p=20521"
+      ],
+      "kristy_take": "A food-service view: chicken, tuna and creamy egg salad belong in a cold display case.",
+      "cart_pick": "A deli salad from the cold case",
+      "buying_tips": [
+        "Buy salads from a refrigerated case.",
+        "Check the Sell-By date, and skip a tub past it.",
+        "Get it home cold; two hours out at most, one hour above 90°F."
+      ],
+      "watch_out": [
+        "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
+        "Salads made with mayonnaise do not freeze well."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Sell-By",
+          "meaning": "Tells the store how long to display the item; buy it before that date."
+        }
+      ],
+      "tier_note": "The fridge door is the wrong spot for a deli salad.",
+      "asked_as": [
+        "which deli salads should i buy",
+        "is potato salad worth buying",
+        "how do i pick a chicken salad"
+      ]
+    },
+    {
+      "id": "prepared_meals",
+      "title": "Prepared meals",
+      "aliases": [
+        "prepared meals",
+        "prepared foods",
+        "hot bar",
+        "ready meals"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick prepared meals?",
+      "decision": "Hot food held hot and cold food held cold.",
+      "why": "Hot buffet food is held at 140°F or above, and cold items below 40°F.",
+      "short_answer": "Hot food in the case should sit at 140°F or above, and cold food below 40°F. Look for a thermometer facing out, and pans filled no higher than the rim.",
+      "detail": "Hot buffet items belong in chafing dishes, slow cookers or warming trays at 140°F or above. Cold items like cut fruit and salads sit below 40°F, in bowls over ice. All buffet food is meant to be thrown out after two hours, whatever the holding temperature. An outward-facing thermometer shows the temperature inside the case. Pans piled into mounds above the rim cannot hold an even temperature. A sneeze guard should cover the food, and each dish should have its own utensil. Rotisserie chicken has a card of its own.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety",
+        "https://www.tastingtable.com/1546547/temperature-prepared-foods-grocery-store-deli",
+        "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/"
+      ],
+      "kristy_take": "One food writer’s advice: skip late-night hot bar visits, when food is more likely to have sat a long time.",
+      "cart_pick": "A dish from a case with a thermometer",
+      "buying_tips": [
+        "Find the thermometer facing out and read it before choosing.",
+        "Pick pans filled to the rim, not piled into mounds.",
+        "Look for a sneeze guard and a separate utensil for each dish.",
+        "At home, two hours out at most, then into the fridge."
+      ],
+      "watch_out": [
+        "Buffet food is thrown out after two hours, whatever the holding temperature."
+      ],
+      "labels_decoded": [],
+      "tier_note": "A thermometer facing out lets anyone read the case.",
+      "asked_as": [
+        "which prepared meals should i buy",
+        "are prepared foods worth buying",
+        "are ready meals worth buying"
+      ]
+    },
+    {
+      "id": "fresh_pasta",
+      "title": "Fresh pasta",
+      "aliases": [
+        "fresh pasta",
+        "refrigerated pasta",
+        "fresh egg pasta",
+        "ravioli",
+        "tortellini"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick fresh pasta?",
+      "decision": "Fresh pasta of flour and egg, with little else listed.",
+      "why": "Fresh egg pasta is flour and egg. Many packs add nothing, and the list shows any extras.",
+      "short_answer": "Fresh egg pasta is softer and richer than dried, mostly from the egg. Many store packs have no additives, and some add ascorbic or citric acid. An opened pack keeps 2 to 3 days.",
+      "detail": "Traditionally, pasta rich with egg yolks comes from Emilia-Romagna, in the north of Italy. The south makes fresh pasta without eggs, from flour and water, such as orecchiette. Many fresh pastas now use a mix of semolina and 00 flour. A sfoglina is a woman who rolls fresh egg pasta by hand with a wooden pin and board. Hand-rolled sheets take a coarseness from the wood, so they hold sauce better. The classic ratio is one large egg for every 100g of flour. Store packs without additives are usually vacuum sealed or hold an oxygen packet. They are sold in the refrigerated case.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.tastingtable.com/854470/why-fresh-pasta-isnt-always-better-than-dried-pasta/",
+        "https://www.walksinsiderome.com/blog/what-to-do-in-rome-fresh-pasta-recipe/",
+        "https://www.chowhound.com/1821630/store-bought-fresh-pasta-preservatives",
+        "https://guide.michelin.com/hk/en/article/people/ask-the-expert-how-to-make-fresh-pasta-by-hand",
+        "https://www.law.cornell.edu/cfr/text/21/139.150"
+      ],
+      "kristy_take": "Traditionally, fresh egg pasta was rolled by hand for Sunday family dinners, on a wooden board.",
+      "cart_pick": "Fresh pasta of flour and egg",
+      "buying_tips": [
+        "Read the list; flour and egg with little else marks a plain pack.",
+        "Note ascorbic or citric acid on the list; some packs add them.",
+        "Pick a pack that is vacuum sealed or holds an oxygen packet."
+      ],
+      "watch_out": [
+        "Once opened, the pack is best used within 2 to 3 days."
+      ],
+      "labels_decoded": [
+        {
+          "term": "Ascorbic acid",
+          "meaning": "Vitamin C, added to some fresh pasta as an acid."
+        },
+        {
+          "term": "Citric acid",
+          "meaning": "The acid that makes lemons taste sour; some fresh pasta lists it."
+        },
+        {
+          "term": "Egg noodles",
+          "meaning": "A US standard name for noodles made by drying, whose solids hold at least 5.5 percent egg or egg yolk solids."
+        }
+      ],
+      "tier_note": "An opened pack keeps only 2 to 3 days in the fridge.",
+      "asked_as": [
+        "which fresh pasta should i buy",
+        "is fresh pasta worth buying",
+        "is refrigerated pasta worth buying"
+      ]
+    },
+    {
+      "id": "deli",
+      "title": "Deli",
+      "aliases": [
+        "deli section",
+        "deli section foods",
+        "store deli case"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick deli section foods?",
+      "decision": "Ask about deli salads, prepared meals or lunch meat by name.",
+      "why": "Meats, cheeses and salads in the deli all need refrigeration. Hot foods hold at 140°F or above.",
+      "short_answer": "The deli case holds meats, cheeses and salads, and all of them need refrigeration. Hot foods are held at 140°F or above. For one food, ask about deli salads, prepared meals or lunch meat.",
+      "detail": "Breads and dry snacks are fine out of the cold, but all meats, cheeses and salad products need refrigeration. Hot buffet items are held at a minimum of 140°F, and cold items below 40°F. Lunch meat and rotisserie chicken each have a card of their own.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+        "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety"
+      ],
+      "kristy_take": "The deli holds several questions in one case. Salads, hot food and lunch meat each read differently.",
+      "cart_pick": "Deli foods from the cold case",
+      "buying_tips": [
+        "Check that meats, cheeses and salads sit in a refrigerated case.",
+        "For hot food, look for a case held at 140°F or above.",
+        "Ask about one food by name: deli salads, prepared meals or lunch meat."
+      ],
+      "watch_out": [
+        "Meats, cheeses or salads left out of a refrigerated case are a red flag."
+      ],
+      "labels_decoded": [],
+      "tier_note": "Meats, cheeses and salads in the deli belong in the cold.",
+      "asked_as": [
+        "which deli section foods should i buy",
+        "are deli section foods worth buying",
+        "which store deli case foods should i buy"
+      ]
     }
   ]
 }

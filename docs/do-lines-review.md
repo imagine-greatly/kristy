@@ -227,6 +227,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pretzels` | bulk_pantry | Pretzels dipped in lye before baking: the traditional German way. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
 | `snack_bars` | bulk_pantry | Bars with oats or a whole grain first on the list. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, with little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
+| `snacks` | bulk_pantry | Read the first ingredient; then ask about chips, crackers or popcorn. | Check veggie chips for potato flour colored with vegetable powder. | — |
+| `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
+| `deli_salads` | bulk_pantry | Deli salads bought from the cold case, finished within days. | Check the date; keep it at the back of the fridge, not the door. | — |
+| `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |
+| `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with little else listed. | Check the date, and use an opened pack within 2 to 3 days. | — |
+| `deli` | bulk_pantry | Ask about deli salads, prepared meals or lunch meat by name. | Check the cold case first; meats, cheeses and salads all need it. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 
