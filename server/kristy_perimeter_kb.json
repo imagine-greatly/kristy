@@ -10690,7 +10690,7 @@
       "question": "How do you pick soy sauce and hot sauce?",
       "decision": "Soy sauce brewed for months, not made fast with acid.",
       "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
-      "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Hot sauce is cooked with vinegar or fermented without it.",
+      "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Some fermented hot sauces have no added vinegar.",
       "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -10706,7 +10706,7 @@
       "buying_tips": [
         "Read the ingredients for wheat, on tamari too.",
         "Read the front for a gluten-free claim.",
-        "On hot sauce, read for vinegar: cooked sauces use it, and fermented ones may not."
+        "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
       ],
       "watch_out": [
         "Little or no wheat is not the same as a gluten-free claim.",
@@ -10728,10 +10728,6 @@
         {
           "term": "Shoyu",
           "meaning": "The prevalent Japanese style, roughly equal parts wheat and soybeans."
-        },
-        {
-          "term": "Fermented hot sauce",
-          "meaning": "A hot sauce fermented with no added vinegar."
         }
       ],
       "tier_note": "Wheat on the ingredients is a label fact, and “gluten-free” has a set meaning.",
@@ -10865,8 +10861,8 @@
           "meaning": "An iron salt that sets the dark color of the fruit."
         },
         {
-          "term": "Ripe olives",
-          "meaning": "Canned olives oxidized in processing to a dark brown to black color."
+          "term": "Ripe-type olives",
+          "meaning": "Canned ripe olives oxidized in processing to a dark brown to black color; the green-ripe type is not oxidized."
         },
         {
           "term": "U.S. Grade A",
@@ -11097,10 +11093,6 @@
         {
           "term": "Contains __ percent juice",
           "meaning": "Where the juice rule applies, the juice share as a whole number, never above the actual."
-        },
-        {
-          "term": "100 percent juice",
-          "meaning": "Where the juice rule applies, juice directly expressed from the fruit."
         }
       ],
       "tier_note": "When a percent line appears on the carton, it states the share.",
