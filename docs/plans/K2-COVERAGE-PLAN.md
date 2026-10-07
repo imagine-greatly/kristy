@@ -239,6 +239,11 @@ Skipped: a reading-grade formula. Add it if critics keep flagging plain-word mis
 - **K25 Close.** Run the universe probe.
   - **Done means:** 195/195 and 0 wrong; any residue becomes the next plan's first pieces.
   - **Route:** main [T0].
+  - **Result (run 2026-10-07 at 1d8e7c1):** `node server/scripts/listMatchProbe.js --universe docs/coverage/universe.json` gave **191/206 covered, 0 wrong**, 15 carried (0 attached). The universe has 206 rows, not 195. Not met: 15 residue.
+    - **13 are row-wording residue.** A card exists, but the universe row is a category label that no alias carries: salt, sugars and sweeteners, cooking oils, seeds, tea, vinegar, baking soda and powder, duck, buns and rolls, goat and sheep dairy, fries, waffles, nuggets. Adding the bare generic alias ("salt", "tea", "seeds", "fries") runs into the hub-steal rule (one longer specific alias, never short generics). So each one needs a collision check before it is added. The rows stay as written; they are not reworded to pass.
+    - **2 have no card or pick:** ginger and turmeric root (Produce), pita and naan (Bread & grains). Both are marked `pick`.
+    - **Next plan's first pieces:** (1) collision-checked aliases for the 13; (2) picks for ginger/turmeric and pita/naan.
+  - **Uncovered by section:** Produce 37/38, Meat 26/27, Bread 7/9, Dairy 32/33, Pantry 41/48, Frozen 2/5; Seafood, Eggs, Fermented, Snacks and Deli are full.
 
 ## What broken looks like
 
