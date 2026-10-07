@@ -1,0 +1,72 @@
+{
+  "id": "frozen_nuggets",
+  "title": "Frozen nuggets",
+  "aliases": [
+    "frozen chicken nuggets",
+    "chicken nuggets",
+    "frozen chicken tenders"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick frozen chicken nuggets?",
+  "decision": "Chicken nuggets that say white meat on the label.",
+  "why": "“White meat” means 100 percent light meat, and “mostly white meat” means 66 percent or more.",
+  "short_answer": "The label words set the light meat. “White meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. A plain “Chicken Nugget” is a solid piece of meat or poultry.",
+  "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.law.cornell.edu/cfr/text/9/381.156",
+    "https://www.law.cornell.edu/cfr/text/9/381.166",
+    "https://www.law.cornell.edu/cfr/text/9/319.880",
+    "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
+    "https://www.law.cornell.edu/cfr/text/9/381.173",
+    "https://www.americastestkitchen.com/recipes/15619-tiny-chicken-tenders"
+  ],
+  "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
+  "cart_pick": "Nuggets labeled white meat",
+  "buying_tips": [
+    "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
+    "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
+    "Check for “white meat”, which means 100 percent light meat.",
+    "A nugget labeled “breaded” holds no more than 30 percent breading."
+  ],
+  "watch_out": [
+    "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
+  ],
+  "labels_decoded": [
+    {
+      "term": "White meat",
+      "meaning": "100 percent light meat."
+    },
+    {
+      "term": "Mostly white meat",
+      "meaning": "66 percent or more light meat."
+    },
+    {
+      "term": "Natural proportions",
+      "meaning": "50 to 65 percent light meat."
+    },
+    {
+      "term": "Breaded",
+      "meaning": "Batter and breading make up no more than 30 percent of the finished product."
+    },
+    {
+      "term": "Chopped and Formed",
+      "meaning": "The nugget is made from chopped and formed meat or poultry."
+    },
+    {
+      "term": "Ice glazed",
+      "meaning": "An ice glaze was used to set the breading."
+    },
+    {
+      "term": "Mechanically Separated Chicken",
+      "meaning": "Poultry with most of the bone removed by machine, in a paste-like form, with bone solids at most 1 percent."
+    }
+  ],
+  "tier_note": "Natural proportions promises less light meat than a white meat label.",
+  "asked_as": [
+    "which chicken nuggets should i buy",
+    "are frozen chicken nuggets worth buying",
+    "are frozen chicken tenders worth buying"
+  ],
+  "_do_line": "Check for “natural proportions”, which means 50 to 65 percent light meat."
+}

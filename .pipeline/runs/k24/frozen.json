@@ -1,0 +1,55 @@
+{
+  "id": "frozen",
+  "title": "Frozen",
+  "aliases": [
+    "frozen aisle",
+    "frozen foods",
+    "frozen food aisle",
+    "freezer case"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you shop the frozen aisle?",
+  "decision": "Keep frozen at 0°F; then ask about pizza, meals or fries.",
+  "why": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food.",
+  "short_answer": "Buy only food frozen solid, and pick it up just before checkout. At home, keep the freezer at 0°F or below. For a closer look, ask about frozen pizza, meals or fries.",
+  "detail": "Food stored at 0°F or lower keeps its color, flavor and texture. Food held at 15°F may feel hard, but it is less solidly frozen than at 0°F. Over the same time, the 0°F food holds color, flavor and texture better. Freezing keeps quality but cannot improve flavor or texture. Processors flash-freeze food, which means freezing it very fast. Sellers keep it at 0°F or below to hold quality. Fast freezing makes tiny ice crystals. Slow freezing makes large ones that rupture cells, so moisture leaks out on thawing. Freezer burn shows as grayish-brown leathery spots where air reached the food. It can also show as white, dried-out patches that turn tough and dry. Folded foil can develop pinholes that let freezer burn in. Store shrink-film on meat breathes, so overwrap it to stop freezer burn. Freezer times and dates on frozen food mark quality only. “Do not refreeze” on a package is the packer’s quality advice. Quality can drop, and the packer cannot know home thawing conditions. Vermont’s rule has frozen display cases hold air at 0°F or lower. Each case there has a thermometer. A load line marks the top of the cold air at each end of the case. Cases sit away from door drafts, fans, lights and heaters. Thaw in the fridge, in cold water or in the microwave. Cooking from frozen takes about one and a half times as long.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+    "https://brunswick.ces.ncsu.edu/2022/07/freezing",
+    "https://brunswick.ces.ncsu.edu/2022/05/refreezing-foods/",
+    "https://www.extension.purdue.edu/extmedia/CFS/CFS-422-W.pdf",
+    "https://www.law.cornell.edu/regulations/vermont/20-014-Code-Vt-R-20-031-014-X"
+  ],
+  "kristy_take": "Freezing holds most of the quality food had when it went in, and never adds any. After the pick, handling is the shopper’s job.",
+  "cart_pick": "Packages frozen solid, picked up last",
+  "buying_tips": [
+    "Pick up frozen food just before checkout, and buy only food frozen solid.",
+    "Get it into the home freezer as soon as possible.",
+    "Keep the freezer at 0°F or below, and 5°F at most.",
+    "Ice cream that is not brick-hard means the freezer runs warm.",
+    "Label and date frozen food, and use the oldest first.",
+    "Cook or thaw by the label instructions."
+  ],
+  "watch_out": [
+    "Swinging freezer temperatures lose color, texture and flavor.",
+    "Refreezing loses some quality through moisture loss."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Do not refreeze",
+      "meaning": "The packer’s quality advice, since home thawing conditions are unknown."
+    },
+    {
+      "term": "Load line",
+      "meaning": "Under Vermont’s rule, the line marking the top of the cold air in a display case."
+    }
+  ],
+  "tier_note": "Food loses flavor and texture to freezer burn where air reached it.",
+  "asked_as": [
+    "which frozen foods should i buy",
+    "are frozen foods worth buying",
+    "which frozen aisle foods should i buy"
+  ],
+  "_do_line": "Check for grayish-brown or white dried patches; that is freezer burn."
+}
