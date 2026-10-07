@@ -52,7 +52,8 @@ const NOT_NEW = nonEmpty([
 ], 'K16 not-new rows', 27);
 const FORBIDDEN = ['seafood', 'fish', 'shellfish', 'shell', 'live', 'smoked', 'stick', 'sticks', 'white', 'fillet', 'fillets', 'cod', 'oyster', 'oysters', 'clam', 'clams', 'mussel', 'mussels', 'salmon', 'shrimp', 'tuna', 'king', 'sea', 'tail', 'tails', 'legs'];
 // K3-1 adds these bare words on purpose (list-word plan); the K16 guards below exempt only them.
-const K3_1_ALIASES = ['cod', 'clams', 'mussels', 'oysters'];
+const K3_1_ALIASES = { clams_mussels_oysters: ['clams', 'mussels', 'oysters', 'fresh clams', 'fresh mussels', 'fresh oysters'] };
+const k31 = (id, a) => (K3_1_ALIASES[id] ?? []).includes(a);
 const K3_1_ASKS = ['which seafood should i buy', 'which fish should i buy', 'which shellfish should i buy'];
 const OWNERS = nonEmpty(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish', 'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'label_wild_vs_farm_raised', 'canned_tuna'], 'seafood ask owners', 10);
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
@@ -78,7 +79,7 @@ test('C4 broad card: seafood_counter owns exactly one short alias, "seafood coun
 test('C4 steal sweep: no pre-existing alias, run as a list row, lands on a K16 id', () => {
   const olds = nonEmpty(kb.entries.filter((e) => !NEW.includes(e.id)), 'pre-existing entries', 100);
   const hits = [];
-  for (const e of olds) for (const a of e.aliases ?? []) { const got = rowMatch(a); if (NEW.includes(got) && !(got === 'clams_mussels_oysters' && K3_1_ALIASES.includes(a))) hits.push(`${e.id}:"${a}" -> ${got}`); }
+  for (const e of olds) for (const a of e.aliases ?? []) { const got = rowMatch(a); if (NEW.includes(got) && !(got === 'clams_mussels_oysters' && e.id === 'farmed_fish_by_species' && ['clams', 'mussels', 'oysters'].includes(a))) hits.push(`${e.id}:"${a}" -> ${got}`); }
   assert.deepEqual(hits, []);
 });
 
@@ -115,8 +116,8 @@ test('C9 one entry per id, no forbidden or state alias, no forbidden bare-noun a
     assert.equal(kb.entries.filter((e) => e.id === id).length, 1, `${id} count`);
     const e = byId(id);
     for (const a of e.aliases) {
-      assert.ok(!FORBIDDEN.includes(a) || K3_1_ALIASES.includes(a), `${id} alias ${a}`);
-      assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a), `${id} state alias ${a}`);
+      assert.ok(!FORBIDDEN.includes(a) || k31(id, a), `${id} alias ${a}`);
+      assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a) || k31(id, a), `${id} state alias ${a}`);
     }
     for (const q of e.asked_as ?? []) {
       if (id === 'seafood_counter' && K3_1_ASKS.includes(q)) continue;

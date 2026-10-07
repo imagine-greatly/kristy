@@ -3223,7 +3223,10 @@
         "oysters",
         "clams",
         "barramundi",
-        "arctic char"
+        "arctic char",
+        "smoked mussels",
+        "smoked oysters",
+        "smoked clams"
       ],
       "category": "seafood",
       "question": "Is farmed fish worth buying?",

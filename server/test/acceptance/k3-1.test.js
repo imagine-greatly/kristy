@@ -32,7 +32,7 @@ const COLLISIONS = nonEmpty([
   ['fish sauce', null], ['fish sticks', 'pick_fish_sticks'], ['fish oil', null],
   ['fresh fish', 'fresh_vs_previously_frozen_fish'], ['canned fish', 'canned_fish_choosing'], ['smoked fish', 'smoked_salmon'],
 ], 'K3-1 collision rows', 6);
-const EDITED = nonEmpty(['seafood_counter', 'white_fish', 'salmon_wild_vs_farmed', 'clams_mussels_oysters'], 'K3-1 edited cards', 4);
+const EDITED = nonEmpty(['seafood_counter', 'white_fish', 'salmon_wild_vs_farmed', 'clams_mussels_oysters', 'smoked_salmon', 'farmed_fish_by_species'], 'K3-1 edited cards', 6);
 
 for (const [w, id] of WORDS) test(`L "${w}" lands on ${id}`, () => assert.equal(rowMatch(w), id));
 for (const [w, want] of COLLISIONS) test(`collision "${w}" unchanged (${want})`, () => assert.equal(rowMatch(w), want));
@@ -62,16 +62,45 @@ for (const id of EDITED) test(`${id}: readable, lint-clean, no redirect`, () => 
   assert.doesNotMatch(text, /instead|swap|rather than|switch to/i);
 });
 
+// Critic r1 rows. Before = pre-K3-1 KB (334ad72), measured 2026-10-08. [row, list match, ask top]
+// Two deliberate moves: smoked salmon cuts went from no card to their owner smoked_salmon,
+// and fresh shellfish went from farmed_fish_by_species to the live-shellfish card.
+const PINS = nonEmpty([
+  ['cod liver oil', null, null], ['red snapper soup', null, null], ['bird perch', null, null], ['shoe sole', null, null],
+  ['smoked mussels', 'farmed_fish_by_species', 'farmed_fish_by_species'], ['smoked oysters', 'farmed_fish_by_species', 'farmed_fish_by_species'],
+  ['smoked clams', 'farmed_fish_by_species', 'farmed_fish_by_species'], ['frozen mussels', 'farmed_fish_by_species', 'farmed_fish_by_species'],
+  ['frozen oysters', 'farmed_fish_by_species', 'farmed_fish_by_species'], ['frozen clams', 'farmed_fish_by_species', 'farmed_fish_by_species'],
+  ['canned oysters', null, null], ['oyster sauce', null, null], ['clam juice', null, null], ['oyster mushrooms', 'produce_mushrooms', 'produce_mushrooms'],
+  ['smoked salmon fillet', 'smoked_salmon', 'smoked_salmon'], ['smoked salmon fillets', 'smoked_salmon', 'smoked_salmon'],
+  ['smoked salmon steak', 'smoked_salmon', 'smoked_salmon'], ['smoked salmon steaks', 'smoked_salmon', 'smoked_salmon'],
+  ['fresh mussels', 'clams_mussels_oysters', 'clams_mussels_oysters'], ['fresh oysters', 'clams_mussels_oysters', 'clams_mussels_oysters'],
+  ['fresh clams', 'clams_mussels_oysters', 'clams_mussels_oysters'], ['farmed mussels', 'farmed_fish_by_species', 'farmed_fish_by_species'],
+], 'critic r1 pins', 20);
+for (const [q, row, ask] of PINS) test(`pin "${q}": row ${row}, ask ${ask}`, () => {
+  assert.equal(rowMatch(q), row, 'row');
+  assert.equal(top(q), ask, 'ask');
+});
+
+test('white_fish species reach list rows only through M3, never a bare alias', () => {
+  const al = byId('white_fish').aliases;
+  for (const s of ['cod', 'grouper', 'snapper', 'perch', 'sole', 'mahi']) {
+    assert.ok(!al.includes(s), s);
+    assert.ok(al.includes(`which ${s} should i buy`), s);
+  }
+});
+
 test('steal killed: "<x> steak(s)" rows no longer land on beef_cuts_basics', () => {
   for (const w of nonEmpty(['salmon steak', 'salmon steaks', 'halibut steak', 'halibut steaks'], 'steak rows', 4)) assert.notEqual(rowMatch(w), 'beef_cuts_basics', w);
 });
 
 // K14 C10 precedent: the passRule fixture mirrors the K3-1 alias additions, and nothing else on the card moved.
-test('fixture mirrors salmon_wild_vs_farmed.aliases; no other fixture field on it moved', () => {
-  const now = (pre.entries ?? pre).find((e) => e.id === 'salmon_wild_vs_farmed');
-  assert.deepEqual(now.aliases, byId('salmon_wild_vs_farmed').aliases);
-  const head = JSON.parse(execSync('git show HEAD:server/test/acceptance/fixtures/kb-pre-readability.json', { cwd: join(ROOT, 'server'), maxBuffer: 64 << 20 }).toString());
-  const was = (head.entries ?? head).find((e) => e.id === 'salmon_wild_vs_farmed');
+test('fixture mirrors salmon_wild_vs_farmed and farmed_fish_by_species aliases; no other fixture field on them moved', () => {
+  for (const id of ['salmon_wild_vs_farmed', 'farmed_fish_by_species']) {
+  const now = (pre.entries ?? pre).find((e) => e.id === id);
+  assert.deepEqual(now.aliases, byId(id).aliases);
+  const head = JSON.parse(execSync('git show 334ad72:server/test/acceptance/fixtures/kb-pre-readability.json', { cwd: join(ROOT, 'server'), maxBuffer: 64 << 20 }).toString());
+  const was = (head.entries ?? head).find((e) => e.id === id);
   const moved = [...new Set([...Object.keys(was), ...Object.keys(now)])].filter((k) => JSON.stringify(was[k]) !== JSON.stringify(now[k]));
-  assert.ok(moved.every((k) => k === 'aliases'), moved.join(','));
+  assert.ok(moved.every((k) => k === 'aliases'), `${id}: ${moved.join(',')}`);
+  }
 });
