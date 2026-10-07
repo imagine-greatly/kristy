@@ -3,7 +3,8 @@
   "title": "Frozen pizza",
   "aliases": [
     "frozen pizza",
-    "frozen pizzas"
+    "frozen pizzas",
+    "freezer pizza"
   ],
   "category": "bulk_pantry",
   "question": "How do you pick a frozen pizza?",
@@ -33,7 +34,7 @@
   "labels_decoded": [
     {
       "term": "Wheat flour",
-      "meaning": "Plain flour, with the bran and germ removed. It is not a whole grain flour."
+      "meaning": "Plain flour, milled without the whole kernel. It is not a whole grain flour."
     },
     {
       "term": "Whole wheat flour",

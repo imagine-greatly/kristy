@@ -1,13 +1,13 @@
 {
   "id": "frozen_waffles",
   "title": "Frozen waffles",
-  "aliases": ["frozen waffles", "toaster waffles"],
+  "aliases": ["frozen waffles", "toaster waffles", "frozen waffle"],
   "category": "bulk_pantry",
   "question": "How do you pick frozen waffles?",
   "decision": "Frozen waffles with a whole grain listed first.",
   "why": "The ingredient list shows whether the first ingredient is a whole grain. “Wheat flour” is not one.",
   "short_answer": "Read the first ingredient. “Whole wheat flour” and graham flour are whole grain. “Wheat flour” is plain flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
-  "detail": "FDA draft advice treats a grain as whole when the kernel is intact, ground, cracked or flaked. Its endosperm, germ and bran stay in the same proportions as the intact kernel. Rolled oats and quick oats count as whole grain. Graham flour is another name for whole wheat flour, which has its own federal standard of identity. A federal purchase description covers frozen heat-and-serve waffles. It is USDA’s commercial item description, a buying spec, not a label rule. Its ingredients are enriched flour, water, sugar, egg, oil, salt, flavorings, whey, leavening and emulsifiers or other stabilizers. Whole wheat flour is optional there. Its flours meet the federal standard for enriched flour or for whole wheat flour.",
+  "detail": "FDA draft advice counts a grain as whole when the kernel is intact, ground, cracked or flaked. Every part of the kernel stays in the same proportions as the intact kernel. Rolled oats and quick oats count as whole grain. Graham flour is another name for whole wheat flour, which has its own federal standard of identity. A federal purchase description covers frozen heat-and-serve waffles. It is USDA’s commercial item description, a buying spec, not a label rule. Its ingredients are enriched flour, water, sugar, egg, oil, salt, flavorings, whey, leavening and emulsifiers or other stabilizers. Whole wheat flour is optional there. Its flours meet the federal standard for enriched flour or for whole wheat flour.",
   "evidence_tier": "kristys_standard",
   "sources": [
     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
