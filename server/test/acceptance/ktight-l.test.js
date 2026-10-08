@@ -69,6 +69,8 @@ test('C16: a pick carrying pick_steps or science fails lintPick', () => {
 });
 
 test('C17: neither field present → []', () => {
-  assert.ok(!('pick_steps' in berries) && !('science' in berries));
-  assert.deepEqual(lintPickSteps(structuredClone(berries)), []);
+  const bare = structuredClone(berries);
+  delete bare.pick_steps;
+  delete bare.science;
+  assert.deepEqual(lintPickSteps(bare), []);
 });

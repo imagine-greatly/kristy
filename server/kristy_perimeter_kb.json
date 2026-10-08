@@ -698,6 +698,12 @@
         "The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.",
         "If organic means fewer vegetables in the cart, buy conventional and eat more."
       ],
+      "pick_steps": [
+        "Ask if the skin gets eaten: berries, greens, apples, grapes, potatoes go organic.",
+        "Anything peeled goes in plain, however soft it feels, like avocado or kiwi.",
+        "Trust the USDA Organic seal; Natural means nothing on produce."
+      ],
+      "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. The Dirty Dozen order is contested; the eaten-whole reasoning holds. If organic means fewer vegetables, buy conventional and eat more.",
       "labels_decoded": [
         {
           "term": "USDA Organic",
@@ -749,6 +755,12 @@
         "‘Fresh’ produce that traveled a long way or sat in storage can lose nutrients over time.",
         "The advantage is picking and freezing at peak ripeness. ‘Fresh’ is not always best."
       ],
+      "pick_steps": [
+        "Take a bag listing only the vegetable or fruit, no sauce or added sugar.",
+        "Stock frozen berries and spinach; they never spoil.",
+        "Pick frozen over fresh that traveled far or sat in storage."
+      ],
+      "science": "Frozen produce is picked at peak ripeness and frozen within hours, which locks in nutrients. Fresh that travels a long way or sits in storage can lose some over days in transit. Studies find the two broadly comparable, with frozen sometimes ahead. Freezing is just cold, so it needs no additives, and frozen does not spoil.",
       "labels_decoded": [],
       "tier_note": "Freezing at harvest and the losses across days in transit are both well documented.",
       "asked_as": [
@@ -849,6 +861,12 @@
         "Summer has the most variety and some of it is only there for a short time. Strawberries come first, then cherries, blueberries, blackberries and raspberries, then peaches, melons, plums and pears.",
         "To find what is in season near you, a farmers market or LocalHarvest is the direct route."
       ],
+      "pick_steps": [
+        "Take what is piled high and cheapest this week; that is the season.",
+        "Off-season, reach for frozen over a pale, sad fresh version.",
+        "Check a farmers market or LocalHarvest for what is in season near you."
+      ],
+      "science": "Season shows up in the pile and the price before anywhere else. Spring brings tender greens and berries, summer tomatoes and stone fruit. Autumn brings squash and apples, winter citrus and hardy brassicas. Summer runs strawberries first, then cherries and other berries, then peaches, melons, plums and pears. Storage crops like apples, onions, potatoes and carrots stay good long past their season.",
       "labels_decoded": [],
       "tier_note": "Reading the season off the market table is a shopping habit held as a standard, not a nutrition claim.",
       "asked_as": [
@@ -989,6 +1007,12 @@
         "Whole skin protects the fruit. Sliced and chopped produce has more exposed surface and supports microbial growth more easily. Low-acid items that grew touching dirt, melon first, need the most care.",
         "‘Sell by’, ‘use by’ and ‘best by’ on a tub are not regulated. They are how the company chose to present the product, not a safety cutoff."
       ],
+      "pick_steps": [
+        "Buy it whole and cut it at home; it keeps far longer.",
+        "Buy pre-cut melon and pineapple the day they get eaten.",
+        "If the bag is what makes the salad happen, buy the bag."
+      ],
+      "science": "Cutting opens every surface at once, so pre-cut costs more per pound and keeps days, not weeks. Use it within a couple of days of opening, and rinse pre-washed greens anyway. Whole skin protects the fruit; cut produce supports microbial growth more easily, melon most of all. Sell-by and use-by dates on a tub are not regulated, and they are not a safety cutoff.",
       "asked_as": [
         "is pre cut fruit worth it",
         "should i buy pre cut vegetables",
@@ -2109,6 +2133,12 @@
         "The number on the sticker says how it was grown, not how good it is. Four digits starting 3 or 4 means conventional; five digits starting 9 means organic.",
         "‘Pesticide-free’ on a sign can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."
       ],
+      "pick_steps": [
+        "Read the origin as the month, not a grade; judge the piece itself.",
+        "Press with your palm and take the heavier of two.",
+        "On the sticker number, five digits starting 9 means organic."
+      ],
+      "science": "The same variety grows in several countries with different seasons, so the sticker changes through the year. Hass names the avocado, not where it grew. Origin earns attention through transit: grown closer usually means picked closer to ripe. The sticker number says how it was grown, not how good it is. A pesticide-free sign without an organic label could mean none were used or residue washed off.",
       "eyebrow_short": "Origin sticker",
       "asked_as": [
         "does the country on the sticker matter",
@@ -3425,6 +3455,12 @@
         "A shiny watermelon rind tends to be underripe. Dull skin is the good sign, not the bad one.",
         "The thump: ripe sounds dull and hollow, unripe sounds high-pitched or metallic."
       ],
+      "pick_steps": [
+        "Pick up two the same size and take the heavier one.",
+        "Press with your palm, never fingertips, and buy at staggered firmness.",
+        "Watermelon: creamy yellow ground spot, dull rind, a dull hollow thump."
+      ],
+      "science": "Cantaloupe and tomatoes should be fragrant at the stem; skip cold-case tomatoes. Stone fruit gives slightly at the shoulder, and pineapple smells sweet at the base. Citrus should feel heavy with thin, smooth skin; color is not the tell. Vegetables are a firmness check: tight asparagus tips, dense broccoli heads without yellowing, perky greens without slime. An avocado stem nub shows green when ripe and brown when overripe.",
       "labels_decoded": [],
       "tier_note": "Which fruit ripens after picking is settled produce handling, and smell is the signal it gives.",
       "eyebrow_short": "Picking produce",
@@ -3494,6 +3530,12 @@
         "A carton that already smells sweet or fermented is past it.",
         "Juice stains on the bottom of the container mean crushed or moldy berries inside."
       ],
+      "pick_steps": [
+        "Take a cold carton with no fog inside the plastic.",
+        "Flip it: dry, unstained bottom, no fuzzy spot on any berry.",
+        "Buy them ready: deep, even color and no sweet, fermented smell."
+      ],
+      "science": "Berries do not ripen after picking, so what is in the carton is what you are buying. The bottom layer carries the weight, condensation keeps it damp, and mold spreads berry to berry by contact. Re-stacked clamshells can hide older fruit under a fresh top layer, so the underside is the check.",
       "labels_decoded": [],
       "tier_note": "That berries decay from the bottom under their own weight, and do not ripen after picking, is settled postharvest handling, and it is why the underside is the check.",
       "eyebrow_short": "Picking berries",
@@ -4929,6 +4971,12 @@
         "The seed itself can carry the pathogen. The warm damp that sprouts it also multiplies any bacteria already on the seed.",
         "Raw sprouts are classed as potentially hazardous foods alongside meats, cheeses, cut melon and cut leafy greens."
       ],
+      "pick_steps": [
+        "Buy from the refrigerated case only, with a pack date days old.",
+        "Roots white and threadlike, stems crisp, no fog or sour smell.",
+        "Not for pregnancy or anyone immunocompromised, as growers and the FDA agree."
+      ],
+      "science": "Sprouts grow in the warm damp that bacteria also like, and the seed itself can carry the pathogen. Raw sprouts are classed as potentially hazardous foods, alongside cut melon and cut leafy greens. Slick, browning or sour sprouts are past it, and that shows fast. A jar, a mesh lid and a scoop of seed grow a crop in three days.",
       "labels_decoded": [
         {
           "term": "Sprouts",
@@ -5004,6 +5052,12 @@
         "Certified organic restricts synthetic pesticides. It is not a promise of a blank screen on every box.",
         "The organic box was screened for more than 500 pesticides, including ones approved for organic use, and came back non-detect. One sample, one time."
       ],
+      "pick_steps": [
+        "No USDA Organic seal on the clamshell means conventional, whatever the box says.",
+        "Read the seal, not the photograph; the two cartons look almost identical.",
+        "The brand name says nothing about which line is in your hand."
+      ],
+      "science": "A strawberry has no peel to take residue away. One spot-check found 12 residues on a conventional box. The organic box, screened for more than 500 pesticides, came back non-detect. One box of each, tested once, is a reason to buy organic, not a measurement of a brand. Certified organic restricts synthetic pesticides; it does not promise a blank screen. The lawsuits are filings, not findings.",
       "labels_decoded": [
         {
           "term": "USDA Organic",
@@ -5755,6 +5809,12 @@
         "Plums stored in the 36 to 46°F range: mealiness, browning, and failure to ripen.",
         "Dents in cherries: pitting, thought to come from impact injury."
       ],
+      "pick_steps": [
+        "Peaches and nectarines: ground color turned from green to yellow.",
+        "Plums: skin color turned for the variety; cherries: full color, green fleshy stems.",
+        "Leave any bruised, cracked, pecked, dented or shriveled fruit; skin staining is cosmetic."
+      ],
+      "science": "A bruise does not go away, so sound fruit is the first check on every sheet. Dents in cherries are pitting, thought to come from impact injury. Store stone fruit just above freezing, 30.5 to 32°F, and cherries at or below 41°F. Plums held between 36 and 46°F, the killing range, can turn mealy, brown and fail to ripen.",
       "labels_decoded": [],
       "tier_note": "Buying fruit without bruises or damage is the instruction the Michigan Fresh sheets share.",
       "eyebrow_short": "Stone fruit",
@@ -6933,6 +6993,12 @@
         "A plastic bag traps moisture and spoils mushrooms faster.",
         "Wild-picked mushrooms need an expert. Cooking or drying does not destroy their toxins."
       ],
+      "pick_steps": [
+        "Take dry, firm caps and pass on any with dark spots.",
+        "Closed caps taste mild; open caps with gills showing taste stronger.",
+        "Buy them loose, only as many as needed."
+      ],
+      "science": "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one. Keep them cold in paper, since a plastic bag traps moisture and spoils them faster. Wild-picked mushrooms need an expert, and cooking or drying does not change that.",
       "labels_decoded": [
         {
           "term": "Portobello",
@@ -6983,6 +7049,12 @@
         "Skip beans that look damp or feel sticky.",
         "Flabby pods and bulging seeds mean over-mature beans, which turn tough and stringy."
       ],
+      "pick_steps": [
+        "Pick smooth, crisp, slender pods with the seeds flat and hidden.",
+        "Leave any with brown or rust spots, or a damp, sticky feel.",
+        "Keep them cold and cook them within five days."
+      ],
+      "science": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Seeds bulging through the pod mean an over-mature bean, and flabby pods say the same. Those beans turn tough, stringy and starchy.",
       "labels_decoded": [
         {
           "term": "Snap beans",
