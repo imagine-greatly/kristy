@@ -1462,6 +1462,23 @@ export function lintPickSteps(entry) {
   }
   const steps = Array.isArray(e.pick_steps) ? e.pick_steps.filter((s) => typeof s === 'string') : [];
   const science = typeof e.science === 'string' ? e.science : '';
-  for (const v of claimLockViolations({ look_for: steps, detail: science })) fail(`KT_${v.code}`, v.detail);
+  const lockText = (s) => PRESERVATION_CURE.reduce((t, re) => t.replace(re, 'preserved'), s);
+  for (const v of claimLockViolations({ look_for: steps.map(lockText), detail: lockText(science) })) fail(`KT_${v.code}`, v.detail);
   return out;
 }
+
+// INVARIANT: preservation sense only; a treatment sense must still trip the lock.
+// Closed, literal list of meat/food-preservation phrases (derived from the B05 deli/cured
+// drafts and the deli_meat_uncured, bacon, hot_dogs, ham, turkey_bacon, cured_pork KB text).
+// Only the cure-word itself is swapped, so "cured meat cures colds" still fires on "cures".
+// Never add a bare "cure"/"cured"/"curing" wildcard; counterClaimLock.js stays untouched.
+const PRESERVATION_CURE = [
+  /\b(?:un|dry-|salt-)?cured(?=\s+(?:pork|meats?|hams?|bacon|salami|sausages?|fish|salmon|egg yolks?|belly|leg of pork|products?|ground product)\b)/gi,
+  /\b(?:dry|salt)-cured\b/gi,
+  /\b(?<=pork )cured(?= with salt\b)/gi,
+  /\b(?<=meat is )cured(?=, using celery powder\b)/gi,
+  /\bcuring(?=[\s-](?:agents?|ingredients?|salts?|process|time|substances?|source|mixture|label)\b)/gi,
+  /\b(?<=celery-based )curing\b/gi,
+  /\b(?<=water the )curing(?= added\b)/gi,
+  /\b(?<=celery )cure\b/gi,
+];

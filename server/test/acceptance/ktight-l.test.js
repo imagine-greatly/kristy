@@ -74,3 +74,27 @@ test('C17: neither field present → []', () => {
   delete bare.science;
   assert.deepEqual(lintPickSteps(bare), []);
 });
+
+// Preservation sense of "cured"/"curing" passes the KT claim lock; a treatment sense still trips it.
+const PRESERVATION = [
+  'cured pork', 'uncured bacon', 'cured meats', 'cured ham', 'cured salami', 'cured sausage', 'cured fish',
+  'cured salmon', 'cured egg yolk', 'cured belly', 'the cured leg of pork', 'a cured product', 'cured ground product',
+  'dry-cured ham', 'salt-cured fish', 'pork cured with salt', 'meat is cured, using celery powder',
+  'a curing agent', 'curing agents', 'each curing ingredient', 'curing ingredients', 'curing salt', 'curing salts',
+  'the curing process', 'curing time', 'every curing substance', 'a curing source', 'the curing mixture',
+  'curing-mixture ingredients', 'curing-label policy', 'celery-based curing', 'the water the curing added', 'celery cure',
+];
+nonEmpty(PRESERVATION, 'PRESERVATION');
+test('preservation cure phrases lint clean in a step and in science', () => {
+  for (const p of PRESERVATION) {
+    assert.deepEqual(codes(step(`Read the label for ${p}.`)), [], `step: ${p}`);
+    assert.deepEqual(codes(sci(`${SCIENCE} The label names ${p}.`)), [], `science: ${p}`);
+  }
+});
+const TREATMENT = ['cured my arthritis', 'cures inflammation', 'a cure for bloating', 'curing gut issues', 'cured meat cures colds'];
+test('treatment sense of cure still fires KT_CLAIM_TREATMENT', () => {
+  for (const t of TREATMENT) {
+    assert.ok(codes(step(`Buy the one that ${t}.`)).includes('KT_CLAIM_TREATMENT'), `step: ${t}`);
+    assert.ok(codes(sci(`${SCIENCE} This one ${t}.`)).includes('KT_CLAIM_TREATMENT'), `science: ${t}`);
+  }
+});
