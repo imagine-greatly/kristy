@@ -2360,6 +2360,12 @@
         "“Made with whole grains” permits any fraction, and it is often small.",
         "Brown bread is frequently white flour with caramel coloring."
       ],
+      "pick_steps": [
+        "First ingredient: “whole wheat flour” counts; “wheat flour” or “enriched flour” does not.",
+        "Trust “100% whole grain”; “made with whole grains” permits any fraction, often small.",
+        "Ignore the color: brown bread is frequently white flour with caramel coloring."
+      ],
+      "science": "“Multigrain” is a headcount: it only means more than one grain is in there. Every one of those grains may be refined. “Whole grain” means the kernel is intact: bran, germ and endosperm. A loaf can be multigrain, seven-grain, or stone-ground and still be built on refined flour. Only one of the two terms is about refinement.",
       "tier_note": "Whole grain carries a definition and multigrain does not. That gap is the entire difference.",
       "asked_as": [
         "is multigrain whole grain",
@@ -2419,6 +2425,12 @@
         "“No sugar added” still allows the food’s own sugars, which can be substantial.",
         "“Reduced sugar” is 25% less than a reference food that may have been very sweet."
       ],
+      "pick_steps": [
+        "Skip “lightly sweetened”; go straight to the “Added Sugars” line on the panel.",
+        "Read “no sugar added” and “reduced sugar” as defined, not as low.",
+        "Check the list for the sugar aliases: syrups, cane juice, concentrates."
+      ],
+      "science": "“Lightly sweetened” has no regulatory meaning at all. The added-sugars line is the one number that is defined, and it cannot be spun. “No sugar added” means none was added in processing. The food’s own sugars remain and can be substantial. “Reduced sugar” means at least 25% less than a reference food. That reference food may have been very sweet.",
       "tier_note": "The phrase has no legal definition. The added-sugars line does, and it cannot be spun.",
       "asked_as": [
         "what does lightly sweetened mean",
@@ -2476,6 +2488,12 @@
         "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
         "“Natural flavors” can carry solvents and carriers that need no separate declaration."
       ],
+      "pick_steps": [
+        "Read “no artificial flavors” narrowly: natural flavoring is still permitted.",
+        "Know that “natural flavors” can carry solvents and carriers needing no separate declaration.",
+        "A short list of recognizable food names beats any flavor claim on the front."
+      ],
+      "science": "A natural flavor must start from a plant or animal source; an artificial one does not. That is a rule about origin, not processing. Both arrive as engineered compounds. Either can be a proprietary blend of dozens of substances declared as two words on the panel. The objection is the opacity, not the word “artificial.”",
       "tier_note": "The legal line between natural and artificial flavor is the starting material, and it is written down.",
       "asked_as": [
         "what is natural flavor",
@@ -4681,6 +4699,12 @@
         "Natural, wholesome and farm fresh carry little or no definition.",
         "When the front and the back disagree, the front is the one nobody had to check."
       ],
+      "pick_steps": [
+        "Decide from the back first; look at the front, if at all, after.",
+        "Read “natural,” “wholesome” and “farm fresh” as marketing with little or no definition.",
+        "When front and back disagree, believe the back; a short, recognizable list beats claims."
+      ],
+      "science": "The front is written by marketing, and only some of its phrases have any legal definition. The back is regulated in content and format. Three things there do most of the work: the ingredient list, the added-sugars line, and the serving size. When the two disagree, the back is the one that had to be checked.",
       "tier_note": "The ingredient list, the added sugars and the serving size are mandated by regulation; the front of the box is not.",
       "eyebrow_short": "Front vs. back",
       "asked_as": [
@@ -4735,6 +4759,12 @@
         "Sugars get split across syrups, concentrates and dextrose so no single one ranks high.",
         "“Enriched wheat flour” as a first ingredient is not “whole wheat flour”."
       ],
+      "pick_steps": [
+        "Read the first three ingredients; by weight, they are most of the package.",
+        "Spot split sugars: syrups, concentrates, dextrose and honey listed separately.",
+        "Check the first ingredient: “enriched wheat flour” and “whole wheat flour” are different foods."
+      ],
+      "science": "Ingredients run in weight order by law, heaviest first, so the list is a ranking. Everything after “contains 2% or less of” is a trace, and not in weight order. Sugar splitting is legal and common: each sugar is listed separately so none climbs the list. Together they would sit near the top. The added-sugars line totals them all, whatever each one was named.",
       "tier_note": "Weight order is required by law, which is what makes position readable at all.",
       "asked_as": [
         "how do i read an ingredient list",
@@ -4875,6 +4905,12 @@
         "“Cold-pressed” is tightly defined only for olive oil.",
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
       ],
+      "pick_steps": [
+        "Which oil it is comes first; a cold-pressed canola is still canola.",
+        "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
+        "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
+      ],
+      "science": "Expeller-pressed means a mechanical screw press, no solvent; friction still makes heat. Cold-pressed is the same press with the temperature held down, tightly defined only for olive oil. Most supermarket oil is solvent-extracted, then refined, bleached and deodorized. Refined oil is stripped of color, flavor and aroma; unrefined oil tastes like its source. These words rank how an oil was made, not what it was made from.",
       "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one. This ranks how an oil was made, never which oil to buy, and that question comes first.",
       "asked_as": [
         "what does cold pressed mean",
@@ -4941,6 +4977,12 @@
         "“Sugar-free” does not mean unsweetened. Something else is doing the sweetening.",
         "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify."
       ],
+      "pick_steps": [
+        "Read “sugar-free” as defined at under half a gram, not as unsweetened.",
+        "Find the substitute by name: a sugar alcohol or a high-intensity sweetener.",
+        "Look for “unsweetened”; “naturally sweetened” has no definition: honey, syrup, concentrate all qualify."
+      ],
+      "science": "“Sugar-free” is defined as under 0.5 g sugar per serving. It says nothing about what took sugar’s place. Something else is doing the sweetening. Sugar alcohols such as erythritol, maltitol and xylitol appear by name and are also totaled on the panel. High-intensity sweeteners such as stevia, monk fruit, sucralose and aspartame appear in the list in tiny amounts. “Unsweetened” generally means no sweetener of any kind was added.",
       "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in.",
       "asked_as": [
         "what is in sugar free food",
@@ -5064,6 +5106,12 @@
         "Serving sizes reflect what people typically eat. They are not a recommendation.",
         "Two products only compare if their serving sizes match. Check both."
       ],
+      "pick_steps": [
+        "Read servings per container first, serving size second, then the numbers.",
+        "Compare two products only when their serving sizes match; check both.",
+        "On larger packages, use the per-package column."
+      ],
+      "science": "Every number on the Nutrition Facts panel is per serving. The servings-per-container line says how many the package holds. “About 2.5 servings” means multiplying everything by two and a half. Serving sizes are set by regulation to reflect what people typically eat. They are not a recommendation. Added sugars has its own line now, and it is the number that cannot be spun.",
       "tier_note": "Every number on the panel is per serving by rule, which is why the top two lines come first.",
       "asked_as": [
         "why is the serving size so small",
@@ -5115,6 +5163,12 @@
         "An international expert committee on food additives reviewed the same additive in 2023 and found dietary intake no hazard.",
         "The UK, Canada, Australia and New Zealand reviewed it and did not follow the EU."
       ],
+      "pick_steps": [
+        "Certified dyes like “Red 40” appear by name and number and cannot be pooled.",
+        "Read “artificial color” or “color added” as a color that need not be named.",
+        "Expect color low on the list, because the amounts used are small."
+      ],
+      "science": "Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. Its EU withdrawal turned on an unresolved question about damage to DNA, not a demonstrated harm. An international expert committee reviewed it in 2023 and found dietary intake no hazard. The UK, Canada, Australia and New Zealand reviewed it and did not follow the EU.",
       "labels_decoded": [
         {
           "term": "Artificial color",
