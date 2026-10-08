@@ -91,7 +91,8 @@ test('preservation cure phrases lint clean in a step and in science', () => {
     assert.deepEqual(codes(sci(`${SCIENCE} The label names ${p}.`)), [], `science: ${p}`);
   }
 });
-const TREATMENT = ['cured my arthritis', 'cures inflammation', 'a cure for bloating', 'curing gut issues', 'cured meat cures colds'];
+const TREATMENT = ['cured my arthritis', 'cures inflammation', 'a cure for bloating', 'curing gut issues', 'cured meat cures colds',
+  'The curing process for arthritis', 'A curing agent for gout', 'curing agents for gout', 'Celery cure for headaches', 'Salt-cured my eczema'];
 test('treatment sense of cure still fires KT_CLAIM_TREATMENT', () => {
   for (const t of TREATMENT) {
     assert.ok(codes(step(`Buy the one that ${t}.`)).includes('KT_CLAIM_TREATMENT'), `step: ${t}`);

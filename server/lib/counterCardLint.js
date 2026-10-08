@@ -1472,13 +1472,17 @@ export function lintPickSteps(entry) {
 // drafts and the deli_meat_uncured, bacon, hot_dogs, ham, turkey_bacon, cured_pork KB text).
 // Only the cure-word itself is swapped, so "cured meat cures colds" still fires on "cures".
 // Never add a bare "cure"/"cured"/"curing" wildcard; counterClaimLock.js stays untouched.
+// TAIL fails closed: a preservation phrase followed by a treatment tail ("curing agent for
+// gout") is left untouched, so the lock still reads the cure-word.
+const CURE_TAIL = String.raw`(?!\s+(?:for|against|that|which|to|helps?|treats?)\b)`;
+const CURE_NOUN = String.raw`(?:pork|meats?|hams?|bacon|salami|sausages?|fish|salmon|egg yolks?|belly|leg of pork|products?|ground product)`;
 const PRESERVATION_CURE = [
-  /\b(?:un|dry-|salt-)?cured(?=\s+(?:pork|meats?|hams?|bacon|salami|sausages?|fish|salmon|egg yolks?|belly|leg of pork|products?|ground product)\b)/gi,
-  /\b(?:dry|salt)-cured\b/gi,
-  /\b(?<=pork )cured(?= with salt\b)/gi,
-  /\b(?<=meat is )cured(?=, using celery powder\b)/gi,
-  /\bcuring(?=[\s-](?:agents?|ingredients?|salts?|process|time|substances?|source|mixture|label)\b)/gi,
-  /\b(?<=celery-based )curing\b/gi,
-  /\b(?<=water the )curing(?= added\b)/gi,
-  /\b(?<=celery )cure\b/gi,
+  new RegExp(String.raw`\b(?:un|dry-|salt-)?cured(?=\s+(?:raw\s+)?${CURE_NOUN}\b${CURE_TAIL})`, 'gi'),
+  new RegExp(String.raw`\b(?:dry|salt)-cured(?=[,.])`, 'gi'),
+  new RegExp(String.raw`(?<=pork )cured(?= with salt\b${CURE_TAIL})`, 'gi'),
+  new RegExp(String.raw`(?<=meat is )cured(?=, using celery powder\b${CURE_TAIL})`, 'gi'),
+  new RegExp(String.raw`\bcuring(?=[\s-](?:agents?|ingredients?|salts?|process|time|substances?|source|mixture|label)\b${CURE_TAIL})`, 'gi'),
+  new RegExp(String.raw`(?<=celery-based )curing(?=\s+${CURE_NOUN}\b${CURE_TAIL}|[,.;])`, 'gi'),
+  new RegExp(String.raw`(?<=water the )curing(?= added\b${CURE_TAIL})`, 'gi'),
+  new RegExp(String.raw`(?<=celery )cure(?=\s+${CURE_NOUN}\b${CURE_TAIL}|[,.])`, 'gi'),
 ];
