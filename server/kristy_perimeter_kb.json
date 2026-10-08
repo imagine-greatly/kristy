@@ -8249,7 +8249,7 @@
       ],
       "pick_steps": [
         "Take duckling or roaster duck for tender meat, with the USDA Grade A shield.",
-        "Check the freezer case, where most duck is sold, and bag it separately.",
+        "Pick USDA Grade A duck when graded.",
         "Ignore a ‘no hormones’ claim: hormones are not allowed in any US duck."
       ],
       "science": "Federal rule 9 CFR 381.170 names ducks by age. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old, with toughened flesh. Grading is voluntary, and Grade A is the top shield. Use fresh duck within 1 or 2 days, or freeze it, and cook duck to 165°F.",
@@ -8852,7 +8852,7 @@
         "Fishy, sour or ammonia odors mean the fish stays at the store."
       ],
       "pick_steps": [
-        "Ask the species, then where it came from and whether it was farmed.",
+        "Pick fish displayed on ice or in a refrigerated case.",
         "Check: fish on ice or refrigerated, cooked seafood kept apart from raw.",
         "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
       ],
@@ -9128,9 +9128,7 @@
         "“Gluten-free” describes gluten content only, nothing else about the loaf."
       ],
       "pick_steps": [
-        "Find the claim: “gluten-free”, “no gluten”, “free of gluten” or “without gluten”.",
-        "Read which flours and starches replace the wheat, and the binding gum.",
-        "Celiac disease or a gluten concern: ask a doctor which foods fit."
+        "Find the claim: “gluten-free”, “no gluten”, “free of gluten” or “without gluten”."
       ],
       "science": "All four claim wordings mean the food has less than 20 ppm gluten under one federal rule. The claim is voluntary. Wheat starch may appear only if the food stays under that limit. Bakers replace gluten with blended flours and starches, such as rice, potato or tapioca. A gum binder, usually xanthan gum or HPMC, mimics some of gluten’s stretch. “Gluten-free” describes gluten content only.",
       "labels_decoded": [
@@ -9471,7 +9469,7 @@
       "pick_steps": [
         "Pick the bottle with no flavor named on the label.",
         "Take it from the refrigerated case and keep it cold.",
-        "Use it in place of buttermilk or yogurt in recipes."
+        "Pick an unflavored bottle from the refrigerated case."
       ],
       "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
       "labels_decoded": [
@@ -9523,7 +9521,7 @@
       "pick_steps": [
         "Read the name: “sour cream” or “cultured” means bacteria did the souring.",
         "“Acidified” on the tub means added acids did the souring.",
-        "Read the optional ingredients for texture or shelf life, and any declared flavor."
+        "Pick sour cream or cultured sour cream before acidified sour cream."
       ],
       "science": "Federal standards name two ways to sour cream. Sour cream, or cultured sour cream, is pasteurized cream soured by lactic acid bacteria. Acidified sour cream is soured with added food-grade acids, with or without bacteria. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop liquid separating out. Culturing is the traditional way to sour cream.",
       "labels_decoded": [
@@ -9742,7 +9740,7 @@
       "pick_steps": [
         "Read the list: plain ghee is butter alone, simmered down to its fat.",
         "A flavored jar lists spices too, so it holds more than butter.",
-        "Choose ghee for its nutty taste and aroma."
+        "For plain ghee, pick a jar listing butter alone."
       ],
       "science": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty, aromatic taste. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
       "labels_decoded": [
@@ -9852,9 +9850,7 @@
         "FDA does not place almond drinks in the dairy group."
       ],
       "pick_steps": [
-        "Pick unsweetened over sweetened, vanilla or chocolate.",
-        "Compare protein, vitamin D, calcium and potassium across cartons.",
-        "Check saturated fat on the panel."
+        "Pick unsweetened over sweetened, vanilla or chocolate."
       ],
       "science": "Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.",
       "labels_decoded": [
@@ -9908,8 +9904,7 @@
       ],
       "pick_steps": [
         "Pick fortified; unfortified soy milk is not in FDA’s dairy group.",
-        "Pick unsweetened over flavored.",
-        "Compare protein and potassium across cartons, and check saturated fat."
+        "Pick unsweetened over flavored."
       ],
       "science": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group. The reason given is key nutrients similar to those in milk.",
       "labels_decoded": [
@@ -9963,7 +9958,7 @@
       "pick_steps": [
         "Check a sweetened carton for sugar and flavors; any carton can list thickeners.",
         "Reach for the can, not the carton, for a recipe.",
-        "Find it in the nondairy milk section, next to the soy milk."
+        "For a drink, pick carton coconut milk."
       ],
       "science": "Canned coconut milk is shredded coconut steeped in water or milk, then pressed. The carton beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of the can. It does not stand in for canned coconut milk in cooking.",
       "labels_decoded": [
@@ -10011,8 +10006,7 @@
       ],
       "pick_steps": [
         "Find each oil named in the list; note which one comes first.",
-        "Check whether a nut milk or culture is listed, as in some versions.",
-        "Compare the fat line on the Nutrition Facts."
+        "Check whether a nut milk or culture is listed, as in some versions."
       ],
       "science": "Plant butter is built on plant oils, and the oils differ from one plant butter to the next. The name alone does not say which oils went in; the ingredient list does. One label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors. The federal margarine standard is a reference point, not a definition of plant butter.",
       "labels_decoded": [
@@ -10063,9 +10057,7 @@
         "Vitamins in milk are optional, so check the label rather than assume."
       ],
       "pick_steps": [
-        "Choose the type first: milk, yogurt, cheese, butter, cream or a plant drink.",
-        "Check the milk label for vitamins A and D; they are optional.",
-        "Read a filtered milk panel for its protein and sugar lines."
+        "Check the milk label for vitamins A and D; they are optional."
       ],
       "science": "Adding vitamins A and D to milk is optional, so the label tells. If vitamin D is added, each quart holds 400 International Units. Organic dairy animals must graze pasture throughout a grazing season of at least 120 days per year. Ultrafiltration pushes milk through a porous membrane, concentrating the protein already in it. The label then shows more protein, less sugar and a longer shelf life.",
       "labels_decoded": [
@@ -10236,7 +10228,7 @@
         "Fish sauce or salted seafood is often in the seasoning."
       ],
       "pick_steps": [
-        "Check the packed date to see how long it has fermented.",
+        "Pick crisp, plump, bright kimchi to eat as is.",
         "Crisp, plump, bright cabbage to eat as is; lighter, softer kimchi to cook.",
         "Read the ingredients for fish sauce or shrimp."
       ],
@@ -10295,7 +10287,7 @@
       ],
       "pick_steps": [
         "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
-        "Read the ingredients: salt brine, no vinegar; some makers add it as a preservative.",
+        "Pick pickles fermented in salt brine.",
         "Pick half-sour for crisp and bright green, full-sour for fully fermented."
       ],
       "science": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. Federal rules let acidified foods, meaning foods with acid added, be called pickles. A half-sour has a shorter stay in the brine than a full-sour.",
@@ -10533,7 +10525,7 @@
       ],
       "pick_steps": [
         "Buy sealed trays from the cold case or the freezer.",
-        "Check the date; chilled natto keeps only days, so freeze extra.",
+        "Pick sealed trays kept cold or frozen.",
         "Expect a strong smell and sticky strings; strong ammonia means it fermented too long."
       ],
       "science": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
@@ -10779,7 +10771,7 @@
       "pick_steps": [
         "Pick light or dark brown sugar; dark carries more molasses.",
         "Ignore cane or beet on the bag; the sugar is the same.",
-        "Keep brown sugar closed, since it hardens in open air."
+        "Pick dark brown sugar for more molasses, light brown for less."
       ],
       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
       "labels_decoded": [
@@ -11085,7 +11077,7 @@
       "pick_steps": [
         "Flax: buy it ground, or whole for grinding at home.",
         "Hulled hemp needs no grinding; chia works whole or ground.",
-        "Keep opened flax in the refrigerator; warm, it can turn rancid."
+        "Pick hulled hemp seeds when no grinding is wanted."
       ],
       "science": "Flaxseed contains fat, so it can turn rancid over time. Seeds stored at room temperature for long periods turn rancid, so long keeping means the refrigerator or freezer. Shelled hemp seeds, also called hulled, do not need grinding, unlike flax. Chia turns to gel when soaked.",
       "labels_decoded": [
@@ -11193,8 +11185,7 @@
       ],
       "pick_steps": [
         "Read the ingredient list to tell fortified from unfortified.",
-        "Look for added vitamins named on the list; unfortified has none added.",
-        "Pick flakes, granules or powder by how it will be used."
+        "Look for added vitamins named on the list; unfortified has none added."
       ],
       "science": "Nutritional yeast is Saccharomyces cerevisiae, the species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, washed, dried and crumbled. So both fortified and unfortified yeast are inactive. The two look alike in the bag.",
       "labels_decoded": [
@@ -11244,8 +11235,7 @@
         "The carton coconut milk drink is a different product, covered on its own card."
       ],
       "pick_steps": [
-        "Read the list for what the can holds beyond coconut.",
-        "Compare two cans by how much the list adds beyond coconut.",
+        "Pick canned coconut milk with additions disclosed in the ingredient list.",
         "Expect a gum such as guar gum on many cans, added to thicken."
       ],
       "science": "Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker, never a ranking.",
@@ -11425,8 +11415,7 @@
       ],
       "pick_steps": [
         "Read the label for percent acidity; 10 grain equals 1 percent.",
-        "Choose 5 percent acidity for canning or pickling, never a 4 percent bottle.",
-        "On balsamic, read for the full protected name and its aging words."
+        "Choose 5 percent acidity for canning or pickling, never a 4 percent bottle."
       ],
       "science": "The acid in vinegar is acetic acid, made by fermentation or by synthesis. Most vinegar today comes from distilled grain alcohol by the faster submerged method. Vinegar keeps almost indefinitely, and best-by is about quality. Once open, harmless vinegar bacteria can cloud it, or a soft mother can form. Water or condensation inside the bottle can drop vinegar below 5 percent acidity.",
       "labels_decoded": [
@@ -11565,7 +11554,7 @@
       "pick_steps": [
         "Read the name for Jam or Preserves, with the fruit named.",
         "Pick preserves for small whole fruits or uniform pieces in thick syrup.",
-        "Reduced-sugar jars keep a shorter time once opened; refrigerate every opened jar."
+        "Pick Jam or Preserves with the fruit named."
       ],
       "science": "Jam and preserves are standardized names, made from fruit and sugar at a fixed ratio. Jelly is made from the strained juice of the fruit. Jars with less sugar do not use sugar as a preservative, so some require refrigeration. In a mixed-fruit jam, the fruits are listed most first. Cottage-food jam labels at farmers markets name the maker and address.",
       "labels_decoded": [
@@ -11704,8 +11693,7 @@
       ],
       "pick_steps": [
         "Check that the name on the jar is Mayonnaise.",
-        "Check where a front-named oil ranks in the ingredients; it may rank lower.",
-        "Compare jars by what they add beyond oil, egg yolk, acid and salt."
+        "Check where a front-named oil ranks in the ingredients; it may rank lower."
       ],
       "science": "Mayonnaise is a federal standard name: at least 65 percent oil, egg yolk, and vinegar or lemon or lime juice. The lecithin in the yolk lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. Once opened, keep it in the fridge and use it within 1 to 2 months.",
       "labels_decoded": [
@@ -11769,9 +11757,7 @@
         "Shoyu is made from roughly equal parts wheat and soybeans."
       ],
       "pick_steps": [
-        "Read for wheat on tamari too; shoyu is roughly equal wheat and soybeans.",
-        "Little or no wheat is not a gluten-free claim; read the front.",
-        "On hot sauce, read for vinegar; some fermented sauces have none added."
+        "Pick soy sauce brewed for months before soy sauce made fast with acid."
       ],
       "science": "Traditional soy sauce ferments for months or even a year. Soybeans and wheat are first cultured with a mold, Aspergillus oryzae. A fast method makes hydrolyzed soy protein with acid in hours. Tamari is described as all or mostly soybeans. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm.",
       "labels_decoded": [
@@ -12061,9 +12047,7 @@
         "Once opened, baking powder lasts about 6 months."
       ],
       "pick_steps": [
-        "Pick double-acting baking powder, and check the expiration date.",
-        "Keep both dry: powder in its sealed can, and only dry spoons in either.",
-        "To test soda, add 1 tablespoon vinegar to 1½ teaspoons; it should fizz."
+        "Pick double-acting baking powder, and check the expiration date."
       ],
       "science": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Baking powder is soda plus acid salts and cornstarch. Its first acid reacts as soon as the powder is wet. The second reacts only once the batter is both wet and hot. Moisture makes both soda and powder react and change.",
       "labels_decoded": [
@@ -12124,7 +12108,7 @@
       ],
       "pick_steps": [
         "Look for onions, peppers and tomatoes alongside an added acid on the list.",
-        "A fresh tub from the cold case goes straight back in the refrigerator."
+        "Buy fresh salsa tubs from the cold case."
       ],
       "science": "Salsa mixes low-acid foods, such as onions and peppers, with tomatoes and an added acid. A shelf jar is an acidified food, brought to a pH of 4.6 or below and heat-processed. A salsa sold under refrigeration falls outside that definition, so a cold-case tub is meant to stay cold. In Virginia, a home-kitchen jar sold directly to shoppers names its maker, address and phone.",
       "labels_decoded": [
@@ -12232,9 +12216,7 @@
         "Mustard and hot sauce panels count a teaspoon, not a tablespoon."
       ],
       "pick_steps": [
-        "Read the first ingredient; it is the one present in the largest amount.",
-        "Compare jars spoon to spoon; mustard and hot sauce count a teaspoon.",
-        "Write the open date on a jar the day it is opened."
+        "Compare jars spoon to spoon; mustard and hot sauce count a teaspoon."
       ],
       "science": "Ingredients run from most to least, so the first names what the jar is mostly made of. Condiments get small serving sizes. Catsup, soy sauce and vinegar count 1 tbsp, mustards and hot sauces 1 tsp, and salsa 2 tbsp. Two jars only compare fairly at the same spoon. Opened condiments on the fridge door are easy to forget, so use an open condiment before opening a new one.",
       "labels_decoded": [
@@ -12363,9 +12345,7 @@
         "Some corn chips are made from corn that was never cooked in lime."
       ],
       "pick_steps": [
-        "Read the ingredients for masa or corn masa, and a trace of lime.",
-        "Some corn chips use corn that was never cooked in lime.",
-        "Restaurant-style chips are tortillas cut into wedges and fried."
+        "Read the ingredients for masa or corn masa, and a trace of lime."
       ],
       "science": "Corn for tortillas is soaked and cooked in limewater, slaked lime and water, then ground into masa. The step is called nixtamalization. Cornmeal from corn never lime-cooked cannot form a dough with water alone. On a chip list, lime is that alkali, not the citrus fruit. Most bagged chips are shaped straight from coarse masa dough and fried.",
       "labels_decoded": [
@@ -12478,7 +12458,7 @@
       "pick_steps": [
         "Buy plain kernels; add butter, oil or salt at home, if wanted.",
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
-        "Loose kernels pop in a plain brown paper bag in the microwave."
+        "Pick plain popcorn kernels."
       ],
       "science": "Popcorn is its own variety of corn with a hard hull, the pericarp. Moisture inside heats to steam, and the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots let the moisture escape and stay unpopped. Mushroom popcorn is the shape often sold prepopped and coated.",
       "labels_decoded": [
@@ -12531,7 +12511,7 @@
       "pick_steps": [
         "Pick a glossy crust that shines like polished mahogany.",
         "A paler pretzel can point to the milder baking soda bath.",
-        "Without an alkaline bath, a pretzel is just a tanned twist of dough."
+        "Pick pretzels with a glossy, polished-mahogany crust."
       ],
       "science": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked, which neutralizes the lye. Lye is sodium hydroxide, the strongest alkali a baker uses. A baking soda bath reacts less, so its pretzels come out lighter. The alkaline surface speeds browning, which shapes the crust. Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
       "labels_decoded": [
@@ -12697,7 +12677,7 @@
         "Front-of-package claims and pictures can mislead; the ingredient list settles it."
       ],
       "pick_steps": [
-        "Trust the ingredient list over front claims and pictures.",
+        "Pick a whole grain, vegetable or bean listed first.",
         "Look for a whole grain, vegetable or bean listed first.",
         "Read “multigrain” as several grains, often refined, not whole grains."
       ],
@@ -12822,7 +12802,7 @@
       "pick_steps": [
         "Buy salads from a refrigerated case.",
         "Check the Sell-By date, and skip a tub past it.",
-        "Get it home cold; two hours out at most, one hour above 90°F."
+        "Pick refrigerated salads with a Sell-By date that has not passed."
       ],
       "science": "Cold food stays at 40°F or below. Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four. Salads made with mayonnaise do not freeze well. The coldest spot is the back or bottom of the fridge; the door opens often to warm air.",
       "labels_decoded": [
@@ -12977,7 +12957,7 @@
       "pick_steps": [
         "Check that meats, cheeses and salads sit in a refrigerated case.",
         "For hot food, look for a case held at 140°F or above.",
-        "Ask about one food by name: deli salads, prepared meals or lunch meat."
+        "Pick hot food from a case held at 140°F or above."
       ],
       "science": "Breads and dry snacks are fine out of the cold, but all meats, cheeses and salad products need refrigeration. Hot buffet items are held at a minimum of 140°F, and cold items below 40°F. Salads, hot food and lunch meat each read differently. Meats, cheeses or salads left out of a refrigerated case are a red flag.",
       "labels_decoded": [],
@@ -13024,7 +13004,7 @@
       "pick_steps": [
         "Read the crust list first; look for flour, water, salt and yeast.",
         "On a whole wheat crust, whole wheat flour comes first, not wheat flour.",
-        "A meat named on the box sets no minimum amount of it."
+        "Pick frozen pizza with a short crust list: flour, water, salt, yeast."
       ],
       "science": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast. That short crust list is the standard here. Plain wheat flour is milled without the whole kernel, so it is not a whole grain flour. A pizza named for a meat topping needs no minimum amount of that meat. Air touching a frozen pizza leaves freezer burn, grayish-brown leathery spots.",
       "labels_decoded": [
@@ -13088,7 +13068,6 @@
         "Cream sauce is one food that does not freeze well."
       ],
       "pick_steps": [
-        "Read the product name first; it sets the floor for the meat inside.",
         "Find the inspection mark: an inspected plant prepared the meal.",
         "Read the label, since some meals must be cooked from frozen."
       ],
@@ -13356,7 +13335,7 @@
       "pick_steps": [
         "Buy only food frozen solid, and pick it up just before checkout.",
         "Check the ice cream: not brick-hard means the freezer runs warm.",
-        "Get it into the home freezer soon; cook or thaw by the label."
+        "Pick brick-hard ice cream."
       ],
       "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below, and 5°F at most. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
       "labels_decoded": [
