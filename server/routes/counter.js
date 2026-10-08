@@ -9,6 +9,7 @@ import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
 import { premiumForReq } from '../lib/subscription.js';
 import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 import { buildTryPool } from '../lib/tryPool.js';
+import { loadSectionRules } from '../lib/sectionRules.js';
 
 // The Counter's card corpus, as the client reads it.
 //
@@ -111,6 +112,9 @@ counterRouter.get('/counter/essentials', optionalAuth, async (_req, res) => {
     return res.status(500).json({ error: 'counter_unavailable' });
   }
 });
+
+// Per-section buying rules, authored in lib/sectionRules.json; [] until that file exists.
+counterRouter.get('/counter/section-rules', optionalAuth, (_req, res) => res.json({ rules: loadSectionRules() }));
 
 // The whole corpus. Registered BEFORE /cards/:slug, which would otherwise swallow it.
 counterRouter.get('/counter/cards', optionalAuth, async (_req, res) => {
