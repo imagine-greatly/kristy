@@ -7306,6 +7306,12 @@
         "The sources include ground pods and accelerated storage tests. They do not prove a health advantage for a particular roast or bean.",
         "No universal number of fresh days is established for all retail bags."
       ],
+      "pick_steps": [
+        "Pick a bag with an intact seal, valve or not.",
+        "A valve alone is not the full packaging specification.",
+        "Keep the sealed coffee away from heat."
+      ],
+      "science": "Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. The archived studies covered ground pods and accelerated heat storage. They do not prove a health advantage for one roast or bean. No universal number of fresh days is established for all retail bags.",
       "labels_decoded": [
         {
           "term": "Packaging barrier",
@@ -10669,6 +10675,12 @@
       "watch_out": [
         "Broth may have salt added, so a plain-looking carton can still run high in sodium."
       ],
+      "pick_steps": [
+        "Look for low sodium or unsalted on the carton.",
+        "Read sodium on the Nutrition Facts; a plain-looking carton can still run high.",
+        "Pick bone broth or stock when the dish wants a thicker liquid."
+      ],
+      "science": "Broth is meat simmered a short time, giving a thin, light liquid. Stock and bone broth are simmered from bones with vegetables, herbs and spices. Bone broth often simmers longer and comes out somewhat thicker. Commercial stock and broth differ little in ingredients, and the three swap in for each other. Sodium varies, and it runs high unless the carton says low sodium or unsalted.",
       "labels_decoded": [
         {
           "term": "Broth",
@@ -11257,6 +11269,12 @@
       "watch_out": [
         "The carton coconut milk drink is a different product, covered on its own card."
       ],
+      "pick_steps": [
+        "Read the list for what the can holds beyond coconut.",
+        "Compare two cans by how much the list adds beyond coconut.",
+        "Expect a gum such as guar gum on many cans, added to thicken."
+      ],
+      "science": "Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker, never a ranking.",
       "labels_decoded": [
         {
           "term": "Guar gum",
@@ -11366,6 +11384,12 @@
       "watch_out": [
         "“Herbal tea” on a box means other plants, not the tea leaf."
       ],
+      "pick_steps": [
+        "Pick black, green, white or oolong by flavor; processing sets each one.",
+        "Herbal tea means other plants; read the blend for what is inside.",
+        "Read for decaffeinated when caffeine matters."
+      ],
+      "science": "True tea is the leaf of the Camellia sinensis plant. Teas are divided into types by how much oxidation the leaf undergoes during processing. Oxidation shifts the leaf’s color and flavor. All true teas contain caffeine unless deliberately decaffeinated. Ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",
       "labels_decoded": [
         {
           "term": "Decaffeinated",
@@ -11498,6 +11522,12 @@
       "watch_out": [
         "An ingredient listed ahead of the tomatoes outweighs them in the jar."
       ],
+      "pick_steps": [
+        "Pick a jar whose list leads with tomatoes.",
+        "Count what follows the tomatoes; a short list is the craft standard.",
+        "On canned tomatoes, the word “with” names added spices, seasonings or vegetables."
+      ],
+      "science": "Ingredients are listed by common name, most first, so the first item is the one there is most of. Any ingredient listed ahead of the tomatoes outweighs them in the jar. On canned tomatoes, the packing medium, such as tomato puree, is also named after “with”. A short list led by tomatoes is a craft standard.",
       "labels_decoded": [
         {
           "term": "Ingredients",
@@ -11558,6 +11588,12 @@
       "watch_out": [
         "Reduced-sugar jars lack the full preservative effect of sugar and keep a shorter time once opened."
       ],
+      "pick_steps": [
+        "Read the name for Jam or Preserves, with the fruit named.",
+        "Pick preserves for small whole fruits or uniform pieces in thick syrup.",
+        "Reduced-sugar jars keep a shorter time once opened; refrigerate every opened jar."
+      ],
+      "science": "Jam and preserves are standardized names, made from fruit and sugar at a fixed ratio. Jelly is made from the strained juice of the fruit. Jars with less sugar do not use sugar as a preservative, so some require refrigeration. In a mixed-fruit jam, the fruits are listed most first. Cottage-food jam labels at farmers markets name the maker and address.",
       "labels_decoded": [
         {
           "term": "Jam or Preserve",
@@ -11627,6 +11663,12 @@
         "A ketchup that falls below the federal quality standard must say so on its label.",
         "Opened condiments on the fridge door are easy to forget."
       ],
+      "pick_steps": [
+        "Read ketchup for tomato concentrate and vinegar; below-standard ketchup must say so.",
+        "Read mustard for ground mustard seed, vinegar and spices.",
+        "Pick stone ground for visible seed specks, Dijon for wine notes, yellow for mild."
+      ],
+      "science": "Ketchup’s federal standard starts from tomato concentrate or liquid from red tomatoes. Vinegars, sweeteners and spices are among its optional ingredients. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices. Opened condiments on the fridge door are easy to forget, so use an open condiment before opening a new one.",
       "labels_decoded": [
         {
           "term": "Catsup, Ketchup or Catchup",
@@ -11686,6 +11728,12 @@
       "watch_out": [
         "A front label can name an oil that the ingredient list ranks lower."
       ],
+      "pick_steps": [
+        "Check that the name on the jar is Mayonnaise.",
+        "An oil named on the front may rank lower in the ingredients.",
+        "Compare jars by what they add beyond oil, egg yolk, acid and salt."
+      ],
+      "science": "Mayonnaise is a federal standard name: at least 65 percent oil, egg yolk, and vinegar or lemon or lime juice. The lecithin in the yolk lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. Once opened, keep it in the fridge and use it within 1 to 2 months.",
       "labels_decoded": [
         {
           "term": "Mayonnaise",
@@ -11746,6 +11794,12 @@
         "Little or no wheat is not the same as a gluten-free claim.",
         "Shoyu is made from roughly equal parts wheat and soybeans."
       ],
+      "pick_steps": [
+        "Read for wheat on tamari too; shoyu is roughly equal wheat and soybeans.",
+        "Little or no wheat is not a gluten-free claim; read the front.",
+        "On hot sauce, read for vinegar; some fermented sauces have none added."
+      ],
+      "science": "Traditional soy sauce ferments for months or even a year. Soybeans and wheat are first cultured with a mold, Aspergillus oryzae. A fast method makes hydrolyzed soy protein with acid in hours. Tamari is described as all or mostly soybeans. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm.",
       "labels_decoded": [
         {
           "term": "Gluten-free",
@@ -11808,6 +11862,12 @@
         "“No salt added” is not “sodium free”; the soup can still carry sodium.",
         "Leave cans with deep dents or dents on the seam on the shelf."
       ],
+      "pick_steps": [
+        "Low sodium is a fixed ceiling; reduced sodium compares against a named soup.",
+        "No salt added is not sodium free; the soup can still carry sodium.",
+        "Skip cans with deep dents, seam dents, leaks, rust or bulging lids."
+      ],
+      "science": "Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling. Reduced sodium means at least 25 percent less than a food the label names. Salt is not the same word as sodium. Dates on cans mark peak quality. Cans keep best stored cool and dry, between 50 °F and 70 °F, with the oldest used first.",
       "labels_decoded": [
         {
           "term": "Sodium free",
@@ -11881,6 +11941,12 @@
       "watch_out": [
         "Some Greek-style olives were briefly exposed to air to darken the fruit, with the color set by ferrous gluconate."
       ],
+      "pick_steps": [
+        "Read the jar for the method: brine, lye or dry salt.",
+        "Greek-style: near-ripe fruit in brine; ferrous gluconate sets an air-darkened color.",
+        "California black ripe olives are the mildest, least bitter style, not a flaw."
+      ],
+      "science": "Olives off the tree hold a very bitter compound called oleuropein, which is leached out before eating. Brine is a slow fermentation that turns the fruit’s sugars into lactic and acetic acids. Lye works quickly, and rinsing leaves a neutral olive. Spanish-style green olives get lye, a rinse, then fermentation. Salt gives olives their flavor and serves as a preservative.",
       "labels_decoded": [
         {
           "term": "Lye",
@@ -11952,6 +12018,12 @@
         "Species labeling was inadequate or inaccurate on several products in one study.",
         "A package that says only “seaweed” leaves the kind unnamed."
       ],
+      "pick_steps": [
+        "Read for the kind: nori, kombu, kelp or another.",
+        "A package that says only seaweed leaves the kind unnamed.",
+        "Pick nori to toast, sugar kelp for broths, dulse to snack from the bag."
+      ],
+      "science": "Kinds of seaweed differ widely, so the name on the package matters. Brown seaweeds such as kelp are dried, then ground or chopped for food. One study found the species labeling inadequate or inaccurate on several products. Sea vegetables are gathered wild or farmed. In Maine, most wild sea vegetables are harvested by hand at low tide in early spring.",
       "labels_decoded": [
         {
           "term": "Nori",
@@ -12076,6 +12148,12 @@
       "watch_out": [
         "A tub sold from the cold case is meant to be stored under refrigeration, unlike a shelf jar."
       ],
+      "pick_steps": [
+        "Look for onions, peppers and tomatoes alongside an added acid on the list.",
+        "A fresh tub from the cold case goes straight back in the refrigerator.",
+        "In Virginia, a home-kitchen jar names its maker, address and phone."
+      ],
+      "science": "Salsa mixes low-acid foods, such as onions and peppers, with tomatoes and an added acid. A shelf jar is an acidified food, brought to a pH of 4.6 or below and heat-processed. A salsa sold under refrigeration falls outside that definition, so a cold-case tub is meant to stay cold. Homemade salsa keeps up to one week in the refrigerator.",
       "labels_decoded": [
         {
           "term": "Keep refrigerated",
@@ -12174,6 +12252,12 @@
         "Opened condiments on the fridge door or shelf are easy to forget.",
         "Mustard and hot sauce panels count a teaspoon, not a tablespoon."
       ],
+      "pick_steps": [
+        "Read the first ingredient; it is the one present in the largest amount.",
+        "Compare jars spoon to spoon; mustard and hot sauce count a teaspoon.",
+        "Write the open date on a jar the day it is opened."
+      ],
+      "science": "Ingredients run from most to least, so the first names what the jar is mostly made of. Condiments get small serving sizes. Catsup, soy sauce and vinegar count 1 tbsp, mustards and hot sauces 1 tsp, and salsa 2 tbsp. Two jars only compare fairly at the same spoon. Opened condiments on the fridge door are easy to forget, so use an open condiment before opening a new one.",
       "labels_decoded": [
         {
           "term": "Ingredients",
