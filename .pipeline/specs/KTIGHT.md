@@ -134,3 +134,11 @@ Steps that read as a shortened copy of look_for while watch_out points silently 
 
 ## Defaults taken (no blocking question for Devon)
 Caps 14/70 hard, 12/60 target. Picks excluded. Home cards get kitchen steps. Up to 2 depth-only points per card. Ratchet, not a red suite. Do-line overlap allowed, verbatim copy not. Blueberries = `berries_picking`.
+
+## Admin amendments (2026-10-08, from B06 critic r1; bind B01-B18)
+- A1 Catalog cards (many items on one card, e.g. ripeness_by_item, seasonality): science carries the WHY; item lists land as a summary. A per-item sub-check beyond its lead check may land as the lead check only, logged "Partial" in the trace — UNLESS the sub-check is itself the action (e.g. pop the avocado nub); then it lands in full.
+- A2 If a lint code (e.g. KT_CLAIM_DETOX on "toxins") forces a point out, log it depth-only with reason "lint-forced" and list it in the batch report. Never weaken the lint inside a batch.
+- A3 Batch critic checks every step/science clause against the KB text itself, not the trace quote.
+- A4 Science stands alone: no reference that only makes sense after reading the steps ("the lawsuits", "every sheet").
+- A5 Straight apostrophes fail COPY_STRAIGHT_QUOTE; use ’.
+- A6 Trace lives at docs/ktight/<batch>.md.
