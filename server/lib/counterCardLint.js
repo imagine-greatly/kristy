@@ -34,6 +34,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from './doLines.json' with { type: 'json' };
 import { sectionForCategory, DEPTH_FIELDS } from './counterCards.js';
 import { statesIn } from './listMatch.js';
+import { claimLockViolations } from './counterClaimLock.js';
 
 const RUBRICS = Object.values(perimeterKb.evidence_tiers || {});
 
@@ -822,7 +823,7 @@ const NON_AISLE_SECTION = 'label_terms';
 export const PICK_FORBIDDEN_FIELDS = new Set([
   'asked_as', 'headline', 'why', 'tier_note', 'look_for', 'watch_out', 'detail',
   'kristy_take', 'labels_decoded', 'cart_pick', 'short_answer', 'buying_tips', 'question',
-  'evidence_tier', 'instead', 'card_why', 'eyebrow_short',
+  'evidence_tier', 'instead', 'card_why', 'eyebrow_short', 'pick_steps', 'science',
   ...DEPTH_FIELDS.filter((f) => f !== 'sources'),
 ]);
 
@@ -856,6 +857,11 @@ const hasUrl = (s) => /https?:\/\/\S+/.test(String(s || ''));
  * Lint one pick entry. Empty is the passing state.
  * @returns {Array<{code:string, detail:string}>}
  */
+// Zero first person (VOICE_SPEC). `I` is case-sensitive so "i" inside nothing trips;
+// `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
+const hasFirstPerson = (line) =>
+  /\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line);
+
 export function lintPick(entry) {
   const out = [];
   const fail = (code, detail) => out.push({ code, detail });
@@ -942,9 +948,7 @@ export function lintPick(entry) {
     if (words(line) > MAX_PICK_WORDS) {
       fail('PICK_LINE_TOO_LONG', `${words(line)}w > ${MAX_PICK_WORDS}: ${line}`);
     }
-    // Zero first person (VOICE_SPEC). `I` is case-sensitive so "i" inside nothing trips;
-    // `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
-    if (/\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line)) {
+    if (hasFirstPerson(line)) {
       fail('PICK_LINE_FIRST_PERSON', `no I/me/my/we/our on any line Kristy speaks: "${line}"`);
     }
     if (/—/.test(line)) fail('PICK_LINE_EM_DASH', `no em-dash asides: "${line}"`);
@@ -1345,7 +1349,7 @@ export function lintCorpus(cards) {
 export const HEADLINE_DO_MAX = 26;
 export const SHORT_ANSWER_MAX = 40;
 export const SENTENCE_MAX = 20;
-const READ_FIELDS = ['decision', 'short_answer', 'why', 'look_for', 'watch_out'];
+const READ_FIELDS = ['decision', 'short_answer', 'why', 'look_for', 'watch_out', 'pick_steps', 'science'];
 // ponytail: short abbreviation list; extend when a real card splits wrong.
 const ABBREV = /\b(e\.g|i\.e|vs|oz|lb|lbs|etc|approx|U\.S)\./gi;
 const wordCount = (s) => String(s || '').split(/\s+/).filter(Boolean).length;
@@ -1393,5 +1397,71 @@ export function readability(card) {
       }
     }
   }
+  return out;
+}
+
+/* ═══════════════ KTIGHT: pick_steps + science ═══════════════
+   The shelf-readable pick (1-3 steps) and one paragraph of why. Not wired into lintCard:
+   presence is the ratchet ledger's job (test/ktight.test.js), so a card with neither field
+   passes here. */
+export const MAX_STEP_WORDS = MAX_DO_WORDS;
+export const MAX_SCIENCE_WORDS = 70;
+const REDIRECT = [
+  /\b(spend|save|put)\b[^.]{0,40}\b(money|budget)\b/i,
+  /\b(money|budget)\b[^.]{0,30}\b(elsewhere|instead|toward|towards)\b/i,
+];
+
+/** Lint the KTIGHT fields of one question entry. Empty is the passing state. */
+export function lintPickSteps(entry) {
+  const out = [];
+  const e = entry || {};
+  const hasSteps = 'pick_steps' in e;
+  const hasScience = 'science' in e;
+  if (!hasSteps && !hasScience) return out;
+  const fail = (code, detail) => out.push({ code, detail });
+  const texts = [];
+
+  if (hasSteps) {
+    const steps = e.pick_steps;
+    if (!Array.isArray(steps) || steps.length < 1 || steps.length > 3 || steps.some((s) => typeof s !== 'string')) {
+      fail('STEPS_SHAPE', 'pick_steps is a string[] of 1-3 lines');
+    } else {
+      const doLine = normText(doLines[e.id]);
+      for (const step of steps) {
+        if (!step.trim()) { fail('STEPS_EMPTY', 'a blank step'); continue; }
+        texts.push(step);
+        if (words(step) > MAX_STEP_WORDS) fail('STEPS_TOO_LONG', `${words(step)}w > ${MAX_STEP_WORDS}: "${step}"`);
+        if (!/\.$/.test(step.trim()) || step.includes('?')) fail('STEPS_NOT_CLOSED', `a step ends in "." and never asks: "${step}"`);
+        if (doLine && normText(step) === doLine) fail('STEPS_COPIES_DO', `a step may extend the do line, never copy it: "${step}"`);
+      }
+    }
+  }
+
+  if (hasScience) {
+    const sci = e.science;
+    if (typeof sci !== 'string' || !sci.trim()) {
+      fail('SCIENCE_SHAPE', 'science is one non-empty string');
+    } else {
+      texts.push(sci);
+      if (/\n/.test(sci) || /^\s*([-•*]|\d+[.)])\s/.test(sci)) fail('SCIENCE_NOT_PARAGRAPH', 'science is one paragraph, no newline or list marker');
+      if (words(sci) > MAX_SCIENCE_WORDS) fail('SCIENCE_TOO_LONG', `${words(sci)}w > ${MAX_SCIENCE_WORDS}`);
+    }
+  }
+
+  const { pick_steps: _s, science: _c, ...rest } = e;
+  const known = new Set(JSON.stringify(rest).match(/\d+/g) || []);
+  for (const t of texts) {
+    if (hasFirstPerson(t)) fail('KT_FIRST_PERSON', `no I/me/my/we/our: "${t}"`);
+    if (t.includes('—')) fail('KT_EM_DASH', `no em-dash asides: "${t}"`);
+    for (const n of t.match(/\d+/g) || []) {
+      if (!known.has(n)) fail('KT_NEW_NUMBER', `"${n}" appears nowhere else in the entry: "${t}"`);
+    }
+    if (REDIRECT.some((re) => re.test(t))) fail('KT_REDIRECT', `no money redirect: "${t}"`);
+    for (const b of britishSpellings(t)) fail('COPY_BRITISH', `American spelling: "${b}"`);
+    if (STRAIGHT_QUOTE.test(t)) fail('COPY_STRAIGHT_QUOTE', `typographic quotes only: "${t}"`);
+  }
+  const steps = Array.isArray(e.pick_steps) ? e.pick_steps.filter((s) => typeof s === 'string') : [];
+  const science = typeof e.science === 'string' ? e.science : '';
+  for (const v of claimLockViolations({ look_for: steps, detail: science })) fail(`KT_${v.code}`, v.detail);
   return out;
 }
