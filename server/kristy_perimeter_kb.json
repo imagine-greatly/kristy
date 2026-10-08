@@ -10120,6 +10120,12 @@
         "Hard kombucha is an alcoholic drink, sold at over 5 percent alcohol.",
         "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha."
       ],
+      "pick_steps": [
+        "Pick bottles from the refrigerated case, and keep them cold once home.",
+        "Read the Nutrition Facts for added sugars.",
+        "Check for an alcohol statement; hard kombucha is over 5 percent alcohol."
+      ],
+      "science": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. It can keep fermenting in the bottle, and its alcohol rises with longer fermentation. Commercial kombucha is usually under 0.5% alcohol. At 0.5% or more, federal alcohol rules apply, including a health warning statement on the container.",
       "labels_decoded": [
         {
           "term": "Flavored kombucha",
@@ -10174,6 +10180,12 @@
         "Refrigerated kraut is not always raw, so read the label.",
         "Vinegar on the list means it was not soured by fermenting alone."
       ],
+      "pick_steps": [
+        "Look for raw on the label, and pick it from the refrigerated case.",
+        "Refrigerated alone does not prove raw, so read the label.",
+        "Vinegar on the list means it was not soured by fermenting alone."
+      ],
+      "science": "Sauerkraut is shredded cabbage mixed with salt and left to ferment. Lactic acid bacteria, the microbes that sour it, turn the cabbage sugars into acids. Raw kraut is packaged straight from fermentation without heat, then kept refrigerated. Shelf-stable kraut is heated in the jar or can, which stops fermentation.",
       "labels_decoded": [
         {
           "term": "Raw",
@@ -10225,6 +10237,12 @@
         "Labels do not always say fresh or well fermented.",
         "Fish sauce or salted seafood is often in the seasoning."
       ],
+      "pick_steps": [
+        "Check the packed date to see how long it has fermented.",
+        "Crisp, plump, bright cabbage to eat as is; lighter, softer kimchi to cook.",
+        "Read the ingredients for fish sauce or shrimp."
+      ],
+      "science": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt. It moves from fresh to ripe to overripe as it ferments. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented.",
       "labels_decoded": [
         {
           "term": "Packed date",
@@ -10277,6 +10295,12 @@
         "Refrigerated does not by itself mean fermented.",
         "Some makers add vinegar to brined pickles as a preservative."
       ],
+      "pick_steps": [
+        "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
+        "Read the ingredients: salt brine and no vinegar, since some makers add it.",
+        "Half-sour is crisp and bright green; full-sour is fully fermented."
+      ],
+      "science": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. Federal rules let acidified foods, meaning foods with acid added, be called pickles. A half-sour has a shorter stay in the brine than a full-sour.",
       "labels_decoded": [
         {
           "term": "Kosher dill",
@@ -10331,6 +10355,12 @@
         "A diluted vinegar must state its acid strength on the label.",
         "A blend of spirit and cider vinegar names both, the main one first."
       ],
+      "pick_steps": [
+        "Look for unfiltered or with the mother on the label.",
+        "Check that the label does not say diluted.",
+        "Read the name for a second vinegar; a blend names the main one first."
+      ],
+      "science": "Cider vinegar is made from apple juice by two fermentations. Yeast first turns the sugars into alcohol, making cider. Acetic acid bacteria then turn the alcohol into acetic acid, the sour part of vinegar. The mother is a cellulose film of acetic bacteria. It may remain in unfiltered vinegar, or be filtered out. A diluted vinegar must state its acid strength, never below 4 percent.",
       "labels_decoded": [
         {
           "term": "With the mother",
@@ -10388,6 +10418,12 @@
         "Red miso is the saltiest kind, so use less of it.",
         "Darker miso tastes stronger, so match the color to the dish."
       ],
+      "pick_steps": [
+        "Read the ingredients for the grain: rice, barley or none.",
+        "Pick white miso if buying only one; it is mild and sweet.",
+        "Pick red for a stronger, saltier taste, and use less of it."
+      ],
+      "science": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White miso is soybeans and rice, fermented a short time, so it is mild and sweet. Red miso is the saltiest and strongest. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor.",
       "labels_decoded": [
         {
           "term": "Shiro",
@@ -10442,6 +10478,12 @@
         "A loose cake that crumbles easily is unfinished.",
         "Noticeable mold or odd discoloration on the pack means pass on it."
       ],
+      "pick_steps": [
+        "Press the pack for a firm cake that holds as one piece.",
+        "Read the ingredients for soybeans alone or added grains.",
+        "Pass on a loose, crumbly cake, noticeable mold or odd discoloration."
+      ],
+      "science": "Tempeh is cooked soybeans fermented with a Rhizopus culture, a mold, into a firm, dense cake. In good tempeh, a dense white mycelium, the threads of the mold, binds the beans into one cake. Unfinished tempeh is bound loosely and crumbles easily. Most versions add grains, seeds or other beans, and soy-free versions exist.",
       "labels_decoded": [
         {
           "term": "Multigrain tempeh",
@@ -10491,6 +10533,12 @@
         "Chilled natto keeps only days, so buy what will be eaten soon.",
         "A strong ammonia smell means it fermented too long."
       ],
+      "pick_steps": [
+        "Buy sealed trays from the cold case or the freezer.",
+        "Check the date; chilled natto keeps only days, so freeze extra.",
+        "Expect a strong smell and sticky strings; strong ammonia means it fermented too long."
+      ],
+      "science": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
       "labels_decoded": [
         {
           "term": "Itobiki natto",
@@ -10542,6 +10590,12 @@
         "A cold case alone does not prove the food was not heated.",
         "Shelf-stable jars were heated, which stops the fermenting."
       ],
+      "pick_steps": [
+        "Check the label for raw or unpasteurized, meaning it was not heated.",
+        "Read the ingredients: vinegar means it was not made by fermenting alone.",
+        "Look in the cold case, but trust the label over the shelf."
+      ],
+      "science": "Fermentation is microbes, yeasts or bacteria, turning sugars into acids or alcohol. Pasteurization heats packaged food mildly, usually below 100 °C. That heat destroys or deactivates most microbes, so a heated, shelf-stable jar is no longer fermenting. Quick pickles get their acid from vinegar in one or two days, without fermenting.",
       "labels_decoded": [
         {
           "term": "Unpasteurized",

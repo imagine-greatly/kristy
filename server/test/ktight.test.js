@@ -31,7 +31,7 @@ const BATCHES = {
 // The spec's n column: a batch that drifts from its row is a ledger defect.
 const SIZES = { B01: 8, B02: 8, B03: 14, B04: 15, B05: 11, B06: 12, B07: 12, B08: 12, B09: 12, B10: 10, B11: 9, B12: 14, B13: 13, B14: 9, B15: 13, B16: 14, B17: 10, B18: 6 };
 
-const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13'];
+const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14'];
 
 const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
 const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 202);
