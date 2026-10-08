@@ -387,6 +387,11 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     // version of the same one, and it may never read as co-equal with the headline.
     instead: String(entry.instead || '').trim() || null,
 
+    // KTIGHT: FREE, like `instead`. 1-3 short steps for picking the thing at the shelf, and
+    // the plain science behind the verdict. Null when the entry has not authored them.
+    pick_steps: Array.isArray(entry.pick_steps) && entry.pick_steps.length ? entry.pick_steps : null,
+    science: String(entry.science || '').trim() || null,
+
     // ── expanded ──
     why,
     look_for,
@@ -596,7 +601,7 @@ const CARD_COLUMNS =
   // `instead` is FREE and sits with the summary fields, not the depth. A column missing
   // from this list is served as undefined, which for a free field means the redirect
   // silently stops rendering — the same shape as `essential` gating the eight essentials.
-  'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, instead, why, ' +
+  'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, instead, pick_steps, science, why, ' +
   'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count, ' +
   // Keep the essentials shelf and its authored order on every read path.
   'essential, essential_rank';
