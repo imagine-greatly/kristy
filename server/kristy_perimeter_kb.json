@@ -1821,6 +1821,12 @@
         "“Natural” is largely undefined outside of meat, and rarely enforced anywhere.",
         "On meat it means no artificial ingredients and minimal processing. It says nothing about how the animal was raised."
       ],
+      "pick_steps": [
+        "Read past “natural”: largely undefined outside meat and rarely enforced.",
+        "Look for a defined term: organic, grass-finished or pasture-raised.",
+        "Read the ingredient list; it beats any front-of-pack adjective."
+      ],
+      "science": "The FDA has not formally defined “natural” on most foods. On meat and poultry, the USDA takes it to mean no artificial ingredients and minimal processing. It says nothing about how the animal was raised or fed. It is not organic, and it is not a welfare or feed claim. It does not restrict pesticides, GMOs, or how an animal lived.",
       "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record.",
       "asked_as": [
         "what does natural mean on a label",
@@ -1864,6 +1870,12 @@
         "“Made with real ___” sets no minimum. A trace amount earns the same words.",
         "The named ingredient often sits below the added sugar and the refined flour."
       ],
+      "pick_steps": [
+        "Find the named “real” ingredient in the list; early means more, late a trace.",
+        "Check whether added sugar or refined flour sits above it.",
+        "Trust the ingredient panel over the front-of-pack claim."
+      ],
+      "science": "Ingredient lists run in weight order by law. “Made with real” sets no minimum, so a trace amount earns the same words. An ingredient sitting fourth or later is present in a quantity too small to matter. The named ingredient often sits below the added sugar and the refined flour. The claim is a fact about presence, and presence is not amount.",
       "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell.",
       "asked_as": [
         "does made with real fruit mean anything",
@@ -1914,6 +1926,11 @@
         "On chicken and pork it is a freebie. Hormones are banned in both by law.",
         "On beef and dairy it is a real distinction, but only third-party verification backs it."
       ],
+      "pick_steps": [
+        "On chicken and pork, read past it: hormones are banned in both.",
+        "On beef and dairy, the claim is real; find a third-party verifier."
+      ],
+      "science": "By federal rule, hormones cannot be used in raising pigs or chickens. So a hormone-free chicken label must also note that no poultry is raised with hormones. There the claim is true but meaningless, since every producer could print it. Beef and dairy allow hormones, so there the claim distinguishes producers. Only third-party verification backs it.",
       "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there.",
       "asked_as": [
         "does no added hormones mean anything",
@@ -1963,6 +1980,12 @@
         "Paying for both seals is paying twice. Organic already requires non-GMO.",
         "Some foods carry a non-GMO seal though no GMO version of them exists."
       ],
+      "pick_steps": [
+        "Decide first whether GMOs matter to you at all.",
+        "Organic already requires non-GMO, so one seal covers both.",
+        "Ignore “non-GMO” on a food that has no GMO version."
+      ],
+      "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices. Whether GMOs are a concern at all is a separate, debated question.",
       "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued.",
       "asked_as": [
         "non gmo or organic",
@@ -2021,6 +2044,12 @@
         "Cage-free usually means indoors, and it can still mean crowded.",
         "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
+      "pick_steps": [
+        "Read “cage-free” as a barn: uncaged, usually indoors, can be crowded.",
+        "Read “free-range” as some outdoor access, loosely defined and enforced.",
+        "For real outdoor time, find “pasture-raised” plus a certifier’s seal."
+      ],
+      "science": "Cage-free is a real step up from battery cages, and not outdoors. Free-range signals outdoor access, but its amount, duration and quality are not tightly defined. A small door onto a small yard qualifies. For eggs, both are defined terms; on other products they carry much less. Without a certifier’s seal, nothing is auditing free-range.",
       "tier_note": "What a certifier audits, and how little cage-free and free-range specify on their own, are both written into published standards.",
       "eyebrow_short": "Cage-free, free-range",
       "asked_as": [
@@ -2071,6 +2100,12 @@
         "A bare “grass-fed” allows a grain finish in the feedlot before slaughter.",
         "The claim is weakly enforced on its own. Certification is what backs it."
       ],
+      "pick_steps": [
+        "Read past a bare “grass-fed”; it allows a grain finish.",
+        "Look for “100% grass-fed” or “grass-finished,” ideally third-party certified.",
+        "Ask the butcher; they’ll usually know the sourcing."
+      ],
+      "science": "A bare “grass-fed” only means the animal ate grass at some point. It can still be grain-finished in the feedlot before slaughter. After the USDA withdrew its formal standard, the bare claim is weakly enforced. “100% grass-fed” or “grass-finished” means grass its whole life. Third-party certification is the strongest backing.",
       "tier_note": "The grain finish a bare grass-fed claim allows, and the certification behind grass-finished, are both on the record.",
       "asked_as": [
         "does grass fed on the label mean anything",
@@ -2139,6 +2174,12 @@
         "Organic reaches feed, but requires it be organic. That usually means organic soy and corn.",
         "“Grass-fed” on beef is the same trap: it can still end on grain."
       ],
+      "pick_steps": [
+        "Read the carton for space and feed; one never implies the other.",
+        "If feed matters, find “soy-free” or “corn-free” printed on the carton.",
+        "On beef, look for grass-finished; “grass-fed” alone can still end on grain."
+      ],
+      "science": "Cage-free, free-range and pasture-raised all describe space, not feed. Most pasture-raised hens are still fed soy and corn. USDA has no regulatory definition of pasture-raised. Certifier standards govern housing and outdoor access, not the ration. Certified organic is the one term that reaches feed. It requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what it is.",
       "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other.",
       "asked_as": [
         "what does pasture raised actually mean",
@@ -2194,6 +2235,12 @@
         "It is a production standard, not a quality grade. An organic cookie is still a cookie.",
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
       ],
+      "pick_steps": [
+        "Read the ingredient panel; the seal covers inputs and practices, not processing.",
+        "“Made with organic” needs only 70% and cannot carry the USDA seal.",
+        "It counts most on thin-skinned produce you eat whole, least on processed food."
+      ],
+      "science": "Certified organic is a production standard, not a quality grade. It means no synthetic pesticides from the prohibited list, no GMOs, and organic feed for animals. It is not pesticide-free; approved natural pesticides are permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
       "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included.",
       "asked_as": [
         "what does the organic seal guarantee",
@@ -4757,6 +4804,12 @@
         "Each seal covers one scope. Organic is not welfare, and welfare is not pesticides.",
         "More seals is not a better food. It is a food that bought more audits."
       ],
+      "pick_steps": [
+        "Find a named, third-party audited program, not a self-declared badge.",
+        "Read each seal for its one scope: organic is not welfare.",
+        "Read the ingredient panel; more seals is not a better food."
+      ],
+      "science": "A real seal answers three questions. Who set the standard? Is it published? Does an independent body audit against it? An unnamed badge is often a company’s own mark, with no published standard and no outside auditor. An organic seal covers inputs and practices. A welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only.",
       "tier_note": "Who writes a standard and who audits it is public for every program worth the badge.",
       "asked_as": [
         "do the seals on packages mean anything",
@@ -4949,6 +5002,12 @@
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
         "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
       ],
+      "pick_steps": [
+        "Find all three: species, wild or farm-raised, and country of origin.",
+        "Origin can name where it was processed; a staffed counter can usually answer.",
+        "Choose whole or skin-on; both are far harder to substitute than a bare fillet."
+      ],
+      "science": "Federal country-of-origin labeling requires most unprocessed fish and shellfish to show species, method and country. Cooked, breaded or otherwise processed seafood falls outside the rule. Country of origin is a real signal within farmed seafood, but wild or farmed is its own required line. Species substitution is a far bigger problem on a bare fillet than on a whole fish.",
       "tier_note": "Species, method and country are required disclosures, and substitution on a bare fillet is documented, which is why the skin stays on.",
       "asked_as": [
         "what has to be on a seafood label",
