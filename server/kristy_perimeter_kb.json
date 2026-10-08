@@ -2796,9 +2796,9 @@
       "pick_steps": [
         "Look for ‘soy-free’ or ‘corn-free’ printed; nothing else on the carton implies them.",
         "Read ‘vegetarian-fed’ beside a pasture claim as a mismatch; pasture hens eat insects.",
-        "Feed grown on the farm can be traced; feed from unnamed suppliers often cannot."
+        "Read ‘organic’ as how the feed was grown, not what the feed is."
       ],
-      "science": "Space claims never touch feed, so the feed words carry that job alone. ‘Omega-3 enriched’ means flax or algae in the ration, but sets no amount. Organic requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what the feed is. The watchdog view is that organic feed traceability can be impenetrable once it leaves the farm.",
+      "science": "Space claims never touch feed, so the feed words carry that job alone. ‘Omega-3 enriched’ means flax or algae in the ration, but sets no amount. Organic requires organic feed, usually organic soy and corn. Feed grown on the farm can be traced; feed from unnamed suppliers often cannot. The watchdog view is that organic feed traceability can be impenetrable once it leaves the farm.",
       "labels_decoded": [
         {
           "term": "Vegetarian-fed",
@@ -3206,7 +3206,7 @@
         "A whole bird is cheapest per pound, and the frame makes stock.",
         "Read the tray for a ‘retained water’ line, and ‘air-chilled’ if skin matters."
       ],
-      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes. Retained water has to be disclosed on the label. A raw single-ingredient bird may carry none, unless its processing makes some unavoidable."
+      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes. Retained water has to be disclosed on the label. A raw single-ingredient bird may not carry any at all, unless safety processing makes it unavoidable."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -7529,7 +7529,7 @@
       ],
       "pick_steps": [
         "Read the full product name for a solution percentage and its ingredients.",
-        "‘Natural’ does not exclude a flavoring solution, fresh or frozen.",
+        "Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.",
         "Read retained chilling water apart from any added flavoring ingredients."
       ],
       "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
@@ -8282,7 +8282,7 @@
       "pick_steps": [
         "Take duckling or roaster duck for tender meat, with the USDA Grade A shield.",
         "Check the freezer case, where most duck is sold, and bag it separately.",
-        "Skip the ‘no hormones’ claim: hormones are not allowed in any US duck."
+        "Ignore a ‘no hormones’ claim: hormones are not allowed in any US duck."
       ],
       "science": "Federal rule 9 CFR 381.170 names ducks by age. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old, with toughened flesh. Grading is voluntary, and Grade A is the top shield. Use fresh duck within 1 or 2 days, or freeze it, and cook duck to 165°F.",
       "labels_decoded": [

@@ -11,3 +11,7 @@ dry_brine | step 1 says one percent by weight, bt5 says a large roast or brisket
 turkey_bacon | detail reads “made without nitrate or nitrite” (no “added”), and labels_decoded “Uncured” on turkey_bacon and cured_pork carry similar unqualified wording in places (B05 ship notes); science already says “without added” | the shopper reading “Uncured” needs depth that agrees with the science
 organ_meats | no at-the-case look, smell or texture check for liver, heart or kidney in the card own fields; step 1 is a cook-by window | the shopper at the case has no way to pick the better pack
 deli_salads | steps copy buying_tips nearly verbatim (B05 ship note); kept, since the tips are already shelf checks | Devon call, not a source gap
+chicken_cuts_basics | no at-the-case look or smell check for raw chicken (color, odor, liquid in the tray, pack or use-by date) in the card own fields | step 1 picks the cut, nothing picks the better pack
+chicken_breast | same: no case check for the raw pack beyond the solution label (woody breast is ruled out as a visual test) | the shopper comparing two plain packs has nothing to look at
+turkey_whole | no frozen-bird check (torn wrap, ice crystals, frost inside the bag) in the card own fields | most whole turkeys are bought frozen
+egg_duck_quail | step 3 is a kitchen tip; no shelf check for duck or quail eggs beyond clean, uncracked and cold | a third shelf step needs a sourced check

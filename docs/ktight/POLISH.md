@@ -65,3 +65,18 @@ deli_salads | kept
 prepared_meals | kept
 fresh_pasta | kept
 deli | kept
+rotisserie_chicken | kept
+air_chilled_chicken | kept
+no_antibiotics_poultry | kept
+chicken_cuts_basics | changed: science says a raw plain bird “may not carry any at all” retained water, matching the label rule (B04 ship note; “may carry none” read as optional)
+turkey_whole | kept
+ground_turkey | kept
+chicken_breast | changed: S2 opens with “Read past ‘natural’” so it is a shelf action, same verb shape as turkey_whole S2
+duck_meat | changed: S3 “Ignore a ‘no hormones’ claim” for “Skip the”, which could read as skip the duck (B04 ship note)
+egg_labels | kept
+egg_shell_color | kept
+egg_freshness | kept
+egg_grades_sizes | kept
+egg_feed_claims | changed: S3 is now a label read (‘organic’ = how the feed was grown); the traceability fact has no carton check, so it moved to science
+egg_storage | kept
+egg_duck_quail | kept (S3 is a kitchen tip and steps copy buying_tips; allowed per B04 ship note, no other shelf check in the fields)
