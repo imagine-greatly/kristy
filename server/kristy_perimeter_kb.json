@@ -57,7 +57,7 @@
       "pick_steps": [
         "Read the species: Atlantic is farmed; sockeye and coho are almost always wild.",
         "Check the freezer case: frozen wild Alaskan is often fresher than ‘fresh’ farmed.",
-        "On farmed fish, read the country first; antibiotic use varies enormously by origin."
+        "Pick wild salmon; choose frozen wild Alaskan before fresh farmed."
       ],
       "science": "Farmed salmon eats a ration built largely on plant protein and vegetable oil. That leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. ‘Fresh’ at the counter is often previously frozen, which is not a downgrade.",
       "labels_decoded": [
@@ -182,8 +182,7 @@
       ],
       "pick_steps": [
         "Ask the counter whether it was previously frozen; often it was.",
-        "Buy it frozen and thaw it at home for the most control.",
-        "Cook a fillet sold thawed; do not refreeze it."
+        "Buy it frozen and thaw it at home for the most control."
       ],
       "science": "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter. Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage.",
       "asked_as": [
@@ -299,8 +298,7 @@
       ],
       "pick_steps": [
         "Find liver and heart in the ingredient list, each with its own percentage.",
-        "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass.",
-        "Check the liver percent and keep servings ordinary."
+        "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass."
       ],
       "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Grass-finished applies to a blend the same as plain ground beef.",
       "labels_decoded": [
@@ -823,8 +821,7 @@
       ],
       "pick_steps": [
         "Take a bag listing only the vegetable or fruit, no sauce or added sugar.",
-        "Stock frozen berries and spinach; they never spoil.",
-        "Pick frozen over fresh that traveled far or sat in storage."
+        "Stock frozen berries and spinach; they never spoil."
       ],
       "science": "Frozen produce is picked at peak ripeness and frozen within hours, which locks in nutrients. Fresh that travels a long way or sits in storage can lose some over days in transit. Studies find the two broadly comparable, with frozen sometimes ahead. Freezing is just cold, so it needs no additives, and frozen does not spoil.",
       "labels_decoded": [],
@@ -936,7 +933,7 @@
       "pick_steps": [
         "Take what is piled high and cheapest this week; that is the season.",
         "Off-season, reach for frozen over a pale, sad fresh version.",
-        "Check a farmers market or LocalHarvest for what is in season near you."
+        "Pick seasonal produce: spring asparagus, summer tomatoes, autumn squash, winter citrus."
       ],
       "science": "Season shows up in the pile and the price before anywhere else. Spring brings tender greens and berries, summer tomatoes and stone fruit. Autumn brings squash and apples, winter citrus and hardy brassicas. Summer runs strawberries first, then cherries and other berries, then peaches, melons, plums and pears. Storage crops like apples, onions, potatoes and carrots stay good long past their season.",
       "labels_decoded": [],
@@ -1262,7 +1259,7 @@
       "pick_steps": [
         "Sourcing first: raw from a named farm, then low-temp cream-top, then A2.",
         "Check for ultra-pasteurized; the A2 claim says nothing about processing.",
-        "Small dairies name the breed; big labels print only the licensed seal."
+        "Pick milk labeled “Jersey,” “Guernsey” or “A2”."
       ],
       "science": "A1 and A2 milk sit one amino acid apart, and only A1 releases the BCM-7 peptide. Jersey and Guernsey carry more A2 genes than Holsteins, but breed is a tendency, not a test. The claim rests on a tested herd. The seal reports the protein and nothing about how the herd lived. Easier to digest is the most promising claim and still unproven by science.",
       "labels_decoded": [
@@ -1465,7 +1462,7 @@
       ],
       "pick_steps": [
         "Not for pregnancy, kids under five, or anyone immunocompromised.",
-        "Buy from a named farm that publishes its herd test results.",
+        "Pick raw milk from a farm named on the bottle.",
         "Look for glass, a readable bottling date in days, and a cream line."
       ],
       "science": "Raw means not heat-treated: neither pasteurized nor homogenized, and that is the whole of what the word tells you. The farm is the product: a small herd on grass, milked into a cold chain that never breaks. Without a named farm, test results and a cold chain, it is just unpasteurized. ‘Raw’ on a cheese aged under 60 days at retail is worth a question.",
@@ -1521,8 +1518,7 @@
       ],
       "pick_steps": [
         "Pick basmati or sushi rice; plain long-grain and parboiled test highest.",
-        "Origin: California, India or Pakistan run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas.",
-        "At home, boil it in plenty of water and pour the water off."
+        "Origin: California, India or Pakistan run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas."
       ],
       "science": "Rice takes up more inorganic arsenic than other grains, and the bran holds most of it. Brown tests about half again higher than white; variety and origin matter more than color. Boiling in plenty of water and pouring it off removes 40 to 60 percent. Rinsing and soaking measured 5 percent or less. Brown keeps the magnesium, fiber, manganese and B6 that milling takes off.",
       "labels_decoded": [],
@@ -1683,7 +1679,7 @@
       ],
       "pick_steps": [
         "Read for one ingredient: honey, and nothing else.",
-        "Pick local or single-source raw honey from a producer you can trace.",
+        "Pick local, single-source or raw honey with only honey in the ingredient list.",
         "Read ‘raw’ with no named producer as often blended; the word is unregulated."
       ],
       "science": "Diluting honey with rice or corn syrup is a documented problem in the global honey trade. So is ultra-filtering to hide origin. Adulteration is hard to test for, since real honey varies with flowers, place and handling. Raw honey is not heat-processed or ultra-filtered. It is still sugar, a real and old sweetener.",
@@ -1752,7 +1748,6 @@
       ],
       "pick_steps": [
         "Pick whole beans with unbroken skins; split ones turn to mush.",
-        "Canned: rinse them, since rinsing cuts much of the sodium the can added.",
         "Take “no salt added” cans when the tap rinse is not enough."
       ],
       "science": "Nutritionally, dried and canned beans are very close. Canned adds convenience and some sodium. Cooking dried beans yourself is the only way to set the salt. They ask for planning rather than skill, and a slow cooker or pressure cooker takes the work out. A “BPA-free” can lining is a minor point, if it matters to you.",
@@ -1859,7 +1854,7 @@
       "pick_steps": [
         "Read past “natural”: largely undefined outside meat and rarely enforced.",
         "Look for a defined term: organic, grass-finished or pasture-raised.",
-        "Read the ingredient list; it beats any front-of-pack adjective."
+        "Pick organic, grass-finished or pasture-raised over “natural”."
       ],
       "science": "The FDA has not formally defined “natural” on most foods. On meat and poultry, the USDA takes it to mean no artificial ingredients and minimal processing. It says nothing about how the animal was raised or fed. It is not organic, and it is not a welfare or feed claim. It does not restrict pesticides, GMOs, or how an animal lived.",
       "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record.",
@@ -1908,7 +1903,7 @@
       "pick_steps": [
         "Find the named “real” ingredient in the list; early means more, late a trace.",
         "Check whether added sugar or refined flour sits above it.",
-        "Trust the ingredient panel over the front-of-pack claim."
+        "Pick packs listing the “real” ingredient ahead of added sugar or refined flour."
       ],
       "science": "Ingredient lists run in weight order by law. “Made with real” sets no minimum, so a trace amount earns the same words. An ingredient sitting fourth or later is present in a quantity too small to matter. The named ingredient often sits below the added sugar and the refined flour. The claim is a fact about presence, and presence is not amount.",
       "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell.",
@@ -1962,8 +1957,7 @@
         "On beef and dairy it is a real distinction, but only third-party verification backs it."
       ],
       "pick_steps": [
-        "On chicken and pork, read past it: hormones are banned in both.",
-        "On beef and dairy, the claim is real; find a third-party verifier."
+        "On chicken and pork, read past it: hormones are banned in both."
       ],
       "science": "By federal rule, hormones cannot be used in raising pigs or chickens. So a hormone-free chicken label must also note that no poultry is raised with hormones. There the claim is true but meaningless, since every producer could print it. Beef and dairy allow hormones, so there the claim distinguishes producers. Only third-party verification backs it.",
       "tier_note": "Hormones are banned in pork and poultry by regulation, which is what makes the claim free there.",
@@ -2017,7 +2011,7 @@
       ],
       "pick_steps": [
         "Organic already requires non-GMO, so the organic seal covers both.",
-        "Ignore “non-GMO” on a food that has no GMO version.",
+        "Pick the organic seal without requiring a second non-GMO seal.",
         "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
       "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices. Whether GMOs are a concern at all is a separate, debated question.",
@@ -2081,8 +2075,7 @@
       ],
       "pick_steps": [
         "Read “cage-free” as a barn: uncaged, usually indoors, can be crowded.",
-        "Read “free-range” as some outdoor access, loosely defined and enforced.",
-        "For real outdoor time, find “pasture-raised” plus a certifier’s seal."
+        "Read “free-range” as some outdoor access, loosely defined and enforced."
       ],
       "science": "Cage-free is a real step up from battery cages, and not outdoors. Free-range signals outdoor access, but its amount, duration and quality are not tightly defined. A small door onto a small yard qualifies. For eggs, both are defined terms; on other products they carry much less. Without a certifier’s seal, nothing is auditing free-range.",
       "tier_note": "What a certifier audits, and how little cage-free and free-range specify on their own, are both written into published standards.",
@@ -2138,7 +2131,7 @@
       "pick_steps": [
         "Read past a bare “grass-fed”; it allows a grain finish.",
         "Look for “100% grass-fed” or “grass-finished,” ideally third-party certified.",
-        "Ask the butcher; they’ll usually know the sourcing."
+        "Pick “100% grass-fed” or “grass-finished” over bare “grass-fed”."
       ],
       "science": "A bare “grass-fed” only means the animal ate grass at some point. It can still be grain-finished in the feedlot before slaughter. After the USDA withdrew its formal standard, the bare claim is weakly enforced. “100% grass-fed” or “grass-finished” means grass its whole life. Third-party certification is the strongest backing.",
       "tier_note": "The grain finish a bare grass-fed claim allows, and the certification behind grass-finished, are both on the record.",
@@ -2211,7 +2204,7 @@
       ],
       "pick_steps": [
         "If feed matters, find “soy-free” or “corn-free” printed on the carton.",
-        "Read the carton for space and feed; one never implies the other.",
+        "Skip pasture wording as a substitute for printed “soy-free” or “corn-free”.",
         "On beef, look for grass-finished; “grass-fed” alone can still end on grain."
       ],
       "science": "Cage-free, free-range and pasture-raised all describe space, not feed. Most pasture-raised hens are still fed soy and corn. USDA has no regulatory definition of pasture-raised. Certifier standards govern housing and outdoor access, not the ration. Certified organic is the one term that reaches feed. It requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what it is.",
@@ -2271,7 +2264,6 @@
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
       ],
       "pick_steps": [
-        "Read the ingredient panel; the seal covers inputs and practices, not processing.",
         "“Made with organic” needs only 70% and cannot carry the USDA seal.",
         "It counts most on thin-skinned produce you eat whole, least on processed food."
       ],
@@ -2336,7 +2328,6 @@
         "‘Pesticide-free’ on a sign can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."
       ],
       "pick_steps": [
-        "Read the origin as the month, not a grade; judge the piece itself.",
         "Press with your palm and take the heavier of two.",
         "On the sticker number, five digits starting 9 means organic."
       ],
@@ -2526,7 +2517,7 @@
       "pick_steps": [
         "Read “no artificial flavors” narrowly: natural flavoring is still permitted.",
         "Find “natural flavors” on the list: two words that can carry solvents and carriers.",
-        "A short list of recognizable food names beats any flavor claim on the front."
+        "Between packs, pick the shorter ingredient list over the front flavor claim."
       ],
       "science": "A natural flavor must start from a plant or animal source; an artificial one does not. That is a rule about origin, not processing. Both arrive as engineered compounds. Either can be a proprietary blend of dozens of substances declared as two words on the panel. The objection is the opacity, not the word “artificial.”",
       "tier_note": "The legal line between natural and artificial flavor is the starting material, and it is written down.",
@@ -2594,8 +2585,7 @@
       ],
       "pick_steps": [
         "Ignore shell color and speckles; color is the breed, not the egg inside.",
-        "Read the yolk photo as artwork; yolk color can come from an additive.",
-        "Read the printed feed words; diet, age and freshness never show on the shell."
+        "Read the yolk photo as artwork; yolk color can come from an additive."
       ],
       "science": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. A paler brown shell is not a fresher or older egg. Blue and green shells are a breed trait too. A varied diet and marigold extract both deepen yolk color, indistinguishable by eye. Freshness shows in the pan: a yolk that stands up, a white that holds together.",
       "eyebrow_short": "Shell and yolk",
@@ -2722,7 +2712,7 @@
         "AA, A and B are scored on interior and shell quality at the time of packing. That system is separate from the size classes above it."
       ],
       "pick_steps": [
-        "Compare price per ounce, not per dozen; Large is 24 ounces a dozen.",
+        "For baking, pick Large eggs.",
         "Take the fresher carton over the higher grade; AA versus A is white firmness.",
         "Baking assumes Large; a ‘Large’ dozen may hold Extra Large, never smaller."
       ],
@@ -2945,7 +2935,7 @@
         "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
       ],
       "pick_steps": [
-        "Pay up for grade on a quick-cooked steak; skip it on a braise.",
+        "For quick-cooked steaks, pick Prime, then Choice, then Select; ignore grade for braising.",
         "Read the grade itself: ‘Angus’ is a brand checklist, not a grade.",
         "Ungraded is not a downgrade; grading is voluntary and says nothing either way."
       ],
@@ -3133,8 +3123,8 @@
       ],
       "pick_steps": [
         "Ask what came in today and what is coming down in price.",
-        "Ask the sourcing: grass-finished, air-chilled, where from; and if wet- or dry-aged.",
-        "Name section, thickness and size; ask for a fresh chuck grind, bones, silverskin off."
+        "Choose a chuck roast ground fresh over the prepacked tray.",
+        "Pick bones and trim for stock."
       ],
       "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out more concentrated in flavor.",
       "asked_as": [
@@ -3267,8 +3257,7 @@
       "science": "A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. Hormones are banned in pork production, so ‘no added hormones’ is a freebie. ‘Natural’ on meat says nothing about raising.",
       "pick_steps": [
         "Braise or pull shoulder, Boston butt or picnic; cook loin and tenderloin fast.",
-        "Find the ‘% solution’ figure; enhanced pork is injected brine, already salted.",
-        "On enhanced pork, skip your own brine and expect less browning."
+        "Find the ‘% solution’ figure; enhanced pork is injected brine, already salted."
       ]
     },
     {
@@ -3335,7 +3324,7 @@
       "pick_steps": [
         "Find the asterisk: ‘uncured’ is always qualified on the label.",
         "Read the ingredients list; every curing substance has to be named there.",
-        "Counter-sliced usually lists fewer ingredients than the tub; whole roasted meat adds none."
+        "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
       ],
       "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’."
     },
@@ -3606,8 +3595,7 @@
       ],
       "pick_steps": [
         "Read the species, not ‘farmed’: mussels, oysters and clams stand out, needing no feed.",
-        "Farmed trout, arctic char and barramundi are generally well regarded.",
-        "For salmon and shrimp, read the country and look for a credible certification."
+        "Farmed trout, arctic char and barramundi are generally well regarded."
       ],
       "science": "‘Farmed’ alone is not a verdict; the species and the operation decide it. A rope of mussels hanging in a bay feeds itself by filtering water. An open net pen or coastal shrimp pond depends on the country and company running it. Seafood Watch rates by species and method. Its Super Green list puts U.S. farmed catfish, clams, mussels, oysters and trout on top.",
       "asked_as": [
@@ -3682,8 +3670,7 @@
       ],
       "pick_steps": [
         "Wild fish: look for the blue MSC label, audited for stock and habitat.",
-        "Farmed fish: ASC or BAP; BAP stars count audited links, not the fish.",
-        "No seal speaks to freshness; judge that by nose, eyes and ice."
+        "Farmed fish: ASC or BAP; BAP stars count audited links, not the fish."
       ],
       "science": "MSC audits wild fisheries for stock management and habitat impact. ASC and BAP audit farms, ASC on environmental and social standards; both set a floor. BAP’s stars run from plant up to farm, hatchery and feed mill. Seafood Watch is a ratings guide to look up, not a package seal. ‘Dolphin-safe’ on tuna is not a sustainability seal; look for FAD-free or school-caught alongside it.",
       "asked_as": [
