@@ -4,3 +4,6 @@ produce_citrus | no "heavy for its size" in the card own fields (only produce_ri
 frozen_vs_fresh_produce | no at-the-case check for a thawed-and-refrozen bag (frost, clumped pieces, soft bag) | step 3 "fresh that traveled far" cannot be seen at the shelf
 precut_produce_tradeoffs | no visible check on a pre-cut tub (pooled liquid, browned or dried cut edges) | the shopper buying pre-cut has no way to pick the better tub
 produce_ripeness_by_item | avocado nub "stuck fast means give it days" held Partial (B06 ship note; A1 says an action sub-check lands full) | Devon call, not a source gap
+smoked_salmon | KB says kippered is refrigerated cold-smoked (SA, bt1, step 1), but kippered is commonly hot-smoked; why/short_answer/LD disagree (B02 ship note) | the shopper reading “kippered” needs the right smoke type for the storage and safety lines
+canned_fish_choosing | buying_tips bt5 and bt6 state the same light vs white mercury point twice | a duplicated tip spends a line the shopper reads
+mercury_by_fish | science names only canned light tuna for the EWG limit; w2 also lists albacore and more (science at 70-word cap, B01 ship note) | Devon call, not a source gap

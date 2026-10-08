@@ -56,7 +56,7 @@
       ],
       "pick_steps": [
         "Read the species: Atlantic is farmed; sockeye and coho are almost always wild.",
-        "Frozen wild Alaskan is often fresher, and cheaper, than ‘fresh’ farmed in transit.",
+        "Check the freezer case: frozen wild Alaskan is often fresher than ‘fresh’ farmed.",
         "On farmed fish, read the country first; antibiotic use varies enormously by origin."
       ],
       "science": "Farmed salmon eats a ration built largely on plant protein and vegetable oil. That leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. ‘Fresh’ at the counter is often previously frozen, which is not a downgrade.",
@@ -185,7 +185,7 @@
         "Buy it frozen and thaw it at home for the most control.",
         "Cook a fillet sold thawed; do not refreeze it."
       ],
-      "science": "‘Fresh’ on the sign says nothing about when the fish was caught. Freezing at sea locks in quality within hours of the catch. Fish on ice may be several days from the water. Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage. Neither is a downgrade.",
+      "science": "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter. Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage.",
       "asked_as": [
         "should i buy fresh or frozen fish",
         "is frozen fish worse than fresh",
@@ -3604,7 +3604,7 @@
         "U.S.-farmed white leg shrimp and tilapia rate Green on the same list. The rating names the origin and the system, so read the country before judging the species."
       ],
       "pick_steps": [
-        "Farmed mussels, oysters and clams are the standout: they need no feed.",
+        "Read the species, not ‘farmed’: mussels, oysters and clams stand out, needing no feed.",
         "Farmed trout, arctic char and barramundi are generally well regarded.",
         "For salmon and shrimp, read the country and look for a credible certification."
       ],
@@ -3681,7 +3681,7 @@
       ],
       "pick_steps": [
         "Wild fish: look for the blue MSC label, audited for stock and habitat.",
-        "Farmed fish: ASC or BAP; BAP stars count audited links, not quality.",
+        "Farmed fish: ASC or BAP; BAP stars count audited links, not the fish.",
         "No seal speaks to freshness; judge that by nose, eyes and ice."
       ],
       "science": "MSC audits wild fisheries for stock management and habitat impact. ASC and BAP audit farms, ASC on environmental and social standards; both set a floor. BAP’s stars run from plant up to farm, hatchery and feed mill. Seafood Watch is a ratings guide to look up, not a package seal. ‘Dolphin-safe’ on tuna is not a sustainability seal; look for FAD-free or school-caught alongside it.",
@@ -7474,8 +7474,8 @@
         "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone."
       ],
       "pick_steps": [
-        "Read the can for ‘light’ or a named skipjack species.",
-        "‘White’ means albacore, in FDA’s Good Choices rather than Best Choices.",
+        "Read the front for ‘light’; FDA puts canned light tuna in Best Choices.",
+        "Pass over ‘white’: it means albacore, in Good Choices rather than Best.",
         "Read oil or water separately; packing does not change the mercury category."
       ],
       "science": "FDA’s chart places canned light tuna, including skipjack, in Best Choices and albacore in Good Choices. These categories reflect mercury levels. Light is a color designation, not one species, so not every light can is skipjack. Canned light tuna can be chosen without a separately stated skipjack name. FDA’s frequency advice is specific to pregnancy, breastfeeding and children, with its own age and life-stage guidance.",
@@ -8888,7 +8888,7 @@
         "Check: fish on ice or refrigerated, cooked seafood kept apart from raw.",
         "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
       ],
-      "science": "The species name is what a seafood label must get right. FDA DNA tests found it right 85% of the time. Around 85 percent of seafood eaten in the U.S. is imported. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. NOAA inspection is a fee-for-service program; participants may use an official mark showing federal inspection.",
+      "science": "A seafood label must get the species name right; FDA DNA tests found it right 85% of the time. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. Around 85 percent of seafood eaten in the U.S. is imported. NOAA inspection is a fee-for-service program; participants may use an official mark showing federal inspection.",
       "labels_decoded": [
         {
           "term": "Species name",
