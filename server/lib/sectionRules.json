@@ -1,8 +1,8 @@
 [
-  {"section": "produce", "rule": "Judge the piece itself, not the sticker.", "checks": ["Read the origin as season, not grade.", "Five digits starting 9 means organic."], "sources": ["produce_picking_ripeness"]},
+  {"section": "produce", "rule": "Judge the piece itself, not the sticker.", "checks": ["Country on the sticker tells season, not grade.", "Sticker code: five digits starting 9 is organic."], "sources": ["produce_picking_ripeness"]},
   {"section": "meat", "rule": "Judge by seal and smell, not color alone.", "checks": ["Take a sealed, leak-free package from the back.", "Pass on slime or any off smell."], "sources": ["judging_meat_at_the_case", "meat_case"]},
-  {"section": "seafood", "rule": "Ask the species, then where it came from.", "checks": ["Check the fish sits on ice.", "Smell it: clean and briny is right.", "Check cooked seafood sits apart from raw."], "sources": ["seafood_counter", "fish_freshness_at_counter"]},
-  {"section": "eggs_dairy", "rule": "Turn it over; decide from the back.", "checks": ["Believe the back when front and back disagree.", "Read “natural” as marketing, not definition."], "sources": ["label_front_vs_back", "dairy_case"]},
-  {"section": "bulk_pantry", "rule": "Pick full, busy bins; skip dusty ones.", "checks": ["Smell it: paint, crayon or bitter means rancid.", "Buy what you will use in a month."], "sources": ["bulk_bins_buying"]},
+  {"section": "seafood", "rule": "Know the species, then where it came from.", "checks": ["At the counter: fish on ice, cooked apart.", "Fresh fish smells clean and briny, never ammonia."], "sources": ["seafood_counter", "fish_freshness_at_counter"]},
+  {"section": "eggs_dairy", "rule": "Believe the back when front and back disagree.", "checks": ["Read “natural” as marketing with little definition."], "sources": ["label_front_vs_back"]},
+  {"section": "bulk_pantry", "rule": "Read the back; at bins, pick busy ones.", "checks": ["Read ingredients, added sugars and serving size.", "Rancid bin nuts smell of paint or crayon."], "sources": ["label_front_vs_back", "bulk_bins_buying"]},
   {"section": "frozen", "rule": "Buy only food frozen solid.", "checks": ["Pick it up just before checkout.", "Ice cream not brick-hard means warm freezer."], "sources": ["frozen"]}
 ]
