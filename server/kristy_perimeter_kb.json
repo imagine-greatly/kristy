@@ -7598,7 +7598,7 @@
         "Read each curing ingredient in the ingredients statement.",
         "Find any “Uncured” claim and the “No Nitrate or Nitrite Added” beside it."
       ],
-      "science": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Turkey bacon is still a cured product. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without nitrate or nitrite carries “Uncured” beside its name.",
+      "science": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Turkey bacon is still a cured product. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without added nitrate or nitrite carries “Uncured” beside its name.",
       "labels_decoded": [
         {
           "term": "Cured turkey thigh meat",
