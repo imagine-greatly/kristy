@@ -23,10 +23,10 @@ test('projectEntry carries pick_steps and science from an entry that has them', 
   assert.equal(card.science, SCIENCE);
 });
 
-test('projectEntry emits null for both when the entry has not authored them', () => {
+test('projectEntry emits [] steps and null science when the entry has not authored them', () => {
   const { pick_steps, science, ...rest } = entry;
   const card = projectEntry(rest);
-  assert.equal(card.pick_steps, null);
+  assert.deepEqual(card.pick_steps, []);
   assert.equal(card.science, null);
 });
 

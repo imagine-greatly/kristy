@@ -388,8 +388,8 @@ export function projectEntry(entry, { doLine = '' } = {}) {
     instead: String(entry.instead || '').trim() || null,
 
     // KTIGHT: FREE, like `instead`. 1-3 short steps for picking the thing at the shelf, and
-    // the plain science behind the verdict. Null when the entry has not authored them.
-    pick_steps: Array.isArray(entry.pick_steps) && entry.pick_steps.length ? entry.pick_steps : null,
+    // the plain science behind the verdict. [] / null when the entry has not authored them.
+    pick_steps: Array.isArray(entry.pick_steps) ? entry.pick_steps : [],
     science: String(entry.science || '').trim() || null,
 
     // ── expanded ──
