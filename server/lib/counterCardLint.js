@@ -1462,27 +1462,39 @@ export function lintPickSteps(entry) {
   }
   const steps = Array.isArray(e.pick_steps) ? e.pick_steps.filter((s) => typeof s === 'string') : [];
   const science = typeof e.science === 'string' ? e.science : '';
-  const lockText = (s) => PRESERVATION_CURE.reduce((t, re) => t.replace(re, 'preserved'), s);
-  for (const v of claimLockViolations({ look_for: steps.map(lockText), detail: lockText(science) })) fail(`KT_${v.code}`, v.detail);
+  // Allowlisted sentences still run the lock; only their CLAIM_TREATMENT finding is dropped.
+  const allowed = (s) => PRESERVATION_CURE_SENTENCES.has(s);
+  const unlisted = (t) => sentences(t).filter((s) => !allowed(s)).join(' ');
+  const exempt = [...steps, science].flatMap(sentences).filter(allowed);
+  const hits = [
+    ...claimLockViolations({ look_for: steps.map(unlisted), detail: unlisted(science) }),
+    ...claimLockViolations({ look_for: exempt, detail: '' }).filter((v) => v.code !== 'CLAIM_TREATMENT'),
+  ];
+  for (const v of hits) fail(`KT_${v.code}`, v.detail);
   return out;
 }
 
-// INVARIANT: preservation sense only; a treatment sense must still trip the lock.
-// Closed, literal list of meat/food-preservation phrases (derived from the B05 deli/cured
-// drafts and the deli_meat_uncured, bacon, hot_dogs, ham, turkey_bacon, cured_pork KB text).
-// Only the cure-word itself is swapped, so "cured meat cures colds" still fires on "cures".
-// Never add a bare "cure"/"cured"/"curing" wildcard; counterClaimLock.js stays untouched.
-// TAIL fails closed: a preservation phrase followed by a treatment tail ("curing agent for
-// gout") is left untouched, so the lock still reads the cure-word.
-const CURE_TAIL = String.raw`(?!\s+(?:for|against|that|which|to|helps?|treats?)\b)`;
-const CURE_NOUN = String.raw`(?:pork|meats?|hams?|bacon|salami|sausages?|fish|salmon|egg yolks?|belly|leg of pork|products?|ground product)`;
-const PRESERVATION_CURE = [
-  new RegExp(String.raw`\b(?:un|dry-|salt-)?cured(?=\s+(?:raw\s+)?${CURE_NOUN}\b${CURE_TAIL})`, 'gi'),
-  new RegExp(String.raw`\b(?:dry|salt)-cured(?=[,.])`, 'gi'),
-  new RegExp(String.raw`(?<=pork )cured(?= with salt\b${CURE_TAIL})`, 'gi'),
-  new RegExp(String.raw`(?<=meat is )cured(?=, using celery powder\b${CURE_TAIL})`, 'gi'),
-  new RegExp(String.raw`\bcuring(?=[\s-](?:agents?|ingredients?|salts?|process|time|substances?|source|mixture|label)\b${CURE_TAIL})`, 'gi'),
-  new RegExp(String.raw`(?<=celery-based )curing(?=\s+${CURE_NOUN}\b${CURE_TAIL}|[,.;])`, 'gi'),
-  new RegExp(String.raw`(?<=water the )curing(?= added\b${CURE_TAIL})`, 'gi'),
-  new RegExp(String.raw`(?<=celery )cure(?=\s+${CURE_NOUN}\b${CURE_TAIL}|[,.])`, 'gi'),
-];
+// INVARIANT: each sentence reviewed as preservation sense; adding one is a reviewed corpus change, never a regex.
+// Exact pick_steps/science sentences (as split by sentences()) whose meat-cure wording trips the claim lock's
+// treatment rule. Any other sentence, including a near-miss of one of these, reads the raw lock. Fail-closed.
+export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
+  "Read the ingredients list; every curing substance has to be named there.",
+  "‘Uncured’ meat is cured, using celery powder instead of added nitrite.",
+  "Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one.",
+  "Read each curing ingredient, including salt, sugar and curing agents.",
+  "Compare the disclosed curing ingredients across the bacon packs on the shelf.",
+  "Bacon labeled uncured can use celery powder as a natural curing source.",
+  "US curing-label policy requires curing-mixture ingredients to be listed individually.",
+  "The curing ingredients describe the process.",
+  "The source set does not establish a health advantage from choosing celery-based curing.",
+  "“Uncured” can still mean celery-based curing; read the qualifier.",
+  "Ham is the cured leg of pork, and its product name tells how much water the curing added.",
+  "Read each curing ingredient in the ingredients statement.",
+  "Under US labeling, “bacon” alone means cured pork belly.",
+  "Turkey bacon is still a cured product.",
+  "Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed.",
+  "Each of these is pork cured with salt and curing agents.",
+  "Prosciutto is dry-cured raw ham, not smoked; its low water content lets it be eaten raw.",
+  "Salami is a fermented, dried and cured ground product.",
+  "Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl.",
+]));

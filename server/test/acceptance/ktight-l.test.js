@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { lintPickSteps, lintPick, readability, MAX_STEP_WORDS, MAX_SCIENCE_WORDS } from '../../lib/counterCardLint.js';
+import { lintPickSteps, lintPick, readability, sentences, PRESERVATION_CURE_SENTENCES, MAX_STEP_WORDS, MAX_SCIENCE_WORDS } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 
 const berries = kb.entries.find((e) => e.id === 'berries_picking');
@@ -75,27 +75,35 @@ test('C17: neither field present → []', () => {
   assert.deepEqual(lintPickSteps(bare), []);
 });
 
-// Preservation sense of "cured"/"curing" passes the KT claim lock; a treatment sense still trips it.
-const PRESERVATION = [
-  'cured pork', 'uncured bacon', 'cured meats', 'cured ham', 'cured salami', 'cured sausage', 'cured fish',
-  'cured salmon', 'cured egg yolk', 'cured belly', 'the cured leg of pork', 'a cured product', 'cured ground product',
-  'dry-cured ham', 'salt-cured fish', 'pork cured with salt', 'meat is cured, using celery powder',
-  'a curing agent', 'curing agents', 'each curing ingredient', 'curing ingredients', 'curing salt', 'curing salts',
-  'the curing process', 'curing time', 'every curing substance', 'a curing source', 'the curing mixture',
-  'curing-mixture ingredients', 'curing-label policy', 'celery-based curing', 'the water the curing added', 'celery cure',
-];
-nonEmpty(PRESERVATION, 'PRESERVATION');
-test('preservation cure phrases lint clean in a step and in science', () => {
-  for (const p of PRESERVATION) {
-    assert.deepEqual(codes(step(`Read the label for ${p}.`)), [], `step: ${p}`);
-    assert.deepEqual(codes(sci(`${SCIENCE} The label names ${p}.`)), [], `science: ${p}`);
+// Preservation sense of "cured"/"curing" passes the KT claim lock only as an exact, reviewed KB sentence.
+const kbSentences = (e) => [...(e.pick_steps || []), e.science || ''].flatMap(sentences);
+nonEmpty([...PRESERVATION_CURE_SENTENCES], 'PRESERVATION_CURE_SENTENCES');
+test('every allowlisted cure sentence is verbatim in a KB card and lints clean in place', () => {
+  for (const s of PRESERVATION_CURE_SENTENCES) {
+    const owner = kb.entries.find((e) => kbSentences(e).includes(s));
+    assert.ok(owner, `stale allowlist entry: ${s}`);
+    assert.deepEqual(codes(owner), [], `${owner.id}: ${s}`);
   }
 });
-const TREATMENT = ['cured my arthritis', 'cures inflammation', 'a cure for bloating', 'curing gut issues', 'cured meat cures colds',
-  'The curing process for arthritis', 'A curing agent for gout', 'curing agents for gout', 'Celery cure for headaches', 'Salt-cured my eczema'];
-test('treatment sense of cure still fires KT_CLAIM_TREATMENT', () => {
+test('a near-miss of an allowlisted sentence fires KT_CLAIM_TREATMENT', () => {
+  for (const s of PRESERVATION_CURE_SENTENCES) {
+    const near = s.replace(/[.!?]$/, ' for arthritis$&');
+    assert.notEqual(near, s, `no terminal punctuation: ${s}`);
+    assert.ok(codes(step(near)).includes('KT_CLAIM_TREATMENT'), `step: ${near}`);
+    assert.ok(codes(sci(`${SCIENCE} ${near}`)).includes('KT_CLAIM_TREATMENT'), `science: ${near}`);
+  }
+});
+const TREATMENT = [
+  ...['cured my arthritis', 'cures inflammation', 'a cure for bloating', 'curing gut issues', 'cured meat cures colds',
+    'The curing process for arthritis', 'A curing agent for gout', 'curing agents for gout', 'Celery cure for headaches', 'Salt-cured my eczema',
+  ].map((t) => `Buy the one that ${t}.`),
+  'The curing process, for arthritis.', 'Celery cure, for headaches.', 'A curing agent of gout.', 'Curing agents (for gout).',
+  'The curing process: for arthritis.', 'Celery-based curing, for gout.', 'Salt-cured, my eczema cleared.',
+];
+nonEmpty(TREATMENT, 'TREATMENT');
+test('treatment sense of cure fires KT_CLAIM_TREATMENT in the step slot and the science slot', () => {
   for (const t of TREATMENT) {
-    assert.ok(codes(step(`Buy the one that ${t}.`)).includes('KT_CLAIM_TREATMENT'), `step: ${t}`);
-    assert.ok(codes(sci(`${SCIENCE} This one ${t}.`)).includes('KT_CLAIM_TREATMENT'), `science: ${t}`);
+    assert.ok(codes(step(t)).includes('KT_CLAIM_TREATMENT'), `step: ${t}`);
+    assert.ok(codes(sci(`${SCIENCE} ${t}`)).includes('KT_CLAIM_TREATMENT'), `science: ${t}`);
   }
 });
