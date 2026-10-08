@@ -4354,8 +4354,7 @@
       ],
       "pick_steps": [
         "Buy whole; ground spice is tired inside six months.",
-        "Buy from a bin that turns over, in the smallest amount you will finish.",
-        "Toast in a dry pan until the smell crosses the kitchen, then grind."
+        "Buy the smallest amount of whole spices you will finish."
       ],
       "science": "What you are buying in a spice is volatile oil. Whole, the oil stays sealed for a couple of years. Grinding opens the surface up, and the oil leaves from there within months. Grinding itself makes heat, a primary way a spice loses quality before the jar. Toasted spice fades faster than whole, so toast and grind only what you are about to use.",
       "labels_decoded": [],
@@ -4409,8 +4408,7 @@
       ],
       "pick_steps": [
         "Smell the bulk bin first; varnish, putty, old walnuts or crayons means rancid.",
-        "Buy oil in dark glass, a size you will finish inside two months.",
-        "Freeze whole-grain flour and shelled nuts; keep oil tightly capped, cool and dark."
+        "Buy oil in dark glass, a size you will finish inside two months."
       ],
       "science": "Oxidation is fat reacting with air; heat, light and time speed it up, so use oil promptly. The germ oil is what turns in whole-grain flour. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of. Nothing on the label predicts it; the clock runs on heat, light and air, not the printed date.",
       "labels_decoded": [],
@@ -4683,7 +4681,7 @@
       ],
       "pick_steps": [
         "Pick water from a named spring and town, sparkling or not.",
-        "A label naming a process instead of a spring need not name its source.",
+        "Skip “distilled” or “deionized” water in favor of a named spring.",
         "Pick glass where offered; “BPA-free” on PET is true and empty."
       ],
       "science": "The type on the label is a federal standard of identity, so it has to be earned. Spring water is defined by its underground source; process-named water by what was done to it, often city water. Mineral water is spring water carrying dissolved solids from the ground, and nothing may be added. A bottler drawing from a city system has to say so, unless it then meets a process-named standard.",
@@ -4772,7 +4770,7 @@
       "pick_steps": [
         "Turn it over first: read the ingredient list, added-sugars line and serving size.",
         "Read “natural,” “wholesome” and “farm fresh” as marketing with little or no definition.",
-        "When front and back disagree, believe the back; a short, recognizable list beats claims."
+        "Choose a short food-ingredient list over front-of-pack claims."
       ],
       "science": "The front is written by marketing, and only some of its phrases have any legal definition. The back is regulated in content and format. When the two disagree, the back is the one that had to be checked.",
       "tier_note": "The ingredient list, the added sugars and the serving size are mandated by regulation; the front of the box is not.",
@@ -4830,7 +4828,6 @@
         "“Enriched wheat flour” as a first ingredient is not “whole wheat flour”."
       ],
       "pick_steps": [
-        "Read the first three ingredients; by weight, they are most of the package.",
         "Spot split sugars: syrups, concentrates, dextrose and honey listed separately.",
         "Check the first ingredient: “enriched wheat flour” and “whole wheat flour” are different foods."
       ],
@@ -4905,9 +4902,8 @@
         "More seals is not a better food. It is a food that bought more audits."
       ],
       "pick_steps": [
-        "Find a named, third-party audited program, not a self-declared badge.",
-        "Read each seal for its one scope: organic is not welfare.",
-        "Read the ingredient panel; more seals is not a better food."
+        "Choose a seal naming a program over a decorative badge.",
+        "Read each seal for its one scope: organic is not welfare."
       ],
       "science": "A real seal answers three questions. Who set the standard? Is it published? Does an independent body audit against it? An unnamed badge is often a company’s own mark, with no published standard and no outside auditor. An organic seal covers inputs and practices. A welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only.",
       "tier_note": "Who writes a standard and who audits it is public for every program worth the badge.",
@@ -4976,7 +4972,7 @@
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
       ],
       "pick_steps": [
-        "Which oil it is comes first; a cold-pressed canola is still canola.",
+        "Pick olive, avocado or coconut oil first; then match cold-pressed or expeller-pressed.",
         "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
         "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
       ],
@@ -5049,7 +5045,7 @@
       ],
       "pick_steps": [
         "Read “sugar-free” as under half a gram per serving, not as unsweetened.",
-        "Find the substitute by name: a sugar alcohol or a high-intensity sweetener.",
+        "Match substitutes: erythritol, maltitol, xylitol, stevia, monk fruit, sucralose or aspartame.",
         "Look for “unsweetened”; “naturally sweetened” has no definition: honey, syrup, concentrate all qualify."
       ],
       "science": "“Sugar-free” is defined as under 0.5 g sugar per serving. It says nothing about what took sugar’s place. Something else is doing the sweetening. Sugar alcohols such as erythritol, maltitol and xylitol appear by name and are also totaled on the panel. High-intensity sweeteners such as stevia, monk fruit, sucralose and aspartame appear in the list in tiny amounts. “Unsweetened” generally means no sweetener of any kind was added.",
@@ -5116,7 +5112,6 @@
       ],
       "pick_steps": [
         "Find all three: species, wild or farm-raised, and country of origin.",
-        "Origin can name where it was processed; a staffed counter can usually answer.",
         "Choose whole or skin-on; both are far harder to substitute than a bare fillet."
       ],
       "science": "Federal country-of-origin labeling requires most unprocessed fish and shellfish to show species, method and country. Cooked, breaded or otherwise processed seafood falls outside the rule. Country of origin is a real signal within farmed seafood, but wild or farmed is its own required line. Species substitution is a far bigger problem on a bare fillet than on a whole fish.",
@@ -5235,8 +5230,7 @@
       ],
       "pick_steps": [
         "Certified dyes like “Red 40” appear by name and number and cannot be pooled.",
-        "Read “artificial color” or “color added” as a color that need not be named.",
-        "Expect color low on the list, because the amounts used are small."
+        "Read “artificial color” or “color added” as a color that need not be named."
       ],
       "science": "Certified dyes must be declared by name; colors exempt from certification may be declared as a group. Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. Its EU withdrawal turned on an unresolved question about damage to DNA, not a demonstrated harm. An international expert committee reviewed it in 2023 and found dietary intake no hazard.",
       "labels_decoded": [
@@ -5298,7 +5292,7 @@
       "pick_steps": [
         "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
         "Same farm name as the milk, with a culture or bottling date.",
-        "Plain, in glass, with a pour thick enough to cling."
+        "Choose plain kefir in glass."
       ],
       "science": "Raw kefir is a live ferment, so it has to be sold cold. Made from raw milk, it is the same sourcing question: a named farm, a small herd, a cold chain. Flavoring and sugar change commercial bottles; in plain, the ferment is what you taste. The yeast may make a trace of alcohol, and a live bottle keeps it. Raw dairy is not for every household.",
       "labels_decoded": [
@@ -5502,7 +5496,7 @@
       "pick_steps": [
         "No USDA Organic seal on the clamshell means conventional, whatever the box says.",
         "Read the seal, not the photograph; the two cartons look almost identical.",
-        "The brand name says nothing about which line is in your hand."
+        "Pick the carton bearing the USDA Organic seal."
       ],
       "science": "A strawberry has no peel to take residue away. One spot-check found 12 residues on a conventional box. The organic box, screened for more than 500 pesticides, came back non-detect. One box of each, tested once, is a reason to buy organic, not a measurement of a brand. Certified organic restricts synthetic pesticides; it does not promise a blank screen.",
       "labels_decoded": [
@@ -5612,7 +5606,7 @@
       "pick_steps": [
         "Press every root and skip anything soft, shriveled or sprouting.",
         "Pass on green-tinted potatoes and carrots with green shoulders, wilt, cracks or flab.",
-        "Remove carrot tops before refrigerating; keep sweet potatoes cool, dry, unrefrigerated."
+        "Choose carrots with bright green, fresh-looking tops when the tops are attached."
       ],
       "science": "Potatoes should show no bruises, nicks or soft spots, and carrots good color. Sweet potatoes run smooth and even; beets, round with a slender tap root. Cold gives sweet potatoes chilling injury: decay, internal browning and shriveling. Potatoes keep up to a month at 45 to 50°F, dark and ventilated. Topped carrots and trimmed beets keep up to two weeks refrigerated.",
       "labels_decoded": [],
@@ -5909,7 +5903,7 @@
       "pick_steps": [
         "Pick crisp, evenly green leaves; skip yellowing, browning or small holes.",
         "Choose romaine neither very loose nor very hard, and kale on moist stems.",
-        "Store lettuce and spinach near 32°F, and kale unwashed."
+        "Choose kale with smaller leaves for a tender, milder bunch."
       ],
       "science": "Crispness is the freshness date, since spinach is highly perishable and kale wilts in the warm. Lettuce should be bright to dark green outside and pale at the heart. A loose romaine is immature; a hard one is overmature. Kale keeps about five days in a plastic bag, air pressed out. Water on the leaves speeds spoilage, so wash at the point of use.",
       "labels_decoded": [],
@@ -6886,8 +6880,8 @@
         "The source set contains articles, not health trials. The crust does not establish a health benefit."
       ],
       "pick_steps": [
-        "Ask which bath the bakery uses before baking: lye or baking soda.",
-        "Ask whether the dark crust comes from dipping; color alone does not settle it."
+        "Pick lye-dipped pretzel bread at the bakery.",
+        "If lye-dipped rolls are unavailable, pick bread dipped in a baking-soda bath."
       ],
       "science": "A dip in an alkaline bath before baking gives pretzel bread its characteristic crust. Lye and baking soda are different bath ingredients, and both are documented methods. The color alone does not show which bath was used. The sources are culinary articles, not health trials; the crust establishes no health benefit.",
       "labels_decoded": [
@@ -6934,7 +6928,7 @@
       ],
       "pick_steps": [
         "Ask the bakery whether the bagels are boiled; the shape does not show it.",
-        "Ask what goes in the bath; baking soda changes alkalinity and browning."
+        "Choose bagels boiled before baking for the traditional chewy exterior."
       ],
       "science": "Boiling before baking sets a bagel’s exterior and gives its characteristic chew. A longer boil can make the crust chewier and the interior denser. Baking soda in the bath changes its alkalinity and promotes browning. Boiling and browning are processing and texture facts, with no established health advantage.",
       "labels_decoded": [
@@ -6987,8 +6981,7 @@
       ],
       "pick_steps": [
         "Corn tortillas: look for masa or masa harina, water and salt.",
-        "Check that a corn tortilla doesn’t also list wheat flour.",
-        "Flour tortillas: read the flour and the named fat, not the color."
+        "Check that a corn tortilla doesn’t also list wheat flour."
       ],
       "science": "Traditional corn tortillas start with corn cooked and soaked in alkaline limewater, called nixtamalization, then ground into masa. Masa harina is that dough, dried and ground. Corn flour alone is a different ingredient. Some packaged corn tortillas contain wheat, so corn on the front is not a complete ingredient statement. Lab work measured digestibility under set processing conditions, not health outcomes from retail tortillas.",
       "labels_decoded": [
@@ -7041,7 +7034,7 @@
       "pick_steps": [
         "Beside the name, read the solution ingredients on a basted or self-basted bird.",
         "‘Natural’ can still carry a flavoring solution, so read past it.",
-        "Fresh or frozen, read retained water apart from the flavoring-solution statement."
+        "Choose fresh or frozen turkey without an injected basting solution."
       ],
       "science": "A basted or self-basted turkey has been injected or marinated with a solution. The FSIS turkey guide lists fat, broth, stock, water, spices or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
       "labels_decoded": [
@@ -7092,9 +7085,7 @@
         "Do not infer a fat level from the animal name. Read each pack."
       ],
       "pick_steps": [
-        "Choose a pack listing turkey, without added seasonings or a flavoring solution.",
-        "With no percent-lean claim, compare packs on the Nutrition Facts fat line.",
-        "Read each pack’s fat content; the animal name sets no fat level."
+        "Choose a pack listing turkey, without added seasonings or a flavoring solution."
       ],
       "science": "Grinding does not specify the fat content. FSIS’s archived rule covers ground turkey and requires a fat statement beside a percent-lean claim. The words ground turkey alone do not identify one fat level. Additives in processed turkey, including ground products, must be listed.",
       "labels_decoded": [
@@ -7251,7 +7242,6 @@
       ],
       "pick_steps": [
         "Read the protein line and the added vitamins and minerals on the carton.",
-        "Compare the labels of available oat drinks; the formulation can differ.",
         "Read the ingredient list for stabilizers; formulations can differ in stabilizer use."
       ],
       "science": "Oat drinks vary in composition and fortification; the carton is the basis for choosing. Production can include milling, enzyme hydrolysis, formulation and heat treatment. Oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The sole paper studied six original UK products, excluding barista, flavored and sugar-free versions. It measured sensory, physical and chemical properties, not health outcomes, and sets no universal health ranking.",
@@ -7299,9 +7289,7 @@
         "No universal number of fresh days is established for all retail bags."
       ],
       "pick_steps": [
-        "Pick a bag with an intact seal, valve or not.",
-        "Judge the whole packaging, not the valve alone.",
-        "Keep the sealed coffee away from heat."
+        "Pick a bag with an intact seal, valve or not."
       ],
       "science": "Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. The archived studies covered ground pods and accelerated heat storage. They do not prove a health advantage for one roast or bean. No universal number of fresh days is established for all retail bags.",
       "labels_decoded": [
@@ -7405,7 +7393,7 @@
         "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list."
       ],
       "pick_steps": [
-        "Find the named meat, then read every other ingredient on the list.",
+        "Pick named meat without mechanically separated chicken or turkey.",
         "Check whether the list names mechanically separated chicken or turkey.",
         "“Uncured” can still mean celery-based curing; read the qualifier."
       ],
@@ -7516,7 +7504,7 @@
       "pick_steps": [
         "Read the full product name for a solution percentage and its ingredients.",
         "Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.",
-        "Read retained chilling water apart from any added flavoring ingredients."
+        "Choose fresh or frozen plain breast without an added flavoring solution."
       ],
       "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
       "labels_decoded": [
@@ -7628,8 +7616,7 @@
       ],
       "pick_steps": [
         "Pick smooth, crisp, slender pods with the seeds flat and hidden.",
-        "Leave any with brown or rust spots, or a damp, sticky feel.",
-        "Keep them cold and cook them within five days."
+        "Leave any with brown or rust spots, or a damp, sticky feel."
       ],
       "science": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Seeds bulging through the pod mean an over-mature bean, and flabby pods say the same. Those beans turn tough, stringy and starchy.",
       "labels_decoded": [
@@ -7684,8 +7671,7 @@
       ],
       "pick_steps": [
         "Open the carton and check that every shell is clean and uncracked.",
-        "Buy from a refrigerated case and keep them cold at home.",
-        "Plan a longer cooking time for duck eggs, which are larger than hen’s eggs."
+        "Buy from a refrigerated case and keep them cold at home."
       ],
       "science": "Ireland’s food safety authority advises eating duck eggs only when thoroughly cooked. Keep raw duck eggs out of dishes served raw or lightly cooked, such as homemade mayonnaise. Do not taste a raw mix made with duck eggs. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply.",
       "labels_decoded": [
@@ -7838,7 +7824,6 @@
       ],
       "pick_steps": [
         "Read the name for “Water Added” or a percent of added ingredients.",
-        "Find where water sits in the ingredients statement.",
         "Check whether the label says fully cooked or cook before eating."
       ],
       "science": "Ham is the cured leg of pork, and its product name tells how much water the curing added. Plain “Ham” must meet the highest protein level. “Ham, Water Added” needs at least 17.0% protein, with 10% added solution. “Ham and Water Product” states the share of its weight that is added ingredients. Fresh ham and country ham are not fully cooked and need cooking before eating.",
@@ -8029,8 +8014,7 @@
       ],
       "pick_steps": [
         "Pick lamb with a USDA grade, most often Choice, firm with white marbling.",
-        "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
-        "Read the primal cut on the label, and stew adult goat."
+        "Pick goat with firm, fine-grained flesh and well-distributed white fat."
       ],
       "science": "Lamb quality grading is voluntary, and the grade takes age into account. Ungraded lamb is still inspected, but its quality may be higher or lower. Goat meat has no quality grades at all, so the flesh is the check. Goats under a year old are called kids. Older goat is darker, less tender and almost always stewed.",
       "labels_decoded": [
@@ -8096,7 +8080,7 @@
       ],
       "pick_steps": [
         "Buy only for a cook within one to two days.",
-        "Ask the counter or a farmer which organs they offer.",
+        "For braising, pick heart or tongue.",
         "Match each organ to its method; heart and tongue go in liquid."
       ],
       "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
@@ -8151,8 +8135,7 @@
       ],
       "pick_steps": [
         "Read for the “U.S. Inspected and Passed” triangle or a state mark.",
-        "Expect deeper red than beef, and bag the package separately for leaks.",
-        "Cook or freeze ground bison within 2 days, steaks within 3 to 5."
+        "Expect deeper red than beef, and bag the package separately for leaks."
       ],
       "science": "Bison is a bovine, in the same family as domestic cattle, not a true buffalo. Inspection can be federal or state. The meat is deeper red because it has no marbling. It keeps and cooks on the same rules as beef, but can turn tough beyond medium or at high heat.",
       "labels_decoded": [
@@ -8209,7 +8192,6 @@
         "Skip the brain, spinal cord, eyes, spleen and lymph nodes of deer and elk."
       ],
       "pick_steps": [
-        "Choose a fully refrigerated processor that handles each animal on its own.",
         "Pass on meat that is bruised, discolored, or has hair, dirt or bone fragments.",
         "Trim the fat, and use unfrozen venison within two or three days."
       ],
