@@ -806,6 +806,12 @@
         "Freezing rescues nothing that has already started to turn. It holds what you put in.",
         "High-water vegetables collapse on thawing: cucumber, lettuce, radish. Those are not freezer candidates."
       ],
+      "pick_steps": [
+        "Scald vegetables sixty seconds, then plunge them into ice water.",
+        "Dry them, freeze flat on a tray, then bag with the air pressed out.",
+        "Fruit goes in raw; date every bag."
+      ],
+      "science": "Enzymes keep working below freezing, so unblanched beans come out gray and tasting of hay. A brief scald ends them. Fruit skips it, since blanching would cook the texture out. Air dries and oxidizes the surface, which is freezer burn. Freezing holds what goes in and rescues nothing already turning. High-water vegetables like cucumber, lettuce and radish collapse on thawing.",
       "labels_decoded": [],
       "tier_note": "That enzymes survive freezing and a brief scald denatures them is settled food preservation science. It is also the step almost every home freeze skips.",
       "eyebrow_short": "Freezing it",
@@ -910,6 +916,12 @@
       "watch_out": [
         "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak."
       ],
+      "pick_steps": [
+        "Rinse under cold running water; brush firm produce, rinse and spin greens.",
+        "Wash right before eating, not before storing.",
+        "Skip soap, bleach and produce washes; plain water is the recommendation."
+      ],
+      "science": "Water and friction remove most surface dirt, microbes and some residue. Soap and commercial washes are not recommended and are not proven better. Moisture speeds spoilage, so berries and mushrooms stay dry until use. Water is for dirt, not residue. Residue is the job of a twelve-minute baking soda soak.",
       "asked_as": [
         "how should i wash produce",
         "do i need to wash vegetables",
@@ -953,6 +965,12 @@
         "Peeling removes more than any soak, and it removes the peel with it.",
         "The circulating ‘ninety percent of pesticides’ line overstates the study. Two compounds were measured, on apples the researchers had dosed themselves."
       ],
+      "pick_steps": [
+        "A teaspoon of baking soda per two cups of water, covering the fruit.",
+        "Soak twelve to fifteen minutes, then rinse the soda off with plain water.",
+        "Use it on thin-skinned conventional fruit eaten whole: apples, grapes, berries."
+      ],
+      "science": "Baking soda degrades some skin residues, where running water mostly moves them around. It needs minutes, not thirty seconds under the tap. Systemic residue stays: thiabendazole was mapped eighty micrometers into the apple. Peeling removes more than any soak, and the peel goes with it. The ‘ninety percent’ line overstates one study: two compounds, applied by the researchers to apples.",
       "labels_decoded": [],
       "tier_note": "Surface residue is a credible peer-reviewed concern, and the twelve-minute soak comes from one study whose numbers are not settled.",
       "eyebrow_short": "Residue",
@@ -3590,6 +3608,12 @@
         "Ethylene-sensitive vegetables stored near producers spoil faster. Cabbage and Brussels sprouts yellow or crack, carrots turn bitter, cucumbers break down sooner.",
         "Apples, pears, peaches, plums, cantaloupe and tomatoes give off significant ethylene. Keep them off the counter with anything sensitive."
       ],
+      "pick_steps": [
+        "Keep apples, bananas, avocados, tomatoes and stone fruit apart from greens and berries.",
+        "Wash nothing until use; store greens dry with a paper towel.",
+        "Leave tomatoes, potatoes, onions, garlic, whole melon and unripe stone fruit unrefrigerated."
+      ],
+      "science": "Apples, pears, stone fruit, cantaloupe and tomatoes give off ethylene, a ripening gas that ages neighbors. Near producers, cabbage and Brussels sprouts yellow or crack, carrots turn bitter, and cucumbers break down sooner. Water on a leaf or berry is where mold starts. Herbs and asparagus keep best standing in a little water, loosely covered. Buying at staggered ripeness keeps the whole week from turning at once.",
       "asked_as": [
         "how do i keep produce fresh longer",
         "how should i store vegetables",
@@ -3642,6 +3666,12 @@
         "Yellowing, sliminess or a smell is decay, and cold water does nothing for it. That one goes out.",
         "Pre-washed bagged greens revive least. They were cut before you bought them and a cut edge does not reseal."
       ],
+      "pick_steps": [
+        "Cut a sliver off the stem end, like cut flowers.",
+        "Soak thirty minutes in cold water, an hour for the worst.",
+        "Spin or pat them dry before they go back in the drawer."
+      ],
+      "science": "Limp greens are mostly thirsty, not spoiled. Water pressure in the cells holds a leaf rigid, and intact cells take water back. A fresh cut reopens sealed stem vessels, and cold water is taken up more readily. Pre-washed bagged greens revive least, because a cut edge does not reseal. Yellowing, sliminess or a smell is decay, and cold water does nothing for it.",
       "labels_decoded": [],
       "tier_note": "Turgor pressure is basic plant physiology, and it is why a leaf goes rigid again. Nothing about it makes an old leaf new.",
       "eyebrow_short": "Wilted greens",
@@ -5162,6 +5192,12 @@
         "Green shoulders, wilt, flab, or cracks on a carrot.",
         "Sweet potatoes kept cold take chilling injury: decay, internal browning, and shriveling. Cool and dry, never the refrigerator."
       ],
+      "pick_steps": [
+        "Press every root and skip anything soft, shriveled or sprouting.",
+        "Pass on green-tinted potatoes and carrots with green shoulders, cracks or flab.",
+        "Twist carrot tops off before refrigerating; keep sweet potatoes cool, dry, unrefrigerated."
+      ],
+      "science": "Potatoes should show no bruises, nicks or soft spots, and carrots good color. Sweet potatoes run smooth and even; beets, round with a slender tap root. Cold gives sweet potatoes chilling injury: decay, internal browning and shriveling. Potatoes keep up to a month at 45 to 50°F, dark and ventilated. Topped carrots and trimmed beets keep up to two weeks refrigerated.",
       "labels_decoded": [],
       "tier_note": "Firmness as the freshness test and topped carrots keeping longer are settled extension handling guidance.",
       "eyebrow_short": "Root vegetables",
@@ -5256,6 +5292,12 @@
         "Soft or slippery anywhere on the head is a sign of spoilage. Leave it.",
         "Keep cauliflower away from raw meat and meat juices."
       ],
+      "pick_steps": [
+        "Pick broccoli with dark green, tight florets on stems not thick or tough.",
+        "Press each head; leave any soft, slippery, bruised or damaged one.",
+        "Choose cabbage with fresh outer leaves, stripping any wilted or insect-damaged ones."
+      ],
+      "science": "Opened or yellowish-green florets mean broccoli past fresh; a soft, slippery head is already spoiling. Broccoli keeps three days, refrigerated in a bag with holes. Cabbage keeps several weeks wrapped in the refrigerator at 41°F or below. Remove its core and rinse the leaves before using. Keep cauliflower away from raw meat and meat juices.",
       "labels_decoded": [],
       "tier_note": "Open florets meaning stale and a soft head meaning spoiled come straight off the extension fact sheets.",
       "eyebrow_short": "Broccoli and cabbage",
@@ -5349,6 +5391,12 @@
         "Visible sprouting on either bulb.",
         "Onions stored with potatoes or anything else that releases moisture. Keep them apart."
       ],
+      "pick_steps": [
+        "Squeeze for firm onions with little scent and a fully dry neck.",
+        "Choose garlic with a dried neck, dry outer skins and firm cloves.",
+        "Skip cuts, bruises, gray or black mold, and any visible sprouting."
+      ],
+      "science": "A sound bulb has a dry neck and dry outer skins, and some loose onion skin is normal. Whole onions keep cool, dry and dark with air moving, never in plastic. Keep them apart from potatoes and anything else that releases moisture. A cut onion goes in a sealed container for up to seven days.",
       "labels_decoded": [],
       "tier_note": "Squeezing for firmness and skipping the plastic bag are the onion growers’ own handling rules.",
       "eyebrow_short": "Onions and garlic",
@@ -5441,6 +5489,12 @@
         "Browning, yellow, or small holes on kale.",
         "Washing kale before storing: water on the leaves brings faster spoilage."
       ],
+      "pick_steps": [
+        "Pick crisp, evenly green leaves; skip yellowing, browning or small holes.",
+        "Choose romaine neither very loose nor very hard, and kale on moist stems.",
+        "Store unwashed, as close to 32°F as the refrigerator gets."
+      ],
+      "science": "Crispness is the freshness date, since spinach is highly perishable and kale wilts in the warm. Lettuce should be bright to dark green outside and pale at the heart. A loose romaine is immature; a hard one is overmature. Kale keeps about five days in a plastic bag, air pressed out. Water on the leaves speeds spoilage, so wash at the point of use.",
       "labels_decoded": [],
       "tier_note": "Crisp leaves as the freshness test and cold storage for keeping are what the postharvest sheets for greens say.",
       "eyebrow_short": "Leafy greens",
@@ -5516,6 +5570,12 @@
         "Shriveling, which is water loss from warm storage.",
         "Pitting, softening, or a discolored seed cavity after a long stay in the refrigerator: chilling injury."
       ],
+      "pick_steps": [
+        "Pick a firm pepper, uniform in shape, size and color for the variety.",
+        "Colored peppers should be at least half colored.",
+        "Skip cracks, bruises, decay, disease, sunburn, insect damage, or a sunken blossom end."
+      ],
+      "science": "Firmness is a quality index, and shriveling is water loss from warm storage. A dark, sunken lesion at the blossom end is blossom end rot. Peppers keep best around 45°F. At 41°F, plan on about two weeks before chilling injury shows as pitting, softening or a discolored seed cavity. Red, yellow and orange peppers tolerate the cold better than green.",
       "labels_decoded": [],
       "tier_note": "A firm pepper without bruises is the selection line on both extension sheets.",
       "eyebrow_short": "Bell peppers",
@@ -5607,6 +5667,12 @@
         "A pear ripened on the tree turns mealy; Bartletts are meant to be picked green.",
         "Gala softens quickly when it is not cooled."
       ],
+      "pick_steps": [
+        "Turn each apple: firm, crisp, no bruising, decay, cracks or insect injury.",
+        "Pears: no bruising or decay, and a firm green Bartlett is not a fault.",
+        "Bag only sound fruit, and store it unwashed, cold and dark."
+      ],
+      "science": "Damaged fruit spoils in storage and makes the sound fruit beside it ripen and rot faster. Store at 30 to 32°F, up to 40°F, in a ventilated box or perforated bag. Refrigerated apples keep up to a month. McIntosh and Honeycrisp want 38°F, being prone to chilling injury, and Gala softens quickly when not cooled. Bartletts ripen off the tree; one ripened on it turns mealy.",
       "labels_decoded": [],
       "tier_note": "Leaving bruised fruit out of the bag is the storage advice on the Oregon State sheet.",
       "eyebrow_short": "Apples & pears",
@@ -5702,6 +5768,12 @@
         "Decay on any citrus.",
         "Grading an orange by color alone: degreening sets the color and says nothing about the inside."
       ],
+      "pick_steps": [
+        "Choose firm, smooth citrus free of decay, bruising and blemishes.",
+        "Pass on dry, shriveled or rind-stained lemons and dry or oil-spotted limes.",
+        "Use yellowed lemons and limes first; green-picked ones keep longest."
+      ],
+      "science": "Firm fruit with a sound rind is the quality index; decay and shriveling are the defects. Degreening sets an orange’s color and says nothing about the inside. A partly green orange can be fully mature. Yellow limes carry more juice. Oranges keep up to a week at room temperature, three weeks refrigerated. Lemons and limes hold best in the 50s °F, warmer than the refrigerator.",
       "labels_decoded": [],
       "tier_note": "Firm fruit with an unblemished rind is the quality index on the UC Davis citrus sheets.",
       "eyebrow_short": "Citrus",
