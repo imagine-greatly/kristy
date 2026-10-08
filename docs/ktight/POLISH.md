@@ -80,3 +80,27 @@ egg_grades_sizes | kept
 egg_feed_claims | changed: S3 is now a label read (‘organic’ = how the feed was grown); the traceability fact has no carton check, so it moved to science
 egg_storage | kept
 egg_duck_quail | kept (S3 is a kitchen tip and steps copy buying_tips; allowed per B04 ship note, no other shelf check in the fields)
+grassfed_butter | kept
+whole_vs_reduced_fat_milk | changed: step 1 is now the date check (months out = ultra-pasteurized, cream-top = fewer steps), the processing call the card rests on; fat figures read off the label; flavored-jug sugar check last
+a2_vs_a1_milk | kept
+milk_processing | kept
+raw_milk | kept
+raw_kefir | kept
+raw_aged_cheese | kept
+cheese_real_vs_processed | changed: the front-name read (‘cheese product’, ‘cheese food’, ‘process’) is step 1, the card's only warning and seen without turning the pack; short list step 2
+yogurt_plain_vs_flavored | kept
+yogurt_live_cultures | kept
+plain_kefir | kept (S2/S3 are cold-keeping and a recipe use; no other shelf check in the fields, logged in GAPS)
+cream_vs_creamer | kept
+sour_cream | kept
+cream_cheese | kept
+cottage_cheese | kept
+ice_cream | kept
+ghee | kept (S3 is a taste reason, not a check; logged in GAPS)
+goat_sheep_dairy | kept
+oat_milk | changed: step 3 says formulations “can differ” in stabilizer use, matching step 2's hedge (B09 ship note)
+almond_milk | kept
+soy_milk | kept
+coconut_milk_beverage | changed: step 1 is the sugar and thickener check, thickeners on any carton not only sweetened (B09 ship note); can-for-recipes step 2; aisle location last
+plant_butter | kept
+dairy_case | kept

@@ -15,3 +15,6 @@ chicken_cuts_basics | no at-the-case look or smell check for raw chicken (color,
 chicken_breast | same: no case check for the raw pack beyond the solution label (woody breast is ruled out as a visual test) | the shopper comparing two plain packs has nothing to look at
 turkey_whole | no frozen-bird check (torn wrap, ice crystals, frost inside the bag) in the card own fields | most whole turkeys are bought frozen
 egg_duck_quail | step 3 is a kitchen tip; no shelf check for duck or quail eggs beyond clean, uncracked and cold | a third shelf step needs a sourced check
+plain_kefir | no shelf check beyond “no flavor named” and the cold case (no date, separation, or bottle check in the card own fields); S3 is a recipe use and the science repeats “keep it refrigerated” | the shopper comparing two plain bottles has nothing to look at
+ghee | S3 is a reason to choose ghee, not a check; no jar check (color, grain, date, “grass-fed” label term) in the card own fields | the shopper comparing two plain jars has only the list
+coconut_milk_beverage | S3 is an aisle location, not a pick check; no third shelf check in the card own fields | a third step should help pick between cartons

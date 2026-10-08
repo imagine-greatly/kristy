@@ -1196,9 +1196,9 @@
         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water."
       ],
       "pick_steps": [
-        "On flavored jugs, read the added-sugar line before the fat one.",
-        "Whole is 3.25% milkfat; reduced-fat 2%, low-fat 1%, skim under half.",
-        "Cream-top means fewer steps; a date months out means ultra-pasteurized."
+        "Check the date: months out means ultra-pasteurized; cream-top means fewer steps.",
+        "Read the milkfat: whole is 3.25%, reduced-fat 2%, low-fat 1%, skim under half.",
+        "On flavored jugs, read the added-sugar line before the fat one."
       ],
       "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
       "labels_decoded": [
@@ -1338,8 +1338,8 @@
         "‘Pasteurized process cheese product’ needs only 51% cheese. The other 49% can be salt, dyes, preservatives, extra dairy, emulsifiers or other additions. The name on the front is the only warning."
       ],
       "pick_steps": [
-        "Look for a short list: milk, salt, cultures, enzymes or rennet.",
         "Read the front name: ‘cheese product’, ‘cheese food’ or ‘process’ means emulsifiers.",
+        "Look for a short list: milk, salt, cultures, enzymes or rennet.",
         "Buy the block; bagged shreds carry starch, cellulose and natamycin."
       ],
       "science": "Real cheese is milk, cultures, salt and enzymes. ‘Pasteurized process cheese product’ needs only 51% cheese, and the name on the front is the only warning. Shreds carry a coating so the strands do not knit back together, which is why they resist melting. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is protected, with a stamped rind.",
@@ -7266,7 +7266,7 @@
       "pick_steps": [
         "Read the protein line and the added vitamins and minerals on the carton.",
         "Compare the labels of available oat drinks; the formulation can differ.",
-        "Read the ingredient list for stabilizers; formulations differ in stabilizer use."
+        "Read the ingredient list for stabilizers; formulations can differ in stabilizer use."
       ],
       "science": "Oat drinks vary in composition and fortification; the carton is the basis for choosing. Production can include milling, enzyme hydrolysis, formulation and heat treatment. Oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The sole paper studied six original UK products, excluding barista, flavored and sugar-free versions. It measured sensory, physical and chemical properties, not health outcomes, and sets no universal health ranking.",
       "labels_decoded": [
@@ -9993,9 +9993,9 @@
         "The carton beverage does not stand in for canned coconut milk in cooking."
       ],
       "pick_steps": [
-        "Find it in the nondairy milk section, next to the soy milk.",
-        "On a sweetened carton, check for sugar and flavors, then the thickeners.",
-        "Reach for the can, not the carton, for a recipe."
+        "Check a sweetened carton for sugar and flavors; any carton can list thickeners.",
+        "Reach for the can, not the carton, for a recipe.",
+        "Find it in the nondairy milk section, next to the soy milk."
       ],
       "science": "Canned coconut milk is shredded coconut steeped in water or milk, then pressed. The carton beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of the can. It does not stand in for canned coconut milk in cooking.",
       "labels_decoded": [
