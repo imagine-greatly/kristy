@@ -1,0 +1,8 @@
+[
+  {"section": "produce", "rule": "Judge the piece itself, not the sticker.", "checks": ["Country on the sticker tells season, not grade.", "Sticker code: five digits starting 9 is organic."], "sources": ["produce_picking_ripeness"]},
+  {"section": "meat", "rule": "Judge by seal and smell, not color alone.", "checks": ["Take a sealed package that is not leaking.", "Pass on any pack with an off smell."], "sources": ["judging_meat_at_the_case"]},
+  {"section": "seafood", "rule": "Read species, wild or farmed, and origin.", "checks": ["Counter fish sits on plenty of ice.", "Counter fish smells clean and briny, never ammonia."], "sources": ["label_wild_vs_farm_raised", "fish_freshness_at_counter"]},
+  {"section": "eggs_dairy", "rule": "Believe the back when front and back disagree.", "checks": ["Read “natural” as marketing with little definition."], "sources": ["label_front_vs_back"]},
+  {"section": "bulk_pantry", "rule": "Read the back; at bins, pick busy ones.", "checks": ["Read ingredients, added sugars and serving size.", "Rancid bin nuts smell of paint or crayon."], "sources": ["label_front_vs_back", "bulk_bins_buying"]},
+  {"section": "frozen", "rule": "Pick it frozen solid.", "checks": ["Drips or an off smell mean it thawed."], "sources": ["pick_frozen_peas", "pick_frozen_broccoli"]}
+]
