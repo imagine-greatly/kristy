@@ -104,3 +104,22 @@ soy_milk | kept
 coconut_milk_beverage | changed: step 1 is the sugar and thickener check, thickeners on any carton not only sweetened (B09 ship note); can-for-recipes step 2; aisle location last
 plant_butter | kept
 dairy_case | kept
+label_natural | kept
+label_made_with_real | kept
+label_no_added_hormones | kept
+label_nonGMO_vs_organic | changed: the seal overlap leads (“the organic seal covers both”, B10 ship note); “do GMOs matter” folded into the lone-seal read last
+label_cage_free | kept
+label_grass_fed_term | kept
+label_pasture_raised_feed | changed: “find soy-free or corn-free” leads, as the card’s decision names it the word to find
+label_organic_scope | kept
+label_wild_vs_farm_raised | kept (B10 COOL/species note logged to GAPS)
+label_third_party_seals | kept
+label_multigrain_vs_whole_grain | kept
+label_lightly_sweetened | kept
+label_no_artificial_flavors | changed: step 2 is a read (“find natural flavors on the list”) instead of “know that”
+label_front_vs_back | changed: step 1 names the three back-panel reads; science drops the sentence that repeated it
+label_ingredient_order | kept
+label_cold_pressed_expeller | kept
+label_sugar_free_substitutes | changed: step 1 restores “per serving” (B11 ship note)
+label_serving_size | kept
+label_artificial_color | changed: science leads with the named-vs-group declaration rule the steps rest on; w3 to depth

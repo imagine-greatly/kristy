@@ -2015,9 +2015,9 @@
         "Some foods carry a non-GMO seal though no GMO version of them exists."
       ],
       "pick_steps": [
-        "Decide first whether GMOs matter to you at all.",
-        "Organic already requires non-GMO, so one seal covers both.",
-        "Ignore “non-GMO” on a food that has no GMO version."
+        "Organic already requires non-GMO, so the organic seal covers both.",
+        "Ignore “non-GMO” on a food that has no GMO version.",
+        "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
       "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices. Whether GMOs are a concern at all is a separate, debated question.",
       "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued.",
@@ -2209,8 +2209,8 @@
         "“Grass-fed” on beef is the same trap: it can still end on grain."
       ],
       "pick_steps": [
-        "Read the carton for space and feed; one never implies the other.",
         "If feed matters, find “soy-free” or “corn-free” printed on the carton.",
+        "Read the carton for space and feed; one never implies the other.",
         "On beef, look for grass-finished; “grass-fed” alone can still end on grain."
       ],
       "science": "Cage-free, free-range and pasture-raised all describe space, not feed. Most pasture-raised hens are still fed soy and corn. USDA has no regulatory definition of pasture-raised. Certifier standards govern housing and outdoor access, not the ration. Certified organic is the one term that reaches feed. It requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what it is.",
@@ -2524,7 +2524,7 @@
       ],
       "pick_steps": [
         "Read “no artificial flavors” narrowly: natural flavoring is still permitted.",
-        "Know that “natural flavors” can carry solvents and carriers needing no separate declaration.",
+        "Find “natural flavors” on the list: two words that can carry solvents and carriers.",
         "A short list of recognizable food names beats any flavor claim on the front."
       ],
       "science": "A natural flavor must start from a plant or animal source; an artificial one does not. That is a rule about origin, not processing. Both arrive as engineered compounds. Either can be a proprietary blend of dozens of substances declared as two words on the panel. The objection is the opacity, not the word “artificial.”",
@@ -4782,11 +4782,11 @@
         "When the front and the back disagree, the front is the one nobody had to check."
       ],
       "pick_steps": [
-        "Decide from the back first; look at the front, if at all, after.",
+        "Turn it over first: read the ingredient list, added-sugars line and serving size.",
         "Read “natural,” “wholesome” and “farm fresh” as marketing with little or no definition.",
         "When front and back disagree, believe the back; a short, recognizable list beats claims."
       ],
-      "science": "The front is written by marketing, and only some of its phrases have any legal definition. The back is regulated in content and format. Three things there do most of the work: the ingredient list, the added-sugars line, and the serving size. When the two disagree, the back is the one that had to be checked.",
+      "science": "The front is written by marketing, and only some of its phrases have any legal definition. The back is regulated in content and format. When the two disagree, the back is the one that had to be checked.",
       "tier_note": "The ingredient list, the added sugars and the serving size are mandated by regulation; the front of the box is not.",
       "eyebrow_short": "Front vs. back",
       "asked_as": [
@@ -5060,7 +5060,7 @@
         "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify."
       ],
       "pick_steps": [
-        "Read “sugar-free” as defined at under half a gram, not as unsweetened.",
+        "Read “sugar-free” as under half a gram per serving, not as unsweetened.",
         "Find the substitute by name: a sugar alcohol or a high-intensity sweetener.",
         "Look for “unsweetened”; “naturally sweetened” has no definition: honey, syrup, concentrate all qualify."
       ],
@@ -5250,7 +5250,7 @@
         "Read “artificial color” or “color added” as a color that need not be named.",
         "Expect color low on the list, because the amounts used are small."
       ],
-      "science": "Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. Its EU withdrawal turned on an unresolved question about damage to DNA, not a demonstrated harm. An international expert committee reviewed it in 2023 and found dietary intake no hazard. The UK, Canada, Australia and New Zealand reviewed it and did not follow the EU.",
+      "science": "Certified dyes must be declared by name; colors exempt from certification may be declared as a group. Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. Its EU withdrawal turned on an unresolved question about damage to DNA, not a demonstrated harm. An international expert committee reviewed it in 2023 and found dietary intake no hazard.",
       "labels_decoded": [
         {
           "term": "Artificial color",
