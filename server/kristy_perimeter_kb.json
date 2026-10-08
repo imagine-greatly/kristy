@@ -1747,8 +1747,7 @@
         "‘No salt added’ cans give full control if the tap rinse is not enough."
       ],
       "pick_steps": [
-        "Pick whole beans with unbroken skins; split ones turn to mush.",
-        "Take “no salt added” cans when the tap rinse is not enough."
+        "Pick whole beans with unbroken skins; split ones turn to mush."
       ],
       "science": "Nutritionally, dried and canned beans are very close. Canned adds convenience and some sodium. Cooking dried beans yourself is the only way to set the salt. They ask for planning rather than skill, and a slow cooker or pressure cooker takes the work out. A “BPA-free” can lining is a minor point, if it matters to you.",
       "asked_as": [
@@ -1852,9 +1851,8 @@
         "On meat it means no artificial ingredients and minimal processing. It says nothing about how the animal was raised."
       ],
       "pick_steps": [
-        "Read past “natural”: largely undefined outside meat and rarely enforced.",
-        "Look for a defined term: organic, grass-finished or pasture-raised.",
-        "Pick organic, grass-finished or pasture-raised over “natural”."
+        "Pick organic, grass-finished or pasture-raised over “natural”.",
+        "Check the ingredient list before front-of-pack adjectives."
       ],
       "science": "The FDA has not formally defined “natural” on most foods. On meat and poultry, the USDA takes it to mean no artificial ingredients and minimal processing. It says nothing about how the animal was raised or fed. It is not organic, and it is not a welfare or feed claim. It does not restrict pesticides, GMOs, or how an animal lived.",
       "tier_note": "How little the word is defined, and how little it is enforced, is a matter of public record.",
@@ -2010,7 +2008,6 @@
         "Some foods carry a non-GMO seal though no GMO version of them exists."
       ],
       "pick_steps": [
-        "Organic already requires non-GMO, so the organic seal covers both.",
         "Pick the organic seal without requiring a second non-GMO seal.",
         "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
@@ -2074,8 +2071,7 @@
         "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
       "pick_steps": [
-        "Read “cage-free” as a barn: uncaged, usually indoors, can be crowded.",
-        "Read “free-range” as some outdoor access, loosely defined and enforced."
+        "Pick “pasture-raised” eggs with a certifier seal for real outdoor time."
       ],
       "science": "Cage-free is a real step up from battery cages, and not outdoors. Free-range signals outdoor access, but its amount, duration and quality are not tightly defined. A small door onto a small yard qualifies. For eggs, both are defined terms; on other products they carry much less. Without a certifier’s seal, nothing is auditing free-range.",
       "tier_note": "What a certifier audits, and how little cage-free and free-range specify on their own, are both written into published standards.",
@@ -2129,9 +2125,8 @@
         "The claim is weakly enforced on its own. Certification is what backs it."
       ],
       "pick_steps": [
-        "Read past a bare “grass-fed”; it allows a grain finish.",
-        "Look for “100% grass-fed” or “grass-finished,” ideally third-party certified.",
-        "Pick “100% grass-fed” or “grass-finished” over bare “grass-fed”."
+        "Pick “100% grass-fed” or “grass-finished” over bare “grass-fed”.",
+        "Check for third-party certification backing the claim."
       ],
       "science": "A bare “grass-fed” only means the animal ate grass at some point. It can still be grain-finished in the feedlot before slaughter. After the USDA withdrew its formal standard, the bare claim is weakly enforced. “100% grass-fed” or “grass-finished” means grass its whole life. Third-party certification is the strongest backing.",
       "tier_note": "The grain finish a bare grass-fed claim allows, and the certification behind grass-finished, are both on the record.",
@@ -2328,8 +2323,7 @@
         "‘Pesticide-free’ on a sign can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."
       ],
       "pick_steps": [
-        "Press with your palm and take the heavier of two.",
-        "On the sticker number, five digits starting 9 means organic."
+        "Press with your palm and take the heavier of two."
       ],
       "science": "The same variety grows in several countries with different seasons, so the sticker changes through the year. Hass names the avocado, not where it grew. Origin earns attention through transit: grown closer usually means picked closer to ripe. The sticker number says how it was grown, not how good it is. A pesticide-free sign without an organic label could mean none were used or residue washed off.",
       "eyebrow_short": "Origin sticker",
@@ -3594,8 +3588,8 @@
         "U.S.-farmed white leg shrimp and tilapia rate Green on the same list. The rating names the origin and the system, so read the country before judging the species."
       ],
       "pick_steps": [
-        "Read the species, not ‘farmed’: mussels, oysters and clams stand out, needing no feed.",
-        "Farmed trout, arctic char and barramundi are generally well regarded."
+        "Pick farmed trout, arctic char or barramundi.",
+        "Check the species; farmed mussels, oysters and clams need no feed."
       ],
       "science": "‘Farmed’ alone is not a verdict; the species and the operation decide it. A rope of mussels hanging in a bay feeds itself by filtering water. An open net pen or coastal shrimp pond depends on the country and company running it. Seafood Watch rates by species and method. Its Super Green list puts U.S. farmed catfish, clams, mussels, oysters and trout on top.",
       "asked_as": [
@@ -3669,8 +3663,8 @@
         "The MSC blue label means wild-caught fish from a fishery assessed on stock levels, bycatch and management. ‘Dolphin-safe’ on tuna is not a sustainability seal; Seafood Watch says to look for FAD-free or school-caught alongside it."
       ],
       "pick_steps": [
-        "Wild fish: look for the blue MSC label, audited for stock and habitat.",
-        "Farmed fish: ASC or BAP; BAP stars count audited links, not the fish."
+        "Pick wild fish with the blue MSC label.",
+        "Check farmed fish for ASC or BAP; BAP stars count audited links."
       ],
       "science": "MSC audits wild fisheries for stock management and habitat impact. ASC and BAP audit farms, ASC on environmental and social standards; both set a floor. BAP’s stars run from plant up to farm, hatchery and feed mill. Seafood Watch is a ratings guide to look up, not a package seal. ‘Dolphin-safe’ on tuna is not a sustainability seal; look for FAD-free or school-caught alongside it.",
       "asked_as": [
@@ -6880,8 +6874,7 @@
         "The source set contains articles, not health trials. The crust does not establish a health benefit."
       ],
       "pick_steps": [
-        "Pick lye-dipped pretzel bread at the bakery.",
-        "If lye-dipped rolls are unavailable, pick bread dipped in a baking-soda bath."
+        "Check with the bakery which alkaline bath it uses before baking."
       ],
       "science": "A dip in an alkaline bath before baking gives pretzel bread its characteristic crust. Lye and baking soda are different bath ingredients, and both are documented methods. The color alone does not show which bath was used. The sources are culinary articles, not health trials; the crust establishes no health benefit.",
       "labels_decoded": [
@@ -7394,7 +7387,6 @@
       ],
       "pick_steps": [
         "Pick named meat without mechanically separated chicken or turkey.",
-        "Check whether the list names mechanically separated chicken or turkey.",
         "“Uncured” can still mean celery-based curing; read the qualifier."
       ],
       "science": "The standard permits nonmeat ingredients, so a beef species claim is not an ingredient list. Compare formulations across packs rather than assume the claim describes every ingredient. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Sausages with meat byproducts must carry “with byproducts” or “with variety meats” in their name.",
@@ -8249,7 +8241,6 @@
       ],
       "pick_steps": [
         "Take duckling or roaster duck for tender meat, with the USDA Grade A shield.",
-        "Pick USDA Grade A duck when graded.",
         "Ignore a ‘no hormones’ claim: hormones are not allowed in any US duck."
       ],
       "science": "Federal rule 9 CFR 381.170 names ducks by age. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old, with toughened flesh. Grading is voluntary, and Grade A is the top shield. Use fresh duck within 1 or 2 days, or freeze it, and cook duck to 165°F.",
@@ -8853,7 +8844,7 @@
       ],
       "pick_steps": [
         "Pick fish displayed on ice or in a refrigerated case.",
-        "Check: fish on ice or refrigerated, cooked seafood kept apart from raw.",
+        "Check that cooked seafood is kept apart from raw.",
         "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
       ],
       "science": "A seafood label must get the species name right; FDA DNA tests found it right 85% of the time. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. Around 85 percent of seafood eaten in the U.S. is imported. NOAA inspection is a fee-for-service program; participants may use an official mark showing federal inspection.",
@@ -9468,8 +9459,7 @@
       ],
       "pick_steps": [
         "Pick the bottle with no flavor named on the label.",
-        "Take it from the refrigerated case and keep it cold.",
-        "Pick an unflavored bottle from the refrigerated case."
+        "Take it from the refrigerated case and keep it cold."
       ],
       "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
       "labels_decoded": [
@@ -9519,9 +9509,8 @@
         "“Acidified” on the tub means added acids did the souring."
       ],
       "pick_steps": [
-        "Read the name: “sour cream” or “cultured” means bacteria did the souring.",
-        "“Acidified” on the tub means added acids did the souring.",
-        "Pick sour cream or cultured sour cream before acidified sour cream."
+        "Pick sour cream or cultured sour cream before acidified sour cream.",
+        "Check the name for “acidified”; added acids did the souring."
       ],
       "science": "Federal standards name two ways to sour cream. Sour cream, or cultured sour cream, is pasteurized cream soured by lactic acid bacteria. Acidified sour cream is soured with added food-grade acids, with or without bacteria. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop liquid separating out. Culturing is the traditional way to sour cream.",
       "labels_decoded": [
@@ -9738,9 +9727,8 @@
         "Spices can be added to ghee, so a flavored jar lists more than butter."
       ],
       "pick_steps": [
-        "Read the list: plain ghee is butter alone, simmered down to its fat.",
-        "A flavored jar lists spices too, so it holds more than butter.",
-        "For plain ghee, pick a jar listing butter alone."
+        "For plain ghee, pick a jar listing butter alone.",
+        "Check flavored jars for spices on the ingredient list."
       ],
       "science": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty, aromatic taste. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
       "labels_decoded": [
@@ -10229,8 +10217,8 @@
       ],
       "pick_steps": [
         "Pick crisp, plump, bright kimchi to eat as is.",
-        "Crisp, plump, bright cabbage to eat as is; lighter, softer kimchi to cook.",
-        "Read the ingredients for fish sauce or shrimp."
+        "Pick lighter, softer kimchi to cook with now.",
+        "Check the ingredients for fish sauce or shrimp."
       ],
       "science": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt. It moves from fresh to ripe to overripe as it ferments. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented.",
       "labels_decoded": [
@@ -10287,7 +10275,7 @@
       ],
       "pick_steps": [
         "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
-        "Pick pickles fermented in salt brine.",
+        "Check ingredients for salt and no vinegar.",
         "Pick half-sour for crisp and bright green, full-sour for fully fermented."
       ],
       "science": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. Federal rules let acidified foods, meaning foods with acid added, be called pickles. A half-sour has a shorter stay in the brine than a full-sour.",
@@ -10524,7 +10512,6 @@
         "A strong ammonia smell means it fermented too long."
       ],
       "pick_steps": [
-        "Buy sealed trays from the cold case or the freezer.",
         "Pick sealed trays kept cold or frozen.",
         "Expect a strong smell and sticky strings; strong ammonia means it fermented too long."
       ],
@@ -10769,9 +10756,8 @@
         "Coconut sugar is made mostly of sucrose, like other sugar."
       ],
       "pick_steps": [
-        "Pick light or dark brown sugar; dark carries more molasses.",
-        "Ignore cane or beet on the bag; the sugar is the same.",
-        "Pick dark brown sugar for more molasses, light brown for less."
+        "Pick dark brown sugar for more molasses, light brown for less.",
+        "Ignore cane or beet on the bag; the sugar is the same."
       ],
       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
       "labels_decoded": [
@@ -11075,9 +11061,9 @@
         "Seeds kept at room temperature for long periods turn rancid."
       ],
       "pick_steps": [
-        "Flax: buy it ground, or whole for grinding at home.",
-        "Hulled hemp needs no grinding; chia works whole or ground.",
-        "Pick hulled hemp seeds when no grinding is wanted."
+        "Pick flax ground, or whole for grinding at home.",
+        "Pick hulled hemp seeds when no grinding is wanted.",
+        "Pick chia whole or ground."
       ],
       "science": "Flaxseed contains fat, so it can turn rancid over time. Seeds stored at room temperature for long periods turn rancid, so long keeping means the refrigerator or freezer. Shelled hemp seeds, also called hulled, do not need grinding, unlike flax. Chia turns to gel when soaked.",
       "labels_decoded": [
@@ -11235,8 +11221,7 @@
         "The carton coconut milk drink is a different product, covered on its own card."
       ],
       "pick_steps": [
-        "Pick canned coconut milk with additions disclosed in the ingredient list.",
-        "Expect a gum such as guar gum on many cans, added to thicken."
+        "Check ingredients for guar gum or another gum, added to thicken."
       ],
       "science": "Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker, never a ranking.",
       "labels_decoded": [
@@ -11552,9 +11537,8 @@
         "Reduced-sugar jars lack the full preservative effect of sugar and keep a shorter time once opened."
       ],
       "pick_steps": [
-        "Read the name for Jam or Preserves, with the fruit named.",
-        "Pick preserves for small whole fruits or uniform pieces in thick syrup.",
-        "Pick Jam or Preserves with the fruit named."
+        "Pick Jam or Preserves with the fruit named.",
+        "Pick preserves for small whole fruits or uniform pieces in thick syrup."
       ],
       "science": "Jam and preserves are standardized names, made from fruit and sugar at a fixed ratio. Jelly is made from the strained juice of the fruit. Jars with less sugar do not use sugar as a preservative, so some require refrigeration. In a mixed-fruit jam, the fruits are listed most first. Cottage-food jam labels at farmers markets name the maker and address.",
       "labels_decoded": [
@@ -12457,8 +12441,7 @@
       ],
       "pick_steps": [
         "Buy plain kernels; add butter, oil or salt at home, if wanted.",
-        "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
-        "Pick plain popcorn kernels."
+        "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
       ],
       "science": "Popcorn is its own variety of corn with a hard hull, the pericarp. Moisture inside heats to steam, and the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots let the moisture escape and stay unpopped. Mushroom popcorn is the shape often sold prepopped and coated.",
       "labels_decoded": [
@@ -12509,9 +12492,8 @@
         "Without an alkaline bath, a pretzel is just a tanned twist of dough."
       ],
       "pick_steps": [
-        "Pick a glossy crust that shines like polished mahogany.",
-        "A paler pretzel can point to the milder baking soda bath.",
-        "Pick pretzels with a glossy, polished-mahogany crust."
+        "Pick pretzels with a glossy, polished-mahogany crust.",
+        "Check crust color; a paler pretzel can point to a baking soda bath."
       ],
       "science": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked, which neutralizes the lye. Lye is sodium hydroxide, the strongest alkali a baker uses. A baking soda bath reacts less, so its pretzels come out lighter. The alkaline surface speeds browning, which shapes the crust. Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
       "labels_decoded": [
@@ -12678,8 +12660,7 @@
       ],
       "pick_steps": [
         "Pick a whole grain, vegetable or bean listed first.",
-        "Look for a whole grain, vegetable or bean listed first.",
-        "Read “multigrain” as several grains, often refined, not whole grains."
+        "Check “multigrain” labels for whole grains; the term means several grains."
       ],
       "science": "Ingredients are listed in descending order of predominance, so the first one is the most. FDA draft guidance says the list should show whether the first ingredient is a whole grain. Multigrain products are often made with several refined grains. Some veggie chips are potato flour colored with vegetable powder or extract, and the ingredients show it.",
       "labels_decoded": [
@@ -12800,8 +12781,6 @@
         "Salads made with mayonnaise do not freeze well."
       ],
       "pick_steps": [
-        "Buy salads from a refrigerated case.",
-        "Check the Sell-By date, and skip a tub past it.",
         "Pick refrigerated salads with a Sell-By date that has not passed."
       ],
       "science": "Cold food stays at 40°F or below. Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four. Salads made with mayonnaise do not freeze well. The coldest spot is the back or bottom of the fridge; the door opens often to warm air.",
@@ -12955,9 +12934,8 @@
         "Meats, cheeses or salads left out of a refrigerated case are a red flag."
       ],
       "pick_steps": [
-        "Check that meats, cheeses and salads sit in a refrigerated case.",
-        "For hot food, look for a case held at 140°F or above.",
-        "Pick hot food from a case held at 140°F or above."
+        "Pick hot food from a case held at 140°F or above.",
+        "Check that meats, cheeses and salads sit in a refrigerated case."
       ],
       "science": "Breads and dry snacks are fine out of the cold, but all meats, cheeses and salad products need refrigeration. Hot buffet items are held at a minimum of 140°F, and cold items below 40°F. Salads, hot food and lunch meat each read differently. Meats, cheeses or salads left out of a refrigerated case are a red flag.",
       "labels_decoded": [],
@@ -13002,9 +12980,8 @@
         "A meat named on the box sets no minimum amount of that meat."
       ],
       "pick_steps": [
-        "Read the crust list first; look for flour, water, salt and yeast.",
-        "On a whole wheat crust, whole wheat flour comes first, not wheat flour.",
-        "Pick frozen pizza with a short crust list: flour, water, salt, yeast."
+        "Pick frozen pizza with a short crust list: flour, water, salt, yeast.",
+        "Check whole wheat crusts for whole wheat flour listed first."
       ],
       "science": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast. That short crust list is the standard here. Plain wheat flour is milled without the whole kernel, so it is not a whole grain flour. A pizza named for a meat topping needs no minimum amount of that meat. Air touching a frozen pizza leaves freezer burn, grayish-brown leathery spots.",
       "labels_decoded": [
@@ -13334,8 +13311,7 @@
       ],
       "pick_steps": [
         "Buy only food frozen solid, and pick it up just before checkout.",
-        "Check the ice cream: not brick-hard means the freezer runs warm.",
-        "Pick brick-hard ice cream."
+        "Check the ice cream: not brick-hard means the freezer runs warm."
       ],
       "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below, and 5°F at most. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
       "labels_decoded": [
