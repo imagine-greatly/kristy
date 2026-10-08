@@ -63,13 +63,14 @@ test('the asked answer is the same object as the browsed one', () => {
 /* ── The honest miss ───────────────────────────────────────────────────────────── */
 
 test('an uncovered counter question is a MISS, and the miss is detectable', () => {
-  // The gaps the sections already name out loud: lamb, goat and game at the butcher,
-  // crab and lobster at the fish counter. The KB holds nothing, so the reply must be
-  // "no solid read", never a paragraph the model invented about buying lobster.
+  // The gaps the sections still name out loud: rabbit at the butcher (lamb, goat and game
+  // gained cards in K15), octopus and squid at the fish counter (crab and lobster gained cards in K16).
+  // The KB holds nothing, so the reply must be "no solid read", never a paragraph the model
+  // invented about buying octopus.
   for (const q of [
-    'how do I pick a good lobster',
-    'how do I pick a good crab',
-    'is goat meat any good',
+    'how do I pick a good octopus',
+    'how do I pick good squid',
+    'is rabbit meat any good',
   ]) {
     assert.equal(matchEntries(q).length, 0, `"${q}" unexpectedly matched the KB`);
     assert.equal(looksLikeCounterQuestion(q), true, `"${q}" must take the honest miss`);

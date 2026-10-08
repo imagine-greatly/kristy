@@ -42,23 +42,23 @@ const QUERIES = nonEmpty([
   ['spinach', 'organic_worth_it_by_type'],
   ['frozen vegetables', 'frozen_vs_fresh_produce'],
   ['chips', 'miss'],
-  ['crackers', 'miss'],
+  ['crackers', 'crackers'], // K23: pinned gap now covered by the crackers card.
   ['cookies', 'miss'],
-  ['ice cream', 'miss'],
+  ['ice cream', 'ice_cream'], // K19 covers it (admin ruling 2026-10-06).
   ['juice', 'miss', 'pick_juice'],
   ['soda', 'miss'],
   ['coffee', 'coffee_beans'],
   ['protein bar', 'miss'],
-  ['hummus', 'miss'],
-  ['salsa', 'miss'],
-  ['ketchup', 'miss'],
+  ['hummus', 'hummus'], // K23: pinned gap now covered by the hummus card.
+  ['salsa', 'salsa'], // K22: pinned gap now covered by the salsa card.
+  ['ketchup', 'ketchup_mustard'], // K22 admin ruling: pinned gap now covered by the ketchup_mustard card.
   ['salad dressing', 'miss'],
   ['honey', 'honey_adulteration'],
-  ['maple syrup', 'miss'],
+  ['maple syrup', 'maple_syrup'], // K21 admin ruling: pinned gap now covered by the maple_syrup card.
   ['hot dogs', 'hot_dogs'],
-  ['frozen pizza', 'miss'],
+  ['frozen pizza', 'frozen_pizza'], // K24: pinned gap now covered by the frozen_pizza card.
   ['baby food', 'miss'],
-  ['kombucha', 'miss'],
+  ['kombucha', 'kombucha'], // K20 admin ruling: pinned gap now covered by the kombucha card.
 ], '48 weekly grocery queries', 48);
 assert.equal(QUERIES.length, 48);
 
@@ -81,7 +81,7 @@ const model = mock.method(anthropic.messages, 'create', () => { throw new Error(
 
 for (const query of nonEmpty([
   'taylor swift', 'bitcoin', 'hello', 'weather tomorrow', 'stock prices',
-  'car insurance', 'iphone charger', 'kombucha',
+  'car insurance', 'iphone charger', 'protein bar', // K20 admin ruling: kombucha now matches; protein bar is a pinned bare miss (:51), bare:true, in no K plan.
 ], 'bare misses that must never generate', 8)) {
   test(`bare ask miss never generates: ${query}`, async () => {
     const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'generator_called' }));
@@ -99,14 +99,15 @@ for (const query of nonEmpty([
   });
 }
 
+// K20 admin ruling: kombucha now matches a card.
 test('phrased grocery miss reaches the injected generator', async () => {
   const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'insufficient' }));
   const modelCalls = model.mock.callCount();
   const out = await answerCounterQuestion({
-    query: 'how do I choose kombucha', client: offline, ip: 'phrased-probe', generator,
+    query: 'how do I choose baby food', client: offline, ip: 'phrased-probe', generator,
   });
   assert.equal(generator.mock.callCount(), 1);
-  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose kombucha');
+  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose baby food');
   assert.equal(model.mock.callCount(), modelCalls);
   assert.equal(out.card, null);
   assert.equal(out.reason, 'insufficient');

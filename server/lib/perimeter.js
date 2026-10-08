@@ -329,7 +329,7 @@ export const PERIMETER_SECTIONS = [
       { q: 'Which chicken cut?', id: 'chicken_cuts_basics' },
       { q: 'Is this one any good?', id: 'judging_meat_at_the_case' },
     ],
-    thinNote: 'Beef, chicken, pork and the deli case. Lamb, goat and game are not covered yet.',
+    thinNote: 'Beef, chicken, pork, lamb, goat, game, cured meats and the deli case. Rabbit and veal are not covered yet.',
   },
   {
     id: 'seafood',
@@ -342,7 +342,7 @@ export const PERIMETER_SECTIONS = [
       { q: 'Which are low in mercury?', id: 'mercury_by_fish' },
       { q: 'Is it fresh?', id: 'fish_freshness_at_counter' },
     ],
-    thinNote: 'Salmon, tuna, shrimp, sardines, the frozen case and the seals. Crab, lobster and the shellfish bar are not covered yet.',
+    thinNote: 'Fish, shrimp, crab, lobster, scallops, shellfish and the frozen case. Octopus, squid and crawfish are not covered yet.',
   },
   {
     id: 'eggs_dairy',

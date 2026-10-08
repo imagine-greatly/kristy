@@ -1,0 +1,65 @@
+{
+  "id": "hot_soy_sauce",
+  "title": "Soy sauce and hot sauce",
+  "aliases": [
+    "soy sauce",
+    "tamari",
+    "shoyu",
+    "low sodium soy sauce",
+    "naturally brewed soy sauce",
+    "hot sauce",
+    "fermented hot sauce",
+    "is tamari worth buying"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick soy sauce and hot sauce?",
+  "decision": "Soy sauce brewed for months, not made fast with acid.",
+  "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
+  "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Some fermented hot sauces have no added vinegar.",
+  "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/609323809/The_crucial_importance_of_soy_sauce_authenticity.pdf",
+    "https://www.law.cornell.edu/cfr/text/21/101.91",
+    "https://extension.oregonstate.edu/ask-extension/featured/how-do-i-start-selling-homemade-hot-sauce-oregon",
+    "https://www.ams.usda.gov/sites/default/files/media/Notice_of_validation_for_CID_Soy_Sauce_10292020.pdf",
+    "https://tastecooking.com/a-tale-of-two-tamaris/",
+    "https://repository.lsu.edu/gradschool_disstheses/4217"
+  ],
+  "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
+  "cart_pick": "Soy sauce brewed by fermentation",
+  "buying_tips": [
+    "Read the ingredients for wheat, on tamari too.",
+    "Read the front for a gluten-free claim.",
+    "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
+  ],
+  "watch_out": [
+    "Little or no wheat is not the same as a gluten-free claim.",
+    "Shoyu is made from roughly equal parts wheat and soybeans."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Gluten-free",
+      "meaning": "Any unavoidable gluten is below 20 parts per million."
+    },
+    {
+      "term": "Wheat",
+      "meaning": "A gluten-containing grain, named on the ingredient list."
+    },
+    {
+      "term": "Tamari",
+      "meaning": "A Japanese soy sauce made from all or mostly soybeans."
+    },
+    {
+      "term": "Shoyu",
+      "meaning": "The prevalent Japanese style, roughly equal parts wheat and soybeans."
+    }
+  ],
+  "tier_note": "Wheat on the ingredients is a label fact, and “gluten-free” has a set meaning.",
+  "asked_as": [
+    "which soy sauce should i buy",
+    "which hot sauce should i buy",
+    "is tamari worth buying"
+  ],
+  "_do_line": "Read the ingredients for wheat, and the front for “gluten-free”."
+}

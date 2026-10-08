@@ -1,0 +1,76 @@
+{
+ "id": "vinegar",
+ "title": "Vinegar",
+ "aliases": [
+  "white vinegar",
+  "distilled vinegar",
+  "red wine vinegar",
+  "white wine vinegar",
+  "balsamic vinegar",
+  "rice vinegar",
+  "malt vinegar"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick vinegar?",
+ "decision": "Vinegar by its printed acidity; 5 percent for pickling.",
+ "why": "Labels print percent acidity. 5 percent is the canning and pickling floor, and 4 percent bottles are sold too.",
+ "short_answer": "Read the percent acidity on the label. Canning and pickling recipes use 5 percent, and 4 percent bottles are sold too. Vinegar keeps almost indefinitely; best-by is about quality. On balsamic, only the full protected names carry aging rules.",
+ "detail": "Vinegar labels state percent acidity. Some state grain instead, a strength unit where 10 grain equals 1 percent acidity, so 50 grain is 5 percent. The acid in vinegar is acetic acid; as an ingredient, acetic acid is produced by fermentation or by synthesis. Once a bottle is open, harmless vinegar bacteria can cloud it, and a mother, a soft floating mass, can form when pasteurization was incomplete; both are harmless. Traditionally, wine vinegar was made the slow way: in the Orleans process, wood barrels of fermented alcohol liquid acetify for about 1 to 3 months. Most vinegar is now made from distilled grain alcohol, and the most common method today is the faster submerged method. As Il Post reports, the words aceto and balsamico on their own are generic; only the full protected names carry a rule. Traditional Balsamic Vinegar of Modena (DOP) is made from cooked grape must and aged in wooden barrels for at least 12 years, and at least 25 for Extravecchio. Aceto Balsamico di Modena (IGP) is cooked or concentrated grape must, at least 20 percent of the starting mass, with wine vinegar added, aged at least 60 days in wood under the Emilia-Romagna IGP rules.",
+ "evidence_tier": "established",
+ "sources": [
+  "https://blogs.extension.iastate.edu/answerline/2021/05/11/vinegar-shelf-life-and-safety/",
+  "https://extension.sdstate.edu/safety-concern-vinegar-acidity-level-home-canning",
+  "https://news.vt.edu/articles/2023/07/low_acidity_vinegar_warning_expert.html",
+  "https://www.law.cornell.edu/cfr/text/21/184.1005",
+  "https://ucfoodsafety.sf.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/192137.pdf",
+  "https://www.balsamicotradizionale.it/en/?p=2270",
+  "https://www.ilpost.it/2019/12/05/aceto-balsamico/",
+  "https://bur.regione.emilia-romagna.it/area-bollettini/bollettini-in-lavorazione/luglio-periodico-parte-seconda-2a-quindicina.2023-07-19.9761992070/comunicato-relativo-alla-modifica-del-disciplinare-della-igp-aceto-balsamico-di-modena/modifica-disciplinare-della-ig.2023-07-19.1689746028"
+ ],
+ "kristy_take": "Traditionally, wine vinegar was made slowly in wood barrels over months. On the shelf today, the printed acidity is the number to read.",
+ "cart_pick": "Vinegar labeled 5 percent acidity",
+ "buying_tips": [
+  "Read the label for percent acidity.",
+  "Choose 5 percent acidity for canning or pickling.",
+  "An unpasteurized vinegar says so on its label.",
+  "On balsamic, read for the full protected name and its aging words.",
+  "Store vinegar cool, dark and tightly capped."
+ ],
+ "watch_out": [
+  "Vinegars at 4 percent acidity are sold, and they are not for canning or pickling.",
+  "Water or condensation inside the bottle can drop vinegar below 5 percent acidity."
+ ],
+ "labels_decoded": [
+  {
+   "term": "5% acidity",
+   "meaning": "The strength tested canning and pickling recipes use."
+  },
+  {
+   "term": "Best by",
+   "meaning": "Peak quality, not a safety date."
+  },
+  {
+   "term": "Traditional Balsamic Vinegar of Modena",
+   "meaning": "The DOP name: cooked grape must aged in wooden barrels at least 12 years."
+  },
+  {
+   "term": "Extravecchio",
+   "meaning": "Traditional balsamic aged at least 25 years."
+  },
+  {
+   "term": "Indicazione Geografica Protetta",
+   "meaning": "Marks the IGP Aceto Balsamico di Modena: grape must with wine vinegar, at least 60 days in wood."
+  },
+  {
+   "term": "Invecchiato",
+   "meaning": "IGP balsamic aged at least 3 years in wood."
+  }
+ ],
+ "tier_note": "Pasteurized or unpasteurized, vinegar keeps almost indefinitely on the shelf.",
+ "asked_as": [
+  "which white vinegar should i buy",
+  "is white vinegar worth buying",
+  "is balsamic vinegar worth buying"
+ ],
+ "_do_line": "Read the label for “unpasteurized”; most vinegar is pasteurized otherwise."
+}

@@ -176,8 +176,13 @@ const askings = rows.reduce((n, r) => n + r.times_asked, 0);
 // not evidence of a shopper. It is flagged, never dropped: dropping it would hide
 // the contamination, and the contamination is itself the finding.
 const FIXTURE_HINTS = ['baby spinach', 'frozen peas', 'dish soap', 'paper towels',
-  'aluminum foil', 'lemons', 'nutella'];
-const suspect = (q) => FIXTURE_HINTS.some((f) => q.includes(f));
+  'aluminum foil', 'lemons', 'nutella', 'wild salmon fillets'];
+// Carried, never coached (K2 ruling 2): junk, brand and non-food rows are not gaps, so they
+// are marked the same way fixtures are.
+const CARRIED_HINTS = ['soda', 'diet soda', 'energy drinks', 'sports drinks', 'candy', 'cookies',
+  'chocolate-hazelnut spread', 'oreos', 'doritos', 'nutella', 'fairlife',
+  'dish soap', 'aluminum foil', 'paper towels', 'toilet paper'];
+const suspect = (q) => [...FIXTURE_HINTS, ...CARRIED_HINTS].some((f) => q.includes(f));
 const flagged = rows.filter((r) => suspect(r.question));
 
 const table = (rs) => rs.length ? [

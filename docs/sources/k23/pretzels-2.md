@@ -1,0 +1,221 @@
+URL: https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have
+Title: Why Using Lye Is Key to Making German Pretzels | America's Test Kitchen
+Publisher: www.americastestkitchen.com
+Fetch date: 2026-10-07
+Fetch tool: scrapling (Fetcher.get, CLI venv), selector=main
+
+---
+
+Why a Caustic Substance Is Key to the World's Best Pretzels
+===========================================================
+
+For real-deal German pretzels with a deep chestnut exterior, satiny sheen, and mineral-y tang, a dip in lye solution is a must.
+
+[Save](#save)
+
+[Saved](#save)
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_400/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/SFS_GermanPretzels_455)
+
+![Headshot of Andrea Geary](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_75,h_75/Play%20Cast%20Headshots/staff_andrea_geary)
+
+By [Andrea Geary](/authors/50-Andrea-Geary)
+
+Published on August 8, 2022
+
+[Jürgen Krauss](https://thegreatbritishbakeoff.co.uk/bakers/jurgen/), semifinalist in the 2021 season of *The Great British Baking Show*, can’t remember his first pretzel, but that’s only because during his childhood in Germany’s Black Forest, the chewy, salted twists were almost as ubiquitous as the air he breathed.
+
+Pretzels for Prayer—and Good Press
+----------------------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel-Stained-Glass)
+
+Pretzels have been depicted in religious art since at least the Middle Ages, when monks supposedly twisted bread dough scraps to form pious shapes: The gaps between the strands represented the Holy Trinity, and the crisscrossed ropes represented arms folded in prayer. They were also Lent friendly, free of animal products such as eggs and butter that the medieval church forbade during the spring fast, and they occasionally show up in medieval renderings of the Last Supper.
+
+But at [Freiburger Münster](https://visit.freiburg.de/en/attractions/freiburger-muenster-cathedral-our-landmark), the medieval cathedral in Freiburg, Germany, pretzels were incorporated into the stained glass windows lining the nave for a more secular reason: They promoted the bakers guild that helped fund their construction. The twists are prominently displayed in a coat of arms alongside windows with equally glorious emblems of beer pitchers for the brewers, boots for the cobblers, and scissors for the tailors. Devout donations, with a side of advertisement.
+
+“When you go into town, and you’re feeling snack-y, you get a buttered pretzel,” he told me on a video call from his home in Brighton, England.
+
+Lest Krauss’s recollection inspire visions of pallid, floppy, butter-slicked twists from a mall food court, let me be clear: The German pretzel is a more noble beast, as revered in its home country as the baguette is in France. Maybe it’s the alluring chestnut exterior, with that satiny sheen and pretzel-specific mineral-y tang, all results of a quick alkaline bath before baking. Maybe it’s the fine yet satisfyingly chewy crumb. Maybe it’s the versatility: Pair a pretzel with sausage and mustard for breakfast as they do in Munich, enjoy a few with beer, or slice one horizontally and fill it with meat and cheese or simply smear it with butter.
+
+Sign up for the *Cook's Insider* newsletter
+-------------------------------------------
+
+The latest recipes, tips, and tricks, plus behind-the-scenes stories from the *Cook's Illustrated* team.
+
+Enter Your Email
+
+Sign Me Up
+
+By providing your email above, you agree to our [Terms of Service](/corporate-pages/terms-of-use) and [Privacy Policy](/corporate-pages/privacy-policy).
+
+The more I learned about German pretzels, the hungrier I became—not just to eat them, but to make them. More than anything, I was intrigued by the purportedly magical qualities of that alkaline bath and was determined to work out a plan for using it safely so that anyone could turn out these glossy, saline wonders.
+
+How to Work with Lye Safely
+---------------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/STP_GermanPretzels_DippingPretzels_409)
+
+Dipping the dough in a lye solution gives traditional German pretzels their characteristic salinity; chew; and smooth mahogany exterior, but the strong alkali (sodium hydroxide) is corrosive and can burn your skin, so it must be handled with caution. (Don’t worry about eating it: Baking neutralizes lye and makes it perfectly safe to consume.) Follow this guide to make your experience safe and comfortable.
+
+Burst the Bubbles
+-----------------
+
+My dough was straightforward: Bread flour (its abundant gluten-forming proteins would provide the requisite chew), yeast, and salt mixed in a stand mixer, along with a bit of softened butter for richness and just enough water to bring everything together into a smooth, firm mass. After letting the dough rise for about an hour, I divided it into six portions; rolled each into a long rope; and twirled them into pretzel shapes. Tiny air bubbles had formed in the dough, and the gluten began to retract, transforming my elegant, looping twists into chunky, misshapen buns. But I carried on with dipping (for now, into a baking soda solution I kept simmering on the stove) and baking them in a hot oven for about 10 minutes. I tore into one that was still warm. Besides being malformed, it was riddled with gaping holes.
+
+Sometimes it’s helpful to think of a glutenous dough as a recalcitrant teenager: Force it to do something it doesn’t want to do, and it’s likely to defy you. Gentle, patient persuasion is usually more effective, so I took my time shaping the next batch—starting with a 10-minute rest after portioning that allowed its gluten to relax. Then, to rid the crumb of the pesky air bubbles that had ballooned as the pretzels baked, I worked each piece one by one, flattening it with a rolling pin and rolling it up into a snug cylinder. Only after shaping all the portions did I go back to the first and extend it out to its full length, rolling from the center to the ends to dislodge any lingering air bubbles before I twisted it up.
+
+The pretzels maintained their graceful shapes through baking and emerged with a fine, even crumb.
+
+The Truth About Lye
+-------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel_SPLIT)
+
+Dunking dough into a strong alkali such as lye is an admittedly curious thing to do, and there are theories as to how this process came about—including one of a baker who mistakenly brushed his pretzel with cleaning fluid and decided to just go with it. But the base agent’s impact on the dough is actually terrific: It boosts flavorful browning by accelerating Maillardization and caramelizing sugars in the dough. It imparts that unique pretzel smell and taste by inhibiting the creation of typical baked-good aroma compounds while spurring the formation of others and also adds unmistakable mineral flavor. And it gels surface starch, so the pretzels bake up smooth and shiny.
+
+The stronger the alkali, the more intense and impressive the results, which is why German bakers use lye; it features a chart-topping pH of 14 and produces the ultimate pretzel experience. (Rest assured, you’re not ingesting a dangerous chemical: The oven’s heat completely neutralizes lye and makes it safe to consume.) That said, if sourcing and handling lye isn’t for you, you can use a simmering baking soda solution instead. With a pH of roughly 8.3, it reacts less than lye and yields pretzels that are lighter in color and flavor, but the results are still impressive.
+
+Take a Dip
+----------
+
+An alkaline bath is what makes a pretzel a pretzel and not just a tanned twist of dough. The base reacts with proteins, sugars, and starches at the pretzel’s surface to intensify browning and give the skin its tight, glossy sheen. It also imparts that saline, mineral flavor.
+
+A simmering baking soda solution is a pantry-friendly option with a moderately high pH that encourages ample browning and pretzel-y flavor. All you do is dissolve ½ cup of baking soda in 8 cups of water, bring the solution to a boil, lower it to a simmer (heating the solution makes it more reactive and effective), and briefly dunk each pretzel in it. Then you salt and bake the pretzels.
+
+Do The Twist
+------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel-Shapinggif)
+
+After making an inverted U with the dough rope, forming the twist is simple.
+
+1. Cross rope ends once, and then again.
+2. Lift ends and attach them to curve of inverted U at about 10 o’clock and 2 o’clock. Press ends firmly into body of pretzel.
+
+But if you want the genuine article, you have to do as German bakers do and dip the dough in a room-temperature, food-safe lye solution. (The native name, Laugenbrezel, means “lye pretzel.”) It’s the strongest alkali, and its color, flavor, and textural impact on the dough is simply unmatched. Fifteen seconds in a lye bath plus a hot bake equals deeply bronzed, distinctly saline pretzels that shine like polished mahogany.
+
+Of course, lye is caustic stuff that can burn your skin and discolor surfaces, so it’s important to approach the dipping process with respect and caution. So before baking I pored over lye safety documents and consulted with our senior science research editor, Paul Adams, to work out safety best practices. I donned some stout latex gloves and safety goggles and then carefully mixed 40 grams of lye crystals into 1,000 grams of cold water until the crystals dissolved. (Starting with cold water is important because lye raises the temperature of the solution when it dissolves.) I transferred each pretzel individually to the bath, let it hang out for 15 seconds, and then drained it on a wire rack. I moved the drained pretzels to a baking sheet, sprinkled them with pretzel salt (a coarse, slow-melting salt), and slid them into the oven.
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/SFS_GermanPretzels_436)
+
+The surface of these twists was dark, lustrous, and smooth around the plush, chewy crumb. I bit into one and immediately recognized that characteristic mineral flavor. It was all the convincing I needed that lye is worth the effort—and, frankly, once I had my dipping station and safety practices in order, working with lye was quicker and simpler than the simmering baking soda dip. (But don’t pass on pretzel making because you’re not comfortable using lye; the baking soda treatment produces perfectly acceptable results, and I’ve included directions for both.)
+
+It’s often said that the German language has a word for everything. The one that came to mind as I settled down with a pretzel, which I’d buttered liberally in Jürgen’s honor, was “wunderbar.”
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_200/SFS_GermanPretzels_455_msgufb)
+
+### Laugenbrezeln (German Lye Pretzels)
+
+Making pretzels the way German bakers do combines science and arts and crafts with a frisson of (manageable) risk. The process is fun; the payoff is spectacular
+
+[Get the Recipe](https://www.americastestkitchen.com/recipes/15044-laugenbrezeln-german-lye-pretzels)
+
+This is a members' feature.
+
+Why a Caustic Substance Is Key to the World's Best Pretzels
+===========================================================
+
+For real-deal German pretzels with a deep chestnut exterior, satiny sheen, and mineral-y tang, a dip in lye solution is a must.
+
+[Save](#save)
+
+[Saved](#save)
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_400/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/SFS_GermanPretzels_455)
+
+![Headshot of Andrea Geary](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_75,h_75/Play%20Cast%20Headshots/staff_andrea_geary)
+
+By [Andrea Geary](/authors/50-Andrea-Geary)
+
+Published on August 8, 2022
+
+[Jürgen Krauss](https://thegreatbritishbakeoff.co.uk/bakers/jurgen/), semifinalist in the 2021 season of *The Great British Baking Show*, can’t remember his first pretzel, but that’s only because during his childhood in Germany’s Black Forest, the chewy, salted twists were almost as ubiquitous as the air he breathed.
+
+Pretzels for Prayer—and Good Press
+----------------------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel-Stained-Glass)
+
+Pretzels have been depicted in religious art since at least the Middle Ages, when monks supposedly twisted bread dough scraps to form pious shapes: The gaps between the strands represented the Holy Trinity, and the crisscrossed ropes represented arms folded in prayer. They were also Lent friendly, free of animal products such as eggs and butter that the medieval church forbade during the spring fast, and they occasionally show up in medieval renderings of the Last Supper.
+
+But at [Freiburger Münster](https://visit.freiburg.de/en/attractions/freiburger-muenster-cathedral-our-landmark), the medieval cathedral in Freiburg, Germany, pretzels were incorporated into the stained glass windows lining the nave for a more secular reason: They promoted the bakers guild that helped fund their construction. The twists are prominently displayed in a coat of arms alongside windows with equally glorious emblems of beer pitchers for the brewers, boots for the cobblers, and scissors for the tailors. Devout donations, with a side of advertisement.
+
+“When you go into town, and you’re feeling snack-y, you get a buttered pretzel,” he told me on a video call from his home in Brighton, England.
+
+Lest Krauss’s recollection inspire visions of pallid, floppy, butter-slicked twists from a mall food court, let me be clear: The German pretzel is a more noble beast, as revered in its home country as the baguette is in France. Maybe it’s the alluring chestnut exterior, with that satiny sheen and pretzel-specific mineral-y tang, all results of a quick alkaline bath before baking. Maybe it’s the fine yet satisfyingly chewy crumb. Maybe it’s the versatility: Pair a pretzel with sausage and mustard for breakfast as they do in Munich, enjoy a few with beer, or slice one horizontally and fill it with meat and cheese or simply smear it with butter.
+
+Sign up for the *Cook's Insider* newsletter
+-------------------------------------------
+
+The latest recipes, tips, and tricks, plus behind-the-scenes stories from the *Cook's Illustrated* team.
+
+Enter Your Email
+
+Sign Me Up
+
+By providing your email above, you agree to our [Terms of Service](/corporate-pages/terms-of-use) and [Privacy Policy](/corporate-pages/privacy-policy).
+
+The more I learned about German pretzels, the hungrier I became—not just to eat them, but to make them. More than anything, I was intrigued by the purportedly magical qualities of that alkaline bath and was determined to work out a plan for using it safely so that anyone could turn out these glossy, saline wonders.
+
+How to Work with Lye Safely
+---------------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/STP_GermanPretzels_DippingPretzels_409)
+
+Dipping the dough in a lye solution gives traditional German pretzels their characteristic salinity; chew; and smooth mahogany exterior, but the strong alkali (sodium hydroxide) is corrosive and can burn your skin, so it must be handled with caution. (Don’t worry about eating it: Baking neutralizes lye and makes it perfectly safe to consume.) Follow this guide to make your experience safe and comfortable.
+
+Burst the Bubbles
+-----------------
+
+My dough was straightforward: Bread flour (its abundant gluten-forming proteins would provide the requisite chew), yeast, and salt mixed in a stand mixer, along with a bit of softened butter for richness and just enough water to bring everything together into a smooth, firm mass. After letting the dough rise for about an hour, I divided it into six portions; rolled each into a long rope; and twirled them into pretzel shapes. Tiny air bubbles had formed in the dough, and the gluten began to retract, transforming my elegant, looping twists into chunky, misshapen buns. But I carried on with dipping (for now, into a baking soda solution I kept simmering on the stove) and baking them in a hot oven for about 10 minutes. I tore into one that was still warm. Besides being malformed, it was riddled with gaping holes.
+
+Sometimes it’s helpful to think of a glutenous dough as a recalcitrant teenager: Force it to do something it doesn’t want to do, and it’s likely to defy you. Gentle, patient persuasion is usually more effective, so I took my time shaping the next batch—starting with a 10-minute rest after portioning that allowed its gluten to relax. Then, to rid the crumb of the pesky air bubbles that had ballooned as the pretzels baked, I worked each piece one by one, flattening it with a rolling pin and rolling it up into a snug cylinder. Only after shaping all the portions did I go back to the first and extend it out to its full length, rolling from the center to the ends to dislodge any lingering air bubbles before I twisted it up.
+
+The pretzels maintained their graceful shapes through baking and emerged with a fine, even crumb.
+
+The Truth About Lye
+-------------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel_SPLIT)
+
+Dunking dough into a strong alkali such as lye is an admittedly curious thing to do, and there are theories as to how this process came about—including one of a baker who mistakenly brushed his pretzel with cleaning fluid and decided to just go with it. But the base agent’s impact on the dough is actually terrific: It boosts flavorful browning by accelerating Maillardization and caramelizing sugars in the dough. It imparts that unique pretzel smell and taste by inhibiting the creation of typical baked-good aroma compounds while spurring the formation of others and also adds unmistakable mineral flavor. And it gels surface starch, so the pretzels bake up smooth and shiny.
+
+The stronger the alkali, the more intense and impressive the results, which is why German bakers use lye; it features a chart-topping pH of 14 and produces the ultimate pretzel experience. (Rest assured, you’re not ingesting a dangerous chemical: The oven’s heat completely neutralizes lye and makes it safe to consume.) That said, if sourcing and handling lye isn’t for you, you can use a simmering baking soda solution instead. With a pH of roughly 8.3, it reacts less than lye and yields pretzels that are lighter in color and flavor, but the results are still impressive.
+
+Take a Dip
+----------
+
+An alkaline bath is what makes a pretzel a pretzel and not just a tanned twist of dough. The base reacts with proteins, sugars, and starches at the pretzel’s surface to intensify browning and give the skin its tight, glossy sheen. It also imparts that saline, mineral flavor.
+
+A simmering baking soda solution is a pantry-friendly option with a moderately high pH that encourages ample browning and pretzel-y flavor. All you do is dissolve ½ cup of baking soda in 8 cups of water, bring the solution to a boil, lower it to a simmer (heating the solution makes it more reactive and effective), and briefly dunk each pretzel in it. Then you salt and bake the pretzels.
+
+Do The Twist
+------------
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/Pretzel-Shapinggif)
+
+After making an inverted U with the dough rope, forming the twist is simple.
+
+1. Cross rope ends once, and then again.
+2. Lift ends and attach them to curve of inverted U at about 10 o’clock and 2 o’clock. Press ends firmly into body of pretzel.
+
+But if you want the genuine article, you have to do as German bakers do and dip the dough in a room-temperature, food-safe lye solution. (The native name, Laugenbrezel, means “lye pretzel.”) It’s the strongest alkali, and its color, flavor, and textural impact on the dough is simply unmatched. Fifteen seconds in a lye bath plus a hot bake equals deeply bronzed, distinctly saline pretzels that shine like polished mahogany.
+
+Of course, lye is caustic stuff that can burn your skin and discolor surfaces, so it’s important to approach the dipping process with respect and caution. So before baking I pored over lye safety documents and consulted with our senior science research editor, Paul Adams, to work out safety best practices. I donned some stout latex gloves and safety goggles and then carefully mixed 40 grams of lye crystals into 1,000 grams of cold water until the crystals dissolved. (Starting with cold water is important because lye raises the temperature of the solution when it dissolves.) I transferred each pretzel individually to the bath, let it hang out for 15 seconds, and then drained it on a wire rack. I moved the drained pretzels to a baking sheet, sprinkled them with pretzel salt (a coarse, slow-melting salt), and slid them into the oven.
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_340/v1/CIO%20Web%20Articles/CI%20SO%2022/Pretzels/SFS_GermanPretzels_436)
+
+The surface of these twists was dark, lustrous, and smooth around the plush, chewy crumb. I bit into one and immediately recognized that characteristic mineral flavor. It was all the convincing I needed that lye is worth the effort—and, frankly, once I had my dipping station and safety practices in order, working with lye was quicker and simpler than the simmering baking soda dip. (But don’t pass on pretzel making because you’re not comfortable using lye; the baking soda treatment produces perfectly acceptable results, and I’ve included directions for both.)
+
+It’s often said that the German language has a word for everything. The one that came to mind as I settled down with a pretzel, which I’d buttered liberally in Jürgen’s honor, was “wunderbar.”
+
+![](https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_200/SFS_GermanPretzels_455_msgufb)
+
+### Laugenbrezeln (German Lye Pretzels)
+
+Making pretzels the way German bakers do combines science and arts and crafts with a frisson of (manageable) risk. The process is fun; the payoff is spectacular
+
+[Get the Recipe](https://www.americastestkitchen.com/recipes/15044-laugenbrezeln-german-lye-pretzels)
+
+

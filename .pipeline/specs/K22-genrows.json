@@ -1,0 +1,188 @@
+{
+ "success": true,
+ "error": null,
+ "data": [
+  {
+   "id": "9c2f2a49-b89f-4aba-857a-3b704270b933",
+   "slug": "gen_guanciale_worth_buying",
+   "section": "meat",
+   "topic": "Guanciale worth buying",
+   "kind": "shelf",
+   "eyebrow": "Guanciale worth buying",
+   "headline": "Guanciale earns its keep for the fat, not as a bacon stand-in.",
+   "do_line": "Check the label reads pork jowl, not pork belly.",
+   "tier": "kristys_standard",
+   "cta_item": "Guanciale",
+   "why": "Guanciale comes from the pork jowl, salted and air-dried with pepper, never smoked. That fat renders differently than belly fat and carries a rounder flavor into a sauce. Pancetta or bacon will finish a dish, but it is a different fat and a different result.",
+   "look_for": [
+    "Label says pork jowl or guanciale, not pancetta",
+    "Thick white fat layer over dark, well-marbled meat",
+    "Salted and air-dried, no smoke listed in ingredients",
+    "Italian origin or a regional name like Amatrice on the label"
+   ],
+   "watch_out": [
+    "Pancetta marketed as a guanciale substitute changes the fat and the dish.",
+    "Bacon is smoked; guanciale never is, and the swap tastes like it."
+   ],
+   "tier_note": "The fat and flavor difference from belly meat is a real distinction, not a safety or health call.",
+   "detail": "",
+   "kristy_take": "",
+   "labels_decoded": [],
+   "sources": [],
+   "source": "generated",
+   "query_seed": "is guanciale worth buying",
+   "use_count": 0,
+   "created_at": "2026-08-02T15:22:44.801362+00:00",
+   "updated_at": "2026-08-02T15:22:44.801362+00:00",
+   "aliases": [
+    "guanciale",
+    "pork jowl",
+    "pork cheek",
+    "italian bacon",
+    "carbonara meat",
+    "pancetta substitute"
+   ],
+   "essential": false,
+   "essential_rank": null,
+   "instead": null
+  },
+  {
+   "id": "ae7a180f-72db-4351-918c-8e479bec342e",
+   "slug": "gen_goat_meat_quality",
+   "section": "meat",
+   "topic": "goat meat quality",
+   "kind": "shelf",
+   "eyebrow": "goat meat quality",
+   "headline": "Goat is real meat, lean and worth slow cooking.",
+   "do_line": "Buy bone-in shoulder or leg cuts labeled for stew or curry.",
+   "tier": "kristys_standard",
+   "cta_item": null,
+   "why": "Goat is the most widely eaten red meat in the world outside a handful of countries, prized for a clean, slightly gamey flavor. It carries very little intercellular fat, so it dries out fast under high heat and rewards long, moist cooking instead. Slow braising or stewing breaks down the connective tissue and turns it tender.",
+   "look_for": [
+    "Bone-in shoulder or leg sold for stew or curry",
+    "Deep red, fine-grained flesh with only a thin fat cap",
+    "Label reading “chevon” for adult goat or “cabrito” for kid",
+    "Ground goat for burgers, kebabs, or spiced meatballs"
+   ],
+   "watch_out": [
+    "High heat toughens it fast; grilling suits only the youngest, most tender cuts",
+    "Precut “stew meat” sometimes mixes in tougher trim; check the grain matches the rest of the cut"
+   ],
+   "tier_note": "Goat’s low intramuscular fat is a measurable cut characteristic, and the slow-cook call follows directly from that, not from any health science.",
+   "detail": "",
+   "kristy_take": "",
+   "labels_decoded": [],
+   "sources": [],
+   "source": "generated",
+   "query_seed": "is goat meat any good",
+   "use_count": 0,
+   "created_at": "2026-08-02T18:02:00.20786+00:00",
+   "updated_at": "2026-08-02T18:02:00.20786+00:00",
+   "aliases": [
+    "goat meat",
+    "goat",
+    "chevon",
+    "cabrito",
+    "curry goat",
+    "goat curry",
+    "goat stew",
+    "is goat good"
+   ],
+   "essential": false,
+   "essential_rank": null,
+   "instead": null
+  },
+  {
+   "id": "3a50bbac-d0b2-42bc-882c-3ef2c32e5b25",
+   "slug": "gen_live_fermented_foods",
+   "section": "bulk_pantry",
+   "topic": "Live fermented foods",
+   "kind": "shelf",
+   "eyebrow": "Live fermented foods",
+   "headline": "Cold storage is the real fermentation tell, not the word on front.",
+   "do_line": "Grab it from the chilled case, skip the shelf-stable jars.",
+   "tier": "kristys_standard",
+   "cta_item": null,
+   "why": "Live bacterial cultures die under the heat used to make a ferment shelf-stable at room temperature. A jar sitting on a dry shelf has been pasteurized for safety, so the cultures are gone even if the label still says fermented. The chilled case is where the bacteria are still active.",
+   "look_for": [
+    "Placement in the refrigerated or chilled case",
+    "Cloudy, active-looking brine",
+    "Label reading “raw” or “unpasteurized”",
+    "Cap slightly domed or hissing when opened",
+    "Small bubbles visible in the liquid"
+   ],
+   "watch_out": [
+    "Vinegar-pickled items on a dry shelf are pickled, not fermented",
+    "“Fermented” on a shelf-stable jar describes the process used, not what survives",
+    "Pasteurized versions taste flatter and hold longer at room temperature"
+   ],
+   "tier_note": "No label rule tracks live culture survival, so the refrigeration standard fills a gap regulators leave open.",
+   "detail": "",
+   "kristy_take": "",
+   "labels_decoded": [],
+   "sources": [],
+   "source": "generated",
+   "query_seed": "Fermented food",
+   "use_count": 0,
+   "created_at": "2026-08-03T23:08:43.981832+00:00",
+   "updated_at": "2026-08-03T23:08:43.981832+00:00",
+   "aliases": [
+    "fermented food",
+    "fermentation",
+    "raw ferments",
+    "live cultures",
+    "sauerkraut",
+    "kimchi",
+    "kombucha",
+    "fermented vegetables"
+   ],
+   "essential": false,
+   "essential_rank": null,
+   "instead": null
+  },
+  {
+   "id": "118a2c09-4189-43cd-bcba-36220a64082e",
+   "slug": "gen_choosing_a_real_cereal",
+   "section": "bulk_pantry",
+   "topic": "Choosing a real cereal",
+   "kind": "shelf",
+   "eyebrow": "Choosing a real cereal",
+   "headline": "Whole grain listed first is what makes a cereal real.",
+   "do_line": "Flip the box and check what leads the ingredient list.",
+   "tier": "established",
+   "cta_item": null,
+   "why": "Ingredients are ordered by weight, so whatever comes first is the bulk of the box. A cereal built on refined flour with a grain name sprinkled in for marketing is a different food from one built on the grain itself.",
+   "look_for": [
+    "Whole wheat, whole oats, or whole corn as the very first word",
+    "Fiber grams per serving close to or above sugar grams",
+    "Only one sugar-type ingredient anywhere in the top three",
+    "A short ingredient list overall"
+   ],
+   "watch_out": [
+    "“Multigrain” or “made with whole grains” on the front with refined flour first on the back",
+    "Sugar split across cane sugar, corn syrup, and honey so no single one ranks high alone"
+   ],
+   "tier_note": "Ingredient order by weight is federally mandated, which is what makes first position a fact instead of a guess.",
+   "detail": "",
+   "kristy_take": "",
+   "labels_decoded": [],
+   "sources": [],
+   "source": "generated",
+   "query_seed": "What cereal",
+   "use_count": 0,
+   "created_at": "2026-10-02T18:56:39.539138+00:00",
+   "updated_at": "2026-10-02T18:56:39.539138+00:00",
+   "aliases": [
+    "cereal",
+    "breakfast cereal",
+    "whole grain cereal",
+    "cereal ingredients",
+    "healthy cereal",
+    "cereal sugar"
+   ],
+   "essential": false,
+   "essential_rank": null,
+   "instead": null
+  }
+ ]
+}

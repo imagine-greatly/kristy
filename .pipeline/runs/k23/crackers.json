@@ -1,0 +1,65 @@
+{
+  "id": "crackers",
+  "title": "Crackers",
+  "aliases": [
+    "crackers",
+    "saltines",
+    "soda crackers",
+    "water crackers",
+    "sourdough crackers"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick crackers?",
+  "decision": "Crackers with a whole grain listed first on the ingredients.",
+  "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
+  "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
+  "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.law.cornell.edu/cfr/text/21/101.4",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+    "https://www.nutritionletter.tufts.edu/?p=148621",
+    "https://en.wikipedia.org/wiki/Cracker_(food)",
+    "https://bakerpedia.com/processes/crackers/",
+    "https://www.masterclass.com/articles/sourdough-crackers"
+  ],
+  "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
+  "cart_pick": "Crackers with a whole grain first",
+  "buying_tips": [
+    "Read the first ingredient; a whole grain there leads the cracker.",
+    "Look for “whole wheat flour” on the list, not just “wheat flour.”",
+    "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter."
+  ],
+  "watch_out": [
+    "A front that leads with whole-grain words can still list refined flour first."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Wheat flour",
+      "meaning": "A synonym of plain flour; it is not a whole grain flour."
+    },
+    {
+      "term": "Whole wheat flour",
+      "meaning": "Flour that counts as a whole grain."
+    },
+    {
+      "term": "Multigrain",
+      "meaning": "Made with several grains, which are often refined; it does not mean whole grain."
+    },
+    {
+      "term": "Soda crackers",
+      "meaning": "Saltines: fermented and raised with yeast, normally with no added sugar and little fat."
+    },
+    {
+      "term": "Water crackers",
+      "meaning": "Flour and water rolled thin and baked with no leavening."
+    }
+  ],
+  "tier_note": "Multigrain on the front names several grains, not whole ones.",
+  "asked_as": [
+    "which crackers should i buy",
+    "are saltines worth buying",
+    "are water crackers worth buying"
+  ],
+  "_do_line": "Read the front for “multigrain”; it does not mean whole grain."
+}

@@ -34,6 +34,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from './doLines.json' with { type: 'json' };
 import { sectionForCategory, DEPTH_FIELDS } from './counterCards.js';
 import { statesIn } from './listMatch.js';
+import { claimLockViolations } from './counterClaimLock.js';
 
 const RUBRICS = Object.values(perimeterKb.evidence_tiers || {});
 
@@ -822,7 +823,7 @@ const NON_AISLE_SECTION = 'label_terms';
 export const PICK_FORBIDDEN_FIELDS = new Set([
   'asked_as', 'headline', 'why', 'tier_note', 'look_for', 'watch_out', 'detail',
   'kristy_take', 'labels_decoded', 'cart_pick', 'short_answer', 'buying_tips', 'question',
-  'evidence_tier', 'instead', 'card_why', 'eyebrow_short',
+  'evidence_tier', 'instead', 'card_why', 'eyebrow_short', 'pick_steps', 'science',
   ...DEPTH_FIELDS.filter((f) => f !== 'sources'),
 ]);
 
@@ -856,6 +857,11 @@ const hasUrl = (s) => /https?:\/\/\S+/.test(String(s || ''));
  * Lint one pick entry. Empty is the passing state.
  * @returns {Array<{code:string, detail:string}>}
  */
+// Zero first person (VOICE_SPEC). `I` is case-sensitive so "i" inside nothing trips;
+// `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
+const hasFirstPerson = (line) =>
+  /\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line);
+
 export function lintPick(entry) {
   const out = [];
   const fail = (code, detail) => out.push({ code, detail });
@@ -942,9 +948,7 @@ export function lintPick(entry) {
     if (words(line) > MAX_PICK_WORDS) {
       fail('PICK_LINE_TOO_LONG', `${words(line)}w > ${MAX_PICK_WORDS}: ${line}`);
     }
-    // Zero first person (VOICE_SPEC). `I` is case-sensitive so "i" inside nothing trips;
-    // `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
-    if (/\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line)) {
+    if (hasFirstPerson(line)) {
       fail('PICK_LINE_FIRST_PERSON', `no I/me/my/we/our on any line Kristy speaks: "${line}"`);
     }
     if (/—/.test(line)) fail('PICK_LINE_EM_DASH', `no em-dash asides: "${line}"`);
@@ -1198,6 +1202,8 @@ export function lintCard(card) {
     }
   }
 
+  // K13: the aisle-readability bar (VOICE_SPEC "Readable in the aisle") is fail-level for every card.
+  for (const f of readability(card)) fail(f.code, f.field ? `${f.field}: ${f.detail}` : f.detail);
   return out;
 }
 
@@ -1335,3 +1341,160 @@ export function lintCorpus(cards) {
     report: { verbs, emDashShare: share, total: list.length, copulaAbstraction: copula },
   };
 }
+
+/* ═══════════════ Readable in the aisle (VOICE_SPEC R2–R4) ═══════════════
+   Not wired into lintCard yet (K13); K5–K12 rewrite the cards it fires on.
+   Thresholds measured 2026-10-06 over the 109 curated cards: headline+do p95 25 / max 25;
+   short_answer p50 62 / max 112; sentence p90 23 / p95 27 / max 43. */
+export const HEADLINE_DO_MAX = 26;
+export const SHORT_ANSWER_MAX = 40;
+export const SENTENCE_MAX = 20;
+const READ_FIELDS = ['decision', 'short_answer', 'why', 'look_for', 'watch_out', 'pick_steps', 'science'];
+// ponytail: short abbreviation list; extend when a real card splits wrong.
+const ABBREV = /\b(e\.g|i\.e|vs|oz|lb|lbs|etc|approx|U\.S)\./gi;
+const wordCount = (s) => String(s || '').split(/\s+/).filter(Boolean).length;
+
+/** Split on . ! ? followed by whitespace or end; decimals and ABBREV stay whole. */
+export function sentences(text) {
+  return String(text || '')
+    .replace(ABBREV, (m) => m.replace(/\./g, '\u0000'))
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.replace(/\u0000/g, '.').trim())
+    .filter(Boolean);
+}
+
+/** Readability findings, same {code, field, detail} shape as voiceTics. Empty is the passing state. */
+export function readability(card) {
+  const out = [];
+  const id = card?.id ?? card?.slug;
+  const headline = card?.decision ?? card?.headline;
+  const doLine = doLines[id] ?? card?.do ?? card?.do_line;
+  const hd = wordCount(headline) + wordCount(doLine);
+  if (hd > HEADLINE_DO_MAX) {
+    out.push({ code: 'READ_FIVE_SECONDS', field: 'decision', detail: `headline + do line run ${hd} words; the bar is ${HEADLINE_DO_MAX}` });
+  }
+  const sa = wordCount(card?.short_answer);
+  if (sa > SHORT_ANSWER_MAX) {
+    out.push({ code: 'READ_FIVE_SECONDS', field: 'short_answer', detail: `${sa} words; the bar is ${SHORT_ANSWER_MAX}` });
+  }
+  for (const field of READ_FIELDS) {
+    const v = field === 'look_for' ? (card?.look_for ?? card?.buying_tips)
+      : field === 'decision' ? (card?.decision ?? card?.headline)
+      : card?.[field];
+    if (v == null) continue;
+    for (const raw of [].concat(v)) {
+      // look_for entries project labels_decoded as "Term — meaning": that one leading
+      // separator is not an aside. Drop the term; a second em-dash still fires.
+      const text = field === 'look_for' && typeof raw === 'string' ? raw.replace(/^[^—]*? — /, '') : raw;
+      for (const s of sentences(text)) {
+        const n = wordCount(s);
+        if (n > SENTENCE_MAX) {
+          out.push({ code: 'READ_SENTENCE_LONG', field, detail: `${n} words; the bar is ${SENTENCE_MAX}: "${s}"` });
+        }
+        const stacked = (s.match(/;/g) || []).length + (s.match(/\(/g) || []).length;
+        if (s.includes('—')) out.push({ code: 'READ_STACKED', field, detail: `em-dash aside: "${s}"` });
+        else if (stacked > 1) out.push({ code: 'READ_STACKED', field, detail: `${stacked} semicolons/parentheticals in one sentence: "${s}"` });
+      }
+    }
+  }
+  return out;
+}
+
+/* ═══════════════ KTIGHT: pick_steps + science ═══════════════
+   The shelf-readable pick (1-3 steps) and one paragraph of why. Not wired into lintCard:
+   presence is the ratchet ledger's job (test/ktight.test.js), so a card with neither field
+   passes here. */
+export const MAX_STEP_WORDS = MAX_DO_WORDS;
+export const MAX_SCIENCE_WORDS = 70;
+const REDIRECT = [
+  /\b(spend|save|put)\b[^.]{0,40}\b(money|budget)\b/i,
+  /\b(money|budget)\b[^.]{0,30}\b(elsewhere|instead|toward|towards)\b/i,
+];
+
+/** Lint the KTIGHT fields of one question entry. Empty is the passing state. */
+export function lintPickSteps(entry) {
+  const out = [];
+  const e = entry || {};
+  const hasSteps = 'pick_steps' in e;
+  const hasScience = 'science' in e;
+  if (!hasSteps && !hasScience) return out;
+  const fail = (code, detail) => out.push({ code, detail });
+  const texts = [];
+
+  if (hasSteps) {
+    const steps = e.pick_steps;
+    if (!Array.isArray(steps) || steps.length < 1 || steps.length > 3 || steps.some((s) => typeof s !== 'string')) {
+      fail('STEPS_SHAPE', 'pick_steps is a string[] of 1-3 lines');
+    } else {
+      const doLine = normText(doLines[e.id]);
+      for (const step of steps) {
+        if (!step.trim()) { fail('STEPS_EMPTY', 'a blank step'); continue; }
+        texts.push(step);
+        if (words(step) > MAX_STEP_WORDS) fail('STEPS_TOO_LONG', `${words(step)}w > ${MAX_STEP_WORDS}: "${step}"`);
+        if (!/\.$/.test(step.trim()) || step.includes('?')) fail('STEPS_NOT_CLOSED', `a step ends in "." and never asks: "${step}"`);
+        if (doLine && normText(step) === doLine) fail('STEPS_COPIES_DO', `a step may extend the do line, never copy it: "${step}"`);
+      }
+    }
+  }
+
+  if (hasScience) {
+    const sci = e.science;
+    if (typeof sci !== 'string' || !sci.trim()) {
+      fail('SCIENCE_SHAPE', 'science is one non-empty string');
+    } else {
+      texts.push(sci);
+      if (/\n/.test(sci) || /^\s*([-•*]|\d+[.)])\s/.test(sci)) fail('SCIENCE_NOT_PARAGRAPH', 'science is one paragraph, no newline or list marker');
+      if (words(sci) > MAX_SCIENCE_WORDS) fail('SCIENCE_TOO_LONG', `${words(sci)}w > ${MAX_SCIENCE_WORDS}`);
+    }
+  }
+
+  const { pick_steps: _s, science: _c, ...rest } = e;
+  const known = new Set(JSON.stringify(rest).match(/\d+/g) || []);
+  for (const t of texts) {
+    if (hasFirstPerson(t)) fail('KT_FIRST_PERSON', `no I/me/my/we/our: "${t}"`);
+    if (t.includes('—')) fail('KT_EM_DASH', `no em-dash asides: "${t}"`);
+    for (const n of t.match(/\d+/g) || []) {
+      if (!known.has(n)) fail('KT_NEW_NUMBER', `"${n}" appears nowhere else in the entry: "${t}"`);
+    }
+    if (REDIRECT.some((re) => re.test(t))) fail('KT_REDIRECT', `no money redirect: "${t}"`);
+    for (const b of britishSpellings(t)) fail('COPY_BRITISH', `American spelling: "${b}"`);
+    if (STRAIGHT_QUOTE.test(t)) fail('COPY_STRAIGHT_QUOTE', `typographic quotes only: "${t}"`);
+  }
+  const steps = Array.isArray(e.pick_steps) ? e.pick_steps.filter((s) => typeof s === 'string') : [];
+  const science = typeof e.science === 'string' ? e.science : '';
+  // Allowlisted sentences still run the lock; only their CLAIM_TREATMENT finding is dropped.
+  const allowed = (s) => PRESERVATION_CURE_SENTENCES.has(s);
+  const unlisted = (t) => sentences(t).filter((s) => !allowed(s)).join(' ');
+  const exempt = [...steps, science].flatMap(sentences).filter(allowed);
+  const hits = [
+    ...claimLockViolations({ look_for: steps.map(unlisted), detail: unlisted(science) }),
+    ...claimLockViolations({ look_for: exempt, detail: '' }).filter((v) => v.code !== 'CLAIM_TREATMENT'),
+  ];
+  for (const v of hits) fail(`KT_${v.code}`, v.detail);
+  return out;
+}
+
+// INVARIANT: each sentence reviewed as preservation sense; adding one is a reviewed corpus change, never a regex.
+// Exact pick_steps/science sentences (as split by sentences()) whose meat-cure wording trips the claim lock's
+// treatment rule. Any other sentence, including a near-miss of one of these, reads the raw lock. Fail-closed.
+export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
+  "Read the ingredients list; every curing substance has to be named there.",
+  "‘Uncured’ meat is cured, using celery powder instead of added nitrite.",
+  "Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one.",
+  "Read each curing ingredient, including salt, sugar and curing agents.",
+  "Compare the disclosed curing ingredients across the bacon packs on the shelf.",
+  "Bacon labeled uncured can use celery powder as a natural curing source.",
+  "US curing-label policy requires curing-mixture ingredients to be listed individually.",
+  "The curing ingredients describe the process.",
+  "The source set does not establish a health advantage from choosing celery-based curing.",
+  "“Uncured” can still mean celery-based curing; read the qualifier.",
+  "Ham is the cured leg of pork, and its product name tells how much water the curing added.",
+  "Read each curing ingredient in the ingredients statement.",
+  "Under US labeling, “bacon” alone means cured pork belly.",
+  "Turkey bacon is still a cured product.",
+  "Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed.",
+  "Each of these is pork cured with salt and curing agents.",
+  "Prosciutto is dry-cured raw ham, not smoked; its low water content lets it be eaten raw.",
+  "Salami is a fermented, dried and cured ground product.",
+  "Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl.",
+]));

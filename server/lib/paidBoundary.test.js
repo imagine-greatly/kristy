@@ -169,8 +169,13 @@ test('a guest GETs a non-essential full card five times, including spent=3 and s
 
 test('GET full and summary routes omit teasers and retain full depth on every card', async (t) => {
   t.mock.method(supabase, 'from', () => { throw new Error('Use the authored corpus fallback'); });
-  const summary = await get(`/counter/summaries?slugs=${CARDS.map((card) => card.slug).join(',')}`);
-  assert.equal(summary.status, 200);
+  // The route caps one request at 200 slugs; batch so every card is still asked for.
+  const summary = { body: { cards: {} } };
+  for (let i = 0; i < CARDS.length; i += 200) {
+    const page = await get(`/counter/summaries?slugs=${CARDS.slice(i, i + 200).map((card) => card.slug).join(',')}`);
+    assert.equal(page.status, 200);
+    Object.assign(summary.body.cards, page.body.cards);
+  }
   const summaries = nonEmpty(Object.values(summary.body.cards), 'summary route cards', CARDS.length);
   assert.equal(summaries.length, CARDS.length);
   for (const card of CARDS) {

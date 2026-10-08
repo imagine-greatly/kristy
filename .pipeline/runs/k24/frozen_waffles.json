@@ -1,0 +1,50 @@
+{
+  "id": "frozen_waffles",
+  "title": "Frozen waffles",
+  "aliases": ["frozen waffles", "toaster waffles", "frozen waffle"],
+  "category": "bulk_pantry",
+  "question": "How do you pick frozen waffles?",
+  "decision": "Frozen waffles with a whole grain listed first.",
+  "why": "The ingredient list shows whether the first ingredient is a whole grain. “Wheat flour” is not one.",
+  "short_answer": "Read the first ingredient. “Whole wheat flour” and graham flour are whole grain. “Wheat flour” is plain flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
+  "detail": "FDA draft advice counts a grain as whole when the kernel is intact, ground, cracked or flaked. Every part of the kernel stays in the same proportions as the intact kernel. Rolled oats and quick oats count as whole grain. Graham flour is another name for whole wheat flour, which has its own federal standard of identity. A federal purchase description covers frozen heat-and-serve waffles. It is USDA’s commercial item description, a buying spec, not a label rule. Its ingredients are enriched flour, water, sugar, egg, oil, salt, flavorings, whey, leavening and emulsifiers or other stabilizers. Whole wheat flour is optional there. Its flours meet the federal standard for enriched flour or for whole wheat flour.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+    "https://www.ams.usda.gov/sites/default/files/media/CID%20Griddle%20Bread%2C%20Shelf%20Stable%20%28Waffles%2C%20Pancakes%2C%20French%20toast%2C%20Belgian%20Waffles%29.pdf",
+    "https://www.onceuponachef.com/recipes/waffle-recipe.html",
+    "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/"
+  ],
+  "kristy_take": "A whole grain listed first is the standard here. At home, yeasted waffles may be the gold standard for a light, crisp waffle. The batter rests overnight in the fridge for a crisp outside and tender inside.",
+  "cart_pick": "Waffles with a whole grain listed first",
+  "buying_tips": [
+    "Read the first ingredient for a whole grain, such as whole wheat flour.",
+    "Graham flour and rolled oats count as whole grain on the list.",
+    "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
+    "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen."
+  ],
+  "watch_out": [
+    "“Wheat flour” listed first means plain flour leads, not a whole grain."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Wheat flour",
+      "meaning": "Another name for flour. It is not a whole grain flour."
+    },
+    {
+      "term": "Whole wheat flour",
+      "meaning": "A whole grain flour with its own federal standard of identity."
+    },
+    {
+      "term": "Graham flour",
+      "meaning": "Another name for whole wheat flour."
+    }
+  ],
+  "tier_note": "Graham flour counts as whole wheat; plain wheat flour does not.",
+  "asked_as": [
+    "which frozen waffles should i buy",
+    "are frozen waffles worth buying",
+    "are toaster waffles worth buying"
+  ],
+  "_do_line": "Read the list for “wheat flour”, which is not a whole grain flour."
+}

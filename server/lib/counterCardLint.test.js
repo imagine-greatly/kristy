@@ -417,8 +417,18 @@ test('all curated cards clear the per-card bar', () => {
   // `produce_peppers`, `produce_apples_pears`, `produce_citrus`, `produce_stone_fruit`
   // (2026-09-16). 93 with `ground_beef_organ_blend` (2026-09-21). 94 with `rotisserie_chicken`
   // (2026-09-21).
-  // Build 4 adds 15 cards, each owning one grocery type.
-  assert.equal(CARDS.length, 109);
+  // Build 4 adds 15 cards, each owning one grocery type. K14 adds 3:
+  // `produce_mushrooms`, `produce_green_beans`, `egg_duck_quail` (2026-10-06).
+  // K15 adds 9: ham, turkey_bacon, cured_pork, lamb_goat, organ_meats, bison, venison_game, duck_meat, meat_case (2026-10-06).
+  // K16 adds 7: white_fish, crab, lobster, scallops, clams_mussels_oysters, smoked_salmon, seafood_counter (2026-10-06).
+  // K18 adds 8: sprouted_grain_bread, sprouted_grains, specialty_flours, gluten_free_bread, buns_rolls, pastries_muffins, muesli, bread_aisle (2026-10-06).
+  // K19 adds 12: plain_kefir, sour_cream, cream_cheese, cottage_cheese, ice_cream, ghee, goat_sheep_dairy, almond_milk, soy_milk, coconut_milk_beverage, plant_butter, dairy_case (2026-10-06).
+  // K20 adds 9: kombucha, sauerkraut, kimchi, fermented_pickles, raw_cider_vinegar, miso, tempeh, natto, fermented (2026-10-07).
+  // K21 adds 13: broth, salt, sugars, maple_syrup, cooking_oils, lard_tallow, cocoa, seeds, dried_fruit, nutritional_yeast, canned_coconut_milk, dried_herbs, tea (2026-10-07).
+  // K22 adds 13: vinegar, pasta_sauce, jam, ketchup_mustard, mayo, hot_soy_sauce, canned_soup, olives, seaweed, baking_soda_powder, salsa, coconut_water, condiments (2026-10-07).
+  // K23 adds 13: crackers, tortilla_chips, potato_chips, popcorn, pretzels, snack_bars, trail_mix, snacks, hummus, deli_salads, prepared_meals, fresh_pasta, deli (2026-10-07).
+  // K24 adds 6: frozen_pizza, frozen_meals, frozen_fries, frozen_waffles, frozen_nuggets, frozen (2026-10-07).
+  assert.equal(CARDS.length, 202);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);
@@ -666,3 +676,49 @@ test('every curated card with a do line carries a tier note about THAT do line',
   const orphaned = withDo.filter((e) => codes(lintCard(e)).includes('TIER_NOTE_ORPHANED')).map((e) => e.id);
   assert.deepEqual(orphaned, [], `${orphaned.length} tier notes talk past their do line`);
 });
+
+/* ═══════ readability (K4) ═══════ */
+import { test as rtest } from 'node:test';
+import rassert from 'node:assert/strict';
+import { readability, sentences, HEADLINE_DO_MAX, SHORT_ANSWER_MAX, SENTENCE_MAX } from './counterCardLint.js';
+
+const rwords = (n) => Array.from({ length: n }, (_, i) => `w${i}`).join(' ');
+const rcodes = (card) => readability({ id: 'fixture_readability', ...card }).map((f) => f.code);
+
+rtest('READ_FIVE_SECONDS fires over HEADLINE_DO_MAX and clears at it', () => {
+  rassert.ok(rcodes({ decision: rwords(HEADLINE_DO_MAX - 10), do: rwords(11) }).includes('READ_FIVE_SECONDS'));
+  rassert.deepEqual(rcodes({ decision: rwords(HEADLINE_DO_MAX - 10), do: rwords(10) }), []);
+});
+
+rtest('READ_FIVE_SECONDS fires on short_answer over SHORT_ANSWER_MAX and clears at it', () => {
+  rassert.ok(rcodes({ short_answer: rwords(SHORT_ANSWER_MAX + 1).replace(/w15 /, 'w15. ') }).includes('READ_FIVE_SECONDS'));
+  rassert.deepEqual(rcodes({ short_answer: rwords(SHORT_ANSWER_MAX).replace(/w15 /, 'w15. ').replace(/w30 /, 'w30. ') }), []);
+});
+
+rtest('READ_SENTENCE_LONG: raw KB buying_tips is read as look_for', () => {
+  const f = readability({ id: 'raw', buying_tips: [`${rwords(SENTENCE_MAX + 1)}.`] });
+  rassert.deepEqual(f.map((x) => [x.code, x.field]), [['READ_SENTENCE_LONG', 'look_for']]);
+});
+
+rtest('READ_SENTENCE_LONG: exactly SENTENCE_MAX does not fire, one more does; arrays handled', () => {
+  rassert.deepEqual(rcodes({ why: `${rwords(SENTENCE_MAX)}.` }), []);
+  rassert.deepEqual(rcodes({ look_for: [`${rwords(SENTENCE_MAX)}.`, 'Short one.'] }), []);
+  rassert.deepEqual(rcodes({ why: `${rwords(SENTENCE_MAX + 1)}.` }), ['READ_SENTENCE_LONG']);
+  rassert.deepEqual(rcodes({ watch_out: ['Fine.', `${rwords(SENTENCE_MAX + 1)}.`] }), ['READ_SENTENCE_LONG']);
+});
+
+rtest('sentence split keeps decimals and abbreviations whole', () => {
+  rassert.deepEqual(sentences('Pick 2.5 oz. vs. the tub, e.g. plain. Then go!'), ['Pick 2.5 oz. vs. the tub, e.g. plain.', 'Then go!']);
+});
+
+rtest('READ_STACKED fires on two semicolons/parentheticals or an em-dash, clears on one', () => {
+  rassert.deepEqual(rcodes({ why: 'Buy plain (not sweet); skip the rest.' }), ['READ_STACKED']);
+  rassert.deepEqual(rcodes({ why: 'Buy plain — the sweet one is dessert.' }), ['READ_STACKED']);
+  rassert.deepEqual(rcodes({ why: 'Buy plain (not sweet), and skip the rest.' }), []);
+  rassert.deepEqual(rcodes({ why: 'Buy plain; skip the rest.' }), []);
+});
+rtest('READ_STACKED: a look_for "Term — meaning" separator clears, a second em-dash fires', () => {
+  rassert.deepEqual(rcodes({ look_for: ['Term — meaning.'] }), []);
+  rassert.deepEqual(rcodes({ look_for: ['Term — meaning — aside.'] }), ['READ_STACKED']);
+});
+

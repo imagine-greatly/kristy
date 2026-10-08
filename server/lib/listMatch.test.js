@@ -95,9 +95,14 @@ test('the three list-surface aliases landed and still resolve', () => {
   }
 });
 
-test('non-grocery and unowned food rows attach no card', () => {
-  for (const name of ['paper towels', 'dish soap', 'ketchup', 'pasta sauce']) {
+test('non-grocery rows attach no card; K22 pantry rows attach their own card', () => {
+  for (const name of ['paper towels', 'dish soap']) {
     assert.equal(matchItemToCard(name), null, `"${name}" must not attach a card`);
+  }
+  // K22 admin ruling P1=A: these were "no card yet" pins; K22 covers them.
+  for (const [name, id] of [['ketchup', 'ketchup_mustard'], ['pasta sauce', 'pasta_sauce']]) {
+    const m = matchItemToCard(name);
+    assert.equal(m?.slug ?? m?.id ?? m?.entry?.id, id, `"${name}" must attach ${id}`);
   }
 });
 
@@ -131,11 +136,12 @@ test('a trailing qualifier does not move the head noun', () => {
   assert.ok(matchItemToCard('Bone-in, skin-on chicken thighs'), 'the row the comma rule protects');
 });
 
-test('an either/or whose head no card owns is an honest miss', () => {
-  // "Beef or chicken liver" has a trailing head ("liver") and no card names it. It must
-  // fall through — never land on the beef or chicken card, which speak to a different cut.
-  assert.equal(matchItemToCard('liver'), null, 'no card owns liver — re-check this test if one lands');
-  assert.equal(matchItemToCard('Beef or chicken liver'), null);
+test('an either/or over liver lands on organ_meats, and bare liver stays a miss', () => {
+  // "Beef or chicken liver" has a trailing head ("liver"). Since K15 the organ_meats card
+  // owns "beef liver" and "chicken liver", so the row lands there, never on the beef or
+  // chicken card, which speak to a different cut. Bare "liver" is still owned by no card.
+  assert.equal(matchItemToCard('liver'), null, 'no card owns bare liver — re-check this test if one lands');
+  assert.equal(matchItemToCard('Beef or chicken liver')?.slug, 'organ_meats');
 });
 
 /* ═══════════════ Home cards never attach ═══════════════ */

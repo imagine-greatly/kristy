@@ -410,6 +410,30 @@ standard distinction is still visible on every flag.
 
 ---
 
+## Readable in the aisle
+
+A counter card is read standing in a store with a cart in one hand. The point lands in
+about five seconds or it does not land. Warmth here is not adjectives; it is specificity:
+the actual contents, feed or process, said plainly. Thresholds below are set from the
+measured distribution of the live cards (`readability()` in `server/lib/counterCardLint.js`).
+
+| # | Bar | Check |
+| --- | --- | --- |
+| R1 | **Lead first.** Headline ≤12 words. Read alone, it tells which one to reach for (cover test). | Lint (existing cap); critic |
+| R2 | **Five seconds.** Headline + do line together, and `short_answer`, stay under their word caps. | Lint: `READ_FIVE_SECONDS` |
+| R3 | **Short sentences.** Every sentence in `decision`, `short_answer`, `why`, `look_for`, `watch_out` stays under the sentence cap. | Lint: `READ_SENTENCE_LONG` |
+| R4 | **One idea per sentence.** At most one `;` or parenthetical per sentence; no em-dash asides. | Lint: `READ_STACKED` |
+| R5 | **Plain words.** A technical term appears only in `detail`, explained where it appears. | Critic |
+| R6 | **Warmth is specificity.** Names the real contents, feed or process. No significance claims, no persona, no padding. | Critic (`voiceTics` catches part) |
+| R7 | **Unchanged law.** Zero first person, the claim lock, no-treatment, no price, no brand criticism. | Existing lints + critic |
+
+**Rewriting an existing card for readability is rephrasing, never deletion.** `sources`,
+aliases, `asked_as`, category and `evidence_tier` stay byte-identical; no field is emptied;
+`watch_out` never loses an item; every number and every named concern in the old text
+survives in the new text.
+
+---
+
 ## Note for Devon
 
 The earlier spec was right that a blunt "no I" would destroy the honesty backbone — but

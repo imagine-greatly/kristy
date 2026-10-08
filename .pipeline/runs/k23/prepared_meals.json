@@ -1,0 +1,41 @@
+{
+  "id": "prepared_meals",
+  "title": "Prepared meals",
+  "aliases": [
+    "prepared meals",
+    "prepared foods",
+    "hot bar",
+    "ready meals"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick prepared meals?",
+  "decision": "Hot food held hot and cold food held cold.",
+  "why": "Hot buffet food is held at 140°F or above, and cold items below 40°F.",
+  "short_answer": "Hot food in the case should sit at 140°F or above, and cold food below 40°F. Look for a thermometer facing out, and pans filled no higher than the rim.",
+  "detail": "Hot buffet items belong in chafing dishes, slow cookers or warming trays at 140°F or above. Cold items like cut fruit and salads sit below 40°F, in bowls over ice. All buffet food is meant to be thrown out after two hours, whatever the holding temperature. An outward-facing thermometer shows the temperature inside the case. Pans piled into mounds above the rim cannot hold an even temperature. A sneeze guard should cover the food, and each dish should have its own utensil. Rotisserie chicken has a card of its own.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety",
+    "https://www.tastingtable.com/1546547/temperature-prepared-foods-grocery-store-deli",
+    "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/"
+  ],
+  "kristy_take": "One food writer’s advice: skip late-night hot bar visits, when food is more likely to have sat a long time.",
+  "cart_pick": "A dish from a case with a thermometer",
+  "buying_tips": [
+    "Find the thermometer facing out and read it before choosing.",
+    "Pick pans filled to the rim, not piled into mounds.",
+    "Look for a sneeze guard and a separate utensil for each dish.",
+    "At home, two hours out at most, then into the fridge."
+  ],
+  "watch_out": [
+    "Buffet food is thrown out after two hours, whatever the holding temperature."
+  ],
+  "labels_decoded": [],
+  "tier_note": "A thermometer facing out lets anyone read the case.",
+  "asked_as": [
+    "which prepared meals should i buy",
+    "are prepared foods worth buying",
+    "are ready meals worth buying"
+  ],
+  "_do_line": "Check the case thermometer, and pans filled no higher than the rim."
+}

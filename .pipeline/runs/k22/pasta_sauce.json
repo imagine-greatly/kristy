@@ -1,0 +1,56 @@
+{
+ "id": "pasta_sauce",
+ "title": "Pasta sauce",
+ "aliases": [
+  "pasta sauce",
+  "marinara",
+  "marinara sauce",
+  "spaghetti sauce",
+  "jarred pasta sauce"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick pasta sauce?",
+ "decision": "Pasta sauce with tomatoes first and a short list.",
+ "why": "Ingredients are listed most first, so tomatoes listed first means no ingredient outweighs them.",
+ "short_answer": "Read the ingredient list. Ingredients run from most to least, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
+ "detail": "Ingredients on a label are listed by common name in descending order of predominance, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+ "evidence_tier": "kristys_standard",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/101.4",
+  "https://www.law.cornell.edu/cfr/text/21/155.190",
+  "https://www.law.cornell.edu/cfr/text/21/114.3",
+  "https://extension.psu.edu/canning-tomatoes-dos-and-donts",
+  "https://ouritaliantable.com/sugo-di-pomodoro/"
+ ],
+ "kristy_take": "Tomatoes first and a short list is a craft standard. One Neapolitan family’s sugo is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+ "cart_pick": "Pasta sauce listing tomatoes first",
+ "buying_tips": [
+  "Read the first ingredient; tomatoes should lead.",
+  "Count what follows the tomatoes; a short list is the craft standard.",
+  "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
+ ],
+ "watch_out": [
+  "An ingredient listed ahead of the tomatoes outweighs them in the jar."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Ingredients",
+   "meaning": "Listed most first."
+  },
+  {
+   "term": "With ___",
+   "meaning": "On canned tomatoes, names an added spice, seasoning or vegetable."
+  },
+  {
+   "term": "With tomato puree",
+   "meaning": "Names the packing medium the tomatoes sit in."
+  }
+ ],
+ "tier_note": "A short list led by tomatoes is a craft standard, not a safety line.",
+ "asked_as": [
+  "which pasta sauce should i buy",
+  "how do i pick a pasta sauce",
+  "is marinara sauce worth buying"
+ ],
+ "_do_line": "Read the ingredients for anything listed ahead of the tomatoes."
+}

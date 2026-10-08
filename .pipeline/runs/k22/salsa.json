@@ -1,0 +1,57 @@
+{
+ "id": "salsa",
+ "title": "Salsa",
+ "aliases": [
+  "salsa",
+  "jarred salsa",
+  "chunky salsa",
+  "salsa jar",
+  "mild salsa",
+  "pico de gallo"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick a salsa?",
+ "decision": "Salsa led by vegetables; a fresh tub stays cold.",
+ "why": "Salsa mixes low-acid onions and peppers with tomatoes and an added acid. A tub sold cold stays cold.",
+ "short_answer": "Salsa mixes low-acid onions and peppers with tomatoes and an acid, such as vinegar, lime or lemon juice. A shelf jar is heat-processed. A fresh tub sold from the cold case stays in the refrigerator.",
+ "detail": "Most salsa is a mix of low-acid foods, such as onions and peppers, with more acid foods, such as tomatoes. Vinegar or citrus juice, such as lemon or lime, often adds more acid. A shelf jar is an acidified food: acid is added to low-acid ingredients for a pH of 4.6 or below. pH is the measure of acidity. Federal rules also require an acidified food to be thermally processed, that is, heat-processed. Salsas are named among acidified foods. Foods stored, distributed and sold under refrigeration are outside that definition. For a shelf jar sold under inspection, a process authority reviews the recipe and sets its scheduled heat process. Some states have cottage-food laws that let home kitchens sell certain foods without inspection. In Virginia, for example, such a jar sells only directly to shoppers, such as at farmers markets. Its front label states it was processed and prepared without state inspection. Its label also names the maker, physical address and phone number. These are label facts about where a jar was made.",
+ "evidence_tier": "kristys_standard",
+ "sources": [
+  "https://extension.uconn.edu/?p=4483",
+  "https://www.law.cornell.edu/cfr/text/21/114.80",
+  "https://www.pubs.ext.vt.edu/FST/FST-321/FST-321",
+  "https://extension.colostate.edu/resource/making-pickled-peppers/"
+ ],
+ "kristy_take": "Salsa pairs low-acid onions and peppers with tomatoes and an acid. Vinegar, lime or lemon juice on the list names that acid.",
+ "cart_pick": "Salsa with vinegar or citrus on the list",
+ "buying_tips": [
+  "Look for onions, peppers and tomatoes alongside an acid on the list.",
+  "A fresh tub from the cold case goes straight back in the refrigerator.",
+  "Homemade salsa keeps up to one week in the refrigerator.",
+  "In Virginia, a home-kitchen jar sells directly to shoppers and names its maker, address and phone."
+ ],
+ "watch_out": [
+  "A tub sold from the cold case is meant to be stored under refrigeration, unlike a shelf jar."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Keep refrigerated",
+   "meaning": "A salsa stored, distributed and sold under refrigeration rather than heat-processed for the shelf."
+  },
+  {
+   "term": "Vinegar, lime juice or lemon juice",
+   "meaning": "The added acid that a salsa pairs with its low-acid onions and peppers."
+  },
+  {
+   "term": "Processed and prepared without state inspection",
+   "meaning": "A Virginia front-label statement on a home-kitchen jar sold directly to shoppers."
+  }
+ ],
+ "tier_note": "Vinegar or citrus on the ingredients is what lets a shelf jar keep.",
+ "asked_as": [
+  "which salsa should i buy",
+  "is jarred salsa worth buying",
+  "how do i pick a salsa"
+ ],
+ "_do_line": "Read the ingredients for the acid: vinegar, lime or lemon juice."
+}

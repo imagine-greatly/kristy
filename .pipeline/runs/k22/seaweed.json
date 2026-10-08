@@ -1,0 +1,68 @@
+{
+ "id": "seaweed",
+ "title": "Seaweed",
+ "aliases": [
+  "seaweed",
+  "nori",
+  "nori sheets",
+  "kombu",
+  "kelp",
+  "wakame",
+  "dried seaweed",
+  "seaweed snacks",
+  "sea vegetables",
+  "is nori worth buying"
+ ],
+ "category": "bulk_pantry",
+ "question": "How do you pick seaweed?",
+ "decision": "Dried sea vegetables labeled with their kind: nori, kombu or kelp.",
+ "why": "Kinds differ widely, and several products label the species inadequately, so read for the kind by name.",
+ "short_answer": "Look for the kind by name, such as nori, kombu or kelp, not just “seaweed”. Kinds differ widely. Brown seaweeds such as kelp are dried, then ground or chopped for food.",
+ "detail": "Brown algae are seaweeds of listed species, among them Laminaria, Macrocystis and Undaria species. They are harvested mainly in coastal waters of the northern Atlantic and Pacific. The material is dried and ground or chopped for use in food. Kelp is also used in spices and seasonings as a flavor enhancer. As a food additive, kelp is the dehydrated, ground product made from certain Macrocystis and Laminaria species. One study found the species labeling inadequate or inaccurate for several products. Iodine content varies widely by kind, from 16 µg (micrograms) per gram in nori to over 8165 µg per gram in one sample of processed kelp granules. In Maine, most wild sea vegetables are harvested by hand at low tide in early spring. Harvesters trim the blades and leave the holdfast, the base that anchors the plant, for regrowth. Seaweed harvesting is generally done in the spring and summer months. Bullwhip kelp does not keep well under refrigeration or by freezing, so its blades are dried for storage.",
+ "evidence_tier": "kristys_standard",
+ "sources": [
+  "https://www.law.cornell.edu/cfr/text/21/184.1120",
+  "https://www.law.cornell.edu/cfr/text/21/172.365",
+  "https://pubmed.ncbi.nlm.nih.gov/15588380/",
+  "https://foodandnutritionresearch.net/index.php/fnr/article/download/7584/13452",
+  "https://seagrant.umaine.edu/maine-seafood-guide/seaweed/",
+  "https://uaf.edu/ces/publications/database/food/bullwhip-kelp.php"
+ ],
+ "kristy_take": "Sea vegetables are gathered wild or farmed. In Maine, farmers grow sugar kelp and alaria on seeded lines, ropes preloaded with juvenile plants.",
+ "cart_pick": "Dried seaweed with its kind named",
+ "buying_tips": [
+  "Read the package for the kind: nori, kombu, kelp or another.",
+  "Laver, or nori, is soaked briefly or toasted dry.",
+  "Sugar kelp is soaked briefly, then simmered into broths.",
+  "Dulse is eaten as a snack straight from the bag."
+ ],
+ "watch_out": [
+  "Species labeling was inadequate or inaccurate on several products in one study.",
+  "A package that says only “seaweed” leaves the kind unnamed."
+ ],
+ "labels_decoded": [
+  {
+   "term": "Nori",
+   "meaning": "Another name for laver, soaked briefly or toasted dry."
+  },
+  {
+   "term": "Kelp",
+   "meaning": "A brown seaweed, dried and ground or chopped for food."
+  },
+  {
+   "term": "Sea vegetables",
+   "meaning": "Another name for seaweed, gathered wild or farmed."
+  },
+  {
+   "term": "Dulse",
+   "meaning": "A salty red seaweed, often eaten straight from the bag."
+  }
+ ],
+ "tier_note": "The kind by name tells nori from kelp, which differ widely.",
+ "asked_as": [
+  "which seaweed should i buy",
+  "is nori worth buying",
+  "are seaweed snacks worth buying"
+ ],
+ "_do_line": "Read the package for the seaweed’s kind by name, not just “seaweed”."
+}

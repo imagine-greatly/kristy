@@ -1,0 +1,59 @@
+{
+  "id": "frozen_pizza",
+  "title": "Frozen pizza",
+  "aliases": [
+    "frozen pizza",
+    "frozen pizzas",
+    "freezer pizza"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a frozen pizza?",
+  "decision": "Frozen pizza with a short crust list: flour, water, salt, yeast.",
+  "why": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
+  "short_answer": "Read the crust list first. Traditionally, Neapolitan dough holds only flour, water, salt and yeast. A crust sold as whole wheat should list whole wheat flour, not plain wheat flour.",
+  "detail": "Traditionally, Neapolitan dough is made only of flour, water, salt and yeast. The flour is 00 flour, a soft wheat flour of medium strength. The dough rises at least 8 hours, in two phases. Dough balls run 180 to 250 g. They are stretched by hand only, never pressed by machine or rolled with a pin. The finished pizza is no wider than 35 cm. Leftover dough balls are thrown out each evening. The pizza bakes on the floor of a wood oven at 430 to 485°C, for 60 to 90 seconds. The wood must give off no smoke or odor: oak, ash, beech and maple. Well baked means golden and unburnt, with a bread-scented rim and a soft center that folds without breaking. “Verace Pizza Napoletana” is a collective mark, a name its own association governs. It is not a DOP, the Italian protected name given only to first-stage foods such as cheese and oil. Ready pizzas and frozen dough balls are spreading today. On a US label, “pan style” means a pizza marketed in a pan with a thick crust. “Sicilian style” means a thick crust, usually 50 percent or more of the pizza.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://ilfattoalimentare.it/pizza-napoletana-disciplinare.html",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+    "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
+    "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+    "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn"
+  ],
+  "kristy_take": "The short crust list is the standard here. Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
+  "cart_pick": "A pizza with a short crust list",
+  "buying_tips": [
+    "Read the crust list for flour, water, salt and yeast.",
+    "On a whole wheat crust, look for whole wheat flour listed first.",
+    "At home, double-wrap a pizza for the freezer: plastic wrap, then foil.",
+    "Air touching the surface leaves freezer burn, grayish-brown leathery spots."
+  ],
+  "watch_out": [
+    "A meat named on the box sets no minimum amount of that meat."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Wheat flour",
+      "meaning": "Plain flour, milled without the whole kernel. It is not a whole grain flour."
+    },
+    {
+      "term": "Whole wheat flour",
+      "meaning": "A whole grain flour. FDA draft advice: a crust sold as whole wheat uses it throughout."
+    },
+    {
+      "term": "Meat in the name",
+      "meaning": "A pizza named for a meat topping needs no minimum amount of that meat."
+    },
+    {
+      "term": "Imitation cheese",
+      "meaning": "Named on the label when a pizza holds less than one part cheese to nine parts cheese substitute."
+    }
+  ],
+  "tier_note": "A whole wheat crust uses whole wheat flour, not plain wheat flour.",
+  "asked_as": [
+    "which frozen pizza should i buy",
+    "is frozen pizza worth buying",
+    "how do i pick a frozen pizza"
+  ],
+  "_do_line": "Check a crust sold as whole wheat for whole wheat flour throughout."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "snacks",
+  "title": "Snacks",
+  "aliases": [
+    "snack aisle",
+    "snack food aisle",
+    "packaged snack foods"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick packaged snack foods?",
+  "decision": "Read the first ingredient; then ask about chips, crackers or popcorn.",
+  "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
+  "short_answer": "Ingredients run in order of amount, so the first one is the most. A whole grain, vegetable or bean should come first. Multigrain does not mean whole grain. For one snack, ask about chips, crackers or popcorn.",
+  "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. Multigrain products are often made with several refined grains. Some veggie chips are potato flour colored with vegetable powder or extract, and the ingredients show it. Front-of-package claims and pictures can mislead, so the ingredient list settles it.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.nutritionletter.tufts.edu/?p=148621",
+    "https://www.law.cornell.edu/cfr/text/21/101.4",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+    "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
+  ],
+  "kristy_take": "The snack aisle reads best one product at a time. Chips, crackers and popcorn each have a card of their own.",
+  "cart_pick": "A snack with a whole grain listed first",
+  "buying_tips": [
+    "Read the first ingredient before the front of the bag.",
+    "Look for a whole grain, vegetable or bean listed first.",
+    "Read “multigrain” as several grains, not whole grains."
+  ],
+  "watch_out": [
+    "Front-of-package claims and pictures can mislead; the ingredient list settles it."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Multigrain",
+      "meaning": "Several grains, often refined ones; it does not mean whole grain."
+    },
+    {
+      "term": "Vegetable powder",
+      "meaning": "Powder or extract that colors a chip; check whether potato flour comes first."
+    }
+  ],
+  "tier_note": "Vegetable powder colors potato flour, so the chip is mostly potato.",
+  "asked_as": [
+    "which packaged snack foods should i buy",
+    "are packaged snack foods worth buying",
+    "which snack aisle foods should i buy"
+  ],
+  "_do_line": "Check veggie chips for potato flour colored with vegetable powder."
+}

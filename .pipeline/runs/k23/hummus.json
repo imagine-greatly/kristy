@@ -1,0 +1,57 @@
+{
+  "id": "hummus",
+  "title": "Hummus",
+  "aliases": [
+    "hummus",
+    "hommus",
+    "hummus dip"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick hummus?",
+  "decision": "Hummus of chickpeas and tahini, the traditional pairing.",
+  "why": "Hummus bi tahina names its two parts, chickpeas and tahini. Store tubs add lemon and salt.",
+  "short_answer": "Hummus is chickpeas and tahini, with garlic, lemon and salt. The word is Arabic for chickpea. Store tubs typically list chickpeas, tahini, lemon and salt, and every tub in one tasting had an acid.",
+  "detail": "The full name, hummus bi tahina, names chickpeas and tahini, a paste of sesame seeds. A 13th-century cookbook from Cairo holds the first written record, without tahini or garlic. Some historians trace the modern style to 18th-century Damascus. In Israel, Palestine and Lebanon it is a main dish, not just a dip. Guar gum thickens a tub and stops weeping, and roughly half the tubs in one tasting used it. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground. Homemade hummus keeps three to four days in an airtight container in the fridge.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.britannica.com/topic/hummus",
+    "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
+    "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
+    "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/"
+  ],
+  "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
+  "cart_pick": "Hummus led by chickpeas and tahini",
+  "buying_tips": [
+    "Read the list for chickpeas and tahini at the top.",
+    "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+    "A tub listing guar gum runs thicker; without it, water and grind set the texture."
+  ],
+  "watch_out": [
+    "A grainy tub likely comes from a coarse grind of the chickpeas."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Tahini",
+      "meaning": "A paste of toasted sesame seeds, the second half of hummus bi tahina."
+    },
+    {
+      "term": "Guar gum",
+      "meaning": "A thickener that binds the dip and stops weeping."
+    },
+    {
+      "term": "Citric acid",
+      "meaning": "An acid, used like lemon, to balance the richness of chickpeas and tahini."
+    },
+    {
+      "term": "Pasteurized",
+      "meaning": "Heated before packing and sealing, as most store-bought hummus is."
+    }
+  ],
+  "tier_note": "The ingredients name guar gum when a tub uses it for texture.",
+  "asked_as": [
+    "which hummus should i buy",
+    "is hummus worth buying",
+    "how do i pick a hummus"
+  ],
+  "_do_line": "Read the ingredients for guar gum, which keeps the dip from weeping."
+}

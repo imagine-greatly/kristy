@@ -1,0 +1,50 @@
+{
+  "id": "popcorn",
+  "title": "Popcorn",
+  "aliases": [
+    "popcorn",
+    "microwave popcorn",
+    "popcorn kernels"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick popcorn?",
+  "decision": "Plain popcorn kernels, popped with only what gets added.",
+  "why": "Plain kernels pop with no oil at all, so the cook decides on any butter, oil or salt.",
+  "short_answer": "Popcorn is its own variety of corn. Water inside the hard hull turns to steam, the hull bursts and the kernel turns inside out. Plain kernels pop in a paper bag in the microwave, no oil needed.",
+  "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://ag.purdue.edu/news/2020/02/whats-under-the-shell-of-this-popular-snack.html",
+    "https://www.nbcnews.com/id/wbna7584284",
+    "https://share.america.gov/popcorn-hails-from-americas-heartland/",
+    "https://www.csmonitor.com/The-Culture/Food/Stir-It-Up/2014/0903/The-easier-cheaper-way-to-make-air-popped-popcorn",
+    "https://blogs.extension.iastate.edu/answerline/2026/05/19/popcorn/"
+  ],
+  "kristy_take": "Popped corn found in Peru dates back 6,700 years. One extension view holds that whole kernels popped at home are the consumer-controlled option. Nebraska grows the most popcorn, and Indiana is second.",
+  "cart_pick": "Plain popcorn kernels",
+  "buying_tips": [
+    "Buy plain kernels and add butter or oil and salt at home, if wanted.",
+    "Loose kernels pop in a plain brown paper bag in the microwave.",
+    "Unpopped “old maids” come from hulls with cuts or weak spots."
+  ],
+  "watch_out": [
+    "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Popcorn kernels",
+      "meaning": "Whole dried kernels of popcorn, ready to pop."
+    },
+    {
+      "term": "Butterfly and mushroom",
+      "meaning": "The two popped shapes; mushroom is the one often sold prepopped and coated."
+    }
+  ],
+  "tier_note": "Popcorn with nothing besides it leaves oil and salt to the cook.",
+  "asked_as": [
+    "which popcorn should i buy",
+    "is microwave popcorn worth buying",
+    "which popcorn kernels should i buy"
+  ],
+  "_do_line": "Read the ingredients for anything listed besides popcorn."
+}

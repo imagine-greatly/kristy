@@ -1,0 +1,49 @@
+{
+  "id": "potato_chips",
+  "title": "Potato chips",
+  "aliases": [
+    "potato chips",
+    "kettle chips",
+    "kettle cooked chips",
+    "potato crisps"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick potato chips?",
+  "decision": "Potato chips cut as thin slices, the way chips began.",
+  "why": "A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes.",
+  "short_answer": "A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes.",
+  "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead.",
+  "evidence_tier": "established",
+  "sources": [
+    "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
+    "https://www.chowhound.com/1803980/pringles-arent-potato-chips/",
+    "https://www.thetakeout.com/1833928/why-pringles-not-real-potato-chips/"
+  ],
+  "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
+  "cart_pick": "Potato chips sliced from potatoes",
+  "buying_tips": [
+    "Read the ingredients; a sliced chip starts with potatoes.",
+    "Identical, stackable shapes point to a crisp pressed from flakes.",
+    "Expect irregular sizes and folds in a bag of sliced chips."
+  ],
+  "watch_out": [
+    "“Potato crisps” can name a product pressed from dried potato flakes, not slices."
+  ],
+  "labels_decoded": [
+    {
+      "term": "Made from dried potatoes",
+      "meaning": "The disclaimer for a chip pressed from dehydrated potato flakes rather than sliced."
+    },
+    {
+      "term": "Potato crisps",
+      "meaning": "The British word for chips, also taken by a stacked product to avoid that disclaimer."
+    }
+  ],
+  "tier_note": "A dried potatoes line on the label means flakes, not slices.",
+  "asked_as": [
+    "which potato chips should i buy",
+    "are kettle chips worth buying",
+    "are potato crisps worth buying"
+  ],
+  "_do_line": "Read the label for “made from dried potatoes”, the mark of a pressed chip."
+}

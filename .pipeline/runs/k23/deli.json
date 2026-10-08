@@ -1,0 +1,38 @@
+{
+  "id": "deli",
+  "title": "Deli",
+  "aliases": [
+    "deli section",
+    "deli section foods",
+    "store deli case"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick deli section foods?",
+  "decision": "Ask about deli salads, prepared meals or lunch meat by name.",
+  "why": "Meats, cheeses and salads in the deli all need refrigeration. Hot foods hold at 140°F or above.",
+  "short_answer": "The deli case holds meats, cheeses and salads, and all of them need refrigeration. Hot foods are held at 140°F or above. For one food, ask about deli salads, prepared meals or lunch meat.",
+  "detail": "Breads and dry snacks are fine out of the cold, but all meats, cheeses and salad products need refrigeration. Hot buffet items are held at a minimum of 140°F, and cold items below 40°F. Lunch meat and rotisserie chicken each have a card of their own.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+    "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+    "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety"
+  ],
+  "kristy_take": "The deli holds several questions in one case. Salads, hot food and lunch meat each read differently.",
+  "cart_pick": "Deli foods from the cold case",
+  "buying_tips": [
+    "Check that meats, cheeses and salads sit in a refrigerated case.",
+    "For hot food, look for a case held at 140°F or above.",
+    "Ask about one food by name: deli salads, prepared meals or lunch meat."
+  ],
+  "watch_out": [
+    "Meats, cheeses or salads left out of a refrigerated case are a red flag."
+  ],
+  "labels_decoded": [],
+  "tier_note": "Meats, cheeses and salads in the deli belong in the cold.",
+  "asked_as": [
+    "which deli section foods should i buy",
+    "are deli section foods worth buying",
+    "which store deli case foods should i buy"
+  ],
+  "_do_line": "Check the cold case first; meats, cheeses and salads all need it."
+}
