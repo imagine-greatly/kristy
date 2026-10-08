@@ -6767,6 +6767,12 @@
         "“Wheat” or “enriched” alone does not establish that the grain is whole.",
         "A Basic Whole Grain Stamp allows more refined grain than whole grain."
       ],
+      "pick_steps": [
+        "Check the ingredients for whole wheat flour, not just “wheat” or “enriched”.",
+        "Check the stamp: 100% means all whole grain; Basic allows more refined grain.",
+        "Without a stamp, use the flour names to check the loaf."
+      ],
+      "science": "US whole wheat bread uses whole wheat flour, which keeps the grain’s bran and germ in natural proportions. The standard excludes ordinary, bromated and phosphated flour from the dough. Enriched grain and whole grain are different descriptions, so a loaf called “wheat” needs an ingredient check. A Basic Whole Grain Stamp may appear on bread with more refined grain than whole grain.",
       "labels_decoded": [
         {
           "term": "Whole wheat",
@@ -6814,6 +6820,12 @@
         "The word sourdough alone does not establish traditional fermentation.",
         "The archived review does not establish a health outcome for every loaf. Wheat sourdough still contains gluten."
       ],
+      "pick_steps": [
+        "Look for flour, water, salt, and a culture or starter on the list.",
+        "If the starter isn’t listed, ask the baker how the dough rises.",
+        "Added vinegar or acetic acid can give sour flavor without starter fermentation."
+      ],
+      "science": "Traditional sourdough rises on a starter, a flour-and-water culture of wild yeasts and bacteria. Those microbes form acid and leaven the dough. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor. The US has no standard of identity for sourdough, so the word alone settles nothing. No health result is established for every loaf, and wheat sourdough still contains gluten.",
       "labels_decoded": [
         {
           "term": "Starter",
@@ -6861,6 +6873,12 @@
       "watch_out": [
         "The source set contains articles, not health trials. The crust does not establish a health benefit."
       ],
+      "pick_steps": [
+        "Ask which bath the bakery uses before baking: lye or baking soda.",
+        "Ask whether the dark crust comes from dipping, not judging by color.",
+        "Baking soda is a documented bath too when lye-dipped rolls are unavailable."
+      ],
+      "science": "A dip in an alkaline bath before baking gives pretzel bread its characteristic crust. Lye and baking soda are different bath ingredients, and both are documented methods. The color alone does not show which bath was used. The sources are culinary articles, not health trials; the crust establishes no health benefit.",
       "labels_decoded": [
         {
           "term": "Alkaline bath",
@@ -6903,6 +6921,12 @@
       "watch_out": [
         "Boiling and browning are processing and texture facts. The archived articles establish no health advantage."
       ],
+      "pick_steps": [
+        "Ask the bakery whether the bagels are boiled before baking.",
+        "Don’t infer boiling from the shape; without a process label, ask.",
+        "Ask what goes in the bath; baking soda changes alkalinity and browning."
+      ],
+      "science": "Boiling before baking sets a bagel’s exterior and gives its characteristic chew. A longer boil can make the crust chewier and the interior denser. Baking soda in the bath changes its alkalinity and promotes browning. Boiling and browning are processing and texture facts, with no established health advantage.",
       "labels_decoded": [
         {
           "term": "Boiled before baking",
@@ -6951,6 +6975,12 @@
         "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
         "The laboratory paper does not establish a health effect for a supermarket tortilla."
       ],
+      "pick_steps": [
+        "Corn tortillas: look for masa or masa harina, water and salt.",
+        "Check that a corn tortilla doesn’t also list wheat flour.",
+        "Flour tortillas: read the flour and the named fat, not the color."
+      ],
+      "science": "Traditional corn tortillas start with corn cooked and soaked in alkaline limewater, called nixtamalization, then ground into masa. Masa harina is that dough, dried and ground. Corn flour alone is a different ingredient. Some packaged corn tortillas contain wheat, so corn on the front is not a complete ingredient statement. Lab work measured digestibility under set processing conditions, not health outcomes from retail tortillas.",
       "labels_decoded": [
         {
           "term": "Masa harina",
@@ -7101,6 +7131,12 @@
         "Honey-sweetened granola still has added sugar.",
         "A grain stamp alone does not tell how much sugar was added."
       ],
+      "pick_steps": [
+        "Look for the 100% stamp; other stamps don’t mean all grain is whole.",
+        "Read the added-sugars line, even with honey or syrup as the sweetener.",
+        "Without a stamp, read the grain ingredients and the added-sugars line."
+      ],
+      "science": "Whole-grain content and added sugar are separate label checks. The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. The stamp rules set no added-sugar ceiling. FDA counts sugars added during processing, including honey and syrups, as added sugars. So honey-sweetened granola still has added sugar.",
       "labels_decoded": [
         {
           "term": "100% Whole Grain Stamp",
@@ -7151,6 +7187,12 @@
         "Bronze-cut is a surface-texture description. The source set establishes no health advantage from the die.",
         "“Enriched” describes added nutrients, not whole-grain content."
       ],
+      "pick_steps": [
+        "Look for durum semolina and water in the ingredients.",
+        "Read enrichment on its own: it adds nutrients, not whole grain.",
+        "Bronze-cut means a rougher surface; plain pasta can be checked by ingredients alone."
+      ],
+      "science": "US standards allow dry pasta from semolina, durum flour, farina or flour, with water and optional ingredients. The ingredient list shows which one is in the box. Enriched pasta carries specified vitamins and iron, which does not make it whole grain. Bronze-cut describes the die and the rough surface it leaves. Culinary articles describe sauce adhesion from that surface, not a health advantage.",
       "labels_decoded": [
         {
           "term": "Enriched",
@@ -8910,6 +8952,12 @@
         "Sprouted wheat bread contains gluten, so it is not gluten-free.",
         "Some sprouted loaves add flour or gluten, so the name alone does not settle it."
       ],
+      "pick_steps": [
+        "Sprouted whole grains should lead the ingredient list.",
+        "Check the rest for added flour or wheat gluten.",
+        "Look in the refrigerated or freezer case."
+      ],
+      "science": "Sprouted bread is made from whole grains allowed to germinate, or sprout, before milling. Some loaves add flour or gluten, so the name alone does not settle it. Besides wheat, a loaf may include millet, barley, lentils or soy. The loaf tends to be denser and heavier than bread made from flour. Sprouted wheat still contains gluten, so it is not gluten-free.",
       "labels_decoded": [
         {
           "term": "Sprouted whole grain",
@@ -9081,6 +9129,12 @@
         "Celiac disease or a gluten concern? Ask a doctor which foods fit.",
         "“Gluten-free” describes gluten content only, nothing else about the loaf."
       ],
+      "pick_steps": [
+        "Find the claim: “gluten-free”, “no gluten”, “free of gluten” or “without gluten”.",
+        "Read which flours and starches replace the wheat, and the binding gum.",
+        "Celiac disease or a gluten concern: ask a doctor which foods fit."
+      ],
+      "science": "All four claim wordings mean the food has less than 20 ppm gluten under one federal rule. The claim is voluntary. Wheat starch may appear only if the food stays under that limit. Bakers replace gluten with blended flours and starches, such as rice, potato or tapioca. A gum binder, usually xanthan gum or HPMC, mimics some of gluten’s stretch. “Gluten-free” describes gluten content only.",
       "labels_decoded": [
         {
           "term": "Gluten-free",
@@ -9137,6 +9191,12 @@
         "Enriched buns use enriched flour in place of whole wheat flour.",
         "A typical enriched bun also lists sugar, soybean oil and dough conditioners."
       ],
+      "pick_steps": [
+        "Read the name on the bag: “whole wheat” buns use no white flour.",
+        "Check that the first ingredient is whole wheat flour.",
+        "“Enriched buns” mean enriched flour, not whole wheat."
+      ],
+      "science": "Bread, rolls and buns share one federal standard, so the name on the bag is regulated. Whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, with no white flour. Enriched buns use enriched flour in place of some or all of the flour. A typical enriched bun also lists sugar, soybean oil and dough conditioners.",
       "labels_decoded": [
         {
           "term": "Whole wheat buns",
@@ -9195,6 +9255,12 @@
       "watch_out": [
         "Factory-made Danish pastry often uses other fats in place of butter, such as hydrogenated sunflower oil."
       ],
+      "pick_steps": [
+        "Read the ingredients for butter by name, or ask the baker.",
+        "Factory Danish often swaps butter for other fats, like hydrogenated sunflower oil.",
+        "On a muffin, read whether the fat is butter or shortening."
+      ],
+      "science": "Danish pastry is laminated: butter is folded into a yeast dough in thin layers. Butter is the traditional fat, and industrial production often uses other fats. A muffin is a quick bread, raised by baking soda instead of yeast. Butter or shortening, eggs and flavorings such as fruit go into the batter.",
       "labels_decoded": [
         {
           "term": "Butter",
@@ -9243,6 +9309,11 @@
       "watch_out": [
         "Toasted or sweetened muesli sits closer to granola."
       ],
+      "pick_steps": [
+        "Pick only grains, fruit, nuts and seeds; no sugar, honey or syrup listed.",
+        "Check whether the bag says toasted; toasted or sweetened sits closer to granola."
+      ],
+      "science": "Plain muesli is a loose, raw mix of rolled oats or other rolled grains, dried fruit, nuts and seeds. It is not baked, and is traditionally soaked overnight in milk or juice. Granola starts from the same base, mixed with oil and a sweetener, then baked into crunchy clusters. Some muesli is sold toasted, so it is no longer raw, and some brands sweeten it.",
       "labels_decoded": [
         {
           "term": "Toasted muesli",
@@ -9292,6 +9363,12 @@
         "“Enriched flour”, “bran” and “wheat germ” never mean whole grain.",
         "“Wheat flour”, “multigrain” and “stoneground” may or may not be whole grain."
       ],
+      "pick_steps": [
+        "Pick the type first, then read the first ingredient for “whole”.",
+        "Trust “100% whole wheat” or “100% whole grain”; check which stamp is shown.",
+        "“Enriched flour”, “bran” and “wheat germ” never mean whole grain."
+      ],
+      "science": "The first ingredient and the Whole Grain Stamp tell a whole grain loaf from a refined one. The 100% Stamp means all the grain is whole, at least 16 g per serving. The 50%+ and Basic Stamps mean at least 8 g. A first ingredient with “whole” makes mostly whole grain likely, not certain. “Wheat flour”, “multigrain” and “stoneground” may or may not be whole grain.",
       "labels_decoded": [
         {
           "term": "100% Stamp",
