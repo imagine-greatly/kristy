@@ -1680,6 +1680,12 @@
         "Local, single-source, or ‘raw’ honey is the most trustworthy.",
         "It’s still a sweetener. Use it with intention."
       ],
+      "pick_steps": [
+        "Read for one ingredient: honey, and nothing else.",
+        "Pick local or single-source raw honey from a producer you can trace.",
+        "‘Raw’ with no named producer is often blended; the word is unregulated."
+      ],
+      "science": "Diluting honey with rice or corn syrup is a documented problem in the global honey trade. So is ultra-filtering to hide origin. Adulteration is hard to test for, since real honey varies with flowers, place and handling. Raw honey is not heat-processed or ultra-filtered. It is still sugar, a real and old sweetener.",
       "labels_decoded": [
         {
           "term": "Raw honey",
@@ -4470,6 +4476,12 @@
         "Single country of origin, named with ‘product of’.",
         "‘First cold pressed’ is a legacy phrase and adds nothing legally."
       ],
+      "pick_steps": [
+        "Look for a recent harvest date, not just a best-by date.",
+        "Pick dark glass or tin, with one country named by ‘product of’.",
+        "‘Pure’, ‘classic’ and ‘light’ mean refined oil; pomace is solvent-extracted."
+      ],
+      "science": "Extra virgin is mechanically extracted with no heat or solvent. It has to pass both a chemical limit and a taste panel. Pomace oil is solvent-extracted from the paste left after pressing. The oil degrades from the day it is pressed, so a harvest date beats a best-by date. ‘Packed in’ names where it was bottled, not where the olives grew.",
       "labels_decoded": [
         {
           "term": "Extra virgin",
@@ -4546,6 +4558,12 @@
         "Store natural jars upside down in the fridge. The oil redistributes on its own.",
         "Same reading for almond, cashew and sunflower butters."
       ],
+      "pick_steps": [
+        "Read the list for nuts, and salt if wanted, and nothing else.",
+        "Oil on top is the good sign; no-stir means added palm or hydrogenated oil.",
+        "Reduced-fat jars usually swap the fat for sugar and starch."
+      ],
+      "science": "Ground peanuts are peanuts and oil, so a natural jar separates. Stabilizers such as palm or hydrogenated oil hold the fat in suspension. Most no-stir jars add sugar too. Reduced-fat versions typically replace the removed fat with sugar and starch. With no stabilizer, a jar left warm for a long stretch goes rancid. Stir once, then keep it upside down in the fridge.",
       "labels_decoded": [
         {
           "term": "Natural",
@@ -10710,6 +10728,12 @@
         "Curing salt, sometimes dyed pink and labeled “pink salt,” is not pink Himalayan salt.",
         "Salts do not swap cup for cup, since crystal size changes the measure."
       ],
+      "pick_steps": [
+        "Pick table salt for fine grains, kosher or sea salt for coarse.",
+        "Pick pickling or canning salt for canning, since it has nothing added.",
+        "Salt without iodide says “does not supply iodide” beside its name."
+      ],
+      "science": "Iodized salt is table salt with iodide, a form of iodine, added. Salt with no added iodide must say so right after its name. Sea salt is made by evaporating seawater and usually has larger crystals. Kosher salt is coarse. Crystal size changes how salt measures, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts.",
       "labels_decoded": [
         {
           "term": "Iodized",
@@ -10766,6 +10790,12 @@
       "watch_out": [
         "Coconut sugar is made mostly of sucrose, like other sugar."
       ],
+      "pick_steps": [
+        "Pick light or dark brown sugar; dark carries more molasses.",
+        "Cane or beet on the bag makes no difference; the sugar is the same.",
+        "Keep brown sugar closed, since it hardens in open air."
+      ],
+      "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
       "labels_decoded": [
         {
           "term": "Includes Xg Added Sugars",
@@ -10821,6 +10851,12 @@
       "watch_out": [
         "Table or pancake syrup is a different product from maple syrup."
       ],
+      "pick_steps": [
+        "Check that the name says maple syrup, not table or pancake syrup.",
+        "Pick Golden or Amber for a delicate taste, Dark or Very Dark for strong.",
+        "Pick a darker grade for cooking."
+      ],
+      "science": "Maple syrup is a standardized food name under federal rules. Table or pancake syrup falls under a separate standard. Since 2015, all consumer maple syrup is Grade A. Within Grade A, syrup is classed by color and taste: Golden, Amber, Dark and Very Dark. The flavor follows the color, from delicate to strong.",
       "labels_decoded": [
         {
           "term": "Grade A",
@@ -10877,6 +10913,12 @@
       "watch_out": [
         "Oil that starts smoking in the pan is no longer fit to use."
       ],
+      "pick_steps": [
+        "Read the label for the oil’s name, then refined or unrefined.",
+        "Pick refined oil for long high heat like deep-frying.",
+        "Pick unrefined oil when its flavor belongs in the dish."
+      ],
+      "science": "Most store oils are RBD: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability. Refined oils stand up longer to the long high heat of deep-fat frying. Minimally processed pressed oils keep the flavor of the original seed. The smoke point is the temperature where an oil begins to smoke and burn. Past it, the oil is no longer fit to use.",
       "labels_decoded": [
         {
           "term": "RBD",
@@ -10927,6 +10969,12 @@
       "watch_out": [
         "“Shortening prepared with meat fats and vegetable oils” is a mixed fat, not plain lard."
       ],
+      "pick_steps": [
+        "Read the ingredients for one fat: pork for lard, beef for tallow.",
+        "Check for lard stearin or hydrogenated lard; the label must state either.",
+        "A tub called shortening is not plain lard; read which fats it names."
+      ],
+      "science": "Lard is fat rendered from pork tissue, and tallow is rendered beef fat. Rendered fat is fat cooked out of the tissue. Leaf lard comes from the abdominal fat. Lard may be hardened with lard stearin or hydrogenated lard, and the label must state it. Rendered animal fat may contain no added water. Shortening made from meat fats and vegetable oils is named for those fats.",
       "labels_decoded": [
         {
           "term": "Leaf lard",
@@ -10984,6 +11032,12 @@
       "watch_out": [
         "Swapping one cocoa for the other changes the rise unless the leavener changes too."
       ],
+      "pick_steps": [
+        "Use the cocoa the recipe names.",
+        "Pick natural cocoa when the recipe leans on baking soda alone.",
+        "Pick Dutch cocoa, labeled “processed with alkali,” when the recipe uses only baking powder."
+      ],
+      "science": "Natural cocoa is acidic, with a pH of 5 to 6. Dutch cocoa is processed with an alkali, a base that neutralizes acid, to about 7. Baking soda needs an acid to rise, which natural cocoa supplies. Swapping one cocoa for the other changes the rise unless the leavener changes too.",
       "labels_decoded": [
         {
           "term": "Processed with alkali",
@@ -11099,6 +11153,12 @@
       "watch_out": [
         "Sweetened dried cranberries carry an added sugars figure on the Nutrition Facts."
       ],
+      "pick_steps": [
+        "Pick a bag whose list names only the fruit.",
+        "Expect added sugar on dried cranberries, shown on the added sugars line.",
+        "Check the list for sulfur dioxide or sodium bisulfite, which must be declared."
+      ],
+      "science": "Sulfites, such as sulfur dioxide and sodium bisulfite, are preservatives that stop browning in fruit. A sulfiting agent at 10 parts per million or more must be declared. Dried fruit is on the lists of foods that carry sulfites. Cranberries are naturally tart, so makers sometimes add sugar to dried ones.",
       "labels_decoded": [
         {
           "term": "Sulfur dioxide or sodium bisulfite",
@@ -11145,6 +11205,12 @@
       "watch_out": [
         "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart."
       ],
+      "pick_steps": [
+        "Read the ingredient list to tell fortified from unfortified.",
+        "Fortified has added vitamins named on the list; unfortified has none added.",
+        "Pick flakes, granules or powder by how it will be used."
+      ],
+      "science": "Nutritional yeast is Saccharomyces cerevisiae, the species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, washed, dried and crumbled. So both fortified and unfortified yeast are inactive. The two look alike in the bag.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -11359,6 +11425,12 @@
         "Vinegars at 4 percent acidity are sold, and they are not for canning or pickling.",
         "Water or condensation inside the bottle can drop vinegar below 5 percent acidity."
       ],
+      "pick_steps": [
+        "Read the label for percent acidity; 10 grain equals 1 percent.",
+        "Choose 5 percent acidity for canning or pickling, never a 4 percent bottle.",
+        "On balsamic, read for the full protected name and its aging words."
+      ],
+      "science": "The acid in vinegar is acetic acid, made by fermentation or by synthesis. Most vinegar today comes from distilled grain alcohol by the faster submerged method. Vinegar keeps almost indefinitely, and best-by is about quality. Once open, harmless vinegar bacteria can cloud it, or a soft mother can form. Traditional Balsamic Vinegar of Modena is aged in wooden barrels for at least 12 years.",
       "labels_decoded": [
         {
           "term": "5% acidity",
@@ -11942,6 +12014,12 @@
         "Moisture makes both soda and powder react and change, so keep them dry.",
         "Once opened, baking powder lasts about 6 months."
       ],
+      "pick_steps": [
+        "Pick double-acting baking powder, and check the expiration date.",
+        "Keep both dry: powder in its sealed can, and only dry spoons in either.",
+        "To test soda, add 1 tablespoon vinegar to 1½ teaspoons; it should fizz."
+      ],
+      "science": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Baking powder is soda plus acid salts and cornstarch. Its first acid reacts as soon as the powder is wet. The second reacts only once the batter is both wet and hot. Moisture makes both soda and powder react and change.",
       "labels_decoded": [
         {
           "term": "Double acting",
