@@ -1519,6 +1519,12 @@
         "Brown keeps the magnesium, fiber, manganese and B6 that milling takes off. Half a cup carries 42 mg of magnesium where white carries 10. Half a cup of cooked spinach carries 78.",
         "Plain white long-grain is only a small step below brown. The variety and the origin do more work than the color."
       ],
+      "pick_steps": [
+        "Pick basmati or sushi rice; plain long-grain and parboiled test highest.",
+        "Origin: California, India or Pakistan run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas.",
+        "Vary grains, such as oats, quinoa and barley, so rice isn’t every meal."
+      ],
+      "science": "Rice takes up more inorganic arsenic than other grains, and the bran holds most of it. Brown tests about half again higher than white; variety and origin matter more than color. Boiling in plenty of water and pouring it off removes 40 to 60 percent. Rinsing and soaking measured 5 percent or less. Brown keeps the magnesium, fiber, manganese and B6 that milling takes off.",
       "labels_decoded": [],
       "tier_note": "Origin moving the arsenic number is measured in two testing programs; shopping by it is the whole-food standard, not a finding of harm.",
       "asked_as": [
@@ -1574,7 +1580,12 @@
       ],
       "watch_out": [
         "Steel-cut, rolled and instant are the same grain cut and cooked differently. The processing shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant."
-      ]
+      ],
+      "pick_steps": [
+        "Plain oats in any form; steel-cut if you like chew and have time.",
+        "Skip flavored instant packets: pre-cooked, usually pre-sweetened. Check the sugar."
+      ],
+      "science": "Steel-cut, rolled and instant are the same grain, cut and cooked differently. The more an oat is cut, rolled and pre-cooked, the faster it cooks and digests. That shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant. Flavored instant packets are mostly added sugar."
     },
     {
       "id": "nuts_raw_vs_roasted",
@@ -1627,6 +1638,11 @@
         "Most “raw” cashews were steamed out of the shell. Nobody sells a truly raw one.",
         "Many roasted nuts are cooked in cottonseed or soybean oil. The ingredient line is where it shows."
       ],
+      "pick_steps": [
+        "Look for “dry roasted” or “raw”, with no added oil.",
+        "Check the ingredient line: many roasted nuts list cottonseed or soybean oil."
+      ],
+      "science": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating. Roasting itself is fine; the added oil is the part to notice. US almonds sold as “raw” are pasteurized by law, by steam or by a chemical treatment. Most “raw” cashews were steamed out of the shell.",
       "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard.",
       "asked_as": [
         "raw or roasted nuts",
@@ -1727,6 +1743,12 @@
         "Canned and rinsed is close, and rinsing cuts much of the sodium the can added.",
         "‘No salt added’ cans give full control if the tap rinse is not enough."
       ],
+      "pick_steps": [
+        "Pick whole beans with unbroken skins; split ones turn to mush.",
+        "Canned: rinse them, since rinsing cuts much of the sodium the can added.",
+        "Take “no salt added” cans when the tap rinse is not enough."
+      ],
+      "science": "Nutritionally, dried and canned beans are very close. Canned adds convenience and some sodium. Cooking dried beans yourself is the only way to set the salt. They ask for planning rather than skill, and a slow cooker or pressure cooker takes the work out. A “BPA-free” can lining is a minor point, if it matters to you.",
       "asked_as": [
         "dried or canned beans",
         "are canned beans ok",
@@ -1776,6 +1798,12 @@
         "Acid genuinely does harden beans. Hold the tomato, vinegar and molasses until the skins are tender.",
         "Hard tap water works against you: the calcium and magnesium in it do the opposite of what sodium does."
       ],
+      "pick_steps": [
+        "Soak overnight with a heaped tablespoon of salt per quart of water.",
+        "Buy from a bin that turns over; old beans stay hard however soaked.",
+        "Salt the cooking water too; hold tomato, vinegar and molasses until skins are tender."
+      ],
+      "science": "Sodium works into the seed coat and displaces the calcium and magnesium holding the pectin together. That weakens the skin, so salted beans cook more evenly and blow out less. Acid does firm a bean, and so does hard water, whose calcium and magnesium cross-link the pectin. Age matters more than any of it.",
       "labels_decoded": [],
       "tier_note": "Salt in the soaking water is real food chemistry held as a standard, since its practical size comes from kitchen testing rather than settled study.",
       "eyebrow_short": "Salting the soak",
@@ -4200,6 +4228,12 @@
       "watch_out": [
         "Whole wheat flour keeps the germ and its oil, and heat, air and moisture are what turn it. In a pantry at room temperature, a month is the outside window. Seal air out, or other flavors and odors move in."
       ],
+      "pick_steps": [
+        "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
+        "Unbleached was aged with air; bleached was chemically whitened.",
+        "Whole wheat: buy small, seal out air, keep it in the freezer."
+      ],
+      "science": "Protein content picks the flour: bread flour is highest, cake and pastry flour lowest. Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole wheat keeps the germ and its oil, and heat, air and moisture turn it. At room temperature, a month is the outside window. Its bran cuts gluten strands for a denser loaf, so start with a quarter.",
       "buying_tips": [
         "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
         "‘Enriched’ means vitamins and iron added back after refining. Standard on white flour.",
@@ -4274,6 +4308,12 @@
         "The scoop, the bin handle and the scale are touched by every shopper before you. The container you bring is not the exposed part.",
         "Bring-your-own-container rules vary by store. The FDA food code is a model offered to states and cities. A store citing it is stating its own policy, not a single national rule."
       ],
+      "pick_steps": [
+        "Pick full, busy bins; nuts, seeds and whole-grain flours turn rancid in slow ones.",
+        "Smell before it goes in the cart: paint, crayon or bitter means rancid.",
+        "Buy what you will use in a month; store it airtight and dark."
+      ],
+      "science": "Dry staples keep well in bulk: rice, oats, beans, lentils, dried fruit and especially spices. The risk sits entirely with the fatty items, whose oil goes rancid. The scoop, bin handle and scale are touched by every shopper; the container you bring is not the exposed part. Container rules vary by store, since the FDA food code is a model offered to states and cities.",
       "labels_decoded": [],
       "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
       "asked_as": [
@@ -4318,6 +4358,12 @@
         "Grinding itself makes heat. Heat during grinding is a primary way a spice loses quality before it is even in the jar. Small batches, ground as you go.",
         "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
       ],
+      "pick_steps": [
+        "Buy from a bin that turns over, in the smallest amount you will finish.",
+        "Toast in a dry pan on medium heat until the smell crosses the kitchen.",
+        "Toast and grind small batches as you go, not a batch for the cupboard."
+      ],
+      "science": "What you are buying in a spice is volatile oil. Whole, the oil stays sealed for a couple of years. Ground ones are tired inside six months, because grinding opens the surface up. Grinding itself makes heat, a primary way a spice loses quality before the jar. Toasted spice fades faster than whole, so toast only what you are about to use.",
       "labels_decoded": [],
       "tier_note": "Volatile oils leaving faster once ground is straightforward chemistry, and toasting before the grind follows from it.",
       "eyebrow_short": "Whole spices",
@@ -4367,6 +4413,12 @@
         "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of.",
         "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly."
       ],
+      "pick_steps": [
+        "Buy oil in dark glass, a size you will finish inside two months.",
+        "Smell the bulk bin first; varnish, putty, old walnuts or crayons means rancid.",
+        "Freeze whole-grain flour and shelled nuts; keep oil tightly capped, cool and dark."
+      ],
+      "science": "Oxidation is fat reacting with air; heat, light and time speed it up, so use oil promptly. The germ oil is what turns in whole-grain flour. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of. Nothing on the label predicts it; the clock runs on heat, light and air, not the printed date.",
       "labels_decoded": [],
       "tier_note": "The paint-and-crayon smell is oxidized fat, a quality problem rather than a safety one, and it is flagged on exactly that basis.",
       "asked_as": [
@@ -4552,6 +4604,12 @@
       "watch_out": [
         "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off."
       ],
+      "pick_steps": [
+        "Fast: bulgur 10 minutes, quinoa and buckwheat 15, millet 20.",
+        "Chewy and slow: farro, barley, wheat berries, sorghum; pearled cooks faster than hulled.",
+        "No gluten in buckwheat, millet, sorghum or quinoa; barley, farro and bulgur carry it."
+      ],
+      "science": "Most of these cook like pasta, in plenty of salted water, drained when tender. That is far more forgiving than the exact ratios rice wants. Quinoa carries a bitter natural coating on its hull, so rinse it before cooking. Pearled grains have some bran removed; whole or hulled keep it and hold their chew. A big batch keeps several days and reheats straight from cold.",
       "buying_tips": [
         "Quick ones: bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20.",
         "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
@@ -8904,6 +8962,12 @@
         "“Sprouted” has no regulated definition, so the word alone promises nothing.",
         "Grain that sprouts by accident in the field is not meant for the food supply."
       ],
+      "pick_steps": [
+        "Look for “sprouted whole” before the grain’s name.",
+        "Read “sprouted” alone as promising nothing; no rule defines it.",
+        "Check that the ingredients name the grain as whole."
+      ],
+      "science": "AACC International’s definition counts sprouted grain as whole when it keeps all its bran, germ and endosperm. The sprout must not grow longer than the kernel. A refined grain cannot sprout, because the sprout comes from the germ. Sprouting has to be controlled; grain that sprouts by accident in the field is not meant for the food supply. “Malted grain” is the UK label term for sprouted grain.",
       "labels_decoded": [
         {
           "term": "Sprouted whole grain",
@@ -8960,6 +9024,12 @@
         "Spelt and einkorn flours contain gluten.",
         "“Stoneground” alone does not mean the bran stayed in."
       ],
+      "pick_steps": [
+        "Look for “whole” in the flour’s name or first ingredient.",
+        "Check the fat line: about 2.5% for whole wheat, under 1% for white.",
+        "Spelt and einkorn contain gluten; almond flour is usually skinned, meal either."
+      ],
+      "science": "Stone-milled flour can still have its bran sifted out, so “stoneground” names the mill, not whether the bran stayed in. US whole wheat flour keeps the bran, germ and endosperm unaltered. Spelt and einkorn are both species of wheat. Almond meal can be made from whole or blanched almonds.",
       "labels_decoded": [
         {
           "term": "Stoneground",
@@ -10841,6 +10911,12 @@
         "Opened flax left warm can turn rancid, so it goes in the refrigerator.",
         "Seeds kept at room temperature for long periods turn rancid."
       ],
+      "pick_steps": [
+        "Flax: buy it ground, or whole for grinding at home.",
+        "Hulled hemp needs no grinding; chia works whole or ground.",
+        "Keep opened flax in the refrigerator; warm, it can turn rancid."
+      ],
+      "science": "Flaxseed contains fat, so it can turn rancid over time. Seeds stored at room temperature for long periods turn rancid, so long keeping means the refrigerator or freezer. Shelled hemp seeds, also called hulled, do not need grinding, unlike flax. Chia turns to gel when soaked.",
       "labels_decoded": [
         {
           "term": "Hulled",
@@ -11030,6 +11106,12 @@
       "watch_out": [
         "“Spice” on a list can cover several herbs without naming any of them."
       ],
+      "pick_steps": [
+        "Pick a single herb when the name on the jar matters.",
+        "On a blend, read “spice” as possibly several herbs the list does not name.",
+        "Read “spice and coloring” as a spice that also adds color, such as paprika."
+      ],
+      "science": "Basil, marjoram, oregano, parsley, rosemary, sage, tarragon and thyme count as spices for labeling. A spice may be declared on the list simply as “spice”. An irradiated retail food carries a logo with “Treated with radiation” or “Treated by irradiation”.",
       "labels_decoded": [
         {
           "term": "Spice",
