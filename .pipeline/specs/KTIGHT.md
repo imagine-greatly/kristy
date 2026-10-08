@@ -142,3 +142,4 @@ Caps 14/70 hard, 12/60 target. Picks excluded. Home cards get kitchen steps. Up 
 - A4 Science stands alone: no reference that only makes sense after reading the steps ("the lawsuits", "every sheet").
 - A5 Straight apostrophes fail COPY_STRAIGHT_QUOTE; use ’.
 - A6 Trace lives at docs/ktight/<batch>.md.
+- A7 When watch_out is an entry's last key, changing its closing `]` to `],` is allowed (one '-' line per such card, logged in the trace); keep pick_steps before science. B03's two reversed cards (ground_beef_lean_ratio, pork_cuts_and_enhanced) stay as shipped; key order is not read by any consumer.

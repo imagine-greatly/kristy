@@ -232,6 +232,12 @@
         "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
         "USDA withdrew its grass-fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose, so ask whose definition it is."
       ],
+      "pick_steps": [
+        "Read for ‘grass-finished’ or ‘100% grass-fed’; pasture artwork is not a claim.",
+        "Without grass-finished on the shelf, organic grain-finished is the floor.",
+        "At the counter, ask what it was finished on and whose definition."
+      ],
+      "science": "‘Grass-fed’ allows a grain finish, so cattle can eat feedlot grain for the last months. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the cheapest way into a whole-life grass animal.",
       "labels_decoded": [
         {
           "term": "Grass-fed",
@@ -291,6 +297,12 @@
         "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
         "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
       ],
+      "pick_steps": [
+        "Find liver and heart in the ingredient list, each with its own percentage.",
+        "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass.",
+        "Check the liver percent and keep servings ordinary."
+      ],
+      "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Grass-finished applies to a blend the same as plain ground beef.",
       "labels_decoded": [
         {
           "term": "Ground beef",
@@ -432,6 +444,12 @@
         "Loin and rib sit along the back and do little work, which is why they are the tender sections.",
         "Marbling is the flecks of fat inside the muscle. More of it means a more tender, juicier steak once cooked, so look for it on a quick-cooked cut."
       ],
+      "pick_steps": [
+        "Braise chuck, brisket, short rib, shank or round with liquid, low heat and time.",
+        "For a quick sear, take ribeye, strip, sirloin or tenderloin with marbling flecks.",
+        "Ground chuck, around 80/20, is the all-purpose workhorse."
+      ],
+      "science": "Tenderness comes from how hard the muscle worked and how much connective tissue it carries, not the animal’s age. Chuck is shoulder and round is rear leg, both working muscles. That connective tissue melts with time and moisture. Loin and rib sit along the back and do little work, so they are tender. Marbling is fat inside the muscle, and more of it cooks up juicier.",
       "asked_as": [
         "which beef cut for stew",
         "what cut of beef should i buy",
@@ -482,6 +500,12 @@
       "watch_out": [
         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
         "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most."
+      ],
+      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. It is a cooking choice, not a health one. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
+      "pick_steps": [
+        "80/20 suits burgers and meatballs, where the fat is the flavor.",
+        "90/10 suits tacos, chili and sauces where the fat gets drained.",
+        "Ingredients should be beef with seasoning at most: no water or phosphates."
       ]
     },
     {
@@ -2730,6 +2754,12 @@
         "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
         "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
       ],
+      "pick_steps": [
+        "Pay up for grade on a quick-cooked steak; skip it on a braise.",
+        "Read the grade itself: ‘Angus’ is a brand checklist, not a grade.",
+        "Ungraded is not a downgrade; grading is voluntary and says nothing either way."
+      ],
+      "science": "Prime, Choice and Select is a marbling scale, and grading also weighs the animal’s maturity. It does not look at breed. Marbling melts during cooking, which is why a Prime steak forgives high heat. A grade is a score, not a certification. Grade and sourcing are separate questions, and neither answers the other. Plenty of good beef, including much grass-finished beef, is never graded.",
       "asked_as": [
         "what does prime choice select mean",
         "is prime beef worth it",
@@ -2794,6 +2824,12 @@
         "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven.",
         "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator."
       ],
+      "pick_steps": [
+        "Take a sealed, leak-free package from the back, where the case is coldest.",
+        "Pass on slime or any off smell; color alone is not the test.",
+        "Fine marbling through the muscle beats a thick fat cap outside."
+      ],
+      "science": "Beef pigment turns bright red within minutes of oxygen and browns over days. That is surface chemistry, not spoilage. Vacuum-packed beef looks purple, and brown edges mean older, not unsafe. A ‘packaged on’ date is not a safety cutoff. Tray-wrapped meat generally holds up to three days refrigerated, and a sealed vacuum pack up to seven. Sell-by dates are voluntary and not a safety indicator.",
       "eyebrow_short": "Judging meat",
       "asked_as": [
         "how do i tell if meat is good",
@@ -2849,6 +2885,12 @@
         "Ground meat is the exception. Salt dissolves the proteins and the texture turns springy, so salt burgers as they hit the pan.",
         "Skip the wet brine. It adds the water that then has to boil off before anything browns."
       ],
+      "pick_steps": [
+        "Salt one percent by weight, uncovered on a rack, a day ahead for roasts.",
+        "Do not dry-brine enhanced pork or koshered poultry; read for ‘solution added’.",
+        "Salt ground meat only as it hits the pan."
+      ],
+      "science": "Salt dissolves in the meat’s surface moisture, draws more out, and that brine is reabsorbed. That seasons the muscle through and helps it hold water while cooking. Left uncovered, the surface dries, and a dry surface browns. A wet brine adds water that has to boil off first. Kosher salt brands differ by nearly half in density, so weigh rather than spoon.",
       "labels_decoded": [],
       "tier_note": "How salt moves through muscle, and why a dry surface browns and a wet one steams, are both basic food chemistry. The timing is the part people skip.",
       "eyebrow_short": "Dry-brining",
@@ -2899,6 +2941,12 @@
         "Thickness is not fixed. Say how thick the steak should be, what size roast is needed and what lean-to-fat ratio the grind should have.",
         "Unsure of the cut, name the section first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
       ],
+      "pick_steps": [
+        "Ask what came in today, and the sourcing: grass-finished, air-chilled, where from.",
+        "Ask for a fresh chuck grind, bones for stock, and silverskin removed.",
+        "Name the section, thickness and size, and ask if it’s wet- or dry-aged."
+      ],
+      "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Ask what is coming down in price this week. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out more concentrated in flavor.",
       "asked_as": [
         "what should i ask the butcher",
         "what do i say at the meat counter",
@@ -3019,6 +3067,12 @@
       "watch_out": [
         "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.",
         "The percentage is the solution weighed against the raw meat without it. So 15% means 15 parts solution to 100 parts meat."
+      ],
+      "science": "A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. Hormones are banned in pork production, so ‘no added hormones’ is a freebie. ‘Natural’ on meat says nothing about raising.",
+      "pick_steps": [
+        "Braise or pull shoulder, Boston butt or picnic; cook loin and tenderloin fast.",
+        "Find the ‘% solution’ figure; enhanced pork is injected brine, already salted.",
+        "On enhanced pork, skip your own brine and expect less browning."
       ]
     },
     {
@@ -7552,6 +7606,12 @@
         "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
         "Adult goat is relatively tough and is almost always stewed."
       ],
+      "pick_steps": [
+        "Pick lamb with a USDA grade, most often Choice, firm with white marbling.",
+        "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
+        "Read the primal cut on the label, and stew adult goat."
+      ],
+      "science": "Lamb quality grading is voluntary, and the grade takes age into account. Ungraded lamb is still inspected, but its quality may be higher or lower. Goat meat has no quality grades at all, so the flesh is the check. Goats under a year old are called kids. Older goat is darker, less tender and almost always stewed.",
       "labels_decoded": [
         {
           "term": "USDA Choice",
@@ -7613,6 +7673,12 @@
       "watch_out": [
         "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
       ],
+      "pick_steps": [
+        "Buy only for a cook within one to two days.",
+        "Ask the counter or a farmer which organs they offer.",
+        "Match each organ to its method; heart and tongue go in liquid."
+      ],
+      "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
       "labels_decoded": [
         {
           "term": "Variety meats",
@@ -7662,6 +7728,12 @@
       "watch_out": [
         "Bison can turn tough when cooked beyond medium or at high heat."
       ],
+      "pick_steps": [
+        "Read for the “U.S. Inspected and Passed” triangle or a state mark.",
+        "Expect deeper red than beef, and bag the package separately for leaks.",
+        "Cook or freeze ground bison within 2 days, steaks within 3 to 5."
+      ],
+      "science": "Bison is a bovine, in the same family as domestic cattle, not a true buffalo. Inspection can be federal or state. The meat is deeper red because it has no marbling. It keeps and cooks on the same rules as beef, but turns tough beyond medium or at high heat.",
       "labels_decoded": [
         {
           "term": "Buffalo",
@@ -7715,6 +7787,12 @@
         "Discard meat that is bruised, discolored, or has hair, dirt or bone fragments.",
         "Skip the brain, spinal cord, eyes, spleen and lymph nodes of deer and elk."
       ],
+      "pick_steps": [
+        "Choose a fully refrigerated processor that handles each animal on its own.",
+        "Pass on meat that is bruised, discolored, or has hair, dirt or bone fragments.",
+        "Trim the fat, and use unfrozen venison within two or three days."
+      ],
+      "science": "Game is often processed by small shops, so cold handling decides its safety. The fat carries the gamey flavor. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Extension guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
       "labels_decoded": [
         {
           "term": "Aging",
@@ -7819,6 +7897,12 @@
         "Store names for one cut vary by region, so read the primal cut instead.",
         "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
       ],
+      "pick_steps": [
+        "Decide the cook: chuck or round for braising, loin or rib for tender.",
+        "Read the primal cut, since store names for one cut vary by region.",
+        "Check the use-by date, and skip any package that smells off or feels slimy."
+      ],
+      "science": "Beef splits into four primal cuts: chuck, loin, rib and round. The cut decides tenderness and the right heat. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Ungraded beef is inspected, but its quality may be higher or lower than graded beef. Additives are not allowed on fresh beef.",
       "labels_decoded": [
         {
           "term": "Primal cut",
