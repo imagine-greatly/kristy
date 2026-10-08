@@ -7014,6 +7014,12 @@
         "Light is not one species. Do not assume every light can is skipjack.",
         "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone."
       ],
+      "pick_steps": [
+        "Read the can for ‘light’ or a named skipjack species.",
+        "‘White’ means albacore, in FDA’s Good Choices rather than Best Choices.",
+        "Read oil or water separately; packing does not change the mercury category."
+      ],
+      "science": "FDA’s chart places canned light tuna, including skipjack, in Best Choices and albacore in Good Choices. These categories reflect mercury levels. Light is a color designation, not one species, so not every light can is skipjack. Canned light tuna can be chosen without a separately stated skipjack name. FDA’s frequency advice is specific to pregnancy, breastfeeding and children, with its own age and life-stage guidance.",
       "labels_decoded": [
         {
           "term": "White tuna",
@@ -7940,6 +7946,12 @@
         "A fillet is hard to identify by eye, so the species name on the sign carries the weight.",
         "Color alone does not show freshness, because diet, environment and color fixatives all change it."
       ],
+      "pick_steps": [
+        "Ask the species; a fillet is hard to identify by eye.",
+        "Press it: firm flesh springs back, with no dried or dark edges.",
+        "Take a center-cut piece with a mild sea smell, not a ragged tail end."
+      ],
+      "science": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Color alone does not show freshness, because diet, environment and color fixatives all change it. Ragged tail ends are hard to cook properly.",
       "labels_decoded": [
         {
           "term": "Market name",
@@ -8005,6 +8017,12 @@
         "A crab that does not move may have died, and dead crab spoils fast.",
         "Imitation crab is made from pollock, not crab meat."
       ],
+      "pick_steps": [
+        "Live crab: check that the legs move.",
+        "Cooked crab: bright orange to red shells and no off odor.",
+        "Buy unpackaged cooked crab only from a case kept apart from raw."
+      ],
+      "science": "Crabs spoil rapidly after death, so FDA guidance says only live crabs should be selected and prepared. A crab that does not move may have died. Cooked crab shows its quality in shell color and smell. Imitation crab is surimi, made from cooked Alaska pollock, not crab meat.",
       "labels_decoded": [
         {
           "term": "Jimmies",
@@ -8073,6 +8091,12 @@
         "A tail that hangs down when the lobster is lifted is a poor sign.",
         "A dead lobster spoils fast, so only live lobsters should be cooked whole."
       ],
+      "pick_steps": [
+        "Ask the counter to lift it: the tail should curl under.",
+        "Check that the claws and legs move.",
+        "Frozen tails: hard-frozen, clear white meat, no torn pack or ice crystals."
+      ],
+      "science": "A dead lobster spoils fast, so only live lobsters should be cooked whole. A tail that hangs down when the lobster is lifted is a poor sign. Raw lobster flesh should be clear and pearl-like, with little or no odor. Hard-shell and soft-shell lobsters are the same animal at different growth stages.",
       "labels_decoded": [
         {
           "term": "Spiny lobster",
@@ -8133,6 +8157,12 @@
         "Wet scallops hold extra water, so they release moisture in the pan and sear poorly.",
         "Loose scallops at the counter may carry no ingredient list, so ask."
       ],
+      "pick_steps": [
+        "On a pack, read the ingredients: phosphate and water means wet.",
+        "Loose at the counter, ask whether they are dry.",
+        "Pick ones with a sweetish smell, not sitting in excess liquid."
+      ],
+      "science": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water, so they release moisture in the pan and sear poorly. Packaged wet scallops should disclose the phosphate and water in the ingredients. Loose scallops may carry no ingredient list. Dry-packed scallops are untreated.",
       "labels_decoded": [
         {
           "term": "Wet-packed",
@@ -8195,6 +8225,12 @@
         "Gaping shells that stay open mean the shellfish are dead.",
         "Pregnant, older or immune-weakened? Ask a doctor about raw oysters."
       ],
+      "pick_steps": [
+        "Ask to see the tag on the sack of live shellfish.",
+        "Tap any open shell: it should close; skip cracked or broken ones.",
+        "Shucked: read the date; oysters should be plump, with clear liquid."
+      ],
+      "science": "Tags on live shellfish sacks name the certified shipper, the harvest date and the harvest area. A live shell closes when it is tapped. Gaping shells that stay open mean the shellfish are dead. Unfrozen shucked containers under a half gallon carry a “Sell By” or “Best If Used By” date. Pregnant, older or immune-weakened? Ask a doctor about raw oysters.",
       "labels_decoded": [
         {
           "term": "Shellfish tag",
@@ -8254,6 +8290,12 @@
         "Cold smoking and refrigeration do not kill Listeria.",
         "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish."
       ],
+      "pick_steps": [
+        "Read the label word: nova, lox or kippered means refrigerated cold-smoked.",
+        "Take it from a refrigerated case; refrigerate it soon after buying.",
+        "For the shelf, choose canned or jarred smoked fish, heat-treated and sealed."
+      ],
+      "science": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. Cold smoking and refrigeration do not kill Listeria. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish.",
       "labels_decoded": [
         {
           "term": "Nova-style",
@@ -8316,6 +8358,12 @@
       "watch_out": [
         "Fishy, sour or ammonia odors mean the fish stays at the store."
       ],
+      "pick_steps": [
+        "Ask the species, then where it came from and whether it was farmed.",
+        "Check: fish on ice or refrigerated, cooked seafood kept apart from raw.",
+        "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
+      ],
+      "science": "The species name is what a seafood label must get right. FDA DNA tests found it right 85% of the time. Around 85 percent of seafood eaten in the U.S. is imported. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. NOAA inspection is a fee-for-service program; participants may use an official mark showing federal inspection.",
       "labels_decoded": [
         {
           "term": "Species name",
