@@ -367,6 +367,12 @@
         "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold. FSIS puts the growth range at 40 to 140°F.",
         "Eat within 3 to 4 days, cold or reheated to 165°F. Freezing is fine; use within 4 months for texture."
       ],
+      "pick_steps": [
+        "Read the sticker’s ingredient list, not the name: chicken, salt, spices wins.",
+        "Water second, then phosphate, starch or sweetener, means a solution bird.",
+        "Take one that is steaming under the lamp, not one that has sat."
+      ],
+      "science": "‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated and runs in descending order. A solution names its contents, so the second word on the list settles it. Hot food is held at or above 140°F. FSIS puts the growth range at 40 to 140°F. Eat or refrigerate a hot rotisserie bird within 2 hours of purchase.",
       "labels_decoded": [
         {
           "term": "Contains up to X% solution",
@@ -557,6 +563,12 @@
         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line."
       ],
+      "pick_steps": [
+        "Look for ‘soy-free’ and ‘corn-free’, mostly on regional cartons and farm stands.",
+        "In the supermarket, organic is the rung you can reliably buy.",
+        "For space, pasture-raised with Certified Humane or Animal Welfare Approved is strongest."
+      ],
+      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the cheapest complete proteins in the store.",
       "labels_decoded": [
         {
           "term": "Cage-free",
@@ -622,6 +634,12 @@
         "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
         "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional."
       ],
+      "pick_steps": [
+        "Look for ‘air-chilled’ printed on the package; it appears when it applies.",
+        "A ‘retained water up to’ percentage is the tank; no line means none.",
+        "No air-chilled on the shelf: a regular bird works; pat it dry."
+      ],
+      "science": "Air-chilled birds cool in cold air instead of a communal tank, so nothing soaks in. Water-chilled birds come out holding some water, and it is sold by the pound. The label has to print that number, so it is read, not inferred. Skin that starts dry is the skin that crisps. A whole bird is the cheapest way to buy chicken either way.",
       "asked_as": [
         "what is air chilled chicken",
         "is air chilled chicken better",
@@ -674,6 +692,12 @@
         "‘Free range’ requires outdoor access and nothing more. A small door to a dirt pen counts. No grass is required and no time outside is set.",
         "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics."
       ],
+      "pick_steps": [
+        "Back the claim with ‘USDA Process Verified’ or a third-party seal beside it.",
+        "Organic carries the antibiotic rule; ‘natural’ says nothing about antibiotics.",
+        "‘No hormones’ is empty on chicken: hormones are not allowed in poultry."
+      ],
+      "science": "No chicken may be sold with antibiotic residues, labeled or not. So the claim is about how the flock was raised, a management and resistance choice, not cleaner meat. It rests on the producer’s own affidavit to USDA, and the agency does not inspect the farm. ‘Free range’ requires outdoor access and nothing more; a small door to a dirt pen counts.",
       "asked_as": [
         "does no antibiotics mean anything",
         "is antibiotic free chicken better",
@@ -2432,6 +2456,12 @@
         "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
         "Blue and green shells are a breed trait too. Breeds like the Araucana lay down a different pigment. The shell says which hen, and still nothing about the feed."
       ],
+      "pick_steps": [
+        "Ignore shell color and speckles; color is the breed, not the egg inside.",
+        "Read the yolk photo as artwork; yolk color can come from an additive.",
+        "Read the printed feed words; diet, age and freshness never show on the shell."
+      ],
+      "science": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. A paler brown shell is not a fresher or older egg. Blue and green shells are a breed trait too. A varied diet and marigold extract both deepen yolk color, indistinguishable by eye. Freshness shows in the pan: a yolk that stands up, a white that holds together.",
       "eyebrow_short": "Shell and yolk",
       "asked_as": [
         "brown or white eggs",
@@ -2485,6 +2515,12 @@
         "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early."
       ],
+      "pick_steps": [
+        "Read the three-digit pack date beside the plant code; closer to today is fresher.",
+        "Skip the sell-by: same-dated cartons can have been packed weeks apart.",
+        "Open the carton and check for cracks and leaks before it goes in."
+      ],
+      "science": "The pack date is the day of the year: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction. Extension guidance is four to five weeks past the pack date, refrigerated. Eggs age far faster on the counter than in the fridge. The air cell grows with age, so a fresh egg lies flat in water.",
       "labels_decoded": [
         {
           "term": "Julian date (001 to 365)",
@@ -2549,6 +2585,12 @@
         "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
         "AA, A and B are scored on interior and shell quality at the time of packing. That system is separate from the size classes above it."
       ],
+      "pick_steps": [
+        "Compare price per ounce, not per dozen; Large is 24 ounces a dozen.",
+        "Take the fresher carton over the higher grade; AA versus A is white firmness.",
+        "Baking assumes Large; a ‘Large’ dozen may hold Extra Large, never smaller."
+      ],
+      "science": "Grade scores the shell, the air cell, and how the white and yolk sit, at packing. AA and A differ only in white firmness, which fades with age anyway. Size is set by the weight of a full dozen: Large 24 ounces, Extra Large 27, Jumbo 30. Neither grade nor size says how the hen lived or what she ate.",
       "labels_decoded": [
         {
           "term": "Grade AA",
@@ -2616,6 +2658,12 @@
         "‘Organic’ on the feed is a claim about how the grain was grown. The watchdog view is that traceability of organic feed can be impenetrable once it leaves the farm. So a farm that grows its own is the stronger answer.",
         "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words."
       ],
+      "pick_steps": [
+        "Look for ‘soy-free’ or ‘corn-free’ printed; nothing else on the carton implies them.",
+        "Read ‘vegetarian-fed’ beside a pasture claim as a mismatch; pasture hens eat insects.",
+        "Feed grown on the farm can be traced; feed from unnamed suppliers often cannot."
+      ],
+      "science": "Space claims never touch feed, so the feed words carry that job alone. ‘Omega-3 enriched’ means flax or algae in the ration, but sets no amount. Organic requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what the feed is. The watchdog view is that organic feed traceability can be impenetrable once it leaves the farm.",
       "labels_decoded": [
         {
           "term": "Vegetarian-fed",
@@ -2688,6 +2736,12 @@
         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
         "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant."
       ],
+      "pick_steps": [
+        "Keep the carton on a middle or lower shelf, not the door.",
+        "Keep eggs in the carton; it slows moisture loss and keeps odors out.",
+        "Refrigerated eggs should not sit out more than two hours."
+      ],
+      "science": "US eggs are washed and sanitized, then held at 45F or below. Washing strips the cuticle, the natural coating that seals a porous shell. A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Unwashed farm eggs keep their cuticle and can sit out until washed. Store-bought eggs need no washing before use; the plant already did it.",
       "asked_as": [
         "do eggs need to be refrigerated",
         "where should i keep eggs",
@@ -3011,7 +3065,13 @@
       "watch_out": [
         "Retained water has to be disclosed on the label. It reads along the lines of ‘contains up to __% retained water’. Read the tray for that line.",
         "A raw single-ingredient bird may not carry retained water at all. The exception is when the processing that keeps it safe makes it unavoidable."
-      ]
+      ],
+      "pick_steps": [
+        "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
+        "A whole bird is cheapest per pound, and the frame makes stock.",
+        "Read the tray for a ‘retained water’ line, and ‘air-chilled’ if skin matters."
+      ],
+      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes. Retained water has to be disclosed on the label. A raw single-ingredient bird may carry none, unless its processing makes some unavoidable."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -6695,6 +6755,12 @@
         "“Natural” can appear on products containing a flavoring solution.",
         "Retained water from chilling and an injected flavoring solution are different label disclosures."
       ],
+      "pick_steps": [
+        "Beside the name, read the solution ingredients on a basted or self-basted bird.",
+        "‘Natural’ can still carry a flavoring solution, so read past it.",
+        "Fresh or frozen, read retained water apart from the flavoring-solution statement."
+      ],
+      "science": "A basted or self-basted turkey has been injected or marinated with a solution. The FSIS turkey guide lists fat, broth, stock, water, spices or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
       "labels_decoded": [
         {
           "term": "Basted or self-basted",
@@ -6742,6 +6808,12 @@
       "watch_out": [
         "Do not infer a fat level from the animal name. Read each pack."
       ],
+      "pick_steps": [
+        "Choose a pack listing turkey, without added seasonings or a flavoring solution.",
+        "With no percent-lean claim, compare packs on the Nutrition Facts fat line.",
+        "Read each pack’s fat content; the animal name sets no fat level."
+      ],
+      "science": "Grinding does not specify the fat content. FSIS’s archived rule covers ground turkey and requires a fat statement beside a percent-lean claim. The words ground turkey alone do not identify one fat level. Additives in processed turkey, including ground products, must be listed.",
       "labels_decoded": [
         {
           "term": "Percent lean",
@@ -7122,6 +7194,12 @@
         "Retained chilling water is different from an added flavoring solution.",
         "The archived woody-breast study does not establish a dependable visual test for shoppers."
       ],
+      "pick_steps": [
+        "Read the full product name for a solution percentage and its ingredients.",
+        "‘Natural’ does not exclude a flavoring solution, fresh or frozen.",
+        "Read retained chilling water apart from any added flavoring ingredients."
+      ],
+      "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
       "labels_decoded": [
         {
           "term": "Added solution",
@@ -7285,6 +7363,12 @@
         "Keep raw duck eggs out of dishes served raw or lightly cooked, such as homemade mayonnaise.",
         "Do not taste a raw mix made with duck eggs."
       ],
+      "pick_steps": [
+        "Open the carton and check that every shell is clean and uncracked.",
+        "Buy from a refrigerated case and keep them cold at home.",
+        "Plan a longer cooking time for duck eggs, which are larger than hen’s eggs."
+      ],
+      "science": "Ireland’s food safety authority advises eating duck eggs only when thoroughly cooked. Keep raw duck eggs out of dishes served raw or lightly cooked, such as homemade mayonnaise. Do not taste a raw mix made with duck eggs. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply.",
       "labels_decoded": [
         {
           "term": "Duck egg",
@@ -7844,6 +7928,12 @@
         "Use fresh duck within 1 or 2 days, or freeze it.",
         "Hormones are not allowed in any US duck, so that claim sets no duck apart."
       ],
+      "pick_steps": [
+        "Take duckling or roaster duck for tender meat, with the USDA Grade A shield.",
+        "Check the freezer case, where most duck is sold, and bag it separately.",
+        "Skip the ‘no hormones’ claim: hormones are not allowed in any US duck."
+      ],
+      "science": "Federal rule 9 CFR 381.170 names ducks by age. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old, with toughened flesh. Grading is voluntary, and Grade A is the top shield. Use fresh duck within 1 or 2 days, or freeze it, and cook duck to 165°F.",
       "labels_decoded": [
         {
           "term": "Duckling",
