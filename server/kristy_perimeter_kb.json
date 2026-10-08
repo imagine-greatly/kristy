@@ -13054,6 +13054,12 @@
       "watch_out": [
         "A meat named on the box sets no minimum amount of that meat."
       ],
+      "pick_steps": [
+        "Read the crust list first; look for flour, water, salt and yeast.",
+        "On a whole wheat crust, whole wheat flour comes first, not wheat flour.",
+        "A meat named on the box sets no minimum amount of it."
+      ],
+      "science": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast. That short crust list is the standard here. Plain wheat flour is milled without the whole kernel, so it is not a whole grain flour. A pizza named for a meat topping needs no minimum amount of that meat. Air touching a frozen pizza leaves freezer burn, grayish-brown leathery spots.",
       "labels_decoded": [
         {
           "term": "Wheat flour",
@@ -13114,6 +13120,12 @@
       "watch_out": [
         "Cream sauce is one food that does not freeze well."
       ],
+      "pick_steps": [
+        "Read the product name first; it sets the floor for the meat inside.",
+        "Find the inspection mark: an inspected plant prepared the meal.",
+        "Read the label, since some meals must be cooked from frozen."
+      ],
+      "science": "A frozen meal’s name sets a floor for the meat inside. A beef stew holds at least 25 percent of the named meat, measured as fresh meat. A frozen poultry dinner holds at least 18 percent cooked deboned poultry. The inspection mark means a USDA or State-inspected plant prepared the meal. Cream sauce is one food that does not freeze well.",
       "labels_decoded": [
         {
           "term": "Inspection mark",
@@ -13175,6 +13187,11 @@
       "watch_out": [
         "Fried foods frozen at home may lose their crispness."
       ],
+      "pick_steps": [
+        "Read the bag’s list for potatoes, oil and salt.",
+        "Compare bags by what each one lists beyond those three."
+      ],
+      "science": "In a plant, the strips are peeled, cut and blanched, then partly fried and frozen. They are finish-fried from frozen to develop color and crispness. Frying first drives water out of the food, and the drier the food going in, the better the crust. Fried foods frozen at home may lose their crispness. In an air fryer, an uncrowded basket lets the fries cook evenly.",
       "labels_decoded": [
         {
           "term": "Frozen french fried potatoes",
@@ -13228,6 +13245,12 @@
       "watch_out": [
         "“Wheat flour” listed first means plain flour leads, not a whole grain."
       ],
+      "pick_steps": [
+        "The first ingredient should be a whole grain, like whole wheat flour.",
+        "Graham flour and rolled oats count as whole grain too.",
+        "Plain “wheat flour” listed first means plain flour leads."
+      ],
+      "science": "FDA draft advice counts a grain as whole when the kernel is intact, ground, cracked or flaked. Every part of the kernel stays in the same proportions as the intact kernel. Graham flour is another name for whole wheat flour. Wheat flour is another name for flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
       "labels_decoded": [
         {
           "term": "Wheat flour",
@@ -13283,6 +13306,12 @@
       "watch_out": [
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
       ],
+      "pick_steps": [
+        "Pick nuggets labeled “white meat”, which means 100 percent light meat.",
+        "A plain “Chicken Nugget” is one solid piece of meat or poultry.",
+        "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
+      ],
+      "science": "On poultry labels, “white meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name, and a descriptive name follows. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product.",
       "labels_decoded": [
         {
           "term": "White meat",
@@ -13357,6 +13386,12 @@
         "Swinging freezer temperatures lose color, texture and flavor.",
         "Refreezing loses some quality through moisture loss."
       ],
+      "pick_steps": [
+        "Buy only food frozen solid, and pick it up just before checkout.",
+        "Ice cream that is not brick-hard means the freezer runs warm.",
+        "Get it into the home freezer soon; cook or thaw by the label."
+      ],
+      "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
       "labels_decoded": [
         {
           "term": "Do not refreeze",
