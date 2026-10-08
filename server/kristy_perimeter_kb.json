@@ -1145,6 +1145,12 @@
         "Color tracks the season as well as the standard. The same dairy churns paler in winter.",
         "The softness is mechanical. Cream from cows on grass carries more unsaturated fat, which melts lower. So the bar gives at room temperature, where a grain-fed one stays firm."
       ],
+      "pick_steps": [
+        "Pick the deepest yellow block; pale can mean a winter churn.",
+        "Read the list: a tub spread is oils and emulsifiers, not butter.",
+        "Salted or unsalted is a cooking choice; unsalted gives control."
+      ],
+      "science": "Cows on grass eat carotene, and it goes straight into the fat, so grass-fed butter runs deep yellow toward orange. The same dairy churns paler in winter. Grass-fed cream carries more unsaturated fat, which melts lower, so the bar gives at room temperature. European-style butter is higher in fat, a separate axis from the feed. ‘Spreadable butter’ is butter cut with canola or olive oil.",
       "asked_as": [
         "is grass fed butter worth it",
         "which butter should i buy",
@@ -1189,6 +1195,12 @@
         "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water."
       ],
+      "pick_steps": [
+        "On flavored jugs, read the added-sugar line before the fat one.",
+        "Whole is 3.25% milkfat; reduced-fat 2%, low-fat 1%, skim under half.",
+        "Cream-top means fewer steps; a date months out means ultra-pasteurized."
+      ],
+      "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
       "labels_decoded": [
         {
           "term": "Reduced-fat (2%) / low-fat (1%) / skim",
@@ -1247,6 +1259,12 @@
         "Easier to digest is the most promising claim and still the unproven one. The extension line says the digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more.",
         "Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins. Still, a Holstein herd can be more than half A2A2. An A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed."
       ],
+      "pick_steps": [
+        "Sourcing first: raw from a named farm, then low-temp cream-top, then A2.",
+        "Check for ultra-pasteurized; the A2 claim says nothing about processing.",
+        "Small dairies name the breed; big labels print only the licensed seal."
+      ],
+      "science": "A1 and A2 milk sit one amino acid apart, and only A1 releases the BCM-7 peptide. Jersey and Guernsey carry more A2 genes than Holsteins, but breed is a tendency, not a test. The claim rests on a tested herd. The seal reports the protein and nothing about how the herd lived. Easier to digest is the most promising claim and still unproven by science.",
       "labels_decoded": [
         {
           "term": "A2",
@@ -1319,6 +1337,12 @@
         "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting.",
         "‘Pasteurized process cheese product’ needs only 51% cheese. The other 49% can be salt, dyes, preservatives, extra dairy, emulsifiers or other additions. The name on the front is the only warning."
       ],
+      "pick_steps": [
+        "Look for a short list: milk, salt, cultures, enzymes or rennet.",
+        "Read the front name: ‘cheese product’, ‘cheese food’ or ‘process’ means emulsifiers.",
+        "Buy the block; bagged shreds carry starch, cellulose and natamycin."
+      ],
+      "science": "Real cheese is milk, cultures, salt and enzymes. ‘Pasteurized process cheese product’ needs only 51% cheese, and the name on the front is the only warning. Shreds carry a coating so the strands do not knit back together, which is why they resist melting. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is protected, with a stamped rind.",
       "eyebrow_short": "Block vs. bag",
       "asked_as": [
         "block cheese or shredded",
@@ -1368,6 +1392,12 @@
         "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
         "Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors."
       ],
+      "pick_steps": [
+        "Take plain and sweeten it yourself with fruit.",
+        "Compare the added-sugars line on plain against the fruit cup.",
+        "Greek or strained is higher protein; whole-milk versions are more filling."
+      ],
+      "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup.",
       "asked_as": [
         "best yogurt to buy",
         "which yogurt should i get",
@@ -1433,6 +1463,12 @@
         "“Raw” on a cheese aged under 60 days at retail is worth a question about where it came from.",
         "Raw means neither step happened. The usual dairy milk has been both pasteurized and homogenized. Raw has had neither, and that is the whole of what the word tells you."
       ],
+      "pick_steps": [
+        "Not for pregnancy, kids under five, or anyone immunocompromised.",
+        "Buy from a named farm that publishes its herd test results.",
+        "Look for glass, a readable bottling date in days, and a cream line."
+      ],
+      "science": "Raw means not heat-treated: neither pasteurized nor homogenized, and that is the whole of what the word tells you. The farm is the product: a small herd on grass, milked into a cold chain that never breaks. Without a named farm, test results and a cold chain, it is just unpasteurized. ‘Raw’ on a cheese aged under 60 days at retail is worth a question.",
       "card_why": "Pasteurization is a shelf-life technology. It flattens the live cultures, the enzymes, and the cream line along with everything else. Milk from a small pastured herd, handled cold and fast, is a different food from the commodity gallon. The farm is the product here. The farmer is the entire margin between excellent and not worth it. A good one tests, keeps a small herd on grass, and will walk you through the parlor.",
       "asked_as": [
         "is raw milk worth it",
@@ -3887,6 +3923,12 @@
         "Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.",
         "Non-homogenized is not raw. It is still pasteurized; only the fat was left alone."
       ],
+      "pick_steps": [
+        "‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out.",
+        "The shortest date on the shelf usually means the least processing.",
+        "Cream-top is still pasteurized, not raw; shake it before pouring."
+      ],
+      "science": "Pasteurization is a short heat step, around 161F for fifteen seconds. Ultra-pasteurization goes to roughly 280F, which puts a date months out and makes milk resist culturing into homemade yogurt. Homogenization is not heat; it breaks the fat small so the cream never rises. It carries no health benefit and no health risk, so cream-top is a preference about texture and steps.",
       "labels_decoded": [
         {
           "term": "Pasteurized",
@@ -3980,6 +4022,12 @@
         "The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.",
         "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
       ],
+      "pick_steps": [
+        "Buy from the cold case; a shelf-stable tub holds nothing alive.",
+        "Find the Live and Active Cultures seal, or cultures named in the list.",
+        "A short list is the sign: milk and cultures, no thickeners."
+      ],
+      "science": "Heat treatment after culturing ends the ferment, which is what makes a tub shelf-stable. ‘Made with live cultures’ is past tense; the seal is the present-tense claim. The seal is voluntary, so its absence alone proves nothing. Greek and skyr are strained, thicker, with more protein per spoon. Whole-milk versions are more filling and less tinkered with than fat-free. Some non-dairy yogurts skip live cultures entirely.",
       "eyebrow_short": "Live cultures",
       "asked_as": [
         "is my yogurt still alive",
@@ -4028,6 +4076,12 @@
         "The flavored creamers carry the most sugar. That line on the panel is the one to read first.",
         "Real cream can still carry carrageenan or gellan gum. The fat number is fixed by law; the list is not."
       ],
+      "pick_steps": [
+        "Read the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.",
+        "Read the list too: even real cream can carry carrageenan or gellan gum.",
+        "On flavored creamers, read the sugar line first."
+      ],
+      "science": "Cream is dairy with a legal fat minimum fixed by standards of identity. ‘Non-dairy creamer’ has no such standard because it is a formulated product. Water, sugar and vegetable oil are the usual first three ingredients, with emulsifiers and thickeners. Many are built on almond, oat or coconut milk rather than cream. Whole milk or half-and-half does the same job with a two-word list.",
       "labels_decoded": [
         {
           "term": "Heavy / heavy whipping cream",
@@ -5058,6 +5112,12 @@
         "Kefir may carry a trace of alcohol. The yeast in the grains makes it during the ferment, and a live bottle keeps it.",
         "Commercial bottles taste different because of what was added. Flavoring, additives and sugar make the difference, so plain is the one where the ferment is what you taste."
       ],
+      "pick_steps": [
+        "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
+        "Same farm name as the milk, with a culture or bottling date.",
+        "Plain, in glass, with a pour thick enough to cling."
+      ],
+      "science": "Raw kefir is a live ferment, so it has to be sold cold. Made from raw milk, it is the same sourcing question: a named farm, a small herd, a cold chain. Flavoring and sugar change commercial bottles; in plain, the ferment is what you taste. The yeast makes a trace of alcohol, and a live bottle keeps it. Raw dairy is not for every household.",
       "labels_decoded": [
         {
           "term": "Live and Active Cultures",
@@ -5113,6 +5173,12 @@
         "Sixty days rules out every fresh style. A raw fromage blanc cannot meet it. So ‘raw’ on a soft fresh cheese at retail is a question, not a label.",
         "A raw-cheese maker has to know the milk. Most American cheesemakers buy milk already pasteurized and homogenized. They may know little about the farms it came from. Raw removes that distance, which is the point of buying it."
       ],
+      "pick_steps": [
+        "Read the rind label for “raw milk” or “lait cru” and an age.",
+        "Look for a named maker and herd, at the cut-to-order counter.",
+        "Start with hard, aged styles: alpine, aged cheddar, manchego, pecorino."
+      ],
+      "science": "US law lets raw-milk cheese aged sixty days or more sell across state lines. Sixty days rules out every fresh style, so ‘raw’ on a soft fresh cheese is a question. Most American cheesemakers buy milk already pasteurized, and raw removes that distance from the farm. ‘Pasteurized process cheese’, ‘cheese product’ and ‘cheese food’ are progressively less cheese. Raw dairy is not for every household.",
       "labels_decoded": [
         {
           "term": "Raw milk / lait cru",
@@ -9138,6 +9204,12 @@
       "watch_out": [
         "Kefir has a short shelf life. Keep it refrigerated."
       ],
+      "pick_steps": [
+        "Pick the bottle with no flavor named on the label.",
+        "Take it from the refrigerated case and keep it cold.",
+        "Use it in place of buttermilk or yogurt in recipes."
+      ],
+      "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
       "labels_decoded": [
         {
           "term": "Kefir cultures",
