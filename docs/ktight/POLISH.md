@@ -202,3 +202,4 @@ frozen_fries | changed: science Sc3 reads “Frying is mainly a drying process�
 frozen_waffles | changed: S2 and S3 actions (“Count …”, “Read … as plain flour, not whole grain”), LD:Wheat flour
 frozen_nuggets | changed: S2 a read (“Read a plain “Chicken Nugget” name as …”)
 frozen | changed: S2 an action (“Check the ice cream: …”); science Sc2 restores “and 5°F at most” (ship note, bt3), science 67 words
+bottled_water_buying | changed: Sc4 'then processed' narrowed to 'then meets a process-named standard' (P9 critic note, Devon delegated)

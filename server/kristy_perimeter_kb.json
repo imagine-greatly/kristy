@@ -4699,7 +4699,7 @@
         "A label naming a process instead of a spring need not name its source.",
         "Pick glass where offered; “BPA-free” on PET is true and empty."
       ],
-      "science": "The type on the label is a federal standard of identity, so it has to be earned. Spring water is defined by its underground source; process-named water by what was done to it, often city water. Mineral water is spring water carrying dissolved solids from the ground, and nothing may be added. A bottler drawing from a city system has to say so, unless the water was then processed.",
+      "science": "The type on the label is a federal standard of identity, so it has to be earned. Spring water is defined by its underground source; process-named water by what was done to it, often city water. Mineral water is spring water carrying dissolved solids from the ground, and nothing may be added. A bottler drawing from a city system has to say so, unless it then meets a process-named standard.",
       "labels_decoded": [
         {
           "term": "Spring water",
