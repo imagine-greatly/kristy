@@ -3195,7 +3195,13 @@
       "watch_out": [
         "The qualifier to find reads ‘No nitrate or nitrite added except those naturally occurring in celery juice powder’. That sentence is the whole claim.",
         "Every curing substance has to be named in the ingredients statement, so read the list, not only the asterisk."
-      ]
+      ],
+      "pick_steps": [
+        "Find the asterisk: ‘uncured’ is always qualified on the label.",
+        "Read the ingredients list; every curing substance has to be named there.",
+        "Counter-sliced is usually a shorter list than the tub; whole roasted meat, nothing added."
+      ],
+      "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’."
     },
     {
       "id": "mercury_by_fish",
@@ -7042,6 +7048,12 @@
         "An uncured label does not by itself establish the absence of nitrates or nitrites.",
         "The source set does not establish a health advantage from choosing celery-based curing."
       ],
+      "pick_steps": [
+        "Read any exception naming nitrates naturally occurring in celery powder.",
+        "Read each curing ingredient, including salt, sugar and curing agents.",
+        "Compare the disclosed curing ingredients across the bacon packs on the shelf."
+      ],
+      "science": "Bacon labeled uncured can use celery powder as a natural curing source. An uncured label does not by itself establish the absence of nitrates or nitrites. US curing-label policy requires curing-mixture ingredients to be listed individually. The curing ingredients describe the process. The source set does not establish a health advantage from choosing celery-based curing.",
       "labels_decoded": [
         {
           "term": "Uncured",
@@ -7091,6 +7103,12 @@
         "“Uncured” can still accompany celery-based curing. Read the qualifier.",
         "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list."
       ],
+      "pick_steps": [
+        "Find the named meat, then read every other ingredient on the list.",
+        "Check whether the list names mechanically separated chicken or turkey.",
+        "“Uncured” can still mean celery-based curing; read the qualifier."
+      ],
+      "science": "The standard permits nonmeat ingredients, so a beef species claim is not an ingredient list. Compare formulations across packs rather than assume the claim describes every ingredient. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Sausages with meat byproducts must carry “with byproducts” or “with variety meats” in their name.",
       "labels_decoded": [
         {
           "term": "Mechanically separated poultry",
@@ -7517,6 +7535,12 @@
         "“Ham and Water Product” states the share of its weight that is added ingredients.",
         "Fresh ham and country ham are not fully cooked and need cooking before eating."
       ],
+      "pick_steps": [
+        "Read the name for “Water Added” or a percent of added ingredients.",
+        "Find where water sits in the ingredients statement.",
+        "Check whether the label says fully cooked or cook before eating."
+      ],
+      "science": "Ham is the cured leg of pork, and its product name tells how much water the curing added. Plain “Ham” must meet the highest protein level. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” states the share of its weight that is added ingredients. Fresh ham and country ham are not fully cooked and need cooking before eating.",
       "labels_decoded": [
         {
           "term": "Ham With Natural Juices",
@@ -7569,6 +7593,12 @@
       "watch_out": [
         "Turkey bacon is still a cured product, and its curing ingredients are on the label."
       ],
+      "pick_steps": [
+        "Read the descriptive name beside “turkey bacon” for the meat used.",
+        "Read each curing ingredient in the ingredients statement.",
+        "Find any “Uncured” claim and the “No Nitrate or Nitrite Added” beside it."
+      ],
+      "science": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Turkey bacon is still a cured product. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without nitrate or nitrite carries “Uncured” beside its name.",
       "labels_decoded": [
         {
           "term": "Cured turkey thigh meat",
@@ -7625,6 +7655,12 @@
       "watch_out": [
         "An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”."
       ],
+      "pick_steps": [
+        "Read the product name for the cut: ham, belly or jowl.",
+        "Read each curing ingredient in the ingredients statement.",
+        "Check whether the package says ready to eat or cook before eating."
+      ],
+      "science": "Each of these is pork cured with salt and curing agents. Prosciutto is dry-cured raw ham, not smoked; its low water content lets it be eaten raw. Salami is a fermented, dried and cured ground product. Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl. An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”.",
       "labels_decoded": [
         {
           "term": "Prosciutto",
@@ -12056,6 +12092,12 @@
       "watch_out": [
         "A grainy tub likely comes from a coarse grind of the chickpeas."
       ],
+      "pick_steps": [
+        "Read the list for chickpeas and tahini at the top.",
+        "Look for lemon or citric acid to balance the chickpeas and tahini.",
+        "Guar gum runs a tub thicker; without it, water and grind set the texture."
+      ],
+      "science": "Hummus bi tahina names its two parts, chickpeas and tahini, a paste of sesame seeds. Store tubs add lemon and salt, and every tub in one tasting had an acid. Guar gum thickens a tub and stops weeping. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground.",
       "labels_decoded": [
         {
           "term": "Tahini",
@@ -12118,6 +12160,12 @@
         "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
         "Salads made with mayonnaise do not freeze well."
       ],
+      "pick_steps": [
+        "Buy salads from a refrigerated case.",
+        "Check the Sell-By date, and skip a tub past it.",
+        "Get it home cold; two hours out at most, one hour above 90°F."
+      ],
+      "science": "Cold food stays at 40°F or below. Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four. Salads made with mayonnaise do not freeze well. The coldest spot is the back or bottom of the fridge; the door opens often to warm air.",
       "labels_decoded": [
         {
           "term": "Sell-By",
@@ -12163,6 +12211,12 @@
       "watch_out": [
         "Buffet food is thrown out after two hours, whatever the holding temperature."
       ],
+      "pick_steps": [
+        "Read the thermometer facing out: hot 140°F or above, cold below 40°F.",
+        "Pick pans filled to the rim, not piled into mounds.",
+        "Look for a sneeze guard and a separate utensil for each dish."
+      ],
+      "science": "Hot buffet items belong in chafing dishes, slow cookers or warming trays at 140°F or above. Cold items like cut fruit and salads sit below 40°F, in bowls over ice. Pans piled above the rim cannot hold an even temperature. Buffet food is thrown out after two hours, whatever the holding temperature. At home, two hours out at most, then into the fridge.",
       "labels_decoded": [],
       "tier_note": "A thermometer facing out lets anyone read the case.",
       "asked_as": [
@@ -12205,6 +12259,12 @@
       "watch_out": [
         "Once opened, the pack is best used within 2 to 3 days."
       ],
+      "pick_steps": [
+        "Read the list; flour and egg with little else marks a plain pack.",
+        "Note any ascorbic or citric acid; some packs add them.",
+        "Pick a pack that is vacuum sealed or holds an oxygen packet."
+      ],
+      "science": "Fresh egg pasta is flour and egg, softer and richer than dried, mostly from the egg. Many store packs have no additives; those are usually vacuum sealed or hold an oxygen packet. They are sold in the refrigerated case. Once opened, the pack is best used within 2 to 3 days.",
       "labels_decoded": [
         {
           "term": "Ascorbic acid",
@@ -12255,6 +12315,12 @@
       "watch_out": [
         "Meats, cheeses or salads left out of a refrigerated case are a red flag."
       ],
+      "pick_steps": [
+        "Check that meats, cheeses and salads sit in a refrigerated case.",
+        "For hot food, look for a case held at 140°F or above.",
+        "Ask about one food by name: deli salads, prepared meals or lunch meat."
+      ],
+      "science": "Breads and dry snacks are fine out of the cold, but all meats, cheeses and salad products need refrigeration. Hot buffet items are held at a minimum of 140°F, and cold items below 40°F. Salads, hot food and lunch meat each read differently. Meats, cheeses or salads left out of a refrigerated case are a red flag.",
       "labels_decoded": [],
       "tier_note": "Meats, cheeses and salads in the deli belong in the cold.",
       "asked_as": [
