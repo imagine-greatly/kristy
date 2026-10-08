@@ -1684,7 +1684,7 @@
       "pick_steps": [
         "Read for one ingredient: honey, and nothing else.",
         "Pick local or single-source raw honey from a producer you can trace.",
-        "‘Raw’ with no named producer is often blended; the word is unregulated."
+        "Read ‘raw’ with no named producer as often blended; the word is unregulated."
       ],
       "science": "Diluting honey with rice or corn syrup is a documented problem in the global honey trade. So is ultra-filtering to hide origin. Adulteration is hard to test for, since real honey varies with flowers, place and handling. Raw honey is not heat-processed or ultra-filtered. It is still sugar, a real and old sweetener.",
       "labels_decoded": [
@@ -4480,7 +4480,7 @@
       "pick_steps": [
         "Look for a recent harvest date, not just a best-by date.",
         "Pick dark glass or tin, with one country named by ‘product of’.",
-        "‘Pure’, ‘classic’ and ‘light’ mean refined oil; pomace is solvent-extracted."
+        "Read ‘pure’, ‘classic’ and ‘light’ as refined oil; pomace is solvent-extracted."
       ],
       "science": "Extra virgin is mechanically extracted with no heat or solvent. It has to pass both a chemical limit and a taste panel. Pomace oil is solvent-extracted from the paste left after pressing. The oil degrades from the day it is pressed, so a harvest date beats a best-by date. ‘Packed in’ names where it was bottled, not where the olives grew.",
       "labels_decoded": [
@@ -4561,7 +4561,7 @@
       ],
       "pick_steps": [
         "Read the list for nuts, and salt if wanted, and nothing else.",
-        "Oil on top is the good sign; no-stir means added palm or hydrogenated oil.",
+        "Look for oil on top; no-stir means added palm or hydrogenated oil.",
         "Reduced-fat jars usually swap the fat for sugar and starch."
       ],
       "science": "Ground peanuts are peanuts and oil, so a natural jar separates. Stabilizers such as palm or hydrogenated oil hold the fat in suspension. Most no-stir jars add sugar too. Reduced-fat versions typically replace the removed fat with sugar and starch. With no stabilizer, a jar left warm for a long stretch goes rancid. Stir once, then keep it upside down in the fridge.",
@@ -7313,7 +7313,7 @@
       ],
       "pick_steps": [
         "Pick a bag with an intact seal, valve or not.",
-        "A valve alone is not the full packaging specification.",
+        "Judge the whole packaging, not the valve alone.",
         "Keep the sealed coffee away from heat."
       ],
       "science": "Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. The archived studies covered ground pods and accelerated heat storage. They do not prove a health advantage for one roast or bean. No universal number of fresh days is established for all retail bags.",
@@ -10748,9 +10748,9 @@
       "pick_steps": [
         "Pick table salt for fine grains, kosher or sea salt for coarse.",
         "Pick pickling or canning salt for canning, since it has nothing added.",
-        "Salt without iodide says “does not supply iodide” beside its name."
+        "On table salt, read for “does not supply iodide” beside the name."
       ],
-      "science": "Iodized salt is table salt with iodide, a form of iodine, added. Salt with no added iodide must say so right after its name. Sea salt is made by evaporating seawater and usually has larger crystals. Kosher salt is coarse. Crystal size changes how salt measures, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts.",
+      "science": "Iodized salt is table salt with iodide, a form of iodine, added. Table salt with no added iodide must say so right after its name. Sea salt is made by evaporating seawater and usually has larger crystals. Kosher salt is coarse. Crystal size changes how salt measures, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts.",
       "labels_decoded": [
         {
           "term": "Iodized",
@@ -10809,7 +10809,7 @@
       ],
       "pick_steps": [
         "Pick light or dark brown sugar; dark carries more molasses.",
-        "Cane or beet on the bag makes no difference; the sugar is the same.",
+        "Ignore cane or beet on the bag; the sugar is the same.",
         "Keep brown sugar closed, since it hardens in open air."
       ],
       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
@@ -10989,7 +10989,7 @@
       "pick_steps": [
         "Read the ingredients for one fat: pork for lard, beef for tallow.",
         "Check for lard stearin or hydrogenated lard; the label must state either.",
-        "A tub called shortening is not plain lard; read which fats it names."
+        "On a shortening tub, read which fats it names; it is not plain lard."
       ],
       "science": "Lard is fat rendered from pork tissue, and tallow is rendered beef fat. Rendered fat is fat cooked out of the tissue. Leaf lard comes from the abdominal fat. Lard may be hardened with lard stearin or hydrogenated lard, and the label must state it. Rendered animal fat may contain no added water. Shortening made from meat fats and vegetable oils is named for those fats.",
       "labels_decoded": [
@@ -11224,7 +11224,7 @@
       ],
       "pick_steps": [
         "Read the ingredient list to tell fortified from unfortified.",
-        "Fortified has added vitamins named on the list; unfortified has none added.",
+        "Look for added vitamins named on the list; unfortified has none added.",
         "Pick flakes, granules or powder by how it will be used."
       ],
       "science": "Nutritional yeast is Saccharomyces cerevisiae, the species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, washed, dried and crumbled. So both fortified and unfortified yeast are inactive. The two look alike in the bag.",
@@ -11394,7 +11394,7 @@
         "Herbal tea means other plants; read the blend for what is inside.",
         "Read for decaffeinated when caffeine matters."
       ],
-      "science": "True tea is the leaf of the Camellia sinensis plant. Teas are divided into types by how much oxidation the leaf undergoes during processing. Oxidation shifts the leaf’s color and flavor. All true teas contain caffeine unless deliberately decaffeinated. Ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",
+      "science": "True tea is the leaf of the Camellia sinensis plant. Teas are usually divided into five types by how much oxidation the leaf undergoes during processing. Oxidation shifts the leaf’s color and flavor. All true teas contain caffeine unless deliberately decaffeinated. Ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",
       "labels_decoded": [
         {
           "term": "Decaffeinated",
@@ -11530,7 +11530,7 @@
       "pick_steps": [
         "Pick a jar whose list leads with tomatoes.",
         "Count what follows the tomatoes; a short list is the craft standard.",
-        "On canned tomatoes, the word “with” names added spices, seasonings or vegetables."
+        "On canned tomatoes, read “with” for added spices, seasonings or vegetables."
       ],
       "science": "Ingredients are listed by common name, most first, so the first item is the one there is most of. Any ingredient listed ahead of the tomatoes outweighs them in the jar. On canned tomatoes, the packing medium, such as tomato puree, is also named after “with”. A short list led by tomatoes is a craft standard.",
       "labels_decoded": [
@@ -11735,7 +11735,7 @@
       ],
       "pick_steps": [
         "Check that the name on the jar is Mayonnaise.",
-        "An oil named on the front may rank lower in the ingredients.",
+        "Check where a front-named oil ranks in the ingredients; it may rank lower.",
         "Compare jars by what they add beyond oil, egg yolk, acid and salt."
       ],
       "science": "Mayonnaise is a federal standard name: at least 65 percent oil, egg yolk, and vinegar or lemon or lime juice. The lecithin in the yolk lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. Once opened, keep it in the fridge and use it within 1 to 2 months.",
@@ -11868,8 +11868,8 @@
         "Leave cans with deep dents or dents on the seam on the shelf."
       ],
       "pick_steps": [
-        "Low sodium is a fixed ceiling; reduced sodium compares against a named soup.",
-        "No salt added is not sodium free; the soup can still carry sodium.",
+        "Read sodium words: low is a fixed ceiling, reduced compares to a named soup.",
+        "Read no salt added as not sodium free; the soup can still carry sodium.",
         "Skip cans with deep dents, seam dents, leaks, rust or bulging lids."
       ],
       "science": "Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling. Reduced sodium means at least 25 percent less than a food the label names. Salt is not the same word as sodium. Dates on cans mark peak quality. Cans keep best stored cool and dry, between 50 °F and 70 °F, with the oldest used first.",
@@ -12155,10 +12155,9 @@
       ],
       "pick_steps": [
         "Look for onions, peppers and tomatoes alongside an added acid on the list.",
-        "A fresh tub from the cold case goes straight back in the refrigerator.",
-        "In Virginia, a home-kitchen jar names its maker, address and phone."
+        "A fresh tub from the cold case goes straight back in the refrigerator."
       ],
-      "science": "Salsa mixes low-acid foods, such as onions and peppers, with tomatoes and an added acid. A shelf jar is an acidified food, brought to a pH of 4.6 or below and heat-processed. A salsa sold under refrigeration falls outside that definition, so a cold-case tub is meant to stay cold. Homemade salsa keeps up to one week in the refrigerator.",
+      "science": "Salsa mixes low-acid foods, such as onions and peppers, with tomatoes and an added acid. A shelf jar is an acidified food, brought to a pH of 4.6 or below and heat-processed. A salsa sold under refrigeration falls outside that definition, so a cold-case tub is meant to stay cold. In Virginia, a home-kitchen jar sold directly to shoppers names its maker, address and phone.",
       "labels_decoded": [
         {
           "term": "Keep refrigerated",

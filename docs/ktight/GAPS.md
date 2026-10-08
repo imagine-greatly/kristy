@@ -24,3 +24,5 @@ seeds | no shelf check for a fresh bag or bin (smell, turnover, date) in the car
 pretzel_bread | every step is a question for the baker; no check for a packaged loaf on the shelf (label wording for lye or baking soda) | a shopper at the bread shelf with no baker present has nothing to read
 bagels | every step is a question for the baker; no label or visual check for a bagged bagel | a shopper at the bread shelf with no baker present has nothing to read
 grains_beyond_rice | steps are cook times and gluten; no bin or bag check (whole vs broken grains, smell, turnover) in the card own fields | the shopper at the grain bins has no quality check
+salsa | no third shelf check (lid, seal, date) in the card own fields; with the Virginia line in science, step 2 is a storage line | the shopper comparing two jars has only the list
+seaweed | step 2 is the corollary of step 1 (“only seaweed” leaves the kind unnamed); no package check beyond the name (color, dryness, date) in the card own fields | the shopper comparing two bags of the same kind has nothing to look at

@@ -150,3 +150,30 @@ bread_aisle | kept
 breakfast_cereal | kept
 muesli | kept (ship note: “no longer raw” is the card’s own Toasted muesli label line)
 pasta_dry | kept
+olive_oil_grades | changed: step 3 reads the grade words as an action instead of defining them
+cooking_oils | kept
+lard_tallow | changed: step 3 leads with the read on a shortening tub
+nut_butter_ingredients | changed: step 2 is a look for oil on top, not a statement
+honey_adulteration | changed: step 3 reads ‘raw’ as an action; “often” and “unregulated” kept
+maple_syrup | kept
+sugars | changed: step 2 an action (“ignore cane or beet”), same fact
+salt | changed: step 3 a read, scoped to table salt; science scopes the iodide statement to table salt (P8 ship note); w1 curing salt stays in watch_out
+cocoa | kept
+baking_soda_powder | kept
+nutritional_yeast | changed: step 2 a look for added vitamins, not a definition
+dried_fruit | kept
+vinegar | kept (balsamic 12-year stays depth)
+broth | kept
+canned_soup | changed: step 1 reads the sodium words as the shelf decision (was a fact); step 2 an action; science “fixed ceiling” stays (lint-forced)
+canned_coconut_milk | kept
+pasta_sauce | changed: step 3 reads “with” as an action
+jam | kept
+ketchup_mustard | kept
+mayo | changed: step 2 checks where a front-named oil ranks; “may” kept
+hot_soy_sauce | kept
+condiments | kept
+salsa | changed: Virginia-only step 3 moves to science (bt4, D); homemade one-week line now depth-only; 2 steps
+olives | kept (S2 keeps “some”, w1)
+seaweed | kept
+coffee_beans | changed: step 2 an action (“judge the whole packaging, not the valve alone”), bt2
+tea | changed: science restores “usually” and “five” (D)
