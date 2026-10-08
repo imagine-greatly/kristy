@@ -10326,8 +10326,8 @@
       ],
       "pick_steps": [
         "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
-        "Read the ingredients: salt brine and no vinegar, since some makers add it.",
-        "Half-sour is crisp and bright green; full-sour is fully fermented."
+        "Read the ingredients: salt brine, no vinegar; some makers add it as a preservative.",
+        "Pick half-sour for crisp and bright green, full-sour for fully fermented."
       ],
       "science": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. Federal rules let acidified foods, meaning foods with acid added, be called pickles. A half-sour has a shorter stay in the brine than a full-sour.",
       "labels_decoded": [
@@ -12454,7 +12454,7 @@
       "pick_steps": [
         "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
         "Irregular sizes and folds mark sliced chips; identical, stackable shapes point to flakes.",
-        "“Potato crisps” or “made from dried potatoes” can mean a pressed product."
+        "Read “potato crisps” or “made from dried potatoes” as a possible pressed product."
       ],
       "science": "The FDA classifies potato chips as thin slices of potato fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer. Its maker chose “potato crisps,” the British term, instead.",
       "labels_decoded": [
@@ -13123,7 +13123,7 @@
         "Find the inspection mark: an inspected plant prepared the meal.",
         "Read the label, since some meals must be cooked from frozen."
       ],
-      "science": "A frozen meal’s name sets a floor for the meat inside. A beef stew holds at least 25 percent of the named meat, measured as fresh meat. A frozen poultry dinner holds at least 18 percent cooked deboned poultry. The inspection mark means a USDA or State-inspected plant prepared the meal. Cream sauce is one food that does not freeze well.",
+      "science": "A frozen meal’s name sets a floor for the meat inside. A beef stew holds at least 25 percent of the named meat, measured as fresh meat. A frozen poultry dinner holds at least 18 percent cooked deboned poultry or 2 oz., whichever is greater. The inspection mark means a USDA or State-inspected plant prepared the meal. Cream sauce is one food that does not freeze well.",
       "labels_decoded": [
         {
           "term": "Inspection mark",
@@ -13189,7 +13189,7 @@
         "Read the bag’s list for potatoes, oil and salt.",
         "Compare bags by what each one lists beyond those three."
       ],
-      "science": "In a plant, the strips are peeled, cut and blanched, then partly fried and frozen. They are finish-fried from frozen to develop color and crispness. Frying first drives water out of the food, and the drier the food going in, the better the crust. Fried foods frozen at home may lose their crispness. In an air fryer, an uncrowded basket lets the fries cook evenly.",
+      "science": "In a plant, the strips are peeled, cut and blanched, then partly fried and frozen. They are finish-fried from frozen to develop color and crispness. Frying is mainly a drying process, and the drier the food going in, the better the crust. Fried foods frozen at home may lose their crispness. In an air fryer, an uncrowded basket lets the fries cook evenly.",
       "labels_decoded": [
         {
           "term": "Frozen french fried potatoes",
@@ -13245,8 +13245,8 @@
       ],
       "pick_steps": [
         "The first ingredient should be a whole grain, like whole wheat flour.",
-        "Graham flour and rolled oats count as whole grain too.",
-        "Plain “wheat flour” listed first means plain flour leads."
+        "Count graham flour and rolled oats as whole grain too.",
+        "Read plain “wheat flour” listed first as plain flour, not whole grain."
       ],
       "science": "FDA draft advice counts a grain as whole when the kernel is intact, ground, cracked or flaked. Every part of the kernel stays in the same proportions as the intact kernel. Graham flour is another name for whole wheat flour. Wheat flour is another name for flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
       "labels_decoded": [
@@ -13306,7 +13306,7 @@
       ],
       "pick_steps": [
         "Pick nuggets labeled “white meat”, which means 100 percent light meat.",
-        "A plain “Chicken Nugget” is one solid piece of meat or poultry.",
+        "Read a plain “Chicken Nugget” name as one solid piece of meat or poultry.",
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
       ],
       "science": "On poultry labels, “white meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name, and a descriptive name follows. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product.",
@@ -13386,10 +13386,10 @@
       ],
       "pick_steps": [
         "Buy only food frozen solid, and pick it up just before checkout.",
-        "Ice cream that is not brick-hard means the freezer runs warm.",
+        "Check the ice cream: not brick-hard means the freezer runs warm.",
         "Get it into the home freezer soon; cook or thaw by the label."
       ],
-      "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
+      "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below, and 5°F at most. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
       "labels_decoded": [
         {
           "term": "Do not refreeze",

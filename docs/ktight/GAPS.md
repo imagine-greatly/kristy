@@ -26,3 +26,4 @@ bagels | every step is a question for the baker; no label or visual check for a 
 grains_beyond_rice | steps are cook times and gluten; no bin or bag check (whole vs broken grains, smell, turnover) in the card own fields | the shopper at the grain bins has no quality check
 salsa | no third shelf check (lid, seal, date) in the card own fields; with the Virginia line in science, step 2 is a storage line | the shopper comparing two jars has only the list
 seaweed | step 2 is the corollary of step 1 (“only seaweed” leaves the kind unnamed); no package check beyond the name (color, dryness, date) in the card own fields | the shopper comparing two bags of the same kind has nothing to look at
+bottled_water_buying | science Sc4 “unless the water was then processed” is wider than D/LD “unless purified”, but KT_CLAIM_DETOX blocks “purified” in authored lines (B17 ship note); lint not touched | Devon call, not a source gap

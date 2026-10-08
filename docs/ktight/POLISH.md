@@ -177,3 +177,28 @@ olives | kept (S2 keeps “some”, w1)
 seaweed | kept
 coffee_beans | changed: step 2 an action (“judge the whole packaging, not the valve alone”), bt2
 tea | changed: science restores “usually” and “five” (D)
+kombucha | kept
+sauerkraut | kept
+kimchi | kept
+fermented_pickles | changed: S2 restores w2 “as a preservative” (ship note); S3 an action (“Pick half-sour … full-sour …”), bt3/bt4
+raw_cider_vinegar | kept
+miso | kept
+tempeh | kept
+natto | kept
+fermented | kept
+bottled_water_buying | kept (Sc4 “unless the water was then processed” is wider than D “unless purified”; KT_CLAIM_DETOX blocks “purified”; lint untouched, Devon's call, logged in GAPS)
+coconut_water | kept
+crackers | kept
+tortilla_chips | kept
+potato_chips | changed: S3 a read (“Read … as a possible pressed product”), “can mean” hedge kept as “possible”
+popcorn | kept
+pretzels | kept
+snack_bars | kept
+trail_mix | kept
+snacks | kept
+frozen_pizza | kept
+frozen_meals | changed: science Sc3 restores “or 2 oz., whichever is greater” (ship note, LD:Poultry dinner/D), science 67 words
+frozen_fries | changed: science Sc3 reads “Frying is mainly a drying process” (D “frying is first a dehydration process”), no longer an order of steps (ship note)
+frozen_waffles | changed: S2 and S3 actions (“Count …”, “Read … as plain flour, not whole grain”), LD:Wheat flour
+frozen_nuggets | changed: S2 a read (“Read a plain “Chicken Nugget” name as …”)
+frozen | changed: S2 an action (“Check the ice cream: …”); science Sc2 restores “and 5°F at most” (ship note, bt3), science 67 words
