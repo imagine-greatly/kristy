@@ -7026,6 +7026,12 @@
         "The sole archived paper studied six original UK products, excluding barista, flavored, and sugar-free versions. It does not establish a universal health ranking.",
         "No health effect follows from this sensory and composition study."
       ],
+      "pick_steps": [
+        "Read the protein line and the added vitamins and minerals on the carton.",
+        "Compare the labels of available oat drinks; the formulation can differ.",
+        "Read the ingredient list for stabilizers; formulations differ in stabilizer use."
+      ],
+      "science": "Oat drinks vary in composition and fortification; the carton is the basis for choosing. Production can include milling, enzyme hydrolysis, formulation and heat treatment. Oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The sole paper studied six original UK products, excluding barista, flavored and sugar-free versions. It measured sensory, physical and chemical properties, not health outcomes, and sets no universal health ranking.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -9256,6 +9262,12 @@
       "watch_out": [
         "“Acidified” on the tub means added acids did the souring."
       ],
+      "pick_steps": [
+        "Read the name: “sour cream” or “cultured” means bacteria did the souring.",
+        "“Acidified” on the tub means added acids did the souring.",
+        "Read the optional ingredients for texture or shelf life, and any declared flavor."
+      ],
+      "science": "Federal standards name two ways to sour cream. Sour cream, or cultured sour cream, is pasteurized cream soured by lactic acid bacteria. Acidified sour cream is soured with added food-grade acids, with or without bacteria. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop liquid separating out. Culturing is the traditional way to sour cream.",
       "labels_decoded": [
         {
           "term": "Cultured sour cream",
@@ -9303,6 +9315,12 @@
       "watch_out": [
         "Stabilizers are allowed, up to 0.5 percent of the cheese."
       ],
+      "pick_steps": [
+        "Look for “cream cheese” as the name; that name carries the standard.",
+        "Find a culture in the list; stabilizers may follow, up to 0.5 percent.",
+        "Swap in Neufchâtel in most recipes; the two taste similar."
+      ],
+      "science": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and at most 55 percent moisture. The dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel closely resembles cream cheese; French Neufchâtel ripens and grows a soft rind.",
       "labels_decoded": [
         {
           "term": "Cream cheese",
@@ -9350,6 +9368,12 @@
       "watch_out": [
         "“Directly set” means food-grade acid formed the curd, not a culture."
       ],
+      "pick_steps": [
+        "Read the milkfat statement beside the name; the floor is 4 percent.",
+        "“Directly set” beside the name means acid, not a culture, formed the curd.",
+        "Pick dry curd cottage cheese for the version under 0.5 percent milkfat."
+      ],
+      "science": "Cottage cheese is dry curd mixed with a creaming mixture. It holds at least 4 percent milkfat and at most 80 percent moisture. The curd is set by lactic acid bacteria or by food-grade acids. An acid-set curd is labeled “Directly set” or “Curd set by direct acidification”. Without those words, a culture set it. Dry curd has no creaming mixture.",
       "labels_decoded": [
         {
           "term": "Directly set",
@@ -9401,6 +9425,12 @@
       "watch_out": [
         "“Frozen dairy dessert” means the carton missed the ice cream standard."
       ],
+      "pick_steps": [
+        "Read the name on the carton, not the picture.",
+        "“Frozen dairy dessert” in the small print means it missed the ice cream standard.",
+        "Read the ingredients for oils such as coconut or palm oil."
+      ],
+      "science": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. A product short of the standard is sold as “frozen dairy dessert”, with more air and less milk fat. It may list oils such as coconut, palm or soybean oil.",
       "labels_decoded": [
         {
           "term": "Ice cream",
@@ -9451,6 +9481,12 @@
       "watch_out": [
         "Spices can be added to ghee, so a flavored jar lists more than butter."
       ],
+      "pick_steps": [
+        "Read the list: plain ghee is butter alone, simmered down to its fat.",
+        "A flavored jar lists spices too, so it holds more than butter.",
+        "Choose ghee for its nutty taste and aroma."
+      ],
+      "science": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty, aromatic taste. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
       "labels_decoded": [
         {
           "term": "Clarified butter",
@@ -9504,6 +9540,12 @@
       "watch_out": [
         "Lactose intolerance or a milk allergy? Ask a doctor which milks fit."
       ],
+      "pick_steps": [
+        "Read the ingredients for goat milk or sheep milk.",
+        "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego.",
+        "Expect goat butter to be white, not yellow."
+      ],
+      "science": "Goat milk averages about 3.5 percent butterfat, in small, well-emulsified globules. The cream stays suspended longer than in cow’s milk, so it does not need to be homogenized. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Like cow’s milk, goat milk contains lactose. With lactose intolerance or a milk allergy, ask a doctor which milks fit.",
       "labels_decoded": [
         {
           "term": "Chèvre",
@@ -9551,6 +9593,12 @@
       "watch_out": [
         "FDA does not place almond drinks in the dairy group."
       ],
+      "pick_steps": [
+        "Pick unsweetened over sweetened, vanilla or chocolate.",
+        "Compare protein, vitamin D, calcium and potassium across cartons.",
+        "Check saturated fat on the panel."
+      ],
+      "science": "Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -9600,6 +9648,12 @@
       "watch_out": [
         "Unfortified soy milk is not the version FDA places in the dairy group."
       ],
+      "pick_steps": [
+        "Pick fortified; unfortified soy milk is not in FDA’s dairy group.",
+        "Pick unsweetened over flavored.",
+        "Compare protein and potassium across cartons, and check saturated fat."
+      ],
+      "science": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group. The reason given is key nutrients similar to those in milk.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -9648,6 +9702,12 @@
       "watch_out": [
         "The carton beverage does not stand in for canned coconut milk in cooking."
       ],
+      "pick_steps": [
+        "Find it in the nondairy milk section, next to the soy milk.",
+        "On a sweetened carton, check for sugar and flavors, then the thickeners.",
+        "Reach for the can, not the carton, for a recipe."
+      ],
+      "science": "Canned coconut milk is shredded coconut steeped in water or milk, then pressed. The carton beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of the can. It does not stand in for canned coconut milk in cooking.",
       "labels_decoded": [
         {
           "term": "Coconut milk beverage",
@@ -9691,6 +9751,12 @@
       "watch_out": [
         "The name alone does not say which oils went in."
       ],
+      "pick_steps": [
+        "Find each oil named in the list; note which one comes first.",
+        "Check whether a nut milk or culture is listed, as in some versions.",
+        "Compare the fat line on the Nutrition Facts."
+      ],
+      "science": "Plant butter is built on plant oils, and the oils differ from one plant butter to the next. The name alone does not say which oils went in; the ingredient list does. One label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors. The federal margarine standard is a reference point, not a definition of plant butter.",
       "labels_decoded": [
         {
           "term": "Cultured cashew milk",
@@ -9738,6 +9804,12 @@
       "watch_out": [
         "Vitamins in milk are optional, so check the label rather than assume."
       ],
+      "pick_steps": [
+        "Choose the type first: milk, yogurt, cheese, butter, cream or a plant drink.",
+        "Check the milk label for vitamins A and D; they are optional.",
+        "Read a filtered milk panel for its protein and sugar lines."
+      ],
+      "science": "Adding vitamins A and D to milk is optional, so the label tells. If vitamin D is added, each quart holds 400 International Units. Organic dairy animals must graze pasture throughout a grazing season of at least 120 days per year. Ultrafiltration pushes milk through a porous membrane, concentrating the protein already in it. The label then shows more protein, less sugar and a longer shelf life.",
       "labels_decoded": [
         {
           "term": "Vitamin A and D added",
