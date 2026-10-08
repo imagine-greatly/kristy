@@ -4693,6 +4693,12 @@
         "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic in glass-bottled drinks to the paint on painted metal caps. The caps were scratched by rubbing together in storage, before they were ever used. Cleaning the caps first took most of it back out. For water specifically the counts were low in every container, glass or plastic, glass slightly higher than plastic.",
         "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle."
       ],
+      "pick_steps": [
+        "Pick water from a named spring and town, sparkling or not.",
+        "A label naming a process instead of a spring need not name its source.",
+        "Pick glass where offered; “BPA-free” on PET is true and empty."
+      ],
+      "science": "The type on the label is a federal standard of identity, so it has to be earned. Spring water is defined by its underground source; process-named water by what was done to it, often city water. Mineral water is spring water carrying dissolved solids from the ground, and nothing may be added. A bottler drawing from a city system has to say so, unless the water was then processed.",
       "labels_decoded": [
         {
           "term": "Spring water",
@@ -12207,6 +12213,12 @@
         "Some coconut waters have added sugars; brands differ.",
         "Coconut milk is a different product, made from grated ripe coconut meat and water."
       ],
+      "pick_steps": [
+        "Read the ingredients for coconut water alone; some brands add sugar.",
+        "Canned coconut water is heated so it keeps, which takes its natural flavor.",
+        "Pick a whole young coconut in its husk over a trimmed one."
+      ],
+      "science": "Coconut water is the clear liquid inside green, unripe coconuts. Coconut milk is a different product: grated ripe coconut meat combined with water. Out of the nut, coconut water spoils quickly. Canned water gets a high-temperature, short-time heat step that keeps it long. Some is high-pressure processed instead, and in one study it kept its color and aroma better.",
       "labels_decoded": [
         {
           "term": "Contains __ percent juice",
@@ -12315,6 +12327,12 @@
       "watch_out": [
         "A front that leads with whole-grain words can still list refined flour first."
       ],
+      "pick_steps": [
+        "Check that the list starts with a whole grain, whatever the front says.",
+        "Look for “whole wheat flour,” since plain “wheat flour” is not whole grain.",
+        "For a fermented cracker, pick soda crackers or sourdough crackers."
+      ],
+      "science": "Ingredients are listed in descending order of predominance, so the first one leads. “Wheat flour” is a synonym of flour, not a whole grain flour. Multigrain means several grains, often refined. Soda crackers are fermented and raised with yeast; sourdough crackers are made from starter. A front that leads with whole-grain words can still list refined flour first.",
       "labels_decoded": [
         {
           "term": "Wheat flour",
@@ -12377,6 +12395,12 @@
       "watch_out": [
         "Some corn chips are made from corn that was never cooked in lime."
       ],
+      "pick_steps": [
+        "Read the ingredients for masa or corn masa, and a trace of lime.",
+        "Some corn chips use corn that was never cooked in lime.",
+        "Restaurant-style chips are tortillas cut into wedges and fried."
+      ],
+      "science": "Corn for tortillas is soaked and cooked in limewater, slaked lime and water, then ground into masa. The step is called nixtamalization. Cornmeal from corn never lime-cooked cannot form a dough with water alone. On a chip list, lime is that alkali, not the citrus fruit. Most bagged chips are shaped straight from coarse masa dough and fried.",
       "labels_decoded": [
         {
           "term": "Masa",
@@ -12429,6 +12453,12 @@
       "watch_out": [
         "“Potato crisps” can name a product pressed from dried potato flakes, not slices."
       ],
+      "pick_steps": [
+        "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
+        "Irregular sizes and folds mark sliced chips; identical, stackable shapes point to flakes.",
+        "“Potato crisps” or “made from dried potatoes” can mean a pressed product."
+      ],
+      "science": "The FDA classifies potato chips as thin slices of potato fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer. Its maker chose “potato crisps,” the British term, instead.",
       "labels_decoded": [
         {
           "term": "Made from dried potatoes",
@@ -12478,6 +12508,12 @@
       "watch_out": [
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
       ],
+      "pick_steps": [
+        "Buy plain kernels; add butter, oil or salt at home, if wanted.",
+        "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
+        "Loose kernels pop in a plain brown paper bag in the microwave."
+      ],
+      "science": "Popcorn is its own variety of corn with a hard hull, the pericarp. Moisture inside heats to steam, and the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots let the moisture escape and stay unpopped. Mushroom popcorn is the shape often sold prepopped and coated.",
       "labels_decoded": [
         {
           "term": "Popcorn kernels",
@@ -12525,6 +12561,12 @@
       "watch_out": [
         "Without an alkaline bath, a pretzel is just a tanned twist of dough."
       ],
+      "pick_steps": [
+        "Pick a glossy crust that shines like polished mahogany.",
+        "A paler pretzel can point to the milder baking soda bath.",
+        "Without an alkaline bath, a pretzel is just a tanned twist of dough."
+      ],
+      "science": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked, which neutralizes the lye. Lye is sodium hydroxide, the strongest alkali a baker uses. A baking soda bath reacts less, so its pretzels come out lighter. The alkaline surface speeds browning, which shapes the crust. Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
       "labels_decoded": [
         {
           "term": "Lye",
@@ -12576,6 +12618,12 @@
       "watch_out": [
         "Enriched refined grains listed first mean refined grain leads the bar, not oats."
       ],
+      "pick_steps": [
+        "Check that oats or another whole grain lead the list, not enriched refined grain.",
+        "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
+        "Read the list for sugar, high fructose corn syrup and hydrogenated oils."
+      ],
+      "science": "Ingredients are listed in descending order of predominance, so the first one leads. Rolled oats count as whole grain, since flattening or steaming keeps every part of the oat. An extension guide favors bars with whole grains, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils.",
       "labels_decoded": [
         {
           "term": "Added Sugars",
@@ -12627,6 +12675,12 @@
       "watch_out": [
         "A long list can push the nuts and fruit behind other ingredients."
       ],
+      "pick_steps": [
+        "Check that nuts and dried fruit lead the ingredient list.",
+        "Pick the mix whose list runs shortest beyond nuts and fruit.",
+        "A long list can push the nuts and fruit behind other ingredients."
+      ],
+      "science": "Trail mix began as nuts and dried fruit carried on the trail. Ingredients are listed in descending order of predominance. Whatever is listed first makes up the most of the bag. So the list shows what leads and what was added.",
       "labels_decoded": [
         {
           "term": "Ingredients",
@@ -12675,6 +12729,12 @@
       "watch_out": [
         "Front-of-package claims and pictures can mislead; the ingredient list settles it."
       ],
+      "pick_steps": [
+        "Trust the ingredient list over front claims and pictures.",
+        "Look for a whole grain, vegetable or bean listed first.",
+        "Read “multigrain” as several grains, often refined, not whole grains."
+      ],
+      "science": "Ingredients are listed in descending order of predominance, so the first one is the most. FDA draft guidance says the list should show whether the first ingredient is a whole grain. Multigrain products are often made with several refined grains. Some veggie chips are potato flour colored with vegetable powder or extract, and the ingredients show it.",
       "labels_decoded": [
         {
           "term": "Multigrain",
