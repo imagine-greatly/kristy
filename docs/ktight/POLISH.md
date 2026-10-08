@@ -123,3 +123,30 @@ label_cold_pressed_expeller | kept
 label_sugar_free_substitutes | changed: step 1 restores “per serving” (B11 ship note)
 label_serving_size | kept
 label_artificial_color | changed: science leads with the named-vs-group declaration rule the steps rest on; w3 to depth
+rice_arsenic | kept (B12.md S3 word count corrected to 13; home step S3 left for Devon)
+oats_steelcut_rolled_instant | changed: step 1 is the canister read (“one ingredient, oats”), the shelf check the tier note and do line name; steel-cut preference last
+grains_beyond_rice | kept
+flour_basics | changed: step 2 says what to read on the bag, “unbleached”, instead of defining both words
+specialty_flours | changed: step 3 a whole sentence; “almond meal either” stays in science
+sprouted_grains | kept
+beans_dried_vs_canned | kept
+bean_soak_salt | kept
+bulk_bins_buying | changed: science says what keeps well in bulk without dried fruit, which the card only calls good value (B12 ship note)
+nuts_raw_vs_roasted | kept
+seeds | kept
+rancidity_check | changed: the smell check leads, since it settles every item on the card; dark glass is oil only
+whole_spices | changed: step 1 is whole over ground, the card’s decision, which no step carried; the two toasting steps fold into one (small batches still in science)
+dried_herbs | changed: step 3 is the irradiation logo read the tier note and do line point to; “spice and coloring” (a paprika read) moves to science
+sandwich_bread | kept
+sourdough | changed: the vinegar or acetic acid read is a list check, so it moves ahead of asking the baker and reads as an action
+pretzel_bread | changed: step 3 dropped, covered by step 1 (“lye or baking soda”) and the science; step 2 says color alone does not settle it
+bagels | changed: the two “ask about boiling” steps merge into one
+tortillas | kept
+sprouted_grain_bread | kept
+gluten_free_bread | kept
+buns_rolls | kept
+pastries_muffins | changed: step 2 is a read for other fats on factory-made Danish; science restores “The American” muffin (B13 ship note)
+bread_aisle | kept
+breakfast_cereal | kept
+muesli | kept (ship note: “no longer raw” is the card’s own Toasted muesli label line)
+pasta_dry | kept

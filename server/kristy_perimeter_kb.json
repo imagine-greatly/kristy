@@ -1582,8 +1582,9 @@
         "Steel-cut, rolled and instant are the same grain cut and cooked differently. The processing shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant."
       ],
       "pick_steps": [
-        "Plain oats in any form; steel-cut if you like chew and have time.",
-        "Skip flavored instant packets: pre-cooked, usually pre-sweetened. Check the sugar."
+        "Turn it over: one ingredient, oats, whatever the cut.",
+        "Skip flavored instant packets: pre-cooked, usually pre-sweetened. Check the sugar.",
+        "Take steel-cut if you like chew and have time."
       ],
       "science": "Steel-cut, rolled and instant are the same grain, cut and cooked differently. The more an oat is cut, rolled and pre-cooked, the faster it cooks and digests. That shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant. Flavored instant packets are mostly added sugar."
     },
@@ -4236,7 +4237,7 @@
       ],
       "pick_steps": [
         "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
-        "Unbleached was aged with air; bleached was chemically whitened.",
+        "Read for “unbleached”: aged with air, not chemically whitened.",
         "Whole wheat: buy small, seal out air, keep it in the freezer."
       ],
       "science": "Protein content picks the flour: bread flour is highest, cake and pastry flour lowest. Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole wheat keeps the germ and its oil, and heat, air and moisture turn it. At room temperature, a month is the outside window. Its bran cuts gluten strands for a denser loaf, so start with a quarter.",
@@ -4319,7 +4320,7 @@
         "Smell before it goes in the cart: paint, crayon or bitter means rancid.",
         "Buy what you will use in a month; store it airtight and dark."
       ],
-      "science": "Dry staples keep well in bulk: rice, oats, beans, lentils, dried fruit and especially spices. The risk sits entirely with the fatty items, whose oil goes rancid. The scoop, bin handle and scale are touched by every shopper; the container you bring is not the exposed part. Container rules vary by store, since the FDA food code is a model offered to states and cities.",
+      "science": "Dry staples keep well in bulk: rice, oats, beans, lentils and spices. The risk sits entirely with the fatty items, whose oil goes rancid. The scoop, bin handle and scale are touched by every shopper; the container you bring is not the exposed part. Container rules vary by store, since the FDA food code is a model offered to states and cities.",
       "labels_decoded": [],
       "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
       "asked_as": [
@@ -4365,11 +4366,11 @@
         "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
       ],
       "pick_steps": [
+        "Buy whole; ground spice is tired inside six months.",
         "Buy from a bin that turns over, in the smallest amount you will finish.",
-        "Toast in a dry pan on medium heat until the smell crosses the kitchen.",
-        "Toast and grind small batches as you go, not a batch for the cupboard."
+        "Toast in a dry pan until the smell crosses the kitchen, then grind."
       ],
-      "science": "What you are buying in a spice is volatile oil. Whole, the oil stays sealed for a couple of years. Ground ones are tired inside six months, because grinding opens the surface up. Grinding itself makes heat, a primary way a spice loses quality before the jar. Toasted spice fades faster than whole, so toast only what you are about to use.",
+      "science": "What you are buying in a spice is volatile oil. Whole, the oil stays sealed for a couple of years. Grinding opens the surface up, and the oil leaves from there within months. Grinding itself makes heat, a primary way a spice loses quality before the jar. Toasted spice fades faster than whole, so toast and grind only what you are about to use.",
       "labels_decoded": [],
       "tier_note": "Volatile oils leaving faster once ground is straightforward chemistry, and toasting before the grind follows from it.",
       "eyebrow_short": "Whole spices",
@@ -4420,8 +4421,8 @@
         "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly."
       ],
       "pick_steps": [
-        "Buy oil in dark glass, a size you will finish inside two months.",
         "Smell the bulk bin first; varnish, putty, old walnuts or crayons means rancid.",
+        "Buy oil in dark glass, a size you will finish inside two months.",
         "Freeze whole-grain flour and shelled nuts; keep oil tightly capped, cool and dark."
       ],
       "science": "Oxidation is fat reacting with air; heat, light and time speed it up, so use oil promptly. The germ oil is what turns in whole-grain flour. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of. Nothing on the label predicts it; the clock runs on heat, light and air, not the printed date.",
@@ -6846,8 +6847,8 @@
       ],
       "pick_steps": [
         "Look for flour, water, salt, and a culture or starter on the list.",
-        "If the starter isn’t listed, ask the baker how the dough rises.",
-        "Added vinegar or acetic acid can give sour flavor without starter fermentation."
+        "Read for added vinegar or acetic acid; sourness alone does not verify a starter.",
+        "If the starter isn’t listed, ask the baker how the dough rises."
       ],
       "science": "Traditional sourdough rises on a starter, a flour-and-water culture of wild yeasts and bacteria. Those microbes form acid and leaven the dough. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor. The US has no standard of identity for sourdough, so the word alone settles nothing. No health result is established for every loaf, and wheat sourdough still contains gluten.",
       "labels_decoded": [
@@ -6899,8 +6900,7 @@
       ],
       "pick_steps": [
         "Ask which bath the bakery uses before baking: lye or baking soda.",
-        "Ask whether the dark crust comes from dipping, not judging by color.",
-        "Baking soda is a documented bath too when lye-dipped rolls are unavailable."
+        "Ask whether the dark crust comes from dipping; color alone does not settle it."
       ],
       "science": "A dip in an alkaline bath before baking gives pretzel bread its characteristic crust. Lye and baking soda are different bath ingredients, and both are documented methods. The color alone does not show which bath was used. The sources are culinary articles, not health trials; the crust establishes no health benefit.",
       "labels_decoded": [
@@ -6946,8 +6946,7 @@
         "Boiling and browning are processing and texture facts. The archived articles establish no health advantage."
       ],
       "pick_steps": [
-        "Ask the bakery whether the bagels are boiled before baking.",
-        "Don’t infer boiling from the shape; without a process label, ask.",
+        "Ask the bakery whether the bagels are boiled; the shape does not show it.",
         "Ask what goes in the bath; baking soda changes alkalinity and browning."
       ],
       "science": "Boiling before baking sets a bagel’s exterior and gives its characteristic chew. A longer boil can make the crust chewier and the interior denser. Baking soda in the bath changes its alkalinity and promotes browning. Boiling and browning are processing and texture facts, with no established health advantage.",
@@ -9105,7 +9104,7 @@
       "pick_steps": [
         "Look for “whole” in the flour’s name or first ingredient.",
         "Check the fat line: about 2.5% for whole wheat, under 1% for white.",
-        "Spelt and einkorn contain gluten; almond flour is usually skinned, meal either."
+        "Spelt and einkorn contain gluten; almond flour is usually from skinned almonds."
       ],
       "science": "Stone-milled flour can still have its bran sifted out, so “stoneground” names the mill, not whether the bran stayed in. US whole wheat flour keeps the bran, germ and endosperm unaltered. Spelt and einkorn are both species of wheat. Almond meal can be made from whole or blanched almonds.",
       "labels_decoded": [
@@ -9287,10 +9286,10 @@
       ],
       "pick_steps": [
         "Read the ingredients for butter by name, or ask the baker.",
-        "Factory Danish often swaps butter for other fats, like hydrogenated sunflower oil.",
+        "On factory-made Danish, read for other fats like hydrogenated sunflower oil.",
         "On a muffin, read whether the fat is butter or shortening."
       ],
-      "science": "Danish pastry is laminated: butter is folded into a yeast dough in thin layers. Butter is the traditional fat, and industrial production often uses other fats. A muffin is a quick bread, raised by baking soda instead of yeast. Butter or shortening, eggs and flavorings such as fruit go into the batter.",
+      "science": "Danish pastry is laminated: butter is folded into a yeast dough in thin layers. Butter is the traditional fat, and industrial production often uses other fats. The American muffin is a quick bread, raised by baking soda instead of yeast. Butter or shortening, eggs and flavorings such as fruit go into the batter.",
       "labels_decoded": [
         {
           "term": "Butter",
@@ -11330,9 +11329,9 @@
       "pick_steps": [
         "Pick a single herb when the name on the jar matters.",
         "On a blend, read “spice” as possibly several herbs the list does not name.",
-        "Read “spice and coloring” as a spice that also adds color, such as paprika."
+        "Check for a logo with “Treated with radiation” or “Treated by irradiation”."
       ],
-      "science": "Basil, marjoram, oregano, parsley, rosemary, sage, tarragon and thyme count as spices for labeling. A spice may be declared on the list simply as “spice”. An irradiated retail food carries a logo with “Treated with radiation” or “Treated by irradiation”.",
+      "science": "Basil, marjoram, oregano, parsley, rosemary, sage, tarragon and thyme count as spices for labeling. A spice may be declared on the list simply as “spice”. Spices that also color, such as paprika, are declared as “spice and coloring” unless named. An irradiated retail food carries a logo with “Treated with radiation” or “Treated by irradiation”.",
       "labels_decoded": [
         {
           "term": "Spice",

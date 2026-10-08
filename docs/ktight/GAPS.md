@@ -20,3 +20,7 @@ ghee | S3 is a reason to choose ghee, not a check; no jar check (color, grain, d
 coconut_milk_beverage | S3 is an aisle location, not a pick check; no third shelf check in the card own fields | a third step should help pick between cartons
 label_wild_vs_farm_raised | short_answer and science credit country-of-origin labeling with requiring the species name; the source may place species naming under a different rule | a shopper trusting the species line should know which rule backs it
 label_artificial_color | no shelf read tells which exempt color sits behind “artificial color” or “color added” (the card says the panel alone cannot say) | a shopper wanting to avoid titanium dioxide has nothing to check beyond an outright name
+seeds | no shelf check for a fresh bag or bin (smell, turnover, date) in the card own fields; the do line says “check the bag date” but no field backs it, and step 3 is a home storage step | the shopper picking between two bags of flax has nothing to check
+pretzel_bread | every step is a question for the baker; no check for a packaged loaf on the shelf (label wording for lye or baking soda) | a shopper at the bread shelf with no baker present has nothing to read
+bagels | every step is a question for the baker; no label or visual check for a bagged bagel | a shopper at the bread shelf with no baker present has nothing to read
+grains_beyond_rice | steps are cook times and gluten; no bin or bag check (whole vs broken grains, smell, turnover) in the card own fields | the shopper at the grain bins has no quality check
