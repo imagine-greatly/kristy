@@ -3131,11 +3131,11 @@
         "Unsure of the cut, name the section first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
       ],
       "pick_steps": [
-        "Ask what came in today, and the sourcing: grass-finished, air-chilled, where from.",
-        "Ask for a fresh chuck grind, bones for stock, and silverskin removed.",
-        "Name the section, thickness and size, and ask if it’s wet- or dry-aged."
+        "Ask what came in today and what is coming down in price.",
+        "Ask the sourcing: grass-finished, air-chilled, where from; and if wet- or dry-aged.",
+        "Name section, thickness and size; ask for a fresh chuck grind, bones, silverskin off."
       ],
-      "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Ask what is coming down in price this week. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out more concentrated in flavor.",
+      "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out more concentrated in flavor.",
       "asked_as": [
         "what should i ask the butcher",
         "what do i say at the meat counter",
@@ -3334,7 +3334,7 @@
       "pick_steps": [
         "Find the asterisk: ‘uncured’ is always qualified on the label.",
         "Read the ingredients list; every curing substance has to be named there.",
-        "Counter-sliced is usually a shorter list than the tub; whole roasted meat, nothing added."
+        "Counter-sliced usually lists fewer ingredients than the tub; whole roasted meat adds none."
       ],
       "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’."
     },
@@ -7855,7 +7855,7 @@
         "Find where water sits in the ingredients statement.",
         "Check whether the label says fully cooked or cook before eating."
       ],
-      "science": "Ham is the cured leg of pork, and its product name tells how much water the curing added. Plain “Ham” must meet the highest protein level. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” states the share of its weight that is added ingredients. Fresh ham and country ham are not fully cooked and need cooking before eating.",
+      "science": "Ham is the cured leg of pork, and its product name tells how much water the curing added. Plain “Ham” must meet the highest protein level. “Ham, Water Added” needs at least 17.0% protein, with 10% added solution. “Ham and Water Product” states the share of its weight that is added ingredients. Fresh ham and country ham are not fully cooked and need cooking before eating.",
       "labels_decoded": [
         {
           "term": "Ham With Natural Juices",
@@ -8168,7 +8168,7 @@
         "Expect deeper red than beef, and bag the package separately for leaks.",
         "Cook or freeze ground bison within 2 days, steaks within 3 to 5."
       ],
-      "science": "Bison is a bovine, in the same family as domestic cattle, not a true buffalo. Inspection can be federal or state. The meat is deeper red because it has no marbling. It keeps and cooks on the same rules as beef, but turns tough beyond medium or at high heat.",
+      "science": "Bison is a bovine, in the same family as domestic cattle, not a true buffalo. Inspection can be federal or state. The meat is deeper red because it has no marbling. It keeps and cooks on the same rules as beef, but can turn tough beyond medium or at high heat.",
       "labels_decoded": [
         {
           "term": "Buffalo",

@@ -40,3 +40,28 @@ scallops | kept
 clams_mussels_oysters | kept
 smoked_salmon | kept
 seafood_counter | changed: science no longer sets the two unrelated 85% figures side by side
+beef_grassfed_vs_grainfed | kept
+ground_beef_organ_blend | kept
+beef_cuts_basics | kept
+ground_beef_lean_ratio | kept
+beef_grades_usda | kept
+dry_brine | kept
+pork_cuts_and_enhanced | kept
+judging_meat_at_the_case | kept
+butcher_counter_asking | changed: step 1 now asks what came in today and what is coming down in price (ship note), the question that sets what to buy; sourcing and aging folded into step 2, grind, bones and silverskin into step 3
+lamb_goat | kept
+organ_meats | kept
+bison | changed: science restores “can” turn tough beyond medium, the card’s own hedge (ship note)
+venison_game | kept
+meat_case | kept
+deli_meat_uncured | changed: step 3 was a half sentence; now one sentence: counter-sliced lists fewer ingredients, whole roasted meat adds none
+bacon | kept
+hot_dogs | kept
+ham | changed: science restores “protein” to the 17.0% Water Added line, so the shopper knows what the number measures (ship note)
+turkey_bacon | kept
+cured_pork | kept
+hummus | kept
+deli_salads | kept
+prepared_meals | kept
+fresh_pasta | kept
+deli | kept
