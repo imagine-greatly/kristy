@@ -139,8 +139,8 @@ const readSwap = (unverifiedAsFood, swap) => (unverifiedAsFood ? null : swap);
 // The withheld read (Task B #3): Kristy holding back her last sentence, not an ad.
 // ONE line where the personalized note would be, paired in-card with the upgrade /
 // sign-in affordance. Same line for authed-gated and guests — only the CTA differs.
-const UPSELL =
-  "That's what's in it. Whether it belongs in your cart — that's my read.";
+// Must stay non-empty: iOS draws the unlock door only when `upsell` has text (ScanSheet).
+const UPSELL = 'The read against your goal is the member part.';
 const GUEST_UPSELL = UPSELL;
 
 /* ───────────────────────── Authed ───────────────────────── */
