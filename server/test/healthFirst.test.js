@@ -18,7 +18,8 @@ const cards = nonEmpty(
   'health-first corpus', 200
 );
 nonEmpty(OWNED_FACTS, 'OWNED_FACTS', 13);
-nonEmpty(HEALTH_FIRST_PENDING, 'HEALTH_FIRST_PENDING', 74);
+// Ratchet: PENDING only shrinks; each batch lowers the ceiling as it removes ids.
+assert.ok(HEALTH_FIRST_PENDING.size <= 51, `HEALTH_FIRST_PENDING grew: ${HEALTH_FIRST_PENDING.size} > 51`);
 
 test('every card outside HEALTH_FIRST_PENDING is clean on both rules; HEAD hits printed', (t) => {
   const hits = { CULINARY_AIM: new Set(), REPEATED_CLAIM: new Set(), POINTER_UNKNOWN_OWNER: new Set() };
@@ -82,6 +83,11 @@ test('fixture: a pointer to the owner title is clean', () => {
 test('fixture: a pointer to a non-owner title is POINTER_UNKNOWN_OWNER', () => {
   const r = lintRepeatedClaim({ id: 'ground_beef_lean_ratio', pick_steps: ['How it was raised: see Beef grades.'] });
   assert.deepEqual(codes(r), ['POINTER_UNKNOWN_OWNER']);
+});
+test('fixture: a labels_decoded term is skipped, its meaning is scanned', () => {
+  const item = (meaning) => ({ id: 'shrimp_imported_vs_domestic', labels_decoded: [{ term: 'Farm-raised', meaning }] });
+  assert.deepEqual(lintRepeatedClaim(item('Pond or tank raised; quality depends entirely on the operation.')), []);
+  assert.deepEqual(codes(lintRepeatedClaim(item('Farmed shrimp from a pond.'))), ['REPEATED_CLAIM']);
 });
 test('fixture: "tenderized" is not the culinary "tender"', () => {
   assert.deepEqual(lintCulinaryAim({ id: 'beef_cuts_basics', pick_steps: ['Mechanically tenderized steaks need full cooking.'] }), []);

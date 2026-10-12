@@ -90,10 +90,10 @@
       ],
       "category": "seafood",
       "question": "Is imported or domestic shrimp better?",
-      "decision": "Wild American shrimp is worth finding; most imports are pond-farmed.",
+      "decision": "Read the country of origin first; it is printed by law.",
       "why": "Country of origin is printed by law. It is the one sourcing question with an answer.",
-      "short_answer": "Most shrimp in US stores is imported and farmed, and what stands behind it varies enormously by country of origin. Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery.",
-      "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Farming practice, pond management and antibiotic use vary by producing country rather than by the word ‘farmed’, so origin plus a certification does more work than any claim on the front of the bag. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value. Where the bag is farmed, a credible certification is what stands in for knowing the farm.",
+      "short_answer": "Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery.",
+      "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value.",
       "evidence_tier": "credible_concern",
       "sources": [
         "NOAA Fisheries country-of-origin data",
@@ -125,10 +125,10 @@
       ],
       "pick_steps": [
         "Read the country of origin first; it is printed by law.",
-        "‘Wild American’ or ‘Gulf’ is the traceable one; otherwise look for BAP or ASC.",
+        "Wild or farmed: see Wild vs. farmed salmon.",
         "Buy it frozen raw: the ‘fresh’ case is nearly always thawed."
       ],
-      "science": "Most shrimp in US stores is imported and farmed. Farming practice, pond management and antibiotic use vary by producing country, not by the word ‘farmed’. Where the bag is farmed, a credible certification stands in for knowing the farm. Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes. Frozen raw gives the most control over the cooking.",
+      "science": "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes. Frozen raw gives the most control over the cooking.",
       "asked_as": [
         "is imported shrimp ok",
         "what shrimp should i buy",
@@ -289,7 +289,7 @@
       "buying_tips": [
         "Look for liver and heart named in the ingredient list, each with a percentage.",
         "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
-        "Grass-finished applies to the blend the same way it applies to plain ground beef. Both words, or it is a grain finish."
+        "How it was raised: see Grass-fed vs. grain-fed beef."
       ],
       "watch_out": [
         "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
@@ -300,7 +300,7 @@
         "Find liver and heart in the ingredient list, each with its own percentage.",
         "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass."
       ],
-      "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Grass-finished applies to a blend the same as plain ground beef.",
+      "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.",
       "labels_decoded": [
         {
           "term": "Ground beef",
@@ -1579,8 +1579,7 @@
       ],
       "pick_steps": [
         "Turn it over: one ingredient, oats, whatever the cut.",
-        "Skip flavored instant packets: pre-cooked, usually pre-sweetened. Check the sugar.",
-        "Take steel-cut if you like chew and have time."
+        "Skip flavored instant packets: pre-cooked, usually pre-sweetened. Check the sugar."
       ],
       "science": "Steel-cut, rolled and instant are the same grain, cut and cooked differently. The more an oat is cut, rolled and pre-cooked, the faster it cooks and digests. That shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant. Flavored instant packets are mostly added sugar."
     },
@@ -2963,8 +2962,8 @@
       "question": "How do I tell good meat from the case?",
       "decision": "Color comes from oxygen and packaging, not from how fresh it is.",
       "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
-      "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, fine marbling, no off smell or slime.",
-      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Marbling should run through the muscle in fine threads; a thick outer fat cap is trim, not marbling. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
+      "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, no off smell or slime.",
+      "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS “The Color of Meat and Poultry”",
@@ -2977,7 +2976,6 @@
       "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
       "buying_tips": [
         "Not slimy, and no off smell. Both, not either.",
-        "Fine marbling through the muscle beats a thick fat cap on the outside.",
         "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
         "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
         "Take it from the back of the case where it is coldest, and get it home cold."
@@ -3000,8 +2998,7 @@
       ],
       "pick_steps": [
         "Take a sealed, leak-free package from the back, where the case is coldest.",
-        "Pass on slime or any off smell; color alone is not the test.",
-        "Fine marbling through the muscle beats a thick fat cap outside."
+        "Pass on slime or any off smell; color alone is not the test."
       ],
       "science": "Beef pigment turns bright red within minutes of oxygen and browns over days. That is surface chemistry, not spoilage. Vacuum-packed beef looks purple, and brown edges mean older, not unsafe. A ‘packaged on’ date is not a safety cutoff. Tray-wrapped meat generally holds up to three days refrigerated, and a sealed vacuum pack up to seven. Sell-by dates are voluntary and not a safety indicator.",
       "eyebrow_short": "Judging meat",
@@ -3163,8 +3160,7 @@
         "Whole bird: cheapest per pound, and the carcass makes stock.",
         "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
         "Breast: fast and lean. Pull it the moment it is done.",
-        "Boneless skinless is the priciest form of the same bird.",
-        "Check the label for ‘retained water’, and for ‘air-chilled’ if skin matters to you."
+        "Boneless skinless is the priciest form of the same bird."
       ],
       "labels_decoded": [
         {
@@ -3183,15 +3179,15 @@
         "is boneless skinless worth it"
       ],
       "watch_out": [
-        "Retained water has to be disclosed on the label. It reads along the lines of ‘contains up to __% retained water’. Read the tray for that line.",
-        "A raw single-ingredient bird may not carry retained water at all. The exception is when the processing that keeps it safe makes it unavoidable."
+        "How it was chilled: see Air-chilled chicken.",
+        "Boneless skinless is the priciest form of the same bird."
       ],
       "pick_steps": [
         "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
         "A whole bird is cheapest per pound, and the frame makes stock.",
-        "Read the tray for a ‘retained water’ line, and ‘air-chilled’ if skin matters."
+        "How it was chilled: see Air-chilled chicken."
       ],
-      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes. Retained water has to be disclosed on the label. A raw single-ingredient bird may not carry any at all, unless safety processing makes it unavoidable."
+      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -8072,7 +8068,6 @@
       ],
       "pick_steps": [
         "Buy only for a cook within one to two days.",
-        "For braising, pick heart or tongue.",
         "Match each organ to its method; heart and tongue go in liquid."
       ],
       "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
@@ -8162,8 +8157,8 @@
       "category": "meat_counter",
       "question": "How do you choose venison and game meat?",
       "decision": "Venison from a fully refrigerated processor, trimmed of its fat.",
-      "why": "Game is often processed by small shops. Cold handling decides its safety, and the fat carries the gamey flavor.",
-      "short_answer": "Choose game processed in fully refrigerated facilities, with each animal handled on its own. Trim the fat to reduce the gamey flavor. Use refrigerated venison within two or three days.",
+      "why": "Game is often processed by small shops. Cold handling decides its safety.",
+      "short_answer": "Choose game processed in fully refrigerated facilities, with each animal handled on its own. Use refrigerated venison within two or three days.",
       "detail": "Deer and elk can carry Chronic Wasting Disease (CWD). Research finds its abnormal proteins in brain, spinal cord and lymph tissue, not in muscle. No evidence shows it passing to humans naturally, but that is not ruled out. Extension guidance advises avoiding the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F. Wrapped game keeps 9 to 12 months frozen.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -8176,7 +8171,6 @@
       "buying_tips": [
         "Ask whether the processor handles each animal individually.",
         "Choose a processor with fully refrigerated facilities.",
-        "Trim the fat to reduce the gamey flavor.",
         "Use unfrozen venison within two or three days."
       ],
       "watch_out": [
@@ -8187,7 +8181,7 @@
         "Pass on meat that is bruised, discolored, or has hair, dirt or bone fragments.",
         "Trim the fat, and use unfrozen venison within two or three days."
       ],
-      "science": "Game is often processed by small shops, so cold handling decides its safety. The fat carries the gamey flavor. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Extension guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
+      "science": "Game is often processed by small shops, so cold handling decides its safety. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Extension guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
       "labels_decoded": [
         {
           "term": "Aging",
@@ -8408,7 +8402,7 @@
       "decision": "White fish chosen by its named species, firm and mild-smelling.",
       "why": "A fillet is hard to identify by eye, so the species name does that work. Firm flesh and a mild smell show the rest.",
       "short_answer": "Ask which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
-      "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. Ragged tail ends are hard to cook properly, so pick center-cut pieces. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh. NOAA calls U.S. wild-caught Atlantic cod and Alaska pollock smart seafood choices.",
+      "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
       "evidence_tier": "established",
       "sources": [
         "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
@@ -8423,8 +8417,7 @@
       "buying_tips": [
         "Ask which species the fillet is.",
         "Press the flesh and check that it springs back.",
-        "Skip fillets with dried, dark or discolored edges.",
-        "Pick a center-cut piece over a ragged tail end."
+        "Skip fillets with dried, dark or discolored edges."
       ],
       "watch_out": [
         "A fillet is hard to identify by eye, so the species name on the sign carries the weight.",
@@ -8433,9 +8426,9 @@
       "pick_steps": [
         "Ask the species; a fillet is hard to identify by eye.",
         "Press it: firm flesh springs back, with no dried or dark edges.",
-        "Take a center-cut piece with a mild sea smell, not a ragged tail end."
+        "Take a piece with a mild sea smell."
       ],
-      "science": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Color alone does not show freshness, because diet, environment and color fixatives all change it. Ragged tail ends are hard to cook properly.",
+      "science": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Color alone does not show freshness, because diet, environment and color fixatives all change it.",
       "labels_decoded": [
         {
           "term": "Market name",
@@ -8443,7 +8436,7 @@
         },
         {
           "term": "Alaska pollock",
-          "meaning": "A U.S. wild-caught white fish, sold mostly as fillets and as imitation crab."
+          "meaning": "A U.S. white fish, sold mostly as fillets and as imitation crab."
         }
       ],
       "tier_note": "Species labeling and the firmness checks come from FDA seafood guidance.",
@@ -9159,7 +9152,7 @@
       "decision": "Buns and rolls named whole wheat, which rules out white flour.",
       "why": "Bread, rolls and buns share one federal standard. Buns and rolls named whole wheat are made from whole wheat flour only.",
       "short_answer": "Read the name on the bag. “Whole wheat buns” and “whole wheat rolls” use whole wheat flour, with no white flour. “Enriched buns” are made with enriched flour instead.",
-      "detail": "Federal rule 21 CFR 136.110 sets one standard for bread, rolls and buns. Under 136.180, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Under 136.115, enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil. Dough conditioners and calcium propionate, a preservative, follow at 2% or less.",
+      "detail": "Federal rule 21 CFR 136.110 sets one standard for bread, rolls and buns. Under 136.180, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Under 136.115, enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/136.110",
@@ -9175,15 +9168,14 @@
         "Read “enriched buns” as made with enriched flour, not whole wheat."
       ],
       "watch_out": [
-        "Enriched buns use enriched flour in place of whole wheat flour.",
-        "A typical enriched bun also lists sugar, soybean oil and dough conditioners."
+        "Enriched buns use enriched flour in place of whole wheat flour."
       ],
       "pick_steps": [
         "Read the name on the bag: “whole wheat” buns use no white flour.",
         "Check that the first ingredient is whole wheat flour.",
         "“Enriched buns” mean enriched flour, not whole wheat."
       ],
-      "science": "Bread, rolls and buns share one federal standard, so the name on the bag is regulated. Whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, with no white flour. Enriched buns use enriched flour in place of some or all of the flour. A typical enriched bun also lists sugar, soybean oil and dough conditioners.",
+      "science": "Bread, rolls and buns share one federal standard, so the name on the bag is regulated. Whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, with no white flour. Enriched buns use enriched flour in place of some or all of the flour.",
       "labels_decoded": [
         {
           "term": "Whole wheat buns",

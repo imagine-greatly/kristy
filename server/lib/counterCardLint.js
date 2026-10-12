@@ -1508,20 +1508,17 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
 // `lintCard`; the corpus test holds curated cards to it, with the cards that fail today
 // listed below until later pieces empty the list.
 export const HEALTH_FIRST_PENDING = new Set([
-  'beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics',
-  'beef_grades_usda', 'meat_case', 'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats',
-  'pick_soup_bones', 'air_chilled_chicken', 'chicken_cuts_basics', 'duck_meat', 'egg_grades_sizes',
-  'pork_cuts_and_enhanced', 'lamb_goat', 'bison', 'venison_game', 'scallops', 'shrimp_imported_vs_domestic',
-  'white_fish', 'canned_fish_choosing', 'milk_processing', 'raw_milk', 'raw_aged_cheese',
-  'cheese_real_vs_processed', 'grassfed_butter', 'plain_kefir', 'cream_cheese', 'ghee', 'goat_sheep_dairy',
-  'coconut_milk_beverage', 'label_cold_pressed_expeller', 'cooking_oils', 'flour_basics', 'bagels',
+  'ground_beef_lean_ratio', 'beef_cuts_basics',
+  'beef_grades_usda', 'meat_case', 'butcher_counter_asking',
+  'pick_soup_bones', 'duck_meat', 'egg_grades_sizes',
+  'pork_cuts_and_enhanced', 'lamb_goat', 'scallops',
+  'plain_kefir', 'cream_cheese', 'ghee', 'goat_sheep_dairy',
+  'coconut_milk_beverage', 'cooking_oils', 'flour_basics', 'bagels',
   'pretzels', 'kimchi', 'miso', 'fermented_pickles', 'olives', 'salt', 'sugars', 'maple_syrup', 'cocoa',
-  'tea', 'broth', 'grains_beyond_rice', 'pick_tofu', 'oats_steelcut_rolled_instant', 'nuts_raw_vs_roasted',
-  'beans_dried_vs_canned', 'bulk_bins_buying', 'whole_spices', 'frozen_vs_fresh_produce',
+  'tea', 'broth', 'grains_beyond_rice', 'pick_tofu',
   'produce_leafy_greens', 'produce_mushrooms', 'pick_kohlrabi', 'seeds', 'nutritional_yeast', 'pasta_sauce',
   'jam', 'ketchup_mustard', 'seaweed', 'coconut_water', 'popcorn', 'hummus', 'frozen_fries',
   'frozen_waffles', 'frozen_nuggets', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
-  'buns_rolls', // chf-1: hit at HEAD outside the plan
 ]);
 
 // Word-bounded, so `tender` never matches `tenderized` (a safety fact, not a cook's aim).
@@ -1605,7 +1602,11 @@ export function lintRepeatedClaim(entry) {
     if (!row.family.includes(entry?.id)) continue;
     for (const field of REPEATED_CLAIM_FIELDS) {
       if (entry[field] == null) continue;
-      for (const text of stringsIn(entry[field])) {
+      // A labels_decoded `term` is the label's own printed word (like an alias); its meaning is still scanned.
+      const value = field === 'labels_decoded' && Array.isArray(entry[field])
+        ? entry[field].map((i) => (i && typeof i === 'object' ? { ...i, term: undefined } : i))
+        : entry[field];
+      for (const text of stringsIn(value)) {
         if (!POINTER.test(text) && row.pattern.test(text)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
       }
     }
