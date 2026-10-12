@@ -1508,8 +1508,7 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
 // `lintCard`; the corpus test holds curated cards to it, with the cards that fail today
 // listed below until later pieces empty the list.
 export const HEALTH_FIRST_PENDING = new Set([
-  'ground_beef_lean_ratio', 'beef_cuts_basics', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking', 'pick_soup_bones',
-  'duck_meat', 'egg_grades_sizes', 'pork_cuts_and_enhanced', 'lamb_goat', 'goat_sheep_dairy', 'coconut_milk_beverage',
+  'duck_meat', 'goat_sheep_dairy', 'coconut_milk_beverage',
   'cooking_oils', 'flour_basics', 'bagels', 'pretzels', 'kimchi', 'miso',
   'salt', 'sugars', 'maple_syrup', 'cocoa', 'tea', 'broth',
   'grains_beyond_rice', 'pick_tofu', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',

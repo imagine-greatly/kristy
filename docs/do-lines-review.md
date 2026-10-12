@@ -42,8 +42,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `fresh_vs_previously_frozen_fish` | seafood | Buy the frozen. Thaw it overnight in the fridge. | Ask the counter “was this previously frozen?” before paying the fresh premium. | — |
 | `beef_grassfed_vs_grainfed` | meat | Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
-| `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Look for fine white flecks through the muscle, not a thick fat rim. | — |
-| `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the cut name too: “ground chuck” beats plain “ground beef.” | — |
+| `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Read the name for “mechanically tenderized” before the cut name. | — |
+| `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the name: “ground beef” allows no added fat, water or binders. | — |
 | `egg_labels` | eggs_dairy | Soy-free and corn-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
 | `air_chilled_chicken` | meat | Air-chilled. A water-chilled bird absorbs the bath it was cooled in. | Check the package for “retained water up to”. That percentage is water. | — |
 | `no_antibiotics_poultry` | meat | A fair choice, not a cleaner bird. Don’t pay the premium. | Look for “USDA Process Verified” beside the claim, or put it back. | — |
@@ -83,10 +83,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_grades_sizes` | eggs_dairy | Compare price per ounce. Grade and size say nothing about the hen. | Read the weight per dozen on the carton end: 24, 27, 30 ounces. | — |
 | `egg_feed_claims` | eggs_dairy | ‘Vegetarian-fed’ is the one to walk away from. | Check whether the carton claims outdoor access and no animal protein at once. | — |
 | `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door. It swings warm every open. | — |
-| `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Buy Select for the braise and put the money into Choice steaks. | — |
+| `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Read the grade as a marbling score, then ask how it was raised. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `dry_brine` | meat · home | Salt it the day before, and leave it uncovered. | Weigh out salt at one percent of the meat’s weight. | — |
-| `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask for the bones and trim behind the counter, usually free. | — |
+| `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice whole roasted meat thin instead. | — |
@@ -152,12 +152,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
 | `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
 | `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
-| `lamb_goat` | meat | Lamb by its USDA grade, goat by firm, fine-grained flesh. | Look for a USDA grade on lamb, and press goat for firm flesh. | — |
+| `lamb_goat` | meat | Lamb by its USDA grade, goat by firm, fine-grained flesh. | Press goat for firm, fine-grained flesh and white fat. | — |
 | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
 | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
 | `duck_meat` | meat | Duck chosen by its class name, Grade A when graded. | Read the class on the label, then look for the Grade A shield. | — |
-| `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read the primal cut on the label, such as chuck or round. | — |
+| `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read how it was raised, anything added, then the use-by date. | — |
 | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
 | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
 | `lobster` | seafood | A live lobster that moves, or frozen tails that are hard-frozen. | Ask the counter to lift the lobster and check the tail curls under. | — |

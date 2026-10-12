@@ -9,6 +9,7 @@ import { nonEmpty } from '../lib/testGuards.js';
 import {
   HEALTH_FIRST_PENDING, OWNED_FACTS, REPEATED_CLAIM_FIELDS, lintCulinaryAim, lintRepeatedClaim, stringsIn, POINTER,
 } from '../lib/counterCardLint.js';
+import { assertPassRule, HEALTH_FIRST_REWRITE } from './acceptance/passRule.js';
 
 const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const inFamily = new Set(OWNED_FACTS.flatMap((r) => r.family));
@@ -19,7 +20,7 @@ const cards = nonEmpty(
 );
 nonEmpty(OWNED_FACTS, 'OWNED_FACTS', 13);
 // Ratchet: PENDING only shrinks; each batch lowers the ceiling as it removes ids.
-assert.ok(HEALTH_FIRST_PENDING.size <= 30, `HEALTH_FIRST_PENDING grew: ${HEALTH_FIRST_PENDING.size} > 30`);
+assert.ok(HEALTH_FIRST_PENDING.size <= 21, `HEALTH_FIRST_PENDING grew: ${HEALTH_FIRST_PENDING.size} > 21`);
 
 test('every card outside HEALTH_FIRST_PENDING is clean on both rules; HEAD hits printed', (t) => {
   const hits = { CULINARY_AIM: new Set(), REPEATED_CLAIM: new Set(), POINTER_UNKNOWN_OWNER: new Set() };
@@ -91,4 +92,12 @@ test('fixture: a labels_decoded term is skipped, its meaning is scanned', () => 
 });
 test('fixture: "tenderized" is not the culinary "tender"', () => {
   assert.deepEqual(lintCulinaryAim({ id: 'beef_cuts_basics', pick_steps: ['Mechanically tenderized steaks need full cooking.'] }), []);
+});
+
+test('fixture: a changed cart_pick fails the pass rule outside HEALTH_FIRST_REWRITE, passes inside it', () => {
+  const old = { id: 'not_a_rewrite_id', cart_pick: 'Chuck roast', decision: 'x' };
+  assert.ok(!HEALTH_FIRST_REWRITE.has(old.id));
+  assert.throws(() => assertPassRule(null, old, { ...old, cart_pick: 'Whole chuck' }), /frozen field cart_pick/);
+  const inSet = { ...old, id: 'beef_cuts_basics' };
+  assert.doesNotThrow(() => assertPassRule(null, inSet, { ...inSet, cart_pick: 'Whole chuck' }));
 });

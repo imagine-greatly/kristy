@@ -398,17 +398,12 @@
     },
     {
       "id": "beef_cuts_basics",
-      "title": "Beef cuts — what’s for what",
+      "title": "Beef cuts",
       "aliases": [
         "beef cuts",
         "beef cut",
         "which cut",
-        "cut for stew",
-        "stew",
         "stew meat",
-        "braise",
-        "braising",
-        "pot roast",
         "chuck",
         "chuck roast",
         "sirloin",
@@ -419,50 +414,54 @@
         "round",
         "steak",
         "steak cuts",
-        "cut of beef"
+        "cut of beef",
+        "mechanically tenderized"
       ],
       "category": "beef",
       "question": "Which beef cut should I buy?",
-      "decision": "Chuck is the cut that falls apart when you cook it slowly.",
-      "why": "The hard-working cuts carry the connective tissue that melts into the broth.",
-      "short_answer": "Tougher, cheaper cuts like chuck, brisket and round want low-and-slow braising and stews. Tender cuts like ribeye, strip and tenderloin want quick high heat. The cheap cuts often have the most flavor if you cook them right.",
-      "detail": "Match the cut to the method. Muscles that work hard (shoulder/chuck, shank, round) are tougher and cheaper and turn tender with time and moisture. Muscles that don’t (loin, rib) are tender and pricier and want fast, hot cooking. Knowing this is how you eat well on a budget.",
+      "decision": "Chuck or round, whole, with no needles or blades pushed through.",
+      "why": "A cut pushed through needles or blades must say ‘mechanically tenderized’ in its name.",
+      "short_answer": "Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.",
+      "detail": "Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
         "Iowa State University Extension AnswerLine “Tender vs Less Tender Cuts of Meat” https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/",
-        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts"
+        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts",
+        "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2"
       ],
-      "kristy_take": "Chuck roast and a slow cooker will out-eat a mediocre steak any day, for half the price.",
-      "cart_pick": "Chuck roast",
+      "kristy_take": "The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.",
+      "cart_pick": "Whole chuck, not mechanically tenderized",
       "buying_tips": [
-        "Braise/stew: chuck, brisket, short rib, shank, round.",
-        "Quick sear/grill: ribeye, strip, sirloin, tenderloin.",
-        "Ground chuck (around 80/20) is the all-purpose workhorse."
+        "Chuck is shoulder and round is rear leg: the working muscles.",
+        "Loin and rib sit along the back and do little work.",
+        "Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.",
+        "Ground chuck runs around 80/20 lean to fat."
       ],
       "labels_decoded": [],
-      "tier_note": "Which cut earns the money is a cooking preference, held as a standard rather than dressed as fact.",
+      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.",
       "watch_out": [
-        "Tenderness comes from how hard the muscle worked and how much connective tissue it carries. It does not come from the age of the animal.",
-        "Chuck is shoulder and round is rear leg. Both are working muscles, less tender, and want liquid, low heat and time.",
-        "Loin and rib sit along the back and do little work, which is why they are the tender sections.",
-        "Marbling is the flecks of fat inside the muscle. More of it means a more tender, juicier steak once cooked, so look for it on a quick-cooked cut."
+        "The cut name says where on the animal it came from.",
+        "Chuck is shoulder and round is rear leg. Both are working muscles.",
+        "Loin and rib sit along the back and do little work.",
+        "‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut."
       ],
       "pick_steps": [
-        "Braise chuck, brisket, short rib, shank or round with liquid, low heat and time.",
-        "For a quick sear, take ribeye, strip, sirloin or tenderloin with marbling flecks.",
-        "Ground chuck, around 80/20, is the all-purpose workhorse."
+        "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
+        "How it was raised: see Grass-fed vs. grain-fed beef.",
+        "Added solution: see Pork cuts and ‘solution added’ pork."
       ],
-      "science": "Tenderness comes from how hard the muscle worked and how much connective tissue it carries, not the animal’s age. Chuck is shoulder and round is rear leg, both working muscles. That connective tissue melts with time and moisture. Loin and rib sit along the back and do little work, so they are tender. Marbling is fat inside the muscle, and more of it cooks up juicier.",
+      "science": "Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
       "asked_as": [
         "which beef cut for stew",
         "what cut of beef should i buy",
-        "cheap beef cut for slow cooking"
+        "cheap beef cut for slow cooking",
+        "what does mechanically tenderized mean"
       ]
     },
     {
       "id": "ground_beef_lean_ratio",
-      "title": "Ground beef lean ratios (80/20, 90/10)",
+      "title": "Ground beef",
       "aliases": [
         "ground beef",
         "lean ratio",
@@ -473,20 +472,20 @@
       ],
       "category": "beef",
       "question": "What ground beef lean ratio should I get?",
-      "decision": "80/20 for burgers. 90/10 for anything you drain.",
-      "why": "The numbers are lean-to-fat by weight. It is a cooking choice, not a health one.",
-      "short_answer": "80/20 is 20% fat, juicy and best for burgers. 90/10 is leaner, better for tacos, sauces or draining fat. Neither is ‘healthier’ in any way that matters much. Pick by what you’re cooking and your budget.",
-      "detail": "Fattier blends are cheaper and cook up juicier; leaner blends cost more and dry out faster. For dishes where you drain the fat anyway, a mid blend and a strainer gets you there for less. It’s a cooking-and-cost decision, not a health one.",
+      "decision": "Beef with seasoning at most, and nothing else in the ingredients.",
+      "why": "The name ‘ground beef’ allows no added water, phosphates, binders or extenders.",
+      "short_answer": "‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner.",
+      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS ground-beef labeling rules",
         "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15"
       ],
-      "kristy_take": "80/20 for burgers, 90/10 when it is getting drained into a sauce. On a budget, buy 80/20 and drain it. Cheaper than lean.",
-      "cart_pick": "Ground beef, 80/20",
+      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat.",
+      "cart_pick": "Ground beef, grass-fed and grass-finished",
       "buying_tips": [
-        "80/20: burgers, meatballs, anything where fat = flavor.",
-        "90/10: tacos, chili, sauces where you’d drain it.",
+        "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
+        "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
         "‘Ground chuck/round/sirloin’ tells you the cut it came from."
       ],
       "labels_decoded": [
@@ -495,21 +494,22 @@
           "meaning": "Lean % to fat % by weight — higher first number = leaner."
         }
       ],
-      "tier_note": "The ratio is a defined weight measure. What it changes is texture, which is cooking, not health.",
+      "tier_note": "The no-added-water rule for the name ‘ground beef’ is written in federal regulation.",
       "asked_as": [
         "what ground beef should i buy",
         "which ground beef for burgers",
-        "is 80/20 or 90/10 better"
+        "is 80/20 or 90/10 better",
+        "what is the difference between ground beef and hamburger",
+        "what does the ground beef label mean"
       ],
       "watch_out": [
         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
         "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most."
       ],
-      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. It is a cooking choice, not a health one. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
+      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
       "pick_steps": [
-        "80/20 suits burgers and meatballs, where the fat is the flavor.",
-        "90/10 suits tacos, chili and sauces where the fat gets drained.",
-        "Ingredients should be beef with seasoning at most: no water or phosphates."
+        "Ingredients should be beef with seasoning at most: no water or phosphates.",
+        "How it was raised: see Grass-fed vs. grain-fed beef."
       ]
     },
     {
@@ -2682,9 +2682,9 @@
       "category": "poultry_eggs",
       "question": "What do egg grades and sizes actually mean?",
       "decision": "Grade and size describe the egg’s looks and weight, not the hen.",
-      "why": "Grade scores appearance, size is weight per dozen. Recipes assume Large.",
-      "short_answer": "Grade scores appearance and interior quality, not nutrition or welfare. AA has the firmest white and tallest yolk, A a step down. B is fine to eat and mostly goes to processing. Size is weight per dozen. Recipes assume Large.",
-      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen, so a Jumbo carton is not a better egg, it is more egg. Comparing price per ounce rather than per dozen is usually where the value turns up. Size is pure weight per dozen: Large is 24 ounces, Extra Large 27, Jumbo 30.",
+      "why": "Grade scores shell and interior quality at packing; size is weight per dozen.",
+      "short_answer": "Grade scores appearance and interior quality, not nutrition or welfare. AA has the firmest white and tallest yolk, A a step down. B is fine to eat and mostly goes to processing. Size is weight per dozen.",
+      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen: Large is 24 ounces, Extra Large 27, Jumbo 30. A Jumbo carton is not a better egg, it is more egg.",
       "evidence_tier": "established",
       "sources": [
         "USDA Egg Grading Manual (AA, A and B standards)",
@@ -2696,8 +2696,7 @@
       "buying_tips": [
         "AA vs A is firmness of the white. Freshness matters more than either.",
         "Sizes are weight per dozen: Large 24 oz, XL 27 oz, Jumbo 30 oz.",
-        "Baking assumes Large. Swapping sizes changes a batter more than it changes a scramble.",
-        "Compare price per ounce, not per dozen. The bigger carton is not automatically the better buy."
+        "A ‘Large’ dozen may hold Extra Large, never smaller."
       ],
       "watch_out": [
         "Neither grade nor size says anything about how the hen lived or what she ate. Those are separate labels.",
@@ -2705,9 +2704,9 @@
         "AA, A and B are scored on interior and shell quality at the time of packing. That system is separate from the size classes above it."
       ],
       "pick_steps": [
-        "For baking, pick Large eggs.",
-        "Take the fresher carton over the higher grade; AA versus A is white firmness.",
-        "Baking assumes Large; a ‘Large’ dozen may hold Extra Large, never smaller."
+        "Read the weight per dozen: Large 24 ounces, Extra Large 27, Jumbo 30.",
+        "How the hen was raised: see Egg labels, and what the hen ate.",
+        "Take the fresher carton over the higher grade; AA versus A is white firmness."
       ],
       "science": "Grade scores the shell, the air cell, and how the white and yolk sit, at packing. AA and A differ only in white firmness, which fades with age anyway. Size is set by the weight of a full dozen: Large 24 ounces, Extra Large 27, Jumbo 30. Neither grade nor size says how the hen lived or what she ate.",
       "labels_decoded": [
@@ -2732,7 +2731,8 @@
       "asked_as": [
         "what does grade a mean on eggs",
         "which egg size is best value",
-        "do egg grades matter"
+        "do egg grades matter",
+        "what do egg sizes mean"
       ]
     },
     {
@@ -2881,14 +2881,15 @@
         "marbling",
         "prime choice select",
         "beef grades",
-        "usda grades"
+        "usda grades",
+        "usda choice"
       ],
       "category": "beef",
       "question": "What do Prime, Choice and Select mean?",
-      "decision": "Grade is a marbling score, and marbling only shows in fast cooking.",
-      "why": "Grade measures marbling and age. It says nothing about how the animal was raised.",
-      "short_answer": "Grade scores marbling, the fat inside the muscle, and age. Prime has the most, Choice is the usual middle grade, Select is leanest and driest. It says nothing about how the animal was raised, fed, or whether it got outside.",
-      "detail": "Grade is a cooking and eating-quality scale, and marbling is the fat threaded inside the muscle. Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all, including much grass-finished beef, whose marbling pattern the scale was not built around. Marbling melts during cooking, which is why a Prime steak forgives high heat and a Select one dries out. On a braising cut the grade matters far less, because time and moisture do the work the fat would have done. Grade and sourcing are two separate axes, and neither implies the other.",
+      "decision": "Grade and sourcing are separate questions; neither answers the other.",
+      "why": "Grading weighs marbling and the animal’s maturity, not breed, feed or whether it got outside.",
+      "short_answer": "Grade scores marbling, the fat inside the muscle, and age. Prime has the most, Choice is the usual middle grade, Select is leanest. It says nothing about how the animal was raised, fed, or whether it got outside.",
+      "detail": "Marbling is the fat threaded inside the muscle. Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all. Grade and sourcing are two separate axes, and neither implies the other.",
       "evidence_tier": "established",
       "sources": [
         "USDA AMS Official United States Standards for Grades of Carcass Beef",
@@ -2896,11 +2897,10 @@
         "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
         "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
       ],
-      "kristy_take": "Grade measures fat inside the muscle and nothing else. A Select chuck roast cooked low and slow beats a Prime steak cooked badly.",
+      "kristy_take": "Grade is a score for fat inside the muscle. How the animal lived is a separate question.",
       "buying_tips": [
         "Prime, Choice, Select is a marbling scale, top to bottom.",
-        "Grading is voluntary. Ungraded is not a downgrade, and a lot of grass-finished beef skips it.",
-        "Pay up for grade on a quick-cooked steak. Skip it on anything braised.",
+        "Grading is voluntary. Ungraded is not a downgrade.",
         "Grade and sourcing are separate questions. Neither answers the other."
       ],
       "labels_decoded": [
@@ -2914,29 +2914,30 @@
         },
         {
           "term": "USDA Select",
-          "meaning": "Leanest of the three. Wants a marinade or a slower method."
+          "meaning": "Leanest of the three."
         },
         {
           "term": "Ungraded",
           "meaning": "Never submitted for grading. Says nothing about quality either way."
         }
       ],
-      "tier_note": "Grade is a published USDA marbling score, and marbling only shows on a steak cooked fast, not on a braise.",
+      "tier_note": "Grade is a published USDA score for marbling and maturity, kept apart from raising.",
       "watch_out": [
         "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.",
         "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
         "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
       ],
       "pick_steps": [
-        "For quick-cooked steaks, pick Prime, then Choice, then Select; ignore grade for braising.",
-        "Read the grade itself: ‘Angus’ is a brand checklist, not a grade.",
+        "Read the grade as a marbling score; ‘Angus’ is a brand, not a grade.",
+        "How it was raised: see Grass-fed vs. grain-fed beef.",
         "Ungraded is not a downgrade; grading is voluntary and says nothing either way."
       ],
-      "science": "Prime, Choice and Select is a marbling scale, and grading also weighs the animal’s maturity. It does not look at breed. Marbling melts during cooking, which is why a Prime steak forgives high heat. A grade is a score, not a certification. Grade and sourcing are separate questions, and neither answers the other. Plenty of good beef, including much grass-finished beef, is never graded.",
+      "science": "Prime, Choice and Select is a marbling scale, and grading also weighs the animal’s maturity. It does not look at breed. A grade is a score, not a certification. Grade and sourcing are separate questions, and neither answers the other.",
       "asked_as": [
         "what does prime choice select mean",
         "is prime beef worth it",
-        "do beef grades matter"
+        "do beef grades matter",
+        "what does usda choice mean"
       ]
     },
     {
@@ -3084,10 +3085,10 @@
       ],
       "category": "meat_counter",
       "question": "What should I ask at the butcher counter?",
-      "decision": "The butcher knows what came in today and what needs selling.",
-      "why": "The counter is free expertise. Custom grinds, portioning and bones are usually included.",
-      "short_answer": "The service counter is free expertise most shoppers walk past. Ask what came in today and ask the sourcing question directly. Ask for a custom grind, a cut portioned your way, and bones and trim for stock.",
-      "detail": "A staffed counter answers things a package never will: whether the beef is grass-finished, whether the chicken was air-chilled, when it was actually cut. They will grind a chuck roast fresh, which beats the pre-packed tray and lets you choose the cut. They will french a rack, tie a roast, portion a whole fish. At most counters none of that costs extra. The cheap cuts sit in the same case, and the person behind the glass usually knows exactly how to cook them. Ask what is coming down in price this week, then build the week around the answer. Unsure of the cut, name the primal first: a roast from the chuck, a cut from the loin.",
+      "decision": "Ask the butcher how it was raised and when it was cut.",
+      "why": "A staffed counter answers what a package never will, such as when the meat was cut.",
+      "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
+      "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
@@ -3095,33 +3096,34 @@
         "Rising Star Custom Meats “4 Questions You Should Always Ask Your Local Butchers” https://www.risingstarmeats.com/4-questions-you-should-always-ask-your-local-butchers",
         "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
       ],
-      "kristy_take": "The counter is free expertise. Ask what came in today and what is cheap this week, then build dinner from the answer.",
-      "cart_pick": "Soup bones for stock",
+      "kristy_take": "Ask what came in today, how it was raised and what was added.",
+      "cart_pick": "Grass-finished beef soup bones",
       "buying_tips": [
-        "Ask what came in today, and what is coming down in price.",
-        "Ask for a custom grind. A chuck roast ground fresh beats the pre-packed tray.",
-        "Ask for bones and trim. Often cheap or free, and they make stock.",
-        "Ask the sourcing question outright: grass-finished, air-chilled, where from.",
+        "Ask what came in today.",
+        "Ask for a whole chuck ground fresh, which lets you choose the cut.",
+        "Ask the sourcing question outright: how it was raised and where from.",
+        "Ask for bones and trim. Often cheap or free.",
         "Ask them to portion it. Cutting, tying and boning are usually included."
       ],
       "labels_decoded": [],
       "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat.",
       "watch_out": [
-        "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out with a much more concentrated flavor. Ask which one it is.",
-        "Silverskin is connective tissue that does not break down in cooking. Ask to have it removed from a tenderloin or ribs.",
-        "Thickness is not fixed. Say how thick the steak should be, what size roast is needed and what lean-to-fat ratio the grind should have.",
-        "Unsure of the cut, name the section first: a roast from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+        "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask which one it is.",
+        "Silverskin is connective tissue. Ask to have it removed from a tenderloin or ribs.",
+        "Thickness is not fixed. Say how thick the steak should be, what size piece is needed and what lean-to-fat ratio the grind should have.",
+        "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
       ],
       "pick_steps": [
-        "Ask what came in today and what is coming down in price.",
-        "Choose a chuck roast ground fresh over the prepacked tray.",
-        "Pick bones and trim for stock."
+        "Ask for a whole chuck ground fresh, which lets you choose the cut.",
+        "How it was raised: see Grass-fed vs. grain-fed beef.",
+        "Ask them to portion it; cutting, tying and boning are usually included."
       ],
-      "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air, loses weight and comes out more concentrated in flavor.",
+      "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight.",
       "asked_as": [
         "what should i ask the butcher",
         "what do i say at the meat counter",
-        "can the butcher cut it for me"
+        "can the butcher cut it for me",
+        "what should i ask at the meat counter"
       ]
     },
     {
@@ -3201,27 +3203,26 @@
         "enhanced pork",
         "solution added",
         "brined pork",
-        "which pork cut"
+        "which pork cut",
+        "contains added solution"
       ],
       "category": "pork",
       "question": "Which pork cut should I buy, and what does ‘solution added’ mean?",
-      "decision": "Pork shoulder is the forgiving cut; enhanced pork is pumped with saltwater.",
-      "why": "Shoulder is the value cut in the case. ‘Enhanced’ means injected brine, sold by the pound.",
-      "short_answer": "Hard-working muscles go low and slow, lean ones go fast. Shoulder is the cheap braising and pulled-pork cut. Loin and tenderloin are lean and quick. ‘Contains up to X% solution’ means injected saltwater, sold by the pound and already salted.",
-      "detail": "Same rule as beef: hard-working muscles go low and slow, lean ones go fast. The figure to find is ‘contains up to X% solution’, which means injected saltwater and phosphates. A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture, because modern pork is bred lean and dries out. The percentage has to be declared. It is not unsafe, and it does make a lean chop more forgiving, but it changes what you paid for and it pre-seasons the meat, so a second brine oversalts it. Unenhanced pork browns better and tastes more like pork. Shoulder is the value cut of the whole animal: fatty, forgiving, and it feeds a crowd for very little.",
+      "decision": "Pork whose label carries no added-solution percentage, only pork.",
+      "why": "Raw meat with added solution must name it, give the percentage and list what is in it.",
+      "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
+      "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling requirements for enhanced and solution-added meat",
         "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)",
         "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2"
       ],
-      "kristy_take": "Pork shoulder is the best value in the meat case. And read the fine print: ‘up to 12% solution’ is water sold by the pound.",
+      "kristy_take": "Read the fine print: ‘up to 12% solution’ is water sold by the pound.",
       "cart_pick": "Pork shoulder",
       "buying_tips": [
-        "Braise or pull: shoulder, Boston butt, picnic, country-style ribs.",
-        "Fast and lean: loin chops, tenderloin. Pull them early.",
-        "Read for ‘contains up to X% solution’. That is injected brine.",
-        "Enhanced pork is already salted. Skip your own brine, and expect less browning.",
+        "Read for ‘contains X% added solution’. That is injected water and salt.",
+        "The solution’s ingredients follow, heaviest first.",
         "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie."
       ],
       "labels_decoded": [
@@ -3238,7 +3239,8 @@
       "asked_as": [
         "which pork cut should i buy",
         "what does solution added mean",
-        "what is enhanced pork"
+        "what is enhanced pork",
+        "what does contains added solution mean"
       ],
       "watch_out": [
         "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.",
@@ -3246,8 +3248,8 @@
       ],
       "science": "A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. Hormones are banned in pork production, so ‘no added hormones’ is a freebie. ‘Natural’ on meat says nothing about raising.",
       "pick_steps": [
-        "Braise or pull shoulder, Boston butt or picnic; cook loin and tenderloin fast.",
-        "Find the ‘% solution’ figure; enhanced pork is injected brine, already salted."
+        "Find the ‘% added solution’ figure and the solution’s listed ingredients.",
+        "How it was raised: see What “pasture-raised” does and does not tell you."
       ]
     },
     {
@@ -7977,32 +7979,31 @@
       ],
       "category": "meat_counter",
       "question": "How do you judge lamb and goat meat quality?",
-      "decision": "Lamb by its USDA grade, goat by firm, fine-grained flesh.",
-      "why": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+      "decision": "Read lamb and goat for how they were raised, then anything added.",
+      "why": "Lamb quality grading is voluntary and takes age into account; goat meat has no quality grades.",
       "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
-      "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old and tastes milder than mutton. Goats under a year old are called kids. Meat from older goats is darker and less tender. A goat carcass rarely has much fat to protect it from drying.",
+      "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
       ],
       "kristy_take": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
-      "cart_pick": "USDA-graded lamb or firm, fine-grained goat",
+      "cart_pick": "Lamb or goat, firm with white fat",
       "buying_tips": [
-        "Look for a USDA grade on lamb, most often Choice.",
-        "Pick lamb that is fine textured and firm, with white marbling.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
+        "Pick lamb that is fine textured and firm, with white marbling.",
         "Read the primal cut on the label, such as shoulder or leg."
       ],
       "watch_out": [
-        "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
-        "Adult goat is relatively tough and is almost always stewed."
+        "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb."
       ],
       "pick_steps": [
-        "Pick lamb with a USDA grade, most often Choice, firm with white marbling.",
+        "How it was raised: see “Grass-fed” (the label).",
+        "Added solution: see Pork cuts and ‘solution added’ pork.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat."
       ],
-      "science": "Lamb quality grading is voluntary, and the grade takes age into account. Ungraded lamb is still inspected, but its quality may be higher or lower. Goat meat has no quality grades at all, so the flesh is the check. Goats under a year old are called kids. Older goat is darker, less tender and almost always stewed.",
+      "science": "Lamb quality grading is voluntary, and the grade takes age into account. Ungraded lamb is still inspected, but its quality may be higher or lower. Goat meat has no quality grades at all, so the flesh is the check. Goats under a year old are called kids. Older goat is darker.",
       "labels_decoded": [
         {
           "term": "USDA Choice",
@@ -8010,7 +8011,7 @@
         },
         {
           "term": "Mutton",
-          "meaning": "Meat from older sheep, stronger in flavor than lamb."
+          "meaning": "Meat from older sheep."
         },
         {
           "term": "Kid",
@@ -8021,7 +8022,8 @@
       "asked_as": [
         "how do i judge goat meat quality",
         "how do you choose lamb chops",
-        "what is the difference between lamb and mutton"
+        "what is the difference between lamb and mutton",
+        "what is chevon"
       ]
     },
     {
@@ -8268,21 +8270,20 @@
       ],
       "category": "meat_counter",
       "question": "Which meat should you buy?",
-      "decision": "Decide the cook first, then ask which cut fits it.",
-      "why": "The cut decides tenderness and the right heat. The label then names the cut, any grade, and the dates.",
-      "short_answer": "Start with the cook. Chuck and round are less tender and suit braising. Loin and rib are more tender. Then read the primal cut, any grade, and the use-by date.",
-      "detail": "Beef splits into four primal cuts: chuck, loin, rib and round. Labels should name the primal cut with the product, such as chuck roast. Store names for one cut vary by region, so the primal cut is the steadier clue. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Additives are not allowed on fresh beef.",
+      "decision": "Every package answers three questions, in the same order.",
+      "why": "The label names the cut, any grade and the dates, and additives are not allowed on fresh beef.",
+      "short_answer": "Read the package in order: how it was raised, then whether anything was added, then the use-by date. Then read the primal cut and any grade.",
+      "detail": "Beef splits into four primal cuts: chuck, loin, rib and round. Labels should name the primal cut with the product. Store names for one cut vary by region, so the primal cut is the steadier clue. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Additives are not allowed on fresh beef.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
-      "kristy_take": "The cook picks the cut. The primal name on the label confirms it.",
-      "cart_pick": "A cut labeled with its primal name",
+      "kristy_take": "Raised, added, dated: read the package in that order, then the primal name.",
+      "cart_pick": "A whole cut labeled with its primal name",
       "buying_tips": [
         "Read the primal cut on the label, such as chuck or round.",
-        "Pick chuck or round for braising, loin or rib for tender cuts.",
-        "Check the use-by date, and freeze what will not be cooked in time.",
+        "Check the use-by date, and freeze what will not be used in time.",
         "Skip any package that smells off or feels slimy."
       ],
       "watch_out": [
@@ -8290,11 +8291,11 @@
         "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
       ],
       "pick_steps": [
-        "Decide the cook: chuck or round for braising, loin or rib for tender.",
-        "Read the primal cut, since store names for one cut vary by region.",
+        "How it was raised: see Grass-fed vs. grain-fed beef.",
+        "Added solution: see Pork cuts and ‘solution added’ pork.",
         "Check the use-by date, and skip any package that smells off or feels slimy."
       ],
-      "science": "Beef splits into four primal cuts: chuck, loin, rib and round. The cut decides tenderness and the right heat. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Ungraded beef is inspected, but its quality may be higher or lower than graded beef. Additives are not allowed on fresh beef.",
+      "science": "Beef splits into four primal cuts: chuck, loin, rib and round. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Ungraded beef is inspected, but its quality may be higher or lower than graded beef. Additives are not allowed on fresh beef.",
       "labels_decoded": [
         {
           "term": "Primal cut",
@@ -8305,7 +8306,7 @@
           "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
         }
       ],
-      "tier_note": "Primal cuts and grades are USDA facts, and matching the cut to the cook follows from them.",
+      "tier_note": "Primal cuts and inspection are USDA facts; reading raised, added, then dated is a standard.",
       "asked_as": [
         "which meat should i buy",
         "what meat should i buy for dinner",
@@ -8348,7 +8349,7 @@
         "beef bones",
         "knuckle bones"
       ],
-      "decision": "Ask the meat counter which soup bones it carries.",
+      "decision": "Ask the meat counter which soup bones it carries and how the animal was raised.",
       "sources": [
         {
           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
