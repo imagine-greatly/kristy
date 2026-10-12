@@ -1498,3 +1498,122 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
   "Salami is a fermented, dried and cured ground product.",
   "Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl.",
 ]));
+
+/* ═══════════════════════════ Health first (chf-1) ═══════════════════════════ */
+
+// EVERY CARD AIMS AT THE CLOSEST-TO-NATURE VERSION, NOT THE COOK (Devon 2026-10-12). "80/20
+// for burgers" picks for the pan; the card picks for the body. And a health fact shared by a
+// family lives on ONE owner card; siblings carry a pointer step `<Read>: see <Owner title>.`
+// Plan: docs/plans/card-health-first-plan.md ("One fact, one owner", Piece 1). Not wired into
+// `lintCard`; the corpus test holds curated cards to it, with the cards that fail today
+// listed below until later pieces empty the list.
+export const HEALTH_FIRST_PENDING = new Set([
+  'beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics',
+  'beef_grades_usda', 'meat_case', 'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats',
+  'pick_soup_bones', 'air_chilled_chicken', 'chicken_cuts_basics', 'duck_meat', 'egg_grades_sizes',
+  'pork_cuts_and_enhanced', 'lamb_goat', 'bison', 'venison_game', 'scallops', 'shrimp_imported_vs_domestic',
+  'white_fish', 'canned_fish_choosing', 'milk_processing', 'raw_milk', 'raw_aged_cheese',
+  'cheese_real_vs_processed', 'grassfed_butter', 'plain_kefir', 'cream_cheese', 'ghee', 'goat_sheep_dairy',
+  'coconut_milk_beverage', 'label_cold_pressed_expeller', 'cooking_oils', 'flour_basics', 'bagels',
+  'pretzels', 'kimchi', 'miso', 'fermented_pickles', 'olives', 'salt', 'sugars', 'maple_syrup', 'cocoa',
+  'tea', 'broth', 'grains_beyond_rice', 'pick_tofu', 'oats_steelcut_rolled_instant', 'nuts_raw_vs_roasted',
+  'beans_dried_vs_canned', 'bulk_bins_buying', 'whole_spices', 'frozen_vs_fresh_produce',
+  'produce_leafy_greens', 'produce_mushrooms', 'pick_kohlrabi', 'seeds', 'nutritional_yeast', 'pasta_sauce',
+  'jam', 'ketchup_mustard', 'seaweed', 'coconut_water', 'popcorn', 'hummus', 'frozen_fries',
+  'frozen_waffles', 'frozen_nuggets', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
+  'buns_rolls', // chf-1: hit at HEAD outside the plan
+]);
+
+// Word-bounded, so `tender` never matches `tenderized` (a safety fact, not a cook's aim).
+export const CULINARY_LEXICON =
+  /\b(for burgers?|braise|braising|sear|searing|grill|grilling|bake|baking|roast|roasting|stew|stewing|recipe|crispy|chew|chewy|tender|tenderness|flavou?r|taste|melt|melts|melting|juicy)\b/i;
+// Food safety is not cooking advice: a sentence naming a temperature or a spoilage sign stands.
+// Bare `crisp` is a produce freshness sign, and ingredient/label names (baking soda, natural flavors) are not an aim.
+export const CULINARY_SAFETY_ALLOW =
+  /°F|internal temperature|spoil|slime|off smell|sour smell|use-by|sell-by|use by|sell by|baking (soda|powder)|(natural|artificial) flavou?rs?|flavou?r claim/i;
+
+const sentencesOf = (s) => String(s || '').split(/(?<=[.!?])\s+/).filter((x) => x.trim());
+
+export function lintCulinaryAim(entry) {
+  const out = [];
+  const scan = (field, text) => {
+    for (const s of sentencesOf(text)) {
+      if (CULINARY_LEXICON.test(s) && !CULINARY_SAFETY_ALLOW.test(s)) out.push({ code: 'CULINARY_AIM', field, text: s });
+    }
+  };
+  if (typeof entry?.decision === 'string') scan('decision', entry.decision);
+  if (typeof entry?.cart_pick === 'string') scan('cart_pick', entry.cart_pick);
+  for (const step of Array.isArray(entry?.pick_steps) ? entry.pick_steps : []) {
+    if (typeof step === 'string') scan('pick_steps', step);
+  }
+  return out;
+}
+
+const KB_TITLE = new Map(perimeterKb.entries.map((e) => [e.id, e.title]));
+
+const ownedFact = (fact, owner, family, pattern) => ({
+  fact, owner, ownerTitle: KB_TITLE.get(owner), family, pattern,
+});
+
+export const OWNED_FACTS = [
+  ownedFact('beef_raising', 'beef_grassfed_vs_grainfed',
+    ['ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics', 'beef_grades_usda', 'meat_case',
+      'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats', 'pick_soup_bones'],
+    /grass[- ]?(fed|finished)|grain[- ]?(fed|finished)/i),
+  ownedFact('ruminant_grass_term', 'label_grass_fed_term',
+    ['lamb_goat', 'bison', 'venison_game', 'goat_sheep_dairy'], /grass[- ]?(fed|finished)/i),
+  ownedFact('solution_added', 'pork_cuts_and_enhanced',
+    ['ground_beef_lean_ratio', 'beef_cuts_basics', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking',
+      'judging_meat_at_the_case', 'lamb_goat', 'bison', 'venison_game', 'dry_brine'], /solution|enhanced/i),
+  ownedFact('mech_tenderized', 'beef_cuts_basics',
+    ['ground_beef_lean_ratio', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking', 'judging_meat_at_the_case'],
+    /mechanically tenderi[sz]ed|blade[- ]tenderi[sz]ed/i),
+  ownedFact('bird_pig_raising', 'label_pasture_raised_feed',
+    ['chicken_cuts_basics', 'air_chilled_chicken', 'duck_meat', 'pork_cuts_and_enhanced'], /pasture[- ]raised|free[- ]range/i),
+  ownedFact('chill_water', 'air_chilled_chicken',
+    ['chicken_cuts_basics', 'duck_meat'], /air[- ]chill|water[- ]chill|retained water/i),
+  ownedFact('hen_raising', 'egg_labels', ['egg_grades_sizes'], /pasture[- ]raised|free[- ]range|cage[- ]free/i),
+  ownedFact('wild_farmed', 'salmon_wild_vs_farmed',
+    ['shrimp_imported_vs_domestic', 'white_fish', 'canned_fish_choosing'], /wild[- ]caught|farm[- ]raised|\bfarmed\b/i),
+  ownedFact('phosphate_soak', 'scallops', ['shrimp_imported_vs_domestic', 'white_fish'], /phosphate|STPP|soaked/i),
+  ownedFact('milk_processing', 'milk_processing',
+    ['plain_kefir', 'cream_cheese', 'goat_sheep_dairy', 'grassfed_butter', 'ghee'], /ultra[- ]pasteuri[sz]ed|homogeni[sz]ed/i),
+  ownedFact('oil_extraction', 'label_cold_pressed_expeller', ['cooking_oils'], /cold[- ]pressed|expeller|hexane|solvent/i),
+  ownedFact('dough_conditioners', 'sandwich_bread', ['bagels', 'pretzels', 'flour_basics', 'buns_rolls'], /dough conditioner/i),
+  ownedFact('live_ferment', 'sauerkraut', ['kimchi', 'miso', 'fermented_pickles', 'olives'],
+    /unpasteuri[sz]ed|live (and active )?cultures/i),
+];
+
+export const POINTER = /^[A-Z][^:]{0,40}: see (.+)\.$/;
+
+export const REPEATED_CLAIM_FIELDS = [
+  'decision', 'why', 'short_answer', 'detail', 'science', 'kristy_take', 'tier_note',
+  'pick_steps', 'buying_tips', 'look_for', 'watch_out', 'labels_decoded',
+];
+
+// Every string under a value, in order: prose fields hold strings, arrays and objects.
+export function stringsIn(v, out = []) {
+  if (typeof v === 'string') out.push(v);
+  else if (Array.isArray(v)) v.forEach((x) => stringsIn(x, out));
+  else if (v && typeof v === 'object') Object.values(v).forEach((x) => stringsIn(x, out));
+  return out;
+}
+
+export function lintRepeatedClaim(entry) {
+  const out = [];
+  for (const row of OWNED_FACTS) {
+    if (!row.family.includes(entry?.id)) continue;
+    for (const field of REPEATED_CLAIM_FIELDS) {
+      if (entry[field] == null) continue;
+      for (const text of stringsIn(entry[field])) {
+        if (!POINTER.test(text) && row.pattern.test(text)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
+      }
+    }
+  }
+  const titles = new Set(OWNED_FACTS.map((r) => r.ownerTitle));
+  for (const text of stringsIn(entry?.pick_steps)) {
+    const m = text.match(POINTER);
+    if (m && !titles.has(m[1])) out.push({ code: 'POINTER_UNKNOWN_OWNER', field: 'pick_steps', text });
+  }
+  return out;
+}
