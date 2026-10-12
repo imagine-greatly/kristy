@@ -1508,9 +1508,7 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
 // `lintCard`; the corpus test holds curated cards to it, with the cards that fail today
 // listed below until later pieces empty the list.
 export const HEALTH_FIRST_PENDING = new Set([
-  'duck_meat', 'goat_sheep_dairy', 'coconut_milk_beverage',
-  'bagels', 'pretzels', 'kimchi', 'miso',
-  'pick_tofu', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
+  'duck_meat', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
 ]);
 
 // Word-bounded, so `tender` never matches `tenderized` (a safety fact, not a cook's aim).

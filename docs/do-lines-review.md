@@ -137,7 +137,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the grain’s bran and germ. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
 | `sourdough` | bulk_pantry | Sourdough fermented with a starter of wild yeast and bacteria. | Ask the baker what leavens the dough; check for culture or starter. | — |
 | `pretzel_bread` | bulk_pantry | Pretzel bread gets its crust from an alkaline bath before baking. | Ask the baker whether the dough gets a lye or baking-soda bath. | — |
-| `bagels` | bulk_pantry | Bagels boiled before baking have the traditional chewy exterior. | Ask the baker about a water bath before the dough reaches the oven. | — |
+| `bagels` | bulk_pantry | Bagels with their ingredients named, boiled before the oven. | Ask the baker about a water bath before the dough reaches the oven. | — |
 | `tortillas` | bulk_pantry | Corn tortillas made from lime-treated corn, water, and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
 | `turkey_whole` | meat | Whole turkey without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
 | `ground_turkey` | meat | Plain ground turkey with its ingredients and fat content stated. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
@@ -179,18 +179,18 @@ Also: imperative, starts with a verb, ≤14 words.
 | `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
 | `ice_cream` | eggs_dairy | Ice cream that meets the standard, not a lookalike. | Read the small print under the flavor for “frozen dairy dessert”. | — |
 | `ghee` | eggs_dairy | Ghee or clarified butter: one dairy fat, simmered down. | Read the ingredient list for butter or cream as the only entry. | — |
-| `goat_sheep_dairy` | eggs_dairy | Goat or sheep dairy, bought for its flavor and its cheeses. | Read the ingredients for which animal’s milk went in. | — |
+| `goat_sheep_dairy` | eggs_dairy | Goat or sheep dairy with the animal’s milk named on the list. | Read the ingredients for which animal’s milk went in. | — |
 | `almond_milk` | eggs_dairy | Unsweetened almond milk, read as a drink rather than a milk swap. | Read the Nutrition Facts for added sugars, then the protein. | — |
 | `soy_milk` | eggs_dairy | Fortified, unsweetened soy milk, the one plant drink in the dairy group. | Find calcium and vitamin D on the panel, and check for added sugars. | — |
-| `coconut_milk_beverage` | eggs_dairy | Carton coconut milk is a drink; the can is for cooking. | Read the carton for “beverage” in the name, then the thickeners. | — |
+| `coconut_milk_beverage` | eggs_dairy | Carton coconut milk is a drink: coconut milk thinned with water. | Read the carton for “beverage” in the name, then the thickeners. | — |
 | `plant_butter` | eggs_dairy | Plant butter, read for which oils it is made from. | Read the ingredient list and find which oil comes first. | — |
 | `dairy_case` | eggs_dairy | Pick the dairy type first, then read what the carton promises. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
 | `kombucha` | bulk_pantry | Kombucha bought cold, from the refrigerated case. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
 | `sauerkraut` | bulk_pantry | Raw sauerkraut from the cold case, never heated. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |
-| `kimchi` | bulk_pantry | Crisp, bright kimchi to eat as is; sour, softer kimchi to cook. | Check the packed date, then read the list for fish sauce or shrimp. | — |
+| `kimchi` | bulk_pantry | Kimchi of cabbage, red pepper, garlic, ginger and salt, recently packed. | Check the packed date, then read the list for fish sauce or shrimp. | — |
 | `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
 | `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother left in. | Read the label for “diluted” or a second vinegar named in a blend. | — |
-| `miso` | bulk_pantry | White miso for most uses; red miso for a stronger, saltier taste. | Read the ingredients for which grain went in with the soybeans. | — |
+| `miso` | bulk_pantry | Miso of soybeans, salt and koji, with any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
 | `tempeh` | bulk_pantry | Tempeh that is a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
 | `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated or vinegar-made. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
@@ -224,7 +224,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `tortilla_chips` | bulk_pantry | Tortilla chips from corn cooked the traditional way, in limewater. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
 | `potato_chips` | bulk_pantry | Potato chips cut as thin slices, the way chips began. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
 | `popcorn` | bulk_pantry | Plain popcorn kernels, popped with only what gets added. | Read the ingredients for anything listed besides popcorn. | — |
-| `pretzels` | bulk_pantry | Pretzels dipped in lye before baking: the traditional German way. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
+| `pretzels` | bulk_pantry | Pretzels with a short list: flour, malt, oil, salt, yeast and soda. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
 | `snack_bars` | bulk_pantry | Bars with oats or a whole grain first on the list. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, with little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
 | `snacks` | bulk_pantry | Read the first ingredient; then ask about chips, crackers or popcorn. | Check veggie chips for potato flour colored with vegetable powder. | — |

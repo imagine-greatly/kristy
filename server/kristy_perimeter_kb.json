@@ -6713,11 +6713,15 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Tofu is made from soybeans, sold by firmness; the package names it, silken to extra firm.",
+      "decision": "Tofu is soybeans, water and a coagulant such as nigari or gypsum; pick by firmness.",
       "sources": [
         {
           "name": "Food Hero (Oregon State University Extension): All About Tofu",
           "url": "https://foodhero.org/healthy-food/all-about-tofu-tips-select-press-marinate-and-cook-tofu"
+        },
+        {
+          "name": "Smithsonian Asian Pacific American Center: How to Make Tofu",
+          "url": "https://apa.si.edu/picklesandtea/how-to-make-tofu/"
         }
       ]
     },
@@ -6759,7 +6763,7 @@
       "decision": "Whole wheat sandwich bread keeps the grain’s bran and germ.",
       "why": "Whole wheat flour retains the grain’s natural proportions. That is the whole-food standard for sandwich bread.",
       "short_answer": "US whole wheat bread uses whole wheat flour rather than ordinary refined flour. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
-      "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain.",
+      "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/136.180",
@@ -6911,8 +6915,8 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you ask before buying bagels?",
-      "decision": "Bagels boiled before baking have the traditional chewy exterior.",
-      "why": "Boiling describes how the bagel is made. The archived articles support texture facts, not health effects.",
+      "decision": "Bagels with their ingredients named, boiled before the oven.",
+      "why": "Boiling describes how the bagel is made. The ingredient list, or the baker, names what went into the dough and the bath.",
       "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
       "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
       "evidence_tier": "time_tested",
@@ -6921,8 +6925,9 @@
         "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
       ],
       "kristy_take": "Boiling describes how the bagel is made. The archived articles support texture facts, not health effects.",
-      "cart_pick": "Boiled bagels",
+      "cart_pick": "Boiled bagels with the ingredients named",
       "buying_tips": [
+        "Read the ingredient list on the bag, or ask the bakery for it.",
         "Ask the bakery about boiling before buying.",
         "Without a process label, ask the baker rather than infer boiling from the shape.",
         "Ask about the bath ingredients; baking soda changes alkalinity and browning."
@@ -6931,8 +6936,9 @@
         "Boiling and browning are processing and texture facts. The archived articles establish no health advantage."
       ],
       "pick_steps": [
+        "Read the ingredient list on the bag, or ask the bakery for it.",
         "Ask the bakery whether the bagels are boiled; the shape does not show it.",
-        "Choose bagels boiled before baking for the traditional chewy exterior."
+        "Dough conditioners: see Sandwich bread."
       ],
       "science": "Boiling before baking sets a bagel’s exterior and gives its characteristic chew. A longer boil can make the crust chewier and the interior denser. Baking soda in the bath changes its alkalinity and promotes browning. Boiling and browning are processing and texture facts, with no established health advantage.",
       "labels_decoded": [
@@ -9770,10 +9776,10 @@
       ],
       "category": "dairy",
       "question": "How do you pick goat or sheep dairy?",
-      "decision": "Goat or sheep dairy, bought for its flavor and its cheeses.",
-      "why": "Goat milk becomes cheese, butter, ice cream and yogurt. Sheep milk goes into cheeses such as feta and Manchego.",
-      "short_answer": "Goat milk averages about 3.5 percent butterfat. Like cow’s milk, it contains lactose. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
-      "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. For that reason it does not need to be homogenized, and its cream rises over a few days. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
+      "decision": "Goat or sheep dairy with the animal’s milk named on the list.",
+      "why": "Goat milk has less lactose than cow’s milk and different forms of proteins.",
+      "short_answer": "Goat milk averages about 3.5 percent butterfat. It contains lactose, less than cow’s milk, with different forms of proteins. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
+      "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. Its cream rises over a few days. Compared with cow’s milk, goat milk has less lactose and different forms of proteins. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://en.wikipedia.org/wiki/Goat_milk",
@@ -9792,9 +9798,9 @@
       "pick_steps": [
         "Read the ingredients for goat milk or sheep milk.",
         "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego.",
-        "Expect goat butter to be white, not yellow."
+        "Homogenized or ultra-pasteurized: see Pasteurized, ultra-pasteurized, homogenized."
       ],
-      "science": "Goat milk averages about 3.5 percent butterfat, in small, well-emulsified globules. The cream stays suspended longer than in cow’s milk, so it does not need to be homogenized. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Like cow’s milk, goat milk contains lactose. With lactose intolerance or a milk allergy, ask a doctor which milks fit.",
+      "science": "Goat milk averages about 3.5 percent butterfat, in small, well-emulsified globules. The cream stays suspended longer than in cow’s milk. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Goat milk contains lactose, less than cow’s milk, with different forms of proteins. With lactose intolerance or a milk allergy, ask a doctor which milks fit.",
       "labels_decoded": [
         {
           "term": "Chèvre",
@@ -9929,8 +9935,8 @@
       ],
       "category": "dairy",
       "question": "Is carton coconut milk the same as the can?",
-      "decision": "Carton coconut milk is a drink; the can is for cooking.",
-      "why": "The carton blends coconut milk with water and holds about an eighth of the fat in the can.",
+      "decision": "Carton coconut milk is a drink: coconut milk thinned with water.",
+      "why": "Technically a coconut beverage: coconut milk blended with water, about an eighth as fatty as the can.",
       "short_answer": "Canned coconut milk is shredded coconut steeped and pressed. The carton beverage blends coconut milk with water, sugar, flavors, vitamins, preservatives and thickeners. It sits next to the soy milk.",
       "detail": "Canned coconut milk is made by steeping shredded coconut in water or milk, then pressing it. The carton coconut milk beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of canned coconut milk. Tasters found the unsweetened carton surprisingly bland. One test kitchen’s bottom line: do not cook with the coconut milk beverage.",
       "evidence_tier": "kristys_standard",
@@ -9938,26 +9944,27 @@
         "https://www.cookscountry.com/how_tos/6667-canned-coconut-milk-vs-carton-packed-coconut-milk-beverage",
         "https://www.tastingtable.com/1527981/canned-coconut-milk-carton-difference"
       ],
-      "kristy_take": "The word on the carton marks the drink, and the can stays the cooking pick.",
-      "cart_pick": "Coconut milk beverage, for drinking",
+      "kristy_take": "The word beverage marks the carton drink; canned coconut milk is the can.",
+      "cart_pick": "Unsweetened coconut milk beverage",
       "buying_tips": [
+        "Read “beverage” in the name: coconut milk thinned with water.",
         "Find it in the nondairy milk section, next to the soy milk.",
         "Check for sugar and flavors on a sweetened carton.",
-        "Reach for the can, not the carton, for a recipe."
+        "Reach for the can, not the carton, for full-fat coconut milk."
       ],
       "watch_out": [
         "The carton beverage does not stand in for canned coconut milk in cooking."
       ],
       "pick_steps": [
-        "Check a sweetened carton for sugar and flavors; any carton can list thickeners.",
-        "Reach for the can, not the carton, for a recipe.",
-        "For a drink, pick carton coconut milk."
+        "Read the name: a carton saying beverage is coconut milk thinned with water.",
+        "Check the list for sugar and thickeners such as gellan gum.",
+        "For the full-fat kind, reach for the can, not the carton."
       ],
       "science": "Canned coconut milk is shredded coconut steeped in water or milk, then pressed. The carton beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of the can. It does not stand in for canned coconut milk in cooking.",
       "labels_decoded": [
         {
           "term": "Coconut milk beverage",
-          "meaning": "Coconut milk thinned with water and other ingredients."
+          "meaning": "A coconut beverage: coconut milk thinned with water and other ingredients."
         }
       ],
       "tier_note": "A carton labeled beverage is a drink, judged by its thickeners and sugar.",
@@ -10164,7 +10171,7 @@
         "Vinegar on the list means it was not soured by fermenting alone."
       ],
       "pick_steps": [
-        "Look for raw on the label, and pick it from the refrigerated case.",
+        "Look for raw or unpasteurized on the label, in the refrigerated case.",
         "Refrigerated alone does not prove raw, so read the label.",
         "Vinegar on the list means it was not soured by fermenting alone."
       ],
@@ -10197,9 +10204,9 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick kimchi?",
-      "decision": "Crisp, bright kimchi to eat as is; sour, softer kimchi to cook.",
-      "why": "The packed date shows how long it has fermented. Kimchi moves from fresh to ripe to overripe.",
-      "short_answer": "Check when the kimchi was packed. Fresh kimchi looks crisp, plump and bright, for eating as is. Lighter, more pruned kimchi is well fermented and suits cooking. Read the list for fish sauce or shrimp.",
+      "decision": "Kimchi of cabbage, red pepper, garlic, ginger and salt, recently packed.",
+      "why": "Kimchi is cabbage with red pepper, garlic, ginger and salt. The packed date shows its stage.",
+      "short_answer": "Read the list for cabbage, red pepper powder, garlic, ginger and salt, and for fish sauce or shrimp. Check when the kimchi was packed. Fresh kimchi looks crisp, plump and bright. Lighter, softer kimchi is well fermented.",
       "detail": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt (the Codex standard). Fish sauce or salted seafood such as shrimp is often added. The packed date shows how long it has fermented, from fresh to ripe to overripe. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented. Fermenting kimchi makes carbon dioxide gas.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -10208,12 +10215,12 @@
         "https://www.chowhound.com/1921456/store-bought-kimchi-problem/",
         "https://www.traceone.com/resources/plm-compliance-blog/codex-alimentarius-releases-standard-for-kimchi"
       ],
-      "kristy_take": "The packed date and the look of the cabbage tell the stage. Pick the stage for the meal.",
+      "kristy_take": "The list names what went in, and the packed date tells the stage.",
       "cart_pick": "Kimchi with a recent packed date",
       "buying_tips": [
+        "Read the list for cabbage, red pepper powder, garlic, ginger and salt.",
         "Check the label for the packed date.",
-        "Look for crisp, plump, bright cabbage to eat as is.",
-        "Pick lighter, softer kimchi to cook with now.",
+        "Look for crisp, plump, bright cabbage for fresh kimchi.",
         "Read the ingredients for fish sauce or shrimp."
       ],
       "watch_out": [
@@ -10221,9 +10228,9 @@
         "Fish sauce or salted seafood is often in the seasoning."
       ],
       "pick_steps": [
-        "Pick crisp, plump, bright kimchi to eat as is.",
-        "Pick lighter, softer kimchi to cook with now.",
-        "Check the ingredients for fish sauce or shrimp."
+        "Read the list for cabbage, red pepper, garlic, ginger, salt and any fish sauce.",
+        "Check the packed date; crisp, bright cabbage is fresh, softer kimchi is riper.",
+        "Raw or unpasteurized: see Sauerkraut."
       ],
       "science": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt. It moves from fresh to ripe to overripe as it ferments. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented.",
       "labels_decoded": [
@@ -10379,22 +10386,22 @@
       ],
       "category": "bulk_pantry",
       "question": "Which miso do you buy?",
-      "decision": "White miso for most uses; red miso for a stronger, saltier taste.",
-      "why": "White miso is mild and the most versatile. Red is the saltiest and strongest.",
-      "short_answer": "Buy white miso if buying only one. It is soybeans and rice, mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
-      "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Pasteurized and unpasteurized miso do not differ much in flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
+      "decision": "Miso of soybeans, salt and koji, with any grain named.",
+      "why": "Miso is soybeans fermented with salt and koji, often with rice or barley. Red miso is the saltiest kind.",
+      "short_answer": "Read the list: soybeans, salt and koji, often with rice or barley. White miso is mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
+      "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://en.wikipedia.org/wiki/Miso",
         "https://favorflav.com/en/new/the-ultimate-miso-guide/",
         "https://www.huffingtonpost.co.uk/entry/different-kinds-of-miso_n_6993590"
       ],
-      "kristy_take": "One tub of white miso covers most uses. Red is the strong, salty one.",
-      "cart_pick": "White miso in a sealed tub",
+      "kristy_take": "The list names the soybeans, salt, koji and grain. Red is the salty one.",
+      "cart_pick": "Miso listing soybeans, salt and koji",
       "buying_tips": [
-        "Read the ingredients for the grain: rice, barley or none.",
+        "Read the ingredients for soybeans, salt, koji and the grain: rice, barley or none.",
         "Pick white miso if buying only one.",
-        "Pick red miso for a stronger, saltier taste.",
+        "Pick red miso knowing it is the saltiest kind.",
         "Keep the tub in the fridge after opening."
       ],
       "watch_out": [
@@ -10402,9 +10409,9 @@
         "Darker miso tastes stronger, so match the color to the dish."
       ],
       "pick_steps": [
-        "Read the ingredients for the grain: rice, barley or none.",
-        "Pick white miso if buying only one; it is mild and sweet.",
-        "Pick red for a stronger, saltier taste, and use less of it."
+        "Read the list for soybeans, salt, koji and the grain: rice, barley or none.",
+        "Pick by color: red miso is the saltiest, white the mildest.",
+        "Raw or unpasteurized: see Sauerkraut."
       ],
       "science": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White miso is soybeans and rice, fermented a short time, so it is mild and sweet. Red miso is the saltiest and strongest. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor.",
       "labels_decoded": [
@@ -12482,8 +12489,8 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick pretzels?",
-      "decision": "Pretzels dipped in lye before baking: the traditional German way.",
-      "why": "A lye dip gives traditional German pretzels their salty bite, chew and smooth mahogany crust.",
+      "decision": "Pretzels with a short list: flour, malt, oil, salt, yeast and soda.",
+      "why": "One snack pretzel lists enriched flour, malt syrup, oil, salt, yeast and soda.",
       "short_answer": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked. Baking neutralizes the lye. The bath gives the chew and the glossy brown crust. A baking soda bath does the same job, milder.",
       "detail": "Lye is sodium hydroxide, the strongest alkali a baker uses. On the pH scale, a measure of how strong an alkali is, lye reaches 14. A baking soda solution, sodium bicarbonate, sits at roughly 8.3, so it reacts less. Its pretzels come out lighter in color and flavor. The alkaline surface speeds browning, the Maillard reaction that shapes how the crust forms and tastes. A hard pretzel bakes about twice as long as a soft one. The German name, Laugenbrezel, means “lye pretzel.”",
       "evidence_tier": "established",
@@ -12492,18 +12499,19 @@
         "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
       ],
       "kristy_take": "The story goes that monks in the Middle Ages twisted dough scraps into pretzels. German bakers still dip the dough in lye for the deepest color.",
-      "cart_pick": "Lye-dipped pretzels, deep brown",
+      "cart_pick": "Pretzels with a short ingredient list",
       "buying_tips": [
+        "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
         "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
-        "A paler pretzel can point to the milder baking soda bath.",
-        "Look for a crust that shines like polished mahogany."
+        "A paler pretzel can point to the milder baking soda bath."
       ],
       "watch_out": [
         "Without an alkaline bath, a pretzel is just a tanned twist of dough."
       ],
       "pick_steps": [
-        "Pick pretzels with a glossy, polished-mahogany crust.",
-        "Check crust color; a paler pretzel can point to a baking soda bath."
+        "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
+        "Check crust color; a paler pretzel can point to a baking soda bath.",
+        "Dough conditioners: see Sandwich bread."
       ],
       "science": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked, which neutralizes the lye. Lye is sodium hydroxide, the strongest alkali a baker uses. A baking soda bath reacts less, so its pretzels come out lighter. The alkaline surface speeds browning, which shapes the crust. Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
       "labels_decoded": [
@@ -12516,7 +12524,7 @@
           "meaning": "A milder alkaline bath that does the same job, with a lighter color."
         }
       ],
-      "tier_note": "A glossy, deep brown crust is the craft mark of the bath.",
+      "tier_note": "The printed ingredient list sets this pick, ahead of crust color.",
       "asked_as": [
         "which pretzels should i buy",
         "are hard pretzels worth buying",
