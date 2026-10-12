@@ -5892,8 +5892,7 @@
       ],
       "pick_steps": [
         "Pick crisp, evenly green leaves; skip yellowing, browning or small holes.",
-        "Choose romaine neither very loose nor very hard, and kale on moist stems.",
-        "Choose kale with smaller leaves for a tender, milder bunch."
+        "Choose romaine neither very loose nor very hard, and kale on moist stems."
       ],
       "science": "Crispness is the freshness date, since spinach is highly perishable and kale wilts in the warm. Lettuce should be bright to dark green outside and pale at the heart. A loose romaine is immature; a hard one is overmature. Kale keeps about five days in a plastic bag, air pressed out. Water on the leaves speeds spoilage, so wash at the point of use.",
       "labels_decoded": [],
@@ -6564,7 +6563,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Choose firm bulbs that feel heavy with no cracks or bruises; smaller ones are more tender.",
+      "decision": "Choose firm bulbs that feel heavy with no cracks or bruises.",
       "sources": [
         {
           "name": "Nebraska Extension: Kohlrabi",
@@ -7548,7 +7547,6 @@
       ],
       "pick_steps": [
         "Take dry, firm caps and pass on any with dark spots.",
-        "Closed caps taste mild; open caps with gills showing taste stronger.",
         "Buy them loose, only as many as needed."
       ],
       "science": "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one. Keep them cold in paper, since a plastic bag traps moisture and spoils them faster. Wild-picked mushrooms need an expert, and cooking or drying does not change that.",
@@ -8631,7 +8629,7 @@
         "Smell for a sweetish odor."
       ],
       "watch_out": [
-        "Wet scallops hold extra water, so they release moisture in the pan and sear poorly.",
+        "Wet scallops hold extra water.",
         "Loose scallops at the counter may carry no ingredient list, so ask."
       ],
       "pick_steps": [
@@ -8639,7 +8637,7 @@
         "Loose at the counter, ask whether they are dry.",
         "Pick ones with a sweetish smell, not sitting in excess liquid."
       ],
-      "science": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water, so they release moisture in the pan and sear poorly. Packaged wet scallops should disclose the phosphate and water in the ingredients. Loose scallops may carry no ingredient list. Dry-packed scallops are untreated.",
+      "science": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water. Packaged wet scallops should disclose the phosphate and water in the ingredients. Loose scallops may carry no ingredient list. Dry-packed scallops are untreated.",
       "labels_decoded": [
         {
           "term": "Wet-packed",
@@ -9429,7 +9427,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick a bottle of kefir?",
-      "decision": "Plain kefir, with no flavor named on the bottle.",
+      "decision": "Plain kefir: milk and cultures alone.",
       "why": "Kefir is milk fermented by yeasts and bacteria. It is sold ready to drink, plain or flavored.",
       "short_answer": "Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.",
       "detail": "Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.",
@@ -9450,7 +9448,7 @@
         "Kefir has a short shelf life. Keep it refrigerated."
       ],
       "pick_steps": [
-        "Pick the bottle with no flavor named on the label.",
+        "Pick the bottle labeled plain, not flavored.",
         "Take it from the refrigerated case and keep it cold."
       ],
       "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
@@ -9554,8 +9552,7 @@
       ],
       "pick_steps": [
         "Look for “cream cheese” as the name; that name carries the standard.",
-        "Find a culture in the list; stabilizers may follow, up to 0.5 percent.",
-        "Swap in Neufchâtel in most recipes; the two taste similar."
+        "Find a culture in the list; stabilizers may follow, up to 0.5 percent."
       ],
       "science": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and at most 55 percent moisture. The dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel closely resembles cream cheese; French Neufchâtel ripens and grows a soft rind.",
       "labels_decoded": [
@@ -12121,7 +12118,7 @@
       "decision": "Coconut water alone on the list, with nothing added.",
       "why": "Coconut water is the clear liquid from green coconuts. Some cartons add sugar, so the ingredients tell.",
       "short_answer": "Coconut water is the clear liquid inside green, unripe coconuts, and it differs from coconut milk. Brands differ, and some add sugar. The shortest list is coconut water alone.",
-      "detail": "Coconut water is the clear liquid found inside green (unripe) coconuts. Coconut milk is different: it combines the grated meat of a ripe coconut with water. Brands differ, and some coconut waters have added sugars. Where the federal juice rule applies, a beverage with juice declares its share as “Contains __ percent juice” or “__ percent juice,” a whole number not greater than the actual share. Juice directly expressed from the fruit counts as 100 percent juice. Out of the nut, coconut water spoils quickly. Canned coconut water is given a high-temperature, short-time heat treatment, which keeps it long but takes away its natural flavor. Some coconut water is high-pressure processed (HPP) instead, and in one study it kept its original color and aroma better than heat-treated water. A whole young coconut still in its husk keeps its quality longer than a trimmed one.",
+      "detail": "Coconut water is the clear liquid found inside green (unripe) coconuts. Coconut milk is different: it combines the grated meat of a ripe coconut with water. Brands differ, and some coconut waters have added sugars. Where the federal juice rule applies, a beverage with juice declares its share as “Contains __ percent juice” or “__ percent juice,” a whole number not greater than the actual share. Juice directly expressed from the fruit counts as 100 percent juice. Out of the nut, coconut water spoils quickly. Canned coconut water is given a high-temperature, short-time heat treatment, which keeps it long. Some coconut water is high-pressure processed (HPP) instead, and in one study it kept its original color and aroma better than heat-treated water. A whole young coconut still in its husk keeps its quality longer than a trimmed one.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://brunswick.ces.ncsu.edu/2025/04/coconut-products",
@@ -12129,11 +12126,11 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC6475728",
         "https://pubmed.ncbi.nlm.nih.gov/23572707/"
       ],
-      "kristy_take": "Fewest ingredients is the craft standard here: coconut water alone, with nothing added. Heat keeps a carton long but takes away its natural flavor.",
+      "kristy_take": "Fewest ingredients is the craft standard here: coconut water alone, with nothing added. Heat keeps a carton long.",
       "cart_pick": "Coconut water with no added sugar",
       "buying_tips": [
         "Read the ingredients: coconut water alone, or with sugar added.",
-        "Canned coconut water is heat-treated, which takes away its natural flavor.",
+        "Canned coconut water is heat-treated so it keeps.",
         "A whole young coconut in its husk keeps longer than a trimmed one."
       ],
       "watch_out": [
@@ -12142,7 +12139,7 @@
       ],
       "pick_steps": [
         "Read the ingredients for coconut water alone; some brands add sugar.",
-        "Canned coconut water is heated so it keeps, which takes its natural flavor.",
+        "Canned coconut water is heated so it keeps.",
         "Pick a whole young coconut in its husk over a trimmed one."
       ],
       "science": "Coconut water is the clear liquid inside green, unripe coconuts. Coconut milk is a different product: grated ripe coconut meat combined with water. Out of the nut, coconut water spoils quickly. Canned water gets a high-temperature, short-time heat step that keeps it long. Some is high-pressure processed instead, and in one study it kept its color and aroma better.",

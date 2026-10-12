@@ -19,7 +19,7 @@ const cards = nonEmpty(
 );
 nonEmpty(OWNED_FACTS, 'OWNED_FACTS', 13);
 // Ratchet: PENDING only shrinks; each batch lowers the ceiling as it removes ids.
-assert.ok(HEALTH_FIRST_PENDING.size <= 51, `HEALTH_FIRST_PENDING grew: ${HEALTH_FIRST_PENDING.size} > 51`);
+assert.ok(HEALTH_FIRST_PENDING.size <= 30, `HEALTH_FIRST_PENDING grew: ${HEALTH_FIRST_PENDING.size} > 30`);
 
 test('every card outside HEALTH_FIRST_PENDING is clean on both rules; HEAD hits printed', (t) => {
   const hits = { CULINARY_AIM: new Set(), REPEATED_CLAIM: new Set(), POINTER_UNKNOWN_OWNER: new Set() };

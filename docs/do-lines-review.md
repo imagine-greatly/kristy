@@ -235,7 +235,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `deli` | bulk_pantry | Ask about deli salads, prepared meals or lunch meat by name. | Check the cold case first; meats, cheeses and salads all need it. | — |
 | `frozen_pizza` | bulk_pantry | Frozen pizza with a short crust list: flour, water, salt, yeast. | Check a crust sold as whole wheat for whole wheat flour throughout. | — |
 | `frozen_meals` | bulk_pantry | The name on a frozen meal sets its meat minimum. | Check the inspection mark, then follow the package directions to heat it. | — |
-| `frozen_fries` | bulk_pantry | Frozen fries of potatoes, oil and salt, with little else listed. | Read the ingredients for anything a home recipe would not use. | — |
+| `frozen_fries` | bulk_pantry | Frozen fries of potatoes, oil and salt, with little else listed. | Read the ingredients for anything home cooks would not use. | — |
 | `frozen_waffles` | bulk_pantry | Frozen waffles with a whole grain listed first. | Read the list for “wheat flour”, which is not a whole grain flour. | — |
 | `frozen_nuggets` | bulk_pantry | Chicken nuggets that say white meat on the label. | Check for “natural proportions”, which means 50 to 65 percent light meat. | — |
 | `frozen` | bulk_pantry | Keep frozen at 0°F; then ask about pizza, meals or fries. | Check for grayish-brown or white dried patches; that is freezer burn. | — |
