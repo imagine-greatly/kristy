@@ -4194,38 +4194,43 @@
         "unbleached flour",
         "enriched flour",
         "pastry flour",
-        "which flour"
+        "which flour",
+        "bromated flour",
+        "unbromated flour"
       ],
       "category": "bulk_pantry",
       "question": "Which flour should I buy, and what does ‘enriched’ mean?",
-      "decision": "Unbleached flour skips the chemical whitening step bleached flour goes through.",
-      "why": "Protein content picks the flour. Whole wheat keeps the germ, and that oil turns.",
-      "short_answer": "Protein content picks the flour. Bread flour is highest and builds chew. All-purpose is the middle. Cake and pastry flour are lowest and stay tender. Whole wheat keeps the bran and germ, so it turns rancid far sooner.",
-      "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Enrichment is a regulated add-back of thiamin, riboflavin, niacin, folic acid and iron, and it is standard on most white flour sold in the US. Bleaching speeds up the same softening that months of air exposure would have done. Whole wheat still carries the oil in the germ, so it keeps for months rather than years and belongs in the freezer if it is not going quickly. Its bran also cuts gluten strands, which is why an all-whole-wheat loaf comes out denser. ‘Enriched’ means B vitamins and iron were added back after refining removed them. ‘Bleached’ means treated with a chemical whitening agent, while ‘unbleached’ was simply aged with air. Whole wheat behaves differently in baking.",
+      "decision": "Whole wheat flour first; on white flour, unbleached and unbromated.",
+      "why": "Whole wheat flour keeps the bran, germ and endosperm in their natural proportions.",
+      "short_answer": "Whole wheat flour keeps the bran and germ. On white flour, “unbleached” means aged with air; bleached must say “Bleached”. Bromated flour has potassium bromate added. Whole wheat carries oil in the germ, so it turns rancid sooner.",
+      "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Whole wheat flour keeps the natural constituents of the wheat in their original proportions. Enrichment is a regulated add-back of thiamin, riboflavin, niacin, folic acid and iron, and it is standard on most white flour sold in the US. When a bleaching ingredient is used, the label must bear the word “Bleached”. Bleaching speeds up the same softening that months of air exposure would have done. Bromated flour has potassium bromate added, at no more than 50 parts per million. Whole wheat still carries the oil in the germ, so it keeps for months rather than years and belongs in the freezer if it is not going quickly. ‘Enriched’ means B vitamins and iron were added back after refining removed them. ‘Bleached’ means treated with a chemical whitening agent, while ‘unbleached’ was simply aged with air.",
       "evidence_tier": "established",
       "sources": [
         "FDA standards of identity for enriched flour, 21 CFR 137",
         "FDA regulations on flour bleaching and maturing agents",
         "USDA FoodData Central",
-        "NC State Extension, More Food project “All About Flour” https://morefoodproject.org/blog/all-about-flour (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)"
+        "NC State Extension, More Food project “All About Flour” https://morefoodproject.org/blog/all-about-flour (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
+        "https://www.law.cornell.edu/cfr/text/21/137.105",
+        "https://www.law.cornell.edu/cfr/text/21/137.155",
+        "https://www.law.cornell.edu/cfr/text/21/137.200"
       ],
-      "kristy_take": "Unbleached over bleached, and keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
-      "cart_pick": "Unbleached all-purpose flour",
+      "kristy_take": "Whole wheat first; unbleached and unbromated when it is white. Keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
+      "cart_pick": "Whole wheat flour",
       "watch_out": [
         "Whole wheat flour keeps the germ and its oil, and heat, air and moisture are what turn it. In a pantry at room temperature, a month is the outside window. Seal air out, or other flavors and odors move in."
       ],
       "pick_steps": [
-        "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
-        "Read for “unbleached”: aged with air, not chemically whitened.",
+        "Read the name for “whole wheat”: bran and germ still in.",
+        "On white flour, read for “unbleached”, and pass on “bromated”.",
         "Whole wheat: buy small, seal out air, keep it in the freezer."
       ],
-      "science": "Protein content picks the flour: bread flour is highest, cake and pastry flour lowest. Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole wheat keeps the germ and its oil, and heat, air and moisture turn it. At room temperature, a month is the outside window. Its bran cuts gluten strands for a denser loaf, so start with a quarter.",
+      "science": "Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole wheat keeps the grain’s natural proportions, germ and its oil included, and heat, air and moisture turn that oil. At room temperature, a month is the outside window. Bleached flour must say “Bleached” on the label. Bromated flour has potassium bromate added.",
       "buying_tips": [
-        "Bread flour for chew, all-purpose for most things, pastry flour for tender.",
+        "Pick whole wheat flour first; it keeps the bran and germ.",
         "‘Enriched’ means vitamins and iron added back after refining. Standard on white flour.",
         "‘Unbleached’ was aged with air. ‘Bleached’ was chemically whitened.",
-        "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer.",
-        "Whole-grain flour makes a denser loaf. Start with a quarter of the total."
+        "Read for “bromated”, and pick flour without potassium bromate.",
+        "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer."
       ],
       "labels_decoded": [
         {
@@ -4243,13 +4248,19 @@
         {
           "term": "Whole wheat",
           "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."
+        },
+        {
+          "term": "Bromated",
+          "meaning": "Potassium bromate added, at no more than 50 parts per million."
         }
       ],
-      "tier_note": "Bleached, enriched and whole are defined terms, and the germ’s oil turning is simply what fat does.",
+      "tier_note": "Bleached, bromated, enriched and whole wheat are defined label terms, and the germ’s oil turning is what fat does.",
       "asked_as": [
         "which flour should i buy",
         "what does enriched flour mean",
-        "is bleached flour bad"
+        "is bleached flour bad",
+        "what is bromated flour",
+        "which flour is least processed"
       ]
     },
     {
@@ -4580,54 +4591,57 @@
         "besides rice",
         "instead of rice",
         "other grains",
-        "what grains"
+        "what grains",
+        "hulled barley",
+        "pearl barley"
       ],
       "category": "bulk_pantry",
       "question": "What else should I be buying besides rice?",
-      "decision": "Grains other than rice cook like pasta, in plenty of salted water.",
-      "why": "Bulgur, quinoa and buckwheat are fast. Farro and barley are made for soups and bowls.",
-      "short_answer": "Rotating grains is the cheapest upgrade in the pantry. Quinoa cooks in fifteen minutes and holds together cold. Farro and barley are chewy, made for soups and bowls. Bulgur takes ten minutes with boiling water and a lid.",
-      "detail": "Variety is worth it on its own terms, since different grains bring different textures and cooking times, and rotating them means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Most of these cook like pasta, in plenty of salted water and drained when tender, which is far more forgiving than the exact ratios rice wants. Buy them from the bulk bins where you can. Buckwheat is not wheat at all and cooks fast. Millet and sorghum are cheap and carry no gluten. Bulgur is the fastest of the lot. The bitter coating on quinoa’s hull is called saponin.",
+      "decision": "Grains with the bran still on, not polished off.",
+      "why": "Hulled barley loses only its inedible outer hull. Pearl barley is polished to remove bran.",
+      "short_answer": "Whole or hulled grains keep their bran; pearled grains have some or all of it polished off. Hulled barley loses only its inedible hull. Buckwheat, millet, sorghum and quinoa carry no gluten.",
+      "detail": "Hulled barley is minimally processed to remove only the tough inedible outer hull. Pearl barley has been polished to remove some or all of the outer bran layer along with the hull. On barley and farro, “pearled” marks bran removed and “whole” or “hulled” marks bran kept. Variety is worth it on its own terms, since rotating grains means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Buy them from the bulk bins where you can. Buckwheat is not wheat at all. Millet and sorghum carry no gluten. Bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20. The bitter coating on quinoa’s hull is called saponin.",
       "evidence_tier": "established",
       "sources": [
         "USDA FoodData Central",
         "FDA guidance on inorganic arsenic in rice",
         "Whole Grains Council grain reference",
-        "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)"
+        "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)",
+        "https://wholegrainscouncil.org/whole-grains-101/whole-grains-101-orphan-pages-found/types-barley"
       ],
-      "kristy_take": "Cook them like pasta: lots of salted water, drain when tender. Far easier than getting a rice ratio right.",
-      "cart_pick": "Quinoa",
+      "kristy_take": "Whole or hulled over pearled. The bran stays on, and the bag says which.",
+      "cart_pick": "Whole or hulled grain, not pearled",
       "watch_out": [
         "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off."
       ],
       "pick_steps": [
-        "Fast: bulgur 10 minutes, quinoa and buckwheat 15, millet 20.",
-        "Chewy and slow: farro, barley, wheat berries, sorghum; pearled cooks faster than hulled.",
-        "No gluten in buckwheat, millet, sorghum or quinoa; barley, farro and bulgur carry it."
+        "Read the bag for “hulled” or “whole”; “pearled” means bran was polished off.",
+        "No gluten in buckwheat, millet, sorghum or quinoa; barley, farro and bulgur carry it.",
+        "Buy from the bulk bins where you can."
       ],
-      "science": "Most of these cook like pasta, in plenty of salted water, drained when tender. That is far more forgiving than the exact ratios rice wants. Quinoa carries a bitter natural coating on its hull, so rinse it before cooking. Pearled grains have some bran removed; whole or hulled keep it and hold their chew. A big batch keeps several days and reheats straight from cold.",
+      "science": "Hulled barley loses only its inedible outer hull; pearl barley is polished to remove some or all of the bran. Whole or hulled grains keep the bran. Quinoa carries a bitter natural coating on its hull, so rinse it before cooking. A big batch keeps several days and reheats straight from cold.",
       "buying_tips": [
-        "Quick ones: bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20.",
-        "Chewy and slow: farro, barley, wheat berries, sorghum. Made for soups and bowls.",
+        "Read for “hulled” or “whole”; “pearled” means some or all of the bran was polished off.",
         "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
-        "Cook most of them like pasta, in salted water, and drain.",
+        "Buy from the bulk bins where you can.",
         "Cook a big batch. They keep several days and reheat straight from cold."
       ],
       "labels_decoded": [
         {
           "term": "Pearled (barley, farro)",
-          "meaning": "Some bran removed. Cooks faster, less of the whole kernel."
+          "meaning": "Polished to remove some or all of the bran along with the hull."
         },
         {
           "term": "Whole / hulled",
-          "meaning": "Bran intact. A longer cook, and it holds its chew."
+          "meaning": "Only the inedible outer hull removed; the bran stays on."
         }
       ],
-      "tier_note": "Cook times and texture are properties of the grain, not a claim made about it.",
+      "tier_note": "Hulled, whole and pearled describe how much bran the mill left on.",
       "asked_as": [
         "what grains should i buy besides rice",
         "what else can i cook instead of rice",
-        "is quinoa worth it"
+        "is quinoa worth it",
+        "what is hulled barley"
       ]
     },
     {
@@ -10599,30 +10613,29 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick broth?",
-      "decision": "Broth is thin and light; bone broth simmers longer, runs thicker.",
-      "why": "Broth simmers meat a short time. Stock and bone broth simmer bones, and bone broth often simmers longer.",
+      "decision": "Broth whose list names the bones, meat or vegetables in it.",
+      "why": "A stock is made from bones, with vegetables for flavor; a broth includes the actual meat.",
       "short_answer": "Broth is a thin, light liquid from meat simmered a short time. Stock and bone broth are simmered from bones. Bone broth is often simmered longer and comes out somewhat thicker. The three swap in for each other.",
-      "detail": "Regular broth is made by simmering meat with water, vegetables, herbs and spices for a short time. It is generally a thin liquid, light in color. Stock and bone broth are both made by simmering bones with vegetables, herbs and spices. Bone broth is often simmered longer, sometimes up to 24 hours, and comes out somewhat thicker. Commercial stock and broth are not very different in their ingredients, and many commercial broths list stock as an ingredient. The three can be used interchangeably. Sodium varies, and it is high unless the carton says low sodium or unsalted.",
+      "detail": "A stock is made from bones, with vegetables for flavor; a broth includes the actual meat. Regular broth is made by simmering meat with water, vegetables, herbs and spices for a short time. It is generally a thin liquid, light in color. Stock and bone broth are both made by simmering bones with vegetables, herbs and spices. Bone broth is often simmered longer, sometimes up to 24 hours, and comes out somewhat thicker. Commercial stock and broth are not very different in their ingredients, and many commercial broths list stock as an ingredient. The three can be used interchangeably. Sodium varies, and it is high unless the carton says low sodium or unsalted.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2025-05-16-bone-broth-hype-or-healthy",
         "https://brunswick.ces.ncsu.edu/2023/03/stockbrothor-bone-brothwhats-the-difference",
         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2015-04-02-broth-or-stock-whats-difference"
       ],
-      "kristy_take": "Broth, stock and bone broth swap in for each other. Sodium is the read that differs.",
+      "kristy_take": "The list names what was simmered. Sodium is the other read.",
       "cart_pick": "Low-sodium or unsalted broth",
       "buying_tips": [
+        "Read the list for named bones, meat and vegetables.",
         "Read the Nutrition Facts for sodium.",
-        "Look for low sodium or unsalted on the carton.",
-        "Pick bone broth or stock when a thicker liquid suits the dish."
+        "Look for low sodium or unsalted on the carton."
       ],
       "watch_out": [
         "Broth may have salt added, so a plain-looking carton can still run high in sodium."
       ],
       "pick_steps": [
-        "Look for low sodium or unsalted on the carton.",
-        "Read sodium on the Nutrition Facts; a plain-looking carton can still run high.",
-        "Pick bone broth or stock when the dish wants a thicker liquid."
+        "Read the list for named bones, meat and vegetables, then water and salt.",
+        "Read sodium on the Nutrition Facts, or pick low sodium or unsalted."
       ],
       "science": "Broth is meat simmered a short time, giving a thin, light liquid. Stock and bone broth are simmered from bones with vegetables, herbs and spices. Bone broth often simmers longer and comes out somewhat thicker. Commercial stock and broth differ little in ingredients, and the three swap in for each other. Sodium varies, and it runs high unless the carton says low sodium or unsalted.",
       "labels_decoded": [
@@ -10661,9 +10674,9 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick salt?",
-      "decision": "Fine table salt or coarse kosher and sea salt: pick by grain.",
-      "why": "Crystal size changes how salt measures by volume. A salt without added iodide must say so on its label.",
-      "short_answer": "Table salt is fine-grained. Kosher salt is coarse, and sea salt usually has larger crystals. Different crystals do not measure the same by volume. Salt that is not iodized says “does not supply iodide” beside its name.",
+      "decision": "Iodized salt lists added iodine; check the list for anti-caking agents.",
+      "why": "Iodized salt lists added iodine, and an anti-caking agent may be added to salt.",
+      "short_answer": "Iodized salt lists added iodine. An anti-caking agent may be added to salt, and the list names it. Pickling or canning salt is pure salt. Salt that is not iodized says “does not supply iodide” beside its name.",
       "detail": "Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide.” The statement sits right after the name of the food. Iodide is the form of iodine added to iodized salt, and iodized salt is table salt with iodine added. An anticaking agent, an additive that keeps salt from caking, may be added to salt under 21 CFR 172.490. Kosher salt has a coarse texture. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. A third of a cup of kosher salt does not have the same density as a third of a cup of pickling salt. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
       "evidence_tier": "established",
       "sources": [
@@ -10673,23 +10686,23 @@
         "https://extension.oregonstate.edu/ask-extension/featured/himalayan-pink-salt-safe-canning",
         "https://www.law.cornell.edu/cfr/text/21/172.490"
       ],
-      "kristy_take": "Grain is the choice. The iodide statement is the label read.",
-      "cart_pick": "Salt by grain: fine, coarse or flaky",
+      "kristy_take": "The list is the read: iodine added, an anti-caking agent added, or salt alone.",
+      "cart_pick": "Pickling or canning salt",
       "buying_tips": [
-        "Pick table salt for fine grains, kosher or sea salt for coarse ones.",
-        "Pick pickling or canning salt for canning, since it has nothing added.",
-        "Pick flaky salt for sprinkling on top just before serving."
+        "Read the list: iodized salt lists added iodine.",
+        "Check the list for an anti-caking agent.",
+        "Pickling or canning salt is pure salt with nothing added."
       ],
       "watch_out": [
         "Curing salt, sometimes dyed pink and labeled “pink salt,” is not pink Himalayan salt.",
         "Salts do not swap cup for cup, since crystal size changes the measure."
       ],
       "pick_steps": [
-        "Pick table salt for fine grains, kosher or sea salt for coarse.",
-        "Pick pickling or canning salt for canning, since it has nothing added.",
-        "On table salt, read for “does not supply iodide” beside the name."
+        "Check the list for an anti-caking agent.",
+        "Pickling or canning salt has nothing added; the list reads salt.",
+        "On salt with no iodide, read for “does not supply iodide” beside the name."
       ],
-      "science": "Iodized salt is table salt with iodide, a form of iodine, added. Table salt with no added iodide must say so right after its name. Sea salt is made by evaporating seawater and usually has larger crystals. Kosher salt is coarse. Crystal size changes how salt measures, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts.",
+      "science": "Iodized salt is table salt with iodide, a form of iodine, added. Table salt with no added iodide must say so right after its name. An anti-caking agent may be added to salt, and the list names it. Pickling or canning salt is pure salt. Crystal size changes how salt measures, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts.",
       "labels_decoded": [
         {
           "term": "Iodized",
@@ -10704,11 +10717,12 @@
           "meaning": "Pure salt with nothing added."
         }
       ],
-      "tier_note": "A salt without iodide has to say so on its label.",
+      "tier_note": "Added iodide and any anti-caking agent both appear on the salt’s list.",
       "asked_as": [
         "which table salt should i buy",
         "is sea salt worth buying",
-        "is kosher salt worth buying"
+        "is kosher salt worth buying",
+        "what is in iodized salt"
       ]
     },
     {
@@ -10725,7 +10739,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick sugar?",
-      "decision": "Brown sugar is white sugar with molasses; pick by flavor.",
+      "decision": "Sugar alone on the list; brown sugar is sugar plus molasses.",
       "why": "Sugar is crystallized from cane or beet juice, the same substance either way. Brown sugar adds molasses.",
       "short_answer": "Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Light brown has less molasses than dark brown. Turbinado is a raw cane sugar, paler than brown sugar.",
       "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote.",
@@ -10736,7 +10750,7 @@
         "https://extension.oregonstate.edu/food/preservation/sweeteners-nutritive-non-nutritive",
         "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
       ],
-      "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown.",
+      "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown, and neither ranks above the other.",
       "cart_pick": "Plain sugar, white or brown",
       "buying_tips": [
         "Pick light or dark brown sugar; dark carries more molasses.",
@@ -10747,8 +10761,9 @@
         "Coconut sugar is made mostly of sucrose, like other sugar."
       ],
       "pick_steps": [
-        "Pick dark brown sugar for more molasses, light brown for less.",
-        "Ignore cane or beet on the bag; the sugar is the same."
+        "Read the list: sugar alone, or sugar and molasses for brown.",
+        "Dark brown carries more molasses than light brown.",
+        "Keep brown sugar closed, since it hardens in open air."
       ],
       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
       "labels_decoded": [
@@ -10769,7 +10784,9 @@
       "asked_as": [
         "which white sugar should i buy",
         "is brown sugar worth buying",
-        "is coconut sugar worth buying"
+        "is coconut sugar worth buying",
+        "what is brown sugar made of",
+        "is raw sugar less processed"
       ]
     },
     {
@@ -10784,8 +10801,8 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick maple syrup?",
-      "decision": "Pure maple syrup; darker grades taste stronger.",
-      "why": "The name on the bottle is a standardized food name. Darker grades carry a stronger maple flavor.",
+      "decision": "Pure maple syrup in any grade, never table or pancake syrup.",
+      "why": "Maple syrup is a standardized food name. Table or pancake syrup is a separate product under its own standard.",
       "short_answer": "Maple syrup is a standardized name. Table or pancake syrup is a different product with its own standard. Grade A runs from Golden to Very Dark. The darker the syrup, the stronger the maple flavor.",
       "detail": "Under 21 CFR 168.140, the name of the food is “maple sirup,” and “syrup” is an allowed spelling. Table sirup, also sold as pancake or waffle sirup, falls under a separate standard, 21 CFR 168.180. Since 2015, producers grade by shared standards, and all consumer maple syrup is Grade A. Within Grade A, syrup is classed by color and taste: Golden, Amber, Dark and Very Dark. The flavor follows the color, from delicate to strong. Lighter classes are often poured onto food, and darker classes are often used for cooking. Under Vermont rules, “Vermont” appears with the grade on 100 percent pure maple syrup made entirely in the state.",
       "evidence_tier": "established",
@@ -10796,20 +10813,20 @@
         "https://www.law.cornell.edu/cfr/text/21/168.180",
         "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
       ],
-      "kristy_take": "The name settles the product. The grade color settles the flavor.",
-      "cart_pick": "Grade A maple syrup, color by taste",
+      "kristy_take": "The name settles the product. Any Grade A color is the same pure syrup.",
+      "cart_pick": "Pure maple syrup, any grade",
       "buying_tips": [
-        "Pick Golden or Amber for a delicate taste, Dark or Very Dark for a strong one.",
-        "Pick a darker grade for cooking.",
-        "Check that the name says maple syrup, not table or pancake syrup."
+        "Check that the name says maple syrup, not table or pancake syrup.",
+        "Any Grade A color, Golden to Very Dark, is pure maple syrup.",
+        "Table syrup that claims maple need hold only 10 percent maple syrup."
       ],
       "watch_out": [
         "Table or pancake syrup is a different product from maple syrup."
       ],
       "pick_steps": [
         "Check that the name says maple syrup, not table or pancake syrup.",
-        "Pick Golden or Amber for a delicate taste, Dark or Very Dark for strong.",
-        "Pick a darker grade for cooking."
+        "On table syrup claiming maple, maple syrup need be only 10 percent.",
+        "Any Grade A color, Golden to Very Dark, is the same pure syrup."
       ],
       "science": "Maple syrup is a standardized food name under federal rules. Table or pancake syrup falls under a separate standard. Since 2015, all consumer maple syrup is Grade A. Within Grade A, syrup is classed by color and taste: Golden, Amber, Dark and Very Dark. The flavor follows the color, from delicate to strong.",
       "labels_decoded": [
@@ -10830,7 +10847,8 @@
       "asked_as": [
         "which maple syrup should i buy",
         "how do i pick a maple syrup",
-        "is pure maple syrup worth buying"
+        "is pure maple syrup worth buying",
+        "which maple syrup grade should i buy"
       ]
     },
     {
@@ -10848,32 +10866,32 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a cooking oil?",
-      "decision": "Refined oil for high heat; unrefined oil for its flavor.",
-      "why": "Refining leaves an oil neutral and steadier under long high heat. Unrefined oil keeps the flavor of its seed.",
-      "short_answer": "Store oils are mostly refined, bleached and deodorized, so they taste neutral. Minimally processed pressed oils keep the flavor of the seed. Refined oils stand up longer to deep-frying heat. Pick the oil by the heat it will meet.",
-      "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. RBD oils are designed to stand up longer to the long high heat of deep-fat frying. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use. Unrefined oils such as sesame carry flavors that can lift or clash with a dish.",
+      "decision": "An oil the label names by its source; “vegetable oil” names none.",
+      "why": "“Vegetable oil” on a label names no single oil; the ingredient list names the oils.",
+      "short_answer": "The label names the oil: canola, peanut, sunflower, sesame. “Vegetable oil” names none. Most store oils are refined, bleached and deodorized, and the bottle says refined or unrefined.",
+      "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. The name “vegetable oil” names no single oil; the ingredient list names the oils. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use.",
       "evidence_tier": "established",
       "sources": [
         "https://extension.psu.edu/processing-edible-oils",
         "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
         "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/"
       ],
-      "kristy_take": "Heat use picks the oil. The label names the oil and how it was processed.",
-      "cart_pick": "An oil matched to its heat use",
+      "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
+      "cart_pick": "A single named oil, not “vegetable oil”",
       "buying_tips": [
         "Read the label for the oil’s name first.",
         "Look for refined or unrefined on the bottle.",
-        "Pick an unrefined oil when its flavor belongs in the dish."
+        "A bottle that says only “vegetable oil” names no oil."
       ],
       "watch_out": [
         "Oil that starts smoking in the pan is no longer fit to use."
       ],
       "pick_steps": [
-        "Read the label for the oil’s name, then refined or unrefined.",
-        "Pick refined oil for long high heat like deep-frying.",
-        "Pick unrefined oil when its flavor belongs in the dish."
+        "How it was pressed: see ‘Cold-pressed’, ‘expeller-pressed’, ‘refined’.",
+        "Olive oil: see Buying real extra-virgin olive oil.",
+        "Animal fats: see Lard and tallow."
       ],
-      "science": "Most store oils are RBD: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability. Refined oils stand up longer to the long high heat of deep-fat frying. Minimally processed pressed oils keep the flavor of the original seed. The smoke point is the temperature where an oil begins to smoke and burn. Past it, the oil is no longer fit to use.",
+      "science": "Most store oils are RBD: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability. Minimally processed pressed oils keep the character of the original seed. “Vegetable oil” on a label names no single oil. The smoke point is the temperature where an oil begins to smoke and burn. Past it, the oil is no longer fit to use.",
       "labels_decoded": [
         {
           "term": "RBD",
@@ -10884,11 +10902,13 @@
           "meaning": "The temperature at which an oil begins to smoke and burn."
         }
       ],
-      "tier_note": "The bottle names the oil, and the processing sets its heat use.",
+      "tier_note": "The bottle either names its oil or names none at all.",
       "asked_as": [
         "which vegetable oil should i buy",
         "is sesame oil worth buying",
-        "how do i pick a peanut oil"
+        "how do i pick a peanut oil",
+        "what is vegetable oil made of",
+        "which cooking oil should i buy"
       ]
     },
     {
@@ -10965,9 +10985,9 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick cocoa powder?",
-      "decision": "Natural cocoa or Dutch cocoa, matched to the leavener the recipe names.",
-      "why": "Natural cocoa is acidic and Dutch cocoa is not, so recipes pair each with a different leavener.",
-      "short_answer": "Natural cocoa, often sold as unsweetened cocoa, is acidic. Dutch cocoa is treated to neutralize that acid. A recipe with baking soda alone needs natural cocoa. Use the cocoa the recipe names.",
+      "decision": "Cocoa with one ingredient on the list: cocoa.",
+      "why": "Dutch cocoa is processed with an alkali, and its name must say so.",
+      "short_answer": "Natural cocoa, often sold as unsweetened cocoa, is acidic. Dutch cocoa is treated with an alkali to neutralize that acid, and its name must say “Processed with alkali”. A plain cocoa lists cocoa alone.",
       "detail": "Under 21 CFR 163, cocoa is pulverized from ground cacao nibs after part of the cacao fat is removed. Breakfast cocoa holds not less than 22 percent cacao fat. Cocoa holds less than 22 percent but not less than 10 percent, and lowfat cocoa less than 10 percent. An alkali is a base that neutralizes acid. When cocoa is processed with one, its name must carry “Processed with alkali” or the alkali’s name. Natural cocoa has a pH of 5 to 6, and Dutch-processed cocoa about 7. Baking soda needs an acid to rise, which natural cocoa supplies. Cacao nibs are cleaned, dried and cracked cacao beans with the shell removed.",
       "evidence_tier": "established",
       "sources": [
@@ -10977,20 +10997,20 @@
         "https://www.law.cornell.edu/cfr/text/21/163.114",
         "https://blogs.extension.iastate.edu/answerline/2025/02/04/natural-vs-dutch-process-cocoa/"
       ],
-      "kristy_take": "The recipe’s leavener picks the cocoa. The label says which one is in the tin.",
-      "cart_pick": "The cocoa type the recipe calls for",
+      "kristy_take": "The list reads cocoa. The name says whether it was processed with alkali.",
+      "cart_pick": "Cocoa powder with one ingredient: cocoa",
       "buying_tips": [
-        "Pick natural cocoa when the recipe leans on baking soda alone.",
-        "Pick Dutch cocoa when the recipe uses only baking powder.",
-        "Pick either for hot cocoa, fudge sauce or frosting."
+        "Read the list for one ingredient: cocoa.",
+        "Read the name for “processed with alkali”; that is Dutch cocoa.",
+        "“Unsweetened cocoa” is often natural cocoa, not processed with alkali."
       ],
       "watch_out": [
         "Swapping one cocoa for the other changes the rise unless the leavener changes too."
       ],
       "pick_steps": [
-        "Use the cocoa the recipe names.",
-        "Pick natural cocoa when the recipe leans on baking soda alone.",
-        "Pick Dutch cocoa, labeled “processed with alkali,” when the recipe uses only baking powder."
+        "Read the list for one ingredient: cocoa.",
+        "Read the name for “processed with alkali”; that is Dutch cocoa.",
+        "“Unsweetened cocoa” is often natural cocoa, not processed with alkali."
       ],
       "science": "Natural cocoa is acidic, with a pH of 5 to 6. Dutch cocoa is processed with an alkali, a base that neutralizes acid, to about 7. Baking soda needs an acid to rise, which natural cocoa supplies. Swapping one cocoa for the other changes the rise unless the leavener changes too.",
       "labels_decoded": [
@@ -11304,7 +11324,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick tea?",
-      "decision": "Black, green, white and oolong are one plant; herbal is not tea.",
+      "decision": "True tea is the leaf alone: black, green, white or oolong.",
       "why": "True tea is one plant’s leaf, and processing makes the types. Herbal blends come from other plants.",
       "short_answer": "White, green, oolong, black and pu-erh tea all come from one plant’s leaves. Processing sets the type. Herbal teas come from other plants. All true tea has caffeine unless decaffeinated.",
       "detail": "True tea is the leaf of the Camellia sinensis plant. Teas are usually divided into five types by how much oxidation they undergo during processing. Oxidation is a change in the leaf that shifts its color and flavor. All true teas contain caffeine unless they are deliberately decaffeinated during processing. Under 21 CFR 173.228, ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",
@@ -11314,10 +11334,10 @@
         "https://www.law.cornell.edu/cfr/text/21/173.228",
         "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference"
       ],
-      "kristy_take": "The color on the box is a processing choice. Decaffeinated is the word that changes the caffeine.",
-      "cart_pick": "The tea type the cup calls for",
+      "kristy_take": "The list should read tea. Decaffeinated is the word that changes the caffeine.",
+      "cart_pick": "Tea with only tea leaf on the list",
       "buying_tips": [
-        "Pick black, green, white or oolong by flavor; processing sets each one.",
+        "Read the list for the tea leaf alone.",
         "Read herbal blends for the plants inside, since none is true tea.",
         "Read the box for “decaffeinated” when caffeine matters."
       ],
@@ -11325,8 +11345,7 @@
         "“Herbal tea” on a box means other plants, not the tea leaf."
       ],
       "pick_steps": [
-        "Pick black, green, white or oolong by flavor; processing sets each one.",
-        "Herbal tea means other plants; read the blend for what is inside.",
+        "Read the list for the tea leaf alone; herbal tea means other plants.",
         "Read for decaffeinated when caffeine matters."
       ],
       "science": "True tea is the leaf of the Camellia sinensis plant. Teas are usually divided into five types by how much oxidation the leaf undergoes during processing. Oxidation shifts the leaf’s color and flavor. All true teas contain caffeine unless deliberately decaffeinated. Ethyl acetate is a solvent permitted for decaffeinating coffee and tea.",

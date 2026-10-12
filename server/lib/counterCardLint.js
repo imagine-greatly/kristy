@@ -1509,9 +1509,8 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
 // listed below until later pieces empty the list.
 export const HEALTH_FIRST_PENDING = new Set([
   'duck_meat', 'goat_sheep_dairy', 'coconut_milk_beverage',
-  'cooking_oils', 'flour_basics', 'bagels', 'pretzels', 'kimchi', 'miso',
-  'salt', 'sugars', 'maple_syrup', 'cocoa', 'tea', 'broth',
-  'grains_beyond_rice', 'pick_tofu', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
+  'bagels', 'pretzels', 'kimchi', 'miso',
+  'pick_tofu', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
 ]);
 
 // Word-bounded, so `tender` never matches `tenderized` (a safety fact, not a cook's aim).
@@ -1569,6 +1568,8 @@ export const OWNED_FACTS = [
   ownedFact('milk_processing', 'milk_processing',
     ['plain_kefir', 'cream_cheese', 'goat_sheep_dairy', 'grassfed_butter', 'ghee'], /ultra[- ]pasteuri[sz]ed|homogeni[sz]ed/i),
   ownedFact('oil_extraction', 'label_cold_pressed_expeller', ['cooking_oils'], /cold[- ]pressed|expeller|hexane|solvent/i),
+  ownedFact('olive_grade', 'olive_oil_grades', ['cooking_oils'], /extra[- ]virgin/i),
+  ownedFact('animal_fat', 'lard_tallow', ['cooking_oils'], /\b(lard|tallow)\b/i),
   ownedFact('dough_conditioners', 'sandwich_bread', ['bagels', 'pretzels', 'flour_basics', 'buns_rolls'], /dough conditioner/i),
   ownedFact('live_ferment', 'sauerkraut', ['kimchi', 'miso', 'fermented_pickles', 'olives'],
     /unpasteuri[sz]ed|live (and active )?cultures/i),

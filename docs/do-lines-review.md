@@ -103,13 +103,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
 | `yogurt_live_cultures` | eggs_dairy | Buy it alive. Heat-treated after culturing is a dead ferment. | Find “live and active cultures” on the tub. Shelf-stable never carries it. | — |
 | `cream_vs_creamer` | eggs_dairy | Cream or half-and-half. ‘Non-dairy creamer’ is not dairy. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
-| `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Take the smallest whole-wheat bag on the shelf. The germ oil turns. | — |
+| `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Buy whole. Ground spice is already going stale on the shelf. | Toast them in a dry pan until they smell, then grind. | — |
 | `rancidity_check` | bulk_pantry | Fats turn, and the nose is the only test that works. | Smell for old paint or crayons. That one is finished. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin, a recent harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
 | `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
-| `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Grab bulgur or quinoa for a weeknight — both cook in fifteen minutes. | — |
+| `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Read the bag for “hulled” or “whole”, and pass on “pearled”. | — |
 | `bottled_water_buying` | bulk_pantry | Spring water from a named source, in glass. | Turn the bottle over and find the town and state it came from. | — |
 | `label_front_vs_back` | label_terms | Turn it over. Decide from the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Read the first three ingredients, then the added-sugar line. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
@@ -194,11 +194,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `tempeh` | bulk_pantry | Tempeh that is a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
 | `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated or vinegar-made. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
-| `broth` | bulk_pantry | Broth is thin and light; bone broth simmers longer, runs thicker. | Read the Nutrition Facts for sodium, which varies from carton to carton. | — |
-| `salt` | bulk_pantry | Fine table salt or coarse kosher and sea salt: pick by grain. | Read the label for “does not supply iodide” beside the salt’s name. | — |
+| `broth` | bulk_pantry | Broth is thin and light; bone broth simmers longer, runs thicker. | Read the list for named bones and vegetables, then sodium on the panel. | — |
+| `salt` | bulk_pantry | Fine table salt or coarse kosher and sea salt: pick by grain. | Read the ingredient list for an added anti-caking agent. | — |
 | `sugars` | bulk_pantry | Brown sugar is white sugar with molasses; pick by flavor. | Read the ingredients for cane or beet; both make the same sugar. | — |
-| `maple_syrup` | bulk_pantry | Pure maple syrup; darker grades taste stronger. | Read the front for the standard name, not table or pancake syrup. | — |
-| `cooking_oils` | bulk_pantry | Refined oil for high heat; unrefined oil for its flavor. | Read the label for which oil is in the bottle, then its processing. | — |
+| `maple_syrup` | bulk_pantry | Pure maple syrup; darker grades taste stronger. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+| `cooking_oils` | bulk_pantry | Refined oil for high heat; unrefined oil for its flavor. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
 | `lard_tallow` | bulk_pantry | Plain lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
 | `cocoa` | bulk_pantry | Natural cocoa or Dutch cocoa, matched to the leavener the recipe names. | Read the label for “processed with alkali” after the name. | — |
 | `seeds` | bulk_pantry | Whole chia, hulled hemp, and flax bought ground or ground at home. | Check the bag date, and keep opened flax cold once home. | — |
@@ -206,7 +206,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `nutritional_yeast` | bulk_pantry | Fortified or unfortified flakes are both inactive dried yeast. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
 | `canned_coconut_milk` | bulk_pantry | Canned coconut milk, read for what is added beyond coconut. | Read the ingredients for gums such as guar gum. | — |
 | `dried_herbs` | bulk_pantry | One herb by name, or a blend whose list may say “spice”. | Check the label for the irradiation logo and “treated with radiation”. | — |
-| `tea` | bulk_pantry | Black, green, white and oolong are one plant; herbal is not tea. | Read the box for “decaffeinated”, since true tea holds caffeine otherwise. | — |
+| `tea` | bulk_pantry | Black, green, white and oolong are one plant; herbal is not tea. | Read the ingredient list for tea leaves and nothing else. | — |
 | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
 | `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
 | `jam` | bulk_pantry | Jam or preserves by name, made from fruit rather than juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
