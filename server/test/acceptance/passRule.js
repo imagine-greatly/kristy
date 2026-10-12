@@ -6,13 +6,19 @@ export const FROZEN = ['id', 'sources', 'aliases', 'asked_as', 'category', 'evid
 export const REWRITABLE = ['decision', 'short_answer', 'why', 'buying_tips', 'watch_out', 'detail', 'kristy_take', 'tier_note', 'eyebrow_short', 'question'];
 // Health-first REWRITE ids (docs/plans/card-health-first-plan.md, Piece 4): the approved plan
 // re-aims cart_pick, adds asked_as/sources, drops cook-verb aliases and re-words label meanings.
-// 4b and 4c add their ids here.
+// 4a, 4b and 4c ids; listed together so C12 re-anchors once.
 export const HEALTH_FIRST_REWRITE = new Set([
   'ground_beef_lean_ratio', 'beef_cuts_basics', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking',
   'pick_soup_bones', 'egg_grades_sizes', 'pork_cuts_and_enhanced', 'lamb_goat',
+  'flour_basics', 'cooking_oils', 'salt', 'sugars', 'maple_syrup', 'cocoa', 'tea', 'broth', 'grains_beyond_rice',
+  'bagels', 'pretzels', 'kimchi', 'miso', 'pick_tofu', 'goat_sheep_dairy', 'coconut_milk_beverage',
 ]);
 const RELAXED = ['cart_pick', 'asked_as', 'aliases', 'sources', 'labels_decoded'];
-const keepsAll = (newList, oldList) => (oldList || []).every((x) => (newList || []).includes(x));
+// By value: sources may be {url, ...} objects, which includes() compares by reference.
+const keepsAll = (newList, oldList) => {
+  const have = new Set((newList || []).map((x) => JSON.stringify(x)));
+  return (oldList || []).every((x) => have.has(JSON.stringify(x)));
+};
 
 const NUMBER = /\d+(?:[.,]\d+)?%?/g;
 const isEmpty = (v) => v == null || (typeof v === 'string' ? v.trim() === '' : Array.isArray(v) && v.length === 0);

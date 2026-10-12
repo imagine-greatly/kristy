@@ -101,3 +101,9 @@ test('fixture: a changed cart_pick fails the pass rule outside HEALTH_FIRST_REWR
   const inSet = { ...old, id: 'beef_cuts_basics' };
   assert.doesNotThrow(() => assertPassRule(null, inSet, { ...inSet, cart_pick: 'Whole chuck' }));
 });
+
+test('fixture: rewrite-id sources compare by value, so an unchanged object source passes and a lost one fails', () => {
+  const old = { id: 'pick_soup_bones', sources: [{ url: 'https://example.org/a', title: 'A' }], decision: 'x' };
+  assert.doesNotThrow(() => assertPassRule(null, old, { ...old, sources: [{ url: 'https://example.org/a', title: 'A' }, 'https://example.org/b'] }));
+  assert.throws(() => assertPassRule(null, old, { ...old, sources: ['https://example.org/b'] }), /sources lost an entry/);
+});
