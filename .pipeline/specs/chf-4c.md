@@ -5,7 +5,7 @@
   "id": "chf-4c",
   "tier": "T2",
   "ui": false,
-  "owns": ["server/kristy_perimeter_kb.json", "server/lib/counterCardLint.js", "server/test/healthFirst.test.js", "server/test/counterReach.test.js", "server/lib/doLines.json", "docs/do-lines-review.md"],
+  "owns": ["server/kristy_perimeter_kb.json", "server/lib/counterCardLint.js", "server/test/healthFirst.test.js", "server/lib/counterReach.test.js", "server/lib/doLines.json", "docs/do-lines-review.md"],
   "read_full": ["docs/plans/card-health-first-plan.md", ".pipeline/specs/chf-4a.md", "docs/research/health-first-sources.md"],
   "verify": ["cd server && node --test test/healthFirst.test.js", "cd server && npm test", "node server/scripts/listMatchProbe.js"]
 }
