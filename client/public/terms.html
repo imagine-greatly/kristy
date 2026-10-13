@@ -3,120 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Kristy Approved</title>
+  <title>Terms of Service | Kristy Approved</title>
   <meta name="description" content="The terms for using Kristy Approved, a grocery-coaching app." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://kristyapproved.vercel.app/terms" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* Shared legal-page styling — mirrors the landing design tokens
-       (client/public/landing.html) so these read as part of Kristy. */
-    :root {
-      --void:  #040805;
-      --elev:  #0D2416;
-      --gold:  #C9A84C;
-      --gold-bright: #F0D27A;
-      --cream: #F0E6C8;
-      --mint:  #6B9E85;
-      --struct:#2D5A3D;
-      --dead:  #37463D;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--void);
-      color: var(--cream);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.65;
-    }
-    ::selection { background: var(--gold); color: var(--void); }
-    a { color: var(--gold); text-decoration: none; }
-    a:hover { color: var(--gold-bright); text-decoration: underline; }
-
-    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 100px; }
-
-    .mast {
-      display: flex; align-items: baseline; justify-content: space-between;
-      padding-bottom: 28px; margin-bottom: 40px;
-      border-bottom: 1px solid rgba(45,90,61,.35);
-    }
-    .mast__mark {
-      font-family: 'Playfair Display', serif; font-style: italic;
-      font-size: 22px; color: var(--gold);
-    }
-    .mast__back { font-size: 14px; color: var(--mint); }
-
-    h1 {
-      font-family: 'Playfair Display', serif; font-weight: 500;
-      font-size: clamp(34px, 6vw, 52px); line-height: 1.05; letter-spacing: -.01em;
-      color: var(--cream); margin-bottom: 12px;
-    }
-    .updated {
-      font-size: 13px; color: var(--struct); letter-spacing: .04em;
-      text-transform: uppercase; margin-bottom: 28px;
-    }
-    .lede {
-      font-family: 'Inter', sans-serif; font-weight: 300;
-      font-size: 18px; color: var(--mint); margin-bottom: 40px;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif; font-weight: 500;
-      font-size: 24px; color: var(--gold); margin: 44px 0 14px;
-    }
-    h3 {
-      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px;
-      color: var(--cream); margin: 24px 0 8px; letter-spacing: .01em;
-    }
-    p { color: var(--cream); margin-bottom: 16px; }
-    ul { margin: 0 0 16px 22px; }
-    li { color: var(--cream); margin-bottom: 8px; }
-    strong { color: var(--gold-bright); font-weight: 600; }
-
-    .callout {
-      border-left: 2px solid var(--gold); padding: 4px 0 4px 18px;
-      margin: 28px 0; color: var(--mint); font-size: 15px;
-    }
-
-    /* Which platform a section covers. Muted and inline: it qualifies the heading
-       without competing with it, because a reader only needs one of the two. */
-    .scope {
-      color: var(--mint); font-weight: 400;
-      font-size: .62em; letter-spacing: .02em; white-space: nowrap;
-    }
-
-    .draft {
-      border: 1px solid rgba(45,90,61,.5);
-      border-radius: 4px; padding: 14px 18px; margin-bottom: 36px;
-      font-size: 14px; color: var(--mint);
-    }
-    .draft strong { color: var(--gold); }
-
-    .foot {
-      margin-top: 64px; padding-top: 28px;
-      border-top: 1px solid rgba(45,90,61,.35);
-      font-size: 13px; color: var(--dead);
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .foot a { color: var(--mint); }
-  </style>
+  <link rel="canonical" href="https://kristyapproved.com/terms" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/icon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/site/icon-180.png" />
+  <meta name="theme-color" content="#E9E2D0" />
+  <link rel="stylesheet" href="/site/site.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="mast">
-      <a href="/" class="mast__mark">Kristy</a>
-      <a href="/" class="mast__back">← Back to home</a>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <div class="site-head__inner">
+      <a class="brand" href="/"><img src="/site/seal.png" alt="Kristy Approved seal" width="40" height="40" /><span>Kristy</span></a>
+      <a class="btn btn--small" href="https://apps.apple.com/us/search?term=kristy%20approved" aria-label="Download on the App Store"><span class="btn__text"><small>Download on the</small>App Store</span></a>
+    </div>
+  </header>
+  <main id="main" class="doc">
 
     <h1>Terms of Service</h1>
     <p class="updated">Last updated: August 19, 2026</p>
@@ -129,7 +34,7 @@
 
     <p class="lede">
       These terms cover your use of Kristy Approved. By creating an account or using the
-      service, you agree to them. Please read them — the sections on nutrition guidance
+      service, you agree to them. Please read them; the sections on nutrition guidance
       and liability matter.
     </p>
 
@@ -137,8 +42,8 @@
     <p>
       Kristy Approved is a <strong>grocery-coaching app</strong>. It reads packaged food
       labels by barcode or photo and gives a graded verdict on the ingredients; it
-      answers questions about the parts of the store that have no barcode — the butcher,
-      the fish counter, produce, dairy, and bulk — from a sourced knowledge base; and it
+      answers questions about the parts of the store that have no barcode (the butcher,
+      the fish counter, produce, dairy, and bulk) from a sourced knowledge base; and it
       helps you build and keep a shopping list.
     </p>
     <p>
@@ -150,7 +55,7 @@
     <h2>Your account</h2>
     <p>
       There is no password. <strong>You sign in to the Kristy iPhone app with Sign in with
-      Apple, and that is the only way to sign in.</strong> Keep your Apple ID secure — anyone
+      Apple, and that is the only way to sign in.</strong> Keep your Apple ID secure: anyone
       who can use it can reach your account. You can withdraw the app's access in
       Settings → your name → Sign in with Apple; that signs you out and deletes nothing.
     </p>
@@ -166,8 +71,7 @@
     </p>
     <p>You must be at least 13 years old to use Kristy Approved.</p>
 
-    <!-- Before editing this page — and before adding anything about text-message sign-in —
-         read docs/LEGAL-PAGE-RULINGS.md in the application repository. -->
+    <!-- Before editing this page, and before adding anything about text-message sign-in, read docs/LEGAL-PAGE-RULINGS.md in the application repository. -->
 
     <h2>Not medical or professional advice</h2>
     <p class="callout">
@@ -196,7 +100,7 @@
     <h2>You are responsible for your own decisions</h2>
     <p>
       You are solely responsible for the choices you make about your diet and health.
-      Kristy is a tool to inform those choices — the decisions, and their outcomes, are
+      Kristy is a tool to inform those choices; the decisions, and their outcomes, are
       yours. Use your own judgment.
     </p>
 
@@ -214,7 +118,7 @@
     </ul>
     <p>
       We may <strong>suspend or terminate accounts</strong> that violate these terms,
-      abuse the service, or place excessive load on it — with or without notice.
+      abuse the service, or place excessive load on it, with or without notice.
     </p>
 
     <h2>Payment and subscriptions</h2>
@@ -223,7 +127,7 @@
       <strong>renew automatically</strong> until cancelled. You can cancel at any time;
       access continues until the end of the period you have paid for. Web payments are
       processed by Stripe. Purchases made on iOS are processed by Apple and are also
-      governed by Apple's terms — cancel those through your Apple ID settings. Where a
+      governed by Apple's terms: cancel those through your Apple ID settings. Where a
       free trial is offered, it converts to a paid subscription unless cancelled before
       it ends.
     </p>
@@ -238,8 +142,7 @@
     <h2>Your content</h2>
     <p>
       You keep ownership of what you enter. You grant us the licence needed to operate the
-      service for you. You also agree that we may use anonymous, aggregated information —
-      which cannot identify you — to improve the service, as described in the
+      service for you. You also agree that we may use anonymous, aggregated information, which cannot identify you, to improve the service, as described in the
       <a href="/privacy">Privacy Policy</a>.
     </p>
 
@@ -257,7 +160,7 @@
       To the maximum extent permitted by law, Kristy Approved and its creators shall not
       be liable for any indirect, incidental, special, consequential, or punitive damages,
       or for any loss of data, profits, or health outcomes, arising out of or related to
-      your use of — or inability to use — the service. Our total liability for any claim
+      your use of, or inability to use, the service. Our total liability for any claim
       relating to the service is limited to the amount you paid us in the twelve months
       before the claim.
     </p>
@@ -281,14 +184,15 @@
       <a href="mailto:hello@kristyapproved.com">hello@kristyapproved.com</a>.
     </p>
 
-    <div class="foot">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy Policy</a>
-      <span>© 2026 Kristy Approved</span>
+    </main>
+  <footer class="site-foot">
+    <div class="site-foot__inner">
+      <nav aria-label="Legal and help"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></nav>
+      <span class="copy">&copy; 2026 Kristy Approved</span>
     </div>
-  </div>
+  </footer>
 
-  <!-- Vercel Web Analytics (static pages) — no-ops off Vercel. -->
+  <!-- Vercel Web Analytics (static pages), no-ops off Vercel. -->
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>

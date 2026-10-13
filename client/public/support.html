@@ -3,150 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support — Kristy Approved</title>
+  <title>Support | Kristy Approved</title>
   <meta name="description" content="Get help with Kristy Approved: how to reach us, how to delete your account and everything on it, and what the app does and does not do." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://kristyapproved.com/support" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* Shared legal-page styling — mirrors the landing design tokens
-       (client/public/landing.html) so these read as part of Kristy. */
-    :root {
-      --void:  #040805;
-      --elev:  #0D2416;
-      --gold:  #C9A84C;
-      --gold-bright: #F0D27A;
-      --cream: #F0E6C8;
-      --mint:  #6B9E85;
-      --struct:#2D5A3D;
-      --dead:  #37463D;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--void);
-      color: var(--cream);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.65;
-    }
-    ::selection { background: var(--gold); color: var(--void); }
-    a { color: var(--gold); text-decoration: none; }
-    a:hover { color: var(--gold-bright); text-decoration: underline; }
-
-    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 100px; }
-
-    .mast {
-      display: flex; align-items: baseline; justify-content: space-between;
-      padding-bottom: 28px; margin-bottom: 40px;
-      border-bottom: 1px solid rgba(45,90,61,.35);
-    }
-    .mast__mark {
-      font-family: 'Playfair Display', serif; font-style: italic;
-      font-size: 22px; color: var(--gold);
-    }
-    .mast__back { font-size: 14px; color: var(--mint); }
-
-    h1 {
-      font-family: 'Playfair Display', serif; font-weight: 500;
-      font-size: clamp(34px, 6vw, 52px); line-height: 1.05; letter-spacing: -.01em;
-      color: var(--cream); margin-bottom: 12px;
-    }
-    .updated {
-      font-size: 13px; color: var(--struct); letter-spacing: .04em;
-      text-transform: uppercase; margin-bottom: 28px;
-    }
-    .lede {
-      font-family: 'Inter', sans-serif; font-weight: 300;
-      font-size: 18px; color: var(--mint); margin-bottom: 40px;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif; font-weight: 500;
-      font-size: 24px; color: var(--gold); margin: 44px 0 14px;
-    }
-    h3 {
-      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px;
-      color: var(--cream); margin: 24px 0 8px; letter-spacing: .01em;
-    }
-    p { color: var(--cream); margin-bottom: 16px; }
-    ul { margin: 0 0 16px 22px; }
-    li { color: var(--cream); margin-bottom: 8px; }
-    strong { color: var(--gold-bright); font-weight: 600; }
-
-    .callout {
-      border-left: 2px solid var(--gold); padding: 4px 0 4px 18px;
-      margin: 28px 0; color: var(--mint); font-size: 15px;
-    }
-
-    /* The statement carriers look for. Given its own frame so it cannot be
-       missed by a reviewer skimming the page, and stated in one plain sentence. */
-    .pledge {
-      border: 1px solid rgba(201,168,76,.45);
-      background: rgba(201,168,76,.06);
-      border-radius: 4px;
-      padding: 20px 22px;
-      margin: 28px 0;
-    }
-    .pledge p { margin: 0; color: var(--cream); }
-    .pledge p + p { margin-top: 12px; }
-
-    /* Which platform a section covers. Muted and inline: it qualifies the heading
-       without competing with it, because a reader only needs one of the two. */
-    .scope {
-      color: var(--mint); font-weight: 400;
-      font-size: .62em; letter-spacing: .02em; white-space: nowrap;
-    }
-
-    .draft {
-      border: 1px solid rgba(45,90,61,.5);
-      border-radius: 4px; padding: 14px 18px; margin-bottom: 36px;
-      font-size: 14px; color: var(--mint);
-    }
-    .draft strong { color: var(--gold); }
-
-    table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 15px; }
-    th, td {
-      text-align: left; padding: 9px 12px 9px 0; vertical-align: top;
-      border-bottom: 1px solid rgba(45,90,61,.28);
-    }
-    th { color: var(--gold); font-weight: 600; font-size: 13px;
-         text-transform: uppercase; letter-spacing: .05em; }
-    td { color: var(--cream); }
-    .tablewrap { overflow-x: auto; }
-
-    .foot {
-      margin-top: 64px; padding-top: 28px;
-      border-top: 1px solid rgba(45,90,61,.35);
-      font-size: 13px; color: var(--dead);
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .foot a { color: var(--mint); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/icon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/site/icon-180.png" />
+  <meta name="theme-color" content="#E9E2D0" />
+  <link rel="stylesheet" href="/site/site.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="mast">
-      <a href="/" class="mast__mark">Kristy</a>
-      <a href="/" class="mast__back">&larr; Back to home</a>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <div class="site-head__inner">
+      <a class="brand" href="/"><img src="/site/seal.png" alt="Kristy Approved seal" width="40" height="40" /><span>Kristy</span></a>
+      <a class="btn btn--small" href="https://apps.apple.com/us/search?term=kristy%20approved" aria-label="Download on the App Store"><span class="btn__text"><small>Download on the</small>App Store</span></a>
+    </div>
+  </header>
+  <main id="main" class="doc">
 
     <h1>Support</h1>
     <p class="updated">Last updated: August 11, 2026</p>
 
     <p class="lede">
       Kristy Approved is a grocery coach. It reads packaged labels, answers questions
-      about the counters that have no barcode &mdash; meat, fish, produce, dairy, bulk
-      &mdash; and helps you build a list. If something is not working, or you want your
+      about the counters that have no barcode (meat, fish, produce, dairy, bulk) and helps you build a list. If something is not working, or you want your
       data gone, this page is how to reach a person.
     </p>
 
@@ -159,7 +41,7 @@
     <p>
       It helps to include what device you are on, what you tapped, and what happened
       instead. A screenshot is worth a paragraph. If a barcode scanned wrong, send the
-      numbers under the barcode &mdash; that is enough to look the product up.
+      numbers under the barcode; that is enough to look the product up.
     </p>
 
     <div class="callout">
@@ -174,9 +56,7 @@
       will be asked to type a confirmation word first, so it cannot happen by mistake.
     </p>
     <p>
-      It is a real delete, not a deactivation. Your account and the data attached to it
-      &mdash; your list, your trip history, your preferences and your saved reads
-      &mdash; are removed from our servers, and the copy held on your phone is cleared
+      It is a real delete, not a deactivation. Your account and the data attached to it (your list, your trip history, your preferences and your saved reads) are removed from our servers, and the copy held on your phone is cleared
       at the same time. It cannot be undone, and we cannot restore it afterwards.
     </p>
     <p>
@@ -204,7 +84,7 @@
 
     <h3>A barcode would not read at all</h3>
     <p>
-      Some packages are genuinely unreadable &mdash; curved foil, glare, tiny print. Use
+      Some packages are genuinely unreadable: curved foil, glare, tiny print. Use
       the label photo instead: it reads the ingredients list directly and does not need
       a barcode.
     </p>
@@ -236,15 +116,15 @@
       you are agreeing to are in the <a href="/terms">Terms of Service</a>.
     </p>
 
-    <div class="foot">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <span>&copy; 2026 Kristy Approved</span>
+    </main>
+  <footer class="site-foot">
+    <div class="site-foot__inner">
+      <nav aria-label="Legal and help"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></nav>
+      <span class="copy">&copy; 2026 Kristy Approved</span>
     </div>
-  </div>
+  </footer>
 
-  <!-- Vercel Web Analytics (static pages) — no-ops off Vercel. -->
+  <!-- Vercel Web Analytics (static pages), no-ops off Vercel. -->
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
