@@ -64,11 +64,11 @@ export function echoesRubric(note) {
   return false;
 }
 
-/* THE TIER NOTE SITS UNDER THE DO LINE, AND THE DO LINE MOVED. Every curated card's shopper-
-   facing do line is overridden by doLines.json, but the tier notes were written against the
-   KB `decision` they used to sit beneath. Where the note shares vocabulary with the old
-   decision and none with the new do line, the sentence explaining the tier is explaining a
-   call the shopper cannot see. Word overlap, no model: content words are ≥4 letters after
+/* THE TIER NOTE SITS UNDER THE FRONT (ITEM-CARDS-PLAN D1). Every curated card's shopper-
+   facing do line is overridden by doLines.json, and the tier note now sits under the front
+   (the KB `decision`), so it may comment on either. Where the note shares vocabulary with
+   neither the front nor the do line, the sentence explaining the tier is explaining a call
+   the shopper cannot see. Word overlap, no model: content words are ≥4 letters after
    dropping the grammar words below. Knobs tuned to the 25 the 2026-09-16 hand count found. */
 const TIER_NOTE_MIN_WORD = 4;
 const TIER_NOTE_STOP = new Set([
@@ -86,20 +86,30 @@ const contentWords = (s) =>
   );
 const overlaps = (a, b) => [...contentWords(a)].some((w) => contentWords(b).has(w));
 
-/** True when the note echoes the decision and shares nothing with the do line it renders under. */
+/** True when the note shares no content word with the do line it renders under NOR with the front (decision) it explains. */
 export function tierNoteOrphaned(card, doLine) {
   const note = card?.tier_note;
   const decision = card?.decision ?? card?.headline;
   if (!note || !doLine || !decision) return false;
-  return !overlaps(note, doLine) && overlaps(note, decision);
+  return !overlaps(note, doLine) && !overlaps(note, decision);
 }
+
+// Ratchet. Each IC-3b..IC-8b piece rewrites the tier_note of its batch ids found here and
+// removes them; empty after IC-8b. Never add an id.
+export const TIER_NOTE_ORPHANED_PENDING = new Set([
+  'frozen_vs_fresh_produce', 'grassfed_butter', 'whole_vs_reduced_fat_milk', 'label_made_with_real',
+  'label_organic_scope', 'produce_picking_ripeness', 'label_lightly_sweetened', 'butcher_counter_asking',
+  'revive_greens', 'olive_oil_grades', 'bottled_water_buying', 'label_ingredient_order',
+  'label_third_party_seals', 'label_artificial_color', 'sprouts_raw', 'strawberries_organic_residue',
+  'produce_green_beans', 'organ_meats', 'venison_game', 'crab', 'tea',
+]);
 
 export const MAX_DO_WORDS = 12 + 2;
 
 // An alias is matched as a phrase inside a question, so it has to be a subject phrase
 // rather than a sentence. Past four words it stops appearing verbatim in real questions.
 export const MAX_ALIAS_WORDS = 4;
-export const MAX_HEADLINE_WORDS = 12;
+export const MAX_HEADLINE_WORDS = 14; // [PLACEHOLDER] item-card fronts (ITEM-CARDS-PLAN IC-1)
 
 // The redirect is ONE sentence on the free summary, sitting under the do line. Longer than
 // this and it is competing with the verdict for the most valuable space on the card.
@@ -1122,7 +1132,7 @@ export function lintCard(card) {
   // The do line a shopper reads is doLines.json's, not the card's own; a card with no entry
   // there (a generated one) renders its own and is skipped.
   const shownDo = doLines[card?.id ?? card?.slug];
-  if (tierNote && shownDo && tierNoteOrphaned(card, shownDo)) {
+  if (tierNote && shownDo && !TIER_NOTE_ORPHANED_PENDING.has(card?.id ?? card?.slug) && tierNoteOrphaned(card, shownDo)) {
     fail(
       'TIER_NOTE_ORPHANED',
       `${card?.id ?? card?.slug}: the tier note was written against the old decision and shares ` +
@@ -1345,8 +1355,9 @@ export function lintCorpus(cards) {
 /* ═══════════════ Readable in the aisle (VOICE_SPEC R2–R4) ═══════════════
    Not wired into lintCard yet (K13); K5–K12 rewrite the cards it fires on.
    Thresholds measured 2026-10-06 over the 109 curated cards: headline+do p95 25 / max 25;
-   short_answer p50 62 / max 112; sentence p90 23 / p95 27 / max 43. */
-export const HEADLINE_DO_MAX = 26;
+   short_answer p50 62 / max 112; sentence p90 23 / p95 27 / max 43.
+   IC-1 (2026-10-14): raised to 28 with the 14-word front. */
+export const HEADLINE_DO_MAX = 28; // [PLACEHOLDER] IC-1
 export const SHORT_ANSWER_MAX = 40;
 export const SENTENCE_MAX = 20;
 const READ_FIELDS = ['decision', 'short_answer', 'why', 'look_for', 'watch_out', 'pick_steps', 'science'];
@@ -1573,8 +1584,10 @@ export const OWNED_FACTS = [
 
 export const POINTER = /^[A-Z][^:]{0,40}: see (.+)\.$/;
 
+// The front states the card's own buying ladder; a family card's front may name the owned
+// standard (e.g. "100% grass-fed and grass-finished."), the depth may not.
 export const REPEATED_CLAIM_FIELDS = [
-  'decision', 'why', 'short_answer', 'detail', 'science', 'kristy_take', 'tier_note',
+  'why', 'short_answer', 'detail', 'science', 'kristy_take', 'tier_note',
   'pick_steps', 'buying_tips', 'look_for', 'watch_out', 'labels_decoded',
 ];
 

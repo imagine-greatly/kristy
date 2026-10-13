@@ -39,6 +39,7 @@ import {
   cardToRow,
   parseReviewTable,
 } from '../lib/counterCards.js';
+import { MAX_HEADLINE_WORDS } from '../lib/counterCardLint.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
@@ -71,7 +72,7 @@ export function projectCorpus(entries, reviewed) {
     if (review?.flag && review.flag !== '—' && review.flag !== '-' && review.flag !== '') {
       problems.flagged.push(`${entry.id} — ${review.flag}`);
     }
-    if (words(card.headline) > 12) problems.longHeadline.push(`${entry.id} (${words(card.headline)}w)`);
+    if (words(card.headline) > MAX_HEADLINE_WORDS) problems.longHeadline.push(`${entry.id} (${words(card.headline)}w)`);
     if (card.do && words(card.do) > 14) problems.longDo.push(`${entry.id} (${words(card.do)}w)`);
 
     const cov = coverage(entry, card);
@@ -236,7 +237,7 @@ async function main() {
 
   if (problems.unmapped.length) line('UNPLACED CONTENT (must be zero)', problems.unmapped);
   if (problems.missingDo.length) line('MISSING do LINE', problems.missingDo);
-  if (problems.longHeadline.length) line('HEADLINE OVER 12 WORDS', problems.longHeadline);
+  if (problems.longHeadline.length) line(`HEADLINE OVER ${MAX_HEADLINE_WORDS} WORDS`, problems.longHeadline);
   if (problems.longDo.length) line('do LINE OVER 14 WORDS', problems.longDo);
   if (problems.flagged.length) line('FLAGGED IN REVIEW (not blocking)', problems.flagged);
 

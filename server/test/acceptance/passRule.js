@@ -1,6 +1,7 @@
 // Pass rule for the readability rewrites (VOICE_SPEC "Readable in the aisle"): rephrasing, never deletion.
 import assert from 'node:assert/strict';
 import { CULINARY_LEXICON } from '../../lib/counterCardLint.js';
+import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 
 export const FROZEN = ['id', 'sources', 'aliases', 'asked_as', 'category', 'evidence_tier', 'cart_pick', 'instead', 'labels_decoded'];
 export const REWRITABLE = ['decision', 'short_answer', 'why', 'buying_tips', 'watch_out', 'detail', 'kristy_take', 'tier_note', 'eyebrow_short', 'question'];
@@ -15,6 +16,24 @@ export const HEALTH_FIRST_REWRITE = new Set([
   // chf-5 fold absorbers: aliases/asked_as gained from retired cards (additive; keepsAll guards losses).
   'chicken_cuts_basics', 'beans_dried_vs_canned',
 ]);
+// Item-card fold survivors and ladder fronts (docs/ITEM-CARDS-PLAN.md IC-3..IC-7): they gain
+// aliases/asked_as/sources/labels_decoded from folded cards. chicken_cuts_basics and
+// beef_cuts_basics are already in HEALTH_FIRST_REWRITE.
+export const ITEM_CARD_REWRITE = new Set([
+  'produce_ripeness_by_item', 'berries_picking', 'egg_labels', 'judging_meat_at_the_case', 'seafood_counter',
+  'whole_vs_reduced_fat_milk', 'yogurt_plain_vs_flavored', 'plain_kefir', 'organic_worth_it_by_type',
+  'beef_grassfed_vs_grainfed', 'salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'grassfed_butter',
+  'produce_apples_pears', 'produce_citrus', 'produce_peppers', 'produce_leafy_greens', 'produce_root_vegetables',
+  'produce_brassicas', 'produce_onions_garlic', 'produce_green_beans', 'produce_mushrooms', 'produce_stone_fruit',
+]);
+// alias → ids carrying it in the current KB: an item-card id may drop an alias that moved to another card.
+const ALIAS_OWNERS = new Map();
+for (const e of kb.entries || []) {
+  for (const a of e.aliases || []) {
+    if (!ALIAS_OWNERS.has(a)) ALIAS_OWNERS.set(a, new Set());
+    ALIAS_OWNERS.get(a).add(e.id);
+  }
+}
 const RELAXED = ['cart_pick', 'asked_as', 'aliases', 'sources', 'labels_decoded'];
 // By value: sources may be {url, ...} objects, which includes() compares by reference.
 const keepsAll = (newList, oldList) => {
@@ -27,7 +46,7 @@ const isEmpty = (v) => v == null || (typeof v === 'string' ? v.trim() === '' : A
 
 export function assertPassRule(t, oldEntry, newEntry) {
   const id = oldEntry.id;
-  const rewrite = HEALTH_FIRST_REWRITE.has(id);
+  const rewrite = HEALTH_FIRST_REWRITE.has(id) || ITEM_CARD_REWRITE.has(id);
   for (const f of FROZEN) {
     if (rewrite && RELAXED.includes(f)) continue;
     assert.deepEqual(newEntry[f], oldEntry[f], `${id}: frozen field ${f} changed`);
@@ -36,7 +55,12 @@ export function assertPassRule(t, oldEntry, newEntry) {
     assert.ok(keepsAll(newEntry.asked_as, oldEntry.asked_as), `${id}: asked_as lost a phrasing`);
     assert.ok(keepsAll(newEntry.sources, oldEntry.sources), `${id}: sources lost an entry`);
     for (const a of oldEntry.aliases || []) {
-      if (!(newEntry.aliases || []).includes(a)) assert.ok(CULINARY_LEXICON.test(a), `${id}: alias "${a}" dropped but is not a cook-verb alias`);
+      if (!(newEntry.aliases || []).includes(a)) {
+        assert.ok(
+          CULINARY_LEXICON.test(a) || (ITEM_CARD_REWRITE.has(id) && [...(ALIAS_OWNERS.get(a) ?? [])].some((o) => o !== id)),
+          `${id}: alias "${a}" dropped but is not a cook-verb alias and no other card carries it`
+        );
+      }
     }
     const terms = (newEntry.labels_decoded || []).map((l) => l.term);
     for (const l of oldEntry.labels_decoded || []) assert.ok(terms.includes(l.term), `${id}: label term "${l.term}" dropped`);

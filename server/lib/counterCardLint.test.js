@@ -40,6 +40,7 @@ import {
   MAX_HEADLINE_WORDS,
   MAX_EMDASH_SHARE,
   tierNoteOrphaned,
+  TIER_NOTE_ORPHANED_PENDING,
 } from './counterCardLint.js';
 import doLines from './doLines.json' with { type: 'json' };
 
@@ -79,7 +80,7 @@ test('a do line over 14 words fails, on a generated card', () => {
   assert.ok(codes(lintCard(card)).includes('DO_TOO_LONG'));
 });
 
-test('a headline over 12 words fails, on a generated card', () => {
+test('a headline over 14 words fails, on a generated card', () => {
   const card = generated({
     headline: 'This is a description of the produce section that runs on well past the limit.',
   });
@@ -652,10 +653,18 @@ test('house copy holds on a pick line too', () => {
 /* ═══════════════════════════ The tier note under the do line ═══════════════════════════ */
 
 // Invented card: the note echoes the decision's vocabulary and none of the do line's.
-test('a tier note written against the old decision, sharing nothing with the do line, is orphaned', () => {
+test('a tier note that comments on the front (decision) but not the do line is not orphaned (IC-1)', () => {
   const card = {
     decision: 'Pickled turnips keep their crunch only when the brine is unheated.',
     tier_note: 'That the crunch survives an unheated brine is documented, not a preference.',
+  };
+  assert.equal(tierNoteOrphaned(card, 'Shake the jar and choose the one with the cloudiest liquid.'), false);
+});
+
+test('a tier note sharing nothing with the front or the do line is orphaned', () => {
+  const card = {
+    decision: 'Pickled turnips keep their crunch only when the brine is unheated.',
+    tier_note: 'Lab panels confirm this point for every batch sold.',
   };
   assert.ok(tierNoteOrphaned(card, 'Shake the jar and choose the one with the cloudiest liquid.'));
 });
@@ -676,6 +685,16 @@ test('every curated card with a do line carries a tier note about THAT do line',
   const withDo = nonEmpty(questionEntries().filter((e) => doLines[e.id]), 'curated cards with a do line');
   const orphaned = withDo.filter((e) => codes(lintCard(e)).includes('TIER_NOTE_ORPHANED')).map((e) => e.id);
   assert.deepEqual(orphaned, [], `${orphaned.length} tier notes talk past their do line`);
+});
+
+test('TIER_NOTE_ORPHANED_PENDING only shrinks and holds no stale id', () => {
+  assert.ok(TIER_NOTE_ORPHANED_PENDING.size <= 21, 'the ratchet grew');
+  const byId = new Map(questionEntries().map((e) => [e.id, e]));
+  for (const id of TIER_NOTE_ORPHANED_PENDING) {
+    const e = byId.get(id);
+    assert.ok(e && doLines[id], `${id}: not a KB question entry with a do line`);
+    assert.ok(tierNoteOrphaned(e, doLines[id]), `${id}: no longer orphaned, remove it from the pending set`);
+  }
 });
 
 /* ═══════ readability (K4) ═══════ */
