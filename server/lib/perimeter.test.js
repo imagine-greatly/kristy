@@ -280,8 +280,10 @@ test('NO entry makes a negative factual claim about a named brand', () => {
 });
 
 test('produce guidance teaches picking SKILL, never an origin ranking', () => {
-  const p = perimeterKb.entries.find((e) => e.id === 'produce_picking_ripeness');
-  assert.ok(p, 'the produce-picking entry must exist');
+  // The origin card folded into the by-item hub on 2026-10-14 (IC-3a), so the hub now
+  // carries the variety/season lesson and every check below runs against it.
+  const p = perimeterKb.entries.find((e) => e.id === 'produce_ripeness_by_item');
+  assert.ok(p, 'the produce-picking hub must exist');
   // Only the fields Kristy SPEAKS. Aliases are the user's phrasings — "is mexican
   // produce better" is there so the matcher catches that exact misconception.
   const spoken = JSON.stringify({
@@ -301,17 +303,16 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
     /\b(mexican|californian|peruvian)\s+\w*\s*(are|is)?\s*(better|worse|superior|inferior)\b/,
     'must never rank one origin above another'
   );
-  // The card must still put a HAND on the fruit. The 2026-08-02 refocus narrowed it to
-  // the origin question and moved the per-item ripeness checks onto
-  // `produce_ripeness_by_item`, which is the hub a shopper looking for them actually
-  // lands on — but a card that only argues about stickers is a lecture. It keeps the
-  // "judge the piece" half of its own verdict as a physical action.
+  // The card must still put a HAND on the fruit. The 2026-08-02 refocus split origin from
+  // the per-item checks; the 2026-10-14 fold (IC-3a) rejoined them on
+  // `produce_ripeness_by_item`. A card that only argues about stickers is a lecture, so the
+  // "judge the piece" half stays a physical action.
   assert.ok(
     p.buying_tips.some((t) => /\b(press|palm|heavier|weigh)\b/i.test(t)),
     'teaches an actual physical check'
   );
 
-  // ...and the checks it handed over must have landed, or the refocus was a deletion.
+  // ...and the per-item checks must still be on the hub, or the fold was a deletion.
   const byItem = perimeterKb.entries.find((e) => e.id === 'produce_ripeness_by_item');
   assert.ok(byItem, 'the by-item ripeness hub must exist');
   assert.ok(
@@ -415,7 +416,7 @@ test('mercury guidance names species and defers anything medical', () => {
 test('no label-truth entry claims a health outcome', () => {
   const FORBIDDEN = /\b(cure|heal|treat|prevent|reverse|detox|immunity|disease|diagnos|remedy)\b/i;
   const ids = [
-    'label_pasture_raised_feed', 'label_organic_scope', 'produce_picking_ripeness',
+    'label_pasture_raised_feed', 'label_organic_scope', 'produce_ripeness_by_item',
     'label_multigrain_vs_whole_grain', 'label_lightly_sweetened', 'label_no_artificial_flavors',
   ];
   for (const id of ids) {

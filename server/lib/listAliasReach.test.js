@@ -15,10 +15,9 @@
 // asserted absent below, not merely omitted. `revive_greens` is a home card and never
 // attaches to a row at all, so it carries nothing here.
 //
-// `strawberries` / `strawberry` are deliberately NOT on `berries_picking`: the 2026-08-18
-// ruling pinned in counterReach.test.js sends the bare noun to `strawberries_organic_residue`
-// and that is the card a row reaches. Asserted here too so the two files agree by test
-// rather than by memory.
+// `strawberries` / `strawberry` land on `berries_picking`: the 2026-10-14 fold (IC-3a) put
+// the bare noun and freshness on one card, pinned in counterReach.test.js. Asserted here
+// too so the two files agree by test rather than by memory.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -53,8 +52,8 @@ const ROWS = nonEmpty(
     ['limes', 'produce_citrus'],
     ['oranges', 'produce_citrus'],
     ['citrus', 'produce_citrus'],
-    ['strawberries', 'strawberries_organic_residue'],
-    ['strawberry', 'strawberries_organic_residue'],
+    ['strawberries', 'berries_picking'],
+    ['strawberry', 'berries_picking'],
   ],
   'ROWS',
   10

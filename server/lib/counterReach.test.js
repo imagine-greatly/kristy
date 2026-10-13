@@ -117,40 +117,26 @@ test('asked_as never reaches the model or the row', () => {
   assert.equal('asked_as' in card, false, 'asked_as must not appear as a key at all');
 });
 
-/* ═════════ The strawberry boundary — residue leads, freshness stays reachable ═════════
+/* ═════════ The strawberry boundary — one card since IC-3a ═════════
 
-   RULED 2026-08-18: a shopper typing a bare `strawberries` is choosing which box to buy,
-   and residue is the bigger of the two decisions — PFAS does not wash off, while a soft
-   berry is visible through the clamshell. So `strawberries` and `strawberry` moved off
-   `berries_picking` onto `strawberries_organic_residue`.
+   RULED 2026-08-18: a bare `strawberries` is a shopper choosing which box to buy. That
+   ruling sent the bare noun to a separate residue card and left freshness on
+   `berries_picking`, with one deliberate tie ("fresh strawberries") broken on corpus order.
 
-   ⚠️ THIS REVERSES A DECISION THAT WAS ITSELF MADE TO FIX AN INCIDENT. The header of this
-   file records `gen_strawberry_freshness_check` — a duplicate card generated precisely
-   because `berries_picking` had no bare `strawberries`. Taking it away again re-opens that
-   hole unless the freshness phrasings still land, which is what the four compensating
-   aliases (`pick strawberries`, `i pick strawberries`, `strawberries fresh`, `these
-   strawberries fresh`, plus bare `moldy`) are for.
-
-   So the split is pinned here rather than left to alias arithmetic. Both directions are
-   asserted: a bare noun goes to residue, a freshness phrasing goes to picking. Measured,
-   not assumed — before the compensating aliases, four of the freshness phrasings TIED at 3
-   and resolved to `berries_picking` only by its position in the KB array, which is not a
-   guarantee anybody should be relying on.
-
-   ⚠️ ONE KNOWN TIE REMAINS AND IS DELIBERATE: the bare phrase "fresh strawberries" scores
-   3 on both cards and breaks toward freshness on corpus order alone. There is no second
-   phrase inside it to award, so the only fixes are a broader alias (bare `fresh`, which
-   would reach across the whole corpus) or dropping a bare noun the ruling put here. It is
-   asserted below so a reorder fails loudly instead of silently flipping. */
+   FOLDED 2026-10-14 (IC-3a, docs/ITEM-CARDS-PLAN.md D3: one card per item): the residue
+   card folded into `berries_picking`, retitled "Berries", so residue and freshness live on
+   one card. The boundary is now one card: the bare noun and every freshness phrasing land
+   on `berries_picking`, and the "fresh strawberries" tie is gone. The header's
+   `gen_strawberry_freshness_check` incident stays closed because that card owns the noun. */
 
 const boundary = (q) => scoreEntries(q, 3)[0]?.entry.id ?? null;
 
 test('a bare strawberry row asks which box to buy, not whether it is fresh', () => {
   for (const q of ['strawberries', 'strawberry', '1 lb strawberries', 'organic strawberries']) {
-    assert.equal(boundary(q), 'strawberries_organic_residue', `"${q}" should reach the residue card`);
+    assert.equal(boundary(q), 'berries_picking', `"${q}" should reach the berries card`);
   }
   for (const q of ['driscoll', 'driscolls', 'driscolls strawberries']) {
-    assert.equal(boundary(q), 'strawberries_organic_residue', `"${q}" should reach the residue card`);
+    assert.equal(boundary(q), 'berries_picking', `"${q}" should reach the berries card`);
   }
 });
 

@@ -115,12 +115,18 @@ test('C9 one entry per id, no forbidden or state alias, no forbidden bare-noun a
   }
 });
 
-test('C10 passRule fixture carries the coverage alias moves for exactly the two edited ids', () => {
+test('C10 passRule fixture carries the coverage alias moves for exactly the two edited ids (ripeness hub may gain, IC-3a)', () => {
   for (const id of ['produce_seasonality', 'produce_ripeness_by_item']) {
     const was = preById(id);
     assert.ok(was, `${id} missing from fixture`);
-    assert.deepEqual(was.aliases, byId(id).aliases, `${id} aliases`);
-    assert.deepEqual(was.asked_as, byId(id).asked_as, `${id} asked_as`);
+    if (id === 'produce_ripeness_by_item') {
+      // IC-3a folded the origin card in: the hub may gain, never lose.
+      for (const a of was.aliases) assert.ok(byId(id).aliases.includes(a), `${id} lost alias "${a}"`);
+      for (const q of was.asked_as) assert.ok(byId(id).asked_as.includes(q), `${id} lost ask "${q}"`);
+    } else {
+      assert.deepEqual(was.aliases, byId(id).aliases, `${id} aliases`);
+      assert.deepEqual(was.asked_as, byId(id).asked_as, `${id} asked_as`);
+    }
   }
   for (const a of ['butternut squash', 'acorn squash', 'winter squash']) assert.ok(!preById('produce_seasonality').aliases.includes(a), a);
   for (const a of ['good cantaloupe', 'good pineapple']) assert.ok(preById('produce_ripeness_by_item').aliases.includes(a), a);

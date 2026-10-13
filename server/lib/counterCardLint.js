@@ -98,9 +98,9 @@ export function tierNoteOrphaned(card, doLine) {
 // removes them; empty after IC-8b. Never add an id.
 export const TIER_NOTE_ORPHANED_PENDING = new Set([
   'frozen_vs_fresh_produce', 'grassfed_butter', 'whole_vs_reduced_fat_milk', 'label_made_with_real',
-  'label_organic_scope', 'produce_picking_ripeness', 'label_lightly_sweetened', 'butcher_counter_asking',
+  'label_organic_scope', 'label_lightly_sweetened', 'butcher_counter_asking',
   'revive_greens', 'olive_oil_grades', 'bottled_water_buying', 'label_ingredient_order',
-  'label_third_party_seals', 'label_artificial_color', 'sprouts_raw', 'strawberries_organic_residue',
+  'label_third_party_seals', 'label_artificial_color', 'sprouts_raw',
   'produce_green_beans', 'organ_meats', 'venison_game', 'crab', 'tea',
 ]);
 

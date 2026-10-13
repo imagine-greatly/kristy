@@ -14,7 +14,7 @@ const BATCHES = {
   B03: ['beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'beef_grades_usda', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game', 'meat_case'],
   B04: ['rotisserie_chicken', 'air_chilled_chicken', 'no_antibiotics_poultry', 'chicken_cuts_basics', 'turkey_whole', 'ground_turkey', 'chicken_breast', 'egg_labels', 'egg_shell_color', 'egg_freshness', 'egg_grades_sizes', 'egg_feed_claims', 'egg_storage', 'egg_duck_quail'],
   B05: ['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'hummus', 'deli_salads', 'prepared_meals', 'fresh_pasta', 'deli'],
-  B06: ['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'precut_produce_tradeoffs', 'produce_picking_ripeness', 'produce_ripeness_by_item', 'berries_picking', 'strawberries_organic_residue', 'sprouts_raw', 'produce_mushrooms', 'produce_green_beans', 'produce_stone_fruit'],
+  B06: ['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'precut_produce_tradeoffs', 'produce_ripeness_by_item', 'berries_picking', 'sprouts_raw', 'produce_mushrooms', 'produce_green_beans', 'produce_stone_fruit'],
   B07: ['freezing_produce', 'washing_produce', 'baking_soda_soak', 'produce_storage', 'revive_greens', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_citrus'],
   B08: ['grassfed_butter', 'whole_vs_reduced_fat_milk', 'a2_vs_a1_milk', 'milk_processing', 'raw_milk', 'raw_kefir', 'raw_aged_cheese', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'yogurt_live_cultures', 'plain_kefir', 'cream_vs_creamer'],
   B09: ['sour_cream', 'cream_cheese', 'cottage_cheese', 'ice_cream', 'ghee', 'goat_sheep_dairy', 'oat_milk', 'almond_milk', 'soy_milk', 'coconut_milk_beverage', 'plant_butter', 'dairy_case'],
@@ -29,15 +29,15 @@ const BATCHES = {
   B18: ['frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_waffles', 'frozen_nuggets', 'frozen'],
 };
 // The spec's n column: a batch that drifts from its row is a ledger defect.
-const SIZES = { B01: 8, B02: 8, B03: 13, B04: 14, B05: 11, B06: 12, B07: 12, B08: 12, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
+const SIZES = { B01: 8, B02: 8, B03: 13, B04: 14, B05: 11, B06: 10, B07: 12, B08: 12, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
 
 const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
 
 const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 197);
+const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 195);
 const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
 const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
-const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 197);
+const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 195);
 const doneIds = DONE.flatMap((b) => BATCHES[b] || []);
 const openIds = Object.entries(BATCHES).filter(([b]) => !DONE.includes(b)).flatMap(([, ids]) => ids);
 const withFields = kb.entries.filter((e) => has(e, 'pick_steps') || has(e, 'science'));

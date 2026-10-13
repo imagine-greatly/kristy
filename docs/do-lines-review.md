@@ -73,7 +73,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_grass_fed_term` | label_terms | Not enough on its own. Don’t pay up for it. | Look for “100%” or “grass-finished” printed on the package. | — |
 | `label_pasture_raised_feed` | label_terms | It means space, not feed. The word to find is soy-free. | Read both sides of the carton — space and feed are separate claims. | — |
 | `label_organic_scope` | label_terms | A production standard, not a quality rating. Read the panel anyway. | Flip the organic box over. The seal says nothing about the ingredients. | — |
-| `produce_picking_ripeness` | produce | Judge the piece, not the sticker. | Ignore the country line and check the item for give and weight. | — |
 | `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
@@ -95,7 +94,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_certifications` | seafood | MSC on wild. A farm seal is a floor, not a recommendation. | Check the badge names a program you can look up. Unnamed is marketing. | — |
 | `produce_ripeness_by_item` | produce | Pick up two and take the heavier one. | Smell the stem end on anything that ripens after picking. | — |
 | `berries_picking` | produce | The carton’s underside decides, not the berries on top. | Flip the container and check for juice stains or fuzz. | — |
-| `strawberries_organic_residue` | produce | Buy strawberries organic. The skin is the food here. | Check the clamshell for the USDA Organic seal before it goes in. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp is water loss, not spoilage. It comes back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
 | `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |

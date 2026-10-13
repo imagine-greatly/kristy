@@ -145,6 +145,11 @@ export const RETIRED = [
   'dry_brine',
   // No absorber. A baking chemistry card with no closest-to-nature pick; aliases dropped.
   'baking_soda_powder',
+  /* ── The 2026-10-14 item-card folds (IC-3a). docs/ITEM-CARDS-PLAN.md D3: one card per item. ── */
+  // → produce_ripeness_by_item. Origin and sticker decoding are how-to-pick facts; aliases, asks, sources and labels moved.
+  'produce_picking_ripeness',
+  // → berries_picking, retitled "Berries". Residue screen, seal steps and labels moved; lawsuit material dropped (non-negotiable 9).
+  'strawberries_organic_residue',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */
@@ -170,7 +175,7 @@ export const RETIRED_GENERATED = [
   // example, which is why that example was rewritten onto `label_natural` in the same
   // commit — deleting the row alone would have left the anchor that regenerates it.
   'gen_a1_vs_a2_yogurt',
-  // → produce_picking_ripeness. "Judge the fruit itself, not the origin sticker" against
+  // → produce_picking_ripeness (itself folded into produce_ripeness_by_item, IC-3a). "Judge the fruit itself, not the origin sticker" against
   // the curated "Judge the piece, not the sticker". Near-verbatim.
   'gen_picking_good_produce',
   // → produce_ripeness_by_item, which already carried both of these as authored tips and

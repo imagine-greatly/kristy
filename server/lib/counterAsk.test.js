@@ -25,12 +25,11 @@ test('a plain-words counter question reaches its sourced entry', () => {
     // pay, on a specific item, and organic_worth_it_by_type is the card that decides it
     // ("Organic on thin-skinned produce" / "spend the organic money on berries").
     ['is organic worth it for berries', 'organic_worth_it_by_type'],
-    // Ripeness goes to the by-item hub, and ORIGIN goes to the origin card. These were one
-    // card until the 2026-08-02 refocus and both held `avocado` aliases afterward, which
-    // left a bare "avocado" tied at 2 and decided by KB order — it landed on the origin
-    // card, which answers a question nobody asked here.
+    // Ripeness and ORIGIN both go to the by-item hub: the origin card folded into it on
+    // 2026-10-14 (IC-3a, one card per item), so the sticker lesson and the per-item checks
+    // answer from one card and the old "avocado" tie between them cannot recur.
     ['how do I pick a ripe avocado', 'produce_ripeness_by_item'],
-    ['where was this grown', 'produce_picking_ripeness'],
+    ['where was this grown', 'produce_ripeness_by_item'],
   ];
   for (const [q, id] of wants) {
     assert.ok(looksLikePerimeterQuestion(q), `"${q}" must route to the counter`);
