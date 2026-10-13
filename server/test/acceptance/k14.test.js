@@ -74,9 +74,9 @@ for (const q of ['how do i pick a good cantaloupe', 'how do i pick a good pineap
   assert.ok(t.score > WEAK_MATCH_CEILING, `score ${t.score}`);
 });
 
-test('C5 every cited URL hits line 1 of a docs/sources/k14 file', () => {
-  const dir = join(ROOT, 'docs/sources/k14');
-  const lines = nonEmpty(readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k14 archive', 1);
+test('C5 every cited URL hits line 1 of a docs/sources/k14 or item-cards file', () => {
+  // item-cards (IC-3b) re-sourced k14 produce fronts; its archive counts too.
+  const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
   for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
   const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k14 source`);

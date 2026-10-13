@@ -704,7 +704,7 @@
     },
     {
       "id": "organic_worth_it_by_type",
-      "title": "When organic produce is worth it",
+      "title": "Produce",
       "aliases": [
         "organic produce",
         "organic worth it",
@@ -718,8 +718,6 @@
         "pay for organic",
         "organic worth the money",
         "produce should be organic",
-        "bananas",
-        "banana",
         "onions",
         "onion",
         "kiwi",
@@ -736,10 +734,10 @@
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
-      "decision": "Organic where the skin gets eaten. Conventional on anything peeled.",
+      "decision": "Organic on anything you eat the skin of, conventional on what you peel.",
       "why": "Residue sits on the surface, so whatever gets thrown away takes it along.",
       "short_answer": "Organic earns the money where the skin gets eaten: berries, leafy greens, apples, grapes, potatoes. Anything peeled goes in conventional, even the ones that feel delicate: avocado, kiwi, mango, banana, citrus, onion.",
-      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the exposure, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin.",
+      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin.",
       "evidence_tier": "credible_concern",
       "sources": [
         "USDA Pesticide Data Program",
@@ -825,7 +823,7 @@
       ],
       "science": "Frozen produce is picked at peak ripeness and frozen within hours, which locks in nutrients. Fresh that travels a long way or sits in storage can lose some over days in transit. Studies find the two broadly comparable, with frozen sometimes ahead. Freezing is just cold, so it needs no additives, and frozen does not spoil.",
       "labels_decoded": [],
-      "tier_note": "Freezing at harvest and the losses across days in transit are both well documented.",
+      "tier_note": "Freezing a vegetable at harvest and the losses across days in transit are both well documented.",
       "asked_as": [
         "are frozen vegetables any good",
         "should i buy frozen vegetables",
@@ -3678,7 +3676,7 @@
       ],
       "category": "produce",
       "question": "How do I pick a good carton of berries?",
-      "decision": "One soft berry underneath turns the whole carton within a day.",
+      "decision": "Organic berries, and the carton’s underside decides, not the top.",
       "why": "Berries mold from the bottom up under their own weight, long before the top layer shows it.",
       "short_answer": "Turn the container over first. The bottom fruit carries the load, so it bruises and molds first. A dry, clean underside means it was packed recently and has not sat wet. Juice or a fuzzy spot means decay is running.",
       "detail": "Berries do not ripen after picking. Unlike a peach or a cantaloupe, what is in the carton is exactly what you are buying. There is no counter-ripening to rescue an underripe punnet, and no reason to buy firm and wait. That makes the carton itself the whole decision. Weight and moisture are what work against it: the bottom layer carries the load, condensation inside a clamshell keeps that layer damp, and mold spreads berry to berry by contact. Clamshells also get re-stacked at the store, so a fresh-looking top layer can sit on fruit that arrived days earlier. Buy them cold, keep them dry, and wash them at the moment you eat them rather than when you unpack. The top layer stays presentable long after the carton has turned, and one furry berry takes the punnet.",
@@ -3689,7 +3687,8 @@
         "Ohio State University Extension “Selecting, Storing, and Serving Ohio Berries” (HYG-5531) https://ohioline.osu.edu/factsheet/HYG-5531",
         "Independent pesticide screen commissioned by Mamavation, May 2026, EPA-certified laboratory; scientific review by Dr. Craig Downs, Haereticus Environmental Laboratory",
         "USDA National Organic Program, 7 CFR Part 205",
-        "Mamavation “Mamavation Finds PFAS-Laden Pesticides in Driscoll’s Strawberries” https://mamavation.com/food/pfas-pesticides-driscolls-strawberries.html"
+        "Mamavation “Mamavation Finds PFAS-Laden Pesticides in Driscoll’s Strawberries” https://mamavation.com/food/pfas-pesticides-driscolls-strawberries.html",
+        "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
       "kristy_take": "Flip the carton. The top layer is the display and the bottom layer is the truth.",
       "cart_pick": "Fresh berries",
@@ -3729,7 +3728,7 @@
           "meaning": "The screen found nothing at its reporting limit. That is a result on one sample, not a property of a product line."
         }
       ],
-      "tier_note": "That berries decay from the bottom under their own weight, and do not ripen after picking, is settled postharvest handling, and it is why the underside is the check.",
+      "tier_note": "Strawberries, blackberries and blueberries sit high on the residue list from USDA testing, whatever the container looks like.",
       "eyebrow_short": "Picking berries",
       "asked_as": [
         "how do i pick berries",
@@ -5330,7 +5329,7 @@
         }
       ],
       "evidence_tier": "time_tested",
-      "tier_note": "Sprouting seeds for food goes back centuries with little modern study behind it. Buying them cold is a freshness standard, not a health claim.",
+      "tier_note": "Sprouts go back centuries with little modern study, and buying them cold is a freshness standard, not a health claim.",
       "sources": [
         "FDA sprout safety guidance",
         "USDA FoodData Central",
@@ -5400,7 +5399,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and store carrots, potatoes, sweet potatoes, and beets?",
-      "decision": "Buy firm roots. Skip anything soft, shriveled, or sprouting.",
+      "decision": "Organic potatoes, conventional carrots. Firm roots, nothing soft or sprouting.",
       "why": "Firm is the freshness signal every root shares. Each guide says to pass on the soft, shriveled, or sprouting ones.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
       "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues.",
@@ -5410,7 +5409,9 @@
         "University of Maine Cooperative Extension, Carrots 101, https://extension.umaine.edu/publications/carrots-101/",
         "UC Davis Postharvest Technology Center, Sweet Potato fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/sweet-potato",
         "Ohio State University Extension, Selecting, Storing, and Serving Ohio Beets (HYG-5510), https://ohioline.osu.edu/factsheet/hyg-5510",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/dirty-dozen.php",
+        "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
       "kristy_take": "Squeeze before anything else. Firm is the whole test at this bin, and a root that gives has already lost the argument.",
       "cart_pick": "Firm roots with no sprouts or soft spots",
@@ -5435,7 +5436,7 @@
       ],
       "science": "Potatoes should show no bruises, nicks or soft spots, and carrots good color. Sweet potatoes run smooth and even; beets, round with a slender tap root. Cold gives sweet potatoes chilling injury: decay, internal browning and shriveling. Potatoes keep up to a month at 45 to 50°F, dark and ventilated. Topped carrots and trimmed beets keep up to two weeks refrigerated.",
       "labels_decoded": [],
-      "tier_note": "Firmness as the freshness test and topped carrots keeping longer are settled extension handling guidance.",
+      "tier_note": "Potatoes rank high for residue in USDA testing and carrots rank low, so the bag decides.",
       "eyebrow_short": "Root vegetables",
       "asked_as": [
         "should i buy sweet potatoes",
@@ -5502,7 +5503,7 @@
       ],
       "category": "produce",
       "question": "How do I pick fresh broccoli, cauliflower, or cabbage?",
-      "decision": "Dark green, tight, and unbruised. Soft or slippery is spoilage.",
+      "decision": "Conventional is fine on cabbage and cauliflower. Tight heads, no soft spots.",
       "why": "Enlarged, opened, or yellowish-green florets mean broccoli past fresh, and a soft or slippery head is already spoiling.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
       "detail": "Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, cabbage and cauliflower are among the fifteen items with the lowest pesticide residues.",
@@ -5511,7 +5512,8 @@
         "Michigan State University Extension, Michigan Fresh: Broccoli, https://www.canr.msu.edu/resources/michigan_fresh_broccoli",
         "Michigan State University Extension, Michigan Fresh: Cauliflower, https://www.canr.msu.edu/resources/michigan_fresh_cauliflower",
         "Michigan State University Extension, Michigan Fresh: Cabbage, https://www.canr.msu.edu/resources/michigan_fresh_cabbage",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
       "kristy_take": "Look at the florets first. Dark green and closed tight, and the rest of the head follows.",
       "cart_pick": "Firm broccoli, cauliflower, or cabbage",
@@ -5535,7 +5537,7 @@
       ],
       "science": "Opened or yellowish-green florets mean broccoli past fresh; a soft, slippery head is already spoiling. Broccoli keeps three days, refrigerated in a bag with holes. Cabbage keeps several weeks wrapped in the refrigerator at 41°F or below. Remove its core and rinse the leaves before using. Keep cauliflower away from raw meat and meat juices.",
       "labels_decoded": [],
-      "tier_note": "Open florets meaning stale and a soft head meaning spoiled come straight off the extension fact sheets.",
+      "tier_note": "Cabbage and cauliflower both sit on the low-residue list from USDA testing.",
       "eyebrow_short": "Broccoli and cabbage",
       "asked_as": [
         "is this broccoli still good",
@@ -5600,7 +5602,7 @@
       ],
       "category": "produce",
       "question": "How do I pick onions and garlic that will keep?",
-      "decision": "Firm and dry with papery skins, and nothing sprouting or moldy.",
+      "decision": "Conventional is fine. Firm and dry, papery skins, nothing sprouting or moldy.",
       "why": "A well-cured bulb has a dry neck and dry outer skins. A soft, scented, or sprouting one is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
       "detail": "Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, onions are among the items with the lowest pesticide residues.",
@@ -5610,7 +5612,8 @@
         "National Onion Association, Storage and Handling, https://onions-usa.org/all-about-onions/storage-and-handling/",
         "UC Davis Postharvest Technology Center, Onions (Dry) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/onions-dry",
         "UC Davis Postharvest Technology Center, Garlic fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/garlic",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
       "kristy_take": "Squeeze the bulb and smell it. Firm and quiet is the one to take home.",
       "cart_pick": "Firm dry onions and garlic with dried necks",
@@ -5634,7 +5637,7 @@
       ],
       "science": "A sound bulb has a dry neck and dry outer skins, and some loose onion skin is normal. Whole onions keep cool, dry and dark with air moving, never in plastic. Keep them apart from potatoes and anything else that releases moisture. A cut onion goes in a sealed container for up to seven days.",
       "labels_decoded": [],
-      "tier_note": "Squeezing for firmness and skipping the plastic bag are the onion growers’ own handling rules.",
+      "tier_note": "Onions sit on the low-residue list from USDA testing, and the papery skin comes off.",
       "eyebrow_short": "Onions and garlic",
       "asked_as": [
         "how do i store garlic",
@@ -5699,7 +5702,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep lettuce, spinach, and kale?",
-      "decision": "Crisp, even color, no wilt, yellowing, or decay.",
+      "decision": "Organic greens, crisp and evenly colored, with no wilt or yellowing.",
       "why": "Spinach is highly perishable and kale wilts in the warm, so the crispness of the leaf is the freshness date.",
       "short_answer": "Lettuce: crisp, green outside, pale at the heart. Romaine: neither very loose nor very hard. Spinach: uniformly green and fully crisp. Kale: firm, deep colored leaves on moist, hardy stems.",
       "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, spinach carries more pesticide residue by weight than any other type of produce, and kale is on the list as well. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
@@ -5708,7 +5711,8 @@
         "UC Davis Postharvest Technology Center, Lettuce (Romaine) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lettuce-romaine",
         "UC Davis Postharvest Technology Center, Spinach fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/spinach",
         "Michigan State University Extension, Featured local foods for institutions (kale), https://www.canr.msu.edu/news/2016_featured_local_foods_for_institutions",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
       "kristy_take": "Pick the bunch that still stands up, and keep it cold from the cart to the crisper.",
       "cart_pick": "Crisp greens with no yellowing or wilt",
@@ -5731,7 +5735,7 @@
       ],
       "science": "Crispness is the freshness date, since spinach is highly perishable and kale wilts in the warm. Lettuce should be bright to dark green outside and pale at the heart. A loose romaine is immature; a hard one is overmature. Kale keeps about five days in a plastic bag, air pressed out. Water on the leaves speeds spoilage, so wash at the point of use.",
       "labels_decoded": [],
-      "tier_note": "Crisp leaves as the freshness test and cold storage for keeping are what the postharvest sheets for greens say.",
+      "tier_note": "Spinach and kale top the high-residue list from USDA testing, and the leaves get eaten whole.",
       "eyebrow_short": "Leafy greens",
       "asked_as": [
         "is this spinach still good",
@@ -5781,7 +5785,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep bell peppers?",
-      "decision": "Firm and evenly colored, free of cracks, decay, or sunburn.",
+      "decision": "Organic peppers, firm and evenly colored, with no cracks or soft spots.",
       "why": "Firmness is a quality index on the postharvest sheet. A shriveled pepper has lost water in storage.",
       "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, and uniform in shape and size. Skip any with cracks, decay, sunburn, disease, insect damage, or bruises.",
       "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices. A dark, sunken spot at the blossom end is blossom end rot.",
@@ -5812,7 +5816,7 @@
       ],
       "science": "Firmness is a quality index, and shriveling is water loss from warm storage. A dark, sunken lesion at the blossom end is blossom end rot. Peppers keep best around 45°F. At 41°F, plan on about two weeks before chilling injury shows as pitting, softening or a discolored seed cavity. Red, yellow and orange peppers tolerate the cold better than green.",
       "labels_decoded": [],
-      "tier_note": "A firm pepper without bruises is the selection line on both extension sheets.",
+      "tier_note": "The skin of a pepper gets eaten, so the skin rule puts peppers in organic.",
       "eyebrow_short": "Bell peppers",
       "asked_as": [
         "how do i pick a good bell pepper",
@@ -5874,7 +5878,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep apples and pears?",
-      "decision": "Unbruised and undamaged. One spoiled fruit rots its neighbors faster.",
+      "decision": "Organic apples and pears, unbruised. One spoiled fruit rots its neighbors faster.",
       "why": "Damaged fruit spoils in storage, and spoiled fruit makes the sound apples and pears beside it ripen and rot faster.",
       "short_answer": "Apples: firm and crisp, not mealy, free of bruising, decay, cracks, and insect injury. Pears: sound shape and size, free of bruising, insect damage, and decay. A firm green Bartlett is not a fault.",
       "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both apples and pears appear. On apples, look for cracks at the stem or blossom end. Bartletts are picked mature-green and ripened off the tree; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
@@ -5885,7 +5889,8 @@
         "UC Davis Postharvest Technology Center, Pear (Bartlett) fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/pear-bartlett",
         "Michigan State University Extension, Michigan Fresh: Apples, https://www.canr.msu.edu/resources/michigan_fresh_apples",
         "Michigan State University Extension, Michigan Fresh: Pears, https://www.canr.msu.edu/resources/michigan_fresh_pears",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
       "kristy_take": "One bruised apple in the bag costs the whole bag, so sort at the bin, not at home.",
       "cart_pick": "Firm, unbruised apples or pears",
@@ -5909,7 +5914,7 @@
       ],
       "science": "Damaged fruit spoils in storage and makes the sound fruit beside it ripen and rot faster. Store at 30 to 32°F, up to 40°F, in a ventilated box or perforated bag. Refrigerated apples keep up to a month. McIntosh and Honeycrisp want 38°F, being prone to chilling injury, and Gala softens quickly when not cooled. Bartletts ripen off the tree; one ripened on it turns mealy.",
       "labels_decoded": [],
-      "tier_note": "Leaving bruised fruit out of the bag is the storage advice on the Oregon State sheet.",
+      "tier_note": "USDA testing finds more residue on apples and pears, and their skin gets eaten.",
       "eyebrow_short": "Apples & pears",
       "asked_as": [
         "are these apples still good",
@@ -5977,7 +5982,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep oranges, lemons, and limes?",
-      "decision": "Firm and smooth, free of decay, drying, or shriveling.",
+      "decision": "Conventional citrus, organic for zest. Firm, smooth, no drying or shriveling.",
       "why": "Firm fruit with a sound rind is the quality index on the UC Davis citrus sheets. Decay and shriveling are the defects.",
       "short_answer": "Oranges: even color, firm, smooth, free of decay and bruising. A partly green orange can be fully mature. Lemons: even yellow, smooth, firm, no shriveling. Limes: firm and smooth, no dryness.",
       "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting.",
@@ -5986,7 +5991,8 @@
         "UC Davis Postharvest Technology Center, Orange fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/orange",
         "UC Davis Postharvest Technology Center, Lemon fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lemon",
         "UC Davis Postharvest Technology Center, Lime fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lime",
-        "USDA SNAP-Ed Connection, Seasonal Produce Guide: Oranges, https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/oranges"
+        "USDA SNAP-Ed Connection, Seasonal Produce Guide: Oranges, https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/oranges",
+        "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
       ],
       "kristy_take": "Firm and smooth beats soft and shriveled on every citrus, and a green tinge on an orange is not a fault.",
       "cart_pick": "Firm, smooth oranges, lemons, or limes",
@@ -6010,7 +6016,7 @@
       ],
       "science": "Firm fruit with a sound rind is the quality index; decay and shriveling are the defects. Degreening sets an orange’s color and says nothing about the inside. A partly green orange can be fully mature. Yellow limes carry more juice. Oranges keep up to a week at room temperature, three weeks refrigerated. Lemons and limes hold best in the 50s °F, warmer than the refrigerator.",
       "labels_decoded": [],
-      "tier_note": "Firm fruit with an unblemished rind is the quality index on the UC Davis citrus sheets.",
+      "tier_note": "USDA tests oranges with the peel off, so organic only earns its place when the zest goes in.",
       "eyebrow_short": "Citrus",
       "asked_as": [
         "are yellow limes still good",
@@ -6087,7 +6093,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep peaches, nectarines, plums, and cherries?",
-      "decision": "Unbruised and undamaged, with the skin color fully turned.",
+      "decision": "Organic stone fruit, unbruised, with the skin color fully turned.",
       "why": "Michigan Fresh gives the same instruction for peaches, plums, and cherries: buy fruit that is not bruised or damaged.",
       "short_answer": "Peaches and nectarines: ground color turned from green to yellow. Plums: skin color turned for the variety. Cherries: at least light red all over, with green fleshy stems.",
       "detail": "The optimum storage for all of them is just above freezing, 30.5 to 32°F, and Michigan Fresh puts cherries in the refrigerator at or below 41°F. Plums held between 36 and 46°F, the killing range, are more susceptible to internal breakdown: mealiness, browning, and failure to ripen. Peaches, nectarines, and plums picked well mature ripen on their own without ethylene; ethylene does not speed cherry ripening. Keep stone fruit away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both peaches and cherries appear. A peach or nectarine with a flesh firmness of 2 to 3 pounds-force counts as ready to eat, and the same holds for plums. Dark skin staining is inking, a cosmetic mark from abrasion that affects the skin only. Cherries should be at least light red across the whole surface, with no cracks, bird pecks, shriveling, or decay; green, fleshy stems go with freshness.",
@@ -6099,7 +6105,8 @@
         "Michigan State University Extension, Michigan Fresh: Peaches, https://www.canr.msu.edu/resources/michigan_fresh_peaches",
         "Michigan State University Extension, Michigan Fresh: Plums, https://www.canr.msu.edu/resources/michigan_fresh_plums",
         "Michigan State University Extension, Michigan Fresh: Cherries, https://www.canr.msu.edu/resources/michigan_fresh_cherries",
-        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php"
+        "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
+        "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
       "kristy_take": "Buy the sound fruit and let the color tell you when it is ready; a bruise does not go away.",
       "cart_pick": "Unbruised peaches, plums, or cherries",
@@ -6123,7 +6130,7 @@
       ],
       "science": "A bruise does not go away, so sound fruit is the first check. Dents in cherries are pitting, thought to come from impact injury. Store stone fruit just above freezing, 30.5 to 32°F, and cherries at or below 41°F. Plums held between 36 and 46°F, the killing range, can turn mealy, brown and fail to ripen.",
       "labels_decoded": [],
-      "tier_note": "Buying fruit without bruises or damage is the instruction the Michigan Fresh sheets share.",
+      "tier_note": "USDA testing finds more residue on peaches, nectarines and cherries, all eaten skin-on.",
       "eyebrow_short": "Stone fruit",
       "asked_as": [
         "is this peach ripe enough to buy",
@@ -7319,14 +7326,15 @@
       ],
       "category": "produce",
       "question": "How do you pick good mushrooms?",
-      "decision": "Dry, firm mushrooms with no dark spots.",
+      "decision": "Conventional is fine. Dry, firm mushrooms with no dark spots.",
       "why": "Moisture is what spoils mushrooms. A dry, firm cap that is closed or slightly open is the fresh one.",
       "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
       "detail": "Penn State Extension, quoting a selection guide, looks for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
       "evidence_tier": "established",
       "sources": [
         "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/mushrooms",
-        "https://extension.psu.edu/preparing-and-preserving-mushrooms"
+        "https://extension.psu.edu/preparing-and-preserving-mushrooms",
+        "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
       "kristy_take": "A dry, firm mushroom is a fresh one. Moisture spoils them, so keep them cold in paper.",
       "cart_pick": "Dry, firm mushrooms with no dark spots",
@@ -7354,11 +7362,68 @@
           "meaning": "Also sold as baby bella. Firmer and earthier than white button mushrooms."
         }
       ],
-      "tier_note": "Extension guides check firmness, a dry cap and the gills, and all three show at the shelf.",
+      "tier_note": "Mushrooms sit on the low-residue list from USDA testing, so plain ones earn the cart.",
       "asked_as": [
         "how do i pick good mushrooms",
         "how should i store mushrooms",
         "what do dark spots on mushrooms mean"
+      ]
+    },
+    {
+      "id": "produce_bananas",
+      "title": "Bananas",
+      "aliases": [
+        "bananas",
+        "banana",
+        "green bananas",
+        "ripe bananas",
+        "organic bananas",
+        "ripen bananas",
+        "ripening bananas",
+        "bananas worth buying organic"
+      ],
+      "category": "produce",
+      "question": "How do you buy and ripen bananas?",
+      "decision": "Buy them green and let them ripen on your counter.",
+      "why": "Fruit ripened on the plant often splits and has poor texture, so bananas are cut green.",
+      "short_answer": "Buy bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Conventional is fine: bananas sit on the low-residue list, and the peel comes off.",
+      "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. UC Davis ripens them at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. EWG’s Clean Fifteen ranks bananas 12th for low pesticide residue, from USDA data. That testing is done on the peeled fruit, the part that gets eaten.",
+      "evidence_tier": "established",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/banana",
+        "https://producebusiness.com/retailers-have-a-gas/",
+        "https://www.ewg.org/foodnews/clean-fifteen.php",
+        "https://www.ewg.org/foodnews/methodology.php"
+      ],
+      "kristy_take": "Let the counter finish the ripening. Conventional is fine here, since the peel comes off.",
+      "cart_pick": "Green or just-turning bananas",
+      "buying_tips": [
+        "Take the greenest bunch for the week; it keeps ripening at home.",
+        "Keep green bananas out of the fridge. Cold below 56°F can stop them ripening.",
+        "Pass on fruit with skin splits or dark streaks."
+      ],
+      "watch_out": [
+        "Green and yellow bananas go through the same ripening rooms. The color only shows how far along they are.",
+        "A banana dropped hard can brown inside with no mark on the skin."
+      ],
+      "pick_steps": [
+        "Take a bunch that is still green or just turning.",
+        "Pass on any with skin splits or dark streaks.",
+        "Keep them on the counter, out of the fridge."
+      ],
+      "science": "Bananas are cut mature-green because fruit ripened on the plant splits and loses texture. Ripening runs on the fruit’s own ethylene, and the fruit gets sweeter as it goes. Cold below 56°F can stop a green banana ripening at all.",
+      "labels_decoded": [
+        {
+          "term": "Ripening room",
+          "meaning": "Where nearly every supermarket banana is ripened after shipping, green ones included."
+        }
+      ],
+      "tier_note": "Conventional is fine on green bananas: they rank low for residue, tested with the peel off.",
+      "asked_as": [
+        "how do i ripen bananas",
+        "are bananas worth buying organic",
+        "should i buy green bananas",
+        "how do i pick bananas"
       ]
     },
     {
@@ -7373,7 +7438,7 @@
       ],
       "category": "produce",
       "question": "How do you pick good green beans?",
-      "decision": "Smooth, crisp, slender pods with no bulging seeds.",
+      "decision": "Organic beans with smooth, crisp, slender pods and no bulging seeds.",
       "why": "Seeds bulging through the pod mean an over-mature bean. Those beans turn tough, stringy and starchy.",
       "short_answer": "Choose green beans that are smooth, firm and crisp. Skip pods with bulging seeds, brown or rust spots, or a damp, sticky feel. Keep them cold and use them within five days.",
       "detail": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Ohio State Extension describes good snap beans as firm, crisp and smooth, with no seeds bulging. Flabby, tough beans or bulging seeds are over-mature. Iowa State Extension adds: avoid beans with brown spots or a damp, sticky surface. Keep fresh beans cold and humid in the refrigerator and use them within five days if possible. Snap beans also come yellow, purple and red.",
@@ -7409,7 +7474,7 @@
           "meaning": "Yellow or purple snap beans."
         }
       ],
-      "tier_note": "Pod texture and seed size are visible signs of maturity, checked by hand at the bin.",
+      "tier_note": "The whole pod gets eaten, so green beans follow the skin rule to organic.",
       "asked_as": [
         "how do i pick good green beans",
         "how long do green beans last",

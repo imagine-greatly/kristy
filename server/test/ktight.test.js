@@ -34,7 +34,7 @@ const SIZES = { B01: 8, B02: 8, B03: 13, B04: 14, B05: 11, B06: 10, B07: 12, B08
 const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
 
 const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 195);
+const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 196);
 const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
 const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
 const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 195);

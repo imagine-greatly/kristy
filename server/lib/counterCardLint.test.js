@@ -431,7 +431,8 @@ test('all curated cards clear the per-card bar', () => {
   // K24 adds 6: frozen_pizza, frozen_meals, frozen_fries, frozen_waffles, frozen_nuggets, frozen (2026-10-07).
   // chf-5 retires 5: duck_meat, dry_brine, bean_soak_salt, pretzel_bread, baking_soda_powder (2026-10-13).
   // IC-3a folds 2: produce_picking_ripeness, strawberries_organic_residue (2026-10-14).
-  assert.equal(CARDS.length, 195);
+  // IC-3b adds 1: produce_bananas (2026-10-14).
+  assert.equal(CARDS.length, 196);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

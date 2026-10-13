@@ -38,7 +38,7 @@ const QUERIES = nonEmpty([
   ['salmon', 'salmon_wild_vs_farmed'],
   ['canned tuna', 'canned_tuna'],
   ['apples', 'produce_apples_pears'],
-  ['bananas', 'organic_worth_it_by_type'],
+  ['bananas', 'produce_bananas'],
   ['spinach', 'organic_worth_it_by_type'],
   ['frozen vegetables', 'frozen_vs_fresh_produce'],
   ['chips', 'miss'],

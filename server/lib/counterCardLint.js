@@ -97,11 +97,11 @@ export function tierNoteOrphaned(card, doLine) {
 // Ratchet. Each IC-3b..IC-8b piece rewrites the tier_note of its batch ids found here and
 // removes them; empty after IC-8b. Never add an id.
 export const TIER_NOTE_ORPHANED_PENDING = new Set([
-  'frozen_vs_fresh_produce', 'grassfed_butter', 'whole_vs_reduced_fat_milk', 'label_made_with_real',
+  'grassfed_butter', 'whole_vs_reduced_fat_milk', 'label_made_with_real',
   'label_organic_scope', 'label_lightly_sweetened', 'butcher_counter_asking',
   'revive_greens', 'olive_oil_grades', 'bottled_water_buying', 'label_ingredient_order',
-  'label_third_party_seals', 'label_artificial_color', 'sprouts_raw',
-  'produce_green_beans', 'organ_meats', 'venison_game', 'crab', 'tea',
+  'label_third_party_seals', 'label_artificial_color',
+  'organ_meats', 'venison_game', 'crab', 'tea',
 ]);
 
 export const MAX_DO_WORDS = 12 + 2;

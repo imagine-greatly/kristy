@@ -47,13 +47,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_labels` | eggs_dairy | Soy-free and corn-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
 | `air_chilled_chicken` | meat | Air-chilled. A water-chilled bird absorbs the bath it was cooled in. | Check the package for “retained water up to”. That percentage is water. | — |
 | `no_antibiotics_poultry` | meat | A fair choice, not a cleaner bird. Don’t pay the premium. | Look for “USDA Process Verified” beside the claim, or put it back. | — |
-| `organic_worth_it_by_type` | produce | Organic on thin-skinned produce. Conventional on anything peeled. | Spend the organic money on berries, greens, and apples. | — |
-| `frozen_vs_fresh_produce` | produce | Frozen. Cheaper, no waste, and in season all year. | Read the bag’s ingredient list for one word: the vegetable. | — |
+| `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
+| `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
-| `produce_seasonality` | produce | Buy what is piled high and cheap this week. | Read the farmers’ market as the signal for what is in season locally. | — |
+| `produce_seasonality` | produce | Produce in season is picked closer to ripe and travels less. | Read the farmers’ market as the signal for what is in season locally. | — |
 | `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
 | `baking_soda_soak` | produce · home | Baking soda takes the surface residue. Water mostly does not. | Soak the fruit twelve minutes, then rinse it clean. | — |
-| `precut_produce_tradeoffs` | produce | Whole produce. Pre-cut costs more and keeps less. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
+| `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Grass-fed butter, and the difference is visible before you taste it. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Everything else has been through another step. | Read the milkfat percentage on the panel, not the cap color. | — |
 | `a2_vs_a1_milk` | eggs_dairy | A2 milk, and the difference is the breed, not the brand. | Read the carton for a Jersey or Guernsey herd, or the A2 seal. | — |
@@ -92,8 +92,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
 | `farmed_fish_by_species` | seafood | Farmed shellfish, trout and char are the good ones. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
 | `seafood_certifications` | seafood | MSC on wild. A farm seal is a floor, not a recommendation. | Check the badge names a program you can look up. Unnamed is marketing. | — |
-| `produce_ripeness_by_item` | produce | Pick up two and take the heavier one. | Smell the stem end on anything that ripens after picking. | — |
-| `berries_picking` | produce | The carton’s underside decides, not the berries on top. | Flip the container and check for juice stains or fuzz. | — |
+| `produce_ripeness_by_item` | produce | The heavier piece of two the same size holds more juice. | Smell the stem end on anything that ripens after picking. | — |
+| `berries_picking` | produce | Organic berries, and the carton’s underside decides, not the top. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp is water loss, not spoilage. It comes back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
 | `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
@@ -117,17 +117,18 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_artificial_color` | label_terms | “Artificial color” is a category, not a color. Titanium dioxide qualifies. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | The best thing a farm does with its milk. Buy it cultured. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Raw-milk cheese, aged. Legal everywhere and already in the case. | Read the rind label for an age in months. | — |
-| `sprouts_raw` | produce | Buy them cold and crisp, or grow them on the counter. | Check the roots are still white and the clamshell is not fogged. | — |
-| `produce_root_vegetables` | produce | Buy firm roots. Skip anything soft, shriveled, or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
-| `produce_brassicas` | produce | Dark green, tight, and unbruised. Soft or slippery is spoilage. | Check for closed, dark green florets, then press the head for soft spots. | — |
-| `produce_onions_garlic` | produce | Firm and dry with papery skins, and nothing sprouting or moldy. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
-| `produce_leafy_greens` | produce | Crisp, even color, no wilt, yellowing, or decay. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
-| `produce_peppers` | produce | Firm and evenly colored, free of cracks, decay, or sunburn. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
-| `produce_apples_pears` | produce | Unbruised and undamaged. One spoiled fruit rots its neighbors faster. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
-| `produce_citrus` | produce | Firm and smooth, free of decay, drying, or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
-| `produce_stone_fruit` | produce | Unbruised and undamaged, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
-| `produce_mushrooms` | produce | Dry, firm mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
-| `produce_green_beans` | produce | Smooth, crisp, slender pods with no bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
+| `sprouts_raw` | produce | Sprouts grow in the warm damp that bacteria also like. | Check the roots are still white and the clamshell is not fogged. | — |
+| `produce_root_vegetables` | produce | Organic potatoes, conventional carrots. Firm roots, nothing soft or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
+| `produce_brassicas` | produce | Conventional is fine on cabbage and cauliflower. Tight heads, no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
+| `produce_onions_garlic` | produce | Conventional is fine. Firm and dry, papery skins, nothing sprouting or moldy. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
+| `produce_leafy_greens` | produce | Organic greens, crisp and evenly colored, with no wilt or yellowing. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
+| `produce_peppers` | produce | Organic peppers, firm and evenly colored, with no cracks or soft spots. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
+| `produce_apples_pears` | produce | Organic apples and pears, unbruised. One spoiled fruit rots its neighbors faster. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
+| `produce_citrus` | produce | Conventional citrus, organic for zest. Firm, smooth, no drying or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
+| `produce_stone_fruit` | produce | Organic stone fruit, unbruised, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
+| `produce_mushrooms` | produce | Conventional is fine. Dry, firm mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
+| `produce_green_beans` | produce | Organic beans with smooth, crisp, slender pods and no bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
+| `produce_bananas` | produce | Buy them green and let them ripen on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
 | `egg_duck_quail` | eggs_dairy | Cook duck and quail eggs until white and yolk are solid. | Check that each shell is clean and uncracked before the carton goes in. | — |
 
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the grain’s bran and germ. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
