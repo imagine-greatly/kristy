@@ -142,9 +142,9 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
 });
 
-test('C12 passRule.js and k5–k11 are unedited since 5cc9758 (by-value keepsAll + 4b/4c HEALTH_FIRST_REWRITE ids; was 64a9774, before that 3f34250)', () => {
+test('C12 passRule.js and k5–k11 are unedited since e92e7c9 (chf-5 fold absorbers + retired-id rewrites; was 5cc9758, before that 64a9774)', () => {
   const out = execSync(
-    "git diff 5cc9758 --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
+    "git diff e92e7c9 --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
