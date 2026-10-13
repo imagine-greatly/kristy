@@ -1714,7 +1714,10 @@
         "canned beans",
         "lentils",
         "legumes",
-        "bpa cans"
+        "bpa cans",
+        "soak beans",
+        "soaking beans",
+        "bean soak"
       ],
       "category": "bulk_pantry",
       "question": "Are dried or canned beans better?",
@@ -1753,64 +1756,6 @@
         "dried or canned beans",
         "are canned beans ok",
         "which beans should i buy"
-      ]
-    },
-    {
-      "id": "bean_soak_salt",
-      "title": "Salting the bean soak",
-      "aliases": [
-        "salt beans",
-        "bean soak",
-        "soaking beans",
-        "salt the soak",
-        "tough beans",
-        "beans wont soften",
-        "hard beans",
-        "salting beans",
-        "soak water",
-        "salted beans",
-        "beans go tough",
-        "salt beans tough",
-        "bean skins",
-        "soak beans",
-        "salt make beans",
-        "make beans hard",
-        "beans hard"
-      ],
-      "category": "bulk_pantry",
-      "question": "Does salting the soak water make beans tough?",
-      "decision": "Brining beans softens the skins; the old rule has it backwards.",
-      "why": "Sodium loosens what holds the bean’s skin together, so a salted soak leaves the skin softer.",
-      "short_answer": "Sodium in the soak loosens the bean’s skin rather than tightening it. So salted beans cook more evenly and blow out less. The rule against salting is old, widely repeated, and wrong about the mechanism.",
-      "detail": "Two different things got confused. Acid does firm a bean: tomato, vinegar, wine and molasses added early will keep skins tough for hours, which is why a pot of chili can sit at a stubborn crunch. Hard water does it too, because the calcium and magnesium in it cross-link the pectin. Salt does neither. It is the one common addition that moves the other way, and the folk rule appears to have collected all three effects under the one ingredient people add most. Age matters more than any of it: beans that have sat for years never fully soften, whatever is in the water. It is the opposite of the received wisdom. Sodium works its way into the seed coat and displaces the calcium and magnesium holding the pectin together, which weakens the skin rather than tightening it, so salted beans cook more evenly and blow out less.",
-      "evidence_tier": "kristys_standard",
-      "kristy_take": "Salt the water. The rule your grandmother gave you was about the tomatoes.",
-      "sources": [
-        "food-chemistry work on pectin cross-linking and cation exchange in legume seed coats",
-        "controlled kitchen testing of salted versus unsalted soaks"
-      ],
-      "buying_tips": [
-        "A heaped tablespoon of salt per quart of soaking water, overnight.",
-        "Salt the cooking water as well. The same softening applies while they simmer.",
-        "Buy from a bin that turns over. Old beans stay hard however you soak them."
-      ],
-      "watch_out": [
-        "Acid genuinely does harden beans. Hold the tomato, vinegar and molasses until the skins are tender.",
-        "Hard tap water works against you: the calcium and magnesium in it do the opposite of what sodium does."
-      ],
-      "pick_steps": [
-        "Soak overnight with a heaped tablespoon of salt per quart of water.",
-        "Buy from a bin that turns over; old beans stay hard however soaked.",
-        "Salt the cooking water too; hold tomato, vinegar and molasses until skins are tender."
-      ],
-      "science": "Sodium works into the seed coat and displaces the calcium and magnesium holding the pectin together. That weakens the skin, so salted beans cook more evenly and blow out less. Acid does firm a bean, and so does hard water, whose calcium and magnesium cross-link the pectin. Age matters more than any of it.",
-      "labels_decoded": [],
-      "tier_note": "Salt in the soaking water is real food chemistry held as a standard, since its practical size comes from kitchen testing rather than settled study.",
-      "eyebrow_short": "Salting the soak",
-      "asked_as": [
-        "do salted beans go tough",
-        "should i salt the bean soak",
-        "does salt make beans hard"
       ]
     },
     {
@@ -3010,69 +2955,6 @@
       ]
     },
     {
-      "id": "dry_brine",
-      "title": "Dry-brining meat",
-      "aliases": [
-        "dry brine",
-        "dry brining",
-        "salt meat ahead",
-        "salting meat",
-        "brine",
-        "wet brine",
-        "season ahead",
-        "salt steak",
-        "salt chicken",
-        "salt a steak",
-        "when to salt",
-        "salt the meat",
-        "salt ahead",
-        "salt before cooking",
-        "salt a roast",
-        "seasoning ahead",
-        "pre salt"
-      ],
-      "category": "beef",
-      "question": "When should I salt meat, and is a brine worth it?",
-      "decision": "Salting a day ahead seasons the meat through and dries the surface.",
-      "why": "Salt pulls moisture out, then goes back in with it. The dried surface is what browns.",
-      "short_answer": "Salt early. A day ahead, salt draws out moisture that soaks back in, seasoning the meat through. It also helps the meat hold water as it cooks. Left uncovered in the fridge, the surface dries, and dry surfaces brown.",
-      "detail": "Salt early and skip the bucket. Applied a day ahead, salt dissolves in the meat’s own surface moisture, draws more out, and that concentrated brine is reabsorbed. That seasons the muscle through rather than sitting on it, and loosens the proteins so they hold on to water during cooking. Left uncovered in the fridge, the surface dries at the same time, and a dry surface is the whole precondition for browning. A wet brine does some of the same seasoning work and adds water while it does it, which is the problem: the extra moisture has to boil off before the surface can brown, so the crust arrives late or not at all. Dry-brining gets the interior seasoning without that trade. Timing scales with thickness. A large roast or a thick steak wants a day, chops and cuts under an inch are fine with an hour, and even fifteen minutes beats salting at the pan, because that is long enough for the salt to dissolve but not long enough to draw a wet film that then has to evaporate. The one place it inverts is ground meat. The amount is worth stating by weight rather than by spoon, because kosher salt brands differ by nearly half in density: a teaspoon of Morton is about 4.8 grams and a teaspoon of Diamond Crystal about 2.8, so the same spoon delivers wildly different salt.",
-      "evidence_tier": "established",
-      "kristy_take": "Salt the day before, uncovered. It is the cheapest thing you can do to a piece of meat.",
-      "sources": [
-        "food-science work on salt diffusion and protein denaturation in muscle",
-        "Maillard browning and the surface-moisture threshold",
-        "published dry-brine ratios by cut (0.75–1.25% poultry, 1–1.5% beef steaks, 1.5–2% large roasts)"
-      ],
-      "buying_tips": [
-        "One percent of the meat by weight, about four and a half grams a pound.",
-        "A day ahead for a roast or a thick steak. An hour covers chops.",
-        "Uncovered, on a rack, so the surface can actually dry.",
-        "Without a scale: a rounded teaspoon and a half of Diamond Crystal per pound, or a level teaspoon of Morton.",
-        "A large roast or a brisket takes more, closer to one and a half percent."
-      ],
-      "watch_out": [
-        "Kosher salt brands are not interchangeable by volume. A teaspoon of Morton weighs nearly twice a teaspoon of Diamond Crystal. At this ratio, that is the difference between seasoned and inedible.",
-        "Enhanced pork and koshered poultry arrive already salted. Read for ‘solution added’ and skip this on those.",
-        "Ground meat is the exception. Salt dissolves the proteins and the texture turns springy, so salt burgers as they hit the pan.",
-        "Skip the wet brine. It adds the water that then has to boil off before anything browns."
-      ],
-      "pick_steps": [
-        "Salt one percent by weight, uncovered on a rack, a day ahead for roasts.",
-        "Do not dry-brine enhanced pork or koshered poultry; read for ‘solution added’.",
-        "Salt ground meat only as it hits the pan."
-      ],
-      "science": "Salt dissolves in the meat’s surface moisture, draws more out, and that brine is reabsorbed. That seasons the muscle through and helps it hold water while cooking. Left uncovered, the surface dries, and a dry surface browns. A wet brine adds water that has to boil off first. Kosher salt brands differ by nearly half in density, so weigh rather than spoon.",
-      "labels_decoded": [],
-      "tier_note": "How salt moves through muscle, and why a dry surface browns and a wet one steams, are both basic food chemistry. The timing is the part people skip.",
-      "eyebrow_short": "Dry-brining",
-      "asked_as": [
-        "when should i salt a steak",
-        "is a brine worth it",
-        "should i salt meat ahead"
-      ]
-    },
-    {
       "id": "butcher_counter_asking",
       "title": "What to ask the butcher",
       "aliases": [
@@ -3128,7 +3010,7 @@
     },
     {
       "id": "chicken_cuts_basics",
-      "title": "Chicken cuts: breast, thigh, whole bird",
+      "title": "Chicken and duck",
       "aliases": [
         "chicken cuts",
         "chicken breast",
@@ -3142,7 +3024,10 @@
         "thighs",
         "breasts",
         "thighs or breasts",
-        "boneless skinless"
+        "boneless skinless",
+        "duck legs",
+        "duck leg",
+        "duck meat"
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
@@ -3178,7 +3063,8 @@
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
-        "is boneless skinless worth it"
+        "is boneless skinless worth it",
+        "how do you buy duck legs"
       ],
       "watch_out": [
         "How it was chilled: see Air-chilled chicken.",
@@ -6859,53 +6745,6 @@
       ]
     },
     {
-      "id": "pretzel_bread",
-      "title": "Pretzel bread",
-      "aliases": [
-        "pretzel bread",
-        "pretzel roll",
-        "pretzel rolls",
-        "alkaline dipped pretzel bread"
-      ],
-      "category": "bulk_pantry",
-      "question": "What should you check when buying pretzel bread?",
-      "decision": "Pretzel bread gets its crust from an alkaline bath before baking.",
-      "why": "The bath is a processing fact. The archived articles do not establish a health advantage.",
-      "short_answer": "A lye or baking-soda bath before baking produces the characteristic pretzel crust. Ask about the bath rather than judging the bread from its color alone.",
-      "detail": "The archived baking articles describe alkaline dipping before baking, including dough shaped into rolls. Lye and baking soda are different bath ingredients. These are culinary descriptions, with no comparative health study of pretzel bread.",
-      "evidence_tier": "time_tested",
-      "sources": [
-        "https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have",
-        "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
-      ],
-      "kristy_take": "The bath is a processing fact. The archived articles do not establish a health advantage.",
-      "cart_pick": "Alkaline-dipped pretzel bread",
-      "buying_tips": [
-        "Ask which bath the bakery uses before baking.",
-        "A baking-soda bath is another documented method when lye-dipped rolls are unavailable.",
-        "Ask whether the dark crust comes from dipping before baking."
-      ],
-      "watch_out": [
-        "The source set contains articles, not health trials. The crust does not establish a health benefit."
-      ],
-      "pick_steps": [
-        "Check with the bakery which alkaline bath it uses before baking."
-      ],
-      "science": "A dip in an alkaline bath before baking gives pretzel bread its characteristic crust. Lye and baking soda are different bath ingredients, and both are documented methods. The color alone does not show which bath was used. The sources are culinary articles, not health trials; the crust establishes no health benefit.",
-      "labels_decoded": [
-        {
-          "term": "Alkaline bath",
-          "meaning": "A dip using lye or baking soda before baking to produce the characteristic crust."
-        }
-      ],
-      "tier_note": "Asking about the bath checks a traditional pretzel method documented in culinary articles; the tradition concerns the baking process.",
-      "asked_as": [
-        "how do you choose pretzel bread",
-        "what does lye dipped mean on pretzel rolls",
-        "what gives pretzel bread its brown crust"
-      ]
-    },
-    {
       "id": "bagels",
       "title": "Bagels",
       "aliases": [
@@ -8218,66 +8057,6 @@
         "how long does ground venison keep",
         "how do you choose a venison steak",
         "how do you choose ground elk"
-      ]
-    },
-    {
-      "id": "duck_meat",
-      "title": "Duck",
-      "aliases": [
-        "duck breast",
-        "duck breasts",
-        "whole duck",
-        "duck legs",
-        "duck leg",
-        "duck meat"
-      ],
-      "category": "poultry",
-      "question": "How do you choose duck?",
-      "decision": "Duck chosen by its class name, Grade A when graded.",
-      "why": "Federal rules name ducks by age. A duckling or roaster duck is young and tender-meated.",
-      "short_answer": "Read the class on the label. Duckling and roaster duck are young and tender. Mature duck has toughened flesh. A USDA Grade A shield marks the highest quality.",
-      "detail": "Federal rule 9 CFR 381.170 defines the classes. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old. Grading is voluntary, and Grade B and C ducks are rarely in supermarkets. Additives are not allowed on fresh duck. Processed duck, such as smoked breast, lists its additives. Cook duck to 165°F.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/duck-and-goose-farm-table",
-        "https://www.law.cornell.edu/cfr/text/9/381.170"
-      ],
-      "kristy_take": "The class name tells the age, and the age tells tenderness. Grade A is the top shield.",
-      "cart_pick": "Grade A duckling or roaster duck",
-      "buying_tips": [
-        "Read the class: duckling or roaster duck for tender meat.",
-        "Look for the USDA Grade A shield.",
-        "Check the freezer case, where most duck is sold.",
-        "Bag it separately to contain any leaks."
-      ],
-      "watch_out": [
-        "Use fresh duck within 1 or 2 days, or freeze it.",
-        "Hormones are not allowed in any US duck, so that claim sets no duck apart."
-      ],
-      "pick_steps": [
-        "Take duckling or roaster duck for tender meat, with the USDA Grade A shield.",
-        "Ignore a ‘no hormones’ claim: hormones are not allowed in any US duck."
-      ],
-      "science": "Federal rule 9 CFR 381.170 names ducks by age. A duckling is under 8 weeks old and a roaster duck under 16 weeks. A mature duck is over 6 months old, with toughened flesh. Grading is voluntary, and Grade A is the top shield. Use fresh duck within 1 or 2 days, or freeze it, and cook duck to 165°F.",
-      "labels_decoded": [
-        {
-          "term": "Duckling",
-          "meaning": "A young duck under 8 weeks old, tender-meated."
-        },
-        {
-          "term": "Roaster duck",
-          "meaning": "A young duck under 16 weeks old, still tender-meated."
-        },
-        {
-          "term": "Mature duck",
-          "meaning": "An adult duck over 6 months old, with toughened flesh."
-        }
-      ],
-      "tier_note": "The classes are federal definitions, and the grade shield is a USDA quality mark.",
-      "asked_as": [
-        "how do you choose duck breast",
-        "how long does a whole duck keep",
-        "how do you buy duck legs"
       ]
     },
     {
@@ -12008,68 +11787,6 @@
         "which seaweed should i buy",
         "is nori worth buying",
         "are seaweed snacks worth buying"
-      ]
-    },
-    {
-      "id": "baking_soda_powder",
-      "title": "Baking soda and baking powder",
-      "aliases": [
-        "baking powder",
-        "double acting baking powder",
-        "aluminum free baking powder",
-        "bicarbonate of soda",
-        "sodium bicarbonate"
-      ],
-      "category": "bulk_pantry",
-      "question": "How do you pick baking soda and baking powder?",
-      "decision": "Baking soda needs an acid; double-acting powder carries its own.",
-      "why": "Soda reacts with an acid at once. Double-acting powder carries two acids, one wet and one hot.",
-      "short_answer": "Baking soda is one ingredient and needs an acid such as buttermilk, yogurt or vinegar. Baking powder carries its own acids. Buy double-acting powder, check the date, and keep both dry.",
-      "detail": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Too much soda without enough acid can taste metallic. Federal rules list sodium bicarbonate as used in food with no limit beyond good manufacturing practice. Baking powder is soda plus acid salts and cornstarch. Its first acid, monocalcium phosphate, reacts as soon as the powder is wet. Its second acid is sodium acid pyrophosphate or sodium aluminum sulfate. That second acid reacts only once the batter is both wet and hot. In an “aluminum free” powder, the second acid is not sodium aluminum sulfate. Moisture makes both soda and powder react and change.",
-      "evidence_tier": "established",
-      "sources": [
-        "https://www.law.cornell.edu/cfr/text/21/184.1736",
-        "https://news.ncsu.edu/2014/05/baking-soda-powder",
-        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2024-12-06-baking-soda-vs-baking-powder",
-        "https://extension.psu.edu/storing-staple-ingredients-in-the-kitchen",
-        "https://extension.usu.edu/preserve-the-harvest/research/cooking-food-storage"
-      ],
-      "kristy_take": "Soda and powder are not interchangeable. Soda needs an acid from the other ingredients; double-acting powder brings its own.",
-      "cart_pick": "Double-acting baking powder, in date",
-      "buying_tips": [
-        "Read the can for “double acting”; most say it.",
-        "Look for the expiration date on the container.",
-        "Store baking powder in its original sealed can.",
-        "Dip only dry measuring spoons into either container.",
-        "To test soda, add 1 tablespoon vinegar to 1½ teaspoons soda; it should fizz."
-      ],
-      "watch_out": [
-        "Moisture makes both soda and powder react and change, so keep them dry.",
-        "Once opened, baking powder lasts about 6 months."
-      ],
-      "pick_steps": [
-        "Pick double-acting baking powder, and check the expiration date."
-      ],
-      "science": "Baking soda is sodium bicarbonate, a base. It reacts with an acid at once and gives off carbon dioxide bubbles. Baking powder is soda plus acid salts and cornstarch. Its first acid reacts as soon as the powder is wet. The second reacts only once the batter is both wet and hot. Moisture makes both soda and powder react and change.",
-      "labels_decoded": [
-        {
-          "term": "Double acting",
-          "meaning": "One acid works when the batter is wet, and a second works when it is hot."
-        },
-        {
-          "term": "Aluminum free",
-          "meaning": "The heat-acting acid is not the aluminum-based one."
-        },
-        {
-          "term": "Best if used by",
-          "meaning": "Baking powder carries a best-if-used-by date of 18-24 months."
-        }
-      ],
-      "tier_note": "Opened powder fades in months, and the foam test shows it.",
-      "asked_as": [
-        "which baking powder should i buy",
-        "is bicarbonate of soda worth buying",
-        "how do i pick a baking powder"
       ]
     },
     {

@@ -40,6 +40,5 @@
 {"section":"Pantry","item":"honey","expect":"honey_adulteration","list_words":["honey"]},
 {"section":"Pantry","item":"broth","expect":"broth","list_words":["broth"]},
 {"section":"Pantry","item":"coffee","expect":"coffee_beans","list_words":["coffee"]},
-{"section":"Pantry","item":"juice","expect":"pick_juice","list_words":["juice"]},
-{"section":"Pantry","item":"baking powder","expect":"baking_soda_powder","list_words":["baking powder"]}
+{"section":"Pantry","item":"juice","expect":"pick_juice","list_words":["juice"]}
 ]

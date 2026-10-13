@@ -69,7 +69,7 @@ const HOME_CARDS = new Set([
   // `whole_spices` was here and is NOT: its verdict ("buy whole") is a purchase decision,
   // and `home` suppresses the add-to-cart in both the projection and the client. A card
   // that tells you what to buy has to be able to put it in the cart.
-  'baking_soda_soak', 'bean_soak_salt', 'dry_brine', 'revive_greens', 'freezing_produce',
+  'baking_soda_soak', 'revive_greens', 'freezing_produce',
 ]);
 
 export function kindFor(slug) {
@@ -127,6 +127,24 @@ export const RETIRED = [
   // is an instruction about another card's product.
   'clabber',
 
+  /* ── The 2026-10-13 health-first fold (chf-5). ──
+     Plan: docs/plans/card-health-first-plan.md, "5. RETIRE / FOLD". Cards whose subject
+     was the cook, not the food on the shelf. Only food aliases moved; cooking-only asks
+     become honest misses rather than steals on a sibling card. */
+
+  // → chicken_cuts_basics, retitled "Chicken and duck". `duck leg(s)`, `duck meat` and the
+  // duck-legs ask moved; duck breast / whole duck stay off (type veto: the pick is thighs).
+  'duck_meat',
+  // No absorber. buns_rolls picks whole wheat, so the type veto keeps pretzel asks off it;
+  // pretzel bread questions miss honestly.
+  'pretzel_bread',
+  // → beans_dried_vs_canned, food aliases only (`soak beans`, `soaking beans`, `bean soak`).
+  // The tough/hard/salt-beans cooking asks are dropped and miss honestly.
+  'bean_soak_salt',
+  // No absorber. A home technique (salting meat ahead), not a thing to buy; aliases dropped.
+  'dry_brine',
+  // No absorber. A baking chemistry card with no closest-to-nature pick; aliases dropped.
+  'baking_soda_powder',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

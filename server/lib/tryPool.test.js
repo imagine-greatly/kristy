@@ -8,7 +8,7 @@ import { nonEmpty } from './testGuards.js';
 import { supabase } from './supabase.js';
 import { counterRouter } from '../routes/counter.js';
 
-const POOL = nonEmpty(TRY_POOL, 'Try this week pool', 20);
+const POOL = nonEmpty(TRY_POOL, 'Try this week pool', 19);
 const entriesById = new Map(perimeterKb.entries.map((entry) => [entry.id, entry]));
 const cardsById = new Map(projectAll().map((card) => [card.slug, card]));
 const PAID_KEYS = nonEmpty([
@@ -29,10 +29,10 @@ function get(url, user) {
   });
 }
 
-test('TRY_POOL is frozen with exactly 20 unique authored ids in the approved order', () => {
+test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) authored ids in the approved order', () => {
   assert.ok(Object.isFrozen(TRY_POOL));
-  assert.equal(POOL.length, 20);
-  assert.equal(new Set(POOL).size, 20);
+  assert.equal(POOL.length, 19);
+  assert.equal(new Set(POOL).size, 19);
   assert.deepEqual(POOL, [
     'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
     'pork_cuts_and_enhanced', 'air_chilled_chicken', 'salmon_wild_vs_farmed',
@@ -40,7 +40,7 @@ test('TRY_POOL is frozen with exactly 20 unique authored ids in the approved ord
     'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_live_cultures',
     'grains_beyond_rice', 'beans_dried_vs_canned', 'bulk_bins_buying',
     'oats_steelcut_rolled_instant', 'honey_adulteration', 'nuts_raw_vs_roasted',
-    'sourdough', 'pretzel_bread', 'tortillas',
+    'sourdough', 'tortillas',
   ]);
   for (const id of POOL) {
     const entry = entriesById.get(id);
@@ -61,8 +61,8 @@ test('GET /counter/try serves only the four free keys to guests and signed-in us
   for (const { status, body } of responses) {
     assert.equal(status, 200);
     assert.deepEqual(Object.keys(body), ['items']);
-    const items = nonEmpty(body.items, 'Try this week response items', 20);
-    assert.equal(items.length, 20);
+    const items = nonEmpty(body.items, 'Try this week response items', 19);
+    assert.equal(items.length, 19);
     assert.deepEqual(items.map((item) => item.id), POOL);
     for (const item of items) {
       assert.deepEqual(Object.keys(item).sort(), ['cart_pick', 'do', 'id', 'section']);
@@ -80,7 +80,7 @@ test('GET /counter/try serves only the four free keys to guests and signed-in us
 test('Try this week returns byte-equal do lines and cart picks with counter sections', async () => {
   const { status, body } = await get('/counter/try');
   assert.equal(status, 200);
-  for (const item of nonEmpty(body.items, 'verbatim pool items', 20)) {
+  for (const item of nonEmpty(body.items, 'verbatim pool items', 19)) {
     assert.equal(item.do, doLines[item.id], `${item.id}: do line changed`);
     assert.equal(item.cart_pick, entriesById.get(item.id).cart_pick, `${item.id}: cart_pick changed`);
     assert.equal(item.section, cardsById.get(item.id).section, `${item.id}: counter section changed`);

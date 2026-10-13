@@ -65,7 +65,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Oil-roasted means a seed oil was added. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
 | `honey_adulteration` | bulk_pantry | Raw and local. The list should read honey and nothing else. | Buy honey with a producer and a region named on the jar. | — |
 | `beans_dried_vs_canned` | bulk_pantry | Dried. Same bean, a fraction of the price, and your own salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
-| `bean_soak_salt` | bulk_pantry · home | Salt the soak. The rule against it has it backwards. | Stir a heaped tablespoon of salt into the soaking water. | — |
 | `label_natural` | label_terms | Ignore it. Read the ingredient list instead. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | The front names an ingredient. Find it in the list. | Count how far down it sits. Past third is a trace. | — |
 | `label_no_added_hormones` | label_terms | Meaningful on beef and dairy. A freebie on chicken and pork. | Look for a third-party verifier on the beef and dairy claim. | — |
@@ -85,7 +84,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door. It swings warm every open. | — |
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Read the grade as a marbling score, then ask how it was raised. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
-| `dry_brine` | meat · home | Salt it the day before, and leave it uncovered. | Weigh out salt at one percent of the meat’s weight. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
@@ -136,7 +134,6 @@ Also: imperative, starts with a verb, ≤14 words.
 
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the grain’s bran and germ. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
 | `sourdough` | bulk_pantry | Sourdough fermented with a starter of wild yeast and bacteria. | Ask the baker what leavens the dough; check for culture or starter. | — |
-| `pretzel_bread` | bulk_pantry | Pretzel bread gets its crust from an alkaline bath before baking. | Ask the baker whether the dough gets a lye or baking-soda bath. | — |
 | `bagels` | bulk_pantry | Bagels with their ingredients named, boiled before the oven. | Ask the baker about a water bath before the dough reaches the oven. | — |
 | `tortillas` | bulk_pantry | Corn tortillas made from lime-treated corn, water, and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
 | `turkey_whole` | meat | Whole turkey without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
@@ -156,7 +153,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
 | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
-| `duck_meat` | meat | Duck chosen by its class name, Grade A when graded. | Read the class on the label, then look for the Grade A shield. | — |
 | `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read how it was raised, anything added, then the use-by date. | — |
 | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
 | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
@@ -216,7 +212,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `canned_soup` | bulk_pantry | Canned soup with a short list, in a can without dents. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
 | `olives` | bulk_pantry | Olives cured in brine, which ferments them slowly. | Check the jar date, and finish an opened jar within 2 weeks. | — |
 | `seaweed` | bulk_pantry | Dried sea vegetables labeled with their kind: nori, kombu or kelp. | Read the package for the seaweed’s kind by name, not just “seaweed”. | — |
-| `baking_soda_powder` | bulk_pantry | Baking soda needs an acid; double-acting powder carries its own. | Check the date, then test opened powder in hot water for foam. | — |
 | `salsa` | bulk_pantry | Salsa led by vegetables; a fresh tub stays cold. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
 | `coconut_water` | bulk_pantry | Coconut water alone on the list, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
 | `condiments` | bulk_pantry | Read the first ingredient; then ask about ketchup, mustard or mayo. | Check the serving size, a spoonful, before comparing two jars. | — |

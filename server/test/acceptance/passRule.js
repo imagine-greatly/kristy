@@ -12,6 +12,8 @@ export const HEALTH_FIRST_REWRITE = new Set([
   'pick_soup_bones', 'egg_grades_sizes', 'pork_cuts_and_enhanced', 'lamb_goat',
   'flour_basics', 'cooking_oils', 'salt', 'sugars', 'maple_syrup', 'cocoa', 'tea', 'broth', 'grains_beyond_rice',
   'bagels', 'pretzels', 'kimchi', 'miso', 'pick_tofu', 'goat_sheep_dairy', 'coconut_milk_beverage',
+  // chf-5 fold absorbers: aliases/asked_as gained from retired cards (additive; keepsAll guards losses).
+  'chicken_cuts_basics', 'beans_dried_vs_canned',
 ]);
 const RELAXED = ['cart_pick', 'asked_as', 'aliases', 'sources', 'labels_decoded'];
 // By value: sources may be {url, ...} objects, which includes() compares by reference.

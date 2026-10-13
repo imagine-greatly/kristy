@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard, lintPick } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable, RETIRED_GENERATED } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
@@ -37,7 +37,7 @@ const KEEPS = nonEmpty([
   ['flour', 'flour_basics'], ['whole wheat flour', 'flour_basics'], ['bread flour', 'flour_basics'], ['pastry flour', 'flour_basics'], ['enriched flour', 'flour_basics'],
   ['sandwich bread', 'sandwich_bread'], ['whole wheat bread', 'sandwich_bread'],
   ['cereal', 'breakfast_cereal'], ['granola', 'breakfast_cereal'], ['whole grain cereal', 'breakfast_cereal'],
-  ['sourdough', 'sourdough'], ['bagels', 'bagels'], ['tortillas', 'tortillas'], ['pretzel bread', 'pretzel_bread'], ['oats', 'oats_steelcut_rolled_instant'],
+  ['sourdough', 'sourdough'], ['bagels', 'bagels'], ['tortillas', 'tortillas'], ['pretzel bread', null], ['oats', 'oats_steelcut_rolled_instant'],
   ['meat case', 'meat_case'], ['seafood counter', 'seafood_counter'], ['seafood', 'seafood_counter'],
 ], 'K18 keep rows', 18);
 const NOT_NEW = nonEmpty([
@@ -46,7 +46,7 @@ const NOT_NEW = nonEmpty([
   'malted milk', 'wheat germ', 'gluten free pasta', 'stone ground mustard', 'danish butter cookies', 'cake flour', 'rice',
 ], 'K18 not-new rows', 23);
 const FORBIDDEN = ['bread', 'breads', 'flour', 'flours', 'grain', 'grains', 'cereal', 'oats', 'rolls', 'roll', 'muffin', 'muffins', 'buns', 'bun', 'pastry', 'gluten', 'gluten free', 'gluten-free', 'wheat', 'white', 'whole', 'whole grain', 'whole wheat', 'granola', 'sprouted', 'stoneground', 'stone ground', 'enriched', 'multigrain', 'danish', 'almond', 'spelt'];
-const OWNERS = nonEmpty(['sandwich_bread', 'sourdough', 'pretzel_bread', 'bagels', 'tortillas', 'breakfast_cereal', 'pasta_dry', 'oats_steelcut_rolled_instant', 'rice_arsenic', 'grains_beyond_rice', 'flour_basics'], 'K9 grain ask owners', 11);
+const OWNERS = nonEmpty(['sandwich_bread', 'sourdough', 'bagels', 'tortillas', 'breakfast_cereal', 'pasta_dry', 'oats_steelcut_rolled_instant', 'rice_arsenic', 'grains_beyond_rice', 'flour_basics'], 'K9 grain ask owners', 10);
 const FOLD = { slug: 'gen_choosing_a_real_cereal', card: 'breakfast_cereal', keep: 'gen_live_fermented_foods' };
 const FOLD_ASKS = nonEmpty(['what cereal'], 'fold asks', 1);
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
@@ -135,4 +135,11 @@ for (const q of FOLD_ASKS) test(`C12 fold ask "${q}" is served by ${FOLD.card}`,
   const t = top(q);
   assert.equal(t.id, FOLD.card);
   assert.ok(t.aliasScore > 0, `aliasScore ${t.aliasScore}`);
+});
+
+test('K18: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
 });

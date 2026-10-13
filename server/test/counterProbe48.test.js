@@ -21,7 +21,7 @@ const QUERIES = nonEmpty([
   ['bacon', 'bacon'],
   ['bread', 'sandwich_bread'],
   ['sourdough', 'sourdough'],
-  ['pretzel bread', 'pretzel_bread'],
+  ['pretzel bread', 'miss'], // chf-5: pretzel_bread retired, no absorber; honest miss.
   ['whole wheat bread', 'sandwich_bread'],
   ['bagels', 'bagels'],
   ['tortillas', 'tortillas'],

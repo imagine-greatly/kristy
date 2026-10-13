@@ -1507,9 +1507,7 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
 // Plan: docs/plans/card-health-first-plan.md ("One fact, one owner", Piece 1). Not wired into
 // `lintCard`; the corpus test holds curated cards to it, with the cards that fail today
 // listed below until later pieces empty the list.
-export const HEALTH_FIRST_PENDING = new Set([
-  'duck_meat', 'dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder',
-]);
+export const HEALTH_FIRST_PENDING = new Set([]);
 
 // Word-bounded, so `tender` never matches `tenderized` (a safety fact, not a cook's aim).
 export const CULINARY_LEXICON =
@@ -1551,14 +1549,14 @@ export const OWNED_FACTS = [
     ['lamb_goat', 'bison', 'venison_game', 'goat_sheep_dairy'], /grass[- ]?(fed|finished)/i),
   ownedFact('solution_added', 'pork_cuts_and_enhanced',
     ['ground_beef_lean_ratio', 'beef_cuts_basics', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking',
-      'judging_meat_at_the_case', 'lamb_goat', 'bison', 'venison_game', 'dry_brine'], /solution|enhanced/i),
+      'judging_meat_at_the_case', 'lamb_goat', 'bison', 'venison_game'], /solution|enhanced/i),
   ownedFact('mech_tenderized', 'beef_cuts_basics',
     ['ground_beef_lean_ratio', 'beef_grades_usda', 'meat_case', 'butcher_counter_asking', 'judging_meat_at_the_case'],
     /mechanically tenderi[sz]ed|blade[- ]tenderi[sz]ed/i),
   ownedFact('bird_pig_raising', 'label_pasture_raised_feed',
-    ['chicken_cuts_basics', 'air_chilled_chicken', 'duck_meat', 'pork_cuts_and_enhanced'], /pasture[- ]raised|free[- ]range/i),
+    ['chicken_cuts_basics', 'air_chilled_chicken', 'pork_cuts_and_enhanced'], /pasture[- ]raised|free[- ]range/i),
   ownedFact('chill_water', 'air_chilled_chicken',
-    ['chicken_cuts_basics', 'duck_meat'], /air[- ]chill|water[- ]chill|retained water/i),
+    ['chicken_cuts_basics'], /air[- ]chill|water[- ]chill|retained water/i),
   ownedFact('hen_raising', 'egg_labels', ['egg_grades_sizes'], /pasture[- ]raised|free[- ]range|cage[- ]free/i),
   ownedFact('wild_farmed', 'salmon_wild_vs_farmed',
     ['shrimp_imported_vs_domestic', 'white_fish', 'canned_fish_choosing'], /wild[- ]caught|farm[- ]raised|\bfarmed\b/i),

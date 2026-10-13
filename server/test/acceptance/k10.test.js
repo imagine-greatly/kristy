@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
@@ -16,9 +16,9 @@ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-line
 
 const SLICE = nonEmpty([
   'rice_arsenic', 'oats_steelcut_rolled_instant', 'nuts_raw_vs_roasted', 'honey_adulteration', 'beans_dried_vs_canned',
-  'bean_soak_salt', 'flour_basics', 'bulk_bins_buying', 'whole_spices', 'rancidity_check', 'olive_oil_grades',
+  'flour_basics', 'bulk_bins_buying', 'whole_spices', 'rancidity_check', 'olive_oil_grades',
   'nut_butter_ingredients', 'grains_beyond_rice', 'bottled_water_buying', 'coffee_beans',
-], 'the K10 slice', 15);
+], 'the K10 slice', 14);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -32,3 +32,10 @@ for (const id of SLICE) {
     assertPassRule(t, old, now);
   });
 }
+
+test('K10: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
+});

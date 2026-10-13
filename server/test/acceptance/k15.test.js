@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard, lintPick } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable, RETIRED_GENERATED } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
@@ -18,7 +18,7 @@ const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const rowMatch = (row) => idOf(matchItemToCard(row)) ?? idOf(matchItemToPick(row));
 const top = (q) => { const r = scoreEntries(q, 3)[0]; return { id: r?.entry?.id ?? r?.id, score: r?.score ?? 0, aliasScore: r?.aliasScore ?? 0 }; };
 
-const CARDS = nonEmpty(['ham', 'turkey_bacon', 'cured_pork', 'lamb_goat', 'organ_meats', 'bison', 'venison_game', 'duck_meat', 'meat_case'], 'K15 cards', 9);
+const CARDS = nonEmpty(['ham', 'turkey_bacon', 'cured_pork', 'lamb_goat', 'organ_meats', 'bison', 'venison_game', 'meat_case'], 'K15 cards', 8);
 const PICKS = nonEmpty(['pick_jerky', 'pick_soup_bones'], 'K15 picks', 2);
 const NEW = [...CARDS, ...PICKS];
 const LAMB = nonEmpty(['lamb', 'lamb chop', 'lamb chops', 'leg of lamb', 'legs of lamb', 'ground lamb', 'lamb shoulder', 'lamb shoulders', 'rack of lamb', 'racks of lamb'], 'pick_lamb aliases', 10);
@@ -30,7 +30,7 @@ const BARE = nonEmpty(Object.entries({
   'beef liver': 'organ_meats', 'chicken livers': 'organ_meats', 'beef heart': 'organ_meats', 'sweetbreads': 'organ_meats', 'organ meat': 'organ_meats',
   'bison': 'bison', 'ground bison': 'bison',
   'venison': 'venison_game', 'ground venison': 'venison_game', 'elk': 'venison_game',
-  'duck breast': 'duck_meat', 'whole duck': 'duck_meat', 'duck legs': 'duck_meat',
+  'duck breast': null, 'whole duck': null, 'duck legs': 'chicken_cuts_basics', // chf-5: duck legs folded; breast/whole vetoed by type (honest miss)
   'jerky': 'pick_jerky', 'beef jerky': 'pick_jerky', 'turkey jerky': 'pick_jerky',
   'soup bones': 'pick_soup_bones', 'marrow bones': 'pick_soup_bones', 'beef bones': 'pick_soup_bones',
 }), 'K15 bare rows', 30);
@@ -54,7 +54,7 @@ const NOT_NEW = nonEmpty([
   'soup', 'chicken soup', 'fish sauce', 'chocolate chips', "lamb's lettuce",
 ], 'K15 not-new rows', 40);
 const FORBIDDEN = ['meat', 'duck', 'goat', 'liver', 'livers', 'heart', 'hearts', 'kidney', 'tongue', 'buffalo', 'game', 'bone', 'bones', 'beef', 'pork', 'chicken', 'turkey', 'bacon', 'sausage', 'deli'];
-const OWNERS = nonEmpty(['judging_meat_at_the_case', 'butcher_counter_asking', 'pork_cuts_and_enhanced', 'dry_brine', 'beef_cuts_basics', 'deli_meat_uncured', 'bacon'], 'meat ask owners', 7);
+const OWNERS = nonEmpty(['judging_meat_at_the_case', 'butcher_counter_asking', 'pork_cuts_and_enhanced', 'beef_cuts_basics', 'deli_meat_uncured', 'bacon'], 'meat ask owners', 6);
 
 for (const [row, id] of BARE) test(`C1 "${row}" matches ${id}`, () => assert.equal(rowMatch(row), id));
 
@@ -138,4 +138,11 @@ for (const [q, id] of [['is guanciale worth buying', 'cured_pork'], ['how do i j
 
 test('C10 both meat generated rows are retired', () => {
   for (const s of ['gen_goat_meat_quality', 'gen_guanciale_worth_buying']) assert.ok(RETIRED_GENERATED.includes(s), s);
+});
+
+test('K15: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
 });

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
@@ -51,7 +51,7 @@ const NOT_NEW = nonEmpty([
 ], 'K21 not-new rows', 19);
 const FORBIDDEN = ['oil', 'seeds', 'herbs', 'fat', 'sweetener', 'sweeteners', 'coconut', 'yeast', 'chocolate', 'stock', 'hydrogenated', 'shortening', 'syrup', 'spices', 'spice', 'seasoning', 'organic', 'olive oil', 'coconut milk', 'coconut oil', 'hydrogenated lard'];
 const STATE_OK = { dried_fruit: 'dried', dried_herbs: 'dried', canned_coconut_milk: 'canned' };
-const OWNERS = nonEmpty(['olive_oil_grades', 'label_cold_pressed_expeller', 'rancidity_check', 'label_sugar_free_substitutes', 'honey_adulteration', 'whole_spices', 'coconut_milk_beverage', 'bean_soak_salt', 'dry_brine', 'kombucha', 'coffee_beans'], 'pantry ask owners', 11);
+const OWNERS = nonEmpty(['olive_oil_grades', 'label_cold_pressed_expeller', 'rancidity_check', 'label_sugar_free_substitutes', 'honey_adulteration', 'whole_spices', 'coconut_milk_beverage', 'kombucha', 'coffee_beans'], 'pantry ask owners', 9);
 const BANNED = ['wholefoodearth', 'cfr/text/21/173.255'];
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
 const prose = (e) => JSON.stringify(PROSE.map((k) => e[k] ?? ''));
@@ -129,4 +129,11 @@ for (const id of NEW) test(`C10 ${id}: no health, price or brand wording`, () =>
 
 test('C12 no doctor line in K21', () => {
   for (const id of NEW) assert.ok(!/\bdoctor\b/i.test(prose(byId(id))), `${id} has a doctor line`);
+});
+
+test('K21: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
 });

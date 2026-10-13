@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
@@ -39,7 +39,7 @@ const BARE = nonEmpty(Object.entries({
 const KEEPS = nonEmpty([
   ['lunch meat', 'deli_meat_uncured'], ['deli meat', 'deli_meat_uncured'], ['cold cuts', 'deli_meat_uncured'], ['deli counter', 'deli_meat_uncured'], ['deli turkey', 'deli_meat_uncured'],
   ['rotisserie chicken', 'rotisserie_chicken'], ['deli chicken', 'rotisserie_chicken'], ['bagged salad', 'precut_produce_tradeoffs'], ['salad greens', 'produce_leafy_greens'], ['deli ham', 'ham'],
-  ['granola', 'breakfast_cereal'], ['pasta', 'pasta_dry'], ['pasta sauce', 'pasta_sauce'], ['tortillas', 'tortillas'], ['pretzel bread', 'pretzel_bread'],
+  ['granola', 'breakfast_cereal'], ['pasta', 'pasta_dry'], ['pasta sauce', 'pasta_sauce'], ['tortillas', 'tortillas'], ['pretzel bread', null],
   ['nuts', 'nuts_raw_vs_roasted'], ['mixed nuts', 'nuts_raw_vs_roasted'], ['seaweed snacks', 'seaweed'], ['dried fruit', 'dried_fruit'], ['mayo', 'mayo'], ['condiments', 'condiments'], ['salsa', 'salsa'],
 ], 'K23 keep rows', 22);
 const NOT_NEW = nonEmpty([
@@ -48,7 +48,7 @@ const NOT_NEW = nonEmpty([
 ], 'K23 not-new rows', 25);
 const FORBIDDEN = ['chips', 'chip', 'snacks', 'snack', 'bar', 'bars', 'salad', 'salads', 'deli', 'pasta', 'meals', 'meal', 'mix', 'dip', 'crisps', 'corn', 'nuts', 'granola', 'pretzel', 'cracker', 'soda', 'water', 'chicken', 'potato', 'potatoes', 'egg', 'eggs', 'macaroni', 'lunch meat', 'deli meat', 'cold cuts', 'rotisserie chicken', 'cookies', 'candy', 'protein bar', 'prepared', 'kettle', 'kernels', 'organic'];
 const STATE_OK = { fresh_pasta: 'fresh' };
-const OWNERS = nonEmpty(['deli_meat_uncured', 'rotisserie_chicken', 'nuts_raw_vs_roasted', 'breakfast_cereal', 'pasta_dry', 'pasta_sauce', 'tortillas', 'pretzel_bread', 'seaweed', 'precut_produce_tradeoffs', 'mayo', 'condiments'], 'snack-and-deli ask owners', 12);
+const OWNERS = nonEmpty(['deli_meat_uncured', 'rotisserie_chicken', 'nuts_raw_vs_roasted', 'breakfast_cereal', 'pasta_dry', 'pasta_sauce', 'tortillas', 'seaweed', 'precut_produce_tradeoffs', 'mayo', 'condiments'], 'snack-and-deli ask owners', 11);
 const BANNED = ['openknowledge.fao.org', '146540839/recall-reveals', 'cidrap.umn.edu', '995610/why-you-should-start-buying-deli-meat', '1875323/costco', '1576719/why-costco', 'howstuffworks.com', 'cspi.org/news/litigation', 'foodprocessing.com'];
 const LUNCH_HOMES = ['deli', 'snacks', 'deli_salads', 'prepared_meals'];
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
@@ -140,4 +140,11 @@ test('C16 deli and snack boundaries: no pathogen, sodium or seed-oil wording, no
   assert.doesNotMatch(prose(byId('deli')), /\b(nitrites?|nitrates?|cured|curing|uncured)\b/i);
   for (const row of ['lunch meat', 'deli meat', 'cold cuts', 'deli turkey', 'deli ham']) assert.ok(!LUNCH_HOMES.includes(rowMatch(row)), `${row} -> ${rowMatch(row)}`);
   for (const q of ['which lunch meat should i buy', 'is lunch meat worth buying']) assert.ok(!LUNCH_HOMES.includes(top(q).id), `${q} -> ${top(q).id}`);
+});
+
+test('K23: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
 });

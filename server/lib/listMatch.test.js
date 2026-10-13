@@ -394,7 +394,8 @@ test('"dry" is a state except in the technique compounds, and the trade is recor
     assert.equal(stateContradicts(q, ripeness), false, q);
     assert.equal(matchItemToCard(q)?.section, 'produce', q);
   }
-  assert.equal(cardStates(entryById('dry_brine')).size, 0, 'brining is a technique, not a state');
+  // chf-5 retired dry_brine; the technique card that pinned this is gone from the KB.
+  assert.ok(!perimeterKb.entries.some((e) => e.id === 'dry_brine'), 'dry_brine retired (chf-5)');
   // Dropping the word outright was tried and measured: these are shelf-stable dried goods
   // and they attached to FRESH produce cards — a squeeze-or-pick instruction for a bag of
   // dried fruit, the direction the guard exists to prevent. They must stay off produce.

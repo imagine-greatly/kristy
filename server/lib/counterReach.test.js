@@ -175,3 +175,35 @@ test('the reversal is scoped to strawberries and leaves the other berries alone'
     assert.equal(boundary(q), 'berries_picking', `"${q}" is not in the strawberry ruling's scope`);
   }
 });
+
+test('chf-5 folds: every retired asked_as lands where measured (null = gate admits nothing)', () => {
+  // All 15 asked_as of the 5 retired cards, from the KB before the fold. A landing is a card
+  // for the same food subject; the subject card answering a cooking ask is corpus-wide
+  // behaviour (no cooking veto on the ask door), not a chf-5 steal.
+  const asks = [
+    ['when should i salt a steak', 'beef_cuts_basics'],
+    ['is a brine worth it', null],
+    ['should i salt meat ahead', null],
+    ['do salted beans go tough', 'beans_dried_vs_canned'],
+    ['should i salt the bean soak', 'beans_dried_vs_canned'],
+    ['does salt make beans hard', 'beans_dried_vs_canned'],
+    ['how do you choose pretzel bread', null],
+    ['what does lye dipped mean on pretzel rolls', null],
+    ['what gives pretzel bread its brown crust', null],
+    ['which baking powder should i buy', null],
+    ['is bicarbonate of soda worth buying', null],
+    ['how do i pick a baking powder', null],
+    ['how do you choose duck breast', null],
+    ['how long does a whole duck keep', null],
+    ['how do you buy duck legs', 'chicken_cuts_basics'],
+  ];
+  for (const [q, want] of nonEmpty(asks, 'chf-5 retired asks', 15)) {
+    assert.equal(inScope(q).ok, true, `"${q}" refused by the scope gate`);
+    const top = scoreEntries(q, 3)[0];
+    assert.equal(admits(top) ? top.entry.id : null, want, `"${q}" -> ${admits(top) ? top.entry.id : 'miss'}`);
+  }
+  // The can still answers its own row.
+  const can = scoreEntries('canned coconut milk', 3)[0];
+  assert.ok(admits(can), '"canned coconut milk" not admitted');
+  assert.equal(can.entry.id, 'canned_coconut_milk');
+});

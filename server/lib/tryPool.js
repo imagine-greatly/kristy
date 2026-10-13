@@ -20,7 +20,6 @@ export const TRY_POOL = Object.freeze([
   'honey_adulteration',
   'nuts_raw_vs_roasted',
   'sourdough',
-  'pretzel_bread',
   'tortillas',
 ]);
 

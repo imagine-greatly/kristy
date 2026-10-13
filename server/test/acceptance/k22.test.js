@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
@@ -19,7 +19,7 @@ const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const rowMatch = (row) => idOf(matchItemToCard(row)) ?? idOf(matchItemToPick(row));
 const top = (q) => { const r = scoreEntries(q, 3)[0]; return { id: r?.entry?.id ?? r?.id, score: r?.score ?? 0, aliasScore: r?.aliasScore ?? 0 }; };
 
-const CARDS = nonEmpty(['vinegar', 'pasta_sauce', 'jam', 'ketchup_mustard', 'mayo', 'hot_soy_sauce', 'canned_soup', 'olives', 'seaweed', 'baking_soda_powder', 'salsa', 'coconut_water', 'condiments'], 'K22 cards', 13);
+const CARDS = nonEmpty(['vinegar', 'pasta_sauce', 'jam', 'ketchup_mustard', 'mayo', 'hot_soy_sauce', 'canned_soup', 'olives', 'seaweed', 'salsa', 'coconut_water', 'condiments'], 'K22 cards', 12);
 const NEW = CARDS;
 const BARE = nonEmpty(Object.entries({
   'white vinegar': 'vinegar', 'distilled vinegar': 'vinegar', 'red wine vinegar': 'vinegar', 'white wine vinegar': 'vinegar', 'balsamic vinegar': 'vinegar', 'rice vinegar': 'vinegar', 'malt vinegar': 'vinegar',
@@ -31,11 +31,10 @@ const BARE = nonEmpty(Object.entries({
   'canned soup': 'canned_soup', 'soup can': 'canned_soup', 'can of soup': 'canned_soup', 'low sodium soup': 'canned_soup', 'condensed soup': 'canned_soup',
   'olives': 'olives', 'green olives': 'olives', 'black olives': 'olives', 'kalamata olives': 'olives', 'castelvetrano olives': 'olives', 'olives in brine': 'olives', 'brine cured olives': 'olives', 'oil cured olives': 'olives',
   'seaweed': 'seaweed', 'nori': 'seaweed', 'nori sheets': 'seaweed', 'kombu': 'seaweed', 'kelp': 'seaweed', 'wakame': 'seaweed', 'dried seaweed': 'seaweed', 'seaweed snacks': 'seaweed', 'sea vegetables': 'seaweed',
-  'baking powder': 'baking_soda_powder', 'double acting baking powder': 'baking_soda_powder', 'aluminum free baking powder': 'baking_soda_powder', 'bicarbonate of soda': 'baking_soda_powder', 'sodium bicarbonate': 'baking_soda_powder',
   'salsa': 'salsa', 'jarred salsa': 'salsa', 'chunky salsa': 'salsa', 'salsa jar': 'salsa', 'mild salsa': 'salsa', 'pico de gallo': 'salsa',
   'coconut water': 'coconut_water', 'pure coconut water': 'coconut_water', 'young coconut water': 'coconut_water',
   'condiments': 'condiments', 'condiment': 'condiments',
-}), 'K22 bare rows', 77);
+}), 'K22 bare rows', 72);
 const KEEPS = nonEmpty([
   ['olive oil', 'olive_oil_grades'], ['extra virgin olive oil', 'olive_oil_grades'], ['apple cider vinegar', null],
   ['carton coconut milk', 'coconut_milk_beverage'], ['coconut milk beverage', 'coconut_milk_beverage'], ['canned coconut milk', 'canned_coconut_milk'],
@@ -130,11 +129,24 @@ test('C12 no doctor line in K22', () => {
   for (const id of NEW) assert.ok(!/\bdoctor\b/i.test(prose(byId(id))), `${id} has a doctor line`);
 });
 
-test('C16 food only: no household use on vinegar or baking_soda_powder, no seed oil named on mayo', () => {
-  for (const id of ['vinegar', 'baking_soda_powder']) {
+test('C16 food only: no household use on vinegar, no seed oil named on mayo', () => {
+  for (const id of ['vinegar']) {
     assert.ok(byId(id), `${id} missing`);
     assert.doesNotMatch(prose(byId(id)), /\b(clean\w*|deodor\w*|odou?rs?|laundry|scrub\w*|unclog\w*|household|weeds?|disinfect\w*)\b/i, id);
   }
   assert.ok(byId('mayo'), 'mayo missing');
   assert.doesNotMatch(prose(byId('mayo')), /\b(canola|soybean|sunflower|safflower|corn|grapeseed|cottonseed|rice bran|vegetable|seed oils?)\b/i);
+});
+
+// chf-5: baking_soda_powder retired with no absorber; its aliases are honest misses now.
+for (const row of ['baking powder', 'double acting baking powder', 'aluminum free baking powder', 'bicarbonate of soda', 'sodium bicarbonate']) {
+  test(`C1b "${row}" is an honest miss after the chf-5 fold`, () => assert.equal(rowMatch(row), null));
+}
+
+
+test('K22: chf-5 retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
 });
