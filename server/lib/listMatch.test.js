@@ -313,7 +313,7 @@ test('a preparation state the card contradicts suppresses the attachment', () =>
   // a different STATE of the same food, which no score can express.
   assert.equal(matchItemToCard('Frozen broccoli or green beans'), null);
   assert.equal(stateContradicts('Frozen broccoli or green beans', entryById('beans_dried_vs_canned')), true);
-  assert.equal(stateContradicts('Canned skipjack tuna', entryById('fish_freshness_at_counter')), true);
+  assert.equal(stateContradicts('Canned skipjack tuna', entryById('seafood_counter')), true);
 });
 
 test('the state guard is silent unless BOTH sides name a state', () => {

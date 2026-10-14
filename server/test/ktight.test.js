@@ -9,7 +9,7 @@ import { questionEntries } from '../lib/perimeter.js';
 import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
 
 const BATCHES = {
-  B01: ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish', 'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications'],
+  B01: ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications'],
   B02: ['canned_tuna', 'white_fish', 'crab', 'lobster', 'scallops', 'clams_mussels_oysters', 'smoked_salmon', 'seafood_counter'],
   B03: ['beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
   B04: ['rotisserie_chicken', 'chicken_cuts_basics', 'turkey_whole', 'ground_turkey', 'chicken_breast', 'egg_labels', 'egg_duck_quail'],
@@ -29,15 +29,15 @@ const BATCHES = {
   B18: ['frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_waffles', 'frozen_nuggets', 'frozen'],
 };
 // The spec's n column: a batch that drifts from its row is a ledger defect.
-const SIZES = { B01: 8, B02: 8, B03: 11, B04: 7, B05: 11, B06: 10, B07: 12, B08: 12, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
+const SIZES = { B01: 6, B02: 8, B03: 11, B04: 7, B05: 11, B06: 10, B07: 12, B08: 12, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
 
 const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
 
 const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 187);
+const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 185);
 const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
 const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
-const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 186);
+const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 184);
 const doneIds = DONE.flatMap((b) => BATCHES[b] || []);
 const openIds = Object.entries(BATCHES).filter(([b]) => !DONE.includes(b)).flatMap(([, ids]) => ids);
 const withFields = kb.entries.filter((e) => has(e, 'pick_steps') || has(e, 'science'));

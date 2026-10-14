@@ -40,7 +40,7 @@ const NOT_NEW = nonEmpty([
 ], 'K24 not-new rows', 20);
 const FORBIDDEN = ['pizza', 'fries', 'waffles', 'waffle', 'nuggets', 'nugget', 'meals', 'meal', 'dinner', 'dinners', 'frozen', 'chicken', 'potato', 'potatoes', 'breaded', 'tenders', 'entrees', 'foods', 'aisle', 'freezer', 'french fries', 'hash browns', 'organic'];
 const STATE_OK = { frozen_pizza: 'frozen', frozen_meals: 'frozen', frozen_fries: 'frozen', frozen_waffles: 'frozen', frozen_nuggets: 'frozen', frozen: 'frozen' };
-const OWNERS = nonEmpty(['ice_cream', 'frozen_vs_fresh_produce', 'fresh_vs_previously_frozen_fish', 'white_fish', 'prepared_meals', 'rotisserie_chicken', 'chicken_cuts_basics', 'breakfast_cereal', 'snacks', 'deli'], 'frozen-aisle ask owners', 10);
+const OWNERS = nonEmpty(['ice_cream', 'frozen_vs_fresh_produce', 'seafood_counter', 'white_fish', 'prepared_meals', 'rotisserie_chicken', 'chicken_cuts_basics', 'breakfast_cereal', 'snacks', 'deli'], 'frozen-aisle ask owners', 10);
 const FISH_HOMES = ['frozen_nuggets', 'frozen'];
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
 const prose = (e) => JSON.stringify(PROSE.map((k) => e[k] ?? ''));

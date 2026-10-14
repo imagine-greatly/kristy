@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
@@ -16,9 +16,9 @@ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-line
 
 const SLICE = nonEmpty([
   'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_citrus', 'produce_stone_fruit',
-  'salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish',
-  'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'canned_tuna',
-], 'the K6 slice', 14);
+  'salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish',
+  'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'canned_tuna',
+], 'the K6 slice', 12);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -32,3 +32,10 @@ for (const id of SLICE) {
     assertPassRule(t, old, now);
   });
 }
+
+test('K6: IC-6a retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['fresh_vs_previously_frozen_fish', 'fish_freshness_at_counter']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
+});

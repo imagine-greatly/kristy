@@ -139,9 +139,10 @@ const NON_AISLE_SECTIONS = new Set(['label_terms']);
    a bare noun buried further along.
 
      "Canned skipjack tuna"           -> fish_freshness_at_counter, on the alias "tuna"
+     (until IC-6a, 2026-10-14, the retired fish_freshness_at_counter carried a bare "tuna" alias; the fold did not move it)
      "Frozen broccoli or green beans" -> beans_dried_vs_canned,     on the alias "beans"
 
-   Both scored legitimately. `fish_freshness_at_counter` really does carry the bare alias
+   Both scored legitimately. `fish_freshness_at_counter` really did carry the bare alias
    "tuna", `beans_dried_vs_canned` really does carry "beans", and both cleared the alias
    floor honestly. The floor was never the problem — the card was about a DIFFERENT STATE
    of the same food, and nothing in the score can express that. Telling someone to check

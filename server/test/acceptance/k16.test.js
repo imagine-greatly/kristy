@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
@@ -12,6 +13,10 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+// IC-6a: the folded-in seafood sources predate the k16 archive (nofima), so C5 exempts them by value.
+const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const FOLDED_ALIASES = new Set(['fresh_vs_previously_frozen_fish','fish_freshness_at_counter'].flatMap((id) => PRE.entries.find((e) => e.id === id)?.aliases ?? []));
+const FOLDED_IN = new Set(['fresh_vs_previously_frozen_fish','fish_freshness_at_counter'].flatMap((id) => (PRE.entries.find((e) => e.id === id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))));
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
 const byId = (id) => kb.entries.find((e) => e.id === id);
 const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
@@ -35,8 +40,8 @@ const BARE = nonEmpty(Object.entries({
 }), 'K16 bare rows', 40);
 const KEEPS = nonEmpty([
   ['salmon', 'salmon_wild_vs_farmed'], ['atlantic salmon', 'salmon_wild_vs_farmed'], ['shrimp', 'shrimp_imported_vs_domestic'],
-  ['fresh fish', 'fresh_vs_previously_frozen_fish'], ['frozen fish', 'fresh_vs_previously_frozen_fish'], ['frozen fish fillets', 'white_fish'],
-  ['fish counter', 'fresh_vs_previously_frozen_fish'], ['farmed tilapia', 'farmed_fish_by_species'],
+  ['fresh fish', 'seafood_counter'], ['frozen fish', 'seafood_counter'], ['frozen fish fillets', 'white_fish'],
+  ['fish counter', 'seafood_counter'], ['farmed tilapia', 'farmed_fish_by_species'],
   // K3-1 (Devon-approved list-word plan) moves the bare shellfish rows to their own card.
   ['mussels', 'clams_mussels_oysters'], ['oysters', 'clams_mussels_oysters'], ['clams', 'clams_mussels_oysters'],
   ['canned anchovies', 'canned_fish_choosing'], ['sardines', 'canned_fish_choosing'], ['canned tuna', 'canned_tuna'],
@@ -55,7 +60,7 @@ const FORBIDDEN = ['seafood', 'fish', 'shellfish', 'shell', 'live', 'smoked', 's
 const K3_1_ALIASES = { clams_mussels_oysters: ['clams', 'mussels', 'oysters', 'fresh clams', 'fresh mussels', 'fresh oysters'] };
 const k31 = (id, a) => (K3_1_ALIASES[id] ?? []).includes(a);
 const K3_1_ASKS = ['which seafood should i buy', 'which fish should i buy', 'which shellfish should i buy'];
-const OWNERS = nonEmpty(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish', 'mercury_by_fish', 'fish_freshness_at_counter', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'label_wild_vs_farm_raised', 'canned_tuna'], 'seafood ask owners', 10);
+const OWNERS = nonEmpty(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications', 'label_wild_vs_farm_raised', 'canned_tuna'], 'seafood ask owners', 8);
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
 
 for (const [row, id] of BARE) test(`C1 "${row}" matches ${id}`, () => assert.equal(rowMatch(row), id));
@@ -71,9 +76,11 @@ for (const row of NOT_NEW) test(`C3b "${row}" lands on no K16 id`, () => {
   assert.ok(!NEW.includes(got), `${row} -> ${got}`);
 });
 
-test('C4 broad card: seafood_counter owns exactly one short alias, "seafood counter"', () => {
+test('C4 broad card: seafood_counter short aliases are "seafood counter" plus the IC-6a folded ones', () => {
   const al = nonEmpty(byId('seafood_counter')?.aliases ?? [], 'seafood_counter aliases', 4);
-  assert.deepEqual(al.filter((a) => a.trim().split(/\s+/).length <= 2), ['seafood counter']);
+  const FOLD_SHORT = ['fresh_vs_previously_frozen_fish', 'fish_freshness_at_counter'].flatMap((id) => PRE.entries.find((e) => e.id === id)?.aliases ?? [])
+    .filter((a) => a.trim().split(/\s+/).length <= 2 && !['salmon', 'fresh salmon', 'tuna'].includes(a));
+  assert.deepEqual(al.filter((a) => a.trim().split(/\s+/).length <= 2).sort(), [...new Set(['seafood counter', ...FOLD_SHORT])].sort());
 });
 
 test('C4 steal sweep: no pre-existing alias, run as a list row, lands on a K16 id', () => {
@@ -92,7 +99,7 @@ test('C5 every cited URL hits line 1 of a docs/sources/k16 file', () => {
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k16 archive', 30);
   for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
   const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K16 URLs', 16);
-  for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k16 source`);
+  for (const u of urls) { if (FOLDED_IN.has(u)) continue; assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k16 source`); }
 });
 
 for (const id of CARDS) test(`C6 ${id}: readable and lint-clean`, () => {
@@ -117,7 +124,7 @@ test('C9 one entry per id, no forbidden or state alias, no forbidden bare-noun a
     const e = byId(id);
     for (const a of e.aliases) {
       assert.ok(!FORBIDDEN.includes(a) || k31(id, a), `${id} alias ${a}`);
-      assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a) || k31(id, a), `${id} state alias ${a}`);
+      assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a) || k31(id, a) || (id === 'seafood_counter' && FOLDED_ALIASES.has(a)), `${id} state alias ${a}`);
     }
     for (const q of e.asked_as ?? []) {
       if (id === 'seafood_counter' && K3_1_ASKS.includes(q)) continue;

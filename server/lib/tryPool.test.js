@@ -36,7 +36,7 @@ test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) au
   assert.deepEqual(POOL, [
     'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
     'pork_cuts_and_enhanced', 'chicken_cuts_basics', 'salmon_wild_vs_farmed',
-    'shrimp_imported_vs_domestic', 'fresh_vs_previously_frozen_fish',
+    'shrimp_imported_vs_domestic', 'seafood_counter',
     'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_live_cultures',
     'grains_beyond_rice', 'beans_dried_vs_canned', 'bulk_bins_buying',
     'oats_steelcut_rolled_instant', 'honey_adulteration', 'nuts_raw_vs_roasted',

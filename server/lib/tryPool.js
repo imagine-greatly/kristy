@@ -9,7 +9,7 @@ export const TRY_POOL = Object.freeze([
   'chicken_cuts_basics',
   'salmon_wild_vs_farmed',
   'shrimp_imported_vs_domestic',
-  'fresh_vs_previously_frozen_fish',
+  'seafood_counter',
   'canned_fish_choosing',
   'farmed_fish_by_species',
   'yogurt_live_cultures',

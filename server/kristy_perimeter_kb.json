@@ -136,62 +136,6 @@
       ]
     },
     {
-      "id": "fresh_vs_previously_frozen_fish",
-      "title": "‘Fresh’ vs. previously-frozen fish",
-      "aliases": [
-        "fresh fish",
-        "previously frozen",
-        "frozen fish",
-        "flash frozen",
-        "fish counter"
-      ],
-      "category": "seafood",
-      "question": "Is fresh fish better than frozen?",
-      "decision": "Fish frozen at sea is often fresher than what sits on ice.",
-      "why": "Most ‘fresh’ at the counter was frozen first. Flash-frozen at sea beats days in transit.",
-      "short_answer": "Not necessarily. Most fish at the counter labeled ‘fresh’ has been previously frozen and thawed. Fish flash-frozen at sea can be fresher than ‘fresh’ fish that’s spent days in transit. Frozen is often the smarter, cheaper buy.",
-      "detail": "Freezing at sea locks in quality within hours of the catch. ‘Fresh’ fish on ice may be several days from the water. Neither is a downgrade. But don’t pay a premium for ‘fresh’ assuming it’s better, and don’t re-freeze fish that was sold thawed.",
-      "evidence_tier": "established",
-      "sources": [
-        "NOAA Fisheries handling guidance",
-        "USDA/FDA seafood storage guidance",
-        "Alaska Longline Fishermen’s Association “Why Frozen?” https://www.alfafish.org/why-frozen (frozen rapidly to at least -10° F in a few hours of catch, often fresher than ‘fresh’ fish after days in transit)",
-        "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (frozen almost immediately after being caught, often right on the boat; rapid freezing locks in freshness, flavor and nutrients, and no large ice crystals form, so texture and integrity remain)"
-      ],
-      "kristy_take": "Frozen wild, without hesitation. Thaw it in the fridge overnight and nobody could tell.",
-      "cart_pick": "Frozen wild fish fillets",
-      "buying_tips": [
-        "Ask the counter ‘was this previously frozen?’ The answer is often yes.",
-        "Buy frozen and thaw at home for the best price and control.",
-        "Don’t re-freeze fish that was sold thawed."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Previously frozen",
-          "meaning": "Frozen then thawed for display — common and fine; just don’t re-freeze."
-        },
-        {
-          "term": "Fresh (never frozen)",
-          "meaning": "Never frozen — but possibly several days old depending on transit."
-        }
-      ],
-      "tier_note": "How much of the fresh case was frozen first is a matter of record, not a suspicion.",
-      "watch_out": [
-        "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter.",
-        "Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it."
-      ],
-      "pick_steps": [
-        "Ask the counter whether it was previously frozen; often it was.",
-        "Buy it frozen and thaw it at home for the most control."
-      ],
-      "science": "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter. Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage.",
-      "asked_as": [
-        "should i buy fresh or frozen fish",
-        "is frozen fish worse than fresh",
-        "was this fish previously frozen"
-      ]
-    },
-    {
       "id": "beef_grassfed_vs_grainfed",
       "title": "Beef",
       "aliases": [
@@ -2969,68 +2913,6 @@
         "which fish are low in mercury",
         "is tuna high in mercury",
         "what fish has the least mercury"
-      ]
-    },
-    {
-      "id": "fish_freshness_at_counter",
-      "title": "Telling fresh at the fish counter",
-      "aliases": [
-        "fresh fish",
-        "how to tell fish is fresh",
-        "fish smell",
-        "fish eyes",
-        "fish gills",
-        "is this fish fresh",
-        "gaping fillet",
-        "salmon",
-        "fresh salmon",
-        "tuna",
-        "is the fish fresh",
-        "tell if fish is fresh",
-        "fish is fresh",
-        "fish smell like"
-      ],
-      "category": "seafood",
-      "question": "How do I tell if fish at the counter is fresh?",
-      "decision": "Fresh fish smells of clean seawater, or of nothing at all.",
-      "why": "Sharp or ammonia means it has gone. Then check the eyes, the gills and the ice.",
-      "short_answer": "Smell first. Fresh fish smells like clean seawater or like almost nothing. Sharp fishy or ammonia means it has gone. Whole fish: clear domed eyes, bright red gills, flesh that springs back. Fillets: a translucent sheen, no pooled liquid.",
-      "detail": "The ‘fishy’ smell people associate with fish is the smell of it breaking down, which makes it the single best gauge in the case. Whole fish tell you more than fillets, because eyes, gills and skin all age visibly. On a fillet the tell is gaping: muscle segments separate as it ages and the flesh loses its sheen. Ice matters as much as the fish, so it should be sitting on plenty of it and not in a puddle. Asking them to hand you a piece to smell is completely normal, and any good counter will. On a whole fish the scales should be tight. On a fillet the flakes should still hold together, with no browning at the edges and no liquid pooled underneath.",
-      "evidence_tier": "established",
-      "sources": [
-        "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
-        "NOAA Fisheries seafood handling guidance",
-        "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)"
-      ],
-      "kristy_take": "Ask to smell it. Clean seawater or nothing means yes. Sharp and fishy means put it back.",
-      "buying_tips": [
-        "Smell it. Clean and briny is right. Sharp, fishy or ammonia is not.",
-        "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
-        "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
-        "It should sit on plenty of ice, not in a pool of its own liquid.",
-        "Ask when it came in and whether it was previously frozen. Both are fair questions."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Gaping",
-          "meaning": "Flakes separating on a fillet. A sign it has aged."
-        }
-      ],
-      "tier_note": "The smell it gives off and the ice it is bedded in are both documented freshness checks, not opinions about the fish.",
-      "watch_out": [
-        "If only one check is possible, make it the gills. Red means recently slaughtered; brown, gray or green means the fish is past fresh.",
-        "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage. A fish inside its date can still show gray, matte, sunken eyes."
-      ],
-      "pick_steps": [
-        "Smell it: clean and briny is right; sharp, fishy or ammonia is not.",
-        "Whole fish: red gills, clear domed eyes, tight scales, flesh that springs back.",
-        "Fillets: a translucent sheen, flakes holding together, no browning at the edge."
-      ],
-      "science": "The fishy smell is fish breaking down, the best gauge in the case. If only one check is possible, make it the gills: brown, gray or green means past fresh. It should sit on plenty of ice, not in its own liquid. A fish inside its date can still show gray, sunken eyes. Asking when it came in, or if it was previously frozen, is fair.",
-      "asked_as": [
-        "how do i tell if fish is fresh",
-        "is this fish fresh",
-        "what should fish smell like"
       ]
     },
     {
@@ -8307,7 +8189,22 @@
         "what seafood should i buy",
         "how do i choose seafood",
         "which fish should i buy",
-        "which shellfish should i buy"
+        "which shellfish should i buy",
+        "fresh fish",
+        "previously frozen",
+        "frozen fish",
+        "flash frozen",
+        "fish counter",
+        "how to tell fish is fresh",
+        "fish smell",
+        "fish eyes",
+        "fish gills",
+        "is this fish fresh",
+        "gaping fillet",
+        "is the fish fresh",
+        "tell if fish is fresh",
+        "fish is fresh",
+        "fish smell like"
       ],
       "category": "seafood",
       "question": "How do you choose seafood at the counter?",
@@ -8322,7 +8219,14 @@
         "https://hgic.clemson.edu/factsheet/safe-handling-of-seafood/",
         "https://www.fda.gov/food/seafood-guidance-documents-regulatory-information/fda-dna-testing-wholesale-level-evaluate-proper-labeling-seafood-species",
         "https://www.fisheries.noaa.gov/insight/noaas-seafood-inspection-program",
-        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish"
+        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
+        "NOAA Fisheries handling guidance",
+        "USDA/FDA seafood storage guidance",
+        "Alaska Longline Fishermen’s Association “Why Frozen?” https://www.alfafish.org/why-frozen (frozen rapidly to at least -10° F in a few hours of catch, often fresher than ‘fresh’ fish after days in transit)",
+        "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (frozen almost immediately after being caught, often right on the boat; rapid freezing locks in freshness, flavor and nutrients, and no large ice crystals form, so texture and integrity remain)",
+        "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
+        "NOAA Fisheries seafood handling guidance",
+        "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)"
       ],
       "kristy_take": "Species first, then where it came from. The ice and the smell confirm the rest.",
       "cart_pick": "A named species from a cold, iced case",
@@ -8330,10 +8234,22 @@
         "Ask the counter for the species name.",
         "Ask where it came from and whether it was farmed.",
         "Check that the fish sits on ice or in a refrigerated case.",
-        "Check that cooked seafood is kept apart from raw."
+        "Check that cooked seafood is kept apart from raw.",
+        "Ask the counter ‘was this previously frozen?’ The answer is often yes.",
+        "Buy frozen and thaw at home on your own schedule.",
+        "Don’t re-freeze fish that was sold thawed.",
+        "Smell it. Clean and briny is right. Sharp, fishy or ammonia is not.",
+        "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
+        "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
+        "It should sit on plenty of ice, not in a pool of its own liquid.",
+        "Ask when it came in and whether it was previously frozen. Both are fair questions."
       ],
       "watch_out": [
-        "Fishy, sour or ammonia odors mean the fish stays at the store."
+        "Fishy, sour or ammonia odors mean the fish stays at the store.",
+        "‘Fresh’ on the sign says nothing about when the fish was caught. Fish frozen at sea within hours can be fresher than fish that spent days in transit to the counter.",
+        "Flash-freezing halts the degradation that takes texture and flavor. A fillet sold thawed has already used that advantage, so cook it rather than refreezing it.",
+        "If only one check is possible, make it the gills. Red means recently slaughtered; brown, gray or green means the fish is past fresh.",
+        "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage. A fish inside its date can still show gray, matte, sunken eyes."
       ],
       "pick_steps": [
         "Pick fish displayed on ice or in a refrigerated case.",
@@ -8349,6 +8265,18 @@
         {
           "term": "Federal inspection mark",
           "meaning": "A NOAA mark that plants in its fee-for-service program may use."
+        },
+        {
+          "term": "Previously frozen",
+          "meaning": "Frozen then thawed for display — common and fine; just don’t re-freeze."
+        },
+        {
+          "term": "Fresh (never frozen)",
+          "meaning": "Never frozen — but possibly several days old depending on transit."
+        },
+        {
+          "term": "Gaping",
+          "meaning": "Flakes separating on a fillet. A sign it has aged."
         }
       ],
       "tier_note": "The counter checks come from FDA and extension seafood guidance.",
@@ -8357,7 +8285,13 @@
         "what seafood should i buy for dinner",
         "how do i choose seafood at the store",
         "which fish should i buy",
-        "which shellfish should i buy"
+        "which shellfish should i buy",
+        "should i buy fresh or frozen fish",
+        "is frozen fish worse than fresh",
+        "was this fish previously frozen",
+        "how do i tell if fish is fresh",
+        "is this fish fresh",
+        "what should fish smell like"
       ]
     },
     {

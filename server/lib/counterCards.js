@@ -164,6 +164,10 @@ export const RETIRED = [
   'beef_grades_usda',
   // → judging_meat_at_the_case: the case walk is the judging card.
   'meat_case',
+  // IC-6a (2026-10-14): folded by D3 (same subject). Aliases (less salmon, fresh salmon, tuna), asked_as, sources, tips and labels moved.
+  // → seafood_counter: fresh-or-frozen and is-it-fresh are the counter's two questions.
+  'fresh_vs_previously_frozen_fish',
+  'fish_freshness_at_counter',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

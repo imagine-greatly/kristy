@@ -40,7 +40,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `shrimp_imported_vs_domestic` | seafood | Wild American. Most shrimp is imported, farmed, and anonymous. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
 | `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
 | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
-| `fresh_vs_previously_frozen_fish` | seafood | Buy the frozen. Thaw it overnight in the fridge. | Ask the counter “was this previously frozen?” before paying the fresh premium. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed and grass-finished. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
 | `ground_beef_lean_ratio` | meat | Beef with seasoning at most, and nothing else in the ingredients. | Read the name: “ground beef” allows no added fat, water or binders. | — |
@@ -80,7 +79,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
-| `fish_freshness_at_counter` | seafood | Smell it first. Clean seawater or nothing means yes. | Check it is bedded in ice, not sitting in its own liquid. | — |
 | `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
 | `farmed_fish_by_species` | seafood | Farmed shellfish, trout and char are the good ones. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
 | `seafood_certifications` | seafood | MSC on wild. A farm seal is a floor, not a recommendation. | Check the badge names a program you can look up. Unnamed is marketing. | — |

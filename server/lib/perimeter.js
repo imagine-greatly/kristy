@@ -340,7 +340,7 @@ export const PERIMETER_SECTIONS = [
     shortcuts: [
       { q: 'Wild or farmed?', id: 'salmon_wild_vs_farmed' },
       { q: 'Which are low in mercury?', id: 'mercury_by_fish' },
-      { q: 'Is it fresh?', id: 'fish_freshness_at_counter' },
+      { q: 'Is it fresh?', id: 'seafood_counter' },
     ],
     thinNote: 'Fish, shrimp, crab, lobster, scallops, shellfish and the frozen case. Octopus, squid and crawfish are not covered yet.',
   },

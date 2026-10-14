@@ -352,7 +352,7 @@ test('every counter answers the questions a shopper actually has standing at it'
     ['what does usda prime mean', 'beef_cuts_basics'],
     ['which chicken cut should i buy', 'chicken_cuts_basics'],
     ['which fish are low in mercury', 'mercury_by_fish'],
-    ['how do i tell if fish is fresh', 'fish_freshness_at_counter'],
+    ['how do i tell if fish is fresh', 'seafood_counter'],
     ['are brown eggs better than white', 'egg_labels'],
     ['what does vegetarian fed mean', 'egg_labels'],
     ['how do i pick a ripe melon', 'produce_ripeness_by_item'],

@@ -137,14 +137,14 @@ test('named types cannot return a different cut, form or state, including cart p
   assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_breast' })?.slug, 'chicken_breast');
   assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_cuts_basics' })?.slug, 'chicken_breast', 'veto the thighs id, then retrieve the breast owner');
   assert.equal(matchItemToPick('chicken breast'), null);
-  assert.ok(!scoreEntries('canned tuna', 100).some(({ entry }) => entry.id === 'fish_freshness_at_counter'));
-  assert.notEqual(matchItemToCard('canned tuna')?.slug, 'fish_freshness_at_counter');
+  assert.ok(!scoreEntries('canned tuna', 100).some(({ entry }) => entry.id === 'seafood_counter'));
+  assert.notEqual(matchItemToCard('canned tuna')?.slug, 'seafood_counter');
 
   // Deliberately overbroad aliases prove a veto rather than today's accidental miss.
   const fixtures = nonEmpty([
     ['pretzel bread', { id: 'sourdough', title: 'Sourdough bread', aliases: ['bread'], category: 'bulk_pantry', decision: 'Choose sourdough bread.', cart_pick: 'Sourdough bread' }],
     ['ground turkey', { id: 'whole_turkey', title: 'Whole turkey', aliases: ['turkey'], category: 'poultry', decision: 'Choose a whole turkey.', cart_pick: 'Whole turkey' }],
-    ['tinned salmon', entryById('fish_freshness_at_counter')],
+    ['tinned salmon', entryById('seafood_counter')],
     ['canned salmon', entryById('salmon_wild_vs_farmed')],
     ['tinned chicken', entryById('chicken_cuts_basics')],
     ['chicken breast', { ...entryById('chicken_cuts_basics'), id: 'pick_thighs', kind: 'pick' }],

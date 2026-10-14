@@ -30,13 +30,13 @@ const WORDS = nonEmpty(Object.entries({
 // Measured BEFORE the K3-1 edit (2026-10-07, same harness); must not move.
 const COLLISIONS = nonEmpty([
   ['fish sauce', null], ['fish sticks', 'pick_fish_sticks'], ['fish oil', null],
-  ['fresh fish', 'fresh_vs_previously_frozen_fish'], ['canned fish', 'canned_fish_choosing'], ['smoked fish', 'smoked_salmon'],
+  ['fresh fish', 'seafood_counter'], ['canned fish', 'canned_fish_choosing'], ['smoked fish', 'smoked_salmon'],
 ], 'K3-1 collision rows', 6);
 const EDITED = nonEmpty(['seafood_counter', 'white_fish', 'salmon_wild_vs_farmed', 'clams_mussels_oysters', 'smoked_salmon', 'farmed_fish_by_species'], 'K3-1 edited cards', 6);
 
 for (const [w, id] of WORDS) test(`L "${w}" lands on ${id}`, () => assert.equal(rowMatch(w), id));
 for (const [w, want] of COLLISIONS) test(`collision "${w}" unchanged (${want})`, () => assert.equal(rowMatch(w), want));
-test('ask "what should fish smell like" unchanged', () => assert.equal(top('what should fish smell like'), 'fish_freshness_at_counter'));
+test('ask "what should fish smell like" unchanged', () => assert.equal(top('what should fish smell like'), 'seafood_counter'));
 
 test('M3: the fish/shellfish buying asks live on seafood_counter only, in aliases and asked_as', () => {
   for (const q of ['which fish should i buy', 'which shellfish should i buy']) {
