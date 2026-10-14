@@ -48,9 +48,14 @@ test('C1 Produce hub', () => {
 
 test('C2 produce_bananas shape', () => {
   const b = now('produce_bananas');
+  assert.ok(b, 'produce_bananas missing');
+  assert.equal(b.title, 'Bananas');
+  assert.equal(b.decision, 'Buy them green and let them ripen on your counter.');
+  assert.equal(pre('produce_bananas'), undefined, 'the card is new');
   assert.deepEqual(Object.keys(b).sort(), [...new Set([...Object.keys(now('produce_mushrooms')), 'asked_as'])].sort());
   nonEmpty(b.asked_as, 'banana asked_as', 3);
-  nonEmpty(b.pick_steps, 'banana pick_steps', 1);
+  nonEmpty(b.pick_steps, 'banana pick_steps', 2);
+  assert.ok(String(b.science).length > 40, 'science present');
   assert.ok(b.science && b.science.trim(), 'science empty');
   assert.equal(b.evidence_tier, 'established');
   assert.ok(doLines.produce_bananas, 'no doLines entry');
@@ -103,13 +108,18 @@ test('C6 claim lock rule 4', () => {
 });
 
 test('C7 new URLs archived', () => {
+  let checked = 0;
   for (const id of BATCH) {
     const old = new Set((pre(id)?.sources || []).map((s) => JSON.stringify(s)));
     for (const s of now(id).sources || []) {
       if (old.has(JSON.stringify(s))) continue;
-      for (const u of String(typeof s === 'string' ? s : s.url).match(/https?:\/\/\S+/g) || []) assert.ok(ARCHIVE.includes(u), `${id}: ${u} not archived`);
+      for (const u of String(typeof s === 'string' ? s : s.url).match(/https?:\/\/\S+/g) || []) {
+        checked++;
+        assert.ok(ARCHIVE.includes(u), `${id}: ${u} not archived`);
+      }
     }
   }
+  assert.ok(checked >= 4, `only ${checked} new URLs checked`);
 });
 
 test('C8 essentials unchanged', () => {

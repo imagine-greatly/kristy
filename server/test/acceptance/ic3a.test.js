@@ -20,7 +20,7 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
 const now = (id) => kb.entries.find((e) => e.id === id);
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
 const FOLDS = { produce_picking_ripeness: 'produce_ripeness_by_item', strawberries_organic_residue: 'berries_picking' };
-const DROPPED_SOURCE = (s) => /class action|Harada/i.test(JSON.stringify(s));
+const DROPPED_SOURCE = (s) => /class action|Harada|Driscoll/i.test(JSON.stringify(s));
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const spoken = (e) => JSON.stringify(SPOKEN.map((f) => e[f] ?? ''));
 const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
