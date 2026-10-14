@@ -137,6 +137,8 @@ test('named types cannot return a different cut, form or state, including cart p
   assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_breast' })?.slug, 'chicken_breast');
   assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_cuts_basics' })?.slug, 'chicken_breast', 'veto the thighs id, then retrieve the breast owner');
   assert.equal(matchItemToPick('chicken breast'), null);
+  assert.equal(cardForItem({ name: 'Plain whole-milk yogurt' })?.slug, 'yogurt_plain_vs_flavored', 'yogurt row never carries the milk front');
+  assert.equal(cardForItem({ name: 'whole milk' })?.slug, 'whole_vs_reduced_fat_milk');
   assert.ok(!scoreEntries('canned tuna', 100).some(({ entry }) => entry.id === 'seafood_counter'));
   assert.notEqual(matchItemToCard('canned tuna')?.slug, 'seafood_counter');
 
