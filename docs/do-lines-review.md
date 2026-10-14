@@ -46,32 +46,32 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
 | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
-| `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
+| `freezing_produce` | produce · home | Enzymes keep working in the freezer until heat switches them off. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
 | `produce_seasonality` | produce | Produce in season is picked closer to ripe and travels less. | Read the farmers’ market as the signal for what is in season locally. | — |
-| `washing_produce` | produce · home | Cold running water and your hands. Skip the produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
-| `baking_soda_soak` | produce · home | Baking soda takes the surface residue. Water mostly does not. | Soak the fruit twelve minutes, then rinse it clean. | — |
+| `washing_produce` | produce · home | Plain cold water removes as much residue as a produce wash does. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
+| `baking_soda_soak` | produce · home | Baking soda in the water lifts residue a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Grass-fed butter first, then any real butter: cream, and salt if salted. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed. | Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Block cheese is milk, cultures, salt and enzymes, and nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Flavored yogurt carries added sugar; plain is milk and cultures. | Take the big plain tub, not the single-serve fruit cups. | — |
 | `raw_milk` | eggs_dairy | Raw milk is worth seeking out from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
-| `rice_arsenic` | bulk_pantry | White over brown. White basmati over plain white. | Read the origin on the bag: India, Pakistan or California. | — |
-| `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats, any form. Skip the flavored instant packets. | Turn the canister over. One ingredient, and it is oats. | — |
-| `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted. Oil-roasted means a seed oil was added. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
-| `honey_adulteration` | bulk_pantry | Raw and local. The list should read honey and nothing else. | Buy honey with a producer and a region named on the jar. | — |
-| `beans_dried_vs_canned` | bulk_pantry | Dried. Same bean, a fraction of the price, and your own salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
-| `label_natural` | label_terms | Ignore it. Read the ingredient list instead. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
-| `label_made_with_real` | label_terms | The front names an ingredient. Find it in the list. | Count how far down it sits. Past third is a trace. | — |
-| `label_no_added_hormones` | label_terms | Meaningful on beef and dairy. A freebie on chicken and pork. | Look for a third-party verifier on the beef and dairy claim. | — |
-| `label_nonGMO_vs_organic` | label_terms | One seal, and Organic covers more ground. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
-| `label_cage_free` | label_terms | Neither means pasture. Certified pasture-raised is the one that does. | Read the carton for a welfare certifier: Certified Humane, AWA, G.A.P. | — |
-| `label_grass_fed_term` | label_terms | Not enough on its own. Don’t pay up for it. | Look for “100%” or “grass-finished” printed on the package. | — |
+| `rice_arsenic` | bulk_pantry | Arsenic collects in the bran, which is why white rice carries less. | Read the origin on the bag: India, Pakistan or California. | — |
+| `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats are the same grain in every form; packets add sugar. | Turn the canister over. One ingredient, and it is oats. | — |
+| `nuts_raw_vs_roasted` | bulk_pantry | Raw and dry-roasted nuts have nothing added but sometimes salt. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
+| `honey_adulteration` | bulk_pantry | Supermarket honey is often blended and filtered; raw honey is neither. | Buy honey with a producer and a region named on the jar. | — |
+| `beans_dried_vs_canned` | bulk_pantry | Dried beans are the same bean, and you control the salt. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
+| `label_natural` | label_terms | ‘Natural’ has no legal definition on most foods, so it promises nothing. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
+| `label_made_with_real` | label_terms | ‘Made with real’ sets no minimum, so the amount can be tiny. | Count how far down it sits. Past third is a trace. | — |
+| `label_no_added_hormones` | label_terms | Poultry and pork cannot be given hormones, so the claim is free. | Look for a third-party verifier on the beef and dairy claim. | — |
+| `label_nonGMO_vs_organic` | label_terms | Organic already forbids GMOs, so the second sticker adds nothing. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
+| `label_cage_free` | label_terms | Cage-free and free-range both describe a barn, not a field. | Read the carton for a welfare certifier: Certified Humane, AWA, G.A.P. | — |
+| `label_grass_fed_term` | label_terms | ‘Grass-fed’ alone still allows a grain finish at the feedlot. | Look for “100%” or “grass-finished” printed on the package. | — |
 | `label_pasture_raised_feed` | label_terms | It means space, not feed. The word to find is soy-free. | Read both sides of the carton — space and feed are separate claims. | — |
-| `label_organic_scope` | label_terms | A production standard, not a quality rating. Read the panel anyway. | Flip the organic box over. The seal says nothing about the ingredients. | — |
-| `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
-| `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
-| `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
+| `label_organic_scope` | label_terms | Organic certifies how food was grown, not how processed it is. | Flip the organic box over. The seal says nothing about the ingredients. | — |
+| `label_multigrain_vs_whole_grain` | label_terms | ‘Multigrain’ counts grains; ‘whole grain’ says the bran stayed in. | Read the first ingredient — it must say “whole wheat flour.” | — |
+| `label_lightly_sweetened` | label_terms | ‘Lightly sweetened’ is not defined, so the number is the only answer. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
+| `label_no_artificial_flavors` | label_terms | The claim bans synthetic flavoring but leaves everything else untouched. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
 | `judging_meat_at_the_case` | meat | Color comes from oxygen and packaging, not from how fresh it is. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Ask the butcher how it was raised and when it was cut. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
@@ -83,24 +83,24 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_certifications` | seafood | MSC is the wild-catch seal worth trusting; farm seals set a minimum. | Check the badge names a program you can look up. Unnamed is marketing. | — |
 | `produce_ripeness_by_item` | produce | The heavier piece of two the same size holds more juice. | Smell the stem end on anything that ripens after picking. | — |
 | `berries_picking` | produce | Organic berries, and the carton’s underside decides, not the top. | Flip the container and check for juice stains or fuzz. | — |
-| `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
-| `revive_greens` | produce · home | Limp is water loss, not spoilage. It comes back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
+| `produce_storage` | produce · home | Washing produce before storing it traps moisture and speeds rot. | Keep apples and bananas out of the drawer with your greens and berries. | — |
+| `revive_greens` | produce · home | Limp greens have lost water, not gone bad, and they come back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
 | `cream_vs_creamer` | eggs_dairy | Non-dairy creamer is oil, sugar and thickeners, with no milk. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
-| `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
-| `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |
-| `whole_spices` | bulk_pantry | Buy whole. Ground spice is already going stale on the shelf. | Toast them in a dry pan until they smell, then grind. | — |
-| `rancidity_check` | bulk_pantry | Fats turn, and the nose is the only test that works. | Smell for old paint or crayons. That one is finished. | — |
-| `olive_oil_grades` | bulk_pantry | Extra virgin, a recent harvest date, one country. | Read “product of”, not “packed in” — they name different countries. | — |
-| `nut_butter_ingredients` | bulk_pantry | Peanuts and salt. No-stir means an oil was added. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
-| `grains_beyond_rice` | bulk_pantry | Rotate them, and cook them like pasta in salted water. | Read the bag for “hulled” or “whole”, and pass on “pearled”. | — |
-| `bottled_water_buying` | bulk_pantry | Spring water from a named source, in glass. | Turn the bottle over and find the town and state it came from. | — |
-| `label_front_vs_back` | label_terms | Turn it over. Decide from the back. | Read three things: ingredient list, added sugars, serving size. | — |
-| `label_ingredient_order` | label_terms | Read the first three ingredients, then the added-sugar line. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
-| `label_third_party_seals` | label_terms | A published standard and an outside auditor, or it is a sticker. | Trace the seal to an organization, not the brand’s own logo. | — |
-| `label_cold_pressed_expeller` | label_terms | Pressed, not extracted. ‘Refined’ is the word that gives it away. | Read the oil name first, then look for a process word. | — |
-| `label_sugar_free_substitutes` | label_terms | Read what replaced the sugar. ‘Unsweetened’ is the plainer word. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
-| `label_wild_vs_farm_raised` | label_terms | Species, method, country. All three required, and none stops substitution. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
-| `label_serving_size` | label_terms | Read the top two lines before any of the numbers. | Check both packages list the same serving size before comparing anything. | — |
+| `flour_basics` | bulk_pantry | Whole wheat flour first; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
+| `bulk_bins_buying` | bulk_pantry | Dry staples keep well in bulk; anything oily turns rancid first. | Choose the full, busy bins over a dusty half-empty one. | — |
+| `whole_spices` | bulk_pantry | Ground spice loses its oils within months; whole spice keeps them. | Toast them in a dry pan until they smell, then grind. | — |
+| `rancidity_check` | bulk_pantry | Oils and nuts go rancid quietly, with no mold to warn you. | Smell for old paint or crayons. That one is finished. | — |
+| `olive_oil_grades` | bulk_pantry | Extra virgin means cold-pressed, and a harvest date tells you how fresh. | Read “product of”, not “packed in” — they name different countries. | — |
+| `nut_butter_ingredients` | bulk_pantry | Nut butter that separates is just nuts; no-stir has added oil. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
+| `grains_beyond_rice` | bulk_pantry | Grains with the bran still on, not polished off. | Read the bag for “hulled” or “whole”, and pass on “pearled”. | — |
+| `bottled_water_buying` | bulk_pantry | Spring water comes from one named place; purified is treated tap. | Turn the bottle over and find the town and state it came from. | — |
+| `label_front_vs_back` | label_terms | The front of a package is advertising; the back is regulated. | Read three things: ingredient list, added sugars, serving size. | — |
+| `label_ingredient_order` | label_terms | Ingredients run heaviest first, so the first three are most of it. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
+| `label_third_party_seals` | label_terms | A real seal names an outside auditor you can look up. | Trace the seal to an organization, not the brand’s own logo. | — |
+| `label_cold_pressed_expeller` | label_terms | Cold-pressed oil is squeezed; refined oil is pulled out with solvent. | Read the oil name first, then look for a process word. | — |
+| `label_sugar_free_substitutes` | label_terms | ‘Sugar-free’ means something replaced the sugar rather than nothing. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
+| `label_wild_vs_farm_raised` | label_terms | Seafood labels must name species, method and country, and still get swapped. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
+| `label_serving_size` | label_terms | The panel’s numbers are scaled to a serving the maker chose. | Check both packages list the same serving size before comparing anything. | — |
 | `label_artificial_color` | label_terms | “Artificial color” is a category, not a color. Titanium dioxide qualifies. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | Kefir is milk fermented with live grains, and worth buying plain. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Raw-milk cheese aged past sixty days is legal and already stocked. | Read the rind label for an age in months. | — |

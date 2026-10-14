@@ -931,7 +931,7 @@
       ],
       "science": "Enzymes keep working below freezing, so unblanched beans come out gray and tasting of hay. A brief scald ends them. Fruit skips it, since blanching would cook the texture out. Air dries and oxidizes the surface, which is freezer burn. Freezing holds what goes in and rescues nothing already turning. High-water vegetables like cucumber, lettuce and radish collapse on thawing.",
       "labels_decoded": [],
-      "tier_note": "That enzymes survive freezing and a brief scald denatures them is settled food preservation science. It is also the step almost every home freeze skips.",
+      "tier_note": "That enzymes survive freezing and a brief scald denatures them is settled food preservation science, and almost every home freeze skips that step.",
       "eyebrow_short": "Freezing it",
       "asked_as": [
         "how do i freeze vegetables",
@@ -1951,7 +1951,7 @@
         "Pick packs listing the “real” ingredient ahead of added sugar or refined flour."
       ],
       "science": "Ingredient lists run in weight order by law. “Made with real” sets no minimum, so a trace amount earns the same words. An ingredient sitting fourth or later is present in a quantity too small to matter. The named ingredient often sits below the added sugar and the refined flour. The claim is a fact about presence, and presence is not amount.",
-      "tier_note": "Ingredient lists run in weight order by law, which is what makes position the tell.",
+      "tier_note": "Ingredient lists run in weight order by law, so how far down it sits shows the amount.",
       "asked_as": [
         "does made with real fruit mean anything",
         "what does made with real mean",
@@ -2059,7 +2059,7 @@
         "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
       "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices. Whether GMOs are a concern at all is a separate, debated question.",
-      "tier_note": "The organic standard already contains the non-GMO rule. That overlap is defined, not argued.",
+      "tier_note": "The organic standard already contains the non-GMO rule, an overlap that is defined, not argued.",
       "asked_as": [
         "non gmo or organic",
         "difference between non gmo and organic",
@@ -2310,7 +2310,7 @@
         "It counts most on thin-skinned produce you eat whole, least on processed food."
       ],
       "science": "Certified organic is a production standard, not a quality grade. It means no synthetic pesticides from the prohibited list, no GMOs, and organic feed for animals. It is not pesticide-free; approved natural pesticides are permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
-      "tier_note": "What certification covers and what it excludes are written into the standard, approved pesticides included.",
+      "tier_note": "What the organic seal covers and excludes is written into the standard, approved pesticides included.",
       "asked_as": [
         "what does the organic seal guarantee",
         "what does usda organic cover",
@@ -2370,7 +2370,7 @@
         "Ignore the color: brown bread is frequently white flour with caramel coloring."
       ],
       "science": "“Multigrain” is a headcount: it only means more than one grain is in there. Every one of those grains may be refined. “Whole grain” means the kernel is intact: bran, germ and endosperm. A loaf can be multigrain, seven-grain, or stone-ground and still be built on refined flour. Only one of the two terms is about refinement.",
-      "tier_note": "Whole grain carries a definition and multigrain does not. That gap is the entire difference.",
+      "tier_note": "Whole grain carries a definition and multigrain does not, and that gap is the entire difference.",
       "asked_as": [
         "is multigrain whole grain",
         "multigrain or whole wheat bread",
@@ -2435,7 +2435,7 @@
         "Check the list for the sugar aliases: syrups, cane juice, concentrates."
       ],
       "science": "“Lightly sweetened” has no regulatory meaning at all. The added-sugars line is the one number that is defined, and it cannot be spun. “No sugar added” means none was added in processing. The food’s own sugars remain and can be substantial. “Reduced sugar” means at least 25% less than a reference food. That reference food may have been very sweet.",
-      "tier_note": "The phrase has no legal definition. The added-sugars line does, and it cannot be spun.",
+      "tier_note": "The phrase has no legal definition, while the added-sugars number does and cannot be spun.",
       "asked_as": [
         "what does lightly sweetened mean",
         "is lightly sweetened less sugar",
@@ -3537,7 +3537,7 @@
       ],
       "science": "Limp greens are mostly thirsty, not spoiled. Water pressure in the cells holds a leaf rigid, and intact cells take water back. A fresh cut reopens sealed stem vessels, and cold water is taken up more readily. Pre-washed bagged greens revive least, because a cut edge does not reseal. Yellowing, sliminess or a smell is decay, and cold water does nothing for it.",
       "labels_decoded": [],
-      "tier_note": "Turgor pressure is basic plant physiology, and it is why a leaf goes rigid again. Nothing about it makes an old leaf new.",
+      "tier_note": "Water pressure holding a leaf rigid is basic plant physiology, though it never makes an old leaf new.",
       "eyebrow_short": "Wilted greens",
       "asked_as": [
         "my lettuce went limp",
@@ -4269,7 +4269,7 @@
         "Check the first ingredient: “enriched wheat flour” and “whole wheat flour” are different foods."
       ],
       "science": "Ingredients run in weight order by law, heaviest first, so the list is a ranking. Everything after “contains 2% or less of” is a trace, and not in weight order. Sugar splitting is legal and common: each sugar is listed separately so none climbs the list. Together they would sit near the top. The added-sugars line totals them all, whatever each one was named.",
-      "tier_note": "Weight order is required by law, which is what makes position readable at all.",
+      "tier_note": "Weight order is required by law, which is what makes ingredients readable by position.",
       "asked_as": [
         "how do i read an ingredient list",
         "does ingredient order matter",
@@ -4343,7 +4343,7 @@
         "Read each seal for its one scope: organic is not welfare."
       ],
       "science": "A real seal answers three questions. Who set the standard? Is it published? Does an independent body audit against it? An unnamed badge is often a company’s own mark, with no published standard and no outside auditor. An organic seal covers inputs and practices. A welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only.",
-      "tier_note": "Who writes a standard and who audits it is public for every program worth the badge.",
+      "tier_note": "Who writes a standard and who audits it is public for every program worth the seal.",
       "asked_as": [
         "do the seals on packages mean anything",
         "how do i know a certification is real",
@@ -4414,7 +4414,7 @@
         "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
       ],
       "science": "Expeller-pressed means a mechanical screw press, no solvent; friction still makes heat. Cold-pressed is the same press with the temperature held down, tightly defined only for olive oil. Most supermarket oil is solvent-extracted, then refined, bleached and deodorized. Refined oil is stripped of color, flavor and aroma; unrefined oil tastes like its source. These words rank how an oil was made, not what it was made from.",
-      "tier_note": "Pressing and solvent extraction are distinct processes, and ‘refined’ is the disclosed one. This ranks how an oil was made, never which oil to buy, and that question comes first.",
+      "tier_note": "Pressing and solvent extraction are distinct processes and ‘refined’ is the disclosed one, but which oil it is settles the purchase first.",
       "asked_as": [
         "what does cold pressed mean",
         "what is expeller pressed",
@@ -4486,7 +4486,7 @@
         "Look for “unsweetened”; “naturally sweetened” has no definition: honey, syrup, concentrate all qualify."
       ],
       "science": "“Sugar-free” is defined as under 0.5 g sugar per serving. It says nothing about what took sugar’s place. Something else is doing the sweetening. Sugar alcohols such as erythritol, maltitol and xylitol appear by name and are also totaled on the panel. High-intensity sweeteners such as stevia, monk fruit, sucralose and aspartame appear in the list in tiny amounts. “Unsweetened” generally means no sweetener of any kind was added.",
-      "tier_note": "Sugar-free is a defined claim about what came out. The ingredient list names what went in.",
+      "tier_note": "Sugar-free is a defined claim about what came out, while the ingredient list names what went in.",
       "asked_as": [
         "what is in sugar free food",
         "what does sugar free actually mean",
@@ -4688,7 +4688,7 @@
           "meaning": "Certified dyes. Each must be declared by name, so they cannot be pooled."
         }
       ],
-      "tier_note": "The declaration split is written into federal labeling regulation, not inferred from practice.",
+      "tier_note": "Which colors may be declared as “artificial color” is written into federal labeling regulation, not inferred from practice.",
       "asked_as": [
         "what does artificial color mean",
         "what is titanium dioxide",

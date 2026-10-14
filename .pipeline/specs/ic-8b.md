@@ -45,7 +45,7 @@ This piece closes the front contract for the whole corpus. Its C4 runs over ever
     - lintCard and readability `[]`;
     - review headline = decision.
   - **Corpus-wide sources and rule 4.** Rule 4 = 0 over all decision + tier_note. No new URL anywhere is unarchived.
-  - **Count** stays 181.
+  - **Count** stays 182.
 - **Out of scope:**
   - folds, titles, aliases and asked_as;
   - sources on non-ITEM ids;
@@ -105,8 +105,8 @@ This piece closes the front contract for the whole corpus. Its C4 runs over ever
   - no OWN id lost a PRE URL;
   - no URL anywhere in the KB is new, unless it is archived;
   - the umd raw-milk-law URL is absent.
-- C7 [test] The non-pick count is 181.
-- C8 `npm test` green; probe 0 wrong; dry-run 181.
+- C7 [test] The non-pick count is 182.
+- C8 `npm test` green; probe 0 wrong; dry-run 182.
 
 ## Contract
 ```json
@@ -118,7 +118,7 @@ This piece closes the front contract for the whole corpus. Its C4 runs over ever
     {"id": "C4", "impl": ["server/kristy_perimeter_kb.json", "docs/do-lines-review.md", "server/lib/doLines.json"], "tests": ["server/test/acceptance/ic8b.test.js"], "dependents": [], "allowed_reads": [], "expected": "every non-pick passes", "test_name": "C4 every card front passes corpus-wide"},
     {"id": "C5", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/ic8b.test.js"], "dependents": [], "allowed_reads": [], "expected": "0 hits", "test_name": "C5 claim-lock rule 4 corpus-wide"},
     {"id": "C6", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/ic8b.test.js"], "dependents": [], "allowed_reads": ["docs/sources/item-cards"], "expected": "0 dropped, 0 unarchived, umd absent", "test_name": "C6 sources never shrink and new URLs are archived"},
-    {"id": "C7", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/ic8b.test.js"], "dependents": ["server/scripts/migrateCounterCards.js"], "allowed_reads": [], "expected": "181", "test_name": "C7 card count stays 181"}
+    {"id": "C7", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/ic8b.test.js"], "dependents": ["server/scripts/migrateCounterCards.js"], "allowed_reads": [], "expected": "182", "test_name": "C7 card count stays 182"}
   ],
   "dependency_evidence": [
     {"source": "planner read of TIER_NOTE_ORPHANED_PENDING at a88ada6", "hits": ["label_made_with_real", "label_organic_scope", "label_lightly_sweetened", "label_ingredient_order", "label_third_party_seals", "label_artificial_color", "revive_greens"]},
@@ -153,7 +153,9 @@ const ids = kb.entries.map((e) => e.id);
 const start = ids.indexOf('sandwich_bread');
 const end = ids.findIndex((id, i) => i > start && /^frozen/.test(id));
 const CARDS = kb.entries.filter((e) => e.kind !== 'pick');
-const OWN = kb.entries.filter((e, i) => e.kind !== 'pick' && ((end >= 0 && i >= end) || e.kind === 'home' || e.id.startsWith('label_'))).map((e) => e.id);
+// Curated home cards carry no kind field (kind 'home' exists only on generated cards), so they are named.
+const HOME = ['washing_produce', 'baking_soda_soak', 'revive_greens', 'freezing_produce', 'produce_storage'];
+const OWN = kb.entries.filter((e, i) => e.kind !== 'pick' && ((end >= 0 && i >= end) || HOME.includes(e.id) || e.id.startsWith('label_'))).map((e) => e.id);
 console.log(`ic-8b OWN (${OWN.length}): ${OWN.join(', ')}`);
 const now = (id) => kb.entries.find((e) => e.id === id);
 const pre = (id) => PRE.entries.find((e) => e.id === id);
@@ -220,8 +222,8 @@ test('C6 sources never shrink and new URLs are archived', () => {
   assert.ok(!JSON.stringify(kb).includes(UMD), 'umd raw-milk-law URL is in the KB');
 });
 
-test('C7 card count stays 181', () => {
-  assert.equal(CARDS.length, 181);
+test('C7 card count stays 182', () => {
+  assert.equal(CARDS.length, 182);
 });
 ```
 
