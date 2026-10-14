@@ -1,0 +1,2 @@
+[kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+[kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
