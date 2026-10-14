@@ -127,7 +127,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Oat milk with its protein and fortification checked on the carton. | Compare the protein line and read the ingredients for added vitamins and minerals. | — |
-| `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air exposure. | Check the bag’s seal and keep the coffee closed between uses. | — |
+| `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
 | `bacon` | meat | Bacon chosen by its curing ingredients, with the qualifier read. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
@@ -175,19 +175,19 @@ Also: imperative, starts with a verb, ≤14 words.
 | `tempeh` | bulk_pantry | Tempeh that is a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
 | `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated or vinegar-made. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
-| `broth` | bulk_pantry | Broth is thin and light; bone broth simmers longer, runs thicker. | Read the list for named bones and vegetables, then sodium on the panel. | — |
-| `salt` | bulk_pantry | Fine table salt or coarse kosher and sea salt: pick by grain. | Read the ingredient list for an added anti-caking agent. | — |
-| `sugars` | bulk_pantry | Brown sugar is white sugar with molasses; pick by flavor. | Read the ingredients for cane or beet; both make the same sugar. | — |
-| `maple_syrup` | bulk_pantry | Pure maple syrup; darker grades taste stronger. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
-| `cooking_oils` | bulk_pantry | Refined oil for high heat; unrefined oil for its flavor. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+| `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables in it. | Read the list for named bones and vegetables, then sodium on the panel. | — |
+| `salt` | bulk_pantry | Iodized salt lists added iodine; check the list for anti-caking agents. | Read the ingredient list for an added anti-caking agent. | — |
+| `sugars` | bulk_pantry | Sugar alone on the list; brown sugar is sugar plus molasses. | Read the ingredients for cane or beet; both make the same sugar. | — |
+| `maple_syrup` | bulk_pantry | Pure maple syrup in any grade, never table or pancake syrup. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+| `cooking_oils` | bulk_pantry | An oil the label names by its source; “vegetable oil” names none. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
 | `lard_tallow` | bulk_pantry | Plain lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
-| `cocoa` | bulk_pantry | Natural cocoa or Dutch cocoa, matched to the leavener the recipe names. | Read the label for “processed with alkali” after the name. | — |
+| `cocoa` | bulk_pantry | Cocoa with one ingredient on the list: cocoa. | Read the label for “processed with alkali” after the name. | — |
 | `seeds` | bulk_pantry | Whole chia, hulled hemp, and flax bought ground or ground at home. | Check the bag date, and keep opened flax cold once home. | — |
 | `dried_fruit` | bulk_pantry | Dried fruit with the fruit alone on the ingredient list. | Read the ingredients for sulfites or sugar added to the fruit. | — |
 | `nutritional_yeast` | bulk_pantry | Fortified or unfortified flakes are both inactive dried yeast. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
 | `canned_coconut_milk` | bulk_pantry | Canned coconut milk, read for what is added beyond coconut. | Read the ingredients for gums such as guar gum. | — |
 | `dried_herbs` | bulk_pantry | One herb by name, or a blend whose list may say “spice”. | Check the label for the irradiation logo and “treated with radiation”. | — |
-| `tea` | bulk_pantry | Black, green, white and oolong are one plant; herbal is not tea. | Read the ingredient list for tea leaves and nothing else. | — |
+| `tea` | bulk_pantry | True tea is the leaf alone: black, green, white or oolong. | Read the ingredient list for tea leaves and nothing else. | — |
 | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
 | `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
 | `jam` | bulk_pantry | Jam or preserves by name, made from fruit rather than juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |

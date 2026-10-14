@@ -1742,7 +1742,7 @@
         "Check the ingredient line: many roasted nuts list cottonseed or soybean oil."
       ],
       "science": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating. Roasting itself is fine; the added oil is the part to notice. US almonds sold as “raw” are pasteurized by law, by steam or by a chemical treatment. Most “raw” cashews were steamed out of the shell.",
-      "tier_note": "What the nuts were roasted in is on the ingredient line. Avoiding those oils is the standard.",
+      "tier_note": "What the nuts were roasted in is on the ingredient line, and avoiding those oils is the standard.",
       "asked_as": [
         "raw or roasted nuts",
         "which nuts should i buy",
@@ -1801,7 +1801,7 @@
         "“Pure honey” is a marketing word with little enforcement. Traceability is the real check.",
         "Adulteration is hard to test for because real honey varies naturally with the flowers, the place and the handling. A 2023 European Commission check found signs of it in 46 percent of the imported samples tested."
       ],
-      "tier_note": "Honey earned its place in the pantry long before anyone studied it. The age is the argument, never a health outcome.",
+      "tier_note": "Honey earned its pantry place long before anyone studied it; the age is the argument, never a health outcome.",
       "asked_as": [
         "how do i know honey is real",
         "is store honey fake",
@@ -3743,7 +3743,7 @@
       ],
       "science": "Dry staples keep well in bulk: rice, oats, beans, lentils and spices. The risk sits entirely with the fatty items, whose oil goes rancid. The scoop, bin handle and scale are touched by every shopper; the container you bring is not the exposed part. Container rules vary by store, since the FDA food code is a model offered to states and cities.",
       "labels_decoded": [],
-      "tier_note": "Rancidity in a slow bin is real. Which bins to trust is a shopping standard, not a rule.",
+      "tier_note": "Rancidity in a slow bin is real, and which bins to trust is a shopping standard, not a rule.",
       "asked_as": [
         "is the bulk section a good deal",
         "should i buy from bulk bins",
@@ -3924,7 +3924,7 @@
           "meaning": "Where it was bottled. Not where the olives grew."
         }
       ],
-      "tier_note": "The grades are legal definitions with a taste panel behind them, and the origin wording is regulated. Both are readable off the bottle.",
+      "tier_note": "The extra virgin grade is a legal definition backed by a taste panel, and the “product of” wording is regulated.",
       "cart_pick": "Extra-virgin olive oil",
       "watch_out": [
         "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color, not calories.",
@@ -3998,7 +3998,7 @@
           "meaning": "Fat removed and usually replaced with sugar and starch."
         }
       ],
-      "tier_note": "What holds no-stir texture together is on the list. Wanting only peanuts is the standard.",
+      "tier_note": "What holds no-stir texture together is on the list, and wanting only peanuts is the standard.",
       "asked_as": [
         "what should be in peanut butter",
         "is natural peanut butter better",
@@ -4144,7 +4144,7 @@
           "meaning": "True of every PET bottle and always was. PET is not made with BPA. The claim describes a plastic the bottle never contained."
         }
       ],
-      "tier_note": "The label definitions behind this are federal. The standard being held is about the source and the container, never a claim about health.",
+      "tier_note": "Federal label definitions name spring water by its source; the standard here is source and container, never a health claim.",
       "eyebrow_short": "Bottled water",
       "asked_as": [
         "what bottled water should i buy",
@@ -6594,7 +6594,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you check when buying coffee beans?",
-      "decision": "Coffee beans in a sealed bag that limits air exposure.",
+      "decision": "Coffee beans in a sealed bag that limits air.",
       "why": "Packaging and storage affect coffee chemistry. A sealed bag is the whole-food standard for this purchase.",
       "short_answer": "Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Choose a sealed bag and keep it closed.",
       "detail": "One archived study compared packaging for ground coffee pods; another examined different coffee presentations and packaging under accelerated heat storage. Their results show that packaging and conditions affect chemical stability. They do not establish a health advantage for one retail bean or a universal freshness deadline.",
@@ -10678,7 +10678,7 @@
           "meaning": "An infusion of other plants, not the tea leaf."
         }
       ],
-      "tier_note": "Caffeine is a label fact on tea, settled by the word decaffeinated.",
+      "tier_note": "Caffeine in true tea leaves is a label fact, settled by the word decaffeinated.",
       "asked_as": [
         "which black tea should i buy",
         "how do i pick a green tea",
