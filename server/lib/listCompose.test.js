@@ -3,7 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseComposeJSON, buildComposeInput, SECTIONS, LIST_COMPOSE_SYSTEM } from './listCompose.js';
+import { parseComposeJSON, buildComposeInput, SECTIONS, LIST_COMPOSE_SYSTEM, stripFillers } from './listCompose.js';
 
 test('parseComposeJSON reads a bare object', () => {
   const r = parseComposeJSON('{"add":[{"name":"ground beef","section":"Meat & Seafood"}],"remove":["white rice"],"summary":"Added taco night."}');
@@ -12,6 +12,28 @@ test('parseComposeJSON reads a bare object', () => {
   assert.equal(r.add[0].section, 'Meat & Seafood');
   assert.deepEqual(r.remove, ['white rice']);
   assert.match(r.summary, /taco/i);
+});
+
+// Swift twin: kristy-ios Tools/listvocab/check.swift carries the same cases.
+test('stripFillers keeps only the food words (Devon, 2026-10-14)', () => {
+  const cases = [
+    ['well, um, let\'s get beef', 'beef'],
+    ['um we need eggs', 'eggs'],
+    ['half and half', 'half and half'],
+    ['let\'s grab some apples please', 'apples'],
+    ['um', ''],
+    ['Can you add A2 milk too?', 'A2 milk'],
+    ['a couple of Lemons, as well', 'Lemons'],
+    ['Mac and cheese', 'Mac and cheese'],
+    ['ground beef', 'ground beef'],
+    ['eggs (dozen)', 'eggs (dozen)'],
+  ];
+  for (const [input, want] of cases) assert.equal(stripFillers(input), want, input);
+});
+
+test('parseComposeJSON strips filler off add names and drops empties', () => {
+  const r = parseComposeJSON('{"add":[{"name":"well, um, let\'s get beef","section":"Meat & Seafood"},{"name":"um","section":"Pantry"}],"remove":[],"summary":"Beef in."}');
+  assert.deepEqual(r.add.map((i) => i.name), ['beef']);
 });
 
 test('parseComposeJSON strips a ```json fence', () => {
@@ -115,6 +137,10 @@ test('the compose prompt bans first person and em-dash asides in the summary', (
   assert.match(LIST_COMPOSE_SYSTEM, /NO EM-DASH ASIDES/);
   // The tier honesty survives as a named standard rather than a person's opinion.
   assert.match(LIST_COMPOSE_SYSTEM, /whole-food-standard/i);
+});
+
+test('the compose prompt keeps add names to the item, not the lead-in', () => {
+  assert.match(LIST_COMPOSE_SYSTEM, /only the food or item itself, never the filler, lead-in or request words/);
 });
 
 /* ───────── "Best brands" is answered honestly, never invented ─────────

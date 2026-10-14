@@ -29,6 +29,7 @@ Return ONLY this JSON, nothing else:
 }
 - "add": new grocery items to put on the list (empty array if none).
 - "remove": names ALREADY on the current list to drop (match them closely; empty array if none).
+- Each add "name" is only the food or item itself, never the filler, lead-in or request words around it in what the shopper said.
 - Each item's "section" MUST be exactly one of: ${SECTIONS.map((s) => `"${s}"`).join(', ')}.
 
 THE SHOPPER DRIVES. THIS IS THE MOST IMPORTANT RULE.
@@ -105,6 +106,23 @@ export function buildComposeInput({ instruction, mode = 'edit', currentItems = [
   };
 }
 
+// Spoken/typed lead-ins and fillers stripped off an add name (Devon, 2026-10-14:
+// "well, um, let's get beef" -> "beef"). Swift twin: kristy-ios
+// Kristy/Core/ListNameSplitter.swift `leadIn`/`trailing`/`edge`; keep the lists in step.
+const LEAD_IN = /^(?:um+|uh+|er|hmm+|well|so|okay|ok|alright|like|oh|let['\u2019]?s\s+(?:get|grab|buy|pick\s+up|add)|(?:we|i)\s+(?:need|want|should\s+get|gotta\s+get)|get|grab|buy|pick\s+up|add|can\s+you\s+add|put|also|maybe|some|a\s+few|a\s+couple\s+of|a|an)(?=$|[\s,.;:!?\u2026])/i;
+const TRAILING = /(?:^|\s)(?:please|too|as\s+well|i\s+think)$/i;
+const EDGE = /^[\s,.;:!?\u2026"\u201c\u201d'\u2018\u2019]+|[\s,.;:!?\u2026"\u201c\u201d'\u2018\u2019]+$/g;
+
+/** Strip leading/trailing filler and lead-ins from an item name until nothing changes. */
+export function stripFillers(name) {
+  let s = String(name ?? '');
+  for (;;) {
+    const before = s;
+    s = s.replace(EDGE, '').replace(LEAD_IN, '').replace(EDGE, '').replace(TRAILING, '');
+    if (s === before) return s;
+  }
+}
+
 /** Parse the model's { add, remove, summary }. Defensive (same posture as parseNoteJSON). */
 export function parseComposeJSON(text) {
   let raw = str(text);
@@ -124,7 +142,7 @@ export function parseComposeJSON(text) {
   const add = Array.isArray(obj.add)
     ? obj.add
         .map((i) => ({
-          name: str(i?.name),
+          name: stripFillers(str(i?.name)),
           section: SECTIONS.includes(str(i?.section)) ? str(i.section) : 'Pantry',
         }))
         .filter((i) => i.name)
