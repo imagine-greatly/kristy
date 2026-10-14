@@ -238,7 +238,7 @@ test('a cart_pick can never be minted by the model', () => {
 test('an entry with no single honest answer carries no pick', () => {
   // A blank beats a forced one: "is organic worth it" has no one grocery, and a
   // label term is not a food at all.
-  for (const id of ['organic_worth_it_by_type', 'produce_ripeness_by_item', 'beef_grades_usda']) {
+  for (const id of ['organic_worth_it_by_type', 'produce_ripeness_by_item', 'judging_meat_at_the_case']) {
     const e = perimeterKb.entries.find((x) => x.id === id);
     assert.ok(e, `${id} exists`);
     assert.ok(!e.cart_pick, `${id} should not force a pick`);
@@ -349,7 +349,7 @@ test('every counter answers the questions a shopper actually has standing at it'
   // stops covering its own basics, this fails rather than quietly thinning out.
   const wants = [
     ['which cut of beef for stew', 'beef_cuts_basics'],
-    ['what does usda prime mean', 'beef_grades_usda'],
+    ['what does usda prime mean', 'beef_cuts_basics'],
     ['which chicken cut should i buy', 'chicken_cuts_basics'],
     ['which fish are low in mercury', 'mercury_by_fish'],
     ['how do i tell if fish is fresh', 'fish_freshness_at_counter'],

@@ -40,7 +40,7 @@ const KEEPS = nonEmpty([
   // K3-1 (Devon-approved list-word plan) moves the bare shellfish rows to their own card.
   ['mussels', 'clams_mussels_oysters'], ['oysters', 'clams_mussels_oysters'], ['clams', 'clams_mussels_oysters'],
   ['canned anchovies', 'canned_fish_choosing'], ['sardines', 'canned_fish_choosing'], ['canned tuna', 'canned_tuna'],
-  ['smoked ham', 'ham'], ['meat sticks', 'pick_jerky'], ['meat case', 'meat_case'], ['oyster sauce', null], ['seafood', 'seafood_counter'],
+  ['smoked ham', 'ham'], ['meat sticks', 'pick_jerky'], ['meat case', 'judging_meat_at_the_case'], ['oyster sauce', null], ['seafood', 'seafood_counter'],
   ['crab apples', 'produce_apples_pears'], ['lobster mushrooms', 'produce_mushrooms'],
 ], 'K16 keep rows', 20);
 const NOT_NEW = nonEmpty([

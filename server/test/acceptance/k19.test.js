@@ -41,7 +41,7 @@ const KEEPS = nonEmpty([
   ['almond', 'nuts_raw_vs_roasted'], ['almonds', 'nuts_raw_vs_roasted'], ['almond butter', 'nut_butter_ingredients'], ['peanut butter', 'nut_butter_ingredients'],
   ['almond flour', 'specialty_flours'], ['almond meal', 'specialty_flours'], ['butter croissants', 'pastries_muffins'],
   ['goat meat', 'lamb_goat'], ['ground goat', 'lamb_goat'], ['virgin coconut oil', null],
-  ['bread aisle', 'bread_aisle'], ['meat case', 'meat_case'], ['seafood counter', 'seafood_counter'],
+  ['bread aisle', 'bread_aisle'], ['meat case', 'judging_meat_at_the_case'], ['seafood counter', 'seafood_counter'],
 ], 'K19 keep rows', 22);
 const NOT_NEW = nonEmpty([
   'kefir', 'milk', 'whole milk', 'skim milk', 'chocolate milk', 'heavy cream', 'half and half', 'whipped cream', 'buttermilk', 'yogurt', 'greek yogurt',

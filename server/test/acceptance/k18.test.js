@@ -38,7 +38,7 @@ const KEEPS = nonEmpty([
   ['sandwich bread', 'sandwich_bread'], ['whole wheat bread', 'sandwich_bread'],
   ['cereal', 'breakfast_cereal'], ['granola', 'breakfast_cereal'], ['whole grain cereal', 'breakfast_cereal'],
   ['sourdough', 'sourdough'], ['bagels', 'bagels'], ['tortillas', 'tortillas'], ['pretzel bread', null], ['oats', 'oats_steelcut_rolled_instant'],
-  ['meat case', 'meat_case'], ['seafood counter', 'seafood_counter'], ['seafood', 'seafood_counter'],
+  ['meat case', 'judging_meat_at_the_case'], ['seafood counter', 'seafood_counter'], ['seafood', 'seafood_counter'],
 ], 'K18 keep rows', 18);
 const NOT_NEW = nonEmpty([
   'hot dogs', 'hot dog', 'hamburger', 'hamburger patties', 'egg rolls', 'spring rolls', 'cinnamon rolls', 'bread crumbs',

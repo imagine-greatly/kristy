@@ -18,7 +18,7 @@ const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const rowMatch = (row) => idOf(matchItemToCard(row)) ?? idOf(matchItemToPick(row));
 const top = (q) => { const r = scoreEntries(q, 3)[0]; return { id: r?.entry?.id ?? r?.id, score: r?.score ?? 0, aliasScore: r?.aliasScore ?? 0 }; };
 
-const CARDS = nonEmpty(['ham', 'turkey_bacon', 'cured_pork', 'lamb_goat', 'organ_meats', 'bison', 'venison_game', 'meat_case'], 'K15 cards', 8);
+const CARDS = nonEmpty(['ham', 'turkey_bacon', 'cured_pork', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'], 'K15 cards', 7);
 const PICKS = nonEmpty(['pick_jerky', 'pick_soup_bones'], 'K15 picks', 2);
 const NEW = [...CARDS, ...PICKS];
 const LAMB = nonEmpty(['lamb', 'lamb chop', 'lamb chops', 'leg of lamb', 'legs of lamb', 'ground lamb', 'lamb shoulder', 'lamb shoulders', 'rack of lamb', 'racks of lamb'], 'pick_lamb aliases', 10);
@@ -69,10 +69,7 @@ for (const row of NOT_NEW) test(`C3b "${row}" lands on no K15 id`, () => {
   assert.ok(!NEW.includes(got), `${row} -> ${got}`);
 });
 
-test('C4 broad card: meat_case owns exactly one short alias, "meat case"', () => {
-  const al = nonEmpty(byId('meat_case')?.aliases ?? [], 'meat_case aliases', 4);
-  assert.deepEqual(al.filter((a) => a.trim().split(/\s+/).length <= 2), ['meat case']);
-});
+test('C4 judging_meat_at_the_case carries the alias "meat case"', () => { const al = nonEmpty(byId('judging_meat_at_the_case')?.aliases ?? [], 'judging aliases', 4); assert.ok(al.includes('meat case')); });
 
 test('C4 steal sweep: no pre-existing alias, run as a list row, lands on a K15 id', () => {
   const olds = nonEmpty(kb.entries.filter((e) => !NEW.includes(e.id)), 'pre-existing entries', 100);
@@ -123,7 +120,6 @@ test('C9 one entry per id, no forbidden or state alias, no forbidden bare-noun a
       assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a), `${id} state alias ${a}`);
     }
     for (const q of e.asked_as ?? []) {
-      if (id === 'meat_case' && q === 'which meat should i buy') continue;
       assert.ok(!FORBIDDEN.some((w) => q === `which ${w} should i buy`), `${id} ask ${q}`);
     }
   }

@@ -16,7 +16,7 @@ const inFamily = new Set(OWNED_FACTS.flatMap((r) => r.family));
 // Question cards, plus the picks a family or the pending list names.
 const cards = nonEmpty(
   kb.entries.filter((e) => e.kind !== 'pick' || inFamily.has(e.id) || HEALTH_FIRST_PENDING.has(e.id)),
-  'health-first corpus', 189
+  'health-first corpus', 187
 );
 nonEmpty(OWNED_FACTS, 'OWNED_FACTS', 13);
 // Ratchet: PENDING only shrinks; each batch lowers the ceiling as it removes ids.

@@ -15,9 +15,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
 
 const SLICE = nonEmpty([
-  'beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'beef_grades_usda',
+  'beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio',
   'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'deli_meat_uncured', 'hot_dogs',
-], 'the K9 slice', 10);
+], 'the K9 slice', 9);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -34,6 +34,13 @@ for (const id of SLICE) {
 
 test('K9: chf-5 retired ids are in RETIRED and gone from the KB', () => {
   for (const id of ['dry_brine', 'bean_soak_salt', 'pretzel_bread', 'baking_soda_powder', 'duck_meat']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
+});
+
+test('K9: IC-5a retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['beef_grades_usda', 'meat_case']) {
     assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
     assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
   }

@@ -74,7 +74,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
-| `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Read the grade as a marbling score, then ask how it was raised. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
@@ -145,7 +144,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
 | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
-| `meat_case` | meat | Decide the cook first, then ask which cut fits it. | Read how it was raised, anything added, then the use-by date. | — |
 | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
 | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
 | `lobster` | seafood | A live lobster that moves, or frozen tails that are hard-frozen. | Ask the counter to lift the lobster and check the tail curls under. | — |

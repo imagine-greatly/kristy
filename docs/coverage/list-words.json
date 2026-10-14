@@ -14,7 +14,7 @@
 {"section":"Seafood","item":"white fish species","expect":"white_fish","list_words":["cod","grouper","snapper","red snapper","mahi mahi","mahi","sole","whiting","rockfish","sea bass","branzino","perch","walleye","swai","basa","monkfish","halibut steak","halibut steaks"]},
 {"section":"Seafood","item":"salmon cuts","expect":"salmon_wild_vs_farmed","list_words":["salmon fillet","salmon fillets","salmon steak","salmon steaks"]},
 {"section":"Seafood","item":"clams, mussels, oysters","expect":"clams_mussels_oysters","list_words":["clams","mussels","oysters"]},
-{"section":"Meat","item":"meat","expect":"meat_case","list_words":["meat"]},
+{"section":"Meat","item":"meat","expect":"judging_meat_at_the_case","list_words":["meat"]},
 {"section":"Dairy","item":"dairy","expect":"dairy_case","list_words":["dairy"]},
 {"section":"Produce","item":"produce","expect":"produce_ripeness_by_item","list_words":["produce"]},
 {"section":"Produce","item":"ginger and turmeric","expect":"pick_ginger_turmeric","list_words":["ginger","turmeric"]},

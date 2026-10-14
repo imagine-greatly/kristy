@@ -415,7 +415,19 @@
         "steak",
         "steak cuts",
         "cut of beef",
-        "mechanically tenderized"
+        "mechanically tenderized",
+        "usda prime",
+        "prime beef",
+        "choice beef",
+        "select beef",
+        "beef grade",
+        "usda grade",
+        "what does prime mean",
+        "marbling",
+        "prime choice select",
+        "beef grades",
+        "usda grades",
+        "usda choice"
       ],
       "category": "beef",
       "question": "Which beef cut should I buy?",
@@ -428,7 +440,11 @@
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
         "Iowa State University Extension AnswerLine “Tender vs Less Tender Cuts of Meat” https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/",
         "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts",
-        "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2"
+        "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2",
+        "USDA AMS Official United States Standards for Grades of Carcass Beef",
+        "USDA AMS voluntary beef grading program",
+        "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
+        "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
       ],
       "kristy_take": "The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.",
       "cart_pick": "Whole chuck, not mechanically tenderized",
@@ -436,15 +452,38 @@
         "Chuck is shoulder and round is rear leg: the working muscles.",
         "Loin and rib sit along the back and do little work.",
         "Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.",
-        "Ground chuck runs around 80/20 lean to fat."
+        "Ground chuck runs around 80/20 lean to fat.",
+        "Prime, Choice, Select is a marbling scale, top to bottom.",
+        "Grading is voluntary. Ungraded is not a downgrade.",
+        "Grade and sourcing are separate questions. Neither answers the other."
       ],
-      "labels_decoded": [],
+      "labels_decoded": [
+        {
+          "term": "USDA Prime",
+          "meaning": "The most marbling, and the smallest share of graded beef."
+        },
+        {
+          "term": "USDA Choice",
+          "meaning": "Moderate marbling. The common retail grade."
+        },
+        {
+          "term": "USDA Select",
+          "meaning": "Leanest of the three."
+        },
+        {
+          "term": "Ungraded",
+          "meaning": "Never submitted for grading. Says nothing about quality either way."
+        }
+      ],
       "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.",
       "watch_out": [
         "The cut name says where on the animal it came from.",
         "Chuck is shoulder and round is rear leg. Both are working muscles.",
         "Loin and rib sit along the back and do little work.",
-        "‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut."
+        "‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut.",
+        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.",
+        "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
+        "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
       ],
       "pick_steps": [
         "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
@@ -456,7 +495,11 @@
         "which beef cut for stew",
         "what cut of beef should i buy",
         "cheap beef cut for slow cooking",
-        "what does mechanically tenderized mean"
+        "what does mechanically tenderized mean",
+        "what does prime choice select mean",
+        "is prime beef worth it",
+        "do beef grades matter",
+        "what does usda choice mean"
       ]
     },
     {
@@ -2467,79 +2510,6 @@
       ]
     },
     {
-      "id": "beef_grades_usda",
-      "title": "USDA beef grades: Prime, Choice, Select",
-      "aliases": [
-        "usda prime",
-        "prime beef",
-        "choice beef",
-        "select beef",
-        "beef grade",
-        "usda grade",
-        "what does prime mean",
-        "marbling",
-        "prime choice select",
-        "beef grades",
-        "usda grades",
-        "usda choice"
-      ],
-      "category": "beef",
-      "question": "What do Prime, Choice and Select mean?",
-      "decision": "Grade and sourcing are separate questions; neither answers the other.",
-      "why": "Grading weighs marbling and the animal’s maturity, not breed, feed or whether it got outside.",
-      "short_answer": "Grade scores marbling, the fat inside the muscle, and age. Prime has the most, Choice is the usual middle grade, Select is leanest. It says nothing about how the animal was raised, fed, or whether it got outside.",
-      "detail": "Marbling is the fat threaded inside the muscle. Grading is voluntary and paid for by the packer, so plenty of good beef carries no grade at all. Grade and sourcing are two separate axes, and neither implies the other.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA AMS Official United States Standards for Grades of Carcass Beef",
-        "USDA AMS voluntary beef grading program",
-        "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
-        "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
-      ],
-      "kristy_take": "Grade is a score for fat inside the muscle. How the animal lived is a separate question.",
-      "buying_tips": [
-        "Prime, Choice, Select is a marbling scale, top to bottom.",
-        "Grading is voluntary. Ungraded is not a downgrade.",
-        "Grade and sourcing are separate questions. Neither answers the other."
-      ],
-      "labels_decoded": [
-        {
-          "term": "USDA Prime",
-          "meaning": "The most marbling, and the smallest share of graded beef."
-        },
-        {
-          "term": "USDA Choice",
-          "meaning": "Moderate marbling. The common retail grade."
-        },
-        {
-          "term": "USDA Select",
-          "meaning": "Leanest of the three."
-        },
-        {
-          "term": "Ungraded",
-          "meaning": "Never submitted for grading. Says nothing about quality either way."
-        }
-      ],
-      "tier_note": "Grade is a published USDA score for marbling and maturity, kept apart from raising.",
-      "watch_out": [
-        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.",
-        "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
-        "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
-      ],
-      "pick_steps": [
-        "Read the grade as a marbling score; ‘Angus’ is a brand, not a grade.",
-        "How it was raised: see Grass-fed vs. grain-fed beef.",
-        "Ungraded is not a downgrade; grading is voluntary and says nothing either way."
-      ],
-      "science": "Prime, Choice and Select is a marbling scale, and grading also weighs the animal’s maturity. It does not look at breed. A grade is a score, not a certification. Grade and sourcing are separate questions, and neither answers the other.",
-      "asked_as": [
-        "what does prime choice select mean",
-        "is prime beef worth it",
-        "do beef grades matter",
-        "what does usda choice mean"
-      ]
-    },
-    {
       "id": "judging_meat_at_the_case",
       "title": "Judging meat at the case",
       "aliases": [
@@ -2556,7 +2526,11 @@
         "this meat any good",
         "pick meat",
         "meat at the counter",
-        "good meat"
+        "good meat",
+        "meat case",
+        "which meat should i buy",
+        "what meat should i buy",
+        "choose a cut of meat"
       ],
       "category": "meat_counter",
       "question": "How do I tell good meat from the case?",
@@ -2571,14 +2545,19 @@
         "University of Illinois Extension “Meat Shopping Safety Guidelines” https://extension.illinois.edu/meat-safety/shopping",
         "Michigan State University Extension “The color of meat depends on myoglobin: Part 1” https://www.canr.msu.edu/news/the_color_of_meat_depends_on_myoglobin_part_1",
         "Michigan State University Extension “Dates on meat packages” https://www.canr.msu.edu/news/dates_on_meat_packages_sell_by_use_by_freeze_by_packaged_on_expiration_date",
-        "USDA FSIS “Food Product Dating” https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating"
+        "USDA FSIS “Food Product Dating” https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating",
+        "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
       "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
       "buying_tips": [
         "Not slimy, and no off smell. Both, not either.",
         "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
         "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
-        "Take it from the back of the case where it is coldest, and get it home cold."
+        "Take it from the back of the case where it is coldest, and get it home cold.",
+        "Read the primal cut on the label, such as chuck or round.",
+        "Check the use-by date, and freeze what will not be used in time.",
+        "Skip any package that smells off or feels slimy."
       ],
       "labels_decoded": [
         {
@@ -2588,13 +2567,23 @@
         {
           "term": "Purge",
           "meaning": "The liquid in the tray. What to check is the package: sealed, and not leaking it."
+        },
+        {
+          "term": "Primal cut",
+          "meaning": "One of the four major beef sections: chuck, loin, rib or round."
+        },
+        {
+          "term": "Natural",
+          "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
         }
       ],
       "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
       "watch_out": [
         "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
         "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven.",
-        "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator."
+        "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator.",
+        "Store names for one cut vary by region, so read the primal cut instead.",
+        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
       ],
       "pick_steps": [
         "Take a sealed, leak-free package from the back, where the case is coldest.",
@@ -2605,7 +2594,10 @@
       "asked_as": [
         "how do i tell if meat is good",
         "is this meat any good",
-        "how do i pick meat at the counter"
+        "how do i pick meat at the counter",
+        "which meat should i buy",
+        "what meat should i buy for dinner",
+        "how do i choose a cut of meat"
       ]
     },
     {
@@ -7816,60 +7808,6 @@
         "how long does ground venison keep",
         "how do you choose a venison steak",
         "how do you choose ground elk"
-      ]
-    },
-    {
-      "id": "meat_case",
-      "title": "The meat case",
-      "aliases": [
-        "meat case",
-        "which meat should i buy",
-        "what meat should i buy",
-        "choose a cut of meat"
-      ],
-      "category": "meat_counter",
-      "question": "Which meat should you buy?",
-      "decision": "Every package answers three questions, in the same order.",
-      "why": "The label names the cut, any grade and the dates, and additives are not allowed on fresh beef.",
-      "short_answer": "Read the package in order: how it was raised, then whether anything was added, then the use-by date. Then read the primal cut and any grade.",
-      "detail": "Beef splits into four primal cuts: chuck, loin, rib and round. Labels should name the primal cut with the product. Store names for one cut vary by region, so the primal cut is the steadier clue. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Additives are not allowed on fresh beef.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
-        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
-      ],
-      "kristy_take": "Raised, added, dated: read the package in that order, then the primal name.",
-      "cart_pick": "A whole cut labeled with its primal name",
-      "buying_tips": [
-        "Read the primal cut on the label, such as chuck or round.",
-        "Check the use-by date, and freeze what will not be used in time.",
-        "Skip any package that smells off or feels slimy."
-      ],
-      "watch_out": [
-        "Store names for one cut vary by region, so read the primal cut instead.",
-        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
-      ],
-      "pick_steps": [
-        "How it was raised: see Grass-fed vs. grain-fed beef.",
-        "Added solution: see Pork cuts and ‘solution added’ pork.",
-        "Check the use-by date, and skip any package that smells off or feels slimy."
-      ],
-      "science": "Beef splits into four primal cuts: chuck, loin, rib and round. Inspection is mandatory and grading is voluntary. Graded retail beef is Prime, Choice or Select. Ungraded beef is inspected, but its quality may be higher or lower than graded beef. Additives are not allowed on fresh beef.",
-      "labels_decoded": [
-        {
-          "term": "Primal cut",
-          "meaning": "One of the four major beef sections: chuck, loin, rib or round."
-        },
-        {
-          "term": "Natural",
-          "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
-        }
-      ],
-      "tier_note": "Primal cuts and inspection are USDA facts; reading raised, added, then dated is a standard.",
-      "asked_as": [
-        "which meat should i buy",
-        "what meat should i buy for dinner",
-        "how do i choose a cut of meat"
       ]
     },
     {

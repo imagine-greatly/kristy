@@ -159,6 +159,11 @@ export const RETIRED = [
   // → chicken_cuts_basics (IC-4a). One card per item: chilling and the antibiotics claim are on the chicken card now; aliases, asks, sources and labels moved. chicken_breast stays (type veto).
   'air_chilled_chicken',
   'no_antibiotics_poultry',
+  // IC-5a (2026-10-14): folded by D3 (same subject). Aliases, asked_as, sources, tips and labels moved.
+  // → beef_cuts_basics: grade is a cut-buying question.
+  'beef_grades_usda',
+  // → judging_meat_at_the_case: the case walk is the judging card.
+  'meat_case',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */
