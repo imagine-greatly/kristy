@@ -98,7 +98,7 @@ test('two GET /counter/try calls return deterministic bodies', async () => {
 });
 
 test('TRY_POOL excludes label, produce, body-claim and safety-caveat cards', () => {
-  const excluded = new Set(['raw_milk', 'raw_kefir', 'raw_aged_cheese', 'sprouts_raw']);
+  const excluded = new Set(['raw_milk', 'raw_kefir', 'raw_aged_cheese', 'sprouts_raw', 'whole_vs_reduced_fat_milk']);
   for (const id of POOL) {
     assert.doesNotMatch(id, /^(label_|produce_)/, `${id}: excluded prefix`);
     assert.ok(!excluded.has(id), `${id}: excluded card`);
