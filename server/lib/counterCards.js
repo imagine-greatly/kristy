@@ -168,6 +168,12 @@ export const RETIRED = [
   // → seafood_counter: fresh-or-frozen and is-it-fresh are the counter's two questions.
   'fresh_vs_previously_frozen_fish',
   'fish_freshness_at_counter',
+  // IC-7a (2026-10-14): folded by D3. → whole_vs_reduced_fat_milk, retitled "Milk": breed and processing are milk questions.
+  // A2 digestion tip and the 161°F/280°F detail figures dropped (non-negotiable 3; detail not moved).
+  'a2_vs_a1_milk',
+  'milk_processing',
+  // → yogurt_plain_vs_flavored: live cultures is how to pick plain yogurt. Aliases kefir/alive/still alive not moved.
+  'yogurt_live_cultures',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

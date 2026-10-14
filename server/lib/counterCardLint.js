@@ -1571,7 +1571,7 @@ export const OWNED_FACTS = [
   ownedFact('wild_farmed', 'salmon_wild_vs_farmed',
     ['shrimp_imported_vs_domestic', 'white_fish', 'canned_fish_choosing'], /wild[- ]caught|farm[- ]raised|\bfarmed\b/i),
   ownedFact('phosphate_soak', 'scallops', ['shrimp_imported_vs_domestic', 'white_fish'], /phosphate|STPP|soaked/i),
-  ownedFact('milk_processing', 'milk_processing',
+  ownedFact('milk_processing', 'whole_vs_reduced_fat_milk',
     ['plain_kefir', 'cream_cheese', 'goat_sheep_dairy', 'grassfed_butter', 'ghee'], /ultra[- ]pasteuri[sz]ed|homogeni[sz]ed/i),
   ownedFact('oil_extraction', 'label_cold_pressed_expeller', ['cooking_oils'], /cold[- ]pressed|expeller|hexane|solvent/i),
   ownedFact('olive_grade', 'olive_oil_grades', ['cooking_oils'], /extra[- ]virgin/i),

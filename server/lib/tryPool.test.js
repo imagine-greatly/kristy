@@ -37,7 +37,7 @@ test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) au
     'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
     'pork_cuts_and_enhanced', 'chicken_cuts_basics', 'salmon_wild_vs_farmed',
     'shrimp_imported_vs_domestic', 'seafood_counter',
-    'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_live_cultures',
+    'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_plain_vs_flavored',
     'grains_beyond_rice', 'beans_dried_vs_canned', 'bulk_bins_buying',
     'oats_steelcut_rolled_instant', 'honey_adulteration', 'nuts_raw_vs_roasted',
     'sourdough', 'tortillas',
@@ -98,7 +98,7 @@ test('two GET /counter/try calls return deterministic bodies', async () => {
 });
 
 test('TRY_POOL excludes label, produce, body-claim and safety-caveat cards', () => {
-  const excluded = new Set(['a2_vs_a1_milk', 'raw_milk', 'raw_kefir', 'raw_aged_cheese', 'sprouts_raw']);
+  const excluded = new Set(['raw_milk', 'raw_kefir', 'raw_aged_cheese', 'sprouts_raw']);
   for (const id of POOL) {
     assert.doesNotMatch(id, /^(label_|produce_)/, `${id}: excluded prefix`);
     assert.ok(!excluded.has(id), `${id}: excluded card`);

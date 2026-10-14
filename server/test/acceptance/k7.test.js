@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
@@ -15,9 +15,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
 
 const SLICE = nonEmpty([
-  'grassfed_butter', 'whole_vs_reduced_fat_milk', 'a2_vs_a1_milk', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'raw_milk',
-  'milk_processing', 'yogurt_live_cultures', 'cream_vs_creamer', 'raw_kefir', 'raw_aged_cheese', 'oat_milk',
-], 'the K7 slice', 12);
+  'grassfed_butter', 'whole_vs_reduced_fat_milk', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'raw_milk',
+  'cream_vs_creamer', 'raw_kefir', 'raw_aged_cheese', 'oat_milk',
+], 'the K7 slice', 9);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -31,3 +31,10 @@ for (const id of SLICE) {
     assertPassRule(t, old, now);
   });
 }
+
+test('K7: IC-7a retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of nonEmpty(['a2_vs_a1_milk', 'milk_processing', 'yogurt_live_cultures'], 'IC-7a retired ids', 3)) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.equal(kb.entries.find((e) => e.id === id), undefined, `${id} still in the KB`);
+  }
+});

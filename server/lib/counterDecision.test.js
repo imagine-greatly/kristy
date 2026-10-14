@@ -82,7 +82,7 @@ test('a contested call still names the standard rather than asserting science', 
   // The tier chip renders beside the decision, so a reader always sees WHICH kind of
   // claim it is. On the entries where the distinction does the most work, the words
   // carry it too.
-  for (const id of ['salmon_wild_vs_farmed', 'beef_grassfed_vs_grainfed', 'milk_processing']) {
+  for (const id of ['salmon_wild_vs_farmed', 'beef_grassfed_vs_grainfed']) {
     const e = entries.find((x) => x.id === id);
     assert.equal(e.evidence_tier, 'kristys_standard', `${id} should be a standard, not settled`);
     const text = `${e.decision} ${e.why}`.toLowerCase();

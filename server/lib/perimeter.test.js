@@ -357,7 +357,7 @@ test('every counter answers the questions a shopper actually has standing at it'
     ['what does vegetarian fed mean', 'egg_labels'],
     ['how do i pick a ripe melon', 'produce_ripeness_by_item'],
     ['is organic produce worth it', 'organic_worth_it_by_type'],
-    ['what is ultra pasteurized milk', 'milk_processing'],
+    ['what is ultra pasteurized milk', 'whole_vs_reduced_fat_milk'],
     ['is pre shredded cheese ok', 'cheese_real_vs_processed'],
     ['should i worry about arsenic in rice', 'rice_arsenic'],
     ['how do i buy real extra virgin olive oil', 'olive_oil_grades'],

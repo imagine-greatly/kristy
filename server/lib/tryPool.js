@@ -12,7 +12,7 @@ export const TRY_POOL = Object.freeze([
   'seafood_counter',
   'canned_fish_choosing',
   'farmed_fish_by_species',
-  'yogurt_live_cultures',
+  'yogurt_plain_vs_flavored',
   'grains_beyond_rice',
   'beans_dried_vs_canned',
   'bulk_bins_buying',

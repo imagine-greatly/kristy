@@ -53,7 +53,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Grass-fed butter, and the difference is visible before you taste it. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Whole milk. Everything else has been through another step. | Read the milkfat percentage on the panel, not the cap color. | — |
-| `a2_vs_a1_milk` | eggs_dairy | A2 milk, and the difference is the breed, not the brand. | Read the carton for a Jersey or Guernsey herd, or the A2 seal. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Buy the block. Slice it or grate it yourself. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain, big tub. Add your own fruit. | Take the big plain tub, not the single-serve fruit cups. | — |
 | `raw_milk` | eggs_dairy | Worth the trouble of finding. Everything is in the sourcing. | Buy from a farm you can visit that posts its test results. | — |
@@ -86,8 +85,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `berries_picking` | produce | Organic berries, and the carton’s underside decides, not the top. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp is water loss, not spoilage. It comes back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
-| `milk_processing` | eggs_dairy | Plain pasteurized. Ultra is a shelf-life technology, not better milk. | Read the carton for “ultra-pasteurized”. A date months out gives it away. | — |
-| `yogurt_live_cultures` | eggs_dairy | Buy it alive. Heat-treated after culturing is a dead ferment. | Find “live and active cultures” on the tub. Shelf-stable never carries it. | — |
 | `cream_vs_creamer` | eggs_dairy | Cream or half-and-half. ‘Non-dairy creamer’ is not dairy. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Unbleached all-purpose. Keep whole wheat in the freezer. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Bulk for dry staples. Careful with anything oily. | Choose the full, busy bins over a dusty half-empty one. | — |

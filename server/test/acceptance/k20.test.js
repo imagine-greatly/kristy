@@ -34,7 +34,7 @@ const BARE = nonEmpty(Object.entries({
 }), 'K20 bare rows', 37);
 const KEEPS = nonEmpty([
   ['plain kefir', 'plain_kefir'], ['kefir drink', 'plain_kefir'], ['raw kefir', 'raw_kefir'], ['milk kefir', 'raw_kefir'], ['kefir grains', 'raw_kefir'],
-  ['cultured dairy', 'yogurt_live_cultures'], ['pickled ginger', null], ['soy milk', 'soy_milk'], ['soymilk', 'soy_milk'],
+  ['cultured dairy', 'yogurt_plain_vs_flavored'], ['pickled ginger', null], ['soy milk', 'soy_milk'], ['soymilk', 'soy_milk'],
   ['sour cream', 'sour_cream'], ['cultured sour cream', 'sour_cream'], ['sourdough', 'sourdough'], ['dairy case', 'dairy_case'], ['bread aisle', 'bread_aisle'],
 ], 'K20 keep rows', 14);
 const NOT_NEW = nonEmpty([
@@ -43,7 +43,7 @@ const NOT_NEW = nonEmpty([
   'tea', 'green tea', 'beer', 'fish sauce', 'pickle relish', 'cottage cheese',
 ], 'K20 not-new rows', 23);
 const FORBIDDEN = ['fermented', 'ferment', 'pickles', 'pickle', 'vinegar', 'apple cider vinegar', 'cider vinegar', 'acv', 'cider', 'cabbage', 'soy', 'soybeans', 'beans', 'tofu', 'paste', 'tea', 'raw', 'live', 'cultured', 'probiotic', 'probiotics', 'organic', 'unpasteurized', 'refrigerated', 'kefir', 'yogurt', 'sourdough'];
-const OWNERS = nonEmpty(['yogurt_live_cultures', 'raw_kefir', 'plain_kefir', 'raw_aged_cheese', 'sourdough', 'soy_milk', 'sour_cream', 'dairy_case'], 'fermented ask owners', 8);
+const OWNERS = nonEmpty(['yogurt_plain_vs_flavored', 'raw_kefir', 'plain_kefir', 'raw_aged_cheese', 'sourdough', 'soy_milk', 'sour_cream', 'dairy_case'], 'fermented ask owners', 8);
 const BANNED = ['makesauerkraut', 'innerbuddies', 'japanesetaste', 'fda.gov/media/71937', 'thedailymeal', 'vinetur', 'farmdidi'];
 const DOCTOR = 'Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha.';
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];

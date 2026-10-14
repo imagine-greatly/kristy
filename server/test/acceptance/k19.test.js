@@ -36,7 +36,7 @@ const BARE = nonEmpty(Object.entries({
   'dairy case': 'dairy_case', 'dairy': 'dairy_case', 'ultrafiltered milk': 'dairy_case', 'ultra filtered milk': 'dairy_case',
 }), 'K19 bare rows', 49);
 const KEEPS = nonEmpty([
-  ['butter', 'grassfed_butter'], ['cheese', 'cheese_real_vs_processed'], ['raw dairy', 'raw_milk'], ['cultured dairy', 'yogurt_live_cultures'], ['non dairy creamer', 'cream_vs_creamer'],
+  ['butter', 'grassfed_butter'], ['cheese', 'cheese_real_vs_processed'], ['raw dairy', 'raw_milk'], ['cultured dairy', 'yogurt_plain_vs_flavored'], ['non dairy creamer', 'cream_vs_creamer'],
   ['raw kefir', 'raw_kefir'], ['milk kefir', 'raw_kefir'], ['kefir grains', 'raw_kefir'], ['oat milk', 'oat_milk'],
   ['almond', 'nuts_raw_vs_roasted'], ['almonds', 'nuts_raw_vs_roasted'], ['almond butter', 'nut_butter_ingredients'], ['peanut butter', 'nut_butter_ingredients'],
   ['almond flour', 'specialty_flours'], ['almond meal', 'specialty_flours'], ['butter croissants', 'pastries_muffins'],
@@ -49,7 +49,7 @@ const NOT_NEW = nonEmpty([
   'frozen yogurt', 'frozen pizza', 'sherbet', 'sorbet', 'eggs', 'butter lettuce', 'string cheese', 'parmesan', 'cheddar',
 ], 'K19 not-new rows', 28);
 const FORBIDDEN = ['dairy', 'milk', 'milks', 'cheese', 'cheeses', 'butter', 'cream', 'yogurt', 'kefir', 'coconut', 'coconut milk', 'almond', 'almonds', 'soy', 'goat', 'sheep', 'plant', 'vegan', 'cultured', 'organic', 'plain', 'unsweetened', 'creamer', 'margarine', 'oil', 'spread', 'non dairy', 'dairy free', 'lactose free'];
-const OWNERS = nonEmpty(['grassfed_butter', 'whole_vs_reduced_fat_milk', 'a2_vs_a1_milk', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'raw_milk', 'milk_processing', 'yogurt_live_cultures', 'cream_vs_creamer', 'raw_kefir', 'raw_aged_cheese', 'oat_milk', 'label_no_added_hormones', 'label_organic_scope', 'nuts_raw_vs_roasted', 'nut_butter_ingredients', 'lamb_goat'], 'dairy ask owners', 17);
+const OWNERS = nonEmpty(['grassfed_butter', 'whole_vs_reduced_fat_milk', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'raw_milk', 'cream_vs_creamer', 'raw_kefir', 'raw_aged_cheese', 'oat_milk', 'label_no_added_hormones', 'label_organic_scope', 'nuts_raw_vs_roasted', 'nut_butter_ingredients', 'lamb_goat'], 'dairy ask owners', 14);
 const BANNED = ['wikipedia.org/wiki/Vegan_butter', 'silk.com', 'fairlife.com', 'perrysicecream.com', 'milkio.co.nz', 'FR-1994-02-10'];
 const DOCTOR = 'Lactose intolerance or a milk allergy? Ask a doctor which milks fit.';
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];

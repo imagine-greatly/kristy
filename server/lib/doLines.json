@@ -1,5 +1,4 @@
 {
-  "a2_vs_a1_milk": "Read the carton for a Jersey or Guernsey herd, or the A2 seal.",
   "almond_milk": "Read the Nutrition Facts for added sugars, then the protein.",
   "bacon": "Find the asterisk beside “no nitrates added” and read the curing ingredients.",
   "bagels": "Ask the baker about a water bath before the dough reaches the oven.",
@@ -101,7 +100,6 @@
   "maple_syrup": "Read the front for “pure maple syrup”, not table or pancake syrup.",
   "mayo": "Read the ingredients for which oil comes first, whatever the front says.",
   "mercury_by_fish": "Check the species name on the case tag. Size predicts the mercury.",
-  "milk_processing": "Read the carton for “ultra-pasteurized”. A date months out gives it away.",
   "miso": "Read the ingredients for which grain went in with the soybeans.",
   "muesli": "Read the ingredients for sugar, honey or syrup beyond the dried fruit.",
   "natto": "Check the date on the pack, since chilled natto keeps only days.",
@@ -182,6 +180,5 @@
   "white_fish": "Ask which species it is, then press the flesh for spring-back.",
   "whole_spices": "Toast them in a dry pan until they smell, then grind.",
   "whole_vs_reduced_fat_milk": "Read the milkfat percentage on the panel, not the cap color.",
-  "yogurt_live_cultures": "Find “live and active cultures” on the tub. Shelf-stable never carries it.",
   "yogurt_plain_vs_flavored": "Take the big plain tub, not the single-serve fruit cups."
 }
