@@ -101,7 +101,7 @@ export const TIER_NOTE_ORPHANED_PENDING = new Set([
   'label_organic_scope', 'label_lightly_sweetened',
   'revive_greens', 'olive_oil_grades', 'bottled_water_buying', 'label_ingredient_order',
   'label_third_party_seals', 'label_artificial_color',
-  'crab', 'tea',
+  'tea',
 ]);
 
 export const MAX_DO_WORDS = 12 + 2;

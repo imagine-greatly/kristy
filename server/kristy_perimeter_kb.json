@@ -12,7 +12,7 @@
   "entries": [
     {
       "id": "salmon_wild_vs_farmed",
-      "title": "Wild vs. farmed salmon",
+      "title": "Salmon",
       "aliases": [
         "salmon",
         "wild salmon",
@@ -30,7 +30,7 @@
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
-      "decision": "Wild salmon is worth choosing; farmed eats a plant-oil ration.",
+      "decision": "Wild salmon, and frozen wild before fresh farmed.",
       "why": "Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.",
       "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a formulated ration built largely on plant protein and vegetable oil.",
       "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
@@ -80,7 +80,7 @@
     },
     {
       "id": "shrimp_imported_vs_domestic",
-      "title": "Imported vs. domestic shrimp",
+      "title": "Shrimp",
       "aliases": [
         "shrimp",
         "prawns",
@@ -90,7 +90,7 @@
       ],
       "category": "seafood",
       "question": "Is imported or domestic shrimp better?",
-      "decision": "Read the country of origin first; it is printed by law.",
+      "decision": "Wild American shrimp, read by the country of origin printed by law.",
       "why": "Country of origin is printed by law. It is the one sourcing question with an answer.",
       "short_answer": "Wild American shrimp from the Gulf and South Atlantic is the one you can trace to a managed fishery.",
       "detail": "Country-of-origin labeling is required on unprocessed seafood, which makes shrimp one of the few things in the store where the sourcing question has a printed answer. Frozen raw shrimp gives the most control over how it is cooked, and usually the best value.",
@@ -125,7 +125,7 @@
       ],
       "pick_steps": [
         "Read the country of origin first; it is printed by law.",
-        "Wild or farmed: see Wild vs. farmed salmon.",
+        "Wild or farmed: see Salmon.",
         "Buy it frozen raw: the ‘fresh’ case is nearly always thawed."
       ],
       "science": "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes. Frozen raw gives the most control over the cooking.",
@@ -2975,7 +2975,7 @@
           "meaning": "Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating."
         }
       ],
-      "tier_note": "The pack medium is on the list. Preferring olive oil or water is the standard laid over it.",
+      "tier_note": "The pack medium is on the list, and preferring olive oil or water is the standard laid over it.",
       "watch_out": [
         "‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch.",
         "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye."
@@ -7904,7 +7904,7 @@
           "meaning": "A product made from cooked Alaska pollock, kept cold for up to 14 days."
         }
       ],
-      "tier_note": "Leg movement and shell color are extension and FDA buying checks.",
+      "tier_note": "Leg movement on live crab and shell color on cooked crab are extension and FDA buying checks.",
       "asked_as": [
         "how do i pick a good crab",
         "how do i tell if cooked crab is good",
@@ -8208,7 +8208,7 @@
       ],
       "category": "seafood",
       "question": "How do you choose seafood at the counter?",
-      "decision": "Pick the species first, then ask where and how it was raised.",
+      "decision": "Clean, briny smell and springy flesh; ask whether it was previously frozen.",
       "why": "The species name is what a seafood label must get right. FDA DNA tests found it right 85% of the time.",
       "short_answer": "Name the species, then ask where it came from and whether it was farmed. Fish should sit refrigerated or on a thick bed of ice. It should smell mild, and cooked seafood sits apart from raw.",
       "detail": "FDA guidance says to buy fish refrigerated or on a thick bed of fresh ice, preferably under a cover. Fish should smell fresh and mild, not fishy, sour or ammonia-like. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. Around 85 percent of seafood eaten in the U.S. is imported. NOAA inspection is a fee-for-service program for vessels, processing plants and retail facilities. Participants may use an official mark showing federal inspection.",

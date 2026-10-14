@@ -36,8 +36,8 @@ Also: imperative, starts with a verb, ≤14 words.
 
 | slug | section | current headline | proposed do | flag |
 | --- | --- | --- | --- | --- |
-| `salmon_wild_vs_farmed` | seafood | Wild. Farmed is a different fish, fed and penned. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
-| `shrimp_imported_vs_domestic` | seafood | Wild American. Most shrimp is imported, farmed, and anonymous. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
+| `salmon_wild_vs_farmed` | seafood | Wild salmon, and frozen wild before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
+| `shrimp_imported_vs_domestic` | seafood | Wild American shrimp, read by the country of origin printed by law. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
 | `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
 | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed and grass-finished. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
@@ -78,10 +78,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
-| `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
-| `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
-| `farmed_fish_by_species` | seafood | Farmed shellfish, trout and char are the good ones. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
-| `seafood_certifications` | seafood | MSC on wild. A farm seal is a floor, not a recommendation. | Check the badge names a program you can look up. Unnamed is marketing. | — |
+| `mercury_by_fish` | seafood | Sardines, salmon and skipjack are small fish that live short lives. | Check the species name on the case tag. Size predicts the mercury. | — |
+| `canned_fish_choosing` | seafood | Tinned fish in olive oil or water, bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
+| `farmed_fish_by_species` | seafood | Farmed trout, char and shellfish are worth buying without hesitation. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
+| `seafood_certifications` | seafood | MSC is the wild-catch seal worth trusting; farm seals set a minimum. | Check the badge names a program you can look up. Unnamed is marketing. | — |
 | `produce_ripeness_by_item` | produce | The heavier piece of two the same size holds more juice. | Smell the stem end on anything that ripens after picking. | — |
 | `berries_picking` | produce | Organic berries, and the carton’s underside decides, not the top. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Wash it when you eat it, not when you unpack it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
@@ -148,7 +148,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `scallops` | seafood | Dry scallops, with no added solution listed in the ingredients. | Read the ingredients for a phosphate and water, or ask if they are dry. | — |
 | `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Ask to see the shellfish tag, then tap any open shell. | — |
 | `smoked_salmon` | seafood | Smoked salmon kept cold, read by its label word. | Read the label for nova, lox or kippered, then keep it refrigerated. | — |
-| `seafood_counter` | seafood | Pick the species first, then ask where and how it was raised. | Ask the counter for the species name, then check the fish sits on ice. | — |
+| `seafood_counter` | seafood | Clean, briny smell and springy flesh; ask whether it was previously frozen. | Ask the counter for the species name, then check the fish sits on ice. | — |
 | `sprouted_grain_bread` | bulk_pantry | Sprouted grain bread with sprouted whole grains first, no added flour. | Read the first few ingredients, then check the rest for added flour. | — |
 | `sprouted_grains` | bulk_pantry | Sprouted grain labeled sprouted whole grain; no regulated definition exists. | Check the label names the grain as whole, not only its process. | — |
 | `specialty_flours` | bulk_pantry | Specialty flour labeled whole grain; stoneground alone does not promise it. | Read the flour name for “whole”, then check the fat line. | — |
