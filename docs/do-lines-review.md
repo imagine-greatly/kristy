@@ -44,7 +44,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beef_grassfed_vs_grainfed` | meat | Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Read the name for “mechanically tenderized” before the cut name. | — |
 | `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the name: “ground beef” allows no added fat, water or binders. | — |
-| `egg_labels` | eggs_dairy | Soy-free and corn-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
+| `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
 | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
@@ -77,7 +77,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Read the grade as a marbling score, then ask how it was raised. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |
-| `chicken_cuts_basics` | meat | Bone-in thighs. Boneless skinless is the priciest form of the same bird. | Take the pack with the skin still on. It bastes itself. | — |
+| `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
@@ -137,7 +137,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bacon` | meat | Bacon chosen by its curing ingredients, with the qualifier read. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
-| `chicken_breast` | meat | Plain chicken breast without an added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+| `chicken_breast` | meat | Plain breast, fresh or frozen, over any with added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
 | `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
 | `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
 | `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |

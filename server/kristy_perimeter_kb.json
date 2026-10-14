@@ -514,7 +514,7 @@
     },
     {
       "id": "egg_labels",
-      "title": "Egg labels, and what the hen ate",
+      "title": "Eggs",
       "aliases": [
         "eggs",
         "egg labels",
@@ -595,10 +595,10 @@
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Soy-free and corn-free first, then organic, then pasture-raised.",
+      "decision": "Corn- and soy-free first, then organic, then pasture-raised.",
       "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
       "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
-      "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
+      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
@@ -639,7 +639,7 @@
         "AA vs A is firmness of the white. Freshness matters more than either.",
         "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed.",
         "Keep them in the carton. It slows moisture loss and keeps odors out.",
-        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good."
+        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good, not back and forth."
       ],
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
@@ -744,7 +744,7 @@
           "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
         }
       ],
-      "tier_note": "What each carton word is allowed to mean is defined. Ranking feed above room is the standard.",
+      "tier_note": "What the hen ate ranks above how she was housed, so the feed words lead the carton.",
       "eyebrow_short": "Egg labels",
       "asked_as": [
         "what eggs should i buy",
@@ -2664,7 +2664,7 @@
     },
     {
       "id": "chicken_cuts_basics",
-      "title": "Chicken and duck",
+      "title": "Chicken",
       "aliases": [
         "chicken cuts",
         "chicken breast",
@@ -2693,7 +2693,7 @@
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
-      "decision": "Bone-in thighs carry more fat and collagen than breast meat.",
+      "decision": "Air-chilled first, then bone-in, skin-on thighs over breast.",
       "why": "Dark meat is forgiving and hard to overcook. Boneless skinless is the priciest form of it.",
       "short_answer": "Whole bird: cheapest per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
@@ -2743,7 +2743,7 @@
           "meaning": "True of all chicken by law — not a differentiator."
         }
       ],
-      "tier_note": "Skin rendering and basting is how the cut behaves; defaulting to skin-on thighs is the whole-food standard.",
+      "tier_note": "Water-chilled packages can hold retained water, and thighs carry more fat than breast.",
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
@@ -7029,7 +7029,7 @@
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Plain chicken breast without an added flavoring solution.",
+      "decision": "Plain breast, fresh or frozen, over any with added flavoring solution.",
       "why": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
@@ -7066,7 +7066,7 @@
           "meaning": "Water absorbed during post-slaughter processing, separately disclosed on the label."
         }
       ],
-      "tier_note": "The solution statement and its ingredients disclose documented processing; choosing plain breast is the whole-food standard.",
+      "tier_note": "Any added flavoring solution has to appear in the product name, with its amount.",
       "asked_as": [
         "how do you choose chicken breast",
         "does natural chicken breast have added water",
