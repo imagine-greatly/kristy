@@ -156,6 +156,9 @@ export const RETIRED = [
   'egg_grades_sizes',
   'egg_feed_claims',
   'egg_storage',
+  // → chicken_cuts_basics (IC-4a). One card per item: chilling and the antibiotics claim are on the chicken card now; aliases, asks, sources and labels moved. chicken_breast stays (type veto).
+  'air_chilled_chicken',
+  'no_antibiotics_poultry',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

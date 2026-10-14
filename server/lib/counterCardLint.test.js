@@ -433,7 +433,8 @@ test('all curated cards clear the per-card bar', () => {
   // IC-3a folds 2: produce_picking_ripeness, strawberries_organic_residue (2026-10-14).
   // IC-3b adds 1: produce_bananas (2026-10-14).
   // IC-4a-eggs folds 5: egg_shell_color, egg_freshness, egg_grades_sizes, egg_feed_claims, egg_storage (2026-10-14).
-  assert.equal(CARDS.length, 191);
+  // IC-4a-chicken folds 2: air_chilled_chicken, no_antibiotics_poultry (2026-10-14).
+  assert.equal(CARDS.length, 189);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

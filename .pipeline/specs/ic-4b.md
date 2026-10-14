@@ -27,7 +27,7 @@ Repo `/Users/m1/kristy`, branch `main`, after ic-4a-eggs AND ic-4a-chicken are c
 Plan: `docs/ITEM-CARDS-PLAN.md` IC-4b, D1 (front = `decision`, why line = `tier_note`), claim-lock rules 1-5. Item-card shape approved 2026-10-13: one card per item; the front is the buying ladder plus a why line; the back is how to spot it.
 
 **Missing prerequisite:** no `ic-4a-chicken` spec exists at the time of writing. This piece assumes ic-4a-chicken did all of the following:
-- retired `chicken_breast`, `air_chilled_chicken` and `no_antibiotics_poultry`;
+- retired `air_chilled_chicken` and `no_antibiotics_poultry`;
 - repointed every "see Air-chilled chicken." pointer;
 - moved the `chill_water` OWNED_FACTS owner;
 - removed `air_chilled_chicken` from tryPool.js, tryPool.test.js, k8 and k24.
@@ -46,7 +46,7 @@ C0 fails loudly if it did not run.
   - folds (ic-4a-eggs / ic-4a-chicken);
   - aliases, asked_as and labels_decoded;
   - OWNED_FACTS rows;
-  - count pins (unchanged at 188);
+  - count pins (unchanged at 189);
   - kristy-ios title strings (flagged, not edited);
   - client/src.
 - **OK rough edges:**
@@ -94,7 +94,7 @@ C0 fails loudly if it did not run.
    - If lint rejects Devon's egg decision verbatim → STOP BLOCKED with the lint code. Never loosen lint.
 
 ## Criteria
-- C0 [test] Prerequisite folds ran: chicken_breast, air_chilled_chicken, no_antibiotics_poultry and egg_grades_sizes are absent from the KB and present in RETIRED.
+- C0 [test] Prerequisite folds ran: air_chilled_chicken, no_antibiotics_poultry and egg_grades_sizes are absent from the KB and present in RETIRED.
 - C1 [test] egg_labels:
   - title is "Eggs";
   - decision is verbatim;
@@ -116,7 +116,7 @@ C0 fails loudly if it did not run.
   - ESSENTIALS is unchanged.
 - C6 [test] Rule 4 = 0 over the batch decision + tier_note.
 - C7 [test] Every source URL new on a batch id since 663ca3d is in `docs/sources/item-cards/*.md`.
-- C8 `npm test` green; probe 0 wrong; dry-run count 188.
+- C8 `npm test` green; probe 0 wrong; dry-run count 189.
 
 ## Contract
 ```json
@@ -171,7 +171,7 @@ const reviewHeadline = (id) => {
 };
 
 test('C0 prerequisite folds ran', () => {
-  for (const id of ['chicken_breast', 'air_chilled_chicken', 'no_antibiotics_poultry', 'egg_grades_sizes']) {
+  for (const id of ['air_chilled_chicken', 'no_antibiotics_poultry', 'egg_grades_sizes']) {
     assert.equal(now(id), undefined, `${id} still in the KB: ic-4a-eggs / ic-4a-chicken must land first`);
     assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
   }

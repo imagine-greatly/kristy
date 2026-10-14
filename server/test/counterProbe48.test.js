@@ -146,7 +146,7 @@ test('named types cannot return a different cut, form or state, including cart p
     ['ground turkey', { id: 'whole_turkey', title: 'Whole turkey', aliases: ['turkey'], category: 'poultry', decision: 'Choose a whole turkey.', cart_pick: 'Whole turkey' }],
     ['tinned salmon', entryById('fish_freshness_at_counter')],
     ['canned salmon', entryById('salmon_wild_vs_farmed')],
-    ['tinned chicken', entryById('air_chilled_chicken')],
+    ['tinned chicken', entryById('chicken_cuts_basics')],
     ['chicken breast', { ...entryById('chicken_cuts_basics'), id: 'pick_thighs', kind: 'pick' }],
   ], 'type veto fixtures');
   for (const [query, entry] of fixtures) {
@@ -160,7 +160,7 @@ test('type veto preserves an exact type and an explicit comparison', () => {
   const fixtures = nonEmpty([
     ['chicken thighs', entryById('chicken_cuts_basics')],
     ['thighs or breasts', entryById('chicken_cuts_basics')],
-    ['whole chicken', entryById('air_chilled_chicken')],
+    ['whole chicken', entryById('chicken_cuts_basics')],
     ['canned light tuna', entryById('mercury_by_fish')],
     ['dried beans', entryById('beans_dried_vs_canned')],
     ['pretzel bread', { id: 'pretzel', title: 'Pretzel bread', aliases: ['pretzel bread'], category: 'bulk_pantry', decision: 'Choose pretzel bread.', cart_pick: 'Pretzel bread' }],

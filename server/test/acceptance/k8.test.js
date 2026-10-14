@@ -15,8 +15,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
 
 const SLICE = nonEmpty([
-  'rotisserie_chicken', 'air_chilled_chicken', 'no_antibiotics_poultry', 'chicken_cuts_basics', 'egg_labels',
-], 'the K8 slice', 5);
+  'rotisserie_chicken', 'chicken_cuts_basics', 'egg_labels',
+], 'the K8 slice', 3);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -33,6 +33,13 @@ for (const id of SLICE) {
 
 test('K8: IC-4a retired ids are in RETIRED and gone from the KB', () => {
   for (const id of ['egg_shell_color', 'egg_freshness', 'egg_grades_sizes', 'egg_feed_claims', 'egg_storage']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
+});
+
+test('K8: IC-4a-chicken retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['air_chilled_chicken', 'no_antibiotics_poultry']) {
     assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
     assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
   }

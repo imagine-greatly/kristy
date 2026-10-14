@@ -314,7 +314,7 @@ for (const name of REALISTIC_26) {
   realistic.push({ name, slug: via === '(none)' ? null : via, verdict, detail, pick: !!pick });
 }
 // A named card the corpus owns must be the one attached; a neighbour stealing the row is WRONG.
-// `air_chilled_chicken` carries the bare alias `chicken`, so the rotisserie row is the hub test.
+// `chicken_cuts_basics` carries the bare alias `chicken`, so the rotisserie row is the hub test.
 const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
 for (const [name, slug] of Object.entries(OWNED_BY)) {
   const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
@@ -351,7 +351,7 @@ const MODIFIED_ROWS = [
   'organic carrots', 'fresh basil', 'fresh cilantro', 'ripe mangoes', 'organic garlic',
   'whole carrots', 'large cucumbers',
   // P4 — the six WALK-2026-09-10 staple misses, in list wording. Deli turkey lands the
-  // deli card; rotisserie chicken lands air_chilled_chicken through its bare `chicken`
+  // deli card; rotisserie chicken lands chicken_cuts_basics through its bare `chicken`
   // alias (the card path owns every `… chicken` row, so it cannot be a pick — pickReach
   // fails one that tries); the other four land picks.
   'Rotisserie chicken', 'Deli turkey', 'Firm tofu', 'Lamb chops', 'Celery', 'Italian sausage',

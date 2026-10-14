@@ -45,8 +45,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Read the name for “mechanically tenderized” before the cut name. | — |
 | `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the name: “ground beef” allows no added fat, water or binders. | — |
 | `egg_labels` | eggs_dairy | Soy-free and corn-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
-| `air_chilled_chicken` | meat | Air-chilled. A water-chilled bird absorbs the bath it was cooled in. | Check the package for “retained water up to”. That percentage is water. | — |
-| `no_antibiotics_poultry` | meat | A fair choice, not a cleaner bird. Don’t pay the premium. | Look for “USDA Process Verified” beside the claim, or put it back. | — |
 | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | The freezer does not stop a vegetable. Boiling water does. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |

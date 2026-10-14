@@ -769,115 +769,6 @@
       ]
     },
     {
-      "id": "air_chilled_chicken",
-      "title": "Air-chilled chicken",
-      "aliases": [
-        "air chilled chicken",
-        "air-chilled",
-        "chicken",
-        "water chilled"
-      ],
-      "category": "poultry",
-      "question": "Is air-chilled chicken better?",
-      "decision": "Air-chilled is worth choosing; the other kind is cooled in a tank.",
-      "why": "Cold air instead of a communal tank. Nothing soaks in, and the skin starts dry.",
-      "short_answer": "Air-chilled birds are cooled in cold air. Water-chilled birds go through a communal chilled-water tank. They come out holding some of that water, and it is sold by the pound. The label has to print that number.",
-      "detail": "Conventional water-chilling can leave chicken holding added water (which you pay for by weight and which can dilute flavor). Air-chilling avoids that. Some people also prefer it on cross-contamination grounds, though safe handling matters far more than the chilling method. Retained water has to be disclosed on the label, so the number is printed rather than inferred. Skin that did not start out wet is also the skin that crisps.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        "USDA FSIS poultry-chilling references",
-        "9 CFR § 441.10 “Retained water in raw meat and poultry products” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/441.10"
-      ],
-      "kristy_take": "Air-chilled. Better skin, and nothing on the scale that is not chicken.",
-      "cart_pick": "Air-chilled whole chicken",
-      "buying_tips": [
-        "‘Air-chilled’ is printed on the package when it applies.",
-        "A whole bird is the cheapest way to buy chicken either way.",
-        "Skin that starts dry is the skin that crisps."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Contains up to X% retained water",
-          "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
-        }
-      ],
-      "tier_note": "Retained water is a disclosed number. Preferring air-chilled is a standard about handling.",
-      "watch_out": [
-        "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
-        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
-        "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional."
-      ],
-      "pick_steps": [
-        "Look for ‘air-chilled’ printed on the package; it appears when it applies.",
-        "A ‘retained water up to’ percentage is the tank; no line means none.",
-        "No air-chilled on the shelf: a regular bird works; pat it dry."
-      ],
-      "science": "Air-chilled birds cool in cold air instead of a communal tank, so nothing soaks in. Water-chilled birds come out holding some water, and it is sold by the pound. The label has to print that number, so it is read, not inferred. Skin that starts dry is the skin that crisps. A whole bird is the cheapest way to buy chicken either way.",
-      "asked_as": [
-        "what is air chilled chicken",
-        "is air chilled chicken better",
-        "which chicken should i buy"
-      ]
-    },
-    {
-      "id": "no_antibiotics_poultry",
-      "title": "‘No antibiotics’ claims on chicken",
-      "aliases": [
-        "no antibiotics",
-        "raised without antibiotics",
-        "antibiotic free chicken",
-        "abf"
-      ],
-      "category": "poultry",
-      "question": "Does ‘no antibiotics’ on chicken mean anything?",
-      "decision": "Raised without antibiotics is a real claim, but not a cleaner bird.",
-      "why": "No chicken may be sold with residues either way. The claim is about how the flock was raised.",
-      "short_answer": "‘Raised without antibiotics’ is a real claim, stated by the producer. Nobody inspects the farm to check it. No chicken can legally be sold with antibiotic residues anyway. The claim is about how the flock was raised, not residues.",
-      "detail": "US rules require a withdrawal period so meat is free of antibiotic residues regardless of the label. What ‘raised without antibiotics’ adds is information about flock management and antibiotic-resistance concerns. That is a legitimate reason to choose it, framed honestly. The claim itself is an affidavit, not an inspection, so look for USDA Process Verified or a third-party check to back it. The claim rests on the producer’s own paperwork to USDA. ‘No antibiotics’ isn’t as unique as it sounds. It speaks to how the flock was raised, not to residues on your plate.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA FSIS ‘raised without antibiotics’ guidance",
-        "FDA antibiotic-residue rules",
-        "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
-        "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
-      ],
-      "kristy_take": "A fair reason to choose it is resistance, not residues. Don’t let the label scare you into thinking regular chicken is full of drugs. It isn’t.",
-      "buying_tips": [
-        "‘USDA Process Verified’ or a third-party seal backs the claim.",
-        "All chicken is required to be residue-free at sale, labeled or not.",
-        "This is a management/resistance choice, not a ‘cleaner meat’ guarantee."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Raised without antibiotics",
-          "meaning": "No antibiotics used in raising — meaningful, best when third-party verified."
-        },
-        {
-          "term": "No antibiotic residues",
-          "meaning": "True of all chicken by law — not a differentiator."
-        }
-      ],
-      "tier_note": "Residue limits apply to every bird sold, which is what leaves the claim about raising alone.",
-      "watch_out": [
-        "The claim rests on the producer’s own affidavit to USDA. The agency does not inspect the farm, so oversight is weak. A third-party seal is what makes it checkable.",
-        "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
-        "‘No hormones’ on chicken is an empty claim. Hormones and steroids are not allowed in poultry, so every bird already qualifies.",
-        "‘Free range’ requires outdoor access and nothing more. A small door to a dirt pen counts. No grass is required and no time outside is set.",
-        "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics."
-      ],
-      "pick_steps": [
-        "Back the claim with ‘USDA Process Verified’ or a third-party seal beside it.",
-        "Organic carries the antibiotic rule; ‘natural’ says nothing about antibiotics.",
-        "‘No hormones’ is empty on chicken: hormones are not allowed in poultry."
-      ],
-      "science": "No chicken may be sold with antibiotic residues, labeled or not. So the claim is about how the flock was raised, a management and resistance choice, not cleaner meat. It rests on the producer’s own affidavit to USDA, and the agency does not inspect the farm. ‘Free range’ requires outdoor access and nothing more; a small door to a dirt pen counts.",
-      "asked_as": [
-        "does no antibiotics mean anything",
-        "is antibiotic free chicken better",
-        "should i pay for no antibiotics"
-      ]
-    },
-    {
       "id": "organic_worth_it_by_type",
       "title": "Produce",
       "aliases": [
@@ -2790,7 +2681,15 @@
         "boneless skinless",
         "duck legs",
         "duck leg",
-        "duck meat"
+        "duck meat",
+        "air chilled chicken",
+        "air-chilled",
+        "chicken",
+        "water chilled",
+        "no antibiotics",
+        "raised without antibiotics",
+        "antibiotic free chicken",
+        "abf"
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
@@ -2802,15 +2701,25 @@
       "sources": [
         "USDA FoodData Central (poultry composition)",
         "USDA FSIS poultry labeling terms",
-        "9 CFR § 441.10 “Retained water in raw meat and poultry products” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/441.10"
+        "9 CFR § 441.10 “Retained water in raw meat and poultry products” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/441.10",
+        "USDA FSIS poultry-chilling references",
+        "USDA FSIS ‘raised without antibiotics’ guidance",
+        "FDA antibiotic-residue rules",
+        "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
+        "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
       "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
-      "cart_pick": "Bone-in chicken thighs",
+      "cart_pick": "Air-chilled whole chicken or bone-in thighs",
       "buying_tips": [
         "Whole bird: cheapest per pound, and the carcass makes stock.",
         "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
         "Breast: fast and lean. Pull it the moment it is done.",
-        "Boneless skinless is the priciest form of the same bird."
+        "Boneless skinless is the priciest form of the same bird.",
+        "‘Air-chilled’ is printed on the package when it applies.",
+        "Skin that starts dry is the skin that crisps.",
+        "‘USDA Process Verified’ or a third-party seal backs a ‘raised without antibiotics’ claim.",
+        "All chicken is required to be residue-free at sale, labeled or not.",
+        "‘Raised without antibiotics’ is a management and resistance choice, not a cleaner-meat guarantee."
       ],
       "labels_decoded": [
         {
@@ -2820,6 +2729,18 @@
         {
           "term": "White meat (breast, tenderloin)",
           "meaning": "Low-use muscle. Lean and fast, dries out quickly."
+        },
+        {
+          "term": "Contains up to X% retained water",
+          "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
+        },
+        {
+          "term": "Raised without antibiotics",
+          "meaning": "No antibiotics used in raising — meaningful, best when third-party verified."
+        },
+        {
+          "term": "No antibiotic residues",
+          "meaning": "True of all chicken by law — not a differentiator."
         }
       ],
       "tier_note": "Skin rendering and basting is how the cut behaves; defaulting to skin-on thighs is the whole-food standard.",
@@ -2827,16 +2748,29 @@
         "which chicken cut should i buy",
         "thighs or breasts",
         "is boneless skinless worth it",
-        "how do you buy duck legs"
+        "how do you buy duck legs",
+        "what is air chilled chicken",
+        "is air chilled chicken better",
+        "which chicken should i buy",
+        "does no antibiotics mean anything",
+        "is antibiotic free chicken better",
+        "should i pay for no antibiotics"
       ],
       "watch_out": [
-        "How it was chilled: see Air-chilled chicken.",
-        "Boneless skinless is the priciest form of the same bird."
+        "Boneless skinless is the priciest form of the same bird.",
+        "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
+        "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional.",
+        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
+        "Safe handling matters far more than the chilling method.",
+        "‘Raised without antibiotics’ rests on the producer’s own affidavit to USDA. The agency does not inspect the farm, so oversight is weak. A third-party seal is what makes it checkable.",
+        "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
+        "‘No hormones’ on chicken is an empty claim. Hormones and steroids are not allowed in poultry, so every bird already qualifies.",
+        "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics."
       ],
       "pick_steps": [
         "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
         "A whole bird is cheapest per pound, and the frame makes stock.",
-        "How it was chilled: see Air-chilled chicken."
+        "Look for ‘air-chilled’ printed on the package; it appears when it applies."
       ],
       "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes."
     },
