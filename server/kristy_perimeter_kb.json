@@ -193,7 +193,7 @@
     },
     {
       "id": "beef_grassfed_vs_grainfed",
-      "title": "Grass-fed vs. grain-fed beef",
+      "title": "Beef",
       "aliases": [
         "grass fed beef",
         "grass-fed",
@@ -207,7 +207,7 @@
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "decision": "Grass-finished beef ate grass its whole life; grass-fed alone did not.",
+      "decision": "100% grass-fed and grass-finished.",
       "why": "‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard.",
       "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze most of their lives, eat feedlot grain for the last months, and still be labeled grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ covers the whole life. That one is worth paying for.",
       "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
@@ -215,7 +215,11 @@
       "sources": [
         "USDA FoodData Central",
         "peer-reviewed reviews of grass- vs grain-fed fatty acids",
-        "Federal Register 2016-00440 “United States Standards for Livestock and Meat Marketing Claims, Withdrawal” (govinfo.gov) https://www.govinfo.gov/content/pkg/FR-2016-01-12/html/2016-00440.htm"
+        "Federal Register 2016-00440 “United States Standards for Livestock and Meat Marketing Claims, Withdrawal” (govinfo.gov) https://www.govinfo.gov/content/pkg/FR-2016-01-12/html/2016-00440.htm",
+        "USDA AMS “Withdrawal of United States Standards for Livestock and Meat Marketing Claims” https://www.ams.usda.gov/rules-regulations/withdrawal-united-states-standards-livestock-and-meat-marketing-claims",
+        "Federal Register 2016-00440 withdrawal notice, PDF (govinfo.gov) https://www.govinfo.gov/content/pkg/FR-2016-01-12/pdf/2016-00440.pdf",
+        "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/",
+        "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf"
       ],
       "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
       "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
@@ -247,7 +251,7 @@
           "meaning": "Finished on grain in a feedlot. The US default."
         }
       ],
-      "tier_note": "What each of the two words is allowed to mean is documented fact. Insisting on the whole-life claim is a standard, not a finding.",
+      "tier_note": "Grass-fed alone does not promise a grass finish, so the whole-life words decide.",
       "eyebrow_short": "Grass-fed beef",
       "asked_as": [
         "is grass fed beef worth it",
@@ -289,7 +293,7 @@
       "buying_tips": [
         "Look for liver and heart named in the ingredient list, each with a percentage.",
         "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
-        "How it was raised: see Grass-fed vs. grain-fed beef."
+        "How it was raised: see Beef."
       ],
       "watch_out": [
         "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
@@ -311,7 +315,7 @@
           "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
         }
       ],
-      "tier_note": "The name rule is on record. Reading the ingredient list for each percentage is the ask.",
+      "tier_note": "The name rule is on record, and reading the ingredient list for each percentage is the ask.",
       "eyebrow_short": "Organ blend beef",
       "asked_as": [
         "is organ blend ground beef worth it",
@@ -398,7 +402,7 @@
     },
     {
       "id": "beef_cuts_basics",
-      "title": "Beef cuts",
+      "title": "Steak",
       "aliases": [
         "beef cuts",
         "beef cut",
@@ -424,7 +428,7 @@
         "usda grade",
         "what does prime mean",
         "marbling",
-        "prime choice select",
+        "prime choice select", "beef cut for", "prime beef worth", "beef grades matter",
         "beef grades",
         "usda grades",
         "usda choice"
@@ -487,7 +491,7 @@
       ],
       "pick_steps": [
         "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
-        "How it was raised: see Grass-fed vs. grain-fed beef.",
+        "How it was raised: see Beef.",
         "Added solution: see Pork cuts and ‘solution added’ pork."
       ],
       "science": "Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
@@ -552,7 +556,7 @@
       "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
       "pick_steps": [
         "Ingredients should be beef with seasoning at most: no water or phosphates.",
-        "How it was raised: see Grass-fed vs. grain-fed beef."
+        "How it was raised: see Beef."
       ]
     },
     {
@@ -2634,7 +2638,7 @@
         "Ask them to portion it. Cutting, tying and boning are usually included."
       ],
       "labels_decoded": [],
-      "tier_note": "Using the counter is a shopping habit offered as a standard, not a claim about the meat.",
+      "tier_note": "Asking how it was raised and when it was cut is a shopping habit, not a meat claim.",
       "watch_out": [
         "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask which one it is.",
         "Silverskin is connective tissue. Ask to have it removed from a tenderloin or ribs.",
@@ -2643,7 +2647,7 @@
       ],
       "pick_steps": [
         "Ask for a whole chuck ground fresh, which lets you choose the cut.",
-        "How it was raised: see Grass-fed vs. grain-fed beef.",
+        "How it was raised: see Beef.",
         "Ask them to portion it; cutting, tying and boning are usually included."
       ],
       "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight.",
@@ -7692,7 +7696,7 @@
           "meaning": "Beef stomach, braised up to two hours to turn tender."
         }
       ],
-      "tier_note": "The 1 to 2 day window and 160°F are USDA handling guidance, not a health call.",
+      "tier_note": "The 1 to 2 day cook window and 160°F come from USDA handling guidance for organ meats.",
       "asked_as": [
         "how do you buy organ meats",
         "how long do organ meats keep",
@@ -7803,7 +7807,7 @@
           "meaning": "Chronic Wasting Disease, an illness found in deer and elk."
         }
       ],
-      "tier_note": "The handling steps come from extension guidance written for deer and elk.",
+      "tier_note": "Refrigerated processing and fat trimming are extension steps written for deer and elk venison.",
       "asked_as": [
         "how long does ground venison keep",
         "how do you choose a venison steak",

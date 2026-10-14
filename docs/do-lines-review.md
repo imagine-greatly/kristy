@@ -41,9 +41,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
 | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `fresh_vs_previously_frozen_fish` | seafood | Buy the frozen. Thaw it overnight in the fridge. | Ask the counter “was this previously frozen?” before paying the fresh premium. | — |
-| `beef_grassfed_vs_grainfed` | meat | Grass-fed and grass-finished. Grass-fed alone is still a feedlot finish. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
-| `beef_cuts_basics` | meat | Chuck. Marbled, cheap, and it falls apart slow-cooked. | Read the name for “mechanically tenderized” before the cut name. | — |
-| `ground_beef_lean_ratio` | meat | 80/20 for burgers. 90/10 for anything you drain. | Read the name: “ground beef” allows no added fat, water or binders. | — |
+| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed and grass-finished. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+| `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
+| `ground_beef_lean_ratio` | meat | Beef with seasoning at most, and nothing else in the ingredients. | Read the name: “ground beef” allows no added fat, water or binders. | — |
 | `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
 | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
@@ -74,11 +74,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
-| `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
-| `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |
+| `judging_meat_at_the_case` | meat | Color comes from oxygen and packaging, not from how fresh it is. | Check the package is sealed and not leaking juices, then smell it. | — |
+| `butcher_counter_asking` | meat | Ask the butcher how it was raised and when it was cut. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
-| `pork_cuts_and_enhanced` | meat | Pork shoulder. And read the label for ‘solution added’. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
-| `deli_meat_uncured` | meat | ‘Uncured’ is cured with celery powder. Find the asterisk. | Ask the counter to slice whole roasted meat thin instead. | — |
+| `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
+| `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Small and short-lived. Sardines, salmon, skipjack. | Check the species name on the case tag. Size predicts the mercury. | — |
 | `fish_freshness_at_counter` | seafood | Smell it first. Clean seawater or nothing means yes. | Check it is bedded in ice, not sitting in its own liquid. | — |
 | `canned_fish_choosing` | seafood | Packed in olive oil or water. Bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
@@ -140,7 +140,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
 | `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
 | `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
-| `lamb_goat` | meat | Lamb by its USDA grade, goat by firm, fine-grained flesh. | Press goat for firm, fine-grained flesh and white fat. | — |
+| `lamb_goat` | meat | Read lamb and goat for how they were raised, then anything added. | Press goat for firm, fine-grained flesh and white fat. | — |
 | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
 | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
