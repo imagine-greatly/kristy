@@ -352,7 +352,7 @@ export const PERIMETER_SECTIONS = [
     labels: ['label_pasture_raised_feed', 'label_cage_free', 'label_free_range', 'label_no_added_hormones'],
     shortcuts: [
       { q: 'Which egg carton?', id: 'egg_labels' },
-      { q: 'Brown or white eggs?', id: 'egg_shell_color' },
+      { q: 'Is pre-shredded cheese ok?', id: 'cheese_real_vs_processed' },
       { q: 'Whole or reduced-fat milk?', id: 'whole_vs_reduced_fat_milk' },
     ],
     thinNote: null,

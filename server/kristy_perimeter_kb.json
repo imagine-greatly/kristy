@@ -531,7 +531,67 @@
         "best eggs",
         "eggs to buy",
         "which egg carton",
-        "carton of eggs"
+        "carton of eggs",
+        "brown eggs",
+        "white eggs",
+        "egg shell color",
+        "eggshell color",
+        "are brown eggs better",
+        "brown vs white eggs",
+        "yolk color",
+        "dark yolk",
+        "orange yolk",
+        "egg quality",
+        "egg color",
+        "egg freshness",
+        "how old are my eggs",
+        "julian date",
+        "egg float test",
+        "expired eggs",
+        "sell by eggs",
+        "are my eggs still good",
+        "egg pack date",
+        "eggs are fresh",
+        "fresh eggs",
+        "how old are these eggs",
+        "egg carton date",
+        "pack date",
+        "egg date",
+        "egg carton",
+        "date on an egg carton",
+        "date on the carton",
+        "egg grade",
+        "grade aa",
+        "grade a eggs",
+        "egg size",
+        "large eggs",
+        "jumbo eggs",
+        "medium eggs",
+        "what does grade aa mean",
+        "egg grades",
+        "egg sizes",
+        "which egg size",
+        "grade a",
+        "does grade a mean",
+        "vegetarian fed",
+        "vegetarian fed eggs",
+        "omega 3 eggs",
+        "omega-3 enriched",
+        "what were the hens fed",
+        "hen feed claims",
+        "hens eat",
+        "the hens ate",
+        "egg storage",
+        "refrigerate eggs",
+        "why are eggs refrigerated",
+        "unwashed eggs",
+        "egg cuticle",
+        "farm eggs on the counter",
+        "how long do eggs last",
+        "keep eggs",
+        "store eggs",
+        "eggs in the fridge",
+        "eggs need to be refrigerated"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
@@ -543,7 +603,24 @@
       "sources": [
         "USDA egg labeling guidance",
         "Certified Humane standards",
-        "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/"
+        "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/",
+        "USDA Egg Grading Manual (shell color and breed)",
+        "Poultry-science references on eggshell pigmentation",
+        "Hendrix Genetics “Eggshell color Eggsplained” https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/",
+        "USDA FSIS shell-egg dating and Julian pack codes",
+        "USDA Egg Grading Manual (air cell and interior quality)",
+        "University of Nebraska–Lincoln Extension “Cracking the Date Code on Egg Cartons” https://food.unl.edu/article/cracking-date-code-egg-cartons/ (Julian pack date; eggs keep 4 to 5 weeks past the pack date refrigerated)",
+        "USDA Egg Grading Manual (AA, A and B standards)",
+        "USDA AMS shell egg size and weight classes",
+        "American Egg Board “Egg Grades and Sizes” (Grade AA, A and B scored on interior and shell quality at packing, separate from the weight classes)",
+        "Pete & Gerry’s “Guide to Egg Sizes and Weights” https://www.peteandgerrys.com/blogs/field-notes/egg-size-guide",
+        "USDA FSIS labeling policy on feed claims",
+        "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
+        "Poultry-science literature on omega-3 enrichment of eggs",
+        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section https://www.cornucopia.org/egg-scorecard-criteria/ (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)",
+        "USDA FSIS shell egg refrigeration requirements (45F)",
+        "FDA Egg Safety Final Rule",
+        "EU marketing standards for eggs (unwashed, ambient storage)"
       ],
       "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
       "cart_pick": "Soy-free pasture-raised eggs",
@@ -552,14 +629,36 @@
         "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
         "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
         "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
-        "Plain conventional eggs are still one of the cheapest complete proteins in the store."
+        "Plain conventional eggs are still one of the cheapest complete proteins in the store.",
+        "Shell color is the breed. White and brown are the same egg inside.",
+        "Speckles and small rough patches are normal shell variation.",
+        "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
+        "Open the carton and check for cracks and leaks before it goes in the cart.",
+        "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
+        "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe.",
+        "AA vs A is firmness of the white. Freshness matters more than either.",
+        "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed.",
+        "Keep them in the carton. It slows moisture loss and keeps odors out.",
+        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good."
       ],
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
         "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
-        "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line."
+        "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
+        "The yolk photo on the carton is artwork, not a sample.",
+        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
+        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
+        "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
+        "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
+        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
+        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+        "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
+        "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
+        "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant.",
+        "US rules require washing and sanitizing, then holding at 45F or below from the plant onward."
       ],
       "pick_steps": [
         "Look for ‘soy-free’ and ‘corn-free’, mostly on regional cartons and farm stands.",
@@ -583,6 +682,66 @@
         {
           "term": "Soy-free / corn-free",
           "meaning": "A FEED claim — the only kind that addresses the ration. Must be printed explicitly."
+        },
+        {
+          "term": "Brown egg",
+          "meaning": "Laid by a brown-egg breed. No quality or nutrition difference."
+        },
+        {
+          "term": "White egg",
+          "meaning": "Laid by a white-egg breed. The same egg inside."
+        },
+        {
+          "term": "Deep orange yolk",
+          "meaning": "Pigment in the feed. Could be pasture, could be marigold extract."
+        },
+        {
+          "term": "Julian date (001 to 365)",
+          "meaning": "The day of the year it was packed. The most useful number on the carton."
+        },
+        {
+          "term": "Sell-by / best-by",
+          "meaning": "Up to 45 days past packing. A rotation date, not a safety limit."
+        },
+        {
+          "term": "Plant code (P-####)",
+          "meaning": "The packing facility. Sits beside the pack date."
+        },
+        {
+          "term": "Grade AA",
+          "meaning": "Firmest white, tallest yolk. An appearance standard."
+        },
+        {
+          "term": "Grade A",
+          "meaning": "Slightly less firm. The usual retail grade."
+        },
+        {
+          "term": "Grade B",
+          "meaning": "Fine to eat, mostly sold to processors rather than shelved."
+        },
+        {
+          "term": "Large / XL / Jumbo",
+          "meaning": "Weight per dozen: 24, 27 and 30 ounces."
+        },
+        {
+          "term": "Vegetarian-fed",
+          "meaning": "No animal protein in the ration. Hens are omnivores, so it also implies no foraging."
+        },
+        {
+          "term": "Omega-3 enriched",
+          "meaning": "Flax or algae in the feed. Real, but the amount varies by producer."
+        },
+        {
+          "term": "Washed / graded",
+          "meaning": "The US standard. The cuticle is gone, so refrigeration is required."
+        },
+        {
+          "term": "Unwashed / farm fresh",
+          "meaning": "Cuticle intact. Can be held at room temperature until washed."
+        },
+        {
+          "term": "Blue or green shell",
+          "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
         }
       ],
       "tier_note": "What each carton word is allowed to mean is defined. Ranking feed above room is the standard.",
@@ -590,7 +749,23 @@
       "asked_as": [
         "what eggs should i buy",
         "which egg carton is best",
-        "which carton of eggs should i get"
+        "which carton of eggs should i get",
+        "brown or white eggs",
+        "are brown eggs better",
+        "does a dark yolk mean anything",
+        "how do i tell if eggs are fresh",
+        "what date is on an egg carton",
+        "how old are these eggs",
+        "what does grade a mean on eggs",
+        "which egg size is best value",
+        "do egg grades matter",
+        "what do egg sizes mean",
+        "what does vegetarian fed mean",
+        "are omega 3 eggs worth it",
+        "what did the hens eat",
+        "do eggs need to be refrigerated",
+        "where should i keep eggs",
+        "why are us eggs in the fridge"
       ]
     },
     {
@@ -2398,353 +2573,6 @@
         "what is natural flavor",
         "does no artificial flavors mean anything",
         "what is the flavoring then"
-      ]
-    },
-    {
-      "id": "egg_shell_color",
-      "title": "Egg color — shell and yolk",
-      "aliases": [
-        "brown eggs",
-        "white eggs",
-        "egg shell color",
-        "eggshell color",
-        "are brown eggs better",
-        "brown vs white eggs",
-        "yolk color",
-        "dark yolk",
-        "orange yolk",
-        "egg quality",
-        "egg color"
-      ],
-      "category": "poultry_eggs",
-      "question": "Do brown shells or darker yolks mean a better egg?",
-      "decision": "Shell color is breed; yolk color is pigment in the feed.",
-      "why": "Shell color is the breed. Yolk color is pigment in the feed, and an additive matches a good diet exactly.",
-      "short_answer": "No, on both counts. Shell color is the breed. Inside, white and brown are the same egg. Yolk color is pigment in the feed. A varied diet deepens it, and so does added marigold extract. The two look identical.",
-      "detail": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. Brown often costs more because those breeds are larger and eat more, not because the egg is better. Yolk color is the more tempting signal and the more misleading one: producers can and do dial it with feed, and the supplements sold to do it are sold for exactly that purpose. Pasture and varied diets deepen color too, which is what makes it useless: the same shade arrives by two completely different routes and the carton never says which. What actually changes an egg is the hen’s diet, her age, and how fresh it is, and none of it is visible from outside. White-feathered breeds lay white, red-feathered breeds lay brown, and inside the shell they are the same egg. A varied diet with real greens deepens yolk color, and so does marigold extract added to the ration for that exact effect. The two are indistinguishable by eye. That is why the printed feed words are the tell and the color never is. Blue and green shells carry a different pigment, biliverdin, laid down by breeds like the Araucana.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA Egg Grading Manual (shell color and breed)",
-        "Poultry-science references on eggshell pigmentation",
-        "Hendrix Genetics “Eggshell color Eggsplained” https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/"
-      ],
-      "kristy_take": "Shell color is the breed and yolk color is the feed bag. Buy the cheaper carton and put the difference into how she was raised.",
-      "buying_tips": [
-        "Ignore shell color. It says nothing about the egg inside.",
-        "A varied diet deepens yolk color. So does an additive bought to do it.",
-        "Speckles and small rough patches are normal shell variation.",
-        "Freshness shows in the pan: a yolk that stands up, a white that holds together.",
-        "What changes an egg is diet, age and freshness. None of it shows on the shell."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Brown egg",
-          "meaning": "Laid by a brown-egg breed. No quality or nutrition difference."
-        },
-        {
-          "term": "White egg",
-          "meaning": "Laid by a white-egg breed. The same egg inside."
-        },
-        {
-          "term": "Deep orange yolk",
-          "meaning": "Pigment in the feed. Could be pasture, could be marigold extract."
-        }
-      ],
-      "tier_note": "Shell color tracking breed is settled genetics, so nothing visible in the carton says how the hen was raised.",
-      "watch_out": [
-        "The yolk photo on the carton is artwork, not a sample.",
-        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
-        "Blue and green shells are a breed trait too. Breeds like the Araucana lay down a different pigment. The shell says which hen, and still nothing about the feed."
-      ],
-      "pick_steps": [
-        "Ignore shell color and speckles; color is the breed, not the egg inside.",
-        "Read the yolk photo as artwork; yolk color can come from an additive."
-      ],
-      "science": "Shell color is pigment the hen deposits in the last hours before laying, and it tracks breed. A paler brown shell is not a fresher or older egg. Blue and green shells are a breed trait too. A varied diet and marigold extract both deepen yolk color, indistinguishable by eye. Freshness shows in the pan: a yolk that stands up, a white that holds together.",
-      "eyebrow_short": "Shell and yolk",
-      "asked_as": [
-        "brown or white eggs",
-        "are brown eggs better",
-        "does a dark yolk mean anything"
-      ]
-    },
-    {
-      "id": "egg_freshness",
-      "title": "How fresh is that carton",
-      "aliases": [
-        "egg freshness",
-        "how old are my eggs",
-        "julian date",
-        "egg float test",
-        "expired eggs",
-        "sell by eggs",
-        "are my eggs still good",
-        "egg pack date",
-        "eggs are fresh",
-        "fresh eggs",
-        "how old are these eggs",
-        "egg carton date",
-        "pack date",
-        "egg date",
-        "egg carton",
-        "date on an egg carton",
-        "date on the carton"
-      ],
-      "category": "poultry_eggs",
-      "question": "How do I tell how fresh eggs are?",
-      "decision": "The three-digit code is the day the eggs were packed.",
-      "why": "The three-digit date beside the plant code is the day it was packed. Sell-by is the store’s schedule.",
-      "short_answer": "Read the three-digit pack date, not the sell-by. It sits beside the plant code: the day the eggs were packed. Eggs are usually good well past a sell-by if they stayed cold. Fresh yolks stand up in the pan.",
-      "detail": "The Julian pack date is the honest number: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction, not a safety cliff. The float test works because the air cell inside grows as an egg ages, so a fresh one lies flat in a bowl of water, an older one tilts up, and one that floats has gone far enough to skip. Eggs age much faster on the counter than in the fridge. US cartons carry a Julian date (001 to 365) stamped beside the plant code, and that is the day they were packed. In the pan, a fresh egg has a yolk that stands up and a white that holds together.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA FSIS shell-egg dating and Julian pack codes",
-        "USDA Egg Grading Manual (air cell and interior quality)",
-        "University of Nebraska–Lincoln Extension “Cracking the Date Code on Egg Cartons” https://food.unl.edu/article/cracking-date-code-egg-cartons/ (Julian pack date; eggs keep 4 to 5 weeks past the pack date refrigerated)"
-      ],
-      "kristy_take": "The three-digit number is the truth. The sell-by is the store’s schedule.",
-      "buying_tips": [
-        "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
-        "Open the carton and check for cracks and leaks before it goes in the cart.",
-        "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
-        "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe."
-      ],
-      "watch_out": [
-        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
-        "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
-        "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early."
-      ],
-      "pick_steps": [
-        "Read the three-digit pack date beside the plant code; closer to today is fresher.",
-        "Skip the sell-by: same-dated cartons can have been packed weeks apart.",
-        "Open the carton and check for cracks and leaks before it goes in."
-      ],
-      "science": "The pack date is the day of the year: 001 is January 1st, 365 is December 31st. A sell-by sits up to 45 days past packing and is a store-rotation instruction. Extension guidance is four to five weeks past the pack date, refrigerated. Eggs age far faster on the counter than in the fridge. The air cell grows with age, so a fresh egg lies flat in water.",
-      "labels_decoded": [
-        {
-          "term": "Julian date (001 to 365)",
-          "meaning": "The day of the year it was packed. The most useful number on the carton."
-        },
-        {
-          "term": "Sell-by / best-by",
-          "meaning": "Up to 45 days past packing. A rotation date, not a safety limit."
-        },
-        {
-          "term": "Plant code (P-####)",
-          "meaning": "The packing facility. Sits beside the pack date."
-        }
-      ],
-      "tier_note": "The Julian pack date is a required code with a defined meaning. The sell-by date is a schedule.",
-      "asked_as": [
-        "how do i tell if eggs are fresh",
-        "what date is on an egg carton",
-        "how old are these eggs"
-      ]
-    },
-    {
-      "id": "egg_grades_sizes",
-      "title": "Egg grades and sizes",
-      "aliases": [
-        "egg grade",
-        "grade aa",
-        "grade a eggs",
-        "egg size",
-        "large eggs",
-        "jumbo eggs",
-        "medium eggs",
-        "what does grade aa mean",
-        "egg grades",
-        "egg sizes",
-        "which egg size",
-        "grade a",
-        "does grade a mean"
-      ],
-      "category": "poultry_eggs",
-      "question": "What do egg grades and sizes actually mean?",
-      "decision": "Grade and size describe the egg’s looks and weight, not the hen.",
-      "why": "Grade scores shell and interior quality at packing; size is weight per dozen.",
-      "short_answer": "Grade scores appearance and interior quality, not nutrition or welfare. AA has the firmest white and tallest yolk, A a step down. B is fine to eat and mostly goes to processing. Size is weight per dozen.",
-      "detail": "Graders score the shell, the air cell, and how the white and yolk sit when the egg is broken out. AA and A differ only in how firm the white is, and firmness fades with age anyway, so a Grade A egg packed yesterday beats an AA packed a month ago. Size is set by the weight of a full dozen: Large is 24 ounces, Extra Large 27, Jumbo 30. A Jumbo carton is not a better egg, it is more egg.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA Egg Grading Manual (AA, A and B standards)",
-        "USDA AMS shell egg size and weight classes",
-        "American Egg Board “Egg Grades and Sizes” (Grade AA, A and B scored on interior and shell quality at packing, separate from the weight classes)",
-        "Pete & Gerry’s “Guide to Egg Sizes and Weights” https://www.peteandgerrys.com/blogs/field-notes/egg-size-guide"
-      ],
-      "kristy_take": "Grade is a looks score and size is a weight class. Neither one says anything about the hen.",
-      "buying_tips": [
-        "AA vs A is firmness of the white. Freshness matters more than either.",
-        "Sizes are weight per dozen: Large 24 oz, XL 27 oz, Jumbo 30 oz.",
-        "A ‘Large’ dozen may hold Extra Large, never smaller."
-      ],
-      "watch_out": [
-        "Neither grade nor size says anything about how the hen lived or what she ate. Those are separate labels.",
-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
-        "AA, A and B are scored on interior and shell quality at the time of packing. That system is separate from the size classes above it."
-      ],
-      "pick_steps": [
-        "Read the weight per dozen: Large 24 ounces, Extra Large 27, Jumbo 30.",
-        "How the hen was raised: see Egg labels, and what the hen ate.",
-        "Take the fresher carton over the higher grade; AA versus A is white firmness."
-      ],
-      "science": "Grade scores the shell, the air cell, and how the white and yolk sit, at packing. AA and A differ only in white firmness, which fades with age anyway. Size is set by the weight of a full dozen: Large 24 ounces, Extra Large 27, Jumbo 30. Neither grade nor size says how the hen lived or what she ate.",
-      "labels_decoded": [
-        {
-          "term": "Grade AA",
-          "meaning": "Firmest white, tallest yolk. An appearance standard."
-        },
-        {
-          "term": "Grade A",
-          "meaning": "Slightly less firm. The usual retail grade."
-        },
-        {
-          "term": "Grade B",
-          "meaning": "Fine to eat, mostly sold to processors rather than shelved."
-        },
-        {
-          "term": "Large / XL / Jumbo",
-          "meaning": "Weight per dozen: 24, 27 and 30 ounces."
-        }
-      ],
-      "tier_note": "Grade and size are defined measures of appearance and weight. Neither describes the hen.",
-      "asked_as": [
-        "what does grade a mean on eggs",
-        "which egg size is best value",
-        "do egg grades matter",
-        "what do egg sizes mean"
-      ]
-    },
-    {
-      "id": "egg_feed_claims",
-      "title": "Vegetarian-fed, omega-3, soy-free",
-      "aliases": [
-        "vegetarian fed",
-        "vegetarian fed eggs",
-        "omega 3 eggs",
-        "omega-3 enriched",
-        "soy free eggs",
-        "corn free eggs",
-        "what were the hens fed",
-        "hen feed claims",
-        "hens eat",
-        "the hens ate"
-      ],
-      "category": "poultry_eggs",
-      "question": "What do the feed claims on an egg carton mean?",
-      "decision": "Soy-free and corn-free are worth having, and both must be printed.",
-      "why": "Hens are omnivores. That claim and a real pasture claim work against each other.",
-      "short_answer": "‘Vegetarian-fed’ quietly works against a genuine pasture claim. ‘Soy-free’ and ‘corn-free’ mean exactly what they say and have to be printed. ‘Omega-3 enriched’ means flax or algae in the ration. The egg carries more, but the amount is not standardized.",
-      "detail": "The space claims (cage-free, free-range, pasture-raised) never touch feed, so the feed words carry that job alone. ‘Vegetarian-fed’ reads as an upgrade and quietly works against a genuine pasture claim, because a hen with real outdoor access eats insects and worms. Omega-3 enrichment is real chemistry rather than marketing, but with no set quantity two enriched cartons can differ a lot. Certified organic reaches feed and requires it be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown, not what the feed is. ‘Omega-3 enriched’ means flax or algae in the ration, and the egg really does carry more, though the amount is not standardized.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA FSIS labeling policy on feed claims",
-        "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
-        "Poultry-science literature on omega-3 enrichment of eggs",
-        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section https://www.cornucopia.org/egg-scorecard-criteria/ (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)"
-      ],
-      "kristy_take": "A hen on real pasture is eating bugs. That claim says she was not.",
-      "cart_pick": "Soy-free pasture-raised eggs",
-      "buying_tips": [
-        "Space claims and feed claims are separate words. One never implies the other.",
-        "‘Soy-free’ and ‘corn-free’ have to be printed. Nothing else on the carton implies them.",
-        "‘Omega-3 enriched’ means flax or algae in the ration. The amount is not standardized.",
-        "‘Vegetarian-fed’ means no animal protein in the feed, which sits oddly beside a real pasture claim.",
-        "Organic requires organic feed, usually organic soy and corn. Not a different kind of feed."
-      ],
-      "watch_out": [
-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
-        "‘Organic’ on the feed is a claim about how the grain was grown. The watchdog view is that traceability of organic feed can be impenetrable once it leaves the farm. So a farm that grows its own is the stronger answer.",
-        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words."
-      ],
-      "pick_steps": [
-        "Look for ‘soy-free’ or ‘corn-free’ printed; nothing else on the carton implies them.",
-        "Read ‘vegetarian-fed’ beside a pasture claim as a mismatch; pasture hens eat insects.",
-        "Read ‘organic’ as how the feed was grown, not what the feed is."
-      ],
-      "science": "Space claims never touch feed, so the feed words carry that job alone. ‘Omega-3 enriched’ means flax or algae in the ration, but sets no amount. Organic requires organic feed, usually organic soy and corn. Feed grown on the farm can be traced; feed from unnamed suppliers often cannot. The watchdog view is that organic feed traceability can be impenetrable once it leaves the farm.",
-      "labels_decoded": [
-        {
-          "term": "Vegetarian-fed",
-          "meaning": "No animal protein in the ration. Hens are omnivores, so it also implies no foraging."
-        },
-        {
-          "term": "Omega-3 enriched",
-          "meaning": "Flax or algae in the feed. Real, but the amount varies by producer."
-        },
-        {
-          "term": "Soy-free / corn-free",
-          "meaning": "A direct claim about the ration. Must be printed explicitly."
-        }
-      ],
-      "tier_note": "A feed claim has to be printed to be made, so a carton that says nothing about feed has not made a claim either way.",
-      "asked_as": [
-        "what does vegetarian fed mean",
-        "are omega 3 eggs worth it",
-        "what did the hens eat"
-      ]
-    },
-    {
-      "id": "egg_storage",
-      "title": "Why US eggs live in the fridge",
-      "aliases": [
-        "egg storage",
-        "refrigerate eggs",
-        "why are eggs refrigerated",
-        "unwashed eggs",
-        "egg cuticle",
-        "farm eggs on the counter",
-        "how long do eggs last",
-        "keep eggs",
-        "store eggs",
-        "eggs in the fridge",
-        "eggs need to be refrigerated"
-      ],
-      "category": "poultry_eggs",
-      "question": "Do eggs have to be refrigerated?",
-      "decision": "Washing strips the shell’s natural coating, so US eggs need the fridge.",
-      "why": "Washing strips the natural coating that seals a porous shell. Unwashed farm eggs keep theirs.",
-      "short_answer": "In the US, yes. Eggs sold here are washed at the plant. Washing strips the natural coating that seals a porous shell. After that, the egg needs constant refrigeration. Unwashed farm eggs keep the coating and can sit out.",
-      "detail": "US rules require washing and sanitizing, then holding at 45F or below from the plant onward. Neither system is wrong; they solve the same problem from opposite ends. In the carton on a middle shelf is the right spot, not the door, where the temperature swings every time it opens. A cold egg brought to room temperature sweats, and moisture on a porous shell is exactly what the cuticle was preventing. Farm eggs bought unwashed can live on the counter, but the moment you wash them they join the fridge rules. Washing strips the cuticle, the natural coating that seals a porous shell. Unwashed farm eggs keep their cuticle and can sit out, which is why cartons sit on an open shelf across much of Europe. What you should not do is move an egg between the two.",
-      "evidence_tier": "established",
-      "sources": [
-        "USDA FSIS shell egg refrigeration requirements (45F)",
-        "FDA Egg Safety Final Rule",
-        "EU marketing standards for eggs (unwashed, ambient storage)"
-      ],
-      "kristy_take": "Washed eggs lost their seal, so they live cold. Unwashed farm eggs kept theirs, so they do not. Just do not switch an egg between the two.",
-      "buying_tips": [
-        "Store the carton on a middle shelf, not the door. The door swings warm every time it opens.",
-        "Keep them in the carton. It slows moisture loss and keeps odors out.",
-        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good.",
-        "Leftover raw whites and yolks keep a few days covered. Yolks want a little water over them."
-      ],
-      "labels_decoded": [
-        {
-          "term": "Washed / graded",
-          "meaning": "The US standard. The cuticle is gone, so refrigeration is required."
-        },
-        {
-          "term": "Unwashed / farm fresh",
-          "meaning": "Cuticle intact. Can be held at room temperature until washed."
-        }
-      ],
-      "tier_note": "That washing strips the cuticle is established, and it is why washed eggs need the cold.",
-      "watch_out": [
-        "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
-        "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
-        "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant."
-      ],
-      "pick_steps": [
-        "Keep the carton on a middle or lower shelf, not the door.",
-        "Keep eggs in the carton; it slows moisture loss and keeps odors out.",
-        "Refrigerated eggs should not sit out more than two hours."
-      ],
-      "science": "US eggs are washed and sanitized, then held at 45F or below. Washing strips the cuticle, the natural coating that seals a porous shell. A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Unwashed farm eggs keep their cuticle and can sit out until washed. Store-bought eggs need no washing before use; the plant already did it.",
-      "asked_as": [
-        "do eggs need to be refrigerated",
-        "where should i keep eggs",
-        "why are us eggs in the fridge"
       ]
     },
     {

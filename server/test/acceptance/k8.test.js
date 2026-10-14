@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
-import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
+import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
@@ -16,8 +16,7 @@ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-line
 
 const SLICE = nonEmpty([
   'rotisserie_chicken', 'air_chilled_chicken', 'no_antibiotics_poultry', 'chicken_cuts_basics', 'egg_labels',
-  'egg_shell_color', 'egg_freshness', 'egg_grades_sizes', 'egg_feed_claims', 'egg_storage',
-], 'the K8 slice', 10);
+], 'the K8 slice', 5);
 
 const oldEntries = pre.entries ?? pre;
 
@@ -31,3 +30,10 @@ for (const id of SLICE) {
     assertPassRule(t, old, now);
   });
 }
+
+test('K8: IC-4a retired ids are in RETIRED and gone from the KB', () => {
+  for (const id of ['egg_shell_color', 'egg_freshness', 'egg_grades_sizes', 'egg_feed_claims', 'egg_storage']) {
+    assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
+    assert.ok(!kb.entries.some((e) => e.id === id), `${id} still in the KB`);
+  }
+});

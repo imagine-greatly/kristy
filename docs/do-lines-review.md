@@ -76,11 +76,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_multigrain_vs_whole_grain` | label_terms | Whole grain. ‘Multigrain’ is a headcount, not a standard. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | Go straight to the added-sugars line. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | It rules out one kind of lab work, not the lab. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
-| `egg_shell_color` | eggs_dairy | Buy the cheaper carton. Neither shell nor yolk color reads anything. | Read the feed words printed on the carton. Skip the yolk photo. | — |
-| `egg_freshness` | eggs_dairy | Read the three-digit pack date, not the sell-by. | Find the three-digit number beside the plant code. Higher is fresher. | — |
-| `egg_grades_sizes` | eggs_dairy | Compare price per ounce. Grade and size say nothing about the hen. | Read the weight per dozen on the carton end: 24, 27, 30 ounces. | — |
-| `egg_feed_claims` | eggs_dairy | ‘Vegetarian-fed’ is the one to walk away from. | Check whether the carton claims outdoor access and no animal protein at once. | — |
-| `egg_storage` | eggs_dairy · home | Washed eggs live cold, in the carton, on a middle shelf. | Move the eggs off the fridge door. It swings warm every open. | — |
 | `beef_grades_usda` | meat | Pay for grade on a quick-cooked steak. Skip it on anything braised. | Read the grade as a marbling score, then ask how it was raised. | — |
 | `judging_meat_at_the_case` | meat | Press it, look at the tray, smell it. Ignore the color. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Ask what came in today and what is coming down in price. | Ask what came in today and when it was cut. | — |

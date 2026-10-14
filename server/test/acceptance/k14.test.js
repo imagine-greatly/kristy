@@ -49,7 +49,7 @@ const KEEPS = nonEmpty([
   ['mushroom soup', null], ['cream of mushroom soup', null], ['dried mushrooms', null],
   ['canned mushrooms', null], ['mushroom coffee', null], ['oyster sauce', null],
   ['duck', null], ['quail', null],
-  ['eggs', 'egg_labels'], ['brown eggs', 'egg_shell_color'], ['white eggs', 'egg_shell_color'],
+  ['eggs', 'egg_labels'], ['brown eggs', 'egg_labels'], ['white eggs', 'egg_labels'],
   ['egg', null], ['egg noodles', null], ['egg salad', 'deli_salads'], ['egg white protein powder', null],
   ['pineapple', 'produce_ripeness_by_item'], ['cantaloupe', 'produce_ripeness_by_item'],
   ['pineapple juice', null], ['canned pineapple', null], ['dried pineapple', null],

@@ -1568,7 +1568,6 @@ export const OWNED_FACTS = [
     ['chicken_cuts_basics', 'air_chilled_chicken', 'pork_cuts_and_enhanced'], /pasture[- ]raised|free[- ]range/i),
   ownedFact('chill_water', 'air_chilled_chicken',
     ['chicken_cuts_basics'], /air[- ]chill|water[- ]chill|retained water/i),
-  ownedFact('hen_raising', 'egg_labels', ['egg_grades_sizes'], /pasture[- ]raised|free[- ]range|cage[- ]free/i),
   ownedFact('wild_farmed', 'salmon_wild_vs_farmed',
     ['shrimp_imported_vs_domestic', 'white_fish', 'canned_fish_choosing'], /wild[- ]caught|farm[- ]raised|\bfarmed\b/i),
   ownedFact('phosphate_soak', 'scallops', ['shrimp_imported_vs_domestic', 'white_fish'], /phosphate|STPP|soaked/i),
