@@ -58,8 +58,10 @@ This piece adds checks only. No card, tip, or flag changes. At HEAD no `sectionR
     - `decision`, `tier_note`, `instead`, `cart_pick`, `pick_steps`, or any depth or glossary field;
     - added `aliases` or `asked_as`.
 
+    Every allowed rewrite still meets the existing number, non-empty, `watch_out`, and glossary-term preservation checks.
+
     These fail:
-    - the same change on an id outside every set;
+    - on an id outside every set, a change to a field the existing gate already freezes for that id (outside-set copy edits that pass today keep passing);
     - added, edited, or removed `sources` on a CA-only id;
     - a changed `category` or `evidence_tier`.
 
