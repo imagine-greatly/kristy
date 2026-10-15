@@ -1,0 +1,97 @@
+{
+  "cards": {
+    "beef_grassfed_vs_grainfed": {
+      "decision": 4,
+      "tier_note": 13,
+      "instead": 15,
+      "pick_steps": 3,
+      "cart_pick": "Grass-finished ground beef"
+    },
+    "ground_beef_lean_ratio": {
+      "decision": 11,
+      "tier_note": 13,
+      "instead": 0,
+      "pick_steps": 2,
+      "cart_pick": "Ground beef, grass-fed and grass-finished"
+    },
+    "ground_beef_organ_blend": {
+      "decision": 12,
+      "tier_note": 17,
+      "instead": 20,
+      "pick_steps": 2,
+      "cart_pick": "Liver and heart beef blend, shares stated"
+    },
+    "beef_cuts_basics": {
+      "decision": 11,
+      "tier_note": 17,
+      "instead": 0,
+      "pick_steps": 3,
+      "cart_pick": "Whole chuck, not mechanically tenderized"
+    },
+    "organ_meats": {
+      "decision": 11,
+      "tier_note": 17,
+      "instead": 0,
+      "pick_steps": 2,
+      "cart_pick": "Organ meat for a cook within two days"
+    },
+    "butcher_counter_asking": {
+      "decision": 12,
+      "tier_note": 18,
+      "instead": 0,
+      "pick_steps": 3,
+      "cart_pick": "Grass-finished beef soup bones"
+    },
+    "judging_meat_at_the_case": {
+      "decision": 12,
+      "tier_note": 22,
+      "instead": 0,
+      "pick_steps": 2,
+      "cart_pick": null
+    },
+    "bison": {
+      "decision": 10,
+      "tier_note": 14,
+      "instead": 0,
+      "pick_steps": 2,
+      "cart_pick": "Bison with an inspection mark"
+    },
+    "venison_game": {
+      "decision": 10,
+      "tier_note": 14,
+      "instead": 0,
+      "pick_steps": 2,
+      "cart_pick": "Venison from a refrigerated processor"
+    },
+    "lamb_goat": {
+      "decision": 12,
+      "tier_note": 18,
+      "instead": 0,
+      "pick_steps": 3,
+      "cart_pick": "Lamb or goat, firm with white fat"
+    },
+    "pick_soup_bones": {
+      "decision": 15,
+      "tier_note": 0,
+      "instead": 0,
+      "pick_steps": 0,
+      "cart_pick": null
+    }
+  },
+  "sections": {
+    "SECTION_PHRASE_REPEATED:bacon+ground_turkey+ham+hot_dogs+turkey_bacon+turkey_whole": 1,
+    "CART_PICK_DISAGREES:ground_beef_lean_ratio": 1,
+    "CART_PICK_DISAGREES:butcher_counter_asking": 1
+  },
+  "cartPickMatch": {
+    "beef_grassfed_vs_grainfed": "beef_grassfed_vs_grainfed",
+    "ground_beef_lean_ratio": "beef_grassfed_vs_grainfed",
+    "ground_beef_organ_blend": "null",
+    "beef_cuts_basics": "beef_cuts_basics",
+    "organ_meats": "null",
+    "butcher_counter_asking": "null",
+    "bison": "null",
+    "venison_game": "null",
+    "lamb_goat": "null"
+  }
+}

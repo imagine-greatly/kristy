@@ -104,19 +104,21 @@ Fields not named stay byte-identical. Curly quotes only (‘ ’ “ ”). No em
 | why | ‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard. | The whole-food standard is grass after weaning, no grain, and no feedlot. |
 | short_answer | ‘Grass-fed’ is a floor, not a standard. Cattle can graze most of their lives, eat feedlot grain for the last months, and still be labeled grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ covers the whole life. That one is worth paying for. | On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That one is worth paying for. |
 | tier_note | Grass-fed alone does not promise a grass finish, so the whole-life words decide. | On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it. |
-| cart_pick | Grass-finished ground beef | 100% grass-fed or grass-finished beef |
+| cart_pick | Grass-finished ground beef | 100% grass-fed or grass-finished ground beef |
+| kristy_take | Both words, or it is a feedlot animal wearing a nicer sticker. | Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker. |
 | buying_tips[1] | Ground and chuck are the cheapest way into a whole-life grass animal. | Ground and chuck are the lowest-cost way into a whole-life grass animal. |
 | science | (current) | FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the lowest-cost way into a whole-life grass animal. |
 | labels_decoded "Grass-fed".meaning | Ate grass at some point. May still have been grain-finished before slaughter. | The producer’s own word unless a certifier’s seal audits it. FSIS reads it as grass after weaning, no grain. |
 
 The tier_note holds the G1 gloss string `“grass-fed” is the producer’s own word unless a certifier’s seal audits it` byte-equal to `CANONICAL_GLOSSES` G1 (counterCardLint.js:1624). Gate A1 fallback (CA-1), named.
 
+Spec revision (admin, after Astra spec review REVISE 2026-10-15): the cart_pick keeps "ground". Without it, `typeContradicts` (perimeter.js:130, the ground/deli TYPES group) rejects the authored `perimeterId` on the seeded "Grass-fed ground beef" row (list.js:170) and the row falls to ground_beef_lean_ratio, failing listMatchProbe. Measured with the new string: probe 0/7 wrong; "Grass-fed ground beef" and the cart_pick itself both match beef_grassfed_vs_grainfed. 44 characters, inside the 46 cap. kristy_take changes because "Both words" contradicts the new either/or decision; it is tone over detail ("both audit the whole life").
+
 Kept byte-identical, with reasons:
 - instead: non-empty, ≤24 words.
 - pick_steps (3).
 - watch_out (4).
 - detail.
-- kristy_take.
 - labels "Grain-fed / grain-finished".
 - The do line `Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW.`
 
@@ -424,7 +426,7 @@ ESSENTIALS (:259-267) untouched.
 - C8 [test] Brand, claim-lock and price greps over changed copy fields of batch ids = 0, and ≥10 fields changed.
 - C9 [test] lintSections with the CA-5 meat tip, flags on: no L1/L4/L5 hit on a batch id; no L2 group made only of batch ids.
 - C10 [test] Plumbing: TRY_POOL[0] is lean_ratio with no organ_blend; OWNED_FACTS does not name organ_blend; lintCard, readability and lintPickSteps are clean for lean_ratio and beef with their do lines.
-- C11 Server `npm test` green (count reported), listMatchProbe 0 wrong, commitGuard clean, migrate dry-run shows exactly `ground_beef_organ_blend` deleted plus this batch's upserts.
+- C11 Server `npm test` green (count reported), listMatchProbe 0 wrong, commitGuard clean, migrate dry-run runs clean and projects 181 cards; the dry-run does not print deletions, so `git diff 8b49633 -- server/kristy_perimeter_kb.json server/lib/counterCards.js` shows `ground_beef_organ_blend` removed from the KB and added to RETIRED, and no other id removed. The k14 C12 passRule tripwire may fail until main re-anchors it after review (contract exception); every other test is green.
 - C12 [test] Step 1c cards equal the spec byte for byte: named fields equal Step 1c, every other field equals `8b49633`, judging watch_out is the 7-item order; review headline equals decision and the do line is unchanged for the seven 1c cards with do rows.
 
 ## Contract
@@ -602,7 +604,8 @@ test('C3 the organ-blend fold is complete and the pass rule holds', (t) => {
 test('C4 the Beef front carries G1 and drops the grain-finish line', () => {
   const b = now('beef_grassfed_vs_grainfed');
   assert.equal(b.decision, '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.');
-  assert.equal(b.cart_pick, '100% grass-fed or grass-finished beef');
+  assert.equal(b.cart_pick, '100% grass-fed or grass-finished ground beef');
+  assert.equal(b.kristy_take, 'Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker.');
   assert.ok(b.tier_note.includes(G1), 'beef tier_note lacks the G1 gloss');
   assert.match(b.why, /whole-food standard/);
   const said = [b.why, b.short_answer, b.science, JSON.stringify(b.labels_decoded)].join(' ');
@@ -839,7 +842,8 @@ Tags: `card` = already on this card at `8b49633`; `fold` = verbatim on `ground_b
 | 4 | beef.short_answer s2 | FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. | CA-2:1 |
 | 5 | beef.short_answer s3 | A certifier’s seal is what audits it. | G1 gloss (CA-1, gate A1 fallback); card detail "both audit the whole life" |
 | 6 | beef.tier_note | On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it. | G1 gloss, CA-2:1 |
-| 7 | beef.cart_pick | 100% grass-fed or grass-finished beef | plan string; card decision |
+| 7 | beef.cart_pick | 100% grass-fed or grass-finished ground beef | plan string + "ground" for the seeded list row (list.js:170); card decision; old cart_pick "ground beef" |
+| 7b | beef.kristy_take | Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker. | old kristy_take (tone); card detail "both audit the whole life" |
 | 8 | beef.buying_tips[1] + science s5 | Ground and chuck are the lowest-cost way into a whole-life grass animal. | card (rephrase of "cheapest", relative term only, non-negotiable 8) |
 | 9 | beef.science s1 | FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. | CA-2:1 |
 | 10 | beef.labels Grass-fed s1 | The producer’s own word unless a certifier’s seal audits it. | G1 gloss |
@@ -927,8 +931,8 @@ console.log(JSON.stringify(out, null, 2));
   - `ground_beef_organ_blend` ABSENT.
   - Every batch decision ≤14 and tier_note 5-20.
   - No `CART_PICK_DISAGREES`/`TERM_UNGLOSSED`/`SECTION_TIP_REPEATS_CARD` key on a batch id.
-  - `cartPickMatch` reports, for each changed cart_pick, its own slug (lean_ratio, butcher_counter_asking, beef_grassfed_vs_grainfed, bison, lamb_goat). A cart_pick that matches another slug is a finding for the critic (Open questions 3 and 5), not a silent pass.
-- Also run `grep -rn ground_beef_organ_blend server/lib server/test server/routes | grep -v RETIRED`: expected only the counterCards.js RETIRED lines and historical comments.
+  - `cartPickMatch` reports, for each changed cart_pick, its own slug (lean_ratio, butcher_counter_asking, beef_grassfed_vs_grainfed, bison, lamb_goat). A cart_pick that matches another slug is a finding for the critic (Open questions 3 and 5), not a silent pass. A null (no match) for Ground beef, bison or lamb is an allowed reported miss, the same as listMatchProbe semantics (measured before the build: bison/lamb/organ/venison already miss); report it, do not widen aliases to fix it.
+- Also run `grep -rn ground_beef_organ_blend server/lib server/test server/routes | grep -v RETIRED | grep -v test/acceptance/fixtures/ | grep -v test/acceptance/ca-3a.test.js`: expected only the counterCards.js RETIRED lines and historical comments. The historical fixture `kb-pre-readability.json` and this batch's own retirement assertions are excluded on purpose.
 
 ## Prerequisites
 
