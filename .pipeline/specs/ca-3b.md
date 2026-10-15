@@ -85,7 +85,7 @@ The plan's condition for a fold ("only if S5 shows no recorded reason") is not m
 - **Independent check:** `counts.mjs` below, BEFORE at `aa12a3d` and AFTER the build:
   - the per-id word counts;
   - the full meat-section L1/L2/L4/L5 hit list going to 0;
-  - each changed cart_pick through `matchItemToCard` reporting its own slug.
+  - each changed cart_pick through `matchItemToCard` reporting its own slug or null, never another card (a miss reports, a wrong match fails; ca-3a precedent: ground beef/bison/lamb null). Expected null at review: bacon, turkey_bacon, cured_pork. Scope: changed cart_pick fields only (unchanged chicken_breast is null in before.json).
 
 ## Steps (the change, old → new)
 
@@ -299,7 +299,7 @@ KEPT byte-identical: decision (the deliberate cure sentence, a PRESERVATION_CURE
 - C6 [test] The full meat section is lint-clean (L1, L2, L4, L5) under the CA-5 meat tip with flags on.
 - C7 [test] Every cure sentence in a changed field is a `PRESERVATION_CURE_SENTENCES` member.
 - C8 [test] Per-card lintCard, readability and lintPickSteps are clean for every changed non-pick card, and reviewHeadline equals decision.
-- C9 Server `npm test` green (count reported), listMatchProbe 0 wrong, commitGuard clean, migrate dry-run deletes nothing and upserts only CA-3b ids.
+- C9 Server `npm test` green (count reported), listMatchProbe 0 wrong, commitGuard clean, migrate dry-run deletes nothing and projects the unchanged 181-card corpus (dry-run performs no upsert; only CA-3b rows differ from aa12a3d).
 
 ## Contract
 
@@ -542,7 +542,7 @@ Save as `/Users/m1/kristy/.pipeline/runs/ca-3b/counts.mjs`. It is the ca-3a scri
 - AFTER: the same command into `after.json`, then `diff`.
 - Expected AFTER:
   - 0 meat L1/L2/L4/L5 keys;
-  - every changed cart_pick matches its own slug (chicken_breast → chicken_breast, not chicken_cuts_basics).
+  - every changed cart_pick matches its own slug or null, never another card (bacon, turkey_bacon, cured_pork null is permitted).
 
 ## Prerequisites
 
