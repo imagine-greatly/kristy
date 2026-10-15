@@ -1,0 +1,1 @@
+{"kind":"build","class":"product","repo":"kristy","piece":"ca-3a","tier":"T2","outcome":"GREEN","first_try_green":false,"fix_rounds":1,"vendor":"openai","model":"astra","notes":"dv reported GREEN but npm test 2550/2557 (7 fail: why bar/budget, count pins, REPEATED_CLAIM vs L4 gloss); admin fixed in 719f9fe; critic@opus SHIP r1 minor=3"}
