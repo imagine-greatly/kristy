@@ -52,7 +52,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Deepest yellow butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
-| `cheese_real_vs_processed` | eggs_dairy | Block cheese is milk, cultures, salt and enzymes, and nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
+| `cheese_real_vs_processed` | eggs_dairy | Block cheese with a short list, real cheese by its front name. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
 | `raw_milk` | eggs_dairy | Raw milk is worth seeking out from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
 | `rice_arsenic` | bulk_pantry | Arsenic collects in the bran, which is why white rice carries less. | Read the origin on the bag: India, Pakistan or California. | — |
@@ -84,7 +84,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `berries_picking` | produce | Organic berries, and the carton’s underside decides, not the top. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Washing produce before storing it traps moisture and speeds rot. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp greens have lost water, not gone bad, and they come back. | Trim the stem ends and stand them in ice water thirty minutes. | — |
-| `cream_vs_creamer` | eggs_dairy | Non-dairy creamer is oil, sugar and thickeners, with no milk. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
+| `cream_vs_creamer` | eggs_dairy | Half-and-half is milk and cream; non-dairy creamer is oil and sugar. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Whole wheat flour first; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Dry staples keep well in bulk; anything oily turns rancid first. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Ground spice loses its oils within months; whole spice keeps them. | Toast them in a dry pan until they smell, then grind. | — |
@@ -102,7 +102,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_serving_size` | label_terms | The panel’s numbers are scaled to a serving the maker chose. | Check both packages list the same serving size before comparing anything. | — |
 | `label_artificial_color` | label_terms | “Artificial color” is a category, not a color. Titanium dioxide qualifies. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | Kefir is milk fermented with live grains, and worth buying plain. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
-| `raw_aged_cheese` | eggs_dairy | Raw-milk cheese aged past sixty days is legal and already stocked. | Read the rind label for an age in months. | — |
+| `raw_aged_cheese` | eggs_dairy | Raw-milk cheese aged past sixty days, its maker and herd named. | Read the rind label for an age in months. | — |
 | `sprouts_raw` | produce | Sprouts grow in the warm damp that bacteria also like. | Check the roots are still white and the clamshell is not fogged. | — |
 | `produce_root_vegetables` | produce | Organic potatoes, conventional carrots. Firm roots, nothing soft or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
 | `produce_brassicas` | produce | Conventional is fine on cabbage and cauliflower. Tight heads, no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
@@ -125,7 +125,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `ground_turkey` | meat | Plain ground turkey with its ingredients and fat content stated. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
 | `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
-| `oat_milk` | eggs_dairy | Oat milk with its protein and fortification checked on the carton. | Compare the protein line and read the ingredients for added vitamins and minerals. | — |
+| `oat_milk` | eggs_dairy | Oat milk with few stabilizers in the ingredients, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
 | `bacon` | meat | Bacon with the shortest label list: pork, salt and its named curing agents. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
@@ -153,17 +153,17 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pastries_muffins` | bulk_pantry | Pastry made with butter, named on the label or by the baker. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
 | `muesli` | bulk_pantry | Muesli with no added sugar listed; granola is the baked, sweetened version. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
 | `bread_aisle` | bulk_pantry | Pick the bread type first, then read the first flour for “whole”. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
-| `plain_kefir` | eggs_dairy | Plain kefir: milk and cultures alone. | Read the ingredient list for milk and kefir cultures only. | — |
-| `sour_cream` | eggs_dairy | Sour cream soured by bacteria, not by an added acid. | Read the name on the tub for “cultured” or “acidified”. | — |
-| `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat. | Read the ingredients for a culture, then count the stabilizers after it. | — |
+| `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
+| `sour_cream` | eggs_dairy | Sour cream made from cream soured by bacteria, nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
+| `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat, no stabilizers. | Read the ingredients for a culture, then count the stabilizers after it. | — |
 | `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
-| `ice_cream` | eggs_dairy | Ice cream that meets the standard, not a lookalike. | Read the small print under the flavor for “frozen dairy dessert”. | — |
+| `ice_cream` | eggs_dairy | Ice cream that earns the name, with milkfat and no added oils. | Read the small print under the flavor for “frozen dairy dessert”. | — |
 | `ghee` | eggs_dairy | Ghee or clarified butter: one dairy fat, simmered down. | Read the ingredient list for butter or cream as the only entry. | — |
 | `goat_sheep_dairy` | eggs_dairy | Goat or sheep dairy with the animal’s milk named on the list. | Read the ingredients for which animal’s milk went in. | — |
-| `almond_milk` | eggs_dairy | Unsweetened almond milk, read as a drink rather than a milk swap. | Read the Nutrition Facts for added sugars, then the protein. | — |
+| `almond_milk` | eggs_dairy | Unsweetened almond milk with a short ingredient list, never seed oil. | Read the Nutrition Facts for added sugars, then calcium and vitamin D. | — |
 | `soy_milk` | eggs_dairy | Fortified, unsweetened soy milk, the one plant drink in the dairy group. | Find calcium and vitamin D on the panel, and check for added sugars. | — |
-| `coconut_milk_beverage` | eggs_dairy | Carton coconut milk is a drink: coconut milk thinned with water. | Read the carton for “beverage” in the name, then the thickeners. | — |
-| `plant_butter` | eggs_dairy | Plant butter, read for which oils it is made from. | Read the ingredient list and find which oil comes first. | — |
+| `coconut_milk_beverage` | eggs_dairy | Unsweetened carton coconut milk with the fewest added gums. | Read the carton for “beverage” in the name, then the thickeners. | — |
+| `plant_butter` | eggs_dairy | Plant butter built on coconut or olive oil, never seed oil or avocado oil. | Read the ingredient list and find which oil comes first. | — |
 | `dairy_case` | eggs_dairy | Pick the dairy type first, then read what the carton promises. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
 | `kombucha` | bulk_pantry | Kombucha bought cold, from the refrigerated case. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
 | `sauerkraut` | bulk_pantry | Raw sauerkraut from the cold case, never heated. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |

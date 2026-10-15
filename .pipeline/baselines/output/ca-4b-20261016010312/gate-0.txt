@@ -1,0 +1,1157 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 plain_kefir carries the spec text
+not ok 1 - C1 plain_kefir carries the spec text
+  ---
+  duration_ms: 1.401916
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    plain_kefir.decision
+    + actual - expected
+    
+    + 'Plain kefir: milk and cultures alone.'
+    - 'Plain kefir from 100% grass-fed whole milk.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Plain kefir from 100% grass-fed whole milk.'
+  actual: 'Plain kefir: milk and cultures alone.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C1 raw_kefir carries the spec text
+not ok 2 - C1 raw_kefir carries the spec text
+  ---
+  duration_ms: 0.130875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    raw_kefir.tier_note
+    + actual - expected
+    
+    + 'Culturing milk to keep it is among the oldest preservation methods and barely studied as a modern product, so the case for it is the live ferment, not a health outcome.'
+    - 'Culturing milk is among the oldest preservation methods, barely studied; the case is the ferment, not a health outcome.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Culturing milk is among the oldest preservation methods, barely studied; the case is the ferment, not a health outcome.'
+  actual: 'Culturing milk to keep it is among the oldest preservation methods and barely studied as a modern product, so the case for it is the live ferment, not a health outcome.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C1 sour_cream carries the spec text
+not ok 3 - C1 sour_cream carries the spec text
+  ---
+  duration_ms: 0.082667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    sour_cream.decision
+    + actual - expected
+    
+    + 'Sour cream soured by bacteria, not by an added acid.'
+    - 'Sour cream made from cream soured by bacteria, nothing else added.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Sour cream made from cream soured by bacteria, nothing else added.'
+  actual: 'Sour cream soured by bacteria, not by an added acid.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 cream_cheese carries the spec text
+not ok 4 - C1 cream_cheese carries the spec text
+  ---
+  duration_ms: 0.076959
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    cream_cheese.decision
+    + actual - expected
+    
+    + 'Cream cheese by its standard name, at least 33% milkfat.'
+    - 'Cream cheese by its standard name, at least 33% milkfat, no stabilizers.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Cream cheese by its standard name, at least 33% milkfat, no stabilizers.'
+  actual: 'Cream cheese by its standard name, at least 33% milkfat.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 cottage_cheese carries the spec text
+not ok 5 - C1 cottage_cheese carries the spec text
+  ---
+  duration_ms: 0.133667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    cottage_cheese.instead
+    + actual - expected
+    
+    + undefined
+    - 'Cottage cheese marked “directly set”, where a food-grade acid sets the curd instead of a culture.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Cottage cheese marked “directly set”, where a food-grade acid sets the curd instead of a culture.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 cheese_real_vs_processed carries the spec text
+not ok 6 - C1 cheese_real_vs_processed carries the spec text
+  ---
+  duration_ms: 0.067042
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    cheese_real_vs_processed.decision
+    + actual - expected
+    
+    + 'Block cheese is milk, cultures, salt and enzymes, and nothing else.'
+    - 'Block cheese with a short list, real cheese by its front name.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Block cheese with a short list, real cheese by its front name.'
+  actual: 'Block cheese is milk, cultures, salt and enzymes, and nothing else.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 raw_aged_cheese carries the spec text
+not ok 7 - C1 raw_aged_cheese carries the spec text
+  ---
+  duration_ms: 0.069167
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    raw_aged_cheese.decision
+    + actual - expected
+    
+    + 'Raw-milk cheese aged past sixty days is legal and already stocked.'
+    - 'Raw-milk cheese aged past sixty days, its maker and herd named.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Raw-milk cheese aged past sixty days, its maker and herd named.'
+  actual: 'Raw-milk cheese aged past sixty days is legal and already stocked.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 goat_sheep_dairy carries the spec text
+not ok 8 - C1 goat_sheep_dairy carries the spec text
+  ---
+  duration_ms: 0.067709
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    goat_sheep_dairy.why
+    + actual - expected
+    
+    + 'Goat milk has less lactose than cow’s milk and different forms of proteins.'
+    - 'Goat milk has less lactose than cow’s milk.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Goat milk has less lactose than cow’s milk.'
+  actual: 'Goat milk has less lactose than cow’s milk and different forms of proteins.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 cream_vs_creamer carries the spec text
+not ok 9 - C1 cream_vs_creamer carries the spec text
+  ---
+  duration_ms: 0.092
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    cream_vs_creamer.decision
+    + actual - expected
+    
+    + 'Non-dairy creamer is oil, sugar and thickeners, with no milk.'
+    - 'Half-and-half is milk and cream; non-dairy creamer is oil and sugar.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Half-and-half is milk and cream; non-dairy creamer is oil and sugar.'
+  actual: 'Non-dairy creamer is oil, sugar and thickeners, with no milk.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 ice_cream carries the spec text
+not ok 10 - C1 ice_cream carries the spec text
+  ---
+  duration_ms: 0.109875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    ice_cream.decision
+    + actual - expected
+    
+    + 'Ice cream that meets the standard, not a lookalike.'
+    - 'Ice cream that earns the name, with milkfat and no added oils.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Ice cream that earns the name, with milkfat and no added oils.'
+  actual: 'Ice cream that meets the standard, not a lookalike.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 dairy_case carries the spec text
+not ok 11 - C1 dairy_case carries the spec text
+  ---
+  duration_ms: 0.077583
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    dairy_case.instead
+    + actual - expected
+    
+    + undefined
+    - 'Plain whole milk that has not been ultrafiltered.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Plain whole milk that has not been ultrafiltered.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 plant_butter carries the spec text
+not ok 12 - C1 plant_butter carries the spec text
+  ---
+  duration_ms: 0.064375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    plant_butter.decision
+    + actual - expected
+    
+    + 'Plant butter, read for which oils it is made from.'
+    - 'Plant butter built on coconut or olive oil, never seed oil or avocado oil.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Plant butter built on coconut or olive oil, never seed oil or avocado oil.'
+  actual: 'Plant butter, read for which oils it is made from.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 almond_milk carries the spec text
+not ok 13 - C1 almond_milk carries the spec text
+  ---
+  duration_ms: 0.051708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    almond_milk.decision
+    + actual - expected
+    
+    + 'Unsweetened almond milk, read as a drink rather than a milk swap.'
+    - 'Unsweetened almond milk with a short ingredient list, never seed oil.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Unsweetened almond milk with a short ingredient list, never seed oil.'
+  actual: 'Unsweetened almond milk, read as a drink rather than a milk swap.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 oat_milk carries the spec text
+not ok 14 - C1 oat_milk carries the spec text
+  ---
+  duration_ms: 0.0455
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    oat_milk.decision
+    + actual - expected
+    
+    + 'Oat milk with its protein and fortification checked on the carton.'
+    - 'Oat milk with few stabilizers in the ingredients, never seed oil.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Oat milk with few stabilizers in the ingredients, never seed oil.'
+  actual: 'Oat milk with its protein and fortification checked on the carton.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 soy_milk carries the spec text
+not ok 15 - C1 soy_milk carries the spec text
+  ---
+  duration_ms: 0.058083
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    soy_milk.instead
+    + actual - expected
+    
+    + undefined
+    - 'Unsweetened almond milk.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Unsweetened almond milk.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 coconut_milk_beverage carries the spec text
+not ok 16 - C1 coconut_milk_beverage carries the spec text
+  ---
+  duration_ms: 0.046708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:158:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    coconut_milk_beverage.decision
+    + actual - expected
+    
+    + 'Carton coconut milk is a drink: coconut milk thinned with water.'
+    - 'Unsweetened carton coconut milk with the fewest added gums.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Unsweetened carton coconut milk with the fewest added gums.'
+  actual: 'Carton coconut milk is a drink: coconut milk thinned with water.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:161:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 plain_kefir has an instead
+not ok 17 - C2 plain_kefir has an instead
+  ---
+  duration_ms: 0.066625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'plain_kefir: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 raw_kefir has an instead
+not ok 18 - C2 raw_kefir has an instead
+  ---
+  duration_ms: 0.041208
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'raw_kefir: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 sour_cream has an instead
+not ok 19 - C2 sour_cream has an instead
+  ---
+  duration_ms: 0.037875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'sour_cream: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 cream_cheese has an instead
+not ok 20 - C2 cream_cheese has an instead
+  ---
+  duration_ms: 0.06375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'cream_cheese: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 cottage_cheese has an instead
+not ok 21 - C2 cottage_cheese has an instead
+  ---
+  duration_ms: 0.062417
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'cottage_cheese: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 cheese_real_vs_processed has an instead
+not ok 22 - C2 cheese_real_vs_processed has an instead
+  ---
+  duration_ms: 0.054
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'cheese_real_vs_processed: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 raw_aged_cheese has an instead
+not ok 23 - C2 raw_aged_cheese has an instead
+  ---
+  duration_ms: 0.052208
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'raw_aged_cheese: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 goat_sheep_dairy has an instead
+not ok 24 - C2 goat_sheep_dairy has an instead
+  ---
+  duration_ms: 0.052625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'goat_sheep_dairy: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 cream_vs_creamer has an instead
+not ok 25 - C2 cream_vs_creamer has an instead
+  ---
+  duration_ms: 0.04975
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'cream_vs_creamer: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 ice_cream has an instead
+not ok 26 - C2 ice_cream has an instead
+  ---
+  duration_ms: 0.051084
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'ice_cream: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 dairy_case has an instead
+not ok 27 - C2 dairy_case has an instead
+  ---
+  duration_ms: 0.056625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'dairy_case: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 plant_butter has an instead
+not ok 28 - C2 plant_butter has an instead
+  ---
+  duration_ms: 0.0515
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'plant_butter: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 almond_milk has an instead
+not ok 29 - C2 almond_milk has an instead
+  ---
+  duration_ms: 0.050875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'almond_milk: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 oat_milk has an instead
+not ok 30 - C2 oat_milk has an instead
+  ---
+  duration_ms: 0.050208
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'oat_milk: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 soy_milk has an instead
+not ok 31 - C2 soy_milk has an instead
+  ---
+  duration_ms: 0.048667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'soy_milk: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C2 coconut_milk_beverage has an instead
+not ok 32 - C2 coconut_milk_beverage has an instead
+  ---
+  duration_ms: 0.050875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:165:23'
+  failureType: 'testCodeFailure'
+  error: 'coconut_milk_beverage: no instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:167:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 plain_kefir: pass rule and every card lint are clean
+not ok 33 - C3 plain_kefir: pass rule and every card lint are clean
+  ---
+  duration_ms: 5.690791
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:172:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    plain_kefir: cart_pick match
+    + actual - expected
+    
+    + undefined
+    - 'plain_kefir'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'plain_kefir'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:184:34)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 raw_kefir: pass rule and every card lint are clean
+not ok 34 - C3 raw_kefir: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.765917
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:172:23'
+  failureType: 'testCodeFailure'
+  error: 'raw_kefir: tier_note budget'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:179:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 sour_cream: pass rule and every card lint are clean
+ok 35 - C3 sour_cream: pass rule and every card lint are clean
+  ---
+  duration_ms: 9.140209
+  type: 'test'
+  ...
+# Subtest: C3 cream_cheese: pass rule and every card lint are clean
+not ok 36 - C3 cream_cheese: pass rule and every card lint are clean
+  ---
+  duration_ms: 1.623667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:172:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    cream_cheese: cart_pick match
+    + actual - expected
+    
+    + undefined
+    - 'cream_cheese'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'cream_cheese'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:184:34)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 cottage_cheese: pass rule and every card lint are clean
+ok 37 - C3 cottage_cheese: pass rule and every card lint are clean
+  ---
+  duration_ms: 1.46225
+  type: 'test'
+  ...
+# Subtest: C3 cheese_real_vs_processed: pass rule and every card lint are clean
+ok 38 - C3 cheese_real_vs_processed: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.806209
+  type: 'test'
+  ...
+# Subtest: C3 raw_aged_cheese: pass rule and every card lint are clean
+not ok 39 - C3 raw_aged_cheese: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.170417
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:172:23'
+  failureType: 'testCodeFailure'
+  error: 'raw_aged_cheese: tier_note budget'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:179:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 goat_sheep_dairy: pass rule and every card lint are clean
+ok 40 - C3 goat_sheep_dairy: pass rule and every card lint are clean
+  ---
+  duration_ms: 1.598375
+  type: 'test'
+  ...
+# Subtest: C3 cream_vs_creamer: pass rule and every card lint are clean
+ok 41 - C3 cream_vs_creamer: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.473416
+  type: 'test'
+  ...
+# Subtest: C3 ice_cream: pass rule and every card lint are clean
+ok 42 - C3 ice_cream: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.3815
+  type: 'test'
+  ...
+# Subtest: C3 dairy_case: pass rule and every card lint are clean
+ok 43 - C3 dairy_case: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.37775
+  type: 'test'
+  ...
+# Subtest: C3 plant_butter: pass rule and every card lint are clean
+not ok 44 - C3 plant_butter: pass rule and every card lint are clean
+  ---
+  duration_ms: 1.545
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:172:23'
+  failureType: 'testCodeFailure'
+  error: |-
+    plant_butter: cart_pick match
+    + actual - expected
+    
+    + undefined
+    - 'plant_butter'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'plant_butter'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:184:34)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C3 almond_milk: pass rule and every card lint are clean
+ok 45 - C3 almond_milk: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.383083
+  type: 'test'
+  ...
+# Subtest: C3 oat_milk: pass rule and every card lint are clean
+ok 46 - C3 oat_milk: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.4745
+  type: 'test'
+  ...
+# Subtest: C3 soy_milk: pass rule and every card lint are clean
+ok 47 - C3 soy_milk: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.369792
+  type: 'test'
+  ...
+# Subtest: C3 coconut_milk_beverage: pass rule and every card lint are clean
+ok 48 - C3 coconut_milk_beverage: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.378
+  type: 'test'
+  ...
+# Subtest: C4 the eggs_dairy section is clean under forced section lints
+not ok 49 - C4 the eggs_dairy section is clean under forced section lints
+  ---
+  duration_ms: 0.169166
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:189:1'
+  failureType: 'testCodeFailure'
+  error: 'plain_kefir unchanged'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'plain_kefir'
+    title: 'Plain kefir'
+    aliases:
+      0: 'plain kefir'
+      1: 'pasteurized kefir'
+      2: 'flavored kefir'
+      3: 'kefir drink'
+    category: 'dairy'
+    question: 'How do you pick a bottle of kefir?'
+    decision: 'Plain kefir: milk and cultures alone.'
+    why: 'Kefir is milk fermented by yeasts and bacteria. It is sold ready to drink, plain or flavored.'
+    short_answer: 'Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.'
+    detail: 'Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Kefir'
+      1: 'https://foodsmartcolorado.colostate.edu/recipes/preservation/understanding-and-making-kefir'
+      2: 'https://extension.usu.edu/preserve-the-harvest/kefir'
+    kristy_take: 'Plain kefir is the base drink, ready for a smoothie or a recipe.'
+    cart_pick: 'Plain kefir from the cold case'
+    buying_tips:
+      0: 'Pick the bottle with no flavor named on the label.'
+      1: 'Take it from the refrigerated case and keep it cold.'
+      2: 'Use plain kefir in place of buttermilk or yogurt in recipes.'
+    watch_out:
+      0: 'Kefir has a short shelf life. Keep it refrigerated.'
+    pick_steps:
+      0: 'Pick the bottle labeled plain, not flavored.'
+      1: 'Take it from the refrigerated case and keep it cold.'
+    science: 'Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.'
+    labels_decoded:
+      0:
+        term: 'Kefir cultures'
+        meaning: 'The starter: yeasts and bacteria that ferment the milk.'
+      1:
+        term: 'Flavored'
+        meaning: 'A flavor has been added to the plain kefir.'
+    tier_note: 'Milk and cultures alone is the whole-food reading of a kefir bottle.'
+    asked_as:
+      0: 'is plain kefir worth buying'
+      1: 'how do i pick a kefir drink'
+      2: 'should i buy flavored kefir'
+  actual:
+    id: 'plain_kefir'
+    title: 'Plain kefir'
+    aliases:
+      0: 'plain kefir'
+      1: 'pasteurized kefir'
+      2: 'flavored kefir'
+      3: 'kefir drink'
+    category: 'dairy'
+    question: 'How do you pick a bottle of kefir?'
+    decision: 'Plain kefir: milk and cultures alone.'
+    why: 'Kefir is milk fermented by yeasts and bacteria. It is sold ready to drink, plain or flavored.'
+    short_answer: 'Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.'
+    detail: 'Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Kefir'
+      1: 'https://foodsmartcolorado.colostate.edu/recipes/preservation/understanding-and-making-kefir'
+      2: 'https://extension.usu.edu/preserve-the-harvest/kefir'
+    kristy_take: 'Plain kefir is the base drink, ready for a smoothie or a recipe.'
+    cart_pick: 'Plain kefir from the cold case'
+    buying_tips:
+      0: 'Pick the bottle with no flavor named on the label.'
+      1: 'Take it from the refrigerated case and keep it cold.'
+      2: 'Use plain kefir in place of buttermilk or yogurt in recipes.'
+    watch_out:
+      0: 'Kefir has a short shelf life. Keep it refrigerated.'
+    pick_steps:
+      0: 'Pick the bottle labeled plain, not flavored.'
+      1: 'Take it from the refrigerated case and keep it cold.'
+    science: 'Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.'
+    labels_decoded:
+      0:
+        term: 'Kefir cultures'
+        meaning: 'The starter: yeasts and bacteria that ferment the milk.'
+      1:
+        term: 'Flavored'
+        meaning: 'A flavor has been added to the plain kefir.'
+    tier_note: 'Milk and cultures alone is the whole-food reading of a kefir bottle.'
+    asked_as:
+      0: 'is plain kefir worth buying'
+      1: 'how do i pick a kefir drink'
+      2: 'should i buy flavored kefir'
+  operator: 'notDeepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:190:32)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 new copy passes the claim-lock, price, punctuation, brand and D4 greps
+not ok 50 - C5 new copy passes the claim-lock, price, punctuation, brand and D4 greps
+  ---
+  duration_ms: 0.422416
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:195:1'
+  failureType: 'testCodeFailure'
+  error: 'CA-4b new strings has 2 members (need 32+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:196:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 review table and doLines.json follow the new fronts
+not ok 51 - C6 review table and doLines.json follow the new fronts
+  ---
+  duration_ms: 0.149375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4b.test.js:214:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    almond_milk: exact do line
+    + actual - expected
+    
+    + 'Read the Nutrition Facts for added sugars, then the protein.'
+    - 'Read the Nutrition Facts for added sugars, then calcium and vitamin D.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Read the Nutrition Facts for added sugars, then calcium and vitamin D.'
+  actual: 'Read the Nutrition Facts for added sugars, then the protein.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4b.test.js:217:24)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C1 corpus counts and every other entry stay at the shipped baseline
+ok 52 - C1 corpus counts and every other entry stay at the shipped baseline
+  ---
+  duration_ms: 1.587333
+  type: 'test'
+  ...
+1..52
+# tests 52
+# suites 0
+# pass 12
+# fail 40
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 167.71425

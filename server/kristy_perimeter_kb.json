@@ -1357,9 +1357,9 @@
       ],
       "category": "dairy",
       "question": "Should I buy block cheese, slices, or pre-shredded?",
-      "decision": "Block cheese is milk, cultures, salt and enzymes, and nothing else.",
+      "decision": "Block cheese with a short list, real cheese by its front name.",
       "why": "Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.",
-      "short_answer": "Real cheese is basically milk, cultures, salt and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
+      "short_answer": "Real cheese is basically milk, salt, cultures and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
       "detail": "Read the name and the list. Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind. The shred coating is usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -1385,7 +1385,7 @@
           "meaning": "A protected name with a stamped rind. ‘Parmesan’ alone is generic in the US."
         }
       ],
-      "tier_note": "The starch, cellulose and natamycin on the bag are printed facts; buying the block instead is the whole-food standard.",
+      "tier_note": "The starch and cellulose on shreds are printed facts; the uncoated block is the standard.",
       "watch_out": [
         "‘Cheese product’, ‘cheese food’ and ‘pasteurized process’ all mean emulsifiers blended in. That is a different product from cheese.",
         "Bagged shreds carry potato starch, powdered cellulose and natamycin. Minor, but it is why they resist melting.",
@@ -1396,13 +1396,14 @@
         "Look for a short list: milk, salt, cultures, enzymes or rennet.",
         "Buy the block; bagged shreds carry starch, cellulose and natamycin."
       ],
-      "science": "Real cheese is milk, cultures, salt and enzymes. ‘Pasteurized process cheese product’ needs only 51% cheese, and the name on the front is the only warning. Shreds carry a coating so the strands do not knit back together, which is why they resist melting. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is protected, with a stamped rind.",
+      "science": "Real cheese is milk, salt, cultures and enzymes. ‘Pasteurized process cheese product’ needs only 51% cheese, and the name on the front is the only warning. Shreds carry a coating so the strands do not knit back together, which is why they resist melting. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is protected, with a stamped rind.",
       "eyebrow_short": "Block vs. bag",
       "asked_as": [
         "block cheese or shredded",
         "is pre shredded cheese ok",
         "what cheese should i buy"
-      ]
+      ],
+      "instead": "Bagged shreds named cheese: real cheese, coated so the strands stay apart."
     },
     {
       "id": "yogurt_plain_vs_flavored",
@@ -3576,7 +3577,7 @@
       ],
       "category": "dairy",
       "question": "What is the difference between cream and coffee creamer?",
-      "decision": "Non-dairy creamer is oil, sugar and thickeners, with no milk.",
+      "decision": "Half-and-half is milk and cream; non-dairy creamer is oil and sugar.",
       "why": "Cream has a legal fat minimum. Creamer is oil, sweetener and emulsifiers built to imitate it.",
       "short_answer": "Cream is dairy with a legal fat minimum. ‘Non-dairy creamer’ is not dairy at all. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Compare the two lists.",
       "detail": "Heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18. Standards of identity fix what cream can mean, which is why those fat percentages are consistent across every carton. Creamer has no such standard because it is a formulated product. The oil in it is usually a refined seed oil, and the sweetness usually comes from corn syrup solids or sugar, with the flavored versions adding more of both. Some cartons of real cream carry stabilizers like carrageenan or gellan gum, so a short list is worth checking on the dairy side too. Whole milk, half-and-half or real cream all do the job with a list you can read out loud. Read the two ingredient lists side by side and it takes three seconds.",
@@ -3604,7 +3605,7 @@
       "pick_steps": [
         "Read the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.",
         "Read the list too: even real cream can carry carrageenan or gellan gum.",
-        "On flavored creamers, read the sugar line first."
+        "A creamer list that opens on water, sugar and oil is the skip."
       ],
       "science": "Cream is dairy with a legal fat minimum fixed by standards of identity. ‘Non-dairy creamer’ has no such standard because it is a formulated product. Water, sugar and vegetable oil are the usual first three ingredients, with emulsifiers and thickeners. Many are built on almond, oat or coconut milk rather than cream. Whole milk or half-and-half does the same job with a two-word list.",
       "labels_decoded": [
@@ -3626,7 +3627,8 @@
         "difference between cream and creamer",
         "is coffee creamer dairy",
         "what is half and half"
-      ]
+      ],
+      "instead": "Heavy cream with cream as the only ingredient on the list."
     },
     {
       "id": "flour_basics",
@@ -4763,13 +4765,14 @@
         "University of Florida IFAS Extension, kefir fact sheet (FS457) https://ask.ifas.ufl.edu/publication/FS457"
       ],
       "cart_pick": "Plain raw kefir",
-      "tier_note": "Culturing milk to keep it is among the oldest preservation methods and barely studied as a modern product, so the case for it is the live ferment, not a health outcome.",
+      "tier_note": "Culturing milk is among the oldest preservation methods, barely studied; the case is the ferment, not a health outcome.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw kefir worth buying",
         "should i buy raw kefir",
         "what is raw kefir"
-      ]
+      ],
+      "instead": "Plain kefir from 100% grass-fed whole milk, the next bottle down from raw."
     },
     {
       "id": "raw_aged_cheese",
@@ -4783,7 +4786,7 @@
         "lait cru"
       ],
       "question": "Is raw milk cheese worth buying?",
-      "decision": "Raw-milk cheese aged past sixty days is legal and already stocked.",
+      "decision": "Raw-milk cheese aged past sixty days, its maker and herd named.",
       "why": "Sixty days of aging is the federal line. Past it, raw-milk cheese sells anywhere.",
       "card_why": "Aged raw-milk cheese is the raw dairy nobody has to hunt for. US rules allow it at sixty days and up, so a decent cheese counter already keeps a case of it. Sixty days of aging is a technology of its own. It is the reason an aged raw cheddar tastes of the place it came from. A young commodity block tastes of very little. The organizing principle is the milk’s: ask who made it, from which herd, and how long it sat.",
       "short_answer": "It is the raw dairy nobody has to go looking for. US law lets raw-milk cheese aged sixty days or more sell across state lines. It sits in ordinary cheese cases. Most traditional European cheeses are made this way.",
@@ -4824,13 +4827,14 @@
         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "cart_pick": "Aged raw-milk cheddar",
-      "tier_note": "Aging raw milk into cheese predates refrigeration and the sixty-day rule; the months on the rind are history as the evidence, not a health claim.",
+      "tier_note": "Aging raw milk into cheese predates refrigeration; the months on the rind are history, not health evidence.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw milk cheese worth it",
         "what is raw milk cheese",
         "is aged raw cheese worth buying"
-      ]
+      ],
+      "instead": "Thermized cheese, heated below pasteurization: not raw, and not fully pasteurized either."
     },
     {
       "id": "sprouts_raw",
@@ -6545,7 +6549,7 @@
       ],
       "category": "dairy",
       "question": "What should you check before buying oat milk?",
-      "decision": "Oat milk with its protein and fortification checked on the carton.",
+      "decision": "Oat milk with few stabilizers in the ingredients, never seed oil.",
       "why": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
       "short_answer": "The archived paper studied six original oat drinks from the UK market. Their nutritional composition and fortification varied. Check the actual carton rather than treating oat milk as one formulation.",
       "detail": "The paper describes production that can include milling, enzyme hydrolysis, formulation, and heat treatment. It notes that oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The study measured sensory, physical, and chemical properties, not health outcomes.",
@@ -6565,8 +6569,8 @@
         "No health effect follows from this sensory and composition study."
       ],
       "pick_steps": [
-        "Read the protein line and the added vitamins and minerals on the carton.",
-        "Read the ingredient list for stabilizers; formulations can differ in stabilizer use."
+        "Read the ingredient list for stabilizers; formulations can differ in stabilizer use.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed."
       ],
       "science": "Oat drinks vary in composition and fortification; the carton is the basis for choosing. Production can include milling, enzyme hydrolysis, formulation and heat treatment. Oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The sole paper studied six original UK products, excluding barista, flavored and sugar-free versions. It measured sensory, physical and chemical properties, not health outcomes, and sets no universal health ranking.",
       "labels_decoded": [
@@ -6575,12 +6579,13 @@
           "meaning": "Vitamins or minerals have been added to the formulation."
         }
       ],
-      "tier_note": "Protein and added vitamins are composition checks; using the carton rather than assuming equivalence is the whole-food standard.",
+      "tier_note": "Oat drinks differ in stabilizers and fortification, so the carton’s own list decides the pick.",
       "asked_as": [
         "how do you choose oat milk",
         "does every oat milk have the same protein",
         "what does fortified oat milk mean"
-      ]
+      ],
+      "instead": "Fortified unsweetened soy milk is the next plant drink."
     },
     {
       "id": "coffee_beans",
@@ -8772,7 +8777,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick a bottle of kefir?",
-      "decision": "Plain kefir: milk and cultures alone.",
+      "decision": "Plain kefir from 100% grass-fed whole milk.",
       "why": "Kefir is milk fermented by yeasts and bacteria. It is sold ready to drink, plain or flavored.",
       "short_answer": "Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.",
       "detail": "Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.",
@@ -8783,7 +8788,7 @@
         "https://extension.usu.edu/preserve-the-harvest/kefir"
       ],
       "kristy_take": "Plain kefir is the base drink, ready for a smoothie or a recipe.",
-      "cart_pick": "Plain kefir from the cold case",
+      "cart_pick": "100% grass-fed whole-milk plain kefir",
       "buying_tips": [
         "Pick the bottle with no flavor named on the label.",
         "Take it from the refrigerated case and keep it cold.",
@@ -8794,6 +8799,7 @@
       ],
       "pick_steps": [
         "Pick the bottle labeled plain, not flavored.",
+        "100% grass-fed on kefir means the cows ate grass and hay, never grain.",
         "Take it from the refrigerated case and keep it cold."
       ],
       "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
@@ -8812,7 +8818,8 @@
         "is plain kefir worth buying",
         "how do i pick a kefir drink",
         "should i buy flavored kefir"
-      ]
+      ],
+      "instead": "Plain organic whole-milk kefir is the next bottle down."
     },
     {
       "id": "sour_cream",
@@ -8824,7 +8831,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick sour cream?",
-      "decision": "Sour cream soured by bacteria, not by an added acid.",
+      "decision": "Sour cream made from cream soured by bacteria, nothing else added.",
       "why": "Cultured sour cream is soured by bacteria. Acidified sour cream is soured with added acids.",
       "short_answer": "The tub names the method. Sour cream, or cultured sour cream, is cream soured by bacteria. Acidified sour cream is soured with added acids. Both hold at least 18 percent milkfat.",
       "detail": "Under 21 CFR 131.160, sour cream is pasteurized cream soured by lactic acid bacteria. It may be named “Cultured sour cream”. Under 21 CFR 131.162, acidified sour cream is soured with acidifiers, with or without lactic acid bacteria. An acidifier is an added food-grade acid. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop syneresis, which is liquid separating out. A flavoring that characterizes the product is declared with the name.",
@@ -8834,7 +8841,7 @@
         "https://www.law.cornell.edu/cfr/text/21/131.162"
       ],
       "kristy_take": "Culturing is the traditional way to sour cream. The tub says which way was used.",
-      "cart_pick": "Cultured sour cream",
+      "cart_pick": "Cream and cultures only sour cream",
       "buying_tips": [
         "Pick a tub named “sour cream” or “cultured sour cream”.",
         "Read the optional ingredients added for texture or shelf life.",
@@ -8845,6 +8852,7 @@
       ],
       "pick_steps": [
         "Pick sour cream or cultured sour cream before acidified sour cream.",
+        "Read the ingredients for cream and cultures, with nothing listed after them.",
         "Check the name for “acidified”; added acids did the souring."
       ],
       "science": "Federal standards name two ways to sour cream. Sour cream, or cultured sour cream, is pasteurized cream soured by lactic acid bacteria. Acidified sour cream is soured with added food-grade acids, with or without bacteria. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop liquid separating out. Culturing is the traditional way to sour cream.",
@@ -8863,7 +8871,8 @@
         "how do i pick a sour cream",
         "is cultured sour cream worth buying",
         "should i buy acidified sour cream"
-      ]
+      ],
+      "instead": "Plain whole-milk yogurt, its only sugar the lactose from the milk."
     },
     {
       "id": "cream_cheese",
@@ -8876,7 +8885,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick cream cheese?",
-      "decision": "Cream cheese by its standard name, at least 33% milkfat.",
+      "decision": "Cream cheese by its standard name, at least 33% milkfat, no stabilizers.",
       "why": "The standard sets at least 33 percent milkfat, a bacterial culture, and stabilizers at 0.5 percent at most.",
       "short_answer": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and a bacterial culture. Stabilizers are capped at 0.5 percent. American Neufchâtel closely resembles it.",
       "detail": "Under 21 CFR 133.133, cream cheese is a soft, uncured cheese. It holds at least 33 percent milkfat and at most 55 percent moisture. Its dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel, sold in the United States, closely resembles cream cheese. French Neufchâtel ripens and grows a soft rind.",
@@ -8886,7 +8895,7 @@
         "https://www.masterclass.com/articles/neufchatel-cheese-vs-cream-cheese-explained"
       ],
       "kristy_take": "Cream cheese is a fresh cheese, so the name on the box carries the standard.",
-      "cart_pick": "Cream cheese with a culture listed",
+      "cart_pick": "Stabilizer-free cream cheese",
       "buying_tips": [
         "Look for “cream cheese” as the name on the package.",
         "Find a culture in the ingredient list.",
@@ -8897,7 +8906,7 @@
       ],
       "pick_steps": [
         "Look for “cream cheese” as the name; that name carries the standard.",
-        "Find a culture in the list; stabilizers may follow, up to 0.5 percent."
+        "Stabilizers are allowed up to 0.5 percent; choose the package that lists none."
       ],
       "science": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and at most 55 percent moisture. The dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel closely resembles cream cheese; French Neufchâtel ripens and grows a soft rind.",
       "labels_decoded": [
@@ -8915,7 +8924,8 @@
         "how do i pick a cream cheese",
         "is neufchatel cheese worth buying",
         "which cream cheese spread should i buy"
-      ]
+      ],
+      "instead": "Cream cheese with stabilizers listed, held by the standard to 0.5 percent at most."
     },
     {
       "id": "cottage_cheese",
@@ -8972,7 +8982,8 @@
         "how do i pick a cottage cheese",
         "is dry curd cottage cheese worth buying",
         "should i buy small curd cottage cheese"
-      ]
+      ],
+      "instead": "Cottage cheese marked “directly set”, where a food-grade acid sets the curd instead of a culture."
     },
     {
       "id": "ice_cream",
@@ -8985,7 +8996,7 @@
       ],
       "category": "dairy",
       "question": "How do you tell real ice cream from a lookalike?",
-      "decision": "Ice cream that meets the standard, not a lookalike.",
+      "decision": "Ice cream that earns the name, with milkfat and no added oils.",
       "why": "The name “ice cream” needs at least 10 percent milkfat. Short of that, the carton says “frozen dairy dessert”.",
       "short_answer": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat.",
       "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil.",
@@ -9029,7 +9040,8 @@
         "which ice cream should i buy",
         "how do i pick a vanilla ice cream",
         "should i buy ice cream or frozen dairy dessert"
-      ]
+      ],
+      "instead": "Frozen custard, which is ice cream made with egg yolk solids."
     },
     {
       "id": "ghee",
@@ -9101,8 +9113,8 @@
       "category": "dairy",
       "question": "How do you pick goat or sheep dairy?",
       "decision": "Goat or sheep dairy with the animal’s milk named on the list.",
-      "why": "Goat milk has less lactose than cow’s milk and different forms of proteins.",
-      "short_answer": "Goat milk averages about 3.5 percent butterfat. It contains lactose, less than cow’s milk, with different forms of proteins. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
+      "why": "Goat milk has less lactose than cow’s milk.",
+      "short_answer": "Goat milk averages about 3.5 percent butterfat. It contains lactose, less than cow’s milk. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
       "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. Its cream rises over a few days. Compared with cow’s milk, goat milk has less lactose and different forms of proteins. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -9140,7 +9152,8 @@
         "is goat milk worth buying",
         "how do i pick a goat cheese",
         "should i buy sheep milk cheese"
-      ]
+      ],
+      "instead": "Goat yogurt or goat butter, with goat milk named in the ingredients."
     },
     {
       "id": "almond_milk",
@@ -9153,7 +9166,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick almond milk?",
-      "decision": "Unsweetened almond milk, read as a drink rather than a milk swap.",
+      "decision": "Unsweetened almond milk with a short ingredient list, never seed oil.",
       "why": "FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.",
       "short_answer": "Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.",
       "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.",
@@ -9173,7 +9186,8 @@
         "FDA does not place almond drinks in the dairy group."
       ],
       "pick_steps": [
-        "Pick unsweetened over sweetened, vanilla or chocolate."
+        "Pick unsweetened over sweetened, vanilla or chocolate.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed."
       ],
       "science": "Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.",
       "labels_decoded": [
@@ -9186,12 +9200,13 @@
           "meaning": "A name FDA says is established by common usage."
         }
       ],
-      "tier_note": "Added sugars and protein on the panel decide the pick, not the name.",
+      "tier_note": "An unsweetened carton with no seed oil on its list stays closest to the almond itself.",
       "asked_as": [
         "how do i pick an almond milk",
         "is unsweetened almond milk worth buying",
         "which almond milk should i buy"
-      ]
+      ],
+      "instead": "Fortified unsweetened soy milk is the next plant drink."
     },
     {
       "id": "soy_milk",
@@ -9245,7 +9260,8 @@
         "how do i pick a soy milk",
         "is unsweetened soy milk worth buying",
         "which soy milk should i buy"
-      ]
+      ],
+      "instead": "Unsweetened almond milk."
     },
     {
       "id": "coconut_milk_beverage",
@@ -9259,7 +9275,7 @@
       ],
       "category": "dairy",
       "question": "Is carton coconut milk the same as the can?",
-      "decision": "Carton coconut milk is a drink: coconut milk thinned with water.",
+      "decision": "Unsweetened carton coconut milk with the fewest added gums.",
       "why": "Technically a coconut beverage: coconut milk blended with water, about an eighth as fatty as the can.",
       "short_answer": "Canned coconut milk is shredded coconut steeped and pressed. The carton beverage blends coconut milk with water, sugar, flavors, vitamins, preservatives and thickeners. It sits next to the soy milk.",
       "detail": "Canned coconut milk is made by steeping shredded coconut in water or milk, then pressing it. The carton coconut milk beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of canned coconut milk. Tasters found the unsweetened carton surprisingly bland. One test kitchen’s bottom line: do not cook with the coconut milk beverage.",
@@ -9296,7 +9312,8 @@
         "is coconut milk beverage worth buying",
         "how do i pick a coconut milk drink",
         "should i buy carton coconut milk"
-      ]
+      ],
+      "instead": "Canned coconut milk, shredded coconut steeped and pressed."
     },
     {
       "id": "plant_butter",
@@ -9309,7 +9326,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick a plant butter?",
-      "decision": "Plant butter, read for which oils it is made from.",
+      "decision": "Plant butter built on coconut or olive oil, never seed oil or avocado oil.",
       "why": "The oils differ from one plant butter to the next, and the ingredient list names them.",
       "short_answer": "Plant butter is built on plant oils, and the ingredient list names them. One example lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
       "detail": "The federal margarine standard, 21 CFR 166.110, is a reference point here, not a definition of plant butter. A food sold as margarine holds at least 80 percent fat. That fat comes from vegetable or rendered animal fats and oils. Those fats may have gone through an accepted process of physico-chemical modification, a physical or chemical change to the fat. Margarine must contain vitamin A. One plant butter’s label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
@@ -9319,7 +9336,7 @@
         "https://www.wegmans.com/shop/product/980978"
       ],
       "kristy_take": "The oils on the list say what the spread is built on.",
-      "cart_pick": "Plant butter with its oils named",
+      "cart_pick": "Coconut or olive oil plant butter",
       "buying_tips": [
         "Find each oil named in the ingredient list.",
         "Check whether a nut milk or culture is listed, as in some versions.",
@@ -9330,6 +9347,7 @@
       ],
       "pick_steps": [
         "Find each oil named in the list; note which one comes first.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Check whether a nut milk or culture is listed, as in some versions."
       ],
       "science": "Plant butter is built on plant oils, and the oils differ from one plant butter to the next. The name alone does not say which oils went in; the ingredient list does. One label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors. The federal margarine standard is a reference point, not a definition of plant butter.",
@@ -9339,12 +9357,13 @@
           "meaning": "Water and cashews with cultures added, per one label."
         }
       ],
-      "tier_note": "Knowing which oil leads the list is the standard for any spread.",
+      "tier_note": "Each oil in a plant butter is named on its ingredient list, so the skip is in plain sight.",
       "asked_as": [
         "is plant butter worth buying",
         "how do i pick a vegan butter",
         "which plant based butter should i buy"
-      ]
+      ],
+      "instead": "Butter: cream, and salt if salted."
     },
     {
       "id": "dairy_case",
@@ -9399,7 +9418,8 @@
         "what dairy should i buy",
         "how do i choose dairy at the store",
         "is ultrafiltered milk worth buying"
-      ]
+      ],
+      "instead": "Plain whole milk that has not been ultrafiltered."
     },
     {
       "id": "kombucha",

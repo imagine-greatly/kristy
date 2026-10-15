@@ -1,0 +1,47 @@
+{
+  "status": "blocked",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Exact spec text applied to 16 cards. Other bytes match a392e36; counts remain 181/30/23. All 52 acceptance checks passed using hash-verified baseline objects without git commands."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "All 16 instead fields pass presence, length and distinctness checks."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "All card checks pass. Four changed cart picks reach their own slugs."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Forced section violations reduced from 1 to 0; corpus repetition checks pass."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Copy checks pass; all 50 new sentence occurrences match supplied claim traces. Raw-dairy watch_out arrays remain byte-identical."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Updated 11 exact review rows. buildDoLines.js regenerated JSON; only almond_milk and oat_milk values changed."
+    },
+    {
+      "id": "C7",
+      "met": false,
+      "evidence": "801 dependency tests passed, zero failures or skips; listMatchProbe reports zero wrong matches. Assumptions: the no-git restriction includes subprocesses invoked by checks. Full npm test and commitGuard remain unchecked because they invoke git. Historical dependency fixtures were supplied directly from verified objects. No migration."
+    }
+  ],
+  "questions": [],
+  "kind": "ENVIRONMENT"
+}
