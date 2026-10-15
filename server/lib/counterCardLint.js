@@ -1614,3 +1614,208 @@ export function lintRepeatedClaim(entry) {
   }
   return out;
 }
+
+/* ═══════════════════════════ Section alignment ═══════════════════════════ */
+
+export const CANONICAL_GLOSSES = [
+  {
+    id: 'G1', term: /100% grass[- ]fed or grass[- ]finished/i,
+    sections: ['meat'], categories: null,
+    gloss: '“grass-fed” is the producer’s own word unless a certifier’s seal audits it',
+    trace: 'beef_grassfed_vs_grainfed; FSIS 2019 animal-raising-claims guideline, docs/research/card-align-sources.md block 1 (gate A1 fallback)',
+  },
+  {
+    id: 'G2', term: /100% grass[- ]fed/i,
+    sections: ['eggs_dairy'], categories: ['dairy'],
+    gloss: 'the cows ate grass and hay, never grain',
+    trace: 'AGW Certified Grassfed G17.0.1, card-align-sources.md block 2 (gate A2)',
+  },
+  {
+    id: 'G3', term: /\bpasture[- ]raised\b/i,
+    sections: ['meat', 'eggs_dairy'], categories: null,
+    gloss: 'time outdoors on pasture, audited only with a certifier’s seal',
+    trace: 'label_pasture_raised_feed',
+  },
+  {
+    id: 'G4', term: /\borganic\b/i,
+    sections: ['meat', 'eggs_dairy'], categories: null,
+    gloss: 'certified organic feed and outdoor access',
+    trace: '7 CFR 205.237 / 205.239, card-align-sources.md blocks 3a/3b',
+  },
+  {
+    id: 'G5', term: /\borganic\b/i,
+    sections: ['produce'], categories: null,
+    gloss: 'grown without synthetic pesticides beyond a short approved list',
+    trace: '7 CFR 205.105 / 205.601 (archive row due in M3)',
+  },
+  {
+    id: 'G6', term: /\bnatural fats?\b/i,
+    sections: ['bulk_pantry', 'frozen', 'eggs_dairy'], categories: null,
+    gloss: 'tallow, olive oil, or coconut oil',
+    trace: 'Devon ruling, kristys_standard',
+  },
+  {
+    id: 'G7', term: /\bseed oils?\b/i,
+    sections: ['bulk_pantry', 'frozen', 'eggs_dairy'], categories: null,
+    gloss: 'sunflower, safflower, canola, soybean, corn, and cottonseed',
+    trace: 'engine KB seed_oil entry names (S9)',
+  },
+];
+
+// [PLACEHOLDER] lexical budgets from docs/CARD-ALIGNMENT-PLAN.md CA-1.
+const STOPWORDS = new Set(('a an the and or of to in on for with from at by is are was were be it its ' +
+  'this that these those as not no nor but if so than then there their they them what how when where ' +
+  'which who your you any each all more most some such into out up over only also can will has have had do does').split(' '));
+const HANDLING = /\b(?:seal(?:ed)?\b|leak|smell|odou?r|colou?r|cold\b|temperature|sell-by|use-by|expir|dent(?:ed|s)?\b|bulg|bruis|wash|stor(?:e|ed|age)\b|fridge)/i;
+const FAMILIES = [/grass[- ]?(?:fed|finished)/i, /pasture[- ]raised/i, /\borganic\b/i, /wild[- ]caught/i];
+const FIRST_RUNG_SPLIT = /\s+first\b|,\s*then\b|;\s*then\b|\bnever\b/i;
+const SECTION_TIP_N = 5;
+const SECTION_FIELDS_N = 6;
+const SECTION_FRONT_N = 4;
+const SECTION_REPEAT_CARDS = 3;
+
+const norm = (s) => String(s).toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
+const sectionCardStrings = (texts) => texts.filter((s) => typeof s === 'string' && s.trim() && !POINTER.test(s));
+
+// Cut the union of canonical spans, keeping the pieces separate so a phrase cannot
+// bridge over an exempt term or gloss. Repetition exemptions deliberately ignore scope.
+function sectionSegments(raw) {
+  const text = norm(raw);
+  const spans = [];
+  for (const row of CANONICAL_GLOSSES) {
+    for (const m of text.matchAll(new RegExp(row.term.source, `${row.term.flags}g`))) {
+      spans.push([m.index, m.index + m[0].length]);
+    }
+    const gloss = norm(row.gloss);
+    for (let start = text.indexOf(gloss); start !== -1; start = text.indexOf(gloss, start + 1)) {
+      spans.push([start, start + gloss.length]);
+    }
+  }
+  spans.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
+  const segments = [];
+  let end = 0;
+  for (const [start, stop] of spans) {
+    if (start > end) segments.push(text.slice(end, start));
+    end = Math.max(end, stop);
+  }
+  if (end < text.length) segments.push(text.slice(end));
+  return segments;
+}
+
+function* sectionNgrams(texts, n) {
+  for (const text of texts) {
+    for (const segment of sectionSegments(text)) {
+      const tokens = segment.match(/[a-z0-9%']+/g) || [];
+      for (let i = 0; i + n <= tokens.length; i++) {
+        const gram = tokens.slice(i, i + n);
+        if (gram.filter((token) => !STOPWORDS.has(token)).length >= 2) yield gram.join(' ');
+      }
+    }
+  }
+}
+
+// Resolve only the card's scoped rows. Longer matches consume their spans before
+// shorter matches, but emitted rows always retain canonical table order.
+function resolveSectionTerms(raw, section, category) {
+  const text = norm(raw);
+  const matches = [];
+  CANONICAL_GLOSSES.forEach((row, index) => {
+    if (!row.sections.includes(section) || (row.categories !== null && !row.categories.includes(category))) return;
+    for (const m of text.matchAll(new RegExp(row.term.source, `${row.term.flags}g`))) {
+      matches.push({ index, start: m.index, end: m.index + m[0].length });
+    }
+  });
+  matches.sort((a, b) => (b.end - b.start) - (a.end - a.start) || a.start - b.start || a.index - b.index);
+  const accepted = [];
+  for (const match of matches) {
+    if (!accepted.some((other) => match.start < other.end && other.start < match.end)) accepted.push(match);
+  }
+  const indices = new Set(accepted.map((match) => match.index));
+  return CANONICAL_GLOSSES.filter((row, index) => indices.has(index));
+}
+
+/** Pure, opt-in section checks. Existing card and corpus lints stay independent. */
+export function lintSections(tips, entries) {
+  const out = [];
+  for (const row of tips) {
+    const tipOn = row.tip_aligned === true;
+    const cardsOn = row.cards_aligned === true;
+    if (!tipOn && !cardsOn) continue;
+    const section = row.section;
+    const cards = entries.filter((entry) => {
+      const home = sectionForCategory(entry.category);
+      return home !== null && home === section;
+    });
+    const tipStrings = [row.rule, ...(row.checks || [])].filter((s) => typeof s === 'string' && s.trim());
+    const fields = cards.map((entry) => sectionCardStrings(REPEATED_CLAIM_FIELDS.flatMap((f) => stringsIn(entry[f]))));
+
+    // L1: the first shared phrase in tip order gives at most one hit per card.
+    if (tipOn) {
+      const tipKeys = [...sectionNgrams(tipStrings, SECTION_TIP_N)];
+      cards.forEach((entry, index) => {
+        const texts = [...sectionCardStrings([entry.decision]), ...fields[index]];
+        const keys = new Set(sectionNgrams(texts, SECTION_TIP_N));
+        const phrase = tipKeys.find((key) => keys.has(key));
+        if (phrase) out.push({ code: 'SECTION_TIP_REPEATS_CARD', section, id: entry.id, phrase });
+      });
+    }
+
+    // L2: each card contributes once per phrase; equal id lists share one hit.
+    if (cardsOn) {
+      for (const [form, n] of [['fields', SECTION_FIELDS_N], ['front', SECTION_FRONT_N]]) {
+        const holders = new Map();
+        cards.forEach((entry, index) => {
+          const texts = form === 'fields' ? fields[index] : sectionCardStrings([entry.decision, entry.tier_note]);
+          for (const key of new Set(sectionNgrams(texts, n))) {
+            if (!holders.has(key)) holders.set(key, []);
+            holders.get(key).push(entry.id);
+          }
+        });
+        const groups = new Set();
+        for (const [phrase, heldBy] of holders) {
+          if (heldBy.length < SECTION_REPEAT_CARDS) continue;
+          const ids = [...heldBy].sort();
+          const group = JSON.stringify(ids);
+          if (groups.has(group)) continue;
+          groups.add(group);
+          out.push({ code: 'SECTION_PHRASE_REPEATED', section, form, ids, phrase });
+        }
+      }
+    }
+
+    // L3: preserve the raw tip text for review.
+    if (tipOn) {
+      for (const text of tipStrings) {
+        if (HANDLING.test(text)) out.push({ code: 'SECTION_TIP_HANDLING', section, text });
+      }
+    }
+
+    if (cardsOn) {
+      // L4: a front's term needs its own gloss on this card, in one allowed string.
+      for (const entry of cards) {
+        const glossTexts = ['tier_note', 'pick_steps', 'instead'].flatMap((f) => stringsIn(entry[f])).map(norm);
+        for (const termRow of resolveSectionTerms(entry.decision, section, entry.category)) {
+          if (!glossTexts.some((text) => text.includes(norm(termRow.gloss)))) {
+            out.push({ code: 'TERM_UNGLOSSED', section, id: entry.id, row: termRow.id });
+          }
+        }
+      }
+
+      // L5: keep each cart pick within the front's families and first-rung terms.
+      for (const entry of cards) {
+        const pick = entry.cart_pick;
+        if (typeof pick !== 'string' || !pick.trim()) continue;
+        const decision = String(entry.decision ?? '');
+        if (FAMILIES.some((family) => family.test(pick) && !family.test(decision))) {
+          out.push({ code: 'CART_PICK_DISAGREES', section, id: entry.id, form: 'a' });
+        }
+        const rung = decision.split(FIRST_RUNG_SPLIT)[0];
+        if (resolveSectionTerms(rung, section, entry.category).some((termRow) =>
+          !termRow.term.test(pick) && !norm(pick).includes(norm(termRow.gloss)))) {
+          out.push({ code: 'CART_PICK_DISAGREES', section, id: entry.id, form: 'b' });
+        }
+      }
+    }
+  }
+  return out;
+}

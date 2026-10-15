@@ -26,6 +26,19 @@ export const ITEM_CARD_REWRITE = new Set([
   'produce_apples_pears', 'produce_citrus', 'produce_peppers', 'produce_leafy_greens', 'produce_root_vegetables',
   'produce_brassicas', 'produce_onions_garlic', 'produce_green_beans', 'produce_mushrooms', 'produce_stone_fruit',
 ]);
+// Card-alignment rewrites (docs/CARD-ALIGNMENT-PLAN.md milestone 1).
+export const CARD_ALIGN_REWRITE = new Set([
+  'beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'beef_cuts_basics', 'organ_meats', 'butcher_counter_asking',
+  'judging_meat_at_the_case', 'bison', 'venison_game', 'lamb_goat', 'pick_soup_bones',
+  'pork_cuts_and_enhanced', 'pick_sausage', 'pick_jerky', 'chicken_cuts_basics', 'chicken_breast',
+  'rotisserie_chicken', 'turkey_whole', 'ground_turkey',
+  'bacon', 'ham', 'hot_dogs', 'turkey_bacon', 'cured_pork', 'deli_meat_uncured',
+  'egg_labels', 'egg_duck_quail', 'pick_egg_whites',
+  'whole_vs_reduced_fat_milk', 'raw_milk', 'yogurt_plain_vs_flavored', 'grassfed_butter', 'ghee', 'plain_kefir',
+  'raw_kefir', 'sour_cream', 'cream_cheese', 'cottage_cheese', 'cheese_real_vs_processed', 'raw_aged_cheese',
+  'goat_sheep_dairy', 'cream_vs_creamer', 'ice_cream', 'dairy_case',
+  'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'plant_butter',
+]);
 // alias → ids carrying it in the current KB: an item-card id may drop an alias that moved to another card.
 const ALIAS_OWNERS = new Map();
 for (const e of kb.entries || []) {
@@ -35,6 +48,7 @@ for (const e of kb.entries || []) {
   }
 }
 const RELAXED = ['cart_pick', 'asked_as', 'aliases', 'sources', 'labels_decoded'];
+const CA_RELAXED = ['cart_pick', 'instead', 'asked_as', 'aliases', 'labels_decoded'];
 // By value: sources may be {url, ...} objects, which includes() compares by reference.
 const keepsAll = (newList, oldList) => {
   const have = new Set((newList || []).map((x) => JSON.stringify(x)));
@@ -46,9 +60,11 @@ const isEmpty = (v) => v == null || (typeof v === 'string' ? v.trim() === '' : A
 
 export function assertPassRule(t, oldEntry, newEntry) {
   const id = oldEntry.id;
-  const rewrite = HEALTH_FIRST_REWRITE.has(id) || ITEM_CARD_REWRITE.has(id);
+  const hf = HEALTH_FIRST_REWRITE.has(id) || ITEM_CARD_REWRITE.has(id);
+  const ca = CARD_ALIGN_REWRITE.has(id);
+  const rewrite = hf || ca;
   for (const f of FROZEN) {
-    if (rewrite && RELAXED.includes(f)) continue;
+    if ((hf && RELAXED.includes(f)) || (ca && CA_RELAXED.includes(f))) continue;
     assert.deepEqual(newEntry[f], oldEntry[f], `${id}: frozen field ${f} changed`);
   }
   if (rewrite) {

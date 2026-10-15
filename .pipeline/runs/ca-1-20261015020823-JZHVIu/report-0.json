@@ -1,0 +1,18 @@
+{
+  "status": "blocked",
+  "files_changed": ["server/lib/counterCardLint.js", "server/lib/counterCardLint.test.js", "server/test/acceptance/passRule.js"],
+  "criteria": [
+    {"id": "C1", "met": true, "evidence": "Export and corpus test pass. ca-1 forced-flag baseline: {\"produce SECTION_PHRASE_REPEATED\":8,\"produce TERM_UNGLOSSED\":9,\"produce CART_PICK_DISAGREES\":8,\"meat SECTION_TIP_REPEATS_CARD\":1,\"meat SECTION_PHRASE_REPEATED\":1,\"meat SECTION_TIP_HANDLING\":3,\"meat CART_PICK_DISAGREES\":2,\"seafood SECTION_TIP_HANDLING\":1,\"seafood CART_PICK_DISAGREES\":1,\"eggs_dairy SECTION_PHRASE_REPEATED\":1,\"eggs_dairy TERM_UNGLOSSED\":4,\"bulk_pantry SECTION_PHRASE_REPEATED\":13,\"bulk_pantry SECTION_TIP_HANDLING\":1,\"frozen SECTION_TIP_HANDLING\":1}"},
+    {"id": "C2", "met": true, "evidence": "Acceptance passes: shared five-word phrase fires once; four-word overlap passes."},
+    {"id": "C3", "met": true, "evidence": "Acceptance passes for repetition thresholds and exemptions. Additional checks confirm per-card deduplication and segment boundaries."},
+    {"id": "C4", "met": true, "evidence": "Handling fixture fires only when enabled; all six CA-5 tips pass."},
+    {"id": "C5", "met": true, "evidence": "G1–G7 red/green fixtures and scope exclusions pass. Additional checks confirm normalized nested glosses and table-order deduplication."},
+    {"id": "C6", "met": true, "evidence": "All seven canonical rows match the specified scopes, glosses and non-global regex requirements."},
+    {"id": "C7", "met": true, "evidence": "Beef, egg, milk and chip fixtures produce exactly the required L5 forms."},
+    {"id": "C8", "met": true, "evidence": "Strict per-row flag gating and five-code output order pass. Frozen-input checks confirm no argument mutation."},
+    {"id": "C9", "met": true, "evidence": "Exact 48-id set and rewrite/freeze fixtures pass. Number, non-empty, watch_out and glossary-term preservation checks pass; unspecified passRule content remains byte-identical."},
+    {"id": "C10", "met": false, "evidence": "NOT READY: npm test count unavailable; full suite, commitGuard and Git numstat remain unrun because Builder Contract prohibits Git. server/scripts/commitGuard.js:95 and acceptance snapshot tests invoke Git. All 177 targeted tests pass, including 9 CA-1 tests; probe reports 0 wrong; dry-run places 182 cards, skips 31 picks and writes nothing. AFTER tally is byte-identical to BEFORE. Pre-edit comparison: counterCardLint.js +205/-0; counterCardLint.test.js +7/-0; passRule.js +18/-2. No placeholder values changed; meat plus eggs_dairy baseline totals 12. Assumptions: verification scripts resolve under server/scripts, consistent with the specified server working directory."}
+  ],
+  "questions": [],
+  "kind": "ENVIRONMENT"
+}

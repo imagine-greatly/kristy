@@ -41,8 +41,10 @@ import {
   MAX_EMDASH_SHARE,
   tierNoteOrphaned,
   TIER_NOTE_ORPHANED_PENDING,
+  lintSections,
 } from './counterCardLint.js';
 import doLines from './doLines.json' with { type: 'json' };
+import sectionRules from './sectionRules.json' with { type: 'json' };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
@@ -749,3 +751,8 @@ rtest('READ_STACKED: a look_for "Term — meaning" separator clears, a second em
   rassert.deepEqual(rcodes({ look_for: ['Term — meaning — aside.'] }), ['READ_STACKED']);
 });
 
+test('sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)', () => {
+  nonEmpty(sectionRules, 'sectionRules', 6);
+  nonEmpty(perimeterKb.entries, 'perimeterKb.entries', 180);
+  assert.deepEqual(lintSections(sectionRules, perimeterKb.entries), []);
+});
