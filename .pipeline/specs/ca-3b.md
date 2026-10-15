@@ -8,11 +8,21 @@
   "owns": [
     "server/kristy_perimeter_kb.json",
     "docs/do-lines-review.md",
-    "server/lib/doLines.json",
-    "server/test/acceptance/ca-3b.test.js"
+    "server/lib/doLines.json"
   ],
   "read_full": [
     "server/test/acceptance/passRule.js",
+    "server/lib/counterCards.js",
+    "server/lib/counterCardLint.js",
+    "server/lib/counterCardLint.test.js",
+    "server/lib/counterReach.test.js",
+    "server/test/ktight.test.js",
+    "server/test/counterProbe48.test.js",
+    "server/test/acceptance/ic4achicken.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic5b.test.js",
+    "server/test/acceptance/k9.test.js",
+    "server/test/acceptance/k14.test.js",
     "docs/CARD-ALIGNMENT-PLAN.md",
     "docs/research/card-align-sources.md",
     "docs/research/meat-sources.md"
@@ -295,7 +305,7 @@ KEPT byte-identical: decision (the deliberate cure sentence, a PRESERVATION_CURE
 
 ```json
 {"criteria":[
- {"id":"C1","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/test/acceptance/ic5b.test.js","server/test/ktight.test.js"],"allowed_reads":["docs/CARD-ALIGNMENT-PLAN.md"],"expected":"every CA-3b card within D1","test_name":"C1 D1 limits hold on every CA-3b card"},
+ {"id":"C1","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/test/acceptance/ic5b.test.js","server/test/ktight.test.js","server/lib/counterReach.test.js"],"allowed_reads":["docs/CARD-ALIGNMENT-PLAN.md"],"expected":"every CA-3b card within D1","test_name":"C1 D1 limits hold on every CA-3b card"},
  {"id":"C2","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/lib/counterCardLint.js"],"allowed_reads":[],"expected":"0 grass matches","test_name":"C2 no CA-3b decision or cart_pick prints a grass term"},
  {"id":"C3","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/lib/list.js","server/lib/listImport.js","server/lib/counterCardLint.js","server/test/acceptance/ic4achicken.test.js","server/test/acceptance/ic4b.test.js","server/test/counterProbe48.test.js"],"allowed_reads":["server/lib/counterCards.js"],"expected":"chicken_breast present, not RETIRED, cart_pick /breast/i","test_name":"C3 chicken_breast survives as a rewrite"},
  {"id":"C4","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/test/acceptance/passRule.js"],"allowed_reads":["server/test/acceptance/passRule.js"],"expected":"assertPassRule ok for 14 ids","test_name":"C4 the pass rule holds for every CA-3b id"},
@@ -303,12 +313,10 @@ KEPT byte-identical: decision (the deliberate cure sentence, a PRESERVATION_CURE
  {"id":"C6","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/lib/counterCardLint.test.js"],"allowed_reads":["server/lib/counterCardLint.js"],"expected":"0 L1/L2/L4/L5 hits in section meat","test_name":"C6 the full meat section is lint-clean under the meat tip"},
  {"id":"C7","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/lib/counterCardLint.js"],"allowed_reads":["server/lib/counterCardLint.js"],"expected":"every cure sentence is a PRESERVATION_CURE_SENTENCES member","test_name":"C7 cure sentences come only from the shared set"},
  {"id":"C8","impl":["server/kristy_perimeter_kb.json","docs/do-lines-review.md","server/lib/doLines.json"],"tests":["server/test/acceptance/ca-3b.test.js"],"dependents":["server/test/acceptance/ic5b.test.js","server/test/acceptance/k9.test.js"],"allowed_reads":[],"expected":"per-card lints []","test_name":"C8 per-card lints are clean and headlines match"},
- {"id":"C9","impl":["server/kristy_perimeter_kb.json"],"tests":[],"dependents":["server/test/acceptance/k14.test.js"],"allowed_reads":[],"expected":"npm test green except the k14 C12 anchor tripwire main re-anchors; probe 0 wrong; commitGuard clean; dry-run deletes 0"}
+ {"id":"C9","impl":["server/kristy_perimeter_kb.json"],"tests":["server/test/acceptance/k14.test.js"],"dependents":[],"allowed_reads":[],"expected":"npm test green except the k14 C12 anchor tripwire main re-anchors; probe 0 wrong; commitGuard clean; dry-run deletes 0"}
 ],
 "dependency_evidence":[
- {"owned":"server/kristy_perimeter_kb.json","imports":["server/routes/perimeter.js:145","server/routes/perimeter.js:274","server/routes/perimeter.js:410","server/lib/listMatch.js:202","server/lib/listMatch.js:229","Tools/listvocab/build.js:43"],"tests":["server/lib/counterReach.test.js","server/test/acceptance/passRule.js"],"source":".pipeline/specs/ca-scouts.md S11, S4"},
- {"owned":"chicken_breast references","imports":["server/lib/list.js:120","server/lib/list.js:344","server/lib/list.js:366","server/lib/list.js:370","server/lib/list.js:378","server/lib/listImport.js:78","server/lib/counterCardLint.js:1564","server/lib/doLines.json:23"],"tests":["server/test/ktight.test.js:15","server/test/counterProbe48.test.js:20","server/test/acceptance/ic4achicken.test.js:42","server/test/acceptance/ic4b.test.js:97"],"source":".pipeline/specs/ca-scouts.md S5"},
- {"owned":"section map","imports":["server/lib/counterCardLint.js sectionForCategory"],"tests":["server/lib/counterCardLint.test.js"],"source":".pipeline/specs/ca-scouts.md S2"}
+ {"owned":"server/kristy_perimeter_kb.json","imports":["server/routes/perimeter.js:145","server/routes/perimeter.js:274","server/routes/perimeter.js:410","server/lib/listMatch.js:202","server/lib/listMatch.js:229","Tools/listvocab/build.js:43","chicken_breast id readers: server/lib/list.js:120","server/lib/list.js:344","server/lib/list.js:366","server/lib/list.js:370","server/lib/list.js:378","server/lib/listImport.js:78","server/lib/counterCardLint.js:1564","server/lib/doLines.json:23","server/lib/counterCardLint.js sectionForCategory (section map)"],"tests":["server/lib/counterReach.test.js","server/test/acceptance/passRule.js","server/test/ktight.test.js","server/test/counterProbe48.test.js","server/test/acceptance/ic4achicken.test.js","server/test/acceptance/ic4b.test.js","server/lib/counterCardLint.test.js"],"source":".pipeline/specs/ca-scouts.md S11, S4, S5, S2"}
 ],
 "env":{"executables":["node","git","grep"],"browsers":[],"temp":"/Users/m1/kristy/.pipeline/runs/ca-3b","network":false}}
 ```
