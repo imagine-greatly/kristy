@@ -20,11 +20,21 @@
   "read_full": [
     "docs/CARD-ALIGNMENT-PLAN.md",
     "server/test/acceptance/passRule.js",
-    "server/test/acceptance/ca-1.test.js",
     "server/test/acceptance/ic7b.test.js",
     "server/test/acceptance/ic7a.test.js",
     "server/test/acceptance/ic4b.test.js",
-    "VOICE_SPEC.md"
+    "VOICE_SPEC.md",
+    "server/lib/counterCards.js",
+    "server/lib/counterReach.test.js",
+    "server/lib/counterCardLint.js",
+    "server/test/acceptance/k14.test.js",
+    "server/lib/trips.test.js",
+    "server/lib/listMatch.js",
+    "server/lib/perimeter.js",
+    "server/lib/counterCardLint.test.js",
+    "server/scripts/buildDoLines.js",
+    "server/test/acceptance/ca-1.test.js",
+    "server/lib/testGuards.js"
   ],
   "verify": "node --test server/test/acceptance/ca-4a.test.js && cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run",
   "token_ceiling": 100000
@@ -157,30 +167,219 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - C7 [test] Given the strings this piece adds, then none matches the claim-lock grep, the price grep, `—` or a straight quote; no CA-4a copy field matches the brand grep; no CA-4a `tier_note` except yogurt's matches the D4 pattern.
 - C8 [test] Given `lintSections` with the CA-5 eggs_dairy tip and both flags forced, then no hit names a CA-4a id, no L2 group is made only of CA-4a ids, and L3 is empty.
 - C9 [test] Given `server/lib/doLines.json`, then it carries the three new do lines and the Butter do line.
-- C10 Given the repo after the change, when `cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run` run, then 0 fail, 0 wrong, guard clean, every card placed.
+Verify (not a criterion): Given the repo after the change, when `cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run` run, then 0 fail, 0 wrong, guard clean, every card placed.
 
 ## Contract
 
 ```json
 {
   "criteria": [
-    {"id": "C1", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/ic4b.test.js"], "dependents": ["server/lib/counterCards.js", "server/test/acceptance/passRule.js", "server/lib/counterReach.test.js"], "allowed_reads": ["server/kristy_perimeter_kb.json", "docs/do-lines-review.md"], "expected": "Eggs fields equal Step 1; other fields equal 8b49633", "test_name": "C1 the Eggs card carries the worked example"},
-    {"id": "C2", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/ic7b.test.js"], "dependents": ["server/lib/counterCards.js", "server/test/acceptance/passRule.js"], "allowed_reads": ["server/kristy_perimeter_kb.json", "server/lib/counterCardLint.js"], "expected": "Milk fields equal Step 2; watch_out additions only; raw_milk watch_out unchanged", "test_name": "C2 the Milk card carries the worked example; raw-milk risk lines unchanged"},
-    {"id": "C3", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/ic7a.test.js"], "dependents": ["server/lib/counterCards.js", "server/test/acceptance/passRule.js"], "allowed_reads": ["server/kristy_perimeter_kb.json"], "expected": "Yogurt fields equal Step 3", "test_name": "C3 the Yogurt card carries the worked example"},
-    {"id": "C4", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/k14.test.js"], "dependents": ["server/lib/counterCards.js", "server/test/acceptance/passRule.js"], "allowed_reads": ["server/kristy_perimeter_kb.json"], "expected": "four cards carry Step 4 text; pick_egg_whites unchanged", "test_name": "C4 raw milk, duck and quail eggs, ghee and butter carry the spec text"},
-    {"id": "C5", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/counterProbe48.test.js", "server/lib/kindFilter.test.js", "server/lib/trips.test.js"], "dependents": ["server/lib/listMatch.js", "server/scripts/listMatchProbe.js", "server/lib/perimeter.js"], "allowed_reads": ["server/lib/listMatch.js", "server/scripts/listMatchProbe.js"], "expected": "pick_milk absent; milk rows land on whole_vs_reduced_fat_milk; each cart_pick lands on its own card", "test_name": "C5 pick_milk is retired and the Milk card answers its rows"},
-    {"id": "C6", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/lib/counterCardLint.test.js"], "dependents": ["server/lib/counterCardLint.js", "server/lib/counterCards.js", "server/test/acceptance/passRule.js"], "allowed_reads": ["server/lib/counterCardLint.js", "server/test/acceptance/passRule.js"], "expected": "every lint returns []", "test_name": "C6 <id>: pass rule and every card lint are clean"},
-    {"id": "C7", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js"], "dependents": ["server/lib/counterCards.js"], "allowed_reads": ["server/kristy_perimeter_kb.json", "VOICE_SPEC.md"], "expected": "0 grep hits", "test_name": "C7 new copy passes the claim-lock, price, punctuation and brand greps"},
-    {"id": "C8", "impl": "server/kristy_perimeter_kb.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/ca-1.test.js"], "dependents": ["server/lib/counterCardLint.js", "server/lib/counterCards.js"], "allowed_reads": ["server/lib/counterCardLint.js"], "expected": "no forced section-lint hit on a CA-4a id", "test_name": "C8 forced section lints: no hit on a CA-4a card"},
-    {"id": "C9", "impl": "server/lib/doLines.json", "tests": ["server/test/acceptance/ca-4a.test.js", "server/test/acceptance/ic7b.test.js"], "dependents": ["server/lib/counterCards.js", "server/scripts/buildDoLines.js"], "allowed_reads": ["docs/do-lines-review.md", "server/scripts/buildDoLines.js"], "expected": "doLines.json carries the four do lines", "test_name": "C9 doLines.json carries the new do lines"}
+    {
+      "id": "C1",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/ic4b.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js",
+        "server/test/acceptance/passRule.js",
+        "server/lib/counterReach.test.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json",
+        "docs/do-lines-review.md"
+      ],
+      "expected": "Eggs fields equal Step 1; other fields equal 8b49633",
+      "test_name": "C1 the Eggs card carries the worked example"
+    },
+    {
+      "id": "C2",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/ic7b.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js",
+        "server/test/acceptance/passRule.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json",
+        "server/lib/counterCardLint.js"
+      ],
+      "expected": "Milk fields equal Step 2; watch_out additions only; raw_milk watch_out unchanged",
+      "test_name": "C2 the Milk card carries the worked example; raw-milk risk lines unchanged"
+    },
+    {
+      "id": "C3",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/ic7a.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js",
+        "server/test/acceptance/passRule.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "expected": "Yogurt fields equal Step 3",
+      "test_name": "C3 the Yogurt card carries the worked example"
+    },
+    {
+      "id": "C4",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/k14.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js",
+        "server/test/acceptance/passRule.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "expected": "four cards carry Step 4 text; pick_egg_whites unchanged",
+      "test_name": "C4 raw milk, duck and quail eggs, ghee and butter carry the spec text"
+    },
+    {
+      "id": "C5",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/counterProbe48.test.js",
+        "server/lib/kindFilter.test.js",
+        "server/lib/trips.test.js"
+      ],
+      "dependents": [
+        "server/lib/listMatch.js",
+        "server/scripts/listMatchProbe.js",
+        "server/lib/perimeter.js"
+      ],
+      "allowed_reads": [
+        "server/lib/listMatch.js",
+        "server/scripts/listMatchProbe.js"
+      ],
+      "expected": "pick_milk absent; milk rows land on whole_vs_reduced_fat_milk; each cart_pick lands on its own card",
+      "test_name": "C5 pick_milk is retired and the Milk card answers its rows"
+    },
+    {
+      "id": "C6",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/lib/counterCardLint.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCardLint.js",
+        "server/lib/counterCards.js",
+        "server/test/acceptance/passRule.js"
+      ],
+      "allowed_reads": [
+        "server/lib/counterCardLint.js",
+        "server/test/acceptance/passRule.js"
+      ],
+      "expected": "every lint returns []",
+      "test_name": "C6 <id>: pass rule and every card lint are clean"
+    },
+    {
+      "id": "C7",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json",
+        "VOICE_SPEC.md"
+      ],
+      "expected": "0 grep hits",
+      "test_name": "C7 new copy passes the claim-lock, price, punctuation and brand greps"
+    },
+    {
+      "id": "C8",
+      "impl": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/ca-1.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCardLint.js",
+        "server/lib/counterCards.js"
+      ],
+      "allowed_reads": [
+        "server/lib/counterCardLint.js"
+      ],
+      "expected": "no forced section-lint hit on a CA-4a id",
+      "test_name": "C8 forced section lints: no hit on a CA-4a card"
+    },
+    {
+      "id": "C9",
+      "impl": [
+        "server/lib/doLines.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-4a.test.js",
+        "server/test/acceptance/ic7b.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCards.js",
+        "server/scripts/buildDoLines.js"
+      ],
+      "allowed_reads": [
+        "docs/do-lines-review.md",
+        "server/scripts/buildDoLines.js"
+      ],
+      "expected": "doLines.json carries the four do lines",
+      "test_name": "C9 doLines.json carries the new do lines"
+    }
   ],
   "dependency_evidence": [
-    {"owned": "server/kristy_perimeter_kb.json", "imports": [], "tests": ["server/test/acceptance/passRule.js", "server/lib/counterReach.test.js"], "source": "ca-scouts.md S4"},
-    {"owned": "server/kristy_perimeter_kb.json", "imports": [], "tests": ["server/test/counterProbe48.test.js", "server/lib/trips.test.js"], "source": "ca-scouts.md S5 (pick_milk: counterProbe48.test.js:184-185; trips.test.js:193)"},
-    {"owned": "server/kristy_perimeter_kb.json", "imports": [], "tests": ["server/lib/counterCardLint.test.js"], "source": "ca-scouts.md S1, S2 (sectionForCategory counterCards.js:47)"},
-    {"owned": "server/kristy_perimeter_kb.json", "imports": [], "tests": ["server/scripts/listMatchProbe.js"], "source": "ca-scouts.md S11 (cart_pick readers; matchItemToCard listMatch.js:202, matchItemToPick :229)"}
+    {
+      "owned": "server/kristy_perimeter_kb.json",
+      "imports": [],
+      "tests": [
+        "server/test/acceptance/passRule.js",
+        "server/lib/counterReach.test.js",
+        "server/test/counterProbe48.test.js",
+        "server/lib/trips.test.js",
+        "server/lib/counterCardLint.test.js",
+        "server/scripts/listMatchProbe.js"
+      ],
+      "source": "ca-scouts.md S4; ca-scouts.md S5 (pick_milk: counterProbe48.test.js:184-185; trips.test.js:193); ca-scouts.md S1, S2 (sectionForCategory counterCards.js:47); ca-scouts.md S11 (cart_pick readers; matchItemToCard listMatch.js:202, matchItemToPick :229)"
+    }
   ],
-  "env": {"executables": ["node", "git", "grep"], "browsers": [], "temp": "/Users/m1/kristy/.pipeline/runs/ca-4a", "network": false}
+  "env": {
+    "executables": [
+      "node",
+      "git",
+      "grep"
+    ],
+    "browsers": [],
+    "temp": "/Users/m1/kristy/.pipeline/runs/ca-4a",
+    "network": false
+  }
 }
 ```
 

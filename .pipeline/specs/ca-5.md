@@ -16,7 +16,14 @@
     "server/lib/sectionRules.js",
     "server/test/sectionRulesContent.test.js",
     "server/test/sectionRules.test.js",
-    "server/test/acceptance/ca-1.test.js"
+    "server/test/acceptance/ic3a.test.js",
+    "server/test/acceptance/ic6a.test.js",
+    "server/lib/counterCardLint.test.js",
+    "server/lib/counterCardLint.js",
+    "server/kristy_perimeter_kb.json",
+    "VOICE_SPEC.md",
+    "server/test/acceptance/ca-1.test.js",
+    "server/lib/testGuards.js"
   ],
   "verify": "node --test server/test/acceptance/ca-5.test.js && cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run",
   "token_ceiling": 100000
@@ -79,24 +86,144 @@ If the served row is built by dropping `sources` only (`:20`), change it to pick
 - C3 [test] Given each row, then meat and eggs_dairy `sources` equal Step 1, produce equals `["produce_ripeness_by_item"]`, and every source id exists in the KB.
 - C4 [test] Given `lintSections(rows, kb.entries)`, then it returns `[]`.
 - C5 [test] Given every new string, then none contains `—`, a straight quote, a price word, or the first-person words I, me, my.
-- C6 Given the repo after the change, when `cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run` run, then 0 fail (including the served-keys check in `server/test/sectionRules.test.js:43-46` and the corpus section-lint test), 0 wrong, guard clean, every card placed.
+Verify (not a criterion): Given the repo after the change, when `cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run` run, then 0 fail (including the served-keys check in `server/test/sectionRules.test.js:43-46` and the corpus section-lint test), 0 wrong, guard clean, every card placed.
 
 ## Contract
 
 ```json
 {
   "criteria": [
-    {"id": "C1", "impl": "server/lib/sectionRules.json", "tests": ["server/test/acceptance/ca-5.test.js", "server/test/sectionRulesContent.test.js"], "dependents": ["server/lib/sectionRules.js", "server/test/sectionRules.test.js", "server/test/acceptance/ic3a.test.js", "server/test/acceptance/ic6a.test.js"], "allowed_reads": ["server/lib/sectionRules.json", "server/test/acceptance/ca-1.test.js"], "expected": "six rows, Step 1 text", "test_name": "C1 the six tips carry the approved text in order"},
-    {"id": "C2", "impl": "server/lib/sectionRules.json", "tests": ["server/test/acceptance/ca-5.test.js", "server/lib/counterCardLint.test.js"], "dependents": ["server/lib/counterCardLint.js"], "allowed_reads": ["server/lib/counterCardLint.js"], "expected": "tip_aligned on all six; cards_aligned on meat and eggs_dairy", "test_name": "C2 flags turn the section lints on"},
-    {"id": "C3", "impl": "server/lib/sectionRules.json", "tests": ["server/test/acceptance/ca-5.test.js", "server/test/acceptance/ic3a.test.js", "server/test/sectionRulesContent.test.js"], "dependents": ["server/lib/sectionRules.js"], "allowed_reads": ["server/kristy_perimeter_kb.json"], "expected": "sources as listed; every id in the KB", "test_name": "C3 sources point at cards that exist"},
-    {"id": "C4", "impl": "server/lib/sectionRules.json", "tests": ["server/test/acceptance/ca-5.test.js", "server/lib/counterCardLint.test.js"], "dependents": ["server/lib/counterCardLint.js", "server/kristy_perimeter_kb.json"], "allowed_reads": ["server/lib/counterCardLint.js"], "expected": "[]", "test_name": "C4 lintSections is clean with the flags on"},
-    {"id": "C5", "impl": "server/lib/sectionRules.json", "tests": ["server/test/acceptance/ca-5.test.js"], "dependents": [], "allowed_reads": ["VOICE_SPEC.md"], "expected": "0 grep hits", "test_name": "C5 tip copy passes the punctuation, price and voice greps"}
+    {
+      "id": "C1",
+      "impl": [
+        "server/lib/sectionRules.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-5.test.js",
+        "server/test/sectionRulesContent.test.js"
+      ],
+      "dependents": [
+        "server/lib/sectionRules.js",
+        "server/test/sectionRules.test.js",
+        "server/test/acceptance/ic3a.test.js",
+        "server/test/acceptance/ic6a.test.js"
+      ],
+      "allowed_reads": [
+        "server/lib/sectionRules.json",
+        "server/test/acceptance/ca-1.test.js"
+      ],
+      "expected": "six rows, Step 1 text",
+      "test_name": "C1 the six tips carry the approved text in order"
+    },
+    {
+      "id": "C2",
+      "impl": [
+        "server/lib/sectionRules.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-5.test.js",
+        "server/lib/counterCardLint.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCardLint.js"
+      ],
+      "allowed_reads": [
+        "server/lib/counterCardLint.js"
+      ],
+      "expected": "tip_aligned on all six; cards_aligned on meat and eggs_dairy",
+      "test_name": "C2 flags turn the section lints on"
+    },
+    {
+      "id": "C3",
+      "impl": [
+        "server/lib/sectionRules.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-5.test.js",
+        "server/test/acceptance/ic3a.test.js",
+        "server/test/sectionRulesContent.test.js"
+      ],
+      "dependents": [
+        "server/lib/sectionRules.js"
+      ],
+      "allowed_reads": [
+        "server/kristy_perimeter_kb.json"
+      ],
+      "expected": "sources as listed; every id in the KB",
+      "test_name": "C3 sources point at cards that exist"
+    },
+    {
+      "id": "C4",
+      "impl": [
+        "server/lib/sectionRules.json"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-5.test.js",
+        "server/lib/counterCardLint.test.js"
+      ],
+      "dependents": [
+        "server/lib/counterCardLint.js",
+        "server/kristy_perimeter_kb.json"
+      ],
+      "allowed_reads": [
+        "server/lib/counterCardLint.js"
+      ],
+      "expected": "[]",
+      "test_name": "C4 lintSections is clean with the flags on"
+    },
+    {
+      "id": "C5",
+      "impl": [
+        "server/lib/sectionRules.json",
+        "server/lib/sectionRules.js"
+      ],
+      "tests": [
+        "server/test/acceptance/ca-5.test.js",
+        "server/test/sectionRules.test.js"
+      ],
+      "dependents": [
+        "server/test/sectionRules.test.js"
+      ],
+      "allowed_reads": [
+        "VOICE_SPEC.md"
+      ],
+      "expected": "0 grep hits",
+      "test_name": "C5 tip copy passes the punctuation, price and voice greps"
+    }
   ],
   "dependency_evidence": [
-    {"owned": "server/lib/sectionRules.json", "imports": [], "tests": ["server/test/sectionRules.test.js", "server/test/sectionRulesContent.test.js", "server/test/acceptance/ic3a.test.js", "server/test/acceptance/ic6a.test.js"], "source": "ca-scouts.md S3"},
-    {"owned": "server/lib/sectionRules.js", "imports": ["server/lib/sectionRules.json"], "tests": ["server/test/sectionRules.test.js"], "source": "ca-scouts.md S3 (SECTIONS :5, push drops sources :20)"}
+    {
+      "owned": "server/lib/sectionRules.json",
+      "imports": [],
+      "tests": [
+        "server/test/sectionRules.test.js",
+        "server/test/sectionRulesContent.test.js",
+        "server/test/acceptance/ic3a.test.js",
+        "server/test/acceptance/ic6a.test.js"
+      ],
+      "source": "ca-scouts.md S3"
+    },
+    {
+      "owned": "server/lib/sectionRules.js",
+      "imports": [
+        "server/lib/sectionRules.json"
+      ],
+      "tests": [
+        "server/test/sectionRules.test.js"
+      ],
+      "source": "ca-scouts.md S3 (SECTIONS :5, push drops sources :20)"
+    }
   ],
-  "env": {"executables": ["node", "git", "grep"], "browsers": [], "temp": "/Users/m1/kristy/.pipeline/runs/ca-5", "network": false}
+  "env": {
+    "executables": [
+      "node",
+      "git",
+      "grep"
+    ],
+    "browsers": [],
+    "temp": "/Users/m1/kristy/.pipeline/runs/ca-5",
+    "network": false
+  }
 }
 ```
 
@@ -176,13 +303,26 @@ const CA5_TIPS = [
 ```
 
 ## ANCHOR server/lib/sectionRules.json:1
-[not read by the planner] Scout S3 located it (6 sections, each with `sources`). The builder reads the whole file before editing (it is in `read_full`).
+```json
+[
+  {"section": "produce", "rule": "Judge the piece itself, not the sticker.", "checks": ["Country on the sticker tells season, not grade.", "Sticker code: five digits starting 9 is organic."], "sources": ["produce_ripeness_by_item"]},
+  {"section": "meat", "rule": "Judge by seal and smell, not color alone.", "checks": ["Take a sealed package that is not leaking.", "Pass on any pack with an off smell."], "sources": ["judging_meat_at_the_case"]},
+```
 
 ## ANCHOR server/test/sectionRulesContent.test.js:8
-[not read by the planner] Scout S3 lines: `ALLOWED` key set `:8`; ≥5 sections `:17`; order `:21`; checks ≤3 `:28`; 1-8 words per check `:29`; sources exist in KB `:33-36`. The admin pastes the verbatim lines here from `dv scout "sectionRulesContent ALLOWED and word cap" --terms ALLOWED` before dispatch.
+```js
+const ALLOWED = ['produce', 'meat', 'seafood', 'eggs_dairy', 'bulk_pantry', 'frozen'];
+const KB_IDS = new Set(kb.entries.map((e) => e.id));
+const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
+```
 
-## ANCHOR server/lib/sectionRules.js:20
-[not read by the planner] Scout S3: `SECTIONS :5`, key-set comment `:9`, push drops `sources` `:20`. Same paste rule.
+## ANCHOR server/lib/sectionRules.js:18
+```js
+      if (!Array.isArray(e.checks) || e.checks.length > 3 || !e.checks.every(str)) continue;
+      seen.add(e.section);
+      rules.push({ section: e.section, rule: e.rule, checks: [...e.checks] });
+    }
+```
 
 ## Independent check script (admin-run; not part of the build)
 
