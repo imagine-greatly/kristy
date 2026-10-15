@@ -15,9 +15,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
 
 const SLICE = nonEmpty([
-  'beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio',
+  'beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio',
   'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'deli_meat_uncured', 'hot_dogs',
-], 'the K9 slice', 9);
+], 'the K9 slice', 8);
 
 const oldEntries = pre.entries ?? pre;
 

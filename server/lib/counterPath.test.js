@@ -101,7 +101,7 @@ test('a shortcut answer can become a cart item in the same tap-and-tap', () => {
   assert.ok(withPicks.length >= 6, `only ${withPicks.length} surfaced questions resolve to a grocery`);
   for (const e of withPicks) {
     assert.equal(typeof e.cart_pick, 'string');
-    assert.doesNotMatch(e.cart_pick, /[$£€%]/, `${e.id} pick carries a price`);
+    assert.doesNotMatch(e.cart_pick.replace(/^100% /, ''), /[$£€%]/, `${e.id} pick carries a price`);
   }
 });
 

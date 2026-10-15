@@ -2,7 +2,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { projectAll } from './counterCards.js';
 
 export const TRY_POOL = Object.freeze([
-  'ground_beef_organ_blend',
+  'ground_beef_lean_ratio',
   'butcher_counter_asking',
   'beef_cuts_basics',
   'pork_cuts_and_enhanced',

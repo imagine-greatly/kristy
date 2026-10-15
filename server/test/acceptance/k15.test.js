@@ -39,7 +39,7 @@ const KEEPS = nonEmpty([
   ['pork', 'pork_cuts_and_enhanced'], ['pork chops', 'pork_cuts_and_enhanced'], ['pork shoulder', 'pork_cuts_and_enhanced'],
   ['deli meat', 'deli_meat_uncured'], ['lunch meat', 'deli_meat_uncured'], ['deli turkey', 'deli_meat_uncured'], ['sliced turkey', 'deli_meat_uncured'],
   ['stew meat', 'beef_cuts_basics'], ['steak', 'beef_cuts_basics'],
-  ['organ blend ground beef', 'ground_beef_organ_blend'], ['beef with liver', 'ground_beef_organ_blend'], ['organ meat blend', 'ground_beef_organ_blend'],
+  ['organ blend ground beef', 'ground_beef_lean_ratio'], ['beef with liver', 'ground_beef_lean_ratio'], ['organ meat blend', 'ground_beef_lean_ratio'],
   ['whole turkey', 'turkey_whole'], ['ground turkey', 'ground_turkey'],
   ['duck eggs', 'egg_duck_quail'], ['eggs', 'egg_labels'], ['meat counter', 'butcher_counter_asking'],
   ['sausage', 'pick_sausage'], ['italian sausage', 'pick_sausage'],

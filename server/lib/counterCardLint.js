@@ -1547,7 +1547,7 @@ const ownedFact = (fact, owner, family, pattern) => ({
 
 export const OWNED_FACTS = [
   ownedFact('beef_raising', 'beef_grassfed_vs_grainfed',
-    ['ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics',
+    ['ground_beef_lean_ratio', 'beef_cuts_basics',
       'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats', 'pick_soup_bones'],
     /grass[- ]?(fed|finished)|grain[- ]?(fed|finished)/i),
   ownedFact('ruminant_grass_term', 'label_grass_fed_term',

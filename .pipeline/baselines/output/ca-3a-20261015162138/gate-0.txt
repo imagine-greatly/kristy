@@ -1,0 +1,712 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 Ground beef front equals the worked example
+not ok 1 - C1 Ground beef front equals the worked example
+  ---
+  duration_ms: 1.182584
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:108:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    lean_ratio.decision
+    + actual - expected
+    
+    + 'Beef with seasoning at most, and nothing else in the ingredients.'
+    - 'Organ blend with each organ’s percentage first, then ground beef with nothing added.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Organ blend with each organ’s percentage first, then ground beef with nothing added.'
+  actual: 'Beef with seasoning at most, and nothing else in the ingredients.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:110:53)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 Ground beef additive fields hold every fold fact
+not ok 2 - C2 Ground beef additive fields hold every fold fact
+  ---
+  duration_ms: 0.512458
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:114:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        '‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.',
+        '‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.',
+    -   'Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.',
+    -   'Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.',
+    -   '‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain.'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: '‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.'
+    1: '‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.'
+    2: 'Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.'
+    3: 'Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.'
+    4: '‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain.'
+  actual:
+    0: '‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.'
+    1: '‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:118:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 the organ-blend fold is complete and the pass rule holds
+not ok 3 - C3 the organ-blend fold is complete and the pass rule holds
+  ---
+  duration_ms: 0.535708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:132:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    organ_blend still in the KB
+    + actual - expected
+    
+    + {
+    +   aliases: [
+    +     'ancestral blend ground beef',
+    +     'organ blend ground beef',
+    +     'liver blend ground beef',
+    +     'ground beef with liver',
+    +     'blended ground beef',
+    +     'organ meat blend',
+    +     'liver blend beef',
+    +     'beef with liver',
+    +     'ancestral blend'
+    +   ],
+    +   asked_as: [
+    +     'is organ blend ground beef worth it',
+    +     'what is ancestral blend beef',
+    +     'does the liver taste come through in blended ground beef',
+    +     'should i buy ground beef with liver in it'
+    +   ],
+    +   buying_tips: [
+    +     'Look for liver and heart named in the ingredient list, each with a percentage.',
+    +     'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.',
+    +     'How it was raised: see Beef.'
+    +   ],
+    +   cart_pick: 'Liver and heart beef blend, shares stated',
+    +   category: 'beef',
+    +   decision: 'Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.',
+    +   detail: '9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.',
+    +   evidence_tier: 'kristys_standard',
+    +   eyebrow_short: 'Organ blend beef',
+    +   id: 'ground_beef_organ_blend',
+    +   instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
+    +   kristy_take: 'A blend that prints its numbers is honest ground beef. One that will not is a mystery bag.',
+    +   labels_decoded: [
+    +     {
+    +       meaning: 'By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not.',
+    +       term: 'Ground beef'
+    +     },
+    +     {
+    +       meaning: 'A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares.',
+    +       term: 'Ancestral blend / primal blend'
+    +     }
+    +   ],
+    +   pick_steps: [
+    +     'Find liver and heart in the ingredient list, each with its own percentage.',
+    +     '‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass.'
+    +   ],
+    +   question: 'Is organ blend ground beef worth it?',
+    +   science: 'Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.',
+    +   short_answer: 'Under federal rules, ‘ground beef’ is chopped beef only, cheek meat aside. A blend with liver or heart needs its own name and full ingredient list. The test is whether the label gives liver and heart each a share.',
+    +   sources: [
+    +     '9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15',
+    +     '9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2',
+    +     'NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/',
+    +     'Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend',
+    +     'Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend'
+    +   ],
+    +   tier_note: 'The name rule is on record, and reading the ingredient list for each percentage is the ask.',
+    +   title: 'Ground beef with liver and heart blended in',
+    +   watch_out: [
+    +     'Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.',
+    +     'Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.',
+    +     '‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain.'
+    +   ],
+    +   why: 'Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    id: 'ground_beef_organ_blend'
+    title: 'Ground beef with liver and heart blended in'
+    aliases:
+      0: 'ancestral blend ground beef'
+      1: 'organ blend ground beef'
+      2: 'liver blend ground beef'
+      3: 'ground beef with liver'
+      4: 'blended ground beef'
+      5: 'organ meat blend'
+      6: 'liver blend beef'
+      7: 'beef with liver'
+      8: 'ancestral blend'
+    category: 'beef'
+    question: 'Is organ blend ground beef worth it?'
+    decision: 'Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.'
+    why: 'Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.'
+    short_answer: 'Under federal rules, ‘ground beef’ is chopped beef only, cheek meat aside. A blend with liver or heart needs its own name and full ingredient list. The test is whether the label gives liver and heart each a share.'
+    detail: '9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: '9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15'
+      1: '9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2'
+      2: 'NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/'
+      3: 'Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend'
+      4: 'Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend'
+    kristy_take: 'A blend that prints its numbers is honest ground beef. One that will not is a mystery bag.'
+    instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.'
+    cart_pick: 'Liver and heart beef blend, shares stated'
+    buying_tips:
+      0: 'Look for liver and heart named in the ingredient list, each with a percentage.'
+      1: 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.'
+      2: 'How it was raised: see Beef.'
+    watch_out:
+      0: 'Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.'
+      1: 'Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.'
+      2: '‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain.'
+    pick_steps:
+      0: 'Find liver and heart in the ingredient list, each with its own percentage.'
+      1: '‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass.'
+    science: 'Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.'
+    labels_decoded:
+      0:
+        term: 'Ground beef'
+        meaning: 'By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not.'
+      1:
+        term: 'Ancestral blend / primal blend'
+        meaning: 'A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares.'
+    tier_note: 'The name rule is on record, and reading the ingredient list for each percentage is the ask.'
+    eyebrow_short: 'Organ blend beef'
+    asked_as:
+      0: 'is organ blend ground beef worth it'
+      1: 'what is ancestral blend beef'
+      2: 'does the liver taste come through in blended ground beef'
+      3: 'should i buy ground beef with liver in it'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:133:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 the Beef front carries G1 and drops the grain-finish line
+not ok 4 - C4 the Beef front carries G1 and drops the grain-finish line
+  ---
+  duration_ms: 0.109917
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:142:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + '100% grass-fed and grass-finished.'
+    - '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.'
+  actual: '100% grass-fed and grass-finished.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:144:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 plan cart_picks are byte-equal
+not ok 5 - C5 plan cart_picks are byte-equal
+  ---
+  duration_ms: 0.095167
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:153:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'Grass-finished beef soup bones'
+    - 'Beef soup bones from the butcher counter'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Beef soup bones from the butcher counter'
+  actual: 'Grass-finished beef soup bones'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:154:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 D1 limits hold on every batch card
+not ok 6 - C6 D1 limits hold on every batch card
+  ---
+  duration_ms: 0.307042
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:157:1'
+  failureType: 'testCodeFailure'
+  error: 'ground_beef_lean_ratio instead empty'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:167:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C7 only ruminant fronts print a grass term
+not ok 7 - C7 only ruminant fronts print a grass term
+  ---
+  duration_ms: 0.115583
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:171:1'
+  failureType: 'testCodeFailure'
+  error: 'ground_beef_lean_ratio cart_pick'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Ground beef, grass-fed and grass-finished'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:176:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C8 brand claim and price greps are zero over changed copy fields
+not ok 8 - C8 brand claim and price greps are zero over changed copy fields
+  ---
+  duration_ms: 0.290042
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:181:1'
+  failureType: 'testCodeFailure'
+  error: 'only 0 changed copy fields'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:197:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C9 meat section lints are clean for batch ids
+not ok 9 - C9 meat section lints are clean for batch ids
+  ---
+  duration_ms: 18.4305
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:200:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + [
+    +   {
+    +     code: 'CART_PICK_DISAGREES',
+    +     form: 'a',
+    +     id: 'ground_beef_lean_ratio',
+    +     section: 'meat'
+    +   },
+    +   {
+    +     code: 'CART_PICK_DISAGREES',
+    +     form: 'a',
+    +     id: 'butcher_counter_asking',
+    +     section: 'meat'
+    +   }
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0:
+      code: 'CART_PICK_DISAGREES'
+      section: 'meat'
+      id: 'ground_beef_lean_ratio'
+      form: 'a'
+    1:
+      code: 'CART_PICK_DISAGREES'
+      section: 'meat'
+      id: 'butcher_counter_asking'
+      form: 'a'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:204:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C10 plumbing repointed and per-card lints clean
+not ok 10 - C10 plumbing repointed and per-card lints clean
+  ---
+  duration_ms: 0.168917
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:207:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'ground_beef_organ_blend'
+    - 'ground_beef_lean_ratio'
+                   ^
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ground_beef_lean_ratio'
+  actual: 'ground_beef_organ_blend'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:208:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C12 Step 1c cards equal the spec
+not ok 11 - C12 Step 1c cards equal the spec
+  ---
+  duration_ms: 0.415292
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3a.test.js:219:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    beef_cuts_basics differs from Step 1c
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        aliases: [
+          'beef cuts',
+          'beef cut',
+          'which cut',
+    ...
+        id: 'beef_cuts_basics',
+    -   instead: 'Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name.',
+        kristy_take: 'The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.',
+        labels_decoded: [
+          {
+            meaning: 'The most marbling, and the smallest share of graded beef.',
+            term: 'USDA Prime'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'beef_cuts_basics'
+    title: 'Steak'
+    aliases:
+      0: 'beef cuts'
+      1: 'beef cut'
+      2: 'which cut'
+      3: 'stew meat'
+      4: 'chuck'
+      5: 'chuck roast'
+      6: 'sirloin'
+      7: 'ribeye'
+      8: 'brisket'
+      9: 'short rib'
+      10: 'shank'
+      11: 'round'
+      12: 'steak'
+      13: 'steak cuts'
+      14: 'cut of beef'
+      15: 'mechanically tenderized'
+      16: 'usda prime'
+      17: 'prime beef'
+      18: 'choice beef'
+      19: 'select beef'
+      20: 'beef grade'
+      21: 'usda grade'
+      22: 'what does prime mean'
+      23: 'marbling'
+      24: 'prime choice select'
+      25: 'beef cut for'
+      26: 'prime beef worth'
+      27: 'beef grades matter'
+      28: 'beef grades'
+      29: 'usda grades'
+      30: 'usda choice'
+    category: 'beef'
+    question: 'Which beef cut should I buy?'
+    decision: 'Chuck or round, whole, with no needles or blades pushed through.'
+    why: 'A cut pushed through needles or blades must say ‘mechanically tenderized’ in its name.'
+    short_answer: 'Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.'
+    detail: 'Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'USDA Institutional Meat Purchase Specifications (cut nomenclature)'
+      1: 'Iowa State University Extension AnswerLine “Tender vs Less Tender Cuts of Meat” https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/'
+      2: 'Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts'
+      3: '9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2'
+      4: 'USDA AMS Official United States Standards for Grades of Carcass Beef'
+      5: 'USDA AMS voluntary beef grading program'
+      6: 'South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean'
+      7: 'Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/'
+    kristy_take: 'The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.'
+    cart_pick: 'Whole chuck, not mechanically tenderized'
+    buying_tips:
+      0: 'Chuck is shoulder and round is rear leg: the working muscles.'
+      1: 'Loin and rib sit along the back and do little work.'
+      2: 'Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.'
+      3: 'Ground chuck runs around 80/20 lean to fat.'
+      4: 'Prime, Choice, Select is a marbling scale, top to bottom.'
+      5: 'Grading is voluntary. Ungraded is not a downgrade.'
+      6: 'Grade and sourcing are separate questions. Neither answers the other.'
+    labels_decoded:
+      0:
+        term: 'USDA Prime'
+        meaning: 'The most marbling, and the smallest share of graded beef.'
+      1:
+        term: 'USDA Choice'
+        meaning: 'Moderate marbling. The common retail grade.'
+      2:
+        term: 'USDA Select'
+        meaning: 'Leanest of the three.'
+      3:
+        term: 'Ungraded'
+        meaning: 'Never submitted for grading. Says nothing about quality either way.'
+    tier_note: 'The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.'
+    watch_out:
+      0: 'The cut name says where on the animal it came from.'
+      1: 'Chuck is shoulder and round is rear leg. Both are working muscles.'
+      2: 'Loin and rib sit along the back and do little work.'
+      3: '‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut.'
+      4: '‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.'
+      5: 'Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.'
+      6: 'A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country.'
+    pick_steps:
+      0: 'Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.'
+      1: 'How it was raised: see Beef.'
+      2: 'Added solution: see Pork cuts and ‘solution added’ pork.'
+    science: 'Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.'
+    asked_as:
+      0: 'which beef cut for stew'
+      1: 'what cut of beef should i buy'
+      2: 'cheap beef cut for slow cooking'
+      3: 'what does mechanically tenderized mean'
+      4: 'what does prime choice select mean'
+      5: 'is prime beef worth it'
+      6: 'do beef grades matter'
+      7: 'what does usda choice mean'
+    instead: 'Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name.'
+  actual:
+    id: 'beef_cuts_basics'
+    title: 'Steak'
+    aliases:
+      0: 'beef cuts'
+      1: 'beef cut'
+      2: 'which cut'
+      3: 'stew meat'
+      4: 'chuck'
+      5: 'chuck roast'
+      6: 'sirloin'
+      7: 'ribeye'
+      8: 'brisket'
+      9: 'short rib'
+      10: 'shank'
+      11: 'round'
+      12: 'steak'
+      13: 'steak cuts'
+      14: 'cut of beef'
+      15: 'mechanically tenderized'
+      16: 'usda prime'
+      17: 'prime beef'
+      18: 'choice beef'
+      19: 'select beef'
+      20: 'beef grade'
+      21: 'usda grade'
+      22: 'what does prime mean'
+      23: 'marbling'
+      24: 'prime choice select'
+      25: 'beef cut for'
+      26: 'prime beef worth'
+      27: 'beef grades matter'
+      28: 'beef grades'
+      29: 'usda grades'
+      30: 'usda choice'
+    category: 'beef'
+    question: 'Which beef cut should I buy?'
+    decision: 'Chuck or round, whole, with no needles or blades pushed through.'
+    why: 'A cut pushed through needles or blades must say ‘mechanically tenderized’ in its name.'
+    short_answer: 'Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.'
+    detail: 'Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'USDA Institutional Meat Purchase Specifications (cut nomenclature)'
+      1: 'Iowa State University Extension AnswerLine “Tender vs Less Tender Cuts of Meat” https://www.extension.iastate.edu/answerline/2016/06/09/tender-vs-less-tender-cuts-of-meat/'
+      2: 'Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts'
+      3: '9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2'
+      4: 'USDA AMS Official United States Standards for Grades of Carcass Beef'
+      5: 'USDA AMS voluntary beef grading program'
+      6: 'South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean'
+      7: 'Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/'
+    kristy_take: 'The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.'
+    cart_pick: 'Whole chuck, not mechanically tenderized'
+    buying_tips:
+      0: 'Chuck is shoulder and round is rear leg: the working muscles.'
+      1: 'Loin and rib sit along the back and do little work.'
+      2: 'Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.'
+      3: 'Ground chuck runs around 80/20 lean to fat.'
+      4: 'Prime, Choice, Select is a marbling scale, top to bottom.'
+      5: 'Grading is voluntary. Ungraded is not a downgrade.'
+      6: 'Grade and sourcing are separate questions. Neither answers the other.'
+    labels_decoded:
+      0:
+        term: 'USDA Prime'
+        meaning: 'The most marbling, and the smallest share of graded beef.'
+      1:
+        term: 'USDA Choice'
+        meaning: 'Moderate marbling. The common retail grade.'
+      2:
+        term: 'USDA Select'
+        meaning: 'Leanest of the three.'
+      3:
+        term: 'Ungraded'
+        meaning: 'Never submitted for grading. Says nothing about quality either way.'
+    tier_note: 'The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.'
+    watch_out:
+      0: 'The cut name says where on the animal it came from.'
+      1: 'Chuck is shoulder and round is rear leg. Both are working muscles.'
+      2: 'Loin and rib sit along the back and do little work.'
+      3: '‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut.'
+      4: '‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.'
+      5: 'Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.'
+      6: 'A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country.'
+    pick_steps:
+      0: 'Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.'
+      1: 'How it was raised: see Beef.'
+      2: 'Added solution: see Pork cuts and ‘solution added’ pork.'
+    science: 'Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.'
+    asked_as:
+      0: 'which beef cut for stew'
+      1: 'what cut of beef should i buy'
+      2: 'cheap beef cut for slow cooking'
+      3: 'what does mechanically tenderized mean'
+      4: 'what does prime choice select mean'
+      5: 'is prime beef worth it'
+      6: 'do beef grades matter'
+      7: 'what does usda choice mean'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3a.test.js:225:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 0
+# fail 11
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 146.932375
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/listMatchProbe.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/commitGuard.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/migrateCounterCards.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0

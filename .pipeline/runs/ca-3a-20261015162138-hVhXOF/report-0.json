@@ -1,0 +1,20 @@
+{
+  "status": "done",
+  "files_changed": ["server/kristy_perimeter_kb.json", "docs/do-lines-review.md", "server/lib/doLines.json", "server/lib/counterCards.js", "server/lib/counterCardLint.js", "server/lib/tryPool.js", "server/lib/tryPool.test.js", "server/test/ktight.test.js", "server/test/acceptance/k9.test.js", "server/test/acceptance/k15.test.js", "server/test/acceptance/ic5b.test.js", "server/lib/perimeter.test.js", "server/lib/counterPath.test.js"],
+  "criteria": [
+    {"id": "C1", "met": true, "evidence": "Worked-example fields and generated do line match exactly. All 11 ca-3a acceptance tests pass."},
+    {"id": "C2", "met": true, "evidence": "Fold content, label order, safety numbers and brand-free detail verified. Named science-overflow fallback applied."},
+    {"id": "C3", "met": true, "evidence": "Only ground_beef_organ_blend removed and retired. All aliases, questions and sources preserved; all four folded questions reach lean_ratio. Pass rule passes."},
+    {"id": "C4", "met": true, "evidence": "Beef copy and G1 gloss match. Assumptions: the explicit Step 1a revision retaining ‘ground’ supersedes the earlier cart-pick wording."},
+    {"id": "C5", "met": true, "evidence": "Butcher cart pick matches exactly and resolves to butcher_counter_asking."},
+    {"id": "C6", "met": true, "evidence": "Every batch decision meets 14 words; card tier notes meet 5–20 words; instead and pick_steps requirements pass."},
+    {"id": "C7", "met": true, "evidence": "Grass terms restricted to permitted fronts; required Beef pointers preserved."},
+    {"id": "C8", "met": true, "evidence": "46 changed copy fields; zero forbidden brand, claim, price, straight-quote, em-dash or first-person matches."},
+    {"id": "C9", "met": true, "evidence": "Batch L1/L4/L5 hits and all-batch L2 groups are zero."},
+    {"id": "C10", "met": true, "evidence": "Pool and ownership references repointed. Required lints pass; all 181 projected cards pass lintCard."},
+    {"id": "C11", "met": false, "evidence": "NOT READY for a green-suite ship: npm test passed 2550/2557, zero skipped. NOTES: seven unowned conflicts remain unchanged: three 182-card pins (counterCardLint, ic8a, ic8b), two counterDecision limits conflicting with exact Ground beef copy, healthFirst rejecting required bison/lamb G1 glosses, and expected k14 C12 anchor failure. Probe: zero wrong matches. CommitGuard clean. Dry-run: 181 cards, no writes; only organ_blend removed. Repository checks used verified filesystem object/index reads without git commands. Allowed cart-pick misses: lean_ratio, bison, lamb. Not migrated."},
+    {"id": "C12", "met": true, "evidence": "Eight Step 1c cards match exactly; seven review headlines agree and do lines remain unchanged. All 202 outside-batch entries preserved byte-for-byte. KEPT decisions: Steak, Organ meats and Venison."}
+  ],
+  "questions": [],
+  "kind": null
+}

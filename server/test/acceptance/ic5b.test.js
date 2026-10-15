@@ -17,12 +17,19 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
 const BATCH = ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'judging_meat_at_the_case', 'butcher_counter_asking', 'organ_meats', 'venison_game',
-  'ground_beef_organ_blend', 'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
+  'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
 const GRASS_URLS = [
   'https://www.ams.usda.gov/rules-regulations/withdrawal-united-states-standards-livestock-and-meat-marketing-claims',
   'https://www.govinfo.gov/content/pkg/FR-2016-01-12/pdf/2016-00440.pdf',
   'https://www.americangrassfed.org/about-us/our-standards/',
   'https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf',
+];
+const FOLD_URLS = [
+  'https://www.law.cornell.edu/cfr/text/9/319.15',
+  'https://www.law.cornell.edu/cfr/text/9/317.2',
+  'https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/',
+  'https://forceofnature.com/products/regenerative-beef-ancestral-blend',
+  'https://sevensons.net/store/product/ground-beef-ancestral-blend',
 ];
 const nonPicksTitled = (t) => kb.entries.filter((e) => e.kind !== 'pick' && e.title === t);
 const PENDING = [...TIER_NOTE_ORPHANED_PENDING];
@@ -36,15 +43,15 @@ const urls = (e) => (e?.sources || []).flatMap((s) => JSON.stringify(s).match(/h
 test('C1 the Beef card', () => {
   const b = now('beef_grassfed_vs_grainfed');
   assert.equal(b.title, 'Beef');
-  assert.equal(b.decision, '100% grass-fed and grass-finished.');
-  assert.match(b.tier_note, /finish/i);
+  assert.equal(b.decision, '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.');
+  assert.ok(b.tier_note.includes('“grass-fed” is the producer’s own word unless a certifier’s seal audits it'));
   assert.equal(nonPicksTitled('Beef').length, 1, 'non-pick "Beef" count');
 });
 
 test('C2 Steak and judging', () => {
   assert.equal(now('beef_cuts_basics').title, 'Steak');
   assert.equal(nonPicksTitled('Steak').length, 1, 'non-pick "Steak" count');
-  assert.match(now('judging_meat_at_the_case').decision, /oxygen|colou?r/i, 'judging front lost its colour fact');
+  assert.match(now('judging_meat_at_the_case').decision, /packaged on/i, 'judging front lost its package fact');
 });
 
 test('C3 beef pointers follow the retitle', () => {
@@ -84,7 +91,7 @@ test('C7 new URLs are archived', () => {
   const archive = readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8')).join('\n');
   let checked = 0;
   for (const id of BATCH) {
-    const was = new Set(urls(pre(id)));
+    const was = new Set([...urls(pre(id)), ...(id === 'ground_beef_lean_ratio' ? FOLD_URLS : [])]);
     for (const u of urls(now(id))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
   }
   assert.ok(checked >= 4, `only ${checked} new URLs checked`);

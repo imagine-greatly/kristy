@@ -174,6 +174,8 @@ export const RETIRED = [
   'milk_processing',
   // → yogurt_plain_vs_flavored: live cultures is how to pick plain yogurt. Aliases kefir/alive/still alive not moved.
   'yogurt_live_cultures',
+  // CA-3a (2026-10-15): → ground_beef_lean_ratio ("Ground beef"). Fold placement per docs/CARD-ALIGNMENT-PLAN.md; aliases, asked_as, sources, tips and labels moved.
+  'ground_beef_organ_blend',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

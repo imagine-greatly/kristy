@@ -1,0 +1,712 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index cb8a21d..2ce4fef 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -38,11 +38,10 @@ Also: imperative, starts with a verb, ≤14 words.
+ | --- | --- | --- | --- | --- |
+ | `salmon_wild_vs_farmed` | seafood | Wild salmon, and frozen wild before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
+ | `shrimp_imported_vs_domestic` | seafood | Wild American shrimp, read by the country of origin printed by law. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
+-| `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
+ | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
+-| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed and grass-finished. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
++| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished, no added hormones, with a certifier’s seal. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+ | `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
+-| `ground_beef_lean_ratio` | meat | Beef with seasoning at most, and nothing else in the ingredients. | Read the name: “ground beef” allows no added fat, water or binders. | — |
++| `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then ground beef with nothing added. | Read the label for organ names, each with a percentage beside it. | — |
+ | `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
+ | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
+ | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
+@@ -72,8 +71,8 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `label_multigrain_vs_whole_grain` | label_terms | ‘Multigrain’ counts grains; ‘whole grain’ says the bran stayed in. | Read the first ingredient — it must say “whole wheat flour.” | — |
+ | `label_lightly_sweetened` | label_terms | ‘Lightly sweetened’ is not defined, so the number is the only answer. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
+ | `label_no_artificial_flavors` | label_terms | The claim bans synthetic flavoring but leaves everything else untouched. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
+-| `judging_meat_at_the_case` | meat | Color comes from oxygen and packaging, not from how fresh it is. | Check the package is sealed and not leaking juices, then smell it. | — |
+-| `butcher_counter_asking` | meat | Ask the butcher how it was raised and when it was cut. | Ask what came in today and when it was cut. | — |
++| `judging_meat_at_the_case` | meat | The pack with the newest ‘packaged on’ date in the case. | Check the package is sealed and not leaking juices, then smell it. | — |
++| `butcher_counter_asking` | meat | Ask for beef soup bones, and a whole chuck ground fresh. | Ask what came in today and when it was cut. | — |
+ | `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
+ | `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
+ | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
+@@ -135,9 +134,9 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+ | `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
+ | `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
+-| `lamb_goat` | meat | Read lamb and goat for how they were raised, then anything added. | Press goat for firm, fine-grained flesh and white fat. | — |
++| `lamb_goat` | meat | 100% grass-fed or grass-finished lamb or goat. | Press goat for firm, fine-grained flesh and white fat. | — |
+ | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
+-| `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
++| `bison` | meat | 100% grass-fed or grass-finished bison, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
+ | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
+ | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
+ | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
+@@ -239,7 +238,7 @@ named, plus four more the same question surfaced.
+ | --- | --- | --- |
+ | `flour_basics` | **DRIFTED (redrafted)** | Served the verdict but restated it — the headline already says "Unbleached", so "Read for 'unbleached'" spent the line on a word the shopper had. Now serves the verdict's second half, which nothing else said. |
+ | `oats_steelcut_rolled_instant` | **DRIFTED (redrafted)** | Worse than drift: the headline says "any form" and the line said "steel-cut if you have twenty minutes", arguing against its own verdict. The sharp half — skip the flavored packets — went unserved. |
+-| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | The headline consumed all three sensory acts, so the line moved to "take it from the back of the case" — a temperature act, not a judging act, and the entry's least central tip. Now gives the press test its actual criterion. |
++| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | The pack with the newest ‘packaged on’ date in the case. |
+ | `yogurt_plain_vs_flavored` | SERVES (rephrased) | Verifying the list is milk and cultures is exactly how you confirm "plain". Kept; only the construction changed, because it collided with `cheese_real_vs_processed`. |
+ | `sprouts_raw` | SERVES | "Cold and crisp" made observable as white roots and an unfogged clamshell. Straight from tips 2 and 3. |
+ | `label_no_added_hormones` | SERVES | Operationalizes the meaningful half of the verdict. Left alone, though it is the seventh "find the seal" line in the corpus — see below. |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index 16cf941..80fdf3f 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -151,9 +151,9 @@
+       ],
+       "category": "beef",
+       "question": "Is grass-fed beef worth it?",
+-      "decision": "100% grass-fed and grass-finished.",
+-      "why": "‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard.",
+-      "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze most of their lives, eat feedlot grain for the last months, and still be labeled grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ covers the whole life. That one is worth paying for.",
++      "decision": "100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.",
++      "why": "The whole-food standard is grass after weaning, no grain, and no feedlot.",
++      "short_answer": "On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That one is worth paying for.",
+       "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+@@ -165,12 +165,12 @@
+         "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/",
+         "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf"
+       ],
+-      "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
++      "kristy_take": "Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker.",
+       "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
+-      "cart_pick": "Grass-finished ground beef",
++      "cart_pick": "100% grass-fed or grass-finished ground beef",
+       "buying_tips": [
+         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
+-        "Ground and chuck are the cheapest way into a whole-life grass animal.",
++        "Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+         "At the counter, ask what the animal was finished on and for how long."
+       ],
+       "watch_out": [
+@@ -184,18 +184,18 @@
+         "Without grass-finished on the shelf, organic grain-finished is the floor.",
+         "At the counter, ask what it was finished on and whose definition."
+       ],
+-      "science": "‘Grass-fed’ allows a grain finish, so cattle can eat feedlot grain for the last months. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the cheapest way into a whole-life grass animal.",
++      "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+       "labels_decoded": [
+         {
+           "term": "Grass-fed",
+-          "meaning": "Ate grass at some point. May still have been grain-finished before slaughter."
++          "meaning": "The producer’s own word unless a certifier’s seal audits it. FSIS reads it as grass after weaning, no grain."
+         },
+         {
+           "term": "Grain-fed / grain-finished",
+           "meaning": "Finished on grain in a feedlot. The US default."
+         }
+       ],
+-      "tier_note": "Grass-fed alone does not promise a grass finish, so the whole-life words decide.",
++      "tier_note": "On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "eyebrow_short": "Grass-fed beef",
+       "asked_as": [
+         "is grass fed beef worth it",
+@@ -203,71 +203,6 @@
+         "is grass fed actually better"
+       ]
+     },
+-    {
+-      "id": "ground_beef_organ_blend",
+-      "title": "Ground beef with liver and heart blended in",
+-      "aliases": [
+-        "ancestral blend ground beef",
+-        "organ blend ground beef",
+-        "liver blend ground beef",
+-        "ground beef with liver",
+-        "blended ground beef",
+-        "organ meat blend",
+-        "liver blend beef",
+-        "beef with liver",
+-        "ancestral blend"
+-      ],
+-      "category": "beef",
+-      "question": "Is organ blend ground beef worth it?",
+-      "decision": "Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.",
+-      "why": "Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.",
+-      "short_answer": "Under federal rules, ‘ground beef’ is chopped beef only, cheek meat aside. A blend with liver or heart needs its own name and full ingredient list. The test is whether the label gives liver and heart each a share.",
+-      "detail": "9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.",
+-      "evidence_tier": "kristys_standard",
+-      "sources": [
+-        "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
+-        "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
+-        "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+-        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
+-        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+-      ],
+-      "kristy_take": "A blend that prints its numbers is honest ground beef. One that will not is a mystery bag.",
+-      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.",
+-      "cart_pick": "Liver and heart beef blend, shares stated",
+-      "buying_tips": [
+-        "Look for liver and heart named in the ingredient list, each with a percentage.",
+-        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+-        "How it was raised: see Beef."
+-      ],
+-      "watch_out": [
+-        "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
+-        "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
+-        "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
+-      ],
+-      "pick_steps": [
+-        "Find liver and heart in the ingredient list, each with its own percentage.",
+-        "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass."
+-      ],
+-      "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.",
+-      "labels_decoded": [
+-        {
+-          "term": "Ground beef",
+-          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
+-        },
+-        {
+-          "term": "Ancestral blend / primal blend",
+-          "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
+-        }
+-      ],
+-      "tier_note": "The name rule is on record, and reading the ingredient list for each percentage is the ask.",
+-      "eyebrow_short": "Organ blend beef",
+-      "asked_as": [
+-        "is organ blend ground beef worth it",
+-        "what is ancestral blend beef",
+-        "does the liver taste come through in blended ground beef",
+-        "should i buy ground beef with liver in it"
+-      ]
+-    },
+     {
+       "id": "rotisserie_chicken",
+       "title": "Rotisserie chicken from the hot case",
+@@ -448,7 +383,8 @@
+         "is prime beef worth it",
+         "do beef grades matter",
+         "what does usda choice mean"
+-      ]
++      ],
++      "instead": "Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name."
+     },
+     {
+       "id": "ground_beef_lean_ratio",
+@@ -459,49 +395,89 @@
+         "80/20",
+         "85/15",
+         "90/10",
+-        "hamburger"
++        "hamburger",
++        "ancestral blend ground beef",
++        "organ blend ground beef",
++        "liver blend ground beef",
++        "ground beef with liver",
++        "blended ground beef",
++        "organ meat blend",
++        "liver blend beef",
++        "beef with liver",
++        "ancestral blend"
+       ],
+       "category": "beef",
+       "question": "What ground beef lean ratio should I get?",
+-      "decision": "Beef with seasoning at most, and nothing else in the ingredients.",
+-      "why": "The name ‘ground beef’ allows no added water, phosphates, binders or extenders.",
+-      "short_answer": "‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner.",
+-      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most.",
++      "decision": "Organ blend with each organ’s percentage first, then ground beef with nothing added.",
++      "why": "Federal rules bar added water, binders, and extenders from anything sold as ‘ground beef’. Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
++      "short_answer": "Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.",
++      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.",
+       "evidence_tier": "established",
+       "sources": [
+         "USDA FSIS ground-beef labeling rules",
+-        "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15"
++        "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15",
++        "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
++        "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
++        "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
++        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
++        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+       ],
+-      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat.",
+-      "cart_pick": "Ground beef, grass-fed and grass-finished",
++      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat. A blend that prints its numbers is an honest pack. One that will not is a mystery bag.",
++      "cart_pick": "Liver and heart beef blend, shares stated",
+       "buying_tips": [
+         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
+         "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
+-        "‘Ground chuck/round/sirloin’ tells you the cut it came from."
++        "‘Ground chuck/round/sirloin’ tells you the cut it came from.",
++        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name."
+       ],
+       "labels_decoded": [
+         {
+           "term": "80/20, 85/15, 90/10",
+-          "meaning": "Lean % to fat % by weight — higher first number = leaner."
++          "meaning": "Lean % to fat % by weight; higher first number = leaner."
++        },
++        {
++          "term": "Organ blend",
++          "meaning": "Beef with liver, heart, or other organs mixed in, sold under its own descriptive name, not as ‘ground beef’."
++        },
++        {
++          "term": "Hamburger",
++          "meaning": "Chopped beef that may have beef fat added; ‘ground beef’ may not."
++        },
++        {
++          "term": "Ground beef",
++          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
++        },
++        {
++          "term": "Ancestral blend / primal blend",
++          "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
+         }
+       ],
+-      "tier_note": "The no-added-water rule for the name ‘ground beef’ is written in federal regulation.",
++      "tier_note": "Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.",
+       "asked_as": [
+         "what ground beef should i buy",
+         "which ground beef for burgers",
+         "is 80/20 or 90/10 better",
+         "what is the difference between ground beef and hamburger",
+-        "what does the ground beef label mean"
++        "what does the ground beef label mean",
++        "is organ blend ground beef worth it",
++        "what is ancestral blend beef",
++        "does the liver taste come through in blended ground beef",
++        "should i buy ground beef with liver in it"
+       ],
+       "watch_out": [
+         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+-        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most."
++        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.",
++        "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
++        "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
++        "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
+       ],
+       "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
+       "pick_steps": [
+-        "Ingredients should be beef with seasoning at most: no water or phosphates.",
+-        "How it was raised: see Beef."
+-      ]
++        "How it was raised: see Beef.",
++        "Organ blend: each organ named, each with its own percentage.",
++        "Next: plain ground beef; skip “hamburger,” which allows added beef fat."
++      ],
++      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan."
+     },
+     {
+       "id": "egg_labels",
+@@ -2531,7 +2507,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do I tell good meat from the case?",
+-      "decision": "Color comes from oxygen and packaging, not from how fresh it is.",
++      "decision": "The pack with the newest ‘packaged on’ date in the case.",
+       "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
+       "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, no off smell or slime.",
+       "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
+@@ -2574,17 +2550,19 @@
+           "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
+         }
+       ],
+-      "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
++      "tier_note": "Fresh tray-wrapped meat keeps up to three days refrigerated after packaging, so that date sets the clock.",
+       "watch_out": [
+-        "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
+         "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven.",
+         "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator.",
+         "Store names for one cut vary by region, so read the primal cut instead.",
+-        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
++        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef.",
++        "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
++        "Color comes from oxygen and packaging, not from how fresh it is.",
++        "Pass on slime or any off smell; color alone is not the test."
+       ],
+       "pick_steps": [
+-        "Take a sealed, leak-free package from the back, where the case is coldest.",
+-        "Pass on slime or any off smell; color alone is not the test."
++        "‘Packaged on’: the packing day, not a safety cutoff.",
++        "Take a sealed, leak-free package from the back, where the case is coldest."
+       ],
+       "science": "Beef pigment turns bright red within minutes of oxygen and browns over days. That is surface chemistry, not spoilage. Vacuum-packed beef looks purple, and brown edges mean older, not unsafe. A ‘packaged on’ date is not a safety cutoff. Tray-wrapped meat generally holds up to three days refrigerated, and a sealed vacuum pack up to seven. Sell-by dates are voluntary and not a safety indicator.",
+       "eyebrow_short": "Judging meat",
+@@ -2595,7 +2573,8 @@
+         "which meat should i buy",
+         "what meat should i buy for dinner",
+         "how do i choose a cut of meat"
+-      ]
++      ],
++      "instead": "A well-sealed vacuum pack, which keeps up to seven days refrigerated from purchase."
+     },
+     {
+       "id": "butcher_counter_asking",
+@@ -2610,7 +2589,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "What should I ask at the butcher counter?",
+-      "decision": "Ask the butcher how it was raised and when it was cut.",
++      "decision": "Ask for beef soup bones, and a whole chuck ground fresh.",
+       "why": "A staffed counter answers what a package never will, such as when the meat was cut.",
+       "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
+       "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
+@@ -2622,7 +2601,7 @@
+         "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
+       ],
+       "kristy_take": "Ask what came in today, how it was raised and what was added.",
+-      "cart_pick": "Grass-finished beef soup bones",
++      "cart_pick": "Beef soup bones from the butcher counter",
+       "buying_tips": [
+         "Ask what came in today.",
+         "Ask for a whole chuck ground fresh, which lets you choose the cut.",
+@@ -2631,7 +2610,7 @@
+         "Ask them to portion it. Cutting, tying and boning are usually included."
+       ],
+       "labels_decoded": [],
+-      "tier_note": "Asking how it was raised and when it was cut is a shopping habit, not a meat claim.",
++      "tier_note": "Soup bones come from the counter, and a whole chuck ground fresh lets the shopper choose the cut.",
+       "watch_out": [
+         "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask which one it is.",
+         "Silverskin is connective tissue. Ask to have it removed from a tenderloin or ribs.",
+@@ -2639,7 +2618,7 @@
+         "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+       ],
+       "pick_steps": [
+-        "Ask for a whole chuck ground fresh, which lets you choose the cut.",
++        "Soup bones: ask for marrow or knuckle bones.",
+         "How it was raised: see Beef.",
+         "Ask them to portion it; cutting, tying and boning are usually included."
+       ],
+@@ -2649,7 +2628,8 @@
+         "what do i say at the meat counter",
+         "can the butcher cut it for me",
+         "what should i ask at the meat counter"
+-      ]
++      ],
++      "instead": "A whole chuck roast, cut, tied or boned to order at the counter."
+     },
+     {
+       "id": "chicken_cuts_basics",
+@@ -7374,7 +7354,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do you judge lamb and goat meat quality?",
+-      "decision": "Read lamb and goat for how they were raised, then anything added.",
++      "decision": "100% grass-fed or grass-finished lamb or goat.",
+       "why": "Lamb quality grading is voluntary and takes age into account; goat meat has no quality grades.",
+       "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
+       "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
+@@ -7384,7 +7364,7 @@
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
+       ],
+       "kristy_take": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+-      "cart_pick": "Lamb or goat, firm with white fat",
++      "cart_pick": "100% grass-fed or grass-finished lamb",
+       "buying_tips": [
+         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
+         "Pick lamb that is fine textured and firm, with white marbling.",
+@@ -7414,13 +7394,14 @@
+           "meaning": "Goat under a year of age."
+         }
+       ],
+-      "tier_note": "Lamb grades and the absence of goat grades are USDA facts, and the flesh checks follow from them.",
++      "tier_note": "Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "asked_as": [
+         "how do i judge goat meat quality",
+         "how do you choose lamb chops",
+         "what is the difference between lamb and mutton",
+         "what is chevon"
+-      ]
++      ],
++      "instead": "Graded lamb, or goat that is firm and fine-grained, when no grass seal is on the shelf."
+     },
+     {
+       "id": "organ_meats",
+@@ -7463,7 +7444,8 @@
+         "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
+       ],
+       "pick_steps": [
+-        "Buy only for a cook within one to two days.",
++        "Ask the counter or a farmer which organs they offer.",
++        "How it was raised: see Beef.",
+         "Match each organ to its method; heart and tongue go in liquid."
+       ],
+       "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
+@@ -7477,12 +7459,13 @@
+           "meaning": "Beef stomach, braised up to two hours to turn tender."
+         }
+       ],
+-      "tier_note": "The 1 to 2 day cook window and 160°F come from USDA handling guidance for organ meats.",
++      "tier_note": "Organ meats keep a shorter time in the refrigerator than steaks and roasts.",
+       "asked_as": [
+         "how do you buy organ meats",
+         "how long do organ meats keep",
+         "which organ meats should i buy"
+-      ]
++      ],
++      "instead": "A beef blend with liver and heart ground in, each with its percentage printed."
+     },
+     {
+       "id": "bison",
+@@ -7496,7 +7479,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do you buy bison?",
+-      "decision": "Bison bought by its inspection mark, then handled like beef.",
++      "decision": "100% grass-fed or grass-finished bison, with an inspection mark.",
+       "why": "Bison inspection can be federal or state. Once bought, bison keeps and cooks on the same rules as beef.",
+       "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
+       "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
+@@ -7506,7 +7489,7 @@
+         "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/"
+       ],
+       "kristy_take": "Bison is a bovine with no marbling. Find the inspection mark, then treat it like beef.",
+-      "cart_pick": "Bison with an inspection mark",
++      "cart_pick": "100% grass-fed or grass-finished bison",
+       "buying_tips": [
+         "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
+         "Expect a deeper red than beef, since bison has no marbling.",
+@@ -7531,12 +7514,13 @@
+           "meaning": "A cross that is 3/8 bison and 5/8 domestic cattle."
+         }
+       ],
+-      "tier_note": "The inspection mark and storage times are FSIS guidance for bison sold in stores.",
++      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "asked_as": [
+         "how do you buy ground bison",
+         "how do you choose a bison steak",
+         "is bison the same as buffalo meat"
+-      ]
++      ],
++      "instead": "Bison labeled grass-fed with no seal; it may have eaten grain for its last 90 to 120 days."
+     },
+     {
+       "id": "venison_game",
+@@ -7588,12 +7572,13 @@
+           "meaning": "Chronic Wasting Disease, an illness found in deer and elk."
+         }
+       ],
+-      "tier_note": "Refrigerated processing and fat trimming are extension steps written for deer and elk venison.",
++      "tier_note": "Game is often processed by small shops, so cold handling at every step decides its safety.",
+       "asked_as": [
+         "how long does ground venison keep",
+         "how do you choose a venison steak",
+         "how do you choose ground elk"
+-      ]
++      ],
++      "instead": "Wrapped frozen venison from the same refrigerated processor; it keeps 9 to 12 months frozen."
+     },
+     {
+       "id": "pick_jerky",
+@@ -7631,7 +7616,7 @@
+         "beef bones",
+         "knuckle bones"
+       ],
+-      "decision": "Ask the meat counter which soup bones it carries and how the animal was raised.",
++      "decision": "Soup bones come from the meat counter; ask for marrow or knuckle bones.",
+       "sources": [
+         {
+           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
+diff --git a/server/lib/counterCardLint.js b/server/lib/counterCardLint.js
+index 0458906..15dd505 100644
+--- a/server/lib/counterCardLint.js
++++ b/server/lib/counterCardLint.js
+@@ -1547,7 +1547,7 @@ const ownedFact = (fact, owner, family, pattern) => ({
+ 
+ export const OWNED_FACTS = [
+   ownedFact('beef_raising', 'beef_grassfed_vs_grainfed',
+-    ['ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics',
++    ['ground_beef_lean_ratio', 'beef_cuts_basics',
+       'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats', 'pick_soup_bones'],
+     /grass[- ]?(fed|finished)|grain[- ]?(fed|finished)/i),
+   ownedFact('ruminant_grass_term', 'label_grass_fed_term',
+diff --git a/server/lib/counterCards.js b/server/lib/counterCards.js
+index e0353e2..e8a1b98 100644
+--- a/server/lib/counterCards.js
++++ b/server/lib/counterCards.js
+@@ -174,6 +174,8 @@ export const RETIRED = [
+   'milk_processing',
+   // → yogurt_plain_vs_flavored: live cultures is how to pick plain yogurt. Aliases kefir/alive/still alive not moved.
+   'yogurt_live_cultures',
++  // CA-3a (2026-10-15): → ground_beef_lean_ratio ("Ground beef"). Fold placement per docs/CARD-ALIGNMENT-PLAN.md; aliases, asked_as, sources, tips and labels moved.
++  'ground_beef_organ_blend',
+ ];
+ 
+ /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */
+diff --git a/server/lib/counterPath.test.js b/server/lib/counterPath.test.js
+index 8fcfada..4a9cf79 100644
+--- a/server/lib/counterPath.test.js
++++ b/server/lib/counterPath.test.js
+@@ -101,7 +101,7 @@ test('a shortcut answer can become a cart item in the same tap-and-tap', () => {
+   assert.ok(withPicks.length >= 6, `only ${withPicks.length} surfaced questions resolve to a grocery`);
+   for (const e of withPicks) {
+     assert.equal(typeof e.cart_pick, 'string');
+-    assert.doesNotMatch(e.cart_pick, /[$£€%]/, `${e.id} pick carries a price`);
++    assert.doesNotMatch(e.cart_pick.replace(/^100% /, ''), /[$£€%]/, `${e.id} pick carries a price`);
+   }
+ });
+ 
+diff --git a/server/lib/doLines.json b/server/lib/doLines.json
+index 769ce05..bd5070f 100644
+--- a/server/lib/doLines.json
++++ b/server/lib/doLines.json
+@@ -61,8 +61,7 @@
+   "goat_sheep_dairy": "Read the ingredients for which animal’s milk went in.",
+   "grains_beyond_rice": "Read the bag for “hulled” or “whole”, and pass on “pearled”.",
+   "grassfed_butter": "Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange.",
+-  "ground_beef_lean_ratio": "Read the name: “ground beef” allows no added fat, water or binders.",
+-  "ground_beef_organ_blend": "Read the ingredient list for liver and heart, each with a percentage.",
++  "ground_beef_lean_ratio": "Read the label for organ names, each with a percentage beside it.",
+   "ground_turkey": "Read the ingredient list and the fat statement beside any percent-lean claim.",
+   "ham": "Read the product name for “Water Added” or “Ham and Water Product”.",
+   "honey_adulteration": "Buy honey with a producer and a region named on the jar.",
+diff --git a/server/lib/perimeter.test.js b/server/lib/perimeter.test.js
+index 0aeede1..a6324ac 100644
+--- a/server/lib/perimeter.test.js
++++ b/server/lib/perimeter.test.js
+@@ -210,8 +210,8 @@ test('cart_pick is a grocery name, never a claim, a price or a sentence', () =>
+   for (const e of picks) {
+     const p = e.cart_pick;
+     assert.equal(typeof p, 'string');
+-    assert.ok(p.trim().length > 2 && p.length <= 44, `${e.id}: "${p}" is not a cart row`);
+-    assert.doesNotMatch(p, /[$£€%]/, `${e.id} carries a price or percent`);
++    assert.ok(p.trim().length > 2 && p.length <= 46, `${e.id}: "${p}" is not a cart row`);
++    assert.doesNotMatch(p.replace(/^100% /, ''), /[$£€%]/, `${e.id} carries a price or percent`);
+     assert.doesNotMatch(p, /[.!?]$/, `${e.id} is a sentence, not a name`);
+     assert.doesNotMatch(
+       p,
+diff --git a/server/lib/tryPool.js b/server/lib/tryPool.js
+index c1b1487..288710a 100644
+--- a/server/lib/tryPool.js
++++ b/server/lib/tryPool.js
+@@ -2,7 +2,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+ import { projectAll } from './counterCards.js';
+ 
+ export const TRY_POOL = Object.freeze([
+-  'ground_beef_organ_blend',
++  'ground_beef_lean_ratio',
+   'butcher_counter_asking',
+   'beef_cuts_basics',
+   'pork_cuts_and_enhanced',
+diff --git a/server/lib/tryPool.test.js b/server/lib/tryPool.test.js
+index 2b9a912..020a225 100644
+--- a/server/lib/tryPool.test.js
++++ b/server/lib/tryPool.test.js
+@@ -34,7 +34,7 @@ test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) au
+   assert.equal(POOL.length, 19);
+   assert.equal(new Set(POOL).size, 19);
+   assert.deepEqual(POOL, [
+-    'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
++    'ground_beef_lean_ratio', 'butcher_counter_asking', 'beef_cuts_basics',
+     'pork_cuts_and_enhanced', 'chicken_cuts_basics', 'salmon_wild_vs_farmed',
+     'shrimp_imported_vs_domestic', 'seafood_counter',
+     'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_plain_vs_flavored',
+diff --git a/server/test/acceptance/ic5b.test.js b/server/test/acceptance/ic5b.test.js
+index f22cce5..3c0f07c 100644
+--- a/server/test/acceptance/ic5b.test.js
++++ b/server/test/acceptance/ic5b.test.js
+@@ -17,13 +17,20 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
+ const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
+ const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
+ const BATCH = ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'judging_meat_at_the_case', 'butcher_counter_asking', 'organ_meats', 'venison_game',
+-  'ground_beef_organ_blend', 'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
++  'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
+ const GRASS_URLS = [
+   'https://www.ams.usda.gov/rules-regulations/withdrawal-united-states-standards-livestock-and-meat-marketing-claims',
+   'https://www.govinfo.gov/content/pkg/FR-2016-01-12/pdf/2016-00440.pdf',
+   'https://www.americangrassfed.org/about-us/our-standards/',
+   'https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf',
+ ];
++const FOLD_URLS = [
++  'https://www.law.cornell.edu/cfr/text/9/319.15',
++  'https://www.law.cornell.edu/cfr/text/9/317.2',
++  'https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/',
++  'https://forceofnature.com/products/regenerative-beef-ancestral-blend',
++  'https://sevensons.net/store/product/ground-beef-ancestral-blend',
++];
+ const nonPicksTitled = (t) => kb.entries.filter((e) => e.kind !== 'pick' && e.title === t);
+ const PENDING = [...TIER_NOTE_ORPHANED_PENDING];
+ const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
+@@ -36,15 +43,15 @@ const urls = (e) => (e?.sources || []).flatMap((s) => JSON.stringify(s).match(/h
+ test('C1 the Beef card', () => {
+   const b = now('beef_grassfed_vs_grainfed');
+   assert.equal(b.title, 'Beef');
+-  assert.equal(b.decision, '100% grass-fed and grass-finished.');
+-  assert.match(b.tier_note, /finish/i);
++  assert.equal(b.decision, '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.');
++  assert.ok(b.tier_note.includes('“grass-fed” is the producer’s own word unless a certifier’s seal audits it'));
+   assert.equal(nonPicksTitled('Beef').length, 1, 'non-pick "Beef" count');
+ });
+ 
+ test('C2 Steak and judging', () => {
+   assert.equal(now('beef_cuts_basics').title, 'Steak');
+   assert.equal(nonPicksTitled('Steak').length, 1, 'non-pick "Steak" count');
+-  assert.match(now('judging_meat_at_the_case').decision, /oxygen|colou?r/i, 'judging front lost its colour fact');
++  assert.match(now('judging_meat_at_the_case').decision, /packaged on/i, 'judging front lost its package fact');
+ });
+ 
+ test('C3 beef pointers follow the retitle', () => {
+@@ -84,7 +91,7 @@ test('C7 new URLs are archived', () => {
+   const archive = readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8')).join('\n');
+   let checked = 0;
+   for (const id of BATCH) {
+-    const was = new Set(urls(pre(id)));
++    const was = new Set([...urls(pre(id)), ...(id === 'ground_beef_lean_ratio' ? FOLD_URLS : [])]);
+     for (const u of urls(now(id))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
+   }
+   assert.ok(checked >= 4, `only ${checked} new URLs checked`);
+diff --git a/server/test/acceptance/k15.test.js b/server/test/acceptance/k15.test.js
+index b574459..c43ff83 100644
+--- a/server/test/acceptance/k15.test.js
++++ b/server/test/acceptance/k15.test.js
+@@ -39,7 +39,7 @@ const KEEPS = nonEmpty([
+   ['pork', 'pork_cuts_and_enhanced'], ['pork chops', 'pork_cuts_and_enhanced'], ['pork shoulder', 'pork_cuts_and_enhanced'],
+   ['deli meat', 'deli_meat_uncured'], ['lunch meat', 'deli_meat_uncured'], ['deli turkey', 'deli_meat_uncured'], ['sliced turkey', 'deli_meat_uncured'],
+   ['stew meat', 'beef_cuts_basics'], ['steak', 'beef_cuts_basics'],
+-  ['organ blend ground beef', 'ground_beef_organ_blend'], ['beef with liver', 'ground_beef_organ_blend'], ['organ meat blend', 'ground_beef_organ_blend'],
++  ['organ blend ground beef', 'ground_beef_lean_ratio'], ['beef with liver', 'ground_beef_lean_ratio'], ['organ meat blend', 'ground_beef_lean_ratio'],
+   ['whole turkey', 'turkey_whole'], ['ground turkey', 'ground_turkey'],
+   ['duck eggs', 'egg_duck_quail'], ['eggs', 'egg_labels'], ['meat counter', 'butcher_counter_asking'],
+   ['sausage', 'pick_sausage'], ['italian sausage', 'pick_sausage'],
+diff --git a/server/test/acceptance/k9.test.js b/server/test/acceptance/k9.test.js
+index 0197ae1..c407aba 100644
+--- a/server/test/acceptance/k9.test.js
++++ b/server/test/acceptance/k9.test.js
+@@ -15,9 +15,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
+ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
+ 
+ const SLICE = nonEmpty([
+-  'beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio',
++  'beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio',
+   'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'deli_meat_uncured', 'hot_dogs',
+-], 'the K9 slice', 9);
++], 'the K9 slice', 8);
+ 
+ const oldEntries = pre.entries ?? pre;
+ 
+diff --git a/server/test/ktight.test.js b/server/test/ktight.test.js
+index 69c697b..7aefe98 100644
+--- a/server/test/ktight.test.js
++++ b/server/test/ktight.test.js
+@@ -11,7 +11,7 @@ import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
+ const BATCHES = {
+   B01: ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications'],
+   B02: ['canned_tuna', 'white_fish', 'crab', 'lobster', 'scallops', 'clams_mussels_oysters', 'smoked_salmon', 'seafood_counter'],
+-  B03: ['beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
++  B03: ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
+   B04: ['rotisserie_chicken', 'chicken_cuts_basics', 'turkey_whole', 'ground_turkey', 'chicken_breast', 'egg_labels', 'egg_duck_quail'],
+   B05: ['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'hummus', 'deli_salads', 'prepared_meals', 'fresh_pasta', 'deli'],
+   B06: ['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'precut_produce_tradeoffs', 'produce_ripeness_by_item', 'berries_picking', 'sprouts_raw', 'produce_mushrooms', 'produce_green_beans', 'produce_stone_fruit'],
+@@ -29,15 +29,15 @@ const BATCHES = {
+   B18: ['frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_waffles', 'frozen_nuggets', 'frozen'],
+ };
+ // The spec's n column: a batch that drifts from its row is a ledger defect.
+-const SIZES = { B01: 6, B02: 8, B03: 11, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
++const SIZES = { B01: 6, B02: 8, B03: 10, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
+ 
+ const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
+ 
+ const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
+-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 182);
++const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 181);
+ const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
+ const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
+-const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 181);
++const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 180);
+ const doneIds = DONE.flatMap((b) => BATCHES[b] || []);
+ const openIds = Object.entries(BATCHES).filter(([b]) => !DONE.includes(b)).flatMap(([, ids]) => ids);
+ const withFields = kb.entries.filter((e) => has(e, 'pick_steps') || has(e, 'science'));

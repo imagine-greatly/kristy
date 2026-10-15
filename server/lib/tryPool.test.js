@@ -34,7 +34,7 @@ test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) au
   assert.equal(POOL.length, 19);
   assert.equal(new Set(POOL).size, 19);
   assert.deepEqual(POOL, [
-    'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
+    'ground_beef_lean_ratio', 'butcher_counter_asking', 'beef_cuts_basics',
     'pork_cuts_and_enhanced', 'chicken_cuts_basics', 'salmon_wild_vs_farmed',
     'shrimp_imported_vs_domestic', 'seafood_counter',
     'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_plain_vs_flavored',

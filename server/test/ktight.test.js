@@ -11,7 +11,7 @@ import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
 const BATCHES = {
   B01: ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications'],
   B02: ['canned_tuna', 'white_fish', 'crab', 'lobster', 'scallops', 'clams_mussels_oysters', 'smoked_salmon', 'seafood_counter'],
-  B03: ['beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
+  B03: ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
   B04: ['rotisserie_chicken', 'chicken_cuts_basics', 'turkey_whole', 'ground_turkey', 'chicken_breast', 'egg_labels', 'egg_duck_quail'],
   B05: ['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'hummus', 'deli_salads', 'prepared_meals', 'fresh_pasta', 'deli'],
   B06: ['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'precut_produce_tradeoffs', 'produce_ripeness_by_item', 'berries_picking', 'sprouts_raw', 'produce_mushrooms', 'produce_green_beans', 'produce_stone_fruit'],
@@ -29,15 +29,15 @@ const BATCHES = {
   B18: ['frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_waffles', 'frozen_nuggets', 'frozen'],
 };
 // The spec's n column: a batch that drifts from its row is a ledger defect.
-const SIZES = { B01: 6, B02: 8, B03: 11, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
+const SIZES = { B01: 6, B02: 8, B03: 10, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
 
 const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
 
 const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 182);
+const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 181);
 const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
 const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
-const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 181);
+const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 180);
 const doneIds = DONE.flatMap((b) => BATCHES[b] || []);
 const openIds = Object.entries(BATCHES).filter(([b]) => !DONE.includes(b)).flatMap(([, ids]) => ids);
 const withFields = kb.entries.filter((e) => has(e, 'pick_steps') || has(e, 'science'));
