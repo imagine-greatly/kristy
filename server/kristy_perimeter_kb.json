@@ -223,7 +223,7 @@
       "decision": "Chicken and salt on the label: buy. Phosphate and starch: pass.",
       "why": "Every ingredient must be listed in descending order; a solution names its percent and contents.",
       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (Whole Foods Market’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
+      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
@@ -2662,9 +2662,9 @@
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
-      "decision": "Air-chilled first, then bone-in, skin-on thighs over breast.",
-      "why": "Dark meat is forgiving and hard to overcook. Boneless skinless is the priciest form of it.",
-      "short_answer": "Whole bird: cheapest per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
+      "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
+      "why": "Dark meat is forgiving and hard to overcook. Boneless skinless costs the most for the same bird.",
+      "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -2677,13 +2677,13 @@
         "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
-      "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
+      "kristy_take": "Bone-in thighs are the most forgiving cut in the case. A whole bird costs least per pound, and the frame makes stock.",
       "cart_pick": "Air-chilled whole chicken or bone-in thighs",
       "buying_tips": [
-        "Whole bird: cheapest per pound, and the carcass makes stock.",
-        "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
+        "Whole bird: lowest cost per pound, and the carcass makes stock.",
+        "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
         "Breast: fast and lean. Pull it the moment it is done.",
-        "Boneless skinless is the priciest form of the same bird.",
+        "Boneless skinless costs the most for the same bird.",
         "‘Air-chilled’ is printed on the package when it applies.",
         "Skin that starts dry is the skin that crisps.",
         "‘USDA Process Verified’ or a third-party seal backs a ‘raised without antibiotics’ claim.",
@@ -2701,18 +2701,18 @@
         },
         {
           "term": "Contains up to X% retained water",
-          "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
+          "meaning": "Water absorbed during water-chilling; you’re paying for it by weight."
         },
         {
           "term": "Raised without antibiotics",
-          "meaning": "No antibiotics used in raising — meaningful, best when third-party verified."
+          "meaning": "No antibiotics used in raising: meaningful, best when third-party verified."
         },
         {
           "term": "No antibiotic residues",
-          "meaning": "True of all chicken by law — not a differentiator."
+          "meaning": "True of all chicken by law; not a differentiator."
         }
       ],
-      "tier_note": "Water-chilled packages can hold retained water, and thighs carry more fat than breast.",
+      "tier_note": "A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
@@ -2726,10 +2726,10 @@
         "should i pay for no antibiotics"
       ],
       "watch_out": [
-        "Boneless skinless is the priciest form of the same bird.",
+        "Boneless skinless costs the most for the same bird.",
         "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
         "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional.",
-        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
+        "Where air-chilled is not stocked, a regular bird still does the job. Pat it dry before it goes in the pan.",
         "Safe handling matters far more than the chilling method.",
         "‘Raised without antibiotics’ rests on the producer’s own affidavit to USDA. The agency does not inspect the farm, so oversight is weak. A third-party seal is what makes it checkable.",
         "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
@@ -2738,10 +2738,11 @@
       ],
       "pick_steps": [
         "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
-        "A whole bird is cheapest per pound, and the frame makes stock.",
+        "A whole bird costs least per pound, and the frame makes stock.",
         "Look for ‘air-chilled’ printed on the package; it appears when it applies."
       ],
-      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes."
+      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes.",
+      "instead": "A regular whole bird or bone-in thighs, patted dry before the pan."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -2802,7 +2803,8 @@
       "pick_steps": [
         "Find the ‘% added solution’ figure and the solution’s listed ingredients.",
         "How it was raised: see What “pasture-raised” does and does not tell you."
-      ]
+      ],
+      "instead": "Pork with the lowest stated solution percentage on the shelf."
     },
     {
       "id": "deli_meat_uncured",
@@ -2870,7 +2872,8 @@
         "Read the ingredients list; every curing substance has to be named there.",
         "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
       ],
-      "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’."
+      "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’.",
+      "instead": "Whole roasted meat sliced thin does the same sandwich job with nothing added."
     },
     {
       "id": "mercury_by_fish",
@@ -6025,7 +6028,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Sausage is a seasoned grind; the ingredient list must name any curing agents beyond the meat.",
+      "decision": "Sausage is seasoned ground meat; its ingredient list names every curing agent used.",
       "sources": [
         {
           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -6319,7 +6322,7 @@
       "category": "poultry",
       "question": "What should you check on a whole turkey label?",
       "decision": "Whole turkey without an injected basting solution.",
-      "why": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
+      "why": "An added basting solution is a separate formulation. A plain bird is turkey with nothing added.",
       "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
       "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
       "evidence_tier": "kristys_standard",
@@ -6327,7 +6330,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
       ],
-      "kristy_take": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
+      "kristy_take": "An added basting solution is a separate formulation. Fresh or frozen, the plain bird is the pick.",
       "cart_pick": "Whole turkey without added solution",
       "buying_tips": [
         "Read the solution ingredients beside the product name.",
@@ -6354,13 +6357,14 @@
           "meaning": "A regulated temperature-history description, separate from formulation."
         }
       ],
-      "tier_note": "Basting and added-solution statements describe documented processing; choosing a plain bird is the whole-food standard.",
+      "tier_note": "A basted or self-basted bird was injected or marinated with a solution the label must name.",
       "asked_as": [
         "how do you choose a whole turkey",
         "what does self basted mean on whole turkey",
         "does this whole turkey have added brine",
         "which turkey should i buy"
-      ]
+      ],
+      "instead": "A frozen whole turkey with no added-solution statement; frozen describes temperature history, not formulation."
     },
     {
       "id": "ground_turkey",
@@ -6373,7 +6377,7 @@
       "category": "poultry",
       "question": "What should you check before buying ground turkey?",
       "decision": "Plain ground turkey with its ingredients and fat content stated.",
-      "why": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
+      "why": "Grinding does not specify the fat content. A plain pack is turkey with no seasoning or solution added.",
       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
       "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
       "evidence_tier": "kristys_standard",
@@ -6381,7 +6385,7 @@
         "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
       ],
-      "kristy_take": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
+      "kristy_take": "Grinding does not specify the fat content. So read the fat line, and take the pack with nothing added.",
       "cart_pick": "Plain ground turkey",
       "buying_tips": [
         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
@@ -6401,12 +6405,13 @@
           "meaning": "A composition claim that must appear with a percent-fat statement."
         }
       ],
-      "tier_note": "The ingredient and percent-fat statements are documented label information; selecting plain ground turkey is the whole-food standard.",
+      "tier_note": "Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
       "asked_as": [
         "how do you choose ground turkey",
         "what does percent lean mean on ground turkey",
         "does ground turkey have added ingredients"
-      ]
+      ],
+      "instead": "Plain ground turkey with no lean claim; compare packs by the Nutrition Facts fat line."
     },
     {
       "id": "breakfast_cereal",
@@ -6624,7 +6629,7 @@
       ],
       "category": "deli",
       "question": "What should you check when choosing bacon?",
-      "decision": "Bacon chosen by its curing ingredients, with the qualifier read.",
+      "decision": "Bacon with the shortest label list: pork, salt and its named curing agents.",
       "why": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
       "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
       "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
@@ -6634,7 +6639,7 @@
         "https://www.law.cornell.edu/cfr/text/9/317.17"
       ],
       "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
-      "cart_pick": "Bacon with disclosed curing ingredients",
+      "cart_pick": "Bacon with the shortest label list",
       "buying_tips": [
         "Read any exception naming naturally occurring nitrates in celery powder.",
         "Compare the disclosed curing ingredients across available bacon packs.",
@@ -6660,12 +6665,13 @@
           "meaning": "The fine print may except nitrates naturally occurring in celery powder."
         }
       ],
-      "tier_note": "The asterisk and curing ingredients are documented label facts; choosing by them is the whole-food standard.",
+      "tier_note": "Each curing agent on bacon has to be listed, so the shortest list is easy to find.",
       "asked_as": [
         "how do you choose bacon",
         "is uncured bacon nitrate free",
         "what does the asterisk on bacon mean"
-      ]
+      ],
+      "instead": "Bacon that adds sugar and wood smoke to the pork and salt."
     },
     {
       "id": "hot_dogs",
@@ -6714,12 +6720,13 @@
           "meaning": "Required wording for the byproduct-containing sausage formulation defined in the standard."
         }
       ],
-      "tier_note": "The meat ingredients and byproducts wording disclose regulated processing distinctions; choosing named meat is the whole-food standard.",
+      "tier_note": "Mechanically separated poultry is a paste-like product of tissue taken off bones, and the list must name it.",
       "asked_as": [
         "how do you choose hot dogs",
         "what does mechanically separated mean on hot dogs",
         "what does with byproducts mean on frankfurters"
-      ]
+      ],
+      "instead": "Fresh sausage from the butcher counter, its meat named and nothing mechanically separated."
     },
     {
       "id": "canned_tuna",
@@ -6786,8 +6793,8 @@
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Plain breast, fresh or frozen, over any with added flavoring solution.",
-      "why": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
+      "decision": "Plain breast, no added solution; bone-in and skin-on before boneless skinless.",
+      "why": "Added flavoring solution changes the formulation. A plain breast carries nothing but the chicken.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
       "evidence_tier": "kristys_standard",
@@ -6795,12 +6802,13 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
       ],
-      "kristy_take": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
+      "kristy_take": "Added flavoring solution changes the formulation. The product name has to admit it, so the plain pack is easy to find.",
       "cart_pick": "Plain chicken breast without added solution",
       "buying_tips": [
         "Read the full product name for the solution percentage and ingredients.",
         "Fresh or frozen breast can be checked for the same solution disclosure.",
-        "Read retained-water wording separately from the added flavoring ingredients."
+        "Read retained-water wording separately from the added flavoring ingredients.",
+        "Bone-in and skin-on cook better than boneless skinless, which dries fast."
       ],
       "watch_out": [
         "“Natural” does not exclude a flavoring solution.",
@@ -6810,7 +6818,7 @@
       "pick_steps": [
         "Read the full product name for a solution percentage and its ingredients.",
         "Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.",
-        "Choose fresh or frozen plain breast without an added flavoring solution."
+        "Take bone-in, skin-on breast; boneless skinless dries fast in the pan."
       ],
       "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
       "labels_decoded": [
@@ -6828,7 +6836,8 @@
         "how do you choose chicken breast",
         "does natural chicken breast have added water",
         "what does solution added mean on chicken breast"
-      ]
+      ],
+      "instead": "Chicken thighs: more fat, more flavor, and hard to overcook."
     },
     {
       "id": "produce_mushrooms",
@@ -7165,7 +7174,7 @@
       ],
       "category": "deli",
       "question": "Which ham should you buy?",
-      "decision": "Ham chosen by its label class, read for added water.",
+      "decision": "Ham named just “Ham” first, then “Ham With Natural Juices.”",
       "why": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
       "short_answer": "A ham labeled plain “Ham” must meet the highest protein level. “Water Added” and “Ham and Water Product” mean more added solution. Water appears in the ingredients either way.",
       "detail": "US labeling ties ham names to protein. “Ham” needs at least 20.5% protein in the lean portion. “Ham With Natural Juices” needs at least 18.5%. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” must state the percent of weight that is added ingredients. Fresh ham is the uncured leg of pork and is labeled “fresh” or “uncured”.",
@@ -7175,7 +7184,7 @@
         "https://www.canr.msu.edu/news/ham_for_the_holidays_and_all_year_long"
       ],
       "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
-      "cart_pick": "Ham with natural juices",
+      "cart_pick": "Ham named just “Ham”",
       "buying_tips": [
         "Read the product name for “Water Added” or a percent of added ingredients.",
         "Check whether the label says fully cooked or cook before eating.",
@@ -7204,12 +7213,13 @@
           "meaning": "Uncured leg of pork, prepared without nitrate or nitrite."
         }
       ],
-      "tier_note": "The water-added classes are USDA labeling definitions; choosing the least added water is the whole-food standard.",
+      "tier_note": "The product name tells how much water went in, and just “Ham” means the least.",
       "asked_as": [
         "which ham should i buy",
         "what does water added mean on ham",
         "is spiral ham fully cooked"
-      ]
+      ],
+      "instead": "Fresh ham: the leg of pork itself, which needs cooking before eating."
     },
     {
       "id": "turkey_bacon",
@@ -7222,7 +7232,7 @@
       ],
       "category": "deli",
       "question": "What does the turkey bacon label tell you?",
-      "decision": "Turkey bacon read by its descriptive name and curing ingredients.",
+      "decision": "Turkey bacon with the fewest ingredients after the turkey.",
       "why": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
       "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
       "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without nitrate or nitrite carries “Uncured” and “No Nitrate or Nitrite Added” beside its name.",
@@ -7233,7 +7243,7 @@
         "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really"
       ],
       "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
-      "cart_pick": "Turkey bacon with listed curing ingredients",
+      "cart_pick": "Turkey bacon with the fewest ingredients",
       "buying_tips": [
         "Read the descriptive name beside “turkey bacon” for the meat used.",
         "Read each curing ingredient in the ingredients statement.",
@@ -7258,12 +7268,13 @@
           "meaning": "Made without added nitrate or nitrite, stated beside the product name."
         }
       ],
-      "tier_note": "The descriptive name and curing list are USDA labeling requirements, so reading them is the whole-food standard.",
+      "tier_note": "Turkey bacon is turkey meat pressed into bacon form, so fewer additions keep it closer to the meat.",
       "asked_as": [
         "is turkey bacon cured",
         "what is turkey bacon made of",
         "how do you choose turkey bacon"
-      ]
+      ],
+      "instead": "Pork bacon, the belly cut that “bacon” alone names on a US label."
     },
     {
       "id": "cured_pork",
@@ -7283,7 +7294,7 @@
       ],
       "category": "deli",
       "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
-      "decision": "Cured pork, guanciale included, judged by its cut and curing ingredients.",
+      "decision": "Cured pork, guanciale included, with its cut named and a short curing list.",
       "why": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
       "short_answer": "Prosciutto is dry-cured ham, and salami is a fermented, dried, cured ground product. Pancetta is cured belly. Guanciale is worth buying on the same terms: the cut named and the curing ingredients listed.",
       "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. A product made without nitrate or nitrite is labeled “Uncured” with “No Nitrate or Nitrite Added”.",
@@ -7295,7 +7306,7 @@
         "https://www.law.cornell.edu/cfr/text/9/317.17"
       ],
       "kristy_take": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
-      "cart_pick": "Cured pork with listed curing ingredients",
+      "cart_pick": "Cured pork with a short curing list",
       "buying_tips": [
         "Read the product name for the cut, such as ham, belly, or jowl.",
         "Read each curing ingredient in the ingredients statement.",
@@ -7324,12 +7335,13 @@
           "meaning": "Made without added nitrate or nitrite, stated beside the product name."
         }
       ],
-      "tier_note": "The asterisk and curing ingredients are USDA labeling rules for “uncured” claims.",
+      "tier_note": "The cut name and each curing ingredient are label requirements; favoring a short list is judgment.",
       "asked_as": [
         "is guanciale worth buying",
         "how do you choose prosciutto",
         "how do you choose salami"
-      ]
+      ],
+      "instead": "Cured pork with spices and sugar beyond salt, every curing ingredient still listed."
     },
     {
       "id": "lamb_goat",

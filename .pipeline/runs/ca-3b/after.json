@@ -1,0 +1,116 @@
+{
+  "cards": {
+    "pork_cuts_and_enhanced": {
+      "decision": 9,
+      "tier_note": 16,
+      "instead": 10,
+      "pick_steps": 2,
+      "cart_pick": "Pork shoulder"
+    },
+    "pick_sausage": {
+      "decision": 13,
+      "tier_note": 0,
+      "instead": 0,
+      "pick_steps": 0,
+      "cart_pick": null
+    },
+    "pick_jerky": {
+      "decision": 13,
+      "tier_note": 0,
+      "instead": 0,
+      "pick_steps": 0,
+      "cart_pick": null
+    },
+    "chicken_cuts_basics": {
+      "decision": 8,
+      "tier_note": 16,
+      "instead": 12,
+      "pick_steps": 3,
+      "cart_pick": "Air-chilled whole chicken or bone-in thighs"
+    },
+    "chicken_breast": {
+      "decision": 11,
+      "tier_note": 14,
+      "instead": 10,
+      "pick_steps": 3,
+      "cart_pick": "Plain chicken breast without added solution"
+    },
+    "rotisserie_chicken": {
+      "decision": 11,
+      "tier_note": 12,
+      "instead": 20,
+      "pick_steps": 3,
+      "cart_pick": "Plain rotisserie chicken"
+    },
+    "turkey_whole": {
+      "decision": 7,
+      "tier_note": 16,
+      "instead": 14,
+      "pick_steps": 3,
+      "cart_pick": "Whole turkey without added solution"
+    },
+    "ground_turkey": {
+      "decision": 10,
+      "tier_note": 16,
+      "instead": 15,
+      "pick_steps": 1,
+      "cart_pick": "Plain ground turkey"
+    },
+    "bacon": {
+      "decision": 13,
+      "tier_note": 17,
+      "instead": 12,
+      "pick_steps": 3,
+      "cart_pick": "Bacon with the shortest label list"
+    },
+    "ham": {
+      "decision": 10,
+      "tier_note": 15,
+      "instead": 12,
+      "pick_steps": 2,
+      "cart_pick": "Ham named just “Ham”"
+    },
+    "hot_dogs": {
+      "decision": 10,
+      "tier_note": 18,
+      "instead": 13,
+      "pick_steps": 2,
+      "cart_pick": "Hot dogs with named meat"
+    },
+    "turkey_bacon": {
+      "decision": 9,
+      "tier_note": 18,
+      "instead": 13,
+      "pick_steps": 3,
+      "cart_pick": "Turkey bacon with the fewest ingredients"
+    },
+    "cured_pork": {
+      "decision": 13,
+      "tier_note": 16,
+      "instead": 13,
+      "pick_steps": 3,
+      "cart_pick": "Cured pork with a short curing list"
+    },
+    "deli_meat_uncured": {
+      "decision": 11,
+      "tier_note": 19,
+      "instead": 13,
+      "pick_steps": 3,
+      "cart_pick": null
+    }
+  },
+  "sections": {},
+  "cartPickMatch": {
+    "pork_cuts_and_enhanced": "pork_cuts_and_enhanced",
+    "chicken_cuts_basics": "chicken_cuts_basics",
+    "chicken_breast": "null",
+    "rotisserie_chicken": "rotisserie_chicken",
+    "turkey_whole": "null",
+    "ground_turkey": "ground_turkey",
+    "bacon": "null",
+    "ham": "ham",
+    "hot_dogs": "null",
+    "turkey_bacon": "null",
+    "cured_pork": "null"
+  }
+}

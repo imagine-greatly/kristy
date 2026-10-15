@@ -1,0 +1,209 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 D1 limits hold on every CA-3b card
+not ok 1 - C1 D1 limits hold on every CA-3b card
+  ---
+  duration_ms: 1.006
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3b.test.js:35:1'
+  failureType: 'testCodeFailure'
+  error: 'pork_cuts_and_enhanced instead'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3b.test.js:48:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 no CA-3b decision or cart_pick prints a grass term
+ok 2 - C2 no CA-3b decision or cart_pick prints a grass term
+  ---
+  duration_ms: 0.239333
+  type: 'test'
+  ...
+# Subtest: C3 chicken_breast survives as a rewrite
+not ok 3 - C3 chicken_breast survives as a rewrite
+  ---
+  duration_ms: 0.155208
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3b.test.js:60:1'
+  failureType: 'testCodeFailure'
+  error: 'chicken_breast unchanged'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"id":"chicken_breast","title":"Chicken breast","aliases":["chicken breast","chicken breasts","plain chicken breast"],"category":"poultry","question":"What should you check when buying chicken breast?","decision":"Plain breast, fresh or frozen, over any with added flavoring solution.","why":"Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.","short_answer":"Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.","detail":"FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.","evidence_tier":"kristys_standard","sources":["https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"],"kristy_take":"Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.","cart_pick":"Plain chicken breast without added solution","buying_tips":["Read the full product name for the solution percentage and ingredients.","Fresh or frozen breast can be checked for the same solution disclosure.","Read retained-water wording separately from the added flavoring ingredients."],"watch_out":["“Natural” does not exclude a flavoring solution.","Retained chilling water is different from an added flavoring solution.","The archived woody-breast study does not establish a dependable visual test for shoppers."],"pick_steps":["Read the full product name for a solution percentage and its ingredients.","Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.","Choose fresh or frozen plain breast without an added flavoring solution."],"science":"FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.","labels_decoded":[{"term":"Added solution","meaning":"A disclosed flavoring formulation incorporated into the poultry."},{"term":"Retained water","meaning":"Water absorbed during post-slaughter processing, separately disclosed on the label."}],"tier_note":"Any added flavoring solution has to appear in the product name, with its amount.","asked_as":["how do you choose chicken breast","does natural chicken breast have added water","what does solution added mean on chicken breast"]}'
+  actual: '{"id":"chicken_breast","title":"Chicken breast","aliases":["chicken breast","chicken breasts","plain chicken breast"],"category":"poultry","question":"What should you check when buying chicken breast?","decision":"Plain breast, fresh or frozen, over any with added flavoring solution.","why":"Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.","short_answer":"Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.","detail":"FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.","evidence_tier":"kristys_standard","sources":["https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"],"kristy_take":"Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.","cart_pick":"Plain chicken breast without added solution","buying_tips":["Read the full product name for the solution percentage and ingredients.","Fresh or frozen breast can be checked for the same solution disclosure.","Read retained-water wording separately from the added flavoring ingredients."],"watch_out":["“Natural” does not exclude a flavoring solution.","Retained chilling water is different from an added flavoring solution.","The archived woody-breast study does not establish a dependable visual test for shoppers."],"pick_steps":["Read the full product name for a solution percentage and its ingredients.","Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.","Choose fresh or frozen plain breast without an added flavoring solution."],"science":"FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.","labels_decoded":[{"term":"Added solution","meaning":"A disclosed flavoring formulation incorporated into the poultry."},{"term":"Retained water","meaning":"Water absorbed during post-slaughter processing, separately disclosed on the label."}],"tier_note":"Any added flavoring solution has to appear in the product name, with its amount.","asked_as":["how do you choose chicken breast","does natural chicken breast have added water","what does solution added mean on chicken breast"]}'
+  operator: 'notStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3b.test.js:65:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 the pass rule holds for every CA-3b id
+ok 4 - C4 the pass rule holds for every CA-3b id
+  ---
+  duration_ms: 1.127166
+  type: 'test'
+  ...
+# Subtest: C5 brand claim and price greps are zero over changed copy fields
+not ok 5 - C5 brand claim and price greps are zero over changed copy fields
+  ---
+  duration_ms: 0.336375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3b.test.js:72:1'
+  failureType: 'testCodeFailure'
+  error: 'only 0 changed copy fields'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3b.test.js:88:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 the full meat section is lint-clean under the meat tip
+not ok 6 - C6 the full meat section is lint-clean under the meat tip
+  ---
+  duration_ms: 18.575041
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-3b.test.js:91:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + [
+    +   {
+    +     code: 'SECTION_PHRASE_REPEATED',
+    +     form: 'front',
+    +     ids: [
+    +       'bacon',
+    +       'ground_turkey',
+    +       'ham',
+    +       'hot_dogs',
+    +       'turkey_bacon',
+    +       'turkey_whole'
+    +     ],
+    +     phrase: 'is the whole food',
+    +     section: 'meat'
+    +   }
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0:
+      code: 'SECTION_PHRASE_REPEATED'
+      section: 'meat'
+      form: 'front'
+      ids:
+        0: 'bacon'
+        1: 'ground_turkey'
+        2: 'ham'
+        3: 'hot_dogs'
+        4: 'turkey_bacon'
+        5: 'turkey_whole'
+      phrase: 'is the whole food'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-3b.test.js:94:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C7 cure sentences come only from the shared set
+ok 7 - C7 cure sentences come only from the shared set
+  ---
+  duration_ms: 0.167459
+  type: 'test'
+  ...
+# Subtest: C8 per-card lints are clean and headlines match
+ok 8 - C8 per-card lints are clean and headlines match
+  ---
+  duration_ms: 0.251542
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 4
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 146.256167
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/listMatchProbe.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/commitGuard.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/migrateCounterCards.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0

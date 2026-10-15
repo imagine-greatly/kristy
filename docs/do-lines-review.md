@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_no_artificial_flavors` | label_terms | The claim bans synthetic flavoring but leaves everything else untouched. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
 | `judging_meat_at_the_case` | meat | The pack with the newest ‘packaged on’ date in the case. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Ask for beef soup bones, and a whole chuck ground fresh. | Ask what came in today and when it was cut. | — |
-| `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
+| `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Sardines, salmon and skipjack are small fish that live short lives. | Check the species name on the case tag. Size predicts the mercury. | — |
@@ -127,13 +127,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Oat milk with its protein and fortification checked on the carton. | Compare the protein line and read the ingredients for added vitamins and minerals. | — |
 | `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
-| `bacon` | meat | Bacon chosen by its curing ingredients, with the qualifier read. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
+| `bacon` | meat | Bacon with the shortest label list: pork, salt and its named curing agents. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
-| `chicken_breast` | meat | Plain breast, fresh or frozen, over any with added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
-| `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
-| `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
-| `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
+| `chicken_breast` | meat | Plain breast, no added solution; bone-in and skin-on before boneless skinless. | Read the front for any added liquid percentage, then check the ingredients. | — |
+| `ham` | meat | Ham named just “Ham” first, then “Ham With Natural Juices.” | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+| `turkey_bacon` | meat | Turkey bacon with the fewest ingredients after the turkey. | Read the small print under the name for the meat cuts used. | — |
+| `cured_pork` | meat | Cured pork, guanciale included, with its cut named and a short curing list. | Find the asterisk beside “uncured” and read what it points to. | — |
 | `lamb_goat` | meat | 100% grass-fed or grass-finished lamb or goat. | Press goat for firm, fine-grained flesh and white fat. | — |
 | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | 100% grass-fed or grass-finished bison, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
