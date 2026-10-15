@@ -15,12 +15,12 @@
     "server/lib/sectionRules.json",
     "server/test/acceptance/ic1.test.js"
   ],
-  "verify": "cd /Users/m1/kristy && node --test server/test/acceptance/ca-1.test.js && cd server && npm test; node /Users/m1/kristy/server/scripts/listMatchProbe.js; node /Users/m1/kristy/server/scripts/commitGuard.js; cd /Users/m1/kristy/server && node scripts/migrateCounterCards.js --dry-run",
+  "verify": "node --test server/test/acceptance/ca-1.test.js && cd server && npm test; node scripts/listMatchProbe.js; node scripts/commitGuard.js; node scripts/migrateCounterCards.js --dry-run",
   "token_ceiling": 100000
 }
 ```
 
-Repo `/Users/m1/kristy`, branch `main`. Plan approved 2026-10-14 on defaults Q1-Q3 (admin relay of Devon's go).
+Repo kristy, branch `main`. Plan approved 2026-10-14 on defaults Q1-Q3 (admin relay of Devon's go).
 - Route: dv T2 (fallback forge@opus [T2]); critic@opus, FIDELITY required.
 - P1. Parallel-safe: yes, with CA-2 (DONE, f661fee). Nothing else runs alongside it.
 - Plan: `docs/CARD-ALIGNMENT-PLAN.md` CA-1 and D3. Scouts: `.pipeline/specs/ca-scouts.md` S1, S2, S4. S2 correction: the walk-section map is `sectionForCategory` / `SECTION_BY_CATEGORY` in `server/lib/counterCards.js:41-49`. `listMatch.js` `CATEGORY_SECTION` is a different, list-only map; do not import it.
