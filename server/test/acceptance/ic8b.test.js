@@ -90,6 +90,6 @@ test('C6 sources never shrink and new URLs are archived', () => {
   assert.ok(!JSON.stringify(kb).includes(UMD), 'umd raw-milk-law URL is in the KB');
 });
 
-test('C7 card count stays 182', () => {
-  assert.equal(CARDS.length, 182);
+test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+  assert.equal(CARDS.length, 181);
 });

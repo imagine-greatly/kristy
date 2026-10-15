@@ -82,6 +82,6 @@ test('C6 sources never shrink and new URLs are archived', () => {
   }
 });
 
-test('C7 card count stays 182', () => {
-  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 182);
+test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
 });

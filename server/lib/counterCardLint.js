@@ -1603,7 +1603,9 @@ export function lintRepeatedClaim(entry) {
         ? entry[field].map((i) => (i && typeof i === 'object' ? { ...i, term: undefined } : i))
         : entry[field];
       for (const text of stringsIn(value)) {
-        if (!POINTER.test(text) && row.pattern.test(text)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
+        // L4 requires the section's canonical gloss on a family card, so the gloss itself is not a repeat.
+        const unglossed = CANONICAL_GLOSSES.reduce((t, g) => t.split(g.gloss).join(''), text);
+        if (!POINTER.test(text) && row.pattern.test(unglossed)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
       }
     }
   }

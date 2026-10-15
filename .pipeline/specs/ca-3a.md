@@ -136,7 +136,7 @@ Front, worked example verbatim (plan "Worked example: ground beef"):
 | cart_pick | Liver and heart beef blend, shares stated | 7 |
 | do (doLines + review table) | Read the label for organ names, each with a percentage beside it. | 12 |
 | pick_steps | ["How it was raised: see Beef.", "Organ blend: each organ named, each with its own percentage.", "Next: plain ground beef; skip “hamburger,” which allows added beef fat."] | 6/10/11 |
-| why | Federal rules bar added water, binders, and extenders from anything sold as ‘ground beef’. Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list. Organs are part of eating the whole animal, and a blend puts them in a familiar grind. | 14/19/17 |
+| why | Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name. | 14/19/17 |
 | short_answer | Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card. | 25 |
 
 Additive fields ("+" = appended after the existing items, existing items stay byte-identical):
@@ -507,7 +507,7 @@ const LEAN = {
   instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
   cart_pick: 'Liver and heart beef blend, shares stated',
   short_answer: 'Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.',
-  why: 'Federal rules bar added water, binders, and extenders from anything sold as ‘ground beef’. Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.',
+  why: 'Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name.',
   pick_steps: ['How it was raised: see Beef.', 'Organ blend: each organ named, each with its own percentage.', 'Next: plain ground beef; skip “hamburger,” which allows added beef fat.'],
 };
 const LEAN_DO = 'Read the label for organ names, each with a percentage beside it.';
