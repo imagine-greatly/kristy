@@ -46,7 +46,7 @@ Repo kristy, branch `main`. Plan approved 2026-10-14 on defaults Q1-Q3 (admin re
 - Route: dv T2 (fallback forge@opus [T2]). Critic: critic@opus, `FIDELITY required` (Codex-built T2; the worked examples are Devon-approved text and the critic checks them byte for byte).
 - P1. Parallel-safe: no (owns the KB, which CA-3 and CA-4b also own).
 - Plan: `docs/CARD-ALIGNMENT-PLAN.md` CA-4 (worked examples Eggs, Milk, Yogurt; D8 pick_milk retires). Scouts: `.pipeline/specs/ca-scouts.md` S1, S2, S4, S5, S11.
-- **Before dispatch:** CA-3a and CA-3b committed (see Prerequisites). Admin runs the BEFORE capture in "Independent check script".
+- **Baseline:** CA-3a and CA-3b shipped at HEAD `d707172`. BEFORE is captured on that unchanged tree in `.pipeline/runs/ca-4a/before.json`.
 
 Scope: seven eggs_dairy entries are rewritten to the CA-4 text below and `pick_milk` is deleted. Every string the builder writes is given here; the builder authors no claim. The other sixteen eggs_dairy cards are CA-4b.
 
@@ -57,7 +57,7 @@ Card counts: R 7 (`egg_labels`, `whole_vs_reduced_fat_milk`, `yogurt_plain_vs_fl
 **Done means:**
 
 *The three worked examples.*
-- Given `egg_labels`, `whole_vs_reduced_fat_milk` and `yogurt_plain_vs_flavored`, when the KB is read, then every field named in Step 1, 2 and 3 equals the string given there byte for byte (cart_pick included), and every field not named there deep-equals HEAD `8b49633`.
+- Given `egg_labels`, `whole_vs_reduced_fat_milk` and `yogurt_plain_vs_flavored`, when the KB is read, then every field named in Step 1, 2 and 3 equals the string given there byte for byte (cart_pick included), and every field not named there deep-equals HEAD `d707172`.
 - Given `egg_labels`, then no copy field contains "cheapest", and the low-cost fact its `buying_tips` and `science` carried is present as "Plain conventional eggs are still one of the lowest-cost animal foods in the store."
 - Given the milk decision, then `headlineHedge()` returns `[]`; the `raw_milk` `watch_out` deep-equals HEAD; the milk `watch_out` minus the one inserted UHT line deep-equals HEAD; and no milk field contains "test results".
 
@@ -71,7 +71,7 @@ Card counts: R 7 (`egg_labels`, `whole_vs_reduced_fat_milk`, `yogurt_plain_vs_fl
 *Lints.*
 - Given each of the seven R ids, then `assertPassRule`, `readability`, `lintCard(projectEntry(card, {doLine}))`, `lintPickSteps`, `lintCulinaryAim` and `lintRepeatedClaim` each return no hit.
 - Given `lintSections` run with the CA-5 eggs_dairy tip text and both flags forced, then no L1, L4 or L5 hit names a CA-4a id, no L2 group consists only of CA-4a ids, and L3 returns no hit.
-- Given the strings this piece adds, then none matches the claim-lock grep, the price grep, an em-dash or a straight quote; no copy field of a CA-4a id matches the brand grep; no CA-4a `tier_note` other than yogurt's matches the D4 use-bridge pattern `/at home with|stir|top it|mix it/i`.
+- Given the strings this piece adds, then none matches the claim-lock grep, the price grep, an em-dash or a straight quote; no new copy contains first person; no copy field of a CA-4a id matches the brand grep; no CA-4a `tier_note` other than yogurt's matches the D4 use-bridge pattern `/at home with|stir|top it|mix it/i`.
 - `npm test` green with the superseded pins in Step 6; probe 0 wrong; `commitGuard.js` clean; `--dry-run` places every card.
 
 **Out of scope:** the sixteen CA-4b cards; `sectionRules.json` (CA-5); any meat card (CA-3); sources (none added; CA-2 already archived them); iOS; migration.
@@ -81,16 +81,16 @@ Card counts: R 7 (`egg_labels`, `whole_vs_reduced_fat_milk`, `yogurt_plain_vs_fl
 - Yogurt `kristy_take` keeps "Big tub of plain" and "Cheaper per ounce" (relative, not a price; the price grep does not match it).
 - New label terms sit beside old ones that overlap ("Greek" beside "Greek / skyr", "Ultra-pasteurized" beside "Ultra-pasteurized / UHT"); ic7a C5 only rejects an exact repeated term.
 - Existing em-dashes and certifier names (Certified Humane, Animal Welfare Approved) in HEAD strings stay.
-- **Deviation from the plan, recorded.** `perimeter.test.js:213-214` cap cart_pick at 44 characters and forbid `%`; the approved Eggs and Milk picks run 46 characters and Milk and Yogurt carry "100%". Step 6 raises the cap to 46 `[PLACEHOLDER]` and exempts the literal "100%" `[PLACEHOLDER]`; Devon confirms (Open question 1). CA-3a beef carries "100%" too; whichever piece lands first makes the edit, the second finds it done.
-- Butter front drops "grass-fed" under D2 rule 3 (the section rule carries how the cows ate; the card carries the color). Open question 2.
+- `perimeter.test.js:213` already caps cart_pick at 46 characters after CA-3a; Eggs and Milk each measure 46. Keep that cap. At :214 CA-3a exempts only a leading `100% `; Step 6 permits one literal `100%` anywhere so the approved Milk and Yogurt picks pass. Other percent and currency signs remain forbidden.
+- Butter front drops "grass-fed" under D2 rule 3 (the section rule carries how the cows ate; the card carries the color). See Assumptions.
 
 **Ship bar:** a worked-example string not byte-equal; any raw-milk risk sentence altered (`raw_milk` `watch_out`, the named-group line); a claim, number or ingredient fact with no row in the claim-trace table; a brand, price word, first-person word or em-dash in a new string; `pick_milk` still present or a milk row landing anywhere but the Milk card; an ESSENTIALS card (egg_labels, milk) reordered or retired; `npm test` red.
 
-**Independent check:** `git diff 8b49633 -- server/kristy_perimeter_kb.json` restricted to the milk entry shows one added `watch_out` line and no removed `watch_out` line; the forced-flag eggs_dairy L1/L4/L5 hit list for CA-4a ids goes from BEFORE to 0 (`counts.mjs` below); each changed cart_pick passed to `matchItemToCard` prints its own slug.
+**Independent check:** `git diff d707172 -- server/kristy_perimeter_kb.json` restricted to the milk entry shows one added `watch_out` line and no removed `watch_out` line; the forced-flag eggs_dairy L1/L4/L5 hit list for CA-4a ids goes from BEFORE to 0 (`counts.mjs` below); each changed cart_pick passed to `matchItemToCard` prints its own slug.
 
 ## Steps (the change, old → new)
 
-Copy every string from this file, not from memory. Curly quotes and apostrophes are part of the string (’ “ ”). A string given here never changes; if a lint fires on one, STOP BLOCKED and quote the hit.
+Copy every string from this file, not from memory. Curly quotes and apostrophes are part of the string (’ “ ”). A string given here never changes; if a lint fires on one, STOP BLOCKED and quote the hit. The refresh amendments below are already incorporated; do not improvise further copy.
 
 ### 0. Baseline (prints only, writes nothing)
 From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, checks, tip_aligned:true, cards_aligned:true}], kb.entries)` using the CA-5 eggs_dairy tip from `server/test/acceptance/ca-1.test.js:37`. Print the hits. Report them. Hits on CA-4b ids are CA-4b's; do not fix them here.
@@ -100,13 +100,14 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - `tier_note` → "Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn."
 - `instead` (new or replaced) → "Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed."
 - `cart_pick`: "Soy-free pasture-raised eggs" → "Pasture-raised organic corn- and soy-free eggs"
+- `aliases`: append "Pasture-raised organic corn- and soy-free eggs", then "organic corn- and soy-free eggs", once each. These scoped label phrases let Eggs survive the scorer’s top-minus-two floor against the pasture label-reference card (Assumptions).
 - `pick_steps` → ["“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.", "“Organic” means certified organic feed and outdoor access.", "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."]
 - `why` → "Hens eat what they are given; the carton words show that feed and that life."
 - `short_answer` → "Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim."
 - `kristy_take`: "Feed, then organic, then room. The space words are the ones everybody sells." → "Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells."
 - `watch_out`: reorder only, strings byte-identical. New order by HEAD index: `[0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16]` (sourcing, then processing, then packaging and handling). HEAD has 17 items; STOP if it does not.
 - `buying_tips`: the element "Plain conventional eggs are still one of the cheapest complete proteins in the store." → "Plain conventional eggs are still one of the lowest-cost animal foods in the store." Others unchanged.
-- `science`: the same sentence, same replacement, rest of the string unchanged.
+- `science`: the same lowest-cost sentence replacement, plus "‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs." → "‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs.". Rest unchanged. The retained macro word otherwise trips C7 on this changed field.
 - `detail`: last sentence "The order is what she ate, then how it was grown, then how much room she had." → "The standard is all three on one carton: what she ate, how it was grown, and how much room she had." Rest unchanged.
 - `labels_decoded`: append `{"term": "Corn- and soy-free", "meaning": "The feed contains neither corn nor soy; both words must be printed."}`.
 
@@ -120,13 +121,14 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - `short_answer` → "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F."
 - `watch_out`: insert at index 2 "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it." Every HEAD item stays, same order.
 - `labels_decoded`: append `{"term": "Vat pasteurized", "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."}` then `{"term": "Ultra-pasteurized", "meaning": "Heated to about 280°F for about 2 seconds."}`. STOP if HEAD already has a term exactly "Vat pasteurized" or "Ultra-pasteurized".
-- `aliases`: append each `pick_milk` alias ("milk carton", "milk cartons", "gallon of milk", "carton of milk") that the Milk card does not already carry, in that order. Nothing else added.
+- `aliases`: append each `pick_milk` alias ("milk carton", "milk cartons", "gallon of milk", "carton of milk") that the Milk card does not already carry, in that order; then append the exact new cart_pick once (Assumptions). No other aliases added.
 
 ### 3. `server/kristy_perimeter_kb.json` — `yogurt_plain_vs_flavored` (Yogurt)
 - `decision`: "Flavored yogurt carries added sugar; plain is milk and cultures." → "Plain Greek yogurt made from 100% grass-fed milk."
 - `tier_note`: "The added-sugar difference is printed on the panel, and buying plain to sweeten at home is the standard." → "Plain means no added sugar, so sweeten it at home with fruit or honey."
 - `instead` (new or replaced) → "Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there."
 - `cart_pick`: "Plain whole-milk Greek yogurt" → "Plain Greek yogurt, 100% grass-fed"
+- `aliases`: append that exact new cart_pick once (Assumptions).
 - `pick_steps` → ["Greek means strained, so the yogurt is thicker and holds less whey.", "100% grass-fed on the tub means the cows ate grass and hay, never grain.", "Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is."]
 - `why` → "Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with."
 - `short_answer` → "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is."
@@ -145,7 +147,7 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - Row `egg_labels` (:46): headline column → the new Eggs decision; do column "Check the small regional cartons. That is where a feed claim appears." → "Find all three words on one carton, plus a certifier’s pasture seal."
 - Row `whole_vs_reduced_fat_milk` (:55): headline → the new Milk decision; do "Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized." → "Check the side panel for the pasteurization words and a grass-fed seal."
 - Row `yogurt_plain_vs_flavored` (:57): headline → the new Yogurt decision; do "Take the big plain tub, not the single-serve fruit cups." → "Check the ingredients for milk and cultures, with nothing after them."
-- Row `grassfed_butter` (:54): headline → the new Butter decision; do column unchanged.
+- Row `grassfed_butter` (:53): headline → the new Butter decision; do column "Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange." → "Look through the wrapper window before choosing a block." (D1: OBSERVABLE_IN_BOTH).
 - Then from `server/`: `node scripts/buildDoLines.js`. Commit both files (admin).
 
 ### 6. Superseded pins (one-line edits; each keeps its assertion)
@@ -153,13 +155,13 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - `server/test/acceptance/ic4b.test.js:41` → `'Pasture-raised, organic, and corn- and soy-free, all three together.'`. `:43` (the both-printed fact) must stay green unedited; the detail sentence "Both ‘soy-free’ and ‘corn-free’ have to be printed outright…" carries it.
 - `server/test/acceptance/ic7a.test.js`: after `:27` add `const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.'];` and `:85` `new Set(DROPPED.map(norm))` → `new Set([...DROPPED, ...REPHRASED].map(norm))`.
 - `server/test/counterProbe48.test.js:184-185`: `'pick_milk'` → `undefined` on both lines.
-- `server/lib/kindFilter.test.js:114`: the expected pick count N → N − 1, with a comment line above it `// <N-1> after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.` (N is 31 at `8b49633`; CA-3 may have moved it; use the value on the line).
-- `server/lib/perimeter.test.js:213` `p.length <= 44` → `p.length <= 46` `[PLACEHOLDER]`; `:214` `assert.doesNotMatch(p, /[$£€%]/, …)` → `assert.doesNotMatch(p.replace('100%', ''), /[$£€%]/, …)` `[PLACEHOLDER]`. If CA-3 already made an equivalent edit, leave both lines.
+- `server/lib/kindFilter.test.js:114`: `31` → `30`, including assertion message → `'CA-4a: 30 picks in the raw corpus'`; add comment `// 30 after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.` Counts are measured from HEAD, not inherited from the old spec.
+- `server/lib/perimeter.test.js:213`: keep `p.length <= 46`. At :214 change only `p.replace(/^100% /, '')` → `p.replace(/\b100%/, '')`; this removes one literal whole-number 100% at any position, preserving the currency/other-percent veto.
 - `server/scripts/listMatchProbe.js:318` `OWNED_BY` → `{ 'rotisserie chicken': 'rotisserie_chicken', 'milk': 'whole_vs_reduced_fat_milk', 'whole milk': 'whole_vs_reduced_fat_milk', 'a gallon of milk': 'whole_vs_reduced_fat_milk' }` (keep any key CA-3 added).
 
 ## Criteria
 - C1 [test] Given `egg_labels`, when the KB is read, then the Step 1 fields equal the given strings, `watch_out` is HEAD reordered by the given index list, labels are HEAD plus the one term, the "cheapest" sentence is replaced in `buying_tips` and `science`, the `detail` last sentence is replaced, the review do line equals the given line, and every other field deep-equals HEAD.
-- C2 [test] Given the Milk card, then the Step 2 fields equal the given strings, `watch_out[2]` is the UHT line and the rest deep-equals HEAD, labels are HEAD plus two terms, aliases are HEAD plus the absent `pick_milk` aliases, `headlineHedge(decision)` is `[]`, no field contains "test results", and `raw_milk.watch_out` deep-equals HEAD.
+- C2 [test] Given the Milk card, then the Step 2 fields equal the given strings, `watch_out[2]` is the UHT line and the rest deep-equals HEAD, labels are HEAD plus two terms, aliases are HEAD plus the absent `pick_milk` aliases and the new cart_pick, `headlineHedge(decision)` is `[]`, no field contains "test results", and `raw_milk.watch_out` deep-equals HEAD.
 - C3 [test] Given the Yogurt card, then the Step 3 fields equal the given strings, the two `buying_tips`, the `detail` first sentence and the "Greek / skyr" meaning are replaced, two label terms appended, and every other field deep-equals HEAD.
 - C4 [test] Given `raw_milk`, `egg_duck_quail`, `ghee`, `grassfed_butter`, then the Step 4 fields equal the given strings and every other field deep-equals HEAD; `pick_egg_whites` deep-equals HEAD; `raw_milk.tier_note` matches `/not a health claim/i`.
 - C5 [test] Given `pick_milk`, then it is absent; the six milk rows resolve to the Milk card through `matchItemToCard` and never to `pick_milk` through `matchItemToPick`; each changed cart_pick resolves to its own slug.
@@ -192,7 +194,7 @@ Verify (not a criterion): Given the repo after the change, when `cd server && np
         "server/kristy_perimeter_kb.json",
         "docs/do-lines-review.md"
       ],
-      "expected": "Eggs fields equal Step 1; other fields equal 8b49633",
+      "expected": "Eggs fields equal Step 1; other fields equal d707172",
       "test_name": "C1 the Eggs card carries the worked example"
     },
     {
@@ -401,11 +403,11 @@ import { assertPassRule } from './passRule.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
-const BASE_REF = '8b49633';
+const BASE_REF = 'd707172';
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
 const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8'));
-const doLines = JSON.stringify(JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8')));
+const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
 const now = (id) => kb.entries.find((e) => e.id === id);
 const was = (id) => base.entries.find((e) => e.id === id);
 const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
@@ -422,6 +424,7 @@ const EGG = {
   tier_note: 'Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.',
   instead: 'Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed.',
   cart_pick: 'Pasture-raised organic corn- and soy-free eggs',
+  aliases: [...was('egg_labels').aliases, 'Pasture-raised organic corn- and soy-free eggs', 'organic corn- and soy-free eggs'],
   pick_steps: ['“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.', '“Organic” means certified organic feed and outdoor access.', 'Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors.'],
   why: 'Hens eat what they are given; the carton words show that feed and that life.',
   short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
@@ -430,6 +433,8 @@ const EGG = {
 const EGG_DO = 'Find all three words on one carton, plus a certifier’s pasture seal.';
 const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
 const EGG_OLD_CHEAP = 'Plain conventional eggs are still one of the cheapest complete proteins in the store.';
+const EGG_SCIENCE_OLD = '‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs.';
+const EGG_SCIENCE_NEW = '‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs.';
 const EGG_CHEAP = 'Plain conventional eggs are still one of the lowest-cost animal foods in the store.';
 const EGG_DETAIL_OLD = 'The order is what she ate, then how it was grown, then how much room she had.';
 const EGG_DETAIL_NEW = 'The standard is all three on one carton: what she ate, how it was grown, and how much room she had.';
@@ -456,6 +461,7 @@ const YOG = {
   tier_note: 'Plain means no added sugar, so sweeten it at home with fruit or honey.',
   instead: 'Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there.',
   cart_pick: 'Plain Greek yogurt, 100% grass-fed',
+  aliases: [...was(YOG_ID).aliases, 'Plain Greek yogurt, 100% grass-fed'],
   pick_steps: ['Greek means strained, so the yogurt is thicker and holds less whey.', '100% grass-fed on the tub means the cows ate grass and hay, never grain.', 'Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is.'],
   why: 'Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.',
   short_answer: 'Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.',
@@ -480,7 +486,7 @@ const BUTTER = {
   cart_pick: 'Deep yellow butter',
   pick_steps: ['Skip tubs and spreads; butter comes as a block or a stick.', 'How it was raised: see Milk.'],
 };
-const BUTTER_DO = 'Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange.';
+const BUTTER_DO = 'Look through the wrapper window before choosing a block.';
 const OTHERS = {
   raw_milk: {
     tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
@@ -516,7 +522,8 @@ test('C1 the Eggs card carries the worked example', () => {
   assert.deepEqual(e.labels_decoded, [...b.labels_decoded, EGG_LABEL]);
   assert.ok(b.buying_tips.includes(EGG_OLD_CHEAP) && b.science.includes(EGG_OLD_CHEAP) && b.detail.includes(EGG_DETAIL_OLD), 'HEAD strings moved; spec is stale');
   assert.deepEqual(e.buying_tips, b.buying_tips.map((s) => (s === EGG_OLD_CHEAP ? EGG_CHEAP : s)));
-  assert.equal(e.science, b.science.replace(EGG_OLD_CHEAP, EGG_CHEAP));
+  assert.ok(b.science.includes(EGG_SCIENCE_OLD), 'HEAD vegetarian-fed science moved');
+  assert.equal(e.science, b.science.replace(EGG_OLD_CHEAP, EGG_CHEAP).replace(EGG_SCIENCE_OLD, EGG_SCIENCE_NEW));
   assert.equal(e.detail, b.detail.replace(EGG_DETAIL_OLD, EGG_DETAIL_NEW));
   const named = [...Object.keys(EGG), 'watch_out', 'labels_decoded', 'buying_tips', 'science', 'detail'];
   assert.deepEqual(without(e, named), without(b, named), 'egg_labels: a field outside the spec changed');
@@ -532,7 +539,7 @@ test('C2 the Milk card carries the worked example; raw-milk risk lines unchanged
   assert.deepEqual(m.watch_out.filter((s) => s !== MILK_UHT), b.watch_out, 'milk watch_out: additions only');
   assert.deepEqual(m.labels_decoded, [...b.labels_decoded, ...MILK_LABELS]);
   const moved = nonEmpty(was('pick_milk')?.aliases ?? [], 'pick_milk aliases at HEAD', 1);
-  assert.deepEqual(m.aliases, [...b.aliases, ...moved.filter((a) => !b.aliases.includes(a))]);
+  assert.deepEqual(m.aliases, [...b.aliases, ...moved.filter((a) => !b.aliases.includes(a)), MILK.cart_pick]);
   const named = [...Object.keys(MILK), 'watch_out', 'labels_decoded', 'aliases'];
   assert.deepEqual(without(m, named), without(b, named), 'milk: a field outside the spec changed');
   assert.deepEqual(lint.headlineHedge(m.decision), []);
@@ -569,6 +576,8 @@ test('C4 raw milk, duck and quail eggs, ghee and butter carry the spec text', ()
 test('C5 pick_milk is retired and the Milk card answers its rows', () => {
   assert.ok(was('pick_milk'), 'pick_milk missing at HEAD');
   assert.equal(now('pick_milk'), undefined);
+  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 30);
   for (const row of MILK_ROWS) {
     assert.equal(idOf(matchItemToCard(row)), MILK_ID, row);
     assert.notEqual(idOf(matchItemToPick(row)), 'pick_milk', row);
@@ -593,12 +602,13 @@ test('C6 pick_egg_whites: unchanged and pick-lint clean', () => {
 });
 
 test('C7 new copy passes the claim-lock, price, punctuation and brand greps', () => {
-  const added = nonEmpty(CHANGED.flatMap(fresh), 'CA-4a new strings', 20);
+  const added = nonEmpty([...CHANGED.flatMap(fresh), EGG_DO, MILK_DO, YOG_DO, BUTTER_DO], 'CA-4a new strings', 20);
   for (const s of added) {
     assert.doesNotMatch(s, CLAIM_LOCK, s);
     assert.doesNotMatch(s, PRICE, s);
     assert.doesNotMatch(s, /—/, s);
     assert.doesNotMatch(s, /["']/, s);
+    assert.doesNotMatch(s, /\b(I|me|my|mine|we|us|our|ours)\b/i, s);
   }
   for (const id of MINE) assert.doesNotMatch(copy(now(id)).join('\n'), BRAND, id);
   for (const id of [...MINE].filter((i) => i !== YOG_ID)) assert.doesNotMatch(now(id).tier_note ?? '', D4, id);
@@ -613,18 +623,21 @@ test('C8 forced section lints: no hit on a CA-4a card', () => {
 });
 
 test('C9 doLines.json carries the new do lines', () => {
-  for (const s of [EGG_DO, MILK_DO, YOG_DO, BUTTER_DO]) assert.ok(doLines.includes(JSON.stringify(s).slice(1, -1)), s);
+  for (const [id, line] of Object.entries({ egg_labels: EGG_DO, [MILK_ID]: MILK_DO, [YOG_ID]: YOG_DO, grassfed_butter: BUTTER_DO })) {
+    assert.equal(doLines[id], line, id);
+    assert.equal(reviewed.get(id)?.headline, now(id).decision, `${id} review headline`);
+  }
 });
 ```
 
-## ANCHOR server/kristy_perimeter_kb.json:589
+## ANCHOR server/kristy_perimeter_kb.json:565
 ```
       "decision": "Corn- and soy-free first, then organic, then pasture-raised.",
       "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
       "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
 ```
 
-## ANCHOR server/kristy_perimeter_kb.json:616
+## ANCHOR server/kristy_perimeter_kb.json:592
 ```
       "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
       "cart_pick": "Soy-free pasture-raised eggs",
@@ -632,7 +645,7 @@ test('C9 doLines.json carries the new do lines', () => {
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
 ```
 
-## ANCHOR docs/do-lines-review.md:54
+## ANCHOR docs/do-lines-review.md:53
 ```
 | `grassfed_butter` | eggs_dairy | Grass-fed butter first, then any real butter: cream, and salt if salted. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed. | Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized. | — |
@@ -640,7 +653,7 @@ test('C9 doLines.json carries the new do lines', () => {
 | `yogurt_plain_vs_flavored` | eggs_dairy | Flavored yogurt carries added sugar; plain is milk and cultures. | Take the big plain tub, not the single-serve fruit cups. | — |
 ```
 
-## ANCHOR server/lib/doLines.json:181
+## ANCHOR server/lib/doLines.json:180
 ```
   "whole_spices": "Toast them in a dry pan until they smell, then grind.",
   "whole_vs_reduced_fat_milk": "Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized.",
@@ -702,8 +715,8 @@ test('C5 tips, watch-outs and labels moved; digestion tip dropped', () => {
   for (const e of picks) {
     const p = e.cart_pick;
     assert.equal(typeof p, 'string');
-    assert.ok(p.trim().length > 2 && p.length <= 44, `${e.id}: "${p}" is not a cart row`);
-    assert.doesNotMatch(p, /[$£€%]/, `${e.id} carries a price or percent`);
+    assert.ok(p.trim().length > 2 && p.length <= 46, `${e.id}: "${p}" is not a cart row`);
+    assert.doesNotMatch(p.replace(/^100% /, ''), /[$£€%]/, `${e.id} carries a price or percent`);
 ```
 
 ## ANCHOR server/scripts/listMatchProbe.js:316
@@ -714,7 +727,7 @@ const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
 for (const [name, slug] of Object.entries(OWNED_BY)) {
 ```
 
-Anchors are read at `8b49633`. CA-3 lands first and may shift KB line numbers and the `perimeter.test.js`, `kindFilter.test.js` and `OWNED_BY` lines; locate by the quoted text, not the number.
+All anchors below were located by exact content at HEAD `d707172`; their line numbers are current. Locate by the quoted content if later context moves.
 
 ## Claim trace (one row per new sentence)
 
@@ -767,12 +780,12 @@ Anchors are read at `8b49633`. CA-3 lands first and may shift KB line numbers an
 `/Users/m1/kristy/.pipeline/runs/ca-4a/counts.mjs`: loads the KB and `lintSections`, prints (a) the forced-flag eggs_dairy hits filtered to the CA-4a ids, (b) the pick count, (c) `matchItemToCard` for the six milk rows and the four cart_picks. Run BEFORE (at the CA-3 commit) and AFTER; diff. Expected AFTER: (a) `[]`, (b) BEFORE − 1, (c) every row prints its own slug.
 
 ## Prerequisites
-- CA-3a and CA-3b committed. STOP BLOCKED if `git diff 8b49633 -- server/kristy_perimeter_kb.json` shows a change inside any CA-4a id, or `pick_milk`.
-- Env: node ≥20, git (read-only: `git show` in the acceptance test), grep. No network. No Supabase writes (`--dry-run` only). No browser.
+- CA-3a and CA-3b are committed at baseline `d707172`. Before building, STOP BLOCKED if `git diff d707172 -- server/kristy_perimeter_kb.json` shows a change inside any CA-4a id or `pick_milk`. The refresh confirmed those entries are unchanged by CA-3.
+- Env: Node 22 (server/package.json; JSON import attributes), git (read-only: `git show` in the acceptance test), grep. No network. No Supabase writes (`--dry-run` only). No browser.
 
 ## Answers
-- Reads and runtime: `npm test` ~1-3 min. Read only `read_full` plus the owned files.
-- Do not edit `passRule.js` or k5-k11 (k14 C12 pins them at `8c7112e`). Do not edit any test outside Step 6.
+- Reads and runtime: `npm test` ~1-3 min. Read `read_full`, owned files, and the supplied `.pipeline/runs/ca-4a/` build artifacts.
+- Do not edit `passRule.js` or k5-k11 (k14 C12 pins them at `719f9fe`). Do not edit any test outside Step 6.
 - `do` lines live in `docs/do-lines-review.md` and are generated into `doLines.json` by `node scripts/buildDoLines.js` (from `server/`). Never hand-edit `doLines.json`.
 - STOP BLOCKED (quote the evidence) if: a lint fires on a string given here; `ic4b.test.js:43` goes red; the pass rule reports a lost number or label term; HEAD differs from a "spec is stale" assertion; an eggs_dairy L2 group mixing CA-4a and CA-4b ids can only be cleared by changing a CA-4a string; a test outside Step 6 pins a changed string; a milk row lands on another card after the aliases move.
 - A Step 6 line whose quoted old text is already gone (CA-3 changed it): skip that edit if the new behaviour holds, else STOP.

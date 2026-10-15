@@ -1,0 +1,18 @@
+server/lib/counterCardLint.test.js:3:// Every rule here is a defect that was found by hand on 2026-07-31 during the Pass 2
+server/lib/counterCardLint.test.js:112:  // The real historical defect, verbatim: egg_feed_claims before 2026-07-31.
+server/lib/counterCardLint.test.js:443:  assert.equal(CARDS.length, 181);
+server/lib/internalGrowth.test.js:37:  assert.equal(tokenMatches(token.slice(0, 31), token), false, 'a prefix must not pass');
+server/lib/kindFilter.test.js:113:  // 31 after K18: english muffins and pita/naan, 2026-10-06.
+server/lib/kindFilter.test.js:114:  assert.equal(pickEntries(perimeterKb.entries).length, 31, 'K18: 31 picks in the raw corpus');
+server/test/ktight.test.js:37:const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 181);
+server/test/healthFirst.test.js:19:  'health-first corpus', 182
+server/test/acceptance/ca-3a.test.js:127:  for (const s of [D6_SENTENCE, '25 percent', '9 CFR 317.2', '6,582 mcg RAE', '3,000 mcg', old.detail, old.short_answer, old.why]) assert.ok(e.detail.includes(s), `detail lacks: ${s}`);
+server/test/acceptance/ic5b.test.js:28:  'https://www.law.cornell.edu/cfr/text/9/319.15',
+server/test/acceptance/ic5b.test.js:29:  'https://www.law.cornell.edu/cfr/text/9/317.2',
+server/test/acceptance/ic8b.test.js:93:test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+server/test/acceptance/ic8b.test.js:94:  assert.equal(CARDS.length, 181);
+server/test/acceptance/ic8a.test.js:85:test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+server/test/acceptance/ic8a.test.js:86:  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+server/test/acceptance/k16.test.js:61:const k31 = (id, a) => (K3_1_ALIASES[id] ?? []).includes(a);
+server/test/acceptance/k16.test.js:126:      assert.ok(!FORBIDDEN.includes(a) || k31(id, a), `${id} alias ${a}`);
+server/test/acceptance/k16.test.js:127:      assert.ok(!/\b(fresh|frozen|canned|dried)\b/.test(a) || k31(id, a) || (id === 'seafood_counter' && FOLDED_ALIASES.has(a)), `${id} state alias ${a}`);

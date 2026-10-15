@@ -1,0 +1,75 @@
+{
+  "curatedCardCount": 181,
+  "pickCount": 31,
+  "eggsDairyCardCount": 23,
+  "sections": [
+    {
+      "code": "TERM_UNGLOSSED",
+      "section": "eggs_dairy",
+      "id": "egg_labels",
+      "row": "G3"
+    },
+    {
+      "code": "TERM_UNGLOSSED",
+      "section": "eggs_dairy",
+      "id": "egg_labels",
+      "row": "G4"
+    },
+    {
+      "code": "TERM_UNGLOSSED",
+      "section": "eggs_dairy",
+      "id": "whole_vs_reduced_fat_milk",
+      "row": "G2"
+    },
+    {
+      "code": "TERM_UNGLOSSED",
+      "section": "eggs_dairy",
+      "id": "whole_vs_reduced_fat_milk",
+      "row": "G4"
+    }
+  ],
+  "mixedSections": [
+    {
+      "code": "SECTION_PHRASE_REPEATED",
+      "section": "eggs_dairy",
+      "form": "front",
+      "ids": [
+        "cheese_real_vs_processed",
+        "ghee",
+        "oat_milk",
+        "plain_kefir"
+      ],
+      "phrase": "is the whole food"
+    }
+  ],
+  "milkRows": {
+    "milk": "whole_vs_reduced_fat_milk",
+    "whole milk": "whole_vs_reduced_fat_milk",
+    "a gallon of milk": null,
+    "gallon of milk": null,
+    "milk carton": null,
+    "carton of milk": null
+  },
+  "cartPickMatch": {
+    "egg_labels": {
+      "cart_pick": "Soy-free pasture-raised eggs",
+      "characters": 28,
+      "slug": null
+    },
+    "whole_vs_reduced_fat_milk": {
+      "cart_pick": "Whole milk",
+      "characters": 10,
+      "slug": "whole_vs_reduced_fat_milk"
+    },
+    "yogurt_plain_vs_flavored": {
+      "cart_pick": "Plain whole-milk Greek yogurt",
+      "characters": 29,
+      "slug": "yogurt_plain_vs_flavored"
+    },
+    "grassfed_butter": {
+      "cart_pick": "Grass-fed butter",
+      "characters": 16,
+      "slug": "grassfed_butter"
+    }
+  }
+}
