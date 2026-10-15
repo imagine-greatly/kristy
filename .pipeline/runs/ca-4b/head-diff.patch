@@ -1,0 +1,2296 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index cb8a21d..84079ec 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -38,12 +38,11 @@ Also: imperative, starts with a verb, ≤14 words.
+ | --- | --- | --- | --- | --- |
+ | `salmon_wild_vs_farmed` | seafood | Wild salmon, and frozen wild before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
+ | `shrimp_imported_vs_domestic` | seafood | Wild American shrimp, read by the country of origin printed by law. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
+-| `ground_beef_organ_blend` | meat | Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass. | Read the ingredient list for liver and heart, each with a percentage. | — |
+ | `rotisserie_chicken` | meat | Chicken and salt on the label: buy. Phosphate and starch: pass. | Read the ingredient list: two words is plain; water second means a solution. | — |
+-| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed and grass-finished. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
++| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished, no added hormones, with a certifier’s seal. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+ | `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
+-| `ground_beef_lean_ratio` | meat | Beef with seasoning at most, and nothing else in the ingredients. | Read the name: “ground beef” allows no added fat, water or binders. | — |
+-| `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
++| `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then ground beef with nothing added. | Read the label for organ names, each with a percentage beside it. | — |
++| `egg_labels` | eggs_dairy | Pasture-raised, organic, and corn- and soy-free, all three together. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
+ | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
+ | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
+ | `freezing_produce` | produce · home | Enzymes keep working in the freezer until heat switches them off. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
+@@ -51,10 +50,10 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `washing_produce` | produce · home | Plain cold water removes as much residue as a produce wash does. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
+ | `baking_soda_soak` | produce · home | Baking soda in the water lifts residue a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
+ | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
+-| `grassfed_butter` | eggs_dairy | Grass-fed butter first, then any real butter: cream, and salt if salted. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
+-| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed. | Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized. | — |
++| `grassfed_butter` | eggs_dairy | Deepest yellow butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
++| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
+ | `cheese_real_vs_processed` | eggs_dairy | Block cheese is milk, cultures, salt and enzymes, and nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
+-| `yogurt_plain_vs_flavored` | eggs_dairy | Flavored yogurt carries added sugar; plain is milk and cultures. | Take the big plain tub, not the single-serve fruit cups. | — |
++| `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
+ | `raw_milk` | eggs_dairy | Raw milk is worth seeking out from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
+ | `rice_arsenic` | bulk_pantry | Arsenic collects in the bran, which is why white rice carries less. | Read the origin on the bag: India, Pakistan or California. | — |
+ | `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats are the same grain in every form; packets add sugar. | Turn the canister over. One ingredient, and it is oats. | — |
+@@ -72,9 +71,9 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `label_multigrain_vs_whole_grain` | label_terms | ‘Multigrain’ counts grains; ‘whole grain’ says the bran stayed in. | Read the first ingredient — it must say “whole wheat flour.” | — |
+ | `label_lightly_sweetened` | label_terms | ‘Lightly sweetened’ is not defined, so the number is the only answer. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
+ | `label_no_artificial_flavors` | label_terms | The claim bans synthetic flavoring but leaves everything else untouched. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
+-| `judging_meat_at_the_case` | meat | Color comes from oxygen and packaging, not from how fresh it is. | Check the package is sealed and not leaking juices, then smell it. | — |
+-| `butcher_counter_asking` | meat | Ask the butcher how it was raised and when it was cut. | Ask what came in today and when it was cut. | — |
+-| `chicken_cuts_basics` | meat | Air-chilled first, then bone-in, skin-on thighs over breast. | Take the pack with the skin still on. It bastes itself. | — |
++| `judging_meat_at_the_case` | meat | The pack with the newest ‘packaged on’ date in the case. | Check the package is sealed and not leaking juices, then smell it. | — |
++| `butcher_counter_asking` | meat | Ask for beef soup bones, and a whole chuck ground fresh. | Ask what came in today and when it was cut. | — |
++| `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
+ | `pork_cuts_and_enhanced` | meat | Pork whose label carries no added-solution percentage, only pork. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
+ | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
+ | `mercury_by_fish` | seafood | Sardines, salmon and skipjack are small fish that live short lives. | Check the species name on the case tag. Size predicts the mercury. | — |
+@@ -128,16 +127,16 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
+ | `oat_milk` | eggs_dairy | Oat milk with its protein and fortification checked on the carton. | Compare the protein line and read the ingredients for added vitamins and minerals. | — |
+ | `coffee_beans` | bulk_pantry | Coffee beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
+-| `bacon` | meat | Bacon chosen by its curing ingredients, with the qualifier read. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
++| `bacon` | meat | Bacon with the shortest label list: pork, salt and its named curing agents. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
+ | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
+ | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
+-| `chicken_breast` | meat | Plain breast, fresh or frozen, over any with added flavoring solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+-| `ham` | meat | Ham chosen by its label class, read for added water. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+-| `turkey_bacon` | meat | Turkey bacon read by its descriptive name and curing ingredients. | Read the small print under the name for the meat cuts used. | — |
+-| `cured_pork` | meat | Cured pork, guanciale included, judged by its cut and curing ingredients. | Find the asterisk beside “uncured” and read what it points to. | — |
+-| `lamb_goat` | meat | Read lamb and goat for how they were raised, then anything added. | Press goat for firm, fine-grained flesh and white fat. | — |
++| `chicken_breast` | meat | Plain breast, no added solution; bone-in and skin-on before boneless skinless. | Read the front for any added liquid percentage, then check the ingredients. | — |
++| `ham` | meat | Ham named just “Ham” first, then “Ham With Natural Juices.” | Read the product name for “Water Added” or “Ham and Water Product”. | — |
++| `turkey_bacon` | meat | Turkey bacon with the fewest ingredients after the turkey. | Read the small print under the name for the meat cuts used. | — |
++| `cured_pork` | meat | Cured pork, guanciale included, with its cut named and a short curing list. | Find the asterisk beside “uncured” and read what it points to. | — |
++| `lamb_goat` | meat | 100% grass-fed or grass-finished lamb or goat. | Press goat for firm, fine-grained flesh and white fat. | — |
+ | `organ_meats` | meat | Organ meats bought for a cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
+-| `bison` | meat | Bison bought by its inspection mark, then handled like beef. | Find the triangle inspection seal or a state mark on the package. | — |
++| `bison` | meat | 100% grass-fed or grass-finished bison, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
+ | `venison_game` | meat | Venison from a fully refrigerated processor, trimmed of its fat. | Ask whether each animal was handled separately and kept cold throughout. | — |
+ | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
+ | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
+@@ -365,4 +364,3 @@ supported (claim lock). Three narrowed:
+ `washing_produce` finding **WITHDRAWN**: every clause in its do line traces to the entry —
+ "scrub" and "spin" to `short_answer` ("scrub brush ... rinse and a spin") and "the firm ones"
+ to `buying_tips` ("rub firm produce or use a brush"). No change made.
+-
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index 16cf941..155a77f 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -151,9 +151,9 @@
+       ],
+       "category": "beef",
+       "question": "Is grass-fed beef worth it?",
+-      "decision": "100% grass-fed and grass-finished.",
+-      "why": "‘Grass-fed’ allows a grain finish at the end. ‘Grass-finished’ is the whole-food standard.",
+-      "short_answer": "‘Grass-fed’ is a floor, not a standard. Cattle can graze most of their lives, eat feedlot grain for the last months, and still be labeled grass-fed. ‘Grass-finished’ or ‘100% grass-fed’ covers the whole life. That one is worth paying for.",
++      "decision": "100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.",
++      "why": "The whole-food standard is grass after weaning, no grain, and no feedlot.",
++      "short_answer": "On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That one is worth paying for.",
+       "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+@@ -165,12 +165,12 @@
+         "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/",
+         "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf"
+       ],
+-      "kristy_take": "Both words, or it is a feedlot animal wearing a nicer sticker.",
++      "kristy_take": "Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker.",
+       "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
+-      "cart_pick": "Grass-finished ground beef",
++      "cart_pick": "100% grass-fed or grass-finished ground beef",
+       "buying_tips": [
+         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
+-        "Ground and chuck are the cheapest way into a whole-life grass animal.",
++        "Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+         "At the counter, ask what the animal was finished on and for how long."
+       ],
+       "watch_out": [
+@@ -184,18 +184,18 @@
+         "Without grass-finished on the shelf, organic grain-finished is the floor.",
+         "At the counter, ask what it was finished on and whose definition."
+       ],
+-      "science": "‘Grass-fed’ allows a grain finish, so cattle can eat feedlot grain for the last months. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the cheapest way into a whole-life grass animal.",
++      "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+       "labels_decoded": [
+         {
+           "term": "Grass-fed",
+-          "meaning": "Ate grass at some point. May still have been grain-finished before slaughter."
++          "meaning": "The producer’s own word unless a certifier’s seal audits it. FSIS reads it as grass after weaning, no grain."
+         },
+         {
+           "term": "Grain-fed / grain-finished",
+           "meaning": "Finished on grain in a feedlot. The US default."
+         }
+       ],
+-      "tier_note": "Grass-fed alone does not promise a grass finish, so the whole-life words decide.",
++      "tier_note": "On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "eyebrow_short": "Grass-fed beef",
+       "asked_as": [
+         "is grass fed beef worth it",
+@@ -203,71 +203,6 @@
+         "is grass fed actually better"
+       ]
+     },
+-    {
+-      "id": "ground_beef_organ_blend",
+-      "title": "Ground beef with liver and heart blended in",
+-      "aliases": [
+-        "ancestral blend ground beef",
+-        "organ blend ground beef",
+-        "liver blend ground beef",
+-        "ground beef with liver",
+-        "blended ground beef",
+-        "organ meat blend",
+-        "liver blend beef",
+-        "beef with liver",
+-        "ancestral blend"
+-      ],
+-      "category": "beef",
+-      "question": "Is organ blend ground beef worth it?",
+-      "decision": "Organs named with their percentages: buy. ‘Organ blend’ with no numbers: pass.",
+-      "why": "Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list.",
+-      "short_answer": "Under federal rules, ‘ground beef’ is chopped beef only, cheek meat aside. A blend with liver or heart needs its own name and full ingredient list. The test is whether the label gives liver and heart each a share.",
+-      "detail": "9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: Force of Nature’s Ancestral Blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); Seven Sons’ Primal Blend states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown.",
+-      "evidence_tier": "kristys_standard",
+-      "sources": [
+-        "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
+-        "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
+-        "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+-        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
+-        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+-      ],
+-      "kristy_take": "A blend that prints its numbers is honest ground beef. One that will not is a mystery bag.",
+-      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.",
+-      "cart_pick": "Liver and heart beef blend, shares stated",
+-      "buying_tips": [
+-        "Look for liver and heart named in the ingredient list, each with a percentage.",
+-        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+-        "How it was raised: see Beef."
+-      ],
+-      "watch_out": [
+-        "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
+-        "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
+-        "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
+-      ],
+-      "pick_steps": [
+-        "Find liver and heart in the ingredient list, each with its own percentage.",
+-        "‘Organ blend’ or ‘ancestral’ with no shares anywhere on the pack is a pass."
+-      ],
+-      "science": "Under federal rules, ‘ground beef’ is chopped beef only. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart.",
+-      "labels_decoded": [
+-        {
+-          "term": "Ground beef",
+-          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
+-        },
+-        {
+-          "term": "Ancestral blend / primal blend",
+-          "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
+-        }
+-      ],
+-      "tier_note": "The name rule is on record, and reading the ingredient list for each percentage is the ask.",
+-      "eyebrow_short": "Organ blend beef",
+-      "asked_as": [
+-        "is organ blend ground beef worth it",
+-        "what is ancestral blend beef",
+-        "does the liver taste come through in blended ground beef",
+-        "should i buy ground beef with liver in it"
+-      ]
+-    },
+     {
+       "id": "rotisserie_chicken",
+       "title": "Rotisserie chicken from the hot case",
+@@ -288,7 +223,7 @@
+       "decision": "Chicken and salt on the label: buy. Phosphate and starch: pass.",
+       "why": "Every ingredient must be listed in descending order; a solution names its percent and contents.",
+       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
+-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (Whole Foods Market’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
++      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
+@@ -448,7 +383,8 @@
+         "is prime beef worth it",
+         "do beef grades matter",
+         "what does usda choice mean"
+-      ]
++      ],
++      "instead": "Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name."
+     },
+     {
+       "id": "ground_beef_lean_ratio",
+@@ -459,49 +395,89 @@
+         "80/20",
+         "85/15",
+         "90/10",
+-        "hamburger"
++        "hamburger",
++        "ancestral blend ground beef",
++        "organ blend ground beef",
++        "liver blend ground beef",
++        "ground beef with liver",
++        "blended ground beef",
++        "organ meat blend",
++        "liver blend beef",
++        "beef with liver",
++        "ancestral blend"
+       ],
+       "category": "beef",
+       "question": "What ground beef lean ratio should I get?",
+-      "decision": "Beef with seasoning at most, and nothing else in the ingredients.",
+-      "why": "The name ‘ground beef’ allows no added water, phosphates, binders or extenders.",
+-      "short_answer": "‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner.",
+-      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most.",
++      "decision": "Organ blend with each organ’s percentage first, then ground beef with nothing added.",
++      "why": "Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name.",
++      "short_answer": "Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.",
++      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
+       "evidence_tier": "established",
+       "sources": [
+         "USDA FSIS ground-beef labeling rules",
+-        "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15"
++        "9 CFR § 319.15 “Ground beef; hamburger” (Cornell LII) https://www.law.cornell.edu/cfr/text/9/319.15",
++        "9 CFR § 319.15 Miscellaneous beef products (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/319.15",
++        "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
++        "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
++        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
++        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+       ],
+-      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat.",
+-      "cart_pick": "Ground beef, grass-fed and grass-finished",
++      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat. A blend that prints its numbers is an honest pack. One that will not is a mystery bag.",
++      "cart_pick": "Liver and heart beef blend, shares stated",
+       "buying_tips": [
+         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
+         "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
+-        "‘Ground chuck/round/sirloin’ tells you the cut it came from."
++        "‘Ground chuck/round/sirloin’ tells you the cut it came from.",
++        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name."
+       ],
+       "labels_decoded": [
+         {
+           "term": "80/20, 85/15, 90/10",
+-          "meaning": "Lean % to fat % by weight — higher first number = leaner."
++          "meaning": "Lean % to fat % by weight; higher first number = leaner."
++        },
++        {
++          "term": "Organ blend",
++          "meaning": "Beef with liver, heart, or other organs mixed in, sold under its own descriptive name, not as ‘ground beef’."
++        },
++        {
++          "term": "Hamburger",
++          "meaning": "Chopped beef that may have beef fat added; ‘ground beef’ may not."
++        },
++        {
++          "term": "Ground beef",
++          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
++        },
++        {
++          "term": "Ancestral blend / primal blend",
++          "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
+         }
+       ],
+-      "tier_note": "The no-added-water rule for the name ‘ground beef’ is written in federal regulation.",
++      "tier_note": "Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.",
+       "asked_as": [
+         "what ground beef should i buy",
+         "which ground beef for burgers",
+         "is 80/20 or 90/10 better",
+         "what is the difference between ground beef and hamburger",
+-        "what does the ground beef label mean"
++        "what does the ground beef label mean",
++        "is organ blend ground beef worth it",
++        "what is ancestral blend beef",
++        "does the liver taste come through in blended ground beef",
++        "should i buy ground beef with liver in it"
+       ],
+       "watch_out": [
+         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+-        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most."
++        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.",
++        "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Check the liver percent and keep servings ordinary.",
++        "Two shares producers print are 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares, both label examples say the blend tastes like regular ground beef. A pack with no shares gives no such reading.",
++        "‘Organ blend’ or ‘ancestral’ on the front with no shares anywhere on the pack is a pass, not a bargain."
+       ],
+       "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
+       "pick_steps": [
+-        "Ingredients should be beef with seasoning at most: no water or phosphates.",
+-        "How it was raised: see Beef."
+-      ]
++        "How it was raised: see Beef.",
++        "Organ blend: each organ named, each with its own percentage.",
++        "Next: plain ground beef; skip “hamburger,” which allows added beef fat."
++      ],
++      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan."
+     },
+     {
+       "id": "egg_labels",
+@@ -582,14 +558,16 @@
+         "keep eggs",
+         "store eggs",
+         "eggs in the fridge",
+-        "eggs need to be refrigerated"
++        "eggs need to be refrigerated",
++        "Pasture-raised organic corn- and soy-free eggs",
++        "organic corn- and soy-free eggs"
+       ],
+       "category": "poultry_eggs",
+       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
+-      "decision": "Corn- and soy-free first, then organic, then pasture-raised.",
+-      "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
+-      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
+-      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
++      "decision": "Pasture-raised, organic, and corn- and soy-free, all three together.",
++      "why": "Hens eat what they are given; the carton words show that feed and that life.",
++      "short_answer": "Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.",
++      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "USDA egg labeling guidance",
+@@ -613,14 +591,14 @@
+         "FDA Egg Safety Final Rule",
+         "EU marketing standards for eggs (unwashed, ambient storage)"
+       ],
+-      "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
+-      "cart_pick": "Soy-free pasture-raised eggs",
++      "kristy_take": "Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.",
++      "cart_pick": "Pasture-raised organic corn- and soy-free eggs",
+       "buying_tips": [
+         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
+         "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
+         "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
+         "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
+-        "Plain conventional eggs are still one of the cheapest complete proteins in the store.",
++        "Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+         "Shell color is the breed. White and brown are the same egg inside.",
+         "Speckles and small rough patches are normal shell variation.",
+         "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
+@@ -634,29 +612,29 @@
+       ],
+       "watch_out": [
+         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
++        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
+-        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
++        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
+         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
+         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
++        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
+         "The yolk photo on the carton is artwork, not a sample.",
+         "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
++        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+         "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
+         "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
+         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
+-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+-        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
+-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+         "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
+         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
+         "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant.",
+         "US rules require washing and sanitizing, then holding at 45F or below from the plant onward."
+       ],
+       "pick_steps": [
+-        "Look for ‘soy-free’ and ‘corn-free’, mostly on regional cartons and farm stands.",
+-        "In the supermarket, organic is the rung you can reliably buy.",
+-        "For space, pasture-raised with Certified Humane or Animal Welfare Approved is strongest."
++        "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.",
++        "“Organic” means certified organic feed and outdoor access.",
++        "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."
+       ],
+-      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the cheapest complete proteins in the store.",
++      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+       "labels_decoded": [
+         {
+           "term": "Cage-free",
+@@ -733,9 +711,13 @@
+         {
+           "term": "Blue or green shell",
+           "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
++        },
++        {
++          "term": "Corn- and soy-free",
++          "meaning": "The feed contains neither corn nor soy; both words must be printed."
+         }
+       ],
+-      "tier_note": "What the hen ate ranks above how she was housed, so the feed words lead the carton.",
++      "tier_note": "Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.",
+       "eyebrow_short": "Egg labels",
+       "asked_as": [
+         "what eggs should i buy",
+@@ -757,7 +739,8 @@
+         "do eggs need to be refrigerated",
+         "where should i keep eggs",
+         "why are us eggs in the fridge"
+-      ]
++      ],
++      "instead": "Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed."
+     },
+     {
+       "id": "organic_worth_it_by_type",
+@@ -1167,8 +1150,8 @@
+       ],
+       "category": "dairy",
+       "question": "Is grass-fed butter worth it?",
+-      "decision": "Grass-fed butter first, then any real butter: cream, and salt if salted.",
+-      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it.",
++      "decision": "Deepest yellow butter: cream, and salt if salted.",
++      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it, omega-3 included.",
+       "short_answer": "Cows on grass eat carotene, and it goes straight into the fat. So grass-fed butter runs deep yellow toward orange. Winter butter from the same dairy runs pale. The fat itself shifts modestly too.",
+       "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter and to cost less. Within real butter, the grass difference is a feed difference showing up three ways at once: in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage. The fatty-acid profile shifts modestly too.",
+       "evidence_tier": "kristys_standard",
+@@ -1178,7 +1161,7 @@
+         "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
+       ],
+       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
+-      "cart_pick": "Grass-fed butter",
++      "cart_pick": "Deep yellow butter",
+       "buying_tips": [
+         "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
+         "European-style butters are higher in fat, a separate axis from what the cows ate.",
+@@ -1190,7 +1173,7 @@
+           "meaning": "Higher butterfat (≈82%+) — richer, not necessarily grass-fed."
+         }
+       ],
+-      "tier_note": "Grass-fed butter runs deeper yellow and carries more omega-3, and ranking it first is the standard.",
++      "tier_note": "Color is the reading: carotene from grass turns the fat deep yellow.",
+       "watch_out": [
+         "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
+         "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
+@@ -1198,9 +1181,8 @@
+         "The softness is mechanical. Cream from cows on grass carries more unsaturated fat, which melts lower. So the bar gives at room temperature, where a grain-fed one stays firm."
+       ],
+       "pick_steps": [
+-        "Pick the deepest yellow block; pale can mean a winter churn.",
+-        "Read the list: a tub spread is oils and emulsifiers, not butter.",
+-        "Salted or unsalted is a cooking choice; unsalted gives control."
++        "Skip tubs and spreads; butter comes as a block or a stick.",
++        "How it was raised: see Milk."
+       ],
+       "science": "Cows on grass eat carotene, and it goes straight into the fat, so grass-fed butter runs deep yellow toward orange. The same dairy churns paler in winter. Grass-fed cream carries more unsaturated fat, which melts lower, so the bar gives at room temperature. European-style butter is higher in fat, a separate axis from the feed. ‘Spreadable butter’ is butter cut with canola or olive oil.",
+       "asked_as": [
+@@ -1242,13 +1224,18 @@
+         "non homogenized",
+         "cream top milk",
+         "why does organic milk last so long",
+-        "milk processing"
++        "milk processing",
++        "milk carton",
++        "milk cartons",
++        "gallon of milk",
++        "carton of milk",
++        "Low-temp pasteurized grass-fed whole milk"
+       ],
+       "category": "dairy",
+       "question": "Should I buy whole or low-fat milk?",
+-      "decision": "Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.",
+-      "why": "Skim is whole milk with the fat taken out. Fewer steps is the standard here.",
+-      "short_answer": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part.",
++      "decision": "Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.",
++      "why": "Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.",
++      "short_answer": "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.",
+       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+@@ -1264,7 +1251,7 @@
+         "CDC “Raw Milk” https://www.cdc.gov/food-safety/foods/raw-milk.html"
+       ],
+       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
+-      "cart_pick": "Whole milk",
++      "cart_pick": "Low-temp pasteurized grass-fed whole milk",
+       "buying_tips": [
+         "Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
+         "Grass-fed and pasture milk is a further layer, and a separate question from the fat.",
+@@ -1281,6 +1268,7 @@
+       "watch_out": [
+         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
+         "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
++        "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.",
+         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water.",
+         "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
+         "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
+@@ -1291,9 +1279,9 @@
+         "Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
+       ],
+       "pick_steps": [
+-        "Check the date: months out means ultra-pasteurized; cream-top means fewer steps.",
+-        "Read the milkfat: whole is 3.25%, reduced-fat 2%, low-fat 1%, skim under half.",
+-        "On flavored jugs, read the added-sugar line before the fat one."
++        "Raw means unpasteurized: milk that skipped the heat step.",
++        "Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.",
++        "100% grass-fed on milk means the cows ate grass and hay, never grain."
+       ],
+       "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
+       "labels_decoded": [
+@@ -1320,9 +1308,17 @@
+         {
+           "term": "Cream-top / non-homogenized",
+           "meaning": "Cream separates and rises. Still pasteurized."
++        },
++        {
++          "term": "Vat pasteurized",
++          "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."
++        },
++        {
++          "term": "Ultra-pasteurized",
++          "meaning": "Heated to about 280°F for about 2 seconds."
+         }
+       ],
+-      "tier_note": "Least handling ranks first, so raw from a trusted farmer leads and low-temp organic follows.",
++      "tier_note": "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.",
+       "eyebrow_short": "Whole vs. reduced",
+       "asked_as": [
+         "whole milk or skim",
+@@ -1334,7 +1330,8 @@
+         "what is ultra pasteurized milk",
+         "what does homogenized mean",
+         "difference between pasteurized and ultra pasteurized"
+-      ]
++      ],
++      "instead": "Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season."
+     },
+     {
+       "id": "cheese_real_vs_processed",
+@@ -1431,14 +1428,15 @@
+         "live yogurt",
+         "yogurt alive",
+         "is my yogurt alive",
+-        "whole milk yogurt"
++        "whole milk yogurt",
++        "Plain Greek yogurt, 100% grass-fed"
+       ],
+       "category": "dairy",
+       "question": "What should I look for in yogurt?",
+-      "decision": "Flavored yogurt carries added sugar; plain is milk and cultures.",
+-      "why": "Flavored cups carry dessert-level added sugar. Plain is the same yogurt without it.",
+-      "short_answer": "Buy plain and sweeten it yourself. The big plain tub is cheaper per ounce than the single-serve cups besides, and it is the same yogurt underneath. Add your own fruit or a little honey if you want it sweet.",
+-      "detail": "Plain yogurt, especially Greek or strained, is a clean high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
++      "decision": "Plain Greek yogurt made from 100% grass-fed milk.",
++      "why": "Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.",
++      "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
++      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "USDA FoodData Central",
+@@ -1448,13 +1446,13 @@
+         "National Yogurt Association ‘Live & Active Cultures’ seal criteria"
+       ],
+       "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
+-      "cart_pick": "Plain whole-milk Greek yogurt",
++      "cart_pick": "Plain Greek yogurt, 100% grass-fed",
+       "buying_tips": [
+         "Plain over flavored. Sweeten it yourself with fruit.",
+         "Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.",
+-        "Greek/strained is higher protein; whole-milk versions are more filling.",
++        "Greek or strained yogurt is thicker; whole-milk versions are more filling.",
+         "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
+-        "Greek and skyr are strained: thicker, more protein per spoon.",
++        "Greek and skyr are strained: thicker, with less whey.",
+         "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
+         "Whole-milk versions are more filling and less tinkered with than fat-free."
+       ],
+@@ -1473,14 +1471,22 @@
+         },
+         {
+           "term": "Greek / skyr",
+-          "meaning": "Strained. Thicker, higher protein per serving."
++          "meaning": "Strained. Thicker, with less whey."
+         },
+         {
+           "term": "Kefir",
+           "meaning": "A drinkable ferment with a wider mix of cultures."
++        },
++        {
++          "term": "Greek",
++          "meaning": "Yogurt strained to remove whey, which leaves it thicker."
++        },
++        {
++          "term": "Plain",
++          "meaning": "No added sugar or flavoring."
+         }
+       ],
+-      "tier_note": "The added-sugar difference is printed on the panel, and buying plain to sweeten at home is the standard.",
++      "tier_note": "Plain means no added sugar, so sweeten it at home with fruit or honey.",
+       "watch_out": [
+         "Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two.",
+         "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
+@@ -1491,9 +1497,9 @@
+         "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
+       ],
+       "pick_steps": [
+-        "Take plain and sweeten it yourself with fruit.",
+-        "Compare the added-sugars line on plain against the fruit cup.",
+-        "Greek or strained is higher protein; whole-milk versions are more filling."
++        "Greek means strained, so the yogurt is thicker and holds less whey.",
++        "100% grass-fed on the tub means the cows ate grass and hay, never grain.",
++        "Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is."
+       ],
+       "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup.",
+       "asked_as": [
+@@ -1503,7 +1509,8 @@
+         "is my yogurt still alive",
+         "what does live and active cultures mean",
+         "what is skyr"
+-      ]
++      ],
++      "instead": "Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there."
+     },
+     {
+       "id": "raw_milk",
+@@ -1534,7 +1541,7 @@
+         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
+       ],
+       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
+-      "instead": "Raw aged cheese from a named dairy. Sixty days of aging puts it in every state, already in the case.",
++      "instead": "Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.",
+       "buying_tips": [
+         "A farm that publishes its herd test results. The good ones are proud of them.",
+         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
+@@ -1557,7 +1564,7 @@
+           "meaning": "Gently heated. Closer to raw than the commodity gallon, and widely sold."
+         }
+       ],
+-      "tier_note": "Drinking milk from a known herd is old practice with thin modern study behind it, and the standard is about the farm, not a health claim.",
++      "tier_note": "Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.",
+       "watch_out": [
+         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
+         "No named farm, no test results, no cold chain? That is not raw milk worth buying. That is just unpasteurized.",
+@@ -2531,7 +2538,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do I tell good meat from the case?",
+-      "decision": "Color comes from oxygen and packaging, not from how fresh it is.",
++      "decision": "The pack with the newest ‘packaged on’ date in the case.",
+       "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
+       "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, no off smell or slime.",
+       "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
+@@ -2574,17 +2581,19 @@
+           "meaning": "No artificial ingredients and minimal processing. All fresh meat qualifies."
+         }
+       ],
+-      "tier_note": "Color coming from oxygen is settled chemistry, which is why a sealed package and a smell test read more than the shade.",
++      "tier_note": "Fresh tray-wrapped meat keeps up to three days refrigerated after packaging, so that date sets the clock.",
+       "watch_out": [
+-        "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
+         "A ‘packaged on’ date is not a safety cutoff. Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven.",
+         "Sell-by and use-by dates are set voluntarily by the packer or store. Federal law does not require them, and they are not a safety indicator.",
+         "Store names for one cut vary by region, so read the primal cut instead.",
+-        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef."
++        "Ungraded beef is inspected, but its quality may be higher or lower than graded beef.",
++        "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
++        "Color comes from oxygen and packaging, not from how fresh it is.",
++        "Pass on slime or any off smell; color alone is not the test."
+       ],
+       "pick_steps": [
+-        "Take a sealed, leak-free package from the back, where the case is coldest.",
+-        "Pass on slime or any off smell; color alone is not the test."
++        "‘Packaged on’: the packing day, not a safety cutoff.",
++        "Take a sealed, leak-free package from the back, where the case is coldest."
+       ],
+       "science": "Beef pigment turns bright red within minutes of oxygen and browns over days. That is surface chemistry, not spoilage. Vacuum-packed beef looks purple, and brown edges mean older, not unsafe. A ‘packaged on’ date is not a safety cutoff. Tray-wrapped meat generally holds up to three days refrigerated, and a sealed vacuum pack up to seven. Sell-by dates are voluntary and not a safety indicator.",
+       "eyebrow_short": "Judging meat",
+@@ -2595,7 +2604,8 @@
+         "which meat should i buy",
+         "what meat should i buy for dinner",
+         "how do i choose a cut of meat"
+-      ]
++      ],
++      "instead": "A well-sealed vacuum pack, which keeps up to seven days refrigerated from purchase."
+     },
+     {
+       "id": "butcher_counter_asking",
+@@ -2610,7 +2620,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "What should I ask at the butcher counter?",
+-      "decision": "Ask the butcher how it was raised and when it was cut.",
++      "decision": "Ask for beef soup bones, and a whole chuck ground fresh.",
+       "why": "A staffed counter answers what a package never will, such as when the meat was cut.",
+       "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
+       "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
+@@ -2622,7 +2632,7 @@
+         "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
+       ],
+       "kristy_take": "Ask what came in today, how it was raised and what was added.",
+-      "cart_pick": "Grass-finished beef soup bones",
++      "cart_pick": "Beef soup bones from the butcher counter",
+       "buying_tips": [
+         "Ask what came in today.",
+         "Ask for a whole chuck ground fresh, which lets you choose the cut.",
+@@ -2631,7 +2641,7 @@
+         "Ask them to portion it. Cutting, tying and boning are usually included."
+       ],
+       "labels_decoded": [],
+-      "tier_note": "Asking how it was raised and when it was cut is a shopping habit, not a meat claim.",
++      "tier_note": "Soup bones come from the counter, and a whole chuck ground fresh lets the shopper choose the cut.",
+       "watch_out": [
+         "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask which one it is.",
+         "Silverskin is connective tissue. Ask to have it removed from a tenderloin or ribs.",
+@@ -2639,7 +2649,7 @@
+         "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+       ],
+       "pick_steps": [
+-        "Ask for a whole chuck ground fresh, which lets you choose the cut.",
++        "Soup bones: ask for marrow or knuckle bones.",
+         "How it was raised: see Beef.",
+         "Ask them to portion it; cutting, tying and boning are usually included."
+       ],
+@@ -2649,7 +2659,8 @@
+         "what do i say at the meat counter",
+         "can the butcher cut it for me",
+         "what should i ask at the meat counter"
+-      ]
++      ],
++      "instead": "A whole chuck roast, cut, tied or boned to order at the counter."
+     },
+     {
+       "id": "chicken_cuts_basics",
+@@ -2682,9 +2693,9 @@
+       ],
+       "category": "poultry",
+       "question": "Which cut of chicken should I buy?",
+-      "decision": "Air-chilled first, then bone-in, skin-on thighs over breast.",
+-      "why": "Dark meat is forgiving and hard to overcook. Boneless skinless is the priciest form of it.",
+-      "short_answer": "Whole bird: cheapest per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
++      "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
++      "why": "Dark meat is forgiving and hard to overcook. Boneless skinless costs the most for the same bird.",
++      "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
+       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+@@ -2697,13 +2708,13 @@
+         "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
+         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
+       ],
+-      "kristy_take": "Bone-in thighs are the most forgiving protein in the store. A whole bird is the cheapest, and the frame makes stock.",
++      "kristy_take": "Bone-in thighs are the most forgiving cut in the case. A whole bird costs least per pound, and the frame makes stock.",
+       "cart_pick": "Air-chilled whole chicken or bone-in thighs",
+       "buying_tips": [
+-        "Whole bird: cheapest per pound, and the carcass makes stock.",
+-        "Thighs, bone-in and skin-on: forgiving, cheap, hard to overcook.",
++        "Whole bird: lowest cost per pound, and the carcass makes stock.",
++        "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
+         "Breast: fast and lean. Pull it the moment it is done.",
+-        "Boneless skinless is the priciest form of the same bird.",
++        "Boneless skinless costs the most for the same bird.",
+         "‘Air-chilled’ is printed on the package when it applies.",
+         "Skin that starts dry is the skin that crisps.",
+         "‘USDA Process Verified’ or a third-party seal backs a ‘raised without antibiotics’ claim.",
+@@ -2721,18 +2732,18 @@
+         },
+         {
+           "term": "Contains up to X% retained water",
+-          "meaning": "Water absorbed during water-chilling — you’re paying for it by weight."
++          "meaning": "Water absorbed during water-chilling; you’re paying for it by weight."
+         },
+         {
+           "term": "Raised without antibiotics",
+-          "meaning": "No antibiotics used in raising — meaningful, best when third-party verified."
++          "meaning": "No antibiotics used in raising: meaningful, best when third-party verified."
+         },
+         {
+           "term": "No antibiotic residues",
+-          "meaning": "True of all chicken by law — not a differentiator."
++          "meaning": "True of all chicken by law; not a differentiator."
+         }
+       ],
+-      "tier_note": "Water-chilled packages can hold retained water, and thighs carry more fat than breast.",
++      "tier_note": "A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
+       "asked_as": [
+         "which chicken cut should i buy",
+         "thighs or breasts",
+@@ -2746,10 +2757,10 @@
+         "should i pay for no antibiotics"
+       ],
+       "watch_out": [
+-        "Boneless skinless is the priciest form of the same bird.",
++        "Boneless skinless costs the most for the same bird.",
+         "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
+         "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional.",
+-        "Where air-chilled is not stocked, a regular bird is still a clean cheap protein. Pat it dry before it goes in the pan.",
++        "Where air-chilled is not stocked, a regular bird still does the job. Pat it dry before it goes in the pan.",
+         "Safe handling matters far more than the chilling method.",
+         "‘Raised without antibiotics’ rests on the producer’s own affidavit to USDA. The agency does not inspect the farm, so oversight is weak. A third-party seal is what makes it checkable.",
+         "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
+@@ -2758,10 +2769,11 @@
+       ],
+       "pick_steps": [
+         "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
+-        "A whole bird is cheapest per pound, and the frame makes stock.",
++        "A whole bird costs least per pound, and the frame makes stock.",
+         "Look for ‘air-chilled’ printed on the package; it appears when it applies."
+       ],
+-      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes."
++      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes.",
++      "instead": "A regular whole bird or bone-in thighs, patted dry before the pan."
+     },
+     {
+       "id": "pork_cuts_and_enhanced",
+@@ -2822,7 +2834,8 @@
+       "pick_steps": [
+         "Find the ‘% added solution’ figure and the solution’s listed ingredients.",
+         "How it was raised: see What “pasture-raised” does and does not tell you."
+-      ]
++      ],
++      "instead": "Pork with the lowest stated solution percentage on the shelf."
+     },
+     {
+       "id": "deli_meat_uncured",
+@@ -2890,7 +2903,8 @@
+         "Read the ingredients list; every curing substance has to be named there.",
+         "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
+       ],
+-      "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’."
++      "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’.",
++      "instead": "Whole roasted meat sliced thin does the same sandwich job with nothing added."
+     },
+     {
+       "id": "mercury_by_fish",
+@@ -5677,25 +5691,6 @@
+         "do nectarines ripen on the counter"
+       ]
+     },
+-    {
+-      "id": "pick_milk",
+-      "kind": "pick",
+-      "title": "Milk",
+-      "category": "dairy",
+-      "aliases": [
+-        "milk carton",
+-        "milk cartons",
+-        "gallon of milk",
+-        "carton of milk"
+-      ],
+-      "decision": "Find the word pasteurized on the label; without it the carton may hold raw milk.",
+-      "sources": [
+-        {
+-          "name": "FDA: The Dangers of Raw Milk",
+-          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/dangers-raw-milk-unpasteurized-milk-can-pose-serious-health-risk"
+-        }
+-      ]
+-    },
+     {
+       "id": "pick_canned_tomatoes",
+       "kind": "pick",
+@@ -6045,7 +6040,7 @@
+         "bratwurst",
+         "bratwursts"
+       ],
+-      "decision": "Sausage is a seasoned grind; the ingredient list must name any curing agents beyond the meat.",
++      "decision": "Sausage is seasoned ground meat; its ingredient list names every curing agent used.",
+       "sources": [
+         {
+           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
+@@ -6339,7 +6334,7 @@
+       "category": "poultry",
+       "question": "What should you check on a whole turkey label?",
+       "decision": "Whole turkey without an injected basting solution.",
+-      "why": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
++      "why": "An added basting solution is a separate formulation. A plain bird is turkey with nothing added.",
+       "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
+       "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
+       "evidence_tier": "kristys_standard",
+@@ -6347,7 +6342,7 @@
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
+       ],
+-      "kristy_take": "An added basting solution is a separate formulation. Plain whole turkey is the whole-food standard.",
++      "kristy_take": "An added basting solution is a separate formulation. Fresh or frozen, the plain bird is the pick.",
+       "cart_pick": "Whole turkey without added solution",
+       "buying_tips": [
+         "Read the solution ingredients beside the product name.",
+@@ -6374,13 +6369,14 @@
+           "meaning": "A regulated temperature-history description, separate from formulation."
+         }
+       ],
+-      "tier_note": "Basting and added-solution statements describe documented processing; choosing a plain bird is the whole-food standard.",
++      "tier_note": "A basted or self-basted bird was injected or marinated with a solution the label must name.",
+       "asked_as": [
+         "how do you choose a whole turkey",
+         "what does self basted mean on whole turkey",
+         "does this whole turkey have added brine",
+         "which turkey should i buy"
+-      ]
++      ],
++      "instead": "A frozen whole turkey with no added-solution statement; frozen describes temperature history, not formulation."
+     },
+     {
+       "id": "ground_turkey",
+@@ -6393,7 +6389,7 @@
+       "category": "poultry",
+       "question": "What should you check before buying ground turkey?",
+       "decision": "Plain ground turkey with its ingredients and fat content stated.",
+-      "why": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
++      "why": "Grinding does not specify the fat content. A plain pack is turkey with no seasoning or solution added.",
+       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
+       "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
+       "evidence_tier": "kristys_standard",
+@@ -6401,7 +6397,7 @@
+         "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
+       ],
+-      "kristy_take": "Grinding does not specify the fat content. A plain formulation is the whole-food standard.",
++      "kristy_take": "Grinding does not specify the fat content. So read the fat line, and take the pack with nothing added.",
+       "cart_pick": "Plain ground turkey",
+       "buying_tips": [
+         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
+@@ -6421,12 +6417,13 @@
+           "meaning": "A composition claim that must appear with a percent-fat statement."
+         }
+       ],
+-      "tier_note": "The ingredient and percent-fat statements are documented label information; selecting plain ground turkey is the whole-food standard.",
++      "tier_note": "Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
+       "asked_as": [
+         "how do you choose ground turkey",
+         "what does percent lean mean on ground turkey",
+         "does ground turkey have added ingredients"
+-      ]
++      ],
++      "instead": "Plain ground turkey with no lean claim; compare packs by the Nutrition Facts fat line."
+     },
+     {
+       "id": "breakfast_cereal",
+@@ -6644,7 +6641,7 @@
+       ],
+       "category": "deli",
+       "question": "What should you check when choosing bacon?",
+-      "decision": "Bacon chosen by its curing ingredients, with the qualifier read.",
++      "decision": "Bacon with the shortest label list: pork, salt and its named curing agents.",
+       "why": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
+       "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
+       "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
+@@ -6654,7 +6651,7 @@
+         "https://www.law.cornell.edu/cfr/text/9/317.17"
+       ],
+       "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
+-      "cart_pick": "Bacon with disclosed curing ingredients",
++      "cart_pick": "Bacon with the shortest label list",
+       "buying_tips": [
+         "Read any exception naming naturally occurring nitrates in celery powder.",
+         "Compare the disclosed curing ingredients across available bacon packs.",
+@@ -6680,12 +6677,13 @@
+           "meaning": "The fine print may except nitrates naturally occurring in celery powder."
+         }
+       ],
+-      "tier_note": "The asterisk and curing ingredients are documented label facts; choosing by them is the whole-food standard.",
++      "tier_note": "Each curing agent on bacon has to be listed, so the shortest list is easy to find.",
+       "asked_as": [
+         "how do you choose bacon",
+         "is uncured bacon nitrate free",
+         "what does the asterisk on bacon mean"
+-      ]
++      ],
++      "instead": "Bacon that adds sugar and wood smoke to the pork and salt."
+     },
+     {
+       "id": "hot_dogs",
+@@ -6734,12 +6732,13 @@
+           "meaning": "Required wording for the byproduct-containing sausage formulation defined in the standard."
+         }
+       ],
+-      "tier_note": "The meat ingredients and byproducts wording disclose regulated processing distinctions; choosing named meat is the whole-food standard.",
++      "tier_note": "Mechanically separated poultry is a paste-like product of tissue taken off bones, and the list must name it.",
+       "asked_as": [
+         "how do you choose hot dogs",
+         "what does mechanically separated mean on hot dogs",
+         "what does with byproducts mean on frankfurters"
+-      ]
++      ],
++      "instead": "Fresh sausage from the butcher counter, its meat named and nothing mechanically separated."
+     },
+     {
+       "id": "canned_tuna",
+@@ -6806,8 +6805,8 @@
+       ],
+       "category": "poultry",
+       "question": "What should you check when buying chicken breast?",
+-      "decision": "Plain breast, fresh or frozen, over any with added flavoring solution.",
+-      "why": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
++      "decision": "Plain breast, no added solution; bone-in and skin-on before boneless skinless.",
++      "why": "Added flavoring solution changes the formulation. A plain breast carries nothing but the chicken.",
+       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
+       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
+       "evidence_tier": "kristys_standard",
+@@ -6815,12 +6814,13 @@
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
+         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
+       ],
+-      "kristy_take": "Added flavoring solution changes the formulation. Plain chicken breast is the whole-food standard.",
++      "kristy_take": "Added flavoring solution changes the formulation. The product name has to admit it, so the plain pack is easy to find.",
+       "cart_pick": "Plain chicken breast without added solution",
+       "buying_tips": [
+         "Read the full product name for the solution percentage and ingredients.",
+         "Fresh or frozen breast can be checked for the same solution disclosure.",
+-        "Read retained-water wording separately from the added flavoring ingredients."
++        "Read retained-water wording separately from the added flavoring ingredients.",
++        "Bone-in and skin-on cook better than boneless skinless, which dries fast."
+       ],
+       "watch_out": [
+         "“Natural” does not exclude a flavoring solution.",
+@@ -6830,7 +6830,7 @@
+       "pick_steps": [
+         "Read the full product name for a solution percentage and its ingredients.",
+         "Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.",
+-        "Choose fresh or frozen plain breast without an added flavoring solution."
++        "Take bone-in, skin-on breast; boneless skinless dries fast in the pan."
+       ],
+       "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
+       "labels_decoded": [
+@@ -6848,7 +6848,8 @@
+         "how do you choose chicken breast",
+         "does natural chicken breast have added water",
+         "what does solution added mean on chicken breast"
+-      ]
++      ],
++      "instead": "Chicken thighs: more fat, more flavor, and hard to overcook."
+     },
+     {
+       "id": "produce_mushrooms",
+@@ -7072,7 +7073,8 @@
+         "are duck eggs safe to eat",
+         "what is different about duck eggs",
+         "how big are quail eggs"
+-      ]
++      ],
++      "instead": "Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells."
+     },
+     {
+       "id": "pick_winter_squash",
+@@ -7185,7 +7187,7 @@
+       ],
+       "category": "deli",
+       "question": "Which ham should you buy?",
+-      "decision": "Ham chosen by its label class, read for added water.",
++      "decision": "Ham named just “Ham” first, then “Ham With Natural Juices.”",
+       "why": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
+       "short_answer": "A ham labeled plain “Ham” must meet the highest protein level. “Water Added” and “Ham and Water Product” mean more added solution. Water appears in the ingredients either way.",
+       "detail": "US labeling ties ham names to protein. “Ham” needs at least 20.5% protein in the lean portion. “Ham With Natural Juices” needs at least 18.5%. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” must state the percent of weight that is added ingredients. Fresh ham is the uncured leg of pork and is labeled “fresh” or “uncured”.",
+@@ -7195,7 +7197,7 @@
+         "https://www.canr.msu.edu/news/ham_for_the_holidays_and_all_year_long"
+       ],
+       "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
+-      "cart_pick": "Ham with natural juices",
++      "cart_pick": "Ham named just “Ham”",
+       "buying_tips": [
+         "Read the product name for “Water Added” or a percent of added ingredients.",
+         "Check whether the label says fully cooked or cook before eating.",
+@@ -7224,12 +7226,13 @@
+           "meaning": "Uncured leg of pork, prepared without nitrate or nitrite."
+         }
+       ],
+-      "tier_note": "The water-added classes are USDA labeling definitions; choosing the least added water is the whole-food standard.",
++      "tier_note": "The product name tells how much water went in, and just “Ham” means the least.",
+       "asked_as": [
+         "which ham should i buy",
+         "what does water added mean on ham",
+         "is spiral ham fully cooked"
+-      ]
++      ],
++      "instead": "Fresh ham: the leg of pork itself, which needs cooking before eating."
+     },
+     {
+       "id": "turkey_bacon",
+@@ -7242,7 +7245,7 @@
+       ],
+       "category": "deli",
+       "question": "What does the turkey bacon label tell you?",
+-      "decision": "Turkey bacon read by its descriptive name and curing ingredients.",
++      "decision": "Turkey bacon with the fewest ingredients after the turkey.",
+       "why": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
+       "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
+       "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. A product made without nitrate or nitrite carries “Uncured” and “No Nitrate or Nitrite Added” beside its name.",
+@@ -7253,7 +7256,7 @@
+         "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really"
+       ],
+       "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
+-      "cart_pick": "Turkey bacon with listed curing ingredients",
++      "cart_pick": "Turkey bacon with the fewest ingredients",
+       "buying_tips": [
+         "Read the descriptive name beside “turkey bacon” for the meat used.",
+         "Read each curing ingredient in the ingredients statement.",
+@@ -7278,12 +7281,13 @@
+           "meaning": "Made without added nitrate or nitrite, stated beside the product name."
+         }
+       ],
+-      "tier_note": "The descriptive name and curing list are USDA labeling requirements, so reading them is the whole-food standard.",
++      "tier_note": "Turkey bacon is turkey meat pressed into bacon form, so fewer additions keep it closer to the meat.",
+       "asked_as": [
+         "is turkey bacon cured",
+         "what is turkey bacon made of",
+         "how do you choose turkey bacon"
+-      ]
++      ],
++      "instead": "Pork bacon, the belly cut that “bacon” alone names on a US label."
+     },
+     {
+       "id": "cured_pork",
+@@ -7303,7 +7307,7 @@
+       ],
+       "category": "deli",
+       "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
+-      "decision": "Cured pork, guanciale included, judged by its cut and curing ingredients.",
++      "decision": "Cured pork, guanciale included, with its cut named and a short curing list.",
+       "why": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
+       "short_answer": "Prosciutto is dry-cured ham, and salami is a fermented, dried, cured ground product. Pancetta is cured belly. Guanciale is worth buying on the same terms: the cut named and the curing ingredients listed.",
+       "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. A product made without nitrate or nitrite is labeled “Uncured” with “No Nitrate or Nitrite Added”.",
+@@ -7315,7 +7319,7 @@
+         "https://www.law.cornell.edu/cfr/text/9/317.17"
+       ],
+       "kristy_take": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
+-      "cart_pick": "Cured pork with listed curing ingredients",
++      "cart_pick": "Cured pork with a short curing list",
+       "buying_tips": [
+         "Read the product name for the cut, such as ham, belly, or jowl.",
+         "Read each curing ingredient in the ingredients statement.",
+@@ -7344,12 +7348,13 @@
+           "meaning": "Made without added nitrate or nitrite, stated beside the product name."
+         }
+       ],
+-      "tier_note": "The asterisk and curing ingredients are USDA labeling rules for “uncured” claims.",
++      "tier_note": "The cut name and each curing ingredient are label requirements; favoring a short list is judgment.",
+       "asked_as": [
+         "is guanciale worth buying",
+         "how do you choose prosciutto",
+         "how do you choose salami"
+-      ]
++      ],
++      "instead": "Cured pork with spices and sugar beyond salt, every curing ingredient still listed."
+     },
+     {
+       "id": "lamb_goat",
+@@ -7374,7 +7379,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do you judge lamb and goat meat quality?",
+-      "decision": "Read lamb and goat for how they were raised, then anything added.",
++      "decision": "100% grass-fed or grass-finished lamb or goat.",
+       "why": "Lamb quality grading is voluntary and takes age into account; goat meat has no quality grades.",
+       "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
+       "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
+@@ -7384,7 +7389,7 @@
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
+       ],
+       "kristy_take": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+-      "cart_pick": "Lamb or goat, firm with white fat",
++      "cart_pick": "100% grass-fed or grass-finished lamb",
+       "buying_tips": [
+         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
+         "Pick lamb that is fine textured and firm, with white marbling.",
+@@ -7414,13 +7419,14 @@
+           "meaning": "Goat under a year of age."
+         }
+       ],
+-      "tier_note": "Lamb grades and the absence of goat grades are USDA facts, and the flesh checks follow from them.",
++      "tier_note": "Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "asked_as": [
+         "how do i judge goat meat quality",
+         "how do you choose lamb chops",
+         "what is the difference between lamb and mutton",
+         "what is chevon"
+-      ]
++      ],
++      "instead": "Graded lamb, or goat that is firm and fine-grained, when no grass seal is on the shelf."
+     },
+     {
+       "id": "organ_meats",
+@@ -7463,7 +7469,8 @@
+         "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
+       ],
+       "pick_steps": [
+-        "Buy only for a cook within one to two days.",
++        "Ask the counter or a farmer which organs they offer.",
++        "How it was raised: see Beef.",
+         "Match each organ to its method; heart and tongue go in liquid."
+       ],
+       "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
+@@ -7477,12 +7484,13 @@
+           "meaning": "Beef stomach, braised up to two hours to turn tender."
+         }
+       ],
+-      "tier_note": "The 1 to 2 day cook window and 160°F come from USDA handling guidance for organ meats.",
++      "tier_note": "Organ meats keep a shorter time in the refrigerator than steaks and roasts.",
+       "asked_as": [
+         "how do you buy organ meats",
+         "how long do organ meats keep",
+         "which organ meats should i buy"
+-      ]
++      ],
++      "instead": "A beef blend with liver and heart ground in, each with its percentage printed."
+     },
+     {
+       "id": "bison",
+@@ -7496,7 +7504,7 @@
+       ],
+       "category": "meat_counter",
+       "question": "How do you buy bison?",
+-      "decision": "Bison bought by its inspection mark, then handled like beef.",
++      "decision": "100% grass-fed or grass-finished bison, with an inspection mark.",
+       "why": "Bison inspection can be federal or state. Once bought, bison keeps and cooks on the same rules as beef.",
+       "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
+       "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
+@@ -7506,7 +7514,7 @@
+         "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/"
+       ],
+       "kristy_take": "Bison is a bovine with no marbling. Find the inspection mark, then treat it like beef.",
+-      "cart_pick": "Bison with an inspection mark",
++      "cart_pick": "100% grass-fed or grass-finished bison",
+       "buying_tips": [
+         "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
+         "Expect a deeper red than beef, since bison has no marbling.",
+@@ -7531,12 +7539,13 @@
+           "meaning": "A cross that is 3/8 bison and 5/8 domestic cattle."
+         }
+       ],
+-      "tier_note": "The inspection mark and storage times are FSIS guidance for bison sold in stores.",
++      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+       "asked_as": [
+         "how do you buy ground bison",
+         "how do you choose a bison steak",
+         "is bison the same as buffalo meat"
+-      ]
++      ],
++      "instead": "Bison labeled grass-fed with no seal; it may have eaten grain for its last 90 to 120 days."
+     },
+     {
+       "id": "venison_game",
+@@ -7588,12 +7597,13 @@
+           "meaning": "Chronic Wasting Disease, an illness found in deer and elk."
+         }
+       ],
+-      "tier_note": "Refrigerated processing and fat trimming are extension steps written for deer and elk venison.",
++      "tier_note": "Game is often processed by small shops, so cold handling at every step decides its safety.",
+       "asked_as": [
+         "how long does ground venison keep",
+         "how do you choose a venison steak",
+         "how do you choose ground elk"
+-      ]
++      ],
++      "instead": "Wrapped frozen venison from the same refrigerated processor; it keeps 9 to 12 months frozen."
+     },
+     {
+       "id": "pick_jerky",
+@@ -7631,7 +7641,7 @@
+         "beef bones",
+         "knuckle bones"
+       ],
+-      "decision": "Ask the meat counter which soup bones it carries and how the animal was raised.",
++      "decision": "Soup bones come from the meat counter; ask for marrow or knuckle bones.",
+       "sources": [
+         {
+           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
+@@ -9070,7 +9080,8 @@
+         "is ghee worth buying",
+         "how do i pick a good ghee",
+         "should i buy clarified butter"
+-      ]
++      ],
++      "instead": "Plain butter, the same dairy fat before the water and milk solids come out."
+     },
+     {
+       "id": "goat_sheep_dairy",
+diff --git a/server/lib/counterCardLint.js b/server/lib/counterCardLint.js
+index 0458906..16f62ef 100644
+--- a/server/lib/counterCardLint.js
++++ b/server/lib/counterCardLint.js
+@@ -1547,7 +1547,7 @@ const ownedFact = (fact, owner, family, pattern) => ({
+ 
+ export const OWNED_FACTS = [
+   ownedFact('beef_raising', 'beef_grassfed_vs_grainfed',
+-    ['ground_beef_lean_ratio', 'ground_beef_organ_blend', 'beef_cuts_basics',
++    ['ground_beef_lean_ratio', 'beef_cuts_basics',
+       'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats', 'pick_soup_bones'],
+     /grass[- ]?(fed|finished)|grain[- ]?(fed|finished)/i),
+   ownedFact('ruminant_grass_term', 'label_grass_fed_term',
+@@ -1603,7 +1603,9 @@ export function lintRepeatedClaim(entry) {
+         ? entry[field].map((i) => (i && typeof i === 'object' ? { ...i, term: undefined } : i))
+         : entry[field];
+       for (const text of stringsIn(value)) {
+-        if (!POINTER.test(text) && row.pattern.test(text)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
++        // L4 requires the section's canonical gloss on a family card, so the gloss itself is not a repeat.
++        const unglossed = CANONICAL_GLOSSES.reduce((t, g) => t.split(g.gloss).join(''), text);
++        if (!POINTER.test(text) && row.pattern.test(unglossed)) out.push({ code: 'REPEATED_CLAIM', fact: row.fact, field, text });
+       }
+     }
+   }
+diff --git a/server/lib/counterCardLint.test.js b/server/lib/counterCardLint.test.js
+index 6c003ee..0c7fdbc 100644
+--- a/server/lib/counterCardLint.test.js
++++ b/server/lib/counterCardLint.test.js
+@@ -439,7 +439,8 @@ test('all curated cards clear the per-card bar', () => {
+   // IC-5a folds 2: beef_grades_usda, meat_case (2026-10-14).
+   // IC-6a folds 2: fresh_vs_previously_frozen_fish, fish_freshness_at_counter (2026-10-14).
+   // IC-7a folds 3: a2_vs_a1_milk, milk_processing, yogurt_live_cultures (2026-10-14).
+-  assert.equal(CARDS.length, 182);
++  // CA-3a folds 1: ground_beef_organ_blend (2026-10-15).
++  assert.equal(CARDS.length, 181);
+   const failures = [];
+   for (const card of CARDS) {
+     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);
+diff --git a/server/lib/counterCards.js b/server/lib/counterCards.js
+index e0353e2..e8a1b98 100644
+--- a/server/lib/counterCards.js
++++ b/server/lib/counterCards.js
+@@ -174,6 +174,8 @@ export const RETIRED = [
+   'milk_processing',
+   // → yogurt_plain_vs_flavored: live cultures is how to pick plain yogurt. Aliases kefir/alive/still alive not moved.
+   'yogurt_live_cultures',
++  // CA-3a (2026-10-15): → ground_beef_lean_ratio ("Ground beef"). Fold placement per docs/CARD-ALIGNMENT-PLAN.md; aliases, asked_as, sources, tips and labels moved.
++  'ground_beef_organ_blend',
+ ];
+ 
+ /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */
+diff --git a/server/lib/counterPath.test.js b/server/lib/counterPath.test.js
+index 8fcfada..4a9cf79 100644
+--- a/server/lib/counterPath.test.js
++++ b/server/lib/counterPath.test.js
+@@ -101,7 +101,7 @@ test('a shortcut answer can become a cart item in the same tap-and-tap', () => {
+   assert.ok(withPicks.length >= 6, `only ${withPicks.length} surfaced questions resolve to a grocery`);
+   for (const e of withPicks) {
+     assert.equal(typeof e.cart_pick, 'string');
+-    assert.doesNotMatch(e.cart_pick, /[$£€%]/, `${e.id} pick carries a price`);
++    assert.doesNotMatch(e.cart_pick.replace(/^100% /, ''), /[$£€%]/, `${e.id} pick carries a price`);
+   }
+ });
+ 
+diff --git a/server/lib/doLines.json b/server/lib/doLines.json
+index 769ce05..2ab60f6 100644
+--- a/server/lib/doLines.json
++++ b/server/lib/doLines.json
+@@ -42,7 +42,7 @@
+   "dried_fruit": "Read the ingredients for sulfites or sugar added to the fruit.",
+   "dried_herbs": "Check the label for the irradiation logo and “treated with radiation”.",
+   "egg_duck_quail": "Check that each shell is clean and uncracked before the carton goes in.",
+-  "egg_labels": "Check the small regional cartons. That is where a feed claim appears.",
++  "egg_labels": "Find all three words on one carton, plus a certifier’s pasture seal.",
+   "farmed_fish_by_species": "Buy the farmed mussels, clams and oysters. They are fed nothing.",
+   "fermented": "Check the label for “raw” or “unpasteurized”, then the list for vinegar.",
+   "fermented_pickles": "Read the ingredients for vinegar; none listed means a fermented pickle.",
+@@ -60,9 +60,8 @@
+   "gluten_free_bread": "Find the claim on the bag, then read the ingredient list and the gum.",
+   "goat_sheep_dairy": "Read the ingredients for which animal’s milk went in.",
+   "grains_beyond_rice": "Read the bag for “hulled” or “whole”, and pass on “pearled”.",
+-  "grassfed_butter": "Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange.",
+-  "ground_beef_lean_ratio": "Read the name: “ground beef” allows no added fat, water or binders.",
+-  "ground_beef_organ_blend": "Read the ingredient list for liver and heart, each with a percentage.",
++  "grassfed_butter": "Look through the wrapper window before choosing a block.",
++  "ground_beef_lean_ratio": "Read the label for organ names, each with a percentage beside it.",
+   "ground_turkey": "Read the ingredient list and the fat statement beside any percent-lean claim.",
+   "ham": "Read the product name for “Water Added” or “Ham and Water Product”.",
+   "honey_adulteration": "Buy honey with a producer and a region named on the jar.",
+@@ -179,6 +178,6 @@
+   "washing_produce": "Scrub the firm ones with a brush. Rinse and spin the greens.",
+   "white_fish": "Ask which species it is, then press the flesh for spring-back.",
+   "whole_spices": "Toast them in a dry pan until they smell, then grind.",
+-  "whole_vs_reduced_fat_milk": "Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized.",
+-  "yogurt_plain_vs_flavored": "Take the big plain tub, not the single-serve fruit cups."
++  "whole_vs_reduced_fat_milk": "Check the side panel for the pasteurization words and a grass-fed seal.",
++  "yogurt_plain_vs_flavored": "Check the ingredients for milk and cultures, with nothing after them."
+ }
+diff --git a/server/lib/kindFilter.test.js b/server/lib/kindFilter.test.js
+index 16940b3..96d362c 100644
+--- a/server/lib/kindFilter.test.js
++++ b/server/lib/kindFilter.test.js
+@@ -111,7 +111,8 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
+   // 27 after K15: pick_lamb folded into the lamb_goat card, plus jerky and soup bones, 2026-10-06.
+   // 29 after K16: fish sticks and anchovies, 2026-10-06.
+   // 31 after K18: english muffins and pita/naan, 2026-10-06.
+-  assert.equal(pickEntries(perimeterKb.entries).length, 31, 'K18: 31 picks in the raw corpus');
++  // 30 after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.
++  assert.equal(pickEntries(perimeterKb.entries).length, 30, 'CA-4a: 30 picks in the raw corpus');
+   const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
+   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
+   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');
+diff --git a/server/lib/perimeter.test.js b/server/lib/perimeter.test.js
+index 0aeede1..c6ded64 100644
+--- a/server/lib/perimeter.test.js
++++ b/server/lib/perimeter.test.js
+@@ -210,8 +210,8 @@ test('cart_pick is a grocery name, never a claim, a price or a sentence', () =>
+   for (const e of picks) {
+     const p = e.cart_pick;
+     assert.equal(typeof p, 'string');
+-    assert.ok(p.trim().length > 2 && p.length <= 44, `${e.id}: "${p}" is not a cart row`);
+-    assert.doesNotMatch(p, /[$£€%]/, `${e.id} carries a price or percent`);
++    assert.ok(p.trim().length > 2 && p.length <= 46, `${e.id}: "${p}" is not a cart row`);
++    assert.doesNotMatch(p.replace(/\b100%/, ''), /[$£€%]/, `${e.id} carries a price or percent`);
+     assert.doesNotMatch(p, /[.!?]$/, `${e.id} is a sentence, not a name`);
+     assert.doesNotMatch(
+       p,
+diff --git a/server/lib/tryPool.js b/server/lib/tryPool.js
+index c1b1487..288710a 100644
+--- a/server/lib/tryPool.js
++++ b/server/lib/tryPool.js
+@@ -2,7 +2,7 @@ import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
+ import { projectAll } from './counterCards.js';
+ 
+ export const TRY_POOL = Object.freeze([
+-  'ground_beef_organ_blend',
++  'ground_beef_lean_ratio',
+   'butcher_counter_asking',
+   'beef_cuts_basics',
+   'pork_cuts_and_enhanced',
+diff --git a/server/lib/tryPool.test.js b/server/lib/tryPool.test.js
+index 2b9a912..020a225 100644
+--- a/server/lib/tryPool.test.js
++++ b/server/lib/tryPool.test.js
+@@ -34,7 +34,7 @@ test('TRY_POOL is frozen with exactly 19 unique (chf-5 dropped pretzel_bread) au
+   assert.equal(POOL.length, 19);
+   assert.equal(new Set(POOL).size, 19);
+   assert.deepEqual(POOL, [
+-    'ground_beef_organ_blend', 'butcher_counter_asking', 'beef_cuts_basics',
++    'ground_beef_lean_ratio', 'butcher_counter_asking', 'beef_cuts_basics',
+     'pork_cuts_and_enhanced', 'chicken_cuts_basics', 'salmon_wild_vs_farmed',
+     'shrimp_imported_vs_domestic', 'seafood_counter',
+     'canned_fish_choosing', 'farmed_fish_by_species', 'yogurt_plain_vs_flavored',
+diff --git a/server/scripts/listMatchProbe.js b/server/scripts/listMatchProbe.js
+index 3363f46..dae037e 100644
+--- a/server/scripts/listMatchProbe.js
++++ b/server/scripts/listMatchProbe.js
+@@ -315,7 +315,7 @@ for (const name of REALISTIC_26) {
+ }
+ // A named card the corpus owns must be the one attached; a neighbour stealing the row is WRONG.
+ // `chicken_cuts_basics` carries the bare alias `chicken`, so the rotisserie row is the hub test.
+-const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
++const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken', 'milk': 'whole_vs_reduced_fat_milk', 'whole milk': 'whole_vs_reduced_fat_milk', 'a gallon of milk': 'whole_vs_reduced_fat_milk' };
+ for (const [name, slug] of Object.entries(OWNED_BY)) {
+   const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
+   const got = row.cardSlug || null;
+diff --git a/server/test/acceptance/ca-3a.test.js b/server/test/acceptance/ca-3a.test.js
+new file mode 100644
+index 0000000..0e10881
+--- /dev/null
++++ b/server/test/acceptance/ca-3a.test.js
+@@ -0,0 +1,233 @@
++// Written by the planner; do not edit.
++// ca-3a: docs/CARD-ALIGNMENT-PLAN.md "CA-3 Meat batch"; worked example and fold table verbatim.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { dirname, join } from 'node:path';
++import * as lint from '../../lib/counterCardLint.js';
++import * as pass from './passRule.js';
++import { RETIRED, projectEntry } from '../../lib/counterCards.js';
++import { TRY_POOL } from '../../lib/tryPool.js';
++
++const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
++const ROOT = join(SERVER, '..');
++const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
++const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
++const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
++const reviewHeadline = (id) => {
++  const line = review.split('\n').find((l) => l.startsWith(`| \`${id}\` |`));
++  return line ? line.split('|')[3].trim() : null;
++};
++const PRE = JSON.parse(execFileSync('git', ['show', '8b49633:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const now = (id) => kb.entries.find((e) => e.id === id);
++const pre = (id) => PRE.entries.find((e) => e.id === id);
++const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
++const flat = (r) => (Array.isArray(r) ? r : (r && r.violations) || []);
++const RETIRED_IDS = new Set([...(RETIRED || [])].map((r) => (typeof r === 'string' ? r : r.id)));
++const run = (tips, entries) => lint.lintSections(tips, entries);
++
++const BATCH = ['beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'beef_cuts_basics', 'organ_meats', 'butcher_counter_asking',
++  'judging_meat_at_the_case', 'bison', 'venison_game', 'lamb_goat', 'pick_soup_bones'];
++const RUMINANT_FRONTS = new Set(['beef_grassfed_vs_grainfed', 'bison', 'venison_game', 'lamb_goat']);
++const MEAT_TIP = { section: 'meat', rule: 'A local butcher comes first; at the case, choose meat from animals raised on grass and open pasture.', checks: ['Ask what the animal ate and how it lived; a butcher counter can answer.', 'Organs come from the same animal; liver and heart belong in the cart too.', 'On packaged meat, look for an ingredient list of meat, salt, and spices.'] };
++const G1 = '“grass-fed” is the producer’s own word unless a certifier’s seal audits it';
++const POINTER = 'How it was raised: see Beef.';
++const COPY_SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'category', 'evidence_tier']);
++const BRAND = /force of nature|seven sons|certified angus|whole foods|tyson|perdue|hormel|oscar mayer|applegate/i;
++const CLAIM = /healthier|healthiest|better for you|lowers|exposure|protein|calorie/i;
++const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
++
++const LEAN = {
++  decision: 'Organ blend with each organ’s percentage first, then ground beef with nothing added.',
++  tier_note: 'Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.',
++  instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
++  cart_pick: 'Liver and heart beef blend, shares stated',
++  short_answer: 'Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.',
++  why: 'Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name.',
++  pick_steps: ['How it was raised: see Beef.', 'Organ blend: each organ named, each with its own percentage.', 'Next: plain ground beef; skip “hamburger,” which allows added beef fat.'],
++};
++const LEAN_DO = 'Read the label for organ names, each with a percentage beside it.';
++const D6_SENTENCE = 'Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart.';
++
++// Step 1c: the named fields per card; every other field stays as at 8b49633.
++const SPEC_1C = {
++  beef_cuts_basics: {
++    instead: 'Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name.',
++  },
++  organ_meats: {
++    tier_note: 'Organ meats keep a shorter time in the refrigerator than steaks and roasts.',
++    instead: 'A beef blend with liver and heart ground in, each with its percentage printed.',
++    pick_steps: ['Ask the counter or a farmer which organs they offer.', 'How it was raised: see Beef.', 'Match each organ to its method; heart and tongue go in liquid.'],
++  },
++  judging_meat_at_the_case: {
++    decision: 'The pack with the newest ‘packaged on’ date in the case.',
++    tier_note: 'Fresh tray-wrapped meat keeps up to three days refrigerated after packaging, so that date sets the clock.',
++    instead: 'A well-sealed vacuum pack, which keeps up to seven days refrigerated from purchase.',
++    pick_steps: ['‘Packaged on’: the packing day, not a safety cutoff.', 'Take a sealed, leak-free package from the back, where the case is coldest.'],
++  },
++  butcher_counter_asking: {
++    decision: 'Ask for beef soup bones, and a whole chuck ground fresh.',
++    tier_note: 'Soup bones come from the counter, and a whole chuck ground fresh lets the shopper choose the cut.',
++    instead: 'A whole chuck roast, cut, tied or boned to order at the counter.',
++    cart_pick: 'Beef soup bones from the butcher counter',
++    pick_steps: ['Soup bones: ask for marrow or knuckle bones.', 'How it was raised: see Beef.', 'Ask them to portion it; cutting, tying and boning are usually included.'],
++  },
++  bison: {
++    decision: '100% grass-fed or grass-finished bison, with an inspection mark.',
++    tier_note: 'Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it.',
++    instead: 'Bison labeled grass-fed with no seal; it may have eaten grain for its last 90 to 120 days.',
++    cart_pick: '100% grass-fed or grass-finished bison',
++  },
++  venison_game: {
++    tier_note: 'Game is often processed by small shops, so cold handling at every step decides its safety.',
++    instead: 'Wrapped frozen venison from the same refrigerated processor; it keeps 9 to 12 months frozen.',
++  },
++  lamb_goat: {
++    decision: '100% grass-fed or grass-finished lamb or goat.',
++    tier_note: 'Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it.',
++    instead: 'Graded lamb, or goat that is firm and fine-grained, when no grass seal is on the shelf.',
++    cart_pick: '100% grass-fed or grass-finished lamb',
++  },
++  pick_soup_bones: {
++    decision: 'Soup bones come from the meat counter; ask for marrow or knuckle bones.',
++  },
++};
++// Step 1c cards with a do row: the do line stays as it was.
++const DO_KEPT = {
++  judging_meat_at_the_case: 'Check the package is sealed and not leaking juices, then smell it.',
++  butcher_counter_asking: 'Ask what came in today and when it was cut.',
++  bison: 'Find the triangle inspection seal or a state mark on the package.',
++  lamb_goat: 'Press goat for firm, fine-grained flesh and white fat.',
++  organ_meats: 'Check the use-by date against the night it will be cooked.',
++  venison_game: 'Ask whether each animal was handled separately and kept cold throughout.',
++  beef_cuts_basics: 'Read the name for “mechanically tenderized” before the cut name.',
++};
++
++test('C1 Ground beef front equals the worked example', () => {
++  const e = now('ground_beef_lean_ratio');
++  for (const [f, v] of Object.entries(LEAN)) assert.deepEqual(e[f], v, `lean_ratio.${f}`);
++  assert.equal(doLines.ground_beef_lean_ratio, LEAN_DO);
++});
++
++test('C2 Ground beef additive fields hold every fold fact', () => {
++  const e = now('ground_beef_lean_ratio');
++  const old = pre('ground_beef_lean_ratio');
++  const fold = pre('ground_beef_organ_blend');
++  assert.deepEqual(e.watch_out, [...old.watch_out, ...fold.watch_out]);
++  assert.deepEqual(e.buying_tips, [...old.buying_tips, 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.']);
++  const label = (t) => (e.labels_decoded || []).find((l) => l.term === t);
++  assert.equal(label('80/20, 85/15, 90/10').meaning, 'Lean % to fat % by weight; higher first number = leaner.');
++  assert.equal(label('Organ blend').meaning, 'Beef with liver, heart, or other organs mixed in, sold under its own descriptive name, not as ‘ground beef’.');
++  assert.equal(label('Hamburger').meaning, 'Chopped beef that may have beef fat added; ‘ground beef’ may not.');
++  for (const l of fold.labels_decoded) assert.deepEqual(label(l.term), l);
++  assert.doesNotMatch(JSON.stringify(e.labels_decoded), /—/);
++  assert.equal(e.kristy_take, `${old.kristy_take} A blend that prints its numbers is an honest pack. One that will not is a mystery bag.`);
++  for (const s of [D6_SENTENCE, '25 percent', '9 CFR 317.2', '6,582 mcg RAE', '3,000 mcg', old.detail, old.short_answer, old.why]) assert.ok(e.detail.includes(s), `detail lacks: ${s}`);
++  assert.doesNotMatch(e.detail, BRAND);
++  assert.equal(e.science, old.science);
++});
++
++test('C3 the organ-blend fold is complete and the pass rule holds', (t) => {
++  assert.equal(now('ground_beef_organ_blend'), undefined, 'organ_blend still in the KB');
++  assert.ok(RETIRED_IDS.has('ground_beef_organ_blend'), 'organ_blend not RETIRED');
++  const e = now('ground_beef_lean_ratio');
++  const fold = pre('ground_beef_organ_blend');
++  for (const f of ['aliases', 'asked_as']) for (const v of fold[f]) assert.ok(e[f].includes(v), `${f} lost ${v}`);
++  for (const s of fold.sources) assert.ok(e.sources.some((x) => JSON.stringify(x) === JSON.stringify(s)), `source lost ${JSON.stringify(s)}`);
++  for (const id of BATCH) pass.assertPassRule(t, pre(id), now(id));
++});
++
++test('C4 the Beef front carries G1 and drops the grain-finish line', () => {
++  const b = now('beef_grassfed_vs_grainfed');
++  assert.equal(b.decision, '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.');
++  assert.equal(b.cart_pick, '100% grass-fed or grass-finished ground beef');
++  assert.equal(b.kristy_take, 'Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker.');
++  assert.ok(b.tier_note.includes(G1), 'beef tier_note lacks the G1 gloss');
++  assert.match(b.why, /whole-food standard/);
++  const said = [b.why, b.short_answer, b.science, JSON.stringify(b.labels_decoded)].join(' ');
++  assert.doesNotMatch(said, /allows a grain finish|may still have been grain-finished|eat feedlot grain for the last months/i);
++});
++
++test('C5 plan cart_picks are byte-equal', () => {
++  assert.equal(now('butcher_counter_asking').cart_pick, 'Beef soup bones from the butcher counter');
++});
++
++test('C6 D1 limits hold on every batch card', () => {
++  for (const id of BATCH) {
++    const e = now(id);
++    assert.ok(e, `${id} missing`);
++    assert.ok(words(e.decision) <= 14, `${id} decision ${words(e.decision)} words`);
++    if (Array.isArray(e.pick_steps)) assert.ok(e.pick_steps.length >= 1 && e.pick_steps.length <= 3, `${id} pick_steps ${e.pick_steps.length}`);
++    if (e.kind === 'pick') continue;
++    const n = String(e.tier_note || '').trim();
++    assert.ok(words(n) >= 5 && words(n) <= 20, `${id} tier_note ${words(n)} words`);
++    assert.doesNotMatch(n, /[.!?]\s+\S/, `${id} tier_note is more than one sentence`);
++    assert.ok(String(e.instead || '').trim().length > 0, `${id} instead empty`);
++  }
++});
++
++test('C7 only ruminant fronts print a grass term', () => {
++  for (const id of BATCH) {
++    if (RUMINANT_FRONTS.has(id)) continue;
++    const e = now(id);
++    assert.doesNotMatch(String(e.decision || ''), /grass-(fed|finished)/i, `${id} decision`);
++    assert.doesNotMatch(String(e.cart_pick || ''), /grass-(fed|finished)/i, `${id} cart_pick`);
++  }
++  for (const id of ['ground_beef_lean_ratio', 'butcher_counter_asking']) assert.ok(JSON.stringify(now(id)).includes(POINTER), `${id} lost the POINTER`);
++});
++
++test('C8 brand claim and price greps are zero over changed copy fields', () => {
++  let changed = 0;
++  for (const id of BATCH) {
++    const e = now(id);
++    const p = pre(id);
++    for (const [f, v] of Object.entries(e)) {
++      if (COPY_SKIP.has(f) || JSON.stringify(v) === JSON.stringify(p[f])) continue;
++      changed++;
++      const s = JSON.stringify(v);
++      assert.doesNotMatch(s, BRAND, `${id}.${f} brand`);
++      assert.doesNotMatch(s, CLAIM, `${id}.${f} claim-lock word`);
++      assert.doesNotMatch(s, PRICE, `${id}.${f} price`);
++      assert.doesNotMatch(s, /—/, `${id}.${f} em-dash`);
++      assert.doesNotMatch(s, /\b(I|me|my|mine)\b/, `${id}.${f} first person`);
++    }
++  }
++  assert.ok(changed >= 10, `only ${changed} changed copy fields`);
++});
++
++test('C9 meat section lints are clean for batch ids', () => {
++  const hits = run([{ ...MEAT_TIP, tip_aligned: true, cards_aligned: true }], kb.entries);
++  assert.ok(Array.isArray(hits));
++  const mine = hits.filter((h) => (h.id && BATCH.includes(h.id)) || (Array.isArray(h.ids) && h.ids.every((i) => BATCH.includes(i))));
++  assert.deepEqual(mine.filter((h) => h.code !== 'SECTION_TIP_HANDLING'), []);
++});
++
++test('C10 plumbing repointed and per-card lints clean', () => {
++  assert.equal(TRY_POOL[0], 'ground_beef_lean_ratio');
++  assert.ok(!TRY_POOL.includes('ground_beef_organ_blend'));
++  assert.ok(!JSON.stringify(lint.OWNED_FACTS).includes('ground_beef_organ_blend'));
++  for (const id of ['ground_beef_lean_ratio', 'beef_grassfed_vs_grainfed']) {
++    const e = now(id);
++    assert.deepEqual(lint.lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lintCard`);
++    assert.deepEqual(flat(lint.readability(e)), [], `${id} readability`);
++    assert.deepEqual(flat(lint.lintPickSteps(e)), [], `${id} lintPickSteps`);
++  }
++});
++
++test('C12 Step 1c cards equal the spec', () => {
++  for (const [id, spec] of Object.entries(SPEC_1C)) {
++    const p = pre(id);
++    assert.ok(p, `${id} missing at 8b49633`);
++    const want = { ...p, ...spec };
++    if (id === 'judging_meat_at_the_case') want.watch_out = [...p.watch_out.slice(1), p.watch_out[0], p.decision, p.pick_steps[1]];
++    assert.deepEqual(now(id), want, `${id} differs from Step 1c`);
++  }
++  assert.equal(now('judging_meat_at_the_case').watch_out.length, 7);
++  assert.ok(!('cart_pick' in now('judging_meat_at_the_case')), 'judging gained a cart_pick');
++  for (const [id, d] of Object.entries(DO_KEPT)) {
++    assert.equal(reviewHeadline(id), now(id).decision, `${id} review headline`);
++    assert.equal(doLines[id], d, `${id} do line changed`);
++  }
++});
+diff --git a/server/test/acceptance/ca-3b.test.js b/server/test/acceptance/ca-3b.test.js
+new file mode 100644
+index 0000000..f0f5a8b
+--- /dev/null
++++ b/server/test/acceptance/ca-3b.test.js
+@@ -0,0 +1,120 @@
++// Written by the planner; do not edit.
++// ca-3b: docs/CARD-ALIGNMENT-PLAN.md "CA-3 Meat batch", CA-3b rows. D8: chicken_breast is rewritten, not folded.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { dirname, join } from 'node:path';
++import * as lint from '../../lib/counterCardLint.js';
++import * as pass from './passRule.js';
++import { RETIRED, projectEntry } from '../../lib/counterCards.js';
++
++const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
++const ROOT = join(SERVER, '..');
++const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
++const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
++const BASE = 'aa12a3d';
++const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const now = (id) => kb.entries.find((e) => e.id === id);
++const pre = (id) => PRE.entries.find((e) => e.id === id);
++const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
++const flat = (r) => (Array.isArray(r) ? r : (r && r.violations) || []);
++const RETIRED_IDS = new Set([...(RETIRED || [])].map((r) => (typeof r === 'string' ? r : r.id)));
++
++const BATCH = ['pork_cuts_and_enhanced', 'pick_sausage', 'pick_jerky', 'chicken_cuts_basics', 'chicken_breast', 'rotisserie_chicken',
++  'turkey_whole', 'ground_turkey', 'bacon', 'ham', 'hot_dogs', 'turkey_bacon', 'cured_pork', 'deli_meat_uncured'];
++const CURED = ['bacon', 'ham', 'hot_dogs', 'turkey_bacon', 'cured_pork', 'deli_meat_uncured'];
++const MEAT_TIP = { section: 'meat', rule: 'A local butcher comes first; at the case, choose meat from animals raised on grass and open pasture.', checks: ['Ask what the animal ate and how it lived; a butcher counter can answer.', 'Organs come from the same animal; liver and heart belong in the cart too.', 'On packaged meat, look for an ingredient list of meat, salt, and spices.'] };
++const COPY_SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'category', 'evidence_tier']);
++const BRAND = /whole foods|tyson|perdue|hormel|oscar mayer|applegate|boar.s head|smithfield|jimmy dean|hillshire|butterball|jennie-o|foster farms/i;
++const CLAIM = /healthier|healthiest|better for you|lowers|exposure|protein|calorie/i;
++const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
++const CURE_WORD = /\b(cured|uncured|nitrite|nitrate|celery powder|celery juice)\b/i;
++
++test('C1 D1 limits hold on every CA-3b card', () => {
++  for (const id of BATCH) {
++    const e = now(id);
++    assert.ok(e, `${id} missing`);
++    assert.ok(words(e.decision) <= 14, `${id} decision ${words(e.decision)} words`);
++    if (Array.isArray(e.pick_steps)) {
++      assert.ok(e.pick_steps.length >= 1 && e.pick_steps.length <= 3, `${id} pick_steps ${e.pick_steps.length}`);
++      for (const s of e.pick_steps) assert.ok(words(s) <= 14, `${id} pick_step "${s}"`);
++    }
++    if (e.kind === 'pick') continue;
++    const n = String(e.tier_note || '').trim();
++    assert.ok(words(n) >= 5 && words(n) <= 20, `${id} tier_note ${words(n)} words`);
++    assert.doesNotMatch(n, /[.!?]\s+\S/, `${id} tier_note is more than one sentence`);
++    assert.ok(String(e.instead || '').trim().length > 0 && words(e.instead) <= 24, `${id} instead`);
++  }
++});
++
++test('C2 no CA-3b decision or cart_pick prints a grass term', () => {
++  for (const id of BATCH) {
++    const e = now(id);
++    assert.doesNotMatch(String(e.decision || ''), /grass-(fed|finished)/i, `${id} decision`);
++    assert.doesNotMatch(String(e.cart_pick || ''), /grass-(fed|finished)/i, `${id} cart_pick`);
++  }
++});
++
++test('C3 chicken_breast survives as a rewrite', () => {
++  const e = now('chicken_breast');
++  assert.ok(e, 'chicken_breast was removed');
++  assert.ok(!RETIRED_IDS.has('chicken_breast'), 'chicken_breast is RETIRED');
++  assert.match(String(e.cart_pick || ''), /breast/i);
++  assert.notEqual(JSON.stringify(e), JSON.stringify(pre('chicken_breast')), 'chicken_breast unchanged');
++});
++
++test('C4 the pass rule holds for every CA-3b id', (t) => {
++  for (const id of BATCH) pass.assertPassRule(t, pre(id), now(id));
++});
++
++test('C5 brand claim and price greps are zero over changed copy fields', () => {
++  let changed = 0;
++  for (const id of BATCH) {
++    const e = now(id);
++    const p = pre(id);
++    for (const [f, v] of Object.entries(e)) {
++      if (COPY_SKIP.has(f) || JSON.stringify(v) === JSON.stringify(p[f])) continue;
++      changed++;
++      const s = JSON.stringify(v);
++      assert.doesNotMatch(s, BRAND, `${id}.${f} brand`);
++      assert.doesNotMatch(s, CLAIM, `${id}.${f} claim-lock word`);
++      assert.doesNotMatch(s, PRICE, `${id}.${f} price`);
++      assert.doesNotMatch(s, /—/, `${id}.${f} em-dash`);
++      assert.doesNotMatch(s, /\b(I|me|my|mine)\b/, `${id}.${f} first person`);
++    }
++  }
++  assert.ok(changed >= 14, `only ${changed} changed copy fields`);
++});
++
++test('C6 the full meat section is lint-clean under the meat tip', () => {
++  const hits = lint.lintSections([{ ...MEAT_TIP, tip_aligned: true, cards_aligned: true }], kb.entries);
++  const bad = hits.filter((h) => h.section === 'meat' && ['SECTION_TIP_REPEATS_CARD', 'SECTION_PHRASE_REPEATED', 'TERM_UNGLOSSED', 'CART_PICK_DISAGREES'].includes(h.code));
++  assert.deepEqual(bad, []);
++});
++
++test('C7 cure sentences come only from the shared set', () => {
++  const allowed = new Set(lint.PRESERVATION_CURE_SENTENCES);
++  assert.ok(allowed.size > 0, 'PRESERVATION_CURE_SENTENCES empty');
++  for (const id of CURED) {
++    const e = now(id);
++    const p = pre(id);
++    for (const f of ['decision', 'tier_note', 'why', 'short_answer', 'kristy_take']) {
++      if (JSON.stringify(e[f]) === JSON.stringify(p[f])) continue;
++      for (const s of String(e[f] || '').split(/(?<=[.!?])\s+/)) {
++        if (CURE_WORD.test(s) && !/^Cured\b|^Uncured\b/.test(s.trim())) assert.ok(allowed.has(s.trim()), `${id}.${f} authored a cure sentence: ${s}`);
++      }
++    }
++  }
++});
++
++test('C8 per-card lints are clean and headlines match', () => {
++  for (const id of BATCH) {
++    const e = now(id);
++    if (e.kind === 'pick' || JSON.stringify(e) === JSON.stringify(pre(id))) continue;
++    assert.deepEqual(lint.lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lintCard`);
++    assert.deepEqual(flat(lint.readability(e)), [], `${id} readability`);
++    assert.deepEqual(flat(lint.lintPickSteps(e)), [], `${id} lintPickSteps`);
++  }
++});
+diff --git a/server/test/acceptance/ca-4a.test.js b/server/test/acceptance/ca-4a.test.js
+new file mode 100644
+index 0000000..3cdf76d
+--- /dev/null
++++ b/server/test/acceptance/ca-4a.test.js
+@@ -0,0 +1,242 @@
++// CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { dirname, join } from 'node:path';
++import * as lint from '../../lib/counterCardLint.js';
++import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
++import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { assertPassRule } from './passRule.js';
++
++const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
++const ROOT = join(SERVER, '..');
++const BASE_REF = 'd707172';
++const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
++const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
++const reviewed = parseReviewTable(reviewText);
++const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
++const now = (id) => kb.entries.find((e) => e.id === id);
++const was = (id) => base.entries.find((e) => e.id === id);
++const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
++const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
++const COPY = ['decision', 'short_answer', 'why', 'detail', 'kristy_take', 'tier_note', 'question', 'buying_tips', 'watch_out', 'pick_steps', 'science', 'instead', 'cart_pick', 'labels_decoded', 'eyebrow_short'];
++const leaves = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(leaves) : v && typeof v === 'object' ? Object.values(v).flatMap(leaves) : []);
++const copy = (e) => COPY.flatMap((f) => leaves(e?.[f]));
++const fresh = (id) => { const old = new Set(copy(was(id))); return copy(now(id)).filter((s) => !old.has(s)); };
++
++const MILK_ID = 'whole_vs_reduced_fat_milk';
++const YOG_ID = 'yogurt_plain_vs_flavored';
++const EGG = {
++  decision: 'Pasture-raised, organic, and corn- and soy-free, all three together.',
++  tier_note: 'Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.',
++  instead: 'Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed.',
++  cart_pick: 'Pasture-raised organic corn- and soy-free eggs',
++  aliases: [...was('egg_labels').aliases, 'Pasture-raised organic corn- and soy-free eggs', 'organic corn- and soy-free eggs'],
++  pick_steps: ['“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.', '“Organic” means certified organic feed and outdoor access.', 'Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors.'],
++  why: 'Hens eat what they are given; the carton words show that feed and that life.',
++  short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
++  kristy_take: 'Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.',
++};
++const EGG_DO = 'Find all three words on one carton, plus a certifier’s pasture seal.';
++const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
++const EGG_OLD_CHEAP = 'Plain conventional eggs are still one of the cheapest complete proteins in the store.';
++const EGG_SCIENCE_OLD = '‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs.';
++const EGG_SCIENCE_NEW = '‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs.';
++const EGG_CHEAP = 'Plain conventional eggs are still one of the lowest-cost animal foods in the store.';
++const EGG_DETAIL_OLD = 'The order is what she ate, then how it was grown, then how much room she had.';
++const EGG_DETAIL_NEW = 'The standard is all three on one carton: what she ate, how it was grown, and how much room she had.';
++const EGG_LABEL = { term: 'Corn- and soy-free', meaning: 'The feed contains neither corn nor soy; both words must be printed.' };
++
++const MILK = {
++  decision: 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.',
++  tier_note: 'Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.',
++  instead: 'Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season.',
++  cart_pick: 'Low-temp pasteurized grass-fed whole milk',
++  pick_steps: ['Raw means unpasteurized: milk that skipped the heat step.', 'Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.', '100% grass-fed on milk means the cows ate grass and hay, never grain.'],
++  why: 'Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.',
++  short_answer: 'Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.',
++};
++const MILK_DO = 'Check the side panel for the pasteurization words and a grass-fed seal.';
++const MILK_UHT = '“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.';
++const MILK_LABELS = [
++  { term: 'Vat pasteurized', meaning: 'Held at 145°F for 30 minutes; also printed as low-temperature pasteurized.' },
++  { term: 'Ultra-pasteurized', meaning: 'Heated to about 280°F for about 2 seconds.' },
++];
++
++const YOG = {
++  decision: 'Plain Greek yogurt made from 100% grass-fed milk.',
++  tier_note: 'Plain means no added sugar, so sweeten it at home with fruit or honey.',
++  instead: 'Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there.',
++  cart_pick: 'Plain Greek yogurt, 100% grass-fed',
++  aliases: [...was(YOG_ID).aliases, 'Plain Greek yogurt, 100% grass-fed'],
++  pick_steps: ['Greek means strained, so the yogurt is thicker and holds less whey.', '100% grass-fed on the tub means the cows ate grass and hay, never grain.', 'Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is.'],
++  why: 'Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.',
++  short_answer: 'Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.',
++};
++const YOG_DO = 'Check the ingredients for milk and cultures, with nothing after them.';
++const YOG_TIPS = {
++  'Greek/strained is higher protein; whole-milk versions are more filling.': 'Greek or strained yogurt is thicker; whole-milk versions are more filling.',
++  'Greek and skyr are strained: thicker, more protein per spoon.': 'Greek and skyr are strained: thicker, with less whey.',
++};
++const YOG_DETAIL_OLD = 'Plain yogurt, especially Greek or strained, is a clean high-protein whole food.';
++const YOG_DETAIL_NEW = 'Plain yogurt, especially Greek or strained, is a whole food: milk and cultures.';
++const YOG_SKYR = 'Strained. Thicker, with less whey.';
++const YOG_LABELS = [
++  { term: 'Greek', meaning: 'Yogurt strained to remove whey, which leaves it thicker.' },
++  { term: 'Plain', meaning: 'No added sugar or flavoring.' },
++];
++
++const BUTTER = {
++  decision: 'Deepest yellow butter: cream, and salt if salted.',
++  tier_note: 'Color is the reading: carotene from grass turns the fat deep yellow.',
++  why: 'Carotene from the grass goes into the fat. The fatty-acid profile shifts with it, omega-3 included.',
++  cart_pick: 'Deep yellow butter',
++  pick_steps: ['Skip tubs and spreads; butter comes as a block or a stick.', 'How it was raised: see Milk.'],
++};
++const BUTTER_DO = 'Look through the wrapper window before choosing a block.';
++const OTHERS = {
++  raw_milk: {
++    tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
++    instead: 'Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.',
++  },
++  egg_duck_quail: { instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
++  ghee: { instead: 'Plain butter, the same dairy fat before the water and milk solids come out.' },
++  grassfed_butter: BUTTER,
++  pick_egg_whites: {},
++};
++const CHANGED = ['egg_labels', MILK_ID, YOG_ID, 'raw_milk', 'egg_duck_quail', 'ghee', 'grassfed_butter'];
++const MINE = new Set([...CHANGED, 'pick_egg_whites']);
++const MILK_ROWS = ['milk', 'whole milk', 'a gallon of milk', 'gallon of milk', 'milk carton', 'carton of milk'];
++const TIP = {
++  section: 'eggs_dairy',
++  rule: 'Eggs and dairy start with how the animal ate and lived: cows on grass, hens on pasture.',
++  checks: ['Read how the animal lived and what it ate before anything else on the label.', 'Dairy needs few ingredients: milk or cream, cultures, salt, and enzymes for cheese.'],
++  tip_aligned: true,
++  cards_aligned: true,
++};
++const CLAIM_LOCK = /healthier|healthiest|better for you|lowers|exposure|protein|calorie/i;
++const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
++const BRAND = /kerrygold|oikos|siggi|chobani|fage|stonyfield|horizon organic|organic valley|vital farms|pete (and|&) gerry|happy egg|tillamook|land o.?lakes|kalona|maple hill|straus|alexandre/i;
++const D4 = /at home with|stir|top it|mix it/i;
++
++test('C1 the Eggs card carries the worked example', () => {
++  const e = now('egg_labels');
++  const b = was('egg_labels');
++  for (const [k, v] of Object.entries(EGG)) assert.deepEqual(e[k], v, `egg_labels.${k}`);
++  assert.equal(reviewed.get('egg_labels')?.do, EGG_DO);
++  assert.equal(b.watch_out.length, EGG_WATCH_ORDER.length, 'HEAD watch_out count moved; spec is stale');
++  assert.deepEqual(e.watch_out, EGG_WATCH_ORDER.map((i) => b.watch_out[i]));
++  assert.deepEqual(e.labels_decoded, [...b.labels_decoded, EGG_LABEL]);
++  assert.ok(b.buying_tips.includes(EGG_OLD_CHEAP) && b.science.includes(EGG_OLD_CHEAP) && b.detail.includes(EGG_DETAIL_OLD), 'HEAD strings moved; spec is stale');
++  assert.deepEqual(e.buying_tips, b.buying_tips.map((s) => (s === EGG_OLD_CHEAP ? EGG_CHEAP : s)));
++  assert.ok(b.science.includes(EGG_SCIENCE_OLD), 'HEAD vegetarian-fed science moved');
++  assert.equal(e.science, b.science.replace(EGG_OLD_CHEAP, EGG_CHEAP).replace(EGG_SCIENCE_OLD, EGG_SCIENCE_NEW));
++  assert.equal(e.detail, b.detail.replace(EGG_DETAIL_OLD, EGG_DETAIL_NEW));
++  const named = [...Object.keys(EGG), 'watch_out', 'labels_decoded', 'buying_tips', 'science', 'detail'];
++  assert.deepEqual(without(e, named), without(b, named), 'egg_labels: a field outside the spec changed');
++  assert.doesNotMatch(copy(e).join('\n'), /cheapest/i);
++});
++
++test('C2 the Milk card carries the worked example; raw-milk risk lines unchanged', () => {
++  const m = now(MILK_ID);
++  const b = was(MILK_ID);
++  for (const [k, v] of Object.entries(MILK)) assert.deepEqual(m[k], v, `milk.${k}`);
++  assert.equal(reviewed.get(MILK_ID)?.do, MILK_DO);
++  assert.equal(m.watch_out[2], MILK_UHT);
++  assert.deepEqual(m.watch_out.filter((s) => s !== MILK_UHT), b.watch_out, 'milk watch_out: additions only');
++  assert.deepEqual(m.labels_decoded, [...b.labels_decoded, ...MILK_LABELS]);
++  const moved = nonEmpty(was('pick_milk')?.aliases ?? [], 'pick_milk aliases at HEAD', 1);
++  assert.deepEqual(m.aliases, [...b.aliases, ...moved.filter((a) => !b.aliases.includes(a)), MILK.cart_pick]);
++  const named = [...Object.keys(MILK), 'watch_out', 'labels_decoded', 'aliases'];
++  assert.deepEqual(without(m, named), without(b, named), 'milk: a field outside the spec changed');
++  assert.deepEqual(lint.headlineHedge(m.decision), []);
++  assert.doesNotMatch(JSON.stringify(m), /test results/i);
++  assert.deepEqual(now('raw_milk').watch_out, was('raw_milk').watch_out, 'raw-milk risk lines');
++});
++
++test('C3 the Yogurt card carries the worked example', () => {
++  const y = now(YOG_ID);
++  const b = was(YOG_ID);
++  for (const [k, v] of Object.entries(YOG)) assert.deepEqual(y[k], v, `yogurt.${k}`);
++  assert.equal(reviewed.get(YOG_ID)?.do, YOG_DO);
++  for (const old of Object.keys(YOG_TIPS)) assert.ok(b.buying_tips.includes(old), `HEAD tip moved: ${old}`);
++  assert.deepEqual(y.buying_tips, b.buying_tips.map((s) => YOG_TIPS[s] ?? s));
++  assert.ok(b.detail.startsWith(YOG_DETAIL_OLD), 'HEAD detail moved; spec is stale');
++  assert.equal(y.detail, YOG_DETAIL_NEW + b.detail.slice(YOG_DETAIL_OLD.length));
++  assert.ok(b.labels_decoded.some((l) => l.term === 'Greek / skyr'), 'HEAD label moved');
++  assert.deepEqual(y.labels_decoded, [...b.labels_decoded.map((l) => (l.term === 'Greek / skyr' ? { ...l, meaning: YOG_SKYR } : l)), ...YOG_LABELS]);
++  const named = [...Object.keys(YOG), 'buying_tips', 'detail', 'labels_decoded'];
++  assert.deepEqual(without(y, named), without(b, named), 'yogurt: a field outside the spec changed');
++});
++
++test('C4 raw milk, duck and quail eggs, ghee and butter carry the spec text', () => {
++  for (const [id, want] of Object.entries(OTHERS)) {
++    const e = now(id);
++    assert.ok(e, `${id} missing`);
++    for (const [k, v] of Object.entries(want)) assert.deepEqual(e[k], v, `${id}.${k}`);
++    assert.deepEqual(without(e, Object.keys(want)), without(was(id), Object.keys(want)), `${id}: a field outside the spec changed`);
++  }
++  assert.equal(reviewed.get('grassfed_butter')?.do, BUTTER_DO);
++  assert.match(now('raw_milk').tier_note, /not a health claim/i);
++});
++
++test('C5 pick_milk is retired and the Milk card answers its rows', () => {
++  assert.ok(was('pick_milk'), 'pick_milk missing at HEAD');
++  assert.equal(now('pick_milk'), undefined);
++  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
++  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 30);
++  for (const row of MILK_ROWS) {
++    assert.equal(idOf(matchItemToCard(row)), MILK_ID, row);
++    assert.notEqual(idOf(matchItemToPick(row)), 'pick_milk', row);
++  }
++  for (const id of ['egg_labels', MILK_ID, YOG_ID, 'grassfed_butter']) {
++    assert.equal(idOf(matchItemToCard(now(id).cart_pick)), id, `${id} cart_pick "${now(id).cart_pick}"`);
++  }
++});
++
++for (const id of CHANGED) test(`C6 ${id}: pass rule and every card lint are clean`, () => {
++  const e = now(id);
++  assert.notDeepEqual(e, was(id), `${id} unchanged`);
++  assertPassRule(null, was(id), e);
++  assert.deepEqual(lint.readability(e), []);
++  assert.deepEqual(lint.lintCard(projectEntry(e, { doLine: reviewed.get(id)?.do || '' })), []);
++  for (const f of [lint.lintPickSteps, lint.lintCulinaryAim, lint.lintRepeatedClaim]) assert.deepEqual(f(e), [], `${id} ${f.name}`);
++});
++
++test('C6 pick_egg_whites: unchanged and pick-lint clean', () => {
++  assert.deepEqual(now('pick_egg_whites'), was('pick_egg_whites'));
++  assert.deepEqual(lint.lintPick(now('pick_egg_whites')), []);
++});
++
++test('C7 new copy passes the claim-lock, price, punctuation and brand greps', () => {
++  const added = nonEmpty([...CHANGED.flatMap(fresh), EGG_DO, MILK_DO, YOG_DO, BUTTER_DO], 'CA-4a new strings', 20);
++  for (const s of added) {
++    assert.doesNotMatch(s, CLAIM_LOCK, s);
++    assert.doesNotMatch(s, PRICE, s);
++    assert.doesNotMatch(s, /—/, s);
++    assert.doesNotMatch(s, /["']/, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|us|our|ours)\b/i, s);
++  }
++  for (const id of MINE) assert.doesNotMatch(copy(now(id)).join('\n'), BRAND, id);
++  for (const id of [...MINE].filter((i) => i !== YOG_ID)) assert.doesNotMatch(now(id).tier_note ?? '', D4, id);
++});
++
++test('C8 forced section lints: no hit on a CA-4a card', () => {
++  for (const id of CHANGED) assert.notDeepEqual(now(id), was(id), `${id} unchanged`);
++  const hits = lint.lintSections([TIP], kb.entries);
++  assert.deepEqual(hits.filter((h) => h.id && MINE.has(h.id)), []);
++  assert.deepEqual(hits.filter((h) => h.code === 'SECTION_PHRASE_REPEATED' && h.ids.every((i) => MINE.has(i))), []);
++  assert.deepEqual(hits.filter((h) => h.code === 'SECTION_TIP_HANDLING'), []);
++});
++
++test('C9 doLines.json carries the new do lines', () => {
++  for (const [id, line] of Object.entries({ egg_labels: EGG_DO, [MILK_ID]: MILK_DO, [YOG_ID]: YOG_DO, grassfed_butter: BUTTER_DO })) {
++    assert.equal(doLines[id], line, id);
++    const row = reviewText.split('\n').find((l) => l.startsWith(`| \`${id}\` |`))?.split('|').map((c) => c.trim());
++    assert.equal(row?.[3], now(id).decision, `${id} review headline`);
++  }
++});
+diff --git a/server/test/acceptance/ic4b.test.js b/server/test/acceptance/ic4b.test.js
+index 0593c60..8ea50de 100644
+--- a/server/test/acceptance/ic4b.test.js
++++ b/server/test/acceptance/ic4b.test.js
+@@ -38,7 +38,7 @@ test('C0 prerequisite folds ran', () => {
+ test('C1 the Eggs card', () => {
+   const e = now('egg_labels');
+   assert.equal(e.title, 'Eggs');
+-  assert.equal(e.decision, 'Corn- and soy-free first, then organic, then pasture-raised.');
++  assert.equal(e.decision, 'Pasture-raised, organic, and corn- and soy-free, all three together.');
+   assert.match(e.tier_note, /feed|ate/i);
+   assert.match(text(e, SPOKEN), /\bboth\b[^.]*soy[- ]free[^.]*corn[- ]free|\bboth\b[^.]*corn[- ]free[^.]*soy[- ]free/i, 'both-printed fact lost');
+   assert.equal(nonPicksTitled('Eggs').length, 1, 'non-pick "Eggs" count');
+diff --git a/server/test/acceptance/ic5b.test.js b/server/test/acceptance/ic5b.test.js
+index f22cce5..3c0f07c 100644
+--- a/server/test/acceptance/ic5b.test.js
++++ b/server/test/acceptance/ic5b.test.js
+@@ -17,13 +17,20 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
+ const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
+ const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
+ const BATCH = ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'judging_meat_at_the_case', 'butcher_counter_asking', 'organ_meats', 'venison_game',
+-  'ground_beef_organ_blend', 'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
++  'ground_beef_lean_ratio', 'bison', 'lamb_goat', 'pork_cuts_and_enhanced', 'bacon', 'cured_pork', 'ham', 'hot_dogs', 'deli_meat_uncured'];
+ const GRASS_URLS = [
+   'https://www.ams.usda.gov/rules-regulations/withdrawal-united-states-standards-livestock-and-meat-marketing-claims',
+   'https://www.govinfo.gov/content/pkg/FR-2016-01-12/pdf/2016-00440.pdf',
+   'https://www.americangrassfed.org/about-us/our-standards/',
+   'https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf',
+ ];
++const FOLD_URLS = [
++  'https://www.law.cornell.edu/cfr/text/9/319.15',
++  'https://www.law.cornell.edu/cfr/text/9/317.2',
++  'https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/',
++  'https://forceofnature.com/products/regenerative-beef-ancestral-blend',
++  'https://sevensons.net/store/product/ground-beef-ancestral-blend',
++];
+ const nonPicksTitled = (t) => kb.entries.filter((e) => e.kind !== 'pick' && e.title === t);
+ const PENDING = [...TIER_NOTE_ORPHANED_PENDING];
+ const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
+@@ -36,15 +43,15 @@ const urls = (e) => (e?.sources || []).flatMap((s) => JSON.stringify(s).match(/h
+ test('C1 the Beef card', () => {
+   const b = now('beef_grassfed_vs_grainfed');
+   assert.equal(b.title, 'Beef');
+-  assert.equal(b.decision, '100% grass-fed and grass-finished.');
+-  assert.match(b.tier_note, /finish/i);
++  assert.equal(b.decision, '100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.');
++  assert.ok(b.tier_note.includes('“grass-fed” is the producer’s own word unless a certifier’s seal audits it'));
+   assert.equal(nonPicksTitled('Beef').length, 1, 'non-pick "Beef" count');
+ });
+ 
+ test('C2 Steak and judging', () => {
+   assert.equal(now('beef_cuts_basics').title, 'Steak');
+   assert.equal(nonPicksTitled('Steak').length, 1, 'non-pick "Steak" count');
+-  assert.match(now('judging_meat_at_the_case').decision, /oxygen|colou?r/i, 'judging front lost its colour fact');
++  assert.match(now('judging_meat_at_the_case').decision, /packaged on/i, 'judging front lost its package fact');
+ });
+ 
+ test('C3 beef pointers follow the retitle', () => {
+@@ -84,7 +91,7 @@ test('C7 new URLs are archived', () => {
+   const archive = readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8')).join('\n');
+   let checked = 0;
+   for (const id of BATCH) {
+-    const was = new Set(urls(pre(id)));
++    const was = new Set([...urls(pre(id)), ...(id === 'ground_beef_lean_ratio' ? FOLD_URLS : [])]);
+     for (const u of urls(now(id))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
+   }
+   assert.ok(checked >= 4, `only ${checked} new URLs checked`);
+diff --git a/server/test/acceptance/ic7a.test.js b/server/test/acceptance/ic7a.test.js
+index 7459496..f2c52be 100644
+--- a/server/test/acceptance/ic7a.test.js
++++ b/server/test/acceptance/ic7a.test.js
+@@ -25,6 +25,7 @@ const FOLDED = Object.keys(FOLD);
+ const SURVIVORS = [MILK, YOG];
+ const KEEP_OFF = new Set(['kefir', 'alive', 'still alive']);
+ const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
++const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.'];
+ const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
+ const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
+ const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));
+@@ -82,7 +83,7 @@ test('C4 sources moved', () => {
+ });
+ 
+ test('C5 tips, watch-outs and labels moved; digestion tip dropped', () => {
+-  const drop = new Set(DROPPED.map(norm));
++  const drop = new Set([...DROPPED, ...REPHRASED].map(norm));
+   for (const id of FOLDED) {
+     const to = FOLD[id];
+     const body = norm(strings(now(to)).join('\n'));
+diff --git a/server/test/acceptance/ic7b.test.js b/server/test/acceptance/ic7b.test.js
+index f2b14ec..3202dcf 100644
+--- a/server/test/acceptance/ic7b.test.js
++++ b/server/test/acceptance/ic7b.test.js
+@@ -17,7 +17,7 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
+ const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
+ const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
+ const LEGAL = /\b(il)?legal\b|\blaws?\b/i;
+-const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.';
++const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.';
+ const UMD = 'https://agrisk.umd.edu/post/the-raw-facts-let-s-talk-about-state-laws-regulating-raw-milk';
+ const BATCH = ['whole_vs_reduced_fat_milk', 'grassfed_butter', 'yogurt_plain_vs_flavored', 'raw_milk', 'ghee', 'plant_butter', 'plain_kefir', 'raw_kefir',
+   'sour_cream', 'cottage_cheese', 'cream_cheese', 'cheese_real_vs_processed', 'raw_aged_cheese', 'goat_sheep_dairy', 'cream_vs_creamer', 'ice_cream',
+@@ -39,7 +39,7 @@ test('C1 the Milk front is Devon\'s ruling', () => {
+   const m = now('whole_vs_reduced_fat_milk');
+   assert.equal(m.decision, MILK_FRONT);
+   assert.deepEqual(headlineHedge(m.decision), []);
+-  assert.match(m.tier_note, /raw|farmer/i);
++  assert.match(m.tier_note, /145°F/);
+   assert.match(m.tier_note, /low-temp|organic/i);
+   assert.equal(nonPicksTitled('Milk').length, 1, 'non-pick "Milk" count');
+ });
+diff --git a/server/test/acceptance/ic8a.test.js b/server/test/acceptance/ic8a.test.js
+index c75f067..18299f7 100644
+--- a/server/test/acceptance/ic8a.test.js
++++ b/server/test/acceptance/ic8a.test.js
+@@ -82,6 +82,6 @@ test('C6 sources never shrink and new URLs are archived', () => {
+   }
+ });
+ 
+-test('C7 card count stays 182', () => {
+-  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 182);
++test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
++  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+ });
+diff --git a/server/test/acceptance/ic8b.test.js b/server/test/acceptance/ic8b.test.js
+index 5fffd86..200780d 100644
+--- a/server/test/acceptance/ic8b.test.js
++++ b/server/test/acceptance/ic8b.test.js
+@@ -90,6 +90,6 @@ test('C6 sources never shrink and new URLs are archived', () => {
+   assert.ok(!JSON.stringify(kb).includes(UMD), 'umd raw-milk-law URL is in the KB');
+ });
+ 
+-test('C7 card count stays 182', () => {
+-  assert.equal(CARDS.length, 182);
++test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
++  assert.equal(CARDS.length, 181);
+ });
+diff --git a/server/test/acceptance/k14.test.js b/server/test/acceptance/k14.test.js
+index 0b57c67..b66cbe1 100644
+--- a/server/test/acceptance/k14.test.js
++++ b/server/test/acceptance/k14.test.js
+@@ -148,9 +148,9 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
+   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
+ });
+ 
+-test('C12 passRule.js and k5–k11 are unedited since 8c7112e (ca-1 passRule outside-set narrowing; was 4b3e4ff ic-7a k7 dairy fold; was 19b08ba ic-6a seafood fold; was a06b477 ic-5a k9 retired ids; was 6a782c6 ic-4a-chicken; was a65b138 ic-4a-eggs; was 1c8a09e ic-3a; was a88ada6 ic-1; was e92e7c9, chf-5 fold absorbers + retired-id rewrites; was 5cc9758, before that 64a9774)', () => {
++test('C12 passRule.js and k5–k11 are unedited since 719f9fe (ca-3a k9 retired id; was 8c7112e ca-1 passRule outside-set narrowing; was 4b3e4ff ic-7a k7 dairy fold; was 19b08ba ic-6a seafood fold; was a06b477 ic-5a k9 retired ids; was 6a782c6 ic-4a-chicken; was a65b138 ic-4a-eggs; was 1c8a09e ic-3a; was a88ada6 ic-1; was e92e7c9, chf-5 fold absorbers + retired-id rewrites; was 5cc9758, before that 64a9774)', () => {
+   const out = execSync(
+-    "git diff 8c7112e --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
++    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
+     { cwd: ROOT },
+   ).toString();
+   assert.equal(out, '');
+diff --git a/server/test/acceptance/k15.test.js b/server/test/acceptance/k15.test.js
+index b574459..c43ff83 100644
+--- a/server/test/acceptance/k15.test.js
++++ b/server/test/acceptance/k15.test.js
+@@ -39,7 +39,7 @@ const KEEPS = nonEmpty([
+   ['pork', 'pork_cuts_and_enhanced'], ['pork chops', 'pork_cuts_and_enhanced'], ['pork shoulder', 'pork_cuts_and_enhanced'],
+   ['deli meat', 'deli_meat_uncured'], ['lunch meat', 'deli_meat_uncured'], ['deli turkey', 'deli_meat_uncured'], ['sliced turkey', 'deli_meat_uncured'],
+   ['stew meat', 'beef_cuts_basics'], ['steak', 'beef_cuts_basics'],
+-  ['organ blend ground beef', 'ground_beef_organ_blend'], ['beef with liver', 'ground_beef_organ_blend'], ['organ meat blend', 'ground_beef_organ_blend'],
++  ['organ blend ground beef', 'ground_beef_lean_ratio'], ['beef with liver', 'ground_beef_lean_ratio'], ['organ meat blend', 'ground_beef_lean_ratio'],
+   ['whole turkey', 'turkey_whole'], ['ground turkey', 'ground_turkey'],
+   ['duck eggs', 'egg_duck_quail'], ['eggs', 'egg_labels'], ['meat counter', 'butcher_counter_asking'],
+   ['sausage', 'pick_sausage'], ['italian sausage', 'pick_sausage'],
+diff --git a/server/test/acceptance/k9.test.js b/server/test/acceptance/k9.test.js
+index 0197ae1..c407aba 100644
+--- a/server/test/acceptance/k9.test.js
++++ b/server/test/acceptance/k9.test.js
+@@ -15,9 +15,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
+ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
+ 
+ const SLICE = nonEmpty([
+-  'beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio',
++  'beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio',
+   'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'deli_meat_uncured', 'hot_dogs',
+-], 'the K9 slice', 9);
++], 'the K9 slice', 8);
+ 
+ const oldEntries = pre.entries ?? pre;
+ 
+diff --git a/server/test/counterProbe48.test.js b/server/test/counterProbe48.test.js
+index 5c5ff59..903c316 100644
+--- a/server/test/counterProbe48.test.js
++++ b/server/test/counterProbe48.test.js
+@@ -181,6 +181,6 @@ test('bare retrieval uses one unambiguous longer buying alias, never a substring
+   assert.deepEqual(scoreEntries('oat milk', 3, [owner]), []);
+   assert.deepEqual(scoreEntries('milk', 3, [{ ...owner, asked_as: [] }]), []);
+   assert.deepEqual(scoreEntries('milk', 3, [owner, { ...owner, id: 'other_owner' }]), []);
+-  assert.equal(matchItemToPick('milk carton')?.id, 'pick_milk');
+-  assert.equal(matchItemToPick('carton of milk')?.id, 'pick_milk');
++  assert.equal(matchItemToPick('milk carton')?.id, undefined);
++  assert.equal(matchItemToPick('carton of milk')?.id, undefined);
+ });
+diff --git a/server/test/ktight.test.js b/server/test/ktight.test.js
+index 69c697b..7aefe98 100644
+--- a/server/test/ktight.test.js
++++ b/server/test/ktight.test.js
+@@ -11,7 +11,7 @@ import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
+ const BATCHES = {
+   B01: ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'seafood_certifications'],
+   B02: ['canned_tuna', 'white_fish', 'crab', 'lobster', 'scallops', 'clams_mussels_oysters', 'smoked_salmon', 'seafood_counter'],
+-  B03: ['beef_grassfed_vs_grainfed', 'ground_beef_organ_blend', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
++  B03: ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'pork_cuts_and_enhanced', 'judging_meat_at_the_case', 'butcher_counter_asking', 'lamb_goat', 'organ_meats', 'bison', 'venison_game'],
+   B04: ['rotisserie_chicken', 'chicken_cuts_basics', 'turkey_whole', 'ground_turkey', 'chicken_breast', 'egg_labels', 'egg_duck_quail'],
+   B05: ['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'hummus', 'deli_salads', 'prepared_meals', 'fresh_pasta', 'deli'],
+   B06: ['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'precut_produce_tradeoffs', 'produce_ripeness_by_item', 'berries_picking', 'sprouts_raw', 'produce_mushrooms', 'produce_green_beans', 'produce_stone_fruit'],
+@@ -29,15 +29,15 @@ const BATCHES = {
+   B18: ['frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_waffles', 'frozen_nuggets', 'frozen'],
+ };
+ // The spec's n column: a batch that drifts from its row is a ledger defect.
+-const SIZES = { B01: 6, B02: 8, B03: 11, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
++const SIZES = { B01: 6, B02: 8, B03: 10, B04: 7, B05: 11, B06: 10, B07: 12, B08: 9, B09: 12, B10: 10, B11: 9, B12: 13, B13: 12, B14: 9, B15: 12, B16: 14, B17: 10, B18: 6 };
+ 
+ const DONE = ['B06', 'B07', 'B01', 'B02', 'B03', 'B04', 'B05', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18'];
+ 
+ const has = (e, f) => Object.prototype.hasOwnProperty.call(e, f);
+-const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 182);
++const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 181);
+ const byId = new Map(QUESTIONS.map((e) => [e.id, e]));
+ const PICKS = nonEmpty(kb.entries.filter((e) => e.kind === 'pick'), 'picks');
+-const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 181);
++const ALL_IDS = nonEmpty(Object.values(BATCHES).flat(), 'batched ids', 180);
+ const doneIds = DONE.flatMap((b) => BATCHES[b] || []);
+ const openIds = Object.entries(BATCHES).filter(([b]) => !DONE.includes(b)).flatMap(([, ids]) => ids);
+ const withFields = kb.entries.filter((e) => has(e, 'pick_steps') || has(e, 'science'));

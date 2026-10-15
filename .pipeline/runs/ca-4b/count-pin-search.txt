@@ -1,0 +1,30 @@
+server/lib/counterCardLint.test.js:3:// Every rule here is a defect that was found by hand on 2026-07-31 during the Pass 2
+server/lib/counterCardLint.test.js:112:  // The real historical defect, verbatim: egg_feed_claims before 2026-07-31.
+server/lib/counterCardLint.test.js:443:  assert.equal(CARDS.length, 181);
+server/lib/counterDecision.test.js:151:  // the two-beat fragment register retired by VOICE_SPEC on 2026-08-23 ("state the fact,
+server/lib/internalGrowth.test.js:37:  assert.equal(tokenMatches(token.slice(0, 31), token), false, 'a prefix must not pass');
+server/test/healthFirst.test.js:19:  'health-first corpus', 182
+server/test/ktight.test.js:37:const QUESTIONS = nonEmpty(questionEntries(kb.entries), 'question entries', 181);
+server/lib/verdictEngine.test.js:399:   Measured over 18 real products: stage attribution was EXACT 30, FORWARD 9, REVERSE 2
+server/lib/labelVerdict.test.js:106:  assert.equal(sugarsPer100g({ sugarsG: 12, servingG: 40 }), 30);
+server/test/acceptance/ca-4a.test.js:56:  tier_note: 'Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.',
+server/test/acceptance/ca-4a.test.js:66:  { term: 'Vat pasteurized', meaning: 'Held at 145°F for 30 minutes; also printed as low-temperature pasteurized.' },
+server/test/acceptance/ca-4a.test.js:190:  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+server/test/acceptance/ca-4a.test.js:191:  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 30);
+server/test/acceptance/k15.test.js:36:}), 'K15 bare rows', 30);
+server/lib/kindFilter.test.js:113:  // 31 after K18: english muffins and pita/naan, 2026-10-06.
+server/lib/kindFilter.test.js:114:  // 30 after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.
+server/lib/kindFilter.test.js:115:  assert.equal(pickEntries(perimeterKb.entries).length, 30, 'CA-4a: 30 picks in the raw corpus');
+server/test/acceptance/ic8a.test.js:85:test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+server/test/acceptance/ic8a.test.js:86:  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+server/test/acceptance/k22.test.js:45:], 'K22 keep rows', 23);
+server/lib/trips.test.js:388:  completedAt: '2026-07-24T10:30:00.000Z',
+server/test/acceptance/k21.test.js:47:], 'K21 keep rows', 23);
+server/test/acceptance/ic8b.test.js:93:test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
+server/test/acceptance/ic8b.test.js:94:  assert.equal(CARDS.length, 181);
+server/test/acceptance/k20.test.js:44:], 'K20 not-new rows', 23);
+server/test/acceptance/k18.test.js:47:], 'K18 not-new rows', 23);
+server/test/acceptance/k3-1.test.js:28:}).flatMap(([id, ws]) => ws.map((w) => [w, id])), 'K3-1 list words', 30);
+server/lib/perimeter.test.js:209:  assert.ok(picks.length >= 30, `only ${picks.length} entries resolve to a cart pick`);
+server/test/acceptance/k16.test.js:99:  const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k16 archive', 30);
+server/test/acceptance/k3-0.test.js:12:const ROWS = nonEmpty(JSON.parse(readFileSync(join(SERVER, '../docs/coverage/list-words.json'), 'utf8')), 'K3-0 list-word rows', 30);

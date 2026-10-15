@@ -1,0 +1,15 @@
+{
+  "cards": {
+    "plain_kefir": {"cart_pick": "100% grass-fed whole-milk plain kefir"},
+    "sour_cream": {"cart_pick": "Cream and cultures only sour cream"},
+    "cream_cheese": {"cart_pick": "Stabilizer-free cream cheese"},
+    "plant_butter": {"cart_pick": "Coconut or olive oil plant butter"},
+    "almond_milk": {"instead": "Fortified unsweetened soy milk is the next plant drink."},
+    "oat_milk": {"instead": "Fortified unsweetened soy milk is the next plant drink."},
+    "soy_milk": {"instead": "Unsweetened almond milk."}
+  },
+  "do": {
+    "almond_milk": "Read the Nutrition Facts for added sugars, then calcium and vitamin D.",
+    "oat_milk": "Read the ingredients for added vitamins and minerals, then the stabilizers."
+  }
+}

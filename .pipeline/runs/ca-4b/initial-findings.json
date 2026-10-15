@@ -1,0 +1,63 @@
+[
+  {
+    "id": "plain_kefir",
+    "check": "counterPath",
+    "hits": [
+      "Plain whole-milk kefir, 100% grass-fed"
+    ]
+  },
+  {
+    "id": "plain_kefir",
+    "check": "cart_pick match (diagnostic)",
+    "hits": [
+      {
+        "text": "Plain whole-milk kefir, 100% grass-fed",
+        "slug": "beef_grassfed_vs_grainfed"
+      }
+    ]
+  },
+  {
+    "id": "sour_cream",
+    "check": "cart_pick match (diagnostic)",
+    "hits": [
+      {
+        "text": "Sour cream, cream and cultures only",
+        "slug": null
+      }
+    ]
+  },
+  {
+    "id": "cream_cheese",
+    "check": "cart_pick match (diagnostic)",
+    "hits": [
+      {
+        "text": "Cream cheese with no stabilizers listed",
+        "slug": null
+      }
+    ]
+  },
+  {
+    "id": "plant_butter",
+    "check": "cart_pick match (diagnostic)",
+    "hits": [
+      {
+        "text": "Plant butter built on coconut or olive oil",
+        "slug": "olive_oil_grades"
+      }
+    ]
+  },
+  {
+    "id": "almond_milk",
+    "check": "protein on free front",
+    "hits": [
+      "Read the Nutrition Facts for added sugars, then the protein."
+    ]
+  },
+  {
+    "id": "oat_milk",
+    "check": "protein on free front",
+    "hits": [
+      "Compare the protein line and read the ingredients for added vitamins and minerals."
+    ]
+  }
+]

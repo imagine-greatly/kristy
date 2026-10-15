@@ -1,0 +1,41 @@
+{
+  "baseRef": "a392e36",
+  "observedHead": "0b23dbc9dfb3249d791283cb2f063be07cd6c9d4",
+  "curatedCardCount": 181,
+  "pickCount": 30,
+  "totalEntryCount": 211,
+  "eggsDairyCardCount": 23,
+  "ca4bCardCount": 16,
+  "sectionHitCount": 1,
+  "sectionHitsByCode": {
+    "SECTION_PHRASE_REPEATED": 1
+  },
+  "sections": [
+    {
+      "code": "SECTION_PHRASE_REPEATED",
+      "section": "eggs_dairy",
+      "form": "front",
+      "ids": [
+        "cheese_real_vs_processed",
+        "ghee",
+        "oat_milk",
+        "plain_kefir"
+      ],
+      "phrase": "is the whole food"
+    }
+  ],
+  "mixedSections": [
+    {
+      "code": "SECTION_PHRASE_REPEATED",
+      "section": "eggs_dairy",
+      "form": "front",
+      "ids": [
+        "cheese_real_vs_processed",
+        "ghee",
+        "oat_milk",
+        "plain_kefir"
+      ],
+      "phrase": "is the whole food"
+    }
+  ]
+}

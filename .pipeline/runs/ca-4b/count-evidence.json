@@ -1,0 +1,26 @@
+{
+  "8e6133b": {
+    "curated": 182,
+    "picks": 31,
+    "total": 213,
+    "eggsDairy": 23,
+    "healthFirst": 183,
+    "cartBearing": 150
+  },
+  "a392e36": {
+    "curated": 181,
+    "picks": 30,
+    "total": 211,
+    "eggsDairy": 23,
+    "healthFirst": 182,
+    "cartBearing": 149
+  },
+  "HEAD": {
+    "curated": 181,
+    "picks": 30,
+    "total": 211,
+    "eggsDairy": 23,
+    "healthFirst": 182,
+    "cartBearing": 149
+  }
+}
