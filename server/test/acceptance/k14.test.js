@@ -148,9 +148,9 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
 });
 
-test('C12 passRule.js and k5–k11 are unedited since 4b3e4ff (ic-7a k7 dairy fold; was 19b08ba ic-6a seafood fold; was a06b477 ic-5a k9 retired ids; was 6a782c6 ic-4a-chicken; was a65b138 ic-4a-eggs; was 1c8a09e ic-3a; was a88ada6 ic-1; was e92e7c9, chf-5 fold absorbers + retired-id rewrites; was 5cc9758, before that 64a9774)', () => {
+test('C12 passRule.js and k5–k11 are unedited since 8c7112e (ca-1 passRule outside-set narrowing; was 4b3e4ff ic-7a k7 dairy fold; was 19b08ba ic-6a seafood fold; was a06b477 ic-5a k9 retired ids; was 6a782c6 ic-4a-chicken; was a65b138 ic-4a-eggs; was 1c8a09e ic-3a; was a88ada6 ic-1; was e92e7c9, chf-5 fold absorbers + retired-id rewrites; was 5cc9758, before that 64a9774)', () => {
   const out = execSync(
-    "git diff 4b3e4ff --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
+    "git diff 8c7112e --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[5-9].test.js' 'server/test/acceptance/k1[01].test.js'",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
