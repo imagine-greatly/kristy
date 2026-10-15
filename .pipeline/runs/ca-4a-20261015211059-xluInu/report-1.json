@@ -1,0 +1,28 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic7a.test.js",
+    "server/test/counterProbe48.test.js",
+    "server/lib/kindFilter.test.js",
+    "server/lib/perimeter.test.js",
+    "server/scripts/listMatchProbe.js"
+  ],
+  "criteria": [
+    {"id":"C1","met":true,"evidence":"Acceptance passed: exact Eggs changes and preserved fields."},
+    {"id":"C2","met":true,"evidence":"Acceptance passed: exact Milk changes and unchanged risk lines."},
+    {"id":"C3","met":true,"evidence":"Acceptance passed: exact Yogurt changes."},
+    {"id":"C4","met":true,"evidence":"Acceptance passed: four card updates; pick_egg_whites unchanged."},
+    {"id":"C5","met":true,"evidence":"Acceptance passed; probe rerun reports 0 wrong."},
+    {"id":"C6","met":true,"evidence":"All pass-rule and required card-lint acceptance cases passed."},
+    {"id":"C7","met":true,"evidence":"All copy-grep acceptance checks passed."},
+    {"id":"C8","met":true,"evidence":"CA-4a section hits remain empty. Step 0 had Eggs G3/G4, Milk G2/G4, and the unchanged mixed repetition group: cheese_real_vs_processed, ghee, oat_milk, plain_kefir."},
+    {"id":"C9","met":true,"evidence":"NOT READY: acceptance remains 15/16. All four review headlines and generated do lines independently verified. NOTE: immutable ca-4a.test.js:238 reads .headline, but unowned counterCards.js:571 returns only do/flag; no compliant owned-file edit can resolve this. Gate script-path errors occur because failed acceptance prevents `cd server`; guard and dry-run pass from server/, placing all 181 cards. Last full suite: 2578/2581; other unowned conflicts are counterDecision.test.js:31 (approved Milk why exceeds 120 characters) and counterPath.test.js:104 (approved embedded 100%). No changes this round; cumulative files listed. Assumptions: ownership remains unchanged. Contract requires reporting unowned test conflicts as done, not blocked. No Step 6 edits skipped."}
+  ],
+  "questions": [],
+  "kind": null
+}

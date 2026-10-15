@@ -1,0 +1,183 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the Eggs card carries the worked example
+ok 1 - C1 the Eggs card carries the worked example
+  ---
+  duration_ms: 1.301834
+  type: 'test'
+  ...
+# Subtest: C2 the Milk card carries the worked example; raw-milk risk lines unchanged
+ok 2 - C2 the Milk card carries the worked example; raw-milk risk lines unchanged
+  ---
+  duration_ms: 0.720666
+  type: 'test'
+  ...
+# Subtest: C3 the Yogurt card carries the worked example
+ok 3 - C3 the Yogurt card carries the worked example
+  ---
+  duration_ms: 0.171583
+  type: 'test'
+  ...
+# Subtest: C4 raw milk, duck and quail eggs, ghee and butter carry the spec text
+ok 4 - C4 raw milk, duck and quail eggs, ghee and butter carry the spec text
+  ---
+  duration_ms: 0.253584
+  type: 'test'
+  ...
+# Subtest: C5 pick_milk is retired and the Milk card answers its rows
+ok 5 - C5 pick_milk is retired and the Milk card answers its rows
+  ---
+  duration_ms: 18.731042
+  type: 'test'
+  ...
+# Subtest: C6 egg_labels: pass rule and every card lint are clean
+ok 6 - C6 egg_labels: pass rule and every card lint are clean
+  ---
+  duration_ms: 8.466458
+  type: 'test'
+  ...
+# Subtest: C6 whole_vs_reduced_fat_milk: pass rule and every card lint are clean
+ok 7 - C6 whole_vs_reduced_fat_milk: pass rule and every card lint are clean
+  ---
+  duration_ms: 1.824625
+  type: 'test'
+  ...
+# Subtest: C6 yogurt_plain_vs_flavored: pass rule and every card lint are clean
+ok 8 - C6 yogurt_plain_vs_flavored: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.574458
+  type: 'test'
+  ...
+# Subtest: C6 raw_milk: pass rule and every card lint are clean
+ok 9 - C6 raw_milk: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.510208
+  type: 'test'
+  ...
+# Subtest: C6 egg_duck_quail: pass rule and every card lint are clean
+ok 10 - C6 egg_duck_quail: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.672125
+  type: 'test'
+  ...
+# Subtest: C6 ghee: pass rule and every card lint are clean
+ok 11 - C6 ghee: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.512667
+  type: 'test'
+  ...
+# Subtest: C6 grassfed_butter: pass rule and every card lint are clean
+ok 12 - C6 grassfed_butter: pass rule and every card lint are clean
+  ---
+  duration_ms: 0.50725
+  type: 'test'
+  ...
+# Subtest: C6 pick_egg_whites: unchanged and pick-lint clean
+ok 13 - C6 pick_egg_whites: unchanged and pick-lint clean
+  ---
+  duration_ms: 0.606791
+  type: 'test'
+  ...
+# Subtest: C7 new copy passes the claim-lock, price, punctuation and brand greps
+ok 14 - C7 new copy passes the claim-lock, price, punctuation and brand greps
+  ---
+  duration_ms: 1.061583
+  type: 'test'
+  ...
+# Subtest: C8 forced section lints: no hit on a CA-4a card
+ok 15 - C8 forced section lints: no hit on a CA-4a card
+  ---
+  duration_ms: 18.585667
+  type: 'test'
+  ...
+# Subtest: C9 doLines.json carries the new do lines
+not ok 16 - C9 doLines.json carries the new do lines
+  ---
+  duration_ms: 0.618
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/ca-4a.test.js:235:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    egg_labels review headline
+    + actual - expected
+    
+    + undefined
+    - 'Pasture-raised, organic, and corn- and soy-free, all three together.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Pasture-raised, organic, and corn- and soy-free, all three together.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/ca-4a.test.js:238:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 15
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 195.824416
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/listMatchProbe.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/commitGuard.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0
+node:internal/modules/cjs/loader:1573
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/m1/kristy/scripts/migrateCounterCards.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1569:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v26.7.0

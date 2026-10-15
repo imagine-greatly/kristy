@@ -16,7 +16,8 @@ const ROOT = join(SERVER, '..');
 const BASE_REF = 'd707172';
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
 const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8'));
+const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+const reviewed = parseReviewTable(reviewText);
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
 const now = (id) => kb.entries.find((e) => e.id === id);
 const was = (id) => base.entries.find((e) => e.id === id);
@@ -235,6 +236,7 @@ test('C8 forced section lints: no hit on a CA-4a card', () => {
 test('C9 doLines.json carries the new do lines', () => {
   for (const [id, line] of Object.entries({ egg_labels: EGG_DO, [MILK_ID]: MILK_DO, [YOG_ID]: YOG_DO, grassfed_butter: BUTTER_DO })) {
     assert.equal(doLines[id], line, id);
-    assert.equal(reviewed.get(id)?.headline, now(id).decision, `${id} review headline`);
+    const row = reviewText.split('\n').find((l) => l.startsWith(`| \`${id}\` |`))?.split('|').map((c) => c.trim());
+    assert.equal(row?.[3], now(id).decision, `${id} review headline`);
   }
 });

@@ -1,0 +1,28 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic7a.test.js",
+    "server/test/counterProbe48.test.js",
+    "server/lib/kindFilter.test.js",
+    "server/lib/perimeter.test.js",
+    "server/scripts/listMatchProbe.js"
+  ],
+  "criteria": [
+    {"id":"C1","met":true,"evidence":"Exact Eggs changes and preservation checks passed."},
+    {"id":"C2","met":true,"evidence":"Exact Milk changes passed; existing risk lines unchanged."},
+    {"id":"C3","met":true,"evidence":"Exact Yogurt changes and preservation checks passed."},
+    {"id":"C4","met":true,"evidence":"Four card updates passed; pick_egg_whites unchanged."},
+    {"id":"C5","met":true,"evidence":"pick_milk absent; required rows resolve correctly; probe 0 wrong."},
+    {"id":"C6","met":true,"evidence":"All required pass-rule and card-lint checks passed."},
+    {"id":"C7","met":true,"evidence":"All required copy-grep checks passed."},
+    {"id":"C8","met":true,"evidence":"CA-4a section hits cleared. Step 0: Eggs G3/G4, Milk G2/G4; mixed repetition group cheese_real_vs_processed/ghee/oat_milk/plain_kefir remains unchanged."},
+    {"id":"C9","met":true,"evidence":"NOT READY: data matches all four specified headlines and do lines, but acceptance is 15/16. NOTE: immutable ca-4a.test.js:238 expects .headline; unowned counterCards.js:571 returns only do/flag. Resolving this requires an unowned parser or acceptance-test amendment. Latest full suite: 2578/2581; unowned counterDecision.test.js:31 and counterPath.test.js:104 also conflict with approved Milk text. Gate path errors follow the failed acceptance preventing `cd server`; guard and dry-run pass from server/, placing 181 cards. Three identical gate failures reached; no further retries or edits. Cumulative files listed; no Step 6 edits skipped. Assumptions: owns remains unchanged. Status done follows the contract's instruction for unowned test conflicts."}
+  ],
+  "questions": [],
+  "kind": null
+}

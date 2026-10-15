@@ -1,0 +1,28 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic7a.test.js",
+    "server/test/counterProbe48.test.js",
+    "server/lib/kindFilter.test.js",
+    "server/lib/perimeter.test.js",
+    "server/scripts/listMatchProbe.js"
+  ],
+  "criteria": [
+    {"id":"C1","met":true,"evidence":"Acceptance passed: exact Eggs copy, watch-out order and preserved fields match d707172."},
+    {"id":"C2","met":true,"evidence":"Acceptance passed: exact Milk copy; existing Milk and raw-milk risk lines unchanged. NOTE: unowned counterDecision.test.js:31 rejects the approved 159-character why against its 120-character cap; counterPath.test.js:104 rejects the approved embedded 100%. Both tests remain unchanged."},
+    {"id":"C3","met":true,"evidence":"Acceptance passed: exact Yogurt changes; all unspecified fields preserved."},
+    {"id":"C4","met":true,"evidence":"Acceptance passed for all four cards; pick_egg_whites unchanged. Assumptions: supplied D2 Butter wording governs."},
+    {"id":"C5","met":true,"evidence":"pick_milk retired; 30 picks remain. All six milk rows and four cart picks resolve correctly. Probe: 0 wrong."},
+    {"id":"C6","met":true,"evidence":"All seven pass rules and required card lints passed; pick_egg_whites lint passed."},
+    {"id":"C7","met":true,"evidence":"Acceptance passed all claim, price, punctuation, first-person, brand and D4 checks."},
+    {"id":"C8","met":true,"evidence":"Step 0: TERM_UNGLOSSED egg_labels G3/G4 and Milk G2/G4; SECTION_PHRASE_REPEATED among cheese_real_vs_processed, ghee, oat_milk and plain_kefir. After: CA-4a hits []; mixed group unchanged."},
+    {"id":"C9","met":true,"evidence":"Four reviewed headlines and generated do lines verified independently. NOTE: immutable C9 expects .headline, but parseReviewTable returns only do/flag. NOT READY for shipment: acceptance 15/16; npm test 2578/2581, with the three unowned conflicts reported above. Guard clean; dry-run places all 181 cards. No Step 6 edits skipped. Assumptions: prescribed internal read-only git calls authorized; Node 26.7 used, Node 22 unchecked."}
+  ],
+  "questions": [],
+  "kind": null
+}
