@@ -238,7 +238,7 @@ named, plus four more the same question surfaced.
 | --- | --- | --- |
 | `flour_basics` | **DRIFTED (redrafted)** | Served the verdict but restated it — the headline already says "Unbleached", so "Read for 'unbleached'" spent the line on a word the shopper had. Now serves the verdict's second half, which nothing else said. |
 | `oats_steelcut_rolled_instant` | **DRIFTED (redrafted)** | Worse than drift: the headline says "any form" and the line said "steel-cut if you have twenty minutes", arguing against its own verdict. The sharp half — skip the flavored packets — went unserved. |
-| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | The pack with the newest ‘packaged on’ date in the case. |
+| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | The headline consumed all three sensory acts, so the line moved to "take it from the back of the case" — a temperature act, not a judging act, and the entry's least central tip. Now gives the press test its actual criterion. |
 | `yogurt_plain_vs_flavored` | SERVES (rephrased) | Verifying the list is milk and cultures is exactly how you confirm "plain". Kept; only the construction changed, because it collided with `cheese_real_vs_processed`. |
 | `sprouts_raw` | SERVES | "Cold and crisp" made observable as white roots and an unfogged clamshell. Straight from tips 2 and 3. |
 | `label_no_added_hormones` | SERVES | Operationalizes the meaningful half of the verdict. Left alone, though it is the seventh "find the seal" line in the corpus — see below. |

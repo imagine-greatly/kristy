@@ -855,9 +855,9 @@ Tags: `card` = already on this card at `8b49633`; `fold` = verbatim on `ground_b
 | 16 | lean.do | Read the label for organ names, each with a percentage beside it. | fold do line ("Read the ingredient list for liver and heart, each with a percentage.") |
 | 17 | lean.pick_steps 2 | Organ blend: each organ named, each with its own percentage. | fold pick_steps 1, buying_tips 1 |
 | 18 | lean.pick_steps 3 | Next: plain ground beef; skip “hamburger,” which allows added beef fat. | CA-2:7 9 CFR 319.15(b) (https://www.law.cornell.edu/cfr/text/9/319.15); meat:304-322; card buying_tips 1 |
-| 19 | lean.why s1 | Federal rules bar added water, binders, and extenders from anything sold as ‘ground beef’. | fold detail; CA-2:7 9 CFR 319.15(a) |
-| 20 | lean.why s2 | Regulation keeps organs out of ‘ground beef’, so a blend needs its own name and a full ingredient list. | fold why, verbatim |
-| 21 | lean.why s3 | Organs are part of eating the whole animal, and a blend puts them in a familiar grind. | KS (plan tag), no new fact |
+| 19 | lean.why (one sentence, admin amend 2026-10-15: 281-char why broke the ≤120 bar) | Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name. | merges rows 19+20 sources: fold detail; CA-2:7 9 CFR 319.15(a); fold why |
+| 20 | (merged into 19; ‘extenders’ and ‘full ingredient list’ stay in detail) | — | — |
+| 21 | lean.detail (end) | Organs are part of eating the whole animal, and a blend puts them in a familiar grind. | KS (plan tag), no new fact; demoted from why s3 |
 | 22 | lean.short_answer s1 | Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. | fold decision + card decision |
 | 23 | lean.short_answer s2 | How the cattle were raised is on the Beef card. | POINTER (card pick_steps) |
 | 24 | lean.buying_tips + | The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name. | fold buying_tips 2, verbatim |
@@ -982,3 +982,11 @@ console.log(JSON.stringify(out, null, 2));
 - **A grass term on venison_game.** No source in either archive covers deer diets, and AGW names beef, sheep, goats and bison, not deer.
 - **A cart_pick on judging_meat_at_the_case.** A judging card has no shelf item.
 - **Rewording judging's old tier_note into watch_out.** It is 22 words and may not be reworded; its content is already in `why` and kristy_take.
+
+
+## Admin amendments after build (2026-10-15, 719f9fe + follow-up)
+- Ground beef why cut to one sentence (rows 19-21); s3 demoted to detail end.
+- Count pins 182→181: counterCardLint.test.js, ic8a, ic8b.
+- counterCardLint.js lintRepeatedClaim strips CANONICAL_GLOSSES text before matching (L4 requires G1 on bison/lamb). Section-blind: also exempts G3/G6 verbatim glosses (critic NOTE 2).
+- do-lines-review.md historical row (:242) restored per Step 2 (critic NOTE 1).
+- C12 re-anchored to 719f9fe.
