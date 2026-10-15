@@ -1,0 +1,800 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index bdbb4e2..84079ec 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -42,7 +42,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished, no added hormones, with a certifier’s seal. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+ | `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
+ | `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then ground beef with nothing added. | Read the label for organ names, each with a percentage beside it. | — |
+-| `egg_labels` | eggs_dairy | Corn- and soy-free first, then organic, then pasture-raised. | Check the small regional cartons. That is where a feed claim appears. | — |
++| `egg_labels` | eggs_dairy | Pasture-raised, organic, and corn- and soy-free, all three together. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
+ | `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
+ | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
+ | `freezing_produce` | produce · home | Enzymes keep working in the freezer until heat switches them off. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
+@@ -50,10 +50,10 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `washing_produce` | produce · home | Plain cold water removes as much residue as a produce wash does. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
+ | `baking_soda_soak` | produce · home | Baking soda in the water lifts residue a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
+ | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
+-| `grassfed_butter` | eggs_dairy | Grass-fed butter first, then any real butter: cream, and salt if salted. | Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange. | — |
+-| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed. | Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized. | — |
++| `grassfed_butter` | eggs_dairy | Deepest yellow butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
++| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
+ | `cheese_real_vs_processed` | eggs_dairy | Block cheese is milk, cultures, salt and enzymes, and nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
+-| `yogurt_plain_vs_flavored` | eggs_dairy | Flavored yogurt carries added sugar; plain is milk and cultures. | Take the big plain tub, not the single-serve fruit cups. | — |
++| `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
+ | `raw_milk` | eggs_dairy | Raw milk is worth seeking out from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
+ | `rice_arsenic` | bulk_pantry | Arsenic collects in the bran, which is why white rice carries less. | Read the origin on the bag: India, Pakistan or California. | — |
+ | `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats are the same grain in every form; packets add sugar. | Turn the canister over. One ingredient, and it is oats. | — |
+@@ -364,4 +364,3 @@ supported (claim lock). Three narrowed:
+ `washing_produce` finding **WITHDRAWN**: every clause in its do line traces to the entry —
+ "scrub" and "spin" to `short_answer` ("scrub brush ... rinse and a spin") and "the firm ones"
+ to `buying_tips` ("rub firm produce or use a brush"). No change made.
+-
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index d3250e0..79a326b 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -558,14 +558,16 @@
+         "keep eggs",
+         "store eggs",
+         "eggs in the fridge",
+-        "eggs need to be refrigerated"
++        "eggs need to be refrigerated",
++        "Pasture-raised organic corn- and soy-free eggs",
++        "organic corn- and soy-free eggs"
+       ],
+       "category": "poultry_eggs",
+       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
+-      "decision": "Corn- and soy-free first, then organic, then pasture-raised.",
+-      "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
+-      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
+-      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
++      "decision": "Pasture-raised, organic, and corn- and soy-free, all three together.",
++      "why": "Hens eat what they are given; the carton words show that feed and that life.",
++      "short_answer": "Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.",
++      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "USDA egg labeling guidance",
+@@ -589,14 +591,14 @@
+         "FDA Egg Safety Final Rule",
+         "EU marketing standards for eggs (unwashed, ambient storage)"
+       ],
+-      "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
+-      "cart_pick": "Soy-free pasture-raised eggs",
++      "kristy_take": "Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.",
++      "cart_pick": "Pasture-raised organic corn- and soy-free eggs",
+       "buying_tips": [
+         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
+         "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
+         "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
+         "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
+-        "Plain conventional eggs are still one of the cheapest complete proteins in the store.",
++        "Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+         "Shell color is the breed. White and brown are the same egg inside.",
+         "Speckles and small rough patches are normal shell variation.",
+         "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
+@@ -610,29 +612,29 @@
+       ],
+       "watch_out": [
+         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
++        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
+-        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
++        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
+         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
+         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
++        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
+         "The yolk photo on the carton is artwork, not a sample.",
+         "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
++        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+         "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
+         "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
+         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
+-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
+-        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
+-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
+         "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
+         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
+         "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant.",
+         "US rules require washing and sanitizing, then holding at 45F or below from the plant onward."
+       ],
+       "pick_steps": [
+-        "Look for ‘soy-free’ and ‘corn-free’, mostly on regional cartons and farm stands.",
+-        "In the supermarket, organic is the rung you can reliably buy.",
+-        "For space, pasture-raised with Certified Humane or Animal Welfare Approved is strongest."
++        "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.",
++        "“Organic” means certified organic feed and outdoor access.",
++        "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."
+       ],
+-      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the cheapest complete proteins in the store.",
++      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+       "labels_decoded": [
+         {
+           "term": "Cage-free",
+@@ -709,9 +711,13 @@
+         {
+           "term": "Blue or green shell",
+           "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
++        },
++        {
++          "term": "Corn- and soy-free",
++          "meaning": "The feed contains neither corn nor soy; both words must be printed."
+         }
+       ],
+-      "tier_note": "What the hen ate ranks above how she was housed, so the feed words lead the carton.",
++      "tier_note": "Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.",
+       "eyebrow_short": "Egg labels",
+       "asked_as": [
+         "what eggs should i buy",
+@@ -733,7 +739,8 @@
+         "do eggs need to be refrigerated",
+         "where should i keep eggs",
+         "why are us eggs in the fridge"
+-      ]
++      ],
++      "instead": "Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed."
+     },
+     {
+       "id": "organic_worth_it_by_type",
+@@ -1143,8 +1150,8 @@
+       ],
+       "category": "dairy",
+       "question": "Is grass-fed butter worth it?",
+-      "decision": "Grass-fed butter first, then any real butter: cream, and salt if salted.",
+-      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it.",
++      "decision": "Deepest yellow butter: cream, and salt if salted.",
++      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it, omega-3 included.",
+       "short_answer": "Cows on grass eat carotene, and it goes straight into the fat. So grass-fed butter runs deep yellow toward orange. Winter butter from the same dairy runs pale. The fat itself shifts modestly too.",
+       "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter and to cost less. Within real butter, the grass difference is a feed difference showing up three ways at once: in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage. The fatty-acid profile shifts modestly too.",
+       "evidence_tier": "kristys_standard",
+@@ -1154,7 +1161,7 @@
+         "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
+       ],
+       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
+-      "cart_pick": "Grass-fed butter",
++      "cart_pick": "Deep yellow butter",
+       "buying_tips": [
+         "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
+         "European-style butters are higher in fat, a separate axis from what the cows ate.",
+@@ -1166,7 +1173,7 @@
+           "meaning": "Higher butterfat (≈82%+) — richer, not necessarily grass-fed."
+         }
+       ],
+-      "tier_note": "Grass-fed butter runs deeper yellow and carries more omega-3, and ranking it first is the standard.",
++      "tier_note": "Color is the reading: carotene from grass turns the fat deep yellow.",
+       "watch_out": [
+         "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
+         "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
+@@ -1174,9 +1181,8 @@
+         "The softness is mechanical. Cream from cows on grass carries more unsaturated fat, which melts lower. So the bar gives at room temperature, where a grain-fed one stays firm."
+       ],
+       "pick_steps": [
+-        "Pick the deepest yellow block; pale can mean a winter churn.",
+-        "Read the list: a tub spread is oils and emulsifiers, not butter.",
+-        "Salted or unsalted is a cooking choice; unsalted gives control."
++        "Skip tubs and spreads; butter comes as a block or a stick.",
++        "How it was raised: see Milk."
+       ],
+       "science": "Cows on grass eat carotene, and it goes straight into the fat, so grass-fed butter runs deep yellow toward orange. The same dairy churns paler in winter. Grass-fed cream carries more unsaturated fat, which melts lower, so the bar gives at room temperature. European-style butter is higher in fat, a separate axis from the feed. ‘Spreadable butter’ is butter cut with canola or olive oil.",
+       "asked_as": [
+@@ -1218,13 +1224,18 @@
+         "non homogenized",
+         "cream top milk",
+         "why does organic milk last so long",
+-        "milk processing"
++        "milk processing",
++        "milk carton",
++        "milk cartons",
++        "gallon of milk",
++        "carton of milk",
++        "Low-temp pasteurized 100% grass-fed whole milk"
+       ],
+       "category": "dairy",
+       "question": "Should I buy whole or low-fat milk?",
+-      "decision": "Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.",
+-      "why": "Skim is whole milk with the fat taken out. Fewer steps is the standard here.",
+-      "short_answer": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part.",
++      "decision": "Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.",
++      "why": "Each step between the cow and the carton changes milk: heat, homogenizing, and skimming. Whole milk keeps its milkfat; reduced-fat milk has some of it removed.",
++      "short_answer": "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.",
+       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+@@ -1240,7 +1251,7 @@
+         "CDC “Raw Milk” https://www.cdc.gov/food-safety/foods/raw-milk.html"
+       ],
+       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
+-      "cart_pick": "Whole milk",
++      "cart_pick": "Low-temp pasteurized 100% grass-fed whole milk",
+       "buying_tips": [
+         "Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
+         "Grass-fed and pasture milk is a further layer, and a separate question from the fat.",
+@@ -1257,6 +1268,7 @@
+       "watch_out": [
+         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
+         "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
++        "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.",
+         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water.",
+         "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
+         "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
+@@ -1267,9 +1279,9 @@
+         "Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
+       ],
+       "pick_steps": [
+-        "Check the date: months out means ultra-pasteurized; cream-top means fewer steps.",
+-        "Read the milkfat: whole is 3.25%, reduced-fat 2%, low-fat 1%, skim under half.",
+-        "On flavored jugs, read the added-sugar line before the fat one."
++        "Raw means unpasteurized: milk that skipped the heat step.",
++        "Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.",
++        "100% grass-fed on milk means the cows ate grass and hay, never grain."
+       ],
+       "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
+       "labels_decoded": [
+@@ -1296,9 +1308,17 @@
+         {
+           "term": "Cream-top / non-homogenized",
+           "meaning": "Cream separates and rises. Still pasteurized."
++        },
++        {
++          "term": "Vat pasteurized",
++          "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."
++        },
++        {
++          "term": "Ultra-pasteurized",
++          "meaning": "Heated to about 280°F for about 2 seconds."
+         }
+       ],
+-      "tier_note": "Least handling ranks first, so raw from a trusted farmer leads and low-temp organic follows.",
++      "tier_note": "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.",
+       "eyebrow_short": "Whole vs. reduced",
+       "asked_as": [
+         "whole milk or skim",
+@@ -1310,7 +1330,8 @@
+         "what is ultra pasteurized milk",
+         "what does homogenized mean",
+         "difference between pasteurized and ultra pasteurized"
+-      ]
++      ],
++      "instead": "Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season."
+     },
+     {
+       "id": "cheese_real_vs_processed",
+@@ -1407,14 +1428,15 @@
+         "live yogurt",
+         "yogurt alive",
+         "is my yogurt alive",
+-        "whole milk yogurt"
++        "whole milk yogurt",
++        "Plain Greek yogurt, 100% grass-fed"
+       ],
+       "category": "dairy",
+       "question": "What should I look for in yogurt?",
+-      "decision": "Flavored yogurt carries added sugar; plain is milk and cultures.",
+-      "why": "Flavored cups carry dessert-level added sugar. Plain is the same yogurt without it.",
+-      "short_answer": "Buy plain and sweeten it yourself. The big plain tub is cheaper per ounce than the single-serve cups besides, and it is the same yogurt underneath. Add your own fruit or a little honey if you want it sweet.",
+-      "detail": "Plain yogurt, especially Greek or strained, is a clean high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
++      "decision": "Plain Greek yogurt made from 100% grass-fed milk.",
++      "why": "Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.",
++      "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
++      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "USDA FoodData Central",
+@@ -1424,13 +1446,13 @@
+         "National Yogurt Association ‘Live & Active Cultures’ seal criteria"
+       ],
+       "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
+-      "cart_pick": "Plain whole-milk Greek yogurt",
++      "cart_pick": "Plain Greek yogurt, 100% grass-fed",
+       "buying_tips": [
+         "Plain over flavored. Sweeten it yourself with fruit.",
+         "Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.",
+-        "Greek/strained is higher protein; whole-milk versions are more filling.",
++        "Greek or strained yogurt is thicker; whole-milk versions are more filling.",
+         "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
+-        "Greek and skyr are strained: thicker, more protein per spoon.",
++        "Greek and skyr are strained: thicker, with less whey.",
+         "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
+         "Whole-milk versions are more filling and less tinkered with than fat-free."
+       ],
+@@ -1449,14 +1471,22 @@
+         },
+         {
+           "term": "Greek / skyr",
+-          "meaning": "Strained. Thicker, higher protein per serving."
++          "meaning": "Strained. Thicker, with less whey."
+         },
+         {
+           "term": "Kefir",
+           "meaning": "A drinkable ferment with a wider mix of cultures."
++        },
++        {
++          "term": "Greek",
++          "meaning": "Yogurt strained to remove whey, which leaves it thicker."
++        },
++        {
++          "term": "Plain",
++          "meaning": "No added sugar or flavoring."
+         }
+       ],
+-      "tier_note": "The added-sugar difference is printed on the panel, and buying plain to sweeten at home is the standard.",
++      "tier_note": "Plain means no added sugar, so sweeten it at home with fruit or honey.",
+       "watch_out": [
+         "Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two.",
+         "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
+@@ -1467,9 +1497,9 @@
+         "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
+       ],
+       "pick_steps": [
+-        "Take plain and sweeten it yourself with fruit.",
+-        "Compare the added-sugars line on plain against the fruit cup.",
+-        "Greek or strained is higher protein; whole-milk versions are more filling."
++        "Greek means strained, so the yogurt is thicker and holds less whey.",
++        "100% grass-fed on the tub means the cows ate grass and hay, never grain.",
++        "Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is."
+       ],
+       "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup.",
+       "asked_as": [
+@@ -1479,7 +1509,8 @@
+         "is my yogurt still alive",
+         "what does live and active cultures mean",
+         "what is skyr"
+-      ]
++      ],
++      "instead": "Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there."
+     },
+     {
+       "id": "raw_milk",
+@@ -1510,7 +1541,7 @@
+         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
+       ],
+       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
+-      "instead": "Raw aged cheese from a named dairy. Sixty days of aging puts it in every state, already in the case.",
++      "instead": "Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.",
+       "buying_tips": [
+         "A farm that publishes its herd test results. The good ones are proud of them.",
+         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
+@@ -1533,7 +1564,7 @@
+           "meaning": "Gently heated. Closer to raw than the commodity gallon, and widely sold."
+         }
+       ],
+-      "tier_note": "Drinking milk from a known herd is old practice with thin modern study behind it, and the standard is about the farm, not a health claim.",
++      "tier_note": "Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.",
+       "watch_out": [
+         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
+         "No named farm, no test results, no cold chain? That is not raw milk worth buying. That is just unpasteurized.",
+@@ -5660,25 +5691,6 @@
+         "do nectarines ripen on the counter"
+       ]
+     },
+-    {
+-      "id": "pick_milk",
+-      "kind": "pick",
+-      "title": "Milk",
+-      "category": "dairy",
+-      "aliases": [
+-        "milk carton",
+-        "milk cartons",
+-        "gallon of milk",
+-        "carton of milk"
+-      ],
+-      "decision": "Find the word pasteurized on the label; without it the carton may hold raw milk.",
+-      "sources": [
+-        {
+-          "name": "FDA: The Dangers of Raw Milk",
+-          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/dangers-raw-milk-unpasteurized-milk-can-pose-serious-health-risk"
+-        }
+-      ]
+-    },
+     {
+       "id": "pick_canned_tomatoes",
+       "kind": "pick",
+@@ -7061,7 +7073,8 @@
+         "are duck eggs safe to eat",
+         "what is different about duck eggs",
+         "how big are quail eggs"
+-      ]
++      ],
++      "instead": "Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells."
+     },
+     {
+       "id": "pick_winter_squash",
+@@ -9067,7 +9080,8 @@
+         "is ghee worth buying",
+         "how do i pick a good ghee",
+         "should i buy clarified butter"
+-      ]
++      ],
++      "instead": "Plain butter, the same dairy fat before the water and milk solids come out."
+     },
+     {
+       "id": "goat_sheep_dairy",
+diff --git a/server/lib/doLines.json b/server/lib/doLines.json
+index bd5070f..2ab60f6 100644
+--- a/server/lib/doLines.json
++++ b/server/lib/doLines.json
+@@ -42,7 +42,7 @@
+   "dried_fruit": "Read the ingredients for sulfites or sugar added to the fruit.",
+   "dried_herbs": "Check the label for the irradiation logo and “treated with radiation”.",
+   "egg_duck_quail": "Check that each shell is clean and uncracked before the carton goes in.",
+-  "egg_labels": "Check the small regional cartons. That is where a feed claim appears.",
++  "egg_labels": "Find all three words on one carton, plus a certifier’s pasture seal.",
+   "farmed_fish_by_species": "Buy the farmed mussels, clams and oysters. They are fed nothing.",
+   "fermented": "Check the label for “raw” or “unpasteurized”, then the list for vinegar.",
+   "fermented_pickles": "Read the ingredients for vinegar; none listed means a fermented pickle.",
+@@ -60,7 +60,7 @@
+   "gluten_free_bread": "Find the claim on the bag, then read the ingredient list and the gum.",
+   "goat_sheep_dairy": "Read the ingredients for which animal’s milk went in.",
+   "grains_beyond_rice": "Read the bag for “hulled” or “whole”, and pass on “pearled”.",
+-  "grassfed_butter": "Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange.",
++  "grassfed_butter": "Look through the wrapper window before choosing a block.",
+   "ground_beef_lean_ratio": "Read the label for organ names, each with a percentage beside it.",
+   "ground_turkey": "Read the ingredient list and the fat statement beside any percent-lean claim.",
+   "ham": "Read the product name for “Water Added” or “Ham and Water Product”.",
+@@ -178,6 +178,6 @@
+   "washing_produce": "Scrub the firm ones with a brush. Rinse and spin the greens.",
+   "white_fish": "Ask which species it is, then press the flesh for spring-back.",
+   "whole_spices": "Toast them in a dry pan until they smell, then grind.",
+-  "whole_vs_reduced_fat_milk": "Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized.",
+-  "yogurt_plain_vs_flavored": "Take the big plain tub, not the single-serve fruit cups."
++  "whole_vs_reduced_fat_milk": "Check the side panel for the pasteurization words and a grass-fed seal.",
++  "yogurt_plain_vs_flavored": "Check the ingredients for milk and cultures, with nothing after them."
+ }
+diff --git a/server/lib/kindFilter.test.js b/server/lib/kindFilter.test.js
+index 16940b3..96d362c 100644
+--- a/server/lib/kindFilter.test.js
++++ b/server/lib/kindFilter.test.js
+@@ -111,7 +111,8 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
+   // 27 after K15: pick_lamb folded into the lamb_goat card, plus jerky and soup bones, 2026-10-06.
+   // 29 after K16: fish sticks and anchovies, 2026-10-06.
+   // 31 after K18: english muffins and pita/naan, 2026-10-06.
+-  assert.equal(pickEntries(perimeterKb.entries).length, 31, 'K18: 31 picks in the raw corpus');
++  // 30 after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.
++  assert.equal(pickEntries(perimeterKb.entries).length, 30, 'CA-4a: 30 picks in the raw corpus');
+   const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
+   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
+   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');
+diff --git a/server/lib/perimeter.test.js b/server/lib/perimeter.test.js
+index a6324ac..c6ded64 100644
+--- a/server/lib/perimeter.test.js
++++ b/server/lib/perimeter.test.js
+@@ -211,7 +211,7 @@ test('cart_pick is a grocery name, never a claim, a price or a sentence', () =>
+     const p = e.cart_pick;
+     assert.equal(typeof p, 'string');
+     assert.ok(p.trim().length > 2 && p.length <= 46, `${e.id}: "${p}" is not a cart row`);
+-    assert.doesNotMatch(p.replace(/^100% /, ''), /[$£€%]/, `${e.id} carries a price or percent`);
++    assert.doesNotMatch(p.replace(/\b100%/, ''), /[$£€%]/, `${e.id} carries a price or percent`);
+     assert.doesNotMatch(p, /[.!?]$/, `${e.id} is a sentence, not a name`);
+     assert.doesNotMatch(
+       p,
+diff --git a/server/scripts/listMatchProbe.js b/server/scripts/listMatchProbe.js
+index 3363f46..dae037e 100644
+--- a/server/scripts/listMatchProbe.js
++++ b/server/scripts/listMatchProbe.js
+@@ -315,7 +315,7 @@ for (const name of REALISTIC_26) {
+ }
+ // A named card the corpus owns must be the one attached; a neighbour stealing the row is WRONG.
+ // `chicken_cuts_basics` carries the bare alias `chicken`, so the rotisserie row is the hub test.
+-const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
++const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken', 'milk': 'whole_vs_reduced_fat_milk', 'whole milk': 'whole_vs_reduced_fat_milk', 'a gallon of milk': 'whole_vs_reduced_fat_milk' };
+ for (const [name, slug] of Object.entries(OWNED_BY)) {
+   const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
+   const got = row.cardSlug || null;
+diff --git a/server/test/acceptance/ca-4a.test.js b/server/test/acceptance/ca-4a.test.js
+new file mode 100644
+index 0000000..4d18990
+--- /dev/null
++++ b/server/test/acceptance/ca-4a.test.js
+@@ -0,0 +1,242 @@
++// CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { dirname, join } from 'node:path';
++import * as lint from '../../lib/counterCardLint.js';
++import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
++import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { assertPassRule } from './passRule.js';
++
++const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
++const ROOT = join(SERVER, '..');
++const BASE_REF = 'd707172';
++const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
++const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
++const reviewed = parseReviewTable(reviewText);
++const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
++const now = (id) => kb.entries.find((e) => e.id === id);
++const was = (id) => base.entries.find((e) => e.id === id);
++const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
++const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
++const COPY = ['decision', 'short_answer', 'why', 'detail', 'kristy_take', 'tier_note', 'question', 'buying_tips', 'watch_out', 'pick_steps', 'science', 'instead', 'cart_pick', 'labels_decoded', 'eyebrow_short'];
++const leaves = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(leaves) : v && typeof v === 'object' ? Object.values(v).flatMap(leaves) : []);
++const copy = (e) => COPY.flatMap((f) => leaves(e?.[f]));
++const fresh = (id) => { const old = new Set(copy(was(id))); return copy(now(id)).filter((s) => !old.has(s)); };
++
++const MILK_ID = 'whole_vs_reduced_fat_milk';
++const YOG_ID = 'yogurt_plain_vs_flavored';
++const EGG = {
++  decision: 'Pasture-raised, organic, and corn- and soy-free, all three together.',
++  tier_note: 'Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.',
++  instead: 'Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed.',
++  cart_pick: 'Pasture-raised organic corn- and soy-free eggs',
++  aliases: [...was('egg_labels').aliases, 'Pasture-raised organic corn- and soy-free eggs', 'organic corn- and soy-free eggs'],
++  pick_steps: ['“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.', '“Organic” means certified organic feed and outdoor access.', 'Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors.'],
++  why: 'Hens eat what they are given; the carton words show that feed and that life.',
++  short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
++  kristy_take: 'Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.',
++};
++const EGG_DO = 'Find all three words on one carton, plus a certifier’s pasture seal.';
++const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
++const EGG_OLD_CHEAP = 'Plain conventional eggs are still one of the cheapest complete proteins in the store.';
++const EGG_SCIENCE_OLD = '‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs.';
++const EGG_SCIENCE_NEW = '‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs.';
++const EGG_CHEAP = 'Plain conventional eggs are still one of the lowest-cost animal foods in the store.';
++const EGG_DETAIL_OLD = 'The order is what she ate, then how it was grown, then how much room she had.';
++const EGG_DETAIL_NEW = 'The standard is all three on one carton: what she ate, how it was grown, and how much room she had.';
++const EGG_LABEL = { term: 'Corn- and soy-free', meaning: 'The feed contains neither corn nor soy; both words must be printed.' };
++
++const MILK = {
++  decision: 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.',
++  tier_note: 'Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.',
++  instead: 'Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season.',
++  cart_pick: 'Low-temp pasteurized 100% grass-fed whole milk',
++  pick_steps: ['Raw means unpasteurized: milk that skipped the heat step.', 'Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.', '100% grass-fed on milk means the cows ate grass and hay, never grain.'],
++  why: 'Each step between the cow and the carton changes milk: heat, homogenizing, and skimming. Whole milk keeps its milkfat; reduced-fat milk has some of it removed.',
++  short_answer: 'Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.',
++};
++const MILK_DO = 'Check the side panel for the pasteurization words and a grass-fed seal.';
++const MILK_UHT = '“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.';
++const MILK_LABELS = [
++  { term: 'Vat pasteurized', meaning: 'Held at 145°F for 30 minutes; also printed as low-temperature pasteurized.' },
++  { term: 'Ultra-pasteurized', meaning: 'Heated to about 280°F for about 2 seconds.' },
++];
++
++const YOG = {
++  decision: 'Plain Greek yogurt made from 100% grass-fed milk.',
++  tier_note: 'Plain means no added sugar, so sweeten it at home with fruit or honey.',
++  instead: 'Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there.',
++  cart_pick: 'Plain Greek yogurt, 100% grass-fed',
++  aliases: [...was(YOG_ID).aliases, 'Plain Greek yogurt, 100% grass-fed'],
++  pick_steps: ['Greek means strained, so the yogurt is thicker and holds less whey.', '100% grass-fed on the tub means the cows ate grass and hay, never grain.', 'Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is.'],
++  why: 'Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.',
++  short_answer: 'Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.',
++};
++const YOG_DO = 'Check the ingredients for milk and cultures, with nothing after them.';
++const YOG_TIPS = {
++  'Greek/strained is higher protein; whole-milk versions are more filling.': 'Greek or strained yogurt is thicker; whole-milk versions are more filling.',
++  'Greek and skyr are strained: thicker, more protein per spoon.': 'Greek and skyr are strained: thicker, with less whey.',
++};
++const YOG_DETAIL_OLD = 'Plain yogurt, especially Greek or strained, is a clean high-protein whole food.';
++const YOG_DETAIL_NEW = 'Plain yogurt, especially Greek or strained, is a whole food: milk and cultures.';
++const YOG_SKYR = 'Strained. Thicker, with less whey.';
++const YOG_LABELS = [
++  { term: 'Greek', meaning: 'Yogurt strained to remove whey, which leaves it thicker.' },
++  { term: 'Plain', meaning: 'No added sugar or flavoring.' },
++];
++
++const BUTTER = {
++  decision: 'Deepest yellow butter: cream, and salt if salted.',
++  tier_note: 'Color is the reading: carotene from grass turns the fat deep yellow.',
++  why: 'Carotene from the grass goes into the fat. The fatty-acid profile shifts with it, omega-3 included.',
++  cart_pick: 'Deep yellow butter',
++  pick_steps: ['Skip tubs and spreads; butter comes as a block or a stick.', 'How it was raised: see Milk.'],
++};
++const BUTTER_DO = 'Look through the wrapper window before choosing a block.';
++const OTHERS = {
++  raw_milk: {
++    tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
++    instead: 'Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.',
++  },
++  egg_duck_quail: { instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
++  ghee: { instead: 'Plain butter, the same dairy fat before the water and milk solids come out.' },
++  grassfed_butter: BUTTER,
++  pick_egg_whites: {},
++};
++const CHANGED = ['egg_labels', MILK_ID, YOG_ID, 'raw_milk', 'egg_duck_quail', 'ghee', 'grassfed_butter'];
++const MINE = new Set([...CHANGED, 'pick_egg_whites']);
++const MILK_ROWS = ['milk', 'whole milk', 'a gallon of milk', 'gallon of milk', 'milk carton', 'carton of milk'];
++const TIP = {
++  section: 'eggs_dairy',
++  rule: 'Eggs and dairy start with how the animal ate and lived: cows on grass, hens on pasture.',
++  checks: ['Read how the animal lived and what it ate before anything else on the label.', 'Dairy needs few ingredients: milk or cream, cultures, salt, and enzymes for cheese.'],
++  tip_aligned: true,
++  cards_aligned: true,
++};
++const CLAIM_LOCK = /healthier|healthiest|better for you|lowers|exposure|protein|calorie/i;
++const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
++const BRAND = /kerrygold|oikos|siggi|chobani|fage|stonyfield|horizon organic|organic valley|vital farms|pete (and|&) gerry|happy egg|tillamook|land o.?lakes|kalona|maple hill|straus|alexandre/i;
++const D4 = /at home with|stir|top it|mix it/i;
++
++test('C1 the Eggs card carries the worked example', () => {
++  const e = now('egg_labels');
++  const b = was('egg_labels');
++  for (const [k, v] of Object.entries(EGG)) assert.deepEqual(e[k], v, `egg_labels.${k}`);
++  assert.equal(reviewed.get('egg_labels')?.do, EGG_DO);
++  assert.equal(b.watch_out.length, EGG_WATCH_ORDER.length, 'HEAD watch_out count moved; spec is stale');
++  assert.deepEqual(e.watch_out, EGG_WATCH_ORDER.map((i) => b.watch_out[i]));
++  assert.deepEqual(e.labels_decoded, [...b.labels_decoded, EGG_LABEL]);
++  assert.ok(b.buying_tips.includes(EGG_OLD_CHEAP) && b.science.includes(EGG_OLD_CHEAP) && b.detail.includes(EGG_DETAIL_OLD), 'HEAD strings moved; spec is stale');
++  assert.deepEqual(e.buying_tips, b.buying_tips.map((s) => (s === EGG_OLD_CHEAP ? EGG_CHEAP : s)));
++  assert.ok(b.science.includes(EGG_SCIENCE_OLD), 'HEAD vegetarian-fed science moved');
++  assert.equal(e.science, b.science.replace(EGG_OLD_CHEAP, EGG_CHEAP).replace(EGG_SCIENCE_OLD, EGG_SCIENCE_NEW));
++  assert.equal(e.detail, b.detail.replace(EGG_DETAIL_OLD, EGG_DETAIL_NEW));
++  const named = [...Object.keys(EGG), 'watch_out', 'labels_decoded', 'buying_tips', 'science', 'detail'];
++  assert.deepEqual(without(e, named), without(b, named), 'egg_labels: a field outside the spec changed');
++  assert.doesNotMatch(copy(e).join('\n'), /cheapest/i);
++});
++
++test('C2 the Milk card carries the worked example; raw-milk risk lines unchanged', () => {
++  const m = now(MILK_ID);
++  const b = was(MILK_ID);
++  for (const [k, v] of Object.entries(MILK)) assert.deepEqual(m[k], v, `milk.${k}`);
++  assert.equal(reviewed.get(MILK_ID)?.do, MILK_DO);
++  assert.equal(m.watch_out[2], MILK_UHT);
++  assert.deepEqual(m.watch_out.filter((s) => s !== MILK_UHT), b.watch_out, 'milk watch_out: additions only');
++  assert.deepEqual(m.labels_decoded, [...b.labels_decoded, ...MILK_LABELS]);
++  const moved = nonEmpty(was('pick_milk')?.aliases ?? [], 'pick_milk aliases at HEAD', 1);
++  assert.deepEqual(m.aliases, [...b.aliases, ...moved.filter((a) => !b.aliases.includes(a)), MILK.cart_pick]);
++  const named = [...Object.keys(MILK), 'watch_out', 'labels_decoded', 'aliases'];
++  assert.deepEqual(without(m, named), without(b, named), 'milk: a field outside the spec changed');
++  assert.deepEqual(lint.headlineHedge(m.decision), []);
++  assert.doesNotMatch(JSON.stringify(m), /test results/i);
++  assert.deepEqual(now('raw_milk').watch_out, was('raw_milk').watch_out, 'raw-milk risk lines');
++});
++
++test('C3 the Yogurt card carries the worked example', () => {
++  const y = now(YOG_ID);
++  const b = was(YOG_ID);
++  for (const [k, v] of Object.entries(YOG)) assert.deepEqual(y[k], v, `yogurt.${k}`);
++  assert.equal(reviewed.get(YOG_ID)?.do, YOG_DO);
++  for (const old of Object.keys(YOG_TIPS)) assert.ok(b.buying_tips.includes(old), `HEAD tip moved: ${old}`);
++  assert.deepEqual(y.buying_tips, b.buying_tips.map((s) => YOG_TIPS[s] ?? s));
++  assert.ok(b.detail.startsWith(YOG_DETAIL_OLD), 'HEAD detail moved; spec is stale');
++  assert.equal(y.detail, YOG_DETAIL_NEW + b.detail.slice(YOG_DETAIL_OLD.length));
++  assert.ok(b.labels_decoded.some((l) => l.term === 'Greek / skyr'), 'HEAD label moved');
++  assert.deepEqual(y.labels_decoded, [...b.labels_decoded.map((l) => (l.term === 'Greek / skyr' ? { ...l, meaning: YOG_SKYR } : l)), ...YOG_LABELS]);
++  const named = [...Object.keys(YOG), 'buying_tips', 'detail', 'labels_decoded'];
++  assert.deepEqual(without(y, named), without(b, named), 'yogurt: a field outside the spec changed');
++});
++
++test('C4 raw milk, duck and quail eggs, ghee and butter carry the spec text', () => {
++  for (const [id, want] of Object.entries(OTHERS)) {
++    const e = now(id);
++    assert.ok(e, `${id} missing`);
++    for (const [k, v] of Object.entries(want)) assert.deepEqual(e[k], v, `${id}.${k}`);
++    assert.deepEqual(without(e, Object.keys(want)), without(was(id), Object.keys(want)), `${id}: a field outside the spec changed`);
++  }
++  assert.equal(reviewed.get('grassfed_butter')?.do, BUTTER_DO);
++  assert.match(now('raw_milk').tier_note, /not a health claim/i);
++});
++
++test('C5 pick_milk is retired and the Milk card answers its rows', () => {
++  assert.ok(was('pick_milk'), 'pick_milk missing at HEAD');
++  assert.equal(now('pick_milk'), undefined);
++  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
++  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 30);
++  for (const row of MILK_ROWS) {
++    assert.equal(idOf(matchItemToCard(row)), MILK_ID, row);
++    assert.notEqual(idOf(matchItemToPick(row)), 'pick_milk', row);
++  }
++  for (const id of ['egg_labels', MILK_ID, YOG_ID, 'grassfed_butter']) {
++    assert.equal(idOf(matchItemToCard(now(id).cart_pick)), id, `${id} cart_pick "${now(id).cart_pick}"`);
++  }
++});
++
++for (const id of CHANGED) test(`C6 ${id}: pass rule and every card lint are clean`, () => {
++  const e = now(id);
++  assert.notDeepEqual(e, was(id), `${id} unchanged`);
++  assertPassRule(null, was(id), e);
++  assert.deepEqual(lint.readability(e), []);
++  assert.deepEqual(lint.lintCard(projectEntry(e, { doLine: reviewed.get(id)?.do || '' })), []);
++  for (const f of [lint.lintPickSteps, lint.lintCulinaryAim, lint.lintRepeatedClaim]) assert.deepEqual(f(e), [], `${id} ${f.name}`);
++});
++
++test('C6 pick_egg_whites: unchanged and pick-lint clean', () => {
++  assert.deepEqual(now('pick_egg_whites'), was('pick_egg_whites'));
++  assert.deepEqual(lint.lintPick(now('pick_egg_whites')), []);
++});
++
++test('C7 new copy passes the claim-lock, price, punctuation and brand greps', () => {
++  const added = nonEmpty([...CHANGED.flatMap(fresh), EGG_DO, MILK_DO, YOG_DO, BUTTER_DO], 'CA-4a new strings', 20);
++  for (const s of added) {
++    assert.doesNotMatch(s, CLAIM_LOCK, s);
++    assert.doesNotMatch(s, PRICE, s);
++    assert.doesNotMatch(s, /—/, s);
++    assert.doesNotMatch(s, /["']/, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|us|our|ours)\b/i, s);
++  }
++  for (const id of MINE) assert.doesNotMatch(copy(now(id)).join('\n'), BRAND, id);
++  for (const id of [...MINE].filter((i) => i !== YOG_ID)) assert.doesNotMatch(now(id).tier_note ?? '', D4, id);
++});
++
++test('C8 forced section lints: no hit on a CA-4a card', () => {
++  for (const id of CHANGED) assert.notDeepEqual(now(id), was(id), `${id} unchanged`);
++  const hits = lint.lintSections([TIP], kb.entries);
++  assert.deepEqual(hits.filter((h) => h.id && MINE.has(h.id)), []);
++  assert.deepEqual(hits.filter((h) => h.code === 'SECTION_PHRASE_REPEATED' && h.ids.every((i) => MINE.has(i))), []);
++  assert.deepEqual(hits.filter((h) => h.code === 'SECTION_TIP_HANDLING'), []);
++});
++
++test('C9 doLines.json carries the new do lines', () => {
++  for (const [id, line] of Object.entries({ egg_labels: EGG_DO, [MILK_ID]: MILK_DO, [YOG_ID]: YOG_DO, grassfed_butter: BUTTER_DO })) {
++    assert.equal(doLines[id], line, id);
++    const row = reviewText.split('\n').find((l) => l.startsWith(`| \`${id}\` |`))?.split('|').map((c) => c.trim());
++    assert.equal(row?.[3], now(id).decision, `${id} review headline`);
++  }
++});
+diff --git a/server/test/acceptance/ic4b.test.js b/server/test/acceptance/ic4b.test.js
+index 0593c60..8ea50de 100644
+--- a/server/test/acceptance/ic4b.test.js
++++ b/server/test/acceptance/ic4b.test.js
+@@ -38,7 +38,7 @@ test('C0 prerequisite folds ran', () => {
+ test('C1 the Eggs card', () => {
+   const e = now('egg_labels');
+   assert.equal(e.title, 'Eggs');
+-  assert.equal(e.decision, 'Corn- and soy-free first, then organic, then pasture-raised.');
++  assert.equal(e.decision, 'Pasture-raised, organic, and corn- and soy-free, all three together.');
+   assert.match(e.tier_note, /feed|ate/i);
+   assert.match(text(e, SPOKEN), /\bboth\b[^.]*soy[- ]free[^.]*corn[- ]free|\bboth\b[^.]*corn[- ]free[^.]*soy[- ]free/i, 'both-printed fact lost');
+   assert.equal(nonPicksTitled('Eggs').length, 1, 'non-pick "Eggs" count');
+diff --git a/server/test/acceptance/ic7a.test.js b/server/test/acceptance/ic7a.test.js
+index 7459496..f2c52be 100644
+--- a/server/test/acceptance/ic7a.test.js
++++ b/server/test/acceptance/ic7a.test.js
+@@ -25,6 +25,7 @@ const FOLDED = Object.keys(FOLD);
+ const SURVIVORS = [MILK, YOG];
+ const KEEP_OFF = new Set(['kefir', 'alive', 'still alive']);
+ const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
++const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.'];
+ const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
+ const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
+ const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));
+@@ -82,7 +83,7 @@ test('C4 sources moved', () => {
+ });
+ 
+ test('C5 tips, watch-outs and labels moved; digestion tip dropped', () => {
+-  const drop = new Set(DROPPED.map(norm));
++  const drop = new Set([...DROPPED, ...REPHRASED].map(norm));
+   for (const id of FOLDED) {
+     const to = FOLD[id];
+     const body = norm(strings(now(to)).join('\n'));
+diff --git a/server/test/acceptance/ic7b.test.js b/server/test/acceptance/ic7b.test.js
+index f2b14ec..3202dcf 100644
+--- a/server/test/acceptance/ic7b.test.js
++++ b/server/test/acceptance/ic7b.test.js
+@@ -17,7 +17,7 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
+ const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
+ const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
+ const LEGAL = /\b(il)?legal\b|\blaws?\b/i;
+-const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.';
++const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.';
+ const UMD = 'https://agrisk.umd.edu/post/the-raw-facts-let-s-talk-about-state-laws-regulating-raw-milk';
+ const BATCH = ['whole_vs_reduced_fat_milk', 'grassfed_butter', 'yogurt_plain_vs_flavored', 'raw_milk', 'ghee', 'plant_butter', 'plain_kefir', 'raw_kefir',
+   'sour_cream', 'cottage_cheese', 'cream_cheese', 'cheese_real_vs_processed', 'raw_aged_cheese', 'goat_sheep_dairy', 'cream_vs_creamer', 'ice_cream',
+@@ -39,7 +39,7 @@ test('C1 the Milk front is Devon\'s ruling', () => {
+   const m = now('whole_vs_reduced_fat_milk');
+   assert.equal(m.decision, MILK_FRONT);
+   assert.deepEqual(headlineHedge(m.decision), []);
+-  assert.match(m.tier_note, /raw|farmer/i);
++  assert.match(m.tier_note, /145°F/);
+   assert.match(m.tier_note, /low-temp|organic/i);
+   assert.equal(nonPicksTitled('Milk').length, 1, 'non-pick "Milk" count');
+ });
+diff --git a/server/test/counterProbe48.test.js b/server/test/counterProbe48.test.js
+index 5c5ff59..903c316 100644
+--- a/server/test/counterProbe48.test.js
++++ b/server/test/counterProbe48.test.js
+@@ -181,6 +181,6 @@ test('bare retrieval uses one unambiguous longer buying alias, never a substring
+   assert.deepEqual(scoreEntries('oat milk', 3, [owner]), []);
+   assert.deepEqual(scoreEntries('milk', 3, [{ ...owner, asked_as: [] }]), []);
+   assert.deepEqual(scoreEntries('milk', 3, [owner, { ...owner, id: 'other_owner' }]), []);
+-  assert.equal(matchItemToPick('milk carton')?.id, 'pick_milk');
+-  assert.equal(matchItemToPick('carton of milk')?.id, 'pick_milk');
++  assert.equal(matchItemToPick('milk carton')?.id, undefined);
++  assert.equal(matchItemToPick('carton of milk')?.id, undefined);
+ });

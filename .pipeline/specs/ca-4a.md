@@ -115,9 +115,9 @@ From `server/`, run `node -e` with `lintSections([{section:'eggs_dairy', rule, c
 - `decision`: "Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed." → "Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed."
 - `tier_note` → "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds."
 - `instead` (new or replaced) → "Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season."
-- `cart_pick`: "Whole milk" → "Low-temp pasteurized 100% grass-fed whole milk"
+- `cart_pick`: "Whole milk" → "Low-temp pasteurized grass-fed whole milk"
 - `pick_steps` → ["Raw means unpasteurized: milk that skipped the heat step.", "Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.", "100% grass-fed on milk means the cows ate grass and hay, never grain."]
-- `why` → "Each step between the cow and the carton changes milk: heat, homogenizing, and skimming. Whole milk keeps its milkfat; reduced-fat milk has some of it removed."
+- `why` → "Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed."
 - `short_answer` → "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F."
 - `watch_out`: insert at index 2 "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it." Every HEAD item stays, same order.
 - `labels_decoded`: append `{"term": "Vat pasteurized", "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."}` then `{"term": "Ultra-pasteurized", "meaning": "Heated to about 280°F for about 2 seconds."}`. STOP if HEAD already has a term exactly "Vat pasteurized" or "Ultra-pasteurized".
@@ -445,9 +445,9 @@ const MILK = {
   decision: 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.',
   tier_note: 'Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.',
   instead: 'Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season.',
-  cart_pick: 'Low-temp pasteurized 100% grass-fed whole milk',
+  cart_pick: 'Low-temp pasteurized grass-fed whole milk',
   pick_steps: ['Raw means unpasteurized: milk that skipped the heat step.', 'Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.', '100% grass-fed on milk means the cows ate grass and hay, never grain.'],
-  why: 'Each step between the cow and the carton changes milk: heat, homogenizing, and skimming. Whole milk keeps its milkfat; reduced-fat milk has some of it removed.',
+  why: 'Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.',
   short_answer: 'Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.',
 };
 const MILK_DO = 'Check the side panel for the pasteurization words and a grass-fed seal.';

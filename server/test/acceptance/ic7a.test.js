@@ -25,6 +25,7 @@ const FOLDED = Object.keys(FOLD);
 const SURVIVORS = [MILK, YOG];
 const KEEP_OFF = new Set(['kefir', 'alive', 'still alive']);
 const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
+const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.'];
 const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));
@@ -82,7 +83,7 @@ test('C4 sources moved', () => {
 });
 
 test('C5 tips, watch-outs and labels moved; digestion tip dropped', () => {
-  const drop = new Set(DROPPED.map(norm));
+  const drop = new Set([...DROPPED, ...REPHRASED].map(norm));
   for (const id of FOLDED) {
     const to = FOLD[id];
     const body = norm(strings(now(to)).join('\n'));

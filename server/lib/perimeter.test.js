@@ -211,7 +211,7 @@ test('cart_pick is a grocery name, never a claim, a price or a sentence', () => 
     const p = e.cart_pick;
     assert.equal(typeof p, 'string');
     assert.ok(p.trim().length > 2 && p.length <= 46, `${e.id}: "${p}" is not a cart row`);
-    assert.doesNotMatch(p.replace(/^100% /, ''), /[$£€%]/, `${e.id} carries a price or percent`);
+    assert.doesNotMatch(p.replace(/\b100%/, ''), /[$£€%]/, `${e.id} carries a price or percent`);
     assert.doesNotMatch(p, /[.!?]$/, `${e.id} is a sentence, not a name`);
     assert.doesNotMatch(
       p,

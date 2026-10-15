@@ -17,7 +17,7 @@ const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
 const LEGAL = /\b(il)?legal\b|\blaws?\b/i;
-const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.';
+const MILK_FRONT = 'Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.';
 const UMD = 'https://agrisk.umd.edu/post/the-raw-facts-let-s-talk-about-state-laws-regulating-raw-milk';
 const BATCH = ['whole_vs_reduced_fat_milk', 'grassfed_butter', 'yogurt_plain_vs_flavored', 'raw_milk', 'ghee', 'plant_butter', 'plain_kefir', 'raw_kefir',
   'sour_cream', 'cottage_cheese', 'cream_cheese', 'cheese_real_vs_processed', 'raw_aged_cheese', 'goat_sheep_dairy', 'cream_vs_creamer', 'ice_cream',
@@ -39,7 +39,7 @@ test('C1 the Milk front is Devon\'s ruling', () => {
   const m = now('whole_vs_reduced_fat_milk');
   assert.equal(m.decision, MILK_FRONT);
   assert.deepEqual(headlineHedge(m.decision), []);
-  assert.match(m.tier_note, /raw|farmer/i);
+  assert.match(m.tier_note, /145°F/);
   assert.match(m.tier_note, /low-temp|organic/i);
   assert.equal(nonPicksTitled('Milk').length, 1, 'non-pick "Milk" count');
 });

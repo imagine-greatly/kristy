@@ -315,7 +315,7 @@ for (const name of REALISTIC_26) {
 }
 // A named card the corpus owns must be the one attached; a neighbour stealing the row is WRONG.
 // `chicken_cuts_basics` carries the bare alias `chicken`, so the rotisserie row is the hub test.
-const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken' };
+const OWNED_BY = { 'rotisserie chicken': 'rotisserie_chicken', 'milk': 'whole_vs_reduced_fat_milk', 'whole milk': 'whole_vs_reduced_fat_milk', 'a gallon of milk': 'whole_vs_reduced_fat_milk' };
 for (const [name, slug] of Object.entries(OWNED_BY)) {
   const [row] = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items;
   const got = row.cardSlug || null;

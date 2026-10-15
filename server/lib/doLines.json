@@ -42,7 +42,7 @@
   "dried_fruit": "Read the ingredients for sulfites or sugar added to the fruit.",
   "dried_herbs": "Check the label for the irradiation logo and “treated with radiation”.",
   "egg_duck_quail": "Check that each shell is clean and uncracked before the carton goes in.",
-  "egg_labels": "Check the small regional cartons. That is where a feed claim appears.",
+  "egg_labels": "Find all three words on one carton, plus a certifier’s pasture seal.",
   "farmed_fish_by_species": "Buy the farmed mussels, clams and oysters. They are fed nothing.",
   "fermented": "Check the label for “raw” or “unpasteurized”, then the list for vinegar.",
   "fermented_pickles": "Read the ingredients for vinegar; none listed means a fermented pickle.",
@@ -60,7 +60,7 @@
   "gluten_free_bread": "Find the claim on the bag, then read the ingredient list and the gum.",
   "goat_sheep_dairy": "Read the ingredients for which animal’s milk went in.",
   "grains_beyond_rice": "Read the bag for “hulled” or “whole”, and pass on “pearled”.",
-  "grassfed_butter": "Pick the deepest yellow block through the wrapper window. Grass-fed runs near orange.",
+  "grassfed_butter": "Look through the wrapper window before choosing a block.",
   "ground_beef_lean_ratio": "Read the label for organ names, each with a percentage beside it.",
   "ground_turkey": "Read the ingredient list and the fat statement beside any percent-lean claim.",
   "ham": "Read the product name for “Water Added” or “Ham and Water Product”.",
@@ -178,6 +178,6 @@
   "washing_produce": "Scrub the firm ones with a brush. Rinse and spin the greens.",
   "white_fish": "Ask which species it is, then press the flesh for spring-back.",
   "whole_spices": "Toast them in a dry pan until they smell, then grind.",
-  "whole_vs_reduced_fat_milk": "Ask the farm how it handles milk; a carton dated months out is ultra-pasteurized.",
-  "yogurt_plain_vs_flavored": "Take the big plain tub, not the single-serve fruit cups."
+  "whole_vs_reduced_fat_milk": "Check the side panel for the pasteurization words and a grass-fed seal.",
+  "yogurt_plain_vs_flavored": "Check the ingredients for milk and cultures, with nothing after them."
 }

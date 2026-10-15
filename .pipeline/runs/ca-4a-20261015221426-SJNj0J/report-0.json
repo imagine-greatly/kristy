@@ -1,0 +1,29 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic7a.test.js",
+    "server/test/counterProbe48.test.js",
+    "server/lib/kindFilter.test.js",
+    "server/lib/perimeter.test.js",
+    "server/scripts/listMatchProbe.js"
+  ],
+  "criteria": [
+    {"id":"C1","met":true,"evidence":"Exact Eggs text, watch-out order, labels and preserved fields verified against d707172."},
+    {"id":"C2","met":true,"evidence":"Exact Milk text verified; one watch-out inserted, none removed; raw-milk warnings unchanged."},
+    {"id":"C3","met":true,"evidence":"Exact Yogurt replacements and additions verified; unnamed fields unchanged."},
+    {"id":"C4","met":true,"evidence":"Four remaining cards match Step 4; pick_egg_whites unchanged."},
+    {"id":"C5","met":true,"evidence":"pick_milk retired; 30 picks remain. Six milk phrases and four changed cart picks resolve correctly. Probe: 0 wrong."},
+    {"id":"C6","met":true,"evidence":"All specified pass-rule and card-lint checks pass."},
+    {"id":"C7","met":true,"evidence":"All required copy greps pass."},
+    {"id":"C8","met":true,"evidence":"Step 0: TERM_UNGLOSSED egg_labels G3/G4 and Milk G2/G4; SECTION_PHRASE_REPEATED 'is the whole food' across cheese_real_vs_processed, ghee, oat_milk, plain_kefir. After: zero scoped hits; permitted mixed group unchanged."},
+    {"id":"C9","met":true,"evidence":"Four reviewed headlines/do lines updated; doLines.json regenerated."},
+    {"id":"VERIFY","met":false,"evidence":"NOT READY for ship: acceptance 16/16; npm test 2579/2581. NOTES: unowned counterDecision.test.js:31 rejects approved Milk why (159 characters versus 120); counterPath.test.js:104 rejects approved embedded 100%. Both unchanged per Builder Contract; implementation reported done. Guard clean; dry-run places all 181 cards. All Step 6 edits applied, none skipped. Assumptions: installed Node 26.7.0 used; Node 22 unchecked."}
+  ],
+  "questions": [],
+  "kind": null
+}

@@ -558,14 +558,16 @@
         "keep eggs",
         "store eggs",
         "eggs in the fridge",
-        "eggs need to be refrigerated"
+        "eggs need to be refrigerated",
+        "Pasture-raised organic corn- and soy-free eggs",
+        "organic corn- and soy-free eggs"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Corn- and soy-free first, then organic, then pasture-raised.",
-      "why": "Space claims say nothing about the ration. A pasture-raised hen fed soy and corn is still a hen fed soy and corn.",
-      "short_answer": "Cage-free, free-range and pasture-raised are all space claims. None of them says what the hen ate. Most pasture-raised hens are still on soy and corn. The order that matters: soy-free and corn-free first, then organic, then pasture-raised.",
-      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The order is what she ate, then how it was grown, then how much room she had.",
+      "decision": "Pasture-raised, organic, and corn- and soy-free, all three together.",
+      "why": "Hens eat what they are given; the carton words show that feed and that life.",
+      "short_answer": "Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.",
+      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA egg labeling guidance",
@@ -589,14 +591,14 @@
         "FDA Egg Safety Final Rule",
         "EU marketing standards for eggs (unwashed, ambient storage)"
       ],
-      "kristy_take": "Feed, then organic, then room. The space words are the ones everybody sells.",
-      "cart_pick": "Soy-free pasture-raised eggs",
+      "kristy_take": "Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.",
+      "cart_pick": "Pasture-raised organic corn- and soy-free eggs",
       "buying_tips": [
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
         "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
         "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
         "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
-        "Plain conventional eggs are still one of the cheapest complete proteins in the store.",
+        "Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
         "Shell color is the breed. White and brown are the same egg inside.",
         "Speckles and small rough patches are normal shell variation.",
         "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
@@ -610,29 +612,29 @@
       ],
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
+        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
         "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
-        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
+        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
+        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
         "The yolk photo on the carton is artwork, not a sample.",
         "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
+        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
         "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
         "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
-        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
         "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
         "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant.",
         "US rules require washing and sanitizing, then holding at 45F or below from the plant onward."
       ],
       "pick_steps": [
-        "Look for ‘soy-free’ and ‘corn-free’, mostly on regional cartons and farm stands.",
-        "In the supermarket, organic is the rung you can reliably buy.",
-        "For space, pasture-raised with Certified Humane or Animal Welfare Approved is strongest."
+        "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.",
+        "“Organic” means certified organic feed and outdoor access.",
+        "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."
       ],
-      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the cheapest complete proteins in the store.",
+      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
       "labels_decoded": [
         {
           "term": "Cage-free",
@@ -709,9 +711,13 @@
         {
           "term": "Blue or green shell",
           "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
+        },
+        {
+          "term": "Corn- and soy-free",
+          "meaning": "The feed contains neither corn nor soy; both words must be printed."
         }
       ],
-      "tier_note": "What the hen ate ranks above how she was housed, so the feed words lead the carton.",
+      "tier_note": "Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.",
       "eyebrow_short": "Egg labels",
       "asked_as": [
         "what eggs should i buy",
@@ -733,7 +739,8 @@
         "do eggs need to be refrigerated",
         "where should i keep eggs",
         "why are us eggs in the fridge"
-      ]
+      ],
+      "instead": "Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed."
     },
     {
       "id": "organic_worth_it_by_type",
@@ -1143,8 +1150,8 @@
       ],
       "category": "dairy",
       "question": "Is grass-fed butter worth it?",
-      "decision": "Grass-fed butter first, then any real butter: cream, and salt if salted.",
-      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it.",
+      "decision": "Deepest yellow butter: cream, and salt if salted.",
+      "why": "Carotene from the grass goes into the fat. The fatty-acid profile shifts with it, omega-3 included.",
       "short_answer": "Cows on grass eat carotene, and it goes straight into the fat. So grass-fed butter runs deep yellow toward orange. Winter butter from the same dairy runs pale. The fat itself shifts modestly too.",
       "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter and to cost less. Within real butter, the grass difference is a feed difference showing up three ways at once: in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage. The fatty-acid profile shifts modestly too.",
       "evidence_tier": "kristys_standard",
@@ -1154,7 +1161,7 @@
         "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
       ],
       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
-      "cart_pick": "Grass-fed butter",
+      "cart_pick": "Deep yellow butter",
       "buying_tips": [
         "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
         "European-style butters are higher in fat, a separate axis from what the cows ate.",
@@ -1166,7 +1173,7 @@
           "meaning": "Higher butterfat (≈82%+) — richer, not necessarily grass-fed."
         }
       ],
-      "tier_note": "Grass-fed butter runs deeper yellow and carries more omega-3, and ranking it first is the standard.",
+      "tier_note": "Color is the reading: carotene from grass turns the fat deep yellow.",
       "watch_out": [
         "A tub spread is not butter. It is oils, water and emulsifiers built to behave like it, and the list says so.",
         "‘Spreadable butter’ is butter cut with canola or olive oil. The ingredient list says which.",
@@ -1174,9 +1181,8 @@
         "The softness is mechanical. Cream from cows on grass carries more unsaturated fat, which melts lower. So the bar gives at room temperature, where a grain-fed one stays firm."
       ],
       "pick_steps": [
-        "Pick the deepest yellow block; pale can mean a winter churn.",
-        "Read the list: a tub spread is oils and emulsifiers, not butter.",
-        "Salted or unsalted is a cooking choice; unsalted gives control."
+        "Skip tubs and spreads; butter comes as a block or a stick.",
+        "How it was raised: see Milk."
       ],
       "science": "Cows on grass eat carotene, and it goes straight into the fat, so grass-fed butter runs deep yellow toward orange. The same dairy churns paler in winter. Grass-fed cream carries more unsaturated fat, which melts lower, so the bar gives at room temperature. European-style butter is higher in fat, a separate axis from the feed. ‘Spreadable butter’ is butter cut with canola or olive oil.",
       "asked_as": [
@@ -1218,13 +1224,18 @@
         "non homogenized",
         "cream top milk",
         "why does organic milk last so long",
-        "milk processing"
+        "milk processing",
+        "milk carton",
+        "milk cartons",
+        "gallon of milk",
+        "carton of milk",
+        "Low-temp pasteurized grass-fed whole milk"
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",
-      "decision": "Raw from a trusted local farmer first, then low-temp organic, 100% grass-fed.",
-      "why": "Skim is whole milk with the fat taken out. Fewer steps is the standard here.",
-      "short_answer": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part.",
+      "decision": "Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.",
+      "why": "Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.",
+      "short_answer": "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.",
       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -1240,7 +1251,7 @@
         "CDC “Raw Milk” https://www.cdc.gov/food-safety/foods/raw-milk.html"
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
-      "cart_pick": "Whole milk",
+      "cart_pick": "Low-temp pasteurized grass-fed whole milk",
       "buying_tips": [
         "Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
         "Grass-fed and pasture milk is a further layer, and a separate question from the fat.",
@@ -1257,6 +1268,7 @@
       "watch_out": [
         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
         "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
+        "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.",
         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water.",
         "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
         "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
@@ -1267,9 +1279,9 @@
         "Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
       ],
       "pick_steps": [
-        "Check the date: months out means ultra-pasteurized; cream-top means fewer steps.",
-        "Read the milkfat: whole is 3.25%, reduced-fat 2%, low-fat 1%, skim under half.",
-        "On flavored jugs, read the added-sugar line before the fat one."
+        "Raw means unpasteurized: milk that skipped the heat step.",
+        "Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed.",
+        "100% grass-fed on milk means the cows ate grass and hay, never grain."
       ],
       "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
       "labels_decoded": [
@@ -1296,9 +1308,17 @@
         {
           "term": "Cream-top / non-homogenized",
           "meaning": "Cream separates and rises. Still pasteurized."
+        },
+        {
+          "term": "Vat pasteurized",
+          "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."
+        },
+        {
+          "term": "Ultra-pasteurized",
+          "meaning": "Heated to about 280°F for about 2 seconds."
         }
       ],
-      "tier_note": "Least handling ranks first, so raw from a trusted farmer leads and low-temp organic follows.",
+      "tier_note": "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds.",
       "eyebrow_short": "Whole vs. reduced",
       "asked_as": [
         "whole milk or skim",
@@ -1310,7 +1330,8 @@
         "what is ultra pasteurized milk",
         "what does homogenized mean",
         "difference between pasteurized and ultra pasteurized"
-      ]
+      ],
+      "instead": "Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season."
     },
     {
       "id": "cheese_real_vs_processed",
@@ -1407,14 +1428,15 @@
         "live yogurt",
         "yogurt alive",
         "is my yogurt alive",
-        "whole milk yogurt"
+        "whole milk yogurt",
+        "Plain Greek yogurt, 100% grass-fed"
       ],
       "category": "dairy",
       "question": "What should I look for in yogurt?",
-      "decision": "Flavored yogurt carries added sugar; plain is milk and cultures.",
-      "why": "Flavored cups carry dessert-level added sugar. Plain is the same yogurt without it.",
-      "short_answer": "Buy plain and sweeten it yourself. The big plain tub is cheaper per ounce than the single-serve cups besides, and it is the same yogurt underneath. Add your own fruit or a little honey if you want it sweet.",
-      "detail": "Plain yogurt, especially Greek or strained, is a clean high-protein whole food. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
+      "decision": "Plain Greek yogurt made from 100% grass-fed milk.",
+      "why": "Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.",
+      "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
+      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
@@ -1424,13 +1446,13 @@
         "National Yogurt Association ‘Live & Active Cultures’ seal criteria"
       ],
       "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
-      "cart_pick": "Plain whole-milk Greek yogurt",
+      "cart_pick": "Plain Greek yogurt, 100% grass-fed",
       "buying_tips": [
         "Plain over flavored. Sweeten it yourself with fruit.",
         "Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.",
-        "Greek/strained is higher protein; whole-milk versions are more filling.",
+        "Greek or strained yogurt is thicker; whole-milk versions are more filling.",
         "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
-        "Greek and skyr are strained: thicker, more protein per spoon.",
+        "Greek and skyr are strained: thicker, with less whey.",
         "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
         "Whole-milk versions are more filling and less tinkered with than fat-free."
       ],
@@ -1449,14 +1471,22 @@
         },
         {
           "term": "Greek / skyr",
-          "meaning": "Strained. Thicker, higher protein per serving."
+          "meaning": "Strained. Thicker, with less whey."
         },
         {
           "term": "Kefir",
           "meaning": "A drinkable ferment with a wider mix of cultures."
+        },
+        {
+          "term": "Greek",
+          "meaning": "Yogurt strained to remove whey, which leaves it thicker."
+        },
+        {
+          "term": "Plain",
+          "meaning": "No added sugar or flavoring."
         }
       ],
-      "tier_note": "The added-sugar difference is printed on the panel, and buying plain to sweeten at home is the standard.",
+      "tier_note": "Plain means no added sugar, so sweeten it at home with fruit or honey.",
       "watch_out": [
         "Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two.",
         "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
@@ -1467,9 +1497,9 @@
         "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
       ],
       "pick_steps": [
-        "Take plain and sweeten it yourself with fruit.",
-        "Compare the added-sugars line on plain against the fruit cup.",
-        "Greek or strained is higher protein; whole-milk versions are more filling."
+        "Greek means strained, so the yogurt is thicker and holds less whey.",
+        "100% grass-fed on the tub means the cows ate grass and hay, never grain.",
+        "Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is."
       ],
       "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup.",
       "asked_as": [
@@ -1479,7 +1509,8 @@
         "is my yogurt still alive",
         "what does live and active cultures mean",
         "what is skyr"
-      ]
+      ],
+      "instead": "Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there."
     },
     {
       "id": "raw_milk",
@@ -1510,7 +1541,7 @@
         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
-      "instead": "Raw aged cheese from a named dairy. Sixty days of aging puts it in every state, already in the case.",
+      "instead": "Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.",
       "buying_tips": [
         "A farm that publishes its herd test results. The good ones are proud of them.",
         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
@@ -1533,7 +1564,7 @@
           "meaning": "Gently heated. Closer to raw than the commodity gallon, and widely sold."
         }
       ],
-      "tier_note": "Drinking milk from a known herd is old practice with thin modern study behind it, and the standard is about the farm, not a health claim.",
+      "tier_note": "Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.",
       "watch_out": [
         "Not for pregnancy, kids under five, or anyone immunocompromised. The good farms say this themselves.",
         "No named farm, no test results, no cold chain? That is not raw milk worth buying. That is just unpasteurized.",
@@ -5661,25 +5692,6 @@
       ]
     },
     {
-      "id": "pick_milk",
-      "kind": "pick",
-      "title": "Milk",
-      "category": "dairy",
-      "aliases": [
-        "milk carton",
-        "milk cartons",
-        "gallon of milk",
-        "carton of milk"
-      ],
-      "decision": "Find the word pasteurized on the label; without it the carton may hold raw milk.",
-      "sources": [
-        {
-          "name": "FDA: The Dangers of Raw Milk",
-          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/dangers-raw-milk-unpasteurized-milk-can-pose-serious-health-risk"
-        }
-      ]
-    },
-    {
       "id": "pick_canned_tomatoes",
       "kind": "pick",
       "title": "Canned tomatoes",
@@ -7061,7 +7073,8 @@
         "are duck eggs safe to eat",
         "what is different about duck eggs",
         "how big are quail eggs"
-      ]
+      ],
+      "instead": "Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells."
     },
     {
       "id": "pick_winter_squash",
@@ -9067,7 +9080,8 @@
         "is ghee worth buying",
         "how do i pick a good ghee",
         "should i buy clarified butter"
-      ]
+      ],
+      "instead": "Plain butter, the same dairy fat before the water and milk solids come out."
     },
     {
       "id": "goat_sheep_dairy",

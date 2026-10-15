@@ -181,6 +181,6 @@ test('bare retrieval uses one unambiguous longer buying alias, never a substring
   assert.deepEqual(scoreEntries('oat milk', 3, [owner]), []);
   assert.deepEqual(scoreEntries('milk', 3, [{ ...owner, asked_as: [] }]), []);
   assert.deepEqual(scoreEntries('milk', 3, [owner, { ...owner, id: 'other_owner' }]), []);
-  assert.equal(matchItemToPick('milk carton')?.id, 'pick_milk');
-  assert.equal(matchItemToPick('carton of milk')?.id, 'pick_milk');
+  assert.equal(matchItemToPick('milk carton')?.id, undefined);
+  assert.equal(matchItemToPick('carton of milk')?.id, undefined);
 });

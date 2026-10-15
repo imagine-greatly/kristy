@@ -166,7 +166,7 @@ Conventions: [n] = word count, whitespace tokens (the builder re-counts with the
 - **decision:** Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed. [12] (Devon's goal line)
 - **tier_note:** Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds. [17] `CA-2 / item-cards-sources pasteurization row` (cut from 20 words, which sat at the cap)
 - **instead:** Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season. [14] `CA-2: 7 CFR 205.237/205.239`
-- **cart_pick:** Low-temp pasteurized 100% grass-fed whole milk [6]. Raw milk from a farmer is not a one-tap shelf add, so the pick names the first shelf rung (D1).
+- **cart_pick:** Low-temp pasteurized grass-fed whole milk [6] ("100%" dropped 2026-10-15: the no-price check reads % as a price). Raw milk from a farmer is not a one-tap shelf add, so the pick names the first shelf rung (D1).
 - **do:** Check the side panel for the pasteurization words and a grass-fed seal. [12] (headline + do = 24)
 - **pick_steps:** (1) Raw means unpasteurized: milk that skipped the heat step. [9] `KS` (2) Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed. [9] (3) 100% grass-fed on milk means the cows ate grass and hay, never grain. [13] (G2, gate A2)
 - **why:** Each step between the cow and the carton changes milk: heat, homogenizing, and skimming. [14] `card (milk_processing fact)` Whole milk keeps its milkfat; reduced-fat milk has some of it removed. [12] `card`
