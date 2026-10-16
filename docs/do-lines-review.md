@@ -43,7 +43,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beef_cuts_basics` | meat | Chuck or round, whole, with no needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
 | `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then ground beef with nothing added. | Read the label for organ names, each with a percentage beside it. | — |
 | `egg_labels` | eggs_dairy | Pasture-raised, organic, and corn- and soy-free, all three together. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
-| `organic_worth_it_by_type` | produce | Organic on anything you eat the skin of, conventional on what you peel. | Spend the organic money on berries, greens, and apples. | — |
+| `organic_worth_it_by_type` | produce | Organic for produce eaten whole; conventional for produce you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Frozen vegetables are picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | Enzymes keep working in the freezer until heat switches them off. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
 | `produce_seasonality` | produce | Produce in season is picked closer to ripe and travels less. | Read the farmers’ market as the signal for what is in season locally. | — |
@@ -106,13 +106,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `sprouts_raw` | produce | Sprouts grow in the warm damp that bacteria also like. | Check the roots are still white and the clamshell is not fogged. | — |
 | `produce_root_vegetables` | produce | Organic potatoes, conventional carrots. Firm roots, nothing soft or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
 | `produce_brassicas` | produce | Conventional is fine on cabbage and cauliflower. Tight heads, no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
-| `produce_onions_garlic` | produce | Conventional is fine. Firm and dry, papery skins, nothing sprouting or moldy. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
+| `produce_onions_garlic` | produce | Conventional onions and garlic: firm, dry, papery skins, with no sprouts or mold. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
 | `produce_leafy_greens` | produce | Organic greens, crisp and evenly colored, with no wilt or yellowing. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
 | `produce_peppers` | produce | Organic peppers, firm and evenly colored, with no cracks or soft spots. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
 | `produce_apples_pears` | produce | Organic apples and pears, unbruised. One spoiled fruit rots its neighbors faster. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
 | `produce_citrus` | produce | Conventional citrus, organic for zest. Firm, smooth, no drying or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
-| `produce_stone_fruit` | produce | Organic stone fruit, unbruised, with the skin color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
-| `produce_mushrooms` | produce | Conventional is fine. Dry, firm mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
+| `produce_stone_fruit` | produce | Organic peaches, plums, nectarines and cherries, unbruised, with color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
+| `produce_mushrooms` | produce | Conventional mushrooms, dry and firm, with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
 | `produce_green_beans` | produce | Organic beans with smooth, crisp, slender pods and no bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
 | `produce_bananas` | produce | Buy them green and let them ripen on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
 | `egg_duck_quail` | eggs_dairy | Cook duck and quail eggs until white and yolk are solid. | Check that each shell is clean and uncracked before the carton goes in. | — |

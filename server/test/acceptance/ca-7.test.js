@@ -57,9 +57,16 @@ test('A3 batch cards stay lint-clean; corpus clean', () => {
 test('A4 only decision and instead moved on batch cards; nothing else in the KB moved', () => {
   assert.equal(kb.entries.length, base.entries.length, 'entry count changed');
   const strip = (e) => { const { decision, instead, ...rest } = e; return rest; };
+  // W2 supersedes only these produce fields; its acceptance test owns the new values.
+  const w2 = {
+    organic_worth_it_by_type: ['aliases', 'decision'], revive_greens: ['aliases'],
+    produce_root_vegetables: ['aliases'], produce_onions_garlic: ['aliases', 'decision'],
+    produce_leafy_greens: ['aliases'], produce_stone_fruit: ['decision'], produce_mushrooms: ['decision'],
+  };
+  const stripW2 = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !(w2[e.id] || []).includes(f)));
   for (const e of base.entries) {
     if (IDS.includes(e.id)) assert.deepEqual(strip(now(e.id)), strip(e), `${e.id}: a field beyond decision/instead moved`);
-    else assert.deepEqual(now(e.id), e, `${e.id}: outside the batch, changed`);
+    else assert.deepEqual(stripW2(now(e.id)), stripW2(e), `${e.id}: outside the batch and W2, changed`);
   }
 });
 

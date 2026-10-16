@@ -39,7 +39,7 @@ const QUERIES = nonEmpty([
   ['canned tuna', 'canned_tuna'],
   ['apples', 'produce_apples_pears'],
   ['bananas', 'produce_bananas'],
-  ['spinach', 'organic_worth_it_by_type'],
+  ['spinach', 'produce_leafy_greens'],
   ['frozen vegetables', 'frozen_vs_fresh_produce'],
   ['chips', 'miss'],
   ['crackers', 'crackers'], // K23: pinned gap now covered by the crackers card.

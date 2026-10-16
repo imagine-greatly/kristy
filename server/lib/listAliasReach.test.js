@@ -8,8 +8,8 @@
 // test, and it is authored from the ROW, never from the card's own vocabulary.
 //
 // THE HUB RULE FILTERS THE LIST. An alias is not "this word is related to this card"; it is
-// "this card's do line works for this food". `organic_worth_it_by_type` says organic where
-// the skin gets eaten, so apples and greens belong and a peeled thing does not.
+// "this card's do line works for this food". W2 keeps organic buying questions on
+// `organic_worth_it_by_type`; grocery nouns belong to their food family cards.
 // `produce_ripeness_by_item` says the heavier of two holds more juice, so stone fruit and
 // citrus belong and broccoli, cauliflower and asparagus do NOT — which is why they are
 // asserted absent below, not merely omitted. `revive_greens` is a home card and never
@@ -30,20 +30,18 @@ import { nonEmpty } from './testGuards.js';
 // level so an empty table throws at import rather than passing vacuously.
 const ROWS = nonEmpty(
   [
-    // P3 (2026-09-16): the plural reaches the curated apples/pears card; the bare singular
-    // still ties to the earlier organic hub. Both do lines work for an apple. Measured, not
-    // designed — see the P3 report.
+    // W2: both singular and plural reach the apples/pears family.
     ['apples', 'produce_apples_pears'],
-    ['apple', 'organic_worth_it_by_type'],
+    ['apple', 'produce_apples_pears'],
     ['Apples', 'produce_apples_pears'],
-    ['grapes', 'organic_worth_it_by_type'],
-    ['leafy greens', 'organic_worth_it_by_type'],
-    ['Leafy greens', 'organic_worth_it_by_type'],
-    ['kale', 'organic_worth_it_by_type'],
-    ['spinach', 'organic_worth_it_by_type'],
-    ['lettuce', 'organic_worth_it_by_type'],
+    // Grapes have no covered family; w2.test.js pins the honest miss.
+    ['leafy greens', 'produce_leafy_greens'],
+    ['Leafy greens', 'produce_leafy_greens'],
+    ['kale', 'produce_leafy_greens'],
+    ['spinach', 'produce_leafy_greens'],
+    ['lettuce', 'produce_leafy_greens'],
     // P3: stone fruit and citrus own their subjects now; `peach` singular still ties to the
-    // earlier ripeness hub, same shape as `apple` above.
+    // earlier ripeness hub.
     ['peaches', 'produce_stone_fruit'],
     ['peach', 'produce_ripeness_by_item'],
     ['nectarines', 'produce_stone_fruit'],
@@ -90,21 +88,14 @@ test('the ripeness do line is about juice, so brassicas and asparagus do not att
 });
 
 test('revive_greens is a home card and carries no list alias that could attach', () => {
-  // `lettuce` is on both cards. The home card is skipped by the matcher, so the row lands
-  // on the organic card; the ask path still reaches revive_greens on its question aliases
-  // (counterReach.test.js). Pinned so the two surfaces stay split deliberately.
-  assert.equal(matchItemToCard('lettuce')?.slug, 'organic_worth_it_by_type');
+  // W2 moves bare lettuce to the buying family. The home card retains its specific
+  // revival phrases, whose ask reach is pinned in counterReach.test.js.
+  assert.equal(matchItemToCard('lettuce')?.slug, 'produce_leafy_greens');
   assert.ok(entryById('revive_greens'), 'revive_greens left the corpus');
 });
 
-// THE ASK PATH TIES ON `lettuce`, AND THE TIE IS DECIDED BY CORPUS ORDER. Both
-// `organic_worth_it_by_type` and `revive_greens` carry the exact alias, both score 2, and
-// `scoreEntries` sorts by score alone — stable — so the organic card wins because it sits
-// earlier in the KB. That is the right answer (a counter question is a buying question, and
-// revive is a home card) but nothing else records it: counterReach only asks revive's longer
-// phrasings. A KB reorder would flip it silently, so it is pinned here, the way
-// counterReach.test.js pins the "fresh strawberries" tie by name.
-test('bare "lettuce" on the ask path reaches the organic card, not the home card', () => {
+// The bare buying noun belongs to the family on both retrieval surfaces.
+test('bare "lettuce" on the ask path reaches the leafy greens family', () => {
   const [first] = scoreEntries('lettuce');
-  assert.equal(first?.entry?.id, 'organic_worth_it_by_type');
+  assert.equal(first?.entry?.id, 'produce_leafy_greens');
 });

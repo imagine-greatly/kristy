@@ -30,7 +30,11 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, now);
+    // W2 retires uncovered grocery nouns from the organic hub and moves bare lettuce
+    // from home technique to its buying family. w2.test.js pins both outcomes.
+    const retiredAliases = id === 'organic_worth_it_by_type' ? ['grapes', 'kiwi', 'kiwis']
+      : id === 'revive_greens' ? ['lettuce'] : [];
+    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, now);
   });
 }
 

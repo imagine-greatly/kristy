@@ -39,7 +39,8 @@ const headCol = (id) => (review.match(new RegExp('^\\| `' + id + '` \\| [^|]+\\|
 test('C1 Produce hub', () => {
   const o = now('organic_worth_it_by_type');
   assert.equal(o.title, 'Produce');
-  assert.equal(o.decision, 'Organic on anything you eat the skin of, conventional on what you peel.');
+  // W2 leaves the section's skin wording in the section and preserves this answer.
+  assert.equal(o.decision, 'Organic for produce eaten whole; conventional for produce you peel.');
   for (const a of ['banana', 'bananas']) {
     assert.ok(!o.aliases.includes(a), `hub still carries ${a}`);
     assert.ok(now('produce_bananas').aliases.includes(a), `produce_bananas lacks ${a}`);

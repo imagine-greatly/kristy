@@ -226,6 +226,13 @@ test('C1 corpus counts and every other entry stay at the shipped baseline', () =
   assert.equal(kb.entries.filter(e => e.kind === 'pick').length, 30);
   assert.equal(kb.entries.filter(e => e.kind !== 'pick' && sectionForCategory(e.category) === 'eggs_dairy').length, 23);
   assert.deepEqual(kb.entries.map(e => e.id), base.entries.map(e => e.id));
-  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(beforeCa7(e), was(e.id), e.id);
+  // W2 supersedes only these produce fields; its acceptance test owns the new values.
+  const w2 = {
+    organic_worth_it_by_type: ['aliases', 'decision'], revive_greens: ['aliases'],
+    produce_root_vegetables: ['aliases'], produce_onions_garlic: ['aliases', 'decision'],
+    produce_leafy_greens: ['aliases'], produce_stone_fruit: ['decision'], produce_mushrooms: ['decision'],
+  };
+  const stripW2 = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !(w2[e.id] || []).includes(f)));
+  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(stripW2(beforeCa7(e)), stripW2(was(e.id)), e.id);
   for (const id of ['raw_kefir', 'raw_aged_cheese']) assert.deepEqual(now(id).watch_out, was(id).watch_out, id);
 });
