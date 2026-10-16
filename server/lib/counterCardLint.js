@@ -482,7 +482,7 @@ const FALLBACK_OUTRIGHT = [
 
 // A conditional marker. On its own this proves nothing — "Wash it when you eat it" is
 // temporal and correct — so it only counts alongside a circumstance below.
-export const LADDER_OPENER = /^If you can['’]t get [^:]{2,40}: /;
+export const LADDER_OPENER = /^If you can['’]t get ([^:]{2,40}): /;
 const CONDITIONAL = /\b(if|when|whenever|where|as long as|provided)\b/i;
 
 // THE SHOPPER'S CIRCUMSTANCES. This list is the load-bearing part of the check: a
@@ -1163,7 +1163,10 @@ export function lintCard(card) {
     // shape; the redirect states what to buy, it does not negotiate about whether to.
     // The ladder opener "If you can't get raw: …" (Devon, 2026-10-16) names the best, not the
     // shopper's circumstances, so it is stripped before the check; what follows still answers to it.
-    const redirect = instead.replace(LADDER_OPENER, '');
+    // The exemption holds only while the named best is a food: "raw when in a hurry" is the hedge back in the opener.
+    const ladder = instead.match(LADDER_OPENER);
+    const redirect =
+      ladder && !CONDITIONAL.test(ladder[1]) && !CIRCUMSTANCE.test(ladder[1]) ? instead.slice(ladder[0].length) : instead;
     if (CONDITIONAL.test(redirect.split(/[.,;]/)[0] || '')) {
       fail(
         'INSTEAD_HEDGED',

@@ -62,3 +62,12 @@ test('A4 only decision and instead moved on batch cards; nothing else in the KB 
     else assert.deepEqual(now(e.id), e, `${e.id}: outside the batch, changed`);
   }
 });
+
+test('A5 the ladder exemption does not hide a hedge inside the opener', () => {
+  const milk = now('whole_vs_reduced_fat_milk');
+  const codes = (instead) => lint.lintCard({ ...milk, instead }).map((v) => v.code ?? v.rule ?? v);
+  assert.ok(!codes(milk.instead).includes('INSTEAD_HEDGED'), 'the real ladder line passes');
+  for (const bad of ["If you can't get raw when in a hurry: whole milk.", "If you can't get raw on a budget: whole milk."]) {
+    assert.ok(codes(bad).includes('INSTEAD_HEDGED'), bad);
+  }
+});
