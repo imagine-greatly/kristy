@@ -120,7 +120,7 @@ counterRouter.get('/counter/section-rules', optionalAuth, (_req, res) => res.jso
 // "Ask for this card": a list item with no card. Stores the scrubbed topic only (logCounterGap),
 // never the asker, on the counter's own per-IP bucket for guests.
 counterRouter.post('/counter/request', optionalAuth, async (req, res) => {
-  const item = String(req.body?.item ?? '').trim().slice(0, 160);
+  const item = String(req.body?.item ?? '').trim(); // no pre-cap: logCounterGap scrubs the whole text, then caps
   if (!item) return res.status(400).json({ error: 'item is required' });
   if (!req.user && counterAskLimited(clientIp(req))) {
     return res.status(429).json({ error: true, message: 'Too many requests at once. Try again shortly.' });
