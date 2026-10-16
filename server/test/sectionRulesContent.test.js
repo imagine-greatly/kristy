@@ -5,7 +5,7 @@ import { nonEmpty } from '../lib/testGuards.js';
 import rules from '../lib/sectionRules.json' with { type: 'json' };
 import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
 
-const ALLOWED = ['produce', 'meat', 'seafood', 'eggs_dairy', 'bulk_pantry', 'frozen'];
+const ALLOWED = ['meat', 'eggs_dairy', 'produce', 'seafood', 'bulk_pantry', 'frozen'];
 const KB_IDS = new Set(kb.entries.map((e) => e.id));
 const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 const FIRST_PERSON = /\b(i|me|my|we|our|us)\b/i;
@@ -24,9 +24,11 @@ test('section rules: shape', () => {
 test('section rules: lengths', () => {
   for (const r of rules) {
     const n = words(r.rule);
-    assert.ok(n >= 1 && n <= 8, `${r.section} rule is ${n} words`);
+    // 20 after CA-5: the approved rules run to 18 words, 2026-10-15.
+    assert.ok(n >= 1 && n <= 20, `${r.section} rule is ${n} words`);
     assert.ok(Array.isArray(r.checks) && r.checks.length <= 3, `${r.section} checks 0-3`);
-    for (const c of r.checks) assert.ok(words(c) >= 1 && words(c) <= 8, `${r.section} check too long: ${c}`);
+    // 16 after CA-5: the approved checks run to 15 words, 2026-10-15.
+    for (const c of r.checks) assert.ok(words(c) >= 1 && words(c) <= 16, `${r.section} check too long: ${c}`);
   }
 });
 
