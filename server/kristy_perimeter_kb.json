@@ -307,7 +307,10 @@
         "usda grade",
         "what does prime mean",
         "marbling",
-        "prime choice select", "beef cut for", "prime beef worth", "beef grades matter",
+        "prime choice select",
+        "beef cut for",
+        "prime beef worth",
+        "beef grades matter",
         "beef grades",
         "usda grades",
         "usda choice"
@@ -740,7 +743,7 @@
         "where should i keep eggs",
         "why are us eggs in the fridge"
       ],
-      "instead": "Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed."
+      "instead": "If you can’t get corn- and soy-free eggs: soy-free, organic, pasture-raised eggs."
     },
     {
       "id": "organic_worth_it_by_type",
@@ -1189,7 +1192,8 @@
         "is grass fed butter worth it",
         "which butter should i buy",
         "is grass fed butter better"
-      ]
+      ],
+      "instead": "If you can’t get deep yellow butter: butter with cream and salt only."
     },
     {
       "id": "whole_vs_reduced_fat_milk",
@@ -1233,7 +1237,7 @@
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",
-      "decision": "Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed.",
+      "decision": "Raw whole milk first, then low-temp pasteurized, 100% grass-fed.",
       "why": "Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.",
       "short_answer": "Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.",
       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed.",
@@ -1331,7 +1335,7 @@
         "what does homogenized mean",
         "difference between pasteurized and ultra pasteurized"
       ],
-      "instead": "Organic, low-temp pasteurized whole milk: organic rules put cows on pasture through grazing season."
+      "instead": "If you can’t get raw: low-temp pasteurized, organic, 100% grass-fed whole milk."
     },
     {
       "id": "cheese_real_vs_processed",
@@ -1403,7 +1407,7 @@
         "is pre shredded cheese ok",
         "what cheese should i buy"
       ],
-      "instead": "Bagged shreds named cheese: real cheese, coated so the strands stay apart."
+      "instead": "If you can’t get block cheese: bagged shreds named cheese."
     },
     {
       "id": "yogurt_plain_vs_flavored",
@@ -1511,7 +1515,7 @@
         "what does live and active cultures mean",
         "what is skyr"
       ],
-      "instead": "Plain organic whole-milk yogurt, Greek or regular, is next when no 100% grass-fed tub is there."
+      "instead": "If you can’t get 100% grass-fed Greek yogurt: plain organic whole-milk yogurt."
     },
     {
       "id": "raw_milk",
@@ -1542,7 +1546,7 @@
         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "kristy_take": "Good raw is good. Anonymous raw is the only real problem.",
-      "instead": "Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.",
+      "instead": "If you can’t get raw: vat or low-temp pasteurized whole milk.",
       "buying_tips": [
         "A farm that publishes its herd test results. The good ones are proud of them.",
         "Grass and pasture, small herd, milked into a cold chain that never breaks.",
@@ -4772,7 +4776,7 @@
         "should i buy raw kefir",
         "what is raw kefir"
       ],
-      "instead": "Plain kefir from 100% grass-fed whole milk, the next bottle down from raw."
+      "instead": "If you can’t get raw kefir: plain kefir from 100% grass-fed whole milk."
     },
     {
       "id": "raw_aged_cheese",
@@ -4834,7 +4838,7 @@
         "what is raw milk cheese",
         "is aged raw cheese worth buying"
       ],
-      "instead": "Thermized cheese, heated below pasteurization: not raw, and not fully pasteurized either."
+      "instead": "If you can’t get aged raw-milk cheese: cheese labeled thermized."
     },
     {
       "id": "sprouts_raw",
@@ -8819,7 +8823,7 @@
         "how do i pick a kefir drink",
         "should i buy flavored kefir"
       ],
-      "instead": "Plain organic whole-milk kefir is the next bottle down."
+      "instead": "If you can’t get 100% grass-fed kefir: plain organic whole-milk kefir."
     },
     {
       "id": "sour_cream",
@@ -8872,7 +8876,7 @@
         "is cultured sour cream worth buying",
         "should i buy acidified sour cream"
       ],
-      "instead": "Plain whole-milk yogurt, its only sugar the lactose from the milk."
+      "instead": "If you can’t get cream-and-cultures sour cream: plain whole-milk yogurt."
     },
     {
       "id": "cream_cheese",
@@ -8925,7 +8929,7 @@
         "is neufchatel cheese worth buying",
         "which cream cheese spread should i buy"
       ],
-      "instead": "Cream cheese with stabilizers listed, held by the standard to 0.5 percent at most."
+      "instead": "If you can’t get stabilizer-free cream cheese: cream cheese with cultures and stabilizers listed."
     },
     {
       "id": "cottage_cheese",
@@ -8983,7 +8987,7 @@
         "is dry curd cottage cheese worth buying",
         "should i buy small curd cottage cheese"
       ],
-      "instead": "Cottage cheese marked “directly set”, where a food-grade acid sets the curd instead of a culture."
+      "instead": "If you can’t get culture-set cottage cheese: cottage cheese marked directly set."
     },
     {
       "id": "ice_cream",
@@ -9041,7 +9045,7 @@
         "how do i pick a vanilla ice cream",
         "should i buy ice cream or frozen dairy dessert"
       ],
-      "instead": "Frozen custard, which is ice cream made with egg yolk solids."
+      "instead": "If you can’t get ice cream with no added oils: frozen custard."
     },
     {
       "id": "ghee",
@@ -9093,7 +9097,7 @@
         "how do i pick a good ghee",
         "should i buy clarified butter"
       ],
-      "instead": "Plain butter, the same dairy fat before the water and milk solids come out."
+      "instead": "If you can’t get ghee or clarified butter: plain butter."
     },
     {
       "id": "goat_sheep_dairy",
@@ -9153,7 +9157,7 @@
         "how do i pick a goat cheese",
         "should i buy sheep milk cheese"
       ],
-      "instead": "Goat yogurt or goat butter, with goat milk named in the ingredients."
+      "instead": "If you can’t get goat or sheep cheese: goat yogurt with goat milk named in the ingredients."
     },
     {
       "id": "almond_milk",

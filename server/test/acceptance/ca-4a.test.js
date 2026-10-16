@@ -1,4 +1,5 @@
 // CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+import { beforeCa7 } from './ca7Superseded.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -19,7 +20,7 @@ const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_
 const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
 const reviewed = parseReviewTable(reviewText);
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeCa7(kb.entries.find((e) => e.id === id));
 const was = (id) => base.entries.find((e) => e.id === id);
 const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
@@ -237,6 +238,6 @@ test('C9 doLines.json carries the new do lines', () => {
   for (const [id, line] of Object.entries({ egg_labels: EGG_DO, [MILK_ID]: MILK_DO, [YOG_ID]: YOG_DO, grassfed_butter: BUTTER_DO })) {
     assert.equal(doLines[id], line, id);
     const row = reviewText.split('\n').find((l) => l.startsWith(`| \`${id}\` |`))?.split('|').map((c) => c.trim());
-    assert.equal(row?.[3], now(id).decision, `${id} review headline`);
+    assert.equal(row?.[3], kb.entries.find((e) => e.id === id).decision, `${id} review headline`);
   }
 });

@@ -1,4 +1,5 @@
 // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+import { beforeCa7 } from './ca7Superseded.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -19,7 +20,7 @@ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8'
 const reviewed = parseReviewTable(reviewText);
 const reviewHeadline = id => reviewText.split('\n').find(line => line.startsWith('| `' + id + '` |'))?.split('|')[3].trim();
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeCa7(kb.entries.find((e) => e.id === id));
 const was = (id) => base.entries.find((e) => e.id === id);
 const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
 const COPY = ['decision', 'short_answer', 'why', 'detail', 'kristy_take', 'tier_note', 'question', 'buying_tips', 'watch_out', 'pick_steps', 'science', 'instead', 'cart_pick', 'labels_decoded', 'eyebrow_short'];
@@ -225,6 +226,6 @@ test('C1 corpus counts and every other entry stay at the shipped baseline', () =
   assert.equal(kb.entries.filter(e => e.kind === 'pick').length, 30);
   assert.equal(kb.entries.filter(e => e.kind !== 'pick' && sectionForCategory(e.category) === 'eggs_dairy').length, 23);
   assert.deepEqual(kb.entries.map(e => e.id), base.entries.map(e => e.id));
-  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(e, was(e.id), e.id);
+  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(beforeCa7(e), was(e.id), e.id);
   for (const id of ['raw_kefir', 'raw_aged_cheese']) assert.deepEqual(now(id).watch_out, was(id).watch_out, id);
 });

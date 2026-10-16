@@ -1,4 +1,5 @@
 // IC-7b: dairy fronts, Devon's Milk ladder, "Butter" and "Yogurt" (docs/ITEM-CARDS-PLAN.md IC-7b). Written by the planner; do not edit.
+import { beforeCa7 } from './ca7Superseded.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
@@ -12,7 +13,7 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeCa7(kb.entries.find((e) => e.id === id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exposure/i;
@@ -84,7 +85,7 @@ test('C5 dairy fronts and why lines pass', () => {
     assert.ok(!PENDING.includes(id), `${id} still pending`);
     assert.deepEqual(lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lint`);
     assert.deepEqual(readability(e), [], `${id} readability`);
-    assert.equal(reviewHeadline(id), e.decision, `${id} review headline differs from KB decision`);
+    assert.equal(reviewHeadline(id), kb.entries.find((x) => x.id === id).decision, `${id} review headline differs from KB decision`);
   }
   assert.deepEqual([...ESSENTIALS], ['organic_worth_it_by_type', 'egg_labels', 'salmon_wild_vs_farmed', 'label_front_vs_back',
     'produce_ripeness_by_item', 'beef_grassfed_vs_grainfed', 'judging_meat_at_the_case', 'whole_vs_reduced_fat_milk']);

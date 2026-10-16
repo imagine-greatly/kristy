@@ -51,7 +51,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `baking_soda_soak` | produce · home | Baking soda in the water lifts residue a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Cutting produce starts the clock on vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Deepest yellow butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
-| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw from a trusted local farmer first, then low-temp pasteurized, 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
+| `whole_vs_reduced_fat_milk` | eggs_dairy | Raw whole milk first, then low-temp pasteurized, 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Block cheese with a short list, real cheese by its front name. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
 | `raw_milk` | eggs_dairy | Raw milk is worth seeking out from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |

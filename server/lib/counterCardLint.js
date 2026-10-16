@@ -482,6 +482,7 @@ const FALLBACK_OUTRIGHT = [
 
 // A conditional marker. On its own this proves nothing — "Wash it when you eat it" is
 // temporal and correct — so it only counts alongside a circumstance below.
+export const LADDER_OPENER = /^If you can['’]t get [^:]{2,40}: /;
 const CONDITIONAL = /\b(if|when|whenever|where|as long as|provided)\b/i;
 
 // THE SHOPPER'S CIRCUMSTANCES. This list is the load-bearing part of the check: a
@@ -1160,7 +1161,10 @@ export function lintCard(card) {
 
     // A conditional opening is the hedge relocated. "If it is farmed or nothing…" is the
     // shape; the redirect states what to buy, it does not negotiate about whether to.
-    if (CONDITIONAL.test(instead.split(/[.,;]/)[0] || '')) {
+    // The ladder opener "If you can't get raw: …" (Devon, 2026-10-16) names the best, not the
+    // shopper's circumstances, so it is stripped before the check; what follows still answers to it.
+    const redirect = instead.replace(LADDER_OPENER, '');
+    if (CONDITIONAL.test(redirect.split(/[.,;]/)[0] || '')) {
       fail(
         'INSTEAD_HEDGED',
         `the redirect opens on a condition — "${instead.slice(0, 60)}…". Name what to buy instead; ` +
