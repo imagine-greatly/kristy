@@ -223,11 +223,11 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
 - ⛔ `push_tokens.sql` NOT applied — table missing from schema cache (measured 2026-09-21).
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
-  - LIVE `counter_cards`: **183 rows — 182 `curated` + 1 `generated`**, migration's post-upsert
-    count 2026-10-14 (retired 16), read back.
-  - `kristy_perimeter_kb.json`: **213 entries — 182 cards + 31 picks** at `c76d705`, 2026-10-14.
+  - LIVE `counter_cards`: **182 rows — 181 `curated` + 1 `generated`**, migration's post-upsert
+    count 2026-10-16, read back.
+  - `kristy_perimeter_kb.json`: **211 entries — 181 cards + 30 picks** at `01d362c`, 2026-10-16.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
-  - KB and table agree at 182 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
+  - KB and table agree at 181 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
   the client id; only a completed token exchange can, and none has. No accounts exist on any rail.
 - 🐞 The simulator cannot prove the token exchange: the simulator device has no Apple account
