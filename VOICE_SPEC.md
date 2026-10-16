@@ -417,6 +417,29 @@ about five seconds or it does not land. Warmth here is not adjectives; it is spe
 the actual contents, feed or process, said plainly. Thresholds below are set from the
 measured distribution of the live cards (`readability()` in `server/lib/counterCardLint.js`).
 
+Use warm second person: **you** is allowed and wanted. Talk to the shopper about the
+food in their hand: what to look for, what it tastes or cooks like when the existing
+facts support it, and why it is worth the reach. Keep R6 specificity as the backbone
+of that warmth; tone adds no claim, statistic or mechanism.
+
+Use the entry's existing taste, texture, cooking and keeping details to explain the
+food in human terms. When the entry has none, stay plain and concrete. Vary sentence
+length and shape across the set, not just its openers; adding a pronoun or an
+instruction to check a label does not by itself make a card warm.
+
+In PILOT `decision`, `why` and `kristy_take`, do not use “whole-food standard” or
+“the standard” as the reason. Give the food fact behind the choice. The stance label
+is exempt from preservation in these fields; retain it in existing `detail` and
+`tier_note`. Numbers, named concerns, seals, certifiers, label terms and regulations
+remain protected.
+
+Keep first person, exclamation marks, praise of the shopper, persona, stock openers,
+puns, cuteness and filler adjectives out. Require variety: no first-three-word opener
+may be shared by more than three cards in the same field (`decision`, `why` or
+`kristy_take`). Never substitute a crutch phrase for the actual reason. Never share a
+sentence between cards' `why` or `kristy_take` fields. `OPENER_REPEATED` enforces the
+opener limit on the named PILOT scope until subsequent batches widen it.
+
 | # | Bar | Check |
 | --- | --- | --- |
 | R1 | **Lead first.** Headline ≤12 words. Read alone, it tells which one to reach for (cover test). | Lint (existing cap); critic |

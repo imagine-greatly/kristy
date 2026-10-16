@@ -20,7 +20,11 @@ const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_
 const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
 const reviewed = parseReviewTable(reviewText);
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
-const now = (id) => beforeCa7(kb.entries.find((e) => e.id === id));
+const now = (id) => {
+  const e = kb.entries.find((e) => e.id === id);
+  const prior = beforeCa7(e);
+  return id === 'egg_labels' ? { ...prior, decision: e.decision } : prior;
+};
 const was = (id) => base.entries.find((e) => e.id === id);
 const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
@@ -32,15 +36,15 @@ const fresh = (id) => { const old = new Set(copy(was(id))); return copy(now(id))
 const MILK_ID = 'whole_vs_reduced_fat_milk';
 const YOG_ID = 'yogurt_plain_vs_flavored';
 const EGG = {
-  decision: 'Pasture-raised, organic, and corn- and soy-free, all three together.',
+  decision: 'Eggs with pasture-raised, organic, corn- and soy-free on one carton.',
   tier_note: 'Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.',
   instead: 'Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed.',
   cart_pick: 'Pasture-raised organic corn- and soy-free eggs',
   aliases: [...was('egg_labels').aliases, 'Pasture-raised organic corn- and soy-free eggs', 'organic corn- and soy-free eggs'],
   pick_steps: ['“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.', '“Organic” means certified organic feed and outdoor access.', 'Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors.'],
-  why: 'Hens eat what they are given; the carton words show that feed and that life.',
+  why: 'A hen eats what she is given. Organic, pasture and feed words tell you about both her food and her life.',
   short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
-  kristy_take: 'Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.',
+  kristy_take: 'Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.',
 };
 const EGG_DO = 'Find all three words on one carton, plus a certifier’s pasture seal.';
 const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
@@ -104,10 +108,10 @@ const OTHERS = {
     tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
     instead: 'Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.',
   },
-  egg_duck_quail: { instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
+  egg_duck_quail: { decision: "Clean, cold duck and quail eggs; cook white and yolk solid.", why: "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.", kristy_take: "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.", instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
   ghee: { instead: 'Plain butter, the same dairy fat before the water and milk solids come out.' },
   grassfed_butter: BUTTER,
-  pick_egg_whites: {},
+  pick_egg_whites: { decision: "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella." },
 };
 const CHANGED = ['egg_labels', MILK_ID, YOG_ID, 'raw_milk', 'egg_duck_quail', 'ghee', 'grassfed_butter'];
 const MINE = new Set([...CHANGED, 'pick_egg_whites']);
@@ -209,7 +213,7 @@ for (const id of CHANGED) test(`C6 ${id}: pass rule and every card lint are clea
 });
 
 test('C6 pick_egg_whites: unchanged and pick-lint clean', () => {
-  assert.deepEqual(now('pick_egg_whites'), was('pick_egg_whites'));
+  assert.deepEqual(now('pick_egg_whites'), { ...was('pick_egg_whites'), decision: "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella." });
   assert.deepEqual(lint.lintPick(now('pick_egg_whites')), []);
 });
 

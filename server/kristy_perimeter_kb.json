@@ -151,8 +151,8 @@
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "decision": "100% grass-fed or grass-finished, no added hormones, with a certifier’s seal.",
-      "why": "The whole-food standard is grass after weaning, no grain, and no feedlot.",
+      "decision": "100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal.",
+      "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
       "short_answer": "On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That one is worth paying for.",
       "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
       "evidence_tier": "kristys_standard",
@@ -165,8 +165,8 @@
         "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/",
         "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf"
       ],
-      "kristy_take": "Whole-life words, backed by a seal, or it is a feedlot animal wearing a nicer sticker.",
-      "instead": "Grass-finished ground beef or chuck. The same standard, in the cut that costs the least.",
+      "kristy_take": "Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for whole-life words backed by a seal.",
+      "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the cut that costs least.",
       "cart_pick": "100% grass-fed or grass-finished ground beef",
       "buying_tips": [
         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
@@ -220,8 +220,8 @@
       ],
       "category": "poultry",
       "question": "Is the rotisserie chicken worth buying?",
-      "decision": "Chicken and salt on the label: buy. Phosphate and starch: pass.",
-      "why": "Every ingredient must be listed in descending order; a solution names its percent and contents.",
+      "decision": "Rotisserie chicken with salt and spices, without phosphate or starch.",
+      "why": "A plain bird is chicken, salt and spices, roasted in the store. Phosphate and starch go in with a needle.",
       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
       "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
       "evidence_tier": "kristys_standard",
@@ -234,7 +234,7 @@
         "USDA FSIS, Meat and Poultry Labeling Terms, Basted / Self basted https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/meat-and-poultry-labeling-terms",
         "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/"
       ],
-      "kristy_take": "A roasted chicken should list a chicken. When the list runs to phosphate and starch, the seasoning went in with a needle.",
+      "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
       "cart_pick": "Plain rotisserie chicken",
       "buying_tips": [
@@ -317,8 +317,8 @@
       ],
       "category": "beef",
       "question": "Which beef cut should I buy?",
-      "decision": "Chuck or round, whole, with no needles or blades pushed through.",
-      "why": "A cut pushed through needles or blades must say ‘mechanically tenderized’ in its name.",
+      "decision": "Whole chuck or round, without needles or blades pushed through.",
+      "why": "Chuck is shoulder and round is rear leg: both are working muscles, sold whole.",
       "short_answer": "Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.",
       "detail": "Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
       "evidence_tier": "kristys_standard",
@@ -332,7 +332,7 @@
         "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
         "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
       ],
-      "kristy_take": "The cut name says where on the animal it came from. ‘Mechanically tenderized’ in the name says what was done to it.",
+      "kristy_take": "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
       "cart_pick": "Whole chuck, not mechanically tenderized",
       "buying_tips": [
         "Chuck is shoulder and round is rear leg: the working muscles.",
@@ -411,8 +411,8 @@
       ],
       "category": "beef",
       "question": "What ground beef lean ratio should I get?",
-      "decision": "Organ blend with each organ’s percentage first, then ground beef with nothing added.",
-      "why": "Federal rules keep added water, binders, and organs out of ‘ground beef’, so a blend carries its own name.",
+      "decision": "Organ blend with each organ’s percentage first, then nothing-added ground beef.",
+      "why": "An organ blend folds liver and heart into a familiar grind. Printed shares tell you how much of each.",
       "short_answer": "Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.",
       "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. The liver percentage on the label is therefore the number that matters. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend that hides behind ‘organ blend’ or ‘ancestral’ alone leaves the liver share unknown. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
       "evidence_tier": "established",
@@ -425,7 +425,7 @@
         "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
         "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
       ],
-      "kristy_take": "The name is the check: ‘ground beef’ allows no added fat, water or binders, and ‘hamburger’ may add fat. A blend that prints its numbers is an honest pack. One that will not is a mystery bag.",
+      "kristy_take": "Federal rules keep added water, binders and organs out of ‘ground beef’, so a blend needs its own name. Plain ‘ground beef’ allows no added fat either; ‘hamburger’ may add fat.",
       "cart_pick": "Liver and heart beef blend, shares stated",
       "buying_tips": [
         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
@@ -567,8 +567,8 @@
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Pasture-raised, organic, and corn- and soy-free, all three together.",
-      "why": "Hens eat what they are given; the carton words show that feed and that life.",
+      "decision": "Eggs with pasture-raised, organic, corn- and soy-free on one carton.",
+      "why": "A hen eats what she is given. Organic, pasture and feed words tell you about both her food and her life.",
       "short_answer": "Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.",
       "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
       "evidence_tier": "kristys_standard",
@@ -594,7 +594,7 @@
         "FDA Egg Safety Final Rule",
         "EU marketing standards for eggs (unwashed, ambient storage)"
       ],
-      "kristy_take": "Feed, organic and pasture, all on one carton. The space words alone are the ones everybody sells.",
+      "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
       "cart_pick": "Pasture-raised organic corn- and soy-free eggs",
       "buying_tips": [
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
@@ -764,8 +764,8 @@
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
-      "decision": "Organic for produce eaten whole; conventional for produce you peel.",
-      "why": "Residue sits on the surface, so whatever gets thrown away takes it along.",
+      "decision": "Organic produce eaten whole; conventional fruit and vegetables you peel.",
+      "why": "Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.",
       "short_answer": "Organic earns the money where the skin gets eaten: berries, leafy greens, apples, grapes, potatoes. Anything peeled goes in conventional, even the ones that feel delicate: avocado, kiwi, mango, banana, citrus, onion.",
       "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin.",
       "evidence_tier": "credible_concern",
@@ -777,7 +777,7 @@
         "Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php",
         "Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php"
       ],
-      "kristy_take": "Spend it on the ones eaten whole. Everything that gets peeled, buy plain.",
+      "kristy_take": "An avocado or kiwi can feel delicate and still have a peel you throw away. Choose conventional there; keep organic for the produce you eat whole.",
       "buying_tips": [
         "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.",
         "Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.",
@@ -826,8 +826,8 @@
       ],
       "category": "produce",
       "question": "Is frozen produce as good as fresh?",
-      "decision": "Frozen vegetables are picked ripe and frozen within hours.",
-      "why": "Picked ripe and frozen fast. ‘Fresh’ can lose more over days in transit.",
+      "decision": "Frozen vegetables, picked ripe and frozen within hours.",
+      "why": "Freezing holds vegetables at the ripeness they were picked. ‘Fresh’ produce can lose nutrients over days in transit.",
       "short_answer": "Often just as good, sometimes better. Frozen is picked and frozen at peak ripeness, which locks in nutrients. ‘Fresh’ that travels a long way or sits in storage can lose some. Frozen does not spoil.",
       "detail": "Studies comparing frozen and fresh find them broadly comparable in nutrition, with frozen sometimes ahead for produce that traveled far. Freezing is just cold, with no additives needed (check the bag is single-ingredient). This is established and it’s a genuine budget and waste win. Frozen fruit and vegetables do not spoil, and they are one of the better budget moves in the store.",
       "evidence_tier": "established",
@@ -836,7 +836,7 @@
         "USDA FoodData Central",
         "South Dakota State University Extension “Fresh May Not Always Be Best” https://extension.sdstate.edu/fresh-may-not-always-be-best"
       ],
-      "kristy_take": "Half a freezer of frozen vegetables and berries is a fine way to live. Zero waste, half the price, always in season.",
+      "kristy_take": "Leave half a freezer for vegetables and berries to use in soups, smoothies and sheet-pan roasts. Plain frozen produce needs no additives and is there in every season, with no spoilage waste.",
       "cart_pick": "Frozen vegetables, no sauce",
       "buying_tips": [
         "Check the bag lists just the vegetable/fruit. No sauces or added sugar.",
@@ -876,12 +876,12 @@
       ],
       "category": "produce",
       "question": "How do I freeze produce before it goes off?",
-      "decision": "Enzymes keep working in the freezer until heat switches them off.",
-      "why": "Enzymes keep working below freezing and turn color and flavor. A brief scald ends them.",
+      "decision": "Briefly scalded vegetables for the freezer; fruit goes in raw.",
+      "why": "A brief scald stops the enzymes that would leave frozen beans gray and tasting of hay months later.",
       "short_answer": "Freezing slows a vegetable down. It does not switch it off. The enzymes behind ripening and browning keep working in the freezer, slowly. Sixty seconds in boiling water switches them off.",
       "detail": "Unblanched, a bag of beans comes out gray and tasting of hay months later, because the enzymes kept working. After the scald, the job is keeping air and ice crystals away from the food. Fruit is the exception and it is a real one: the enzymes that matter in fruit mostly affect appearance rather than flavor, and blanching would cook the texture out, so berries, banana and stone fruit go in raw. For vegetables the sequence is scald, chill hard in ice water to stop the cooking, dry, then freeze in a single layer before bagging. A tray first keeps the pieces separate instead of fusing into one brick you have to break with a knife. Air is the other enemy: what is called freezer burn is water subliming off the surface and leaving it dried and oxidised, and pressing the air out of the bag is most of the defense. Very high-water vegetables collapse whatever you do.",
       "evidence_tier": "established",
-      "kristy_take": "Sixty seconds in boiling water, then ice, then a tray. That is the whole method.",
+      "kristy_take": "Sixty seconds in boiling water, then straight into ice water. Dry the vegetables and freeze them on a tray before bagging, so the pieces stay separate.",
       "sources": [
         "food-preservation guidance on enzyme inactivation and blanching times",
         "work on sublimation and surface oxidation in frozen storage"
@@ -932,8 +932,8 @@
       ],
       "category": "produce",
       "question": "Does buying produce in season matter?",
-      "decision": "Produce in season is picked closer to ripe and travels less.",
-      "why": "Abundance is the season showing. Out of season, frozen beats a pale expensive fresh.",
+      "decision": "In-season produce, picked closer to ripe with less distance to travel.",
+      "why": "A January orange tastes better than a July one. Produce in season usually travels less and reaches you closer to ripe.",
       "short_answer": "For taste and price, yes. In-season produce is cheaper, more abundant, and usually tastes better because it didn’t travel as far. Out of season, frozen is often the smarter buy than a pale, expensive ‘fresh’ version.",
       "detail": "Seasonality mostly affects flavor, cost, and freshness rather than making a food dramatically more nutritious. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability. That is exactly when frozen shines. The cheapest, most abundant thing in the department this week is almost always the seasonal one, so the price tag answers this before any chart does. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. The season-by-season list is below. Season shows up in the price and the size of the pile before it shows up anywhere else, so the cheapest, most abundant item in the department this week is usually the seasonal one. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaking in the dead of winter surprises people, and it is why a January orange tastes better than a July one. Whatever is piled high and cheap this week is what is in season. The price tag says it before any chart does.",
       "evidence_tier": "kristys_standard",
@@ -942,7 +942,7 @@
         "USDA seasonal produce guides",
         "Michigan State University Extension “A How-To Guide to Eating for the Season” https://www.canr.msu.edu/news/a_how_to_guide_to_eating_for_the_season"
       ],
-      "kristy_take": "Buy the vegetables that are cheap and piled high this week. That’s what’s in season, and it’s where your money goes furthest.",
+      "kristy_take": "Let the piles in the produce section guide the week: spring greens, summer tomatoes, autumn squash, winter citrus. Off-season, reach for frozen over pale fresh produce.",
       "cart_pick": "Whatever fruit is in season",
       "buying_tips": [
         "The cheapest, most abundant produce this week is usually what’s in season.",
@@ -987,8 +987,8 @@
       ],
       "category": "produce",
       "question": "How should I wash produce?",
-      "decision": "Plain cold water removes as much residue as a produce wash does.",
-      "why": "Plain water is the recommendation. Rinse right before eating, not before storing.",
+      "decision": "Plain cold water for produce, as effective as a produce wash.",
+      "why": "Cold water and a little rubbing lift dirt, microbes and some residue. Produce washes have not proved better.",
       "short_answer": "Plain cold running water and a little rubbing is enough. No soap, no special produce wash. Rinse right before you eat, not before you store. Scrub firm produce with a brush; rinse and spin leafy greens.",
       "detail": "Water and friction remove most surface dirt, microbes, and some residue. Soap and commercial washes aren’t recommended and aren’t proven better. Don’t wash berries or mushrooms until you’re ready to use them. Moisture speeds spoilage.",
       "evidence_tier": "established",
@@ -996,7 +996,7 @@
         "FDA produce-safety guidance",
         "USDA food-safety guidance"
       ],
-      "kristy_take": "Cold water and your hands. Skip the pricey ‘veggie wash’. It’s a solution to a problem you don’t have.",
+      "kristy_take": "Brush firm produce; rinse and spin leafy greens. Leave berries and mushrooms dry until you are ready to eat them, and skip the ‘veggie wash’.",
       "buying_tips": [
         "Rinse under cold running water; rub firm produce or use a brush.",
         "Wash right before eating, not before storing (moisture = mold).",
@@ -1035,8 +1035,8 @@
       ],
       "category": "produce",
       "question": "Does washing actually get the pesticide residue off?",
-      "decision": "Baking soda in the water lifts residue a plain rinse leaves.",
-      "why": "A rinse moves dirt. Bicarbonate breaks residue down, and it needs minutes to do it.",
+      "decision": "Baking soda water for residue that a plain rinse leaves.",
+      "why": "Bicarbonate needs minutes to break down some residue on fruit skin. A quick rinse moves dirt.",
       "short_answer": "Baking soda breaks down some pesticide residues on the skin. Running water mostly moves them around. It takes twelve to fifteen minutes in the bowl, not thirty seconds under the tap. Residue already in the flesh stays.",
       "detail": "A soak does what a rinse cannot. Baking soda is sodium bicarbonate, and it degrades some residues on the skin, where running water mostly relocates them. It is a surface treatment and only a surface treatment. The study everyone is quoting applied two pesticides to organic Gala apples and compared tap water, a one percent baking soda solution, and the bleach solution used commercially. Baking soda came out ahead of both, removing most of the surface phosmet at twelve minutes and most of the surface thiabendazole at fifteen. The same work is where the limit comes from: thiabendazole was mapped eighty micrometers into the fruit and phosmet twenty, and nothing applied to the outside reaches that. A later comparison across apples, grapes, lemons and strawberries put baking soda alone lower and found a commercial product ahead of it, so the honest position is that the soak beats water and the ranking against bottled washes is not settled.",
       "evidence_tier": "credible_concern",
@@ -1044,7 +1044,7 @@
         "Yang et al. 2017, J. Agric. Food Chem. — baking soda vs tap water vs a commercial bleach solution, on lab-dosed organic apples",
         "2025 comparison of household and commercial washing agents across apples, grapes, lemons and strawberries"
       ],
-      "kristy_take": "A rinse is for dirt. If residue is the reason, it is a soak and it takes twelve minutes.",
+      "kristy_take": "Give the soak twelve to fifteen minutes, then rinse the soda off with plain water. Residue already inside the fruit stays there.",
       "buying_tips": [
         "A teaspoon of baking soda per two cups of water, enough to cover the fruit.",
         "Twelve to fifteen minutes in the bowl. Thirty seconds under the tap is not the same thing.",
@@ -1088,8 +1088,8 @@
       ],
       "category": "produce",
       "question": "Is pre-cut produce a good buy?",
-      "decision": "Cutting produce starts the clock on vitamin loss and browning.",
-      "why": "Cutting opens every surface at once. It costs more and it keeps for days, not weeks.",
+      "decision": "Whole produce before pre-cut: cutting starts vitamin loss and browning.",
+      "why": "Whole produce can wait for the day you need it. Once cut, it keeps for days rather than weeks.",
       "short_answer": "Cutting produce starts the clock. Pre-cut and bagged costs more per pound. It gives up what whole produce does best: waiting until the day you need it. Nutrient loss from cutting is minor and measured. Spoilage is the real cost.",
       "detail": "Cutting exposes more surface to air and light, so pre-cut produce loses a little more nutrition and freshness over time and carries a small extra food-safety consideration. Rinse bagged greens even if ‘pre-washed’. The real cost is price and a shorter fridge life. For a short-on-time week, that can be exactly the right call.",
       "evidence_tier": "kristys_standard",
@@ -1097,7 +1097,7 @@
         "FDA fresh-cut produce guidance",
         "Eat or Toss “How to Assess Pre-Cut and Chopped Fruits and Vegetables After the Use-By, Best-By, or Sell-By Dates” https://www.eatortoss.com/how-to-assess-pre-cut-and-chopped-fruits-and-vegetables-after-the-use-by-or-best-by-or-sell-by-dates/"
       ],
-      "kristy_take": "Buy it whole and cut it yourself. Two minutes, and it keeps a week longer.",
+      "kristy_take": "Two minutes of cutting at home buys a week longer in the fridge. For pre-cut melon or pineapple, choose it on the day you will eat it.",
       "buying_tips": [
         "Whole produce is cheaper per pound and keeps far longer.",
         "Use pre-cut within a couple of days. It spoils fast once opened.",
@@ -2530,8 +2530,8 @@
       ],
       "category": "meat_counter",
       "question": "How do I tell good meat from the case?",
-      "decision": "The pack with the newest ‘packaged on’ date in the case.",
-      "why": "Color is oxygen. A sealed package that is not leaking, and no off smell, tell you more.",
+      "decision": "The meat pack with the newest ‘packaged on’ date.",
+      "why": "Oxygen turns a cut steak cherry-red; a vacuum-packed roast stays purple. Color alone cannot tell you freshness.",
       "short_answer": "Color is the least useful signal, yet everybody uses it. Bright red beef has met oxygen; purple-red vacuum-packed beef has not. Both are fine. Better checks: a sealed package with no leaks, no off smell or slime.",
       "detail": "Beef pigment turns bright red within minutes of oxygen exposure and oxidizes browner over days. That is surface chemistry, not spoilage, which is why a vacuum-sealed roast looks purple and a freshly cut steak looks cherry-red. The liquid in a tray is called purge; the check is the package itself, fully sealed, with no holes, tears or punctures, and not leaking meat juices. Sell-by dates are set by the store. Trust your nose over any of them. Dull brown at the edges means it has been cut a while.",
       "evidence_tier": "established",
@@ -2545,7 +2545,7 @@
         "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
-      "kristy_take": "Color is oxygen, not quality. Check the seal, check for leaks, smell it. Those three beat the sticker.",
+      "kristy_take": "Choose a sealed pack without leaks, then smell the meat at home. No off smell or slime: those checks tell you more than the store’s sticker.",
       "buying_tips": [
         "Not slimy, and no off smell. Both, not either.",
         "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
@@ -2612,8 +2612,8 @@
       ],
       "category": "meat_counter",
       "question": "What should I ask at the butcher counter?",
-      "decision": "Ask for beef soup bones, and a whole chuck ground fresh.",
-      "why": "A staffed counter answers what a package never will, such as when the meat was cut.",
+      "decision": "Beef soup bones and a whole chuck, freshly ground.",
+      "why": "A whole chuck ground at the counter lets you choose the cut. The butcher can tell you when it was cut.",
       "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
       "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
       "evidence_tier": "kristys_standard",
@@ -2623,7 +2623,7 @@
         "Rising Star Custom Meats “4 Questions You Should Always Ask Your Local Butchers” https://www.risingstarmeats.com/4-questions-you-should-always-ask-your-local-butchers",
         "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
       ],
-      "kristy_take": "Ask what came in today, how it was raised and what was added.",
+      "kristy_take": "Start with what came in today, then how it was raised and what was added. Bones, trim and portioning are worth asking for while you are at the counter.",
       "cart_pick": "Beef soup bones from the butcher counter",
       "buying_tips": [
         "Ask what came in today.",
@@ -2686,7 +2686,7 @@
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
       "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
-      "why": "Dark meat is forgiving and hard to overcook. Boneless skinless costs the most for the same bird.",
+      "why": "Thighs carry more fat and flavor, so they stay juicy and are hard to overcook. The skin renders and bastes as they cook.",
       "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
       "evidence_tier": "kristys_standard",
@@ -2700,7 +2700,7 @@
         "Consumer Reports “Decoding the Labels on Meat Packages” https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html",
         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
-      "kristy_take": "Bone-in thighs are the most forgiving cut in the case. A whole bird costs least per pound, and the frame makes stock.",
+      "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
       "cart_pick": "Air-chilled whole chicken or bone-in thighs",
       "buying_tips": [
         "Whole bird: lowest cost per pound, and the carcass makes stock.",
@@ -2784,8 +2784,8 @@
       ],
       "category": "pork",
       "question": "Which pork cut should I buy, and what does ‘solution added’ mean?",
-      "decision": "Pork whose label carries no added-solution percentage, only pork.",
-      "why": "Raw meat with added solution must name it, give the percentage and list what is in it.",
+      "decision": "Plain pork, with no added-solution percentage on its label.",
+      "why": "Pork is often pumped with water, salt and phosphates to hold moisture. A plain pack leaves that solution out.",
       "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
       "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
       "evidence_tier": "established",
@@ -2794,7 +2794,7 @@
         "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)",
         "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2"
       ],
-      "kristy_take": "Read the fine print: ‘up to 12% solution’ is water sold by the pound.",
+      "kristy_take": "An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.",
       "cart_pick": "Pork shoulder",
       "buying_tips": [
         "Read for ‘contains X% added solution’. That is injected water and salt.",
@@ -3252,8 +3252,8 @@
       ],
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
-      "decision": "The heavier piece of two the same size holds more juice.",
-      "why": "Weight means water content, not pith. One habit that beats every color rule going.",
+      "decision": "The heavier of two same-size pieces of fruit for more juice.",
+      "why": "Compare two pieces in your hands. More weight means more water rather than pith, a better guide than color.",
       "short_answer": "Each item has one or two checks that work, almost never color. Heavy for its size is the near-universal one. Smell the stem end on anything that ripens off the plant. Turn berry containers over, where mold starts.",
       "detail": "Fruit that keeps ripening after picking (melon, peach, avocado, banana, mango, pear) gives you smell and give as signals. Fruit that does not ripen further once picked (berries, citrus, grapes, pineapple, cherries) has to be bought ready, so those checks are about weight and damage instead. Vegetables are mostly a firmness question: a limp stalk or a rubbery skin means it has been out of the ground a while and lost water. The single best habit is picking up two of the same thing and comparing them by weight. The heavier one is almost always better.",
       "evidence_tier": "established",
@@ -3263,7 +3263,7 @@
         "University of Georgia Extension “How to Pick a Ripe Watermelon” https://site.extension.uga.edu/evansag/2026/06/how-to-pick-a-ripe-watermelon/",
         "Cornell Cooperative Extension (Herkimer County) “Deciphering Produce Labels and Codes” https://blogs.cornell.edu/cceherkimer/2021/07/06/deciphering-produce-labels-and-codes/"
       ],
-      "kristy_take": "Pick up two and take the heavier one. That one habit beats every color rule going.",
+      "kristy_take": "Use your palm to feel a peach’s shoulder for a little give; fingertips leave bruises. Choose staggered firmness so the fruit ripens across the week.",
       "buying_tips": [
         "Cantaloupe: creamy gold under the netting, a sweet smell at the stem end, slight give.",
         "Watermelon: a deep yellow field spot, heavy for its size, a hollow thunk.",
@@ -3371,8 +3371,8 @@
       ],
       "category": "produce",
       "question": "How do I pick a good carton of berries?",
-      "decision": "Organic berries, and the carton’s underside decides, not the top.",
-      "why": "Berries mold from the bottom up under their own weight, long before the top layer shows it.",
+      "decision": "Organic berries in a cold carton with a dry, clean underside.",
+      "why": "The bottom berries carry the weight and mold first, while the top can still look fresh.",
       "short_answer": "Turn the container over first. The bottom fruit carries the load, so it bruises and molds first. A dry, clean underside means it was packed recently and has not sat wet. Juice or a fuzzy spot means decay is running.",
       "detail": "Berries do not ripen after picking. Unlike a peach or a cantaloupe, what is in the carton is exactly what you are buying. There is no counter-ripening to rescue an underripe punnet, and no reason to buy firm and wait. That makes the carton itself the whole decision. Weight and moisture are what work against it: the bottom layer carries the load, condensation inside a clamshell keeps that layer damp, and mold spreads berry to berry by contact. Clamshells also get re-stacked at the store, so a fresh-looking top layer can sit on fruit that arrived days earlier. Buy them cold, keep them dry, and wash them at the moment you eat them rather than when you unpack. The top layer stays presentable long after the carton has turned, and one furry berry takes the punnet.",
       "evidence_tier": "established",
@@ -3384,7 +3384,7 @@
         "USDA National Organic Program, 7 CFR Part 205",
         "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
-      "kristy_take": "Flip the carton. The top layer is the display and the bottom layer is the truth.",
+      "kristy_take": "Berries will not ripen further at home, so buy them ready. Turn the carton over: a dry bottom, no fuzzy fruit. Keep them cold and wash just before eating.",
       "cart_pick": "Fresh berries",
       "buying_tips": [
         "A dry, unstained bottom on the carton. That is the whole check.",
@@ -3453,8 +3453,8 @@
       ],
       "category": "produce",
       "question": "How do I keep produce from going off before I use it?",
-      "decision": "Washing produce before storing it traps moisture and speeds rot.",
-      "why": "Moisture is what rots a drawer. Keep the ripening-gas fruit away from greens and berries.",
+      "decision": "Unwashed produce for storing; wash it when you use it.",
+      "why": "Water left on a leaf or berry is where mold starts. Keeping greens dry gives them longer in the drawer.",
       "short_answer": "Three rules cover most of it. Keep ripening-gas fruit away from greens and berries. Do not wash anything until you use it. Keep a short list out of the fridge: tomatoes, potatoes, onions, garlic, whole melon, unripe stone fruit.",
       "detail": "Apples, bananas, avocados, tomatoes and stone fruit give off the ripening gas, and greens, broccoli, cucumbers and berries are ethylene sensitive and wilt fast beside it. Ethylene is a plant hormone that triggers ripening and it works on neighbors, which is why a bowl of apples ages the lettuce next to it. Moisture is the other half: water sitting on a leaf or a berry is where mold starts, so the rinse belongs at the moment of eating rather than at unpacking. Cold wrecks texture and flavor in a few specific things. Tomatoes go mealy below about 55F, potatoes convert starch to sugar and brown oddly when cooked, and onions and garlic soften and sprout. Herbs and asparagus keep best standing in a little water like cut flowers, and greens keep best dry with a towel in the bag.",
       "evidence_tier": "established",
@@ -3464,7 +3464,7 @@
         "Michigan State University Extension “All fruit and vegetables are not created equal when it comes to proper storage conditions” https://www.canr.msu.edu/news/all-fruit-and-vegetables-are-not-created-equal-when-it-comes-to-proper-storage-conditions",
         "University of Massachusetts Amherst Extension “Optimal Storage Conditions and Ethylene Sensitivity of Fall Storage Crops” https://www.umass.edu/agriculture-food-environment/vegetable/fact-sheets/optimal-storage-conditions-ethylene-sensitivity-of-fall-storage-crops"
       ],
-      "kristy_take": "Wash it when you eat it, not when you unpack it. Half of what rots in a fridge was rinsed on the way in.",
+      "kristy_take": "Half of what rots in a fridge was rinsed on the way in. Store greens dry with a towel, away from ripening-gas fruit; stand herbs and asparagus in a little water.",
       "buying_tips": [
         "Separate the gas producers (apples, bananas, avocados, tomatoes, stone fruit) from greens and berries.",
         "Do not wash anything until you are about to use it.",
@@ -3517,12 +3517,12 @@
       ],
       "category": "produce",
       "question": "Can I bring limp greens back, or are they finished?",
-      "decision": "Limp greens have lost water, not gone bad, and they come back.",
-      "why": "The cells have gone slack. Given cold water they refill and the leaf goes rigid again.",
+      "decision": "Limp greens without decay, ready for a cold-water soak.",
+      "why": "Cold water refills a limp leaf’s slack cells. As the water returns, the leaf stands firm again.",
       "short_answer": "Most limp greens are thirsty, not spoiled. Water pressure in the cells holds a leaf rigid. When it drops, the leaf goes limp, but intact cells take the water back. Thirty minutes in cold water restores most of it.",
       "detail": "The same mechanism explains why the trick is worth doing on more than lettuce. Celery, carrots, radishes, chard, kale and soft herbs all go limp by the same route and all firm up again. Cutting a sliver off the stem end first matters for anything with a stem, because the vessels seal and a fresh cut lets water move again, exactly as it does for cut flowers. Cold matters too. Cold water is taken up more readily and it firms the cell walls at the same time. Bagged, pre-washed greens revive least, because they have already been cut and a cut edge does not reseal. What does not come back is anything that has actually started to break down.",
       "evidence_tier": "established",
-      "kristy_take": "Cold water and half an hour. Most of the greens in the bin did not need to be there.",
+      "kristy_take": "Give wilted greens half an hour in cold water, then dry them before putting them away. Yellowing, slime or a smell means decay; a soak cannot bring those leaves back.",
       "sources": [
         "plant physiology of turgor pressure and cell-wall rigidity",
         "postharvest handling guidance on rehydrating leafy vegetables"
@@ -4839,12 +4839,12 @@
         "sprouting"
       ],
       "question": "Are sprouts worth buying?",
-      "decision": "Sprouts grow in the warm damp that bacteria also like.",
-      "why": "A living food sold warm is the only real problem. Cold case or your own jar.",
+      "decision": "Cold-case sprouts; warm, damp growing conditions also suit bacteria.",
+      "why": "Crisp stems and white roots are what to look for in a cold clamshell. Sprouts go slick and sour before they look wrong.",
       "card_why": "Sprouts are about as alive as produce gets, a seed caught mid-decision, sold days old. That is the appeal, and it is also the whole handling question. The warm damp days that sprout a seed are the same days that sprout everything else. A grower who keeps them cold from the sprouting room to the case is doing the only thing that matters. Past that, a jar and a screen on your own counter costs almost nothing. It puts the sourcing question entirely in your hands.",
       "short_answer": "Cold case, roots still white, no sour smell in the clamshell. Anything sitting at room temperature has been given the conditions it was grown in.",
       "detail": "Sprouting has been a winter green in kitchens for a very long time, and a jar with a mesh lid on the counter still produces a crop in three or four days for the price of a scoop of seed. Broccoli, alfalfa, radish and mung are the usual four. Buying them instead is fine when the case is cold and the turnover is quick; the clamshell tells you plainly when it is not, because sprouts go slick and sour before they look wrong.",
-      "kristy_take": "Grow them yourself and the sourcing question answers itself.",
+      "kristy_take": "A jar and a mesh lid let you grow your own crop and know where it came from. Bought sprouts belong in the cold case; warm displays leave them in growing conditions.",
       "buying_tips": [
         "The refrigerated case only. Room-temperature sprouts have been left in growing conditions.",
         "Roots still white and threadlike, stems crisp rather than limp.",
@@ -4947,8 +4947,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and store carrots, potatoes, sweet potatoes, and beets?",
-      "decision": "Organic potatoes, conventional carrots. Firm roots, nothing soft or sprouting.",
-      "why": "Firm is the freshness signal every root shares. Each guide says to pass on the soft, shriveled, or sprouting ones.",
+      "decision": "Firm organic potatoes, conventional carrots, with nothing soft or sprouting.",
+      "why": "Potatoes, carrots, beets and sweet potatoes should feel firm. Soft, shriveled or sprouting roots stay behind.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
       "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues.",
       "evidence_tier": "established",
@@ -4961,7 +4961,7 @@
         "https://www.ewg.org/foodnews/dirty-dozen.php",
         "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
-      "kristy_take": "Squeeze before anything else. Firm is the whole test at this bin, and a root that gives has already lost the argument.",
+      "kristy_take": "Wilted beet leaves need not put you off a firm root. Cut the tops off carrots before storing them; left attached, they wilt the carrot.",
       "cart_pick": "Firm roots with no sprouts or soft spots",
       "buying_tips": [
         "Potatoes: firm, with no bruises, nicks, or soft spots.",
@@ -5051,8 +5051,8 @@
       ],
       "category": "produce",
       "question": "How do I pick fresh broccoli, cauliflower, or cabbage?",
-      "decision": "Conventional is fine on cabbage and cauliflower. Tight heads, no soft spots.",
-      "why": "Enlarged, opened, or yellowish-green florets mean broccoli past fresh, and a soft or slippery head is already spoiling.",
+      "decision": "Conventional cabbage and cauliflower with tight heads and no soft spots.",
+      "why": "Tight, dark green broccoli florets are fresh. Enlarged, open or yellowish-green ones are past fresh.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
       "detail": "Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, cabbage and cauliflower are among the fifteen items with the lowest pesticide residues.",
       "evidence_tier": "established",
@@ -5063,7 +5063,7 @@
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
-      "kristy_take": "Look at the florets first. Dark green and closed tight, and the rest of the head follows.",
+      "kristy_take": "A soft or slippery head is spoiling. Use broccoli early in the week; it keeps about three days, while wrapped cabbage can wait several weeks in the fridge.",
       "cart_pick": "Firm broccoli, cauliflower, or cabbage",
       "buying_tips": [
         "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
@@ -5152,8 +5152,8 @@
       ],
       "category": "produce",
       "question": "How do I pick onions and garlic that will keep?",
-      "decision": "Conventional onions and garlic: firm, dry, papery skins, with no sprouts or mold.",
-      "why": "A well-cured bulb has a dry neck and dry outer skins. A soft, scented, or sprouting one is already on its way out.",
+      "decision": "Conventional onions and garlic: firm, dry, papery skins, no sprouts or mold.",
+      "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
       "detail": "Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, onions are among the items with the lowest pesticide residues.",
       "evidence_tier": "established",
@@ -5165,7 +5165,7 @@
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
-      "kristy_take": "Squeeze the bulb and smell it. Firm and quiet is the one to take home.",
+      "kristy_take": "A few loose onion skins are normal. Squeeze for firmness and little scent, then store whole onions where air can move, away from damp potatoes.",
       "cart_pick": "Firm dry onions and garlic with dried necks",
       "buying_tips": [
         "Onions firm for their size, with little to no scent.",
@@ -5256,8 +5256,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep lettuce, spinach, and kale?",
-      "decision": "Organic greens, crisp and evenly colored, with no wilt or yellowing.",
-      "why": "Spinach is highly perishable and kale wilts in the warm, so the crispness of the leaf is the freshness date.",
+      "decision": "Crisp organic greens, evenly colored, without wilt or yellowing.",
+      "why": "Spinach is highly perishable, and kale wilts in warmth. A leaf that still stands crisp tells you it has freshness left.",
       "short_answer": "Lettuce: crisp, green outside, pale at the heart. Romaine: neither very loose nor very hard. Spinach: uniformly green and fully crisp. Kale: firm, deep colored leaves on moist, hardy stems.",
       "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, spinach carries more pesticide residue by weight than any other type of produce, and kale is on the list as well. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
       "evidence_tier": "established",
@@ -5268,7 +5268,7 @@
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
-      "kristy_take": "Pick the bunch that still stands up, and keep it cold from the cart to the crisper.",
+      "kristy_take": "For milder, more tender kale, choose the smaller leaves on moist stems. Keep the bunch cold from the cart to the crisper, and wash it when you use it.",
       "cart_pick": "Crisp greens with no yellowing or wilt",
       "buying_tips": [
         "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
@@ -5339,8 +5339,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep bell peppers?",
-      "decision": "Organic peppers, firm and evenly colored, with no cracks or soft spots.",
-      "why": "Firmness is a quality index on the postharvest sheet. A shriveled pepper has lost water in storage.",
+      "decision": "Firm organic peppers, evenly colored, without cracks or soft spots.",
+      "why": "A pepper should feel firm when you hold it. Wrinkled skin means it has lost water in storage.",
       "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, and uniform in shape and size. Skip any with cracks, decay, sunburn, disease, insect damage, or bruises.",
       "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices. A dark, sunken spot at the blossom end is blossom end rot.",
       "evidence_tier": "established",
@@ -5348,7 +5348,7 @@
         "UC Davis Postharvest Technology Center, Bell Pepper fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/bell-pepper",
         "Michigan State University Extension, Michigan Fresh: Peppers, https://www.canr.msu.edu/resources/michigan_fresh_peppers"
       ],
-      "kristy_take": "A firm pepper is a fresh pepper; a shriveled one has already spent its shelf life.",
+      "kristy_take": "Red, yellow and orange peppers tolerate cold better than green ones. In a fridge at 41°F, plan on about two weeks; leave any cracked or bruised pepper at the bin.",
       "cart_pick": "Firm, unbruised bell peppers",
       "buying_tips": [
         "Firm, with uniform shape, size, and color for the variety.",
@@ -5432,8 +5432,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep apples and pears?",
-      "decision": "Organic apples and pears, unbruised. One spoiled fruit rots its neighbors faster.",
-      "why": "Damaged fruit spoils in storage, and spoiled fruit makes the sound apples and pears beside it ripen and rot faster.",
+      "decision": "Unbruised organic apples and pears, with no spoiled fruit alongside.",
+      "why": "Apples should feel crisp. A firm green Bartlett pear can ripen at home, turning sweet, juicy and buttery.",
       "short_answer": "Apples: firm and crisp, not mealy, free of bruising, decay, cracks, and insect injury. Pears: sound shape and size, free of bruising, insect damage, and decay. A firm green Bartlett is not a fault.",
       "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both apples and pears appear. On apples, look for cracks at the stem or blossom end. Bartletts are picked mature-green and ripened off the tree; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
       "evidence_tier": "established",
@@ -5446,7 +5446,7 @@
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
-      "kristy_take": "One bruised apple in the bag costs the whole bag, so sort at the bin, not at home.",
+      "kristy_take": "Turn each fruit before bagging it. Damaged fruit spoils in storage and speeds ripening and rot in its sound neighbors, so leave bruised apples and pears behind.",
       "cart_pick": "Firm, unbruised apples or pears",
       "buying_tips": [
         "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
@@ -5536,8 +5536,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep oranges, lemons, and limes?",
-      "decision": "Conventional citrus, organic for zest. Firm, smooth, no drying or shriveling.",
-      "why": "Firm fruit with a sound rind is the quality index on the UC Davis citrus sheets. Decay and shriveling are the defects.",
+      "decision": "Firm, smooth conventional citrus; organic for zest, without drying or shriveling.",
+      "why": "Yellow limes carry more juice. A partly green orange can be fully mature, so feel for a firm, smooth rind.",
       "short_answer": "Oranges: even color, firm, smooth, free of decay and bruising. A partly green orange can be fully mature. Lemons: even yellow, smooth, firm, no shriveling. Limes: firm and smooth, no dryness.",
       "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting.",
       "evidence_tier": "established",
@@ -5548,7 +5548,7 @@
         "USDA SNAP-Ed Connection, Seasonal Produce Guide: Oranges, https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/oranges",
         "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
       ],
-      "kristy_take": "Firm and smooth beats soft and shriveled on every citrus, and a green tinge on an orange is not a fault.",
+      "kristy_take": "UC Davis’s checks are firmness and a sound rind: leave decay and shriveling behind. Use yellowed lemons and limes first; green-picked ones keep longest.",
       "cart_pick": "Firm, smooth oranges, lemons, or limes",
       "buying_tips": [
         "Oranges: even color, firm, smooth, no decay, bruising, or blemishes.",
@@ -5647,8 +5647,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep peaches, nectarines, plums, and cherries?",
-      "decision": "Organic peaches, plums, nectarines and cherries, unbruised, with color fully turned.",
-      "why": "Michigan Fresh gives the same instruction for peaches, plums, and cherries: buy fruit that is not bruised or damaged.",
+      "decision": "Unbruised organic peaches, plums, nectarines and cherries, with fully turned color.",
+      "why": "A peach’s green background turns yellow as it readies. Michigan Fresh advises unbruised peaches, plums and cherries.",
       "short_answer": "Peaches and nectarines: ground color turned from green to yellow. Plums: skin color turned for the variety. Cherries: at least light red all over, with green fleshy stems.",
       "detail": "The optimum storage for all of them is just above freezing, 30.5 to 32°F, and Michigan Fresh puts cherries in the refrigerator at or below 41°F. Plums held between 36 and 46°F, the killing range, are more susceptible to internal breakdown: mealiness, browning, and failure to ripen. Peaches, nectarines, and plums picked well mature ripen on their own without ethylene; ethylene does not speed cherry ripening. Keep stone fruit away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both peaches and cherries appear. A peach or nectarine with a flesh firmness of 2 to 3 pounds-force counts as ready to eat, and the same holds for plums. Dark skin staining is inking, a cosmetic mark from abrasion that affects the skin only. Cherries should be at least light red across the whole surface, with no cracks, bird pecks, shriveling, or decay; green, fleshy stems go with freshness.",
       "evidence_tier": "established",
@@ -5662,7 +5662,7 @@
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/dirty-dozen.php"
       ],
-      "kristy_take": "Buy the sound fruit and let the color tell you when it is ready; a bruise does not go away.",
+      "kristy_take": "Nectarines turn from green to yellow too; plums need their variety’s color. Check cherries for green, fleshy stems and full color. Skin staining can be cosmetic, but bruises and damage stay behind.",
       "cart_pick": "Unbruised peaches, plums, or cherries",
       "buying_tips": [
         "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
@@ -5725,7 +5725,7 @@
         "frozen green peas",
         "frozen sweet peas"
       ],
-      "decision": "Pick a bag frozen solid with no drips on the pack and no off smell.",
+      "decision": "Peas frozen solid, with no pack drips or off smell.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -5743,7 +5743,7 @@
         "frozen broccoli florets",
         "frozen broccoli floret"
       ],
-      "decision": "Pick a bag frozen solid; drips on the pack or an off smell mean it thawed.",
+      "decision": "Broccoli frozen solid; pack drips or off smell mean it thawed.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -5763,7 +5763,7 @@
         "persian cucumbers",
         "mini cucumbers"
       ],
-      "decision": "Choose firm, dark green cucumbers and skip any with soft spots or a bulging middle.",
+      "decision": "Firm, dark green cucumbers, without soft spots or a bulging middle.",
       "sources": [
         {
           "name": "Nebraska Extension: Cucumbers",
@@ -5782,7 +5782,7 @@
         "asparagus spear",
         "asparagus bunch"
       ],
-      "decision": "Choose stalks with dry, closed, compact tips and skip any that are limp.",
+      "decision": "Asparagus with dry, closed, compact tips and no limp stalks.",
       "sources": [
         {
           "name": "Nebraska Extension: Asparagus",
@@ -5803,7 +5803,7 @@
         "corn cobs",
         "corn cob"
       ],
-      "decision": "Choose ears with green husks and fresh silk, and skip any that look dried out.",
+      "decision": "Corn with green husks and fresh silk, without dried-out ears.",
       "sources": [
         {
           "name": "Nebraska Extension: Sweet Corn",
@@ -5822,7 +5822,7 @@
         "globe eggplant",
         "japanese eggplant"
       ],
-      "decision": "Choose a shiny, smooth eggplant that feels heavy, with a green stem free of mold.",
+      "decision": "Heavy, shiny, smooth eggplant, with a green stem free of mold.",
       "sources": [
         {
           "name": "Nebraska Extension: Eggplant",
@@ -5842,7 +5842,7 @@
         "summer squashes",
         "yellow squash"
       ],
-      "decision": "Choose small to medium zucchini that are glossy, firm, and heavy for their size.",
+      "decision": "Small-to-medium zucchini, glossy and firm, that feel heavy for their size.",
       "sources": [
         {
           "name": "Nebraska Extension: Summer Squash",
@@ -5861,7 +5861,7 @@
         "cilantro bunches",
         "coriander leaves"
       ],
-      "decision": "Choose bright, upright bunches with no yellow or brown leaves.",
+      "decision": "Bright, upright cilantro bunches, without yellow or brown leaves.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -5881,7 +5881,7 @@
         "italian parsley",
         "flat leaf parsley"
       ],
-      "decision": "Choose parsley that stands up, bright green with no brown spots or yellowed leaves.",
+      "decision": "Upright, bright green parsley, without brown spots or yellowed leaves.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -5900,7 +5900,7 @@
         "basil bunches",
         "sweet basil"
       ],
-      "decision": "Choose basil that is bright and upright, not limp, with no brown spots.",
+      "decision": "Bright, upright basil with no limp leaves or brown spots.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -5921,7 +5921,7 @@
         "snow peas",
         "snow pea"
       ],
-      "decision": "Choose firm, bright green pods with no blemishes.",
+      "decision": "Firm, bright green snap pea pods, without blemishes.",
       "sources": [
         {
           "name": "Nebraska Extension: Snap Peas",
@@ -5940,7 +5940,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Choose firm bulbs that feel heavy with no cracks or bruises.",
+      "decision": "Firm kohlrabi bulbs, heavy in your hand, without cracks or bruises.",
       "sources": [
         {
           "name": "Nebraska Extension: Kohlrabi",
@@ -5959,7 +5959,7 @@
         "okra pods",
         "okra pod"
       ],
-      "decision": "Choose bright green, firm pods and skip any that are limp, moldy, or dried out.",
+      "decision": "Firm, bright green okra, without limp, moldy or dried-out pods.",
       "sources": [
         {
           "name": "Nebraska Extension: Okra",
@@ -5978,7 +5978,7 @@
         "chards",
         "rainbow chard"
       ],
-      "decision": "Choose dark green leaves and unsplit stalks, and skip any that are discolored.",
+      "decision": "Dark green chard with unsplit stalks and no discoloration.",
       "sources": [
         {
           "name": "Nebraska Extension: Swiss Chard",
@@ -5996,7 +5996,7 @@
         "mango",
         "mangos"
       ],
-      "decision": "Squeeze gently and pick one that gives slightly; the red color says nothing about ripeness.",
+      "decision": "Mangoes yielding slightly under gentle pressure; red color does not indicate ripeness.",
       "sources": [
         {
           "name": "National Mango Board: How to Choose a Mango",
@@ -6042,7 +6042,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Sausage is seasoned ground meat; its ingredient list names every curing agent used.",
+      "decision": "Seasoned ground-meat sausage with every curing agent named in its ingredients.",
       "sources": [
         {
           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -6074,7 +6074,7 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Tofu is soybeans, water and a coagulant such as nigari or gypsum; pick by firmness.",
+      "decision": "Tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
       "sources": [
         {
           "name": "Food Hero (Oregon State University Extension): All About Tofu",
@@ -6102,7 +6102,7 @@
         "bunch of celery",
         "bunches of celery"
       ],
-      "decision": "Pick celery with tight, crisp stalks; skip a bunch that has gone limp.",
+      "decision": "Celery with tight, crisp stalks, without any limpness in the bunch.",
       "sources": [
         {
           "name": "SNAP-Ed Seasonal Produce Guide: Celery",
@@ -6121,8 +6121,8 @@
       ],
       "category": "bulk_pantry",
       "question": "Which sandwich bread is whole wheat?",
-      "decision": "Whole wheat sandwich bread keeps the grain’s bran and germ.",
-      "why": "Whole wheat flour retains the grain’s natural proportions. That is the whole-food standard for sandwich bread.",
+      "decision": "Whole wheat sandwich bread, with the grain’s bran and germ intact.",
+      "why": "Whole wheat flour keeps the bran and germ along with the rest of the grain, in their natural proportions.",
       "short_answer": "US whole wheat bread uses whole wheat flour rather than ordinary refined flour. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
       "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
       "evidence_tier": "kristys_standard",
@@ -6132,7 +6132,7 @@
         "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
         "https://wholegrainscouncil.org/whole-grain-stamp"
       ],
-      "kristy_take": "Whole wheat flour retains the grain’s natural proportions. That is the whole-food standard for sandwich bread.",
+      "kristy_take": "A loaf called “wheat” may still use refined flour. Turn it over and find whole wheat flour in the ingredients before choosing it.",
       "cart_pick": "Whole wheat sandwich bread",
       "buying_tips": [
         "Check for whole wheat flour in the ingredients.",
@@ -6176,8 +6176,8 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you choose a traditionally fermented sourdough?",
-      "decision": "Sourdough fermented with a starter of wild yeast and bacteria.",
-      "why": "The whole-food standard favors starter fermentation. A sour flavor alone does not establish that process.",
+      "decision": "Sourdough raised with a starter of wild yeast and bacteria.",
+      "why": "A flour-and-water starter lets wild yeast and bacteria raise the dough and develop its sour flavor.",
       "short_answer": "Traditional sourdough uses a flour-and-water starter containing wild yeasts and bacteria. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor.",
       "detail": "Colorado State University Extension reports no US standard of identity for sourdough. Culture or starter may not be listed separately, so the baker can clarify the process. The fermentation review describes acid formation and leavening by microbes; it does not establish a health result for every retail loaf.",
       "evidence_tier": "kristys_standard",
@@ -6185,7 +6185,7 @@
         "https://extension.colostate.edu/resource/understanding-and-selecting-sourdough-for-health-benefits",
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9524358/fullTextXML"
       ],
-      "kristy_take": "The whole-food standard favors starter fermentation. A sour flavor alone does not establish that process.",
+      "kristy_take": "That sourness can also come from added acids. If the starter is missing from the list, the baker can tell you how the loaf rose.",
       "cart_pick": "Starter-fermented sourdough bread",
       "buying_tips": [
         "Look for flour, water, salt, and a culture or starter.",
@@ -6229,8 +6229,8 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you ask before buying bagels?",
-      "decision": "Bagels with their ingredients named, boiled before the oven.",
-      "why": "Boiling describes how the bagel is made. The ingredient list, or the baker, names what went into the dough and the bath.",
+      "decision": "Bagels boiled before the oven, with their ingredients named.",
+      "why": "The boil sets a bagel’s outside and gives it that chew. A longer boil can make the crust chewier and the middle denser.",
       "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
       "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
       "evidence_tier": "time_tested",
@@ -6238,7 +6238,7 @@
         "https://www.tastingtable.com/1606040/why-boil-bagels-before-baking/",
         "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
       ],
-      "kristy_take": "Boiling describes how the bagel is made. The archived articles support texture facts, not health effects.",
+      "kristy_take": "Ask what went into the dough and the boiling bath, or read the ingredients on the bag. Boiling explains the texture; the archived baking articles establish no health advantage.",
       "cart_pick": "Boiled bagels with the ingredients named",
       "buying_tips": [
         "Read the ingredient list on the bag, or ask the bakery for it.",
@@ -6282,8 +6282,8 @@
       ],
       "category": "bulk_pantry",
       "question": "Which tortillas should you choose, corn or flour?",
-      "decision": "Corn tortillas made from lime-treated corn, water, and salt.",
-      "why": "Masa comes from corn processed with limewater. A simple corn recipe is the whole-food standard here.",
+      "decision": "Corn tortillas made with lime-treated corn, water and salt.",
+      "why": "Masa is corn cooked and soaked in limewater, then ground into dough. Water and salt complete the tortilla recipe.",
       "short_answer": "Traditional corn tortillas use corn cooked and soaked in alkaline limewater, then ground into masa. Flour tortillas typically use wheat flour, water, fat, salt, and leavening.",
       "detail": "Masa harina is dried, ground nixtamalized corn dough. Corn flour alone is a different ingredient. Packaged corn tortillas can also contain wheat; the ingredient list shows the blend. The archived nixtamalization paper measures laboratory digestibility under particular processing conditions, not health outcomes from retail tortillas.",
       "evidence_tier": "kristys_standard",
@@ -6292,7 +6292,7 @@
         "https://www.healthline.com/nutrition/corn-vs-flour-tortilla",
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11811476/fullTextXML"
       ],
-      "kristy_take": "Masa comes from corn processed with limewater. A simple corn recipe is the whole-food standard here.",
+      "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
       "cart_pick": "Corn tortillas",
       "buying_tips": [
         "Read the list for masa or masa harina, water, and salt.",
@@ -6335,8 +6335,8 @@
       ],
       "category": "poultry",
       "question": "What should you check on a whole turkey label?",
-      "decision": "Whole turkey without an injected basting solution.",
-      "why": "An added basting solution is a separate formulation. A plain bird is turkey with nothing added.",
+      "decision": "Plain whole turkey, without an injected basting solution.",
+      "why": "A plain turkey has nothing added. A basted bird can carry broth, stock, fat or water in an added solution.",
       "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
       "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
       "evidence_tier": "kristys_standard",
@@ -6344,7 +6344,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
       ],
-      "kristy_take": "An added basting solution is a separate formulation. Fresh or frozen, the plain bird is the pick.",
+      "kristy_take": "Fresh or frozen, read beside the name for a basting solution and its ingredients. Water left from chilling is a separate disclosure, so read the two lines separately.",
       "cart_pick": "Whole turkey without added solution",
       "buying_tips": [
         "Read the solution ingredients beside the product name.",
@@ -6390,8 +6390,8 @@
       ],
       "category": "poultry",
       "question": "What should you check before buying ground turkey?",
-      "decision": "Plain ground turkey with its ingredients and fat content stated.",
-      "why": "Grinding does not specify the fat content. A plain pack is turkey with no seasoning or solution added.",
+      "decision": "Plain ground turkey, with ingredients and fat content on the label.",
+      "why": "Two packs of ground turkey can have different fat contents. Read the fat line to see what you are taking home.",
       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
       "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
       "evidence_tier": "kristys_standard",
@@ -6399,7 +6399,7 @@
         "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
       ],
-      "kristy_take": "Grinding does not specify the fat content. So read the fat line, and take the pack with nothing added.",
+      "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
       "cart_pick": "Plain ground turkey",
       "buying_tips": [
         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
@@ -6808,8 +6808,8 @@
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Plain breast, no added solution; bone-in and skin-on before boneless skinless.",
-      "why": "Added flavoring solution changes the formulation. A plain breast carries nothing but the chicken.",
+      "decision": "Plain bone-in, skin-on breast before boneless skinless; no added solution.",
+      "why": "Bone-in, skin-on breast cooks better than boneless skinless, which dries fast in the pan.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
       "evidence_tier": "kristys_standard",
@@ -6817,7 +6817,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
       ],
-      "kristy_take": "Added flavoring solution changes the formulation. The product name has to admit it, so the plain pack is easy to find.",
+      "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
       "cart_pick": "Plain chicken breast without added solution",
       "buying_tips": [
         "Read the full product name for the solution percentage and ingredients.",
@@ -6868,8 +6868,8 @@
       ],
       "category": "produce",
       "question": "How do you pick good mushrooms?",
-      "decision": "Conventional mushrooms, dry and firm, with no dark spots.",
-      "why": "Moisture is what spoils mushrooms. A dry, firm cap that is closed or slightly open is the fresh one.",
+      "decision": "Dry, firm conventional mushrooms with no dark spots.",
+      "why": "Closed caps taste milder; open caps with gills showing taste stronger. Dry, firm caps are the fresh ones.",
       "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
       "detail": "Penn State Extension, quoting a selection guide, looks for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
       "evidence_tier": "established",
@@ -6878,7 +6878,7 @@
         "https://extension.psu.edu/preparing-and-preserving-mushrooms",
         "https://www.ewg.org/foodnews/clean-fifteen.php"
       ],
-      "kristy_take": "A dry, firm mushroom is a fresh one. Moisture spoils them, so keep them cold in paper.",
+      "kristy_take": "Choose closed or slightly open caps and take only as many as you need. Keep them cold and unwashed in paper; trapped moisture spoils mushrooms.",
       "cart_pick": "Dry, firm mushrooms with no dark spots",
       "buying_tips": [
         "Feel for a dry, firm cap and pass on any with dark spots.",
@@ -6926,8 +6926,8 @@
       ],
       "category": "produce",
       "question": "How do you buy and ripen bananas?",
-      "decision": "Buy them green and let them ripen on your counter.",
-      "why": "Fruit ripened on the plant often splits and has poor texture, so bananas are cut green.",
+      "decision": "Green bananas to finish ripening on your counter.",
+      "why": "Bananas get sweeter as the green fades at home. Left to ripen on the plant, they often split and lose texture.",
       "short_answer": "Buy bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Conventional is fine: bananas sit on the low-residue list, and the peel comes off.",
       "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. UC Davis ripens them at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. EWG’s Clean Fifteen ranks bananas 12th for low pesticide residue, from USDA data. That testing is done on the peeled fruit, the part that gets eaten.",
       "evidence_tier": "established",
@@ -6937,7 +6937,7 @@
         "https://www.ewg.org/foodnews/clean-fifteen.php",
         "https://www.ewg.org/foodnews/methodology.php"
       ],
-      "kristy_take": "Let the counter finish the ripening. Conventional is fine here, since the peel comes off.",
+      "kristy_take": "Take the greenest bunch for the week and let the counter finish it. Conventional is fine here, since the peel comes off; keep green bananas out of the fridge.",
       "cart_pick": "Green or just-turning bananas",
       "buying_tips": [
         "Take the greenest bunch for the week; it keeps ripening at home.",
@@ -6980,8 +6980,8 @@
       ],
       "category": "produce",
       "question": "How do you pick good green beans?",
-      "decision": "Organic beans with smooth, crisp, slender pods and no bulging seeds.",
-      "why": "Seeds bulging through the pod mean an over-mature bean. Those beans turn tough, stringy and starchy.",
+      "decision": "Smooth, crisp, slender organic beans, without bulging seeds.",
+      "why": "A crisp pod with flat seeds is a young bean. Bulging seeds mean an older bean turning tough, stringy and starchy.",
       "short_answer": "Choose green beans that are smooth, firm and crisp. Skip pods with bulging seeds, brown or rust spots, or a damp, sticky feel. Keep them cold and use them within five days.",
       "detail": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Ohio State Extension describes good snap beans as firm, crisp and smooth, with no seeds bulging. Flabby, tough beans or bulging seeds are over-mature. Iowa State Extension adds: avoid beans with brown spots or a damp, sticky surface. Keep fresh beans cold and humid in the refrigerator and use them within five days if possible. Snap beans also come yellow, purple and red.",
       "evidence_tier": "established",
@@ -6990,7 +6990,7 @@
         "https://spendsmart.extension.iastate.edu/?p=1508",
         "https://extension.umaine.edu/publications/4255e/"
       ],
-      "kristy_take": "A crisp pod with flat, hidden seeds is a young bean. That is the one worth carrying home.",
+      "kristy_take": "Run your eye along the pods for smooth sides and hidden seeds. Keep the beans cold and use them within five days, leaving any sticky or brown-spotted ones behind.",
       "cart_pick": "Crisp, slender green beans",
       "buying_tips": [
         "Pick smooth, slender pods with no seeds bulging through.",
@@ -7034,8 +7034,8 @@
       ],
       "category": "poultry_eggs",
       "question": "What should a shopper know about duck and quail eggs?",
-      "decision": "Cook duck and quail eggs until white and yolk are solid.",
-      "why": "Salmonella incidents involving duck eggs arise from time to time. Thorough cooking is the safeguard for any egg.",
+      "decision": "Clean, cold duck and quail eggs; cook white and yolk solid.",
+      "why": "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.",
       "short_answer": "Buy them clean, uncracked and cold. Ireland’s food safety authority advises cooking duck eggs until white and yolk are solid. Quail eggs are tiny, about 10 to 12 grams each.",
       "detail": "The Food Safety Authority of Ireland advises eating duck eggs only when thoroughly cooked. Raw duck eggs stay out of raw or lightly cooked dishes such as homemade mayonnaise or tiramisu. A duck egg is larger and heavier than a hen’s egg, so it needs more cooking time. In one test kitchen weighing, duck yolks made up 42 percent of the egg’s weight, against 32 percent for chicken. US FDA consumer advice for eggs: check for clean, uncracked shells, refrigerate, and cook until yolk and white are firm. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply, and the authors recommend refrigerated storage.",
       "evidence_tier": "established",
@@ -7045,7 +7045,7 @@
         "https://scielo.br/j/asas/a/BzZDRQJ9ZpDR4bvH53Z5qjf/?lang=en",
         "https://www.americastestkitchen.com/how_tos/6577-duck-eggs-versus-chicken-eggs"
       ],
-      "kristy_take": "A duck or quail egg is still an egg. Buy it clean and cold, and cook it all the way through.",
+      "kristy_take": "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.",
       "cart_pick": "Duck or quail eggs",
       "buying_tips": [
         "Open the carton and check that every shell is clean and uncracked.",
@@ -7091,7 +7091,7 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Pick firm squash, heavy for its size, with hard skin and no sunken or moldy spots.",
+      "decision": "Firm, heavy-for-size squash with hard skin, without sunken or moldy spots.",
       "sources": [
         {
           "name": "University of Maine Cooperative Extension: Winter Squash",
@@ -7112,7 +7112,7 @@
         "turmeric root",
         "turmeric roots"
       ],
-      "decision": "Pick firm roots, ginger smooth and uncracked, and keep both sealed in the fridge.",
+      "decision": "Firm roots, ginger smooth and uncracked; keep both sealed and refrigerated.",
       "sources": [
         {
           "name": "University of Minnesota Extension: Ginger",
@@ -7138,7 +7138,7 @@
         "microgreen",
         "micro greens"
       ],
-      "decision": "Microgreens are rarely washed before packing, so rinse them well before use.",
+      "decision": "Microgreens, rarely washed before packing, for you to rinse before use.",
       "sources": [
         {
           "name": "Science Meets Food: Microgreens",
@@ -7161,7 +7161,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Carton egg whites are pasteurized or otherwise treated to destroy Salmonella under the federal standard.",
+      "decision": "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
@@ -7382,8 +7382,8 @@
       ],
       "category": "meat_counter",
       "question": "How do you judge lamb and goat meat quality?",
-      "decision": "100% grass-fed or grass-finished lamb or goat.",
-      "why": "Lamb quality grading is voluntary and takes age into account; goat meat has no quality grades.",
+      "decision": "Lamb or goat labeled 100% grass-fed or grass-finished.",
+      "why": "For goat, look at the flesh: firm and fine-grained with white fat. There are no goat quality grades to guide you.",
       "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
       "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
       "evidence_tier": "kristys_standard",
@@ -7391,7 +7391,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
       ],
-      "kristy_take": "Lamb quality grading is voluntary, and the grade takes age into account. Goat meat has no quality grades at all.",
+      "kristy_take": "Lamb grading is voluntary and takes age into account. Check for firm, fine-textured meat with white marbling, and read the cut name, such as shoulder or leg.",
       "cart_pick": "100% grass-fed or grass-finished lamb",
       "buying_tips": [
         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
@@ -7451,8 +7451,8 @@
       ],
       "category": "meat_counter",
       "question": "How do you buy and handle organ meats?",
-      "decision": "Organ meats bought for a cook within one to two days.",
-      "why": "Variety meats keep a shorter time than steaks and roasts. Each organ also suits its own cooking method.",
+      "decision": "Organ meats for cooking within one to two days.",
+      "why": "Heart and tongue suit cooking in liquid. Liver can be pan-fried; tripe needs a braise to turn tender.",
       "short_answer": "Liver, kidney, tripe, sweetbreads, and tongue keep 1 to 2 days in the refrigerator. Cook all organ meats to 160°F. Heart and tongue are tough and suit moist heat.",
       "detail": "Organ meats are also called variety meats or offal. Liver suits braising, pan broiling, or frying. Sweetbreads and kidneys suit braising, sautéing, or frying. Tripe, the beef stomach, is braised up to two hours to turn tender. Heart and tongue are best cooked in liquid because their muscle is tough.",
       "evidence_tier": "kristys_standard",
@@ -7461,7 +7461,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table",
         "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
       ],
-      "kristy_take": "Variety meats keep a shorter time than steaks and roasts. Each organ also suits its own cooking method.",
+      "kristy_take": "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
       "cart_pick": "Organ meat for a cook within two days",
       "buying_tips": [
         "Buy organ meats for a cook within one to two days.",
@@ -7507,8 +7507,8 @@
       ],
       "category": "meat_counter",
       "question": "How do you buy bison?",
-      "decision": "100% grass-fed or grass-finished bison, with an inspection mark.",
-      "why": "Bison inspection can be federal or state. Once bought, bison keeps and cooks on the same rules as beef.",
+      "decision": "Bison with 100% grass-fed or grass-finished labeling and an inspection mark.",
+      "why": "Bison is a bovine meat with no marbling, so expect a deeper red than beef. High heat can turn it tough.",
       "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
       "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
       "evidence_tier": "kristys_standard",
@@ -7516,7 +7516,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bison-farm-table",
         "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/"
       ],
-      "kristy_take": "Bison is a bovine with no marbling. Find the inspection mark, then treat it like beef.",
+      "kristy_take": "Find a federal or state inspection mark, then follow beef’s keeping and cooking rules. Ground bison should be cooked or frozen within 2 days.",
       "cart_pick": "100% grass-fed or grass-finished bison",
       "buying_tips": [
         "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
@@ -7564,8 +7564,8 @@
       ],
       "category": "meat_counter",
       "question": "How do you choose venison and game meat?",
-      "decision": "Venison from a fully refrigerated processor, trimmed of its fat.",
-      "why": "Game is often processed by small shops. Cold handling decides its safety.",
+      "decision": "Fat-trimmed venison from a fully refrigerated processor.",
+      "why": "Game often comes through small shops. Cold handling at the processor decides its safety.",
       "short_answer": "Choose game processed in fully refrigerated facilities, with each animal handled on its own. Use refrigerated venison within two or three days.",
       "detail": "Deer and elk can carry Chronic Wasting Disease (CWD). Research finds its abnormal proteins in brain, spinal cord and lymph tissue, not in muscle. No evidence shows it passing to humans naturally, but that is not ruled out. Extension guidance advises avoiding the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F. Wrapped game keeps 9 to 12 months frozen.",
       "evidence_tier": "kristys_standard",
@@ -7574,7 +7574,7 @@
         "https://extension.psu.edu/proper-care-and-handling-of-venison-from-field-to-table",
         "https://livestock.extension.wisc.edu/articles/handling-venison-safely/"
       ],
-      "kristy_take": "Game is only as good as its cold handling. Trim the fat, and cook it to temperature.",
+      "kristy_take": "Plan a meal within two or three days of bringing unfrozen venison home. Trim the fat and cook whole cuts to 145°F, ground game to 160°F.",
       "cart_pick": "Venison from a refrigerated processor",
       "buying_tips": [
         "Ask whether the processor handles each animal individually.",
@@ -7620,7 +7620,7 @@
         "meat stick",
         "meat sticks"
       ],
-      "decision": "Jerky is dried meat; the ingredients name the meat and any curing agent.",
+      "decision": "Dried-meat jerky with the meat and any curing agent named in ingredients.",
       "sources": [
         {
           "name": "NDSU Extension: Jerky",
@@ -7644,7 +7644,7 @@
         "beef bones",
         "knuckle bones"
       ],
-      "decision": "Soup bones come from the meat counter; ask for marrow or knuckle bones.",
+      "decision": "Ask your meat counter for marrow or knuckle soup bones.",
       "sources": [
         {
           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
@@ -8259,8 +8259,8 @@
       ],
       "category": "bulk_pantry",
       "question": "Which sprouted grain bread should you buy?",
-      "decision": "Sprouted grain bread with sprouted whole grains first, no added flour.",
-      "why": "Sprouted bread uses whole grains sprouted before milling. Some loaves add flour, and the ingredient list shows it.",
+      "decision": "Sprouted whole grains first in your bread, without added flour.",
+      "why": "The grains sprout before milling, and the loaf tends to feel denser and heavier than bread made from flour.",
       "short_answer": "Read the ingredients: sprouted whole grains should come first. Some loaves add flour or wheat gluten. Look in the refrigerated or freezer case. Sprouted wheat still contains gluten.",
       "detail": "Sprouted bread is made from whole grains allowed to germinate, or sprout, before they are milled. Some sprouted breads are made with added flour or gluten. Besides wheat, a loaf may include millet, barley, lentils or soy. Most sprouted grain breads sit in the refrigerator or freezer section. The loaf tends to be denser and heavier than bread made from flour. Most are vegan, but check the label.",
       "evidence_tier": "kristys_standard",
@@ -8269,7 +8269,7 @@
         "https://www.healthline.com/nutrition/sprouted-grain-bread",
         "https://sporked.com/article/what-is-sprouted-bread/"
       ],
-      "kristy_take": "The ingredient list settles it. Sprouted whole grains lead, and no extra flour follows.",
+      "kristy_take": "Look in the cold or freezer case for sprouted whole grains first on the list, with no extra flour following. Sprouted wheat still contains gluten.",
       "cart_pick": "Sprouted grain bread, no added flour",
       "buying_tips": [
         "Read the first ingredients for sprouted whole grains.",
@@ -8435,8 +8435,8 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick gluten-free bread?",
-      "decision": "Gluten-free bread carrying the label claim, with its flours and binder read.",
-      "why": "Four label wordings share one federal gluten limit. The claim covers gluten only, so the flours and binder still matter.",
+      "decision": "Gluten-free labeled bread, with its flours and binder checked.",
+      "why": "Blended flours and starches replace wheat. A gum binder gives back some of the stretch gluten would provide.",
       "short_answer": "“Gluten-free”, “no gluten”, “free of gluten” and “without gluten” all meet one federal limit. The claim is voluntary. Bakers replace gluten with blended flours and starches, plus a gum that binds the loaf.",
       "detail": "Under 21 CFR 101.91, all four wordings mean the food has less than 20 ppm (parts per million) gluten. Wheat starch may appear only if the food stays under 20 ppm. The claim is voluntary, defined by an FDA rule issued in 2013. Bakers replace gluten with a blend of flours and starches, such as rice, potato or tapioca. A hydrocolloid binder, usually xanthan gum or HPMC, mimics some of the stretch gluten gives. “Gluten-free” describes gluten content only.",
       "evidence_tier": "established",
@@ -8446,7 +8446,7 @@
         "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/gluten-free-labeling-foods",
         "https://research.ucc.ie/en/publications/gluten-free-breads/"
       ],
-      "kristy_take": "The claim settles the gluten. The ingredient list shows what holds the loaf together.",
+      "kristy_take": "Four label wordings share one federal gluten limit, and that claim covers gluten alone. Read which flours and binder hold this particular loaf together.",
       "cart_pick": "Bread labeled gluten-free",
       "buying_tips": [
         "Check for one of the four gluten-free claim wordings.",
@@ -8667,8 +8667,8 @@
       ],
       "category": "bulk_pantry",
       "question": "What bread should I buy?",
-      "decision": "Pick the bread type first, then read the first flour for “whole”.",
-      "why": "The first ingredient and the Whole Grain Stamp tell a whole grain loaf from a refined one.",
+      "decision": "Your chosen bread type, with “whole” in the first flour.",
+      "why": "The first flour and the Whole Grain Stamp help you find a whole grain loaf among the refined ones.",
       "short_answer": "Pick the type first: sandwich, sourdough, sprouted, gluten-free or buns. Then read the first ingredient for “whole”. “100% whole wheat” or “100% whole grain” on the label can be trusted.",
       "detail": "The Whole Grain Stamp comes in three tiers. The 100% Stamp means all the grain is whole, with at least 16 g per serving. The 50%+ and Basic Stamps mean at least 8 g per serving. A first ingredient with “whole” makes the bread likely, not certain, to be mostly whole grain. A whole grain listed second can mean anywhere from 1% to 49% whole grain.",
       "evidence_tier": "kristys_standard",
@@ -8677,7 +8677,7 @@
         "https://wholegrainscouncil.org/node/13053",
         "https://wholegrainscouncil.org/whole-grain-stamp"
       ],
-      "kristy_take": "The name on the front can mislead. The first ingredient is the read.",
+      "kristy_take": "“Wheat flour”, “multigrain” and “stoneground” on the front can leave the grain question open. “100% whole wheat” or “100% whole grain” gives you a clearer answer.",
       "cart_pick": "Bread with a whole grain first",
       "buying_tips": [
         "Read the first ingredient for “whole”.",

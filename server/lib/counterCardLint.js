@@ -1262,6 +1262,43 @@ const isConstruction = (prefix) =>
   prefix.length >= MIN_SHARED_PREFIX &&
   prefix.some((t) => !GRAMMAR.has(t) && !NEUTRAL.has(t) && t.length >= 3);
 
+// ponytail: widen this scope with each warmth batch; delete the scope when every section is converted.
+const WARMTH_PILOT_CATEGORIES = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);
+const WARMTH_PILOT_IDS = new Set([
+  'sandwich_bread', 'sourdough', 'bagels', 'tortillas', 'sprouted_grain_bread',
+  'gluten_free_bread', 'bread_aisle',
+]);
+const WARMTH_CATEGORY_BY_ID = new Map(perimeterKb.entries.map((e) => [e.id, e.category]));
+
+/** Accept authored entries and projected cards, whose decision is named headline. */
+export function isWarmthPilot(card) {
+  const id = card?.id ?? card?.slug;
+  return WARMTH_PILOT_IDS.has(id) ||
+    (WARMTH_PILOT_CATEGORIES.has(card?.category ?? WARMTH_CATEGORY_BY_ID.get(id)) &&
+      Boolean(card?.decision ?? card?.headline));
+}
+
+export function lintOpenerRepetition(cards) {
+  const out = [];
+  const pilot = (cards || []).filter(isWarmthPilot);
+  for (const field of ['decision', 'why', 'kristy_take']) {
+    const holders = new Map();
+    for (const card of pilot) {
+      const text = field === 'decision' ? card.decision ?? card.headline : card[field];
+      const tokens = String(text || '').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, '').trim().split(/\s+/);
+      if (tokens.length < 3) continue;
+      const opener = tokens.slice(0, 3).join(' ');
+      if (!holders.has(opener)) holders.set(opener, new Set());
+      holders.get(opener).add(card.id ?? card.slug ?? card);
+    }
+    for (const [opener, ids] of holders) {
+      if (ids.size > 3) out.push({ code: 'OPENER_REPEATED', field, opener, ids: [...ids],
+        detail: `${ids.size} PILOT cards share the ${field} opener “${opener}”` });
+    }
+  }
+  return out;
+}
+
 /**
  * Lint a whole corpus.
  *
@@ -1274,7 +1311,7 @@ const isConstruction = (prefix) =>
  * @returns {{violations:Array, report:{verbs:Array, emDashShare:number, total:number}}}
  */
 export function lintCorpus(cards) {
-  const violations = [];
+  const violations = lintOpenerRepetition(cards);
   const list = (cards || []).filter(Boolean);
   const doOf = (c) => String(c?.do ?? c?.do_line ?? '').trim();
 

@@ -78,13 +78,19 @@ test('no decision or why claims a health outcome, in either direction', () => {
   }
 });
 
-test('a contested call still names the standard rather than asserting science', () => {
+test('contested calls keep their tier and the limits of their sourcing claims', () => {
   // The tier chip renders beside the decision, so a reader always sees WHICH kind of
   // claim it is. On the entries where the distinction does the most work, the words
   // carry it too.
   for (const id of ['salmon_wild_vs_farmed', 'beef_grassfed_vs_grainfed']) {
     const e = entries.find((x) => x.id === id);
     assert.equal(e.evidence_tier, 'kristys_standard', `${id} should be a standard, not settled`);
+    if (id === 'beef_grassfed_vs_grainfed') {
+      // W4 puts the actual food reason in why; the unchanged tier note limits the label claim.
+      assert.equal(e.why, 'Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.');
+      assert.equal(e.tier_note, 'On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it.');
+      continue;
+    }
     const text = `${e.decision} ${e.why}`.toLowerCase();
     assert.match(text, /whole-food standard|not settled science|preference|not a health verdict|not a claim/, `${id} states a contested call as fact`);
   }
