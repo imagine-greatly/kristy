@@ -92,6 +92,12 @@ Mounted at: `/api`
 
 - `200` → { rules: ??? }
 
+### POST /counter/request  ·  optionalAuth
+
+- `400` → { error: String }
+- `429` → { error: Bool, message: String }
+- `200` → { ok: Bool, logged: ??? }
+
 ### GET /counter/cards  ·  optionalAuth
 
 - `200` → { cards: ???, count: ??? }
@@ -459,7 +465,7 @@ Mounted at: `(unmounted)`
 
 ## NEEDS HAND-CHECK
 
-26 of 59 handlers have at least one response this script cannot
+26 of 60 handlers have at least one response this script cannot
 expand. Confirm these by hand before writing a Codable for them.
 
 - `POST /checkout` (billing.js) — opaque: NOT_CONFIGURED
@@ -489,4 +495,4 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /trips/import` (trips.js) — opaque: out
 
-_59 handlers, 159 literal responses derived._
+_60 handlers, 162 literal responses derived._

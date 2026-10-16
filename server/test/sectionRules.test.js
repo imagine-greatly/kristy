@@ -45,3 +45,9 @@ test('duplicate section keeps first; route payload is {rules: []} when absent', 
   assert.deepEqual(out.map((r) => [r.section, r.rule]), [['produce', 'Smell the stem.'], ['meat', 'Smell the stem.']]);
   assert.deepEqual({ rules: loadSectionRules(join(dir, 'absent.json')) }, { rules: [] });
 });
+
+test('beyond is served when authored and short, dropped otherwise', () => {
+  const [a] = load([{ ...ok, beyond: 'Better than any shelf: the farmers market.' }]);
+  assert.equal(a.beyond, 'Better than any shelf: the farmers market.');
+  for (const beyond of ['', 5, 'word '.repeat(15)]) assert.equal('beyond' in load([{ ...ok, beyond }])[0], false, String(beyond));
+});

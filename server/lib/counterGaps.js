@@ -122,6 +122,9 @@ export const WEAK_MATCH_CEILING = 3;
  * `outcome` is deliberately NOT overloaded to carry this. It records how WELL the corpus
  * answered, which is orthogonal to where the question came from.
  */
+// ponytail: an explicit "ask for this card" files as 'list' (the db check allows only ask/list),
+// so a request adds weight to the same list topic; add a 'request' source with a migration if
+// explicit asks ever need to be told apart.
 const SOURCES = new Set(['ask', 'list']);
 
 /**

@@ -10,6 +10,7 @@ import { premiumForReq } from '../lib/subscription.js';
 import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 import { buildTryPool } from '../lib/tryPool.js';
 import { loadSectionRules } from '../lib/sectionRules.js';
+import { logCounterGap } from '../lib/counterGaps.js';
 
 // The Counter's card corpus, as the client reads it.
 //
@@ -115,6 +116,18 @@ counterRouter.get('/counter/essentials', optionalAuth, async (_req, res) => {
 
 // Per-section buying rules, authored in lib/sectionRules.json; [] until that file exists.
 counterRouter.get('/counter/section-rules', optionalAuth, (_req, res) => res.json({ rules: loadSectionRules() }));
+
+// "Ask for this card": a list item with no card. Stores the scrubbed topic only (logCounterGap),
+// never the asker, on the counter's own per-IP bucket for guests.
+counterRouter.post('/counter/request', optionalAuth, async (req, res) => {
+  const item = String(req.body?.item ?? '').trim().slice(0, 160);
+  if (!item) return res.status(400).json({ error: 'item is required' });
+  if (!req.user && counterAskLimited(clientIp(req))) {
+    return res.status(429).json({ error: true, message: 'Too many requests at once. Try again shortly.' });
+  }
+  const { logged } = await logCounterGap({ question: item, outcome: 'miss', source: 'list' });
+  return res.json({ ok: true, logged });
+});
 
 // The whole corpus. Registered BEFORE /cards/:slug, which would otherwise swallow it.
 counterRouter.get('/counter/cards', optionalAuth, async (_req, res) => {

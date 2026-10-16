@@ -50,3 +50,13 @@ test('section rules: voice and claim bans', () => {
     }
   }
 });
+
+test('section rules: beyond lines name a source past the store, in voice', () => {
+  const withBeyond = rules.filter((r) => r.beyond);
+  nonEmpty(withBeyond, 'beyond lines', 4);
+  for (const { section, beyond } of withBeyond) {
+    assert.ok(words(beyond) <= 14, `${section} beyond too long`);
+    assert.ok(/market|butcher|farm|fishmonger/i.test(beyond), `${section} beyond names no source`);
+    for (const re of [FIRST_PERSON, PRICE, BANNED, /—/]) assert.ok(!re.test(beyond), `${section} beyond: ${re}`);
+  }
+});

@@ -6,7 +6,8 @@ const SECTIONS = new Set(['produce', 'meat', 'seafood', 'eggs_dairy', 'bulk_pant
 const cache = new Map();
 const str = (s) => typeof s === 'string' && s.trim() !== '';
 
-// Reads once per path; missing file or bad JSON -> []. Output is exactly {section, rule, checks}.
+// Reads once per path; missing file or bad JSON -> []. Output is exactly {section, rule, checks},
+// plus `beyond` (the off-shelf source that beats the store: market, butcher, farm) when authored.
 export function loadSectionRules(path = DEFAULT_PATH) {
   if (cache.has(path)) return cache.get(path);
   let rules = [];
@@ -17,7 +18,8 @@ export function loadSectionRules(path = DEFAULT_PATH) {
       if (!e || !SECTIONS.has(e.section) || seen.has(e.section) || !str(e.rule)) continue;
       if (!Array.isArray(e.checks) || e.checks.length > 3 || !e.checks.every(str)) continue;
       seen.add(e.section);
-      rules.push({ section: e.section, rule: e.rule, checks: [...e.checks] });
+      const beyond = str(e.beyond) && e.beyond.trim().split(/\s+/).length <= 14 ? { beyond: e.beyond } : {};
+      rules.push({ section: e.section, rule: e.rule, checks: [...e.checks], ...beyond });
     }
   } catch {
     rules = [];
