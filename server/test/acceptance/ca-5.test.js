@@ -13,12 +13,12 @@ const rows = Array.isArray(raw) ? raw : raw.sections ?? raw.rules ?? Object.valu
 const row = (s) => rows.find((r) => r.section === s);
 
 const TIPS = [
-  { section: 'meat', rule: 'A local butcher comes first; at the case, choose meat from animals raised on grass and open pasture.', checks: ['Ask what the animal ate and how it lived; a butcher counter can answer.', 'Organs come from the same animal; liver and heart belong in the cart too.', 'On packaged meat, look for an ingredient list of meat, salt, and spices.'] },
-  { section: 'eggs_dairy', rule: 'Eggs and dairy start with how the animal ate and lived: cows on grass, hens on pasture.', checks: ['Read how the animal lived and what it ate before anything else on the label.', 'Dairy needs few ingredients: milk or cream, cultures, salt, and enzymes for cheese.'] },
-  { section: 'produce', rule: 'Choose produce grown organic or unsprayed, and pick it whole and in season.', checks: ['Local and in season comes first; ask the produce staff what that is this week.', 'Frozen fruit and vegetables with nothing added count as whole food too.'] },
-  { section: 'seafood', rule: 'Wild-caught fish ate its natural diet; choose wild first and ask where it was caught.', checks: ['Ask the counter where the fish was caught and how.'] },
+  { section: 'meat', rule: 'Butcher first; at the case, grass-fed and pasture-raised.', checks: ['Ask the butcher what the animal ate and how it lived.', 'Liver and heart count too; add one now and then.', 'Packaged meat: meat, salt and spices, nothing else.'] },
+  { section: 'eggs_dairy', rule: 'Hens on pasture, cows on grass, dairy with few ingredients.', checks: ['Read how the hens lived before anything else.', 'Pick cheese with a short label and nothing added.'] },
+  { section: 'produce', rule: 'Organic on anything you eat the skin of.', checks: ['Buy it whole and in season.', 'Turn berry boxes over; the bottom tells the truth.'] },
+  { section: 'seafood', rule: 'Wild-caught first, and ask where it was caught.', checks: ['Ask the counter where and how the fish was caught.'] },
   { section: 'bulk_pantry', rule: 'Choose packages with a short list of real ingredients and only natural fats: tallow, olive oil, coconut oil.', checks: ['Skip seed oils and avocado oil, whatever the front of the package says.', 'The ingredient line tells more than the front; read it first.'] },
-  { section: 'frozen', rule: 'Frozen food counts as whole when the bag lists the food and nothing else.', checks: ['Frozen meals follow the pantry rule: real ingredients, natural fats only.'] },
+  { section: 'frozen', rule: 'Frozen counts as whole when the bag lists the food and nothing else.', checks: ['Frozen meals follow the pantry rule: real ingredients, natural fats.', 'Pick bags frozen solid, not clumped.'] },
 ];
 const CARDS_ALIGNED = new Set(['meat', 'eggs_dairy']);
 const SOURCES = {
