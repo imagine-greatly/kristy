@@ -43,7 +43,7 @@ const urls = (e) => (e?.sources || []).flatMap((s) => JSON.stringify(s).match(/h
 test('C1 the Beef card', () => {
   const b = now('beef_grassfed_vs_grainfed');
   assert.equal(b.title, 'Beef');
-  assert.equal(b.decision, '100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal.');
+  assert.equal(b.decision, 'You’re looking for grass-finished beef, raised on grass all the way.');
   assert.ok(b.tier_note.includes('“grass-fed” is the producer’s own word unless a certifier’s seal audits it'));
   assert.equal(nonPicksTitled('Beef').length, 1, 'non-pick "Beef" count');
 });

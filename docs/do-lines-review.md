@@ -38,18 +38,18 @@ Also: imperative, starts with a verb, ≤14 words.
 | --- | --- | --- | --- | --- |
 | `salmon_wild_vs_farmed` | seafood | Wild salmon, and frozen wild before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild American shrimp, read by the country of origin printed by law. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
-| `rotisserie_chicken` | meat | Rotisserie chicken with salt and spices, without phosphate or starch. | Read the ingredient list: two words is plain; water second means a solution. | — |
-| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
-| `beef_cuts_basics` | meat | Whole chuck or round, without needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
-| `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then nothing-added ground beef. | Read the label for organ names, each with a percentage beside it. | — |
-| `egg_labels` | eggs_dairy | Eggs with pasture-raised, organic, corn- and soy-free on one carton. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
-| `organic_worth_it_by_type` | produce | Organic produce eaten whole; conventional fruit and vegetables you peel. | Spend the organic money on berries, greens, and apples. | — |
-| `frozen_vs_fresh_produce` | produce | Frozen vegetables, picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
-| `freezing_produce` | produce · home | Briefly scalded vegetables for the freezer; fruit goes in raw. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
-| `produce_seasonality` | produce | In-season produce, picked closer to ripe with less distance to travel. | Read the farmers’ market as the signal for what is in season locally. | — |
-| `washing_produce` | produce · home | Plain cold water for produce, as effective as a produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
-| `baking_soda_soak` | produce · home | Baking soda water for residue that a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
-| `precut_produce_tradeoffs` | produce | Whole produce before pre-cut: cutting starts vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
+| `rotisserie_chicken` | meat | The plain rotisserie chicken is the one to bring home. | Read the ingredient list: two words is plain; water second means a solution. | — |
+| `beef_grassfed_vs_grainfed` | meat | You’re looking for grass-finished beef, raised on grass all the way. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+| `beef_cuts_basics` | meat | Whole chuck or round gives you beef without needles or blades. | Read the name for “mechanically tenderized” before the cut name. | — |
+| `ground_beef_lean_ratio` | meat | A beef organ blend works when you know each organ’s share. | Read the label for organ names, each with a percentage beside it. | — |
+| `egg_labels` | eggs_dairy | For eggs, organic feed and pasture-raised belong on the same carton. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
+| `organic_worth_it_by_type` | produce | Organic makes most sense for produce you’ll eat whole. | Spend the organic money on berries, greens, and apples. | — |
+| `frozen_vs_fresh_produce` | produce | Plain frozen vegetables give you produce held at its picked ripeness. | Read the bag’s ingredient list for one word: the vegetable. | — |
+| `freezing_produce` | produce · home | Vegetables for freezing need a brief scald; fruit can go raw. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
+| `produce_seasonality` | produce | Produce in season reaches you closer to ripe. | Read the farmers’ market as the signal for what is in season locally. | — |
+| `washing_produce` | produce · home | Plain cold water is all your produce needs for washing. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
+| `baking_soda_soak` | produce · home | Baking soda gives thin-skinned fruit a soak beyond a rinse. | Soak the fruit twelve minutes, then rinse it clean. | — |
+| `precut_produce_tradeoffs` | produce | Whole produce gives you more time to use it. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Deepest yellow butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Raw grass-fed whole milk, from a farm or a store shelf. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Block cheese with a short list, real cheese by its front name. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
@@ -71,19 +71,19 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_multigrain_vs_whole_grain` | label_terms | ‘Multigrain’ counts grains; ‘whole grain’ says the bran stayed in. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | ‘Lightly sweetened’ is not defined, so the number is the only answer. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | The claim bans synthetic flavoring but leaves everything else untouched. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
-| `judging_meat_at_the_case` | meat | The meat pack with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
-| `butcher_counter_asking` | meat | Beef soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
-| `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
-| `pork_cuts_and_enhanced` | meat | Plain pork, with no added-solution percentage on its label. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
+| `judging_meat_at_the_case` | meat | Your meat pick starts with the newest “packaged on” date. | Check the package is sealed and not leaking juices, then smell it. | — |
+| `butcher_counter_asking` | meat | The butcher can grind a whole beef chuck just for you. | Ask what came in today and when it was cut. | — |
+| `chicken_cuts_basics` | meat | Air-chilled whole chicken gives you thighs, breast and bones for stock. | Take the pack with the skin still on. It bastes itself. | — |
+| `pork_cuts_and_enhanced` | meat | Plain pork is the one without an injected solution. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
 | `deli_meat_uncured` | meat | ‘Uncured’ meat is cured, using celery powder instead of added nitrite. | Ask the counter to slice whole roasted meat thin instead. | — |
 | `mercury_by_fish` | seafood | Sardines, salmon and skipjack are small fish that live short lives. | Check the species name on the case tag. Size predicts the mercury. | — |
 | `canned_fish_choosing` | seafood | Tinned fish in olive oil or water, bones and skin left in. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
 | `farmed_fish_by_species` | seafood | Farmed trout, char and shellfish are worth buying without hesitation. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
 | `seafood_certifications` | seafood | MSC is the wild-catch seal worth trusting; farm seals set a minimum. | Check the badge names a program you can look up. Unnamed is marketing. | — |
-| `produce_ripeness_by_item` | produce | The heavier of two same-size pieces of fruit for more juice. | Smell the stem end on anything that ripens after picking. | — |
-| `berries_picking` | produce | Organic berries in a cold carton with a dry, clean underside. | Flip the container and check for juice stains or fuzz. | — |
-| `produce_storage` | produce · home | Unwashed produce for storing; wash it when you use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
-| `revive_greens` | produce · home | Limp greens without decay, ready for a cold-water soak. | Trim the stem ends and stand them in ice water thirty minutes. | — |
+| `produce_ripeness_by_item` | produce | The fruit that feels heavier for its size usually has more juice. | Smell the stem end on anything that ripens after picking. | — |
+| `berries_picking` | produce | Organic berries should be ready to eat today. | Flip the container and check for juice stains or fuzz. | — |
+| `produce_storage` | produce · home | Unwashed produce will keep better until you’re ready to use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
+| `revive_greens` | produce · home | Limp greens can perk up, as long as there’s no decay. | Trim the stem ends and stand them in ice water thirty minutes. | — |
 | `cream_vs_creamer` | eggs_dairy | Half-and-half is milk and cream; non-dairy creamer is oil and sugar. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Whole wheat flour first; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Dry staples keep well in bulk; anything oily turns rancid first. | Choose the full, busy bins over a dusty half-empty one. | — |
@@ -103,26 +103,26 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_artificial_color` | label_terms | “Artificial color” is a category, not a color. Titanium dioxide qualifies. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | Kefir is milk fermented with live grains, and worth buying plain. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Raw-milk cheese aged past sixty days, its maker and herd named. | Read the rind label for an age in months. | — |
-| `sprouts_raw` | produce | Cold-case sprouts; warm, damp growing conditions also suit bacteria. | Check the roots are still white and the clamshell is not fogged. | — |
-| `produce_root_vegetables` | produce | Firm organic potatoes, conventional carrots, with nothing soft or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
-| `produce_brassicas` | produce | Conventional cabbage and cauliflower with tight heads and no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
-| `produce_onions_garlic` | produce | Conventional onions and garlic: firm, dry, papery skins, no sprouts or mold. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
-| `produce_leafy_greens` | produce | Crisp organic greens, evenly colored, without wilt or yellowing. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
-| `produce_peppers` | produce | Firm organic peppers, evenly colored, without cracks or soft spots. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
-| `produce_apples_pears` | produce | Unbruised organic apples and pears, with no spoiled fruit alongside. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
-| `produce_citrus` | produce | Firm, smooth conventional citrus; organic for zest, without drying or shriveling. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
-| `produce_stone_fruit` | produce | Unbruised organic peaches, plums, nectarines and cherries, with fully turned color. | Look the fruit over for bruises or damage and skip any that shows one. | — |
-| `produce_mushrooms` | produce | Dry, firm conventional mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
-| `produce_green_beans` | produce | Smooth, crisp, slender organic beans, without bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
-| `produce_bananas` | produce | Green bananas to finish ripening on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
-| `egg_duck_quail` | eggs_dairy | Clean, cold duck and quail eggs; cook white and yolk solid. | Check that each shell is clean and uncracked before the carton goes in. | — |
+| `sprouts_raw` | produce | Your sprouts belong in a cold clamshell with crisp stems. | Check the roots are still white and the clamshell is not fogged. | — |
+| `produce_root_vegetables` | produce | Organic potatoes and conventional carrots should feel solid in your hand. | Press each root for firmness, and twist the tops off carrots before storing. | — |
+| `produce_brassicas` | produce | Tight heads are your cue for conventional cabbage and cauliflower. | Check for closed, dark green florets, then press the head for soft spots. | — |
+| `produce_onions_garlic` | produce | Conventional onions and garlic should feel firm in your hand. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
+| `produce_leafy_greens` | produce | Organic greens with leaves that stand crisp are the ones. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
+| `produce_peppers` | produce | Organic peppers should feel firm beneath your fingers. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
+| `produce_apples_pears` | produce | Sound organic apples and pears are the fruit to take home. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
+| `produce_citrus` | produce | Conventional citrus works here; organic is the pick when you’ll use zest. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
+| `produce_stone_fruit` | produce | For organic peaches and plums, let the background color guide you. | Look the fruit over for bruises or damage and skip any that shows one. | — |
+| `produce_mushrooms` | produce | Dry, firm conventional mushrooms are your starting point. | Check each cap and leave any that feels damp or soft. | — |
+| `produce_green_beans` | produce | Young organic green beans feel crisp, with the seeds still flat. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
+| `produce_bananas` | produce | A green bunch of bananas can ripen along with your week. | Take a bunch that is still green and keep it out of the fridge. | — |
+| `egg_duck_quail` | eggs_dairy | Duck and quail eggs should come from the refrigerated case. | Check that each shell is clean and uncracked before the carton goes in. | — |
 
-| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread, with the grain’s bran and germ intact. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
-| `sourdough` | bulk_pantry | Sourdough raised with a starter of wild yeast and bacteria. | Ask the baker what leavens the dough; check for culture or starter. | — |
-| `bagels` | bulk_pantry | Bagels boiled before the oven, with their ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
-| `tortillas` | bulk_pantry | Corn tortillas made with lime-treated corn, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
-| `turkey_whole` | meat | Plain whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
-| `ground_turkey` | meat | Plain ground turkey, with ingredients and fat content on the label. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
+| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread keeps the whole grain in your loaf. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
+| `sourdough` | bulk_pantry | Sourdough should get its rise from a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
+| `bagels` | bulk_pantry | Your bagel should have a boil before it reaches the oven. | Ask the baker about a water bath before the dough reaches the oven. | — |
+| `tortillas` | bulk_pantry | Corn tortillas made from masa are the ones to reach for. | Check for masa or masa harina, then read for added wheat and fat. | — |
+| `turkey_whole` | meat | A plain whole turkey gives you a bird with nothing added. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
+| `ground_turkey` | meat | Plain ground turkey lets you choose the fat content yourself. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
 | `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Dry pasta made from durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Oat milk with few stabilizers in the ingredients, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
@@ -130,14 +130,14 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bacon` | meat | Bacon with the shortest label list: pork, salt and its named curing agents. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, including skipjack, has less mercury than albacore. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
-| `chicken_breast` | meat | Plain bone-in, skin-on breast before boneless skinless; no added solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+| `chicken_breast` | meat | Chicken breast cooks better with its bone and skin still on. | Read the front for any added liquid percentage, then check the ingredients. | — |
 | `ham` | meat | Ham named just “Ham” first, then “Ham With Natural Juices.” | Read the product name for “Water Added” or “Ham and Water Product”. | — |
 | `turkey_bacon` | meat | Turkey bacon with the fewest ingredients after the turkey. | Read the small print under the name for the meat cuts used. | — |
 | `cured_pork` | meat | Cured pork, guanciale included, with its cut named and a short curing list. | Find the asterisk beside “uncured” and read what it points to. | — |
-| `lamb_goat` | meat | Lamb or goat labeled 100% grass-fed or grass-finished. | Press goat for firm, fine-grained flesh and white fat. | — |
-| `organ_meats` | meat | Organ meats for cooking within one to two days. | Check the use-by date against the night it will be cooked. | — |
-| `bison` | meat | Bison with 100% grass-fed or grass-finished labeling and an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
-| `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
+| `lamb_goat` | meat | Your lamb or goat should be 100% grass-fed or grass-finished. | Press goat for firm, fine-grained flesh and white fat. | — |
+| `organ_meats` | meat | Organ meats are for cooking in the next day or two. | Check the use-by date against the night it will be cooked. | — |
+| `bison` | meat | For bison, you’re looking for 100% grass-fed or grass-finished. | Find the triangle inspection seal or a state mark on the package. | — |
+| `venison_game` | meat | For venison, start with a processor who keeps everything refrigerated. | Ask whether each animal was handled separately and kept cold throughout. | — |
 | `white_fish` | seafood | White fish chosen by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
 | `crab` | seafood | Live crab that moves, or cooked crab with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
 | `lobster` | seafood | A live lobster that moves, or frozen tails that are hard-frozen. | Ask the counter to lift the lobster and check the tail curls under. | — |
@@ -145,14 +145,14 @@ Also: imperative, starts with a verb, ≤14 words.
 | `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Ask to see the shellfish tag, then tap any open shell. | — |
 | `smoked_salmon` | seafood | Smoked salmon kept cold, read by its label word. | Read the label for nova, lox or kippered, then keep it refrigerated. | — |
 | `seafood_counter` | seafood | Clean, briny smell and springy flesh; ask whether it was previously frozen. | Ask the counter for the species name, then check the fish sits on ice. | — |
-| `sprouted_grain_bread` | bulk_pantry | Sprouted whole grains first in your bread, without added flour. | Read the first few ingredients, then check the rest for added flour. | — |
+| `sprouted_grain_bread` | bulk_pantry | Sprouted whole grain bread gives you a denser, heavier loaf. | Read the first few ingredients, then check the rest for added flour. | — |
 | `sprouted_grains` | bulk_pantry | Sprouted grain labeled sprouted whole grain; no regulated definition exists. | Check the label names the grain as whole, not only its process. | — |
 | `specialty_flours` | bulk_pantry | Specialty flour labeled whole grain; stoneground alone does not promise it. | Read the flour name for “whole”, then check the fat line. | — |
-| `gluten_free_bread` | bulk_pantry | Gluten-free labeled bread, with its flours and binder checked. | Find the claim on the bag, then read the ingredient list and the gum. | — |
+| `gluten_free_bread` | bulk_pantry | For gluten-free bread, start with the claim on the package. | Find the claim on the bag, then read the ingredient list and the gum. | — |
 | `buns_rolls` | bulk_pantry | Buns and rolls named whole wheat, which rules out white flour. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
 | `pastries_muffins` | bulk_pantry | Pastry made with butter, named on the label or by the baker. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
 | `muesli` | bulk_pantry | Muesli with no added sugar listed; granola is the baked, sweetened version. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
-| `bread_aisle` | bulk_pantry | Your chosen bread type, with “whole” in the first flour. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
+| `bread_aisle` | bulk_pantry | Your usual bread type is the starting point for whole grain. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
 | `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
 | `sour_cream` | eggs_dairy | Sour cream made from cream soured by bacteria, nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
 | `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat, no stabilizers. | Read the ingredients for a culture, then count the stabilizers after it. | — |
@@ -238,15 +238,15 @@ named, plus four more the same question surfaced.
 | --- | --- | --- |
 | `flour_basics` | **DRIFTED (redrafted)** | Served the verdict but restated it — the headline already says "Unbleached", so "Read for 'unbleached'" spent the line on a word the shopper had. Now serves the verdict's second half, which nothing else said. |
 | `oats_steelcut_rolled_instant` | **DRIFTED (redrafted)** | Worse than drift: the headline says "any form" and the line said "steel-cut if you have twenty minutes", arguing against its own verdict. The sharp half — skip the flavored packets — went unserved. |
-| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | The headline consumed all three sensory acts, so the line moved to "take it from the back of the case" — a temperature act, not a judging act, and the entry's least central tip. Now gives the press test its actual criterion. |
+| `judging_meat_at_the_case` | **DRIFTED (redrafted)** | Your meat pick starts with the newest “packaged on” date. |
 | `yogurt_plain_vs_flavored` | SERVES (rephrased) | Verifying the list is milk and cultures is exactly how you confirm "plain". Kept; only the construction changed, because it collided with `cheese_real_vs_processed`. |
-| `sprouts_raw` | SERVES | "Cold and crisp" made observable as white roots and an unfogged clamshell. Straight from tips 2 and 3. |
+| `sprouts_raw` | SERVES | Your sprouts belong in a cold clamshell with crisp stems. |
 | `label_no_added_hormones` | SERVES | Operationalizes the meaningful half of the verdict. Left alone, though it is the seventh "find the seal" line in the corpus — see below. |
 | `label_organic_scope` | **DRIFTED (redrafted)** | The line was about seal tiers — the 70% rule, which is `label_nonGMO_vs_organic`'s subject. The verdict's actionable half is "read the panel anyway", which nothing served. |
-| `chicken_cuts_basics` | **DRIFTED (redrafted)** | Not in the named eight. Its line was about retained water, which is `air_chilled_chicken`'s whole subject, and near-duplicated that card's line. Its own verdict — bone-in thighs — went unserved. |
+| `chicken_cuts_basics` | **DRIFTED (redrafted)** | Air-chilled whole chicken gives you thighs, breast and bones for stock. |
 | `yogurt_live_cultures` | **RESOLVED 2026-08-02** | Was: "its line is about added sugars, which is `yogurt_plain_vs_flavored`'s verdict, and its own observable sits in its headline — a `RULING4` case; the fix is a headline edit, not a redraft." That was the right diagnosis and it is now done. The headline leads with the TRAP as verdict ("Buy it alive. Heat-treated after culturing is a dead ferment"), the observable moved down to the do line, and the added-sugar content went back to the card that owns it. The two cards were the overlap audit's one genuine SPLIT DIFFERENTLY: same tub, two checks, and one of them was being made twice. |
-| `washing_produce` | **DRIFTED (redrafted)** | Not in the named eight. Its `do` line was almost word-for-word `produce_storage`'s headline — one card's action was the neighbor's verdict. Redrafted onto its own (water-and-hands) verdict. |
-| `pork_cuts_and_enhanced` | SERVES (rephrased) | On-verdict, but shares the headline-holds-the-observable shape and duplicated `air_chilled_chicken`'s closing clause. Construction changed only. |
+| `washing_produce` | **DRIFTED (redrafted)** | Plain cold water is all your produce needs for washing. |
+| `pork_cuts_and_enhanced` | SERVES (rephrased) | Plain pork is the one without an injected solution. |
 
 The pattern the handoff predicted holds and is sharper than expected: **every drifted line
 is a card whose headline already carried the observable.** With nothing left to say, the
@@ -357,7 +357,7 @@ supported (claim lock). Three narrowed:
 
 | slug | verdict | reasoning |
 | --- | --- | --- |
-| `produce_seasonality` | **NARROWED** | "Walk the farmers’-market table before the produce aisle" instructed a shopping trip the entry does not support. Narrowed to what the entry does support: reading the market as a season signal. |
+| `produce_seasonality` | **NARROWED** | Produce in season reaches you closer to ripe. |
 | `egg_shell_color` | **NARROWED** | "Open the carton and check every egg for cracks" is a physical act the entry never claims is diagnostic — the entry's subject is feed, not damage. Narrowed to the feed words the entry supports, with the yolk-photo miscue named directly. |
 | `deli_meat_uncured` | **NARROWED** | "a whole roasted turkey breast" named a species the entry never restricts to. Narrowed to "whole roasted meat", which the entry supports. |
 

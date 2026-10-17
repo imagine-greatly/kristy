@@ -36,7 +36,7 @@ const fresh = (id) => { const old = new Set(copy(was(id))); return copy(now(id))
 const MILK_ID = 'whole_vs_reduced_fat_milk';
 const YOG_ID = 'yogurt_plain_vs_flavored';
 const EGG = {
-  decision: 'Eggs with pasture-raised, organic, corn- and soy-free on one carton.',
+  decision: 'For eggs, organic feed and pasture-raised belong on the same carton.',
   tier_note: 'Corn- and soy-free means neither is in the hens’ feed; “soy-free” alone can still mean corn.',
   instead: 'Soy-free, organic, and pasture-raised, then organic and pasture-raised; each keeps pasture and organic feed.',
   cart_pick: 'Pasture-raised organic corn- and soy-free eggs',
@@ -108,10 +108,10 @@ const OTHERS = {
     tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
     instead: 'Vat or low-temp pasteurized whole milk: gently heated, and the next rung down from raw.',
   },
-  egg_duck_quail: { decision: "Clean, cold duck and quail eggs; cook white and yolk solid.", why: "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.", kristy_take: "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.", instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
+  egg_duck_quail: { buying_tips: ["Open this carton for a look at the shells: clean and uncracked. Plan to cook both white and yolk solid.","Buy from a refrigerated case and keep them cold at home.","Plan a longer cooking time for duck eggs, which are larger than hen’s eggs.","Open the carton and check that every shell is clean and uncracked."], decision: "Duck and quail eggs should come from the refrigerated case.", why: "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.", kristy_take: "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.", instead: 'Pasture-raised organic hen’s eggs from the refrigerated case, with clean, uncracked shells.' },
   ghee: { instead: 'Plain butter, the same dairy fat before the water and milk solids come out.' },
   grassfed_butter: BUTTER,
-  pick_egg_whites: { decision: "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella." },
+  pick_egg_whites: { decision: "Carton egg whites come pasteurized or otherwise treated to destroy Salmonella." },
 };
 const CHANGED = ['egg_labels', MILK_ID, YOG_ID, 'raw_milk', 'egg_duck_quail', 'ghee', 'grassfed_butter'];
 const MINE = new Set([...CHANGED, 'pick_egg_whites']);
@@ -137,7 +137,7 @@ test('C1 the Eggs card carries the worked example', () => {
   assert.deepEqual(e.watch_out, EGG_WATCH_ORDER.map((i) => b.watch_out[i]));
   assert.deepEqual(e.labels_decoded, [...b.labels_decoded, EGG_LABEL]);
   assert.ok(b.buying_tips.includes(EGG_OLD_CHEAP) && b.science.includes(EGG_OLD_CHEAP) && b.detail.includes(EGG_DETAIL_OLD), 'HEAD strings moved; spec is stale');
-  assert.deepEqual(e.buying_tips, b.buying_tips.map((s) => (s === EGG_OLD_CHEAP ? EGG_CHEAP : s)));
+  assert.deepEqual(e.buying_tips, ["On one carton, you want pasture-raised, organic, corn-free and soy-free. The feed words tell you what went into the hens’ trough.","Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.","‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.","Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.","Plain conventional eggs are still one of the lowest-cost animal foods in the store.","Shell color is the breed. White and brown are the same egg inside.","Speckles and small rough patches are normal shell variation.","Find the three-digit pack date beside the plant code. Closer to today is fresher.","Open the carton and check for cracks and leaks before it goes in the cart.","Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.","A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe.","AA vs A is firmness of the white. Freshness matters more than either.","Organic requires organic feed, usually organic soy and corn. Not a different kind of feed.","Keep them in the carton. It slows moisture loss and keeps odors out.","Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good, not back and forth.","‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration."]);
   assert.ok(b.science.includes(EGG_SCIENCE_OLD), 'HEAD vegetarian-fed science moved');
   assert.equal(e.science, b.science.replace(EGG_OLD_CHEAP, EGG_CHEAP).replace(EGG_SCIENCE_OLD, EGG_SCIENCE_NEW));
   assert.equal(e.detail, b.detail.replace(EGG_DETAIL_OLD, EGG_DETAIL_NEW));
@@ -213,7 +213,7 @@ for (const id of CHANGED) test(`C6 ${id}: pass rule and every card lint are clea
 });
 
 test('C6 pick_egg_whites: unchanged and pick-lint clean', () => {
-  assert.deepEqual(now('pick_egg_whites'), { ...was('pick_egg_whites'), decision: "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella." });
+  assert.deepEqual(now('pick_egg_whites'), { ...was('pick_egg_whites'), decision: "Carton egg whites come pasteurized or otherwise treated to destroy Salmonella." });
   assert.deepEqual(lint.lintPick(now('pick_egg_whites')), []);
 });
 
