@@ -40,7 +40,7 @@ const CLAIM = /healthier|healthiest|better for you|lowers|exposure|protein|calor
 const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
 
 const LEAN = {
-  decision: 'A beef organ blend works when you know each organ’s share.',
+  decision: 'Organ blend with each organ’s percentage first, then nothing-added ground beef.',
   tier_note: 'Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.',
   instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
   cart_pick: 'Liver and heart beef blend, shares stated',
@@ -54,15 +54,13 @@ const D6_SENTENCE = 'Two label examples: one blend states 8 percent organ meats 
 // Step 1c: the named fields per card; every other field stays as at 8b49633.
 const SPEC_1C = {
   beef_cuts_basics: {
-    buying_tips: ["The name tells you whether needles or blades went through it: look for “mechanically”, “needle” or “blade” tenderized.","Loin and rib sit along the back and do little work.","Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.","Ground chuck runs around 80/20 lean to fat.","Prime, Choice, Select is a marbling scale, top to bottom.","Grading is voluntary. Ungraded is not a downgrade.","Grade and sourcing are separate questions. Neither answers the other.","Chuck is shoulder and round is rear leg: the working muscles."],
-    decision: "Whole chuck or round gives you beef without needles or blades.",
+    decision: "Whole chuck or round, without needles or blades pushed through.",
     why: "Chuck is shoulder and round is rear leg: both are working muscles, sold whole.",
     kristy_take: "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
     instead: 'Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name.',
   },
   organ_meats: {
-    buying_tips: ["Tell the butcher how you’ll cook them: liver can be pan-fried, while heart and tongue suit cooking in liquid.","Ask the counter or a farmer which organs they offer.","Match the organ to the method, with heart and tongue braised.","Buy organ meats for a cook within one to two days."],
-    decision: "Organ meats are for cooking in the next day or two.",
+    decision: "Organ meats for cooking within one to two days.",
     why: "Heart and tongue suit cooking in liquid. Liver can be pan-fried; tripe needs a braise to turn tender.",
     kristy_take: "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
     tier_note: 'Organ meats keep a shorter time in the refrigerator than steaks and roasts.',
@@ -70,8 +68,7 @@ const SPEC_1C = {
     pick_steps: ['Ask the counter or a farmer which organs they offer.', 'How it was raised: see Beef.', 'Match each organ to its method; heart and tongue go in liquid.'],
   },
   judging_meat_at_the_case: {
-    buying_tips: ["Feel the pack and notice any smell: slime or an off smell means leave it. Purple vacuum-packed beef alone isn’t spoilage.","The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.","Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.","Take it from the back of the case where it is coldest, and get it home cold.","Read the primal cut on the label, such as chuck or round.","Check the use-by date, and freeze what will not be used in time.","Skip any package that smells off or feels slimy.","Not slimy, and no off smell. Both, not either."],
-    decision: "Your meat pick starts with the newest “packaged on” date.",
+    decision: "The meat pack with the newest ‘packaged on’ date.",
     why: "Oxygen turns a cut steak cherry-red; a vacuum-packed roast stays purple. Color alone cannot tell you freshness.",
     kristy_take: "Choose a sealed pack without leaks, then smell the meat at home. No off smell or slime: those checks tell you more than the store’s sticker.",
     tier_note: 'Fresh tray-wrapped meat keeps up to three days refrigerated after packaging, so that date sets the clock.',
@@ -79,8 +76,7 @@ const SPEC_1C = {
     pick_steps: ['‘Packaged on’: the packing day, not a safety cutoff.', 'Take a sealed, leak-free package from the back, where the case is coldest.'],
   },
   butcher_counter_asking: {
-    buying_tips: ["Ask what arrived today, and about soup bones while you’re there. The counter can tell you when the meat was cut.","Ask for a whole chuck ground fresh, which lets you choose the cut.","Ask the sourcing question outright: how it was raised and where from.","Ask for bones and trim. Often cheap or free.","Ask them to portion it. Cutting, tying and boning are usually included.","Ask what came in today."],
-    decision: "The butcher can grind a whole beef chuck just for you.",
+    decision: "Beef soup bones and a whole chuck, freshly ground.",
     why: "A whole chuck ground at the counter lets you choose the cut. The butcher can tell you when it was cut.",
     kristy_take: "Start with what came in today, then how it was raised and what was added. Bones, trim and portioning are worth asking for while you are at the counter.",
     tier_note: 'Soup bones come from the counter, and a whole chuck ground fresh lets the shopper choose the cut.',
@@ -89,8 +85,7 @@ const SPEC_1C = {
     pick_steps: ['Soup bones: ask for marrow or knuckle bones.', 'How it was raised: see Beef.', 'Ask them to portion it; cutting, tying and boning are usually included.'],
   },
   bison: {
-    buying_tips: ["The triangle “U.S. Inspected and Passed” seal or a state mark tells you it was inspected. Expect deeper red than beef.","Expect a deeper red than beef, since bison has no marbling.","Cook or freeze ground bison within 2 days, steaks within 3 to 5.","Bag the package separately to contain any leaks.","Look for the triangle “U.S. Inspected and Passed” seal or a state mark."],
-    decision: "For bison, you’re looking for 100% grass-fed or grass-finished.",
+    decision: "Bison with 100% grass-fed or grass-finished labeling and an inspection mark.",
     why: "Bison is a bovine meat with no marbling, so expect a deeper red than beef. High heat can turn it tough.",
     kristy_take: "Find a federal or state inspection mark, then follow beef’s keeping and cooking rules. Ground bison should be cooked or frozen within 2 days.",
     tier_note: 'Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it.',
@@ -98,16 +93,14 @@ const SPEC_1C = {
     cart_pick: '100% grass-fed or grass-finished bison',
   },
   venison_game: {
-    buying_tips: ["Ask whether each animal is handled individually, and look for meat without bruises or debris; trim the fat before cooking.","Choose a processor with fully refrigerated facilities.","Use unfrozen venison within two or three days.","Ask whether the processor handles each animal individually."],
-    decision: "For venison, start with a processor who keeps everything refrigerated.",
+    decision: "Fat-trimmed venison from a fully refrigerated processor.",
     why: "Game often comes through small shops. Cold handling at the processor decides its safety.",
     kristy_take: "Plan a meal within two or three days of bringing unfrozen venison home. Trim the fat and cook whole cuts to 145°F, ground game to 160°F.",
     tier_note: 'Game is often processed by small shops, so cold handling at every step decides its safety.',
     instead: 'Wrapped frozen venison from the same refrigerated processor; it keeps 9 to 12 months frozen.',
   },
   lamb_goat: {
-    buying_tips: ["Look closely at the goat meat: firm, fine-grained flesh with white fat. There are no goat quality grades to guide you.","Pick lamb that is fine textured and firm, with white marbling.","Read the primal cut on the label, such as shoulder or leg.","Pick goat with firm, fine-grained flesh and well-distributed white fat."],
-    decision: "Your lamb or goat should be 100% grass-fed or grass-finished.",
+    decision: "Lamb or goat labeled 100% grass-fed or grass-finished.",
     why: "For goat, look at the flesh: firm and fine-grained with white fat. There are no goat quality grades to guide you.",
     kristy_take: "Lamb grading is voluntary and takes age into account. Check for firm, fine-textured meat with white marbling, and read the cut name, such as shoulder or leg.",
     tier_note: 'Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it.',
@@ -115,8 +108,8 @@ const SPEC_1C = {
     cart_pick: '100% grass-fed or grass-finished lamb',
   },
   pick_soup_bones: {
-    decision: "Your butcher can point you to marrow or knuckle soup bones.",
-    decision: 'Your butcher can point you to marrow or knuckle soup bones.',
+    decision: "Ask your meat counter for marrow or knuckle soup bones.",
+    decision: 'Ask your meat counter for marrow or knuckle soup bones.',
   },
 };
 // Step 1c cards with a do row: the do line stays as it was.
@@ -141,7 +134,7 @@ test('C2 Ground beef additive fields hold every fold fact', () => {
   const old = pre('ground_beef_lean_ratio');
   const fold = pre('ground_beef_organ_blend');
   assert.deepEqual(e.watch_out, [...old.watch_out, ...fold.watch_out]);
-  assert.deepEqual(e.buying_tips, ["Check the printed percentages for liver and heart; they tell you how much organ is folded into the grind.","Read the ingredient list: beef, with seasoning at most, no water or phosphates.","‘Ground chuck/round/sirloin’ tells you the cut it came from.","The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.","Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may."]);
+  assert.deepEqual(e.buying_tips, [...old.buying_tips, 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.']);
   const label = (t) => (e.labels_decoded || []).find((l) => l.term === t);
   assert.equal(label('80/20, 85/15, 90/10').meaning, 'Lean % to fat % by weight; higher first number = leaner.');
   assert.equal(label('Organ blend').meaning, 'Beef with liver, heart, or other organs mixed in, sold under its own descriptive name, not as ‘ground beef’.');
@@ -166,7 +159,7 @@ test('C3 the organ-blend fold is complete and the pass rule holds', (t) => {
 
 test('C4 the Beef front carries G1 and drops the grain-finish line', () => {
   const b = now('beef_grassfed_vs_grainfed');
-  assert.equal(b.decision, 'You’re looking for grass-finished beef, raised on grass all the way.');
+  assert.equal(b.decision, '100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal.');
   assert.equal(b.cart_pick, '100% grass-fed or grass-finished ground beef');
   assert.equal(b.kristy_take, 'Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for whole-life words backed by a seal.');
   assert.ok(b.tier_note.includes(G1), 'beef tier_note lacks the G1 gloss');

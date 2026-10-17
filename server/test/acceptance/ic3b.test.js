@@ -40,7 +40,7 @@ test('C1 Produce hub', () => {
   const o = now('organic_worth_it_by_type');
   assert.equal(o.title, 'Produce');
   // W2 leaves the section's skin wording in the section and preserves this answer.
-  assert.equal(o.decision, 'Organic makes most sense for produce you’ll eat whole.');
+  assert.equal(o.decision, 'Organic produce eaten whole; conventional fruit and vegetables you peel.');
   for (const a of ['banana', 'bananas']) {
     assert.ok(!o.aliases.includes(a), `hub still carries ${a}`);
     assert.ok(now('produce_bananas').aliases.includes(a), `produce_bananas lacks ${a}`);
@@ -51,7 +51,7 @@ test('C2 produce_bananas shape', () => {
   const b = now('produce_bananas');
   assert.ok(b, 'produce_bananas missing');
   assert.equal(b.title, 'Bananas');
-  assert.equal(b.decision, 'A green bunch of bananas can ripen along with your week.');
+  assert.equal(b.decision, 'Green bananas to finish ripening on your counter.');
   assert.equal(pre('produce_bananas'), undefined, 'the card is new');
   assert.deepEqual(Object.keys(b).sort(), [...new Set([...Object.keys(now('produce_mushrooms')), 'asked_as'])].sort());
   nonEmpty(b.asked_as, 'banana asked_as', 3);

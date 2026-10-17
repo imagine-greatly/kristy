@@ -38,7 +38,7 @@ test('C0 prerequisite folds ran', () => {
 test('C1 the Eggs card', () => {
   const e = now('egg_labels');
   assert.equal(e.title, 'Eggs');
-  assert.equal(e.decision, 'For eggs, organic feed and pasture-raised belong on the same carton.');
+  assert.equal(e.decision, 'Eggs with pasture-raised, organic, corn- and soy-free on one carton.');
   assert.match(e.tier_note, /feed|ate/i);
   assert.match(text(e, SPOKEN), /\bboth\b[^.]*soy[- ]free[^.]*corn[- ]free|\bboth\b[^.]*corn[- ]free[^.]*soy[- ]free/i, 'both-printed fact lost');
   assert.equal(nonPicksTitled('Eggs').length, 1, 'non-pick "Eggs" count');
