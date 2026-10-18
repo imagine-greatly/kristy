@@ -1,0 +1,238 @@
+TAP version 13
+# Subtest: C1 rBST and organic named
+not ok 1 - C1 rBST and organic named
+  ---
+  duration_ms: 0.926875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDairy.test.js:33:1'
+  failureType: 'testCodeFailure'
+  error: 'whole_vs_reduced_fat_milk rBST'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Milk 
+     Should I buy whole or low-fat milk? 
+     Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. 
+     Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed. 
+     Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F. 
+     Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed. 
+     kristys_standard 
+     Whole milk, every time. Fewer steps between the cow and the carton. 
+     100% grass-fed low-temp pasteurized whole milk 
+     Every bit of heat changes milk; 100% grass-fed means grass and hay, never grain. 
+     Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent. 
+     Grass-fed and pasture milk is a further layer, and a separate question from the fat. 
+     Cream-top means non-homogenized. The cream line is the visible version of fewer steps. 
+     The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you. 
+     Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal. 
+     A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change. 
+     ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. 
+     Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt. 
+     ‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it. 
+     Non-homogenized is still pasteurized. Two different processes. 
+     The shortest date on the shelf usually means the least processing, not worse milk. 
+     Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one. 
+     Ultra-pasteurized whole milk is still a further step. A date months out is the tell. 
+     “Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it. 
+     ‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water. 
+     Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question. 
+     The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived. 
+     Easier to digest is the most promising claim and still the unproven one. The extension line says the digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more. 
+     Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins. Still, a Holstein herd can be more than half A2A2. An A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed. 
+     Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps, and the extension line says exactly that. 
+     Non-homogenized is not raw. It is still pasteurized; only the fat was left alone. 
+     Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills. 
+     Raw means unpasteurized: milk that skipped the heat step. 
+     Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed. 
+     100% grass-fed on milk means the cows ate grass and hay, never grain. 
+     Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat. 
+     Reduced-fat (2%) / low-fat (1%) / skim 
+     Progressively more milk fat removed. 
+     A2 
+     The herd was tested and carries only the A2 beta-casein variant. A breed-genetics claim, not a welfare or processing one. 
+     Pasteurized 
+     Briefly heated to kill pathogens. The standard process. 
+     Ultra-pasteurized / UHT 
+     Much hotter for a shorter time. Long shelf life, changed flavor, resists culturing. 
+     Homogenized 
+     Fat broken into droplets so cream never rises. Not a heat process. 
+     Cream-top / non-homogenized 
+     Cream separates and rises. Still pasteurized. 
+     Vat pasteurized 
+     Held at 145°F for 30 minutes; also printed as low-temperature pasteurized. 
+     Ultra-pasteurized 
+     Heated to about 280°F for about 2 seconds. 
+     Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds. 
+     Whole vs. reduced 
+     If you can’t get raw: low-temp pasteurized, organic, 100% grass-fed whole milk.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDairy.test.js:36:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 carrageenan named with the list to read
+not ok 2 - C2 carrageenan named with the list to read
+  ---
+  duration_ms: 0.208875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDairy.test.js:41:1'
+  failureType: 'testCodeFailure'
+  error: 'ice_cream carrageenan'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Ice cream 
+     How do you tell real ice cream from a lookalike? 
+     A carton named “ice cream”, with no added oils listed. 
+     The name “ice cream” needs at least 10 percent milkfat. Short of that, the carton says “frozen dairy dessert”. 
+     The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat. 
+     Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil. 
+     established 
+     The words on the carton settle it. “Frozen dairy dessert” is the name for what falls short. 
+     A carton named “ice cream” 
+     The name ice cream needs 10 percent milkfat and no oils beyond incidental amounts. 
+     Read the name on the carton, not the picture. 
+     Look for “frozen dairy dessert” in the small print. 
+     Read the ingredients for oils such as coconut or palm oil. 
+     “Frozen dairy dessert” means the carton missed the ice cream standard. 
+     Read the name on the carton, not the picture. 
+     “Frozen dairy dessert” in the small print means it missed the ice cream standard. 
+     Read the ingredients for oils such as coconut or palm oil. 
+     The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. A product short of the standard is sold as “frozen dairy dessert”, with more air and less milk fat. It may list oils such as coconut, palm or soybean oil. 
+     Ice cream 
+     At least 10 percent milkfat and 4.5 pounds to the gallon. 
+     Frozen dairy dessert 
+     A frozen dessert that does not meet the ice cream standard. 
+     Frozen custard 
+     Ice cream made with 1.4 percent egg yolk solids. 
+     FDA defines the ice cream name, so the print on the carton decides. 
+     If you can’t get ice cream with no added oils: frozen custard.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDairy.test.js:44:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 grass-fed never stands in for the rBST rung
+ok 3 - C3 grass-fed never stands in for the rBST rung
+  ---
+  duration_ms: 0.540792
+  type: 'test'
+  ...
+# Subtest: C4 sources come from the concern archive
+not ok 4 - C4 sources come from the concern archive
+  ---
+  duration_ms: 0.237416
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDairy.test.js:55:1'
+  failureType: 'testCodeFailure'
+  error: 'whole_vs_reduced_fat_milk cites no concern-archive url'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDairy.test.js:60:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 no treatment or mechanism claims, no first person
+not ok 5 - C5 no treatment or mechanism claims, no first person
+  ---
+  duration_ms: 0.313833
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDairy.test.js:65:1'
+  failureType: 'testCodeFailure'
+  error: 'whole_vs_reduced_fat_milk first person'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Milk 
+     Should I buy whole or low-fat milk? 
+     Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. 
+     Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed. 
+     Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F. 
+     Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Dairy fat is an area of honest debate, so whole milk is a whole-food-standard pick rather than a finding. What is not debated is the handling: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard. The old blanket advice to always choose low-fat dairy has softened, and the research on dairy fat is genuinely mixed. 
+     kristys_standard 
+     Whole milk, every time. Fewer steps between the cow and the carton. 
+     100% grass-fed low-temp pasteurized whole milk 
+     Every bit of heat changes milk; 100% grass-fed means grass and hay, never grain. 
+     Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent. 
+     Grass-fed and pasture milk is a further layer, and a separate question from the fat. 
+     Cream-top means non-homogenized. The cream line is the visible version of fewer steps. 
+     The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you. 
+     Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal. 
+     A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change. 
+     ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. 
+     Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt. 
+     ‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it. 
+     Non-homogenized is still pasteurized. Two different processes. 
+     The shortest date on the shelf usually means the least processing, not worse milk. 
+     Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one. 
+     Ultra-pasteurized whole milk is still a further step. A date months out is the tell. 
+     “Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it. 
+     ‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water. 
+     Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question. 
+     The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived. 
+     Easier to digest is the most promising claim and still the unproven one. The extension line says the digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more. 
+     Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins. Still, a Holstein herd can be more than half A2A2. An A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed. 
+     Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps, and the extension line says exactly that. 
+     Non-homogenized is not raw. It is still pasteurized; only the fat was left alone. 
+     Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills. 
+     Raw means unpasteurized: milk that skipped the heat step. 
+     Next: “vat pasteurized” or “low-temperature” printed with 100% grass-fed. 
+     100% grass-fed on milk means the cows ate grass and hay, never grain. 
+     Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat. 
+     Reduced-fat (2%) / low-fat (1%) / skim 
+     Progressively more milk fat removed. 
+     A2 
+     The herd was tested and carries only the A2 beta-casein variant. A breed-genetics claim, not a welfare or processing one. 
+     Pasteurized 
+     Briefly heated to kill pathogens. The standard process. 
+     Ultra-pasteurized / UHT 
+     Much hotter for a shorter time. Long shelf life, changed flavor, resists culturing. 
+     Homogenized 
+     Fat broken into droplets so cream never rises. Not a heat process. 
+     Cream-top / non-homogenized 
+     Cream separates and rises. Still pasteurized. 
+     Vat pasteurized 
+     Held at 145°F for 30 minutes; also printed as low-temperature pasteurized. 
+     Ultra-pasteurized 
+     Heated to about 280°F for about 2 seconds. 
+     Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds. 
+     Whole vs. reduced 
+     If you can’t get raw: low-temp pasteurized, organic, 100% grass-fed whole milk.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDairy.test.js:69:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 1
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 129.797833

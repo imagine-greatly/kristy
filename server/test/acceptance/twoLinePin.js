@@ -248,7 +248,9 @@ export const TWO_LINE = {
       "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
       "‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it.",
       "Non-homogenized is still pasteurized. Two different processes.",
-      "The shortest date on the shelf usually means the least processing, not worse milk."
+      "The shortest date on the shelf usually means the least processing, not worse milk.",
+      "rBST is a synthetic growth hormone given to dairy cows. Certified organic milk comes from cows that cannot receive it.",
+      "For the rBST label, certified organic comes first. Next, find “from cows not treated with rBST” on the carton. A carton with neither claim comes last. US labels need not say whether cows received it."
     ],
     "aliases": [
       "whole milk",
@@ -288,7 +290,28 @@ export const TWO_LINE = {
       "Low-temp pasteurized grass-fed whole milk",
       "100% grass-fed low-temp pasteurized whole milk"
     ],
-    "cart_pick": "100% grass-fed low-temp pasteurized whole milk"
+    "cart_pick": "100% grass-fed low-temp pasteurized whole milk",
+    "question": "Should you buy whole or low-fat milk?",
+    "sources": [
+      "reviews of dairy-fat and cardiometabolic outcomes (contested literature)",
+      "Michigan State University Extension, dairy processing article (milk standardized to skim, 1%, 2% and whole through separators)",
+      "Florida Dairy Farmers “How Much Fat is in Whole Milk?” https://www.floridamilk.com/in-the-news/blog/nutrition/how-much-fat-is-in-whole-milk-whole-2-low-fat-and-skim-milk-explained.stml",
+      "characterization of the A1 and A2 beta-casein variants and BCM-7 release in digestion",
+      "human digestive-comfort trials on A2 milk (small, inconsistent, several industry-funded)",
+      "University of Minnesota Extension “A2 milk and A2 genetics” https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics",
+      "FDA Pasteurized Milk Ordinance (time and temperature standards)",
+      "FDA milk labeling and processing definitions",
+      "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)",
+      "CDC “Raw Milk” https://www.cdc.gov/food-safety/foods/raw-milk.html",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
+    ]
   },
   "cheese_real_vs_processed": {
     "decision": "Block cheese with a short list: milk, cultures, salt, enzymes.",
@@ -297,7 +320,23 @@ export const TWO_LINE = {
       "Look for a short list: milk, salt, cultures, enzymes/rennet.",
       "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
       "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
-      "Keep hard-cheese rinds. They belong in a pot of beans or soup."
+      "Keep hard-cheese rinds. They belong in a pot of beans or soup.",
+      "The milk for cheese may come from cows given the synthetic growth hormone rBST. Certified organic rules exclude its use.",
+      "Certified organic block cheese is the first choice. Next, find a wrapper stating the cheese uses milk from cows given no rBST. Cheese with neither claim is last. US labeling does not require a statement about rBST use."
+    ],
+    "question": "Should you buy block cheese, slices, or pre-shredded?",
+    "sources": [
+      "FDA standards of identity for cheese",
+      "FDA process-cheese labeling rules",
+      "Mason Dixie Foods “Natural Cheese vs. Processed” https://masondixiefoods.com/blogs/faqs/natural-cheese-vs-processed",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
     ]
   },
   "yogurt_plain_vs_flavored": {
@@ -310,7 +349,25 @@ export const TWO_LINE = {
       "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
       "Greek and skyr are strained: thicker, with less whey.",
       "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
-      "Whole-milk versions are more filling and less tinkered with than fat-free."
+      "Whole-milk versions are more filling and less tinkered with than fat-free.",
+      "rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.",
+      "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST."
+    ],
+    "question": "What should you look for in yogurt?",
+    "sources": [
+      "USDA FoodData Central",
+      "FDA added-sugars labeling requirements",
+      "University of Florida IFAS Extension “All About Yogurt” (FS185) https://ask.ifas.ufl.edu/publication/FS185",
+      "FDA standards of identity for yogurt",
+      "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
     ]
   },
   "raw_milk": {
@@ -752,7 +809,32 @@ export const TWO_LINE = {
       "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
       "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
       "Flavored creamers are where the added sugar sits. Read the panel.",
-      "Whole milk or half-and-half does the same job with a two-word ingredient list."
+      "Whole milk or half-and-half does the same job with a two-word ingredient list.",
+      "rBST is a synthetic hormone given to cows for milk production. The certified organic rules bar this growth hormone.",
+      "Start with certified organic cream or half-and-half. Follow with a carton stating the cows were not treated with rBST, then one with neither. US companies need not label rBST use.",
+      "Even certified organic cream can list carrageenan, a thickener derived from seaweed. Read the ingredients and take cream with none listed."
+    ],
+    "sources": [
+      "FDA standards of identity for cream products, 21 CFR 131",
+      "FDA food labeling regulations",
+      "Product ingredient labeling",
+      "Morning Fresh Dairy “Coffee Creamer, Half & Half, and Whipping Cream” https://www.morningfreshdairy.com/moo-news/an-explanation-on-coffee-creamer-half-half-and-whipping-cream.html",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "flour_basics": {
@@ -1159,7 +1241,19 @@ export const TWO_LINE = {
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
       "Read the protein line and the added vitamins and minerals on the carton.",
       "Compare the labels of available oat drinks; the formulation can differ.",
-      "Read for stabilizers in the ingredient list; the study compared formulations with different stabilizer use."
+      "Read for stabilizers in the ingredient list; the study compared formulations with different stabilizer use.",
+      "Carrageenan, derived from seaweed, is used as a thickener even in some certified organic foods. Read the oat drink’s ingredient list and pick one without carrageenan."
+    ],
+    "sources": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML",
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "coffee_beans": {
@@ -1620,7 +1714,30 @@ export const TWO_LINE = {
       "Cultured means bacteria did the souring; acidified tubs use added acids.",
       "Pick a tub named “sour cream” or “cultured sour cream”.",
       "Read the optional ingredients added for texture or shelf life.",
-      "Check the name for a declared flavor."
+      "Check the name for a declared flavor.",
+      "A synthetic growth hormone called rBST can be given to dairy cows. Certified organic sour cream excludes that treatment.",
+      "On sour cream, prefer certified organic. Next, look for a printed statement that rBST was not used on the dairy cows. Without either claim, the tub ranks last. Use of rBST need not appear on US dairy labels.",
+      "Carrageenan is made from seaweed and used to thicken foods, including some certified organic ones. Read your sour cream’s list and pick a tub without carrageenan."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/131.160",
+      "https://www.law.cornell.edu/cfr/text/21/131.162",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "cream_cheese": {
@@ -1629,7 +1746,30 @@ export const TWO_LINE = {
       "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
       "Look for “cream cheese” as the name on the package.",
       "Find a culture in the ingredient list.",
-      "Swap in Neufchâtel in most recipes; the two taste similar."
+      "Swap in Neufchâtel in most recipes; the two taste similar.",
+      "rBST is the synthetic growth hormone used to increase milk production in cows. Certified organic cream cheese rules prohibit it.",
+      "Choose certified organic cream cheese first. Next is a pack stating the milk comes from cows untreated with rBST. Both outrank a pack with neither. US labels can omit whether the cows received rBST.",
+      "Some certified organic foods contain carrageenan, a seaweed-derived thickener. Look through the cream cheese ingredients and take the version that lists no carrageenan."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/133.133",
+      "https://www.masterclass.com/articles/neufchatel-cheese-vs-cream-cheese-explained",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "cottage_cheese": {
@@ -1638,7 +1778,30 @@ export const TWO_LINE = {
       "A culture sets the curd unless the tub prints “directly set” beside the name.",
       "Read the milkfat statement beside the name.",
       "Look for “directly set” or “curd set by direct acidification”.",
-      "Pick dry curd cottage cheese for the version under 0.5 percent milkfat."
+      "Pick dry curd cottage cheese for the version under 0.5 percent milkfat.",
+      "Milk for cottage cheese can come from cows treated with rBST. That synthetic growth hormone is barred in certified organic dairy.",
+      "For cottage cheese, certified organic is the first rung. Then comes a tub whose printed claim says the milk comes from cows that received no rBST. A tub with neither is last; US law does not require rBST-use labeling.",
+      "The seaweed-derived thickener carrageenan appears even in some certified organic foods. Check the cottage cheese ingredient list for it; choose a tub that lists none."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/133.128",
+      "https://www.law.cornell.edu/cfr/text/21/133.129",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "ice_cream": {
@@ -1647,7 +1810,30 @@ export const TWO_LINE = {
       "The name ice cream needs 10 percent milkfat and no oils beyond incidental amounts.",
       "Read the name on the carton, not the picture.",
       "Look for “frozen dairy dessert” in the small print.",
-      "Read the ingredients for oils such as coconut or palm oil."
+      "Read the ingredients for oils such as coconut or palm oil.",
+      "Ice cream starts with dairy from cows that may receive rBST, a synthetic growth hormone. Certified organic production prohibits it.",
+      "Certified organic ice cream leads this label ladder. Next is a carton stating its milk came from cows that were not treated with rBST. A carton with neither claim ranks last: US rules let rBST use go unlabeled.",
+      "Carrageenan thickens foods and comes from seaweed. Some certified organic foods use it too, so read the ice cream’s ingredient list and choose one without it."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/135.110",
+      "https://www.mentalfloss.com/food/ice-cream/ice-cream-vs-frozen-dairy-dessert-what-is-difference",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "ghee": {
@@ -1674,7 +1860,20 @@ export const TWO_LINE = {
       "Almond drinks vary in added sugars, so the carton panel is the guide.",
       "Pick unsweetened over sweetened, vanilla or chocolate.",
       "Compare protein, vitamin D, calcium and potassium across cartons.",
-      "Check saturated fat on the panel."
+      "Check saturated fat on the panel.",
+      "A certified organic seal does not rule out carrageenan. This thickener comes from seaweed; read the almond milk’s ingredients and choose a carton with none listed."
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Almond_milk",
+      "https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma",
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "soy_milk": {
@@ -1683,7 +1882,20 @@ export const TWO_LINE = {
       "Fortified soy holds key nutrients similar to milk, so the dairy group counts it.",
       "Pick unsweetened over flavored.",
       "Compare protein and potassium across cartons.",
-      "Check saturated fat on the label."
+      "Check saturated fat on the label.",
+      "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan."
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Soy_milk",
+      "https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma",
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "coconut_milk_beverage": {
@@ -1693,7 +1905,20 @@ export const TWO_LINE = {
       "Read “beverage” in the name: coconut milk thinned with water.",
       "Find it in the nondairy milk section, next to the soy milk.",
       "Check for sugar and flavors on a sweetened carton.",
-      "Reach for the can, not the carton, for full-fat coconut milk."
+      "Reach for the can, not the carton, for full-fat coconut milk.",
+      "Carrageenan adds thickness and is derived from seaweed. It can occur in certified organic foods, so check the coconut beverage’s ingredients and take one with none listed."
+    ],
+    "sources": [
+      "https://www.cookscountry.com/how_tos/6667-canned-coconut-milk-vs-carton-packed-coconut-milk-beverage",
+      "https://www.tastingtable.com/1527981/canned-coconut-milk-carton-difference",
+      {
+        "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+        "url": "https://www.cornucopia.org/research/carrageenan/"
+      },
+      {
+        "name": "CSPI: Carrageenan",
+        "url": "https://www.cspi.org/node/7465"
+      }
     ]
   },
   "plant_butter": {
@@ -1720,7 +1945,23 @@ export const TWO_LINE = {
       "Each type has its own card; the carton adds vitamins, pasture and filtering.",
       "Choose the type first: milk, yogurt, cheese, butter, cream or a plant drink.",
       "Check the milk label for vitamins A and D.",
-      "Read a filtered milk panel for its protein and sugar lines."
+      "Read a filtered milk panel for its protein and sugar lines.",
+      "Dairy cows can receive rBST, a synthetic growth hormone. Organic certification bars that treatment.",
+      "Choose certified organic dairy before a package stating “from cows not treated with rBST”. A package with neither ranks last, since rBST use need not be disclosed in the US."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/131.110",
+      "https://www.dairyreporter.com/Article/2026/03/13/how-ultrafiltered-milk-is-made-benefits-protein-process/",
+      "https://www.law.cornell.edu/cfr/text/7/205.240",
+      "https://www.farmanddairy.com/?p=14321",
+      {
+        "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+      },
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
     ]
   },
   "kombucha": {
@@ -2544,7 +2785,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Source checks still lint the live fronts. Historical copy assertions can also restore
 // pinned fields; every restored field remains checked against the live KB above.
