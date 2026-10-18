@@ -40,7 +40,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `shrimp_imported_vs_domestic` | seafood | Wild American shrimp, read by the country of origin printed by law. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
 | `rotisserie_chicken` | meat | Rotisserie chicken with salt and spices, without phosphate or starch. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
-| `beef_cuts_basics` | meat | Whole chuck or round, without needles or blades pushed through. | Read the name for “mechanically tenderized” before the cut name. | — |
+| `beef_cuts_basics` | meat | Whole chuck or round, without needles or blades pushed through. | Read the grade and the sourcing as two separate answers. | — |
 | `ground_beef_lean_ratio` | meat | Organ blend with each organ’s percentage first, then nothing-added ground beef. | Read the label for organ names, each with a percentage beside it. | — |
 | `egg_labels` | eggs_dairy | Eggs with pasture-raised, organic, corn- and soy-free on one carton. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
 | `organic_worth_it_by_type` | produce | Organic produce eaten whole; conventional fruit and vegetables you peel. | Spend the organic money on berries, greens, and apples. | — |
