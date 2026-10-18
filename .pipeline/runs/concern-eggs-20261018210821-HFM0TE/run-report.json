@@ -1,0 +1,490 @@
+{
+  "kind": "build",
+  "runId": "concern-eggs-20261018210821-HFM0TE",
+  "piece_id": "/Users/m1/kristy:concern-eggs",
+  "attempt": 3,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-eggs.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "RED:ROUNDS",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 1
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 2
+    }
+  ],
+  "usage": {
+    "input": 7389508,
+    "cached": 6702336,
+    "output": 46662,
+    "reasoning": 17578
+  },
+  "over_ceiling": true,
+  "ms": 836607,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 2,
+  "green": false,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-18T19:08:21.215Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-eggs-20261018210821-HFM0TE:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/events-0.jsonl",
+      "usage": {
+        "input": 1836940,
+        "cached": 1700608,
+        "output": 12313,
+        "reasoning": 4341
+      },
+      "tokens": 1849253,
+      "mem_free_mb": 233,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a1506e-cfb7-7b73-80ea-34d266571f30",
+        "usage": {
+          "input": 1836940,
+          "cached": 1700608,
+          "output": 12313,
+          "reasoning": 4341
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k14.test.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All four cards name feed and organic; all 19 changed KB fields are pinned. Assumptions: duck clean/uncracked/cold guidance may remain in the short answer and tips while the decision leads with sourcing.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Required decisions name pasture; full-card decisions are 10 words and the pick is 16. TwoLineCheck: 181 checked, zero violations. NOTES: unowned assertions at server/lib/counterCardLint.test.js:758 and server/test/acceptance/{ca-4a.test.js:237,ca-4b.test.js:193,ca-5.test.js:53} report TERM_UNGLOSSED G3/G4 for the pick, requiring fields its schema forbids. server/test/acceptance/w4.test.js:58 enforces 12 words, conflicting with the specified 16-word pick allowance. Left unchanged.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Vegetarian fed excludes animal byproducts from feed without implying outdoor access or absence of forage; insects and forage are named separately. NOTE: docs/CONCERN-REGISTER.md:62 contradicts the spec and archived definition; unowned register left unchanged.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Each card adds archived source objects with verbatim frontmatter URLs; existing sources retained. Historical overlay and K14 source checks pass. NOTE: server/test/acceptance/k11.test.js:48, through passRule.js:68, rejects required source additions on both label cards. Both unowned tests left unchanged.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes 5/5, including prohibited claims, first person and egg_labels equality with 215e92d. Targeted acceptance/K14/pin checks pass 90/90. Do lines regenerated; git diff --check passes. Full npm test: 2682 passed, seven failures from the documented unowned test conflicts.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/concernEggs.test.js server/test/acceptance/twoLinePin.test.js server/test/acceptance/k14.test.js'",
+          "/bin/zsh -lc \"rg --files -g 'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"'; git status --short\"",
+          "/bin/zsh -lc 'cat server/test/acceptance/twoLinePin.js'",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/lib/testGuards.js server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/doLines.test.js server/package.json package.json'",
+          "/bin/zsh -lc 'cat docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/dairy_eggs_packaging/INDEX.md'",
+          "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nfor p in [Path('/AGENTS.md'),Path('/Users/AGENTS.md'),Path('/Users/m1/AGENTS.md'),Path('/Users/m1/kristy/AGENTS.md')]:\n if p.is_file():\n  print(str(p)+'\\\\n'+p.read_text())\nPY\"",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/lib/testGuards.js server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/doLines.test.js server/package.json package.json'",
+          "/bin/zsh -lc \"rg -n 'egg_duck_quail|label_cage_free|label_pasture_raised_feed|pick_egg_whites|PICK_PINS|CONCERN|pick pin|beforeConcern' server/test/acceptance/twoLinePin.js docs/do-lines-review.md server/lib/doLines.json; sed -n '2030,2200p' server/test/acceptance/twoLinePin.js; cat server/test/acceptance/concernDeli.test.js\"",
+          "/bin/zsh -lc \"cat server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/testGuards.js; rg -n 'lintPick|readability|OBSERVABLE|words|decision|look_for|watch_out' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\nkb=json.loads(Path('server/kristy_perimeter_kb.json').read_text())\nfor e in kb['entries']:\n if e['id'] in ['egg_duck_quail','label_cage_free','label_pasture_raised_feed','pick_egg_whites']:\n  print(json.dumps(e,ensure_ascii=False,indent=2))\nPY\"",
+          "/bin/zsh -lc 'cat docs/sources/concerns/dairy_eggs_packaging/100daysofrealfood-egg-labels.md docs/sources/concerns/dairy_eggs_packaging/cornucopia-egg-scorecard-criteria.md'",
+          "/bin/zsh -lc 'cat docs/sources/concerns/dairy_eggs_packaging/cr-egg-carton-labels.md docs/sources/concerns/dairy_eggs_packaging/certified-humane-cage-free-vs-free-range.md'",
+          "/bin/zsh -lc \"rg -n -C 4 'egg_feed|egg_organic_rung|vegetarian_fed|egg_duck_quail|label_cage_free|label_pasture_raised_feed|pick_egg_whites|Eggs' docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md; sed -n '390,430p' server/test/acceptance/twoLinePin.js; sed -n '1160,1185p' server/test/acceptance/twoLinePin.js; sed -n '940,982p' server/lib/counterCardLint.js; sed -n '1390,1418p' server/lib/counterCardLint.js; sed -n '1,28p' docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"rg -n -C 2 'Vegetarian|vegetarian|insects|forag|Organic|organic' docs/sources/concerns/dairy_eggs_packaging/100daysofrealfood-egg-labels.md | head -90; rg -n '\"'^url:|''^title:|### Feed Sourcing|### Soy free'\"' docs/sources/concerns/dairy_eggs_packaging/cornucopia-egg-scorecard-criteria.md; rg -n -C 1 'fed grains|pasture|Pasture|\"'^url:'\"' docs/sources/concerns/dairy_eggs_packaging/cr-egg-carton-labels.md | head -60; sed -n '54,64p' docs/CONCERN-REGISTER.md\"",
+          "/bin/zsh -lc \"rg -n 'look_for|buying_tips|labels_decoded|slice|watch_out|tier_note' server/lib/counterCards.js; sed -n '655,690p' server/lib/counterCardLint.js; sed -n '1185,1218p' server/lib/counterCardLint.js; rg -n -C 2 'beforeConcern' server/test/acceptance/k15.test.js server/test/acceptance/k18.test.js; rg --files --hidden -g 'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' .\"",
+          "/bin/zsh -lc \"sed -n '170,275p' server/lib/counterCards.js; cat .pipeline/runs/concern-eggs-20261018210821-HFM0TE/report.schema.json; sed -n '1416,1456p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernEggs.test.js'",
+          "/bin/zsh -lc \"rg -a -n 'buying_tips|labels_decoded|look_for|slice' server/lib/counterCards.js | tail -35; sed -n '1450,1502p' server/lib/counterCardLint.js; sed -n '750,778p' docs/sources/concerns/dairy_eggs_packaging/cr-egg-carton-labels.md\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, re\nfrom pathlib import Path\nkb_path = Path('server/kristy_perimeter_kb.json')\nraw = kb_path.read_text()\nkb = json.loads(raw)\nby_id = {e['id']: e for e in kb['entries']}\narchive = Path('docs/sources/concerns/dairy_eggs_packaging')\ndef source(slug, name):\n    url = re.search(r'\"'^url:'\"\\\\s*(\\\\S+)', (archive / slug).read_text(), re.M).group(1)\n    return {'name': name, 'url': url}\nfeed_source = source('cornucopia-egg-scorecard-criteria.md', 'The Cornucopia Institute: Organic Egg Scorecard Criteria')\nlabel_source = source('cr-egg-carton-labels.md', 'Consumer Reports: Egg Carton Labels Explained')\nvegetarian_source = source('100daysofrealfood-egg-labels.md', '100 Days of Real Food: Egg Labels: What To Look For')\nchanges = {}\ne = by_id['egg_duck_quail']\nchanges[e['id']] = {\n    'decision': 'Pasture-raised duck or quail eggs from birds eating organic feed.',\n    'buying_tips': ['Look for printed soy-free or corn-free feed; otherwise choose organic feed.', *e['buying_tips']],\n    'sources': [*e['sources'], feed_source, label_source],\n}\ne = by_id['label_cage_free']\nlabels = [dict(label) for label in e['labels_decoded']]\nlabels[0]['meaning'] = 'Out of cages, usually indoors and possibly crowded.'\nchanges[e['id']] = {\n    'short_answer': 'Cage-free, free-range and pasture-raised say nothing about what the hen ate. Look for pasture-raised with soy-free or corn-free feed printed outright. Next comes pasture-raised organic, then organic, then cage-free.',\n    'buying_tips': [\n        'Cage-free, free-range and pasture-raised say nothing about what the hen ate.',\n        'Look for soy-free or corn-free feed printed outright on pasture-raised eggs.',\n        'Next choose pasture-raised organic, then organic, then cage-free. Organic feed can still include soy and corn.',\n        *e['buying_tips'],\n    ],\n    'labels_decoded': labels,\n    'sources': [*e['sources'], feed_source, label_source],\n}\ne = by_id['label_pasture_raised_feed']\nlabels = [dict(label) for label in e['labels_decoded']]\nlabels[3]['meaning'] = 'Names what is excluded from the feed. Each claim must be printed outright.'\nlabels[4]['meaning'] = 'Requires organic feed, typically organic soy and corn.'\nlabels.append({'term': 'Vegetarian fed', 'meaning': 'No animal byproducts in the feed. Says nothing about pasture or time outdoors.'})\nchanges[e['id']] = {\n    'decision': 'Pasture-raised eggs with ‘soy-free’ or ‘corn-free’ printed on the carton.',\n    'short_answer': 'Pasture-raised says nothing about feed. Look for soy-free or corn-free printed outright, then organic. “Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors.',\n    'detail': e['detail'].replace('is the one term that does reach feed', 'reaches feed') + ' “Vegetarian fed” means the feed contains no animal byproducts. It says nothing about pasture or time outdoors. Hens on pasture eat insects and forage. Look for pasture-raised plus a printed soy-free or corn-free feed claim, then pasture-raised organic, then organic, then cage-free.',\n    'buying_tips': [\n        e['buying_tips'][0],\n        'Look for pasture-raised plus soy-free or corn-free feed printed outright.',\n        'Next choose pasture-raised organic, then organic, then cage-free. Organic feed can still include soy and corn.',\n        '“Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors.',\n        'Hens on pasture eat insects and forage. A vegetarian-feed claim does not describe what they find outdoors.',\n        e['buying_tips'][1],\n        e['buying_tips'][-1],\n    ],\n    'labels_decoded': labels,\n    'pick_steps': [\n        'Find pasture-raised plus soy-free or corn-free feed printed outright.',\n        'Next choose pasture-raised organic, then organic, then cage-free.',\n        'Read “vegetarian fed” as no animal byproducts in feed; check outdoor claims separately.',\n    ],\n    'science': 'Cage-free, free-range and pasture-raised describe space, not feed. USDA has no regulatory definition of pasture-raised; certifiers set outdoor standards. Organic requires organic feed, usually soy and corn. Soy-free and corn-free must be printed. “Vegetarian fed” excludes animal byproducts from feed but says nothing about pasture or time outdoors. Hens on pasture eat insects and forage.',\n    'sources': [*e['sources'], feed_source, label_source, vegetarian_source],\n}\ne = by_id['pick_egg_whites']\nchanges[e['id']] = {\n    'decision': 'Whites from pasture-raised hens: soy-free feed, then organic feed; pasteurized or otherwise treated per federal standard.',\n    'sources': [*e['sources'], feed_source, label_source],\n}\nfor entry_id, fields in changes.items():\n    by_id[entry_id].update(fields)\nupdated = json.dumps(kb, ensure_ascii=False, indent=2) + '\\\\n'\nassert raw == json.dumps(json.loads(raw), ensure_ascii=False, indent=2) + '\\\\n', 'Unexpected KB format'\nkb_path.write_text(updated)\npin_path = Path('server/test/acceptance/twoLinePin.js')\npins = pin_path.read_text()\nfor entry_id, fields in changes.items():\n    if entry_id == 'pick_egg_whites':\n        continue\n    pattern = re.compile(r'  \\\"' + entry_id + r'\\\": (\\\\{.*?\\\\n  \\\\})(,|\\\\n)', re.S)\n    match = pattern.search(pins)\n    assert match, entry_id\n    pinned = json.loads(match.group(1))\n    pinned.update(fields)\n    replacement = '  \\\"' + entry_id + '\\\": ' + json.dumps(pinned, ensure_ascii=False, indent=2).replace('\\\\n', '\\\\n  ') + match.group(2)\n    pins = pins[:match.start()] + replacement + pins[match.end():]\npick_pin = '  \\\"pick_egg_whites\\\": ' + json.dumps(changes['pick_egg_whites'], ensure_ascii=False, indent=2).replace('\\\\n', '\\\\n  ') + ',\\\\n'\npins = pins.replace('const PICK_PINS = {\\\\n', 'const PICK_PINS = {\\\\n' + pick_pin)\npins = pins.replace('// concern-deli also pins every edited field on its seven cards and two picks; beforeTwoLine', '// Concern batches also pin every edited card and pick field; beforeTwoLine')\npins = pins.replace('including both picks.', 'including picks.')\npins = pins.replace('every full-card and concern-deli pick pin matches the live KB', 'every full-card and concern pick pin matches the live KB')\npins = pins.replace(\\\"const picks = ['pick_sausage', 'pick_jerky'];\\\", \\\"const picks = ['pick_sausage', 'pick_jerky', 'pick_egg_whites'];\\\")\npins = pins.replace(\\\"'all two-line pins', 182\\\", \\\"'all two-line pins', 183\\\")\npins = pins.replace('// concernDeli.test.js owns the new URLs.', '// concernDeli.test.js and concernEggs.test.js own the new URLs.')\npins = pins.replace(\\\"'pick_jerky', 'pork_cuts_and_enhanced']);\\\", \\\"'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'pick_egg_whites']);\\\")\npin_path.write_text(pins)\nPY\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernEggs.test.js'",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js'",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"sed -n '291,355p' server/lib/counterCards.js; git diff --stat; git diff -- server/test/acceptance/k14.test.js docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nold = 'Cage-free, free-range and pasture-raised say nothing about what the hen ate.'\nnew = 'Cage-free, free-range and pasture-raised describe housing; feed claims are separate.'\nfor name in ['server/kristy_perimeter_kb.json', 'server/test/acceptance/twoLinePin.js']:\n    p = Path(name)\n    text = p.read_text()\n    assert ('\\\"' + old + '\\\",') in text\n    p.write_text(text.replace('\\\"' + old + '\\\",', '\\\"' + new + '\\\",'))\nPY\"",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport subprocess, sys\nresult = subprocess.run(['npm', 'test'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)\nlines = result.stdout.splitlines()\nfor i, line in enumerate(lines):\n    if line.startswith(('✖', 'not ok', 'ℹ ', '# tests', '# pass', '# fail', '# duration', '> ')):\n        print(line)\n        if line.startswith('not ok'):\n            print('\\\\n'.join(lines[i+1:i+12]))\nmarker = next((i for i, line in enumerate(lines) if 'failing tests:' in line), None)\nif marker is not None:\n    print('\\\\n'.join(lines[marker:]))\nelif result.returncode and not any(line.startswith(('✖', 'not ok')) for line in lines):\n    print('\\\\n'.join(lines[-100:]))\nprint('npm test exit:', result.returncode)\nsys.exit(result.returncode)\nPY\"",
+          "/bin/zsh -lc 'git diff -- server/kristy_perimeter_kb.json'",
+          "/bin/zsh -lc 'git diff --check; git diff -- server/test/acceptance/twoLinePin.js server/lib/doLines.json'",
+          "/bin/zsh -lc \"sed -n '1,100p' server/test/acceptance/k11.test.js; sed -n '1,120p' server/test/acceptance/passRule.js; sed -n '245,270p' server/lib/perimeter.test.js; sed -n '1,95p' server/test/acceptance/w4.test.js; sed -n '63,88p' server/test/acceptance/ic4b.test.js; sed -n '1,90p' server/test/acceptance/ic8b.test.js\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\nrules=json.loads(Path('server/lib/sectionRules.json').read_text())\nprint(json.dumps(rules,ensure_ascii=False,indent=2)[:500] if not isinstance(rules,dict) else list(rules))\nif isinstance(rules,dict):\n for k,v in rules.items():\n  if k=='eggs_dairy': print(json.dumps(v,ensure_ascii=False,indent=2))\n  elif isinstance(v,dict) and 'eggs_dairy' in v: print(json.dumps(v['eggs_dairy'],ensure_ascii=False,indent=2))\n  elif isinstance(v,list):\n   for x in v:\n    if isinstance(x,dict) and 'eggs_dairy' in x.values(): print(json.dumps(x,ensure_ascii=False,indent=2))\nPY\nsed -n '1740,1874p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"rg -n -C 5 'G3|G4|CANONICAL_GLOSSES' server/lib/counterCardLint.js; python3 - <<'PY'\nimport json\nfrom pathlib import Path\nfor rule in json.loads(Path('server/lib/sectionRules.json').read_text()):\n if rule['section']=='eggs_dairy': print(json.dumps(rule,ensure_ascii=False,indent=2))\nPY\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, re\nfrom pathlib import Path\nkb_path=Path('server/kristy_perimeter_kb.json')\nkb=json.loads(kb_path.read_text())\nby_id={e['id']:e for e in kb['entries']}\nchanges={\n 'label_pasture_raised_feed': {\n  'short_answer': 'Most pasture-raised hens still eat soy and corn. Look for soy-free or corn-free printed outright, then organic. “Vegetarian fed” excludes animal byproducts from feed and says nothing about pasture or time outdoors.',\n },\n 'egg_duck_quail': {\n  'cart_pick': 'Pasture-raised organic duck or quail eggs',\n  'pick_steps': [\n   'Pasture-raised: time outdoors on pasture, audited only with a certifier’s seal.',\n   'Organic: certified organic feed and outdoor access.',\n   'Check for clean, uncracked shells; buy cold and keep cold at home.',\n  ],\n },\n}\npin_path=Path('server/test/acceptance/twoLinePin.js')\npins=pin_path.read_text()\nfor entry_id, fields in changes.items():\n by_id[entry_id].update(fields)\n pattern=re.compile(r'  \\\"'+entry_id+r'\\\": (\\\\{.*?\\\\n  \\\\})(,|\\\\n)',re.S)\n match=pattern.search(pins)\n assert match,entry_id\n pinned=json.loads(match.group(1))\n pinned.update(fields)\n replacement='  \\\"'+entry_id+'\\\": '+json.dumps(pinned,ensure_ascii=False,indent=2).replace('\\\\n','\\\\n  ')+match.group(2)\n pins=pins[:match.start()]+replacement+pins[match.end():]\nkb_path.write_text(json.dumps(kb,ensure_ascii=False,indent=2)+'\\\\n')\npin_path.write_text(pins)\nreview_path=Path('docs/do-lines-review.md')\nreview=review_path.read_text().splitlines()\nfor i,line in enumerate(review):\n for entry_id in ['egg_duck_quail','label_pasture_raised_feed']:\n  if line.startswith('| \"'`'\"'+entry_id+'\"'` |'\"'):\n   cells=line.split('|')\n   cells[3]=' '+by_id[entry_id]['decision']+' '\n   review[i]='|'.join(cells)\nreview_path.write_text('\\\\n'.join(review)+'\\\\n')\nPY\"",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js && node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernEggs.test.js server/test/acceptance/k14.test.js server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { TWO_LINE, beforeConcern } from './server/test/acceptance/twoLinePin.js';\nimport { lintPick, words } from './server/lib/counterCardLint.js';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst head = JSON.parse(execFileSync('git', ['show', 'HEAD:server/kristy_perimeter_kb.json'], { maxBuffer: 64 << 20 }));\nconst before = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { maxBuffer: 64 << 20 }));\nconst ids = ['egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'pick_egg_whites'];\nassert.deepEqual(kb.entries.map(e => e.id), head.entries.map(e => e.id));\nlet changed = 0;\nfor (const entry of kb.entries) {\n  const prior = head.entries.find(e => e.id === entry.id);\n  if (\"'!ids.includes(entry.id)) {\n    assert.deepEqual(entry, prior, `${entry.id} outside requested changes`);\n    continue;\n  }\n  for (const field of new Set([...Object.keys(prior), ...Object.keys(entry)])) {\n    if (JSON.stringify(entry[field]) === JSON.stringify(prior[field])) continue;\n    assert.deepEqual(entry[field], TWO_LINE[entry.id][field], `${entry.id}.${field} unpinned`);\n    changed++;\n  }\n  for (const source of prior.sources) assert.ok(entry.sources.some(s => JSON.stringify(s) === JSON.stringify(source)), `${entry.id} dropped source`);\n  assert.deepEqual(beforeConcern(entry).sources, before.entries.find(e => e.id === entry.id).sources);\n  const copy = JSON.stringify(Object.fromEntries(Object.entries(entry).filter(([key]) => !['\"'sources', 'aliases', 'asked_as'].includes(key))));\n  assert.doesNotMatch(copy, /—|\\\\b(?:causes?|prevents?|lowers? (?:the )?risk|healthier for you|I|me|my)\\\\b/);\n  console.log(\"'`${entry.id}: ${words(entry.decision)} decision words`);\n}\nconst pick = kb.entries.find(e => e.id === '\"'pick_egg_whites');\nassert.deepEqual(Object.keys(pick).sort(), ['id', 'kind', 'title', 'category', 'aliases', 'decision', 'sources'].sort());\nassert.deepEqual(lintPick(pick), []);\nassert.equal(Object.getOwnPropertyDescriptor(TWO_LINE, pick.id).enumerable, false);\nconst duck = kb.entries.find(e => e.id === 'egg_duck_quail');\nconst priorDuck = head.entries.find(e => e.id === duck.id);\nfor (const field of ['short_answer', 'detail', 'watch_out', 'science']) assert.deepEqual(duck[field], priorDuck[field]);\nconsole.log(\"'`Audited ${changed} changed fields: all pinned; existing sources and duck cooking guidance retained; other entries unchanged.`);\nJS'",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport subprocess, sys\nresult = subprocess.run(['npm', 'test'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)\nlines = result.stdout.splitlines()\nmarker = next((i for i,line in enumerate(lines) if 'failing tests:' in line), len(lines))\nfor line in lines[:marker]:\n    if line.startswith(('✖', 'ℹ ', '> ')):\n        print(line)\nfor i,line in enumerate(lines[marker:], marker):\n    if line.startswith('test at '):\n        print('\\\\n' + line)\n        print('\\\\n'.join(lines[i+1:i+4]))\n    if 'actual:' in line or 'expected:' in line:\n        print(line)\nprint('npm test exit:', result.returncode)\nsys.exit(result.returncode)\nPY\"",
+          "/bin/zsh -lc 'git diff --check; git status --short; git diff --numstat'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-eggs-20261018210821-HFM0TE:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/events-1.jsonl",
+      "usage": {
+        "input": 2549015,
+        "cached": 2276608,
+        "output": 15769,
+        "reasoning": 5867
+      },
+      "tokens": 2564784,
+      "mem_free_mb": 738,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a1506e-cfb7-7b73-80ea-34d266571f30",
+        "usage": {
+          "input": 2549015,
+          "cached": 2276608,
+          "output": 15769,
+          "reasoning": 5867
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k14.test.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All four cards name feed and organic. Assumptions: recommending pasteurized whites satisfies the federal-standard requirement without listing alternative treatments.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Required decisions name pasture. Fixed the egg-white decision and pin to 12 words; lintPick passes. NOTE: section assertions still report TERM_UNGLOSSED G3/G4 because they require fields forbidden on picks: server/lib/counterCardLint.test.js:758; server/test/acceptance/ca-4a.test.js:237; ca-4b.test.js:193; ca-5.test.js:53; w4.test.js:60. These unowned checks remain unchanged.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Vegetarian-fed meaning and pasture insects/forage remain explicit; acceptance passes. NOTE: the contradictory register row at docs/CONCERN-REGISTER.md:62 remains unchanged because it is unowned.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Archived source additions and existing sources retained; acceptance passes. NOTE: server/test/acceptance/k11.test.js:48 invokes passRule.js:68 and rejects required source additions on both label cards. K11 does not import the owned historical overlay; fixing these assertions requires changes outside owns.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes 5/5, including prohibited claims and unchanged egg_labels. TwoLineCheck passes all 181 cards; pins and git diff --check pass; do lines regenerated. Verification still exits 1: npm test reports 2682 passed and seven unowned-test conflicts documented above. Reported done under the contract's conflict exception; checks were not suppressed.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"cat server/test/acceptance/concernEggs.test.js; sed -n '38,62p' server/test/acceptance/w4.test.js; sed -n '38,53p' server/test/acceptance/k11.test.js; sed -n '58,81p' server/test/acceptance/passRule.js; sed -n '1664,1693p' server/lib/counterCardLint.js; sed -n '1834,1853p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"git status --short; sed -n '2195,2340p' server/test/acceptance/twoLinePin.js; cat .pipeline/runs/concern-eggs-20261018210821-HFM0TE/report.schema.json\"",
+          "/bin/zsh -lc \"rg -n 'url:|pasteuriz|otherwise treated|Salmonella' docs/sources/k14/*egg* docs/sources/k14/*whites*; sed -n '820,885p' server/lib/counterCardLint.js; sed -n '1,18p' server/test/acceptance/k11.test.js; rg -n 'twoLinePin|beforeConcern' server/test/acceptance/passRule.js server/lib/counterCards.js server/lib/counterCardLint.js server/lib/perimeter.js server/lib/listMatch.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport { words, lintPick } from './server/lib/counterCardLint.js';\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst original = kb.entries.find(e => e.id === 'pick_egg_whites');\nconst decision = 'Whites from pasture-raised hens: soy-free feed, then organic; pasteurized per federal standard.';\nconsole.log(JSON.stringify({decision, words: words(decision), violations: lintPick({...original, decision})}, null, 2));\nJS\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nold = 'Whites from pasture-raised hens: soy-free feed, then organic feed; pasteurized or otherwise treated per federal standard.'\nnew = 'Whites from pasture-raised hens: soy-free feed, then organic; pasteurized per federal standard.'\nfor filename in ['server/kristy_perimeter_kb.json', 'server/test/acceptance/twoLinePin.js']:\n    path = Path(filename)\n    text = path.read_text()\n    assert text.count(old) == 1, filename\n    path.write_text(text.replace(old, new))\nPY\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernEggs.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport subprocess, sys\nresult = subprocess.run(['npm', 'test'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)\nlines = result.stdout.splitlines()\nmarker = next((i for i, line in enumerate(lines) if 'failing tests:' in line), len(lines))\nfor line in lines[:marker]:\n    if line.startswith(('✖', 'ℹ ', '> ')):\n        print(line)\nfor i, line in enumerate(lines[marker:], marker):\n    if line.startswith('test at '):\n        print('\\\\n' + line)\n        print('\\\\n'.join(lines[i+1:i+4]))\n    if 'actual:' in line or 'expected:' in line:\n        print(line)\nprint('npm test exit:', result.returncode)\nsys.exit(result.returncode)\nPY\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { words, lintPick } from './server/lib/counterCardLint.js';\nimport { TWO_LINE } from './server/test/acceptance/twoLinePin.js';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst pick = kb.entries.find(e => e.id === 'pick_egg_whites');\nassert.equal(words(pick.decision), 12);\nassert.deepEqual(lintPick(pick), []);\nassert.deepEqual(pick.decision, TWO_LINE[pick.id].decision);\nassert.deepEqual(Object.keys(pick).sort(), ['id', 'kind', 'title', 'category', 'aliases', 'decision', 'sources'].sort());\nconsole.log('Egg-white decision: 12 words; pick schema and lint pass; literal pin matches.');\nJS\"",
+          "/bin/zsh -lc 'git diff --check; git diff --stat'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-eggs-20261018210821-HFM0TE:2",
+      "round": 2,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/events-2.jsonl",
+      "usage": {
+        "input": 3003553,
+        "cached": 2725120,
+        "output": 18580,
+        "reasoning": 7370
+      },
+      "tokens": 3022133,
+      "mem_free_mb": 939,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a1506e-cfb7-7b73-80ea-34d266571f30",
+        "usage": {
+          "input": 3003553,
+          "cached": 2725120,
+          "output": 18580,
+          "reasoning": 7370
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k14.test.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All four cards name feed and organic; acceptance passes. Assumptions: the requested sourcing ladder applies while existing duck cooking-safety guidance remains intact.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Required decisions name pasture; egg-white decision is 12 words and passes lintPick. NOTE: TERM_UNGLOSSED G3/G4 persists at server/lib/counterCardLint.test.js:758, server/test/acceptance/ca-4a.test.js:237, ca-4b.test.js:193, ca-5.test.js:53 and w4.test.js:60. The linter requires tier_note, pick_steps or instead; the spec forbids all three on picks. Unowned checks remain unchanged.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Vegetarian fed correctly excludes animal byproducts without implying absence of outdoor access or forage. Insects and forage are named separately.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Required archived sources are present and existing sources retained. NOTE: server/test/acceptance/k11.test.js:48 invokes passRule.js:68, requiring exact source equality for both label cards. Confirmed both frozen source arrays contain zero concern-archive URLs, while C4 requires at least one. These requirements cannot both pass without changing an unowned test or fixture.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes 5/5; egg_labels remains unchanged. TwoLineCheck passes 181 cards and git diff --check passes. Latest verification remains failed: 2682 passed, seven conflicts documented above. No further edits this round: a green gate is incompatible with the current ownership and spec constraints. Status done follows the contract's explicit unowned-test-conflict exception.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '26,66p' server/test/acceptance/concernEggs.test.js; sed -n '38,51p' server/test/acceptance/k11.test.js; sed -n '1,9p' server/test/acceptance/passRule.js; sed -n '60,70p' server/test/acceptance/passRule.js; sed -n '824,835p' server/lib/counterCardLint.js; sed -n '1838,1850p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc 'git diff --check; git diff --name-only; cat .pipeline/runs/concern-eggs-20261018210821-HFM0TE/report.schema.json'",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync, readdirSync } from 'node:fs';\nimport { join } from 'node:path';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst fixture = JSON.parse(readFileSync('server/test/acceptance/fixtures/kb-pre-readability.json', 'utf8'));\nconst archived = new Set();\nconst root = 'docs/sources/concerns';\nfor (const directory of readdirSync(root, {withFileTypes:true}).filter(e => e.isDirectory())) {\n  for (const filename of readdirSync(join(root, directory.name)).filter(f => f.endsWith('.md'))) {\n    const match = readFileSync(join(root, directory.name, filename), 'utf8').match(/\"'^url:'\"\\\\s*(\\\\S+)/m);\n    if (match) archived.add(match[1]);\n  }\n}\nfor (const id of ['label_cage_free', 'label_pasture_raised_feed']) {\n  const prior = (fixture.entries ?? fixture).find(e => e.id === id);\n  const live = kb.entries.find(e => e.id === id);\n  const archivedCount = entry => entry.sources.filter(source => archived.has(typeof source === 'string' ? (source.match(/https?:\\\\S+/) ?? [])[0] : source.url)).length;\n  assert.equal(archivedCount(prior), 0);\n  assert.ok(archivedCount(live) >= 1);\n  console.log(\"'`${id}: K11 demands exact equality with ${prior.sources.length} frozen sources containing zero archive URLs; C4 requires at least one archive URL. Live archive count: ${archivedCount(live)}.`);\n}\nconst allowed = ['\"'id', 'kind', 'title', 'category', 'aliases', 'decision', 'sources'];\nconst glossFields = ['tier_note', 'pick_steps', 'instead'];\nassert.equal(glossFields.filter(f => allowed.includes(f)).length, 0);\nconsole.log('The section glossary check accepts only tier_note/pick_steps/instead; all three are forbidden by the pick schema.');\nJS\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 7436170,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 127,
+    "key": "1cdcb11119065ea2c0cce7212591762098cb1440afd8a9417f7d93dd310d10b2",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-eggs-20261018210821-HFM0TE:0",
+  "mem_free_mb": 939,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 10545,
+      "tail": "  ---\n  duration_ms: 0.53125\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2687 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.153375\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2688 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 145.853208\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2689 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.366458\n  type: 'test'\n  ...\n1..2689\n# tests 2689\n# suites 0\n# pass 2682\n# fail 7\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10054.550625\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "pick_egg_whites: decision exceeds 12 words"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "pick_egg_whites: decision exceeds 12 words"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 10006,
+      "tail": "  ---\n  duration_ms: 0.530542\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2687 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.15875\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2688 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 131.990334\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2689 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.353666\n  type: 'test'\n  ...\n1..2689\n# tests 2689\n# suites 0\n# pass 2682\n# fail 7\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9538.448208\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 10012,
+      "tail": "  ---\n  duration_ms: 0.527416\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2687 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.150583\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2688 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 137.958667\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2689 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.356292\n  type: 'test'\n  ...\n1..2689\n# tests 2689\n# suites 0\n# pass 2682\n# fail 7\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9543.599459\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-eggs-20261018210821-HFM0TE/verify-2/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 2,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "sectionRules corpus: lintSections is clean (CA-5 flags turn the section lints on)",
+          "test_path": "server/lib/counterCardLint.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C8 forced section lints: no hit on a CA-4a card",
+          "test_path": "server/test/acceptance/ca-4a.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 the eggs_dairy section is clean under forced section lints",
+          "test_path": "server/test/acceptance/ca-4b.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "C4 lintSections is clean with the flags on",
+          "test_path": "server/test/acceptance/ca-5.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        },
+        {
+          "id": "K11 label_cage_free: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_cage_free: frozen field sources changed"
+        },
+        {
+          "id": "K11 label_pasture_raised_feed: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k11.test.js",
+          "first_error": "label_pasture_raised_feed: frozen field sources changed"
+        },
+        {
+          "id": "W4 (b) live PILOT passes opener repetition and all existing card lints",
+          "test_path": "server/test/acceptance/w4.test.js",
+          "first_error": "Expected values to be strictly deep-equal:"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-18T19:22:17.822Z",
+  "readiness": "NOT READY"
+}

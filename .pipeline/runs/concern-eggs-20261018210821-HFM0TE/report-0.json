@@ -1,0 +1,39 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All four cards name feed and organic; all 19 changed KB fields are pinned. Assumptions: duck clean/uncracked/cold guidance may remain in the short answer and tips while the decision leads with sourcing."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Required decisions name pasture; full-card decisions are 10 words and the pick is 16. TwoLineCheck: 181 checked, zero violations. NOTES: unowned assertions at server/lib/counterCardLint.test.js:758 and server/test/acceptance/{ca-4a.test.js:237,ca-4b.test.js:193,ca-5.test.js:53} report TERM_UNGLOSSED G3/G4 for the pick, requiring fields its schema forbids. server/test/acceptance/w4.test.js:58 enforces 12 words, conflicting with the specified 16-word pick allowance. Left unchanged."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Vegetarian fed excludes animal byproducts from feed without implying outdoor access or absence of forage; insects and forage are named separately. NOTE: docs/CONCERN-REGISTER.md:62 contradicts the spec and archived definition; unowned register left unchanged."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Each card adds archived source objects with verbatim frontmatter URLs; existing sources retained. Historical overlay and K14 source checks pass. NOTE: server/test/acceptance/k11.test.js:48, through passRule.js:68, rejects required source additions on both label cards. Both unowned tests left unchanged."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes 5/5, including prohibited claims, first person and egg_labels equality with 215e92d. Targeted acceptance/K14/pin checks pass 90/90. Do lines regenerated; git diff --check passes. Full npm test: 2682 passed, seven failures from the documented unowned test conflicts."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

@@ -1,0 +1,39 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All four cards name feed and organic. Assumptions: recommending pasteurized whites satisfies the federal-standard requirement without listing alternative treatments."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Required decisions name pasture. Fixed the egg-white decision and pin to 12 words; lintPick passes. NOTE: section assertions still report TERM_UNGLOSSED G3/G4 because they require fields forbidden on picks: server/lib/counterCardLint.test.js:758; server/test/acceptance/ca-4a.test.js:237; ca-4b.test.js:193; ca-5.test.js:53; w4.test.js:60. These unowned checks remain unchanged."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Vegetarian-fed meaning and pasture insects/forage remain explicit; acceptance passes. NOTE: the contradictory register row at docs/CONCERN-REGISTER.md:62 remains unchanged because it is unowned."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Archived source additions and existing sources retained; acceptance passes. NOTE: server/test/acceptance/k11.test.js:48 invokes passRule.js:68 and rejects required source additions on both label cards. K11 does not import the owned historical overlay; fixing these assertions requires changes outside owns."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes 5/5, including prohibited claims and unchanged egg_labels. TwoLineCheck passes all 181 cards; pins and git diff --check pass; do lines regenerated. Verification still exits 1: npm test reports 2682 passed and seven unowned-test conflicts documented above. Reported done under the contract's conflict exception; checks were not suppressed."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

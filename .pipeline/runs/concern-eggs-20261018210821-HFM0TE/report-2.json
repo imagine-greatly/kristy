@@ -1,0 +1,39 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All four cards name feed and organic; acceptance passes. Assumptions: the requested sourcing ladder applies while existing duck cooking-safety guidance remains intact."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Required decisions name pasture; egg-white decision is 12 words and passes lintPick. NOTE: TERM_UNGLOSSED G3/G4 persists at server/lib/counterCardLint.test.js:758, server/test/acceptance/ca-4a.test.js:237, ca-4b.test.js:193, ca-5.test.js:53 and w4.test.js:60. The linter requires tier_note, pick_steps or instead; the spec forbids all three on picks. Unowned checks remain unchanged."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Vegetarian fed correctly excludes animal byproducts without implying absence of outdoor access or forage. Insects and forage are named separately."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Required archived sources are present and existing sources retained. NOTE: server/test/acceptance/k11.test.js:48 invokes passRule.js:68, requiring exact source equality for both label cards. Confirmed both frozen source arrays contain zero concern-archive URLs, while C4 requires at least one. These requirements cannot both pass without changing an unowned test or fixture."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes 5/5; egg_labels remains unchanged. TwoLineCheck passes 181 cards and git diff --check passes. Latest verification remains failed: 2682 passed, seven conflicts documented above. No further edits this round: a green gate is incompatible with the current ownership and spec constraints. Status done follows the contract's explicit unowned-test-conflict exception."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

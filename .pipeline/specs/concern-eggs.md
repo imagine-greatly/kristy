@@ -1,4 +1,4 @@
-# concern-eggs — every egg card names feed first and organic second, and "vegetarian fed" is decoded
+# concern-eggs — the three egg label cards names feed first and organic second, and "vegetarian fed" is decoded
 
 ```json
 {
@@ -9,6 +9,7 @@
     "server/kristy_perimeter_kb.json",
     "server/test/acceptance/twoLinePin.js",
     "server/test/acceptance/k14.test.js",
+    "server/test/acceptance/k11.test.js",
     "docs/do-lines-review.md",
     "server/lib/doLines.json"
   ],
@@ -29,8 +30,9 @@ Repo `/Users/m1/kristy`, branch `main`. Ask (Devon 2026-10-18): every niche conc
 card "as complete as possible guiding them to get the healthiest version of any food". Devon ruling on eggs: feed
 first, organic second (register row `egg_organic_rung`).
 
-`egg_labels` is already complete; do not edit it. Cards (4): `egg_duck_quail`, `label_cage_free`,
-`label_pasture_raised_feed`, pick `pick_egg_whites`. Concern rows (docs/CONCERN-REGISTER.md, "Eggs"): `egg_feed`,
+`egg_labels` is already complete; do not edit it. Cards (3): `egg_duck_quail`, `label_cage_free`,
+`label_pasture_raised_feed`. Do not edit `pick_egg_whites` (a pick cannot carry the G3/G4 glosses `lintSections`
+requires, and pick decisions cap at 12 words, `w4.test.js:58`). Concern rows (docs/CONCERN-REGISTER.md, "Eggs"): `egg_feed`,
 `egg_organic_rung`, `vegetarian_fed`. The egg ladder there: pasture + soy/corn-free feed > pasture + organic > organic > cage-free.
 
 ## Change
@@ -43,19 +45,19 @@ first, organic second (register row `egg_organic_rung`).
   about pasture or time outdoors (archive `dairy_eggs_packaging/100daysofrealfood-egg-labels.md`). Separately, hens on
   pasture eat insects and forage, so the rung to look for is pasture-raised plus a printed feed claim. Never say a
   vegetarian-fed hen did not forage.
-- `pick_egg_whites`: `decision` (one sentence; picks hold only id/kind/title/category/aliases/decision/sources)
-  names whites from organic or pasture-raised hens and keeps the pasteurized-per-federal-standard fact.
 - Each card adds ≥1 source object `{name, url}` whose `url` is copied verbatim from a `url:` frontmatter line under
   `docs/sources/concerns/` (never from memory). Existing sources stay.
 - Two-line rule: decision ≤10 words where `scripts/twoLineCheck.js` applies; it must pass.
 - Claim lock / no-treatment: label truth only. Never "causes", "prevents", "lowers risk", "healthier for you"
   health outcomes; no statistics not already on the card; zero first person; no em-dash asides; no brand names.
 - Pins: every changed card field goes into `TWO_LINE[id]` in `server/test/acceptance/twoLinePin.js` (the pin must
-  equal the live KB). Add the four ids to the `CONCERN` set there (beforeConcern overlay) so older tests read their
-  sources as of 5a53252. `pick_egg_whites` is a pick: pin it through the existing non-enumerable `PICK_PINS`
-  mechanism and add it to the expected `picks` list in the "pick pin matches the live KB" test (and raise that
-  test's pinned-count floor by one). Picks are checked by `lintPick` (decision ≤16 words), not the 10-word rule.
-  `server/test/acceptance/k14.test.js` C5 reads `egg_duck_quail` and `pick_egg_whites` sources from the live KB
+  equal the live KB). Add the three ids to the `CONCERN` set there (beforeConcern overlay) so older tests read their
+  sources as of 5a53252. Section gloss rule (`lintSections` L4, counterCardLint.js:1843): a decision that says "organic" or
+  "pasture-raised" (eggs_dairy, G3/G4) must carry that row's exact gloss in `tier_note`, `pick_steps` or `instead`
+  ("certified organic feed and outdoor access"; "time outdoors on pasture, audited only with a certifier’s seal").
+  `server/test/acceptance/k11.test.js` asserts frozen `sources` against an old fixture: the only allowed edit is to
+  pass `now` through `beforeConcern` (as the deli batch did in other tests).
+  `server/test/acceptance/k14.test.js` C5 reads `egg_duck_quail` sources from the live KB
   against the k14/item-cards archive; the only allowed edit there is to read those sources through `beforeConcern`
   (import it from `./twoLinePin.js`, as the deli batch did in other tests). Never edit `server/test/acceptance/fixtures/*`, `*.before.json`, or other historical
   fixtures. If an older test still fails, report it (file:line, assertion) rather than editing it.
@@ -63,12 +65,12 @@ first, organic second (register row `egg_organic_rung`).
   `node scripts/buildDoLines.js` from `server/`. Commit both.
 
 ## Criteria
-- C1 [test] All four cards' text (all fields except sources/aliases/asked_as) names feed (soy, corn or feed) and organic.
-- C2 [test] `egg_duck_quail`, `label_cage_free` and `pick_egg_whites` decisions name pasture or organic.
+- C1 [test] All three cards' text (all fields except sources/aliases/asked_as) names feed (soy, corn or feed) and organic.
+- C2 [test] `egg_duck_quail` and `label_cage_free` decisions name pasture or organic.
 - C3 [test] `label_pasture_raised_feed` names "vegetarian" and (insect or forag).
-- C4 [test] Each of the four cites ≥1 URL present verbatim in a docs/sources/concerns `url:` line; every source URL is
+- C4 [test] Each of the three cites ≥1 URL present verbatim in a docs/sources/concerns `url:` line; every source URL is
   either one the card carried at 215e92d or present in that archive.
-- C5 [test] No card text contains causes/prevents/lowers risk/carcinogen/cancer, or I/me/my; `egg_labels` unchanged from 215e92d.
+- C5 [test] No card text contains causes/prevents/lowers risk/carcinogen/cancer, or I/me/my; `egg_labels` and `pick_egg_whites` unchanged from 215e92d.
 Also (verify, not a criterion): whole suite stays green and twoLineCheck passes.
 
 ## Contract
@@ -104,7 +106,7 @@ const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category'
 const text = (e) => JSON.stringify(Object.fromEntries(Object.entries(e).filter(([k]) => !SKIP.has(k))));
 const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
 
-const ALL = ['egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'pick_egg_whites'];
+const ALL = ['egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed'];
 
 const root = join(ROOT, 'docs/sources/concerns');
 const archived = new Set();
@@ -116,7 +118,7 @@ for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDir
 }
 
 test('C1 feed and organic named', () => {
-  for (const id of nonEmpty(ALL, 'cards', 4)) {
+  for (const id of nonEmpty(ALL, 'cards', 3)) {
     const t = text(card(id));
     assert.match(t, /soy|corn|feed/i, `${id} feed`);
     assert.match(t, /organic/i, `${id} organic`);
@@ -124,7 +126,7 @@ test('C1 feed and organic named', () => {
 });
 
 test('C2 decisions lead with pasture or organic', () => {
-  for (const id of ['egg_duck_quail', 'label_cage_free', 'pick_egg_whites']) assert.match(card(id).decision, /pasture|organic/i, id);
+  for (const id of ['egg_duck_quail', 'label_cage_free']) assert.match(card(id).decision, /pasture|organic/i, id);
 });
 
 test('C3 vegetarian fed decoded', () => {
@@ -149,6 +151,6 @@ test('C5 no treatment claims, no first person, egg_labels untouched', () => {
     assert.doesNotMatch(t, /\b(causes?|prevents?|lowers? (the )?risk|carcinogen\w*|cancer)\b/i, `${id} treatment`);
     assert.doesNotMatch(t, /\b(I|me|my)\b/, `${id} first person`);
   }
-  assert.deepEqual(card('egg_labels'), pre.entries.find((x) => x.id === 'egg_labels'));
+  for (const id of ['egg_labels', 'pick_egg_whites']) assert.deepEqual(card(id), pre.entries.find((x) => x.id === id));
 });
 ```
