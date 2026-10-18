@@ -1236,7 +1236,8 @@
         "milk cartons",
         "gallon of milk",
         "carton of milk",
-        "Low-temp pasteurized grass-fed whole milk"
+        "Low-temp pasteurized grass-fed whole milk",
+        "100% grass-fed low-temp pasteurized whole milk"
       ],
       "category": "dairy",
       "question": "Should I buy whole or low-fat milk?",

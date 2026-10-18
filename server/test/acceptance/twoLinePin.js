@@ -211,6 +211,7 @@ export const TWO_LINE = {
       "Non-homogenized is still pasteurized. Two different processes.",
       "The shortest date on the shelf usually means the least processing, not worse milk."
     ],
+    "aliases": ["whole milk","2% milk","skim milk","reduced fat milk","low fat milk","milk fat","which milk","what milk","milk should i buy","a2 milk","a2","a1 milk","a1","a2 vs a1","beta casein","bcm 7","jersey milk","guernsey","a2 yogurt","a1 yogurt","a2 protein","milk protein type","ultra pasteurized","uht milk","pasteurized milk","homogenized","non homogenized","cream top milk","why does organic milk last so long","milk processing","milk carton","milk cartons","gallon of milk","carton of milk","Low-temp pasteurized grass-fed whole milk","100% grass-fed low-temp pasteurized whole milk"],
     "cart_pick": "100% grass-fed low-temp pasteurized whole milk"
   },
   "cheese_real_vs_processed": {
