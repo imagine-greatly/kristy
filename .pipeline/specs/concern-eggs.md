@@ -8,6 +8,7 @@
   "owns": [
     "server/kristy_perimeter_kb.json",
     "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
     "docs/do-lines-review.md",
     "server/lib/doLines.json"
   ],
@@ -38,8 +39,10 @@ first, organic second (register row `egg_organic_rung`).
   feed printed outright, otherwise organic) in the first tip or `short_answer`. Keep the cooking-safety content.
 - `label_cage_free`: say plainly that none of cage-free, free-range or pasture-raised says what the hen ate; feed words
   (soy-free, corn-free) must be printed outright, and organic is the next rung. Decision keeps the pasture rung.
-- `label_pasture_raised_feed`: decode "vegetarian fed": hens on pasture eat insects and forage, so a vegetarian-fed
-  claim means the hen was not foraging on pasture (100daysofrealfood-egg-labels).
+- `label_pasture_raised_feed`: decode "vegetarian fed": it says the feed holds no animal byproducts and says nothing
+  about pasture or time outdoors (archive `dairy_eggs_packaging/100daysofrealfood-egg-labels.md`). Separately, hens on
+  pasture eat insects and forage, so the rung to look for is pasture-raised plus a printed feed claim. Never say a
+  vegetarian-fed hen did not forage.
 - `pick_egg_whites`: `decision` (one sentence; picks hold only id/kind/title/category/aliases/decision/sources)
   names whites from organic or pasture-raised hens and keeps the pasteurized-per-federal-standard fact.
 - Each card adds ≥1 source object `{name, url}` whose `url` is copied verbatim from a `url:` frontmatter line under
@@ -49,7 +52,12 @@ first, organic second (register row `egg_organic_rung`).
   health outcomes; no statistics not already on the card; zero first person; no em-dash asides; no brand names.
 - Pins: every changed card field goes into `TWO_LINE[id]` in `server/test/acceptance/twoLinePin.js` (the pin must
   equal the live KB). Add the four ids to the `CONCERN` set there (beforeConcern overlay) so older tests read their
-  sources as of 5a53252. Never edit `server/test/acceptance/fixtures/*`, `*.before.json`, or other historical
+  sources as of 5a53252. `pick_egg_whites` is a pick: pin it through the existing non-enumerable `PICK_PINS`
+  mechanism and add it to the expected `picks` list in the "pick pin matches the live KB" test (and raise that
+  test's pinned-count floor by one). Picks are checked by `lintPick` (decision ≤16 words), not the 10-word rule.
+  `server/test/acceptance/k14.test.js` C5 reads `egg_duck_quail` and `pick_egg_whites` sources from the live KB
+  against the k14/item-cards archive; the only allowed edit there is to read those sources through `beforeConcern`
+  (import it from `./twoLinePin.js`, as the deli batch did in other tests). Never edit `server/test/acceptance/fixtures/*`, `*.before.json`, or other historical
   fixtures. If an older test still fails, report it (file:line, assertion) rather than editing it.
 - Do lines: if a decision change needs a new do line, edit `docs/do-lines-review.md` then run
   `node scripts/buildDoLines.js` from `server/`. Commit both.
