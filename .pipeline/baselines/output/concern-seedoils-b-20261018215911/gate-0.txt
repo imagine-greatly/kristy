@@ -1,0 +1,109 @@
+TAP version 13
+# Subtest: C1 seed oil and natural fat named
+not ok 1 - C1 seed oil and natural fat named
+  ---
+  duration_ms: 0.999458
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:31:1'
+  failureType: 'testCodeFailure'
+  error: 'potato_chips seed oil'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Potato chips 
+     How do you pick potato chips? 
+     Thin-sliced potato chips, the way chips began. 
+     A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes. 
+     A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes. 
+     The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. 
+     established 
+     As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous. 
+     Potato chips sliced from potatoes 
+     Stacked crisps start as dried potato flakes and cornstarch pressed into one shape. 
+     Read the ingredients; a sliced chip starts with potatoes. 
+     Identical, stackable shapes point to a crisp pressed from flakes. 
+     Expect irregular sizes and folds in a bag of sliced chips. 
+     “Potato crisps” can name a product pressed from dried potato flakes, not slices. 
+     Read the ingredients: a sliced chip starts with potatoes, not dried flakes. 
+     Irregular sizes and folds mark sliced chips; identical, stackable shapes point to flakes. 
+     Read “potato crisps” or “made from dried potatoes” as a possible pressed product. 
+     The FDA classifies potato chips as thin slices of potato fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer. Its maker chose “potato crisps,” the British term, instead. 
+     Made from dried potatoes 
+     The disclaimer for a chip pressed from dehydrated potato flakes rather than sliced. 
+     Potato crisps 
+     The British word for chips, also taken by a stacked product to avoid that disclaimer. 
+     A dried potatoes line on the label means flakes, not slices.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:34:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 avocado oil never recommended
+ok 2 - C2 avocado oil never recommended
+  ---
+  duration_ms: 0.449667
+  type: 'test'
+  ...
+# Subtest: C3 oil decisions name a natural fat
+not ok 3 - C3 oil decisions name a natural fat
+  ---
+  duration_ms: 0.102334
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: 'potato_chips'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Thin-sliced potato chips, the way chips began.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:46:90)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 sources come from the concern archive
+not ok 4 - C4 sources come from the concern archive
+  ---
+  duration_ms: 0.179084
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:49:1'
+  failureType: 'testCodeFailure'
+  error: 'potato_chips cites no concern-archive url'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsB.test.js:54:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 no treatment or mechanism claims, no first person
+ok 5 - C5 no treatment or mechanism claims, no first person
+  ---
+  duration_ms: 0.556458
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 2
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 83.331958

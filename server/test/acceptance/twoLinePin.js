@@ -2082,36 +2082,130 @@ export const TWO_LINE = {
     "decision": "Crackers with a whole grain listed first on the ingredients.",
     "buying_tips": [
       "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
+      "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the first ingredient; a whole grain there leads the cracker.",
       "Look for “whole wheat flour” on the list, not just “wheat flour.”",
       "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter."
+    ],
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/101.4",
+      "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+      "https://www.nutritionletter.tufts.edu/?p=148621",
+      "https://en.wikipedia.org/wiki/Cracker_(food)",
+      "https://bakerpedia.com/processes/crackers/",
+      "https://www.masterclass.com/articles/sourdough-crackers",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "watch_out": [
+      "A front that leads with whole-grain words can still list refined flour first.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "tortilla_chips": {
-    "decision": "Corn masa tortilla chips, the corn cooked in limewater.",
+    "decision": "Masa tortilla chips in olive oil, coconut oil or tallow.",
     "buying_tips": [
       "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
+      "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the ingredients for masa or corn masa.",
       "A trace of lime on the list points to the traditional cooking step.",
       "“Restaurant-style” chips are tortillas cut into wedges and fried."
+    ],
+    "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nixtamalization",
+      "https://www.fao.org/4/t0395e/T0395E05.htm",
+      "https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul",
+      "https://sporked.com/article/what-is-masa/",
+      "https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/",
+      "https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "cart_pick": "Masa tortilla chips: olive oil",
+    "watch_out": [
+      "Some corn chips are made from corn that was never cooked in lime.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "potato_chips": {
-    "decision": "Thin-sliced potato chips, the way chips began.",
+    "decision": "Sliced potato chips in olive oil, coconut oil or tallow.",
     "buying_tips": [
       "Stacked crisps start as dried potato flakes and cornstarch pressed into one shape.",
+      "Read the ingredient list for the frying fat; take chips cooked in olive oil, coconut oil, tallow or lard.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the ingredients; a sliced chip starts with potatoes.",
       "Identical, stackable shapes point to a crisp pressed from flakes.",
       "Expect irregular sizes and folds in a bag of sliced chips."
+    ],
+    "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
+      "https://www.chowhound.com/1803980/pringles-arent-potato-chips/",
+      "https://www.thetakeout.com/1833928/why-pringles-not-real-potato-chips/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "cart_pick": "Sliced potato chips: olive oil",
+    "watch_out": [
+      "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "popcorn": {
-    "decision": "Plain popcorn kernels, popped at home.",
+    "decision": "Plain popcorn kernels, popped at home in coconut oil.",
     "buying_tips": [
       "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
-      "Buy plain kernels and add butter or oil and salt at home, if wanted.",
+      "Microwave bags and ready-popped bags name their oil in the ingredient list; skip bags that list seed oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Buy plain kernels to pop at home in coconut oil, butter or tallow, then salt to taste.",
       "Loose kernels pop in a plain brown paper bag in the microwave.",
       "Unpopped “old maids” come from hulls with cuts or weak spots."
+    ],
+    "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://ag.purdue.edu/news/2020/02/whats-under-the-shell-of-this-popular-snack.html",
+      "https://www.nbcnews.com/id/wbna7584284",
+      "https://share.america.gov/popcorn-hails-from-americas-heartland/",
+      "https://www.csmonitor.com/The-Culture/Food/Stir-It-Up/2014/0903/The-easier-cheaper-way-to-make-air-popped-popcorn",
+      "https://blogs.extension.iastate.edu/answerline/2026/05/19/popcorn/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "watch_out": [
+      "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
+    ],
+    "pick_steps": [
+      "Buy plain kernels to pop at home in coconut oil, butter or tallow.",
+      "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
     ]
   },
   "pretzels": {
@@ -2127,9 +2221,31 @@ export const TWO_LINE = {
     "decision": "Bars with oats or another whole grain listed first.",
     "buying_tips": [
       "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
+      "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the first ingredients; oats or another whole grain should lead.",
       "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
       "Many bars carry sugar and high fructose corn syrup, and the list shows which."
+    ],
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/101.4",
+      "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
+      "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+      "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+      "https://en.wikipedia.org/wiki/Granola",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "watch_out": [
+      "Enriched refined grains listed first mean refined grain leads the bar, not oats.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "trail_mix": {
@@ -2241,14 +2357,44 @@ export const TWO_LINE = {
     ]
   },
   "frozen_fries": {
-    "decision": "Frozen fries of potatoes, oil and salt, little else.",
+    "decision": "Frozen fries in tallow, olive oil or coconut oil.",
     "buying_tips": [
       "At home, hash browns take potatoes, oil, salt and pepper; the bag lists anything more.",
+      "The bag’s ingredient list names the frying or par-frying oil. Choose tallow, olive oil, or coconut oil; no added oil also fits.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the bag’s ingredient list for potatoes, oil and salt.",
       "Compare bags by what each one lists beyond potatoes, oil and salt.",
       "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
       "Do not overcrowd the air fryer basket, so the fries cook evenly.",
       "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%."
+    ],
+    "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://www.ams.usda.gov/sites/default/files/media/Frozen_French_Fried_Potatoes_Standard%5B1%5D.pdf",
+      "https://www.wgbh.org/news/2016-03-24/fry-and-fry-again-the-science-secrets-to-the-double-fry",
+      "https://patents.google.com/patent/US4254153",
+      "https://www.recipetineats.com/french-fries/",
+      "https://www.crunchycreamysweet.com/hash-browns-recipe/",
+      "https://extension.illinois.edu/sites/default/files/2024-12/air_fryer.pdf",
+      "https://brunswick.ces.ncsu.edu/2022/07/freezing",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "kristy_take": "A short list of potatoes, tallow, olive oil, or coconut oil, and salt is the standard here. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
+    "cart_pick": "Frozen fries: tallow",
+    "watch_out": [
+      "Fried foods frozen at home may lose their crispness.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
+    ],
+    "pick_steps": [
+      "Read the bag for potatoes, salt, and tallow, olive oil, or coconut oil.",
+      "No added oil also fits; compare anything listed beyond potatoes and salt."
     ]
   },
   "frozen_waffles": {
@@ -2265,9 +2411,32 @@ export const TWO_LINE = {
     "decision": "Chicken nuggets that say white meat on the label.",
     "buying_tips": [
       "“White meat” means 100 percent light meat; “mostly white meat” can be 66 percent.",
+      "Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, or coconut oil; no added oil also fits.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
       "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
       "A nugget labeled “breaded” holds no more than 30 percent breading."
+    ],
+    "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/9/381.156",
+      "https://www.law.cornell.edu/cfr/text/9/381.166",
+      "https://www.law.cornell.edu/cfr/text/9/319.880",
+      "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
+      "https://www.law.cornell.edu/cfr/text/9/381.173",
+      "https://www.americastestkitchen.com/recipes/15619-tiny-chicken-tenders",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ],
+    "watch_out": [
+      "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "frozen": {
@@ -2375,7 +2544,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Source checks still lint the live fronts. Historical copy assertions can also restore
 // pinned fields; every restored field remains checked against the live KB above.

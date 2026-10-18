@@ -200,9 +200,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `coconut_water` | bulk_pantry | Coconut water alone on the list, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
 | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
 | `crackers` | bulk_pantry | Crackers with a whole grain listed first on the ingredients. | Read the front for “multigrain”; it does not mean whole grain. | — |
-| `tortilla_chips` | bulk_pantry | Corn masa tortilla chips, the corn cooked in limewater. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
-| `potato_chips` | bulk_pantry | Thin-sliced potato chips, the way chips began. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
-| `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home. | Read the ingredients for anything listed besides popcorn. | — |
+| `tortilla_chips` | bulk_pantry | Masa tortilla chips in olive oil, coconut oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
+| `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
+| `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
 | `pretzels` | bulk_pantry | Pretzels listing flour, malt, oil, salt, yeast and soda. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
 | `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
@@ -214,7 +214,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `deli` | bulk_pantry | Deli food from a cold case, or a hot one. | Check the cold case first; meats, cheeses and salads all need it. | — |
 | `frozen_pizza` | bulk_pantry | Frozen pizza whose crust lists flour, water, salt, yeast. | Check a crust sold as whole wheat for whole wheat flour throughout. | — |
 | `frozen_meals` | bulk_pantry | Frozen meals named for their meat, inspection mark shown. | Check the inspection mark, then follow the package directions to heat it. | — |
-| `frozen_fries` | bulk_pantry | Frozen fries of potatoes, oil and salt, little else. | Read the ingredients for anything home cooks would not use. | — |
+| `frozen_fries` | bulk_pantry | Frozen fries in tallow, olive oil or coconut oil. | Read the ingredient list for potatoes and the oil used before freezing. | — |
 | `frozen_waffles` | bulk_pantry | Frozen waffles with a whole grain listed first. | Read the list for “wheat flour”, which is not a whole grain flour. | — |
 | `frozen_nuggets` | bulk_pantry | Chicken nuggets that say white meat on the label. | Check for “natural proportions”, which means 50 to 65 percent light meat. | — |
 | `frozen` | bulk_pantry | Frozen food that is frozen solid, picked up last. | Check for grayish-brown or white dried patches; that is freezer burn. | — |

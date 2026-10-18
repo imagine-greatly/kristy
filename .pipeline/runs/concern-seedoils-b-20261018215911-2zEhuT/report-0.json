@@ -1,0 +1,42 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/k24.test.js",
+    "server/test/acceptance/w2.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All seven cards name the G7 oils to skip and natural-fat alternatives. Assumptions: retained grain/white-meat headlines for crackers, bars and nuggets."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "All seven explicitly skip avocado oil; acceptance C2 passes."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "All four required headlines name natural fats. twoLineCheck passes: 181 cards, zero violations."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Added two archived source objects per card; preserved every existing source. Acceptance C4 passes."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Claim and voice checks pass. All 38 changed fields are pinned; do lines synchronized. Full npm test: 2708 passed, zero failures."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

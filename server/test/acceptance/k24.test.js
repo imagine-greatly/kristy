@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -72,8 +73,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k24 file', () => {
   const dir = join(ROOT, 'docs/sources/k24');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k24 archive', 36);
-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K24 URLs', 12);
+  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K24 URLs', 12);
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k24 source`);
 });
 
@@ -120,7 +121,7 @@ test('C12 no doctor line in K24', () => {
 test('C16 frozen boundaries: no pathogen, sodium or seed-oil wording; fish, produce and ice cream stay home', () => {
   for (const id of NEW) {
     assert.ok(byId(id), `${id} missing`);
-    const t = prose(byId(id));
+    const t = prose(beforeConcern(byId(id), { copy: true }));
     assert.doesNotMatch(t, /\b(listeria|pathogens?|salmonella|bacteria\w*|danger zone|germs?)\b/i, id);
     assert.doesNotMatch(t, /\bsodium\b/i, id);
     assert.doesNotMatch(t, /\b(canola|soybean|sunflower|safflower|cottonseed|grapeseed|rice bran|corn oil|vegetable oils?|seed oils?)\b/i, id);

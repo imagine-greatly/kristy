@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path';
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -378,7 +378,7 @@ test('A4 only decision and instead moved on batch cards; nothing else in the KB 
   };
   const stripW2 = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !(w2[e.id] || []).includes(f)));
   // The two-line rewrite (2026-10-17) owns decision/buying_tips (and egg sources) now: twoLinePin.test.js.
-  const was = (id) => beforeTwoLine(now(id));
+  const was = (id) => beforeConcern(beforeTwoLine(now(id)));
   for (const e of base.entries) {
     if (IDS.includes(e.id)) assert.deepEqual(strip(was(e.id)), strip({ ...e, ...W4_COPY[e.id] }), `${e.id}: a field beyond decision/instead moved`);
     else assert.deepEqual(stripW2(was(e.id)), stripW2({ ...e, ...W4_COPY[e.id] }), `${e.id}: outside the batch and W2, changed`);

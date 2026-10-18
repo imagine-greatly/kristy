@@ -1,6 +1,6 @@
 // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
 import { beforeCa7 } from './ca7Superseded.js';
-import { beforeTwoLine } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -550,6 +550,6 @@ test('C1 corpus counts and every other entry stay at the shipped baseline', () =
   const eggSources = kb.entries.find(e => e.id === 'egg_labels').sources;
   assert.deepEqual(eggSources.slice(0, was('egg_labels').sources.length), was('egg_labels').sources, 'egg_labels sources: additions only');
   const strip = (e) => { const out = stripW2(e); if (e.id === 'egg_labels') delete out.sources; return out; };
-  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(strip(beforeCa7(beforeTwoLine(e))), strip({ ...was(e.id), ...W4_COPY[e.id] }), e.id);
+  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(strip(beforeCa7(beforeConcern(beforeTwoLine(e)))), strip({ ...was(e.id), ...W4_COPY[e.id] }), e.id);
   for (const id of ['raw_kefir', 'raw_aged_cheese']) assert.deepEqual(now(id).watch_out, was(id).watch_out, id);
 });

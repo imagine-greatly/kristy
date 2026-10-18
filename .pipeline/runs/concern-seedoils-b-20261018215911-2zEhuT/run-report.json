@@ -1,0 +1,137 @@
+{
+  "kind": "build",
+  "runId": "concern-seedoils-b-20261018215911-2zEhuT",
+  "piece_id": "/Users/m1/kristy:concern-seedoils-b",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-seedoils-b.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 2546476,
+    "cached": 2408448,
+    "output": 11912,
+    "reasoning": 4267
+  },
+  "over_ceiling": true,
+  "ms": 607893,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-18T19:59:11.692Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-seedoils-b-20261018215911-2zEhuT:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-seedoils-b-20261018215911-2zEhuT/events-0.jsonl",
+      "usage": {
+        "input": 2546476,
+        "cached": 2408448,
+        "output": 11912,
+        "reasoning": 4267
+      },
+      "tokens": 2558388,
+      "mem_free_mb": 324,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a1509d-5b06-7d51-bd8d-5825e10575db",
+        "usage": {
+          "input": 2546476,
+          "cached": 2408448,
+          "output": 11912,
+          "reasoning": 4267
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/k24.test.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All seven cards name the G7 oils to skip and natural-fat alternatives. Assumptions: retained grain/white-meat headlines for crackers, bars and nuggets.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"All seven explicitly skip avocado oil; acceptance C2 passes.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"All four required headlines name natural fats. twoLineCheck passes: 181 cards, zero violations.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Added two archived source objects per card; preserved every existing source. Acceptance C4 passes.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Claim and voice checks pass. All 38 changed fields are pinned; do lines synchronized. Full npm test: 2708 passed, zero failures.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"pwd && rg --files -g AGENTS.md -g report.schema.json -g '*concernSeedOilsB*' -g '\"'!node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"' && cat server/test/acceptance/concernSeedOilsB.test.js && cat server/test/acceptance/twoLinePin.test.js && git status --short\"",
+          "/bin/zsh -lc 'cat server/test/acceptance/k23.test.js server/test/acceptance/k14.test.js server/test/acceptance/k15.test.js server/test/acceptance/k16.test.js server/test/acceptance/ic4b.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/w2.test.js server/test/acceptance/k24.test.js'",
+          "/bin/zsh -lc 'ls -la AGENTS.md server/AGENTS.md server/test/AGENTS.md server/test/acceptance/AGENTS.md server/lib/AGENTS.md docs/AGENTS.md /Users/m1/AGENTS.md /Users/AGENTS.md /AGENTS.md 2>/dev/null; cat server/test/acceptance/concernSeedOilsA.test.js server/test/acceptance/w4.test.js server/test/acceptance/ic8a.test.js'",
+          "/bin/zsh -lc \"wc -l server/test/acceptance/{twoLinePin.js,ca-4b.test.js,ca-7.test.js,w2.test.js,k24.test.js,k23.test.js,k14.test.js,k15.test.js,k16.test.js,ic4b.test.js} docs/{CONCERN-REGISTER.md,CONCERN-COVERAGE.md,CARD-ALIGNMENT-PLAN.md} VOICE_SPEC.md && cat server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/testGuards.js package.json server/package.json && sed -n '1,85p' server/test/acceptance/twoLinePin.js && tail -n 110 server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"sed -n '261,520p' docs/CARD-ALIGNMENT-PLAN.md && cat VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"cat docs/CONCERN-COVERAGE.md && sed -n '1,260p' docs/CARD-ALIGNMENT-PLAN.md\"",
+          "/bin/zsh -lc 'cat docs/CONCERN-REGISTER.md docs/sources/concerns/pantry/INDEX.md && cat docs/sources/concerns/pantry/shanahan-hateful-eight.md docs/sources/concerns/pantry/kresser-industrial-seed-oils.md docs/sources/concerns/pantry/wapf-faq-fats-and-oils.md docs/sources/concerns/packaged/seedoilfree-potato-chips.md'",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport {readFileSync} from 'node:fs';\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nfor(const id of ['potato_chips','tortilla_chips','crackers','frozen_fries','frozen_nuggets','snack_bars','popcorn']) console.log(JSON.stringify(kb.entries.find(e=>e.id===id),null,2));\nJS\"",
+          "/bin/zsh -lc 'cat server/test/acceptance/k24.test.js server/test/acceptance/k23.test.js'",
+          "/bin/zsh -lc \"rg -n -A 6 -B 3 'D7|G6|G7|avocado|natural fat|Seed oils to skip' docs/CARD-ALIGNMENT-PLAN.md && sed -n '95,175p' docs/CONCERN-REGISTER.md && cat docs/sources/concerns/pantry/INDEX.md && sed -n '1,45p' docs/sources/concerns/pantry/shanahan-hateful-eight.md && sed -n '1,35p' docs/sources/concerns/packaged/seedoilfree-potato-chips.md\"",
+          "/bin/zsh -lc 'cat server/test/acceptance/k14.test.js && cat server/test/acceptance/k15.test.js'",
+          "/bin/zsh -lc \"cat server/test/acceptance/k16.test.js server/test/acceptance/ic4b.test.js && rg -n 'before|C1|A4|sources|frozen_fries|potato_chips|popcorn' server/test/acceptance/ca-7.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/w2.test.js && rg -n '\\\\| \"'`(potato_chips|tortilla_chips|crackers|frozen_fries|frozen_nuggets|snack_bars|popcorn)`'\"' docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"rg -n 'CANONICAL_GLOSSES|READ_|LOOK_FOR|look_for|pick_steps|CART_PICK|cart_pick|natural fat|seed oil' server/lib/counterCardLint.js && sed -n '1,95p' docs/sources/concerns/pantry/INDEX.md && sed -n '1,14p' docs/sources/concerns/pantry/shanahan-hateful-eight.md && sed -n '1,14p' docs/sources/concerns/pantry/wapf-faq-fats-and-oils.md && sed -n '1,14p' docs/sources/concerns/packaged/seedoilfree-potato-chips.md && sed -n '366,395p' server/test/acceptance/ca-7.test.js && sed -n '420,449p' server/test/acceptance/w2.test.js && sed -n '537,555p' server/test/acceptance/ca-4b.test.js\"",
+          "/bin/zsh -lc \"sed -n '1390,1495p' server/lib/counterCardLint.js && sed -n '1820,1867p' server/lib/counterCardLint.js && rg -n 'buying_tips|pick_steps|look_for|cart_pick' server/lib/counterCards.js && sed -n '1,35p' server/test/acceptance/k24.test.js && sed -n '1,65p' server/test/acceptance/ca-7.test.js && rg -n 'seed_oils|traditional_fats|potato_chips|tortilla_chips|crackers|frozen_fries|frozen_nuggets|snack_bars|popcorn' docs/CONCERN-COVERAGE.md\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst path = 'server/kristy_perimeter_kb.json';\nconst original = readFileSync(path, 'utf8');\nconst kb = JSON.parse(original);\nconst ids = ['potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn'];\nconst before = new Map(ids.map(id => [id, structuredClone(kb.entries.find(e => e.id === id))]));\nconst byId = id => kb.entries.find(e => e.id === id);\nconst skip = 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.';\nconst avocado = 'Skip avocado oil too: the label cannot prove the oil is pure.';\nconst source = file => readFileSync(file, 'utf8').match(/\"'^url:'\"\\\\s*(\\\\S+)/m)[1];\nconst sources = [\n  { name: 'Dr. Cate Shanahan: The Hateful Eight seed oils', url: source('docs/sources/concerns/pantry/shanahan-hateful-eight.md') },\n  { name: 'Weston A. Price Foundation: FAQ, fats and oils', url: source('docs/sources/concerns/pantry/wapf-faq-fats-and-oils.md') },\n];\nconst oilTips = {\n  potato_chips: 'Read the ingredient list for the frying fat; take chips cooked in olive oil, coconut oil, tallow or lard.',\n  tortilla_chips: 'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.',\n  crackers: 'Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.',\n  frozen_fries: 'The bag’s ingredient list names the frying or par-frying oil. Choose tallow, olive oil, coconut oil or no added oil.',\n  frozen_nuggets: 'Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, coconut oil or no added oil.',\n  snack_bars: 'Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.',\n  popcorn: 'Microwave bags and ready-popped bags name their oil in the ingredient list; skip bags that list seed oil.',\n};\nfor (const id of ids) {\n  const e = byId(id);\n  e.buying_tips.splice(1, 0, oilTips[id], skip);\n  e.watch_out.push(avocado);\n  e.detail += ' Choosing these fats and skipping seed oils and avocado oil is Kristy’s standard.';\n  e.sources.push(...sources);\n}\nObject.assign(byId('potato_chips'), {\n  decision: 'Sliced potato chips in olive oil, coconut oil or tallow.',\n  cart_pick: 'Sliced potato chips cooked in olive oil',\n});\nObject.assign(byId('tortilla_chips'), {\n  decision: 'Masa tortilla chips in olive oil, coconut oil or tallow.',\n  cart_pick: 'Masa tortilla chips cooked in olive oil',\n});\nObject.assign(byId('frozen_fries'), {\n  decision: 'Frozen fries in tallow, olive oil or coconut oil.',\n  cart_pick: 'Frozen fries cooked in tallow',\n  kristy_take: 'A short list of potatoes, tallow, olive oil or coconut oil, and salt is the standard here. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.',\n  pick_steps: [\n    'Read the bag’s list for potatoes, tallow, olive oil or coconut oil, and salt.',\n    'A bag with no added oil also fits; compare what else is listed beyond potatoes and salt.',\n  ],\n});\nconst popcorn = byId('popcorn');\npopcorn.decision = 'Plain popcorn kernels, popped at home in coconut oil.';\npopcorn.buying_tips[3] = 'Buy plain kernels to pop at home in coconut oil, butter or tallow, then salt to taste.';\npopcorn.pick_steps[0] = 'Pop plain kernels at home in coconut oil, butter or tallow; add salt to taste.';\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet pinText = readFileSync(pinPath, 'utf8');\nconst start = pinText.indexOf('export const TWO_LINE = ') + 'export const TWO_LINE = '.length;\nconst end = pinText.indexOf('\\\\n};', start) + 2;\nconst pins = JSON.parse(pinText.slice(start, end));\nfor (const id of ids) {\n  const e = byId(id);\n  for (const [field, value] of Object.entries(e)) if (JSON.stringify(value) \"'!== JSON.stringify(before.get(id)[field])) pins[id][field] = value;\n  console.log(id + '\"': ' + Object.keys(pins[id]).join(', '));\n}\npinText = pinText.slice(0, start) + JSON.stringify(pins, null, 2) + pinText.slice(end);\npinText = pinText.replace(/const CONCERN = new Set\\\\(\\\\[([\"'^'\"\\\\n]+)\\\\]\\\\);/, (_, list) => \"'`const CONCERN = new Set([${list}, ${ids.map(id => `'\"'\"'${id}'\"'\"'`).join('\"', ')}]);\"'`);\nwriteFileSync(path, JSON.stringify(kb, null, 2) + '\"'\\\\n');\nwriteFileSync(pinPath, pinText);\nconst reviewPath = 'docs/do-lines-review.md';\nlet review = readFileSync(reviewPath, 'utf8');\nfor (const id of ids) {\n  const e = byId(id);\n  if (e.decision \"'!== before.get(id).decision) {\n    review = review.split('\"'\\\\n').map(line => {\n      if (\"'!line.startsWith('\"'| \"'`'\"' + id + '\"'` |'\"')) return line;\n      const cells = line.split('|');\n      cells[3] = ' ' + e.decision + ' ';\n      if (id === 'frozen_fries') cells[4] = ' Read the ingredient list for the oil used before freezing. ';\n      return cells.join('|');\n    }).join('\\\\n');\n  }\n}\nwriteFileSync(reviewPath, review);\nJS\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernSeedOilsB.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node --input-type=module <<'JS'\nimport { spawn } from 'node:child_process';\nconst child = spawn('npm', ['test'], { stdio: ['ignore', 'pipe', 'pipe'] });\nlet output = '';\nchild.stdout.on('data', chunk => { output += chunk; });\nchild.stderr.on('data', chunk => { output += chunk; });\nchild.on('close', code => {\n  const lines = output.split('\\\\n');\n  console.log(lines.filter(line => /\"'^ℹ |''^✖|''^not ok|''^# (tests|pass|fail|duration)/.test(line)).join('\"'\\\\n'));\n  const failures = output.indexOf('failing tests:');\n  if (failures >= 0) console.log(output.slice(failures));\n  else if (code) console.log(output.slice(-14000));\n  process.exitCode = code ?? 1;\n});\nJS\"",
+          "/bin/zsh -lc 'git diff --stat && git diff -- server/kristy_perimeter_kb.json docs/do-lines-review.md server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/w2.test.js server/test/acceptance/k24.test.js server/lib/doLines.json'",
+          "/bin/zsh -lc \"sed -n '1528,1595p' server/lib/counterCardLint.js && sed -n '1710,1755p' server/lib/counterCardLint.js && rg -a -n -A 5 -B 5 'buying_tips|look_for:' server/lib/counterCards.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport { matchItemToCard } from './server/lib/listMatch.js';\nfor (const pick of ['Tortilla chips with masa, cooked in tallow', 'Masa tortilla chips cooked in tallow', 'Tortilla chips cooked in coconut oil', 'Masa tortilla chips in coconut oil', 'Potato chips cooked in tallow', 'Sliced potato chips cooked in olive oil', 'Frozen fries cooked in tallow']) console.log(JSON.stringify({pick, slug:matchItemToCard(pick)?.slug}));\nJS\"",
+          "/bin/zsh -lc \"rg -n 'function matchItemToCard|export function match|aliasCoversRow|scorePool' server/lib/listMatch.js && sed -n '120,340p' server/lib/listMatch.js && sed -n '1659,1710p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport { matchItemToCard } from './server/lib/listMatch.js';\nfor (const pick of ['Sliced potato chips: olive oil', 'Masa tortilla chips: olive oil', 'Frozen fries: tallow']) console.log(JSON.stringify({pick, slug:matchItemToCard(pick)?.slug}));\nJS\"",
+          "/bin/zsh -lc \"node --input-type=module <<'JS'\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst path = 'server/kristy_perimeter_kb.json';\nconst kb = JSON.parse(readFileSync(path, 'utf8'));\nconst byId = id => kb.entries.find(e => e.id === id);\nconst standards = {\n  potato_chips: 'For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard.',\n  tortilla_chips: 'For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard.',\n  crackers: 'Olive oil, coconut oil or butter is Kristy’s standard for crackers.',\n  frozen_fries: 'For added fat, Kristy’s standard is tallow, olive oil, or coconut oil.',\n  frozen_nuggets: 'For added fat, Kristy’s standard is tallow, olive oil, or coconut oil.',\n  snack_bars: 'For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter.',\n  popcorn: 'For popping at home, Kristy’s standard is coconut oil, butter or tallow.',\n};\nfor (const [id, line] of Object.entries(standards)) {\n  const e = byId(id);\n  e.detail = e.detail.replace('Choosing these fats and skipping seed oils and avocado oil is Kristy’s standard.', line + ' Skip seed oils and avocado oil.');\n}\nbyId('potato_chips').cart_pick = 'Sliced potato chips: olive oil';\nbyId('tortilla_chips').cart_pick = 'Masa tortilla chips: olive oil';\nconst fries = byId('frozen_fries');\nfries.cart_pick = 'Frozen fries: tallow';\nfries.buying_tips[1] = 'The bag’s ingredient list names the frying or par-frying oil. Choose tallow, olive oil, or coconut oil; no added oil also fits.';\nfries.kristy_take = fries.kristy_take.replace('tallow, olive oil or coconut oil', 'tallow, olive oil, or coconut oil');\nfries.pick_steps = ['Read the bag for potatoes, salt, and tallow, olive oil, or coconut oil.', 'No added oil also fits; compare anything listed beyond potatoes and salt.'];\nbyId('frozen_nuggets').buying_tips[1] = 'Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, or coconut oil; no added oil also fits.';\nbyId('popcorn').pick_steps[0] = 'Buy plain kernels to pop at home in coconut oil, butter or tallow.';\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet pinText = readFileSync(pinPath, 'utf8');\nconst start = pinText.indexOf('export const TWO_LINE = ') + 'export const TWO_LINE = '.length;\nconst end = pinText.indexOf('\\\\n};', start) + 2;\nconst pins = JSON.parse(pinText.slice(start, end));\nfor (const id of Object.keys(standards)) for (const field of Object.keys(pins[id])) pins[id][field] = byId(id)[field];\nwriteFileSync(path, JSON.stringify(kb, null, 2) + '\\\\n');\nwriteFileSync(pinPath, pinText.slice(0, start) + JSON.stringify(pins, null, 2) + pinText.slice(end));\nJS\"",
+          "/bin/zsh -lc \"node --test server/test/acceptance/concernSeedOilsB.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node --input-type=module <<'JS'\nimport { spawn } from 'node:child_process';\nconst child = spawn('npm', ['test'], { stdio: ['ignore', 'pipe', 'pipe'] });\nlet output = '';\nchild.stdout.on('data', chunk => { output += chunk; });\nchild.stderr.on('data', chunk => { output += chunk; });\nchild.on('close', code => {\n  const lines = output.split('\\\\n');\n  console.log(lines.filter(line => /\"'^ℹ |''^✖|''^not ok|''^# (tests|pass|fail|duration)/.test(line)).join('\"'\\\\n'));\n  const failures = output.indexOf('failing tests:');\n  if (failures >= 0) console.log(output.slice(failures));\n  else if (code) console.log(output.slice(-14000));\n  process.exitCode = code ?? 1;\n});\nJS\"",
+          "/bin/zsh -lc \"git diff --check && node --input-type=module <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst before = JSON.parse(execFileSync('git', ['show', 'HEAD:server/kristy_perimeter_kb.json'], { maxBuffer: 64 << 20 }));\nconst ids = ['potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn'];\nconst pinText = readFileSync('server/test/acceptance/twoLinePin.js', 'utf8');\nconst start = pinText.indexOf('export const TWO_LINE = ') + 'export const TWO_LINE = '.length;\nconst pins = JSON.parse(pinText.slice(start, pinText.indexOf('\\\\n};', start) + 2));\nconst skip = 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.';\nconst texts = v => typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(texts) : v && typeof v === 'object' ? Object.values(v).flatMap(texts) : [];\nconst changed = [];\nfor (const old of before.entries) {\n  const entry = kb.entries.find(e => e.id === old.id);\n  assert.ok(entry, old.id);\n  if (\"'!ids.includes(old.id)) { assert.deepEqual(entry, old); continue; }\n  assert.deepEqual(entry.sources.slice(0, old.sources.length), old.sources);\n  assert.ok(entry.buying_tips.includes(skip), `${entry.id} G7`);\n  for (const tip of old.watch_out) assert.ok(entry.watch_out.includes(tip), `${entry.id} retained caution`);\n  for (const field of ['\"'aliases', 'asked_as', 'category', 'evidence_tier', 'why', 'short_answer', 'science', 'labels_decoded']) assert.deepEqual(entry[field], old[field], \"'`${entry.id}.${field}`);\n  for (const [field, value] of Object.entries(entry)) {\n    if (JSON.stringify(value) !== JSON.stringify(old[field])) {\n      assert.deepEqual(pins[entry.id][field], value, `${entry.id}.${field} unpinned`);\n      changed.push(`${entry.id}.${field}`);\n    }\n  }\n  const spoken = Object.fromEntries(Object.entries(entry).filter(([field]) => !['\"'sources', 'aliases', 'asked_as', 'id', 'category', 'evidence_tier'].includes(field)));\n  assert.doesNotMatch(texts(spoken).join(' '), /—|\\\\b(oxidation|omega[- ]?6|harms?|toxic\\\\w*|inflam\\\\w*)\\\\b/i, entry.id);\n}\nassert.equal(kb.entries.length, before.entries.length);\nconst snack = kb.entries.find(e => e.id === 'snack_bars');\nconst oldSnack = before.entries.find(e => e.id === 'snack_bars');\nfor (const field of ['decision', 'cart_pick', 'pick_steps', 'kristy_take', 'tier_note']) assert.deepEqual(snack[field], oldSnack[field], \"'`snack_bars.${field}`);\nconsole.log(`Scope/preservation audit passed: exactly ${ids.length} cards, ${changed.length} changed fields all pinned; existing sources and item-specific facts retained.`);\nconsole.log(execFileSync('\"'git', ['diff', '--name-only'], { encoding: 'utf8' }));\nJS\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 2558388,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 129,
+    "key": "8ec98294b407d9fb10d0a0e6932b43f6fe6b9eaeb92421701e392db3f98b0cda",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-seedoils-b-20261018215911-2zEhuT/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-seedoils-b-20261018215911-2zEhuT:0",
+  "mem_free_mb": 324,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 10150,
+      "tail": "ok 2704 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.095666\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2705 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.5455\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2706 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.1645\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2707 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 140.206541\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2708 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.422625\n  type: 'test'\n  ...\n1..2708\n# tests 2708\n# suites 0\n# pass 2708\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9668.922625",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-seedoils-b-20261018215911-2zEhuT/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-18T20:09:19.585Z",
+  "readiness": "READY"
+}
