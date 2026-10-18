@@ -8,6 +8,21 @@
   "owns": [
     "server/kristy_perimeter_kb.json",
     "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/ic4b.test.js",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/ic8a.test.js",
+    "server/test/acceptance/k8.test.js",
+    "server/test/acceptance/k10.test.js",
+    "server/test/acceptance/k11.test.js",
+    "server/test/acceptance/k14.test.js",
+    "server/test/acceptance/k19.test.js",
+    "server/test/acceptance/k21.test.js",
+    "server/test/acceptance/k22.test.js",
+    "server/test/acceptance/k23.test.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js",
     "docs/do-lines-review.md",
     "server/lib/doLines.json"
   ],
@@ -59,7 +74,12 @@ Cards (8): `cooking_oils`, `nut_butter_ingredients`, `plant_butter`, `label_cold
   KB). Add the eight ids to the `CONCERN` set there (beforeConcern overlay). If an older test fails because it reads
   these cards' sources or text from the live KB against an older archive or fixture, the only allowed edit to that
   test is to read the entry through `beforeConcern` (import from `./twoLinePin.js`), and add that test file to your
-  report. Never edit `server/test/acceptance/fixtures/*`, `*.before.json`, or other historical fixtures. Any other
+  report. A dry run (adding one archived source to each of the eight cards) failed these owned tests, each to be fixed
+  only this way: ca-4b C1, ca-7 A4, ic4b/ic7b/ic8a C1/C3/C7, k8, k10, k11, k19/k21/k22/k23 C5, w2, w4. k14 C12 pins
+  k8–k10 at 719f9fe and k11 to an exact beforeConcern form: widen it only by the same exact-match pattern it already
+  uses for k11. Picks (if any) cap at 12 words (`w4.test.js:58`). A decision saying "organic" or "pasture-raised"
+  in meat/eggs_dairy, or "natural fat" in bulk_pantry/frozen/eggs_dairy, needs that `CANONICAL_GLOSSES` row's exact
+  gloss in `tier_note`, `pick_steps` or `instead` (`lintSections` L4); a `cart_pick` must agree with its decision (L5). Never edit `server/test/acceptance/fixtures/*`, `*.before.json`, or other historical fixtures. Any other
   older-test failure: report it (file:line, assertion), do not edit.
 - Do lines: if a decision change needs a new do line, edit `docs/do-lines-review.md` then run
   `node scripts/buildDoLines.js` from `server/`. Commit both.
