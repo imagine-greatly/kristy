@@ -337,7 +337,7 @@
         "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
       ],
       "kristy_take": "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
-      "cart_pick": "Whole chuck, not mechanically tenderized",
+      "cart_pick": "100% grass-fed or grass-finished whole chuck",
       "buying_tips": [
         "How it was raised matters more than the cut; Prime and Choice only grade marbling.",
         "Chuck is shoulder and round is rear leg: the working muscles.",
@@ -378,7 +378,7 @@
       ],
       "pick_steps": [
         "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
-        "How it was raised: see Beef.",
+        "Raised: “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
         "Added solution: see Pork cuts and ‘solution added’ pork."
       ],
       "science": "Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
@@ -603,7 +603,7 @@
         "7 CFR § 205.237 Livestock feed (organic livestock fed organically produced feed) https://www.law.cornell.edu/cfr/text/7/205.237"
       ],
       "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
-      "cart_pick": "Pasture-raised organic corn- and soy-free eggs",
+      "cart_pick": "Corn- and soy-free eggs from hens on pasture",
       "buying_tips": [
         "Most hens eat corn and soy, organic ones too, and her feed becomes the egg.",
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
@@ -1258,7 +1258,7 @@
         "CDC “Raw Milk” https://www.cdc.gov/food-safety/foods/raw-milk.html"
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
-      "cart_pick": "Low-temp pasteurized grass-fed whole milk",
+      "cart_pick": "100% grass-fed low-temp pasteurized whole milk",
       "buying_tips": [
         "Every bit of heat changes milk; 100% grass-fed means grass and hay, never grain.",
         "Whole milk is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
@@ -6302,7 +6302,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you ask before buying bagels?",
-      "decision": "Bagels boiled before baking, with their ingredients named.",
+      "decision": "Bagels boiled before the oven, with their ingredients named.",
       "why": "The boil sets a bagel’s outside and gives it that chew. A longer boil can make the crust chewier and the middle denser.",
       "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
       "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
@@ -6626,7 +6626,7 @@
       ],
       "category": "dairy",
       "question": "What should you check before buying oat milk?",
-      "decision": "Oat milk with few stabilizers and no seed oil.",
+      "decision": "Oat milk with few stabilizers, never seed oil.",
       "why": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
       "short_answer": "The archived paper studied six original oat drinks from the UK market. Their nutritional composition and fortification varied. Check the actual carton rather than treating oat milk as one formulation.",
       "detail": "The paper describes production that can include milling, enzyme hydrolysis, formulation, and heat treatment. It notes that oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The study measured sensory, physical, and chemical properties, not health outcomes.",
@@ -7291,7 +7291,7 @@
       "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
       "cart_pick": "Ham named just “Ham”",
       "buying_tips": [
-        "Plain “Ham” must meet the highest protein level; each step down adds more water.",
+        "The name tells the water: plain “Ham” has the least, and each step down adds more.",
         "Read the product name for “Water Added” or a percent of added ingredients.",
         "Check whether the label says fully cooked or cook before eating.",
         "Find where water sits in the ingredients statement."
@@ -9283,7 +9283,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick almond milk?",
-      "decision": "Unsweetened almond milk, a short list, no seed oil.",
+      "decision": "Unsweetened almond milk, a short list, never seed oil.",
       "why": "FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.",
       "short_answer": "Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.",
       "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.",
@@ -9295,7 +9295,7 @@
       "kristy_take": "The carton panel, not the word milk, says what the drink brings.",
       "cart_pick": "Unsweetened almond milk",
       "buying_tips": [
-        "Almond drinks vary in protein and added sugars, so the carton panel is the guide.",
+        "Almond drinks vary in added sugars, so the carton panel is the guide.",
         "Pick unsweetened over sweetened, vanilla or chocolate.",
         "Compare protein, vitamin D, calcium and potassium across cartons.",
         "Check saturated fat on the panel."
@@ -9446,7 +9446,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick a plant butter?",
-      "decision": "Coconut or olive oil plant butter, with no seed oil.",
+      "decision": "Coconut or olive oil plant butter, never seed oil.",
       "why": "The oils differ from one plant butter to the next, and the ingredient list names them.",
       "short_answer": "Plant butter is built on plant oils, and the ingredient list names them. One example lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
       "detail": "The federal margarine standard, 21 CFR 166.110, is a reference point here, not a definition of plant butter. A food sold as margarine holds at least 80 percent fat. That fat comes from vegetable or rendered animal fats and oils. Those fats may have gone through an accepted process of physico-chemical modification, a physical or chemical change to the fat. Margarine must contain vitamin A. One plant butter’s label lists coconut oil, cultured cashew milk, water, sunflower oil, sunflower lecithin, sea salt and natural flavors.",
@@ -11387,7 +11387,7 @@
       "kristy_take": "Cured the slow way, in brine, olives keep a salty, acidic, fermented flavor. Salt curing has roots in antiquity.",
       "cart_pick": "Olives cured in brine",
       "buying_tips": [
-        "Lye cures fast and leaves a neutral olive; brine keeps a salty, fermented flavor.",
+        "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
         "Read the jar for the curing method: brine, lye or dry salt.",
         "Greek-style olives are near-ripe purple fruit cured in brine.",
         "Spanish-style green olives are treated with lye, rinsed, then fermented.",

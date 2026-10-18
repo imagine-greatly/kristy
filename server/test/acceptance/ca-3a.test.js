@@ -10,6 +10,7 @@ import * as lint from '../../lib/counterCardLint.js';
 import * as pass from './passRule.js';
 import { RETIRED, projectEntry } from '../../lib/counterCards.js';
 import { TRY_POOL } from '../../lib/tryPool.js';
+import { TWO_LINE, withTwoLine } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -31,6 +32,8 @@ const run = (tips, entries) => lint.lintSections(tips, entries);
 const BATCH = ['beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'beef_cuts_basics', 'organ_meats', 'butcher_counter_asking',
   'judging_meat_at_the_case', 'bison', 'venison_game', 'lamb_goat', 'pick_soup_bones'];
 const RUMINANT_FRONTS = new Set(['beef_grassfed_vs_grainfed', 'bison', 'venison_game', 'lamb_goat']);
+// The approved two-line samples (docs/CARD-STYLE-SAMPLES.md, 2026-10-17) put grass-fed on the steak and ground beef fronts.
+const APPROVED_GRASS_FRONTS = new Set(['ground_beef_lean_ratio', 'beef_cuts_basics']);
 const MEAT_TIP = { section: 'meat', rule: 'A local butcher comes first; at the case, choose meat from animals raised on grass and open pasture.', checks: ['Ask what the animal ate and how it lived; a butcher counter can answer.', 'Organs come from the same animal; liver and heart belong in the cart too.', 'On packaged meat, look for an ingredient list of meat, salt, and spices.'] };
 const G1 = '“grass-fed” is the producer’s own word unless a certifier’s seal audits it';
 const POINTER = 'How it was raised: see Beef.';
@@ -40,7 +43,7 @@ const CLAIM = /healthier|healthiest|better for you|lowers|exposure|protein|calor
 const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
 
 const LEAN = {
-  decision: 'Organ blend with each organ’s percentage first, then nothing-added ground beef.',
+  decision: 'An organ blend with each organ’s percentage, or 100% grass-fed ground beef.', // two-line rule, 2026-10-17
   tier_note: 'Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.',
   instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
   cart_pick: 'Liver and heart beef blend, shares stated',
@@ -120,7 +123,7 @@ const DO_KEPT = {
   lamb_goat: 'Press goat for firm, fine-grained flesh and white fat.',
   organ_meats: 'Check the use-by date against the night it will be cooked.',
   venison_game: 'Ask whether each animal was handled separately and kept cold throughout.',
-  beef_cuts_basics: 'Read the name for “mechanically tenderized” before the cut name.',
+  beef_cuts_basics: 'Read the grade and the sourcing as two separate answers.',
 };
 
 test('C1 Ground beef front equals the worked example', () => {
@@ -134,7 +137,7 @@ test('C2 Ground beef additive fields hold every fold fact', () => {
   const old = pre('ground_beef_lean_ratio');
   const fold = pre('ground_beef_organ_blend');
   assert.deepEqual(e.watch_out, [...old.watch_out, ...fold.watch_out]);
-  assert.deepEqual(e.buying_tips, [...old.buying_tips, 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.']);
+  assert.deepEqual(e.buying_tips, [TWO_LINE.ground_beef_lean_ratio.buying_tips[0], ...old.buying_tips, 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.']);
   const label = (t) => (e.labels_decoded || []).find((l) => l.term === t);
   assert.equal(label('80/20, 85/15, 90/10').meaning, 'Lean % to fat % by weight; higher first number = leaner.');
   assert.equal(label('Organ blend').meaning, 'Beef with liver, heart, or other organs mixed in, sold under its own descriptive name, not as ‘ground beef’.');
@@ -159,7 +162,7 @@ test('C3 the organ-blend fold is complete and the pass rule holds', (t) => {
 
 test('C4 the Beef front carries G1 and drops the grain-finish line', () => {
   const b = now('beef_grassfed_vs_grainfed');
-  assert.equal(b.decision, '100% grass-fed or grass-finished beef, no added hormones, a certifier’s seal.');
+  assert.equal(b.decision, '100% grass-fed or grass-finished beef.'); // two-line rule, 2026-10-17
   assert.equal(b.cart_pick, '100% grass-fed or grass-finished ground beef');
   assert.equal(b.kristy_take, 'Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for whole-life words backed by a seal.');
   assert.ok(b.tier_note.includes(G1), 'beef tier_note lacks the G1 gloss');
@@ -190,8 +193,8 @@ test('C7 only ruminant fronts print a grass term', () => {
   for (const id of BATCH) {
     if (RUMINANT_FRONTS.has(id)) continue;
     const e = now(id);
-    assert.doesNotMatch(String(e.decision || ''), /grass-(fed|finished)/i, `${id} decision`);
-    assert.doesNotMatch(String(e.cart_pick || ''), /grass-(fed|finished)/i, `${id} cart_pick`);
+    if (!APPROVED_GRASS_FRONTS.has(id)) assert.doesNotMatch(String(e.decision || ''), /grass-(fed|finished)/i, `${id} decision`);
+    if (!APPROVED_GRASS_FRONTS.has(id)) assert.doesNotMatch(String(e.cart_pick || ''), /grass-(fed|finished)/i, `${id} cart_pick`);
   }
   for (const id of ['ground_beef_lean_ratio', 'butcher_counter_asking']) assert.ok(JSON.stringify(now(id)).includes(POINTER), `${id} lost the POINTER`);
 });
@@ -238,7 +241,7 @@ test('C12 Step 1c cards equal the spec', () => {
   for (const [id, spec] of Object.entries(SPEC_1C)) {
     const p = pre(id);
     assert.ok(p, `${id} missing at 8b49633`);
-    const want = { ...p, ...spec };
+    const want = withTwoLine({ ...p, ...spec });
     if (id === 'judging_meat_at_the_case') want.watch_out = [...p.watch_out.slice(1), p.watch_out[0], p.decision, p.pick_steps[1]];
     assert.deepEqual(now(id), want, `${id} differs from Step 1c`);
   }

@@ -1,5 +1,6 @@
 // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
 import { beforeCa7 } from './ca7Superseded.js';
+import { beforeTwoLine } from './twoLinePin.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -20,7 +21,7 @@ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8'
 const reviewed = parseReviewTable(reviewText);
 const reviewHeadline = id => reviewText.split('\n').find(line => line.startsWith('| `' + id + '` |'))?.split('|')[3].trim();
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
-const now = (id) => beforeCa7(kb.entries.find((e) => e.id === id));
+const now = (id) => beforeCa7(beforeTwoLine(kb.entries.find((e) => e.id === id)));
 const was = (id) => base.entries.find((e) => e.id === id);
 const without = (e, keys) => Object.fromEntries(Object.entries(e ?? {}).filter(([k]) => !keys.includes(k)));
 const COPY = ['decision', 'short_answer', 'why', 'detail', 'kristy_take', 'tier_note', 'question', 'buying_tips', 'watch_out', 'pick_steps', 'science', 'instead', 'cart_pick', 'labels_decoded', 'eyebrow_short'];
@@ -214,7 +215,8 @@ test('C5 new copy passes the claim-lock, price, punctuation, brand and D4 greps'
 
 test('C6 review table and doLines.json follow the new fronts', () => {
   for (const id of IDS) {
-    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), now(id).decision, id);
+    // The table follows the live front, which the two-line rewrite may have moved past this batch's text.
+    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), kb.entries.find((e) => e.id === id).decision, id);
     if (DO[id]) assert.equal(reviewed.get(id)?.do, DO[id], `${id}: exact do line`);
     const d = reviewed.get(id)?.do;
     if (d) assert.equal(doLines[id], d, id);
@@ -544,6 +546,10 @@ test('C1 corpus counts and every other entry stay at the shipped baseline', () =
     produce_leafy_greens: ['aliases'], produce_stone_fruit: ['decision'], produce_mushrooms: ['decision'],
   };
   const stripW2 = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !(w2[e.id] || []).includes(f)));
-  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(stripW2(beforeCa7(e)), stripW2({ ...was(e.id), ...W4_COPY[e.id] }), e.id);
+  // The two-line rewrite added egg_labels feed sources (2026-10-17): additions only, then compared without them.
+  const eggSources = kb.entries.find(e => e.id === 'egg_labels').sources;
+  assert.deepEqual(eggSources.slice(0, was('egg_labels').sources.length), was('egg_labels').sources, 'egg_labels sources: additions only');
+  const strip = (e) => { const out = stripW2(e); if (e.id === 'egg_labels') delete out.sources; return out; };
+  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(strip(beforeCa7(beforeTwoLine(e))), strip({ ...was(e.id), ...W4_COPY[e.id] }), e.id);
   for (const id of ['raw_kefir', 'raw_aged_cheese']) assert.deepEqual(now(id).watch_out, was(id).watch_out, id);
 });

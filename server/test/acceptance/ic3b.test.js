@@ -40,7 +40,8 @@ test('C1 Produce hub', () => {
   const o = now('organic_worth_it_by_type');
   assert.equal(o.title, 'Produce');
   // W2 leaves the section's skin wording in the section and preserves this answer.
-  assert.equal(o.decision, 'Organic produce eaten whole; conventional fruit and vegetables you peel.');
+  // Two-line rewrite (2026-10-17, approved rule): same answer, line 1 form.
+  assert.equal(o.decision, 'Organic for produce eaten whole; conventional for what you peel.');
   for (const a of ['banana', 'bananas']) {
     assert.ok(!o.aliases.includes(a), `hub still carries ${a}`);
     assert.ok(now('produce_bananas').aliases.includes(a), `produce_bananas lacks ${a}`);

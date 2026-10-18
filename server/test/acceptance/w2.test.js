@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import { nonEmpty } from '../../lib/testGuards.js';
+import { beforeTwoLine } from './twoLinePin.js';
 import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
 import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
 import { kindFor } from '../../lib/counterCards.js';
@@ -442,6 +443,7 @@ test('W2 changes only named produce aliases and fronts, preserving claims and ca
     if (decisions[e.id]) e.decision = decisions[e.id];
     return { ...e, ...W4_COPY[e.id] };
   });
-  assert.deepEqual(kb, { ...before, entries: expected });
+  // The two-line rewrite (2026-10-17) owns decision/buying_tips now: twoLinePin.test.js.
+  assert.deepEqual({ ...kb, entries: kb.entries.map(beforeTwoLine) }, { ...before, entries: expected });
   assert.equal(entries.filter((e) => e.kind !== 'pick').length, 181);
 });

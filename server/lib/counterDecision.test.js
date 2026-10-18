@@ -175,8 +175,9 @@ test('the three worked examples read as calls, not background', () => {
     );
     return d;
   };
-  // "Which cut for stew" → the cut, leading.
-  leads('beef_cuts_basics', 'Chuck');
+  // "Which cut for stew" → how it was raised, leading: the approved two-line steak card
+  // (docs/CARD-STYLE-SAMPLES.md, 2026-10-17) moved the call from the cut to grass-fed.
+  leads('beef_cuts_basics', 'grass-fed');
   // "Wild vs farmed salmon" → ONE verdict. This used to read "Wild if it is in reach.
   // Farmed or nothing, buy the farmed", which is two verdicts where the second cancels
   // the first. Under the one-verdict rule the fallback lives in watch_out, and it may
