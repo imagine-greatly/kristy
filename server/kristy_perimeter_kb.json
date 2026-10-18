@@ -235,7 +235,11 @@
         "USDA FSIS, Chicken from Farm to Table, Ready-Prepared Chicken https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/chicken-farm-table",
         "USDA FSIS, ‘Danger Zone’ (40°F - 140°F) https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
         "USDA FSIS, Meat and Poultry Labeling Terms, Basted / Self basted https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/meat-and-poultry-labeling-terms",
-        "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/"
+        "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
@@ -245,7 +249,10 @@
         "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
         "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
         "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
-        "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
+        "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
+        "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip a bird seasoned with avocado oil too."
       ],
       "watch_out": [
         "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
@@ -4056,7 +4063,11 @@
         "FDA standards of identity for peanut butter, 21 CFR 164.150",
         "Product ingredient labeling",
         "USDA FoodData Central",
-        "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)"
+        "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
       "cart_pick": "Natural peanut butter",
@@ -4070,7 +4081,10 @@
         "Oil separated on top is the good sign. Nothing was added to hold it in.",
         "Reduced-fat versions usually replace the fat with sugar and starch.",
         "Store natural jars upside down in the fridge. The oil redistributes on its own.",
-        "Same reading for almond, cashew and sunflower butters."
+        "Same reading for almond, cashew and sunflower butters.",
+        "Read the jar’s ingredients for added oils; choose nuts and salt, with no added fat.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip avocado oil added to a nut butter as well."
       ],
       "pick_steps": [
         "Read the list for nuts, and salt if wanted, and nothing else.",
@@ -4463,7 +4477,7 @@
       ],
       "category": "label_terms",
       "question": "What do ‘cold-pressed’ and ‘expeller-pressed’ mean on an oil?",
-      "decision": "Cold-pressed or expeller-pressed olive, avocado or coconut oil.",
+      "decision": "Cold-pressed or expeller-pressed olive or coconut oil.",
       "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
       "short_answer": "Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down. Most supermarket cooking oil is neither. It is solvent-extracted, then refined, bleached and deodorized.",
       "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit.",
@@ -4471,17 +4485,23 @@
       "sources": [
         "International Olive Council definitions of cold extraction",
         "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
-        "Food-science references on solvent extraction and oil refining"
+        "Food-science references on solvent extraction and oil refining",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
       "buying_tips": [
         "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
-        "Which oil it is comes first. Olive, avocado and coconut are the ones worth pressing well; a cold-pressed canola is still canola.",
+        "Read the oil name and ingredients first: choose olive or coconut oil. A cold-pressed seed oil stays a seed oil.",
         "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
         "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
         "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
         "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
-        "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable."
+        "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip avocado oil regardless of the pressing words; its label cannot prove purity."
       ],
       "labels_decoded": [
         {
@@ -4508,7 +4528,7 @@
         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
       ],
       "pick_steps": [
-        "Pick olive, avocado or coconut oil first; then match cold-pressed or expeller-pressed.",
+        "Pick olive or coconut oil first; then match cold-pressed or expeller-pressed.",
         "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
         "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
       ],
@@ -9538,16 +9558,20 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/166.110",
-        "https://www.wegmans.com/shop/product/980978"
+        "https://www.wegmans.com/shop/product/980978",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "The oils on the list say what the spread is built on.",
       "cart_pick": "Coconut or olive oil plant butter",
       "buying_tips": [
         "Plant butters differ in their oils, and the ingredient list names each one.",
-        "Find each oil named in the ingredient list.",
+        "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
         "Check whether a nut milk or culture is listed, as in some versions.",
         "Compare the fat line on the Nutrition Facts.",
-        "Seed oils and avocado oil are the two to pass over on the list."
+        "Skip seed oils and avocado oil, even when coconut or olive oil comes first."
       ],
       "watch_out": [
         "The name alone does not say which oils went in."
@@ -10437,23 +10461,30 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a cooking oil?",
-      "decision": "An oil the label names by its source.",
+      "decision": "Olive or coconut oil, or tallow for cooking.",
       "why": "“Vegetable oil” on a label names no single oil; the ingredient list names the oils.",
-      "short_answer": "The label names the oil: canola, peanut, sunflower, sesame. “Vegetable oil” names none. Most store oils are refined, bleached and deodorized, and the bottle says refined or unrefined.",
+      "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
       "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. The name “vegetable oil” names no single oil; the ingredient list names the oils. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use.",
       "evidence_tier": "established",
       "sources": [
         "https://extension.psu.edu/processing-edible-oils",
         "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
-        "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/"
+        "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
-      "cart_pick": "A single named oil, not “vegetable oil”",
+      "cart_pick": "Olive or coconut cooking oil",
       "buying_tips": [
         "“Vegetable oil” on a label names a category, without any seed or fruit.",
         "Read the label for the oil’s name first.",
         "Look for refined or unrefined on the bottle.",
-        "A bottle that says only “vegetable oil” names no oil."
+        "A bottle that says only “vegetable oil” names no oil.",
+        "Choose tallow, olive oil, or coconut oil by the ingredient list.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip avocado oil too: the label cannot prove the oil is pure."
       ],
       "watch_out": [
         "Oil that starts smoking in the pan is no longer fit to use."
@@ -11246,7 +11277,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick mayonnaise?",
-      "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
+      "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
       "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
       "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
       "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
@@ -11255,16 +11286,22 @@
         "https://www.law.cornell.edu/cfr/text/21/169.140",
         "https://www.law.cornell.edu/cfr/text/21/169.150",
         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
-        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
-      "cart_pick": "Mayonnaise by name, its lead oil read",
+      "cart_pick": "Olive oil mayonnaise",
       "buying_tips": [
         "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
         "Check that the name on the jar is Mayonnaise.",
-        "Read which oil the ingredient list names first.",
+        "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
-        "Once opened, keep it in the fridge and use it within 1 to 2 months."
+        "Once opened, keep it in the fridge and use it within 1 to 2 months.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip avocado oil mayo too, even if it names no other oil."
       ],
       "watch_out": [
         "A front label can name an oil that the ingredient list ranks lower."
@@ -12247,7 +12284,11 @@
         "https://www.britannica.com/topic/hummus",
         "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
         "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
-        "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/"
+        "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
       "cart_pick": "Hummus led by chickpeas and tahini",
@@ -12255,7 +12296,10 @@
         "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
         "Read the list for chickpeas and tahini at the top.",
         "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
-        "A tub listing guar gum runs thicker; without it, water and grind set the texture."
+        "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+        "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip hummus made with avocado oil, even when the front calls the tub traditional."
       ],
       "watch_out": [
         "A grainy tub likely comes from a coarse grind of the chickpeas."
@@ -12315,7 +12359,11 @@
         "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
         "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
         "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
-        "https://extension.uconn.edu/?p=20521"
+        "https://extension.uconn.edu/?p=20521",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
       ],
       "kristy_take": "A food-service view: chicken, tuna and creamy egg salad belong in a cold display case.",
       "cart_pick": "A deli salad from the cold case",
@@ -12323,7 +12371,10 @@
         "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
         "Buy salads from a refrigerated case.",
         "Check the Sell-By date, and skip a tub past it.",
-        "Get it home cold; two hours out at most, one hour above 90°F."
+        "Get it home cold; two hours out at most, one hour above 90°F.",
+        "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
+        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
       ],
       "watch_out": [
         "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",

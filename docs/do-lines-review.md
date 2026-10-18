@@ -96,7 +96,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_front_vs_back` | label_terms | A short list of recognizable foods, read on the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Ingredients led by foods, ahead of split sugars or flour. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
 | `label_third_party_seals` | label_terms | A seal naming a program with an outside auditor. | Trace the seal to an organization, not the brand’s own logo. | — |
-| `label_cold_pressed_expeller` | label_terms | Cold-pressed or expeller-pressed olive, avocado or coconut oil. | Read the oil name first, then look for a process word. | — |
+| `label_cold_pressed_expeller` | label_terms | Cold-pressed or expeller-pressed olive or coconut oil. | Read the oil name first, then look for a process word. | — |
 | `label_sugar_free_substitutes` | label_terms | ‘Unsweetened’; on ‘sugar-free’, read which substitute is listed. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
 | `label_wild_vs_farm_raised` | label_terms | Whole or skin-on fish labeled with species, method and country. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
 | `label_serving_size` | label_terms | Packs compared at matching serving sizes, times servings per container. | Check both packages list the same serving size before comparing anything. | — |
@@ -178,7 +178,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
 | `sugars` | bulk_pantry | Sugar alone on the list; brown sugar adds molasses. | Read the ingredients for cane or beet; both make the same sugar. | — |
 | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
-| `cooking_oils` | bulk_pantry | An oil the label names by its source. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+| `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
 | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
 | `cocoa` | bulk_pantry | Cocoa with one ingredient on the list: cocoa. | Read the label for “processed with alkali” after the name. | — |
 | `seeds` | bulk_pantry | Whole chia, hulled hemp, and ground flaxseed or whole flax. | Check the bag date, and keep opened flax cold once home. | — |
@@ -191,7 +191,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
 | `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
 | `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
-| `mayo` | bulk_pantry | Mayonnaise by name: oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+| `mayo` | bulk_pantry | Mayonnaise with olive oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
 | `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
 | `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
 | `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |

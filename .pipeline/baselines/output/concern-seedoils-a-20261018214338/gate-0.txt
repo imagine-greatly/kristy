@@ -1,0 +1,127 @@
+TAP version 13
+# Subtest: C1 seed oil and natural fat named
+not ok 1 - C1 seed oil and natural fat named
+  ---
+  duration_ms: 1.168458
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:31:1'
+  failureType: 'testCodeFailure'
+  error: 'mayo seed oil'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Mayonnaise 
+     How do you pick mayonnaise? 
+     Mayonnaise by name: oil, egg yolk and an acid. 
+     The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice. 
+     Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first. 
+     Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk. 
+     established 
+     The name on the jar settles the recipe. The ingredient list shows which oil leads. 
+     Mayonnaise by name, its lead oil read 
+     A jar sold on avocado or olive oil can carry other oils; the list shows which leads. 
+     Check that the name on the jar is Mayonnaise. 
+     Read which oil the ingredient list names first. 
+     Compare jars by what they add beyond oil, egg yolk, acid and salt. 
+     Once opened, keep it in the fridge and use it within 1 to 2 months. 
+     A front label can name an oil that the ingredient list ranks lower. 
+     Check that the name on the jar is Mayonnaise. 
+     Check where a front-named oil ranks in the ingredients; it may rank lower. 
+     Mayonnaise is a federal standard name: at least 65 percent oil, egg yolk, and vinegar or lemon or lime juice. The lecithin in the yolk lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. Once opened, keep it in the fridge and use it within 1 to 2 months. 
+     Mayonnaise 
+     The standardized name: at least 65 percent oil, with egg yolk and vinegar or citrus juice. 
+     Salad dressing 
+     A separate standard, thickened with a starchy paste; it holds more water and is sweeter. 
+     Calcium disodium EDTA 
+     A sequestrant the mayonnaise standard allows, used to preserve color or flavor. 
+     The front may name an oil that the ingredients rank lower.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:34:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 avocado oil never recommended
+not ok 2 - C2 avocado oil never recommended
+  ---
+  duration_ms: 0.467917
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:39:1'
+  failureType: 'testCodeFailure'
+  error: 'plant_butter: Seed oils and avocado oil are the two to pass over on the list.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Seed oils and avocado oil are the two to pass over on the list.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:42:41)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 oil decisions name a natural fat
+not ok 3 - C3 oil decisions name a natural fat
+  ---
+  duration_ms: 0.100458
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: 'cooking_oils'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'An oil the label names by its source.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:46:100)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 sources come from the concern archive
+not ok 4 - C4 sources come from the concern archive
+  ---
+  duration_ms: 0.193792
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:49:1'
+  failureType: 'testCodeFailure'
+  error: 'cooking_oils cites no concern-archive url'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSeedOilsA.test.js:54:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 no treatment or mechanism claims, no first person
+ok 5 - C5 no treatment or mechanism claims, no first person
+  ---
+  duration_ms: 0.616
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 1
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 115.440875

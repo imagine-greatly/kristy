@@ -149,19 +149,21 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
 });
 
-test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern-eggs updates', () => {
+test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays', () => {
   const out = execSync(
-    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-9].test.js' server/test/acceptance/k10.test.js",
+    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-7].test.js' server/test/acceptance/k9.test.js",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
-  // Concern-eggs adds archived sources; K11 may restore only those sources for its frozen-field check.
-  const oldK11 = execSync('git show 719f9fe:server/test/acceptance/k11.test.js', { cwd: ROOT }).toString();
-  const concernK11 = oldK11
-    .replace("import { assertPassRule } from './passRule.js';",
-      "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
-    .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
-  assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k11.test.js'), 'utf8'), concernK11);
+  // Concern batches may only read the frozen-field check through beforeConcern.
+  for (const file of ['k8', 'k10', 'k11']) {
+    const old = execSync(`git show 719f9fe:server/test/acceptance/${file}.test.js`, { cwd: ROOT }).toString();
+    const concern = old
+      .replace("import { assertPassRule } from './passRule.js';",
+        "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
+      .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
+    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), concern);
+  }
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [
     '    // W2 retires uncovered grocery nouns from the organic hub and moves bare lettuce',

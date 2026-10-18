@@ -1,0 +1,787 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index 6196d75..40cca8f 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -96,7 +96,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `label_front_vs_back` | label_terms | A short list of recognizable foods, read on the back. | Read three things: ingredient list, added sugars, serving size. | — |
+ | `label_ingredient_order` | label_terms | Ingredients led by foods, ahead of split sugars or flour. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
+ | `label_third_party_seals` | label_terms | A seal naming a program with an outside auditor. | Trace the seal to an organization, not the brand’s own logo. | — |
+-| `label_cold_pressed_expeller` | label_terms | Cold-pressed or expeller-pressed olive, avocado or coconut oil. | Read the oil name first, then look for a process word. | — |
++| `label_cold_pressed_expeller` | label_terms | Cold-pressed or expeller-pressed olive or coconut oil. | Read the oil name first, then look for a process word. | — |
+ | `label_sugar_free_substitutes` | label_terms | ‘Unsweetened’; on ‘sugar-free’, read which substitute is listed. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
+ | `label_wild_vs_farm_raised` | label_terms | Whole or skin-on fish labeled with species, method and country. | Buy the skin-on fillet. A bare one is the easy one to substitute. | — |
+ | `label_serving_size` | label_terms | Packs compared at matching serving sizes, times servings per container. | Check both packages list the same serving size before comparing anything. | — |
+@@ -178,7 +178,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
+ | `sugars` | bulk_pantry | Sugar alone on the list; brown sugar adds molasses. | Read the ingredients for cane or beet; both make the same sugar. | — |
+ | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+-| `cooking_oils` | bulk_pantry | An oil the label names by its source. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
++| `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+ | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
+ | `cocoa` | bulk_pantry | Cocoa with one ingredient on the list: cocoa. | Read the label for “processed with alkali” after the name. | — |
+ | `seeds` | bulk_pantry | Whole chia, hulled hemp, and ground flaxseed or whole flax. | Check the bag date, and keep opened flax cold once home. | — |
+@@ -191,7 +191,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
+ | `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
+ | `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
+-| `mayo` | bulk_pantry | Mayonnaise by name: oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
++| `mayo` | bulk_pantry | Mayonnaise with olive oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+ | `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
+ | `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
+ | `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index 2b3398e..ea19e7c 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -235,7 +235,11 @@
+         "USDA FSIS, Chicken from Farm to Table, Ready-Prepared Chicken https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/chicken-farm-table",
+         "USDA FSIS, ‘Danger Zone’ (40°F - 140°F) https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
+         "USDA FSIS, Meat and Poultry Labeling Terms, Basted / Self basted https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/meat-and-poultry-labeling-terms",
+-        "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/"
++        "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
+       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
+@@ -245,7 +249,10 @@
+         "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
+         "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
+         "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
+-        "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
++        "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
++        "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip a bird seasoned with avocado oil too."
+       ],
+       "watch_out": [
+         "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
+@@ -4056,7 +4063,11 @@
+         "FDA standards of identity for peanut butter, 21 CFR 164.150",
+         "Product ingredient labeling",
+         "USDA FoodData Central",
+-        "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)"
++        "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "Peanuts, and maybe salt. Oil on top means nothing was added to stop it, which is the point.",
+       "cart_pick": "Natural peanut butter",
+@@ -4070,7 +4081,10 @@
+         "Oil separated on top is the good sign. Nothing was added to hold it in.",
+         "Reduced-fat versions usually replace the fat with sugar and starch.",
+         "Store natural jars upside down in the fridge. The oil redistributes on its own.",
+-        "Same reading for almond, cashew and sunflower butters."
++        "Same reading for almond, cashew and sunflower butters.",
++        "Read the jar’s ingredients for added oils; choose nuts and salt, with no added fat.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip avocado oil added to a nut butter as well."
+       ],
+       "pick_steps": [
+         "Read the list for nuts, and salt if wanted, and nothing else.",
+@@ -4463,7 +4477,7 @@
+       ],
+       "category": "label_terms",
+       "question": "What do ‘cold-pressed’ and ‘expeller-pressed’ mean on an oil?",
+-      "decision": "Cold-pressed or expeller-pressed olive, avocado or coconut oil.",
++      "decision": "Cold-pressed or expeller-pressed olive or coconut oil.",
+       "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
+       "short_answer": "Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down. Most supermarket cooking oil is neither. It is solvent-extracted, then refined, bleached and deodorized.",
+       "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit.",
+@@ -4471,17 +4485,23 @@
+       "sources": [
+         "International Olive Council definitions of cold extraction",
+         "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
+-        "Food-science references on solvent extraction and oil refining"
++        "Food-science references on solvent extraction and oil refining",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
+       "buying_tips": [
+         "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
+-        "Which oil it is comes first. Olive, avocado and coconut are the ones worth pressing well; a cold-pressed canola is still canola.",
++        "Read the oil name and ingredients first: choose olive or coconut oil. A cold-pressed seed oil stays a seed oil.",
+         "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
+         "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
+         "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
+         "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
+-        "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable."
++        "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip avocado oil regardless of the pressing words; its label cannot prove purity."
+       ],
+       "labels_decoded": [
+         {
+@@ -4508,7 +4528,7 @@
+         "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
+       ],
+       "pick_steps": [
+-        "Pick olive, avocado or coconut oil first; then match cold-pressed or expeller-pressed.",
++        "Pick olive or coconut oil first; then match cold-pressed or expeller-pressed.",
+         "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
+         "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
+       ],
+@@ -9538,16 +9558,20 @@
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://www.law.cornell.edu/cfr/text/21/166.110",
+-        "https://www.wegmans.com/shop/product/980978"
++        "https://www.wegmans.com/shop/product/980978",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "The oils on the list say what the spread is built on.",
+       "cart_pick": "Coconut or olive oil plant butter",
+       "buying_tips": [
+         "Plant butters differ in their oils, and the ingredient list names each one.",
+-        "Find each oil named in the ingredient list.",
++        "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
+         "Check whether a nut milk or culture is listed, as in some versions.",
+         "Compare the fat line on the Nutrition Facts.",
+-        "Seed oils and avocado oil are the two to pass over on the list."
++        "Skip seed oils and avocado oil, even when coconut or olive oil comes first."
+       ],
+       "watch_out": [
+         "The name alone does not say which oils went in."
+@@ -10437,23 +10461,30 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick a cooking oil?",
+-      "decision": "An oil the label names by its source.",
++      "decision": "Olive or coconut oil, or tallow for cooking.",
+       "why": "“Vegetable oil” on a label names no single oil; the ingredient list names the oils.",
+-      "short_answer": "The label names the oil: canola, peanut, sunflower, sesame. “Vegetable oil” names none. Most store oils are refined, bleached and deodorized, and the bottle says refined or unrefined.",
++      "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
+       "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. The name “vegetable oil” names no single oil; the ingredient list names the oils. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use.",
+       "evidence_tier": "established",
+       "sources": [
+         "https://extension.psu.edu/processing-edible-oils",
+         "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
+-        "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/"
++        "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
+-      "cart_pick": "A single named oil, not “vegetable oil”",
++      "cart_pick": "Olive or coconut cooking oil",
+       "buying_tips": [
+         "“Vegetable oil” on a label names a category, without any seed or fruit.",
+         "Read the label for the oil’s name first.",
+         "Look for refined or unrefined on the bottle.",
+-        "A bottle that says only “vegetable oil” names no oil."
++        "A bottle that says only “vegetable oil” names no oil.",
++        "Choose tallow, olive oil, or coconut oil by the ingredient list.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip avocado oil too: the label cannot prove the oil is pure."
+       ],
+       "watch_out": [
+         "Oil that starts smoking in the pan is no longer fit to use."
+@@ -11246,7 +11277,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick mayonnaise?",
+-      "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
++      "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
+       "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
+       "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
+       "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
+@@ -11255,16 +11286,22 @@
+         "https://www.law.cornell.edu/cfr/text/21/169.140",
+         "https://www.law.cornell.edu/cfr/text/21/169.150",
+         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
+-        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
++        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
+-      "cart_pick": "Mayonnaise by name, its lead oil read",
++      "cart_pick": "Olive oil mayonnaise",
+       "buying_tips": [
+         "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
+         "Check that the name on the jar is Mayonnaise.",
+-        "Read which oil the ingredient list names first.",
++        "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
+         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+-        "Once opened, keep it in the fridge and use it within 1 to 2 months."
++        "Once opened, keep it in the fridge and use it within 1 to 2 months.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip avocado oil mayo too, even if it names no other oil."
+       ],
+       "watch_out": [
+         "A front label can name an oil that the ingredient list ranks lower."
+@@ -12247,7 +12284,11 @@
+         "https://www.britannica.com/topic/hummus",
+         "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
+         "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
+-        "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/"
++        "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
+       "cart_pick": "Hummus led by chickpeas and tahini",
+@@ -12255,7 +12296,10 @@
+         "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
+         "Read the list for chickpeas and tahini at the top.",
+         "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+-        "A tub listing guar gum runs thicker; without it, water and grind set the texture."
++        "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
++        "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip hummus made with avocado oil, even when the front calls the tub traditional."
+       ],
+       "watch_out": [
+         "A grainy tub likely comes from a coarse grind of the chickpeas."
+@@ -12315,7 +12359,11 @@
+         "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
+         "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
+         "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+-        "https://extension.uconn.edu/?p=20521"
++        "https://extension.uconn.edu/?p=20521",
++        {
++          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++          "url": "https://drcate.com/hateful-eight/"
++        }
+       ],
+       "kristy_take": "A food-service view: chicken, tuna and creamy egg salad belong in a cold display case.",
+       "cart_pick": "A deli salad from the cold case",
+@@ -12323,7 +12371,10 @@
+         "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
+         "Buy salads from a refrigerated case.",
+         "Check the Sell-By date, and skip a tub past it.",
+-        "Get it home cold; two hours out at most, one hour above 90°F."
++        "Get it home cold; two hours out at most, one hour above 90°F.",
++        "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
++        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++        "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
+       ],
+       "watch_out": [
+         "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
+diff --git a/server/test/acceptance/concernSeedOilsA.test.js b/server/test/acceptance/concernSeedOilsA.test.js
+new file mode 100644
+index 0000000..effc962
+--- /dev/null
++++ b/server/test/acceptance/concernSeedOilsA.test.js
+@@ -0,0 +1,65 @@
++// concern-seedoils-a: oil and spread cards name the seed oils to skip and a natural fat to take; avocado oil is never
++// recommended; new sources come from the concern archive.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync, readdirSync } from 'node:fs';
++import { join } from 'node:path';
++import { execFileSync } from 'node:child_process';
++import { nonEmpty } from '../../lib/testGuards.js';
++
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const ROOT = new URL('../../../', import.meta.url).pathname;
++const pre = JSON.parse(execFileSync('git', ['show', '2467f1f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
++const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category']);
++const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
++const fields = (e) => Object.entries(e).filter(([k]) => !SKIP.has(k)).flatMap(([, v]) => strings(v));
++const text = (e) => fields(e).join(' \n ');
++const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
++
++const ALL = ['cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken'];
++
++const root = join(ROOT, 'docs/sources/concerns');
++const archived = new Set();
++for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDirectory())) {
++  for (const f of readdirSync(join(root, d.name)).filter((x) => x.endsWith('.md'))) {
++    const m = readFileSync(join(root, d.name, f), 'utf8').match(/^url:\s*(\S+)/m);
++    if (m) archived.add(m[1]);
++  }
++}
++
++test('C1 seed oil and natural fat named', () => {
++  for (const id of nonEmpty(ALL, 'cards', 8)) {
++    const t = text(card(id));
++    assert.match(t, /seed oil|canola|sunflower|soybean|safflower|cottonseed|corn oil/i, `${id} seed oil`);
++    assert.match(t, /tallow|olive|coconut|butter|ghee|lard/i, `${id} natural fat`);
++  }
++});
++
++test('C2 avocado oil never recommended', () => {
++  const hits = [];
++  for (const id of ALL) for (const s of fields(card(id))) for (const sent of s.split(/(?<=[.;!?])\s+/)) if (/avocado/i.test(sent)) hits.push([id, sent]);
++  for (const [id, sent] of hits) assert.match(sent, /skip|never|not|can carry|avoid/i, `${id}: ${sent}`);
++});
++
++test('C3 oil decisions name a natural fat', () => {
++  for (const id of ['cooking_oils', 'plant_butter', 'label_cold_pressed_expeller', 'mayo']) assert.match(card(id).decision, /olive|coconut|tallow|butter/i, id);
++});
++
++test('C4 sources come from the concern archive', () => {
++  nonEmpty([...archived], 'archived urls', 100);
++  for (const id of ALL) {
++    const before = new Set(urlsOf(pre.entries.find((x) => x.id === id)));
++    const urls = nonEmpty(urlsOf(card(id)), `${id} sources`, 1);
++    assert.ok(urls.some((u) => archived.has(u)), `${id} cites no concern-archive url`);
++    for (const u of urls) assert.ok(before.has(u) || archived.has(u), `${id} url not archived: ${u}`);
++  }
++});
++
++test('C5 no treatment or mechanism claims, no first person', () => {
++  for (const id of ALL) {
++    const t = text(card(id));
++    assert.doesNotMatch(t, /\b(causes?|prevents?|lowers? (the )?risk|carcinogen\w*|cancer|inflam\w*|toxic\w*)\b/i, `${id} treatment`);
++    assert.doesNotMatch(t, /\b(I|me|my)\b/, `${id} first person`);
++  }
++});
+diff --git a/server/test/acceptance/ic7b.test.js b/server/test/acceptance/ic7b.test.js
+index 989a375..590e1ec 100644
+--- a/server/test/acceptance/ic7b.test.js
++++ b/server/test/acceptance/ic7b.test.js
+@@ -9,6 +9,7 @@ import { dirname, join } from 'node:path';
+ import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
+ import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ import doLines from '../../lib/doLines.json' with { type: 'json' };
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+@@ -100,7 +101,7 @@ test('C7 new URLs are archived', () => {
+   for (const id of BATCH) {
+     const was = new Set(urls(pre(id)));
+     if (id === 'whole_vs_reduced_fat_milk') for (const f of ['a2_vs_a1_milk', 'milk_processing']) for (const u of urls(pre(f))) was.add(u);
+-    for (const u of urls(now(id))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
++    for (const u of urls(beforeConcern(now(id)))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
+   }
+   assert.ok(checked >= 1, `only ${checked} new URLs checked`);
+ });
+diff --git a/server/test/acceptance/k10.test.js b/server/test/acceptance/k10.test.js
+index e96a8d5..a20370e 100644
+--- a/server/test/acceptance/k10.test.js
++++ b/server/test/acceptance/k10.test.js
+@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
+ import { assertPassRule } from './passRule.js';
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const HERE = dirname(fileURLToPath(import.meta.url));
+ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
+@@ -29,7 +30,7 @@ for (const id of SLICE) {
+     assert.ok(now && old, `${id} missing from the KB or the fixture`);
+     assert.deepEqual(readability(now), []);
+     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
+-    assertPassRule(t, old, now);
++    assertPassRule(t, old, beforeConcern(now));
+   });
+ }
+ 
+diff --git a/server/test/acceptance/k14.test.js b/server/test/acceptance/k14.test.js
+index 3a2665c..9054fe8 100644
+--- a/server/test/acceptance/k14.test.js
++++ b/server/test/acceptance/k14.test.js
+@@ -149,19 +149,21 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
+   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
+ });
+ 
+-test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern-eggs updates', () => {
++test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays', () => {
+   const out = execSync(
+-    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-9].test.js' server/test/acceptance/k10.test.js",
++    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-7].test.js' server/test/acceptance/k9.test.js",
+     { cwd: ROOT },
+   ).toString();
+   assert.equal(out, '');
+-  // Concern-eggs adds archived sources; K11 may restore only those sources for its frozen-field check.
+-  const oldK11 = execSync('git show 719f9fe:server/test/acceptance/k11.test.js', { cwd: ROOT }).toString();
+-  const concernK11 = oldK11
+-    .replace("import { assertPassRule } from './passRule.js';",
+-      "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
+-    .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
+-  assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k11.test.js'), 'utf8'), concernK11);
++  // Concern batches may only read the frozen-field check through beforeConcern.
++  for (const file of ['k8', 'k10', 'k11']) {
++    const old = execSync(`git show 719f9fe:server/test/acceptance/${file}.test.js`, { cwd: ROOT }).toString();
++    const concern = old
++      .replace("import { assertPassRule } from './passRule.js';",
++        "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
++      .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
++    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), concern);
++  }
+   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
+   const w2 = [
+     '    // W2 retires uncovered grocery nouns from the organic hub and moves bare lettuce',
+diff --git a/server/test/acceptance/k19.test.js b/server/test/acceptance/k19.test.js
+index 4609e55..1bdf252 100644
+--- a/server/test/acceptance/k19.test.js
++++ b/server/test/acceptance/k19.test.js
+@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import { inScope } from '../../lib/counterScope.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+ const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
+@@ -87,8 +88,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
+ test('C5 every cited URL hits line 1 of a docs/sources/k19 file, none banned', () => {
+   const dir = join(ROOT, 'docs/sources/k19');
+   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k19 archive', 40);
+-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
+-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K19 URLs', 24);
++  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
++  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K19 URLs', 24);
+   for (const u of urls) {
+     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k19 source`);
+     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
+diff --git a/server/test/acceptance/k21.test.js b/server/test/acceptance/k21.test.js
+index 7c36f3c..91f71f7 100644
+--- a/server/test/acceptance/k21.test.js
++++ b/server/test/acceptance/k21.test.js
+@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import { inScope } from '../../lib/counterScope.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+ const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
+@@ -83,8 +84,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
+ test('C5 every cited URL hits line 1 of a docs/sources/k21 file, none banned', () => {
+   const dir = join(ROOT, 'docs/sources/k21');
+   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k21 archive', 50);
+-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
+-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K21 URLs', 26);
++  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
++  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K21 URLs', 26);
+   for (const u of urls) {
+     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k21 source`);
+     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
+diff --git a/server/test/acceptance/k22.test.js b/server/test/acceptance/k22.test.js
+index d32131a..542abd7 100644
+--- a/server/test/acceptance/k22.test.js
++++ b/server/test/acceptance/k22.test.js
+@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import { inScope } from '../../lib/counterScope.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+ const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
+@@ -81,8 +82,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
+ test('C5 every cited URL hits line 1 of a docs/sources/k22 file, none banned', () => {
+   const dir = join(ROOT, 'docs/sources/k22');
+   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k22 archive', 49);
+-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
+-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
++  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
++  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
+   for (const u of urls) {
+     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k22 source`);
+     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
+@@ -135,7 +136,7 @@ test('C16 food only: no household use on vinegar, no seed oil named on mayo', ()
+     assert.doesNotMatch(prose(byId(id)), /\b(clean\w*|deodor\w*|odou?rs?|laundry|scrub\w*|unclog\w*|household|weeds?|disinfect\w*)\b/i, id);
+   }
+   assert.ok(byId('mayo'), 'mayo missing');
+-  assert.doesNotMatch(prose(byId('mayo')), /\b(canola|soybean|sunflower|safflower|corn|grapeseed|cottonseed|rice bran|vegetable|seed oils?)\b/i);
++  assert.doesNotMatch(prose(beforeConcern(byId('mayo'), { copy: true })), /\b(canola|soybean|sunflower|safflower|corn|grapeseed|cottonseed|rice bran|vegetable|seed oils?)\b/i);
+ });
+ 
+ // chf-5: baking_soda_powder retired with no absorber; its aliases are honest misses now.
+diff --git a/server/test/acceptance/k23.test.js b/server/test/acceptance/k23.test.js
+index 04bda22..82d9941 100644
+--- a/server/test/acceptance/k23.test.js
++++ b/server/test/acceptance/k23.test.js
+@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import { inScope } from '../../lib/counterScope.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+ const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
+@@ -81,8 +82,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
+ test('C5 every cited URL hits line 1 of a docs/sources/k23 file, none banned', () => {
+   const dir = join(ROOT, 'docs/sources/k23');
+   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k23 archive', 69);
+-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
+-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K23 URLs', 26);
++  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
++  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K23 URLs', 26);
+   for (const u of urls) {
+     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k23 source`);
+     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
+@@ -132,7 +133,7 @@ test('C12 no doctor line in K23', () => {
+ test('C16 deli and snack boundaries: no pathogen, sodium or seed-oil wording, no nitrite on deli, lunch meat never on a K23 home', () => {
+   for (const id of NEW) {
+     assert.ok(byId(id), `${id} missing`);
+-    const t = prose(byId(id));
++    const t = prose(beforeConcern(byId(id), { copy: true }));
+     assert.doesNotMatch(t, /\b(listeria|pathogens?|salmonella|bacteria\w*|danger zone|germs?)\b/i, id);
+     assert.doesNotMatch(t.replace(/sodium (hydroxide|bicarbonate)/gi, ''), /\bsodium\b/i, id);
+     assert.doesNotMatch(t, /\b(canola|soybean|sunflower|safflower|cottonseed|grapeseed|rice bran|corn oil|vegetable oils?|seed oils?)\b/i, id);
+diff --git a/server/test/acceptance/k8.test.js b/server/test/acceptance/k8.test.js
+index 0cfe23e..bd331df 100644
+--- a/server/test/acceptance/k8.test.js
++++ b/server/test/acceptance/k8.test.js
+@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
+ import { assertPassRule } from './passRule.js';
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const HERE = dirname(fileURLToPath(import.meta.url));
+ const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
+@@ -27,7 +28,7 @@ for (const id of SLICE) {
+     assert.ok(now && old, `${id} missing from the KB or the fixture`);
+     assert.deepEqual(readability(now), []);
+     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
+-    assertPassRule(t, old, now);
++    assertPassRule(t, old, beforeConcern(now));
+   });
+ }
+ 
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index 1b12d0c..f19bd91 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -45,7 +45,23 @@ export const TWO_LINE = {
+       "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
+       "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
+       "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
+-      "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
++      "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
++      "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip a bird seasoned with avocado oil too."
++    ],
++    "sources": [
++      "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
++      "9 CFR § 381.118 Ingredients statement (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.118",
++      "9 CFR § 424.21 Use of food ingredients and sources of radiation (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/424.21",
++      "USDA FSIS, Chicken from Farm to Table, Ready-Prepared Chicken https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/chicken-farm-table",
++      "USDA FSIS, ‘Danger Zone’ (40°F - 140°F) https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
++      "USDA FSIS, Meat and Poultry Labeling Terms, Basted / Self basted https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/meat-and-poultry-labeling-terms",
++      "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
+     ]
+   },
+   "beef_cuts_basics": {
+@@ -796,7 +812,20 @@ export const TWO_LINE = {
+       "Oil separated on top is the good sign. Nothing was added to hold it in.",
+       "Reduced-fat versions usually replace the fat with sugar and starch.",
+       "Store natural jars upside down in the fridge. The oil redistributes on its own.",
+-      "Same reading for almond, cashew and sunflower butters."
++      "Same reading for almond, cashew and sunflower butters.",
++      "Read the jar’s ingredients for added oils; choose nuts and salt, with no added fat.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil added to a nut butter as well."
++    ],
++    "sources": [
++      "FDA standards of identity for peanut butter, 21 CFR 164.150",
++      "Product ingredient labeling",
++      "USDA FoodData Central",
++      "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
+     ]
+   },
+   "grains_beyond_rice": {
+@@ -853,15 +882,31 @@ export const TWO_LINE = {
+     ]
+   },
+   "label_cold_pressed_expeller": {
+-    "decision": "Cold-pressed or expeller-pressed olive, avocado or coconut oil.",
++    "decision": "Cold-pressed or expeller-pressed olive or coconut oil.",
+     "buying_tips": [
+       "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
+-      "Which oil it is comes first. Olive, avocado and coconut are the ones worth pressing well; a cold-pressed canola is still canola.",
++      "Read the oil name and ingredients first: choose olive or coconut oil. A cold-pressed seed oil stays a seed oil.",
+       "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
+       "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
+       "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
+       "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
+-      "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable."
++      "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil regardless of the pressing words; its label cannot prove purity."
++    ],
++    "sources": [
++      "International Olive Council definitions of cold extraction",
++      "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
++      "Food-science references on solvent extraction and oil refining",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
++    ],
++    "pick_steps": [
++      "Pick olive or coconut oil first; then match cold-pressed or expeller-pressed.",
++      "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
++      "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
+     ]
+   },
+   "label_sugar_free_substitutes": {
+@@ -1655,10 +1700,18 @@ export const TWO_LINE = {
+     "decision": "Coconut or olive oil plant butter, never seed oil.",
+     "buying_tips": [
+       "Plant butters differ in their oils, and the ingredient list names each one.",
+-      "Find each oil named in the ingredient list.",
++      "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
+       "Check whether a nut milk or culture is listed, as in some versions.",
+       "Compare the fat line on the Nutrition Facts.",
+-      "Seed oils and avocado oil are the two to pass over on the list."
++      "Skip seed oils and avocado oil, even when coconut or olive oil comes first."
++    ],
++    "sources": [
++      "https://www.law.cornell.edu/cfr/text/21/166.110",
++      "https://www.wegmans.com/shop/product/980978",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
+     ]
+   },
+   "dairy_case": {
+@@ -1795,13 +1848,27 @@ export const TWO_LINE = {
+     ]
+   },
+   "cooking_oils": {
+-    "decision": "An oil the label names by its source.",
++    "decision": "Olive or coconut oil, or tallow for cooking.",
+     "buying_tips": [
+       "“Vegetable oil” on a label names a category, without any seed or fruit.",
+       "Read the label for the oil’s name first.",
+       "Look for refined or unrefined on the bottle.",
+-      "A bottle that says only “vegetable oil” names no oil."
+-    ]
++      "A bottle that says only “vegetable oil” names no oil.",
++      "Choose tallow, olive oil, or coconut oil by the ingredient list.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil too: the label cannot prove the oil is pure."
++    ],
++    "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
++    "sources": [
++      "https://extension.psu.edu/processing-edible-oils",
++      "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
++      "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
++    ],
++    "cart_pick": "Olive or coconut cooking oil"
+   },
+   "lard_tallow": {
+     "decision": "Leaf lard or tallow, with nothing added to harden it.",
+@@ -1917,14 +1984,27 @@ export const TWO_LINE = {
+     ]
+   },
+   "mayo": {
+-    "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
++    "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
+     "buying_tips": [
+       "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
+       "Check that the name on the jar is Mayonnaise.",
+-      "Read which oil the ingredient list names first.",
++      "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
+       "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+-      "Once opened, keep it in the fridge and use it within 1 to 2 months."
+-    ]
++      "Once opened, keep it in the fridge and use it within 1 to 2 months.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil mayo too, even if it names no other oil."
++    ],
++    "sources": [
++      "https://www.law.cornell.edu/cfr/text/21/169.140",
++      "https://www.law.cornell.edu/cfr/text/21/169.150",
++      "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
++      "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
++    ],
++    "cart_pick": "Olive oil mayonnaise"
+   },
+   "hot_soy_sauce": {
+     "decision": "Traditionally brewed soy sauce, not made fast with acid.",
+@@ -2075,7 +2155,20 @@ export const TWO_LINE = {
+       "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
+       "Read the list for chickpeas and tahini at the top.",
+       "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+-      "A tub listing guar gum runs thicker; without it, water and grind set the texture."
++      "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
++      "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip hummus made with avocado oil, even when the front calls the tub traditional."
++    ],
++    "sources": [
++      "https://www.britannica.com/topic/hummus",
++      "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
++      "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
++      "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
+     ]
+   },
+   "deli_salads": {
+@@ -2084,7 +2177,20 @@ export const TWO_LINE = {
+       "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
+       "Buy salads from a refrigerated case.",
+       "Check the Sell-By date, and skip a tub past it.",
+-      "Get it home cold; two hours out at most, one hour above 90°F."
++      "Get it home cold; two hours out at most, one hour above 90°F.",
++      "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
++    ],
++    "sources": [
++      "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
++      "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
++      "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
++      "https://extension.uconn.edu/?p=20521",
++      {
++        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
++        "url": "https://drcate.com/hateful-eight/"
++      }
+     ]
+   },
+   "prepared_meals": {
+@@ -2268,7 +2374,14 @@ export const beforeTwoLine = (e) => {
+ 
+ // Concern batches add archived sources from docs/sources/concerns; older batches froze or
+ // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
+-// concernDeli.test.js and concernEggs.test.js own the new URLs.
+-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed']);
++// Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
++const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken']);
+ const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+-export const beforeConcern = (e) => (e && CONCERN.has(e.id) ? { ...e, sources: PRE_CONCERN.entries.find((x) => x.id === e.id).sources } : e);
++// Source checks still lint the live fronts. Historical copy assertions can also restore
++// pinned fields; every restored field remains checked against the live KB above.
++export const beforeConcern = (e, { copy = false } = {}) => {
++  if (!e || !CONCERN.has(e.id)) return e;
++  const pre = PRE_CONCERN.entries.find((x) => x.id === e.id);
++  const fields = copy ? Object.keys(TWO_LINE[e.id]) : ['sources'];
++  return { ...e, ...Object.fromEntries(fields.map((field) => [field, pre[field]])) };
++};

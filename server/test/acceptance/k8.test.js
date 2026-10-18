@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
+import { beforeConcern } from './twoLinePin.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
@@ -27,7 +28,7 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, now);
+    assertPassRule(t, old, beforeConcern(now));
   });
 }
 

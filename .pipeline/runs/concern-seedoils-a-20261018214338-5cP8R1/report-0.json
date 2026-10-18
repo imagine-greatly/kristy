@@ -1,0 +1,45 @@
+{
+  "status": "done",
+  "files_changed": [
+    "docs/do-lines-review.md",
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/ic7b.test.js",
+    "server/test/acceptance/k10.test.js",
+    "server/test/acceptance/k14.test.js",
+    "server/test/acceptance/k19.test.js",
+    "server/test/acceptance/k21.test.js",
+    "server/test/acceptance/k22.test.js",
+    "server/test/acceptance/k23.test.js",
+    "server/test/acceptance/k8.test.js",
+    "server/test/acceptance/twoLinePin.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Eight cards updated and pinned; acceptance passes. Assumptions: nut butter retains nuts-and-salt guidance with no added oil, as permitted."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Avocado recommendations removed; remaining mentions explicitly describe skips or blend-label facts. Acceptance passes."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "All four specified decisions name natural fats and meet the word limit."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Each card adds an archived source object; existing sources remain. Historical checks use beforeConcern."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Claim and voice checks pass. Required verification passed: 2,702 tests, 181 cards with zero two-line violations. Do-line generation is current; generated JSON unchanged."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

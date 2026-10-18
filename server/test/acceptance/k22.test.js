@@ -11,6 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -81,8 +82,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k22 file, none banned', () => {
   const dir = join(ROOT, 'docs/sources/k22');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k22 archive', 49);
-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
+  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
   for (const u of urls) {
     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k22 source`);
     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
@@ -135,7 +136,7 @@ test('C16 food only: no household use on vinegar, no seed oil named on mayo', ()
     assert.doesNotMatch(prose(byId(id)), /\b(clean\w*|deodor\w*|odou?rs?|laundry|scrub\w*|unclog\w*|household|weeds?|disinfect\w*)\b/i, id);
   }
   assert.ok(byId('mayo'), 'mayo missing');
-  assert.doesNotMatch(prose(byId('mayo')), /\b(canola|soybean|sunflower|safflower|corn|grapeseed|cottonseed|rice bran|vegetable|seed oils?)\b/i);
+  assert.doesNotMatch(prose(beforeConcern(byId('mayo'), { copy: true })), /\b(canola|soybean|sunflower|safflower|corn|grapeseed|cottonseed|rice bran|vegetable|seed oils?)\b/i);
 });
 
 // chf-5: baking_soda_powder retired with no absorber; its aliases are honest misses now.

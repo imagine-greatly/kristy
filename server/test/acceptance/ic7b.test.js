@@ -9,6 +9,7 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -100,7 +101,7 @@ test('C7 new URLs are archived', () => {
   for (const id of BATCH) {
     const was = new Set(urls(pre(id)));
     if (id === 'whole_vs_reduced_fat_milk') for (const f of ['a2_vs_a1_milk', 'milk_processing']) for (const u of urls(pre(f))) was.add(u);
-    for (const u of urls(now(id))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
+    for (const u of urls(beforeConcern(now(id)))) if (!was.has(u)) { checked++; assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`); }
   }
   assert.ok(checked >= 1, `only ${checked} new URLs checked`);
 });

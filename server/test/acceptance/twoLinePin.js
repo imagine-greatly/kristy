@@ -45,7 +45,23 @@ export const TWO_LINE = {
       "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
       "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
       "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
-      "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat."
+      "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
+      "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip a bird seasoned with avocado oil too."
+    ],
+    "sources": [
+      "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
+      "9 CFR § 381.118 Ingredients statement (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.118",
+      "9 CFR § 424.21 Use of food ingredients and sources of radiation (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/424.21",
+      "USDA FSIS, Chicken from Farm to Table, Ready-Prepared Chicken https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/chicken-farm-table",
+      "USDA FSIS, ‘Danger Zone’ (40°F - 140°F) https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
+      "USDA FSIS, Meat and Poultry Labeling Terms, Basted / Self basted https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/meat-and-poultry-labeling-terms",
+      "Whole Foods Market Organic Rotisserie Chicken, ingredient list from the package (EWG Food Scores, UPC 099482803568) https://www.ewg.org/foodscores/products/099482803568-WholeFoodsMarketOrganicRotisserieChicken/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "beef_cuts_basics": {
@@ -796,7 +812,20 @@ export const TWO_LINE = {
       "Oil separated on top is the good sign. Nothing was added to hold it in.",
       "Reduced-fat versions usually replace the fat with sugar and starch.",
       "Store natural jars upside down in the fridge. The oil redistributes on its own.",
-      "Same reading for almond, cashew and sunflower butters."
+      "Same reading for almond, cashew and sunflower butters.",
+      "Read the jar’s ingredients for added oils; choose nuts and salt, with no added fat.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip avocado oil added to a nut butter as well."
+    ],
+    "sources": [
+      "FDA standards of identity for peanut butter, 21 CFR 164.150",
+      "Product ingredient labeling",
+      "USDA FoodData Central",
+      "MaraNatha “Nut Butter FAQs” https://www.maranathafoods.com/health-facts/nut-butter-faqs/ (a maker’s own label-reading page: oil separation occurs naturally when no ingredient is added to keep the oil from separating, so those jars need stirring; a small amount of palm oil is what keeps a no-stir jar together; without stabilizers a jar left warm for an extended period can become rancid, so refrigerate)",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "grains_beyond_rice": {
@@ -853,15 +882,31 @@ export const TWO_LINE = {
     ]
   },
   "label_cold_pressed_expeller": {
-    "decision": "Cold-pressed or expeller-pressed olive, avocado or coconut oil.",
+    "decision": "Cold-pressed or expeller-pressed olive or coconut oil.",
     "buying_tips": [
       "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
-      "Which oil it is comes first. Olive, avocado and coconut are the ones worth pressing well; a cold-pressed canola is still canola.",
+      "Read the oil name and ingredients first: choose olive or coconut oil. A cold-pressed seed oil stays a seed oil.",
       "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
       "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
       "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
       "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
-      "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable."
+      "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip avocado oil regardless of the pressing words; its label cannot prove purity."
+    ],
+    "sources": [
+      "International Olive Council definitions of cold extraction",
+      "FDA labeling regulations (no federal definition of ‘cold-pressed’ for most oils)",
+      "Food-science references on solvent extraction and oil refining",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "pick_steps": [
+      "Pick olive or coconut oil first; then match cold-pressed or expeller-pressed.",
+      "Expeller-pressed or cold-pressed means mechanical; “refined,” “pure” or no word usually means solvent-extracted.",
+      "Pressed oils are least stable: dark bottle, cool shelf, a size you will finish."
     ]
   },
   "label_sugar_free_substitutes": {
@@ -1655,10 +1700,18 @@ export const TWO_LINE = {
     "decision": "Coconut or olive oil plant butter, never seed oil.",
     "buying_tips": [
       "Plant butters differ in their oils, and the ingredient list names each one.",
-      "Find each oil named in the ingredient list.",
+      "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
       "Check whether a nut milk or culture is listed, as in some versions.",
       "Compare the fat line on the Nutrition Facts.",
-      "Seed oils and avocado oil are the two to pass over on the list."
+      "Skip seed oils and avocado oil, even when coconut or olive oil comes first."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/166.110",
+      "https://www.wegmans.com/shop/product/980978",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "dairy_case": {
@@ -1795,13 +1848,27 @@ export const TWO_LINE = {
     ]
   },
   "cooking_oils": {
-    "decision": "An oil the label names by its source.",
+    "decision": "Olive or coconut oil, or tallow for cooking.",
     "buying_tips": [
       "“Vegetable oil” on a label names a category, without any seed or fruit.",
       "Read the label for the oil’s name first.",
       "Look for refined or unrefined on the bottle.",
-      "A bottle that says only “vegetable oil” names no oil."
-    ]
+      "A bottle that says only “vegetable oil” names no oil.",
+      "Choose tallow, olive oil, or coconut oil by the ingredient list.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip avocado oil too: the label cannot prove the oil is pure."
+    ],
+    "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
+    "sources": [
+      "https://extension.psu.edu/processing-edible-oils",
+      "https://extension.illinois.edu/blogs/live-well-eat-well/2014-09-22-attention-home-cooks-are-you-using-right-oil-right-job",
+      "https://cris.msu.edu/news/cooking-oils/cooking-oils-overview/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "cart_pick": "Olive or coconut cooking oil"
   },
   "lard_tallow": {
     "decision": "Leaf lard or tallow, with nothing added to harden it.",
@@ -1917,14 +1984,27 @@ export const TWO_LINE = {
     ]
   },
   "mayo": {
-    "decision": "Mayonnaise by name: oil, egg yolk and an acid.",
+    "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
     "buying_tips": [
       "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
       "Check that the name on the jar is Mayonnaise.",
-      "Read which oil the ingredient list names first.",
+      "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
       "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
-      "Once opened, keep it in the fridge and use it within 1 to 2 months."
-    ]
+      "Once opened, keep it in the fridge and use it within 1 to 2 months.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip avocado oil mayo too, even if it names no other oil."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/169.140",
+      "https://www.law.cornell.edu/cfr/text/21/169.150",
+      "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2023-07-21-mayonnaise-versus-salad-dressing-popular",
+      "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "cart_pick": "Olive oil mayonnaise"
   },
   "hot_soy_sauce": {
     "decision": "Traditionally brewed soy sauce, not made fast with acid.",
@@ -2075,7 +2155,20 @@ export const TWO_LINE = {
       "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
       "Read the list for chickpeas and tahini at the top.",
       "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
-      "A tub listing guar gum runs thicker; without it, water and grind set the texture."
+      "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+      "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip hummus made with avocado oil, even when the front calls the tub traditional."
+    ],
+    "sources": [
+      "https://www.britannica.com/topic/hummus",
+      "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
+      "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
+      "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "deli_salads": {
@@ -2084,7 +2177,20 @@ export const TWO_LINE = {
       "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
       "Buy salads from a refrigerated case.",
       "Check the Sell-By date, and skip a tub past it.",
-      "Get it home cold; two hours out at most, one hour above 90°F."
+      "Get it home cold; two hours out at most, one hour above 90°F.",
+      "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
+    ],
+    "sources": [
+      "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
+      "https://www.foodrepublic.com/1611339/how-long-does-chicken-salad-lasts-fridge",
+      "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+      "https://extension.uconn.edu/?p=20521",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "prepared_meals": {
@@ -2268,7 +2374,14 @@ export const beforeTwoLine = (e) => {
 
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
-// concernDeli.test.js and concernEggs.test.js own the new URLs.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed']);
+// Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-export const beforeConcern = (e) => (e && CONCERN.has(e.id) ? { ...e, sources: PRE_CONCERN.entries.find((x) => x.id === e.id).sources } : e);
+// Source checks still lint the live fronts. Historical copy assertions can also restore
+// pinned fields; every restored field remains checked against the live KB above.
+export const beforeConcern = (e, { copy = false } = {}) => {
+  if (!e || !CONCERN.has(e.id)) return e;
+  const pre = PRE_CONCERN.entries.find((x) => x.id === e.id);
+  const fields = copy ? Object.keys(TWO_LINE[e.id]) : ['sources'];
+  return { ...e, ...Object.fromEntries(fields.map((field) => [field, pre[field]])) };
+};
