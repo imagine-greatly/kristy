@@ -43,15 +43,15 @@ const CLAIM = /healthier|healthiest|better for you|lowers|exposure|protein|calor
 const PRICE = /\bcheapest\b|\bprice\b|\$[0-9]/i;
 
 const LEAN = {
-  decision: 'An organ blend with each organ’s percentage, or 100% grass-fed ground beef.', // two-line rule, 2026-10-17
-  tier_note: 'Organ blends grind beef liver or heart into the meat; printed percentages show how much of each.',
+  decision: 'An organ blend, or 100% grass-fed ground beef.', // two-line rule, 2026-10-17
+  tier_note: 'Organ blends grind beef liver or heart in with the muscle meat.',
   instead: 'Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.',
-  cart_pick: 'Liver and heart beef blend, shares stated',
-  short_answer: 'Pick an organ blend that prints each organ’s percentage, or ground beef with nothing added. How the cattle were raised is on the Beef card.',
-  why: 'An organ blend folds liver and heart into a familiar grind. Printed shares tell you how much of each.',
-  pick_steps: ['How it was raised: see Beef.', 'Organ blend: each organ named, each with its own percentage.', 'Next: plain ground beef; skip “hamburger,” which allows added beef fat.'],
+  cart_pick: 'Organ blend ground beef',
+  short_answer: 'Pick an organ blend, or ground beef with nothing added. How the cattle were raised is on the Beef card.',
+  why: 'An organ blend folds liver and heart into a familiar grind.',
+  pick_steps: ['How it was raised: see Beef.', 'Organ blend: liver or heart named on the label.', 'Next: plain ground beef; skip “hamburger,” which allows added beef fat.'],
 };
-const LEAN_DO = 'Read the label for organ names, each with a percentage beside it.';
+const LEAN_DO = 'Read the label for liver or heart in the ingredients.';
 const D6_SENTENCE = 'Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart.';
 
 // Step 1c: the named fields per card; every other field stays as at 8b49633.
@@ -67,7 +67,7 @@ const SPEC_1C = {
     why: "Heart and tongue suit cooking in liquid. Liver can be pan-fried; tripe needs a braise to turn tender.",
     kristy_take: "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
     tier_note: 'Organ meats keep a shorter time in the refrigerator than steaks and roasts.',
-    instead: 'A beef blend with liver and heart ground in, each with its percentage printed.',
+    instead: 'A beef blend with liver and heart ground in.',
     pick_steps: ['Ask the counter or a farmer which organs they offer.', 'How it was raised: see Beef.', 'Match each organ to its method; heart and tongue go in liquid.'],
   },
   judging_meat_at_the_case: {
@@ -136,7 +136,12 @@ test('C2 Ground beef additive fields hold every fold fact', () => {
   const e = now('ground_beef_lean_ratio');
   const old = pre('ground_beef_lean_ratio');
   const fold = pre('ground_beef_organ_blend');
-  assert.deepEqual(e.watch_out, [...old.watch_out, ...fold.watch_out]);
+  // Devon 2026-10-18: "just an organ blend is fine" — the fold's percentage-checking lines were dropped,
+  // the vitamin A cap and the printed-share example kept.
+  assert.deepEqual(e.watch_out, [...old.watch_out,
+    'Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Keep servings ordinary.',
+    'Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares the blend tastes like regular ground beef.']);
+  assert.equal(fold.watch_out.length, 3);
   assert.deepEqual(e.buying_tips, [TWO_LINE.ground_beef_lean_ratio.buying_tips[0], ...old.buying_tips, 'The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.']);
   const label = (t) => (e.labels_decoded || []).find((l) => l.term === t);
   assert.equal(label('80/20, 85/15, 90/10').meaning, 'Lean % to fat % by weight; higher first number = leaner.');

@@ -61,7 +61,23 @@ export const TWO_LINE = {
     ]
   },
   "ground_beef_lean_ratio": {
-    "decision": "An organ blend with each organ’s percentage, or 100% grass-fed ground beef.",
+    "why": "An organ blend folds liver and heart into a familiar grind.",
+    "short_answer": "Pick an organ blend, or ground beef with nothing added. How the cattle were raised is on the Beef card.",
+    "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
+    "tier_note": "Organ blends grind beef liver or heart in with the muscle meat.",
+    "watch_out": [
+      "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+      "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.",
+      "Liver sets the vitamin A. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily upper intake. Keep servings ordinary.",
+      "Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares the blend tastes like regular ground beef."
+    ],
+    "pick_steps": [
+      "How it was raised: see Beef.",
+      "Organ blend: liver or heart named on the label.",
+      "Next: plain ground beef; skip “hamburger,” which allows added beef fat."
+    ],
+    "decision": "An organ blend, or 100% grass-fed ground beef.",
+    "cart_pick": "Organ blend ground beef",
     "buying_tips": [
       "A few percent liver and heart still tastes like regular ground beef.",
       "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
@@ -1065,6 +1081,7 @@ export const TWO_LINE = {
     ]
   },
   "organ_meats": {
+    "instead": "A beef blend with liver and heart ground in.",
     "decision": "Organ meats you will cook within one to two days.",
     "buying_tips": [
       "Organ meats keep less time than steaks and roasts, just 1 to 2 days cold.",

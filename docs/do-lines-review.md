@@ -41,7 +41,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rotisserie_chicken` | meat | Rotisserie chicken with salt and spices, without phosphate or starch. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Read the grade and the sourcing as two separate answers. | — |
-| `ground_beef_lean_ratio` | meat | An organ blend with each organ’s percentage, or 100% grass-fed ground beef. | Read the label for organ names, each with a percentage beside it. | — |
+| `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Read the label for liver or heart in the ingredients. | — |
 | `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
 | `organic_worth_it_by_type` | produce | Organic for produce eaten whole; conventional for what you peel. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Plain frozen produce, picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
