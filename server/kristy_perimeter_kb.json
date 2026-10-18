@@ -1488,9 +1488,13 @@
         {
           "name": "BCPP: rBGH / rBST labeling",
           "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ],
-      "kristy_take": "Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar.",
+      "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar.",
       "cart_pick": "Plain Greek yogurt, 100% grass-fed",
       "buying_tips": [
         "100% grass-fed means grass and hay, never grain; flavored tubs carry added sugar.",
@@ -1502,7 +1506,8 @@
         "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
         "Whole-milk versions are more filling and less tinkered with than fat-free.",
         "rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.",
-        "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST."
+        "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.",
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "labels_decoded": [
         {
@@ -6225,11 +6230,15 @@
         "orange juice",
         "orange juices"
       ],
-      "decision": "Most juice is pasteurized; an untreated juice in the cold case carries a warning label.",
+      "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
       "sources": [
         {
           "name": "FDA: What You Need to Know About Juice Safety",
           "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ]
     },
@@ -6690,6 +6699,18 @@
         {
           "name": "Environmental Working Group: Glyphosate in oat-based products",
           "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
+        },
+        {
+          "name": "EWG: BHT in food and on ingredient lists",
+          "url": "https://www.ewg.org/foodscores/8806-article-dirty-dozen-food-chemicals-bht/"
         }
       ],
       "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
@@ -6699,7 +6720,10 @@
         "Check the 100% stamp rather than assume every stamp means all grain is whole.",
         "Without a stamp, read the grain ingredients and the added-sugars line.",
         "Read the added-sugars line even when honey or syrup is the named sweetener.",
-        "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+        "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
+        "BHT and TBHQ are used in cereals. BHT can appear on the list as “butylated hydroxytoluene.” Certified organic rules prohibit BHT."
       ],
       "watch_out": [
         "Honey-sweetened granola still has added sugar.",
@@ -10723,6 +10747,14 @@
         {
           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
           "url": "https://drcate.com/hateful-eight/"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
+        },
+        {
+          "name": "EWG: Food chemicals guide, preservative uses",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
         }
       ],
       "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
@@ -10734,7 +10766,9 @@
         "A bottle that says only “vegetable oil” names no oil.",
         "Choose tallow, olive oil, or coconut oil by the ingredient list.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
+        "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it."
       ],
       "watch_out": [
         "Oil that starts smoking in the pan is no longer fit to use."
@@ -12082,6 +12116,14 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
+        },
+        {
+          "name": "EWG: Food chemicals guide, preservative uses",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
         }
       ],
       "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
@@ -12092,7 +12134,8 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the first ingredient; a whole grain there leads the cracker.",
         "Look for “whole wheat flour” on the list, not just “wheat flour.”",
-        "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter."
+        "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
       ],
       "watch_out": [
         "A front that leads with whole-grain words can still list refined flour first.",
@@ -12230,6 +12273,14 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
+        },
+        {
+          "name": "EWG: Food chemicals guide, preservative uses",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
         }
       ],
       "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
@@ -12240,7 +12291,8 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the ingredients; a sliced chip starts with potatoes.",
         "Identical, stackable shapes point to a crisp pressed from flakes.",
-        "Expect irregular sizes and folds in a bag of sliced chips."
+        "Expect irregular sizes and folds in a bag of sliced chips.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
       ],
       "watch_out": [
         "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
@@ -12431,6 +12483,10 @@
         {
           "name": "Environmental Working Group: Glyphosate in oat-based products",
           "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
@@ -12442,7 +12498,8 @@
         "Read the first ingredients; oats or another whole grain should lead.",
         "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
         "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
-        "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+        "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "watch_out": [
         "Enriched refined grains listed first mean refined grain leads the bar, not oats.",
@@ -12547,7 +12604,11 @@
         "https://www.nutritionletter.tufts.edu/?p=148621",
         "https://www.law.cornell.edu/cfr/text/21/101.4",
         "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
-        "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
+        "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        }
       ],
       "kristy_take": "The snack aisle reads best one product at a time. Chips, crackers and popcorn each have a card of their own.",
       "cart_pick": "A snack with a whole grain listed first",
@@ -12555,7 +12616,8 @@
         "Ingredients run by amount, and multigrain often means several refined grains.",
         "Read the first ingredient before the front of the bag.",
         "Look for a whole grain, vegetable or bean listed first.",
-        "Read “multigrain” as several grains, not whole grains."
+        "Read “multigrain” as several grains, not whole grains.",
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "watch_out": [
         "Front-of-package claims and pictures can mislead; the ingredient list settles it."
@@ -13039,6 +13101,10 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
         }
       ],
       "kristy_take": "A short list is the standard here: potatoes, salt and one fat, tallow, olive oil or coconut oil. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
@@ -13051,7 +13117,8 @@
         "Compare bags by what each one lists beyond potatoes, salt and that oil.",
         "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
         "Do not overcrowd the air fryer basket, so the fries cook evenly.",
-        "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%."
+        "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
       ],
       "watch_out": [
         "Fried foods frozen at home may lose their crispness.",
@@ -13102,7 +13169,11 @@
         "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
         "https://www.ams.usda.gov/sites/default/files/media/CID%20Griddle%20Bread%2C%20Shelf%20Stable%20%28Waffles%2C%20Pancakes%2C%20French%20toast%2C%20Belgian%20Waffles%29.pdf",
         "https://www.onceuponachef.com/recipes/waffle-recipe.html",
-        "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/"
+        "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/",
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        }
       ],
       "kristy_take": "A whole grain listed first is the standard here. At home, yeasted waffles may be the gold standard for a light, crisp waffle. The batter rests overnight in the fridge for a crisp outside and tender inside.",
       "cart_pick": "Waffles with a whole grain listed first",
@@ -13111,7 +13182,8 @@
         "Read the first ingredient for a whole grain, such as whole wheat flour.",
         "Graham flour and rolled oats count as whole grain on the list.",
         "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
-        "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen."
+        "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen.",
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "watch_out": [
         "“Wheat flour” listed first means plain flour leads, not a whole grain."
@@ -13172,6 +13244,10 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: TBHQ preservative uses",
+          "url": "https://www.cspi.org/node/7416"
         }
       ],
       "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
@@ -13182,7 +13258,8 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
         "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
-        "A nugget labeled “breaded” holds no more than 30 percent breading."
+        "A nugget labeled “breaded” holds no more than 30 percent breading.",
+        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
       ],
       "watch_out": [
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",

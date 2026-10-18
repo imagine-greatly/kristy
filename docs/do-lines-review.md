@@ -207,6 +207,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
 | `snacks` | bulk_pantry | Snacks with a whole grain, vegetable or bean listed first. | Check veggie chips for potato flour colored with vegetable powder. | — |
+| `pick_juice` | bulk_pantry | Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes. | Read the ingredient list for Red 40, Yellow 5, Yellow 6 or Blue 1. | — |
 | `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
 | `deli_salads` | bulk_pantry | Deli salads from the cold case, eaten within days. | Check the date; keep it at the back of the fridge, not the door. | — |
 | `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |

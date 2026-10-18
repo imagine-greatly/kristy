@@ -351,7 +351,8 @@ export const TWO_LINE = {
       "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
       "Whole-milk versions are more filling and less tinkered with than fat-free.",
       "rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.",
-      "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST."
+      "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
     ],
     "question": "What should you look for in yogurt?",
     "sources": [
@@ -367,8 +368,13 @@ export const TWO_LINE = {
       {
         "name": "BCPP: rBGH / rBST labeling",
         "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
       }
-    ]
+    ],
+    "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar."
   },
   "raw_milk": {
     "decision": "Raw grass-fed milk from a farm you can name.",
@@ -1306,7 +1312,10 @@ export const TWO_LINE = {
       "Check the 100% stamp rather than assume every stamp means all grain is whole.",
       "Without a stamp, read the grain ingredients and the added-sugars line.",
       "Read the added-sugars line even when honey or syrup is the named sweetener.",
-      "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+      "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
+      "BHT and TBHQ are used in cereals. BHT can appear on the list as “butylated hydroxytoluene.” Certified organic rules prohibit BHT."
     ],
     "sources": [
       "https://wholegrainscouncil.org/whole-grain-stamp",
@@ -1322,6 +1331,18 @@ export const TWO_LINE = {
       {
         "name": "Environmental Working Group: Glyphosate in oat-based products",
         "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+      },
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
+      },
+      {
+        "name": "EWG: BHT in food and on ingredient lists",
+        "url": "https://www.ewg.org/foodscores/8806-article-dirty-dozen-food-chemicals-bht/"
       }
     ]
   },
@@ -2228,7 +2249,9 @@ export const TWO_LINE = {
       "A bottle that says only “vegetable oil” names no oil.",
       "Choose tallow, olive oil, or coconut oil by the ingredient list.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-      "Skip avocado oil too: the label cannot prove the oil is pure."
+      "Skip avocado oil too: the label cannot prove the oil is pure.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
+      "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it."
     ],
     "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
     "sources": [
@@ -2238,6 +2261,14 @@ export const TWO_LINE = {
       {
         "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
         "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
+      },
+      {
+        "name": "EWG: Food chemicals guide, preservative uses",
+        "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
       }
     ],
     "cart_pick": "Olive or coconut cooking oil"
@@ -2458,7 +2489,8 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the first ingredient; a whole grain there leads the cracker.",
       "Look for “whole wheat flour” on the list, not just “wheat flour.”",
-      "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter."
+      "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
     ],
     "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil.",
     "sources": [
@@ -2475,6 +2507,14 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
+      },
+      {
+        "name": "EWG: Food chemicals guide, preservative uses",
+        "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
       }
     ],
     "watch_out": [
@@ -2523,7 +2563,8 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the ingredients; a sliced chip starts with potatoes.",
       "Identical, stackable shapes point to a crisp pressed from flakes.",
-      "Expect irregular sizes and folds in a bag of sliced chips."
+      "Expect irregular sizes and folds in a bag of sliced chips.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
     ],
     "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
     "sources": [
@@ -2537,6 +2578,14 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
+      },
+      {
+        "name": "EWG: Food chemicals guide, preservative uses",
+        "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
       }
     ],
     "cart_pick": "Sliced potato chips: olive oil",
@@ -2598,7 +2647,8 @@ export const TWO_LINE = {
       "Read the first ingredients; oats or another whole grain should lead.",
       "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
       "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
-      "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+      "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
     ],
     "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
     "sources": [
@@ -2626,6 +2676,10 @@ export const TWO_LINE = {
       {
         "name": "Environmental Working Group: Glyphosate in oat-based products",
         "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+      },
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
       }
     ],
     "watch_out": [
@@ -2647,7 +2701,18 @@ export const TWO_LINE = {
       "Ingredients run by amount, and multigrain often means several refined grains.",
       "Read the first ingredient before the front of the bag.",
       "Look for a whole grain, vegetable or bean listed first.",
-      "Read “multigrain” as several grains, not whole grains."
+      "Read “multigrain” as several grains, not whole grains.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+    ],
+    "sources": [
+      "https://www.nutritionletter.tufts.edu/?p=148621",
+      "https://www.law.cornell.edu/cfr/text/21/101.4",
+      "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+      "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
+      }
     ]
   },
   "hummus": {
@@ -2764,7 +2829,8 @@ export const TWO_LINE = {
       "Compare bags by what each one lists beyond potatoes, salt and that oil.",
       "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
       "Do not overcrowd the air fryer basket, so the fries cook evenly.",
-      "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%."
+      "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
     ],
     "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
     "sources": [
@@ -2782,6 +2848,10 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
       }
     ],
     "kristy_take": "A short list is the standard here: potatoes, salt and one fat, tallow, olive oil or coconut oil. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
@@ -2802,7 +2872,18 @@ export const TWO_LINE = {
       "Read the first ingredient for a whole grain, such as whole wheat flour.",
       "Graham flour and rolled oats count as whole grain on the list.",
       "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
-      "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen."
+      "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+    ],
+    "sources": [
+      "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
+      "https://www.ams.usda.gov/sites/default/files/media/CID%20Griddle%20Bread%2C%20Shelf%20Stable%20%28Waffles%2C%20Pancakes%2C%20French%20toast%2C%20Belgian%20Waffles%29.pdf",
+      "https://www.onceuponachef.com/recipes/waffle-recipe.html",
+      "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/",
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
+      }
     ]
   },
   "frozen_nuggets": {
@@ -2813,7 +2894,8 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
       "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
-      "A nugget labeled “breaded” holds no more than 30 percent breading."
+      "A nugget labeled “breaded” holds no more than 30 percent breading.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
     ],
     "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
     "sources": [
@@ -2830,6 +2912,10 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: TBHQ preservative uses",
+        "url": "https://www.cspi.org/node/7416"
       }
     ],
     "watch_out": [
@@ -2853,7 +2939,7 @@ export const TWO_LINE = {
 
 // Existing consumers enumerate full cards, which have buying_tips and a two-line front.
 // Picks have only a decision. Keep their pins accessible as TWO_LINE[id] without changing
-// that enumeration contract; the test below checks every own property, including both picks.
+// that enumeration contract; the test below checks every own property, including the concern picks.
 const PICK_PINS = {
   "pick_sausage": {
     "decision": "Sausage with named meat and spices; celery powder supplies nitrite.",
@@ -2900,6 +2986,19 @@ const PICK_PINS = {
         "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
       }
     ]
+  },
+  "pick_juice": {
+    "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
+    "sources": [
+      {
+        "name": "FDA: What You Need to Know About Juice Safety",
+        "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety"
+      },
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
+      }
+    ]
   }
 };
 
@@ -2907,11 +3006,11 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
   Object.entries(PICK_PINS).map(([id, pin]) => [id, { value: pin, enumerable: false }]),
 ));
 
-test('every full-card and concern-deli pick pin matches the live KB', () => {
+test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
-  const picks = ['pick_sausage', 'pick_jerky'];
-  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 182);
+  const picks = ['pick_sausage', 'pick_jerky', 'pick_juice'];
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 184);
   assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
   for (const id of pinnedIds) {
     const entry = kb.entries.find((e) => e.id === id);
@@ -2942,7 +3041,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Historical pass rules freeze sources and label definitions. Restore labels only when
 // TWO_LINE pins their current copy, leaving live fronts available to source checks.

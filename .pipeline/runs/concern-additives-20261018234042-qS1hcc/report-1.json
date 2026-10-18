@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: all six dye cards name dyes and prefer no added color."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes: all six antioxidant cards name preservatives and direct ingredient-list reading without claiming nuggets or fries contain them."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes: required existing tips, warnings, decisions, cart picks and tier notes remain preserved."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Juice decision shortened to 16 words, preserving pasteurization, untreated cold-case warning labels and color guidance. Assumptions: 'Usually pasteurized' refers to the Juice title. Pin and review headline synchronized; doLines regenerated. Pick lint now passes."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes: all eleven cards retain existing sources and add appropriate exact archive URLs."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passes with no prohibited wording. Full verification passes: 6/6 acceptance tests, 181 cards with zero two-line violations, and 2752/2752 suite tests with zero skipped. git diff --check passes."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

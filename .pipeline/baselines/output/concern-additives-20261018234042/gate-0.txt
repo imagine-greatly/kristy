@@ -1,0 +1,224 @@
+TAP version 13
+# Subtest: C1 dye cards name dyes and the no-added-color rung
+not ok 1 - C1 dye cards name dyes and the no-added-color rung
+  ---
+  duration_ms: 1.000416
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:40:1'
+  failureType: 'testCodeFailure'
+  error: 'breakfast_cereal dye'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Breakfast cereal and granola 
+     How do you choose breakfast cereal or granola? 
+     Whole-grain cereal or granola with less added sugar. 
+     Whole-grain content and added sugar are separate label checks. The whole-food standard uses both. 
+     The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola. 
+     FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling. 
+     kristys_standard 
+     Whole-grain content and added sugar are separate label checks. The whole-food standard uses both. 
+     Whole-grain breakfast cereal 
+     Whole grain and added sugar are separate checks; a stamp covers only the grain. 
+     Check the 100% stamp rather than assume every stamp means all grain is whole. 
+     Without a stamp, read the grain ingredients and the added-sugars line. 
+     Read the added-sugars line even when honey or syrup is the named sweetener. 
+     For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. 
+     Honey-sweetened granola still has added sugar. 
+     A grain stamp alone does not tell how much sugar was added. 
+     Look for the 100% stamp; other stamps don’t mean all grain is whole. 
+     Read the added-sugars line, even with honey or syrup as the sweetener. 
+     Without a stamp, read the grain ingredients and the added-sugars line. 
+     Whole-grain content and added sugar are separate label checks. The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. The stamp rules set no added-sugar ceiling. FDA counts sugars added during processing, including honey and syrups, as added sugars. So honey-sweetened granola still has added sugar. 
+     100% Whole Grain Stamp 
+     All grain ingredients are whole grain, with a minimum amount per serving. 
+     Added sugars 
+     Includes sugars added during processing, including honey and syrups. 
+     The stamp and added-sugars line disclose different ingredients; choosing whole grain and less added sugar is the whole-food standard.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:43:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 antioxidant cards name the preservative and say to read the list
+not ok 2 - C2 antioxidant cards name the preservative and say to read the list
+  ---
+  duration_ms: 0.173667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:51:1'
+  failureType: 'testCodeFailure'
+  error: 'breakfast_cereal /\\bBHT\\b/'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Breakfast cereal and granola 
+     How do you choose breakfast cereal or granola? 
+     Whole-grain cereal or granola with less added sugar. 
+     Whole-grain content and added sugar are separate label checks. The whole-food standard uses both. 
+     The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola. 
+     FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling. 
+     kristys_standard 
+     Whole-grain content and added sugar are separate label checks. The whole-food standard uses both. 
+     Whole-grain breakfast cereal 
+     Whole grain and added sugar are separate checks; a stamp covers only the grain. 
+     Check the 100% stamp rather than assume every stamp means all grain is whole. 
+     Without a stamp, read the grain ingredients and the added-sugars line. 
+     Read the added-sugars line even when honey or syrup is the named sweetener. 
+     For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. 
+     Honey-sweetened granola still has added sugar. 
+     A grain stamp alone does not tell how much sugar was added. 
+     Look for the 100% stamp; other stamps don’t mean all grain is whole. 
+     Read the added-sugars line, even with honey or syrup as the sweetener. 
+     Without a stamp, read the grain ingredients and the added-sugars line. 
+     Whole-grain content and added sugar are separate label checks. The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. The stamp rules set no added-sugar ceiling. FDA counts sugars added during processing, including honey and syrups, as added sugars. So honey-sweetened granola still has added sugar. 
+     100% Whole Grain Stamp 
+     All grain ingredients are whole grain, with a minimum amount per serving. 
+     Added sugars 
+     Includes sugars added during processing, including honey and syrups. 
+     The stamp and added-sugars line disclose different ingredients; choosing whole grain and less added sugar is the whole-food standard.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:55:39)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier seed-oil, glyphosate and rBST lines stay
+ok 3 - C3 earlier seed-oil, glyphosate and rBST lines stay
+  ---
+  duration_ms: 0.994958
+  type: 'test'
+  ...
+# Subtest: C4 pick_juice keeps its facts and names a dye
+not ok 4 - C4 pick_juice keeps its facts and names a dye
+  ---
+  duration_ms: 0.221667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:83:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /\bdyes?\b|\bRed 40\b|\bYellow [56]\b|\bBlue 1\b/i. Input:
+    
+    'Most juice is pasteurized; an untreated juice in the cold case carries a warning label.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Most juice is pasteurized; an untreated juice in the cold case carries a warning label.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:87:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 sources come from the concern archive
+not ok 5 - C5 sources come from the concern archive
+  ---
+  duration_ms: 0.18575
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:92:1'
+  failureType: 'testCodeFailure'
+  error: 'breakfast_cereal adds no concern-archive url'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:98:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no illness claims, first person, em dash or unarchived alternatives
+not ok 6 - C6 no illness claims, first person, em dash or unarchived alternatives
+  ---
+  duration_ms: 0.903834
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:105:1'
+  failureType: 'testCodeFailure'
+  error: 'yogurt_plain_vs_flavored price or junk wording'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Yogurt 
+     What should you look for in yogurt? 
+     Plain Greek yogurt made from 100% grass-fed milk. 
+     Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with. 
+     Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is. 
+     Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal. 
+     kristys_standard 
+     Big tub of plain, add your own berries. Cheaper per ounce than the little flavored cups and none of the dessert-level sugar. 
+     Plain Greek yogurt, 100% grass-fed 
+     100% grass-fed means grass and hay, never grain; flavored tubs carry added sugar. 
+     Plain over flavored. Sweeten it yourself with fruit. 
+     Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision. 
+     Greek or strained yogurt is thicker; whole-milk versions are more filling. 
+     A short list is the sign: milk and cultures. Thickeners do the job straining does, for less. 
+     Greek and skyr are strained: thicker, with less whey. 
+     Kefir is drinkable and carries a wider mix of cultures than yogurt. 
+     Whole-milk versions are more filling and less tinkered with than fat-free. 
+     rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd. 
+     For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST. 
+     Added sugars 
+     The line that separates a plain tub from a dessert. It is printed on both. 
+     Live and Active Cultures 
+     A defined seal. The fermenting bacteria are present and viable. 
+     Heat-treated after culturing 
+     Shelf-stable, and the cultures are no longer live. 
+     Greek / skyr 
+     Strained. Thicker, with less whey. 
+     Kefir 
+     A drinkable ferment with a wider mix of cultures. 
+     Greek 
+     Yogurt strained to remove whey, which leaves it thicker. 
+     Plain 
+     No added sugar or flavoring. 
+     Plain means no added sugar, so sweeten it at home with fruit or honey. 
+     Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two. 
+     ‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently. 
+     Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors. 
+     A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive. 
+     ‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one. 
+     The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing. 
+     Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment. 
+     Greek means strained, so the yogurt is thicker and holds less whey. 
+     100% grass-fed on the tub means the cows ate grass and hay, never grain. 
+     Skip flavored and fruit-on-the-bottom tubs; that is where the added sugar is. 
+     Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. 
+     If you can’t get 100% grass-fed Greek yogurt: plain organic whole-milk yogurt.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernAdditives.test.js:113:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 1
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 137.302167

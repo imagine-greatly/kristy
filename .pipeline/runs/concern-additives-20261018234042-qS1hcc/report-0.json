@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: all six dye cards name dyes and prefer no added color; numbered dyes and Lake guidance added."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes: all six antioxidant cards name BHA, BHT and TBHQ, instruct ingredient-list reading, and prefer lists without them. Nuggets and fries make no product-content claim."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance and independent preservation checks pass: existing tips, warnings and sources retain their order; all ten full-card decisions, cart picks and tier notes remain unchanged. Pins synchronized."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: juice retains both facts and adds dye guidance in 20 words without new fields. Assumptions: added the missing juice review row and regenerated doLines.json. NOTE: npm test passes 2751/2752; server/lib/pickReach.test.js:136 rejects the sentence with PICK_LINE_TOO_LONG because its 16-word cap conflicts with the spec's permitted 20 words. Unowned test unchanged."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes: all eleven cards add appropriate archive source objects with exact URLs; existing sources remain."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passes after removing yogurt's existing price comparison. No prohibited claims or alternatives added. twoLineCheck: 181 cards, zero violations; git diff --check passes."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

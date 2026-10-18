@@ -1,0 +1,201 @@
+{
+  "kind": "build",
+  "runId": "concern-additives-20261018234042-qS1hcc",
+  "piece_id": "/Users/m1/kristy:concern-additives",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-additives.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    }
+  ],
+  "usage": {
+    "input": 2379700,
+    "cached": 2009216,
+    "output": 23435,
+    "reasoning": 11287
+  },
+  "over_ceiling": true,
+  "ms": 620444,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 1,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-18T21:40:42.102Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-additives-20261018234042-qS1hcc:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-additives-20261018234042-qS1hcc/events-0.jsonl",
+      "usage": {
+        "input": 926649,
+        "cached": 803456,
+        "output": 9863,
+        "reasoning": 4474
+      },
+      "tokens": 936512,
+      "mem_free_mb": 119,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a150fa-4a84-73b2-93be-82118b7f2cd1",
+        "usage": {
+          "input": 926649,
+          "cached": 803456,
+          "output": 9863,
+          "reasoning": 4474
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all six dye cards name dyes and prefer no added color; numbered dyes and Lake guidance added.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all six antioxidant cards name BHA, BHT and TBHQ, instruct ingredient-list reading, and prefer lists without them. Nuggets and fries make no product-content claim.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance and independent preservation checks pass: existing tips, warnings and sources retain their order; all ten full-card decisions, cart picks and tier notes remain unchanged. Pins synchronized.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: juice retains both facts and adds dye guidance in 20 words without new fields. Assumptions: added the missing juice review row and regenerated doLines.json. NOTE: npm test passes 2751/2752; server/lib/pickReach.test.js:136 rejects the sentence with PICK_LINE_TOO_LONG because its 16-word cap conflicts with the spec's permitted 20 words. Unowned test unchanged.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all eleven cards add appropriate archive source objects with exact URLs; existing sources remain.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes after removing yogurt's existing price comparison. No prohibited claims or alternatives added. twoLineCheck: 181 cards, zero violations; git diff --check passes.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/concernAdditives.test.js server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'; git status --short\"",
+          "/bin/zsh -lc 'cat docs/sources/concerns/additives/INDEX.md docs/sources/concerns/additives/cspi-synthetic-dyes.md docs/sources/concerns/packaged/cspi-synthetic-food-dyes.md docs/sources/concerns/additives/cspi-bha.md docs/sources/concerns/additives/cspi-tbhq.md docs/sources/concerns/additives/ewg-dirty-dozen-food-chemicals.md docs/sources/concerns/packaged/ewg-dirty-dozen-bht.md'",
+          "/bin/zsh -lc 'cat package.json server/package.json server/lib/testGuards.js server/scripts/twoLineCheck.js server/scripts/buildDoLines.js scripts/twoLineCheck.js scripts/buildDoLines.js server/scripts/commitGuard.js'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if test -f \"$p\"; then cat \"$p\"; fi; done\nrg --files --hidden -g '\"'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"' -g '\"'!.aws'\"' -g '\"'!.codex'\"' -g '\"'!.agents'\"'\nwc -l docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md server/test/acceptance/twoLinePin.js VOICE_SPEC.md docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"sed -n '181,338p' docs/CONCERN-COVERAGE.md\ncat VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"cat package.json server/package.json .pipeline/runs/concern-additives-20261018234042-qS1hcc/report.schema.json\nsed -n '1,95p' server/test/acceptance/twoLinePin.js\nsed -n '2660,2982p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"cat docs/CONCERN-REGISTER.md\nsed -n '1,180p' docs/CONCERN-COVERAGE.md\"",
+          "/bin/zsh -lc \"sed -n '2840,2982p' server/test/acceptance/twoLinePin.js\nnode --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst ids = ['breakfast_cereal', 'frozen_waffles', 'snack_bars', 'pick_juice', 'snacks', 'yogurt_plain_vs_flavored', 'crackers', 'potato_chips', 'frozen_nuggets', 'frozen_fries', 'cooking_oils', 'label_artificial_color'];\nfor (const id of ids) console.log(JSON.stringify(kb.entries.find(e => e.id === id), null, 2));\nNODE\"",
+          "/bin/zsh -lc \"rg -n -C 3 'Most artificially|Lake|natural ingredient|beta-carotene|carmine|not automatically|seven most|Blue 1|Antioxidant|rancidity|related to|typically added|preservative found|vegetable oil|ingredient list|certified organic|butylated hydroxytoluene' docs/sources/concerns/additives/cspi-synthetic-dyes.md docs/sources/concerns/packaged/cspi-synthetic-food-dyes.md docs/sources/concerns/additives/cspi-bha.md docs/sources/concerns/additives/cspi-tbhq.md docs/sources/concerns/additives/ewg-dirty-dozen-food-chemicals.md docs/sources/concerns/packaged/ewg-dirty-dozen-bht.md\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nfor (const id of ['pick_juice', 'snacks', 'yogurt_plain_vs_flavored', 'crackers', 'potato_chips']) console.log(JSON.stringify(kb.entries.find(e => e.id === id), null, 2));\nNODE\nrg -n 'pick_juice' docs/do-lines-review.md server/lib/doLines.json server/test/acceptance/ic8a.test.js server/test/acceptance/w4.test.js\nsed -n '1,100p' server/test/acceptance/ic8a.test.js\"",
+          "/bin/zsh -lc \"sed -n '1,75p' docs/do-lines-review.md\nsed -n '300,366p' docs/do-lines-review.md\ncat server/lib/doLines.test.js\nsed -n '1,110p' server/test/acceptance/w4.test.js\nrg -n 'parseReviewTable|kind === .pick.|doLine' server/lib/counterCards.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst ids = new Set(['breakfast_cereal','frozen_waffles','snack_bars','pick_juice','snacks','yogurt_plain_vs_flavored','crackers','potato_chips','frozen_nuggets','frozen_fries','cooking_oils']);\nconst skip = new Set(['id','kind','category','sources','aliases','asked_as']);\nconst ban = /\\\\b(causes?|prevents?|lowers? (the )?risk|carcinogen\\\\w*|cancer|tumou?rs?|toxic\\\\w*|unsafe|harm\\\\w*|risks?|linked to|hyperactiv\\\\w*|behaviou?r\\\\w*|attention|neurobehavioral|exacerbate|I|me|my|vitamin e|tocopherol|rosemary|price|cheap\\\\w*|junk)\\\\b|—|\\\\\"'$'\"\\\\s?\\\\d/i;\nfor (const e of kb.entries.filter(e => ids.has(e.id))) for (const [k,v] of Object.entries(e)) if (\"'!skip.has(k) && ban.test(JSON.stringify(v))) console.log(e.id,k,JSON.stringify(v));\nNODE\nrg -n '\"'\\\"(breakfast_cereal|frozen_waffles|snack_bars|snacks|yogurt_plain_vs_flavored|crackers|potato_chips|frozen_nuggets|cooking_oils)\\\"' server/test/acceptance/twoLinePin.js\nrg -n '\"'^url:'\"' docs/sources/concerns/additives/cspi-synthetic-dyes.md docs/sources/concerns/packaged/cspi-synthetic-food-dyes.md docs/sources/concerns/additives/cspi-bha.md docs/sources/concerns/additives/cspi-tbhq.md docs/sources/concerns/additives/ewg-dirty-dozen-food-chemicals.md docs/sources/concerns/packaged/ewg-dirty-dozen-bht.md\"",
+          "/bin/zsh -lc \"sed -n '335,405p' server/test/acceptance/twoLinePin.js\nsed -n '1298,1348p' server/test/acceptance/twoLinePin.js\nsed -n '2635,2670p' server/test/acceptance/twoLinePin.js\nsed -n '2790,2815p' server/test/acceptance/twoLinePin.js\nrg -an 'parseReviewTable|readFileSync|writeFileSync|dotenv|fetch\\\\(|\\\\.listen\\\\(' server/lib/counterCards.js server/lib/*.test.js server/test/*.test.js server/test/acceptance/*.js | head -n 110\nrg -n 'pick_jerky|pick_sausage|\\\\| \"'`snacks`|'\"\\\\| \"'`breakfast_cereal`|''^##'\"' docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\n\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst original = readFileSync(kbPath, 'utf8');\nconst kb = JSON.parse(original);\nassert.equal(\"'`${JSON.stringify(kb, null, 2)}'\"\\\\n\"'`, original, '\"'preserve KB formatting');\nconst card = id => {\n  const entry = kb.entries.find(e => e.id === id);\n  assert.ok(entry, id);\n  return entry;\n};\nconst dyeIds = ['breakfast_cereal', 'frozen_waffles', 'snack_bars', 'snacks', 'yogurt_plain_vs_flavored'];\nconst antiIds = ['breakfast_cereal', 'crackers', 'potato_chips', 'frozen_nuggets', 'frozen_fries', 'cooking_oils'];\nconst dyeTip = 'Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.';\nconst antiTip = 'BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.';\nconst dyeSource = { name: 'CSPI: Artificial colorings (synthetic food dyes)', url: 'https://www.cspi.org/node/7436' };\nconst tbhqSource = { name: 'CSPI: TBHQ preservative uses', url: 'https://www.cspi.org/node/7416' };\nconst ewgSource = { name: 'EWG: Food chemicals guide, preservative uses', url: 'https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid' };\nfor (const id of dyeIds) {\n  card(id).buying_tips.push(dyeTip);\n  card(id).sources.push(dyeSource);\n}\nfor (const id of antiIds) {\n  card(id).buying_tips.push(antiTip);\n  card(id).sources.push(tbhqSource);\n}\ncard('breakfast_cereal').buying_tips.push('BHT and TBHQ are used in cereals. BHT can appear on the list as “butylated hydroxytoluene.” Certified organic rules prohibit BHT.');\ncard('breakfast_cereal').sources.push({ name: 'EWG: BHT in food and on ingredient lists', url: 'https://www.ewg.org/foodscores/8806-article-dirty-dozen-food-chemicals-bht/' });\nfor (const id of ['crackers', 'potato_chips', 'cooking_oils']) card(id).sources.push(ewgSource);\ncard('cooking_oils').buying_tips.push('TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it.');\ncard('yogurt_plain_vs_flavored').kristy_take = 'Big tub of plain, add your own berries. Plain has no added sugar.';\nconst juice = card('pick_juice');\njuice.decision = 'Read ingredients: no added color over numbered dyes; most juice is pasteurized, while untreated cold-case juice carries a warning label.';\nassert.equal(juice.decision.split(/\\\\s+/).length, 20);\njuice.sources.push(dyeSource);\n\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet pinText = readFileSync(pinPath, 'utf8');\nconst pinsStart = pinText.indexOf('export const TWO_LINE = ') + 'export const TWO_LINE = '.length;\nconst pinsEnd = pinText.indexOf(';\\\\n\\\\n// Existing consumers', pinsStart);\nassert.ok(pinsStart > 0 && pinsEnd > pinsStart);\nconst pins = JSON.parse(pinText.slice(pinsStart, pinsEnd));\nfor (const id of new Set([...dyeIds, ...antiIds])) {\n  assert.ok(pins[id], id);\n  pins[id].buying_tips = card(id).buying_tips;\n  pins[id].sources = card(id).sources;\n}\npins.yogurt_plain_vs_flavored.kristy_take = card('yogurt_plain_vs_flavored').kristy_take;\npinText = pinText.slice(0, pinsStart) + JSON.stringify(pins, null, 2) + pinText.slice(pinsEnd);\nconst picksStart = pinText.indexOf('const PICK_PINS = ') + 'const PICK_PINS = '.length;\nconst picksEnd = pinText.indexOf(';\\\\n\\\\nObject.defineProperties', picksStart);\nassert.ok(picksStart > 0 && picksEnd > picksStart);\nconst picks = JSON.parse(pinText.slice(picksStart, picksEnd));\npicks.pick_juice = { decision: juice.decision, sources: juice.sources };\npinText = pinText.slice(0, picksStart) + JSON.stringify(picks, null, 2) + pinText.slice(picksEnd);\npinText = pinText.replace('including both picks.', 'including the concern picks.');\npinText = pinText.replace('every full-card and concern-deli pick pin matches the live KB', 'every full-card and concern pick pin matches the live KB');\npinText = pinText.replace(\\\"const picks = ['pick_sausage', 'pick_jerky'];\\\", \\\"const picks = ['pick_sausage', 'pick_jerky', 'pick_juice'];\\\");\npinText = pinText.replace(\\\"'all two-line pins', 182\\\", \\\"'all two-line pins', 184\\\");\nconst concernLine = pinText.match(/\"'^const CONCERN = new Set'\"\\\\(\\\\[.*\\\\]\\\\);\"'$/m)?.[0];\nassert.ok(concernLine);\npinText = pinText.replace(concernLine, concernLine.replace(/'\"\\\\]\\\\);\"'$/, \", '\"'frozen_waffles', 'pick_juice', 'snacks']);\\\"));\n\nconst reviewPath = 'docs/do-lines-review.md';\nlet review = readFileSync(reviewPath, 'utf8');\nassert.ok(\"'!review.includes('\"'| \"'`pick_juice` |'\"'), 'juice row already exists');\nconst row = \"'`| '\"\\\\\"'`pick_juice'\"\\\\\"'` | bulk_pantry | ${juice.decision} | Read the ingredient list for Red 40, Yellow 5, Yellow 6 or Blue 1. | — |`;\nconst snackRow = review.match(/''^'\"\\\\| \"'`snacks` '\"\\\\|.*\"'$/m)?.[0];\nassert.ok(snackRow);\nreview = review.replace(snackRow, `${snackRow}'\"\\\\n\"'${row}`);\n\nwriteFileSync(kbPath, `${JSON.stringify(kb, null, 2)}'\"\\\\n\"'`);\nwriteFileSync(pinPath, pinText);\nwriteFileSync(reviewPath, review);\nconsole.log('\"'Updated eleven cards, their pins, and the juice review row.');\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernAdditives.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && npm test'",
+          "/bin/zsh -lc \"git diff --check\ngit diff --stat\ngit diff -- docs/do-lines-review.md server/lib/doLines.json\nnode --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { execFileSync } from 'node:child_process';\nimport { readFileSync } from 'node:fs';\nconst before = JSON.parse(execFileSync('git', ['show', 'HEAD:server/kristy_perimeter_kb.json'], {maxBuffer:64 << 20, encoding:'utf8'}));\nconst after = JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst expected = new Set(['breakfast_cereal','frozen_waffles','snack_bars','pick_juice','snacks','yogurt_plain_vs_flavored','crackers','potato_chips','frozen_nuggets','frozen_fries','cooking_oils']);\nconst changed = [];\nassert.equal(after.entries.length, before.entries.length);\nfor (const [i,old] of before.entries.entries()) {\n  const now = after.entries[i];\n  assert.equal(now.id,old.id);\n  if (JSON.stringify(old) === JSON.stringify(now)) continue;\n  changed.push(old.id);\n  assert.ok(expected.has(old.id), old.id);\n  assert.deepEqual(Object.keys(now),Object.keys(old), \"'`${old.id} shape`);\n  for (const field of ['\"'buying_tips','watch_out','sources']) {\n    if (old[field]) assert.deepEqual(now[field].slice(0,old[field].length),old[field], \"'`${old.id}.${field} original order`);\n  }\n  const allowed = old.id === '\"'pick_juice' ? ['decision','sources'] : old.id === 'yogurt_plain_vs_flavored' ? ['buying_tips','sources','kristy_take'] : ['buying_tips','sources'];\n  for (const field of Object.keys(old).filter(field => \"'!allowed.includes(field))) assert.deepEqual(now[field],old[field],`${old.id}.${field} changed`);\n}\nassert.deepEqual(new Set(changed),expected);\nconsole.log('\"'Independent preservation check passed: exactly 11 cards changed; original tip/source order, warnings, full-card decisions, cart picks and tier notes retained.');\nNODE\"",
+          "/bin/zsh -lc 'git diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js'",
+          "/bin/zsh -lc \"sed -n '125,145p' server/lib/pickReach.test.js\nrg -n -C 3 'PICK_LINE_TOO_LONG|PICK_LINE_MAX|16' server/lib/counterCardLint.js | head -n 60\ngit diff --check\ngit status --short\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-additives-20261018234042-qS1hcc:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-additives-20261018234042-qS1hcc/events-1.jsonl",
+      "usage": {
+        "input": 1453051,
+        "cached": 1205760,
+        "output": 13572,
+        "reasoning": 6813
+      },
+      "tokens": 1466623,
+      "mem_free_mb": 1210,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a150fa-4a84-73b2-93be-82118b7f2cd1",
+        "usage": {
+          "input": 1453051,
+          "cached": 1205760,
+          "output": 13572,
+          "reasoning": 6813
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all six dye cards name dyes and prefer no added color.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all six antioxidant cards name preservatives and direct ingredient-list reading without claiming nuggets or fries contain them.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: required existing tips, warnings, decisions, cart picks and tier notes remain preserved.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Juice decision shortened to 16 words, preserving pasteurization, untreated cold-case warning labels and color guidance. Assumptions: 'Usually pasteurized' refers to the Juice title. Pin and review headline synchronized; doLines regenerated. Pick lint now passes.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all eleven cards retain existing sources and add appropriate exact archive URLs.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes with no prohibited wording. Full verification passes: 6/6 acceptance tests, 181 cards with zero two-line violations, and 2752/2752 suite tests with zero skipped. git diff --check passes.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '1,155p' server/test/acceptance/concernAdditives.test.js\nsed -n '130,140p' server/lib/pickReach.test.js\nsed -n '875,985p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"rg -n -C 2 'Read ingredients: no added color|pick_juice' server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js docs/do-lines-review.md server/lib/doLines.json\ncat .pipeline/runs/concern-additives-20261018234042-qS1hcc/report.schema.json\ngit status --short\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst before = 'Read ingredients: no added color over numbered dyes; most juice is pasteurized, while untreated cold-case juice carries a warning label.';\nconst after = 'Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.';\nassert.equal(after.split(/\\\\s+/).length, 16);\nfor (const file of ['server/kristy_perimeter_kb.json', 'server/test/acceptance/twoLinePin.js', 'docs/do-lines-review.md']) {\n  const contents = readFileSync(file, 'utf8');\n  assert.equal(contents.split(before).length, 2, \"'`${file}: expected one juice decision`);\n  writeFileSync(file, contents.replace(before, after));\n}\nconsole.log('\"'Synchronized the 16-word juice decision in the KB, pin and review table.');\nNODE\nnode --test server/test/acceptance/concernAdditives.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && npm test\"",
+          "/bin/zsh -lc \"git diff --check\ngit diff --stat\nnode --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst juice = kb.entries.find(e => e.id === 'pick_juice');\nconst review = readFileSync('docs/do-lines-review.md', 'utf8').split('\\\\n').find(line => line.startsWith('| \"'`pick_juice` |'\"'));\nassert.equal(review.split('|')[3].trim(), juice.decision);\nassert.equal(juice.decision.split(/\\\\s+/).length,16);\nconsole.log('Juice review headline matches the KB; decision is 16 words.');\nNODE\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 2403135,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 178,
+    "key": "12daec93d3873245426841e14036d4138342e3b01a961db3be831d44842ab533",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-additives-20261018234042-qS1hcc/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-additives-20261018234042-qS1hcc:0",
+  "mem_free_mb": 1210,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 10329,
+      "tail": "  ---\n  duration_ms: 0.537833\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2750 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.163708\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2751 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 132.832125\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2752 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.338416\n  type: 'test'\n  ...\n1..2752\n# tests 2752\n# suites 0\n# pass 2751\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9754.487917\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "every pick in the corpus passes the lint",
+          "test_path": "server/lib/pickReach.test.js",
+          "first_error": "pick_juice"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-additives-20261018234042-qS1hcc/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "every pick in the corpus passes the lint",
+          "test_path": "server/lib/pickReach.test.js",
+          "first_error": "pick_juice"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 10521,
+      "tail": "ok 2748 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.090667\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2749 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.541958\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2750 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.536542\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2751 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 148.512041\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2752 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.350334\n  type: 'test'\n  ...\n1..2752\n# tests 2752\n# suites 0\n# pass 2752\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10042.425666",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-additives-20261018234042-qS1hcc/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-18T21:51:02.546Z",
+  "readiness": "READY"
+}
