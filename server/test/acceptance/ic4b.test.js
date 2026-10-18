@@ -8,11 +8,12 @@ import { dirname, join } from 'node:path';
 import { RETIRED, ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeConcern(kb.entries.find((e) => e.id === id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'pick_steps', 'science', 'labels_decoded', 'cart_pick', 'question'];

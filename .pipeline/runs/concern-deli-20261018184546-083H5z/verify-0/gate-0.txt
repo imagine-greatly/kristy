@@ -1,0 +1,68 @@
+TAP version 13
+# Subtest: C1 cured cards name celery and nitrite
+ok 1 - C1 cured cards name celery and nitrite
+  ---
+  duration_ms: 0.774167
+  type: 'test'
+  ...
+# Subtest: C2 decisions lead with organic / pasture / grass-fed
+ok 2 - C2 decisions lead with organic / pasture / grass-fed
+  ---
+  duration_ms: 0.173416
+  type: 'test'
+  ...
+# Subtest: C3 phosphates and binders named
+ok 3 - C3 phosphates and binders named
+  ---
+  duration_ms: 0.176584
+  type: 'test'
+  ...
+# Subtest: C4 smoke flavoring named
+ok 4 - C4 smoke flavoring named
+  ---
+  duration_ms: 0.134125
+  type: 'test'
+  ...
+# Subtest: C5 pick decisions name celery
+ok 5 - C5 pick decisions name celery
+  ---
+  duration_ms: 0.0835
+  type: 'test'
+  ...
+# Subtest: C6 sources come from the concern archive
+not ok 6 - C6 sources come from the concern archive
+  ---
+  duration_ms: 0.382375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:59:1'
+  failureType: 'testCodeFailure'
+  error: 'deli_meat_uncured url not archived: undefined'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:64:34)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C7 no treatment claims, no first person
+ok 7 - C7 no treatment claims, no first person
+  ---
+  duration_ms: 0.488
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 64.139083

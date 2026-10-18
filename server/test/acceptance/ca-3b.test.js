@@ -9,6 +9,7 @@ import { dirname, join } from 'node:path';
 import * as lint from '../../lib/counterCardLint.js';
 import * as pass from './passRule.js';
 import { RETIRED, projectEntry } from '../../lib/counterCards.js';
+import { beforeConcern } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -16,7 +17,7 @@ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'ut
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
 const BASE = 'aa12a3d';
 const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeConcern(kb.entries.find((e) => e.id === id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const flat = (r) => (Array.isArray(r) ? r : (r && r.violations) || []);

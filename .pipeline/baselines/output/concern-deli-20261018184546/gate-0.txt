@@ -1,0 +1,162 @@
+TAP version 13
+# Subtest: C1 cured cards name celery and nitrite
+not ok 1 - C1 cured cards name celery and nitrite
+  ---
+  duration_ms: 0.982958
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:30:1'
+  failureType: 'testCodeFailure'
+  error: 'hot_dogs nitrite'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '{"title":"Hot dogs","question":"What should you check on a pack of hot dogs?","decision":"Hot dogs with named meat and no mechanically separated poultry.","why":"Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.","short_answer":"Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Its name belongs in the ingredient statement.","detail":"The US frankfurter standard distinguishes sausages with meat byproducts and requires “with byproducts” or “with variety meats” in their name. Mechanically separated poultry has its own regulatory definition. These processing distinctions support an ingredient choice, not a claim that one hot dog produces a health result.","evidence_tier":"kristys_standard","kristy_take":"Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.","cart_pick":"Hot dogs with named meat","buying_tips":["Mechanically separated poultry is a paste of tissue separated from the bones.","Look for the named meat and read all other ingredients.","Compare formulations across available packs rather than assume a species claim describes every ingredient.","Check whether the list names mechanically separated chicken or turkey."],"watch_out":["“Uncured” can still accompany celery-based curing. Read the qualifier.","The standard permits nonmeat ingredients. A beef species claim is not an ingredient list."],"pick_steps":["Pick named meat without mechanically separated chicken or turkey.","“Uncured” can still mean celery-based curing; read the qualifier."],"science":"The standard permits nonmeat ingredients, so a beef species claim is not an ingredient list. Compare formulations across packs rather than assume the claim describes every ingredient. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Sausages with meat byproducts must carry “with byproducts” or “with variety meats” in their name.","labels_decoded":[{"term":"Mechanically separated poultry","meaning":"A paste-like ingredient made by mechanically separating tissue from poultry bones."},{"term":"With byproducts","meaning":"Required wording for the byproduct-containing sausage formulation defined in the standard."}],"tier_note":"Mechanically separated poultry is a paste-like product of tissue taken off bones, and the list must name it.","instead":"Fresh sausage from the butcher counter, its meat named and nothing mechanically separated."}'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:34:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 decisions lead with organic / pasture / grass-fed
+not ok 2 - C2 decisions lead with organic / pasture / grass-fed
+  ---
+  duration_ms: 0.122709
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:38:1'
+  failureType: 'testCodeFailure'
+  error: 'deli_meat_uncured decision'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Whole roasted meat sliced thin, then counter-sliced deli meat.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:39:56)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 phosphates and binders named
+not ok 3 - C3 phosphates and binders named
+  ---
+  duration_ms: 0.119666
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:42:1'
+  failureType: 'testCodeFailure'
+  error: 'deli_meat_uncured phosphate'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '{"title":"‘Uncured’ deli meat","question":"Is ‘uncured’ deli meat actually nitrite-free?","decision":"Whole roasted meat sliced thin, then counter-sliced deli meat.","why":"Celery juice powder is a concentrated natural nitrate source. Same chemistry, different source.","short_answer":"No. ‘Uncured’ packages must carry a qualifier, along the lines of ‘except those naturally occurring in celery powder’. Celery juice powder is a concentrated natural nitrate source. So the meat is cured, with a vegetable-derived agent, not a synthetic one.","detail":"No, and the package says so if you find the asterisk. ‘Uncured, no nitrates or nitrites added’ is required to be followed by a qualifier along the lines of ‘except those naturally occurring in celery powder’. USDA labeling rules force that qualifier, which is why every ‘uncured’ package carries a footnote most shoppers never read. The chemistry that fixes the color and preserves the meat is the same either way; only the source of the nitrate differs, and measured residual levels are broadly comparable. That does not make it a scam, it makes it a sourcing preference, and it is worth knowing that ‘uncured’ is a different statement from ‘no nitrites’. The bigger question at the deli case is how much processed meat a week holds, not which curing agent was used.","evidence_tier":"established","kristy_take":"‘Uncured’ means cured with celery powder. The asterisk on the package says so. Same chemistry, different source.","buying_tips":["‘Uncured’ packs are still cured, just with celery powder as the nitrate source.","Find the asterisk. ‘Uncured’ is always qualified on the label.","Celery powder is a natural nitrate source. It is a curing agent, not the absence of one.","Sliced at the counter is usually a shorter ingredient list than the pre-packed tub.","Whole roasted meat sliced thin does the same sandwich job with nothing added."],"labels_decoded":[{"term":"Uncured","meaning":"Cured with a vegetable-derived nitrate source instead of a synthetic one."},{"term":"No nitrates or nitrites added*","meaning":"The asterisk reads ‘except those naturally occurring in celery powder’."}],"tier_note":"Celery powder being the same nitrate chemistry as added nitrite is settled labeling fact, whichever cut the counter slices.","watch_out":["The qualifier to find reads ‘No nitrate or nitrite added except those naturally occurring in celery juice powder’. That sentence is the whole claim.","Every curing substance has to be named in the ingredients statement, so read the list, not only the asterisk."],"pick_steps":["Find the asterisk: ‘uncured’ is always qualified on the label.","Read the ingredients list; every curing substance has to be named there.","Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."],"science":"‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. USDA labeling rules force the qualifier: ‘except those naturally occurring in celery powder’. The chemistry is the same either way; only the source of the nitrate differs. So ‘uncured’ is a different statement from ‘no nitrites’.","instead":"Whole roasted meat sliced thin does the same sandwich job with nothing added."}'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:45:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 smoke flavoring named
+not ok 4 - C4 smoke flavoring named
+  ---
+  duration_ms: 0.124667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:51:1'
+  failureType: 'testCodeFailure'
+  error: 'bacon'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '{"title":"Bacon","question":"What should you check when choosing bacon?","decision":"Bacon with a short list: pork, salt, named curing agents.","why":"The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.","short_answer":"Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.","detail":"The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.","evidence_tier":"kristys_standard","kristy_take":"The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.","cart_pick":"Bacon with the shortest label list","buying_tips":["‘Uncured’ bacon can still be cured with celery powder, and the list names it.","Read any exception naming naturally occurring nitrates in celery powder.","Compare the disclosed curing ingredients across available bacon packs.","Read each ingredient in the curing mixture, including salt, sugar, and curing agents."],"watch_out":["An uncured label does not by itself establish the absence of nitrates or nitrites.","The source set does not establish a health advantage from choosing celery-based curing."],"pick_steps":["Read any exception naming nitrates naturally occurring in celery powder.","Read each curing ingredient, including salt, sugar and curing agents.","Compare the disclosed curing ingredients across the bacon packs on the shelf."],"science":"Bacon labeled uncured can use celery powder as a natural curing source. An uncured label does not by itself establish the absence of nitrates or nitrites. US curing-label policy requires curing-mixture ingredients to be listed individually. The curing ingredients describe the process. The source set does not establish a health advantage from choosing celery-based curing.","labels_decoded":[{"term":"Uncured","meaning":"A label that can appear on bacon using a natural curing source; read the qualifier."},{"term":"No nitrates added*","meaning":"The fine print may except nitrates naturally occurring in celery powder."}],"tier_note":"Each curing agent on bacon has to be listed, so the shortest list is easy to find.","instead":"Bacon that adds sugar and wood smoke to the pork and salt."}'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:52:57)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 pick decisions name celery
+not ok 5 - C5 pick decisions name celery
+  ---
+  duration_ms: 0.107458
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:55:1'
+  failureType: 'testCodeFailure'
+  error: 'pick_sausage'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Seasoned ground-meat sausage with every curing agent named in its ingredients.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:56:56)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 sources come from the concern archive
+not ok 6 - C6 sources come from the concern archive
+  ---
+  duration_ms: 0.103708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:59:1'
+  failureType: 'testCodeFailure'
+  error: 'deli_meat_uncured cites no concern-archive url'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:63:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C7 no treatment claims, no first person
+not ok 7 - C7 no treatment claims, no first person
+  ---
+  duration_ms: 0.376125
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernDeli.test.js:68:1'
+  failureType: 'testCodeFailure'
+  error: 'pork_cuts_and_enhanced first person'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '{"title":"Pork cuts and ‘solution added’ pork","question":"Which pork cut should I buy, and what does ‘solution added’ mean?","decision":"Plain pork, with no added-solution percentage on its label.","why":"Pork is often pumped with water, salt and phosphates to hold moisture. A plain pack leaves that solution out.","short_answer":"A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.","detail":"A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.","evidence_tier":"established","kristy_take":"An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.","cart_pick":"Pork shoulder","buying_tips":["Much retail pork is pumped with water, salt and phosphates, then sold by weight.","Read for ‘contains X% added solution’. That is injected water and salt.","The solution’s ingredients follow, heaviest first.","Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie."],"labels_decoded":[{"term":"Enhanced / contains up to X% solution","meaning":"Injected with saltwater and phosphates. Declared by law, and sold by weight."},{"term":"Natural","meaning":"On meat, minimally processed with no artificial ingredients. Says nothing about raising."}],"tier_note":"Added solution must be disclosed by weight, which is what makes the fine print worth finding.","watch_out":["The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.","The percentage is the solution weighed against the raw meat without it. So 15% means 15 parts solution to 100 parts meat."],"science":"A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. Hormones are banned in pork production, so ‘no added hormones’ is a freebie. ‘Natural’ on meat says nothing about raising.","pick_steps":["Find the ‘% added solution’ figure and the solution’s listed ingredients.","How it was raised: see What “pasture-raised” does and does not tell you."],"instead":"Pork with the lowest stated solution percentage on the shelf."}'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernDeli.test.js:72:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 0
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 64.495709

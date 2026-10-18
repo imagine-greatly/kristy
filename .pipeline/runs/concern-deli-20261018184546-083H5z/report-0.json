@@ -1,0 +1,48 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: all six cured cards explain celery-derived nitrite. NOTE: server/test/acceptance/ca-3b.test.js:106 rejects the new cured_pork headline against its historical sentence allowlist."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes: seven sourcing-first decisions, each within 10 words. NOTE: server/test/acceptance/ca-3b.test.js:55 forbids the explicitly requested grass-fed jerky wording."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes: phosphates and binders named; pork solution rule retained. Assumptions: removed numeric examples to honor the no-statistics instruction. NOTES: server/test/acceptance/ca-3b.test.js:69 and server/test/acceptance/k9.test.js:31, through passRule.js:92, still require the old 15% example."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: bacon, ham and hot dogs identify liquid smoke and smoke flavoring."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes: both picks name celery powder and retain their permitted shape. All 67 changed fields are pinned. NOTE: server/test/acceptance/twoLinePin.test.js:19 expects 181 pins; pinning the two changed picks requires 183."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Spec provenance verified: 41 appended source objects use verbatim archived URLs; every original citation remains. Assumptions: preserve legacy string citations rather than invent missing URLs. NOTE: server/test/acceptance/concernDeli.test.js:64 reads those strings as undefined URLs. Older archive restrictions fail at server/test/acceptance/ic4b.test.js:94, ic5b.test.js:96, ic8a.test.js:81, ic8b.test.js:89 and k15.test.js:90. k9.test.js:31 also rejects added deli/hot-dog citations through passRule.js:68. Conflicting tests remain unchanged."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Acceptance passes: no prohibited claims or first person. Verification: buildDoLines succeeds; twoLineCheck reports 181 checked, zero violations; git diff --check passes. npm test: 2657 passed, 13 conflicting assertions failed, zero skipped. Only owned files changed; historical fixtures untouched."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

@@ -74,8 +74,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Beef soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
-| `pork_cuts_and_enhanced` | meat | Plain pork, with no added-solution percentage on its label. | Read the fine print for “contains up to”. Brine is sold by weight. | — |
-| `deli_meat_uncured` | meat | Whole roasted meat sliced thin, then counter-sliced deli meat. | Ask the counter to slice whole roasted meat thin instead. | — |
+| `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Read the ingredients beside “contains up to” for water, salt and phosphates. | — |
+| `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for the full ingredient list before the counter slices the meat. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon and canned light tuna, small and short-lived. | Check the species name on the case tag. Size predicts the mercury. | — |
 | `canned_fish_choosing` | seafood | Fish in olive oil or water, bone-in and skin-on. | Read the pack medium: “vegetable oil” means a seed-oil blend. | — |
 | `farmed_fish_by_species` | seafood | Trout, arctic char, barramundi and shellfish needing no feed. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
@@ -127,13 +127,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Oat milk with few stabilizers, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
-| `bacon` | meat | Bacon with a short list: pork, salt, named curing agents. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
-| `hot_dogs` | meat | Hot dogs with named meat and no mechanically separated poultry. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
+| `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
+| `hot_dogs` | meat | Organic beef hot dogs with a short ingredient list. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, or a can naming skipjack. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
 | `chicken_breast` | meat | Plain bone-in, skin-on breast before boneless skinless; no added solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
-| `ham` | meat | Ham named just “Ham” first, then “Ham With Natural Juices.” | Read the product name for “Water Added” or “Ham and Water Product”. | — |
-| `turkey_bacon` | meat | Turkey bacon with the fewest ingredients after the turkey. | Read the small print under the name for the meat cuts used. | — |
-| `cured_pork` | meat | Cured pork naming its cut, with a short curing list. | Find the asterisk beside “uncured” and read what it points to. | — |
+| `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+| `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with few added ingredients. | Read the small print under the name for the meat cuts used. | — |
+| `cured_pork` | meat | Organic or pasture-raised pork, with cut and curing ingredients named. | Find the asterisk beside “uncured” and read what it points to. | — |
 | `lamb_goat` | meat | Lamb or goat labeled 100% grass-fed or grass-finished. | Press goat for firm, fine-grained flesh and white fat. | — |
 | `organ_meats` | meat | Organ meats you will cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |

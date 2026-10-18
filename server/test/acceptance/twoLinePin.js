@@ -3,6 +3,13 @@
 // feed sources its line 2 rests on, and the cart picks lintSections moved to follow three new fronts). Older batch
 // tests overlay these onto their own baselines with withTwoLine(), so each keeps guarding its
 // other fields while the rewrite itself stays pinned here: change a line on a card, change it here.
+// concern-deli also pins every edited field on its seven cards and two picks; beforeTwoLine
+// restores those fields for historical comparisons without changing their fixtures.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { nonEmpty } from '../../lib/testGuards.js';
+
 export const TWO_LINE = {
   "salmon_wild_vs_farmed": {
     "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
@@ -227,7 +234,44 @@ export const TWO_LINE = {
       "Non-homogenized is still pasteurized. Two different processes.",
       "The shortest date on the shelf usually means the least processing, not worse milk."
     ],
-    "aliases": ["whole milk","2% milk","skim milk","reduced fat milk","low fat milk","milk fat","which milk","what milk","milk should i buy","a2 milk","a2","a1 milk","a1","a2 vs a1","beta casein","bcm 7","jersey milk","guernsey","a2 yogurt","a1 yogurt","a2 protein","milk protein type","ultra pasteurized","uht milk","pasteurized milk","homogenized","non homogenized","cream top milk","why does organic milk last so long","milk processing","milk carton","milk cartons","gallon of milk","carton of milk","Low-temp pasteurized grass-fed whole milk","100% grass-fed low-temp pasteurized whole milk"],
+    "aliases": [
+      "whole milk",
+      "2% milk",
+      "skim milk",
+      "reduced fat milk",
+      "low fat milk",
+      "milk fat",
+      "which milk",
+      "what milk",
+      "milk should i buy",
+      "a2 milk",
+      "a2",
+      "a1 milk",
+      "a1",
+      "a2 vs a1",
+      "beta casein",
+      "bcm 7",
+      "jersey milk",
+      "guernsey",
+      "a2 yogurt",
+      "a1 yogurt",
+      "a2 protein",
+      "milk protein type",
+      "ultra pasteurized",
+      "uht milk",
+      "pasteurized milk",
+      "homogenized",
+      "non homogenized",
+      "cream top milk",
+      "why does organic milk last so long",
+      "milk processing",
+      "milk carton",
+      "milk cartons",
+      "gallon of milk",
+      "carton of milk",
+      "Low-temp pasteurized grass-fed whole milk",
+      "100% grass-fed low-temp pasteurized whole milk"
+    ],
     "cart_pick": "100% grass-fed low-temp pasteurized whole milk"
   },
   "cheese_real_vs_processed": {
@@ -454,23 +498,77 @@ export const TWO_LINE = {
     ]
   },
   "pork_cuts_and_enhanced": {
-    "decision": "Plain pork, with no added-solution percentage on its label.",
+    "decision": "Organic or pasture-raised pork with no added solution.",
     "buying_tips": [
       "Much retail pork is pumped with water, salt and phosphates, then sold by weight.",
       "Read for ‘contains X% added solution’. That is injected water and salt.",
       "The solution’s ingredients follow, heaviest first.",
-      "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie."
-    ]
+      "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie.",
+      "Organic uses organic feed. The ingredient list still needs checking for added solution."
+    ],
+    "question": "Which pork cut should you buy, and what does ‘solution added’ mean?",
+    "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
+    "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
+    "sources": [
+      "USDA FSIS labeling requirements for enhanced and solution-added meat",
+      "USDA Institutional Meat Purchase Specifications (pork cut nomenclature)",
+      "9 CFR § 317.2 labeling of raw meat and poultry containing added solutions (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.2",
+      "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+      "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
+      "The Virtual Weber Bullet: Enhanced meat https://www.virtualweberbullet.com/enhanced-meat/",
+      "CSPI: Food additive safety ratings https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+    ],
+    "kristy_take": "An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.",
+    "watch_out": [
+      "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.",
+      "The percentage is the solution weighed against the raw meat without it. So 15% means 15 parts solution to 100 parts meat."
+    ],
+    "science": "A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. Hormones are banned in pork production, so ‘no added hormones’ is a freebie. ‘Natural’ on meat says nothing about raising.",
+    "instead": "An organic or pasture-raised shoulder or roast with pork alone in the ingredient list.",
+    "tier_note": "Organic pork cuts: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "cart_pick": "Organic or pasture-raised pork shoulder"
   },
   "deli_meat_uncured": {
-    "decision": "Whole roasted meat sliced thin, then counter-sliced deli meat.",
+    "decision": "Organic or pasture-raised whole roasted meat, sliced thin.",
     "buying_tips": [
-      "‘Uncured’ packs are still cured, just with celery powder as the nitrate source.",
-      "Find the asterisk. ‘Uncured’ is always qualified on the label.",
-      "Celery powder is a natural nitrate source. It is a curing agent, not the absence of one.",
-      "Sliced at the counter is usually a shorter ingredient list than the pre-packed tub.",
+      "Next, counter-sliced meat with a short ingredient list, every curing agent named.",
+      "Find the asterisk on “no nitrates added”; it can point to celery powder or juice.",
+      "Celery powder or juice supplies nitrite during curing. It is still a curing agent.",
+      "Ask for the counter’s ingredient list; slicing there does not change what went into the meat.",
       "Whole roasted meat sliced thin does the same sandwich job with nothing added."
-    ]
+    ],
+    "why": "Whole roasted meat leaves the curing step out. The ingredient list names added curing agents and binders.",
+    "short_answer": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Read the qualifier and the full ingredient list.",
+    "detail": "“Uncured” and “no nitrates or nitrites added” can appear on meat cured with celery powder or juice. Celery supplies nitrate that is converted to nitrite during curing. The qualifier names this plant source. Sodium nitrite names a directly added curing agent; celery changes the source, not the curing chemistry. Organic describes the feed standard and pasture-raised describes outdoor access. Neither claim tells you which curing agents or binders were used.",
+    "sources": [
+      "USDA FSIS labeling policy on ‘uncured’ and ‘no nitrate or nitrite added’ claims",
+      "Peer-reviewed comparisons of residual nitrite in conventionally and naturally cured meats",
+      "Niche Meat Processor Assistance Network “Uncured Bacon” https://www.nichemeatprocessing.org/uncured-bacon/",
+      "9 CFR § 317.17 curing-agent declaration and “uncured” labeling (Cornell LII) https://www.law.cornell.edu/cfr/text/9/317.17"
+    ],
+    "kristy_take": "Whole roasted meat leaves out added curing agents. At the deli counter, ask for the full ingredient list, including added binders.",
+    "labels_decoded": [
+      {
+        "term": "Uncured",
+        "meaning": "May use celery powder or juice to supply nitrite during curing; read the qualifier."
+      },
+      {
+        "term": "No nitrates or nitrites added*",
+        "meaning": "The asterisk reads ‘except those naturally occurring in celery powder’."
+      }
+    ],
+    "tier_note": "Organic deli meat: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "watch_out": [
+      "In deli meat, “uncured” or “no nitrates added” can still mean celery powder or juice supplies nitrite. Read the qualifier beside the claim.",
+      "Every curing substance has to be named in the ingredients statement, so read the list, not only the asterisk.",
+      "Skip sodium phosphate and other phosphates used to hold water. Leave out binders such as carrageenan, modified food starch or maltodextrin that thicken the meat."
+    ],
+    "pick_steps": [
+      "Read the “no nitrates added” qualifier for celery powder or juice.",
+      "Read the ingredients list; every curing substance has to be named there.",
+      "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
+    ],
+    "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. Celery nitrate becomes nitrite during meat preservation. Read the qualifier for celery powder or juice and the ingredient list for phosphates and binders."
   },
   "mercury_by_fish": {
     "decision": "Sardines, anchovies, salmon and canned light tuna, small and short-lived.",
@@ -971,22 +1069,52 @@ export const TWO_LINE = {
     ]
   },
   "bacon": {
-    "decision": "Bacon with a short list: pork, salt, named curing agents.",
+    "decision": "Organic or pasture-raised bacon with a short curing list.",
     "buying_tips": [
-      "‘Uncured’ bacon can still be cured with celery powder, and the list names it.",
+      "Look for pork, salt and named curing agents; read each added ingredient.",
       "Read any exception naming naturally occurring nitrates in celery powder.",
       "Compare the disclosed curing ingredients across available bacon packs.",
-      "Read each ingredient in the curing mixture, including salt, sugar, and curing agents."
-    ]
+      "Read each ingredient in the curing mixture, including salt, sugar, and curing agents.",
+      "For smoked bacon, choose wood-smoked with no added smoke flavoring or liquid smoke. Liquid smoke is condensed smoke added for flavor."
+    ],
+    "sources": [
+      "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading",
+      "https://www.law.cornell.edu/cfr/text/9/317.17",
+      "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+      "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
+      "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
+    ],
+    "watch_out": [
+      "On bacon labeled “uncured” or “no nitrates added”, celery powder or juice may supply the nitrite for curing. Find the asterisk and read its exception.",
+      "An uncured label does not by itself establish the absence of nitrates or nitrites.",
+      "The source set does not establish a health advantage from choosing celery-based curing."
+    ],
+    "tier_note": "Organic bacon: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "cart_pick": "Organic or pasture-raised sliced bacon"
   },
   "hot_dogs": {
-    "decision": "Hot dogs with named meat and no mechanically separated poultry.",
+    "decision": "Organic beef hot dogs with a short ingredient list.",
     "buying_tips": [
-      "Mechanically separated poultry is a paste of tissue separated from the bones.",
+      "Named meat first, with no mechanically separated chicken or turkey.",
       "Look for the named meat and read all other ingredients.",
       "Compare formulations across available packs rather than assume a species claim describes every ingredient.",
-      "Check whether the list names mechanically separated chicken or turkey."
-    ]
+      "Check whether the list names mechanically separated chicken or turkey.",
+      "Read smoky hot dogs for “smoke flavoring” or “liquid smoke”, both added condensed smoke. Choose wood-smoked versions without those ingredients.",
+      "On beef packs, look for grass-fed and grass-finished with a certifier’s seal."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/9/319.180",
+      "https://www.law.cornell.edu/cfr/text/9/381.173",
+      "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+    ],
+    "watch_out": [
+      "“Uncured” and “no nitrates added” hot dogs may use celery juice or powder, a plant source of nitrite. The ingredients name that curing source.",
+      "“Uncured” can still accompany celery-based curing. Read the qualifier.",
+      "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list.",
+      "Pass on sodium phosphate and other water-holding phosphates. Skip carrageenan, modified food starch and maltodextrin binders added for texture."
+    ],
+    "tier_note": "Organic hot dogs mean certified organic feed and outdoor access; grass-fed names the cattle’s diet.",
+    "cart_pick": "Organic packaged beef hot dogs"
   },
   "canned_tuna": {
     "decision": "Canned light tuna, or a can naming skipjack.",
@@ -1044,32 +1172,130 @@ export const TWO_LINE = {
     ]
   },
   "ham": {
-    "decision": "Ham named just “Ham” first, then “Ham With Natural Juices.”",
+    "decision": "Organic or pasture-raised ham named just “Ham”.",
     "buying_tips": [
-      "The name tells the water: plain “Ham” has the least, and each step down adds more.",
+      "Next, “Ham With Natural Juices”; “Water Added” means more added solution.",
       "Read the product name for “Water Added” or a percent of added ingredients.",
       "Check whether the label says fully cooked or cook before eating.",
-      "Find where water sits in the ingredients statement."
-    ]
+      "Find where water sits in the ingredients statement.",
+      "On smoked ham, favor wood smoking over liquid smoke or smoke flavoring. Those ingredients add condensed smoke to the meat."
+    ],
+    "detail": "US labeling ties ham names to protein. “Ham” needs at least 20.5% protein in the lean portion. “Ham With Natural Juices” needs at least 18.5%. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” must state the percent of weight that is added ingredients. Fresh ham is the uncured leg of pork and is labeled “fresh” or “uncured”.",
+    "sources": [
+      "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/hams-and-food-safety",
+      "https://www.canr.msu.edu/news/ham_for_the_holidays_and_all_year_long",
+      "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+      "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
+      "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading",
+      "The Conversation: How deli meat is made https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597",
+      "CSPI: Food additive safety ratings https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings",
+      "CSPI: Carrageenan https://www.cspi.org/node/7465",
+      "True Story Foods: Deli meat additives https://www.truestoryfoods.com/blog/deli-meat-additives/",
+      "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
+    ],
+    "watch_out": [
+      "Packaged ham marked “uncured” or “no nitrates added” can get nitrite from celery powder or juice. Fresh ham is the raw leg and needs cooking.",
+      "“Ham and Water Product” states the share of its weight that is added ingredients.",
+      "Fresh ham and country ham are not fully cooked and need cooking before eating.",
+      "Choose ham without added phosphates, used to retain water. Pass on binders such as carrageenan, modified food starch and maltodextrin, which thicken or bind it."
+    ],
+    "science": "Ham is the cured leg of pork, and its product name tells how much water the curing added. Plain “Ham” comes before “Ham With Natural Juices”, then “Ham, Water Added”. Phosphates help hold water; binders such as carrageenan thicken it. Celery powder or juice can supply nitrite even on an “uncured” pack. Check whether the label says fully cooked or cook before eating.",
+    "labels_decoded": [
+      {
+        "term": "Ham With Natural Juices",
+        "meaning": "Cured ham with more added water than plain “Ham”, but less than “Ham, Water Added”."
+      },
+      {
+        "term": "Ham, Water Added",
+        "meaning": "Cured ham with more added solution than “Ham With Natural Juices”."
+      },
+      {
+        "term": "Fresh ham",
+        "meaning": "Uncured leg of pork, prepared without nitrate or nitrite."
+      }
+    ],
+    "tier_note": "Organic ham: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "cart_pick": "Organic or pasture-raised sliced ham"
   },
   "turkey_bacon": {
-    "decision": "Turkey bacon with the fewest ingredients after the turkey.",
+    "decision": "Organic or pasture-raised turkey bacon with few added ingredients.",
     "buying_tips": [
-      "Turkey bacon is still a cured product, and every curing ingredient is on the label.",
+      "Read the named turkey cut and each curing ingredient after the meat.",
       "Read the descriptive name beside “turkey bacon” for the meat used.",
       "Read each curing ingredient in the ingredients statement.",
-      "Find any “Uncured” claim and the “No Nitrate or Nitrite Added” statement with it."
-    ]
+      "On “Uncured” packs, read the qualifier and check for celery powder or juice in the curing list."
+    ],
+    "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
+    "sources": [
+      "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bacon-and-food-safety",
+      "https://www.law.cornell.edu/cfr/text/9/317.17",
+      "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really",
+      "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+      "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
+      "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+    ],
+    "watch_out": [
+      "With “uncured” turkey bacon, celery powder or juice can supply nitrite. A “no nitrates added” claim needs its qualifier read too.",
+      "Turkey bacon is still a cured product, and its curing ingredients are on the label."
+    ],
+    "pick_steps": [
+      "Read the descriptive name beside “turkey bacon” for the meat used.",
+      "Read each curing ingredient in the ingredients statement.",
+      "Read the “Uncured” qualifier for celery powder or juice supplying nitrite."
+    ],
+    "science": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Turkey bacon is still a cured product. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” may still mean celery powder or juice supplies the nitrite; read the qualifier.",
+    "labels_decoded": [
+      {
+        "term": "Cured turkey thigh meat",
+        "meaning": "The descriptive name that says which turkey meat the bacon is made from."
+      },
+      {
+        "term": "Uncured",
+        "meaning": "Celery powder or juice can supply nitrite in turkey bacon carrying this word. Read the exception beside the claim."
+      }
+    ],
+    "tier_note": "Organic turkey bacon: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "cart_pick": "Organic or pasture-raised turkey bacon strips"
   },
   "cured_pork": {
-    "decision": "Cured pork naming its cut, with a short curing list.",
+    "decision": "Organic or pasture-raised pork, with cut and curing ingredients named.",
     "buying_tips": [
-      "Each is pork cured with salt and curing agents, so the list shows what went in.",
+      "A short curing list names the salt, spices and any added curing agents.",
       "Read the product name for the cut, such as ham, belly, or jowl.",
       "Read each curing ingredient in the ingredients statement.",
       "Check whether the package says ready to eat or cook before eating.",
       "Guanciale is worth buying on the same terms: cut named, curing listed."
-    ]
+    ],
+    "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
+    "sources": [
+      "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/hams-and-food-safety",
+      "https://extension.oregonstate.edu/catalog/pnw-784-making-cured-bacon-home",
+      "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bacon-and-food-safety",
+      "https://www.law.cornell.edu/cfr/text/9/317.17",
+      "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+      "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
+      "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+    ],
+    "watch_out": [
+      "On salami or pancetta, “uncured” and “no nitrates added” can point to nitrite from celery juice or celery powder. Check the ingredient list for that plant source.",
+      "An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”."
+    ],
+    "labels_decoded": [
+      {
+        "term": "Prosciutto",
+        "meaning": "Italian-style dry-cured raw ham, not smoked."
+      },
+      {
+        "term": "Pancetta",
+        "meaning": "Italian belly bacon, usually cured in salt and spices, then air-dried."
+      },
+      {
+        "term": "Uncured",
+        "meaning": "Check for a plant-derived curing ingredient such as celery powder or juice, which supplies nitrite."
+      }
+    ],
+    "tier_note": "Organic pork: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+    "cart_pick": "Organic or pasture-raised guanciale pork jowl"
   },
   "lamb_goat": {
     "decision": "Lamb or goat labeled 100% grass-fed or grass-finished.",
@@ -1876,6 +2102,78 @@ export const TWO_LINE = {
   }
 };
 
+// Existing consumers enumerate full cards, which have buying_tips and a two-line front.
+// Picks have only a decision. Keep their pins accessible as TWO_LINE[id] without changing
+// that enumeration contract; the test below checks every own property, including both picks.
+const PICK_PINS = {
+  "pick_sausage": {
+    "decision": "Sausage with named meat and spices; celery powder supplies nitrite.",
+    "sources": [
+      {
+        "name": "Cornell LII: 9 CFR § 319.140 Sausage",
+        "url": "https://www.law.cornell.edu/cfr/text/9/319.140"
+      },
+      {
+        "name": "Cornell LII: 9 CFR § 319.141 Fresh pork sausage",
+        "url": "https://www.law.cornell.edu/cfr/text/9/319.141"
+      },
+      {
+        "name": "Cornell LII: 9 CFR § 317.17 Curing agents in the ingredients statement",
+        "url": "https://www.law.cornell.edu/cfr/text/9/317.17"
+      },
+      {
+        "name": "Consumer Reports: Decoding the labels on meat packages",
+        "url": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/"
+      },
+      {
+        "name": "NPR: No nitrates added labels and celery-based curing",
+        "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      }
+    ]
+  },
+  "pick_jerky": {
+    "decision": "Beef jerky with a short list; celery powder supplies nitrite.",
+    "sources": [
+      {
+        "name": "NDSU Extension: Jerky",
+        "url": "https://www.ndsu.edu/agriculture/extension/publications/jerky-native-american-inspired-snack-we-all-can-enjoy-today"
+      },
+      {
+        "name": "Cornell LII: 9 CFR § 317.17 Curing agents in the ingredients statement",
+        "url": "https://www.law.cornell.edu/cfr/text/9/317.17"
+      },
+      {
+        "name": "Consumer Reports: Decoding the labels on meat packages",
+        "url": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/"
+      },
+      {
+        "name": "NPR: No nitrates added labels and celery-based curing",
+        "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      }
+    ]
+  }
+};
+
+Object.defineProperties(TWO_LINE, Object.fromEntries(
+  Object.entries(PICK_PINS).map(([id, pin]) => [id, { value: pin, enumerable: false }]),
+));
+
+test('every full-card and concern-deli pick pin matches the live KB', () => {
+  const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
+  const picks = ['pick_sausage', 'pick_jerky'];
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 182);
+  assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
+  for (const id of pinnedIds) {
+    const entry = kb.entries.find((e) => e.id === id);
+    assert.ok(entry, `${id} pin has no live entry`);
+    if (picks.includes(id)) assert.equal(entry.kind, 'pick', `${id} must stay a pick`);
+    for (const [field, expected] of nonEmpty(Object.entries(TWO_LINE[id]), `${id} pinned fields`)) {
+      assert.deepEqual(entry[field], expected, `${id}.${field} differs from its pin`);
+    }
+  }
+});
+
 export const withTwoLine = (entry) => (entry && TWO_LINE[entry.id] ? { ...entry, ...TWO_LINE[entry.id] } : entry);
 
 // The same fields as they stood the commit before the rewrite (a6979b0), for older tests that pin
@@ -1891,3 +2189,10 @@ export const beforeTwoLine = (e) => {
   const p = PRE.entries.find((x) => x.id === e.id);
   return { ...e, ...Object.fromEntries(Object.keys(TWO_LINE[e.id]).map((k) => [k, p[k]])) };
 };
+
+// Concern batches add archived sources from docs/sources/concerns; older batches froze or
+// archived sources elsewhere, so they read each concern card's sources as of 5a53252.
+// concernDeli.test.js owns the new URLs.
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced']);
+const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const beforeConcern = (e) => (e && CONCERN.has(e.id) ? { ...e, sources: PRE_CONCERN.entries.find((x) => x.id === e.id).sources } : e);

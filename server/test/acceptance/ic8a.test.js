@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -22,7 +23,7 @@ const start = ids.indexOf('sandwich_bread');
 const end = ids.findIndex((id, i) => i > start && /^frozen/.test(id));
 const BATCH = kb.entries.slice(start, end).filter((e) => e.kind !== 'pick' && e.kind !== 'home').map((e) => e.id);
 console.log(`ic-8a BATCH (${BATCH.length}): ${BATCH.join(', ')}`);
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeConcern(kb.entries.find((e) => e.id === id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
 const reviewHeadline = (id) => {

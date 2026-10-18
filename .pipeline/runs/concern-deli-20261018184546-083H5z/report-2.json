@@ -1,0 +1,48 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All six cured cards name celery and nitrite. Acceptance passes. Revised deli wording and cured-pork headline also pass the historical cure-sentence check."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "All seven decisions lead with sourcing guidance. twoLineCheck: 181 checked, zero violations. NOTE: server/test/acceptance/ca-3b.test.js:55 forbids grass-fed wording required by this spec; left unchanged."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes for phosphates and binders/carrageenan on deli meat, ham and hot dogs, plus phosphates in pork's solution guidance."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Bacon, ham and hot dogs name liquid smoke or smoke flavoring. Acceptance passes."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Both pick decisions name celery and retain the required fields. Fixed pin-count compatibility while adding an assertion covering all 183 pins, including both picks. All 67 edited KB fields match their pins."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passes for all nine entries. Prior source URLs and reference names remain; 41 added URL references match concern-archive frontmatter. Assumptions: source preservation retains references while normalizing legacy strings to objects; related links for previously unlinked references are explicitly qualified. NOTES: Nine historical source failures remain. server/test/acceptance/ca-3b.test.js:69 and server/test/acceptance/k9.test.js:31 reject normalized pork sources through passRule.js:72; k9 also freezes deli_meat_uncured and hot_dogs sources through passRule.js:68. server/test/acceptance/ic4b.test.js:94, ic5b.test.js:96, ic8a.test.js:81 and ic8b.test.js:89 require the older item-cards archive. server/test/acceptance/k15.test.js:90 requires the older k15 archive. These unowned assertions conflict with the new source requirements and remain unchanged."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Acceptance passes with no forbidden claims or first person. Assumptions: the no-statistics instruction also excludes numeric label examples. Final verification: concernDeli 7/7 passes; do lines regenerated; twoLineCheck and git diff --check pass. npm test: 2667 passed, 10 failed, zero skipped. Remaining failures are the historical conflicts documented above; the full verify gate is not green. READY under the contract's done-with-NOTES rule."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

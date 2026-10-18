@@ -1,0 +1,48 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes. NOTE: server/test/acceptance/ca-3b.test.js:106 rejects the new cured-pork headline against its historical sentence allowlist."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes; all seven decisions meet the sourcing requirement and word limit. NOTE: server/test/acceptance/ca-3b.test.js:55 forbids the requested grass-fed jerky wording."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes: phosphates, binders and the pork solution rule are present."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: bacon, ham and hot dogs name smoke flavoring or liquid smoke."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes; both picks retain their permitted shape. All 67 changed fields are pinned. NOTE: server/test/acceptance/twoLinePin.test.js:19 expects 181 pins rather than 183 including the required pick pins."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Fixed: normalized 21 legacy citations to name/url objects; C6 now passes. Existing URLs and reference text remain. Assumptions: two unspecified references retain their text with explicitly labeled related-context links. Historical source assertions still fail at server/test/acceptance/ca-3b.test.js:69 and k9.test.js:31 (string identity/frozen sources), ic4b.test.js:94, ic5b.test.js:96, ic8a.test.js:81 and ic8b.test.js:89 (older archive restriction), and k15.test.js:90 (k15-only archive). Unowned tests remain unchanged."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "All seven concern acceptance tests pass. buildDoLines succeeds; twoLineCheck reports 181 checked with zero violations; git diff --check passes. NOTE: npm test reports 2658 passed and 12 conflicting immutable-test failures described above, with zero skipped."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

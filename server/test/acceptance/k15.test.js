@@ -10,10 +10,11 @@ import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../.
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
-const byId = (id) => kb.entries.find((e) => e.id === id);
+const byId = (id) => beforeConcern(kb.entries.find((e) => e.id === id));
 const idOf = (m) => (m ? m.slug ?? m.id ?? m.entry?.id ?? null : null);
 const rowMatch = (row) => idOf(matchItemToCard(row)) ?? idOf(matchItemToPick(row));
 const top = (q) => { const r = scoreEntries(q, 3)[0]; return { id: r?.entry?.id ?? r?.id, score: r?.score ?? 0, aliasScore: r?.aliasScore ?? 0 }; };

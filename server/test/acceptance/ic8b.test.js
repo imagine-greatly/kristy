@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import * as lint from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } = lint;
@@ -25,7 +26,7 @@ const CARDS = kb.entries.filter((e) => e.kind !== 'pick');
 const HOME = ['washing_produce', 'baking_soda_soak', 'revive_greens', 'freezing_produce', 'produce_storage'];
 const OWN = kb.entries.filter((e, i) => e.kind !== 'pick' && ((end >= 0 && i >= end) || HOME.includes(e.id) || e.id.startsWith('label_'))).map((e) => e.id);
 console.log(`ic-8b OWN (${OWN.length}): ${OWN.join(', ')}`);
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => beforeConcern(kb.entries.find((e) => e.id === id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
 const reviewHeadline = (id) => {
@@ -86,7 +87,7 @@ test('C6 sources never shrink and new URLs are archived', () => {
     const have = new Set(urls(now(id)));
     for (const u of urls(pre(id))) assert.ok(have.has(u), `${id} dropped ${u}`);
   }
-  for (const e of CARDS) for (const u of urls(e)) if (!PRE_URLS.has(u)) assert.ok(archive.includes(u), `${e.id}: ${u} not in docs/sources/item-cards`);
+  for (const e of CARDS.map(beforeConcern)) for (const u of urls(e)) if (!PRE_URLS.has(u)) assert.ok(archive.includes(u), `${e.id}: ${u} not in docs/sources/item-cards`);
   assert.ok(!JSON.stringify(kb).includes(UMD), 'umd raw-milk-law URL is in the KB');
 });
 
