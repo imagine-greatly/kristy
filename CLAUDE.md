@@ -224,8 +224,8 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
   - LIVE `counter_cards`: **182 rows — 181 `curated` + 1 `generated`**, migration's post-upsert
-    count 2026-10-16, read back.
-  - `kristy_perimeter_kb.json`: **211 entries — 181 cards + 30 picks** at `550cf9c`, 2026-10-16.
+    count 2026-10-18, read back.
+  - `kristy_perimeter_kb.json`: **211 entries — 181 cards + 30 picks** at `297895d`, 2026-10-18.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
   - KB and table agree at 181 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
 - ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
