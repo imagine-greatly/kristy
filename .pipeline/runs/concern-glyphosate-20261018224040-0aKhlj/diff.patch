@@ -1,0 +1,723 @@
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index c061f79..8aa5604 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -1705,15 +1705,27 @@
+         "quick oats"
+       ],
+       "category": "bulk_pantry",
+-      "question": "What kind of oats should I buy?",
++      "question": "What kind of oats should you buy?",
+       "decision": "Plain oats, steel-cut or rolled.",
+       "why": "Same grain, cut differently. The packets are where the sugar is.",
+       "short_answer": "Same grain, processed three ways. Steel-cut are least processed, chewy and slow to cook. Rolled are steamed and flattened, and quick. Instant are pre-cooked and often pre-sweetened. Buy plain oats in any form, and skip flavored packets loaded with sugar.",
+-      "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little — but plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. The measured number is the glycemic index: 42 for steel-cut, 55 for rolled and 83 for instant, in one extension comparison.",
++      "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little. Plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. The measured number is the glycemic index: 42 for steel-cut, 55 for rolled and 83 for instant, in one extension comparison.",
+       "evidence_tier": "established",
+       "sources": [
+         "USDA FoodData Central",
+-        "Michigan State University Extension “Love your oats” https://www.canr.msu.edu/news/love_your_oats (glycemic index measured at 42 for steel-cut oats, 55 for rolled and 83 for instant)"
++        "Michigan State University Extension “Love your oats” https://www.canr.msu.edu/news/love_your_oats (glycemic index measured at 42 for steel-cut oats, 55 for rolled and 83 for instant)",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Environmental Working Group: Glyphosate in oat-based products",
++          "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++        }
+       ],
+       "kristy_take": "Big canister of plain rolled oats. Sweeten with fruit. The flavored packets are candy with an oat garnish.",
+       "cart_pick": "Steel-cut oats",
+@@ -1721,12 +1733,13 @@
+         "Same grain in every form; the flavored packets are where the sugar is.",
+         "Plain oats in any form; steel-cut if you like chew and have time.",
+         "Skip flavored instant packets. Check the sugar on the label.",
+-        "Bulk oats are pennies per serving."
++        "Bulk oats are pennies per serving.",
++        "Choose certified organic oats over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+       ],
+       "labels_decoded": [
+         {
+           "term": "Instant / flavored",
+-          "meaning": "Pre-cooked and usually pre-sweetened — read the added sugar."
++          "meaning": "Pre-cooked and usually pre-sweetened. Read the added sugar."
+         }
+       ],
+       "tier_note": "One ingredient on the canister is a settled reading of the panel; the flavored packets are where the sugar sits.",
+@@ -1891,7 +1904,19 @@
+       "evidence_tier": "established",
+       "sources": [
+         "USDA FoodData Central",
+-        "Today’s Dietitian, sodium and canned beans https://www.todaysdietitian.com/newarchives/canned-beans-sodium.html (rinsing and draining canned beans can reduce their sodium content)"
++        "Today’s Dietitian, sodium and canned beans https://www.todaysdietitian.com/newarchives/canned-beans-sodium.html (rinsing and draining canned beans can reduce their sodium content)",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Saskatchewan Pulse Growers: Harvest Aid Options for Pulses",
++          "url": "https://saskpulse.com/resources/harvest-aid-options-for-pulses/"
++        }
+       ],
+       "kristy_take": "A bag of dried beans and a slow cooker. Nothing in the store competes.",
+       "cart_pick": "Dried beans",
+@@ -1899,12 +1924,13 @@
+         "Cooking dried beans yourself is the only way to set the salt.",
+         "Dried beans cost a fraction of canned per serving.",
+         "A slow cooker or pressure cooker removes the planning problem.",
+-        "Whole beans with unbroken skins cook evenly. Split ones turn to mush."
++        "Whole beans with unbroken skins cook evenly. Split ones turn to mush.",
++        "Choose certified organic beans over conventional, dried or canned. Conventional beans and other pulses may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic beans."
+       ],
+       "labels_decoded": [
+         {
+           "term": "BPA-free",
+-          "meaning": "Can lining without BPA — a minor plus if it matters to you."
++          "meaning": "Can lining without BPA. A minor plus if it matters to you."
+         }
+       ],
+       "tier_note": "That rinsing removes much of the canning sodium is measured, and beans as the cheapest real protein is arithmetic.",
+@@ -3777,7 +3803,7 @@
+         "unbromated flour"
+       ],
+       "category": "bulk_pantry",
+-      "question": "Which flour should I buy, and what does ‘enriched’ mean?",
++      "question": "Which flour should you buy, and what does ‘enriched’ mean?",
+       "decision": "Whole wheat flour; on white flour, unbleached and unbromated.",
+       "why": "Whole wheat flour keeps the bran, germ and endosperm in their natural proportions.",
+       "short_answer": "Whole wheat flour keeps the bran and germ. On white flour, “unbleached” means aged with air; bleached must say “Bleached”. Bromated flour has potassium bromate added. Whole wheat carries oil in the germ, so it turns rancid sooner.",
+@@ -3790,7 +3816,15 @@
+         "NC State Extension, More Food project “All About Flour” https://morefoodproject.org/blog/all-about-flour (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
+         "https://www.law.cornell.edu/cfr/text/21/137.105",
+         "https://www.law.cornell.edu/cfr/text/21/137.155",
+-        "https://www.law.cornell.edu/cfr/text/21/137.200"
++        "https://www.law.cornell.edu/cfr/text/21/137.200",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        }
+       ],
+       "kristy_take": "Whole wheat first; unbleached and unbromated when it is white. Keep whole wheat in the freezer. The germ is still in it, and that oil turns.",
+       "cart_pick": "Whole wheat flour",
+@@ -3808,7 +3842,8 @@
+         "‘Enriched’ means vitamins and iron added back after refining. Standard on white flour.",
+         "‘Unbleached’ was aged with air. ‘Bleached’ was chemically whitened.",
+         "Read for “bromated”, and pick flour without potassium bromate.",
+-        "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer."
++        "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer.",
++        "Choose certified organic wheat flour over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+       ],
+       "labels_decoded": [
+         {
+@@ -6313,7 +6348,15 @@
+         "https://www.law.cornell.edu/cfr/text/21/136.180",
+         "https://www.law.cornell.edu/cfr/text/21/137.200",
+         "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+-        "https://wholegrainscouncil.org/whole-grain-stamp"
++        "https://wholegrainscouncil.org/whole-grain-stamp",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        }
+       ],
+       "kristy_take": "A loaf called “wheat” may still use refined flour. Turn it over and find whole wheat flour in the ingredients before choosing it.",
+       "cart_pick": "Whole wheat sandwich bread",
+@@ -6321,7 +6364,8 @@
+         "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
+         "Check for whole wheat flour in the ingredients.",
+         "Without a stamp, use the flour names to check the loaf.",
+-        "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements."
++        "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
++        "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+       ],
+       "watch_out": [
+         "“Wheat” or “enriched” alone does not establish that the grain is whole.",
+@@ -6634,7 +6678,19 @@
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://wholegrainscouncil.org/whole-grain-stamp",
+-        "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label"
++        "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Environmental Working Group: Glyphosate in oat-based products",
++          "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++        }
+       ],
+       "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
+       "cart_pick": "Whole-grain breakfast cereal",
+@@ -6642,7 +6698,8 @@
+         "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
+         "Check the 100% stamp rather than assume every stamp means all grain is whole.",
+         "Without a stamp, read the grain ingredients and the added-sugars line.",
+-        "Read the added-sugars line even when honey or syrup is the named sweetener."
++        "Read the added-sugars line even when honey or syrup is the named sweetener.",
++        "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+       ],
+       "watch_out": [
+         "Honey-sweetened granola still has added sugar.",
+@@ -6691,7 +6748,15 @@
+         "https://www.law.cornell.edu/cfr/text/21/139.110",
+         "https://www.law.cornell.edu/cfr/text/21/139.115",
+         "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+-        "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/"
++        "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        }
+       ],
+       "kristy_take": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
+       "cart_pick": "Dry durum semolina pasta",
+@@ -6699,7 +6764,8 @@
+         "The standard also allows farina or other flour; the list shows which is in the box.",
+         "Look for durum semolina and water in the list.",
+         "Plain dry pasta can be checked by ingredients without a bronze-cut claim.",
+-        "Read enrichment separately from the flour name and any bronze-cut claim."
++        "Read enrichment separately from the flour name and any bronze-cut claim.",
++        "Choose certified organic wheat pasta over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+       ],
+       "watch_out": [
+         "Bronze-cut is a surface-texture description. The source set establishes no health advantage from the die.",
+@@ -8895,7 +8961,19 @@
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://www.healthline.com/nutrition/muesli-vs-granola",
+-        "https://en.wikipedia.org/wiki/Muesli"
++        "https://en.wikipedia.org/wiki/Muesli",
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Environmental Working Group: Glyphosate in oat-based products",
++          "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++        }
+       ],
+       "kristy_take": "Muesli and granola share a base. The sweetener and the oven split them.",
+       "cart_pick": "Muesli with no added sugar",
+@@ -8903,7 +8981,8 @@
+         "Granola adds oil and sweetener before baking; plain muesli is a raw mix.",
+         "Read the ingredients for sugar, honey or syrup.",
+         "Pick a bag that lists only grains, fruit, nuts and seeds.",
+-        "Check whether the bag says toasted."
++        "Check whether the bag says toasted.",
++        "Choose certified organic muesli over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+       ],
+       "watch_out": [
+         "Toasted or sweetened muesli sits closer to granola."
+@@ -12340,6 +12419,18 @@
+         {
+           "name": "Weston A. Price Foundation: FAQ, fats and oils",
+           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
++        },
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Environmental Working Group: Glyphosate in oat-based products",
++          "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+         }
+       ],
+       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
+@@ -12350,7 +12441,8 @@
+         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+         "Read the first ingredients; oats or another whole grain should lead.",
+         "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
+-        "Many bars carry sugar and high fructose corn syrup, and the list shows which."
++        "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
++        "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+       ],
+       "watch_out": [
+         "Enriched refined grains listed first mean refined grain leads the bar, not oats.",
+@@ -12514,6 +12606,18 @@
+         {
+           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+           "url": "https://drcate.com/hateful-eight/"
++        },
++        {
++          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++        },
++        {
++          "name": "FoodPrint: Glyphosate Residue in Food",
++          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++        },
++        {
++          "name": "Saskatchewan Pulse Growers: Harvest Aid Options for Pulses",
++          "url": "https://saskpulse.com/resources/harvest-aid-options-for-pulses/"
+         }
+       ],
+       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
+@@ -12525,7 +12629,8 @@
+         "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+         "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
+         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+-        "Skip hummus made with avocado oil, even when the front calls the tub traditional."
++        "Skip hummus made with avocado oil, even when the front calls the tub traditional.",
++        "Choose certified organic hummus over conventional. Conventional chickpeas may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic chickpeas."
+       ],
+       "watch_out": [
+         "A grainy tub likely comes from a coarse grind of the chickpeas."
+diff --git a/server/test/acceptance/concernGlyphosate.test.js b/server/test/acceptance/concernGlyphosate.test.js
+new file mode 100644
+index 0000000..9fd2944
+--- /dev/null
++++ b/server/test/acceptance/concernGlyphosate.test.js
+@@ -0,0 +1,70 @@
++// concern-glyphosate: grain, bean and bread cards name pre-harvest glyphosate and the organic rung; no illness
++// claims; new sources come from the concern archive.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync, readdirSync } from 'node:fs';
++import { join } from 'node:path';
++import { execFileSync } from 'node:child_process';
++import { nonEmpty } from '../../lib/testGuards.js';
++
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const ROOT = new URL('../../../', import.meta.url).pathname;
++const pre = JSON.parse(execFileSync('git', ['show', 'e8b7669:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
++const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category']);
++const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
++const fields = (e) => Object.entries(e).filter(([k]) => !SKIP.has(k)).flatMap(([, v]) => strings(v));
++const text = (e) => fields(e).join(' \n ');
++const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
++
++const ALL = ['oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'snack_bars', 'flour_basics', 'sandwich_bread', 'hummus', 'beans_dried_vs_canned', 'pasta_dry'];
++
++const root = join(ROOT, 'docs/sources/concerns');
++const archived = new Set();
++for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDirectory())) {
++  for (const f of readdirSync(join(root, d.name)).filter((x) => x.endsWith('.md'))) {
++    const m = readFileSync(join(root, d.name, f), 'utf8').match(/^url:\s*(\S+)/m);
++    if (m) archived.add(m[1]);
++  }
++}
++const sentences = (id) => fields(card(id)).flatMap((s) => s.split(/(?<=[.;!?])\s+/));
++
++test('C1 glyphosate and organic named', () => {
++  for (const id of nonEmpty(ALL, 'cards', 9)) {
++    const t = text(card(id));
++    assert.match(t, /glyphosate/i, `${id} glyphosate`);
++    assert.match(t, /organic/i, `${id} organic`);
++  }
++});
++
++test('C2 residue-free seal never outranks organic', () => {
++  for (const id of ALL) for (const sent of sentences(id)) {
++    if (/residue[- ]free/i.test(sent)) assert.match(sent, /organic/i, `${id}: ${sent}`);
++  }
++});
++
++test('C3 item lines kept', () => {
++  assert.match(text(card('snack_bars')), /whole grain/i);
++  assert.match(text(card('flour_basics')), /unbromated/i);
++  assert.match(text(card('sandwich_bread')), /whole wheat/i);
++  assert.match(text(card('hummus')), /tahini/i);
++});
++
++test('C4 sources come from the concern archive', () => {
++  nonEmpty([...archived], 'archived urls', 100);
++  for (const id of ALL) {
++    const before = new Set(urlsOf(pre.entries.find((x) => x.id === id)));
++    const urls = nonEmpty(urlsOf(card(id)), `${id} sources`, 1);
++    assert.ok(urls.some((u) => archived.has(u)), `${id} cites no concern-archive url`);
++    for (const u of urls) assert.ok(before.has(u) || archived.has(u), `${id} url not archived: ${u}`);
++  }
++});
++
++test('C5 no illness claims, figures or first person', () => {
++  for (const id of ALL) {
++    const t = text(card(id));
++    assert.doesNotMatch(t, /\b(causes?|prevents?|lowers? (the )?risk|carcinogen\w*|cancer|IARC|toxic\w*|linked to)\b/i, `${id} treatment`);
++    assert.doesNotMatch(t, /\b(I|me|my)\b/, `${id} first person`);
++    for (const sent of sentences(id)) if (/glyphosate/i.test(sent)) assert.doesNotMatch(sent, /\d+\s*(ppb|percent|%)/i, `${id}: ${sent}`);
++  }
++});
+diff --git a/server/test/acceptance/k18.test.js b/server/test/acceptance/k18.test.js
+index e259df3..dee88fe 100644
+--- a/server/test/acceptance/k18.test.js
++++ b/server/test/acceptance/k18.test.js
+@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../.
+ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
++import { beforeConcern } from './twoLinePin.js';
+ 
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
+ const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
+@@ -83,8 +84,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
+ test('C5 every cited URL hits line 1 of a docs/sources/k18 file', () => {
+   const dir = join(ROOT, 'docs/sources/k18');
+   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k18 archive', 40);
+-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
+-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K18 URLs', 20);
++  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
++  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K18 URLs', 20);
+   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k18 source`);
+ });
+ 
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index c6dc038..d233a25 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -397,7 +397,32 @@ export const TWO_LINE = {
+       "Same grain in every form; the flavored packets are where the sugar is.",
+       "Plain oats in any form; steel-cut if you like chew and have time.",
+       "Skip flavored instant packets. Check the sugar on the label.",
+-      "Bulk oats are pennies per serving."
++      "Bulk oats are pennies per serving.",
++      "Choose certified organic oats over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
++    ],
++    "sources": [
++      "USDA FoodData Central",
++      "Michigan State University Extension “Love your oats” https://www.canr.msu.edu/news/love_your_oats (glycemic index measured at 42 for steel-cut oats, 55 for rolled and 83 for instant)",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Environmental Working Group: Glyphosate in oat-based products",
++        "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++      }
++    ],
++    "question": "What kind of oats should you buy?",
++    "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little. Plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. The measured number is the glycemic index: 42 for steel-cut, 55 for rolled and 83 for instant, in one extension comparison.",
++    "labels_decoded": [
++      {
++        "term": "Instant / flavored",
++        "meaning": "Pre-cooked and usually pre-sweetened. Read the added sugar."
++      }
+     ]
+   },
+   "nuts_raw_vs_roasted": {
+@@ -424,7 +449,30 @@ export const TWO_LINE = {
+       "Cooking dried beans yourself is the only way to set the salt.",
+       "Dried beans cost a fraction of canned per serving.",
+       "A slow cooker or pressure cooker removes the planning problem.",
+-      "Whole beans with unbroken skins cook evenly. Split ones turn to mush."
++      "Whole beans with unbroken skins cook evenly. Split ones turn to mush.",
++      "Choose certified organic beans over conventional, dried or canned. Conventional beans and other pulses may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic beans."
++    ],
++    "sources": [
++      "USDA FoodData Central",
++      "Today’s Dietitian, sodium and canned beans https://www.todaysdietitian.com/newarchives/canned-beans-sodium.html (rinsing and draining canned beans can reduce their sodium content)",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Saskatchewan Pulse Growers: Harvest Aid Options for Pulses",
++        "url": "https://saskpulse.com/resources/harvest-aid-options-for-pulses/"
++      }
++    ],
++    "labels_decoded": [
++      {
++        "term": "BPA-free",
++        "meaning": "Can lining without BPA. A minor plus if it matters to you."
++      }
+     ]
+   },
+   "label_natural": {
+@@ -844,8 +892,27 @@ export const TWO_LINE = {
+       "‘Enriched’ means vitamins and iron added back after refining. Standard on white flour.",
+       "‘Unbleached’ was aged with air. ‘Bleached’ was chemically whitened.",
+       "Read for “bromated”, and pick flour without potassium bromate.",
+-      "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer."
+-    ]
++      "Whole wheat carries the oil in the germ. Buy small and keep it in the freezer.",
++      "Choose certified organic wheat flour over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
++    ],
++    "sources": [
++      "FDA standards of identity for enriched flour, 21 CFR 137",
++      "FDA regulations on flour bleaching and maturing agents",
++      "USDA FoodData Central",
++      "NC State Extension, More Food project “All About Flour” https://morefoodproject.org/blog/all-about-flour (heat, air, and moisture are the enemies of whole wheat flour; sealing air out of the container keeps other flavors and odors from absorbing into it; stored in a pantry at room temperature, discard after one month)",
++      "https://www.law.cornell.edu/cfr/text/21/137.105",
++      "https://www.law.cornell.edu/cfr/text/21/137.155",
++      "https://www.law.cornell.edu/cfr/text/21/137.200",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      }
++    ],
++    "question": "Which flour should you buy, and what does ‘enriched’ mean?"
+   },
+   "bulk_bins_buying": {
+     "decision": "Rice, oats, beans, lentils and spices from a busy bin.",
+@@ -1168,7 +1235,22 @@ export const TWO_LINE = {
+       "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
+       "Check for whole wheat flour in the ingredients.",
+       "Without a stamp, use the flour names to check the loaf.",
+-      "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements."
++      "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
++      "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
++    ],
++    "sources": [
++      "https://www.law.cornell.edu/cfr/text/21/136.180",
++      "https://www.law.cornell.edu/cfr/text/21/137.200",
++      "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
++      "https://wholegrainscouncil.org/whole-grain-stamp",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      }
+     ]
+   },
+   "sourdough": {
+@@ -1223,7 +1305,24 @@ export const TWO_LINE = {
+       "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
+       "Check the 100% stamp rather than assume every stamp means all grain is whole.",
+       "Without a stamp, read the grain ingredients and the added-sugars line.",
+-      "Read the added-sugars line even when honey or syrup is the named sweetener."
++      "Read the added-sugars line even when honey or syrup is the named sweetener.",
++      "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
++    ],
++    "sources": [
++      "https://wholegrainscouncil.org/whole-grain-stamp",
++      "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Environmental Working Group: Glyphosate in oat-based products",
++        "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++      }
+     ]
+   },
+   "pasta_dry": {
+@@ -1232,7 +1331,22 @@ export const TWO_LINE = {
+       "The standard also allows farina or other flour; the list shows which is in the box.",
+       "Look for durum semolina and water in the list.",
+       "Plain dry pasta can be checked by ingredients without a bronze-cut claim.",
+-      "Read enrichment separately from the flour name and any bronze-cut claim."
++      "Read enrichment separately from the flour name and any bronze-cut claim.",
++      "Choose certified organic wheat pasta over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
++    ],
++    "sources": [
++      "https://www.law.cornell.edu/cfr/text/21/139.110",
++      "https://www.law.cornell.edu/cfr/text/21/139.115",
++      "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
++      "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      }
+     ]
+   },
+   "oat_milk": {
+@@ -1687,7 +1801,24 @@ export const TWO_LINE = {
+       "Granola adds oil and sweetener before baking; plain muesli is a raw mix.",
+       "Read the ingredients for sugar, honey or syrup.",
+       "Pick a bag that lists only grains, fruit, nuts and seeds.",
+-      "Check whether the bag says toasted."
++      "Check whether the bag says toasted.",
++      "Choose certified organic muesli over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
++    ],
++    "sources": [
++      "https://www.healthline.com/nutrition/muesli-vs-granola",
++      "https://en.wikipedia.org/wiki/Muesli",
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Environmental Working Group: Glyphosate in oat-based products",
++        "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
++      }
+     ]
+   },
+   "bread_aisle": {
+@@ -2466,7 +2597,8 @@ export const TWO_LINE = {
+       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+       "Read the first ingredients; oats or another whole grain should lead.",
+       "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
+-      "Many bars carry sugar and high fructose corn syrup, and the list shows which."
++      "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
++      "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+     ],
+     "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
+     "sources": [
+@@ -2482,6 +2614,18 @@ export const TWO_LINE = {
+       {
+         "name": "Weston A. Price Foundation: FAQ, fats and oils",
+         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
++      },
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Environmental Working Group: Glyphosate in oat-based products",
++        "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+       }
+     ],
+     "watch_out": [
+@@ -2515,7 +2659,8 @@ export const TWO_LINE = {
+       "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+       "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
+       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+-      "Skip hummus made with avocado oil, even when the front calls the tub traditional."
++      "Skip hummus made with avocado oil, even when the front calls the tub traditional.",
++      "Choose certified organic hummus over conventional. Conventional chickpeas may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic chickpeas."
+     ],
+     "sources": [
+       "https://www.britannica.com/topic/hummus",
+@@ -2525,6 +2670,18 @@ export const TWO_LINE = {
+       {
+         "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+         "url": "https://drcate.com/hateful-eight/"
++      },
++      {
++        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
++        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
++      },
++      {
++        "name": "FoodPrint: Glyphosate Residue in Food",
++        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
++      },
++      {
++        "name": "Saskatchewan Pulse Growers: Harvest Aid Options for Pulses",
++        "url": "https://saskpulse.com/resources/harvest-aid-options-for-pulses/"
+       }
+     ]
+   },
+@@ -2785,13 +2942,41 @@ export const beforeTwoLine = (e) => {
+ // Concern batches add archived sources from docs/sources/concerns; older batches froze or
+ // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
+ // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
+-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage']);
++const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry']);
+ const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+-// Source checks still lint the live fronts. Historical copy assertions can also restore
+-// pinned fields; every restored field remains checked against the live KB above.
++// Historical pass rules freeze sources and label definitions. Restore labels only when
++// TWO_LINE pins their current copy, leaving live fronts available to source checks.
++// Other historical copy assertions opt into all pinned fields with copy: true.
++// Every restored field remains checked against the live KB above.
+ export const beforeConcern = (e, { copy = false } = {}) => {
+   if (!e || !CONCERN.has(e.id)) return e;
+   const pre = PRE_CONCERN.entries.find((x) => x.id === e.id);
+-  const fields = copy ? Object.keys(TWO_LINE[e.id]) : ['sources'];
++  const fields = copy ? Object.keys(TWO_LINE[e.id])
++    : ['sources', ...Object.keys(TWO_LINE[e.id]).filter((field) => field === 'labels_decoded')];
+   return { ...e, ...Object.fromEntries(fields.map((field) => [field, pre[field]])) };
+ };
++
++test('beforeConcern restores frozen labels while preserving other live copy and its input', () => {
++  const live = {
++    id: 'oats_steelcut_rolled_instant',
++    question: 'What kind of oats should you buy?',
++    buying_tips: ['Choose certified organic oats over conventional.'],
++    sources: [{ name: 'Current source', url: 'https://example.com/current' }],
++    labels_decoded: [{ term: 'Instant / flavored', meaning: 'Pre-cooked and usually pre-sweetened. Read the added sugar.' }],
++  };
++  const original = structuredClone(live);
++  const historical = beforeConcern(live);
++  assert.deepEqual(historical.labels_decoded, [
++    { term: 'Instant / flavored', meaning: 'Pre-cooked and usually pre-sweetened — read the added sugar.' },
++  ]);
++  assert.deepEqual(historical.sources, [
++    'USDA FoodData Central',
++    'Michigan State University Extension “Love your oats” https://www.canr.msu.edu/news/love_your_oats (glycemic index measured at 42 for steel-cut oats, 55 for rolled and 83 for instant)',
++  ]);
++  assert.deepEqual({ ...historical, sources: live.sources, labels_decoded: live.labels_decoded }, original);
++  assert.deepEqual(live, original);
++  const unpinnedLabels = { ...live, id: 'hummus' };
++  assert.deepEqual(beforeConcern(unpinnedLabels).labels_decoded, original.labels_decoded);
++  const outsideConcern = { ...live, id: 'fixture_outside_concern' };
++  assert.equal(beforeConcern(outsideConcern), outsideConcern);
++});
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index d4bc126..6447e2c 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,7 +8,7 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);
+@@ -66,7 +66,7 @@ test('W4 (c/e) PILOT identities, locked fields, numbers and voice survive', () =
+   for (const old of before) {
+     const live = pilot.find((e) => e.id === old.id);
+     // The two-line rewrite (2026-10-17) owns buying_tips (and egg sources) now: twoLinePin.test.js.
+-    const pre = beforeTwoLine(live);
++    const pre = beforeTwoLine(beforeConcern(live, { copy: true }));
+     const now = { ...pre, decision: live.decision };
+     for (const field of frozen) assert.equal(JSON.stringify(now[field]), JSON.stringify(old[field]), `${old.id}.${field}`);
+     const strip = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !changed.includes(f)));

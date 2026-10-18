@@ -8,7 +8,7 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
 
 // Independent of the production predicate: a narrowed scope cannot hide cards.
 const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);
@@ -66,7 +66,7 @@ test('W4 (c/e) PILOT identities, locked fields, numbers and voice survive', () =
   for (const old of before) {
     const live = pilot.find((e) => e.id === old.id);
     // The two-line rewrite (2026-10-17) owns buying_tips (and egg sources) now: twoLinePin.test.js.
-    const pre = beforeTwoLine(live);
+    const pre = beforeTwoLine(beforeConcern(live, { copy: true }));
     const now = { ...pre, decision: live.decision };
     for (const field of frozen) assert.equal(JSON.stringify(now[field]), JSON.stringify(old[field]), `${old.id}.${field}`);
     const strip = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !changed.includes(f)));

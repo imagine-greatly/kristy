@@ -1,0 +1,38 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k18.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All nine cards name glyphosate and prefer certified organic. Assumptions: decisions remain unchanged; pulse wording follows archived pre-harvest weed-control guidance."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes; organic drift limitations are explicit, with no residue-free seal ranking."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes; existing item-specific guidance remains."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes; new source URLs match the specified archives, and existing sources remain."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes. Fixed K10 through the owned beforeConcern helper, restoring pinned historical label definitions while retaining live-copy checks; regression coverage added. Assumptions: historical overlays cover frozen label definitions. Full suite: 2746/2746 passed. TwoLineCheck: 181 checked, zero violations. Do-lines generation and git diff --check passed."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

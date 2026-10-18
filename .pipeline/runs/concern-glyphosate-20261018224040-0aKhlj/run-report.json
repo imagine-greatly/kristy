@@ -1,0 +1,209 @@
+{
+  "kind": "build",
+  "runId": "concern-glyphosate-20261018224040-0aKhlj",
+  "piece_id": "/Users/m1/kristy:concern-glyphosate",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-glyphosate.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    }
+  ],
+  "usage": {
+    "input": 2652375,
+    "cached": 2303360,
+    "output": 22201,
+    "reasoning": 6513
+  },
+  "over_ceiling": true,
+  "ms": 634694,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 1,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-18T20:40:40.530Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-glyphosate-20261018224040-0aKhlj:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/events-0.jsonl",
+      "usage": {
+        "input": 954027,
+        "cached": 839936,
+        "output": 9064,
+        "reasoning": 2260
+      },
+      "tokens": 963091,
+      "mem_free_mb": 768,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a150c3-54ef-79e1-a46b-5e1b8371a698",
+        "usage": {
+          "input": 954027,
+          "cached": 839936,
+          "output": 9064,
+          "reasoning": 2260
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k18.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All nine cards name glyphosate and prefer certified organic over conventional. Assumptions: decisions stay unchanged; pulse wording follows the archive’s pre-harvest weed-control distinction.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes. Every added tip explains organic’s prohibition and possible drift residues; no residue-free seal ranking.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes. Existing item-specific guidance and buying tips are preserved.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes. Each card adds source objects with exact URLs from the specified archives; existing sources remain.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"All five acceptance tests pass. Display questions corrected; em-dash asides removed; changed fields pinned. TwoLineCheck: 181 cards, zero violations. Do-lines generation matches existing output. NOTE: npm test passed 2719/2720. Unowned server/test/acceptance/k10.test.js:33, via passRule.js:68, fails 'oats_steelcut_rolled_instant: frozen field labels_decoded changed' because it requires the old em-dash wording. Left unchanged per contract.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/concernGlyphosate.test.js server/test/acceptance/twoLinePin.js server/test/acceptance/k18.test.js server/test/acceptance/w4.test.js'",
+          "/bin/zsh -lc \"rg --files -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!client/dist'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'git status --short'",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/testGuards.js server/package.json package.json server/test/acceptance/twoLinePin.test.js server/test/acceptance/ic8a.test.js'",
+          "/bin/zsh -lc 'cat docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/pantry/INDEX.md docs/sources/concerns/pantry/cornucopia-glyphosate-harvest.md docs/sources/concerns/pantry/foodprint-glyphosate-residue.md docs/sources/concerns/pantry/ewg-glyphosate-oats-2023.md docs/sources/concerns/pantry/saskpulse-harvest-aid-pulses.md'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport {readFileSync,existsSync} from 'node:fs';\nfor (const p of ['/AGENTS.md','/Users/AGENTS.md','/Users/m1/AGENTS.md','/Users/m1/kristy/AGENTS.md','server/AGENTS.md','server/test/AGENTS.md','server/test/acceptance/AGENTS.md','server/lib/AGENTS.md','docs/AGENTS.md','report.schema.json']) if(existsSync(p)) console.log(p+'\\\\n'+readFileSync(p,'utf8'));\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst ids=['oats_steelcut_rolled_instant','breakfast_cereal','muesli','snack_bars','flour_basics','sandwich_bread','hummus','beans_dried_vs_canned','pasta_dry'];\nfor(const id of ids) console.log(JSON.stringify(kb.entries.find(e=>e.id===id),null,2));\nconst pin=readFileSync('server/test/acceptance/twoLinePin.js','utf8');\nconst entries=JSON.parse(pin.slice(pin.indexOf('export const TWO_LINE = {')+'export const TWO_LINE = '.length,pin.indexOf('\\\\n};')+2));\nfor(const id of ids) console.log(id+' PIN '+JSON.stringify(entries[id],null,2));\nNODE\"",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/testGuards.js server/package.json package.json server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc \"wc -l -c docs/sources/concerns/pantry/cornucopia-glyphosate-harvest.md docs/sources/concerns/pantry/foodprint-glyphosate-residue.md docs/sources/concerns/pantry/ewg-glyphosate-oats-2023.md docs/sources/concerns/pantry/saskpulse-harvest-aid-pulses.md VOICE_SPEC.md server/scripts/twoLineCheck.js server/scripts/buildDoLines.js\nrg -n 'glyphosate_desiccation|glyphosate' docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/pantry/INDEX.md\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport {readFileSync,existsSync} from 'node:fs';\nfor (const p of ['/AGENTS.md','/Users/AGENTS.md','/Users/m1/AGENTS.md','/Users/m1/kristy/AGENTS.md','server/AGENTS.md','server/test/AGENTS.md','server/test/acceptance/AGENTS.md','server/lib/AGENTS.md','docs/AGENTS.md','report.schema.json']) if(existsSync(p)) console.log(p+'\\\\n'+readFileSync(p,'utf8'));\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst ids=['oats_steelcut_rolled_instant','breakfast_cereal','muesli','snack_bars','flour_basics','sandwich_bread','hummus','beans_dried_vs_canned','pasta_dry'];\nfor(const id of ids) {const e=kb.entries.find(e=>e.id===id);const fields=Object.entries(e).filter(([k])=>\"'!['\"'id','sources','aliases','asked_as','category','kind','buying_tips'].includes(k)); console.log(id+' '+JSON.stringify(Object.fromEntries(fields),null,2));}\nNODE\"",
+          "/bin/zsh -lc \"rg -n -i '\"'^url:|glyphosate|drift|desiccant|chickpea|edible bean'\"' docs/sources/concerns/pantry/cornucopia-glyphosate-harvest.md docs/sources/concerns/pantry/foodprint-glyphosate-residue.md docs/sources/concerns/pantry/ewg-glyphosate-oats-2023.md docs/sources/concerns/pantry/saskpulse-harvest-aid-pulses.md\"",
+          "/bin/zsh -lc \"cat server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/lib/testGuards.js server/package.json package.json server/test/acceptance/twoLinePin.test.js\nrg -n '—|first.person|claim.lock|no.treatment|statistics' VOICE_SPEC.md\nsed -n '280,469p' VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport{readFileSync,existsSync}from'node:fs';\nfor(const p of ['/AGENTS.md','/Users/AGENTS.md','/Users/m1/AGENTS.md','/Users/m1/kristy/AGENTS.md','server/AGENTS.md','server/test/AGENTS.md','server/test/acceptance/AGENTS.md','server/lib/AGENTS.md','docs/AGENTS.md','report.schema.json'])if(existsSync(p))console.log(p+'\\\\n'+readFileSync(p,'utf8'));\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst ids=['oats_steelcut_rolled_instant','breakfast_cereal','muesli','snack_bars','flour_basics','sandwich_bread','hummus','beans_dried_vs_canned','pasta_dry'];\nfor(const id of ids){const e=kb.entries.find(e=>e.id===id);for(const[k,v]of Object.entries(e)){if(['aliases','asked_as','sources'].includes(k))continue;if(/\\\\b(I|me|my)\\\\b|—|\\\\b(causes?|prevents?|lowers? (the )?risk|carcinogen\\\\w*|cancer|IARC|toxic\\\\w*|linked to)\\\\b/.test(JSON.stringify(v)))console.log(id,k,JSON.stringify(v));}}\nNODE\"",
+          "/bin/zsh -lc \"cat server/scripts/twoLineCheck.js server/scripts/buildDoLines.js\nrg -n 'buying_tips|READ_SENTENCE|READ_FIVE|look_for|WORDS|wordCap|sentenceCap' server/lib/counterCardLint.js server/lib/counterCards.js\nsed -n '54,85p' server/test/acceptance/ic8a.test.js\"",
+          "/bin/zsh -lc \"rg -n 'beforeConcern|beforeTwoLine|sources|\\\\.detail|labels_decoded' server/test/acceptance/k5.test.js server/test/acceptance/k9.test.js server/test/acceptance/k18.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-5.test.js server/test/acceptance/ca-7.test.js\nsed -n '1,60p' server/kristy_perimeter_kb.json\nsed -n '2680,2750p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"rg -n '\"'^url:'\"' docs/sources/concerns/pantry/cornucopia-glyphosate-harvest.md docs/sources/concerns/pantry/foodprint-glyphosate-residue.md docs/sources/concerns/pantry/ewg-glyphosate-oats-2023.md docs/sources/concerns/pantry/saskpulse-harvest-aid-pulses.md\nrg -n -i 'drift|organic' docs/sources/concerns/pantry/foodprint-glyphosate-residue.md\nsed -n '146,167p' docs/sources/concerns/pantry/saskpulse-harvest-aid-pulses.md\nsed -n '91,115p' docs/sources/concerns/pantry/cornucopia-glyphosate-harvest.md\"",
+          "/bin/zsh -lc \"sed -n '1390,1455p' server/lib/counterCardLint.js\nrg -an 'function projectEntry|buying_tips|\\\\.slice\\\\(' server/lib/counterCards.js\nrg -n '\"'^import.*dotenv|dotenv.config|https?'\"\\\\.request|fetch\\\\(|listen\\\\(' server/test/acceptance/concernGlyphosate.test.js server/lib/doLines.test.js server/test/acceptance/k18.test.js server/test/acceptance/w4.test.js\nsed -n '1,16p' server/test/acceptance/ic8a.test.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nconst kbText = readFileSync(kbPath, 'utf8');\nconst kb = JSON.parse(kbText);\nassert.equal(JSON.stringify(kb, null, 2) + '\\\\n', kbText, 'preserve KB formatting');\nconst tips = {\n  oats_steelcut_rolled_instant: 'Choose certified organic oats over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.',\n  breakfast_cereal: 'For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.',\n  muesli: 'Choose certified organic muesli over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.',\n  snack_bars: 'Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.',\n  flour_basics: 'Choose certified organic wheat flour over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.',\n  sandwich_bread: 'Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.',\n  hummus: 'Choose certified organic hummus over conventional. Conventional chickpeas may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic chickpeas.',\n  beans_dried_vs_canned: 'Choose certified organic beans over conventional, dried or canned. Conventional beans and other pulses may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic beans.',\n  pasta_dry: 'Choose certified organic wheat pasta over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.',\n};\nconst source = (file, name) => {\n  const archive = readFileSync(\"'`docs/sources/concerns/pantry/${file}.md`, '\"'utf8');\n  const url = archive.match(/\"'^url:'\"\\\\s*(\\\\S+)/m)?.[1];\n  assert.ok(url, \"'`${file} frontmatter URL`);\n  return { name, url };\n};\nconst harvest = source('\"'cornucopia-glyphosate-harvest', 'Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest');\nconst drift = source('foodprint-glyphosate-residue', 'FoodPrint: Glyphosate Residue in Food');\nconst oats = source('ewg-glyphosate-oats-2023', 'Environmental Working Group: Glyphosate in oat-based products');\nconst pulses = source('saskpulse-harvest-aid-pulses', 'Saskatchewan Pulse Growers: Harvest Aid Options for Pulses');\nconst oatIds = new Set(['oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'snack_bars']);\nconst pulseIds = new Set(['hummus', 'beans_dried_vs_canned']);\nconst changes = new Map();\nfor (const [id, tip] of Object.entries(tips)) {\n  const entry = kb.entries.find((e) => e.id === id);\n  assert.ok(entry, id);\n  entry.buying_tips.push(tip);\n  entry.sources.push(harvest, drift, ...(oatIds.has(id) ? [oats] : pulseIds.has(id) ? [pulses] : []));\n  changes.set(id, ['buying_tips', 'sources']);\n}\nconst get = (id) => kb.entries.find((e) => e.id === id);\nconst oatCard = get('oats_steelcut_rolled_instant');\noatCard.question = 'What kind of oats should you buy?';\noatCard.detail = oatCard.detail.replace('a little — but plain', 'a little. Plain');\noatCard.labels_decoded[0].meaning = oatCard.labels_decoded[0].meaning.replace(' — read', '. Read');\nchanges.get(oatCard.id).push('question', 'detail', 'labels_decoded');\nget('flour_basics').question = 'Which flour should you buy, and what does ‘enriched’ mean?';\nchanges.get('flour_basics').push('question');\nget('beans_dried_vs_canned').labels_decoded[0].meaning = 'Can lining without BPA. A minor plus if it matters to you.';\nchanges.get('beans_dried_vs_canned').push('labels_decoded');\nlet pinText = readFileSync(pinPath, 'utf8');\nconst start = pinText.indexOf('export const TWO_LINE = ') + 'export const TWO_LINE = '.length;\nconst end = pinText.indexOf('\\\\n};', start) + 2;\nconst pins = JSON.parse(pinText.slice(start, end));\nassert.equal(JSON.stringify(pins, null, 2), pinText.slice(start, end), 'preserve pin formatting');\nfor (const [id, fields] of changes) {\n  assert.ok(pins[id], \"'`${id} existing pin`);\n  for (const field of fields) pins[id][field] = get(id)[field];\n}\npinText = pinText.slice(0, start) + JSON.stringify(pins, null, 2) + pinText.slice(end);\nconst concern = pinText.match(/const CONCERN = new Set'\"\\\\(\\\\[(.*?)\\\\]\\\\);/);\nassert.ok(concern, 'CONCERN overlay');\nconst extraIds = Object.keys(tips).filter((id) => \"'!concern[1].includes(`'\"'\"'${id}'\"'\"'`));\npinText = pinText.replace(concern[0], `const CONCERN = new Set([${concern[1]}, ${extraIds.map((id) => `'\"'\"'${id}'\"'\"'`).join('\"', ')}]);\"'`);\nwriteFileSync(kbPath, JSON.stringify(kb, null, 2) + '\"'\\\\n');\nwriteFileSync(pinPath, pinText);\nconsole.log('Updated nine cards and pinned all changed fields; added seven CONCERN ids.');\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernGlyphosate.test.js'",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js && node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"git diff --stat\nnode --input-type=module <<'NODE'\nimport {readFileSync} from 'node:fs';\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nfor(const id of ['oats_steelcut_rolled_instant','beans_dried_vs_canned'])console.log(id, kb.entries.find(e=>e.id===id).labels_decoded);\nNODE\"",
+          "/bin/zsh -lc 'npm test'",
+          "/bin/zsh -lc \"git diff --check\nnode --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {execFileSync} from 'node:child_process';\nconst before=JSON.parse(execFileSync('git',['show','HEAD:server/kristy_perimeter_kb.json'],{maxBuffer:64<<20}));\nconst after=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst ids=['oats_steelcut_rolled_instant','breakfast_cereal','muesli','snack_bars','flour_basics','sandwich_bread','hummus','beans_dried_vs_canned','pasta_dry'];\nconst pinText=readFileSync('server/test/acceptance/twoLinePin.js','utf8');\nconst pins=JSON.parse(pinText.slice(pinText.indexOf('export const TWO_LINE = ')+'export const TWO_LINE = '.length,pinText.indexOf('\\\\n};')+2));\nlet changed=0;\nfor(let i=0;i<after.entries.length;i++){\n const a=after.entries[i], b=before.entries[i];\n assert.equal(a.id,b.id);\n if(JSON.stringify(a)===JSON.stringify(b))continue;\n assert.ok(ids.includes(a.id));\n changed++;\n const fields=Object.keys(a).filter(k=>JSON.stringify(a[k])\"'!==JSON.stringify(b[k]));\n for(const field of fields)assert.deepEqual(pins[a.id][field],a[field],`${a.id}.${field} pin`);\n assert.deepEqual(a.buying_tips.slice(0,b.buying_tips.length),b.buying_tips,`${a.id} old tips`);\n assert.deepEqual(a.sources.slice(0,b.sources.length),b.sources,`${a.id} old sources`);\n assert.equal(a.decision,b.decision); assert.equal(a.cart_pick,b.cart_pick);\n console.log(`${a.id}: ${fields.join('\"', ')}\"'`);\n}\nassert.equal(changed,9);\nfor(const id of ['\"'snack_bars','flour_basics','sandwich_bread','hummus']){\n const a=after.entries.find(e=>e.id===id), b=before.entries.find(e=>e.id===id);\n for(const [key,value]of Object.entries(b))if(\"'!['\"'sources','buying_tips','question'].includes(key))assert.deepEqual(a[key],value,\"'`${id}.${key} item-specific lines`);\n}\nconsole.log('\"'Audit passed: only nine cards changed; every changed field pinned; existing item guidance, sources, decisions, and picks preserved.');\nNODE\"",
+          "/bin/zsh -lc \"git diff -- server/test/acceptance/k18.test.js server/test/acceptance/w4.test.js\nsed -n '1,85p' server/test/acceptance/k10.test.js\nsed -n '1,100p' server/test/acceptance/passRule.js\ngit status --short\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {execFileSync} from 'node:child_process';\nconst kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst pre=JSON.parse(execFileSync('git',['show','HEAD:server/kristy_perimeter_kb.json'],{maxBuffer:64<<20}));\nconst ids=['oats_steelcut_rolled_instant','breakfast_cereal','muesli','snack_bars','flour_basics','sandwich_bread','hummus','beans_dried_vs_canned','pasta_dry'];\nconst sourceFiles=['cornucopia-glyphosate-harvest','foodprint-glyphosate-residue','ewg-glyphosate-oats-2023','saskpulse-harvest-aid-pulses'];\nconst urls=new Set(sourceFiles.map(f=>readFileSync(\"'`docs/sources/concerns/pantry/${f}.md`,'\"'utf8').match(/\"'^url:'\"\\\\s*(\\\\S+)/m)[1]));\nconst strings=v=>typeof v==='string'?[v]:Array.isArray(v)?v.flatMap(strings):v&&typeof v==='object'?Object.values(v).flatMap(strings):[];\nfor(const id of ids){\n const e=kb.entries.find(x=>x.id===id),old=pre.entries.find(x=>x.id===id);\n const added=e.buying_tips.slice(old.buying_tips.length);\n assert.equal(added.length,1,\"'`${id} one added tip`);\n assert.match(added[0],/certified organic.+over conventional/);\n assert.match(added[0],/glyphosate.+before harvest/);\n assert.match(added[0],/Organic farming does not allow glyphosate/);\n assert.match(added[0],/Drift can still leave residues on organic/);\n assert.doesNotMatch(added[0],/'\"\\\\d/);\n const display=Object.entries(e).filter(([k])=>\"'!['\"'sources','aliases','asked_as','id','category','kind'].includes(k)).flatMap(([,v])=>strings(v)).join('\\\\n');\n assert.doesNotMatch(display,/—|\\\\b(I|me|my|mine|we|our|us)\\\\b/);\n for(const s of e.sources.slice(old.sources.length)){\n  assert.deepEqual(Object.keys(s),['name','url']);assert.ok(s.name);assert.ok(urls.has(s.url));\n }\n}\nassert.equal(kb.entries.find(x=>x.id===ids[0]).question,'What kind of oats should you buy?');\nassert.equal(kb.entries.find(x=>x.id==='flour_basics').question,'Which flour should you buy, and what does ‘enriched’ mean?');\nconsole.log('Supplemental audit passed for all nine: explicit organic ladder, crop-specific pre-harvest use, drift caveat, exact named-archive URLs, no new figures, no first person or em dashes.');\nNODE\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-glyphosate-20261018224040-0aKhlj:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/events-1.jsonl",
+      "usage": {
+        "input": 1698348,
+        "cached": 1463424,
+        "output": 13137,
+        "reasoning": 4253
+      },
+      "tokens": 1711485,
+      "mem_free_mb": 1077,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a150c3-54ef-79e1-a46b-5e1b8371a698",
+        "usage": {
+          "input": 1698348,
+          "cached": 1463424,
+          "output": 13137,
+          "reasoning": 4253
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k18.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All nine cards name glyphosate and prefer certified organic. Assumptions: decisions remain unchanged; pulse wording follows archived pre-harvest weed-control guidance.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes; organic drift limitations are explicit, with no residue-free seal ranking.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes; existing item-specific guidance remains.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes; new source URLs match the specified archives, and existing sources remain.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes. Fixed K10 through the owned beforeConcern helper, restoring pinned historical label definitions while retaining live-copy checks; regression coverage added. Assumptions: historical overlays cover frozen label definitions. Full suite: 2746/2746 passed. TwoLineCheck: 181 checked, zero violations. Do-lines generation and git diff --check passed.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '1,85p' server/test/acceptance/k10.test.js\nsed -n '1,100p' server/test/acceptance/passRule.js\nrg -n 'beforeConcern|CONCERN|labels_decoded|oats_steelcut_rolled_instant' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"git diff --stat\nrg --files --hidden -g report.schema.json -g AGENTS.md -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\nrg -n 'beforeConcern\\\\(' server/test/acceptance -g '*.js'\"",
+          "/bin/zsh -lc \"sed -n '2895,2985p' server/test/acceptance/twoLinePin.js\ncat .pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/report.schema.json\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport{execFileSync}from'node:child_process';\nconst pre=JSON.parse(execFileSync('git',['show','5a53252:server/kristy_perimeter_kb.json'],{maxBuffer:64<<20}));\nconst entry=pre.entries.find(e=>e.id==='oats_steelcut_rolled_instant');\nconsole.log(JSON.stringify({sources:entry.sources,labels_decoded:entry.labels_decoded},null,2));\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/k10.test.js server/test/acceptance/twoLinePin.test.js server/test/acceptance/concernGlyphosate.test.js'",
+          "/bin/zsh -lc 'git diff --check\ngit diff --numstat -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js server/test/acceptance/k18.test.js server/test/acceptance/w4.test.js docs/do-lines-review.md server/lib/doLines.json\ngit diff -- server/test/acceptance/twoLinePin.js'",
+          "/bin/zsh -lc \"node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node --input-type=module <<'NODE'\nimport { spawnSync } from 'node:child_process';\nconst result = spawnSync('npm', ['test'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconst output = result.stdout || '';\nconsole.log(output.split('\\\\n').filter((line) => /\"'^ℹ (tests|suites|pass|fail|cancelled|skipped|todo|duration_ms)'\"\\\\b/.test(line)).join('\\\\n'));\nif (result.status \"'!== 0) {\n  const failures = output.lastIndexOf('\"'✖ failing tests:');\n  console.log(failures >= 0 ? output.slice(failures) : output);\n  console.error(result.stderr || result.error || \"'`npm test exited with ${result.status}, signal ${result.signal}`);\n}\nprocess.exit(result.status ?? 1);\nNODE'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 2674576,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 121,
+    "key": "2adc54fa185d2870d5843d55e603e2d45377288b6d2414681454075977083f01",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-glyphosate-20261018224040-0aKhlj:0",
+  "mem_free_mb": 1077,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 10237,
+      "tail": "  ---\n  duration_ms: 0.532\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2718 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.184833\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2719 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 127.239791\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2720 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.698041\n  type: 'test'\n  ...\n1..2720\n# tests 2720\n# suites 0\n# pass 2719\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9753.569584\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "K10 oats_steelcut_rolled_instant: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k10.test.js",
+          "first_error": "oats_steelcut_rolled_instant: frozen field labels_decoded changed"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "K10 oats_steelcut_rolled_instant: readable, lint-clean, pass rule held",
+          "test_path": "server/test/acceptance/k10.test.js",
+          "first_error": "oats_steelcut_rolled_instant: frozen field labels_decoded changed"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 10258,
+      "tail": "ok 2742 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.086417\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2743 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.532209\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2744 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.150459\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2745 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 135.687166\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2746 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.350291\n  type: 'test'\n  ...\n1..2746\n# tests 2746\n# suites 0\n# pass 2746\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9781.86925",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-glyphosate-20261018224040-0aKhlj/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-18T20:51:15.224Z",
+  "readiness": "READY"
+}

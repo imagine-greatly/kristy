@@ -1,0 +1,38 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k18.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All nine cards name glyphosate and prefer certified organic over conventional. Assumptions: decisions stay unchanged; pulse wording follows the archive’s pre-harvest weed-control distinction."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes. Every added tip explains organic’s prohibition and possible drift residues; no residue-free seal ranking."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes. Existing item-specific guidance and buying tips are preserved."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes. Each card adds source objects with exact URLs from the specified archives; existing sources remain."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "All five acceptance tests pass. Display questions corrected; em-dash asides removed; changed fields pinned. TwoLineCheck: 181 cards, zero violations. Do-lines generation matches existing output. NOTE: npm test passed 2719/2720. Unowned server/test/acceptance/k10.test.js:33, via passRule.js:68, fails 'oats_steelcut_rolled_instant: frozen field labels_decoded changed' because it requires the old em-dash wording. Left unchanged per contract."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}
