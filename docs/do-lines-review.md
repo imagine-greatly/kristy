@@ -64,9 +64,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_made_with_real` | label_terms | The ‘real’ ingredient listed before added sugar and refined flour. | Count how far down it sits. Past third is a trace. | — |
 | `label_no_added_hormones` | label_terms | On beef and dairy, a third-party verified ‘no added hormones’. | Look for a third-party verifier on the beef and dairy claim. | — |
 | `label_nonGMO_vs_organic` | label_terms | USDA Organic, which already includes non-GMO. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
-| `label_cage_free` | label_terms | Pasture-raised eggs with a certifier seal over cage-free or free-range. | Read the carton for a welfare certifier: Certified Humane, AWA, G.A.P. | — |
+| `label_cage_free` | label_terms | Pasture-raised eggs with printed soy-free or corn-free feed. | Find the welfare certifier’s seal, then read the feed claim. | — |
 | `label_grass_fed_term` | label_terms | ‘100% grass-fed’ beef, ideally third-party certified. | Look for “100%” or “grass-finished” printed on the package. | — |
-| `label_pasture_raised_feed` | label_terms | Eggs printed ‘soy-free’ or ‘corn-free’ on the carton. | Read both sides of the carton — space and feed are separate claims. | — |
+| `label_pasture_raised_feed` | label_terms | Pasture-raised eggs with soy-free or corn-free feed printed outright. | Read both sides of the carton for the ration and outdoor claims. | — |
 | `label_organic_scope` | label_terms | Organic thin-skinned produce eaten whole; still read the ingredient panel. | Flip the organic box over. The seal says nothing about the ingredients. | — |
 | `label_multigrain_vs_whole_grain` | label_terms | ‘100% whole grain’, a whole grain listed first. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | ‘Unsweetened’, or read the ‘Added Sugars’ line on the panel. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
@@ -115,7 +115,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_mushrooms` | produce | Dry, firm conventional mushrooms with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
 | `produce_green_beans` | produce | Smooth, crisp, slender organic beans, without bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
 | `produce_bananas` | produce | Green bananas to finish ripening on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
-| `egg_duck_quail` | eggs_dairy | Clean, uncracked duck or quail eggs from a refrigerated case. | Check that each shell is clean and uncracked before the carton goes in. | — |
+| `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
 
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread, made with whole wheat flour. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
 | `sourdough` | bulk_pantry | Sourdough of flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |

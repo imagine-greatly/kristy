@@ -1,0 +1,40 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
+    "server/test/acceptance/k11.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All three cards name feed and organic and follow the requested ladder. Acceptance C1 passes."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Both decisions lead with pasture. Required glosses are present; twoLineCheck reports 181 checked, zero violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Vegetarian-fed means no animal byproducts in feed; outdoor access and pasture foraging are explained separately. Assumptions: the explicit spec and archived definition override the register’s contradictory no-foraging wording."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Each card adds source objects using URLs copied from archive frontmatter. Existing sources remain. Acceptance C4 passes."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance C5 passes; egg_labels and pick_egg_whites remain unchanged. Pins match and do lines were regenerated. NOTE: npm test passes 2689/2690 tests. server/test/acceptance/k14.test.js:157 asserts an empty historical diff, conflicting with the required K11 beforeConcern edit. That assertion remains unchanged as instructed."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

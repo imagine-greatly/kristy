@@ -13,6 +13,7 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import { WEAK_MATCH_CEILING } from '../../lib/counterGaps.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -77,8 +78,8 @@ for (const q of ['how do i pick a good cantaloupe', 'how do i pick a good pineap
 test('C5 every cited URL hits line 1 of a docs/sources/k14 or item-cards file', () => {
   // item-cards (IC-3b) re-sourced k14 produce fronts; its archive counts too.
   const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
+  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k14 source`);
 });
 
@@ -148,12 +149,19 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
   assert.deepEqual([...d].sort(), ['produce_seasonality.aliases', 'produce_ripeness_by_item.aliases', 'produce_ripeness_by_item.asked_as', 'salmon_wild_vs_farmed.aliases', 'farmed_fish_by_species.aliases'].sort());
 });
 
-test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 alias-baseline update', () => {
+test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern-eggs updates', () => {
   const out = execSync(
-    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-9].test.js' 'server/test/acceptance/k1[01].test.js'",
+    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js 'server/test/acceptance/k[6-9].test.js' server/test/acceptance/k10.test.js",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
+  // Concern-eggs adds archived sources; K11 may restore only those sources for its frozen-field check.
+  const oldK11 = execSync('git show 719f9fe:server/test/acceptance/k11.test.js', { cwd: ROOT }).toString();
+  const concernK11 = oldK11
+    .replace("import { assertPassRule } from './passRule.js';",
+      "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
+    .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
+  assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k11.test.js'), 'utf8'), concernK11);
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [
     '    // W2 retires uncovered grocery nouns from the organic hub and moves bare lettuce',

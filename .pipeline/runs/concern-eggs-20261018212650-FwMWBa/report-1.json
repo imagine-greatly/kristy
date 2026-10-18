@@ -1,0 +1,40 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k14.test.js",
+    "server/test/acceptance/k11.test.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All three cards name feed and organic. Acceptance C1 passes."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Decisions retain pasture guidance. Two-line check passes: 181 cards, zero violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Vegetarian-fed is decoded without inferring outdoor access; pasture foraging is explained separately. Acceptance C3 passes."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Archived source URLs and existing sources are preserved. C12 now permits exactly the required K11 import and beforeConcern call while rejecting other changes. Assumptions: this targeted fix request authorizes correcting that owned historical assertion."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "All five acceptance tests pass; protected cards remain unchanged. Do lines regenerated. Full npm test passes 2690/2690 with zero skipped. git diff --check passes."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

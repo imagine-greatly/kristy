@@ -2110,23 +2110,34 @@
       ],
       "category": "label_terms",
       "question": "What do ‘cage-free’ and ‘free-range’ actually require?",
-      "decision": "Pasture-raised eggs with a certifier seal over cage-free or free-range.",
+      "decision": "Pasture-raised eggs with printed soy-free or corn-free feed.",
       "why": "Cage-free is a barn. Free-range adds a door, with the size and the hours left undefined.",
-      "short_answer": "Both are weaker than they sound. ‘Cage-free’ hens are out of cages but typically indoors in large barns, and can be crowded. ‘Free-range’ adds some outdoor access, loosely defined. For outdoor living, look for ‘pasture-raised’ with a third-party certification.",
+      "short_answer": "None of cage-free, free-range or pasture-raised says what the hen ate. Find soy-free or corn-free feed printed outright. Next choose pasture-raised organic, then organic, then cage-free.",
       "detail": "The two terms mark rungs on the same ladder and people routinely read both as a meadow. Cage-free is a defined term for eggs and a genuine welfare improvement on conventional cages; on products other than eggs it carries much less. Free-range signals outdoor access but sets a low, loosely-enforced bar with no certification required. Above both sits pasture-raised, which only means anything with a certifier attached: Certified Humane, Animal Welfare Approved, or Global Animal Partnership. Match the word to what you actually want rather than to the picture on the carton. ‘Cage-free’ is a real step up from battery cages, and not outdoors. For ‘free-range’, the amount, duration and quality of outdoor access are not tightly defined, and a small door onto a small yard qualifies.",
       "evidence_tier": "established",
       "sources": [
         "USDA egg-labeling definitions",
         "USDA FSIS ‘free-range’ guidance",
-        "Certified Humane / AWA space standards"
+        "Certified Humane / AWA space standards",
+        {
+          "name": "The Cornucopia Institute: Organic Egg Scorecard Criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
+        },
+        {
+          "name": "Consumer Reports: Egg Carton Labels Explained",
+          "url": "https://www.consumerreports.org/health/food-labeling/egg-carton-labels-explained-a1022347027/"
+        }
       ],
       "kristy_take": "Cage-free is a barn and free-range is a door. Neither is a field. The seal is what tells you.",
       "buying_tips": [
+        "Cage-free, free-range and pasture-raised describe space; feed is a separate claim.",
         "Cage-free hens usually live indoors, and free-range sets no size or hours for the door.",
         "Cage-free means uncaged, usually indoors. It does not mean outdoor access.",
         "Free-range = some outdoor access, with the amount and quality undefined.",
         "For real outdoor time: ‘pasture-raised’ plus a certifier seal.",
-        "For eggs both are defined terms; on other products they carry much less."
+        "For eggs both are defined terms; on other products they carry much less.",
+        "Look for soy-free or corn-free feed printed outright alongside pasture-raised and a certifier’s seal.",
+        "Next choose pasture-raised organic, then organic, then cage-free. Organic feed can still contain soy and corn."
       ],
       "labels_decoded": [
         {
@@ -2147,10 +2158,12 @@
         "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
       ],
       "pick_steps": [
-        "Pick “pasture-raised” eggs with a certifier seal for real outdoor time."
+        "Find soy-free or corn-free feed printed outright on the carton.",
+        "Pick “pasture-raised” eggs with a certifier seal for real outdoor time.",
+        "Next: pasture-raised organic, then organic, then cage-free."
       ],
       "science": "Cage-free is a real step up from battery cages, and not outdoors. Free-range signals outdoor access, but its amount, duration and quality are not tightly defined. A small door onto a small yard qualifies. For eggs, both are defined terms; on other products they carry much less. Without a certifier’s seal, nothing is auditing free-range.",
-      "tier_note": "What a certifier audits, and how little cage-free and free-range specify on their own, are both written into published standards.",
+      "tier_note": "Pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
       "eyebrow_short": "Cage-free, free-range",
       "asked_as": [
         "what does cage free mean",
@@ -2230,23 +2243,34 @@
       ],
       "category": "label_terms",
       "question": "Does “pasture-raised” mean the animal wasn’t fed soy and corn?",
-      "decision": "Eggs printed ‘soy-free’ or ‘corn-free’ on the carton.",
+      "decision": "Pasture-raised eggs with soy-free or corn-free feed printed outright.",
       "why": "Cage-free, free-range and pasture-raised are room claims. Most of those hens still eat soy and corn.",
-      "short_answer": "No. Cage-free, free-range and pasture-raised all describe SPACE, not FEED. None says what went in the trough. Most pasture-raised hens are still fed soy and corn. If feed matters, look for a printed “soy-free”. Nothing else implies it.",
-      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” is the one term that does reach feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. If feed is what you care about, the word to look for is “soy-free”; it has to be printed, because nothing else on the carton implies it.",
+      "short_answer": "Most pasture-raised hens still eat soy and corn. “Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors. Hens on pasture eat insects and forage.",
+      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Next choose pasture-raised organic, then organic, then cage-free. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy — no regulatory definition of “pasture-raised”",
         "Certified Humane pasture-raised standards (outdoor space requirements)",
-        "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)"
+        "USDA National Organic Program, 7 CFR 205.237 (livestock feed requirements)",
+        {
+          "name": "The Cornucopia Institute: Organic Egg Scorecard Criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
+        },
+        {
+          "name": "100 Days of Real Food: Egg Labels: What To Look For",
+          "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"
+        }
       ],
-      "kristy_take": "“Pasture-raised” means she went outside. It doesn’t mean anything about what she ate. Most are still on soy and corn. If that matters to you, the word to find is “soy-free,” printed on the carton. Nothing else implies it.",
+      "kristy_take": "Pasture-raised with a printed soy-free or corn-free feed claim. Next, pasture-raised organic, then organic, then cage-free. “Vegetarian fed” describes the supplied feed. It does not say whether the hen went outdoors.",
       "buying_tips": [
         "Most pasture-raised hens still eat soy and corn; pasture describes space, not feed.",
         "Space claims and feed claims are separate. Read the carton for both; one never implies the other.",
-        "If feed matters to you, look for “soy-free” or “corn-free” printed explicitly.",
+        "Look for pasture-raised plus “soy-free” or “corn-free” feed printed explicitly.",
         "Organic requires organic feed, usually organic soy and corn. It answers how it was grown, not what it is.",
-        "For beef, the equivalent word is grass-FINISHED. “Grass-fed” alone can still end on grain."
+        "For beef, the equivalent word is grass-FINISHED. “Grass-fed” alone can still end on grain.",
+        "Next choose pasture-raised organic, then organic, then cage-free.",
+        "“Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors.",
+        "Hens on pasture eat insects and forage. Read the feed claim separately from the outdoor claim."
       ],
       "labels_decoded": [
         {
@@ -2273,14 +2297,15 @@
       "watch_out": [
         "Cage-free, free-range and pasture-raised are all SPACE claims. None says a word about feed.",
         "Organic reaches feed, but requires it be organic. That usually means organic soy and corn.",
-        "“Grass-fed” on beef is the same trap: it can still end on grain."
+        "“Grass-fed” on beef is the same trap: it can still end on grain.",
+        "“Vegetarian fed” says nothing about pasture or time outdoors."
       ],
       "pick_steps": [
-        "If feed matters, find “soy-free” or “corn-free” printed on the carton.",
-        "Skip pasture wording as a substitute for printed “soy-free” or “corn-free”.",
+        "Find pasture-raised eggs with “soy-free” or “corn-free” feed printed on the carton.",
+        "Next choose pasture-raised organic, then organic, then cage-free.",
         "On beef, look for grass-finished; “grass-fed” alone can still end on grain."
       ],
-      "science": "Cage-free, free-range and pasture-raised all describe space, not feed. Most pasture-raised hens are still fed soy and corn. USDA has no regulatory definition of pasture-raised. Certifier standards govern housing and outdoor access, not the ration. Certified organic is the one term that reaches feed. It requires organic feed, usually organic soy and corn. It answers how the feed was grown, not what it is.",
+      "science": "Cage-free, free-range and pasture-raised describe space. Most pasture-raised hens still eat soy and corn. USDA has no regulatory definition of pasture-raised; certifiers set outdoor requirements. Organic requires organic feed, usually soy and corn. It describes how feed was grown. “Vegetarian fed” means no animal byproducts in the feed, with no promise about outdoor time. Hens on pasture eat insects and forage.",
       "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other.",
       "asked_as": [
         "what does pasture raised actually mean",
@@ -7144,7 +7169,7 @@
       ],
       "category": "poultry_eggs",
       "question": "What should a shopper know about duck and quail eggs?",
-      "decision": "Clean, uncracked duck or quail eggs from a refrigerated case.",
+      "decision": "Pasture-raised duck or quail eggs with organic feed.",
       "why": "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.",
       "short_answer": "Buy them clean, uncracked and cold. Ireland’s food safety authority advises cooking duck eggs until white and yolk are solid. Quail eggs are tiny, about 10 to 12 grams each.",
       "detail": "The Food Safety Authority of Ireland advises eating duck eggs only when thoroughly cooked. Raw duck eggs stay out of raw or lightly cooked dishes such as homemade mayonnaise or tiramisu. A duck egg is larger and heavier than a hen’s egg, so it needs more cooking time. In one test kitchen weighing, duck yolks made up 42 percent of the egg’s weight, against 32 percent for chicken. US FDA consumer advice for eggs: check for clean, uncracked shells, refrigerate, and cook until yolk and white are firm. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply, and the authors recommend refrigerated storage.",
@@ -7153,11 +7178,16 @@
         "https://www.fsai.ie/news-and-alerts/latest-news/advice-issued-on-the-safe-consumption-of-duck-eggs",
         "https://webarchive.library.unt.edu/eot2008/20090117011150mp_/http:/www.cfsan.fda.gov/~dms/fs-eggs.html",
         "https://scielo.br/j/asas/a/BzZDRQJ9ZpDR4bvH53Z5qjf/?lang=en",
-        "https://www.americastestkitchen.com/how_tos/6577-duck-eggs-versus-chicken-eggs"
+        "https://www.americastestkitchen.com/how_tos/6577-duck-eggs-versus-chicken-eggs",
+        {
+          "name": "The Cornucopia Institute: Organic Egg Scorecard Criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
+        }
       ],
       "kristy_take": "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.",
-      "cart_pick": "Duck or quail eggs",
+      "cart_pick": "Pasture-raised organic duck or quail eggs",
       "buying_tips": [
+        "Look for printed soy-free or corn-free feed; otherwise choose organic feed.",
         "Quail eggs held at room temperature lose quality sharply, so cold matters.",
         "Open the carton and check that every shell is clean and uncracked.",
         "Buy from a refrigerated case and keep them cold at home.",
@@ -7169,6 +7199,7 @@
         "Do not taste a raw mix made with duck eggs."
       ],
       "pick_steps": [
+        "Pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
         "Open the carton and check that every shell is clean and uncracked.",
         "Buy from a refrigerated case and keep them cold at home."
       ],
@@ -7183,7 +7214,7 @@
           "meaning": "A small egg of about 10 to 12 grams."
         }
       ],
-      "tier_note": "Clean, uncracked shells and thorough cooking come from Ireland’s food safety authority and US FDA egg guidance.",
+      "tier_note": "Organic means certified organic feed and outdoor access for the ducks or quail.",
       "asked_as": [
         "are duck eggs safe to eat",
         "what is different about duck eggs",
