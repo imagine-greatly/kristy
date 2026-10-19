@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes. NOTE: server/test/acceptance/k22.test.js:124 forbids BPA in the same soup buying_tips where C1 requires it. This unowned test cannot pass without contradicting the spec or changing the ownership boundary."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes: EWG-attributed maker claims, required disclosure caveats, and no product-content or acidity claims."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Preservation acceptance passes. Rechecked acceptance, pins, ic6b and k6: 33 tests passed. Two-line check: 181 cards, zero violations. git diff --check passes."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: tomato decision retains required facts in one 16-word sentence. Assumptions: preserve its actual seven-key shape, including aliases. No tomato do-line row exists."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Source acceptance passes; ic6b.test.js and k6.test.js use the required beforeConcern overlays. NOTE: unowned server/test/acceptance/k14.test.js:157 requires k6.test.js to remain unchanged, directly conflicting with that mandated edit."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passes. Assumptions: copy restrictions apply to additions, preserving existing guidance. No further edits in round 1. dv reports 2760 passing tests and the two documented historical conflicts. Verify remains failing. Both unowned tests remain unchanged; status done follows the contract and review notes explicitly requiring these conflicts to be reported as NOTES."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

@@ -776,7 +776,23 @@ export const TWO_LINE = {
       "The list should read fish, oil or water, salt. Anything longer is a sauce.",
       "Good oil-packed tins are worth using in the dish rather than draining.",
       "Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’.",
-      "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’."
+      "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’.",
+      "An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining.",
+      "Choose a can that says BPA-free on its label over one that says nothing."
+    ],
+    "watch_out": [
+      "‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch.",
+      "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye.",
+      "BPA-free is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
+    ],
+    "sources": [
+      "USDA FoodData Central (canned fish composition)",
+      "Product ingredient labeling",
+      "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (FAD-free / school-caught terms, the scope of ‘dolphin-safe’, the species behind ‘light’, ‘white’ and ‘ahi’)",
+      {
+        "name": "EWG: BPA in Canned Food",
+        "url": "https://www.ewg.org/research/bpa-canned-food"
+      }
     ]
   },
   "farmed_fish_by_species": {
@@ -1454,7 +1470,23 @@ export const TWO_LINE = {
       "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
       "Check the light designation or a named skipjack species.",
       "Canned light tuna can be chosen without a separately stated skipjack name.",
-      "Read the packing medium separately from the light or white designation."
+      "Read the packing medium separately from the light or white designation.",
+      "Many food cans use a lining of epoxy made with BPA. Fresh or frozen tuna comes with no can lining.",
+      "Read the label: choose a can that says BPA-free over one that says nothing."
+    ],
+    "watch_out": [
+      "Light is not one species. Do not assume every light can is skipjack.",
+      "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone.",
+      "The maker supplies the BPA-free claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
+    ],
+    "sources": [
+      "https://www.fda.gov/food/consumers/advice-about-eating-fish",
+      "https://www.fda.gov/food/consumers/questions-answers-fdaepa-advice-about-eating-fish-those-who-might-become-or-are-pregnant-or",
+      "https://www.law.cornell.edu/cfr/text/21/161.190",
+      {
+        "name": "EWG: BPA in Canned Food",
+        "url": "https://www.ewg.org/research/bpa-canned-food"
+      }
     ]
   },
   "chicken_breast": {
@@ -2323,7 +2355,21 @@ export const TWO_LINE = {
     "buying_tips": [
       "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
       "Read the ingredients for guar gum or another gum.",
-      "Compare two cans by how much the list holds beyond coconut."
+      "Compare two cans by how much the list holds beyond coconut.",
+      "Many food cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
+      "Among cans, choose one whose label says BPA-free over one that says nothing."
+    ],
+    "watch_out": [
+      "The carton coconut milk drink is a different product, covered on its own card.",
+      "BPA-free rests on the maker’s word. EWG’s survey found that makers define it as they wish. Makers who dropped BPA did not name the lining used in its place."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/184.1339",
+      "https://www.americastestkitchen.com/articles/8108-coconut-cream-vs-coconut-milk",
+      {
+        "name": "EWG: BPA in Canned Food",
+        "url": "https://www.ewg.org/research/bpa-canned-food"
+      }
     ]
   },
   "dried_herbs": {
@@ -2428,7 +2474,23 @@ export const TWO_LINE = {
       "Store cans cool and dry, between 50 °F and 70 °F.",
       "Put new cans behind older ones and use the oldest first.",
       "Wipe the lid before opening.",
-      "Move opened soup to a covered glass or plastic container in the refrigerator."
+      "Move opened soup to a covered glass or plastic container in the refrigerator.",
+      "Many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
+      "In a can, pick one that says BPA-free on the label over one that says nothing."
+    ],
+    "watch_out": [
+      "“No salt added” is not “sodium free”; the soup can still carry sodium.",
+      "Leave cans with deep dents or dents on the seam on the shelf.",
+      "BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/101.61",
+      "https://extension.psu.edu/making-use-of-canned-foods",
+      "https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/",
+      {
+        "name": "EWG: BPA in Canned Food",
+        "url": "https://www.ewg.org/research/bpa-canned-food"
+      }
     ]
   },
   "olives": {
@@ -2999,6 +3061,19 @@ const PICK_PINS = {
         "url": "https://www.cspi.org/node/7436"
       }
     ]
+  },
+  "pick_canned_tomatoes": {
+    "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
+    "sources": [
+      {
+        "name": "Nebraska Extension: Food Storage",
+        "url": "https://food.unl.edu/free-resource/food-storage/"
+      },
+      {
+        "name": "EWG: BPA in Canned Food",
+        "url": "https://www.ewg.org/research/bpa-canned-food"
+      }
+    ]
   }
 };
 
@@ -3009,8 +3084,8 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
-  const picks = ['pick_sausage', 'pick_jerky', 'pick_juice'];
-  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 184);
+  const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 185);
   assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
   for (const id of pinnedIds) {
     const entry = kb.entries.find((e) => e.id === id);
@@ -3041,7 +3116,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Historical pass rules freeze sources and label definitions. Restore labels only when
 // TWO_LINE pins their current copy, leaving live fronts available to source checks.

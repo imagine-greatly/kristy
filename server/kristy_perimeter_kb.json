@@ -3148,7 +3148,11 @@
       "sources": [
         "USDA FoodData Central (canned fish composition)",
         "Product ingredient labeling",
-        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (FAD-free / school-caught terms, the scope of ‘dolphin-safe’, the species behind ‘light’, ‘white’ and ‘ahi’)"
+        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (FAD-free / school-caught terms, the scope of ‘dolphin-safe’, the species behind ‘light’, ‘white’ and ‘ahi’)",
+        {
+          "name": "EWG: BPA in Canned Food",
+          "url": "https://www.ewg.org/research/bpa-canned-food"
+        }
       ],
       "kristy_take": "Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist.",
       "cart_pick": "Sardines packed in olive oil",
@@ -3159,7 +3163,9 @@
         "The list should read fish, oil or water, salt. Anything longer is a sauce.",
         "Good oil-packed tins are worth using in the dish rather than draining.",
         "Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’.",
-        "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’."
+        "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’.",
+        "An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining.",
+        "Choose a can that says BPA-free on its label over one that says nothing."
       ],
       "labels_decoded": [
         {
@@ -3178,7 +3184,8 @@
       "tier_note": "The pack medium is on the list, and preferring olive oil or water is the standard laid over it.",
       "watch_out": [
         "‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch.",
-        "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye."
+        "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye.",
+        "BPA-free is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
       ],
       "pick_steps": [
         "Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’.",
@@ -5921,11 +5928,15 @@
         "canned diced tomatoes",
         "canned crushed tomatoes"
       ],
-      "decision": "Skip any can that is dented, rusted, or swollen; the date is a quality mark.",
+      "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
       "sources": [
         {
           "name": "Nebraska Extension: Food Storage",
           "url": "https://food.unl.edu/free-resource/food-storage/"
+        },
+        {
+          "name": "EWG: BPA in Canned Food",
+          "url": "https://www.ewg.org/research/bpa-canned-food"
         }
       ]
     },
@@ -7065,7 +7076,11 @@
       "sources": [
         "https://www.fda.gov/food/consumers/advice-about-eating-fish",
         "https://www.fda.gov/food/consumers/questions-answers-fdaepa-advice-about-eating-fish-those-who-might-become-or-are-pregnant-or",
-        "https://www.law.cornell.edu/cfr/text/21/161.190"
+        "https://www.law.cornell.edu/cfr/text/21/161.190",
+        {
+          "name": "EWG: BPA in Canned Food",
+          "url": "https://www.ewg.org/research/bpa-canned-food"
+        }
       ],
       "kristy_take": "The FDA fish advice separates canned light tuna from albacore by mercury category.",
       "cart_pick": "Canned light tuna",
@@ -7073,11 +7088,14 @@
         "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
         "Check the light designation or a named skipjack species.",
         "Canned light tuna can be chosen without a separately stated skipjack name.",
-        "Read the packing medium separately from the light or white designation."
+        "Read the packing medium separately from the light or white designation.",
+        "Many food cans use a lining of epoxy made with BPA. Fresh or frozen tuna comes with no can lining.",
+        "Read the label: choose a can that says BPA-free over one that says nothing."
       ],
       "watch_out": [
         "Light is not one species. Do not assume every light can is skipjack.",
-        "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone."
+        "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone.",
+        "The maker supplies the BPA-free claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
       ],
       "pick_steps": [
         "Read the front for ‘light’; FDA puts canned light tuna in Best Choices.",
@@ -11111,17 +11129,24 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/184.1339",
-        "https://www.americastestkitchen.com/articles/8108-coconut-cream-vs-coconut-milk"
+        "https://www.americastestkitchen.com/articles/8108-coconut-cream-vs-coconut-milk",
+        {
+          "name": "EWG: BPA in Canned Food",
+          "url": "https://www.ewg.org/research/bpa-canned-food"
+        }
       ],
       "kristy_take": "The ingredient list shows whether the can holds coconut alone or coconut plus a gum.",
       "cart_pick": "Canned coconut milk with a short list",
       "buying_tips": [
         "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
         "Read the ingredients for guar gum or another gum.",
-        "Compare two cans by how much the list holds beyond coconut."
+        "Compare two cans by how much the list holds beyond coconut.",
+        "Many food cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
+        "Among cans, choose one whose label says BPA-free over one that says nothing."
       ],
       "watch_out": [
-        "The carton coconut milk drink is a different product, covered on its own card."
+        "The carton coconut milk drink is a different product, covered on its own card.",
+        "BPA-free rests on the maker’s word. EWG’s survey found that makers define it as they wish. Makers who dropped BPA did not name the lining used in its place."
       ],
       "pick_steps": [
         "Check ingredients for guar gum or another gum, added to thicken."
@@ -11705,7 +11730,11 @@
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.61",
         "https://extension.psu.edu/making-use-of-canned-foods",
-        "https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/"
+        "https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/",
+        {
+          "name": "EWG: BPA in Canned Food",
+          "url": "https://www.ewg.org/research/bpa-canned-food"
+        }
       ],
       "kristy_take": "A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning.",
       "cart_pick": "Low sodium canned soup, undented can",
@@ -11717,11 +11746,14 @@
         "Store cans cool and dry, between 50 °F and 70 °F.",
         "Put new cans behind older ones and use the oldest first.",
         "Wipe the lid before opening.",
-        "Move opened soup to a covered glass or plastic container in the refrigerator."
+        "Move opened soup to a covered glass or plastic container in the refrigerator.",
+        "Many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
+        "In a can, pick one that says BPA-free on the label over one that says nothing."
       ],
       "watch_out": [
         "“No salt added” is not “sodium free”; the soup can still carry sodium.",
-        "Leave cans with deep dents or dents on the seam on the shelf."
+        "Leave cans with deep dents or dents on the seam on the shelf.",
+        "BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it."
       ],
       "pick_steps": [
         "Read sodium words: low is a fixed ceiling, reduced compares to a named soup.",

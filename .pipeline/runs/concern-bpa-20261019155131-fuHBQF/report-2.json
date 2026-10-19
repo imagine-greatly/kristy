@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: all four cards contain the required BPA and packaging guidance."
+    },
+    {
+      "id": "C2",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:54 rejects preserved 'high-acid' storage wording, not an acidity-leaching claim. The spec review explicitly directs preserving this text and reporting the test conflict."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes: frozen fields, existing tips/cautions and the beans card remain unchanged. Required pins and beforeConcern adaptations are complete. NOTE: unowned k14.test.js:157 rejects the explicitly required K6 edit."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: tomato decision has 16 words, retains all required facts and preserves its seven-key shape."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes: all five cards cite the archived EWG source and retain existing sources."
+    },
+    {
+      "id": "C6",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:100 misidentifies generic 'whole foods' as a brand. Line 96 also rejects pregnancy/children wording that C3 requires verbatim in tuna science/watch_out. Unowned k22.test.js:124 bans the required BPA mention. No compliant change can make verification green under the unchanged contract. No additional edits in round 2; immutable tests remain untouched. Prior local validation: twoLineCheck passed all 181 cards; npm test passed 2758 with four conflicting failures. Assumptions: preservation and conflict-reporting instructions remain controlling. Status done follows Builder Contract rule 2; verification remains failing."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

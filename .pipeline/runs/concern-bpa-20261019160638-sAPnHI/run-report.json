@@ -1,0 +1,326 @@
+{
+  "kind": "build",
+  "runId": "concern-bpa-20261019160638-sAPnHI",
+  "piece_id": "/Users/m1/kristy:concern-bpa",
+  "attempt": 4,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-bpa.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "RED:ROUNDS",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 1
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 2
+    }
+  ],
+  "usage": {
+    "input": 4845710,
+    "cached": 4323200,
+    "output": 36833,
+    "reasoning": 10621
+  },
+  "over_ceiling": true,
+  "ms": 696188,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 2,
+  "green": false,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-19T14:06:38.243Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-bpa-20261019160638-sAPnHI:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/events-0.jsonl",
+      "usage": {
+        "input": 1355093,
+        "cached": 1249152,
+        "output": 10510,
+        "reasoning": 3087
+      },
+      "tokens": 1365603,
+      "mem_free_mb": 138,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15480-f158-7b53-af11-3ba3f4c0d62c",
+        "usage": {
+          "input": 1355093,
+          "cached": 1249152,
+          "output": 10510,
+          "reasoning": 3087
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/ic6b.test.js\",\n    \"server/test/acceptance/k6.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"C1 passes: all four cards name BPA, the appropriate non-can alternative and BPA-free over unlabeled cans. NOTE: unowned server/test/acceptance/k22.test.js:124 rejects the required BPA wording; left unchanged.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Each appended caution attributes maker-defined BPA-free claims and undisclosed replacement linings to EWG. New sentences are unique and at most 20 words. NOTE: concernBpa.test.js:54 rejects preserved soup storage wording containing 'low-acid'; no acidity or product-content claim was added.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"C3 passes. Existing tips, cautions and protected fields remain unchanged and ordered; beans_dried_vs_canned remains byte-identical. Existing full-card pins were extended. Assumptions: the statistics prohibition applies to new BPA copy; protected sodium quantities remain.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"C4 passes. Tomato decision is one sentence, 15 words and lint-clean. Only decision and sources changed; PICK_PINS and its expected list were updated. Assumptions: preserve the actual seven-key shape, including aliases. No do-line row exists; generation completed with 182 unchanged lines.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"C5 passes: all five cards append the archived EWG source and preserve existing sources. Every changed field is pinned. ic6b.test.js and k6.test.js now use beforeConcern and pass. NOTE: unowned server/test/acceptance/k14.test.js:157 requires an empty historical diff for k6, conflicting with its required edit; left unchanged.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"New copy satisfies the wording restrictions. Assumptions: preserve the review-noted existing-content exemptions. NOTE: concernBpa.test.js:97 rejects the protected shopper question containing 'I'; :96 also conflicts with retained tuna pregnancy/children guidance. Acceptance: 4/6 pass. Full suite: 2758/2762 pass, with only the four documented conflicting tests failing. twoLineCheck: 181 checked, zero violations. git diff --check passes. The acceptance file was present; no environment block remains.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc pwd",
+          "/bin/zsh -lc \"rg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!client/dist'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'git status --short'",
+          "/bin/zsh -lc \"sed -n '1,240p' server/test/acceptance/concernBpa.test.js\"",
+          "/bin/zsh -lc 'cat .pipeline/runs/concern-bpa-20261019160638-sAPnHI/report.schema.json'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done'",
+          "/bin/zsh -lc 'cat server/test/acceptance/ic6b.test.js server/test/acceptance/k6.test.js server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc \"rg -n 'canned_soup|canned_fish_choosing|canned_tuna|pick_canned_tomatoes|canned_coconut_milk|CONCERN|PICK_PINS|beforeConcern|picks' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/lib/testGuards.js server/scripts/twoLineCheck.js server/scripts/buildDoLines.js package.json server/package.json server/scripts/commitGuard.js server/lib/commitScope.test.js'",
+          "/bin/zsh -lc 'cat docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/dairy_eggs_packaging/INDEX.md docs/sources/concerns/dairy_eggs_packaging/ewg-bpa-canned-food.md'",
+          "/bin/zsh -lc \"sed -n '1,50p' server/test/acceptance/twoLinePin.js\nsed -n '750,805p' server/test/acceptance/twoLinePin.js\nsed -n '1430,1490p' server/test/acceptance/twoLinePin.js\nsed -n '2295,2350p' server/test/acceptance/twoLinePin.js\nsed -n '2400,2455p' server/test/acceptance/twoLinePin.js\nsed -n '2920,3095p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nfor (const id of ['canned_soup', 'canned_fish_choosing', 'canned_tuna', 'canned_coconut_milk', 'pick_canned_tomatoes', 'beans_dried_vs_canned']) console.log(JSON.stringify(kb.entries.find(e => e.id === id), null, 2));\nJS\"",
+          "/bin/zsh -lc 'cat server/scripts/twoLineCheck.js server/scripts/buildDoLines.js server/package.json package.json server/lib/testGuards.js'",
+          "/bin/zsh -lc \"cat server/scripts/commitGuard.js server/lib/commitScope.test.js\nrg -n 'first.person|shopper|sentence|20|price|brand|statistic|claim|treatment' VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"sed -n '1,25p' server/test/acceptance/twoLinePin.js\nsed -n '770,786p' server/test/acceptance/twoLinePin.js\nsed -n '1451,1468p' server/test/acceptance/twoLinePin.js\nsed -n '2321,2336p' server/test/acceptance/twoLinePin.js\nsed -n '2421,2441p' server/test/acceptance/twoLinePin.js\nsed -n '2940,3090p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"rg -n 'bpa_cans|BPA|16\\\\.' docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/dairy_eggs_packaging/INDEX.md\nrg -n '\"'^url:|epoxy|polymers|75 percent|as they wish|disclos|substitut|fresh|frozen|dried|glass|national standard'\"' docs/sources/concerns/dairy_eggs_packaging/ewg-bpa-canned-food.md\nrg -n 'pick_canned_tomatoes' docs/do-lines-review.md server/lib/doLines.json\nrg -n 'writeFile|mkdir|exec|spawn|fetch|https|dotenv' server/scripts/buildDoLines.js server/scripts/twoLineCheck.js\"",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md'",
+          "/bin/zsh -lc \"sed -n '1,18p' server/test/acceptance/twoLinePin.js\nsed -n '770,786p' server/test/acceptance/twoLinePin.js\nsed -n '1451,1468p' server/test/acceptance/twoLinePin.js\nsed -n '2321,2336p' server/test/acceptance/twoLinePin.js\nsed -n '2421,2441p' server/test/acceptance/twoLinePin.js\nsed -n '2940,3060p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"sed -n '210,224p' docs/sources/concerns/dairy_eggs_packaging/ewg-bpa-canned-food.md\nsed -n '526,543p' docs/sources/concerns/dairy_eggs_packaging/ewg-bpa-canned-food.md\nrg -n 'beforeConcern' server/test/acceptance/k5.test.js server/test/acceptance/k7.test.js server/test/acceptance/ic5b.test.js server/test/acceptance/ic7a.test.js server/test/acceptance/ic7b.test.js\nrg -n 'READ_SENTENCE_LONG|readability|sentence' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"head -n 22 server/kristy_perimeter_kb.json\ncat server/test/acceptance/passRule.js\nsed -n '1395,1453p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"rg -n 'writeFile|mkdir|exec(File)?Sync|spawn(Sync)?|dotenv|fetch\\\\(|\\\\.listen\\\\(' server/lib/*test.js server/test -g '*.js' -g '\"'!fixtures/*'\"'\nrg -n 'process\\\\.env|dotenv' server/lib/perimeter.js server/lib/counterCards.js server/lib/listMatch.js\"",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet kbText = readFileSync(kbPath, 'utf8');\nlet pinText = readFileSync(pinPath, 'utf8');\nconst kb = JSON.parse(kbText);\nconst source = { name: 'EWG: BPA in Canned Food', url: 'https://www.ewg.org/research/bpa-canned-food' };\nconst additions = {\n  canned_soup: {\n    buying_tips: [\n      'Many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.',\n      'In a can, pick one that says BPA-free on the label over one that says nothing.',\n    ],\n    watch_out: \\\"BPA-free is the maker's word. EWG's survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it.\\\",\n  },\n  canned_fish_choosing: {\n    buying_tips: [\n      'An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining.',\n      'Choose a can that says BPA-free on its label over a can that says nothing.',\n    ],\n    watch_out: \\\"BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG's survey, makers that dropped BPA did not disclose their replacement lining.\\\",\n  },\n  canned_tuna: {\n    buying_tips: [\n      'Many food cans use a lining of epoxy made with BPA. Fresh or frozen tuna has no can lining.',\n      'For canned tuna, choose one that says BPA-free on the label over one that says nothing.',\n    ],\n    watch_out: \\\"The maker supplies the BPA-free claim. EWG's survey found companies define it as they wish. Those that dropped BPA did not disclose what lining replaced it.\\\",\n  },\n  canned_coconut_milk: {\n    buying_tips: [\n      'Many food cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.',\n      'On canned coconut milk, choose a label that says BPA-free over a can that says nothing.',\n    ],\n    watch_out: \\\"A BPA-free label gives the maker's word. EWG reported that makers define it as they wish. Its survey found makers that dropped BPA did not disclose which lining they used instead.\\\",\n  },\n};\nconst indented = (obj, spaces) => JSON.stringify(obj, null, 2).split('\\\\n').map(line => ' '.repeat(spaces) + line).join('\\\\n');\nconst replaceOnce = (text, before, after) => {\n  assert.equal(text.split(before).length, 2, 'replacement must have exactly one match');\n  return text.replace(before, () => after);\n};\nfor (const [id, copy] of Object.entries(additions)) {\n  const entry = kb.entries.find(e => e.id === id);\n  assert.ok(entry);\n  const oldEntry = indented(entry, 4);\n  assert.equal(entry.sources.some(s => s.url === source.url), false);\n  entry.buying_tips.push(...copy.buying_tips);\n  entry.watch_out.push(copy.watch_out);\n  entry.sources.push(source);\n  kbText = replaceOnce(kbText, oldEntry, indented(entry, 4));\n  const pinPattern = new RegExp('\"'^  \"'\"' + id + '\\\": (\\\\\\\\{[\\\\\\\\s\\\\\\\\S]*?\"'^  '\"\\\\\\\\})(?=,?\\\\\\\\n)', 'm');\n  const match = pinText.match(pinPattern);\n  assert.ok(match, id + ' existing pin');\n  const pin = JSON.parse(match[1]);\n  for (const field of ['buying_tips', 'watch_out', 'sources']) pin[field] = entry[field];\n  const updated = '  \\\"' + id + '\\\": ' + indented(pin, 2).trimStart();\n  pinText = replaceOnce(pinText, match[0], updated);\n}\nconst pick = kb.entries.find(e => e.id === 'pick_canned_tomatoes');\nconst oldPick = indented(pick, 4);\npick.decision = 'Skip dented, rusted or swollen cans; read the can for BPA-free; the date is a quality mark.';\npick.sources.push(source);\nkbText = replaceOnce(kbText, oldPick, indented(pick, 4));\nconst pickPin = { decision: pick.decision, sources: pick.sources };\npinText = replaceOnce(pinText, 'const PICK_PINS = {\\\\n', 'const PICK_PINS = {\\\\n  \\\"pick_canned_tomatoes\\\": ' + indented(pickPin, 2).trimStart() + ',\\\\n');\npinText = replaceOnce(pinText, \\\"const picks = ['pick_sausage', 'pick_jerky', 'pick_juice'];\\\", \\\"const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];\\\");\npinText = replaceOnce(pinText, \\\"'all two-line pins', 184\\\", \\\"'all two-line pins', 185\\\");\npinText = replaceOnce(pinText, 'const CONCERN = new Set([', \\\"const CONCERN = new Set(['canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', \\\");\nassert.deepEqual(JSON.parse(kbText), kb);\nwriteFileSync(kbPath, kbText);\nwriteFileSync(pinPath, pinText);\nconsole.log('Updated five KB entries and their literal pins; preserved all other entry bytes.');\nJS\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernBpa.test.js'",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js'",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\nfor (const path of ['server/kristy_perimeter_kb.json', 'server/test/acceptance/twoLinePin.js']) {\n  let text = readFileSync(path, 'utf8');\n  for (const [from, to, count] of [[\\\"EWG's survey\\\", 'EWG’s survey', 3], [\\\"the maker's word\\\", 'the maker’s word', 2]]) {\n    assert.equal(text.split(from).length - 1, count, path + ': ' + from);\n    text = text.replaceAll(from, to);\n  }\n  writeFileSync(path, text);\n}\nJS\"",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport { spawnSync } from 'node:child_process';\nconst result = spawnSync('npm', ['test'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconsole.log('Command: npm test');\nfor (const line of (result.stdout || '').split('\\\\n')) {\n  if (/\"'^'\"\\\\s*(✖|ℹ|not ok|test at |AssertionError|Error|at .*\\\\.js:|error:|code:|operator:)/.test(line)) console.log(line);\n}\nif (result.stderr) console.error(result.stderr);\nif (result.error) console.error(result.error);\nconsole.log('npm test exit:', result.status, 'signal:', result.signal);\nprocess.exit(result.status ?? 1);\nJS\"",
+          "/bin/zsh -lc 'git diff --check\ngit diff --stat\ngit diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js server/test/acceptance/ic6b.test.js server/test/acceptance/k6.test.js'",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst currentText = readFileSync('server/kristy_perimeter_kb.json', 'utf8');\nconst baselineText = execFileSync('git', ['show', 'HEAD:server/kristy_perimeter_kb.json'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconst current = JSON.parse(currentText);\nconst baseline = JSON.parse(baselineText);\nconst fullIds = ['canned_soup', 'canned_fish_choosing', 'canned_tuna', 'canned_coconut_milk'];\nconst changed = new Set([...fullIds, 'pick_canned_tomatoes']);\nassert.equal(current.entries.length, baseline.entries.length);\nconst newSentences = [];\nfor (const old of baseline.entries) {\n  const now = current.entries.find(e => e.id === old.id);\n  assert.ok(now);\n  if (\"'!changed.has(old.id)) { assert.deepEqual(now, old, old.id); continue; }\n  const allowed = old.kind === '\"'pick' ? ['decision', 'sources'] : ['buying_tips', 'watch_out', 'sources'];\n  assert.deepEqual(Object.keys(now), Object.keys(old));\n  for (const [field, value] of Object.entries(old)) if (\"'!allowed.includes(field)) assert.deepEqual(now[field], value, old.id + '\"'.' + field);\n  assert.deepEqual(now.sources.slice(0, old.sources.length), old.sources);\n  assert.equal(now.sources.length, old.sources.length + 1);\n  if (old.kind === 'pick') continue;\n  for (const field of ['buying_tips', 'watch_out']) {\n    assert.deepEqual(now[field].slice(0, old[field].length), old[field]);\n    assert.equal(now[field].length - old[field].length, field === 'buying_tips' ? 2 : 1);\n    for (const item of now[field].slice(old[field].length)) {\n      assert.doesNotMatch(item, /\\\\b(causes?|prevents?|lowers? (the )?risk|cancer|tumou?rs?|toxic\\\\w*|unsafe|safe|safer|harm\\\\w*|risks?|linked to|estrogen\\\\w*|hormon\\\\w*|health\\\\w*|exposure|leach\\\\w*|pregnan\\\\w*|infants?|children|acidic|acid|rinse|I|me|my|price|cheap\\\\w*)\\\\b|—|\\\\\"'$|'\"\\\\d/i);\n      assert.doesNotMatch(item, /\\\\b(contains?|carries|has|have|includes?)\\\\s+(BPA|bisphenol)/i);\n      for (const sentence of item.split(/(?<=[.\"'!?])'\"\\\\s+/)) {\n        assert.ok(sentence.split(/\\\\s+/).length <= 20, sentence);\n        newSentences.push(sentence);\n      }\n    }\n  }\n}\nassert.equal(new Set(newSentences).size, newSentences.length, 'repeated BPA sentence');\nconst rawEntry = text => text.match(/\"'^    '\"\\\\{\\\\n      \\\"id\\\": \\\"beans_dried_vs_canned\\\",[\\\\s\\\\S]*?\"'^    '\"\\\\}/m)?.[0];\nassert.ok(rawEntry(currentText));\nassert.equal(rawEntry(currentText), rawEntry(baselineText), 'home card bytes');\nconsole.log('PASS: only the five intended entries and allowed fields changed; exact append counts; all other entries and home-card bytes preserved.');\nconsole.log('PASS: every new BPA sentence is unique, at most 20 words, and contains no prohibited claims or statistics.');\nJS\"",
+          "/bin/zsh -lc \"sed -n '1,28p' server/lib/pickReach.test.js\nsed -n '125,141p' server/lib/pickReach.test.js\nsed -n '750,800p' server/lib/counterCardLint.js\nsed -n '858,962p' server/lib/counterCardLint.js\nsed -n '142,174p' server/test/acceptance/k14.test.js\nsed -n '1,35p' server/test/acceptance/k22.test.js\nsed -n '110,132p' server/test/acceptance/k22.test.js\"",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport { readFileSync } from 'node:fs';\nimport { lintPick } from './server/lib/counterCardLint.js';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconsole.log(lintPick(kb.entries.find(e => e.id === 'pick_canned_tomatoes')));\nJS\"",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport { spawnSync } from 'node:child_process';\nconst result = spawnSync('npm', ['test'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconsole.log('Command: npm test');\nfor (const line of (result.stdout || '').split('\\\\n')) {\n  if (/\"'^'\"\\\\s*(✖|ℹ|not ok|test at |AssertionError|Error|at .*\\\\.js:|error:|code:|operator:)/.test(line)) console.log(line);\n}\nif (result.stderr) console.error(result.stderr);\nif (result.error) console.error(result.error);\nconsole.log('npm test exit:', result.status, 'signal:', result.signal);\nprocess.exit(result.status ?? 1);\nJS\"",
+          "/bin/zsh -lc 'git diff --check\ngit diff --numstat\ngit status --short'",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { lintPick } from './server/lib/counterCardLint.js';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst baseline = JSON.parse(execFileSync('git', ['show', '8d6bcf2:server/kristy_perimeter_kb.json'], { encoding: 'utf8', maxBuffer: 64 << 20 }));\nconst pick = kb.entries.find(e => e.id === 'pick_canned_tomatoes');\nassert.deepEqual(lintPick(pick), []);\nassert.equal(pick.decision.split(/\\\\s+/).length, 15);\nfor (const file of ['docs/do-lines-review.md', 'server/lib/doLines.json']) assert.ok(\"'!readFileSync(file, '\"'utf8').includes('pick_canned_tomatoes'));\nconsole.log('PASS: tomato decision is 15 words, lint-clean, and has no do-line row to synchronize.');\nfor (const [id, field, regex] of [\n  ['canned_soup', 'detail', /low-acid[\"'^.]+/],\n  ['\"'canned_fish_choosing', 'question', /\\\\bI\\\\b/],\n  ['canned_tuna', 'watch_out', /pregnancy|children/g],\n  ['canned_tuna', 'science', /pregnancy|children/g],\n]) {\n  const current = kb.entries.find(e => e.id === id)[field];\n  const old = baseline.entries.find(e => e.id === id)[field];\n  const preserved = Array.isArray(old) ? current.slice(0, old.length) : current;\n  assert.deepEqual(preserved, old);\n  console.log('Existing acceptance conflict:', id + '.' + field, JSON.stringify(String(preserved).match(regex)));\n}\nJS\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-bpa-20261019160638-sAPnHI:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/events-1.jsonl",
+      "usage": {
+        "input": 1687830,
+        "cached": 1480448,
+        "output": 12755,
+        "reasoning": 3630
+      },
+      "tokens": 1700585,
+      "mem_free_mb": 1217,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15480-f158-7b53-af11-3ba3f4c0d62c",
+        "usage": {
+          "input": 1687830,
+          "cached": 1480448,
+          "output": 12755,
+          "reasoning": 3630
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/ic6b.test.js\",\n    \"server/test/acceptance/k6.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All four cards contain the required packaging ladder; C1 passes. NOTE: unowned k22.test.js:124 rejects the explicitly required BPA wording.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": false,\n      \"evidence\": \"NOTE: concernBpa.test.js:54 rejects unchanged soup storage wording containing 'low-acid'. New BPA copy satisfies the intended restriction. Assumptions: this fix round retains the spec review's instruction to preserve existing content and leave this acceptance test unchanged.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Protected content remains unchanged; C3 passes. Reconfirmed baseline equality for soup detail, the fish shopper question and tuna guidance. No additional files were changed in this fix round.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"C4 passes: the tomato decision is 15 words and preserves all required facts and the actual seven-key shape. No do-line row exists; generation previously completed without a content change.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"C5 passes; all five cards cite the archived EWG source. Pins cover every changed field. ic6b.test.js and k6.test.js use beforeConcern and pass. NOTE: unowned k14.test.js:157 rejects the required k6 edit through its empty-diff assertion.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": false,\n      \"evidence\": \"NOTE: concernBpa.test.js:97 rejects the unchanged shopper question exempted by VOICE_SPEC.md:403-404. Its :96 assertion also rejects tuna pregnancy/children wording that C3 at :63 and :65 requires unchanged. Therefore no contract-compliant owned-file change can make these assertions pass. All 12 appended BPA items pass focused wording checks. Last full suite: 2758/2762 passed; twoLineCheck: 181 checked, zero violations. Status done follows the contract's instruction to report immutable-test conflicts as NOTES.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '1,125p' server/test/acceptance/concernBpa.test.js\ncat .pipeline/runs/concern-bpa-20261019160638-sAPnHI/report.schema.json\"",
+          "/bin/zsh -lc \"git status --short\ngit diff --stat\nrg -n 'NOT IN SCOPE|shopper.s own words|Which beef cut should I buy' VOICE_SPEC.md\nrg -n 'low-acid canned food|What should I look for in canned fish|FDA’s frequency advice is specific to pregnancy' server/kristy_perimeter_kb.json\nsed -n '152,166p' server/test/acceptance/k14.test.js\nsed -n '119,127p' server/test/acceptance/k22.test.js\"",
+          "/bin/zsh -lc \"node --input-type=module - <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst pre = JSON.parse(execFileSync('git', ['show', '8d6bcf2:server/kristy_perimeter_kb.json'], { encoding: 'utf8', maxBuffer: 64 << 20 }));\nconst entry = (data, id) => data.entries.find(e => e.id === id);\nconst soup = entry(kb, 'canned_soup');\nassert.equal(soup.detail, entry(pre, 'canned_soup').detail);\nassert.match(soup.detail.replace(/high-acid canned food keeps/gi, ''), /acid(ic)?\\\\b|high-acid|tomato\\\\w*[\"'^.]*(leach|migrat)/i);\nconsole.log('\"'NOTE C2: unchanged baseline soup storage detail triggers concernBpa.test.js:54.');\nconst fish = entry(kb, 'canned_fish_choosing');\nassert.equal(fish.question, entry(pre, 'canned_fish_choosing').question);\nassert.match(fish.question, /\\\\b(I|me|my)\\\\b/);\nconsole.log('NOTE C6: unchanged baseline shopper question triggers concernBpa.test.js:97; VOICE_SPEC.md:403-404 says to leave shopper questions.');\nconst tuna = entry(kb, 'canned_tuna');\nconst oldTuna = entry(pre, 'canned_tuna');\nassert.deepEqual(tuna.watch_out.slice(0, oldTuna.watch_out.length), oldTuna.watch_out);\nassert.equal(tuna.science, oldTuna.science);\nassert.match(oldTuna.watch_out[1], /\\\\b(pregnan\\\\w*|children)\\\\b/i);\nassert.match(oldTuna.science, /\\\\b(pregnan\\\\w*|children)\\\\b/i);\nconsole.log('NOTE C6: concernBpa.test.js:96 also rejects tuna wording that C3 at :63 and :65 requires unchanged.');\nlet checked = 0;\nfor (const id of ['canned_soup', 'canned_fish_choosing', 'canned_tuna', 'canned_coconut_milk']) {\n  const now = entry(kb, id), old = entry(pre, id);\n  for (const field of ['buying_tips', 'watch_out']) {\n    assert.deepEqual(now[field].slice(0, old[field].length), old[field]);\n    for (const addition of now[field].slice(old[field].length)) {\n      assert.doesNotMatch(addition, /\\\\b(causes?|prevents?|lowers? (the )?risk|cancer|tumou?rs?|toxic\\\\w*|unsafe|safe|safer|harm\\\\w*|risks?|linked to|estrogen\\\\w*|hormon\\\\w*|health\\\\w*|exposure|leach\\\\w*|pregnan\\\\w*|infants?|children|acid|acidic|I|me|my)\\\\b|—|\\\\d|\\\\\"'$/i);\n      assert.doesNotMatch(addition, /'\"\\\\b(contains?|carries|has|have|includes?)\\\\s+(BPA|bisphenol)/i);\n      checked++;\n    }\n  }\n}\nassert.equal(checked, 12);\nconsole.log('PASS: all 12 appended BPA items satisfy the relevant bans; protected baseline lines remain unchanged.');\nJS\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-bpa-20261019160638-sAPnHI:2",
+      "round": 2,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/events-2.jsonl",
+      "usage": {
+        "input": 1802787,
+        "cached": 1593600,
+        "output": 13568,
+        "reasoning": 3904
+      },
+      "tokens": 1816355,
+      "mem_free_mb": 978,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15480-f158-7b53-af11-3ba3f4c0d62c",
+        "usage": {
+          "input": 1802787,
+          "cached": 1593600,
+          "output": 13568,
+          "reasoning": 3904
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/ic6b.test.js\",\n    \"server/test/acceptance/k6.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: four full cards contain BPA, the food-specific non-can alternative and the BPA-free label preference.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": false,\n      \"evidence\": \"NOTE: immutable concernBpa.test.js:54 rejects the protected, pre-existing 'low-acid' soup storage wording. Added copy contains no acidity or product-content claim. Assumptions: the same contract retains the explicit preservation instruction.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: existing tips, cautions and protected fields remain unchanged; the beans home card is byte-identical. No additional changes were made in fix round 2.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: tomato decision is 15 words, preserves all required facts and retains its actual seven-key shape. No corresponding do-line row exists.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all five cards preserve existing sources and append the archived EWG source. Changed fields are pinned. Historical ic6b and k6 checks pass through beforeConcern.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": false,\n      \"evidence\": \"NOTE: immutable concernBpa.test.js:97 rejects the protected shopper question. Assertion :96 also rejects tuna pregnancy/children wording that C3 assertions :63 and :65 require unchanged. These requirements cannot all pass through permitted edits. All new BPA copy passes focused wording checks. Latest dv acceptance: 4/6 pass. Last full suite: 2758/2762 pass; additional unowned conflicts are k14.test.js:157 forbidding the required k6 edit and k22.test.js:124 banning required BPA wording. twoLineCheck passes all 181 cards. Per contract, immutable-test conflicts are reported as done with NOTES; checks remain unsuppressed.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [],
+        "errors": [],
+        "unknownTypes": [],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 4882543,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 185,
+    "key": "b40f6099ddb123d55a6d377cc1fd24eeee2ee5f4617e0f46a6c7cdfd7bfd0f29",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-bpa-20261019160638-sAPnHI:0",
+  "mem_free_mb": 978,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 123,
+      "tail": "     Bone-in and skin-on sardines and salmon. The bones soften completely. \n     The list should read fish, oil or water, salt. Anything longer is a sauce. \n     Good oil-packed tins are worth using in the dish rather than draining. \n     Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’. \n     Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’. \n     An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining. \n     Choose a can that says BPA-free on its label over a can that says nothing. \n     Packed in vegetable oil \n     Nearly always a seed oil blend. The tin will not name which. \n     Packed in olive oil \n     Check it says olive oil, not ‘olive oil blend’. \n     Skinless, boneless \n     Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating. \n     The pack medium is on the list, and preferring olive oil or water is the standard laid over it. \n     ‘’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch. \n     ‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye. \n     BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG’s survey, makers that dropped BPA did not disclose their replacement lining. \n     Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’. \n     The list should read fish, oil or water, salt; bones and skin left in. \n     On tuna, look for FAD-free or school-caught; ‘’ covers dolphins only. \n     Tins differ almost entirely in pack medium and what else went in. ‘Vegetable oil’ is nearly always a seed oil blend, and the tin will not name which. Bone-in sardines and salmon keep the whole small fish, and the bones soften completely. Good olive-oil tins are worth using in the dish. ‘Light’ tuna is skipjack, lower in mercury than ‘white’ albacore; ‘ahi’ is usually yellowfin.\n  operator: 'doesNotMatch'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:97:12)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 4\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 80.582375",
+      "failures": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 123,
+      "tail": "     Bone-in and skin-on sardines and salmon. The bones soften completely. \n     The list should read fish, oil or water, salt. Anything longer is a sauce. \n     Good oil-packed tins are worth using in the dish rather than draining. \n     Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’. \n     Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’. \n     An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining. \n     Choose a can that says BPA-free on its label over a can that says nothing. \n     Packed in vegetable oil \n     Nearly always a seed oil blend. The tin will not name which. \n     Packed in olive oil \n     Check it says olive oil, not ‘olive oil blend’. \n     Skinless, boneless \n     Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating. \n     The pack medium is on the list, and preferring olive oil or water is the standard laid over it. \n     ‘’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch. \n     ‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye. \n     BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG’s survey, makers that dropped BPA did not disclose their replacement lining. \n     Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’. \n     The list should read fish, oil or water, salt; bones and skin left in. \n     On tuna, look for FAD-free or school-caught; ‘’ covers dolphins only. \n     Tins differ almost entirely in pack medium and what else went in. ‘Vegetable oil’ is nearly always a seed oil blend, and the tin will not name which. Bone-in sardines and salmon keep the whole small fish, and the bones soften completely. Good olive-oil tins are worth using in the dish. ‘Light’ tuna is skipjack, lower in mercury than ‘white’ albacore; ‘ahi’ is usually yellowfin.\n  operator: 'doesNotMatch'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:97:12)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 4\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.471166",
+      "failures": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 121,
+      "tail": "     Bone-in and skin-on sardines and salmon. The bones soften completely. \n     The list should read fish, oil or water, salt. Anything longer is a sauce. \n     Good oil-packed tins are worth using in the dish rather than draining. \n     Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’. \n     Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’. \n     An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining. \n     Choose a can that says BPA-free on its label over a can that says nothing. \n     Packed in vegetable oil \n     Nearly always a seed oil blend. The tin will not name which. \n     Packed in olive oil \n     Check it says olive oil, not ‘olive oil blend’. \n     Skinless, boneless \n     Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating. \n     The pack medium is on the list, and preferring olive oil or water is the standard laid over it. \n     ‘’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch. \n     ‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye. \n     BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG’s survey, makers that dropped BPA did not disclose their replacement lining. \n     Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’. \n     The list should read fish, oil or water, salt; bones and skin left in. \n     On tuna, look for FAD-free or school-caught; ‘’ covers dolphins only. \n     Tins differ almost entirely in pack medium and what else went in. ‘Vegetable oil’ is nearly always a seed oil blend, and the tin will not name which. Bone-in sardines and salmon keep the whole small fish, and the bones soften completely. Good olive-oil tins are worth using in the dish. ‘Light’ tuna is skipjack, lower in mercury than ‘white’ albacore; ‘ahi’ is usually yellowfin.\n  operator: 'doesNotMatch'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:97:12)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 4\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.135958",
+      "failures": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-bpa-20261019160638-sAPnHI/verify-2/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 2,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 BPA-free is the maker word, no product claim, no acidity claim",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "acidity claim"
+        },
+        {
+          "id": "C6 no illness claims, first person, em dash, price or brand",
+          "test_path": "server/test/acceptance/concernBpa.test.js",
+          "first_error": "canned_fish_choosing first person"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-19T14:18:14.431Z",
+  "readiness": "NOT READY"
+}

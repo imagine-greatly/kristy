@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes. NOTE: unowned server/test/acceptance/k22.test.js:124 forbids BPA in soup buying_tips, while C1 explicitly requires it there. Both requirements cannot hold simultaneously."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passes: required EWG caveats are present without product-content or acidity claims."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Preservation acceptance and pins pass. Beans remain byte-identical. Two-line check passes across 181 cards."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: one 16-word tomato decision retains all required facts. Assumptions: preserve the actual seven-key shape, including aliases."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Source acceptance passes. NOTE: unowned server/test/acceptance/k14.test.js:157 requires no k6.test.js changes, conflicting with the spec-mandated beforeConcern edit."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passes. Assumptions: copy restrictions govern additions, preserving existing guidance. No changes in round 2: neither remaining failure has a compliant fix within owns. Latest dv verification remains 2760 passed, 2 failed. Both unowned tests remain unchanged, exactly as the review notes require. Status done reports spec completion under the contract; it does not indicate a passing verify gate."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

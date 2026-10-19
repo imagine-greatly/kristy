@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "C1 passes: all four cards name BPA, the appropriate non-can alternative and BPA-free over unlabeled cans. NOTE: unowned server/test/acceptance/k22.test.js:124 rejects the required BPA wording; left unchanged."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Each appended caution attributes maker-defined BPA-free claims and undisclosed replacement linings to EWG. New sentences are unique and at most 20 words. NOTE: concernBpa.test.js:54 rejects preserved soup storage wording containing 'low-acid'; no acidity or product-content claim was added."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "C3 passes. Existing tips, cautions and protected fields remain unchanged and ordered; beans_dried_vs_canned remains byte-identical. Existing full-card pins were extended. Assumptions: the statistics prohibition applies to new BPA copy; protected sodium quantities remain."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "C4 passes. Tomato decision is one sentence, 15 words and lint-clean. Only decision and sources changed; PICK_PINS and its expected list were updated. Assumptions: preserve the actual seven-key shape, including aliases. No do-line row exists; generation completed with 182 unchanged lines."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "C5 passes: all five cards append the archived EWG source and preserve existing sources. Every changed field is pinned. ic6b.test.js and k6.test.js now use beforeConcern and pass. NOTE: unowned server/test/acceptance/k14.test.js:157 requires an empty historical diff for k6, conflicting with its required edit; left unchanged."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "New copy satisfies the wording restrictions. Assumptions: preserve the review-noted existing-content exemptions. NOTE: concernBpa.test.js:97 rejects the protected shopper question containing 'I'; :96 also conflicts with retained tuna pregnancy/children guidance. Acceptance: 4/6 pass. Full suite: 2758/2762 pass, with only the four documented conflicting tests failing. twoLineCheck: 181 checked, zero violations. git diff --check passes. The acceptance file was present; no environment block remains."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

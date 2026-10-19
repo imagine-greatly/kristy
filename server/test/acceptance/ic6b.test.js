@@ -9,6 +9,7 @@ import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from '../../lib/doLines.json' with { type: 'json' };
+import { beforeConcern } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
@@ -78,7 +79,7 @@ test('C7 no new seafood URLs', () => {
   for (const id of BATCH) {
     const was = new Set(urls(pre(id)));
     if (id === 'seafood_counter') for (const f of ['fresh_vs_previously_frozen_fish', 'fish_freshness_at_counter']) for (const u of urls(pre(f))) was.add(u);
-    for (const u of urls(now(id))) { total++; assert.ok(was.has(u), `${id}: new URL ${u} (no seafood archive exists)`); }
+    for (const u of urls(beforeConcern(now(id)))) { total++; assert.ok(was.has(u), `${id}: new URL ${u} (no seafood archive exists)`); }
   }
   assert.ok(total >= 1, 'batch carries no URLs at all');
 });

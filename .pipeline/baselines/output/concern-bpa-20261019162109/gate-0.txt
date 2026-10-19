@@ -1,0 +1,161 @@
+TAP version 13
+# Subtest: C1 full cards name BPA, the non-can rung and the BPA-free rung
+not ok 1 - C1 full cards name BPA, the non-can rung and the BPA-free rung
+  ---
+  duration_ms: 1.160166
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:39:1'
+  failureType: 'testCodeFailure'
+  error: 'canned_soup BPA'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Canned soup 
+     How do you pick canned soup? 
+     Low-sodium canned soup with a short list, can undented. 
+     Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can. 
+     Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging. 
+     Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years. 
+     established 
+     A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning. 
+     Low sodium canned soup, undented can 
+     Low sodium is a fixed ceiling; reduced sodium only means less than a named soup. 
+     Read the front for low sodium versus reduced sodium. 
+     Check reduced sodium claims for the named soup they compare against. 
+     Check each can for deep dents, seam dents, leaks, rust and bulging lids. 
+     Store cans cool and dry, between 50 °F and 70 °F. 
+     Put new cans behind older ones and use the oldest first. 
+     Wipe the lid before opening. 
+     Move opened soup to a covered glass or plastic container in the refrigerator. 
+     “No salt added” is not “sodium free”; the soup can still carry sodium. 
+     Leave cans with deep dents or dents on the seam on the shelf. 
+     Read sodium words: low is a fixed ceiling, reduced compares to a named soup. 
+     Read no salt added as not sodium free; the soup can still carry sodium. 
+     Skip cans with deep dents, seam dents, leaks, rust or bulging lids. 
+     Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling. Reduced sodium means at least 25 percent less than a food the label names. Salt is not the same word as sodium. Dates on cans mark peak quality. Cans keep best stored cool and dry, between 50 °F and 70 °F, with the oldest used first. 
+     Sodium free 
+     Less than 5 mg of sodium per standard serving. 
+     Very low sodium 
+     35 mg or less of sodium per standard serving. 
+     Low sodium 
+     140 mg or less of sodium per standard serving. 
+     Reduced sodium 
+     At least 25 percent less sodium than a reference food the label names. 
+     No salt added 
+     No salt added during processing; not the same as sodium free. 
+     Best if used by 
+     Best flavor or quality, not a purchase or safety date. 
+     Reduced sodium compares to a named soup; low sodium is a fixed ceiling.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:42:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 BPA-free is the maker word, no product claim, no acidity claim
+not ok 2 - C2 BPA-free is the maker word, no product claim, no acidity claim
+  ---
+  duration_ms: 0.13225
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:49:1'
+  failureType: 'testCodeFailure'
+  error: 'canned_soup maker-word watch_out'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:51:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and the home card is untouched
+ok 3 - C3 earlier lines stay and the home card is untouched
+  ---
+  duration_ms: 0.791375
+  type: 'test'
+  ...
+# Subtest: C4 pick_canned_tomatoes keeps its facts and names BPA-free
+not ok 4 - C4 pick_canned_tomatoes keeps its facts and names BPA-free
+  ---
+  duration_ms: 0.395334
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:73:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /BPA-free/. Input:
+    
+    'Skip any can that is dented, rusted, or swollen; the date is a quality mark.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Skip any can that is dented, rusted, or swollen; the date is a quality mark.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:75:92)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 sources come from the concern archive
+not ok 5 - C5 sources come from the concern archive
+  ---
+  duration_ms: 0.1705
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:81:1'
+  failureType: 'testCodeFailure'
+  error: 'canned_soup does not cite the EWG BPA page'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:87:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no illness claims, first person, em dash, price or brand
+not ok 6 - C6 no illness claims, first person, em dash, price or brand
+  ---
+  duration_ms: 0.204917
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:93:1'
+  failureType: 'testCodeFailure'
+  error: 'cards with added text has 0 members (need 5+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:96:3)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 1
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 134.216916

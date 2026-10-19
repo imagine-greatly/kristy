@@ -5,7 +5,7 @@
   "id": "concern-bpa",
   "tier": "T2",
   "ui": false,
-  "owns": ["server/kristy_perimeter_kb.json", "server/test/acceptance/twoLinePin.js", "server/test/acceptance/ic6b.test.js", "server/test/acceptance/k6.test.js", "docs/do-lines-review.md", "server/lib/doLines.json"],
+  "owns": ["server/kristy_perimeter_kb.json", "server/test/acceptance/twoLinePin.js", "server/test/acceptance/ic6b.test.js", "server/test/acceptance/k6.test.js", "server/test/acceptance/k14.test.js", "server/test/acceptance/k22.test.js", "docs/do-lines-review.md", "server/lib/doLines.json"],
   "read_full": [
     "docs/CONCERN-REGISTER.md",
     "docs/CONCERN-COVERAGE.md",
@@ -43,7 +43,7 @@ State before this batch (these must not change):
 - `pick_canned_tomatoes`: decision "Skip any can that is dented, rusted, or swollen; the date is a quality mark."; one source (Nebraska Extension).
 
 ## Change
-- A dry run (one archived source on each of the five, ids added to `CONCERN`) failed exactly these owned tests, each to be fixed only this way: twoLinePin pins (`beforeConcern` throws on an id with no `TWO_LINE` entry: pin every changed field on all five), ic6b (canned_tuna new URL, "no seafood archive exists") and k6 (canned_fish_choosing and canned_tuna frozen field `sources`): read those entries through `beforeConcern` (import from `./twoLinePin.js`), never edit their fixtures. Any other older-test failure: report it (file:line, assertion), do not edit.
+- A dry run (one archived source on each of the five, ids added to `CONCERN`) failed exactly these owned tests, each to be fixed only this way: twoLinePin pins (`beforeConcern` throws on an id with no `TWO_LINE` entry: pin every changed field on all five), ic6b (canned_tuna new URL, "no seafood archive exists") and k6 (canned_fish_choosing and canned_tuna frozen field `sources`): read those entries through `beforeConcern` (import from `./twoLinePin.js`), never edit their fixtures. Because k6 gains that overlay, k14 C12 moves `k6` from the byte-identical `git diff 719f9fe --stat` list into its overlay list (`['k6', 'k7', 'k8', 'k10', 'k11']`, the dairy batch's k7 pattern); k22 C10 reads canned_soup's prose (only canned_soup) as `prose(id === 'canned_soup' ? beforeConcern(e, { copy: true }) : e)` (its ban list includes `bpa`, as line 139 does for mayo). Any other older-test failure: report it (file:line, assertion), do not edit.
 - The one archive file that supports BPA is `dairy_eggs_packaging/ewg-bpa-canned-food.md` (EWG, `url: https://www.ewg.org/research/bpa-canned-food`).
   Everything said on the cards is limited to what it supports, as label truth:
   - Food cans are commonly lined with an epoxy made with BPA (the page: epoxy resin from polymers containing BPA, favored for

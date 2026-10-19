@@ -151,12 +151,12 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
 
 test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays', () => {
   const out = execSync(
-    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js server/test/acceptance/k6.test.js server/test/acceptance/k9.test.js",
+    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js server/test/acceptance/k9.test.js",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
   // Concern batches may only read the frozen-field check through beforeConcern.
-  for (const file of ['k7', 'k8', 'k10', 'k11']) {
+  for (const file of ['k6', 'k7', 'k8', 'k10', 'k11']) {
     const old = execSync(`git show 719f9fe:server/test/acceptance/${file}.test.js`, { cwd: ROOT }).toString();
     const concern = old
       .replace("import { assertPassRule } from './passRule.js';",

@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance C1 passes: all four cards contain the required packaging guidance."
+    },
+    {
+      "id": "C2",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:54 rejects unchanged soup storage wording 'high-acid', although it makes no leaching claim. Required BPA guidance is implemented. Assumptions: the review instruction to preserve existing text remains controlling under the same contract."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance C3 passes. Baseline comparison confirms preserved fields, original tips/cautions and unchanged beans card. Historical checks use beforeConcern in ic6b.test.js and k6.test.js. NOTE: unowned k14.test.js:157 conflicts with the required K6 edit."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance C4 passes: 16-word sentence, all required facts, original seven-key shape preserved. No tomato do-line row exists."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance C5 passes: all five cards retain existing sources and cite the archived EWG page."
+    },
+    {
+      "id": "C6",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:100 mistakes unchanged generic 'whole foods' for a brand. Line 96 also rejects pregnancy/children wording that C3 requires verbatim in tuna science/watch_out. No compliant edit can satisfy both. Unowned k22.test.js:124 additionally bans the required BPA mention. No files changed in fix round 1. Acceptance rerun: 4 passed, 2 failed. Prior full suite: 2758 passed, 4 conflicting failures; twoLineCheck: 181 checked, zero violations. Status done follows the contract's conflict-reporting rule; verification remains failing."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

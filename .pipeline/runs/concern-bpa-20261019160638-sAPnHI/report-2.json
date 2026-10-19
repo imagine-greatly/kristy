@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: four full cards contain BPA, the food-specific non-can alternative and the BPA-free label preference."
+    },
+    {
+      "id": "C2",
+      "met": false,
+      "evidence": "NOTE: immutable concernBpa.test.js:54 rejects the protected, pre-existing 'low-acid' soup storage wording. Added copy contains no acidity or product-content claim. Assumptions: the same contract retains the explicit preservation instruction."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passes: existing tips, cautions and protected fields remain unchanged; the beans home card is byte-identical. No additional changes were made in fix round 2."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passes: tomato decision is 15 words, preserves all required facts and retains its actual seven-key shape. No corresponding do-line row exists."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passes: all five cards preserve existing sources and append the archived EWG source. Changed fields are pinned. Historical ic6b and k6 checks pass through beforeConcern."
+    },
+    {
+      "id": "C6",
+      "met": false,
+      "evidence": "NOTE: immutable concernBpa.test.js:97 rejects the protected shopper question. Assertion :96 also rejects tuna pregnancy/children wording that C3 assertions :63 and :65 require unchanged. These requirements cannot all pass through permitted edits. All new BPA copy passes focused wording checks. Latest dv acceptance: 4/6 pass. Last full suite: 2758/2762 pass; additional unowned conflicts are k14.test.js:157 forbidding the required k6 edit and k22.test.js:124 banning required BPA wording. twoLineCheck passes all 181 cards. Per contract, immutable-test conflicts are reported as done with NOTES; checks remain unsuppressed."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

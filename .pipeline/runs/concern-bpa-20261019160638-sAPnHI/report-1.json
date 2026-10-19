@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All four cards contain the required packaging ladder; C1 passes. NOTE: unowned k22.test.js:124 rejects the explicitly required BPA wording."
+    },
+    {
+      "id": "C2",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:54 rejects unchanged soup storage wording containing 'low-acid'. New BPA copy satisfies the intended restriction. Assumptions: this fix round retains the spec review's instruction to preserve existing content and leave this acceptance test unchanged."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Protected content remains unchanged; C3 passes. Reconfirmed baseline equality for soup detail, the fish shopper question and tuna guidance. No additional files were changed in this fix round."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "C4 passes: the tomato decision is 15 words and preserves all required facts and the actual seven-key shape. No do-line row exists; generation previously completed without a content change."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "C5 passes; all five cards cite the archived EWG source. Pins cover every changed field. ic6b.test.js and k6.test.js use beforeConcern and pass. NOTE: unowned k14.test.js:157 rejects the required k6 edit through its empty-diff assertion."
+    },
+    {
+      "id": "C6",
+      "met": false,
+      "evidence": "NOTE: concernBpa.test.js:97 rejects the unchanged shopper question exempted by VOICE_SPEC.md:403-404. Its :96 assertion also rejects tuna pregnancy/children wording that C3 at :63 and :65 requires unchanged. Therefore no contract-compliant owned-file change can make these assertions pass. All 12 appended BPA items pass focused wording checks. Last full suite: 2758/2762 passed; twoLineCheck: 181 checked, zero violations. Status done follows the contract's instruction to report immutable-test conflicts as NOTES."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

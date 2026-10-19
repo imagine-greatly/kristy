@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance C1 passes. Four cards have two appended tips covering epoxy/BPA, the food-specific non-can option, and BPA-free over unlabeled cans."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Independent checks confirm all four EWG maker-claim cautions and no product-BPA or acidity-leaching claims. NOTE: immutable concernBpa.test.js:54 fails because its regex rejects preserved soup storage wording 'high-acid', unrelated to leaching."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance C3 passes; frozen fields, existing array order and home-card bytes are preserved. Existing pins were extended; every changed field is pinned. ic6b.test.js and k6.test.js use beforeConcern only for historical checks. NOTE: unowned k14.test.js:157 requires zero K6 diff, conflicting with the required edit."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance C4 and pick lint pass. Tomato decision is one 16-word sentence retaining all required facts. Assumptions: preserve its actual seven-key shape, including aliases. No tomato do-line row exists; regeneration leaves both artifacts unchanged."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance C5 passes. All five cards append the exact archived EWG source and preserve existing sources."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Independent checks pass for new copy, including sentence uniqueness; the fish question now uses 'you' and is pinned. Assumptions: retain frozen statistics and required tuna guidance. NOTES: concernBpa.test.js:100 mistakes generic 'whole foods' for a brand; its line 96 also rejects preserved tuna pregnancy/children wording. Unowned k22.test.js:124 bans the required BPA mention. Final npm test: 2758 passed, four conflicting tests failed, zero skipped. twoLineCheck: 181 checked, zero violations. git diff --check passes. Acceptance was supplied by the harness; no environment block remains."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

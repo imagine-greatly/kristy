@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ic6b.test.js",
+    "server/test/acceptance/k6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All six BPA acceptance tests pass. Four full cards now name BPA, their food-specific non-can option, and BPA-free over unlabeled cans."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "EWG-attributed maker-claim caveats retain all required facts in short, distinct sentences. No product-content or acidity claims added."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Preservation checks pass against 8d6bcf2; the beans card remains byte-identical. All changed fields are pinned. Two-line check: 181 cards, zero violations. git diff --check passes."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Tomato decision preserves every required fact in one 16-word sentence. Assumptions: preserve the actual seven-key shape, including aliases. NOTE: server/lib/pickReach.test.js:136 initially reported PICK_LINE_TOO_LONG; shortening the copy resolved it without changing the test. No tomato do-line row exists; rebuilding 182 do lines produced no changes."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "All five cards append the archived EWG source while preserving existing sources. Historical source checks in ic6b.test.js and k6.test.js now use beforeConcern; fixtures remain unchanged."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "C6 passes. Assumptions: wording and statistics restrictions govern newly added copy; existing guidance remains intact. Final npm test: 2760 passed, 2 failed, none skipped. NOTES: unowned server/test/acceptance/k14.test.js:157 asserts no k6 changes, conflicting with the required overlay; unowned server/test/acceptance/k22.test.js:124 forbids BPA in soup copy, conflicting with this spec. Both tests remain unchanged."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

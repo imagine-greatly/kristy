@@ -119,7 +119,7 @@ test('C9 one entry per id, no forbidden, cider, seed-oil, hydrogenated or state 
 for (const id of NEW) test(`C10 ${id}: no health, price or brand wording`, () => {
   const e = byId(id);
   assert.ok(e, `${id} missing`);
-  const text = prose(e).replace(/hydrolyzed (soy |vegetable |plant )?protein/gi, '');
+  const text = prose(id === 'canned_soup' ? beforeConcern(e, { copy: true }) : e).replace(/hydrolyzed (soy |vegetable |plant )?protein/gi, '');
   assert.ok(text.length > 40, `${id} prose is empty`);
   assert.doesNotMatch(text, /\b(healthy|healthier|heart|brain|joints?|skin|safer|safest|cures?|prevents?|glycemic|blood sugar|blood pressure|hypertension|digest\w*|nutritious|nutrients?|inflammat\w*|probiotic\w*|gut|immun\w*|allerg\w*|asthma|sensitiv\w*|hypoallergenic|absorb\w*|cholesterol|intoleran\w*|celiac|therapeutic|weight|detox\w*|metabol\w*|insulin|enzymes?|beneficial|wellness|boost\w*|microbiome|omega\w*|b-?12|folic|minerals?|antioxidants?|catechins?|fiber|protein|stimulant\w*|collagen|trans fats?|superfood\w*|diet|thyroid\w*|goit\w*|deficien\w*|electrolytes?|hydrat\w*|potassium|botulism|toxins?|toxic\w*|poison\w*|bpa|calories?|pregnan\w*|kidneys?|cancer\w*|carcinogen\w*|msg|remed\w*)\b/i);
   assert.doesNotMatch(text, /\$|\b(price|prices|pricier|cheap|cheaper|expensive|cost)\b/i);

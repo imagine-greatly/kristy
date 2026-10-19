@@ -1,0 +1,227 @@
+TAP version 13
+# Subtest: C1 full cards name BPA, the non-can rung and the BPA-free rung
+ok 1 - C1 full cards name BPA, the non-can rung and the BPA-free rung
+  ---
+  duration_ms: 0.873125
+  type: 'test'
+  ...
+# Subtest: C2 BPA-free is the maker word, no product claim, no acidity claim
+not ok 2 - C2 BPA-free is the maker word, no product claim, no acidity claim
+  ---
+  duration_ms: 1.008625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:47:1'
+  failureType: 'testCodeFailure'
+  error: 'acidity claim'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Canned soup 
+     How do you pick canned soup? 
+     Low-sodium canned soup with a short list, can undented. 
+     Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can. 
+     Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging. 
+     Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry,  12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years. 
+     established 
+     A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning. 
+     Low sodium canned soup, undented can 
+     Low sodium is a fixed ceiling; reduced sodium only means less than a named soup. 
+     Read the front for low sodium versus reduced sodium. 
+     Check reduced sodium claims for the named soup they compare against. 
+     Check each can for deep dents, seam dents, leaks, rust and bulging lids. 
+     Store cans cool and dry, between 50 °F and 70 °F. 
+     Put new cans behind older ones and use the oldest first. 
+     Wipe the lid before opening. 
+     Move opened soup to a covered glass or plastic container in the refrigerator. 
+     Many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining. 
+     In a can, pick one that says BPA-free on the label over one that says nothing. 
+     “No salt added” is not “sodium free”; the soup can still carry sodium. 
+     Leave cans with deep dents or dents on the seam on the shelf. 
+     BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it. 
+     Read sodium words: low is a fixed ceiling, reduced compares to a named soup. 
+     Read no salt added as not sodium free; the soup can still carry sodium. 
+     Skip cans with deep dents, seam dents, leaks, rust or bulging lids. 
+     Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling. Reduced sodium means at least 25 percent less than a food the label names. Salt is not the same word as sodium. Dates on cans mark peak quality. Cans keep best stored cool and dry, between 50 °F and 70 °F, with the oldest used first. 
+     Sodium free 
+     Less than 5 mg of sodium per standard serving. 
+     Very low sodium 
+     35 mg or less of sodium per standard serving. 
+     Low sodium 
+     140 mg or less of sodium per standard serving. 
+     Reduced sodium 
+     At least 25 percent less sodium than a reference food the label names. 
+     No salt added 
+     No salt added during processing; not the same as sodium free. 
+     Best if used by 
+     Best flavor or quality, not a purchase or safety date. 
+     Reduced sodium compares to a named soup; low sodium is a fixed ceiling. Buying canned fish 
+     What should I look for in canned fish? 
+     Fish in olive oil or water, bone-in and skin-on. 
+     The list should read fish, oil or water, salt. Anything longer is a sauce. 
+     Read what it is packed in. Olive oil or water are the clean options. Plenty of tins use soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in. 
+     Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Soybean, cottonseed or unnamed ‘vegetable oil’ matters if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce. 
+     kristys_standard 
+     Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist. 
+     Sardines packed in olive oil 
+     ‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name. 
+     Read the pack medium: olive oil or water, not ‘vegetable oil’. 
+     Bone-in and skin-on sardines and salmon. The bones soften completely. 
+     The list should read fish, oil or water, salt. Anything longer is a sauce. 
+     Good oil-packed tins are worth using in the dish rather than draining. 
+     Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’. 
+     Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’. 
+     An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining. 
+     Choose a can that says BPA-free on its label over a can that says nothing. 
+     Packed in vegetable oil 
+     Nearly always a seed oil blend. The tin will not name which. 
+     Packed in olive oil 
+     Check it says olive oil, not ‘olive oil blend’. 
+     Skinless, boneless 
+     Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating. 
+     The pack medium is on the list, and preferring olive oil or water is the standard laid over it. 
+     ‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch. 
+     ‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye. 
+     BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG’s survey, makers that dropped BPA did not disclose their replacement lining. 
+     Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’. 
+     The list should read fish, oil or water, salt; bones and skin left in. 
+     On tuna, look for FAD-free or school-caught; ‘dolphin-safe’ covers dolphins only. 
+     Tins differ almost entirely in pack medium and what else went in. ‘Vegetable oil’ is nearly always a seed oil blend, and the tin will not name which. Bone-in sardines and salmon keep the whole small fish, and the bones soften completely. Good olive-oil tins are worth using in the dish. ‘Light’ tuna is skipjack, lower in mercury than ‘white’ albacore; ‘ahi’ is usually yellowfin. Canned tuna 
+     Which canned tuna should you choose? 
+     Canned light tuna, or a can naming skipjack. 
+     The FDA fish advice separates canned light tuna from albacore by mercury category. 
+     FDA’s chart places canned light tuna, including skipjack, in Best Choices and albacore in Good Choices. These categories reflect mercury levels. White tuna means albacore under the canned-tuna standard. 
+     The canned-tuna standard distinguishes color, pack form, and packing medium. Light is a color designation, not a guarantee that every can contains skipjack. Oil or water describes packing, separate from the tuna’s mercury category. 
+     established 
+     The FDA fish advice separates canned light tuna from albacore by mercury category. 
+     Canned light tuna 
+     FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices. 
+     Check the light designation or a named skipjack species. 
+     Canned light tuna can be chosen without a separately stated skipjack name. 
+     Read the packing medium separately from the light or white designation. 
+     Many food cans use a lining of epoxy made with BPA. Fresh or frozen tuna has no can lining. 
+     For canned tuna, choose one that says BPA-free on the label over one that says nothing. 
+     Light is not one species. Do not assume every light can is skipjack. 
+     FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone. 
+     The maker supplies the BPA-free claim. EWG’s survey found companies define it as they wish. Those that dropped BPA did not disclose what lining replaced it. 
+     Read the front for ‘light’; FDA puts canned light tuna in Best Choices. 
+     Pass over ‘white’: it means albacore, in Good Choices rather than Best. 
+     Read oil or water separately; packing does not change the mercury category. 
+     FDA’s chart places canned light tuna, including skipjack, in Best Choices and albacore in Good Choices. These categories reflect mercury levels. Light is a color designation, not one species, so not every light can is skipjack. Canned light tuna can be chosen without a separately stated skipjack name. FDA’s frequency advice is specific to pregnancy, breastfeeding and children, with its own age and life-stage guidance. 
+     White tuna 
+     Albacore under the US canned-tuna standard. 
+     Light tuna 
+     A color designation that can include skipjack and other tuna. 
+     The light designation and skipjack name connect to FDA’s established lower-mercury fish category; packing ingredients are a separate label check. Canned coconut milk 
+     How do you pick canned coconut milk? 
+     Canned coconut milk, read for anything added beyond coconut. 
+     Many cans add a gum such as guar gum, which thickens the milk and holds it steady. 
+     Many cans of coconut milk add a gum such as guar gum. Guar gum is used in food to thicken and to hold a texture steady. The ingredient list shows anything added beyond coconut. 
+     Under 21 CFR 184.1339, guar gum comes from the seed of the guar plant. Its listed uses in food include stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. Many canned coconut milks contain emulsifiers and stabilizers. 
+     kristys_standard 
+     The ingredient list shows whether the can holds coconut alone or coconut plus a gum. 
+     Canned coconut milk with a short list 
+     Many cans add a gum such as guar gum to thicken the milk and hold it steady. 
+     Read the ingredients for guar gum or another gum. 
+     Compare two cans by how much the list holds beyond coconut. 
+     Many food cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining. 
+     On canned coconut milk, choose a label that says BPA-free over a can that says nothing. 
+     The carton coconut milk drink is a different product, covered on its own card. 
+     A BPA-free label gives the maker’s word. EWG reported that makers define it as they wish. Its survey found makers that dropped BPA did not disclose which lining they used instead. 
+     Check ingredients for guar gum or another gum, added to thicken. 
+     Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker, never a ranking. 
+     Guar gum 
+     A gum from the guar seed, used to thicken and steady a texture. 
+     A gum on the ingredients is a texture choice by the maker, never a ranking. Canned tomatoes 
+     Skip dented, rusted or swollen cans; read for BPA-free; the date is a quality mark.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:54:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and the home card is untouched
+ok 3 - C3 earlier lines stay and the home card is untouched
+  ---
+  duration_ms: 0.575292
+  type: 'test'
+  ...
+# Subtest: C4 pick_canned_tomatoes keeps its facts and names BPA-free
+ok 4 - C4 pick_canned_tomatoes keeps its facts and names BPA-free
+  ---
+  duration_ms: 0.152458
+  type: 'test'
+  ...
+# Subtest: C5 sources come from the concern archive
+ok 5 - C5 sources come from the concern archive
+  ---
+  duration_ms: 0.232333
+  type: 'test'
+  ...
+# Subtest: C6 no illness claims, first person, em dash, price or brand
+not ok 6 - C6 no illness claims, first person, em dash, price or brand
+  ---
+  duration_ms: 0.618375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBpa.test.js:91:1'
+  failureType: 'testCodeFailure'
+  error: 'canned_fish_choosing first person'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Buying canned fish 
+     What should I look for in canned fish? 
+     Fish in olive oil or water, bone-in and skin-on. 
+     The list should read fish, oil or water, salt. Anything longer is a sauce. 
+     Read what it is packed in. Olive oil or water are the clean options. Plenty of tins use soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in. 
+     Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Soybean, cottonseed or unnamed ‘vegetable oil’ matters if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce. 
+     kristys_standard 
+     Packed in olive oil or water. Bones and skin left in. Three ingredients on the back. That is the whole checklist. 
+     Sardines packed in olive oil 
+     ‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name. 
+     Read the pack medium: olive oil or water, not ‘vegetable oil’. 
+     Bone-in and skin-on sardines and salmon. The bones soften completely. 
+     The list should read fish, oil or water, salt. Anything longer is a sauce. 
+     Good oil-packed tins are worth using in the dish rather than draining. 
+     Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’. 
+     Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’. 
+     An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining. 
+     Choose a can that says BPA-free on its label over a can that says nothing. 
+     Packed in vegetable oil 
+     Nearly always a seed oil blend. The tin will not name which. 
+     Packed in olive oil 
+     Check it says olive oil, not ‘olive oil blend’. 
+     Skinless, boneless 
+     Both removed. Convenient, and it takes out the part that makes a whole small fish worth eating. 
+     The pack medium is on the list, and preferring olive oil or water is the standard laid over it. 
+     ‘’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch. 
+     ‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye. 
+     BPA-free is a claim from the maker. EWG found that makers define it as they wish. In EWG’s survey, makers that dropped BPA did not disclose their replacement lining. 
+     Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’. 
+     The list should read fish, oil or water, salt; bones and skin left in. 
+     On tuna, look for FAD-free or school-caught; ‘’ covers dolphins only. 
+     Tins differ almost entirely in pack medium and what else went in. ‘Vegetable oil’ is nearly always a seed oil blend, and the tin will not name which. Bone-in sardines and salmon keep the whole small fish, and the bones soften completely. Good olive-oil tins are worth using in the dish. ‘Light’ tuna is skipjack, lower in mercury than ‘white’ albacore; ‘ahi’ is usually yellowfin.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBpa.test.js:97:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 4
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 80.582375
