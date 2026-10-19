@@ -1,0 +1,140 @@
+{
+  "kind": "build",
+  "runId": "concern-shrimp-20261019170246-TCrws2",
+  "piece_id": "/Users/m1/kristy:concern-shrimp",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-shrimp.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 760757,
+    "cached": 688256,
+    "output": 6878,
+    "reasoning": 1430
+  },
+  "over_ceiling": false,
+  "ms": 503431,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-19T15:02:45.955Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-shrimp-20261019170246-TCrws2:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-shrimp-20261019170246-TCrws2/events-0.jsonl",
+      "usage": {
+        "input": 760757,
+        "cached": 688256,
+        "output": 6878,
+        "reasoning": 1430
+      },
+      "tokens": 767635,
+      "mem_free_mb": 344,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a154b4-53b4-7522-b3f5-9d63014bacdd",
+        "usage": {
+          "input": 760757,
+          "cached": 688256,
+          "output": 6878,
+          "reasoning": 1430
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: antibiotic finding, certification caution, wild-first ladder and attributed Alliance refusals through August 2026 added.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: bacteria figures, cooking guidance, Oceana mislabeling and dry-shrimp ask added. The 42–83 percent range explicitly covers imported pond-raised samples.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Exactly four tips, five watch-outs and three sources appended; all other KB content unchanged. Retained d802324 baseline, confirmed identical for shrimp at HEAD 742ead5. Pins and CONCERN updated. Do-line regeneration produced no diff.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes; added sentences contain at most 19 words. Two-line check: 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes: all three required archive URLs added with exact source titles; existing sources preserved.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passes. Assumptions: wording bans apply to added prose, excluding required source metadata containing STPP. NOTE: pipeline supplied the acceptance test; it remains unchanged. Full npm test: 2776 passed, zero failed or skipped. git diff --check passes.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc pwd",
+          "/bin/zsh -lc \"sed -n '1,260p' server/test/acceptance/concernShrimp.test.js\"",
+          "/bin/zsh -lc \"sed -n '1,180p' server/test/acceptance/twoLinePin.test.js\"",
+          "/bin/zsh -lc \"rg --files -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'git status --short'",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/lib/testGuards.js'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done'",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/lib/counterCardLint.js'",
+          "/bin/zsh -lc \"rg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"' server docs .pipeline\"",
+          "/bin/zsh -lc \"sed -n '1,140p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"sed -n '3060,3290p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"node --input-type=module -e 'import fs from \\\"node:fs\\\"; const kb=JSON.parse(fs.readFileSync(\\\"server/kristy_perimeter_kb.json\\\",\\\"utf8\\\")); console.log(JSON.stringify(kb.entries.find(e=>e.id===\\\"shrimp_imported_vs_domestic\\\"),null,2));'\"",
+          "/bin/zsh -lc \"sed -n '695,830p' docs/sources/concerns/produce_seafood/cr-shrimp-safety.md\"",
+          "/bin/zsh -lc 'cat .pipeline/runs/concern-shrimp-20261019170246-TCrws2/report.schema.json'",
+          "/bin/zsh -lc \"sed -n '265,320p' docs/sources/concerns/produce_seafood/shrimpalliance-fda-refusal-report.md\"",
+          "/bin/zsh -lc \"rg -n 'shrimp|seafood_antibiotics|shrimp_bacteria|seafood_stpp|sulfites' docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/produce_seafood/INDEX.md\"",
+          "/bin/zsh -lc \"sed -n '1,8p' docs/sources/concerns/produce_seafood/cr-shrimp-safety.md\nsed -n '1,8p' docs/sources/concerns/produce_seafood/shrimpalliance-fda-refusal-report.md\nsed -n '1,8p' docs/sources/concerns/produce_seafood/thefishsite-stpp-in-fish.md\nsed -n '80,110p' docs/sources/concerns/produce_seafood/thefishsite-stpp-in-fish.md\"",
+          "/bin/zsh -lc \"sed -n '1,67p' server/test/acceptance/twoLinePin.js\nrg -n 'OWNED_FACTS|READ_|READABILITY|REPEATED_CLAIM|shrimp' server/lib/counterCardLint.js\nrg -n 'claim lock|treatment|readability|sentence|semicolon' VOICE_SPEC.md\nrg -n 'exec|write|mkdir|fetch|listen|\\\\.env' server/lib/commitScope.test.js server/scripts/commitGuard.js server/lib/doLines.test.js server/lib/counterCards.js\"",
+          "/bin/zsh -lc \"sed -n '755,780p' docs/sources/concerns/produce_seafood/cr-shrimp-safety.md\"",
+          "/bin/zsh -lc \"sed -n '1390,1460p' server/lib/counterCardLint.js\nsed -n '1580,1658p' server/lib/counterCardLint.js\nsed -n '375,460p' VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"sed -n '1,160p' server/test/healthFirst.test.js\nsed -n '1,145p' server/lib/commitScope.test.js\nsed -n '1,180p' server/lib/doLines.test.js\"",
+          "/bin/zsh -lc \"rg -n '\\\"id\\\": \\\"shrimp_imported_vs_domestic\\\"|\\\"id\\\": \\\"scallops\\\"' server/kristy_perimeter_kb.json\ngit rev-parse --short HEAD\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernShrimp.test.js'",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js'",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc 'npm test'",
+          "/bin/zsh -lc 'git diff --check\ngit diff --stat\ngit diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js docs/do-lines-review.md server/lib/doLines.json'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { sentences } from './server/lib/counterCardLint.js';\nconst path = 'server/kristy_perimeter_kb.json';\nconst id = 'shrimp_imported_vs_domestic';\nconst now = JSON.parse(readFileSync(path, 'utf8'));\nconst head = JSON.parse(execFileSync('git', ['show', \"'`HEAD:${path}`], { maxBuffer: 64 << 20 }).toString());\nconst baseline = JSON.parse(execFileSync('\"'git', ['show', \"'`d802324:${path}`], { maxBuffer: 64 << 20 }).toString());\nconst card = now.entries.find(e => e.id === id);\nconst old = head.entries.find(e => e.id === id);\nassert.deepEqual(old, baseline.entries.find(e => e.id === id));\nfor (const [field, count] of [['\"'buying_tips', 4], ['watch_out', 5], ['sources', 3]]) {\n  assert.equal(card[field].length, old[field].length + count);\n  assert.deepEqual(card[field].slice(0, old[field].length), old[field]);\n}\nconst additions = [...card.buying_tips.slice(old.buying_tips.length), ...card.watch_out.slice(old.watch_out.length)];\nconst maxWords = Math.max(...additions.flatMap(sentences).map(s => s.split(/\\\\s+/).length));\nassert.ok(maxWords <= 20);\nassert.doesNotMatch(additions.join(' '), /sulfites?|vibrio|MRSA|food.poisoning|Gentian violet|organophosphate/i);\nfor (const field of ['buying_tips', 'watch_out', 'sources']) card[field] = old[field];\nassert.deepEqual(now, head);\nconsole.log(\"'`Verified: retained d802324 baseline; exactly 4 tips, 5 watch-outs, 3 sources appended; maximum ${maxWords} words per sentence; all other KB content unchanged.`);\nNODE'",
+          "/bin/zsh -lc 'git status --short\ngit diff --check\ngit diff --name-only'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 767635,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 126,
+    "key": "b3aeca729c93cf9b25aeb3f909ee62db102ad0bd36a29e751a43dec334c0a62f",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-shrimp-20261019170246-TCrws2/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-shrimp-20261019170246-TCrws2:0",
+  "mem_free_mb": 344,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 10843,
+      "tail": "ok 2772 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.083792\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2773 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.546417\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2774 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.150541\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2775 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 121.620209\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2776 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.658375\n  type: 'test'\n  ...\n1..2776\n# tests 2776\n# suites 0\n# pass 2776\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10374.825166",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-shrimp-20261019170246-TCrws2/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-19T15:11:09.386Z",
+  "readiness": "READY"
+}

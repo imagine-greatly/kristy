@@ -48,7 +48,38 @@ export const TWO_LINE = {
     "buying_tips": [
       "Country of origin is printed by law, and wild American traces to a managed fishery.",
       "Country-of-origin is required on the label. Read it before anything on the front.",
-      "Frozen raw gives the most control over the cooking, and usually the best value."
+      "Frozen raw gives the most control over the cooking, and usually the best value.",
+      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised shrimp samples. Samples were bought in March 2014.",
+      "Wild American shrimp is the first choice. A close second is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council.",
+      "Last choice: imported shrimp. Read the country of origin.",
+      "Ask the case if the shrimp is dry. Wet shrimp holds extra water."
+    ],
+    "watch_out": [
+      "Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm.",
+      "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
+      "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound.",
+      "The 11 samples came from Vietnam, Thailand and Bangladesh. A certification label alone is not proof. Antibiotics showed on four samples carrying one common label.",
+      "That Consumer Reports test found bacteria on 20 percent of raw U.S. wild samples. Imported pond-raised samples ranged from 42 to 83 percent.",
+      "Cooking through kills most of the bacteria. Cooked shrimp is no guarantee: 16 percent of cooked samples in that test carried bacteria.",
+      "The Southern Shrimp Alliance, a domestic industry group, counts FDA shrimp refusals for veterinary drug residues through August 2026. India, Indonesia and Vietnam led that tally.",
+      "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading. Some pond-raised shrimp were sold as wild."
+    ],
+    "sources": [
+      "NOAA Fisheries country-of-origin data",
+      "Monterey Bay Seafood Watch",
+      "North Carolina Sea Grant, Coastwatch “Curbing the Import Appetite: Selling American Shrimp in the U.S. Market” https://ncseagrant.ncsu.edu/coastwatch/curbing-the-import-appetite-selling-american-shrimp-in-the-u-s-market/ (pond-raised imports vs. wild-caught: flavor, size uniformity, appearance)",
+      {
+        "name": "Consumer Reports: Shrimp safety",
+        "url": "https://www.consumerreports.org/cro/magazine/2015/06/shrimp-safety/index.htm"
+      },
+      {
+        "name": "Southern Shrimp Alliance: FDA refusal report",
+        "url": "https://shrimpalliance.com/august-2026-fda-antibiotic-contaminated-shrimp-import-refusal-report/"
+      },
+      {
+        "name": "The Fish Site: STPP in fish",
+        "url": "https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish"
+      }
     ]
   },
   "beef_grassfed_vs_grainfed": {
@@ -3172,7 +3203,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised', 'shrimp_imported_vs_domestic']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Historical pass rules freeze sources and label definitions. Restore labels only when
 // TWO_LINE pins their current copy, leaving live fronts available to source checks.

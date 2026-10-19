@@ -1,0 +1,223 @@
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index d4fa5f3..337ee85 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -111,14 +111,30 @@
+       "sources": [
+         "NOAA Fisheries country-of-origin data",
+         "Monterey Bay Seafood Watch",
+-        "North Carolina Sea Grant, Coastwatch “Curbing the Import Appetite: Selling American Shrimp in the U.S. Market” https://ncseagrant.ncsu.edu/coastwatch/curbing-the-import-appetite-selling-american-shrimp-in-the-u-s-market/ (pond-raised imports vs. wild-caught: flavor, size uniformity, appearance)"
++        "North Carolina Sea Grant, Coastwatch “Curbing the Import Appetite: Selling American Shrimp in the U.S. Market” https://ncseagrant.ncsu.edu/coastwatch/curbing-the-import-appetite-selling-american-shrimp-in-the-u-s-market/ (pond-raised imports vs. wild-caught: flavor, size uniformity, appearance)",
++        {
++          "name": "Consumer Reports: Shrimp safety",
++          "url": "https://www.consumerreports.org/cro/magazine/2015/06/shrimp-safety/index.htm"
++        },
++        {
++          "name": "Southern Shrimp Alliance: FDA refusal report",
++          "url": "https://shrimpalliance.com/august-2026-fda-antibiotic-contaminated-shrimp-import-refusal-report/"
++        },
++        {
++          "name": "The Fish Site: STPP in fish",
++          "url": "https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish"
++        }
+       ],
+       "kristy_take": "Read the country first. It is printed by law and it is most of the answer.",
+       "cart_pick": "Wild American shrimp",
+       "buying_tips": [
+         "Country of origin is printed by law, and wild American traces to a managed fishery.",
+         "Country-of-origin is required on the label. Read it before anything on the front.",
+-        "Frozen raw gives the most control over the cooking, and usually the best value."
++        "Frozen raw gives the most control over the cooking, and usually the best value.",
++        "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised shrimp samples. Samples were bought in March 2014.",
++        "Wild American shrimp is the first choice. A close second is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council.",
++        "Last choice: imported shrimp. Read the country of origin.",
++        "Ask the case if the shrimp is dry. Wet shrimp holds extra water."
+       ],
+       "labels_decoded": [
+         {
+@@ -134,7 +150,12 @@
+       "watch_out": [
+         "Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm.",
+         "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
+-        "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound."
++        "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound.",
++        "The 11 samples came from Vietnam, Thailand and Bangladesh. A certification label alone is not proof. Antibiotics showed on four samples carrying one common label.",
++        "That Consumer Reports test found bacteria on 20 percent of raw U.S. wild samples. Imported pond-raised samples ranged from 42 to 83 percent.",
++        "Cooking through kills most of the bacteria. Cooked shrimp is no guarantee: 16 percent of cooked samples in that test carried bacteria.",
++        "The Southern Shrimp Alliance, a domestic industry group, counts FDA shrimp refusals for veterinary drug residues through August 2026. India, Indonesia and Vietnam led that tally.",
++        "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading. Some pond-raised shrimp were sold as wild."
+       ],
+       "pick_steps": [
+         "Read the country of origin first; it is printed by law.",
+diff --git a/server/test/acceptance/concernShrimp.test.js b/server/test/acceptance/concernShrimp.test.js
+new file mode 100644
+index 0000000..423ce1b
+--- /dev/null
++++ b/server/test/acceptance/concernShrimp.test.js
+@@ -0,0 +1,113 @@
++// concern-shrimp: the shrimp card names the antibiotic, bacteria, wet-shrimp and mislabel concerns and the wild-first ladder; earlier lines stay; no illness claims; sources from the archive.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync, readdirSync } from 'node:fs';
++import { join } from 'node:path';
++import { execFileSync } from 'node:child_process';
++import { nonEmpty } from '../../lib/testGuards.js';
++
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const ROOT = new URL('../../../', import.meta.url).pathname;
++const pre = JSON.parse(execFileSync('git', ['show', 'd802324:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
++const was = (id) => { const e = pre.entries.find((x) => x.id === id); assert.ok(e, `${id} missing before`); return e; };
++const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category']);
++const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
++const fields = (e) => Object.entries(e).filter(([k]) => !SKIP.has(k)).flatMap(([, v]) => strings(v));
++// Text this batch adds; lines already on the card before the batch are not this batch's claims.
++const addedList = (id) => { const old = new Set(fields(was(id))); return fields(card(id)).filter((s) => !old.has(s)); };
++const added = (id) => addedList(id).join(' \n ');
++const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
++
++const ID = 'shrimp_imported_vs_domestic';
++const CR = 'https://www.consumerreports.org/cro/magazine/2015/06/shrimp-safety/index.htm';
++const SSA = 'https://shrimpalliance.com/august-2026-fda-antibiotic-contaminated-shrimp-import-refusal-report/';
++const FISH = 'https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish';
++
++const root = join(ROOT, 'docs/sources/concerns');
++const archived = new Set();
++for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDirectory())) {
++  for (const f of readdirSync(join(root, d.name)).filter((x) => x.endsWith('.md'))) {
++    const m = readFileSync(join(root, d.name, f), 'utf8').match(/^url:\s*(\S+)/m);
++    if (m) archived.add(m[1]);
++  }
++}
++
++test('C1 the shrimp card names the antibiotic finding, the refusals, the certification caution and the ladder', () => {
++  const c = card(ID);
++  const tips = (c.buying_tips || []).join(' \n ');
++  const outs = (c.watch_out || []).join(' \n ');
++  assert.match(tips, /Consumer Reports/);
++  assert.match(tips, /2015/, 'dated test');
++  assert.match(tips, /antibiotics[^.]*11 of 205|11 of 205[^.]*antibiotics/i, 'antibiotics in 11 of 205 samples');
++  assert.match(tips, /wild American[\s\S]*Naturland[\s\S]*Aquaculture Stewardship Council[\s\S]*country of origin/i, 'ladder wild American > Naturland/ASC > country read');
++  assert.match(outs, /Vietnam[\s\S]*Thailand[\s\S]*Bangladesh|Thailand[\s\S]*Vietnam[\s\S]*Bangladesh/i, 'countries of the 11');
++  assert.match(outs, /certification[^.]*(not|no)[^.]*proof|label[^.]*not proof/i, 'a certification alone is not proof');
++  assert.match(outs, /Southern Shrimp Alliance/);
++  assert.match(outs, /India/);
++  assert.match(outs, /Indonesia/);
++  assert.match(outs, /refusals?/i);
++});
++
++test('C2 the shrimp card names the bacteria finding, cooking, wet shrimp and mislabeling', () => {
++  const c = card(ID);
++  const tips = (c.buying_tips || []).join(' \n ');
++  const outs = (c.watch_out || []).join(' \n ');
++  assert.match(outs, /bacteria/i, 'bacteria');
++  assert.match(outs, /20 percent/, 'bacteria on 20 percent of U.S. wild');
++  assert.match(outs, /83 percent/, 'top of the imported range');
++  assert.match(outs, /16 percent/, 'cooked samples');
++  assert.match(outs, /cook\w*[^.]*(kill|most)/i, 'cooking through');
++  assert.match(outs, /Oceana/);
++  assert.match(outs, /30 percent[^.]*label/i, 'mislabeled share');
++  assert.match(outs, /sold as wild/i);
++  assert.match(tips, /\bdry\b/i, 'ask if dry');
++  assert.match(tips, /water/i, 'wet shrimp holds water');
++});
++
++test('C3 earlier lines stay and frozen fields are untouched', () => {
++  const a = card(ID), b = was(ID);
++  for (const f of ['buying_tips', 'watch_out']) {
++    const old = b[f] || [];
++    assert.deepEqual((a[f] || []).slice(0, old.length), old, `${f} lost or reordered a line`);
++    assert.ok((a[f] || []).length > old.length, `${f} gained nothing`);
++  }
++  for (const f of ['decision', 'cart_pick', 'tier_note', 'why', 'short_answer', 'detail', 'science', 'labels_decoded', 'pick_steps', 'kristy_take', 'instead', 'aliases', 'asked_as', 'question', 'title']) assert.deepEqual(a[f], b[f], `${f} changed`);
++  assert.equal((a.buying_tips || [])[0], (b.buying_tips || [])[0], 'tip0 changed');
++});
++
++test('C4 new lines are readable: at most 20 words a sentence, at most one semicolon', () => {
++  const lines = nonEmpty(addedList(ID), 'added lines', 6);
++  for (const l of lines) {
++    for (const s of l.split(/(?<=[.!?])\s+/)) {
++      assert.ok(s.split(/\s+/).length <= 20, `sentence over 20 words: ${s}`);
++      assert.ok((s.match(/;/g) || []).length <= 1, `stacked semicolons: ${s}`);
++    }
++  }
++});
++
++test('C5 sources come from the concern archive and nothing is dropped', () => {
++  nonEmpty([...archived], 'archived urls', 100);
++  for (const u of [CR, SSA, FISH]) assert.ok(archived.has(u), `${u} not a url: line in the concern archive`);
++  const before = new Set(urlsOf(was(ID)));
++  const urls = nonEmpty(urlsOf(card(ID)), 'shrimp sources', 1);
++  for (const u of [CR, SSA, FISH]) assert.ok(urls.includes(u), `shrimp does not cite ${u}`);
++  for (const u of before) assert.ok(urls.includes(u), `dropped source ${u}`);
++  for (const u of urls) assert.ok(before.has(u) || archived.has(u), `url not archived: ${u}`);
++  assert.ok((card(ID).sources || []).length > (was(ID).sources || []).length, 'no source added');
++});
++
++test('C6 no illness claims, first person, em dash, price, calorie talk, brand or owned-fact wording in what the batch adds', () => {
++  const BAN = /\b(causes?|prevents?|lowers? (the )?risk|cancer|tumou?rs?|toxic\w*|unsafe|safe|safer|harm\w*|risks?|linked to|hormon\w*|health\w*|neurolog\w*|immun\w*|exposure|artificial|dyed)\b/i;
++  // Owned facts (counterCardLint OWNED_FACTS): the salmon card owns wild/farmed wording, the scallops card owns the phosphate soak.
++  const OWNED = /\b(farmed|farm[- ]raised|wild[- ]caught|phosphates?|STPP|soaked)\b/i;
++  const BRANDS = /\b(Whole Foods|Costco|Kroger|Sprouts|Walmart|Albertsons|Hy-Vee|Fry's|Best Aquaculture|BAP|Marine Stewardship|MSC|Trader Joe|Rangan|Crupain|Cufone|Keledjian|Warner)\b/i;
++  const t = nonEmpty([added(ID)], 'added text', 1)[0];
++  assert.ok(t.length > 0, 'nothing added');
++  assert.doesNotMatch(t, BAN, 'treatment wording');
++  assert.doesNotMatch(t, OWNED, 'owned-fact wording (REPEATED_CLAIM)');
++  assert.doesNotMatch(t, /\b(I|me|my)\b/, 'first person');
++  assert.doesNotMatch(t, /—/, 'em dash');
++  assert.doesNotMatch(t, /\$\s?\d|\bprice\w*|\bcheap\w*|\bcalor\w*|\blogged\b/i, 'price or calorie wording');
++  assert.doesNotMatch(t, BRANDS, 'brand or person name');
++});
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index 8fd2776..e75587a 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -48,7 +48,38 @@ export const TWO_LINE = {
+     "buying_tips": [
+       "Country of origin is printed by law, and wild American traces to a managed fishery.",
+       "Country-of-origin is required on the label. Read it before anything on the front.",
+-      "Frozen raw gives the most control over the cooking, and usually the best value."
++      "Frozen raw gives the most control over the cooking, and usually the best value.",
++      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised shrimp samples. Samples were bought in March 2014.",
++      "Wild American shrimp is the first choice. A close second is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council.",
++      "Last choice: imported shrimp. Read the country of origin.",
++      "Ask the case if the shrimp is dry. Wet shrimp holds extra water."
++    ],
++    "watch_out": [
++      "Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm.",
++      "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
++      "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound.",
++      "The 11 samples came from Vietnam, Thailand and Bangladesh. A certification label alone is not proof. Antibiotics showed on four samples carrying one common label.",
++      "That Consumer Reports test found bacteria on 20 percent of raw U.S. wild samples. Imported pond-raised samples ranged from 42 to 83 percent.",
++      "Cooking through kills most of the bacteria. Cooked shrimp is no guarantee: 16 percent of cooked samples in that test carried bacteria.",
++      "The Southern Shrimp Alliance, a domestic industry group, counts FDA shrimp refusals for veterinary drug residues through August 2026. India, Indonesia and Vietnam led that tally.",
++      "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading. Some pond-raised shrimp were sold as wild."
++    ],
++    "sources": [
++      "NOAA Fisheries country-of-origin data",
++      "Monterey Bay Seafood Watch",
++      "North Carolina Sea Grant, Coastwatch “Curbing the Import Appetite: Selling American Shrimp in the U.S. Market” https://ncseagrant.ncsu.edu/coastwatch/curbing-the-import-appetite-selling-american-shrimp-in-the-u-s-market/ (pond-raised imports vs. wild-caught: flavor, size uniformity, appearance)",
++      {
++        "name": "Consumer Reports: Shrimp safety",
++        "url": "https://www.consumerreports.org/cro/magazine/2015/06/shrimp-safety/index.htm"
++      },
++      {
++        "name": "Southern Shrimp Alliance: FDA refusal report",
++        "url": "https://shrimpalliance.com/august-2026-fda-antibiotic-contaminated-shrimp-import-refusal-report/"
++      },
++      {
++        "name": "The Fish Site: STPP in fish",
++        "url": "https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish"
++      }
+     ]
+   },
+   "beef_grassfed_vs_grainfed": {
+@@ -3172,7 +3203,7 @@ export const beforeTwoLine = (e) => {
+ // Concern batches add archived sources from docs/sources/concerns; older batches froze or
+ // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
+ // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
+-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised']);
++const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised', 'shrimp_imported_vs_domestic']);
+ const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ // Historical pass rules freeze sources and label definitions. Restore labels only when
+ // TWO_LINE pins their current copy, leaving live fronts available to source checks.

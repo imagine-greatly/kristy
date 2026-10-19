@@ -1,0 +1,149 @@
+TAP version 13
+# Subtest: C1 the shrimp card names the antibiotic finding, the refusals, the certification caution and the ladder
+not ok 1 - C1 the shrimp card names the antibiotic finding, the refusals, the certification caution and the ladder
+  ---
+  duration_ms: 1.371875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:36:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /Consumer Reports/. Input:
+    
+    'Country of origin is printed by law, and wild American traces to a managed fishery. \n' +
+      ' Country-of-origin is required on the label. Read it before anything on the front. \n' +
+      ' Frozen raw gives the most control over the cooking, and usually the best value.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Country of origin is printed by law, and wild American traces to a managed fishery. 
+     Country-of-origin is required on the label. Read it before anything on the front. 
+     Frozen raw gives the most control over the cooking, and usually the best value.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:40:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 the shrimp card names the bacteria finding, cooking, wet shrimp and mislabeling
+not ok 2 - C2 the shrimp card names the bacteria finding, cooking, wet shrimp and mislabeling
+  ---
+  duration_ms: 0.122
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:52:1'
+  failureType: 'testCodeFailure'
+  error: 'bacteria'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm. 
+     ‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier. 
+     Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:56:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and frozen fields are untouched
+not ok 3 - C3 earlier lines stay and frozen fields are untouched
+  ---
+  duration_ms: 0.454042
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:68:1'
+  failureType: 'testCodeFailure'
+  error: 'buying_tips gained nothing'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:73:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+not ok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+  ---
+  duration_ms: 0.188708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:79:1'
+  failureType: 'testCodeFailure'
+  error: 'added lines has 0 members (need 6+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:80:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 sources come from the concern archive and nothing is dropped
+not ok 5 - C5 sources come from the concern archive and nothing is dropped
+  ---
+  duration_ms: 0.229875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:89:1'
+  failureType: 'testCodeFailure'
+  error: 'shrimp does not cite https://www.consumerreports.org/cro/magazine/2015/06/shrimp-safety/index.htm'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:94:43)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no illness claims, first person, em dash, price, calorie talk, brand or owned-fact wording in what the batch adds
+not ok 6 - C6 no illness claims, first person, em dash, price, calorie talk, brand or owned-fact wording in what the batch adds
+  ---
+  duration_ms: 0.132916
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:100:1'
+  failureType: 'testCodeFailure'
+  error: 'nothing added'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernShrimp.test.js:106:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 0
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 82.616416
