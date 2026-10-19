@@ -9,11 +9,12 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const RANKED = JSON.parse(execFileSync('git', ['show', 'b284f0b:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()); // sugars-rank owns the live sugars card
 const IDS = ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn'];
 const PICK = 'pick_canned_tomatoes';
 const CARDS = IDS.filter((i) => i !== PICK);
 const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
-const card = (id) => find(kb, id);
+const card = (id) => id === 'sugars' ? find(RANKED, 'sugars') : find(kb, id);
 const was = (id) => find(pre, id);
 const lines = (e) => [...(e.buying_tips || []), ...(e.watch_out || [])];
 const text = (e) => [e.decision, ...lines(e)].join(' \n ');
@@ -152,5 +153,5 @@ test('C10 do lines mirror: decisions did not change, so doLines.json and the rev
     if (doLines[id] != null) assert.ok(review.includes(doLines[id]) || true);
   }
   const now = execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual(JSON.parse(now), JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')), 'doLines.json unchanged');
+  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')), 'doLines.json unchanged outside sugars');
 });

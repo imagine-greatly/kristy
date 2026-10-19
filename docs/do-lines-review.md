@@ -176,7 +176,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
 | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
 | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
-| `sugars` | bulk_pantry | Sugar alone on the list; brown sugar adds molasses. | Read the ingredients for cane or beet; both make the same sugar. | — |
+| `sugars` | bulk_pantry | Coconut or maple sugar first, each made from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
 | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
 | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
 | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |

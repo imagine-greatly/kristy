@@ -10661,14 +10661,17 @@
         "raw sugar",
         "turbinado sugar",
         "coconut sugar",
-        "granulated sugar"
+        "granulated sugar",
+        "maple sugar",
+        "pure maple sugar",
+        "which sugar is the best"
       ],
       "category": "bulk_pantry",
       "question": "How do you pick sugar?",
-      "decision": "Sugar alone on the list; brown sugar adds molasses.",
-      "why": "Sugar is crystallized from cane or beet juice, the same substance either way. Brown sugar adds molasses.",
-      "short_answer": "Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Light brown has less molasses than dark brown. Turbinado is a raw cane sugar, paler than brown sugar.",
-      "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote.",
+      "decision": "Coconut or maple sugar first, each made from one sap.",
+      "why": "Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.",
+      "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
+      "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/184.1854",
@@ -10682,23 +10685,27 @@
         {
           "name": "Non-GMO Project: GMO FAQ",
           "url": "https://www.nongmoproject.org/gmo-faq/"
-        }
+        },
+        "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
       ],
-      "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown, and neither ranks above the other.",
-      "cart_pick": "Plain sugar, white or brown",
+      "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
+      "cart_pick": "Coconut sugar or pure maple sugar",
       "buying_tips": [
-        "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+        "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
+        "Read the list: coconut sugar or maple sugar alone, with nothing added.",
+        "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
         "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
         "Pick light or dark brown sugar; dark carries more molasses."
       ],
       "watch_out": [
         "Coconut sugar is made mostly of sucrose, like other sugar.",
+        "More than half of granulated sugar sold comes from bioengineered sugar beets.",
         "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
       ],
       "pick_steps": [
-        "Read the list: sugar alone, or sugar and molasses for brown.",
-        "Dark brown carries more molasses than light brown.",
-        "Keep brown sugar closed, since it hardens in open air."
+        "Read the list: coconut sugar or maple sugar alone.",
+        "For plain sugar, look for certified organic.",
+        "Dark brown carries more molasses than light brown."
       ],
       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
       "labels_decoded": [
@@ -10715,13 +10722,16 @@
           "meaning": "Raw cane sugar with minimal refining."
         }
       ],
-      "tier_note": "Cane or beet is a preference, since the sugar is the same.",
+      "tier_note": "Coconut or maple first is a preference for sugar closest to the plant.",
       "asked_as": [
         "which white sugar should i buy",
         "is brown sugar worth buying",
         "is coconut sugar worth buying",
         "what is brown sugar made of",
-        "is raw sugar less processed"
+        "is raw sugar less processed",
+        "is maple sugar worth buying",
+        "which sugar is the best to buy",
+        "coconut sugar or maple sugar"
       ]
     },
     {

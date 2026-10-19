@@ -2368,14 +2368,17 @@ export const TWO_LINE = {
     ]
   },
   "sugars": {
-    "decision": "Sugar alone on the list; brown sugar adds molasses.",
+    "decision": "Coconut or maple sugar first, each made from one sap.",
     "buying_tips": [
-      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+      "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
+      "Read the list: coconut sugar or maple sugar alone, with nothing added.",
+      "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
       "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
       "Pick light or dark brown sugar; dark carries more molasses."
     ],
     "watch_out": [
       "Coconut sugar is made mostly of sucrose, like other sugar.",
+      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
       "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
     ],
     "sources": [
@@ -2390,7 +2393,8 @@ export const TWO_LINE = {
       {
         "name": "Non-GMO Project: GMO FAQ",
         "url": "https://www.nongmoproject.org/gmo-faq/"
-      }
+      },
+      "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
     ]
   },
   "maple_syrup": {

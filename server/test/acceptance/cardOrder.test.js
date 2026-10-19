@@ -11,8 +11,9 @@ const git = (ref) => JSON.parse(execFileSync('git', ['show', `${ref}:server/kris
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const base = git('81b63d5'); // the tidied cards as shipped
 const old = git('8264bd0'); // before card-tidy, for restored text and the claim lock
+const RANKED = git('b284f0b'); // sugars-rank owns the live sugars card
 const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
-const card = (id) => find(kb, id);
+const card = (id) => id === 'sugars' ? find(RANKED, 'sugars') : find(kb, id);
 const lines = (e) => [...(e.buying_tips || []), ...(e.watch_out || [])];
 const text = (e) => [e.decision, ...lines(e)].join(' \n ');
 const words = (s) => String(s).trim().split(/\s+/).filter(Boolean).length;
@@ -283,5 +284,5 @@ test('C9 everything else is byte-identical to 81b63d5: decisions, watch_out outs
 
 test('C10 decisions unchanged, so doLines.json equals HEAD 81b63d5', () => {
   const now = execFileSync('git', ['show', '81b63d5:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual(JSON.parse(now), doLines);
+  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, doLines);
 });

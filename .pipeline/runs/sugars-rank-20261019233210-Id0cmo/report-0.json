@@ -1,0 +1,65 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/cardOrder.test.js",
+    "server/test/acceptance/cardTidy.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All 13 fields match exactly. Pins updated. Acceptance: 10/10; full suite: 2831/2831. NOTE: acceptance file was already provisioned and remained unchanged."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "No prohibited bodily-effect wording; mostly-sucrose statements preserved."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Ranking uses one-sap sourcing; pure-maple distinction and Vermont detail verified."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "All other sugars fields match b284f0b."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Other cards, entry count and top-level fields match b284f0b."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Review row updated; builder generated 182 do lines, with only sugars changed."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "All concern keepers preserved."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Appended Vermont URL matches the archived source and its pure-maple-sap rule."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "Decision: 53 characters; why: 115; short answer: 36 words. Assumptions: exact supplied short answer governs. Two-line check: 181 cards, zero violations. Commit guard and diff check passed."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "All six queries and three list rows resolve to sugars. Matcher probe found no wrong matches."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

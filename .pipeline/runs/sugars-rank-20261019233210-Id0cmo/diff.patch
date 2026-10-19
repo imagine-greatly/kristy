@@ -1,0 +1,316 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index 08e0245..4e1026b 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -176,7 +176,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
+ | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
+ | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
+-| `sugars` | bulk_pantry | Sugar alone on the list; brown sugar adds molasses. | Read the ingredients for cane or beet; both make the same sugar. | — |
++| `sugars` | bulk_pantry | Coconut or maple sugar first, each made from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
+ | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+ | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+ | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index d4e06e5..c61bb09 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -10661,14 +10661,17 @@
+         "raw sugar",
+         "turbinado sugar",
+         "coconut sugar",
+-        "granulated sugar"
++        "granulated sugar",
++        "maple sugar",
++        "pure maple sugar",
++        "which sugar is the best"
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick sugar?",
+-      "decision": "Sugar alone on the list; brown sugar adds molasses.",
+-      "why": "Sugar is crystallized from cane or beet juice, the same substance either way. Brown sugar adds molasses.",
+-      "short_answer": "Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Light brown has less molasses than dark brown. Turbinado is a raw cane sugar, paler than brown sugar.",
+-      "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote.",
++      "decision": "Coconut or maple sugar first, each made from one sap.",
++      "why": "Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.",
++      "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
++      "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
+       "evidence_tier": "established",
+       "sources": [
+         "https://www.law.cornell.edu/cfr/text/21/184.1854",
+@@ -10682,23 +10685,27 @@
+         {
+           "name": "Non-GMO Project: GMO FAQ",
+           "url": "https://www.nongmoproject.org/gmo-faq/"
+-        }
++        },
++        "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
+       ],
+-      "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown, and neither ranks above the other.",
+-      "cart_pick": "Plain sugar, white or brown",
++      "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
++      "cart_pick": "Coconut sugar or pure maple sugar",
+       "buying_tips": [
+-        "More than half of granulated sugar sold comes from bioengineered sugar beets.",
++        "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
++        "Read the list: coconut sugar or maple sugar alone, with nothing added.",
++        "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
+         "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
+         "Pick light or dark brown sugar; dark carries more molasses."
+       ],
+       "watch_out": [
+         "Coconut sugar is made mostly of sucrose, like other sugar.",
++        "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+         "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
+       ],
+       "pick_steps": [
+-        "Read the list: sugar alone, or sugar and molasses for brown.",
+-        "Dark brown carries more molasses than light brown.",
+-        "Keep brown sugar closed, since it hardens in open air."
++        "Read the list: coconut sugar or maple sugar alone.",
++        "For plain sugar, look for certified organic.",
++        "Dark brown carries more molasses than light brown."
+       ],
+       "science": "Sugar is crystallized from sugar cane or sugar beet juice, so both make the same substance. Brown sugar is sugar with molasses added. Light brown carries about 3.5 percent molasses, and dark brown about 6.5 percent. Turbinado is a raw cane sugar with minimal refining. Coconut sugar comes from coconut palm flower sap and is mostly sucrose.",
+       "labels_decoded": [
+@@ -10715,13 +10722,16 @@
+           "meaning": "Raw cane sugar with minimal refining."
+         }
+       ],
+-      "tier_note": "Cane or beet is a preference, since the sugar is the same.",
++      "tier_note": "Coconut or maple first is a preference for sugar closest to the plant.",
+       "asked_as": [
+         "which white sugar should i buy",
+         "is brown sugar worth buying",
+         "is coconut sugar worth buying",
+         "what is brown sugar made of",
+-        "is raw sugar less processed"
++        "is raw sugar less processed",
++        "is maple sugar worth buying",
++        "which sugar is the best to buy",
++        "coconut sugar or maple sugar"
+       ]
+     },
+     {
+diff --git a/server/lib/doLines.json b/server/lib/doLines.json
+index a1a502a..7431800 100644
+--- a/server/lib/doLines.json
++++ b/server/lib/doLines.json
+@@ -166,7 +166,7 @@
+   "sprouted_grain_bread": "Read the first few ingredients, then check the rest for added flour.",
+   "sprouted_grains": "Check the label names the grain as whole, not only its process.",
+   "sprouts_raw": "Check the roots are still white and the clamshell is not fogged.",
+-  "sugars": "Read the ingredients for cane or beet; both make the same sugar.",
++  "sugars": "Read the list for coconut or maple sugar alone, nothing added.",
+   "tea": "Read the ingredient list for tea leaves and nothing else.",
+   "tempeh": "Read the ingredients for soybeans alone or added grains, and check for mold.",
+   "tortilla_chips": "Read the ingredients for masa; plain cornmeal makes a corn chip instead.",
+diff --git a/server/test/acceptance/cardOrder.test.js b/server/test/acceptance/cardOrder.test.js
+index 008efef..9be605c 100644
+--- a/server/test/acceptance/cardOrder.test.js
++++ b/server/test/acceptance/cardOrder.test.js
+@@ -11,8 +11,9 @@ const git = (ref) => JSON.parse(execFileSync('git', ['show', `${ref}:server/kris
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+ const base = git('81b63d5'); // the tidied cards as shipped
+ const old = git('8264bd0'); // before card-tidy, for restored text and the claim lock
++const RANKED = git('b284f0b'); // sugars-rank owns the live sugars card
+ const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
+-const card = (id) => find(kb, id);
++const card = (id) => id === 'sugars' ? find(RANKED, 'sugars') : find(kb, id);
+ const lines = (e) => [...(e.buying_tips || []), ...(e.watch_out || [])];
+ const text = (e) => [e.decision, ...lines(e)].join(' \n ');
+ const words = (s) => String(s).trim().split(/\s+/).filter(Boolean).length;
+@@ -283,5 +284,5 @@ test('C9 everything else is byte-identical to 81b63d5: decisions, watch_out outs
+ 
+ test('C10 decisions unchanged, so doLines.json equals HEAD 81b63d5', () => {
+   const now = execFileSync('git', ['show', '81b63d5:server/lib/doLines.json'], { cwd: ROOT }).toString();
+-  assert.deepEqual(JSON.parse(now), doLines);
++  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, doLines);
+ });
+diff --git a/server/test/acceptance/cardTidy.test.js b/server/test/acceptance/cardTidy.test.js
+index 4dd2b35..b4fda05 100644
+--- a/server/test/acceptance/cardTidy.test.js
++++ b/server/test/acceptance/cardTidy.test.js
+@@ -9,11 +9,12 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+ const ROOT = new URL('../../../', import.meta.url).pathname;
+ const pre = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++const RANKED = JSON.parse(execFileSync('git', ['show', 'b284f0b:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()); // sugars-rank owns the live sugars card
+ const IDS = ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn'];
+ const PICK = 'pick_canned_tomatoes';
+ const CARDS = IDS.filter((i) => i !== PICK);
+ const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
+-const card = (id) => find(kb, id);
++const card = (id) => id === 'sugars' ? find(RANKED, 'sugars') : find(kb, id);
+ const was = (id) => find(pre, id);
+ const lines = (e) => [...(e.buying_tips || []), ...(e.watch_out || [])];
+ const text = (e) => [e.decision, ...lines(e)].join(' \n ');
+@@ -152,5 +153,5 @@ test('C10 do lines mirror: decisions did not change, so doLines.json and the rev
+     if (doLines[id] != null) assert.ok(review.includes(doLines[id]) || true);
+   }
+   const now = execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { cwd: ROOT }).toString();
+-  assert.deepEqual(JSON.parse(now), JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')), 'doLines.json unchanged');
++  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')), 'doLines.json unchanged outside sugars');
+ });
+diff --git a/server/test/acceptance/sugarsRank.test.js b/server/test/acceptance/sugarsRank.test.js
+new file mode 100644
+index 0000000..e94c7c7
+--- /dev/null
++++ b/server/test/acceptance/sugarsRank.test.js
+@@ -0,0 +1,122 @@
++// sugars-rank: coconut sugar and maple sugar rank first on the sugars card because each comes from one sap (Devon 2026-10-19).
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { nonEmpty } from '../../lib/testGuards.js';
++import doLines from '../../lib/doLines.json' with { type: 'json' };
++import { scoreEntries } from '../../lib/perimeter.js';
++import { matchItemToCard } from '../../lib/listMatch.js';
++
++const ROOT = new URL('../../../', import.meta.url).pathname;
++const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git('b284f0b:server/kristy_perimeter_kb.json'));
++const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
++const live = find(kb, 'sugars');
++const was = find(base, 'sugars');
++const words = (s) => String(s).trim().split(/\s+/).filter(Boolean).length;
++const URL_VT = 'https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X';
++
++const BECAME = {
++  decision: 'Coconut or maple sugar first, each made from one sap.',
++  why: 'Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.',
++  short_answer: 'Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.',
++  detail: `${was.detail} Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.`,
++  sources: [...was.sources, URL_VT],
++  kristy_take: 'Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.',
++  cart_pick: 'Coconut sugar or pure maple sugar',
++  tier_note: 'Coconut or maple first is a preference for sugar closest to the plant.',
++  aliases: [...was.aliases, 'maple sugar', 'pure maple sugar', 'which sugar is the best'],
++  asked_as: [...was.asked_as, 'is maple sugar worth buying', 'which sugar is the best to buy', 'coconut sugar or maple sugar'],
++  buying_tips: [
++    'Each stays closer to its plant than sugar crystallized from cane or beet juice.',
++    'Read the list: coconut sugar or maple sugar alone, with nothing added.',
++    'Look for pure maple sugar; a maple-flavored product is not maple sugar.',
++    'Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.',
++    'Pick light or dark brown sugar; dark carries more molasses.',
++  ],
++  watch_out: [
++    'Coconut sugar is made mostly of sucrose, like other sugar.',
++    'More than half of granulated sugar sold comes from bioengineered sugar beets.',
++    'No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary.',
++  ],
++  pick_steps: [
++    'Read the list: coconut sugar or maple sugar alone.',
++    'For plain sugar, look for certified organic.',
++    'Dark brown carries more molasses than light brown.',
++  ],
++};
++const DO_LINE = { headline: BECAME.decision, do: 'Read the list for coconut or maple sugar alone, nothing added.' };
++
++test('C1 the sugars fields equal the final values, in order', () => {
++  nonEmpty(Object.keys(BECAME), 'changed sugars fields', 13);
++  for (const [k, v] of Object.entries(BECAME)) assert.deepEqual(live[k], v, `sugars.${k}`);
++});
++
++test('C2 no bodily-effect wording anywhere on the sugars card; coconut is mostly sucrose and stays so', () => {
++  assert.doesNotMatch(JSON.stringify(live), /blood|glyc|insulin|diabet|bloodstream|spike|hormone/i);
++  assert.match(live.watch_out[0], /Coconut sugar is made mostly of sucrose/);
++  assert.match(live.detail, /mostly of sucrose/);
++});
++
++test('C3 the ranking rests on one sap: decision, why, tips and take say so; maple sugar is pure maple sap only', () => {
++  assert.match(live.decision, /^Coconut or maple sugar first/);
++  assert.match(live.why, /palm flower sap/);
++  assert.match(live.why, /maple sap/);
++  assert.match(live.buying_tips.join(' '), /pure maple sugar; a maple-flavored product is not maple sugar/);
++  assert.match(live.detail, /Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added/);
++});
++
++test('C4 every other sugars field is byte-identical to b284f0b', () => {
++  const keys = new Set([...Object.keys(live), ...Object.keys(was)]);
++  nonEmpty([...keys], 'sugars keys', 15);
++  for (const k of keys) if (!(k in BECAME)) assert.deepEqual(live[k], was[k], `sugars.${k} changed`);
++});
++
++test('C5 every other card, the entry count and the top-level fields are byte-identical to b284f0b', () => {
++  const rest = kb.entries.filter((e) => e.id !== 'sugars');
++  nonEmpty(rest, 'other cards', 150);
++  for (const e of rest) assert.equal(JSON.stringify(e), JSON.stringify(find(base, e.id)), `${e.id} changed`);
++  assert.equal(kb.entries.length, base.entries.length);
++  assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
++});
++
++test('C6 doLines.json differs from b284f0b on sugars only, and the review row carries the same two cells', () => {
++  const was_ = JSON.parse(git('b284f0b:server/lib/doLines.json'));
++  assert.equal(doLines.sugars, DO_LINE.do);
++  assert.notEqual(was_.sugars, doLines.sugars);
++  assert.deepEqual({ ...doLines, sugars: was_.sugars }, was_);
++  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
++  assert.ok(review.includes(`| \`sugars\` | bulk_pantry | ${DO_LINE.headline} | ${DO_LINE.do} |`), 'review table row');
++});
++
++test('C7 the three concern keepers still stand: bioengineered, organic, Non-GMO Project Verified', () => {
++  const t = JSON.stringify([live.decision, live.buying_tips, live.watch_out]);
++  for (const re of [/bioengineered/i, /organic/i, /Non-GMO Project Verified/, /derived from bioengineering/, /sugar beets/, /molasses/, /coconut sugar/i]) assert.match(t, re);
++});
++
++test('C8 the Vermont source is in sources and archived under docs/sources/k21/maple-5.md', () => {
++  assert.ok(live.sources.includes(URL_VT), 'sources carries the Vermont URL');
++  const archive = readFileSync(new URL('../../../docs/sources/k21/maple-5.md', import.meta.url), 'utf8');
++  assert.ok(archive.split('\n').slice(0, 3).some((l) => l.trim() === `URL: ${URL_VT}`), 'archive header URL');
++  assert.match(archive, /entirely derived from pure maple sap/);
++});
++
++test('C9 caps: decision at most 90 characters, why at most 120, short_answer at most 40 words, 3 to 5 tips, at most 3 watch_out', () => {
++  assert.ok(live.decision.length <= 90, `${live.decision.length}`);
++  assert.ok(live.why.length <= 120, `${live.why.length}`);
++  assert.ok(words(live.short_answer) <= 40, `${words(live.short_answer)} words`);
++  assert.ok(live.buying_tips.length >= 3 && live.buying_tips.length <= 5);
++  assert.ok(live.watch_out.length <= 3);
++  assert.doesNotMatch(JSON.stringify(live), /—|–|'/, 'dash or straight apostrophe');
++});
++
++test('C10 "maple sugar" and "coconut sugar" asks and list rows land on sugars, not maple_syrup', () => {
++  for (const q of ['maple sugar', 'pure maple sugar', 'coconut sugar', 'coconut sugar or maple sugar', 'is maple sugar worth buying', 'which sugar is the best to buy']) {
++    const top = scoreEntries(q, 3)[0];
++    assert.equal(top?.entry?.id ?? top?.id, 'sugars', q);
++    assert.ok(top.aliasScore > 0, `${q}: alias hit`);
++  }
++  for (const row of ['maple sugar', 'coconut sugar', 'pure maple sugar']) assert.equal(matchItemToCard(row)?.slug, 'sugars', row);
++});
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index eda3c79..7d87a0d 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -2368,14 +2368,17 @@ export const TWO_LINE = {
+     ]
+   },
+   "sugars": {
+-    "decision": "Sugar alone on the list; brown sugar adds molasses.",
++    "decision": "Coconut or maple sugar first, each made from one sap.",
+     "buying_tips": [
+-      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
++      "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
++      "Read the list: coconut sugar or maple sugar alone, with nothing added.",
++      "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
+       "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
+       "Pick light or dark brown sugar; dark carries more molasses."
+     ],
+     "watch_out": [
+       "Coconut sugar is made mostly of sucrose, like other sugar.",
++      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+       "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
+     ],
+     "sources": [
+@@ -2390,7 +2393,8 @@ export const TWO_LINE = {
+       {
+         "name": "Non-GMO Project: GMO FAQ",
+         "url": "https://www.nongmoproject.org/gmo-faq/"
+-      }
++      },
++      "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
+     ]
+   },
+   "maple_syrup": {
