@@ -1,0 +1,168 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the decision and cart pick point to a short list, not fortified
+not ok 1 - C1 the decision and cart pick point to a short list, not fortified
+  ---
+  duration_ms: 0.882
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:27:1'
+  failureType: 'testCodeFailure'
+  error: 'names a short list'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Fortified, unsweetened soy milk.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:29:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 a short-list almond milk ranks above soy milk, and dairy shoppers see the Milk card
+not ok 2 - C2 a short-list almond milk ranks above soy milk, and dairy shoppers see the Milk card
+  ---
+  duration_ms: 0.317375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:41:1'
+  failureType: 'testCodeFailure'
+  error: 'almond milk ranks above soy milk'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Fortified soy holds key nutrients similar to milk, so the dairy group counts it. 
+     Pick unsweetened over flavored. 
+     Compare protein and potassium across cartons. 
+     Check saturated fat on the label. 
+     Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan. 
+     Most U.S. soybeans are bioengineered. 
+     Choose certified organic soy milk first, with Non-GMO Project Verified a close second.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:43:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 fortified is not the pick, fortification adds ingredients, and the FDA facts stay
+not ok 3 - C3 fortified is not the pick, fortification adds ingredients, and the FDA facts stay
+  ---
+  duration_ms: 0.112375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:49:1'
+  failureType: 'testCodeFailure'
+  error: 'tip 0 is the short-list tip'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Fortified soy holds key nutrients similar to milk, so the dairy group counts it.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:51:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 earlier batches stay; frozen fields and the sibling plant milks are untouched
+not ok 4 - C4 earlier batches stay; frozen fields and the sibling plant milks are untouched
+  ---
+  duration_ms: 0.488083
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:60:1'
+  failureType: 'testCodeFailure'
+  error: 'watch_out gained nothing'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:63:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C7 sibling instead lines point to another short-list plant milk
+not ok 5 - C7 sibling instead lines point to another short-list plant milk
+  ---
+  duration_ms: 0.135041
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:72:1'
+  failureType: 'testCodeFailure'
+  error: 'almond_milk instead names a short list'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Fortified unsweetened soy milk is the next plant drink.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:76:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 new lines are readable: at most 20 words a sentence, at most one semicolon
+not ok 6 - C5 new lines are readable: at most 20 words a sentence, at most one semicolon
+  ---
+  duration_ms: 0.173708
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:85:1'
+  failureType: 'testCodeFailure'
+  error: 'soy_milk added lines has 0 members (need 4+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:86:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no hormone, health, first person, em dash, price, calorie or brand wording; the do line mirrors the headline
+not ok 7 - C6 no hormone, health, first person, em dash, price, calorie or brand wording; the do line mirrors the headline
+  ---
+  duration_ms: 0.430375
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:95:1'
+  failureType: 'testCodeFailure'
+  error: 'the do line mirrors the new headline'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Find calcium and vitamin D on the panel, and check for added sugars.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/soyMilkRank.test.js:103:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 0
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 156.222917

@@ -6952,7 +6952,7 @@
         "does every oat milk have the same protein",
         "what does fortified oat milk mean"
       ],
-      "instead": "Fortified unsweetened soy milk is the next plant drink."
+      "instead": "A short-list unsweetened almond milk is the next plant drink."
     },
     {
       "id": "coffee_beans",
@@ -9767,7 +9767,7 @@
         "is unsweetened almond milk worth buying",
         "which almond milk should i buy"
       ],
-      "instead": "Fortified unsweetened soy milk is the next plant drink."
+      "instead": "A short-list oat milk is the next plant drink."
     },
     {
       "id": "soy_milk",
@@ -9782,7 +9782,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick soy milk?",
-      "decision": "Fortified, unsweetened soy milk.",
+      "decision": "Unsweetened soy milk, a short list beyond soybeans and water.",
       "why": "FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group.",
       "short_answer": "Soy milk is made by soaking and grinding soybeans, boiling, then filtering. It may be sweetened, flavored and fortified. FDA places only the fortified kind in the dairy group.",
       "detail": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein content runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines include only fortified soy beverages in the dairy group. The reason given is that they have key nutrients similar to those in milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars.",
@@ -9807,9 +9807,13 @@
           "url": "https://www.nongmoproject.org/gmo-faq/"
         }
       ],
-      "kristy_take": "Fortification is what places soy milk in the dairy group, so the carton settles it.",
-      "cart_pick": "Fortified unsweetened soy milk",
+      "kristy_take": "A short list of soybeans and water stays closest to the bean.",
+      "cart_pick": "Short-list unsweetened soy milk",
       "buying_tips": [
+        "Read the list for soybeans and water, then as few additions as possible.",
+        "A short-list unsweetened almond milk ranks above soy milk.",
+        "Dairy shoppers can read the Milk card.",
+        "Fortifying adds vitamins and minerals, and each is another ingredient.",
         "Fortified soy holds key nutrients similar to milk, so the dairy group counts it.",
         "Pick unsweetened over flavored.",
         "Compare protein and potassium across cartons.",
@@ -9820,10 +9824,11 @@
       ],
       "watch_out": [
         "Unfortified soy milk is not the version FDA places in the dairy group.",
-        "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
+        "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
+        "FDA counts only fortified soy in the dairy group, yet fortifying lengthens the list."
       ],
       "pick_steps": [
-        "Pick fortified; unfortified soy milk is not in FDA’s dairy group.",
+        "Pick the shortest list, soybeans and water with little else.",
         "Pick unsweetened over flavored."
       ],
       "science": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group. The reason given is key nutrients similar to those in milk.",

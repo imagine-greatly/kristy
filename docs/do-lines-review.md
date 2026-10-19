@@ -161,7 +161,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `ghee` | eggs_dairy | Ghee or clarified butter with butter as the only ingredient. | Read the ingredient list for butter or cream as the only entry. | — |
 | `goat_sheep_dairy` | eggs_dairy | Goat or sheep dairy with goat or sheep milk listed. | Read the ingredients for which animal’s milk went in. | — |
 | `almond_milk` | eggs_dairy | Unsweetened almond milk, a short list, never seed oil. | Read the Nutrition Facts for added sugars, then calcium and vitamin D. | — |
-| `soy_milk` | eggs_dairy | Fortified, unsweetened soy milk. | Find calcium and vitamin D on the panel, and check for added sugars. | — |
+| `soy_milk` | eggs_dairy | Unsweetened soy milk, a short list beyond soybeans and water. | Read the ingredients for soybeans and water, then calcium and vitamin D if added. | — |
 | `coconut_milk_beverage` | eggs_dairy | Unsweetened carton coconut milk with the fewest added gums. | Read the carton for “beverage” in the name, then the thickeners. | — |
 | `plant_butter` | eggs_dairy | Coconut or olive oil plant butter, never seed oil. | Read the ingredient list and find which oil comes first. | — |
 | `dairy_case` | eggs_dairy | Choose the dairy type first, then read the carton. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |

@@ -1,0 +1,127 @@
+{
+  "kind": "build",
+  "runId": "soy-milk-rank-20261019200924-0r6VUN",
+  "piece_id": "/Users/m1/kristy:soy-milk-rank",
+  "attempt": 3,
+  "spec": "/Users/m1/kristy/.pipeline/specs/soy-milk-rank.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 580275,
+    "cached": 496256,
+    "output": 5671,
+    "reasoning": 1104
+  },
+  "over_ceiling": true,
+  "ms": 460615,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-19T18:09:24.673Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:soy-milk-rank-20261019200924-0r6VUN:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/soy-milk-rank-20261019200924-0r6VUN/events-0.jsonl",
+      "usage": {
+        "input": 580275,
+        "cached": 496256,
+        "output": 5671,
+        "reasoning": 1104
+      },
+      "tokens": 585946,
+      "mem_free_mb": 158,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a1555f-34e0-7d91-a349-29d70e5a461f",
+        "usage": {
+          "input": 580275,
+          "cached": 496256,
+          "output": 5671,
+          "reasoning": 1104
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"docs/do-lines-review.md\",\n    \"server/lib/doLines.json\",\n    \"server/test/acceptance/concernBioengineered.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Exact decision and cart copy applied; length and soy_milk matching assertions pass.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Almond ranking and Milk-card pointer added; acceptance passes.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Four tips prepended and warning appended; existing FDA facts preserved.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Scope audit confirms frozen fields, sources and existing list order preserved. Pins and soy-only historical assertions updated. Assumptions: f3ab9b4 remains the baseline despite HEAD 25dd850. NOTE: acceptance file was provisioned and left unchanged.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Only almond and oat instead fields changed; redirect assertions pass.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Readability acceptance passes; twoLineCheck reports 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Wording restrictions pass. Generated doLines changes only soy_milk. Literal verification passes: 7 acceptance tests and 2789 full-suite tests, zero failures. git diff --check passes.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"pwd; rg --files -g AGENTS.md -g report.schema.json -g '*soyMilkRank*' -g '*twoLinePin*' -g '*concernBioengineered*' -g 'ca-4b.test.js' -g '\"'!node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'cat server/test/acceptance/soyMilkRank.test.js server/test/acceptance/concernBioengineered.test.js server/test/acceptance/twoLinePin.test.js server/test/acceptance/ca-4b.test.js'",
+          "/bin/zsh -lc 'wc -l server/lib/counterCardLint.js\ncat server/scripts/commitGuard.js\ncat server/test/acceptance/concernBioengineered.test.js'",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/lib/testGuards.js VOICE_SPEC.md'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done\nrg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"' server docs\"",
+          "/bin/zsh -lc \"rg -n 'soy_milk|almond_milk|oat_milk|export |beforeTwoLine|beforeConcern|CONCERN' server/test/acceptance/twoLinePin.js server/kristy_perimeter_kb.json docs/do-lines-review.md server/lib/doLines.json\nsed -n '1,205p' server/test/acceptance/ca-4b.test.js\nsed -n '2150,2270p' server/test/acceptance/twoLinePin.js\nsed -n '3220,3340p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc 'git status --short; git rev-parse --short HEAD; git diff --stat'",
+          "/bin/zsh -lc \"sed -n '1,205p' server/test/acceptance/ca-4b.test.js\nwc -l server/lib/counterCardLint.js VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"rg -n 'soy_milk|almond_milk|oat_milk|export |beforeTwoLine|beforeConcern|CONCERN' server/test/acceptance/twoLinePin.js server/kristy_perimeter_kb.json docs/do-lines-review.md server/lib/doLines.json\nsed -n '2120,2275p' server/test/acceptance/twoLinePin.js\nsed -n '3210,3340p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"sed -n '6885,6980p' server/kristy_perimeter_kb.json\nsed -n '9700,9865p' server/kristy_perimeter_kb.json\nsed -n '1495,1545p' server/test/acceptance/twoLinePin.js\nsed -n '200,260p' server/test/acceptance/ca-4b.test.js\"",
+          "/bin/zsh -lc \"sed -n '205,469p' VOICE_SPEC.md\nrg -n 'TIER_NOTE_ORPHANED|function (lintCard|readability|lintRepeatedClaim)|export (const|function)|soy_milk' server/lib/counterCardLint.js\nsed -n '1,120p' server/lib/counterCardLint.js\nrg -n 'writeFile|mkdir|unlink|rmSync|dotenv|\\\\.env|execFileSync|execSync|spawnSync' server/lib/commitScope.test.js server/lib/deployBoundary.test.js server/lib/schemaSafety.test.js server/lib/schemaContract.test.js\"",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js'",
+          "/bin/zsh -lc 'node --test server/test/acceptance/soyMilkRank.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && npm test'",
+          "/bin/zsh -lc 'git diff --check; git diff --stat; git diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js docs/do-lines-review.md server/lib/doLines.json server/test/acceptance/concernBioengineered.test.js'",
+          "/bin/zsh -lc 'git diff --check; git diff --name-only; git status --short'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst oldText = execFileSync('git', ['show', 'f3ab9b4:server/kristy_perimeter_kb.json'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconst newText = readFileSync('server/kristy_perimeter_kb.json', 'utf8');\nconst before = JSON.parse(oldText), after = JSON.parse(newText);\nconst allowed = { soy_milk: ['decision', 'cart_pick', 'kristy_take', 'pick_steps', 'buying_tips', 'watch_out'], almond_milk: ['instead'], oat_milk: ['instead'] };\nconst changed = [];\nassert.equal(after.entries.length, before.entries.length);\nfor (const [index, entry] of after.entries.entries()) {\n  const original = before.entries[index];\n  assert.equal(entry.id, original.id);\n  const editable = allowed[entry.id] || [];\n  const frozen = (value) => Object.fromEntries(Object.entries(value).filter(([key]) => \"'!editable.includes(key)));\n  assert.deepEqual(frozen(entry), frozen(original), `${entry.id} outside allowed fields`);\n  if (JSON.stringify(entry) !== JSON.stringify(original)) changed.push(entry.id);\n}\nassert.deepEqual(changed.toSorted(), Object.keys(allowed).toSorted());\nconst soy = after.entries.find((entry) => entry.id === '\"'soy_milk');\nconst oldSoy = before.entries.find((entry) => entry.id === 'soy_milk');\nassert.deepEqual(soy.buying_tips.slice(4), oldSoy.buying_tips);\nassert.deepEqual(soy.watch_out.slice(0, 2), oldSoy.watch_out);\nassert.equal(soy.pick_steps[1], oldSoy.pick_steps[1]);\nassert.deepEqual({ ...after, entries: [] }, { ...before, entries: [] });\nconst oldLines = JSON.parse(execFileSync('git', ['show', 'f3ab9b4:server/lib/doLines.json'], { encoding: 'utf8' }));\nconst newLines = JSON.parse(readFileSync('server/lib/doLines.json', 'utf8'));\nassert.deepEqual(Object.keys(newLines), Object.keys(oldLines));\nassert.deepEqual(Object.keys(newLines).filter((key) => newLines[key] \"'!== oldLines[key]), ['\"'soy_milk']);\nconsole.log('Scope verified against f3ab9b4: only the allowed card fields changed; seven existing tips and two existing watch-outs retain order; only soy_milk do line changed.');\nNODE\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 585946,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 198,
+    "key": "10e6baa0766f0ec98599302f2ef63ba30c9fc9aa026cfb60850e62b99067c96e",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/soy-milk-rank-20261019200924-0r6VUN/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:soy-milk-rank-20261019200924-0r6VUN:0",
+  "mem_free_mb": 158,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 10796,
+      "tail": "ok 2785 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.084958\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2786 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.521333\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2787 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.147041\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2788 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 130.305167\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2789 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.334125\n  type: 'test'\n  ...\n1..2789\n# tests 2789\n# suites 0\n# pass 2789\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10199.088",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/soy-milk-rank-20261019200924-0r6VUN/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-19T18:17:05.288Z",
+  "readiness": "READY"
+}

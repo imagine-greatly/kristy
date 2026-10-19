@@ -1,0 +1,49 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "docs/do-lines-review.md",
+    "server/lib/doLines.json",
+    "server/test/acceptance/concernBioengineered.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Exact decision and cart copy applied; length and soy_milk matching assertions pass."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Almond ranking and Milk-card pointer added; acceptance passes."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Four tips prepended and warning appended; existing FDA facts preserved."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Scope audit confirms frozen fields, sources and existing list order preserved. Pins and soy-only historical assertions updated. Assumptions: f3ab9b4 remains the baseline despite HEAD 25dd850. NOTE: acceptance file was provisioned and left unchanged."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Only almond and oat instead fields changed; redirect assertions pass."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Readability acceptance passes; twoLineCheck reports 181 checked, zero violations."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Wording restrictions pass. Generated doLines changes only soy_milk. Literal verification passes: 7 acceptance tests and 2789 full-suite tests, zero failures. git diff --check passes."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

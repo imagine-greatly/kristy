@@ -1503,6 +1503,7 @@ export const TWO_LINE = {
     ]
   },
   "oat_milk": {
+    "instead": "A short-list unsweetened almond milk is the next plant drink.",
     "decision": "Oat milk with few stabilizers, never seed oil.",
     "buying_tips": [
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
@@ -2171,6 +2172,7 @@ export const TWO_LINE = {
     ]
   },
   "almond_milk": {
+    "instead": "A short-list oat milk is the next plant drink.",
     "decision": "Unsweetened almond milk, a short list, never seed oil.",
     "buying_tips": [
       "Almond drinks vary in added sugars, so the carton panel is the guide.",
@@ -2193,8 +2195,18 @@ export const TWO_LINE = {
     ]
   },
   "soy_milk": {
-    "decision": "Fortified, unsweetened soy milk.",
+    "decision": "Unsweetened soy milk, a short list beyond soybeans and water.",
+    "cart_pick": "Short-list unsweetened soy milk",
+    "kristy_take": "A short list of soybeans and water stays closest to the bean.",
+    "pick_steps": [
+      "Pick the shortest list, soybeans and water with little else.",
+      "Pick unsweetened over flavored."
+    ],
     "buying_tips": [
+      "Read the list for soybeans and water, then as few additions as possible.",
+      "A short-list unsweetened almond milk ranks above soy milk.",
+      "Dairy shoppers can read the Milk card.",
+      "Fortifying adds vitamins and minerals, and each is another ingredient.",
       "Fortified soy holds key nutrients similar to milk, so the dairy group counts it.",
       "Pick unsweetened over flavored.",
       "Compare protein and potassium across cartons.",
@@ -2225,7 +2237,8 @@ export const TWO_LINE = {
     ],
     "watch_out": [
       "Unfortified soy milk is not the version FDA places in the dairy group.",
-      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
+      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
+      "FDA counts only fortified soy in the dairy group, yet fortifying lengthens the list."
     ]
   },
   "coconut_milk_beverage": {
