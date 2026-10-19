@@ -1,0 +1,281 @@
+{
+  "kind": "build",
+  "runId": "concern-salmon-20261019164316-ejh8x4",
+  "piece_id": "/Users/m1/kristy:concern-salmon",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/concern-salmon.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "RED:ROUNDS",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 1
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 2
+    }
+  ],
+  "usage": {
+    "input": 2836842,
+    "cached": 2430464,
+    "output": 23844,
+    "reasoning": 7108
+  },
+  "over_ceiling": true,
+  "ms": 553967,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 2,
+  "green": false,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-19T14:43:16.009Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-salmon-20261019164316-ejh8x4:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/events-0.jsonl",
+      "usage": {
+        "input": 800406,
+        "cached": 715648,
+        "output": 6951,
+        "reasoning": 1990
+      },
+      "tokens": 807357,
+      "mem_free_mb": 447,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a154a2-79c6-7883-880b-364dfdafd17d",
+        "usage": {
+          "input": 800406,
+          "cached": 715648,
+          "output": 6951,
+          "reasoning": 1990
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k16.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C1 passed: dated contaminants comparison, adjacent FDA counterweight, Chile rating and wild-first ladder added.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Assumptions: used the review-approved 'colored after harvest' wording to honor C6. NOTE: immutable concernSalmon.test.js:62 requires the banned word 'dyed'; left unchanged. The acceptance file is now present. Acceptance: 5/6 passed. Full suite: 2769/2770 passed, with this conflict the sole failure.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C3 passed against retained baseline 262bc45. Existing lines, frozen fields and farmed_fish_by_species remain unchanged. Only the requested arrays changed; do-lines rebuild produced no diff.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C4 passed; longest added sentence is 14 words. Two-line check: 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C5 passed; all new URLs match archive line 1 and existing sources remain. Updated inline pins, CONCERN membership and the prescribed k16 source read; all older tests passed.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C6 passed. Assumptions: wording bans apply to added prose, excluding sources; preserved the required NBC source title containing 'risks'. git diff --check passed.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"if test -f server/test/acceptance/concernSalmon.test.js; then cat server/test/acceptance/concernSalmon.test.js; else printf 'Acceptance file absent: server/test/acceptance/concernSalmon.test.js\\\\n'; fi\nsed -n '1,200p' server/test/acceptance/k16.test.js\"",
+          "/bin/zsh -lc \"pwd && rg --files -g 'AGENTS.md' -g 'report.schema.json' -g 'concernSalmon.test.js' -g 'twoLinePin.js' -g 'k16.test.js' -g '\"'!node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'git status --short && git rev-parse --short HEAD'",
+          "/bin/zsh -lc 'cat docs/sources/concerns/produce_seafood/nbc-farmed-salmon-contaminated.md docs/sources/concerns/produce_seafood/qz-farmed-salmon-color-added.md docs/sources/concerns/produce_seafood/seafoodwatch-chile-farmed-salmon.md'",
+          "/bin/zsh -lc 'cat VOICE_SPEC.md server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/lib/counterCardLint.js'",
+          "/bin/zsh -lc 'cat docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md docs/sources/concerns/produce_seafood/INDEX.md'",
+          "/bin/zsh -lc 'for dir in / /Users /Users/m1 /Users/m1/kristy; do if test -f \"${dir%/}/AGENTS.md\"; then printf '\"'%s\\\\n' \\\"\"'${dir%/}/AGENTS.md\"; cat \"${dir%/}/AGENTS.md\"; fi; done\nrg --files --hidden server docs -g AGENTS.md -g '\"'\"'!node_modules'\"' -g '\"'!.git'\"'\ncat server/test/acceptance/twoLinePin.test.js server/lib/testGuards.js server/package.json package.json\"",
+          "/bin/zsh -lc \"sed -n '1,120p' server/test/acceptance/twoLinePin.js\nrg -n 'salmon_wild_vs_farmed|smoked_salmon|label_wild_vs_farm_raised|CONCERN|beforeConcern' server/test/acceptance/twoLinePin.js\nsed -n '3060,3210p' server/test/acceptance/twoLinePin.js\nnode --input-type=module <<'NODE'\nimport fs from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport assert from 'node:assert/strict';\nconst kb = JSON.parse(fs.readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst pre = JSON.parse(execFileSync('git', ['show', '262bc45:server/kristy_perimeter_kb.json'], {maxBuffer: 64 << 20}));\nfor (const id of ['salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised', 'farmed_fish_by_species']) {\n const card = kb.entries.find(e => e.id === id);\n assert.deepEqual(card, pre.entries.find(e => e.id === id));\n console.log(JSON.stringify(card, null, 2));\n}\nNODE\"",
+          "/bin/zsh -lc \"cat server/scripts/buildDoLines.js server/scripts/twoLineCheck.js\nrg -n -A 45 -B 8 'READ_|export function readability' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"rg -n 'salmon_wild_vs_farmed|smoked_salmon|label_wild_vs_farm_raised|CONCERN|beforeConcern' server/test/acceptance/twoLinePin.js\nsed -n '1,28p;3060,3190p' server/test/acceptance/twoLinePin.js\nrg -n 'writeFile|mkdir|git|dotenv|env\\\\b|exec(Sync|FileSync)|spawn' server/lib/commitScope.test.js server/lib/deployBoundary.test.js server/scripts/commitGuard.js server/lib/doLines.test.js\"",
+          "/bin/zsh -lc \"rg -n -A 5 -B 5 'farmed_salmon_contaminants|salmon_color_added|seafood_antibiotics|smoked_salmon|label_wild_vs_farm_raised' docs/CONCERN-REGISTER.md docs/CONCERN-COVERAGE.md\ncat docs/sources/concerns/produce_seafood/INDEX.md\nsed -n '1,12p;133,177p' docs/sources/concerns/produce_seafood/nbc-farmed-salmon-contaminated.md\nsed -n '1,65p' docs/sources/concerns/produce_seafood/qz-farmed-salmon-color-added.md\nsed -n '1,5p;530,570p' docs/sources/concerns/produce_seafood/seafoodwatch-chile-farmed-salmon.md\"",
+          "/bin/zsh -lc \"sed -n '1090,1112p;1765,1786p' server/test/acceptance/twoLinePin.js\nrg -n -A 12 -B 6 '\\\"id\\\": \\\"(salmon_wild_vs_farmed|smoked_salmon|label_wild_vs_farm_raised)\\\"' server/kristy_perimeter_kb.json\nsed -n '1,108p' server/lib/commitScope.test.js\nrg -n '\"'^## |''^### |R[234]|READ_'\"' VOICE_SPEC.md\"",
+          "/bin/zsh -lc \"sed -n '1,10p;137,158p' docs/sources/concerns/produce_seafood/nbc-farmed-salmon-contaminated.md\nsed -n '1,43p' docs/sources/concerns/produce_seafood/qz-farmed-salmon-color-added.md\ncat docs/sources/concerns/produce_seafood/INDEX.md\"",
+          "/bin/zsh -lc \"python3 <<'PY'\nimport json\nfrom pathlib import Path\n\nkb_path = Path('server/kristy_perimeter_kb.json')\npin_path = Path('server/test/acceptance/twoLinePin.js')\nkb_text = kb_path.read_text()\npin_text = pin_path.read_text()\nkb = json.loads(kb_text)\nquartz = {\n    'name': 'Quartz: Here is why your farmed salmon has color added to it',\n    'url': 'https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it',\n}\nadditions = {\n    'salmon_wild_vs_farmed': {\n        'buying_tips': [\n            'A 2004 Science study tested 14 contaminants, including PCBs and dioxins. All 14 were higher in farmed salmon than wild. The levels were well below FDA tolerance levels for bought fish.',\n            'Choose wild Alaskan salmon, fresh or frozen, first. Canned wild salmon comes next. For farmed salmon, read the country of origin.',\n        ],\n        'watch_out': [\n            'A 2004 Science study found all 14 contaminants higher in farmed salmon than wild. Levels were well below FDA tolerance levels for bought fish.',\n            'Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use.',\n        ],\n        'sources': [\n            {'name': 'WebMD via NBC News: Do risks of farmed salmon outweigh benefits?', 'url': 'https://www.nbcnews.com/id/wbna3980525'},\n            {'name': 'Monterey Bay Aquarium: Farmed salmon in Chile', 'url': 'https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile'},\n        ],\n    },\n    'smoked_salmon': {\n        'buying_tips': [\n            'Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink.',\n            'Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.',\n        ],\n        'watch_out': ['‘Color added’ means the feed was pigmented.'],\n        'sources': [quartz],\n    },\n    'label_wild_vs_farm_raised': {\n        'buying_tips': [\n            'On farm-raised salmon, ‘color added’ means the feed was pigmented. Farmed flesh is gray until astaxanthin in the feed sets the pink. Wild salmon get their color from krill and shrimp.',\n            'For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin.',\n        ],\n        'watch_out': ['Color added means the feed was pigmented. It does not mean the fish was colored after harvest.'],\n        'sources': [quartz],\n    },\n}\n\ndef render(value, indent):\n    return '\\\\n'.join(' ' * indent + line for line in json.dumps(value, ensure_ascii=False, indent=2).splitlines())\n\nfor card_id, fields in additions.items():\n    entry = next(e for e in kb['entries'] if e['id'] == card_id)\n    old_entry = render(entry, 4)\n    old_pin = '  ' + json.dumps(card_id) + ': ' + render({key: entry[key] for key in ['decision', 'buying_tips']}, 2).lstrip()\n    assert kb_text.count(old_entry) == 1, card_id\n    assert pin_text.count(old_pin) == 1, card_id\n    for field, values in fields.items():\n        entry[field].extend(values)\n    new_pin = '  ' + json.dumps(card_id) + ': ' + render({key: entry[key] for key in ['decision', 'buying_tips', 'watch_out', 'sources']}, 2).lstrip()\n    kb_text = kb_text.replace(old_entry, render(entry, 4), 1)\n    pin_text = pin_text.replace(old_pin, new_pin, 1)\n\nconcern_start = pin_text.index('const CONCERN = new Set([')\nconcern_end = pin_text.index(']);', concern_start)\npin_text = pin_text[:concern_end] + \\\", 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised'\\\" + pin_text[concern_end:]\nkb_path.write_text(kb_text)\npin_path.write_text(pin_text)\nprint('Updated three cards, their inline pins, and CONCERN membership.')\nPY\"",
+          "/bin/zsh -lc 'git diff --check && git diff --stat && git diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js server/test/acceptance/k16.test.js'",
+          "/bin/zsh -lc 'node --test server/test/acceptance/concernSalmon.test.js'",
+          "/bin/zsh -lc 'node scripts/buildDoLines.js && node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"python3 <<'PY'\nimport subprocess\nimport sys\nresult = subprocess.run(['npm', 'test'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)\nlines = result.stdout.splitlines()\nprint('\\\\n'.join(line for line in lines if line.startswith(('> ', 'ℹ ', '✖ '))))\nmarker = next((i for i, line in enumerate(lines) if 'failing tests:' in line), None)\nif marker is not None:\n    print('\\\\n'.join(lines[marker:]))\nelif result.returncode:\n    print('\\\\n'.join(lines[-100:]))\nprint(f'npm test exit code: {result.returncode}')\nsys.exit(result.returncode)\nPY\"",
+          "/bin/zsh -lc 'git diff --exit-code -- docs/do-lines-review.md server/lib/doLines.json && git diff --check'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst read = (path) => readFileSync(path, 'utf8');\nconst kb = JSON.parse(read('server/kristy_perimeter_kb.json'));\nconst before = JSON.parse(execFileSync('git', ['show', 'HEAD:server/kristy_perimeter_kb.json'], { maxBuffer: 64 << 20 }));\nconst additions = new Map([\n  ['salmon_wild_vs_farmed', { buying_tips: 2, watch_out: 2, sources: 2 }],\n  ['smoked_salmon', { buying_tips: 2, watch_out: 1, sources: 1 }],\n  ['label_wild_vs_farm_raised', { buying_tips: 2, watch_out: 1, sources: 1 }],\n]);\nlet longest = 0;\nfor (const entry of kb.entries) {\n  const old = before.entries.find(e => e.id === entry.id);\n  const fields = additions.get(entry.id);\n  if (\"'!fields) {\n    assert.deepEqual(entry, old, `${entry.id} changed outside this batch`);\n    continue;\n  }\n  const restored = structuredClone(entry);\n  for (const [field, count] of Object.entries(fields)) {\n    assert.equal(entry[field].length, old[field].length + count, `${entry.id}.${field} append count`);\n    assert.deepEqual(entry[field].slice(0, old[field].length), old[field], `${entry.id}.${field} prefix`);\n    restored[field] = old[field];\n    if (field !== '\"'sources') {\n      for (const line of entry[field].slice(old[field].length)) {\n        for (const sentence of line.split(/(?<=[.\"'!?])'\"\\\\s+/)) longest = Math.max(longest, sentence.split(/\\\\s+/).length);\n      }\n    }\n  }\n  assert.deepEqual(restored, old, \"'`${entry.id} frozen fields`);\n}\nassert.deepEqual({ ...kb, entries: before.entries }, before);\nfor (const [archive, url] of [\n  ['\"'nbc-farmed-salmon-contaminated.md', 'https://www.nbcnews.com/id/wbna3980525'],\n  ['qz-farmed-salmon-color-added.md', 'https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it'],\n  ['seafoodwatch-chile-farmed-salmon.md', 'https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile'],\n]) assert.equal(read(\"'`docs/sources/concerns/produce_seafood/${archive}`).split('\"'\\\\n')[0], \"'`url: ${url}`);\nassert.ok(kb.entries.find(e => e.id === '\"'smoked_salmon').watch_out.some(s => /color added/i.test(s)));\nassert.ok(kb.entries.find(e => e.id === 'label_wild_vs_farm_raised').watch_out.some(s => /does not mean the fish was colored after harvest/i.test(s)));\nconsole.log(\"'`Only the specified arrays on the three cards changed; exact append counts and original prefixes verified. Longest added sentence: ${longest} words. All three source URLs match archive line 1. Both label explanations verified.`);\nNODE'",
+          "/bin/zsh -lc 'git diff --check && git status --short && git diff --numstat'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-salmon-20261019164316-ejh8x4:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/events-1.jsonl",
+      "usage": {
+        "input": 973867,
+        "cached": 813696,
+        "output": 8084,
+        "reasoning": 2416
+      },
+      "tokens": 981951,
+      "mem_free_mb": 1164,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a154a2-79c6-7883-880b-364dfdafd17d",
+        "usage": {
+          "input": 973867,
+          "cached": 813696,
+          "output": 8084,
+          "reasoning": 2416
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k16.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C1 passed.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Assumptions: retained the review-approved 'colored after harvest' wording. NOTE: concernSalmon.test.js:62 requires 'dyed', while C6 at line 103 bans it. No compliant implementation change within owns can satisfy both. Per Builder Contract §2, preserved the spec and left the unowned test unchanged. The test owner must reconcile this assertion; verify remains failing. No additional edits in round 1.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C3 passed against baseline 262bc45. Existing content and farmed_fish_by_species remain unchanged.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C4 passed. Longest added sentence: 14 words. Two-line check: 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C5 passed. Sources, pins and prescribed k16 adjustment are complete. Do-lines rebuild produced no diff.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C6 passed. Assumptions: preserved the mandatory NBC source title; wording bans apply to added prose. Previous full suite: 2769 passed, only the conflicting C2 assertion failed. Round 1 git diff --check passed.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '54,65p;102,119p' server/test/acceptance/concernSalmon.test.js\nnode --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst card = kb.entries.find(e => e.id === 'label_wild_vs_farm_raised');\nconsole.log(JSON.stringify({buying_tips: card.buying_tips.slice(-2), watch_out: card.watch_out.slice(-1)}, null, 2));\nNODE\"",
+          "/bin/zsh -lc 'git diff --check && git diff --stat && git status --short'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-salmon-20261019164316-ejh8x4:2",
+      "round": 2,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/events-2.jsonl",
+      "usage": {
+        "input": 1062569,
+        "cached": 901120,
+        "output": 8809,
+        "reasoning": 2702
+      },
+      "tokens": 1071378,
+      "mem_free_mb": 806,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a154a2-79c6-7883-880b-364dfdafd17d",
+        "usage": {
+          "input": 1062569,
+          "cached": 901120,
+          "output": 8809,
+          "reasoning": 2702
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/k16.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C1 passes.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Assumptions: followed the explicit review resolution, using 'colored after harvest'. NOTE: verify cannot pass under the unchanged contract: concernSalmon.test.js:62 requires 'dyed', while its C6 assertion forbids that word. The test is outside owns. Builder Contract §2 requires preserving the specification and reporting this conflict as done. The test owner must correct the contradictory assertion. No additional edits in round 2.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C3 passes against the specified historical baseline 262bc45. Protected content and farmed_fish_by_species remain unchanged.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C4 passes. Longest added sentence: 14 words. Two-line verification passed: 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C5 passes. Archived sources, inline pins, CONCERN membership and the prescribed k16 adjustment are complete. Do-lines rebuild produced no diff.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C6 passes. Assumptions: the prose ban excludes mandatory source titles. Full-suite verification previously recorded 2769 passes and only the conflicting C2 failure; latest dv results confirm the same acceptance conflict.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [],
+        "errors": [],
+        "unknownTypes": [],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 2860686,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 167,
+    "key": "b43e60bdf297cfd3d79411e525f540f541e7ff2ae357678aabf4b83cff7abfcc",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:concern-salmon-20261019164316-ejh8x4:0",
+  "mem_free_mb": 806,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 124,
+      "tail": "    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: C3 earlier lines stay and farmed_fish_by_species is untouched\nok 3 - C3 earlier lines stay and farmed_fish_by_species is untouched\n  ---\n  duration_ms: 0.556583\n  type: 'test'\n  ...\n# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon\nok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon\n  ---\n  duration_ms: 0.371958\n  type: 'test'\n  ...\n# Subtest: C5 sources come from the concern archive and nothing is dropped\nok 5 - C5 sources come from the concern archive and nothing is dropped\n  ---\n  duration_ms: 0.212875\n  type: 'test'\n  ...\n# Subtest: C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\nok 6 - C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\n  ---\n  duration_ms: 0.963666\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 5\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.3895",
+      "failures": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 179,
+      "tail": "    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: C3 earlier lines stay and farmed_fish_by_species is untouched\nok 3 - C3 earlier lines stay and farmed_fish_by_species is untouched\n  ---\n  duration_ms: 0.546166\n  type: 'test'\n  ...\n# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon\nok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon\n  ---\n  duration_ms: 0.376083\n  type: 'test'\n  ...\n# Subtest: C5 sources come from the concern archive and nothing is dropped\nok 5 - C5 sources come from the concern archive and nothing is dropped\n  ---\n  duration_ms: 0.218834\n  type: 'test'\n  ...\n# Subtest: C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\nok 6 - C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\n  ---\n  duration_ms: 0.989042\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 5\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 132.697833",
+      "failures": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 172,
+      "tail": "    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1397:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:969:18)\n    Test.postRun (node:internal/test_runner/test:1537:19)\n    Test.run (node:internal/test_runner/test:1462:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: C3 earlier lines stay and farmed_fish_by_species is untouched\nok 3 - C3 earlier lines stay and farmed_fish_by_species is untouched\n  ---\n  duration_ms: 0.591958\n  type: 'test'\n  ...\n# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon\nok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon\n  ---\n  duration_ms: 0.390375\n  type: 'test'\n  ...\n# Subtest: C5 sources come from the concern archive and nothing is dropped\nok 5 - C5 sources come from the concern archive and nothing is dropped\n  ---\n  duration_ms: 0.227833\n  type: 'test'\n  ...\n# Subtest: C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\nok 6 - C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds\n  ---\n  duration_ms: 1.018458\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 5\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 121.342333",
+      "failures": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/concern-salmon-20261019164316-ejh8x4/verify-2/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 2,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C2 smoked salmon and the label card name color added and the wild-first ladder",
+          "test_path": "server/test/acceptance/concernSalmon.test.js",
+          "first_error": "label card: not dyed after harvest"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-19T14:52:29.976Z",
+  "readiness": "NOT READY"
+}

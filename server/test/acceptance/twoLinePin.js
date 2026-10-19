@@ -17,7 +17,30 @@ export const TWO_LINE = {
       "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
       "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
       "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
-      "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade."
+      "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade.",
+      "A 2004 Science study tested 14 contaminants, including PCBs and dioxins. All 14 were higher in farmed salmon than wild. The levels were well below FDA tolerance levels for bought fish.",
+      "Choose wild Alaskan salmon, fresh or frozen, first. Canned wild salmon comes next. For farmed salmon, read the country of origin."
+    ],
+    "watch_out": [
+      "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
+      "Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best.",
+      "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish.",
+      "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them.",
+      "A 2004 Science study found all 14 contaminants higher in farmed salmon than wild. Levels were well below FDA tolerance levels for bought fish.",
+      "Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use."
+    ],
+    "sources": [
+      "NOAA Fisheries / Seafood Watch",
+      "USDA FoodData Central (fatty-acid composition)",
+      "Alaska Sea Grant, University of Alaska Fairbanks “Aquaculture” https://alaskaseagrant.org/our-work/aquaculture/ (Alaska law limits aquatic farming to shellfish and seaweeds; salmon ranching by nonprofit hatcheries supplements, not replaces, wild stocks)",
+      {
+        "name": "WebMD via NBC News: Do risks of farmed salmon outweigh benefits?",
+        "url": "https://www.nbcnews.com/id/wbna3980525"
+      },
+      {
+        "name": "Monterey Bay Aquarium: Farmed salmon in Chile",
+        "url": "https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile"
+      }
     ]
   },
   "shrimp_imported_vs_domestic": {
@@ -1098,7 +1121,24 @@ export const TWO_LINE = {
       "Origin can mean where it was processed, not where it was caught. Ask if it matters.",
       "Cooked and breaded seafood falls outside the labeling rule.",
       "Skin-on and whole fish are far harder to substitute than a bare fillet.",
-      "A staffed counter can usually answer the origin question directly."
+      "A staffed counter can usually answer the origin question directly.",
+      "On farm-raised salmon, ‘color added’ means the feed was pigmented. Farmed flesh is gray until astaxanthin in the feed sets the pink. Wild salmon get their color from krill and shrimp.",
+      "For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin."
+    ],
+    "watch_out": [
+      "Origin can name where it was processed, not where it was caught.",
+      "Cooked and breaded seafood falls outside the labeling rule entirely.",
+      "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line.",
+      "Color added means the feed was pigmented. It does not mean the fish was colored after harvest."
+    ],
+    "sources": [
+      "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
+      "FDA Seafood List (acceptable market names)",
+      "Peer-reviewed and government studies of seafood species substitution",
+      {
+        "name": "Quartz: Here is why your farmed salmon has color added to it",
+        "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+      }
     ]
   },
   "label_serving_size": {
@@ -1773,7 +1813,23 @@ export const TWO_LINE = {
       "Read the label for nova, lox or kippered.",
       "Pick it from a refrigerated case.",
       "Put it in the fridge soon after buying.",
-      "Choose canned or jarred smoked fish to keep on the shelf."
+      "Choose canned or jarred smoked fish to keep on the shelf.",
+      "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink.",
+      "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin."
+    ],
+    "watch_out": [
+      "Cold smoking and refrigeration do not kill Listeria.",
+      "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish.",
+      "‘Color added’ means the feed was pigmented."
+    ],
+    "sources": [
+      "https://www.cdc.gov/listeria/causes/meat-fish.html",
+      "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+      "https://extension.umaine.edu/publications/3110e/",
+      {
+        "name": "Quartz: Here is why your farmed salmon has color added to it",
+        "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+      }
     ]
   },
   "seafood_counter": {
@@ -3116,7 +3172,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Historical pass rules freeze sources and label definitions. Restore labels only when
 // TWO_LINE pins their current copy, leaving live fronts available to source checks.

@@ -52,7 +52,7 @@ State before this batch (HEAD `262bc45`; these must not change):
 - Readability lint binds new `buying_tips`/`watch_out` strings (`counterCardLint.js` READ_*): every sentence at most 20 words, and no sentence with more than one semicolon (the dry run failed on a 24-word, a 22-word two-semicolon and a 21-word sentence). Write short sentences; use full stops, not semicolon chains.
 - `salmon_wild_vs_farmed`: APPEND to `buying_tips` two tips (contaminants; ladder) and to `watch_out` two lines (the comparison/FDA-tolerance line; the Chile line). Add source objects `{"name": "WebMD via NBC News: Do risks of farmed salmon outweigh benefits?", "url": "https://www.nbcnews.com/id/wbna3980525"}` and `{"name": "Monterey Bay Aquarium: Farmed salmon in Chile", "url": "<the Seafood Watch URL above>"}` after the existing sources.
 - `smoked_salmon`: APPEND to `buying_tips` two tips (wild color from krill and shrimp, farmed gray until astaxanthin sets the pink; ladder) and to `watch_out` one line (a "color added" line means the feed was pigmented). Add the Quartz source object `{"name": "Quartz: Here is why your farmed salmon has color added to it", "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"}`.
-- `label_wild_vs_farm_raised`: APPEND to `buying_tips` two tips (color-added line on farm-raised salmon; salmon ladder) and to `watch_out` one line (color added means the feed was pigmented, not that the fish was dyed after harvest). Add the same Quartz source object.
+- `label_wild_vs_farm_raised`: APPEND to `buying_tips` two tips (color-added line on farm-raised salmon; salmon ladder) and to `watch_out` one line (color added means the feed was pigmented, not that color went onto the fish after harvest). Add the same Quartz source object.
 - Must keep: every existing `buying_tips` and `watch_out` string on all three cards verbatim and in order (tip 0 unchanged); `decision`, `cart_pick`, `tier_note`, `why`, `short_answer`, `detail`, `science`, `labels_decoded`, `pick_steps`, `kristy_take`, `instead`, `aliases`, `asked_as` unchanged; `farmed_fish_by_species` deep-equal. Existing sources stay.
 - Claim lock / no-treatment: food never causes, prevents or treats anything; no disease language; zero first person; no em-dash asides; no price; no named brand or producer; no calorie talk.
 - Two-line rule: `scripts/twoLineCheck.js` must pass (the dry run: no change to `decision`/tip 0 keeps it at 181 checked, 0 violations).
@@ -64,7 +64,7 @@ State before this batch (HEAD `262bc45`; these must not change):
 
 ## Criteria
 - C1 [test] `salmon_wild_vs_farmed` names the contaminants finding (PCBs, dioxins, all 14 higher in farmed than wild, "2004"), the FDA-tolerance counterweight, the Chile antibiotic rating (Seafood Watch, red) and the ladder (wild Alaskan, canned wild, farmed with country of origin).
-- C2 [test] `smoked_salmon` and `label_wild_vs_farm_raised` name color added (astaxanthin / feed pigmented, krill and shrimp for wild) and the wild-first ladder with the country of origin; the label card says the fish is not dyed after harvest.
+- C2 [test] `smoked_salmon` and `label_wild_vs_farm_raised` name color added (astaxanthin / feed pigmented, krill and shrimp for wild) and the wild-first ladder with the country of origin; the label card says the color came through the feed, not onto the fish after harvest.
 - C3 [test] The must-keep lines survive: every pre-batch `buying_tips` and `watch_out` string is on its card in order; frozen fields unchanged on all three; `farmed_fish_by_species` deep-equal.
 - C4 [test] The batch's new tips and watch_outs satisfy readability: each sentence at most 20 words, at most one semicolon.
 - C5 [test] Sources: the three cards between them cite the NBC, Seafood Watch and Quartz URLs, each is a line-1 `url:` of a concern archive file, no existing source is dropped, every URL on a card is one it carried before or is in the archive.
@@ -149,7 +149,7 @@ test('C2 smoked salmon and the label card name color added and the wild-first la
     assert.match(t, /feed was pigmented|feed sets the pink/i, `${id} feed pigment`);
     assert.match(t, /wild[^.]*(first|salmon)\.[^.]*farm[^.]*country of origin/i, `${id} ladder`);
   }
-  assert.match(text(card(LABEL)), /not that the fish was dyed after harvest/i, 'label card: not dyed after harvest');
+  assert.match(text(card(LABEL)), /feed was pigmented\.? .{0,30}\bnot\b[^.]*after harvest/i, 'label card: feed pigmented, not colored after harvest');
   assert.ok((card(SMOKED).watch_out || []).some((s) => /color added/i.test(s)), 'smoked watch_out names the label line');
 });
 

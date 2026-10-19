@@ -38,7 +38,15 @@
       "sources": [
         "NOAA Fisheries / Seafood Watch",
         "USDA FoodData Central (fatty-acid composition)",
-        "Alaska Sea Grant, University of Alaska Fairbanks “Aquaculture” https://alaskaseagrant.org/our-work/aquaculture/ (Alaska law limits aquatic farming to shellfish and seaweeds; salmon ranching by nonprofit hatcheries supplements, not replaces, wild stocks)"
+        "Alaska Sea Grant, University of Alaska Fairbanks “Aquaculture” https://alaskaseagrant.org/our-work/aquaculture/ (Alaska law limits aquatic farming to shellfish and seaweeds; salmon ranching by nonprofit hatcheries supplements, not replaces, wild stocks)",
+        {
+          "name": "WebMD via NBC News: Do risks of farmed salmon outweigh benefits?",
+          "url": "https://www.nbcnews.com/id/wbna3980525"
+        },
+        {
+          "name": "Monterey Bay Aquarium: Farmed salmon in Chile",
+          "url": "https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile"
+        }
       ],
       "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
       "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
@@ -47,13 +55,17 @@
         "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
         "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
         "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
-        "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade."
+        "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade.",
+        "A 2004 Science study tested 14 contaminants, including PCBs and dioxins. All 14 were higher in farmed salmon than wild. The levels were well below FDA tolerance levels for bought fish.",
+        "Choose wild Alaskan salmon, fresh or frozen, first. Canned wild salmon comes next. For farmed salmon, read the country of origin."
       ],
       "watch_out": [
         "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
         "Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best.",
         "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish.",
-        "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them."
+        "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them.",
+        "A 2004 Science study found all 14 contaminants higher in farmed salmon than wild. Levels were well below FDA tolerance levels for bought fish.",
+        "Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use."
       ],
       "pick_steps": [
         "Read the species: Atlantic is farmed; sockeye and coho are almost always wild.",
@@ -4733,7 +4745,11 @@
       "sources": [
         "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
         "FDA Seafood List (acceptable market names)",
-        "Peer-reviewed and government studies of seafood species substitution"
+        "Peer-reviewed and government studies of seafood species substitution",
+        {
+          "name": "Quartz: Here is why your farmed salmon has color added to it",
+          "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+        }
       ],
       "kristy_take": "Species, method, country. Then buy it skin-on, because the species name is the one that gets swapped.",
       "buying_tips": [
@@ -4742,7 +4758,9 @@
         "Origin can mean where it was processed, not where it was caught. Ask if it matters.",
         "Cooked and breaded seafood falls outside the labeling rule.",
         "Skin-on and whole fish are far harder to substitute than a bare fillet.",
-        "A staffed counter can usually answer the origin question directly."
+        "A staffed counter can usually answer the origin question directly.",
+        "On farm-raised salmon, ‘color added’ means the feed was pigmented. Farmed flesh is gray until astaxanthin in the feed sets the pink. Wild salmon get their color from krill and shrimp.",
+        "For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin."
       ],
       "labels_decoded": [
         {
@@ -4761,7 +4779,8 @@
       "watch_out": [
         "Origin can name where it was processed, not where it was caught.",
         "Cooked and breaded seafood falls outside the labeling rule entirely.",
-        "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
+        "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line.",
+        "Color added means the feed was pigmented. It does not mean the fish was colored after harvest."
       ],
       "pick_steps": [
         "Find all three: species, wild or farm-raised, and country of origin.",
@@ -8420,7 +8439,11 @@
       "sources": [
         "https://www.cdc.gov/listeria/causes/meat-fish.html",
         "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
-        "https://extension.umaine.edu/publications/3110e/"
+        "https://extension.umaine.edu/publications/3110e/",
+        {
+          "name": "Quartz: Here is why your farmed salmon has color added to it",
+          "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+        }
       ],
       "kristy_take": "The label word tells the kind. Refrigerated smoked fish stays cold all the way home.",
       "cart_pick": "Refrigerated smoked salmon from a cold case",
@@ -8429,11 +8452,14 @@
         "Read the label for nova, lox or kippered.",
         "Pick it from a refrigerated case.",
         "Put it in the fridge soon after buying.",
-        "Choose canned or jarred smoked fish to keep on the shelf."
+        "Choose canned or jarred smoked fish to keep on the shelf.",
+        "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink.",
+        "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin."
       ],
       "watch_out": [
         "Cold smoking and refrigeration do not kill Listeria.",
-        "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish."
+        "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish.",
+        "‘Color added’ means the feed was pigmented."
       ],
       "pick_steps": [
         "Read the label word: nova, lox or kippered means refrigerated cold-smoked.",

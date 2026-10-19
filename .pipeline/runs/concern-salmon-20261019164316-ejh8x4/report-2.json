@@ -1,0 +1,42 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/k16.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance C1 passes."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Assumptions: followed the explicit review resolution, using 'colored after harvest'. NOTE: verify cannot pass under the unchanged contract: concernSalmon.test.js:62 requires 'dyed', while its C6 assertion forbids that word. The test is outside owns. Builder Contract §2 requires preserving the specification and reporting this conflict as done. The test owner must correct the contradictory assertion. No additional edits in round 2."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance C3 passes against the specified historical baseline 262bc45. Protected content and farmed_fish_by_species remain unchanged."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance C4 passes. Longest added sentence: 14 words. Two-line verification passed: 181 checked, zero violations."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance C5 passes. Archived sources, inline pins, CONCERN membership and the prescribed k16 adjustment are complete. Do-lines rebuild produced no diff."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance C6 passes. Assumptions: the prose ban excludes mandatory source titles. Full-suite verification previously recorded 2769 passes and only the conflicting C2 failure; latest dv results confirm the same acceptance conflict."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

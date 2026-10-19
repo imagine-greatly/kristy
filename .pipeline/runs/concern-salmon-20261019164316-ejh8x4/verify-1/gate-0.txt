@@ -1,0 +1,92 @@
+TAP version 13
+# Subtest: C1 the salmon card names the contaminants finding, its counterweight, Chile and the ladder
+ok 1 - C1 the salmon card names the contaminants finding, its counterweight, Chile and the ladder
+  ---
+  duration_ms: 0.912208
+  type: 'test'
+  ...
+# Subtest: C2 smoked salmon and the label card name color added and the wild-first ladder
+not ok 2 - C2 smoked salmon and the label card name color added and the wild-first ladder
+  ---
+  duration_ms: 0.70775
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:54:1'
+  failureType: 'testCodeFailure'
+  error: 'label card: not dyed after harvest'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Seafood labels: wild, farm-raised, origin 
+     What has to be on a seafood label? 
+     Whole or skin-on fish labeled with species, method and country. 
+     All three are required on unprocessed seafood. Origin can mean where it was processed. 
+     Most unprocessed fish and shellfish at retail must show the species, wild-caught or farm-raised, and the country of origin. Federal country-of-origin labeling requires it. The catch: origin can mean where it was processed, not where it was caught. 
+     Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses. Country-of-origin labeling is one of the few places a store must tell you where food came from. 
+     established 
+     Species, method, country. Then buy it skin-on, because the species name is the one that gets swapped. 
+     A bare fillet is far easier to swap for another species than whole or skin-on fish. 
+     Look for all three: species, wild or farm-raised, and country of origin. 
+     Origin can mean where it was processed, not where it was caught. Ask if it matters. 
+     Cooked and breaded seafood falls outside the labeling rule. 
+     Skin-on and whole fish are far harder to substitute than a bare fillet. 
+     A staffed counter can usually answer the origin question directly. 
+     On farm-raised salmon, ‘color added’ means the feed was pigmented. Farmed flesh is gray until astaxanthin in the feed sets the pink. Wild salmon get their color from krill and shrimp. 
+     For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin. 
+     Wild-caught 
+     Caught in the wild. Required on unprocessed retail seafood. 
+     Farm-raised 
+     Aquaculture. Also required, and not a verdict on its own. 
+     Product of [country] 
+     Country of origin. Can reflect processing rather than catch location. 
+     Origin can name where it was processed, not where it was caught. 
+     Cooked and breaded seafood falls outside the labeling rule entirely. 
+     Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line. 
+     Color added means the feed was pigmented. It does not mean the fish was colored after harvest. 
+     Find all three: species, wild or farm-raised, and country of origin. 
+     Choose whole or skin-on; both are far harder to substitute than a bare fillet. 
+     Federal country-of-origin labeling requires most unprocessed fish and shellfish to show species, method and country. Cooked, breaded or otherwise processed seafood falls outside the rule. Country of origin is a real signal within farmed seafood, but wild or farmed is its own required line. Species substitution is a far bigger problem on a bare fillet than on a whole fish. 
+     Species, method and country are required disclosures, and substitution on a bare fillet is documented, which is why the skin stays on.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:62:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and farmed_fish_by_species is untouched
+ok 3 - C3 earlier lines stay and farmed_fish_by_species is untouched
+  ---
+  duration_ms: 0.546166
+  type: 'test'
+  ...
+# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+ok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+  ---
+  duration_ms: 0.376083
+  type: 'test'
+  ...
+# Subtest: C5 sources come from the concern archive and nothing is dropped
+ok 5 - C5 sources come from the concern archive and nothing is dropped
+  ---
+  duration_ms: 0.218834
+  type: 'test'
+  ...
+# Subtest: C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds
+ok 6 - C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds
+  ---
+  duration_ms: 0.989042
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 132.697833

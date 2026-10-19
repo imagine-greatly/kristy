@@ -1,0 +1,167 @@
+TAP version 13
+# Subtest: C1 the salmon card names the contaminants finding, its counterweight, Chile and the ladder
+not ok 1 - C1 the salmon card names the contaminants finding, its counterweight, Chile and the ladder
+  ---
+  duration_ms: 1.005
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:41:1'
+  failureType: 'testCodeFailure'
+  error: 'dated study'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil. 
+     Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit. 
+     Sockeye and coho are almost always wild, and their color is deep because of diet, not dye. 
+     ‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:45:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 smoked salmon and the label card name color added and the wild-first ladder
+not ok 2 - C2 smoked salmon and the label card name color added and the wild-first ladder
+  ---
+  duration_ms: 0.254291
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:54:1'
+  failureType: 'testCodeFailure'
+  error: 'smoked_salmon color added'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Smoked salmon 
+     How do you pick smoked salmon? 
+     Nova or lox smoked salmon, bought cold and kept cold. 
+     Nova, lox and kippered mean refrigerated cold-smoked fish. Shelf-stable smoked fish is heat-treated and sealed instead. 
+     Read the label word. Nova-style, lox, kippered and smoked mean refrigerated cold-smoked fish. Keep it cold from the case to the fridge. Shelf-stable smoked fish comes heat-treated in a sealed can, tin or jar. 
+     Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually labeled nova-style, lox, kippered, smoked or jerky. These are cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. The cold-smoking process does not kill it, and refrigeration does not either. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Store refrigerated seafood in the coldest part of the fridge, at or below 40°F. 
+     established 
+     The label word tells the kind. Refrigerated smoked fish stays cold all the way home. 
+     Refrigerated smoked salmon from a cold case 
+     Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold. 
+     Read the label for nova, lox or kippered. 
+     Pick it from a refrigerated case. 
+     Put it in the fridge soon after buying. 
+     Choose canned or jarred smoked fish to keep on the shelf. 
+     Cold smoking and refrigeration do not kill Listeria. 
+     Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish. 
+     Read the label word: nova, lox or kippered means refrigerated cold-smoked. 
+     Take it from a refrigerated case; refrigerate it soon after buying. 
+     For the shelf, choose canned or jarred smoked fish, heat-treated and sealed. 
+     Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. Cold smoking and refrigeration do not kill Listeria. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish. 
+     Nova-style 
+     Refrigerated cold-smoked fish. 
+     Lox 
+     Refrigerated cold-smoked fish. 
+     Kippered 
+     Refrigerated smoked fish, on the same label list as lox. 
+     Shelf-stable 
+     Heat-treated and sealed, with no refrigeration needed before opening. 
+     The label words come from FDA and CDC guidance on smoked fish.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:57:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and farmed_fish_by_species is untouched
+not ok 3 - C3 earlier lines stay and farmed_fish_by_species is untouched
+  ---
+  duration_ms: 0.454667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:66:1'
+  failureType: 'testCodeFailure'
+  error: 'salmon_wild_vs_farmed.buying_tips gained nothing'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:72:14)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+not ok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+  ---
+  duration_ms: 0.194167
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:80:1'
+  failureType: 'testCodeFailure'
+  error: 'added lines has 0 members (need 9+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:81:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 sources come from the concern archive and nothing is dropped
+not ok 5 - C5 sources come from the concern archive and nothing is dropped
+  ---
+  duration_ms: 0.231958
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:90:1'
+  failureType: 'testCodeFailure'
+  error: 'salmon_wild_vs_farmed does not cite https://www.nbcnews.com/id/wbna3980525'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:96:38)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds
+not ok 6 - C6 no illness claims, first person, em dash, price, calorie talk or producer name in what the batch adds
+  ---
+  duration_ms: 0.151
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:102:1'
+  failureType: 'testCodeFailure'
+  error: 'cards with added text has 0 members (need 3+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernSalmon.test.js:105:3)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 0
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 123.898542

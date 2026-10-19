@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { beforeConcern } from './twoLinePin.js';
 import { readability, lintCard, lintPick } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
@@ -98,7 +99,7 @@ test('C5 every cited URL hits line 1 of a docs/sources/k16 file', () => {
   const dir = join(ROOT, 'docs/sources/k16');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k16 archive', 30);
   for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (byId(id)?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K16 URLs', 16);
+  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K16 URLs', 16);
   for (const u of urls) { if (FOLDED_IN.has(u)) continue; assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k16 source`); }
 });
 
