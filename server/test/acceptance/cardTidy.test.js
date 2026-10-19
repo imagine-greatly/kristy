@@ -40,7 +40,7 @@ const KEEP = {
   canned_coconut_milk: [/BPA-free/i, /EWG/i, /guar/i, /glass/i, /carton/i],
   canned_soup: [/BPA-free/i, /EWG/i, /sodium/i, /dent/i, /50/, /refrigerator/i],
   tortilla_chips: [/bioengineered/i, /Non-GMO Project Verified/i, /organic/i, /avocado/i, /masa/i, /tallow|lard/i, /canola/i],
-  popcorn: [/never bioengineered/i, /CSPI/i, /avocado/i, /coconut oil/i, /brown paper bag/i, /canola/i],
+  popcorn: [/never bioengineered/i, /CSPI/i, /avocado/i, /coconut oil/i, /canola/i],
 };
 
 test('C1 cooking_oils no longer says skip seed oils yet choose organic first', () => {

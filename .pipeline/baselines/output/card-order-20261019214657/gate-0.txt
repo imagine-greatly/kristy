@@ -1,0 +1,209 @@
+TAP version 13
+# Subtest: C1 buying_tips of the 17 cards are exactly the final arrays, in order
+not ok 1 - C1 buying_tips of the 17 cards are exactly the final arrays, in order
+  ---
+  duration_ms: 1.5495
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:192:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    salmon_wild_vs_farmed: buying_tips
+    + actual - expected
+    
+      [
+        'Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.',
+    +   'Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.',
+        'Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.',
+        'A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.',
+        'Canned wild salmon comes next; for farmed salmon, read the country of origin.',
+    -   'Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.'
+    1: 'Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.'
+    2: 'A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.'
+    3: 'Canned wild salmon comes next; for farmed salmon, read the country of origin.'
+    4: 'Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.'
+  actual:
+    0: 'Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.'
+    1: 'Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.'
+    2: 'Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.'
+    3: 'A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.'
+    4: 'Canned wild salmon comes next; for farmed salmon, read the country of origin.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:194:32)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 each card reads W then H then S: the why, health and holistic look-fors, then shelf how-to; no H after an S
+not ok 2 - C2 each card reads W then H then S: the why, health and holistic look-fors, then shelf how-to; no H after an S
+  ---
+  duration_ms: 0.3435
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:197:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    salmon_wild_vs_farmed: WSHHH
+    
+    'WSHHH' !== 'WHHHS'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'WHHHS'
+  actual: 'WSHHH'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:200:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 line 2 is a why: unchanged where it already was, never repeats the decision; sugars takes the bioengineered-beets why
+not ok 3 - C3 line 2 is a why: unchanged where it already was, never repeats the decision; sugars takes the bioengineered-beets why
+  ---
+  duration_ms: 0.312667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:206:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    canned_fish_choosing: line 2 changed
+    + actual - expected
+    
+    + '‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name.'
+    - 'The list should read fish, oil or water, salt. Anything longer is a sauce.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'The list should read fish, oil or water, salt. Anything longer is a sauce.'
+  actual: '‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:211:33)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 not-shopping lines (brown sugar closed, brown paper bag, Milk card, can storage, gene definition) are out of buying_tips
+not ok 4 - C4 not-shopping lines (brown sugar closed, brown paper bag, Milk card, can storage, gene definition) are out of buying_tips
+  ---
+  duration_ms: 0.297459
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:217:1'
+  failureType: 'testCodeFailure'
+  error: 'label_nonGMO_vs_organic: "Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains."'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains.'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:219:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 restored look-for: shrimp has the uniform-size tip; soy compare and sugars added-sugars stay out
+not ok 5 - C5 restored look-for: shrimp has the uniform-size tip; soy compare and sugars added-sugars stay out
+  ---
+  duration_ms: 0.152459
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:226:1'
+  failureType: 'testCodeFailure'
+  error: 'shrimp uniform-size tip'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:228:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 caps: 3 to 5 tips, at most 3 watch_out, 20 words a sentence, line 2 at most 90 characters
+ok 6 - C6 caps: 3 to 5 tips, at most 3 watch_out, 20 words a sentence, line 2 at most 90 characters
+  ---
+  duration_ms: 1.685791
+  type: 'test'
+  ...
+# Subtest: C7 claim lock: every number in the new text existed at 8264bd0 or 81b63d5; no banned wording
+ok 7 - C7 claim lock: every number in the new text existed at 8264bd0 or 81b63d5; no banned wording
+  ---
+  duration_ms: 1.335125
+  type: 'test'
+  ...
+# Subtest: C8 concern keepers: whatever a card said at 81b63d5 it still says
+ok 8 - C8 concern keepers: whatever a card said at 81b63d5 it still says
+  ---
+  duration_ms: 3.9795
+  type: 'test'
+  ...
+# Subtest: C9 everything else is byte-identical to 81b63d5: decisions, watch_out outside soy_milk and canned_soup, depth fields, other cards, top level
+not ok 9 - C9 everything else is byte-identical to 81b63d5: decisions, watch_out outside soy_milk and canned_soup, depth fields, other cards, top level
+  ---
+  duration_ms: 0.503209
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardOrder.test.js:267:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    soy_milk: watch_out
+    + actual - expected
+    
+      [
+        'FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.',
+        'Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.',
+    -   'Dairy shoppers can read the Milk card.'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.'
+    1: 'Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.'
+    2: 'Dairy shoppers can read the Milk card.'
+  actual:
+    0: 'FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.'
+    1: 'Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardOrder.test.js:272:49)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C10 decisions unchanged, so doLines.json equals HEAD 81b63d5
+ok 10 - C10 decisions unchanged, so doLines.json equals HEAD 81b63d5
+  ---
+  duration_ms: 10.883041
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 4
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 103.768292

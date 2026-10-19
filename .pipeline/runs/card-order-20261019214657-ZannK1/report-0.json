@@ -1,0 +1,62 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/cardTidy.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All 17 exact arrays and updated pins pass. Assumptions: exact arrays govern descriptive counts; 11 cards only reorder."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "All cards pass the specified W/H/S order."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Line-two wording, baseline preservation, and sugars exception pass."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Specified lines deleted or moved to watch_out; popcorn keeper updated."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Shrimp restoration passes. Assumptions: exact 19-word sentence governs the descriptive 17-word count."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Tip, watch_out, sentence, character, and duplication limits pass."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Claim-lock and prohibited-wording checks pass."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Concern keepers and all 10 card-tidy checks pass."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "Unchanged-field checks pass; only owned files changed. Provisioned acceptance test untouched; no overlay added. Full npm suite: 2821 passed, 0 failed."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "Decisions and do lines unchanged. NOTE: generator ran with writes replaced by byte-equality assertions; all 182 outputs match. twoLineCheck: 181 checked, 0 violations. Commit guard clean; list probe reports no wrong matches."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

@@ -15,10 +15,10 @@ export const TWO_LINE = {
     "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
     "buying_tips": [
       "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
-      "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.",
       "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
       "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.",
-      "Canned wild salmon comes next; for farmed salmon, read the country of origin."
+      "Canned wild salmon comes next; for farmed salmon, read the country of origin.",
+      "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask."
     ],
     "watch_out": [
       "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
@@ -43,10 +43,10 @@ export const TWO_LINE = {
     "decision": "Wild American or Gulf shrimp; read the country of origin.",
     "buying_tips": [
       "Country of origin is printed by law, and wild American traces to a managed fishery.",
-      "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp with more control over cooking.",
-      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
       "Second choice is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council; last is imported shrimp.",
-      "Ask the case if the shrimp is dry. Wet shrimp holds extra water."
+      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
+      "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes.",
+      "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water."
     ],
     "watch_out": [
       "Where wild American is not stocked, check for a BAP or ASC certification. A label alone is not proof; antibiotics showed on four samples carrying one common label.",
@@ -555,10 +555,9 @@ export const TWO_LINE = {
     "decision": "USDA Organic, which already includes non-GMO.",
     "buying_tips": [
       "Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue.",
+      "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure.",
       "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
-      "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure, which does not name the ingredient.",
-      "Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains.",
-      "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure."
+      "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure, which does not name the ingredient."
     ],
     "watch_out": [
       "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered. On oils, sugars and syrups, “derived from bioengineering” is voluntary because processing leaves no modified DNA.",
@@ -831,11 +830,11 @@ export const TWO_LINE = {
   "canned_fish_choosing": {
     "decision": "Fish in olive oil or water, bone-in and skin-on.",
     "buying_tips": [
-      "‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name.",
-      "Bone-in and skin-on sardines and salmon. The bones soften completely.",
       "The list should read fish, oil or water, salt. Anything longer is a sauce.",
+      "Pick a can that says BPA-free; many food cans have an epoxy lining made with BPA. Fresh or frozen fish has no can lining.",
       "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’.",
-      "Pick a can that says BPA-free; many food cans have an epoxy lining made with BPA. Fresh or frozen fish has no can lining."
+      "‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name.",
+      "Bone-in and skin-on sardines and salmon. The bones soften completely."
     ],
     "watch_out": [
       "‘Dolphin-safe’ speaks to dolphins only, and Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device, which draws in juvenile fish, sharks and other bycatch.",
@@ -1151,10 +1150,10 @@ export const TWO_LINE = {
     "decision": "Whole or skin-on fish labeled with species, method and country.",
     "buying_tips": [
       "A bare fillet is far easier to swap for another species than whole or skin-on fish.",
-      "Origin can mean where it was processed, not where it was caught; a staffed counter can usually say.",
-      "Cooked and breaded seafood falls outside the labeling rule.",
+      "For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin.",
       "‘Color added’ on farm-raised salmon means astaxanthin in the feed sets the pink, not a dye after harvest. Wild salmon get their color from krill and shrimp.",
-      "For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin."
+      "Origin can mean where it was processed, not where it was caught; a staffed counter can usually say.",
+      "Cooked and breaded seafood falls outside the labeling rule."
     ],
     "watch_out": [
       "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
@@ -1366,9 +1365,9 @@ export const TWO_LINE = {
     "decision": "Corn tortillas of masa, water and salt.",
     "buying_tips": [
       "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
-      "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
+      "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
       "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
-      "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second."
+      "For a flour tortilla, check the flour and the named fat rather than infer them from the color."
     ],
     "watch_out": [
       "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
@@ -1476,8 +1475,8 @@ export const TWO_LINE = {
     "decision": "Oat milk with few stabilizers, never seed oil.",
     "buying_tips": [
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
-      "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals.",
-      "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it."
+      "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it.",
+      "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
     ],
     "sources": [
       "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML",
@@ -1552,8 +1551,8 @@ export const TWO_LINE = {
     "decision": "Canned light tuna, or a can naming skipjack.",
     "buying_tips": [
       "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
-      "Read the packing medium separately from the light or white designation.",
-      "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining."
+      "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining.",
+      "Read the packing medium separately from the light or white designation."
     ],
     "watch_out": [
       "Light is not one species. Do not assume every light can is skipjack.",
@@ -1851,10 +1850,10 @@ export const TWO_LINE = {
     "decision": "Nova or lox smoked salmon, bought cold and kept cold.",
     "buying_tips": [
       "Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold.",
-      "Pick it from a refrigerated case and put it in the fridge soon after buying.",
-      "Choose canned or jarred smoked fish to keep on the shelf.",
+      "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.",
       "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
-      "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin."
+      "Pick it from a refrigerated case and put it in the fridge soon after buying.",
+      "Choose canned or jarred smoked fish to keep on the shelf."
     ],
     "watch_out": [
       "Cold smoking and refrigeration do not kill Listeria.",
@@ -2138,9 +2137,9 @@ export const TWO_LINE = {
     "buying_tips": [
       "Almond drinks vary in added sugars, so the carton panel is the guide.",
       "Pick unsweetened over sweetened, vanilla or chocolate.",
+      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.",
       "Compare protein, vitamin D, calcium and potassium across cartons.",
-      "Check saturated fat on the panel.",
-      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed."
+      "Check saturated fat on the panel."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Almond_milk",
@@ -2165,10 +2164,9 @@ export const TWO_LINE = {
     ],
     "buying_tips": [
       "Every addition is another ingredient; soybeans and water stays closest to the bean.",
-      "A short-list unsweetened almond milk ranks above soy milk.",
-      "Dairy shoppers can read the Milk card.",
+      "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second.",
       "Carrageenan, a seaweed thickener, appears in some certified organic foods too; choose a soy milk with none listed.",
-      "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second."
+      "A short-list unsweetened almond milk ranks above soy milk."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Soy_milk",
@@ -2192,7 +2190,8 @@ export const TWO_LINE = {
     ],
     "watch_out": [
       "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
-      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
+      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
+      "Dairy shoppers can read the Milk card."
     ]
   },
   "coconut_milk_beverage": {
@@ -2371,11 +2370,9 @@ export const TWO_LINE = {
   "sugars": {
     "decision": "Sugar alone on the list; brown sugar adds molasses.",
     "buying_tips": [
-      "Cane and beet sugar are the same substance, crystallized from the plant’s juice.",
-      "Pick light or dark brown sugar; dark carries more molasses.",
-      "Keep brown sugar closed, since it hardens in open air.",
-      "More than half of granulated sugar sold comes from bioengineered sugar beets. Plain “sugar” names no crop.",
-      "Choose certified organic sugar first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second."
+      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+      "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
+      "Pick light or dark brown sugar; dark carries more molasses."
     ],
     "watch_out": [
       "Coconut sugar is made mostly of sucrose, like other sugar.",
@@ -2408,10 +2405,10 @@ export const TWO_LINE = {
     "decision": "Olive or coconut oil, or tallow for cooking.",
     "buying_tips": [
       "“Vegetable oil” on a label names a category, without any seed or fruit.",
-      "Read the label for the oil’s name first, then refined or unrefined.",
       "Skip sunflower, safflower, canola, soybean, corn and cottonseed oils; the last four come from mostly bioengineered crops.",
       "Skip avocado oil too: the label cannot prove the oil is pure.",
-      "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and choose a list without them."
+      "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and choose a list without them.",
+      "Read the label for the oil’s name first, then refined or unrefined."
     ],
     "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
     "sources": [
@@ -2494,9 +2491,9 @@ export const TWO_LINE = {
     "decision": "Canned coconut milk, read for anything added beyond coconut.",
     "buying_tips": [
       "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
-      "Read the ingredients for guar gum or another gum.",
+      "Pick a can that says BPA-free; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
       "Compare two cans by how much the list holds beyond coconut.",
-      "Pick a can that says BPA-free; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining."
+      "Read the ingredients for guar gum or another gum."
     ],
     "watch_out": [
       "The carton coconut milk drink is a different product, covered on its own card.",
@@ -2607,14 +2604,13 @@ export const TWO_LINE = {
     "decision": "Low-sodium canned soup with a short list, can undented.",
     "buying_tips": [
       "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
-      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf.",
-      "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front.",
-      "Wipe the lid before opening, and move opened soup to a covered container in the refrigerator.",
-      "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining."
+      "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
+      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
     ],
     "watch_out": [
       "“No salt added” is not “sodium free”; the soup can still carry sodium.",
-      "BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it."
+      "BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it.",
+      "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front. Wipe the lid before opening, and move opened soup to a covered container in the refrigerator."
     ],
     "sources": [
       "https://www.law.cornell.edu/cfr/text/21/101.61",
@@ -2723,8 +2719,8 @@ export const TWO_LINE = {
       "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
       "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-      "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
-      "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second."
+      "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.",
+      "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch."
     ],
     "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
     "sources": [
@@ -2801,9 +2797,8 @@ export const TWO_LINE = {
     "decision": "Plain popcorn kernels, popped at home in coconut oil.",
     "buying_tips": [
       "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
-      "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
       "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
-      "Loose kernels pop in a plain brown paper bag in the microwave.",
+      "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
       "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
     ],
     "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
