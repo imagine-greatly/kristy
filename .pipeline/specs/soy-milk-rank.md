@@ -73,7 +73,7 @@ If a different older test fails on the builder's wording, report it (file:line, 
 - C2 [test] The ranking line is on the card: a short-list almond milk ranks above soy milk, and dairy shoppers are pointed to the Milk card.
 - C3 [test] Fortified is no longer the pick but the facts stay: tip 0 is the short-list tip (at most 90 characters, no "fortif"); a new line says fortifying adds ingredients; the pre-batch FDA dairy-group lines are all still on the card.
 - C4 [test] Earlier batches stay: every pre-batch `buying_tips` and `watch_out` string is still present (carrageenan, bioengineered, organic lines), watch_out keeps its order, `sources` and all frozen fields are unchanged, and `coconut_milk_beverage` is byte-identical; `almond_milk` and `oat_milk` differ from the baseline only in `instead`.
-- C4b [test] `almond_milk.instead` and `oat_milk.instead` point to another short-list plant milk (oat on almond, almond on oat), no longer name soy or fortified, stay at most 24 words, and differ from their cart_pick; no card in the KB says "Fortified unsweetened soy milk is the next plant drink".
+- C7 [test] `almond_milk.instead` and `oat_milk.instead` point to another short-list plant milk (oat on almond, almond on oat), no longer name soy or fortified, stay at most 24 words, and differ from their cart_pick; no card in the KB says "Fortified unsweetened soy milk is the next plant drink".
 - C5 [test] Added lines are readable: at most 20 words a sentence, at most one semicolon.
 - C6 [test] No text this batch adds or changes contains testosterone, estrogen, hormone, phyto, male, men's, a causes/prevents/risk/health/toxic/safe word, first person, an em dash, a price or calorie word, or a brand name. The do line mirrors the new headline.
 
@@ -87,7 +87,7 @@ Also (verify, not a criterion): whole suite green; `twoLineCheck` 181 checked, 0
     {"id": "C2", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
     {"id": "C3", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
     {"id": "C4", "impl": ["server/kristy_perimeter_kb.json", "server/test/acceptance/twoLinePin.js", "server/test/acceptance/concernBioengineered.test.js"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
-    {"id": "C4b", "impl": ["server/kristy_perimeter_kb.json", "server/test/acceptance/twoLinePin.js"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
+    {"id": "C7", "impl": ["server/kristy_perimeter_kb.json", "server/test/acceptance/twoLinePin.js"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
     {"id": "C5", "impl": ["server/kristy_perimeter_kb.json"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []},
     {"id": "C6", "impl": ["server/kristy_perimeter_kb.json", "docs/do-lines-review.md", "server/lib/doLines.json"], "tests": ["server/test/acceptance/soyMilkRank.test.js"], "dependents": []}
   ],
@@ -168,7 +168,7 @@ test('C4 earlier batches stay; frozen fields and the sibling plant milks are unt
   for (const id of nonEmpty(['almond_milk', 'oat_milk'], 'sibling plant milks', 2)) assert.deepEqual({ ...card(id), instead: 0 }, { ...was(id), instead: 0 }, `${id} changed beyond instead`);
 });
 
-test('C4b sibling instead lines point to another short-list plant milk', () => {
+test('C7 sibling instead lines point to another short-list plant milk', () => {
   const want = { almond_milk: /oat milk/i, oat_milk: /almond milk/i };
   for (const [id, re] of Object.entries(want)) {
     const { instead, cart_pick } = card(id);
