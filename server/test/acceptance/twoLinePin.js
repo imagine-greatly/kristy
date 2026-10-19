@@ -15,19 +15,15 @@ export const TWO_LINE = {
     "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
     "buying_tips": [
       "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
-      "Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit.",
+      "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask.",
       "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
-      "‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade.",
-      "A 2004 Science study tested 14 contaminants, including PCBs and dioxins. All 14 were higher in farmed salmon than wild. The levels were well below FDA tolerance levels for bought fish.",
-      "Choose wild Alaskan salmon, fresh or frozen, first. Canned wild salmon comes next. For farmed salmon, read the country of origin."
+      "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.",
+      "Canned wild salmon comes next; for farmed salmon, read the country of origin."
     ],
     "watch_out": [
       "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
-      "Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best.",
-      "Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish.",
-      "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them.",
-      "A 2004 Science study found all 14 contaminants higher in farmed salmon than wild. Levels were well below FDA tolerance levels for bought fish.",
-      "Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use."
+      "Antibiotic use on farms varies enormously by country of origin. Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use.",
+      "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them."
     ],
     "sources": [
       "NOAA Fisheries / Seafood Watch",
@@ -47,22 +43,15 @@ export const TWO_LINE = {
     "decision": "Wild American or Gulf shrimp; read the country of origin.",
     "buying_tips": [
       "Country of origin is printed by law, and wild American traces to a managed fishery.",
-      "Country-of-origin is required on the label. Read it before anything on the front.",
-      "Frozen raw gives the most control over the cooking, and usually the best value.",
-      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised shrimp samples. Samples were bought in March 2014.",
-      "Wild American shrimp is the first choice. A close second is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council.",
-      "Last choice: imported shrimp. Read the country of origin.",
+      "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp with more control over cooking.",
+      "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
+      "Second choice is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council; last is imported shrimp.",
       "Ask the case if the shrimp is dry. Wet shrimp holds extra water."
     ],
     "watch_out": [
-      "Where wild American is not stocked, check for a BAP or ASC certification. It stands in for knowing the farm.",
-      "‘Fresh’ at the shrimp case is nearly always thawed. Buying it frozen is the same shrimp, earlier.",
-      "Uniform size and a flawless look point to pond-raised. Wild shrimp come in a wide range of sizes and are graded to a count per pound.",
-      "The 11 samples came from Vietnam, Thailand and Bangladesh. A certification label alone is not proof. Antibiotics showed on four samples carrying one common label.",
-      "That Consumer Reports test found bacteria on 20 percent of raw U.S. wild samples. Imported pond-raised samples ranged from 42 to 83 percent.",
-      "Cooking through kills most of the bacteria. Cooked shrimp is no guarantee: 16 percent of cooked samples in that test carried bacteria.",
-      "The Southern Shrimp Alliance, a domestic industry group, counts FDA shrimp refusals for veterinary drug residues through August 2026. India, Indonesia and Vietnam led that tally.",
-      "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading. Some pond-raised shrimp were sold as wild."
+      "Where wild American is not stocked, check for a BAP or ASC certification. A label alone is not proof; antibiotics showed on four samples carrying one common label.",
+      "Consumer Reports found bacteria on 20 percent of raw U.S. wild samples and 42 to 83 percent of imported pond-raised. Cooking through kills most of it, yet 16 percent of cooked samples carried bacteria.",
+      "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading, with some pond-raised shrimp sold as wild. The Southern Shrimp Alliance, a domestic industry group, counts India, Indonesia and Vietnam first in FDA refusals for drug residues."
     ],
     "sources": [
       "NOAA Fisheries country-of-origin data",
@@ -566,22 +555,15 @@ export const TWO_LINE = {
     "decision": "USDA Organic, which already includes non-GMO.",
     "buying_tips": [
       "Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue.",
-      "Organic already implies non-GMO. You don’t need both seals.",
       "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
-      "Decide if GMOs actually matter to you before paying up for the seal.",
-      "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure.",
+      "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure, which does not name the ingredient.",
       "Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains.",
       "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure."
     ],
     "watch_out": [
-      "Non-GMO covers that single issue. It says nothing about pesticides, feed or practices.",
-      "Paying for both seals is paying twice. Organic already requires non-GMO.",
-      "Some foods carry a non-GMO seal though no GMO version of them exists.",
-      "On oils, sugars and syrups, “derived from bioengineering” is voluntary. Processing leaves no modified DNA.",
-      "Disclosure can be a phone number to call or text, or a QR code. It does not name the ingredient.",
-      "Restaurants, very small companies and most alcohol are exempt. Foods with meat, poultry or eggs as a major ingredient are also exempt.",
-      "The government does not approve non-GMO claims. The Non-GMO Project says its Verified mark follows its own standard, including testing, traceability and segregation.",
-      "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered."
+      "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered. On oils, sugars and syrups, “derived from bioengineering” is voluntary because processing leaves no modified DNA.",
+      "Restaurants, very small companies and most alcohol are exempt, as are foods whose major ingredient is meat, poultry or eggs.",
+      "Non-GMO says nothing about pesticides, feed or practices, and the government does not approve non-GMO claims. The Non-GMO Project says its Verified mark follows its own standard, including testing, traceability and segregation."
     ],
     "sources": [
       "USDA National Organic Program",
@@ -850,18 +832,14 @@ export const TWO_LINE = {
     "decision": "Fish in olive oil or water, bone-in and skin-on.",
     "buying_tips": [
       "‘Vegetable oil’ on a tin is nearly always a seed oil blend it will not name.",
-      "Read the pack medium: olive oil or water, not ‘vegetable oil’.",
       "Bone-in and skin-on sardines and salmon. The bones soften completely.",
       "The list should read fish, oil or water, salt. Anything longer is a sauce.",
-      "Good oil-packed tins are worth using in the dish rather than draining.",
-      "Skipjack, labeled ‘light’, sits lower on the mercury range than albacore, labeled ‘white’.",
       "Skipjack, labeled ‘light’, is lower-mercury than albacore, labeled ‘white’.",
-      "An epoxy made with BPA lines many food cans. Fresh or frozen fish comes without a can lining.",
-      "Choose a can that says BPA-free on its label over one that says nothing."
+      "Pick a can that says BPA-free; many food cans have an epoxy lining made with BPA. Fresh or frozen fish has no can lining."
     ],
     "watch_out": [
-      "‘Dolphin-safe’ speaks to dolphins only. Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device. That device draws in juvenile fish, sharks and other bycatch.",
-      "‘Light’ tuna is skipjack, ‘white’ is albacore, and ‘ahi’ is usually yellowfin but may be bigeye.",
+      "‘Dolphin-safe’ speaks to dolphins only, and Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device, which draws in juvenile fish, sharks and other bycatch.",
+      "‘Ahi’ is usually yellowfin but may be bigeye.",
       "BPA-free is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
     ],
     "sources": [
@@ -1173,19 +1151,13 @@ export const TWO_LINE = {
     "decision": "Whole or skin-on fish labeled with species, method and country.",
     "buying_tips": [
       "A bare fillet is far easier to swap for another species than whole or skin-on fish.",
-      "Look for all three: species, wild or farm-raised, and country of origin.",
-      "Origin can mean where it was processed, not where it was caught. Ask if it matters.",
+      "Origin can mean where it was processed, not where it was caught; a staffed counter can usually say.",
       "Cooked and breaded seafood falls outside the labeling rule.",
-      "Skin-on and whole fish are far harder to substitute than a bare fillet.",
-      "A staffed counter can usually answer the origin question directly.",
-      "On farm-raised salmon, ‘color added’ means the feed was pigmented. Farmed flesh is gray until astaxanthin in the feed sets the pink. Wild salmon get their color from krill and shrimp.",
+      "‘Color added’ on farm-raised salmon means astaxanthin in the feed sets the pink, not a dye after harvest. Wild salmon get their color from krill and shrimp.",
       "For salmon, choose wild-caught first. For farm-raised salmon, read the country of origin."
     ],
     "watch_out": [
-      "Origin can name where it was processed, not where it was caught.",
-      "Cooked and breaded seafood falls outside the labeling rule entirely.",
-      "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line.",
-      "Color added means the feed was pigmented. It does not mean the fish was colored after harvest."
+      "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
     ],
     "sources": [
       "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
@@ -1394,15 +1366,12 @@ export const TWO_LINE = {
     "decision": "Corn tortillas of masa, water and salt.",
     "buying_tips": [
       "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
-      "Read the list for masa or masa harina, water, and salt.",
       "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
-      "Check whether the corn tortilla also lists wheat flour.",
       "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
       "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second."
     ],
     "watch_out": [
       "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
-      "The laboratory paper does not establish a health effect for a supermarket tortilla.",
       "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure."
     ],
     "sources": [
@@ -1507,10 +1476,8 @@ export const TWO_LINE = {
     "decision": "Oat milk with few stabilizers, never seed oil.",
     "buying_tips": [
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
-      "Read the protein line and the added vitamins and minerals on the carton.",
-      "Compare the labels of available oat drinks; the formulation can differ.",
-      "Read for stabilizers in the ingredient list; the study compared formulations with different stabilizer use.",
-      "Carrageenan, derived from seaweed, is used as a thickener even in some certified organic foods. Read the oat drink’s ingredient list and pick one without carrageenan."
+      "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals.",
+      "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it."
     ],
     "sources": [
       "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML",
@@ -1585,11 +1552,8 @@ export const TWO_LINE = {
     "decision": "Canned light tuna, or a can naming skipjack.",
     "buying_tips": [
       "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
-      "Check the light designation or a named skipjack species.",
-      "Canned light tuna can be chosen without a separately stated skipjack name.",
       "Read the packing medium separately from the light or white designation.",
-      "Many food cans use a lining of epoxy made with BPA. Fresh or frozen tuna comes with no can lining.",
-      "Read the label: choose a can that says BPA-free over one that says nothing."
+      "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining."
     ],
     "watch_out": [
       "Light is not one species. Do not assume every light can is skipjack.",
@@ -1887,17 +1851,14 @@ export const TWO_LINE = {
     "decision": "Nova or lox smoked salmon, bought cold and kept cold.",
     "buying_tips": [
       "Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold.",
-      "Read the label for nova, lox or kippered.",
-      "Pick it from a refrigerated case.",
-      "Put it in the fridge soon after buying.",
+      "Pick it from a refrigerated case and put it in the fridge soon after buying.",
       "Choose canned or jarred smoked fish to keep on the shelf.",
-      "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink.",
+      "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
       "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin."
     ],
     "watch_out": [
       "Cold smoking and refrigeration do not kill Listeria.",
-      "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish.",
-      "‘Color added’ means the feed was pigmented."
+      "Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish."
     ],
     "sources": [
       "https://www.cdc.gov/listeria/causes/meat-fish.html",
@@ -2179,7 +2140,7 @@ export const TWO_LINE = {
       "Pick unsweetened over sweetened, vanilla or chocolate.",
       "Compare protein, vitamin D, calcium and potassium across cartons.",
       "Check saturated fat on the panel.",
-      "A certified organic seal does not rule out carrageenan. This thickener comes from seaweed; read the almond milk’s ingredients and choose a carton with none listed."
+      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Almond_milk",
@@ -2203,17 +2164,11 @@ export const TWO_LINE = {
       "Pick unsweetened over flavored."
     ],
     "buying_tips": [
-      "Read the list for soybeans and water, then as few additions as possible.",
+      "Every addition is another ingredient; soybeans and water stays closest to the bean.",
       "A short-list unsweetened almond milk ranks above soy milk.",
       "Dairy shoppers can read the Milk card.",
-      "Fortifying adds vitamins and minerals, and each is another ingredient.",
-      "Fortified soy holds key nutrients similar to milk, so the dairy group counts it.",
-      "Pick unsweetened over flavored.",
-      "Compare protein and potassium across cartons.",
-      "Check saturated fat on the label.",
-      "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan.",
-      "Most U.S. soybeans are bioengineered.",
-      "Choose certified organic soy milk first, with Non-GMO Project Verified a close second."
+      "Carrageenan, a seaweed thickener, appears in some certified organic foods too; choose a soy milk with none listed.",
+      "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Soy_milk",
@@ -2236,9 +2191,8 @@ export const TWO_LINE = {
       }
     ],
     "watch_out": [
-      "Unfortified soy milk is not the version FDA places in the dairy group.",
-      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
-      "FDA counts only fortified soy in the dairy group, yet fortifying lengthens the list."
+      "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
+      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
     ]
   },
   "coconut_milk_beverage": {
@@ -2419,7 +2373,6 @@ export const TWO_LINE = {
     "buying_tips": [
       "Cane and beet sugar are the same substance, crystallized from the plant’s juice.",
       "Pick light or dark brown sugar; dark carries more molasses.",
-      "Read the added sugars line as a percent Daily Value on a plain sugar.",
       "Keep brown sugar closed, since it hardens in open air.",
       "More than half of granulated sugar sold comes from bioengineered sugar beets. Plain “sugar” names no crop.",
       "Choose certified organic sugar first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second."
@@ -2455,16 +2408,10 @@ export const TWO_LINE = {
     "decision": "Olive or coconut oil, or tallow for cooking.",
     "buying_tips": [
       "“Vegetable oil” on a label names a category, without any seed or fruit.",
-      "Read the label for the oil’s name first.",
-      "Look for refined or unrefined on the bottle.",
-      "A bottle that says only “vegetable oil” names no oil.",
-      "Choose tallow, olive oil, or coconut oil by the ingredient list.",
-      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Read the label for the oil’s name first, then refined or unrefined.",
+      "Skip sunflower, safflower, canola, soybean, corn and cottonseed oils; the last four come from mostly bioengineered crops.",
       "Skip avocado oil too: the label cannot prove the oil is pure.",
-      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
-      "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it.",
-      "Canola, soy, corn and cottonseed oils come from mostly bioengineered crops. These oils are typically derived from bioengineering.",
-      "For canola, soy, corn or cottonseed oil, choose certified organic first. Non-GMO Project Verified is a close second."
+      "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and choose a list without them."
     ],
     "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
     "sources": [
@@ -2549,8 +2496,7 @@ export const TWO_LINE = {
       "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
       "Read the ingredients for guar gum or another gum.",
       "Compare two cans by how much the list holds beyond coconut.",
-      "Many food cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
-      "Among cans, choose one whose label says BPA-free over one that says nothing."
+      "Pick a can that says BPA-free; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining."
     ],
     "watch_out": [
       "The carton coconut milk drink is a different product, covered on its own card.",
@@ -2661,19 +2607,13 @@ export const TWO_LINE = {
     "decision": "Low-sodium canned soup with a short list, can undented.",
     "buying_tips": [
       "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
-      "Read the front for low sodium versus reduced sodium.",
-      "Check reduced sodium claims for the named soup they compare against.",
-      "Check each can for deep dents, seam dents, leaks, rust and bulging lids.",
-      "Store cans cool and dry, between 50 °F and 70 °F.",
-      "Put new cans behind older ones and use the oldest first.",
-      "Wipe the lid before opening.",
-      "Move opened soup to a covered glass or plastic container in the refrigerator.",
-      "Many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
-      "In a can, pick one that says BPA-free on the label over one that says nothing."
+      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf.",
+      "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front.",
+      "Wipe the lid before opening, and move opened soup to a covered container in the refrigerator.",
+      "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining."
     ],
     "watch_out": [
       "“No salt added” is not “sodium free”; the soup can still carry sodium.",
-      "Leave cans with deep dents or dents on the seam on the shelf.",
       "BPA-free is the maker’s word. EWG’s survey found makers define it as they wish. Makers that dropped BPA did not disclose the lining that replaced it."
     ],
     "sources": [
@@ -2783,9 +2723,6 @@ export const TWO_LINE = {
       "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
       "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-      "Read the ingredients for masa or corn masa.",
-      "A trace of lime on the list points to the traditional cooking step.",
-      "“Restaurant-style” chips are tortillas cut into wedges and fried.",
       "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
       "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second."
     ],
@@ -2864,11 +2801,9 @@ export const TWO_LINE = {
     "decision": "Plain popcorn kernels, popped at home in coconut oil.",
     "buying_tips": [
       "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
-      "Microwave bags and ready-popped bags name their oil in the ingredient list; skip bags that list seed oil.",
-      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-      "Buy plain kernels to pop at home in coconut oil, butter or tallow, then salt to taste.",
+      "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
+      "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
       "Loose kernels pop in a plain brown paper bag in the microwave.",
-      "Unpopped “old maids” come from hulls with cuts or weak spots.",
       "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
     ],
     "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
@@ -3364,3 +3299,8 @@ test('beforeConcern restores frozen labels while preserving other live copy and 
   const outsideConcern = { ...live, id: 'fixture_outside_concern' };
   assert.equal(beforeConcern(outsideConcern), outsideConcern);
 });
+
+// Card-tidy owns the live copy; historical batches keep the cards as they stood at 8264bd0.
+const TIDIED = new Set(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn']);
+const PRE_TIDY = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preTidy = (e) => (e && TIDIED.has(e.id) ? PRE_TIDY.entries.find((x) => x.id === e.id) : e);

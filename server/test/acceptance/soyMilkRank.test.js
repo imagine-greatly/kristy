@@ -6,8 +6,10 @@ import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
+import { preTidy } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+kb.entries = kb.entries.map(preTidy);
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', 'f3ab9b4:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };

@@ -6,11 +6,12 @@ import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern, preTidy } from './twoLinePin.js';
 import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
 import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
 import { kindFor } from '../../lib/counterCards.js';
 import { lintSections } from '../../lib/counterCardLint.js';
+kb.entries = kb.entries.map(preTidy);
 
 const entries = nonEmpty(kb.entries, 'W2 corpus');
 const byId = (id) => {

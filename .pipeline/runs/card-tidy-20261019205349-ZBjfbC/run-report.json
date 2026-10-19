@@ -1,0 +1,133 @@
+{
+  "kind": "build",
+  "runId": "card-tidy-20261019205349-ZBjfbC",
+  "piece_id": "/Users/m1/kristy:card-tidy",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/card-tidy.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 1007436,
+    "cached": 903168,
+    "output": 6960,
+    "reasoning": 1143
+  },
+  "over_ceiling": true,
+  "ms": 475887,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-19T18:53:49.736Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:card-tidy-20261019205349-ZBjfbC:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/card-tidy-20261019205349-ZBjfbC/events-0.jsonl",
+      "usage": {
+        "input": 1007436,
+        "cached": 903168,
+        "output": 6960,
+        "reasoning": 1143
+      },
+      "tokens": 1014396,
+      "mem_free_mb": 132,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15587-dfb2-7040-9638-735526908eff",
+        "usage": {
+          "input": 1007436,
+          "cached": 903168,
+          "output": 6960,
+          "reasoning": 1143
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/concernAdditives.test.js\",\n    \"server/test/acceptance/concernBioengineered.test.js\",\n    \"server/test/acceptance/concernBpa.test.js\",\n    \"server/test/acceptance/concernSalmon.test.js\",\n    \"server/test/acceptance/concernShrimp.test.js\",\n    \"server/test/acceptance/k6.test.js\",\n    \"server/test/acceptance/k7.test.js\",\n    \"server/test/acceptance/k11.test.js\",\n    \"server/test/acceptance/soyMilkRank.test.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/k14.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: cooking_oils retains the seed-oil refusal and bioengineered concern without the organic ladder.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: soy_milk leads with a concise why; FDA fortification statements are consolidated and required concerns remain.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: prohibited research scaffolding removed.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: no duplicate lines, repeated decision, or duplicate skipjack/wild ladder.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: all 17 full cards meet tip, caution, sentence and line-two caps. twoLineCheck: 181 checked, zero violations.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: all required concerns retained. Existing live pins updated and specified historical preTidy overlays applied.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: every number exists on the baseline card. All replacement arrays independently verified against the exact spec text.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Acceptance passed: no prohibited dash, first-person, health, hormone, price or brand wording.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"Acceptance and byte comparison passed: only specified buying_tips/watch_out changed. Assumptions: edit 17 full cards; protect unchanged pick_canned_tomatoes as ID 18; retain 8264bd0 as content baseline. NOTE: cardTidy.test.js was provisioned and remains unchanged.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"Build generated 182 do lines; doLines.json and review table remain byte-identical to HEAD. All 10 acceptance tests and all 2811 server tests passed, zero skipped. Commit guard and git diff --check passed; list probe found no wrong matches.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/cardTidy.test.js'",
+          "/bin/zsh -lc \"rg --files -g 'AGENTS.md' -g 'report.schema.json' -g 'cardTidy.test.js' -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!client/dist'\"' -g '\"'!server/node_modules'\"'\"",
+          "/bin/zsh -lc 'git status --short'",
+          "/bin/zsh -lc 'cat server/scripts/twoLineCheck.js server/lib/counterCardLint.js server/lib/testGuards.js docs/CARD-STYLE-SAMPLES.md VOICE_SPEC.md'",
+          "/bin/zsh -lc 'cat server/test/acceptance/twoLinePin.js server/test/acceptance/k14.test.js server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done\nrg --files --hidden -g '\"'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!server/node_modules'\"' -g '\"'!client/node_modules'\"' -g '\"'!.git'\"' server .pipeline .agents .codex\"",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/buildDoLines.js server/scripts/commitGuard.js server/scripts/listMatchProbe.js\ngit log -1 --oneline\ngit diff 8264bd0 --stat'",
+          "/bin/zsh -lc 'cat server/scripts/twoLineCheck.js server/lib/counterCardLint.js server/lib/testGuards.js .pipeline/runs/card-tidy-20261019205349-ZBjfbC/report.schema.json'",
+          "/bin/zsh -lc 'cat server/test/acceptance/k14.test.js server/test/acceptance/twoLinePin.test.js'",
+          "/bin/zsh -lc 'cat docs/CARD-STYLE-SAMPLES.md VOICE_SPEC.md'",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/buildDoLines.js server/scripts/commitGuard.js'",
+          "/bin/zsh -lc \"tail -n 185 server/test/acceptance/twoLinePin.js\nwc -l server/lib/counterCardLint.js server/test/acceptance/twoLinePin.js\nrg -n '\"'^import |''^const kb|''^export |''^const ROOT|''^const PRE'\"' server/test/acceptance/{ca-4b,ca-7,concernAdditives,concernBioengineered,concernBpa,concernSalmon,concernShrimp,soyMilkRank,k6,k7,k11,w2}.test.js\"",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/buildDoLines.js server/scripts/commitGuard.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/soyMilkRank.test.js server/test/acceptance/concernBpa.test.js'",
+          "/bin/zsh -lc \"sed -n '1,120p' .pipeline/specs/card-tidy.md\nrg -n '\"'^### |''^`buying_tips`|''^`watch_out`|''^## '\"' .pipeline/specs/card-tidy.md\nsed -n '1,75p' server/kristy_perimeter_kb.json\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nconst spec = readFileSync('.pipeline/specs/card-tidy.md', 'utf8');\nconst parts = [...spec.matchAll(/\"'^### ([a-zA-Z_]+)'\"\\\\n([\\\\s\\\\S]*?)(?=\"'^### |''^## |$(?!['\"\\\\s\\\\S]))/gm)];\nassert.equal(parts.length, 17);\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst pinSource = readFileSync('server/test/acceptance/twoLinePin.js', 'utf8');\nconst pinMatch = pinSource.match(/export const TWO_LINE = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/);\nassert.ok(pinMatch);\nconst pins = JSON.parse(pinMatch[1]);\nassert.equal(pinMatch[1], JSON.stringify(pins, null, 2));\nassert.equal(readFileSync('server/kristy_perimeter_kb.json', 'utf8'), JSON.stringify(kb, null, 2) + '\\\\n');\nfor (const [,id,section] of parts) {\n  const arrays = [...section.matchAll(/\"'```json'\"\\\\n([\\\\s\\\\S]*?)\\\\n\"'```/g)].map((m) => JSON.parse(m[1]));\n  assert.equal(arrays.length, 2, id);\n  const e = kb.entries.find((x) => x.id === id);\n  assert.ok(e && pins[id], id);\n  console.log(`${id}: tips ${e.buying_tips.length} -> ${arrays[0].length}; watch_out ${e.watch_out.length} -> ${arrays[1].length}; pinned fields ${Object.keys(pins[id]).join('\"', ')}\"'`);\n}\nNODE'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync, writeFileSync } from 'node:fs';\nconst spec = readFileSync('.pipeline/specs/card-tidy.md', 'utf8');\nconst sections = [...spec.matchAll(/\"'^### ([a-zA-Z_]+)'\"\\\\n([\\\\s\\\\S]*?)(?=\"'^### |''^## |$(?!['\"\\\\s\\\\S]))/gm)];\nassert.equal(sections.length, 17);\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst kbText = readFileSync(kbPath, 'utf8');\nconst kb = JSON.parse(kbText);\nassert.equal(kbText, JSON.stringify(kb, null, 2) + '\\\\n');\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet pinText = readFileSync(pinPath, 'utf8');\nconst pinMatch = pinText.match(/export const TWO_LINE = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/);\nassert.ok(pinMatch);\nconst pins = JSON.parse(pinMatch[1]);\nassert.equal(pinMatch[1], JSON.stringify(pins, null, 2));\nconst ids = [];\nfor (const [,id,section] of sections) {\n  const arrays = [...section.matchAll(/\"'```json'\"\\\\n([\\\\s\\\\S]*?)\\\\n\"'```/g)].map((m) => JSON.parse(m[1]));\n  assert.equal(arrays.length, 2, id);\n  const entry = kb.entries.find((e) => e.id === id);\n  assert.ok(entry && pins[id], id);\n  [entry.buying_tips, entry.watch_out] = arrays;\n  pins[id].buying_tips = arrays[0];\n  if (Object.hasOwn(pins[id], '\"'watch_out')) pins[id].watch_out = arrays[1];\n  ids.push(id);\n}\nids.splice(5, 0, 'pick_canned_tomatoes');\nassert.equal(ids.length, 18);\npinText = pinText.replace(pinMatch[0], \"'`export const TWO_LINE = ${JSON.stringify(pins, null, 2)};`);\nassert.ok(!pinText.includes('\"'const TIDIED'));\npinText += '\\\\n// Card-tidy owns the live copy; historical batches keep the cards as they stood at 8264bd0.\\\\n';\npinText += \"'`const TIDIED = new Set([${ids.map((id) => `'\"'\"'${id}'\"'\"'`).join('\"', ')}]);\\\\n\"'`;\npinText += \"const PRE_TIDY = JSON.parse(execFileSync('\"'git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());\\\\n\\\";\npinText += 'export const preTidy = (e) => (e && TIDIED.has(e.id) ? PRE_TIDY.entries.find((x) => x.id === e.id) : e);\\\\n';\nconst updates = new Map([[kbPath, JSON.stringify(kb, null, 2) + '\\\\n'], [pinPath, pinText]]);\nconst historical = ['ca-4b', 'ca-7', 'concernAdditives', 'concernBioengineered', 'concernBpa', 'concernSalmon', 'concernShrimp', 'soyMilkRank', 'k6', 'k7', 'k11', 'w2'];\nfor (const file of historical) {\n  const path = \"'`server/test/acceptance/${file}.test.js`;\n  let source = readFileSync(path, '\"'utf8');\n  assert.ok(\"'!source.includes('\"'preTidy'), path);\n  const importPattern = /\"'^import '\"\\\\{ ([\"'^'\"\\\\n]+) \\\\} from '\\\\.\\\\/twoLinePin\\\\.js';\"'$/m;\n  if (importPattern.test(source)) {\n    source = source.replace(importPattern, \"import { $1, preTidy } from '\"'./twoLinePin.js';\\\");\n  } else {\n    const imports = [...source.matchAll(/\"'^import .+;$/gm)];\n    assert.ok(imports.length, path);\n    const last = imports.at(-1);\n    const end = last.index + last[0].length;\n    source = source.slice(0, end) + \"'\"\\\\nimport { preTidy } from './twoLinePin.js';\\\" + source.slice(end);\n  }\n  const overlay = '\\\\nkb.entries = kb.entries.map(preTidy);';\n  if (['k6', 'k7', 'k11', 'w2'].includes(file)) {\n    const last = [...source.matchAll(/\"'^import .+;$/gm)].at(-1);\n    const end = last.index + last[0].length;\n    source = source.slice(0, end) + overlay + source.slice(end);\n  } else {\n    const load = source.match(/''^const kb = .+;$/m);\n    assert.ok(load, path);\n    source = source.replace(load[0], load[0] + overlay);\n  }\n  updates.set(path, source);\n}\nconst k14Path = '\"'server/test/acceptance/k14.test.js';\nlet k14 = readFileSync(k14Path, 'utf8');\nconst oldReplacement = '        \\\"import { assertPassRule } from \\\\'./passRule.js\\\\';\\\\\\\\nimport { beforeConcern } from \\\\'./twoLinePin.js\\\\';\\\")';\nassert.equal(k14.split(oldReplacement).length, 2);\nconst newReplacement = [\n  \\\"        ['k6', 'k7', 'k11'].includes(file)\\\",\n  '          ? \\\"import { assertPassRule } from \\\\'./passRule.js\\\\';\\\\\\\\nimport { beforeConcern, preTidy } from \\\\'./twoLinePin.js\\\\';\\\\\\\\nkb.entries = kb.entries.map(preTidy);\\\"',\n  '          : \\\"import { assertPassRule } from \\\\'./passRule.js\\\\';\\\\\\\\nimport { beforeConcern } from \\\\'./twoLinePin.js\\\\';\\\")',\n].join('\\\\n');\nk14 = k14.replace(oldReplacement, newReplacement);\nupdates.set(k14Path, k14);\nassert.equal(updates.size, 15);\nfor (const [path, content] of updates) writeFileSync(path, content, 'utf8');\nconsole.log('Applied exact spec arrays to 17 cards, updated existing pins, and added historical overlays in 15 owned files.');\nNODE\"",
+          "/bin/zsh -lc 'git diff --check\ngit diff --stat\ngit diff -- server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/concernAdditives.test.js server/test/acceptance/concernBioengineered.test.js server/test/acceptance/concernBpa.test.js server/test/acceptance/concernSalmon.test.js server/test/acceptance/concernShrimp.test.js server/test/acceptance/k6.test.js server/test/acceptance/k7.test.js server/test/acceptance/k11.test.js server/test/acceptance/soyMilkRank.test.js server/test/acceptance/w2.test.js server/test/acceptance/k14.test.js'",
+          "/bin/zsh -lc 'node --test server/test/acceptance/cardTidy.test.js'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { execFileSync } from 'node:child_process';\nimport { readFileSync } from 'node:fs';\nimport { parseReviewTable } from './lib/counterCards.js';\nconst reviewPath = '../docs/do-lines-review.md';\nconst before = readFileSync('lib/doLines.json', 'utf8');\nconst review = readFileSync(reviewPath, 'utf8');\nconst table = parseReviewTable(review);\nconst generated = Object.fromEntries([...table.keys()].sort().map((slug) => [slug, String(table.get(slug)?.do || '').trim()]).filter(([, line]) => line));\nassert.equal(JSON.stringify(generated, null, 2) + '\\\\n', before, 'build must preserve generated file bytes');\nexecFileSync('node', ['scripts/buildDoLines.js'], { stdio: 'inherit' });\nassert.equal(readFileSync('lib/doLines.json', 'utf8'), before);\nassert.equal(readFileSync(reviewPath, 'utf8'), review);\nassert.equal(execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { encoding: 'utf8' }), before);\nassert.equal(execFileSync('git', ['show', 'HEAD:docs/do-lines-review.md'], { encoding: 'utf8' }), review);\nconsole.log('doLines.json and docs/do-lines-review.md remain byte-identical to HEAD.');\nNODE\nnode scripts/twoLineCheck.js\nnode scripts/commitGuard.js\nnode scripts/listMatchProbe.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { spawnSync } from 'node:child_process';\nconst result = spawnSync('npm', ['test'], { encoding: 'utf8', maxBuffer: 64 << 20 });\nconst stdout = result.stdout || '';\nconst lines = stdout.trimEnd().split('\\\\n');\nif (result.status === 0) {\n  console.log(lines.slice(-14).join('\\\\n'));\n} else {\n  const failures = lines.flatMap((line, index) => /not ok|✖|failureType|error:|ERR_|failed/i.test(line) ? [index] : []);\n  const selected = new Set(failures.flatMap((index) => Array.from({ length: 24 }, (_, offset) => index - 3 + offset)).filter((index) => index >= 0 && index < lines.length));\n  for (const index of [...selected].sort((a, b) => a - b)) console.log(lines[index]);\n  console.log(lines.slice(-30).join('\\\\n'));\n  if (result.stderr) console.error(result.stderr);\n}\nif (result.error) console.error(result.error.message);\nprocess.exit(result.status ?? 1);\nNODE\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst spec = readFileSync('.pipeline/specs/card-tidy.md', 'utf8');\nconst sections = [...spec.matchAll(/\"'^### ([a-zA-Z_]+)'\"\\\\n([\\\\s\\\\S]*?)(?=\"'^### |''^## |$(?!['\"\\\\s\\\\S]))/gm)];\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst expected = JSON.parse(execFileSync('git', ['show', \"'`8264bd0:${kbPath}`], { encoding: '\"'utf8', maxBuffer: 64 << 20 }));\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nconst pinPattern = /export const TWO_LINE = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/;\nconst oldPins = JSON.parse(execFileSync('git', ['show', \"'`HEAD:${pinPath}`], { encoding: '\"'utf8', maxBuffer: 64 << 20 }).match(pinPattern)[1]);\nconst currentPinText = readFileSync(pinPath, 'utf8');\nconst pins = JSON.parse(currentPinText.match(pinPattern)[1]);\nassert.equal(sections.length, 17);\nfor (const [,id,section] of sections) {\n  const arrays = [...section.matchAll(/\"'```json'\"\\\\n([\\\\s\\\\S]*?)\\\\n\"'```/g)].map((m) => JSON.parse(m[1]));\n  const entry = expected.entries.find((e) => e.id === id);\n  [entry.buying_tips, entry.watch_out] = arrays;\n  oldPins[id].buying_tips = arrays[0];\n  if (Object.hasOwn(oldPins[id], '\"'watch_out')) oldPins[id].watch_out = arrays[1];\n}\nassert.equal(readFileSync(kbPath, 'utf8'), JSON.stringify(expected, null, 2) + '\\\\n', 'only exact spec fields may differ from the baseline');\nassert.deepEqual(pins, oldPins, 'only existing tip and watch_out pin fields may change');\nassert.equal(Object.hasOwn(pins.oat_milk, 'watch_out'), false);\nassert.equal(Object.hasOwn(pins.almond_milk, 'watch_out'), false);\nconst originalPinText = execFileSync('git', ['show', \"'`HEAD:${pinPath}`], { encoding: '\"'utf8', maxBuffer: 64 << 20 });\nconst appended = currentPinText.slice(currentPinText.indexOf('\\\\n// Card-tidy owns the live copy;'));\nassert.equal(currentPinText.replace(pinPattern, 'PIN_OBJECT').slice(0, -appended.length), originalPinText.replace(pinPattern, 'PIN_OBJECT'), 'all remaining original pin code stays byte-identical');\nconst acceptanceStart = '## Acceptance server/test/acceptance/cardTidy.test.js\\\\n\\\\n\"'```js'\"\\\\n';\nconst embeddedAcceptance = spec.split(acceptanceStart)[1].split('\\\\n\"'```'\"')[0] + '\\\\n';\nassert.equal(readFileSync('server/test/acceptance/cardTidy.test.js', 'utf8'), embeddedAcceptance, 'immutable test must remain as supplied');\nconsole.log('Exact spec arrays verified on 17 cards; all other KB bytes and pre-existing pin fields preserved.');\nconsole.log('pick_canned_tomatoes, oat/almond watch_out pin scope, and immutable acceptance test preserved.');\nNODE\ngit diff --check\ngit status --short\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 1014396,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 148,
+    "key": "9b598b8eff509854c5f1a4ff22e3298eae36d32260eb5e52b36736ede93f05b0",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/card-tidy-20261019205349-ZBjfbC/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:card-tidy-20261019205349-ZBjfbC:0",
+  "mem_free_mb": 132,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 11071,
+      "tail": "ok 2807 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.0885\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2808 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.541375\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2809 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.15575\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2810 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 149.915625\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2811 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.360792\n  type: 'test'\n  ...\n1..2811\n# tests 2811\n# suites 0\n# pass 2811\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10033.807917",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/card-tidy-20261019205349-ZBjfbC/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-19T19:01:45.623Z",
+  "readiness": "READY"
+}

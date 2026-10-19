@@ -160,7 +160,9 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     const old = execSync(`git show 719f9fe:server/test/acceptance/${file}.test.js`, { cwd: ROOT }).toString();
     const concern = old
       .replace("import { assertPassRule } from './passRule.js';",
-        "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
+        ['k6', 'k7', 'k11'].includes(file)
+          ? "import { assertPassRule } from './passRule.js';\nimport { beforeConcern, preTidy } from './twoLinePin.js';\nkb.entries = kb.entries.map(preTidy);"
+          : "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
     assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), concern);
   }

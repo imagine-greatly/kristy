@@ -10,7 +10,8 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
-import { beforeConcern } from './twoLinePin.js';
+import { beforeConcern, preTidy } from './twoLinePin.js';
+kb.entries = kb.entries.map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));

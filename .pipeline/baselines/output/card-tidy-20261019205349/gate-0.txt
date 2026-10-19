@@ -1,0 +1,195 @@
+TAP version 13
+# Subtest: C1 cooking_oils no longer says skip seed oils yet choose organic first
+not ok 1 - C1 cooking_oils no longer says skip seed oils yet choose organic first
+  ---
+  duration_ms: 0.996959
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:46:1'
+  failureType: 'testCodeFailure'
+  error: 'no organic seed-oil ladder'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Olive or coconut oil, or tallow for cooking. 
+     “Vegetable oil” on a label names a category, without any seed or fruit. 
+     Read the label for the oil’s name first. 
+     Look for refined or unrefined on the bottle. 
+     A bottle that says only “vegetable oil” names no oil. 
+     Choose tallow, olive oil, or coconut oil by the ingredient list. 
+     Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. 
+     Skip avocado oil too: the label cannot prove the oil is pure. 
+     BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any. 
+     TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it. 
+     Canola, soy, corn and cottonseed oils come from mostly bioengineered crops. These oils are typically derived from bioengineering. 
+     For canola, soy, corn or cottonseed oil, choose certified organic first. Non-GMO Project Verified is a close second. 
+     Oil that starts smoking in the pan is no longer fit to use. 
+     The “derived from bioengineering” line on these oils is voluntary when processing leaves no modified DNA.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:49:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 soy_milk line 2 is a why with no fortif; the three FDA lines are one watch_out
+not ok 2 - C2 soy_milk line 2 is a why with no fortif; the three FDA lines are one watch_out
+  ---
+  duration_ms: 0.185541
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:56:1'
+  failureType: 'testCodeFailure'
+  error: 'line 2 is a why, not an instruction'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Read the list for soybeans and water, then as few additions as possible.'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:61:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 no research scaffolding in tips or watch_out of the 18 cards
+not ok 3 - C3 no research scaffolding in tips or watch_out of the 18 cards
+  ---
+  duration_ms: 0.415667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:69:1'
+  failureType: 'testCodeFailure'
+  error: 'tortillas: scaffolding in "The laboratory paper does not establish a health effect for a supermarket tortilla."'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'The laboratory paper does not establish a health effect for a supermarket tortilla.'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:73:14)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 no duplicate tip or tip repeated in watch_out, and no tip repeats the decision
+not ok 4 - C4 no duplicate tip or tip repeated in watch_out, and no tip repeats the decision
+  ---
+  duration_ms: 0.972916
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:79:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    skipjack once
+    
+    3 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 3
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:87:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 caps: at most 5 tips, 3 watch_out, 20 words a sentence, line 2 at most 90 chars
+not ok 5 - C5 caps: at most 5 tips, 3 watch_out, 20 words a sentence, line 2 at most 90 chars
+  ---
+  duration_ms: 0.118
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:93:1'
+  failureType: 'testCodeFailure'
+  error: 'salmon_wild_vs_farmed: 6 tips'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:96:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 every concern point stays on its card
+ok 6 - C6 every concern point stays on its card
+  ---
+  duration_ms: 2.468083
+  type: 'test'
+  ...
+# Subtest: C7 claim lock: every number in the new text existed on the old card
+ok 7 - C7 claim lock: every number in the new text existed on the old card
+  ---
+  duration_ms: 1.267083
+  type: 'test'
+  ...
+# Subtest: C8 banned words in the new text: health, hormone, first person, em dash, price, brands
+not ok 8 - C8 banned words in the new text: health, hormone, first person, em dash, price, brands
+  ---
+  duration_ms: 0.541417
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cardTidy.test.js:121:1'
+  failureType: 'testCodeFailure'
+  error: 'salmon_wild_vs_farmed: price'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Wild salmon, frozen wild Alaskan before fresh farmed. 
+     Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil. 
+     Frozen wild Alaskan is often cheaper and fresher than ‘fresh’ farmed that has been in transit. 
+     Sockeye and coho are almost always wild, and their color is deep because of diet, not dye. 
+     ‘Fresh’ at the counter is frequently previously-frozen. Ask. It is not a downgrade. 
+     A 2004 Science study tested 14 contaminants, including PCBs and dioxins. All 14 were higher in farmed salmon than wild. The levels were well below FDA tolerance levels for bought fish. 
+     Choose wild Alaskan salmon, fresh or frozen, first. Canned wild salmon comes next. For farmed salmon, read the country of origin. 
+     Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market. 
+     Frozen wild runs cheaper than fresh farmed, and it is the same fish, frozen at its best. 
+     Antibiotic use on farms varies enormously by country of origin, so read the country before judging the fish. 
+     Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them. 
+     A 2004 Science study found all 14 contaminants higher in farmed salmon than wild. Levels were well below FDA tolerance levels for bought fish. 
+     Seafood Watch rates two-thirds of Chilean farmed salmon red for high antibiotic use.
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cardTidy.test.js:127:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C9 sources and every other field unchanged; unlisted cards byte-identical
+ok 9 - C9 sources and every other field unchanged; unlisted cards byte-identical
+  ---
+  duration_ms: 3.094584
+  type: 'test'
+  ...
+# Subtest: C10 do lines mirror: decisions did not change, so doLines.json and the review table are untouched
+ok 10 - C10 do lines mirror: decisions did not change, so doLines.json and the review table are untouched
+  ---
+  duration_ms: 13.795417
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 4
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 103.793833

@@ -1,0 +1,74 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/concernAdditives.test.js",
+    "server/test/acceptance/concernBioengineered.test.js",
+    "server/test/acceptance/concernBpa.test.js",
+    "server/test/acceptance/concernSalmon.test.js",
+    "server/test/acceptance/concernShrimp.test.js",
+    "server/test/acceptance/k6.test.js",
+    "server/test/acceptance/k7.test.js",
+    "server/test/acceptance/k11.test.js",
+    "server/test/acceptance/soyMilkRank.test.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/k14.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passed: cooking_oils retains the seed-oil refusal and bioengineered concern without the organic ladder."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Acceptance passed: soy_milk leads with a concise why; FDA fortification statements are consolidated and required concerns remain."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance passed: prohibited research scaffolding removed."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance passed: no duplicate lines, repeated decision, or duplicate skipjack/wild ladder."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Acceptance passed: all 17 full cards meet tip, caution, sentence and line-two caps. twoLineCheck: 181 checked, zero violations."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Acceptance passed: all required concerns retained. Existing live pins updated and specified historical preTidy overlays applied."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Acceptance passed: every number exists on the baseline card. All replacement arrays independently verified against the exact spec text."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Acceptance passed: no prohibited dash, first-person, health, hormone, price or brand wording."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "Acceptance and byte comparison passed: only specified buying_tips/watch_out changed. Assumptions: edit 17 full cards; protect unchanged pick_canned_tomatoes as ID 18; retain 8264bd0 as content baseline. NOTE: cardTidy.test.js was provisioned and remains unchanged."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "Build generated 182 do lines; doLines.json and review table remain byte-identical to HEAD. All 10 acceptance tests and all 2811 server tests passed, zero skipped. Commit guard and git diff --check passed; list probe found no wrong matches."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}
