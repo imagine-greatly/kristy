@@ -568,7 +568,32 @@ export const TWO_LINE = {
       "Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue.",
       "Organic already implies non-GMO. You don’t need both seals.",
       "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
-      "Decide if GMOs actually matter to you before paying up for the seal."
+      "Decide if GMOs actually matter to you before paying up for the seal.",
+      "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure.",
+      "Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains.",
+      "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure."
+    ],
+    "watch_out": [
+      "Non-GMO covers that single issue. It says nothing about pesticides, feed or practices.",
+      "Paying for both seals is paying twice. Organic already requires non-GMO.",
+      "Some foods carry a non-GMO seal though no GMO version of them exists.",
+      "On oils, sugars and syrups, “derived from bioengineering” is voluntary. Processing leaves no modified DNA.",
+      "Disclosure can be a phone number to call or text, or a QR code. It does not name the ingredient.",
+      "Restaurants, very small companies and most alcohol are exempt. Foods with meat, poultry or eggs as a major ingredient are also exempt.",
+      "The government does not approve non-GMO claims. The Non-GMO Project says its Verified mark follows its own standard, including testing, traceability and segregation.",
+      "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered."
+    ],
+    "sources": [
+      "USDA National Organic Program",
+      "Non-GMO Project standards",
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
     ]
   },
   "label_cage_free": {
@@ -1371,7 +1396,27 @@ export const TWO_LINE = {
       "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
       "Read the list for masa or masa harina, water, and salt.",
       "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
-      "Check whether the corn tortilla also lists wheat flour."
+      "Check whether the corn tortilla also lists wheat flour.",
+      "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
+      "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second."
+    ],
+    "watch_out": [
+      "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
+      "The laboratory paper does not establish a health effect for a supermarket tortilla.",
+      "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure."
+    ],
+    "sources": [
+      "https://www.tastingtable.com/1066360/masa-harina-vs-corn-flour-whats-the-difference/",
+      "https://www.healthline.com/nutrition/corn-vs-flour-tortilla",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11811476/fullTextXML",
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
     ]
   },
   "turkey_whole": {
@@ -2154,7 +2199,9 @@ export const TWO_LINE = {
       "Pick unsweetened over flavored.",
       "Compare protein and potassium across cartons.",
       "Check saturated fat on the label.",
-      "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan."
+      "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan.",
+      "Most U.S. soybeans are bioengineered.",
+      "Choose certified organic soy milk first, with Non-GMO Project Verified a close second."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Soy_milk",
@@ -2166,7 +2213,19 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Carrageenan",
         "url": "https://www.cspi.org/node/7465"
+      },
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
       }
+    ],
+    "watch_out": [
+      "Unfortified soy milk is not the version FDA places in the dairy group.",
+      "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
     ]
   },
   "coconut_milk_beverage": {
@@ -2348,7 +2407,27 @@ export const TWO_LINE = {
       "Cane and beet sugar are the same substance, crystallized from the plant’s juice.",
       "Pick light or dark brown sugar; dark carries more molasses.",
       "Read the added sugars line as a percent Daily Value on a plain sugar.",
-      "Keep brown sugar closed, since it hardens in open air."
+      "Keep brown sugar closed, since it hardens in open air.",
+      "More than half of granulated sugar sold comes from bioengineered sugar beets. Plain “sugar” names no crop.",
+      "Choose certified organic sugar first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second."
+    ],
+    "watch_out": [
+      "Coconut sugar is made mostly of sucrose, like other sugar.",
+      "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/cfr/text/21/184.1854",
+      "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2020-02-03-what-makes-brown-sugar-brown",
+      "https://extension.oregonstate.edu/food/preservation/sweeteners-nutritive-non-nutritive",
+      "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and",
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
     ]
   },
   "maple_syrup": {
@@ -2370,7 +2449,9 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Skip avocado oil too: the label cannot prove the oil is pure.",
       "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
-      "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it."
+      "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it.",
+      "Canola, soy, corn and cottonseed oils come from mostly bioengineered crops. These oils are typically derived from bioengineering.",
+      "For canola, soy, corn or cottonseed oil, choose certified organic first. Non-GMO Project Verified is a close second."
     ],
     "short_answer": "The standard is tallow, olive oil, or coconut oil. Read every oil in the ingredient list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
     "sources": [
@@ -2388,9 +2469,21 @@ export const TWO_LINE = {
       {
         "name": "EWG: Food chemicals guide, preservative uses",
         "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+      },
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
       }
     ],
-    "cart_pick": "Olive or coconut cooking oil"
+    "cart_pick": "Olive or coconut cooking oil",
+    "watch_out": [
+      "Oil that starts smoking in the pan is no longer fit to use.",
+      "The “derived from bioengineering” line on these oils is voluntary when processing leaves no modified DNA."
+    ]
   },
   "lard_tallow": {
     "decision": "Leaf lard or tallow, with nothing added to harden it.",
@@ -2679,7 +2772,9 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the ingredients for masa or corn masa.",
       "A trace of lime on the list points to the traditional cooking step.",
-      "“Restaurant-style” chips are tortillas cut into wedges and fried."
+      "“Restaurant-style” chips are tortillas cut into wedges and fried.",
+      "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
+      "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second."
     ],
     "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
     "sources": [
@@ -2696,12 +2791,21 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
       }
     ],
     "cart_pick": "Masa tortilla chips: olive oil",
     "watch_out": [
       "Some corn chips are made from corn that was never cooked in lime.",
-      "Skip avocado oil too: the label cannot prove the oil is pure."
+      "Skip avocado oil too: the label cannot prove the oil is pure.",
+      "Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering."
     ]
   },
   "potato_chips": {
@@ -2751,7 +2855,8 @@ export const TWO_LINE = {
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Buy plain kernels to pop at home in coconut oil, butter or tallow, then salt to taste.",
       "Loose kernels pop in a plain brown paper bag in the microwave.",
-      "Unpopped “old maids” come from hulls with cuts or weak spots."
+      "Unpopped “old maids” come from hulls with cuts or weak spots.",
+      "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
     ],
     "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
     "sources": [
@@ -2767,11 +2872,16 @@ export const TWO_LINE = {
       {
         "name": "Weston A. Price Foundation: FAQ, fats and oils",
         "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "CSPI: New GMO disclosures",
+        "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
       }
     ],
     "watch_out": [
       "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
-      "Skip avocado oil too: the label cannot prove the oil is pure."
+      "Skip avocado oil too: the label cannot prove the oil is pure.",
+      "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering."
     ],
     "pick_steps": [
       "Buy plain kernels to pop at home in coconut oil, butter or tallow.",
@@ -3203,7 +3313,7 @@ export const beforeTwoLine = (e) => {
 // Concern batches add archived sources from docs/sources/concerns; older batches froze or
 // archived sources elsewhere, so they read each concern card's sources as of 5a53252.
 // Concern acceptance tests own the new URLs and copy; TWO_LINE pins every changed field.
-const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised', 'shrimp_imported_vs_domestic']);
+const CONCERN = new Set(['deli_meat_uncured', 'bacon', 'hot_dogs', 'ham', 'turkey_bacon', 'cured_pork', 'pick_sausage', 'pick_jerky', 'pork_cuts_and_enhanced', 'egg_duck_quail', 'label_cage_free', 'label_pasture_raised_feed', 'cooking_oils', 'nut_butter_ingredients', 'plant_butter', 'label_cold_pressed_expeller', 'mayo', 'deli_salads', 'hummus', 'rotisserie_chicken', 'potato_chips', 'tortilla_chips', 'crackers', 'frozen_fries', 'frozen_nuggets', 'snack_bars', 'popcorn', 'whole_vs_reduced_fat_milk', 'dairy_case', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'ice_cream', 'cream_vs_creamer', 'cottage_cheese', 'sour_cream', 'cream_cheese', 'almond_milk', 'oat_milk', 'soy_milk', 'coconut_milk_beverage', 'oats_steelcut_rolled_instant', 'breakfast_cereal', 'muesli', 'flour_basics', 'sandwich_bread', 'beans_dried_vs_canned', 'pasta_dry', 'frozen_waffles', 'pick_juice', 'snacks', 'canned_soup', 'canned_fish_choosing', 'canned_tuna', 'pick_canned_tomatoes', 'canned_coconut_milk', 'salmon_wild_vs_farmed', 'smoked_salmon', 'label_wild_vs_farm_raised', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'sugars', 'tortillas']);
 const PRE_CONCERN = JSON.parse(execFileSync('git', ['show', '5a53252:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // Historical pass rules freeze sources and label definitions. Restore labels only when
 // TWO_LINE pins their current copy, leaving live fronts available to source checks.

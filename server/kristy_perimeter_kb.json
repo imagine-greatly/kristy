@@ -2159,14 +2159,25 @@
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program",
-        "Non-GMO Project standards"
+        "Non-GMO Project standards",
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
+        }
       ],
       "kristy_take": "If you’re paying for one label, Organic covers more ground. And ‘non-GMO water’ is someone selling you nothing.",
       "buying_tips": [
         "Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue.",
         "Organic already implies non-GMO. You don’t need both seals.",
         "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
-        "Decide if GMOs actually matter to you before paying up for the seal."
+        "Decide if GMOs actually matter to you before paying up for the seal.",
+        "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure.",
+        "Bioengineered means a new gene was inserted into a plant or animal. The required statement applies only when modified DNA remains.",
+        "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure."
       ],
       "labels_decoded": [
         {
@@ -2181,7 +2192,12 @@
       "watch_out": [
         "Non-GMO covers that single issue. It says nothing about pesticides, feed or practices.",
         "Paying for both seals is paying twice. Organic already requires non-GMO.",
-        "Some foods carry a non-GMO seal though no GMO version of them exists."
+        "Some foods carry a non-GMO seal though no GMO version of them exists.",
+        "On oils, sugars and syrups, “derived from bioengineering” is voluntary. Processing leaves no modified DNA.",
+        "Disclosure can be a phone number to call or text, or a QR code. It does not name the ingredient.",
+        "Restaurants, very small companies and most alcohol are exempt. Foods with meat, poultry or eggs as a major ingredient are also exempt.",
+        "The government does not approve non-GMO claims. The Non-GMO Project says its Verified mark follows its own standard, including testing, traceability and segregation.",
+        "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered."
       ],
       "pick_steps": [
         "Pick the organic seal without requiring a second non-GMO seal.",
@@ -6580,7 +6596,15 @@
       "sources": [
         "https://www.tastingtable.com/1066360/masa-harina-vs-corn-flour-whats-the-difference/",
         "https://www.healthline.com/nutrition/corn-vs-flour-tortilla",
-        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11811476/fullTextXML"
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11811476/fullTextXML",
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
+        }
       ],
       "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
       "cart_pick": "Corn tortillas",
@@ -6588,11 +6612,14 @@
         "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
         "Read the list for masa or masa harina, water, and salt.",
         "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
-        "Check whether the corn tortilla also lists wheat flour."
+        "Check whether the corn tortilla also lists wheat flour.",
+        "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
+        "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second."
       ],
       "watch_out": [
         "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
-        "The laboratory paper does not establish a health effect for a supermarket tortilla."
+        "The laboratory paper does not establish a health effect for a supermarket tortilla.",
+        "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure."
       ],
       "pick_steps": [
         "Corn tortillas: look for masa or masa harina, water and salt.",
@@ -9770,6 +9797,14 @@
         {
           "name": "CSPI: Carrageenan",
           "url": "https://www.cspi.org/node/7465"
+        },
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
         }
       ],
       "kristy_take": "Fortification is what places soy milk in the dairy group, so the carton settles it.",
@@ -9779,10 +9814,13 @@
         "Pick unsweetened over flavored.",
         "Compare protein and potassium across cartons.",
         "Check saturated fat on the label.",
-        "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan."
+        "Seaweed supplies the thickener carrageenan, which appears in some certified organic foods too. Check the soy milk’s list and choose a version with no carrageenan.",
+        "Most U.S. soybeans are bioengineered.",
+        "Choose certified organic soy milk first, with Non-GMO Project Verified a close second."
       ],
       "watch_out": [
-        "Unfortified soy milk is not the version FDA places in the dairy group."
+        "Unfortified soy milk is not the version FDA places in the dairy group.",
+        "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure."
       ],
       "pick_steps": [
         "Pick fortified; unfortified soy milk is not in FDA’s dairy group.",
@@ -10681,7 +10719,15 @@
         "https://www.law.cornell.edu/cfr/text/21/184.1854",
         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2020-02-03-what-makes-brown-sugar-brown",
         "https://extension.oregonstate.edu/food/preservation/sweeteners-nutritive-non-nutritive",
-        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and",
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
+        }
       ],
       "kristy_take": "Cane or beet makes the same sugar. Molasses is what turns it brown, and neither ranks above the other.",
       "cart_pick": "Plain sugar, white or brown",
@@ -10689,10 +10735,13 @@
         "Cane and beet sugar are the same substance, crystallized from the plant’s juice.",
         "Pick light or dark brown sugar; dark carries more molasses.",
         "Read the added sugars line as a percent Daily Value on a plain sugar.",
-        "Keep brown sugar closed, since it hardens in open air."
+        "Keep brown sugar closed, since it hardens in open air.",
+        "More than half of granulated sugar sold comes from bioengineered sugar beets. Plain “sugar” names no crop.",
+        "Choose certified organic sugar first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second."
       ],
       "watch_out": [
-        "Coconut sugar is made mostly of sucrose, like other sugar."
+        "Coconut sugar is made mostly of sucrose, like other sugar.",
+        "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary."
       ],
       "pick_steps": [
         "Read the list: sugar alone, or sugar and molasses for brown.",
@@ -10820,6 +10869,14 @@
         {
           "name": "EWG: Food chemicals guide, preservative uses",
           "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+        },
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
         }
       ],
       "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
@@ -10833,10 +10890,13 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Skip avocado oil too: the label cannot prove the oil is pure.",
         "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any.",
-        "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it."
+        "TBHQ and propyl gallate are used as preservatives in vegetable oil. Read the list for propyl gallate too; choose one without it.",
+        "Canola, soy, corn and cottonseed oils come from mostly bioengineered crops. These oils are typically derived from bioengineering.",
+        "For canola, soy, corn or cottonseed oil, choose certified organic first. Non-GMO Project Verified is a close second."
       ],
       "watch_out": [
-        "Oil that starts smoking in the pan is no longer fit to use."
+        "Oil that starts smoking in the pan is no longer fit to use.",
+        "The “derived from bioengineering” line on these oils is voluntary when processing leaves no modified DNA."
       ],
       "pick_steps": [
         "How it was pressed: see ‘Cold-pressed’, ‘expeller-pressed’, ‘refined’.",
@@ -12284,6 +12344,14 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Non-GMO Project: GMO FAQ",
+          "url": "https://www.nongmoproject.org/gmo-faq/"
         }
       ],
       "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
@@ -12294,11 +12362,14 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the ingredients for masa or corn masa.",
         "A trace of lime on the list points to the traditional cooking step.",
-        "“Restaurant-style” chips are tortillas cut into wedges and fried."
+        "“Restaurant-style” chips are tortillas cut into wedges and fried.",
+        "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
+        "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second."
       ],
       "watch_out": [
         "Some corn chips are made from corn that was never cooked in lime.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering."
       ],
       "pick_steps": [
         "Read the ingredients for masa or corn masa, and a trace of lime."
@@ -12428,6 +12499,10 @@
         {
           "name": "Weston A. Price Foundation: FAQ, fats and oils",
           "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+        },
+        {
+          "name": "CSPI: New GMO disclosures",
+          "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
         }
       ],
       "kristy_take": "Popped corn found in Peru dates back 6,700 years. One extension view holds that whole kernels popped at home are the consumer-controlled option. Nebraska grows the most popcorn, and Indiana is second.",
@@ -12438,11 +12513,13 @@
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Buy plain kernels to pop at home in coconut oil, butter or tallow, then salt to taste.",
         "Loose kernels pop in a plain brown paper bag in the microwave.",
-        "Unpopped “old maids” come from hulls with cuts or weak spots."
+        "Unpopped “old maids” come from hulls with cuts or weak spots.",
+        "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
       ],
       "watch_out": [
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering."
       ],
       "pick_steps": [
         "Buy plain kernels to pop at home in coconut oil, butter or tallow.",

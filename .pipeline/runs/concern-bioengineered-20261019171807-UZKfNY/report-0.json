@@ -1,0 +1,41 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Home-card facts and ladder implemented; acceptance passed. NOTE: the acceptance file was supplied and remained unchanged."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "All seven cards contain the required facts. Exact append counts and complete fact coverage verified."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Existing strings, ordering and frozen fields match c24aea0. Assumptions: extend all seven existing pins, preserving additional fields. Required CONCERN members added."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "New sentences contain at most 17 words and one semicolon. twoLineCheck: 181 checked, zero violations."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Required sources appended; existing sources preserved. NOTE: CSPI's exact archived URL is on line 2; archive unchanged."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "Claim and wording checks passed. Acceptance: 6/6; full suite: 2782 passed, zero failures or skips. Do-lines rebuild produced no diff; git diff --check passed."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

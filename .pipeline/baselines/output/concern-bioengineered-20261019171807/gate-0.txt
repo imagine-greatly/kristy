@@ -1,0 +1,122 @@
+TAP version 13
+# Subtest: C1 the home card names the package word, the voluntary derived line, the QR or phone route, the exemptions, the unapproved claims and the ladder
+not ok 1 - C1 the home card names the package word, the voluntary derived line, the QR or phone route, the exemptions, the unapproved claims and the ladder
+  ---
+  duration_ms: 0.843166
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:40:1'
+  failureType: 'testCodeFailure'
+  error: 'the package word'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue. 
+     Organic already implies non-GMO. You don’t need both seals. 
+     Ignore ‘non-GMO’ on foods that have no GMO version anyway. 
+     Decide if GMOs actually matter to you before paying up for the seal.
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:42:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 each other target card names its crop and the ladder; popcorn says never
+not ok 2 - C2 each other target card names its crop and the ladder; popcorn says never
+  ---
+  duration_ms: 0.243791
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:53:1'
+  failureType: 'testCodeFailure'
+  error: 'cooking_oils names bioengineered'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: ''
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:56:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C3 earlier lines stay and frozen fields are untouched on every target
+not ok 3 - C3 earlier lines stay and frozen fields are untouched on every target
+  ---
+  duration_ms: 0.447041
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:67:1'
+  failureType: 'testCodeFailure'
+  error: 'label_nonGMO_vs_organic buying_tips gained nothing'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:73:14)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+not ok 4 - C4 new lines are readable: at most 20 words a sentence, at most one semicolon
+  ---
+  duration_ms: 0.101875
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:80:1'
+  failureType: 'testCodeFailure'
+  error: 'label_nonGMO_vs_organic added lines has 0 members (need 2+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:82:19)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 sources come from the concern archive and nothing is dropped
+not ok 5 - C5 sources come from the concern archive and nothing is dropped
+  ---
+  duration_ms: 0.164333
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:92:1'
+  failureType: 'testCodeFailure'
+  error: 'label_nonGMO_vs_organic sources has 0 members (need 1+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/concernBioengineered.test.js:97:18)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 no health claims, first person, em dash, price, calorie talk, brand or owned-fact wording in what the batch adds
+ok 6 - C6 no health claims, first person, em dash, price, calorie talk, brand or owned-fact wording in what the batch adds
+  ---
+  duration_ms: 0.883583
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 1
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 78.423458
