@@ -11,8 +11,7 @@
     "server/lib/doLines.json",
     "server/test/acceptance/twoLinePin.js",
     "server/test/acceptance/cardOrder.test.js",
-    "server/test/acceptance/cardTidy.test.js",
-    "server/test/acceptance/sugarsRank.test.js"
+    "server/test/acceptance/cardTidy.test.js"
   ],
   "read_full": [
     "server/test/acceptance/twoLinePin.js",
@@ -25,7 +24,7 @@
     "VOICE_SPEC.md",
     "server/lib/testGuards.js"
   ],
-  "verify": "cd /Users/m1/kristy/server && node --test test/acceptance/sugarsRank.test.js && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js && npm test"
+  "verify": "cd /Users/m1/kristy && node --test server/test/acceptance/sugarsRank.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js && npm test"
 }
 ```
 
