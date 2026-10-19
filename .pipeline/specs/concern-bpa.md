@@ -140,6 +140,8 @@ const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category'
 const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
 const fields = (e) => Object.entries(e).filter(([k]) => !SKIP.has(k)).flatMap(([, v]) => strings(v));
 const text = (e) => fields(e).join(' \n ');
+// Text this batch adds; lines already on the card before the batch are not this batch's claims.
+const added = (id) => { const old = new Set(fields(was(id))); return fields(card(id)).filter((s) => !old.has(s)).join(' \n '); };
 const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
 const sentences = (id) => fields(card(id)).flatMap((s) => s.split(/(?<=[.;!?])\s+/));
 
@@ -176,7 +178,7 @@ test('C2 BPA-free is the maker word, no product claim, no acidity claim', () => 
       if (/\bBPA\b/.test(sent)) assert.doesNotMatch(sent, /\b(contains?|carries|has|have|includes?)\s+(BPA|bisphenol)/i, `${id} claims the product has BPA: ${sent}`);
     }
   }
-  assert.doesNotMatch(ALL.map((id) => text(card(id))).join(' ').replace(/high-acid canned food keeps/gi, ''), /acid(ic)?\b|high-acid|tomato\w*[^.]*(leach|migrat)/i, 'acidity claim');
+  assert.doesNotMatch(ALL.map(added).join(' '), /acid(ic)?\b|high-acid|tomato\w*[^.]*(leach|migrat)/i, 'acidity claim');
 });
 
 test('C3 earlier lines stay and the home card is untouched', () => {
@@ -215,9 +217,10 @@ test('C5 sources come from the concern archive', () => {
 
 test('C6 no illness claims, first person, em dash, price or brand', () => {
   const BAN = /\b(causes?|prevents?|lowers? (the )?risk|cancer|tumou?rs?|toxic\w*|unsafe|safe|safer|harm\w*|risks?|linked to|estrogen\w*|hormon\w*|health\w*|exposure|leach\w*|pregnan\w*|infants?|children)\b/i;
-  const BRANDS = /\b(Amy'?s|Hormel|Target|Eden|Trader Joe|Whole Foods|Hain|ConAgra|Muir Glen|Annie|Tyson|Sprouts)\b/; // case-sensitive: 'whole foods' is a common noun
+  const BRANDS = /\b(Amy'?s|Hormel|Target|Eden|Trader Joe|Whole Foods|Hain|ConAgra|Muir Glen|Annie|Tyson|Sprouts)\b/i;
+  nonEmpty(ALL.filter((id) => added(id)), 'cards with added text', ALL.length);
   for (const id of ALL) {
-    const t = text(card(id)).replace(/dolphin-safe/gi, '');
+    const t = added(id).replace(/dolphin-safe/gi, '');
     assert.doesNotMatch(t, BAN, `${id} treatment wording`);
     assert.doesNotMatch(t, /\b(I|me|my)\b/, `${id} first person`);
     assert.doesNotMatch(t, /—/, `${id} em dash`);
