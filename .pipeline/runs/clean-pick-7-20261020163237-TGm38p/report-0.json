@@ -1,0 +1,87 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/cleanPick2.test.js",
+    "server/test/acceptance/cleanPick2b.test.js",
+    "server/test/acceptance/cleanPick3.test.js",
+    "server/test/acceptance/cleanPick4.test.js",
+    "server/test/acceptance/cleanPick5.test.js",
+    "server/test/acceptance/cleanPick6.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Acceptance passes: exactly nine decisions replaced with BECAME values. All quoted old decisions matched e3b4a68. Pins and historical overlays updated."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Both lints pass; all nine decisions meet the word limit. Assumptions: preserve authoritative broccoli text at 12 words. twoLineCheck: 181 checked, zero violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance confirms every required mechanical phrase survives."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance confirms all nine decisions satisfy wording and punctuation restrictions."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Organic added to exactly the four specified picks. Assumptions: cleanPick6's other-picks floor is four, matching the measured population and review recommendation."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "All 202 outside entries and top-level data unchanged. Historical counts match expectations: 106/122/139/160/169/185. Only owned files changed; git diff --check passes."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "doLines.json and review document unchanged from base. Not migrated."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Acceptance confirms no cross-item or generic naming."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All 46 batch aliases reach their own pick and no card. listMatchProbe reports no wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "All nine decisions are distinct and satisfy the duplication threshold."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "All nine first-alias rows carry the expected pickId and new pickLine, without cardSlug."
+    },
+    {
+      "id": "C12",
+      "met": true,
+      "evidence": "All 304 bare and organic-prefixed queries preserve base routing."
+    },
+    {
+      "id": "C13",
+      "met": true,
+      "evidence": "Live facts hold; all three held picks remain unchanged. Acceptance: 13/13. Full npm test run once: 2932 passed, zero failures or skips. commitGuard passes. NOTES: supplied isolated TMPDIR resolved the scratch-storage concern."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

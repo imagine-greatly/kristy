@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+import { CLEAN_PICK_7 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -86,15 +87,15 @@ test('C5 organic is new on all 17 lines and unchanged on every other pick', () =
     assert.doesNotMatch(was(id).decision, ORGANIC, `${id} base already organic`);
     assert.ok(live(id).decision.startsWith('Organic '), id);
   }
-  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id));
-  nonEmpty(otherPicks(base), 'other picks', 8);
+  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
+  nonEmpty(otherPicks(base), 'other picks', 4);
   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
   assert.equal(count(kb), count(base));
 });
 
 test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
-  nonEmpty(others, 'others', 189);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
+  nonEmpty(others, 'others', 180);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());

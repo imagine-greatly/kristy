@@ -3249,7 +3249,7 @@ const PICK_PINS = {
     ]
   },
   "pick_jerky": {
-    "decision": "Beef jerky with a short list; celery powder supplies nitrite.",
+    "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
     "sources": [
       {
         "name": "NDSU Extension: Jerky",
@@ -3270,7 +3270,7 @@ const PICK_PINS = {
     ]
   },
   "pick_juice": {
-    "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
+    "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
     "sources": [
       {
         "name": "FDA: What You Need to Know About Juice Safety",
@@ -3283,7 +3283,7 @@ const PICK_PINS = {
     ]
   },
   "pick_canned_tomatoes": {
-    "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
+    "decision": "Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
     "sources": [
       {
         "name": "Nebraska Extension: Food Storage",
@@ -3410,3 +3410,8 @@ export const preCleanPick5 = (e) => (e && CLEAN_PICK_5.has(e.id) ? PRE_CP5.entri
 export const CLEAN_PICK_6 = new Set(['pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
 const PRE_CP6 = JSON.parse(execFileSync('git', ['show', 'c6d3ff2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick6 = (e) => (e && CLEAN_PICK_6.has(e.id) ? PRE_CP6.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-7 (2026-10-20) moved these 9 pick lines to each item's own cleanest version; older batch tests read them as of e3b4a68, and cleanPick7.test.js owns the new text.
+export const CLEAN_PICK_7 = new Set(['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
+const PRE_CP7 = JSON.parse(execFileSync('git', ['show', 'e3b4a68:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick7 = (e) => (e && CLEAN_PICK_7.has(e.id) ? PRE_CP7.entries.find((x) => x.id === e.id) : e);

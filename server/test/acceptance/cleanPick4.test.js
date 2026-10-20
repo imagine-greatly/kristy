@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
+import { CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -102,8 +102,8 @@ test('C5 no bread or grain front names organic', () => {
 });
 
 test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id));
-  nonEmpty(others, 'others', 162);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id));
+  nonEmpty(others, 'others', 153);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());

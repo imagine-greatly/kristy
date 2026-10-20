@@ -1,0 +1,554 @@
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index 8206c14..f851d7f 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -5972,7 +5972,7 @@
+         "canned diced tomatoes",
+         "canned crushed tomatoes"
+       ],
+-      "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
++      "decision": "Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Food Storage",
+@@ -5995,7 +5995,7 @@
+         "frozen green peas",
+         "frozen sweet peas"
+       ],
+-      "decision": "Peas frozen solid, with no pack drips or off smell.",
++      "decision": "Organic peas frozen solid, with no pack drips or off smell.",
+       "sources": [
+         {
+           "name": "NDSU Extension: Food Freezing Guide",
+@@ -6013,7 +6013,7 @@
+         "frozen broccoli florets",
+         "frozen broccoli floret"
+       ],
+-      "decision": "Broccoli frozen solid; pack drips or off smell mean it thawed.",
++      "decision": "Organic broccoli frozen solid; pack drips or off smell mean it thawed.",
+       "sources": [
+         {
+           "name": "NDSU Extension: Food Freezing Guide",
+@@ -6285,7 +6285,7 @@
+         "orange juice",
+         "orange juices"
+       ],
+-      "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
++      "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
+       "sources": [
+         {
+           "name": "FDA: What You Need to Know About Juice Safety",
+@@ -6356,7 +6356,7 @@
+         "block of tofu",
+         "blocks of tofu"
+       ],
+-      "decision": "Tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
++      "decision": "Organic tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
+       "sources": [
+         {
+           "name": "Food Hero (Oregon State University Extension): All About Tofu",
+@@ -8042,7 +8042,7 @@
+         "meat stick",
+         "meat sticks"
+       ],
+-      "decision": "Beef jerky with a short list; celery powder supplies nitrite.",
++      "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
+       "sources": [
+         {
+           "name": "NDSU Extension: Jerky",
+@@ -8660,7 +8660,7 @@
+         "fish finger",
+         "fish fingers"
+       ],
+-      "decision": "Read under the name for “made from minced fish”, set in bold.",
++      "decision": "Wild-caught fish sticks from whole fillet, not ones labeled “made from minced fish” in bold.",
+       "sources": [
+         {
+           "name": "Cornell LII: 21 CFR § 102.45 Fish sticks or portions made from minced fish",
+@@ -9191,7 +9191,7 @@
+         "english muffin",
+         "english muffins"
+       ],
+-      "decision": "English muffins with whole wheat flour as the first ingredient.",
++      "decision": "English muffins with whole wheat flour as the first ingredient, no preservatives or seed oil.",
+       "sources": [
+         {
+           "name": "Wikipedia: English muffin",
+@@ -9219,7 +9219,7 @@
+         "naans",
+         "naan bread"
+       ],
+-      "decision": "Pita with whole wheat flour first; naan is the richer one, made with yogurt.",
++      "decision": "Unenriched pita with whole wheat flour first; naan is the richer one, made with yogurt.",
+       "sources": [
+         {
+           "name": "Busby’s Bakery: Naan vs pita",
+diff --git a/server/test/acceptance/ca-4b.test.js b/server/test/acceptance/ca-4b.test.js
+index 052addc..9f5bcb2 100644
+--- a/server/test/acceptance/ca-4b.test.js
++++ b/server/test/acceptance/ca-4b.test.js
+@@ -1,6 +1,6 @@
+ // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7 } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -17,7 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+ const LIVE = structuredClone(kb); // the review table follows the live front
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(e)))))))));
+ const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+diff --git a/server/test/acceptance/ca-7.test.js b/server/test/acceptance/ca-7.test.js
+index 5ae68b1..5cad03a 100644
+--- a/server/test/acceptance/ca-7.test.js
++++ b/server/test/acceptance/ca-7.test.js
+@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7 } from './twoLinePin.js';
+ 
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(e)))))))));
+ const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+ const now = (id) => kb.entries.find((e) => e.id === id);
+diff --git a/server/test/acceptance/cleanPick1.test.js b/server/test/acceptance/cleanPick1.test.js
+index 6bd5c8b..f66cd94 100644
+--- a/server/test/acceptance/cleanPick1.test.js
++++ b/server/test/acceptance/cleanPick1.test.js
+@@ -226,7 +226,8 @@ const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_se
+   /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
+   /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta',
+   /* clean-pick-5 */ 'tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus',
+-  /* clean-pick-6 */ 'pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
++  /* clean-pick-6 */ 'pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens',
++  /* clean-pick-7 */ 'pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
+ // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
+ // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
+ const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
+@@ -303,7 +304,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these
+ });
+ 
+ test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
+-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 110);
++  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
+   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
+   assert.equal(kb.entries.length, base.entries.length);
+   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
+diff --git a/server/test/acceptance/cleanPick2.test.js b/server/test/acceptance/cleanPick2.test.js
+index 8fdc14c..e3789a3 100644
+--- a/server/test/acceptance/cleanPick2.test.js
++++ b/server/test/acceptance/cleanPick2.test.js
+@@ -5,9 +5,9 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+-const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6]);
++const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6, ...CLEAN_PICK_7]);
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -204,7 +204,7 @@ test('C5 every B2 id names organic; outside the batch organic presence is unchan
+ 
+ test('C6 entries outside the batch deepEqual 74237ce', () => {
+   const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+-  nonEmpty(others, 'others', 126);
++  nonEmpty(others, 'others', 117);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+ });
+diff --git a/server/test/acceptance/cleanPick2b.test.js b/server/test/acceptance/cleanPick2b.test.js
+index 53c9983..644c255 100644
+--- a/server/test/acceptance/cleanPick2b.test.js
++++ b/server/test/acceptance/cleanPick2b.test.js
+@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
+ 
+ test('C3 every other field and entry equals a2487a7', () => {
+   for (const e of kb.entries) {
+-    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id) || CLEAN_PICK_6.has(e.id)) continue;
++    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id) || CLEAN_PICK_6.has(e.id) || CLEAN_PICK_7.has(e.id)) continue;
+     const old = find(base, e.id);
+     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
+     assert.deepEqual(strip(e), strip(old), e.id);
+diff --git a/server/test/acceptance/cleanPick3.test.js b/server/test/acceptance/cleanPick3.test.js
+index 6e4033e..eff2168 100644
+--- a/server/test/acceptance/cleanPick3.test.js
++++ b/server/test/acceptance/cleanPick3.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
++import { CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -129,8 +129,8 @@ test('C5 organic is named exactly on nuggets, hot dogs and turkey bacon', () =>
+ });
+ 
+ test('C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id));
+-  nonEmpty(others, 'others', 143);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id));
++  nonEmpty(others, 'others', 134);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick4.test.js b/server/test/acceptance/cleanPick4.test.js
+index 590f3f6..e566bdc 100644
+--- a/server/test/acceptance/cleanPick4.test.js
++++ b/server/test/acceptance/cleanPick4.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
++import { CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -102,8 +102,8 @@ test('C5 no bread or grain front names organic', () => {
+ });
+ 
+ test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id));
+-  nonEmpty(others, 'others', 162);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id));
++  nonEmpty(others, 'others', 153);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick5.test.js b/server/test/acceptance/cleanPick5.test.js
+index 62c1b4a..3d47f84 100644
+--- a/server/test/acceptance/cleanPick5.test.js
++++ b/server/test/acceptance/cleanPick5.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_6 } from './twoLinePin.js';
++import { CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -126,8 +126,8 @@ test('C5 organic sits on the decision and cart of exactly the seven crop ids', (
+ });
+ 
+ test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id));
+-  nonEmpty(others, 'others', 173);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id));
++  nonEmpty(others, 'others', 164);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick6.test.js b/server/test/acceptance/cleanPick6.test.js
+index 6c0a873..c42918c 100644
+--- a/server/test/acceptance/cleanPick6.test.js
++++ b/server/test/acceptance/cleanPick6.test.js
+@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
+ import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
++import { CLEAN_PICK_7 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -86,15 +87,15 @@ test('C5 organic is new on all 17 lines and unchanged on every other pick', () =
+     assert.doesNotMatch(was(id).decision, ORGANIC, `${id} base already organic`);
+     assert.ok(live(id).decision.startsWith('Organic '), id);
+   }
+-  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id));
+-  nonEmpty(otherPicks(base), 'other picks', 8);
++  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
++  nonEmpty(otherPicks(base), 'other picks', 4);
+   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
+   assert.equal(count(kb), count(base));
+ });
+ 
+ test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
+-  nonEmpty(others, 'others', 189);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
++  nonEmpty(others, 'others', 180);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick7.test.js b/server/test/acceptance/cleanPick7.test.js
+new file mode 100644
+index 0000000..1adc62a
+--- /dev/null
++++ b/server/test/acceptance/cleanPick7.test.js
+@@ -0,0 +1,175 @@
++// clean-pick-7 (Devon 2026-10-20, "organic, no additives, no synthetic, as close to the source as possible"): B7b, 9 picks name their item's cleanest version; sausage, egg whites and soup bones are held.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
++import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
++
++const BASE = 'e3b4a68';
++const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
++const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
++const find = (k, id) => k.entries.find((e) => e.id === id);
++const live = (id) => find(kb, id);
++const was = (id) => find(base, id);
++
++const BECAME = {
++  pick_frozen_peas: { decision: 'Organic peas frozen solid, with no pack drips or off smell.', carry: /^Organic peas\b/, keep: [/frozen solid, with no pack drips or off smell/] },
++  pick_frozen_broccoli: { decision: 'Organic broccoli frozen solid; pack drips or off smell mean it thawed.', carry: /^Organic broccoli\b/, keep: [/pack drips or off smell mean it thawed/] },
++  pick_canned_tomatoes: { decision: 'Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.', carry: /^Organic tomatoes\b/, keep: [/dented, rusted or swollen cans and read for BPA-free/, /\bdate\b/, /\bquality\b/] },
++  pick_tofu: { decision: 'Organic tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.', carry: /^Organic tofu\b/, keep: [/soybeans, water, coagulant such as nigari or gypsum/] },
++  pick_jerky: { decision: 'Whole-muscle beef jerky with a short list; celery powder supplies nitrite.', carry: /^Whole-muscle beef jerky\b/, keep: [/jerky with a short list; celery powder supplies nitrite/] },
++  pick_fish_sticks: { decision: 'Wild-caught fish sticks from whole fillet, not ones labeled “made from minced fish” in bold.', carry: /^Wild-caught fish sticks\b/, keep: [/“made from minced fish”/, /\bbold\b/] },
++  pick_juice: { decision: 'Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.', carry: /^Juice not from concentrate\b/, keep: [/pasteurized/, /untreated/, /warning labels/, /no added color over dyes/] },
++  pick_english_muffins: { decision: 'English muffins with whole wheat flour as the first ingredient, no preservatives or seed oil.', carry: /^English muffins with whole wheat flour\b/, keep: [/English muffins with whole wheat flour as the first ingredient/] },
++  pick_pita_naan: { decision: 'Unenriched pita with whole wheat flour first; naan is the richer one, made with yogurt.', carry: /^Unenriched pita\b/, keep: [/whole wheat flour first/, /naan is the richer one, made with yogurt/] },
++};
++const IDS = Object.keys(BECAME);
++const ORGANIC_IDS = ['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu'];
++const HELD = ['pick_sausage', 'pick_egg_whites', 'pick_soup_bones'];
++const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
++const TREATMENT = /\b(causes?|prevents?|lowers? (the )?risk|carcinogen|cancer|tumou?rs?|toxic|unsafe|harm\w*|risks?|linked to|hyperactiv|behaviou?r|attention|neurobehavioral|exacerbate)/i;
++const GENERIC = /\borganic (produce|vegetables?|veg|fruits?|food)\b/i;
++const ORGANIC = /\borganic\b/i;
++const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
++const isPick = (e) => e && e.kind === 'pick';
++const ws = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
++
++nonEmpty(IDS, 'IDS', 9);
++
++test('C1 the 9 picks equal their base entries with only the decision replaced, each leading with its own standard', () => {
++  for (const id of IDS) {
++    assert.ok(live(id) && was(id), `${id} missing`);
++    assert.deepEqual(live(id), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
++    assert.match(live(id).decision, BECAME[id].carry, `${id} carry`);
++  }
++});
++
++test('C2 every new pick line passes lintPick and lintCard and holds 16 words or fewer', () => {
++  for (const id of IDS) {
++    assert.deepEqual(lintPick(live(id)), [], `${id} lintPick`);
++    assert.deepEqual(lintCard(live(id)), [], `${id} lintCard`);
++    assert.ok(lintWords(live(id).decision) <= 16, `${id} ${lintWords(live(id).decision)} words`);
++  }
++});
++
++test('C3 the base mechanical read survives in every new line', () => {
++  for (const id of IDS) {
++    for (const re of nonEmpty(BECAME[id].keep, `${id} keep`, 1)) {
++      assert.match(was(id).decision, re, `${id} keep ${re} not in base`);
++      assert.match(live(id).decision, re, `${id} keep ${re} lost`);
++    }
++  }
++});
++
++test('C4 no new line carries a banned or treatment word, first person, a dash, a straight apostrophe, a digit or a question mark', () => {
++  const all = IDS.map((id) => BECAME[id].decision);
++  nonEmpty(all, 'decisions', 9);
++  for (const s of all) {
++    assert.doesNotMatch(s, BANNED, s);
++    assert.doesNotMatch(s, TREATMENT, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|our|ours|us)\b/, s);
++    assert.ok(!s.includes('—') && !s.includes('–'), s);
++    assert.ok(!s.includes("'"), s);
++    assert.doesNotMatch(s, /[0-9?]/, s);
++  }
++});
++
++test('C5 organic is new on exactly the four organic-standard picks and unchanged on every other pick', () => {
++  for (const id of IDS) {
++    assert.doesNotMatch(was(id).decision, ORGANIC, `${id} base already organic`);
++    if (ORGANIC_IDS.includes(id)) assert.ok(live(id).decision.startsWith('Organic '), `${id} lacks organic`);
++    else assert.doesNotMatch(live(id).decision, ORGANIC, `${id} gained organic`);
++  }
++  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id));
++  nonEmpty(otherPicks(base), 'other picks', 20);
++  const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
++  assert.equal(count(kb), count(base));
++});
++
++test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
++  const others = kb.entries.filter((e) => !IDS.includes(e.id));
++  nonEmpty(others, 'others', 197);
++  assert.equal(kb.entries.length, base.entries.length);
++  for (const e of others) assert.deepEqual(e, was(e.id), e.id);
++  assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
++  for (const k of Object.keys(base)) if (k !== 'entries') assert.deepEqual(kb[k], base[k], k);
++});
++
++test('C7 doLines.json and do-lines-review.md are unchanged from the base', () => {
++  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
++  assert.deepEqual(now, JSON.parse(git(`${BASE}:server/lib/doLines.json`)));
++  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
++  nonEmpty(review.split('\n'), 'review lines', 150);
++  assert.equal(review, git(`${BASE}:docs/do-lines-review.md`));
++});
++
++test('C8 each line names its own item, never another batch pick or a generic phrase', () => {
++  const heads = IDS.map((id) => [id, live(id).aliases[0]]);
++  nonEmpty(heads, 'heads', 9);
++  for (const id of IDS) {
++    const d = live(id).decision;
++    assert.doesNotMatch(d, GENERIC, `${id} generic`);
++    for (const [other, a] of heads) {
++      if (other === id) continue;
++      assert.doesNotMatch(d, new RegExp(`\\b${esc(a)}\\b`, 'i'), `${id} names ${a}`);
++    }
++  }
++});
++
++test('C9 every alias of the 9 reaches its own pick and no card', () => {
++  const rows = IDS.flatMap((id) => live(id).aliases.map((a) => [a, id]));
++  nonEmpty(rows, 'aliases', 40);
++  for (const [a, id] of rows) {
++    assert.equal(matchItemToPick(a)?.id, id, `${a} -> pick ${matchItemToPick(a)?.id}`);
++    assert.equal(matchItemToCard(a), null, `${a} -> card ${matchItemToCard(a)?.slug}`);
++  }
++});
++
++test('C10 the 9 lines are distinct and none sits on more than 2 entries', () => {
++  const all = IDS.map((id) => BECAME[id].decision);
++  assert.equal(new Set(all).size, 9);
++  for (const s of all) {
++    const n = kb.entries.filter((e) => [e.decision, e.cart_pick, e.tier_note, ...(e.buying_tips || []), ...(e.watch_out || [])].includes(s)).length;
++    assert.ok(n <= 2, `${s} on ${n} entries`);
++  }
++});
++
++test('C11 a list row of each pick’s first alias carries the new line', () => {
++  for (const id of IDS) {
++    const name = live(id).aliases[0];
++    const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
++    assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
++    assert.equal(row.pickLine, BECAME[id].decision, `${name} pickLine`);
++    assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
++  }
++});
++
++test('C12 every pick alias, bare and organic, resolves to the same pick as at the base', () => {
++  const queries = base.entries.filter(isPick).flatMap((e) => (e.aliases || []).flatMap((a) => [a, `organic ${a}`]));
++  nonEmpty(queries, 'queries', 140);
++  for (const q of queries) {
++    const now = matchItemToPick(q, kb.entries)?.id;
++    const then = matchItemToPick(q, base.entries)?.id;
++    assert.equal(now, then, `${q}: ${then} -> ${now}`);
++  }
++});
++
++test('C13 the live-guard facts hold and the three held picks are untouched', () => {
++  const j = live('pick_juice').decision;
++  for (const re of [/pasteurized/i, /warning label/i, /\bdyes?\b/i, /no added colou?r/i]) assert.match(j, re, `pick_juice ${re}`);
++  assert.ok(ws(j) <= 20, `pick_juice ${ws(j)} words`);
++  const k = live('pick_jerky').decision;
++  assert.match(k, /celery/i, 'pick_jerky celery');
++  assert.doesNotMatch(k, /grass-(fed|finished)/i, 'pick_jerky grass term');
++  assert.ok(ws(k) <= 14, `pick_jerky ${ws(k)} words`);
++  assert.match(live('pick_canned_tomatoes').decision, /BPA-free/, 'pick_canned_tomatoes BPA-free');
++  for (const id of nonEmpty(HELD, 'held', 3)) {
++    assert.ok(live(id) && was(id), `${id} missing`);
++    assert.deepEqual(live(id), was(id), `${id} moved`);
++  }
++});
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index 98a9e0f..708ccc6 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -3249,7 +3249,7 @@ const PICK_PINS = {
+     ]
+   },
+   "pick_jerky": {
+-    "decision": "Beef jerky with a short list; celery powder supplies nitrite.",
++    "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
+     "sources": [
+       {
+         "name": "NDSU Extension: Jerky",
+@@ -3270,7 +3270,7 @@ const PICK_PINS = {
+     ]
+   },
+   "pick_juice": {
+-    "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
++    "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
+     "sources": [
+       {
+         "name": "FDA: What You Need to Know About Juice Safety",
+@@ -3283,7 +3283,7 @@ const PICK_PINS = {
+     ]
+   },
+   "pick_canned_tomatoes": {
+-    "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
++    "decision": "Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
+     "sources": [
+       {
+         "name": "Nebraska Extension: Food Storage",
+@@ -3410,3 +3410,8 @@ export const preCleanPick5 = (e) => (e && CLEAN_PICK_5.has(e.id) ? PRE_CP5.entri
+ export const CLEAN_PICK_6 = new Set(['pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
+ const PRE_CP6 = JSON.parse(execFileSync('git', ['show', 'c6d3ff2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ export const preCleanPick6 = (e) => (e && CLEAN_PICK_6.has(e.id) ? PRE_CP6.entries.find((x) => x.id === e.id) : e);
++
++// clean-pick-7 (2026-10-20) moved these 9 pick lines to each item's own cleanest version; older batch tests read them as of e3b4a68, and cleanPick7.test.js owns the new text.
++export const CLEAN_PICK_7 = new Set(['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
++const PRE_CP7 = JSON.parse(execFileSync('git', ['show', 'e3b4a68:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++export const preCleanPick7 = (e) => (e && CLEAN_PICK_7.has(e.id) ? PRE_CP7.entries.find((x) => x.id === e.id) : e);
+diff --git a/server/test/acceptance/w2.test.js b/server/test/acceptance/w2.test.js
+index a54c909..2630efa 100644
+--- a/server/test/acceptance/w2.test.js
++++ b/server/test/acceptance/w2.test.js
+@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7 } from './twoLinePin.js';
+ import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
+ import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
+ import { kindFor } from '../../lib/counterCards.js';
+ import { lintSections } from '../../lib/counterCardLint.js';
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(e)))))))));
+ 
+ const entries = nonEmpty(kb.entries, 'W2 corpus');
+ const byId = (id) => {
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index 47fa25b..fd988f8 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,8 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
+-kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e)))))));
++import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7 } from './twoLinePin.js';
++kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(e))))))));
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);

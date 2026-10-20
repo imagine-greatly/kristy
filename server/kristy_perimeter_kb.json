@@ -5972,7 +5972,7 @@
         "canned diced tomatoes",
         "canned crushed tomatoes"
       ],
-      "decision": "Skip dented, rusted or swollen cans and read for BPA-free; the date is a quality mark.",
+      "decision": "Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
       "sources": [
         {
           "name": "Nebraska Extension: Food Storage",
@@ -5995,7 +5995,7 @@
         "frozen green peas",
         "frozen sweet peas"
       ],
-      "decision": "Peas frozen solid, with no pack drips or off smell.",
+      "decision": "Organic peas frozen solid, with no pack drips or off smell.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -6013,7 +6013,7 @@
         "frozen broccoli florets",
         "frozen broccoli floret"
       ],
-      "decision": "Broccoli frozen solid; pack drips or off smell mean it thawed.",
+      "decision": "Organic broccoli frozen solid; pack drips or off smell mean it thawed.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -6285,7 +6285,7 @@
         "orange juice",
         "orange juices"
       ],
-      "decision": "Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes.",
+      "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
       "sources": [
         {
           "name": "FDA: What You Need to Know About Juice Safety",
@@ -6356,7 +6356,7 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
+      "decision": "Organic tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
       "sources": [
         {
           "name": "Food Hero (Oregon State University Extension): All About Tofu",
@@ -8042,7 +8042,7 @@
         "meat stick",
         "meat sticks"
       ],
-      "decision": "Beef jerky with a short list; celery powder supplies nitrite.",
+      "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
       "sources": [
         {
           "name": "NDSU Extension: Jerky",
@@ -8660,7 +8660,7 @@
         "fish finger",
         "fish fingers"
       ],
-      "decision": "Read under the name for “made from minced fish”, set in bold.",
+      "decision": "Wild-caught fish sticks from whole fillet, not ones labeled “made from minced fish” in bold.",
       "sources": [
         {
           "name": "Cornell LII: 21 CFR § 102.45 Fish sticks or portions made from minced fish",
@@ -9191,7 +9191,7 @@
         "english muffin",
         "english muffins"
       ],
-      "decision": "English muffins with whole wheat flour as the first ingredient.",
+      "decision": "English muffins with whole wheat flour as the first ingredient, no preservatives or seed oil.",
       "sources": [
         {
           "name": "Wikipedia: English muffin",
@@ -9219,7 +9219,7 @@
         "naans",
         "naan bread"
       ],
-      "decision": "Pita with whole wheat flour first; naan is the richer one, made with yogurt.",
+      "decision": "Unenriched pita with whole wheat flour first; naan is the richer one, made with yogurt.",
       "sources": [
         {
           "name": "Busby’s Bakery: Naan vs pita",

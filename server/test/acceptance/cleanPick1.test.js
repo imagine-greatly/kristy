@@ -226,7 +226,8 @@ const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_se
   /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
   /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta',
   /* clean-pick-5 */ 'tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus',
-  /* clean-pick-6 */ 'pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
+  /* clean-pick-6 */ 'pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens',
+  /* clean-pick-7 */ 'pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
 // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
 // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
 const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
@@ -303,7 +304,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
 });
 
 test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 110);
+  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
   assert.equal(kb.entries.length, base.entries.length);
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
