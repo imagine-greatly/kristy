@@ -1,0 +1,1037 @@
+url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/
+title: pmc-free-chlorine-fresh-cut-leafy-greens
+publisher: Risk Analysis (PMC), FDA Leafy Green Risk Assessment Model
+fetched: 2026-10-20
+tool: firecrawl scrape --format markdown
+
+---
+[Skip to main content](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#main-content)
+
+![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/us_flag.svg)
+
+An official website of the United States government
+
+
+Here's how you know
+
+Here's how you know
+
+![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/icon-dot-gov.svg)
+
+**Official websites use .gov**
+
+A
+**.gov** website belongs to an official
+government organization in the United States.
+
+
+![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/icon-https.svg)
+
+**Secure .gov websites use HTTPS**
+
+A **lock** (
+Lock
+Locked padlock icon
+) or **https://** means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+
+
+### NIH Websites Are Changing
+
+- [Get the Latest Updates and FAQs on the transition](https://www.nih.gov/web-modernization)
+- Per [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/), federal agencies are now using "Super Intelligence" (SI) in place of "Artificial Intelligence" (AI). You may see both terms across NIH content during this transition.
+
+[![NCBI home page](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/ncbi-logos/nih-nlm-ncbi--white.svg)](https://www.ncbi.nlm.nih.gov/)
+
+![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/search.svg)
+
+Search
+
+
+
+
+
+
+
+![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/person.svg)Log in![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/expand_less.svg)![](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/expand_more.svg)
+
+- [Dashboard](https://www.ncbi.nlm.nih.gov/myncbi/)
+- [Publications](https://www.ncbi.nlm.nih.gov/myncbi/collections/bibliography/)
+- [Account settings](https://www.ncbi.nlm.nih.gov/account/settings/)
+-
+
+
+Log out
+
+
+
+
+
+
+Search…
+
+Search NCBI
+
+
+Primary site navigation
+
+
+![Close](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/close.svg)
+ Search
+ ![Search](<Base64-Image-Removed>)
+
+Logged in as:
+
+
+- [Dashboard](https://www.ncbi.nlm.nih.gov/myncbi/)
+- [Publications](https://www.ncbi.nlm.nih.gov/myncbi/collections/bibliography/)
+- [Account settings](https://www.ncbi.nlm.nih.gov/account/settings/)
+
+Log in
+
+[Home](https://pmc.ncbi.nlm.nih.gov/ "Home")
+
+![PMC search open icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/search.svg)![PMC search close ison](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/close.svg)
+
+Search PMC Full-Text Archive
+
+Search in PMC![Search](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons-bg/search--white.svg)
+
+- [Journal List](https://pmc.ncbi.nlm.nih.gov/journals/)
+- [User Guide](https://pmc.ncbi.nlm.nih.gov/about/userguide/)
+
+- ![Open resources icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/more_vert.svg)
+- [![View on publisher site icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/launch.svg)](https://doi.org/10.1111/risa.13818) View on publisher site
+- [![Download PDF icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/pdf/RISA-42-966.pdf) Download PDF
+- ![Collections icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/action-bookmark-full.svg)![Collections icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/action-bookmark-empty.svg)Add to Collections
+- ![Cite icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/format_quote.svg)Cite
+- ![Show article permalink icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/share.svg)Permalink
+
+
+
+
+## PERMALINK
+
+
+
+![Copy icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/content_copy.svg)Copy
+
+
+![Open article navigation icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/list.svg)
+
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+
+Learn more:
+[PMC Disclaimer](https://pmc.ncbi.nlm.nih.gov/about/disclaimer/)
+\|
+[PMC Copyright Notice](https://pmc.ncbi.nlm.nih.gov/about/copyright/)
+
+![Wiley Open Access Collection logo](https://cdn.ncbi.nlm.nih.gov/pmc/banners/logo-blackwellopen.png)
+
+Risk Anal
+
+. 2021 Sep 15;42(5):966–988. doi: [10.1111/risa.13818](https://doi.org/10.1111/risa.13818)
+
+- [Search in PMC](https://pmc.ncbi.nlm.nih.gov/search/?term=%22Risk%20Anal%22[jour])
+- [Search in PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=%22Risk%20Anal%22[jour])
+- [View in NLM Catalog](https://www.ncbi.nlm.nih.gov/nlmcatalog?term=%22Risk%20Anal%22[Title%20Abbreviation])
+- [Add to search](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/?term=%22Risk%20Anal%22[jour])
+
+# Evaluation of Potential Impacts of Free Chlorine during Washing of Fresh‐Cut Leafy Greens on _Escherichia coli_ O157:H7 Cross‐Contamination and Risk of Illness
+
+[Amir Mokhtari](https://pubmed.ncbi.nlm.nih.gov/?term=%22Mokhtari%20A%22[Author])
+
+### Amir Mokhtari
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Amir Mokhtari](https://pubmed.ncbi.nlm.nih.gov/?term=%22Mokhtari%20A%22[Author])
+
+1,#,\*, [Hao Pang](https://pubmed.ncbi.nlm.nih.gov/?term=%22Pang%20H%22[Author])
+
+### Hao Pang
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Hao Pang](https://pubmed.ncbi.nlm.nih.gov/?term=%22Pang%20H%22[Author])
+
+1,#,✉, [Sofia Santillana Farakos](https://pubmed.ncbi.nlm.nih.gov/?term=%22Santillana%20Farakos%20S%22[Author])
+
+### Sofia Santillana Farakos
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Sofia Santillana Farakos](https://pubmed.ncbi.nlm.nih.gov/?term=%22Santillana%20Farakos%20S%22[Author])
+
+1,#, [Gordon R Davidson](https://pubmed.ncbi.nlm.nih.gov/?term=%22Davidson%20GR%22[Author])
+
+### Gordon R Davidson
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Gordon R Davidson](https://pubmed.ncbi.nlm.nih.gov/?term=%22Davidson%20GR%22[Author])
+
+1, [Elizabeth Noelia Williams](https://pubmed.ncbi.nlm.nih.gov/?term=%22Williams%20EN%22[Author])
+
+### Elizabeth Noelia Williams
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Elizabeth Noelia Williams](https://pubmed.ncbi.nlm.nih.gov/?term=%22Williams%20EN%22[Author])
+
+1, [Jane M Van Doren](https://pubmed.ncbi.nlm.nih.gov/?term=%22Van%20Doren%20JM%22[Author])
+
+### Jane M Van Doren
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+Find articles by [Jane M Van Doren](https://pubmed.ncbi.nlm.nih.gov/?term=%22Van%20Doren%20JM%22[Author])
+
+1
+
+- Author information
+- Article notes
+- Copyright and License information
+
+1Food and Drug Administration, Center for Food Safety and Applied Nutrition, 5001 Campus Drive, College Park, Maryland, 20740, USA
+
+\*
+
+Address correspondence to Hao Pang, Center for Food Safety and Applied Nutrition, U.S. Food and Drug Administration, 5001 Campus Drive, College Park, MD 20740 USA; tel: 240‐402‐4101; Hao.Pang@fda.hhs.gov
+
+#
+
+Authors Amir Mokhtari, Hao Pang, and Sofia Santillana Farakos contributed equally to this work.
+
+\*
+
+Current address: Booz Allen Hamilton, 4747 Bethesda Ave, Bethesda, MD, 20814, USA.
+
+✉
+
+Corresponding author.
+
+Revised 2021 Aug 6; Received 2021 Jul 1; Accepted 2021 Aug 13; Issue date 2022 May.
+
+Published 2021. This article is a U.S. Government work and is in the public domain in the USA. _Risk Analysis_ published by Wiley Periodicals LLC on behalf of Society for Risk Analysis.
+
+This is an open access article under the terms of the [http://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/) License, which permits use and distribution in any medium, provided the original work is properly cited, the use is non‐commercial and no modifications or adaptations are made.
+
+[PMC Copyright notice](https://pmc.ncbi.nlm.nih.gov/about/copyright/)
+
+PMCID: PMC9544649  PMID: [34528270](https://pubmed.ncbi.nlm.nih.gov/34528270/)
+
+## Abstract
+
+Addition of chlorine‐based antimicrobial substances to fresh‐cut leafy green wash water is done to minimize microbial cross‐contamination during processing. We developed the FDA Leafy Green Risk Assessment Model (FDA‐LGRAM) to quantify the impact of free chlorine concentration in wash water during fresh‐cut lettuce processing on the extent of water‐mediated cross‐contamination between shredded lettuce and the associated risk of illness due to exposure to _Escherichia coli_ O157:H7. At different contamination prevalence and levels of _E. coli_ O157:H7 on incoming lettuce heads, the model compared the predicted prevalence of contaminated fresh‐cut lettuce packages and the risk of illness per serving between: (1) a scenario where fresh‐cut lettuce was packaged without washing; and (2) scenarios involving washing fresh‐cut lettuce with different levels of free chlorine (0 ppm, 5 ppm, 10 ppm, 15 ppm, and 20 ppm) prior to packaging. Our results indicate that the free chlorine level in wash water has a substantial impact on the predicted prevalence of contaminated fresh‐cut lettuce packages and the risk of illness associated with _E. coli_ O157:H7 in fresh‐cut lettuce. Results showed that the required level of free chlorine that can minimize water‐mediated cross‐contamination and reduce the corresponding risk of illness depended on contamination prevalence and levels of _E. coli_ O157:H7 on incoming lettuce heads. Our model also indicated that the pathogen inactivation rate in wash water via free chlorine was a key model parameter that had a significant impact on the extent of cross‐contamination during washing and the predicted associated risk of illness.
+
+**Keywords:** Chlorine, cross‐contamination, leafy greens
+
+## 1\. INTRODUCTION
+
+Leafy greens are a widely consumed vegetable and an important part of a healthy diet (U.S. Food and Drug Administration \[FDA\], [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0028)). After harvesting, leafy greens can be sold as a raw agricultural commodity (RAC) or further processed into fresh‐cut products. While millions of servings are safely consumed daily in the United States, there have been recurring outbreaks of _Escherichia coli_ O157:H7 infections linked to leafy greens (FDA, [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0028)). The U.S. Food and Drug Administration (FDA) and Centers for Disease Control and Prevention (CDC) identified 40 foodborne outbreaks of Shiga toxin‐producing _E. coli_ (STEC) infections between 2009 and 2018 with a confirmed or suspected link to leafy greens (FDA, [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0028)). _E. coli_ O157:H7 is the most common STEC associated with foodborne outbreaks in the United States (FDA, [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0028)). Contamination of leafy greens with microbial pathogens such as _E. coli_ O157:H7 can occur at multiple stages of production from a variety of sources. For example, contamination can occur from encroachment by animals during field production, from adjacent land use such as nearby cattle grazing, from irrigation water contaminated with runoff containing animal feces, and from contaminated wash water during fresh‐cut processing (Gorny, Giclas, Gombas, & Means, [2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0010); FDA, [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0029); Mishra, Pang, Buchanan, Schaffner, & Pradhan, [2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0015)).
+
+Leafy greens are washed to remove soil and other debris, decrease the microbial load, and improve quality and appearance (Davidson, Buchholz, & Ryser, [2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0005)). Recirculation of wash water during processing can result in the spread of biological hazards (Davidson et al., [2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0005)) if there is an insufficient level of added antimicrobial substances (Gorny et al., [2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0010); Gombas et al., [2017](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0008)). Sodium hypochlorite, as a source of free chlorine, is widely used as an antimicrobial in recirculated wash water during leafy green processing to significantly minimize or prevent pathogen cross‐contamination (Gorny et al., [2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0010); Luo et al., [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0013); Gombas et al., [2017](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0008)). Actively maintaining an adequate level of free chlorine in the wash water is critical; however, the dynamic characteristics of wash water can impact the effectiveness of the added antimicrobial. Among other things, the accumulation of organic and inorganic matter during washing can cause a significant decline in free chlorine concentration and as a result, its antimicrobial efficacy (Deborde & von Gunten, [2008](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0006); Gombas et al., [2017](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0008)).
+
+Water‐mediated cross‐contamination has been shown to contribute to the risk associated with _E. coli_ O157:H7 on leafy greens (Danyluk & Schaffner, [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0004)). Previous studies have shown that free chlorine at various concentrations (ranging from 5 ppm to 25 ppm) prevented pathogen cross‐contamination during washing of produce (Luo et al., [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0013); Luo et al., [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0014); Shen, [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0024); Zhou, Luo, Nou, Lyu, & Wang, [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0032); Gomez‐Lopez, Lannoo, Gil, & Allende, [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0009); Tomas‐Callejas et al., [2012](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0027)). However, the relationship between specific free chlorine concentrations in wash water and the extent of cross‐contamination remains unclear and the impact of free chlorine concentration in wash water on the associated risk of illness has not been previously quantified. In a previous study, we developed a mathematical model for postharvest processing of leafy greens that simulated the dynamic and complex fresh‐cut processing system while tracking the transfer of _E. coli_ O157:H7 due to water‐mediated cross‐contamination (Mokhtari, Oryang, Chen, Pouillot, & Van Doren, [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0016)). The objective of this study was to evaluate the impact of using free chlorine during washing of fresh‐cut leafy greens to predict the extent of _E. coli_ O157:H7 cross‐contamination and the associated risk of illness. To this end, we developed the FDA Leafy Green Risk Assessment Model (FDA‐LGRAM). Specifically, FDA‐LGRAM was used to ( [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-disp-0001)) characterize the relationship between free chlorine levels in fresh‐cut leafy green wash water and predicted prevalence of contaminated fresh‐cut leafy green packages; and ( [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-disp-0002)) characterize the relationship between free chlorine levels in fresh‐cut leafy green wash water and the predicted risk of illness per serving associated with _E. coli_ O157:H7 in fresh‐cut lettuce.
+
+## 2\. METHODS
+
+### 2.1. Overview of the Model
+
+FDA‐LGRAM begins at the processing facility where fresh leafy greens arrive from the field. The model uses the agent‐based model (ABM) presented in Mokhtari et al. ( [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0016)) to describe the washing step during the postharvest processing of fresh‐cut leafy greens. FDA‐LGRAM also includes mathematical descriptions of pathogen contamination on leafy greens during commercial transportation to retail stores, retail storage, and consumer storage. The model was flexibly designed to accommodate different pathogens and/or leafy green commodities. In this study, we use this model to examine _E. coli_ O157:H7 contamination of fresh‐cut lettuce and quantify the predicted associated risk of illness to consumers.
+
+FDA‐LGRAM was written in the open‐source language R Version 3.5.2 (the R code is available upon request: FDAFoodSafetyRiskModel@fda.hhs.gov). The model code was written to be launched on parallelized processors using a high‐performance computing cluster (Center for Food Safety and Applied Nutrition, FDA, College Park, MD). We considered variability within contamination prevalence (proportion of lettuce heads contaminated with _E. coli_ O157:H7) and levels ( _E. coli_ O157:H7 population on contaminated lettuce heads, CFU/head) on incoming lettuce heads, different contamination transfer and inactivation rates during the flume tank washing step with free chlorine, as well as time‐temperature profiles during postprocessing steps, including transportation to retail stores, retail storage, and consumer storage.
+
+### 2.2. Mathematical Description of the Model
+
+The FDA‐LGRAM was divided into several steps, including fresh‐cut processing and postprocessing steps of transportation, retail storage, consumer storage, and consumption. The data we used to populate model inputs are summarized in Table [I](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0001). These inputs are grouped into several categories, including processing facility and product properties, contamination condition on incoming lettuce heads, flume tank washing, transportation and storage (retail and consumer), and consumption at home. For contamination prevalence and levels on incoming lettuce heads, washing time, produce to water ratio, and levels of free chlorine in wash water, we used discrete distributions representing values with equal probabilities spanning across the range of possible options, rather than choosing a specific set of values. Using this approach, we were able to generate data on a wide range of what‐if scenarios during a Monte Carlo simulation. We also elicited the opinions of external experts in the field of fresh‐cut lettuce production (Luo, [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012); Versar, [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) to populate selected model inputs when peer‐reviewed data were not readily available.
+
+#### Table I.
+
+Summary of the FDA‐LGRAM Inputs
+
+| Model Step and Input Description | Inputs | Units | Value(s) [a](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl1-note-0001) | Reference |
+| :-- | :-- | :-- | :-- | :-- |
+| Processing facility and product properties |
+| Number of lettuce heads processed | _n_ LH | – | 50,000 | Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Lettuce head weight | _W_ LH | g | 675 | Luo ( [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012); Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Number of fresh‐cut pieces per lettuce head | _n_ PSLH | head–1 | 150 | Luo ( [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012)); Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Number of fresh‐cut lettuce pieces per package | _n_ PSLB | – | 115 | Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Fresh‐cut lettuce shelf‐life | _SLLB_ | day | 15 | Model assumption |
+| Contamination condition on incoming lettuce heads |
+| Prevalence of _E. coli_ O157:H7 contaminated lettuce heads | _P0_ | % | D(0.02, 0.05, 0.075, 0.1) | Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| _E. coli_ O157:H7 concentration on contaminated lettuce heads | _C0_ | cfu/head | D(25, 50, 75, 100) | Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Flume tank washing |
+| Flume tank volume | _V_ | L | 2,500 | Luo ( [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012)); Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Pathogen binding rate: water to lettuce | _β_ LW | ml/(g min) | T(0.38, 0.75, 2.2) | Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) |
+| Pathogen inactivation rate via free chlorine | _Α_ | L/(mg.min) | Low α scenario: U(0.5, 0.75)<br>High α scenario: U(2, 13) | Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017))<br>Rice et al. ( [1999](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0023))<br>Zhou et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0032))<br>Murray et al. ( [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0018)) |
+| Fraction of pathogens remaining on contaminated pieces during washing | _Xs_ | Unitless | T(0.003, 0.055, 0.149) | Smolinski et al. ( [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0025) |
+| Produce‐to‐water ratio | _R_ PW | Kg/L | D(1/30, 1/45, 1/60, 1/85) | Luo ( [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012)); Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Washing time | WT | min | D(0.5, 0.75, 1.0) | Luo ( [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012)); Versar ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)) |
+| Maintained minimum free chlorine level | FCmin | ppm | D(0, 5, 10, 15, 20) | Scenarios |
+| Transportation and storage |
+| Commercial transportation temperature | _STCT_ | oC | Randomized profile from Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) | Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) |
+| Retail storage temperature | _STR_ | oC | Randomized profile from Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) | Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) |
+| Consumer storage temperature | _STC_ | oC | Random value from EcoSure ( [2007](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0007)) | EcoSure ( [2007](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0007)) |
+| Commercial transportation time | _tCT_ | hour | T(30, 64, 85) | Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) |
+| Retail storage time | _tRS_ | Hour | T(12, 96, 168) | Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) |
+| Consumer storage time | _tC_ | Hour | T(0, 0.3 × \[24 × _SLLB_ – ( _tCT \+ tRS_)\], \[24 × _SLLB_ – ( _tCT_ \+ _tRS_)\]) | Model assumption |
+| Consumer storage time cut‐off | _STC,max_ | Hour | |     |
+| --- |
+|  | | Model assumption |
+| Consumption at home |
+| Serving size | _SS_ | g | Empirical distribution<br>Mean value: 44.8<br>Standard Deviation: 51.7<br>95% Probability range: \[4, 182.2\] | CDC ( [2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0003)) |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0001/)
+
+a
+
+D, discrete distribution; T, triangular distribution (min, mode, max); U, uniform distribution (min, max).
+
+#### 2.2.1. Incoming Lettuce Heads
+
+Prevalence ( _P_ 0) and contamination levels ( _C_ 0) of _E. coli_ O157:H7 on incoming lettuce heads were described using discrete distributions from 0.02 to 0.1% and 25 to 100 cfu/head, respectively, based on estimates from expert elicitation (Luo, [2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0012); Versar, [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0030)). These ranges represent typical contamination prevalence and levels on incoming lettuce heads. Atypical situations in the food production system (e.g., encroachment by animals during field production or from adjacent land use such as cattle grazing) could result in increased contamination levels on lettuce heads as compared to the expected levels (Gorny et al., [2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0010); FDA, [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0029)). We considered two additional scenarios representing potentially increased levels of _E. coli_ O157:H7 on incoming lettuce heads due to atypical situations with 1,000 and 10,000 cfu/head. The number of contaminated incoming lettuce heads ( _nc_ LH) was calculated as:
+
+|     |     |
+| --- | --- |
+|  | (1) |
+
+where, _n_ LH is the number of incoming lettuce heads (50,000). We assumed each lettuce head was further shredded into _n_ PSLH pieces and the number of pathogens on contaminated heads (cfu) was randomly distributed among shredded pieces.
+
+#### 2.2.2. Flume Tank Washing
+
+The flume tank washing module in FDA‐LGRAM adopted the mathematical approach developed by Munther, Luo, Wu, Magpantay, and Srinivasan ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) to capture cross‐contamination dynamics of pathogen transfer between wash water and shredded lettuce pieces. Maintaining free chlorine levels in fresh‐cut lettuce flume tanks generally requires a dosing scheme to counter losses of free chlorine due to its natural decay as well as depletion due to the accumulation of organic load during processing. In our model, we set the free chlorine level in wash water to a constant value (0 ppm, 5 ppm, 10 ppm, 15 ppm, or 20 ppm) during the washing step to characterize the relationship between free chlorine level in fresh‐cut lettuce wash water and the predicted risk metrics (i.e., prevalence of contaminated fresh‐cut lettuce packages and risk of illness to consumers). The system of equations discussed in Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) was thus simplified to:
+
+|     |     |
+| --- | --- |
+|  | (2) |
+
+|     |     |
+| --- | --- |
+|  | (3) |
+
+|     |     |
+| --- | --- |
+|  | (4) |
+
+|     |     |
+| --- | --- |
+|  | (5) |
+
+where FCmin is the free chlorine concentration in wash water (ppm), _Xw_ is the concentration of _E. coli_ O157:H7 in wash water (cfu/mL), _β_ WS is the effective rate of pathogens entering wash water (cfu/ml min),  (cfu) is the number of pathogens on lettuce pieces, _XS_ is the fraction of pathogens remaining on the lettuce pieces during washing, _βLW_ is the pathogen binding rate to pieces of shredded lettuce (ml/g min), _L_ is the amount of shredded lettuce in the flume tank (g), _V_ is the volume of water in the flume tank (ml), _α_ is the inactivation rate for suspended pathogens via free chlorine (L/mg min), _XL_ is the concentration of _E. coli_ O157:H7 on shredded lettuce inside the wash tank (cfu/g), and WT is the washing time (min).
+
+Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) reported that the values for the inactivation rate of _E. coli_ O157:H7 via free chlorine, _α_ (unit: L/mg min), ranges from 0.5 L/mg min to 0.75 L/mg min. Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) pointed out large differences between values of _α_ obtained from pilot‐plant‐ and lab‐scale data. Other published laboratory experiments reported a range of values for _α_ between 2 L/mg min and 13 L/mg min (Murray, Aldossari, Wu, & Warriner, [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0018); Rice, Clark, & Johnson, [1999](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0023); Zhou et al., [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0032)). Since the value of _α_ is uncertain and can significantly impact the predicted fate of the suspended _E. coli_ O157:H7 in wash water, and, as a result, the extent of microbial cross‐contamination, we investigated two scenarios representing low ( _α_ values between 0.5 and 0.75) and high ( _α_ values between 2 and 13) inactivation rates.
+
+#### 2.2.3. Packaging Shredded Lettuce
+
+The model randomly selects 115 fresh‐cut lettuce pieces (115 shredded lettuce pieces per head, a head of lettuce being 675 g) to represent a single package. As shown in Fig. [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0001), two scenarios were modeled, packaging of lettuce pieces with and without washing (black and gray arrows between Steps 1, 2, and 3, respectively). We reported two model outputs from this step: prevalence of contaminated fresh‐cut lettuce packages with washing and prevalence of contaminated fresh‐cut lettuce packages without washing. A package of fresh‐cut lettuce was considered contaminated if it contained at least one cfu of _E. coli_ O157:H7.
+
+##### Fig 1.
+
+![Fig 1](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/1365a4da062c/RISA-42-966-g009.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0001/)
+
+Flow diagram of the risk assessment model used to evaluate the impact of free chlorine concentrations in wash water on the extent of microbial cross‐contamination and predicted risk of illness associated with fresh‐cut lettuce. Gray arrows represent scenarios where fresh‐cut lettuce are packaged without washing; Black arrows represent scenarios where fresh‐cut lettuce are washed with different levels of free chlorine in wash water.
+
+#### 2.2.4. Transportation to Retail Stores and Retail Storage
+
+We assessed the effect of fluctuating temperatures during transportation to retail stores and during retail storage on the growth of _E. coli_ O157:H7 in fresh‐cut lettuce packages. We used the model developed by Koseki and Isobe ( [2005](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0011)) as a basis to calculate _E. coli_ O157:H7 growth in contaminated fresh‐cut lettuce during these steps using the following equations.
+
+|     |     |
+| --- | --- |
+|  | (6) |
+
+|     |     |
+| --- | --- |
+|  | (7) |
+
+|     |     |
+| --- | --- |
+|  | (8) |
+
+|     |     |
+| --- | --- |
+|  | (9) |
+
+where _X(t)_ represents the natural logarithm of _E. coli_ O157:H7 levels inside fresh‐cut lettuce packages, _q(t)_ is a dimensionless quantity related to the physiological state of the pathogens ( _α0_), _μ_ max is the maximum growth rate for _E. coli_ O157:H7 as a function of storage temperature ( _T_ in °C), and _X_ max represents the maximum population density for _E. coli_ O157:H7 in contaminated fresh‐cut lettuce packages.
+
+We used the model parameters reported by Koseki and Isobe ( [2005](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0011)) for the growth of _E. coli_ O157:H7 on iceberg lettuce (Table [II](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0002)). We estimated pathogen growth during transportation to retail stores and retail storage using the time‐temperature profiles reported in Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)). For each contaminated fresh‐cut lettuce package, we created a random temperature profile within the lower and upper bounds reported in Zeng et al. ( [2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0031)) considering the transportation and storage times reported in Table [II](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0002).
+
+##### Table II.
+
+Model Parameters Used for Estimating Growth of _E. coli_ O157:H7 Inside Fresh‐Cut Lettuce Packages (Source: Koseki & Isobe, [2005](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0011))
+
+| Pathogen | α0 | b | Tmin | β0 | β1 |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| _E. coli_ O157:H7 | 0.056 | 0.033 | 4.54 | 10.32 | 0.218 |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0002/)
+
+#### 2.2.5. Storage and Consumption at Home
+
+The growth of _E. coli_ O157:H7 inside contaminated fresh‐cut lettuce packages during home refrigeration was modeled using the same approach discussed in the previous section. We used the cumulative probability distribution for home refrigerator temperatures reported in EcoSure ( [2007](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0007)) to model the storage temperature (°C) at home by randomly selecting a refrigerator storage temperature for each fresh‐cut lettuce package and assuming no change in temperature during home storage. At higher refrigeration temperatures, fresh‐cut leafy greens spoil more quickly, thus refrigeration time was negatively correlated with refrigeration temperature (Table [I](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0001)).
+
+Consumption of fresh‐cut lettuce in the United States was estimated using data from What We Eat in America (WWEIA), the dietary survey portion of the National Health and Nutrition Examination Survey (NHANES), including all survey cycles from 2003 through 2010 (CDC, [2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0003)). An empirical distribution representing serving size among consumers (eaters) weighted by the NHANES‐WWEIA dietary statistical sampling weights was used to model the fresh‐cut lettuce serving size at home. Each serving of fresh‐cut lettuce was created from one or more unopened individual packages (considering the serving size and the size of each fresh‐cut lettuce package). We assumed any fresh‐cut lettuce not used in the serving and left in the package was discarded.
+
+#### 2.2.6. Dose–Response Model
+
+We used the _β_‐Poisson dose–response model for _E. coli_ O157:H7 from Strachan, Doyle, Kasuga, Rotariu, and Ogden ( [2005](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0026)) (Equation [10](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-disp-0010)).
+
+|     |     |
+| --- | --- |
+|  | (10) |
+
+where _d_ represents the dose of _E. coli_ O157:H7 (cfu)
+
+### 2.3. Probabilistic Analysis Scenarios
+
+We developed a factorial design in which predefined values were randomly assigned to inputs with discrete distributions (Table [I](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0001)) and propagated through the model using a Monte Carlo simulation. While there are model inputs for which there is a constant value (e.g., 50,000 lettuce heads, 15‐day shelf life), the model is able to run random combinations of input parameters that are not constant (e.g., prevalence and levels of _E. coli_ O157:H7, washing time) and thus provide various scenarios of results based on different combinations of the input parameters. Each Monte Carlo simulation includes 20,000 model realizations or runs, with each realization representing a “treatment” in the factorial design with a specific combination of values randomly assigned to different model inputs. For example, one realization could represent a factorial design treatment in which 0.1% of incoming lettuce heads (i.e., 50 lettuce heads) were contaminated with _E. coli_ O157:H7 at a concentration of 100 cfu/head; produce‐to‐water ratio was 1/60 kg/L during washing; and fresh‐cut lettuce pieces were washed for 30 seconds in a flume tank with a free chlorine level of 5 ppm. To evaluate the impact of using free chlorine during washing of fresh‐cut lettuce on the extent of _E. coli_ O157:H7 cross‐contamination and the predicted associated risk of illness to consumer, we compared the predicted prevalence of contaminated fresh‐cut lettuce packages and the predicted risk of illness between ( [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-disp-0001)) a scenario where fresh‐cut lettuce pieces were packaged without washing; and ( [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-disp-0002)) scenarios involving washing fresh‐cut lettuce pieces with different levels of free chlorine (0 ppm, 5 ppm, 10 ppm, 15 ppm, and 20 ppm) prior to packaging. For each comparison, we report two outputs: (i) predicted prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages, and (ii) predicted average risk of illness per serving from consumed fresh‐cut lettuce packages.
+
+### 2.4. Comparing Model Results Across Different Scenarios
+
+To evaluate the impact of washing fresh‐cut lettuce pieces with different levels of free chlorine in wash water, we compared the model output distributions (i.e., prevalence and average risk per serving) for washing and not washing fresh‐cut lettuce pieces prior to packaging. We measured the difference between these empirical distributions and generated a significance level of difference on the basis of the convolutions approach proposed by Poe, Severance‐Lossin, and Welsh ( [1994](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0022); [2005](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0021)). Assuming _X_ and _Y_ are model output distributions representing average predicted risk per serving from consuming fresh‐cut lettuce packaged after being washed and fresh‐cut lettuce packaged without washing, respectively, the null hypothesis (H0) is _X_ – _Y_ = 0, while the alternative hypothesis (Ha) is _X_ – _Y_ \> 0\. The alternative hypothesis represents a scenario for which the average risk of illness per serving increased after washing. The convolutions approach provides the one‐side significance level (SL) of H0 that is calculated as (Aizaki, [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0001)):
+
+|     |     |
+| --- | --- |
+|  | (11) |
+
+where, _Xi_ represents values from the empirical distribution _X_ ( _i_ = 1, 2, …, _m_), _Yj_ represents values from the empirical distribution _Y_ ( _j_ = 1, 2, …, _n_), and #{ _condition_} represents the number of times that _condition_ is true. SL is the probability of incorrectly concluding that the null hypothesis is false. If the calculated SL value is less than 5% ( _p_‐value = 0.05), H0 is rejected with 95% confidence in favor of the alternative hypothesis. The lower the calculated SL value, the stronger the evidence that the null hypothesis is false.
+
+### 2.5. Sensitivity Analysis
+
+We conducted a sensitivity analysis to identify the most important model inputs impacting predicted prevalence of contaminated fresh‐cut lettuce packages and risk of illness from consumption of fresh‐cut lettuce servings contaminated with _E. coli_ O157:H7 using Spearman correlation coefficients. Model inputs included in the sensitivity analysis were those for which values were represented by discrete distributions in Table [I](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0001). This includes _E. coli_ O157:H7 contamination prevalence and levels on incoming lettuce heads, produce to water ratio, washing time, and free chlorine level in wash water.
+
+## 3\. RESULTS
+
+### 3.1. Impact of Washing on Prevalence of Contaminated Fresh‐cut Lettuce Packages
+
+Fig. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0002) shows the predicted distributions of prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages (% contaminated packages in log‐scale). These distributions are aggregated results from scenarios with an initial lettuce head contamination prevalence ( _P_ 0) of 0.1% (i.e., 50 lettuce heads out of 50,000 total heads) and an initial contamination level ( _C_ 0) of 100 cfu/head on contaminated lettuce heads. For each scenario, the model predicted the prevalence of contaminated packages when fresh‐cut lettuce leaves were packaged without washing (gray density distribution) and the prevalence when fresh‐cut lettuce leaves were washed with 5 ppm, 10 ppm, 15 ppm, and 20 ppm of free chlorine in wash water. We generated two sets of results considering low and high pathogen inactivation rates via free chlorine, _α_ (Fig. [2(a)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0002) and Fig. [2(b)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0002), respectively). Given this initial condition (i.e., _P_ 0 of 0.1% and _C_ 0 of 100 cfu/head), the model predicted that on average 0.2% (‐2.8 in log‐scale) of packages were contaminated with _E. coli_ O157:H7 when fresh‐cut leaves were packaged without washing. As a comparison, assuming a low inactivation rate ( _α_ values between 0.5 L/mg min and 0.75 L/mg min), the model predicted a general shift to larger average prevalence values (1.7%, 0.6%, 0.4% and 0.3% for free chlorine levels of 5 ppm, 10 ppm, 15 ppm, and 20 ppm, respectively) as free chlorine levels decreased. These results demonstrate that in this scenario, water‐mediated cross‐contamination that spreads _E. coli_ O157:H7 from contaminated pieces to uncontaminated pieces during washing cannot be completely eliminated even when free chlorine in wash water was as high as 20 ppm (Fig. [2(a)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0002)). Additionally, the model predicted a wider distribution of prevalence of _E. coli_ O157:H7‐contaminated packages of fresh‐cut lettuce washed in water with free chlorine levels in the range of 5–20 ppm. The increase in distribution width is attributable to the additional variabilities among washing‐related parameters such as washing time and produce‐to‐water ratio. Assuming a high inactivation rate ( _α_ values between 2 L/mg min and 13 L/mg min), water‐mediated cross‐contamination, as measured by the prevalence of contaminated fresh‐cut lettuce packages, was minimized, as no significant shift in average predicted prevalence values (0.2% across all evaluated free‐chlorine levels) was observed when free chlorine levels in the wash tank were maintained at 5 ppm, 10 ppm, 15 ppm, or 20 ppm, Fig. [2(b)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0002).
+
+#### Fig 2.
+
+![Fig 2](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/22fd55979f1f/RISA-42-966-g007.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0002/)
+
+Predicted distributions of prevalence of _E. coli_ O157:H7 fresh‐cut lettuce packages (% in log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given: (a) low pathogen inactivation rate (between 0.5 L/mg min and 0.75 L/mg min), and (b) high pathogen inactivation rate via free chlorine ( _α_ between 2 L/mg min and 13 L/mg min). For this scenario, contamination prevalence and levels on incoming lettuce heads were 0.1% and 100 cfu/head, respectively.
+
+We further analyzed the impact of different combinations of _C_ 0 and _P_ 0 values on the predicted prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages (Fig. [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0003) and [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0004) for low and high levels of _α_, respectively). Summary results are listed in Table [III](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0003) and [IV](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0004), for low and high levels of _α_, respectively. In the absence of free chlorine (i.e., free chlorine concentration 0 ppm), washing greatly increased the prevalence of contaminated fresh‐cut lettuce packages when compared with the prevalence of unwashed fresh‐cut lettuce (Table [III](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0003) and [IV](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0004)). Assuming a low inactivation rate ( _α_ values between 0.5 L/mg min and 0.75 L/mg min), water‐mediated cross‐contamination during washing of fresh‐cut lettuce leaves was apparent across all evaluated scenarios with different combinations of incoming lettuce head contamination prevalence ( _P_ 0) and levels ( _C_ 0), even when free chlorine was maintained at a level as high as 20 ppm in wash water. Assuming a high inactivation rate ( _α_ values between 2 L/mg min and 13 L/mg min), no increase in prevalence of contaminated fresh‐cut lettuce packages is predicted when _C_ 0 ≤ 100 cfu/head and free chlorine levels in wash tank were maintained at 5 ppm, 10 ppm, 15 ppm, or 20 ppm (Fig. [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0004)). However, water‐mediated cross‐contamination was apparent when incoming lettuce heads were highly contaminated with _C_ 0 ≥ 1000 cfu/head (atypical situations) (Fig. [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0004)) while assuming a high inactivation rate.
+
+#### Fig 3.
+
+![Fig 3](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/fbe63658dd6c/RISA-42-966-g008.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0003/)
+
+Predicted distributions of prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages (% in log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head). A low inactivation rate (between 0.5 L/mg min and 0.75 L/mg min) was assumed.
+
+#### Fig 4.
+
+![Fig 4](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/48a84667a64e/RISA-42-966-g002.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0004/)
+
+Predicted distributions of prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages (% in log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head). A high inactivation rate (between 2 L/mg min and 13 L/mg min) was assumed.
+
+#### Table III.
+
+Predicted Average Prevalence of Contaminated Fresh‐Cut Lettuce Packages Without Washing and with Washing Prior to Packaging Using Different Levels of Free Chlorine (ppm) in Wash Water Given Different Initial Contamination Prevalence and Level. A Low Inactivation Rate ( _α_ value Between 0.5 L/mg min and 0.75 L/mg min) was Assumed
+
+| Contamination Level on Incoming Lettuce Heads | Prevalence of Contaminated Incoming Lettuce Heads |
+| :-: | :-: |
+|  | 0.02% | 0.05% | 0.075% | 0.10% |
+| :-- | :-: | :-: | :-: | :-: |
+| 25 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 24.3% | 49.9% | 63.6% | 73.0% |
+| Washing: 5 ppm | 0.1% | 0.3% | 0.5% | 0.6% |
+| Washing: 10 ppm | 0.1% | 0.2% | 0.2% | 0.3% |
+| Washing: 15 ppm | 0.0% | 0.1% | 0.2% | 0.2% |
+| Washing: 20 ppm | 0.0% | 0.1% | 0.2% | 0.2% |
+| 100 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 56.2% | 85.1% | 92.4% | 95.4% |
+| Washing: 5 ppm | 0.4% | 0.9% | 1.4% | 1.9% |
+| Washing: 10 ppm | 0.1% | 0.3% | 0.5% | 0.7% |
+| Washing: 15 ppm | 0.1% | 0.2% | 0.3% | 0.4% |
+| Washing: 20 ppm | 0.1% | 0.2% | 0.2% | 0.3% |
+| 1000 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 88.1% | 97.1% | 98.1% | 98.6% |
+| Washing: 5 ppm | 2.0% | 4.7% | 7.1% | 9.1% |
+| Washing: 10 ppm | 0.8% | 1.9% | 2.9% | 3.7% |
+| Washing: 15 ppm | 0.4% | 1.0% | 1.6% | 2.1% |
+| Washing: 20 ppm | 0.3% | 0.7% | 1.0% | 1.3% |
+| 10000 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 92.5% | 96.9% | 98.0% | 98.8% |
+| Washing: 5 ppm | 3.5% | 8.8% | 12.6% | 16.6% |
+| Washing: 10 ppm | 1.8% | 4.6% | 6.7% | 8.9% |
+| Washing: 15 ppm | 1.4% | 3.5% | 5.1% | 6.8% |
+| Washing: 20 ppm | 1.1% | 2.9% | 4.3% | 5.7% |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0003/)
+
+#### Table IV.
+
+Predicted Average Prevalence of Contaminated Fresh‐Cut Lettuce Packages Without Washing and with Washing Prior to Packaging Using Different Levels of Free Chlorine (ppm) in Wash Water Given Different Initial Contamination Prevalence and Level. A High Inactivation Rate ( _α_ Value Between 2 L/mg min and 13 L/mg min) was Assumed
+
+| Contamination Level on Incoming Lettuce Heads | Prevalence of Contaminated Incoming Lettuce Heads |
+| :-: | :-: |
+|  | 0.02% | 0.05% | 0.075% | 0.10% |
+| :-- | :-: | :-: | :-: | :-: |
+| 25 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 24.3% | 49.9% | 63.6% | 73.0% |
+| Washing: 5 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 10 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 15 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 20 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| 100 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 56.2% | 85.1% | 92.4% | 95.4% |
+| Washing: 5 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 10 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 15 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 20 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| 1000 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 88.1% | 97.1% | 98.1% | 98.6% |
+| Washing: 5 ppm | 0.1% | 0.2% | 0.2% | 0.3% |
+| Washing: 10 ppm | 0.0% | 0.1% | 0.2% | 0.2% |
+| Washing: 15 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: 20 ppm | 0.0% | 0.1% | 0.1% | 0.2% |
+| 10000 cfu/head |  |  |  |  |
+| No washing | 0.0% | 0.1% | 0.1% | 0.2% |
+| Washing: no chlorine | 92.5% | 96.9% | 98.0% | 98.8% |
+| Washing: 5 ppm | 0.3% | 0.7% | 1.0% | 1.4% |
+| Washing: 10 ppm | 0.1% | 0.2% | 0.4% | 0.5% |
+| Washing: 15 ppm | 0.1% | 0.2% | 0.2% | 0.3% |
+| Washing: 20 ppm | 0.1% | 0.1% | 0.2% | 0.3% |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0004/)
+
+Results from significance tests evaluating differences between predicted distributions of prevalence of contaminated unwashed fresh‐cut lettuce packages and prevalence of contaminated packages of lettuce washed with different levels free chlorine (5 ppm, 10 ppm, 15 ppm, 20 ppm) show that washing with free chlorine, given low inactivation rates ( _α_ values between 0.5 L/mg min and 0.75 L/mg min), is predicted to have the largest impact in situations with lower contamination prevalence and levels on incoming lettuce heads (Fig. [5](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0005)). For example, given a _C_ 0 of 25 cfu/head and _P_ 0 of 0.02%, the model predicted free chlorine levels of at least 10 ppm were required to prevent significant increases in predicted contamination prevalence due to washing, with almost all model runs generating significance level values above the 0.05 cut‐off line (95% confidence). As _P_ 0 increased to 0.05%, 0.075%, and 0.1%, assuming the same contamination level of 25 cfu/head, the minimum estimated level of maintained free chlorine required to prevent a significant increase in prevalence increased to 15 ppm, 20 ppm, and 20 ppm, respectively. When _C_ 0 increased to 100 cfu/head, the only scenarios where predicted prevalence did not significantly increase were with _P_ 0 = 0.02% and free chlorine level maintained at 20 ppm. At higher initial prevalence ( _P_ 0 ≥ 0.05%), the model predicted a significant increase in prevalence due to washing, regardless of whether the maintained free chlorine levels were 5 ppm, 10 ppm, 15 ppm, or 20 ppm. When incoming lettuce heads were highly contaminated with _C_ 0 ≥ 1000 cfu/head, washing significantly increased water‐mediated cross‐contamination at all evaluated levels of free chlorine. For high rates of _α_ (values between 2 L/mg min and 13 L/mg min), statistical analysis indicated that no significant increase in contamination prevalence is predicted when free chlorine is maintained at 5 ppm, 10 ppm, 15 ppm, or 20 ppm and when _C_ 0 ≤ 100 cfu/head (Fig. [5](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0005)). When _C_ 0 was 1,000 cfu/head and _P_ 0 was 0.02%, for high rates of _α_ , the model predicted that a maintained free chlorine level of 5 ppm would generally result in no significant increase in prevalence of contaminated washed fresh‐cut lettuce packages as compared with unwashed fresh‐cut lettuce packages. If in such cases _P_ 0 were larger, the model predicted that higher levels of chlorine are required to prevent significant increases in prevalence of contaminated packages. When initial contamination levels were high (i.e., _C_ 0 = 10,000 cfu/head) and _P_ 0 was 0.05% or larger, the model predicted that free chlorine levels in the range of 5–20 ppm would generally result in an increase in prevalence of contaminated packages of washed fresh‐cut lettuce as compared with unwashed.
+
+#### Fig 5.
+
+![Fig 5](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/4e85c0dce998/RISA-42-966-g004.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0005/)
+
+Significance testing evaluating whether there is a significant increase in prevalence of contaminated lettuce packages between empirical distributions of _E. coli_ O157:H7 prevalence of fresh‐cut packages when fresh‐cut lettuce pieces were packaged without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water. Results were shown under different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head) on incoming lettuce heads. The dotted line represents a significant level of 0.05 for testing the null hypothesis (H0). Significance values below 0.05 indicate rejection of H0, that is, significant increase in prevalence distribution as a result of washing prior to packaging as compared with no wash. Values above 0.05 indicate no significant increase in prevalence distribution as a result of washing prior to packaging as compared with no wash.
+
+### 3.2. Impact of Washing on Predicted Risk of Illness per Serving of Fresh‐Cut Lettuce
+
+Fig. [6](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0006) shows predicted distributions of average risk per serving (in log‐scale) generated from scenarios with _P_ 0 of 0.1% and _C_ 0 of 100 cfu/head on contaminated lettuce heads considering low and high inactivation rates during the washing step (Fig. [6(a)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0006) and Fig. [6(b)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0006), respectively). Under this initial condition (i.e., _P_ 0 of 0.1% and _C_ 0 of 100 cfu/head), the model predicted an average risk of illness per serving of 5.4×10–4 (‐3.3 log) for consumption of unwashed fresh‐cut lettuce. When fresh‐cut lettuce was washed with free chlorine maintained at 5 ppm, 10 ppm, 15 ppm, and 20 ppm in wash water, the predicted average risk per serving was reduced to 4.4×10–4, 3.8×10–4, 3.7×10–4, and 3.7×10–4, respectively, for a low inactivation rate ( _α_ values between 0.5 L/mg min and 0.75 L/mg min) (Fig. [6(a)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0006)). Assuming a high inactivation rate ( _α_), washing with chlorine substantially reduced the average predicted risk of illness per serving compared to the no‐wash scenario, and different levels of maintained free chlorine in wash water showed comparable impacts on the predicted average risk per serving values (Fig. [6(b)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0006)).
+
+#### Fig 6.
+
+![Fig 6](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/34bcd5260642/RISA-42-966-g006.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0006/)
+
+Predicted distributions of the risk of illness of _E. coli_ O157:H7 contamination in fresh‐cut lettuce packages (log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given: (a) low pathogen inactivation rate ( _α_ value between 0.5 L/mg min and 0.75 L/mg min), and (b) high pathogen inactivation rate via free chlorine ( _α_ value between 2 L/mg min and 13 L/mg min). For this scenario, contamination prevalence and levels on incoming lettuce heads were 0.1% and 100 cfu/head respectively.
+
+We further evaluated the impact of different combinations of _C_ 0 and _P_ 0 values on the predicted average risk of illness per serving values when fresh‐cut lettuce pieces were washed with different levels of free chlorine in wash water (Fig. [7](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0007) and [8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0008) for low and high inactivation rates, respectively). Summary results are also shown in Table [V](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0005) and [VI](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0006) for low and high inactivation rates, respectively. The model predicted a significant increase in the risk of illness when fresh‐cut lettuce pieces were washed without chlorine (i.e., 0 ppm) when compared with the result for unwashed fresh‐cut lettuce (Table [V](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0005) and [VI](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-tbl-0006)). Assuming a low inactivation rate ( _α_ values between 0.5 L/mg min and 0.75 L/mg min) and when _C_ 0 ≤ 100 cfu/head, maintaining free chlorine concentrations in wash water in the range of 5–20 ppm reduced the average predicted risk per serving compared to the no‐wash scenario (Fig. [7](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0007)). As a comparison, when incoming lettuce heads were highly contaminated (i.e., _C_ 0 ≥ 1000 cfu/head), the model predicted a general shift to a higher average risk of illness when fresh‐cut leaves were washed in water with free chlorine levels in the range of 5–20 ppm, assuming a low inactivation rate. In general, the extent of the shift (increase) in predicted risk of illness was associated with the level of free chlorine in wash water; the shift increased with decreasing free chlorine level, among the levels examined. Assuming a high inactivation rate ( _α_ values between 2 L/mg min and 13 L/mg min), a decrease in the average risk per serving values was predicted across all combinations of initial contamination conditions when free chlorine levels in wash tank were maintained at 5–20 ppm (Fig. [8](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0008)).
+
+#### Fig 7.
+
+![Fig 7](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/9942ed1181d4/RISA-42-966-g005.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0007/)
+
+Predicted distributions of risk of illness of _E. coli_ O157:H7 in fresh‐cut lettuce packages (log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head). A low inactivation rate (between 0.5 L/mg min and 0.75 L/mg min) was assumed.
+
+#### Fig 8.
+
+![Fig 8](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/c7707b7eb891/RISA-42-966-g001.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0008/)
+
+Predicted distributions of risk of illness of _E. coli_ O157:H7 in fresh‐cut lettuce packages (log‐scale) without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water given different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head). A high inactivation rate (between 2 L/mg min and 13 L/mg min) was assumed.
+
+#### Table V.
+
+Predicted Average Risk of Illness of _E. coli_ O157:H7 in Fresh‐Cut Lettuce Packages Without Washing and with Washing Prior to Packaging Using Different Levels of Free Chlorine (ppm) in Wash Water Given Different Initial Contamination Prevalence and Level. A Low Inactivation Rate ( _α_ value Between 0.5 L/mg min and 0.75 L/mg min) was Assumed
+
+| Contamination Level on Incoming Lettuce Heads | Prevalence of Contaminated Incoming Lettuce Heads |
+| :-: | :-: |
+|  | 0.02% | 0.05% | 0.075% | 0.10% |
+| :-- | :-: | :-: | :-: | :-: |
+| 25 cfu/head |  |  |  |  |
+| No washing | 8.7×10–5 | 2.2×10–4 | 3.4×10–4 | 4.5×10–4 |
+| Washing: no chlorine | 1.3×10–3 | 3.4×10–3 | 5.0×10–3 | 6.5×10–3 |
+| Washing: 5 ppm | 5.5×10–5 | 1.4×10–4 | 2.1×10–4 | 2.8×10–4 |
+| Washing: 10 ppm | 5.3×10–5 | 1.3×10–4 | 2.0×10–4 | 2.7×10–4 |
+| Washing: 15 ppm | 5.2×10–5 | 1.3×10–4 | 2.0×10–4 | 2.7×10–4 |
+| Washing: 20 ppm | 5.2×10–5 | 1.3×10–4 | 2.0×10–4 | 2.6×10–4 |
+| 100 cfu/head |  |  |  |  |
+| No washing | 1.1×10–4 | 2.7×10–4 | 4.1×10–4 | 5.4×10–4 |
+| Washing: no chlorine | 4.9×10–3 | 1.1×10–2 | 1.6×10–2 | 2.1×10–2 |
+| Washing: 5 ppm | 8.9×10–5 | 2.2×10–4 | 3.3×10–4 | 4.4×10–4 |
+| Washing: 10 ppm | 7.7×10–5 | 1.9×10–4 | 2.9×10–4 | 3.9×10–4 |
+| Washing: 15 ppm | 7.5×10–5 | 1.9×10–4 | 2.8×10–4 | 3.7×10–4 |
+| Washing: 20 ppm | 7.4×10–5 | 1.8×10–4 | 2.8×10–4 | 3.7×10–4 |
+| 1000 cfu/head |  |  |  |  |
+| No washing | 1.3×10–4 | 3.4×10–4 | 5.1×10–4 | 6.8×10–4 |
+| Washing: no chlorine | 3.1×10–2 | 5.8×10–2 | 7.2×10–2 | 8.4×10–2 |
+| Washing: 5 ppm | 2.6×10–4 | 6.4×10–4 | 9.8×10–4 | 1.3×10–3 |
+| Washing: 10 ppm | 1.5×10–4 | 3.7×10–4 | 5.6×10–4 | 7.4×10–4 |
+| Washing: 15 ppm | 1.3×10–4 | 3.1×10–4 | 4.7×10–4 | 6.2×10–4 |
+| Washing: 20 ppm | 1.2×10–4 | 2.9×10–4 | 4.4×10–4 | 5.8×10–4 |
+| 10000 cfu/head |  |  |  |  |
+| No washing | 1.5×10–4 | 4.0×10–4 | 6.0×10–4 | 8.1×10–4 |
+| Washing: no chlorine | 9.7×10–2 | 1.5×10–1 | 1.7×10–1 | 1.8×10–1 |
+| Washing: 5 ppm | 1.1×10–3 | 2.8×10–3 | 4.2×10–3 | 5.6×10–3 |
+| Washing: 10 ppm | 4.8×10–4 | 1.2×10–3 | 1.8×10–3 | 2.4×10–3 |
+| Washing: 15 ppm | 3.1×10–4 | 7.7×10–4 | 1.1×10–3 | 1.5×10–3 |
+| Washing: 20 ppm | 2.4×10–4 | 6.0×10–4 | 8.8×10–4 | 1.2×10–3 |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0005/)
+
+#### Table VI.
+
+Predicted Average Risk of Illness of _E. coli_ O157:H7 in Fresh‐Cut Lettuce Packages Without Washing and with Washing Prior to Packaging Using Different Levels of Free Chlorine (ppm) in Wash Water Given Different Initial Contamination Prevalence and Level. A High Inactivation Rate ( _α_ Value Between 2 L/mg min and 13 L/mg min) was Assumed
+
+| Contamination Level on Incoming Lettuce Heads | Prevalence of Contaminated Incoming Lettuce Heads |
+| :-: | :-: |
+|  | 0.02% | 0.05% | 0.075% | 0.10% |
+| :-- | :-: | :-: | :-: | :-: |
+| 25 cfu/head |  |  |  |  |
+| No washing | 8.7×10–5 | 2.2×10–4 | 3.4×10–4 | 4.5×10–4 |
+| Washing: no chlorine | 1.3×10–3 | 3.4×10–3 | 5.0×10–3 | 6.5×10–3 |
+| Washing: 5 ppm | 5.1×10–5 | 1.3×10–4 | 2.0×10–4 | 2.6×10–4 |
+| Washing: 10 ppm | 5.1×10–5 | 1.3×10–4 | 2.0×10–4 | 2.6×10–4 |
+| Washing: 15 ppm | 5.1×10–5 | 1.3×10–4 | 2.0×10–4 | 2.6×10–4 |
+| Washing: 20 ppm | 5.1×10–5 | 1.3×10–4 | 2.0×10–4 | 2.6×10–4 |
+| 100 cfu/head |  |  |  |  |
+| No washing | 1.1×10–4 | 2.7×10–4 | 4.1×10–4 | 5.4×10–4 |
+| Washing: no chlorine | 4.9×10–3 | 1.1×10–2 | 1.6×10–2 | 2.1×10–2 |
+| Washing: 5 ppm | 7.1×10–5 | 1.8×10–4 | 2.7×10–4 | 3.6×10–4 |
+| Washing: 10 ppm | 7.1×10–5 | 1.8×10–4 | 2.7×10–4 | 3.6×10–4 |
+| Washing: 15 ppm | 7.1×10–5 | 1.8×10–4 | 2.7×10–4 | 3.6×10–4 |
+| Washing: 20 ppm | 7.1×10–5 | 1.8×10–4 | 2.7×10–4 | 3.6×10–4 |
+| 1000 cfu/head |  |  |  |  |
+| No washing | 1.3×10–4 | 3.4×10–4 | 5.1×10–4 | 6.8×10–4 |
+| Washing: no chlorine | 3.1×10–2 | 5.8×10–2 | 7.2×10–2 | 8.4×10–2 |
+| Washing: 5 ppm | 1.0×10–4 | 2.6×10–4 | 3.9×10–4 | 5.3×10–4 |
+| Washing: 10 ppm | 1.0×10–4 | 2.6×10–4 | 3.9×10–4 | 5.3×10–4 |
+| Washing: 15 ppm | 1.0×10–4 | 2.6×10–4 | 3.9×10–4 | 5.3×10–4 |
+| Washing: 20 ppm | 1.0×10–4 | 2.6×10–4 | 3.9×10–4 | 5.3×10–4 |
+| 10000 cfu/head |  |  |  |  |
+| No washing | 1.5×10–4 | 4.0×10–4 | 6.0×10–4 | 8.1×10–4 |
+| Washing: no chlorine | 9.7×10–2 | 1.5×10–1 | 1.7×10–1 | 1.8×10–1 |
+| Washing: 5 ppm | 1.4×10–4 | 3.7×10–4 | 5.5×10–4 | 7.3×10–4 |
+| Washing: 10 ppm | 1.3×10–4 | 3.4×10–4 | 5.1×10–4 | 6.9×10–4 |
+| Washing: 15 ppm | 1.3×10–4 | 3.4×10–4 | 5.0×10–4 | 6.8×10–4 |
+| Washing: 20 ppm | 1.3×10–4 | 3.4×10–4 | 5.0×10–4 | 6.7×10–4 |
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/table/risa13818-tbl-0006/)
+
+Fig. [9](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0009) shows the statistical analysis measuring the differences between predicted distributions of the average risk of illness per serving associated with unwashed lettuce and lettuce washed with different levels of free chlorine in wash water. Assuming a low inactivation rate  ( _α_ values between 0.5 L/mg min and 0.75 L/mg min), free chlorine levels of at least 5 ppm in wash water were required to prevent a significant increase in average predicted risk per serving when _C_ 0 ≤ 100 cfu/head, with all model runs generating significance level values above 0.05. When _C_ 0 was at 1,000 cfu/head, the minimum predicted level of maintained free chlorine required to prevent a significant increase in risk of illness per serving increased to 10 ppm, assuming a low inactivation rate. When incoming lettuce was contaminated with _C_ 0 of 10,000 cfu/head, free chlorine maintained at 15 ppm and 20 ppm prevented a significant increase in average predicted risk per serving only at the lowest prevalence level evaluated ( _P_ 0 = 0.02%), assuming a low inactivation rate. At higher _P_ 0 levels, the model predicted significant increases in average risk of illness per serving at all evaluated levels of free chlorine, assuming a low inactivation rate. Assuming a high inactivation rate ( _α_ values between 2 L/mg min and 13 L/mg min), the model predicted that free chlorine levels in the range of 5–20 ppm would prevent a significant increase in average predicted risk per serving due to washing fresh‐cut lettuce with initial contamination levels as high as 10,000 cfu/head on 0.1% of incoming lettuce heads.
+
+#### Fig 9.
+
+![Fig 9](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/a3cf68bd9afa/RISA-42-966-g010.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0009/)
+
+Significance testing evaluating whether there is a significant increase in risk of illness between empirical distributions of risk of _E. coli_ O157:H7 illness when fresh‐cut lettuce pieces were packed without washing and with washing prior to packaging using different levels of free chlorine (ppm) in wash water. Results were shown under different initial contamination prevalence ( _P_ 0, %) and level ( _C_ 0, cfu/head) on incoming lettuce heads. The dotted line represents a significance level of 0.05 for testing the null hypothesis.
+
+### 3.3. Sensitivity Analysis
+
+Sensitivity analysis results of the risk assessment model indicated that the main inputs affecting the predicted prevalence of _E. coli_ O157:H7‐contaminated fresh‐cut lettuce packages and risk of illness from consumption of washed fresh‐cut lettuce were prevalence of _E. coli_ O157:H7 on incoming lettuce heads, maintained free chlorine levels during washing, and contamination levels on incoming lettuce heads (Fig. [10](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0010)). Regardless of the inactivation rate, higher initial prevalence, and initial contamination levels resulted in higher predicted average prevalence of contaminated packages and risk of illness estimates. Increasing free chlorine levels decreased the average predicted prevalence of contaminated packages and risk of illness estimates, which is the reason for the negative Spearman correlation coefficient. Assuming a low inactivation rate, prevalence estimates were mostly affected by the initial contamination level on lettuce heads, while risk of illness estimates were mostly affected by the prevalence of _E. coli_ O157:H7 on lettuce heads (Fig. [10(a)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0010)). Assuming a high inactivation rate, the prevalence of _E. coli_ O157:H7 on lettuce heads was the most influential factor affecting both the prevalence of contaminated packages and risk of illness estimates (Fig. [10(b)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-fig-0010)). Produce‐to‐water ratio and washing time had minimal impacts on predicted prevalence of contaminated packages and risk of illness estimates.
+
+#### Fig 10.
+
+![Fig 10](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/56c0/9544649/1eeeb5f0586c/RISA-42-966-g003.jpg)
+
+[Open in a new tab](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/figure/risa13818-fig-0010/)
+
+Spearman correlation coefficient for model scenarios considering (A) low inactivation rate (between 0.5 L/mg min and 0.75 L/mg min) or (B) high inactivation rate (between 2 L/mg min and 13 L/mg min) via free chlorine with prevalence of contaminated fresh‐cut lettuce packages or risk of illness per serving from consumption of fresh‐cut lettuce as the outcome variable.
+
+## 4\. DISCUSSION
+
+Using the FDA‐LGRAM, we quantitatively assessed the impact of various levels of free chlorine maintained in wash water during fresh‐cut lettuce production on water‐mediated _E. coli_ O157:H7 cross‐contamination and the associated predicted risk of illness. Our results showed that washing leads to an increase in the predicted prevalence of contaminated lettuce packages due to water‐mediated cross‐contamination as compared with the no‐washing scenario and the extent of water‐mediated cross‐contamination is dependent on the level of free chlorine in wash water. In the absence of free chlorine in wash water, our model predicted a drastic increase in the prevalence of contaminated fresh‐cut lettuce packages due to water‐mediated cross‐contamination. Consistent with our predictions, Smolinski et al. ( [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0025)) observed a similar magnitude of increase in prevalence of _E. coli_ O157:H7 contaminated fresh‐cut lettuce after pilot‐scale washing without free chlorine. The extent of water‐mediated cross‐contamination increased with decreasing free chlorine level and water‐mediated cross‐contamination was minimized with higher levels of free chlorine in wash water, especially when considering a higher inactivation rate ( _α_ values between 2 L/mg min and 13 L/mg min). Similar to our findings, Luo et al. ( [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0013)) reported that while 5 ppm of free chlorine was insufficient in fully preventing _E. coli_ O157:H7 survival and transfer during washing of fresh‐cut lettuce, when free chlorine level was increased to 10 ppm or greater, no _E. coli_ O157:H7 transfer was detected (Luo et al., [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0013)). While washing will generally increase water‐mediated cross‐contamination, our results showed that washing with free chlorine in wash water decreased predicted risk of illness. Danyluk and Schaffner ( [2011](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0004)) reported that cross‐contamination during the leafy green washing process contributes significantly to the risk associated with _E. coli_ O157:H7 in leafy greens. In their quantitative risk assessment study, the majority of predicted illness cases arise from cross‐contaminated leafy greens rather than from the leafy greens that were initially contaminated prior to fresh‐cut processing. Another quantitative risk assessment on _E. coli_ O157:H7 in fresh‐cut lettuce by Pang, Lambertini, Buchanan, Schaffner, and Pradhan ( [2017](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0020)) evaluated washing fresh‐cut lettuce in chlorinated water as an intervention strategy. Their results showed that washing fresh‐cut lettuce with chlorine (free chlorine concentration in the range of 20–200 ppm) was able to reduce the risk of illness estimates by 12.7‐fold as compared to a baseline model where fresh‐cut lettuce was washed without chlorine. Bozkurt, Bell, van Ogtrop, Phan‐Thien, and McConchie ( [2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0002)) also reported a 1.4‐fold reduction in the predicted number of illnesses by washing fresh‐cut lettuce with chlorine (concentration unknown) in Australia. These results are consistent with our findings that washing can lead to an increase in the predicted risk of illness associated with _E. coli_ O157:H7 in fresh‐cut lettuce due to water‐mediated cross‐contamination, but the use of chlorine in wash water can prevent such increased risk. However, in the aforementioned risk assessment studies, the impact of different specific chlorine concentrations in wash water on the extent of water‐mediated cross‐contamination and the associated risk of illness were not evaluated. Our results indicate that the impact of washing on predicted risk of illness associated with _E. coli_ O157:H7 in fresh‐cut lettuce depends on the level of free chlorine maintained in wash water and contamination prevalence and levels on incoming lettuce heads. When contamination levels on incoming lettuce heads were within 25–100 cfu/head, washing fresh‐cut lettuce with free chlorine levels in the range of 5–20 ppm significantly reduced the predicted risk of illness, and higher free‐chlorine levels in wash water led to greater reduction in risk of illness predictions. When incoming lettuce heads were contaminated with ≥1,000 cfu/head, washing led to an increase in predicted risk of illness, and higher free chlorine levels in the wash water were required to prevent a significant increase in risk.
+
+In FDA‐LGRAM, we evaluated the impact of inactivation rates in wash water via free chlorine considering a low _α_ value based on pilot‐scale data from the study by Munther et al. ( [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)) and a high _α_ value based on lab‐scale data from other published studies (Murray et al., [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0018); Rice et al., [1999](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0023); Zhou et al., [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0032)). As shown in our results, inactivation rate values greatly influenced the extent of the estimated water‐mediated cross‐contamination and the predicted risk of illness associated with _E. coli_ O157:H7 in fresh‐cut lettuce. For example, considering the higher inactivation rate, maintaining at least 5 ppm of free chlorine in wash water prevented a significant increase in predicted prevalence of contaminated fresh‐cut lettuce packages when 0.1% of incoming lettuce heads were contaminated with _E. coli_ O157:H7 at a concentration of 100 cfu/head. However, under the same contamination conditions on incoming lettuce heads, free chlorine in wash water maintained at 5 ppm to 20 ppm resulted in significant increases in predicted prevalence of contaminated fresh‐cut lettuce packages if a low inactivation rate was assumed. The difference in _α_ magnitude may be associated with different levels of suspended pathogens in water used in different published studies (Munther et al., [2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0017)). This finding emphasized the need for additional research studies to investigate pathogen inactivation rates via free chlorine under different (and more realistic) pathogen concentrations in leafy green wash water.
+
+The FDA‐LGRAM and results from this case study are limited to the impact of free chlorine on _E. coli_ O157:H7 contamination associated with fresh‐cut lettuce consumed in the United States. With available data, the model can be adjusted to assess different pathogens, antimicrobials, and/or leafy green commodities. The model assessed scenarios representing atypical situations where contamination levels of _E. coli_ O157:H7 on incoming lettuce heads were assumed to be 1,000 and 10,000 cfu/head. However, the representativeness of the assumed values was unknown. Quantitative data on contamination prevalence and levels on incoming lettuce heads under certain atypical situations such as preharvest lettuce contamination via animal encroachment or contaminated irrigation water would provide additional insights on the impact of washing fresh‐cut lettuce with chlorine on cross‐contamination and the associated risk under such situations. To estimate the minimum free chlorine concentration in wash water that can minimize cross‐contamination, the model assumed that free chlorine concentration in wash water was maintained at a particular concentration (e.g., 5 ppm) during the washing step. In practice, the free chlorine level may vary depending on the variability of the organic load and responsiveness of the dosing scheme. To ensure a minimum free chlorine level in wash water, it may be necessary to increase the average free chlorine level during washing above the minimum to replenish free chlorine loss due to natural decay and depletion. In the FDA‐LGRAM, washing parameter _XS,_ which represents the fraction of pathogens remaining on lettuce pieces during washing, was estimated based on the study published by Smolinski et al. ( [2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bib-0025)), which was not specific to _E. coli_ O157:H7 on lettuce (but rather for _Salmonella_ on lettuce and _E. coli_ O157:H7 on radicchio). As data become available on the proportion of _E. coli_ O157:H7 remaining on lettuce pieces during washing, the model can be updated accordingly.
+
+In conclusion, we developed the FDA‐LGRAM that quantitatively evaluated the impact of various levels of free chlorine in wash water on the extent of water‐mediated _E. coli_ O157:H7 cross‐contamination and the predicted risk of illness under different initial contamination conditions on incoming lettuce heads. Our results indicate that free chlorine level in wash water has a substantial impact on the predicted prevalence of contaminated fresh‐cut lettuce packages and the risk of illness associated with _E. coli_ O157:H7 in fresh‐cut lettuce. The predicted prevalence of contaminated fresh‐cut lettuce packages and risk of illness were also greatly influenced by contamination prevalence and level of _E. coli_ O157:H7 on incoming lettuce heads. Depending on the initial contamination conditions, free chlorine in wash water maintained at certain concentrations can minimize water‐mediated cross‐contamination and reduce the associated risk of illness from exposure to _E. coli_ O157:H7 in fresh‐cut lettuce. Maintaining a sufficient level of free chlorine in wash water during fresh‐cut leafy green production is critical to minimize water‐mediated cross‐contamination and to prevent potential increased risk to consumers. Additionally, the pathogen inactivation rate via free chlorine has a significant impact on the extent of cross‐contamination that occurs during the washing process and the associated predicted risk of illness.
+
+## ACKNOWLEDGMENTS
+
+The authors would like to thank Regis Pouillot for his contribution for the model development (contract HHFS223201710033I with Goldbelt C6, LLC) and Yuhuan Chen for her careful review of previous versions of the manuscript. The authors would also like to thank the experts Yaguang Luo (USDA‐ARS) and Joan Rosen (JC Rosen Resources, providing information through contract HHSF223201700015B with Versar Inc.) for their contributions to the expert elicitation. This project was supported in part by an appointment to the Research Participation Program at the U.S. Food and Drug Administration (DOE project 1117‐000273) administered by the Oak Ridge Institute for Science and Education through an interagency agreement between the U.S. Department of Energy and the U.S. Food and Drug Administration.
+
+Mokhtari, A.
+,
+Pang, H.
+,
+Farakos, S. S.
+,
+Davidson, G. R.
+,
+Williams, E. N.
+,
+Van Doren, J
+. Evaluation of potential impacts of free chlorine during washing of fresh‐cut leafy greens on _Escherichia coli_ O157:H7 Cross‐contamination and risk of illness. Risk Analysis. 2021;00:1–23. 10.1111/risa.13818
+
+## REFERENCES
+
+01. Aizaki, H.
+     (2015).
+    R Package documentation: Measuring the difference between the two empirical distributions
+    . Retrieved from [https://cran.r‐project.org/web/packages/mded/mded.pdf](https://cran.r-project.org/web/packages/mded/mded.pdf)
+02. Bozkurt, H.
+    ,
+    Bell, T.
+    ,
+    van Ogtrop, F.
+    ,
+    Phan‐Thien, K.
+    , &
+    McConchie, R.
+     (2021). Assessment of microbial risk during Australian industrial practices for _Escherichia coli_ O157:H7 in fresh cut‐cos lettuce: A stochastic quantitative approach. Food Microbiology, 95, 103691
+     \[ [DOI](https://doi.org/10.1016/j.fm.2020.103691)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/33397620/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Microbiology&title=Assessment%20of%20microbial%20risk%20during%20Australian%20industrial%20practices%20for%20Escherichia%20coli%20O157:H7%20in%20fresh%20cut%E2%80%90cos%20lettuce:%20A%20stochastic%20quantitative%20approach&author=H.%20Bozkurt&author=T.%20Bell&author=F.%20van%20Ogtrop&author=K.%20Phan%E2%80%90Thien&author=R.%20McConchie&volume=95&publication_year=2021&pages=103691&pmid=33397620&doi=10.1016/j.fm.2020.103691&)\]
+03. Centers for Disease Control and Prevention (CDC)
+    . (2013).
+    National health and nutrition examination survey data
+    . Retrieved from [http://www.cdc.gov/nchs/nhanes.htm](http://www.cdc.gov/nchs/nhanes.htm)
+04. Danyluk, M. D.
+    , &
+    Schaffner, D. W.
+     (2011). Quantitative assessment of the microbial risk of leafy greens from farm to consumption: Preliminary framework, data, and risk estimates. Journal of Food Protection, 74(5), 700–708. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-10-373)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/21549039/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Quantitative%20assessment%20of%20the%20microbial%20risk%20of%20leafy%20greens%20from%20farm%20to%20consumption:%20Preliminary%20framework,%20data,%20and%20risk%20estimates&author=M.%20D.%20Danyluk&author=D.%20W.%20Schaffner&volume=74&issue=5&publication_year=2011&pages=700-708&pmid=21549039&doi=10.4315/0362-028X.JFP-10-373&)\]
+05. Davidson, G. R.
+    ,
+    Buchholz, A. L.
+    , &
+    Ryser, E. T.
+     (2013). Efficacy of commercial produce sanitizers against nontoxigenic _Escherichia coli_ O157:H7 during processing of iceberg lettuce in a pilot‐scale leafy green processing line. Journal of Food Protection, 76(11), 1838–1845. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-13-111)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/24215685/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Efficacy%20of%20commercial%20produce%20sanitizers%20against%20nontoxigenic%20Escherichia%20coli%20O157:H7%20during%20processing%20of%20iceberg%20lettuce%20in%20a%20pilot%E2%80%90scale%20leafy%20green%20processing%20line&author=G.%20R.%20Davidson&author=A.%20L.%20Buchholz&author=E.%20T.%20Ryser&volume=76&issue=11&publication_year=2013&pages=1838-1845&pmid=24215685&doi=10.4315/0362-028X.JFP-13-111&)\]
+06. Deborde, M.
+    , &
+    von Gunten, U.
+     (2008). Reactions of chlorine with inorganic and organic compounds during water treatment ‐ kinetics and mechanisms: A critical review. Water Research, 42, 13–51. \[ [DOI](https://doi.org/10.1016/j.watres.2007.07.025)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/17915284/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Water%20Research&title=Reactions%20of%20chlorine%20with%20inorganic%20and%20organic%20compounds%20during%20water%20treatment%20%E2%80%90%20kinetics%20and%20mechanisms:%20A%20critical%20review&author=M.%20Deborde&author=U.%20von%20Gunten&volume=42&publication_year=2008&pages=13-51&pmid=17915284&doi=10.1016/j.watres.2007.07.025&)\]
+07. EcoSure
+    . (2007).
+    U.S. Cold temperature database
+    . Retrieved from [http://old.foodrisk.org/exclusives/ecosure/](http://old.foodrisk.org/exclusives/ecosure/)
+08. Gombas, D.
+    ,
+    Luo, Y.
+    ,
+    Brennan, J.
+    ,
+    Shergill, G.
+    ,
+    Petran, R.
+    ,
+    Walsh, R.
+    , …
+    Deng, K.
+     (2017). Guidelines to validate control of cross‐contamination during washing of fresh‐cut leafy vegetables. Journal of Food Protection, 80(2), 312–330. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-16-258)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/28221982/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Guidelines%20to%20validate%20control%20of%20cross%E2%80%90contamination%20during%20washing%20of%20fresh%E2%80%90cut%20leafy%20vegetables&author=D.%20Gombas&author=Y.%20Luo&author=J.%20Brennan&author=G.%20Shergill&author=R.%20Petran&volume=80&issue=2&publication_year=2017&pages=312-330&pmid=28221982&doi=10.4315/0362-028X.JFP-16-258&)\]
+09. Gomez‐Lopez, V. M.
+    ,
+    Lannoo, A. S.
+    ,
+    Gil, M. I.
+    , &
+    Allende, A.
+     (2014). Minimum free chlorine residual level required for the inactivation of _Escherichia coli_ O157:H7 and trihalomethane generation during dynamic washing of fresh‐cut spinach. Food Control, 42, 132–138. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Control&title=Minimum%20free%20chlorine%20residual%20level%20required%20for%20the%20inactivation%20of%20Escherichia%20coli%20O157:H7%20and%20trihalomethane%20generation%20during%20dynamic%20washing%20of%20fresh%E2%80%90cut%20spinach&author=V.%20M.%20Gomez%E2%80%90Lopez&author=A.%20S.%20Lannoo&author=M.%20I.%20Gil&author=A.%20Allende&volume=42&publication_year=2014&pages=132-138&)\]
+10. Gorny, J.
+    ,
+    Giclas, H.
+    ,
+    Gombas, D.
+    , &
+    Means, K.
+     (2006). Commodity specific food safety guidelines for the lettuce and leafy greens supply chain. Retrieved from [https://www.fda.gov/media/77279/download](https://www.fda.gov/media/77279/download)
+11. Koseki, S.
+    , &
+    Isobe, S.
+     (2005). Prediction of pathogen growth on iceberg lettuce under real temperature history during distribution from farm to table. International Journal of Food Microbiology, 104(3), 239–248. \[ [DOI](https://doi.org/10.1016/j.ijfoodmicro.2005.02.012)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/15979180/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=International%20Journal%20of%20Food%20Microbiology&title=Prediction%20of%20pathogen%20growth%20on%20iceberg%20lettuce%20under%20real%20temperature%20history%20during%20distribution%20from%20farm%20to%20table&author=S.%20Koseki&author=S.%20Isobe&volume=104&issue=3&publication_year=2005&pages=239-248&pmid=15979180&doi=10.1016/j.ijfoodmicro.2005.02.012&)\]
+12. Luo, Y.
+     (2020). Re: Request from FDA/CFSAN/OAO for Expert Judgement. Personal Communication 4/24/2020. Documented in FDA Memorandum to the File. Available from FDA upon request.
+13. Luo, Y.
+    ,
+    Nou, X.
+    ,
+    Yang, Y.
+    ,
+    Alegre, I.
+    ,
+    Turner, E.
+    ,
+    Feng, H.
+    , …
+    Conway, W.
+     (2011). Determination of free chlorine concentrations needed to prevent _Escherichia coli_ O157:H7 cross‐contamination during fresh‐cut produce wash. Journal of Food Protection, 74(3), 352–358. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-10-429)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/21375869/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Determination%20of%20free%20chlorine%20concentrations%20needed%20to%20prevent%20Escherichia%20coli%20O157:H7%20cross%E2%80%90contamination%20during%20fresh%E2%80%90cut%20produce%20wash&author=Y.%20Luo&author=X.%20Nou&author=Y.%20Yang&author=I.%20Alegre&author=E.%20Turner&volume=74&issue=3&publication_year=2011&pages=352-358&pmid=21375869&doi=10.4315/0362-028X.JFP-10-429&)\]
+14. Luo, Y.
+    ,
+    Zhou, B.
+    ,
+    Van Haute, S.
+    ,
+    Nou, X.
+    ,
+    Zhang, B.
+    ,
+    Teng, Z.
+    , …
+    Millner, P. D.
+     (2018). Association between bacterial survival and free chlorine concentration during commercial fresh‐cut produce wash operation. Food Microbiology, 70, 120–128. \[ [DOI](https://doi.org/10.1016/j.fm.2017.09.013)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/29173618/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Microbiology&title=Association%20between%20bacterial%20survival%20and%20free%20chlorine%20concentration%20during%20commercial%20fresh%E2%80%90cut%20produce%20wash%20operation&author=Y.%20Luo&author=B.%20Zhou&author=S.%20Van%20Haute&author=X.%20Nou&author=B.%20Zhang&volume=70&publication_year=2018&pages=120-128&pmid=29173618&doi=10.1016/j.fm.2017.09.013&)\]
+15. Mishra, A.
+    ,
+    Pang, H.
+    ,
+    Buchanan, R. L.
+    ,
+    Schaffner, D. W.
+    , &
+    Pradhan, A. K.
+     (2016). A system model for understanding the role of animal feces as a route of contamination of leafy greens before harvest. Applied and environmental microbiology, 83(2), e02775–16. \[ [DOI](https://doi.org/10.1128/AEM.02775-16)\] \[ [PMC free article](https://pmc.ncbi.nlm.nih.gov/articles/PMC5203627/)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/27836846/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Applied%20and%20environmental%20microbiology&title=A%20system%20model%20for%20understanding%20the%20role%20of%20animal%20feces%20as%20a%20route%20of%20contamination%20of%20leafy%20greens%20before%20harvest&author=A.%20Mishra&author=H.%20Pang&author=R.%20L.%20Buchanan&author=D.%20W.%20Schaffner&author=A.%20K.%20Pradhan&volume=83&issue=2&publication_year=2016&pages=e02775-16&pmid=27836846&doi=10.1128/AEM.02775-16&)\]
+16. Mokhtari, A.
+    ,
+    Oryang, D.
+    ,
+    Chen, Y.
+    ,
+    Pouillot, R.
+    , &
+    Van Doren, J.
+     (2018). A mathematical model for pathogen cross‐contamination dynamics during the postharvest processing of leafy greens. Risk Analysis, 38(8), 1718–1737. \[ [DOI](https://doi.org/10.1111/risa.12960)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/29315715/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Risk%20Analysis&title=A%20mathematical%20model%20for%20pathogen%20cross%E2%80%90contamination%20dynamics%20during%20the%20postharvest%20processing%20of%20leafy%20greens&author=A.%20Mokhtari&author=D.%20Oryang&author=Y.%20Chen&author=R.%20Pouillot&author=J.%20Van%20Doren&volume=38&issue=8&publication_year=2018&pages=1718-1737&pmid=29315715&doi=10.1111/risa.12960&)\]
+17. Munther, D.
+    ,
+    Luo, Y.
+    ,
+    Wu, J.
+    ,
+    Magpantay, F. M.
+    , &
+    Srinivasan, P.
+     (2015). A mathematical model for pathogen cross‐contamination dynamics during produce wash. Food Microbiology, 51, 101–107. \[ [DOI](https://doi.org/10.1016/j.fm.2015.05.010)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/26187834/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Microbiology&title=A%20mathematical%20model%20for%20pathogen%20cross%E2%80%90contamination%20dynamics%20during%20produce%20wash&author=D.%20Munther&author=Y.%20Luo&author=J.%20Wu&author=F.%20M.%20Magpantay&author=P.%20Srinivasan&volume=51&publication_year=2015&pages=101-107&pmid=26187834&doi=10.1016/j.fm.2015.05.010&)\]
+18. Murray, K.
+    ,
+    Aldossari, H.
+    ,
+    Wu, F.
+    , &
+    Warriner, K.
+     (2018). Dynamic changes in free‐chlorine levels within a commercial post‐harvest wash and prevention of cross‐contamination between shredded lettuce batches. Food Control, 85, 127–134. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Control&title=Dynamic%20changes%20in%20free%E2%80%90chlorine%20levels%20within%20a%20commercial%20post%E2%80%90harvest%20wash%20and%20prevention%20of%20cross%E2%80%90contamination%20between%20shredded%20lettuce%20batches&author=K.%20Murray&author=H.%20Aldossari&author=F.%20Wu&author=K.%20Warriner&volume=85&publication_year=2018&pages=127-134&)\]
+19. Pang, H.
+    ,
+    Lambertini, E.
+    ,
+    Buchanan, R. L.
+    ,
+    Schaffner, D. W.
+    , &
+    Pradhan, A. K.
+     (2017). Quantitative microbial risk assessment for _Escherichia coli_ O157:H7 in fresh‐cut lettuce. Journal of Food Protection, 80(2), 302–311. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-16-246)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/28221978/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Quantitative%20microbial%20risk%20assessment%20for%20Escherichia%20coli%20O157:H7%20in%20fresh%E2%80%90cut%20lettuce&author=H.%20Pang&author=E.%20Lambertini&author=R.%20L.%20Buchanan&author=D.%20W.%20Schaffner&author=A.%20K.%20Pradhan&volume=80&issue=2&publication_year=2017&pages=302-311&pmid=28221978&doi=10.4315/0362-028X.JFP-16-246&)\]
+20. Poe, G. L.
+    ,
+    Giraud, K. L.
+    , &
+    Loomid, J. B.
+     (2005). Computational methods for measuring the difference of empirical distributions. American Journal of Agricultural Economics, 87(2), 353–365. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=American%20Journal%20of%20Agricultural%20Economics&title=Computational%20methods%20for%20measuring%20the%20difference%20of%20empirical%20distributions&author=G.%20L.%20Poe&author=K.%20L.%20Giraud&author=J.%20B.%20Loomid&volume=87&issue=2&publication_year=2005&pages=353-365&)\]
+21. Poe, G. L.
+    ,
+    Severance‐Lossin, E. K.
+    , &
+    Welsh, M. P.
+     (1994). Measuring the difference (X‐Y) of simulated distributions: A convolutions approach. American Journal of Agricultural Economics, 76, 904–915. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=American%20Journal%20of%20Agricultural%20Economics&title=Measuring%20the%20difference%20(X%E2%80%90Y)%20of%20simulated%20distributions:%20A%20convolutions%20approach&author=G.%20L.%20Poe&author=E.%20K.%20Severance%E2%80%90Lossin&author=M.%20P.%20Welsh&volume=76&publication_year=1994&pages=904-915&)\]
+22. Rice, E. W.
+    ,
+    Clark, R. M.
+    , &
+    Johnson, C. H.
+     (1999). Chlorine inactivation of _Escherichia coli_ O157:H7. Emerging Infectious Diseases, 5(3), 461–463. \[ [DOI](https://doi.org/10.3201/eid0503.990322)\] \[ [PMC free article](https://pmc.ncbi.nlm.nih.gov/articles/PMC2640762/)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/10341188/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Emerging%20Infectious%20Diseases&title=Chlorine%20inactivation%20of%20Escherichia%20coli%20O157:H7&author=E.%20W.%20Rice&author=R.%20M.%20Clark&author=C.%20H.%20Johnson&volume=5&issue=3&publication_year=1999&pages=461-463&pmid=10341188&doi=10.3201/eid0503.990322&)\]
+23. Shen, C.
+     (2014). Evaluation of chlorine efficacy against _Escherichia coli_ O157:H7 survival and cross‐contamination during continuous produces washing process with water quality change. International Journal of Food Science, Nutrition and Dietetics, 3(2), 89–93. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=International%20Journal%20of%20Food%20Science,%20Nutrition%20and%20Dietetics&title=Evaluation%20of%20chlorine%20efficacy%20against%20Escherichia%20coli%20O157:H7%20survival%20and%20cross%E2%80%90contamination%20during%20continuous%20produces%20washing%20process%20with%20water%20quality%20change&author=C.%20Shen&volume=3&issue=2&publication_year=2014&pages=89-93&)\]
+24. Smolinski, H. S.
+    ,
+    Wang, S.
+    ,
+    Ren, L.
+    ,
+    Chen, Y.
+    ,
+    Kowalcyk, B.
+    ,
+    Thomas, E.
+    , …
+    Ryser, E. T.
+     (2018). Transfer and redistribution of _Salmonella_ Typhimurium LT2 and _Escherichia coli_ O157:H7 during pilot‐scale processing of baby spinach, cilantro, and romaine lettuce. Journal of Food Protection, 81(6), 953–962. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-17-420)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/29745756/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Transfer%20and%20redistribution%20of%20Salmonella%20Typhimurium%20LT2%20and%20Escherichia%20coli%20O157:H7%20during%20pilot%E2%80%90scale%20processing%20of%20baby%20spinach,%20cilantro,%20and%20romaine%20lettuce&author=H.%20S.%20Smolinski&author=S.%20Wang&author=L.%20Ren&author=Y.%20Chen&author=B.%20Kowalcyk&volume=81&issue=6&publication_year=2018&pages=953-962&pmid=29745756&doi=10.4315/0362-028X.JFP-17-420&)\]
+25. Strachan, N. J.
+    ,
+    Doyle, M. P.
+    ,
+    Kasuga, F.
+    ,
+    Rotariu, O.
+    , &
+    Ogden, I. D.
+     (2005). Dose response modelling of _Escherichia coli_ O157 incorporating data from foodborne and environmental outbreaks. International Journal of Food Microbiology, 103(1), 35–47. \[ [DOI](https://doi.org/10.1016/j.ijfoodmicro.2004.11.023)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/16084264/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=International%20Journal%20of%20Food%20Microbiology&title=Dose%20response%20modelling%20of%20Escherichia%20coli%20O157%20incorporating%20data%20from%20foodborne%20and%20environmental%20outbreaks&author=N.%20J.%20Strachan&author=M.%20P.%20Doyle&author=F.%20Kasuga&author=O.%20Rotariu&author=I.%20D.%20Ogden&volume=103&issue=1&publication_year=2005&pages=35-47&pmid=16084264&doi=10.1016/j.ijfoodmicro.2004.11.023&)\]
+26. Tomas‐Callejas, A. F.
+    ,
+    Lopez‐Galvez, F.
+    ,
+    Sbodio, A.
+    ,
+    Artes, F.
+    ,
+    Artes‐Hernandez, A.
+    , &
+    Suslow, T. V.
+     (2012). Chlorine dioxide and chlorine effectiveness to prevent _Escherichia coli_ O157:H7 and _Salmonella_ cross‐contamination on fresh‐cut red chard. Food Control, 23, 325–333. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Control&title=Chlorine%20dioxide%20and%20chlorine%20effectiveness%20to%20prevent%20Escherichia%20coli%20O157:H7%20and%20Salmonella%20cross%E2%80%90contamination%20on%20fresh%E2%80%90cut%20red%20chard&author=A.%20F.%20Tomas%E2%80%90Callejas&author=F.%20Lopez%E2%80%90Galvez&author=A.%20Sbodio&author=F.%20Artes&author=A.%20Artes%E2%80%90Hernandez&volume=23&publication_year=2012&pages=325-333&)\]
+27. U.S. Food and Drug Administration (FDA)
+    . (2020).
+    2020 Leafy greens STEC action plan
+    . Retrieved from [https://www.fda.gov/media/135855/download](https://www.fda.gov/media/135855/download)
+28. U.S. Food and Drug Administration (FDA)
+    . (2021).
+    Factors potentially contributing to the contamination of leafy greens implicated in the fall 2020 outbreak of E. coli O157:H7
+    . Retrieved from [https://www.fda.gov/media/147349/download](https://www.fda.gov/media/147349/download)
+29. Versar, Inc
+    . (2021). Summary Report: External letter scientific consultation on fresh‐cut lettuce processing practices. Available from FDA upon request. \[ [Google Scholar](https://scholar.google.com/scholar_lookup?title=Summary%20Report:%20External%20letter%20scientific%20consultation%20on%20fresh%E2%80%90cut%20lettuce%20processing%20practices&publication_year=2021&)\]
+30. Zeng, W.
+    ,
+    Vorst, K.
+    ,
+    Brown, W.
+    ,
+    Marks, B. P.
+    ,
+    Jeong, S.
+    ,
+    Perez‐Rodriguez, F.
+    , &
+    Ryser, E. T.
+     (2014). Growth of _Escherichia coli_ O157:H7 and _Listeria monocytogenes_ in packaged fresh‐cut romaine mix at fluctuating temperatures during commercial transport, retail storage, and display. Journal of Food Protection, 77(2), 197–206. \[ [DOI](https://doi.org/10.4315/0362-028X.JFP-13-117)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/24490913/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Journal%20of%20Food%20Protection&title=Growth%20of%20Escherichia%20coli%20O157:H7%20and%20Listeria%20monocytogenes%20in%20packaged%20fresh%E2%80%90cut%20romaine%20mix%20at%20fluctuating%20temperatures%20during%20commercial%20transport,%20retail%20storage,%20and%20display&author=W.%20Zeng&author=K.%20Vorst&author=W.%20Brown&author=B.%20P.%20Marks&author=S.%20Jeong&volume=77&issue=2&publication_year=2014&pages=197-206&pmid=24490913&doi=10.4315/0362-028X.JFP-13-117&)\]
+31. Zhou, B.
+    ,
+    Luo, Y.
+    ,
+    Nou, X.
+    ,
+    Lyu, S.
+    , &
+    Wang, Q.
+     (2015). Inactivation dynamics of _Salmonella enterica, Listeria monocytogenes_, and _Escherichia coli_ O157:H7 in wash water during simulated chlorine depletion and replenishment processes. Food Microbiology, 50, 88–96. \[ [DOI](https://doi.org/10.1016/j.fm.2015.03.004)\] \[ [PubMed](https://pubmed.ncbi.nlm.nih.gov/25998820/)\] \[ [Google Scholar](https://scholar.google.com/scholar_lookup?journal=Food%20Microbiology&title=Inactivation%20dynamics%20of%20Salmonella%20enterica,%20Listeria%20monocytogenes,%20and%20Escherichia%20coli%20O157:H7%20in%20wash%20water%20during%20simulated%20chlorine%20depletion%20and%20replenishment%20processes&author=B.%20Zhou&author=Y.%20Luo&author=X.%20Nou&author=S.%20Lyu&author=Q.%20Wang&volume=50&publication_year=2015&pages=88-96&pmid=25998820&doi=10.1016/j.fm.2015.03.004&)\]
+
+* * *
+
+Articles from Risk Analysis are provided here courtesy of **Wiley**
+
+![Close](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/close.svg)
+
+## ACTIONS
+
+- [![View on publisher site icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/launch.svg)View on publisher site](https://doi.org/10.1111/risa.13818)
+- [![Download PDF icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg)PDF (2.9 MB)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/pdf/RISA-42-966.pdf)
+- ![Cite icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/format_quote.svg)Cite
+- ![Collections icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/action-bookmark-full.svg)![Collections icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/action-bookmark-empty.svg)Collections
+- ![Permalink icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/share.svg)Permalink
+
+
+
+
+## PERMALINK
+
+
+
+![Copy icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/content_copy.svg)Copy
+
+
+## RESOURCES
+
+### Similar articles
+
+### Cited by other articles
+
+### Links to NCBI Databases
+
+## On this page
+
+- [Abstract](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#abstract1)
+- [1\. INTRODUCTION](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-sec-0010)
+- [2\. METHODS](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-sec-0020)
+- [3\. RESULTS](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-sec-0140)
+- [4\. DISCUSSION](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-sec-0180)
+- [ACKNOWLEDGMENTS](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-sec-0190)
+- [REFERENCES](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#risa13818-bibl-0001)
+
+## Cite
+
+![Close icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/close.svg)
+
+- ![Copy icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/content_copy.svg)Copy
+- [![Download icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg)Download .nbib.nbib](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/# "Download a file for external citation management software")
+- Format:
+AMA
+
+APA
+
+MLA
+
+NLM
+
+
+
+## Add to Collections
+
+Create a new collection
+
+Add to an existing collection
+
+Name your collection
+\*
+
+Choose a collection
+
+
+Unable to load your collection due to an error
+
+[Please try again](https://pmc.ncbi.nlm.nih.gov/articles/PMC9544649/#)
+
+Add
+
+Cancel
+
+
+Follow NCBI
+
+
+[NCBI on X (formerly known as Twitter)](https://twitter.com/ncbi) [NCBI on Facebook](https://www.facebook.com/ncbi.nlm) [NCBI on LinkedIn](https://www.linkedin.com/company/ncbinlm) [NCBI on GitHub](https://github.com/ncbi) [NCBI RSS feed](https://ncbiinsights.ncbi.nlm.nih.gov/)
+
+Connect with NLM
+
+
+[NLM on X (formerly known as Twitter)](https://twitter.com/nlm_nih) [NLM on Facebook](https://www.facebook.com/nationallibraryofmedicine) [NLM on YouTube](https://www.youtube.com/user/NLMNIH)
+
+[National Library of Medicine\\
+\\
+\\
+8600 Rockville Pike\\
+\\
+Bethesda, MD 20894](https://www.google.com/maps/place/8600+Rockville+Pike,+Bethesda,+MD+20894/%4038.9959508,%20%20%20%20%20%20%20%20%20%20%20%20-77.101021,17z/data%3D!3m1!4b1!4m5!3m4!1s0x89b7c95e25765ddb%3A0x19156f88b27635b8!8m2!3d38.9959508!%20%20%20%20%20%20%20%20%20%20%20%204d-77.0988323)
+
+- [Web Policies](https://www.nlm.nih.gov/web_policies.html)
+- [FOIA](https://www.nih.gov/institutes-nih/nih-office-director/office-communications-public-liaison/freedom-information-act-office)
+- [HHS Vulnerability Disclosure](https://www.hhs.gov/vulnerability-disclosure-policy/index.html)
+
+- [Help](https://support.nlm.nih.gov/)
+- [Accessibility](https://www.nlm.nih.gov/accessibility.html)
+- [Careers](https://www.nlm.nih.gov/careers/careers.html)
+
+- [NLM](https://www.nlm.nih.gov/)
+- [NIH](https://www.nih.gov/)
+- [HHS](https://www.hhs.gov/)
+- [USA.gov](https://www.usa.gov/)
+
+Back to Top![back to top icon](https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/arrow_upward.svg)

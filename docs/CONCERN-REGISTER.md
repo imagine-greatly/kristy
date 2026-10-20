@@ -4,7 +4,7 @@ Analysis, not card copy. Built 2026-10-18 from the archives under `docs/sources/
 
 Strength: **STRONG** = consumer-testing body, regulator, peer-reviewed or statutory text archived; **WEAK** = advocacy, trade or single-farm source, or a mechanism argument without testing; **COUNTER-VIEW** = an archived source disputing the concern (kept, flagged).
 
-101 concerns across 10 domains. Coverage against the counter cards is in `docs/CONCERN-COVERAGE.md`.
+102 concerns across 10 domains. Coverage against the counter cards is in `docs/CONCERN-COVERAGE.md`.
 
 ## Additives
 
@@ -67,7 +67,7 @@ Strength: **STRONG** = consumer-testing body, regulator, peer-reviewed or statut
 | id | concern | label terms shopper sees | where it shows up | better choice / ladder | evidence | domain |
 |---|---|---|---|---|---|---|
 | `rbst` | rBST/rBGH synthetic growth hormone in dairy cows | "rBST free", "from cows not treated with rBST" | milk, cheese, yogurt, ice cream, butter | organic or grass-fed (rBST not allowed) > rBST-free claim > none | `dairy_eggs_packaging/bcpp-rbgh-rbst.md` WEAK | Dairy |
-| `ultra_pasteurized` | Ultra-pasteurized/UHT dairy is heated hardest | "ultra-pasteurized", "UHT", "vat pasteurized" | milk, cream, half-and-half | raw (where legal) > vat/low-temp pasteurized > HTST > UHT | `dairy_eggs_packaging/wapf-faq-dairy.md` WEAK; `dairy_eggs_packaging/organicvalley-ultra-pasteurized.md` WEAK | Dairy |
+| `ultra_pasteurized` | Ultra-pasteurized/UHT dairy is heated hardest | "ultra-pasteurized", "UHT", "vat pasteurized" | milk, cream, half-and-half | raw (where legal) > vat/low-temp pasteurized > HTST > UHT | `dairy_eggs_packaging/wapf-faq-dairy.md` WEAK; `dairy_eggs_packaging/organicvalley-ultra-pasteurized.md` WEAK; `dairy_eggs_packaging/ecfr-21-131-3-ultra-pasteurized.md` STRONG (definition: at or above 280 °F for 2 s) | Dairy |
 | `raw_vs_pasteurized` | Raw vs pasteurized milk (holistic preference for raw from grass-fed herds) | "raw milk", "unpasteurized" | milk, kefir, aged cheese | raw from tested grass-fed herd > low-temp pasteurized | `dairy_eggs_packaging/wapf-faq-dairy.md` WEAK; `dairy_eggs_packaging/realmilk-pasteurization-does-harm.md` WEAK | Dairy |
 | `homogenization` | Homogenization (cream-top / non-homogenized as the alternative) | "non-homogenized", "cream top", "cream line" | milk | non-homogenized > homogenized | `dairy_eggs_packaging/wapf-homogenization.md` WEAK | Dairy |
 | `a1_a2` | A1 vs A2 beta-casein (hypothesis, mixed evidence) | "A2 milk", "A2/A2" | milk | A2 or goat/sheep for those who notice a difference | `dairy_eggs_packaging/pmc-a1-a2.md` WEAK | Dairy |
@@ -131,6 +131,7 @@ Strength: **STRONG** = consumer-testing body, regulator, peer-reviewed or statut
 | `raw_sprouts` | Raw sprouts grow in warm wet conditions that favor bacteria | "alfalfa", "bean sprouts" | sprouts, microgreens | cooked sprouts; microgreens | `produce_seafood/uconn-seed-bean-sprouts.md` STRONG; `produce_seafood/colostate-sprouts.md` STRONG | Produce |
 | `irradiation` | Irradiated food; labeling advocates want clearer disclosure | Radura symbol, "treated with irradiation" | spices, imported fruit, meat | organic (irradiation not allowed) | `produce_seafood/cfs-irradiation-labeling-opposition.md` WEAK | Produce |
 | `seasonal_local` | In-season local produce (freshness/nutrient retention; mild evidence) | none | all produce | in season local > shipped | `produce_seafood/heart-seasonal-eating.md` WEAK; `produce_seafood/clemson-seasonal-eating.md` WEAK | Produce |
+| `bagged_greens_wash` | Bagged fresh-cut greens are washed in chlorine-treated water during processing | "triple washed", "ready to eat", "prewashed" | bagged lettuce, spring mix, spinach, kale | whole heads from a local grower > bagged | `produce_seafood/pmc-chlorine-wash-leafy-greens.md` STRONG | Produce |
 
 ## Seafood
 
