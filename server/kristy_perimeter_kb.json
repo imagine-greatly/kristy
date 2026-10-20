@@ -804,7 +804,7 @@
       "question": "Is organic produce worth the extra money?",
       "decision": "Organic produce, first on everything eaten skin-on.",
       "why": "Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.",
-      "short_answer": "Organic earns the money where the skin gets eaten: berries, leafy greens, apples, grapes, potatoes. Anything peeled goes in conventional, even the ones that feel delicate: avocado, kiwi, mango, banana, citrus, onion.",
+      "short_answer": "Organic across the produce aisle. When the organic shelf runs thin, start with what gets eaten skin-on: berries, leafy greens, apples, grapes, potatoes. Peeled fruit like avocado, kiwi, mango, banana, citrus and onion can wait its turn.",
       "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.",
       "evidence_tier": "credible_concern",
       "sources": [
@@ -815,22 +815,22 @@
         "Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php",
         "Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php"
       ],
-      "kristy_take": "An avocado or kiwi can feel delicate and still have a peel you throw away. Choose conventional there; keep organic for the produce you eat whole.",
+      "kristy_take": "Reach for organic across the produce aisle. An avocado or kiwi can feel delicate and still have a peel you throw away, so it waits when organic runs short.",
       "buying_tips": [
         "Residue sits on the skin, so a peel you throw away takes it with it.",
         "The USDA Organic seal on the sign or sticker is the standard to read.",
         "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes."
       ],
       "watch_out": [
-        "The rule is the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they sit on the plain side. A potato reads as sturdy and gets eaten skin-on, so it does not.",
-        "Sturdy vegetables eaten whole are the gap this rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low anyway, so nothing is lost buying those plain.",
+        "When organic runs short, go by the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they can wait. A potato reads as sturdy and gets eaten skin-on, so it cannot.",
+        "Sturdy vegetables eaten whole are the gap the skin rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low, so they can wait when organic runs short.",
         "Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.",
         "The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.",
         "If organic means fewer vegetables in the cart, buy conventional and eat more."
       ],
       "pick_steps": [
-        "Ask if the skin gets eaten: berries, greens, apples, grapes, potatoes go organic.",
-        "Anything peeled goes in plain, however soft it feels, like avocado or kiwi.",
+        "Choose organic across the produce aisle.",
+        "When organic runs short, start with skin-on produce: berries, greens, apples, grapes, potatoes.",
         "Trust the USDA Organic seal; Natural means nothing on produce."
       ],
       "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. The Dirty Dozen order is contested; the eaten-whole reasoning holds. If organic means fewer vegetables, buy conventional and eat more.",
@@ -7299,8 +7299,8 @@
       "question": "How do you buy and ripen bananas?",
       "decision": "Organic bananas, green, to finish ripening on the counter.",
       "why": "Bananas get sweeter as the green fades at home. Left to ripen on the plant, they often split and lose texture.",
-      "short_answer": "Buy bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Conventional is fine: bananas sit on the low-residue list, and the peel comes off.",
-      "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. UC Davis ripens them at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. EWG’s Clean Fifteen ranks bananas 12th for low pesticide residue, from USDA data. That testing is done on the peeled fruit, the part that gets eaten. Conventional is fine on green bananas: they rank low for residue, tested with the peel off.",
+      "short_answer": "Buy organic bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Bananas sit on the low-residue list because the peel comes off; organic still sets how they are grown.",
+      "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. UC Davis ripens them at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. EWG’s Clean Fifteen ranks bananas 12th for low pesticide residue, from USDA data. That testing is done on the peeled fruit, the part that gets eaten. Green bananas rank low for residue, tested with the peel off; organic still sets how they are grown.",
       "evidence_tier": "established",
       "sources": [
         "https://postharvest.ucdavis.edu/produce-facts-sheets/banana",
@@ -7308,7 +7308,7 @@
         "https://www.ewg.org/foodnews/clean-fifteen.php",
         "https://www.ewg.org/foodnews/methodology.php"
       ],
-      "kristy_take": "Take the greenest bunch for the week and let the counter finish it. Conventional is fine here, since the peel comes off; keep green bananas out of the fridge.",
+      "kristy_take": "Take the greenest organic bunch for the week and let the counter finish it. Keep green bananas out of the fridge.",
       "cart_pick": "Organic green bananas",
       "buying_tips": [
         "Bananas get sweeter as the green fades, and ripening on the plant often splits them.",

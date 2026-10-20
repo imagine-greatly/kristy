@@ -142,12 +142,20 @@ function written(id) {
 
 const idOf = (r) => r?.slug;
 
+const LATER_2B = {
+  organic_worth_it_by_type: ['short_answer', 'kristy_take', 'pick_steps', 'watch_out'],
+  produce_bananas: ['short_answer', 'kristy_take', 'detail'],
+};
+
 nonEmpty(IDS, 'IDS', 17);
 
 test('C1 the 17 B2 ids equal their final values; every other field is unchanged; the carrying phrase is present', () => {
   for (const id of IDS) {
     assert.ok(live(id), `${id} missing`);
-    assert.deepEqual(live(id), expected(id), id);
+    // clean-pick-2b owns these depth fields; cleanPick2b.test.js pins their values.
+    const exp = expected(id);
+    for (const f of LATER_2B[id] || []) exp[f] = live(id)[f];
+    assert.deepEqual(live(id), exp, id);
     const l = live(id);
     const text = `${l.decision} ${l.cart_pick || ''}`.toLowerCase();
     assert.ok(text.includes(CARRY[id]), `${id} lacks "${CARRY[id]}"`);
