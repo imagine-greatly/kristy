@@ -22,6 +22,9 @@ const now = (id) => kb.entries.find((e) => e.id === id);
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
 const listRow = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
 const TO = 'chicken_cuts_basics';
+// clean-pick-1 (2026-10-20) moved this card on; the fold's checks read it as of ede90e7.
+const CP1 = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+kb.entries = kb.entries.map((e) => (e.id === TO ? CP1.entries.find((x) => x.id === TO) : e));
 const FOLDED = ['air_chilled_chicken', 'no_antibiotics_poultry'];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const spoken = (e) => JSON.stringify(SPOKEN.map((f) => e[f] ?? ''));

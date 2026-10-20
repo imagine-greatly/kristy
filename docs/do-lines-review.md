@@ -38,7 +38,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | --- | --- | --- | --- | --- |
 | `salmon_wild_vs_farmed` | seafood | Wild salmon, frozen wild Alaskan before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild American or Gulf shrimp; read the country of origin. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
-| `rotisserie_chicken` | meat | Rotisserie chicken with salt and spices, without phosphate or starch. | Read the ingredient list: two words is plain; water second means a solution. | — |
+| `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list: two words is plain; water second means a solution. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Read the grade and the sourcing as two separate answers. | — |
 | `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Read the label for liver or heart in the ingredients. | — |
@@ -52,7 +52,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `precut_produce_tradeoffs` | produce | Whole produce before pre-cut: cutting starts vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Deep yellow grass-fed butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
 | `whole_vs_reduced_fat_milk` | eggs_dairy | Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
-| `cheese_real_vs_processed` | eggs_dairy | Block cheese with a short list: milk, cultures, salt, enzymes. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
+| `cheese_real_vs_processed` | eggs_dairy | Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
 | `raw_milk` | eggs_dairy | Raw grass-fed milk from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
 | `rice_arsenic` | bulk_pantry | White basmati or sushi rice. | Read the origin on the bag: India, Pakistan or California. | — |
@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_no_artificial_flavors` | label_terms | Short ingredient lists of recognisable foods over flavor claims. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | Beef soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
-| `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
+| `chicken_cuts_basics` | meat | Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
 | `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Read the ingredients beside “contains up to” for water, salt and phosphates. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for the full ingredient list before the counter slices the meat. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon and canned light tuna, small and short-lived. | Check the species name on the case tag. Size predicts the mercury. | — |
@@ -84,7 +84,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `berries_picking` | produce | Cold organic berries with a dry, clean carton bottom. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Unwashed produce for storing; wash it when you use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp greens without decay, ready for a cold-water soak. | Trim the stem ends and stand them in ice water thirty minutes. | — |
-| `cream_vs_creamer` | eggs_dairy | Half-and-half or heavy cream, with a short ingredient list. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
+| `cream_vs_creamer` | eggs_dairy | Grass-fed heavy cream or half-and-half: cream and milk only. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Whole wheat flour; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Rice, oats, beans, lentils and spices from a busy bin. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Whole spices, bought small and ground as you go. | Toast them in a dry pan until they smell, then grind. | — |
@@ -117,12 +117,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_bananas` | produce | Green bananas to finish ripening on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
 | `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
 
-| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread, made with whole wheat flour. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
+| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread: flour, water, yeast, salt, little else. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
 | `sourdough` | bulk_pantry | Sourdough of flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
 | `bagels` | bulk_pantry | Bagels boiled before the oven, with their ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
-| `tortillas` | bulk_pantry | Corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
-| `turkey_whole` | meat | Plain whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
-| `ground_turkey` | meat | Plain ground turkey with its fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
+| `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
+| `turkey_whole` | meat | Pasture-raised whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
+| `ground_turkey` | meat | Pasture-raised or organic ground turkey, fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
 | `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Oat milk with few stabilizers, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
@@ -130,7 +130,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
 | `hot_dogs` | meat | Organic beef hot dogs with a short ingredient list. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
 | `canned_tuna` | seafood | Canned light tuna, or a can naming skipjack. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
-| `chicken_breast` | meat | Plain bone-in, skin-on breast before boneless skinless; no added solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
+| `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Read the front for any added liquid percentage, then check the ingredients. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
 | `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with few added ingredients. | Read the small print under the name for the meat cuts used. | — |
 | `cured_pork` | meat | Organic or pasture-raised pork, with cut and curing ingredients named. | Find the asterisk beside “uncured” and read what it points to. | — |
@@ -138,7 +138,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `organ_meats` | meat | Organ meats you will cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
 | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
 | `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
-| `white_fish` | seafood | White fish sold by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
+| `white_fish` | seafood | Wild-caught white fish by its named species, firm, mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
 | `crab` | seafood | Live crab that moves, or cooked with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
 | `lobster` | seafood | A live lobster that moves, or hard-frozen tails. | Ask the counter to lift the lobster and check the tail curls under. | — |
 | `scallops` | seafood | Dry or dry-packed scallops, with no phosphate or water listed. | Read the ingredients for a phosphate and water, or ask if they are dry. | — |
@@ -154,8 +154,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `muesli` | bulk_pantry | Muesli of just oats, fruit, nuts and seeds. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
 | `bread_aisle` | bulk_pantry | Your chosen bread, with “whole” in the first flour. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
 | `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
-| `sour_cream` | eggs_dairy | Sour cream soured by bacteria, with nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
-| `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat. | Read the ingredients for a culture, then count the stabilizers after it. | — |
+| `sour_cream` | eggs_dairy | Grass-fed sour cream: cream and cultures, nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
+| `cream_cheese` | eggs_dairy | Grass-fed cream cheese by its standard name, no stabilizers. | Read the ingredients for a culture, then count the stabilizers after it. | — |
 | `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
 | `ice_cream` | eggs_dairy | A carton named “ice cream”, with no added oils listed. | Read the small print under the flavor for “frozen dairy dessert”. | — |
 | `ghee` | eggs_dairy | Ghee or clarified butter with butter as the only ingredient. | Read the ingredient list for butter or cream as the only entry. | — |
@@ -176,7 +176,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
 | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
 | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
-| `sugars` | bulk_pantry | Coconut or maple sugar first, each made from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
+| `sugars` | bulk_pantry | Organic coconut or maple sugar first, each from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
 | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
 | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
 | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
@@ -188,10 +188,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `dried_herbs` | bulk_pantry | A single herb, named on the jar. | Check the label for the irradiation logo and “treated with radiation”. | — |
 | `tea` | bulk_pantry | The tea leaf alone: black, green, white or oolong. | Read the ingredient list for tea leaves and nothing else. | — |
 | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
-| `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
+| `pasta_sauce` | bulk_pantry | Pasta sauce of tomatoes and olive oil, no added sweetener. | Read the ingredients for anything listed ahead of the tomatoes. | — |
 | `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
 | `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
-| `mayo` | bulk_pantry | Mayonnaise with olive oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+| `mayo` | bulk_pantry | Mayonnaise with olive oil alone, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
 | `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
 | `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
 | `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |

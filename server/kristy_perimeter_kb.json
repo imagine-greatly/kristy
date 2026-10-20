@@ -245,10 +245,10 @@
       ],
       "category": "poultry",
       "question": "Is the rotisserie chicken worth buying?",
-      "decision": "Rotisserie chicken with salt and spices, without phosphate or starch.",
+      "decision": "Pasture-raised or organic rotisserie chicken, salt and spices only.",
       "why": "A plain bird is chicken, salt and spices, roasted in the store. Phosphate and starch go in with a needle.",
       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
+      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection. Two federal label rules settle it; the ingredient list just needs reading.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
@@ -265,9 +265,10 @@
       ],
       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
-      "cart_pick": "Plain rotisserie chicken",
+      "cart_pick": "Organic or pasture-raised rotisserie chicken",
       "buying_tips": [
         "A solution bird was injected with water and seasoning before it went on the spit.",
+        "Look for a pasture-raised or certified organic bird on the sticker.",
         "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
         "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
         "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
@@ -301,7 +302,7 @@
           "meaning": "A permitted poultry ingredient under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
         }
       ],
-      "tier_note": "Two federal label rules settle it; the ingredient list just needs reading.",
+      "tier_note": "Organic rotisserie chicken: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
       "eyebrow_short": "Rotisserie chicken",
       "asked_as": [
         "is rotisserie chicken healthy",
@@ -1195,9 +1196,10 @@
         "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
       ],
       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
-      "cart_pick": "Deep yellow butter",
+      "cart_pick": "Grass-fed butter",
       "buying_tips": [
         "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
+        "Look for grass-fed on the wrapper; cream and salt are the whole list.",
         "European-style butters are higher in fat, a separate axis from what the cows ate.",
         "Salted or unsalted is a cooking choice. Unsalted gives control."
       ],
@@ -1404,7 +1406,7 @@
       ],
       "category": "dairy",
       "question": "Should you buy block cheese, slices, or pre-shredded?",
-      "decision": "Block cheese with a short list: milk, cultures, salt, enzymes.",
+      "decision": "Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else.",
       "why": "Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.",
       "short_answer": "Real cheese is basically milk, salt, cultures and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
       "detail": "Read the name and the list. Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind. The shred coating is usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
@@ -1423,9 +1425,10 @@
         }
       ],
       "kristy_take": "Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.",
-      "cart_pick": "Block cheese",
+      "cart_pick": "Grass-fed block cheese",
       "buying_tips": [
         "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
+        "Look for grass-fed milk named on the block.",
         "Look for a short list: milk, salt, cultures, enzymes/rennet.",
         "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
         "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
@@ -2849,10 +2852,10 @@
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
-      "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
+      "decision": "Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs.",
       "why": "Thighs carry more fat and flavor, so they stay juicy and are hard to overcook. The skin renders and bastes as they cook.",
       "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
-      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
+      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird. A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (poultry composition)",
@@ -2865,9 +2868,10 @@
         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
       ],
       "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
-      "cart_pick": "Air-chilled whole chicken or bone-in thighs",
+      "cart_pick": "Pasture-raised whole chicken or bone-in thighs",
       "buying_tips": [
         "Water-chilled birds hold water from the chilling tank; skin that starts dry crisps.",
+        "Look for air-chilled printed on the whole bird or the thigh pack.",
         "Whole bird: lowest cost per pound, and the carcass makes stock.",
         "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
         "Breast: fast and lean. Pull it the moment it is done.",
@@ -2900,7 +2904,7 @@
           "meaning": "True of all chicken by law; not a differentiator."
         }
       ],
-      "tier_note": "A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
+      "tier_note": "Pasture on a chicken label: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
@@ -3751,7 +3755,7 @@
       ],
       "category": "dairy",
       "question": "What is the difference between cream and coffee creamer?",
-      "decision": "Half-and-half or heavy cream, with a short ingredient list.",
+      "decision": "Grass-fed heavy cream or half-and-half: cream and milk only.",
       "why": "Cream has a legal fat minimum. Creamer is oil, sweetener and emulsifiers built to imitate it.",
       "short_answer": "Cream is dairy with a legal fat minimum. ‘Non-dairy creamer’ is not dairy at all. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Compare the two lists.",
       "detail": "Heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18. Standards of identity fix what cream can mean, which is why those fat percentages are consistent across every carton. Creamer has no such standard because it is a formulated product. The oil in it is usually a refined seed oil, and the sweetness usually comes from corn syrup solids or sugar, with the flavored versions adding more of both. Some cartons of real cream carry stabilizers like carrageenan or gellan gum, so a short list is worth checking on the dairy side too. Whole milk, half-and-half or real cream all do the job with a list you can read out loud. Read the two ingredient lists side by side and it takes three seconds.",
@@ -3779,9 +3783,10 @@
         }
       ],
       "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
-      "cart_pick": "Half-and-half",
+      "cart_pick": "Grass-fed half-and-half",
       "buying_tips": [
         "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
+        "Look for a carton naming grass-fed cows, with cream and milk only.",
         "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
         "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
         "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
@@ -6386,7 +6391,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which sandwich bread is whole wheat?",
-      "decision": "Whole wheat sandwich bread, made with whole wheat flour.",
+      "decision": "Whole wheat sandwich bread: flour, water, yeast, salt, little else.",
       "why": "Whole wheat flour keeps the bran and germ along with the rest of the grain, in their natural proportions.",
       "short_answer": "US whole wheat bread uses whole wheat flour rather than ordinary refined flour. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
       "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
@@ -6406,9 +6411,10 @@
         }
       ],
       "kristy_take": "A loaf called “wheat” may still use refined flour. Turn it over and find whole wheat flour in the ingredients before choosing it.",
-      "cart_pick": "Whole wheat sandwich bread",
+      "cart_pick": "Short-list whole wheat sandwich bread",
       "buying_tips": [
         "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
+        "Look for a short list: whole wheat flour, water, yeast and salt.",
         "Check for whole wheat flour in the ingredients.",
         "Without a stamp, use the flour names to check the loaf.",
         "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
@@ -6559,7 +6565,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which tortillas should you choose, corn or flour?",
-      "decision": "Corn tortillas of masa, water and salt.",
+      "decision": "Organic corn tortillas of masa, water and salt.",
       "why": "Masa is corn cooked and soaked in limewater, then ground into dough. Water and salt complete the tortilla recipe.",
       "short_answer": "Traditional corn tortillas use corn cooked and soaked in alkaline limewater, then ground into masa. Flour tortillas typically use wheat flour, water, fat, salt, and leavening.",
       "detail": "Masa harina is dried, ground nixtamalized corn dough. Corn flour alone is a different ingredient. Packaged corn tortillas can also contain wheat; the ingredient list shows the blend. The archived nixtamalization paper measures laboratory digestibility under particular processing conditions, not health outcomes from retail tortillas.",
@@ -6578,7 +6584,7 @@
         }
       ],
       "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
-      "cart_pick": "Corn tortillas",
+      "cart_pick": "Organic corn tortillas",
       "buying_tips": [
         "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
         "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
@@ -6621,19 +6627,20 @@
       ],
       "category": "poultry",
       "question": "What should you check on a whole turkey label?",
-      "decision": "Plain whole turkey, without an injected basting solution.",
+      "decision": "Pasture-raised whole turkey, without an injected basting solution.",
       "why": "A plain turkey has nothing added. A basted bird can carry broth, stock, fat or water in an added solution.",
       "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
-      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
+      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird. A basted or self-basted bird was injected or marinated with a solution the label must name.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
       ],
       "kristy_take": "Fresh or frozen, read beside the name for a basting solution and its ingredients. Water left from chilling is a separate disclosure, so read the two lines separately.",
-      "cart_pick": "Whole turkey without added solution",
+      "cart_pick": "Pasture-raised whole turkey",
       "buying_tips": [
         "A basted or self-basted bird carries added broth, stock, fat or water.",
+        "Look for a pasture-raised whole turkey, sold unbasted.",
         "Read the solution ingredients beside the product name.",
         "A frozen whole turkey can be checked for the same added-solution statement.",
         "Read retained-water wording separately from the flavoring-solution statement."
@@ -6658,7 +6665,7 @@
           "meaning": "A regulated temperature-history description, separate from formulation."
         }
       ],
-      "tier_note": "A basted or self-basted bird was injected or marinated with a solution the label must name.",
+      "tier_note": "Pasture-raised turkey: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "how do you choose a whole turkey",
         "what does self basted mean on whole turkey",
@@ -6677,19 +6684,20 @@
       ],
       "category": "poultry",
       "question": "What should you check before buying ground turkey?",
-      "decision": "Plain ground turkey with its fat content printed.",
+      "decision": "Pasture-raised or organic ground turkey, fat content printed.",
       "why": "Two packs of ground turkey can have different fat contents. Read the fat line to see what you are taking home.",
       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
-      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
+      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level. Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
       ],
       "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
-      "cart_pick": "Plain ground turkey",
+      "cart_pick": "Pasture-raised or organic plain ground turkey",
       "buying_tips": [
         "The name ground turkey sets no one fat level, so two packs can differ.",
+        "Look for pasture-raised or certified organic ground turkey, sold plain.",
         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
         "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
         "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
@@ -6707,7 +6715,7 @@
           "meaning": "A composition claim that must appear with a percent-fat statement."
         }
       ],
-      "tier_note": "Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
+      "tier_note": "Organic ground turkey: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "how do you choose ground turkey",
         "what does percent lean mean on ground turkey",
@@ -7157,19 +7165,20 @@
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Plain bone-in, skin-on breast before boneless skinless; no added solution.",
+      "decision": "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
       "why": "Bone-in, skin-on breast cooks better than boneless skinless, which dries fast in the pan.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
-      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
+      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case. Any added flavoring solution has to appear in the product name, with its amount.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
       ],
       "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
-      "cart_pick": "Plain chicken breast without added solution",
+      "cart_pick": "Pasture-raised or organic chicken breast",
       "buying_tips": [
         "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
+        "Look for pasture-raised or certified organic breast, sold plain.",
         "Read the full product name for the solution percentage and ingredients.",
         "Fresh or frozen breast can be checked for the same solution disclosure.",
         "Read retained-water wording separately from the added flavoring ingredients."
@@ -7195,7 +7204,7 @@
           "meaning": "Water absorbed during post-slaughter processing, separately disclosed on the label."
         }
       ],
-      "tier_note": "Any added flavoring solution has to appear in the product name, with its amount.",
+      "tier_note": "Organic chicken breast: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "how do you choose chicken breast",
         "does natural chicken breast have added water",
@@ -8088,7 +8097,7 @@
       ],
       "category": "seafood",
       "question": "How do you pick good white fish?",
-      "decision": "White fish sold by its named species, firm and mild-smelling.",
+      "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
       "why": "A fillet is hard to identify by eye, so the species name does that work. Firm flesh and a mild smell show the rest.",
       "short_answer": "Ask which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
       "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
@@ -8102,9 +8111,10 @@
         "https://www.fisheries.noaa.gov/species/alaska-pollock"
       ],
       "kristy_take": "The species name comes first. Firm flesh and a clean smell confirm the piece.",
-      "cart_pick": "A named white fish fillet, firm and on ice",
+      "cart_pick": "Wild-caught white fish fillet",
       "buying_tips": [
         "A fillet is hard to identify by eye, so the species name does that work.",
+        "Look for how it was caught and the species, on the sign or label.",
         "Ask which species the fillet is.",
         "Press the flesh and check that it springs back.",
         "Skip fillets with dried, dark or discolored edges."
@@ -9257,7 +9267,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick sour cream?",
-      "decision": "Sour cream soured by bacteria, with nothing else added.",
+      "decision": "Grass-fed sour cream: cream and cultures, nothing else added.",
       "why": "Cultured sour cream is soured by bacteria. Acidified sour cream is soured with added acids.",
       "short_answer": "The tub names the method. Sour cream, or cultured sour cream, is cream soured by bacteria. Acidified sour cream is soured with added acids. Both hold at least 18 percent milkfat.",
       "detail": "Under 21 CFR 131.160, sour cream is pasteurized cream soured by lactic acid bacteria. It may be named “Cultured sour cream”. Under 21 CFR 131.162, acidified sour cream is soured with acidifiers, with or without lactic acid bacteria. An acidifier is an added food-grade acid. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop syneresis, which is liquid separating out. A flavoring that characterizes the product is declared with the name.",
@@ -9283,9 +9293,10 @@
         }
       ],
       "kristy_take": "Culturing is the traditional way to sour cream. The tub says which way was used.",
-      "cart_pick": "Cream and cultures only sour cream",
+      "cart_pick": "Grass-fed sour cream",
       "buying_tips": [
         "Cultured means bacteria did the souring; acidified tubs use added acids.",
+        "Look for a grass-fed tub listing only cream and cultures.",
         "Pick a tub named “sour cream” or “cultured sour cream”.",
         "Read the optional ingredients added for texture or shelf life.",
         "Check the name for a declared flavor.",
@@ -9331,7 +9342,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick cream cheese?",
-      "decision": "Cream cheese by its standard name, at least 33% milkfat.",
+      "decision": "Grass-fed cream cheese by its standard name, no stabilizers.",
       "why": "The standard sets at least 33 percent milkfat, a bacterial culture, and stabilizers at 0.5 percent at most.",
       "short_answer": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and a bacterial culture. Stabilizers are capped at 0.5 percent. American Neufchâtel closely resembles it.",
       "detail": "Under 21 CFR 133.133, cream cheese is a soft, uncured cheese. It holds at least 33 percent milkfat and at most 55 percent moisture. Its dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel, sold in the United States, closely resembles cream cheese. French Neufchâtel ripens and grows a soft rind.",
@@ -9357,9 +9368,10 @@
         }
       ],
       "kristy_take": "Cream cheese is a fresh cheese, so the name on the box carries the standard.",
-      "cart_pick": "Stabilizer-free cream cheese",
+      "cart_pick": "Grass-fed stabilizer-free cream cheese",
       "buying_tips": [
         "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
+        "Look for grass-fed cream cheese that lists no stabilizers.",
         "Look for “cream cheese” as the name on the package.",
         "Find a culture in the ingredient list.",
         "Swap in Neufchâtel in most recipes; the two taste similar.",
@@ -10668,7 +10680,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick sugar?",
-      "decision": "Coconut or maple sugar first, each made from one sap.",
+      "decision": "Organic coconut or maple sugar first, each from one sap.",
       "why": "Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.",
       "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
       "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
@@ -10689,9 +10701,10 @@
         "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
       ],
       "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
-      "cart_pick": "Coconut sugar or pure maple sugar",
+      "cart_pick": "Organic coconut sugar or pure maple sugar",
       "buying_tips": [
         "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
+        "Look for certified organic coconut sugar or pure maple sugar.",
         "Read the list: coconut sugar or maple sugar alone, with nothing added.",
         "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
         "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
@@ -11440,7 +11453,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick pasta sauce?",
-      "decision": "Pasta sauce with tomatoes first and a short list.",
+      "decision": "Pasta sauce of tomatoes and olive oil, no added sweetener.",
       "why": "Ingredients are listed most first, so tomatoes listed first means no ingredient outweighs them.",
       "short_answer": "Read the ingredient list. Ingredients run from most to least, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
       "detail": "Ingredients on a label are listed by common name in descending order of predominance, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
@@ -11453,9 +11466,10 @@
         "https://ouritaliantable.com/sugo-di-pomodoro/"
       ],
       "kristy_take": "Tomatoes first and a short list is a craft standard. One Neapolitan family’s sugo is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
-      "cart_pick": "Pasta sauce listing tomatoes first",
+      "cart_pick": "Tomato and olive oil pasta sauce",
       "buying_tips": [
         "Ingredients run most first, so anything ahead of the tomatoes outweighs them.",
+        "Look for tomatoes first, olive oil as the oil, and no added sweetener.",
         "Read the first ingredient; tomatoes should lead.",
         "Count what follows the tomatoes; a short list is the craft standard.",
         "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
@@ -11648,7 +11662,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick mayonnaise?",
-      "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
+      "decision": "Mayonnaise with olive oil alone, egg yolk and an acid.",
       "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
       "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
       "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
@@ -11664,9 +11678,10 @@
         }
       ],
       "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
-      "cart_pick": "Olive oil mayonnaise",
+      "cart_pick": "Olive oil only mayonnaise",
       "buying_tips": [
         "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
+        "Look for olive oil as the only oil in the ingredient list.",
         "Check that the name on the jar is Mayonnaise.",
         "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",

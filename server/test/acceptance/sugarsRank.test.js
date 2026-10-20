@@ -4,13 +4,13 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import doLines from '../../lib/doLines.json' with { type: 'json' };
 import { scoreEntries } from '../../lib/perimeter.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+// clean-pick-1 (2026-10-20) moved the sugars card on; this test now pins the ede90e7 result.
+const kb = JSON.parse(git('ede90e7:server/kristy_perimeter_kb.json'));
 const base = JSON.parse(git('b284f0b:server/kristy_perimeter_kb.json'));
 const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
 const live = find(kb, 'sugars');
@@ -83,11 +83,12 @@ test('C5 every other card, the entry count and the top-level fields are byte-ide
 });
 
 test('C6 doLines.json differs from b284f0b on sugars only, and the review row carries the same two cells', () => {
+  const doLines = JSON.parse(git('ede90e7:server/lib/doLines.json'));
   const was_ = JSON.parse(git('b284f0b:server/lib/doLines.json'));
   assert.equal(doLines.sugars, DO_LINE.do);
   assert.notEqual(was_.sugars, doLines.sugars);
   assert.deepEqual({ ...doLines, sugars: was_.sugars }, was_);
-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
+  const review = git('ede90e7:docs/do-lines-review.md');
   assert.ok(review.includes(`| \`sugars\` | bulk_pantry | ${DO_LINE.headline} | ${DO_LINE.do} |`), 'review table row');
 });
 

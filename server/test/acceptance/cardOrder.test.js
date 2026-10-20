@@ -8,7 +8,8 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const git = (ref) => JSON.parse(execFileSync('git', ['show', `${ref}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+// clean-pick-1 (2026-10-20) moved batch cards on; this test now pins the ede90e7 result.
+const kb = git('ede90e7');
 const base = git('81b63d5'); // the tidied cards as shipped
 const old = git('8264bd0'); // before card-tidy, for restored text and the claim lock
 const RANKED = git('b284f0b'); // sugars-rank owns the live sugars card

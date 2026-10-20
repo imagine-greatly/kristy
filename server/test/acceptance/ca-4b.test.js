@@ -1,6 +1,6 @@
 // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
 import { beforeCa7 } from './ca7Superseded.js';
-import { beforeTwoLine, beforeConcern, preTidy } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern, preTidy, preCleanPick } from './twoLinePin.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -16,7 +16,8 @@ import { assertPassRule } from './passRule.js';
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
-kb.entries = kb.entries.map(preTidy);
+const LIVE = structuredClone(kb); // the review table follows the live front
+kb.entries = kb.entries.map((e) => preTidy(preCleanPick(e)));
 const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
 const reviewed = parseReviewTable(reviewText);
@@ -217,7 +218,7 @@ test('C5 new copy passes the claim-lock, price, punctuation, brand and D4 greps'
 test('C6 review table and doLines.json follow the new fronts', () => {
   for (const id of IDS) {
     // The table follows the live front, which the two-line rewrite may have moved past this batch's text.
-    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), kb.entries.find((e) => e.id === id).decision, id);
+    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), LIVE.entries.find((e) => e.id === id).decision, id);
     if (DO[id]) assert.equal(reviewed.get(id)?.do, DO[id], `${id}: exact do line`);
     const d = reviewed.get(id)?.do;
     if (d) assert.equal(doLines[id], d, id);

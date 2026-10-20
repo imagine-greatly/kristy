@@ -1,0 +1,1233 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index 4e1026b..342a60c 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -38,7 +38,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | --- | --- | --- | --- | --- |
+ | `salmon_wild_vs_farmed` | seafood | Wild salmon, frozen wild Alaskan before fresh farmed. | Take the frozen sockeye from the freezer case, not the fresh Atlantic. | — |
+ | `shrimp_imported_vs_domestic` | seafood | Wild American or Gulf shrimp; read the country of origin. | Read the country-of-origin line on the bag, then look for BAP or ASC. | — |
+-| `rotisserie_chicken` | meat | Rotisserie chicken with salt and spices, without phosphate or starch. | Read the ingredient list: two words is plain; water second means a solution. | — |
++| `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list: two words is plain; water second means a solution. | — |
+ | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Look for a whole-life seal: American Grassfed, or Certified Grassfed by AGW. | — |
+ | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Read the grade and the sourcing as two separate answers. | — |
+ | `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Read the label for liver or heart in the ingredients. | — |
+@@ -52,7 +52,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `precut_produce_tradeoffs` | produce | Whole produce before pre-cut: cutting starts vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
+ | `grassfed_butter` | eggs_dairy | Deep yellow grass-fed butter: cream, and salt if salted. | Look through the wrapper window before choosing a block. | — |
+ | `whole_vs_reduced_fat_milk` | eggs_dairy | Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. | Check the side panel for the pasteurization words and a grass-fed seal. | — |
+-| `cheese_real_vs_processed` | eggs_dairy | Block cheese with a short list: milk, cultures, salt, enzymes. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
++| `cheese_real_vs_processed` | eggs_dairy | Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else. | Read the bag for potato starch, cellulose and natamycin before buying shreds. | — |
+ | `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
+ | `raw_milk` | eggs_dairy | Raw grass-fed milk from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
+ | `rice_arsenic` | bulk_pantry | White basmati or sushi rice. | Read the origin on the bag: India, Pakistan or California. | — |
+@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `label_no_artificial_flavors` | label_terms | Short ingredient lists of recognisable foods over flavor claims. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
+ | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
+ | `butcher_counter_asking` | meat | Beef soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
+-| `chicken_cuts_basics` | meat | Air-chilled whole chicken first, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
++| `chicken_cuts_basics` | meat | Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs. | Take the pack with the skin still on. It bastes itself. | — |
+ | `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Read the ingredients beside “contains up to” for water, salt and phosphates. | — |
+ | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for the full ingredient list before the counter slices the meat. | — |
+ | `mercury_by_fish` | seafood | Sardines, anchovies, salmon and canned light tuna, small and short-lived. | Check the species name on the case tag. Size predicts the mercury. | — |
+@@ -84,7 +84,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `berries_picking` | produce | Cold organic berries with a dry, clean carton bottom. | Flip the container and check for juice stains or fuzz. | — |
+ | `produce_storage` | produce · home | Unwashed produce for storing; wash it when you use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
+ | `revive_greens` | produce · home | Limp greens without decay, ready for a cold-water soak. | Trim the stem ends and stand them in ice water thirty minutes. | — |
+-| `cream_vs_creamer` | eggs_dairy | Half-and-half or heavy cream, with a short ingredient list. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
++| `cream_vs_creamer` | eggs_dairy | Grass-fed heavy cream or half-and-half: cream and milk only. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
+ | `flour_basics` | bulk_pantry | Whole wheat flour; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
+ | `bulk_bins_buying` | bulk_pantry | Rice, oats, beans, lentils and spices from a busy bin. | Choose the full, busy bins over a dusty half-empty one. | — |
+ | `whole_spices` | bulk_pantry | Whole spices, bought small and ground as you go. | Toast them in a dry pan until they smell, then grind. | — |
+@@ -117,12 +117,12 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `produce_bananas` | produce | Green bananas to finish ripening on your counter. | Take a bunch that is still green and keep it out of the fridge. | — |
+ | `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
+ 
+-| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread, made with whole wheat flour. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
++| `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread: flour, water, yeast, salt, little else. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
+ | `sourdough` | bulk_pantry | Sourdough of flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
+ | `bagels` | bulk_pantry | Bagels boiled before the oven, with their ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
+-| `tortillas` | bulk_pantry | Corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
+-| `turkey_whole` | meat | Plain whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
+-| `ground_turkey` | meat | Plain ground turkey with its fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
++| `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
++| `turkey_whole` | meat | Pasture-raised whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
++| `ground_turkey` | meat | Pasture-raised or organic ground turkey, fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
+ | `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
+ | `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
+ | `oat_milk` | eggs_dairy | Oat milk with few stabilizers, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
+@@ -130,7 +130,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
+ | `hot_dogs` | meat | Organic beef hot dogs with a short ingredient list. | Read the meat ingredients and check for “with byproducts” beside the product name. | — |
+ | `canned_tuna` | seafood | Canned light tuna, or a can naming skipjack. | Find “light” or a skipjack species name, then read the packing ingredients. | — |
+-| `chicken_breast` | meat | Plain bone-in, skin-on breast before boneless skinless; no added solution. | Read the front for any added liquid percentage, then check the ingredients. | — |
++| `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Read the front for any added liquid percentage, then check the ingredients. | — |
+ | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name for “Water Added” or “Ham and Water Product”. | — |
+ | `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with few added ingredients. | Read the small print under the name for the meat cuts used. | — |
+ | `cured_pork` | meat | Organic or pasture-raised pork, with cut and curing ingredients named. | Find the asterisk beside “uncured” and read what it points to. | — |
+@@ -138,7 +138,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `organ_meats` | meat | Organ meats you will cook within one to two days. | Check the use-by date against the night it will be cooked. | — |
+ | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Find the triangle inspection seal or a state mark on the package. | — |
+ | `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
+-| `white_fish` | seafood | White fish sold by its named species, firm and mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
++| `white_fish` | seafood | Wild-caught white fish by its named species, firm, mild-smelling. | Ask which species it is, then press the flesh for spring-back. | — |
+ | `crab` | seafood | Live crab that moves, or cooked with bright orange-red shells. | Check that live crabs move their legs before one is bagged. | — |
+ | `lobster` | seafood | A live lobster that moves, or hard-frozen tails. | Ask the counter to lift the lobster and check the tail curls under. | — |
+ | `scallops` | seafood | Dry or dry-packed scallops, with no phosphate or water listed. | Read the ingredients for a phosphate and water, or ask if they are dry. | — |
+@@ -154,8 +154,8 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `muesli` | bulk_pantry | Muesli of just oats, fruit, nuts and seeds. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
+ | `bread_aisle` | bulk_pantry | Your chosen bread, with “whole” in the first flour. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
+ | `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
+-| `sour_cream` | eggs_dairy | Sour cream soured by bacteria, with nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
+-| `cream_cheese` | eggs_dairy | Cream cheese by its standard name, at least 33% milkfat. | Read the ingredients for a culture, then count the stabilizers after it. | — |
++| `sour_cream` | eggs_dairy | Grass-fed sour cream: cream and cultures, nothing else added. | Read the name on the tub for “cultured” or “acidified”. | — |
++| `cream_cheese` | eggs_dairy | Grass-fed cream cheese by its standard name, no stabilizers. | Read the ingredients for a culture, then count the stabilizers after it. | — |
+ | `cottage_cheese` | eggs_dairy | Cottage cheese with its curd set by a culture. | Check beside the name for “directly set”. That wording means acid set the curd. | — |
+ | `ice_cream` | eggs_dairy | A carton named “ice cream”, with no added oils listed. | Read the small print under the flavor for “frozen dairy dessert”. | — |
+ | `ghee` | eggs_dairy | Ghee or clarified butter with butter as the only ingredient. | Read the ingredient list for butter or cream as the only entry. | — |
+@@ -176,7 +176,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
+ | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
+ | `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
+-| `sugars` | bulk_pantry | Coconut or maple sugar first, each made from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
++| `sugars` | bulk_pantry | Organic coconut or maple sugar first, each from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
+ | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+ | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+ | `lard_tallow` | bulk_pantry | Leaf lard or tallow, with nothing added to harden it. | Read the label for “hydrogenated lard” or “lard stearin”. | — |
+@@ -188,10 +188,10 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `dried_herbs` | bulk_pantry | A single herb, named on the jar. | Check the label for the irradiation logo and “treated with radiation”. | — |
+ | `tea` | bulk_pantry | The tea leaf alone: black, green, white or oolong. | Read the ingredient list for tea leaves and nothing else. | — |
+ | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
+-| `pasta_sauce` | bulk_pantry | Pasta sauce with tomatoes first and a short list. | Read the ingredients for anything listed ahead of the tomatoes. | — |
++| `pasta_sauce` | bulk_pantry | Pasta sauce of tomatoes and olive oil, no added sweetener. | Read the ingredients for anything listed ahead of the tomatoes. | — |
+ | `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
+ | `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
+-| `mayo` | bulk_pantry | Mayonnaise with olive oil, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
++| `mayo` | bulk_pantry | Mayonnaise with olive oil alone, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+ | `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
+ | `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
+ | `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index c61bb09..b9cfff2 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -245,10 +245,10 @@
+       ],
+       "category": "poultry",
+       "question": "Is the rotisserie chicken worth buying?",
+-      "decision": "Rotisserie chicken with salt and spices, without phosphate or starch.",
++      "decision": "Pasture-raised or organic rotisserie chicken, salt and spices only.",
+       "why": "A plain bird is chicken, salt and spices, roasted in the store. Phosphate and starch go in with a needle.",
+       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
+-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection.",
++      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection. Two federal label rules settle it; the ingredient list just needs reading.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "9 CFR § 381.117 Name of product and other labeling (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/381.117",
+@@ -265,9 +265,10 @@
+       ],
+       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
+       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
+-      "cart_pick": "Plain rotisserie chicken",
++      "cart_pick": "Organic or pasture-raised rotisserie chicken",
+       "buying_tips": [
+         "A solution bird was injected with water and seasoning before it went on the spit.",
++        "Look for a pasture-raised or certified organic bird on the sticker.",
+         "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
+         "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
+         "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
+@@ -301,7 +302,7 @@
+           "meaning": "A permitted poultry ingredient under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
+         }
+       ],
+-      "tier_note": "Two federal label rules settle it; the ingredient list just needs reading.",
++      "tier_note": "Organic rotisserie chicken: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+       "eyebrow_short": "Rotisserie chicken",
+       "asked_as": [
+         "is rotisserie chicken healthy",
+@@ -1195,9 +1196,10 @@
+         "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better"
+       ],
+       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
+-      "cart_pick": "Deep yellow butter",
++      "cart_pick": "Grass-fed butter",
+       "buying_tips": [
+         "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
++        "Look for grass-fed on the wrapper; cream and salt are the whole list.",
+         "European-style butters are higher in fat, a separate axis from what the cows ate.",
+         "Salted or unsalted is a cooking choice. Unsalted gives control."
+       ],
+@@ -1404,7 +1406,7 @@
+       ],
+       "category": "dairy",
+       "question": "Should you buy block cheese, slices, or pre-shredded?",
+-      "decision": "Block cheese with a short list: milk, cultures, salt, enzymes.",
++      "decision": "Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else.",
+       "why": "Real cheese is milk, cultures, salt, enzymes. Shreds add a coating to keep them apart.",
+       "short_answer": "Real cheese is basically milk, salt, cultures and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
+       "detail": "Read the name and the list. Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind. The shred coating is usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
+@@ -1423,9 +1425,10 @@
+         }
+       ],
+       "kristy_take": "Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.",
+-      "cart_pick": "Block cheese",
++      "cart_pick": "Grass-fed block cheese",
+       "buying_tips": [
+         "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
++        "Look for grass-fed milk named on the block.",
+         "Look for a short list: milk, salt, cultures, enzymes/rennet.",
+         "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
+         "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+@@ -2849,10 +2852,10 @@
+       ],
+       "category": "poultry",
+       "question": "Which cut of chicken should I buy?",
+-      "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
++      "decision": "Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs.",
+       "why": "Thighs carry more fat and flavor, so they stay juicy and are hard to overcook. The skin renders and bastes as they cook.",
+       "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
+-      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird.",
++      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird. A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "USDA FoodData Central (poultry composition)",
+@@ -2865,9 +2868,10 @@
+         "Rebel Pastures “The Truth About Chicken Labels: What You Need to Know” https://rebelpastures.com/blogs/real-talk-from-the-pasture/the-truth-about-chicken-labels-what-you-need-to-know"
+       ],
+       "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
+-      "cart_pick": "Air-chilled whole chicken or bone-in thighs",
++      "cart_pick": "Pasture-raised whole chicken or bone-in thighs",
+       "buying_tips": [
+         "Water-chilled birds hold water from the chilling tank; skin that starts dry crisps.",
++        "Look for air-chilled printed on the whole bird or the thigh pack.",
+         "Whole bird: lowest cost per pound, and the carcass makes stock.",
+         "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
+         "Breast: fast and lean. Pull it the moment it is done.",
+@@ -2900,7 +2904,7 @@
+           "meaning": "True of all chicken by law; not a differentiator."
+         }
+       ],
+-      "tier_note": "A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
++      "tier_note": "Pasture on a chicken label: time outdoors on pasture, audited only with a certifier’s seal.",
+       "asked_as": [
+         "which chicken cut should i buy",
+         "thighs or breasts",
+@@ -3751,7 +3755,7 @@
+       ],
+       "category": "dairy",
+       "question": "What is the difference between cream and coffee creamer?",
+-      "decision": "Half-and-half or heavy cream, with a short ingredient list.",
++      "decision": "Grass-fed heavy cream or half-and-half: cream and milk only.",
+       "why": "Cream has a legal fat minimum. Creamer is oil, sweetener and emulsifiers built to imitate it.",
+       "short_answer": "Cream is dairy with a legal fat minimum. ‘Non-dairy creamer’ is not dairy at all. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Compare the two lists.",
+       "detail": "Heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18. Standards of identity fix what cream can mean, which is why those fat percentages are consistent across every carton. Creamer has no such standard because it is a formulated product. The oil in it is usually a refined seed oil, and the sweetness usually comes from corn syrup solids or sugar, with the flavored versions adding more of both. Some cartons of real cream carry stabilizers like carrageenan or gellan gum, so a short list is worth checking on the dairy side too. Whole milk, half-and-half or real cream all do the job with a list you can read out loud. Read the two ingredient lists side by side and it takes three seconds.",
+@@ -3779,9 +3783,10 @@
+         }
+       ],
+       "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
+-      "cart_pick": "Half-and-half",
++      "cart_pick": "Grass-fed half-and-half",
+       "buying_tips": [
+         "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
++        "Look for a carton naming grass-fed cows, with cream and milk only.",
+         "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
+         "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
+         "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
+@@ -6386,7 +6391,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "Which sandwich bread is whole wheat?",
+-      "decision": "Whole wheat sandwich bread, made with whole wheat flour.",
++      "decision": "Whole wheat sandwich bread: flour, water, yeast, salt, little else.",
+       "why": "Whole wheat flour keeps the bran and germ along with the rest of the grain, in their natural proportions.",
+       "short_answer": "US whole wheat bread uses whole wheat flour rather than ordinary refined flour. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
+       "detail": "The US whole wheat bread standard excludes ordinary flour, bromated flour, and phosphated flour from the dough. Whole wheat flour retains the natural proportions of wheat’s constituents. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
+@@ -6406,9 +6411,10 @@
+         }
+       ],
+       "kristy_take": "A loaf called “wheat” may still use refined flour. Turn it over and find whole wheat flour in the ingredients before choosing it.",
+-      "cart_pick": "Whole wheat sandwich bread",
++      "cart_pick": "Short-list whole wheat sandwich bread",
+       "buying_tips": [
+         "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
++        "Look for a short list: whole wheat flour, water, yeast and salt.",
+         "Check for whole wheat flour in the ingredients.",
+         "Without a stamp, use the flour names to check the loaf.",
+         "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
+@@ -6559,7 +6565,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "Which tortillas should you choose, corn or flour?",
+-      "decision": "Corn tortillas of masa, water and salt.",
++      "decision": "Organic corn tortillas of masa, water and salt.",
+       "why": "Masa is corn cooked and soaked in limewater, then ground into dough. Water and salt complete the tortilla recipe.",
+       "short_answer": "Traditional corn tortillas use corn cooked and soaked in alkaline limewater, then ground into masa. Flour tortillas typically use wheat flour, water, fat, salt, and leavening.",
+       "detail": "Masa harina is dried, ground nixtamalized corn dough. Corn flour alone is a different ingredient. Packaged corn tortillas can also contain wheat; the ingredient list shows the blend. The archived nixtamalization paper measures laboratory digestibility under particular processing conditions, not health outcomes from retail tortillas.",
+@@ -6578,7 +6584,7 @@
+         }
+       ],
+       "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
+-      "cart_pick": "Corn tortillas",
++      "cart_pick": "Organic corn tortillas",
+       "buying_tips": [
+         "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
+         "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
+@@ -6621,19 +6627,20 @@
+       ],
+       "category": "poultry",
+       "question": "What should you check on a whole turkey label?",
+-      "decision": "Plain whole turkey, without an injected basting solution.",
++      "decision": "Pasture-raised whole turkey, without an injected basting solution.",
+       "why": "A plain turkey has nothing added. A basted bird can carry broth, stock, fat or water in an added solution.",
+       "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
+-      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
++      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird. A basted or self-basted bird was injected or marinated with a solution the label must name.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
+       ],
+       "kristy_take": "Fresh or frozen, read beside the name for a basting solution and its ingredients. Water left from chilling is a separate disclosure, so read the two lines separately.",
+-      "cart_pick": "Whole turkey without added solution",
++      "cart_pick": "Pasture-raised whole turkey",
+       "buying_tips": [
+         "A basted or self-basted bird carries added broth, stock, fat or water.",
++        "Look for a pasture-raised whole turkey, sold unbasted.",
+         "Read the solution ingredients beside the product name.",
+         "A frozen whole turkey can be checked for the same added-solution statement.",
+         "Read retained-water wording separately from the flavoring-solution statement."
+@@ -6658,7 +6665,7 @@
+           "meaning": "A regulated temperature-history description, separate from formulation."
+         }
+       ],
+-      "tier_note": "A basted or self-basted bird was injected or marinated with a solution the label must name.",
++      "tier_note": "Pasture-raised turkey: time outdoors on pasture, audited only with a certifier’s seal.",
+       "asked_as": [
+         "how do you choose a whole turkey",
+         "what does self basted mean on whole turkey",
+@@ -6677,19 +6684,20 @@
+       ],
+       "category": "poultry",
+       "question": "What should you check before buying ground turkey?",
+-      "decision": "Plain ground turkey with its fat content printed.",
++      "decision": "Pasture-raised or organic ground turkey, fat content printed.",
+       "why": "Two packs of ground turkey can have different fat contents. Read the fat line to see what you are taking home.",
+       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
+-      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level.",
++      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level. Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://www.govinfo.gov/content/pkg/FR-2010-12-29/html/2010-32485.htm",
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table"
+       ],
+       "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
+-      "cart_pick": "Plain ground turkey",
++      "cart_pick": "Pasture-raised or organic plain ground turkey",
+       "buying_tips": [
+         "The name ground turkey sets no one fat level, so two packs can differ.",
++        "Look for pasture-raised or certified organic ground turkey, sold plain.",
+         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
+         "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
+         "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
+@@ -6707,7 +6715,7 @@
+           "meaning": "A composition claim that must appear with a percent-fat statement."
+         }
+       ],
+-      "tier_note": "Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
++      "tier_note": "Organic ground turkey: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+       "asked_as": [
+         "how do you choose ground turkey",
+         "what does percent lean mean on ground turkey",
+@@ -7157,19 +7165,20 @@
+       ],
+       "category": "poultry",
+       "question": "What should you check when buying chicken breast?",
+-      "decision": "Plain bone-in, skin-on breast before boneless skinless; no added solution.",
++      "decision": "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
+       "why": "Bone-in, skin-on breast cooks better than boneless skinless, which dries fast in the pan.",
+       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
+-      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case.",
++      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case. Any added flavoring solution has to appear in the product name, with its amount.",
+       "evidence_tier": "kristys_standard",
+       "sources": [
+         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
+         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
+       ],
+       "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
+-      "cart_pick": "Plain chicken breast without added solution",
++      "cart_pick": "Pasture-raised or organic chicken breast",
+       "buying_tips": [
+         "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
++        "Look for pasture-raised or certified organic breast, sold plain.",
+         "Read the full product name for the solution percentage and ingredients.",
+         "Fresh or frozen breast can be checked for the same solution disclosure.",
+         "Read retained-water wording separately from the added flavoring ingredients."
+@@ -7195,7 +7204,7 @@
+           "meaning": "Water absorbed during post-slaughter processing, separately disclosed on the label."
+         }
+       ],
+-      "tier_note": "Any added flavoring solution has to appear in the product name, with its amount.",
++      "tier_note": "Organic chicken breast: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+       "asked_as": [
+         "how do you choose chicken breast",
+         "does natural chicken breast have added water",
+@@ -8088,7 +8097,7 @@
+       ],
+       "category": "seafood",
+       "question": "How do you pick good white fish?",
+-      "decision": "White fish sold by its named species, firm and mild-smelling.",
++      "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
+       "why": "A fillet is hard to identify by eye, so the species name does that work. Firm flesh and a mild smell show the rest.",
+       "short_answer": "Ask which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
+       "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
+@@ -8102,9 +8111,10 @@
+         "https://www.fisheries.noaa.gov/species/alaska-pollock"
+       ],
+       "kristy_take": "The species name comes first. Firm flesh and a clean smell confirm the piece.",
+-      "cart_pick": "A named white fish fillet, firm and on ice",
++      "cart_pick": "Wild-caught white fish fillet",
+       "buying_tips": [
+         "A fillet is hard to identify by eye, so the species name does that work.",
++        "Look for how it was caught and the species, on the sign or label.",
+         "Ask which species the fillet is.",
+         "Press the flesh and check that it springs back.",
+         "Skip fillets with dried, dark or discolored edges."
+@@ -9257,7 +9267,7 @@
+       ],
+       "category": "dairy",
+       "question": "How do you pick sour cream?",
+-      "decision": "Sour cream soured by bacteria, with nothing else added.",
++      "decision": "Grass-fed sour cream: cream and cultures, nothing else added.",
+       "why": "Cultured sour cream is soured by bacteria. Acidified sour cream is soured with added acids.",
+       "short_answer": "The tub names the method. Sour cream, or cultured sour cream, is cream soured by bacteria. Acidified sour cream is soured with added acids. Both hold at least 18 percent milkfat.",
+       "detail": "Under 21 CFR 131.160, sour cream is pasteurized cream soured by lactic acid bacteria. It may be named “Cultured sour cream”. Under 21 CFR 131.162, acidified sour cream is soured with acidifiers, with or without lactic acid bacteria. An acidifier is an added food-grade acid. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop syneresis, which is liquid separating out. A flavoring that characterizes the product is declared with the name.",
+@@ -9283,9 +9293,10 @@
+         }
+       ],
+       "kristy_take": "Culturing is the traditional way to sour cream. The tub says which way was used.",
+-      "cart_pick": "Cream and cultures only sour cream",
++      "cart_pick": "Grass-fed sour cream",
+       "buying_tips": [
+         "Cultured means bacteria did the souring; acidified tubs use added acids.",
++        "Look for a grass-fed tub listing only cream and cultures.",
+         "Pick a tub named “sour cream” or “cultured sour cream”.",
+         "Read the optional ingredients added for texture or shelf life.",
+         "Check the name for a declared flavor.",
+@@ -9331,7 +9342,7 @@
+       ],
+       "category": "dairy",
+       "question": "How do you pick cream cheese?",
+-      "decision": "Cream cheese by its standard name, at least 33% milkfat.",
++      "decision": "Grass-fed cream cheese by its standard name, no stabilizers.",
+       "why": "The standard sets at least 33 percent milkfat, a bacterial culture, and stabilizers at 0.5 percent at most.",
+       "short_answer": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and a bacterial culture. Stabilizers are capped at 0.5 percent. American Neufchâtel closely resembles it.",
+       "detail": "Under 21 CFR 133.133, cream cheese is a soft, uncured cheese. It holds at least 33 percent milkfat and at most 55 percent moisture. Its dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel, sold in the United States, closely resembles cream cheese. French Neufchâtel ripens and grows a soft rind.",
+@@ -9357,9 +9368,10 @@
+         }
+       ],
+       "kristy_take": "Cream cheese is a fresh cheese, so the name on the box carries the standard.",
+-      "cart_pick": "Stabilizer-free cream cheese",
++      "cart_pick": "Grass-fed stabilizer-free cream cheese",
+       "buying_tips": [
+         "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
++        "Look for grass-fed cream cheese that lists no stabilizers.",
+         "Look for “cream cheese” as the name on the package.",
+         "Find a culture in the ingredient list.",
+         "Swap in Neufchâtel in most recipes; the two taste similar.",
+@@ -10668,7 +10680,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick sugar?",
+-      "decision": "Coconut or maple sugar first, each made from one sap.",
++      "decision": "Organic coconut or maple sugar first, each from one sap.",
+       "why": "Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.",
+       "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
+       "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
+@@ -10689,9 +10701,10 @@
+         "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
+       ],
+       "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
+-      "cart_pick": "Coconut sugar or pure maple sugar",
++      "cart_pick": "Organic coconut sugar or pure maple sugar",
+       "buying_tips": [
+         "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
++        "Look for certified organic coconut sugar or pure maple sugar.",
+         "Read the list: coconut sugar or maple sugar alone, with nothing added.",
+         "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
+         "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
+@@ -11440,7 +11453,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick pasta sauce?",
+-      "decision": "Pasta sauce with tomatoes first and a short list.",
++      "decision": "Pasta sauce of tomatoes and olive oil, no added sweetener.",
+       "why": "Ingredients are listed most first, so tomatoes listed first means no ingredient outweighs them.",
+       "short_answer": "Read the ingredient list. Ingredients run from most to least, so the first one is the most. Pick a jar with tomatoes first and a short list after them.",
+       "detail": "Ingredients on a label are listed by common name in descending order of predominance, so the first item is the one there is most of. On canned tomatoes, an added spice, seasoning or vegetable that characterizes the product is declared with the word “with”, and the packing medium, such as tomato puree, is named after “with” too. Tomatoes taste tangy, yet they sit borderline between a high- and low-acid food. Federal rules define acid foods as a natural pH of 4.6 or below, and tomato products under pH 4.7 are not classed as low-acid. One family’s recipe, posted on Our Italian Table as Neapolitan sugo di pomodoro and called “the simplest of tomato sauces”, is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+@@ -11453,9 +11466,10 @@
+         "https://ouritaliantable.com/sugo-di-pomodoro/"
+       ],
+       "kristy_take": "Tomatoes first and a short list is a craft standard. One Neapolitan family’s sugo is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
+-      "cart_pick": "Pasta sauce listing tomatoes first",
++      "cart_pick": "Tomato and olive oil pasta sauce",
+       "buying_tips": [
+         "Ingredients run most first, so anything ahead of the tomatoes outweighs them.",
++        "Look for tomatoes first, olive oil as the oil, and no added sweetener.",
+         "Read the first ingredient; tomatoes should lead.",
+         "Count what follows the tomatoes; a short list is the craft standard.",
+         "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
+@@ -11648,7 +11662,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick mayonnaise?",
+-      "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
++      "decision": "Mayonnaise with olive oil alone, egg yolk and an acid.",
+       "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
+       "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
+       "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
+@@ -11664,9 +11678,10 @@
+         }
+       ],
+       "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
+-      "cart_pick": "Olive oil mayonnaise",
++      "cart_pick": "Olive oil only mayonnaise",
+       "buying_tips": [
+         "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
++        "Look for olive oil as the only oil in the ingredient list.",
+         "Check that the name on the jar is Mayonnaise.",
+         "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
+         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+diff --git a/server/test/acceptance/ca-4a.test.js b/server/test/acceptance/ca-4a.test.js
+index 539a2d7..6511158 100644
+--- a/server/test/acceptance/ca-4a.test.js
++++ b/server/test/acceptance/ca-4a.test.js
+@@ -1,6 +1,6 @@
+ // CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine } from './twoLinePin.js';
++import { beforeTwoLine, preCleanPick } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -17,6 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const BASE_REF = 'd707172';
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
++kb.entries = kb.entries.map(preCleanPick);
+ const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+diff --git a/server/test/acceptance/ca-4b.test.js b/server/test/acceptance/ca-4b.test.js
+index 5c384b6..b8f19c5 100644
+--- a/server/test/acceptance/ca-4b.test.js
++++ b/server/test/acceptance/ca-4b.test.js
+@@ -1,6 +1,6 @@
+ // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine, beforeConcern, preTidy } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -16,7 +16,8 @@ import { assertPassRule } from './passRule.js';
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map(preTidy);
++const LIVE = structuredClone(kb); // the review table follows the live front
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(e)));
+ const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+@@ -217,7 +218,7 @@ test('C5 new copy passes the claim-lock, price, punctuation, brand and D4 greps'
+ test('C6 review table and doLines.json follow the new fronts', () => {
+   for (const id of IDS) {
+     // The table follows the live front, which the two-line rewrite may have moved past this batch's text.
+-    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), kb.entries.find((e) => e.id === id).decision, id);
++    if (now(id).decision !== was(id).decision) assert.equal(reviewHeadline(id), LIVE.entries.find((e) => e.id === id).decision, id);
+     if (DO[id]) assert.equal(reviewed.get(id)?.do, DO[id], `${id}: exact do line`);
+     const d = reviewed.get(id)?.do;
+     if (d) assert.equal(doLines[id], d, id);
+diff --git a/server/test/acceptance/ca-7.test.js b/server/test/acceptance/ca-7.test.js
+index e7bed49..5b540c3 100644
+--- a/server/test/acceptance/ca-7.test.js
++++ b/server/test/acceptance/ca-7.test.js
+@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick } from './twoLinePin.js';
+ 
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map(preTidy);
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(e)));
+ const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+ const now = (id) => kb.entries.find((e) => e.id === id);
+diff --git a/server/test/acceptance/cardOrder.test.js b/server/test/acceptance/cardOrder.test.js
+index 9be605c..7824bde 100644
+--- a/server/test/acceptance/cardOrder.test.js
++++ b/server/test/acceptance/cardOrder.test.js
+@@ -8,7 +8,8 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
+ 
+ const ROOT = new URL('../../../', import.meta.url).pathname;
+ const git = (ref) => JSON.parse(execFileSync('git', ['show', `${ref}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++// clean-pick-1 (2026-10-20) moved batch cards on; this test now pins the ede90e7 result.
++const kb = git('ede90e7');
+ const base = git('81b63d5'); // the tidied cards as shipped
+ const old = git('8264bd0'); // before card-tidy, for restored text and the claim lock
+ const RANKED = git('b284f0b'); // sugars-rank owns the live sugars card
+diff --git a/server/test/acceptance/cardTidy.test.js b/server/test/acceptance/cardTidy.test.js
+index b4fda05..9a110e7 100644
+--- a/server/test/acceptance/cardTidy.test.js
++++ b/server/test/acceptance/cardTidy.test.js
+@@ -6,8 +6,9 @@ import { execFileSync } from 'node:child_process';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import doLines from '../../lib/doLines.json' with { type: 'json' };
+ 
+-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+ const ROOT = new URL('../../../', import.meta.url).pathname;
++// clean-pick-1 (2026-10-20) moved batch cards on; this test now pins the ede90e7 result.
++const kb = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const pre = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const RANKED = JSON.parse(execFileSync('git', ['show', 'b284f0b:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()); // sugars-rank owns the live sugars card
+ const IDS = ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn'];
+diff --git a/server/test/acceptance/cleanPick1.test.js b/server/test/acceptance/cleanPick1.test.js
+new file mode 100644
+index 0000000..e0e3788
+--- /dev/null
++++ b/server/test/acceptance/cleanPick1.test.js
+@@ -0,0 +1,342 @@
++// clean-pick-1: batch B1 of docs/CLEAN-PICK-PLAN.md (Devon 2026-10-20). Each staple's front names its own
++// cleanest version (pasture-raised or organic poultry, grass-fed dairy, organic sugar and corn, wild-caught fish,
++// short-list bread, olive oil mayo and sauce), not a blanket "get organic". Base ede90e7 (3ca18db, dfbef8a plan-only).
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { nonEmpty } from '../../lib/testGuards.js';
++import doLines from '../../lib/doLines.json' with { type: 'json' };
++import { scoreEntries } from '../../lib/perimeter.js';
++import { matchItemToCard } from '../../lib/listMatch.js';
++
++const ROOT = new URL('../../../', import.meta.url).pathname;
++const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git('ede90e7:server/kristy_perimeter_kb.json'));
++const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
++const words = (s) => String(s).trim().split(/\s+/).filter(Boolean).length;
++
++const BECAME = {
++  sugars: {
++    decision: "Organic coconut or maple sugar first, each from one sap.",
++    cart_pick: "Organic coconut sugar or pure maple sugar",
++    buying_tips: [
++      "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
++      "Look for certified organic coconut sugar or pure maple sugar.",
++      "Read the list: coconut sugar or maple sugar alone, with nothing added.",
++      "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
++      "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
++      "Pick light or dark brown sugar; dark carries more molasses.",
++    ],
++  },
++  rotisserie_chicken: {
++    decision: "Pasture-raised or organic rotisserie chicken, salt and spices only.",
++    cart_pick: "Organic or pasture-raised rotisserie chicken",
++    buying_tips: [
++      "A solution bird was injected with water and seasoning before it went on the spit.",
++      "Look for a pasture-raised or certified organic bird on the sticker.",
++      "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
++      "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
++      "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
++      "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
++      "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip a bird seasoned with avocado oil too.",
++    ],
++    tier_note: "Organic rotisserie chicken: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
++  },
++  chicken_breast: {
++    decision: "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
++    cart_pick: "Pasture-raised or organic chicken breast",
++    buying_tips: [
++      "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
++      "Look for pasture-raised or certified organic breast, sold plain.",
++      "Read the full product name for the solution percentage and ingredients.",
++      "Fresh or frozen breast can be checked for the same solution disclosure.",
++      "Read retained-water wording separately from the added flavoring ingredients.",
++    ],
++    tier_note: "Organic chicken breast: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
++  },
++  chicken_cuts_basics: {
++    decision: "Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs.",
++    cart_pick: "Pasture-raised whole chicken or bone-in thighs",
++    buying_tips: [
++      "Water-chilled birds hold water from the chilling tank; skin that starts dry crisps.",
++      "Look for air-chilled printed on the whole bird or the thigh pack.",
++      "Whole bird: lowest cost per pound, and the carcass makes stock.",
++      "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
++      "Breast: fast and lean. Pull it the moment it is done.",
++      "Boneless skinless costs the most for the same bird.",
++      "‘Air-chilled’ is printed on the package when it applies.",
++      "Skin that starts dry is the skin that crisps.",
++      "‘USDA Process Verified’ or a third-party seal backs a ‘raised without antibiotics’ claim.",
++      "All chicken is required to be residue-free at sale, labeled or not.",
++      "‘Raised without antibiotics’ is a management and resistance choice, not a cleaner-meat guarantee.",
++    ],
++    tier_note: "Pasture on a chicken label: time outdoors on pasture, audited only with a certifier’s seal.",
++  },
++  ground_turkey: {
++    decision: "Pasture-raised or organic ground turkey, fat content printed.",
++    cart_pick: "Pasture-raised or organic plain ground turkey",
++    buying_tips: [
++      "The name ground turkey sets no one fat level, so two packs can differ.",
++      "Look for pasture-raised or certified organic ground turkey, sold plain.",
++      "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
++      "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
++      "Compare the fat content of the actual packs rather than assume one level for all ground turkey.",
++    ],
++    tier_note: "Organic ground turkey: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
++  },
++  turkey_whole: {
++    decision: "Pasture-raised whole turkey, without an injected basting solution.",
++    cart_pick: "Pasture-raised whole turkey",
++    buying_tips: [
++      "A basted or self-basted bird carries added broth, stock, fat or water.",
++      "Look for a pasture-raised whole turkey, sold unbasted.",
++      "Read the solution ingredients beside the product name.",
++      "A frozen whole turkey can be checked for the same added-solution statement.",
++      "Read retained-water wording separately from the flavoring-solution statement.",
++    ],
++    tier_note: "Pasture-raised turkey: time outdoors on pasture, audited only with a certifier’s seal.",
++  },
++  grassfed_butter: {
++    cart_pick: "Grass-fed butter",
++    buying_tips: [
++      "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
++      "Look for grass-fed on the wrapper; cream and salt are the whole list.",
++      "European-style butters are higher in fat, a separate axis from what the cows ate.",
++      "Salted or unsalted is a cooking choice. Unsalted gives control.",
++    ],
++  },
++  cheese_real_vs_processed: {
++    decision: "Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else.",
++    cart_pick: "Grass-fed block cheese",
++    buying_tips: [
++      "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
++      "Look for grass-fed milk named on the block.",
++      "Look for a short list: milk, salt, cultures, enzymes/rennet.",
++      "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
++      "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
++      "Keep hard-cheese rinds. They belong in a pot of beans or soup.",
++      "The milk for cheese may come from cows given the synthetic growth hormone rBST. Certified organic rules exclude its use.",
++      "Certified organic block cheese is the first choice. Next, find a wrapper stating the cheese uses milk from cows given no rBST. Cheese with neither claim is last. US labeling does not require a statement about rBST use.",
++    ],
++  },
++  cream_vs_creamer: {
++    decision: "Grass-fed heavy cream or half-and-half: cream and milk only.",
++    cart_pick: "Grass-fed half-and-half",
++    buying_tips: [
++      "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
++      "Look for a carton naming grass-fed cows, with cream and milk only.",
++      "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
++      "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
++      "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
++      "Flavored creamers are where the added sugar sits. Read the panel.",
++      "Whole milk or half-and-half does the same job with a two-word ingredient list.",
++      "rBST is a synthetic hormone given to cows for milk production. The certified organic rules bar this growth hormone.",
++      "Start with certified organic cream or half-and-half. Follow with a carton stating the cows were not treated with rBST, then one with neither. US companies need not label rBST use.",
++      "Even certified organic cream can list carrageenan, a thickener derived from seaweed. Read the ingredients and take cream with none listed.",
++    ],
++  },
++  sour_cream: {
++    decision: "Grass-fed sour cream: cream and cultures, nothing else added.",
++    cart_pick: "Grass-fed sour cream",
++    buying_tips: [
++      "Cultured means bacteria did the souring; acidified tubs use added acids.",
++      "Look for a grass-fed tub listing only cream and cultures.",
++      "Pick a tub named “sour cream” or “cultured sour cream”.",
++      "Read the optional ingredients added for texture or shelf life.",
++      "Check the name for a declared flavor.",
++      "A synthetic growth hormone called rBST can be given to dairy cows. Certified organic sour cream excludes that treatment.",
++      "On sour cream, prefer certified organic. Next, look for a printed statement that rBST was not used on the dairy cows. Without either claim, the tub ranks last. Use of rBST need not appear on US dairy labels.",
++      "Carrageenan is made from seaweed and used to thicken foods, including some certified organic ones. Read your sour cream’s list and pick a tub without carrageenan.",
++    ],
++  },
++  cream_cheese: {
++    decision: "Grass-fed cream cheese by its standard name, no stabilizers.",
++    cart_pick: "Grass-fed stabilizer-free cream cheese",
++    buying_tips: [
++      "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
++      "Look for grass-fed cream cheese that lists no stabilizers.",
++      "Look for “cream cheese” as the name on the package.",
++      "Find a culture in the ingredient list.",
++      "Swap in Neufchâtel in most recipes; the two taste similar.",
++      "rBST is the synthetic growth hormone used to increase milk production in cows. Certified organic cream cheese rules prohibit it.",
++      "Choose certified organic cream cheese first. Next is a pack stating the milk comes from cows untreated with rBST. Both outrank a pack with neither. US labels can omit whether the cows received rBST.",
++      "Some certified organic foods contain carrageenan, a seaweed-derived thickener. Look through the cream cheese ingredients and take the version that lists no carrageenan.",
++    ],
++  },
++  sandwich_bread: {
++    decision: "Whole wheat sandwich bread: flour, water, yeast, salt, little else.",
++    cart_pick: "Short-list whole wheat sandwich bread",
++    buying_tips: [
++      "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
++      "Look for a short list: whole wheat flour, water, yeast and salt.",
++      "Check for whole wheat flour in the ingredients.",
++      "Without a stamp, use the flour names to check the loaf.",
++      "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
++      "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.",
++    ],
++  },
++  tortillas: {
++    decision: "Organic corn tortillas of masa, water and salt.",
++    cart_pick: "Organic corn tortillas",
++  },
++  mayo: {
++    decision: "Mayonnaise with olive oil alone, egg yolk and an acid.",
++    cart_pick: "Olive oil only mayonnaise",
++    buying_tips: [
++      "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
++      "Look for olive oil as the only oil in the ingredient list.",
++      "Check that the name on the jar is Mayonnaise.",
++      "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
++      "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
++      "Once opened, keep it in the fridge and use it within 1 to 2 months.",
++      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
++      "Skip avocado oil mayo too, even if it names no other oil.",
++    ],
++  },
++  pasta_sauce: {
++    decision: "Pasta sauce of tomatoes and olive oil, no added sweetener.",
++    cart_pick: "Tomato and olive oil pasta sauce",
++    buying_tips: [
++      "Ingredients run most first, so anything ahead of the tomatoes outweighs them.",
++      "Look for tomatoes first, olive oil as the oil, and no added sweetener.",
++      "Read the first ingredient; tomatoes should lead.",
++      "Count what follows the tomatoes; a short list is the craft standard.",
++      "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables.",
++    ],
++  },
++  white_fish: {
++    decision: "Wild-caught white fish by its named species, firm, mild-smelling.",
++    cart_pick: "Wild-caught white fish fillet",
++    buying_tips: [
++      "A fillet is hard to identify by eye, so the species name does that work.",
++      "Look for how it was caught and the species, on the sign or label.",
++      "Ask which species the fillet is.",
++      "Press the flesh and check that it springs back.",
++      "Skip fillets with dried, dark or discolored edges.",
++    ],
++  },
++};
++const IDS = Object.keys(BECAME);
++// Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
++// G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
++const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
++const CARRY = {
++  sugars: 'Organic coconut', rotisserie_chicken: 'Pasture-raised or organic', chicken_breast: 'Pasture-raised or organic',
++  chicken_cuts_basics: 'Air-chilled pasture-raised', ground_turkey: 'Pasture-raised or organic', turkey_whole: 'Pasture-raised',
++  grassfed_butter: 'Grass-fed', cheese_real_vs_processed: 'Grass-fed', cream_vs_creamer: 'Grass-fed', sour_cream: 'Grass-fed',
++  cream_cheese: 'Grass-fed', sandwich_bread: 'flour, water, yeast, salt', tortillas: 'Organic corn', mayo: 'olive oil alone',
++  pasta_sauce: 'tomatoes and olive oil', white_fish: 'Wild-caught',
++};
++// tips[1] is the look-for naming the standard. chicken_cuts_basics and white_fish belong to owned-fact families
++// (bird_pig_raising, wild_farmed: lintRepeatedClaim), so their look-for names air-chilled and the catch method instead.
++const STANDARD = {
++  sugars: /certified organic/, rotisserie_chicken: /pasture-raised or certified organic/, chicken_breast: /pasture-raised or certified organic/,
++  chicken_cuts_basics: /air-chilled/, ground_turkey: /pasture-raised or certified organic/, turkey_whole: /pasture-raised/,
++  grassfed_butter: /grass-fed/, cheese_real_vs_processed: /grass-fed/, cream_vs_creamer: /grass-fed/, sour_cream: /grass-fed/,
++  cream_cheese: /grass-fed/, sandwich_bread: /whole wheat flour, water, yeast and salt/, tortillas: /certified organic/,
++  mayo: /olive oil as the only oil/, pasta_sauce: /olive oil/, white_fish: /how it was caught/,
++};
++const ORGANIC = ['chicken_breast', 'ground_turkey', 'rotisserie_chicken', 'sugars', 'tortillas'];
++const DROPPED = []; // no base buying_tips line leaves its card
++const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
++const live = (id) => find(kb, id);
++const was = (id) => find(base, id);
++// Strings this batch wrote: changed front fields, new tips, the gloss, and what detail gained.
++const written = (id) => {
++  const e = live(id), b = was(id), out = [];
++  for (const k of ['decision', 'cart_pick', 'tier_note']) if (e[k] !== b[k]) out.push(e[k]);
++  for (const t of e.buying_tips) if (!b.buying_tips.includes(t)) out.push(t);
++  if (e.detail !== b.detail) out.push(e.detail.slice(b.detail.length));
++  return out;
++};
++
++test('C1 each card carries the final values, and its standard in decision or cart_pick', () => {
++  nonEmpty(IDS, 'B1 ids', 16);
++  for (const id of IDS) {
++    for (const [k, v] of Object.entries(BECAME[id])) assert.deepEqual(live(id)[k], v, `${id}.${k}`);
++    if (GLOSSED.includes(id)) assert.equal(live(id).detail, `${was(id).detail} ${was(id).tier_note}`, `${id}.detail keeps the old tier_note`);
++    const changed = new Set([...Object.keys(BECAME[id]), ...(GLOSSED.includes(id) ? ['detail'] : [])]);
++    for (const k of new Set([...Object.keys(live(id)), ...Object.keys(was(id))])) {
++      if (!changed.has(k)) assert.deepEqual(live(id)[k], was(id)[k], `${id}.${k} outside the change`);
++    }
++    assert.ok(live(id).decision.includes(CARRY[id]) || live(id).cart_pick.includes(CARRY[id]), `${id}: carrying phrase`);
++  }
++});
++
++test('C2 decisions at most 10 words; twoLineCheck reports 0 violations', () => {
++  for (const id of IDS) assert.ok(words(live(id).decision) <= 10, `${id}: ${words(live(id).decision)} words`);
++  const out = execFileSync('node', ['scripts/twoLineCheck.js'], { cwd: new URL('../../', import.meta.url).pathname }).toString();
++  assert.match(out, /\b0 with violations/);
++});
++
++test('C3 tips[0] is a why, not an instruction or the decision; tips[1] names the standard', () => {
++  for (const id of IDS) {
++    const [t0, t1] = nonEmpty(live(id).buying_tips, `${id} tips`, 2);
++    assert.doesNotMatch(t0, /^(choose|pick|buy|read|check|look|skip|compare)\b/i, `${id}: tips[0] is an instruction`);
++    assert.notEqual(t0, live(id).decision, `${id}: tips[0] repeats the decision`);
++    assert.match(t1, STANDARD[id], `${id}: tips[1] standard`);
++  }
++});
++
++test('C4 no new or changed string carries a health, risk, synthetic or price word; claim-lock voice', () => {
++  const all = nonEmpty(IDS.flatMap(written), 'written strings', 40);
++  for (const s of all) {
++    assert.doesNotMatch(s, BANNED, s);
++    assert.doesNotMatch(s, /—|–|'/, `dash or straight apostrophe: ${s}`);
++    assert.doesNotMatch(s, /\b(I|I’m|me|my|we|our|us)\b/, `first person: ${s}`);
++  }
++});
++
++test('C5 the organic set is exact: organic leads decision or cart_pick on these five B1 cards only', () => {
++  const got = IDS.filter((id) => /\borganic\b/i.test(`${live(id).decision} ${live(id).cart_pick}`));
++  assert.deepEqual(got.toSorted(), ORGANIC);
++});
++
++test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
++  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id)), 'other entries', 190);
++  for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
++  assert.equal(kb.entries.length, base.entries.length);
++  assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
++});
++
++test('C7 do lines stay; the review rows for batch ids carry the new headline; nothing else in the table moves', () => {
++  assert.deepEqual(doLines, JSON.parse(git('ede90e7:server/lib/doLines.json')), 'doLines.json equals ede90e7');
++  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8').split('\n');
++  const old = git('ede90e7:docs/do-lines-review.md').split('\n');
++  assert.equal(review.length, old.length);
++  let seen = 0;
++  for (let i = 0; i < old.length; i++) {
++    const id = IDS.find((x) => old[i].startsWith(`| \`${x}\` |`) && old[i].includes(` | ${was(x).decision} | `));
++    if (!id) { assert.equal(review[i], old[i], `review line ${i + 1}`); continue; }
++    seen++;
++    assert.equal(review[i], old[i].replace(` | ${was(id).decision} | `, ` | ${live(id).decision} | `), `${id} review row`);
++    assert.ok(review[i].includes(` | ${live(id).decision} | ${doLines[id]} |`), `${id} headline and do`);
++  }
++  assert.equal(seen, IDS.length, 'one review row per batch id');
++});
++
++test('C8 every base buying_tips line is still on its card (tips, watch_out or detail)', () => {
++  for (const id of IDS) {
++    const e = live(id), keep = [...e.buying_tips, ...(e.watch_out ?? [])];
++    for (const t of nonEmpty(was(id).buying_tips, `${id} base tips`, 2)) {
++      if (DROPPED.includes(t)) continue;
++      assert.ok(keep.includes(t) || String(e.detail).includes(t), `${id}: lost "${t}"`);
++    }
++  }
++});
++
++test('C9 each new cart_pick lands on its own card; chicken asks and rows still land on chicken_cuts_basics', () => {
++  for (const id of IDS) assert.equal(matchItemToCard(live(id).cart_pick)?.slug, id, `${id} cart_pick`);
++  for (const row of ['whole chicken', 'chicken thighs']) assert.equal(matchItemToCard(row)?.slug, 'chicken_cuts_basics', row);
++  for (const q of ['whole chicken', 'chicken thighs']) assert.equal(scoreEntries(q, 3)[0]?.entry.id, 'chicken_cuts_basics', q);
++});
++
++test('C10 no new or changed decision, cart_pick or tip appears on more than 2 entries', () => {
++  const count = (s) => kb.entries.filter((e) => [e.decision, e.cart_pick, ...(e.buying_tips ?? [])].includes(s)).length;
++  const fresh = nonEmpty(IDS.flatMap((id) => [live(id).decision, live(id).cart_pick, ...live(id).buying_tips.filter((t) => !was(id).buying_tips.includes(t))]), 'fresh lines', 30);
++  for (const s of fresh) assert.ok(count(s) <= 2, `"${s}" on ${count(s)} entries`);
++});
+diff --git a/server/test/acceptance/ic4achicken.test.js b/server/test/acceptance/ic4achicken.test.js
+index df241e4..634321c 100644
+--- a/server/test/acceptance/ic4achicken.test.js
++++ b/server/test/acceptance/ic4achicken.test.js
+@@ -22,6 +22,9 @@ const now = (id) => kb.entries.find((e) => e.id === id);
+ const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
+ const listRow = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+ const TO = 'chicken_cuts_basics';
++// clean-pick-1 (2026-10-20) moved this card on; the fold's checks read it as of ede90e7.
++const CP1 = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++kb.entries = kb.entries.map((e) => (e.id === TO ? CP1.entries.find((x) => x.id === TO) : e));
+ const FOLDED = ['air_chilled_chicken', 'no_antibiotics_poultry'];
+ const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
+ const spoken = (e) => JSON.stringify(SPOKEN.map((f) => e[f] ?? ''));
+diff --git a/server/test/acceptance/sugarsRank.test.js b/server/test/acceptance/sugarsRank.test.js
+index e94c7c7..2935cf5 100644
+--- a/server/test/acceptance/sugarsRank.test.js
++++ b/server/test/acceptance/sugarsRank.test.js
+@@ -4,13 +4,13 @@ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import doLines from '../../lib/doLines.json' with { type: 'json' };
+ import { scoreEntries } from '../../lib/perimeter.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+ 
+ const ROOT = new URL('../../../', import.meta.url).pathname;
+ const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++// clean-pick-1 (2026-10-20) moved the sugars card on; this test now pins the ede90e7 result.
++const kb = JSON.parse(git('ede90e7:server/kristy_perimeter_kb.json'));
+ const base = JSON.parse(git('b284f0b:server/kristy_perimeter_kb.json'));
+ const find = (k, id) => { const e = k.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
+ const live = find(kb, 'sugars');
+@@ -83,11 +83,12 @@ test('C5 every other card, the entry count and the top-level fields are byte-ide
+ });
+ 
+ test('C6 doLines.json differs from b284f0b on sugars only, and the review row carries the same two cells', () => {
++  const doLines = JSON.parse(git('ede90e7:server/lib/doLines.json'));
+   const was_ = JSON.parse(git('b284f0b:server/lib/doLines.json'));
+   assert.equal(doLines.sugars, DO_LINE.do);
+   assert.notEqual(was_.sugars, doLines.sugars);
+   assert.deepEqual({ ...doLines, sugars: was_.sugars }, was_);
+-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
++  const review = git('ede90e7:docs/do-lines-review.md');
+   assert.ok(review.includes(`| \`sugars\` | bulk_pantry | ${DO_LINE.headline} | ${DO_LINE.do} |`), 'review table row');
+ });
+ 
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index 7d87a0d..15ff01e 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -82,9 +82,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "rotisserie_chicken": {
+-    "decision": "Rotisserie chicken with salt and spices, without phosphate or starch.",
++    "decision": "Pasture-raised or organic rotisserie chicken, salt and spices only.",
+     "buying_tips": [
+       "A solution bird was injected with water and seasoning before it went on the spit.",
++      "Look for a pasture-raised or certified organic bird on the sticker.",
+       "Read the sticker, not the name. ‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated.",
+       "The shortest list wins: chicken, salt, spices. Water as the second ingredient means a solution was added.",
+       "Sodium phosphate, a starch or a sweetener after the water means a solution bird. The shorter the seasoning line, the plainer the chicken.",
+@@ -273,6 +274,7 @@ export const TWO_LINE = {
+     "decision": "Deep yellow grass-fed butter: cream, and salt if salted.",
+     "buying_tips": [
+       "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
++      "Look for grass-fed on the wrapper; cream and salt are the whole list.",
+       "European-style butters are higher in fat, a separate axis from what the cows ate.",
+       "Salted or unsalted is a cooking choice. Unsalted gives control."
+     ]
+@@ -357,9 +359,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "cheese_real_vs_processed": {
+-    "decision": "Block cheese with a short list: milk, cultures, salt, enzymes.",
++    "decision": "Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else.",
+     "buying_tips": [
+       "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
++      "Look for grass-fed milk named on the block.",
+       "Look for a short list: milk, salt, cultures, enzymes/rennet.",
+       "Blocks are cheaper per pound than pre-sliced or shredded, and they melt smoothly.",
+       "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+@@ -728,9 +731,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "chicken_cuts_basics": {
+-    "decision": "Air-chilled whole chicken first, then bone-in, skin-on thighs.",
++    "decision": "Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs.",
+     "buying_tips": [
+       "Water-chilled birds hold water from the chilling tank; skin that starts dry crisps.",
++      "Look for air-chilled printed on the whole bird or the thigh pack.",
+       "Whole bird: lowest cost per pound, and the carcass makes stock.",
+       "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
+       "Breast: fast and lean. Pull it the moment it is done.",
+@@ -928,9 +932,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "cream_vs_creamer": {
+-    "decision": "Half-and-half or heavy cream, with a short ingredient list.",
++    "decision": "Grass-fed heavy cream or half-and-half: cream and milk only.",
+     "buying_tips": [
+       "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
++      "Look for a carton naming grass-fed cows, with cream and milk only.",
+       "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
+       "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
+       "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
+@@ -1319,9 +1324,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "sandwich_bread": {
+-    "decision": "Whole wheat sandwich bread, made with whole wheat flour.",
++    "decision": "Whole wheat sandwich bread: flour, water, yeast, salt, little else.",
+     "buying_tips": [
+       "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
++      "Look for a short list: whole wheat flour, water, yeast and salt.",
+       "Check for whole wheat flour in the ingredients.",
+       "Without a stamp, use the flour names to check the loaf.",
+       "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
+@@ -1362,7 +1368,7 @@ export const TWO_LINE = {
+     ]
+   },
+   "tortillas": {
+-    "decision": "Corn tortillas of masa, water and salt.",
++    "decision": "Organic corn tortillas of masa, water and salt.",
+     "buying_tips": [
+       "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
+       "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
+@@ -1388,18 +1394,20 @@ export const TWO_LINE = {
+     ]
+   },
+   "turkey_whole": {
+-    "decision": "Plain whole turkey, without an injected basting solution.",
++    "decision": "Pasture-raised whole turkey, without an injected basting solution.",
+     "buying_tips": [
+       "A basted or self-basted bird carries added broth, stock, fat or water.",
++      "Look for a pasture-raised whole turkey, sold unbasted.",
+       "Read the solution ingredients beside the product name.",
+       "A frozen whole turkey can be checked for the same added-solution statement.",
+       "Read retained-water wording separately from the flavoring-solution statement."
+     ]
+   },
+   "ground_turkey": {
+-    "decision": "Plain ground turkey with its fat content printed.",
++    "decision": "Pasture-raised or organic ground turkey, fat content printed.",
+     "buying_tips": [
+       "The name ground turkey sets no one fat level, so two packs can differ.",
++      "Look for pasture-raised or certified organic ground turkey, sold plain.",
+       "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
+       "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
+       "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
+@@ -1570,9 +1578,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "chicken_breast": {
+-    "decision": "Plain bone-in, skin-on breast before boneless skinless; no added solution.",
++    "decision": "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
+     "buying_tips": [
+       "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
++      "Look for pasture-raised or certified organic breast, sold plain.",
+       "Read the full product name for the solution percentage and ingredients.",
+       "Fresh or frozen breast can be checked for the same solution disclosure.",
+       "Read retained-water wording separately from the added flavoring ingredients."
+@@ -1798,9 +1807,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "white_fish": {
+-    "decision": "White fish sold by its named species, firm and mild-smelling.",
++    "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
+     "buying_tips": [
+       "A fillet is hard to identify by eye, so the species name does that work.",
++      "Look for how it was caught and the species, on the sign or label.",
+       "Ask which species the fillet is.",
+       "Press the flesh and check that it springs back.",
+       "Skip fillets with dried, dark or discolored edges."
+@@ -1986,9 +1996,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "sour_cream": {
+-    "decision": "Sour cream soured by bacteria, with nothing else added.",
++    "decision": "Grass-fed sour cream: cream and cultures, nothing else added.",
+     "buying_tips": [
+       "Cultured means bacteria did the souring; acidified tubs use added acids.",
++      "Look for a grass-fed tub listing only cream and cultures.",
+       "Pick a tub named “sour cream” or “cultured sour cream”.",
+       "Read the optional ingredients added for texture or shelf life.",
+       "Check the name for a declared flavor.",
+@@ -2018,9 +2029,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "cream_cheese": {
+-    "decision": "Cream cheese by its standard name, at least 33% milkfat.",
++    "decision": "Grass-fed cream cheese by its standard name, no stabilizers.",
+     "buying_tips": [
+       "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
++      "Look for grass-fed cream cheese that lists no stabilizers.",
+       "Look for “cream cheese” as the name on the package.",
+       "Find a culture in the ingredient list.",
+       "Swap in Neufchâtel in most recipes; the two taste similar.",
+@@ -2368,9 +2380,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "sugars": {
+-    "decision": "Coconut or maple sugar first, each made from one sap.",
++    "decision": "Organic coconut or maple sugar first, each from one sap.",
+     "buying_tips": [
+       "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
++      "Look for certified organic coconut sugar or pure maple sugar.",
+       "Read the list: coconut sugar or maple sugar alone, with nothing added.",
+       "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
+       "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second.",
+@@ -2542,9 +2555,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "pasta_sauce": {
+-    "decision": "Pasta sauce with tomatoes first and a short list.",
++    "decision": "Pasta sauce of tomatoes and olive oil, no added sweetener.",
+     "buying_tips": [
+       "Ingredients run most first, so anything ahead of the tomatoes outweighs them.",
++      "Look for tomatoes first, olive oil as the oil, and no added sweetener.",
+       "Read the first ingredient; tomatoes should lead.",
+       "Count what follows the tomatoes; a short list is the craft standard.",
+       "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
+@@ -2573,9 +2587,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "mayo": {
+-    "decision": "Mayonnaise with olive oil, egg yolk and an acid.",
++    "decision": "Mayonnaise with olive oil alone, egg yolk and an acid.",
+     "buying_tips": [
+       "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
++      "Look for olive oil as the only oil in the ingredient list.",
+       "Check that the name on the jar is Mayonnaise.",
+       "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
+       "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+@@ -2593,7 +2608,7 @@ export const TWO_LINE = {
+         "url": "https://drcate.com/hateful-eight/"
+       }
+     ],
+-    "cart_pick": "Olive oil mayonnaise"
++    "cart_pick": "Olive oil only mayonnaise"
+   },
+   "hot_soy_sauce": {
+     "decision": "Traditionally brewed soy sauce, not made fast with acid.",
+@@ -3303,3 +3318,9 @@ test('beforeConcern restores frozen labels while preserving other live copy and
+ const TIDIED = new Set(['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn']);
+ const PRE_TIDY = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ export const preTidy = (e) => (e && TIDIED.has(e.id) ? PRE_TIDY.entries.find((x) => x.id === e.id) : e);
++
++// clean-pick-1 (2026-10-20) moved these cards' fronts (and five poultry tier notes) on; older
++// batch tests read them as of ede90e7, and cleanPick1.test.js owns the new text.
++export const CLEAN_PICK_1 = new Set(['sugars', 'rotisserie_chicken', 'chicken_breast', 'chicken_cuts_basics', 'ground_turkey', 'turkey_whole', 'grassfed_butter', 'cheese_real_vs_processed', 'cream_vs_creamer', 'sour_cream', 'cream_cheese', 'sandwich_bread', 'tortillas', 'mayo', 'pasta_sauce', 'white_fish']);
++const PRE_CP1 = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++export const preCleanPick = (e) => (e && CLEAN_PICK_1.has(e.id) ? PRE_CP1.entries.find((x) => x.id === e.id) : e);
+diff --git a/server/test/acceptance/w2.test.js b/server/test/acceptance/w2.test.js
+index 0c8b79d..5d3d802 100644
+--- a/server/test/acceptance/w2.test.js
++++ b/server/test/acceptance/w2.test.js
+@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick } from './twoLinePin.js';
+ import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
+ import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
+ import { kindFor } from '../../lib/counterCards.js';
+ import { lintSections } from '../../lib/counterCardLint.js';
+-kb.entries = kb.entries.map(preTidy);
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(e)));
+ 
+ const entries = nonEmpty(kb.entries, 'W2 corpus');
+ const byId = (id) => {
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index 6447e2c..9861a8c 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,7 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preCleanPick } from './twoLinePin.js';
++kb.entries = kb.entries.map(preCleanPick);
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);

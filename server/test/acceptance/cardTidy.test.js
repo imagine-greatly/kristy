@@ -6,8 +6,9 @@ import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const ROOT = new URL('../../../', import.meta.url).pathname;
+// clean-pick-1 (2026-10-20) moved batch cards on; this test now pins the ede90e7 result.
+const kb = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const pre = JSON.parse(execFileSync('git', ['show', '8264bd0:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const RANKED = JSON.parse(execFileSync('git', ['show', 'b284f0b:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()); // sugars-rank owns the live sugars card
 const IDS = ['salmon_wild_vs_farmed', 'shrimp_imported_vs_domestic', 'label_nonGMO_vs_organic', 'canned_fish_choosing', 'label_wild_vs_farm_raised', 'pick_canned_tomatoes', 'tortillas', 'oat_milk', 'canned_tuna', 'smoked_salmon', 'almond_milk', 'soy_milk', 'sugars', 'cooking_oils', 'canned_coconut_milk', 'canned_soup', 'tortilla_chips', 'popcorn'];

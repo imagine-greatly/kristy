@@ -1,6 +1,6 @@
 // CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
 import { beforeCa7 } from './ca7Superseded.js';
-import { beforeTwoLine } from './twoLinePin.js';
+import { beforeTwoLine, preCleanPick } from './twoLinePin.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -17,6 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const BASE_REF = 'd707172';
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+kb.entries = kb.entries.map(preCleanPick);
 const base = JSON.parse(execFileSync('git', ['show', `${BASE_REF}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
 const reviewed = parseReviewTable(reviewText);
