@@ -1,0 +1,134 @@
+{
+  "kind": "build",
+  "runId": "clean-pick-6-20261020161505-fWp3PJ",
+  "piece_id": "/Users/m1/kristy:clean-pick-6",
+  "attempt": 2,
+  "spec": "/Users/m1/kristy/.pipeline/specs/clean-pick-6.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 1180212,
+    "cached": 1064192,
+    "output": 9173,
+    "reasoning": 2010
+  },
+  "over_ceiling": true,
+  "ms": 576981,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-20T14:15:05.031Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-6-20261020161505-fWp3PJ:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-6-20261020161505-fWp3PJ/events-0.jsonl",
+      "usage": {
+        "input": 1180212,
+        "cached": 1064192,
+        "output": 9173,
+        "reasoning": 2010
+      },
+      "tokens": 1189385,
+      "mem_free_mb": 243,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a159af-0aa6-7b31-809b-a9fff907db1e",
+        "usage": {
+          "input": 1180212,
+          "cached": 1064192,
+          "output": 9173,
+          "reasoning": 2010
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/cleanPick2.test.js\",\n    \"server/test/acceptance/cleanPick2b.test.js\",\n    \"server/test/acceptance/cleanPick3.test.js\",\n    \"server/test/acceptance/cleanPick4.test.js\",\n    \"server/test/acceptance/cleanPick5.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All 17 entries equal base with only the prescribed decision replaced. Assumptions: retained c6d3ff2; git confirmed identical trees with 4ddeb34 and only the spec added at HEAD 25c2017. All quoted old decisions matched. The acceptance file was provisioned and left unchanged.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Both lints pass for all 17; maximum 15 words. NOTE: zucchini, mangoes and microgreens count 12, 14 and 12 words. Authoritative strings preserved. Full npm test: 2917 passed, 0 failed, 0 skipped, including unedited live guards.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C3 passed: all 17 mechanical keep phrases survive.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C4 passed all prohibited language and punctuation checks.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Organic is newly leading all 17 decisions; other picks’ organic count is unchanged.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"All 194 outside entries and KB metadata equal base. Historical overlays and prescribed floors updated; measured outside counts were 115, 131, 148, 169 and 178. Only 12 owned files changed; git diff --check and commitGuard passed.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Acceptance C7 passed; doLines.json and review document remain unchanged. twoLineCheck: 181 checked, 0 violations. Not migrated.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"All 17 lines avoid other batch items and generic produce wording.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All 81 aliases reach their own pick and no card. listMatchProbe passed with zero wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"All 17 decisions are distinct and satisfy the occurrence limit.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"All 17 first-alias rows carry the correct pickId and new pickLine, without cardSlug.\"\n    },\n    {\n      \"id\": \"C12\",\n      \"met\": true,\n      \"evidence\": \"All 304 bare and organic-prefixed queries match base pick routing. No organic-prefixed batch alias routes to a card. Standalone acceptance: 12/12 passed. NOTE: the 2903-pass baseline is recorded in both base commit messages; it was not rerun, following the full-suite-once-at-end instruction. Final suite used a disposable repository-local TMPDIR, then cleaned it.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick6.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick3.test.js server/test/acceptance/cleanPick4.test.js server/test/acceptance/cleanPick5.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js'",
+          "/bin/zsh -lc \"rg --files -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!client/dist'\"' -g '\"'!.git'\"'\"",
+          "/bin/zsh -lc 'git status --short && git rev-parse --short HEAD && git diff --stat c6d3ff2 4ddeb34'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick1.test.js'",
+          "/bin/zsh -lc 'cat package.json server/package.json server/scripts/twoLineCheck.js server/scripts/commitGuard.js server/scripts/listMatchProbe.js server/lib/testGuards.js'",
+          "/bin/zsh -lc \"rg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!client/dist'\"'\"",
+          "/bin/zsh -lc 'cat .pipeline/runs/clean-pick-6-20261020161505-fWp3PJ/report.schema.json .pipeline/baselines/3aa18cf48b2ed87624255ef47bbc1da4c8c3c9b5333d2ceee5b5ad6a8fea9462.json'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick3.test.js'",
+          "/bin/zsh -lc \"rg -n 'tmpdir|mkdtemp|writeFile|mkdir|dotenv|\\\\.env|execFileSync|execSync' server/lib/commitScope.test.js server/lib/commitGuard.test.js server/test/acceptance/cleanPick6.test.js server/test server/lib -g '*.test.js' -g '*Guards.js'\"",
+          "/bin/zsh -lc \"sed -n '1,32p' server/test/acceptance/w2.test.js && sed -n '1,30p' server/test/acceptance/w4.test.js && sed -n '1,32p' server/test/acceptance/ca-4b.test.js && sed -n '1,26p' server/test/acceptance/ca-7.test.js && tail -n 100 server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"cat server/lib/testGuards.js && sed -n '1,100p' server/lib/listMatch.js && sed -n '190,310p' server/lib/listMatch.js && sed -n '380,470p' server/lib/listMatch.js && sed -n '860,970p' server/lib/counterCardLint.js\"",
+          "/bin/zsh -lc \"git log -3 --format='%h %s%n%b' && git diff --stat c6d3ff2 HEAD && rg -n 'tmpdir|mkdtemp|writeFile|mkdir|dotenv/config|dotenv.config' server -g '*.test.js' -g '\"'!node_modules'\"' && rg --files .pipeline/runs/clean-pick-6-20261020161505-fWp3PJ -g '*tmp*' -g '*preflight*'\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst base = JSON.parse(execFileSync('git', ['show', 'c6d3ff2:server/kristy_perimeter_kb.json'], { maxBuffer: 64 << 20 }));\nassert.deepEqual(kb, base);\nconst pin = readFileSync('server/test/acceptance/twoLinePin.js', 'utf8');\nconst idsFor = n => [...pin.match(new RegExp(\"'`export const CLEAN_PICK_${n} = new Set'\"\\\\\\\\(\\\\\\\\[([\"'^'\"\\\\\\\\]]+)\\\\\\\\]\\\\\\\\);\"'`))[1].matchAll(/'\"'([\"'^'\"']+)'/g)].map(m => m[1]);\nconst acceptance = readFileSync('server/test/acceptance/cleanPick6.test.js', 'utf8');\nconst ids = [...acceptance.matchAll(/\"'^  (pick_'\"\\\\w+): \\\\{ decision:/gm)].map(m => m[1]);\nfor (const id of ids) console.log(id + ': ' + base.entries.find(e => e.id === id).decision);\nconst later1 = readFileSync('server/test/acceptance/cleanPick1.test.js', 'utf8').match(/const LATER = new Set\\\\(\\\\[([\\\\s\\\\S]*?)\\\\]\\\\);/)[1];\nconst cp1exclude = [...idsFor(1), ...[...later1.matchAll(/'([\"'^'\"']+)'/g)].map(m => m[1]), ...ids];\nconsole.log('CP1 outside:', kb.entries.filter(e => \"'!cp1exclude.includes(e.id)).length);\nfor (const n of [2, 3, 4, 5]) {\n  const exclude = new Set([...Array.from({length: 6 - n}, (_, i) => idsFor(i + n)).flat(), ...ids, ...(n === 2 ? ['\"'label_organic_scope'] : [])]);\n  console.log(\"'`CP${n} outside:`, kb.entries.filter(e => !exclude.has(e.id)).length);\n}\nconsole.log('\"'CP6 outside:', kb.entries.length - ids.length);\nconsole.log('Batch aliases:', kb.entries.filter(e => ids.includes(e.id)).flatMap(e => e.aliases).length);\nconsole.log('Corpus bare/organic queries:', kb.entries.filter(e => e.kind === 'pick').flatMap(e => e.aliases).length * 2);\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/cleanPick6.test.js'",
+          "/bin/zsh -lc 'git diff --check && git diff --stat && git diff -- server/test/acceptance/w2.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js server/test/acceptance/cleanPick3.test.js server/test/acceptance/cleanPick4.test.js server/test/acceptance/cleanPick5.test.js'",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { mkdtempSync, rmSync } from 'node:fs';\nimport { join } from 'node:path';\nimport { spawnSync } from 'node:child_process';\nconst scratch = mkdtempSync(join(process.cwd(), '.clean-pick-6-test-'));\ntry {\n  const result = spawnSync('npm', ['test'], {\n    encoding: 'utf8',\n    env: { ...process.env, TMPDIR: scratch, npm_config_cache: join(scratch, 'npm-cache') },\n    maxBuffer: 64 << 20,\n  });\n  const output = \"'`${result.stdout || '\"''}\\\\n\"'${result.stderr || '\"''}\"'`;\n  const lines = output.split('\"'\\\\n');\n  console.log(lines.filter(line => /\"'^> |''^ℹ|''^# (tests|suites|pass|fail|cancelled|skipped|todo|duration_ms)|''^✖|''^not ok/.test(line)).join('\"'\\\\n'));\n  if (result.status \"'!== 0) console.log(output.slice(-20000));\n  if (result.error) console.error(result.error.message);\n  console.log(`npm test exit: ${result.status}; temporary test files cleaned up`);\n  process.exitCode = result.status ?? 1;\n} finally {\n  rmSync(scratch, { recursive: true, force: true });\n}\nNODE'",
+          "/bin/zsh -lc 'git diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js && git diff --stat && git status --short'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport { matchItemToCard, matchItemToPick } from './server/lib/listMatch.js';\nimport { words } from './server/lib/counterCardLint.js';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst acceptance = readFileSync('server/test/acceptance/cleanPick6.test.js', 'utf8');\nconst ids = [...acceptance.matchAll(/\"'^  (pick_'\"\\\\w+): \\\\{ decision:/gm)].map(m => m[1]);\nconst batch = kb.entries.filter(e => ids.includes(e.id));\nconst cardRows = batch.flatMap(e => e.aliases.map(alias => \"'`organic ${alias}`)).map(q => ({ query: q, card: matchItemToCard(q)?.slug })).filter(row => row.card);\nconsole.log(JSON.stringify({ organicAliasCardRows: cardRows, wordCounts: Object.fromEntries(batch.map(e => [e.id, words(e.decision)])) }, null, 2));\nfor (const q of ['\"'sweet corn', 'ears of corn', 'yellow squash', 'coriander leaves', 'sweet basil', 'snow peas', 'celery hearts', 'bunch of celery']) {\n  console.log(JSON.stringify({ query: q, pick: matchItemToPick(q)?.id, organicPick: matchItemToPick(\"'`organic ${q}`)?.id, card: matchItemToCard(q) }));\n}\nNODE'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 1189385,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 612,
+    "key": "3aa18cf48b2ed87624255ef47bbc1da4c8c3c9b5333d2ceee5b5ad6a8fea9462",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-6-20261020161505-fWp3PJ/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-6-20261020161505-fWp3PJ:0",
+  "mem_free_mb": 243,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 13510,
+      "tail": "ok 2913 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.088916\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2914 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.539375\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2915 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.160209\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2916 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 151.082166\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2917 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 1.179833\n  type: 'test'\n  ...\n1..2917\n# tests 2917\n# suites 0\n# pass 2917\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 12041.532708",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-6-20261020161505-fWp3PJ/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-20T14:24:42.012Z",
+  "readiness": "READY"
+}

@@ -3405,3 +3405,8 @@ export const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entri
 export const CLEAN_PICK_5 = new Set(['tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus']);
 const PRE_CP5 = JSON.parse(execFileSync('git', ['show', '6db979f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick5 = (e) => (e && CLEAN_PICK_5.has(e.id) ? PRE_CP5.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-6 (2026-10-20) moved these 17 produce pick lines to name their item organic; older batch tests read them as of c6d3ff2, and cleanPick6.test.js owns the new text.
+export const CLEAN_PICK_6 = new Set(['pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
+const PRE_CP6 = JSON.parse(execFileSync('git', ['show', 'c6d3ff2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick6 = (e) => (e && CLEAN_PICK_6.has(e.id) ? PRE_CP6.entries.find((x) => x.id === e.id) : e);

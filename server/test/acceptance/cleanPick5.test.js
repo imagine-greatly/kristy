@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
+import { CLEAN_PICK_6 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -125,8 +126,8 @@ test('C5 organic sits on the decision and cart of exactly the seven crop ids', (
 });
 
 test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
-  nonEmpty(others, 'others', 190);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id));
+  nonEmpty(others, 'others', 173);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());

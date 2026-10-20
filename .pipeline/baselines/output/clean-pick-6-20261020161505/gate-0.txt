@@ -1,0 +1,185 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the 17 picks equal their base entries with only the decision replaced, each naming its own item organic
+not ok 1 - C1 the 17 picks equal their base entries with only the decision replaced, each naming its own item organic
+  ---
+  duration_ms: 1.736209
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:48:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    pick_cucumbers
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        aliases: [
+          'cucumbers',
+          'cucumber',
+          'english cucumber',
+    ...
+        category: 'produce',
+    +   decision: 'Firm, dark green cucumbers, without soft spots or a bulging middle.',
+    -   decision: 'Organic cucumbers, firm and dark green, without soft spots or a bulging middle.',
+        id: 'pick_cucumbers',
+        kind: 'pick',
+        sources: [
+          {
+            name: 'Nebraska Extension: Cucumbers',
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'pick_cucumbers'
+    kind: 'pick'
+    title: 'Cucumbers'
+    category: 'produce'
+    aliases:
+      0: 'cucumbers'
+      1: 'cucumber'
+      2: 'english cucumber'
+      3: 'persian cucumbers'
+      4: 'mini cucumbers'
+    decision: 'Organic cucumbers, firm and dark green, without soft spots or a bulging middle.'
+    sources:
+      0:
+        name: 'Nebraska Extension: Cucumbers'
+        url: 'https://food.unl.edu/article/cucumbers'
+  actual:
+    id: 'pick_cucumbers'
+    kind: 'pick'
+    title: 'Cucumbers'
+    category: 'produce'
+    aliases:
+      0: 'cucumbers'
+      1: 'cucumber'
+      2: 'english cucumber'
+      3: 'persian cucumbers'
+      4: 'mini cucumbers'
+    decision: 'Firm, dark green cucumbers, without soft spots or a bulging middle.'
+    sources:
+      0:
+        name: 'Nebraska Extension: Cucumbers'
+        url: 'https://food.unl.edu/article/cucumbers'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:51:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 every new pick line passes lintPick and lintCard and holds 16 words or fewer
+ok 2 - C2 every new pick line passes lintPick and lintCard and holds 16 words or fewer
+  ---
+  duration_ms: 2.662917
+  type: 'test'
+  ...
+# Subtest: C3 the base mechanical read survives in every new line
+ok 3 - C3 the base mechanical read survives in every new line
+  ---
+  duration_ms: 0.16425
+  type: 'test'
+  ...
+# Subtest: C4 no new line carries a banned or treatment word, first person, a dash, a straight apostrophe, a digit or a question mark
+ok 4 - C4 no new line carries a banned or treatment word, first person, a dash, a straight apostrophe, a digit or a question mark
+  ---
+  duration_ms: 0.473667
+  type: 'test'
+  ...
+# Subtest: C5 organic is new on all 17 lines and unchanged on every other pick
+not ok 5 - C5 organic is new on all 17 lines and unchanged on every other pick
+  ---
+  duration_ms: 0.120666
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:84:1'
+  failureType: 'testCodeFailure'
+  error: 'pick_cucumbers'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:87:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged
+ok 6 - C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged
+  ---
+  duration_ms: 1.569625
+  type: 'test'
+  ...
+# Subtest: C7 doLines.json and do-lines-review.md are unchanged from c6d3ff2
+ok 7 - C7 doLines.json and do-lines-review.md are unchanged from c6d3ff2
+  ---
+  duration_ms: 22.322375
+  type: 'test'
+  ...
+# Subtest: C8 each line names its own item, never another batch pick or generic produce
+ok 8 - C8 each line names its own item, never another batch pick or generic produce
+  ---
+  duration_ms: 0.806334
+  type: 'test'
+  ...
+# Subtest: C9 every alias of the 17 reaches its own pick and no card
+ok 9 - C9 every alias of the 17 reaches its own pick and no card
+  ---
+  duration_ms: 313.862375
+  type: 'test'
+  ...
+# Subtest: C10 the 17 lines are distinct and none sits on more than 2 entries
+ok 10 - C10 the 17 lines are distinct and none sits on more than 2 entries
+  ---
+  duration_ms: 1.124625
+  type: 'test'
+  ...
+# Subtest: C11 a list row of each pick’s first alias carries the new organic line
+not ok 11 - C11 a list row of each pick’s first alias carries the new organic line
+  ---
+  duration_ms: 2.2865
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:143:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    cucumbers pickLine
+    + actual - expected
+    
+    + 'Firm, dark green cucumbers, without soft spots or a bulging middle.'
+    - 'Organic cucumbers, firm and dark green, without soft spots or a bulging middle.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Organic cucumbers, firm and dark green, without soft spots or a bulging middle.'
+  actual: 'Firm, dark green cucumbers, without soft spots or a bulging middle.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick6.test.js:148:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C12 every pick alias, bare and organic, resolves to the same pick as at c6d3ff2
+ok 12 - C12 every pick alias, bare and organic, resolves to the same pick as at c6d3ff2
+  ---
+  duration_ms: 58.062958
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 9
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 570.874167

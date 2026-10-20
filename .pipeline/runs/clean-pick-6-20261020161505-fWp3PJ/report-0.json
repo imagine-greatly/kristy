@@ -1,0 +1,81 @@
+{
+  "status": "done",
+  "files_changed": [
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/cleanPick2.test.js",
+    "server/test/acceptance/cleanPick2b.test.js",
+    "server/test/acceptance/cleanPick3.test.js",
+    "server/test/acceptance/cleanPick4.test.js",
+    "server/test/acceptance/cleanPick5.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All 17 entries equal base with only the prescribed decision replaced. Assumptions: retained c6d3ff2; git confirmed identical trees with 4ddeb34 and only the spec added at HEAD 25c2017. All quoted old decisions matched. The acceptance file was provisioned and left unchanged."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Both lints pass for all 17; maximum 15 words. NOTE: zucchini, mangoes and microgreens count 12, 14 and 12 words. Authoritative strings preserved. Full npm test: 2917 passed, 0 failed, 0 skipped, including unedited live guards."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Acceptance C3 passed: all 17 mechanical keep phrases survive."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "Acceptance C4 passed all prohibited language and punctuation checks."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Organic is newly leading all 17 decisions; other picks’ organic count is unchanged."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "All 194 outside entries and KB metadata equal base. Historical overlays and prescribed floors updated; measured outside counts were 115, 131, 148, 169 and 178. Only 12 owned files changed; git diff --check and commitGuard passed."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Acceptance C7 passed; doLines.json and review document remain unchanged. twoLineCheck: 181 checked, 0 violations. Not migrated."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "All 17 lines avoid other batch items and generic produce wording."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All 81 aliases reach their own pick and no card. listMatchProbe passed with zero wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "All 17 decisions are distinct and satisfy the occurrence limit."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "All 17 first-alias rows carry the correct pickId and new pickLine, without cardSlug."
+    },
+    {
+      "id": "C12",
+      "met": true,
+      "evidence": "All 304 bare and organic-prefixed queries match base pick routing. No organic-prefixed batch alias routes to a card. Standalone acceptance: 12/12 passed. NOTE: the 2903-pass baseline is recorded in both base commit messages; it was not rerun, following the full-suite-once-at-end instruction. Final suite used a disposable repository-local TMPDIR, then cleaned it."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

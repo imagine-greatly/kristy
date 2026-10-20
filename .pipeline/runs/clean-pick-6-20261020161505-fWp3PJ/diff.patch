@@ -1,0 +1,552 @@
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index df4c3b6..8206c14 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -6033,7 +6033,7 @@
+         "persian cucumbers",
+         "mini cucumbers"
+       ],
+-      "decision": "Firm, dark green cucumbers, without soft spots or a bulging middle.",
++      "decision": "Organic cucumbers, firm and dark green, without soft spots or a bulging middle.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Cucumbers",
+@@ -6052,7 +6052,7 @@
+         "asparagus spear",
+         "asparagus bunch"
+       ],
+-      "decision": "Asparagus with dry, closed, compact tips and no limp stalks.",
++      "decision": "Organic asparagus with dry, closed, compact tips and no limp stalks.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Asparagus",
+@@ -6073,7 +6073,7 @@
+         "corn cobs",
+         "corn cob"
+       ],
+-      "decision": "Corn with green husks and fresh silk, without dried-out ears.",
++      "decision": "Organic corn with green husks and fresh silk, without dried-out ears.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Sweet Corn",
+@@ -6092,7 +6092,7 @@
+         "globe eggplant",
+         "japanese eggplant"
+       ],
+-      "decision": "Heavy, shiny, smooth eggplant, with a green stem free of mold.",
++      "decision": "Organic eggplant, heavy, shiny and smooth, with a green stem free of mold.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Eggplant",
+@@ -6112,7 +6112,7 @@
+         "summer squashes",
+         "yellow squash"
+       ],
+-      "decision": "Small-to-medium zucchini, glossy and firm, that feel heavy for their size.",
++      "decision": "Organic zucchini, small-to-medium, glossy and firm, that feel heavy for their size.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Summer Squash",
+@@ -6131,7 +6131,7 @@
+         "cilantro bunches",
+         "coriander leaves"
+       ],
+-      "decision": "Bright, upright cilantro bunches, without yellow or brown leaves.",
++      "decision": "Organic cilantro in bright, upright bunches, without yellow or brown leaves.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Fresh Herbs",
+@@ -6151,7 +6151,7 @@
+         "italian parsley",
+         "flat leaf parsley"
+       ],
+-      "decision": "Upright, bright green parsley, without brown spots or yellowed leaves.",
++      "decision": "Organic parsley, upright and bright green, without brown spots or yellowed leaves.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Fresh Herbs",
+@@ -6170,7 +6170,7 @@
+         "basil bunches",
+         "sweet basil"
+       ],
+-      "decision": "Bright, upright basil with no limp leaves or brown spots.",
++      "decision": "Organic basil, bright and upright, with no limp leaves or brown spots.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Fresh Herbs",
+@@ -6191,7 +6191,7 @@
+         "snow peas",
+         "snow pea"
+       ],
+-      "decision": "Firm, bright green snap pea pods, without blemishes.",
++      "decision": "Organic snap peas in firm, bright green pods, without blemishes.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Snap Peas",
+@@ -6210,7 +6210,7 @@
+         "kohlrabi bulb",
+         "kohlrabi bulbs"
+       ],
+-      "decision": "Firm kohlrabi bulbs, heavy in your hand, without cracks or bruises.",
++      "decision": "Organic kohlrabi bulbs, firm and heavy in your hand, without cracks or bruises.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Kohlrabi",
+@@ -6229,7 +6229,7 @@
+         "okra pods",
+         "okra pod"
+       ],
+-      "decision": "Firm, bright green okra, without limp, moldy or dried-out pods.",
++      "decision": "Organic okra, firm and bright green, without limp, moldy or dried-out pods.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Okra",
+@@ -6248,7 +6248,7 @@
+         "chards",
+         "rainbow chard"
+       ],
+-      "decision": "Dark green chard with unsplit stalks and no discoloration.",
++      "decision": "Organic chard, dark green, with unsplit stalks and no discoloration.",
+       "sources": [
+         {
+           "name": "Nebraska Extension: Swiss Chard",
+@@ -6266,7 +6266,7 @@
+         "mango",
+         "mangos"
+       ],
+-      "decision": "Mangoes yielding slightly under gentle pressure; red color does not indicate ripeness.",
++      "decision": "Organic mangoes that yield slightly to gentle pressure; red color does not indicate ripeness.",
+       "sources": [
+         {
+           "name": "National Mango Board: How to Choose a Mango",
+@@ -6384,7 +6384,7 @@
+         "bunch of celery",
+         "bunches of celery"
+       ],
+-      "decision": "Celery with tight, crisp stalks, without any limpness in the bunch.",
++      "decision": "Organic celery with tight, crisp stalks, without any limpness in the bunch.",
+       "sources": [
+         {
+           "name": "SNAP-Ed Seasonal Produce Guide: Celery",
+@@ -7484,7 +7484,7 @@
+         "acorn squash",
+         "spaghetti squash"
+       ],
+-      "decision": "Firm, heavy-for-size squash with hard skin, without sunken or moldy spots.",
++      "decision": "Organic winter squash, firm and heavy-for-size, with hard skin and no sunken or moldy spots.",
+       "sources": [
+         {
+           "name": "University of Maine Cooperative Extension: Winter Squash",
+@@ -7505,7 +7505,7 @@
+         "turmeric root",
+         "turmeric roots"
+       ],
+-      "decision": "Firm roots, ginger smooth and uncracked; keep both sealed and refrigerated.",
++      "decision": "Organic ginger and turmeric roots, firm, ginger smooth and uncracked; keep both sealed and refrigerated.",
+       "sources": [
+         {
+           "name": "University of Minnesota Extension: Ginger",
+@@ -7531,7 +7531,7 @@
+         "microgreen",
+         "micro greens"
+       ],
+-      "decision": "Microgreens, rarely washed before packing, for you to rinse before use.",
++      "decision": "Organic microgreens, rarely washed before packing, for you to rinse before use.",
+       "sources": [
+         {
+           "name": "Science Meets Food: Microgreens",
+diff --git a/server/test/acceptance/ca-4b.test.js b/server/test/acceptance/ca-4b.test.js
+index cfd7c88..052addc 100644
+--- a/server/test/acceptance/ca-4b.test.js
++++ b/server/test/acceptance/ca-4b.test.js
+@@ -1,6 +1,6 @@
+ // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -17,7 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+ const LIVE = structuredClone(kb); // the review table follows the live front
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
+ const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+diff --git a/server/test/acceptance/ca-7.test.js b/server/test/acceptance/ca-7.test.js
+index 3f40140..5ae68b1 100644
+--- a/server/test/acceptance/ca-7.test.js
++++ b/server/test/acceptance/ca-7.test.js
+@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
+ 
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
+ const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+ const now = (id) => kb.entries.find((e) => e.id === id);
+diff --git a/server/test/acceptance/cleanPick1.test.js b/server/test/acceptance/cleanPick1.test.js
+index 158a6e2..6bd5c8b 100644
+--- a/server/test/acceptance/cleanPick1.test.js
++++ b/server/test/acceptance/cleanPick1.test.js
+@@ -225,7 +225,8 @@ const IDS = Object.keys(BECAME);
+ const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope',
+   /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
+   /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta',
+-  /* clean-pick-5 */ 'tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus']);
++  /* clean-pick-5 */ 'tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus',
++  /* clean-pick-6 */ 'pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
+ // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
+ // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
+ const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
+@@ -302,7 +303,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these
+ });
+ 
+ test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
+-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 127);
++  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 110);
+   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
+   assert.equal(kb.entries.length, base.entries.length);
+   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
+diff --git a/server/test/acceptance/cleanPick2.test.js b/server/test/acceptance/cleanPick2.test.js
+index 6865f57..8fdc14c 100644
+--- a/server/test/acceptance/cleanPick2.test.js
++++ b/server/test/acceptance/cleanPick2.test.js
+@@ -5,9 +5,9 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
+ 
+-const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5]);
++const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6]);
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -204,7 +204,7 @@ test('C5 every B2 id names organic; outside the batch organic presence is unchan
+ 
+ test('C6 entries outside the batch deepEqual 74237ce', () => {
+   const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+-  nonEmpty(others, 'others', 143);
++  nonEmpty(others, 'others', 126);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+ });
+diff --git a/server/test/acceptance/cleanPick2b.test.js b/server/test/acceptance/cleanPick2b.test.js
+index ee0a90a..53c9983 100644
+--- a/server/test/acceptance/cleanPick2b.test.js
++++ b/server/test/acceptance/cleanPick2b.test.js
+@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
+ 
+ test('C3 every other field and entry equals a2487a7', () => {
+   for (const e of kb.entries) {
+-    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id)) continue;
++    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id) || CLEAN_PICK_6.has(e.id)) continue;
+     const old = find(base, e.id);
+     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
+     assert.deepEqual(strip(e), strip(old), e.id);
+diff --git a/server/test/acceptance/cleanPick3.test.js b/server/test/acceptance/cleanPick3.test.js
+index 03b9b43..6e4033e 100644
+--- a/server/test/acceptance/cleanPick3.test.js
++++ b/server/test/acceptance/cleanPick3.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
++import { CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -129,8 +129,8 @@ test('C5 organic is named exactly on nuggets, hot dogs and turkey bacon', () =>
+ });
+ 
+ test('C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id) && !CLEAN_PICK_5.has(e.id));
+-  nonEmpty(others, 'others', 160);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id));
++  nonEmpty(others, 'others', 143);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick4.test.js b/server/test/acceptance/cleanPick4.test.js
+index 9620d4c..590f3f6 100644
+--- a/server/test/acceptance/cleanPick4.test.js
++++ b/server/test/acceptance/cleanPick4.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_5 } from './twoLinePin.js';
++import { CLEAN_PICK_5, CLEAN_PICK_6 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -102,8 +102,8 @@ test('C5 no bread or grain front names organic', () => {
+ });
+ 
+ test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id));
+-  nonEmpty(others, 'others', 179);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id));
++  nonEmpty(others, 'others', 162);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick5.test.js b/server/test/acceptance/cleanPick5.test.js
+index c8d05b1..62c1b4a 100644
+--- a/server/test/acceptance/cleanPick5.test.js
++++ b/server/test/acceptance/cleanPick5.test.js
+@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
++import { CLEAN_PICK_6 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -125,8 +126,8 @@ test('C5 organic sits on the decision and cart of exactly the seven crop ids', (
+ });
+ 
+ test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
+-  nonEmpty(others, 'others', 190);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id));
++  nonEmpty(others, 'others', 173);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+diff --git a/server/test/acceptance/cleanPick6.test.js b/server/test/acceptance/cleanPick6.test.js
+new file mode 100644
+index 0000000..6c0a873
+--- /dev/null
++++ b/server/test/acceptance/cleanPick6.test.js
+@@ -0,0 +1,161 @@
++// clean-pick-6 (Devon 2026-10-20, Q1 A organic on every produce): B7a, the 17 produce picks name their own item organic.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
++import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
++
++const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
++const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git('c6d3ff2:server/kristy_perimeter_kb.json'));
++const find = (k, id) => k.entries.find((e) => e.id === id);
++const live = (id) => find(kb, id);
++const was = (id) => find(base, id);
++
++const BECAME = {
++  pick_cucumbers: { decision: 'Organic cucumbers, firm and dark green, without soft spots or a bulging middle.', carry: /^Organic cucumbers\b/, keep: /bulging middle/ },
++  pick_asparagus: { decision: 'Organic asparagus with dry, closed, compact tips and no limp stalks.', carry: /^Organic asparagus\b/, keep: /closed, compact tips/ },
++  pick_corn: { decision: 'Organic corn with green husks and fresh silk, without dried-out ears.', carry: /^Organic corn\b/, keep: /green husks and fresh silk/ },
++  pick_eggplant: { decision: 'Organic eggplant, heavy, shiny and smooth, with a green stem free of mold.', carry: /^Organic eggplant\b/, keep: /green stem free of mold/ },
++  pick_zucchini: { decision: 'Organic zucchini, small-to-medium, glossy and firm, that feel heavy for their size.', carry: /^Organic zucchini\b/, keep: /heavy for their size/ },
++  pick_cilantro: { decision: 'Organic cilantro in bright, upright bunches, without yellow or brown leaves.', carry: /^Organic cilantro\b/, keep: /yellow or brown leaves/ },
++  pick_parsley: { decision: 'Organic parsley, upright and bright green, without brown spots or yellowed leaves.', carry: /^Organic parsley\b/, keep: /brown spots or yellowed leaves/ },
++  pick_basil: { decision: 'Organic basil, bright and upright, with no limp leaves or brown spots.', carry: /^Organic basil\b/, keep: /no limp leaves or brown spots/ },
++  pick_snap_peas: { decision: 'Organic snap peas in firm, bright green pods, without blemishes.', carry: /^Organic snap peas\b/, keep: /without blemishes/ },
++  pick_kohlrabi: { decision: 'Organic kohlrabi bulbs, firm and heavy in your hand, without cracks or bruises.', carry: /^Organic kohlrabi\b/, keep: /cracks or bruises/ },
++  pick_okra: { decision: 'Organic okra, firm and bright green, without limp, moldy or dried-out pods.', carry: /^Organic okra\b/, keep: /limp, moldy or dried-out pods/ },
++  pick_swiss_chard: { decision: 'Organic chard, dark green, with unsplit stalks and no discoloration.', carry: /^Organic chard\b/, keep: /unsplit stalks and no discoloration/ },
++  pick_mangoes: { decision: 'Organic mangoes that yield slightly to gentle pressure; red color does not indicate ripeness.', carry: /^Organic mangoes\b/, keep: /red color does not indicate ripeness/ },
++  pick_celery: { decision: 'Organic celery with tight, crisp stalks, without any limpness in the bunch.', carry: /^Organic celery\b/, keep: /tight, crisp stalks/ },
++  pick_winter_squash: { decision: 'Organic winter squash, firm and heavy-for-size, with hard skin and no sunken or moldy spots.', carry: /^Organic winter squash\b/, keep: /heavy-for-size/ },
++  pick_ginger_turmeric: { decision: 'Organic ginger and turmeric roots, firm, ginger smooth and uncracked; keep both sealed and refrigerated.', carry: /^Organic ginger and turmeric\b/, keep: /sealed and refrigerated/ },
++  pick_microgreens: { decision: 'Organic microgreens, rarely washed before packing, for you to rinse before use.', carry: /^Organic microgreens\b/, keep: /rinse before use/ },
++};
++const IDS = Object.keys(BECAME);
++const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
++const TREATMENT = /\b(causes?|prevents?|lowers? (the )?risk|carcinogen|cancer|tumou?rs?|toxic|unsafe|harm\w*|risks?|linked to|hyperactiv|behaviou?r|attention|neurobehavioral|exacerbate)/i;
++const GENERIC = /\borganic (produce|vegetables?|veg|fruits?|herbs?|greens)\b/i;
++const ORGANIC = /\borganic\b/i;
++const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
++const isPick = (e) => e && e.kind === 'pick';
++
++nonEmpty(IDS, 'IDS', 17);
++
++test('C1 the 17 picks equal their base entries with only the decision replaced, each naming its own item organic', () => {
++  for (const id of IDS) {
++    assert.ok(live(id) && was(id), `${id} missing`);
++    assert.deepEqual(live(id), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
++    assert.match(live(id).decision, BECAME[id].carry, `${id} carry`);
++  }
++});
++
++test('C2 every new pick line passes lintPick and lintCard and holds 16 words or fewer', () => {
++  for (const id of IDS) {
++    assert.deepEqual(lintPick(live(id)), [], `${id} lintPick`);
++    assert.deepEqual(lintCard(live(id)), [], `${id} lintCard`);
++    assert.ok(lintWords(live(id).decision) <= 16, `${id} ${lintWords(live(id).decision)} words`);
++  }
++});
++
++test('C3 the base mechanical read survives in every new line', () => {
++  for (const id of IDS) {
++    assert.match(was(id).decision, BECAME[id].keep, `${id} keep phrase not in base`);
++    assert.match(live(id).decision, BECAME[id].keep, `${id} keep phrase lost`);
++  }
++});
++
++test('C4 no new line carries a banned or treatment word, first person, a dash, a straight apostrophe, a digit or a question mark', () => {
++  const all = IDS.map((id) => BECAME[id].decision);
++  nonEmpty(all, 'decisions', 17);
++  for (const s of all) {
++    assert.doesNotMatch(s, BANNED, s);
++    assert.doesNotMatch(s, TREATMENT, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|our|ours|us)\b/, s);
++    assert.ok(!s.includes('—') && !s.includes('–'), s);
++    assert.ok(!s.includes("'"), s);
++    assert.doesNotMatch(s, /[0-9?]/, s);
++  }
++});
++
++test('C5 organic is new on all 17 lines and unchanged on every other pick', () => {
++  for (const id of IDS) {
++    assert.doesNotMatch(was(id).decision, ORGANIC, `${id} base already organic`);
++    assert.ok(live(id).decision.startsWith('Organic '), id);
++  }
++  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id));
++  nonEmpty(otherPicks(base), 'other picks', 8);
++  const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
++  assert.equal(count(kb), count(base));
++});
++
++test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
++  const others = kb.entries.filter((e) => !IDS.includes(e.id));
++  nonEmpty(others, 'others', 189);
++  assert.equal(kb.entries.length, base.entries.length);
++  for (const e of others) assert.deepEqual(e, was(e.id), e.id);
++  assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
++  for (const k of Object.keys(base)) if (k !== 'entries') assert.deepEqual(kb[k], base[k], k);
++});
++
++test('C7 doLines.json and do-lines-review.md are unchanged from c6d3ff2', () => {
++  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
++  assert.deepEqual(now, JSON.parse(git('c6d3ff2:server/lib/doLines.json')));
++  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
++  nonEmpty(review.split('\n'), 'review lines', 150);
++  assert.equal(review, git('c6d3ff2:docs/do-lines-review.md'));
++});
++
++test('C8 each line names its own item, never another batch pick or generic produce', () => {
++  const heads = IDS.map((id) => [id, live(id).aliases[0]]);
++  nonEmpty(heads, 'heads', 17);
++  for (const id of IDS) {
++    const d = live(id).decision;
++    assert.doesNotMatch(d, GENERIC, `${id} generic`);
++    for (const [other, a] of heads) {
++      if (other === id) continue;
++      assert.doesNotMatch(d, new RegExp(`\\b${esc(a)}\\b`, 'i'), `${id} names ${a}`);
++    }
++  }
++});
++
++test('C9 every alias of the 17 reaches its own pick and no card', () => {
++  const rows = IDS.flatMap((id) => live(id).aliases.map((a) => [a, id]));
++  nonEmpty(rows, 'aliases', 70);
++  for (const [a, id] of rows) {
++    assert.equal(matchItemToPick(a)?.id, id, `${a} -> pick ${matchItemToPick(a)?.id}`);
++    assert.equal(matchItemToCard(a), null, `${a} -> card ${matchItemToCard(a)?.slug}`);
++  }
++});
++
++test('C10 the 17 lines are distinct and none sits on more than 2 entries', () => {
++  const all = IDS.map((id) => BECAME[id].decision);
++  assert.equal(new Set(all).size, 17);
++  for (const s of all) {
++    const n = kb.entries.filter((e) => [e.decision, e.cart_pick, e.tier_note, ...(e.buying_tips || []), ...(e.watch_out || [])].includes(s)).length;
++    assert.ok(n <= 2, `${s} on ${n} entries`);
++  }
++});
++
++test('C11 a list row of each pick’s first alias carries the new organic line', () => {
++  for (const id of IDS) {
++    const name = live(id).aliases[0];
++    const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
++    assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
++    assert.equal(row.pickLine, BECAME[id].decision, `${name} pickLine`);
++    assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
++  }
++});
++
++test('C12 every pick alias, bare and organic, resolves to the same pick as at c6d3ff2', () => {
++  const queries = base.entries.filter(isPick).flatMap((e) => (e.aliases || []).flatMap((a) => [a, `organic ${a}`]));
++  nonEmpty(queries, 'queries', 140);
++  for (const q of queries) {
++    const now = matchItemToPick(q, kb.entries)?.id;
++    const then = matchItemToPick(q, base.entries)?.id;
++    assert.equal(now, then, `${q}: ${then} -> ${now}`);
++  }
++});
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index b051452..98a9e0f 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -3405,3 +3405,8 @@ export const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entri
+ export const CLEAN_PICK_5 = new Set(['tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus']);
+ const PRE_CP5 = JSON.parse(execFileSync('git', ['show', '6db979f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ export const preCleanPick5 = (e) => (e && CLEAN_PICK_5.has(e.id) ? PRE_CP5.entries.find((x) => x.id === e.id) : e);
++
++// clean-pick-6 (2026-10-20) moved these 17 produce pick lines to name their item organic; older batch tests read them as of c6d3ff2, and cleanPick6.test.js owns the new text.
++export const CLEAN_PICK_6 = new Set(['pick_cucumbers', 'pick_asparagus', 'pick_corn', 'pick_eggplant', 'pick_zucchini', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_snap_peas', 'pick_kohlrabi', 'pick_okra', 'pick_swiss_chard', 'pick_mangoes', 'pick_celery', 'pick_winter_squash', 'pick_ginger_turmeric', 'pick_microgreens']);
++const PRE_CP6 = JSON.parse(execFileSync('git', ['show', 'c6d3ff2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++export const preCleanPick6 = (e) => (e && CLEAN_PICK_6.has(e.id) ? PRE_CP6.entries.find((x) => x.id === e.id) : e);
+diff --git a/server/test/acceptance/w2.test.js b/server/test/acceptance/w2.test.js
+index 10dde36..a54c909 100644
+--- a/server/test/acceptance/w2.test.js
++++ b/server/test/acceptance/w2.test.js
+@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
+ import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
+ import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
+ import { kindFor } from '../../lib/counterCards.js';
+ import { lintSections } from '../../lib/counterCardLint.js';
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e))))))));
+ 
+ const entries = nonEmpty(kb.entries, 'W2 corpus');
+ const byId = (id) => {
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index a1bc9bc..47fa25b 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,8 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+-kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e))))));
++import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6 } from './twoLinePin.js';
++kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(e)))))));
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);
