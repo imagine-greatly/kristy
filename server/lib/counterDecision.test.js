@@ -183,6 +183,7 @@ test('the three worked examples read as calls, not background', () => {
   // the first. Under the one-verdict rule the fallback lives in watch_out, and it may
   // never climb back into the headline.
   leads('salmon_wild_vs_farmed', 'Wild');
-  // "Is organic worth it" → where it earns it and where it does not.
-  leads('organic_worth_it_by_type', 'Organic');
+  // "Is organic worth it" → the clean-pick stance (DECISIONS.md "The stance", 2026-10-20)
+  // made organic the floor: grown without sprays leads, organic is the fallback.
+  leads('organic_worth_it_by_type', 'Grown');
 });

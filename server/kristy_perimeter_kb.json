@@ -802,38 +802,48 @@
       ],
       "category": "produce",
       "question": "Is organic produce worth the extra money?",
-      "decision": "Organic produce, first on everything eaten skin-on.",
+      "decision": "Grown without sprays first on skin-on produce, then organic.",
       "why": "Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.",
-      "short_answer": "Organic across the produce aisle. When the organic shelf runs thin, start with what gets eaten skin-on: berries, leafy greens, apples, grapes, potatoes. Peeled fruit like avocado, kiwi, mango, banana, citrus and onion can wait its turn.",
-      "detail": "Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.",
+      "short_answer": "A local grower’s “grown without sprays” on skin-on produce first, then organic. When organic runs thin, start with what gets eaten skin-on: berries, greens, apples, grapes, potatoes. Peeled fruit like avocado, kiwi, mango and citrus can wait.",
+      "detail": "The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. Organic is not the finish line: the standard still permits approved sprays when other controls fall short, so a local grower who grows without sprays sits above it. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.",
       "evidence_tier": "credible_concern",
       "sources": [
         "USDA Pesticide Data Program",
-        "EPA tolerance limits",
-        "peer-reviewed critiques of Dirty Dozen methodology",
         "EWG Shopper's Guide to Pesticides in Produce (2025)",
         "Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php",
-        "Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php"
+        "Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php",
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "EWG Shopper’s Guide to Pesticides in Produce 2026, summary",
+          "url": "https://www.ewg.org/foodnews/summary.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
-      "kristy_take": "Reach for organic across the produce aisle. An avocado or kiwi can feel delicate and still have a peel you throw away, so it waits when organic runs short.",
+      "kristy_take": "Organic is the floor across the produce aisle, and a local grower who sprays nothing sits above it. An avocado or kiwi can feel delicate and still have a peel you throw away, so it waits when organic runs short.",
       "buying_tips": [
         "Residue sits on the skin, so a peel you throw away takes it with it.",
-        "The USDA Organic seal on the sign or sticker is the standard to read.",
+        "Above the seal: a local grower’s “grown without sprays”, the grower’s word, not a seal.",
+        "The USDA Organic seal on the sign or sticker is the floor to read.",
         "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes."
       ],
       "watch_out": [
         "When organic runs short, go by the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they can wait. A potato reads as sturdy and gets eaten skin-on, so it cannot.",
         "Sturdy vegetables eaten whole are the gap the skin rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low, so they can wait when organic runs short.",
         "Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.",
-        "The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.",
-        "If organic means fewer vegetables in the cart, buy conventional and eat more."
+        "Fludioxonil, a fungicide also identified as a PFAS, was the pesticide found most often in EWG’s 2026 produce testing summary."
       ],
       "pick_steps": [
-        "Choose organic across the produce aisle.",
+        "On skin-on produce, look for “grown without sprays” from a local grower, then organic.",
         "When organic runs short, start with skin-on produce: berries, greens, apples, grapes, potatoes.",
-        "Trust the USDA Organic seal; Natural means nothing on produce."
+        "Read the USDA Organic seal as the floor; Natural means nothing on produce."
       ],
-      "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. The Dirty Dozen order is contested; the eaten-whole reasoning holds. If organic means fewer vegetables, buy conventional and eat more.",
+      "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. A grower who uses no sprays at all sits above the seal.",
       "labels_decoded": [
         {
           "term": "USDA Organic",
@@ -844,7 +854,7 @@
           "meaning": "Means essentially nothing on produce, with no organic standard behind it."
         }
       ],
-      "tier_note": "Surface residue on berries and greens eaten whole is a credible concern, and the ranking behind any list of them is not settled.",
+      "tier_note": "Surface residue on berries and greens eaten whole is a credible concern, so they lead the spending.",
       "eyebrow_short": "Buying organic",
       "asked_as": [
         "is organic worth it",
@@ -973,7 +983,7 @@
       ],
       "category": "produce",
       "question": "Does buying produce in season matter?",
-      "decision": "Organic in-season produce, or frozen when out of season.",
+      "decision": "In-season produce from a small local grower, or frozen off-season.",
       "why": "A January orange tastes better than a July one. Produce in season usually travels less and reaches you closer to ripe.",
       "short_answer": "For taste and price, yes. In-season produce is cheaper, more abundant, and usually tastes better because it didn’t travel as far. Out of season, frozen is often the smarter buy than a pale, expensive ‘fresh’ version.",
       "detail": "Seasonality mostly affects flavor, cost, and freshness rather than making a food dramatically more nutritious. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability. That is exactly when frozen shines. The cheapest, most abundant thing in the department this week is almost always the seasonal one, so the price tag answers this before any chart does. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. The season-by-season list is below. Season shows up in the price and the size of the pile before it shows up anywhere else, so the cheapest, most abundant item in the department this week is usually the seasonal one. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaking in the dead of winter surprises people, and it is why a January orange tastes better than a July one. Whatever is piled high and cheap this week is what is in season. The price tag says it before any chart does.",
@@ -981,13 +991,18 @@
       "sources": [
         "USDA Agricultural Marketing Service shipping-point season data",
         "USDA seasonal produce guides",
-        "Michigan State University Extension “A How-To Guide to Eating for the Season” https://www.canr.msu.edu/news/a_how_to_guide_to_eating_for_the_season"
+        "Michigan State University Extension “A How-To Guide to Eating for the Season” https://www.canr.msu.edu/news/a_how_to_guide_to_eating_for_the_season",
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
       "kristy_take": "Let the piles in the produce section guide the week: spring greens, summer tomatoes, autumn squash, winter citrus. Off-season, reach for frozen over pale fresh produce.",
       "cart_pick": "Whatever fruit is in season",
       "buying_tips": [
         "In season, it travels less and reaches you closer to ripe, so it tastes better.",
-        "In-season organic produce carries the USDA Organic seal, fresh or frozen.",
+        "A small grower over a national label: at a farmers’ market, ask how the crop was grown.",
+        "Organic in season is the fallback, fresh or frozen.",
         "The cheapest, most abundant produce this week is usually what’s in season.",
         "Off-season, reach for frozen instead of sad ‘fresh’.",
         "Farmers’ markets are a fast read on what’s actually in season locally.",
@@ -2148,7 +2163,7 @@
       "decision": "USDA Organic, which already includes non-GMO.",
       "why": "Organic already implies non-GMO, plus pesticide and practice rules. Non-GMO covers neither.",
       "short_answer": "Organic is the broader standard. Certified-organic food is also non-GMO. It also restricts synthetic pesticides and fertilizers and requires certain practices. A ‘Non-GMO’ seal only addresses genetic engineering. It says nothing about pesticides or how the food was grown.",
-      "detail": "The ‘Non-GMO Project Verified’ butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: ‘non-GMO’ on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Whether GMOs are a concern at all is a separate, debated question, and it stays honest here rather than oversold. Organic includes non-GMO; non-GMO doesn’t include organic.",
+      "detail": "The ‘Non-GMO Project Verified’ butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: ‘non-GMO’ on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Organic includes non-GMO; non-GMO doesn’t include organic.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program",
@@ -2188,7 +2203,7 @@
         "Pick the organic seal without requiring a second non-GMO seal.",
         "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
-      "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices. Whether GMOs are a concern at all is a separate, debated question.",
+      "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices.",
       "tier_note": "The organic standard already contains the non-GMO rule, an overlap that is defined, not argued.",
       "asked_as": [
         "non gmo or organic",
@@ -2432,22 +2447,39 @@
       ],
       "category": "label_terms",
       "question": "What does the organic seal actually guarantee?",
-      "decision": "Organic thin-skinned produce eaten whole; still read the ingredient panel.",
+      "decision": "Organic as the floor; the seal still allows approved sprays.",
       "why": "It covers inputs and practices, not nutrition or processing. It is not pesticide-free.",
       "short_answer": "It is a production standard, not a quality rating. Certified organic means no prohibited synthetic pesticides, no GMOs, organic feed for animals, and no routine antibiotics or added hormones. It is not pesticide-free. An organic cookie is a cookie.",
-      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no synthetic pesticides from the prohibited list. It does not mean pesticide-free (approved natural ones are allowed), and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is.",
+      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no synthetic pesticides from the prohibited list. It does not mean pesticide-free (a short list of approved sprays, some synthetic, is permitted), and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line: a grower who uses no sprays sits above it, and hydroponic crops can carry the seal too.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program, 7 CFR Part 205 (permitted and prohibited substances)",
-        "USDA AMS organic labeling and certification requirements"
+        "USDA AMS organic labeling and certification requirements",
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "7 CFR 205.601, Synthetic substances allowed for use in organic crop production",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.601"
+        },
+        {
+          "name": "Real Organic Project: Standards",
+          "url": "https://realorganicproject.org/standards/"
+        },
+        {
+          "name": "National Agricultural Law Center: Ninth Circuit memorandum on hydroponic organic certification (2022)",
+          "url": "https://nationalaglawcenter.org/wp-content/uploads/2022/09/Ninth-Cir.-memo.pdf"
+        }
       ],
       "kristy_take": "Organic tells you how it was grown, not what it is. The seal on a box of cookies is still a box of cookies.",
       "buying_tips": [
         "The seal covers inputs and practices, and an organic cookie is still a cookie.",
         "Organic is about inputs and practices. Read the ingredient panel separately.",
-        "It is not pesticide-free; approved natural pesticides are permitted.",
+        "It is not pesticide-free; a short list of approved sprays, some synthetic, is permitted.",
         "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
-        "On animal products it does reach feed. It means organic feed, not a different kind of feed."
+        "On animal products it does reach feed. It means organic feed, not a different kind of feed.",
+        "Real Organic Project on top of the USDA seal means soil-grown, never hydroponic."
       ],
       "labels_decoded": [
         {
@@ -2464,15 +2496,16 @@
         }
       ],
       "watch_out": [
-        "Organic is not pesticide-free. Approved natural pesticides are permitted.",
+        "Organic is not pesticide-free. A short list of approved sprays, some synthetic, is permitted.",
         "It is a production standard, not a quality grade. An organic cookie is still a cookie.",
-        "“Made with organic ___” needs only 70%, and cannot carry the USDA seal."
+        "“Made with organic ___” needs only 70%, and cannot carry the USDA seal.",
+        "Hydroponic crops can carry the USDA Organic seal, grown in water rather than soil."
       ],
       "pick_steps": [
         "“Made with organic” needs only 70% and cannot carry the USDA seal.",
         "It counts most on thin-skinned produce you eat whole, least on processed food."
       ],
-      "science": "Certified organic is a production standard, not a quality grade. It means no synthetic pesticides from the prohibited list, no GMOs, and organic feed for animals. It is not pesticide-free; approved natural pesticides are permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
+      "science": "Certified organic is a production standard, not a quality grade. It means no synthetic pesticides from the prohibited list, no GMOs, and organic feed for animals. It is not pesticide-free; a short list of approved sprays, some synthetic, is permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
       "tier_note": "What the organic seal covers and excludes is written into the standard, approved pesticides included.",
       "asked_as": [
         "what does the organic seal guarantee",
@@ -5197,10 +5230,10 @@
       ],
       "category": "produce",
       "question": "How do I choose and store carrots, potatoes, sweet potatoes, and beets?",
-      "decision": "Organic potatoes and carrots, firm, with nothing soft or sprouting.",
+      "decision": "Firm local potatoes and carrots labeled grown without sprays.",
       "why": "Potatoes, carrots, beets and sweet potatoes should feel firm. Soft, shriveled or sprouting roots stay behind.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
-      "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues. Carrots rank among the lowest for pesticide residue, so conventional is fine there. Potatoes rank high for residue in USDA testing and carrots rank low, so the bag decides.",
+      "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues. Carrots rank among the lowest for pesticide residue. Potatoes rank high for residue in USDA testing and carrots rank low, so the bag decides.",
       "evidence_tier": "established",
       "sources": [
         "Michigan State University Extension, Michigan Fresh: Selecting and Storing Potatoes, https://www.canr.msu.edu/resources/michigan_fresh_selecting_and_storing_potatoes_e3079",
@@ -5209,13 +5242,26 @@
         "Ohio State University Extension, Selecting, Storing, and Serving Ohio Beets (HYG-5510), https://ohioline.osu.edu/factsheet/hyg-5510",
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
         "https://www.ewg.org/foodnews/dirty-dozen.php",
-        "https://www.ewg.org/foodnews/clean-fifteen.php"
+        "https://www.ewg.org/foodnews/clean-fifteen.php",
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "University of Idaho: chlorpropham (CIPC) sprout inhibitor in potato storage",
+          "url": "https://content-hub.uidaho.edu/api/public/content/98db1601ff1d433da66ee73c42117ec6?v=ed199f61"
+        }
       ],
       "kristy_take": "Wilted beet leaves need not put you off a firm root. Cut the tops off carrots before storing them; left attached, they wilt the carrot.",
       "cart_pick": "Organic carrots and potatoes",
       "buying_tips": [
         "Potatoes rank high for residue in USDA testing, and the skin often gets eaten.",
-        "The USDA Organic seal on the bag is the standard for potatoes and carrots.",
+        "Look for local potatoes labeled “grown without sprays”, the grower’s word, not a seal.",
+        "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
         "Potatoes: firm, with no bruises, nicks, or soft spots.",
         "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
         "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
@@ -5227,7 +5273,8 @@
       "watch_out": [
         "A green tint, shriveling, or many sprouts on a potato: throw it away.",
         "Green shoulders, wilt, flab, or cracks on a carrot.",
-        "Sweet potatoes kept cold take chilling injury: decay, internal browning, and shriveling. Cool and dry, never the refrigerator."
+        "Sweet potatoes kept cold take chilling injury: decay, internal browning, and shriveling. Cool and dry, never the refrigerator.",
+        "Stored potatoes are often treated with chlorpropham, a post-harvest sprout inhibitor, so fresh-dug local potatoes come first."
       ],
       "pick_steps": [
         "Press every root and skip anything soft, shriveled or sprouting.",
@@ -5236,7 +5283,7 @@
       ],
       "science": "Potatoes should show no bruises, nicks or soft spots, and carrots good color. Sweet potatoes run smooth and even; beets, round with a slender tap root. Cold gives sweet potatoes chilling injury: decay, internal browning and shriveling. Potatoes keep up to a month at 45 to 50°F, dark and ventilated. Topped carrots and trimmed beets keep up to two weeks refrigerated.",
       "labels_decoded": [],
-      "tier_note": "USDA testing ranks potatoes high for residue, and organic is the certified standard for both roots.",
+      "tier_note": "Potatoes rank high for residue in USDA testing, and carrots rank low.",
       "eyebrow_short": "Root vegetables",
       "asked_as": [
         "should i buy sweet potatoes",
@@ -5597,20 +5644,33 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep bell peppers?",
-      "decision": "Firm organic peppers, evenly colored, without cracks or soft spots.",
+      "decision": "Firm local or greenhouse peppers labeled grown without sprays.",
       "why": "A pepper should feel firm when you hold it. Wrinkled skin means it has lost water in storage.",
       "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, and uniform in shape and size. Skip any with cracks, decay, sunburn, disease, insect damage, or bruises.",
       "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices. A dark, sunken spot at the blossom end is blossom end rot.",
       "evidence_tier": "established",
       "sources": [
         "UC Davis Postharvest Technology Center, Bell Pepper fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/bell-pepper",
-        "Michigan State University Extension, Michigan Fresh: Peppers, https://www.canr.msu.edu/resources/michigan_fresh_peppers"
+        "Michigan State University Extension, Michigan Fresh: Peppers, https://www.canr.msu.edu/resources/michigan_fresh_peppers",
+        {
+          "name": "EWG Shopper’s Guide to Pesticides in Produce 2026, summary",
+          "url": "https://www.ewg.org/foodnews/summary.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        }
       ],
       "kristy_take": "Red, yellow and orange peppers tolerate cold better than green ones. In a fridge at 41°F, plan on about two weeks; leave any cracked or bruised pepper at the bin.",
       "cart_pick": "Organic bell peppers",
       "buying_tips": [
         "A firm pepper still holds its water; wrinkled skin means it dried out in storage.",
-        "The skin gets eaten, so the USDA Organic seal is the standard for peppers.",
+        "Look for peppers labeled “grown without sprays”, the grower’s word, not a seal; greenhouse alone does not say it.",
+        "Organic peppers are the fallback; organic growers may still use approved sprays when other controls fail.",
         "Firm, with uniform shape, size, and color for the variety.",
         "Colored peppers: at least half of the surface colored.",
         "Free of cracks, decay, sunburn, disease, or insect damage.",
@@ -5630,7 +5690,7 @@
       ],
       "science": "Firmness is a quality index, and shriveling is water loss from warm storage. A dark, sunken lesion at the blossom end is blossom end rot. Peppers keep best around 45°F. At 41°F, plan on about two weeks before chilling injury shows as pitting, softening or a discolored seed cavity. Red, yellow and orange peppers tolerate the cold better than green.",
       "labels_decoded": [],
-      "tier_note": "The skin of a pepper gets eaten, so the skin rule puts peppers in organic.",
+      "tier_note": "Peppers rank high for pesticide residue in testing, and the skin gets eaten.",
       "eyebrow_short": "Bell peppers",
       "asked_as": [
         "how do i pick a good bell pepper",
@@ -5692,7 +5752,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep apples and pears?",
-      "decision": "Unbruised organic apples and pears, with no spoiled fruit alongside.",
+      "decision": "Local in-season apples and pears, labeled grown without sprays.",
       "why": "Apples should feel crisp. A firm green Bartlett pear can ripen at home, turning sweet, juicy and buttery.",
       "short_answer": "Apples: firm and crisp, not mealy, free of bruising, decay, cracks, and insect injury. Pears: sound shape and size, free of bruising, insect damage, and decay. A firm green Bartlett is not a fault.",
       "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both apples and pears appear. On apples, look for cracks at the stem or blossom end. Bartletts are picked mature-green and ripened off the tree; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
@@ -5704,13 +5764,26 @@
         "Michigan State University Extension, Michigan Fresh: Apples, https://www.canr.msu.edu/resources/michigan_fresh_apples",
         "Michigan State University Extension, Michigan Fresh: Pears, https://www.canr.msu.edu/resources/michigan_fresh_pears",
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
-        "https://www.ewg.org/foodnews/dirty-dozen.php"
+        "https://www.ewg.org/foodnews/dirty-dozen.php",
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "Northwest Horticultural Council: Fruit Coatings",
+          "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
+        }
       ],
       "kristy_take": "Turn each fruit before bagging it. Damaged fruit spoils in storage and speeds ripening and rot in its sound neighbors, so leave bruised apples and pears behind.",
       "cart_pick": "Organic apples or pears",
       "buying_tips": [
         "Bruised fruit makes the sound fruit beside it ripen and rot faster.",
-        "Apples and pears are eaten skin-on, so the USDA Organic seal is the standard.",
+        "Look for “grown without sprays” or Certified Naturally Grown; the first is the grower’s word, not a seal.",
+        "Organic is the fallback, and the organic standard still permits approved sprays when other pest controls fall short.",
         "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
         "Pears: free of bruising, insect damage, and decay; a firm green Bartlett ripens off the tree.",
         "Store in the dark at 30 to 32°F, up to 40°F, in a ventilated box or a perforated bag.",
@@ -5721,7 +5794,8 @@
       "watch_out": [
         "Bruised or damaged fruit stored with sound fruit: it makes the sound fruit ripen and rot faster.",
         "A pear ripened on the tree turns mealy; Bartletts are meant to be picked green.",
-        "Gala softens quickly when it is not cooled."
+        "Gala softens quickly when it is not cooled.",
+        "A high shine can be an added coating of carnauba or shellac, applied after washing strips the natural wax."
       ],
       "pick_steps": [
         "Turn each apple: firm, crisp, no bruising, decay, cracks or insect injury.",
@@ -5808,7 +5882,11 @@
         "UC Davis Postharvest Technology Center, Lemon fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lemon",
         "UC Davis Postharvest Technology Center, Lime fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/lime",
         "USDA SNAP-Ed Connection, Seasonal Produce Guide: Oranges, https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide/oranges",
-        "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
+        "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf",
+        {
+          "name": "PMC: postharvest fungicides on citrus",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11989162/"
+        }
       ],
       "kristy_take": "UC Davis’s checks are firmness and a sound rind: leave decay and shriveling behind. Use yellowed lemons and limes first; green-picked ones keep longest.",
       "cart_pick": "Organic oranges, lemons, or limes",
@@ -5825,7 +5903,8 @@
       "watch_out": [
         "Drying and shriveling on lemons, dryness on limes: the fruit is past its best.",
         "Decay on any citrus.",
-        "Grading an orange by color alone: degreening sets the color and says nothing about the inside."
+        "Grading an orange by color alone: degreening sets the color and says nothing about the inside.",
+        "Conventional citrus is often treated after harvest with imazalil or thiabendazole fungicides on the peel; organic for zest."
       ],
       "pick_steps": [
         "Choose firm, smooth citrus free of decay, bruising and blemishes.",
@@ -5911,7 +5990,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep peaches, nectarines, plums, and cherries?",
-      "decision": "Unbruised organic peaches, nectarines, plums and cherries, color fully turned.",
+      "decision": "In-season local peaches, plums and cherries labeled grown without sprays.",
       "why": "A peach’s green background turns yellow as it readies. Michigan Fresh advises unbruised peaches, plums and cherries.",
       "short_answer": "Peaches and nectarines: ground color turned from green to yellow. Plums: skin color turned for the variety. Cherries: at least light red all over, with green fleshy stems.",
       "detail": "The optimum storage for all of them is just above freezing, 30.5 to 32°F, and Michigan Fresh puts cherries in the refrigerator at or below 41°F. Plums held between 36 and 46°F, the killing range, are more susceptible to internal breakdown: mealiness, browning, and failure to ripen. Peaches, nectarines, and plums picked well mature ripen on their own without ethylene; ethylene does not speed cherry ripening. Keep stone fruit away from raw meat and meat juices. On EWG’s Dirty Dozen, a standard ranking residues from USDA data, both peaches and cherries appear. A peach or nectarine with a flesh firmness of 2 to 3 pounds-force counts as ready to eat, and the same holds for plums. Dark skin staining is inking, a cosmetic mark from abrasion that affects the skin only. Cherries should be at least light red across the whole surface, with no cracks, bird pecks, shriveling, or decay; green, fleshy stems go with freshness.",
@@ -5924,13 +6003,22 @@
         "Michigan State University Extension, Michigan Fresh: Plums, https://www.canr.msu.edu/resources/michigan_fresh_plums",
         "Michigan State University Extension, Michigan Fresh: Cherries, https://www.canr.msu.edu/resources/michigan_fresh_cherries",
         "EWG Shopper’s Guide to Pesticides in Produce, full list, https://www.ewg.org/foodnews/full-list.php",
-        "https://www.ewg.org/foodnews/dirty-dozen.php"
+        "https://www.ewg.org/foodnews/dirty-dozen.php",
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        }
       ],
       "kristy_take": "Nectarines turn from green to yellow too; plums need their variety’s color. Check cherries for green, fleshy stems and full color. Skin staining can be cosmetic, but bruises and damage stay behind.",
       "cart_pick": "Organic peaches, plums, or cherries",
       "buying_tips": [
         "A bruise stays for good, and peaches and cherries both make the Dirty Dozen.",
-        "Stone fruit is eaten skin-on, so the USDA Organic seal is the standard here.",
+        "In season, look for a local farm’s “grown without sprays”, the grower’s word, not a seal; at a market, ask.",
+        "Organic stone fruit is the fallback; the organic list still allows approved sprays when other controls fail.",
         "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
         "Plums: skin color turned for the variety, no bruises or damage.",
         "Cherries: full color across the surface, green fleshy stems, no cracks, pecks, or shriveling.",
@@ -6033,7 +6121,7 @@
         "persian cucumbers",
         "mini cucumbers"
       ],
-      "decision": "Organic cucumbers, firm and dark green, without soft spots or a bulging middle.",
+      "decision": "Firm cucumbers labeled grown without sprays from a local or greenhouse grower, else organic.",
       "sources": [
         {
           "name": "Nebraska Extension: Cucumbers",
@@ -6384,7 +6472,7 @@
         "bunch of celery",
         "bunches of celery"
       ],
-      "decision": "Organic celery with tight, crisp stalks, without any limpness in the bunch.",
+      "decision": "Celery labeled grown without sprays from a local grower, else organic, with crisp stalks.",
       "sources": [
         {
           "name": "SNAP-Ed Seasonal Produce Guide: Celery",
@@ -7363,7 +7451,7 @@
       ],
       "category": "produce",
       "question": "How do you pick good green beans?",
-      "decision": "Smooth, crisp, slender organic beans, without bulging seeds.",
+      "decision": "Crisp, slender local beans labeled grown without sprays.",
       "why": "A crisp pod with flat seeds is a young bean. Bulging seeds mean an older bean turning tough, stringy and starchy.",
       "short_answer": "Choose green beans that are smooth, firm and crisp. Skip pods with bulging seeds, brown or rust spots, or a damp, sticky feel. Keep them cold and use them within five days.",
       "detail": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Ohio State Extension describes good snap beans as firm, crisp and smooth, with no seeds bulging. Flabby, tough beans or bulging seeds are over-mature. Iowa State Extension adds: avoid beans with brown spots or a damp, sticky surface. Keep fresh beans cold and humid in the refrigerator and use them within five days if possible. Snap beans also come yellow, purple and red.",
@@ -7371,13 +7459,26 @@
       "sources": [
         "https://ohioline.osu.edu/factsheet/hyg-5509",
         "https://spendsmart.extension.iastate.edu/?p=1508",
-        "https://extension.umaine.edu/publications/4255e/"
+        "https://extension.umaine.edu/publications/4255e/",
+        {
+          "name": "EWG Shopper’s Guide to Pesticides in Produce 2026, summary",
+          "url": "https://www.ewg.org/foodnews/summary.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.206, organic crop pest and weed management standard",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        }
       ],
       "kristy_take": "Run your eye along the pods for smooth sides and hidden seeds. Keep the beans cold and use them within five days, leaving any sticky or brown-spotted ones behind.",
       "cart_pick": "Organic green beans",
       "buying_tips": [
         "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
-        "The whole pod gets eaten, so the USDA Organic seal is the standard for beans.",
+        "Look for local, in-season beans labeled “grown without sprays”, the grower’s word, not a seal.",
+        "Organic beans, fresh or frozen, are the fallback; the organic list still permits approved sprays.",
         "Pick smooth, slender pods with no seeds bulging through.",
         "Leave beans with brown or rust spots behind.",
         "Store them cold and cook them within five days."
@@ -7401,7 +7502,7 @@
           "meaning": "Yellow or purple snap beans."
         }
       ],
-      "tier_note": "The whole pod gets eaten, so green beans follow the skin rule to organic.",
+      "tier_note": "Green beans rank high for pesticide residue, and the whole pod gets eaten.",
       "asked_as": [
         "how do i pick good green beans",
         "how long do green beans last",
