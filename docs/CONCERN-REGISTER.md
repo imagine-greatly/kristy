@@ -4,7 +4,7 @@ Analysis, not card copy. Built 2026-10-18 from the archives under `docs/sources/
 
 Strength: **STRONG** = consumer-testing body, regulator, peer-reviewed or statutory text archived; **WEAK** = advocacy, trade or single-farm source, or a mechanism argument without testing; **COUNTER-VIEW** = an archived source disputing the concern (kept, flagged).
 
-100 concerns across 10 domains. Coverage against the counter cards is in `docs/CONCERN-COVERAGE.md`.
+101 concerns across 10 domains. Coverage against the counter cards is in `docs/CONCERN-COVERAGE.md`.
 
 ## Additives
 
@@ -126,6 +126,7 @@ Strength: **STRONG** = consumer-testing body, regulator, peer-reviewed or statut
 | `pfas_pesticides` | PFAS-class pesticides (e.g. fludioxonil) on conventional produce | none on label | stone fruit, berries | organic | `produce_seafood/ewg-shoppers-guide-summary-2026.md` STRONG | Produce |
 | `produce_coatings` | Post-harvest coatings (petroleum/shellac/carnauba waxes, Apeel) | "coated with food-grade wax", "shellac", "carnauba", "Apeel" | apples, citrus, cucumbers, peppers, avocados | organic/uncoated > coated; peel or scrub | `produce_seafood/nwhort-fruit-coatings.md` STRONG; `produce_seafood/plateful-apeel-safe.md` WEAK | Produce |
 | `citrus_fungicides` | Post-harvest fungicides (imazalil, thiabendazole) on citrus peel | shipping-box label: "imazalil", "thiabendazole" | citrus (zest) | organic citrus when using the peel | `produce_seafood/pmc-citrus-postharvest-fungicides.md` STRONG | Produce |
+| `potato_sprout_inhibitor` | Post-harvest sprout inhibitor chlorpropham (CIPC) applied to stored potatoes | none on label (applied in storage) | stored potatoes (`produce_root_vegetables`) | fresh-dug local > stored, untreated > stored, treated | `produce_seafood/uidaho-cipc-sprout-inhibitor.md` STRONG | Produce |
 | `sulfites` | Sulfite preservatives (dried fruit, shrimp, wine) affect sensitive people | "sulfur dioxide", "sodium metabisulfite", "unsulfured" | dried fruit, shrimp, wine, pickles | unsulfured | `produce_seafood/asthma-nz-sulphites.md` STRONG | Produce |
 | `raw_sprouts` | Raw sprouts grow in warm wet conditions that favor bacteria | "alfalfa", "bean sprouts" | sprouts, microgreens | cooked sprouts; microgreens | `produce_seafood/uconn-seed-bean-sprouts.md` STRONG; `produce_seafood/colostate-sprouts.md` STRONG | Produce |
 | `irradiation` | Irradiated food; labeling advocates want clearer disclosure | Radura symbol, "treated with irradiation" | spices, imported fruit, meat | organic (irradiation not allowed) | `produce_seafood/cfs-irradiation-labeling-opposition.md` WEAK | Produce |

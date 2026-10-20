@@ -5,16 +5,17 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9 } from './twoLinePin.js';
 
-const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6, ...CLEAN_PICK_7]);
+const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6, ...CLEAN_PICK_7, ...CLEAN_PICK_9]);
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const base = JSON.parse(git('74237ce:server/kristy_perimeter_kb.json'));
 const find = (k, id) => k.entries.find((e) => e.id === id);
-const live = (id) => find(kb, id);
+// clean-pick-9 owns its 12 ids now; this batch reads them as of 96d61e2.
+const live = (id) => preCleanPick9(find(kb, id));
 const was = (id) => find(base, id);
 const words = (s) => s.trim().split(/\s+/).length;
 
@@ -232,7 +233,7 @@ test('C7 doLines.json unchanged; review headlines move only on decision-changed 
       assert.equal(lr, row, id);
     }
   }
-  assert.equal(seen, DECISION_CHANGED.length);
+  assert.equal(seen, DECISION_CHANGED.filter((id) => !LATER.has(id)).length);
 });
 
 test('C8 every base tip is kept or demoted into detail', () => {

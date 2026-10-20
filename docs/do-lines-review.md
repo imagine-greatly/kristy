@@ -43,10 +43,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Read the grade and the sourcing as two separate answers. | — |
 | `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Read the label for liver or heart in the ingredients. | — |
 | `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find all three words on one carton, plus a certifier’s pasture seal. | — |
-| `organic_worth_it_by_type` | produce | Organic produce, first on everything eaten skin-on. | Spend the organic money on berries, greens, and apples. | — |
+| `organic_worth_it_by_type` | produce | Grown without sprays first on skin-on produce, then organic. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Plain organic frozen produce, picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | Briefly scalded vegetables for the freezer; fruit goes in raw. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
-| `produce_seasonality` | produce | Organic in-season produce, or frozen when out of season. | Read the farmers’ market as the signal for what is in season locally. | — |
+| `produce_seasonality` | produce | In-season produce from a small local grower, or frozen off-season. | Read the farmers’ market as the signal for what is in season locally. | — |
 | `washing_produce` | produce · home | Plain cold water for produce; no soap or produce wash. | Scrub the firm ones with a brush. Rinse and spin the greens. | — |
 | `baking_soda_soak` | produce · home | Baking soda water for residue that a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Whole produce before pre-cut: cutting starts vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
@@ -67,7 +67,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_cage_free` | label_terms | Pasture-raised eggs with printed soy-free or corn-free feed. | Find the welfare certifier’s seal, then read the feed claim. | — |
 | `label_grass_fed_term` | label_terms | ‘100% grass-fed’ beef, ideally third-party certified. | Look for “100%” or “grass-finished” printed on the package. | — |
 | `label_pasture_raised_feed` | label_terms | Pasture-raised eggs with soy-free or corn-free feed printed outright. | Read both sides of the carton for the ration and outdoor claims. | — |
-| `label_organic_scope` | label_terms | Organic thin-skinned produce eaten whole; still read the ingredient panel. | Flip the organic box over. The seal says nothing about the ingredients. | — |
+| `label_organic_scope` | label_terms | Organic as the floor; the seal still allows approved sprays. | Flip the organic box over. The seal says nothing about the ingredients. | — |
 | `label_multigrain_vs_whole_grain` | label_terms | ‘100% whole grain’, a whole grain listed first. | Read the first ingredient — it must say “whole wheat flour.” | — |
 | `label_lightly_sweetened` | label_terms | ‘Unsweetened’, or read the ‘Added Sugars’ line on the panel. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
 | `label_no_artificial_flavors` | label_terms | Short ingredient lists of recognisable foods over flavor claims. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
@@ -104,16 +104,16 @@ Also: imperative, starts with a verb, ≤14 words.
 | `raw_kefir` | eggs_dairy | Plain raw kefir from a named farm, sold cold. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
 | `raw_aged_cheese` | eggs_dairy | Aged raw milk or lait cru cheese, 60 days minimum. | Read the rind label for an age in months. | — |
 | `sprouts_raw` | produce | Organic sprouts from the cold case, white roots, crisp stems. | Check the roots are still white and the clamshell is not fogged. | — |
-| `produce_root_vegetables` | produce | Organic potatoes and carrots, firm, with nothing soft or sprouting. | Press each root for firmness, and twist the tops off carrots before storing. | — |
+| `produce_root_vegetables` | produce | Firm local potatoes and carrots labeled grown without sprays. | Press each root for firmness, and twist the tops off carrots before storing. | — |
 | `produce_brassicas` | produce | Organic broccoli, cauliflower and cabbage, tight heads, no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
 | `produce_onions_garlic` | produce | Organic onions and garlic, firm, with a dry neck. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
 | `produce_leafy_greens` | produce | Crisp organic greens, evenly colored, without wilt or yellowing. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
-| `produce_peppers` | produce | Firm organic peppers, evenly colored, without cracks or soft spots. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
-| `produce_apples_pears` | produce | Unbruised organic apples and pears, with no spoiled fruit alongside. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
+| `produce_peppers` | produce | Firm local or greenhouse peppers labeled grown without sprays. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
+| `produce_apples_pears` | produce | Local in-season apples and pears, labeled grown without sprays. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
 | `produce_citrus` | produce | Organic oranges, lemons and limes, firm with a smooth rind. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |
-| `produce_stone_fruit` | produce | Unbruised organic peaches, nectarines, plums and cherries, color fully turned. | Look the fruit over for bruises or damage and skip any that shows one. | — |
+| `produce_stone_fruit` | produce | In-season local peaches, plums and cherries labeled grown without sprays. | Look the fruit over for bruises or damage and skip any that shows one. | — |
 | `produce_mushrooms` | produce | Organic mushrooms, dry and firm, with no dark spots. | Check each cap and leave any that feels damp or soft. | — |
-| `produce_green_beans` | produce | Smooth, crisp, slender organic beans, without bulging seeds. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
+| `produce_green_beans` | produce | Crisp, slender local beans labeled grown without sprays. | Check the pods and leave any that are flabby, rust-spotted or sticky. | — |
 | `produce_bananas` | produce | Organic bananas, green, to finish ripening on the counter. | Take a bunch that is still green and keep it out of the fridge. | — |
 | `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
 

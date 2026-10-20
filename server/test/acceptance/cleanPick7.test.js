@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
+import { CLEAN_PICK_9 } from './twoLinePin.js';
 
 const BASE = 'e3b4a68';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -16,6 +17,8 @@ const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
 const find = (k, id) => k.entries.find((e) => e.id === id);
 const live = (id) => find(kb, id);
 const was = (id) => find(base, id);
+// clean-pick-9 moved eight review headlines; every other line stays.
+const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CLEAN_PICK_9.has(l.split('`')[1]))).join('\n');
 
 const BECAME = {
   pick_frozen_peas: { decision: 'Organic peas frozen solid, with no pack drips or off smell.', carry: /^Organic peas\b/, keep: [/frozen solid, with no pack drips or off smell/] },
@@ -85,15 +88,15 @@ test('C5 organic is new on exactly the four organic-standard picks and unchanged
     if (ORGANIC_IDS.includes(id)) assert.ok(live(id).decision.startsWith('Organic '), `${id} lacks organic`);
     else assert.doesNotMatch(live(id).decision, ORGANIC, `${id} gained organic`);
   }
-  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id));
-  nonEmpty(otherPicks(base), 'other picks', 20);
+  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CLEAN_PICK_9.has(e.id));
+  nonEmpty(otherPicks(base), 'other picks', 19);
   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
   assert.equal(count(kb), count(base));
 });
 
 test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
-  nonEmpty(others, 'others', 197);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_9.has(e.id));
+  nonEmpty(others, 'others', 190);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
@@ -105,7 +108,7 @@ test('C7 doLines.json and do-lines-review.md are unchanged from the base', () =>
   assert.deepEqual(now, JSON.parse(git(`${BASE}:server/lib/doLines.json`)));
   const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
   nonEmpty(review.split('\n'), 'review lines', 150);
-  assert.equal(review, git(`${BASE}:docs/do-lines-review.md`));
+  assert.equal(strip9(review), strip9(git(`${BASE}:docs/do-lines-review.md`)));
 });
 
 test('C8 each line names its own item, never another batch pick or a generic phrase', () => {

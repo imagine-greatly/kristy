@@ -10,7 +10,7 @@ import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
-import { beforeConcern, preTidy } from './twoLinePin.js';
+import { beforeConcern, preTidy, preCleanPick9 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -47,6 +47,7 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, beforeConcern(now));
+    // clean-pick-9 moved label_organic_scope's frozen fields; the pass rule reads it as of 96d61e2.
+    assertPassRule(t, old, beforeConcern(preCleanPick9(now)));
   });
 }

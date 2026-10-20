@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
@@ -40,7 +40,7 @@ const IDS = Object.keys(FINAL);
 const OWNED = { organic_worth_it_by_type: ['short_answer', 'kristy_take', 'pick_steps', 'watch_out'], produce_bananas: ['short_answer', 'kristy_take', 'detail'] };
 
 test('C1 the hub and banana depth fields hold their final values', () => {
-  for (const id of ['organic_worth_it_by_type']) for (const [f, v] of Object.entries(FINAL[id])) assert.deepEqual(find(kb, id)[f], v, `${id}.${f}`);
+  for (const id of ['organic_worth_it_by_type']) for (const [f, v] of Object.entries(FINAL[id])) assert.deepEqual(preCleanPick9(find(kb, id))[f], v, `${id}.${f}`); // clean-pick-9 owns the hub now
   const b = find(kb, 'produce_bananas');
   assert.equal(b.short_answer, FINAL.produce_bananas.short_answer);
   assert.equal(b.kristy_take, FINAL.produce_bananas.kristy_take);
@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
 
 test('C3 every other field and entry equals a2487a7', () => {
   for (const e of kb.entries) {
-    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id) || CLEAN_PICK_6.has(e.id) || CLEAN_PICK_7.has(e.id)) continue;
+    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id) || CLEAN_PICK_6.has(e.id) || CLEAN_PICK_7.has(e.id) || CLEAN_PICK_9.has(e.id)) continue;
     const old = find(base, e.id);
     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
     assert.deepEqual(strip(e), strip(old), e.id);

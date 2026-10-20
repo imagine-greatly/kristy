@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { beforeConcern } from './twoLinePin.js';
+import { beforeConcern, preCleanPick9 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -77,7 +77,8 @@ test('C5 claim-lock rule 4', () => {
 
 test('C6 sources never shrink and new URLs are archived', () => {
   for (const id of BATCH) {
-    const have = new Set(urls(now(id)));
+    // clean-pick-9 archived its new URLs under docs/sources/concerns; this batch reads sources as of 96d61e2.
+    const have = new Set(urls(preCleanPick9(now(id))));
     for (const u of urls(pre(id))) assert.ok(have.has(u), `${id} dropped ${u}`);
     for (const u of have) if (!PRE_URLS.has(u)) assert.ok(archive.includes(u), `${id}: ${u} not in docs/sources/item-cards`);
   }

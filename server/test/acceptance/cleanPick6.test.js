@@ -7,14 +7,17 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_7 } from './twoLinePin.js';
+import { CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const base = JSON.parse(git('c6d3ff2:server/kristy_perimeter_kb.json'));
 const find = (k, id) => k.entries.find((e) => e.id === id);
-const live = (id) => find(kb, id);
+// clean-pick-9 owns pick_celery and pick_cucumbers now; this batch reads them as of 96d61e2.
+const live = (id) => preCleanPick9(find(kb, id));
+// clean-pick-9 moved eight review headlines; every other line stays.
+const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CLEAN_PICK_9.has(l.split('`')[1]))).join('\n');
 const was = (id) => find(base, id);
 
 const BECAME = {
@@ -94,8 +97,8 @@ test('C5 organic is new on all 17 lines and unchanged on every other pick', () =
 });
 
 test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
-  nonEmpty(others, 'others', 180);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id) && !CLEAN_PICK_9.has(e.id));
+  nonEmpty(others, 'others', 175);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
@@ -107,7 +110,7 @@ test('C7 doLines.json and do-lines-review.md are unchanged from c6d3ff2', () => 
   assert.deepEqual(now, JSON.parse(git('c6d3ff2:server/lib/doLines.json')));
   const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
   nonEmpty(review.split('\n'), 'review lines', 150);
-  assert.equal(review, git('c6d3ff2:docs/do-lines-review.md'));
+  assert.equal(strip9(review), strip9(git('c6d3ff2:docs/do-lines-review.md')));
 });
 
 test('C8 each line names its own item, never another batch pick or generic produce', () => {
@@ -146,7 +149,7 @@ test('C11 a list row of each pick’s first alias carries the new organic line',
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
-    assert.equal(row.pickLine, BECAME[id].decision, `${name} pickLine`);
+    assert.equal(row.pickLine, CLEAN_PICK_9.has(id) ? find(kb, id).decision : BECAME[id].decision, `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
   }
 });

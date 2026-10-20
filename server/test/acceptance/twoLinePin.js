@@ -200,10 +200,11 @@ export const TWO_LINE = {
     "cart_pick": "Corn- and soy-free eggs from hens on pasture"
   },
   "organic_worth_it_by_type": {
-    "decision": "Organic produce, first on everything eaten skin-on.",
+    "decision": "Grown without sprays first on skin-on produce, then organic.",
     "buying_tips": [
       "Residue sits on the skin, so a peel you throw away takes it with it.",
-      "The USDA Organic seal on the sign or sticker is the standard to read.",
+      "Above the seal: a local grower’s “grown without sprays”, the grower’s word, not a seal.",
+      "The USDA Organic seal on the sign or sticker is the floor to read.",
       "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes."
     ]
   },
@@ -229,10 +230,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_seasonality": {
-    "decision": "Organic in-season produce, or frozen when out of season.",
+    "decision": "In-season produce from a small local grower, or frozen off-season.",
     "buying_tips": [
       "In season, it travels less and reaches you closer to ripe, so it tastes better.",
-      "In-season organic produce carries the USDA Organic seal, fresh or frozen.",
+      "A small grower over a national label: at a farmers’ market, ask how the crop was grown.",
+      "Organic in season is the fallback, fresh or frozen.",
       "The cheapest, most abundant produce this week is usually what’s in season.",
       "Off-season, reach for frozen instead of sad ‘fresh’.",
       "Farmers’ markets are a fast read on what’s actually in season locally.",
@@ -669,13 +671,14 @@ export const TWO_LINE = {
     "science": "Cage-free, free-range and pasture-raised describe space. Most pasture-raised hens still eat soy and corn. USDA has no regulatory definition of pasture-raised; certifiers set outdoor requirements. Organic requires organic feed, usually soy and corn. It describes how feed was grown. “Vegetarian fed” means no animal byproducts in the feed, with no promise about outdoor time. Hens on pasture eat insects and forage."
   },
   "label_organic_scope": {
-    "decision": "Organic thin-skinned produce eaten whole; still read the ingredient panel.",
+    "decision": "Organic as the floor; the seal still allows approved sprays.",
     "buying_tips": [
       "The seal covers inputs and practices, and an organic cookie is still a cookie.",
       "Organic is about inputs and practices. Read the ingredient panel separately.",
-      "It is not pesticide-free; approved natural pesticides are permitted.",
+      "It is not pesticide-free; a short list of approved sprays, some synthetic, is permitted.",
       "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
-      "On animal products it does reach feed. It means organic feed, not a different kind of feed."
+      "On animal products it does reach feed. It means organic feed, not a different kind of feed.",
+      "Real Organic Project on top of the USDA seal means soil-grown, never hydroponic."
     ]
   },
   "label_multigrain_vs_whole_grain": {
@@ -1231,10 +1234,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_root_vegetables": {
-    "decision": "Organic potatoes and carrots, firm, with nothing soft or sprouting.",
+    "decision": "Firm local potatoes and carrots labeled grown without sprays.",
     "buying_tips": [
       "Potatoes rank high for residue in USDA testing, and the skin often gets eaten.",
-      "The USDA Organic seal on the bag is the standard for potatoes and carrots.",
+      "Look for local potatoes labeled “grown without sprays”, the grower’s word, not a seal.",
+      "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
       "Potatoes: firm, with no bruises, nicks, or soft spots.",
       "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
       "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
@@ -1284,10 +1288,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_peppers": {
-    "decision": "Firm organic peppers, evenly colored, without cracks or soft spots.",
+    "decision": "Firm local or greenhouse peppers labeled grown without sprays.",
     "buying_tips": [
       "A firm pepper still holds its water; wrinkled skin means it dried out in storage.",
-      "The skin gets eaten, so the USDA Organic seal is the standard for peppers.",
+      "Look for peppers labeled “grown without sprays”, the grower’s word, not a seal; greenhouse alone does not say it.",
+      "Organic peppers are the fallback; organic growers may still use approved sprays when other controls fail.",
       "Firm, with uniform shape, size, and color for the variety.",
       "Colored peppers: at least half of the surface colored.",
       "Free of cracks, decay, sunburn, disease, or insect damage.",
@@ -1297,10 +1302,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_apples_pears": {
-    "decision": "Unbruised organic apples and pears, with no spoiled fruit alongside.",
+    "decision": "Local in-season apples and pears, labeled grown without sprays.",
     "buying_tips": [
       "Bruised fruit makes the sound fruit beside it ripen and rot faster.",
-      "Apples and pears are eaten skin-on, so the USDA Organic seal is the standard.",
+      "Look for “grown without sprays” or Certified Naturally Grown; the first is the grower’s word, not a seal.",
+      "Organic is the fallback, and the organic standard still permits approved sprays when other pest controls fall short.",
       "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
       "Pears: free of bruising, insect damage, and decay; a firm green Bartlett ripens off the tree.",
       "Store in the dark at 30 to 32°F, up to 40°F, in a ventilated box or a perforated bag.",
@@ -1323,10 +1329,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_stone_fruit": {
-    "decision": "Unbruised organic peaches, nectarines, plums and cherries, color fully turned.",
+    "decision": "In-season local peaches, plums and cherries labeled grown without sprays.",
     "buying_tips": [
       "A bruise stays for good, and peaches and cherries both make the Dirty Dozen.",
-      "Stone fruit is eaten skin-on, so the USDA Organic seal is the standard here.",
+      "In season, look for a local farm’s “grown without sprays”, the grower’s word, not a seal; at a market, ask.",
+      "Organic stone fruit is the fallback; the organic list still allows approved sprays when other controls fail.",
       "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
       "Plums: skin color turned for the variety, no bruises or damage.",
       "Cherries: full color across the surface, green fleshy stems, no cracks, pecks, or shriveling.",
@@ -1625,10 +1632,11 @@ export const TWO_LINE = {
     ]
   },
   "produce_green_beans": {
-    "decision": "Smooth, crisp, slender organic beans, without bulging seeds.",
+    "decision": "Crisp, slender local beans labeled grown without sprays.",
     "buying_tips": [
       "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
-      "The whole pod gets eaten, so the USDA Organic seal is the standard for beans.",
+      "Look for local, in-season beans labeled “grown without sprays”, the grower’s word, not a seal.",
+      "Organic beans, fresh or frozen, are the fallback; the organic list still permits approved sprays.",
       "Pick smooth, slender pods with no seeds bulging through.",
       "Leave beans with brown or rust spots behind.",
       "Store them cold and cook them within five days."
@@ -3415,3 +3423,8 @@ export const preCleanPick6 = (e) => (e && CLEAN_PICK_6.has(e.id) ? PRE_CP6.entri
 export const CLEAN_PICK_7 = new Set(['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
 const PRE_CP7 = JSON.parse(execFileSync('git', ['show', 'e3b4a68:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick7 = (e) => (e && CLEAN_PICK_7.has(e.id) ? PRE_CP7.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-9 (2026-10-20) moved these 12 lines to grown-without-sprays first, organic as the floor; older batch tests read them as of 96d61e2, and cleanPick9.test.js owns the new text.
+export const CLEAN_PICK_9 = new Set(['organic_worth_it_by_type', 'label_organic_scope', 'label_nonGMO_vs_organic', 'produce_apples_pears', 'produce_stone_fruit', 'produce_peppers', 'produce_green_beans', 'produce_citrus', 'produce_seasonality', 'produce_root_vegetables', 'pick_celery', 'pick_cucumbers']);
+const PRE_CP9 = JSON.parse(execFileSync('git', ['show', '96d61e2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick9 = (e) => (e && CLEAN_PICK_9.has(e.id) ? PRE_CP9.entries.find((x) => x.id === e.id) : e);

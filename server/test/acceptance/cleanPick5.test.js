@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_6, CLEAN_PICK_7 } from './twoLinePin.js';
+import { CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -126,8 +126,8 @@ test('C5 organic sits on the decision and cart of exactly the seven crop ids', (
 });
 
 test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id));
-  nonEmpty(others, 'others', 164);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id) && !CLEAN_PICK_9.has(e.id));
+  nonEmpty(others, 'others', 159);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
@@ -144,6 +144,7 @@ test('C7 doLines.json unchanged; review headlines move only on the batch ids', (
   assert.equal(liveRows.size, baseRows.size);
   let seen = 0;
   for (const [id, row] of baseRows) {
+    if (CLEAN_PICK_9.has(id)) continue; // clean-pick-9 moves these headlines; cleanPick9.test.js pins them
     const lr = liveRows.get(id);
     assert.ok(lr, id);
     if (DECISION_CHANGED.includes(id)) {
