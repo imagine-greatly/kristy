@@ -902,10 +902,12 @@ export const TWO_LINE = {
     ]
   },
   "berries_picking": {
-    "decision": "Cold organic berries with a dry, clean carton bottom.",
+    "decision": "Berries from a local farm, grown without sprays, then organic.",
     "buying_tips": [
       "The bottom berries carry the weight and mold first, while the top still looks fresh.",
-      "Berries are eaten whole, so the USDA Organic seal on the clamshell is the standard.",
+      "Look for berries from a local farm or market, u-pick included, labeled or stated grown without sprays.",
+      "Organic is the store fallback, and organic frozen out of season; organic rules still allow approved sprays.",
+      "Berries are eaten whole, so the USDA Organic seal on the clamshell is the floor.",
       "A dry, unstained bottom on the carton. That is the whole check.",
       "No fuzzy white or gray spot on any berry. One takes the punnet.",
       "Green caps still fresh on strawberries, not browned and dry.",
@@ -938,17 +940,17 @@ export const TWO_LINE = {
     ]
   },
   "cream_vs_creamer": {
-    "decision": "Grass-fed heavy cream or half-and-half: cream and milk only.",
+    "decision": "Grass-fed cream from a small dairy, pasteurized, not ultra-pasteurized.",
     "buying_tips": [
       "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
+      "Look for grass-fed cream or half-and-half from a small dairy, pasteurized and not ultra-pasteurized.",
+      "Grass-fed ultra-pasteurized cream is the store fallback.",
       "Look for a carton naming grass-fed cows, with cream and milk only.",
       "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
       "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
       "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
       "Flavored creamers are where the added sugar sits. Read the panel.",
       "Whole milk or half-and-half does the same job with a two-word ingredient list.",
-      "rBST is a synthetic hormone given to cows for milk production. The certified organic rules bar this growth hormone.",
-      "Start with certified organic cream or half-and-half. Follow with a carton stating the cows were not treated with rBST, then one with neither. US companies need not label rBST use.",
       "Even certified organic cream can list carrageenan, a thickener derived from seaweed. Read the ingredients and take cream with none listed."
     ],
     "sources": [
@@ -971,6 +973,30 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Carrageenan",
         "url": "https://www.cspi.org/node/7465"
+      },
+      {
+        "name": "21 CFR 131.3, pasteurized and ultra-pasteurized defined",
+        "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, dairy",
+        "url": "https://www.westonaprice.org/health-topics/faq-dairy/"
+      },
+      {
+        "name": "American Grassfed Association: Our Standards",
+        "url": "https://www.americangrassfed.org/about-us/our-standards/"
+      },
+      {
+        "name": "CSPI: Titanium dioxide",
+        "url": "https://www.cspi.org/node/8046"
+      },
+      {
+        "name": "CSPI: Polysorbate 60, 65 and 80",
+        "url": "https://www.cspi.org/node/7467"
+      },
+      {
+        "name": "CSPI Chemical Cuisine: food additive safety ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
       }
     ]
   },
@@ -1275,10 +1301,13 @@ export const TWO_LINE = {
     ]
   },
   "produce_leafy_greens": {
-    "decision": "Crisp organic greens, evenly colored, without wilt or yellowing.",
+    "decision": "Lettuce grown without sprays, bagged or head, then organic.",
     "buying_tips": [
+      "Lettuce is eaten as the leaf, and the leaf is what gets sprayed.",
+      "Look for local or greenhouse lettuce labeled grown without sprays; greenhouse or hydroponic alone does not say it.",
+      "Organic is the store fallback; organic rules still allow approved sprays.",
       "By weight, spinach carries more pesticide residue than any other produce.",
-      "Leaves are eaten whole, so the USDA Organic seal is the standard for greens.",
+      "Leaves are eaten whole, so the USDA Organic seal is the floor for greens.",
       "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
       "Romaine: a head that is neither very loose nor very hard. Loose is immature; hard is overmature.",
       "Spinach: uniformly green, fully crisp, fairly clean.",
@@ -1429,6 +1458,7 @@ export const TWO_LINE = {
     "buying_tips": [
       "The name ground turkey sets no one fat level, so two packs can differ.",
       "Look for pasture-raised or certified organic ground turkey, sold plain.",
+      "Look for “air-chilled” on the turkey pack.",
       "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
       "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
       "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
@@ -3428,3 +3458,8 @@ export const preCleanPick7 = (e) => (e && CLEAN_PICK_7.has(e.id) ? PRE_CP7.entri
 export const CLEAN_PICK_9 = new Set(['organic_worth_it_by_type', 'label_organic_scope', 'label_nonGMO_vs_organic', 'produce_apples_pears', 'produce_stone_fruit', 'produce_peppers', 'produce_green_beans', 'produce_citrus', 'produce_seasonality', 'produce_root_vegetables', 'pick_celery', 'pick_cucumbers']);
 const PRE_CP9 = JSON.parse(execFileSync('git', ['show', '96d61e2:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick9 = (e) => (e && CLEAN_PICK_9.has(e.id) ? PRE_CP9.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-10 (2026-10-20) moved leafy greens and berries to grown without sprays first, organic as the floor; the five herb and green picks likewise; cream to grass-fed, not ultra-pasteurized; turkey and chicken gained avoid lines only. Older batch tests read these as of 117ab78, and cleanPick10.test.js owns the new text.
+export const CLEAN_PICK_10 = new Set(['produce_leafy_greens', 'berries_picking', 'pick_swiss_chard', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_microgreens', 'cream_vs_creamer', 'ground_turkey', 'chicken_cuts_basics']);
+const PRE_CP10 = JSON.parse(execFileSync('git', ['show', '117ab78:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick10 = (e) => (e && CLEAN_PICK_10.has(e.id) ? PRE_CP10.entries.find((x) => x.id === e.id) : e);

@@ -7,7 +7,10 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_9 } from './twoLinePin.js';
+import { CLEAN_PICK_9, CLEAN_PICK_10 } from './twoLinePin.js';
+
+// clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
+const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
 
 const BASE = 'e3b4a68';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -18,7 +21,7 @@ const find = (k, id) => k.entries.find((e) => e.id === id);
 const live = (id) => find(kb, id);
 const was = (id) => find(base, id);
 // clean-pick-9 moved eight review headlines; every other line stays.
-const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CLEAN_PICK_9.has(l.split('`')[1]))).join('\n');
+const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CP9or10(l.split('`')[1]))).join('\n');
 
 const BECAME = {
   pick_frozen_peas: { decision: 'Organic peas frozen solid, with no pack drips or off smell.', carry: /^Organic peas\b/, keep: [/frozen solid, with no pack drips or off smell/] },
@@ -88,15 +91,15 @@ test('C5 organic is new on exactly the four organic-standard picks and unchanged
     if (ORGANIC_IDS.includes(id)) assert.ok(live(id).decision.startsWith('Organic '), `${id} lacks organic`);
     else assert.doesNotMatch(live(id).decision, ORGANIC, `${id} gained organic`);
   }
-  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CLEAN_PICK_9.has(e.id));
-  nonEmpty(otherPicks(base), 'other picks', 19);
+  const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CP9or10(e.id));
+  nonEmpty(otherPicks(base), 'other picks', 14);
   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
   assert.equal(count(kb), count(base));
 });
 
 test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_9.has(e.id));
-  nonEmpty(others, 'others', 190);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
+  nonEmpty(others, 'others', 180);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());

@@ -81,10 +81,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `farmed_fish_by_species` | seafood | Trout, arctic char, barramundi and shellfish needing no feed. | Buy the farmed mussels, clams and oysters. They are fed nothing. | — |
 | `seafood_certifications` | seafood | Blue MSC on wild fish; ASC or BAP on farmed. | Check the badge names a program you can look up. Unnamed is marketing. | — |
 | `produce_ripeness_by_item` | produce | The heavier of two same-size pieces, for more juice. | Smell the stem end on anything that ripens after picking. | — |
-| `berries_picking` | produce | Cold organic berries with a dry, clean carton bottom. | Flip the container and check for juice stains or fuzz. | — |
+| `berries_picking` | produce | Berries from a local farm, grown without sprays, then organic. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Unwashed produce for storing; wash it when you use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
 | `revive_greens` | produce · home | Limp greens without decay, ready for a cold-water soak. | Trim the stem ends and stand them in ice water thirty minutes. | — |
-| `cream_vs_creamer` | eggs_dairy | Grass-fed heavy cream or half-and-half: cream and milk only. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
+| `cream_vs_creamer` | eggs_dairy | Grass-fed cream from a small dairy, pasteurized, not ultra-pasteurized. | Read the panel for milkfat percent — real cream states 36% or 10.5%. | — |
 | `flour_basics` | bulk_pantry | Whole wheat flour; on white flour, unbleached and unbromated. | Read the list for potassium bromate, and take the smallest whole-wheat bag. | — |
 | `bulk_bins_buying` | bulk_pantry | Rice, oats, beans, lentils and spices from a busy bin. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Whole spices, bought small and ground as you go. | Toast them in a dry pan until they smell, then grind. | — |
@@ -107,7 +107,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_root_vegetables` | produce | Firm local potatoes and carrots labeled grown without sprays. | Press each root for firmness, and twist the tops off carrots before storing. | — |
 | `produce_brassicas` | produce | Organic broccoli, cauliflower and cabbage, tight heads, no soft spots. | Check for closed, dark green florets, then press the head for soft spots. | — |
 | `produce_onions_garlic` | produce | Organic onions and garlic, firm, with a dry neck. | Squeeze the bulb, smell it, and keep it out of the plastic bag. | — |
-| `produce_leafy_greens` | produce | Crisp organic greens, evenly colored, without wilt or yellowing. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
+| `produce_leafy_greens` | produce | Lettuce grown without sprays, bagged or head, then organic. | Check the leaves stand crisp and fully green, then keep them cold at home. | — |
 | `produce_peppers` | produce | Firm local or greenhouse peppers labeled grown without sprays. | Pick a firm, unbruised pepper and pass on any that has shriveled or softened. | — |
 | `produce_apples_pears` | produce | Local in-season apples and pears, labeled grown without sprays. | Turn each apple or pear over and leave any bruised or damaged one behind. | — |
 | `produce_citrus` | produce | Organic oranges, lemons and limes, firm with a smooth rind. | Choose citrus that feels firm with unblemished rind, and leave the soft ones. | — |

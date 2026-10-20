@@ -6,7 +6,10 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9 } from './twoLinePin.js';
+import { CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10 } from './twoLinePin.js';
+
+// clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
+const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -102,8 +105,8 @@ test('C5 no bread or grain front names organic', () => {
 });
 
 test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id) && !CLEAN_PICK_9.has(e.id));
-  nonEmpty(others, 'others', 150);
+  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
+  nonEmpty(others, 'others', 145);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
@@ -121,7 +124,7 @@ test('C7 doLines.json unchanged; review headlines move only on the batch ids', (
   let seen = 0;
   for (const [id, row] of baseRows) {
     if (CLEAN_PICK_5.has(id)) continue;
-    if (CLEAN_PICK_9.has(id)) continue; // clean-pick-9 moves these headlines; cleanPick9.test.js pins them
+    if (CP9or10(id)) continue; // clean-pick-9 moves these headlines; cleanPick9.test.js pins them
     const lr = liveRows.get(id);
     assert.ok(lr, id);
     if (DECISION_CHANGED.includes(id)) {

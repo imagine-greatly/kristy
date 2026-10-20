@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { preCleanPick10, CLEAN_PICK_10 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 import { scoreEntries } from '../../lib/perimeter.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
@@ -251,7 +252,8 @@ const STANDARD = {
 const ORGANIC = ['chicken_breast', 'ground_turkey', 'rotisserie_chicken', 'sugars', 'tortillas'];
 const DROPPED = []; // no base buying_tips line leaves its card
 const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
-const live = (id) => find(kb, id);
+// clean-pick-10 owns chicken_cuts_basics and ground_turkey now; this batch reads them as of 117ab78.
+const live = (id) => preCleanPick10(find(kb, id));
 const was = (id) => find(base, id);
 // Strings this batch wrote: changed front fields, new tips, the gloss, and what detail gained.
 const written = (id) => {
@@ -325,8 +327,10 @@ test('C7 do lines stay; the review rows for batch ids carry the new headline; no
       continue;
     }
     seen++;
-    assert.equal(review[i], old[i].replace(` | ${was(id).decision} | `, ` | ${live(id).decision} | `), `${id} review row`);
-    assert.ok(review[i].includes(` | ${live(id).decision} | ${doLines[id]} |`), `${id} headline and do`);
+    // clean-pick-10 moved cream_vs_creamer's headline again; its row carries the live decision.
+    const head = CLEAN_PICK_10.has(id) ? find(kb, id).decision : live(id).decision;
+    assert.equal(review[i], old[i].replace(` | ${was(id).decision} | `, ` | ${head} | `), `${id} review row`);
+    assert.ok(review[i].includes(` | ${head} | ${doLines[id]} |`), `${id} headline and do`);
   }
   assert.equal(seen, IDS.length, 'one review row per batch id');
 });

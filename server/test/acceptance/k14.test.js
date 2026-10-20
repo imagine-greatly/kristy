@@ -13,7 +13,7 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import { WEAK_MATCH_CEILING } from '../../lib/counterGaps.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
-import { beforeConcern, preCleanPick9 } from './twoLinePin.js';
+import { beforeConcern, preCleanPick9, preCleanPick10 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -80,7 +80,7 @@ test('C5 every cited URL hits line 1 of a docs/sources/k14 or item-cards file', 
   const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
   for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
   // clean-pick-9 archived its new URLs under docs/sources/concerns; read its ids as of 96d61e2.
-  const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (beforeConcern(preCleanPick9(byId(id)))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
+  const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (beforeConcern(preCleanPick9(preCleanPick10(byId(id))))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k14 source`);
 });
 

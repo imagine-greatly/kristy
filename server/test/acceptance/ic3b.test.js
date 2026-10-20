@@ -12,7 +12,7 @@ import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, sentences, words, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from '../../lib/doLines.json' with { type: 'json' };
-import { preCleanPick2, preCleanPick9 } from './twoLinePin.js';
+import { preCleanPick2, preCleanPick9, preCleanPick10 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 // C7 baseline: 8d12647 (ic-3a HEAD), so sources ic-3a moved in by fold do not read as new here.
@@ -117,7 +117,7 @@ test('C7 new URLs archived', () => {
   for (const id of BATCH) {
     const old = new Set((pre(id)?.sources || []).map((s) => JSON.stringify(s)));
     // clean-pick-9 archived its new URLs under docs/sources/concerns; this batch reads sources as of 96d61e2.
-    for (const s of preCleanPick9(now(id)).sources || []) {
+    for (const s of preCleanPick9(preCleanPick10(now(id))).sources || []) {
       if (old.has(JSON.stringify(s))) continue;
       for (const u of String(typeof s === 'string' ? s : s.url).match(/https?:\/\/\S+/g) || []) {
         checked++;
