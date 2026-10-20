@@ -6,6 +6,7 @@ import { generateList } from '../lib/list.js';
 import { composeListEdit } from '../lib/listCompose.js';
 import { sanitizeList, applyCompose, buildCart, composeOutcome, reconcileSummary } from '../lib/cartEdit.js';
 import { attachCards } from '../lib/listMatch.js';
+import { buildPlannedCart } from '../lib/plannedCart.js';
 import { readListPhoto } from '../lib/listVision.js';
 import { parseListText, specifyImportedItems, importSummary } from '../lib/listImport.js';
 import { imageUpload } from '../lib/upload.js';
@@ -218,6 +219,11 @@ router.post('/list', (req, res) => {
     }
 
     const prefs = sanitizeGuestPrefs(req.body || {});
+    // Kristy's planned cart: one of three fixed carts, no goal needed, zero model calls.
+    if (req.body?.plan === 'kristy') {
+      const list = buildPlannedCart({ cart: req.body.cart, nonNegotiables: prefs.nonNegotiables });
+      return res.json({ list, planned: true, prefs });
+    }
     if (!prefs.goals.length) return res.status(400).json({ error: 'goals_required' });
 
     const list = attachCards(generateList({ ...prefs, premium: true }));

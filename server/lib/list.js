@@ -469,10 +469,10 @@ export function foodTags(name) {
 // refusal is not a personalization luxury. dairy-free / gluten-free shape the LIST
 // (we control its item tags) even though the ingredient KB can't verify them on a
 // scanned product (that stays advisory in the verdict engine).
-const EXCLUDE_TAGS = {
+export const EXCLUDE_TAGS = {
   'dairy-free': ['dairy'],
   vegetarian: ['meat', 'fish'],
-  vegan: ['meat', 'fish', 'egg', 'dairy'],
+  vegan: ['meat', 'fish', 'egg', 'dairy', 'honey'],
   'gluten-free': ['gluten'],
 };
 

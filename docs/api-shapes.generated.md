@@ -151,6 +151,7 @@ Mounted at: `/api/guest`
 ### POST /list  ·  public
 
 - `429` → { error: String, message: String }
+- `200` → { list: ???, planned: Bool, prefs: ??? }
 - `400` → { error: String }
 - `200` → { list: ???, taste: Bool, prefs: ??? }
 - `503` → { error: Bool, message: String }
@@ -495,4 +496,4 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /trips/import` (trips.js) — opaque: out
 
-_60 handlers, 162 literal responses derived._
+_60 handlers, 163 literal responses derived._

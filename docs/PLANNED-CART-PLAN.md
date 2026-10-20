@@ -238,13 +238,94 @@ rules hold: only `user`/`imported` rows are protected, and a "no" is permanent.
 2. **cart_pick names don't match back to their own card** (alias drift). **Early check:** P1's
    `cardSlug === id` 21/21 test, plus `listMatchProbe.js` 0 wrong, before any iOS work.
 
-## Open questions (Devon's)
-1. Approve the 21-row Appendix (P0) as the "well thought" cart, or set the slot counts differently.
-2. Should the shopper's goals add up to 3 picks to the planned cart in v1 (the existing ≤3 adds
-   rule), or should v1 be one cart for everyone, filtered by hard lines only? Recommended: one cart.
-3. Should the action also appear on a non-empty list as "fill the empty sections"? Recommended: not
-   in v1.
+## Devon's ruling (2026-10-20)
+> "as far as a planned cart for them goes, it should just be the items recommended with the same shop mode as if someone had added it themselves, and is the cart random or do we recommend a few selection of carts that are all ultra healthy and goo an even balance holistic leaning ... go ahead on all of ur recs"
 
-## Appendix — PLANNED_CART (filled by P0, awaiting scout)
-`[PLACEHOLDER]` Unverified seed candidates (TRY_POOL ids): `salmon_wild_vs_farmed`, `ground_beef_lean_ratio`,
-`chicken_cuts_basics`, `yogurt_plain_vs_flavored`, `oats_steelcut_rolled_instant`, `beans_dried_vs_canned`.
+- **Not random: three fixed, hand-curated carts.** Each covers every section, uses only clean
+  `cart_pick` names, and leans holistic. Every shopper sees the same three; hard lines filter rows,
+  goals add nothing (open question 2 resolved: one set for everyone).
+- **Rows behave exactly like the shopper's own.** Once landed they are ordinary rows in the same
+  shop mode: card attach, two lines, check-off, removal. P2 stamps them `source: 'user'` so a later
+  compose never wipes them (resolves Risk 1 at the server, not only on iOS), and composition rule 7
+  is superseded.
+- **Only on an empty list** (open question 3 resolved: not on a non-empty list in v1).
+- P1 exports `PLANNED_CARTS` (3 keyed carts); P2 takes `{ plan: 'kristy', cart: '<key>' }`.
+- Frozen holds 1 row per cart: `frozen_vs_fresh_produce` is the only concrete frozen pick on the
+  stance (fries, waffles, pizza and meals are not ultra-healthy). 20 rows per cart, count noted
+  under P0's rough-edge rule.
+
+## Appendix: PLANNED_CARTS (P0, curated 2026-10-20)
+Every cart_pick below is resolved from `server/kristy_perimeter_kb.json` by id, byte-equal.
+Hard lines need explicit row tags (scout: `foodTags` misses names such as organ blend and venison).
+
+### everyday
+| section | id | cart_pick |
+| --- | --- | --- |
+| produce | `produce_leafy_greens` | Lettuce: grown without sprays, or organic |
+| produce | `berries_picking` | Berries: grown without sprays, or organic |
+| produce | `produce_root_vegetables` | Organic carrots and potatoes |
+| produce | `produce_onions_garlic` | Organic onions and garlic |
+| produce | `produce_bananas` | Organic green bananas |
+| meat | `beef_grassfed_vs_grainfed` | 100% grass-fed or grass-finished ground beef |
+| meat | `chicken_cuts_basics` | Pasture-raised whole chicken or bone-in thighs |
+| meat | `pork_cuts_and_enhanced` | Organic or pasture-raised pork shoulder |
+| seafood | `salmon_wild_vs_farmed` | Wild-caught salmon |
+| seafood | `canned_fish_choosing` | Sardines packed in olive oil |
+| eggs_dairy | `egg_labels` | Corn- and soy-free eggs from hens on pasture |
+| eggs_dairy | `grassfed_butter` | Grass-fed butter |
+| eggs_dairy | `whole_vs_reduced_fat_milk` | 100% grass-fed low-temp pasteurized whole milk |
+| eggs_dairy | `yogurt_plain_vs_flavored` | Plain Greek yogurt, 100% grass-fed |
+| bulk_pantry | `olive_oil_grades` | Extra-virgin olive oil |
+| bulk_pantry | `oats_steelcut_rolled_instant` | Organic steel-cut oats |
+| bulk_pantry | `beans_dried_vs_canned` | Organic dried beans |
+| bulk_pantry | `nuts_raw_vs_roasted` | Raw or dry-roasted almonds |
+| bulk_pantry | `honey_adulteration` | Raw local honey |
+| frozen | `frozen_vs_fresh_produce` | Organic frozen vegetables |
+
+### nose_to_tail
+| section | id | cart_pick |
+| --- | --- | --- |
+| produce | `produce_brassicas` | Organic broccoli, cauliflower, or cabbage |
+| produce | `sprouts_raw` | Organic broccoli sprouts |
+| produce | `produce_mushrooms` | Organic mushrooms |
+| produce | `produce_citrus` | Organic oranges, lemons, or limes |
+| produce | `produce_apples_pears` | Organic apples or pears |
+| meat | `organ_meats` | Pasture-raised beef liver or organ meat |
+| meat | `lamb_goat` | 100% grass-fed or grass-finished lamb |
+| meat | `butcher_counter_asking` | Grass-fed soup bones from the butcher counter |
+| seafood | `shrimp_imported_vs_domestic` | Wild American shrimp |
+| seafood | `farmed_fish_by_species` | Farmed mussels |
+| eggs_dairy | `egg_duck_quail` | Pasture-raised organic duck or quail eggs |
+| eggs_dairy | `raw_kefir` | Plain raw kefir |
+| eggs_dairy | `raw_aged_cheese` | Aged raw-milk cheddar |
+| eggs_dairy | `ghee` | Grass-fed ghee |
+| bulk_pantry | `sauerkraut` | Raw sauerkraut from the cold case |
+| bulk_pantry | `lard_tallow` | Pasture-raised lard or grass-fed tallow |
+| bulk_pantry | `raw_cider_vinegar` | Organic raw cider vinegar with the mother |
+| bulk_pantry | `sprouted_grain_bread` | Sprouted grain bread, no added flour |
+| bulk_pantry | `seeds` | Ground flaxseed, kept cold once opened |
+| frozen | `frozen_vs_fresh_produce` | Organic frozen vegetables |
+
+### garden_and_sea
+| section | id | cart_pick |
+| --- | --- | --- |
+| produce | `produce_peppers` | Organic bell peppers |
+| produce | `produce_stone_fruit` | Organic peaches, plums, or cherries |
+| produce | `produce_green_beans` | Organic green beans |
+| produce | `produce_onions_garlic` | Organic onions and garlic |
+| produce | `berries_picking` | Berries: grown without sprays, or organic |
+| meat | `ground_turkey` | Pasture-raised or organic plain ground turkey |
+| meat | `bison` | 100% grass-fed or grass-finished bison |
+| meat | `chicken_breast` | Pasture-raised or organic chicken breast |
+| seafood | `white_fish` | Wild-caught white fish fillet |
+| seafood | `scallops` | Dry-packed scallops |
+| eggs_dairy | `egg_labels` | Corn- and soy-free eggs from hens on pasture |
+| eggs_dairy | `plain_kefir` | 100% grass-fed whole-milk plain kefir |
+| eggs_dairy | `cottage_cheese` | Grass-fed culture-set cottage cheese |
+| eggs_dairy | `cheese_real_vs_processed` | Grass-fed block cheese |
+| bulk_pantry | `grains_beyond_rice` | Organic whole or hulled grain, not pearled |
+| bulk_pantry | `rice_arsenic` | White basmati rice |
+| bulk_pantry | `miso` | Organic miso paste |
+| bulk_pantry | `hummus` | Organic hummus: chickpeas and tahini |
+| bulk_pantry | `nut_butter_ingredients` | Natural peanut butter |
+| frozen | `frozen_vs_fresh_produce` | Organic frozen vegetables |
