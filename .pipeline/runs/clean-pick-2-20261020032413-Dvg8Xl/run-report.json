@@ -1,0 +1,281 @@
+{
+  "kind": "build",
+  "runId": "clean-pick-2-20261020032413-Dvg8Xl",
+  "piece_id": "/Users/m1/kristy:clean-pick-2",
+  "attempt": 3,
+  "spec": "/Users/m1/kristy/.pipeline/specs/clean-pick-2.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "RED:ROUNDS",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 0
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 1
+    },
+    {
+      "kind": "gate",
+      "detail": "verify → 1",
+      "round": 2
+    }
+  ],
+  "usage": {
+    "input": 4709958,
+    "cached": 4131840,
+    "output": 36060,
+    "reasoning": 8872
+  },
+  "over_ceiling": true,
+  "ms": 670215,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": false,
+  "fix_rounds": 2,
+  "green": false,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-20T01:24:13.540Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-2-20261020032413-Dvg8Xl:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/events-0.jsonl",
+      "usage": {
+        "input": 1196268,
+        "cached": 1082752,
+        "output": 9760,
+        "reasoning": 2279
+      },
+      "tokens": 1206028,
+      "mem_free_mb": 145,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a156ed-4b88-7f00-9775-f80e3808ecc7",
+        "usage": {
+          "input": 1196268,
+          "cached": 1082752,
+          "output": 9760,
+          "reasoning": 2279
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"docs/do-lines-review.md\",\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/ic3b.test.js\",\n    \"server/test/acceptance/passRule.js\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All 17 entries match expected values; 16 changed. The provisioned cleanPick2 acceptance test was present and left unchanged.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Decision/cart limits pass. twoLineCheck: 181 checked, 0 violations.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"All 17 why-first and organic-standard tip checks pass.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"New-text restrictions pass; synthetic appears only in the permitted hub narrowing.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"All 17 fronts name organic; outside presence is unchanged. Assumptions: explicit exceptions preserve label_organic_scope and the seasonality cart.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"194 outside entries equal baseline; prohibited fields remain unchanged everywhere. cleanPick1 retains 178 entries with the specified floor of 173.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Exactly 10 review headlines changed. All do cells remain unchanged; rebuilt doLines.json is byte-identical to baseline.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Every baseline tip is retained or demoted verbatim. NOTES: hub and banana depth contradictions and older low-residue reasoning remain as scoped; no sources changed.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All 15 carts match their own cards. listMatchProbe reports no wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"48 new front/tip strings checked; none appears on more than two entries.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"No batch decision contains conventional.\"\n    },\n    {\n      \"id\": \"verification\",\n      \"met\": false,\n      \"evidence\": \"Acceptance: 11/11 pass. Commit guard and diff checks pass. Full npm suite ran once: 2855 pass, 1 fail, 0 skipped. NOTE: unowned k14.test.js:152 freezes passRule.js, conflicting with the spec-required two additions. Left unchanged; reporting done per Builder Contract. The ic3b helper import adds two existing pin-test executions, yielding 2856 total. Full-suite ship bar remains unmet. Historical pin updates follow the approved scope exception; no migration ran.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'for path in server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/ic3b.test.js server/test/acceptance/passRule.js; do if test -f \"$path\"; then cat \"$path\"; else echo \"MISSING: $path\"; fi; done'",
+          "/bin/zsh -lc \"pwd && git status --short && rg --files -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!client/dist'\"' -g '\"'!server/node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'for instruction_file in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if test -f \"$instruction_file\"; then cat \"$instruction_file\"; fi; done\nrg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!client/dist'\"' -g '\"'!server/node_modules'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"'\"",
+          "/bin/zsh -lc 'for source_file in server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/ic3b.test.js server/test/acceptance/passRule.js; do if test -f \"$source_file\"; then cat \"$source_file\"; else echo \"MISSING: $source_file\"; fi; done'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick1.test.js server/test/acceptance/w2.test.js'",
+          "/bin/zsh -lc 'wc -l server/test/acceptance/twoLinePin.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/w4.test.js docs/do-lines-review.md server/lib/listMatch.js\ncat .pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/report.schema.json server/package.json package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/scripts/commitGuard.js server/scripts/listMatchProbe.js'",
+          "/bin/zsh -lc 'cat .pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/report.schema.json server/package.json package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/scripts/commitGuard.js\nwc -l server/test/acceptance/twoLinePin.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/w4.test.js docs/do-lines-review.md'",
+          "/bin/zsh -lc \"sed -n '1,65p' server/test/acceptance/twoLinePin.js\ntail -n 95 server/test/acceptance/twoLinePin.js\nsed -n '1,45p' server/test/acceptance/w2.test.js\nsed -n '1,55p' server/test/acceptance/ca-4b.test.js\nsed -n '1,50p' server/test/acceptance/ca-7.test.js\nsed -n '1,45p' server/test/acceptance/w4.test.js\nrg -n '\"'^url:'\"' docs/sources/item-cards/7cfr205.105-prohibited-substances.md\nrg -n 'matchItemToCard|slug:' server/lib/listMatch.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport assert from 'node:assert/strict';\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst base = JSON.parse(execFileSync('git', ['show', '74237ce:server/kristy_perimeter_kb.json'], {maxBuffer: 64 << 20, encoding:'utf8'}));\nassert.deepEqual(kb, base);\nconst ids = ['organic_worth_it_by_type','frozen_vs_fresh_produce','produce_seasonality','sprouts_raw','berries_picking','produce_leafy_greens','produce_peppers','produce_apples_pears','produce_stone_fruit','produce_green_beans','produce_root_vegetables','produce_brassicas','produce_onions_garlic','produce_citrus','produce_mushrooms','produce_bananas','label_organic_scope'];\nfor (const e of base.entries.filter(e => ids.includes(e.id))) console.log(JSON.stringify({id:e.id,decision:e.decision,cart_pick:e.cart_pick,tier_note:e.tier_note,buying_tips:e.buying_tips}));\nconsole.log('entries', kb.entries.length);\nconst pin = readFileSync('server/test/acceptance/twoLinePin.js','utf8');\nconsole.log(pin.slice(0, 750));\nconst review = readFileSync('docs/do-lines-review.md','utf8');\nconsole.log(review.split('\\\\n').filter(l=>ids.some(id=>l.startsWith('| \"'`'\"'+id+'\"'` |'\"'))).join('\\\\n'));\nconsole.log('KB formatting preserved by JSON.stringify:',readFileSync('server/kristy_perimeter_kb.json','utf8') === JSON.stringify(kb,null,2)+'\\\\n');\nNODE\"",
+          "/bin/zsh -lc \"rg -n '\"'^export const TWO_LINE|''^const PICK_PINS|''^};$|\"organic_worth_it_by_type\"|\"sprouts_raw\"|\"produce_root_vegetables\"|\"produce_brassicas\"|\"label_organic_scope\"'\"' server/test/acceptance/twoLinePin.js\nsed -n '430,485p' server/test/acceptance/twoLinePin.js\nsed -n '1290,1350p' server/test/acceptance/twoLinePin.js\nsed -n '2960,3000p' server/test/acceptance/twoLinePin.js\nrg -n 'writeFile|mkdir|mkdtemp|execFile|spawn|dotenv|\\\\.env' server/lib/commitScope.test.js server/lib/deployBoundary.test.js server/lib/doLines.test.js server/lib/listMatch.js server/test/acceptance/k5.test.js server/test/acceptance/k14.test.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync, writeFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport assert from 'node:assert/strict';\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst kb = JSON.parse(readFileSync(kbPath, 'utf8'));\nconst base = JSON.parse(execFileSync('git', ['show', '74237ce:'+kbPath], {encoding:'utf8',maxBuffer:64<<20}));\nassert.deepEqual(kb, base);\nconst updates = {\n  organic_worth_it_by_type: {decision:'Organic produce, first on everything eaten skin-on.'},\n  frozen_vs_fresh_produce: {decision:'Plain organic frozen produce, picked ripe and frozen within hours.',cart_pick:'Organic frozen vegetables'},\n  produce_seasonality: {decision:'Organic in-season produce, or frozen when out of season.'},\n  sprouts_raw: {decision:'Organic sprouts from the cold case, white roots, crisp stems.',cart_pick:'Organic broccoli sprouts'},\n  berries_picking: {cart_pick:'Organic strawberries or blueberries'},\n  produce_leafy_greens: {cart_pick:'Organic spinach, kale, or lettuce'},\n  produce_peppers: {cart_pick:'Organic bell peppers'},\n  produce_apples_pears: {cart_pick:'Organic apples or pears'},\n  produce_stone_fruit: {cart_pick:'Organic peaches, plums, or cherries'},\n  produce_green_beans: {cart_pick:'Organic green beans'},\n  produce_root_vegetables: {\n    decision:'Organic potatoes and carrots, firm, with nothing soft or sprouting.',\n    cart_pick:'Organic carrots and potatoes',\n    tier_note:'USDA testing ranks potatoes high for residue, and organic is the certified standard for both roots.',\n  },\n  produce_brassicas: {\n    decision:'Organic broccoli, cauliflower and cabbage, tight heads, no soft spots.',\n    cart_pick:'Organic broccoli, cauliflower, or cabbage',\n    tier_note:'Broccoli and cabbage are eaten without a peel, and organic heads are certified to the USDA standard.',\n  },\n  produce_onions_garlic: {\n    decision:'Organic onions and garlic, firm, with a dry neck.',\n    cart_pick:'Organic onions and garlic',\n    tier_note:'Onions and garlic grown to the USDA Organic standard carry the seal, papery skin and all.',\n  },\n  produce_citrus: {\n    decision:'Organic oranges, lemons and limes, firm with a smooth rind.',\n    cart_pick:'Organic oranges, lemons, or limes',\n    tier_note:'Zest goes in whole, and organic citrus is certified to the USDA Organic standard.',\n  },\n  produce_mushrooms: {\n    decision:'Organic mushrooms, dry and firm, with no dark spots.',\n    cart_pick:'Organic mushrooms',\n    tier_note:'Mushrooms get eaten whole, cap and stem, and organic ones carry the USDA Organic seal.',\n  },\n  produce_bananas: {\n    decision:'Organic bananas, green, to finish ripening on the counter.',\n    cart_pick:'Organic green bananas',\n    tier_note:'Organic bananas are certified to the USDA Organic standard and finish ripening on the counter the same way.',\n  },\n  label_organic_scope: {},\n};\nconst standards = {\n  organic_worth_it_by_type:'The USDA Organic seal on the sign or sticker is the standard to read.',\n  frozen_vs_fresh_produce:'Frozen organic bags carry the same USDA Organic seal and rules as fresh.',\n  produce_seasonality:'In-season organic produce carries the USDA Organic seal, fresh or frozen.',\n  sprouts_raw:'Sprouts are eaten raw and whole, so the USDA Organic seal is the standard here.',\n  berries_picking:'Berries are eaten whole, so the USDA Organic seal on the clamshell is the standard.',\n  produce_leafy_greens:'Leaves are eaten whole, so the USDA Organic seal is the standard for greens.',\n  produce_peppers:'The skin gets eaten, so the USDA Organic seal is the standard for peppers.',\n  produce_apples_pears:'Apples and pears are eaten skin-on, so the USDA Organic seal is the standard.',\n  produce_stone_fruit:'Stone fruit is eaten skin-on, so the USDA Organic seal is the standard here.',\n  produce_green_beans:'The whole pod gets eaten, so the USDA Organic seal is the standard for beans.',\n  produce_root_vegetables:'The USDA Organic seal on the bag is the standard for potatoes and carrots.',\n  produce_brassicas:'The USDA Organic seal is the standard for broccoli, cauliflower and cabbage.',\n  produce_onions_garlic:'Organic onions and garlic are grown and certified to the USDA Organic standard.',\n  produce_citrus:'Organic citrus carries the USDA Organic seal, which covers the peel used for zest.',\n  produce_mushrooms:'Organic mushrooms carry the USDA Organic seal, loose or packed.',\n  produce_bananas:'Organic bananas are grown and certified to the USDA Organic standard.',\n};\nconst whys = {\n  produce_root_vegetables:'Potatoes rank high for residue in USDA testing, and the skin often gets eaten.',\n  produce_brassicas:'Florets and leaves are eaten whole, with no peel to take surface residue away.',\n};\nconst demotedTips = {organic_worth_it_by_type:[2,3],produce_root_vegetables:[0],produce_brassicas:[0]};\nconst ids = Object.keys(updates);\nfor (const id of ids) {\n  const e = kb.entries.find(e=>e.id===id);\n  const b = base.entries.find(e=>e.id===id);\n  assert.ok(e && b,id);\n  const dropped = demotedTips[id] || [];\n  const detailParts = dropped.map(i=>b.buying_tips[i]);\n  if (updates[id].tier_note) detailParts.push(b.tier_note);\n  Object.assign(e,updates[id]);\n  e.buying_tips = b.buying_tips.filter((_,i)=>\"'!dropped.includes(i));\n  if (whys[id]) e.buying_tips.unshift(whys[id]);\n  if (standards[id]) e.buying_tips.splice(1,0,standards[id]);\n  if (detailParts.length) e.detail = b.detail+'\"' '+detailParts.join(' ');\n}\nkb.entries.find(e=>e.id==='organic_worth_it_by_type').labels_decoded[0].meaning = 'Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones.';\nconst reviewPath = 'docs/do-lines-review.md';\nlet review = readFileSync(reviewPath,'utf8');\nlet headlines = 0;\nfor (const [id, fields] of Object.entries(updates)) {\n  if (\"'!fields.decision) continue;\n  const b = base.entries.find(e=>e.id===id);\n  const marker = '\"'| \"'`'\"'+id+'\"'` | '\"'+b.category+' | '+b.decision+' |';\n  assert.equal(review.split(marker).length,2,id+' review row');\n  review = review.replace(marker,'| \"'`'\"'+id+'\"'` | '\"'+b.category+' | '+fields.decision+' |');\n  headlines++;\n}\nassert.equal(headlines,10);\nconst pinPath = 'server/test/acceptance/twoLinePin.js';\nlet pin = readFileSync(pinPath,'utf8');\nconst start = pin.indexOf('export const TWO_LINE = ')+'export const TWO_LINE = '.length;\nconst end = pin.indexOf('\\\\n};',start)+2;\nconst oldJson = pin.slice(start,end);\nconst pins = JSON.parse(oldJson);\nassert.equal(JSON.stringify(pins,null,2),oldJson,'pin format');\nfor (const id of Object.keys(standards)) {\n  const entry = kb.entries.find(e=>e.id===id);\n  assert.ok(pins[id],id+' pin missing');\n  pins[id].decision = entry.decision;\n  pins[id].buying_tips = entry.buying_tips;\n}\npin = pin.slice(0,start)+JSON.stringify(pins,null,2)+pin.slice(end);\npin += \\\"\\\\n// clean-pick-2 (2026-10-20) moved these produce fronts on; older batch tests read them as of 74237ce, and cleanPick2.test.js owns the new text.\\\\n\\\";\npin += 'export const CLEAN_PICK_2 = new Set(['+Object.keys(standards).map(id=>\\\"'\\\"+id+\\\"'\\\").join(', ')+']);\\\\n';\npin += \\\"const PRE_CP2 = JSON.parse(execFileSync('git', ['show', '74237ce:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());\\\\n\\\";\npin += 'export const preCleanPick2 = (e) => (e && CLEAN_PICK_2.has(e.id) ? PRE_CP2.entries.find((x) => x.id === e.id) : e);\\\\n';\nwriteFileSync(kbPath,JSON.stringify(kb,null,2)+'\\\\n');\nwriteFileSync(reviewPath,review);\nwriteFileSync(pinPath,pin);\nconsole.log('Updated 16 cards, 16 pins and 10 review headlines; label_organic_scope remains unchanged.');\nNODE\"",
+          "/bin/zsh -lc \"node --test server/test/acceptance/cleanPick2.test.js && cd server && node scripts/buildDoLines.js && node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {execFileSync} from 'node:child_process';\nconst live = readFileSync('lib/doLines.json','utf8');\nconst base = execFileSync('git',['show','74237ce:server/lib/doLines.json'],{encoding:'utf8'});\nassert.deepEqual(JSON.parse(live),JSON.parse(base));\nassert.equal(live,base);\nconsole.log('doLines.json is byte-identical to 74237ce');\nNODE\"",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js'",
+          "/bin/zsh -lc 'git diff -- docs/do-lines-review.md server/test/acceptance/twoLinePin.js'",
+          "/bin/zsh -lc 'git diff --check && git diff --stat && git diff -- server/test/acceptance/cleanPick1.test.js server/test/acceptance/ic3b.test.js server/test/acceptance/passRule.js server/test/acceptance/w2.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/w4.test.js'",
+          "/bin/zsh -lc 'npm test'",
+          "/bin/zsh -lc \"sed -n '115,190p' server/test/acceptance/k14.test.js\ngit diff --check\ngit status --short\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {execFileSync} from 'node:child_process';\nconst baseText = execFileSync('git',['show','74237ce:server/kristy_perimeter_kb.json'],{encoding:'utf8',maxBuffer:64<<20});\nconst base=JSON.parse(baseText), kb=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst changed=kb.entries.filter(e=>JSON.stringify(e)\"'!==JSON.stringify(base.entries.find(b=>b.id===e.id)));\nconst forbidden=['\"'aliases','asked_as','sources','evidence_tier','category','pick_steps','watch_out','short_answer','kristy_take','science','why','question'];\nfor(const e of kb.entries){const b=base.entries.find(b=>b.id===e.id); for(const f of forbidden) assert.deepEqual(e[f],b[f],e.id+'.'+f);}\nconst strings=[];\nfor(const e of changed){const b=base.entries.find(b=>b.id===e.id); for(const f of ['decision','cart_pick','tier_note']) if(e[f]\"'!==b[f]) strings.push(e[f]); strings.push(...e.buying_tips.filter(t=>!b.buying_tips.includes(t)));}\nconsole.log(JSON.stringify({entries:kb.entries.length,changed:changed.length,outsideB2:kb.entries.length-17,freshStrings:strings.length,maxFreshWords:Math.max(...strings.map(s=>s.split(/'\"\\\\s+/).length)),frozenFields:'unchanged'}));\nconst beforePass=execFileSync('git',['show','74237ce:server/test/acceptance/passRule.js'],{encoding:'utf8'});\nconst afterPass=readFileSync('server/test/acceptance/passRule.js','utf8');\nassert.equal(afterPass.match(/export const ITEM_CARD_REWRITE = new Set\\\\(\\\\[[\\\\s\\\\S]*?\\\\]\\\\);/)[0],beforePass.match(/export const ITEM_CARD_REWRITE = new Set\\\\(\\\\[[\\\\s\\\\S]*?\\\\]\\\\);/)[0]);\nconsole.log('ITEM_CARD_REWRITE unchanged');\nNODE\""
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-2-20261020032413-Dvg8Xl:1",
+      "round": 1,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/events-1.jsonl",
+      "usage": {
+        "input": 1691281,
+        "cached": 1459840,
+        "output": 12579,
+        "reasoning": 3072
+      },
+      "tokens": 1703860,
+      "mem_free_mb": 1077,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a156ed-4b88-7f00-9775-f80e3808ecc7",
+        "usage": {
+          "input": 1691281,
+          "cached": 1459840,
+          "output": 12579,
+          "reasoning": 3072
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"docs/do-lines-review.md\",\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/ic3b.test.js\",\n    \"server/test/acceptance/passRule.js\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"Rechecked: all 17 entries equal the required final values.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Length checks pass; prior twoLineCheck reported 181 checked, 0 violations.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Why-first and organic-standard tip checks pass.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"New-text restrictions pass.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"All 17 fronts name organic; outside presence remains unchanged.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"194 outside entries equal baseline. cleanPick1 protects 178 entries with floor 173.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Exactly 10 review headlines changed; do cells and doLines.json remain unchanged.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Every baseline tip remains present or demoted verbatim. Scoped depth contradictions remain unchanged.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All 15 carts match their own cards; prior listMatchProbe reported no wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"New-string repetition checks pass.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"No batch decision contains conventional.\"\n    },\n    {\n      \"id\": \"verification\",\n      \"met\": false,\n      \"evidence\": \"NOTE: no compliant fix exists within owns. Unowned k14.test.js:152 requires passRule.js to equal 719f9fe, directly conflicting with the two spec-required additions. A read-only diagnostic confirmed reverting them causes K5 failures for frozen_vs_fresh_produce and sprouts_raw. Rechecking cleanPick2, K5 and K14 yielded 109 pass, 1 fail; only K14 C12 fails. Full-suite result remains 2855 pass, 1 fail. The owner must amend C12 to permit precisely those additions. No files changed this round and no checks were suppressed. Assumptions: Builder Contract rule 2 governs this conflict, so status is done with a NOTE rather than blocked.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc \"sed -n '145,190p' server/test/acceptance/k14.test.js\ncat server/test/acceptance/passRule.js\nsed -n '1,145p' server/test/acceptance/k5.test.js\nsed -n '1,115p' server/test/acceptance/k14.test.js\"",
+          "/bin/zsh -lc \"git status --short\ncat .pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/report.schema.json\nrg -n 'assertPassRule|beforeConcern|withTwoLine|beforeTwoLine' server/test/acceptance/{k5,k6,k7,k8,k9,k10,k11,k14,ktight-l,ic1}.test.js\nsed -n '3260,3370p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { pathToFileURL } from 'node:url';\nimport { resolve } from 'node:path';\nimport assert from 'node:assert/strict';\nconst historical = execFileSync('git', ['show', '719f9fe:server/test/acceptance/passRule.js'], { encoding: 'utf8' });\nconst moduleText = historical\n  .replace(\\\"'../../lib/counterCardLint.js'\\\", JSON.stringify(pathToFileURL(resolve('server/lib/counterCardLint.js')).href))\n  .replace(\\\"'../../kristy_perimeter_kb.json'\\\", JSON.stringify(pathToFileURL(resolve('server/kristy_perimeter_kb.json')).href));\nconst { assertPassRule } = await import('data:text/javascript;base64,' + Buffer.from(moduleText).toString('base64'));\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst fixture = JSON.parse(readFileSync('server/test/acceptance/fixtures/kb-pre-readability.json', 'utf8'));\nfor (const id of ['frozen_vs_fresh_produce', 'sprouts_raw']) {\n  const before = (fixture.entries ?? fixture).find(e => e.id === id);\n  const live = kb.entries.find(e => e.id === id);\n  assert.throws(() => assertPassRule(null, before, live), error => {\n    assert.equal(error.code, 'ERR_ASSERTION');\n    assert.equal(error.message, \"'`${id}: frozen field cart_pick changed`);\n    console.log('\"'Restoring historical passRule would fail K5:', error.message);\n    return true;\n  });\n}\nconsole.log('No files modified by this diagnostic.');\nNODE\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { pathToFileURL } from 'node:url';\nimport { resolve } from 'node:path';\nimport assert from 'node:assert/strict';\nconst historical = execFileSync('git', ['show', '719f9fe:server/test/acceptance/passRule.js'], { encoding: 'utf8' });\nconst moduleText = historical\n  .replace(\\\"'../../lib/counterCardLint.js'\\\", JSON.stringify(pathToFileURL(resolve('server/lib/counterCardLint.js')).href))\n  .replace(\\\"'../../kristy_perimeter_kb.json'\\\", JSON.stringify(pathToFileURL(resolve('server/kristy_perimeter_kb.json')).href));\nconst { assertPassRule } = await import('data:text/javascript;base64,' + Buffer.from(moduleText).toString('base64'));\nconst kb = JSON.parse(readFileSync('server/kristy_perimeter_kb.json', 'utf8'));\nconst fixture = JSON.parse(readFileSync('server/test/acceptance/fixtures/kb-pre-readability.json', 'utf8'));\nfor (const id of ['frozen_vs_fresh_produce', 'sprouts_raw']) {\n  const before = (fixture.entries ?? fixture).find(e => e.id === id);\n  const live = kb.entries.find(e => e.id === id);\n  assert.throws(() => assertPassRule(null, before, live), error => {\n    assert.equal(error.code, 'ERR_ASSERTION');\n    assert.equal(error.message.split('\\\\n')[0], \"'`${id}: frozen field cart_pick changed`);\n    console.log('\"'Restoring historical passRule would fail K5:', error.message.split('\\\\n')[0]);\n    return true;\n  });\n}\nconsole.log('No files modified by this diagnostic.');\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/cleanPick2.test.js server/test/acceptance/k5.test.js server/test/acceptance/k14.test.js'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    },
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-2-20261020032413-Dvg8Xl:2",
+      "round": 2,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/events-2.jsonl",
+      "usage": {
+        "input": 1822409,
+        "cached": 1589248,
+        "output": 13721,
+        "reasoning": 3521
+      },
+      "tokens": 1836130,
+      "mem_free_mb": 1060,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a156ed-4b88-7f00-9775-f80e3808ecc7",
+        "usage": {
+          "input": 1822409,
+          "cached": 1589248,
+          "output": 13721,
+          "reasoning": 3521
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"docs/do-lines-review.md\",\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/ic3b.test.js\",\n    \"server/test/acceptance/passRule.js\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All 17 final-value checks pass.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Length checks pass; twoLineCheck reports 181 checked, 0 violations.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"Why-first and organic-standard tip checks pass.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"New-text restrictions pass.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"All 17 fronts name organic; outside presence is unchanged.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"194 outside entries equal baseline; prohibited fields remain unchanged.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Exactly 10 headlines changed; do cells and rebuilt doLines.json remain unchanged.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Every baseline tip is retained or demoted verbatim.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All 15 carts match their cards; listMatchProbe reports no wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"New-string repetition checks pass.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"No batch decision contains conventional.\"\n    },\n    {\n      \"id\": \"verification\",\n      \"met\": false,\n      \"evidence\": \"NOTE: latest dv verification remains 2855 pass, 1 fail. Unowned k14.test.js:152 freezes passRule.js byte-for-byte, contradicting the spec-required two additions. Reverting those additions demonstrably fails K5 for frozen_vs_fresh_produce and sprouts_raw. No compliant fix exists within owns. Resolution requires updating K14 C12 to allow precisely the mandated additions. No further files changed, and no checks were suppressed. Assumptions: Builder Contract rule 2 requires preserving the implementation and reporting this unowned test conflict as done with a NOTE. The full-suite ship bar remains unmet.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [],
+        "errors": [],
+        "unknownTypes": [],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 4746018,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 241,
+    "key": "5442850a85d6b02e494df91bfda5a5727a1790f5b3743d7fed3a55b439238572",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-2-20261020032413-Dvg8Xl:0",
+  "mem_free_mb": 1060,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 11732,
+      "tail": "  ---\n  duration_ms: 4.678291\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2854 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.258416\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2855 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 143.077083\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2856 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.365542\n  type: 'test'\n  ...\n1..2856\n# tests 2856\n# suites 0\n# pass 2855\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10597.658458\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 11627,
+      "tail": "  ---\n  duration_ms: 0.52675\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2854 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.155125\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2855 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 148.336542\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2856 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.712708\n  type: 'test'\n  ...\n1..2856\n# tests 2856\n# suites 0\n# pass 2855\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10505.624958\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/verify-1/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 1,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "code": 1,
+      "ms": 11753,
+      "tail": "  ---\n  duration_ms: 0.531208\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2854 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.154292\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2855 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 142.748042\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2856 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 0.351416\n  type: 'test'\n  ...\n1..2856\n# tests 2856\n# suites 0\n# pass 2855\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 10645.501375\nnpm error Lifecycle script `test` failed with error:\nnpm error code 1\nnpm error path /Users/m1/kristy/server\nnpm error workspace kristy-server@1.0.0\nnpm error location /Users/m1/kristy/server\nnpm error command failed\nnpm error command sh -c node --test",
+      "failures": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-2-20261020032413-Dvg8Xl/verify-2/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 2,
+      "pre_existing": [],
+      "regressions": [
+        {
+          "id": "C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays",
+          "test_path": "server/test/acceptance/k14.test.js",
+          "first_error": "Expected values to be strictly equal:"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-20T01:35:23.755Z",
+  "readiness": "NOT READY"
+}

@@ -1,0 +1,353 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the 17 B2 ids equal their final values; every other field is unchanged; the carrying phrase is present
+not ok 1 - C1 the 17 B2 ids equal their final values; every other field is unchanged; the carrying phrase is present
+  ---
+  duration_ms: 2.026125
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:147:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    organic_worth_it_by_type
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        aliases: [
+          'organic produce',
+          'organic worth it',
+          'dirty dozen',
+    ...
+          'Residue sits on the skin, so a peel you throw away takes it with it.',
+    -     'The USDA Organic seal on the sign or sticker is the standard to read.',
+          'Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.',
+    +     'Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.',
+    +     'Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.'
+        ],
+        category: 'produce',
+    +   decision: 'Organic for produce eaten whole; conventional for what you peel.',
+    +   detail: 'Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin.',
+    -   decision: 'Organic produce, first on everything eaten skin-on.',
+    -   detail: 'Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.',
+        evidence_tier: 'credible_concern',
+        eyebrow_short: 'Buying organic',
+        id: 'organic_worth_it_by_type',
+        kristy_take: 'An avocado or kiwi can feel delicate and still have a peel you throw away. Choose conventional there; keep organic for the produce you eat whole.',
+        labels_decoded: [
+          {
+    +       meaning: 'Grown to the National Organic Program rules and certified, with no SYNTHETIC pesticides. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones.',
+    -       meaning: 'Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones.',
+            term: 'USDA Organic'
+          },
+          {
+            meaning: 'Means essentially nothing on produce, with no organic standard behind it.',
+            term: 'Natural'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'organic_worth_it_by_type'
+    title: 'Produce'
+    aliases:
+      0: 'organic produce'
+      1: 'organic worth it'
+      2: 'dirty dozen'
+      3: 'clean fifteen'
+      4: 'pesticides'
+      5: 'organic fruit'
+      6: 'organic vegetables'
+      7: 'is organic worth it'
+      8: 'should i buy organic'
+      9: 'pay for organic'
+      10: 'organic worth the money'
+      11: 'produce should be organic'
+    category: 'produce'
+    question: 'Is organic produce worth the extra money?'
+    decision: 'Organic produce, first on everything eaten skin-on.'
+    why: 'Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.'
+    short_answer: 'Organic earns the money where the skin gets eaten: berries, leafy greens, apples, grapes, potatoes. Anything peeled goes in conventional, even the ones that feel delicate: avocado, kiwi, mango, banana, citrus, onion.'
+    detail: 'Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.'
+    evidence_tier: 'credible_concern'
+    sources:
+      0: 'USDA Pesticide Data Program'
+      1: 'EPA tolerance limits'
+      2: 'peer-reviewed critiques of Dirty Dozen methodology'
+      3: "EWG Shopper's Guide to Pesticides in Produce (2025)"
+      4: 'Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php'
+      5: 'Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php'
+    kristy_take: 'An avocado or kiwi can feel delicate and still have a peel you throw away. Choose conventional there; keep organic for the produce you eat whole.'
+    buying_tips:
+      0: 'Residue sits on the skin, so a peel you throw away takes it with it.'
+      1: 'The USDA Organic seal on the sign or sticker is the standard to read.'
+      2: 'Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.'
+    watch_out:
+      0: 'The rule is the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they sit on the plain side. A potato reads as sturdy and gets eaten skin-on, so it does not.'
+      1: 'Sturdy vegetables eaten whole are the gap this rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low anyway, so nothing is lost buying those plain.'
+      2: 'Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.'
+      3: 'The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.'
+      4: 'If organic means fewer vegetables in the cart, buy conventional and eat more.'
+    pick_steps:
+      0: 'Ask if the skin gets eaten: berries, greens, apples, grapes, potatoes go organic.'
+      1: 'Anything peeled goes in plain, however soft it feels, like avocado or kiwi.'
+      2: 'Trust the USDA Organic seal; Natural means nothing on produce.'
+    science: 'Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. The Dirty Dozen order is contested; the eaten-whole reasoning holds. If organic means fewer vegetables, buy conventional and eat more.'
+    labels_decoded:
+      0:
+        term: 'USDA Organic'
+        meaning: 'Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones.'
+      1:
+        term: 'Natural'
+        meaning: 'Means essentially nothing on produce, with no organic standard behind it.'
+    tier_note: 'Surface residue on berries and greens eaten whole is a credible concern, and the ranking behind any list of them is not settled.'
+    eyebrow_short: 'Buying organic'
+    asked_as:
+      0: 'is organic worth it'
+      1: 'should i buy organic produce'
+      2: 'which produce should be organic'
+  actual:
+    id: 'organic_worth_it_by_type'
+    title: 'Produce'
+    aliases:
+      0: 'organic produce'
+      1: 'organic worth it'
+      2: 'dirty dozen'
+      3: 'clean fifteen'
+      4: 'pesticides'
+      5: 'organic fruit'
+      6: 'organic vegetables'
+      7: 'is organic worth it'
+      8: 'should i buy organic'
+      9: 'pay for organic'
+      10: 'organic worth the money'
+      11: 'produce should be organic'
+    category: 'produce'
+    question: 'Is organic produce worth the extra money?'
+    decision: 'Organic for produce eaten whole; conventional for what you peel.'
+    why: 'Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.'
+    short_answer: 'Organic earns the money where the skin gets eaten: berries, leafy greens, apples, grapes, potatoes. Anything peeled goes in conventional, even the ones that feel delicate: avocado, kiwi, mango, banana, citrus, onion.'
+    detail: 'Pesticide residues on conventional produce are generally within legal limits, and washing removes some. The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. The specific “Dirty Dozen” ranking and its risk framing are debated by scientists, so it rates a credible concern at most, never a settled fact. Eating more produce, organic or not, is the win. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin.'
+    evidence_tier: 'credible_concern'
+    sources:
+      0: 'USDA Pesticide Data Program'
+      1: 'EPA tolerance limits'
+      2: 'peer-reviewed critiques of Dirty Dozen methodology'
+      3: "EWG Shopper's Guide to Pesticides in Produce (2025)"
+      4: 'Environmental Working Group “The Clean Fifteen” https://www.ewg.org/foodnews/clean-fifteen.php'
+      5: 'Environmental Working Group “Shopper’s Guide to Pesticides in Produce, full list” https://www.ewg.org/foodnews/full-list.php'
+    kristy_take: 'An avocado or kiwi can feel delicate and still have a peel you throw away. Choose conventional there; keep organic for the produce you eat whole.'
+    buying_tips:
+      0: 'Residue sits on the skin, so a peel you throw away takes it with it.'
+      1: 'Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.'
+      2: 'Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.'
+      3: 'Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.'
+    watch_out:
+      0: 'The rule is the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they sit on the plain side. A potato reads as sturdy and gets eaten skin-on, so it does not.'
+      1: 'Sturdy vegetables eaten whole are the gap this rule does not cover. Asparagus, cabbage, cauliflower, mushrooms and carrots test low anyway, so nothing is lost buying those plain.'
+      2: 'Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.'
+      3: 'The “Dirty Dozen” ranking is contested on its methodology. The eaten-whole reasoning holds; the list order does not.'
+      4: 'If organic means fewer vegetables in the cart, buy conventional and eat more.'
+    pick_steps:
+      0: 'Ask if the skin gets eaten: berries, greens, apples, grapes, potatoes go organic.'
+      1: 'Anything peeled goes in plain, however soft it feels, like avocado or kiwi.'
+      2: 'Trust the USDA Organic seal; Natural means nothing on produce.'
+    science: 'Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. The Dirty Dozen order is contested; the eaten-whole reasoning holds. If organic means fewer vegetables, buy conventional and eat more.'
+    labels_decoded:
+      0:
+        term: 'USDA Organic'
+        meaning: 'Grown to the National Organic Program rules and certified, with no SYNTHETIC pesticides. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones.'
+      1:
+        term: 'Natural'
+        meaning: 'Means essentially nothing on produce, with no organic standard behind it.'
+    tier_note: 'Surface residue on berries and greens eaten whole is a credible concern, and the ranking behind any list of them is not settled.'
+    eyebrow_short: 'Buying organic'
+    asked_as:
+      0: 'is organic worth it'
+      1: 'should i buy organic produce'
+      2: 'which produce should be organic'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:150:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 decisions are at most 10 words and carts at most 46 characters
+ok 2 - C2 decisions are at most 10 words and carts at most 46 characters
+  ---
+  duration_ms: 0.229375
+  type: 'test'
+  ...
+# Subtest: C3 tips[0] is a why, not an imperative or the decision; tips[1] names organic
+not ok 3 - C3 tips[0] is a why, not an imperative or the decision; tips[1] names organic
+  ---
+  duration_ms: 0.203833
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:165:1'
+  failureType: 'testCodeFailure'
+  error: 'organic_worth_it_by_type'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:170:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 no new text carries a banned word, first person, an em dash or a straight apostrophe
+not ok 4 - C4 no new text carries a banned word, first person, an em dash or a straight apostrophe
+  ---
+  duration_ms: 0.165625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:174:1'
+  failureType: 'testCodeFailure'
+  error: 'written has 0 members (need 30+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:176:3)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C5 every B2 id names organic; outside the batch organic presence is unchanged
+not ok 5 - C5 every B2 id names organic; outside the batch organic presence is unchanged
+  ---
+  duration_ms: 0.119542
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:188:1'
+  failureType: 'testCodeFailure'
+  error: 'frozen_vs_fresh_produce'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:190:32)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 entries outside the batch deepEqual 74237ce
+ok 6 - C6 entries outside the batch deepEqual 74237ce
+  ---
+  duration_ms: 1.572334
+  type: 'test'
+  ...
+# Subtest: C7 doLines.json unchanged; review headlines move only on decision-changed ids
+ok 7 - C7 doLines.json unchanged; review headlines move only on decision-changed ids
+  ---
+  duration_ms: 23.137042
+  type: 'test'
+  ...
+# Subtest: C8 every base tip is kept or demoted into detail
+not ok 8 - C8 every base tip is kept or demoted into detail
+  ---
+  duration_ms: 0.159541
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:226:1'
+  failureType: 'testCodeFailure'
+  error: 'organic_worth_it_by_type dropped tip 2 not in detail'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:230:51
+    Array.forEach (<anonymous>)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:229:25)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C9 each cart pick matches its own card
+not ok 9 - C9 each cart pick matches its own card
+  ---
+  duration_ms: 3.127042
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:236:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Frozen vegetables, no sauce -> undefined
+    + actual - expected
+    
+    + undefined
+    - 'frozen_vs_fresh_produce'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'frozen_vs_fresh_produce'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:241:12)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C10 no new string sits on more than 2 entries
+not ok 10 - C10 no new string sits on more than 2 entries
+  ---
+  duration_ms: 0.218666
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:245:1'
+  failureType: 'testCodeFailure'
+  error: 'fresh has 0 members (need 30+). Every assertion ranging over it would pass vacuously, so this fails loudly instead. Fix what produced the empty collection — the checks that read it are reporting nothing.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    nonEmpty (file:///Users/m1/kristy/server/lib/testGuards.js:32:11)
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:254:3)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C11 no B2 decision says conventional
+not ok 11 - C11 no B2 decision says conventional
+  ---
+  duration_ms: 0.105334
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:261:1'
+  failureType: 'testCodeFailure'
+  error: 'organic_worth_it_by_type'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Organic for produce eaten whole; conventional for what you peel.'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick2.test.js:262:32)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 3
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 191.304916

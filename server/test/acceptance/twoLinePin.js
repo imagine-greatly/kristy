@@ -200,18 +200,18 @@ export const TWO_LINE = {
     "cart_pick": "Corn- and soy-free eggs from hens on pasture"
   },
   "organic_worth_it_by_type": {
-    "decision": "Organic for produce eaten whole; conventional for what you peel.",
+    "decision": "Organic produce, first on everything eaten skin-on.",
     "buying_tips": [
       "Residue sits on the skin, so a peel you throw away takes it with it.",
-      "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes.",
-      "Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.",
-      "Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse."
+      "The USDA Organic seal on the sign or sticker is the standard to read.",
+      "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes."
     ]
   },
   "frozen_vs_fresh_produce": {
-    "decision": "Plain frozen produce, picked ripe and frozen within hours.",
+    "decision": "Plain organic frozen produce, picked ripe and frozen within hours.",
     "buying_tips": [
       "Freezing holds produce at peak ripeness, while fresh can lose nutrients in transit.",
+      "Frozen organic bags carry the same USDA Organic seal and rules as fresh.",
       "Check the bag lists just the vegetable/fruit. No sauces or added sugar.",
       "Frozen berries and spinach are staples that never spoil.",
       "Great for smoothies, soups, and sheet-pan roasts."
@@ -229,9 +229,10 @@ export const TWO_LINE = {
     ]
   },
   "produce_seasonality": {
-    "decision": "In-season produce, or frozen when it is out of season.",
+    "decision": "Organic in-season produce, or frozen when out of season.",
     "buying_tips": [
       "In season, it travels less and reaches you closer to ripe, so it tastes better.",
+      "In-season organic produce carries the USDA Organic seal, fresh or frozen.",
       "The cheapest, most abundant produce this week is usually what’s in season.",
       "Off-season, reach for frozen instead of sad ‘fresh’.",
       "Farmers’ markets are a fast read on what’s actually in season locally.",
@@ -900,6 +901,7 @@ export const TWO_LINE = {
     "decision": "Cold organic berries with a dry, clean carton bottom.",
     "buying_tips": [
       "The bottom berries carry the weight and mold first, while the top still looks fresh.",
+      "Berries are eaten whole, so the USDA Organic seal on the clamshell is the standard.",
       "A dry, unstained bottom on the carton. That is the whole check.",
       "No fuzzy white or gray spot on any berry. One takes the punnet.",
       "Green caps still fresh on strawberries, not browned and dry.",
@@ -1216,9 +1218,10 @@ export const TWO_LINE = {
     ]
   },
   "sprouts_raw": {
-    "decision": "Cold-case sprouts with white roots and crisp stems.",
+    "decision": "Organic sprouts from the cold case, white roots, crisp stems.",
     "buying_tips": [
       "Warm, damp growing conditions also multiply any bacteria already on the seed.",
+      "Sprouts are eaten raw and whole, so the USDA Organic seal is the standard here.",
       "The refrigerated case only. Room-temperature sprouts have been left in growing conditions.",
       "Roots still white and threadlike, stems crisp rather than limp.",
       "No condensation fogging the clamshell and no sour smell through the vents.",
@@ -1227,9 +1230,10 @@ export const TWO_LINE = {
     ]
   },
   "produce_root_vegetables": {
-    "decision": "Firm organic potatoes, conventional carrots, with nothing soft or sprouting.",
+    "decision": "Organic potatoes and carrots, firm, with nothing soft or sprouting.",
     "buying_tips": [
-      "Carrots rank among the lowest for pesticide residue, so conventional is fine there.",
+      "Potatoes rank high for residue in USDA testing, and the skin often gets eaten.",
+      "The USDA Organic seal on the bag is the standard for potatoes and carrots.",
       "Potatoes: firm, with no bruises, nicks, or soft spots.",
       "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
       "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
@@ -1240,9 +1244,10 @@ export const TWO_LINE = {
     ]
   },
   "produce_brassicas": {
-    "decision": "Conventional cabbage and cauliflower, tight heads, no soft spots.",
+    "decision": "Organic broccoli, cauliflower and cabbage, tight heads, no soft spots.",
     "buying_tips": [
-      "Cabbage and cauliflower rank among the lowest produce for pesticide residue.",
+      "Florets and leaves are eaten whole, with no peel to take surface residue away.",
+      "The USDA Organic seal is the standard for broccoli, cauliflower and cabbage.",
       "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
       "Cauliflower: a head with no bruises or damage.",
       "Cabbage: outer leaves fresh, not wilted or insect-damaged. Remove any that are.",
@@ -1252,9 +1257,10 @@ export const TWO_LINE = {
     ]
   },
   "produce_onions_garlic": {
-    "decision": "Conventional onions and garlic, firm with a dry neck.",
+    "decision": "Organic onions and garlic, firm, with a dry neck.",
     "buying_tips": [
       "A dry neck and papery skins mark a well-cured bulb; soft or scented ones are fading.",
+      "Organic onions and garlic are grown and certified to the USDA Organic standard.",
       "Onions firm for their size, with little to no scent.",
       "An onion neck that is completely dry to the touch, not slippery.",
       "Garlic well cured: dried neck, dry outer skins, cloves firm to the touch.",
@@ -1267,6 +1273,7 @@ export const TWO_LINE = {
     "decision": "Crisp organic greens, evenly colored, without wilt or yellowing.",
     "buying_tips": [
       "By weight, spinach carries more pesticide residue than any other produce.",
+      "Leaves are eaten whole, so the USDA Organic seal is the standard for greens.",
       "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
       "Romaine: a head that is neither very loose nor very hard. Loose is immature; hard is overmature.",
       "Spinach: uniformly green, fully crisp, fairly clean.",
@@ -1279,6 +1286,7 @@ export const TWO_LINE = {
     "decision": "Firm organic peppers, evenly colored, without cracks or soft spots.",
     "buying_tips": [
       "A firm pepper still holds its water; wrinkled skin means it dried out in storage.",
+      "The skin gets eaten, so the USDA Organic seal is the standard for peppers.",
       "Firm, with uniform shape, size, and color for the variety.",
       "Colored peppers: at least half of the surface colored.",
       "Free of cracks, decay, sunburn, disease, or insect damage.",
@@ -1291,6 +1299,7 @@ export const TWO_LINE = {
     "decision": "Unbruised organic apples and pears, with no spoiled fruit alongside.",
     "buying_tips": [
       "Bruised fruit makes the sound fruit beside it ripen and rot faster.",
+      "Apples and pears are eaten skin-on, so the USDA Organic seal is the standard.",
       "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
       "Pears: free of bruising, insect damage, and decay; a firm green Bartlett ripens off the tree.",
       "Store in the dark at 30 to 32°F, up to 40°F, in a ventilated box or a perforated bag.",
@@ -1300,9 +1309,10 @@ export const TWO_LINE = {
     ]
   },
   "produce_citrus": {
-    "decision": "Firm, smooth citrus: conventional to eat, organic for zest.",
+    "decision": "Organic oranges, lemons and limes, firm with a smooth rind.",
     "buying_tips": [
       "A partly green orange can be fully mature, so firmness and a smooth rind tell more.",
+      "Organic citrus carries the USDA Organic seal, which covers the peel used for zest.",
       "Oranges: even color, firm, smooth, no decay, bruising, or blemishes.",
       "Lemons: even yellow, firm, smooth, no drying, rind stains, or shriveling.",
       "Limes: firm and smooth, no bruises, oil spotting, or dryness; yellow ones have more juice.",
@@ -1315,6 +1325,7 @@ export const TWO_LINE = {
     "decision": "Unbruised organic peaches, nectarines, plums and cherries, color fully turned.",
     "buying_tips": [
       "A bruise stays for good, and peaches and cherries both make the Dirty Dozen.",
+      "Stone fruit is eaten skin-on, so the USDA Organic seal is the standard here.",
       "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
       "Plums: skin color turned for the variety, no bruises or damage.",
       "Cherries: full color across the surface, green fleshy stems, no cracks, pecks, or shriveling.",
@@ -1588,18 +1599,20 @@ export const TWO_LINE = {
     ]
   },
   "produce_mushrooms": {
-    "decision": "Dry, firm conventional mushrooms with no dark spots.",
+    "decision": "Organic mushrooms, dry and firm, with no dark spots.",
     "buying_tips": [
       "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one.",
+      "Organic mushrooms carry the USDA Organic seal, loose or packed.",
       "Feel for a dry, firm cap and pass on any with dark spots.",
       "Pick closed caps for a mild flavor and open caps for a stronger one.",
       "Buy them loose to take only the amount needed."
     ]
   },
   "produce_bananas": {
-    "decision": "Green bananas to finish ripening on your counter.",
+    "decision": "Organic bananas, green, to finish ripening on the counter.",
     "buying_tips": [
       "Bananas get sweeter as the green fades, and ripening on the plant often splits them.",
+      "Organic bananas are grown and certified to the USDA Organic standard.",
       "Take the greenest bunch for the week; it keeps ripening at home.",
       "Keep green bananas out of the fridge. Cold below 56°F can stop them ripening.",
       "Pass on fruit with skin splits or dark streaks."
@@ -1609,6 +1622,7 @@ export const TWO_LINE = {
     "decision": "Smooth, crisp, slender organic beans, without bulging seeds.",
     "buying_tips": [
       "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
+      "The whole pod gets eaten, so the USDA Organic seal is the standard for beans.",
       "Pick smooth, slender pods with no seeds bulging through.",
       "Leave beans with brown or rust spots behind.",
       "Store them cold and cook them within five days."
@@ -3324,3 +3338,8 @@ export const preTidy = (e) => (e && TIDIED.has(e.id) ? PRE_TIDY.entries.find((x)
 export const CLEAN_PICK_1 = new Set(['sugars', 'rotisserie_chicken', 'chicken_breast', 'chicken_cuts_basics', 'ground_turkey', 'turkey_whole', 'grassfed_butter', 'cheese_real_vs_processed', 'cream_vs_creamer', 'sour_cream', 'cream_cheese', 'sandwich_bread', 'tortillas', 'mayo', 'pasta_sauce', 'white_fish']);
 const PRE_CP1 = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick = (e) => (e && CLEAN_PICK_1.has(e.id) ? PRE_CP1.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-2 (2026-10-20) moved these produce fronts on; older batch tests read them as of 74237ce, and cleanPick2.test.js owns the new text.
+export const CLEAN_PICK_2 = new Set(['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas']);
+const PRE_CP2 = JSON.parse(execFileSync('git', ['show', '74237ce:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick2 = (e) => (e && CLEAN_PICK_2.has(e.id) ? PRE_CP2.entries.find((x) => x.id === e.id) : e);

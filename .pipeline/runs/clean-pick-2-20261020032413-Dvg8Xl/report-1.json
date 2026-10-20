@@ -1,0 +1,79 @@
+{
+  "status": "done",
+  "files_changed": [
+    "docs/do-lines-review.md",
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/ic3b.test.js",
+    "server/test/acceptance/passRule.js",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "Rechecked: all 17 entries equal the required final values."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Length checks pass; prior twoLineCheck reported 181 checked, 0 violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Why-first and organic-standard tip checks pass."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "New-text restrictions pass."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "All 17 fronts name organic; outside presence remains unchanged."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "194 outside entries equal baseline. cleanPick1 protects 178 entries with floor 173."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Exactly 10 review headlines changed; do cells and doLines.json remain unchanged."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Every baseline tip remains present or demoted verbatim. Scoped depth contradictions remain unchanged."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All 15 carts match their own cards; prior listMatchProbe reported no wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "New-string repetition checks pass."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "No batch decision contains conventional."
+    },
+    {
+      "id": "verification",
+      "met": false,
+      "evidence": "NOTE: no compliant fix exists within owns. Unowned k14.test.js:152 requires passRule.js to equal 719f9fe, directly conflicting with the two spec-required additions. A read-only diagnostic confirmed reverting them causes K5 failures for frozen_vs_fresh_produce and sprouts_raw. Rechecking cleanPick2, K5 and K14 yielded 109 pass, 1 fail; only K14 C12 fails. Full-suite result remains 2855 pass, 1 fail. The owner must amend C12 to permit precisely those additions. No files changed this round and no checks were suppressed. Assumptions: Builder Contract rule 2 governs this conflict, so status is done with a NOTE rather than blocked."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

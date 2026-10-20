@@ -8,8 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine, beforeConcern, preCleanPick } from './twoLinePin.js';
-kb.entries = kb.entries.map(preCleanPick);
+import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2 } from './twoLinePin.js';
+kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(e)));
 
 // Independent of the production predicate: a narrowed scope cannot hide cards.
 const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);

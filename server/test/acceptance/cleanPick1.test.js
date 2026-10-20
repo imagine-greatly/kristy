@@ -221,6 +221,8 @@ const BECAME = {
   },
 };
 const IDS = Object.keys(BECAME);
+// Later clean-pick batches own these ids; cleanPick1 no longer freezes them. Each batch appends its ids.
+const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope']);
 // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
 // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
 const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
@@ -297,7 +299,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
 });
 
 test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id)), 'other entries', 190);
+  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 173);
   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
   assert.equal(kb.entries.length, base.entries.length);
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
@@ -311,7 +313,11 @@ test('C7 do lines stay; the review rows for batch ids carry the new headline; no
   let seen = 0;
   for (let i = 0; i < old.length; i++) {
     const id = IDS.find((x) => old[i].startsWith(`| \`${x}\` |`) && old[i].includes(` | ${was(x).decision} | `));
-    if (!id) { assert.equal(review[i], old[i], `review line ${i + 1}`); continue; }
+    if (!id) {
+      if (old[i].startsWith('| `') && LATER.has(old[i].split('`')[1])) continue;
+      assert.equal(review[i], old[i], `review line ${i + 1}`);
+      continue;
+    }
     seen++;
     assert.equal(review[i], old[i].replace(` | ${was(id).decision} | `, ` | ${live(id).decision} | `), `${id} review row`);
     assert.ok(review[i].includes(` | ${live(id).decision} | ${doLines[id]} |`), `${id} headline and do`);

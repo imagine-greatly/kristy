@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(e)));
+kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(e))));
 const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
 const now = (id) => kb.entries.find((e) => e.id === id);

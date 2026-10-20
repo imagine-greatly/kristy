@@ -155,7 +155,8 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
-  // Concern batches may only read the frozen-field check through beforeConcern.
+  // Concern batches may only read the frozen-field check through beforeConcern;
+  // k5 reads it through preCleanPick2 (clean-pick-2 organic produce carts, 2026-10-20).
   for (const file of ['k6', 'k7', 'k8', 'k10', 'k11']) {
     const old = execSync(`git show 719f9fe:server/test/acceptance/${file}.test.js`, { cwd: ROOT }).toString();
     const concern = old
@@ -172,8 +173,10 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     '    // from home technique to its buying family. w2.test.js pins both outcomes.',
     "    const retiredAliases = id === 'organic_worth_it_by_type' ? ['grapes', 'kiwi', 'kiwis']",
     "      : id === 'revive_greens' ? ['lettuce'] : [];",
-    '    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, now);',
+    '    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, preCleanPick2(now));',
   ].join('\n');
   assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k5.test.js'), 'utf8'),
-    oldK5.replace('    assertPassRule(t, old, now);', w2));
+    oldK5
+      .replace("import { assertPassRule } from './passRule.js';", "import { assertPassRule } from './passRule.js';\nimport { preCleanPick2 } from './twoLinePin.js';")
+      .replace('    assertPassRule(t, old, now);', w2));
 });

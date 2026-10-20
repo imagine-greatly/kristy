@@ -12,12 +12,15 @@ import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, sentences, words, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from '../../lib/doLines.json' with { type: 'json' };
+import { preCleanPick2 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 // C7 baseline: 8d12647 (ic-3a HEAD), so sources ic-3a moved in by fold do not read as new here.
 const PRE = JSON.parse(execFileSync('git', ['show', '8d12647:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const now = (id) => kb.entries.find((e) => e.id === id);
+// historical, clean-pick-2 Q1 A: the conventional-for-peeled headlines were retired on 2026-10-20.
+const was = (id) => preCleanPick2(now(id));
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded', 'cart_pick'];
 const spoken = (e) => JSON.stringify(SPOKEN.map((f) => e[f] ?? ''));
@@ -41,7 +44,7 @@ test('C1 Produce hub', () => {
   assert.equal(o.title, 'Produce');
   // W2 leaves the section's skin wording in the section and preserves this answer.
   // Two-line rewrite (2026-10-17, approved rule): same answer, line 1 form.
-  assert.equal(o.decision, 'Organic for produce eaten whole; conventional for what you peel.');
+  assert.equal(was('organic_worth_it_by_type').decision, 'Organic for produce eaten whole; conventional for what you peel.');
   for (const a of ['banana', 'bananas']) {
     assert.ok(!o.aliases.includes(a), `hub still carries ${a}`);
     assert.ok(now('produce_bananas').aliases.includes(a), `produce_bananas lacks ${a}`);
@@ -52,7 +55,7 @@ test('C2 produce_bananas shape', () => {
   const b = now('produce_bananas');
   assert.ok(b, 'produce_bananas missing');
   assert.equal(b.title, 'Bananas');
-  assert.equal(b.decision, 'Green bananas to finish ripening on your counter.');
+  assert.equal(was('produce_bananas').decision, 'Green bananas to finish ripening on your counter.');
   assert.equal(pre('produce_bananas'), undefined, 'the card is new');
   assert.deepEqual(Object.keys(b).sort(), [...new Set([...Object.keys(now('produce_mushrooms')), 'asked_as'])].sort());
   nonEmpty(b.asked_as, 'banana asked_as', 3);
@@ -74,7 +77,7 @@ test('C3 banana asks land', () => {
 
 test('C4 residue kind agrees', () => {
   for (const [id, kind] of Object.entries(KIND)) {
-    const e = now(id);
+    const e = was(id);
     const t = `${e.decision} ${e.tier_note}`;
     assert.match(t, /\b(organic|conventional)\b/i, id);
     if (kind === 'organic') { assert.match(t, /\borganic\b/i, id); assert.doesNotMatch(t, /\bconventional\b/i, id); }
