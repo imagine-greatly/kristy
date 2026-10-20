@@ -105,7 +105,7 @@ const SET = {
     ]
   },
   "pick_sausage": {
-    "decision": "Organic sausage: certified organic feed and outdoor access; celery powder supplies nitrite.",
+    "decision": "Pastured pork sausage from a local farm; celery powder supplies nitrite.",
     "sources": [
       {
         "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -478,8 +478,8 @@ test('C11 the 4 picks: decision and sources only, keep phrases, short, grass on 
     assert.ok(ws(d) <= 14, `${id} ${ws(d)} words`);
     assert.ok(lintWords(d) <= 16, `${id} ${lintWords(d)} lint words`);
     assert.equal(GRASS.test(d), ['pick_soup_bones', 'pick_jerky'].includes(id), `${id} grass term`);
-    assert.equal(d.includes(G4), ['pick_sausage', 'pick_egg_whites'].includes(id), `${id} G4 gloss`);
-    assert.equal(/\borganic\b/i.test(d), ['pick_sausage', 'pick_egg_whites'].includes(id), `${id} organic`);
+    assert.equal(d.includes(G4), id === 'pick_egg_whites', `${id} G4 gloss`);
+    assert.equal(/\borganic\b/i.test(d), id === 'pick_egg_whites', `${id} organic`);
   }
   const others = (k) => k.entries.filter((e) => isPick(e) && !PICKS.includes(e.id));
   nonEmpty(others(kb), 'other picks', 20);
@@ -489,12 +489,12 @@ test('C11 the 4 picks: decision and sources only, keep phrases, short, grass on 
 
 test('C12 lintSections L4 reads a pick’s own decision for its gloss; cards still do not count it', () => {
   assert.deepEqual(lintSections(sectionRules, kb.entries), []);
-  const swap = (e) => kb.entries.map((x) => (x.id === 'pick_sausage' ? e : x));
-  const bare = { ...live('pick_sausage'), decision: 'Organic sausage with named meat; celery powder supplies nitrite.' };
-  assert.ok(lintSections(sectionRules, swap(bare)).some((v) => v.code === 'TERM_UNGLOSSED' && v.id === 'pick_sausage'), 'unglossed pick passes');
-  const { kind, ...asCard } = live('pick_sausage');
+  const swap = (e) => kb.entries.map((x) => (x.id === 'pick_egg_whites' ? e : x));
+  const bare = { ...live('pick_egg_whites'), decision: 'Organic egg whites, pasteurized, to the federal standard.' };
+  assert.ok(lintSections(sectionRules, swap(bare)).some((v) => v.code === 'TERM_UNGLOSSED' && v.id === 'pick_egg_whites'), 'unglossed pick passes');
+  const { kind, ...asCard } = live('pick_egg_whites');
   assert.equal(kind, 'pick');
-  assert.ok(lintSections(sectionRules, swap(asCard)).some((v) => v.code === 'TERM_UNGLOSSED' && v.id === 'pick_sausage'), 'card decision counted as gloss');
+  assert.ok(lintSections(sectionRules, swap(asCard)).some((v) => v.code === 'TERM_UNGLOSSED' && v.id === 'pick_egg_whites'), 'card decision counted as gloss');
 });
 
 test('C13 pick routing equals the base; each pick row carries its new line', () => {

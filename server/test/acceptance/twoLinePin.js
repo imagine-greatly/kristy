@@ -3361,7 +3361,7 @@ export const TWO_LINE = {
 // that enumeration contract; the test below checks every own property, including the concern picks.
 const PICK_PINS = {
   "pick_sausage": {
-    "decision": "Organic sausage: certified organic feed and outdoor access; celery powder supplies nitrite.",
+    "decision": "Pastured pork sausage from a local farm; celery powder supplies nitrite.",
     "sources": [
       {
         "name": "Cornell LII: 9 CFR § 319.140 Sausage",
