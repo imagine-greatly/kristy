@@ -3472,6 +3472,7 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 
 test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
   const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
@@ -3636,3 +3637,10 @@ export const T6_2 = new Set(['egg_labels', 'whole_vs_reduced_fat_milk', 'yogurt_
 export const T6_2_BASE = 'ca32bef';
 const PRE_T6_2 = JSON.parse(execFileSync('git', ['show', `${T6_2_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preT6_2 = (e) => (e && T6_2.has(e.id) ? PRE_T6_2.entries.find((x) => x.id === e.id) : e);
+
+// t6-3: pantry register avoids and archived sources; decisions and carts stay.
+// Older acceptance pins read these 14 as of 6d6ca49; t6_3.test.js owns the live copy.
+export const T6_3 = new Set(['nuts_raw_vs_roasted', 'nut_butter_ingredients', 'cooking_oils', 'whole_spices', 'dried_herbs', 'specialty_flours', 'fermented_pickles', 'frozen_fries', 'bottled_water_buying', 'deli_salads', 'prepared_meals', 'bread_aisle', 'condiments', 'snacks']);
+export const T6_3_BASE = '6d6ca49';
+const PRE_T6_3 = JSON.parse(execFileSync('git', ['show', `${T6_3_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preT6_3 = (e) => (e && T6_3.has(e.id) ? PRE_T6_3.entries.find((x) => x.id === e.id) : e);

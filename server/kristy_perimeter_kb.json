@@ -1863,12 +1863,13 @@
       "decision": "Raw or dry-roasted nuts, with no added oil.",
       "why": "Cottonseed and soybean oil are the usual roasting mediums. Dry-roasted keeps it to the nut.",
       "short_answer": "Check what they were roasted in. Many roasted nuts are cooked in cottonseed, soybean or other seed oils, and salted heavily. It shows on the two-line ingredient list. Raw or dry-roasted keeps it to the nut and salt.",
-      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. ‘Peanuts, cottonseed oil, salt’ is common. Roasting itself is fine; the added oil is the part to notice. The chemical treatment for “raw” almonds is PPO.",
+      "detail": "Raw and dry-roasted nuts are simply the nut; oil-roasted adds a seed-oil coating nobody needs. For anyone avoiding seed oils (the whole-food standard), read the tiny ingredient line on the nut tub. ‘Peanuts, cottonseed oil, salt’ is common. Roasting itself is fine; the added oil is the part to notice. The chemical treatment for “raw” almonds is PPO. Look for “soaked” when choosing nuts prepared in water before drying; raw and dry-roasted name different preparation steps.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
         "product ingredient labeling",
-        "Almond Board of California, pasteurization https://www.almonds.com/almond-industry/almond-board-california/food-safety/pasteurization (under the mandatory almond Salmonella rule a 4-log reduction is the standard; almonds treated for 5-log can be labeled “pasteurized”)"
+        "Almond Board of California, pasteurization https://www.almonds.org/almond-industry/industry-news/fda-completes-almond-risk-assessment-paves-way-pasteurization-label (under the mandatory almond Salmonella rule a 4-log reduction is the standard; almonds treated for 5-log can be labeled “pasteurized”)",
+        "https://www.westonaprice.org/health-topics/vegetarianism-and-plant-foods/living-with-phytic-acid/"
       ],
       "kristy_take": "Raw or dry-roasted. A seed oil in the almonds is the easiest swap in the store.",
       "cart_pick": "Raw or dry-roasted almonds",
@@ -1876,7 +1877,7 @@
         "Many roasted nuts are cooked in cottonseed or soybean oil; dry-roasted is just the nut.",
         "Look for ‘dry roasted’ or ‘raw’, with no added oil.",
         "Read the ingredient line: many roasted nuts list cottonseed/soybean oil.",
-        "Bulk bins are cheaper than jars for the same nut."
+        "Read the ingredient list on bulk-bin nuts as well as jars."
       ],
       "labels_decoded": [
         {
@@ -1885,7 +1886,7 @@
         },
         {
           "term": "Roasted (in oil)",
-          "meaning": "Cooked in added oil — often a seed oil; check the list."
+          "meaning": "Cooked in added oil, often a seed oil; check the list."
         }
       ],
       "watch_out": [
@@ -4131,13 +4132,14 @@
       "decision": "Whole spices, bought small and ground as you go.",
       "why": "The aroma is volatile oil. Grinding opens the surface up and it leaves from there.",
       "short_answer": "A spice’s flavor is its oil, and that oil escapes into the air. Whole, it stays sealed inside the seed or bark for a couple of years. Ground, it is gone within months. Grind as you go.",
-      "detail": "Toasting is worth separating from grinding. A dry pan over medium heat until the smell arrives across the kitchen does two things: it drives volatile compounds to the surface and it starts browning reactions in the seed that build flavors that were not there before. Toast whole, then grind, and use it — toasted spice fades faster than raw whole spice, so it is not something to do in a batch and store. A blade grinder is adequate and a mortar is better for anything you want texture from. A handful of spices are only sold ground because the whole form is impractical to break down at home, and those are worth buying in the smallest quantity you will actually finish. What you are buying in a spice is volatile oil. Ground, the surface area jumps and the same oil is off into the air within months, which is why a jar of ground cumin that smells of nothing is not spoiled, it is just empty. Warming them first drives the oils out where you can taste them.",
+      "detail": "Toasting is worth separating from grinding. A dry pan over medium heat until the smell arrives across the kitchen does two things: it drives volatile compounds to the surface and it starts browning reactions in the seed that build flavors that were not there before. Toast whole, then grind, and use it; toasted spice fades faster than raw whole spice, so it is not something to do in a batch and store. A blade grinder is adequate and a mortar is better for anything you want texture from. A handful of spices are only sold ground because the whole form is impractical to break down at home, and those are worth buying in the smallest quantity you will actually finish. What you are buying in a spice is volatile oil. Ground, the surface area jumps and the same oil is off into the air within months, which is why a jar of ground cumin that smells of nothing is not spoiled, it is just empty. Warming them first drives the oils out where you can taste them.",
       "evidence_tier": "established",
       "kristy_take": "Whole, and grind what you need. A jar of ground spice is a jar with a clock on it.",
       "sources": [
         "volatile-compound retention studies on whole versus ground spice storage",
         "food-science references on dry-roasting and aromatic release",
-        "Aradwad et al. “Key issues and challenges in spice grinding,” Cleaner Engineering and Technology Vol. 5, Dec 2021 https://www.sciencedirect.com/science/article/pii/S2666790821001654 (heat-induced quality loss is a primary technical challenge in spice grinding; grinding needs special emphasis considering significant quality loss due to heat generation)"
+        "Aradwad et al. “Key issues and challenges in spice grinding,” Cleaner Engineering and Technology Vol. 5, Dec 2021 https://www.sciencedirect.com/science/article/pii/S2666790821003074 (heat-induced quality loss is a primary technical challenge in spice grinding; grinding needs special emphasis considering significant quality loss due to heat generation)",
+        "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
       ],
       "buying_tips": [
         "Whole spices hold their oils for a couple of years; ground ones fade within months.",
@@ -4146,7 +4148,8 @@
       ],
       "watch_out": [
         "Grinding itself makes heat. Heat during grinding is a primary way a spice loses quality before it is even in the jar. Small batches, ground as you go.",
-        "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard."
+        "Toasted spice fades faster than whole. Toast what you are about to use, not a batch for the cupboard.",
+        "Check for the Radura symbol and “treated with irradiation” statement; these identify irradiation processing."
       ],
       "pick_steps": [
         "Buy whole; ground spice is tired inside six months.",
@@ -4346,7 +4349,7 @@
         "Store natural jars upside down in the fridge. The oil redistributes on its own.",
         "Same reading for almond, cashew and sunflower butters.",
         "Read the jar’s ingredients for added oils; choose nuts and salt, with no added fat.",
-        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Skip nut butter listing added vegetable oil, including sunflower, safflower, canola, soybean, corn or cottonseed oil.",
         "Skip avocado oil added to a nut butter as well."
       ],
       "pick_steps": [
@@ -4477,11 +4480,12 @@
       "decision": "Spring water from a named spring, in glass.",
       "why": "Spring water comes from a place. Purified is a process run on whatever came out of the tap.",
       "short_answer": "Two products share one shelf. Spring water is defined by its underground source. Purified water is defined by its treatment, often of city water. Its label need not name the source.",
-      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement.",
+      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement. Pass on water with natural flavors or artificial flavoring; those terms do not name the individual flavoring ingredients.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "21 CFR 165.110 — FDA standards of identity for bottled water: spring, artesian, mineral, purified, and the community-water-system labeling requirement",
-        "ANSES “Plastic particles in bottled drinks are caused by caps” https://www.anses.fr/en/content/plastic-particles-bottled-drinks-are-caused-caps (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 106 when caps were blown clean and 87 when blowing was followed by rinsing)"
+        "ANSES “The caps of glass bottles contaminate beverages with microplastics” https://www.anses.fr/en/content/caps-glass-bottles-contaminate-beverages-microplastics (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 106 when caps were blown clean and 87 when blowing was followed by rinsing)",
+        "https://www.cspi.org/node/7457"
       ],
       "kristy_take": "Spring, in glass, from a place that can be found on a map. Everything else is a process wearing a mountain on the label.",
       "cart_pick": "Spring water in glass",
@@ -9207,7 +9211,8 @@
         "https://www.npr.org/2013/03/01/173242994/seeking-a-grain-of-truth-in-whole-grain-labels",
         "https://en.wikipedia.org/wiki/Spelt",
         "https://en.wikipedia.org/wiki/Einkorn_wheat",
-        "https://en.wikipedia.org/wiki/Almond_flour"
+        "https://en.wikipedia.org/wiki/Almond_flour",
+        "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
       ],
       "kristy_take": "The word “whole” on the bag carries the meaning. The type of mill does not.",
       "cart_pick": "Specialty flour labeled whole grain",
@@ -9219,7 +9224,8 @@
       ],
       "watch_out": [
         "Spelt and einkorn flours contain gluten.",
-        "“Stoneground” alone does not mean the bran stayed in."
+        "“Stoneground” alone does not mean the bran stayed in.",
+        "On wheat flour, “bleached” means chemical agents were used to speed aging; “enriched flour” has nutrients added back."
       ],
       "pick_steps": [
         "Look for “whole” in the flour’s name or first ingredient.",
@@ -9531,7 +9537,8 @@
       "sources": [
         "https://wholegrainscouncil.org/node/13040",
         "https://wholegrainscouncil.org/node/13053",
-        "https://wholegrainscouncil.org/whole-grain-stamp"
+        "https://wholegrainscouncil.org/whole-grain-stamp",
+        "https://www.cspinet.org/new/bromate.html"
       ],
       "kristy_take": "“Wheat flour”, “multigrain” and “stoneground” on the front can leave the grain question open. “100% whole wheat” or “100% whole grain” gives you a clearer answer.",
       "cart_pick": "Bread with a whole grain first",
@@ -9543,7 +9550,8 @@
       ],
       "watch_out": [
         "“Enriched flour”, “bran” and “wheat germ” never mean whole grain.",
-        "“Wheat flour”, “multigrain” and “stoneground” may or may not be whole grain."
+        "“Wheat flour”, “multigrain” and “stoneground” may or may not be whole grain.",
+        "Pass on bread listing potassium bromate or bromated flour, used to strengthen dough."
       ],
       "pick_steps": [
         "Pick the type first, then read the first ingredient for “whole”.",
@@ -10666,7 +10674,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Pickled_cucumber",
         "https://www.law.cornell.edu/cfr/text/21/114.3",
-        "https://extension.oregonstate.edu/catalog/pub/pnw-355-pickling-vegetables"
+        "https://extension.oregonstate.edu/catalog/pub/pnw-355-pickling-vegetables",
+        "https://www.cspi.org/node/7451"
       ],
       "kristy_take": "Pickle is a broad word. The ingredient list shows whether brine or vinegar did the souring.",
       "cart_pick": "Refrigerated brined pickles, no vinegar",
@@ -10679,7 +10688,8 @@
       ],
       "watch_out": [
         "Refrigerated does not by itself mean fermented.",
-        "Some makers add vinegar to brined pickles as a preservative."
+        "Some makers add vinegar to brined pickles as a preservative.",
+        "Skip a pickle jar listing sodium benzoate, an added preservative."
       ],
       "pick_steps": [
         "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
@@ -11342,14 +11352,15 @@
         {
           "name": "Non-GMO Project: GMO FAQ",
           "url": "https://www.nongmoproject.org/gmo-faq/"
-        }
+        },
+        "https://www.ucdavis.edu/food/news/avocado-oil-chip-youre-eating-may-not-be-made-pure-avocado-oil"
       ],
       "kristy_take": "The label names the oil. “Vegetable oil” names none; the ingredient list names the oils.",
       "cart_pick": "Olive or coconut cooking oil",
       "buying_tips": [
         "“Vegetable oil” on a label names a category, without any seed or fruit.",
         "Skip sunflower, safflower, canola, soybean, corn and cottonseed oils; the last four come from mostly bioengineered crops.",
-        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "Skip avocado oil too, blends and “made with avocado oil” included; the label cannot prove the oil is pure.",
         "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and choose a list without them.",
         "Read the label for the oil’s name first, then refined or unrefined."
       ],
@@ -11755,7 +11766,8 @@
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.22",
         "https://www.law.cornell.edu/cfr/text/21/179.26",
-        "https://www.law.cornell.edu/cfr/text/21/101.4"
+        "https://www.law.cornell.edu/cfr/text/21/101.4",
+        "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
       ],
       "kristy_take": "A blend’s list can say “spice” where a single-herb jar names the herb.",
       "cart_pick": "A jar labeled with the herb’s own name",
@@ -11766,7 +11778,8 @@
         "Look for “spice and coloring” where a spice also adds color."
       ],
       "watch_out": [
-        "“Spice” on a list can cover several herbs without naming any of them."
+        "“Spice” on a list can cover several herbs without naming any of them.",
+        "Check the herb jar for the Radura symbol or “treated with irradiation”; these mark irradiation processing."
       ],
       "pick_steps": [
         "Pick a single herb when the name on the jar matters.",
@@ -12680,12 +12693,14 @@
       "decision": "Condiments read by their first ingredient, spoon to spoon.",
       "why": "Ingredients run from most to least, so the first one names what the jar is mostly made of.",
       "short_answer": "Ingredients are listed from most to least, so the first one is the most. Panels count small servings, from a teaspoon to two tablespoons. Compare spoon to spoon, then ask about ketchup, mustard or mayo.",
-      "detail": "Federal labeling rule 21 CFR 101.4 lists ingredients by common name in descending order of predominance. The first ingredient is the one present in the largest amount. Serving sizes come from 21 CFR 101.12, and condiments get small ones. Catsup, soy sauce and vinegar count 1 tbsp. Mustards and hot sauces count 1 tsp. Dips such as salsa count 2 tbsp. Mayonnaise counts 15 g. Two jars only compare fairly at the same spoon.",
+      "detail": "Federal labeling rule 21 CFR 101.4 lists ingredients by common name in descending order of predominance. The first ingredient is the one present in the largest amount. Serving sizes come from 21 CFR 101.12, and condiments get small ones. Catsup, soy sauce and vinegar count 1 tbsp. Mustards and hot sauces count 1 tsp. Dips such as salsa count 2 tbsp. Mayonnaise counts 15 g. Two jars only compare fairly at the same spoon. Opened condiments on the fridge door or shelf are easy to forget.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.4",
         "https://www.law.cornell.edu/cfr/text/21/101.12",
-        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/"
+        "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
+        "https://www.cspi.org/node/7417",
+        "https://www.cspi.org/node/7451"
       ],
       "kristy_take": "The fewest ingredients is a craft standard, not a safety line. The order on the label shows what leads.",
       "cart_pick": "The jar whose first ingredient is the food",
@@ -12697,8 +12712,9 @@
         "Use an open condiment before opening a new one."
       ],
       "watch_out": [
-        "Opened condiments on the fridge door or shelf are easy to forget.",
-        "Mustard and hot sauce panels count a teaspoon, not a tablespoon."
+        "Mustard and hot sauce panels count a teaspoon, not a tablespoon.",
+        "Skip caramel color on a condiment list; it is added coloring.",
+        "Look for a condiment list without sodium benzoate, an added preservative."
       ],
       "pick_steps": [
         "Compare jars spoon to spoon; mustard and hot sauce count a teaspoon."
@@ -13297,7 +13313,7 @@
         "Read the first ingredient before the front of the bag.",
         "Look for a whole grain, vegetable or bean listed first.",
         "Read “multigrain” as several grains, not whole grains.",
-        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+        "Check the snack’s ingredient list for artificial color and synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "watch_out": [
         "Front-of-package claims and pictures can mislead; the ingredient list settles it."
@@ -13447,7 +13463,7 @@
         "Check the Sell-By date, and skip a tub past it.",
         "Get it home cold; two hours out at most, one hour above 90°F.",
         "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
-        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Pass on a deli dressing listing vegetable oil such as sunflower, safflower, canola, soybean, corn or cottonseed oil.",
         "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
       ],
       "watch_out": [
@@ -13490,7 +13506,9 @@
       "sources": [
         "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety",
         "https://www.tastingtable.com/1546547/temperature-prepared-foods-grocery-store-deli",
-        "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/"
+        "https://hgic.clemson.edu/factsheet/deli-other-take-out-foods/",
+        "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/",
+        "https://www.consumerreports.org/health/food-contaminants/dangerous-pfas-chemicals-are-in-your-food-packaging-a3786252074/"
       ],
       "kristy_take": "One food writer’s advice: skip late-night hot bar visits, when food is more likely to have sat a long time.",
       "cart_pick": "A dish from a case with a thermometer",
@@ -13502,7 +13520,9 @@
         "At home, two hours out at most, then into the fridge."
       ],
       "watch_out": [
-        "Buffet food is thrown out after two hours, whatever the holding temperature."
+        "Buffet food is thrown out after two hours, whatever the holding temperature.",
+        "Look for real cheese in a prepared meal rather than cheese powder. Testing found phthalates in macaroni-and-cheese powders.",
+        "PFAS can be used to make paper food packaging grease-resistant. Move takeout food into a glass container at home."
       ],
       "pick_steps": [
         "Read the thermometer facing out: hot 140°F or above, cold below 40°F.",
@@ -13777,7 +13797,7 @@
       "decision": "Frozen fries in tallow, olive oil or coconut oil.",
       "why": "At home, a hash brown takes potatoes, oil, salt and pepper. The bag’s list shows what else is in it.",
       "short_answer": "Read the ingredient list on the bag. At home, a hash brown takes potatoes, oil, salt and pepper. Home fries take starchy potatoes and salt. Compare bags by what they list beyond those.",
-      "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
+      "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil. Look for thick-cut fries on the bag. Acrylamide forms during high-heat browning; it is a cooking byproduct, not an added ingredient.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.ams.usda.gov/sites/default/files/media/Frozen_French_Fried_Potatoes_Standard%5B1%5D.pdf",
@@ -13798,14 +13818,15 @@
         {
           "name": "CSPI: TBHQ preservative uses",
           "url": "https://www.cspi.org/node/7416"
-        }
+        },
+        "https://www.consumerreports.org/health/food-contaminants/what-you-need-to-know-about-process-contaminants-a8019192822/"
       ],
       "kristy_take": "A short list is the standard here: potatoes, salt and one fat, tallow, olive oil or coconut oil. At home, starchy Russets fry crisp once rinsed of starch and dried. Home cooks freeze fries after the first fry, then do the second from frozen.",
       "cart_pick": "Frozen fries: tallow",
       "buying_tips": [
         "At home, hash browns take potatoes, oil, salt and pepper; the bag lists anything more.",
         "The bag’s ingredient list names the frying or par-frying oil. Choose tallow, olive oil, or coconut oil; no added oil also fits.",
-        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+        "Check frozen fries for vegetable oil: sunflower, safflower, canola, soybean, corn or cottonseed oil. Skip bags listing those seed oils.",
         "Read the bag’s ingredient list for potatoes, salt and the oil by name.",
         "Compare bags by what each one lists beyond potatoes, salt and that oil.",
         "In an air fryer, preheat about 3 minutes and shake the basket halfway.",

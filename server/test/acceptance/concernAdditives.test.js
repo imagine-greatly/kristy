@@ -9,6 +9,8 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick8, prePickAvoid } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_3 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(preCleanPick5(e)))));
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', 'bd8a1cc:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());

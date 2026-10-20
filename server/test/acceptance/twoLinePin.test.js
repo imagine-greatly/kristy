@@ -8,6 +8,8 @@ import { TWO_LINE } from './twoLinePin.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_3 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 
