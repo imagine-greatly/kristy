@@ -355,3 +355,9 @@ The tests apply to each pick's `decision`. That field feeds lists, and picks nev
 ## Open questions for Devon
 - Rulings Q1, Q2, Q3, Q5 (table above). B1 can start without any of them.
 - C10's threshold of "more than 2 entries" is a placeholder.
+
+## Rulings (Devon 2026-10-20)
+- Q1: A. Organic on every produce card.
+- Q2: B. Cured meats keep the named celery cure.
+- Q3: A. Salt stays iodized; the cart pick is aligned to that.
+- Q5: A. The unfortified version is the pick; fortified is named second, in watch_out.
