@@ -407,8 +407,10 @@ export function projectEntry(entry, { doLine = '' } = {}) {
   // vanishing, which is what keeps the projection lossless.
   const authoredWatch = Array.isArray(entry.watch_out) && entry.watch_out.length;
   const watch_out = authoredWatch ? entry.watch_out : split.watch_out;
+  // The displaced tips keep their authored order: the KB ranks tips best-first.
+  const tips = entry.buying_tips || [];
   const look_for = authoredWatch
-    ? [...split.look_for, ...split.watch_out]
+    ? [...tips, ...split.watch_out.filter((w) => !tips.includes(w))]
     : split.look_for;
   const labels_decoded = authoredWatch ? entry.labels_decoded || [] : split.labels_decoded;
 
