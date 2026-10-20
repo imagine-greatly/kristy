@@ -223,7 +223,8 @@ const BECAME = {
 const IDS = Object.keys(BECAME);
 // Later clean-pick batches own these ids; cleanPick1 no longer freezes them. Each batch appends its ids.
 const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope',
-  /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water']);
+  /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
+  /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
 // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
 // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
 const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
@@ -300,7 +301,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
 });
 
 test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 152);
+  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 143);
   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
   assert.equal(kb.entries.length, base.entries.length);
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');

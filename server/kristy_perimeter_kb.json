@@ -6469,7 +6469,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you choose a traditionally fermented sourdough?",
-      "decision": "Sourdough of flour, water, salt and a starter.",
+      "decision": "Whole wheat sourdough: flour, water, salt and a starter.",
       "why": "A flour-and-water starter lets wild yeast and bacteria raise the dough and develop its sour flavor.",
       "short_answer": "Traditional sourdough uses a flour-and-water starter containing wild yeasts and bacteria. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor.",
       "detail": "Colorado State University Extension reports no US standard of identity for sourdough. Culture or starter may not be listed separately, so the baker can clarify the process. The fermentation review describes acid formation and leavening by microbes; it does not establish a health result for every retail loaf.",
@@ -6479,9 +6479,10 @@
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9524358/fullTextXML"
       ],
       "kristy_take": "That sourness can also come from added acids. If the starter is missing from the list, the baker can tell you how the loaf rose.",
-      "cart_pick": "Starter-fermented sourdough bread",
+      "cart_pick": "Whole wheat sourdough bread",
       "buying_tips": [
         "Some loaves called sourdough use commercial yeast and added acids for the sour taste.",
+        "Look for whole wheat flour as the first ingredient, ahead of any white flour.",
         "Look for flour, water, salt, and a culture or starter.",
         "Ask about the starter when the label does not list it separately.",
         "Read for added vinegar or acetic acid; ask about fermentation rather than infer it from sour flavor."
@@ -6519,11 +6520,12 @@
       "aliases": [
         "bagel",
         "bagels",
-        "boiled bakery bagels"
+        "boiled bakery bagels",
+        "whole wheat bagels"
       ],
       "category": "bulk_pantry",
       "question": "What should you ask before buying bagels?",
-      "decision": "Bagels boiled before the oven, with their ingredients named.",
+      "decision": "Whole wheat bagels, boiled before the oven, ingredients named.",
       "why": "The boil sets a bagel’s outside and gives it that chew. A longer boil can make the crust chewier and the middle denser.",
       "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
       "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
@@ -6533,9 +6535,10 @@
         "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
       ],
       "kristy_take": "Ask what went into the dough and the boiling bath, or read the ingredients on the bag. Boiling explains the texture; the archived baking articles establish no health advantage.",
-      "cart_pick": "Boiled bagels with the ingredients named",
+      "cart_pick": "Whole wheat boiled bakery bagels",
       "buying_tips": [
         "The boil sets the outside and gives a bagel its chew.",
+        "Look for whole wheat flour on the bag, named before any other flour.",
         "Read the ingredient list on the bag, or ask the bakery for it.",
         "Ask the bakery about boiling before buying.",
         "Without a process label, ask the baker rather than infer boiling from the shape.",
@@ -6746,7 +6749,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you choose breakfast cereal or granola?",
-      "decision": "Whole-grain cereal or granola with less added sugar.",
+      "decision": "Unfortified whole-grain cereal or granola, less added sugar, no dyes.",
       "why": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
       "short_answer": "The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola.",
       "detail": "FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling.",
@@ -6780,9 +6783,10 @@
         }
       ],
       "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
-      "cart_pick": "Whole-grain breakfast cereal",
+      "cart_pick": "Unfortified whole-grain breakfast cereal",
       "buying_tips": [
         "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
+        "Look for a grain list with no added vitamins or minerals below it.",
         "Check the 100% stamp rather than assume every stamp means all grain is whole.",
         "Without a stamp, read the grain ingredients and the added-sugars line.",
         "Read the added-sugars line even when honey or syrup is the named sweetener.",
@@ -6793,7 +6797,8 @@
       ],
       "watch_out": [
         "Honey-sweetened granola still has added sugar.",
-        "A grain stamp alone does not tell how much sugar was added."
+        "A grain stamp alone does not tell how much sugar was added.",
+        "A fortified cereal comes second, behind one with no vitamins or minerals added."
       ],
       "pick_steps": [
         "Look for the 100% stamp; other stamps don’t mean all grain is whole.",
@@ -8876,7 +8881,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick gluten-free bread?",
-      "decision": "Bread labeled gluten-free, with its flours and gum binder named.",
+      "decision": "Gluten-free bread with its flours named and the fewest gums.",
       "why": "Blended flours and starches replace wheat. A gum binder gives back some of the stretch gluten would provide.",
       "short_answer": "“Gluten-free”, “no gluten”, “free of gluten” and “without gluten” all meet one federal limit. The claim is voluntary. Bakers replace gluten with blended flours and starches, plus a gum that binds the loaf.",
       "detail": "Under 21 CFR 101.91, all four wordings mean the food has less than 20 ppm (parts per million) gluten. Wheat starch may appear only if the food stays under 20 ppm. The claim is voluntary, defined by an FDA rule issued in 2013. Bakers replace gluten with a blend of flours and starches, such as rice, potato or tapioca. A hydrocolloid binder, usually xanthan gum or HPMC, mimics some of the stretch gluten gives. “Gluten-free” describes gluten content only.",
@@ -8888,9 +8893,10 @@
         "https://research.ucc.ie/en/publications/gluten-free-breads/"
       ],
       "kristy_take": "Four label wordings share one federal gluten limit, and that claim covers gluten alone. Read which flours and binder hold this particular loaf together.",
-      "cart_pick": "Bread labeled gluten-free",
+      "cart_pick": "Short-list gluten-free bread",
       "buying_tips": [
         "Every gluten-free wording meets one federal limit; a gum gives back some stretch.",
+        "Look for a single gum binder, such as xanthan gum, not two or more.",
         "Check for one of the four gluten-free claim wordings.",
         "Read which flours and starches replace the wheat.",
         "Look for the gum that binds the loaf."
@@ -8937,7 +8943,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which buns and rolls are whole wheat?",
-      "decision": "Buns and rolls named whole wheat.",
+      "decision": "Whole wheat buns and rolls with no added sugar.",
       "why": "Bread, rolls and buns share one federal standard. Buns and rolls named whole wheat are made from whole wheat flour only.",
       "short_answer": "Read the name on the bag. “Whole wheat buns” and “whole wheat rolls” use whole wheat flour, with no white flour. “Enriched buns” are made with enriched flour instead.",
       "detail": "Federal rule 21 CFR 136.110 sets one standard for bread, rolls and buns. Under 136.180, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Under 136.115, enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil.",
@@ -8952,6 +8958,7 @@
       "cart_pick": "Whole wheat buns or rolls",
       "buying_tips": [
         "Whole wheat buns use whole wheat flour with no white flour; enriched buns do not.",
+        "Look for a list with no sugar or soybean oil after the whole wheat flour.",
         "Read the name on the bag for “whole wheat”.",
         "Check the first ingredient for whole wheat flour.",
         "Read “enriched buns” as made with enriched flour, not whole wheat."
@@ -9004,7 +9011,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which fat is in a pastry or a bakery muffin?",
-      "decision": "Pastry made with butter, named on the label.",
+      "decision": "All-butter bakery pastries, no shortening or hydrogenated oil.",
       "why": "Butter is the traditional fat in Danish pastry. Factory-made Danish pastry often uses other fats instead.",
       "short_answer": "Read the fat in the ingredients, or ask the baker. Butter is the traditional fat in Danish pastry. A bakery muffin rises without yeast and is made with butter or shortening.",
       "detail": "Danish pastry is laminated, meaning butter is folded into a yeast dough in thin layers. Butter is the traditional fat. Industrial production often uses other fats, such as hydrogenated sunflower oil. The American muffin is a quick bread, a bread raised by baking soda instead of yeast. Butter or shortening, eggs and flavourings such as fruit go into the batter.",
@@ -9014,9 +9021,10 @@
         "https://en.wikipedia.org/wiki/Muffin"
       ],
       "kristy_take": "The fat is the read on a pastry. Butter is the traditional one.",
-      "cart_pick": "Pastry made with butter",
+      "cart_pick": "All-butter bakery pastries",
       "buying_tips": [
         "Butter is Danish pastry’s traditional fat; factory-made often uses other fats.",
+        "Look for butter as the only fat, with no shortening or hydrogenated oil.",
         "Read the ingredients for butter by name.",
         "Ask the baker which fat goes into the pastry.",
         "Read a muffin’s ingredients for butter or shortening."
@@ -12235,7 +12243,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick crackers?",
-      "decision": "Crackers with a whole grain listed first on the ingredients.",
+      "decision": "Whole grain crackers with olive oil, coconut oil or butter.",
       "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
       "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil.",
@@ -12265,9 +12273,10 @@
         }
       ],
       "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
-      "cart_pick": "Crackers with a whole grain first",
+      "cart_pick": "Short-list whole grain crackers",
       "buying_tips": [
         "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
+        "Look for whole grain flour, olive oil and salt, and little else, on the list.",
         "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the first ingredient; a whole grain there leads the cracker.",
@@ -12547,7 +12556,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick pretzels?",
-      "decision": "Pretzels listing flour, malt, oil, salt, yeast and soda.",
+      "decision": "Whole wheat pretzels with a short ingredient list.",
       "why": "One snack pretzel lists enriched flour, malt syrup, oil, salt, yeast and soda.",
       "short_answer": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked. Baking neutralizes the lye. The bath gives the chew and the glossy brown crust. A baking soda bath does the same job, milder.",
       "detail": "Lye is sodium hydroxide, the strongest alkali a baker uses. On the pH scale, a measure of how strong an alkali is, lye reaches 14. A baking soda solution, sodium bicarbonate, sits at roughly 8.3, so it reacts less. Its pretzels come out lighter in color and flavor. The alkaline surface speeds browning, the Maillard reaction that shapes how the crust forms and tastes. A hard pretzel bakes about twice as long as a soft one. The German name, Laugenbrezel, means “lye pretzel.”",
@@ -12557,9 +12566,10 @@
         "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
       ],
       "kristy_take": "The story goes that monks in the Middle Ages twisted dough scraps into pretzels. German bakers still dip the dough in lye for the deepest color.",
-      "cart_pick": "Pretzels with a short ingredient list",
+      "cart_pick": "Whole wheat pretzel twists",
       "buying_tips": [
         "The alkaline bath gives a pretzel its chew and glossy brown crust.",
+        "Look for whole wheat flour, not enriched flour, at the top of the list.",
         "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
         "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
         "A paler pretzel can point to the milder baking soda bath."
@@ -12998,7 +13008,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick fresh pasta?",
-      "decision": "Fresh pasta of flour and egg, with little else listed.",
+      "decision": "Fresh pasta of flour and egg, with nothing added.",
       "why": "Fresh egg pasta is flour and egg. Many packs add nothing, and the list shows any extras.",
       "short_answer": "Fresh egg pasta is softer and richer than dried, mostly from the egg. Many store packs have no additives, and some add ascorbic or citric acid. An opened pack keeps 2 to 3 days.",
       "detail": "Traditionally, pasta rich with egg yolks comes from Emilia-Romagna, in the north of Italy. The south makes fresh pasta without eggs, from flour and water, such as orecchiette. Many fresh pastas now use a mix of semolina and 00 flour. A sfoglina is a woman who rolls fresh egg pasta by hand with a wooden pin and board. Hand-rolled sheets take a coarseness from the wood, so they hold sauce better. The classic ratio is one large egg for every 100g of flour. Store packs without additives are usually vacuum sealed or hold an oxygen packet. They are sold in the refrigerated case.",
@@ -13011,9 +13021,10 @@
         "https://www.law.cornell.edu/cfr/text/21/139.150"
       ],
       "kristy_take": "Traditionally, fresh egg pasta was rolled by hand for Sunday family dinners, on a wooden board.",
-      "cart_pick": "Fresh pasta of flour and egg",
+      "cart_pick": "Additive-free fresh egg pasta",
       "buying_tips": [
         "Many packs add nothing, and some add ascorbic or citric acid, which the list shows.",
+        "Look for flour and egg alone, with no ascorbic or citric acid added.",
         "Read the list; flour and egg with little else marks a plain pack.",
         "Pick a pack that is vacuum sealed or holds an oxygen packet."
       ],

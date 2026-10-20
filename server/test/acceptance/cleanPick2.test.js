@@ -5,7 +5,9 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_3 as LATER } from './twoLinePin.js';
+import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
+
+const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4]);
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
@@ -202,7 +204,7 @@ test('C5 every B2 id names organic; outside the batch organic presence is unchan
 
 test('C6 entries outside the batch deepEqual 74237ce', () => {
   const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
-  nonEmpty(others, 'others', 168);
+  nonEmpty(others, 'others', 159);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
 });

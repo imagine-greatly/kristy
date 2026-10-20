@@ -1,0 +1,751 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index bea842d..cff7191 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -118,12 +118,12 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
+ 
+ | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread: flour, water, yeast, salt, little else. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
+-| `sourdough` | bulk_pantry | Sourdough of flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
+-| `bagels` | bulk_pantry | Bagels boiled before the oven, with their ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
++| `sourdough` | bulk_pantry | Whole wheat sourdough: flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
++| `bagels` | bulk_pantry | Whole wheat bagels, boiled before the oven, ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
+ | `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
+ | `turkey_whole` | meat | Pasture-raised whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
+ | `ground_turkey` | meat | Pasture-raised or organic ground turkey, fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
+-| `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
++| `breakfast_cereal` | bulk_pantry | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
+ | `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
+ | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
+ | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
+@@ -148,9 +148,9 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `sprouted_grain_bread` | bulk_pantry | Bread with sprouted whole grains first and no added flour. | Read the first few ingredients, then check the rest for added flour. | — |
+ | `sprouted_grains` | bulk_pantry | Grain labeled sprouted whole grain. | Check the label names the grain as whole, not only its process. | — |
+ | `specialty_flours` | bulk_pantry | Specialty flour with “whole” in its name or first ingredient. | Read the flour name for “whole”, then check the fat line. | — |
+-| `gluten_free_bread` | bulk_pantry | Bread labeled gluten-free, with its flours and gum binder named. | Find the claim on the bag, then read the ingredient list and the gum. | — |
+-| `buns_rolls` | bulk_pantry | Buns and rolls named whole wheat. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
+-| `pastries_muffins` | bulk_pantry | Pastry made with butter, named on the label. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
++| `gluten_free_bread` | bulk_pantry | Gluten-free bread with its flours named and the fewest gums. | Find the claim on the bag, then read the ingredient list and the gum. | — |
++| `buns_rolls` | bulk_pantry | Whole wheat buns and rolls with no added sugar. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
++| `pastries_muffins` | bulk_pantry | All-butter bakery pastries, no shortening or hydrogenated oil. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
+ | `muesli` | bulk_pantry | Muesli of just oats, fruit, nuts and seeds. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
+ | `bread_aisle` | bulk_pantry | Your chosen bread, with “whole” in the first flour. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
+ | `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
+@@ -199,11 +199,11 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `salsa` | bulk_pantry | Salsa with onions, peppers and tomatoes plus an acid. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
+ | `coconut_water` | bulk_pantry | Pure coconut water, high-pressure processed, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
+ | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
+-| `crackers` | bulk_pantry | Crackers with a whole grain listed first on the ingredients. | Read the front for “multigrain”; it does not mean whole grain. | — |
++| `crackers` | bulk_pantry | Whole grain crackers with olive oil, coconut oil or butter. | Read the front for “multigrain”; it does not mean whole grain. | — |
+ | `tortilla_chips` | bulk_pantry | Masa tortilla chips in olive oil, coconut oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
+ | `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
+ | `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
+-| `pretzels` | bulk_pantry | Pretzels listing flour, malt, oil, salt, yeast and soda. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
++| `pretzels` | bulk_pantry | Whole wheat pretzels with a short ingredient list. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
+ | `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
+ | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
+ | `snacks` | bulk_pantry | Snacks with a whole grain, vegetable or bean listed first. | Check veggie chips for potato flour colored with vegetable powder. | — |
+@@ -211,7 +211,7 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
+ | `deli_salads` | bulk_pantry | Deli salads from the cold case, eaten within days. | Check the date; keep it at the back of the fridge, not the door. | — |
+ | `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |
+-| `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with little else listed. | Check the date, and use an opened pack within 2 to 3 days. | — |
++| `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with nothing added. | Check the date, and use an opened pack within 2 to 3 days. | — |
+ | `deli` | bulk_pantry | Deli food from a cold case, or a hot one. | Check the cold case first; meats, cheeses and salads all need it. | — |
+ | `frozen_pizza` | bulk_pantry | Whole wheat frozen pizza, crust of flour, water, salt, yeast. | Check a crust sold as whole wheat for whole wheat flour throughout. | — |
+ | `frozen_meals` | bulk_pantry | Frozen meals named for their meat, no binders or extenders. | Check the inspection mark, then follow the package directions to heat it. | — |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index 56ff857..d67114a 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -6469,7 +6469,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you choose a traditionally fermented sourdough?",
+-      "decision": "Sourdough of flour, water, salt and a starter.",
++      "decision": "Whole wheat sourdough: flour, water, salt and a starter.",
+       "why": "A flour-and-water starter lets wild yeast and bacteria raise the dough and develop its sour flavor.",
+       "short_answer": "Traditional sourdough uses a flour-and-water starter containing wild yeasts and bacteria. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor.",
+       "detail": "Colorado State University Extension reports no US standard of identity for sourdough. Culture or starter may not be listed separately, so the baker can clarify the process. The fermentation review describes acid formation and leavening by microbes; it does not establish a health result for every retail loaf.",
+@@ -6479,9 +6479,10 @@
+         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9524358/fullTextXML"
+       ],
+       "kristy_take": "That sourness can also come from added acids. If the starter is missing from the list, the baker can tell you how the loaf rose.",
+-      "cart_pick": "Starter-fermented sourdough bread",
++      "cart_pick": "Whole wheat sourdough bread",
+       "buying_tips": [
+         "Some loaves called sourdough use commercial yeast and added acids for the sour taste.",
++        "Look for whole wheat flour as the first ingredient, ahead of any white flour.",
+         "Look for flour, water, salt, and a culture or starter.",
+         "Ask about the starter when the label does not list it separately.",
+         "Read for added vinegar or acetic acid; ask about fermentation rather than infer it from sour flavor."
+@@ -6519,11 +6520,12 @@
+       "aliases": [
+         "bagel",
+         "bagels",
+-        "boiled bakery bagels"
++        "boiled bakery bagels",
++        "whole wheat bagels"
+       ],
+       "category": "bulk_pantry",
+       "question": "What should you ask before buying bagels?",
+-      "decision": "Bagels boiled before the oven, with their ingredients named.",
++      "decision": "Whole wheat bagels, boiled before the oven, ingredients named.",
+       "why": "The boil sets a bagel’s outside and gives it that chew. A longer boil can make the crust chewier and the middle denser.",
+       "short_answer": "Boiling before baking sets the bagel’s exterior and gives it its characteristic chew. A longer boil can make the crust chewier and the interior denser.",
+       "detail": "The archived baking articles describe boiling dough before baking and using ingredients such as baking soda in the bath. Baking soda changes the bath’s alkalinity and promotes browning. These sources do not compare the health effects of bagel production methods.",
+@@ -6533,9 +6535,10 @@
+         "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
+       ],
+       "kristy_take": "Ask what went into the dough and the boiling bath, or read the ingredients on the bag. Boiling explains the texture; the archived baking articles establish no health advantage.",
+-      "cart_pick": "Boiled bagels with the ingredients named",
++      "cart_pick": "Whole wheat boiled bakery bagels",
+       "buying_tips": [
+         "The boil sets the outside and gives a bagel its chew.",
++        "Look for whole wheat flour on the bag, named before any other flour.",
+         "Read the ingredient list on the bag, or ask the bakery for it.",
+         "Ask the bakery about boiling before buying.",
+         "Without a process label, ask the baker rather than infer boiling from the shape.",
+@@ -6746,7 +6749,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you choose breakfast cereal or granola?",
+-      "decision": "Whole-grain cereal or granola with less added sugar.",
++      "decision": "Unfortified whole-grain cereal or granola, less added sugar, no dyes.",
+       "why": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
+       "short_answer": "The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola.",
+       "detail": "FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling.",
+@@ -6780,9 +6783,10 @@
+         }
+       ],
+       "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
+-      "cart_pick": "Whole-grain breakfast cereal",
++      "cart_pick": "Unfortified whole-grain breakfast cereal",
+       "buying_tips": [
+         "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
++        "Look for a grain list with no added vitamins or minerals below it.",
+         "Check the 100% stamp rather than assume every stamp means all grain is whole.",
+         "Without a stamp, read the grain ingredients and the added-sugars line.",
+         "Read the added-sugars line even when honey or syrup is the named sweetener.",
+@@ -6793,7 +6797,8 @@
+       ],
+       "watch_out": [
+         "Honey-sweetened granola still has added sugar.",
+-        "A grain stamp alone does not tell how much sugar was added."
++        "A grain stamp alone does not tell how much sugar was added.",
++        "A fortified cereal comes second, behind one with no vitamins or minerals added."
+       ],
+       "pick_steps": [
+         "Look for the 100% stamp; other stamps don’t mean all grain is whole.",
+@@ -8876,7 +8881,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick gluten-free bread?",
+-      "decision": "Bread labeled gluten-free, with its flours and gum binder named.",
++      "decision": "Gluten-free bread with its flours named and the fewest gums.",
+       "why": "Blended flours and starches replace wheat. A gum binder gives back some of the stretch gluten would provide.",
+       "short_answer": "“Gluten-free”, “no gluten”, “free of gluten” and “without gluten” all meet one federal limit. The claim is voluntary. Bakers replace gluten with blended flours and starches, plus a gum that binds the loaf.",
+       "detail": "Under 21 CFR 101.91, all four wordings mean the food has less than 20 ppm (parts per million) gluten. Wheat starch may appear only if the food stays under 20 ppm. The claim is voluntary, defined by an FDA rule issued in 2013. Bakers replace gluten with a blend of flours and starches, such as rice, potato or tapioca. A hydrocolloid binder, usually xanthan gum or HPMC, mimics some of the stretch gluten gives. “Gluten-free” describes gluten content only.",
+@@ -8888,9 +8893,10 @@
+         "https://research.ucc.ie/en/publications/gluten-free-breads/"
+       ],
+       "kristy_take": "Four label wordings share one federal gluten limit, and that claim covers gluten alone. Read which flours and binder hold this particular loaf together.",
+-      "cart_pick": "Bread labeled gluten-free",
++      "cart_pick": "Short-list gluten-free bread",
+       "buying_tips": [
+         "Every gluten-free wording meets one federal limit; a gum gives back some stretch.",
++        "Look for a single gum binder, such as xanthan gum, not two or more.",
+         "Check for one of the four gluten-free claim wordings.",
+         "Read which flours and starches replace the wheat.",
+         "Look for the gum that binds the loaf."
+@@ -8937,7 +8943,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "Which buns and rolls are whole wheat?",
+-      "decision": "Buns and rolls named whole wheat.",
++      "decision": "Whole wheat buns and rolls with no added sugar.",
+       "why": "Bread, rolls and buns share one federal standard. Buns and rolls named whole wheat are made from whole wheat flour only.",
+       "short_answer": "Read the name on the bag. “Whole wheat buns” and “whole wheat rolls” use whole wheat flour, with no white flour. “Enriched buns” are made with enriched flour instead.",
+       "detail": "Federal rule 21 CFR 136.110 sets one standard for bread, rolls and buns. Under 136.180, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Under 136.115, enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil.",
+@@ -8952,6 +8958,7 @@
+       "cart_pick": "Whole wheat buns or rolls",
+       "buying_tips": [
+         "Whole wheat buns use whole wheat flour with no white flour; enriched buns do not.",
++        "Look for a list with no sugar or soybean oil after the whole wheat flour.",
+         "Read the name on the bag for “whole wheat”.",
+         "Check the first ingredient for whole wheat flour.",
+         "Read “enriched buns” as made with enriched flour, not whole wheat."
+@@ -9004,7 +9011,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "Which fat is in a pastry or a bakery muffin?",
+-      "decision": "Pastry made with butter, named on the label.",
++      "decision": "All-butter bakery pastries, no shortening or hydrogenated oil.",
+       "why": "Butter is the traditional fat in Danish pastry. Factory-made Danish pastry often uses other fats instead.",
+       "short_answer": "Read the fat in the ingredients, or ask the baker. Butter is the traditional fat in Danish pastry. A bakery muffin rises without yeast and is made with butter or shortening.",
+       "detail": "Danish pastry is laminated, meaning butter is folded into a yeast dough in thin layers. Butter is the traditional fat. Industrial production often uses other fats, such as hydrogenated sunflower oil. The American muffin is a quick bread, a bread raised by baking soda instead of yeast. Butter or shortening, eggs and flavourings such as fruit go into the batter.",
+@@ -9014,9 +9021,10 @@
+         "https://en.wikipedia.org/wiki/Muffin"
+       ],
+       "kristy_take": "The fat is the read on a pastry. Butter is the traditional one.",
+-      "cart_pick": "Pastry made with butter",
++      "cart_pick": "All-butter bakery pastries",
+       "buying_tips": [
+         "Butter is Danish pastry’s traditional fat; factory-made often uses other fats.",
++        "Look for butter as the only fat, with no shortening or hydrogenated oil.",
+         "Read the ingredients for butter by name.",
+         "Ask the baker which fat goes into the pastry.",
+         "Read a muffin’s ingredients for butter or shortening."
+@@ -12235,7 +12243,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick crackers?",
+-      "decision": "Crackers with a whole grain listed first on the ingredients.",
++      "decision": "Whole grain crackers with olive oil, coconut oil or butter.",
+       "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
+       "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
+       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil.",
+@@ -12265,9 +12273,10 @@
+         }
+       ],
+       "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
+-      "cart_pick": "Crackers with a whole grain first",
++      "cart_pick": "Short-list whole grain crackers",
+       "buying_tips": [
+         "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
++        "Look for whole grain flour, olive oil and salt, and little else, on the list.",
+         "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
+         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+         "Read the first ingredient; a whole grain there leads the cracker.",
+@@ -12547,7 +12556,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick pretzels?",
+-      "decision": "Pretzels listing flour, malt, oil, salt, yeast and soda.",
++      "decision": "Whole wheat pretzels with a short ingredient list.",
+       "why": "One snack pretzel lists enriched flour, malt syrup, oil, salt, yeast and soda.",
+       "short_answer": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked. Baking neutralizes the lye. The bath gives the chew and the glossy brown crust. A baking soda bath does the same job, milder.",
+       "detail": "Lye is sodium hydroxide, the strongest alkali a baker uses. On the pH scale, a measure of how strong an alkali is, lye reaches 14. A baking soda solution, sodium bicarbonate, sits at roughly 8.3, so it reacts less. Its pretzels come out lighter in color and flavor. The alkaline surface speeds browning, the Maillard reaction that shapes how the crust forms and tastes. A hard pretzel bakes about twice as long as a soft one. The German name, Laugenbrezel, means “lye pretzel.”",
+@@ -12557,9 +12566,10 @@
+         "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
+       ],
+       "kristy_take": "The story goes that monks in the Middle Ages twisted dough scraps into pretzels. German bakers still dip the dough in lye for the deepest color.",
+-      "cart_pick": "Pretzels with a short ingredient list",
++      "cart_pick": "Whole wheat pretzel twists",
+       "buying_tips": [
+         "The alkaline bath gives a pretzel its chew and glossy brown crust.",
++        "Look for whole wheat flour, not enriched flour, at the top of the list.",
+         "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
+         "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
+         "A paler pretzel can point to the milder baking soda bath."
+@@ -12998,7 +13008,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick fresh pasta?",
+-      "decision": "Fresh pasta of flour and egg, with little else listed.",
++      "decision": "Fresh pasta of flour and egg, with nothing added.",
+       "why": "Fresh egg pasta is flour and egg. Many packs add nothing, and the list shows any extras.",
+       "short_answer": "Fresh egg pasta is softer and richer than dried, mostly from the egg. Many store packs have no additives, and some add ascorbic or citric acid. An opened pack keeps 2 to 3 days.",
+       "detail": "Traditionally, pasta rich with egg yolks comes from Emilia-Romagna, in the north of Italy. The south makes fresh pasta without eggs, from flour and water, such as orecchiette. Many fresh pastas now use a mix of semolina and 00 flour. A sfoglina is a woman who rolls fresh egg pasta by hand with a wooden pin and board. Hand-rolled sheets take a coarseness from the wood, so they hold sauce better. The classic ratio is one large egg for every 100g of flour. Store packs without additives are usually vacuum sealed or hold an oxygen packet. They are sold in the refrigerated case.",
+@@ -13011,9 +13021,10 @@
+         "https://www.law.cornell.edu/cfr/text/21/139.150"
+       ],
+       "kristy_take": "Traditionally, fresh egg pasta was rolled by hand for Sunday family dinners, on a wooden board.",
+-      "cart_pick": "Fresh pasta of flour and egg",
++      "cart_pick": "Additive-free fresh egg pasta",
+       "buying_tips": [
+         "Many packs add nothing, and some add ascorbic or citric acid, which the list shows.",
++        "Look for flour and egg alone, with no ascorbic or citric acid added.",
+         "Read the list; flour and egg with little else marks a plain pack.",
+         "Pick a pack that is vacuum sealed or holds an oxygen packet."
+       ],
+diff --git a/server/test/acceptance/ca-4b.test.js b/server/test/acceptance/ca-4b.test.js
+index 6731656..9a0fe25 100644
+--- a/server/test/acceptance/ca-4b.test.js
++++ b/server/test/acceptance/ca-4b.test.js
+@@ -1,6 +1,6 @@
+ // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -17,7 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+ const LIVE = structuredClone(kb); // the review table follows the live front
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(e)))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
+ const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+diff --git a/server/test/acceptance/ca-7.test.js b/server/test/acceptance/ca-7.test.js
+index ebdbfeb..b72012c 100644
+--- a/server/test/acceptance/ca-7.test.js
++++ b/server/test/acceptance/ca-7.test.js
+@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
+ 
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(e)))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
+ const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+ const now = (id) => kb.entries.find((e) => e.id === id);
+diff --git a/server/test/acceptance/cleanPick1.test.js b/server/test/acceptance/cleanPick1.test.js
+index 2395779..3ed6487 100644
+--- a/server/test/acceptance/cleanPick1.test.js
++++ b/server/test/acceptance/cleanPick1.test.js
+@@ -223,7 +223,8 @@ const BECAME = {
+ const IDS = Object.keys(BECAME);
+ // Later clean-pick batches own these ids; cleanPick1 no longer freezes them. Each batch appends its ids.
+ const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope',
+-  /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water']);
++  /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
++  /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
+ // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
+ // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
+ const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
+@@ -300,7 +301,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these
+ });
+ 
+ test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
+-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 152);
++  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 143);
+   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
+   assert.equal(kb.entries.length, base.entries.length);
+   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
+diff --git a/server/test/acceptance/cleanPick2.test.js b/server/test/acceptance/cleanPick2.test.js
+index e3d531f..3dd3fb1 100644
+--- a/server/test/acceptance/cleanPick2.test.js
++++ b/server/test/acceptance/cleanPick2.test.js
+@@ -5,7 +5,9 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_3 as LATER } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
++
++const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4]);
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -202,7 +204,7 @@ test('C5 every B2 id names organic; outside the batch organic presence is unchan
+ 
+ test('C6 entries outside the batch deepEqual 74237ce', () => {
+   const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+-  nonEmpty(others, 'others', 168);
++  nonEmpty(others, 'others', 159);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+ });
+diff --git a/server/test/acceptance/cleanPick2b.test.js b/server/test/acceptance/cleanPick2b.test.js
+index 280a37d..31fe200 100644
+--- a/server/test/acceptance/cleanPick2b.test.js
++++ b/server/test/acceptance/cleanPick2b.test.js
+@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
+-import { CLEAN_PICK_3 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
+ 
+ test('C3 every other field and entry equals a2487a7', () => {
+   for (const e of kb.entries) {
+-    if (CLEAN_PICK_3.has(e.id)) continue;
++    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id)) continue;
+     const old = find(base, e.id);
+     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
+     assert.deepEqual(strip(e), strip(old), e.id);
+diff --git a/server/test/acceptance/cleanPick3.test.js b/server/test/acceptance/cleanPick3.test.js
+index 3b0331b..fa38672 100644
+--- a/server/test/acceptance/cleanPick3.test.js
++++ b/server/test/acceptance/cleanPick3.test.js
+@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
++import { CLEAN_PICK_4 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -128,8 +129,8 @@ test('C5 organic is named exactly on nuggets, hot dogs and turkey bacon', () =>
+ });
+ 
+ test('C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
+-  nonEmpty(others, 'others', 185);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id));
++  nonEmpty(others, 'others', 176);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+@@ -146,6 +147,7 @@ test('C7 doLines.json unchanged; review headlines move only on decision-changed
+   assert.equal(liveRows.size, baseRows.size);
+   let seen = 0;
+   for (const [id, row] of baseRows) {
++    if (CLEAN_PICK_4.has(id)) continue;
+     const lr = liveRows.get(id);
+     assert.ok(lr, id);
+     if (DECISION_CHANGED.includes(id)) {
+diff --git a/server/test/acceptance/cleanPick4.test.js b/server/test/acceptance/cleanPick4.test.js
+new file mode 100644
+index 0000000..15a1a2b
+--- /dev/null
++++ b/server/test/acceptance/cleanPick4.test.js
+@@ -0,0 +1,175 @@
++// clean-pick-4 (Devon 2026-10-20): B5 bread and grains name each item’s own cleanest version.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { matchItemToCard } from '../../lib/listMatch.js';
++
++const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
++const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git('f488733:server/kristy_perimeter_kb.json'));
++const find = (k, id) => k.entries.find((e) => e.id === id);
++const live = (id) => find(kb, id);
++const was = (id) => find(base, id);
++const words = (s) => s.trim().split(/\s+/).length;
++
++const BECAME = {
++  sourdough: { decision: 'Whole wheat sourdough: flour, water, salt and a starter.', cart_pick: 'Whole wheat sourdough bread', tip1: 'Look for whole wheat flour as the first ingredient, ahead of any white flour.', std: /whole wheat flour as the first ingredient/, carry: /whole wheat/i },
++  bagels: { decision: 'Whole wheat bagels, boiled before the oven, ingredients named.', cart_pick: 'Whole wheat boiled bakery bagels', alias_add: 'whole wheat bagels', tip1: 'Look for whole wheat flour on the bag, named before any other flour.', std: /whole wheat flour on the bag/, carry: /whole wheat/i },
++  breakfast_cereal: { decision: 'Unfortified whole-grain cereal or granola, less added sugar, no dyes.', cart_pick: 'Unfortified whole-grain breakfast cereal', tip1: 'Look for a grain list with no added vitamins or minerals below it.', watch_add: 'A fortified cereal comes second, behind one with no vitamins or minerals added.', std: /no added vitamins or minerals/, carry: /unfortified/i },
++  gluten_free_bread: { decision: 'Gluten-free bread with its flours named and the fewest gums.', cart_pick: 'Short-list gluten-free bread', tip1: 'Look for a single gum binder, such as xanthan gum, not two or more.', std: /single gum/, carry: /fewest gums|single gum/i },
++  buns_rolls: { decision: 'Whole wheat buns and rolls with no added sugar.', tip1: 'Look for a list with no sugar or soybean oil after the whole wheat flour.', std: /no sugar or soybean oil/, carry: /no added sugar/i },
++  pastries_muffins: { decision: 'All-butter bakery pastries, no shortening or hydrogenated oil.', cart_pick: 'All-butter bakery pastries', tip1: 'Look for butter as the only fat, with no shortening or hydrogenated oil.', std: /only fat/, carry: /all-butter/i },
++  crackers: { decision: 'Whole grain crackers with olive oil, coconut oil or butter.', cart_pick: 'Short-list whole grain crackers', tip1: 'Look for whole grain flour, olive oil and salt, and little else, on the list.', std: /whole grain flour, olive oil and salt/, carry: /whole grain/i },
++  pretzels: { decision: 'Whole wheat pretzels with a short ingredient list.', cart_pick: 'Whole wheat pretzel twists', tip1: 'Look for whole wheat flour, not enriched flour, at the top of the list.', std: /not enriched flour/, carry: /whole wheat/i },
++  fresh_pasta: { decision: 'Fresh pasta of flour and egg, with nothing added.', cart_pick: 'Additive-free fresh egg pasta', tip1: 'Look for flour and egg alone, with no ascorbic or citric acid added.', std: /flour and egg alone/, carry: /nothing added|additive-free/i },
++};
++const IDS = Object.keys(BECAME);
++const DECISION_CHANGED = IDS.filter((id) => BECAME[id].decision);
++const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
++const TREATMENT = /\b(causes?|prevents?|lowers? (the )?risk|carcinogen|cancer|tumou?rs?|toxic|unsafe|harm\w*|risks?|linked to|hyperactiv|behaviou?r|attention|neurobehavioral|exacerbate)/i;
++const REACH = [['pretzel sticks', 'pretzels'], ['pretzel twists', 'pretzels'], ['sourdough crackers', 'crackers'], ['sourdough bread', 'sourdough'], ['whole wheat bagels', 'bagels'], ['granola', 'breakfast_cereal']];
++const idOf = (r) => r?.slug;
++
++// Expected entry: the f488733 entry plus the BECAME fields, computed the way the Change section states.
++function expected(id) {
++  const w = structuredClone(was(id));
++  const b = BECAME[id];
++  const e = { ...w, buying_tips: [w.buying_tips[0], b.tip1, ...w.buying_tips.slice(1)] };
++  for (const f of ['decision', 'cart_pick']) if (b[f]) e[f] = b[f];
++  if (b.watch_add) e.watch_out = [...(w.watch_out ?? []), b.watch_add];
++  if (b.alias_add) e.aliases = [...w.aliases, b.alias_add];
++  return e;
++}
++
++// Every new string the batch writes into a field shoppers see.
++const fresh = () => IDS.flatMap((id) => {
++  const b = BECAME[id];
++  return [b.decision, b.cart_pick, b.tip1, b.watch_add].filter(Boolean);
++});
++
++nonEmpty(IDS, 'IDS', 9);
++
++test('C1 the 9 ids equal their expected entries and carry their phrase', () => {
++  for (const id of IDS) {
++    assert.ok(live(id) && was(id), `${id} missing`);
++    assert.deepEqual(live(id), expected(id), id);
++    const l = live(id);
++    assert.match(`${l.decision} ${l.cart_pick || ''} ${l.buying_tips[1]}`, BECAME[id].carry, `${id} carry phrase`);
++  }
++});
++
++test('C2 decisions are at most 10 words and carts at most 46 characters', () => {
++  for (const id of IDS) {
++    const l = live(id);
++    assert.ok(words(l.decision) <= 10, `${id} decision ${words(l.decision)} words`);
++    if (l.cart_pick) assert.ok(l.cart_pick.length <= 46, `${id} cart ${l.cart_pick.length} chars`);
++  }
++});
++
++test('C3 tips[0] stays the base why; tips[1] is the new standard line', () => {
++  for (const id of IDS) {
++    const t = live(id).buying_tips;
++    assert.equal(t[0], was(id).buying_tips[0], `${id} tip 0`);
++    assert.doesNotMatch(t[0], /^(choose|pick|buy|read|check|look|skip|compare)\b/i, `${id} tip 0 imperative`);
++    assert.notEqual(t[0], live(id).decision, id);
++    assert.equal(t[1], BECAME[id].tip1, `${id} tip 1`);
++    assert.match(t[1], BECAME[id].std, `${id} tip 1 standard`);
++  }
++});
++
++test('C4 no new text carries a banned or treatment word, a dash, a straight apostrophe or first person', () => {
++  const all = fresh();
++  nonEmpty(all, 'written', 25);
++  for (const s of all) {
++    assert.doesNotMatch(s, BANNED, s);
++    assert.doesNotMatch(s, TREATMENT, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|our|us)\b/, s);
++    assert.ok(!s.includes('—') && !s.includes('–'), s);
++    assert.ok(!s.includes("'"), s);
++  }
++});
++
++test('C5 no bread or grain front names organic', () => {
++  for (const id of IDS) {
++    const l = live(id);
++    assert.doesNotMatch(`${l.decision} ${l.cart_pick || ''}`, /\borganic\b/i, id);
++  }
++});
++
++test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
++  const others = kb.entries.filter((e) => !IDS.includes(e.id));
++  nonEmpty(others, 'others', 195);
++  assert.equal(kb.entries.length, base.entries.length);
++  for (const e of others) assert.deepEqual(e, was(e.id), e.id);
++  assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
++  for (const k of Object.keys(base)) if (k !== 'entries') assert.deepEqual(kb[k], base[k], k);
++});
++
++test('C7 doLines.json unchanged; review headlines move only on the batch ids', () => {
++  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
++  assert.deepEqual(now, JSON.parse(git('f488733:server/lib/doLines.json')));
++  const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
++  const liveRows = rows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
++  const baseRows = rows(git('f488733:docs/do-lines-review.md'));
++  nonEmpty([...baseRows.keys()], 'review rows', 150);
++  assert.equal(liveRows.size, baseRows.size);
++  let seen = 0;
++  for (const [id, row] of baseRows) {
++    const lr = liveRows.get(id);
++    assert.ok(lr, id);
++    if (DECISION_CHANGED.includes(id)) {
++      const lc = lr.split('|').map((c) => c.trim());
++      const bc = row.split('|').map((c) => c.trim());
++      assert.equal(lc[3], live(id).decision, id);
++      assert.equal(lc[4], bc[4], `${id} do cell`);
++      seen += 1;
++    } else {
++      assert.equal(lr, row, id);
++    }
++  }
++  assert.equal(seen, DECISION_CHANGED.length);
++});
++
++test('C8 every base tip is kept', () => {
++  for (const id of IDS) {
++    const l = live(id);
++    nonEmpty(was(id).buying_tips, `${id} base tips`, 1);
++    was(id).buying_tips.forEach((t, i) => assert.ok(l.buying_tips.includes(t), `${id} lost tip ${i}`));
++  }
++});
++
++test('C9 each cart pick matches its own card', async () => {
++  const carts = IDS.filter((id) => live(id).cart_pick);
++  nonEmpty(carts, 'carts', 9);
++  for (const id of carts) {
++    const got = idOf(await matchItemToCard(live(id).cart_pick));
++    assert.equal(got, id, `${live(id).cart_pick} -> ${got}`);
++  }
++});
++
++test('C10 no new string sits on more than 2 entries', () => {
++  const all = fresh();
++  nonEmpty(all, 'fresh', 25);
++  for (const s of all) {
++    const n = kb.entries.filter((e) => [e.decision, e.cart_pick, e.tier_note, ...(e.buying_tips || []), ...(e.watch_out || [])].includes(s)).length;
++    assert.ok(n <= 2, `${s} on ${n} entries`);
++  }
++});
++
++test('C11 cereal: unfortified is the pick and fortified ranks second; reach queries still land', async () => {
++  const l = live('breakfast_cereal');
++  assert.match(l.decision, /unfortified/i, 'decision');
++  assert.match(l.cart_pick, /unfortified/i, 'cart');
++  const last = l.watch_out.at(-1);
++  assert.match(last, /fortified/i, 'watch_out');
++  assert.match(last, /second/i, 'watch_out rank');
++  nonEmpty(REACH, 'reach', 6);
++  for (const [q, id] of REACH) {
++    const got = idOf(await matchItemToCard(q));
++    assert.equal(got, id, `${q} -> ${got}`);
++  }
++});
+diff --git a/server/test/acceptance/concernAdditives.test.js b/server/test/acceptance/concernAdditives.test.js
+index 8d1467c..69d114c 100644
+--- a/server/test/acceptance/concernAdditives.test.js
++++ b/server/test/acceptance/concernAdditives.test.js
+@@ -6,10 +6,10 @@ import { readFileSync, readdirSync } from 'node:fs';
+ import { join } from 'node:path';
+ import { execFileSync } from 'node:child_process';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { preTidy, preCleanPick3 } from './twoLinePin.js';
++import { preTidy, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
+ 
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(e)));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(e))));
+ const ROOT = new URL('../../../', import.meta.url).pathname;
+ const pre = JSON.parse(execFileSync('git', ['show', 'bd8a1cc:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index 1373cdc..b7a2993 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -1361,18 +1361,20 @@ export const TWO_LINE = {
+     ]
+   },
+   "sourdough": {
+-    "decision": "Sourdough of flour, water, salt and a starter.",
++    "decision": "Whole wheat sourdough: flour, water, salt and a starter.",
+     "buying_tips": [
+       "Some loaves called sourdough use commercial yeast and added acids for the sour taste.",
++      "Look for whole wheat flour as the first ingredient, ahead of any white flour.",
+       "Look for flour, water, salt, and a culture or starter.",
+       "Ask about the starter when the label does not list it separately.",
+       "Read for added vinegar or acetic acid; ask about fermentation rather than infer it from sour flavor."
+     ]
+   },
+   "bagels": {
+-    "decision": "Bagels boiled before the oven, with their ingredients named.",
++    "decision": "Whole wheat bagels, boiled before the oven, ingredients named.",
+     "buying_tips": [
+       "The boil sets the outside and gives a bagel its chew.",
++      "Look for whole wheat flour on the bag, named before any other flour.",
+       "Read the ingredient list on the bag, or ask the bakery for it.",
+       "Ask the bakery about boiling before buying.",
+       "Without a process label, ask the baker rather than infer boiling from the shape.",
+@@ -1426,9 +1428,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "breakfast_cereal": {
+-    "decision": "Whole-grain cereal or granola with less added sugar.",
++    "decision": "Unfortified whole-grain cereal or granola, less added sugar, no dyes.",
+     "buying_tips": [
+       "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
++      "Look for a grain list with no added vitamins or minerals below it.",
+       "Check the 100% stamp rather than assume every stamp means all grain is whole.",
+       "Without a stamp, read the grain ingredients and the added-sugars line.",
+       "Read the added-sugars line even when honey or syrup is the named sweetener.",
+@@ -1945,27 +1948,30 @@ export const TWO_LINE = {
+     ]
+   },
+   "gluten_free_bread": {
+-    "decision": "Bread labeled gluten-free, with its flours and gum binder named.",
++    "decision": "Gluten-free bread with its flours named and the fewest gums.",
+     "buying_tips": [
+       "Every gluten-free wording meets one federal limit; a gum gives back some stretch.",
++      "Look for a single gum binder, such as xanthan gum, not two or more.",
+       "Check for one of the four gluten-free claim wordings.",
+       "Read which flours and starches replace the wheat.",
+       "Look for the gum that binds the loaf."
+     ]
+   },
+   "buns_rolls": {
+-    "decision": "Buns and rolls named whole wheat.",
++    "decision": "Whole wheat buns and rolls with no added sugar.",
+     "buying_tips": [
+       "Whole wheat buns use whole wheat flour with no white flour; enriched buns do not.",
++      "Look for a list with no sugar or soybean oil after the whole wheat flour.",
+       "Read the name on the bag for “whole wheat”.",
+       "Check the first ingredient for whole wheat flour.",
+       "Read “enriched buns” as made with enriched flour, not whole wheat."
+     ]
+   },
+   "pastries_muffins": {
+-    "decision": "Pastry made with butter, named on the label.",
++    "decision": "All-butter bakery pastries, no shortening or hydrogenated oil.",
+     "buying_tips": [
+       "Butter is Danish pastry’s traditional fat; factory-made often uses other fats.",
++      "Look for butter as the only fat, with no shortening or hydrogenated oil.",
+       "Read the ingredients for butter by name.",
+       "Ask the baker which fat goes into the pastry.",
+       "Read a muffin’s ingredients for butter or shortening."
+@@ -2724,9 +2730,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "crackers": {
+-    "decision": "Crackers with a whole grain listed first on the ingredients.",
++    "decision": "Whole grain crackers with olive oil, coconut oil or butter.",
+     "buying_tips": [
+       "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
++      "Look for whole grain flour, olive oil and salt, and little else, on the list.",
+       "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
+       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+       "Read the first ingredient; a whole grain there leads the cracker.",
+@@ -2883,9 +2890,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "pretzels": {
+-    "decision": "Pretzels listing flour, malt, oil, salt, yeast and soda.",
++    "decision": "Whole wheat pretzels with a short ingredient list.",
+     "buying_tips": [
+       "The alkaline bath gives a pretzel its chew and glossy brown crust.",
++      "Look for whole wheat flour, not enriched flour, at the top of the list.",
+       "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
+       "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
+       "A paler pretzel can point to the milder baking soda bath."
+@@ -3036,9 +3044,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "fresh_pasta": {
+-    "decision": "Fresh pasta of flour and egg, with little else listed.",
++    "decision": "Fresh pasta of flour and egg, with nothing added.",
+     "buying_tips": [
+       "Many packs add nothing, and some add ascorbic or citric acid, which the list shows.",
++      "Look for flour and egg alone, with no ascorbic or citric acid added.",
+       "Read the list; flour and egg with little else marks a plain pack.",
+       "Pick a pack that is vacuum sealed or holds an oxygen packet."
+     ]
+@@ -3370,3 +3379,8 @@ export const preCleanPick2 = (e) => (e && CLEAN_PICK_2.has(e.id) ? PRE_CP2.entri
+ export const CLEAN_PICK_3 = new Set(['almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water']);
+ const PRE_CP3 = JSON.parse(execFileSync('git', ['show', '2ab7f2f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ export const preCleanPick3 = (e) => (e && CLEAN_PICK_3.has(e.id) ? PRE_CP3.entries.find((x) => x.id === e.id) : e);
++
++// clean-pick-4 (2026-10-20) moved these bread and grain fronts on; older batch tests read them as of f488733, and cleanPick4.test.js owns the new text.
++export const CLEAN_PICK_4 = new Set(['sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
++const PRE_CP4 = JSON.parse(execFileSync('git', ['show', 'f488733:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++export const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entries.find((x) => x.id === e.id) : e);
+diff --git a/server/test/acceptance/w2.test.js b/server/test/acceptance/w2.test.js
+index dc449cb..e419faf 100644
+--- a/server/test/acceptance/w2.test.js
++++ b/server/test/acceptance/w2.test.js
+@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
+ import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
+ import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
+ import { kindFor } from '../../lib/counterCards.js';
+ import { lintSections } from '../../lib/counterCardLint.js';
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(e)))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
+ 
+ const entries = nonEmpty(kb.entries, 'W2 corpus');
+ const byId = (id) => {
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index 017207a..03c85ea 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,8 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3 } from './twoLinePin.js';
+-kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(e))));
++import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
++kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e)))));
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);

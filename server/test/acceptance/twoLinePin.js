@@ -1361,18 +1361,20 @@ export const TWO_LINE = {
     ]
   },
   "sourdough": {
-    "decision": "Sourdough of flour, water, salt and a starter.",
+    "decision": "Whole wheat sourdough: flour, water, salt and a starter.",
     "buying_tips": [
       "Some loaves called sourdough use commercial yeast and added acids for the sour taste.",
+      "Look for whole wheat flour as the first ingredient, ahead of any white flour.",
       "Look for flour, water, salt, and a culture or starter.",
       "Ask about the starter when the label does not list it separately.",
       "Read for added vinegar or acetic acid; ask about fermentation rather than infer it from sour flavor."
     ]
   },
   "bagels": {
-    "decision": "Bagels boiled before the oven, with their ingredients named.",
+    "decision": "Whole wheat bagels, boiled before the oven, ingredients named.",
     "buying_tips": [
       "The boil sets the outside and gives a bagel its chew.",
+      "Look for whole wheat flour on the bag, named before any other flour.",
       "Read the ingredient list on the bag, or ask the bakery for it.",
       "Ask the bakery about boiling before buying.",
       "Without a process label, ask the baker rather than infer boiling from the shape.",
@@ -1426,9 +1428,10 @@ export const TWO_LINE = {
     ]
   },
   "breakfast_cereal": {
-    "decision": "Whole-grain cereal or granola with less added sugar.",
+    "decision": "Unfortified whole-grain cereal or granola, less added sugar, no dyes.",
     "buying_tips": [
       "Whole grain and added sugar are separate checks; a stamp covers only the grain.",
+      "Look for a grain list with no added vitamins or minerals below it.",
       "Check the 100% stamp rather than assume every stamp means all grain is whole.",
       "Without a stamp, read the grain ingredients and the added-sugars line.",
       "Read the added-sugars line even when honey or syrup is the named sweetener.",
@@ -1945,27 +1948,30 @@ export const TWO_LINE = {
     ]
   },
   "gluten_free_bread": {
-    "decision": "Bread labeled gluten-free, with its flours and gum binder named.",
+    "decision": "Gluten-free bread with its flours named and the fewest gums.",
     "buying_tips": [
       "Every gluten-free wording meets one federal limit; a gum gives back some stretch.",
+      "Look for a single gum binder, such as xanthan gum, not two or more.",
       "Check for one of the four gluten-free claim wordings.",
       "Read which flours and starches replace the wheat.",
       "Look for the gum that binds the loaf."
     ]
   },
   "buns_rolls": {
-    "decision": "Buns and rolls named whole wheat.",
+    "decision": "Whole wheat buns and rolls with no added sugar.",
     "buying_tips": [
       "Whole wheat buns use whole wheat flour with no white flour; enriched buns do not.",
+      "Look for a list with no sugar or soybean oil after the whole wheat flour.",
       "Read the name on the bag for “whole wheat”.",
       "Check the first ingredient for whole wheat flour.",
       "Read “enriched buns” as made with enriched flour, not whole wheat."
     ]
   },
   "pastries_muffins": {
-    "decision": "Pastry made with butter, named on the label.",
+    "decision": "All-butter bakery pastries, no shortening or hydrogenated oil.",
     "buying_tips": [
       "Butter is Danish pastry’s traditional fat; factory-made often uses other fats.",
+      "Look for butter as the only fat, with no shortening or hydrogenated oil.",
       "Read the ingredients for butter by name.",
       "Ask the baker which fat goes into the pastry.",
       "Read a muffin’s ingredients for butter or shortening."
@@ -2724,9 +2730,10 @@ export const TWO_LINE = {
     ]
   },
   "crackers": {
-    "decision": "Crackers with a whole grain listed first on the ingredients.",
+    "decision": "Whole grain crackers with olive oil, coconut oil or butter.",
     "buying_tips": [
       "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
+      "Look for whole grain flour, olive oil and salt, and little else, on the list.",
       "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the first ingredient; a whole grain there leads the cracker.",
@@ -2883,9 +2890,10 @@ export const TWO_LINE = {
     ]
   },
   "pretzels": {
-    "decision": "Pretzels listing flour, malt, oil, salt, yeast and soda.",
+    "decision": "Whole wheat pretzels with a short ingredient list.",
     "buying_tips": [
       "The alkaline bath gives a pretzel its chew and glossy brown crust.",
+      "Look for whole wheat flour, not enriched flour, at the top of the list.",
       "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
       "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
       "A paler pretzel can point to the milder baking soda bath."
@@ -3036,9 +3044,10 @@ export const TWO_LINE = {
     ]
   },
   "fresh_pasta": {
-    "decision": "Fresh pasta of flour and egg, with little else listed.",
+    "decision": "Fresh pasta of flour and egg, with nothing added.",
     "buying_tips": [
       "Many packs add nothing, and some add ascorbic or citric acid, which the list shows.",
+      "Look for flour and egg alone, with no ascorbic or citric acid added.",
       "Read the list; flour and egg with little else marks a plain pack.",
       "Pick a pack that is vacuum sealed or holds an oxygen packet."
     ]
@@ -3370,3 +3379,8 @@ export const preCleanPick2 = (e) => (e && CLEAN_PICK_2.has(e.id) ? PRE_CP2.entri
 export const CLEAN_PICK_3 = new Set(['almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water']);
 const PRE_CP3 = JSON.parse(execFileSync('git', ['show', '2ab7f2f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick3 = (e) => (e && CLEAN_PICK_3.has(e.id) ? PRE_CP3.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-4 (2026-10-20) moved these bread and grain fronts on; older batch tests read them as of f488733, and cleanPick4.test.js owns the new text.
+export const CLEAN_PICK_4 = new Set(['sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
+const PRE_CP4 = JSON.parse(execFileSync('git', ['show', 'f488733:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entries.find((x) => x.id === e.id) : e);

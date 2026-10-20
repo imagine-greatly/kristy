@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
-import { CLEAN_PICK_3 } from './twoLinePin.js';
+import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
 
 test('C3 every other field and entry equals a2487a7', () => {
   for (const e of kb.entries) {
-    if (CLEAN_PICK_3.has(e.id)) continue;
+    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id)) continue;
     const old = find(base, e.id);
     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
     assert.deepEqual(strip(e), strip(old), e.id);

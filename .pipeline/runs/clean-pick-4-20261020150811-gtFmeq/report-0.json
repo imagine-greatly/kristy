@@ -1,0 +1,76 @@
+{
+  "status": "done",
+  "files_changed": [
+    "docs/do-lines-review.md",
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/cleanPick2.test.js",
+    "server/test/acceptance/cleanPick2b.test.js",
+    "server/test/acceptance/cleanPick3.test.js",
+    "server/test/acceptance/concernAdditives.test.js",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All nine entries match BECAME; pins and historical overlays updated. Assumptions: the authoritative table permits appending 'whole wheat bagels', overriding the alias freeze while preserving existing aliases; eight cart picks change, not seven."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Length assertions pass; twoLineCheck reports 181 checked, 0 violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "All nine tip standards pass. Assumptions: tip 0 remains unchanged; insertion at index 1 shifts only subsequent base tips."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "All 27 new shopper-facing strings pass wording and punctuation checks."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "No batch decision or cart names organic."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "All 202 outside entries and top-level metadata remain unchanged. Historical outside counts are 148, 164 and 181. Full npm test: 2890 passed, 0 failed, 0 skipped. commitGuard and git diff --check pass; protected files unchanged."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Exactly nine review headline cells changed; every other byte is preserved. Regenerated doLines.json is byte-identical to f488733."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Every base buying tip survives verbatim and in order, computed from git show f488733."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All nine carts route correctly; listMatchProbe reports no wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "All 27 new strings satisfy the maximum-two-entry repetition check."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "Cereal selects unfortified and ranks fortified second in its final watch_out line; all six reach queries pass. NOTES: supplied acceptance file was present and untouched; stale anchors were located by content. All 11 standalone acceptance cases pass."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

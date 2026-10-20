@@ -1,0 +1,140 @@
+{
+  "kind": "build",
+  "runId": "clean-pick-4-20261020150811-gtFmeq",
+  "piece_id": "/Users/m1/kristy:clean-pick-4",
+  "attempt": 3,
+  "spec": "/Users/m1/kristy/.pipeline/specs/clean-pick-4.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 1601773,
+    "cached": 1482496,
+    "output": 10283,
+    "reasoning": 2158
+  },
+  "over_ceiling": true,
+  "ms": 619231,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-20T13:08:11.610Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-4-20261020150811-gtFmeq:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-4-20261020150811-gtFmeq/events-0.jsonl",
+      "usage": {
+        "input": 1601773,
+        "cached": 1482496,
+        "output": 10283,
+        "reasoning": 2158
+      },
+      "tokens": 1612056,
+      "mem_free_mb": 153,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15971-cbde-7f92-8d73-2d71b4ced1b8",
+        "usage": {
+          "input": 1601773,
+          "cached": 1482496,
+          "output": 10283,
+          "reasoning": 2158
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"docs/do-lines-review.md\",\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/cleanPick2.test.js\",\n    \"server/test/acceptance/cleanPick2b.test.js\",\n    \"server/test/acceptance/cleanPick3.test.js\",\n    \"server/test/acceptance/concernAdditives.test.js\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All nine entries match BECAME; pins and historical overlays updated. Assumptions: the authoritative table permits appending 'whole wheat bagels', overriding the alias freeze while preserving existing aliases; eight cart picks change, not seven.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Length assertions pass; twoLineCheck reports 181 checked, 0 violations.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"All nine tip standards pass. Assumptions: tip 0 remains unchanged; insertion at index 1 shifts only subsequent base tips.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"All 27 new shopper-facing strings pass wording and punctuation checks.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"No batch decision or cart names organic.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"All 202 outside entries and top-level metadata remain unchanged. Historical outside counts are 148, 164 and 181. Full npm test: 2890 passed, 0 failed, 0 skipped. commitGuard and git diff --check pass; protected files unchanged.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Exactly nine review headline cells changed; every other byte is preserved. Regenerated doLines.json is byte-identical to f488733.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Every base buying tip survives verbatim and in order, computed from git show f488733.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All nine carts route correctly; listMatchProbe reports no wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"All 27 new strings satisfy the maximum-two-entry repetition check.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"Cereal selects unfortified and ranks fortified second in its final watch_out line; all six reach queries pass. NOTES: supplied acceptance file was present and untouched; stale anchors were located by content. All 11 standalone acceptance cases pass.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc pwd",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick4.test.js'",
+          "/bin/zsh -lc \"rg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"' -g '\"'!*.pem'\"' -g '\"'!*.key'\"' -g '\"'!**/credentials*'\"' -g '\"'!**/auth.json'\"'\"",
+          "/bin/zsh -lc 'git status --short'",
+          "/bin/zsh -lc 'for path in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$path\" ]; then cat \"$path\"; fi; done'",
+          "/bin/zsh -lc 'cat .pipeline/runs/clean-pick-4-20261020150811-gtFmeq/report.schema.json'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js server/test/acceptance/cleanPick3.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/w2.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/concernAdditives.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick3.test.js'",
+          "/bin/zsh -lc \"sed -n '295,360p' server/test/acceptance/cleanPick1.test.js\ncat server/test/acceptance/cleanPick2b.test.js\nsed -n '1,40p' server/test/acceptance/cleanPick2.test.js\nsed -n '150,350p' server/test/acceptance/cleanPick2.test.js\"",
+          "/bin/zsh -lc \"cat server/test/acceptance/twoLinePin.test.js\nrg -n 'TWO_LINE|withTwoLine|ROOT|execFileSync|CLEAN_PICK|preCleanPick|\\\"(sourdough|bagels|breakfast_cereal|gluten_free_bread|buns_rolls|pastries_muffins|crackers|pretzels|fresh_pasta)\\\"' server/test/acceptance/twoLinePin.js\n tail -90 server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc 'cat server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/scripts/commitGuard.js server/scripts/listMatchProbe.js server/package.json package.json server/lib/testGuards.js'",
+          "/bin/zsh -lc \"sed -n '1,26p' server/test/acceptance/w2.test.js\nsed -n '1,22p' server/test/acceptance/w4.test.js\nsed -n '1,31p' server/test/acceptance/ca-4b.test.js\nsed -n '1,26p' server/test/acceptance/ca-7.test.js\nsed -n '1,22p' server/test/acceptance/concernAdditives.test.js\nsed -n '1,28p' server/test/acceptance/twoLinePin.js\nsed -n '1355,1457p' server/test/acceptance/twoLinePin.js\nsed -n '1940,1980p' server/test/acceptance/twoLinePin.js\nsed -n '2720,2755p' server/test/acceptance/twoLinePin.js\nsed -n '2880,2900p' server/test/acceptance/twoLinePin.js\nsed -n '3032,3055p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"rg -n '\"'^(export |import |function |const )|readFileSync|writeFile|execFileSync|git'\"\\\\(' server/scripts/commitGuard.js server/lib/listMatch.js\nrg -n 'typeContradicts|pretzel|sourdough|whole_wheat' server/lib/perimeter.js\nrg -n '\"'^'\"\\\\| \"'`(sourdough|bagels|breakfast_cereal|gluten_free_bread|buns_rolls|pastries_muffins|crackers|pretzels|fresh_pasta|rice_arsenic)`'\"' docs/do-lines-review.md\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, subprocess\nfrom pathlib import Path\nids = ['sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']\nbase_bytes = subprocess.check_output(['git', 'show', 'f488733:server/kristy_perimeter_kb.json'])\nprint('KB equals base bytes:', Path('server/kristy_perimeter_kb.json').read_bytes() == base_bytes)\nbase = json.loads(base_bytes)\npin_text = Path('server/test/acceptance/twoLinePin.js').read_text()\npins = json.loads(pin_text.split('export const TWO_LINE = ', 1)[1].split('\\\\n};', 1)[0] + '\\\\n}')\nfor e in base['entries']:\n    if e['id'] in ids:\n        print(json.dumps({k:e[k] for k in ['id', 'decision', 'cart_pick', 'buying_tips', 'watch_out', 'aliases'] if k in e}, ensure_ascii=False))\n        print('PIN FIELDS', list(pins[e['id']]))\nprint('CP3 sample pin fields', list(pins['almond_milk']))\nprint('entry count', len(base['entries']))\nfor f in ['docs/do-lines-review.md', 'server/lib/doLines.json']:\n    print(f, 'equals base bytes:', Path(f).read_bytes() == subprocess.check_output(['git', 'show', f'f488733:{f}']))\nPY\"",
+          "/bin/zsh -lc \"sed -n '185,350p' server/lib/listMatch.js\nsed -n '111,153p' server/lib/perimeter.js\nsed -n '185,280p' server/scripts/commitGuard.js\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, re\nfrom pathlib import Path\nkb=json.loads(Path('server/kristy_perimeter_kb.json').read_text())\ntext=Path('server/test/acceptance/twoLinePin.js').read_text()\nbatches={int(n): set(re.findall(r\\\"'([\"'^'\"']+)'\\\", values)) for n, values in re.findall(r'export const CLEAN_PICK_(\\\\d) = new Set\\\\(\\\\[(.*?)\\\\]\\\\)', text)}\ncp4=set(['sourdough','bagels','breakfast_cereal','gluten_free_bread','buns_rolls','pastries_muffins','crackers','pretzels','fresh_pasta'])\n# cleanPick2 also owns label_organic_scope, which has no preCleanPick2 overlay.\nbatches[2].add('label_organic_scope')\nfor batch in [1,2,3]:\n    excluded=set().union(cp4, *(batches[n] for n in range(batch,4)))\n    print('cleanPick'+str(batch)+' outside count after CP4:',sum(e['id'] not in excluded for e in kb['entries']))\nprint('TwoLine JSON formatting stable:', text.split('export const TWO_LINE = ',1)[1].split('\\\\n};',1)[0]+'\\\\n}' == json.dumps(json.loads(text.split('export const TWO_LINE = ',1)[1].split('\\\\n};',1)[0]+'\\\\n}'), ensure_ascii=False, indent=2))\nprint('KB formatting stable:', Path('server/kristy_perimeter_kb.json').read_text()==json.dumps(kb, ensure_ascii=False, indent=2)+'\\\\n')\nPY\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, subprocess\nfrom pathlib import Path\n\nbecame = {\n    'sourdough': {'decision': 'Whole wheat sourdough: flour, water, salt and a starter.', 'cart_pick': 'Whole wheat sourdough bread', 'tip1': 'Look for whole wheat flour as the first ingredient, ahead of any white flour.'},\n    'bagels': {'decision': 'Whole wheat bagels, boiled before the oven, ingredients named.', 'cart_pick': 'Whole wheat boiled bakery bagels', 'alias_add': 'whole wheat bagels', 'tip1': 'Look for whole wheat flour on the bag, named before any other flour.'},\n    'breakfast_cereal': {'decision': 'Unfortified whole-grain cereal or granola, less added sugar, no dyes.', 'cart_pick': 'Unfortified whole-grain breakfast cereal', 'tip1': 'Look for a grain list with no added vitamins or minerals below it.', 'watch_add': 'A fortified cereal comes second, behind one with no vitamins or minerals added.'},\n    'gluten_free_bread': {'decision': 'Gluten-free bread with its flours named and the fewest gums.', 'cart_pick': 'Short-list gluten-free bread', 'tip1': 'Look for a single gum binder, such as xanthan gum, not two or more.'},\n    'buns_rolls': {'decision': 'Whole wheat buns and rolls with no added sugar.', 'tip1': 'Look for a list with no sugar or soybean oil after the whole wheat flour.'},\n    'pastries_muffins': {'decision': 'All-butter bakery pastries, no shortening or hydrogenated oil.', 'cart_pick': 'All-butter bakery pastries', 'tip1': 'Look for butter as the only fat, with no shortening or hydrogenated oil.'},\n    'crackers': {'decision': 'Whole grain crackers with olive oil, coconut oil or butter.', 'cart_pick': 'Short-list whole grain crackers', 'tip1': 'Look for whole grain flour, olive oil and salt, and little else, on the list.'},\n    'pretzels': {'decision': 'Whole wheat pretzels with a short ingredient list.', 'cart_pick': 'Whole wheat pretzel twists', 'tip1': 'Look for whole wheat flour, not enriched flour, at the top of the list.'},\n    'fresh_pasta': {'decision': 'Fresh pasta of flour and egg, with nothing added.', 'cart_pick': 'Additive-free fresh egg pasta', 'tip1': 'Look for flour and egg alone, with no ascorbic or citric acid added.'},\n}\nkb_path = Path('server/kristy_perimeter_kb.json')\nbase_bytes = subprocess.check_output(['git', 'show', 'f488733:server/kristy_perimeter_kb.json'])\nassert kb_path.read_bytes() == base_bytes\nbase = json.loads(base_bytes)\nkb = json.loads(base_bytes)\nbase_by_id = {e['id']: e for e in base['entries']}\nfor e in kb['entries']:\n    if e['id'] not in became:\n        continue\n    old = base_by_id[e['id']]\n    new = became[e['id']]\n    e['decision'] = new['decision']\n    if 'cart_pick' in new:\n        e['cart_pick'] = new['cart_pick']\n    e['buying_tips'] = [old['buying_tips'][0], new['tip1'], *old['buying_tips'][1:]]\n    if 'watch_add' in new:\n        e['watch_out'] = [*old.get('watch_out', []), new['watch_add']]\n    if 'alias_add' in new:\n        e['aliases'] = [*old['aliases'], new['alias_add']]\n\nreview_path = Path('docs/do-lines-review.md')\nreview = review_path.read_text()\nassert review.encode() == subprocess.check_output(['git', 'show', 'f488733:docs/do-lines-review.md'])\nrows = review.splitlines(keepends=True)\nseen = set()\nfor i, line in enumerate(rows):\n    if not line.startswith('| \"'`'\"'):\n        continue\n    id = line.split('\"'`'\"')[1]\n    if id not in became or id in seen:\n        continue\n    cells = line.split('|')\n    assert cells[3] == ' ' + base_by_id[id]['decision'] + ' '\n    cells[3] = ' ' + became[id]['decision'] + ' '\n    rows[i] = '|'.join(cells)\n    seen.add(id)\nassert seen == set(became)\n\npin_path = Path('server/test/acceptance/twoLinePin.js')\npin_text = pin_path.read_text()\nprefix, rest = pin_text.split('export const TWO_LINE = ', 1)\nold_pin, suffix = rest.split('\\\\n};', 1)\npins = json.loads(old_pin + '\\\\n}')\nlive_by_id = {e['id']: e for e in kb['entries']}\nfor id in became:\n    for field in ['decision', 'cart_pick', 'buying_tips', 'watch_out']:\n        if field in pins[id] and live_by_id[id].get(field) \"'!= base_by_id[id].get(field):\n            pins[id][field] = live_by_id[id][field]\npin_text = prefix + '\"'export const TWO_LINE = ' + json.dumps(pins, ensure_ascii=False, indent=2) + ';' + suffix\nassert 'export const CLEAN_PICK_4' not in pin_text\npin_text += '''\n// clean-pick-4 (2026-10-20) moved these bread and grain fronts on; older batch tests read them as of f488733, and cleanPick4.test.js owns the new text.\nexport const CLEAN_PICK_4 = new Set(['sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);\nconst PRE_CP4 = JSON.parse(execFileSync('git', ['show', 'f488733:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());\nexport const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entries.find((x) => x.id === e.id) : e);\n'''\n\nkb_path.write_text(json.dumps(kb, ensure_ascii=False, indent=2) + '\\\\n')\nreview_path.write_text(''.join(rows))\npin_path.write_text(pin_text)\nprint('Updated nine KB entries, nine review headlines and their existing TWO_LINE pins; appended CP4 overlay.')\nPY\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/cleanPick4.test.js'",
+          "/bin/zsh -lc \"node scripts/buildDoLines.js && node --input-type=module <<'JS'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst file = 'lib/doLines.json';\nassert.deepEqual(readFileSync(file), execFileSync('git', ['show', 'f488733:server/lib/doLines.json'], { maxBuffer: 64 << 20 }));\nconsole.log('doLines.json bytes exactly match f488733.');\nJS\"",
+          "/bin/zsh -lc 'node scripts/twoLineCheck.js'",
+          "/bin/zsh -lc 'node scripts/commitGuard.js'",
+          "/bin/zsh -lc 'node scripts/listMatchProbe.js'",
+          "/bin/zsh -lc 'git diff --check\n git diff --stat\n git diff -- server/test/acceptance/twoLinePin.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js server/test/acceptance/cleanPick3.test.js\n git diff 719f9fe -- server/test/acceptance/passRule.js server/test/acceptance/k9.test.js'",
+          "/bin/zsh -lc \"node -e \\\"import('./lib/listMatch.js').then(async ({ matchItemToCard }) => { for (const q of process.argv.slice(1)) console.log(q, '->', (await matchItemToCard(q))?.slug); })\\\" 'Whole wheat sourdough bread' 'Whole wheat boiled bakery bagels' 'Unfortified whole-grain breakfast cereal' 'Short-list gluten-free bread' 'Whole wheat buns or rolls' 'All-butter bakery pastries' 'Short-list whole grain crackers' 'Whole wheat pretzel twists' 'Additive-free fresh egg pasta' 'pretzel sticks' 'pretzel twists' 'sourdough crackers' 'sourdough bread' 'whole wheat bagels' 'granola'\"",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport subprocess, sys\nresult = subprocess.run(['npm', 'test'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)\nlines = result.stdout.splitlines()\nif result.returncode:\n    print(result.stdout)\nelse:\n    print('\\\\n'.join(lines[-20:]))\nsys.exit(result.returncode)\nPY\"",
+          "/bin/zsh -lc 'git diff -- server/kristy_perimeter_kb.json docs/do-lines-review.md server/test/acceptance/w2.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/concernAdditives.test.js'",
+          "/bin/zsh -lc \"python3 - <<'PY'\nimport json, re, subprocess\nfrom pathlib import Path\nowned = {'server/kristy_perimeter_kb.json','docs/do-lines-review.md','server/lib/doLines.json',*[f'server/test/acceptance/{name}' for name in ['twoLinePin.js','w2.test.js','w4.test.js','ca-4b.test.js','ca-7.test.js','concernAdditives.test.js','cleanPick1.test.js','cleanPick2.test.js','cleanPick2b.test.js','cleanPick3.test.js']]}\nchanged = subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()\nassert set(changed) <= owned, set(changed)-owned\nprint('All',len(changed),'changed tracked files are owned.')\nbase = json.loads(subprocess.check_output(['git','show','f488733:server/kristy_perimeter_kb.json']))\nnow = json.loads(Path('server/kristy_perimeter_kb.json').read_text())\nids = {'sourdough','bagels','breakfast_cereal','gluten_free_bread','buns_rolls','pastries_muffins','crackers','pretzels','fresh_pasta'}\nbase_entries = {e['id']:e for e in base['entries']}\nassert {e['id'] for e in now['entries'] if e \"'!= base_entries[e['\"'id']]} == ids\nfor e in now['entries']:\n    b = base_entries[e['id']]\n    if e['id'] not in ids:\n        assert e == b\n        continue\n    allowed = {'decision','buying_tips'}\n    if e['id'] \"'!= '\"'buns_rolls': allowed.add('cart_pick')\n    if e['id'] == 'bagels': allowed.add('aliases')\n    if e['id'] == 'breakfast_cereal': allowed.add('watch_out')\n    assert {k for k in e if e[k] \"'!= b.get(k)} == allowed\n    assert e['\"'buying_tips'][:1] + e['buying_tips'][2:] == b['buying_tips']\nprint('Exactly nine entries changed only the required fields; all base tips preserved in order.')\nreview_path='docs/do-lines-review.md'\nold_lines=subprocess.check_output(['git','show',f'f488733:{review_path}'],text=True).splitlines(keepends=True)\nnew_lines=Path(review_path).read_text().splitlines(keepends=True)\nassert len(old_lines)==len(new_lines)\ncount=0\nfor old,new in zip(old_lines,new_lines):\n    if old == new: continue\n    oc,nc=old.split('|'),new.split('|')\n    assert oc[:3]+oc[4:]==nc[:3]+nc[4:]\n    assert old.split('\"'`'\"')[1] in ids\n    count+=1\nassert count==9\nprint('Review differs in exactly nine headline cells; every other byte is preserved.')\nfor f in changed:\n    patch = subprocess.check_output(['git','diff','--',f],text=True)\n    additions='\\\\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))\n    assert not re.search(r'@ts-ignore|@ts-nocheck|eslint-disable|\\\\.skip\\\\(|\\\\.only\\\\(|: any\\\\b|noqa|type: ignore', additions), f\nprint('No forbidden check suppressions introduced.')\nPY\"",
+          "/bin/zsh -lc 'git status --short'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 1612056,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 234,
+    "key": "31aad4fc65a54de8fe387711bb74cd2cdfbc3f9526f7fc7a4fcfe9677c5046e3",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-4-20261020150811-gtFmeq/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-4-20261020150811-gtFmeq:0",
+  "mem_free_mb": 153,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 12705,
+      "tail": "ok 2886 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.254209\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2887 - section rules: voice and claim bans\n  ---\n  duration_ms: 1.230292\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2888 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.422375\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2889 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 140.642541\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2890 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 1.127917\n  type: 'test'\n  ...\n1..2890\n# tests 2890\n# suites 0\n# pass 2890\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 11452.129708",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-4-20261020150811-gtFmeq/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-20T13:18:30.841Z",
+  "readiness": "READY"
+}

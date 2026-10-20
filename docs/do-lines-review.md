@@ -118,12 +118,12 @@ Also: imperative, starts with a verb, ≤14 words.
 | `egg_duck_quail` | eggs_dairy | Pasture-raised duck or quail eggs with organic feed. | Read the feed claim and check for clean, uncracked shells. | — |
 
 | `sandwich_bread` | bulk_pantry | Whole wheat sandwich bread: flour, water, yeast, salt, little else. | Read the flour names; “wheat” and “enriched” alone do not establish whole grain. | — |
-| `sourdough` | bulk_pantry | Sourdough of flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
-| `bagels` | bulk_pantry | Bagels boiled before the oven, with their ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
+| `sourdough` | bulk_pantry | Whole wheat sourdough: flour, water, salt and a starter. | Ask the baker what leavens the dough; check for culture or starter. | — |
+| `bagels` | bulk_pantry | Whole wheat bagels, boiled before the oven, ingredients named. | Ask the baker about a water bath before the dough reaches the oven. | — |
 | `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
 | `turkey_whole` | meat | Pasture-raised whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
 | `ground_turkey` | meat | Pasture-raised or organic ground turkey, fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
-| `breakfast_cereal` | bulk_pantry | Whole-grain cereal or granola with less added sugar. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
+| `breakfast_cereal` | bulk_pantry | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
@@ -148,9 +148,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `sprouted_grain_bread` | bulk_pantry | Bread with sprouted whole grains first and no added flour. | Read the first few ingredients, then check the rest for added flour. | — |
 | `sprouted_grains` | bulk_pantry | Grain labeled sprouted whole grain. | Check the label names the grain as whole, not only its process. | — |
 | `specialty_flours` | bulk_pantry | Specialty flour with “whole” in its name or first ingredient. | Read the flour name for “whole”, then check the fat line. | — |
-| `gluten_free_bread` | bulk_pantry | Bread labeled gluten-free, with its flours and gum binder named. | Find the claim on the bag, then read the ingredient list and the gum. | — |
-| `buns_rolls` | bulk_pantry | Buns and rolls named whole wheat. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
-| `pastries_muffins` | bulk_pantry | Pastry made with butter, named on the label. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
+| `gluten_free_bread` | bulk_pantry | Gluten-free bread with its flours named and the fewest gums. | Find the claim on the bag, then read the ingredient list and the gum. | — |
+| `buns_rolls` | bulk_pantry | Whole wheat buns and rolls with no added sugar. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
+| `pastries_muffins` | bulk_pantry | All-butter bakery pastries, no shortening or hydrogenated oil. | Read the fat in the ingredients, or ask the baker if it is butter. | — |
 | `muesli` | bulk_pantry | Muesli of just oats, fruit, nuts and seeds. | Read the ingredients for sugar, honey or syrup beyond the dried fruit. | — |
 | `bread_aisle` | bulk_pantry | Your chosen bread, with “whole” in the first flour. | Read the first ingredient for “whole”, then check which stamp is shown. | — |
 | `plain_kefir` | eggs_dairy | Plain kefir from 100% grass-fed whole milk. | Read the ingredient list for milk and kefir cultures only. | — |
@@ -199,11 +199,11 @@ Also: imperative, starts with a verb, ≤14 words.
 | `salsa` | bulk_pantry | Salsa with onions, peppers and tomatoes plus an acid. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
 | `coconut_water` | bulk_pantry | Pure coconut water, high-pressure processed, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
 | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
-| `crackers` | bulk_pantry | Crackers with a whole grain listed first on the ingredients. | Read the front for “multigrain”; it does not mean whole grain. | — |
+| `crackers` | bulk_pantry | Whole grain crackers with olive oil, coconut oil or butter. | Read the front for “multigrain”; it does not mean whole grain. | — |
 | `tortilla_chips` | bulk_pantry | Masa tortilla chips in olive oil, coconut oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
 | `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
 | `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
-| `pretzels` | bulk_pantry | Pretzels listing flour, malt, oil, salt, yeast and soda. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
+| `pretzels` | bulk_pantry | Whole wheat pretzels with a short ingredient list. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
 | `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
 | `snacks` | bulk_pantry | Snacks with a whole grain, vegetable or bean listed first. | Check veggie chips for potato flour colored with vegetable powder. | — |
@@ -211,7 +211,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
 | `deli_salads` | bulk_pantry | Deli salads from the cold case, eaten within days. | Check the date; keep it at the back of the fridge, not the door. | — |
 | `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |
-| `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with little else listed. | Check the date, and use an opened pack within 2 to 3 days. | — |
+| `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with nothing added. | Check the date, and use an opened pack within 2 to 3 days. | — |
 | `deli` | bulk_pantry | Deli food from a cold case, or a hot one. | Check the cold case first; meats, cheeses and salads all need it. | — |
 | `frozen_pizza` | bulk_pantry | Whole wheat frozen pizza, crust of flour, water, salt, yeast. | Check a crust sold as whole wheat for whole wheat flour throughout. | — |
 | `frozen_meals` | bulk_pantry | Frozen meals named for their meat, no binders or extenders. | Check the inspection mark, then follow the package directions to heat it. | — |
