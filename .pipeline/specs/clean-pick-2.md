@@ -15,7 +15,8 @@
     "server/test/acceptance/ca-7.test.js",
     "server/test/acceptance/w4.test.js",
     "server/test/acceptance/ic3b.test.js",
-    "server/test/acceptance/passRule.js"
+    "server/test/acceptance/passRule.js",
+    "server/test/acceptance/cleanPick1.test.js"
   ],
   "read_full": [
     "server/test/acceptance/twoLinePin.js",
@@ -52,7 +53,7 @@ Conventions: curly apostrophes as the KB uses (none of the new strings needs one
 |---|---|---|---|---|---|
 | organic_worth_it_by_type | "Organic for produce eaten whole; conventional for what you peel." → "Organic produce, first on everything eaten skin-on." | none | [0] kept; insert new [1]; old [1] → [2]; old [2] and [3] demoted | unchanged | old tips[2], old tips[3] |
 | frozen_vs_fresh_produce | "Plain frozen produce, picked ripe and frozen within hours." → "Plain organic frozen produce, picked ripe and frozen within hours." | "Frozen vegetables, no sauce" → "Organic frozen vegetables" | insert new [1] | unchanged | none |
-| produce_seasonality | "In-season produce, or frozen when it is out of season." → "Organic in-season produce, or frozen when it is out of season." | unchanged ("Whatever fruit is in season", see Ship notes) | insert new [1] | unchanged | none |
+| produce_seasonality | "In-season produce, or frozen when it is out of season." → "Organic in-season produce, or frozen when out of season." | unchanged ("Whatever fruit is in season", see Ship notes) | insert new [1] | unchanged | none |
 | sprouts_raw | "Cold-case sprouts with white roots and crisp stems." → "Organic sprouts from the cold case, white roots, crisp stems." | "Broccoli sprouts" → "Organic broccoli sprouts" | insert new [1] | unchanged | none |
 | berries_picking | unchanged | "Fresh berries" → "Organic strawberries or blueberries" | insert new [1] | unchanged | none |
 | produce_leafy_greens | unchanged | "Crisp greens with no yellowing or wilt" → "Organic spinach, kale, or lettuce" | insert new [1] | unchanged | none |
@@ -70,7 +71,7 @@ Conventions: curly apostrophes as the KB uses (none of the new strings needs one
 
 Hub `labels_decoded[0].meaning` (the one narrowing, plan L47–48):
 "Grown to the National Organic Program rules and certified, with no SYNTHETIC pesticides. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones." →
-"Grown to the National Organic Program rules and certified, with synthetic pesticides outside an approved list. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones."
+"Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones."
 `labels_decoded[0].term` and `labels_decoded[1]` unchanged. No other entry's labels_decoded changes (`label_organic_scope` labels_decoded is frozen by k11).
 
 Subject notes: every verdict subject stays the same item; only the standard named moves to organic per Q1 A. Seasonality's cart stays unchanged because every candidate either puts "organic fruit" contiguous (the hub's alias, C9 would route it to the hub) or names a single fruit the card does not own.
@@ -92,7 +93,7 @@ const BECAME = {
       'Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low.',
       'Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.',
     ],
-    labelMeaning0: 'Grown to the National Organic Program rules and certified, with synthetic pesticides outside an approved list. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones.',
+    labelMeaning0: 'Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones.',
   },
   frozen_vs_fresh_produce: {
     decision: 'Plain organic frozen produce, picked ripe and frozen within hours.',
@@ -106,7 +107,7 @@ const BECAME = {
     ],
   },
   produce_seasonality: {
-    decision: 'Organic in-season produce, or frozen when it is out of season.',
+    decision: 'Organic in-season produce, or frozen when out of season.',
     buying_tips: [
       'In season, it travels less and reaches you closer to ripe, so it tastes better.',
       'In-season organic produce carries the USDA Organic seal, fresh or frozen.',
@@ -324,6 +325,14 @@ The base strings above (every tip other than the new [0]/[1] ones, every detailA
 ### do-lines-review.md
 
 Only the headline cell changes, and only on the 10 rows whose decision changed (hub L46, frozen L47, seasonality L49, sprouts L106, root L107, brassicas L108, onions L109, citrus L113, mushrooms L115, bananas L117). The do cell of every row stays byte-identical. Then `node scripts/buildDoLines.js` from `server/`; `server/lib/doLines.json` must deepEqual its 74237ce value (C7). If buildDoLines changes doLines.json, stop and report: that means the headline feeds the json and C7 is wrong.
+
+## cleanPick1.test.js (owned, spec-review r1)
+cleanPick1 C6 and C7 freeze every entry and review row outside B1 at ede90e7, so this batch would turn them red. Add, right after `const IDS = Object.keys(BECAME);`:
+```js
+// Later clean-pick batches own these ids; cleanPick1 no longer freezes them. Each batch appends its ids.
+const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope']);
+```
+In C6 filter `!IDS.includes(e.id) && !LATER.has(e.id)` (keep the floor 190 only if it still holds, else lower it to the measured count minus 5). In C7, a non-batch line whose row id is in LATER is skipped instead of compared byte-for-byte. Change nothing else in that file. Verify the id list against the BECAME keys of this spec; use those keys if they differ.
 
 ## Hard limits
 
@@ -666,7 +675,7 @@ const NOTE_DEMOTED = ['produce_root_vegetables', 'produce_brassicas', 'produce_o
 const BECAME = {
   organic_worth_it_by_type: { decision: 'Organic produce, first on everything eaten skin-on.' },
   frozen_vs_fresh_produce: { decision: 'Plain organic frozen produce, picked ripe and frozen within hours.', cart_pick: 'Organic frozen vegetables' },
-  produce_seasonality: { decision: 'Organic in-season produce, or frozen when it is out of season.' },
+  produce_seasonality: { decision: 'Organic in-season produce, or frozen when out of season.' },
   sprouts_raw: { decision: 'Organic sprouts from the cold case, white roots, crisp stems.', cart_pick: 'Organic broccoli sprouts' },
   berries_picking: { cart_pick: 'Organic strawberries or blueberries' },
   produce_leafy_greens: { cart_pick: 'Organic spinach, kale, or lettuce' },
@@ -707,7 +716,7 @@ const BECAME = {
   label_organic_scope: {},
 };
 
-const NARROWED = 'Grown to the National Organic Program rules and certified, with synthetic pesticides outside an approved list. Not pesticide-free: copper, spinosad and pyrethrins are approved organic ones.';
+const NARROWED = 'Grown to the National Organic Program rules and certified, with no synthetic pesticides outside an approved list. Organic still allows some sprays: copper, spinosad and pyrethrins are approved ones.';
 
 const IDS = Object.keys(BECAME);
 const CARRY = {
@@ -759,7 +768,7 @@ function written(id) {
   return out;
 }
 
-const idOf = (r) => (typeof r === 'string' ? r : r?.id ?? r?.perimeterId ?? r?.card?.id ?? r?.entry?.id);
+const idOf = (r) => r?.slug;
 
 nonEmpty(IDS, 'IDS', 17);
 
@@ -820,7 +829,7 @@ test('C6 entries outside the batch deepEqual 74237ce', () => {
 test('C7 doLines.json unchanged; review headlines move only on decision-changed ids', () => {
   const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
   assert.deepEqual(now, JSON.parse(git('74237ce:server/lib/doLines.json')));
-  const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]));
+  const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
   const liveRows = rows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
   const baseRows = rows(git('74237ce:docs/do-lines-review.md'));
   nonEmpty([...baseRows.keys()], 'review rows', 150);
