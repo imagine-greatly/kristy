@@ -6,7 +6,6 @@
   "tier": "T2",
   "ui": false,
   "owns": [
-    "server/test/acceptance/cleanPick3.test.js",
     "server/kristy_perimeter_kb.json",
     "docs/do-lines-review.md",
     "server/lib/doLines.json",
@@ -30,7 +29,9 @@
     "server/test/acceptance/cleanPick2.test.js",
     "server/test/acceptance/cleanPick2b.test.js",
     "docs/do-lines-review.md",
-    "server/scripts/buildDoLines.js"
+    "server/scripts/buildDoLines.js",
+    "server/lib/testGuards.js",
+    "server/lib/listMatch.js"
   ],
   "verify": "cd /Users/m1/kristy && node --test server/test/acceptance/cleanPick3.test.js && cd server && node scripts/buildDoLines.js && node scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js && npm test"
 }
