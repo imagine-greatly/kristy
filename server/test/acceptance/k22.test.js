@@ -11,7 +11,7 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { beforeConcern } from './twoLinePin.js';
+import { beforeConcern, preCleanPick12 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -82,8 +82,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k22 file, none banned', () => {
   const dir = join(ROOT, 'docs/sources/k22');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k22 archive', 49);
-  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
+  for (const id of CARDS) assert.ok((beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
   for (const u of urls) {
     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k22 source`);
     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);

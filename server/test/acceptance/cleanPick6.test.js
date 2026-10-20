@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11 } from './twoLinePin.js';
+import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -100,7 +100,7 @@ test('C5 organic is new on all 17 lines and unchanged on every other pick', () =
 });
 
 test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 170);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

@@ -1379,7 +1379,8 @@ export const TWO_LINE = {
       "Check for whole wheat flour in the ingredients.",
       "Without a stamp, use the flour names to check the loaf.",
       "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
-      "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+      "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.",
+      "Skip a loaf listing soybean, canola or other seed oil; look for olive oil or butter, or no added fat."
     ],
     "sources": [
       "https://www.law.cornell.edu/cfr/text/21/136.180",
@@ -1393,6 +1394,10 @@ export const TWO_LINE = {
       {
         "name": "FoodPrint: Glyphosate Residue in Food",
         "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      },
+      {
+        "name": "Chris Kresser: How industrial seed oils are making us sick",
+        "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
       }
     ]
   },
@@ -1423,11 +1428,13 @@ export const TWO_LINE = {
       "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
       "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
       "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
-      "For a flour tortilla, check the flour and the named fat rather than infer them from the color."
+      "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
+      "For flour tortillas, skip soybean, canola or other seed oil on the list and look for butter or olive oil."
     ],
     "watch_out": [
       "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
-      "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure."
+      "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure.",
+      "Propylparaben is a preservative used in some tortillas and pastries; take a tortilla list with no paraben."
     ],
     "sources": [
       "https://www.tastingtable.com/1066360/masa-harina-vs-corn-flour-whats-the-difference/",
@@ -1440,6 +1447,14 @@ export const TWO_LINE = {
       {
         "name": "Non-GMO Project: GMO FAQ",
         "url": "https://www.nongmoproject.org/gmo-faq/"
+      },
+      {
+        "name": "EWG: Dirty Dozen guide to food chemicals",
+        "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+      },
+      {
+        "name": "Chris Kresser: How industrial seed oils are making us sick",
+        "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
       }
     ]
   },
@@ -1503,6 +1518,10 @@ export const TWO_LINE = {
       {
         "name": "EWG: BHT in food and on ingredient lists",
         "url": "https://www.ewg.org/foodscores/8806-article-dirty-dozen-food-chemicals-bht/"
+      },
+      {
+        "name": "EWG: Chlormequat found in popular oat-based foods",
+        "url": "https://www.EWG.org/research/ewg-investigation-dangerous-agricultural-chemical-chlormequat-found-popular-oat-based"
       }
     ]
   },
@@ -2740,7 +2759,8 @@ export const TWO_LINE = {
       "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
       "Look for a short list with no added flavors, starches or sugar.",
       "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
-      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf.",
+      "MSG, yeast extract or hydrolyzed protein on a soup list adds flavor in place of more real ingredients. Look for soup seasoned with named herbs and spices."
     ],
     "watch_out": [
       "“No salt added” is not “sodium free”; the soup can still carry sodium.",
@@ -2754,6 +2774,14 @@ export const TWO_LINE = {
       {
         "name": "EWG: BPA in Canned Food",
         "url": "https://www.ewg.org/research/bpa-canned-food"
+      },
+      {
+        "name": "CSPI: Monosodium glutamate",
+        "url": "https://www.cspi.org/node/7459"
+      },
+      {
+        "name": "CSPI: Chemical Cuisine ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
       }
     ]
   },
@@ -2987,14 +3015,13 @@ export const TWO_LINE = {
       "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
       "Look for organic oats first and fruit or honey as the only sweetener.",
       "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
-      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the first ingredients; oats or another whole grain should lead.",
       "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
-      "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
-      "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
-      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.",
+      "A bar with zero added sugar may use sucralose, aspartame or acesulfame potassium instead; take one sweetened with dried fruit.",
+      "“No added sugar” on a bar can still mean maltitol, erythritol or another sugar alcohol on the list. Look for fruit or honey as the sweetener."
     ],
-    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which.",
     "sources": [
       "https://www.law.cornell.edu/cfr/text/21/101.4",
       "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/",
@@ -3024,6 +3051,14 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Artificial colorings (synthetic food dyes)",
         "url": "https://www.cspi.org/node/7436"
+      },
+      {
+        "name": "Consumer Reports: Best and worst energy bars",
+        "url": "https://www.consumerreports.org/health/healthy-snacks/best-and-worst-energy-bars-a1145410603/"
+      },
+      {
+        "name": "CSPI: Chemical Cuisine ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
       }
     ],
     "watch_out": [
@@ -3508,3 +3543,8 @@ export const preCleanPick10 = (e) => (e && CLEAN_PICK_10.has(e.id) ? PRE_CP10.en
 export const CLEAN_PICK_11 = new Set(['ice_cream', 'almond_milk', 'oat_milk', 'soy_milk', 'hot_dogs', 'turkey_bacon', 'frozen_nuggets', 'frozen_meals', 'broth', 'salmon_wild_vs_farmed']);
 const PRE_CP11 = JSON.parse(execFileSync('git', ['show', 'c2785ed:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick11 = (e) => (e && CLEAN_PICK_11.has(e.id) ? PRE_CP11.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-12 (2026-10-20) added register avoid lines (and two seed-oil label lines) to these bread, sauce, condiment, drink, soup and bar cards; snack_bars moved its seed-oil and glyphosate tips into detail under the cap of three. Decisions and carts stayed. Older batch tests read them as of 52cfde3, and cleanPick12.test.js owns the new text.
+export const CLEAN_PICK_12 = new Set(['tortillas', 'sandwich_bread', 'pasta_sauce', 'breakfast_cereal', 'buns_rolls', 'bagels', 'pastries_muffins', 'hot_soy_sauce', 'ketchup_mustard', 'kombucha', 'canned_soup', 'snack_bars']);
+const PRE_CP12 = JSON.parse(execFileSync('git', ['show', '52cfde3:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick12 = (e) => (e && CLEAN_PICK_12.has(e.id) ? PRE_CP12.entries.find((x) => x.id === e.id) : e);

@@ -6618,6 +6618,10 @@
         {
           "name": "FoodPrint: Glyphosate Residue in Food",
           "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+        },
+        {
+          "name": "Chris Kresser: How industrial seed oils are making us sick",
+          "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
         }
       ],
       "kristy_take": "A loaf called “wheat” may still use refined flour. Turn it over and find whole wheat flour in the ingredients before choosing it.",
@@ -6628,7 +6632,8 @@
         "Check for whole wheat flour in the ingredients.",
         "Without a stamp, use the flour names to check the loaf.",
         "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
-        "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+        "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.",
+        "Skip a loaf listing soybean, canola or other seed oil; look for olive oil or butter, or no added fat."
       ],
       "watch_out": [
         "“Wheat” or “enriched” alone does not establish that the grain is whole.",
@@ -6730,7 +6735,11 @@
       "evidence_tier": "time_tested",
       "sources": [
         "https://www.tastingtable.com/1606040/why-boil-bagels-before-baking/",
-        "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/"
+        "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/",
+        {
+          "name": "CSPI: Potassium bromate petition",
+          "url": "https://www.cspinet.org/new/bromate.html"
+        }
       ],
       "kristy_take": "Ask what went into the dough and the boiling bath, or read the ingredients on the bag. Boiling explains the texture; the archived baking articles establish no health advantage.",
       "cart_pick": "Whole wheat boiled bakery bagels",
@@ -6743,7 +6752,8 @@
         "Ask about the bath ingredients; baking soda changes alkalinity and browning."
       ],
       "watch_out": [
-        "Boiling and browning are processing and texture facts. The archived articles establish no health advantage."
+        "Boiling and browning are processing and texture facts. The archived articles establish no health advantage.",
+        "Potassium bromate or bromated flour on a bagel list is a flour improver banned in many countries. Look for unbromated flour."
       ],
       "pick_steps": [
         "Read the ingredient list on the bag, or ask the bakery for it.",
@@ -6794,6 +6804,14 @@
         {
           "name": "Non-GMO Project: GMO FAQ",
           "url": "https://www.nongmoproject.org/gmo-faq/"
+        },
+        {
+          "name": "EWG: Dirty Dozen guide to food chemicals",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+        },
+        {
+          "name": "Chris Kresser: How industrial seed oils are making us sick",
+          "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
         }
       ],
       "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
@@ -6802,11 +6820,13 @@
         "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
         "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
         "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.",
-        "For a flour tortilla, check the flour and the named fat rather than infer them from the color."
+        "For a flour tortilla, check the flour and the named fat rather than infer them from the color.",
+        "For flour tortillas, skip soybean, canola or other seed oil on the list and look for butter or olive oil."
       ],
       "watch_out": [
         "Some packaged corn tortillas contain wheat. Corn on the front is not a complete ingredient statement.",
-        "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure."
+        "A QR code or phone number on the tortilla package may lead to the bioengineered disclosure.",
+        "Propylparaben is a preservative used in some tortillas and pastries; take a tortilla list with no paraben."
       ],
       "pick_steps": [
         "Corn tortillas: look for masa or masa harina, water and salt.",
@@ -6956,7 +6976,7 @@
       "decision": "Unfortified whole-grain cereal or granola, less added sugar, no dyes.",
       "why": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
       "short_answer": "The 100% Whole Grain Stamp means all grain ingredients are whole grain. A Basic Stamp can accompany more refined grain than whole grain. Check added sugars separately on cereal and granola.",
-      "detail": "FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling.",
+      "detail": "FDA’s added-sugars guidance distinguishes sugars added during processing from naturally occurring sugars. Honey and syrups count as added sugars. The Whole Grains Council’s stamp rules describe grain content; they do not set an added-sugar ceiling. Chlormequat is a plant growth regulator. In commissioned lab tests it turned up in 12 of 13 conventional oat cereals, granolas and other oat foods, and not in the one organic granola tested. For oat cereal, certified organic is the way to skip it.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://wholegrainscouncil.org/whole-grain-stamp",
@@ -6984,6 +7004,10 @@
         {
           "name": "EWG: BHT in food and on ingredient lists",
           "url": "https://www.ewg.org/foodscores/8806-article-dirty-dozen-food-chemicals-bht/"
+        },
+        {
+          "name": "EWG: Chlormequat found in popular oat-based foods",
+          "url": "https://www.EWG.org/research/ewg-investigation-dangerous-agricultural-chemical-chlormequat-found-popular-oat-based"
         }
       ],
       "kristy_take": "Whole-grain content and added sugar are separate label checks. The whole-food standard uses both.",
@@ -9192,7 +9216,15 @@
         "https://www.law.cornell.edu/cfr/text/21/136.110",
         "https://www.law.cornell.edu/cfr/text/21/136.180",
         "https://www.law.cornell.edu/cfr/text/21/136.115",
-        "https://smartlabel.syndigo.com/id/bdce1b9a-cc48-4c26-8003-92bf9073231d"
+        "https://smartlabel.syndigo.com/id/bdce1b9a-cc48-4c26-8003-92bf9073231d",
+        {
+          "name": "CSPI: Potassium bromate petition",
+          "url": "https://www.cspinet.org/new/bromate.html"
+        },
+        {
+          "name": "EWG: Dirty Dozen guide to food chemicals",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+        }
       ],
       "kristy_take": "The name on the bag is regulated. “Whole wheat” there means whole wheat flour only.",
       "cart_pick": "Whole wheat buns or rolls",
@@ -9204,7 +9236,9 @@
         "Read “enriched buns” as made with enriched flour, not whole wheat."
       ],
       "watch_out": [
-        "Enriched buns use enriched flour in place of whole wheat flour."
+        "Enriched buns use enriched flour in place of whole wheat flour.",
+        "Federal surveys found rolls and buns especially likely to carry potassium bromate; skip a list naming it or bromated flour.",
+        "Azodicarbonamide on a bun list is a flour bleaching agent and dough strengthener; take a list without it."
       ],
       "pick_steps": [
         "Read the name on the bag: “whole wheat” buns use no white flour.",
@@ -9258,7 +9292,11 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://en.wikipedia.org/wiki/Danish_pastry",
-        "https://en.wikipedia.org/wiki/Muffin"
+        "https://en.wikipedia.org/wiki/Muffin",
+        {
+          "name": "EWG: Dirty Dozen guide to food chemicals",
+          "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+        }
       ],
       "kristy_take": "The fat is the read on a pastry. Butter is the traditional one.",
       "cart_pick": "All-butter bakery pastries",
@@ -9270,7 +9308,8 @@
         "Read a muffin’s ingredients for butter or shortening."
       ],
       "watch_out": [
-        "Factory-made Danish pastry often uses other fats in place of butter, such as hydrogenated sunflower oil."
+        "Factory-made Danish pastry often uses other fats in place of butter, such as hydrogenated sunflower oil.",
+        "Propylparaben is a preservative used in pastries; skip a pastry or muffin list that names it."
       ],
       "pick_steps": [
         "Read the ingredients for butter by name, or ask the baker.",
@@ -10317,7 +10356,11 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Kombucha",
         "https://www.ttb.gov/kombucha/general-requirements",
-        "https://www.law.cornell.edu/uscode/text/26/5052"
+        "https://www.law.cornell.edu/uscode/text/26/5052",
+        {
+          "name": "CSPI: Artificial and natural flavoring",
+          "url": "https://www.cspi.org/node/7457"
+        }
       ],
       "kristy_take": "Kombucha keeps working in the bottle. The cold case and the label show where it stands.",
       "cart_pick": "Plain refrigerated kombucha",
@@ -10331,7 +10374,8 @@
       ],
       "watch_out": [
         "Hard kombucha is an alcoholic drink, sold at over 5 percent alcohol.",
-        "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha."
+        "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha.",
+        "“Natural flavors” on a kombucha list can be a mix of many compounds the label does not name. Look for flavor from a named food, such as ginger."
       ],
       "pick_steps": [
         "Pick bottles from the refrigerated case, and keep them cold once home.",
@@ -11782,7 +11826,15 @@
         "https://www.law.cornell.edu/cfr/text/21/155.190",
         "https://www.law.cornell.edu/cfr/text/21/114.3",
         "https://extension.psu.edu/canning-tomatoes-dos-and-donts",
-        "https://ouritaliantable.com/sugo-di-pomodoro/"
+        "https://ouritaliantable.com/sugo-di-pomodoro/",
+        {
+          "name": "CSPI: Caramel coloring",
+          "url": "https://www.cspi.org/node/7417"
+        },
+        {
+          "name": "UCSF SugarScience: Hidden in plain sight",
+          "url": "https://sugarscience.ucsf.edu/hidden-in-plain-sight/"
+        }
       ],
       "kristy_take": "Tomatoes first and a short list is a craft standard. One Neapolitan family’s sugo is olive oil, garlic, canned tomatoes, salt, red pepper flakes and basil.",
       "cart_pick": "Tomato and olive oil pasta sauce",
@@ -11794,7 +11846,9 @@
         "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
       ],
       "watch_out": [
-        "An ingredient listed ahead of the tomatoes outweighs them in the jar."
+        "An ingredient listed ahead of the tomatoes outweighs them in the jar.",
+        "Caramel color on a sauce list is added coloring. The kind made with ammonia carries a contaminant, so take a list without it.",
+        "Corn syrup, high fructose corn syrup or dextrose on a sauce list is added sugar under another name."
       ],
       "pick_steps": [
         "Pick a jar whose list leads with tomatoes.",
@@ -11923,7 +11977,15 @@
         "https://www.law.cornell.edu/cfr/text/21/155.194",
         "https://www.ams.usda.gov/sites/default/files/media/CID%20Mustard%2C%20Prepared.pdf",
         "https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/",
-        "https://culinarylore.com/food-history:origin-of-ketchup/"
+        "https://culinarylore.com/food-history:origin-of-ketchup/",
+        {
+          "name": "CSPI: Sodium benzoate",
+          "url": "https://www.cspi.org/node/7451"
+        },
+        {
+          "name": "UCSF SugarScience: Hidden in plain sight",
+          "url": "https://sugarscience.ucsf.edu/hidden-in-plain-sight/"
+        }
       ],
       "kristy_take": "By the Oxford English Dictionary’s account, ketchup was first a word for a brine of pickled fish. Today’s standard starts from tomato.",
       "cart_pick": "Unsweetened tomato ketchup and mustard",
@@ -11938,7 +12000,9 @@
       ],
       "watch_out": [
         "A ketchup that falls below the federal quality standard must say so on its label.",
-        "Opened condiments on the fridge door are easy to forget."
+        "Opened condiments on the fridge door are easy to forget.",
+        "Sodium benzoate or benzoic acid on a condiment list is a preservative for acidic foods; take a list without it.",
+        "Corn syrup, high fructose corn syrup or dextrose on a ketchup list is added sugar under another name."
       ],
       "pick_steps": [
         "Read ketchup for tomato concentrate and vinegar; below-standard ketchup must say so.",
@@ -12065,7 +12129,11 @@
         "https://extension.oregonstate.edu/ask-extension/featured/how-do-i-start-selling-homemade-hot-sauce-oregon",
         "https://www.ams.usda.gov/sites/default/files/media/Notice_of_validation_for_CID_Soy_Sauce_10292020.pdf",
         "https://tastecooking.com/a-tale-of-two-tamaris/",
-        "https://repository.lsu.edu/gradschool_disstheses/4217"
+        "https://repository.lsu.edu/gradschool_disstheses/4217",
+        {
+          "name": "CSPI: Caramel coloring",
+          "url": "https://www.cspi.org/node/7417"
+        }
       ],
       "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
       "cart_pick": "Organic naturally brewed soy sauce",
@@ -12078,7 +12146,8 @@
       ],
       "watch_out": [
         "Little or no wheat is not the same as a gluten-free claim.",
-        "Shoyu is made from roughly equal parts wheat and soybeans."
+        "Shoyu is made from roughly equal parts wheat and soybeans.",
+        "Caramel color on a soy sauce list is added coloring. The kind made with ammonia carries a contaminant, so take a list without it."
       ],
       "pick_steps": [
         "Pick soy sauce brewed for months before soy sauce made fast with acid."
@@ -12133,6 +12202,14 @@
         {
           "name": "EWG: BPA in Canned Food",
           "url": "https://www.ewg.org/research/bpa-canned-food"
+        },
+        {
+          "name": "CSPI: Monosodium glutamate",
+          "url": "https://www.cspi.org/node/7459"
+        },
+        {
+          "name": "CSPI: Chemical Cuisine ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
         }
       ],
       "kristy_take": "A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning.",
@@ -12141,7 +12218,8 @@
         "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
         "Look for a short list with no added flavors, starches or sugar.",
         "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
-        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf.",
+        "MSG, yeast extract or hydrolyzed protein on a soup list adds flavor in place of more real ingredients. Look for soup seasoned with named herbs and spices."
       ],
       "watch_out": [
         "“No salt added” is not “sodium free”; the soup can still carry sodium.",
@@ -12898,7 +12976,7 @@
       "decision": "Organic bars with oats or another whole grain listed first.",
       "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
       "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.4",
@@ -12929,6 +13007,14 @@
         {
           "name": "CSPI: Artificial colorings (synthetic food dyes)",
           "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "Consumer Reports: Best and worst energy bars",
+          "url": "https://www.consumerreports.org/health/healthy-snacks/best-and-worst-energy-bars-a1145410603/"
+        },
+        {
+          "name": "CSPI: Chemical Cuisine ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
         }
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
@@ -12937,12 +13023,11 @@
         "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
         "Look for organic oats first and fruit or honey as the only sweetener.",
         "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
-        "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the first ingredients; oats or another whole grain should lead.",
         "Look for fruit, honey or syrups as the sweetener, with nuts and seeds.",
-        "Many bars carry sugar and high fructose corn syrup, and the list shows which.",
-        "Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
-        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.",
+        "A bar with zero added sugar may use sucralose, aspartame or acesulfame potassium instead; take one sweetened with dried fruit.",
+        "“No added sugar” on a bar can still mean maltitol, erythritol or another sugar alcohol on the list. Look for fruit or honey as the sweetener."
       ],
       "watch_out": [
         "Enriched refined grains listed first mean refined grain leads the bar, not oats.",

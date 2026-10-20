@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preCleanPick10, CLEAN_PICK_10, preCleanPick11 } from './twoLinePin.js';
+import { preCleanPick10, CLEAN_PICK_10, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 import { scoreEntries } from '../../lib/perimeter.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
@@ -253,7 +253,7 @@ const ORGANIC = ['chicken_breast', 'ground_turkey', 'rotisserie_chicken', 'sugar
 const DROPPED = []; // no base buying_tips line leaves its card
 const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
 // clean-pick-10 owns chicken_cuts_basics and ground_turkey now; this batch reads them as of 117ab78.
-const live = (id) => preCleanPick10(find(kb, id));
+const live = (id) => preCleanPick10(preCleanPick12(find(kb, id)));
 const was = (id) => find(base, id);
 // Strings this batch wrote: changed front fields, new tips, the gloss, and what detail gained.
 const written = (id) => {
@@ -307,7 +307,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
 });
 
 test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
+  const rest = nonEmpty(kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
   assert.equal(kb.entries.length, base.entries.length);
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');

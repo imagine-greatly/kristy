@@ -10,7 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../.
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { beforeConcern } from './twoLinePin.js';
+import { beforeConcern, preCleanPick12 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -84,8 +84,8 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k18 file', () => {
   const dir = join(ROOT, 'docs/sources/k18');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k18 archive', 40);
-  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K18 URLs', 20);
+  for (const id of CARDS) assert.ok((beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K18 URLs', 20);
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k18 source`);
 });
 
