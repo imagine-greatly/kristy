@@ -1,0 +1,78 @@
+{
+  "status": "done",
+  "files_changed": [
+    "docs/do-lines-review.md",
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/ca-3a.test.js",
+    "server/test/acceptance/ca-4a.test.js",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/cleanPick2.test.js",
+    "server/test/acceptance/cleanPick2b.test.js",
+    "server/test/acceptance/concernAdditives.test.js",
+    "server/test/acceptance/soyMilkRank.test.js",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All 21 entries match base plus BECAME. Acceptance: 11/11; full npm test: 2877 passed, 0 failed/skipped. Historical overlays and pins updated. Assumptions: dispatcher supplied the immutable acceptance file; left unchanged. NOTE: concernAdditives and soyMilkRank line 12 used map(preTidy); preserved that operation with preCleanPick3 applied first."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Length limits pass; twoLineCheck: 181 checked, 0 violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "All original tip[0] values preserved; exact standard lines inserted at index 1."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "All 66 new strings pass prohibited wording and punctuation checks."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Organic appears on exactly the three specified fronts; live guards pass."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "190 outside entries and all top-level metadata unchanged. Only owned files changed; protected passRule/k9 diff against 719f9fe is empty."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Exactly 20 review headline cells changed; all other review bytes preserved. Regenerated doLines.json is byte-identical to 2ab7f2f. commitGuard and git diff --check pass."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Every original buying tip remains in order, shifted after the insertion."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All 21 cart picks route correctly; listMatchProbe reports no wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "All 65 new field strings meet the duplication limit."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "All four plant milks name unfortified in decision/cart and rank fortified second in the final watch_out line."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}

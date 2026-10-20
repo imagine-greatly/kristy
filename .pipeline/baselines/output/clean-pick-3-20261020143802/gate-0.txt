@@ -1,0 +1,303 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the 21 ids equal their expected entries and carry their phrase
+not ok 1 - C1 the 21 ids equal their expected entries and carry their phrase
+  ---
+  duration_ms: 2.3405
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:76:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    almond_milk
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        aliases: [
+          'almond milk',
+          'almondmilk',
+          'unsweetened almond milk',
+    ...
+          'Almond drinks vary in added sugars, so the carton panel is the guide.',
+    -     'Look for unsweetened on the carton and no added vitamins or minerals on the list.',
+          'Pick unsweetened over sweetened, vanilla or chocolate.',
+          'Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.',
+          'Compare protein, vitamin D, calcium and potassium across cartons.',
+          'Check saturated fat on the panel.'
+        ],
+    +   cart_pick: 'Unsweetened almond milk',
+    -   cart_pick: 'Unsweetened, unfortified almond milk',
+        category: 'dairy',
+    +   decision: 'Unsweetened almond milk, a short list, never seed oil.',
+    -   decision: 'Unsweetened, unfortified almond milk, a short list, never seed oil.',
+        detail: 'Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.',
+        evidence_tier: 'kristys_standard',
+        id: 'almond_milk',
+        instead: 'A short-list oat milk is the next plant drink.',
+        kristy_take: 'The carton panel, not the word milk, says what the drink brings.',
+    ...
+          'FDA does not place almond drinks in the dairy group.',
+    -     'Fortified almond milk comes second, since each added vitamin or mineral joins the list.'
+        ],
+        why: 'FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'almond_milk'
+    title: 'Which almond milk should you buy'
+    aliases:
+      0: 'almond milk'
+      1: 'almondmilk'
+      2: 'unsweetened almond milk'
+      3: 'almond beverage'
+    category: 'dairy'
+    question: 'How do you pick almond milk?'
+    decision: 'Unsweetened, unfortified almond milk, a short list, never seed oil.'
+    why: 'FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.'
+    short_answer: 'Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.'
+    detail: 'Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Almond_milk'
+      1: 'https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma'
+      2:
+        name: 'Cornucopia Institute: Carrageenan report and buyer’s guide'
+        url: 'https://www.cornucopia.org/research/carrageenan/'
+      3:
+        name: 'CSPI: Carrageenan'
+        url: 'https://www.cspi.org/node/7465'
+    kristy_take: 'The carton panel, not the word milk, says what the drink brings.'
+    cart_pick: 'Unsweetened, unfortified almond milk'
+    buying_tips:
+      0: 'Almond drinks vary in added sugars, so the carton panel is the guide.'
+      1: 'Look for unsweetened on the carton and no added vitamins or minerals on the list.'
+      2: 'Pick unsweetened over sweetened, vanilla or chocolate.'
+      3: 'Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.'
+      4: 'Compare protein, vitamin D, calcium and potassium across cartons.'
+      5: 'Check saturated fat on the panel.'
+    watch_out:
+      0: 'FDA does not place almond drinks in the dairy group.'
+      1: 'Fortified almond milk comes second, since each added vitamin or mineral joins the list.'
+    pick_steps:
+      0: 'Pick unsweetened over sweetened, vanilla or chocolate.'
+      1: 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'
+    science: 'Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.'
+    labels_decoded:
+      0:
+        term: 'Fortified'
+        meaning: 'Vitamins or minerals were added to the drink.'
+      1:
+        term: 'Almond milk'
+        meaning: 'A name FDA says is established by common usage.'
+    tier_note: 'An unsweetened carton with no seed oil on its list stays closest to the almond itself.'
+    asked_as:
+      0: 'how do i pick an almond milk'
+      1: 'is unsweetened almond milk worth buying'
+      2: 'which almond milk should i buy'
+    instead: 'A short-list oat milk is the next plant drink.'
+  actual:
+    id: 'almond_milk'
+    title: 'Which almond milk should you buy'
+    aliases:
+      0: 'almond milk'
+      1: 'almondmilk'
+      2: 'unsweetened almond milk'
+      3: 'almond beverage'
+    category: 'dairy'
+    question: 'How do you pick almond milk?'
+    decision: 'Unsweetened almond milk, a short list, never seed oil.'
+    why: 'FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.'
+    short_answer: 'Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.'
+    detail: 'Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.'
+    evidence_tier: 'kristys_standard'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Almond_milk'
+      1: 'https://www.fda.gov/food/food-labeling-nutrition/plant-based-milk-alternatives-pbma'
+      2:
+        name: 'Cornucopia Institute: Carrageenan report and buyer’s guide'
+        url: 'https://www.cornucopia.org/research/carrageenan/'
+      3:
+        name: 'CSPI: Carrageenan'
+        url: 'https://www.cspi.org/node/7465'
+    kristy_take: 'The carton panel, not the word milk, says what the drink brings.'
+    cart_pick: 'Unsweetened almond milk'
+    buying_tips:
+      0: 'Almond drinks vary in added sugars, so the carton panel is the guide.'
+      1: 'Pick unsweetened over sweetened, vanilla or chocolate.'
+      2: 'Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.'
+      3: 'Compare protein, vitamin D, calcium and potassium across cartons.'
+      4: 'Check saturated fat on the panel.'
+    watch_out:
+      0: 'FDA does not place almond drinks in the dairy group.'
+    pick_steps:
+      0: 'Pick unsweetened over sweetened, vanilla or chocolate.'
+      1: 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'
+    science: 'Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.'
+    labels_decoded:
+      0:
+        term: 'Fortified'
+        meaning: 'Vitamins or minerals were added to the drink.'
+      1:
+        term: 'Almond milk'
+        meaning: 'A name FDA says is established by common usage.'
+    tier_note: 'An unsweetened carton with no seed oil on its list stays closest to the almond itself.'
+    asked_as:
+      0: 'how do i pick an almond milk'
+      1: 'is unsweetened almond milk worth buying'
+      2: 'which almond milk should i buy'
+    instead: 'A short-list oat milk is the next plant drink.'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:79:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 decisions are at most 10 words, carts at most 46 characters, changed tier notes one sentence of 5 to 20 words
+ok 2 - C2 decisions are at most 10 words, carts at most 46 characters, changed tier notes one sentence of 5 to 20 words
+  ---
+  duration_ms: 0.333917
+  type: 'test'
+  ...
+# Subtest: C3 tips[0] stays the base why; tips[1] is the new standard line
+not ok 3 - C3 tips[0] stays the base why; tips[1] is the new standard line
+  ---
+  duration_ms: 0.259667
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:98:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    almond_milk tip 1
+    + actual - expected
+    
+    + 'Pick unsweetened over sweetened, vanilla or chocolate.'
+    - 'Look for unsweetened on the carton and no added vitamins or minerals on the list.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Look for unsweetened on the carton and no added vitamins or minerals on the list.'
+  actual: 'Pick unsweetened over sweetened, vanilla or chocolate.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:106:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 no new text carries a banned word, a dash, a straight apostrophe or first person
+ok 4 - C4 no new text carries a banned word, a dash, a straight apostrophe or first person
+  ---
+  duration_ms: 0.574458
+  type: 'test'
+  ...
+# Subtest: C5 organic is named exactly on nuggets, hot dogs and turkey bacon
+not ok 5 - C5 organic is named exactly on nuggets, hot dogs and turkey bacon
+  ---
+  duration_ms: 0.18475
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:122:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    frozen_nuggets
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:126:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged
+ok 6 - C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged
+  ---
+  duration_ms: 1.545667
+  type: 'test'
+  ...
+# Subtest: C7 doLines.json unchanged; review headlines move only on decision-changed ids
+ok 7 - C7 doLines.json unchanged; review headlines move only on decision-changed ids
+  ---
+  duration_ms: 23.6615
+  type: 'test'
+  ...
+# Subtest: C8 every base tip is kept
+ok 8 - C8 every base tip is kept
+  ---
+  duration_ms: 0.316833
+  type: 'test'
+  ...
+# Subtest: C9 each cart pick matches its own card
+not ok 9 - C9 each cart pick matches its own card
+  ---
+  duration_ms: 12.993209
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:172:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Cottage cheese with no “directly set” -> undefined
+    + actual - expected
+    
+    + undefined
+    - 'cottage_cheese'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'cottage_cheese'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:177:12)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C10 no new string sits on more than 2 entries
+ok 10 - C10 no new string sits on more than 2 entries
+  ---
+  duration_ms: 2.850667
+  type: 'test'
+  ...
+# Subtest: C11 plant milks: unfortified is the pick and fortified ranks second
+not ok 11 - C11 plant milks: unfortified is the pick and fortified ranks second
+  ---
+  duration_ms: 0.193125
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:190:1'
+  failureType: 'testCodeFailure'
+  error: 'almond_milk decision'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Unsweetened almond milk, a short list, never seed oil.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick3.test.js:193:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 6
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 227.955375

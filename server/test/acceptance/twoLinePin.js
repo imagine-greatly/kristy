@@ -721,9 +721,10 @@ export const TWO_LINE = {
     ]
   },
   "butcher_counter_asking": {
-    "decision": "Beef soup bones and a whole chuck, freshly ground.",
+    "decision": "100% grass-fed soup bones and a whole chuck, freshly ground.",
     "buying_tips": [
       "A butcher can tell you how it was raised and when it was cut; a package cannot.",
+      "Ask which farm the bones came from and what the cattle were fed.",
       "Ask what came in today.",
       "Ask for a whole chuck ground fresh, which lets you choose the cut.",
       "Ask the sourcing question outright: how it was raised and where from.",
@@ -1491,9 +1492,10 @@ export const TWO_LINE = {
   },
   "oat_milk": {
     "instead": "A short-list unsweetened almond milk is the next plant drink.",
-    "decision": "Oat milk with few stabilizers, never seed oil.",
+    "decision": "Unsweetened, unfortified oat milk with nothing added, never seed oil.",
     "buying_tips": [
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
+      "Look for oats and water alone, with no vitamins, minerals or oil added.",
       "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it.",
       "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
     ],
@@ -1543,9 +1545,10 @@ export const TWO_LINE = {
     "cart_pick": "Organic or pasture-raised sliced bacon"
   },
   "hot_dogs": {
-    "decision": "Organic beef hot dogs with a short ingredient list.",
+    "decision": "Organic beef hot dogs with no phosphates or binders.",
     "buying_tips": [
       "Named meat first, with no mechanically separated chicken or turkey.",
+      "Look for a list with no sodium phosphate, carrageenan or modified food starch.",
       "Look for the named meat and read all other ingredients.",
       "Compare formulations across available packs rather than assume a species claim describes every ingredient.",
       "Check whether the list names mechanically separated chicken or turkey.",
@@ -1703,9 +1706,10 @@ export const TWO_LINE = {
     "cart_pick": "Organic or pasture-raised sliced ham"
   },
   "turkey_bacon": {
-    "decision": "Organic or pasture-raised turkey bacon with few added ingredients.",
+    "decision": "Organic or pasture-raised turkey bacon with no added sugar.",
     "buying_tips": [
       "Read the named turkey cut and each curing ingredient after the meat.",
+      "Look for a curing list that names no sugar after the turkey.",
       "Read the descriptive name beside “turkey bacon” for the meat used.",
       "Read each curing ingredient in the ingredients statement.",
       "On “Uncured” packs, read the qualifier and check for celery powder or juice in the curing list."
@@ -1793,9 +1797,10 @@ export const TWO_LINE = {
   },
   "organ_meats": {
     "instead": "A beef blend with liver and heart ground in.",
-    "decision": "Organ meats you will cook within one to two days.",
+    "decision": "100% grass-fed or pasture-raised organ meats, cooked within two days.",
     "buying_tips": [
       "Organ meats keep less time than steaks and roasts, just 1 to 2 days cold.",
+      "Ask the counter which farm the liver or heart came from.",
       "Buy organ meats for a cook within one to two days.",
       "Ask the counter or a farmer which organs they offer.",
       "Match the organ to the method, with heart and tongue braised."
@@ -1871,9 +1876,10 @@ export const TWO_LINE = {
     ]
   },
   "smoked_salmon": {
-    "decision": "Nova or lox smoked salmon, bought cold and kept cold.",
+    "decision": "Wild-caught smoked salmon, nova or lox, kept cold.",
     "buying_tips": [
       "Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold.",
+      "Look for wild-caught on the pack, and no ‘color added’ line.",
       "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.",
       "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
       "Pick it from a refrigerated case and put it in the fridge soon after buying.",
@@ -2076,9 +2082,10 @@ export const TWO_LINE = {
     ]
   },
   "cottage_cheese": {
-    "decision": "Cottage cheese with its curd set by a culture.",
+    "decision": "Grass-fed cottage cheese, curd set by a culture, no carrageenan.",
     "buying_tips": [
       "A culture sets the curd unless the tub prints “directly set” beside the name.",
+      "Look for milk, cream, salt and cultures alone, with no carrageenan or gum.",
       "Read the milkfat statement beside the name.",
       "Look for “directly set” or “curd set by direct acidification”.",
       "Pick dry curd cottage cheese for the version under 0.5 percent milkfat.",
@@ -2108,9 +2115,10 @@ export const TWO_LINE = {
     ]
   },
   "ice_cream": {
-    "decision": "A carton named “ice cream”, with no added oils listed.",
+    "decision": "Grass-fed ice cream of cream, milk and sugar, no gums.",
     "buying_tips": [
       "The name ice cream needs 10 percent milkfat and no oils beyond incidental amounts.",
+      "Look for cream, milk and sugar first, with no carrageenan or guar gum.",
       "Read the name on the carton, not the picture.",
       "Look for “frozen dairy dessert” in the small print.",
       "Read the ingredients for oils such as coconut or palm oil.",
@@ -2140,18 +2148,20 @@ export const TWO_LINE = {
     ]
   },
   "ghee": {
-    "decision": "Ghee or clarified butter with butter as the only ingredient.",
+    "decision": "Grass-fed ghee or clarified butter, butter the only ingredient.",
     "buying_tips": [
       "Plain ghee is butter simmered down to its fat; flavored jars add spices.",
+      "Look for butter as the single ingredient on the jar, with nothing added.",
       "Read the ingredient list for butter alone.",
       "Expect spices on the list if the jar is flavored.",
       "Choose ghee for its nutty taste and aroma."
     ]
   },
   "goat_sheep_dairy": {
-    "decision": "Goat or sheep dairy with goat or sheep milk listed.",
+    "decision": "Grass-fed goat or sheep milk, yogurt and cheese, nothing added.",
     "buying_tips": [
       "The animal on the list decides the food; goat butter, for one, comes out white.",
+      "Look for goat or sheep milk, cultures and salt alone on a cheese or yogurt list.",
       "Read the ingredients for goat milk or sheep milk.",
       "Look for feta, pecorino romano, Roquefort or Manchego for sheep milk cheese.",
       "Expect goat butter to be white, not yellow."
@@ -2159,9 +2169,10 @@ export const TWO_LINE = {
   },
   "almond_milk": {
     "instead": "A short-list oat milk is the next plant drink.",
-    "decision": "Unsweetened almond milk, a short list, never seed oil.",
+    "decision": "Unsweetened, unfortified almond milk, a short list, never seed oil.",
     "buying_tips": [
       "Almond drinks vary in added sugars, so the carton panel is the guide.",
+      "Look for unsweetened on the carton and no added vitamins or minerals on the list.",
       "Pick unsweetened over sweetened, vanilla or chocolate.",
       "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.",
       "Compare protein, vitamin D, calcium and potassium across cartons.",
@@ -2181,8 +2192,8 @@ export const TWO_LINE = {
     ]
   },
   "soy_milk": {
-    "decision": "Unsweetened soy milk, a short list beyond soybeans and water.",
-    "cart_pick": "Short-list unsweetened soy milk",
+    "decision": "Unsweetened, unfortified soy milk: soybeans and water, little else.",
+    "cart_pick": "Unsweetened, unfortified soy milk",
     "kristy_take": "A short list of soybeans and water stays closest to the bean.",
     "pick_steps": [
       "Pick the shortest list, soybeans and water with little else.",
@@ -2190,6 +2201,7 @@ export const TWO_LINE = {
     ],
     "buying_tips": [
       "Every addition is another ingredient; soybeans and water stays closest to the bean.",
+      "Look for unsweetened soy milk with no vitamins or minerals in the ingredient list.",
       "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second.",
       "Carrageenan, a seaweed thickener, appears in some certified organic foods too; choose a soy milk with none listed.",
       "A short-list unsweetened almond milk ranks above soy milk."
@@ -2217,13 +2229,15 @@ export const TWO_LINE = {
     "watch_out": [
       "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
       "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
-      "Dairy shoppers can read the Milk card."
+      "Dairy shoppers can read the Milk card.",
+      "Fortified soy milk is the second pick, behind a carton of soybeans and water."
     ]
   },
   "coconut_milk_beverage": {
-    "decision": "Unsweetened carton coconut milk with the fewest added gums.",
+    "decision": "Unsweetened, unfortified carton coconut milk, fewest added gums.",
     "buying_tips": [
       "The carton is coconut milk thinned with water, and gums like gellan thicken it back.",
+      "Look for coconut and water at the top, with no vitamins added below.",
       "Read “beverage” in the name: coconut milk thinned with water.",
       "Find it in the nondairy milk section, next to the soy milk.",
       "Check for sugar and flavors on a sweetened carton.",
@@ -2247,6 +2261,7 @@ export const TWO_LINE = {
     "decision": "Coconut or olive oil plant butter, never seed oil.",
     "buying_tips": [
       "Plant butters differ in their oils, and the ingredient list names each one.",
+      "Look for oils, water and salt, with no lecithin or natural flavors listed.",
       "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
       "Check whether a nut milk or culture is listed, as in some versions.",
       "Compare the fat line on the Nutrition Facts.",
@@ -2474,9 +2489,10 @@ export const TWO_LINE = {
     ]
   },
   "lard_tallow": {
-    "decision": "Leaf lard or tallow, with nothing added to harden it.",
+    "decision": "Pasture-raised leaf lard or grass-fed tallow, nothing added to harden.",
     "buying_tips": [
       "Lard may be hardened with lard stearin or hydrogenated lard, and the label says so.",
+      "Look for pasture-raised on the lard tub, and one fat in the list.",
       "Pick leaf lard for lard from the abdominal fat.",
       "Read the ingredients for one fat: pork for lard, beef for tallow.",
       "Check that a tub called shortening is not taken for plain lard."
@@ -2519,9 +2535,10 @@ export const TWO_LINE = {
     ]
   },
   "canned_coconut_milk": {
-    "decision": "Canned coconut milk, read for anything added beyond coconut.",
+    "decision": "Canned coconut milk listing coconut alone, no gum added.",
     "buying_tips": [
       "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
+      "Look for coconut alone on the list, with no guar gum or other gum.",
       "Pick a can that says BPA-free; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
       "Compare two cans by how much the list holds beyond coconut.",
       "Read the ingredients for guar gum or another gum."
@@ -2687,9 +2704,10 @@ export const TWO_LINE = {
     ]
   },
   "coconut_water": {
-    "decision": "Coconut water alone on the list, with nothing added.",
+    "decision": "Pure coconut water, high-pressure processed, with nothing added.",
     "buying_tips": [
       "Brands differ, and some add sugar; the list shows whether yours did.",
+      "Look for HPP or high-pressure processed on the carton, and coconut water alone.",
       "Read the ingredients: coconut water alone, or with sugar added.",
       "Canned coconut water is heat-treated so it keeps.",
       "A whole young coconut in its husk keeps longer than a trimmed one."
@@ -3035,9 +3053,10 @@ export const TWO_LINE = {
     ]
   },
   "frozen_pizza": {
-    "decision": "Frozen pizza whose crust lists flour, water, salt, yeast.",
+    "decision": "Whole wheat frozen pizza, crust of flour, water, salt, yeast.",
     "buying_tips": [
       "That short list is the traditional Neapolitan dough, with nothing else in it.",
+      "Look for real cheese on the list; “imitation cheese” marks a substitute.",
       "Read the crust list for flour, water, salt and yeast.",
       "On a whole wheat crust, look for whole wheat flour listed first.",
       "At home, double-wrap a pizza for the freezer: plastic wrap, then foil.",
@@ -3045,9 +3064,10 @@ export const TWO_LINE = {
     ]
   },
   "frozen_meals": {
-    "decision": "Frozen meals named for their meat, inspection mark shown.",
+    "decision": "Frozen meals named for their meat, no binders or extenders.",
     "buying_tips": [
       "The name sets a floor: at least 25 percent meat in a stew, 18 in a poultry dinner.",
+      "Look for a meat named in the title and no binders or extenders in the list.",
       "Read the product name first: it sets the meat minimum.",
       "Check the package for the inspection mark.",
       "Read the label, since some products must be cooked from frozen.",
@@ -3101,9 +3121,10 @@ export const TWO_LINE = {
     ]
   },
   "frozen_waffles": {
-    "decision": "Frozen waffles with a whole grain listed first.",
+    "decision": "Whole grain frozen waffles with no dyes or enriched flour.",
     "buying_tips": [
       "“Wheat flour” is plain flour, and front grain claims are undefined, so the list decides.",
+      "Look for whole wheat flour first and no enriched flour or dye anywhere on the list.",
       "Read the first ingredient for a whole grain, such as whole wheat flour.",
       "Graham flour and rolled oats count as whole grain on the list.",
       "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
@@ -3122,9 +3143,10 @@ export const TWO_LINE = {
     ]
   },
   "frozen_nuggets": {
-    "decision": "Chicken nuggets that say white meat on the label.",
+    "decision": "Organic or pasture-raised white meat nuggets, one solid piece.",
     "buying_tips": [
       "“White meat” means 100 percent light meat; “mostly white meat” can be 66 percent.",
+      "Look for certified organic on the box and a plain “Chicken Nugget” name.",
       "Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, or coconut oil; no added oil also fits.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
@@ -3343,3 +3365,8 @@ export const preCleanPick = (e) => (e && CLEAN_PICK_1.has(e.id) ? PRE_CP1.entrie
 export const CLEAN_PICK_2 = new Set(['organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas']);
 const PRE_CP2 = JSON.parse(execFileSync('git', ['show', '74237ce:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick2 = (e) => (e && CLEAN_PICK_2.has(e.id) ? PRE_CP2.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-3 (2026-10-20) moved these dairy, plant-milk, meat, seafood and frozen fronts on; older batch tests read them as of 2ab7f2f, and cleanPick3.test.js owns the new text.
+export const CLEAN_PICK_3 = new Set(['almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water']);
+const PRE_CP3 = JSON.parse(execFileSync('git', ['show', '2ab7f2f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick3 = (e) => (e && CLEAN_PICK_3.has(e.id) ? PRE_CP3.entries.find((x) => x.id === e.id) : e);

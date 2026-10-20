@@ -1,0 +1,132 @@
+{
+  "kind": "build",
+  "runId": "clean-pick-3-20261020143802-EcluL3",
+  "piece_id": "/Users/m1/kristy:clean-pick-3",
+  "attempt": 3,
+  "spec": "/Users/m1/kristy/.pipeline/specs/clean-pick-3.md",
+  "tier": "T2",
+  "ui": false,
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "status": "GREEN",
+  "model_requested": "gpt-6-astra",
+  "model_observed": "unobserved",
+  "model_mismatch": false,
+  "violations": [],
+  "usage": {
+    "input": 1267782,
+    "cached": 1151232,
+    "output": 9251,
+    "reasoning": 1621
+  },
+  "over_ceiling": true,
+  "ms": 567166,
+  "codexVersion": "codex-cli 0.159.1",
+  "project": "kristy",
+  "project_type": "unknown",
+  "vendor": "codex",
+  "route_id": "codex:gpt-6-astra:xhigh",
+  "rate_limits": null,
+  "models": null,
+  "first_try_green": true,
+  "fix_rounds": 0,
+  "green": true,
+  "stale_skills": [
+    "claude-api",
+    "supabase",
+    "supabase-postgres-best-practices",
+    "vercel-react-best-practices"
+  ],
+  "acceptance": 1,
+  "started_at": "2026-10-20T12:38:02.441Z",
+  "builder_started": true,
+  "attempts": [
+    {
+      "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-3-20261020143802-EcluL3:0",
+      "round": 0,
+      "model": "gpt-6-astra",
+      "vendor": "codex",
+      "events_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-3-20261020143802-EcluL3/events-0.jsonl",
+      "usage": {
+        "input": 1267782,
+        "cached": 1151232,
+        "output": 9251,
+        "reasoning": 1621
+      },
+      "tokens": 1277033,
+      "mem_free_mb": 188,
+      "code": 0,
+      "timed_out": false,
+      "events": {
+        "sessionId": "01a15956-30f0-7251-a582-5bb1add4b4c6",
+        "usage": {
+          "input": 1267782,
+          "cached": 1151232,
+          "output": 9251,
+          "reasoning": 1621
+        },
+        "finalMessage": "{\n  \"status\": \"done\",\n  \"files_changed\": [\n    \"docs/do-lines-review.md\",\n    \"server/kristy_perimeter_kb.json\",\n    \"server/test/acceptance/ca-3a.test.js\",\n    \"server/test/acceptance/ca-4a.test.js\",\n    \"server/test/acceptance/ca-4b.test.js\",\n    \"server/test/acceptance/ca-7.test.js\",\n    \"server/test/acceptance/cleanPick1.test.js\",\n    \"server/test/acceptance/cleanPick2.test.js\",\n    \"server/test/acceptance/cleanPick2b.test.js\",\n    \"server/test/acceptance/concernAdditives.test.js\",\n    \"server/test/acceptance/soyMilkRank.test.js\",\n    \"server/test/acceptance/twoLinePin.js\",\n    \"server/test/acceptance/w2.test.js\",\n    \"server/test/acceptance/w4.test.js\"\n  ],\n  \"criteria\": [\n    {\n      \"id\": \"C1\",\n      \"met\": true,\n      \"evidence\": \"All 21 entries match base plus BECAME. Acceptance: 11/11; full npm test: 2877 passed, 0 failed/skipped. Historical overlays and pins updated. Assumptions: dispatcher supplied the immutable acceptance file; left unchanged. NOTE: concernAdditives and soyMilkRank line 12 used map(preTidy); preserved that operation with preCleanPick3 applied first.\"\n    },\n    {\n      \"id\": \"C2\",\n      \"met\": true,\n      \"evidence\": \"Length limits pass; twoLineCheck: 181 checked, 0 violations.\"\n    },\n    {\n      \"id\": \"C3\",\n      \"met\": true,\n      \"evidence\": \"All original tip[0] values preserved; exact standard lines inserted at index 1.\"\n    },\n    {\n      \"id\": \"C4\",\n      \"met\": true,\n      \"evidence\": \"All 66 new strings pass prohibited wording and punctuation checks.\"\n    },\n    {\n      \"id\": \"C5\",\n      \"met\": true,\n      \"evidence\": \"Organic appears on exactly the three specified fronts; live guards pass.\"\n    },\n    {\n      \"id\": \"C6\",\n      \"met\": true,\n      \"evidence\": \"190 outside entries and all top-level metadata unchanged. Only owned files changed; protected passRule/k9 diff against 719f9fe is empty.\"\n    },\n    {\n      \"id\": \"C7\",\n      \"met\": true,\n      \"evidence\": \"Exactly 20 review headline cells changed; all other review bytes preserved. Regenerated doLines.json is byte-identical to 2ab7f2f. commitGuard and git diff --check pass.\"\n    },\n    {\n      \"id\": \"C8\",\n      \"met\": true,\n      \"evidence\": \"Every original buying tip remains in order, shifted after the insertion.\"\n    },\n    {\n      \"id\": \"C9\",\n      \"met\": true,\n      \"evidence\": \"All 21 cart picks route correctly; listMatchProbe reports no wrong matches.\"\n    },\n    {\n      \"id\": \"C10\",\n      \"met\": true,\n      \"evidence\": \"All 65 new field strings meet the duplication limit.\"\n    },\n    {\n      \"id\": \"C11\",\n      \"met\": true,\n      \"evidence\": \"All four plant milks name unfortified in decision/cart and rank fortified second in the final watch_out line.\"\n    }\n  ],\n  \"questions\": [],\n  \"kind\": null\n}",
+        "commands": [
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick3.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/ca-3a.test.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js'",
+          "/bin/zsh -lc \"pwd && rg --files -g 'AGENTS.md' -g 'report.schema.json' -g '\"'!node_modules'\"' -g '\"'!client/dist'\"' -g '\"'!*lock*'\"' -g '\"'!.*'\"'\"",
+          "/bin/zsh -lc 'git status --short && git rev-parse --short HEAD && git log -3 --oneline'",
+          "/bin/zsh -lc 'cat server/test/acceptance/cleanPick1.test.js'",
+          "/bin/zsh -lc 'cat server/test/acceptance/w2.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-4a.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js server/test/acceptance/concernAdditives.test.js server/test/acceptance/soyMilkRank.test.js'",
+          "/bin/zsh -lc 'cat server/package.json package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js server/scripts/commitGuard.js server/scripts/listMatchProbe.js server/lib/testGuards.js'",
+          "/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/m1/AGENTS.md /Users/m1/kristy/AGENTS.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done\nrg --files --hidden -g AGENTS.md -g report.schema.json -g '\"'\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.env*'\"'\"",
+          "/bin/zsh -lc 'cat .pipeline/runs/clean-pick-3-20261020143802-EcluL3/report.schema.json server/package.json package.json server/scripts/buildDoLines.js server/scripts/twoLineCheck.js'",
+          "/bin/zsh -lc \"rg -n 'twoLinePin|kb.entries =|readFileSync|doLines|ROOT|review' server/test/acceptance/{w2,w4,ca-4a,ca-4b,ca-7,concernAdditives,soyMilkRank}.test.js\nsed -n '292,333p' server/test/acceptance/cleanPick1.test.js\nsed -n '3245,3360p' server/test/acceptance/twoLinePin.js\nsed -n '1,30p' server/test/acceptance/twoLinePin.js\"",
+          "/bin/zsh -lc \"sed -n '1,245p' server/scripts/commitGuard.js\nsed -n '308,334p' server/test/acceptance/cleanPick1.test.js\nsed -n '243,268p' server/test/acceptance/ca-3a.test.js\"",
+          "/bin/zsh -lc 'cat server/lib/listMatch.js'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { runInNewContext } from 'node:vm';\nimport assert from 'node:assert/strict';\nconst test = readFileSync('server/test/acceptance/cleanPick3.test.js', 'utf8');\nconst b = runInNewContext('(' + test.match(/const BECAME = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/)[1] + ')');\nconst pinText = readFileSync('server/test/acceptance/twoLinePin.js', 'utf8');\nconst pins = JSON.parse(pinText.match(/export const TWO_LINE = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/)[1]);\nconst baseText = execFileSync('git', ['show', '2ab7f2f:server/kristy_perimeter_kb.json'], {maxBuffer:64<<20}).toString();\nconst base = JSON.parse(baseText);\nassert.equal(readFileSync('server/kristy_perimeter_kb.json','utf8'), baseText);\nconst review = readFileSync('docs/do-lines-review.md', 'utf8');\nassert.equal(review,execFileSync('git',['show','2ab7f2f:docs/do-lines-review.md'],{maxBuffer:64<<20}).toString());\nfor(const id of Object.keys(b)) {\n const e=base.entries.find(e=>e.id===id);\n console.log(JSON.stringify({id,decision:e.decision,cart_pick:e.cart_pick,pinned:Object.keys(pins[id]),tip0:e.buying_tips[0],tips:e.buying_tips.length}));\n if(b[id].tier_note) console.log(JSON.stringify({id,tier_note:e.tier_note,detail:e.detail,science:b[id].science?e.science:undefined}));\n const row=review.split('\\\\n').find(l=>l.startsWith('| \"'`'\"'+id+'\"'` |'\"'));\n assert.equal(row.split('|')[3].trim(),e.decision);\n}\nconsole.log('Entries: '+base.entries.length+'; outside B3/B4: '+(base.entries.length-Object.keys(b).length));\nNODE\"",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { readFileSync, writeFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { runInNewContext } from 'node:vm';\nimport assert from 'node:assert/strict';\nconst git = path => execFileSync('git', ['show', \"'`2ab7f2f:${path}`], {maxBuffer:64<<20}).toString();\nconst test = readFileSync('\"'server/test/acceptance/cleanPick3.test.js', 'utf8');\nconst became = runInNewContext('(' + test.match(/const BECAME = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/)[1] + ')');\nconst kbPath = 'server/kristy_perimeter_kb.json';\nconst baseText = git(kbPath);\nassert.equal(readFileSync(kbPath,'utf8'), baseText);\nconst base = JSON.parse(baseText);\nassert.equal(JSON.stringify(base, null, 2)+'\\\\n',baseText, 'KB serialization');\nconst live = structuredClone(base);\nconst changedFields = new Map();\nfor (const [id,b] of Object.entries(became)) {\n  const was = base.entries.find(e=>e.id===id);\n  const now = live.entries.find(e=>e.id===id);\n  assert.ok(was && now,id);\n  now.buying_tips = [was.buying_tips[0],b.tip1,...was.buying_tips.slice(1)];\n  for (const f of ['decision','cart_pick','tier_note']) if(b[f]) now[f]=b[f];\n  if(b.watch_add) now.watch_out = [...(was.watch_out ?? []),b.watch_add];\n  if(b.glossed) now.detail = \"'`${was.detail} ${was.tier_note}`;\n  if(b.science) {\n    const oldSentence='\"'A gum on the list is a texture choice by the maker, never a ranking.';\n    const newSentence='A gum on the list is a texture choice by the maker.';\n    const science=JSON.stringify(was.science);\n    assert.equal(science.split(oldSentence).length,2);\n    now.science=JSON.parse(science.replace(oldSentence,newSentence));\n  }\n  changedFields.set(id,Object.keys(now).filter(f=>JSON.stringify(now[f])\"'!==JSON.stringify(was[f])));\n}\nconst reviewPath='\"'docs/do-lines-review.md';\nconst oldReview=git(reviewPath);\nassert.equal(readFileSync(reviewPath,'utf8'),oldReview);\nconst seen=new Set();\nconst review=oldReview.split('\\\\n').map(line=>{\n  if(\"'!line.startsWith('\"'| \"'`'\"')) return line;\n  const id=line.split('\"'`'\"')[1];\n  if(\"'!became[id]?.decision || seen.has(id)) return line;\n  const cells=line.split('\"'|');\n  assert.equal(cells[3].trim(),base.entries.find(e=>e.id===id).decision,id);\n  cells[3]=' '+became[id].decision+' ';\n  seen.add(id);\n  return cells.join('|');\n}).join('\\\\n');\nassert.equal(seen.size,20);\nconst pinsPath='server/test/acceptance/twoLinePin.js';\nconst oldPins=readFileSync(pinsPath,'utf8');\nconst pinJson=oldPins.match(/export const TWO_LINE = (\\\\{[\\\\s\\\\S]*?\\\\n\\\\});/)[1];\nconst pins=JSON.parse(pinJson);\nassert.equal(JSON.stringify(pins,null,2),pinJson,'pin serialization');\nlet fields=0;\nfor(const [id,changed] of changedFields) {\n  for(const f of changed) if(Object.hasOwn(pins[id],f)) {\n    pins[id][f]=live.entries.find(e=>e.id===id)[f];\n    fields++;\n  }\n}\nconst ids=Object.keys(became).map(id=>\"'`'\"'\"'${id}'\"'\"'`).join('\"', ');\nconst overlay=\"'`'\"\\\\n// clean-pick-3 (2026-10-20) moved these dairy, plant-milk, meat, seafood and frozen fronts on; older batch tests read them as of 2ab7f2f, and cleanPick3.test.js owns the new text.\\\\nexport const CLEAN_PICK_3 = new Set([\"'${ids}]);'\"\\\\nconst PRE_CP3 = JSON.parse(execFileSync('git', ['show', '2ab7f2f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());\\\\nexport const preCleanPick3 = (e) => (e && CLEAN_PICK_3.has(e.id) ? PRE_CP3.entries.find((x) => x.id === e.id) : e);\\\\n\"'`;\nassert.ok(!oldPins.includes('\"'PRE_CP3'));\nconst newPins=oldPins.replace(pinJson,JSON.stringify(pins,null,2))+overlay;\nwriteFileSync(kbPath,JSON.stringify(live,null,2)+'\\\\n');\nwriteFileSync(reviewPath,review);\nwriteFileSync(pinsPath,newPins);\nconsole.log(\"'`Updated ${changedFields.size} KB entries, ${seen.size} review headlines, and ${fields} pinned fields; added the historical overlay.`);\nconsole.log('\"'Changed field counts:', Object.fromEntries([...new Set([...changedFields.values()].flat())].map(f=>[f,[...changedFields.values()].filter(fs=>fs.includes(f)).length])));\nNODE\"",
+          "/bin/zsh -lc 'node --test server/test/acceptance/cleanPick3.test.js'",
+          "/bin/zsh -lc \"node scripts/buildDoLines.js && node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nconst live=readFileSync('lib/doLines.json');\nconst base=execFileSync('git',['show','2ab7f2f:server/lib/doLines.json']);\nassert.ok(live.equals(base),'regenerated doLines.json must remain byte-identical');\nconsole.log('Regenerated doLines.json is byte-identical to 2ab7f2f.');\nNODE\nnode scripts/twoLineCheck.js && node scripts/commitGuard.js && node scripts/listMatchProbe.js\"",
+          "/bin/zsh -lc 'git diff -- server/kristy_perimeter_kb.json server/test/acceptance/twoLinePin.js'",
+          "/bin/zsh -lc 'git diff --check && git diff --stat && git diff -- server/test/acceptance/ca-3a.test.js server/test/acceptance/cleanPick1.test.js server/test/acceptance/cleanPick2.test.js server/test/acceptance/cleanPick2b.test.js server/test/acceptance/concernAdditives.test.js server/test/acceptance/soyMilkRank.test.js server/test/acceptance/w2.test.js server/test/acceptance/w4.test.js server/test/acceptance/ca-4a.test.js server/test/acceptance/ca-4b.test.js server/test/acceptance/ca-7.test.js'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { execFileSync } from 'node:child_process';\nimport { runInNewContext } from 'node:vm';\nconst git=path=>execFileSync('git',['show',\"'`2ab7f2f:${path}`],{maxBuffer:64<<20}).toString();\nconst literal=(text,name)=>runInNewContext('\"'('+text.match(new RegExp('(?:export )?const '+name+' = (\\\\\\\\{[\\\\\\\\s\\\\\\\\S]*?\\\\\\\\n\\\\\\\\});'))[1]+')');\nconst b=literal(readFileSync('server/test/acceptance/cleanPick3.test.js','utf8'),'BECAME');\nconst base=JSON.parse(git('server/kristy_perimeter_kb.json'));\nconst live=JSON.parse(readFileSync('server/kristy_perimeter_kb.json','utf8'));\nconst oldPins=literal(git('server/test/acceptance/twoLinePin.js'),'TWO_LINE');\nconst pins=literal(readFileSync('server/test/acceptance/twoLinePin.js','utf8'),'TWO_LINE');\nassert.deepEqual(Object.keys(pins),Object.keys(oldPins));\nlet repinned=0;\nfor(const [id,fields] of Object.entries(oldPins)) {\n assert.deepEqual(Object.keys(pins[id]),Object.keys(fields),\"'`${id} pin keys`);\n for(const [field,oldValue] of Object.entries(fields)) {\n  const expected=b[id]?live.entries.find(e=>e.id===id)[field]:oldValue;\n  assert.equal(JSON.stringify(pins[id][field]),JSON.stringify(expected),`${id}.${field}`);\n  if(JSON.stringify(pins[id][field])!==JSON.stringify(oldValue)) repinned++;\n }\n}\nconst oldReview=git('\"'docs/do-lines-review.md').split('\\\\n');\nconst review=readFileSync('docs/do-lines-review.md','utf8').split('\\\\n');\nassert.equal(review.length,oldReview.length);\nlet changed=0;\nfor(let i=0;i<oldReview.length;i++) {\n if(oldReview[i]===review[i]) continue;\n const cells=review[i].split('|'),oldCells=oldReview[i].split('|');\n const id=oldReview[i].split('\"'`'\"')[1];\n assert.ok(b[id]?.decision,id);\n assert.equal(cells[3],\"'` ${b[id].decision} `);\n cells[3]=oldCells[3];\n assert.equal(cells.join('\"'|'),oldReview[i],\"'`review line ${i+1}`);\n changed++;\n}\nassert.equal(changed,20);\nconst cp1=literal(readFileSync('\"'server/test/acceptance/cleanPick1.test.js','utf8'),'BECAME');\nconst cp2=literal(readFileSync('server/test/acceptance/cleanPick2.test.js','utf8'),'BECAME');\nconst outside1=live.entries.filter(e=>\"'!cp1[e.id]&&!cp2[e.id]&&!b[e.id]).length;\nconst outside2=live.entries.filter(e=>!cp2[e.id]&&!b[e.id]).length;\nassert.equal(outside1,157); assert.equal(outside2,173);\nassert.equal(execFileSync('\"'git',['diff','719f9fe','--','server/test/acceptance/passRule.js','server/test/acceptance/k9.test.js']).toString(),'');\nconsole.log(\"'`Audit passed: ${repinned} existing pin fields updated; exactly ${changed} review headline cells changed; all other review bytes preserved; older-test populations ${outside1}/${outside2}; protected passRule/k9 diff empty.`);\nNODE'",
+          "/bin/zsh -lc 'git diff --check && git status --short && git diff --name-only && git diff --numstat'",
+          "/bin/zsh -lc \"node --input-type=module <<'NODE'\nimport { spawn } from 'node:child_process';\nconst child = spawn('npm', ['test'], { stdio: ['ignore', 'pipe', 'pipe'] });\nconst output = [];\nfor (const stream of [child.stdout, child.stderr]) stream.on('data', chunk => output.push(chunk.toString()));\nchild.on('error', error => { console.error(error.message); process.exitCode = 1; });\nchild.on('close', code => {\n  const lines = output.join('').split('\\\\n');\n  if (code \"'!== 0) {\n    const indices = lines.flatMap((line, i) => /''^(?:not ok|✖|'\"\\\\s*error:|\\\\s*failureType:)/.test(line) ? [i] : []);\n    const printed = new Set();\n    for (const i of indices) for (let j = Math.max(0, i - 3); j < Math.min(lines.length, i + 65); j++) {\n      if (\"'!printed.has(j)) { console.log(lines[j]); printed.add(j); }\n    }\n  }\n  console.log(lines.slice(-28).join('\"'\\\\n'));\n  console.log(\"'`npm test exit code: ${code}`);\n  process.exitCode = code ?? 1;\n});\nNODE'"
+        ],
+        "errors": [],
+        "unknownTypes": [
+          "item.started"
+        ],
+        "skipped": 0,
+        "rateLimits": null,
+        "models": []
+      }
+    }
+  ],
+  "tokens": 1277033,
+  "repo": "/Users/m1/kristy",
+  "class": null,
+  "pre_existing_changed": [],
+  "baseline": {
+    "ms": 277,
+    "key": "21b38f662832d7ee117ea2846f5354ee458161196f22b6f5a79716eb8bb161ae",
+    "cached": false
+  },
+  "report_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-3-20261020143802-EcluL3/run-report.json",
+  "execution_id": "32510144-21a5-46a7-894f-56f7f54c0c31:clean-pick-3-20261020143802-EcluL3:0",
+  "mem_free_mb": 188,
+  "host_verify_runs": [],
+  "verify_runs": [
+    {
+      "name": "verify",
+      "code": 0,
+      "ms": 12338,
+      "tail": "ok 2873 - section rules: sources exist in the KB\n  ---\n  duration_ms: 0.088417\n  type: 'test'\n  ...\n# Subtest: section rules: voice and claim bans\nok 2874 - section rules: voice and claim bans\n  ---\n  duration_ms: 0.533083\n  type: 'test'\n  ...\n# Subtest: section rules: beyond lines name a source past the store, in voice\nok 2875 - section rules: beyond lines name a source past the store, in voice\n  ---\n  duration_ms: 0.153458\n  type: 'test'\n  ...\n# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.\n# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.\n# Subtest: universe mode: known-covered row covered, garbage row uncovered, carried apart\nok 2876 - universe mode: known-covered row covered, garbage row uncovered, carried apart\n  ---\n  duration_ms: 151.835125\n  type: 'test'\n  ...\n# Subtest: CARRIED_HINTS lists brand rows and is wired into suspect()\nok 2877 - CARRIED_HINTS lists brand rows and is wired into suspect()\n  ---\n  duration_ms: 1.151917\n  type: 'test'\n  ...\n1..2877\n# tests 2877\n# suites 0\n# pass 2877\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 11077.073417",
+      "failures": [],
+      "raw_path": "/Users/m1/kristy/.pipeline/runs/clean-pick-3-20261020143802-EcluL3/verify-0/gate-0.txt",
+      "timedOut": false,
+      "trustworthy": true,
+      "round": 0,
+      "pre_existing": [],
+      "regressions": []
+    }
+  ],
+  "completed_at": "2026-10-20T12:47:29.607Z",
+  "readiness": "READY"
+}

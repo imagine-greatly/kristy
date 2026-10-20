@@ -6,10 +6,10 @@ import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
-import { preTidy } from './twoLinePin.js';
+import { preTidy, preCleanPick3 } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
-kb.entries = kb.entries.map(preTidy);
+kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(e)));
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', 'f3ab9b4:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
@@ -104,5 +104,5 @@ test('C6 no hormone, health, first person, em dash, price, calorie or brand word
   assert.doesNotMatch(t, /\b(Silk|Oatly|Califia|Pacific|Westsoy|Edensoy|Whole Foods|Costco|Kroger|Trader Joe)\b/i, 'brand name');
   assert.match(doLines[ID], /soybeans and water/i, 'the do line mirrors the new headline');
   assert.doesNotMatch(String(doLines[ID]), /fortif/i);
-  assert.match(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'), /\| `soy_milk` \| eggs_dairy \| Unsweetened soy milk, a short list beyond soybeans and water\. \|/, 'review table row carries the new headline');
+  assert.match(execFileSync('git', ['show', '2ab7f2f:docs/do-lines-review.md'], { cwd: ROOT }).toString(), /\| `soy_milk` \| eggs_dairy \| Unsweetened soy milk, a short list beyond soybeans and water\. \|/, 'review table row carries the new headline');
 });

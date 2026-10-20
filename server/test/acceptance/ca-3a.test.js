@@ -10,7 +10,7 @@ import * as lint from '../../lib/counterCardLint.js';
 import * as pass from './passRule.js';
 import { RETIRED, projectEntry } from '../../lib/counterCards.js';
 import { TRY_POOL } from '../../lib/tryPool.js';
-import { TWO_LINE, withTwoLine } from './twoLinePin.js';
+import { TWO_LINE, withTwoLine, preCleanPick3 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -23,6 +23,7 @@ const reviewHeadline = (id) => {
 };
 const PRE = JSON.parse(execFileSync('git', ['show', '8b49633:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const now = (id) => kb.entries.find((e) => e.id === id);
+const was = (id) => preCleanPick3(now(id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const flat = (r) => (Array.isArray(r) ? r : (r && r.violations) || []);
@@ -33,7 +34,10 @@ const BATCH = ['beef_grassfed_vs_grainfed', 'ground_beef_lean_ratio', 'beef_cuts
   'judging_meat_at_the_case', 'bison', 'venison_game', 'lamb_goat', 'pick_soup_bones'];
 const RUMINANT_FRONTS = new Set(['beef_grassfed_vs_grainfed', 'bison', 'venison_game', 'lamb_goat']);
 // The approved two-line samples (docs/CARD-STYLE-SAMPLES.md, 2026-10-17) put grass-fed on the steak and ground beef fronts.
-const APPROVED_GRASS_FRONTS = new Set(['ground_beef_lean_ratio', 'beef_cuts_basics']);
+const APPROVED_GRASS_FRONTS = new Set([
+  'ground_beef_lean_ratio', 'beef_cuts_basics',
+  'butcher_counter_asking', 'organ_meats', // clean-pick-3 B4, Devon 2026-10-20 "100% grass fed beef"
+]);
 const MEAT_TIP = { section: 'meat', rule: 'A local butcher comes first; at the case, choose meat from animals raised on grass and open pasture.', checks: ['Ask what the animal ate and how it lived; a butcher counter can answer.', 'Organs come from the same animal; liver and heart belong in the cart too.', 'On packaged meat, look for an ingredient list of meat, salt, and spices.'] };
 const G1 = '“grass-fed” is the producer’s own word unless a certifier’s seal audits it';
 const POINTER = 'How it was raised: see Beef.';
@@ -177,7 +181,7 @@ test('C4 the Beef front carries G1 and drops the grain-finish line', () => {
 });
 
 test('C5 plan cart_picks are byte-equal', () => {
-  assert.equal(now('butcher_counter_asking').cart_pick, 'Beef soup bones from the butcher counter');
+  assert.equal(was('butcher_counter_asking').cart_pick, 'Beef soup bones from the butcher counter');
 });
 
 test('C6 D1 limits hold on every batch card', () => {
@@ -248,7 +252,7 @@ test('C12 Step 1c cards equal the spec', () => {
     assert.ok(p, `${id} missing at 8b49633`);
     const want = withTwoLine({ ...p, ...spec });
     if (id === 'judging_meat_at_the_case') want.watch_out = [...p.watch_out.slice(1), p.watch_out[0], p.decision, p.pick_steps[1]];
-    assert.deepEqual(now(id), want, `${id} differs from Step 1c`);
+    assert.deepEqual(withTwoLine(was(id)), want, `${id} differs from Step 1c`);
   }
   assert.equal(now('judging_meat_at_the_case').watch_out.length, 7);
   assert.ok(!('cart_pick' in now('judging_meat_at_the_case')), 'judging gained a cart_pick');

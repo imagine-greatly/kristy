@@ -2779,7 +2779,7 @@
       ],
       "category": "meat_counter",
       "question": "What should I ask at the butcher counter?",
-      "decision": "Beef soup bones and a whole chuck, freshly ground.",
+      "decision": "100% grass-fed soup bones and a whole chuck, freshly ground.",
       "why": "A whole chuck ground at the counter lets you choose the cut. The butcher can tell you when it was cut.",
       "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
       "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
@@ -2791,9 +2791,10 @@
         "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
       ],
       "kristy_take": "Start with what came in today, then how it was raised and what was added. Bones, trim and portioning are worth asking for while you are at the counter.",
-      "cart_pick": "Beef soup bones from the butcher counter",
+      "cart_pick": "Grass-fed soup bones from the butcher counter",
       "buying_tips": [
         "A butcher can tell you how it was raised and when it was cut; a package cannot.",
+        "Ask which farm the bones came from and what the cattle were fed.",
         "Ask what came in today.",
         "Ask for a whole chuck ground fresh, which lets you choose the cut.",
         "Ask the sourcing question outright: how it was raised and where from.",
@@ -6893,7 +6894,7 @@
       ],
       "category": "dairy",
       "question": "What should you check before buying oat milk?",
-      "decision": "Oat milk with few stabilizers, never seed oil.",
+      "decision": "Unsweetened, unfortified oat milk with nothing added, never seed oil.",
       "why": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
       "short_answer": "The archived paper studied six original oat drinks from the UK market. Their nutritional composition and fortification varied. Check the actual carton rather than treating oat milk as one formulation.",
       "detail": "The paper describes production that can include milling, enzyme hydrolysis, formulation, and heat treatment. It notes that oat drinks generally contain less protein than cow’s milk and may have added vitamins and minerals. The study measured sensory, physical, and chemical properties, not health outcomes.",
@@ -6910,13 +6911,16 @@
         }
       ],
       "kristy_take": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
-      "cart_pick": "Oat milk",
+      "cart_pick": "Unsweetened, unfortified oat milk",
       "buying_tips": [
         "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
+        "Look for oats and water alone, with no vitamins, minerals or oil added.",
         "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it.",
         "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
       ],
-      "watch_out": [],
+      "watch_out": [
+        "A fortified oat milk ranks second; its added vitamins and minerals lengthen the list."
+      ],
       "pick_steps": [
         "Read the ingredient list for stabilizers; formulations can differ in stabilizer use.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed."
@@ -7057,7 +7061,7 @@
       ],
       "category": "deli",
       "question": "What should you check on a pack of hot dogs?",
-      "decision": "Organic beef hot dogs with a short ingredient list.",
+      "decision": "Organic beef hot dogs with no phosphates or binders.",
       "why": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
       "short_answer": "Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Its name belongs in the ingredient statement.",
       "detail": "The US frankfurter standard distinguishes sausages with meat byproducts and requires “with byproducts” or “with variety meats” in their name. Mechanically separated poultry has its own regulatory definition. These processing distinctions support an ingredient choice, not a claim that one hot dog produces a health result.",
@@ -7071,6 +7075,7 @@
       "cart_pick": "Organic packaged beef hot dogs",
       "buying_tips": [
         "Named meat first, with no mechanically separated chicken or turkey.",
+        "Look for a list with no sodium phosphate, carrageenan or modified food starch.",
         "Look for the named meat and read all other ingredients.",
         "Compare formulations across available packs rather than assume a species claim describes every ingredient.",
         "Check whether the list names mechanically separated chicken or turkey.",
@@ -7643,7 +7648,7 @@
       ],
       "category": "deli",
       "question": "What does the turkey bacon label tell you?",
-      "decision": "Organic or pasture-raised turkey bacon with few added ingredients.",
+      "decision": "Organic or pasture-raised turkey bacon with no added sugar.",
       "why": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
       "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
       "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
@@ -7660,6 +7665,7 @@
       "cart_pick": "Organic or pasture-raised turkey bacon strips",
       "buying_tips": [
         "Read the named turkey cut and each curing ingredient after the meat.",
+        "Look for a curing list that names no sugar after the turkey.",
         "Read the descriptive name beside “turkey bacon” for the meat used.",
         "Read each curing ingredient in the ingredients statement.",
         "On “Uncured” packs, read the qualifier and check for celery powder or juice in the curing list."
@@ -7858,10 +7864,10 @@
       ],
       "category": "meat_counter",
       "question": "How do you buy and handle organ meats?",
-      "decision": "Organ meats you will cook within one to two days.",
+      "decision": "100% grass-fed or pasture-raised organ meats, cooked within two days.",
       "why": "Heart and tongue suit cooking in liquid. Liver can be pan-fried; tripe needs a braise to turn tender.",
       "short_answer": "Liver, kidney, tripe, sweetbreads, and tongue keep 1 to 2 days in the refrigerator. Cook all organ meats to 160°F. Heart and tongue are tough and suit moist heat.",
-      "detail": "Organ meats are also called variety meats or offal. Liver suits braising, pan broiling, or frying. Sweetbreads and kidneys suit braising, sautéing, or frying. Tripe, the beef stomach, is braised up to two hours to turn tender. Heart and tongue are best cooked in liquid because their muscle is tough.",
+      "detail": "Organ meats are also called variety meats or offal. Liver suits braising, pan broiling, or frying. Sweetbreads and kidneys suit braising, sautéing, or frying. Tripe, the beef stomach, is braised up to two hours to turn tender. Heart and tongue are best cooked in liquid because their muscle is tough. Organ meats keep a shorter time in the refrigerator than steaks and roasts.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat",
@@ -7869,9 +7875,10 @@
         "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
       ],
       "kristy_take": "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
-      "cart_pick": "Organ meat for a cook within two days",
+      "cart_pick": "Pasture-raised beef liver or organ meat",
       "buying_tips": [
         "Organ meats keep less time than steaks and roasts, just 1 to 2 days cold.",
+        "Ask the counter which farm the liver or heart came from.",
         "Buy organ meats for a cook within one to two days.",
         "Ask the counter or a farmer which organs they offer.",
         "Match the organ to the method, with heart and tongue braised."
@@ -7895,7 +7902,7 @@
           "meaning": "Beef stomach, braised up to two hours to turn tender."
         }
       ],
-      "tier_note": "Organ meats keep a shorter time in the refrigerator than steaks and roasts.",
+      "tier_note": "Pasture-raised organ meats: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "how do you buy organ meats",
         "how long do organ meats keep",
@@ -8463,7 +8470,7 @@
       ],
       "category": "seafood",
       "question": "How do you pick smoked salmon?",
-      "decision": "Nova or lox smoked salmon, bought cold and kept cold.",
+      "decision": "Wild-caught smoked salmon, nova or lox, kept cold.",
       "why": "Nova, lox and kippered mean refrigerated cold-smoked fish. Shelf-stable smoked fish is heat-treated and sealed instead.",
       "short_answer": "Read the label word. Nova-style, lox, kippered and smoked mean refrigerated cold-smoked fish. Keep it cold from the case to the fridge. Shelf-stable smoked fish comes heat-treated in a sealed can, tin or jar.",
       "detail": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually labeled nova-style, lox, kippered, smoked or jerky. These are cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. The cold-smoking process does not kill it, and refrigeration does not either. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Store refrigerated seafood in the coldest part of the fridge, at or below 40°F.",
@@ -8478,9 +8485,10 @@
         }
       ],
       "kristy_take": "The label word tells the kind. Refrigerated smoked fish stays cold all the way home.",
-      "cart_pick": "Refrigerated smoked salmon from a cold case",
+      "cart_pick": "Wild-caught smoked salmon",
       "buying_tips": [
         "Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold.",
+        "Look for wild-caught on the pack, and no ‘color added’ line.",
         "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.",
         "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
         "Pick it from a refrigerated case and put it in the fridge soon after buying.",
@@ -9430,7 +9438,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick cottage cheese?",
-      "decision": "Cottage cheese with its curd set by a culture.",
+      "decision": "Grass-fed cottage cheese, curd set by a culture, no carrageenan.",
       "why": "A curd set by acid must be labeled “directly set” beside the name. Without those words, a culture set it.",
       "short_answer": "Cottage cheese is curd mixed with a creaming mixture. The label states its milkfat, at least 4 percent. Acid-set curd must say “directly set” near the name. Dry curd cottage cheese has under 0.5 percent milkfat.",
       "detail": "Under 21 CFR 133.128, cottage cheese is dry curd mixed with a creaming mixture. It holds at least 4 percent milkfat and at most 80 percent moisture. The label states “not less than __ percent milkfat” with the name. Under 21 CFR 133.129, the curd is set by lactic acid bacteria or by food-grade acids. Direct acidification means an acid, not bacteria, sets the curd. That method is labeled “Directly set” or “Curd set by direct acidification”. Dry curd cottage cheese has less than 0.5 percent milkfat.",
@@ -9456,9 +9464,10 @@
         }
       ],
       "kristy_take": "The setting method is printed by the name, so the tub answers the question.",
-      "cart_pick": "Cottage cheese with no “directly set”",
+      "cart_pick": "Grass-fed culture-set cottage cheese",
       "buying_tips": [
         "A culture sets the curd unless the tub prints “directly set” beside the name.",
+        "Look for milk, cream, salt and cultures alone, with no carrageenan or gum.",
         "Read the milkfat statement beside the name.",
         "Look for “directly set” or “curd set by direct acidification”.",
         "Pick dry curd cottage cheese for the version under 0.5 percent milkfat.",
@@ -9508,7 +9517,7 @@
       ],
       "category": "dairy",
       "question": "How do you tell real ice cream from a lookalike?",
-      "decision": "A carton named “ice cream”, with no added oils listed.",
+      "decision": "Grass-fed ice cream of cream, milk and sugar, no gums.",
       "why": "The name “ice cream” needs at least 10 percent milkfat. Short of that, the carton says “frozen dairy dessert”.",
       "short_answer": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat.",
       "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil.",
@@ -9534,9 +9543,10 @@
         }
       ],
       "kristy_take": "The words on the carton settle it. “Frozen dairy dessert” is the name for what falls short.",
-      "cart_pick": "A carton named “ice cream”",
+      "cart_pick": "Grass-fed gum-free ice cream",
       "buying_tips": [
         "The name ice cream needs 10 percent milkfat and no oils beyond incidental amounts.",
+        "Look for cream, milk and sugar first, with no carrageenan or guar gum.",
         "Read the name on the carton, not the picture.",
         "Look for “frozen dairy dessert” in the small print.",
         "Read the ingredients for oils such as coconut or palm oil.",
@@ -9585,7 +9595,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick ghee?",
-      "decision": "Ghee or clarified butter with butter as the only ingredient.",
+      "decision": "Grass-fed ghee or clarified butter, butter the only ingredient.",
       "why": "Clarified butter is butter with the water and milk solids removed. Ghee simmers longer for a nutty taste.",
       "short_answer": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty taste.",
       "detail": "Ghee is typically made by simmering butter, skimming the surface, and keeping the clear liquid fat. The solid residue that settles is discarded. Clarified butter is done once the water evaporates and the fat separates from the milk solids. Ghee is simmered further, which makes it nutty and aromatic. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
@@ -9595,9 +9605,10 @@
         "https://www.healthline.com/nutrition/ghee"
       ],
       "kristy_take": "Plain ghee is butter, simmered down to its fat.",
-      "cart_pick": "Ghee made from butter alone",
+      "cart_pick": "Grass-fed ghee",
       "buying_tips": [
         "Plain ghee is butter simmered down to its fat; flavored jars add spices.",
+        "Look for butter as the single ingredient on the jar, with nothing added.",
         "Read the ingredient list for butter alone.",
         "Expect spices on the list if the jar is flavored.",
         "Choose ghee for its nutty taste and aroma."
@@ -9645,7 +9656,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick goat or sheep dairy?",
-      "decision": "Goat or sheep dairy with goat or sheep milk listed.",
+      "decision": "Grass-fed goat or sheep milk, yogurt and cheese, nothing added.",
       "why": "Goat milk has less lactose than cow’s milk.",
       "short_answer": "Goat milk averages about 3.5 percent butterfat. It contains lactose, less than cow’s milk. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
       "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. Its cream rises over a few days. Compared with cow’s milk, goat milk has less lactose and different forms of proteins. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
@@ -9655,9 +9666,10 @@
         "https://en.wikipedia.org/wiki/Sheep_milk"
       ],
       "kristy_take": "The animal named on the label decides what the cheese or carton is.",
-      "cart_pick": "Goat cheese or a sheep milk cheese",
+      "cart_pick": "Grass-fed goat or sheep milk",
       "buying_tips": [
         "The animal on the list decides the food; goat butter, for one, comes out white.",
+        "Look for goat or sheep milk, cultures and salt alone on a cheese or yogurt list.",
         "Read the ingredients for goat milk or sheep milk.",
         "Look for feta, pecorino romano, Roquefort or Manchego for sheep milk cheese.",
         "Expect goat butter to be white, not yellow."
@@ -9700,7 +9712,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick almond milk?",
-      "decision": "Unsweetened almond milk, a short list, never seed oil.",
+      "decision": "Unsweetened, unfortified almond milk, a short list, never seed oil.",
       "why": "FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.",
       "short_answer": "Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.",
       "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.",
@@ -9718,16 +9730,18 @@
         }
       ],
       "kristy_take": "The carton panel, not the word milk, says what the drink brings.",
-      "cart_pick": "Unsweetened almond milk",
+      "cart_pick": "Unsweetened, unfortified almond milk",
       "buying_tips": [
         "Almond drinks vary in added sugars, so the carton panel is the guide.",
+        "Look for unsweetened on the carton and no added vitamins or minerals on the list.",
         "Pick unsweetened over sweetened, vanilla or chocolate.",
         "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.",
         "Compare protein, vitamin D, calcium and potassium across cartons.",
         "Check saturated fat on the panel."
       ],
       "watch_out": [
-        "FDA does not place almond drinks in the dairy group."
+        "FDA does not place almond drinks in the dairy group.",
+        "Fortified almond milk comes second, since each added vitamin or mineral joins the list."
       ],
       "pick_steps": [
         "Pick unsweetened over sweetened, vanilla or chocolate.",
@@ -9765,7 +9779,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick soy milk?",
-      "decision": "Unsweetened soy milk, a short list beyond soybeans and water.",
+      "decision": "Unsweetened, unfortified soy milk: soybeans and water, little else.",
       "why": "FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group.",
       "short_answer": "Soy milk is made by soaking and grinding soybeans, boiling, then filtering. It may be sweetened, flavored and fortified. FDA places only the fortified kind in the dairy group.",
       "detail": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein content runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines include only fortified soy beverages in the dairy group. The reason given is that they have key nutrients similar to those in milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars.",
@@ -9791,9 +9805,10 @@
         }
       ],
       "kristy_take": "A short list of soybeans and water stays closest to the bean.",
-      "cart_pick": "Short-list unsweetened soy milk",
+      "cart_pick": "Unsweetened, unfortified soy milk",
       "buying_tips": [
         "Every addition is another ingredient; soybeans and water stays closest to the bean.",
+        "Look for unsweetened soy milk with no vitamins or minerals in the ingredient list.",
         "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second.",
         "Carrageenan, a seaweed thickener, appears in some certified organic foods too; choose a soy milk with none listed.",
         "A short-list unsweetened almond milk ranks above soy milk."
@@ -9801,7 +9816,8 @@
       "watch_out": [
         "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
         "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
-        "Dairy shoppers can read the Milk card."
+        "Dairy shoppers can read the Milk card.",
+        "Fortified soy milk is the second pick, behind a carton of soybeans and water."
       ],
       "pick_steps": [
         "Pick the shortest list, soybeans and water with little else.",
@@ -9838,7 +9854,7 @@
       ],
       "category": "dairy",
       "question": "Is carton coconut milk the same as the can?",
-      "decision": "Unsweetened carton coconut milk with the fewest added gums.",
+      "decision": "Unsweetened, unfortified carton coconut milk, fewest added gums.",
       "why": "Technically a coconut beverage: coconut milk blended with water, about an eighth as fatty as the can.",
       "short_answer": "Canned coconut milk is shredded coconut steeped and pressed. The carton beverage blends coconut milk with water, sugar, flavors, vitamins, preservatives and thickeners. It sits next to the soy milk.",
       "detail": "Canned coconut milk is made by steeping shredded coconut in water or milk, then pressing it. The carton coconut milk beverage blends coconut milk with water and added ingredients. Those can include sugar, flavors, vitamins, preservatives and thickeners such as gellan gum. The thickeners make it creamy despite the added water. It has about an eighth of the fat of canned coconut milk. Tasters found the unsweetened carton surprisingly bland. One test kitchen’s bottom line: do not cook with the coconut milk beverage.",
@@ -9856,9 +9872,10 @@
         }
       ],
       "kristy_take": "The word beverage marks the carton drink; canned coconut milk is the can.",
-      "cart_pick": "Unsweetened coconut milk beverage",
+      "cart_pick": "Unsweetened, unfortified coconut milk beverage",
       "buying_tips": [
         "The carton is coconut milk thinned with water, and gums like gellan thicken it back.",
+        "Look for coconut and water at the top, with no vitamins added below.",
         "Read “beverage” in the name: coconut milk thinned with water.",
         "Find it in the nondairy milk section, next to the soy milk.",
         "Check for sugar and flavors on a sweetened carton.",
@@ -9866,7 +9883,8 @@
         "Carrageenan adds thickness and is derived from seaweed. It can occur in certified organic foods, so check the coconut beverage’s ingredients and take one with none listed."
       ],
       "watch_out": [
-        "The carton beverage does not stand in for canned coconut milk in cooking."
+        "The carton beverage does not stand in for canned coconut milk in cooking.",
+        "A fortified carton comes second; the vitamins in it are added ingredients."
       ],
       "pick_steps": [
         "Read the name: a carton saying beverage is coconut milk thinned with water.",
@@ -9916,6 +9934,7 @@
       "cart_pick": "Coconut or olive oil plant butter",
       "buying_tips": [
         "Plant butters differ in their oils, and the ingredient list names each one.",
+        "Look for oils, water and salt, with no lecithin or natural flavors listed.",
         "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
         "Check whether a nut milk or culture is listed, as in some versions.",
         "Compare the fat line on the Nutrition Facts.",
@@ -10918,7 +10937,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick lard or tallow?",
-      "decision": "Leaf lard or tallow, with nothing added to harden it.",
+      "decision": "Pasture-raised leaf lard or grass-fed tallow, nothing added to harden.",
       "why": "Lard may be hardened with lard stearin or hydrogenated lard, and the label must say so.",
       "short_answer": "Lard is pork fat, and leaf lard comes from the abdominal fat. Tallow is beef fat. A lard hardened with lard stearin or hydrogenated lard must say so on its label.",
       "detail": "Under 9 CFR 319.702, lard is the fat rendered from clean and sound edible tissues from swine. Rendered fat is fat cooked out of the tissue. “Leaf lard” is lard from fresh leaf, or abdominal, fat. Lard may be hardened with lard stearin or hydrogenated lard, two lard-based hardeners, and the label must state it. Lard is white when solid. Tallow is the rendered fat from a beef animal, and no federal standard for it is cited here. Rendered animal fat, or a mix containing it, may contain no added water under 9 CFR 319.703. Shortening made from meat fats and vegetable oils is a different product, named for the fats in it under 9 CFR 319.701.",
@@ -10930,9 +10949,10 @@
         "https://www.law.cornell.edu/cfr/text/9/319.703"
       ],
       "kristy_take": "Lard and tallow are one fat each. Anything added to firm them shows on the label.",
-      "cart_pick": "Lard or tallow with one fat listed",
+      "cart_pick": "Pasture-raised lard or grass-fed tallow",
       "buying_tips": [
         "Lard may be hardened with lard stearin or hydrogenated lard, and the label says so.",
+        "Look for pasture-raised on the lard tub, and one fat in the list.",
         "Pick leaf lard for lard from the abdominal fat.",
         "Read the ingredients for one fat: pork for lard, beef for tallow.",
         "Check that a tub called shortening is not taken for plain lard."
@@ -11212,7 +11232,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick canned coconut milk?",
-      "decision": "Canned coconut milk, read for anything added beyond coconut.",
+      "decision": "Canned coconut milk listing coconut alone, no gum added.",
       "why": "Many cans add a gum such as guar gum, which thickens the milk and holds it steady.",
       "short_answer": "Many cans of coconut milk add a gum such as guar gum. Guar gum is used in food to thicken and to hold a texture steady. The ingredient list shows anything added beyond coconut.",
       "detail": "Under 21 CFR 184.1339, guar gum comes from the seed of the guar plant. Its listed uses in food include stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. Many canned coconut milks contain emulsifiers and stabilizers.",
@@ -11226,9 +11246,10 @@
         }
       ],
       "kristy_take": "The ingredient list shows whether the can holds coconut alone or coconut plus a gum.",
-      "cart_pick": "Canned coconut milk with a short list",
+      "cart_pick": "Gum-free canned coconut milk",
       "buying_tips": [
         "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
+        "Look for coconut alone on the list, with no guar gum or other gum.",
         "Pick a can that says BPA-free; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
         "Compare two cans by how much the list holds beyond coconut.",
         "Read the ingredients for guar gum or another gum."
@@ -11240,14 +11261,14 @@
       "pick_steps": [
         "Check ingredients for guar gum or another gum, added to thicken."
       ],
-      "science": "Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker, never a ranking.",
+      "science": "Many canned coconut milks contain emulsifiers and stabilizers. Guar gum comes from the seed of the guar plant. In food it serves as a stabilizer and thickener. A thickener adds body, and a stabilizer holds a texture steady. A gum on the list is a texture choice by the maker.",
       "labels_decoded": [
         {
           "term": "Guar gum",
           "meaning": "A gum from the guar seed, used to thicken and steady a texture."
         }
       ],
-      "tier_note": "A gum on the ingredients is a texture choice by the maker, never a ranking.",
+      "tier_note": "Coconut alone is the short list; any gum is the maker’s addition.",
       "asked_as": [
         "which canned coconut milk should i buy",
         "how do i pick a canned coconut milk",
@@ -12100,7 +12121,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick coconut water?",
-      "decision": "Coconut water alone on the list, with nothing added.",
+      "decision": "Pure coconut water, high-pressure processed, with nothing added.",
       "why": "Coconut water is the clear liquid from green coconuts. Some cartons add sugar, so the ingredients tell.",
       "short_answer": "Coconut water is the clear liquid inside green, unripe coconuts, and it differs from coconut milk. Brands differ, and some add sugar. The shortest list is coconut water alone.",
       "detail": "Coconut water is the clear liquid found inside green (unripe) coconuts. Coconut milk is different: it combines the grated meat of a ripe coconut with water. Brands differ, and some coconut waters have added sugars. Where the federal juice rule applies, a beverage with juice declares its share as “Contains __ percent juice” or “__ percent juice,” a whole number not greater than the actual share. Juice directly expressed from the fruit counts as 100 percent juice. Out of the nut, coconut water spoils quickly. Canned coconut water is given a high-temperature, short-time heat treatment, which keeps it long. Some coconut water is high-pressure processed (HPP) instead, and in one study it kept its original color and aroma better than heat-treated water. A whole young coconut still in its husk keeps its quality longer than a trimmed one.",
@@ -12112,9 +12133,10 @@
         "https://pubmed.ncbi.nlm.nih.gov/23572707/"
       ],
       "kristy_take": "Fewest ingredients is the craft standard here: coconut water alone, with nothing added. Heat keeps a carton long.",
-      "cart_pick": "Coconut water with no added sugar",
+      "cart_pick": "High-pressure processed pure coconut water",
       "buying_tips": [
         "Brands differ, and some add sugar; the list shows whether yours did.",
+        "Look for HPP or high-pressure processed on the carton, and coconut water alone.",
         "Read the ingredients: coconut water alone, or with sugar added.",
         "Canned coconut water is heat-treated so it keeps.",
         "A whole young coconut in its husk keeps longer than a trimmed one."
@@ -13078,7 +13100,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a frozen pizza?",
-      "decision": "Frozen pizza whose crust lists flour, water, salt, yeast.",
+      "decision": "Whole wheat frozen pizza, crust of flour, water, salt, yeast.",
       "why": "Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
       "short_answer": "Read the crust list first. Traditionally, Neapolitan dough holds only flour, water, salt and yeast. A crust sold as whole wheat should list whole wheat flour, not plain wheat flour.",
       "detail": "Traditionally, Neapolitan dough is made only of flour, water, salt and yeast. The flour is 00 flour, a soft wheat flour of medium strength. The dough rises at least 8 hours, in two phases. Dough balls run 180 to 250 g. They are stretched by hand only, never pressed by machine or rolled with a pin. The finished pizza is no wider than 35 cm. Leftover dough balls are thrown out each evening. The pizza bakes on the floor of a wood oven at 430 to 485°C, for 60 to 90 seconds. The wood must give off no smoke or odor: oak, ash, beech and maple. Well baked means golden and unburnt, with a bread-scented rim and a soft center that folds without breaking. “Verace Pizza Napoletana” is a collective mark, a name its own association governs. It is not a DOP, the Italian protected name given only to first-stage foods such as cheese and oil. Ready pizzas and frozen dough balls are spreading today. On a US label, “pan style” means a pizza marketed in a pan with a thick crust. “Sicilian style” means a thick crust, usually 50 percent or more of the pizza.",
@@ -13091,9 +13113,10 @@
         "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn"
       ],
       "kristy_take": "The short crust list is the standard here. Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
-      "cart_pick": "A pizza with a short crust list",
+      "cart_pick": "Whole wheat frozen pizza",
       "buying_tips": [
         "That short list is the traditional Neapolitan dough, with nothing else in it.",
+        "Look for real cheese on the list; “imitation cheese” marks a substitute.",
         "Read the crust list for flour, water, salt and yeast.",
         "On a whole wheat crust, look for whole wheat flour listed first.",
         "At home, double-wrap a pizza for the freezer: plastic wrap, then foil.",
@@ -13143,7 +13166,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a frozen meal?",
-      "decision": "Frozen meals named for their meat, inspection mark shown.",
+      "decision": "Frozen meals named for their meat, no binders or extenders.",
       "why": "A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent.",
       "short_answer": "The product name sets a meat floor. A meat stew holds at least 25 percent meat, and a poultry dinner at least 18 percent. Check the inspection mark and follow the package directions.",
       "detail": "On a frozen meal, the product name sets a floor for the meat inside. A “Beef Stew” holds at least 25 percent of the named meat, measured as fresh meat. “Spaghetti with Meatballs and Sauce” holds at least 12 percent meat, measured as fresh meat. The sauce has to appear in the product name. The meatballs may be made with binders and extenders. For poultry, a stew holds at least 12 percent poultry, a dish named with vegetables 15, and an a-la-king 20. The name may add other descriptive words, such as “noodle”. A frozen poultry dinner holds at least 18 percent cooked deboned poultry or 2 oz., whichever is greater. That poultry is counted apart from appetizers and desserts. Frozen dinners and entrees hold their quality 3 to 4 months at 0°F. Freezer times are for quality only. Cream sauce is one food that does not freeze well. Cooking from frozen takes about one and a half times as long.",
@@ -13157,9 +13180,10 @@
         "https://web.archive.org/web/2024id_/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety"
       ],
       "kristy_take": "The product name sets the meat floor. The package directions set how to thaw and heat the meal.",
-      "cart_pick": "A meal with the inspection mark",
+      "cart_pick": "Binder-free frozen meals",
       "buying_tips": [
         "The name sets a floor: at least 25 percent meat in a stew, 18 in a poultry dinner.",
+        "Look for a meat named in the title and no binders or extenders in the list.",
         "Read the product name first: it sets the meat minimum.",
         "Check the package for the inspection mark.",
         "Read the label, since some products must be cooked from frozen.",
@@ -13287,7 +13311,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick frozen waffles?",
-      "decision": "Frozen waffles with a whole grain listed first.",
+      "decision": "Whole grain frozen waffles with no dyes or enriched flour.",
       "why": "The ingredient list shows whether the first ingredient is a whole grain. “Wheat flour” is not one.",
       "short_answer": "Read the first ingredient. “Whole wheat flour” and graham flour are whole grain. “Wheat flour” is plain flour, not a whole grain flour. FDA has not defined grain claims on the front, so the list decides.",
       "detail": "FDA draft advice counts a grain as whole when the kernel is intact, ground, cracked or flaked. Every part of the kernel stays in the same proportions as the intact kernel. Rolled oats and quick oats count as whole grain. Graham flour is another name for whole wheat flour, which has its own federal standard of identity. A federal purchase description covers frozen heat-and-serve waffles. It is USDA’s commercial item description, a buying spec, not a label rule. Its ingredients are enriched flour, water, sugar, egg, oil, salt, flavorings, whey, leavening and emulsifiers or other stabilizers. Whole wheat flour is optional there. Its flours meet the federal standard for enriched flour or for whole wheat flour.",
@@ -13303,9 +13327,10 @@
         }
       ],
       "kristy_take": "A whole grain listed first is the standard here. At home, yeasted waffles may be the gold standard for a light, crisp waffle. The batter rests overnight in the fridge for a crisp outside and tender inside.",
-      "cart_pick": "Waffles with a whole grain listed first",
+      "cart_pick": "Whole grain frozen waffles",
       "buying_tips": [
         "“Wheat flour” is plain flour, and front grain claims are undefined, so the list decides.",
+        "Look for whole wheat flour first and no enriched flour or dye anywhere on the list.",
         "Read the first ingredient for a whole grain, such as whole wheat flour.",
         "Graham flour and rolled oats count as whole grain on the list.",
         "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
@@ -13352,7 +13377,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick frozen chicken nuggets?",
-      "decision": "Chicken nuggets that say white meat on the label.",
+      "decision": "Organic or pasture-raised white meat nuggets, one solid piece.",
       "why": "“White meat” means 100 percent light meat, and “mostly white meat” means 66 percent or more.",
       "short_answer": "The label words set the light meat. “White meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. A plain “Chicken Nugget” is a solid piece of meat or poultry.",
       "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
@@ -13378,9 +13403,10 @@
         }
       ],
       "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
-      "cart_pick": "Nuggets labeled white meat",
+      "cart_pick": "Organic chicken nuggets",
       "buying_tips": [
         "“White meat” means 100 percent light meat; “mostly white meat” can be 66 percent.",
+        "Look for certified organic on the box and a plain “Chicken Nugget” name.",
         "Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, or coconut oil; no added oil also fits.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
