@@ -447,9 +447,10 @@ export const TWO_LINE = {
     ]
   },
   "oats_steelcut_rolled_instant": {
-    "decision": "Plain oats, steel-cut or rolled.",
+    "decision": "Plain organic oats, steel-cut or rolled.",
     "buying_tips": [
       "Same grain in every form; the flavored packets are where the sugar is.",
+      "Look for USDA Organic oats, with a Glyphosate Residue Free label on top where the bag carries it.",
       "Plain oats in any form; steel-cut if you like chew and have time.",
       "Skip flavored instant packets. Check the sugar on the label.",
       "Bulk oats are pennies per serving.",
@@ -469,6 +470,10 @@ export const TWO_LINE = {
       {
         "name": "Environmental Working Group: Glyphosate in oat-based products",
         "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+      },
+      {
+        "name": "EWG: Chlormequat found in popular oat-based foods",
+        "url": "https://www.EWG.org/research/ewg-investigation-dangerous-agricultural-chemical-chlormequat-found-popular-oat-based"
       }
     ],
     "question": "What kind of oats should you buy?",
@@ -499,9 +504,10 @@ export const TWO_LINE = {
     ]
   },
   "beans_dried_vs_canned": {
-    "decision": "Dried beans, whole with unbroken skins.",
+    "decision": "Organic dried beans, whole with unbroken skins.",
     "buying_tips": [
       "Cooking dried beans yourself is the only way to set the salt.",
+      "Look for USDA Organic on the bag of dried beans.",
       "Dried beans cost a fraction of canned per serving.",
       "A slow cooker or pressure cooker removes the planning problem.",
       "Whole beans with unbroken skins cook evenly. Split ones turn to mush.",
@@ -1093,9 +1099,10 @@ export const TWO_LINE = {
     ]
   },
   "grains_beyond_rice": {
-    "decision": "Grains with the bran still on, not polished off.",
+    "decision": "Organic grains with the bran still on, not polished off.",
     "buying_tips": [
       "Pearled grains have some or all of the bran polished off; hulled loses only the hull.",
+      "Look for USDA Organic on the bag or the bulk bin label.",
       "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
       "Buy from the bulk bins where you can.",
       "Cook a big batch. They keep several days and reheat straight from cold."
@@ -1526,9 +1533,10 @@ export const TWO_LINE = {
     ]
   },
   "pasta_dry": {
-    "decision": "Dry pasta of durum semolina and water.",
+    "decision": "Organic dry pasta of durum semolina and water.",
     "buying_tips": [
       "The standard also allows farina or other flour; the list shows which is in the box.",
+      "Look for USDA Organic on the box of durum semolina pasta.",
       "Look for durum semolina and water in the list.",
       "Plain dry pasta can be checked by ingredients without a bronze-cut claim.",
       "Read enrichment separately from the flour name and any bronze-cut claim.",
@@ -2437,9 +2445,10 @@ export const TWO_LINE = {
     ]
   },
   "raw_cider_vinegar": {
-    "decision": "Raw, unfiltered cider vinegar, with the mother.",
+    "decision": "Raw, unfiltered cider vinegar from organic apples, with the mother.",
     "buying_tips": [
       "Cider vinegar is fermented apple juice; unfiltered bottles can keep the mother.",
+      "Look for USDA Organic on the bottle. In USDA residue testing, about 94 percent of fresh apple samples carried at least one pesticide.",
       "Look for unfiltered or with the mother on the label.",
       "Check that the label does not say diluted.",
       "Read the name for a second vinegar in a blend."
@@ -2922,9 +2931,10 @@ export const TWO_LINE = {
     ]
   },
   "potato_chips": {
-    "decision": "Sliced potato chips in olive oil, coconut oil or tallow.",
+    "decision": "Sliced organic potato chips in olive oil, coconut or tallow.",
     "buying_tips": [
       "Stacked crisps start as dried potato flakes and cornstarch pressed into one shape.",
+      "Look for USDA Organic on the bag. In USDA residue testing, about 98 percent of fresh potato samples carried at least one pesticide.",
       "Read the ingredient list for the frying fat; take chips cooked in olive oil, coconut oil, tallow or lard.",
       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
       "Read the ingredients; a sliced chip starts with potatoes.",
@@ -2932,7 +2942,7 @@ export const TWO_LINE = {
       "Expect irregular sizes and folds in a bag of sliced chips.",
       "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
     ],
-    "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
+    "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones.",
     "sources": [
       "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
       "https://www.chowhound.com/1803980/pringles-arent-potato-chips/",
@@ -2952,18 +2962,27 @@ export const TWO_LINE = {
       {
         "name": "EWG: Food chemicals guide, preservative uses",
         "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+      },
+      {
+        "name": "USDA AMS Pesticide Data Program Annual Summary",
+        "url": "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
+      },
+      {
+        "name": "Consumer Reports: What you need to know about process contaminants",
+        "url": "https://www.consumerreports.org/health/food-contaminants/what-you-need-to-know-about-process-contaminants-a8019192822/"
       }
     ],
-    "cart_pick": "Sliced potato chips: olive oil",
+    "cart_pick": "Sliced organic potato chips: olive oil",
     "watch_out": [
       "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
       "Skip avocado oil too: the label cannot prove the oil is pure."
     ]
   },
   "popcorn": {
-    "decision": "Plain popcorn kernels, popped at home in coconut oil.",
+    "decision": "Organic plain popcorn kernels, popped at home in coconut oil.",
     "buying_tips": [
       "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
+      "Look for USDA Organic on the bag of kernels.",
       "Look for a bag of kernels with popcorn as the only ingredient.",
       "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
       "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
@@ -2987,12 +3006,17 @@ export const TWO_LINE = {
       {
         "name": "CSPI: New GMO disclosures",
         "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+      },
+      {
+        "name": "Consumer Reports: Dangerous PFAS chemicals are in your food packaging",
+        "url": "https://www.consumerreports.org/health/food-contaminants/dangerous-pfas-chemicals-are-in-your-food-packaging-a3786252074/"
       }
     ],
     "watch_out": [
       "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
       "Skip avocado oil too: the label cannot prove the oil is pure.",
-      "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering."
+      "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering.",
+      "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
     ],
     "pick_steps": [
       "Buy plain kernels to pop at home in coconut oil, butter or tallow.",
@@ -3337,7 +3361,7 @@ export const TWO_LINE = {
 // that enumeration contract; the test below checks every own property, including the concern picks.
 const PICK_PINS = {
   "pick_sausage": {
-    "decision": "Sausage with named meat and spices; celery powder supplies nitrite.",
+    "decision": "Organic sausage: certified organic feed and outdoor access; celery powder supplies nitrite.",
     "sources": [
       {
         "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -3358,11 +3382,19 @@ const PICK_PINS = {
       {
         "name": "NPR: No nitrates added labels and celery-based curing",
         "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      },
+      {
+        "name": "Cornell LII: 7 CFR § 205.237 Livestock feed",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+      },
+      {
+        "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
+        "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
       }
     ]
   },
   "pick_jerky": {
-    "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
+    "decision": "Whole-muscle grass-fed, grass-finished beef jerky with a short list; celery powder supplies nitrite.",
     "sources": [
       {
         "name": "NDSU Extension: Jerky",
@@ -3379,6 +3411,10 @@ const PICK_PINS = {
       {
         "name": "NPR: No nitrates added labels and celery-based curing",
         "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      },
+      {
+        "name": "American Grassfed Association: Our Standards",
+        "url": "https://www.americangrassfed.org/about-us/our-standards/"
       }
     ]
   },
@@ -3548,3 +3584,8 @@ export const preCleanPick11 = (e) => (e && CLEAN_PICK_11.has(e.id) ? PRE_CP11.en
 export const CLEAN_PICK_12 = new Set(['tortillas', 'sandwich_bread', 'pasta_sauce', 'breakfast_cereal', 'buns_rolls', 'bagels', 'pastries_muffins', 'hot_soy_sauce', 'ketchup_mustard', 'kombucha', 'canned_soup', 'snack_bars']);
 const PRE_CP12 = JSON.parse(execFileSync('git', ['show', '52cfde3:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick12 = (e) => (e && CLEAN_PICK_12.has(e.id) ? PRE_CP12.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-8 (2026-10-20) moved these pantry cards to organic first (organic as the floor) and the four meat and egg picks to grass-fed, grass-finished or organic with the G4 gloss; tea, coffee and chips gained register avoid lines. Older batch tests read them as of 125244d, and cleanPick8.test.js owns the new text.
+export const CLEAN_PICK_8 = new Set(['pick_sausage', 'pick_egg_whites', 'pick_soup_bones', 'pick_jerky', 'popcorn', 'oats_steelcut_rolled_instant', 'beans_dried_vs_canned', 'pasta_dry', 'grains_beyond_rice', 'raw_cider_vinegar', 'potato_chips', 'tea', 'coffee_beans']);
+const PRE_CP8 = JSON.parse(execFileSync('git', ['show', '125244d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick8 = (e) => (e && CLEAN_PICK_8.has(e.id) ? PRE_CP8.entries.find((x) => x.id === e.id) : e);

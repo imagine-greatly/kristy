@@ -1839,7 +1839,8 @@ export function lintSections(tips, entries) {
     if (cardsOn) {
       // L4: a front's term needs its own gloss on this card, in one allowed string.
       for (const entry of cards) {
-        const glossTexts = ['tier_note', 'pick_steps', 'instead'].flatMap((f) => stringsIn(entry[f])).map(norm);
+        // A pick has only its decision (PICK_FORBIDDEN_FIELDS bars tier_note, pick_steps and instead), so its one sentence carries the gloss itself.
+        const glossTexts = [...(entry.kind === 'pick' ? ['decision'] : []), 'tier_note', 'pick_steps', 'instead'].flatMap((f) => stringsIn(entry[f])).map(norm);
         for (const termRow of resolveSectionTerms(entry.decision, section, entry.category)) {
           if (!glossTexts.some((text) => text.includes(norm(termRow.gloss)))) {
             out.push({ code: 'TERM_UNGLOSSED', section, id: entry.id, row: termRow.id });

@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preCleanPick10, CLEAN_PICK_10, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
+import { preCleanPick10, CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 import { scoreEntries } from '../../lib/perimeter.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
@@ -307,7 +307,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
 });
 
 test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
+  const rest = nonEmpty(kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
   assert.equal(kb.entries.length, base.entries.length);
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
@@ -322,7 +322,7 @@ test('C7 do lines stay; the review rows for batch ids carry the new headline; no
   for (let i = 0; i < old.length; i++) {
     const id = IDS.find((x) => old[i].startsWith(`| \`${x}\` |`) && old[i].includes(` | ${was(x).decision} | `));
     if (!id) {
-      if (old[i].startsWith('| `') && LATER.has(old[i].split('`')[1])) continue;
+      if (old[i].startsWith('| `') && (LATER.has(old[i].split('`')[1]) || CLEAN_PICK_8.has(old[i].split('`')[1]))) continue;
       assert.equal(review[i], old[i], `review line ${i + 1}`);
       continue;
     }

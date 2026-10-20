@@ -56,10 +56,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Check the ingredients for milk and cultures, with nothing after them. | — |
 | `raw_milk` | eggs_dairy | Raw grass-fed milk from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
 | `rice_arsenic` | bulk_pantry | White basmati or sushi rice. | Read the origin on the bag: India, Pakistan or California. | — |
-| `oats_steelcut_rolled_instant` | bulk_pantry | Plain oats, steel-cut or rolled. | Turn the canister over. One ingredient, and it is oats. | — |
+| `oats_steelcut_rolled_instant` | bulk_pantry | Plain organic oats, steel-cut or rolled. | Turn the canister over. One ingredient, and it is oats. | — |
 | `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted nuts, with no added oil. | Read the ingredient line for cottonseed or soybean oil before buying roasted. | — |
 | `honey_adulteration` | bulk_pantry | Raw honey from a named, local or single-source producer. | Buy honey with a producer and a region named on the jar. | — |
-| `beans_dried_vs_canned` | bulk_pantry | Dried beans, whole with unbroken skins. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
+| `beans_dried_vs_canned` | bulk_pantry | Organic dried beans, whole with unbroken skins. | Fill a bag from the bulk bin. Whole beans, no split skins. | — |
 | `label_natural` | label_terms | A defined label claim and the ingredient list over ‘natural’. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | The ‘real’ ingredient listed before added sugar and refined flour. | Count how far down it sits. Past third is a trace. | — |
 | `label_no_added_hormones` | label_terms | On beef and dairy, a third-party verified ‘no added hormones’. | Look for a third-party verifier on the beef and dairy claim. | — |
@@ -91,7 +91,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rancidity_check` | bulk_pantry | Oil in a dark bottle, finished within two months. | Smell for old paint or crayons. That one is finished. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin olive oil with a recent harvest date. | Read “product of”, not “packed in” — they name different countries. | — |
 | `nut_butter_ingredients` | bulk_pantry | Nut butter with just nuts and salt, oil on top. | Check the reduced-fat jar’s list — the fat came out and sugar went in. | — |
-| `grains_beyond_rice` | bulk_pantry | Grains with the bran still on, not polished off. | Read the bag for “hulled” or “whole”, and pass on “pearled”. | — |
+| `grains_beyond_rice` | bulk_pantry | Organic grains with the bran still on, not polished off. | Read the bag for “hulled” or “whole”, and pass on “pearled”. | — |
 | `bottled_water_buying` | bulk_pantry | Spring water from a named spring, in glass. | Turn the bottle over and find the town and state it came from. | — |
 | `label_front_vs_back` | label_terms | A short list of recognizable foods, read on the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Ingredients led by foods, ahead of split sugars or flour. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
@@ -124,7 +124,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `turkey_whole` | meat | Pasture-raised whole turkey, without an injected basting solution. | Check the product name for “basted”, “self-basted”, or an added-solution statement. | — |
 | `ground_turkey` | meat | Pasture-raised or organic ground turkey, fat content printed. | Read the ingredient list and the fat statement beside any percent-lean claim. | — |
 | `breakfast_cereal` | bulk_pantry | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
-| `pasta_dry` | bulk_pantry | Dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
+| `pasta_dry` | bulk_pantry | Organic dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
 | `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the asterisk beside “no nitrates added” and read the curing ingredients. | — |
@@ -169,7 +169,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `sauerkraut` | bulk_pantry | Raw sauerkraut from the refrigerated case. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |
 | `kimchi` | bulk_pantry | Kimchi of cabbage, red pepper, garlic, ginger and salt. | Check the packed date, then read the list for fish sauce or shrimp. | — |
 | `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
-| `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother. | Read the label for “diluted” or a second vinegar named in a blend. | — |
+| `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar from organic apples, with the mother. | Read the label for “diluted” or a second vinegar named in a blend. | — |
 | `miso` | bulk_pantry | Organic miso of soybeans, salt and koji, any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
 | `tempeh` | bulk_pantry | Organic tempeh in a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
 | `natto` | bulk_pantry | Organic natto in sealed trays, chilled or frozen. | Check the date on the pack, since chilled natto keeps only days. | — |
@@ -201,8 +201,8 @@ Also: imperative, starts with a verb, ≤14 words.
 | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
 | `crackers` | bulk_pantry | Whole grain crackers with olive oil, coconut oil or butter. | Read the front for “multigrain”; it does not mean whole grain. | — |
 | `tortilla_chips` | bulk_pantry | Organic masa tortilla chips in olive oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
-| `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
-| `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
+| `potato_chips` | bulk_pantry | Sliced organic potato chips in olive oil, coconut or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
+| `popcorn` | bulk_pantry | Organic plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
 | `pretzels` | bulk_pantry | Whole wheat pretzels with a short ingredient list. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
 | `snack_bars` | bulk_pantry | Organic bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
 | `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit alone, nothing added. | Read the ingredients for anything added beyond the nuts and fruit. | — |

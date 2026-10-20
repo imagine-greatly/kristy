@@ -6,6 +6,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { preCleanPick8 } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const ROOT = new URL('../../../', import.meta.url).pathname;
@@ -60,5 +61,5 @@ test('C5 no treatment claims, no first person, egg_labels untouched', () => {
     assert.doesNotMatch(t, /\b(causes?|prevents?|lowers? (the )?risk|carcinogen\w*|cancer)\b/i, `${id} treatment`);
     assert.doesNotMatch(t, /\b(I|me|my)\b/, `${id} first person`);
   }
-  for (const id of ['egg_labels', 'pick_egg_whites']) assert.deepEqual(card(id), pre.entries.find((x) => x.id === id));
+  for (const id of ['egg_labels', 'pick_egg_whites']) assert.deepEqual(preCleanPick8(card(id)), pre.entries.find((x) => x.id === id));
 });

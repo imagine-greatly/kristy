@@ -9,7 +9,7 @@ import { dirname, join } from 'node:path';
 import * as lint from '../../lib/counterCardLint.js';
 import * as pass from './passRule.js';
 import { RETIRED, projectEntry } from '../../lib/counterCards.js';
-import { beforeConcern, preCleanPick10 } from './twoLinePin.js';
+import { beforeConcern, preCleanPick10, preCleanPick8 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -18,7 +18,7 @@ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'ut
 const BASE = 'aa12a3d';
 const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // clean-pick-10 moved chicken_cuts_basics and ground_turkey; this batch reads them as of 117ab78.
-const now = (id) => beforeConcern(preCleanPick10(kb.entries.find((e) => e.id === id)));
+const now = (id) => beforeConcern(preCleanPick10(preCleanPick8(kb.entries.find((e) => e.id === id))));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;
 const flat = (r) => (Array.isArray(r) ? r : (r && r.violations) || []);

@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
+import { preCleanPick8 } from './twoLinePin.js';
 
 const BASE = '52cfde3';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -362,7 +363,7 @@ test('C1b decision and cart_pick byte-equal to 52cfde3 on all 17 batch ids; the 
 });
 
 test('C2 every entry outside B12 deepEquals 52cfde3; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+  const others = kb.entries.map(preCleanPick8).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
   nonEmpty(others, 'others', 199);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

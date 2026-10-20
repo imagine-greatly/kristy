@@ -10,7 +10,7 @@ import * as lint from '../../lib/counterCardLint.js';
 import * as pass from './passRule.js';
 import { RETIRED, projectEntry } from '../../lib/counterCards.js';
 import { TRY_POOL } from '../../lib/tryPool.js';
-import { TWO_LINE, withTwoLine, preCleanPick3 } from './twoLinePin.js';
+import { TWO_LINE, withTwoLine, preCleanPick3, preCleanPick8 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
@@ -22,7 +22,7 @@ const reviewHeadline = (id) => {
   return line ? line.split('|')[3].trim() : null;
 };
 const PRE = JSON.parse(execFileSync('git', ['show', '8b49633:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const now = (id) => kb.entries.find((e) => e.id === id);
+const now = (id) => preCleanPick8(kb.entries.find((e) => e.id === id));
 const was = (id) => preCleanPick3(now(id));
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const words = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length;

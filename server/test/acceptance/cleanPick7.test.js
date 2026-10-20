@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
+import { CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -18,10 +18,10 @@ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
 const find = (k, id) => k.entries.find((e) => e.id === id);
-const live = (id) => find(kb, id);
+const live = (id) => preCleanPick8(find(kb, id));
 const was = (id) => find(base, id);
 // clean-pick-9 moved eight review headlines; every other line stays.
-const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CP9or10(l.split('`')[1]))).join('\n');
+const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && (CP9or10(l.split('`')[1]) || CLEAN_PICK_8.has(l.split('`')[1])))).join('\n');
 
 const BECAME = {
   pick_frozen_peas: { decision: 'Organic peas frozen solid, with no pack drips or off smell.', carry: /^Organic peas\b/, keep: [/frozen solid, with no pack drips or off smell/] },
@@ -94,11 +94,11 @@ test('C5 organic is new on exactly the four organic-standard picks and unchanged
   const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CP9or10(e.id));
   nonEmpty(otherPicks(base), 'other picks', 14);
   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
-  assert.equal(count(kb), count(base));
+  assert.equal(count({ entries: kb.entries.map(preCleanPick8) }), count(base));
 });
 
 test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 180);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
@@ -150,7 +150,7 @@ test('C11 a list row of each pick’s first alias carries the new line', () => {
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
-    assert.equal(row.pickLine, BECAME[id].decision, `${name} pickLine`);
+    assert.equal(row.pickLine, CLEAN_PICK_8.has(id) ? find(kb, id).decision : BECAME[id].decision, `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
   }
 });

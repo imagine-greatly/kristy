@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
+import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -20,7 +20,7 @@ const find = (k, id) => k.entries.find((e) => e.id === id);
 // clean-pick-9 owns pick_celery and pick_cucumbers now; this batch reads them as of 96d61e2.
 const live = (id) => preCleanPick9(preCleanPick10(find(kb, id)));
 // clean-pick-9 moved eight review headlines; every other line stays.
-const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && CP9or10(l.split('`')[1]))).join('\n');
+const strip9 = (t) => t.split('\n').filter((l) => !(l.startsWith('| `') && (CP9or10(l.split('`')[1]) || CLEAN_PICK_8.has(l.split('`')[1])))).join('\n');
 const was = (id) => find(base, id);
 
 const BECAME = {
@@ -96,11 +96,11 @@ test('C5 organic is new on all 17 lines and unchanged on every other pick', () =
   const otherPicks = (k) => k.entries.filter((e) => isPick(e) && !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id));
   nonEmpty(otherPicks(base), 'other picks', 4);
   const count = (k) => otherPicks(k).filter((e) => ORGANIC.test(e.decision || '')).length;
-  assert.equal(count(kb), count(base));
+  assert.equal(count({ entries: kb.entries.map(preCleanPick8) }), count(base));
 });
 
 test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 170);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

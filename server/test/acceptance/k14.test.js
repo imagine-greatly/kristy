@@ -167,7 +167,12 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
           : "import { assertPassRule } from './passRule.js';\nimport { beforeConcern } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, now);', '    assertPassRule(t, old, beforeConcern(now));');
     // clean-pick-9 (2026-10-20): k11 reads label_organic_scope's frozen fields as of 96d61e2.
-    const expected = file !== 'k11' ? concern : concern
+    // clean-pick-8 (2026-10-20): k10 reads oats' cart_pick and coffee's sources as of 125244d.
+    const cp8 = (t) => t
+      .replace("import { beforeConcern } from './twoLinePin.js';", "import { beforeConcern, preCleanPick8 } from './twoLinePin.js';")
+      .replace('    assertPassRule(t, old, beforeConcern(now));',
+        "    // clean-pick-8 moved oats' cart_pick and coffee's sources; the pass rule reads them as of 125244d.\n    assertPassRule(t, old, beforeConcern(preCleanPick8(now)));");
+    const expected = file === 'k10' ? cp8(concern) : file !== 'k11' ? concern : concern
       .replace("import { beforeConcern, preTidy } from './twoLinePin.js';", "import { beforeConcern, preTidy, preCleanPick9 } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, beforeConcern(now));',
         "    // clean-pick-9 moved label_organic_scope's frozen fields; the pass rule reads it as of 96d61e2.\n    assertPassRule(t, old, beforeConcern(preCleanPick9(now)));");

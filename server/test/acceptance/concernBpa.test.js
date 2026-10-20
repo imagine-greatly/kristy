@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preTidy } from './twoLinePin.js';
+import { preTidy, preCleanPick8 } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 kb.entries = kb.entries.map(preTidy);
@@ -60,7 +60,7 @@ test('C2 BPA-free is the maker word, no product claim, no acidity claim', () => 
 
 test('C3 earlier lines stay and the home card is untouched', () => {
   for (const id of FULL) {
-    const a = card(id), b = was(id);
+    const a = preCleanPick8(card(id)), b = was(id);
     for (const f of ['buying_tips', 'watch_out']) {
       const now = a[f] || [];
       const old = b[f] || [];
@@ -69,7 +69,7 @@ test('C3 earlier lines stay and the home card is untouched', () => {
     for (const f of ['decision', 'cart_pick', 'tier_note', 'why', 'short_answer', 'science', 'labels_decoded', 'pick_steps', 'kristy_take']) assert.deepEqual(a[f], b[f], `${id}.${f} changed`);
     assert.equal((a.buying_tips || [])[0], (b.buying_tips || [])[0], `${id} tip0 changed`);
   }
-  assert.deepEqual(card(HOME), was(HOME), `${HOME} changed`);
+  assert.deepEqual(preCleanPick8(card(HOME)), was(HOME), `${HOME} changed`);
 });
 
 test('C4 pick_canned_tomatoes keeps its facts and names BPA-free', () => {

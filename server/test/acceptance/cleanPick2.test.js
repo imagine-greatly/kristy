@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9, CLEAN_PICK_10, preCleanPick10, preCleanPick11, preCleanPick12 } from './twoLinePin.js';
+import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9, CLEAN_PICK_10, preCleanPick10, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
 
 const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLEAN_PICK_6, ...CLEAN_PICK_7, ...CLEAN_PICK_9, ...CLEAN_PICK_10]);
 
@@ -200,11 +200,11 @@ test('C4 no new text carries a banned word, first person, an em dash or a straig
 test('C5 every B2 id names organic; outside the batch organic presence is unchanged', () => {
   const has = (e) => /organic/i.test(`${e.decision} ${e.cart_pick || ''}`);
   for (const id of IDS) assert.ok(has(live(id)), id);
-  for (const e of kb.entries) if (!IDS.includes(e.id) && !LATER.has(e.id)) assert.equal(has(e), has(was(e.id)), e.id);
+  for (const e of kb.entries.map(preCleanPick8)) if (!IDS.includes(e.id) && !LATER.has(e.id)) assert.equal(has(e), has(was(e.id)), e.id);
 });
 
 test('C6 entries outside the batch deepEqual 74237ce', () => {
-  const others = kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
   nonEmpty(others, 'others', 117);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
@@ -221,6 +221,7 @@ test('C7 doLines.json unchanged; review headlines move only on decision-changed 
   let seen = 0;
   for (const [id, row] of baseRows) {
     if (LATER.has(id)) continue;
+    if (CLEAN_PICK_8.has(id)) continue; // clean-pick-8 moves these headlines; cleanPick8.test.js pins them
     const lr = liveRows.get(id);
     assert.ok(lr, id);
     if (DECISION_CHANGED.includes(id)) {

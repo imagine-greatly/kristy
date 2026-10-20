@@ -9,7 +9,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { preCleanPick11, preCleanPick12 } from './twoLinePin.js';
+import { preCleanPick11, preCleanPick12, preCleanPick8 } from './twoLinePin.js';
 
 const BASE = '117ab78';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -366,7 +366,7 @@ test('C1 every B10 field equals the set value and nothing else on the 10 entries
 });
 
 test('C2 every entry outside B10 deepEquals 117ab78; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
   nonEmpty(others, 'others', 201);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

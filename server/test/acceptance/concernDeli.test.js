@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { preCleanPick8 } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
@@ -63,7 +64,7 @@ const SOURCES_FROZEN = new Set(['deli_meat_uncured']);
 test('C6 sources come from the concern archive', () => {
   nonEmpty([...archived], 'archived urls', 100);
   for (const id of ALL.filter((i) => !SOURCES_FROZEN.has(i))) {
-    const urls = nonEmpty((card(id).sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean), `${id} sources`, 1);
+    const urls = nonEmpty((preCleanPick8(card(id)).sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean), `${id} sources`, 1);
     assert.ok(urls.some((u) => archived.has(u)), `${id} cites no concern-archive url`);
     for (const u of urls) assert.ok(BEFORE.has(u) || archived.has(u), `${id} url not archived: ${u}`);
   }

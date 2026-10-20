@@ -6,7 +6,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick8 } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(preCleanPick5(e)))));
@@ -64,7 +64,7 @@ test('C2 antioxidant cards name the preservative and say to read the list', () =
 
 test('C3 earlier seed-oil, glyphosate and rBST lines stay', () => {
   for (const id of nonEmpty(FULL, 'full cards', 10)) {
-    const a = card(id), b = was(id);
+    const a = preCleanPick8(card(id)), b = was(id);
     for (const f of ['buying_tips', 'watch_out']) {
       const now = a[f] || [];
       for (const s of b[f] || []) assert.ok(now.includes(s), `${id}.${f} lost: ${s}`);

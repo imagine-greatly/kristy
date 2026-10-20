@@ -1752,7 +1752,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What kind of oats should you buy?",
-      "decision": "Plain oats, steel-cut or rolled.",
+      "decision": "Plain organic oats, steel-cut or rolled.",
       "why": "Same grain, cut differently. The packets are where the sugar is.",
       "short_answer": "Same grain, processed three ways. Steel-cut are least processed, chewy and slow to cook. Rolled are steamed and flattened, and quick. Instant are pre-cooked and often pre-sweetened. Buy plain oats in any form, and skip flavored packets loaded with sugar.",
       "detail": "The more an oat is cut, rolled, and pre-cooked, the faster it cooks and the faster it digests, which nudges blood-sugar response up a little. Plain rolled oats are still a clean whole food. The real problem is flavored instant packets, which are mostly added sugar. Plain oats in bulk are one of the cheapest breakfasts there is. Steel-cut are the least processed (chewy, slow to cook, gentlest on blood sugar); rolled/old-fashioned are steamed and flattened (quick, versatile); instant are pre-cooked and often come pre-sweetened. The measured number is the glycemic index: 42 for steel-cut, 55 for rolled and 83 for instant, in one extension comparison.",
@@ -1771,12 +1771,17 @@
         {
           "name": "Environmental Working Group: Glyphosate in oat-based products",
           "url": "https://www.ewg.org/news-insights/news/2023/04/going-going-gone-ewg-finds-glyphosate-levels-drop-oat-based-products"
+        },
+        {
+          "name": "EWG: Chlormequat found in popular oat-based foods",
+          "url": "https://www.EWG.org/research/ewg-investigation-dangerous-agricultural-chemical-chlormequat-found-popular-oat-based"
         }
       ],
       "kristy_take": "Big canister of plain rolled oats. Sweeten with fruit. The flavored packets are candy with an oat garnish.",
-      "cart_pick": "Steel-cut oats",
+      "cart_pick": "Organic steel-cut oats",
       "buying_tips": [
         "Same grain in every form; the flavored packets are where the sugar is.",
+        "Look for USDA Organic oats, with a Glyphosate Residue Free label on top where the bag carries it.",
         "Plain oats in any form; steel-cut if you like chew and have time.",
         "Skip flavored instant packets. Check the sugar on the label.",
         "Bulk oats are pennies per serving.",
@@ -1795,7 +1800,8 @@
         "is instant oatmeal ok"
       ],
       "watch_out": [
-        "Steel-cut, rolled and instant are the same grain cut and cooked differently. The processing shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant."
+        "Steel-cut, rolled and instant are the same grain cut and cooked differently. The processing shows in a measured blood-sugar number. One extension comparison put it at 42 for steel-cut, 55 for rolled and 83 for instant.",
+        "Chlormequat is a plant growth regulator. In commissioned lab tests it turned up in 12 of 13 conventional oat foods; the one organic sample had none."
       ],
       "pick_steps": [
         "Turn it over: one ingredient, oats, whatever the cut.",
@@ -1943,7 +1949,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Are dried or canned beans better?",
-      "decision": "Dried beans, whole with unbroken skins.",
+      "decision": "Organic dried beans, whole with unbroken skins.",
       "why": "Nothing in the store competes per serving, and the salt is yours to set.",
       "short_answer": "Dried beans are the cheapest protein in the store, by a wide margin. Cooking them yourself is the only way to set the salt. Canned are close, and a rinse removes much of the sodium.",
       "detail": "Nutritionally dried and canned beans are very close. Canned adds convenience and some sodium (rinsing removes a good chunk). If you avoid certain can linings, look for ‘BPA-free’ cans or cartons, though that’s a minor point. Beans are one of the best protein-and-fiber values in the whole store. Dried beans ask for planning rather than skill: a slow cooker or a pressure cooker takes the work out.",
@@ -1965,9 +1971,10 @@
         }
       ],
       "kristy_take": "A bag of dried beans and a slow cooker. Nothing in the store competes.",
-      "cart_pick": "Dried beans",
+      "cart_pick": "Organic dried beans",
       "buying_tips": [
         "Cooking dried beans yourself is the only way to set the salt.",
+        "Look for USDA Organic on the bag of dried beans.",
         "Dried beans cost a fraction of canned per serving.",
         "A slow cooker or pressure cooker removes the planning problem.",
         "Whole beans with unbroken skins cook evenly. Split ones turn to mush.",
@@ -4349,7 +4356,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What else should I be buying besides rice?",
-      "decision": "Grains with the bran still on, not polished off.",
+      "decision": "Organic grains with the bran still on, not polished off.",
       "why": "Hulled barley loses only its inedible outer hull. Pearl barley is polished to remove bran.",
       "short_answer": "Whole or hulled grains keep their bran; pearled grains have some or all of it polished off. Hulled barley loses only its inedible hull. Buckwheat, millet, sorghum and quinoa carry no gluten.",
       "detail": "Hulled barley is minimally processed to remove only the tough inedible outer hull. Pearl barley has been polished to remove some or all of the outer bran layer along with the hull. On barley and farro, “pearled” marks bran removed and “whole” or “hulled” marks bran kept. Variety is worth it on its own terms, since rotating grains means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Buy them from the bulk bins where you can. Buckwheat is not wheat at all. Millet and sorghum carry no gluten. Bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20. The bitter coating on quinoa’s hull is called saponin.",
@@ -4359,12 +4366,21 @@
         "FDA guidance on inorganic arsenic in rice",
         "Whole Grains Council grain reference",
         "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)",
-        "https://wholegrainscouncil.org/whole-grains-101/whole-grains-101-orphan-pages-found/types-barley"
+        "https://wholegrainscouncil.org/whole-grains-101/whole-grains-101-orphan-pages-found/types-barley",
+        {
+          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+        },
+        {
+          "name": "FoodPrint: Glyphosate residue in food",
+          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+        }
       ],
       "kristy_take": "Whole or hulled over pearled. The bran stays on, and the bag says which.",
-      "cart_pick": "Whole or hulled grain, not pearled",
+      "cart_pick": "Organic whole or hulled grain, not pearled",
       "watch_out": [
-        "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off."
+        "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off.",
+        "Conventional wheat and barley may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate."
       ],
       "pick_steps": [
         "Read the bag for “hulled” or “whole”; “pearled” means bran was polished off.",
@@ -4374,6 +4390,7 @@
       "science": "Hulled barley loses only its inedible outer hull; pearl barley is polished to remove some or all of the bran. Whole or hulled grains keep the bran. Quinoa carries a bitter natural coating on its hull, so rinse it before cooking. A big batch keeps several days and reheats straight from cold.",
       "buying_tips": [
         "Pearled grains have some or all of the bran polished off; hulled loses only the hull.",
+        "Look for USDA Organic on the bag or the bulk bin label.",
         "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
         "Buy from the bulk bins where you can.",
         "Cook a big batch. They keep several days and reheat straight from cold."
@@ -6514,7 +6531,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Sausage with named meat and spices; celery powder supplies nitrite.",
+      "decision": "Organic sausage: certified organic feed and outdoor access; celery powder supplies nitrite.",
       "sources": [
         {
           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -6535,6 +6552,14 @@
         {
           "name": "NPR: No nitrates added labels and celery-based curing",
           "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+        },
+        {
+          "name": "Cornell LII: 7 CFR § 205.237 Livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ]
     },
@@ -7062,7 +7087,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you check on a box of dry pasta?",
-      "decision": "Dry pasta of durum semolina and water.",
+      "decision": "Organic dry pasta of durum semolina and water.",
       "why": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
       "short_answer": "US macaroni-product standards allow semolina, durum flour, farina, or flour with water and optional ingredients. The ingredient list shows which formulation is in the box.",
       "detail": "Enriched pasta contains specified vitamins and iron under a separate standard; enrichment does not establish whole grain. Bronze-cut describes the die and the resulting rough surface. The archived culinary articles describe sauce adhesion, not a health advantage.",
@@ -7082,9 +7107,10 @@
         }
       ],
       "kristy_take": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
-      "cart_pick": "Dry durum semolina pasta",
+      "cart_pick": "Organic dry durum semolina pasta",
       "buying_tips": [
         "The standard also allows farina or other flour; the list shows which is in the box.",
+        "Look for USDA Organic on the box of durum semolina pasta.",
         "Look for durum semolina and water in the list.",
         "Plain dry pasta can be checked by ingredients without a bronze-cut claim.",
         "Read enrichment separately from the flour name and any bronze-cut claim.",
@@ -7195,7 +7221,11 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243642/fullTextXML",
-        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML",
+        {
+          "name": "Consumer Reports: What you need to know about process contaminants",
+          "url": "https://www.consumerreports.org/health/food-contaminants/what-you-need-to-know-about-process-contaminants-a8019192822/"
+        }
       ],
       "kristy_take": "Packaging and storage affect coffee chemistry. A sealed bag is the whole-food standard for this purchase.",
       "cart_pick": "Coffee beans in a sealed bag",
@@ -7207,7 +7237,8 @@
       ],
       "watch_out": [
         "The sources include ground pods and accelerated storage tests. They do not prove a health advantage for a particular roast or bean.",
-        "No universal number of fresh days is established for all retail bags."
+        "No universal number of fresh days is established for all retail bags.",
+        "Acrylamide forms as foods brown at high heat, and coffee is one of the foods it is found in. Labels are not required to list it."
       ],
       "pick_steps": [
         "Pick a bag with an intact seal, valve or not."
@@ -7809,7 +7840,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Carton whites: pasteurized or otherwise treated per federal standard, destroying Salmonella.",
+      "decision": "Organic whites: certified organic feed and outdoor access, pasteurized per federal standard.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
@@ -7818,6 +7849,14 @@
         {
           "name": "21 CFR 160.140, Egg whites",
           "url": "https://www.law.cornell.edu/cfr/text/21/160.140"
+        },
+        {
+          "name": "Cornell LII: 7 CFR § 205.237 Livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ]
     },
@@ -8306,7 +8345,7 @@
         "meat stick",
         "meat sticks"
       ],
-      "decision": "Whole-muscle beef jerky with a short list; celery powder supplies nitrite.",
+      "decision": "Whole-muscle grass-fed, grass-finished beef jerky with a short list; celery powder supplies nitrite.",
       "sources": [
         {
           "name": "NDSU Extension: Jerky",
@@ -8323,6 +8362,10 @@
         {
           "name": "NPR: No nitrates added labels and celery-based curing",
           "url": "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -8338,11 +8381,15 @@
         "beef bones",
         "knuckle bones"
       ],
-      "decision": "Ask your meat counter for marrow or knuckle soup bones.",
+      "decision": "Ask your meat counter for grass-fed, grass-finished marrow or knuckle soup bones.",
       "sources": [
         {
           "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
           "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -10594,7 +10641,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick raw apple cider vinegar?",
-      "decision": "Raw, unfiltered cider vinegar, with the mother.",
+      "decision": "Raw, unfiltered cider vinegar from organic apples, with the mother.",
       "why": "Unfiltered vinegar can keep the mother. The label names any added water or second vinegar.",
       "short_answer": "Look for unfiltered or unpasteurized on the label, with the mother. Cider vinegar is made from fermented apple juice. A watered-down bottle must say diluted. A blend with spirit vinegar is labeled as a blend.",
       "detail": "Cider vinegar is made from apple juice by two fermentations. Yeast first turns the sugars into alcohol, making cider. Acetic acid bacteria then turn the alcohol into acetic acid, the sour part of vinegar. That second step is called acetous fermentation. FDA guidance says each vinegar should contain 4 grams of acetic acid per 100 mL. A diluted vinegar must say “diluted with water to __ percent acid strength”, never below 4 percent. A blend of spirit and cider vinegar is labeled as a blend, names in order of predominance. The mother is a cellulose film of acetic bacteria. It may remain in unfiltered vinegar, is considered harmless, and can be filtered out.",
@@ -10602,12 +10649,17 @@
       "sources": [
         "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cpg-sec-525825-vinegar-definitions-adulteration-vinegar-eels",
         "https://en.wikipedia.org/wiki/Vinegar",
-        "https://en.wikipedia.org/wiki/Apple_cider_vinegar"
+        "https://en.wikipedia.org/wiki/Apple_cider_vinegar",
+        {
+          "name": "USDA AMS Pesticide Data Program Annual Summary",
+          "url": "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
+        }
       ],
       "kristy_take": "The mother and the word unfiltered go together. Full strength and a single vinegar show on the label too.",
-      "cart_pick": "Unfiltered cider vinegar with the mother",
+      "cart_pick": "Organic raw cider vinegar with the mother",
       "buying_tips": [
         "Cider vinegar is fermented apple juice; unfiltered bottles can keep the mother.",
+        "Look for USDA Organic on the bottle. In USDA residue testing, about 94 percent of fresh apple samples carried at least one pesticide.",
         "Look for unfiltered or with the mother on the label.",
         "Check that the label does not say diluted.",
         "Read the name for a second vinegar in a blend."
@@ -11688,7 +11740,11 @@
       "sources": [
         "https://lpi.oregonstate.edu/mic/food-beverages/tea",
         "https://www.law.cornell.edu/cfr/text/21/173.228",
-        "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference"
+        "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference",
+        {
+          "name": "PMC: Microplastics from plastic tea bags",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10389239/"
+        }
       ],
       "kristy_take": "The list should read tea. Decaffeinated is the word that changes the caffeine.",
       "cart_pick": "Tea with only tea leaf on the list",
@@ -11699,7 +11755,8 @@
         "Read the box for “decaffeinated” when caffeine matters."
       ],
       "watch_out": [
-        "“Herbal tea” on a box means other plants, not the tea leaf."
+        "“Herbal tea” on a box means other plants, not the tea leaf.",
+        "Some tea bags are made of nylon or PET plastic and steep at brewing heat; loose leaf skips the bag. Many paper bags also carry plastic fibers in the seal."
       ],
       "pick_steps": [
         "Read the list for the tea leaf alone; herbal tea means other plants.",
@@ -12772,10 +12829,10 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick potato chips?",
-      "decision": "Sliced potato chips in olive oil, coconut oil or tallow.",
+      "decision": "Sliced organic potato chips in olive oil, coconut or tallow.",
       "why": "A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes.",
       "short_answer": "A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes.",
-      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
+      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones.",
       "evidence_tier": "established",
       "sources": [
         "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
@@ -12796,12 +12853,21 @@
         {
           "name": "EWG: Food chemicals guide, preservative uses",
           "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
+        },
+        {
+          "name": "USDA AMS Pesticide Data Program Annual Summary",
+          "url": "https://www.ams.usda.gov/sites/default/files/media/PDPAnnualSummary.pdf"
+        },
+        {
+          "name": "Consumer Reports: What you need to know about process contaminants",
+          "url": "https://www.consumerreports.org/health/food-contaminants/what-you-need-to-know-about-process-contaminants-a8019192822/"
         }
       ],
       "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
-      "cart_pick": "Sliced potato chips: olive oil",
+      "cart_pick": "Sliced organic potato chips: olive oil",
       "buying_tips": [
         "Stacked crisps start as dried potato flakes and cornstarch pressed into one shape.",
+        "Look for USDA Organic on the bag. In USDA residue testing, about 98 percent of fresh potato samples carried at least one pesticide.",
         "Read the ingredient list for the frying fat; take chips cooked in olive oil, coconut oil, tallow or lard.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the ingredients; a sliced chip starts with potatoes.",
@@ -12846,7 +12912,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick popcorn?",
-      "decision": "Plain popcorn kernels, popped at home in coconut oil.",
+      "decision": "Organic plain popcorn kernels, popped at home in coconut oil.",
       "why": "Plain kernels pop with no oil at all, so the cook decides on any butter, oil or salt.",
       "short_answer": "Popcorn is its own variety of corn. Water inside the hard hull turns to steam, the hull bursts and the kernel turns inside out. Plain kernels pop in a paper bag in the microwave, no oil needed.",
       "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
@@ -12868,12 +12934,17 @@
         {
           "name": "CSPI: New GMO disclosures",
           "url": "https://www.cspi.org/article/what-know-about-new-gmo-disclosures"
+        },
+        {
+          "name": "Consumer Reports: Dangerous PFAS chemicals are in your food packaging",
+          "url": "https://www.consumerreports.org/health/food-contaminants/dangerous-pfas-chemicals-are-in-your-food-packaging-a3786252074/"
         }
       ],
       "kristy_take": "Popped corn found in Peru dates back 6,700 years. One extension view holds that whole kernels popped at home are the consumer-controlled option. Nebraska grows the most popcorn, and Indiana is second.",
-      "cart_pick": "Plain popcorn kernels",
+      "cart_pick": "Organic plain popcorn kernels",
       "buying_tips": [
         "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
+        "Look for USDA Organic on the bag of kernels.",
         "Look for a bag of kernels with popcorn as the only ingredient.",
         "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
         "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
@@ -12882,7 +12953,8 @@
       "watch_out": [
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
         "Skip avocado oil too: the label cannot prove the oil is pure.",
-        "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering."
+        "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering.",
+        "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
       ],
       "pick_steps": [
         "Buy plain kernels to pop at home in coconut oil, butter or tallow.",

@@ -8,7 +8,7 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7, preCleanPick9 } from './twoLinePin.js';
+import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7, preCleanPick9, preCleanPick8 } from './twoLinePin.js';
 kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(preCleanPick9(e)))))))));
 
 // Independent of the production predicate: a narrowed scope cannot hide cards.
@@ -67,7 +67,7 @@ test('W4 (c/e) PILOT identities, locked fields, numbers and voice survive', () =
   for (const old of before) {
     const live = pilot.find((e) => e.id === old.id);
     // The two-line rewrite (2026-10-17) owns buying_tips (and egg sources) now: twoLinePin.test.js.
-    const pre = beforeTwoLine(beforeConcern(live, { copy: true }));
+    const pre = beforeTwoLine(beforeConcern(preCleanPick8(live), { copy: true }));
     const now = { ...pre, decision: live.decision };
     for (const field of frozen) assert.equal(JSON.stringify(now[field]), JSON.stringify(old[field]), `${old.id}.${field}`);
     const strip = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !changed.includes(f)));
