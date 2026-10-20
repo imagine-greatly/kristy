@@ -36,9 +36,9 @@
 }
 ```
 
-Repo `/Users/m1/kristy`, branch `main`, base `<CP6_BUILD>`, the clean-pick-6 build commit (the wip commit after 25c2017). **The admin substitutes `<CP6_BUILD>` and `<CP6_COUNT>` everywhere in this file, the acceptance block included, before `dv check`.** If the clean-pick-6 SHIP commit touches the KB, `docs/do-lines-review.md`, `server/lib/doLines.json` or any owned test, the base moves to that commit.
-- Baseline `npm test`: **`<CP6_COUNT>` pass / 0 fail** (2915 or more, as recorded at the clean-pick-6 build). The planner ran nothing; the admin confirms the baseline before dispatch.
-- Ship count: `<CP6_COUNT>` + 13 or more (cleanPick7.test.js holds 13 tests). Not migrated: picks never migrate. `listMatch.js` reads picks from the KB file, so a `main` push is what puts the new lines in front of shoppers.
+Repo `/Users/m1/kristy`, branch `main`, base `e3b4a68`, the clean-pick-6 build commit (the wip commit after 25c2017). **The admin substitutes `e3b4a68` and `2917` everywhere in this file, the acceptance block included, before `dv check`.** If the clean-pick-6 SHIP commit touches the KB, `docs/do-lines-review.md`, `server/lib/doLines.json` or any owned test, the base moves to that commit.
+- Baseline `npm test`: **`2917` pass / 0 fail** (2915 or more, as recorded at the clean-pick-6 build). The planner ran nothing; the admin confirms the baseline before dispatch.
+- Ship count: `2917` + 13 or more (cleanPick7.test.js holds 13 tests). Not migrated: picks never migrate. `listMatch.js` reads picks from the KB file, so a `main` push is what puts the new lines in front of shoppers.
 
 Env: node, npm, git. `server/.env` is not needed. No browser, no network, no writable dirs beyond the repo.
 
@@ -50,14 +50,14 @@ Devon's rulings behind this batch:
 - `docs/CLEAN-PICK-PLAN.md`: B7b ids (L322), the picks table (T1 item standard, T2 no additives, T3 unenriched, T4 closest to source), C5 (only T1 rows whose standard is organic gain "organic"), Extra C12 (L323), and the OK rough edge "a call that cannot be backed stays unchanged and goes to ship notes".
 - Devon's "go make all decisions" (2026-10-20) is the approval for every call below.
 
-- **Done means:** Given the KB at `<CP6_BUILD>`, when this lands, then:
+- **Done means:** Given the KB at `e3b4a68`, when this lands, then:
   - the 9 picks below each have a new `decision` that leads with their own item's cleanest version and keeps the base line's mechanical read (C1, C3);
   - organic lands on exactly pick_frozen_peas, pick_frozen_broccoli, pick_canned_tomatoes and pick_tofu; jerky, fish sticks, juice, english muffins and pita do not gain it (C5);
   - pick_sausage, pick_egg_whites and pick_soup_bones are byte-equal to base (C6, C13);
   - no other field of the 9 changes, and no other entry changes (C1, C6);
   - a list row typed as the pick's first alias gets that pick, and the row's line is the new decision (C11);
   - every pick alias, bare and as "organic <alias>", routes to the same pick as at base (C12);
-  - C1–C13 pass, and `npm test` reports `<CP6_COUNT>` + 13 or more passing with 0 fail.
+  - C1–C13 pass, and `npm test` reports `2917` + 13 or more passing with 0 fail.
 - **Out of scope:**
   - the 3 held picks (see Ship notes for why);
   - every entry outside the 9; on the 9, every field except `decision`;
@@ -71,7 +71,7 @@ Devon's rulings behind this batch:
   - pick_jerky carries T4 (whole-muscle) but not T1 (grass-fed); see Ship notes.
 - **Ship bar:** any of these blocks shipping:
   - any of C1–C13 red;
-  - `npm test` below `<CP6_COUNT>` + 13 passing, or any fail;
+  - `npm test` below `2917` + 13 passing, or any fail;
   - twoLineCheck reports anything other than 0 of 181;
   - listMatchProbe reports a wrong match;
   - any edit to a Hard-limits file;
@@ -108,7 +108,7 @@ Subject notes:
 - **pick_jerky:** ca-3b C1 (14 words or fewer) and C2 (no grass-fed/grass-finished in a CA-3b decision) read this decision live; both hold. concernDeli C5 (/celery/) holds.
 - **pick_fish_sticks:** curly quotes as at base. "Whole fillet" is the other form the minced-fish label rule names.
 
-**If any old decision quoted here differs by even one character from the `<CP6_BUILD>` KB, the KB value wins for the base**; report the line. The new values are pinned by the acceptance file's `BECAME`, which is authoritative.
+**If any old decision quoted here differs by even one character from the `e3b4a68` KB, the KB value wins for the base**; report the line. The new values are pinned by the acceptance file's `BECAME`, which is authoritative.
 
 ## Hard limits
 
@@ -138,9 +138,9 @@ Each older test that freezes a batch pick at an earlier ref is routed through on
 **twoLinePin.js (b) overlay.** Append this at the end of the file, after the clean-pick-6 block (`CLEAN_PICK_6` / `PRE_CP6` / `preCleanPick6`). The file already imports `execFileSync` and defines `ROOT`.
 
 ```js
-// clean-pick-7 (2026-10-20) moved these 9 pick lines to each item's own cleanest version; older batch tests read them as of <CP6_BUILD>, and cleanPick7.test.js owns the new text.
+// clean-pick-7 (2026-10-20) moved these 9 pick lines to each item's own cleanest version; older batch tests read them as of e3b4a68, and cleanPick7.test.js owns the new text.
 export const CLEAN_PICK_7 = new Set(['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu', 'pick_jerky', 'pick_fish_sticks', 'pick_juice', 'pick_english_muffins', 'pick_pita_naan']);
-const PRE_CP7 = JSON.parse(execFileSync('git', ['show', '<CP6_BUILD>:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const PRE_CP7 = JSON.parse(execFileSync('git', ['show', 'e3b4a68:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick7 = (e) => (e && CLEAN_PICK_7.has(e.id) ? PRE_CP7.entries.find((x) => x.id === e.id) : e);
 ```
 
@@ -181,18 +181,18 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
 
 ## Criteria
 
-- C1 [test] Given `<CP6_BUILD>`, when the KB is read, then each of the 9 picks deepEquals its base entry with only `decision` replaced by its BECAME value, and that decision matches its carry.
+- C1 [test] Given `e3b4a68`, when the KB is read, then each of the 9 picks deepEquals its base entry with only `decision` replaced by its BECAME value, and that decision matches its carry.
 - C2 [test] Given the 9 picks, then `lintPick` and `lintCard` each return [] and every decision is 16 words or fewer by the lint's `words`.
 - C3 [test] Given the 9 picks, then each base decision and each live decision both match every keep phrase of the id.
 - C4 [test] Given the 9 new decisions, then none matches BANNED or TREATMENT, none has first person, "—", "–", a straight apostrophe, a digit or a `?`.
 - C5 [test] Given the 9 picks, then no base decision names organic; exactly pick_frozen_peas, pick_frozen_broccoli, pick_canned_tomatoes and pick_tofu now start "Organic "; the other 5 do not name organic; and the count of picks outside the 9 whose decision names organic equals base.
-- C6 [test] Given the entries outside the 9 (≥197), then each deepEquals `<CP6_BUILD>`, and the entry count and every top-level key other than entries are unchanged.
-- C7 [test] Given doLines.json and docs/do-lines-review.md, then the first deepEquals `<CP6_BUILD>` and the second is byte-identical to it.
+- C6 [test] Given the entries outside the 9 (≥197), then each deepEquals `e3b4a68`, and the entry count and every top-level key other than entries are unchanged.
+- C7 [test] Given doLines.json and docs/do-lines-review.md, then the first deepEquals `e3b4a68` and the second is byte-identical to it.
 - C8 [test] Given each of the 9 decisions, then it names no other batch pick's first alias and no generic phrase (organic produce, vegetables, fruit, food).
 - C9 [test] Given every alias of the 9 picks (≥40), then `matchItemToPick(alias)` returns that pick's id and `matchItemToCard(alias)` returns null.
 - C10 [test] Given the 9 new decisions, then all 9 are distinct and none sits on more than 2 entries [PLACEHOLDER threshold 2].
 - C11 [test] Given a list row `{ name: aliases[0], source: 'user' }` for each of the 9, when `attachCards` runs with `log: false`, then the row carries `pickId` equal to the id, `pickLine` equal to the new decision, and no `cardSlug`.
-- C12 [test] Given every pick alias in the `<CP6_BUILD>` corpus, bare and as "organic <alias>" (≥140 queries), then `matchItemToPick(q, kb.entries)?.id` equals `matchItemToPick(q, base.entries)?.id`.
+- C12 [test] Given every pick alias in the `e3b4a68` corpus, bare and as "organic <alias>" (≥140 queries), then `matchItemToPick(q, kb.entries)?.id` equals `matchItemToPick(q, base.entries)?.id`.
 - C13 [test] Given the live KB, then pick_juice holds pasteurized, warning label, a dye word and "no added color" in 20 words or fewer; pick_jerky holds /celery/, no grass term, 14 words or fewer; pick_canned_tomatoes holds "BPA-free"; and pick_sausage, pick_egg_whites and pick_soup_bones deepEqual base.
 
 ## Ship notes
@@ -227,7 +227,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
         "server/test/acceptance/ca-7.test.js",
         "server/test/twoLinePin.test.js"
       ],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": "9 picks equal base with only decision replaced; each matches its carry"
     },
     {
@@ -243,7 +243,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
       "impl": ["server/kristy_perimeter_kb.json"],
       "tests": ["server/test/acceptance/cleanPick7.test.js"],
       "dependents": [],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": "every keep phrase in base and live decision for all 9"
     },
     {
@@ -259,7 +259,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
       "impl": ["server/kristy_perimeter_kb.json", "server/test/acceptance/cleanPick6.test.js"],
       "tests": ["server/test/acceptance/cleanPick7.test.js"],
       "dependents": ["server/test/acceptance/cleanPick6.test.js"],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": "organic new on exactly 4 ids, absent on the other 5; other picks' organic count unchanged"
     },
     {
@@ -284,7 +284,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
         "server/test/acceptance/cleanPick5.test.js",
         "server/test/acceptance/cleanPick6.test.js"
       ],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": ">=197 outside entries deepEqual base; count and top-level keys unchanged"
     },
     {
@@ -292,7 +292,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
       "impl": ["server/kristy_perimeter_kb.json"],
       "tests": ["server/test/acceptance/cleanPick7.test.js"],
       "dependents": ["server/scripts/buildDoLines.js"],
-      "reads": ["git show <CP6_BUILD>:docs/do-lines-review.md", "git show <CP6_BUILD>:server/lib/doLines.json"],
+      "reads": ["git show e3b4a68:docs/do-lines-review.md", "git show e3b4a68:server/lib/doLines.json"],
       "expect": "doLines.json deepEqual base; do-lines-review.md byte-identical"
     },
     {
@@ -332,7 +332,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
       "impl": ["server/kristy_perimeter_kb.json"],
       "tests": ["server/test/acceptance/cleanPick7.test.js"],
       "dependents": ["server/lib/listMatch.js", "server/test/acceptance/k3-0.test.js", "server/test/counterProbe48.test.js"],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": ">=140 bare and organic-prefixed pick queries resolve to the base pick id"
     },
     {
@@ -347,7 +347,7 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
         "server/test/acceptance/concernEggs.test.js",
         "server/test/acceptance/ca-4a.test.js"
       ],
-      "reads": ["git show <CP6_BUILD>:server/kristy_perimeter_kb.json"],
+      "reads": ["git show e3b4a68:server/kristy_perimeter_kb.json"],
       "expect": "juice, jerky and canned tomato guard facts hold live; the 3 held picks deepEqual base"
     }
   ],
@@ -362,11 +362,11 @@ If a line reads differently, keep its chain, wrap the innermost `e` in `preClean
 
 ## Answers
 
-- **Suite runtime:** `npm test` is the full server suite (`<CP6_COUNT>` at base). Run `node --test server/test/acceptance/cleanPick7.test.js` alone first, and the full suite once, at the end.
+- **Suite runtime:** `npm test` is the full server suite (`2917` at base). Run `node --test server/test/acceptance/cleanPick7.test.js` alone first, and the full suite once, at the end.
 - **Allowed reads:**
   - the files in owns and read_full;
   - to read a red, never to edit: `server/lib/counterCardLint.js` (lintPick, MECHANICAL_VETO, lintSections), `server/lib/perimeter.js`, `server/lib/sectionRules.json`, `server/lib/pickReach.test.js`, `server/lib/counterCardLint.test.js`, `server/scripts/twoLineCheck.js`, and the Hard-limits tests named in "No change needed";
-  - `git show <CP6_BUILD>:<path>`.
+  - `git show e3b4a68:<path>`.
 - **Admin pre-dispatch probe** (from `server/`, at HEAD, before `dv check`; it reads the base KB, so it checks the alias side of C9, C11 and C12; the PROBE rows matter most). All 12 B7b picks' aliases, held ones included:
 
   ```
@@ -412,7 +412,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 
-const BASE = '<CP6_BUILD>';
+const BASE = 'e3b4a68';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
