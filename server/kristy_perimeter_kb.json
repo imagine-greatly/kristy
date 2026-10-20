@@ -54,7 +54,7 @@
       "buying_tips": [
         "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
         "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
-        "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.",
+        "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon.",
         "Canned wild salmon comes next; for farmed salmon, read the country of origin.",
         "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask."
       ],
@@ -7117,6 +7117,10 @@
         {
           "name": "CSPI: Carrageenan",
           "url": "https://www.cspi.org/node/7465"
+        },
+        {
+          "name": "Joi: 5 common plant milk additives (gums)",
+          "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
         }
       ],
       "kristy_take": "Oat drinks vary in composition and fortification. The carton is the basis for choosing.",
@@ -7128,7 +7132,8 @@
         "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
       ],
       "watch_out": [
-        "A fortified oat milk ranks second; its added vitamins and minerals lengthen the list."
+        "A fortified oat milk ranks second; its added vitamins and minerals lengthen the list.",
+        "Skip gellan gum, guar gum and locust bean gum on an oat carton; they thicken and stop separation."
       ],
       "pick_steps": [
         "Read the ingredient list for stabilizers; formulations can differ in stabilizer use.",
@@ -7295,7 +7300,8 @@
         "“Uncured” and “no nitrates added” hot dogs may use celery juice or powder, a plant source of nitrite. The ingredients name that curing source.",
         "“Uncured” can still accompany celery-based curing. Read the qualifier.",
         "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list.",
-        "Pass on sodium phosphate and other water-holding phosphates. Skip carrageenan, modified food starch and maltodextrin binders added for texture."
+        "Pass on sodium phosphate and other water-holding phosphates. Skip carrageenan, modified food starch and maltodextrin binders added for texture.",
+        "Sodium nitrite or sodium nitrate on the list is an added curing salt that preserves the meat."
       ],
       "pick_steps": [
         "Pick named meat without mechanically separated chicken or turkey.",
@@ -7889,7 +7895,15 @@
         "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really",
         "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
         "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
-        "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+        "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading",
+        {
+          "name": "The Conversation: How deli meat is made (phosphates hold water)",
+          "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        }
       ],
       "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
       "cart_pick": "Organic or pasture-raised turkey bacon strips",
@@ -7902,7 +7916,8 @@
       ],
       "watch_out": [
         "With “uncured” turkey bacon, celery powder or juice can supply nitrite. A “no nitrates added” claim needs its qualifier read too.",
-        "Turkey bacon is still a cured product, and its curing ingredients are on the label."
+        "Turkey bacon is still a cured product, and its curing ingredients are on the label.",
+        "Skip sodium phosphate or sodium tripolyphosphate in the curing list; phosphates help the meat hold onto water."
       ],
       "pick_steps": [
         "Read the descriptive name beside “turkey bacon” for the meat used.",
@@ -9753,7 +9768,7 @@
       "decision": "Grass-fed ice cream of cream, milk and sugar, no gums.",
       "why": "The name “ice cream” needs at least 10 percent milkfat. Short of that, the carton says “frozen dairy dessert”.",
       "short_answer": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat.",
-      "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil.",
+      "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil. Ice cream starts with dairy from cows that may receive rBST, a synthetic growth hormone. Certified organic production prohibits it. Certified organic ice cream leads this label ladder. Next is a carton stating its milk came from cows that were not treated with rBST. A carton with neither claim ranks last: US rules let rBST use go unlabeled.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/135.110",
@@ -9773,6 +9788,18 @@
         {
           "name": "CSPI: Carrageenan",
           "url": "https://www.cspi.org/node/7465"
+        },
+        {
+          "name": "CSPI: Polysorbate 60, 65 and 80",
+          "url": "https://www.cspi.org/node/7467"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        },
+        {
+          "name": "Cleveland Clinic: Erythritol and other sugar alcohols",
+          "url": "https://health.clevelandclinic.org/erythritol"
         }
       ],
       "kristy_take": "The words on the carton settle it. “Frozen dairy dessert” is the name for what falls short.",
@@ -9783,12 +9810,12 @@
         "Read the name on the carton, not the picture.",
         "Look for “frozen dairy dessert” in the small print.",
         "Read the ingredients for oils such as coconut or palm oil.",
-        "Ice cream starts with dairy from cows that may receive rBST, a synthetic growth hormone. Certified organic production prohibits it.",
-        "Certified organic ice cream leads this label ladder. Next is a carton stating its milk came from cows that were not treated with rBST. A carton with neither claim ranks last: US rules let rBST use go unlabeled.",
         "Carrageenan thickens foods and comes from seaweed. Some certified organic foods use it too, so read the ice cream’s ingredient list and choose one without it."
       ],
       "watch_out": [
-        "“Frozen dairy dessert” means the carton missed the ice cream standard."
+        "“Frozen dairy dessert” means the carton missed the ice cream standard.",
+        "Skip polysorbate 80 and cellulose gum on the list; both are added emulsifiers.",
+        "Sugar-free ice cream commonly carries erythritol, a sugar alcohol; skip erythritol, maltitol and sorbitol on the list."
       ],
       "pick_steps": [
         "Read the name on the carton, not the picture.",
@@ -9948,7 +9975,7 @@
       "decision": "Unsweetened, unfortified almond milk, a short list, never seed oil.",
       "why": "FDA does not count almond drinks in the dairy group. Their overall nutrition is not similar to milk.",
       "short_answer": "Almond milk is watery, with a nutty flavor and no lactose. It comes sweetened, unsweetened, vanilla and chocolate. FDA suggests comparing the Nutrition Facts, including protein and added sugars.",
-      "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars. FDA notes the name “almond milk” is established by common usage.",
+      "detail": "Almond milk holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA notes that almond- and oat-based drinks are not part of the dairy group in the Dietary Guidelines. Their overall nutritional content is not similar to milk. FDA notes the name “almond milk” is established by common usage.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://en.wikipedia.org/wiki/Almond_milk",
@@ -9960,6 +9987,10 @@
         {
           "name": "CSPI: Carrageenan",
           "url": "https://www.cspi.org/node/7465"
+        },
+        {
+          "name": "Joi: 5 common plant milk additives (gums)",
+          "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
         }
       ],
       "kristy_take": "The carton panel, not the word milk, says what the drink brings.",
@@ -9968,19 +9999,18 @@
         "Almond drinks vary in added sugars, so the carton panel is the guide.",
         "Look for unsweetened on the carton and no added vitamins or minerals on the list.",
         "Pick unsweetened over sweetened, vanilla or chocolate.",
-        "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.",
-        "Compare protein, vitamin D, calcium and potassium across cartons.",
-        "Check saturated fat on the panel."
+        "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed."
       ],
       "watch_out": [
         "FDA does not place almond drinks in the dairy group.",
-        "Fortified almond milk comes second, since each added vitamin or mineral joins the list."
+        "Fortified almond milk comes second, since each added vitamin or mineral joins the list.",
+        "Gellan gum, guar gum or locust bean gum are added thickeners; pick almonds and water without them."
       ],
       "pick_steps": [
         "Pick unsweetened over sweetened, vanilla or chocolate.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed."
       ],
-      "science": "Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk. FDA suggests drinks higher in protein, vitamin D, calcium and potassium, and lower in saturated fat and added sugars.",
+      "science": "Almond milk is watery, with a nutty flavor and no lactose. It holds about 0.4 grams of protein per 100 ml. It is usually fortified with added vitamins and minerals. FDA does not place almond drinks in the dairy group, and their overall nutrition is not similar to milk.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -10013,9 +10043,9 @@
       "category": "dairy",
       "question": "How do you pick soy milk?",
       "decision": "Unsweetened, unfortified soy milk: soybeans and water, little else.",
-      "why": "FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group.",
+      "why": "Soy milk is soybeans soaked, ground, boiled and filtered. Soybeans and water stays closest to the bean.",
       "short_answer": "Soy milk is made by soaking and grinding soybeans, boiling, then filtering. It may be sweetened, flavored and fortified. FDA places only the fortified kind in the dairy group.",
-      "detail": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein content runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines include only fortified soy beverages in the dairy group. The reason given is that they have key nutrients similar to those in milk. FDA suggests choosing drinks higher in protein, vitamin D, calcium and potassium. It also suggests lower saturated fat and added sugars.",
+      "detail": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein content runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://en.wikipedia.org/wiki/Soy_milk",
@@ -10035,6 +10065,10 @@
         {
           "name": "Non-GMO Project: GMO FAQ",
           "url": "https://www.nongmoproject.org/gmo-faq/"
+        },
+        {
+          "name": "Joi: 5 common plant milk additives (gums)",
+          "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
         }
       ],
       "kristy_take": "A short list of soybeans and water stays closest to the bean.",
@@ -10050,13 +10084,14 @@
         "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
         "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
         "Dairy shoppers can read the Milk card.",
-        "Fortified soy milk is the second pick, behind a carton of soybeans and water."
+        "Fortified soy milk is the second pick, behind a carton of soybeans and water.",
+        "Gums such as gellan gum, guar gum or locust bean gum stop separation; pick soybeans and water without them."
       ],
       "pick_steps": [
         "Pick the shortest list, soybeans and water with little else.",
         "Pick unsweetened over flavored."
       ],
-      "science": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients. FDA notes the Dietary Guidelines count only fortified soy drinks in the dairy group. The reason given is key nutrients similar to those in milk.",
+      "science": "Soy milk is made by soaking and grinding soybeans, boiling the mixture and filtering out particles. Its protein runs 1–4 percent, depending on the method of production. It may be sweetened, flavored and fortified with micronutrients.",
       "labels_decoded": [
         {
           "term": "Fortified",
@@ -10827,7 +10862,15 @@
       "sources": [
         "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2025-05-16-bone-broth-hype-or-healthy",
         "https://brunswick.ces.ncsu.edu/2023/03/stockbrothor-bone-brothwhats-the-difference",
-        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2015-04-02-broth-or-stock-whats-difference"
+        "https://extension.illinois.edu/blogs/simply-nutritious-quick-and-delicious/2015-04-02-broth-or-stock-whats-difference",
+        {
+          "name": "CSPI: MSG (monosodium glutamate)",
+          "url": "https://www.cspi.org/node/7459"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        }
       ],
       "kristy_take": "The list names what was simmered. Sodium is the other read.",
       "cart_pick": "Low-sodium or unsalted broth",
@@ -10838,7 +10881,8 @@
         "Look for low sodium or unsalted on the carton."
       ],
       "watch_out": [
-        "Broth may have salt added, so a plain-looking carton can still run high in sodium."
+        "Broth may have salt added, so a plain-looking carton can still run high in sodium.",
+        "Skip a broth listing MSG or autolyzed yeast extract, both added flavorings."
       ],
       "pick_steps": [
         "Read the list for named bones, meat and vegetables, then water and salt.",
@@ -13430,7 +13474,15 @@
         "https://www.law.cornell.edu/cfr/text/9/381.167",
         "https://www.law.cornell.edu/cfr/text/9/381.158",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
-        "https://web.archive.org/web/2024id_/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety"
+        "https://web.archive.org/web/2024id_/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
+        {
+          "name": "CSPI: MSG (monosodium glutamate)",
+          "url": "https://www.cspi.org/node/7459"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        }
       ],
       "kristy_take": "The product name sets the meat floor. The package directions set how to thaw and heat the meal.",
       "cart_pick": "Binder-free frozen meals",
@@ -13443,7 +13495,8 @@
         "At home, use frozen dinners within 3 to 4 months for best quality."
       ],
       "watch_out": [
-        "Cream sauce is one food that does not freeze well."
+        "Cream sauce is one food that does not freeze well.",
+        "Skip monosodium glutamate and autolyzed yeast extract on the list. Pick a meal seasoned with named herbs and spices."
       ],
       "pick_steps": [
         "Find the inspection mark: an inspected plant prepared the meal.",
@@ -13653,6 +13706,14 @@
         {
           "name": "CSPI: TBHQ preservative uses",
           "url": "https://www.cspi.org/node/7416"
+        },
+        {
+          "name": "The Conversation: How deli meat is made (phosphates hold water)",
+          "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
         }
       ],
       "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
@@ -13669,7 +13730,8 @@
       ],
       "watch_out": [
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "Pass on nuggets listing sodium phosphate; added phosphates help the chicken soak up and hold water."
       ],
       "pick_steps": [
         "Pick nuggets labeled “white meat”, which means 100 percent light meat.",

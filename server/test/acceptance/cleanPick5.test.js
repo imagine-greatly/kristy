@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
-import { CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10 } from './twoLinePin.js';
+import { CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11 } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -129,7 +129,7 @@ test('C5 organic sits on the decision and cart of exactly the seven crop ids', (
 });
 
 test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_6.has(e.id) && !CLEAN_PICK_7.has(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 154);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

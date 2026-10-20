@@ -16,7 +16,7 @@ export const TWO_LINE = {
     "buying_tips": [
       "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
       "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
-      "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon. Levels were well below FDA tolerance levels for bought fish.",
+      "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon.",
       "Canned wild salmon comes next; for farmed salmon, read the country of origin.",
       "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask."
     ],
@@ -1548,6 +1548,10 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Carrageenan",
         "url": "https://www.cspi.org/node/7465"
+      },
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
       }
     ]
   },
@@ -1604,7 +1608,8 @@ export const TWO_LINE = {
       "“Uncured” and “no nitrates added” hot dogs may use celery juice or powder, a plant source of nitrite. The ingredients name that curing source.",
       "“Uncured” can still accompany celery-based curing. Read the qualifier.",
       "The standard permits nonmeat ingredients. A beef species claim is not an ingredient list.",
-      "Pass on sodium phosphate and other water-holding phosphates. Skip carrageenan, modified food starch and maltodextrin binders added for texture."
+      "Pass on sodium phosphate and other water-holding phosphates. Skip carrageenan, modified food starch and maltodextrin binders added for texture.",
+      "Sodium nitrite or sodium nitrate on the list is an added curing salt that preserves the meat."
     ],
     "tier_note": "Organic hot dogs mean certified organic feed and outdoor access; grass-fed names the cattle’s diet.",
     "cart_pick": "Organic packaged beef hot dogs"
@@ -1762,11 +1767,20 @@ export const TWO_LINE = {
       "https://health.clevelandclinic.org/turkey-bacon-how-healthy-is-it-really",
       "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
       "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
-      "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
+      "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading",
+      {
+        "name": "The Conversation: How deli meat is made (phosphates hold water)",
+        "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
+      },
+      {
+        "name": "CSPI Chemical Cuisine: food additive safety ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+      }
     ],
     "watch_out": [
       "With “uncured” turkey bacon, celery powder or juice can supply nitrite. A “no nitrates added” claim needs its qualifier read too.",
-      "Turkey bacon is still a cured product, and its curing ingredients are on the label."
+      "Turkey bacon is still a cured product, and its curing ingredients are on the label.",
+      "Skip sodium phosphate or sodium tripolyphosphate in the curing list; phosphates help the meat hold onto water."
     ],
     "pick_steps": [
       "Read the descriptive name beside “turkey bacon” for the meat used.",
@@ -2166,8 +2180,6 @@ export const TWO_LINE = {
       "Read the name on the carton, not the picture.",
       "Look for “frozen dairy dessert” in the small print.",
       "Read the ingredients for oils such as coconut or palm oil.",
-      "Ice cream starts with dairy from cows that may receive rBST, a synthetic growth hormone. Certified organic production prohibits it.",
-      "Certified organic ice cream leads this label ladder. Next is a carton stating its milk came from cows that were not treated with rBST. A carton with neither claim ranks last: US rules let rBST use go unlabeled.",
       "Carrageenan thickens foods and comes from seaweed. Some certified organic foods use it too, so read the ice cream’s ingredient list and choose one without it."
     ],
     "sources": [
@@ -2188,6 +2200,18 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Carrageenan",
         "url": "https://www.cspi.org/node/7465"
+      },
+      {
+        "name": "CSPI: Polysorbate 60, 65 and 80",
+        "url": "https://www.cspi.org/node/7467"
+      },
+      {
+        "name": "CSPI Chemical Cuisine: food additive safety ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+      },
+      {
+        "name": "Cleveland Clinic: Erythritol and other sugar alcohols",
+        "url": "https://health.clevelandclinic.org/erythritol"
       }
     ]
   },
@@ -2218,9 +2242,7 @@ export const TWO_LINE = {
       "Almond drinks vary in added sugars, so the carton panel is the guide.",
       "Look for unsweetened on the carton and no added vitamins or minerals on the list.",
       "Pick unsweetened over sweetened, vanilla or chocolate.",
-      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed.",
-      "Compare protein, vitamin D, calcium and potassium across cartons.",
-      "Check saturated fat on the panel."
+      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed."
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Almond_milk",
@@ -2232,6 +2254,10 @@ export const TWO_LINE = {
       {
         "name": "CSPI: Carrageenan",
         "url": "https://www.cspi.org/node/7465"
+      },
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
       }
     ]
   },
@@ -2268,13 +2294,18 @@ export const TWO_LINE = {
       {
         "name": "Non-GMO Project: GMO FAQ",
         "url": "https://www.nongmoproject.org/gmo-faq/"
+      },
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
       }
     ],
     "watch_out": [
       "FDA counts only fortified soy in the dairy group, yet fortifying adds vitamins and minerals, each another ingredient.",
       "Soy lecithin and soy protein come from the same soybeans. A QR code or phone number may lead to the bioengineered disclosure.",
       "Dairy shoppers can read the Milk card.",
-      "Fortified soy milk is the second pick, behind a carton of soybeans and water."
+      "Fortified soy milk is the second pick, behind a carton of soybeans and water.",
+      "Gums such as gellan gum, guar gum or locust bean gum stop separation; pick soybeans and water without them."
     ]
   },
   "coconut_milk_beverage": {
@@ -3236,11 +3267,20 @@ export const TWO_LINE = {
       {
         "name": "CSPI: TBHQ preservative uses",
         "url": "https://www.cspi.org/node/7416"
+      },
+      {
+        "name": "The Conversation: How deli meat is made (phosphates hold water)",
+        "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
+      },
+      {
+        "name": "CSPI Chemical Cuisine: food additive safety ratings",
+        "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
       }
     ],
     "watch_out": [
       "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
-      "Skip avocado oil too: the label cannot prove the oil is pure."
+      "Skip avocado oil too: the label cannot prove the oil is pure.",
+      "Pass on nuggets listing sodium phosphate; added phosphates help the chicken soak up and hold water."
     ]
   },
   "frozen": {
@@ -3463,3 +3503,8 @@ export const preCleanPick9 = (e) => (e && CLEAN_PICK_9.has(e.id) ? PRE_CP9.entri
 export const CLEAN_PICK_10 = new Set(['produce_leafy_greens', 'berries_picking', 'pick_swiss_chard', 'pick_cilantro', 'pick_parsley', 'pick_basil', 'pick_microgreens', 'cream_vs_creamer', 'ground_turkey', 'chicken_cuts_basics']);
 const PRE_CP10 = JSON.parse(execFileSync('git', ['show', '117ab78:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick10 = (e) => (e && CLEAN_PICK_10.has(e.id) ? PRE_CP10.entries.find((x) => x.id === e.id) : e);
+
+// clean-pick-11 (2026-10-20) added register avoid lines to these dairy, plant milk, meat and frozen cards and dropped the mainstream reassurance lines on salmon, almond and soy milk; decisions and carts stayed. Older batch tests read them as of c2785ed, and cleanPick11.test.js owns the new text.
+export const CLEAN_PICK_11 = new Set(['ice_cream', 'almond_milk', 'oat_milk', 'soy_milk', 'hot_dogs', 'turkey_bacon', 'frozen_nuggets', 'frozen_meals', 'broth', 'salmon_wild_vs_farmed']);
+const PRE_CP11 = JSON.parse(execFileSync('git', ['show', 'c2785ed:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preCleanPick11 = (e) => (e && CLEAN_PICK_11.has(e.id) ? PRE_CP11.entries.find((x) => x.id === e.id) : e);

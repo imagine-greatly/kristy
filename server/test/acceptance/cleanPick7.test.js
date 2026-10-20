@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_9, CLEAN_PICK_10 } from './twoLinePin.js';
+import { CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11 } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -98,7 +98,7 @@ test('C5 organic is new on exactly the four organic-standard picks and unchanged
 });
 
 test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 180);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
