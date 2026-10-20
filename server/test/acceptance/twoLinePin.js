@@ -3472,6 +3472,7 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 
 test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
   const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
   const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 185);
@@ -3628,3 +3629,10 @@ export const T6_1 = new Set(['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'g
 export const T6_1_BASE = '85c399e';
 const PRE_T6_1 = JSON.parse(execFileSync('git', ['show', `${T6_1_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preT6_1 = (e) => (e && T6_1.has(e.id) ? PRE_T6_1.entries.find((x) => x.id === e.id) : e);
+
+// t6-2: dairy and egg register label terms and archived sources; decisions and carts stay.
+// Older acceptance pins read these six as of ca32bef; t6_2.test.js owns the live copy.
+export const T6_2 = new Set(['egg_labels', 'whole_vs_reduced_fat_milk', 'yogurt_plain_vs_flavored', 'plain_kefir', 'raw_aged_cheese', 'dairy_case']);
+export const T6_2_BASE = 'ca32bef';
+const PRE_T6_2 = JSON.parse(execFileSync('git', ['show', `${T6_2_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preT6_2 = (e) => (e && T6_2.has(e.id) ? PRE_T6_2.entries.find((x) => x.id === e.id) : e);

@@ -177,7 +177,11 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
       .replace("import { beforeConcern, preTidy } from './twoLinePin.js';", "import { beforeConcern, preTidy, preT6_1 } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, beforeConcern(now));',
         "    // t6-1 appended evidence sources to farmed_fish_by_species and seafood_certifications; the pass rule reads them as of 85c399e.\n    assertPassRule(t, old, beforeConcern(preT6_1(now)));");
-    const expected = file === 'k6' ? t61(concern) : file === 'k10' ? cp8(concern) : file !== 'k11' ? concern : concern
+    // t6-2: k7 keeps its dairy source pins at ca32bef through the exact overlay.
+    const t62 = (t) => t.replace(
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preT6_2 } from './twoLinePin.js';\nkb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.");
+    const expected = file === 'k6' ? t61(concern) : file === 'k7' ? t62(concern) : file === 'k10' ? cp8(concern) : file !== 'k11' ? concern : concern
       .replace("import { beforeConcern, preTidy } from './twoLinePin.js';", "import { beforeConcern, preTidy, preCleanPick9 } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, beforeConcern(now));',
         "    // clean-pick-9 moved label_organic_scope's frozen fields; the pass rule reads it as of 96d61e2.\n    assertPassRule(t, old, beforeConcern(preCleanPick9(now)));");

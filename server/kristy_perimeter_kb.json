@@ -641,7 +641,15 @@
         "FDA Egg Safety Final Rule",
         "EU marketing standards for eggs (unwashed, ambient storage)",
         "Feed Strategy, “Feed formulations for US white layers in the production phase” (corn the main energy source, soybean meal the main protein) https://www.feedstrategy.com/animal-feed-formulations-library/us-white-layers-production-phase",
-        "7 CFR § 205.237 Livestock feed (organic livestock fed organically produced feed) https://www.law.cornell.edu/cfr/text/7/205.237"
+        "7 CFR § 205.237 Livestock feed (organic livestock fed organically produced feed) https://www.law.cornell.edu/cfr/text/7/205.237",
+        {
+          "name": "Consumer Reports: Egg carton labels explained",
+          "url": "https://www.consumerreports.org/health/food-labeling/egg-carton-labels-explained-a1022347027/"
+        },
+        {
+          "name": "100 Days of Real Food: Egg labels",
+          "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"
+        }
       ],
       "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
       "cart_pick": "Corn- and soy-free eggs from hens on pasture",
@@ -666,7 +674,8 @@
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
         "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
-        "‘Vegetarian-fed’ means she was kept off animal protein. A hen on real pasture is eating bugs.",
+        "“Vegetarian fed” means the hens were not fed animal byproducts; it does not describe outdoor access.",
+        "“Cage free” means no cages, not outdoor access. “Free range” adds outdoor access, which can be a small space.",
         "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
         "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
         "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
@@ -691,7 +700,7 @@
       "labels_decoded": [
         {
           "term": "Cage-free",
-          "meaning": "Not in cages — but usually still indoors, can be crowded."
+          "meaning": "Not in cages, but usually still indoors; can be crowded."
         },
         {
           "term": "Free-range",
@@ -699,11 +708,11 @@
         },
         {
           "term": "Pasture-raised",
-          "meaning": "Real pasture time — meaningful mainly when third-party certified."
+          "meaning": "Real pasture time, meaningful mainly when third-party certified."
         },
         {
           "term": "Soy-free / corn-free",
-          "meaning": "A FEED claim — the only kind that addresses the ration. Must be printed explicitly."
+          "meaning": "A FEED claim, the only kind that addresses the ration. Must be printed explicitly."
         },
         {
           "term": "Brown egg",
@@ -1322,6 +1331,10 @@
         {
           "name": "BCPP: rBGH / rBST labeling",
           "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+        },
+        {
+          "name": "Milk proteins and human health: A1/A2 milk hypothesis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3475924/"
         }
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
@@ -1334,6 +1347,7 @@
         "The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you.",
         "Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal.",
         "A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change.",
+        "“A2 milk” names the A2 beta-casein variant, not a heat or fat-processing method.",
         "‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out.",
         "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
         "‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it.",
@@ -1526,7 +1540,7 @@
       "decision": "Plain Greek yogurt made from 100% grass-fed milk.",
       "why": "Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.",
       "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
-      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal.",
+      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal. Milk protein concentrate on the yogurt list is a concentrated milk powder made by filtering milk and drying it. Look for milk and cultures alone.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central",
@@ -1545,6 +1559,10 @@
         {
           "name": "CSPI: Artificial colorings (synthetic food dyes)",
           "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "US Dairy Export Council: Milk protein concentrates technical report",
+          "url": "https://www.thinkusadairy.org/assets/Documents/Customer%20Site/C3-Using%20Dairy/C3.7-Resources%20and%20Insights/03-Application%20and%20Technical%20Materials/Milk_Protein_Concentrates_Technical_Report.pdf"
         }
       ],
       "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar.",
@@ -1560,6 +1578,8 @@
         "Whole-milk versions are more filling and less tinkered with than fat-free.",
         "rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.",
         "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.",
+        "“rBST free” means the milk comes from cows not given that synthetic hormone.",
+        "Skip artificial color on the yogurt list.",
         "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
       ],
       "labels_decoded": [
@@ -5158,7 +5178,8 @@
         "A named maker and a named herd, not just a country of origin.",
         "The cut-to-order counter over the pre-wrapped wall.",
         "Hard, aged styles first: alpine, aged cheddar, manchego, pecorino.",
-        "Keep the rinds. They belong in a pot of beans or soup."
+        "Keep the rinds. They belong in a pot of beans or soup.",
+        "Look for raw cheese from a grass-fed organic herd; organic is the next rung when the feed claim is absent."
       ],
       "watch_out": [
         "“Pasteurized process cheese”, “cheese product” and “cheese food” are progressively less cheese.",
@@ -5185,7 +5206,11 @@
       "sources": [
         "FDA 21 CFR 133 — cheese standards of identity (60-day aging)",
         "USDA FoodData Central",
-        "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
+        "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/",
+        {
+          "name": "Cornucopia Institute: Organic dairy scorecard",
+          "url": "https://www.cornucopia.org/scorecard/dairy/"
+        }
       ],
       "cart_pick": "Aged raw-milk cheddar",
       "tier_note": "Aging raw milk into cheese predates refrigeration; the months on the rind are history, not health evidence.",
@@ -9615,7 +9640,11 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Kefir",
         "https://foodsmartcolorado.colostate.edu/recipes/preservation/understanding-and-making-kefir",
-        "https://extension.usu.edu/preserve-the-harvest/kefir"
+        "https://extension.usu.edu/preserve-the-harvest/kefir",
+        {
+          "name": "NPR: Added sugar in yogurt and dairy labels",
+          "url": "https://www.npr.org/sections/thesalt/2018/09/19/649689591/yogurt-may-not-be-so-healthy-if-its-pumped-full-of-sugar"
+        }
       ],
       "kristy_take": "Plain kefir is the base drink, ready for a smoothie or a recipe.",
       "cart_pick": "100% grass-fed whole-milk plain kefir",
@@ -9626,7 +9655,8 @@
         "Use plain kefir in place of buttermilk or yogurt in recipes."
       ],
       "watch_out": [
-        "Kefir has a short shelf life. Keep it refrigerated."
+        "Kefir has a short shelf life. Keep it refrigerated.",
+        "Look for the added sugars line when comparing plain and flavored kefir."
       ],
       "pick_steps": [
         "Pick the bottle labeled plain, not flavored.",
@@ -10386,6 +10416,14 @@
         {
           "name": "BCPP: rBGH / rBST labeling",
           "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+        },
+        {
+          "name": "Cornell LII: 21 CFR § 131.3 Ultra-pasteurized definition",
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
+        },
+        {
+          "name": "Weston A. Price Foundation: Milk homogenization",
+          "url": "https://www.westonaprice.org/health-topics/know-your-fats/milk-homogenization-heart-disease/"
         }
       ],
       "kristy_take": "The type settles most of the choice, and the carton fills in the rest.",
@@ -10399,7 +10437,9 @@
         "Choose certified organic dairy before a package stating “from cows not treated with rBST”. A package with neither ranks last, since rBST use need not be disclosed in the US."
       ],
       "watch_out": [
-        "Vitamins in milk are optional, so check the label rather than assume."
+        "Vitamins in milk are optional, so check the label rather than assume.",
+        "“Ultra-pasteurized” means heated to at least 280°F for at least two seconds, for a longer refrigerated shelf life.",
+        "“Non-homogenized” milk skips the step that breaks fat globules into smaller droplets."
       ],
       "pick_steps": [
         "Check the milk label for vitamins A and D; they are optional."

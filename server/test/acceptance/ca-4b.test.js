@@ -16,7 +16,8 @@ import { assertPassRule } from './passRule.js';
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
-import { preT6_1 } from "./twoLinePin.js";
+import { preT6_1, preT6_2 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const LIVE = structuredClone(kb); // the review table follows the live front
 kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(preCleanPick9(preCleanPick11(preCleanPick8(e))))))))))));

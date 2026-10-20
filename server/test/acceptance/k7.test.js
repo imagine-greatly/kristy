@@ -8,6 +8,8 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preT6_2 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
 import { beforeConcern, preTidy } from './twoLinePin.js';

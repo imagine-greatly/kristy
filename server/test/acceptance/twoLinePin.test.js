@@ -8,6 +8,8 @@ import { TWO_LINE } from './twoLinePin.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_2 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 
 test('every card carries the pinned two-line decision and buying_tips', () => {
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'cards', 180);
