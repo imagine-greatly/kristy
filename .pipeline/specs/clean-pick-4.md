@@ -43,7 +43,7 @@ Env: node, npm, git; `server/.env` not needed; no browser; no network; no writab
 Devon 2026-10-20: "point them to the cleanest and healthiest version of the item they are getting" and "everything should be organic, no additives, no synthetic bs, from nature, as close to the source as possible"; 2026-10-19: fewer ingredients ranks higher. Ruling **Q5 A**: the unfortified cereal is the pick, and fortified is named second in watch_out. Devon's "go make all decisions" is the approval for every call below (`docs/CLEAN-PICK-PLAN.md` B5).
 
 - **Done means:** Given the KB at f488733, when this lands, then:
-  - each of the 9 ids below names its own cleanest version in its headline (all 9) and its cart pick (7 changed; gluten_free_bread and buns_rolls keep theirs);
+  - each of the 9 ids below names its own cleanest version in its headline (all 9) and its cart pick (8 changed; buns_rolls keeps its own);
   - a new "look for" line naming the label standard sits at `buying_tips[1]`, and every f488733 tip survives one slot lower;
   - breakfast_cereal names unfortified in its decision and cart, and its last watch_out line ranks fortified second;
   - the six reach queries in C11 still land on their cards;
@@ -88,7 +88,7 @@ The old headlines are the f488733 headline cells in `docs/do-lines-review.md`. E
 | sourdough | Sourdough of flour, water, salt and a starter. | Whole wheat sourdough: flour, water, salt and a starter. | Starter-fermented sourdough bread → Whole wheat sourdough bread |
 | bagels | Bagels boiled before the oven, with their ingredients named. | Whole wheat bagels, boiled before the oven, ingredients named. | Boiled bagels with the ingredients named → Whole wheat boiled bakery bagels |
 | breakfast_cereal | Whole-grain cereal or granola with less added sugar. | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Whole-grain breakfast cereal → Unfortified whole-grain breakfast cereal |
-| gluten_free_bread | Bread labeled gluten-free, with its flours and gum binder named. | Gluten-free bread with its flours named and the fewest gums. | unchanged (Bread labeled gluten-free) |
+| gluten_free_bread | Bread labeled gluten-free, with its flours and gum binder named. | Gluten-free bread with its flours named and the fewest gums. | Bread labeled gluten-free → Short-list gluten-free bread |
 | buns_rolls | Buns and rolls named whole wheat. | Whole wheat buns and rolls with no added sugar. | unchanged (Whole wheat buns or rolls) |
 | pastries_muffins | Pastry made with butter, named on the label. | All-butter bakery pastries, no shortening or hydrogenated oil. | Pastry made with butter → All-butter bakery pastries |
 | crackers | Crackers with a whole grain listed first on the ingredients. | Whole grain crackers with olive oil, coconut oil or butter. | Crackers with a whole grain first → Short-list whole grain crackers |
@@ -110,7 +110,7 @@ const BECAME = {
   sourdough: { decision: 'Whole wheat sourdough: flour, water, salt and a starter.', cart_pick: 'Whole wheat sourdough bread', tip1: 'Look for whole wheat flour as the first ingredient, ahead of any white flour.' },
   bagels: { decision: 'Whole wheat bagels, boiled before the oven, ingredients named.', cart_pick: 'Whole wheat boiled bakery bagels', alias_add: 'whole wheat bagels', tip1: 'Look for whole wheat flour on the bag, named before any other flour.' },
   breakfast_cereal: { decision: 'Unfortified whole-grain cereal or granola, less added sugar, no dyes.', cart_pick: 'Unfortified whole-grain breakfast cereal', tip1: 'Look for a grain list with no added vitamins or minerals below it.', watch_add: 'A fortified cereal comes second, behind one with no vitamins or minerals added.' },
-  gluten_free_bread: { decision: 'Gluten-free bread with its flours named and the fewest gums.', tip1: 'Look for a single gum binder, such as xanthan gum, not two or more.' },
+  gluten_free_bread: { decision: 'Gluten-free bread with its flours named and the fewest gums.', cart_pick: 'Short-list gluten-free bread', tip1: 'Look for a single gum binder, such as xanthan gum, not two or more.' },
   buns_rolls: { decision: 'Whole wheat buns and rolls with no added sugar.', tip1: 'Look for a list with no sugar or soybean oil after the whole wheat flour.' },
   pastries_muffins: { decision: 'All-butter bakery pastries, no shortening or hydrogenated oil.', cart_pick: 'All-butter bakery pastries', tip1: 'Look for butter as the only fat, with no shortening or hydrogenated oil.' },
   crackers: { decision: 'Whole grain crackers with olive oil, coconut oil or butter.', cart_pick: 'Short-list whole grain crackers', tip1: 'Look for whole grain flour, olive oil and salt, and little else, on the list.' },
@@ -223,7 +223,7 @@ If a listed line reads differently from its "old" text, keep that line's existin
   | sourdough | "Whole wheat sourdough bread" | sourdough | aliases "sourdough bread" + "sourdough"; label card scores lower and fails the head rule |
   | bagels | "Whole wheat boiled bakery bagels" | bagels | alias "boiled bakery bagels" |
   | breakfast_cereal | "Unfortified whole-grain breakfast cereal" | breakfast_cereal | |
-  | gluten_free_bread | unchanged | — | |
+  | gluten_free_bread | "Short-list gluten-free bread" | gluten_free_bread | old cart "Bread labeled gluten-free" routes to nothing (dv build simulation); new cart admin-probed 2026-10-20 → gluten_free_bread |
   | buns_rolls | unchanged | — | |
   | pastries_muffins | "All-butter bakery pastries" | pastries_muffins | grassfed_butter scores 3 on "butter"; pastries scores about 7 |
   | crackers | "Short-list whole grain crackers" | crackers | label card scores higher but fails the head rule; crackers is the thinnest margin in the batch |
@@ -430,7 +430,7 @@ const BECAME = {
   sourdough: { decision: 'Whole wheat sourdough: flour, water, salt and a starter.', cart_pick: 'Whole wheat sourdough bread', tip1: 'Look for whole wheat flour as the first ingredient, ahead of any white flour.', std: /whole wheat flour as the first ingredient/, carry: /whole wheat/i },
   bagels: { decision: 'Whole wheat bagels, boiled before the oven, ingredients named.', cart_pick: 'Whole wheat boiled bakery bagels', alias_add: 'whole wheat bagels', tip1: 'Look for whole wheat flour on the bag, named before any other flour.', std: /whole wheat flour on the bag/, carry: /whole wheat/i },
   breakfast_cereal: { decision: 'Unfortified whole-grain cereal or granola, less added sugar, no dyes.', cart_pick: 'Unfortified whole-grain breakfast cereal', tip1: 'Look for a grain list with no added vitamins or minerals below it.', watch_add: 'A fortified cereal comes second, behind one with no vitamins or minerals added.', std: /no added vitamins or minerals/, carry: /unfortified/i },
-  gluten_free_bread: { decision: 'Gluten-free bread with its flours named and the fewest gums.', tip1: 'Look for a single gum binder, such as xanthan gum, not two or more.', std: /single gum/, carry: /fewest gums|single gum/i },
+  gluten_free_bread: { decision: 'Gluten-free bread with its flours named and the fewest gums.', cart_pick: 'Short-list gluten-free bread', tip1: 'Look for a single gum binder, such as xanthan gum, not two or more.', std: /single gum/, carry: /fewest gums|single gum/i },
   buns_rolls: { decision: 'Whole wheat buns and rolls with no added sugar.', tip1: 'Look for a list with no sugar or soybean oil after the whole wheat flour.', std: /no sugar or soybean oil/, carry: /no added sugar/i },
   pastries_muffins: { decision: 'All-butter bakery pastries, no shortening or hydrogenated oil.', cart_pick: 'All-butter bakery pastries', tip1: 'Look for butter as the only fat, with no shortening or hydrogenated oil.', std: /only fat/, carry: /all-butter/i },
   crackers: { decision: 'Whole grain crackers with olive oil, coconut oil or butter.', cart_pick: 'Short-list whole grain crackers', tip1: 'Look for whole grain flour, olive oil and salt, and little else, on the list.', std: /whole grain flour, olive oil and salt/, carry: /whole grain/i },
