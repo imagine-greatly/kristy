@@ -70,12 +70,55 @@ Return five things:
 bar, cereal, cracker, chip_snack, cookie_sweet_snack, bread, pasta_grain, sauce_condiment, dressing, nut_butter, spread_jam, yogurt, cheese, milk_plant_milk, juice, soda_drink, sports_energy_drink, water, frozen_meal, canned_protein, canned_vegetable, soup_broth, baking_ingredient, oil_fat, seasoning, supplement, other.
    Judge it from the package in front of you — the product name, the form, the packaging. If none of them fits, return "other"; do not stretch one to fit. This is a description of the product, never a judgement about it.
 
-Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null, "category": "one of the listed values"}`;
+Also return these three fields:
+
+6. "kind" — "panel" when an ingredient list or packaged-food panel is the subject; "counter" for unpackaged or fresh food or its case/carton/sticker label (meat, fish, eggs, produce, bulk, deli, or a dairy carton without an ingredient list); "not_food" for anything that is not food or drink, including soap, cleaner, cosmetics and cookware. Supplements stay "panel".
+
+7. "item" — the generic food noun, from the printed name first. Only when nothing is printed, name the food by sight. Never a brand, price or claim. Return null when it is not food.
+
+8. "claims" — printed label terms on the package, such as "pasture raised", "organic" or "grass fed", transcribed as printed. At most 12; an empty array if none. Transcribe only; never invent.
+
+Return ONLY this JSON: {"product_name": "string or null", "brand": "string or null", "ingredients": ["first ingredient", "second ingredient"], "panel": "full" | "partial" | "none", "sugars_g": number or null, "serving_g": number or null, "category": "one of the listed values", "kind": "panel" | "counter" | "not_food", "item": "string or null", "claims": []}`;
 
 // Only these three are meaningful; anything else the model invents collapses to the
 // safe end. 'partial' is the fallback for an unrecognized value ON PURPOSE — an
 // unparseable completeness claim must never be read as "I saw the whole list."
 const PANELS = new Set(['full', 'partial', 'none']);
+
+// The noun goes beside a counter card. Printed sales or treatment language does
+// not: strip these phrases and the transcribed brand before matching or display.
+export const ITEM_STOPLIST = [
+  'healthy', 'heart', 'natural', 'premium', 'fresh-tasting', 'lowers',
+  'cholesterol', 'diabetic', 'diabetics', 'immune', 'superfood', 'all-natural',
+  'no antibiotics ever', 'low fat', 'extra lean', 'lean',
+];
+const itemWords = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/** A generic noun, never a brand, price or printed treatment claim. */
+export function cleanItem(item, brand) {
+  if (typeof item !== 'string') return null;
+  let value = item.toLowerCase()
+    .replace(/[$¢]\s*\d*(?:[.,]\d+)?|\d+(?:[.,]\d+)?\s*[$¢]/g, ' ')
+    .replace(/\/\s*lb\b|\bper\s+lb\b/g, ' ')
+    .replace(/\b\d+(?:\.\d+)?\s*%\s*(?:lean|fat)\b/g, ' ')
+    .replace(/\d+(?:\s*\/\s*\d+|[.,]\d+)?/g, (number) => {
+      const ratio = number.match(/^(\d{2})\s*\/\s*(\d{1,2})$/);
+      return ratio && Number(ratio[1]) + Number(ratio[2]) === 100
+        ? `${ratio[1]}/${ratio[2]}` : ' ';
+    })
+    .replace(/[^\p{L}\d/\s]/gu, ' ');
+  const blocked = [
+    ...ITEM_STOPLIST.map(itemWords).sort((a, b) => b.length - a.length),
+    ...(typeof brand === 'string' ? itemWords(brand).split(/\s+/) : []),
+  ];
+  value = value.replace(/\s+/g, ' ').trim();
+  for (const term of blocked.filter(Boolean)) {
+    value = value.replace(new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegex(term)}(?![\\p{L}\\p{N}])`, 'gu'), ' ');
+  }
+  value = value.replace(/\s+/g, ' ').trim().slice(0, 60).trim();
+  return /\p{L}/u.test(value) ? value : null;
+}
 
 /** Defensive parse of the vision reply — same posture as parseVerdictJSON. */
 export function parseIngredientsJSON(text) {
@@ -96,7 +139,23 @@ export function parseIngredientsJSON(text) {
   const ingredients = Array.isArray(obj.ingredients) ? obj.ingredients.map(str).filter(Boolean) : [];
   const panelRaw = str(obj.panel).toLowerCase();
   const panel = ingredients.length === 0 ? 'none' : PANELS.has(panelRaw) ? panelRaw : 'partial';
+  const kind = obj.kind === 'not_food' ? 'not_food'
+    : obj.kind === 'counter' && !ingredients.length ? 'counter' : 'panel';
+  const claims = [];
+  const seen = new Set();
+  for (const claim of Array.isArray(obj.claims) ? obj.claims : []) {
+    if (typeof claim !== 'string') continue;
+    const term = claim.trim().slice(0, 40).trim();
+    const key = term.toLowerCase();
+    if (!term || seen.has(key)) continue;
+    seen.add(key);
+    claims.push(term);
+    if (claims.length === 12) break;
+  }
   return {
+    kind,
+    item: kind === 'not_food' ? null : cleanItem(obj.item, obj.brand),
+    claims,
     ingredients,
     // Closed vocabulary, and an unrecognized value becomes `other` rather than null — the
     // same posture as `panel` above. `other` plus the raw string says "we looked and it did
@@ -159,6 +218,7 @@ export async function readLabelIngredients({ base64, mediaType = 'image/jpeg' })
     parseIngredientsJSON(text) || {
       ingredients: [], productName: null, brand: null, panel: 'none',
       category: UNCATEGORIZED, categoryRaw: null,
+      kind: 'panel', item: null, claims: [],
     }
   );
 }

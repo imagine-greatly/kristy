@@ -6,6 +6,8 @@ import { imageUpload } from '../lib/upload.js';
 import { extractFromBarcode, looksNonEnglish, isReadableIngredientList } from '../lib/scanExtract.js';
 import { readLabelIngredients, sugarsPer100g } from '../lib/labelVision.js';
 import { retainProduct } from '../lib/productStore.js';
+import { matchItemToCard, matchItemToPick } from '../lib/listMatch.js';
+import { perimeterKb as kb, NO_ANSWER } from '../lib/perimeter.js';
 
 // Scan extraction — the front door of the grocery coach. Both entry points parse
 // to an ingredient list the client then POSTs to /verdict:
@@ -45,7 +47,42 @@ function readLabel(reqFile) {
      - a non-English transcription is UNREADABLE (the KB is English, so a foreign
        string matches nothing and scores as zero concerns — a silent approval);
      - `panel: 'none'` means no list was legible, which is a re-shot, not a verdict. */
-function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, servingG, category }, barcode = null) {
+export function buildLabelResult(
+  { ingredients, productName, brand, panel, sugarsG, servingG, category, kind, item, claims = [] },
+  barcode = null,
+  deps = { retain: retainProduct, card: matchItemToCard, pick: matchItemToPick, kb },
+) {
+  // These reads carry no ingredient verdict and never enter the product store.
+  // Keep the old scan envelope so older clients can still decode an honest miss.
+  const empty = { found: false, source: 'vision', product: null, ingredients: '' };
+  if (kind === 'not_food') {
+    return { ...empty, notFood: true, message: "That isn't something Kristy reads." };
+  }
+  if (kind === 'counter') {
+    const card = deps.card(item);
+    if (card) {
+      const entry = deps.kb.entries.find((e) => e.id === card.slug);
+      // Only the matched card's OWN terms can reach the sheet. A printed claim
+      // is evidence of a term being present, never new copy or its meaning.
+      const normalize = (s) => s.toLowerCase().replace(/[‘’“”]/g, '')
+        .replace(/[-\s]+/g, ' ').trim();
+      const printed = claims.filter((claim) => typeof claim === 'string').map(normalize);
+      const onLabel = [...new Set((entry?.labels_decoded || []).map((label) => label.term)
+        .filter((term) => typeof term === 'string' && term.split(' / ').some((variant) => {
+          const normalized = normalize(variant);
+          if (!normalized) return false;
+          const escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const words = new RegExp(`(?<![\\p{L}\\p{N}_])${escaped}(?![\\p{L}\\p{N}_])`, 'u');
+          return printed.some((claim) => words.test(claim));
+        })))];
+      return { ...empty, counter: { slug: card.slug, section: card.section, item, onLabel } };
+    }
+    const pick = deps.pick(item);
+    if (pick) {
+      return { ...empty, pick: { id: pick.id, line: pick.line, ...(pick.avoid ? { avoid: pick.avoid } : {}), item } };
+    }
+    return { ...empty, counterMiss: true, item, message: NO_ANSWER };
+  }
   const joined = ingredients.join(', ');
 
   if (panel === 'none' || !ingredients.length) {
@@ -76,7 +113,7 @@ function buildLabelResult({ ingredients, productName, brand, panel, sugarsG, ser
      means a photo filed under an existing product's code can never overwrite it.
      Fire-and-forget — retention is a background asset and must never delay a verdict. */
   const code = String(barcode || '').trim() || null;
-  retainProduct({
+  deps.retain({
     barcode: code,
     name: productName || null,
     brand: brand || null,

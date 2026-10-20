@@ -76,11 +76,19 @@ test('vision returns identity + list + panel completeness, and no judgment', () 
      ⚠️ THE CONDITION ON `categoryRaw`, since it is the one that is NOT a closed enum: it is
      free model text that gets PERSISTED. It is safe only while nothing renders it. **If a
      surface ever displays it, it stops being diagnostic and becomes copy nobody wrote**,
-     and it needs the same treatment as any other model output at that point. */
+     and it needs the same treatment as any other model output at that point.
+
+     scan-door-1 (2026-10-21) adds `kind`, `item`, `claims`, each with a consumer in
+     routes/scan.js `buildLabelResult`: `kind` is a closed enum (unknown → panel) that picks
+     the door; `item` passes `cleanItem` and only feeds `matchItemToCard`/`matchItemToPick`
+     (echoed as "Read as <item>"); `claims` is free model text that is NEVER rendered or
+     persisted, only compared against the matched card's own `labels_decoded` terms, and only
+     the card's term string goes out (`onLabel`). Same condition as `categoryRaw`: if a
+     surface ever renders a raw claim, it becomes copy nobody wrote. */
   for (const k of Object.keys(out)) {
     assert.ok(
       ['ingredients', 'productName', 'brand', 'panel', 'sugarsG', 'servingG',
-       'category', 'categoryRaw'].includes(k),
+       'category', 'categoryRaw', 'kind', 'item', 'claims'].includes(k),
       `unexpected field from vision: ${k}`
     );
   }
