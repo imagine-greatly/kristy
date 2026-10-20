@@ -8,6 +8,8 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { preTidy } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_1 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 kb.entries = kb.entries.map(preTidy);
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', '262bc45:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());

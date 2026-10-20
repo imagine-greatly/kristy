@@ -12,6 +12,8 @@ const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5, ...CLE
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_1 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const base = JSON.parse(git('74237ce:server/kristy_perimeter_kb.json'));
 const find = (k, id) => k.entries.find((e) => e.id === id);
 // clean-pick-9 owns its 12 ids now; this batch reads them as of 96d61e2.

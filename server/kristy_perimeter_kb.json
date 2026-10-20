@@ -128,12 +128,13 @@
         "Second choice is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council; last is imported shrimp.",
         "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
         "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes.",
-        "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water."
+        "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water.",
+        "Read the bag for the country of origin; the antibiotics Consumer Reports found were in imported shrimp raised on farms."
       ],
       "labels_decoded": [
         {
           "term": "Product of [country]",
-          "meaning": "Country-of-origin labeling — required, and worth checking."
+          "meaning": "Country-of-origin labeling: required, and worth checking."
         },
         {
           "term": "Farm-raised",
@@ -186,7 +187,10 @@
         "USDA AMS “Withdrawal of United States Standards for Livestock and Meat Marketing Claims” https://www.ams.usda.gov/rules-regulations/withdrawal-united-states-standards-livestock-and-meat-marketing-claims",
         "Federal Register 2016-00440 withdrawal notice, PDF (govinfo.gov) https://www.govinfo.gov/content/pkg/FR-2016-01-12/pdf/2016-00440.pdf",
         "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/",
-        "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf"
+        "A Greener World “Certified Grassfed Standards” (2020) https://agreenerworld.org/wp-content/uploads/2020/08/Certified-Grassfed-Standards-2020-v1.pdf",
+        "Consumer Reports “Seal: American Grassfed” https://www.consumerreports.org/food-labels/seals-and-claims/american-grassfed",
+        "PMC “Ractopamine at the Center of Decades-Long Scientific and Legal Debate” https://pmc.ncbi.nlm.nih.gov/articles/PMC9599871/",
+        "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/"
       ],
       "kristy_take": "Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for whole-life words backed by a seal.",
       "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the cut that costs least.",
@@ -196,7 +200,9 @@
         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
         "Ground and chuck are the lowest-cost way into a whole-life grass animal.",
         "At the counter, ask what the animal was finished on and for how long.",
-        "Look for no added hormones and a certifier’s seal behind the claim."
+        "Look for no added hormones and a certifier’s seal behind the claim.",
+        "Grain-finished cattle are often given antibiotics; look for ‘no antibiotics ever’ or the American Grassfed seal.",
+        "‘No added hormones’ does not rule out ractopamine, a feed drug for leanness. Look for ‘raised without ractopamine’."
       ],
       "watch_out": [
         "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
@@ -364,7 +370,8 @@
         "USDA AMS Official United States Standards for Grades of Carcass Beef",
         "USDA AMS voluntary beef grading program",
         "South Dakota State University Extension “USDA Beef Quality Grades: What do they mean?” https://extension.sdstate.edu/usda-beef-quality-grades-what-do-they-mean",
-        "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/"
+        "Nicholas Markets “Certified Angus Beef vs. USDA Prime: What’s the Difference?” https://nicholasmarkets.com/food-news/certified-angus-beef-vs-usda-prime-whats-the-difference/",
+        "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/"
       ],
       "kristy_take": "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
       "cart_pick": "100% grass-fed or grass-finished whole chuck",
@@ -376,7 +383,8 @@
         "Ground chuck runs around 80/20 lean to fat.",
         "Prime, Choice, Select is a marbling scale, top to bottom.",
         "Grading is voluntary. Ungraded is not a downgrade.",
-        "Grade and sourcing are separate questions. Neither answers the other."
+        "Grade and sourcing are separate questions. Neither answers the other.",
+        "Look for ‘100% grass fed’: see Beef."
       ],
       "labels_decoded": [
         {
@@ -458,7 +466,9 @@
         "9 CFR § 317.2 Labels: definition; required features (law.cornell.edu) https://www.law.cornell.edu/cfr/text/9/317.2",
         "NIH Office of Dietary Supplements, Vitamin A and Carotenoids, Fact Sheet for Health Professionals https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
         "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
-        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend"
+        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend",
+        "Consumer Reports “Seal: American Grassfed” https://www.consumerreports.org/food-labels/seals-and-claims/american-grassfed",
+        "PMC “Ractopamine at the Center of Decades-Long Scientific and Legal Debate” https://pmc.ncbi.nlm.nih.gov/articles/PMC9599871/"
       ],
       "kristy_take": "Federal rules keep added water, binders and organs out of ‘ground beef’, so a blend needs its own name. Plain ‘ground beef’ allows no added fat either; ‘hamburger’ may add fat.",
       "cart_pick": "Organ blend ground beef",
@@ -467,7 +477,9 @@
         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
         "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
         "‘Ground chuck/round/sirloin’ tells you the cut it came from.",
-        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name."
+        "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+        "Check for ‘grass finished’: see Beef.",
+        "On conventional ground beef, look for ‘raised without ractopamine’, a feed drug the EU and China ban."
       ],
       "labels_decoded": [
         {
@@ -2749,7 +2761,9 @@
         "Michigan State University Extension “Dates on meat packages” https://www.canr.msu.edu/news/dates_on_meat_packages_sell_by_use_by_freeze_by_packaged_on_expiration_date",
         "USDA FSIS “Food Product Dating” https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating",
         "https://www.canr.msu.edu/news/what_to_look_for_when_buying_meat",
-        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table",
+        "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
+        "Michigan State University Extension “Labeling mechanically tenderized meat products” https://www.canr.msu.edu/news/labeling_mechanically_tenderized_meat_products"
       ],
       "kristy_take": "Choose a sealed pack without leaks, then smell the meat at home. No off smell or slime: those checks tell you more than the store’s sticker.",
       "buying_tips": [
@@ -2760,7 +2774,9 @@
         "Take it from the back of the case where it is coldest, and get it home cold.",
         "Read the primal cut on the label, such as chuck or round.",
         "Check the use-by date, and freeze what will not be used in time.",
-        "Skip any package that smells off or feels slimy."
+        "Skip any package that smells off or feels slimy.",
+        "For meat that was humanely raised, look for the Animal Welfare Approved or Certified Humane seal.",
+        "Read for ‘mechanically tenderized’: see Steak."
       ],
       "labels_decoded": [
         {
@@ -3021,7 +3037,10 @@
         "Read for ‘contains X% added solution’. That is injected water and salt.",
         "The solution’s ingredients follow, heaviest first.",
         "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie.",
-        "Organic uses organic feed. The ingredient list still needs checking for added solution."
+        "Organic uses organic feed. The ingredient list still needs checking for added solution.",
+        "Skip a solution that lists sodium phosphate or sodium tripolyphosphate; uninjected pork has no added solution.",
+        "On pork, ‘humanely raised’ is backed by a seal such as Animal Welfare Approved or Certified Humane.",
+        "‘No added hormones’ on pork does not rule out antibiotics or ractopamine. Look for ‘no antibiotics ever’ and ‘raised without ractopamine’."
       ],
       "labels_decoded": [
         {
@@ -3160,7 +3179,7 @@
         "Lowest: sardines, anchovies, salmon, shrimp, scallops, tilapia, cod, pollock, catfish, canned light tuna.",
         "Middle: albacore and yellowfin tuna, halibut, grouper, snapper, mahi mahi.",
         "Highest: swordfish, shark, king mackerel, marlin, orange roughy, bigeye tuna, Gulf tilefish.",
-        "‘Light’ tuna is usually skipjack and sits well below ‘white’ albacore.",
+        "‘Light’ tuna is usually skipjack, lower in mercury than ‘white’ albacore.",
         "FDA and EPA aim the advice at pregnant and nursing women and young children. Anything medical is a doctor’s call.",
         "Sardines and canned salmon, bones left in, are shelf-stable and low on the chain. Canned is the cheapest way to eat either one."
       ],
@@ -3186,7 +3205,7 @@
       "pick_steps": [
         "Read the species on the tag: small, short-lived fish carry the least mercury.",
         "Lowest: sardines, anchovies, salmon, shrimp, cod. Highest: swordfish, shark, king mackerel, bigeye.",
-        "On tuna, ‘light’ is usually skipjack and sits well below ‘white’ albacore."
+        "On tuna, ‘light’ is usually skipjack, which carries less mercury than ‘white’ albacore."
       ],
       "science": "Mercury accumulates up the food chain, tracking size and lifespan. Albacore, yellowfin and halibut sit in the middle. FDA and EPA aim the advice at pregnant and nursing women and young children. EWG runs stricter, telling pregnant women and children to limit canned light tuna. Low mercury is not the whole picture: shrimp and tilapia are low in omega-3s, wild salmon and sardines high. Anything medical is a doctor’s call.",
       "asked_as": [
@@ -3262,7 +3281,7 @@
       "watch_out": [
         "‘Dolphin-safe’ speaks to dolphins only, and Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device, which draws in juvenile fish, sharks and other bycatch.",
         "‘Ahi’ is usually yellowfin but may be bigeye.",
-        "BPA-free is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
+        "‘BPA-free lining’ on a tin is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
       ],
       "pick_steps": [
         "Read the pack medium: olive oil or water, not unnamed ‘vegetable oil’.",
@@ -3304,7 +3323,8 @@
       "sources": [
         "NOAA Fisheries aquaculture overviews",
         "Monterey Bay Aquarium Seafood Watch species ratings",
-        "National Aquaculture Association, reporting Seafood Watch “Seafood Watch Points to U.S. Farmed Fish, Shellfish and Seaweed as ‘Super Green’” https://members.nationalaquaculture.org/news/Details/seafood-watch-points-to-u-s-farmed-fish-shellfish-and-seaweed-as-super-green-246504 (seven of ten Super Green seafoods are U.S. farmed: catfish, clams, hybrid striped bass, mussels, oysters, trout and steelhead, seaweed)"
+        "National Aquaculture Association, reporting Seafood Watch “Seafood Watch Points to U.S. Farmed Fish, Shellfish and Seaweed as ‘Super Green’” https://members.nationalaquaculture.org/news/Details/seafood-watch-points-to-u-s-farmed-fish-shellfish-and-seaweed-as-super-green-246504 (seven of ten Super Green seafoods are U.S. farmed: catfish, clams, hybrid striped bass, mussels, oysters, trout and steelhead, seaweed)",
+        "Monterey Bay Aquarium “Farmed salmon in Chile” https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile"
       ],
       "kristy_take": "Farmed shellfish feed themselves by filtering water. That is about as clean as farming protein gets.",
       "cart_pick": "Farmed mussels",
@@ -3314,7 +3334,8 @@
         "Farmed trout, arctic char and barramundi are generally well regarded.",
         "For salmon and shrimp, ask the country and look for a credible certification.",
         "Country-of-origin is required on unprocessed seafood. Read it.",
-        "‘Farmed’ alone is not a verdict. The species and the operation are the question."
+        "‘Farmed’ alone is not a verdict. The species and the operation are the question.",
+        "On ‘farm raised’ salmon, read the country: Chile uses more antibiotics than any other salmon-farming country."
       ],
       "labels_decoded": [
         {
@@ -3371,7 +3392,8 @@
         "Global Seafood Alliance Best Aquaculture Practices star system",
         "Monterey Bay Aquarium Seafood Watch methodology",
         "Marine Stewardship Council “The MSC blue fish label: what it means for you” https://www.msc.org/en-us/the-msc-blue-fish-label-what-it-means-for-you (wild-caught only; assessed on stock levels, bycatch and fishery management)",
-        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (‘dolphin-safe’ is not a sustainability claim)"
+        "Seafood Watch, Monterey Bay Aquarium “Tips for choosing sustainable canned tuna” https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna (‘dolphin-safe’ is not a sustainability claim)",
+        "SeafoodSource “Multiple groups call newest Marine Stewardship Council standards too lax” https://www.seafoodsource.com/news/environment-sustainability/multiple-groups-call-newest-marine-stewardship-council-standards-too-lax"
       ],
       "kristy_take": "MSC on a wild fishery is the seal that means what you hoped it meant.",
       "buying_tips": [
@@ -3380,7 +3402,8 @@
         "ASC: a farm, audited on environmental and social standards.",
         "BAP one to four stars: how many links were audited, from plant up to feed mill.",
         "Seafood Watch is a guide to look up, not a seal to spot.",
-        "No seal speaks to freshness. That is still your nose and your eyes."
+        "No seal speaks to freshness. That is still your nose and your eyes.",
+        "Ocean groups call ‘MSC certified’ a fairly low bar, citing loopholes and weak definitions in its standard."
       ],
       "labels_decoded": [
         {
@@ -7408,19 +7431,21 @@
         {
           "name": "EWG: BPA in Canned Food",
           "url": "https://www.ewg.org/research/bpa-canned-food"
-        }
+        },
+        "SeafoodSource “Multiple groups call newest Marine Stewardship Council standards too lax” https://www.seafoodsource.com/news/environment-sustainability/multiple-groups-call-newest-marine-stewardship-council-standards-too-lax"
       ],
       "kristy_take": "The FDA fish advice separates canned light tuna from albacore by mercury category.",
       "cart_pick": "Canned light tuna",
       "buying_tips": [
         "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
         "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining.",
-        "Read the packing medium separately from the light or white designation."
+        "Read the packing medium separately from the light or white designation.",
+        "‘MSC certified’ marks an audited wild fishery, a seal some ocean groups call a low bar."
       ],
       "watch_out": [
         "Light is not one species. Do not assume every light can is skipjack.",
         "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone.",
-        "The maker supplies the BPA-free claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
+        "‘BPA-free lining’ is the maker’s own claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
       ],
       "pick_steps": [
         "Read the front for ‘light’; FDA puts canned light tuna in Best Choices.",
@@ -8113,7 +8138,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/lamb-farm-table",
-        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table"
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/goat-farm-table",
+        "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/"
       ],
       "kristy_take": "Lamb grading is voluntary and takes age into account. Check for firm, fine-textured meat with white marbling, and read the cut name, such as shoulder or leg.",
       "cart_pick": "100% grass-fed or grass-finished lamb",
@@ -8121,7 +8147,8 @@
         "Goat has no quality grade, so firm, fine-grained flesh with white fat is the check.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
         "Pick lamb that is fine textured and firm, with white marbling.",
-        "Read the primal cut on the label, such as shoulder or leg."
+        "Read the primal cut on the label, such as shoulder or leg.",
+        "Look for ‘100% grass fed’: see “Grass-fed” (the label)."
       ],
       "watch_out": [
         "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
@@ -8241,7 +8268,8 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/bison-farm-table",
-        "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/"
+        "https://www.nutritionletter.tufts.edu/ask-experts/q-i-enjoy-eating-buffalo-meat-when-i-am-able-to-buy-it-from-local-farmers-its-very-lean-but-is-it-more-healthful-than-regular-beef-in-other-ways/",
+        "American Grassfed Association “Our Standards” https://www.americangrassfed.org/about-us/our-standards/"
       ],
       "kristy_take": "Find a federal or state inspection mark, then follow beef’s keeping and cooking rules. Ground bison should be cooked or frozen within 2 days.",
       "cart_pick": "100% grass-fed or grass-finished bison",
@@ -8250,7 +8278,8 @@
         "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
         "Expect a deeper red than beef, since bison has no marbling.",
         "Cook or freeze ground bison within 2 days, steaks within 3 to 5.",
-        "Bag the package separately to contain any leaks."
+        "Bag the package separately to contain any leaks.",
+        "Check for ‘grass finished’: see “Grass-fed” (the label)."
       ],
       "watch_out": [
         "Bison can turn tough when cooked beyond medium or at high heat."
@@ -8521,7 +8550,8 @@
         "https://extension.umaine.edu/publications/3110e/",
         "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
         "https://www.fisheries.noaa.gov/species/blue-crab",
-        "https://www.fisheries.noaa.gov/species/alaska-pollock"
+        "https://www.fisheries.noaa.gov/species/alaska-pollock",
+        "Oceana “1 in 5 seafood samples mislabeled worldwide” https://usa.oceana.org/press-releases/1-5-seafood-samples-mislabeled-worldwide-finds-new-oceana-report/"
       ],
       "kristy_take": "Movement for live crab. Shell color and a clean smell for cooked.",
       "cart_pick": "Live crabs that move their legs",
@@ -8530,7 +8560,8 @@
         "Check that live crabs move their legs.",
         "Look for bright orange to red shells on cooked crab.",
         "Smell cooked crab and skip any with an off odor.",
-        "Buy unpackaged cooked crab only from a case kept apart from raw seafood."
+        "Buy unpackaged cooked crab only from a case kept apart from raw seafood.",
+        "Read the species name and country of origin; Oceana found one in five seafood samples worldwide mislabeled."
       ],
       "watch_out": [
         "A crab that does not move may have died, and dead crab spoils fast.",
@@ -8895,7 +8926,9 @@
         "Whidbey Seafoods “Why Flash-Frozen Seafood Is the Freshest Choice You Can Make” https://whidbeyseafoods.com/blogs/education/why-flash-frozen-seafood-is-the-freshest-choice-you-can-make (frozen almost immediately after being caught, often right on the boat; rapid freezing locks in freshness, flavor and nutrients, and no large ice crystals form, so texture and integrity remain)",
         "FDA Fish and Fishery Products Hazards and Controls Guidance (sensory evaluation)",
         "NOAA Fisheries seafood handling guidance",
-        "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)"
+        "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)",
+        "The Fish Site “Warnings of sodium tripolyphosphate in fish” https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish",
+        "Nordic Catch “Tuna treated with carbon monoxide” https://nordiccatch.com/blogs/news/tuna-treated-with-carbon-monoxide"
       ],
       "kristy_take": "Species first, then where it came from. The ice and the smell confirm the rest.",
       "cart_pick": "A named species from a cold, iced case",
@@ -8912,7 +8945,9 @@
         "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
         "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
         "It should sit on plenty of ice, not in a pool of its own liquid.",
-        "Ask when it came in and whether it was previously frozen. Both are fair questions."
+        "Ask when it came in and whether it was previously frozen. Both are fair questions.",
+        "Ask for dry packed scallops and fillets; ‘wet’ means soaked in sodium tripolyphosphate, which adds water weight.",
+        "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’ stays red as it ages; untreated tuna browns."
       ],
       "watch_out": [
         "Fishy, sour or ammonia odors mean the fish stays at the store.",
@@ -8938,11 +8973,11 @@
         },
         {
           "term": "Previously frozen",
-          "meaning": "Frozen then thawed for display — common and fine; just don’t re-freeze."
+          "meaning": "Frozen then thawed for display; common and fine, just don’t re-freeze."
         },
         {
           "term": "Fresh (never frozen)",
-          "meaning": "Never frozen — but possibly several days old depending on transit."
+          "meaning": "Never frozen, but possibly several days old depending on transit."
         },
         {
           "term": "Gaping",

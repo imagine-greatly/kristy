@@ -14,6 +14,8 @@ const BASE = 'c2785ed';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_1 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
 const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
 const find = (k, id) => k.entries.find((e) => e.id === id);

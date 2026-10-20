@@ -10,7 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
-import { beforeConcern, preTidy } from './twoLinePin.js';
+import { beforeConcern, preTidy, preT6_1 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -31,7 +31,8 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, beforeConcern(now));
+    // t6-1 appended evidence sources to farmed_fish_by_species and seafood_certifications; the pass rule reads them as of 85c399e.
+    assertPassRule(t, old, beforeConcern(preT6_1(now)));
   });
 }
 

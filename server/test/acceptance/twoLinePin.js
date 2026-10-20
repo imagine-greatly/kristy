@@ -46,7 +46,8 @@ export const TWO_LINE = {
       "Second choice is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council; last is imported shrimp.",
       "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
       "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes.",
-      "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water."
+      "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water.",
+      "Read the bag for the country of origin; the antibiotics Consumer Reports found were in imported shrimp raised on farms."
     ],
     "watch_out": [
       "Where wild American is not stocked, check for a BAP or ASC certification. A label alone is not proof; antibiotics showed on four samples carrying one common label.",
@@ -78,7 +79,9 @@ export const TWO_LINE = {
       "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
       "Ground and chuck are the lowest-cost way into a whole-life grass animal.",
       "At the counter, ask what the animal was finished on and for how long.",
-      "Look for no added hormones and a certifier’s seal behind the claim."
+      "Look for no added hormones and a certifier’s seal behind the claim.",
+      "Grain-finished cattle are often given antibiotics; look for ‘no antibiotics ever’ or the American Grassfed seal.",
+      "‘No added hormones’ does not rule out ractopamine, a feed drug for leanness. Look for ‘raised without ractopamine’."
     ]
   },
   "rotisserie_chicken": {
@@ -118,7 +121,8 @@ export const TWO_LINE = {
       "Ground chuck runs around 80/20 lean to fat.",
       "Prime, Choice, Select is a marbling scale, top to bottom.",
       "Grading is voluntary. Ungraded is not a downgrade.",
-      "Grade and sourcing are separate questions. Neither answers the other."
+      "Grade and sourcing are separate questions. Neither answers the other.",
+      "Look for ‘100% grass fed’: see Beef."
     ],
     "cart_pick": "100% grass-fed or grass-finished whole chuck",
     "pick_steps": [
@@ -150,7 +154,9 @@ export const TWO_LINE = {
       "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
       "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
       "‘Ground chuck/round/sirloin’ tells you the cut it came from.",
-      "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name."
+      "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+      "Check for ‘grass finished’: see Beef.",
+      "On conventional ground beef, look for ‘raised without ractopamine’, a feed drug the EU and China ban."
     ]
   },
   "egg_labels": {
@@ -726,7 +732,9 @@ export const TWO_LINE = {
       "Take it from the back of the case where it is coldest, and get it home cold.",
       "Read the primal cut on the label, such as chuck or round.",
       "Check the use-by date, and freeze what will not be used in time.",
-      "Skip any package that smells off or feels slimy."
+      "Skip any package that smells off or feels slimy.",
+      "For meat that was humanely raised, look for the Animal Welfare Approved or Certified Humane seal.",
+      "Read for ‘mechanically tenderized’: see Steak."
     ]
   },
   "butcher_counter_asking": {
@@ -764,7 +772,10 @@ export const TWO_LINE = {
       "Read for ‘contains X% added solution’. That is injected water and salt.",
       "The solution’s ingredients follow, heaviest first.",
       "Hormones are banned in pork production, so ‘no added hormones’ on pork is a freebie.",
-      "Organic uses organic feed. The ingredient list still needs checking for added solution."
+      "Organic uses organic feed. The ingredient list still needs checking for added solution.",
+      "Skip a solution that lists sodium phosphate or sodium tripolyphosphate; uninjected pork has no added solution.",
+      "On pork, ‘humanely raised’ is backed by a seal such as Animal Welfare Approved or Certified Humane.",
+      "‘No added hormones’ on pork does not rule out antibiotics or ractopamine. Look for ‘no antibiotics ever’ and ‘raised without ractopamine’."
     ],
     "question": "Which pork cut should you buy, and what does ‘solution added’ mean?",
     "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
@@ -837,7 +848,7 @@ export const TWO_LINE = {
       "Lowest: sardines, anchovies, salmon, shrimp, scallops, tilapia, cod, pollock, catfish, canned light tuna.",
       "Middle: albacore and yellowfin tuna, halibut, grouper, snapper, mahi mahi.",
       "Highest: swordfish, shark, king mackerel, marlin, orange roughy, bigeye tuna, Gulf tilefish.",
-      "‘Light’ tuna is usually skipjack and sits well below ‘white’ albacore.",
+      "‘Light’ tuna is usually skipjack, lower in mercury than ‘white’ albacore.",
       "FDA and EPA aim the advice at pregnant and nursing women and young children. Anything medical is a doctor’s call.",
       "Sardines and canned salmon, bones left in, are shelf-stable and low on the chain. Canned is the cheapest way to eat either one."
     ]
@@ -854,7 +865,7 @@ export const TWO_LINE = {
     "watch_out": [
       "‘Dolphin-safe’ speaks to dolphins only, and Seafood Watch says it does not mean the tuna is sustainable. The terms that do are FAD-free, free school or school-caught. They mean purse seines used without a floating device, which draws in juvenile fish, sharks and other bycatch.",
       "‘Ahi’ is usually yellowfin but may be bigeye.",
-      "BPA-free is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
+      "‘BPA-free lining’ on a tin is a claim from the maker. EWG found makers define it as they wish. Its survey found that makers dropping BPA did not disclose their replacement lining."
     ],
     "sources": [
       "USDA FoodData Central (canned fish composition)",
@@ -874,7 +885,8 @@ export const TWO_LINE = {
       "Farmed trout, arctic char and barramundi are generally well regarded.",
       "For salmon and shrimp, ask the country and look for a credible certification.",
       "Country-of-origin is required on unprocessed seafood. Read it.",
-      "‘Farmed’ alone is not a verdict. The species and the operation are the question."
+      "‘Farmed’ alone is not a verdict. The species and the operation are the question.",
+      "On ‘farm raised’ salmon, read the country: Chile uses more antibiotics than any other salmon-farming country."
     ]
   },
   "seafood_certifications": {
@@ -885,7 +897,8 @@ export const TWO_LINE = {
       "ASC: a farm, audited on environmental and social standards.",
       "BAP one to four stars: how many links were audited, from plant up to feed mill.",
       "Seafood Watch is a guide to look up, not a seal to spot.",
-      "No seal speaks to freshness. That is still your nose and your eyes."
+      "No seal speaks to freshness. That is still your nose and your eyes.",
+      "Ocean groups call ‘MSC certified’ a fairly low bar, citing loopholes and weak definitions in its standard."
     ]
   },
   "produce_ripeness_by_item": {
@@ -1646,12 +1659,13 @@ export const TWO_LINE = {
     "buying_tips": [
       "FDA puts canned light tuna in Best Choices for mercury, and albacore in Good Choices.",
       "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining.",
-      "Read the packing medium separately from the light or white designation."
+      "Read the packing medium separately from the light or white designation.",
+      "‘MSC certified’ marks an audited wild fishery, a seal some ocean groups call a low bar."
     ],
     "watch_out": [
       "Light is not one species. Do not assume every light can is skipjack.",
       "FDA’s frequency advice is specific to pregnancy, breastfeeding, and children. Use its age and life-stage guidance rather than one rule for everyone.",
-      "The maker supplies the BPA-free claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
+      "‘BPA-free lining’ is the maker’s own claim. EWG’s survey says makers can define BPA-free as they wish. Those that dropped BPA did not disclose what lining replaced it."
     ],
     "sources": [
       "https://www.fda.gov/food/consumers/advice-about-eating-fish",
@@ -1660,7 +1674,8 @@ export const TWO_LINE = {
       {
         "name": "EWG: BPA in Canned Food",
         "url": "https://www.ewg.org/research/bpa-canned-food"
-      }
+      },
+      "SeafoodSource “Multiple groups call newest Marine Stewardship Council standards too lax” https://www.seafoodsource.com/news/environment-sustainability/multiple-groups-call-newest-marine-stewardship-council-standards-too-lax"
     ]
   },
   "chicken_breast": {
@@ -1874,7 +1889,8 @@ export const TWO_LINE = {
       "Goat has no quality grade, so firm, fine-grained flesh with white fat is the check.",
       "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
       "Pick lamb that is fine textured and firm, with white marbling.",
-      "Read the primal cut on the label, such as shoulder or leg."
+      "Read the primal cut on the label, such as shoulder or leg.",
+      "Look for ‘100% grass fed’: see “Grass-fed” (the label)."
     ]
   },
   "organ_meats": {
@@ -1895,7 +1911,8 @@ export const TWO_LINE = {
       "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
       "Expect a deeper red than beef, since bison has no marbling.",
       "Cook or freeze ground bison within 2 days, steaks within 3 to 5.",
-      "Bag the package separately to contain any leaks."
+      "Bag the package separately to contain any leaks.",
+      "Check for ‘grass finished’: see “Grass-fed” (the label)."
     ]
   },
   "venison_game": {
@@ -1924,7 +1941,8 @@ export const TWO_LINE = {
       "Check that live crabs move their legs.",
       "Look for bright orange to red shells on cooked crab.",
       "Smell cooked crab and skip any with an off odor.",
-      "Buy unpackaged cooked crab only from a case kept apart from raw seafood."
+      "Buy unpackaged cooked crab only from a case kept apart from raw seafood.",
+      "Read the species name and country of origin; Oceana found one in five seafood samples worldwide mislabeled."
     ]
   },
   "lobster": {
@@ -1996,7 +2014,9 @@ export const TWO_LINE = {
       "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
       "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
       "It should sit on plenty of ice, not in a pool of its own liquid.",
-      "Ask when it came in and whether it was previously frozen. Both are fair questions."
+      "Ask when it came in and whether it was previously frozen. Both are fair questions.",
+      "Ask for dry packed scallops and fillets; ‘wet’ means soaked in sodium tripolyphosphate, which adds water weight.",
+      "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’ stays red as it ages; untreated tuna browns."
     ]
   },
   "sprouted_grain_bread": {
@@ -3599,3 +3619,12 @@ export const prePickAvoid = (e) => {
   const { avoid, ...rest } = e;
   return rest;
 };
+
+// t6-1 (2026-10-20): T6 avoid sweep, meat and seafood. Register avoid lines appended to buying_tips,
+// the BPA-free watch_out line reworded on the two canned-fish cards, "well below" dropped from
+// mercury_by_fish, new sources appended. Decisions and carts stayed. Older batch tests read these
+// as of 85c399e, and t6_1.test.js owns the new text.
+export const T6_1 = new Set(['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'lamb_goat', 'bison', 'judging_meat_at_the_case', 'pork_cuts_and_enhanced', 'shrimp_imported_vs_domestic', 'mercury_by_fish', 'canned_fish_choosing', 'farmed_fish_by_species', 'canned_tuna', 'crab', 'seafood_certifications', 'seafood_counter']);
+export const T6_1_BASE = '85c399e';
+const PRE_T6_1 = JSON.parse(execFileSync('git', ['show', `${T6_1_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preT6_1 = (e) => (e && T6_1.has(e.id) ? PRE_T6_1.entries.find((x) => x.id === e.id) : e);

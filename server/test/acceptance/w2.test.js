@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preT6_1 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import { nonEmpty } from '../../lib/testGuards.js';
 import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7, preCleanPick9, preCleanPick11, preCleanPick8 } from './twoLinePin.js';

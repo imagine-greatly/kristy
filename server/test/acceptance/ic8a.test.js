@@ -8,6 +8,8 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preT6_1 } from "./twoLinePin.js";
+kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 import { beforeConcern, preCleanPick9, preCleanPick10, preCleanPick11, preCleanPick12, preCleanPick8 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
