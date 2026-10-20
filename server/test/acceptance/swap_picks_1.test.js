@@ -35,7 +35,7 @@ const SWAPS = nonEmpty([
   ['pick_sports_drink', ['sports drink', 'sports drinks'], ['coconut_water'], 'bulk_pantry'],
   ['pick_energy_drink', ['energy drink', 'energy drinks'], ['tea'], 'bulk_pantry'],
   ['pick_fruit_snacks', ['fruit snack', 'fruit snacks'], ['dried_fruit'], 'bulk_pantry'],
-  ['pick_whipped_topping', ['whipped topping', 'whipped toppings', 'cool whip'], ['cream_vs_creamer'], 'dairy'],
+  ['pick_whipped_topping', ['whipped topping', 'whipped toppings'], ['cream_vs_creamer'], 'dairy'],
 ], 'swap inventory', 8);
 const NEW_IDS = new Set(SWAPS.map(([id]) => id));
 const NEGATIVES = nonEmpty([

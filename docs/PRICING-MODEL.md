@@ -39,7 +39,7 @@ disagree on nearly every point. Where a section says what exists today it is mar
   same argument as the greyed list. **What stays locked is SEEDING**, because "same as last
   week" builds an active trip, and an active trip is the list. See §4.
   ⚠️ **Superseded 2026-10-02 by Ruling F:** seeding (`POST /trips/next`) is FREE too; the haul is free (ruled in `5cf8330`); the only trip-allowance gate is `POST /trips/new` (starting a trip = shop mode). `/trips/complete`, `/trips/import`, `/trips/seedable`, `/haul` ungated.
-- **$5.99/month, $44.99/year.**
+- **$6.99/month, $44.99/year.** (Pricing B, Devon 2026-10-21; was $5.99/month. Saving 46%.)
 
 ### Why the Counter stays free — a conversion argument, not generosity
 

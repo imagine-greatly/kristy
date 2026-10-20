@@ -165,7 +165,7 @@ Phone/email: companion “Phone sign-in”.
 - Eight essentials full/unmetered, `ESSENTIALS` two/section, mark/keep authored order, never reorder; teaser geometry never words; separate `free_reads_used`, signed-out localStorage meter.
 - Guests `purchasable={false}` until sign-in works; ask fourth full-read tap, render ACTION required, `UPGRADE_COPY` one key/no chrome.
 - Only `CounterAsk` → `askCounter`, only `cardMeter` → `fetchCounterFull`/`spendRead`/`readsSpent`.
-- $5.99/month, $44.99/year; price ids config never client; author only `MONTHLY_CENTS`/`ANNUAL_CENTS` in `client/src/lib/pricing.js`, mirrored `mobile/src/lib/pricing.ts`; monthly/saving derived, saving FLOORED; no hardcoded figures elsewhere.
+- $6.99/month, $44.99/year (B, Devon 2026-10-21); iOS authors only `Pricing.swift` cents; frozen `client/src`/`mobile/` keep $5.99 (web redirects); price ids config never client; saving derived, FLOORED; no hardcoded figures elsewhere.
 - Price changes → recreate Stripe Prices/update `STRIPE_PRICE_MONTHLY`/`STRIPE_PRICE_ANNUAL`, stale ids silently charge old amount.
 - Trial `POST /api/subscription/trial` only, BY EXISTENCE return `subscriptions` row untouched; goal grants nothing; no schema data writes, backfill `supabase/backfill_trials.sql`.
 - Sentence cart: free `LIST_COMPOSE_FREE_LIMIT` 12/day, premium exempt, both doors together; over-budget never upsell; guest bucket by model reach not route per HANDLER; scan 30 SCANS/hour ×2 hits, export/assert multiplication.

@@ -1482,7 +1482,7 @@ trial, trip count, ask or entitlement):*
   calls `askCounter`, or outside `cardMeter` calls `fetchCounterFull` / `spendRead` / `readsSpent`.
 
 *Prices, the trial door and the budgets*
-- $5.99/month, $44.99/year. Price ids are configuration, never seen by the client. Two numbers
+- $6.99/month, $44.99/year (pricing B, Devon 2026-10-21; was $5.99). Price ids are configuration, never seen by the client. Two numbers
   authored (`MONTHLY_CENTS`, `ANNUAL_CENTS` in `client/src/lib/pricing.js`, mirrored in
   `mobile/src/lib/pricing.ts`); effective monthly and saving are derived, saving FLOORED.
   `server/lib/pricing.test.js` fails on any hardcoded figure elsewhere.

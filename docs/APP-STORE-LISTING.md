@@ -143,7 +143,7 @@ WHAT MEMBERSHIP BUYS
 
 The depth behind each card — the full sourced read, what to look for, what to watch out for, and the label language decoded. Three full reads are free to try, and eight essential cards are always full for everyone.
 
-Kristy Membership is $5.99 per month or $44.99 per year. Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless it is turned off at least 24 hours before the end of the current period, and you can manage or cancel it in your Apple Account settings at any time.
+Kristy Membership is $6.99 per month or $44.99 per year. Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless it is turned off at least 24 hours before the end of the current period, and you can manage or cancel it in your Apple Account settings at any time.
 
 Privacy policy: https://kristyapproved.com/privacy
 Terms of use: https://kristyapproved.com/terms
@@ -328,7 +328,7 @@ No account is needed to use Kristy. The app opens straight into the free
 experience: scanning, the counter (ask or browse), building and walking a
 shopping list, and the haul.
 
-Membership ($5.99/month, $44.99/year) unlocks the depth behind each counter
+Membership ($6.99/month, $44.99/year) unlocks the depth behind each counter
 card. Three full reads are free; the upgrade prompt appears on the fourth.
 Eight essential cards are always full for everyone.
 
