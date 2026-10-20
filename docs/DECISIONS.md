@@ -8,6 +8,55 @@
 > **If you are changing a rule, change it in `CLAUDE.md` and add the account here.** A rule that
 > lives only in this file is a rule that stops applying.
 
+## The stance — locked 2026-10-20, never revisited
+
+**Stance, locked 2026-10-20:** nature first, closest to source; organic a floor; per-item ladder + avoid list; small over big, unnamed; holistic sources judge, government = raw fact; “look for”.
+
+Devon 2026-10-20: "lock it, you got it". Built from card alignment (10-14), cards talk (10-14),
+guided shopping (10-02), concern register (10-18), fewer ingredients (10-19), sourcing stance
+(09-20, 10-07, 10-20) and the beyond-organic direction (10-20, quoted in `docs/CLEAN-PICK-PLAN.md`).
+
+1. **Why we exist.** Kristy walks a shopper through the grocery store, item by item, toward every
+   food's best self: the version closest to how nature made it. Holistic and anti-mainstream; not a
+   calorie tracker, not a government channel, not a diet app.
+2. **Nature first, closest to the source.** Every food is judged by how close it stays to its
+   natural state: how it was grown or raised, what it ate, what was sprayed on it, what was done to
+   it after harvest. A short list of high-quality ingredients beats a long one (cold-pressed almond
+   milk, almonds and water, beats a dozen-ingredient carton). No seed oils, no additives, no
+   synthetics, no fortification standing in for real food; unfortified first. Natural fats only:
+   butter, ghee, tallow, olive oil, coconut oil; never avocado oil. Tradition is food-worth:
+   naturally brewed, raw and unfiltered, lacto-fermented, home-cured, local.
+3. **Every item climbs its own ladder; organic is the floor, not the goal.**
+   - Meat: butcher first; 100% grass-fed and grass-finished beef and lamb; pasture-raised pork and poultry.
+   - Eggs: feed first (soy-free, corn-free, pasture-raised), then organic.
+   - Dairy: grass-fed, few ingredients, no gums; raw or gently pasteurized above ultra-pasteurized.
+   - Fish: wild-caught, and ask where it was caught.
+   - Produce: local, in season, unsprayed (e.g. lettuce: unsprayed greenhouse-grown or a small farm),
+     then organic with a note on what organic still allows; frozen counts when the bag lists only the food.
+   - Packaged: a short list of real ingredients, natural fats only.
+   - Sweeteners: raw honey, pure maple, organic coconut sugar, never the ordinary version.
+   Every card gives the best version and a findable close second. Kristy never refuses an item.
+4. **Every item has an avoid list** of what the average shopper doesn't know, named on the item it
+   applies to: seed oils, celery powder (hidden nitrite), carrageenan, gums, synthetic dyes and
+   sweeteners, pre-harvest glyphosate on oats and beans, fungicide coatings on citrus, wax on apples,
+   chlorine wash on bagged greens, sprout inhibitors on potatoes, rBST, ultra-pasteurization,
+   packaging chemicals. The register is `docs/CONCERN-REGISTER.md`.
+5. **Small over big.** Small and local growers, farmers markets and small producers over national
+   brands, always generically. No brand is ever named, good or bad (non-negotiable #9).
+6. **How Kristy guides in the store.** The list comes first; shop mode walks it section by section.
+   Shop mode shows two lines per item (headline + first tip), and that is where the voice and warmth
+   live. Cards talk: the why at the shelf, not a label recital. Every label term gets a plain, true
+   gloss where used. Section rules hold one holistic principle per aisle, never safety or handling
+   trivia. Language is a neutral "look for"; "ask" only where a person exists (meat, fish, deli
+   counter, bakery, farmers market). Calm and skimmable. The scan stays plain.
+7. **Sources.** Holistic and independent sources set the position (EWG, Weston A. Price, Cornucopia,
+   Real Organic Project, AGA, independent residue testing, farmers, ranchers, traditional food
+   writers). Government sources give raw fact only: what a label legally means, that a residue was
+   detected. Never repeat a mainstream reassurance ("conventional is fine", "safe levels",
+   "heart-healthy" seed oils). A missing holistic angle → fetch sources for it, never cut it.
+8. **Guardrails that stay.** Claims are about the food (how it is grown and made), never what it
+   does to the body (#3). Every point traces to a source (#2). No brand names, no prices, no first person.
+
 ## Load-bearing decisions (do not regress these)
 
 **Scoring and the KB**

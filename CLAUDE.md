@@ -71,7 +71,8 @@ repo. A dropped session leaves work in a state, not an instruction; never infer 
 
 A **grocery coach for the whole store**: scans vet packaged food, counter answers unpackaged food (meat/fish/eggs/produce/dairy/bulk), cart is center, haul reads the trip.
 **Kristy is not a calorie tracker.** No macro cards, meal logging, “logged it” UI or macro chat asides (`macroGuard`).
-Account: `docs/DECISIONS.md`, “What Kristy is”.
+**Stance, locked 2026-10-20:** nature first, closest to source; organic a floor; per-item ladder + avoid list; small over big, unnamed; holistic sources judge, government = raw fact; “look for”.
+Accounts: `docs/DECISIONS.md`, “What Kristy is”/“The stance”.
 
 ## Non-negotiables
 
@@ -212,13 +213,13 @@ Phone/email: companion “Phone sign-in”.
 
 Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
 
-- ⏳ `completedTrips` on `GET /api/trips/seedable` (`docs/PRICING-MODEL.md` §3a): client half built (`TripAllowance.reconciled`); downstream of one SIWA token exchange.
+- ⏳ `completedTrips` on `GET /api/trips/seedable` (§3a): client half built (`TripAllowance.reconciled`); awaits SIWA exchange.
 - ⛔ Do not widen the product-category vocabulary to fix a filing problem (the aisle is decided in `scanExtract.js`).
-- Holding a stack: identify held work by SUBJECT (`git log --oneline --reverse origin/main..HEAD`), never by hash or "ahead N". Urgent work cherry-picks past; the rebase afterwards is not optional. A cleared blocker is not an approval.
+- Holding a stack: identify held work by SUBJECT (`git log --oneline --reverse origin/main..HEAD`), never by hash or "ahead N". Urgent work cherry-picks past; then rebase, always. A cleared blocker is not an approval.
 
 ### Infrastructure state
 - ⚠️ `server/.env`: real Supabase credentials; placeholder `ANTHROPIC_API_KEY` (401); `USDA_API_KEY`
-  and Stripe keys empty. Model-dependent behaviour cannot be verified locally.
+  and Stripe keys empty. Model behaviour unverifiable locally.
 - ✅ `product_category_version.sql` applied (measured 2026-09-21, real select).
 - ⛔ `push_tokens.sql` NOT applied — table missing from schema cache (measured 2026-09-21).
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
@@ -228,11 +229,10 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
   - `kristy_perimeter_kb.json`: **211 entries — 181 cards + 30 picks** at `297895d`, 2026-10-18.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
   - KB and table agree at 181 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
-- ⚠️ Accounts gate revenue; the rail is Sign in with Apple. `GET /auth/v1/settings` cannot prove
-  the client id; only a completed token exchange can, and none has. No accounts exist on any rail.
-- 🐞 The simulator cannot prove the token exchange: the simulator device has no Apple account
-  (`defaults read MobileMeAccounts` is the wrong check; read the account store). Runbook:
-  `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
+- ⚠️ Accounts gate revenue; rail is SIWA. Only a completed token exchange proves the client id
+  (`/auth/v1/settings` can't); none has. No accounts yet.
+- 🐞 Simulator can't prove the exchange (no Apple account; read the account store, not
+  `MobileMeAccounts`): `kristy-ios/docs/ios-specs/siwa-config-runbook.md`.
 
 ## Companion docs
 
