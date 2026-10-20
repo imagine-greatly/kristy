@@ -6217,6 +6217,7 @@
         "mini cucumbers"
       ],
       "decision": "Firm cucumbers labeled grown without sprays from a local or greenhouse grower, else organic.",
+      "avoid": "Pass on cucumbers coated with wax.",
       "sources": [
         {
           "name": "Nebraska Extension: Cucumbers",
@@ -6257,6 +6258,7 @@
         "corn cob"
       ],
       "decision": "Organic corn with green husks and fresh silk, without dried-out ears.",
+      "avoid": "Skip corn labeled bioengineered.",
       "sources": [
         {
           "name": "Nebraska Extension: Sweet Corn",
@@ -6501,6 +6503,7 @@
         "orange juices"
       ],
       "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
+      "avoid": "Skip juice listing benzoate preservatives or artificial color.",
       "sources": [
         {
           "name": "FDA: What You Need to Know About Juice Safety",
@@ -6580,6 +6583,7 @@
         "blocks of tofu"
       ],
       "decision": "Organic tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
+      "avoid": "Skip tofu labeled bioengineered.",
       "sources": [
         {
           "name": "Food Hero (Oregon State University Extension): All About Tofu",

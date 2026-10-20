@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8 } from './twoLinePin.js';
+import { CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8, prePickAvoid } from './twoLinePin.js';
 import { lintCard, lintPick } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 
@@ -348,12 +348,12 @@ test('C1 every B9 field equals the set value and nothing else on the 12 entries 
     assert.ok(live(id) && was(id), `${id} missing`);
     nonEmpty(Object.keys(SET[id]), `${id} fields`, 1);
     for (const [f, v] of Object.entries(SET[id])) assert.deepEqual(live(id)[f], v, `${id}.${f}`);
-    assert.deepEqual(live(id), { ...structuredClone(was(id)), ...structuredClone(SET[id]) }, id);
+    assert.deepEqual(prePickAvoid(live(id)), { ...structuredClone(was(id)), ...structuredClone(SET[id]) }, id);
   }
 });
 
 test('C2 every entry outside B9 deepEquals 96d61e2; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+  const others = kb.entries.map(prePickAvoid).map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
   nonEmpty(others, 'others', 189);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

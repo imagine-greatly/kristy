@@ -6,7 +6,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick8 } from './twoLinePin.js';
+import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick8, prePickAvoid } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(preCleanPick5(e)))));
@@ -88,7 +88,7 @@ test('C4 pick_juice keeps its facts and names a dye', () => {
   assert.match(d, /warning label/i);
   assert.match(d, /\bdyes?\b|\bRed 40\b|\bYellow [56]\b|\bBlue 1\b/i);
   assert.ok(d.split(/\s+/).length <= 20, `pick_juice decision too long: ${d}`);
-  assert.deepEqual(Object.keys(card('pick_juice')).sort(), Object.keys(was('pick_juice')).sort(), 'pick shape changed');
+  assert.deepEqual(Object.keys(prePickAvoid(card('pick_juice'))).sort(), Object.keys(was('pick_juice')).sort(), 'pick shape changed');
 });
 
 test('C5 sources come from the concern archive', () => {

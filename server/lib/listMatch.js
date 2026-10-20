@@ -224,7 +224,7 @@ export function matchItemToCard(name) {
  * cannot pick up a fresh-tomato line. No home / label check is needed — `lintPick` refuses
  * a pick filed there. `pool` is injectable because the corpus holds no picks yet.
  *
- * @returns {{ id:string, line:string }|null}
+ * @returns {{ id:string, line:string, avoid?:string }|null}
  */
 export function matchItemToPick(name, pool = perimeterKb.entries || []) {
   const q = String(name || '').trim();
@@ -233,7 +233,7 @@ export function matchItemToPick(name, pool = perimeterKb.entries || []) {
     if (c.score < CONFIDENT || c.aliasScore <= 0) continue;
     if (!c.entry.decision) continue;
     if (!aliasCoversRow(q, c.entry)) continue;
-    return { id: c.entry.id, line: c.entry.decision };
+    return { id: c.entry.id, line: c.entry.decision, ...(c.entry.avoid ? { avoid: c.entry.avoid } : {}) };
   }
   return null;
 }
@@ -408,7 +408,7 @@ export function attachCards(list, { log = true, pickPool } = {}) {
       // Cards first, picks only where no card attached. A pick is authored guidance, so a
       // row that gets one is not a gap.
       const pick = matchItemToPick(it.name, pickPool);
-      if (pick) return { ...it, carded: true, pickLine: pick.line, pickId: pick.id };
+      if (pick) return { ...it, carded: true, pickLine: pick.line, ...(pick.avoid ? { pickAvoid: pick.avoid } : {}), pickId: pick.id };
       // The miss IS the product signal. Someone writing "kombucha" every week with nothing
       // behind it is the authoring queue writing itself out of real intent, which is the
       // one thing you cannot collect retroactively.

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
+import { CLEAN_PICK_7, CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick10, preCleanPick9, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8, prePickAvoid } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -55,7 +55,7 @@ nonEmpty(IDS, 'IDS', 17);
 test('C1 the 17 picks equal their base entries with only the decision replaced, each naming its own item organic', () => {
   for (const id of IDS) {
     assert.ok(live(id) && was(id), `${id} missing`);
-    assert.deepEqual(live(id), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
+    assert.deepEqual(prePickAvoid(live(id)), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
     assert.match(live(id).decision, BECAME[id].carry, `${id} carry`);
   }
 });

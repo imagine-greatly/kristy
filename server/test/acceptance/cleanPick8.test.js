@@ -9,7 +9,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, lintSections, words as lintWords } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_8 } from './twoLinePin.js';
+import { CLEAN_PICK_8, prePickAvoid } from './twoLinePin.js';
 
 const BASE = '125244d';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -389,7 +389,7 @@ test('C1b the 4 unchanged members are byte-equal to the base; avoid-only cards k
 });
 
 test('C2 every entry outside B8 deepEquals the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.filter((e) => !CLEAN_PICK_8.has(e.id));
+  const others = kb.entries.map(prePickAvoid).filter((e) => !CLEAN_PICK_8.has(e.id));
   nonEmpty(others, 'others', base.entries.length - 13);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);

@@ -3589,3 +3589,13 @@ export const preCleanPick12 = (e) => (e && CLEAN_PICK_12.has(e.id) ? PRE_CP12.en
 export const CLEAN_PICK_8 = new Set(['pick_sausage', 'pick_egg_whites', 'pick_soup_bones', 'pick_jerky', 'popcorn', 'oats_steelcut_rolled_instant', 'beans_dried_vs_canned', 'pasta_dry', 'grains_beyond_rice', 'raw_cider_vinegar', 'potato_chips', 'tea', 'coffee_beans']);
 const PRE_CP8 = JSON.parse(execFileSync('git', ['show', '125244d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preCleanPick8 = (e) => (e && CLEAN_PICK_8.has(e.id) ? PRE_CP8.entries.find((x) => x.id === e.id) : e);
+
+// pick-avoid-1: the only change is an `avoid` sentence on four picks. Strip it so the
+// earlier batches' byte-equal pins still compare the fields they own; the strings
+// themselves are pinned in lib/pickAvoid.test.js.
+export const PICK_AVOID_1 = new Set(['pick_corn', 'pick_tofu', 'pick_juice', 'pick_cucumbers']);
+export const prePickAvoid = (e) => {
+  if (!e || !PICK_AVOID_1.has(e.id) || !('avoid' in e)) return e;
+  const { avoid, ...rest } = e;
+  return rest;
+};

@@ -89,6 +89,7 @@ export function sanitizeList(list) {
       // The pick line a card-less row earned (listMatch.js). Additive: never alongside a
       // `cardSlug`, and it has to survive the save or `carded` hides its absence forever.
       ...(it.pickLine ? { pickLine: String(it.pickLine).slice(0, 200) } : {}),
+      ...(typeof it.pickAvoid === 'string' && it.pickAvoid.trim() ? { pickAvoid: it.pickAvoid.trim().slice(0, 200) } : {}),
       ...(it.pickId ? { pickId: String(it.pickId).slice(0, 64) } : {}),
       ...(it.carded ? { carded: true } : {}),
       // ── Imported-list fields (Block 8). These carry the AUTONOMY guarantees, so

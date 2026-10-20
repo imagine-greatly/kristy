@@ -811,6 +811,8 @@ export function mechanicalVeto(line) {
 // share the work with, so it gets two more and no more — past this it is a paragraph a
 // shopper reads with one hand while holding the thing it describes.
 export const MAX_PICK_WORDS = 16;
+// The avoid line under it: one label term to steer clear of, so fewer words still.
+export const MAX_PICK_AVOID_WORDS = 12;
 
 // A pick is a food, so it files under a counter. `label_terms` is a reference section, the
 // same exclusion the list matcher applies at attach (NON_AISLE_SECTIONS in listMatch.js): a
@@ -866,6 +868,40 @@ const hasUrl = (s) => /https?:\/\/\S+/.test(String(s || ''));
 // `us` is lowercase-only so a country of origin ("US grown") does not read as a pronoun.
 const hasFirstPerson = (line) =>
   /\bI\b/.test(line) || /\b(me|my|mine|we|our|ours)\b/i.test(line) || /\bus\b/.test(line);
+
+// The string bar every sentence on a pick clears. `code` prefixes the finding so a
+// decision failure and an avoid failure read apart; the rules are the same.
+function lintPickSentence(line, max, code, fail) {
+  // Exactly one sentence, closed with a period. Two sentences is a card's summary; a
+  // fragment is a label.
+  const terminals = (line.match(/[.!?](?=\s|$)/g) || []).length;
+  if (terminals !== 1 || !line.endsWith('.')) {
+    fail(`${code}_NOT_ONE_SENTENCE`, `exactly one sentence ending in a period: "${line}"`);
+  }
+  if (/\?/.test(line)) fail(`${code}_QUESTION`, `a pick states, it never asks: "${line}"`);
+  if (words(line) > max) {
+    fail(`${code}_TOO_LONG`, `${words(line)}w > ${max}: ${line}`);
+  }
+  if (hasFirstPerson(line)) {
+    fail(`${code}_FIRST_PERSON`, `no I/me/my/we/our on any line Kristy speaks: "${line}"`);
+  }
+  if (/—/.test(line)) fail(`${code}_EM_DASH`, `no em-dash asides: "${line}"`);
+  // No digits. A number is a measurement, and a measurement is a claim with a source a
+  // list row cannot show. "Heavy for its size", never "over 200g".
+  if (/\d/.test(line)) fail(`${code}_DIGIT`, `no digits on a pick line: "${line}"`);
+  const vetoed = mechanicalVeto(line);
+  if (vetoed) {
+    fail(
+      `${code}_NOT_MECHANICAL`,
+      `"${vetoed}" is about the body, not the food. A pick describes surface, weight, smell, ` +
+        `color, firmness, date or a label word — what happens to the food, never to the shopper: "${line}"`
+    );
+  }
+  // Same house copy as every other line.
+  const brit = britishSpellings(line);
+  if (brit.length) fail('COPY_BRITISH', `British spelling: ${brit.map((w) => `"${w}"`).join(', ')} — the corpus is American`);
+  if (STRAIGHT_QUOTE.test(line)) fail('COPY_STRAIGHT_QUOTE', `a straight quote or apostrophe in: "${line}" — the corpus uses “ ” and ’`);
+}
 
 export function lintPick(entry) {
   const out = [];
@@ -942,36 +978,15 @@ export function lintPick(entry) {
 
   // ── The line ──
   const line = String(e.decision || '').trim();
-  if (line) {
-    // Exactly one sentence, closed with a period. Two sentences is a card's summary; a
-    // fragment is a label.
-    const terminals = (line.match(/[.!?](?=\s|$)/g) || []).length;
-    if (terminals !== 1 || !line.endsWith('.')) {
-      fail('PICK_LINE_NOT_ONE_SENTENCE', `exactly one sentence ending in a period: "${line}"`);
-    }
-    if (/\?/.test(line)) fail('PICK_LINE_QUESTION', `a pick states, it never asks: "${line}"`);
-    if (words(line) > MAX_PICK_WORDS) {
-      fail('PICK_LINE_TOO_LONG', `${words(line)}w > ${MAX_PICK_WORDS}: ${line}`);
-    }
-    if (hasFirstPerson(line)) {
-      fail('PICK_LINE_FIRST_PERSON', `no I/me/my/we/our on any line Kristy speaks: "${line}"`);
-    }
-    if (/—/.test(line)) fail('PICK_LINE_EM_DASH', `no em-dash asides: "${line}"`);
-    // No digits. A number is a measurement, and a measurement is a claim with a source a
-    // list row cannot show. "Heavy for its size", never "over 200g".
-    if (/\d/.test(line)) fail('PICK_LINE_DIGIT', `no digits on a pick line: "${line}"`);
-    const vetoed = mechanicalVeto(line);
-    if (vetoed) {
-      fail(
-        'PICK_LINE_NOT_MECHANICAL',
-        `"${vetoed}" is about the body, not the food. A pick describes surface, weight, smell, ` +
-          `color, firmness, date or a label word — what happens to the food, never to the shopper: "${line}"`
-      );
-    }
-    // Same house copy as every other line.
-    const brit = britishSpellings(line);
-    if (brit.length) fail('COPY_BRITISH', `British spelling: ${brit.map((w) => `"${w}"`).join(', ')} — the corpus is American`);
-    if (STRAIGHT_QUOTE.test(line)) fail('COPY_STRAIGHT_QUOTE', `a straight quote or apostrophe in: "${line}" — the corpus uses “ ” and ’`);
+  if (line) lintPickSentence(line, MAX_PICK_WORDS, 'PICK_LINE', fail);
+
+  // ── The avoid line (optional) ──
+  // What to steer clear of on the row, under the pick line. Same sentence bar as the pick
+  // line, shorter: it rides under a line that already did the choosing. Absent, never empty.
+  if ('avoid' in e) {
+    const avoid = typeof e.avoid === 'string' ? e.avoid.trim() : '';
+    if (!avoid) fail('PICK_AVOID_EMPTY', 'avoid is a non-empty string, or absent');
+    else lintPickSentence(avoid, MAX_PICK_AVOID_WORDS, 'PICK_AVOID', fail);
   }
 
   // ── Sources, each fetchable ──

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, words as lintWords } from '../../lib/counterCardLint.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8 } from './twoLinePin.js';
+import { CLEAN_PICK_9, CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8, CLEAN_PICK_8, prePickAvoid } from './twoLinePin.js';
 
 // clean-pick-10 owns its ids now; this batch skips them like the clean-pick-9 ids.
 const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
@@ -50,7 +50,7 @@ nonEmpty(IDS, 'IDS', 9);
 test('C1 the 9 picks equal their base entries with only the decision replaced, each leading with its own standard', () => {
   for (const id of IDS) {
     assert.ok(live(id) && was(id), `${id} missing`);
-    assert.deepEqual(live(id), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
+    assert.deepEqual(prePickAvoid(live(id)), { ...structuredClone(was(id)), decision: BECAME[id].decision }, id);
     assert.match(live(id).decision, BECAME[id].carry, `${id} carry`);
   }
 });
@@ -98,7 +98,7 @@ test('C5 organic is new on exactly the four organic-standard picks and unchanged
 });
 
 test('C6 entries outside the batch deepEqual the base; count and top-level keys unchanged', () => {
-  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
+  const others = kb.entries.map(prePickAvoid).map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !CP9or10(e.id));
   nonEmpty(others, 'others', 180);
   assert.equal(kb.entries.length, base.entries.length);
   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
