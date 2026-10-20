@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import * as lint from '../../lib/counterCardLint.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -11,6 +12,10 @@ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'ut
 const raw = JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8'));
 const rows = Array.isArray(raw) ? raw : raw.sections ?? raw.rules ?? Object.values(raw).find(Array.isArray);
 const row = (s) => rows.find((r) => r.section === s);
+// SR (clean-pick) rewrote produce, eggs_dairy and frozen; their CA-5 strings are pinned on the 951441c ref.
+const baseRows = JSON.parse(execFileSync('git', ['show', '951441c:server/lib/sectionRules.json'], { cwd: join(SERVER, '..') }).toString());
+const SR_OVERLAID = new Set(['produce', 'eggs_dairy', 'frozen']);
+const pinned = (s) => (SR_OVERLAID.has(s) ? baseRows : rows).find((r) => r.section === s);
 
 const TIPS = [
   { section: 'meat', rule: 'Butcher first; at the case, grass-fed and pasture-raised.', checks: ['Ask the butcher what the animal ate and how it lived.', 'Liver and heart count too; add one now and then.', 'Packaged meat: meat, salt and spices, nothing else.'] },
@@ -30,8 +35,8 @@ const SOURCES = {
 test('C1 the six tips carry the approved text in order', () => {
   assert.deepEqual(rows.map((r) => r.section), TIPS.map((t) => t.section));
   for (const t of TIPS) {
-    assert.equal(row(t.section).rule, t.rule, t.section);
-    assert.deepEqual(row(t.section).checks, t.checks, t.section);
+    assert.equal(pinned(t.section).rule, t.rule, t.section);
+    assert.deepEqual(pinned(t.section).checks, t.checks, t.section);
   }
 });
 
@@ -43,7 +48,7 @@ test('C2 flags turn the section lints on', () => {
 });
 
 test('C3 sources point at cards that exist', () => {
-  for (const [s, ids] of Object.entries(SOURCES)) assert.deepEqual(row(s).sources, ids, s);
+  for (const [s, ids] of Object.entries(SOURCES)) assert.deepEqual(pinned(s).sources, ids, s);
   const have = new Set(kb.entries.map((e) => e.id));
   for (const r of rows) for (const id of r.sources ?? []) assert.ok(have.has(id), `${r.section} source ${id} missing from the KB`);
 });

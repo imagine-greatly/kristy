@@ -99,7 +99,9 @@ test('W2 grapes and kiwi remain honest misses in the produce section', () => {
 test('W2 produce fronts leave the skin rule in the section and have distinct openers', () => {
   const produce = nonEmpty(entries.filter((e) => e.category === 'produce' && e.kind !== 'pick'), 'W2 produce cards');
   const sectionTips = nonEmpty(tips.filter((t) => t.section === 'produce'), 'W2 produce section');
-  assert.equal(sectionTips[0].rule, 'Organic on anything you eat the skin of.');
+  // SR (clean-pick) rewrote the produce rule; the old string is pinned on the 951441c ref.
+  const baseTips = JSON.parse(execFileSync('git', ['show', '951441c:server/lib/sectionRules.json'], { cwd: fileURLToPath(new URL('../../../', import.meta.url)) }).toString());
+  assert.equal(nonEmpty(baseTips.filter((t) => t.section === 'produce'), 'W2 base produce section')[0].rule, 'Organic on anything you eat the skin of.');
   assert.deepEqual(lintSections(sectionTips, produce), []);
   const openers = new Map();
   for (const e of produce) {

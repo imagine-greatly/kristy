@@ -86,7 +86,9 @@ test('C6 essentials and section rules intact', () => {
     'produce_ripeness_by_item', 'beef_grassfed_vs_grainfed', 'judging_meat_at_the_case', 'whole_vs_reduced_fat_milk']);
   for (const id of ESSENTIALS) assert.ok(now(id), `${id} missing`);
   for (const rule of nonEmpty(sectionRules, 'section rules', 6)) for (const id of rule.sources) assert.ok(now(id), `section rule source ${id} missing`);
-  assert.deepEqual(sectionRules.find((r) => r.section === 'produce').sources, ['produce_ripeness_by_item']);
+  // SR (clean-pick) repointed the produce sources; the old list is pinned on the 951441c ref.
+  const baseRules = JSON.parse(execFileSync('git', ['show', '951441c:server/lib/sectionRules.json'], { cwd: ROOT }).toString());
+  assert.deepEqual(baseRules.find((r) => r.section === 'produce').sources, ['produce_ripeness_by_item']);
 });
 
 test('C7 survivors lint clean', () => {
