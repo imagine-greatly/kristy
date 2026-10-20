@@ -10049,7 +10049,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick kombucha?",
-      "decision": "Kombucha from the refrigerated case, kept cold.",
+      "decision": "Plain kombucha from the refrigerated case, kept cold.",
       "why": "Bottled kombucha can keep fermenting, and its alcohol can climb. Commercial kombucha is usually under 0.5%.",
       "short_answer": "Pick kombucha from the refrigerated case. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars. At 0.5% alcohol or more, federal alcohol rules apply.",
       "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. Federal law calls a fermented drink beer at one-half of 1 percent alcohol by volume or more. TTB alcohol rules then apply, including a health warning statement on the container. They apply even if the alcohol reaches 0.5% after bottling. Some makers sell hard kombucha at over 5 percent alcohol.",
@@ -10060,9 +10060,10 @@
         "https://www.law.cornell.edu/uscode/text/26/5052"
       ],
       "kristy_take": "Kombucha keeps working in the bottle. The cold case and the label show where it stands.",
-      "cart_pick": "Kombucha from the refrigerated case",
+      "cart_pick": "Plain refrigerated kombucha",
       "buying_tips": [
         "Bottled kombucha can keep fermenting, and its alcohol can climb.",
+        "Look for tea and sugar first on the list, with no fruit juice added.",
         "Pick bottles from the refrigerated case.",
         "Read the Nutrition Facts for added sugars.",
         "Look for an alcohol statement on the label.",
@@ -10352,7 +10353,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which miso do you buy?",
-      "decision": "Miso of soybeans, salt and koji, with any grain named.",
+      "decision": "Organic miso of soybeans, salt and koji, any grain named.",
       "why": "Miso is soybeans fermented with salt and koji, often with rice or barley. Red miso is the saltiest kind.",
       "short_answer": "Read the list: soybeans, salt and koji, often with rice or barley. White miso is mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
       "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
@@ -10363,9 +10364,10 @@
         "https://www.huffingtonpost.co.uk/entry/different-kinds-of-miso_n_6993590"
       ],
       "kristy_take": "The list names the soybeans, salt, koji and grain. Red is the salty one.",
-      "cart_pick": "Miso listing soybeans, salt and koji",
+      "cart_pick": "Organic miso paste",
       "buying_tips": [
         "White miso is mild and sweet, and red is the saltiest, so a little goes far.",
+        "Look for organic soybeans, koji and salt on the list, with any grain named.",
         "Read the ingredients for soybeans, salt, koji and the grain: rice, barley or none.",
         "Pick white miso if buying only one.",
         "Pick red miso knowing it is the saltiest kind.",
@@ -10413,7 +10415,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick tempeh?",
-      "decision": "Tempeh in a firm cake, bound white all through.",
+      "decision": "Organic tempeh in a firm cake, bound white all through.",
       "why": "A finished cake holds together as one piece. A loose one crumbles easily.",
       "short_answer": "Pick a firm, dense cake held together by white growth all through. A loose cake that crumbles is unfinished. Read the list for soybeans alone or added grains. Pass on any pack with noticeable mold or odd colors.",
       "detail": "Tempeh is cooked soybeans fermented with a Rhizopus culture, a mold, into a firm, dense cake. In good tempeh, a dense white mycelium, the threads of the mold, binds the beans into one cake. The whole cake should lift as one piece without crumbling. Unfinished tempeh is bound loosely and crumbles easily. Most versions add grains, seeds or other beans, and soy-free versions exist. It is sold cold, often near the tofu. It keeps up to three weeks in the fridge, and unopened blocks can be frozen for up to a month.",
@@ -10424,9 +10426,10 @@
         "https://www.americastestkitchen.com/articles/575-what-is-tempeh"
       ],
       "kristy_take": "A tempeh cake should hold as one solid piece. The list shows what went in besides the soybeans.",
-      "cart_pick": "A firm tempeh cake, bound white",
+      "cart_pick": "Firm organic tempeh cake",
       "buying_tips": [
         "A finished cake holds together as one piece; a loose, crumbly one is unfinished.",
+        "Look for a tempeh list of organic soybeans alone or with one named grain.",
         "Press the pack and feel for a firm cake that holds as one piece.",
         "Read the ingredients for soybeans alone or added grains.",
         "Pass on any pack with noticeable mold or odd discoloration.",
@@ -10469,7 +10472,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick natto?",
-      "decision": "Natto in sealed trays from the cold case or freezer.",
+      "decision": "Organic natto in sealed trays, chilled or frozen.",
       "why": "Chilled natto keeps only days. Frozen, it keeps for months.",
       "short_answer": "Natto is whole soybeans fermented until sticky and stringy, with a strong smell. It comes in small sealed trays, often with mustard and sauce packets. Buy it from the cold case or the freezer, and check the date.",
       "detail": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong, like a pungent aged cheese. Mass-produced natto comes in small polystyrene trays, two or three to a pack, occasionally four. Each tray holds 40 to 50 g. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
@@ -10480,9 +10483,10 @@
         "https://wiki.ubc.ca/Course:FNH200/Projects/2022/Natto"
       ],
       "kristy_take": "The strong smell and sticky strings are the food itself, not a fault.",
-      "cart_pick": "Natto trays from the cold case",
+      "cart_pick": "Organic natto beans",
       "buying_tips": [
         "Chilled natto keeps only days; frozen, it keeps for months.",
+        "Look for USDA Organic on the pack, with whole soybeans listed first.",
         "Check the date on the pack.",
         "Look for trays kept cold or frozen.",
         "Freeze what will not be eaten within days.",
@@ -10652,7 +10656,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick salt?",
-      "decision": "Iodized salt, with any anti-caking agent named on the list.",
+      "decision": "Iodized salt with no anti-caking agent on the list.",
       "why": "Iodized salt lists added iodine, and an anti-caking agent may be added to salt.",
       "short_answer": "Iodized salt lists added iodine. An anti-caking agent may be added to salt, and the list names it. Pickling or canning salt is pure salt. Salt that is not iodized says “does not supply iodide” beside its name.",
       "detail": "Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide.” The statement sits right after the name of the food. Iodide is the form of iodine added to iodized salt, and iodized salt is table salt with iodine added. An anticaking agent, an additive that keeps salt from caking, may be added to salt under 21 CFR 172.490. Kosher salt has a coarse texture. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. A third of a cup of kosher salt does not have the same density as a third of a cup of pickling salt. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
@@ -10665,9 +10669,10 @@
         "https://www.law.cornell.edu/cfr/text/21/172.490"
       ],
       "kristy_take": "The list is the read: iodine added, an anti-caking agent added, or salt alone.",
-      "cart_pick": "Pickling or canning salt",
+      "cart_pick": "Iodized salt: no anti-caking agent",
       "buying_tips": [
         "Salt without iodine says “does not supply iodide” beside its name.",
+        "Look for iodide named on the list, with no anti-caking agent beside it.",
         "Read the list: iodized salt lists added iodine.",
         "Check the list for an anti-caking agent.",
         "Pickling or canning salt is pure salt with nothing added."
@@ -11188,7 +11193,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick nutritional yeast?",
-      "decision": "Fortified or unfortified nutritional yeast flakes, granules or powder.",
+      "decision": "Unfortified nutritional yeast flakes, granules or powder.",
       "why": "The yeast is grown as food, then heated and dried, so it is inactive either way.",
       "short_answer": "Nutritional yeast is grown as food, then heated and dried, so it is inactive. Fortified yeast has vitamins added, and the ingredient list names them. Unfortified has none added. Fortified is the more common type.",
       "detail": "Nutritional yeast is Saccharomyces cerevisiae, the same species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, meaning killed, then washed, dried and crumbled. Under 21 CFR 172.896, dried Saccharomyces cerevisiae may be used in food.",
@@ -11198,15 +11203,17 @@
         "https://www.healthline.com/nutrition/nutritional-yeast"
       ],
       "kristy_take": "Both kinds are the same inactive yeast. The ingredient list shows whether vitamins went in.",
-      "cart_pick": "Nutritional yeast flakes, either type",
+      "cart_pick": "Unfortified nutritional yeast flakes",
       "buying_tips": [
         "The two look alike in the bag; only the list shows whether vitamins were added.",
+        "Look for inactive dried yeast and nothing more, with no vitamins listed.",
         "Read the ingredient list to tell fortified from unfortified.",
         "Pick flakes, granules or powder by how it will be used.",
         "Look in the spice aisle or the bulk bins."
       ],
       "watch_out": [
-        "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart."
+        "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart.",
+        "Fortified nutritional yeast comes second, behind one with no vitamins added."
       ],
       "pick_steps": [
         "Read the ingredient list to tell fortified from unfortified.",
@@ -11223,7 +11230,7 @@
           "meaning": "No added vitamins, only what the yeast made as it grew."
         }
       ],
-      "tier_note": "Added vitamins are a label fact read from the ingredients, never a ranking.",
+      "tier_note": "Added vitamins are read from the ingredients, and unfortified ranks first.",
       "asked_as": [
         "which nutritional yeast should i buy",
         "how do i pick a nutritional yeast",
@@ -11560,7 +11567,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick jam or preserves?",
-      "decision": "Jam or preserves by name, made from fruit, not juice.",
+      "decision": "Jam or preserves of fruit, sugar and pectin, nothing else.",
       "why": "“Jam” and “Preserves” are standardized names made from fruit. Jelly is made from strained juice.",
       "short_answer": "Look for “Jam” or “Preserves” in the name. Both are standardized and made from fruit with sugar. Jelly is made from strained juice. Reduced-sugar jars keep a shorter time once opened, so refrigerate them.",
       "detail": "“Jam” and “Preserves” are standardized names. Jam is made from fruit and sugar at a fixed ratio: at least 47 parts fruit to 55 parts sugar for some fruits, and 45 to 55 for the rest. The finished jam is cooked to not less than 65 percent soluble solids. Jelly is made from the filtered or strained juice of the fruit. Pectin is the natural substance in fruit that makes it gel; commercial pectins are made from apples or citrus fruit. Special pectins exist for jars with less sugar or no added sugar. Those jars do not use sugar as a preservative, so some require refrigeration. When a jam names several fruits, they are listed in order of predominance. Sugar can weigh more than the fruit in a standard jam. By one extension definition, jam is a sweet spread that holds its shape, made from crushed or chopped fruit. Jelly is a firm gel made from juice. Preserves are small whole fruits or uniform pieces in a thick, gelled syrup. Home-kitchen (cottage-food) jam follows the same federal standard of identity for each product.",
@@ -11575,9 +11582,10 @@
         "https://extension.umd.edu/sites/extension.umd.edu/files/publications/FS-1005%20Launching%20a%20Cottage%20Food%20Industry.pdf"
       ],
       "kristy_take": "Jams and preserves are cooked from crushed fruit or whole pieces. The name on the jar says which kind it is.",
-      "cart_pick": "Jam or preserves named for its fruit",
+      "cart_pick": "Jam or preserves: fruit, sugar, pectin",
       "buying_tips": [
         "Jam and preserves start from the fruit itself; jelly is strained juice.",
+        "Look for fruit first, then sugar and pectin, and nothing more on the jar.",
         "Read the name for “Jam” or “Preserves” with the fruit named.",
         "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
         "In a mixed-fruit jam, the fruits are listed most first.",
@@ -11637,7 +11645,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick ketchup and mustard?",
-      "decision": "Ketchup led by tomato; mustard of seed, vinegar and spice.",
+      "decision": "Unsweetened ketchup from tomato; mustard of seed, vinegar, spice.",
       "why": "Ketchup’s federal standard starts from tomato. Prepared mustard is ground seed, vinegar, turmeric, salt and spices.",
       "short_answer": "Ketchup is made from tomato with vinegar, sweeteners and spices. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices. Iowa State puts opened ketchup at 6 months and mustard at 1 year.",
       "detail": "Ketchup’s federal standard, 21 CFR 155.194, accepts three names: catsup, ketchup or catchup. It starts from tomato concentrate or liquid from red tomatoes. Vinegars, sweeteners, and spices, flavoring, onions or garlic are its optional ingredients. Lemon juice or suitable organic acids may be added only to adjust the pH, a measure of acidity. The mustard description here is the USDA AMS commercial item description, a federal purchase spec rather than retail law. It calls for ground mustard seed, vinegar, turmeric, salt and spices. Yellow seed goes into its Type I and Type II mustards, and brown seed into Types III to IX. Yellow mustard is smooth, with a mild flavor and slight acid taste. Dijon is smooth and pungent, with mild white wine notes. Stone ground is coarse and pungent, with visible specks of mustard seed. Spicy brown is slightly thick. Gums and artificial colors are not permitted, and added water must be declared. As a food history site reports, the Oxford English Dictionary traces ketchup to ke-tsiap. In the Amoy dialect of Chinese, that word means a brine of pickled fish. Mushroom, walnut and fish ketchups stayed more popular in the States until the mid-1800s.",
@@ -11649,9 +11657,10 @@
         "https://culinarylore.com/food-history:origin-of-ketchup/"
       ],
       "kristy_take": "By the Oxford English Dictionary’s account, ketchup was first a word for a brine of pickled fish. Today’s standard starts from tomato.",
-      "cart_pick": "Ketchup from tomato; mustard from seed",
+      "cart_pick": "Unsweetened tomato ketchup and mustard",
       "buying_tips": [
         "Ketchup’s federal standard starts from tomato; sweeteners and spices are optional.",
+        "Look for a ketchup list of tomato, vinegar and spices, with no sweetener.",
         "Read the ketchup label for tomato concentrate and vinegar.",
         "Read the mustard label for mustard seed, vinegar and spices.",
         "Stone ground mustard shows visible specks of seed.",
@@ -11776,7 +11785,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick soy sauce and hot sauce?",
-      "decision": "Traditionally brewed soy sauce, not made fast with acid.",
+      "decision": "Organic soy sauce, traditionally brewed, not made fast with acid.",
       "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
       "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Some fermented hot sauces have no added vinegar.",
       "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
@@ -11790,9 +11799,10 @@
         "https://repository.lsu.edu/gradschool_disstheses/4217"
       ],
       "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
-      "cart_pick": "Soy sauce brewed by fermentation",
+      "cart_pick": "Organic naturally brewed soy sauce",
       "buying_tips": [
         "Brewed soy sauce ferments for months; the fast method makes it with acid in hours.",
+        "Look for the words naturally brewed, with organic soybeans named first.",
         "Read the ingredients for wheat, on tamari too.",
         "Read the front for a gluten-free claim.",
         "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
@@ -11842,7 +11852,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick canned soup?",
-      "decision": "Low-sodium canned soup with a short list, can undented.",
+      "decision": "Low-sodium canned soup, short list, no added flavors, can undented.",
       "why": "Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can.",
       "short_answer": "Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging.",
       "detail": "Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
@@ -11860,6 +11870,7 @@
       "cart_pick": "Low sodium canned soup, undented can",
       "buying_tips": [
         "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
+        "Look for a short list with no added flavors, starches or sugar.",
         "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
         "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
       ],
@@ -11922,7 +11933,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick olives?",
-      "decision": "Brine-cured olives, fermented slowly in water and salt.",
+      "decision": "Brine-cured olives, fermented in water and salt, nothing else.",
       "why": "Fresh olives are bitter, and curing removes it. Brine curing ferments the fruit slowly, with water and salt.",
       "short_answer": "Olives off the tree are very bitter, so they are cured before eating. Brine-cured olives ferment slowly in water and salt. Lye-cured olives are a milder style. Opened olives keep about 2 weeks.",
       "detail": "Olives picked off the tree hold a very bitter compound called oleuropein. Curing leaches it out. The common curing methods are water, brine, lye and dry salt, and each gives a different texture and flavor. Water-cured olives stay slightly bitter, because water removes less oleuropein. Brine curing is a fermentation that turns the fruit’s sugars into lactic and acetic acids. It uses only water and salt, but takes a long time. Lye curing works quickly, and rinsing leaves a neutral olive that takes on flavors from vinegar and herbs. Salt gives olives their flavor and serves as a preservative. Salt curing has roots in ancient antiquity. Commercial table olives follow three main methods: Greek, Spanish and Californian. Greek-style olives are picked near full ripeness, at the purple stage, and cured in brine. Spanish-style green olives are treated with lye, rinsed, then fermented. California-style black ripe olives are lye-cured and darkened with air, then colored black with an iron salt. One review’s table puts debittering at 6–12 months for Greek, 1–7 months for Spanish and 1 week for California. The California method gives the mildest flavor and the least bitterness. USDA grade standards cover canned ripe olives (U.S. Grade A, B and C). USDA defines green olives as “completely fermented and cured” fruit of the olive tree.",
@@ -11939,6 +11950,7 @@
       "cart_pick": "Olives cured in brine",
       "buying_tips": [
         "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
+        "Look for a jar of olives, water and salt, with no ferrous gluconate.",
         "Read the jar for the curing method: brine, lye or dry salt.",
         "Greek-style olives are near-ripe purple fruit cured in brine.",
         "Spanish-style green olives are treated with lye, rinsed, then fermented.",
@@ -12333,7 +12345,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick tortilla chips?",
-      "decision": "Masa tortilla chips in olive oil, coconut oil or tallow.",
+      "decision": "Organic masa tortilla chips in olive oil or tallow.",
       "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
       "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
       "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
@@ -12363,9 +12375,10 @@
         }
       ],
       "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
-      "cart_pick": "Masa tortilla chips: olive oil",
+      "cart_pick": "Organic masa tortilla chips: olive oil",
       "buying_tips": [
         "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
+        "Look for the USDA Organic seal, then masa, one named fat and salt.",
         "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.",
@@ -12514,6 +12527,7 @@
       "cart_pick": "Plain popcorn kernels",
       "buying_tips": [
         "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
+        "Look for a bag of kernels with popcorn as the only ingredient.",
         "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
         "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
         "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
@@ -12612,7 +12626,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a granola or snack bar?",
-      "decision": "Bars with oats or another whole grain listed first.",
+      "decision": "Organic bars with oats or another whole grain listed first.",
       "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
       "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
@@ -12649,9 +12663,10 @@
         }
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
-      "cart_pick": "Bars with oats or whole grain first",
+      "cart_pick": "Organic oat snack bars",
       "buying_tips": [
         "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
+        "Look for organic oats first and fruit or honey as the only sweetener.",
         "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
         "Read the first ingredients; oats or another whole grain should lead.",
@@ -12701,7 +12716,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick trail mix?",
-      "decision": "Trail mix of nuts and dried fruit, little else listed.",
+      "decision": "Trail mix of nuts and dried fruit alone, nothing added.",
       "why": "Nuts and dried fruit are the old trail recipe, and the list runs in order of amount.",
       "short_answer": "Trail mix began as nuts and dried fruit carried on the trail. Ingredients run in order of amount, so the list shows what leads and what was added.",
       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. An extension guide makes the same point: the foods at the start of the list are the most in the recipe. Raw versus roasted nuts is its own question, with its own card. So is dried fruit.",
@@ -12712,9 +12727,10 @@
         "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
       ],
       "kristy_take": "In 1833, Danish students ate studenterhavre, “student oats”: raisins and almonds, with chocolate at the holidays. A 1906 camping guide sent hikers out with nuts, raisins and sweet chocolate. A 1958 novel packs raisins, peanuts, dried apricots and prunes.",
-      "cart_pick": "Nuts and dried fruit, little else",
+      "cart_pick": "Trail mix: nuts and dried fruit only",
       "buying_tips": [
         "Ingredients run by amount, so a long list can push nuts and fruit to the back.",
+        "Look for a bag of only nuts and dried fruit, with no candy, oil or salt.",
         "Read the first few ingredients; nuts and fruit should lead.",
         "Compare mixes by how short the list runs beyond nuts and fruit."
       ],
@@ -12814,7 +12830,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick hummus?",
-      "decision": "Hummus of chickpeas and tahini, the traditional pairing.",
+      "decision": "Organic hummus of chickpeas and tahini, with no gums.",
       "why": "Hummus bi tahina names its two parts, chickpeas and tahini. Store tubs add lemon and salt.",
       "short_answer": "Hummus is chickpeas and tahini, with garlic, lemon and salt. The word is Arabic for chickpea. Store tubs typically list chickpeas, tahini, lemon and salt, and every tub in one tasting had an acid.",
       "detail": "The full name, hummus bi tahina, names chickpeas and tahini, a paste of sesame seeds. A 13th-century cookbook from Cairo holds the first written record, without tahini or garlic. Some historians trace the modern style to 18th-century Damascus. In Israel, Palestine and Lebanon it is a main dish, not just a dip. Guar gum thickens a tub and stops weeping, and roughly half the tubs in one tasting used it. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground. Homemade hummus keeps three to four days in an airtight container in the fridge.",
@@ -12842,9 +12858,10 @@
         }
       ],
       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
-      "cart_pick": "Hummus led by chickpeas and tahini",
+      "cart_pick": "Organic hummus: chickpeas and tahini",
       "buying_tips": [
         "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
+        "Look for certified organic chickpeas and tahini, with no gum on the list.",
         "Read the list for chickpeas and tahini at the top.",
         "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
         "A tub listing guar gum runs thicker; without it, water and grind set the texture.",

@@ -1,0 +1,320 @@
+TAP version 13
+# [kristy] ANTHROPIC_API_KEY is not set — AI calls will fail.
+# [kristy] SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set — database calls will fail.
+# Subtest: C1 the 16 ids equal their expected entries and carry their phrase
+not ok 1 - C1 the 16 ids equal their expected entries and carry their phrase
+  ---
+  duration_ms: 2.052291
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:70:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    tortilla_chips
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        aliases: [
+          'tortilla chips',
+          'corn tortilla chips',
+          'restaurant style tortilla chips'
+    ...
+          'Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.',
+    -     'Look for the USDA Organic seal, then masa, one named fat and salt.',
+          'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.',
+          'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.',
+          'Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.',
+          'Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.'
+        ],
+    +   cart_pick: 'Masa tortilla chips: olive oil',
+    -   cart_pick: 'Organic masa tortilla chips: olive oil',
+        category: 'bulk_pantry',
+    +   decision: 'Masa tortilla chips in olive oil, coconut oil or tallow.',
+    -   decision: 'Organic masa tortilla chips in olive oil or tallow.',
+        detail: 'The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.',
+        evidence_tier: 'established',
+        id: 'tortilla_chips',
+        kristy_take: 'Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.',
+        labels_decoded: [
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'tortilla_chips'
+    title: 'Tortilla chips'
+    aliases:
+      0: 'tortilla chips'
+      1: 'corn tortilla chips'
+      2: 'restaurant style tortilla chips'
+    category: 'bulk_pantry'
+    question: 'How do you pick tortilla chips?'
+    decision: 'Organic masa tortilla chips in olive oil or tallow.'
+    why: 'Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.'
+    short_answer: 'Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.'
+    detail: 'The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.'
+    evidence_tier: 'established'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Nixtamalization'
+      1: 'https://www.fao.org/4/t0395e/T0395E05.htm'
+      2: 'https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul'
+      3: 'https://sporked.com/article/what-is-masa/'
+      4: 'https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/'
+      5: 'https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips'
+      6:
+        name: 'Dr. Cate Shanahan: The Hateful Eight seed oils'
+        url: 'https://drcate.com/hateful-eight/'
+      7:
+        name: 'Weston A. Price Foundation: FAQ, fats and oils'
+        url: 'https://www.westonaprice.org/health-topics/faq-fats-and-oils/'
+      8:
+        name: 'CSPI: New GMO disclosures'
+        url: 'https://www.cspi.org/article/what-know-about-new-gmo-disclosures'
+      9:
+        name: 'Non-GMO Project: GMO FAQ'
+        url: 'https://www.nongmoproject.org/gmo-faq/'
+    kristy_take: 'Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.'
+    cart_pick: 'Organic masa tortilla chips: olive oil'
+    buying_tips:
+      0: 'Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.'
+      1: 'Look for the USDA Organic seal, then masa, one named fat and salt.'
+      2: 'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.'
+      3: 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'
+      4: 'Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.'
+      5: 'Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.'
+    watch_out:
+      0: 'Some corn chips are made from corn that was never cooked in lime.'
+      1: 'Skip avocado oil too: the label cannot prove the oil is pure.'
+      2: 'Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering.'
+    pick_steps:
+      0: 'Read the ingredients for masa or corn masa, and a trace of lime.'
+    science: 'Corn for tortillas is soaked and cooked in limewater, slaked lime and water, then ground into masa. The step is called nixtamalization. Cornmeal from corn never lime-cooked cannot form a dough with water alone. On a chip list, lime is that alkali, not the citrus fruit. Most bagged chips are shaped straight from coarse masa dough and fried.'
+    labels_decoded:
+      0:
+        term: 'Masa'
+        meaning: 'A dough ground from corn that was cooked in an alkaline solution.'
+      1:
+        term: 'Lime'
+        meaning: 'On a chip list, the alkali the corn was cooked in, not the citrus fruit.'
+      2:
+        term: 'Corn chips'
+        meaning: 'A name sometimes used for chips made from corn that was never lime-cooked.'
+    tier_note: 'Masa on the ingredients means the corn was cooked first.'
+    asked_as:
+      0: 'which tortilla chips should i buy'
+      1: 'are tortilla chips worth buying'
+      2: 'are restaurant style tortilla chips worth buying'
+  actual:
+    id: 'tortilla_chips'
+    title: 'Tortilla chips'
+    aliases:
+      0: 'tortilla chips'
+      1: 'corn tortilla chips'
+      2: 'restaurant style tortilla chips'
+    category: 'bulk_pantry'
+    question: 'How do you pick tortilla chips?'
+    decision: 'Masa tortilla chips in olive oil, coconut oil or tallow.'
+    why: 'Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.'
+    short_answer: 'Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.'
+    detail: 'The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.'
+    evidence_tier: 'established'
+    sources:
+      0: 'https://en.wikipedia.org/wiki/Nixtamalization'
+      1: 'https://www.fao.org/4/t0395e/T0395E05.htm'
+      2: 'https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul'
+      3: 'https://sporked.com/article/what-is-masa/'
+      4: 'https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/'
+      5: 'https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips'
+      6:
+        name: 'Dr. Cate Shanahan: The Hateful Eight seed oils'
+        url: 'https://drcate.com/hateful-eight/'
+      7:
+        name: 'Weston A. Price Foundation: FAQ, fats and oils'
+        url: 'https://www.westonaprice.org/health-topics/faq-fats-and-oils/'
+      8:
+        name: 'CSPI: New GMO disclosures'
+        url: 'https://www.cspi.org/article/what-know-about-new-gmo-disclosures'
+      9:
+        name: 'Non-GMO Project: GMO FAQ'
+        url: 'https://www.nongmoproject.org/gmo-faq/'
+    kristy_take: 'Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.'
+    cart_pick: 'Masa tortilla chips: olive oil'
+    buying_tips:
+      0: 'Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.'
+      1: 'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.'
+      2: 'Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'
+      3: 'Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.'
+      4: 'Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch.'
+    watch_out:
+      0: 'Some corn chips are made from corn that was never cooked in lime.'
+      1: 'Skip avocado oil too: the label cannot prove the oil is pure.'
+      2: 'Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering.'
+    pick_steps:
+      0: 'Read the ingredients for masa or corn masa, and a trace of lime.'
+    science: 'Corn for tortillas is soaked and cooked in limewater, slaked lime and water, then ground into masa. The step is called nixtamalization. Cornmeal from corn never lime-cooked cannot form a dough with water alone. On a chip list, lime is that alkali, not the citrus fruit. Most bagged chips are shaped straight from coarse masa dough and fried.'
+    labels_decoded:
+      0:
+        term: 'Masa'
+        meaning: 'A dough ground from corn that was cooked in an alkaline solution.'
+      1:
+        term: 'Lime'
+        meaning: 'On a chip list, the alkali the corn was cooked in, not the citrus fruit.'
+      2:
+        term: 'Corn chips'
+        meaning: 'A name sometimes used for chips made from corn that was never lime-cooked.'
+    tier_note: 'Masa on the ingredients means the corn was cooked first.'
+    asked_as:
+      0: 'which tortilla chips should i buy'
+      1: 'are tortilla chips worth buying'
+      2: 'are restaurant style tortilla chips worth buying'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:73:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.start (node:internal/test_runner/test:1257:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: C2 decisions are at most 10 words and carts at most 46 characters
+ok 2 - C2 decisions are at most 10 words and carts at most 46 characters
+  ---
+  duration_ms: 0.212166
+  type: 'test'
+  ...
+# Subtest: C3 tips[0] stays the base why; tips[1] is the new standard line
+not ok 3 - C3 tips[0] stays the base why; tips[1] is the new standard line
+  ---
+  duration_ms: 0.286625
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:87:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    tortilla_chips tip 1
+    + actual - expected
+    
+    + 'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.'
+    - 'Look for the USDA Organic seal, then masa, one named fat and salt.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Look for the USDA Organic seal, then masa, one named fat and salt.'
+  actual: 'Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:93:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C4 no new text carries a banned or treatment word, a dash, a straight apostrophe or first person; snack text names no sodium or seed oil
+ok 4 - C4 no new text carries a banned or treatment word, a dash, a straight apostrophe or first person; snack text names no sodium or seed oil
+  ---
+  duration_ms: 0.638125
+  type: 'test'
+  ...
+# Subtest: C5 organic sits on the decision and cart of exactly the seven crop ids
+not ok 5 - C5 organic sits on the decision and cart of exactly the seven crop ids
+  ---
+  duration_ms: 0.150125
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:113:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    tortilla_chips
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:119:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged
+ok 6 - C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged
+  ---
+  duration_ms: 1.538167
+  type: 'test'
+  ...
+# Subtest: C7 doLines.json unchanged; review headlines move only on the batch ids
+ok 7 - C7 doLines.json unchanged; review headlines move only on the batch ids
+  ---
+  duration_ms: 23.35425
+  type: 'test'
+  ...
+# Subtest: C8 every base tip and watch_out line is kept
+ok 8 - C8 every base tip and watch_out line is kept
+  ---
+  duration_ms: 0.294625
+  type: 'test'
+  ...
+# Subtest: C9 each cart pick matches its own card
+not ok 9 - C9 each cart pick matches its own card
+  ---
+  duration_ms: 7.185333
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:170:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Miso listing soybeans, salt and koji -> undefined
+    + actual - expected
+    
+    + undefined
+    - 'miso'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'miso'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:175:12)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: C10 no new string sits on more than 2 entries
+ok 10 - C10 no new string sits on more than 2 entries
+  ---
+  duration_ms: 1.836542
+  type: 'test'
+  ...
+# Subtest: C11 salt is iodized with no anti-caking agent; nutritional yeast ranks unfortified first; reach queries still land
+not ok 11 - C11 salt is iodized with no anti-caking agent; nutritional yeast ranks unfortified first; reach queries still land
+  ---
+  duration_ms: 0.273125
+  type: 'test'
+  location: '/Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:188:1'
+  failureType: 'testCodeFailure'
+  error: 'salt decision anti-caking'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Iodized salt, with any anti-caking agent named on the list.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/m1/kristy/server/test/acceptance/cleanPick5.test.js:192:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 6
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 186.71875

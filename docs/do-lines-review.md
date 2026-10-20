@@ -165,17 +165,17 @@ Also: imperative, starts with a verb, ≤14 words.
 | `coconut_milk_beverage` | eggs_dairy | Unsweetened, unfortified carton coconut milk, fewest added gums. | Read the carton for “beverage” in the name, then the thickeners. | — |
 | `plant_butter` | eggs_dairy | Coconut or olive oil plant butter, never seed oil. | Read the ingredient list and find which oil comes first. | — |
 | `dairy_case` | eggs_dairy | Choose the dairy type first, then read the carton. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
-| `kombucha` | bulk_pantry | Kombucha from the refrigerated case, kept cold. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
+| `kombucha` | bulk_pantry | Plain kombucha from the refrigerated case, kept cold. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
 | `sauerkraut` | bulk_pantry | Raw sauerkraut from the refrigerated case. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |
 | `kimchi` | bulk_pantry | Kimchi of cabbage, red pepper, garlic, ginger and salt. | Check the packed date, then read the list for fish sauce or shrimp. | — |
 | `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
 | `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother. | Read the label for “diluted” or a second vinegar named in a blend. | — |
-| `miso` | bulk_pantry | Miso of soybeans, salt and koji, with any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
-| `tempeh` | bulk_pantry | Tempeh in a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
-| `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
+| `miso` | bulk_pantry | Organic miso of soybeans, salt and koji, any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
+| `tempeh` | bulk_pantry | Organic tempeh in a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
+| `natto` | bulk_pantry | Organic natto in sealed trays, chilled or frozen. | Check the date on the pack, since chilled natto keeps only days. | — |
 | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
 | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
-| `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
+| `salt` | bulk_pantry | Iodized salt with no anti-caking agent on the list. | Read the ingredient list for an added anti-caking agent. | — |
 | `sugars` | bulk_pantry | Organic coconut or maple sugar first, each from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
 | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
 | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
@@ -183,32 +183,32 @@ Also: imperative, starts with a verb, ≤14 words.
 | `cocoa` | bulk_pantry | Cocoa with one ingredient on the list: cocoa. | Read the label for “processed with alkali” after the name. | — |
 | `seeds` | bulk_pantry | Whole chia, hulled hemp, and ground flaxseed or whole flax. | Check the bag date, and keep opened flax cold once home. | — |
 | `dried_fruit` | bulk_pantry | Dried fruit with only the fruit on the ingredient list. | Read the ingredients for sulfites or sugar added to the fruit. | — |
-| `nutritional_yeast` | bulk_pantry | Fortified or unfortified nutritional yeast flakes, granules or powder. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
+| `nutritional_yeast` | bulk_pantry | Unfortified nutritional yeast flakes, granules or powder. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
 | `canned_coconut_milk` | bulk_pantry | Canned coconut milk listing coconut alone, no gum added. | Read the ingredients for gums such as guar gum. | — |
 | `dried_herbs` | bulk_pantry | A single herb, named on the jar. | Check the label for the irradiation logo and “treated with radiation”. | — |
 | `tea` | bulk_pantry | The tea leaf alone: black, green, white or oolong. | Read the ingredient list for tea leaves and nothing else. | — |
 | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
 | `pasta_sauce` | bulk_pantry | Pasta sauce of tomatoes and olive oil, no added sweetener. | Read the ingredients for anything listed ahead of the tomatoes. | — |
-| `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
-| `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
+| `jam` | bulk_pantry | Jam or preserves of fruit, sugar and pectin, nothing else. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
+| `ketchup_mustard` | bulk_pantry | Unsweetened ketchup from tomato; mustard of seed, vinegar, spice. | Check the jar for an open date, or write one on it at home. | — |
 | `mayo` | bulk_pantry | Mayonnaise with olive oil alone, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
-| `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
-| `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
-| `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |
+| `hot_soy_sauce` | bulk_pantry | Organic soy sauce, traditionally brewed, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
+| `canned_soup` | bulk_pantry | Low-sodium canned soup, short list, no added flavors, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
+| `olives` | bulk_pantry | Brine-cured olives, fermented in water and salt, nothing else. | Check the jar date, and finish an opened jar within 2 weeks. | — |
 | `seaweed` | bulk_pantry | Sea vegetables labeled by kind: nori, kombu or kelp. | Read the package for the seaweed’s kind by name, not just “seaweed”. | — |
 | `salsa` | bulk_pantry | Salsa with onions, peppers and tomatoes plus an acid. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
 | `coconut_water` | bulk_pantry | Pure coconut water, high-pressure processed, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
 | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
 | `crackers` | bulk_pantry | Whole grain crackers with olive oil, coconut oil or butter. | Read the front for “multigrain”; it does not mean whole grain. | — |
-| `tortilla_chips` | bulk_pantry | Masa tortilla chips in olive oil, coconut oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
+| `tortilla_chips` | bulk_pantry | Organic masa tortilla chips in olive oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
 | `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
 | `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
 | `pretzels` | bulk_pantry | Whole wheat pretzels with a short ingredient list. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
-| `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
-| `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
+| `snack_bars` | bulk_pantry | Organic bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
+| `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit alone, nothing added. | Read the ingredients for anything added beyond the nuts and fruit. | — |
 | `snacks` | bulk_pantry | Snacks with a whole grain, vegetable or bean listed first. | Check veggie chips for potato flour colored with vegetable powder. | — |
 | `pick_juice` | bulk_pantry | Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes. | Read the ingredient list for Red 40, Yellow 5, Yellow 6 or Blue 1. | — |
-| `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
+| `hummus` | bulk_pantry | Organic hummus of chickpeas and tahini, with no gums. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
 | `deli_salads` | bulk_pantry | Deli salads from the cold case, eaten within days. | Check the date; keep it at the back of the fridge, not the door. | — |
 | `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |
 | `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with nothing added. | Check the date, and use an opened pack within 2 to 3 days. | — |

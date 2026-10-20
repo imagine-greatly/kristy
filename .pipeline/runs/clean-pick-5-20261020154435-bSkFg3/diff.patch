@@ -1,0 +1,1053 @@
+diff --git a/docs/do-lines-review.md b/docs/do-lines-review.md
+index cff7191..36a6912 100644
+--- a/docs/do-lines-review.md
++++ b/docs/do-lines-review.md
+@@ -165,17 +165,17 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `coconut_milk_beverage` | eggs_dairy | Unsweetened, unfortified carton coconut milk, fewest added gums. | Read the carton for “beverage” in the name, then the thickeners. | — |
+ | `plant_butter` | eggs_dairy | Coconut or olive oil plant butter, never seed oil. | Read the ingredient list and find which oil comes first. | — |
+ | `dairy_case` | eggs_dairy | Choose the dairy type first, then read the carton. | Read the side panel for added vitamins, then any grazing or filtering claim. | — |
+-| `kombucha` | bulk_pantry | Kombucha from the refrigerated case, kept cold. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
++| `kombucha` | bulk_pantry | Plain kombucha from the refrigerated case, kept cold. | Read the Nutrition Facts for added sugars, then any alcohol statement. | — |
+ | `sauerkraut` | bulk_pantry | Raw sauerkraut from the refrigerated case. | Read the ingredients for cabbage and salt only, with no vinegar listed. | — |
+ | `kimchi` | bulk_pantry | Kimchi of cabbage, red pepper, garlic, ginger and salt. | Check the packed date, then read the list for fish sauce or shrimp. | — |
+ | `fermented_pickles` | bulk_pantry | Pickles fermented in salt brine, sold refrigerated. | Read the ingredients for vinegar; none listed means a fermented pickle. | — |
+ | `raw_cider_vinegar` | bulk_pantry | Raw, unfiltered cider vinegar, with the mother. | Read the label for “diluted” or a second vinegar named in a blend. | — |
+-| `miso` | bulk_pantry | Miso of soybeans, salt and koji, with any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
+-| `tempeh` | bulk_pantry | Tempeh in a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
+-| `natto` | bulk_pantry | Natto in sealed trays from the cold case or freezer. | Check the date on the pack, since chilled natto keeps only days. | — |
++| `miso` | bulk_pantry | Organic miso of soybeans, salt and koji, any grain named. | Read the ingredients for which grain went in with the soybeans. | — |
++| `tempeh` | bulk_pantry | Organic tempeh in a firm cake, bound white all through. | Read the ingredients for soybeans alone or added grains, and check for mold. | — |
++| `natto` | bulk_pantry | Organic natto in sealed trays, chilled or frozen. | Check the date on the pack, since chilled natto keeps only days. | — |
+ | `fermented` | bulk_pantry | Pick the food first, then read whether it was heated. | Check the label for “raw” or “unpasteurized”, then the list for vinegar. | — |
+ | `broth` | bulk_pantry | Broth whose list names the bones, meat or vegetables. | Read the list for named bones and vegetables, then sodium on the panel. | — |
+-| `salt` | bulk_pantry | Iodized salt, with any anti-caking agent named on the list. | Read the ingredient list for an added anti-caking agent. | — |
++| `salt` | bulk_pantry | Iodized salt with no anti-caking agent on the list. | Read the ingredient list for an added anti-caking agent. | — |
+ | `sugars` | bulk_pantry | Organic coconut or maple sugar first, each from one sap. | Read the list for coconut or maple sugar alone, nothing added. | — |
+ | `maple_syrup` | bulk_pantry | Maple syrup by name, any Grade A color. | Read the front for “pure maple syrup”, not table or pancake syrup. | — |
+ | `cooking_oils` | bulk_pantry | Olive or coconut oil, or tallow for cooking. | Turn the bottle and read which oil it names, then refined or unrefined. | — |
+@@ -183,32 +183,32 @@ Also: imperative, starts with a verb, ≤14 words.
+ | `cocoa` | bulk_pantry | Cocoa with one ingredient on the list: cocoa. | Read the label for “processed with alkali” after the name. | — |
+ | `seeds` | bulk_pantry | Whole chia, hulled hemp, and ground flaxseed or whole flax. | Check the bag date, and keep opened flax cold once home. | — |
+ | `dried_fruit` | bulk_pantry | Dried fruit with only the fruit on the ingredient list. | Read the ingredients for sulfites or sugar added to the fruit. | — |
+-| `nutritional_yeast` | bulk_pantry | Fortified or unfortified nutritional yeast flakes, granules or powder. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
++| `nutritional_yeast` | bulk_pantry | Unfortified nutritional yeast flakes, granules or powder. | Read the ingredients for added vitamins, which mark a fortified yeast. | — |
+ | `canned_coconut_milk` | bulk_pantry | Canned coconut milk listing coconut alone, no gum added. | Read the ingredients for gums such as guar gum. | — |
+ | `dried_herbs` | bulk_pantry | A single herb, named on the jar. | Check the label for the irradiation logo and “treated with radiation”. | — |
+ | `tea` | bulk_pantry | The tea leaf alone: black, green, white or oolong. | Read the ingredient list for tea leaves and nothing else. | — |
+ | `vinegar` | bulk_pantry | Vinegar by its printed acidity; 5 percent for pickling. | Read the label for “unpasteurized”; most vinegar is pasteurized otherwise. | — |
+ | `pasta_sauce` | bulk_pantry | Pasta sauce of tomatoes and olive oil, no added sweetener. | Read the ingredients for anything listed ahead of the tomatoes. | — |
+-| `jam` | bulk_pantry | Jam or preserves by name, made from fruit, not juice. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
+-| `ketchup_mustard` | bulk_pantry | Ketchup led by tomato; mustard of seed, vinegar and spice. | Check the jar for an open date, or write one on it at home. | — |
++| `jam` | bulk_pantry | Jam or preserves of fruit, sugar and pectin, nothing else. | Read the label for “reduced sugar”, then keep the opened jar cold. | — |
++| `ketchup_mustard` | bulk_pantry | Unsweetened ketchup from tomato; mustard of seed, vinegar, spice. | Check the jar for an open date, or write one on it at home. | — |
+ | `mayo` | bulk_pantry | Mayonnaise with olive oil alone, egg yolk and an acid. | Read the ingredients for which oil comes first, whatever the front says. | — |
+-| `hot_soy_sauce` | bulk_pantry | Traditionally brewed soy sauce, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
+-| `canned_soup` | bulk_pantry | Low-sodium canned soup with a short list, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
+-| `olives` | bulk_pantry | Brine-cured olives, fermented slowly in water and salt. | Check the jar date, and finish an opened jar within 2 weeks. | — |
++| `hot_soy_sauce` | bulk_pantry | Organic soy sauce, traditionally brewed, not made fast with acid. | Read the ingredients for wheat, and the front for “gluten-free”. | — |
++| `canned_soup` | bulk_pantry | Low-sodium canned soup, short list, no added flavors, can undented. | Read the front for “low sodium” versus “reduced sodium”; they differ. | — |
++| `olives` | bulk_pantry | Brine-cured olives, fermented in water and salt, nothing else. | Check the jar date, and finish an opened jar within 2 weeks. | — |
+ | `seaweed` | bulk_pantry | Sea vegetables labeled by kind: nori, kombu or kelp. | Read the package for the seaweed’s kind by name, not just “seaweed”. | — |
+ | `salsa` | bulk_pantry | Salsa with onions, peppers and tomatoes plus an acid. | Read the ingredients for the acid: vinegar, lime or lemon juice. | — |
+ | `coconut_water` | bulk_pantry | Pure coconut water, high-pressure processed, with nothing added. | Check the carton for a “Contains __ percent juice” line. | — |
+ | `condiments` | bulk_pantry | Condiments read by their first ingredient, spoon to spoon. | Check the serving size, a spoonful, before comparing two jars. | — |
+ | `crackers` | bulk_pantry | Whole grain crackers with olive oil, coconut oil or butter. | Read the front for “multigrain”; it does not mean whole grain. | — |
+-| `tortilla_chips` | bulk_pantry | Masa tortilla chips in olive oil, coconut oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
++| `tortilla_chips` | bulk_pantry | Organic masa tortilla chips in olive oil or tallow. | Read the ingredients for masa; plain cornmeal makes a corn chip instead. | — |
+ | `potato_chips` | bulk_pantry | Sliced potato chips in olive oil, coconut oil or tallow. | Read the label for “made from dried potatoes”, the mark of a pressed chip. | — |
+ | `popcorn` | bulk_pantry | Plain popcorn kernels, popped at home in coconut oil. | Read the ingredients for anything listed besides popcorn. | — |
+ | `pretzels` | bulk_pantry | Whole wheat pretzels with a short ingredient list. | Check for a deep brown, glossy crust; the alkaline bath gives it. | — |
+-| `snack_bars` | bulk_pantry | Bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
+-| `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit, little else listed. | Read the ingredients for anything added beyond the nuts and fruit. | — |
++| `snack_bars` | bulk_pantry | Organic bars with oats or another whole grain listed first. | Read the ingredients for high fructose corn syrup and hydrogenated oils. | — |
++| `trail_mix` | bulk_pantry | Trail mix of nuts and dried fruit alone, nothing added. | Read the ingredients for anything added beyond the nuts and fruit. | — |
+ | `snacks` | bulk_pantry | Snacks with a whole grain, vegetable or bean listed first. | Check veggie chips for potato flour colored with vegetable powder. | — |
+ | `pick_juice` | bulk_pantry | Usually pasteurized, with untreated cold-case juice bearing warning labels; read ingredients: no added color over dyes. | Read the ingredient list for Red 40, Yellow 5, Yellow 6 or Blue 1. | — |
+-| `hummus` | bulk_pantry | Hummus of chickpeas and tahini, the traditional pairing. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
++| `hummus` | bulk_pantry | Organic hummus of chickpeas and tahini, with no gums. | Read the ingredients for guar gum, which keeps the dip from weeping. | — |
+ | `deli_salads` | bulk_pantry | Deli salads from the cold case, eaten within days. | Check the date; keep it at the back of the fridge, not the door. | — |
+ | `prepared_meals` | bulk_pantry | Hot food held hot and cold food held cold. | Check the case thermometer, and pans filled no higher than the rim. | — |
+ | `fresh_pasta` | bulk_pantry | Fresh pasta of flour and egg, with nothing added. | Check the date, and use an opened pack within 2 to 3 days. | — |
+diff --git a/server/kristy_perimeter_kb.json b/server/kristy_perimeter_kb.json
+index d67114a..df4c3b6 100644
+--- a/server/kristy_perimeter_kb.json
++++ b/server/kristy_perimeter_kb.json
+@@ -10049,7 +10049,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick kombucha?",
+-      "decision": "Kombucha from the refrigerated case, kept cold.",
++      "decision": "Plain kombucha from the refrigerated case, kept cold.",
+       "why": "Bottled kombucha can keep fermenting, and its alcohol can climb. Commercial kombucha is usually under 0.5%.",
+       "short_answer": "Pick kombucha from the refrigerated case. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars. At 0.5% alcohol or more, federal alcohol rules apply.",
+       "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. Federal law calls a fermented drink beer at one-half of 1 percent alcohol by volume or more. TTB alcohol rules then apply, including a health warning statement on the container. They apply even if the alcohol reaches 0.5% after bottling. Some makers sell hard kombucha at over 5 percent alcohol.",
+@@ -10060,9 +10060,10 @@
+         "https://www.law.cornell.edu/uscode/text/26/5052"
+       ],
+       "kristy_take": "Kombucha keeps working in the bottle. The cold case and the label show where it stands.",
+-      "cart_pick": "Kombucha from the refrigerated case",
++      "cart_pick": "Plain refrigerated kombucha",
+       "buying_tips": [
+         "Bottled kombucha can keep fermenting, and its alcohol can climb.",
++        "Look for tea and sugar first on the list, with no fruit juice added.",
+         "Pick bottles from the refrigerated case.",
+         "Read the Nutrition Facts for added sugars.",
+         "Look for an alcohol statement on the label.",
+@@ -10352,7 +10353,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "Which miso do you buy?",
+-      "decision": "Miso of soybeans, salt and koji, with any grain named.",
++      "decision": "Organic miso of soybeans, salt and koji, any grain named.",
+       "why": "Miso is soybeans fermented with salt and koji, often with rice or barley. Red miso is the saltiest kind.",
+       "short_answer": "Read the list: soybeans, salt and koji, often with rice or barley. White miso is mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
+       "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
+@@ -10363,9 +10364,10 @@
+         "https://www.huffingtonpost.co.uk/entry/different-kinds-of-miso_n_6993590"
+       ],
+       "kristy_take": "The list names the soybeans, salt, koji and grain. Red is the salty one.",
+-      "cart_pick": "Miso listing soybeans, salt and koji",
++      "cart_pick": "Organic miso paste",
+       "buying_tips": [
+         "White miso is mild and sweet, and red is the saltiest, so a little goes far.",
++        "Look for organic soybeans, koji and salt on the list, with any grain named.",
+         "Read the ingredients for soybeans, salt, koji and the grain: rice, barley or none.",
+         "Pick white miso if buying only one.",
+         "Pick red miso knowing it is the saltiest kind.",
+@@ -10413,7 +10415,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick tempeh?",
+-      "decision": "Tempeh in a firm cake, bound white all through.",
++      "decision": "Organic tempeh in a firm cake, bound white all through.",
+       "why": "A finished cake holds together as one piece. A loose one crumbles easily.",
+       "short_answer": "Pick a firm, dense cake held together by white growth all through. A loose cake that crumbles is unfinished. Read the list for soybeans alone or added grains. Pass on any pack with noticeable mold or odd colors.",
+       "detail": "Tempeh is cooked soybeans fermented with a Rhizopus culture, a mold, into a firm, dense cake. In good tempeh, a dense white mycelium, the threads of the mold, binds the beans into one cake. The whole cake should lift as one piece without crumbling. Unfinished tempeh is bound loosely and crumbles easily. Most versions add grains, seeds or other beans, and soy-free versions exist. It is sold cold, often near the tofu. It keeps up to three weeks in the fridge, and unopened blocks can be frozen for up to a month.",
+@@ -10424,9 +10426,10 @@
+         "https://www.americastestkitchen.com/articles/575-what-is-tempeh"
+       ],
+       "kristy_take": "A tempeh cake should hold as one solid piece. The list shows what went in besides the soybeans.",
+-      "cart_pick": "A firm tempeh cake, bound white",
++      "cart_pick": "Firm organic tempeh cake",
+       "buying_tips": [
+         "A finished cake holds together as one piece; a loose, crumbly one is unfinished.",
++        "Look for a tempeh list of organic soybeans alone or with one named grain.",
+         "Press the pack and feel for a firm cake that holds as one piece.",
+         "Read the ingredients for soybeans alone or added grains.",
+         "Pass on any pack with noticeable mold or odd discoloration.",
+@@ -10469,7 +10472,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick natto?",
+-      "decision": "Natto in sealed trays from the cold case or freezer.",
++      "decision": "Organic natto in sealed trays, chilled or frozen.",
+       "why": "Chilled natto keeps only days. Frozen, it keeps for months.",
+       "short_answer": "Natto is whole soybeans fermented until sticky and stringy, with a strong smell. It comes in small sealed trays, often with mustard and sauce packets. Buy it from the cold case or the freezer, and check the date.",
+       "detail": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong, like a pungent aged cheese. Mass-produced natto comes in small polystyrene trays, two or three to a pack, occasionally four. Each tray holds 40 to 50 g. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
+@@ -10480,9 +10483,10 @@
+         "https://wiki.ubc.ca/Course:FNH200/Projects/2022/Natto"
+       ],
+       "kristy_take": "The strong smell and sticky strings are the food itself, not a fault.",
+-      "cart_pick": "Natto trays from the cold case",
++      "cart_pick": "Organic natto beans",
+       "buying_tips": [
+         "Chilled natto keeps only days; frozen, it keeps for months.",
++        "Look for USDA Organic on the pack, with whole soybeans listed first.",
+         "Check the date on the pack.",
+         "Look for trays kept cold or frozen.",
+         "Freeze what will not be eaten within days.",
+@@ -10652,7 +10656,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick salt?",
+-      "decision": "Iodized salt, with any anti-caking agent named on the list.",
++      "decision": "Iodized salt with no anti-caking agent on the list.",
+       "why": "Iodized salt lists added iodine, and an anti-caking agent may be added to salt.",
+       "short_answer": "Iodized salt lists added iodine. An anti-caking agent may be added to salt, and the list names it. Pickling or canning salt is pure salt. Salt that is not iodized says “does not supply iodide” beside its name.",
+       "detail": "Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide.” The statement sits right after the name of the food. Iodide is the form of iodine added to iodized salt, and iodized salt is table salt with iodine added. An anticaking agent, an additive that keeps salt from caking, may be added to salt under 21 CFR 172.490. Kosher salt has a coarse texture. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. A third of a cup of kosher salt does not have the same density as a third of a cup of pickling salt. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
+@@ -10665,9 +10669,10 @@
+         "https://www.law.cornell.edu/cfr/text/21/172.490"
+       ],
+       "kristy_take": "The list is the read: iodine added, an anti-caking agent added, or salt alone.",
+-      "cart_pick": "Pickling or canning salt",
++      "cart_pick": "Iodized salt: no anti-caking agent",
+       "buying_tips": [
+         "Salt without iodine says “does not supply iodide” beside its name.",
++        "Look for iodide named on the list, with no anti-caking agent beside it.",
+         "Read the list: iodized salt lists added iodine.",
+         "Check the list for an anti-caking agent.",
+         "Pickling or canning salt is pure salt with nothing added."
+@@ -11188,7 +11193,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick nutritional yeast?",
+-      "decision": "Fortified or unfortified nutritional yeast flakes, granules or powder.",
++      "decision": "Unfortified nutritional yeast flakes, granules or powder.",
+       "why": "The yeast is grown as food, then heated and dried, so it is inactive either way.",
+       "short_answer": "Nutritional yeast is grown as food, then heated and dried, so it is inactive. Fortified yeast has vitamins added, and the ingredient list names them. Unfortified has none added. Fortified is the more common type.",
+       "detail": "Nutritional yeast is Saccharomyces cerevisiae, the same species used to bake bread and brew beer. The cells grow for several days on a sugar-rich medium such as molasses. They are then deactivated with heat, meaning killed, then washed, dried and crumbled. Under 21 CFR 172.896, dried Saccharomyces cerevisiae may be used in food.",
+@@ -11198,15 +11203,17 @@
+         "https://www.healthline.com/nutrition/nutritional-yeast"
+       ],
+       "kristy_take": "Both kinds are the same inactive yeast. The ingredient list shows whether vitamins went in.",
+-      "cart_pick": "Nutritional yeast flakes, either type",
++      "cart_pick": "Unfortified nutritional yeast flakes",
+       "buying_tips": [
+         "The two look alike in the bag; only the list shows whether vitamins were added.",
++        "Look for inactive dried yeast and nothing more, with no vitamins listed.",
+         "Read the ingredient list to tell fortified from unfortified.",
+         "Pick flakes, granules or powder by how it will be used.",
+         "Look in the spice aisle or the bulk bins."
+       ],
+       "watch_out": [
+-        "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart."
++        "Fortified and unfortified look alike in the bag. Only the ingredient list tells them apart.",
++        "Fortified nutritional yeast comes second, behind one with no vitamins added."
+       ],
+       "pick_steps": [
+         "Read the ingredient list to tell fortified from unfortified.",
+@@ -11223,7 +11230,7 @@
+           "meaning": "No added vitamins, only what the yeast made as it grew."
+         }
+       ],
+-      "tier_note": "Added vitamins are a label fact read from the ingredients, never a ranking.",
++      "tier_note": "Added vitamins are read from the ingredients, and unfortified ranks first.",
+       "asked_as": [
+         "which nutritional yeast should i buy",
+         "how do i pick a nutritional yeast",
+@@ -11560,7 +11567,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick jam or preserves?",
+-      "decision": "Jam or preserves by name, made from fruit, not juice.",
++      "decision": "Jam or preserves of fruit, sugar and pectin, nothing else.",
+       "why": "“Jam” and “Preserves” are standardized names made from fruit. Jelly is made from strained juice.",
+       "short_answer": "Look for “Jam” or “Preserves” in the name. Both are standardized and made from fruit with sugar. Jelly is made from strained juice. Reduced-sugar jars keep a shorter time once opened, so refrigerate them.",
+       "detail": "“Jam” and “Preserves” are standardized names. Jam is made from fruit and sugar at a fixed ratio: at least 47 parts fruit to 55 parts sugar for some fruits, and 45 to 55 for the rest. The finished jam is cooked to not less than 65 percent soluble solids. Jelly is made from the filtered or strained juice of the fruit. Pectin is the natural substance in fruit that makes it gel; commercial pectins are made from apples or citrus fruit. Special pectins exist for jars with less sugar or no added sugar. Those jars do not use sugar as a preservative, so some require refrigeration. When a jam names several fruits, they are listed in order of predominance. Sugar can weigh more than the fruit in a standard jam. By one extension definition, jam is a sweet spread that holds its shape, made from crushed or chopped fruit. Jelly is a firm gel made from juice. Preserves are small whole fruits or uniform pieces in a thick, gelled syrup. Home-kitchen (cottage-food) jam follows the same federal standard of identity for each product.",
+@@ -11575,9 +11582,10 @@
+         "https://extension.umd.edu/sites/extension.umd.edu/files/publications/FS-1005%20Launching%20a%20Cottage%20Food%20Industry.pdf"
+       ],
+       "kristy_take": "Jams and preserves are cooked from crushed fruit or whole pieces. The name on the jar says which kind it is.",
+-      "cart_pick": "Jam or preserves named for its fruit",
++      "cart_pick": "Jam or preserves: fruit, sugar, pectin",
+       "buying_tips": [
+         "Jam and preserves start from the fruit itself; jelly is strained juice.",
++        "Look for fruit first, then sugar and pectin, and nothing more on the jar.",
+         "Read the name for “Jam” or “Preserves” with the fruit named.",
+         "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
+         "In a mixed-fruit jam, the fruits are listed most first.",
+@@ -11637,7 +11645,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick ketchup and mustard?",
+-      "decision": "Ketchup led by tomato; mustard of seed, vinegar and spice.",
++      "decision": "Unsweetened ketchup from tomato; mustard of seed, vinegar, spice.",
+       "why": "Ketchup’s federal standard starts from tomato. Prepared mustard is ground seed, vinegar, turmeric, salt and spices.",
+       "short_answer": "Ketchup is made from tomato with vinegar, sweeteners and spices. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices. Iowa State puts opened ketchup at 6 months and mustard at 1 year.",
+       "detail": "Ketchup’s federal standard, 21 CFR 155.194, accepts three names: catsup, ketchup or catchup. It starts from tomato concentrate or liquid from red tomatoes. Vinegars, sweeteners, and spices, flavoring, onions or garlic are its optional ingredients. Lemon juice or suitable organic acids may be added only to adjust the pH, a measure of acidity. The mustard description here is the USDA AMS commercial item description, a federal purchase spec rather than retail law. It calls for ground mustard seed, vinegar, turmeric, salt and spices. Yellow seed goes into its Type I and Type II mustards, and brown seed into Types III to IX. Yellow mustard is smooth, with a mild flavor and slight acid taste. Dijon is smooth and pungent, with mild white wine notes. Stone ground is coarse and pungent, with visible specks of mustard seed. Spicy brown is slightly thick. Gums and artificial colors are not permitted, and added water must be declared. As a food history site reports, the Oxford English Dictionary traces ketchup to ke-tsiap. In the Amoy dialect of Chinese, that word means a brine of pickled fish. Mushroom, walnut and fish ketchups stayed more popular in the States until the mid-1800s.",
+@@ -11649,9 +11657,10 @@
+         "https://culinarylore.com/food-history:origin-of-ketchup/"
+       ],
+       "kristy_take": "By the Oxford English Dictionary’s account, ketchup was first a word for a brine of pickled fish. Today’s standard starts from tomato.",
+-      "cart_pick": "Ketchup from tomato; mustard from seed",
++      "cart_pick": "Unsweetened tomato ketchup and mustard",
+       "buying_tips": [
+         "Ketchup’s federal standard starts from tomato; sweeteners and spices are optional.",
++        "Look for a ketchup list of tomato, vinegar and spices, with no sweetener.",
+         "Read the ketchup label for tomato concentrate and vinegar.",
+         "Read the mustard label for mustard seed, vinegar and spices.",
+         "Stone ground mustard shows visible specks of seed.",
+@@ -11776,7 +11785,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick soy sauce and hot sauce?",
+-      "decision": "Traditionally brewed soy sauce, not made fast with acid.",
++      "decision": "Organic soy sauce, traditionally brewed, not made fast with acid.",
+       "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
+       "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Some fermented hot sauces have no added vinegar.",
+       "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
+@@ -11790,9 +11799,10 @@
+         "https://repository.lsu.edu/gradschool_disstheses/4217"
+       ],
+       "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
+-      "cart_pick": "Soy sauce brewed by fermentation",
++      "cart_pick": "Organic naturally brewed soy sauce",
+       "buying_tips": [
+         "Brewed soy sauce ferments for months; the fast method makes it with acid in hours.",
++        "Look for the words naturally brewed, with organic soybeans named first.",
+         "Read the ingredients for wheat, on tamari too.",
+         "Read the front for a gluten-free claim.",
+         "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
+@@ -11842,7 +11852,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick canned soup?",
+-      "decision": "Low-sodium canned soup with a short list, can undented.",
++      "decision": "Low-sodium canned soup, short list, no added flavors, can undented.",
+       "why": "Sodium words on the front have fixed meanings. Deep dents, leaks, rust and bulging are what to skip on the can.",
+       "short_answer": "Read the sodium words on the front. Low sodium is a fixed ceiling, 140 mg or less. Reduced sodium means 25 percent less than a named soup. Pick a can without deep dents, leaks, rust or bulging.",
+       "detail": "Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
+@@ -11860,6 +11870,7 @@
+       "cart_pick": "Low sodium canned soup, undented can",
+       "buying_tips": [
+         "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
++        "Look for a short list with no added flavors, starches or sugar.",
+         "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
+         "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+       ],
+@@ -11922,7 +11933,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick olives?",
+-      "decision": "Brine-cured olives, fermented slowly in water and salt.",
++      "decision": "Brine-cured olives, fermented in water and salt, nothing else.",
+       "why": "Fresh olives are bitter, and curing removes it. Brine curing ferments the fruit slowly, with water and salt.",
+       "short_answer": "Olives off the tree are very bitter, so they are cured before eating. Brine-cured olives ferment slowly in water and salt. Lye-cured olives are a milder style. Opened olives keep about 2 weeks.",
+       "detail": "Olives picked off the tree hold a very bitter compound called oleuropein. Curing leaches it out. The common curing methods are water, brine, lye and dry salt, and each gives a different texture and flavor. Water-cured olives stay slightly bitter, because water removes less oleuropein. Brine curing is a fermentation that turns the fruit’s sugars into lactic and acetic acids. It uses only water and salt, but takes a long time. Lye curing works quickly, and rinsing leaves a neutral olive that takes on flavors from vinegar and herbs. Salt gives olives their flavor and serves as a preservative. Salt curing has roots in ancient antiquity. Commercial table olives follow three main methods: Greek, Spanish and Californian. Greek-style olives are picked near full ripeness, at the purple stage, and cured in brine. Spanish-style green olives are treated with lye, rinsed, then fermented. California-style black ripe olives are lye-cured and darkened with air, then colored black with an iron salt. One review’s table puts debittering at 6–12 months for Greek, 1–7 months for Spanish and 1 week for California. The California method gives the mildest flavor and the least bitterness. USDA grade standards cover canned ripe olives (U.S. Grade A, B and C). USDA defines green olives as “completely fermented and cured” fruit of the olive tree.",
+@@ -11939,6 +11950,7 @@
+       "cart_pick": "Olives cured in brine",
+       "buying_tips": [
+         "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
++        "Look for a jar of olives, water and salt, with no ferrous gluconate.",
+         "Read the jar for the curing method: brine, lye or dry salt.",
+         "Greek-style olives are near-ripe purple fruit cured in brine.",
+         "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+@@ -12333,7 +12345,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick tortilla chips?",
+-      "decision": "Masa tortilla chips in olive oil, coconut oil or tallow.",
++      "decision": "Organic masa tortilla chips in olive oil or tallow.",
+       "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
+       "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
+       "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
+@@ -12363,9 +12375,10 @@
+         }
+       ],
+       "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
+-      "cart_pick": "Masa tortilla chips: olive oil",
++      "cart_pick": "Organic masa tortilla chips: olive oil",
+       "buying_tips": [
+         "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
++        "Look for the USDA Organic seal, then masa, one named fat and salt.",
+         "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
+         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+         "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.",
+@@ -12514,6 +12527,7 @@
+       "cart_pick": "Plain popcorn kernels",
+       "buying_tips": [
+         "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
++        "Look for a bag of kernels with popcorn as the only ingredient.",
+         "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
+         "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
+         "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
+@@ -12612,7 +12626,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick a granola or snack bar?",
+-      "decision": "Bars with oats or another whole grain listed first.",
++      "decision": "Organic bars with oats or another whole grain listed first.",
+       "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
+       "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
+       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil.",
+@@ -12649,9 +12663,10 @@
+         }
+       ],
+       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
+-      "cart_pick": "Bars with oats or whole grain first",
++      "cart_pick": "Organic oat snack bars",
+       "buying_tips": [
+         "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
++        "Look for organic oats first and fruit or honey as the only sweetener.",
+         "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
+         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+         "Read the first ingredients; oats or another whole grain should lead.",
+@@ -12701,7 +12716,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick trail mix?",
+-      "decision": "Trail mix of nuts and dried fruit, little else listed.",
++      "decision": "Trail mix of nuts and dried fruit alone, nothing added.",
+       "why": "Nuts and dried fruit are the old trail recipe, and the list runs in order of amount.",
+       "short_answer": "Trail mix began as nuts and dried fruit carried on the trail. Ingredients run in order of amount, so the list shows what leads and what was added.",
+       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. An extension guide makes the same point: the foods at the start of the list are the most in the recipe. Raw versus roasted nuts is its own question, with its own card. So is dried fruit.",
+@@ -12712,9 +12727,10 @@
+         "https://blogs.extension.iastate.edu/answerline/2024/02/01/making-granola-bars-a-healthy-treat/"
+       ],
+       "kristy_take": "In 1833, Danish students ate studenterhavre, “student oats”: raisins and almonds, with chocolate at the holidays. A 1906 camping guide sent hikers out with nuts, raisins and sweet chocolate. A 1958 novel packs raisins, peanuts, dried apricots and prunes.",
+-      "cart_pick": "Nuts and dried fruit, little else",
++      "cart_pick": "Trail mix: nuts and dried fruit only",
+       "buying_tips": [
+         "Ingredients run by amount, so a long list can push nuts and fruit to the back.",
++        "Look for a bag of only nuts and dried fruit, with no candy, oil or salt.",
+         "Read the first few ingredients; nuts and fruit should lead.",
+         "Compare mixes by how short the list runs beyond nuts and fruit."
+       ],
+@@ -12814,7 +12830,7 @@
+       ],
+       "category": "bulk_pantry",
+       "question": "How do you pick hummus?",
+-      "decision": "Hummus of chickpeas and tahini, the traditional pairing.",
++      "decision": "Organic hummus of chickpeas and tahini, with no gums.",
+       "why": "Hummus bi tahina names its two parts, chickpeas and tahini. Store tubs add lemon and salt.",
+       "short_answer": "Hummus is chickpeas and tahini, with garlic, lemon and salt. The word is Arabic for chickpea. Store tubs typically list chickpeas, tahini, lemon and salt, and every tub in one tasting had an acid.",
+       "detail": "The full name, hummus bi tahina, names chickpeas and tahini, a paste of sesame seeds. A 13th-century cookbook from Cairo holds the first written record, without tahini or garlic. Some historians trace the modern style to 18th-century Damascus. In Israel, Palestine and Lebanon it is a main dish, not just a dip. Guar gum thickens a tub and stops weeping, and roughly half the tubs in one tasting used it. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground. Homemade hummus keeps three to four days in an airtight container in the fridge.",
+@@ -12842,9 +12858,10 @@
+         }
+       ],
+       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
+-      "cart_pick": "Hummus led by chickpeas and tahini",
++      "cart_pick": "Organic hummus: chickpeas and tahini",
+       "buying_tips": [
+         "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
++        "Look for certified organic chickpeas and tahini, with no gum on the list.",
+         "Read the list for chickpeas and tahini at the top.",
+         "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+         "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+diff --git a/server/test/acceptance/ca-4b.test.js b/server/test/acceptance/ca-4b.test.js
+index 9a0fe25..cfd7c88 100644
+--- a/server/test/acceptance/ca-4b.test.js
++++ b/server/test/acceptance/ca-4b.test.js
+@@ -1,6 +1,6 @@
+ // CA-4b: the other sixteen eggs_dairy cards (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
+ import { beforeCa7 } from './ca7Superseded.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import { readFileSync } from 'node:fs';
+@@ -17,7 +17,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+ const LIVE = structuredClone(kb); // the review table follows the live front
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
+ const base = JSON.parse(execFileSync('git', ['show', 'a392e36:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const reviewText = readFileSync(join(ROOT, 'docs', 'do-lines-review.md'), 'utf8');
+ const reviewed = parseReviewTable(reviewText);
+diff --git a/server/test/acceptance/ca-7.test.js b/server/test/acceptance/ca-7.test.js
+index b72012c..3f40140 100644
+--- a/server/test/acceptance/ca-7.test.js
++++ b/server/test/acceptance/ca-7.test.js
+@@ -8,12 +8,12 @@ import { dirname, join } from 'node:path';
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+ 
+ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const ROOT = join(SERVER, '..');
+ const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
+ const base = JSON.parse(execFileSync('git', ['show', '9854ae1:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+ const now = (id) => kb.entries.find((e) => e.id === id);
+diff --git a/server/test/acceptance/cleanPick1.test.js b/server/test/acceptance/cleanPick1.test.js
+index 3ed6487..158a6e2 100644
+--- a/server/test/acceptance/cleanPick1.test.js
++++ b/server/test/acceptance/cleanPick1.test.js
+@@ -224,7 +224,8 @@ const IDS = Object.keys(BECAME);
+ // Later clean-pick batches own these ids; cleanPick1 no longer freezes them. Each batch appends its ids.
+ const LATER = new Set([/* clean-pick-2 */ 'frozen_vs_fresh_produce', 'produce_seasonality', 'sprouts_raw', 'berries_picking', 'produce_leafy_greens', 'produce_peppers', 'produce_apples_pears', 'produce_stone_fruit', 'produce_green_beans', 'produce_root_vegetables', 'produce_brassicas', 'produce_onions_garlic', 'produce_citrus', 'produce_mushrooms', 'produce_bananas', 'organic_worth_it_by_type', 'label_organic_scope',
+   /* clean-pick-3 */ 'almond_milk', 'soy_milk', 'oat_milk', 'coconut_milk_beverage', 'plant_butter', 'cottage_cheese', 'ghee', 'goat_sheep_dairy', 'ice_cream', 'butcher_counter_asking', 'organ_meats', 'lard_tallow', 'smoked_salmon', 'frozen_nuggets', 'hot_dogs', 'turkey_bacon', 'frozen_pizza', 'frozen_waffles', 'frozen_meals', 'canned_coconut_milk', 'coconut_water',
+-  /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
++  /* clean-pick-4 */ 'sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta',
++  /* clean-pick-5 */ 'tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus']);
+ // Lint-forced (lintSections L4 TERM_UNGLOSSED): a meat front naming pasture-raised or organic carries the
+ // G3/G4 gloss in tier_note; the old tier_note moves to the end of detail, never deleted.
+ const GLOSSED = IDS.filter((id) => BECAME[id].tier_note);
+@@ -301,7 +302,7 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these
+ });
+ 
+ test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
+-  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 143);
++  const rest = nonEmpty(kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 127);
+   for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
+   assert.equal(kb.entries.length, base.entries.length);
+   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
+diff --git a/server/test/acceptance/cleanPick2.test.js b/server/test/acceptance/cleanPick2.test.js
+index 3dd3fb1..6865f57 100644
+--- a/server/test/acceptance/cleanPick2.test.js
++++ b/server/test/acceptance/cleanPick2.test.js
+@@ -5,9 +5,9 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
+ 
+-const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4]);
++const LATER = new Set([...CLEAN_PICK_3, ...CLEAN_PICK_4, ...CLEAN_PICK_5]);
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -204,7 +204,7 @@ test('C5 every B2 id names organic; outside the batch organic presence is unchan
+ 
+ test('C6 entries outside the batch deepEqual 74237ce', () => {
+   const others = kb.entries.filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
+-  nonEmpty(others, 'others', 159);
++  nonEmpty(others, 'others', 143);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+ });
+diff --git a/server/test/acceptance/cleanPick2b.test.js b/server/test/acceptance/cleanPick2b.test.js
+index 31fe200..ee0a90a 100644
+--- a/server/test/acceptance/cleanPick2b.test.js
++++ b/server/test/acceptance/cleanPick2b.test.js
+@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
+-import { CLEAN_PICK_3, CLEAN_PICK_4 } from './twoLinePin.js';
++import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+@@ -54,7 +54,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
+ 
+ test('C3 every other field and entry equals a2487a7', () => {
+   for (const e of kb.entries) {
+-    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id)) continue;
++    if (CLEAN_PICK_3.has(e.id) || CLEAN_PICK_4.has(e.id) || CLEAN_PICK_5.has(e.id)) continue;
+     const old = find(base, e.id);
+     const strip = (x) => Object.fromEntries(Object.entries(x).filter(([f]) => !(OWNED[e.id] || []).includes(f)));
+     assert.deepEqual(strip(e), strip(old), e.id);
+diff --git a/server/test/acceptance/cleanPick3.test.js b/server/test/acceptance/cleanPick3.test.js
+index fa38672..03b9b43 100644
+--- a/server/test/acceptance/cleanPick3.test.js
++++ b/server/test/acceptance/cleanPick3.test.js
+@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
+-import { CLEAN_PICK_4 } from './twoLinePin.js';
++import { CLEAN_PICK_4, CLEAN_PICK_5 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -129,8 +129,8 @@ test('C5 organic is named exactly on nuggets, hot dogs and turkey bacon', () =>
+ });
+ 
+ test('C6 entries outside the batch deepEqual 2ab7f2f; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id));
+-  nonEmpty(others, 'others', 176);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_4.has(e.id) && !CLEAN_PICK_5.has(e.id));
++  nonEmpty(others, 'others', 160);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+@@ -147,7 +147,7 @@ test('C7 doLines.json unchanged; review headlines move only on decision-changed
+   assert.equal(liveRows.size, baseRows.size);
+   let seen = 0;
+   for (const [id, row] of baseRows) {
+-    if (CLEAN_PICK_4.has(id)) continue;
++    if (CLEAN_PICK_4.has(id) || CLEAN_PICK_5.has(id)) continue;
+     const lr = liveRows.get(id);
+     assert.ok(lr, id);
+     if (DECISION_CHANGED.includes(id)) {
+diff --git a/server/test/acceptance/cleanPick4.test.js b/server/test/acceptance/cleanPick4.test.js
+index 15a1a2b..9620d4c 100644
+--- a/server/test/acceptance/cleanPick4.test.js
++++ b/server/test/acceptance/cleanPick4.test.js
+@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { nonEmpty } from '../../lib/testGuards.js';
+ import { matchItemToCard } from '../../lib/listMatch.js';
++import { CLEAN_PICK_5 } from './twoLinePin.js';
+ 
+ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+ const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+@@ -101,8 +102,8 @@ test('C5 no bread or grain front names organic', () => {
+ });
+ 
+ test('C6 entries outside the batch deepEqual f488733; count and top-level keys unchanged', () => {
+-  const others = kb.entries.filter((e) => !IDS.includes(e.id));
+-  nonEmpty(others, 'others', 195);
++  const others = kb.entries.filter((e) => !IDS.includes(e.id) && !CLEAN_PICK_5.has(e.id));
++  nonEmpty(others, 'others', 179);
+   assert.equal(kb.entries.length, base.entries.length);
+   for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+   assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
+@@ -119,6 +120,7 @@ test('C7 doLines.json unchanged; review headlines move only on the batch ids', (
+   assert.equal(liveRows.size, baseRows.size);
+   let seen = 0;
+   for (const [id, row] of baseRows) {
++    if (CLEAN_PICK_5.has(id)) continue;
+     const lr = liveRows.get(id);
+     assert.ok(lr, id);
+     if (DECISION_CHANGED.includes(id)) {
+diff --git a/server/test/acceptance/cleanPick5.test.js b/server/test/acceptance/cleanPick5.test.js
+new file mode 100644
+index 0000000..c8d05b1
+--- /dev/null
++++ b/server/test/acceptance/cleanPick5.test.js
+@@ -0,0 +1,207 @@
++// clean-pick-5 (Devon 2026-10-20): B6 corn, soy, ferments, condiments and snacks name each item’s own cleanest version.
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { execFileSync } from 'node:child_process';
++import { fileURLToPath } from 'node:url';
++import { nonEmpty } from '../../lib/testGuards.js';
++import { matchItemToCard } from '../../lib/listMatch.js';
++
++const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
++const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
++const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
++const base = JSON.parse(git('6db979f:server/kristy_perimeter_kb.json'));
++const find = (k, id) => k.entries.find((e) => e.id === id);
++const live = (id) => find(kb, id);
++const was = (id) => find(base, id);
++const words = (s) => s.trim().split(/\s+/).length;
++
++const BECAME = {
++  tortilla_chips: { decision: 'Organic masa tortilla chips in olive oil or tallow.', cart_pick: 'Organic masa tortilla chips: olive oil', tip1: 'Look for the USDA Organic seal, then masa, one named fat and salt.', std: /USDA Organic seal/, carry: /organic/i },
++  popcorn: { tip1: 'Look for a bag of kernels with popcorn as the only ingredient.', std: /popcorn as the only ingredient/, carry: /popcorn as the only ingredient/ },
++  miso: { decision: 'Organic miso of soybeans, salt and koji, any grain named.', cart_pick: 'Organic miso paste', tip1: 'Look for organic soybeans, koji and salt on the list, with any grain named.', std: /organic soybeans, koji and salt/, carry: /organic/i },
++  tempeh: { decision: 'Organic tempeh in a firm cake, bound white all through.', cart_pick: 'Firm organic tempeh cake', tip1: 'Look for a tempeh list of organic soybeans alone or with one named grain.', std: /organic soybeans alone/, carry: /organic/i },
++  natto: { decision: 'Organic natto in sealed trays, chilled or frozen.', cart_pick: 'Organic natto beans', tip1: 'Look for USDA Organic on the pack, with whole soybeans listed first.', std: /USDA Organic on the pack/, carry: /organic/i },
++  hot_soy_sauce: { decision: 'Organic soy sauce, traditionally brewed, not made fast with acid.', cart_pick: 'Organic naturally brewed soy sauce', tip1: 'Look for the words naturally brewed, with organic soybeans named first.', std: /naturally brewed, with organic soybeans/, carry: /organic/i },
++  kombucha: { decision: 'Plain kombucha from the refrigerated case, kept cold.', cart_pick: 'Plain refrigerated kombucha', tip1: 'Look for tea and sugar first on the list, with no fruit juice added.', std: /no fruit juice added/, carry: /plain|no fruit juice/i },
++  jam: { decision: 'Jam or preserves of fruit, sugar and pectin, nothing else.', cart_pick: 'Jam or preserves: fruit, sugar, pectin', tip1: 'Look for fruit first, then sugar and pectin, and nothing more on the jar.', std: /fruit first, then sugar and pectin/, carry: /pectin/i },
++  ketchup_mustard: { decision: 'Unsweetened ketchup from tomato; mustard of seed, vinegar, spice.', cart_pick: 'Unsweetened tomato ketchup and mustard', tip1: 'Look for a ketchup list of tomato, vinegar and spices, with no sweetener.', std: /no sweetener/, carry: /unsweetened|no sweetener/i },
++  canned_soup: { decision: 'Low-sodium canned soup, short list, no added flavors, can undented.', tip1: 'Look for a short list with no added flavors, starches or sugar.', std: /no added flavors/, carry: /no added flavors/i },
++  olives: { decision: 'Brine-cured olives, fermented in water and salt, nothing else.', tip1: 'Look for a jar of olives, water and salt, with no ferrous gluconate.', std: /no ferrous gluconate/, carry: /nothing else|no ferrous gluconate/i },
++  salt: { decision: 'Iodized salt with no anti-caking agent on the list.', cart_pick: 'Iodized salt: no anti-caking agent', tip1: 'Look for iodide named on the list, with no anti-caking agent beside it.', std: /iodide named on the list/, carry: /no anti-caking/i },
++  nutritional_yeast: { decision: 'Unfortified nutritional yeast flakes, granules or powder.', cart_pick: 'Unfortified nutritional yeast flakes', tip1: 'Look for inactive dried yeast and nothing more, with no vitamins listed.', watch_add: 'Fortified nutritional yeast comes second, behind one with no vitamins added.', tier_note: 'Added vitamins are read from the ingredients, and unfortified ranks first.', std: /no vitamins listed/, carry: /unfortified/i },
++  snack_bars: { decision: 'Organic bars with oats or another whole grain listed first.', cart_pick: 'Organic oat snack bars', tip1: 'Look for organic oats first and fruit or honey as the only sweetener.', std: /organic oats first/, carry: /organic/i },
++  trail_mix: { decision: 'Trail mix of nuts and dried fruit alone, nothing added.', cart_pick: 'Trail mix: nuts and dried fruit only', tip1: 'Look for a bag of only nuts and dried fruit, with no candy, oil or salt.', std: /only nuts and dried fruit/, carry: /nuts and dried fruit/i },
++  hummus: { decision: 'Organic hummus of chickpeas and tahini, with no gums.', cart_pick: 'Organic hummus: chickpeas and tahini', tip1: 'Look for certified organic chickpeas and tahini, with no gum on the list.', std: /certified organic chickpeas/, carry: /organic/i },
++};
++const IDS = Object.keys(BECAME);
++const DECISION_CHANGED = IDS.filter((id) => BECAME[id].decision);
++const ORGANIC = new Set(['tortilla_chips', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'snack_bars', 'hummus']);
++const SNACKS = ['tortilla_chips', 'popcorn', 'snack_bars', 'trail_mix', 'hummus'];
++const OILY = /\b(sodium|canola|soybean|sunflower|safflower|cottonseed|grapeseed|rice bran|corn oil|vegetable oils?|seed oils?)\b/i;
++const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive)\b/i;
++const TREATMENT = /\b(causes?|prevents?|lowers? (the )?risk|carcinogen|cancer|tumou?rs?|toxic|unsafe|harm\w*|risks?|linked to|hyperactiv|behaviou?r|attention|neurobehavioral|exacerbate)/i;
++const REACH = [
++  ['tortilla chips', 'tortilla_chips'], ['popcorn kernels', 'popcorn'], ['snack bars', 'snack_bars'], ['granola bar', 'snack_bars'], ['granola', 'breakfast_cereal'],
++  ['trail mix', 'trail_mix'], ['nuts', 'nuts_raw_vs_roasted'], ['dried fruit', 'dried_fruit'], ['hummus', 'hummus'], ['miso paste', 'miso'],
++  ['tempeh', 'tempeh'], ['natto', 'natto'], ['soy sauce', 'hot_soy_sauce'], ['tamari', 'hot_soy_sauce'], ['nutritional yeast', 'nutritional_yeast'],
++  ['sea salt', 'salt'], ['kombucha', 'kombucha'], ['ketchup', 'ketchup_mustard'], ['jam', 'jam'],
++];
++const idOf = (r) => r?.slug;
++
++// Expected entry: the 6db979f entry plus the BECAME fields, computed the way the Change section states.
++function expected(id) {
++  const w = structuredClone(was(id));
++  const b = BECAME[id];
++  const e = { ...w, buying_tips: [w.buying_tips[0], b.tip1, ...w.buying_tips.slice(1)] };
++  for (const f of ['decision', 'cart_pick', 'tier_note']) if (b[f]) e[f] = b[f];
++  if (b.watch_add) e.watch_out = [...(w.watch_out ?? []), b.watch_add];
++  return e;
++}
++
++// Every new string the batch writes into a field shoppers see.
++const fresh = (ids = IDS) => ids.flatMap((id) => {
++  const b = BECAME[id];
++  return [b.decision, b.cart_pick, b.tip1, b.watch_add, b.tier_note].filter(Boolean);
++});
++
++nonEmpty(IDS, 'IDS', 16);
++
++test('C1 the 16 ids equal their expected entries and carry their phrase', () => {
++  for (const id of IDS) {
++    assert.ok(live(id) && was(id), `${id} missing`);
++    assert.deepEqual(live(id), expected(id), id);
++    const l = live(id);
++    assert.match(`${l.decision} ${l.cart_pick || ''} ${l.buying_tips[1]}`, BECAME[id].carry, `${id} carry phrase`);
++  }
++});
++
++test('C2 decisions are at most 10 words and carts at most 46 characters', () => {
++  for (const id of IDS) {
++    const l = live(id);
++    assert.ok(words(l.decision) <= 10, `${id} decision ${words(l.decision)} words`);
++    if (l.cart_pick) assert.ok(l.cart_pick.length <= 46, `${id} cart ${l.cart_pick.length} chars`);
++  }
++});
++
++test('C3 tips[0] stays the base why; tips[1] is the new standard line', () => {
++  for (const id of IDS) {
++    const t = live(id).buying_tips;
++    assert.equal(t[0], was(id).buying_tips[0], `${id} tip 0`);
++    assert.doesNotMatch(t[0], /^(choose|pick|buy|read|check|look|skip|compare)\b/i, `${id} tip 0 imperative`);
++    assert.notEqual(t[0], live(id).decision, id);
++    assert.equal(t[1], BECAME[id].tip1, `${id} tip 1`);
++    assert.match(t[1], BECAME[id].std, `${id} tip 1 standard`);
++  }
++});
++
++test('C4 no new text carries a banned or treatment word, a dash, a straight apostrophe or first person; snack text names no sodium or seed oil', () => {
++  const all = fresh();
++  nonEmpty(all, 'written', 40);
++  for (const s of all) {
++    assert.doesNotMatch(s, BANNED, s);
++    assert.doesNotMatch(s, TREATMENT, s);
++    assert.doesNotMatch(s, /\b(I|me|my|mine|we|our|us)\b/, s);
++    assert.ok(!s.includes('—') && !s.includes('–'), s);
++    assert.ok(!s.includes("'"), s);
++  }
++  const snack = fresh(SNACKS);
++  nonEmpty(snack, 'snack strings', 12);
++  for (const s of snack) assert.doesNotMatch(s, OILY, s);
++});
++
++test('C5 organic sits on the decision and cart of exactly the seven crop ids', () => {
++  nonEmpty([...ORGANIC], 'organic ids', 7);
++  for (const id of IDS) {
++    const l = live(id);
++    const w = was(id);
++    assert.doesNotMatch(`${w.decision} ${w.cart_pick || ''}`, /\borganic\b/i, `${id} base front`);
++    assert.equal(/\borganic\b/i.test(`${l.decision} ${l.cart_pick || ''}`), ORGANIC.has(id), id);
++    if (ORGANIC.has(id)) {
++      assert.match(l.decision, /\borganic\b/i, `${id} decision`);
++      assert.match(l.cart_pick, /\borganic\b/i, `${id} cart`);
++    }
++  }
++});
++
++test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys unchanged', () => {
++  const others = kb.entries.filter((e) => !IDS.includes(e.id));
++  nonEmpty(others, 'others', 190);
++  assert.equal(kb.entries.length, base.entries.length);
++  for (const e of others) assert.deepEqual(e, was(e.id), e.id);
++  assert.deepEqual(Object.keys(kb).sort(), Object.keys(base).sort());
++  for (const k of Object.keys(base)) if (k !== 'entries') assert.deepEqual(kb[k], base[k], k);
++});
++
++test('C7 doLines.json unchanged; review headlines move only on the batch ids', () => {
++  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
++  assert.deepEqual(now, JSON.parse(git('6db979f:server/lib/doLines.json')));
++  const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
++  const liveRows = rows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
++  const baseRows = rows(git('6db979f:docs/do-lines-review.md'));
++  nonEmpty([...baseRows.keys()], 'review rows', 150);
++  assert.equal(liveRows.size, baseRows.size);
++  let seen = 0;
++  for (const [id, row] of baseRows) {
++    const lr = liveRows.get(id);
++    assert.ok(lr, id);
++    if (DECISION_CHANGED.includes(id)) {
++      const lc = lr.split('|').map((c) => c.trim());
++      const bc = row.split('|').map((c) => c.trim());
++      assert.equal(lc[3], live(id).decision, id);
++      assert.equal(lc[4], bc[4], `${id} do cell`);
++      seen += 1;
++    } else {
++      assert.equal(lr, row, id);
++    }
++  }
++  assert.equal(seen, DECISION_CHANGED.length);
++});
++
++test('C8 every base tip and watch_out line is kept', () => {
++  for (const id of IDS) {
++    const l = live(id);
++    nonEmpty(was(id).buying_tips, `${id} base tips`, 1);
++    was(id).buying_tips.forEach((t, i) => assert.ok(l.buying_tips.includes(t), `${id} lost tip ${i}`));
++    (was(id).watch_out ?? []).forEach((t, i) => assert.ok((l.watch_out ?? []).includes(t), `${id} lost watch_out ${i}`));
++  }
++});
++
++test('C9 each cart pick matches its own card', async () => {
++  const carts = IDS.filter((id) => live(id).cart_pick);
++  nonEmpty(carts, 'carts', 16);
++  for (const id of carts) {
++    const got = idOf(await matchItemToCard(live(id).cart_pick));
++    assert.equal(got, id, `${live(id).cart_pick} -> ${got}`);
++  }
++});
++
++test('C10 no new string sits on more than 2 entries', () => {
++  const all = fresh();
++  nonEmpty(all, 'fresh', 40);
++  for (const s of all) {
++    const n = kb.entries.filter((e) => [e.decision, e.cart_pick, e.tier_note, ...(e.buying_tips || []), ...(e.watch_out || [])].includes(s)).length;
++    assert.ok(n <= 2, `${s} on ${n} entries`);
++  }
++});
++
++test('C11 salt is iodized with no anti-caking agent; nutritional yeast ranks unfortified first; reach queries still land', async () => {
++  const s = live('salt');
++  for (const f of ['decision', 'cart_pick']) {
++    assert.match(s[f], /iodized/i, `salt ${f} iodized`);
++    assert.match(s[f], /no anti-caking/i, `salt ${f} anti-caking`);
++  }
++  const n = live('nutritional_yeast');
++  assert.match(n.decision, /unfortified/i, 'yeast decision');
++  assert.match(n.cart_pick, /unfortified/i, 'yeast cart');
++  const last = n.watch_out.at(-1);
++  assert.match(last, /fortified/i, 'yeast watch_out');
++  assert.match(last, /second/i, 'yeast watch_out rank');
++  assert.match(n.tier_note, /unfortified ranks first/, 'yeast tier_note');
++  assert.doesNotMatch(n.tier_note, /never a ranking/, 'yeast tier_note old');
++  nonEmpty(REACH, 'reach', 19);
++  for (const [q, id] of REACH) {
++    const got = idOf(await matchItemToCard(q));
++    assert.equal(got, id, `${q} -> ${got}`);
++  }
++});
+diff --git a/server/test/acceptance/concernAdditives.test.js b/server/test/acceptance/concernAdditives.test.js
+index 69d114c..d1e6695 100644
+--- a/server/test/acceptance/concernAdditives.test.js
++++ b/server/test/acceptance/concernAdditives.test.js
+@@ -6,10 +6,10 @@ import { readFileSync, readdirSync } from 'node:fs';
+ import { join } from 'node:path';
+ import { execFileSync } from 'node:child_process';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { preTidy, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
++import { preTidy, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+ 
+ const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(e))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick3(preCleanPick4(preCleanPick5(e)))));
+ const ROOT = new URL('../../../', import.meta.url).pathname;
+ const pre = JSON.parse(execFileSync('git', ['show', 'bd8a1cc:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
+diff --git a/server/test/acceptance/twoLinePin.js b/server/test/acceptance/twoLinePin.js
+index b7a2993..b051452 100644
+--- a/server/test/acceptance/twoLinePin.js
++++ b/server/test/acceptance/twoLinePin.js
+@@ -2308,9 +2308,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "kombucha": {
+-    "decision": "Kombucha from the refrigerated case, kept cold.",
++    "decision": "Plain kombucha from the refrigerated case, kept cold.",
+     "buying_tips": [
+       "Bottled kombucha can keep fermenting, and its alcohol can climb.",
++      "Look for tea and sugar first on the list, with no fruit juice added.",
+       "Pick bottles from the refrigerated case.",
+       "Read the Nutrition Facts for added sugars.",
+       "Look for an alcohol statement on the label.",
+@@ -2357,9 +2358,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "miso": {
+-    "decision": "Miso of soybeans, salt and koji, with any grain named.",
++    "decision": "Organic miso of soybeans, salt and koji, any grain named.",
+     "buying_tips": [
+       "White miso is mild and sweet, and red is the saltiest, so a little goes far.",
++      "Look for organic soybeans, koji and salt on the list, with any grain named.",
+       "Read the ingredients for soybeans, salt, koji and the grain: rice, barley or none.",
+       "Pick white miso if buying only one.",
+       "Pick red miso knowing it is the saltiest kind.",
+@@ -2367,9 +2369,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "tempeh": {
+-    "decision": "Tempeh in a firm cake, bound white all through.",
++    "decision": "Organic tempeh in a firm cake, bound white all through.",
+     "buying_tips": [
+       "A finished cake holds together as one piece; a loose, crumbly one is unfinished.",
++      "Look for a tempeh list of organic soybeans alone or with one named grain.",
+       "Press the pack and feel for a firm cake that holds as one piece.",
+       "Read the ingredients for soybeans alone or added grains.",
+       "Pass on any pack with noticeable mold or odd discoloration.",
+@@ -2377,9 +2380,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "natto": {
+-    "decision": "Natto in sealed trays from the cold case or freezer.",
++    "decision": "Organic natto in sealed trays, chilled or frozen.",
+     "buying_tips": [
+       "Chilled natto keeps only days; frozen, it keeps for months.",
++      "Look for USDA Organic on the pack, with whole soybeans listed first.",
+       "Check the date on the pack.",
+       "Look for trays kept cold or frozen.",
+       "Freeze what will not be eaten within days.",
+@@ -2406,9 +2410,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "salt": {
+-    "decision": "Iodized salt, with any anti-caking agent named on the list.",
++    "decision": "Iodized salt with no anti-caking agent on the list.",
+     "buying_tips": [
+       "Salt without iodine says “does not supply iodide” beside its name.",
++      "Look for iodide named on the list, with no anti-caking agent beside it.",
+       "Read the list: iodized salt lists added iodine.",
+       "Check the list for an anti-caking agent.",
+       "Pickling or canning salt is pure salt with nothing added."
+@@ -2532,9 +2537,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "nutritional_yeast": {
+-    "decision": "Fortified or unfortified nutritional yeast flakes, granules or powder.",
++    "decision": "Unfortified nutritional yeast flakes, granules or powder.",
+     "buying_tips": [
+       "The two look alike in the bag; only the list shows whether vitamins were added.",
++      "Look for inactive dried yeast and nothing more, with no vitamins listed.",
+       "Read the ingredient list to tell fortified from unfortified.",
+       "Pick flakes, granules or powder by how it will be used.",
+       "Look in the spice aisle or the bulk bins."
+@@ -2602,9 +2608,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "jam": {
+-    "decision": "Jam or preserves by name, made from fruit, not juice.",
++    "decision": "Jam or preserves of fruit, sugar and pectin, nothing else.",
+     "buying_tips": [
+       "Jam and preserves start from the fruit itself; jelly is strained juice.",
++      "Look for fruit first, then sugar and pectin, and nothing more on the jar.",
+       "Read the name for “Jam” or “Preserves” with the fruit named.",
+       "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
+       "In a mixed-fruit jam, the fruits are listed most first.",
+@@ -2613,9 +2620,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "ketchup_mustard": {
+-    "decision": "Ketchup led by tomato; mustard of seed, vinegar and spice.",
++    "decision": "Unsweetened ketchup from tomato; mustard of seed, vinegar, spice.",
+     "buying_tips": [
+       "Ketchup’s federal standard starts from tomato; sweeteners and spices are optional.",
++      "Look for a ketchup list of tomato, vinegar and spices, with no sweetener.",
+       "Read the ketchup label for tomato concentrate and vinegar.",
+       "Read the mustard label for mustard seed, vinegar and spices.",
+       "Stone ground mustard shows visible specks of seed.",
+@@ -2648,18 +2656,20 @@ export const TWO_LINE = {
+     "cart_pick": "Olive oil only mayonnaise"
+   },
+   "hot_soy_sauce": {
+-    "decision": "Traditionally brewed soy sauce, not made fast with acid.",
++    "decision": "Organic soy sauce, traditionally brewed, not made fast with acid.",
+     "buying_tips": [
+       "Brewed soy sauce ferments for months; the fast method makes it with acid in hours.",
++      "Look for the words naturally brewed, with organic soybeans named first.",
+       "Read the ingredients for wheat, on tamari too.",
+       "Read the front for a gluten-free claim.",
+       "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
+     ]
+   },
+   "canned_soup": {
+-    "decision": "Low-sodium canned soup with a short list, can undented.",
++    "decision": "Low-sodium canned soup, short list, no added flavors, can undented.",
+     "buying_tips": [
+       "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
++      "Look for a short list with no added flavors, starches or sugar.",
+       "Pick a can that says BPA-free; many food cans are lined with an epoxy made with BPA. Fresh or frozen soup has no can lining.",
+       "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+     ],
+@@ -2679,9 +2689,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "olives": {
+-    "decision": "Brine-cured olives, fermented slowly in water and salt.",
++    "decision": "Brine-cured olives, fermented in water and salt, nothing else.",
+     "buying_tips": [
+       "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
++      "Look for a jar of olives, water and salt, with no ferrous gluconate.",
+       "Read the jar for the curing method: brine, lye or dry salt.",
+       "Greek-style olives are near-ripe purple fruit cured in brine.",
+       "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+@@ -2772,9 +2783,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "tortilla_chips": {
+-    "decision": "Masa tortilla chips in olive oil, coconut oil or tallow.",
++    "decision": "Organic masa tortilla chips in olive oil or tallow.",
+     "buying_tips": [
+       "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
++      "Look for the USDA Organic seal, then masa, one named fat and salt.",
+       "Check the frying fat in the ingredients; choose masa chips cooked in olive oil, coconut oil, tallow or lard.",
+       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+       "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.",
+@@ -2805,7 +2817,7 @@ export const TWO_LINE = {
+         "url": "https://www.nongmoproject.org/gmo-faq/"
+       }
+     ],
+-    "cart_pick": "Masa tortilla chips: olive oil",
++    "cart_pick": "Organic masa tortilla chips: olive oil",
+     "watch_out": [
+       "Some corn chips are made from corn that was never cooked in lime.",
+       "Skip avocado oil too: the label cannot prove the oil is pure.",
+@@ -2855,6 +2867,7 @@ export const TWO_LINE = {
+     "decision": "Plain popcorn kernels, popped at home in coconut oil.",
+     "buying_tips": [
+       "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
++      "Look for a bag of kernels with popcorn as the only ingredient.",
+       "Pop kernels at home in coconut oil, butter or tallow, then salt to taste.",
+       "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
+       "CSPI says popcorn is never bioengineered, so a non-GMO seal on plain kernels adds nothing."
+@@ -2900,9 +2913,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "snack_bars": {
+-    "decision": "Bars with oats or another whole grain listed first.",
++    "decision": "Organic bars with oats or another whole grain listed first.",
+     "buying_tips": [
+       "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
++      "Look for organic oats first and fruit or honey as the only sweetener.",
+       "Find the oil in the ingredient list; take bars made with olive oil, coconut oil or butter.",
+       "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+       "Read the first ingredients; oats or another whole grain should lead.",
+@@ -2949,9 +2963,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "trail_mix": {
+-    "decision": "Trail mix of nuts and dried fruit, little else listed.",
++    "decision": "Trail mix of nuts and dried fruit alone, nothing added.",
+     "buying_tips": [
+       "Ingredients run by amount, so a long list can push nuts and fruit to the back.",
++      "Look for a bag of only nuts and dried fruit, with no candy, oil or salt.",
+       "Read the first few ingredients; nuts and fruit should lead.",
+       "Compare mixes by how short the list runs beyond nuts and fruit."
+     ]
+@@ -2977,9 +2992,10 @@ export const TWO_LINE = {
+     ]
+   },
+   "hummus": {
+-    "decision": "Hummus of chickpeas and tahini, the traditional pairing.",
++    "decision": "Organic hummus of chickpeas and tahini, with no gums.",
+     "buying_tips": [
+       "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
++      "Look for certified organic chickpeas and tahini, with no gum on the list.",
+       "Read the list for chickpeas and tahini at the top.",
+       "Look for lemon or citric acid; an acid balances the chickpeas and tahini.",
+       "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+@@ -3384,3 +3400,8 @@ export const preCleanPick3 = (e) => (e && CLEAN_PICK_3.has(e.id) ? PRE_CP3.entri
+ export const CLEAN_PICK_4 = new Set(['sourdough', 'bagels', 'breakfast_cereal', 'gluten_free_bread', 'buns_rolls', 'pastries_muffins', 'crackers', 'pretzels', 'fresh_pasta']);
+ const PRE_CP4 = JSON.parse(execFileSync('git', ['show', 'f488733:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+ export const preCleanPick4 = (e) => (e && CLEAN_PICK_4.has(e.id) ? PRE_CP4.entries.find((x) => x.id === e.id) : e);
++
++// clean-pick-5 (2026-10-20) moved these corn, soy, ferment, condiment and snack fronts on; older batch tests read them as of 6db979f, and cleanPick5.test.js owns the new text.
++export const CLEAN_PICK_5 = new Set(['tortilla_chips', 'popcorn', 'miso', 'tempeh', 'natto', 'hot_soy_sauce', 'kombucha', 'jam', 'ketchup_mustard', 'canned_soup', 'olives', 'salt', 'nutritional_yeast', 'snack_bars', 'trail_mix', 'hummus']);
++const PRE_CP5 = JSON.parse(execFileSync('git', ['show', '6db979f:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
++export const preCleanPick5 = (e) => (e && CLEAN_PICK_5.has(e.id) ? PRE_CP5.entries.find((x) => x.id === e.id) : e);
+diff --git a/server/test/acceptance/w2.test.js b/server/test/acceptance/w2.test.js
+index e419faf..10dde36 100644
+--- a/server/test/acceptance/w2.test.js
++++ b/server/test/acceptance/w2.test.js
+@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url';
+ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
++import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
+ import { attachCards, collapseByCard, matchItemToCard } from '../../lib/listMatch.js';
+ import { answerCounterQuestion } from '../../lib/counterAskPipeline.js';
+ import { kindFor } from '../../lib/counterCards.js';
+ import { lintSections } from '../../lib/counterCardLint.js';
+-kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e))))));
++kb.entries = kb.entries.map((e) => preTidy(preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e)))))));
+ 
+ const entries = nonEmpty(kb.entries, 'W2 corpus');
+ const byId = (id) => {
+diff --git a/server/test/acceptance/w4.test.js b/server/test/acceptance/w4.test.js
+index 03c85ea..a1bc9bc 100644
+--- a/server/test/acceptance/w4.test.js
++++ b/server/test/acceptance/w4.test.js
+@@ -8,8 +8,8 @@ import tips from '../../lib/sectionRules.json' with { type: 'json' };
+ import * as lint from '../../lib/counterCardLint.js';
+ import { projectEntry } from '../../lib/counterCards.js';
+ import { nonEmpty } from '../../lib/testGuards.js';
+-import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4 } from './twoLinePin.js';
+-kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(e)))));
++import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5 } from './twoLinePin.js';
++kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(e))))));
+ 
+ // Independent of the production predicate: a narrowed scope cannot hide cards.
+ const categories = new Set(['beef', 'poultry', 'poultry_eggs', 'meat_counter', 'pork', 'produce']);

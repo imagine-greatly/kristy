@@ -1,0 +1,77 @@
+{
+  "status": "done",
+  "files_changed": [
+    "docs/do-lines-review.md",
+    "server/kristy_perimeter_kb.json",
+    "server/test/acceptance/ca-4b.test.js",
+    "server/test/acceptance/ca-7.test.js",
+    "server/test/acceptance/cleanPick1.test.js",
+    "server/test/acceptance/cleanPick2.test.js",
+    "server/test/acceptance/cleanPick2b.test.js",
+    "server/test/acceptance/cleanPick3.test.js",
+    "server/test/acceptance/cleanPick4.test.js",
+    "server/test/acceptance/concernAdditives.test.js",
+    "server/test/acceptance/twoLinePin.js",
+    "server/test/acceptance/w2.test.js",
+    "server/test/acceptance/w4.test.js"
+  ],
+  "criteria": [
+    {
+      "id": "C1",
+      "met": true,
+      "evidence": "All 16 entries match the specified base-plus-BECAME values. Pins and historical overlays updated. NOTE: pipeline-supplied cleanPick5.test.js was present and left unchanged."
+    },
+    {
+      "id": "C2",
+      "met": true,
+      "evidence": "Decision/cart limits pass; twoLineCheck: 181 checked, 0 violations."
+    },
+    {
+      "id": "C3",
+      "met": true,
+      "evidence": "Original tip 0 preserved; each new standard occupies index 1."
+    },
+    {
+      "id": "C4",
+      "met": true,
+      "evidence": "All 46 new strings pass wording checks, including 13 snack strings."
+    },
+    {
+      "id": "C5",
+      "met": true,
+      "evidence": "Exactly seven specified cards name organic in both decision and cart."
+    },
+    {
+      "id": "C6",
+      "met": true,
+      "evidence": "195 outside entries and top-level metadata unchanged. All 13 changed files are owned. Historical count floors verified. NOTE: HEAD is fd72085; 6db979f-to-a1f9997 diff is empty."
+    },
+    {
+      "id": "C7",
+      "met": true,
+      "evidence": "Exactly 15 headline cells changed; all other review bytes preserved. Regenerated doLines.json is byte-identical to 6db979f."
+    },
+    {
+      "id": "C8",
+      "met": true,
+      "evidence": "Every base buying tip and watch_out line remains intact."
+    },
+    {
+      "id": "C9",
+      "met": true,
+      "evidence": "All 16 cart picks route correctly; listMatchProbe reports no wrong matches."
+    },
+    {
+      "id": "C10",
+      "met": true,
+      "evidence": "None of the 46 new strings appears on more than two entries."
+    },
+    {
+      "id": "C11",
+      "met": true,
+      "evidence": "Salt and yeast rankings pass; all 19 reach queries route correctly. Acceptance: 11/11. Full npm test: 2903 pass, 0 fail, 0 skipped. commitGuard and diff checks pass. NOTE: baseline 2890 remains commit-recorded; the full suite ran once at the end as requested."
+    }
+  ],
+  "questions": [],
+  "kind": null
+}
