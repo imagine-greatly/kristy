@@ -3472,6 +3472,7 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 
 test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
   kb.entries = kb.entries.map(preT6_4); // t6-4 owns the six produce/label cards after 2f67540.
   kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
@@ -3652,3 +3653,10 @@ export const T6_4 = new Set(['washing_produce', 'label_cage_free', 'label_pastur
 export const T6_4_BASE = '2f67540';
 const PRE_T6_4 = JSON.parse(execFileSync('git', ['show', `${T6_4_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preT6_4 = (e) => (e && T6_4.has(e.id) ? PRE_T6_4.entries.find((x) => x.id === e.id) : e);
+
+// swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
+export const SWAP_PICKS_1_NEW = new Set(['pick_artificial_sweetener', 'pick_margarine', 'pick_shortening', 'pick_soda', 'pick_sports_drink', 'pick_energy_drink', 'pick_fruit_snacks', 'pick_whipped_topping']);
+export const SWAP_PICKS_1_CARDS = new Set(['sandwich_bread', 'maple_syrup']);
+export const SWAP_PICKS_1_BASE = '58d6160';
+const PRE_SWAP_PICKS_1 = JSON.parse(execFileSync('git', ['show', `${SWAP_PICKS_1_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preSwapPicks1 = (entries) => entries.filter((e) => !SWAP_PICKS_1_NEW.has(e.id)).map((e) => (SWAP_PICKS_1_CARDS.has(e.id) ? PRE_SWAP_PICKS_1.entries.find((x) => x.id === e.id) : e));

@@ -17,6 +17,8 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const BASE_REF = 'd707172';
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+import { preSwapPicks1 } from './twoLinePin.js';
+kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick3(e)));

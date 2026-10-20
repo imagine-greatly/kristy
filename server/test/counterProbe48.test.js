@@ -46,7 +46,7 @@ const QUERIES = nonEmpty([
   ['cookies', 'miss'],
   ['ice cream', 'ice_cream'], // K19 covers it (admin ruling 2026-10-06).
   ['juice', 'miss', 'pick_juice'],
-  ['soda', 'miss'],
+  ['soda', 'miss', 'pick_soda'], // swap-picks-1: soda now gets its list pick.
   ['coffee', 'coffee_beans'],
   ['protein bar', 'miss'],
   ['hummus', 'hummus'], // K23: pinned gap now covered by the hummus card.

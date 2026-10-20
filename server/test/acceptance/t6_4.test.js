@@ -12,6 +12,8 @@ import { T6_4, T6_4_BASE, preT6_4 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
+import { preSwapPicks1 } from './twoLinePin.js';
+kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 const base = JSON.parse(execFileSync('git', ['show', `${T6_4_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const IDS = nonEmpty([...T6_4], 'T6_4 ids', 6);
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };

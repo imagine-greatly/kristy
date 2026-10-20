@@ -13,6 +13,8 @@ import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, pre
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+import { preSwapPicks1 } from './twoLinePin.js';
+kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';

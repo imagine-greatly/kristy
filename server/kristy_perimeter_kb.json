@@ -6694,7 +6694,8 @@
         "sandwich bread",
         "whole wheat sandwich bread",
         "whole wheat bread",
-        "which bread"
+        "which bread",
+        "white bread"
       ],
       "category": "bulk_pantry",
       "question": "Which sandwich bread is whole wheat?",
@@ -11271,7 +11272,8 @@
         "pure maple syrup",
         "real maple syrup",
         "grade a maple syrup",
-        "dark maple syrup"
+        "dark maple syrup",
+        "pancake syrup"
       ],
       "category": "bulk_pantry",
       "question": "How do you pick maple syrup?",
@@ -14107,6 +14109,199 @@
         "which frozen foods should i buy",
         "are frozen foods worth buying",
         "which frozen aisle foods should i buy"
+      ]
+    },
+    {
+      "id": "pick_artificial_sweetener",
+      "kind": "pick",
+      "title": "Artificial sweetener",
+      "category": "bulk_pantry",
+      "aliases": [
+        "artificial sweetener",
+        "artificial sweeteners",
+        "sweetener packet",
+        "sweetener packets"
+      ],
+      "decision": "Look for pure maple syrup, any Grade A color.",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/168.140",
+        "https://extension.unh.edu/blog/2022/03/making-grade-color-flavor-maple-syrup",
+        "https://libraries.uvm.edu/c.php?g=290518&p=1936103",
+        "https://www.law.cornell.edu/cfr/text/21/168.180",
+        "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
+      ]
+    },
+    {
+      "id": "pick_margarine",
+      "kind": "pick",
+      "title": "Margarine",
+      "category": "dairy",
+      "aliases": [
+        "margarine",
+        "margarines",
+        "vegetable spread",
+        "vegetable spreads"
+      ],
+      "decision": "Look for deep yellow grass-fed butter, or plant butter made with only coconut or olive oil.",
+      "sources": [
+        "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better",
+        "https://www.law.cornell.edu/cfr/text/21/166.110",
+        "https://www.wegmans.com/shop/product/980978",
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
+        }
+      ]
+    },
+    {
+      "id": "pick_shortening",
+      "kind": "pick",
+      "title": "Shortening",
+      "category": "bulk_pantry",
+      "aliases": [
+        "shortening",
+        "shortenings"
+      ],
+      "decision": "Look for pasture-raised leaf lard or grass-fed tallow, with nothing added to harden.",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/9/319.702",
+        "https://animalscience.unl.edu/meats-terms-glossary/",
+        "https://www.law.cornell.edu/cfr/text/9/319.701",
+        "https://www.law.cornell.edu/cfr/text/9/319.703"
+      ]
+    },
+    {
+      "id": "pick_soda",
+      "kind": "pick",
+      "title": "Soda",
+      "category": "bulk_pantry",
+      "aliases": [
+        "soda",
+        "sodas",
+        "diet soda",
+        "diet sodas",
+        "soft drink",
+        "soft drinks"
+      ],
+      "decision": "Look for sparkling water from a named spring in glass, or plain refrigerated kombucha.",
+      "sources": [
+        "ANSES “The caps of glass bottles contaminate beverages with microplastics” https://www.anses.fr/en/content/caps-glass-bottles-contaminate-beverages-microplastics (water averaged 4.5 particles per liter in glass bottles and 1.6 in plastic bottles and cartons; particles matched the paint on the caps; 287 particles per liter with uncleaned caps fell to 106 when caps were blown clean and 87 when blowing was followed by rinsing)",
+        "https://www.cspi.org/node/7457",
+        "https://en.wikipedia.org/wiki/Kombucha",
+        "https://www.ttb.gov/kombucha/general-requirements",
+        "https://www.law.cornell.edu/uscode/text/26/5052",
+        {
+          "name": "CSPI: Artificial and natural flavoring",
+          "url": "https://www.cspi.org/node/7457"
+        }
+      ]
+    },
+    {
+      "id": "pick_sports_drink",
+      "kind": "pick",
+      "title": "Sports drink",
+      "category": "bulk_pantry",
+      "aliases": [
+        "sports drink",
+        "sports drinks"
+      ],
+      "decision": "Look for high-pressure processed pure coconut water, with nothing added.",
+      "sources": [
+        "https://brunswick.ces.ncsu.edu/2025/04/coconut-products",
+        "https://www.law.cornell.edu/cfr/text/21/101.30",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6475728",
+        "https://pubmed.ncbi.nlm.nih.gov/23572707/"
+      ]
+    },
+    {
+      "id": "pick_energy_drink",
+      "kind": "pick",
+      "title": "Energy drink",
+      "category": "bulk_pantry",
+      "aliases": [
+        "energy drink",
+        "energy drinks"
+      ],
+      "decision": "Look for tea with only tea leaf on the list.",
+      "sources": [
+        "https://lpi.oregonstate.edu/mic/food-beverages/tea",
+        "https://www.law.cornell.edu/cfr/text/21/173.228",
+        "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference",
+        {
+          "name": "PMC: Microplastics from plastic tea bags",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10389239/"
+        }
+      ]
+    },
+    {
+      "id": "pick_fruit_snacks",
+      "kind": "pick",
+      "title": "Fruit snacks",
+      "category": "bulk_pantry",
+      "aliases": [
+        "fruit snack",
+        "fruit snacks"
+      ],
+      "decision": "Look for dried fruit with only the fruit on the ingredient list.",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/21/101.100",
+        "https://farrp.unl.edu/farrp-resources/regulatory/sulfites-usa/",
+        "https://ask.ifas.ufl.edu/publication/FY731",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
+      ]
+    },
+    {
+      "id": "pick_whipped_topping",
+      "kind": "pick",
+      "title": "Whipped topping",
+      "category": "dairy",
+      "aliases": [
+        "whipped topping",
+        "whipped toppings",
+        "cool whip"
+      ],
+      "decision": "Look for grass-fed heavy cream from a small dairy, pasteurized, not ultra-pasteurized.",
+      "sources": [
+        {
+          "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "BCPP: rBGH / rBST labeling",
+          "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+        },
+        {
+          "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
+          "url": "https://www.cornucopia.org/research/carrageenan/"
+        },
+        {
+          "name": "CSPI: Carrageenan",
+          "url": "https://www.cspi.org/node/7465"
+        },
+        {
+          "name": "21 CFR 131.3, pasteurized and ultra-pasteurized defined",
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
+        },
+        {
+          "name": "Weston A. Price Foundation: FAQ, dairy",
+          "url": "https://www.westonaprice.org/health-topics/faq-dairy/"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        },
+        {
+          "name": "CSPI: Titanium dioxide",
+          "url": "https://www.cspi.org/node/8046"
+        },
+        {
+          "name": "CSPI: Polysorbate 60, 65 and 80",
+          "url": "https://www.cspi.org/node/7467"
+        },
+        {
+          "name": "CSPI Chemical Cuisine: food additive safety ratings",
+          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        }
       ]
     }
   ]
