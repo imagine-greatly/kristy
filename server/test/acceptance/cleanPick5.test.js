@@ -14,6 +14,8 @@ const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_4 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { preT6_1, preT6_2 } from "./twoLinePin.js";

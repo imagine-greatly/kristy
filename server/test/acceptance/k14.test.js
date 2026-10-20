@@ -189,7 +189,11 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
       .replace("import { beforeConcern, preTidy } from './twoLinePin.js';", "import { beforeConcern, preTidy, preCleanPick9 } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, beforeConcern(now));',
         "    // clean-pick-9 moved label_organic_scope's frozen fields; the pass rule reads it as of 96d61e2.\n    assertPassRule(t, old, beforeConcern(preCleanPick9(now)));");
-    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), expected);
+    // t6-4: k11 must restore its six cards before preTidy, preserving overlay order.
+    const t64 = (t) => t.replace(
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preT6_4 } from './twoLinePin.js';\nkb.entries = kb.entries.map(preT6_4); // t6-4: restore produce/label pins before the older tidy overlay.");
+    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), file === 'k11' ? t64(expected) : expected);
   }
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [
@@ -202,5 +206,8 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
   assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k5.test.js'), 'utf8'),
     oldK5
       .replace("import { assertPassRule } from './passRule.js';", "import { assertPassRule } from './passRule.js';\nimport { preCleanPick2 } from './twoLinePin.js';")
-      .replace('    assertPassRule(t, old, now);', w2));
+      .replace('    assertPassRule(t, old, now);', w2)
+      // t6-4: washing_produce source pins; the live readability/lint checks stay.
+      .replace('{ preCleanPick2 }', '{ preCleanPick2, preT6_4 }')
+      .replace('preCleanPick2(now));', 'preCleanPick2(preT6_4(now)));'));
 });

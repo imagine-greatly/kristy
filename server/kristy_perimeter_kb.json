@@ -1073,7 +1073,11 @@
       "evidence_tier": "established",
       "sources": [
         "FDA produce-safety guidance",
-        "USDA food-safety guidance"
+        "USDA food-safety guidance",
+        {
+          "name": "Northwest Horticultural Council: Fruit coatings",
+          "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
+        }
       ],
       "kristy_take": "Brush firm produce; rinse and spin leafy greens. Leave berries and mushrooms dry until you are ready to eat them, and skip the ‘veggie wash’.",
       "buying_tips": [
@@ -1085,7 +1089,8 @@
       "labels_decoded": [],
       "tier_note": "A plain-water rinse is the settled published recommendation; the bottled produce washes are not.",
       "watch_out": [
-        "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak."
+        "Water is for dirt, not residue. If pesticide residue is the question, that is a twelve-minute baking soda soak.",
+        "Look for uncoated fruit; shellac and carnauba are waxes used as added fruit coatings."
       ],
       "pick_steps": [
         "Rinse under cold running water; brush firm produce, rinse and spin greens.",
@@ -2299,7 +2304,7 @@
       "labels_decoded": [
         {
           "term": "Cage-free",
-          "meaning": "Not caged — but usually indoors and possibly crowded."
+          "meaning": "Not caged, but usually indoors and possibly crowded."
         },
         {
           "term": "Free-range",
@@ -2312,7 +2317,8 @@
       ],
       "watch_out": [
         "Cage-free usually means indoors, and it can still mean crowded.",
-        "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it."
+        "Free-range is loosely defined and loosely enforced. Without a certifier’s seal, nothing is auditing it.",
+        "Look for certified pasture-raised eggs; “cage free” alone means uncaged, not outdoors."
       ],
       "pick_steps": [
         "Find soy-free or corn-free feed printed outright on the carton.",
@@ -2403,7 +2409,7 @@
       "decision": "Pasture-raised eggs with soy-free or corn-free feed printed outright.",
       "why": "Cage-free, free-range and pasture-raised are room claims. Most of those hens still eat soy and corn.",
       "short_answer": "Most pasture-raised hens still eat soy and corn. “Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors. Hens on pasture eat insects and forage.",
-      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Next choose pasture-raised organic, then organic, then cage-free. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage.",
+      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Next choose pasture-raised organic, then organic, then cage-free. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage. “Vegetarian fed” says nothing about pasture or time outdoors.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS labeling policy — no regulatory definition of “pasture-raised”",
@@ -2431,7 +2437,8 @@
         "For beef, the equivalent word is grass-FINISHED. “Grass-fed” alone can still end on grain.",
         "Next choose pasture-raised organic, then organic, then cage-free.",
         "“Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors.",
-        "Hens on pasture eat insects and forage. Read the feed claim separately from the outdoor claim."
+        "Hens on pasture eat insects and forage. Read the feed claim separately from the outdoor claim.",
+        "Look for “pasture raised” with a certifier’s seal, then read the feed claim separately."
       ],
       "labels_decoded": [
         {
@@ -2448,18 +2455,17 @@
         },
         {
           "term": "Soy-free / corn-free",
-          "meaning": "A feed claim — the only kind that actually addresses the ration. Must be printed."
+          "meaning": "A feed claim; the only kind that actually addresses the ration. Must be printed."
         },
         {
           "term": "Certified organic",
-          "meaning": "Reaches feed, but requires it be ORGANIC — typically organic soy and corn."
+          "meaning": "Reaches feed, but requires it be ORGANIC; typically organic soy and corn."
         }
       ],
       "watch_out": [
         "Cage-free, free-range and pasture-raised are all SPACE claims. None says a word about feed.",
         "Organic reaches feed, but requires it be organic. That usually means organic soy and corn.",
-        "“Grass-fed” on beef is the same trap: it can still end on grain.",
-        "“Vegetarian fed” says nothing about pasture or time outdoors."
+        "“Grass-fed” on beef is the same trap: it can still end on grain."
       ],
       "pick_steps": [
         "Find pasture-raised eggs with “soy-free” or “corn-free” feed printed on the carton.",
@@ -2634,7 +2640,11 @@
       "evidence_tier": "established",
       "sources": [
         "FDA 21 CFR 101.60 (nutrient content claims for sugars)",
-        "FDA Nutrition Facts label final rule — added sugars declaration"
+        "FDA Nutrition Facts label final rule — added sugars declaration",
+        {
+          "name": "UCSF SugarScience: Hidden in Plain Sight",
+          "url": "https://sugarscience.ucsf.edu/hidden-in-plain-sight/"
+        }
       ],
       "kristy_take": "“Lightly sweetened” isn’t a standard, it’s an adjective. The added-sugar line is right there on the back and nobody gets to negotiate with it.",
       "buying_tips": [
@@ -2642,7 +2652,8 @@
         "Go straight to “Added Sugars” on the panel. It is the one number that is defined.",
         "“No sugar added” still allows the food’s own sugars, which can be substantial.",
         "“Reduced sugar” is relative to a reference product; 25% less than very sweet is still sweet.",
-        "Check the ingredient list for the aliases: syrups, cane juice, concentrates."
+        "Check the ingredient list for the aliases: syrups, cane juice, concentrates.",
+        "Look for unsweetened food; dextrose and corn syrup on the ingredient list are sugar names."
       ],
       "labels_decoded": [
         {
@@ -2651,11 +2662,11 @@
         },
         {
           "term": "No sugar added",
-          "meaning": "Defined — none added in processing. Natural sugars remain."
+          "meaning": "Defined; none added in processing. Natural sugars remain."
         },
         {
           "term": "Reduced sugar",
-          "meaning": "Defined — at least 25% less than a reference food."
+          "meaning": "Defined; at least 25% less than a reference food."
         },
         {
           "term": "Unsweetened",
@@ -4757,7 +4768,7 @@
       "decision": "Cold-pressed or expeller-pressed olive or coconut oil.",
       "why": "Expeller and cold-pressed are both mechanical. Most supermarket oil is neither.",
       "short_answer": "Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down. Most supermarket cooking oil is neither. It is solvent-extracted, then refined, bleached and deodorized.",
-      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale and why those oils are cheap. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit.",
+      "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit. “Pure” and “refined” both describe oil stripped of color, flavor and aroma.",
       "evidence_tier": "established",
       "sources": [
         "International Olive Council definitions of cold extraction",
@@ -4778,7 +4789,8 @@
         "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
         "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-        "Skip avocado oil regardless of the pressing words; its label cannot prove purity."
+        "Skip avocado oil regardless of the pressing words; its label cannot prove purity.",
+        "Skip canola, sunflower and vegetable oil; “expeller-pressed” describes pressing, not the plant."
       ],
       "labels_decoded": [
         {
@@ -4801,8 +4813,7 @@
       "watch_out": [
         "A pressed seed oil is still a seed oil. These words rank how the oil was made and say nothing about what it was made from.",
         "No process word at all usually means solvent-extracted and refined.",
-        "“Cold-pressed” is tightly defined only for olive oil.",
-        "“Pure” and “refined” both describe oil stripped of color, flavor and aroma."
+        "“Cold-pressed” is tightly defined only for olive oil."
       ],
       "pick_steps": [
         "Pick olive or coconut oil first; then match cold-pressed or expeller-pressed.",
@@ -4909,7 +4920,7 @@
       "decision": "Whole or skin-on fish labeled with species, method and country.",
       "why": "All three are required on unprocessed seafood. Origin can mean where it was processed.",
       "short_answer": "Most unprocessed fish and shellfish at retail must show the species, wild-caught or farm-raised, and the country of origin. Federal country-of-origin labeling requires it. The catch: origin can mean where it was processed, not where it was caught.",
-      "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where a cheaper fish is sold under a pricier name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses. Country-of-origin labeling is one of the few places a store must tell you where food came from.",
+      "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where one fish is sold under another species name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses. Country-of-origin labeling is one of the few places a store must tell you where food came from.",
       "evidence_tier": "established",
       "sources": [
         "USDA AMS Country of Origin Labeling (COOL) requirements for fish and shellfish",
@@ -4918,6 +4929,10 @@
         {
           "name": "Quartz: Here is why your farmed salmon has color added to it",
           "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+        },
+        {
+          "name": "WebMD via NBC News: Farmed and wild salmon",
+          "url": "https://www.nbcnews.com/id/wbna3980525"
         }
       ],
       "kristy_take": "Species, method, country. Then buy it skin-on, because the species name is the one that gets swapped.",
@@ -4943,7 +4958,8 @@
         }
       ],
       "watch_out": [
-        "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line."
+        "Country of origin is a real signal within farmed seafood. It does not tell you wild from farmed, which is its own required line.",
+        "Look for wild-caught salmon; “farm raised” means aquaculture, not a wild catch."
       ],
       "pick_steps": [
         "Find all three: species, wild or farm-raised, and country of origin.",

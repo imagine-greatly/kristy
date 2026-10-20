@@ -3472,6 +3472,7 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 
 test('every full-card and concern pick pin matches the live KB', () => {
   const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  kb.entries = kb.entries.map(preT6_4); // t6-4 owns the six produce/label cards after 2f67540.
   kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
@@ -3644,3 +3645,10 @@ export const T6_3 = new Set(['nuts_raw_vs_roasted', 'nut_butter_ingredients', 'c
 export const T6_3_BASE = '6d6ca49';
 const PRE_T6_3 = JSON.parse(execFileSync('git', ['show', `${T6_3_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preT6_3 = (e) => (e && T6_3.has(e.id) ? PRE_T6_3.entries.find((x) => x.id === e.id) : e);
+
+// t6-4: produce and label register avoids; decisions and carts stay.
+// Older acceptance pins read these six as of 2f67540; t6_4.test.js owns the live copy.
+export const T6_4 = new Set(['washing_produce', 'label_cage_free', 'label_pasture_raised_feed', 'label_lightly_sweetened', 'label_cold_pressed_expeller', 'label_wild_vs_farm_raised']);
+export const T6_4_BASE = '2f67540';
+const PRE_T6_4 = JSON.parse(execFileSync('git', ['show', `${T6_4_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+export const preT6_4 = (e) => (e && T6_4.has(e.id) ? PRE_T6_4.entries.find((x) => x.id === e.id) : e);

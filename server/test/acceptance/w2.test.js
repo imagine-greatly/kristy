@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preT6_4 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { preT6_1, preT6_2 } from "./twoLinePin.js";

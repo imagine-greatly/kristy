@@ -10,6 +10,8 @@ import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, C
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { preT6_4 } from './twoLinePin.js';
+kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { preT6_1, preT6_2 } from "./twoLinePin.js";
