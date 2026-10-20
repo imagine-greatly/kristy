@@ -629,7 +629,17 @@ Also (verify, not a criterion): whole suite green, listMatchProbe clean, commitG
       ],
       "dependents": []
     }
-  ]
+  ],
+  "env": {
+    "executables": [
+      "node",
+      "npm",
+      "git"
+    ],
+    "browsers": [],
+    "temp": "none",
+    "network": false
+  }
 }
 ```
 
