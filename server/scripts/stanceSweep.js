@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { projectEntry } from '../lib/counterCards.js';
-import { lintCard, lintCorpus, CANONICAL_GLOSSES } from '../lib/counterCardLint.js';
+import { lintCard, lintCorpus, mechanicalVeto, CANONICAL_GLOSSES } from '../lib/counterCardLint.js';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 
@@ -80,7 +80,7 @@ export function parseRegister(registerMd, coverageMd) {
     if (!m) continue;
     // ponytail: lexical; "a/b" keeps the part before the slash, "(s)" is dropped, terms under 3 chars skipped.
     const t = m[3].split(',').map((x) => norm(x).replace(/"/g, '').split('/')[0].replace(/\(s\)/g, '').trim().toLowerCase())
-      .filter((x) => x.length >= 3);
+      .filter((x) => x.length >= 3 && !/^none( on label)?$/.test(x)); // X11: "none" is the absence of a term, not a term
     terms.set(m[1], t);
   }
   const rows = [];
@@ -171,8 +171,11 @@ export function sweep(entries, { doLines = {}, register = [], archive = new Set(
   }
   for (const [s, ids] of counts) if (ids.length > 2 && !s.includes(G7)) for (const id of ids) flag(id, 'M13', `${ids.length}x: ${s.slice(0, 60)}`);
   const text = new Map(entries.map((e) => [e.id, norm(strings(e, new Set(['sources'])).map(([, s]) => s).join('\n')).toLowerCase()]));
+  const kind = new Map(entries.map((e) => [e.id, e.kind]));
   for (const row of register) for (const id of row.home) {
-    if (row.concern !== 'clean_fifteen' && text.has(id) && row.terms.length && !row.terms.some((t) => text.get(id).includes(t))) flag(id, 'M7', row.concern);
+    // X11: a literal none/none on label term is no term. X12: a pick may not say a vetoed word (protein), so its term is exempt.
+    const terms = row.terms.filter((t) => !/^none( on label)?$/i.test(t) && !(kind.get(id) === 'pick' && mechanicalVeto(t)));
+    if (row.concern !== 'clean_fifteen' && text.has(id) && terms.length && !terms.some((t) => text.get(id).includes(t))) flag(id, 'M7', row.concern);
   }
   for (const [id, codes] of lint(entries, doLines)) for (const c of codes) flag(id, 'M9', c);
 

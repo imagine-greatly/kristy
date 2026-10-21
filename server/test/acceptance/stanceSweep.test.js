@@ -103,11 +103,24 @@ test('XC1: confirmed classes X1-X10 are unflagged, near misses stay flagged', ()
   for (const e of STAY) assert.ok(r.flagged.includes(e.id), e.id);
 });
 
-test('XC3: the 39 projected ids leave the flag list; sourdough, sandwich_bread, potato_chips, chicken_breast stay', () => {
+// X11/X12: M7 register-term exemptions.
+test('XC4: M7 skips "none" terms (X11) and veto-word terms on picks only (X12)', () => {
+  const reg = (concern, terms, home) => ({ concern, terms, home });
+  const r = sweep([card('m_none'), card('pick_p', { kind: 'pick' }), card('m_prot'), card('m_stay')], {
+    lint: () => new Map(),
+    register: [reg('c1', ['none'], ['m_none']), reg('c2', ['none on label'], ['m_none']), reg('c3', ['protein'], ['pick_p', 'm_prot']), reg('c4', ['zzterm'], ['m_stay'])],
+  });
+  assert.deepEqual(r.flags.m_none, []);
+  assert.deepEqual(r.flags.pick_p, []);
+  assert.deepEqual(r.flags.m_prot.map((f) => f.code), ['M7']);
+  assert.deepEqual(r.flags.m_stay.map((f) => f.code), ['M7']);
+});
+
+test('XC3: the 39 projected ids leave the flag list; sourdough, sandwich_bread, potato_chips stay', () => {
   const out = run('HEAD');
   const GONE = `beef_cuts_basics label_lightly_sweetened pork_cuts_and_enhanced seafood_certifications label_third_party_seals label_artificial_color produce_brassicas produce_onions_garlic produce_apples_pears pick_frozen_peas pick_asparagus pick_corn pick_cilantro pick_parsley pick_basil pick_swiss_chard pick_mangoes pick_celery tortillas canned_tuna produce_mushrooms produce_bananas pick_microgreens bison venison_game clams_mussels_oysters bread_aisle kombucha maple_syrup jam coconut_water condiments tortilla_chips hummus fresh_pasta deli frozen pick_artificial_sweetener raw_aged_cheese`.split(' ');
   nonEmpty(GONE, 'gone ids', 39);
   for (const id of GONE) assert.ok(!out.flagged.includes(id), id);
-  for (const id of ['sourdough', 'sandwich_bread', 'potato_chips', 'chicken_breast']) assert.ok(out.flagged.includes(id), id);
+  for (const id of ['sourdough', 'sandwich_bread', 'potato_chips']) assert.ok(out.flagged.includes(id), id);
   assert.ok(!out.byCode.M2.includes('nuts_raw_vs_roasted') || !out.flags.nuts_raw_vs_roasted.some((f) => f.code === 'M2' && f.detail.startsWith('short_answer')));
 });
