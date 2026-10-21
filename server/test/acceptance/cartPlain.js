@@ -220,8 +220,14 @@ export const CLEAN_J5 = new Set(['grassfed_butter', 'whole_vs_reduced_fat_milk',
 export const CLEAN_J5_BASE = '5706fee';
 const PRE_J5 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J5_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
 export const preCleanJ5 = (e) => (e && CLEAN_J5.has(e.id) ? structuredClone(PRE_J5.entries.find((x) => x.id === e.id)) : e);
+// clean-sweep-J6 (2026-10-22): deli, eggs and frozen after 8600937; cleanPickJ6.test.js owns the live copy.
+// Every older pin reads them as of 8600937 (J6 ids are disjoint from J1-J5).
+export const CLEAN_J6 = new Set(['egg_labels', 'deli_meat_uncured', 'deli_salads', 'frozen_pizza', 'frozen_meals', 'frozen_fries', 'frozen_nuggets', 'frozen_waffles']);
+export const CLEAN_J6_BASE = '8600937';
+const PRE_J6 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J6_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const preCleanJ6 = (e) => (e && CLEAN_J6.has(e.id) ? structuredClone(PRE_J6.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = kb.entries.map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };

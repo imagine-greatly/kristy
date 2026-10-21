@@ -680,8 +680,8 @@
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
         "Organic reaches the feed from another direction: organic feed, no GMOs, no routine antibiotics.",
         "‘Pasture-raised’ plus Certified Humane or Animal Welfare Approved is the strongest space claim.",
-        "Farm stands and farmers markets are where soy-free actually lives. Ask the person who keeps the hens.",
-        "Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+        "Farm stands and farmers markets are where soy-free actually lives. At the stand, ask the grower who keeps the hens.",
+        "Where no carton names the feed, certified organic is the floor rung, since organic rules cover the ration.",
         "Shell color is the breed. White and brown are the same egg inside.",
         "Speckles and small rough patches are normal shell variation.",
         "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
@@ -718,7 +718,7 @@
         "“Organic” means certified organic feed and outdoor access.",
         "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."
       ],
-      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. Plain conventional eggs are still one of the lowest-cost animal foods in the store.",
+      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. With no feed named, certified organic is the floor; its rules reach the ration.",
       "labels_decoded": [
         {
           "term": "Cage-free",
@@ -3219,7 +3219,9 @@
       "watch_out": [
         "In deli meat, “uncured” or “no nitrates added” can still mean celery powder or juice supplies nitrite. Read the qualifier beside the claim.",
         "Every curing substance has to be named in the ingredients statement, so read the list, not only the asterisk.",
-        "Skip sodium phosphate and other phosphates used to hold water. Leave out binders such as carrageenan, modified food starch or maltodextrin that thicken the meat."
+        "Skip sodium phosphate and other phosphates used to hold water. Leave out binders such as carrageenan, modified food starch or maltodextrin that thicken the meat.",
+        "Skip “natural flavor” or “flavoring” on a deli meat list; the label need not say what the flavor is.",
+        "Skip “mechanically separated chicken” or turkey on the list: a meat paste pressed from the bone, labeled by law."
       ],
       "pick_steps": [
         "Read the “no nitrates added” qualifier for celery powder or juice.",
@@ -13683,7 +13685,7 @@
         "Check the Sell-By date, and skip a tub past it.",
         "Get it home cold; two hours out at most, one hour above 90°F.",
         "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
-        "Pass on a deli dressing listing vegetable oil such as sunflower, safflower, canola, soybean, corn or cottonseed oil.",
+        "Skip a deli dressing listing vegetable oil such as sunflower, safflower, canola, soybean, corn or cottonseed oil.",
         "Skip avocado oil in the dressing as well. Ask for the ingredient list at the deli counter."
       ],
       "watch_out": [
@@ -13883,7 +13885,11 @@
         "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements",
         "https://web.archive.org/web/2023id_/https://www.fsis.usda.gov/sites/default/files/import/Labeling-Policy-Book.pdf",
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety",
-        "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn"
+        "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn",
+        {
+          "name": "CSPI Chemical Cuisine: Trans fat (partially hydrogenated vegetable oil)",
+          "url": "https://www.cspi.org/chemical-cuisine/trans-fat-partially-hydrogenated-vegetable-oil"
+        }
       ],
       "kristy_take": "The short crust list is the standard here. Traditionally, Neapolitan dough holds only flour, water, salt and yeast.",
       "cart_pick": "Whole wheat frozen pizza",
@@ -13896,7 +13902,8 @@
         "Air touching the surface leaves freezer burn, grayish-brown leathery spots."
       ],
       "watch_out": [
-        "A meat named on the box sets no minimum amount of that meat."
+        "A meat named on the box sets no minimum amount of that meat.",
+        "Skip a pizza listing hydrogenated or partially hydrogenated oil in the crust or toppings."
       ],
       "pick_steps": [
         "Pick frozen pizza with a short crust list: flour, water, salt, yeast.",
@@ -13958,6 +13965,10 @@
         {
           "name": "CSPI Chemical Cuisine: food additive safety ratings",
           "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+        },
+        {
+          "name": "Center for Food Safety: Phthalates in macaroni and cheese powders",
+          "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
         }
       ],
       "kristy_take": "The product name sets the meat floor. The package directions set how to thaw and heat the meal.",
@@ -13972,7 +13983,8 @@
       ],
       "watch_out": [
         "Cream sauce is one food that does not freeze well.",
-        "Skip monosodium glutamate and autolyzed yeast extract on the list. Pick a meal seasoned with named herbs and spices."
+        "Skip monosodium glutamate and autolyzed yeast extract on the list. Pick a meal seasoned with named herbs and spices.",
+        "Look for real cheese on a frozen mac and cheese list, not cheese powder; testing found phthalates in the powders."
       ],
       "pick_steps": [
         "Find the inspection mark: an inspected plant prepared the meal.",
@@ -14046,13 +14058,13 @@
       "buying_tips": [
         "At home, hash browns take potatoes, oil, salt and pepper; the bag lists anything more.",
         "The bag’s ingredient list names the frying or par-frying oil. Choose tallow, olive oil, or coconut oil; no added oil also fits.",
-        "Check frozen fries for vegetable oil: sunflower, safflower, canola, soybean, corn or cottonseed oil. Skip bags listing those seed oils.",
+        "Skip frozen fries listing vegetable oil: sunflower, safflower, canola, soybean, corn or cottonseed oil.",
         "Read the bag’s ingredient list for potatoes, salt and the oil by name.",
         "Compare bags by what each one lists beyond potatoes, salt and that oil.",
         "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
         "Do not overcrowd the air fryer basket, so the fries cook evenly.",
         "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%.",
-        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
+        "The fat in a fry bag can carry BHA, BHT or TBHQ, preservatives added to fats. Take a bag listing none of them."
       ],
       "watch_out": [
         "Fried foods frozen at home may lose their crispness.",
@@ -14118,7 +14130,7 @@
         "Graham flour and rolled oats count as whole grain on the list.",
         "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
         "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen.",
-        "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+        "Skip a waffle list naming Red 40, Yellow 5, Yellow 6 or Blue 1. Each is a synthetic dye, and a “Lake” dye still counts."
       ],
       "watch_out": [
         "“Wheat flour” listed first means plain flour leads, not a whole grain."
@@ -14203,7 +14215,7 @@
         "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
         "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
         "A nugget labeled “breaded” holds no more than 30 percent breading.",
-        "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
+        "Nugget frying fats can carry BHA, BHT or TBHQ, preservatives added to fats. Take a box listing none of them."
       ],
       "watch_out": [
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
