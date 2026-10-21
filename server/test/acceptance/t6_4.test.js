@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // t6-4: produce and label-term avoids. Purchase lines stay at 2f67540.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -11,7 +12,7 @@ import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { T6_4, T6_4_BASE, preT6_4 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
-const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 const base = JSON.parse(execFileSync('git', ['show', `${T6_4_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());

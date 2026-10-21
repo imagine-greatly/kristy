@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // clean-pick-4 (Devon 2026-10-20): B5 bread and grains name each item’s own cleanest version.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -13,7 +14,7 @@ const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';

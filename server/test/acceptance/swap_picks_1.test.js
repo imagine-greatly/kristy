@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // swap-picks-1: sourced, gentle list nudges; cards keep their own cart picks.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -11,7 +12,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const BASE = '58d61608ce617596647c7df8ed2f84d6215911e3';
-const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8')));
 const before = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], {
   cwd: ROOT, encoding: 'utf8',
 }));

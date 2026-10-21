@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // clean-pick-12 (Devon 2026-10-20, register avoid gaps): B12 names the register's avoid items on 12 bread, sauce, condiment, drink, soup and bar cards, at most 3 per card; breakfast_cereal's chlormequat and snack_bars' glyphosate and seed-oil tips sit in detail. Five ids already closed (sugars, flour_basics, crackers, hummus, tortilla_chips) leave the batch unchanged. decision and cart_pick byte-equal to 52cfde3.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -13,7 +14,7 @@ import { preCleanPick8, prePickAvoid } from './twoLinePin.js';
 const BASE = '52cfde3';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';

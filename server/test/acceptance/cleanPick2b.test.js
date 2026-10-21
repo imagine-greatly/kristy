@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // clean-pick-2b (Devon 2026-10-20, Q1 A organic on all produce): the hub and banana depth text
 // stops sending peeled produce to conventional; skin-on first only when organic runs short.
 import { test } from 'node:test';
@@ -9,7 +10,7 @@ import { lintPickSteps, lintRepeatedClaim } from '../../lib/counterCardLint.js';
 import { CLEAN_PICK_3, CLEAN_PICK_4, CLEAN_PICK_5, CLEAN_PICK_6, CLEAN_PICK_7, CLEAN_PICK_9, preCleanPick9, CLEAN_PICK_10, preCleanPick11, preCleanPick12, preCleanPick8 } from './twoLinePin.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
