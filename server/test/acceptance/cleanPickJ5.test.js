@@ -12,12 +12,12 @@ import { fileURLToPath } from "node:url";
 import { nonEmpty } from "../../lib/testGuards.js";
 import { lintCard, lintPick } from "../../lib/counterCardLint.js";
 import { projectEntry } from "../../lib/counterCards.js";
-import { CLEAN_J5, CLEAN_J5_BASE, preCleanJ6, preCleanJ7 } from "./cartPlain.js";
+import { CLEAN_J5, CLEAN_J5_BASE, preCleanJ6, preCleanJ7, preCleanJ8 } from "./cartPlain.js";
 
 const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
 const raw = JSON.parse(readFileSync(new URL("../../kristy_perimeter_kb.json", import.meta.url), "utf8"));
-// Later batches restore their own ids to the J5 commit (J6: preCleanJ6, J7: preCleanJ7).
-const kb = { ...raw, entries: raw.entries.map(preCleanJ6).map(preCleanJ7) };
+// Later batches restore their own ids to the J5 commit (J6: preCleanJ6, J7: preCleanJ7, J8: preCleanJ8).
+const kb = { ...raw, entries: raw.entries.map(preCleanJ6).map(preCleanJ7).map(preCleanJ8) };
 const base = JSON.parse(execFileSync("git", ["show", `${CLEAN_J5_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const doLines = JSON.parse(readFileSync(new URL("../../lib/doLines.json", import.meta.url), "utf8"));
 const live = (id) => kb.entries.find((e) => e.id === id);
