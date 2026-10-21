@@ -9,18 +9,27 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { projectEntry } from '../lib/counterCards.js';
-import { lintCard, lintCorpus } from '../lib/counterCardLint.js';
+import { lintCard, lintCorpus, CANONICAL_GLOSSES } from '../lib/counterCardLint.js';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 
 // M1: C19 regex + R8 extras.
-const C19 = /(within (legal |safe )?limits|tolerance|safe levels?|conventional is fine|buy conventional|eat more|heart[- ]healthy|debated|contested|credible concern at most)/i;
+const C19 = /(within (legal |safe )?limits|\btolerance|safe levels?|conventional is fine|buy conventional|eat more|heart[- ]healthy|debated|contested|credible concern at most)/i;
 const R8 = /(well below|generally within|fine there|organic or not|Dietary Guidelines|saturated fat)/i;
 // M2: C20.
 const C20_OIL = /\b(avocado|canola|soybean|sunflower|safflower|corn|cottonseed|grapeseed|rice bran|vegetable|seed) oils?\b/i;
 const C20_NEG = /\b(skip|avoid|instead of|never|not|no)\b/i;
 // M3: C17.
 const ASK = /\bask\b/i;
+// Exemptions (P1b, .pipeline/plans/clean-pick-final-sweep.md): X1-X3 on M3, X10 on M2, X5 on M13.
+const ASK_OK = [
+  /\bask a doctor\b/i, // X1: no-treatment rule 3 requires it
+  /\bask (the )?(baker|monger|cheesemonger)\b|\bask whether the processor\b|\bask who made it\b/i, // X2: a named person (raw_aged_cheese card_why is borderline)
+  /\bask to see\b|\bask for planning\b/i, // X3: a document or plan, not staff advice
+];
+const HUB_ASK = /\bask (about|three questions)\b/i; // X3: hub short_answer pointer
+const OIL_WARNING = /\b(are|is) (cooked|fried|made|packed|roasted) in\b/i; // X10: a warning, not a recommendation
+const G7 = CANONICAL_GLOSSES.find((g) => g.id === 'G7').gloss; // X5: the seed-oil gloss string only
 const ASK_PLACE = /(counter|butcher|fishmonger|deli|bakery|market|farm stand|grower)/i;
 // M4: C4 + C4b.
 const BANNED = /\b(health|healthy|healthier|safer|risk|cancer|disease|toxic|toxin|detox|pesticide-free|synthetic|price|cost|cheap|expensive|poison|chemicals?|spray-free)\b/i;
@@ -127,6 +136,7 @@ const defaultLint = (entries, doLines) => {
 export function sweep(entries, { doLines = {}, register = [], archive = new Set(), lint = defaultLint } = {}) {
   const flags = Object.fromEntries(entries.map((e) => [e.id, []]));
   const flag = (id, code, detail) => (flags[id] ||= []).push({ code, detail });
+  const report = {}; // X4: M10 is listed, never a flag
   const counts = new Map(); // M13
   for (const e of entries) {
     const copy = strings(e, SHOPPER_FIELDS);
@@ -134,8 +144,8 @@ export function sweep(entries, { doLines = {}, register = [], archive = new Set(
       if (C19.test(s) || R8.test(s)) flag(e.id, 'M1', `${f}: ${(s.match(C19) || s.match(R8))[0]}`);
       if (f.startsWith('sources')) continue;
       for (const sen of sentencesOf(s)) {
-        if (C20_OIL.test(sen) && !C20_NEG.test(sen)) flag(e.id, 'M2', `${f}: ${sen.match(C20_OIL)[0]}`);
-        if (ASK.test(sen) && !ASK_PLACE.test(sen)) flag(e.id, 'M3', `${f}: ${sen.slice(0, 80)}`);
+        if (C20_OIL.test(sen) && !C20_NEG.test(sen) && !OIL_WARNING.test(sen)) flag(e.id, 'M2', `${f}: ${sen.match(C20_OIL)[0]}`);
+        if (ASK.test(sen) && !ASK_PLACE.test(sen) && !ASK_OK.some((x) => x.test(sen)) && !(f === 'short_answer' && HUB_ASK.test(sen))) flag(e.id, 'M3', `${f}: ${sen.slice(0, 80)}`);
       }
     }
     for (const [f, s] of topLines(e)) {
@@ -144,23 +154,25 @@ export function sweep(entries, { doLines = {}, register = [], archive = new Set(
       for (const sen of sentencesOf(norm(s))) {
         const toks = sen.match(/[A-Za-z][\w-]*/g) || [];
         const brand = toks.slice(1).filter((t) => /^[A-Z]/.test(t) && !BRAND_ALLOW.has(t));
-        if (brand.length) flag(e.id, 'M10', `${f}: ${brand.join(' ')}`);
+        if (brand.length) (report[e.id] ||= []).push({ code: 'M10', detail: `${f}: ${brand.join(' ')}` }); // X4: report-only
       }
     }
     const decision = String(e.decision ?? '');
-    if (/^organic/i.test(decision) || ORGANIC.test(decision.split(FIRST_RUNG_SPLIT)[0])) flag(e.id, 'M5', decision);
+    // X6: organic as the fallback ("..., else organic") or on a label_* card is not a first rung.
+    const rung0 = decision.replace(/,?\s*else organic\b/gi, '');
+    if (!e.id.startsWith('label_') && (/^organic/i.test(rung0) || ORGANIC.test(rung0.split(FIRST_RUNG_SPLIT)[0]))) flag(e.id, 'M5', decision);
     if (ORGANIC.test(String(e.cart_pick ?? ''))) flag(e.id, 'M6', e.cart_pick);
     const first = (decision.toLowerCase().match(/[a-z][\w-]*/g) || []).find((w) => !['a', 'an', 'the'].includes(w));
-    if (HANDLING_ADJ.has(first)) flag(e.id, 'M11', first);
+    if (HANDLING_ADJ.has(first) && !new RegExp(`\\b${first}\\b`, 'i').test(String(e.title ?? ''))) flag(e.id, 'M11', first);
     if (e.id === 'egg_labels' && !FEED_LEAD.test(decision)) flag(e.id, 'M12', decision);
     for (const u of new Set(sourceUrls(e))) if (!archive.has(u)) flag(e.id, 'M8', u);
     const mine = new Set([decision, e.cart_pick, ...(e.buying_tips || [])].filter((s) => typeof s === 'string' && s.trim()));
     for (const s of mine) counts.set(s, [...(counts.get(s) || []), e.id]);
   }
-  for (const [s, ids] of counts) if (ids.length > 2) for (const id of ids) flag(id, 'M13', `${ids.length}x: ${s.slice(0, 60)}`);
+  for (const [s, ids] of counts) if (ids.length > 2 && !s.includes(G7)) for (const id of ids) flag(id, 'M13', `${ids.length}x: ${s.slice(0, 60)}`);
   const text = new Map(entries.map((e) => [e.id, norm(strings(e, new Set(['sources'])).map(([, s]) => s).join('\n')).toLowerCase()]));
   for (const row of register) for (const id of row.home) {
-    if (text.has(id) && row.terms.length && !row.terms.some((t) => text.get(id).includes(t))) flag(id, 'M7', row.concern);
+    if (row.concern !== 'clean_fifteen' && text.has(id) && row.terms.length && !row.terms.some((t) => text.get(id).includes(t))) flag(id, 'M7', row.concern);
   }
   for (const [id, codes] of lint(entries, doLines)) for (const c of codes) flag(id, 'M9', c);
 
@@ -168,7 +180,7 @@ export function sweep(entries, { doLines = {}, register = [], archive = new Set(
   for (const [id, fs] of Object.entries(flags)) for (const c of new Set(fs.map((x) => x.code))) (byCode[c] ||= []).push(id);
   const frozen = Object.keys(flags).filter((id) => flags[id].every((x) => x.code === 'M8'));
   const flagged = Object.keys(flags).filter((id) => !frozen.includes(id));
-  return { flags, byCode, frozen, flagged };
+  return { flags, report, byCode, frozen, flagged };
 }
 
 export function load(ref) {

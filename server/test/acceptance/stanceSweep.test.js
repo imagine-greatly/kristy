@@ -30,7 +30,7 @@ const FIXTURES = [
   card('f_clean', { sources: [{ name: 'y', url: 'https://archived.test/b/' }] }),
 ];
 const EXPECT = { f_m1: 'M1', f_m2: 'M2', f_m3: 'M3', f_m4: 'M4', f_m5: 'M5', f_m6: 'M6', f_m7: 'M7', f_m8: 'M8', f_m9: 'M9',
-  f_m10: 'M10', f_m11: 'M11', egg_labels: 'M12', f_m13a: 'M13', f_m13b: 'M13', f_m13c: 'M13', f_clean: null };
+  f_m10: null, f_m11: 'M11', egg_labels: 'M12', f_m13a: 'M13', f_m13b: 'M13', f_m13c: 'M13', f_clean: null };
 
 test('SW-C1: each fixture trips exactly its own code', () => {
   const r = sweep(FIXTURES, {
@@ -43,7 +43,8 @@ test('SW-C1: each fixture trips exactly its own code', () => {
   for (const [id, code] of Object.entries(EXPECT)) {
     assert.deepEqual([...new Set(r.flags[id].map((f) => f.code))], code ? [code] : [], id);
   }
-  assert.deepEqual(r.frozen.sort(), ['f_clean', 'f_m8']);
+  assert.deepEqual(r.frozen.sort(), ['f_clean', 'f_m10', 'f_m8']);
+  assert.equal(r.report.f_m10[0].code, 'M10'); // X4: report-only, never a flag
 });
 
 test('SW-C2: HEAD run accounts for every entry', () => {
@@ -70,4 +71,43 @@ test('SW-C3: --ref reads git show, not the working file', () => {
 
 test('SW-C4: produce_root_vegetables is M11 at the base', () => {
   assert.ok(run(BASE).byCode.M11.includes('produce_root_vegetables'));
+});
+
+// XC1: one fixture per confirmed class X1-X10 is unflagged; a near-miss for each stays flagged.
+const CLEAN = [
+  card('x1', { watch_out: ['Ask a doctor about it.'] }),
+  card('x2', { buying_tips: ['Tip.', 'Ask whether the processor handles each animal individually.'] }),
+  card('x3', { short_answer: 'Ask three questions of any seal.' }),
+  card('x5', { buying_tips: ['Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'] }),
+  card('x5b', { buying_tips: ['Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'] }),
+  card('x5c', { buying_tips: ['Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.'] }),
+  card('x6', { decision: 'Local thing labeled grown without sprays, else organic, and bright.' }),
+  card('label_x6', { decision: 'Organic labels first.' }),
+  card('x8', { detail: 'Lactose intolerance is common.' }),
+  card('x9', { title: 'Fresh pasta', decision: 'Fresh pasta from a small maker.' }),
+  card('x10', { short_answer: 'Many roasted nuts are cooked in cottonseed, soybean or other seed oils.' }),
+];
+const STAY = [
+  card('s_sourdough', { buying_tips: ['Tip.', 'Tip.', 'Tip.', 'Ask about the starter when the label does not list it.'] }),
+  card('s_bha', { buying_tips: ['BHA, BHT and TBHQ are preservatives.'] }),
+  card('s_bha2', { buying_tips: ['BHA, BHT and TBHQ are preservatives.'] }),
+  card('s_bha3', { buying_tips: ['BHA, BHT and TBHQ are preservatives.'] }),
+  card('s_oil', { why: 'Cook it in canola oil.' }),
+  card('s_organic', { decision: 'Organic pick, then local.' }),
+  card('s_tol', { detail: 'Residue is within tolerance.' }),
+];
+test('XC1: confirmed classes X1-X10 are unflagged, near misses stay flagged', () => {
+  const r = sweep([...CLEAN, ...STAY], { lint: () => new Map(), register: [{ concern: 'clean_fifteen', terms: ['zzterm'], home: ['x1'] }] });
+  nonEmpty(CLEAN, 'clean fixtures', 11);
+  for (const e of CLEAN) assert.deepEqual(r.flags[e.id], [], e.id);
+  for (const e of STAY) assert.ok(r.flagged.includes(e.id), e.id);
+});
+
+test('XC3: the 39 projected ids leave the flag list; sourdough, sandwich_bread, potato_chips, chicken_breast stay', () => {
+  const out = run('HEAD');
+  const GONE = `beef_cuts_basics label_lightly_sweetened pork_cuts_and_enhanced seafood_certifications label_third_party_seals label_artificial_color produce_brassicas produce_onions_garlic produce_apples_pears pick_frozen_peas pick_asparagus pick_corn pick_cilantro pick_parsley pick_basil pick_swiss_chard pick_mangoes pick_celery tortillas canned_tuna produce_mushrooms produce_bananas pick_microgreens bison venison_game clams_mussels_oysters bread_aisle kombucha maple_syrup jam coconut_water condiments tortilla_chips hummus fresh_pasta deli frozen pick_artificial_sweetener raw_aged_cheese`.split(' ');
+  nonEmpty(GONE, 'gone ids', 39);
+  for (const id of GONE) assert.ok(!out.flagged.includes(id), id);
+  for (const id of ['sourdough', 'sandwich_bread', 'potato_chips', 'chicken_breast']) assert.ok(out.flagged.includes(id), id);
+  assert.ok(!out.byCode.M2.includes('nuts_raw_vs_roasted') || !out.flags.nuts_raw_vs_roasted.some((f) => f.code === 'M2' && f.detail.startsWith('short_answer')));
 });
